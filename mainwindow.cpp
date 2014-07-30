@@ -29,9 +29,10 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
-    QMessageBox msgBox;
-    msgBox.setText(model.fileInfo(index).filePath());
-    msgBox.exec();
-
+    if (model.fileInfo(index).isFile()){
+        QMessageBox msgBox;
+        msgBox.setText(model.fileInfo(index).filePath());
+        msgBox.exec();
+    }
 }
 
