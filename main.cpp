@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
         tree.setModel(&model);
 
-        tree.setRootIndex(model.index(QDir::homePath()));
+        tree.setRootIndex(model.index(QDir::homePath()+"/.password-store"));
         tree.setColumnHidden( 1, true );
         tree.setColumnHidden( 2, true );
         tree.setColumnHidden( 3, true );
