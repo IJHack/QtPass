@@ -2,26 +2,25 @@
 #include <QApplication>
 #include <QFileSystemModel>
 #include <QTreeView>
+#include <QDirModel>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QApplication app(argc, argv);
 
-    QFileSystemModel model;
-    model.setRootPath(QDir::homePath());
-    QTreeView tree;
-    tree.setModel(&model);
+        QDirModel model;
+        QTreeView tree;
 
-    // Demonstrating look and feel features
-    tree.setAnimated(false);
-    tree.setIndentation(20);
-    tree.setSortingEnabled(true);
+        tree.setModel(&model);
 
-    tree.setWindowTitle(QObject::tr("Dir View"));
-    tree.resize(640, 480);
-    tree.show();
+        tree.setRootIndex(model.index(QDir::homePath()));
+        tree.setColumnHidden( 1, true );
+        tree.setColumnHidden( 2, true );
+        tree.setColumnHidden( 3, true );
 
-    return a.exec();
+        tree.setWindowTitle(QObject::tr("Dir View:")+QDir::homePath());
+        tree.resize(640, 480);
+        tree.show();
+
+        return app.exec();
 }
