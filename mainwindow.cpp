@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,3 +26,12 @@ void MainWindow::on_pushButton_clicked()
 {
     system("pass git pull");
 }
+
+void MainWindow::on_treeView_clicked(const QModelIndex &index)
+{
+    QMessageBox msgBox;
+    msgBox.setText(model.fileInfo(index).filePath());
+    msgBox.exec();
+
+}
+
