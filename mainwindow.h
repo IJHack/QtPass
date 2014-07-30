@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDirModel>
+#include <QFileSystemModel>
+#include <QTreeView>
+#include <QDirModel>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QDirModel model;
 };
 
 #endif // MAINWINDOW_H

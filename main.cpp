@@ -1,26 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <QFileSystemModel>
-#include <QTreeView>
-#include <QDirModel>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-        QDirModel model;
-        QTreeView tree;
+    MainWindow w;
+    w.show();
 
-        tree.setModel(&model);
-
-        tree.setRootIndex(model.index(QDir::homePath()+"/.password-store"));
-        tree.setColumnHidden( 1, true );
-        tree.setColumnHidden( 2, true );
-        tree.setColumnHidden( 3, true );
-
-        tree.setWindowTitle(QObject::tr("Dir View:")+QDir::homePath());
-        tree.resize(640, 480);
-        tree.show();
-
-        return app.exec();
+    return app.exec();
 }
