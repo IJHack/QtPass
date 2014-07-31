@@ -47,12 +47,15 @@ void MainWindow::config() {
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
     d->setGpgPath(gpgExecutable);
+    d->setStorePath(passStore);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
             passExecutable = d->getPassPath();
             gitExecutable = d->getGitPath();
             gpgExecutable = d->getGpgPath();
+            passStore = d->getStorePath();
+            ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
     }
 }
