@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QProcess>
-#include <QMessageBox>
+//#include <QMessageBox>
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     QProcess *testProcess = new QProcess();
+
     testProcess->start("which pass");
     testProcess->waitForFinished();
     if (testProcess->exitCode() == 0) {
@@ -21,27 +22,22 @@ int main(int argc, char *argv[])
         //msgBox.exec();
         testProcess->start("which git");
         testProcess->waitForFinished();
-        if (testProcess->exitCode() != 0) {
-            QMessageBox msgBox;
-            msgBox.setText("Please install git");
-            msgBox.exec();
-            return 1;
+        if (testProcess->exitCode() == 0) {
+            w.setGitExecutable(testProcess->readAllStandardOutput());
         }
-        w.setGitExecutable(testProcess->readAllStandardOutput());
         testProcess->start("which gpg2");
         testProcess->waitForFinished();
         if (testProcess->exitCode() != 0) {
             testProcess->start("which gpg");
             testProcess->waitForFinished();
-            if (testProcess->exitCode() != 0) {
-                QMessageBox msgBox;
-                msgBox.setText("Please install gpg");
-                msgBox.exec();
-          //      return 1;
-            }
         }
-        w.setGpgExecutable(testProcess->readAllStandardOutput());
+        if (testProcess->exitCode() == 0) {
+            w.setGpgExecutable(testProcess->readAllStandardOutput());
+        }
     }
+
+    w.checkConfig();
     w.show();
+
     return app.exec();
 }

@@ -29,6 +29,35 @@ MainWindow::~MainWindow()
 }
 
 /**
+ * @brief MainWindow::checkConfig
+ */
+void MainWindow::checkConfig() {
+    if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
+        config();
+    }
+}
+
+/**
+ * @brief MainWindow::config
+ */
+void MainWindow::config() {
+    d = new Dialog();
+    d->setModal(true);
+
+    d->setPassPath(passExecutable);
+    d->setGitPath(gitExecutable);
+    d->setGpgPath(gpgExecutable);
+
+    if (d->exec()) {
+        if (d->result() == QDialog::Accepted) {
+            passExecutable = d->getPassPath();
+            gitExecutable = d->getGitPath();
+            gpgExecutable = d->getGpgPath();
+        }
+    }
+}
+
+/**
  * @brief MainWindow::on_pushButton_clicked
  */
 void MainWindow::on_pushButton_clicked()
@@ -106,4 +135,12 @@ void MainWindow::setGitExecutable(QString path) {
  */
 void MainWindow::setGpgExecutable(QString path) {
     gpgExecutable = path;
+}
+
+/**
+ * @brief MainWindow::on_pushButton_2_clicked
+ */
+void MainWindow::on_pushButton_2_clicked()
+{
+    config();
 }
