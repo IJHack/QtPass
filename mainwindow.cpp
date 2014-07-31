@@ -33,6 +33,7 @@ void MainWindow::checkConfig() {
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
         passStore = QDir::homePath()+"/.password-store/";
+        /** @TODO exists? */
     }
 
     passExecutable = settings.value("passExecutable").toString();
@@ -40,7 +41,7 @@ void MainWindow::checkConfig() {
         process->start("which pass");
         process->waitForFinished();
         if (process->exitCode() == 0) {
-            passExecutable = process->readAllStandardOutput();
+            passExecutable = process->readAllStandardOutput().trimmed();
             usePass = true;
         }
     }
@@ -50,7 +51,7 @@ void MainWindow::checkConfig() {
         process->start("which git");
         process->waitForFinished();
         if (process->exitCode() == 0) {
-            gitExecutable = process->readAllStandardOutput();
+            gitExecutable = process->readAllStandardOutput().trimmed();
         }
     }
 
@@ -63,7 +64,7 @@ void MainWindow::checkConfig() {
             process->waitForFinished();
         }
         if (process->exitCode() == 0) {
-            gpgExecutable = process->readAllStandardOutput();
+            gpgExecutable = process->readAllStandardOutput().trimmed();
         }
     }
 
@@ -156,7 +157,7 @@ void MainWindow::executePass(QString args) {
  */
 void MainWindow::executeWrapper(QString args) {
     process->setWorkingDirectory(passStore);
-    process->start("bash", QStringList() << "-c" << args);
+    process->start("sh", QStringList() << "-c" << args);
     process->waitForFinished();
     QString output = process->readAllStandardError();
     if (output.size() > 0) {
