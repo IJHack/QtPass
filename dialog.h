@@ -17,9 +17,11 @@ public:
     void setPassPath(QString);
     void setGitPath(QString);
     void setGpgPath(QString);
+    void setStorePath(QString);
     QString getPassPath();
     QString getGitPath();
     QString getGpgPath();
+    QString getStorePath();
 
 private:
     Ui::Dialog *ui;

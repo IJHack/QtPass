@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>176</width>
-    <height>153</height>
+    <width>207</width>
+    <height>199</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,6 +53,20 @@
      </item>
      <item>
       <widget class="QLineEdit" name="gitPath"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>store</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="storePath"/>
      </item>
     </layout>
    </item>

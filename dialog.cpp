@@ -44,14 +44,43 @@ void Dialog::setGpgPath(QString path) {
     ui->gpgPath->setText(path);
 }
 
+/**
+ * @brief Dialog::setStorePath
+ * @param path
+ */
+void Dialog::setStorePath(QString path) {
+    ui->storePath->setText(path);
+}
+
+/**
+ * @brief Dialog::getPassPath
+ * @return
+ */
 QString Dialog::getPassPath() {
     return ui->passPath->text();
 }
 
+/**
+ * @brief Dialog::getGitPath
+ * @return
+ */
 QString Dialog::getGitPath() {
     return ui->gitPath->text();
 }
 
+/**
+ * @brief Dialog::getGpgPath
+ * @return
+ */
 QString Dialog::getGpgPath() {
     return ui->gpgPath->text();
 }
+
+/**
+ * @brief Dialog::getStorePath
+ * @return
+ */
+QString Dialog::getStorePath() {
+    return ui->storePath->text();
+}
+
