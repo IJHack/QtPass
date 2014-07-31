@@ -2,10 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDirModel>
 #include <QFileSystemModel>
 #include <QTreeView>
-#include <QFileSystemModel>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +25,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
+    QString passStore;
 };
 
 #endif // MAINWINDOW_H
