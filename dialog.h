@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QFileDialog>
 
 namespace Ui {
 class Dialog;
@@ -27,12 +28,17 @@ public:
 
 private slots:
     void on_radioButtonNative_clicked();
-
     void on_radioButtonPass_clicked();
+    void on_toolButtonGit_clicked();
+    void on_toolButtonGpg_clicked();
+    void on_toolButtonPass_clicked();
+    void on_toolButtonStore_clicked();
 
 private:
     Ui::Dialog *ui;
     void setGroupBoxState();
+    QString selectExecutable();
+    QString selectFolder();
 };
 
 #endif // DIALOG_H
