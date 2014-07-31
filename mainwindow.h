@@ -5,7 +5,7 @@
 #include <QDirModel>
 #include <QFileSystemModel>
 #include <QTreeView>
-#include <QDirModel>
+#include <QFileSystemModel>
 
 namespace Ui {
 class MainWindow;
@@ -26,7 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QDirModel model;
+    QFileSystemModel model;
 };
 
 #endif // MAINWINDOW_H

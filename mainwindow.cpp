@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->treeView->setModel(&model);
-    ui->treeView->setRootIndex(model.index(QDir::homePath()+"/.password-store"));
+    ui->treeView->setRootIndex(model.setRootPath(QDir::homePath()+"/.password-store"));
     ui->treeView->setColumnHidden( 1, true );
     ui->treeView->setColumnHidden( 2, true );
     ui->treeView->setColumnHidden( 3, true );
