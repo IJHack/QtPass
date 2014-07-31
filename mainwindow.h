@@ -5,6 +5,7 @@
 #include <QFileSystemModel>
 #include <QTreeView>
 #include <QProcess>
+#include "dialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,10 +21,13 @@ public:
     void setPassExecutable(QString);
     void setGitExecutable(QString);
     void setGpgExecutable(QString);
+    void checkConfig();
 
 private slots:
     void on_pushButton_clicked();
     void on_treeView_clicked(const QModelIndex &index);
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -36,6 +40,8 @@ private:
     void updateText();
     void executePass(QString);
     void executeWrapper(QString);
+    Dialog* d;
+    void config();
 };
 
 #endif // MAINWINDOW_H
