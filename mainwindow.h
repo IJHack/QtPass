@@ -5,6 +5,7 @@
 #include <QFileSystemModel>
 #include <QTreeView>
 #include <QProcess>
+#include <QSettings>
 #include "dialog.h"
 
 namespace Ui {
@@ -36,6 +37,7 @@ private:
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
+    bool usePass;
     QProcess *process;
     void updateText();
     void executePass(QString);

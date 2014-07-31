@@ -84,3 +84,45 @@ QString Dialog::getStorePath() {
     return ui->storePath->text();
 }
 
+/**
+ * @brief Dialog::usePass
+ * @return
+ */
+bool Dialog::usePass() {
+    return ui->radioButtonPass->isChecked();
+}
+
+/**
+ * @brief Dialog::usePass
+ * @param pass
+ */
+void Dialog::usePass(bool usePass) {
+    if (usePass) {
+        ui->radioButtonNative->setChecked(false);
+        ui->radioButtonPass->setChecked(true);
+    } else {
+        ui->radioButtonNative->setChecked(true);
+        ui->radioButtonPass->setChecked(false);
+    }
+    setGroupBoxState();
+}
+
+void Dialog::on_radioButtonNative_clicked()
+{
+    setGroupBoxState();
+}
+
+void Dialog::on_radioButtonPass_clicked()
+{
+    setGroupBoxState();
+}
+
+void Dialog::setGroupBoxState() {
+    if (ui->radioButtonPass->isChecked()) {
+        ui->groupBoxNative->setEnabled(false);
+        ui->groupBoxPass->setEnabled(true);
+    } else {
+        ui->groupBoxNative->setEnabled(true);
+        ui->groupBoxPass->setEnabled(false);
+    }
+}
