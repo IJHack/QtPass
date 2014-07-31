@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void setPassExecutable(QString);
 
 private slots:
     void on_pushButton_clicked();
@@ -26,7 +27,10 @@ private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
     QString passStore;
-    QProcess process;
+    QString passExecutable;
+    QProcess *process;
+    void updateText();
+    void executePass(QString);
 };
 
 #endif // MAINWINDOW_H

@@ -10,7 +10,10 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     QProcess *testProcess = new QProcess();
-    if (testProcess->execute("pass") == 0) {
+    testProcess->start("which pass");
+    testProcess->waitForFinished();
+    if (testProcess->exitCode() == 0) {
+        w.setPassExecutable(testProcess->readAllStandardOutput());
         w.show();
         return app.exec();
     } else {
