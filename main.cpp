@@ -14,11 +14,34 @@ int main(int argc, char *argv[])
     testProcess->waitForFinished();
     if (testProcess->exitCode() == 0) {
         w.setPassExecutable(testProcess->readAllStandardOutput());
-        w.show();
-        return app.exec();
     } else {
-        QMessageBox msgBox;
-        msgBox.setText("Please install pass from http://www.passwordstore.org/");
-        msgBox.exec();
+        w.setPassExecutable("");
+        //QMessageBox msgBox;
+        //msgBox.setText("Please install pass from http://www.passwordstore.org/");
+        //msgBox.exec();
+        testProcess->start("which git");
+        testProcess->waitForFinished();
+        if (testProcess->exitCode() != 0) {
+            QMessageBox msgBox;
+            msgBox.setText("Please install git");
+            msgBox.exec();
+            return 1;
+        }
+        w.setGitExecutable(testProcess->readAllStandardOutput());
+        testProcess->start("which gpg2");
+        testProcess->waitForFinished();
+        if (testProcess->exitCode() != 0) {
+            testProcess->start("which gpg");
+            testProcess->waitForFinished();
+            if (testProcess->exitCode() != 0) {
+                QMessageBox msgBox;
+                msgBox.setText("Please install gpg");
+                msgBox.exec();
+          //      return 1;
+            }
+        }
+        w.setGpgExecutable(testProcess->readAllStandardOutput());
     }
+    w.show();
+    return app.exec();
 }

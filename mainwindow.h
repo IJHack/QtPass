@@ -18,6 +18,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void setPassExecutable(QString);
+    void setGitExecutable(QString);
+    void setGpgExecutable(QString);
 
 private slots:
     void on_pushButton_clicked();
@@ -28,9 +30,12 @@ private:
     QFileSystemModel model;
     QString passStore;
     QString passExecutable;
+    QString gitExecutable;
+    QString gpgExecutable;
     QProcess *process;
     void updateText();
     void executePass(QString);
+    void executeWrapper(QString);
 };
 
 #endif // MAINWINDOW_H

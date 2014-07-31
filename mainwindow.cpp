@@ -1,4 +1,4 @@
-    #include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 /**
@@ -33,7 +33,11 @@ MainWindow::~MainWindow()
  */
 void MainWindow::on_pushButton_clicked()
 {
-    executePass("git pull");
+    if (passExecutable == "") {
+        executeWrapper("git pull");
+    } else {
+        executePass("git pull");
+    }
 }
 
 /**
@@ -44,10 +48,40 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
     if (model.fileInfo(index).isFile()){
         QString passFile = model.filePath(index);
-        passFile.replace(".gpg", "");
-        passFile.replace(passStore, "");
-        executePass(passFile);
+        if (passExecutable == "") {
+            executeWrapper("gpg --no-tty -dq " + passFile);
+        } else {
+            passFile.replace(".gpg", "");
+            passFile.replace(passStore, "");
+            executePass(passFile);
+        }
     }
+}
+
+/**
+ * @brief MainWindow::executePass
+ * @param args
+ */
+void MainWindow::executePass(QString args) {
+    executeWrapper("pass "+args);
+}
+
+/**
+ * @brief MainWindow::executeWrapper
+ * @param args
+ */
+void MainWindow::executeWrapper(QString args) {
+    process->setWorkingDirectory(passStore);
+    process->start("bash", QStringList() << "-c" << args);
+    process->waitForFinished();
+    QString output = process->readAllStandardError();
+    if (output.size() > 0) {
+        ui->textBrowser->setTextColor(Qt::red);
+    } else {
+        ui->textBrowser->setTextColor(Qt::black);
+        output = process->readAllStandardOutput();
+    }
+    ui->textBrowser->setText(output);
 }
 
 /**
@@ -59,18 +93,17 @@ void MainWindow::setPassExecutable(QString path) {
 }
 
 /**
- * @brief MainWindow::executePass
- * @param args
+ * @brief MainWindow::setGitExecutable
+ * @param path
  */
-void MainWindow::executePass(QString args) {
-    process->start("bash", QStringList() << "-c" << "pass " + args);
-    process->waitForFinished();
-    QString output = process->readAllStandardError();
-    if (output.size() > 0) {
-        ui->textBrowser->setTextColor(Qt::red);
-    } else {
-        ui->textBrowser->setTextColor(Qt::black);
-        output = process->readAllStandardOutput();
-    }
-    ui->textBrowser->setText(output);
+void MainWindow::setGitExecutable(QString path) {
+    gitExecutable = path;
+}
+
+/**
+ * @brief MainWindow::setGpgExecutable
+ * @param path
+ */
+void MainWindow::setGpgExecutable(QString path) {
+    gpgExecutable = path;
 }
