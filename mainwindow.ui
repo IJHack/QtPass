@@ -18,16 +18,16 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="updateButton">
         <property name="text">
          <string>Update</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="configButton">
         <property name="text">
-         <string>config</string>
+         <string>Config</string>
         </property>
        </widget>
       </item>

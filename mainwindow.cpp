@@ -58,12 +58,12 @@ void MainWindow::config() {
 }
 
 /**
- * @brief MainWindow::on_pushButton_clicked
+ * @brief MainWindow::on_updateButton_clicked
  */
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_updateButton_clicked()
 {
     if (passExecutable == "") {
-        executeWrapper("git pull");
+        executeWrapper(gitExecutable + " pull");
     } else {
         executePass("git pull");
     }
@@ -78,7 +78,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     if (model.fileInfo(index).isFile()){
         QString passFile = model.filePath(index);
         if (passExecutable == "") {
-            executeWrapper("gpg --no-tty -dq " + passFile);
+            executeWrapper(gpgExecutable + " --no-tty -dq " + passFile);
         } else {
             passFile.replace(".gpg", "");
             passFile.replace(passStore, "");
@@ -138,9 +138,9 @@ void MainWindow::setGpgExecutable(QString path) {
 }
 
 /**
- * @brief MainWindow::on_pushButton_2_clicked
+ * @brief MainWindow::on_configButton_clicked
  */
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_configButton_clicked()
 {
     config();
 }

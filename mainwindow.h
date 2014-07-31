@@ -24,10 +24,10 @@ public:
     void checkConfig();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_updateButton_clicked();
     void on_treeView_clicked(const QModelIndex &index);
 
-    void on_pushButton_2_clicked();
+    void on_configButton_clicked();
 
 private:
     Ui::MainWindow *ui;
