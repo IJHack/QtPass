@@ -107,16 +107,25 @@ void Dialog::usePass(bool usePass) {
     setGroupBoxState();
 }
 
+/**
+ * @brief Dialog::on_radioButtonNative_clicked
+ */
 void Dialog::on_radioButtonNative_clicked()
 {
     setGroupBoxState();
 }
 
+/**
+ * @brief Dialog::on_radioButtonPass_clicked
+ */
 void Dialog::on_radioButtonPass_clicked()
 {
     setGroupBoxState();
 }
 
+/**
+ * @brief Dialog::setGroupBoxState
+ */
 void Dialog::setGroupBoxState() {
     if (ui->radioButtonPass->isChecked()) {
         ui->groupBoxNative->setEnabled(false);
@@ -124,5 +133,77 @@ void Dialog::setGroupBoxState() {
     } else {
         ui->groupBoxNative->setEnabled(true);
         ui->groupBoxPass->setEnabled(false);
+    }
+}
+
+/**
+ * @brief Dialog::selectExecutable
+ * @return
+ */
+QString Dialog::selectExecutable() {
+    QFileDialog dialog(this);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setOption(QFileDialog::ReadOnly);
+    if (dialog.exec()) {
+        return dialog.selectedFiles().first();
+    }
+    else return "";
+}
+
+/**
+ * @brief Dialog::selectFolder
+ * @return
+ */
+QString Dialog::selectFolder() {
+    QFileDialog dialog(this);
+    dialog.setFileMode(QFileDialog::Directory);
+    dialog.setOption(QFileDialog::ShowDirsOnly);
+    if (dialog.exec()) {
+        return dialog.selectedFiles().first();
+    }
+    else return "";
+}
+
+/**
+ * @brief Dialog::on_toolButtonGit_clicked
+ */
+void Dialog::on_toolButtonGit_clicked()
+{
+    QString git = selectExecutable();
+    if (git != "") {
+        ui->gitPath->setText(git);
+    }
+}
+
+/**
+ * @brief Dialog::on_toolButtonGpg_clicked
+ */
+void Dialog::on_toolButtonGpg_clicked()
+{
+    QString gpg = selectExecutable();
+    if (gpg != "") {
+        ui->gpgPath->setText(gpg);
+    }
+}
+
+/**
+ * @brief Dialog::on_toolButtonPass_clicked
+ */
+void Dialog::on_toolButtonPass_clicked()
+{
+    QString pass = selectExecutable();
+    if (pass != "") {
+        ui->passPath->setText(pass);
+    }
+}
+
+/**
+ * @brief Dialog::on_toolButtonStore_clicked
+ */
+void Dialog::on_toolButtonStore_clicked()
+{
+    QString store = selectFolder();
+    if (store != "") {
+        ui->storePath->setText(store);
     }
 }
