@@ -92,7 +92,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
  * @param args
  */
 void MainWindow::executePass(QString args) {
-    executeWrapper("pass "+args);
+    executeWrapper(passExecutable + " " + args);
 }
 
 /**
