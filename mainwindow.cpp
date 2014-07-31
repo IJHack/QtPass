@@ -26,7 +26,7 @@ MainWindow::~MainWindow()
  */
 void MainWindow::checkConfig() {
 
-    QSettings settings("IJhack", "QtPass");
+    QSettings settings("IJHack", "QtPass");
 
     usePass = (settings.value("usePass") == "true");
 
@@ -41,6 +41,7 @@ void MainWindow::checkConfig() {
         process->waitForFinished();
         if (process->exitCode() == 0) {
             passExecutable = process->readAllStandardOutput();
+            usePass = true;
         }
     }
 
@@ -98,7 +99,7 @@ void MainWindow::config() {
             passStore = d->getStorePath();
             usePass = d->usePass();
 
-            QSettings settings("IJhack", "QtPass");
+            QSettings settings("IJHack", "QtPass");
 
             settings.setValue("passExecutable", passExecutable);
             settings.setValue("gitExecutable", gitExecutable);
