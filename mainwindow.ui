@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>QT pass wrapper</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -34,31 +34,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>437</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuTest">
-    <property name="title">
-     <string>Test</string>
-    </property>
-    <addaction name="actionStuff"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>About</string>
-    </property>
-    <addaction name="actionQtpass"/>
-   </widget>
-   <addaction name="menuTest"/>
-   <addaction name="menuAbout"/>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionStuff">
    <property name="text">
     <string>Stuff</string>

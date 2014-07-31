@@ -1,16 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     passStore = QDir::homePath()+"/.password-store/";
-    ui->setupUi(this);
 
+    ui->setupUi(this);
     ui->treeView->setModel(&model);
     ui->treeView->setRootIndex(model.setRootPath(passStore));
     ui->treeView->setColumnHidden( 1, true );
@@ -25,7 +22,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    system("pass git pull");
+    process.start("pass", QStringList() << "git" << "pull");
+    process.waitForFinished();
+    ui->textBrowser->setText(process.readAllStandardOutput());
 }
 
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
@@ -34,8 +33,9 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         QString passFile = model.filePath(index);
         passFile.replace(".gpg", "");
         passFile.replace(passStore, "");
-
-        system(("pass "+passFile).toLocal8Bit());
+        process.start("pass", QStringList() << passFile);
+        process.waitForFinished();
+        ui->textBrowser->setText(process.readAllStandardOutput());
     }
 }
 
