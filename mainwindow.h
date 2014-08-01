@@ -40,7 +40,7 @@ private:
     QProcess *process;
     void updateText();
     void executePass(QString);
-    void executeWrapper(QString);
+    void executeWrapper(QString, QString);
     Dialog* d;
     void config();
 };
