@@ -168,6 +168,7 @@ void MainWindow::executeWrapper(QString app, QString args) {
     process->setWorkingDirectory(passStore);
     process->start("sh", QStringList() << "-c" << app + " " + args);
     ui->textBrowser->clear();
+    ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
 }
 
@@ -181,7 +182,6 @@ void MainWindow::readyRead() {
         ui->textBrowser->setTextColor(Qt::red);
         output += error;
     } else {
-        ui->textBrowser->setTextColor(Qt::black);
         output += process->readAllStandardOutput();
     }
     ui->textBrowser->setText(output);
