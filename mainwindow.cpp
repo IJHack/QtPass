@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     process = new QProcess(this);
+    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
+    connect(process, SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
+    connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
 }
 
@@ -158,20 +161,83 @@ void MainWindow::executePass(QString args) {
 
 /**
  * @brief MainWindow::executeWrapper
+ * @param app
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args) {
     process->setWorkingDirectory(passStore);
     process->start("sh", QStringList() << "-c" << app + " " + args);
-    process->waitForFinished();
-    QString output = process->readAllStandardError();
-    if (output.size() > 0) {
+    ui->textBrowser->clear();
+    enableUiElements(false);
+}
+
+/**
+ * @brief MainWindow::readyRead
+ */
+void MainWindow::readyRead() {
+    QString output = ui->textBrowser->document()->toPlainText();
+    QString error = process->readAllStandardError();
+    if (error.size() > 0) {
         ui->textBrowser->setTextColor(Qt::red);
+        output += error;
     } else {
         ui->textBrowser->setTextColor(Qt::black);
-        output = process->readAllStandardOutput();
+        output += process->readAllStandardOutput();
     }
     ui->textBrowser->setText(output);
+}
+
+/**
+ * @brief MainWindow::processFinished
+ * @param exitCode
+ * @param exitStatus
+ */
+void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
+    if (exitStatus != QProcess::NormalExit || exitCode > 0) {
+         ui->textBrowser->setTextColor(Qt::red);
+    }
+    readyRead();
+    enableUiElements(true);
+}
+
+/**
+ * @brief MainWindow::enableUiElements
+ * @param state
+ */
+void MainWindow::enableUiElements(bool state) {
+    ui->updateButton->setEnabled(state);
+    ui->treeView->setEnabled(state);
+}
+
+/**
+ * @brief MainWindow::processError
+ * @param error
+ */
+void MainWindow::processError(QProcess::ProcessError error)
+{
+    QString errorString;
+    switch (error) {
+        case QProcess::FailedToStart:
+            errorString = tr("QProcess::FailedToStart");
+            break;
+        case QProcess::Crashed:
+            errorString = tr("QProcess::Crashed");
+            break;
+        case QProcess::Timedout:
+            errorString = tr("QProcess::Timedout");
+            break;
+        case QProcess::ReadError:
+            errorString = tr("QProcess::ReadError");
+            break;
+        case QProcess::WriteError:
+            errorString = tr("QProcess::WriteError");
+            break;
+        case QProcess::UnknownError:
+            errorString = tr("QProcess::UnknownError");
+            break;
+    }
+    ui->textBrowser->setTextColor(Qt::red);
+    ui->textBrowser->setText(errorString);
 }
 
 /**

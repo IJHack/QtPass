@@ -28,21 +28,25 @@ private slots:
     void on_updateButton_clicked();
     void on_treeView_clicked(const QModelIndex &index);
     void on_configButton_clicked();
+    void readyRead();
+    void processFinished(int, QProcess::ExitStatus);
+    void processError(QProcess::ProcessError);
 
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
+    bool usePass;
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
-    bool usePass;
     QProcess *process;
+    Dialog* d;
     void updateText();
     void executePass(QString);
     void executeWrapper(QString, QString);
-    Dialog* d;
     void config();
+    void enableUiElements(bool);
 };
 
 #endif // MAINWINDOW_H
