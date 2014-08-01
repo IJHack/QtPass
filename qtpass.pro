@@ -20,3 +20,5 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
             dialog.ui
+
+TRANSLATIONS    +=  localization/localization_nl.ts
