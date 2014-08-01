@@ -126,7 +126,7 @@ void MainWindow::on_updateButton_clicked()
     if (usePass) {
         executePass("git pull");
     } else {
-        executeWrapper(gitExecutable + " pull");
+        executeWrapper(gitExecutable, "pull");
     }
 }
 
@@ -143,7 +143,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
             passFile.replace(passStore, "");
             executePass(passFile);
         } else {
-            executeWrapper(gpgExecutable + " --no-tty -dq " + passFile);
+            executeWrapper(gpgExecutable , "--no-tty -dq " + passFile);
         }
     }
 }
@@ -153,16 +153,16 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
  * @param args
  */
 void MainWindow::executePass(QString args) {
-    executeWrapper("pass " + args);
+    executeWrapper(passExecutable, args);
 }
 
 /**
  * @brief MainWindow::executeWrapper
  * @param args
  */
-void MainWindow::executeWrapper(QString args) {
+void MainWindow::executeWrapper(QString app, QString args) {
     process->setWorkingDirectory(passStore);
-    process->start("sh", QStringList() << "-c" << args);
+    process->start("sh", QStringList() << "-c" << app + " " + args);
     process->waitForFinished();
     QString output = process->readAllStandardError();
     if (output.size() > 0) {
