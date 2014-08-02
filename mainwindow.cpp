@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "qclipboard.h"
 
 /**
  * @brief MainWindow::MainWindow
@@ -185,6 +186,12 @@ void MainWindow::readyRead() {
         output += process->readAllStandardOutput();
     }
     ui->textBrowser->setText(output);
+
+    //Copy first line to clipboard
+    QClipboard *clip = QApplication::clipboard();
+    QStringList tokens = output.split("\n",QString::SkipEmptyParts);
+    clip->setText(tokens[0]);
+
 }
 
 /**
