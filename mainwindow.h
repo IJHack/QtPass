@@ -16,6 +16,8 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+enum actionType { GPG, GIT };
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -51,6 +53,7 @@ private:
     void executeWrapper(QString, QString);
     void config();
     void enableUiElements(bool);
+    actionType currentAction;
 };
 
 #endif // MAINWINDOW_H

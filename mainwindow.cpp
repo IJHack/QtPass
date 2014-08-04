@@ -141,6 +141,7 @@ void MainWindow::config() {
  */
 void MainWindow::on_updateButton_clicked()
 {
+    currentAction = GIT;
     if (usePass) {
         executePass("git pull");
     } else {
@@ -154,6 +155,7 @@ void MainWindow::on_updateButton_clicked()
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
+    currentAction = GPG;
     if (model.fileInfo(index).isFile()){
         QString passFile = model.filePath(index);
         if (usePass) {
@@ -209,6 +211,7 @@ void MainWindow::clearClipboard()
 {
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->clear();
+    ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
 }
 
 /**
@@ -222,11 +225,12 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     }
     readyRead();
     enableUiElements(true);
-    if (useClipboard) {
+    if (currentAction == GPG && useClipboard) {
         //Copy first line to clipboard
         QClipboard *clip = QApplication::clipboard();
         QStringList tokens =  ui->textBrowser->document()->toPlainText().split("\n",QString::SkipEmptyParts);
         clip->setText(tokens[0]);
+        ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
         if (useAutoclear) {
               QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
         }
