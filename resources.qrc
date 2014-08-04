@@ -6,5 +6,9 @@
         <file>localization/localization_hu_HU.ts</file>
         <file>localization/localization_nl_NL.qm</file>
         <file>localization/localization_nl_NL.ts</file>
+        <file>artwork/icon.icns</file>
+        <file>artwork/icon.ico</file>
+        <file>artwork/icon.png</file>
+        <file>artwork/icon.svg</file>
     </qresource>
 </RCC>

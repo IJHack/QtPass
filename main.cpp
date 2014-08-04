@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
     
     MainWindow w;
 
+    app.setWindowIcon(QIcon(":artwork/icon.png"));
+
     w.checkConfig();
     w.show();
 
