@@ -26,5 +26,3 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_hu_HU.ts
 
 RESOURCES += resources.qrc
-
-TRANSLATIONS += localization/localization_nl_NL.ts
