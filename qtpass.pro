@@ -39,3 +39,6 @@ win32 {
 }
 
 OTHER_FILES += LICENSE
+
+target.path = /usr/local/bin/
+INSTALLS += target
