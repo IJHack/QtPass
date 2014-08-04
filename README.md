@@ -14,6 +14,7 @@ Read only access to password-store content.
 TODO
 ----
 1. ~~non-blocking actions~~
-2. multi-lingual
-3. edit, insert
-4. gpg-id management (per-folder)
+2. ~~multi-lingual~~
+3. filtering and autocomplete
+4. edit, insert
+5. gpg-id management (per-folder)

@@ -16,6 +16,8 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+enum actionType { GPG, GIT };
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -31,11 +33,15 @@ private slots:
     void readyRead();
     void processFinished(int, QProcess::ExitStatus);
     void processError(QProcess::ProcessError);
+    void clearClipboard();
 
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
     bool usePass;
+    bool useClipboard;
+    bool useAutoclear;
+    int autoclearSeconds;
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
@@ -47,6 +53,7 @@ private:
     void executeWrapper(QString, QString);
     void config();
     void enableUiElements(bool);
+    actionType currentAction;
 };
 
 #endif // MAINWINDOW_H
