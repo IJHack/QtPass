@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "qclipboard.h"
+#include <QClipboard>
+#include <QTimer>
 
 /**
  * @brief MainWindow::MainWindow
@@ -33,6 +34,10 @@ void MainWindow::checkConfig() {
     QSettings settings("IJHack", "QtPass");
 
     usePass = (settings.value("usePass") == "true");
+
+    useClipboard = (settings.value("useClipboard") == "true");
+    useAutoclear = (settings.value("useAutoclear") == "true");
+    autoclearSeconds = settings.value("autoclearSeconds").toInt();
 
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
@@ -100,6 +105,9 @@ void MainWindow::config() {
     d->setGpgPath(gpgExecutable);
     d->setStorePath(passStore);
     d->usePass(usePass);
+    d->useClipboard(useClipboard);
+    d->useAutoclear(useAutoclear);
+    d->setAutoclear(autoclearSeconds);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -108,6 +116,9 @@ void MainWindow::config() {
             gpgExecutable = d->getGpgPath();
             passStore = d->getStorePath();
             usePass = d->usePass();
+            useClipboard = d->useClipboard();
+            useAutoclear = d->useAutoclear();
+            autoclearSeconds = d->getAutoclear();
 
             QSettings settings("IJHack", "QtPass");
 
@@ -116,6 +127,9 @@ void MainWindow::config() {
             settings.setValue("gpgExecutable", gpgExecutable);
             settings.setValue("passStore", passStore);
             settings.setValue("usePass", usePass ? "true" : "false");
+            settings.setValue("useClipboard", useClipboard ? "true" : "false");
+            settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
+            settings.setValue("autoclearSeconds", autoclearSeconds);
 
             ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
@@ -186,12 +200,15 @@ void MainWindow::readyRead() {
         output += process->readAllStandardOutput();
     }
     ui->textBrowser->setText(output);
+}
 
-    //Copy first line to clipboard
-    QClipboard *clip = QApplication::clipboard();
-    QStringList tokens = output.split("\n",QString::SkipEmptyParts);
-    clip->setText(tokens[0]);
-
+/**
+ * @brief MainWindow::clearClipboard
+ */
+void MainWindow::clearClipboard()
+{
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->clear();
 }
 
 /**
@@ -205,6 +222,15 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     }
     readyRead();
     enableUiElements(true);
+    if (useClipboard) {
+        //Copy first line to clipboard
+        QClipboard *clip = QApplication::clipboard();
+        QStringList tokens =  ui->textBrowser->document()->toPlainText().split("\n",QString::SkipEmptyParts);
+        clip->setText(tokens[0]);
+        if (useAutoclear) {
+              QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+        }
+    }
 }
 
 /**

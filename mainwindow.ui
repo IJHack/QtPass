@@ -45,16 +45,12 @@
     </item>
    </layout>
   </widget>
-  <action name="actionStuff">
-   <property name="text">
-    <string>Stuff</string>
-   </property>
-  </action>
   <action name="actionQtpass">
    <property name="text">
     <string>qtpass</string>
    </property>
   </action>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

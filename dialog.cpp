@@ -207,3 +207,87 @@ void Dialog::on_toolButtonStore_clicked()
         ui->storePath->setText(store);
     }
 }
+
+/**
+ * @brief Dialog::on_checkBoxClipboard_clicked
+ */
+void Dialog::on_checkBoxClipboard_clicked()
+{
+    if (ui->checkBoxClipboard->isChecked()) {
+        ui->checkBoxAutoclear->setEnabled(true);
+        if (ui->checkBoxAutoclear->isChecked()) {
+            ui->spinBoxAutoclearSeconds->setEnabled(true);
+            ui->labelSeconds->setEnabled(true);
+        } else {
+            ui->spinBoxAutoclearSeconds->setEnabled(false);
+            ui->labelSeconds->setEnabled(false);
+        }
+    } else {
+        ui->checkBoxAutoclear->setEnabled(false);
+        ui->spinBoxAutoclearSeconds->setEnabled(false);
+        ui->labelSeconds->setEnabled(false);
+    }
+}
+
+/**
+ * @brief Dialog::useClipboard
+ */
+void Dialog::useClipboard(bool useClipboard)
+{
+    ui->checkBoxClipboard->setChecked(useClipboard);
+    on_checkBoxClipboard_clicked();
+}
+
+/**
+ * @brief Dialog::useAutoclear
+ * @param useAutoclear
+ */
+void Dialog::useAutoclear(bool useAutoclear)
+{
+    ui->checkBoxAutoclear->setChecked(useAutoclear);
+    on_checkBoxAutoclear_clicked();
+}
+
+/**
+ * @brief Dialog::setAutoclear
+ * @param seconds
+ */
+void Dialog::setAutoclear(int seconds)
+{
+    ui->spinBoxAutoclearSeconds->setValue(seconds);
+}
+
+/**
+ * @brief Dialog::useClipboard
+ * @return
+ */
+bool Dialog::useClipboard()
+{
+    return ui->checkBoxClipboard->isChecked();
+}
+
+/**
+ * @brief Dialog::useAutoclear
+ * @return
+ */
+bool Dialog::useAutoclear()
+{
+    return ui->checkBoxAutoclear->isChecked();
+}
+
+/**
+ * @brief Dialog::getAutoclear
+ * @return
+ */
+int Dialog::getAutoclear()
+{
+    return ui->spinBoxAutoclearSeconds->value();
+}
+
+/**
+ * @brief Dialog::on_checkBoxAutoclear_clicked
+ */
+void Dialog::on_checkBoxAutoclear_clicked()
+{
+    on_checkBoxClipboard_clicked();
+}

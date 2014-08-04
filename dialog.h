@@ -20,11 +20,17 @@ public:
     void setGpgPath(QString);
     void setStorePath(QString);
     void usePass(bool);
+    void useClipboard(bool);
+    void useAutoclear(bool);
+    void setAutoclear(int);
     QString getPassPath();
     QString getGitPath();
     QString getGpgPath();
     QString getStorePath();
     bool usePass();
+    bool useClipboard();
+    bool useAutoclear();
+    int getAutoclear();
 
 private slots:
     void on_radioButtonNative_clicked();
@@ -33,6 +39,10 @@ private slots:
     void on_toolButtonGpg_clicked();
     void on_toolButtonPass_clicked();
     void on_toolButtonStore_clicked();
+
+    void on_checkBoxClipboard_clicked();
+
+    void on_checkBoxAutoclear_clicked();
 
 private:
     Ui::Dialog *ui;
