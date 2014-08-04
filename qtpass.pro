@@ -22,3 +22,5 @@ FORMS     += mainwindow.ui \
              dialog.ui
 
 RESOURCES += resources.qrc
+
+TRANSLATIONS += localization/localization_nl_NL.ts
