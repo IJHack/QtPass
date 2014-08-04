@@ -13,16 +13,18 @@ TEMPLATE   = app
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
-             dialog.cpp
+             dialog.cpp \
+             storemodel.cpp
 
 HEADERS   += mainwindow.h \
-             dialog.h
+             dialog.h \
+             storemodel.h
 
 FORMS     += mainwindow.ui \
              dialog.ui
 
-TRANSLATIONS    +=  localization/localization_nl_NL.ts \
-                    localization/localization_de_DE.ts \
-                    localization/localization_hu_HU.ts
+TRANSLATIONS += localization/localization_nl_NL.ts \
+                localization/localization_de_DE.ts \
+                localization/localization_hu_HU.ts
 
 RESOURCES += resources.qrc

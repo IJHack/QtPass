@@ -174,14 +174,16 @@ void MainWindow::on_updateButton_clicked()
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
     currentAction = GPG;
+    QString filePath = model.filePath(proxyModel.mapToSource(index));
+    QString passFile = filePath;
+    passFile.replace(".gpg", "");
+    passFile.replace(passStore, "");
+//    ui->lineEdit->setText(passFile);
     if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
-        QString passFile = model.filePath(proxyModel.mapToSource(index));
         if (usePass) {
-            passFile.replace(".gpg", "");
-            passFile.replace(passStore, "");
             executePass(passFile);
         } else {
-            executeWrapper(gpgExecutable , "--no-tty -dq " + passFile);
+            executeWrapper(gpgExecutable , "--no-tty -dq " + filePath);
         }
     }
 }
