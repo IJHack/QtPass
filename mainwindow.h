@@ -31,11 +31,15 @@ private slots:
     void readyRead();
     void processFinished(int, QProcess::ExitStatus);
     void processError(QProcess::ProcessError);
+    void clearClipboard();
 
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
     bool usePass;
+    bool useClipboard;
+    bool useAutoclear;
+    int autoclearSeconds;
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
