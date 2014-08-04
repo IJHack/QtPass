@@ -4,11 +4,10 @@
 #include <QMainWindow>
 #include <QTreeView>
 #include <QFileSystemModel>
-#include <QSortFilterProxyModel>
 #include <QCompleter>
 #include <QProcess>
 #include <QSettings>
-
+#include "storemodel.h"
 #include "dialog.h"
 
 namespace Ui {
@@ -43,7 +42,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
-    QSortFilterProxyModel proxyModel;
+    StoreModel proxyModel;
 //    QCompleter completer;
     bool usePass;
     bool useClipboard;
