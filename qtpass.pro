@@ -21,4 +21,7 @@ HEADERS   += mainwindow.h \
 FORMS     += mainwindow.ui \
              dialog.ui
 
+TRANSLATIONS    +=  localization/localization_nl_NL.ts \
+                    localization/localization_de_DE.ts
+
 RESOURCES += resources.qrc
