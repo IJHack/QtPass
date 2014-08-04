@@ -8,7 +8,12 @@ QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET     = qtpass
+macx {
+    TARGET = QtPass
+} else {
+    TARGET = qtpass
+}
+
 TEMPLATE   = app
 
 SOURCES   += main.cpp\
@@ -29,7 +34,10 @@ RESOURCES += resources.qrc
 
 TRANSLATIONS += localization/localization_nl_NL.ts
 
-RC_FILE = windows.rc
+win32 {
+    RC_FILE = windows.rc
+} else:macx {
+    ICON = artwork/icon.icns
+}
 
-ICON += artwork/icon.svg \
-        artwork/icon.icns
+OTHER_FILES += LICENSE
