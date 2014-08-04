@@ -327,9 +327,15 @@ void MainWindow::on_configButton_clicked()
     config();
 }
 
+/**
+ * @brief MainWindow::on_lineEdit_textChanged
+ * @param arg1
+ */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
-    proxyModel.setFilterWildcard(arg1);
+    Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive;
+    QRegExp regExp(arg1, caseSensitivity);
+    proxyModel.setFilterRegExp(regExp);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }
