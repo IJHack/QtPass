@@ -31,4 +31,5 @@ TRANSLATIONS += localization/localization_nl_NL.ts
 
 RC_FILE = windows.rc
 
-ICON = artwork/icon.icns
+ICON += artwork/icon.svg \
+        artwork/icon.icns
