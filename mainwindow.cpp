@@ -86,11 +86,28 @@ void MainWindow::checkConfig() {
         config();
     }
 
-    ui->treeView->setModel(&model);
-    ui->treeView->setRootIndex(model.setRootPath(passStore));
+    model.setNameFilters(QStringList() << "*.gpg");
+    model.setNameFilterDisables(false);
+
+    proxyModel.setSourceModel(&model);
+    model.fetchMore(model.setRootPath(passStore));
+    model.sort(0,Qt::AscendingOrder);
+
+    ui->treeView->setModel(&proxyModel);
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
     ui->treeView->setColumnHidden(1, true);
     ui->treeView->setColumnHidden(2, true);
     ui->treeView->setColumnHidden(3, true);
+    ui->treeView->setHeaderHidden(true);
+    ui->treeView->setIndentation(15);
+    ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+
+//    completer.setModel(&proxyModel);
+//    completer.setCompletionColumn(0);
+//    completer.setCaseSensitivity(Qt::CaseInsensitive);
+//    completer.setModelSorting(QCompleter::CaseInsensitivelySortedModel);
+//    completer.setCompletionPrefix(passStore);
+//    ui->lineEdit->setCompleter(&completer);
 }
 
 /**
@@ -141,6 +158,7 @@ void MainWindow::config() {
  */
 void MainWindow::on_updateButton_clicked()
 {
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     currentAction = GIT;
     if (usePass) {
         executePass("git pull");
@@ -156,8 +174,8 @@ void MainWindow::on_updateButton_clicked()
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
     currentAction = GPG;
-    if (model.fileInfo(index).isFile()){
-        QString passFile = model.filePath(index);
+    if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
+        QString passFile = model.filePath(proxyModel.mapToSource(index));
         if (usePass) {
             passFile.replace(".gpg", "");
             passFile.replace(passStore, "");
@@ -307,4 +325,11 @@ void MainWindow::setGpgExecutable(QString path) {
 void MainWindow::on_configButton_clicked()
 {
     config();
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
+    proxyModel.setFilterWildcard(arg1);
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }

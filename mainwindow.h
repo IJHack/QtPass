@@ -2,10 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileSystemModel>
 #include <QTreeView>
+#include <QFileSystemModel>
+#include <QSortFilterProxyModel>
+#include <QCompleter>
 #include <QProcess>
 #include <QSettings>
+
 #include "dialog.h"
 
 namespace Ui {
@@ -35,9 +38,13 @@ private slots:
     void processError(QProcess::ProcessError);
     void clearClipboard();
 
+    void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
+    QSortFilterProxyModel proxyModel;
+//    QCompleter completer;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
