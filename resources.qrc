@@ -2,6 +2,8 @@
     <qresource prefix="/">
         <file>localization/localization_de_DE.qm</file>
         <file>localization/localization_de_DE.ts</file>
+        <file>localization/localization_hu_HU.qm</file>
+        <file>localization/localization_hu_HU.ts</file>
         <file>localization/localization_nl_NL.qm</file>
         <file>localization/localization_nl_NL.ts</file>
     </qresource>
