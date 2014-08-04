@@ -4,21 +4,21 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = qtpass
-TEMPLATE = app
+TARGET     = qtpass
+TEMPLATE   = app
 
-SOURCES += main.cpp\
-           mainwindow.cpp \
-           dialog.cpp
+SOURCES   += main.cpp\
+             mainwindow.cpp \
+             dialog.cpp
 
-HEADERS  += mainwindow.h \
-            dialog.h
+HEADERS   += mainwindow.h \
+             dialog.h
 
-FORMS    += mainwindow.ui \
-            dialog.ui
+FORMS     += mainwindow.ui \
+             dialog.ui
 
-TRANSLATIONS    +=  localization/localization_nl_NL.ts
+RESOURCES += resources.qrc
