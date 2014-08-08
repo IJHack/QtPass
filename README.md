@@ -1,7 +1,7 @@
 qtpass
 ======
 
-QtPass is a gui for pass
+QtPass is a gui for [pass](http://www.passwordstore.org/)
 
 Current state
 -------------
