@@ -6,12 +6,12 @@
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="20"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="29"/>
@@ -24,57 +24,57 @@
     <message>
         <location filename="../dialog.ui" line="36"/>
         <source>Executable pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführbares pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="46"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Nativ</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="58"/>
         <source>Executable git</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführbares git</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="65"/>
         <source>Executable gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführbares gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="91"/>
         <source>Native git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemeigenes git/gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="98"/>
         <source>Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass benutzen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="107"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiteres</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="115"/>
         <source>Folder password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner für Passwortspeicher</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="136"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwischenablage</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="143"/>
         <source>Autoclear</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch löschen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekunden</translation>
     </message>
 </context>
 <context>
@@ -82,22 +82,22 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="58"/>
         <source>qtpass</source>
-        <translation type="unfinished"></translation>
+        <translation>qtpass</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="147"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwischenablage gelöscht</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="237"/>
         <source>Password copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort in Zwischenablage kopiert</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="262"/>
