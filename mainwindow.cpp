@@ -108,6 +108,7 @@ void MainWindow::checkConfig() {
 //    completer.setModelSorting(QCompleter::CaseInsensitivelySortedModel);
 //    completer.setCompletionPrefix(passStore);
 //    ui->lineEdit->setCompleter(&completer);
+
 }
 
 /**
