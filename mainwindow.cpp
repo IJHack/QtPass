@@ -105,13 +105,6 @@ void MainWindow::checkConfig() {
 
     selectionModel = new QItemSelectionModel(&proxyModel);
 
-//    completer.setModel(&proxyModel);
-//    completer.setCompletionColumn(0);
-//    completer.setCaseSensitivity(Qt::CaseInsensitive);
-//    completer.setModelSorting(QCompleter::CaseInsensitivelySortedModel);
-//    completer.setCompletionPrefix(passStore);
-//    ui->lineEdit->setCompleter(&completer);
-
 }
 
 /**
@@ -354,5 +347,5 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 
 void MainWindow::on_lineEdit_returnPressed()
 {
-    // TODO open selected item ;-)
+    // TODO open first applicable item ;-)
 }

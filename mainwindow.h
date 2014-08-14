@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QTreeView>
 #include <QFileSystemModel>
-#include <QCompleter>
 #include <QProcess>
 #include <QSettings>
 #include "storemodel.h"
@@ -46,7 +45,6 @@ private:
     QFileSystemModel model;
     StoreModel proxyModel;
     QItemSelectionModel *selectionModel;
-//    QCompleter completer;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
