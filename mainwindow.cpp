@@ -103,6 +103,8 @@ void MainWindow::checkConfig() {
     ui->treeView->setIndentation(15);
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
+    selectionModel = new QItemSelectionModel(&proxyModel);
+
 //    completer.setModel(&proxyModel);
 //    completer.setCompletionColumn(0);
 //    completer.setCaseSensitivity(Qt::CaseInsensitive);
@@ -345,4 +347,12 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
     proxyModel.setFilterRegExp(regExp);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
     // TODO select first
+    QItemSelection selection = selectionModel->selection();
+    // now what ?
+    selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
+}
+
+void MainWindow::on_lineEdit_returnPressed()
+{
+    // TODO open selected item ;-)
 }
