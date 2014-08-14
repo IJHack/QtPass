@@ -90,8 +90,9 @@ void MainWindow::checkConfig() {
     model.setNameFilterDisables(false);
 
     proxyModel.setSourceModel(&model);
+    proxyModel.setFSModel(&model);
     model.fetchMore(model.setRootPath(passStore));
-    model.sort(0,Qt::AscendingOrder);
+    model.sort(0, Qt::AscendingOrder);
 
     ui->treeView->setModel(&proxyModel);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
@@ -336,9 +337,9 @@ void MainWindow::on_configButton_clicked()
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
+    ui->treeView->expandAll();
     ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
-    Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive;
-    QRegExp regExp(arg1, caseSensitivity);
+    QRegExp regExp(arg1, Qt::CaseInsensitive);
     proxyModel.setFilterRegExp(regExp);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }

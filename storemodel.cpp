@@ -47,8 +47,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const
     else
     {
         QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
-        QString type = sourceModel()->data(useIndex, Qt::DisplayRole).toString();
-        if ( ! type.contains(filterRegExp()))
+        QString path = fs->filePath(useIndex);
+        if ( ! path.contains(filterRegExp()))
         {
             retVal = false;
         }
@@ -58,4 +58,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const
         }
     }
     return retVal;
+}
+
+void StoreModel::setFSModel(QFileSystemModel *sourceModel) {
+    fs = sourceModel;
 }
