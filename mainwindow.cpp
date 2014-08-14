@@ -339,7 +339,10 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     ui->treeView->expandAll();
     ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
-    QRegExp regExp(arg1, Qt::CaseInsensitive);
+    QString query = arg1;
+    query.replace(QRegExp(" "), ".*");
+    QRegExp regExp(query, Qt::CaseInsensitive);
     proxyModel.setFilterRegExp(regExp);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
+    // TODO select first
 }
