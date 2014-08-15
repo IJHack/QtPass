@@ -60,6 +60,7 @@ private:
     void executeWrapper(QString, QString);
     void config();
     void enableUiElements(bool);
+    void selectFirstFile();
     actionType currentAction;
 };
 
