@@ -58,7 +58,7 @@
     </message>
     <message>
         <location filename="../dialog.ui" line="115"/>
-        <source>Folder password-store</source
+        <source>Folder password-store</source>
         <translation>Jelszó-tároló mappa</translation>
     </message>
     <message>
