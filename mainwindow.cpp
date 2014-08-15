@@ -221,6 +221,7 @@ void MainWindow::readyRead() {
 
 /**
  * @brief MainWindow::clearClipboard
+ * @TODO check clipboard content (only clear if contains the password)
  */
 void MainWindow::clearClipboard()
 {
@@ -259,6 +260,7 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
 void MainWindow::enableUiElements(bool state) {
     ui->updateButton->setEnabled(state);
     ui->treeView->setEnabled(state);
+    ui->lineEdit->setEnabled(state);
 }
 
 /**
@@ -340,17 +342,49 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
     selectFirstFile();
 }
 
+/**
+ * @brief MainWindow::on_lineEdit_returnPressed
+ */
 void MainWindow::on_lineEdit_returnPressed()
 {
     selectFirstFile();
-    // TODO open selected item ;-)
+    on_treeView_clicked(ui->treeView->currentIndex());
 }
 
+/**
+ * @brief MainWindow::selectFirstFile
+ */
 void MainWindow::selectFirstFile()
 {
-    QModelIndex index;
-    QItemSelection selection;
+    QModelIndex index = proxyModel.mapFromSource(model.setRootPath(passStore));
+    index = firstFile(index);
+    ui->treeView->setCurrentIndex(index);
+}
 
-    //selectionModel->setCurrentIndex(index, QItemSelectionModel::Select);
-    selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
+/**
+ * @brief MainWindow::firstFile
+ * @param parentIndex
+ * @return QModelIndex
+ */
+QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
+    QModelIndex index = parentIndex;
+    int numRows = proxyModel.rowCount(parentIndex);
+    for (int row = 0; row < numRows; ++row) {
+        index = proxyModel.index(row, 0, parentIndex);
+        if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+            return index;
+        }
+        if (proxyModel.hasChildren(index)) {
+            return firstFile(index);
+        }
+    }
+    return index;
+}
+
+/**
+ * @brief MainWindow::on_clearButton_clicked
+ */
+void MainWindow::on_clearButton_clicked()
+{
+    ui->lineEdit->clear();
 }
