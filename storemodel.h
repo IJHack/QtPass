@@ -9,13 +9,14 @@ class StoreModel : public QSortFilterProxyModel
     Q_OBJECT
 private:
     QFileSystemModel* fs;
+    QString store;
 
 public:
     StoreModel();
 
     bool filterAcceptsRow(int, const QModelIndex &) const;
     bool ShowThis(const QModelIndex) const;
-    void setFSModel(QFileSystemModel *sourceModel);
+    void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
 };
 
 #endif // STOREMODEL_H
