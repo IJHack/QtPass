@@ -28,9 +28,10 @@ HEADERS   += mainwindow.h \
 FORMS     += mainwindow.ui \
              dialog.ui
 
-TRANSLATIONS += localization/localization_nl_NL.ts \
-                localization/localization_de_DE.ts \
-                localization/localization_hu_HU.ts
+TRANSLATIONS    +=  localization/localization_nl_NL.ts \
+                    localization/localization_de_DE.ts \
+                    localization/localization_hu_HU.ts \
+                    localization/localization_sv_SE.ts
 
 RESOURCES += resources.qrc
 

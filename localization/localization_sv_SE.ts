@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hu_HU">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation>Konfiguráció</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="20"/>
         <source>Pass</source>
-        <translation>Pass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="29"/>
@@ -19,62 +19,62 @@
         <location filename="../dialog.ui" line="79"/>
         <location filename="../dialog.ui" line="122"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="36"/>
         <source>Executable pass</source>
-        <translation>Futtatható Pass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="46"/>
         <source>Native</source>
-        <translation>Natív</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="58"/>
         <source>Executable git</source>
-        <translation>Futtatható git</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="65"/>
         <source>Executable gpg</source>
-        <translation>Futattható gpg</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="91"/>
         <source>Native git/gpg</source>
-        <translation>Natív git/gpg</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="98"/>
         <source>Use pass</source>
-        <translation>Pass alkalmazása</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="107"/>
         <source>Other</source>
-        <translation>Más</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="115"/>
         <source>Folder password-store</source>
-        <translation>Jelszó-tároló mappa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="136"/>
         <source>Clipboard</source>
-        <translation>Vágólap</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="143"/>
         <source>Autoclear</source>
-        <translation>Automatikus tisztítás</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Seconds</source>
-        <translation>Perc</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -82,71 +82,61 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation>QtPass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation>Frissítés</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation>Konfig</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="58"/>
-        <source>qtpass</source>
-        <translation>qtpass</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="147"/>
-        <source>Updating password-store</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="218"/>
-        <source>Clipboard cleared</source>
-        <translation>Vágólap tiszta</translation>
+        <location filename="../mainwindow.ui" line="50"/>
+        <source>qtpass</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="215"/>
+        <source>Clipboard cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Password copied to clipboard</source>
-        <translation>Jelszó vágólapra másolva</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="259"/>
+        <source>QProcess::FailedToStart</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="262"/>
-        <source>QProcess::FailedToStart</source>
-        <translation>QProcess:NemIndultEl</translation>
+        <source>QProcess::Crashed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="265"/>
-        <source>QProcess::Crashed</source>
-        <translation>QProcess:Összeomlás</translation>
+        <source>QProcess::Timedout</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="268"/>
-        <source>QProcess::Timedout</source>
-        <translation>QProcess:Időtúllépés</translation>
+        <source>QProcess::ReadError</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="271"/>
-        <source>QProcess::ReadError</source>
-        <translation>QProcess:OlvasásiHiba</translation>
+        <source>QProcess::WriteError</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="274"/>
-        <source>QProcess::WriteError</source>
-        <translation>IrásHiba</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
-        <translation>IsmeretlenHiba</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="322"/>
-        <source>Looking for: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
