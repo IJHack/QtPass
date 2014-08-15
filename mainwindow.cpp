@@ -86,11 +86,23 @@ void MainWindow::checkConfig() {
         config();
     }
 
-    ui->treeView->setModel(&model);
-    ui->treeView->setRootIndex(model.setRootPath(passStore));
+    model.setNameFilters(QStringList() << "*.gpg");
+    model.setNameFilterDisables(false);
+
+    proxyModel.setSourceModel(&model);
+    proxyModel.setFSModel(&model);
+    selectionModel = new QItemSelectionModel(&proxyModel);
+    model.fetchMore(model.setRootPath(passStore));
+    model.sort(0, Qt::AscendingOrder);
+
+    ui->treeView->setModel(&proxyModel);
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
     ui->treeView->setColumnHidden(1, true);
     ui->treeView->setColumnHidden(2, true);
     ui->treeView->setColumnHidden(3, true);
+    ui->treeView->setHeaderHidden(true);
+    ui->treeView->setIndentation(15);
+    ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 }
 
 /**
@@ -141,6 +153,7 @@ void MainWindow::config() {
  */
 void MainWindow::on_updateButton_clicked()
 {
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     currentAction = GIT;
     if (usePass) {
         executePass("git pull");
@@ -156,14 +169,16 @@ void MainWindow::on_updateButton_clicked()
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
     currentAction = GPG;
-    if (model.fileInfo(index).isFile()){
-        QString passFile = model.filePath(index);
+    QString filePath = model.filePath(proxyModel.mapToSource(index));
+    QString passFile = filePath;
+    passFile.replace(".gpg", "");
+    passFile.replace(passStore, "");
+//    ui->lineEdit->setText(passFile);
+    if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
         if (usePass) {
-            passFile.replace(".gpg", "");
-            passFile.replace(passStore, "");
             executePass(passFile);
         } else {
-            executeWrapper(gpgExecutable , "--no-tty -dq " + passFile);
+            executeWrapper(gpgExecutable , "--no-tty -dq " + filePath);
         }
     }
 }
@@ -206,6 +221,7 @@ void MainWindow::readyRead() {
 
 /**
  * @brief MainWindow::clearClipboard
+ * @TODO check clipboard content (only clear if contains the password)
  */
 void MainWindow::clearClipboard()
 {
@@ -244,6 +260,7 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
 void MainWindow::enableUiElements(bool state) {
     ui->updateButton->setEnabled(state);
     ui->treeView->setEnabled(state);
+    ui->lineEdit->setEnabled(state);
 }
 
 /**
@@ -307,4 +324,67 @@ void MainWindow::setGpgExecutable(QString path) {
 void MainWindow::on_configButton_clicked()
 {
     config();
+}
+
+/**
+ * @brief MainWindow::on_lineEdit_textChanged
+ * @param arg1
+ */
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    ui->treeView->expandAll();
+    ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
+    QString query = arg1;
+    query.replace(QRegExp(" "), ".*");
+    QRegExp regExp(query, Qt::CaseInsensitive);
+    proxyModel.setFilterRegExp(regExp);
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
+    selectFirstFile();
+}
+
+/**
+ * @brief MainWindow::on_lineEdit_returnPressed
+ */
+void MainWindow::on_lineEdit_returnPressed()
+{
+    selectFirstFile();
+    on_treeView_clicked(ui->treeView->currentIndex());
+}
+
+/**
+ * @brief MainWindow::selectFirstFile
+ */
+void MainWindow::selectFirstFile()
+{
+    QModelIndex index = proxyModel.mapFromSource(model.setRootPath(passStore));
+    index = firstFile(index);
+    ui->treeView->setCurrentIndex(index);
+}
+
+/**
+ * @brief MainWindow::firstFile
+ * @param parentIndex
+ * @return QModelIndex
+ */
+QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
+    QModelIndex index = parentIndex;
+    int numRows = proxyModel.rowCount(parentIndex);
+    for (int row = 0; row < numRows; ++row) {
+        index = proxyModel.index(row, 0, parentIndex);
+        if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+            return index;
+        }
+        if (proxyModel.hasChildren(index)) {
+            return firstFile(index);
+        }
+    }
+    return index;
+}
+
+/**
+ * @brief MainWindow::on_clearButton_clicked
+ */
+void MainWindow::on_clearButton_clicked()
+{
+    ui->lineEdit->clear();
 }
