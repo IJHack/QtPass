@@ -92,7 +92,7 @@
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation>Inställning</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
