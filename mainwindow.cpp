@@ -91,6 +91,7 @@ void MainWindow::checkConfig() {
 
     proxyModel.setSourceModel(&model);
     proxyModel.setFSModel(&model);
+    selectionModel = new QItemSelectionModel(&proxyModel);
     model.fetchMore(model.setRootPath(passStore));
     model.sort(0, Qt::AscendingOrder);
 
@@ -102,9 +103,6 @@ void MainWindow::checkConfig() {
     ui->treeView->setHeaderHidden(true);
     ui->treeView->setIndentation(15);
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-
-    selectionModel = new QItemSelectionModel(&proxyModel);
-
 }
 
 /**
@@ -339,13 +337,20 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
     QRegExp regExp(query, Qt::CaseInsensitive);
     proxyModel.setFilterRegExp(regExp);
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
-    // TODO select first
-    QItemSelection selection = selectionModel->selection();
-    // now what ?
-    selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
+    selectFirstFile();
 }
 
 void MainWindow::on_lineEdit_returnPressed()
 {
-    // TODO open first applicable item ;-)
+    selectFirstFile();
+    // TODO open selected item ;-)
+}
+
+void MainWindow::selectFirstFile()
+{
+    QModelIndex index;
+    QItemSelection selection;
+
+    //selectionModel->setCurrentIndex(index, QItemSelectionModel::Select);
+    selectionModel->select(selection, QItemSelectionModel::ClearAndSelect);
 }
