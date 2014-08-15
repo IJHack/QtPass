@@ -6,12 +6,12 @@
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="20"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="29"/>
@@ -24,57 +24,57 @@
     <message>
         <location filename="../dialog.ui" line="36"/>
         <source>Executable pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Exekverbar pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="46"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Nativ</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="58"/>
         <source>Executable git</source>
-        <translation type="unfinished"></translation>
+        <translation>Exekverbar git</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="65"/>
         <source>Executable gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Exekverbar gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="91"/>
         <source>Native git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Nativ git/gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="98"/>
         <source>Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="107"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Annan</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="115"/>
         <source>Folder password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapp för lösenordslagring</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="136"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Urklipp</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="143"/>
         <source>Autoclear</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatiskt rensning</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekunder</translation>
     </message>
 </context>
 <context>
@@ -87,27 +87,27 @@
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
         <source>qtpass</source>
-        <translation type="unfinished"></translation>
+        <translation>qtpass</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="215"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Urklippet rensat</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="234"/>
         <source>Password copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösenordet kopierat till urklippet</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="259"/>
