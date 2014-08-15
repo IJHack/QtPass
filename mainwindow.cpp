@@ -90,7 +90,7 @@ void MainWindow::checkConfig() {
     model.setNameFilterDisables(false);
 
     proxyModel.setSourceModel(&model);
-    proxyModel.setFSModel(&model);
+    proxyModel.setModelAndStore(&model, passStore);
     selectionModel = new QItemSelectionModel(&proxyModel);
     model.fetchMore(model.setRootPath(passStore));
     model.sort(0, Qt::AscendingOrder);

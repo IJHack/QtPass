@@ -48,6 +48,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const
     {
         QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
         QString path = fs->filePath(useIndex);
+        path.replace(".gpg", "");
+        path.replace(store, "");
         if ( ! path.contains(filterRegExp()))
         {
             retVal = false;
@@ -60,6 +62,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const
     return retVal;
 }
 
-void StoreModel::setFSModel(QFileSystemModel *sourceModel) {
+void StoreModel::setModelAndStore(QFileSystemModel *sourceModel, QString passStore) {
     fs = sourceModel;
+    store = passStore;
 }
