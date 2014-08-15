@@ -41,7 +41,8 @@ win32 {
     ICON = artwork/icon.icns
 }
 
-OTHER_FILES += LICENSE
+OTHER_FILES += LICENSE \
+               README.md
 
 target.path = /usr/local/bin/
 INSTALLS += target
