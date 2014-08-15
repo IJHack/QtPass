@@ -2,10 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileSystemModel>
 #include <QTreeView>
+#include <QFileSystemModel>
 #include <QProcess>
 #include <QSettings>
+#include "storemodel.h"
 #include "dialog.h"
 
 namespace Ui {
@@ -34,10 +35,18 @@ private slots:
     void processFinished(int, QProcess::ExitStatus);
     void processError(QProcess::ProcessError);
     void clearClipboard();
+    void on_lineEdit_textChanged(const QString &arg1);
+    void on_lineEdit_returnPressed();
+
+    void on_clearButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     QFileSystemModel model;
+    StoreModel proxyModel;
+    QItemSelectionModel *selectionModel;
+    QProcess *process;
+    Dialog* d;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
@@ -45,15 +54,15 @@ private:
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
-    QString gpgExecutable;
-    QProcess *process;
-    Dialog* d;
+    QString gpgExecutable;   
+    actionType currentAction;
     void updateText();
     void executePass(QString);
     void executeWrapper(QString, QString);
     void config();
     void enableUiElements(bool);
-    actionType currentAction;
+    void selectFirstFile();
+    QModelIndex firstFile(QModelIndex parentIndex);
 };
 
 #endif // MAINWINDOW_H

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_DE">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation>Einstellungen</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="20"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../dialog.ui" line="36"/>
         <source>Executable pass</source>
-        <translation>Ausführbares pass</translation>
+        <translation>Exekverbar pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="46"/>
@@ -34,47 +34,47 @@
     <message>
         <location filename="../dialog.ui" line="58"/>
         <source>Executable git</source>
-        <translation>Ausführbares git</translation>
+        <translation>Exekverbar git</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="65"/>
         <source>Executable gpg</source>
-        <translation>Ausführbares gpg</translation>
+        <translation>Exekverbar gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="91"/>
         <source>Native git/gpg</source>
-        <translation>Systemeigenes git/gpg</translation>
+        <translation>Nativ git/gpg</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="98"/>
         <source>Use pass</source>
-        <translation>Pass benutzen</translation>
+        <translation>Använd pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="107"/>
         <source>Other</source>
-        <translation>Weiteres</translation>
+        <translation>Annan</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="115"/>
         <source>Folder password-store</source>
-        <translation>Ordner für Passwortspeicher</translation>
+        <translation>Mapp för lösenordslagring</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="136"/>
         <source>Clipboard</source>
-        <translation>Zwischenablage</translation>
+        <translation>Urklipp</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="143"/>
         <source>Autoclear</source>
-        <translation>Automatisch löschen</translation>
+        <translation>Automatiskt rensning</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Seconds</source>
-        <translation>Sekunden</translation>
+        <translation>Sekunder</translation>
     </message>
 </context>
 <context>
@@ -82,71 +82,61 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation>QtPass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation>Aktualisieren</translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation>Einstellungen</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="58"/>
+        <location filename="../mainwindow.ui" line="50"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
-        <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="218"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Clipboard cleared</source>
-        <translation>Zwischenablage gelöscht</translation>
+        <translation>Urklippet rensat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Password copied to clipboard</source>
-        <translation>Passwort in Zwischenablage kopiert</translation>
+        <translation>Lösenordet kopierat till urklippet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="262"/>
+        <location filename="../mainwindow.cpp" line="259"/>
         <source>QProcess::FailedToStart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>QProcess::Crashed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>QProcess::Timedout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>QProcess::ReadError</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="274"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>QProcess::WriteError</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="274"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="322"/>
-        <source>Looking for: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

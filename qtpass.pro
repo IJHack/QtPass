@@ -18,21 +18,22 @@ TEMPLATE   = app
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
-             dialog.cpp
+             dialog.cpp \
+             storemodel.cpp
 
 HEADERS   += mainwindow.h \
-             dialog.h
+             dialog.h \
+             storemodel.h
 
 FORMS     += mainwindow.ui \
              dialog.ui
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_de_DE.ts \
-                    localization/localization_hu_HU.ts
+                    localization/localization_hu_HU.ts \
+                    localization/localization_sv_SE.ts
 
 RESOURCES += resources.qrc
-
-TRANSLATIONS += localization/localization_nl_NL.ts
 
 win32 {
     RC_FILE = windows.rc
@@ -40,4 +41,8 @@ win32 {
     ICON = artwork/icon.icns
 }
 
-OTHER_FILES += LICENSE
+OTHER_FILES += LICENSE \
+               README.md
+
+target.path = /usr/local/bin/
+INSTALLS += target
