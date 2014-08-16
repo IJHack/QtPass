@@ -48,8 +48,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const
     {
         QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
         QString path = fs->filePath(useIndex);
-        path.replace(".gpg", "");
-        path.replace(store, "");
+        path.replace(QRegExp("\\.gpg$"), "");
+        path.replace(QRegExp("^" + store), "");
         if ( ! path.contains(filterRegExp()))
         {
             retVal = false;
@@ -62,7 +62,35 @@ bool StoreModel::ShowThis(const QModelIndex index) const
     return retVal;
 }
 
+/**
+ * @brief StoreModel::setModelAndStore
+ * @param sourceModel
+ * @param passStore
+ */
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel, QString passStore) {
     fs = sourceModel;
     store = passStore;
+}
+
+/**
+ * @brief StoreModel::data
+ * @param index
+ * @param role
+ * @return
+ */
+QVariant StoreModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid())
+        return QVariant();
+
+    QVariant initial_value;
+    initial_value = QSortFilterProxyModel::data(index, role);
+
+    if (role == Qt::DisplayRole) {
+        QString name = initial_value.toString();
+        name.replace(QRegExp("\\.gpg$"), "");
+        initial_value.setValue(name);
+    }
+
+    return initial_value;
 }

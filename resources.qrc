@@ -14,9 +14,5 @@
         <file>artwork/icon.ico</file>
         <file>artwork/icon.png</file>
         <file>artwork/icon.svg</file>
-        <file>localization/localization_pl_PL.qm</file>
-        <file>localization/localization_pl_PL.ts</file>
-        <file>localization/localization_sv_SE.qm</file>
-        <file>localization/localization_sv_SE.ts</file>
     </qresource>
 </RCC>
