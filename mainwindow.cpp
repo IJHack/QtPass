@@ -171,9 +171,8 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     currentAction = GPG;
     QString filePath = model.filePath(proxyModel.mapToSource(index));
     QString passFile = filePath;
-    passFile.replace(".gpg", "");
-    passFile.replace(passStore, "");
-//    ui->lineEdit->setText(passFile);
+    passFile.replace(QRegExp("\\.gpg$"), "");
+    passFile.replace(QRegExp("^" + passStore), "");
     if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
         if (usePass) {
             executePass(passFile);
