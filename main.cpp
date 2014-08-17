@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    SingleApplication app(argc, argv, "QtPass");
+    SingleApplication app(argc, argv, "testQtPass");
     if (app.isRunning()) {
         if (argc == 1 ) {
             app.sendMessage("show");
