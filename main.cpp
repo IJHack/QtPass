@@ -8,8 +8,15 @@ int main(int argc, char *argv[])
     if (app.isRunning()) {
         if (argc == 1 ) {
             app.sendMessage("show");
-        } else if (argc == 2) {
-            app.sendMessage(argv[1]);
+        } else if (argc >= 2) {
+            QString text = "";
+            for (int i = 1; i < argc; ++i) {
+                text += argv[i];
+                if (argc >= (i -1)) {
+                    text += " ";
+                }
+                app.sendMessage(text);
+            }
         }
         return 0;
     }
