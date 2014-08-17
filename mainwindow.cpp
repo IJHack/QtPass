@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     process = new QProcess(this);
-    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
+//    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
     connect(process, SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
@@ -38,6 +38,8 @@ void MainWindow::checkConfig() {
     useClipboard = (settings.value("useClipboard") == "true");
     useAutoclear = (settings.value("useAutoclear") == "true");
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
+    hidePassword = (settings.value("hidePassword") == "true");
+    hideContent = (settings.value("hideContent") == "true");
 
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
@@ -103,6 +105,8 @@ void MainWindow::checkConfig() {
     ui->treeView->setHeaderHidden(true);
     ui->treeView->setIndentation(15);
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+
+    ui->textBrowser->setOpenExternalLinks(true);
 }
 
 /**
@@ -120,6 +124,8 @@ void MainWindow::config() {
     d->useClipboard(useClipboard);
     d->useAutoclear(useAutoclear);
     d->setAutoclear(autoclearSeconds);
+    d->hidePassword(hidePassword);
+    d->hideContent(hideContent);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -131,6 +137,8 @@ void MainWindow::config() {
             useClipboard = d->useClipboard();
             useAutoclear = d->useAutoclear();
             autoclearSeconds = d->getAutoclear();
+            hidePassword = d->hidePassword();
+            hideContent = d->hideContent();
 
             QSettings settings("IJHack", "QtPass");
 
@@ -142,6 +150,8 @@ void MainWindow::config() {
             settings.setValue("useClipboard", useClipboard ? "true" : "false");
             settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
             settings.setValue("autoclearSeconds", autoclearSeconds);
+            settings.setValue("hidePassword", hidePassword ? "true" : "false");
+            settings.setValue("hideContent", hideContent ? "true" : "false");
 
             ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
@@ -206,7 +216,7 @@ void MainWindow::executeWrapper(QString app, QString args) {
 /**
  * @brief MainWindow::readyRead
  */
-void MainWindow::readyRead() {
+void MainWindow::readyRead(bool finished = false) {
     QString output = ui->textBrowser->document()->toPlainText();
     QString error = process->readAllStandardError();
     if (error.size() > 0) {
@@ -214,6 +224,24 @@ void MainWindow::readyRead() {
         output += error;
     } else {
         output += process->readAllStandardOutput();
+        if (finished && currentAction == GPG) {
+            QClipboard *clip = QApplication::clipboard();
+            QStringList tokens =  output.split("\n");
+            if (useClipboard) {
+                clip->setText(tokens[0]);
+                ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
+                if (useAutoclear) {
+                      QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+                }
+            }
+            if (hidePassword) {
+                tokens.pop_front();
+                output = tokens.join("\n");
+            }
+            if (hideContent) {
+                output = tr("Content hidden");
+            }
+        }
     }
     ui->textBrowser->setText(output);
 }
@@ -238,18 +266,9 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     if (exitStatus != QProcess::NormalExit || exitCode > 0) {
          ui->textBrowser->setTextColor(Qt::red);
     }
-    readyRead();
+    readyRead(true);
     enableUiElements(true);
-    if (currentAction == GPG && useClipboard) {
-        //Copy first line to clipboard
-        QClipboard *clip = QApplication::clipboard();
-        QStringList tokens =  ui->textBrowser->document()->toPlainText().split("\n",QString::SkipEmptyParts);
-        clip->setText(tokens[0]);
-        ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
-        if (useAutoclear) {
-              QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
-        }
-    }
+
 }
 
 /**

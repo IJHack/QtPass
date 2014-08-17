@@ -23,6 +23,8 @@ public:
     void useClipboard(bool);
     void useAutoclear(bool);
     void setAutoclear(int);
+    void hidePassword(bool);
+    void hideContent(bool);
     QString getPassPath();
     QString getGitPath();
     QString getGpgPath();
@@ -31,6 +33,8 @@ public:
     bool useClipboard();
     bool useAutoclear();
     int getAutoclear();
+    bool hidePassword();
+    bool hideContent();
 
 private slots:
     void on_radioButtonNative_clicked();

@@ -31,7 +31,7 @@ private slots:
     void on_updateButton_clicked();
     void on_treeView_clicked(const QModelIndex &index);
     void on_configButton_clicked();
-    void readyRead();
+    void readyRead(bool finished);
     void processFinished(int, QProcess::ExitStatus);
     void processError(QProcess::ProcessError);
     void clearClipboard();
@@ -50,6 +50,8 @@ private:
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
+    bool hidePassword;
+    bool hideContent;
     int autoclearSeconds;
     QString passStore;
     QString passExecutable;
