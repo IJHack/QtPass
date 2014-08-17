@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "util.h"
 #include <QClipboard>
 #include <QTimer>
 
@@ -50,38 +51,17 @@ void MainWindow::checkConfig() {
 
     passExecutable = settings.value("passExecutable").toString();
     if (passExecutable == "") {
-        process->start("which pass");
-        process->waitForFinished();
-        if (process->exitCode() == 0) {
-            passExecutable = process->readAllStandardOutput().trimmed();
-            settings.setValue("passExecutable", passExecutable);
-            usePass = true;
-            settings.setValue("usePass", "true");
-        }
+        passExecutable = Util::findBinaryInPath("pass");
     }
 
     gitExecutable = settings.value("gitExecutable").toString();
     if (gitExecutable == "") {
-        process->start("which git");
-        process->waitForFinished();
-        if (process->exitCode() == 0) {
-            gitExecutable = process->readAllStandardOutput().trimmed();
-            settings.setValue("gitExecutable", gitExecutable);
-        }
+        gitExecutable = Util::findBinaryInPath("git");
     }
 
     gpgExecutable = settings.value("gpgExecutable").toString();
     if (gpgExecutable == "") {
-        process->start("which gpg2");
-        process->waitForFinished();
-        if (process->exitCode() != 0) {
-            process->start("which gpg");
-            process->waitForFinished();
-        }
-        if (process->exitCode() == 0) {
-            gpgExecutable = process->readAllStandardOutput().trimmed();
-            settings.setValue("gpgExecutable", gpgExecutable);
-        }
+        gpgExecutable = Util::findBinaryInPath("gpg");
     }
 
     if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
