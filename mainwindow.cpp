@@ -225,24 +225,25 @@ void MainWindow::readyRead(bool finished = false) {
     } else {
         output += process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
-            QClipboard *clip = QApplication::clipboard();
-            QStringList tokens =  output.split("\n");
             if (useClipboard) {
+                QClipboard *clip = QApplication::clipboard();
+                QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
                 ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
                 if (useAutoclear) {
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
                 }
-            }
-            if (hidePassword) {
-                tokens.pop_front();
-                output = tokens.join("\n");
-            }
-            if (hideContent) {
-                output = tr("Content hidden");
+                if (hidePassword) {
+                    tokens.pop_front();
+                    output = tokens.join("\n");
+                }
+                if (hideContent) {
+                    output = tr("Content hidden");
+                }
             }
         }
     }
+    //output.replace(QRegExp("((http|ftp)+(s)?:\/\/[^<>\s]+)"), "<a href=\"\0\">\0</a>");
     ui->textBrowser->setText(output);
 }
 
