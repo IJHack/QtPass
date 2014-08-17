@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    SingleApplication app(argc, argv, "QtPass");
+    SingleApplication app(argc, argv, "ijhackQtPass");
     if (app.isRunning()) {
         if (argc == 1 ) {
             app.sendMessage("show");
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
             QString text = "";
             for (int i = 1; i < argc; ++i) {
                 text += argv[i];
-                if (argc >= (i -1)) {
+                if (argc >= (i - 2)) {
                     text += " ";
                 }
                 app.sendMessage(text);

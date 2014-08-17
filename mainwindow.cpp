@@ -425,7 +425,9 @@ void MainWindow::messageAvailable(QString message)
         ui->lineEdit->selectAll();
         ui->lineEdit->setFocus();
     } else {
-        ui->statusBar->showMessage(message, 3000);
+        ui->treeView->expandAll();
+        ui->lineEdit->setText(message);
+        on_lineEdit_returnPressed();
     }
     show();
     raise();
