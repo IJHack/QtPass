@@ -1,10 +1,14 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QTranslator>
+#include "singleapplication.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    SingleApplication app(argc, argv, "QtPass");
+    if (app.isRunning()) {
+        return 0;
+    }
    
     QCoreApplication::setOrganizationName("IJHack");
     QCoreApplication::setOrganizationDomain("ijhack.org");
