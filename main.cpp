@@ -6,7 +6,11 @@ int main(int argc, char *argv[])
 {
     SingleApplication app(argc, argv, "QtPass");
     if (app.isRunning()) {
-        app.sendMessage("show");
+        if (argc == 1 ) {
+            app.sendMessage("show");
+        } else if (argc == 2) {
+            app.sendMessage(argv[1]);
+        }
         return 0;
     }
    
