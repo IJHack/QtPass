@@ -79,12 +79,12 @@
     <message>
         <location filename="../dialog.ui" line="170"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj lösenord</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="177"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj innehåll</translation>
     </message>
 </context>
 <context>
