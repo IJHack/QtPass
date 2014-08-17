@@ -243,8 +243,9 @@ void MainWindow::readyRead(bool finished = false) {
             }
         }
     }
-    //output.replace(QRegExp("((http|ftp)+(s)?:\/\/[^<>\s]+)"), "<a href=\"\0\">\0</a>");
-    ui->textBrowser->setText(output);
+    output.replace(QRegExp("((http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*)"), "<a href=\"\\1\">\\1</a>");
+    output.replace(QRegExp("\n"), "<br />");
+    ui->textBrowser->setHtml(output);
 }
 
 /**
