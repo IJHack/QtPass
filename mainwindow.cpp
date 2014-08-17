@@ -401,8 +401,13 @@ void MainWindow::setApp(SingleApplication *app)
 
 void MainWindow::messageAvailable(QString message)
 {
-    if (message != "show") {
-        ui->statusBar->showMessage(message, 3000);
+    if (message == "show") {
+        ui->lineEdit->selectAll();
+        ui->lineEdit->setFocus();
+    } else {
+        ui->treeView->expandAll();
+        ui->lineEdit->setText(message);
+        on_lineEdit_returnPressed();
     }
     show();
     raise();
