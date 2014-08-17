@@ -44,7 +44,7 @@
     <message>
         <location filename="../dialog.ui" line="20"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="33"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../dialog.ui" line="146"/>
         <source>Clipboard</source>
-        <translation>Klapbord</translation>
+        <translation>Klembord</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../dialog.ui" line="170"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Verberg wachtwoord</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="177"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Verberg inhoud</translation>
     </message>
 </context>
 <context>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source></source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
@@ -136,7 +136,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.ui" line="83"/>
         <source>qtpass</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="166"/>
@@ -146,7 +146,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="257"/>
         <source>Clipboard cleared</source>
-        <translation>Klapbord gewist</translation>
+        <translation>Klembord gewist</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="232"/>
@@ -156,7 +156,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="242"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoud verborgen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="293"/>
