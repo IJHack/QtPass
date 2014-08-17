@@ -421,7 +421,10 @@ void MainWindow::setApp(SingleApplication *app)
 
 void MainWindow::messageAvailable(QString message)
 {
-    if (message != "show") {
+    if (message == "show") {
+        ui->lineEdit->selectAll();
+        ui->lineEdit->setFocus();
+    } else {
         ui->statusBar->showMessage(message, 3000);
     }
     show();
