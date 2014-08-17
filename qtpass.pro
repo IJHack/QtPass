@@ -20,12 +20,14 @@ SOURCES   += main.cpp\
              mainwindow.cpp \
              dialog.cpp \
              storemodel.cpp \
-             singleapplication.cpp
+             singleapplication.cpp \
+    util.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
              storemodel.h \
-             singleapplication.h
+             singleapplication.h \
+    util.h
 
 FORMS     += mainwindow.ui \
              dialog.ui
