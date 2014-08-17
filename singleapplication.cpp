@@ -2,6 +2,12 @@
 
 #include "singleapplication.h"
 
+/**
+ * @brief SingleApplication::SingleApplication
+ * @param argc
+ * @param argv
+ * @param uniqueKey
+ */
 SingleApplication::SingleApplication(int &argc, char *argv[], const QString uniqueKey) : QApplication(argc, argv), _uniqueKey(uniqueKey)
 {
         sharedMemory.setKey(_uniqueKey);
@@ -25,6 +31,9 @@ SingleApplication::SingleApplication(int &argc, char *argv[], const QString uniq
 
 // public slots.
 
+/**
+ * @brief SingleApplication::receiveMessage
+ */
 void SingleApplication::receiveMessage()
 {
         QLocalSocket *localSocket = localServer->nextPendingConnection();
@@ -40,12 +49,20 @@ void SingleApplication::receiveMessage()
 }
 
 // public functions.
-
+/**
+ * @brief SingleApplication::isRunning
+ * @return
+ */
 bool SingleApplication::isRunning()
 {
         return _isRunning;
 }
 
+/**
+ * @brief SingleApplication::sendMessage
+ * @param message
+ * @return
+ */
 bool SingleApplication::sendMessage(const QString &message)
 {
         if (!_isRunning)

@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QTranslator>
-#include "singleapplication.h"
 
 int main(int argc, char *argv[])
 {
     SingleApplication app(argc, argv, "QtPass");
     if (app.isRunning()) {
+        app.sendMessage("show");
         return 0;
     }
    
@@ -20,10 +20,12 @@ int main(int argc, char *argv[])
     QString locale = QLocale::system().name();
     translator.load(QString(":localization/localization_") + locale + QString(".qm"));
     app.installTranslator(&translator);
-    
+
     MainWindow w;
 
+    app.setActiveWindow(&w);
     app.setWindowIcon(QIcon(":artwork/icon.png"));
+    w.setApp(&app);
     w.checkConfig();
     w.show();
 
