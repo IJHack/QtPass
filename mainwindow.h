@@ -8,6 +8,7 @@
 #include <QSettings>
 #include "storemodel.h"
 #include "dialog.h"
+#include "singleapplication.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ public:
     void setGitExecutable(QString);
     void setGpgExecutable(QString);
     void checkConfig();
+    void setApp(SingleApplication* app);
 
 private slots:
     void on_updateButton_clicked();
@@ -37,8 +39,8 @@ private slots:
     void clearClipboard();
     void on_lineEdit_textChanged(const QString &arg1);
     void on_lineEdit_returnPressed();
-
     void on_clearButton_clicked();
+    void messageAvailable(QString message);
 
 private:
     Ui::MainWindow *ui;
@@ -46,6 +48,7 @@ private:
     StoreModel proxyModel;
     QItemSelectionModel *selectionModel;
     QProcess *process;
+    SingleApplication *a;
     Dialog* d;
     bool usePass;
     bool useClipboard;

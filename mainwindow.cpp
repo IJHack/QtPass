@@ -408,3 +408,22 @@ void MainWindow::on_clearButton_clicked()
 {
     ui->lineEdit->clear();
 }
+
+/**
+ * @brief MainWindow::setApp
+ * @param app
+ */
+void MainWindow::setApp(SingleApplication *app)
+{
+    a = app;
+    connect(a, SIGNAL(messageAvailable(QString)), this, SLOT(messageAvailable(QString)));
+}
+
+void MainWindow::messageAvailable(QString message)
+{
+    if (message != "show") {
+        ui->statusBar->showMessage(message, 3000);
+    }
+    show();
+    raise();
+}
