@@ -8,6 +8,8 @@ class Util
 {
 public:
     static QString findBinaryInPath(QString binary);
+    static QString findPasswordStore();
+
 private:
     static void initialiseEnvironment();
     static QProcessEnvironment _env;

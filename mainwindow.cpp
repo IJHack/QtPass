@@ -44,8 +44,7 @@ void MainWindow::checkConfig() {
 
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
-        passStore = QDir::homePath()+"/.password-store/";
-        /** @TODO exists? */
+        passStore = Util::findPasswordStore();
         settings.setValue("passStore", passStore);
     }
 
@@ -213,6 +212,7 @@ void MainWindow::readyRead(bool finished = false) {
                 clip->setText(tokens[0]);
                 ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
                 if (useAutoclear) {
+                      clippedPass = tokens[0];
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
                 }
                 if (hidePassword) {
@@ -237,8 +237,13 @@ void MainWindow::readyRead(bool finished = false) {
 void MainWindow::clearClipboard()
 {
     QClipboard *clipboard = QApplication::clipboard();
-    clipboard->clear();
-    ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
+    if (clipboard->text() == clippedPass) {
+        clipboard->clear();
+        clippedPass = "";
+        ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
+    } else {
+        ui->statusBar->showMessage(tr("Clipboard not cleared"), 3000);
+    }
 }
 
 /**

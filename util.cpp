@@ -2,6 +2,7 @@
 #include <QFileInfo>
 #include <QProcessEnvironment>
 #include <QString>
+#include <QDir>
 #include "util.h"
 
 QProcessEnvironment Util::_env;
@@ -13,6 +14,19 @@ void Util::initialiseEnvironment()
         _env = QProcessEnvironment::systemEnvironment();
         _envInitialised = true;
     }
+}
+
+QString Util::findPasswordStore()
+{
+    QString path;
+    initialiseEnvironment();
+    if (_env.contains("PASSWORD_STORE_DIR")) {
+        path = _env.value("PASSWORD_STORE_DIR");
+    } else {
+        /* @TODO checks */
+        path = QDir::homePath()+"/.password-store/";
+    }
+    return path;
 }
 
 QString Util::findBinaryInPath(QString binary)
