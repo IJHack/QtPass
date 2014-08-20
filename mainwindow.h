@@ -59,7 +59,8 @@ private:
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
-    QString gpgExecutable;   
+    QString gpgExecutable;
+    QString clippedPass;
     actionType currentAction;
     void updateText();
     void executePass(QString);
