@@ -87,6 +87,8 @@ void MainWindow::checkConfig() {
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
     ui->textBrowser->setOpenExternalLinks(true);
+
+    ui->lineEdit->setFocus();
 }
 
 /**
@@ -399,6 +401,10 @@ void MainWindow::setApp(SingleApplication *app)
     connect(a, SIGNAL(messageAvailable(QString)), this, SLOT(messageAvailable(QString)));
 }
 
+/**
+ * @brief MainWindow::messageAvailable
+ * @param message
+ */
 void MainWindow::messageAvailable(QString message)
 {
     if (message == "show") {
