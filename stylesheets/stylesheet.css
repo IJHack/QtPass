@@ -139,15 +139,14 @@ img {
   max-width: 739px;
   padding: 5px;
   margin: 10px 0 10px 0;
- /* 
- border: 1px solid #ebebeb;
-
+/*
+  border: 1px solid #ebebeb;
   box-shadow: 0 0 5px #ebebeb;
   -webkit-box-shadow: 0 0 5px #ebebeb;
   -moz-box-shadow: 0 0 5px #ebebeb;
   -o-box-shadow: 0 0 5px #ebebeb;
   -ms-box-shadow: 0 0 5px #ebebeb;
- */
+*/
 }
 
 p img {
@@ -422,4 +421,29 @@ Small Device Styles
     font-size: 11px;
   }
 
+}
+
+
+/*********************
+   Anne Jan Brouwer
+*********************/
+
+.hidden {
+	display: none;
+}
+
+.screenshots {
+	position: relative;
+	height: 520px;
+}
+
+.screenshots img {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+}
+
+#config {
+	top: -30px;
+	left: 30px;
 }
