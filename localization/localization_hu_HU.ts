@@ -79,12 +79,12 @@
     <message>
         <location filename="../dialog.ui" line="170"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó elrejtése</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="177"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Oldal elrejtése</translation>
     </message>
 </context>
 <context>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="58"/>
@@ -136,7 +136,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="166"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó-tároló frissítése</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="257"/>
@@ -151,7 +151,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="242"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Oldal elrejtve</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="293"/>
@@ -186,7 +186,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="354"/>
         <source>Looking for: </source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés: </translation>
     </message>
 </context>
 </TS>
