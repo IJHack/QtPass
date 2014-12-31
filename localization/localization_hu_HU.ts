@@ -134,57 +134,62 @@ p, li { white-space: pre-wrap; }
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="166"/>
+        <location filename="../mainwindow.cpp" line="147"/>
         <source>Updating password-store</source>
         <translation>Jelszó-tároló frissítése</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="257"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Clipboard cleared</source>
         <translation>Vágólap tiszta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="232"/>
+        <location filename="../mainwindow.cpp" line="213"/>
         <source>Password copied to clipboard</source>
         <translation>Jelszó vágólapra másolva</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="223"/>
         <source>Content hidden</source>
         <translation>Oldal elrejtve</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="245"/>
+        <source>Clipboard not cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="282"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess:NemIndultEl</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="285"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess:Összeomlás</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="288"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess:Időtúllépés</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess:OlvasásiHiba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="305"/>
+        <location filename="../mainwindow.cpp" line="294"/>
         <source>QProcess::WriteError</source>
         <translation>IrásHiba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="308"/>
+        <location filename="../mainwindow.cpp" line="297"/>
         <source>QProcess::UnknownError</source>
         <translation>IsmeretlenHiba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="354"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Looking for: </source>
         <translation>Keresés: </translation>
     </message>
