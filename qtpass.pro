@@ -34,6 +34,8 @@ FORMS     += mainwindow.ui \
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_de_DE.ts \
+                    localization/localization_es_ES.ts \
+                    localization/localization_gl_ES.ts \
                     localization/localization_hu_HU.ts \
                     localization/localization_sv_SE.ts \
                     localization/localization_pl_PL.ts
