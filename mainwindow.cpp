@@ -166,7 +166,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     passFile.replace(QRegExp("^" + passStore), "");
     if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
         if (usePass) {
-            executePass(passFile);
+            executePass('"' + passFile+ '"');
         } else {
             executeWrapper(gpgExecutable , "--no-tty -dq " + filePath);
         }
@@ -225,6 +225,8 @@ void MainWindow::readyRead(bool finished = false) {
             }
         }
     }
+    output.replace(QRegExp("<"), "&lt;");
+    output.replace(QRegExp(">"), "&gt;");
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
     ui->textBrowser->setHtml(output);
