@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="de_DE">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation>Configuratie</translation>
+        <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="91"/>
-        <source>Native git/gpg</source>
-        <translation>Gebruik systeem git/gpg</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="98"/>
-        <source>Use pass</source>
-        <translation>Gebruik pass</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="46"/>
-        <source>Native</source>
-        <translation>Systeem eigen</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="58"/>
-        <source>Executable git</source>
-        <translation>Uitvoerbaar git</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="65"/>
-        <source>Executable gpg</source>
-        <translation>Uitvoerbaar gpg</translation>
+        <location filename="../dialog.ui" line="20"/>
+        <source>Pass</source>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="26"/>
@@ -42,49 +22,69 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="20"/>
-        <source>Pass</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../dialog.ui" line="33"/>
         <source>Executable pass</source>
-        <translation>Uitvoerbaar pass</translation>
+        <translation>Ejecutable pass</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="46"/>
+        <source>Native</source>
+        <translation>Nativo</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="58"/>
+        <source>Executable git</source>
+        <translation>Ejecutable git</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="65"/>
+        <source>Executable gpg</source>
+        <translation>Ejecutable gpg</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="91"/>
+        <source>Native git/gpg</source>
+        <translation>git/gpg nativo</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="98"/>
+        <source>Use pass</source>
+        <translation>Utilizar pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="117"/>
         <source>Other</source>
-        <translation>Anders</translation>
+        <translation>Otros</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="125"/>
         <source>Folder password-store</source>
-        <translation>Map password-store</translation>
+        <translation>Carpeta password-store</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="146"/>
         <source>Clipboard</source>
-        <translation>Klembord</translation>
+        <translation>Portapapeles</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Autoclear</source>
-        <translation>Automatisch wissen</translation>
+        <translation>Limpieza automática</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="160"/>
         <source>Seconds</source>
-        <translation>Seconden</translation>
+        <translation>Segundos</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="170"/>
         <source>Hide password</source>
-        <translation>Verberg wachtwoord</translation>
+        <translation>Ocultar contraseña</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="177"/>
         <source>Hide content</source>
-        <translation>Verberg inhoud</translation>
+        <translation>Ocultar contenido</translation>
     </message>
 </context>
 <context>
@@ -97,22 +97,17 @@
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation>Vernieuwen</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="23"/>
-        <source></source>
-        <translation></translation>
+        <translation>Actualizar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation>Configuratie</translation>
+        <translation>Configuración</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="58"/>
@@ -136,27 +131,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.ui" line="83"/>
         <source>qtpass</source>
-        <translation></translation>
+        <translation>qtpass</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="147"/>
         <source>Updating password-store</source>
-        <translation>Vernieuwen password-store</translation>
+        <translation>Actualizando password-store</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="243"/>
         <source>Clipboard cleared</source>
-        <translation>Klembord gewist</translation>
+        <translation>Portapapeles vacío</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="213"/>
         <source>Password copied to clipboard</source>
-        <translation>Wachtwoord gekopieërd</translation>
+        <translation>Contraseña copiada al portapapeles</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="223"/>
         <source>Content hidden</source>
-        <translation>Inhoud verborgen</translation>
+        <translation>Contenido oculto</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="245"/>
@@ -166,37 +161,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="282"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Fallo al iniciar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="285"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Roto</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="288"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Caducado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Error de lectura</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Error de escritura</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="297"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Error desconocido</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="343"/>
         <source>Looking for: </source>
-        <translation>Op zoek naar: </translation>
+        <translation>Buscando: </translation>
     </message>
 </context>
 </TS>

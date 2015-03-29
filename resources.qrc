@@ -2,10 +2,18 @@
     <qresource prefix="/">
         <file>localization/localization_de_DE.qm</file>
         <file>localization/localization_de_DE.ts</file>
+        <file>localization/localization_es_ES.qm</file>
+        <file>localization/localization_es_ES.ts</file>
+        <file>localization/localization_gl_ES.qm</file>
+        <file>localization/localization_gl_ES.ts</file>
         <file>localization/localization_hu_HU.qm</file>
         <file>localization/localization_hu_HU.ts</file>
         <file>localization/localization_nl_NL.qm</file>
         <file>localization/localization_nl_NL.ts</file>
+        <file>localization/localization_sv_SE.qm</file>
+        <file>localization/localization_sv_SE.ts</file>
+        <file>localization/localization_pl_PL.qm</file>
+        <file>localization/localization_pl_PL.ts</file>
         <file>artwork/icon.icns</file>
         <file>artwork/icon.ico</file>
         <file>artwork/icon.png</file>
