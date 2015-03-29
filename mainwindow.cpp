@@ -188,7 +188,7 @@ void MainWindow::executePass(QString args) {
  */
 void MainWindow::executeWrapper(QString app, QString args) {
     process->setWorkingDirectory(passStore);
-    process->start("sh", QStringList() << "-c" << app + " " + args);
+    process->start(app + " " + args);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
