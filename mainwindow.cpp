@@ -301,6 +301,8 @@ void MainWindow::processError(QProcess::ProcessError error)
     }
     ui->textBrowser->setTextColor(Qt::red);
     ui->textBrowser->setText(errorString);
+    if (process->state() == QProcess::NotRunning)
+        enableUiElements(true);
 }
 
 /**
