@@ -12,6 +12,7 @@
  */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
+    settings(NULL),
     ui(new Ui::MainWindow)
 {
     process = new QProcess(this);
@@ -27,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
  */
 MainWindow::~MainWindow()
 {
+    delete settings;
     delete ui;
 }
 
@@ -36,12 +38,24 @@ void MainWindow::normalizePassStore() {
     }
 }
 
+QSettings &MainWindow::getSettings() {
+    if (!settings) {
+        QString portable_ini = QCoreApplication::applicationDirPath() + "/qtpass.ini";
+        if (QFile(portable_ini).exists()) {
+            settings = new QSettings(portable_ini, QSettings::IniFormat);
+        } else {
+            settings = new QSettings("IJHack", "QtPass");
+        }
+    }
+    return *settings;
+}
+
 /**
  * @brief MainWindow::checkConfig
  */
 void MainWindow::checkConfig() {
 
-    QSettings settings("IJHack", "QtPass");
+    QSettings &settings(getSettings());
 
     usePass = (settings.value("usePass") == "true");
 
@@ -132,7 +146,7 @@ void MainWindow::config() {
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
 
-            QSettings settings("IJHack", "QtPass");
+            QSettings &settings(getSettings());
 
             settings.setValue("passExecutable", passExecutable);
             settings.setValue("gitExecutable", gitExecutable);
