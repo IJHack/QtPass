@@ -86,6 +86,7 @@ void MainWindow::checkConfig() {
     if (gpgExecutable == "") {
         gpgExecutable = Util::findBinaryInPath("gpg");
     }
+    gpgHome = settings.value("gpgHome").toString();
 
     if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
         config();
@@ -224,6 +225,13 @@ void MainWindow::executePass(QString args, QString input) {
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
     process->setWorkingDirectory(passStore);
+    if (!gpgHome.isEmpty()) {
+        QStringList env = QProcess::systemEnvironment();
+        QDir absHome(gpgHome);
+        absHome.makeAbsolute();
+        env << "GNUPGHOME=" + absHome.path();
+        process->setEnvironment(env);
+    }
     process->start('"' + app + "\" " + args);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
