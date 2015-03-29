@@ -23,8 +23,8 @@ SingleApplication::SingleApplication(int &argc, char *argv[], const QString uniq
                         return;
                 }
                 // create local server and listen to incomming messages from other instances.
-                localServer = new QLocalServer(this);
-                connect(localServer, SIGNAL(newConnection()), this, SLOT(receiveMessage()));
+                localServer.reset(new QLocalServer(this));
+                connect(localServer.data(), SIGNAL(newConnection()), this, SLOT(receiveMessage()));
                 localServer->listen(_uniqueKey);
         }
 }

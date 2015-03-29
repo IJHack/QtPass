@@ -46,12 +46,12 @@ QString Util::findBinaryInPath(QString binary)
         }
 
         foreach(QString entry, entries) {
-            QFileInfo *qfi = new QFileInfo(entry.append(binary));
+            QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
             qDebug() << entry;
 
-#ifdef WINDOWS
+#ifdef Q_OS_WIN
             if (!qfi->exists()) {
-                QFileInfo qfi = new QFileInfo(entry.append(".exe"));
+                qfi.reset(new QFileInfo(entry.append(".exe")));
             }
 #endif
             if (!qfi->isExecutable()) {
