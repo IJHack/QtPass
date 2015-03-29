@@ -7,7 +7,6 @@
 #include <QProcess>
 #include <QSettings>
 #include "storemodel.h"
-#include "dialog.h"
 #include "singleapplication.h"
 
 namespace Ui {
@@ -53,7 +52,6 @@ private:
     QScopedPointer<QItemSelectionModel> selectionModel;
     QScopedPointer<QProcess> process;
     SingleApplication *a;
-    QScopedPointer<Dialog> d;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
