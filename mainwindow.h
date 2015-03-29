@@ -46,14 +46,14 @@ private slots:
     void messageAvailable(QString message);
 
 private:
-    QSettings *settings;
-    Ui::MainWindow *ui;
+    QScopedPointer<QSettings> settings;
+    QScopedPointer<Ui::MainWindow> ui;
     QFileSystemModel model;
     StoreModel proxyModel;
-    QItemSelectionModel *selectionModel;
-    QProcess *process;
+    QScopedPointer<QItemSelectionModel> selectionModel;
+    QScopedPointer<QProcess> process;
     SingleApplication *a;
-    Dialog* d;
+    QScopedPointer<Dialog> d;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;

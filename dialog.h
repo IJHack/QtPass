@@ -49,7 +49,7 @@ private slots:
     void on_checkBoxAutoclear_clicked();
 
 private:
-    Ui::Dialog *ui;
+    QScopedPointer<Ui::Dialog> ui;
     void setGroupBoxState();
     QString selectExecutable();
     QString selectFolder();
