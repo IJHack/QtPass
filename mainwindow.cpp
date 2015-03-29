@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QInputDialog>
@@ -116,7 +117,7 @@ void MainWindow::checkConfig() {
  * @brief MainWindow::config
  */
 void MainWindow::config() {
-    d.reset(new Dialog());
+    QScopedPointer<Dialog> d(new Dialog());
     d->setModal(true);
 
     d->setPassPath(passExecutable);
