@@ -303,12 +303,13 @@ void MainWindow::clearClipboard()
  * @param exitStatus
  */
 void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
-    if (exitStatus != QProcess::NormalExit || exitCode > 0) {
+    bool error = exitStatus != QProcess::NormalExit || exitCode > 0;
+    if (error) {
          ui->textBrowser->setTextColor(Qt::red);
     }
     readyRead(true);
     enableUiElements(true);
-    if (currentAction == EDIT) {
+    if (!error && currentAction == EDIT) {
         on_treeView_clicked(ui->treeView->currentIndex());
     }
 }
