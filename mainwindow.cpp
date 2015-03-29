@@ -205,7 +205,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         if (usePass) {
             executePass('"' + file + '"');
         } else {
-            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq " + file);
+            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq \"" + file + '"');
         }
     }
 }
@@ -483,7 +483,7 @@ void MainWindow::setPassword(QString file, bool overwrite)
         }
         file += ".gpg";
         QString force(overwrite ? " --yes " : " ");
-        executeWrapper(gpgExecutable , force + "--batch -eq --output " + file + " -r " + recipient + " -", newValue);
+        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" -r " + recipient + " -", newValue);
     }
 }
 
