@@ -51,7 +51,6 @@ private:
     StoreModel proxyModel;
     QScopedPointer<QItemSelectionModel> selectionModel;
     QScopedPointer<QProcess> process;
-    SingleApplication *a;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;

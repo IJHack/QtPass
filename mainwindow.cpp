@@ -538,8 +538,7 @@ void MainWindow::on_editButton_clicked()
  */
 void MainWindow::setApp(SingleApplication *app)
 {
-    a = app;
-    connect(a, SIGNAL(messageAvailable(QString)), this, SLOT(messageAvailable(QString)));
+    connect(app, SIGNAL(messageAvailable(QString)), this, SLOT(messageAvailable(QString)));
 }
 
 /**
