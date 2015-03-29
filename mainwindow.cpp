@@ -168,7 +168,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         if (usePass) {
             executePass('"' + passFile+ '"');
         } else {
-            executeWrapper(gpgExecutable , "--no-tty -dq " + filePath);
+            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq " + filePath);
         }
     }
 }
