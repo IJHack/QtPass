@@ -46,6 +46,7 @@ private slots:
     void messageAvailable(QString message);
 
 private:
+    QSettings *settings;
     Ui::MainWindow *ui;
     QFileSystemModel model;
     StoreModel proxyModel;
@@ -76,6 +77,7 @@ private:
     QString getFile(const QModelIndex &, bool);
     void setPassword(QString, bool);
     void normalizePassStore();
+    QSettings &getSettings();
 };
 
 #endif // MAINWINDOW_H
