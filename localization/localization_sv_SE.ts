@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../dialog.ui" line="14"/>
         <source>Configuration</source>
-        <translation>Configuratie</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="91"/>
-        <source>Native git/gpg</source>
-        <translation>Gebruik systeem git/gpg</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="98"/>
-        <source>Use pass</source>
-        <translation>Gebruik pass</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="46"/>
-        <source>Native</source>
-        <translation>Systeem eigen</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="58"/>
-        <source>Executable git</source>
-        <translation>Uitvoerbaar git</translation>
-    </message>
-    <message>
-        <location filename="../dialog.ui" line="65"/>
-        <source>Executable gpg</source>
-        <translation>Uitvoerbaar gpg</translation>
+        <location filename="../dialog.ui" line="20"/>
+        <source>Pass</source>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="26"/>
@@ -42,49 +22,69 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="20"/>
-        <source>Pass</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../dialog.ui" line="33"/>
         <source>Executable pass</source>
-        <translation>Uitvoerbaar pass</translation>
+        <translation>Exekverbar pass</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="46"/>
+        <source>Native</source>
+        <translation>Nativ</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="58"/>
+        <source>Executable git</source>
+        <translation>Exekverbar git</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="65"/>
+        <source>Executable gpg</source>
+        <translation>Exekverbar gpg</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="91"/>
+        <source>Native git/gpg</source>
+        <translation>Nativ git/gpg</translation>
+    </message>
+    <message>
+        <location filename="../dialog.ui" line="98"/>
+        <source>Use pass</source>
+        <translation>Använd pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="117"/>
         <source>Other</source>
-        <translation>Anders</translation>
+        <translation>Annan</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="125"/>
         <source>Folder password-store</source>
-        <translation>Map password-store</translation>
+        <translation>Mapp för lösenordslagring</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="146"/>
         <source>Clipboard</source>
-        <translation>Klembord</translation>
+        <translation>Urklipp</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="153"/>
         <source>Autoclear</source>
-        <translation>Automatisch wissen</translation>
+        <translation>Automatiskt rensning</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="160"/>
         <source>Seconds</source>
-        <translation>Seconden</translation>
+        <translation>Sekunder</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="170"/>
         <source>Hide password</source>
-        <translation>Verberg wachtwoord</translation>
+        <translation>Dölj lösenord</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="177"/>
         <source>Hide content</source>
-        <translation>Verberg inhoud</translation>
+        <translation>Dölj innehåll</translation>
     </message>
 </context>
 <context>
@@ -92,22 +92,17 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation>QtPass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="23"/>
         <source>Update</source>
-        <translation>Vernieuwen</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="23"/>
-        <source></source>
-        <translation></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Config</source>
-        <translation>Configuratie</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="46"/>
@@ -136,27 +131,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.ui" line="83"/>
         <source>qtpass</source>
-        <translation></translation>
+        <translation>qtpass</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="147"/>
         <source>Updating password-store</source>
-        <translation>Vernieuwen password-store</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="243"/>
         <source>Clipboard cleared</source>
-        <translation>Klembord gewist</translation>
+        <translation>Urklippet rensat</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="213"/>
         <source>Password copied to clipboard</source>
-        <translation>Wachtwoord gekopieërd</translation>
+        <translation>Lösenordet kopierat till urklippet</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="223"/>
         <source>Content hidden</source>
-        <translation>Inhoud verborgen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="245"/>
@@ -196,7 +191,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="343"/>
         <source>Looking for: </source>
-        <translation>Op zoek naar: </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

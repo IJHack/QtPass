@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT        += core gui
+QT        += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,27 +18,42 @@ TEMPLATE   = app
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
-             dialog.cpp
+             dialog.cpp \
+             storemodel.cpp \
+             singleapplication.cpp \
+    util.cpp
 
 HEADERS   += mainwindow.h \
-             dialog.h
+             dialog.h \
+             storemodel.h \
+             singleapplication.h \
+    util.h
 
 FORMS     += mainwindow.ui \
              dialog.ui
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_de_DE.ts \
-                    localization/localization_hu_HU.ts
+                    localization/localization_es_ES.ts \
+                    localization/localization_gl_ES.ts \
+                    localization/localization_hu_HU.ts \
+                    localization/localization_sv_SE.ts \
+                    localization/localization_pl_PL.ts
 
 RESOURCES += resources.qrc
 
 win32 {
     RC_FILE = windows.rc
+    static {
+        QMAKE_LFLAGS += -static-libgcc -static-libstdc++
+    }
+    QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
 } else:macx {
     ICON = artwork/icon.icns
 }
 
-OTHER_FILES += LICENSE
+OTHER_FILES += LICENSE \
+               README.md
 
 target.path = /usr/local/bin/
 INSTALLS += target

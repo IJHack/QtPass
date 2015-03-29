@@ -17,7 +17,6 @@ Dialog::Dialog(QWidget *parent) :
  */
 Dialog::~Dialog()
 {
-    delete ui;
 }
 
 /**
@@ -215,6 +214,8 @@ void Dialog::on_checkBoxClipboard_clicked()
 {
     if (ui->checkBoxClipboard->isChecked()) {
         ui->checkBoxAutoclear->setEnabled(true);
+        ui->checkBoxHidePassword->setEnabled(true);
+        ui->checkBoxHideContent->setEnabled(true);
         if (ui->checkBoxAutoclear->isChecked()) {
             ui->spinBoxAutoclearSeconds->setEnabled(true);
             ui->labelSeconds->setEnabled(true);
@@ -226,6 +227,8 @@ void Dialog::on_checkBoxClipboard_clicked()
         ui->checkBoxAutoclear->setEnabled(false);
         ui->spinBoxAutoclearSeconds->setEnabled(false);
         ui->labelSeconds->setEnabled(false);
+        ui->checkBoxHidePassword->setEnabled(false);
+        ui->checkBoxHideContent->setEnabled(false);
     }
 }
 
@@ -290,4 +293,40 @@ int Dialog::getAutoclear()
 void Dialog::on_checkBoxAutoclear_clicked()
 {
     on_checkBoxClipboard_clicked();
+}
+
+/**
+ * @brief Dialog::hidePassword
+ * @return
+ */
+bool Dialog::hidePassword()
+{
+    return ui->checkBoxHidePassword->isChecked();
+}
+
+/**
+ * @brief Dialog::hideContent
+ * @return
+ */
+bool Dialog::hideContent()
+{
+    return ui->checkBoxHideContent->isChecked();
+}
+
+/**
+ * @brief Dialog::hidePassword
+ * @param hidePassword
+ */
+void Dialog::hidePassword(bool hidePassword)
+{
+    ui->checkBoxHidePassword->setChecked(hidePassword);
+}
+
+/**
+ * @brief Dialog::hideContent
+ * @param hideContent
+ */
+void Dialog::hideContent(bool hideContent)
+{
+    ui->checkBoxHideContent->setChecked(hideContent);
 }
