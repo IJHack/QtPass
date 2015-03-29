@@ -458,9 +458,15 @@ void MainWindow::on_clearButton_clicked()
 void MainWindow::setPassword(QString file, bool overwrite)
 {
     bool ok;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
+    QString newValue = QInputDialog::getMultiLineText(this, tr("New Value"),
+        tr("New password value:"),
+        lastDecrypt, &ok);
+#else
     QString newValue = QInputDialog::getText(this, tr("New Value"),
         tr("New password value:"), QLineEdit::Normal,
         lastDecrypt, &ok);
+#endif
     if (!ok || newValue.isEmpty()) {
         return;
     }
