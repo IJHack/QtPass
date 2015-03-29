@@ -12,13 +12,12 @@
  */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    settings(NULL),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    process(new QProcess(this))
 {
-    process = new QProcess(this);
-//    connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
-    connect(process, SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
-    connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
+//    connect(process.data(), SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
+    connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
+    connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
     enableUiElements(true);
 }
@@ -28,8 +27,6 @@ MainWindow::MainWindow(QWidget *parent) :
  */
 MainWindow::~MainWindow()
 {
-    delete settings;
-    delete ui;
 }
 
 void MainWindow::normalizePassStore() {
@@ -42,9 +39,9 @@ QSettings &MainWindow::getSettings() {
     if (!settings) {
         QString portable_ini = QCoreApplication::applicationDirPath() + "/qtpass.ini";
         if (QFile(portable_ini).exists()) {
-            settings = new QSettings(portable_ini, QSettings::IniFormat);
+            settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
-            settings = new QSettings("IJHack", "QtPass");
+            settings.reset(new QSettings("IJHack", "QtPass"));
         }
     }
     return *settings;
@@ -97,7 +94,7 @@ void MainWindow::checkConfig() {
 
     proxyModel.setSourceModel(&model);
     proxyModel.setModelAndStore(&model, passStore);
-    selectionModel = new QItemSelectionModel(&proxyModel);
+    selectionModel.reset(new QItemSelectionModel(&proxyModel));
     model.fetchMore(model.setRootPath(passStore));
     model.sort(0, Qt::AscendingOrder);
 
@@ -119,7 +116,7 @@ void MainWindow::checkConfig() {
  * @brief MainWindow::config
  */
 void MainWindow::config() {
-    d = new Dialog();
+    d.reset(new Dialog());
     d->setModal(true);
 
     d->setPassPath(passExecutable);

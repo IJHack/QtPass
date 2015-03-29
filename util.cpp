@@ -46,7 +46,7 @@ QString Util::findBinaryInPath(QString binary)
         }
 
         foreach(QString entry, entries) {
-            QFileInfo *qfi = new QFileInfo(entry.append(binary));
+            QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
             qDebug() << entry;
 
 #ifdef WINDOWS
