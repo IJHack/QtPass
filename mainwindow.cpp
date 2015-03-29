@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "util.h"
 #include <QClipboard>
+#include <QInputDialog>
+#include <QMessageBox>
 #include <QTimer>
 
 /**
@@ -17,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(process, SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
+    enableUiElements(true);
 }
 
 /**
@@ -153,22 +156,33 @@ void MainWindow::on_updateButton_clicked()
     }
 }
 
+QString MainWindow::getFile(const QModelIndex &index, bool forPass)
+{
+    if (!index.isValid() || !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+        return QString();
+    }
+    QString filePath = model.filePath(proxyModel.mapToSource(index));
+    if (forPass) {
+        filePath.replace(QRegExp("\\.gpg$"), "");
+        filePath.replace(QRegExp("^" + passStore), "");
+    }
+    return filePath;
+}
+
 /**
  * @brief MainWindow::on_treeView_clicked
  * @param index
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
-    currentAction = GPG;
-    QString filePath = model.filePath(proxyModel.mapToSource(index));
-    QString passFile = filePath;
-    passFile.replace(QRegExp("\\.gpg$"), "");
-    passFile.replace(QRegExp("^" + passStore), "");
-    if (model.fileInfo(proxyModel.mapToSource(index)).isFile()){
+    lastDecrypt = "Could not decrypt";
+    QString file = getFile(index, usePass);
+    if (!file.isEmpty()){
+        currentAction = GPG;
         if (usePass) {
-            executePass('"' + passFile+ '"');
+            executePass('"' + file + '"');
         } else {
-            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq " + filePath);
+            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq " + file);
         }
     }
 }
@@ -177,8 +191,8 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
  * @brief MainWindow::executePass
  * @param args
  */
-void MainWindow::executePass(QString args) {
-    executeWrapper(passExecutable, args);
+void MainWindow::executePass(QString args, QString input) {
+    executeWrapper(passExecutable, args, input);
 }
 
 /**
@@ -186,12 +200,16 @@ void MainWindow::executePass(QString args) {
  * @param app
  * @param args
  */
-void MainWindow::executeWrapper(QString app, QString args) {
+void MainWindow::executeWrapper(QString app, QString args, QString input) {
     process->setWorkingDirectory(passStore);
     process->start(app + " " + args);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
+    if (!input.isEmpty()) {
+        process->write(input.toUtf8());
+    }
+    process->closeWriteChannel();
 }
 
 /**
@@ -206,6 +224,7 @@ void MainWindow::readyRead(bool finished = false) {
     } else {
         output += process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
+            lastDecrypt = output;
             if (useClipboard) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
@@ -259,7 +278,9 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     }
     readyRead(true);
     enableUiElements(true);
-
+    if (currentAction == EDIT) {
+        on_treeView_clicked(ui->treeView->currentIndex());
+    }
 }
 
 /**
@@ -270,6 +291,10 @@ void MainWindow::enableUiElements(bool state) {
     ui->updateButton->setEnabled(state);
     ui->treeView->setEnabled(state);
     ui->lineEdit->setEnabled(state);
+    ui->addButton->setEnabled(state);
+    state &= ui->treeView->currentIndex().isValid();
+    ui->deleteButton->setEnabled(state);
+    ui->editButton->setEnabled(state);
 }
 
 /**
@@ -398,6 +423,80 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
 void MainWindow::on_clearButton_clicked()
 {
     ui->lineEdit->clear();
+}
+
+void MainWindow::setPassword(QString file, bool overwrite)
+{
+    bool ok;
+    QString newValue = QInputDialog::getText(this, tr("New Value"),
+        tr("New password value:"), QLineEdit::Normal,
+        lastDecrypt, &ok);
+    if (!ok || newValue.isEmpty()) {
+        return;
+    }
+    currentAction = EDIT;
+    if (usePass) {
+        QString force(overwrite ? " -f " : " ");
+        executePass("insert" + force + "-m \"" + file + '"', newValue);
+    } else {
+        QFile gpgId(passStore + ".gpg-id");
+        if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QMessageBox::critical(this, tr("Can not edit"),
+                tr("Password store lacks .gpg-id specifying encryption key"));
+            return;
+        }
+        QString recipient(gpgId.readAll());
+        if (recipient.isEmpty()) {
+            QMessageBox::critical(this, tr("Can not edit"),
+                tr("Could not read encryption key to use"));
+            return;
+        }
+        QString force(overwrite ? " --yes " : " ");
+        executeWrapper(gpgExecutable , force + "--batch -eq --output " + file + " -r " + recipient + " -", newValue);
+    }
+}
+
+void MainWindow::on_addButton_clicked()
+{
+    bool ok;
+    QString file = QInputDialog::getText(this, tr("New file"),
+        tr("New password file:"), QLineEdit::Normal,
+        "", &ok);
+    if (!ok || file.isEmpty()) {
+        return;
+    }
+    if (!usePass) {
+        file = passStore + file + ".gpg";
+    }
+    lastDecrypt = "";
+    setPassword(file, false);
+}
+
+void MainWindow::on_deleteButton_clicked()
+{
+    QString file = getFile(ui->treeView->currentIndex(), usePass);
+    if (QMessageBox::question(this, tr("Delete password?"),
+        tr("Are you sure you want to delete %1").arg(file),
+        QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+        return;
+    }
+    currentAction = DELETE;
+    if (usePass) {
+        executePass("rm -f \"" + file + '"');
+    } else {
+        QFile(file).remove();
+    }
+}
+
+void MainWindow::on_editButton_clicked()
+{
+    QString file = getFile(ui->treeView->currentIndex(), usePass);
+    if (file.isEmpty()) {
+        QMessageBox::critical(this, tr("Can not edit"),
+            tr("Selected password file does not exist, not able to edit"));
+        return;
+    }
+    setPassword(file, true);
 }
 
 /**

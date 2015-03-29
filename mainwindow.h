@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT };
+enum actionType { GPG, GIT, EDIT, DELETE };
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -40,6 +40,9 @@ private slots:
     void on_lineEdit_textChanged(const QString &arg1);
     void on_lineEdit_returnPressed();
     void on_clearButton_clicked();
+    void on_addButton_clicked();
+    void on_deleteButton_clicked();
+    void on_editButton_clicked();
     void messageAvailable(QString message);
 
 private:
@@ -62,13 +65,16 @@ private:
     QString gpgExecutable;
     QString clippedPass;
     actionType currentAction;
+    QString lastDecrypt;
     void updateText();
-    void executePass(QString);
-    void executeWrapper(QString, QString);
+    void executePass(QString, QString = QString());
+    void executeWrapper(QString, QString, QString = QString());
     void config();
     void enableUiElements(bool);
     void selectFirstFile();
     QModelIndex firstFile(QModelIndex parentIndex);
+    QString getFile(const QModelIndex &, bool);
+    void setPassword(QString, bool);
 };
 
 #endif // MAINWINDOW_H
