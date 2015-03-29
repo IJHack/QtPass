@@ -64,6 +64,7 @@ private:
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
+    QString gpgHome;
     QString clippedPass;
     actionType currentAction;
     QString lastDecrypt;
