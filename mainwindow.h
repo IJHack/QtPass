@@ -75,6 +75,7 @@ private:
     QModelIndex firstFile(QModelIndex parentIndex);
     QString getFile(const QModelIndex &, bool);
     void setPassword(QString, bool);
+    void normalizePassStore();
 };
 
 #endif // MAINWINDOW_H

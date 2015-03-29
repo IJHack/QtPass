@@ -30,6 +30,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::normalizePassStore() {
+    if (!passStore.endsWith("/") && !passStore.endsWith(QDir::separator())) {
+        passStore += '/';
+    }
+}
+
 /**
  * @brief MainWindow::checkConfig
  */
@@ -50,6 +56,7 @@ void MainWindow::checkConfig() {
         passStore = Util::findPasswordStore();
         settings.setValue("passStore", passStore);
     }
+    normalizePassStore();
 
     passExecutable = settings.value("passExecutable").toString();
     if (passExecutable == "") {
@@ -117,6 +124,7 @@ void MainWindow::config() {
             gitExecutable = d->getGitPath();
             gpgExecutable = d->getGpgPath();
             passStore = d->getStorePath();
+            normalizePassStore();
             usePass = d->usePass();
             useClipboard = d->useClipboard();
             useAutoclear = d->useAutoclear();
