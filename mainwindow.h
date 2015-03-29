@@ -7,7 +7,6 @@
 #include <QProcess>
 #include <QSettings>
 #include "storemodel.h"
-#include "dialog.h"
 #include "singleapplication.h"
 
 namespace Ui {
@@ -18,7 +17,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT };
+enum actionType { GPG, GIT, EDIT, DELETE };
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -40,16 +39,18 @@ private slots:
     void on_lineEdit_textChanged(const QString &arg1);
     void on_lineEdit_returnPressed();
     void on_clearButton_clicked();
+    void on_addButton_clicked();
+    void on_deleteButton_clicked();
+    void on_editButton_clicked();
     void messageAvailable(QString message);
 
 private:
-    Ui::MainWindow *ui;
+    QScopedPointer<QSettings> settings;
+    QScopedPointer<Ui::MainWindow> ui;
     QFileSystemModel model;
     StoreModel proxyModel;
-    QItemSelectionModel *selectionModel;
-    QProcess *process;
-    SingleApplication *a;
-    Dialog* d;
+    QScopedPointer<QItemSelectionModel> selectionModel;
+    QScopedPointer<QProcess> process;
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
@@ -60,15 +61,21 @@ private:
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
+    QString gpgHome;
     QString clippedPass;
     actionType currentAction;
+    QString lastDecrypt;
     void updateText();
-    void executePass(QString);
-    void executeWrapper(QString, QString);
+    void executePass(QString, QString = QString());
+    void executeWrapper(QString, QString, QString = QString());
     void config();
     void enableUiElements(bool);
     void selectFirstFile();
     QModelIndex firstFile(QModelIndex parentIndex);
+    QString getFile(const QModelIndex &, bool);
+    void setPassword(QString, bool);
+    void normalizePassStore();
+    QSettings &getSettings();
 };
 
 #endif // MAINWINDOW_H

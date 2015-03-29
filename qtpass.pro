@@ -44,6 +44,10 @@ RESOURCES += resources.qrc
 
 win32 {
     RC_FILE = windows.rc
+    static {
+        QMAKE_LFLAGS += -static-libgcc -static-libstdc++
+    }
+    QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
 } else:macx {
     ICON = artwork/icon.icns
 }

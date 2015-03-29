@@ -24,7 +24,7 @@ private:
         bool _isRunning;
         QString _uniqueKey;
         QSharedMemory sharedMemory;
-        QLocalServer *localServer;
+        QScopedPointer<QLocalServer> localServer;
 
         static const int timeout = 1000;
 };
