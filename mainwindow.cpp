@@ -486,7 +486,6 @@ void MainWindow::setPassword(QString file, bool overwrite)
                 tr("Could not read encryption key to use"));
             return;
         }
-        file += ".gpg";
         QString force(overwrite ? " --yes " : " ");
         executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" -r " + recipient + " -", newValue);
     }
@@ -501,6 +500,7 @@ void MainWindow::on_addButton_clicked()
     if (!ok || file.isEmpty()) {
         return;
     }
+    file += ".gpg";
     lastDecrypt = "";
     setPassword(file, false);
 }
