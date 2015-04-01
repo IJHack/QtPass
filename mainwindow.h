@@ -30,6 +30,7 @@ public:
 
 private slots:
     void on_updateButton_clicked();
+    void on_pushButton_clicked();
     void on_treeView_clicked(const QModelIndex &index);
     void on_configButton_clicked();
     void readyRead(bool finished);

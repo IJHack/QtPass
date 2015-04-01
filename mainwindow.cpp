@@ -177,6 +177,20 @@ void MainWindow::on_updateButton_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_pushButton_clicked
+ */
+void MainWindow::on_pushButton_clicked()
+{
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
+    currentAction = GIT;
+    if (usePass) {
+        executePass("git push");
+    } else {
+        executeWrapper(gitExecutable, "push");
+    }
+}
+
 QString MainWindow::getFile(const QModelIndex &index, bool forPass)
 {
     if (!index.isValid() || !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
@@ -503,6 +517,8 @@ void MainWindow::on_addButton_clicked()
     file += ".gpg";
     lastDecrypt = "";
     setPassword(file, false);
+    executeWrapper(gitExecutable, "add " + file);
+//    executeWrapper(gitExecutable, "commit -a -m \"Adding " + file + "\"");
 }
 
 void MainWindow::on_deleteButton_clicked()
