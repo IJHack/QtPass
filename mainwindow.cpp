@@ -494,14 +494,21 @@ void MainWindow::setPassword(QString file, bool overwrite)
                 tr("Password store lacks .gpg-id specifying encryption key"));
             return;
         }
-        QString recipient(gpgId.readAll());
-        if (recipient.isEmpty()) {
+        QString recipients;
+        while (!gpgId.atEnd()) {
+            QString recipient(gpgId.readLine());
+            recipient = recipient.trimmed();
+            if (!recipient.isEmpty()) {
+                recipients += " -r \"" + recipient + '"';
+            }
+        }
+        if (recipients.isEmpty()) {
             QMessageBox::critical(this, tr("Can not edit"),
                 tr("Could not read encryption key to use"));
             return;
         }
         QString force(overwrite ? " --yes " : " ");
-        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" -r " + recipient + " -", newValue);
+        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
     }
 }
 
