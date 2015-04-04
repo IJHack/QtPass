@@ -263,26 +263,25 @@ void MainWindow::readyRead(bool finished = false) {
     if (error.size() > 0) {
         ui->textBrowser->setTextColor(Qt::red);
         output += error;
-    } else {
-        output += process->readAllStandardOutput();
-        if (finished && currentAction == GPG) {
-            lastDecrypt = output;
-            if (useClipboard) {
-                QClipboard *clip = QApplication::clipboard();
-                QStringList tokens =  output.split("\n");
-                clip->setText(tokens[0]);
-                ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
-                if (useAutoclear) {
-                      clippedPass = tokens[0];
-                      QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
-                }
-                if (hidePassword) {
-                    tokens.pop_front();
-                    output = tokens.join("\n");
-                }
-                if (hideContent) {
-                    output = tr("Content hidden");
-                }
+    }
+    output += process->readAllStandardOutput();
+    if (finished && currentAction == GPG) {
+        lastDecrypt = output;
+        if (useClipboard) {
+            QClipboard *clip = QApplication::clipboard();
+            QStringList tokens =  output.split("\n");
+            clip->setText(tokens[0]);
+            ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
+            if (useAutoclear) {
+                  clippedPass = tokens[0];
+                  QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+            }
+            if (hidePassword) {
+                tokens.pop_front();
+                output = tokens.join("\n");
+            }
+            if (hideContent) {
+                output = tr("Content hidden");
             }
         }
     }
