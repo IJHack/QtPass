@@ -77,6 +77,13 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QToolButton" name="usersButton">
+            <property name="text">
+             <string>U</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item row="2" column="1">

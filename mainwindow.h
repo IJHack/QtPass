@@ -13,11 +13,13 @@ namespace Ui {
 class MainWindow;
 }
 
+struct UserInfo;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT, EDIT, DELETE };
+enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL };
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -43,6 +45,7 @@ private slots:
     void on_addButton_clicked();
     void on_deleteButton_clicked();
     void on_editButton_clicked();
+    void on_usersButton_clicked();
     void messageAvailable(QString message);
 
 private:
@@ -78,6 +81,8 @@ private:
     void setPassword(QString, bool);
     void normalizePassStore();
     QSettings &getSettings();
+    QList<UserInfo> listKeys(QString keystring = "");
+    QString getRecipientString(QString for_file, QString separator = " ");
 };
 
 #endif // MAINWINDOW_H
