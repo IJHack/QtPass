@@ -525,7 +525,7 @@ void MainWindow::on_deleteButton_clicked()
 {
     QString file = getFile(ui->treeView->currentIndex(), usePass);
     if (QMessageBox::question(this, tr("Delete password?"),
-        tr("Are you sure you want to delete %1").arg(file),
+        tr("Are you sure you want to delete %1?").arg(file),
         QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
         return;
     }
