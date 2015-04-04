@@ -191,6 +191,19 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
+QString MainWindow::getDir(const QModelIndex &index, bool forPass)
+{
+    if (!index.isValid()) {
+        return forPass ? "" : passStore;
+    }
+    QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
+    QString filePath = (info.isFile() ? info.absolutePath() : info.absoluteFilePath()) + '/';
+    if (forPass) {
+        filePath.replace(QRegExp("^" + passStore), "");
+    }
+    return filePath;
+}
+
 QString MainWindow::getFile(const QModelIndex &index, bool forPass)
 {
     if (!index.isValid() || !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
@@ -488,7 +501,19 @@ void MainWindow::setPassword(QString file, bool overwrite)
         QString force(overwrite ? " -f " : " ");
         executePass("insert" + force + "-m \"" + file + '"', newValue);
     } else {
-        QFile gpgId(passStore + ".gpg-id");
+        QDir gpgIdPath(QFileInfo(file.startsWith(passStore) ? file : passStore + file).absoluteDir());
+        bool found = false;
+        while (gpgIdPath.exists() && gpgIdPath.absolutePath().startsWith(passStore))
+        {
+            if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
+                found = true;
+                break;
+            }
+            if (!gpgIdPath.cdUp()) {
+                break;
+            }
+        }
+        QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id") : passStore + ".gpg-id");
         if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QMessageBox::critical(this, tr("Can not edit"),
                 tr("Password store lacks .gpg-id specifying encryption key"));
@@ -514,6 +539,7 @@ void MainWindow::on_addButton_clicked()
     if (!ok || file.isEmpty()) {
         return;
     }
+    file = getDir(ui->treeView->currentIndex(), usePass) + file;
     file += ".gpg";
     lastDecrypt = "";
     setPassword(file, false);
