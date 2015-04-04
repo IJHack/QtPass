@@ -258,13 +258,7 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
-    QString output = ui->textBrowser->document()->toPlainText();
-    QString error = process->readAllStandardError();
-    if (error.size() > 0) {
-        ui->textBrowser->setTextColor(Qt::red);
-        output += error;
-    }
-    output += process->readAllStandardOutput();
+    QString output = process->readAllStandardOutput();
     if (finished && currentAction == GPG) {
         lastDecrypt = output;
         if (useClipboard) {
@@ -287,9 +281,15 @@ void MainWindow::readyRead(bool finished = false) {
     }
     output.replace(QRegExp("<"), "&lt;");
     output.replace(QRegExp(">"), "&gt;");
+
+    QString error = process->readAllStandardError();
+    if (error.size() > 0) {
+        output = "<font color=\"red\">" + error + "</font><br />" + output;
+    }
+
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
-    ui->textBrowser->setHtml(output);
+    ui->textBrowser->setHtml(ui->textBrowser->toHtml() + output);
 }
 
 /**
