@@ -271,39 +271,38 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
-    QString output = ui->textBrowser->document()->toPlainText();
-    QString error = process->readAllStandardError();
-    if (error.size() > 0) {
-        ui->textBrowser->setTextColor(Qt::red);
-        output += error;
-    } else {
-        output += process->readAllStandardOutput();
-        if (finished && currentAction == GPG) {
-            lastDecrypt = output;
-            if (useClipboard) {
-                QClipboard *clip = QApplication::clipboard();
-                QStringList tokens =  output.split("\n");
-                clip->setText(tokens[0]);
-                ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
-                if (useAutoclear) {
-                      clippedPass = tokens[0];
-                      QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
-                }
-                if (hidePassword) {
-                    tokens.pop_front();
-                    output = tokens.join("\n");
-                }
-                if (hideContent) {
-                    output = tr("Content hidden");
-                }
+    QString output = process->readAllStandardOutput();
+    if (finished && currentAction == GPG) {
+        lastDecrypt = output;
+        if (useClipboard) {
+            QClipboard *clip = QApplication::clipboard();
+            QStringList tokens =  output.split("\n");
+            clip->setText(tokens[0]);
+            ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
+            if (useAutoclear) {
+                  clippedPass = tokens[0];
+                  QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+            }
+            if (hidePassword) {
+                tokens.pop_front();
+                output = tokens.join("\n");
+            }
+            if (hideContent) {
+                output = tr("Content hidden");
             }
         }
     }
     output.replace(QRegExp("<"), "&lt;");
     output.replace(QRegExp(">"), "&gt;");
+
+    QString error = process->readAllStandardError();
+    if (error.size() > 0) {
+        output = "<font color=\"red\">" + error + "</font><br />" + output;
+    }
+
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
-    ui->textBrowser->setHtml(output);
+    ui->textBrowser->setHtml(ui->textBrowser->toHtml() + output);
 }
 
 /**
@@ -519,14 +518,21 @@ void MainWindow::setPassword(QString file, bool overwrite)
                 tr("Password store lacks .gpg-id specifying encryption key"));
             return;
         }
-        QString recipient(gpgId.readAll());
-        if (recipient.isEmpty()) {
+        QString recipients;
+        while (!gpgId.atEnd()) {
+            QString recipient(gpgId.readLine());
+            recipient = recipient.trimmed();
+            if (!recipient.isEmpty()) {
+                recipients += " -r \"" + recipient + '"';
+            }
+        }
+        if (recipients.isEmpty()) {
             QMessageBox::critical(this, tr("Can not edit"),
                 tr("Could not read encryption key to use"));
             return;
         }
         QString force(overwrite ? " --yes " : " ");
-        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" -r " + recipient + " -", newValue);
+        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
     }
 }
 
@@ -540,7 +546,9 @@ void MainWindow::on_addButton_clicked()
         return;
     }
     file = getDir(ui->treeView->currentIndex(), usePass) + file;
-    file += ".gpg";
+    if (!usePass) {
+        file += ".gpg";
+    }
     lastDecrypt = "";
     setPassword(file, false);
     executeWrapper(gitExecutable, "add " + file);
