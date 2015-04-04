@@ -514,7 +514,9 @@ void MainWindow::on_addButton_clicked()
     if (!ok || file.isEmpty()) {
         return;
     }
-    file += ".gpg";
+    if (!usePass) {
+        file += ".gpg";
+    }
     lastDecrypt = "";
     setPassword(file, false);
     executeWrapper(gitExecutable, "add " + file);
