@@ -588,7 +588,9 @@ void MainWindow::on_editButton_clicked()
  */
 void MainWindow::setApp(SingleApplication *app)
 {
+#if SINGLE_APP
     connect(app, SIGNAL(messageAvailable(QString)), this, SLOT(messageAvailable(QString)));
+#endif
 }
 
 /**
