@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT        += core gui network
+QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -34,6 +34,15 @@ HEADERS   += mainwindow.h \
 FORMS     += mainwindow.ui \
              dialog.ui \
              usersdialog.ui
+
+nosingleapp {
+QMAKE_CXXFLAGS += -DSINGLE_APP=0
+} else {
+SOURCES += singleapplication.cpp
+HEADERS += singleapplication.h
+QT += network
+QMAKE_CXXFLAGS += -DSINGLE_APP=1
+}
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_de_DE.ts \
