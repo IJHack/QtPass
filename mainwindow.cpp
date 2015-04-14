@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dialog.h"
+#include "usersdialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QInputDialog>
@@ -271,7 +272,9 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
-    QString output = process->readAllStandardOutput();
+    QString output;
+    if (currentAction != GPG_INTERNAL) {
+    output = process->readAllStandardOutput();
     if (finished && currentAction == GPG) {
         lastDecrypt = output;
         if (useClipboard) {
@@ -294,6 +297,7 @@ void MainWindow::readyRead(bool finished = false) {
     }
     output.replace(QRegExp("<"), "&lt;");
     output.replace(QRegExp(">"), "&gt;");
+    }
 
     QString error = process->readAllStandardError();
     if (error.size() > 0) {
@@ -347,6 +351,7 @@ void MainWindow::enableUiElements(bool state) {
     ui->treeView->setEnabled(state);
     ui->lineEdit->setEnabled(state);
     ui->addButton->setEnabled(state);
+    ui->usersButton->setEnabled(state);
     state &= ui->treeView->currentIndex().isValid();
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
@@ -480,6 +485,35 @@ void MainWindow::on_clearButton_clicked()
     ui->lineEdit->clear();
 }
 
+QString MainWindow::getRecipientString(QString for_file, QString separator)
+{
+    QDir gpgIdPath(QFileInfo(for_file.startsWith(passStore) ? for_file : passStore + for_file).absoluteDir());
+    bool found = false;
+    while (gpgIdPath.exists() && gpgIdPath.absolutePath().startsWith(passStore))
+    {
+        if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
+            found = true;
+            break;
+        }
+        if (!gpgIdPath.cdUp()) {
+            break;
+        }
+    }
+    QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id") : passStore + ".gpg-id");
+    if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return QString();
+    }
+    QString recipients;
+    while (!gpgId.atEnd()) {
+        QString recipient(gpgId.readLine());
+        recipient = recipient.trimmed();
+        if (!recipient.isEmpty()) {
+            recipients += separator + '"' + recipient + '"';
+        }
+    }
+    return recipients;
+}
+
 void MainWindow::setPassword(QString file, bool overwrite)
 {
     bool ok;
@@ -500,35 +534,10 @@ void MainWindow::setPassword(QString file, bool overwrite)
         QString force(overwrite ? " -f " : " ");
         executePass("insert" + force + "-m \"" + file + '"', newValue);
     } else {
-        QDir gpgIdPath(QFileInfo(file.startsWith(passStore) ? file : passStore + file).absoluteDir());
-        bool found = false;
-        while (gpgIdPath.exists() && gpgIdPath.absolutePath().startsWith(passStore))
-        {
-            if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
-                found = true;
-                break;
-            }
-            if (!gpgIdPath.cdUp()) {
-                break;
-            }
-        }
-        QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id") : passStore + ".gpg-id");
-        if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QMessageBox::critical(this, tr("Can not edit"),
-                tr("Password store lacks .gpg-id specifying encryption key"));
-            return;
-        }
-        QString recipients;
-        while (!gpgId.atEnd()) {
-            QString recipient(gpgId.readLine());
-            recipient = recipient.trimmed();
-            if (!recipient.isEmpty()) {
-                recipients += " -r \"" + recipient + '"';
-            }
-        }
+        QString recipients = getRecipientString(file, " -r ");
         if (recipients.isEmpty()) {
             QMessageBox::critical(this, tr("Can not edit"),
-                tr("Could not read encryption key to use"));
+                tr("Could not read encryption key to use, .gpg-id file missing or invalid."));
             return;
         }
         QString force(overwrite ? " --yes " : " ");
@@ -538,6 +547,8 @@ void MainWindow::setPassword(QString file, bool overwrite)
 
 void MainWindow::on_addButton_clicked()
 {
+
+
     bool ok;
     QString file = QInputDialog::getText(this, tr("New file"),
         tr("New password file:"), QLineEdit::Normal,
@@ -580,6 +591,69 @@ void MainWindow::on_editButton_clicked()
         return;
     }
     setPassword(file, true);
+}
+
+QList<UserInfo> MainWindow::listKeys(QString keystring)
+{
+    QList<UserInfo> users;
+    currentAction = GPG_INTERNAL;
+    executeWrapper(gpgExecutable , "--no-tty --with-colons --list-keys " + keystring);
+    process->waitForFinished(2000);
+    if (process->exitStatus() != QProcess::NormalExit) {
+        return users;
+    }
+    QStringList keys = QString(process->readAllStandardOutput()).split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+    foreach (QString key, keys) {
+        QStringList props = key.split(':');
+        if (props.size() < 10 || props[0] != "pub") {
+            continue;
+        }
+        UserInfo i;
+        i.name = props[9];
+        i.key_id = props[4];
+        users.append(i);
+    }
+    return users;
+}
+
+void MainWindow::on_usersButton_clicked()
+{
+    QList<UserInfo> users = listKeys();
+    if (users.size() == 0) {
+        QMessageBox::critical(this, tr("Can not get key list"),
+            tr("Unable to get list of available gpg keys"));
+        return;
+    }
+    QList<UserInfo> selected_users;
+    QString dir = getDir(ui->treeView->currentIndex(), false);
+    QString recipients = getRecipientString(dir.isEmpty() ? "" : dir);
+    if (!recipients.isEmpty()) {
+        selected_users = listKeys(recipients);
+    }
+    foreach (const UserInfo &sel, selected_users) {
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+            if (sel.key_id == it->key_id) it->enabled = true;
+        }
+    }
+    UsersDialog d(this);
+    d.setUsers(&users);
+    if (!d.exec()) {
+        d.setUsers(NULL);
+        return;
+    }
+    d.setUsers(NULL);
+    QFile gpgId(dir + ".gpg-id");
+    if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, tr("Cannot update"),
+            tr("Failed to open .gpg-id for writing."));
+        return;
+    }
+    foreach (const UserInfo &user, users) {
+        if (user.enabled) {
+            gpgId.write((user.key_id + "\n").toUtf8());
+        }
+    }
+    gpgId.close();
 }
 
 /**
