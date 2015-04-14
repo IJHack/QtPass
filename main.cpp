@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[])
 {
+#if SINGLE_APP
     SingleApplication app(argc, argv, "ijhackQtPass");
     if (app.isRunning()) {
         if (argc == 1 ) {
@@ -20,6 +21,9 @@ int main(int argc, char *argv[])
         }
         return 0;
     }
+#else
+    QApplication app(argc, argv);
+#endif
    
     QCoreApplication::setOrganizationName("IJHack");
     QCoreApplication::setOrganizationDomain("ijhack.org");
