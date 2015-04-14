@@ -7,7 +7,11 @@
 #include <QProcess>
 #include <QSettings>
 #include "storemodel.h"
+#if SINGLE_APP
 #include "singleapplication.h"
+#else
+#define SingleApplication QApplication
+#endif
 
 namespace Ui {
 class MainWindow;
