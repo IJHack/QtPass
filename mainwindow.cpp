@@ -258,10 +258,10 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
         env << "GNUPGHOME=" + absHome.path();
         process->setEnvironment(env);
     }
-    process->start('"' + app + "\" " + args);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
+    process->start('"' + app + "\" " + args);
     if (!input.isEmpty()) {
         process->write(input.toUtf8());
     }
