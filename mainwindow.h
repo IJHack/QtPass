@@ -70,6 +70,11 @@ private:
     QString gitExecutable;
     QString gpgExecutable;
     QString gpgHome;
+    bool useWebDav;
+    QString webDavUrl;
+    QString webDavUser;
+    QString webDavPassword;
+    QProcess fusedav;
     QString clippedPass;
     actionType currentAction;
     QString lastDecrypt;
@@ -87,6 +92,7 @@ private:
     QSettings &getSettings();
     QList<UserInfo> listKeys(QString keystring = "");
     QString getRecipientString(QString for_file, QString separator = " ");
+    void mountWebDav();
 };
 
 #endif // MAINWINDOW_H
