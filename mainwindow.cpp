@@ -680,16 +680,30 @@ QList<UserInfo> MainWindow::listKeys(QString keystring)
     if (process->exitStatus() != QProcess::NormalExit) {
         return users;
     }
+    QString currentKey;
+    QString currentName;
+    bool saved;
     QStringList keys = QString(process->readAllStandardOutput()).split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     foreach (QString key, keys) {
         QStringList props = key.split(':');
-        if (props.size() < 10 || props[0] != "pub") {
+        if (props.size() < 10) {
             continue;
         }
-        UserInfo i;
-        i.name = props[9];
-        i.key_id = props[4];
-        users.append(i);
+        if(props[0] == "pub") {
+            saved = false;
+            currentKey  = props[4];
+            currentName = props[9];
+        } else if (props[0] == "uid") {
+            if (currentName.isEmpty()) {
+                currentName = props[9];
+            }
+        } else if (props[0] == "sub" && !saved) {
+            UserInfo i;
+            i.name = currentName;
+            i.key_id = currentKey;
+            users.append(i);
+            saved = true;
+        }
     }
     return users;
 }
