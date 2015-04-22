@@ -682,7 +682,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring)
     }
     QString currentKey;
     QString currentName;
-    bool saved;
+    bool saved = true;
     QStringList keys = QString(process->readAllStandardOutput()).split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     foreach (QString key, keys) {
         QStringList props = key.split(':');
