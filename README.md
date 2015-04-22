@@ -32,15 +32,8 @@ Current state
 -------------
 * Using pass or directly with git and gpg2
 * Configurable
-* Cross platform 
-
-TODO
-----
-1. ~~non-blocking actions~~
-2. ~~multi-lingual~~
-3. ~~filtering and autocomplete~~
-4. ~~edit, insert~~
-5. ~~gpg-id management (per-folder)~~
+* Cross platform
+* Per-folder user selection 
 
 Instalation
 -----------
