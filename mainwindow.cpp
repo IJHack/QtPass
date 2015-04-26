@@ -563,7 +563,7 @@ void MainWindow::on_clearButton_clicked()
     ui->lineEdit->clear();
 }
 
-QString MainWindow::getRecipientString(QString for_file, QString separator)
+QStringList MainWindow::getRecipientList(QString for_file)
 {
     QDir gpgIdPath(QFileInfo(for_file.startsWith(passStore) ? for_file : passStore + for_file).absoluteDir());
     bool found = false;
@@ -579,17 +579,32 @@ QString MainWindow::getRecipientString(QString for_file, QString separator)
     }
     QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id") : passStore + ".gpg-id");
     if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        return QString();
+        return QStringList();
     }
-    QString recipients;
+    QStringList recipients;
     while (!gpgId.atEnd()) {
         QString recipient(gpgId.readLine());
         recipient = recipient.trimmed();
         if (!recipient.isEmpty()) {
-            recipients += separator + '"' + recipient + '"';
+            recipients += recipient;
         }
     }
     return recipients;
+}
+
+QString MainWindow::getRecipientString(QString for_file, QString separator, int *count)
+{
+    QString recipients_str;
+    QStringList recipients_list = getRecipientList(for_file);
+    if (count)
+    {
+        *count = recipients_list.size();
+    }
+    foreach (const QString recipient, recipients_list)
+    {
+        recipients_str += separator + '"' + recipient + '"';
+    }
+    return recipients_str;
 }
 
 void MainWindow::setPassword(QString file, bool overwrite)
@@ -716,13 +731,30 @@ void MainWindow::on_usersButton_clicked()
     }
     QList<UserInfo> selected_users;
     QString dir = getDir(ui->treeView->currentIndex(), false);
-    QString recipients = getRecipientString(dir.isEmpty() ? "" : dir);
+    int count = 0;
+    QString recipients = getRecipientString(dir.isEmpty() ? "" : dir, " ", &count);
     if (!recipients.isEmpty()) {
         selected_users = listKeys(recipients);
     }
     foreach (const UserInfo &sel, selected_users) {
         for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
             if (sel.key_id == it->key_id) it->enabled = true;
+        }
+    }
+    if (count > selected_users.size())
+    {
+        // Some keys seem missing from keyring, add them separately
+        QStringList recipients = getRecipientList(dir.isEmpty() ? "" : dir);
+        foreach (const QString recipient, recipients)
+        {
+            if (listKeys(recipient).size() < 1)
+            {
+                UserInfo i;
+                i.enabled = true;
+                i.key_id = recipient;
+                i.name = " ?? " + tr("Key not found in keyring");
+                users.append(i);
+            }
         }
     }
     UsersDialog d(this);
