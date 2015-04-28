@@ -154,13 +154,17 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>configButton</tabstop>
   <tabstop>lineEdit</tabstop>
-  <tabstop>textBrowser</tabstop>
-  <tabstop>treeView</tabstop>
   <tabstop>clearButton</tabstop>
-  <tabstop>toolButton</tabstop>
+  <tabstop>treeView</tabstop>
+  <tabstop>addButton</tabstop>
+  <tabstop>editButton</tabstop>
+  <tabstop>deleteButton</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>updateButton</tabstop>
   <tabstop>usersButton</tabstop>
+  <tabstop>configButton</tabstop>
+  <tabstop>textBrowser</tabstop>
  </tabstops>
  <resources/>
  <connections/>
