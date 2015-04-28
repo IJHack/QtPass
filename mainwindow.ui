@@ -58,7 +58,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="toolButton">
+        <widget class="QToolButton" name="pushButton">
          <property name="text">
           <string>Push</string>
          </property>
