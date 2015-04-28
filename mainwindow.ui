@@ -114,7 +114,7 @@
            <widget class="QLineEdit" name="lineEdit"/>
           </item>
           <item>
-           <widget class="QPushButton" name="clearButton">
+           <widget class="QToolButton" name="clearButton">
             <property name="text">
              <string>X</string>
             </property>
