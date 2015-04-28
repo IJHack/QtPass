@@ -37,21 +37,21 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QToolButton" name="addButton">
+        <widget class="QPushButton" name="addButton">
          <property name="text">
           <string>Add</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="editButton">
+        <widget class="QPushButton" name="editButton">
          <property name="text">
           <string>Edit</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="deleteButton">
+        <widget class="QPushButton" name="deleteButton">
          <property name="text">
           <string>Delete</string>
          </property>
@@ -72,7 +72,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="usersButton">
+        <widget class="QPushButton" name="usersButton">
          <property name="text">
           <string>Users</string>
          </property>
@@ -114,7 +114,7 @@
            <widget class="QLineEdit" name="lineEdit"/>
           </item>
           <item>
-           <widget class="QToolButton" name="clearButton">
+           <widget class="QPushButton" name="clearButton">
             <property name="text">
              <string>X</string>
             </property>
