@@ -35,7 +35,9 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 #ifdef Q_OS_WIN
+#ifndef __MINGW32__
     if (useWebDav) WNetCancelConnection2A(passStore.toUtf8().constData(), 0, 1);
+#endif
 #else
     if (fusedav.state() == QProcess::Running) {
         fusedav.terminate();
@@ -64,6 +66,7 @@ QSettings &MainWindow::getSettings() {
 
 void MainWindow::mountWebDav() {
 #ifdef Q_OS_WIN
+#ifndef __MINGW32__
     char dst[20] = {0};
     NETRESOURCEA netres;
     memset(&netres, 0, sizeof(netres));
@@ -82,6 +85,7 @@ void MainWindow::mountWebDav() {
         ui->textBrowser->setTextColor(Qt::red);
         ui->textBrowser->setText(tr("Failed to connect WebDAV:\n") + message + " (0x" + QString::number(r, 16) + ")");
     }
+#endif
 #else
     fusedav.start("fusedav -o nonempty -u \"" + webDavUser + "\" " + webDavUrl + " \"" + passStore + '"');
     fusedav.waitForStarted();
