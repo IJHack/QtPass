@@ -646,8 +646,6 @@ void MainWindow::setPassword(QString file, bool overwrite)
 
 void MainWindow::on_addButton_clicked()
 {
-
-
     bool ok;
     QString file = QInputDialog::getText(this, tr("New file"),
         tr("New password file:"), QLineEdit::Normal,

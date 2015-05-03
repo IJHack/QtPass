@@ -30,9 +30,13 @@ public:
 
 private slots:
     void itemChange(QListWidgetItem *);
+    void on_clearButton_clicked();
+    void on_lineEdit_textChanged(const QString &filter);
 
 private:
     Ui::UsersDialog *ui;
+    QList<UserInfo> *userList;
+    void populateList(const QString &filter);
 };
 
 #endif // USERSDIALOG_H
