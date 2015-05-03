@@ -25,6 +25,7 @@ public:
     void setAutoclear(int);
     void hidePassword(bool);
     void hideContent(bool);
+    void addGPGId(bool);
     QString getPassPath();
     QString getGitPath();
     QString getGpgPath();
@@ -35,6 +36,7 @@ public:
     int getAutoclear();
     bool hidePassword();
     bool hideContent();
+    bool addGPGId();
 
 private slots:
     void on_radioButtonNative_clicked();
@@ -43,9 +45,7 @@ private slots:
     void on_toolButtonGpg_clicked();
     void on_toolButtonPass_clicked();
     void on_toolButtonStore_clicked();
-
     void on_checkBoxClipboard_clicked();
-
     void on_checkBoxAutoclear_clicked();
 
 private:

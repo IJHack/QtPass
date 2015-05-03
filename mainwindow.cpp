@@ -7,6 +7,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
+#include <QFileInfo>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <winnetwk.h>
@@ -130,6 +131,7 @@ void MainWindow::checkConfig() {
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
     hidePassword = (settings.value("hidePassword") == "true");
     hideContent = (settings.value("hideContent") == "true");
+    addGPGId = (settings.value("addGPGId") != "false");
 
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
@@ -210,6 +212,7 @@ void MainWindow::config() {
     d->setAutoclear(autoclearSeconds);
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
+    d->addGPGId(addGPGId);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -224,6 +227,7 @@ void MainWindow::config() {
             autoclearSeconds = d->getAutoclear();
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
+            addGPGId = d->addGPGId();
 
             QSettings &settings(getSettings());
 
@@ -237,6 +241,7 @@ void MainWindow::config() {
             settings.setValue("autoclearSeconds", autoclearSeconds);
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
+            settings.setValue("addGPGId", addGPGId ? "true" : "false");
 
             ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
@@ -765,7 +770,15 @@ void MainWindow::on_usersButton_clicked()
         return;
     }
     d.setUsers(NULL);
-    QFile gpgId(dir + ".gpg-id");
+    QString gpgIdFile = dir + ".gpg-id";
+    QFile gpgId(gpgIdFile);
+    bool addFile = false;
+    if (addGPGId) {
+        QFileInfo checkFile(gpgIdFile);
+        if (!checkFile.exists() || !checkFile.isFile()) {
+            addFile = true;
+        }
+    }
     if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this, tr("Cannot update"),
             tr("Failed to open .gpg-id for writing."));
@@ -777,6 +790,9 @@ void MainWindow::on_usersButton_clicked()
         }
     }
     gpgId.close();
+    if (addFile) {
+        executeWrapper(gitExecutable, "add " + gpgIdFile);
+    }
 }
 
 /**
