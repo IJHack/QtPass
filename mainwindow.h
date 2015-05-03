@@ -64,6 +64,7 @@ private:
     bool useAutoclear;
     bool hidePassword;
     bool hideContent;
+    bool addGPGId;
     int autoclearSeconds;
     QString passStore;
     QString passExecutable;

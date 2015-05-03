@@ -330,3 +330,21 @@ void Dialog::hideContent(bool hideContent)
 {
     ui->checkBoxHideContent->setChecked(hideContent);
 }
+
+/**
+ * @brief Dialog::addGPGId
+ * @return
+ */
+bool Dialog::addGPGId()
+{
+    return ui->checkBoxAddGPGId->isChecked();
+}
+
+/**
+ * @brief Dialog::addGPGId
+ * @param addGPGId
+ */
+void Dialog::addGPGId(bool addGPGId)
+{
+    ui->checkBoxAddGPGId->setChecked(addGPGId);
+}
