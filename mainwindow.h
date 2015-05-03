@@ -17,6 +17,12 @@ namespace Ui {
 class MainWindow;
 }
 
+struct execQueueItem {
+    QString app;
+    QString args;
+    QString input;
+};
+
 struct UserInfo;
 
 class MainWindow : public QMainWindow
@@ -79,6 +85,8 @@ private:
     QString clippedPass;
     actionType currentAction;
     QString lastDecrypt;
+    bool wrapperRunning;
+    QQueue<execQueueItem> *execQueue;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
