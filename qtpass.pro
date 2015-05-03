@@ -58,7 +58,8 @@ win32 {
     static {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }
-    QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat -lmpr
+    QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
+    LIBS += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
 }
