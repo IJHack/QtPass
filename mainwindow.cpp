@@ -641,6 +641,15 @@ void MainWindow::setPassword(QString file, bool overwrite)
         }
         QString force(overwrite ? " --yes " : " ");
         executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
+        if (!useWebDav) {
+            if (!overwrite) {
+                executeWrapper(gitExecutable, "add " + file);
+            }
+            QString path = file;
+            path.replace(QRegExp("\\.gpg$"), "");
+            path.replace(QRegExp("^" + passStore), "");
+            executeWrapper(gitExecutable, "commit " + file + " -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass\"");
+        }
     }
 }
 
@@ -788,8 +797,13 @@ void MainWindow::on_usersButton_clicked()
         }
     }
     gpgId.close();
-    if (addFile) {
-        executeWrapper(gitExecutable, "add " + gpgIdFile);
+    if (!useWebDav){
+        if (addFile) {
+            executeWrapper(gitExecutable, "add " + gpgIdFile);
+        }
+        QString path = gpgIdFile;
+        path.replace(QRegExp("\\.gpg$"), "");
+        executeWrapper(gitExecutable, "commit " + gpgIdFile + " -m \"Added "+ path + " using QtPass\"");
     }
 }
 
