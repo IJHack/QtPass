@@ -37,6 +37,7 @@ void UsersDialog::populateList(const QString &filter)
 {
     QRegExp nameFilter("*"+filter+"*");
     nameFilter.setPatternSyntax(QRegExp::Wildcard);
+    nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
     ui->listWidget->clear();
     if (userList) {
         for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
