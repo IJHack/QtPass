@@ -38,6 +38,20 @@ Note: Existing files will not be modified and retain the old permissions until y
     </widget>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="lineEdit"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="clearButton">
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <widget class="QListWidget" name="listWidget">
      <property name="alternatingRowColors">
       <bool>true</bool>
