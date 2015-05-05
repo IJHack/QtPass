@@ -86,6 +86,7 @@ private:
     actionType currentAction;
     QString lastDecrypt;
     bool wrapperRunning;
+    QStringList env;
     QQueue<execQueueItem> *execQueue;
     void updateText();
     void executePass(QString, QString = QString());
