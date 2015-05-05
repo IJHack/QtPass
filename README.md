@@ -59,6 +59,6 @@ Currently seems to only work with MacGPG2
 
 Further reading
 ---------------
-[Documentation](http://ijhack.github.io/qtpass/)
+[Documentation](http://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
