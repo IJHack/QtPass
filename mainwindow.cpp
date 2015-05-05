@@ -195,6 +195,24 @@ void MainWindow::checkConfig() {
 
     ui->textBrowser->setOpenExternalLinks(true);
 
+    env = QProcess::systemEnvironment();
+    if (!gpgHome.isEmpty()) {
+        QDir absHome(gpgHome);
+        absHome.makeAbsolute();
+        env << "GNUPGHOME=" + absHome.path();
+    }
+#ifdef __APPLE__
+    // If it exists, add the gpgtools to PATH
+    if (QFile("/usr/local/MacGPG2/bin").exists()) {
+        env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+    }
+    // Add missing /usr/local/bin
+    if (env.filter("/usr/local/bin").isEmpty()) {
+        env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
+    }
+#endif
+    //QMessageBox::information(this, "env", env.join("\n"));
+
     ui->lineEdit->setFocus();
 }
 
@@ -348,17 +366,6 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     }
     wrapperRunning = true;
     process->setWorkingDirectory(passStore);
-    QStringList env = QProcess::systemEnvironment();
-    if (!gpgHome.isEmpty()) {
-        QDir absHome(gpgHome);
-        absHome.makeAbsolute();
-        env << "GNUPGHOME=" + absHome.path();
-    }
-#ifdef __APPLE__
-    // TODO needs check to see if path exists or some other handling!!
-    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:/usr/local/bin:");
-#endif
-    //QMessageBox::information(this, "env", env.join("\n"));
     process->setEnvironment(env);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
@@ -462,6 +469,7 @@ void MainWindow::enableUiElements(bool state) {
     state &= ui->treeView->currentIndex().isValid();
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
+    ui->pushButton->setEnabled(state);
 }
 
 /**
