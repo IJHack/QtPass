@@ -1,73 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="QtPass : QtPass is a multi-platform gui for pass">
+    <title>QtPass by IJHack</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>QtPass</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>QtPass</h1>
+        <p>QtPass is a multi-platform GUI for pass</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/IJHack/qtpass">View on GitHub</a>
+        <p class="view"><a href="https://github.com/IJHack/qtpass">View the Project on GitHub <small>IJHack/qtpass</small></a></p>
 
-          <h1 id="project_title">QtPass</h1>
-          <h2 id="project_tagline">A multi-platform gui for pass</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/IJHack/qtpass/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/IJHack/qtpass/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="qtpass" class="anchor" href="#qtpass"><span class="octicon octicon-link"></span></a>QtPass</h1>
-
-<p>QtPass is a multi-platform gui for <a href="http://www.passwordstore.org/" target="_blank">pass</a>.</p>
-      </section>
-
-      <section id="features" class="inner">
-        <h1>Features:</h1>
         <ul>
-          <li>Reading pass password stores</li>
-          <li>Decrypting and displaying the password info</li>
-          <li>Updating from the git repository</li>
-	  <li>Editing and adding of passwords</li>
-	  <li>Adding and removing people from gpg-id per folder</li>
-          <li>Read operations also supported without pass (using gpg and git)</li>
-          <li>Configuration options for backends and executable/folder locations</li>
-          <li>Copying password to clipboard</li>
-          <li>Hiding of password against shouldersurfing</li>
-          <li>Experimental WebDAV support </li>
-          <li>Tested on Linux, <a href="https://annejan.com/media/qtpass.dmg">OSX</a> and Windows</li>
+          <li><a href="https://github.com/IJHack/qtpass/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/IJHack/qtpass/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/IJHack/qtpass">View On <strong>GitHub</strong></a></li>
         </ul>
-        <div class="screenshots">   
-        	<img id="qtpass" src="images/qtpass.png" alt="QtPass alpha" />
-        	<img id="config" class="hidden" src="images/config.png" alt="QtPass alpha configuration" />
-        </div>
-      </section>
-    </div>
+      </header>
+      <section>
+        <h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">QtPass maintained by <a href="https://github.com/IJHack">IJHack</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<ul>
+<li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
+<li>Configurable shoulder surfing protection options</li>
+<li>Cross platform: Linux, BSD, OS X and Windows</li>
+<li>Per-folder user selection for multi recipient encryption</li>
+</ul>
+
+<p>While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.</p>
+
+<h2>
+<a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
+
+<p>Using this program will not magically keep your passwords secure against
+compromised computers even if you use it in combination with a smartcard.</p>
+
+<p>It does protect future and changed passwords though against anyone with access to
+your password store only but not your keys.
+Used with a smartcard it also protects against anyone just monitoring/copying
+all files/keystrokes on that machine and such an attacker would only gain access
+to the passwords you actually use.
+Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298
+even without your PIN) all your passwords available to the machine can be
+decrypted by it, if there is malicious software targeted specifically against
+it installed (or at least one that knows how to use a smartcard).</p>
+
+<p>To get better protection out of use with a smartcard even against a targeted
+attack I can think of at least two options:</p>
+
+<ul>
+<li>The smartcard must require explicit confirmation for each decryption operation.
+Or if it just provides a counter for decrypted data you could at least notice
+an attack afterwards, though at quite some effort on your part.</li>
+<li>Use a different smartcard for each (group of) key.</li>
+<li>If using a YubiKey or U2F module or similar that requires a "button" press for
+other authentication methods you can use one OTP/U2F enabled WebDAV account per
+password (or groups of passwords) as a quite inconvenient workaround.
+Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
+(so you would have to run your own server).</li>
+</ul>
+
+<h2>
+<a id="planned-features" class="anchor" href="#planned-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planned features</h2>
+
+<ul>
+<li>WebDAV support (configuration)</li>
+<li>Templates (username, url etc)</li>
+<li>First use wizards to set up password-store</li>
+<li>Colour coding folders (possibly disabling folders you can't decrypt)</li>
+<li>Optional table view of decrypted folder contents</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>On most systems all you need is:
+<code>qmake &amp;&amp; make &amp;&amp; make install</code></p>
+
+<p>On MacOsX:
+<code>qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app -dmg</code></p>
+
+<p>Currently seems to only work with MacGPG2</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/IJHack">IJHack</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-	<script src="javascripts/main.js"></script>
   </body>
 </html>
