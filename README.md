@@ -1,7 +1,16 @@
-qtpass
+QtPass
 ======
 
 QtPass is a gui for [pass](http://www.passwordstore.org/)
+
+Features
+--------
+* Using pass or git and gpg2 directly
+* Configurable shoulder surfing protection options
+* Cross platform: Linux, BSD, OS X and Windows
+* Per-folder user selection for multi recepient encrypton
+
+While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
 Security considerations
 -----------------------
@@ -28,12 +37,13 @@ attack I can think of at least two options:
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
   (so you would have to run your own server).
 
-Current state
--------------
-* Using pass or directly with git and gpg2
-* Configurable
-* Cross platform
-* Per-folder user selection 
+Planned features
+----------------
+* WebDAV support (configuration)
+* Templates (username, url etc)
+* First use wizards to set up password-store
+* Colour coding folders (possibly disabling folders you can't decrypt)
+* Optional table view of decrypted folder contents
 
 Instalation
 -----------
@@ -41,7 +51,9 @@ On most systems all you need is:
 `qmake && make && make install`
 
 On MacOsX:
-`qmake && make && macdeployqt QtPass.app -dmg `
+`qmake && make && macdeployqt QtPass.app -dmg`
+
+Currently seems to only work with MacGPG2
 
 Further reading
 ---------------
