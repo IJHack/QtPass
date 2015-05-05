@@ -155,7 +155,7 @@ void MainWindow::checkConfig() {
 
     gpgExecutable = settings.value("gpgExecutable").toString();
     if (gpgExecutable == "") {
-        gpgExecutable = Util::findBinaryInPath("gpg");
+        gpgExecutable = Util::findBinaryInPath("gpg2");
     }
     gpgHome = settings.value("gpgHome").toString();
 
