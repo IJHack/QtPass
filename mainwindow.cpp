@@ -356,7 +356,7 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     }
 #ifdef __APPLE__
     // TODO needs check to see if path exists or some other handling!!
-    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:/usr/local/bin:");
 #endif
     //QMessageBox::information(this, "env", env.join("\n"));
     process->setEnvironment(env);
