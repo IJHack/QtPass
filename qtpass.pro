@@ -34,12 +34,12 @@ FORMS     += mainwindow.ui \
              usersdialog.ui
 
 nosingleapp {
-QMAKE_CXXFLAGS += -DSINGLE_APP=0
+    QMAKE_CXXFLAGS += -DSINGLE_APP=0
 } else {
-SOURCES += singleapplication.cpp
-HEADERS += singleapplication.h
-QT += network
-QMAKE_CXXFLAGS += -DSINGLE_APP=1
+    SOURCES += singleapplication.cpp
+    HEADERS += singleapplication.h
+    QT      += network
+    QMAKE_CXXFLAGS += -DSINGLE_APP=1
 }
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
@@ -51,7 +51,7 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_pl_PL.ts \
                     localization/localization_ru_RU.ts
 
-RESOURCES += resources.qrc
+RESOURCES   += resources.qrc
 
 win32 {
     RC_FILE = windows.rc
@@ -59,7 +59,7 @@ win32 {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }
     QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
-    LIBS += -lmpr
+    LIBS    += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
 }
@@ -68,4 +68,4 @@ OTHER_FILES += LICENSE \
                README.md
 
 target.path = /usr/local/bin/
-INSTALLS += target
+INSTALLS    += target
