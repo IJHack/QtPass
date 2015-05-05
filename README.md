@@ -8,7 +8,7 @@ Features
 * Using pass or git and gpg2 directly
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
-* Per-folder user selection for multi recepient encrypton
+* Per-folder user selection for multi recipient encryption
 
 While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
@@ -45,8 +45,8 @@ Planned features
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * Optional table view of decrypted folder contents
 
-Instalation
------------
+Installation
+------------
 On most systems all you need is:
 `qmake && make && make install`
 
