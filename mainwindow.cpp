@@ -318,7 +318,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         if (usePass) {
             executePass('"' + file + '"');
         } else {
-            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq \"" + file + '"');
+            executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
         }
     }
 }
@@ -348,13 +348,18 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     }
     wrapperRunning = true;
     process->setWorkingDirectory(passStore);
+    QStringList env = QProcess::systemEnvironment();
     if (!gpgHome.isEmpty()) {
-        QStringList env = QProcess::systemEnvironment();
         QDir absHome(gpgHome);
         absHome.makeAbsolute();
         env << "GNUPGHOME=" + absHome.path();
-        process->setEnvironment(env);
     }
+#ifdef __APPLE__
+    // TODO needs check to see if path exists or some other handling!!
+    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+#endif
+    //QMessageBox::information(this, "env", env.join("\n"));
+    process->setEnvironment(env);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
