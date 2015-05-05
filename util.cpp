@@ -12,6 +12,18 @@ void Util::initialiseEnvironment()
 {
     if (!_envInitialised) {
         _env = QProcessEnvironment::systemEnvironment();
+#ifdef __APPLE__
+        // TODO checks here
+        QString path = _env.value("PATH");
+
+        if (!path.contains("/usr/local/MacGPG2/bin") && QFile("/usr/local/MacGPG2/bin").exists()) {
+            path += ":/usr/local/MacGPG2/bin";
+        }
+        if (!path.contains("/usr/local/bin")) {
+            path += ":/usr/local/bin";
+        }
+        _env.insert("PATH", path);
+#endif
         _envInitialised = true;
     }
 }

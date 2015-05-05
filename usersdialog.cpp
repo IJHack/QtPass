@@ -1,5 +1,6 @@
 #include "usersdialog.h"
 #include "ui_usersdialog.h"
+#include <QRegExp>
 
 UsersDialog::UsersDialog(QWidget *parent) :
     QDialog(parent),
@@ -28,14 +29,36 @@ void UsersDialog::itemChange(QListWidgetItem *item)
 
 void UsersDialog::setUsers(QList<UserInfo> *users)
 {
+    userList = users;
+    populateList("");
+}
+
+void UsersDialog::populateList(const QString &filter)
+{
+    QRegExp nameFilter("*"+filter+"*");
+    nameFilter.setPatternSyntax(QRegExp::Wildcard);
+    nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
     ui->listWidget->clear();
-    if (users) {
-        for (QList<UserInfo>::iterator it = users->begin(); it != users->end(); ++it) {
+    if (userList) {
+        for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
             UserInfo &user(*it);
-            QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
-            item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
-            item->setData(Qt::UserRole, QVariant::fromValue(&user));
-            ui->listWidget->addItem(item);
+            if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
+                QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
+                item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
+                item->setData(Qt::UserRole, QVariant::fromValue(&user));
+                ui->listWidget->addItem(item);
+            }
         }
     }
+}
+
+void UsersDialog::on_clearButton_clicked()
+{
+    ui->lineEdit->clear();
+    on_lineEdit_textChanged("");
+}
+
+void UsersDialog::on_lineEdit_textChanged(const QString &filter)
+{
+    populateList(filter);
 }

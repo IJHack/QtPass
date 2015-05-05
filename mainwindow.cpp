@@ -7,6 +7,8 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
+#include <QFileInfo>
+#include <QQueue>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <winnetwk.h>
@@ -28,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
     enableUiElements(true);
+    wrapperRunning = false;
+    execQueue = new QQueue<execQueueItem>;
 }
 
 /**
@@ -130,6 +134,7 @@ void MainWindow::checkConfig() {
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
     hidePassword = (settings.value("hidePassword") == "true");
     hideContent = (settings.value("hideContent") == "true");
+    addGPGId = (settings.value("addGPGId") != "false");
 
     passStore = settings.value("passStore").toString();
     if (passStore == "") {
@@ -150,7 +155,7 @@ void MainWindow::checkConfig() {
 
     gpgExecutable = settings.value("gpgExecutable").toString();
     if (gpgExecutable == "") {
-        gpgExecutable = Util::findBinaryInPath("gpg");
+        gpgExecutable = Util::findBinaryInPath("gpg2");
     }
     gpgHome = settings.value("gpgHome").toString();
 
@@ -190,6 +195,24 @@ void MainWindow::checkConfig() {
 
     ui->textBrowser->setOpenExternalLinks(true);
 
+    env = QProcess::systemEnvironment();
+    if (!gpgHome.isEmpty()) {
+        QDir absHome(gpgHome);
+        absHome.makeAbsolute();
+        env << "GNUPGHOME=" + absHome.path();
+    }
+#ifdef __APPLE__
+    // If it exists, add the gpgtools to PATH
+    if (QFile("/usr/local/MacGPG2/bin").exists()) {
+        env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+    }
+    // Add missing /usr/local/bin
+    if (env.filter("/usr/local/bin").isEmpty()) {
+        env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
+    }
+#endif
+    //QMessageBox::information(this, "env", env.join("\n"));
+
     ui->lineEdit->setFocus();
 }
 
@@ -210,6 +233,7 @@ void MainWindow::config() {
     d->setAutoclear(autoclearSeconds);
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
+    d->addGPGId(addGPGId);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -224,6 +248,7 @@ void MainWindow::config() {
             autoclearSeconds = d->getAutoclear();
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
+            addGPGId = d->addGPGId();
 
             QSettings &settings(getSettings());
 
@@ -237,6 +262,7 @@ void MainWindow::config() {
             settings.setValue("autoclearSeconds", autoclearSeconds);
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
+            settings.setValue("addGPGId", addGPGId ? "true" : "false");
 
             ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
@@ -310,7 +336,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         if (usePass) {
             executePass('"' + file + '"');
         } else {
-            executeWrapper(gpgExecutable , "--no-tty --use-agent -dq \"" + file + '"');
+            executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
         }
     }
 }
@@ -329,14 +355,18 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
-    process->setWorkingDirectory(passStore);
-    if (!gpgHome.isEmpty()) {
-        QStringList env = QProcess::systemEnvironment();
-        QDir absHome(gpgHome);
-        absHome.makeAbsolute();
-        env << "GNUPGHOME=" + absHome.path();
-        process->setEnvironment(env);
+    if (wrapperRunning) {
+        execQueueItem item;
+        item.app = app;
+        item.args = args;
+        item.input = input;
+        execQueue->enqueue(item);
+        //qDebug() << item.app + "," + item.args + "," + item.input;
+        return;
     }
+    wrapperRunning = true;
+    process->setWorkingDirectory(passStore);
+    process->setEnvironment(env);
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
@@ -410,6 +440,7 @@ void MainWindow::clearClipboard()
  * @param exitStatus
  */
 void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
+    wrapperRunning = false;
     bool error = exitStatus != QProcess::NormalExit || exitCode > 0;
     if (error) {
          ui->textBrowser->setTextColor(Qt::red);
@@ -418,6 +449,10 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     enableUiElements(true);
     if (!error && currentAction == EDIT) {
         on_treeView_clicked(ui->treeView->currentIndex());
+    }
+    if (!execQueue->isEmpty()) {
+        execQueueItem item = execQueue->dequeue();
+        executeWrapper(item.app, item.args, item.input);
     }
 }
 
@@ -434,6 +469,7 @@ void MainWindow::enableUiElements(bool state) {
     state &= ui->treeView->currentIndex().isValid();
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
+    ui->pushButton->setEnabled(state);
 }
 
 /**
@@ -636,13 +672,20 @@ void MainWindow::setPassword(QString file, bool overwrite)
         }
         QString force(overwrite ? " --yes " : " ");
         executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
+        if (!useWebDav) {
+            if (!overwrite) {
+                executeWrapper(gitExecutable, "add \"" + file + '"');
+            }
+            QString path = file;
+            path.replace(QRegExp("\\.gpg$"), "");
+            path.replace(QRegExp("^" + passStore), "");
+            executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass\"");
+        }
     }
 }
 
 void MainWindow::on_addButton_clicked()
 {
-
-
     bool ok;
     QString file = QInputDialog::getText(this, tr("New file"),
         tr("New password file:"), QLineEdit::Normal,
@@ -656,8 +699,6 @@ void MainWindow::on_addButton_clicked()
     }
     lastDecrypt = "";
     setPassword(file, false);
-    executeWrapper(gitExecutable, "add " + file);
-//    executeWrapper(gitExecutable, "commit -a -m \"Adding " + file + "\"");
 }
 
 void MainWindow::on_deleteButton_clicked()
@@ -765,7 +806,15 @@ void MainWindow::on_usersButton_clicked()
         return;
     }
     d.setUsers(NULL);
-    QFile gpgId(dir + ".gpg-id");
+    QString gpgIdFile = dir + ".gpg-id";
+    QFile gpgId(gpgIdFile);
+    bool addFile = false;
+    if (addGPGId) {
+        QFileInfo checkFile(gpgIdFile);
+        if (!checkFile.exists() || !checkFile.isFile()) {
+            addFile = true;
+        }
+    }
     if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this, tr("Cannot update"),
             tr("Failed to open .gpg-id for writing."));
@@ -777,6 +826,14 @@ void MainWindow::on_usersButton_clicked()
         }
     }
     gpgId.close();
+    if (!useWebDav){
+        if (addFile) {
+            executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
+        }
+        QString path = gpgIdFile;
+        path.replace(QRegExp("\\.gpg$"), "");
+        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass\"");
+    }
 }
 
 /**

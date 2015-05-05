@@ -17,6 +17,12 @@ namespace Ui {
 class MainWindow;
 }
 
+struct execQueueItem {
+    QString app;
+    QString args;
+    QString input;
+};
+
 struct UserInfo;
 
 class MainWindow : public QMainWindow
@@ -64,6 +70,7 @@ private:
     bool useAutoclear;
     bool hidePassword;
     bool hideContent;
+    bool addGPGId;
     int autoclearSeconds;
     QString passStore;
     QString passExecutable;
@@ -78,6 +85,9 @@ private:
     QString clippedPass;
     actionType currentAction;
     QString lastDecrypt;
+    bool wrapperRunning;
+    QStringList env;
+    QQueue<execQueueItem> *execQueue;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
