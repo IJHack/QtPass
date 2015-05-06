@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("IJHack");
     QCoreApplication::setOrganizationDomain("ijhack.org");
     QCoreApplication::setApplicationName("QtPass");
-    QCoreApplication::setApplicationVersion("0.8.0");
+    QCoreApplication::setApplicationVersion(VERSION);
 
     //Setup and load translator for localization
     QTranslator translator;
