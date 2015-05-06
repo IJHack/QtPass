@@ -39,6 +39,7 @@ public:
     void setGpgExecutable(QString);
     void checkConfig();
     void setApp(SingleApplication* app);
+    void setText(QString);
 
 private slots:
     void on_updateButton_clicked();
