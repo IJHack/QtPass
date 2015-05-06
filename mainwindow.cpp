@@ -414,7 +414,7 @@ void MainWindow::readyRead(bool finished = false) {
     }
 
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
-    output.replace(QRegExp("\n )"), "<br />");
+    output.replace(QRegExp("\n"), "<br />");
     if (ui->textBrowser->toPlainText() != "") {
         output = ui->textBrowser->toHtml() + output;
     }
