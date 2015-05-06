@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     enableUiElements(true);
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
+    ui->statusBar->showMessage(tr("Welcome to QtPass ")  + VERSION, 2000);
 }
 
 /**

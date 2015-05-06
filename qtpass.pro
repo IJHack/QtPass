@@ -15,6 +15,7 @@ macx {
 }
 
 TEMPLATE   = app
+VERSION    = 0.8.1
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
@@ -62,6 +63,7 @@ win32 {
     LIBS    += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
+    QMAKE_INFO_PLIST = Info.plist
 }
 
 OTHER_FILES += LICENSE \
@@ -69,3 +71,5 @@ OTHER_FILES += LICENSE \
 
 target.path = /usr/local/bin/
 INSTALLS    += target
+
+DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
