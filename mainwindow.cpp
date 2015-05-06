@@ -853,7 +853,7 @@ void MainWindow::setApp(SingleApplication *app)
  */
 void MainWindow::messageAvailable(QString message)
 {
-    if (message == "show") {
+    if (message == "") {
         ui->lineEdit->selectAll();
         ui->lineEdit->setFocus();
     } else {
@@ -863,4 +863,13 @@ void MainWindow::messageAvailable(QString message)
     }
     show();
     raise();
+}
+
+/**
+ * @brief MainWindow::setText
+ * @param message
+ */
+void MainWindow::setText(QString text)
+{
+    ui->lineEdit->setText(text);
 }
