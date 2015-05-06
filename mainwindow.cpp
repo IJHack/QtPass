@@ -381,31 +381,31 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
-    QString output;
+    QString output = "";
     if (currentAction != GPG_INTERNAL) {
-    output = process->readAllStandardOutput();
-    if (finished && currentAction == GPG) {
-        lastDecrypt = output;
-        if (useClipboard) {
-            QClipboard *clip = QApplication::clipboard();
-            QStringList tokens =  output.split("\n");
-            clip->setText(tokens[0]);
-            ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
-            if (useAutoclear) {
-                  clippedPass = tokens[0];
-                  QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
-            }
-            if (hidePassword) {
-                tokens.pop_front();
-                output = tokens.join("\n");
-            }
-            if (hideContent) {
-                output = tr("Content hidden");
+        output = process->readAllStandardOutput();
+        if (finished && currentAction == GPG) {
+            lastDecrypt = output;
+            if (useClipboard) {
+                QClipboard *clip = QApplication::clipboard();
+                QStringList tokens =  output.split("\n");
+                clip->setText(tokens[0]);
+                ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
+                if (useAutoclear) {
+                      clippedPass = tokens[0];
+                      QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+                }
+                if (hidePassword) {
+                    tokens.pop_front();
+                    output = tokens.join("\n");
+                }
+                if (hideContent) {
+                    output = "<font color=\"blue\">" + tr("Content hidden") + "</font><br />";
+                }
             }
         }
-    }
-    output.replace(QRegExp("<"), "&lt;");
-    output.replace(QRegExp(">"), "&gt;");
+        output.replace(QRegExp("<"), "&lt;");
+        output.replace(QRegExp(">"), "&gt;");
     }
 
     QString error = process->readAllStandardError();
@@ -414,8 +414,11 @@ void MainWindow::readyRead(bool finished = false) {
     }
 
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
-    output.replace(QRegExp("\n"), "<br />");
-    ui->textBrowser->setHtml(ui->textBrowser->toHtml() + output);
+    output.replace(QRegExp("\n )"), "<br />");
+    if (ui->textBrowser->toPlainText() != "") {
+        output = ui->textBrowser->toHtml() + output;
+    }
+    ui->textBrowser->setHtml(output);
 }
 
 /**
@@ -853,7 +856,7 @@ void MainWindow::setApp(SingleApplication *app)
  */
 void MainWindow::messageAvailable(QString message)
 {
-    if (message == "show") {
+    if (message == "") {
         ui->lineEdit->selectAll();
         ui->lineEdit->setFocus();
     } else {
@@ -863,4 +866,13 @@ void MainWindow::messageAvailable(QString message)
     }
     show();
     raise();
+}
+
+/**
+ * @brief MainWindow::setText
+ * @param message
+ */
+void MainWindow::setText(QString text)
+{
+    ui->lineEdit->setText(text);
 }
