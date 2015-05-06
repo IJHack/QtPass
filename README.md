@@ -54,8 +54,10 @@ On most systems all you need is:
 
 On MacOsX:
 `qmake && make && macdeployqt QtPass.app -dmg`
+* Currently seems to only work with MacGPG2
 
-Currently seems to only work with MacGPG2
+On some systems there are issues with qt4 and qt5 being installed at the same time.
+An easy fix is regenerating the Makefile with: `make clean && rm Makefile && qmake -qt5` or if qmake is ambiguous: `qmake-qt5`
 
 Further reading
 ---------------
