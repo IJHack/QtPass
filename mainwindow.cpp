@@ -382,11 +382,12 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  */
 void MainWindow::readyRead(bool finished = false) {
     QString output = "";
+    QString error = process->readAllStandardError();
     if (currentAction != GPG_INTERNAL) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            if (useClipboard) {
+            if (useClipboard && error.size() == 0) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
@@ -408,7 +409,6 @@ void MainWindow::readyRead(bool finished = false) {
         output.replace(QRegExp(">"), "&gt;");
     }
 
-    QString error = process->readAllStandardError();
     if (error.size() > 0) {
         output = "<font color=\"red\">" + error + "</font><br />" + output;
     }
