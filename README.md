@@ -47,6 +47,7 @@ Planned features
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * Optional table view of decrypted folder contents
 * Profiles (to allow use of multiple password stores)
+* Password generation 
 
 Installation
 ------------
