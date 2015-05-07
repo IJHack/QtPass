@@ -49,12 +49,12 @@ Planned features
 ----------------
 * Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
 * Right click handlers for file/folder and content
-* Templates (username, url etc) in Add / Edit screen (configurable templates)
-* Password generation with options for what kind you'd like
 * First use wizards to set up password-store (and decryption key, currently always the gpg default key)
+* Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
+* Password generation with options for what kind you'd like
+* Templates (username, url etc) in Add / Edit screen (configurable templates)
 * Colour coding or disabling of people you can't encrypt for (trust settings) in User management
 * Colour coding folders (possibly disabling folders you can't decrypt)
-* Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
