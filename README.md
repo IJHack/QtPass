@@ -39,6 +39,12 @@ attack I can think of at least two options:
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
   (so you would have to run your own server).
 
+Known issues
+------------
+* Filtering (searching) breaks the tree/model sometimes 
+* Starting without a correctly set password-store folder give weird results in the tree view
+* On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN
+
 Planned features
 ----------------
 * WebDAV (configuration) support
