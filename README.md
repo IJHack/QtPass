@@ -41,13 +41,18 @@ attack I can think of at least two options:
 
 Planned features
 ----------------
-* WebDAV support (configuration)
-* Templates (username, url etc)
-* First use wizards to set up password-store
+* WebDAV (configuration) support
+* Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
+* Templates (username, url etc) in Add / Edit screen (configurable templates)
+* Password generation with options for what kind you'd like
+* First use wizards to set up password-store (and decryption key, currently always the gpg default key)
+* Right click handlers for file/folder and content
+* Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
+* Colour coding or disabling of people you can't encrypt for (trust settings) in User management
 * Colour coding folders (possibly disabling folders you can't decrypt)
+* Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
 * Optional table view of decrypted folder contents
-* Profiles (to allow use of multiple password stores)
-* Password generation 
+* Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)
 
 Installation
 ------------
