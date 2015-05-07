@@ -398,11 +398,12 @@ void MainWindow::readyRead(bool finished = false) {
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
                 }
                 if (hidePassword) {
-                    tokens.pop_front();
+                    //tokens.pop_front();
+                    tokens[0] = "***" + tr("Password hidden") + "***";
                     output = tokens.join("\n");
                 }
                 if (hideContent) {
-                    output = "<font color=\"blue\">" + tr("Content hidden") + "</font><br />";
+                    output = "***" + tr("Content hidden") + "***";
                 }
             }
         }
