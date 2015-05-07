@@ -348,3 +348,29 @@ void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
+
+/**
+ * @brief Dialog::setProfiles
+ * @param profiles
+ */
+void Dialog::setProfiles(QHash<QString, QString> profiles)
+{
+    QHashIterator<QString, QString> i(profiles);
+    while (i.hasNext()) {
+        i.next();
+        // TODO
+        ui->profileName->setText(i.key());
+        ui->storePath->setText(i.value());
+    }
+}
+
+/**
+ * @brief Dialog::getProfiles
+ * @return
+ */
+QHash<QString, QString> Dialog::getProfiles()
+{
+    QHash<QString, QString> profiles;
+    profiles.insert(ui->profileName->text(), ui->storePath->text());
+    return profiles;
+}

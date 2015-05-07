@@ -55,6 +55,7 @@ Planned features
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
 * Colour coding or disabling of people you can't encrypt for (trust settings) in User management
 * Colour coding folders (possibly disabling folders you can't decrypt)
+* Trayicon support
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
