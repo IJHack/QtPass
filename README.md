@@ -46,6 +46,7 @@ Planned features
 * First use wizards to set up password-store
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * Optional table view of decrypted folder contents
+* Profiles (to allow use of multiple password stores)
 
 Installation
 ------------
