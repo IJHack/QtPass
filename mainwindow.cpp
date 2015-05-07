@@ -164,6 +164,7 @@ void MainWindow::checkConfig() {
     webDavUrl = settings.value("webDavUrl").toString();
     webDavUser = settings.value("webDavUser").toString();
     webDavPassword = settings.value("webDavPassword").toString();
+    profiles = settings.value("profiles").toStringList();
 
     if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
         config();
@@ -195,6 +196,11 @@ void MainWindow::checkConfig() {
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
     ui->textBrowser->setOpenExternalLinks(true);
+    if (profiles.isEmpty()) {
+        ui->profileBox->setEnabled(false);
+    } else {
+        ui->profileBox->addItems(profiles);
+    }
 
     env = QProcess::systemEnvironment();
     if (!gpgHome.isEmpty()) {
