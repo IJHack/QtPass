@@ -959,4 +959,22 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
 
     settings.setValue("profile", profile);
     settings.setValue("passStore", passStore);
+
+    // qDebug() << env;
+    QStringList store = env.filter("PASSWORD_STORE_DIR");
+    // put PASSWORD_STORE_DIR in env
+    if (store.isEmpty()) {
+        //qDebug() << "Added PASSWORD_STORE_DIR";
+        env.append("PASSWORD_STORE_DIR=" + passStore);
+    } else {
+        //qDebug() << "Update PASSWORD_STORE_DIR";
+        env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
+    }
+
+    // update model and treeview
+    proxyModel.setSourceModel(&model);
+    proxyModel.setModelAndStore(&model, passStore);
+    selectionModel.reset(new QItemSelectionModel(&proxyModel));
+    model.fetchMore(model.setRootPath(passStore));
+    model.sort(0, Qt::AscendingOrder);
 }
