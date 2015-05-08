@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>660</width>
-    <height>446</height>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -146,6 +146,21 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QTableWidget" name="profileTable">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
         <column>
          <property name="text">
           <string>Name</string>
@@ -188,17 +203,22 @@
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QToolButton" name="toolButton">
+         <widget class="QToolButton" name="addButton">
           <property name="text">
-           <string>Add</string>
+           <string>Add/Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="deleteButton">
+          <property name="text">
+           <string>Delete</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
      </layout>
-     <zorder>labelStorePath</zorder>
-     <zorder></zorder>
      <zorder>profileTable</zorder>
      <zorder></zorder>
     </widget>

@@ -58,6 +58,7 @@ private slots:
     void on_editButton_clicked();
     void on_usersButton_clicked();
     void messageAvailable(QString message);
+    void on_profileBox_currentIndexChanged(QString);
 
 private:
     QScopedPointer<QSettings> settings;
@@ -91,6 +92,7 @@ private:
     QHash<QString, QString> profiles;
     QQueue<execQueueItem> *execQueue;
     QString profile;
+    bool startupPhase;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
