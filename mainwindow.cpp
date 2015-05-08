@@ -165,6 +165,7 @@ void MainWindow::checkConfig() {
     webDavUser = settings.value("webDavUser").toString();
     webDavPassword = settings.value("webDavPassword").toString();
 
+    profile = settings.value("profile").toString();
     settings.beginGroup("profiles");
     QStringList keys = settings.childKeys();
     foreach (QString key, keys) {
@@ -244,7 +245,7 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
-    d->setProfiles(profiles);
+    d->setProfiles(profiles, profile);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {

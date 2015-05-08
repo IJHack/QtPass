@@ -9,6 +9,7 @@ Features
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
+* Multiple password store profiles
 
 While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
@@ -50,7 +51,7 @@ Planned features
 * Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
 * Right click handlers for file/folder and content
 * First use wizards to set up password-store (and decryption key, currently always the gpg default key)
-* Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
+* ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
 * Password generation with options for what kind you'd like
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
 * Colour coding or disabling of people you can't encrypt for (trust settings) in User management
