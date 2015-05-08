@@ -32,7 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     enableUiElements(true);
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
-    ui->statusBar->showMessage(tr("Welcome to QtPass ")  + VERSION, 2000);
+    ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
+    startupPhase = true;
 }
 
 /**
@@ -225,6 +226,7 @@ void MainWindow::checkConfig() {
     //QMessageBox::information(this, "env", env.join("\n"));
 
     ui->lineEdit->setFocus();
+    startupPhase = false;
 }
 
 /**
@@ -447,7 +449,7 @@ void MainWindow::readyRead(bool finished = false) {
 
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
-    if (ui->textBrowser->toPlainText() != "") {
+    if (!ui->textBrowser->toPlainText().isEmpty()) {
         output = ui->textBrowser->toHtml() + output;
     }
     ui->textBrowser->setHtml(output);
@@ -914,22 +916,47 @@ void MainWindow::setText(QString text)
  */
 void MainWindow::updateProfileBox()
 {
+    qDebug() << profiles.size();
     if (profiles.isEmpty()) {
         ui->profileBox->setVisible(false);
     } else {
         ui->profileBox->setVisible(true);
         if (profiles.size() < 2) {
             ui->profileBox->setEnabled(false);
+        } else {
+            ui->profileBox->setEnabled(true);
         }
         ui->profileBox->clear();
         QHashIterator<QString, QString> i(profiles);
         while (i.hasNext()) {
             i.next();
-            ui->profileBox->addItem(i.key());
+            if (!i.key().isEmpty()) {
+                ui->profileBox->addItem(i.key());
+            }
         }
     }
-    int index = ui->profileBox->findData(profile);
+    int index = ui->profileBox->findText(profile);
     if ( index != -1 ) { // -1 for not found
        ui->profileBox->setCurrentIndex(index);
     }
+}
+
+/**
+ * @brief MainWindow::on_profileBox_currentIndexChanged
+ * @param name
+ */
+void MainWindow::on_profileBox_currentIndexChanged(QString name)
+{
+    if (startupPhase || name == profile) {
+        return;
+    }
+    profile = name;
+
+    passStore = profiles[name];
+    ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
+
+    QSettings &settings(getSettings());
+
+    settings.setValue("profile", profile);
+    settings.setValue("passStore", passStore);
 }

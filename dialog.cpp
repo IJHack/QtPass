@@ -1,5 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include <QDebug>
+#include <QMessageBox>
 
 /**
  * @brief Dialog::Dialog
@@ -10,6 +12,8 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    ui->profileTable->verticalHeader()->hide();
+    ui->profileTable->horizontalHeader()->setStretchLastSection(true);
 }
 
 /**
@@ -352,18 +356,25 @@ void Dialog::addGPGId(bool addGPGId)
 /**
  * @brief Dialog::setProfiles
  * @param profiles
+ * @param profile
  */
 void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 {
+    ui->profileTable->setRowCount(profiles.count());
     QHashIterator<QString, QString> i(profiles);
+    int n = 0;
     while (i.hasNext()) {
         i.next();
-        // TODO
-        //ui->profileTable->
-        if (i.key() == profile) {
-            ui->profileName->setText(i.key());
-            ui->storePath->setText(i.value());
+        if (!i.value().isEmpty()) {
+            ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
+            ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value()));
+            //qDebug() << "naam:" + i.key();
+            if (i.key() == profile) {
+                ui->profileName->setText(i.key());
+                ui->storePath->setText(i.value());
+            }
         }
+        n++;
     }
 }
 
@@ -374,6 +385,76 @@ void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 QHash<QString, QString> Dialog::getProfiles()
 {
     QHash<QString, QString> profiles;
-    profiles.insert(ui->profileName->text(), ui->storePath->text());
+    for (int i = 0; i < ui->profileTable->rowCount(); i++) {
+        QString path = ui->profileTable->item(i, 1)->text();
+        if (!path.isEmpty()) {
+            profiles.insert(ui->profileTable->item(i, 0)->text(),
+                            path);
+        }
+    }
     return profiles;
+}
+
+/**
+ * @brief Dialog::on_addButton_clicked
+ */
+void Dialog::on_addButton_clicked()
+{
+    QString name = ui->profileName->text();
+    int n = 0;
+    bool newItem = true;
+    QAbstractItemModel *model = ui->profileTable->model();
+    QModelIndexList matches = model->match( model->index(0,0), Qt::DisplayRole, name);
+    foreach(const QModelIndex &index, matches)
+    {
+        QTableWidgetItem *item = ui->profileTable->item(index.row(), index.column());
+        n = item->row();
+        qDebug() << "overwrite:" << item->text();
+        newItem = false;
+    }
+    if (newItem) {
+        n = ui->profileTable->rowCount();
+        ui->profileTable->insertRow(n);
+    }
+    ui->profileTable->setItem(n, 0, new QTableWidgetItem(name));
+    ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
+    //qDebug() << ui->profileName->text();
+    ui->profileTable->selectRow(n);
+    if (ui->profileTable->rowCount() < 1) {
+        ui->deleteButton->setEnabled(true);
+    }
+}
+
+/**
+ * @brief Dialog::on_profileTable_currentItemChanged
+ * @param current
+ */
+void Dialog::on_profileTable_currentItemChanged(QTableWidgetItem *current)
+{
+    if (current == 0) {
+        return;
+    }
+    int n = current->row();
+    ui->profileName->setText(ui->profileTable->item(n, 0)->text());
+    ui->storePath->setText(ui->profileTable->item(n, 1)->text());
+}
+
+/**
+ * @brief Dialog::on_deleteButton_clicked
+ */
+void Dialog::on_deleteButton_clicked()
+{
+    QList<QTableWidgetItem*> selected = ui->profileTable->selectedItems();
+    if (selected.count() == 0) {
+        QMessageBox::warning(this, tr("No profile selected"),
+            tr("No profile selected to delete"));
+        return;
+    }
+    for (int i = 0; i < selected.size(); ++i) {
+        QTableWidgetItem* item = selected.at(i);
+        ui->profileTable->removeRow(item->row());
+    }
+    if (ui->profileTable->rowCount() < 1) {
+        ui->deleteButton->setEnabled(false);
+    }
 }
