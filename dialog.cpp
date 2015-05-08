@@ -353,14 +353,17 @@ void Dialog::addGPGId(bool addGPGId)
  * @brief Dialog::setProfiles
  * @param profiles
  */
-void Dialog::setProfiles(QHash<QString, QString> profiles)
+void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 {
     QHashIterator<QString, QString> i(profiles);
     while (i.hasNext()) {
         i.next();
         // TODO
-        ui->profileName->setText(i.key());
-        ui->storePath->setText(i.value());
+        //ui->profileTable->
+        if (i.key() == profile) {
+            ui->profileName->setText(i.key());
+            ui->storePath->setText(i.value());
+        }
     }
 }
 
