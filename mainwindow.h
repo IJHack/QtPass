@@ -101,7 +101,7 @@ private:
     void setPassword(QString, bool);
     void normalizePassStore();
     QSettings &getSettings();
-    QList<UserInfo> listKeys(QString keystring = "");
+    QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
     QStringList getRecipientList(QString for_file);
     QString getRecipientString(QString for_file, QString separator = " ", int *count = NULL);
     void mountWebDav();
