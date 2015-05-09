@@ -46,6 +46,11 @@ void UsersDialog::populateList(const QString &filter)
                 QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
+                if (user.have_secret) {
+                    item->setForeground(Qt::blue);
+                } else if (user.validity == '-') {
+                    item->setBackground(Qt::red);
+                }
                 ui->listWidget->addItem(item);
             }
         }
