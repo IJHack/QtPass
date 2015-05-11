@@ -27,7 +27,9 @@
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified and retain the old permissions until you edit them.</string>
+Note: Existing files will not be modified and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>

@@ -40,12 +40,16 @@ void UsersDialog::populateList(const QString &filter)
     nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
     ui->listWidget->clear();
     if (userList) {
-        for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
-            UserInfo &user(*it);
+        for (UserInfo &user : *userList) {
             if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
                 QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
+                if (user.have_secret) {
+                    item->setForeground(Qt::blue);
+                } else if (user.validity == '-') {
+                    item->setBackground(Qt::red);
+                }
                 ui->listWidget->addItem(item);
             }
         }
