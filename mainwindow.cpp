@@ -42,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 #ifdef Q_OS_WIN
+}
     if (useWebDav) WNetCancelConnection2A(passStore.toUtf8().constData(), 0, 1);
 #else
     if (fusedav.state() == QProcess::Running) {
@@ -177,6 +178,8 @@ void MainWindow::checkConfig() {
     if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
         config();
     }
+
+    model.setRootPath(passStore);
 
     // TODO: this needs to be before we try to access the store,
     // but it would be better to do it after the Window is shown,
@@ -972,9 +975,11 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
     }
 
     // update model and treeview
+    model.setRootPath(passStore);
     proxyModel.setSourceModel(&model);
     proxyModel.setModelAndStore(&model, passStore);
     selectionModel.reset(new QItemSelectionModel(&proxyModel));
     model.fetchMore(model.setRootPath(passStore));
     model.sort(0, Qt::AscendingOrder);
+    ui->treeView->setModel(&proxyModel);
 }
