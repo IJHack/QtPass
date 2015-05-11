@@ -5,6 +5,7 @@
 #include <QTreeView>
 #include <QFileSystemModel>
 #include <QProcess>
+#include <QQueue>
 #include <QSettings>
 #include "storemodel.h"
 #if SINGLE_APP
