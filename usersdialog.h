@@ -13,9 +13,11 @@ class UsersDialog;
 class QListWidgetItem;
 
 struct UserInfo {
-    UserInfo() : enabled(false) {}
+    UserInfo() : validity('-'), have_secret(false), enabled(false) {}
     QString name;
     QString key_id;
+    char validity;
+    bool have_secret;
     bool enabled;
 };
 

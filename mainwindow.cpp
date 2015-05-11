@@ -768,11 +768,12 @@ void MainWindow::on_editButton_clicked()
     setPassword(file, true);
 }
 
-QList<UserInfo> MainWindow::listKeys(QString keystring)
+QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
-    executeWrapper(gpgExecutable , "--no-tty --with-colons --list-keys " + keystring);
+    QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
+    executeWrapper(gpgExecutable , "--no-tty --with-colons " + listopt + keystring);
     process->waitForFinished(2000);
     if (process->exitStatus() != QProcess::NormalExit) {
         return users;
@@ -784,7 +785,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring)
         if (props.size() < 10) {
             continue;
         }
-        if(props[0] == "pub") {
+        if (props[0] == (secret ? "sec" : "pub")) {
             if (!current_user.key_id.isEmpty())
             {
                 users.append(current_user);
@@ -792,6 +793,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring)
             current_user = UserInfo();
             current_user.key_id = props[4];
             current_user.name   = props[9];
+            current_user.validity = props[8][0].toLatin1();
         } else if (current_user.name.isEmpty() && props[0] == "uid") {
             current_user.name = props[9];
         }
@@ -811,6 +813,12 @@ void MainWindow::on_usersButton_clicked()
             tr("Unable to get list of available gpg keys"));
         return;
     }
+    QList<UserInfo> secret_keys = listKeys("", true);
+    foreach (const UserInfo &sec, secret_keys) {
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+            if (sec.key_id == it->key_id) it->have_secret = true;
+        }
+    }
     QList<UserInfo> selected_users;
     QString dir = getDir(ui->treeView->currentIndex(), false);
     int count = 0;
@@ -819,8 +827,8 @@ void MainWindow::on_usersButton_clicked()
         selected_users = listKeys(recipients);
     }
     foreach (const UserInfo &sel, selected_users) {
-        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
-            if (sel.key_id == it->key_id) it->enabled = true;
+        for (UserInfo &user : users) {
+            if (sel.key_id == user.key_id) user.enabled = true;
         }
     }
     if (count > selected_users.size())
@@ -860,12 +868,19 @@ void MainWindow::on_usersButton_clicked()
             tr("Failed to open .gpg-id for writing."));
         return;
     }
+    bool secret_selected = false;
     foreach (const UserInfo &user, users) {
         if (user.enabled) {
             gpgId.write((user.key_id + "\n").toUtf8());
+            secret_selected |= user.have_secret;
         }
     }
     gpgId.close();
+    if (!secret_selected) {
+        QMessageBox::critical(this, tr("Check selected users!"),
+            tr("None of the selected keys have a secret key available.\n"
+               "You will not be able to decrypt any newly added passwords!"));
+    }
     if (!useWebDav){
         if (addFile) {
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
