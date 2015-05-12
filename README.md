@@ -13,6 +13,8 @@ Features
 
 While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
+QtPass requires GCC 4.7 or later or any other 2011 ISO C++ standard compliant compiler.
+
 Security considerations
 -----------------------
 Using this program will not magically keep your passwords secure against
