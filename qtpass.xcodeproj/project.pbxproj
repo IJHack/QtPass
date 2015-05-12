@@ -5,864 +5,565 @@
 	};
 	objectVersion = 46;
 	objects = {
-		5E618435888B9D49F8540165 = {
+
+/* Begin PBXAggregateTarget section */
+		26B4E91EF2425ADBEA0524CE /* Qt Preprocess */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "QtPass" */;
+			buildPhases = (
+				5E618435888B9D49F8540165 /* Qt Qmake */,
+				7EF0942E79C014DCEC8976BC /* Qt Preprocessors */,
+			);
+			dependencies = (
+			);
+			name = "Qt Preprocess";
+			productName = "Qt Preprocess";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		00F779EF244EFBE916AF99FA /* storemodel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = B5187303E083953F3EFA617D /* storemodel.cpp */; settings = {ATTRIBUTES = (); }; };
+		05EECA5A169D6F82FE74CF50 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 682A50D19E416195436708E4 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		30C9CF3FC679F0536FFEF57F /* QtCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 1824FEA7A030DDF578520F65 /* QtCore.framework */; };
+		4395E950F2EFE371EBA2C860 /* qrc_resources.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = B6332CE6B3399115AD5D7562 /* qrc_resources.cpp */; settings = {ATTRIBUTES = (); }; };
+		464E9FA732DB95D77ABD554A /* mainwindow.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 8D467E7358ADF4E3703F837B /* mainwindow.cpp */; settings = {ATTRIBUTES = (); }; };
+		4E60921DF2A0E29AA99951A6 /* moc_storemodel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 0B15A5A065F74BA508969D53 /* moc_storemodel.cpp */; settings = {ATTRIBUTES = (); }; };
+		52837C9FECCB353B2D990B77 /* moc_usersdialog.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = F1203CA4BC166AEBA4AFFA9F /* moc_usersdialog.cpp */; settings = {ATTRIBUTES = (); }; };
+		5BC99406B0491519D7C53827 /* singleapplication.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 2606ACEB7D117E2E1B29D729 /* singleapplication.cpp */; settings = {ATTRIBUTES = (); }; };
+		7C88A279C7618F664972857C /* dialog.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 30084799A9CDAA10A8263CD8 /* dialog.cpp */; settings = {ATTRIBUTES = (); }; };
+		7D6EC230EC5B0567CAD501D3 /* moc_singleapplication.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 03CA8D57962345313AC4234E /* moc_singleapplication.cpp */; settings = {ATTRIBUTES = (); }; };
+		8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = D4B32C2222F82AC56BADEB21 /* OpenGL.framework */; };
+		8BAEEC4A3B7E6C8DF0C5E709 /* moc_dialog.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 8531D6A776E3A0EABCE139B3 /* moc_dialog.cpp */; settings = {ATTRIBUTES = (); }; };
+		8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = A1A67BEAA744704B29168D39 /* IOKit.framework */; };
+		A4EB11F38A17FE225F530C5F /* QtNetwork.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 257369D5ABD5F9E533786349 /* QtNetwork.framework */; };
+		A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */; };
+		BCA110E3CF14D91E0E1088A3 /* util.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 9A8D94EBC9F96CFC3A35C6D8 /* util.cpp */; settings = {ATTRIBUTES = (); }; };
+		BD480A96340D9CB1ACDE22C6 /* moc_mainwindow.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 721C1DE06B327393E3F7D7E1 /* moc_mainwindow.cpp */; settings = {ATTRIBUTES = (); }; };
+		C7ED6A9B7931B19BAA0C2ADC /* QtGui.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 101802963F5557511D075663 /* QtGui.framework */; };
+		E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */; };
+		E6898B0812FD5927C67A114E /* usersdialog.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = D00C59F1FDE5896876C4CC0A /* usersdialog.cpp */; settings = {ATTRIBUTES = (); }; };
+		E8AFBD0B19879523C141FA3D /* QtWidgets.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = A8A91642445689BFE41019F2 /* QtWidgets.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		440FC7951B0265F5001466EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DB9C3763D02B1415CD9D565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26B4E91EF2425ADBEA0524CE;
+			remoteInfo = "Qt Preprocess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00452CF2080D5388EDC4264D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = /Users/annejan/Projects/qtpass/artwork/icon.icns; sourceTree = "<absolute>"; };
+		02F90D49765589144B3F77CC /* usersdialog.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = usersdialog.ui; path = /Users/annejan/Projects/qtpass/usersdialog.ui; sourceTree = "<absolute>"; };
+		03CA8D57962345313AC4234E /* moc_singleapplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_singleapplication.cpp; path = /Users/annejan/Projects/qtpass/moc_singleapplication.cpp; sourceTree = "<absolute>"; };
+		0B15A5A065F74BA508969D53 /* moc_storemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_storemodel.cpp; path = /Users/annejan/Projects/qtpass/moc_storemodel.cpp; sourceTree = "<absolute>"; };
+		101802963F5557511D075663 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = ../../Qt/5.4/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
+		145A02A70D45C9E21BD238F7 /* ui_usersdialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_usersdialog.h; path = /Users/annejan/Projects/qtpass/ui_usersdialog.h; sourceTree = "<absolute>"; };
+		14C9776A4B2E34DB51106724 /* ui_mainwindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_mainwindow.h; path = /Users/annejan/Projects/qtpass/ui_mainwindow.h; sourceTree = "<absolute>"; };
+		1824FEA7A030DDF578520F65 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = ../../Qt/5.4/clang_64/lib/QtCore.framework; sourceTree = "<absolute>"; };
+		1D15154C7B210C2FE2881554 /* QtPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QtPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		257369D5ABD5F9E533786349 /* QtNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtNetwork.framework; path = ../../Qt/5.4/clang_64/lib/QtNetwork.framework; sourceTree = "<absolute>"; };
+		2606ACEB7D117E2E1B29D729 /* singleapplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = singleapplication.cpp; path = /Users/annejan/Projects/qtpass/singleapplication.cpp; sourceTree = "<absolute>"; };
+		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
+		30084799A9CDAA10A8263CD8 /* dialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = dialog.cpp; path = /Users/annejan/Projects/qtpass/dialog.cpp; sourceTree = "<absolute>"; };
+		39C1BBBEB422738B02B4FACC /* resources.qrc */ = {isa = PBXFileReference; lastKnownFileType = text; name = resources.qrc; path = /Users/annejan/Projects/qtpass/resources.qrc; sourceTree = "<absolute>"; };
+		3E5E2C07F5550972698FB4CA /* dialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dialog.h; path = /Users/annejan/Projects/qtpass/dialog.h; sourceTree = "<absolute>"; };
+		4479F30C5218C73018CD6430 /* mainwindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mainwindow.h; path = /Users/annejan/Projects/qtpass/mainwindow.h; sourceTree = "<absolute>"; };
+		54B33722B92CC6AC990C2172 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = util.h; path = /Users/annejan/Projects/qtpass/util.h; sourceTree = "<absolute>"; };
+		59342C100B758CDE10A0EA4D /* mainwindow.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = mainwindow.ui; path = /Users/annejan/Projects/qtpass/mainwindow.ui; sourceTree = "<absolute>"; };
+		682A50D19E416195436708E4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/annejan/Projects/qtpass/main.cpp; sourceTree = "<absolute>"; };
+		721C1DE06B327393E3F7D7E1 /* moc_mainwindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_mainwindow.cpp; path = /Users/annejan/Projects/qtpass/moc_mainwindow.cpp; sourceTree = "<absolute>"; };
+		8531D6A776E3A0EABCE139B3 /* moc_dialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_dialog.cpp; path = /Users/annejan/Projects/qtpass/moc_dialog.cpp; sourceTree = "<absolute>"; };
+		8D467E7358ADF4E3703F837B /* mainwindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mainwindow.cpp; path = /Users/annejan/Projects/qtpass/mainwindow.cpp; sourceTree = "<absolute>"; };
+		8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		9A8D94EBC9F96CFC3A35C6D8 /* util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = /Users/annejan/Projects/qtpass/util.cpp; sourceTree = "<absolute>"; };
+		9D82E329FEFFB62967BDA792 /* qtpass.pro */ = {isa = PBXFileReference; lastKnownFileType = text; name = qtpass.pro; path = /Users/annejan/Projects/qtpass/qtpass.pro; sourceTree = "<absolute>"; };
+		9EAA91BAB2CB286D9CB66C41 /* dialog.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = dialog.ui; path = /Users/annejan/Projects/qtpass/dialog.ui; sourceTree = "<absolute>"; };
+		A1A67BEAA744704B29168D39 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		A486B890FCFCBFA06F445AE3 /* singleapplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = singleapplication.h; path = /Users/annejan/Projects/qtpass/singleapplication.h; sourceTree = "<absolute>"; };
+		A8A91642445689BFE41019F2 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../Qt/5.4/clang_64/lib/QtWidgets.framework; sourceTree = "<absolute>"; };
+		AB745978DF0F41D1801ABDA6 /* .qmake.stash */ = {isa = PBXFileReference; lastKnownFileType = text; name = .qmake.stash; path = /Users/annejan/Projects/qtpass/.qmake.stash; sourceTree = "<absolute>"; };
+		B5187303E083953F3EFA617D /* storemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = storemodel.cpp; path = /Users/annejan/Projects/qtpass/storemodel.cpp; sourceTree = "<absolute>"; };
+		B6332CE6B3399115AD5D7562 /* qrc_resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = qrc_resources.cpp; path = /Users/annejan/Projects/qtpass/qrc_resources.cpp; sourceTree = "<absolute>"; };
+		D00C59F1FDE5896876C4CC0A /* usersdialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = usersdialog.cpp; path = /Users/annejan/Projects/qtpass/usersdialog.cpp; sourceTree = "<absolute>"; };
+		D4B32C2222F82AC56BADEB21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E1AEC38C27F84422BD7B2CB6 /* storemodel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = storemodel.h; path = /Users/annejan/Projects/qtpass/storemodel.h; sourceTree = "<absolute>"; };
+		E3060E1A85FF4DCAA36BBBF4 /* ui_dialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_dialog.h; path = /Users/annejan/Projects/qtpass/ui_dialog.h; sourceTree = "<absolute>"; };
+		F1203CA4BC166AEBA4AFFA9F /* moc_usersdialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_usersdialog.cpp; path = /Users/annejan/Projects/qtpass/moc_usersdialog.cpp; sourceTree = "<absolute>"; };
+		FA41F2A6686FDABFB3E673B2 /* usersdialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = usersdialog.h; path = /Users/annejan/Projects/qtpass/usersdialog.h; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1C883685E82D5676953459A /* Link Binary With Libraries */ = {
+			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				);
-			isa = PBXShellScriptBuildPhase;
+				E8AFBD0B19879523C141FA3D /* QtWidgets.framework in Link Binary With Libraries */,
+				C7ED6A9B7931B19BAA0C2ADC /* QtGui.framework in Link Binary With Libraries */,
+				30C9CF3FC679F0536FFEF57F /* QtCore.framework in Link Binary With Libraries */,
+				A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */,
+				8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */,
+				A4EB11F38A17FE225F530C5F /* QtNetwork.framework in Link Binary With Libraries */,
+				8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */,
+				E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */,
+			);
+			name = "Link Binary With Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
-			name = "Qt Qmake";
-			shellPath = "/bin/sh";
-			shellScript = "make -C /Users/annejan/Projects/qtpass -f QtPass.xcodeproj/qt_makeqmake.mak";
 		};
-		682A50D19E416195436708E4 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/main.cpp";
-			name = "main.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		05EECA5A169D6F82FE74CF50 = {
-			fileRef = "682A50D19E416195436708E4";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		8D467E7358ADF4E3703F837B = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/mainwindow.cpp";
-			name = "mainwindow.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		464E9FA732DB95D77ABD554A = {
-			fileRef = "8D467E7358ADF4E3703F837B";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		30084799A9CDAA10A8263CD8 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/dialog.cpp";
-			name = "dialog.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		7C88A279C7618F664972857C = {
-			fileRef = "30084799A9CDAA10A8263CD8";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		B5187303E083953F3EFA617D = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/storemodel.cpp";
-			name = "storemodel.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		00F779EF244EFBE916AF99FA = {
-			fileRef = "B5187303E083953F3EFA617D";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		9A8D94EBC9F96CFC3A35C6D8 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/util.cpp";
-			name = "util.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		BCA110E3CF14D91E0E1088A3 = {
-			fileRef = "9A8D94EBC9F96CFC3A35C6D8";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		D00C59F1FDE5896876C4CC0A = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/usersdialog.cpp";
-			name = "usersdialog.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		E6898B0812FD5927C67A114E = {
-			fileRef = "D00C59F1FDE5896876C4CC0A";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		2606ACEB7D117E2E1B29D729 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/singleapplication.cpp";
-			name = "singleapplication.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		5BC99406B0491519D7C53827 = {
-			fileRef = "2606ACEB7D117E2E1B29D729";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		00452CF2080D5388EDC4264D = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/artwork/icon.icns";
-			name = "icon.icns";
-			sourceTree = "<absolute>";
-		};
-		D8750618237A3B45F482419F = {
-			fileRef = "00452CF2080D5388EDC4264D";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		B6332CE6B3399115AD5D7562 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/qrc_resources.cpp";
-			name = "qrc_resources.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		4395E950F2EFE371EBA2C860 = {
-			fileRef = "B6332CE6B3399115AD5D7562";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		721C1DE06B327393E3F7D7E1 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/moc_mainwindow.cpp";
-			name = "moc_mainwindow.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		BD480A96340D9CB1ACDE22C6 = {
-			fileRef = "721C1DE06B327393E3F7D7E1";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		8531D6A776E3A0EABCE139B3 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/moc_dialog.cpp";
-			name = "moc_dialog.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		8BAEEC4A3B7E6C8DF0C5E709 = {
-			fileRef = "8531D6A776E3A0EABCE139B3";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		0B15A5A065F74BA508969D53 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/moc_storemodel.cpp";
-			name = "moc_storemodel.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		4E60921DF2A0E29AA99951A6 = {
-			fileRef = "0B15A5A065F74BA508969D53";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		F1203CA4BC166AEBA4AFFA9F = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/moc_usersdialog.cpp";
-			name = "moc_usersdialog.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		52837C9FECCB353B2D990B77 = {
-			fileRef = "F1203CA4BC166AEBA4AFFA9F";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		03CA8D57962345313AC4234E = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/moc_singleapplication.cpp";
-			name = "moc_singleapplication.cpp";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		7D6EC230EC5B0567CAD501D3 = {
-			fileRef = "03CA8D57962345313AC4234E";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		14C9776A4B2E34DB51106724 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/ui_mainwindow.h";
-			name = "ui_mainwindow.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		E3060E1A85FF4DCAA36BBBF4 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/ui_dialog.h";
-			name = "ui_dialog.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		145A02A70D45C9E21BD238F7 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/ui_usersdialog.h";
-			name = "ui_usersdialog.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		4479F30C5218C73018CD6430 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/mainwindow.h";
-			name = "mainwindow.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		3E5E2C07F5550972698FB4CA = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/dialog.h";
-			name = "dialog.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		E1AEC38C27F84422BD7B2CB6 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/storemodel.h";
-			name = "storemodel.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		54B33722B92CC6AC990C2172 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/util.h";
-			name = "util.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		FA41F2A6686FDABFB3E673B2 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/usersdialog.h";
-			name = "usersdialog.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		A486B890FCFCBFA06F445AE3 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/singleapplication.h";
-			name = "singleapplication.h";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "sourcecode.c.h";
-		};
-		9D82E329FEFFB62967BDA792 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/qtpass.pro";
-			name = "qtpass.pro";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "text";
-		};
-		AB745978DF0F41D1801ABDA6 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/.qmake.stash";
-			name = ".qmake.stash";
-			sourceTree = "<absolute>";
-		};
-		39C1BBBEB422738B02B4FACC = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/resources.qrc";
-			name = "resources.qrc";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "text";
-		};
-		39C1BBBEB422738B02B4FACC = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/resources.qrc";
-			name = "resources.qrc";
-			sourceTree = "<absolute>";
-			lastKnownFileType = "text";
-		};
-		EE01EE529D114BDE64CB2449 = {
-			fileRef = "39C1BBBEB422738B02B4FACC";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		59342C100B758CDE10A0EA4D = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/mainwindow.ui";
-			name = "mainwindow.ui";
-			sourceTree = "<absolute>";
-		};
-		BD55C95C203E637676E2B998 = {
-			fileRef = "59342C100B758CDE10A0EA4D";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		9EAA91BAB2CB286D9CB66C41 = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/dialog.ui";
-			name = "dialog.ui";
-			sourceTree = "<absolute>";
-		};
-		740564C821CF576CEB5A250F = {
-			fileRef = "9EAA91BAB2CB286D9CB66C41";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		02F90D49765589144B3F77CC = {
-			isa = PBXFileReference;
-			path = "/Users/annejan/Projects/qtpass/usersdialog.ui";
-			name = "usersdialog.ui";
-			sourceTree = "<absolute>";
-		};
-		90F8898681DCC3AAE7F78BAB = {
-			fileRef = "02F90D49765589144B3F77CC";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		25B08E2869634E9BCBA333A2 = {
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12E908B8A1C3C07C115504F5 /* Sources [uic] */ = {
 			isa = PBXGroup;
 			children = (
-				"B6332CE6B3399115AD5D7562",
-				"721C1DE06B327393E3F7D7E1",
-				"8531D6A776E3A0EABCE139B3",
-				"0B15A5A065F74BA508969D53",
-				"F1203CA4BC166AEBA4AFFA9F",
-				"03CA8D57962345313AC4234E",
-				"14C9776A4B2E34DB51106724",
-				"E3060E1A85FF4DCAA36BBBF4",
-				"145A02A70D45C9E21BD238F7");
-			name = "Generated Sources";
-			sourceTree = "<Group>";
-		};
-		A64D9D61EE353E6EEE2BC545 = {
-			isa = PBXGroup;
-			children = (
-				"00452CF2080D5388EDC4264D");
-			name = "artwork";
-			sourceTree = "<Group>";
-		};
-		87DF60DE337FB58864343E39 = {
-			isa = PBXGroup;
-			children = (
-				"39C1BBBEB422738B02B4FACC");
-			name = "Resources";
-			sourceTree = "<Group>";
-		};
-		2EB56BE3C2D93CDAB0C52E67 = {
-			isa = PBXGroup;
-			children = (
-				"682A50D19E416195436708E4",
-				"8D467E7358ADF4E3703F837B",
-				"30084799A9CDAA10A8263CD8",
-				"B5187303E083953F3EFA617D",
-				"9A8D94EBC9F96CFC3A35C6D8",
-				"D00C59F1FDE5896876C4CC0A",
-				"2606ACEB7D117E2E1B29D729",
-				"A64D9D61EE353E6EEE2BC545",
-				"4479F30C5218C73018CD6430",
-				"3E5E2C07F5550972698FB4CA",
-				"E1AEC38C27F84422BD7B2CB6",
-				"54B33722B92CC6AC990C2172",
-				"FA41F2A6686FDABFB3E673B2",
-				"A486B890FCFCBFA06F445AE3");
-			name = "Sources";
-			sourceTree = "<Group>";
-		};
-		12E908B8A1C3C07C115504F5 = {
-			isa = PBXGroup;
-			children = (
-				"59342C100B758CDE10A0EA4D",
-				"9EAA91BAB2CB286D9CB66C41",
-				"02F90D49765589144B3F77CC");
+				59342C100B758CDE10A0EA4D /* mainwindow.ui */,
+				9EAA91BAB2CB286D9CB66C41 /* dialog.ui */,
+				02F90D49765589144B3F77CC /* usersdialog.ui */,
+			);
 			name = "Sources [uic]";
 			sourceTree = "<Group>";
 		};
-		74B182DB50CB5611B5C1C297 = {
+		25B08E2869634E9BCBA333A2 /* Generated Sources */ = {
 			isa = PBXGroup;
 			children = (
-				"9D82E329FEFFB62967BDA792",
-				"AB745978DF0F41D1801ABDA6",
-				"39C1BBBEB422738B02B4FACC");
+				B6332CE6B3399115AD5D7562 /* qrc_resources.cpp */,
+				721C1DE06B327393E3F7D7E1 /* moc_mainwindow.cpp */,
+				8531D6A776E3A0EABCE139B3 /* moc_dialog.cpp */,
+				0B15A5A065F74BA508969D53 /* moc_storemodel.cpp */,
+				F1203CA4BC166AEBA4AFFA9F /* moc_usersdialog.cpp */,
+				03CA8D57962345313AC4234E /* moc_singleapplication.cpp */,
+				14C9776A4B2E34DB51106724 /* ui_mainwindow.h */,
+				E3060E1A85FF4DCAA36BBBF4 /* ui_dialog.h */,
+				145A02A70D45C9E21BD238F7 /* ui_usersdialog.h */,
+			);
+			name = "Generated Sources";
+			sourceTree = "<Group>";
+		};
+		2EB56BE3C2D93CDAB0C52E67 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				682A50D19E416195436708E4 /* main.cpp */,
+				8D467E7358ADF4E3703F837B /* mainwindow.cpp */,
+				30084799A9CDAA10A8263CD8 /* dialog.cpp */,
+				B5187303E083953F3EFA617D /* storemodel.cpp */,
+				9A8D94EBC9F96CFC3A35C6D8 /* util.cpp */,
+				D00C59F1FDE5896876C4CC0A /* usersdialog.cpp */,
+				2606ACEB7D117E2E1B29D729 /* singleapplication.cpp */,
+				A64D9D61EE353E6EEE2BC545 /* artwork */,
+				4479F30C5218C73018CD6430 /* mainwindow.h */,
+				3E5E2C07F5550972698FB4CA /* dialog.h */,
+				E1AEC38C27F84422BD7B2CB6 /* storemodel.h */,
+				54B33722B92CC6AC990C2172 /* util.h */,
+				FA41F2A6686FDABFB3E673B2 /* usersdialog.h */,
+				A486B890FCFCBFA06F445AE3 /* singleapplication.h */,
+			);
+			name = Sources;
+			sourceTree = "<Group>";
+		};
+		74B182DB50CB5611B5C1C297 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D82E329FEFFB62967BDA792 /* qtpass.pro */,
+				AB745978DF0F41D1801ABDA6 /* .qmake.stash */,
+			);
 			name = "Supporting Files";
 			sourceTree = "<Group>";
 		};
-		7EF0942E79C014DCEC8976BC = {
-			buildActionMask = 2147483647;
-			files = (
-				);
-			isa = PBXShellScriptBuildPhase;
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Qt Preprocessors";
-			shellPath = "/bin/sh";
-			shellScript = "make -C /Users/annejan/Projects/qtpass -f QtPass.xcodeproj/qt_preprocess.mak";
-		};
-		F7E50F631C51CD5B5DC0BC43 = {
-			buildActionMask = 2147483647;
-			files = (
-				"05EECA5A169D6F82FE74CF50",
-				"464E9FA732DB95D77ABD554A",
-				"7C88A279C7618F664972857C",
-				"00F779EF244EFBE916AF99FA",
-				"BCA110E3CF14D91E0E1088A3",
-				"E6898B0812FD5927C67A114E",
-				"5BC99406B0491519D7C53827",
-				"4395E950F2EFE371EBA2C860",
-				"BD480A96340D9CB1ACDE22C6",
-				"8BAEEC4A3B7E6C8DF0C5E709",
-				"4E60921DF2A0E29AA99951A6",
-				"52837C9FECCB353B2D990B77",
-				"7D6EC230EC5B0567CAD501D3");
-			isa = PBXSourcesBuildPhase;
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Compile Sources";
-		};
-		A8A91642445689BFE41019F2 = {
-			isa = PBXFileReference;
-			name = "QtWidgets.framework";
-			path = "../../Qt/5.4/clang_64/lib/QtWidgets.framework";
-			refType = 4;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		E8AFBD0B19879523C141FA3D = {
-			fileRef = "A8A91642445689BFE41019F2";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		101802963F5557511D075663 = {
-			isa = PBXFileReference;
-			name = "QtGui.framework";
-			path = "../../Qt/5.4/clang_64/lib/QtGui.framework";
-			refType = 4;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		C7ED6A9B7931B19BAA0C2ADC = {
-			fileRef = "101802963F5557511D075663";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		1824FEA7A030DDF578520F65 = {
-			isa = PBXFileReference;
-			name = "QtCore.framework";
-			path = "../../Qt/5.4/clang_64/lib/QtCore.framework";
-			refType = 4;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		30C9CF3FC679F0536FFEF57F = {
-			fileRef = "1824FEA7A030DDF578520F65";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		2B774D8E4178765CE52EAAF5 = {
-			isa = PBXFileReference;
-			name = "DiskArbitration.framework";
-			path = "/System/Library/Frameworks/DiskArbitration.framework";
-			refType = 0;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		A99B2AA0F9CBBDD12BA126A4 = {
-			fileRef = "2B774D8E4178765CE52EAAF5";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		A1A67BEAA744704B29168D39 = {
-			isa = PBXFileReference;
-			name = "IOKit.framework";
-			path = "/System/Library/Frameworks/IOKit.framework";
-			refType = 0;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		8D267F2E4776F0ECA2F49DC8 = {
-			fileRef = "A1A67BEAA744704B29168D39";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		257369D5ABD5F9E533786349 = {
-			isa = PBXFileReference;
-			name = "QtNetwork.framework";
-			path = "../../Qt/5.4/clang_64/lib/QtNetwork.framework";
-			refType = 4;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		A4EB11F38A17FE225F530C5F = {
-			fileRef = "257369D5ABD5F9E533786349";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		D4B32C2222F82AC56BADEB21 = {
-			isa = PBXFileReference;
-			name = "OpenGL.framework";
-			path = "/System/Library/Frameworks/OpenGL.framework";
-			refType = 0;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		8771A8C96E9C391044035D99 = {
-			fileRef = "D4B32C2222F82AC56BADEB21";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		8D9815BDB5BD9F90D2BC05C5 = {
-			isa = PBXFileReference;
-			name = "AGL.framework";
-			path = "/System/Library/Frameworks/AGL.framework";
-			refType = 0;
-			sourceTree = "<absolute>";
-			lastKnownFileType = "wrapper.framework";
-		};
-		E45E51A644D5FC9F942ECE55 = {
-			fileRef = "8D9815BDB5BD9F90D2BC05C5";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		AF39DD055C3EF8226FBE929D = {
-			children = (
-				"A8A91642445689BFE41019F2",
-				"101802963F5557511D075663",
-				"1824FEA7A030DDF578520F65",
-				"2B774D8E4178765CE52EAAF5",
-				"A1A67BEAA744704B29168D39",
-				"257369D5ABD5F9E533786349",
-				"D4B32C2222F82AC56BADEB21",
-				"8D9815BDB5BD9F90D2BC05C5");
+		87DF60DE337FB58864343E39 /* Resources */ = {
 			isa = PBXGroup;
-			name = "Frameworks";
+			children = (
+				39C1BBBEB422738B02B4FACC /* resources.qrc */,
+			);
+			name = Resources;
 			sourceTree = "<Group>";
 		};
-		D1C883685E82D5676953459A = {
-			buildActionMask = 2147483647;
-			files = (
-				"E8AFBD0B19879523C141FA3D",
-				"C7ED6A9B7931B19BAA0C2ADC",
-				"30C9CF3FC679F0536FFEF57F",
-				"A99B2AA0F9CBBDD12BA126A4",
-				"8D267F2E4776F0ECA2F49DC8",
-				"A4EB11F38A17FE225F530C5F",
-				"8771A8C96E9C391044035D99",
-				"E45E51A644D5FC9F942ECE55");
-			isa = PBXFrameworksBuildPhase;
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Link Binary With Libraries";
-		};
-		30414803F31797EB689AE508 = {
-			buildActionMask = 2147483647;
-			files = (
-				"B10E810E1E6737AA94BC4F7E");
-			isa = PBXResourcesBuildPhase;
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Copy Bundle Resources";
-		};
-		1D15154C7B210C2FE2881554 = {
-			isa = PBXFileReference;
-			includeInIndex = 0;
-			explicitFileType = "wrapper.application";
-			path = "QtPass.app";
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FE0A091FDBFB3E9C31B7A1BD = {
-			children = (
-				"1D15154C7B210C2FE2881554");
+		A64D9D61EE353E6EEE2BC545 /* artwork */ = {
 			isa = PBXGroup;
-			name = "Products";
+			children = (
+				00452CF2080D5388EDC4264D /* icon.icns */,
+			);
+			name = artwork;
 			sourceTree = "<Group>";
 		};
-		E8C543AB96796ECAA2E65C57 = {
-			children = (
-				"2EB56BE3C2D93CDAB0C52E67",
-				"25B08E2869634E9BCBA333A2",
-				"74B182DB50CB5611B5C1C297",
-				"87DF60DE337FB58864343E39",
-				"12E908B8A1C3C07C115504F5",
-				"AF39DD055C3EF8226FBE929D",
-				"FE0A091FDBFB3E9C31B7A1BD");
+		AF39DD055C3EF8226FBE929D /* Frameworks */ = {
 			isa = PBXGroup;
-			name = "QtPass";
+			children = (
+				A8A91642445689BFE41019F2 /* QtWidgets.framework */,
+				101802963F5557511D075663 /* QtGui.framework */,
+				1824FEA7A030DDF578520F65 /* QtCore.framework */,
+				2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */,
+				A1A67BEAA744704B29168D39 /* IOKit.framework */,
+				257369D5ABD5F9E533786349 /* QtNetwork.framework */,
+				D4B32C2222F82AC56BADEB21 /* OpenGL.framework */,
+				8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<Group>";
 		};
-		26B4E91EF2425ADBEA0524CE = {
-			buildPhases = (
-				"5E618435888B9D49F8540165",
-				"7EF0942E79C014DCEC8976BC");
-			dependencies = (
-				);
-			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59;
-			isa = PBXAggregateTarget;
-			buildRules = (
-);
-			productName = "Qt Preprocess";
-			name = "Qt Preprocess";
+		E8C543AB96796ECAA2E65C57 /* QtPass */ = {
+			isa = PBXGroup;
+			children = (
+				2EB56BE3C2D93CDAB0C52E67 /* Sources */,
+				25B08E2869634E9BCBA333A2 /* Generated Sources */,
+				74B182DB50CB5611B5C1C297 /* Supporting Files */,
+				87DF60DE337FB58864343E39 /* Resources */,
+				12E908B8A1C3C07C115504F5 /* Sources [uic] */,
+				AF39DD055C3EF8226FBE929D /* Frameworks */,
+				FE0A091FDBFB3E9C31B7A1BD /* Products */,
+			);
+			name = QtPass;
+			sourceTree = "<Group>";
 		};
-		A1F06B8D1D03DB4509341575 = {
-			isa = PBXTargetDependency;
-			target = "26B4E91EF2425ADBEA0524CE";
+		FE0A091FDBFB3E9C31B7A1BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D15154C7B210C2FE2881554 /* QtPass.app */,
+			);
+			name = Products;
+			sourceTree = "<Group>";
 		};
-		E214578CA0637D9890EFFB35 = {
-			buildPhases = (
-				"F7E50F631C51CD5B5DC0BC43",
-				"D1C883685E82D5676953459A",
-				"30414803F31797EB689AE508");
-			dependencies = (
-				"A1F06B8D1D03DB4509341575");
-			productReference = "1D15154C7B210C2FE2881554";
-			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59;
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E214578CA0637D9890EFFB35 /* QtPass */ = {
 			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "QtPass" */;
+			buildPhases = (
+				F7E50F631C51CD5B5DC0BC43 /* Compile Sources */,
+				D1C883685E82D5676953459A /* Link Binary With Libraries */,
+				30414803F31797EB689AE508 /* Copy Bundle Resources */,
+			);
 			buildRules = (
-);
+			);
+			dependencies = (
+				A1F06B8D1D03DB4509341575 /* PBXTargetDependency */,
+			);
+			name = QtPass;
+			productName = QtPass;
+			productReference = 1D15154C7B210C2FE2881554 /* QtPass.app */;
 			productType = "com.apple.product-type.application";
-			name = "QtPass";
-			productName = "QtPass";
 		};
-		3AA6C32AC930069E80220CF1 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = "NO";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
-				GCC_OPTIMIZATION_LEVEL = "0";
-				PRODUCT_NAME = "QtPass";
-				QT_LIBRARY_SUFFIX = "_debug";
-				SDKROOT = "macosx";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				CC = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang";
-				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
-				INFOPLIST_FILE = "Info.plist";
-				SYMROOT = "/Users/annejan/Projects/qtpass";
-				DYLIB_CURRENT_VERSION = "0.8.2";
-				DYLIB_COMPATIBILITY_VERSION = "0.8";
-				MACOSX_DEPLOYMENT_TARGET = "10.7";
-				HEADER_SEARCH_PATHS = (
-					".",
-					"../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers",
-					".",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers",
-					".",
-					"../../Qt/5.4/clang_64/mkspecs/macx-clang");
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/annejan/Qt/5.4/clang_64/lib",
-					"/System/Library/Frameworks/");
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/annejan/Qt/5.4/clang_64/lib",
-					"/Users/annejan/Qt/5.4/clang_64/lib");
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-O2",
-					"-Wall",
-					"-W",
-					"-fPIE",
-					"-DVERSION=\"\\\"0.8.2\\\"\"",
-					"-DQT_NO_DEBUG",
-					"-DQT_WIDGETS_LIB",
-					"-DQT_GUI_LIB",
-					"-DQT_NETWORK_LIB",
-					"-DQT_CORE_LIB");
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-DSINGLE_APP=1",
-					"-O2",
-					"-std=c++11",
-					"-stdlib=libc++",
-					"-Wall",
-					"-W",
-					"-fPIE",
-					"-DVERSION=\"\\\"0.8.2\\\"\"",
-					"-DQT_NO_DEBUG",
-					"-DQT_WIDGETS_LIB",
-					"-DQT_GUI_LIB",
-					"-DQT_NETWORK_LIB",
-					"-DQT_CORE_LIB");
-				OTHER_LDFLAGS = (
-						"-headerpad_max_install_names",
-						"-stdlib=libc++",
-						"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
-						"-F/Users/annejan/Qt/5.4/clang_64/lib");
-				ARCHS = "x86_64";
-			};
-			name = "Debug";
-		};
-		77418F46922677BB04ED38DD = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = "NO";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
-				GCC_OPTIMIZATION_LEVEL = "0";
-				PRODUCT_NAME = "QtPass";
-				QT_LIBRARY_SUFFIX = "_debug";
-				SDKROOT = "macosx";
-				PRODUCT_NAME = "QtPass";
-			};
-			name = "Debug";
-		};
-		339EE1B2CC4FC24589A0EA95 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = "YES";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
-				PRODUCT_NAME = "QtPass";
-				QT_LIBRARY_SUFFIX = "";
-				SDKROOT = "macosx";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				CC = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang";
-				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
-				INFOPLIST_FILE = "Info.plist";
-				SYMROOT = "/Users/annejan/Projects/qtpass";
-				DYLIB_CURRENT_VERSION = "0.8.2";
-				DYLIB_COMPATIBILITY_VERSION = "0.8";
-				MACOSX_DEPLOYMENT_TARGET = "10.7";
-				HEADER_SEARCH_PATHS = (
-					".",
-					"../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers",
-					"../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers",
-					".",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers",
-					".",
-					"../../Qt/5.4/clang_64/mkspecs/macx-clang");
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/annejan/Qt/5.4/clang_64/lib",
-					"/System/Library/Frameworks/");
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/annejan/Qt/5.4/clang_64/lib",
-					"/Users/annejan/Qt/5.4/clang_64/lib");
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-O2",
-					"-Wall",
-					"-W",
-					"-fPIE",
-					"-DVERSION=\"\\\"0.8.2\\\"\"",
-					"-DQT_NO_DEBUG",
-					"-DQT_WIDGETS_LIB",
-					"-DQT_GUI_LIB",
-					"-DQT_NETWORK_LIB",
-					"-DQT_CORE_LIB");
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-DSINGLE_APP=1",
-					"-O2",
-					"-std=c++11",
-					"-stdlib=libc++",
-					"-Wall",
-					"-W",
-					"-fPIE",
-					"-DVERSION=\"\\\"0.8.2\\\"\"",
-					"-DQT_NO_DEBUG",
-					"-DQT_WIDGETS_LIB",
-					"-DQT_GUI_LIB",
-					"-DQT_NETWORK_LIB",
-					"-DQT_CORE_LIB");
-				OTHER_LDFLAGS = (
-						"-headerpad_max_install_names",
-						"-stdlib=libc++",
-						"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
-						"-F/Users/annejan/Qt/5.4/clang_64/lib");
-				ARCHS = "x86_64";
-			};
-			name = "Release";
-		};
-		6666AA5E688052234F6758D8 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = "YES";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
-				PRODUCT_NAME = "QtPass";
-				QT_LIBRARY_SUFFIX = "";
-				SDKROOT = "macosx";
-				PRODUCT_NAME = "QtPass";
-			};
-			name = "Release";
-		};
-		DAC4C1AA5EDEA1C85E9CA5E6 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"3AA6C32AC930069E80220CF1",
-				"339EE1B2CC4FC24589A0EA95");
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release";
-		};
-		6CC3B5D2136C7CD6A5CF5A59 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"77418F46922677BB04ED38DD",
-				"6666AA5E688052234F6758D8");
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release";
-		};
-		6DB9C3763D02B1415CD9D565 = {
-			hasScannedForEncodings = 1;
-			compatibilityVersion = "Xcode 3.2";
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DB9C3763D02B1415CD9D565 /* Project object */ = {
 			isa = PBXProject;
-			mainGroup = "E8C543AB96796ECAA2E65C57";
-			productRefGroup = "FE0A091FDBFB3E9C31B7A1BD";
-			buildConfigurationList = "DAC4C1AA5EDEA1C85E9CA5E6";
+			attributes = {
+				LastUpgradeCheck = 0620;
+			};
+			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "qtpass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8C543AB96796ECAA2E65C57 /* QtPass */;
+			productRefGroup = FE0A091FDBFB3E9C31B7A1BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"E214578CA0637D9890EFFB35",
-				"26B4E91EF2425ADBEA0524CE");
+				E214578CA0637D9890EFFB35 /* QtPass */,
+				26B4E91EF2425ADBEA0524CE /* Qt Preprocess */,
+			);
 		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30414803F31797EB689AE508 /* Copy Bundle Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E618435888B9D49F8540165 /* Qt Qmake */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Qmake";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/annejan/Projects/qtpass -f QtPass.xcodeproj/qt_makeqmake.mak";
+		};
+		7EF0942E79C014DCEC8976BC /* Qt Preprocessors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Preprocessors";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/annejan/Projects/qtpass -f QtPass.xcodeproj/qt_preprocess.mak";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E50F631C51CD5B5DC0BC43 /* Compile Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EECA5A169D6F82FE74CF50 /* main.cpp in Compile Sources */,
+				464E9FA732DB95D77ABD554A /* mainwindow.cpp in Compile Sources */,
+				7C88A279C7618F664972857C /* dialog.cpp in Compile Sources */,
+				00F779EF244EFBE916AF99FA /* storemodel.cpp in Compile Sources */,
+				BCA110E3CF14D91E0E1088A3 /* util.cpp in Compile Sources */,
+				E6898B0812FD5927C67A114E /* usersdialog.cpp in Compile Sources */,
+				5BC99406B0491519D7C53827 /* singleapplication.cpp in Compile Sources */,
+				4395E950F2EFE371EBA2C860 /* qrc_resources.cpp in Compile Sources */,
+				BD480A96340D9CB1ACDE22C6 /* moc_mainwindow.cpp in Compile Sources */,
+				8BAEEC4A3B7E6C8DF0C5E709 /* moc_dialog.cpp in Compile Sources */,
+				4E60921DF2A0E29AA99951A6 /* moc_storemodel.cpp in Compile Sources */,
+				52837C9FECCB353B2D990B77 /* moc_usersdialog.cpp in Compile Sources */,
+				7D6EC230EC5B0567CAD501D3 /* moc_singleapplication.cpp in Compile Sources */,
+			);
+			name = "Compile Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1F06B8D1D03DB4509341575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26B4E91EF2425ADBEA0524CE /* Qt Preprocess */;
+			targetProxy = 440FC7951B0265F5001466EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		339EE1B2CC4FC24589A0EA95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.8;
+				DYLIB_CURRENT_VERSION = 0.8.2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.4/clang_64/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					.,
+					"../../Qt/5.4/clang_64/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/annejan/Qt/5.4/clang_64/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIE",
+					"-DVERSION=\"\\\"0.8.2\\\"\"",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-DSINGLE_APP=1",
+					"-O2",
+					"-std=c++11",
+					"-stdlib=libc++",
+					"-Wall",
+					"-W",
+					"-fPIE",
+					"-DVERSION=\"\\\"0.8.2\\\"\"",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
+					"-F/Users/annejan/Qt/5.4/clang_64/lib",
+				);
+				PRODUCT_NAME = QtPass;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+				SYMROOT = /Users/annejan/Projects/qtpass;
+			};
+			name = Release;
+		};
+		3AA6C32AC930069E80220CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 0.8;
+				DYLIB_CURRENT_VERSION = 0.8.2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.4/clang_64/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
+					../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					.,
+					"../../Qt/5.4/clang_64/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/annejan/Qt/5.4/clang_64/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIE",
+					"-DVERSION=\"\\\"0.8.2\\\"\"",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-DSINGLE_APP=1",
+					"-O2",
+					"-std=c++11",
+					"-stdlib=libc++",
+					"-Wall",
+					"-W",
+					"-fPIE",
+					"-DVERSION=\"\\\"0.8.2\\\"\"",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
+					"-F/Users/annejan/Qt/5.4/clang_64/lib",
+				);
+				PRODUCT_NAME = QtPass;
+				QT_LIBRARY_SUFFIX = _debug;
+				SDKROOT = macosx;
+				SYMROOT = /Users/annejan/Projects/qtpass;
+			};
+			name = Debug;
+		};
+		6666AA5E688052234F6758D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = QtPass;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		77418F46922677BB04ED38DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = QtPass;
+				QT_LIBRARY_SUFFIX = _debug;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "QtPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77418F46922677BB04ED38DD /* Debug */,
+				6666AA5E688052234F6758D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "qtpass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA6C32AC930069E80220CF1 /* Debug */,
+				339EE1B2CC4FC24589A0EA95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
 	};
-	rootObject = "6DB9C3763D02B1415CD9D565";
+	rootObject = 6DB9C3763D02B1415CD9D565 /* Project object */;
 }

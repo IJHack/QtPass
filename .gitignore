@@ -1,1 +1,8 @@
 qtpass.pro.user
+qtpass.xcodeproj/project.xcworkspace/xcuserdata/*
+qtpass.xcodeproj/xcuserdata/*
+qtpass.xcworkspace/xcuserdata/*
+.DS_Store
+.qmake.stash
+Makefile
+
