@@ -9,8 +9,11 @@ Features
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
+* Multiple password store profiles
 
 While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
+
+QtPass requires GCC 4.7 or later or any other 2011 ISO C++ standard compliant compiler.
 
 Security considerations
 -----------------------
@@ -39,13 +42,27 @@ attack I can think of at least two options:
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
   (so you would have to run your own server).
 
+Known issues
+------------
+* Filtering (searching) breaks the tree/model sometimes 
+* Starting without a correctly set password-store folder give weird results in the tree view
+* On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN
+
 Planned features
 ----------------
-* WebDAV support (configuration)
-* Templates (username, url etc)
-* First use wizards to set up password-store
+* Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
+* Right click handlers for file/folder and content
+* First use wizards to set up password-store (and decryption key, currently always the gpg default key)
+* ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
+* Password generation with options for what kind you'd like
+* Templates (username, url etc) in Add / Edit screen (configurable templates)
+* Colour coding or disabling of people you can't encrypt for (trust settings) in User management
 * Colour coding folders (possibly disabling folders you can't decrypt)
+* Trayicon support
+* WebDAV (configuration) support
 * Optional table view of decrypted folder contents
+* Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
+* Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)
 
 Installation
 ------------
