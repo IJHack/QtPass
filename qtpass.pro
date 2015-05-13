@@ -36,6 +36,10 @@ FORMS     += mainwindow.ui \
              dialog.ui \
              usersdialog.ui
 
+*-g++* {
+    QMAKE_CXXFLAGS += -std=c++11 
+}
+
 nosingleapp {
     QMAKE_CXXFLAGS += -DSINGLE_APP=0
 } else {
