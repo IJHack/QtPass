@@ -1,1 +1,7 @@
 qtpass.pro.user
+debian/qtpass*
+debian/files
+build-stamp
+qtpass
+QtPass.*
+
