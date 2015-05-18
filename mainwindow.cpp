@@ -214,6 +214,8 @@ bool MainWindow::checkConfig() {
 #endif
     //QMessageBox::information(this, "env", env.join("\n"));
 
+    updateEnv();
+
     ui->lineEdit->setFocus();
     return true;
 }
@@ -271,6 +273,7 @@ void MainWindow::config() {
             if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
                 config(); // loop !!
             }
+            updateEnv();
         }
         firstRun = false;
     }
@@ -898,4 +901,20 @@ void MainWindow::messageAvailable(QString message)
 void MainWindow::setText(QString text)
 {
     ui->lineEdit->setText(text);
+}
+
+/**
+ * @brief MainWindow::updateEnv
+ */
+void MainWindow::updateEnv()
+{
+    QStringList store = env.filter("PASSWORD_STORE_DIR");
+    // put PASSWORD_STORE_DIR in env
+    if (store.isEmpty()) {
+        //qDebug() << "Added PASSWORD_STORE_DIR";
+        env.append("PASSWORD_STORE_DIR=" + passStore);
+    } else {
+        //qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
+        env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
+    }
 }
