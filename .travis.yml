@@ -22,8 +22,7 @@ before_install:
   - cd ..
 
 script:
-  - pwd
-  - cd ~/IJHack/qtpass
+  - cd qtpass
   - ~/Qt5.2.0/5.2.0/gcc_64/bin/qmake -v
   - ~/Qt5.2.0/5.2.0/gcc_64/bin/qmake -spec linux-$QtMkspec -Wall qtpass.pro
   - make -j$(nproc)
