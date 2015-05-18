@@ -37,6 +37,7 @@ public:
     bool hidePassword();
     bool hideContent();
     bool addGPGId();
+    void wizard();
 
 private slots:
     void on_radioButtonNative_clicked();

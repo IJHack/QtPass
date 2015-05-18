@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
     ui->statusBar->showMessage(tr("Welcome to QtPass ")  + VERSION, 2000);
+    firstRun = true;
 }
 
 /**
@@ -138,16 +139,6 @@ void MainWindow::checkConfig() {
     }
     passStore = Util::normalizeFolderPath(passStore);
 
-    if (!QFile(passStore).exists()) {
-        QMessageBox::critical(this, tr("Password store not initialised"),
-            tr("The folder %1 does not exist.").arg(passStore));
-        // TODO magic
-    } else if (!QFile(passStore + ".gpg-id").exists()) {
-        QMessageBox::critical(this, tr("Password store not initialised"),
-            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
-        // TODO wizard
-    }
-
     passExecutable = settings.value("passExecutable").toString();
     if (passExecutable == "") {
         passExecutable = Util::findBinaryInPath("pass");
@@ -169,8 +160,10 @@ void MainWindow::checkConfig() {
     webDavUser = settings.value("webDavUser").toString();
     webDavPassword = settings.value("webDavPassword").toString();
 
-    if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
+    if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
+    } else {
+        firstRun = false;
     }
 
     // TODO: this needs to be before we try to access the store,
@@ -239,6 +232,7 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
+    d->wizard(); // does shit
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -269,8 +263,17 @@ void MainWindow::config() {
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
 
             ui->treeView->setRootIndex(model.setRootPath(passStore));
+
+            if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+                config(); // loop !!
+            }
         }
+
+    } else if (firstRun) {
+        // close(); // not strong enough since not opened yet ;)
+        exit(0);
     }
+    firstRun = false;
 }
 
 /**

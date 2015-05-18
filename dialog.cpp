@@ -1,5 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include <QDebug>
+#include <QMessageBox>
 
 /**
  * @brief Dialog::Dialog
@@ -348,3 +350,16 @@ void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
+
+void Dialog::wizard()
+{
+    // got GPG at-least ?
+    // TODO ^^
+
+    QString passStore = ui->storePath->text();
+    if(!QFile(passStore + ".gpg-id").exists()){
+        QMessageBox::critical(this, tr("Password store not initialised"),
+            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
+    }
+    // TODO REST
+ }
