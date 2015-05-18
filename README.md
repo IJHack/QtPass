@@ -1,7 +1,8 @@
-QtPass
+QtPass [![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](https://travis-ci.org/IJHack/qtpass)
 ======
 
-QtPass is a GUI for [pass](http://www.passwordstore.org/)
+QtPass is a GUI for [pass](http://www.passwordstore.org/), the standard unix password manager.
+
 
 Features
 --------
@@ -68,7 +69,7 @@ On most systems all you need is:
 `qmake && make && make install`
 
 On MacOsX:
-`qmake && make && macdeployqt QtPass.app -dmg`
+`qmake && make && macdeployqt QtPass.app`
 * Currently seems to only work with MacGPG2
 
 On some systems there are issues with qt4 and qt5 being installed at the same time.
@@ -79,3 +80,4 @@ Further reading
 [Documentation](http://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
+
