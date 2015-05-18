@@ -107,6 +107,7 @@ private:
     QStringList getRecipientList(QString for_file);
     QString getRecipientString(QString for_file, QString separator = " ", int *count = NULL);
     void mountWebDav();
+    void updateEnv();
 };
 
 #endif // MAINWINDOW_H
