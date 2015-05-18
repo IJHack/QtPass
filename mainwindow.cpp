@@ -50,12 +50,6 @@ MainWindow::~MainWindow()
 #endif
 }
 
-void MainWindow::normalizePassStore() {
-    if (!passStore.endsWith("/") && !passStore.endsWith(QDir::separator())) {
-        passStore += '/';
-    }
-}
-
 QSettings &MainWindow::getSettings() {
     if (!settings) {
         QString portable_ini = QCoreApplication::applicationDirPath() + "/qtpass.ini";
@@ -142,7 +136,17 @@ void MainWindow::checkConfig() {
         passStore = Util::findPasswordStore();
         settings.setValue("passStore", passStore);
     }
-    normalizePassStore();
+    passStore = Util::normalizeFolderPath(passStore);
+
+    if (!QFile(passStore).exists()) {
+        QMessageBox::critical(this, tr("Password store not initialised"),
+            tr("The folder %1 does not exist.").arg(passStore));
+        // TODO magic
+    } else if (!QFile(passStore + ".gpg-id").exists()) {
+        QMessageBox::critical(this, tr("Password store not initialised"),
+            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
+        // TODO wizard
+    }
 
     passExecutable = settings.value("passExecutable").toString();
     if (passExecutable == "") {
@@ -241,8 +245,7 @@ void MainWindow::config() {
             passExecutable = d->getPassPath();
             gitExecutable = d->getGitPath();
             gpgExecutable = d->getGpgPath();
-            passStore = d->getStorePath();
-            normalizePassStore();
+            passStore = Util::normalizeFolderPath(d->getStorePath());
             usePass = d->usePass();
             useClipboard = d->useClipboard();
             useAutoclear = d->useAutoclear();
