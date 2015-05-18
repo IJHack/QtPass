@@ -90,6 +90,7 @@ private:
     bool wrapperRunning;
     QStringList env;
     QQueue<execQueueItem> *execQueue;
+    bool firstRun;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());

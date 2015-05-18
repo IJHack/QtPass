@@ -85,3 +85,8 @@ QString Util::findBinaryInPath(QString binary)
 
     return ret;
 }
+
+bool Util::checkConfig(QString passStore, QString passExecutable, QString gpgExecutable)
+{
+    return !QFile(passStore).exists() || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
+}
