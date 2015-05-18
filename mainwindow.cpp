@@ -119,7 +119,7 @@ void MainWindow::mountWebDav() {
 /**
  * @brief MainWindow::checkConfig
  */
-void MainWindow::checkConfig() {
+bool MainWindow::checkConfig() {
 
     QSettings &settings(getSettings());
 
@@ -162,9 +162,12 @@ void MainWindow::checkConfig() {
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
-    } else {
-        firstRun = false;
+        if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            return false;
+        }
     }
+
+    firstRun = false;
 
     // TODO: this needs to be before we try to access the store,
     // but it would be better to do it after the Window is shown,
@@ -212,6 +215,7 @@ void MainWindow::checkConfig() {
     //QMessageBox::information(this, "env", env.join("\n"));
 
     ui->lineEdit->setFocus();
+    return true;
 }
 
 /**
@@ -268,12 +272,8 @@ void MainWindow::config() {
                 config(); // loop !!
             }
         }
-
-    } else if (firstRun) {
-        // close(); // not strong enough since not opened yet ;)
-        exit(0);
+        firstRun = false;
     }
-    firstRun = false;
 }
 
 /**

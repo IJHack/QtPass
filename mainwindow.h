@@ -38,7 +38,7 @@ public:
     void setPassExecutable(QString);
     void setGitExecutable(QString);
     void setGpgExecutable(QString);
-    void checkConfig();
+    bool checkConfig();
     void setApp(SingleApplication* app);
     void setText(QString);
 
@@ -61,6 +61,7 @@ private slots:
     void messageAvailable(QString message);
 
 private:
+    QApplication *QtPass;
     QScopedPointer<QSettings> settings;
     QScopedPointer<Ui::MainWindow> ui;
     QFileSystemModel model;
