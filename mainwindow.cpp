@@ -164,13 +164,7 @@ void MainWindow::checkConfig() {
     webDavUrl = settings.value("webDavUrl").toString();
     webDavUser = settings.value("webDavUser").toString();
     webDavPassword = settings.value("webDavPassword").toString();
-
-    settings.beginGroup("profiles");
-    QStringList keys = settings.childKeys();
-    foreach (QString key, keys) {
-         profiles[key] = settings.value(key).toString();
-    }
-    settings.endGroup();
+    profiles = settings.value("profiles").toStringList();
 
     if (passExecutable == "" && (gitExecutable == "" || gpgExecutable == "")) {
         config();
@@ -202,8 +196,11 @@ void MainWindow::checkConfig() {
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
     ui->textBrowser->setOpenExternalLinks(true);
-
-    updateProfileBox();
+    if (profiles.isEmpty()) {
+        ui->profileBox->setEnabled(false);
+    } else {
+        ui->profileBox->addItems(profiles);
+    }
 
     env = QProcess::systemEnvironment();
     if (!gpgHome.isEmpty()) {
@@ -244,7 +241,6 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
-    d->setProfiles(profiles);
 
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
@@ -260,7 +256,6 @@ void MainWindow::config() {
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
-            profiles = d->getProfiles();
 
             QSettings &settings(getSettings());
 
@@ -275,25 +270,7 @@ void MainWindow::config() {
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
-            settings.beginGroup("profiles");
-            settings.remove("");
-            bool profileExists = false;
-            QHashIterator<QString, QString> i(profiles);
-            while (i.hasNext()) {
-                i.next();
-                //qDebug() << i.key() + "|" + i.value();
-                if (i.key() == profile) {
-                    profileExists = true;
-                }
-                settings.setValue(i.key(), i.value());
-            }
-            if (!profileExists) {
-                // just take the last one
-                profile = i.key();
-            }
-            settings.endGroup();
 
-            updateProfileBox();
             ui->treeView->setRootIndex(model.setRootPath(passStore));
         }
     }
@@ -921,29 +898,4 @@ void MainWindow::messageAvailable(QString message)
 void MainWindow::setText(QString text)
 {
     ui->lineEdit->setText(text);
-}
-
-/**
- * @brief MainWindow::updateProfileBox
- */
-void MainWindow::updateProfileBox()
-{
-    if (profiles.isEmpty()) {
-        ui->profileBox->setVisible(false);
-    } else {
-        ui->profileBox->setVisible(true);
-        if (profiles.size() < 2) {
-            ui->profileBox->setEnabled(false);
-        }
-        ui->profileBox->clear();
-        QHashIterator<QString, QString> i(profiles);
-        while (i.hasNext()) {
-            i.next();
-            ui->profileBox->addItem(i.key());
-        }
-    }
-    int index = ui->profileBox->findData(profile);
-    if ( index != -1 ) { // -1 for not found
-       ui->profileBox->setCurrentIndex(index);
-    }
 }

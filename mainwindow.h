@@ -89,9 +89,8 @@ private:
     QString lastDecrypt;
     bool wrapperRunning;
     QStringList env;
-    QHash<QString, QString> profiles;
+    QStringList profiles;
     QQueue<execQueueItem> *execQueue;
-    QString profile;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -108,7 +107,6 @@ private:
     QStringList getRecipientList(QString for_file);
     QString getRecipientString(QString for_file, QString separator = " ", int *count = NULL);
     void mountWebDav();
-    void updateProfileBox();
 };
 
 #endif // MAINWINDOW_H
