@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <QFileDialog>
-#include <QTableWidgetItem>
 
 namespace Ui {
 class Dialog;
@@ -50,9 +49,6 @@ private slots:
     void on_toolButtonStore_clicked();
     void on_checkBoxClipboard_clicked();
     void on_checkBoxAutoclear_clicked();
-    void on_addButton_clicked();
-    void on_profileTable_currentItemChanged(QTableWidgetItem*);
-    void on_deleteButton_clicked();
 
 private:
     QScopedPointer<Ui::Dialog> ui;
