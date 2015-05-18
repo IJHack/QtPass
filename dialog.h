@@ -19,7 +19,6 @@ public:
     void setGitPath(QString);
     void setGpgPath(QString);
     void setStorePath(QString);
-    void setProfiles(QHash<QString, QString>);
     void usePass(bool);
     void useClipboard(bool);
     void useAutoclear(bool);
@@ -31,7 +30,6 @@ public:
     QString getGitPath();
     QString getGpgPath();
     QString getStorePath();
-    QHash<QString,QString> getProfiles();
     bool usePass();
     bool useClipboard();
     bool useAutoclear();
