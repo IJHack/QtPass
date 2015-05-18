@@ -1,5 +1,8 @@
 #-------------------------------------------------
 #
+#   QtPass is a GUI for pass,
+#           the standard unix password manager.
+#
 # Project created by QtCreator 2014-07-30T21:56:15
 #
 #-------------------------------------------------
@@ -24,17 +27,20 @@ SOURCES   += main.cpp\
              dialog.cpp \
              storemodel.cpp \
              util.cpp \
-             usersdialog.cpp
+             usersdialog.cpp \
+    wizarddialog.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
              storemodel.h \
              util.h \
-             usersdialog.h
+             usersdialog.h \
+    wizarddialog.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
-             usersdialog.ui
+             usersdialog.ui \
+    wizarddialog.ui
 
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 

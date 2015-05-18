@@ -7,8 +7,9 @@
 class Util
 {
 public:
-    static QString findBinaryInPath(QString binary);
+    static QString findBinaryInPath(QString);
     static QString findPasswordStore();
+    static QString normalizeFolderPath(QString);
 
 private:
     static void initialiseEnvironment();

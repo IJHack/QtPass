@@ -35,11 +35,19 @@ QString Util::findPasswordStore()
     if (_env.contains("PASSWORD_STORE_DIR")) {
         path = _env.value("PASSWORD_STORE_DIR");
     } else {
-        /* @TODO checks */
         path = QDir::homePath()+"/.password-store/";
+    }
+    return Util::normalizeFolderPath(path);
+}
+
+
+QString Util::normalizeFolderPath(QString path) {
+    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
+        path += '/';
     }
     return path;
 }
+
 
 QString Util::findBinaryInPath(QString binary)
 {

@@ -100,7 +100,6 @@ private:
     QString getDir(const QModelIndex &, bool);
     QString getFile(const QModelIndex &, bool);
     void setPassword(QString, bool);
-    void normalizePassStore();
     QSettings &getSettings();
     QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
     QStringList getRecipientList(QString for_file);
