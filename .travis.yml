@@ -1,4 +1,9 @@
 language: cpp
+
+os:
+  - linux
+  - osx
+
 compiler:
   - gcc
   - clang
@@ -34,3 +39,7 @@ notifications:
       - "chat.freenode.net#IJhack"
     on_success: change
     on_failure: always
+
+matrix:
+  allow_failures:
+    - os: osx
