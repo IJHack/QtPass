@@ -15,6 +15,8 @@ While QtPass will work with Qt4, currently multi-line editing is restricted to Q
 
 QtPass requires GCC 4.7 or later or any other 2011 ISO C++ standard compliant compiler.
 
+Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
+
 Security considerations
 -----------------------
 Using this program will not magically keep your passwords secure against
@@ -80,4 +82,3 @@ Further reading
 [Documentation](http://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
-
