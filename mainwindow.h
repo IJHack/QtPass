@@ -41,6 +41,7 @@ public:
     bool checkConfig();
     void setApp(SingleApplication* app);
     void setText(QString);
+    QStringList getSecretKeys();
 
 private slots:
     void on_updateButton_clicked();
