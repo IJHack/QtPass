@@ -1,5 +1,6 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include "mainwindow.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -7,10 +8,11 @@
  * @brief Dialog::Dialog
  * @param parent
  */
-Dialog::Dialog(QWidget *parent) :
+Dialog::Dialog(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    mainWindow = parent;
     ui->setupUi(this);
 }
 
@@ -353,10 +355,19 @@ void Dialog::addGPGId(bool addGPGId)
 
 void Dialog::wizard()
 {
-    // got GPG at-least ?
-    // TODO ^^
+    if(!QFile(ui->gpgPath->text()).exists()){
+        QMessageBox::critical(this, tr("GnuPG not found"),
+            tr("Please install GnuPG on your system.\nhttps://www.gnupg.org/download/"));
+        // TODO REST
+    }
 
-    // TODO have usable gpg id
+    QStringList names = mainWindow->getSecretKeys();
+    //qDebug() << names;
+    if (names.empty()) {
+        QMessageBox::critical(this, tr("Secret key not found"),
+            tr("You can not encrypt :("));
+        // TODO have usable gpg id wizrd :P
+    }
 
     QString passStore = ui->storePath->text();
     if(!QFile(passStore + ".gpg-id").exists()){

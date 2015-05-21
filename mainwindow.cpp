@@ -224,7 +224,7 @@ bool MainWindow::checkConfig() {
  * @brief MainWindow::config
  */
 void MainWindow::config() {
-    QScopedPointer<Dialog> d(new Dialog());
+    QScopedPointer<Dialog> d(new Dialog(this));
     d->setModal(true);
 
     d->setPassPath(passExecutable);
@@ -614,6 +614,11 @@ void MainWindow::on_clearButton_clicked()
     ui->lineEdit->clear();
 }
 
+/**
+ * @brief MainWindow::getRecipientList
+ * @param for_file
+ * @return
+ */
 QStringList MainWindow::getRecipientList(QString for_file)
 {
     QDir gpgIdPath(QFileInfo(for_file.startsWith(passStore) ? for_file : passStore + for_file).absoluteDir());
@@ -643,6 +648,13 @@ QStringList MainWindow::getRecipientList(QString for_file)
     return recipients;
 }
 
+/**
+ * @brief MainWindow::getRecipientString
+ * @param for_file
+ * @param separator
+ * @param count
+ * @return
+ */
 QString MainWindow::getRecipientString(QString for_file, QString separator, int *count)
 {
     QString recipients_str;
@@ -658,6 +670,11 @@ QString MainWindow::getRecipientString(QString for_file, QString separator, int 
     return recipients_str;
 }
 
+/**
+ * @brief MainWindow::setPassword
+ * @param file
+ * @param overwrite
+ */
 void MainWindow::setPassword(QString file, bool overwrite)
 {
     bool ok;
@@ -698,6 +715,9 @@ void MainWindow::setPassword(QString file, bool overwrite)
     }
 }
 
+/**
+ * @brief MainWindow::on_addButton_clicked
+ */
 void MainWindow::on_addButton_clicked()
 {
     bool ok;
@@ -715,6 +735,9 @@ void MainWindow::on_addButton_clicked()
     setPassword(file, false);
 }
 
+/**
+ * @brief MainWindow::on_deleteButton_clicked
+ */
 void MainWindow::on_deleteButton_clicked()
 {
     QString file = getFile(ui->treeView->currentIndex(), usePass);
@@ -731,6 +754,9 @@ void MainWindow::on_deleteButton_clicked()
     }
 }
 
+/**
+ * @brief MainWindow::on_editButton_clicked
+ */
 void MainWindow::on_editButton_clicked()
 {
     QString file = getFile(ui->treeView->currentIndex(), usePass);
@@ -742,6 +768,12 @@ void MainWindow::on_editButton_clicked()
     setPassword(file, true);
 }
 
+/**
+ * @brief MainWindow::listKeys
+ * @param keystring
+ * @param secret
+ * @return
+ */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
     QList<UserInfo> users;
@@ -917,4 +949,24 @@ void MainWindow::updateEnv()
         //qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
         env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
     }
+}
+
+/**
+ * @brief MainWindow::getSecretKeys
+ * @return QStringList keys
+ */
+QStringList MainWindow::getSecretKeys()
+{
+    QList<UserInfo> keys = listKeys("", true);
+    QStringList names;
+
+    if (keys.size() == 0) {
+        return names;
+    }
+
+    foreach (const UserInfo &sec, keys) {
+        names << sec.name;
+    }
+
+    return names;
 }
