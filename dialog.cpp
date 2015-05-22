@@ -1,6 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include "mainwindow.h"
+#include "keygendialog.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -358,10 +359,10 @@ void Dialog::addGPGId(bool addGPGId)
 
 void Dialog::wizard()
 {
-    mainWindow->checkConfig();
+    //mainWindow->checkConfig();
 
-//    QString gpg = ui->gpgPath->text();
-    QString gpg = mainWindow->getGpgExecutable();
+    QString gpg = ui->gpgPath->text();
+    //QString gpg = mainWindow->getGpgExecutable();
     if(!QFile(gpg).exists()){
         QMessageBox::critical(this, tr("GnuPG not found"),
             tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
@@ -375,6 +376,8 @@ void Dialog::wizard()
         QMessageBox::critical(this, tr("Secret key not found"),
             tr("You can not encrypt :("));
         // TODO have usable gpg id wizrd :P
+        KeygenDialog d(this);
+        d.exec();
     }
 
     QString passStore = ui->storePath->text();
@@ -387,5 +390,5 @@ void Dialog::wizard()
     // Can you use the store?
 
 
-    ui->gpgPath->setText(gpg);
+    //ui->gpgPath->setText(gpg);
  }

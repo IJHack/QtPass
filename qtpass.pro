@@ -27,18 +27,21 @@ SOURCES   += main.cpp\
              dialog.cpp \
              storemodel.cpp \
              util.cpp \
-             usersdialog.cpp 
+             usersdialog.cpp \ 
+    keygendialog.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
              storemodel.h \
              util.h \
              usersdialog.h \
-    wizarddialog.h
+    wizarddialog.h \
+    keygendialog.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
-             usersdialog.ui 
+             usersdialog.ui \ 
+    keygendialog.ui
 
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 
