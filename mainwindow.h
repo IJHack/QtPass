@@ -38,6 +38,7 @@ public:
     void setPassExecutable(QString);
     void setGitExecutable(QString);
     void setGpgExecutable(QString);
+    QString getGpgExecutable();
     bool checkConfig();
     void setApp(SingleApplication* app);
     void setText(QString);
