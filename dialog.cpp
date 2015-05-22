@@ -21,6 +21,9 @@ Dialog::Dialog(MainWindow *parent) :
  */
 Dialog::~Dialog()
 {
+    mainWindow->setGitExecutable(ui->gitPath->text());
+    mainWindow->setGpgExecutable(ui->gpgPath->text());
+    mainWindow->setPassExecutable(ui->passPath->text());
 }
 
 /**
@@ -355,15 +358,20 @@ void Dialog::addGPGId(bool addGPGId)
 
 void Dialog::wizard()
 {
-    if(!QFile(ui->gpgPath->text()).exists()){
+    mainWindow->checkConfig();
+
+//    QString gpg = ui->gpgPath->text();
+    QString gpg = mainWindow->getGpgExecutable();
+    if(!QFile(gpg).exists()){
         QMessageBox::critical(this, tr("GnuPG not found"),
-            tr("Please install GnuPG on your system.\nhttps://www.gnupg.org/download/"));
-        // TODO REST
+            tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
+
+        // TODO REST ?
     }
 
     QStringList names = mainWindow->getSecretKeys();
     //qDebug() << names;
-    if (names.empty()) {
+    if (QFile(gpg).exists() && names.empty()) {
         QMessageBox::critical(this, tr("Secret key not found"),
             tr("You can not encrypt :("));
         // TODO have usable gpg id wizrd :P
@@ -377,4 +385,7 @@ void Dialog::wizard()
     }
 
     // Can you use the store?
+
+
+    ui->gpgPath->setText(gpg);
  }

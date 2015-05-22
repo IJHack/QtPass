@@ -544,6 +544,14 @@ void MainWindow::setGpgExecutable(QString path) {
 }
 
 /**
+ * @brief MainWindow::getGpgExecutable
+ * @return
+ */
+QString MainWindow::getGpgExecutable() {
+    return gpgExecutable;
+}
+
+/**
  * @brief MainWindow::on_configButton_clicked
  */
 void MainWindow::on_configButton_clicked()
