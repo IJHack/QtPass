@@ -93,6 +93,9 @@
    </item>
    <item>
     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -115,6 +118,25 @@ Passphrase:
 %commit
 %echo done</string>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+     <property name="backgroundVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</string>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+     </property>
     </widget>
    </item>
    <item>
@@ -130,10 +152,12 @@ Passphrase:
   </layout>
  </widget>
  <tabstops>
-  <tabstop>name</tabstop>
   <tabstop>email</tabstop>
+  <tabstop>name</tabstop>
   <tabstop>passphrase1</tabstop>
   <tabstop>passphrase2</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>plainTextEdit</tabstop>
  </tabstops>
  <resources/>
  <connections>
