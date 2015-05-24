@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     enableUiElements(true);
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
-    ui->statusBar->showMessage(tr("Welcome to QtPass ")  + VERSION, 2000);
+    ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
     firstRun = true;
 }
 
@@ -566,7 +566,7 @@ void MainWindow::on_configButton_clicked()
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
     ui->treeView->expandAll();
-    ui->statusBar->showMessage(tr("Looking for: ") + arg1, 1000);
+    ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
     QString query = arg1;
     query.replace(QRegExp(" "), ".*");
     QRegExp regExp(query, Qt::CaseInsensitive);
@@ -977,4 +977,21 @@ QStringList MainWindow::getSecretKeys()
     }
 
     return names;
+}
+
+/**
+ * @brief Dialog::genKey
+ * @param QString batch
+ * @return status
+ */
+bool MainWindow::genKey(QString batch)
+{
+    ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
+    currentAction = GPG_INTERNAL;
+    executeWrapper(gpgExecutable , "--gen-key --no-tty --batch", batch);
+    process->waitForFinished(600000);    // ten minutes enough ?
+    if (process->exitStatus() != QProcess::NormalExit) {
+        return true;
+    }
+    return false;
 }

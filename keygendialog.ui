@@ -112,8 +112,7 @@ Name-Comment: QtPass
 Name-Email: 
 Expire-Date: 0
 Passphrase:
-%pubring foo.pub
-%secring foo.sec
+%no-protection
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</string>

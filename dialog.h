@@ -42,6 +42,7 @@ public:
     bool hideContent();
     bool addGPGId();
     void wizard();
+    bool genKey(QString);
 
 private slots:
     void on_radioButtonNative_clicked();

@@ -43,6 +43,7 @@ public:
     void setApp(SingleApplication* app);
     void setText(QString);
     QStringList getSecretKeys();
+    bool genKey(QString);
 
 private slots:
     void on_updateButton_clicked();

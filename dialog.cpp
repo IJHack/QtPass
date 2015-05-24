@@ -356,7 +356,9 @@ void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
-
+/**
+ * @brief Dialog::wizard
+ */
 void Dialog::wizard()
 {
     //mainWindow->checkConfig();
@@ -373,8 +375,6 @@ void Dialog::wizard()
     QStringList names = mainWindow->getSecretKeys();
     //qDebug() << names;
     if (QFile(gpg).exists() && names.empty()) {
-        QMessageBox::critical(this, tr("Secret key not found"),
-            tr("You can not encrypt :("));
         // TODO have usable gpg id wizrd :P
         KeygenDialog d(this);
         d.exec();
@@ -391,4 +391,14 @@ void Dialog::wizard()
 
 
     //ui->gpgPath->setText(gpg);
- }
+}
+
+/**
+ * @brief Dialog::genKey
+ * @param QString batch
+ * @return status
+ */
+bool Dialog::genKey(QString batch)
+{
+    return mainWindow->genKey(batch);
+}
