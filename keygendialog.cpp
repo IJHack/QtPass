@@ -33,8 +33,10 @@ void KeygenDialog::on_checkBox_stateChanged(int arg1)
 {
     if (arg1) {
         ui->plainTextEdit->setReadOnly(false);
+        ui->plainTextEdit->setEnabled(true);
     } else {
         ui->plainTextEdit->setReadOnly(true);
+        ui->plainTextEdit->setEnabled(false);
     }
 }
 
@@ -63,4 +65,30 @@ void KeygenDialog::replace(QString key, QString value)
         clear.append(line);
     }
     ui->plainTextEdit->setPlainText(clear.join("\n"));
+}
+
+void KeygenDialog::done(int r)
+{
+    if(QDialog::Accepted == r)  // ok was pressed
+    {
+        bool status = false;
+
+        // TODO call for keygen
+
+        if(status)   // validate the data somehow
+        {
+            QDialog::done(r);
+            return;
+        }
+        else
+        {
+            // something went wrong?
+            return;
+        }
+    }
+    else    // cancel, close or exc was pressed
+    {
+        QDialog::done(r);
+        return;
+    }
 }

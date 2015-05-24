@@ -29,6 +29,7 @@ private slots:
 private:
     Ui::KeygenDialog *ui;
     void replace(QString, QString);
+    void done(int r);
 };
 
 #endif // KEYGENDIALOG_H
