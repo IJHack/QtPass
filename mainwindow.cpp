@@ -420,8 +420,8 @@ void MainWindow::readyRead(bool finished = false) {
         output.replace(QRegExp("<"), "&lt;");
         output.replace(QRegExp(">"), "&gt;");
     } else {
-        qDebug() << process->readAllStandardOutput();
-        qDebug() << process->readAllStandardError();
+        //qDebug() << process->readAllStandardOutput();
+        //qDebug() << process->readAllStandardError();
         if (finished && 0 != keygen) {
             qDebug() << "Keygen Done";
             keygen->close();
