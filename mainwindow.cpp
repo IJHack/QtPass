@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "dialog.h"
 #include "usersdialog.h"
+#include "keygendialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QInputDialog>
@@ -418,10 +419,15 @@ void MainWindow::readyRead(bool finished = false) {
         }
         output.replace(QRegExp("<"), "&lt;");
         output.replace(QRegExp(">"), "&gt;");
-    }
-
-    if (error.size() > 0) {
-        output = "<font color=\"red\">" + error + "</font><br />" + output;
+    } else {
+        qDebug() << process->readAllStandardOutput();
+        qDebug() << process->readAllStandardError();
+        if (finished && 0 != keygen) {
+            qDebug() << "Keygen Done";
+            keygen->close();
+            keygen = 0;
+            // TODO some sanity checking !
+        }
     }
 
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
@@ -982,16 +988,16 @@ QStringList MainWindow::getSecretKeys()
 /**
  * @brief Dialog::genKey
  * @param QString batch
- * @return status
  */
-bool MainWindow::genKey(QString batch)
+void MainWindow::genKey(QString batch, QDialog *keygenWindow)
 {
+    keygen = keygenWindow;
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
     currentAction = GPG_INTERNAL;
     executeWrapper(gpgExecutable , "--gen-key --no-tty --batch", batch);
-    process->waitForFinished(600000);    // ten minutes enough ?
-    if (process->exitStatus() != QProcess::NormalExit) {
-        return true;
-    }
-    return false;
+//    process->waitForFinished(600000);    // ten minutes enough ?
+//    if (process->exitStatus() != QProcess::NormalExit) {
+//        return true;
+//    }
+//    return false;
 }

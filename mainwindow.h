@@ -43,7 +43,7 @@ public:
     void setApp(SingleApplication* app);
     void setText(QString);
     QStringList getSecretKeys();
-    bool genKey(QString);
+    void genKey(QString, QDialog *);
 
 private slots:
     void on_updateButton_clicked();
@@ -95,6 +95,7 @@ private:
     QStringList env;
     QQueue<execQueueItem> *execQueue;
     bool firstRun;
+    QDialog *keygen = 0;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
