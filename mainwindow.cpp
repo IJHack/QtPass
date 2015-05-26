@@ -430,6 +430,10 @@ void MainWindow::readyRead(bool finished = false) {
         }
     }
 
+    if (!error.isEmpty()) {
+        output = "<span style=\"color: red;\">" + error + "</span><br />" + output;
+    }
+
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
     if (ui->textBrowser->toPlainText() != "") {
@@ -462,9 +466,6 @@ void MainWindow::clearClipboard()
 void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
     wrapperRunning = false;
     bool error = exitStatus != QProcess::NormalExit || exitCode > 0;
-    if (error) {
-         ui->textBrowser->setTextColor(Qt::red);
-    }
     readyRead(true);
     enableUiElements(true);
     if (!error && currentAction == EDIT) {

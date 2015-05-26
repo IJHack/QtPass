@@ -122,13 +122,11 @@ void KeygenDialog::done(int r)
         pi->startAnimation();
         pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-        this->layout()->removeWidget(ui->widget);
-        this->layout()->removeWidget(ui->buttonBox);
-        this->layout()->removeWidget(ui->checkBox);
-        this->layout()->removeWidget(ui->plainTextEdit);
-        this->layout()->removeWidget(ui->label);
-        this->layout()->removeWidget(ui->labelExpertInfo);
-        this->layout()->removeWidget(ui->labelPassphraseInfo);
+        ui->frame->hide();
+        ui->label->setText(QString("We need to generate a lot of random bytes. It is a good idea to perform<br/>") +
+                           "some other action (type on the keyboard, move the mouse, utilize the<br/>" +
+                           "disks) during the prime generation; this gives the random number<br/>" +
+                           "generator a better chance to gain enough entropy.");
 
         this->layout()->addWidget(pi);
 
