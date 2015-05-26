@@ -1,5 +1,6 @@
 #include "keygendialog.h"
 #include "ui_keygendialog.h"
+#include "progressindicator.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -116,17 +117,23 @@ void KeygenDialog::done(int r)
         ui->buttonBox->setEnabled(false);
         ui->checkBox->setEnabled(false);
         ui->plainTextEdit->setEnabled(false);
-        // some kind of animation or at-least explanation needed here
-        // people don't like wating :D
+
+        QProgressIndicator* pi = new QProgressIndicator();
+        pi->startAnimation();
+        pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+        this->layout()->removeWidget(ui->widget);
+        this->layout()->removeWidget(ui->buttonBox);
+        this->layout()->removeWidget(ui->checkBox);
+        this->layout()->removeWidget(ui->plainTextEdit);
+        this->layout()->removeWidget(ui->label);
+        this->layout()->removeWidget(ui->labelExpertInfo);
+        this->layout()->removeWidget(ui->labelPassphraseInfo);
+
+        this->layout()->addWidget(pi);
+
+        this->show();
         dialog->genKey(ui->plainTextEdit->toPlainText(), this);
-//            QMessageBox::critical(this, tr("GPG gen-key error"),
-//                tr("Something went wrong, I guess"));
-//            ui->widget->setEnabled(true);
-//            ui->buttonBox->setEnabled(true);
-//            ui->checkBox->setEnabled(true);
-//            on_checkBox_stateChanged(ui->checkBox->isChecked());
-//            // something went wrong, explain things?
-//            return;
     }
     else    // cancel, close or exc was pressed
     {

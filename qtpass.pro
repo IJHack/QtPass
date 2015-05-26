@@ -7,7 +7,7 @@
 #
 #-------------------------------------------------
 
-QT        += core gui
+QT        += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,20 +28,21 @@ SOURCES   += main.cpp\
              storemodel.cpp \
              util.cpp \
              usersdialog.cpp \ 
-    keygendialog.cpp
+             keygendialog.cpp \
+             progressindicator.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
              storemodel.h \
              util.h \
              usersdialog.h \
-    wizarddialog.h \
-    keygendialog.h
+             keygendialog.h \
+             progressindicator.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
              usersdialog.ui \ 
-    keygendialog.ui
+             keygendialog.ui
 
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 
