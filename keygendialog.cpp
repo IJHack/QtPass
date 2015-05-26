@@ -69,6 +69,9 @@ void KeygenDialog::replace(QString key, QString value)
     QStringList lines = expert.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
     foreach (QString line, lines) {
         line.replace(QRegExp(key+":.*"), key + ": " + value);
+        if (key == "Passphrase") {
+            line.replace("%no-protection", "Passphrase: " + value);
+        }
         clear.append(line);
     }
     ui->plainTextEdit->setPlainText(clear.join("\n"));
@@ -91,7 +94,6 @@ void KeygenDialog::no_protection(bool enable)
             }
         } else {
             if (line.indexOf("Passphrase") == 0) {
-                clear.append(line);
                 line = "%no-protection";
             }
         }
@@ -116,23 +118,15 @@ void KeygenDialog::done(int r)
         ui->plainTextEdit->setEnabled(false);
         // some kind of animation or at-least explanation needed here
         // people don't like wating :D
-        bool status = dialog->genKey(ui->plainTextEdit->toPlainText());
-        if(status)
-        {
-            QDialog::done(r);
-            return;
-        }
-        else
-        {
-            QMessageBox::critical(this, tr("GPG gen-key error"),
-                tr("Something went wrong, I guess"));
-            ui->widget->setEnabled(true);
-            ui->buttonBox->setEnabled(true);
-            ui->checkBox->setEnabled(true);
-            on_checkBox_stateChanged(ui->checkBox->isChecked());
-            // something went wrong, explain things?
-            return;
-        }
+        dialog->genKey(ui->plainTextEdit->toPlainText(), this);
+//            QMessageBox::critical(this, tr("GPG gen-key error"),
+//                tr("Something went wrong, I guess"));
+//            ui->widget->setEnabled(true);
+//            ui->buttonBox->setEnabled(true);
+//            ui->checkBox->setEnabled(true);
+//            on_checkBox_stateChanged(ui->checkBox->isChecked());
+//            // something went wrong, explain things?
+//            return;
     }
     else    // cancel, close or exc was pressed
     {

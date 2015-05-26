@@ -42,7 +42,7 @@ public:
     bool hideContent();
     bool addGPGId();
     void wizard();
-    bool genKey(QString);
+    void genKey(QString, QDialog *);
 
 private slots:
     void on_radioButtonNative_clicked();

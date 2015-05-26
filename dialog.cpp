@@ -396,9 +396,8 @@ void Dialog::wizard()
 /**
  * @brief Dialog::genKey
  * @param QString batch
- * @return status
  */
-bool Dialog::genKey(QString batch)
+void Dialog::genKey(QString batch, QDialog *dialog)
 {
-    return mainWindow->genKey(batch);
+    mainWindow->genKey(batch, dialog);
 }
