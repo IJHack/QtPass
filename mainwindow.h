@@ -44,6 +44,7 @@ public:
     void setText(QString);
     QStringList getSecretKeys();
     void genKey(QString, QDialog *);
+    void userDialog(QString = "");
 
 private slots:
     void on_updateButton_clicked();
@@ -96,6 +97,7 @@ private:
     QQueue<execQueueItem> *execQueue;
     bool firstRun;
     QDialog *keygen = 0;
+    QString currentDir;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
