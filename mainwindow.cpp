@@ -426,7 +426,7 @@ void MainWindow::readyRead(bool finished = false) {
             qDebug() << "Keygen Done";
             keygen->close();
             keygen = 0;
-            // TODO some sanity checking !
+            // TODO some sanity checking ?
         }
     }
 
@@ -995,9 +995,4 @@ void MainWindow::genKey(QString batch, QDialog *keygenWindow)
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
     currentAction = GPG_INTERNAL;
     executeWrapper(gpgExecutable , "--gen-key --no-tty --batch", batch);
-//    process->waitForFinished(600000);    // ten minutes enough ?
-//    if (process->exitStatus() != QProcess::NormalExit) {
-//        return true;
-//    }
-//    return false;
 }
