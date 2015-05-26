@@ -340,6 +340,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass)
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
+    currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";
     QString file = getFile(index, usePass);
     if (!file.isEmpty()){
@@ -826,6 +827,14 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
     return users;
 }
 
+void MainWindow::userDialog(QString dir)
+{
+    if (!dir.isEmpty()) {
+        currentDir = dir;
+    }
+    on_usersButton_clicked();
+}
+
 void MainWindow::on_usersButton_clicked()
 {
     QList<UserInfo> users = listKeys();
@@ -841,7 +850,7 @@ void MainWindow::on_usersButton_clicked()
         }
     }
     QList<UserInfo> selected_users;
-    QString dir = getDir(ui->treeView->currentIndex(), false);
+    QString dir = currentDir.isEmpty()?getDir(ui->treeView->currentIndex(), false):currentDir;
     int count = 0;
     QString recipients = getRecipientString(dir.isEmpty() ? "" : dir, " ", &count);
     if (!recipients.isEmpty()) {

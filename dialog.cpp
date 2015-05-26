@@ -210,7 +210,7 @@ void Dialog::on_toolButtonPass_clicked()
 void Dialog::on_toolButtonStore_clicked()
 {
     QString store = selectFolder();
-    if (store != "") {
+    if (store != "") { // TODO call check
         ui->storePath->setText(store);
     }
 }
@@ -384,7 +384,14 @@ void Dialog::wizard()
     if(!QFile(passStore + ".gpg-id").exists()){
         QMessageBox::critical(this, tr("Password store not initialised"),
             tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
-        // TODO REST
+        while(!QFile(passStore).exists()) {
+            on_toolButtonStore_clicked();
+        }
+        if (!QFile(passStore + ".gpg-id").exists()) {
+            // apears not to be store
+            // init yes / no ?
+            mainWindow->userDialog(passStore);
+        }
     }
 
     // Can you use the store?
