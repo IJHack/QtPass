@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     execQueue = new QQueue<execQueueItem>;
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
     firstRun = true;
+    startupPhase = true;
 }
 
 /**
@@ -161,6 +162,14 @@ bool MainWindow::checkConfig() {
     webDavUser = settings.value("webDavUser").toString();
     webDavPassword = settings.value("webDavPassword").toString();
 
+    profile = settings.value("profile").toString();
+    settings.beginGroup("profiles");
+    QStringList keys = settings.childKeys();
+    foreach (QString key, keys) {
+         profiles[key] = settings.value(key).toString();
+    }
+    settings.endGroup();
+
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
         if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
@@ -197,6 +206,8 @@ bool MainWindow::checkConfig() {
 
     ui->textBrowser->setOpenExternalLinks(true);
 
+    updateProfileBox();
+
     env = QProcess::systemEnvironment();
     if (!gpgHome.isEmpty()) {
         QDir absHome(gpgHome);
@@ -218,6 +229,7 @@ bool MainWindow::checkConfig() {
     updateEnv();
 
     ui->lineEdit->setFocus();
+    startupPhase = false;
     return true;
 }
 
@@ -239,6 +251,7 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
+    d->setProfiles(profiles, profile);
     d->wizard(); // does shit
 
     if (d->exec()) {
@@ -254,6 +267,7 @@ void MainWindow::config() {
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
+            profiles = d->getProfiles();
 
             QSettings &settings(getSettings());
 
@@ -268,7 +282,28 @@ void MainWindow::config() {
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
-
+            if (!profiles.isEmpty()) {
+                settings.beginGroup("profiles");
+                settings.remove("");
+                bool profileExists = false;
+                QHashIterator<QString, QString> i(profiles);
+                while (i.hasNext()) {
+                    i.next();
+                    //qDebug() << i.key() + "|" + i.value();
+                    if (i.key() == profile) {
+                        profileExists = true;
+                    }
+                    settings.setValue(i.key(), i.value());
+                }
+                if (!profileExists) {
+                    // just take the last one
+                    profile = i.key();
+                }
+                settings.endGroup();
+            } else {
+                settings.remove("profiles");
+            }
+            updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
             if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
@@ -1005,4 +1040,68 @@ void MainWindow::genKey(QString batch, QDialog *keygenWindow)
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
     currentAction = GPG_INTERNAL;
     executeWrapper(gpgExecutable , "--gen-key --no-tty --batch", batch);
+}
+
+
+/**
+ * @brief MainWindow::updateProfileBox
+ */
+void MainWindow::updateProfileBox()
+{
+    //qDebug() << profiles.size();
+    if (profiles.isEmpty()) {
+        ui->profileBox->hide();
+    } else {
+        ui->profileBox->show();
+        if (profiles.size() < 2) {
+            ui->profileBox->setEnabled(false);
+        } else {
+            ui->profileBox->setEnabled(true);
+        }
+        ui->profileBox->clear();
+        QHashIterator<QString, QString> i(profiles);
+        while (i.hasNext()) {
+            i.next();
+            if (!i.key().isEmpty()) {
+                ui->profileBox->addItem(i.key());
+            }
+        }
+    }
+    int index = ui->profileBox->findText(profile);
+    if ( index != -1 ) { // -1 for not found
+       ui->profileBox->setCurrentIndex(index);
+    }
+}
+
+/**
+ * @brief MainWindow::on_profileBox_currentIndexChanged
+ * @param name
+ */
+void MainWindow::on_profileBox_currentIndexChanged(QString name)
+{
+    if (startupPhase || name == profile) {
+        return;
+    }
+    profile = name;
+
+    passStore = profiles[name];
+    ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
+
+    QSettings &settings(getSettings());
+
+    settings.setValue("profile", profile);
+    settings.setValue("passStore", passStore);
+
+    // qDebug() << env;
+    QStringList store = env.filter("PASSWORD_STORE_DIR");
+    // put PASSWORD_STORE_DIR in env
+    if (store.isEmpty()) {
+        //qDebug() << "Added PASSWORD_STORE_DIR";
+        env.append("PASSWORD_STORE_DIR=" + passStore);
+    } else {
+        //qDebug() << "Update PASSWORD_STORE_DIR";
+        env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
+    }
+
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }

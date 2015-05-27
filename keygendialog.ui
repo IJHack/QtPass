@@ -25,6 +25,9 @@
      <property name="text">
       <string>Generate a new key pair</string>
      </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>
