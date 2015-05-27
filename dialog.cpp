@@ -377,7 +377,6 @@ void Dialog::wizard()
     QStringList names = mainWindow->getSecretKeys();
     //qDebug() << names;
     if (QFile(gpg).exists() && names.empty()) {
-        // TODO have usable gpg id wizrd :P
         KeygenDialog d(this);
         d.exec();
     }
