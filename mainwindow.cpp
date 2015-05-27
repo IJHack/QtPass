@@ -269,10 +269,10 @@ void MainWindow::config() {
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
 
-            ui->treeView->setRootIndex(model.setRootPath(passStore));
+            ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
             if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
-                config(); // loop !!
+                config();
             }
             updateEnv();
         }
