@@ -206,6 +206,8 @@ bool MainWindow::checkConfig() {
 
     ui->textBrowser->setOpenExternalLinks(true);
 
+    updateProfileBox();
+
     env = QProcess::systemEnvironment();
     if (!gpgHome.isEmpty()) {
         QDir absHome(gpgHome);
@@ -249,6 +251,7 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
+    d->setProfiles(profiles, profile);
     d->wizard(); // does shit
 
     if (d->exec()) {
@@ -264,6 +267,7 @@ void MainWindow::config() {
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
+            profiles = d->getProfiles();
 
             QSettings &settings(getSettings());
 
@@ -278,7 +282,25 @@ void MainWindow::config() {
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
+            settings.beginGroup("profiles");
+            settings.remove("");
+            bool profileExists = false;
+            QHashIterator<QString, QString> i(profiles);
+            while (i.hasNext()) {
+                i.next();
+                //qDebug() << i.key() + "|" + i.value();
+                if (i.key() == profile) {
+                    profileExists = true;
+                }
+                settings.setValue(i.key(), i.value());
+            }
+            if (!profileExists) {
+                // just take the last one
+                profile = i.key();
+            }
+            settings.endGroup();
 
+            updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
             if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
@@ -1078,12 +1100,5 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
         env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
     }
 
-    // update model and treeview
-    model.setRootPath(passStore);
-    proxyModel.setSourceModel(&model);
-    proxyModel.setModelAndStore(&model, passStore);
-    selectionModel.reset(new QItemSelectionModel(&proxyModel));
-    model.fetchMore(model.setRootPath(passStore));
-    model.sort(0, Qt::AscendingOrder);
-    ui->treeView->setModel(&proxyModel);
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }

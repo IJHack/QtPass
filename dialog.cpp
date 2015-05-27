@@ -16,6 +16,8 @@ Dialog::Dialog(MainWindow *parent) :
 {
     mainWindow = parent;
     ui->setupUi(this);
+    ui->profileTable->verticalHeader()->hide();
+    ui->profileTable->horizontalHeader()->setStretchLastSection(true);
 }
 
 /**
@@ -411,6 +413,47 @@ void Dialog::genKey(QString batch, QDialog *dialog)
     mainWindow->genKey(batch, dialog);
 }
 
+/**
+ * @brief Dialog::setProfiles
+ * @param profiles
+ * @param profile
+ */
+void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
+{
+    ui->profileTable->setRowCount(profiles.count());
+    QHashIterator<QString, QString> i(profiles);
+    int n = 0;
+    while (i.hasNext()) {
+        i.next();
+        if (!i.value().isEmpty()) {
+            ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
+            ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value()));
+            //qDebug() << "naam:" + i.key();
+            if (i.key() == profile) {
+                ui->profileName->setText(i.key());
+                ui->storePath->setText(i.value());
+            }
+        }
+        n++;
+    }
+}
+
+/**
+ * @brief Dialog::getProfiles
+ * @return
+ */
+QHash<QString, QString> Dialog::getProfiles()
+{
+    QHash<QString, QString> profiles;
+    for (int i = 0; i < ui->profileTable->rowCount(); i++) {
+        QString path = ui->profileTable->item(i, 1)->text();
+        if (!path.isEmpty()) {
+            profiles.insert(ui->profileTable->item(i, 0)->text(),
+                            path);
+        }
+    }
+    return profiles;
+}
 
 /**
  * @brief Dialog::on_addButton_clicked
