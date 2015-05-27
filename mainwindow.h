@@ -63,6 +63,7 @@ private slots:
     void on_editButton_clicked();
     void on_usersButton_clicked();
     void messageAvailable(QString message);
+    void on_profileBox_currentIndexChanged(QString);
 
 private:
     QApplication *QtPass;
@@ -98,6 +99,9 @@ private:
     bool firstRun;
     QDialog *keygen = 0;
     QString currentDir;
+    QHash<QString, QString> profiles;
+    QString profile;
+    bool startupPhase;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -114,6 +118,7 @@ private:
     QString getRecipientString(QString for_file, QString separator = " ", int *count = NULL);
     void mountWebDav();
     void updateEnv();
+    void updateProfileBox();
 };
 
 #endif // MAINWINDOW_H
