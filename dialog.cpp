@@ -4,6 +4,7 @@
 #include "keygendialog.h"
 #include <QDebug>
 #include <QMessageBox>
+#include <QDir>
 
 /**
  * @brief Dialog::Dialog
@@ -164,6 +165,7 @@ QString Dialog::selectExecutable() {
 QString Dialog::selectFolder() {
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::Directory);
+    dialog.setFilter(QDir::NoFilter);
     dialog.setOption(QFileDialog::ShowDirsOnly);
     if (dialog.exec()) {
         return dialog.selectedFiles().first();
@@ -386,6 +388,7 @@ void Dialog::wizard()
             tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
         while(!QFile(passStore).exists()) {
             on_toolButtonStore_clicked();
+            passStore = ui->storePath->text();
         }
         if (!QFile(passStore + ".gpg-id").exists()) {
             // apears not to be store
