@@ -123,9 +123,10 @@ void KeygenDialog::done(int r)
         pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
         ui->frame->hide();
-        ui->label->setText(QString("We need to generate a lot of random bytes. It is a good idea to perform<br/>") +
-                           "some other action (type on the keyboard, move the mouse, utilize the<br/>" +
-                           "disks) during the prime generation; this gives the random number<br/>" +
+        ui->label->setText(QString("This operation can take some minutes.<br />") +
+                           "We need to generate a lot of random bytes. It is a good idea to perform " +
+                           "some other action (type on the keyboard, move the mouse, utilize the " +
+                           "disks) during the prime generation; this gives the random number " +
                            "generator a better chance to gain enough entropy.");
 
         this->layout()->addWidget(pi);
