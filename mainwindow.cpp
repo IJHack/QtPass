@@ -282,24 +282,27 @@ void MainWindow::config() {
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
-            settings.beginGroup("profiles");
-            settings.remove("");
-            bool profileExists = false;
-            QHashIterator<QString, QString> i(profiles);
-            while (i.hasNext()) {
-                i.next();
-                //qDebug() << i.key() + "|" + i.value();
-                if (i.key() == profile) {
-                    profileExists = true;
+            if (!profiles.isEmpty()) {
+                settings.beginGroup("profiles");
+                settings.remove("");
+                bool profileExists = false;
+                QHashIterator<QString, QString> i(profiles);
+                while (i.hasNext()) {
+                    i.next();
+                    //qDebug() << i.key() + "|" + i.value();
+                    if (i.key() == profile) {
+                        profileExists = true;
+                    }
+                    settings.setValue(i.key(), i.value());
                 }
-                settings.setValue(i.key(), i.value());
+                if (!profileExists) {
+                    // just take the last one
+                    profile = i.key();
+                }
+                settings.endGroup();
+            } else {
+                settings.remove("profiles");
             }
-            if (!profileExists) {
-                // just take the last one
-                profile = i.key();
-            }
-            settings.endGroup();
-
             updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
@@ -1045,11 +1048,11 @@ void MainWindow::genKey(QString batch, QDialog *keygenWindow)
  */
 void MainWindow::updateProfileBox()
 {
-    qDebug() << profiles.size();
+    //qDebug() << profiles.size();
     if (profiles.isEmpty()) {
-        ui->profileBox->setVisible(false);
+        ui->profileBox->hide();
     } else {
-        ui->profileBox->setVisible(true);
+        ui->profileBox->show();
         if (profiles.size() < 2) {
             ui->profileBox->setEnabled(false);
         } else {
