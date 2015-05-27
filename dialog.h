@@ -3,8 +3,12 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include "mainwindow.h"
 
 namespace Ui {
+
+struct UserInfo;
+
 class Dialog;
 }
 
@@ -13,7 +17,7 @@ class Dialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dialog(QWidget *parent = 0);
+    explicit Dialog(MainWindow *parent);
     ~Dialog();
     void setPassPath(QString);
     void setGitPath(QString);
@@ -37,6 +41,8 @@ public:
     bool hidePassword();
     bool hideContent();
     bool addGPGId();
+    void wizard();
+    void genKey(QString, QDialog *);
 
 private slots:
     void on_radioButtonNative_clicked();
@@ -53,6 +59,7 @@ private:
     void setGroupBoxState();
     QString selectExecutable();
     QString selectFolder();
+    MainWindow *mainWindow;
 };
 
 #endif // DIALOG_H

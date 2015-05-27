@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("IJHack");
     QCoreApplication::setOrganizationDomain("ijhack.org");
     QCoreApplication::setApplicationName("QtPass");
-    QCoreApplication::setApplicationVersion("0.8.0");
+    QCoreApplication::setApplicationVersion(VERSION);
 
     //Setup and load translator for localization
     QTranslator translator;
@@ -41,9 +41,12 @@ int main(int argc, char *argv[])
     app.setActiveWindow(&w);
     app.setWindowIcon(QIcon(":artwork/icon.png"));
     w.setApp(&app);
-    w.checkConfig();
-    w.setText(text);
-    w.show();
-
-    return app.exec();
+    if (w.checkConfig()) {
+        w.setText(text);
+        w.show();
+        return app.exec();
+    } else {
+        // canceled out of wizard
+        return 0;
+    }
 }

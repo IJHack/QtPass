@@ -10,11 +10,12 @@ Features
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
-* Multiple password store profiles
 
 While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
 QtPass requires GCC 4.7 or later or any other 2011 ISO C++ standard compliant compiler.
+
+Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
 
 Security considerations
 -----------------------
@@ -51,15 +52,15 @@ Known issues
 
 Planned features
 ----------------
+* Re-encryption after users-change (optional ofcourse)
 * Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
 * Right click handlers for file/folder and content
-* First use wizards to set up password-store (and decryption key, currently always the gpg default key)
-* ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
+* ~~first use wizards to set up password-store (and decryption key, currently always the gpg default key)~~
+* Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
 * Password generation with options for what kind you'd like
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
 * Colour coding or disabling of people you can't encrypt for (trust settings) in User management
 * Colour coding folders (possibly disabling folders you can't decrypt)
-* Trayicon support
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
@@ -82,4 +83,3 @@ Further reading
 [Documentation](http://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
-

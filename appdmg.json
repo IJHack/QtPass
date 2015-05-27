@@ -1,0 +1,12 @@
+{
+  "title": "QtPass",
+  "icon": "artwork/icon.icns",
+  "background": "artwork/icon.png",
+  "icon-size": 80,
+  "contents": [
+    { "x": 64, "y": 64, "type": "file", "path": "QtPass.app" },
+    { "x": 448, "y": 64, "type": "link", "path": "/Applications" },
+    { "x": 64, "y": 448, "type": "file", "path": "README.rtf" },
+    { "x": 448, "y": 448, "type": "file", "path": "LICENSE" }
+  ]
+}

@@ -38,9 +38,13 @@ public:
     void setPassExecutable(QString);
     void setGitExecutable(QString);
     void setGpgExecutable(QString);
-    void checkConfig();
+    QString getGpgExecutable();
+    bool checkConfig();
     void setApp(SingleApplication* app);
     void setText(QString);
+    QStringList getSecretKeys();
+    void genKey(QString, QDialog *);
+    void userDialog(QString = "");
 
 private slots:
     void on_updateButton_clicked();
@@ -61,6 +65,7 @@ private slots:
     void messageAvailable(QString message);
 
 private:
+    QApplication *QtPass;
     QScopedPointer<QSettings> settings;
     QScopedPointer<Ui::MainWindow> ui;
     QFileSystemModel model;
@@ -90,6 +95,9 @@ private:
     bool wrapperRunning;
     QStringList env;
     QQueue<execQueueItem> *execQueue;
+    bool firstRun;
+    QDialog *keygen = 0;
+    QString currentDir;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -100,12 +108,12 @@ private:
     QString getDir(const QModelIndex &, bool);
     QString getFile(const QModelIndex &, bool);
     void setPassword(QString, bool);
-    void normalizePassStore();
     QSettings &getSettings();
     QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
     QStringList getRecipientList(QString for_file);
     QString getRecipientString(QString for_file, QString separator = " ", int *count = NULL);
     void mountWebDav();
+    void updateEnv();
 };
 
 #endif // MAINWINDOW_H
