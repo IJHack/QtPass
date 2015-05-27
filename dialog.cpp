@@ -18,6 +18,7 @@ Dialog::Dialog(MainWindow *parent) :
     ui->setupUi(this);
     ui->profileTable->verticalHeader()->hide();
     ui->profileTable->horizontalHeader()->setStretchLastSection(true);
+    ui->label->setText(ui->label->text() + VERSION);
 }
 
 /**
@@ -360,49 +361,6 @@ void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
-/**
- * @brief Dialog::wizard
- */
-void Dialog::wizard()
-{
-    //mainWindow->checkConfig();
-
-    QString gpg = ui->gpgPath->text();
-    //QString gpg = mainWindow->getGpgExecutable();
-    if(!QFile(gpg).exists()){
-        QMessageBox::critical(this, tr("GnuPG not found"),
-            tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
-
-        // TODO REST ?
-    }
-
-    QStringList names = mainWindow->getSecretKeys();
-    //qDebug() << names;
-    if (QFile(gpg).exists() && names.empty()) {
-        KeygenDialog d(this);
-        d.exec();
-    }
-
-    QString passStore = ui->storePath->text();
-    if(!QFile(passStore + ".gpg-id").exists()){
-        QMessageBox::critical(this, tr("Password store not initialised"),
-            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
-        while(!QFile(passStore).exists()) {
-            on_toolButtonStore_clicked();
-            passStore = ui->storePath->text();
-        }
-        if (!QFile(passStore + ".gpg-id").exists()) {
-            // apears not to be store
-            // init yes / no ?
-            mainWindow->userDialog(passStore);
-        }
-    }
-
-    // Can you use the store?
-
-
-    //ui->gpgPath->setText(gpg);
-}
 
 /**
  * @brief Dialog::genKey
@@ -517,4 +475,48 @@ void Dialog::on_deleteButton_clicked()
     if (ui->profileTable->rowCount() < 1) {
         ui->deleteButton->setEnabled(false);
     }
+}
+
+/**
+ * @brief Dialog::wizard
+ */
+void Dialog::wizard()
+{
+    //mainWindow->checkConfig();
+
+    QString gpg = ui->gpgPath->text();
+    //QString gpg = mainWindow->getGpgExecutable();
+    if(!QFile(gpg).exists()){
+        QMessageBox::critical(this, tr("GnuPG not found"),
+            tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
+
+        // TODO REST ?
+    }
+
+    QStringList names = mainWindow->getSecretKeys();
+    //qDebug() << names;
+    if (QFile(gpg).exists() && names.empty()) {
+        KeygenDialog d(this);
+        d.exec();
+    }
+
+    QString passStore = ui->storePath->text();
+    if(!QFile(passStore + ".gpg-id").exists()){
+        QMessageBox::critical(this, tr("Password store not initialised"),
+            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
+        while(!QFile(passStore).exists()) {
+            on_toolButtonStore_clicked();
+            passStore = ui->storePath->text();
+        }
+        if (!QFile(passStore + ".gpg-id").exists()) {
+            // apears not to be store
+            // init yes / no ?
+            mainWindow->userDialog(passStore);
+        }
+    }
+
+    // Can you use the store?
+
+
+    //ui->gpgPath->setText(gpg);
 }
