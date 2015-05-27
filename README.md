@@ -15,6 +15,8 @@ While QtPass will work with Qt4, currently multi-line editing is restricted to Q
 
 QtPass requires GCC 4.7 or later or any other 2011 ISO C++ standard compliant compiler.
 
+Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
+
 Security considerations
 -----------------------
 Using this program will not magically keep your passwords secure against
@@ -50,9 +52,10 @@ Known issues
 
 Planned features
 ----------------
+* Re-encryption after users-change (optional ofcourse)
 * Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
 * Right click handlers for file/folder and content
-* First use wizards to set up password-store (and decryption key, currently always the gpg default key)
+* ~~first use wizards to set up password-store (and decryption key, currently always the gpg default key)~~
 * Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen
 * Password generation with options for what kind you'd like
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
@@ -80,4 +83,3 @@ Further reading
 [Documentation](http://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
-
