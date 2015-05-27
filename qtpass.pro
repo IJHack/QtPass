@@ -1,10 +1,13 @@
 #-------------------------------------------------
 #
+#   QtPass is a GUI for pass,
+#           the standard unix password manager.
+#
 # Project created by QtCreator 2014-07-30T21:56:15
 #
 #-------------------------------------------------
 
-QT        += core gui
+QT        += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,23 +20,29 @@ macx {
 }
 
 TEMPLATE   = app
+VERSION    = 0.8.2
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
              dialog.cpp \
              storemodel.cpp \
              util.cpp \
-             usersdialog.cpp
+             usersdialog.cpp \ 
+             keygendialog.cpp \
+             progressindicator.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
              storemodel.h \
              util.h \
-             usersdialog.h
+             usersdialog.h \
+             keygendialog.h \
+             progressindicator.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
-             usersdialog.ui
+             usersdialog.ui \ 
+             keygendialog.ui
 
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 
@@ -68,6 +77,7 @@ win32 {
     LIBS    += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
+    QMAKE_INFO_PLIST = Info.plist
 }
 
 OTHER_FILES += LICENSE \
@@ -75,3 +85,5 @@ OTHER_FILES += LICENSE \
 
 target.path = /usr/local/bin/
 INSTALLS    += target
+
+DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""

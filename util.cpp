@@ -8,6 +8,9 @@
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
+/**
+ * @brief Util::initialiseEnvironment
+ */
 void Util::initialiseEnvironment()
 {
     if (!_envInitialised) {
@@ -28,6 +31,10 @@ void Util::initialiseEnvironment()
     }
 }
 
+/**
+ * @brief Util::findPasswordStore
+ * @return
+ */
 QString Util::findPasswordStore()
 {
     QString path;
@@ -35,11 +42,23 @@ QString Util::findPasswordStore()
     if (_env.contains("PASSWORD_STORE_DIR")) {
         path = _env.value("PASSWORD_STORE_DIR");
     } else {
-        /* @TODO checks */
         path = QDir::homePath()+"/.password-store/";
+    }
+    return Util::normalizeFolderPath(path);
+}
+
+/**
+ * @brief Util::normalizeFolderPath
+ * @param path
+ * @return
+ */
+QString Util::normalizeFolderPath(QString path) {
+    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
+        path += '/';
     }
     return path;
 }
+
 
 QString Util::findBinaryInPath(QString binary)
 {
@@ -76,4 +95,16 @@ QString Util::findBinaryInPath(QString binary)
     }
 
     return ret;
+}
+
+/**
+ * @brief Util::checkConfig
+ * @param passStore
+ * @param passExecutable
+ * @param gpgExecutable
+ * @return
+ */
+bool Util::checkConfig(QString passStore, QString passExecutable, QString gpgExecutable)
+{
+    return !QFile(passStore + ".gpg-id").exists() || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
 }

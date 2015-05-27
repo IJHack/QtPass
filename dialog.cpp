@@ -1,14 +1,20 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include "mainwindow.h"
+#include "keygendialog.h"
+#include <QDebug>
+#include <QMessageBox>
+#include <QDir>
 
 /**
  * @brief Dialog::Dialog
  * @param parent
  */
-Dialog::Dialog(QWidget *parent) :
+Dialog::Dialog(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    mainWindow = parent;
     ui->setupUi(this);
 }
 
@@ -17,6 +23,9 @@ Dialog::Dialog(QWidget *parent) :
  */
 Dialog::~Dialog()
 {
+    mainWindow->setGitExecutable(ui->gitPath->text());
+    mainWindow->setGpgExecutable(ui->gpgPath->text());
+    mainWindow->setPassExecutable(ui->passPath->text());
 }
 
 /**
@@ -156,6 +165,7 @@ QString Dialog::selectExecutable() {
 QString Dialog::selectFolder() {
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::Directory);
+    dialog.setFilter(QDir::NoFilter);
     dialog.setOption(QFileDialog::ShowDirsOnly);
     if (dialog.exec()) {
         return dialog.selectedFiles().first();
@@ -202,7 +212,7 @@ void Dialog::on_toolButtonPass_clicked()
 void Dialog::on_toolButtonStore_clicked()
 {
     QString store = selectFolder();
-    if (store != "") {
+    if (store != "") { // TODO call check
         ui->storePath->setText(store);
     }
 }
@@ -347,4 +357,56 @@ bool Dialog::addGPGId()
 void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
+}
+/**
+ * @brief Dialog::wizard
+ */
+void Dialog::wizard()
+{
+    //mainWindow->checkConfig();
+
+    QString gpg = ui->gpgPath->text();
+    //QString gpg = mainWindow->getGpgExecutable();
+    if(!QFile(gpg).exists()){
+        QMessageBox::critical(this, tr("GnuPG not found"),
+            tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
+
+        // TODO REST ?
+    }
+
+    QStringList names = mainWindow->getSecretKeys();
+    //qDebug() << names;
+    if (QFile(gpg).exists() && names.empty()) {
+        KeygenDialog d(this);
+        d.exec();
+    }
+
+    QString passStore = ui->storePath->text();
+    if(!QFile(passStore + ".gpg-id").exists()){
+        QMessageBox::critical(this, tr("Password store not initialised"),
+            tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
+        while(!QFile(passStore).exists()) {
+            on_toolButtonStore_clicked();
+            passStore = ui->storePath->text();
+        }
+        if (!QFile(passStore + ".gpg-id").exists()) {
+            // apears not to be store
+            // init yes / no ?
+            mainWindow->userDialog(passStore);
+        }
+    }
+
+    // Can you use the store?
+
+
+    //ui->gpgPath->setText(gpg);
+}
+
+/**
+ * @brief Dialog::genKey
+ * @param QString batch
+ */
+void Dialog::genKey(QString batch, QDialog *dialog)
+{
+    mainWindow->genKey(batch, dialog);
 }
