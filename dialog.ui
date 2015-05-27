@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>446</height>
+    <width>491</width>
+    <height>585</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,35 +38,35 @@
       <string>Native</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="gpgPath"/>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="gitPath"/>
-      </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="labelGitPath">
-        <property name="text">
-         <string>Executable git</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
        <widget class="QLabel" name="labelGpgPath">
         <property name="text">
-         <string>Executable gpg</string>
+         <string>gpg</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QToolButton" name="toolButtonGpg">
+       <widget class="QToolButton" name="toolButtonGit">
         <property name="text">
          <string>...</string>
         </property>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelGitPath">
+        <property name="text">
+         <string>git</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="gitPath"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="gpgPath"/>
+      </item>
       <item row="0" column="2">
-       <widget class="QToolButton" name="toolButtonGit">
+       <widget class="QToolButton" name="toolButtonGpg">
         <property name="text">
          <string>...</string>
         </property>
@@ -91,12 +91,95 @@
       <item row="0" column="0">
        <widget class="QLabel" name="labelPassPath">
         <property name="text">
-         <string>Executable pass</string>
+         <string>pass</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QLineEdit" name="passPath"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxProfiles">
+     <property name="title">
+      <string>Profiles</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QTableWidget" name="profileTable">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Path</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="2" column="4">
+         <widget class="QToolButton" name="toolButtonStore">
+          <property name="text">
+           <string>...</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="profileName"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelName">
+          <property name="text">
+           <string>Profile name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QToolButton" name="addButton">
+          <property name="text">
+           <string>Add/Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="deleteButton">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="storePath"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="labelStorePath">
+          <property name="text">
+           <string>password-store</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -108,27 +191,6 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
       <item row="0" column="0">
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
-         <widget class="QLabel" name="labelStorePath">
-          <property name="text">
-           <string>Folder password-store</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="storePath"/>
-        </item>
-        <item row="0" column="2">
-         <widget class="QToolButton" name="toolButtonStore">
-          <property name="text">
-           <string>...</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="0" column="0">
          <widget class="QCheckBox" name="checkBoxClipboard">
@@ -200,22 +262,6 @@
  <connections>
   <connection>
    <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
    <signal>rejected()</signal>
    <receiver>Dialog</receiver>
    <slot>reject()</slot>
@@ -226,6 +272,22 @@
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
      <y>274</y>
     </hint>
    </hints>
