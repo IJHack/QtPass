@@ -358,6 +358,12 @@ void Dialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
+
+void Dialog::criticalMessage(const QString &title, const QString &text)
+{
+    QMessageBox::critical(this, title, text, QMessageBox::StandardButton::Ok, QMessageBox::StandardButton::Ok);
+}
+
 /**
  * @brief Dialog::wizard
  */
@@ -368,7 +374,7 @@ void Dialog::wizard()
     QString gpg = ui->gpgPath->text();
     //QString gpg = mainWindow->getGpgExecutable();
     if(!QFile(gpg).exists()){
-        QMessageBox::critical(this, tr("GnuPG not found"),
+        criticalMessage(tr("GnuPG not found"),
             tr("Please install GnuPG on your system.<br>Install <strong>gpg</strong> using your favorite package manager<br>or <a href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it from GnuPG.org"));
 
         // TODO REST ?
@@ -383,7 +389,7 @@ void Dialog::wizard()
 
     QString passStore = ui->storePath->text();
     if(!QFile(passStore + ".gpg-id").exists()){
-        QMessageBox::critical(this, tr("Password store not initialised"),
+        criticalMessage(tr("Password store not initialised"),
             tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
         while(!QFile(passStore).exists()) {
             on_toolButtonStore_clicked();
