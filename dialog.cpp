@@ -438,7 +438,7 @@ void Dialog::on_addButton_clicked()
     ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
     //qDebug() << ui->profileName->text();
     ui->profileTable->selectRow(n);
-    if (ui->profileTable->rowCount() < 1) {
+    if (ui->profileTable->rowCount() > 0) {
         ui->deleteButton->setEnabled(true);
     }
 }
@@ -462,15 +462,23 @@ void Dialog::on_profileTable_currentItemChanged(QTableWidgetItem *current)
  */
 void Dialog::on_deleteButton_clicked()
 {
-    QList<QTableWidgetItem*> selected = ui->profileTable->selectedItems();
-    if (selected.count() == 0) {
+
+    QSet<int> selectedRows; //we use a set to prevent doubles
+    QList<QTableWidgetItem*> itemList = ui->profileTable->selectedItems();
+    if (itemList.count() == 0) {
         QMessageBox::warning(this, tr("No profile selected"),
             tr("No profile selected to delete"));
         return;
     }
-    for (int i = 0; i < selected.size(); ++i) {
-        QTableWidgetItem* item = selected.at(i);
-        ui->profileTable->removeRow(item->row());
+    QTableWidgetItem * item;
+    foreach(item, itemList)
+    selectedRows.insert(item->row());
+    //get a list, and sort it big to small
+    QList<int> rows = selectedRows.toList();
+    qSort(rows.begin(), rows.end());
+    //now actually do the removing:
+    foreach(int row, rows) {
+     ui->profileTable->removeRow(row);
     }
     if (ui->profileTable->rowCount() < 1) {
         ui->deleteButton->setEnabled(false);
