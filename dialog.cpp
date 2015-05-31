@@ -399,7 +399,7 @@ void Dialog::wizard()
             passStore = ui->storePath->text();
         }
         if (!QFile(passStore + ".gpg-id").exists()) {
-            // apears not to be store
+            // appears not to be store
             // init yes / no ?
             mainWindow->userDialog(passStore);
         }
