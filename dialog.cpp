@@ -383,7 +383,7 @@ void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
     int n = 0;
     while (i.hasNext()) {
         i.next();
-        if (!i.value().isEmpty()) {
+        if (!i.value().isEmpty() && !i.key().isEmpty()) {
             ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
             ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value()));
             //qDebug() << "naam:" + i.key();
@@ -403,11 +403,12 @@ void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 QHash<QString, QString> Dialog::getProfiles()
 {
     QHash<QString, QString> profiles;
+    // Check?
     for (int i = 0; i < ui->profileTable->rowCount(); i++) {
-        QString path = ui->profileTable->item(i, 1)->text();
-        if (!path.isEmpty()) {
+        QTableWidgetItem* pathItem = ui->profileTable->item(i, 1);
+        if (0 != pathItem) {
             profiles.insert(ui->profileTable->item(i, 0)->text(),
-                            path);
+                            pathItem->text());
         }
     }
     return profiles;
@@ -462,7 +463,6 @@ void Dialog::on_profileTable_currentItemChanged(QTableWidgetItem *current)
  */
 void Dialog::on_deleteButton_clicked()
 {
-
     QSet<int> selectedRows; //we use a set to prevent doubles
     QList<QTableWidgetItem*> itemList = ui->profileTable->selectedItems();
     if (itemList.count() == 0) {
