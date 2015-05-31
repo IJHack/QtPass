@@ -5,6 +5,7 @@
 #include "keygendialog.h"
 #include "util.h"
 #include <QClipboard>
+#include <QDebug>
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QTimer>
