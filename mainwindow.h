@@ -8,6 +8,7 @@
 #include <QQueue>
 #include <QSettings>
 #include "storemodel.h"
+#include "trayicon.h"
 #if SINGLE_APP
 #include "singleapplication.h"
 #else
@@ -102,6 +103,7 @@ private:
     QHash<QString, QString> profiles;
     QString profile;
     bool startupPhase;
+    trayIcon *tray;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -119,6 +121,8 @@ private:
     void mountWebDav();
     void updateEnv();
     void updateProfileBox();
+    void initTrayIcon();
+
 };
 
 #endif // MAINWINDOW_H
