@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
     firstRun = true;
     startupPhase = true;
+
+    initTrayIcon();
 }
 
 /**
@@ -1105,4 +1107,19 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
     }
 
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
+}
+
+void MainWindow::initTrayIcon()
+{
+  if(QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    // Setup tray icon
+    this->tray = new trayIcon(this);
+    if(tray == NULL){
+      qDebug() << "Allocating tray icon failed.";
+      exit(1);
+    }
+    qDebug() << "Ehm..";
+  } else {
+      qDebug() << "Whut?";
+  }
 }
