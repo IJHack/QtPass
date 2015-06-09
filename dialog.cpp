@@ -193,7 +193,7 @@ void Dialog::on_toolButtonGit_clicked()
 void Dialog::on_toolButtonGpg_clicked()
 {
     QString gpg = selectExecutable();
-    if (gpg != "") {
+    if (!gpg.isEmpty()) {
         ui->gpgPath->setText(gpg);
     }
 }
@@ -204,7 +204,7 @@ void Dialog::on_toolButtonGpg_clicked()
 void Dialog::on_toolButtonPass_clicked()
 {
     QString pass = selectExecutable();
-    if (pass != "") {
+    if (!pass.isEmpty()) {
         ui->passPath->setText(pass);
     }
 }
@@ -215,7 +215,7 @@ void Dialog::on_toolButtonPass_clicked()
 void Dialog::on_toolButtonStore_clicked()
 {
     QString store = selectFolder();
-    if (store.isEmpty()) { // TODO call check
+    if (!store.isEmpty()) { // TODO call check
         ui->storePath->setText(store);
     }
 }
