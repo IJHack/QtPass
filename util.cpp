@@ -71,10 +71,15 @@ QString Util::findBinaryInPath(QString binary)
     if (_env.contains("PATH")) {
         QString path = _env.value("PATH");
 
-        QStringList entries = path.split(':');
+        QStringList entries;
+#ifndef Q_OS_WIN
+        entries = path.split(':');
         if (entries.length() < 2) {
+#endif
             entries = path.split(';');
+#ifndef Q_OS_WIN
         }
+#endif
 
         foreach(QString entry, entries) {
             QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
