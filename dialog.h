@@ -46,6 +46,10 @@ public:
     bool addGPGId();
     void wizard();
     void genKey(QString, QDialog *);
+    bool useTrayIcon();
+    bool hideOnClose();
+    void useTrayIcon(bool);
+    void hideOnClose(bool);
 
 private slots:
     void on_radioButtonNative_clicked();
@@ -59,6 +63,7 @@ private slots:
     void on_addButton_clicked();
     void on_profileTable_currentItemChanged(QTableWidgetItem*);
     void on_deleteButton_clicked();
+    void on_checkBoxUseTrayIcon_clicked();
 
 private:
     QScopedPointer<Ui::Dialog> ui;

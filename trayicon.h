@@ -26,9 +26,9 @@ private:
     void createActions();
     void createTrayIcon();
 
-    QAction *minimizeAction;
-    QAction *maximizeAction;
-    QAction *restoreAction;
+//    QAction *minimizeAction;
+//    QAction *maximizeAction;
+//    QAction *restoreAction;
     QAction *quitAction;
 
     QSystemTrayIcon *sysTrayIcon;
