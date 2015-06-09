@@ -536,3 +536,50 @@ void Dialog::wizard()
 
     //ui->gpgPath->setText(gpg);
 }
+
+/**
+ * @brief Dialog::useTrayIcon
+ * @return
+ */
+bool Dialog::useTrayIcon() {
+    return ui->checkBoxUseTrayIcon->isChecked();
+}
+
+/**
+ * @brief Dialog::hideOnClose
+ * @return
+ */
+bool Dialog::hideOnClose() {
+    return ui->checkBoxHideOnClose->isEnabled() && ui->checkBoxHideOnClose->isChecked();
+}
+
+/**
+ * @brief Dialog::useTrayIcon
+ * @param useSystray
+ */
+void Dialog::useTrayIcon(bool useSystray) {
+    ui->checkBoxUseTrayIcon->setChecked(useSystray);
+    ui->checkBoxHideOnClose->setEnabled(useSystray);
+    if (!useSystray) {
+        ui->checkBoxHideOnClose->setChecked(false);
+    }
+}
+
+/**
+ * @brief Dialog::hideOnClose
+ * @param hideOnClose
+ */
+void Dialog::hideOnClose(bool hideOnClose) {
+    ui->checkBoxHideOnClose->setChecked(hideOnClose);
+}
+
+/**
+ * @brief Dialog::on_checkBoxUseTrayIcon_clicked
+ */
+void Dialog::on_checkBoxUseTrayIcon_clicked() {
+    if (ui->checkBoxUseTrayIcon->isChecked()) {
+        ui->checkBoxHideOnClose->setEnabled(true);
+    } else {
+        ui->checkBoxHideOnClose->setEnabled(false);
+    }
+}

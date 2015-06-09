@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>491</width>
+    <width>495</width>
     <height>501</height>
    </rect>
   </property>
@@ -268,6 +268,20 @@
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="checkBoxUseTrayIcon">
+          <property name="text">
+           <string>Use TrayIcon</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkBoxHideOnClose">
+          <property name="text">
+           <string>Hide on close</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

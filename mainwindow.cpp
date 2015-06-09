@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QFileInfo>
 #include <QQueue>
+#include <QCloseEvent>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <winnetwk.h>
@@ -178,6 +179,15 @@ bool MainWindow::checkConfig() {
         }
     }
 
+    useTrayIcon = settings.value("useTrayIcon").toBool();
+    hideOnClose = settings.value("hideOnClose").toBool();
+
+    if (useTrayIcon && tray == NULL) {
+        initTrayIcon();
+    } else if (!useTrayIcon && tray != NULL) {
+        destroyTrayIcon();
+    }
+
     firstRun = false;
 
     // TODO: this needs to be before we try to access the store,
@@ -257,6 +267,8 @@ void MainWindow::config() {
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
+    d->useTrayIcon(useTrayIcon);
+    d->hideOnClose(hideOnClose);
     d->setProfiles(profiles, profile);
     d->wizard(); // does shit
 
@@ -273,6 +285,8 @@ void MainWindow::config() {
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
+            useTrayIcon = d->useTrayIcon();
+            hideOnClose = d->hideOnClose();
             profiles = d->getProfiles();
 
             QSettings &settings(getSettings());
@@ -288,6 +302,9 @@ void MainWindow::config() {
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
+            settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");
+            settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
+
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");
                 settings.remove("");
@@ -323,6 +340,11 @@ void MainWindow::config() {
             } else {
                 ui->pushButton->show();
                 ui->updateButton->show();
+	    }
+            if (useTrayIcon && tray == NULL) {
+                initTrayIcon();
+            } else if (!useTrayIcon && tray != NULL) {
+                destroyTrayIcon();
             }
         }
         firstRun = false;
@@ -1119,3 +1141,51 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
 
     ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 }
+
+/**
+ * @brief MainWindow::initTrayIcon
+ */
+void MainWindow::initTrayIcon()
+{
+    if(tray != NULL){
+        qDebug() << "Creating tray icon again?";
+        return;
+    }
+    if(QSystemTrayIcon::isSystemTrayAvailable() == true) {
+        // Setup tray icon
+        this->tray = new trayIcon(this);
+        if(tray == NULL){
+            qDebug() << "Allocating tray icon failed.";
+        }
+    } else {
+        qDebug() << "No tray icon for this OS possibly also not show options?";
+    }
+}
+
+/**
+ * @brief MainWindow::destroyTrayIcon
+ */
+void MainWindow::destroyTrayIcon()
+{
+    if(tray == NULL){
+        qDebug() << "Destroy non existing tray icon?";
+        return;
+    }
+    delete this->tray;
+    tray = NULL;
+}
+
+/**
+ * @brief MainWindow::closeEvent
+ * @param event
+ */
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (hideOnClose) {
+        this->hide();
+        event->ignore();
+    } else {
+        event->accept();
+    }
+}
+

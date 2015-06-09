@@ -29,7 +29,8 @@ SOURCES   += main.cpp\
              util.cpp \
              usersdialog.cpp \ 
              keygendialog.cpp \
-             progressindicator.cpp
+             progressindicator.cpp \
+             trayicon.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
@@ -37,7 +38,8 @@ HEADERS   += mainwindow.h \
              util.h \
              usersdialog.h \
              keygendialog.h \
-             progressindicator.h
+             progressindicator.h \
+             trayicon.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
