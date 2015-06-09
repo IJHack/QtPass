@@ -7,7 +7,7 @@ trayIcon::trayIcon(QMainWindow *parent)
   createActions();
   createTrayIcon();
 
-  sysTrayIcon->setIcon(QIcon(":/artwork/logo.png"));
+  sysTrayIcon->setIcon(QIcon(":/artwork/icon.png"));
 
   sysTrayIcon->show();
 
