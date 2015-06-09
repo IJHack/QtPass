@@ -53,8 +53,8 @@ QString Util::findPasswordStore()
  * @return
  */
 QString Util::normalizeFolderPath(QString path) {
-    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
-        path += '/';
+    if (!path.endsWith(QDir::separator())) {
+        path += QDir::separator();
     }
     return path;
 }
@@ -66,25 +66,29 @@ QString Util::findBinaryInPath(QString binary)
 
     QString ret = "";
 
-    binary.prepend("/");
+    binary.prepend(QDir::separator());
 
     if (_env.contains("PATH")) {
         QString path = _env.value("PATH");
 
-        QStringList entries = path.split(':');
+        QStringList entries;
+#ifndef Q_OS_WIN
+        entries = path.split(':');
         if (entries.length() < 2) {
+#endif
             entries = path.split(';');
+#ifndef Q_OS_WIN
         }
+#endif
 
         foreach(QString entry, entries) {
             QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
-            qDebug() << entry;
-
 #ifdef Q_OS_WIN
             if (!qfi->exists()) {
                 qfi.reset(new QFileInfo(entry.append(".exe")));
             }
 #endif
+            qDebug() << entry;
             if (!qfi->isExecutable()) {
                 continue;
             }
