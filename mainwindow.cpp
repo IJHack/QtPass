@@ -136,24 +136,24 @@ bool MainWindow::checkConfig() {
     addGPGId = (settings.value("addGPGId") != "false");
 
     passStore = settings.value("passStore").toString();
-    if (passStore == "") {
+    if (passStore.isEmpty()) {
         passStore = Util::findPasswordStore();
         settings.setValue("passStore", passStore);
     }
     passStore = Util::normalizeFolderPath(passStore);
 
     passExecutable = settings.value("passExecutable").toString();
-    if (passExecutable == "") {
+    if (passExecutable.isEmpty()) {
         passExecutable = Util::findBinaryInPath("pass");
     }
 
     gitExecutable = settings.value("gitExecutable").toString();
-    if (gitExecutable == "") {
+    if (gitExecutable.isEmpty()) {
         gitExecutable = Util::findBinaryInPath("git");
     }
 
     gpgExecutable = settings.value("gpgExecutable").toString();
-    if (gpgExecutable == "") {
+    if (gpgExecutable.isEmpty()) {
         gpgExecutable = Util::findBinaryInPath("gpg2");
     }
     gpgHome = settings.value("gpgHome").toString();
@@ -229,6 +229,11 @@ bool MainWindow::checkConfig() {
 
     updateEnv();
 
+    if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+    {
+        ui->pushButton->hide();
+        ui->updateButton->hide();
+    }
     ui->lineEdit->setFocus();
     startupPhase = false;
     return true;
@@ -311,6 +316,14 @@ void MainWindow::config() {
                 config();
             }
             updateEnv();
+            if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+            {
+                ui->pushButton->hide();
+                ui->updateButton->hide();
+            } else {
+                ui->pushButton->show();
+                ui->updateButton->show();
+            }
         }
         firstRun = false;
     }
@@ -473,7 +486,7 @@ void MainWindow::readyRead(bool finished = false) {
 
     output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
-    if (ui->textBrowser->toPlainText() != "") {
+    if (!ui->textBrowser->toPlainText().isEmpty()) {
         output = ui->textBrowser->toHtml() + output;
     }
     ui->textBrowser->setHtml(output);
@@ -974,7 +987,7 @@ void MainWindow::setApp(SingleApplication *app)
  */
 void MainWindow::messageAvailable(QString message)
 {
-    if (message == "") {
+    if (message.isEmpty()) {
         ui->lineEdit->selectAll();
         ui->lineEdit->setFocus();
     } else {
