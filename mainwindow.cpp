@@ -1162,6 +1162,10 @@ void MainWindow::destroyTrayIcon()
     tray = NULL;
 }
 
+/**
+ * @brief MainWindow::closeEvent
+ * @param event
+ */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (hideOnClose) {
@@ -1171,3 +1175,4 @@ void MainWindow::closeEvent(QCloseEvent *event)
         event->accept();
     }
 }
+
