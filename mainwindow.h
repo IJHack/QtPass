@@ -8,6 +8,7 @@
 #include <QQueue>
 #include <QSettings>
 #include "storemodel.h"
+#include "trayicon.h"
 #if SINGLE_APP
 #include "singleapplication.h"
 #else
@@ -45,6 +46,9 @@ public:
     QStringList getSecretKeys();
     void genKey(QString, QDialog *);
     void userDialog(QString = "");
+
+protected:
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_updateButton_clicked();
@@ -102,6 +106,9 @@ private:
     QHash<QString, QString> profiles;
     QString profile;
     bool startupPhase;
+    trayIcon *tray = NULL;
+    bool useTrayIcon;
+    bool hideOnClose;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -119,6 +126,8 @@ private:
     void mountWebDav();
     void updateEnv();
     void updateProfileBox();
+    void initTrayIcon();
+    void destroyTrayIcon();
 };
 
 #endif // MAINWINDOW_H
