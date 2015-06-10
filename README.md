@@ -53,7 +53,7 @@ Known issues
 Planned features
 ----------------
 * Re-encryption after users-change (optional ofcourse)
-* Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)
+* ~~Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)~~
 * Right click handlers for file/folder and content
 * ~~First use wizards to set up password-store (and decryption key, currently always the gpg default key)~~
 * ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
