@@ -813,13 +813,14 @@ void MainWindow::setPassword(QString file, bool overwrite)
 void MainWindow::on_addButton_clicked()
 {
     bool ok;
+    QString dir = getDir(ui->treeView->currentIndex(), usePass);
     QString file = QInputDialog::getText(this, tr("New file"),
-        tr("New password file:"), QLineEdit::Normal,
+        tr("New password file, will be placed in folder %1:").arg(QDir::separator() + dir), QLineEdit::Normal,
         "", &ok);
     if (!ok || file.isEmpty()) {
         return;
     }
-    file = getDir(ui->treeView->currentIndex(), usePass) + file;
+    file = dir + file;
     if (!usePass) {
         file += ".gpg";
     }
