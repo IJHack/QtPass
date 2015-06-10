@@ -10,6 +10,7 @@ UsersDialog::UsersDialog(QWidget *parent) :
     connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
     connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this, SLOT(itemChange(QListWidgetItem *)));
+    userList = NULL;
 }
 
 UsersDialog::~UsersDialog()

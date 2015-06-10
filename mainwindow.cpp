@@ -38,6 +38,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
     firstRun = true;
     startupPhase = true;
+    if (!checkConfig()) {
+        // no working config
+        QApplication::quit();
+    }
+    QtPass = NULL;
 }
 
 /**
