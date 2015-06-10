@@ -41,12 +41,7 @@ int main(int argc, char *argv[])
     app.setActiveWindow(&w);
     app.setWindowIcon(QIcon(":artwork/icon.png"));
     w.setApp(&app);
-    if (w.checkConfig()) {
-        w.setText(text);
-        w.show();
-        return app.exec();
-    } else {
-        // canceled out of wizard
-        return 0;
-    }
+    w.setText(text);
+    w.show();
+    return app.exec();
 }

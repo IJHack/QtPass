@@ -6,6 +6,7 @@
  */
 StoreModel::StoreModel()
 {
+    fs = NULL;
 }
 
 /**
@@ -29,14 +30,19 @@ bool StoreModel::filterAcceptsRow(int sourceRow,
 bool StoreModel::ShowThis(const QModelIndex index) const
 {
     bool retVal = false;
+    if (fs == NULL) {
+        return retVal;
+    }
     //Gives you the info for number of childs with a parent
     if ( sourceModel()->rowCount(index) > 0 )
     {
         for( int nChild = 0; nChild < sourceModel()->rowCount(index); nChild++)
         {
             QModelIndex childIndex = sourceModel()->index(nChild,0,index);
-            if ( ! childIndex.isValid() )
+            if (!childIndex.isValid())
+            {
                 break;
+            }
             retVal = ShowThis(childIndex);
             if (retVal)
             {
@@ -50,14 +56,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const
         QString path = fs->filePath(useIndex);
         path.replace(QRegExp("\\.gpg$"), "");
         path.replace(QRegExp("^" + store), "");
-        if ( ! path.contains(filterRegExp()))
-        {
-            retVal = false;
-        }
-        else
-        {
-            retVal = true;
-        }
+        retVal = path.contains(filterRegExp());
     }
     return retVal;
 }
