@@ -388,8 +388,7 @@ void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
             ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value()));
             //qDebug() << "naam:" + i.key();
             if (i.key() == profile) {
-                ui->profileName->setText(i.key());
-                ui->storePath->setText(i.value());
+                ui->profileTable->selectRow(n);
             }
         }
         n++;
@@ -419,43 +418,11 @@ QHash<QString, QString> Dialog::getProfiles()
  */
 void Dialog::on_addButton_clicked()
 {
-    QString name = ui->profileName->text();
-    int n = 0;
-    bool newItem = true;
-    QAbstractItemModel *model = ui->profileTable->model();
-    QModelIndexList matches = model->match( model->index(0,0), Qt::DisplayRole, name);
-    foreach(const QModelIndex &index, matches)
-    {
-        QTableWidgetItem *item = ui->profileTable->item(index.row(), index.column());
-        n = item->row();
-        qDebug() << "overwrite:" << item->text();
-        newItem = false;
-    }
-    if (newItem) {
-        n = ui->profileTable->rowCount();
-        ui->profileTable->insertRow(n);
-    }
-    ui->profileTable->setItem(n, 0, new QTableWidgetItem(name));
+    int n = ui->profileTable->rowCount();
+    ui->profileTable->insertRow(n);
     ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
-    //qDebug() << ui->profileName->text();
     ui->profileTable->selectRow(n);
-    if (ui->profileTable->rowCount() > 0) {
-        ui->deleteButton->setEnabled(true);
-    }
-}
-
-/**
- * @brief Dialog::on_profileTable_currentItemChanged
- * @param current
- */
-void Dialog::on_profileTable_currentItemChanged(QTableWidgetItem *current)
-{
-    if (current == 0) {
-        return;
-    }
-    int n = current->row();
-    ui->profileName->setText(ui->profileTable->item(n, 0)->text());
-    ui->storePath->setText(ui->profileTable->item(n, 1)->text());
+    ui->deleteButton->setEnabled(true);
 }
 
 /**
