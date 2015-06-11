@@ -429,6 +429,9 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         } else {
             executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
         }
+    } else {
+        ui->editButton->setEnabled(false);
+        ui->deleteButton->setEnabled(true);
     }
 }
 
