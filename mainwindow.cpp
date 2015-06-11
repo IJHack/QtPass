@@ -13,6 +13,8 @@
 #include <QQueue>
 #include <QCloseEvent>
 #ifdef Q_OS_WIN
+#define WIN32_LEAN_AND_MEAN/*_KILLING_MACHINE*/
+#define WIN32_EXTRA_LEAN
 #include <windows.h>
 #include <winnetwk.h>
 #undef DELETE
@@ -38,6 +40,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
     firstRun = true;
     startupPhase = true;
+    if (!checkConfig()) {
+        // no working config
+        QApplication::quit();
+    }
+    QtPass = NULL;
 }
 
 /**
@@ -214,6 +221,9 @@ bool MainWindow::checkConfig() {
     ui->treeView->setHeaderHidden(true);
     ui->treeView->setIndentation(15);
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint&)),
+        this, SLOT(showContextMenu(const QPoint&)));
 
     ui->textBrowser->setOpenExternalLinks(true);
 
@@ -255,6 +265,9 @@ bool MainWindow::checkConfig() {
 void MainWindow::config() {
     QScopedPointer<Dialog> d(new Dialog(this));
     d->setModal(true);
+
+    // Automatically default to pass if it's available
+    usePass = firstRun ? QFile(passExecutable).exists() : usePass;
 
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
@@ -421,6 +434,9 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
         } else {
             executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
         }
+    } else {
+        ui->editButton->setEnabled(false);
+        ui->deleteButton->setEnabled(true);
     }
 }
 
@@ -808,13 +824,14 @@ void MainWindow::setPassword(QString file, bool overwrite)
 void MainWindow::on_addButton_clicked()
 {
     bool ok;
+    QString dir = getDir(ui->treeView->currentIndex(), usePass);
     QString file = QInputDialog::getText(this, tr("New file"),
-        tr("New password file:"), QLineEdit::Normal,
+        tr("New password file, will be placed in folder %1:").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)), QLineEdit::Normal,
         "", &ok);
     if (!ok || file.isEmpty()) {
         return;
     }
-    file = getDir(ui->treeView->currentIndex(), usePass) + file;
+    file = dir + file;
     if (!usePass) {
         file += ".gpg";
     }
@@ -827,18 +844,67 @@ void MainWindow::on_addButton_clicked()
  */
 void MainWindow::on_deleteButton_clicked()
 {
-    QString file = getFile(ui->treeView->currentIndex(), usePass);
-    if (QMessageBox::question(this, tr("Delete password?"),
-        tr("Are you sure you want to delete %1?").arg(file),
-        QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-        return;
-    }
-    currentAction = DELETE;
-    if (usePass) {
-        executePass("rm -f \"" + file + '"');
+    QFileInfo fileOrFolder = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+    QString file = "";
+
+    if (fileOrFolder.isFile()) {
+        file = getFile(ui->treeView->currentIndex(), usePass);
+        if (QMessageBox::question(this, tr("Delete password?"),
+            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getFile(ui->treeView->currentIndex(), true)),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+            return;
+        }
+        if (usePass) {
+            currentAction = DELETE;
+            executePass("rm -f \"" + file + '"');
+        } else {
+            // TODO GIT
+            QFile(file).remove();
+        }
     } else {
-        QFile(file).remove();
+        file = getDir(ui->treeView->currentIndex(), false);
+        if (QMessageBox::question(this, tr("Delete folder?"),
+            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+            return;
+        }
+        // TODO GIT
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        QDir dir(file);
+        dir.removeRecursively();
+#else
+        removeDir(file);
+#endif
     }
+
+}
+
+/**
+ * @brief MainWindow::removeDir
+ * @param dirName
+ * @return
+ */
+bool MainWindow::removeDir(const QString & dirName)
+{
+    bool result = true;
+    QDir dir(dirName);
+
+    if (dir.exists(dirName)) {
+        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+            if (info.isDir()) {
+                result = removeDir(info.absoluteFilePath());
+            }
+            else {
+                result = QFile::remove(info.absoluteFilePath());
+            }
+
+            if (!result) {
+                return result;
+            }
+        }
+        result = dir.rmdir(dirName);
+    }
+    return result;
 }
 
 /**
@@ -1186,6 +1252,76 @@ void MainWindow::closeEvent(QCloseEvent *event)
         event->ignore();
     } else {
         event->accept();
+    }
+}
+
+/**
+ * @brief MainWindow::showContextMenu
+ * @param pos
+ */
+void MainWindow::showContextMenu(const QPoint& pos)
+{
+    QPoint globalPos = ui->treeView->viewport()->mapToGlobal(pos);
+
+    QFileInfo fileOrFolder = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+
+    QMenu contextMenu;
+    if (fileOrFolder.isDir()) {
+        QAction* addFolder = contextMenu.addAction(tr("Add folder"));
+        QAction* addPassword = contextMenu.addAction(tr("Add password"));
+        QAction* users = contextMenu.addAction(tr("Users"));
+        connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+        connect(addPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
+        connect(users, SIGNAL(triggered()), this, SLOT(on_usersButton_clicked()));
+    } else if (fileOrFolder.isFile()) {
+        QAction* edit = contextMenu.addAction(tr("Edit"));
+        connect(edit, SIGNAL(triggered()), this, SLOT(editPassword()));
+    }
+    QAction* deleteItem = contextMenu.addAction(tr("Delete"));
+    connect(deleteItem, SIGNAL(triggered()), this, SLOT(on_deleteButton_clicked()));
+
+    contextMenu.exec(globalPos);
+ }
+
+/**
+ * @brief MainWindow::addFolder
+ */
+void MainWindow::addFolder()
+{
+    bool ok;
+    QString dir = getDir(ui->treeView->currentIndex(), false);
+    QString newdir = QInputDialog::getText(this, tr("New file"),
+        tr("New folder, will be placed in folder %1:").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)), QLineEdit::Normal,
+        "", &ok);
+    if (!ok || newdir.isEmpty()) {
+        return;
+    }
+    newdir.prepend(dir);
+    //qDebug() << newdir;
+    QDir().mkdir(newdir);
+    // TODO add to git?
+}
+
+/**
+ * @brief MainWindow::editPassword
+ */
+void MainWindow::editPassword()
+{
+    // TODO move to editbutton stuff possibly?
+    currentDir = getDir(ui->treeView->currentIndex(), false);
+    lastDecrypt = "Could not decrypt";
+    QString file = getFile(ui->treeView->currentIndex(), usePass);
+    if (!file.isEmpty()){
+        currentAction = GPG;
+        if (usePass) {
+            executePass('"' + file + '"');
+        } else {
+            executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
+        }
+        process->waitForFinished(30000);    // long wait (passphrase stuff)
+        if (process->exitStatus() == QProcess::NormalExit) {
+            on_editButton_clicked();
+        }
     }
 }
 
