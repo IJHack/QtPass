@@ -852,7 +852,7 @@ void MainWindow::on_deleteButton_clicked()
         if (QMessageBox::question(this, tr("Delete password?"),
             tr("Are you sure you want to delete %1?").arg(QDir::separator() + getFile(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-            return;
+                return;
         }
         if (usePass) {
             currentAction = DELETE;
