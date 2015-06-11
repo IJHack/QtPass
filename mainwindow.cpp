@@ -1261,12 +1261,24 @@ void MainWindow::closeEvent(QCloseEvent *event)
  */
 void MainWindow::showContextMenu(const QPoint& pos)
 {
+    QModelIndex index =  ui->treeView->indexAt(pos);
+    bool selected = true;
+    if (!index.isValid()) {
+        ui->treeView->clearSelection();
+        ui->deleteButton->setEnabled(false);
+        ui->editButton->setEnabled(false);
+        currentDir = "";
+        selected = false;
+    }
+
+    ui->treeView->setCurrentIndex(index);
+
     QPoint globalPos = ui->treeView->viewport()->mapToGlobal(pos);
 
     QFileInfo fileOrFolder = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
 
     QMenu contextMenu;
-    if (fileOrFolder.isDir()) {
+    if (!selected || fileOrFolder.isDir()) {
         QAction* addFolder = contextMenu.addAction(tr("Add folder"));
         QAction* addPassword = contextMenu.addAction(tr("Add password"));
         QAction* users = contextMenu.addAction(tr("Users"));
@@ -1277,8 +1289,10 @@ void MainWindow::showContextMenu(const QPoint& pos)
         QAction* edit = contextMenu.addAction(tr("Edit"));
         connect(edit, SIGNAL(triggered()), this, SLOT(editPassword()));
     }
-    QAction* deleteItem = contextMenu.addAction(tr("Delete"));
-    connect(deleteItem, SIGNAL(triggered()), this, SLOT(on_deleteButton_clicked()));
+    if (selected) {
+        QAction* deleteItem = contextMenu.addAction(tr("Delete"));
+        connect(deleteItem, SIGNAL(triggered()), this, SLOT(on_deleteButton_clicked()));
+    }
 
     contextMenu.exec(globalPos);
  }
@@ -1324,4 +1338,3 @@ void MainWindow::editPassword()
         }
     }
 }
-
