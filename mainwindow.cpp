@@ -266,6 +266,9 @@ void MainWindow::config() {
     QScopedPointer<Dialog> d(new Dialog(this));
     d->setModal(true);
 
+    // Automatically default to pass if it's available
+    usePass = firstRun ? QFile(passExecutable).exists() : usePass;
+
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
     d->setGpgPath(gpgExecutable);
