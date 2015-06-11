@@ -131,6 +131,7 @@ private:
     void updateProfileBox();
     void initTrayIcon();
     void destroyTrayIcon();
+    bool removeDir(const QString & dirName);
 };
 
 #endif // MAINWINDOW_H
