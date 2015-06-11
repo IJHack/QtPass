@@ -836,18 +836,60 @@ void MainWindow::on_addButton_clicked()
  */
 void MainWindow::on_deleteButton_clicked()
 {
-    QString file = getFile(ui->treeView->currentIndex(), usePass);
-    if (QMessageBox::question(this, tr("Delete password?"),
-        tr("Are you sure you want to delete %1?").arg(QDir::separator() + file),
-        QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-        return;
-    }
-    currentAction = DELETE;
-    if (usePass) {
-        executePass("rm -f \"" + file + '"');
+    QFileInfo fileOrFolder = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+    QString file = "";
+
+    if (fileOrFolder.isFile()) {
+        file = getFile(ui->treeView->currentIndex(), usePass);
+        if (QMessageBox::question(this, tr("Delete password?"),
+            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getFile(ui->treeView->currentIndex(), true)),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+            return;
+        }
+        if (usePass) {
+            currentAction = DELETE;
+            executePass("rm -f \"" + file + '"');
+        } else {
+            QFile(file).remove();
+        }
     } else {
-        QFile(file).remove();
+        file = getDir(ui->treeView->currentIndex(), false);
+        if (QMessageBox::question(this, tr("Delete folder?"),
+            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+            return;
+        }
+        removeDir(file);
     }
+
+}
+
+/**
+ * @brief MainWindow::removeDir
+ * @param dirName
+ * @return
+ */
+bool MainWindow::removeDir(const QString & dirName)
+{
+    bool result = true;
+    QDir dir(dirName);
+
+    if (dir.exists(dirName)) {
+        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+            if (info.isDir()) {
+                result = removeDir(info.absoluteFilePath());
+            }
+            else {
+                result = QFile::remove(info.absoluteFilePath());
+            }
+
+            if (!result) {
+                return result;
+            }
+        }
+        result = dir.rmdir(dirName);
+    }
+    return result;
 }
 
 /**
