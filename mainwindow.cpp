@@ -13,6 +13,8 @@
 #include <QQueue>
 #include <QCloseEvent>
 #ifdef Q_OS_WIN
+#define WIN32_LEAN_AND_MEAN/*_KILLING_MACHINE*/
+#define WIN32_EXTRA_LEAN
 #include <windows.h>
 #include <winnetwk.h>
 #undef DELETE
@@ -263,6 +265,9 @@ bool MainWindow::checkConfig() {
 void MainWindow::config() {
     QScopedPointer<Dialog> d(new Dialog(this));
     d->setModal(true);
+
+    // Automatically default to pass if it's available
+    usePass = firstRun ? QFile(passExecutable).exists() : usePass;
 
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
