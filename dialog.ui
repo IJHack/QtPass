@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>495</width>
-    <height>501</height>
+    <width>497</width>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -138,7 +138,7 @@
       <item>
        <widget class="QTableWidget" name="profileTable">
         <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
+         <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
         </property>
         <property name="alternatingRowColors">
          <bool>true</bool>
@@ -166,27 +166,10 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout_11">
-        <item row="2" column="4">
-         <widget class="QToolButton" name="toolButtonStore">
-          <property name="text">
-           <string>...</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="profileName"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="labelName">
-          <property name="text">
-           <string>Profile name</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QToolButton" name="addButton">
           <property name="text">
-           <string>Add/Edit</string>
+           <string>Add</string>
           </property>
          </widget>
         </item>
@@ -197,15 +180,22 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="3">
-         <widget class="QLineEdit" name="storePath"/>
-        </item>
-        <item row="2" column="2">
+        <item row="0" column="2">
          <widget class="QLabel" name="labelStorePath">
           <property name="text">
-           <string>password-store</string>
+           <string>Current password-store</string>
           </property>
          </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QToolButton" name="toolButtonStore">
+          <property name="text">
+           <string>...</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLineEdit" name="storePath"/>
         </item>
        </layout>
       </item>
