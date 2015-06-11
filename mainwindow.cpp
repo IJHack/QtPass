@@ -850,6 +850,7 @@ void MainWindow::on_deleteButton_clicked()
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
         } else {
+            // TODO GIT
             QFile(file).remove();
         }
     } else {
@@ -859,7 +860,13 @@ void MainWindow::on_deleteButton_clicked()
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
             return;
         }
+        // TODO GIT
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        QDir dir(file);
+        dir.removeRecursively();
+#else
         removeDir(file);
+#endif
     }
 
 }
