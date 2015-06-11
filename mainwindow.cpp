@@ -13,6 +13,8 @@
 #include <QQueue>
 #include <QCloseEvent>
 #ifdef Q_OS_WIN
+#define WIN32_LEAN_AND_MEAN/*_KILLING_MACHINE*/
+#define WIN32_EXTRA_LEAN
 #include <windows.h>
 #include <winnetwk.h>
 #undef DELETE
