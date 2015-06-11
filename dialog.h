@@ -61,7 +61,6 @@ private slots:
     void on_checkBoxClipboard_clicked();
     void on_checkBoxAutoclear_clicked();
     void on_addButton_clicked();
-    void on_profileTable_currentItemChanged(QTableWidgetItem*);
     void on_deleteButton_clicked();
     void on_checkBoxUseTrayIcon_clicked();
 
