@@ -510,7 +510,9 @@ void Dialog::wizard()
     //qDebug() << names;
     if (QFile(gpg).exists() && names.empty()) {
         KeygenDialog d(this);
-        d.exec();
+        if (!d.exec()) {
+            return;
+        }
     }
 
     QString passStore = ui->storePath->text();

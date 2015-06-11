@@ -68,6 +68,9 @@ private slots:
     void on_usersButton_clicked();
     void messageAvailable(QString message);
     void on_profileBox_currentIndexChanged(QString);
+    void showContextMenu(const QPoint& pos);
+    void addFolder();
+    void editPassword();
 
 private:
     QApplication *QtPass;
@@ -101,7 +104,7 @@ private:
     QStringList env;
     QQueue<execQueueItem> *execQueue;
     bool firstRun;
-    QDialog *keygen = 0;
+    QDialog *keygen = NULL;
     QString currentDir;
     QHash<QString, QString> profiles;
     QString profile;
@@ -128,6 +131,7 @@ private:
     void updateProfileBox();
     void initTrayIcon();
     void destroyTrayIcon();
+    bool removeDir(const QString & dirName);
 };
 
 #endif // MAINWINDOW_H
