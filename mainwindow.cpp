@@ -454,6 +454,10 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    if (app.isEmpty()) {
+        qDebug() << "Trying to execute nothing..";
+        return;
+    }
     if (wrapperRunning) {
         execQueueItem item;
         item.app = app;
@@ -1048,7 +1052,7 @@ void MainWindow::on_usersButton_clicked()
             tr("None of the selected keys have a secret key available.\n"
                "You will not be able to decrypt any newly added passwords!"));
     }
-    if (!useWebDav){
+    if (!useWebDav && !gitExecutable.isEmpty()){
         if (addFile) {
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
         }
