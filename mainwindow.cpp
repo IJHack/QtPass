@@ -64,7 +64,7 @@ MainWindow::~MainWindow()
 
 QSettings &MainWindow::getSettings() {
     if (!settings) {
-        QString portable_ini = QCoreApplication::applicationDirPath() + "/qtpass.ini";
+        QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
         if (QFile(portable_ini).exists()) {
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
