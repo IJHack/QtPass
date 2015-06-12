@@ -42,7 +42,7 @@ QString Util::findPasswordStore()
     if (_env.contains("PASSWORD_STORE_DIR")) {
         path = _env.value("PASSWORD_STORE_DIR");
     } else {
-        path = QDir::homePath()+"/.password-store/";
+        path = QDir::homePath() + QDir::separator() + ".password-store" + QDir::separator();
     }
     return Util::normalizeFolderPath(path);
 }
