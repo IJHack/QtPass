@@ -1,8 +1,8 @@
 # Note: this assumes Qt with release and debug config was used
 
-VERSION=v0.1-testing
+VERSION=v1.0
 
-qtpass-${VERSION}-win.zip: qtpass.exe LICENSE README.md
+qtpass-${VERSION}-gpg4win.zip: qtpass.exe qtpass.ini LICENSE README.md password-store gpg4win key_management.bat
 	7z a -mx=9 $@ $^
 
 qtpass.exe: release/qtpass.exe
