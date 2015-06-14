@@ -394,13 +394,15 @@ void MainWindow::on_pushButton_clicked()
 
 QString MainWindow::getDir(const QModelIndex &index, bool forPass)
 {
+    QString abspath = QDir(passStore).absolutePath() + '/';
     if (!index.isValid()) {
-        return forPass ? "" : passStore;
+        return forPass ? "" : abspath;
     }
     QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
     QString filePath = (info.isFile() ? info.absolutePath() : info.absoluteFilePath()) + '/';
     if (forPass) {
         filePath.replace(QRegExp("^" + passStore), "");
+        filePath.replace(QRegExp("^" + abspath), "");
     }
     return filePath;
 }
@@ -454,6 +456,12 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    // Happens a lot if e.g. git binary is not set.
+    // This will result in bogus "QProcess::FailedToStart" messages,
+    // also hiding legitimate errors from the gpg commands.
+    if (app.isEmpty()) return;
+    // Convert to absolute path, just in case
+    app = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
     if (wrapperRunning) {
         execQueueItem item;
         item.app = app;
