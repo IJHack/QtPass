@@ -454,6 +454,8 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    // Convert to absolute path, just in case
+    app = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
     if (wrapperRunning) {
         execQueueItem item;
         item.app = app;
