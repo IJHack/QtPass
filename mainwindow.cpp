@@ -456,6 +456,10 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    // Happens a lot if e.g. git binary is not set.
+    // This will result in bogus "QProcess::FailedToStart" messages,
+    // also hiding legitimate errors from the gpg commands.
+    if (app.isEmpty()) return;
     // Convert to absolute path, just in case
     app = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
     if (wrapperRunning) {
