@@ -873,21 +873,25 @@ void MainWindow::on_deleteButton_clicked()
             QFile(file).remove();
         }
     } else {
-        file = getDir(ui->treeView->currentIndex(), false);
+        file = getDir(ui->treeView->currentIndex(), usePass);
         if (QMessageBox::question(this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
             return;
         }
-        // TODO GIT
+        if (usePass) {
+            currentAction = DELETE;
+            executePass("rm -r \"" + file + '"');
+        } else {
+            // TODO GIT
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-        QDir dir(file);
-        dir.removeRecursively();
+            QDir dir(file);
+            dir.removeRecursively();
 #else
-        removeDir(file);
+            removeDir(file);
 #endif
+        }
     }
-
 }
 
 /**
