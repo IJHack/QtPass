@@ -53,7 +53,7 @@ QString Util::findPasswordStore()
  * @return
  */
 QString Util::normalizeFolderPath(QString path) {
-    if (!path.endsWith(QDir::separator())) {
+    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
         path += QDir::separator();
     }
     return path;
