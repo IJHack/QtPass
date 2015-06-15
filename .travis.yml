@@ -43,3 +43,8 @@ notifications:
 matrix:
   allow_failures:
     - os: osx
+
+before_install:
+  pip install codecov
+after_success:
+  codecov
