@@ -44,7 +44,5 @@ matrix:
   allow_failures:
     - os: osx
 
-before_install:
-  pip install codecov
 after_success:
-  codecov
+  - bash <(curl -s https://codecov.io/bash)
