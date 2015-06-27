@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     process(new QProcess(this)),
+    keygen(NULL),
+    tray(NULL),
     fusedav(this)
 {
 //    connect(process.data(), SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
