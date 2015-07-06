@@ -11,6 +11,7 @@ public:
     static QString findPasswordStore();
     static QString normalizeFolderPath(QString);
     static bool checkConfig(QString, QString, QString);
+    static void qSleep(int);
 
 private:
     static void initialiseEnvironment();

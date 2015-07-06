@@ -941,21 +941,6 @@ void MainWindow::on_editButton_clicked()
 }
 
 /**
- * @brief MainWindow::qSleep
- * @param ms
- */\
-void MainWindow::qSleep(int ms)
-{
-#ifdef Q_OS_WIN
-    Sleep(uint(ms));
-#else
-    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
-    nanosleep(&ts, NULL);
-#endif
-}
-
-
-/**
  * @brief MainWindow::listKeys
  * @param keystring
  * @param secret
@@ -964,7 +949,7 @@ void MainWindow::qSleep(int ms)
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
     while (!process->atEnd() || !execQueue->isEmpty()) {
-        qSleep(100);
+        Util::qSleep(100);
     }
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
@@ -1359,7 +1344,7 @@ void MainWindow::addFolder()
 void MainWindow::editPassword()
 {
     while (!process->atEnd() || !execQueue->isEmpty()) {
-        qSleep(100);
+        Util::qSleep(100);
     }
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
