@@ -71,7 +71,6 @@ private slots:
     void showContextMenu(const QPoint& pos);
     void addFolder();
     void editPassword();
-    void qSleep(int);
 
 private:
     QApplication *QtPass;
