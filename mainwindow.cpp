@@ -255,6 +255,7 @@ bool MainWindow::checkConfig() {
         ui->updateButton->hide();
     }
     ui->lineEdit->setFocus();
+
     startupPhase = false;
     return true;
 }
@@ -586,11 +587,12 @@ void MainWindow::enableUiElements(bool state) {
     ui->lineEdit->setEnabled(state);
     ui->addButton->setEnabled(state);
     ui->usersButton->setEnabled(state);
+    ui->configButton->setEnabled(state);
+    // is a file selected?
     state &= ui->treeView->currentIndex().isValid();
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
     ui->pushButton->setEnabled(state);
-    ui->configButton->setEnabled(state);
 }
 
 /**
