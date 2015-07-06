@@ -590,6 +590,7 @@ void MainWindow::enableUiElements(bool state) {
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
     ui->pushButton->setEnabled(state);
+    ui->configButton->setEnabled(state);
 }
 
 /**
