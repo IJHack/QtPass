@@ -789,8 +789,12 @@ QString MainWindow::getRecipientString(QString for_file, QString separator, int 
  * @param file
  * @param overwrite
  */
-void MainWindow::setPassword(QString file, bool overwrite)
+void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
 {
+    if (!isNew && lastDecrypt.isEmpty()) {
+        // warn?
+        return;
+    }
     bool ok;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
     QString newValue = QInputDialog::getMultiLineText(this, tr("New Value"),
@@ -847,7 +851,7 @@ void MainWindow::on_addButton_clicked()
         file += ".gpg";
     }
     lastDecrypt = "";
-    setPassword(file, false);
+    setPassword(file, false, true);
 }
 
 /**
@@ -937,6 +941,21 @@ void MainWindow::on_editButton_clicked()
 }
 
 /**
+ * @brief MainWindow::qSleep
+ * @param ms
+ */\
+void MainWindow::qSleep(int ms)
+{
+#ifdef Q_OS_WIN
+    Sleep(uint(ms));
+#else
+    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
+    nanosleep(&ts, NULL);
+#endif
+}
+
+
+/**
  * @brief MainWindow::listKeys
  * @param keystring
  * @param secret
@@ -944,6 +963,9 @@ void MainWindow::on_editButton_clicked()
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        qSleep(100);
+    }
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
@@ -1336,6 +1358,9 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        qSleep(100);
+    }
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";

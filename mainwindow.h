@@ -71,6 +71,7 @@ private slots:
     void showContextMenu(const QPoint& pos);
     void addFolder();
     void editPassword();
+    void qSleep(int);
 
 private:
     QApplication *QtPass;
@@ -121,7 +122,7 @@ private:
     QModelIndex firstFile(QModelIndex parentIndex);
     QString getDir(const QModelIndex &, bool);
     QString getFile(const QModelIndex &, bool);
-    void setPassword(QString, bool);
+    void setPassword(QString, bool, bool);
     QSettings &getSettings();
     QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
     QStringList getRecipientList(QString for_file);
