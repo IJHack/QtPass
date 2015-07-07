@@ -64,7 +64,7 @@ MainWindow::~MainWindow()
 
 QSettings &MainWindow::getSettings() {
     if (!settings) {
-        QString portable_ini = QCoreApplication::applicationDirPath() + "/qtpass.ini";
+        QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
         if (QFile(portable_ini).exists()) {
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
@@ -255,6 +255,7 @@ bool MainWindow::checkConfig() {
         ui->updateButton->hide();
     }
     ui->lineEdit->setFocus();
+
     startupPhase = false;
     return true;
 }
@@ -459,7 +460,10 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     // Happens a lot if e.g. git binary is not set.
     // This will result in bogus "QProcess::FailedToStart" messages,
     // also hiding legitimate errors from the gpg commands.
-    if (app.isEmpty()) return;
+    if (app.isEmpty()) {
+        qDebug() << "Trying to execute nothing..";
+        return;
+    }
     // Convert to absolute path, just in case
     app = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
     if (wrapperRunning) {
@@ -583,6 +587,8 @@ void MainWindow::enableUiElements(bool state) {
     ui->lineEdit->setEnabled(state);
     ui->addButton->setEnabled(state);
     ui->usersButton->setEnabled(state);
+    ui->configButton->setEnabled(state);
+    // is a file selected?
     state &= ui->treeView->currentIndex().isValid();
     ui->deleteButton->setEnabled(state);
     ui->editButton->setEnabled(state);
@@ -786,8 +792,12 @@ QString MainWindow::getRecipientString(QString for_file, QString separator, int 
  * @param file
  * @param overwrite
  */
-void MainWindow::setPassword(QString file, bool overwrite)
+void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
 {
+    if (!isNew && lastDecrypt.isEmpty()) {
+        // warn?
+        return;
+    }
     bool ok;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
     QString newValue = QInputDialog::getMultiLineText(this, tr("New Value"),
@@ -844,7 +854,7 @@ void MainWindow::on_addButton_clicked()
         file += ".gpg";
     }
     lastDecrypt = "";
-    setPassword(file, false);
+    setPassword(file, false, true);
 }
 
 /**
@@ -870,21 +880,25 @@ void MainWindow::on_deleteButton_clicked()
             QFile(file).remove();
         }
     } else {
-        file = getDir(ui->treeView->currentIndex(), false);
+        file = getDir(ui->treeView->currentIndex(), usePass);
         if (QMessageBox::question(this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
             return;
         }
-        // TODO GIT
+        if (usePass) {
+            currentAction = DELETE;
+            executePass("rm -r \"" + file + '"');
+        } else {
+            // TODO GIT
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-        QDir dir(file);
-        dir.removeRecursively();
+            QDir dir(file);
+            dir.removeRecursively();
 #else
-        removeDir(file);
+            removeDir(file);
 #endif
+        }
     }
-
 }
 
 /**
@@ -937,6 +951,9 @@ void MainWindow::on_editButton_clicked()
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        Util::qSleep(100);
+    }
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
@@ -1056,7 +1073,7 @@ void MainWindow::on_usersButton_clicked()
             tr("None of the selected keys have a secret key available.\n"
                "You will not be able to decrypt any newly added passwords!"));
     }
-    if (!useWebDav){
+    if (!useWebDav && !gitExecutable.isEmpty()){
         if (addFile) {
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
         }
@@ -1329,6 +1346,9 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        Util::qSleep(100);
+    }
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";

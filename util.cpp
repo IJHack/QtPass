@@ -4,7 +4,9 @@
 #include <QString>
 #include <QDir>
 #include "util.h"
-
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
@@ -42,7 +44,7 @@ QString Util::findPasswordStore()
     if (_env.contains("PASSWORD_STORE_DIR")) {
         path = _env.value("PASSWORD_STORE_DIR");
     } else {
-        path = QDir::homePath()+"/.password-store/";
+        path = QDir::homePath() + QDir::separator() + ".password-store" + QDir::separator();
     }
     return Util::normalizeFolderPath(path);
 }
@@ -53,7 +55,7 @@ QString Util::findPasswordStore()
  * @return
  */
 QString Util::normalizeFolderPath(QString path) {
-    if (!path.endsWith(QDir::separator())) {
+    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
         path += QDir::separator();
     }
     return path;
@@ -111,4 +113,19 @@ QString Util::findBinaryInPath(QString binary)
 bool Util::checkConfig(QString passStore, QString passExecutable, QString gpgExecutable)
 {
     return !QFile(passStore + ".gpg-id").exists() || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
+}
+
+
+/**
+ * @brief Util::qSleep
+ * @param ms
+ */\
+void Util::qSleep(int ms)
+{
+#ifdef Q_OS_WIN
+    Sleep(uint(ms));
+#else
+    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
+    nanosleep(&ts, NULL);
+#endif
 }

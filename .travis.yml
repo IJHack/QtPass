@@ -43,3 +43,4 @@ notifications:
 matrix:
   allow_failures:
     - os: osx
+
