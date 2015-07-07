@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=QtPass
+Version=1.0
+Comment=GUI for the standard unix password store
+Exec=qtpass
+Icon=qtpass-icon
+Terminal=false
+Categories=Security;Utility;

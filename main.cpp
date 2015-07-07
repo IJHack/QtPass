@@ -4,27 +4,31 @@
 
 int main(int argc, char *argv[])
 {
-    SingleApplication app(argc, argv, "ijhackQtPass");
-    if (app.isRunning()) {
-        if (argc == 1 ) {
-            app.sendMessage("show");
-        } else if (argc >= 2) {
-            QString text = "";
-            for (int i = 1; i < argc; ++i) {
-                text += argv[i];
-                if (argc >= (i - 2)) {
-                    text += " ";
-                }
-                app.sendMessage(text);
-            }
+    QString text = "";
+    for (int i = 1; i < argc; ++i) {
+        if (i > 1) {
+            text += " ";
         }
+        text += argv[i];
+    }
+#if SINGLE_APP
+    QString name = qgetenv("USER");
+    if (name.isEmpty())
+        name = qgetenv("USERNAME");
+    //qDebug() << name;
+    SingleApplication app(argc, argv, name + "QtPass");
+    if (app.isRunning()) {
+        app.sendMessage(text);
         return 0;
     }
-   
+#else
+    QApplication app(argc, argv);
+#endif
+
     QCoreApplication::setOrganizationName("IJHack");
     QCoreApplication::setOrganizationDomain("ijhack.org");
     QCoreApplication::setApplicationName("QtPass");
-    QCoreApplication::setApplicationVersion("0.1.0");
+    QCoreApplication::setApplicationVersion(VERSION);
 
     //Setup and load translator for localization
     QTranslator translator;
@@ -37,8 +41,7 @@ int main(int argc, char *argv[])
     app.setActiveWindow(&w);
     app.setWindowIcon(QIcon(":artwork/icon.png"));
     w.setApp(&app);
-    w.checkConfig();
+    w.setText(text);
     w.show();
-
     return app.exec();
 }

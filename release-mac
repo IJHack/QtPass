@@ -1,0 +1,1 @@
+qmake CONFIG+=release && make && macdeployqt QtPass.app -dmg
