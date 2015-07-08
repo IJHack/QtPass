@@ -104,12 +104,12 @@ private:
     QStringList env;
     QQueue<execQueueItem> *execQueue;
     bool firstRun;
-    QDialog *keygen = NULL;
+    QDialog *keygen;
     QString currentDir;
     QHash<QString, QString> profiles;
     QString profile;
     bool startupPhase;
-    trayIcon *tray = NULL;
+    trayIcon *tray;
     bool useTrayIcon;
     bool hideOnClose;
     void updateText();
