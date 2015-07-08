@@ -1038,8 +1038,8 @@ void MainWindow::on_usersButton_clicked()
         selected_users = listKeys(recipients);
     }
     foreach (const UserInfo &sel, selected_users) {
-        for (UserInfo &user : users) {
-            if (sel.key_id == user.key_id) user.enabled = true;
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+            if (sel.key_id == it->key_id) it->enabled = true;
         }
     }
     if (count > selected_users.size())
