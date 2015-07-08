@@ -143,9 +143,11 @@ bool MainWindow::checkConfig() {
         QList<int> splitter = ui->splitter->sizes();
         int left = settings.value("splitterLeft", splitter[0]).toInt();
         int right= settings.value("splitterRight", splitter[1]).toInt();
-        splitter[0] = left != 0 ? left : splitter[0];
-        splitter[1] = right != 0 ? right : splitter[1];
-        ui->splitter->setSizes(splitter);
+        if (left > 0 || right > 0) {
+            splitter[0] = left;
+            splitter[1] = right;
+            ui->splitter->setSizes(splitter);
+        }
         if ( settings.value( "maximized", isMaximized() ).toBool() )
             showMaximized();
         settings.endGroup();
