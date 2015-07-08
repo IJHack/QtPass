@@ -1,10 +1,10 @@
 #ifndef USERSDIALOG_H
 #define USERSDIALOG_H
 
-//#include <QAbstractListModel>
 #include <QDialog>
 #include <QList>
 #include <QStandardItemModel>
+#include <QCloseEvent>
 
 namespace Ui {
 class UsersDialog;
@@ -29,6 +29,9 @@ public:
     explicit UsersDialog(QWidget *parent = 0);
     ~UsersDialog();
     void setUsers(QList<UserInfo> *);
+
+protected:
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void itemChange(QListWidgetItem *);

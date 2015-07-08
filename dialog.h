@@ -5,6 +5,7 @@
 #include <QFileDialog>
 #include "mainwindow.h"
 #include <QTableWidgetItem>
+#include <QCloseEvent>
 
 namespace Ui {
 
@@ -50,6 +51,9 @@ public:
     bool hideOnClose();
     void useTrayIcon(bool);
     void hideOnClose(bool);
+
+protected:
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_radioButtonNative_clicked();

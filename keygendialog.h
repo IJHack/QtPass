@@ -2,6 +2,7 @@
 #define KEYGENDIALOG_H
 
 #include <QDialog>
+#include <QCloseEvent>
 #include "dialog.h"
 
 namespace Ui {
@@ -15,6 +16,9 @@ class KeygenDialog : public QDialog
 public:
     explicit KeygenDialog(Dialog *parent = 0);
     ~KeygenDialog();
+
+protected:
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_passphrase1_textChanged(const QString &arg1);

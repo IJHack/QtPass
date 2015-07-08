@@ -46,6 +46,8 @@ FORMS     += mainwindow.ui \
              usersdialog.ui \ 
              keygendialog.ui
 
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 
 }

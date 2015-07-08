@@ -140,3 +140,8 @@ void KeygenDialog::done(int r)
         return;
     }
 }
+
+void KeygenDialog::closeEvent(QCloseEvent *event) {
+    // TODO save window size or somethign
+    event->accept();
+}

@@ -67,3 +67,8 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter)
 {
     populateList(filter);
 }
+
+void UsersDialog::closeEvent(QCloseEvent *event) {
+    // TODO save window size or somethign
+    event->accept();
+}
