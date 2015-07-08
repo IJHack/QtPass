@@ -517,7 +517,7 @@ void MainWindow::readyRead(bool finished = false) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            if (useClipboard) { //  && error.size() == 0
+            if (useClipboard) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
