@@ -134,6 +134,23 @@ bool MainWindow::checkConfig() {
 
     QSettings &settings(getSettings());
 
+    if (firstRun) {
+        settings.beginGroup( "mainwindow" );
+        restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
+        restoreState(settings.value( "savestate", saveState() ).toByteArray());
+        move(settings.value( "pos", pos() ).toPoint());
+        resize(settings.value( "size", size() ).toSize());
+        QList<int> splitter = ui->splitter->sizes();
+        int left = settings.value("splitterLeft", splitter[0]).toInt();
+        int right= settings.value("splitterRight", splitter[1]).toInt();
+        splitter[0] = left != 0 ? left : splitter[0];
+        splitter[1] = right != 0 ? right : splitter[1];
+        ui->splitter->setSizes(splitter);
+        if ( settings.value( "maximized", isMaximized() ).toBool() )
+            showMaximized();
+        settings.endGroup();
+    }
+
     usePass = (settings.value("usePass") == "true");
 
     useClipboard = (settings.value("useClipboard") == "true");
@@ -1276,6 +1293,17 @@ void MainWindow::closeEvent(QCloseEvent *event)
         this->hide();
         event->ignore();
     } else {
+        settings->beginGroup( "mainwindow" );
+        settings->setValue( "geometry", saveGeometry() );
+        settings->setValue( "savestate", saveState() );
+        settings->setValue( "maximized", isMaximized() );
+        if ( !isMaximized() ) {
+            settings->setValue( "pos", pos() );
+            settings->setValue( "size", size() );
+        }
+        settings->setValue("splitterLeft", ui->splitter->sizes()[0]);
+        settings->setValue("splitterRight", ui->splitter->sizes()[1]);
+        settings->endGroup();
         event->accept();
     }
 }

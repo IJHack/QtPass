@@ -559,3 +559,12 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
         ui->checkBoxHideOnClose->setEnabled(false);
     }
 }
+
+/**
+ * @brief Dialog::closeEvent
+ * @param event
+ */
+void Dialog::closeEvent(QCloseEvent *event) {
+    // TODO save window size or somethign
+    event->accept();
+}
