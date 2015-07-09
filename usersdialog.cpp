@@ -41,7 +41,8 @@ void UsersDialog::populateList(const QString &filter)
     nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
     ui->listWidget->clear();
     if (userList) {
-        for (UserInfo &user : *userList) {
+        for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
+            UserInfo &user(*it);
             if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
                 QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
@@ -66,4 +67,9 @@ void UsersDialog::on_clearButton_clicked()
 void UsersDialog::on_lineEdit_textChanged(const QString &filter)
 {
     populateList(filter);
+}
+
+void UsersDialog::closeEvent(QCloseEvent *event) {
+    // TODO save window size or somethign
+    event->accept();
 }

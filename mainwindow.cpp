@@ -28,7 +28,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     process(new QProcess(this)),
-    fusedav(this)
+    fusedav(this),
+    keygen(NULL),
+    tray(NULL)
 {
 //    connect(process.data(), SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
     connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
@@ -133,6 +135,25 @@ void MainWindow::mountWebDav() {
 bool MainWindow::checkConfig() {
 
     QSettings &settings(getSettings());
+
+    if (firstRun) {
+        settings.beginGroup( "mainwindow" );
+        restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
+        restoreState(settings.value( "savestate", saveState() ).toByteArray());
+        move(settings.value( "pos", pos() ).toPoint());
+        resize(settings.value( "size", size() ).toSize());
+        QList<int> splitter = ui->splitter->sizes();
+        int left = settings.value("splitterLeft", splitter[0]).toInt();
+        int right= settings.value("splitterRight", splitter[1]).toInt();
+        if (left > 0 || right > 0) {
+            splitter[0] = left;
+            splitter[1] = right;
+            ui->splitter->setSizes(splitter);
+        }
+        if ( settings.value( "maximized", isMaximized() ).toBool() )
+            showMaximized();
+        settings.endGroup();
+    }
 
     usePass = (settings.value("usePass") == "true");
 
@@ -498,7 +519,7 @@ void MainWindow::readyRead(bool finished = false) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            if (useClipboard && error.size() == 0) {
+            if (useClipboard) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
@@ -1019,8 +1040,8 @@ void MainWindow::on_usersButton_clicked()
         selected_users = listKeys(recipients);
     }
     foreach (const UserInfo &sel, selected_users) {
-        for (UserInfo &user : users) {
-            if (sel.key_id == user.key_id) user.enabled = true;
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+            if (sel.key_id == it->key_id) it->enabled = true;
         }
     }
     if (count > selected_users.size())
@@ -1276,6 +1297,17 @@ void MainWindow::closeEvent(QCloseEvent *event)
         this->hide();
         event->ignore();
     } else {
+        settings->beginGroup( "mainwindow" );
+        settings->setValue( "geometry", saveGeometry() );
+        settings->setValue( "savestate", saveState() );
+        settings->setValue( "maximized", isMaximized() );
+        if ( !isMaximized() ) {
+            settings->setValue( "pos", pos() );
+            settings->setValue( "size", size() );
+        }
+        settings->setValue("splitterLeft", ui->splitter->sizes()[0]);
+        settings->setValue("splitterRight", ui->splitter->sizes()[1]);
+        settings->endGroup();
         event->accept();
     }
 }

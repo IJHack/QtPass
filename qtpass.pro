@@ -11,8 +11,6 @@ QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG   += c++11
-
 macx {
     TARGET = QtPass
 } else {
@@ -45,6 +43,8 @@ FORMS     += mainwindow.ui \
              dialog.ui \
              usersdialog.ui \ 
              keygendialog.ui
+
+QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 
 *-g++* {
     QMAKE_CXXFLAGS += -std=c++11 
