@@ -454,7 +454,7 @@ void Dialog::on_deleteButton_clicked()
 
 void Dialog::criticalMessage(const QString &title, const QString &text)
 {
-    QMessageBox::critical(this, title, text, QMessageBox::StandardButton::Ok, QMessageBox::StandardButton::Ok);
+    QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
 /**
@@ -558,4 +558,13 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
     } else {
         ui->checkBoxHideOnClose->setEnabled(false);
     }
+}
+
+/**
+ * @brief Dialog::closeEvent
+ * @param event
+ */
+void Dialog::closeEvent(QCloseEvent *event) {
+    // TODO save window size or somethign
+    event->accept();
 }
