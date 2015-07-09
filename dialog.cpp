@@ -454,7 +454,7 @@ void Dialog::on_deleteButton_clicked()
 
 void Dialog::criticalMessage(const QString &title, const QString &text)
 {
-    QMessageBox::critical(this, title, text, QMessageBox::StandardButton::Ok, QMessageBox::StandardButton::Ok);
+    QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
 /**
