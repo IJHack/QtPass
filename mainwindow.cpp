@@ -3,6 +3,7 @@
 #include "dialog.h"
 #include "usersdialog.h"
 #include "keygendialog.h"
+#include "passworddialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QDebug>
@@ -519,7 +520,7 @@ void MainWindow::readyRead(bool finished = false) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            if (useClipboard) {
+            if (useClipboard && !output.isEmpty()) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
@@ -666,7 +667,12 @@ void MainWindow::setGitExecutable(QString path) {
 }
 
 /**
- * @brief MainWindow::setGpgExecutable
+ * @briefUsersDialog d(this);
+    d.setUsers(&users);
+    if (!d.exec()) {
+        d.setUsers(NULL);
+        return;
+    } MainWindow::setGpgExecutable
  * @param path
  */
 void MainWindow::setGpgExecutable(QString path) {
@@ -819,19 +825,17 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         // warn?
         return;
     }
-    bool ok;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-    QString newValue = QInputDialog::getMultiLineText(this, tr("New Value"),
-        tr("New password value:"),
-        lastDecrypt, &ok);
-#else
-    QString newValue = QInputDialog::getText(this, tr("New Value"),
-        tr("New password value:"), QLineEdit::Normal,
-        lastDecrypt, &ok);
-#endif
-    if (!ok || newValue.isEmpty()) {
+    PasswordDialog d(this);
+    d.setPassword(lastDecrypt);
+    if (!d.exec()) {
+        d.setPassword(NULL);
         return;
     }
+    QString newValue = d.getPassword();
+    if (newValue.isEmpty()) {
+        return;
+    }
+
     currentAction = EDIT;
     if (usePass) {
         QString force(overwrite ? " -f " : " ");

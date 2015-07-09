@@ -18,7 +18,7 @@ macx {
 }
 
 TEMPLATE   = app
-VERSION    = 0.8.5
+VERSION    = 0.8.6
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
@@ -28,7 +28,8 @@ SOURCES   += main.cpp\
              usersdialog.cpp \ 
              keygendialog.cpp \
              progressindicator.cpp \
-             trayicon.cpp
+             trayicon.cpp \
+    passworddialog.cpp
 
 HEADERS   += mainwindow.h \
              dialog.h \
@@ -37,18 +38,16 @@ HEADERS   += mainwindow.h \
              usersdialog.h \
              keygendialog.h \
              progressindicator.h \
-             trayicon.h
+             trayicon.h \
+    passworddialog.h
 
 FORMS     += mainwindow.ui \
              dialog.ui \
              usersdialog.ui \ 
-             keygendialog.ui
+             keygendialog.ui \
+    passworddialog.ui
 
 QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
-
-*-g++* {
-    QMAKE_CXXFLAGS += -std=c++11 
-}
 
 nosingleapp {
     QMAKE_CXXFLAGS += -DSINGLE_APP=0
