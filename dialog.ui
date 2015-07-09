@@ -142,7 +142,6 @@
       </layout>
       <zorder>groupBoxNative</zorder>
       <zorder>widget</zorder>
-      <zorder></zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
