@@ -60,12 +60,12 @@
 		02F90D49765589144B3F77CC /* usersdialog.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = usersdialog.ui; path = /Users/annejan/Projects/qtpass/usersdialog.ui; sourceTree = "<absolute>"; };
 		03CA8D57962345313AC4234E /* moc_singleapplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_singleapplication.cpp; path = /Users/annejan/Projects/qtpass/moc_singleapplication.cpp; sourceTree = "<absolute>"; };
 		0B15A5A065F74BA508969D53 /* moc_storemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_storemodel.cpp; path = /Users/annejan/Projects/qtpass/moc_storemodel.cpp; sourceTree = "<absolute>"; };
-		101802963F5557511D075663 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = ../../Qt/5.4/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
+		101802963F5557511D075663 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = ../../Qt/5.5/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
 		145A02A70D45C9E21BD238F7 /* ui_usersdialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_usersdialog.h; path = /Users/annejan/Projects/qtpass/ui_usersdialog.h; sourceTree = "<absolute>"; };
 		14C9776A4B2E34DB51106724 /* ui_mainwindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_mainwindow.h; path = /Users/annejan/Projects/qtpass/ui_mainwindow.h; sourceTree = "<absolute>"; };
-		1824FEA7A030DDF578520F65 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = ../../Qt/5.4/clang_64/lib/QtCore.framework; sourceTree = "<absolute>"; };
+		1824FEA7A030DDF578520F65 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = ../../Qt/5.5/clang_64/lib/QtCore.framework; sourceTree = "<absolute>"; };
 		1D15154C7B210C2FE2881554 /* QtPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QtPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		257369D5ABD5F9E533786349 /* QtNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtNetwork.framework; path = ../../Qt/5.4/clang_64/lib/QtNetwork.framework; sourceTree = "<absolute>"; };
+		257369D5ABD5F9E533786349 /* QtNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtNetwork.framework; path = ../../Qt/5.5/clang_64/lib/QtNetwork.framework; sourceTree = "<absolute>"; };
 		2606ACEB7D117E2E1B29D729 /* singleapplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = singleapplication.cpp; path = /Users/annejan/Projects/qtpass/singleapplication.cpp; sourceTree = "<absolute>"; };
 		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
 		30084799A9CDAA10A8263CD8 /* dialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = dialog.cpp; path = /Users/annejan/Projects/qtpass/dialog.cpp; sourceTree = "<absolute>"; };
@@ -84,7 +84,7 @@
 		9EAA91BAB2CB286D9CB66C41 /* dialog.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = dialog.ui; path = /Users/annejan/Projects/qtpass/dialog.ui; sourceTree = "<absolute>"; };
 		A1A67BEAA744704B29168D39 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		A486B890FCFCBFA06F445AE3 /* singleapplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = singleapplication.h; path = /Users/annejan/Projects/qtpass/singleapplication.h; sourceTree = "<absolute>"; };
-		A8A91642445689BFE41019F2 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../Qt/5.4/clang_64/lib/QtWidgets.framework; sourceTree = "<absolute>"; };
+		A8A91642445689BFE41019F2 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = ../../Qt/5.5/clang_64/lib/QtWidgets.framework; sourceTree = "<absolute>"; };
 		AB745978DF0F41D1801ABDA6 /* .qmake.stash */ = {isa = PBXFileReference; lastKnownFileType = text; name = .qmake.stash; path = /Users/annejan/Projects/qtpass/.qmake.stash; sourceTree = "<absolute>"; };
 		B5187303E083953F3EFA617D /* storemodel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = storemodel.cpp; path = /Users/annejan/Projects/qtpass/storemodel.cpp; sourceTree = "<absolute>"; };
 		B6332CE6B3399115AD5D7562 /* qrc_resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = qrc_resources.cpp; path = /Users/annejan/Projects/qtpass/qrc_resources.cpp; sourceTree = "<absolute>"; };
@@ -252,7 +252,7 @@
 		6DB9C3763D02B1415CD9D565 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "qtpass" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -355,8 +355,8 @@
 				DYLIB_CURRENT_VERSION = 0.8.2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/annejan/Qt/5.4/clang_64/lib,
-					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -369,20 +369,20 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					.,
-					../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtGui.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtCore.framework/Versions/5/Headers,
 					.,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers,
 					.,
-					"../../Qt/5.4/clang_64/mkspecs/macx-clang",
+					"../../Qt/5.5/clang_64/mkspecs/macx-clang",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
 				LIBRARY_SEARCH_PATHS = (
-					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
 					/System/Library/Frameworks/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -418,8 +418,8 @@
 				OTHER_LDFLAGS = (
 					"-headerpad_max_install_names",
 					"-stdlib=libc++",
-					"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
-					"-F/Users/annejan/Qt/5.4/clang_64/lib",
+					"-Wl,-rpath,/Users/annejan/Qt/5.5/clang_64/lib",
+					"-F/Users/annejan/Qt/5.5/clang_64/lib",
 				);
 				PRODUCT_NAME = QtPass;
 				QT_LIBRARY_SUFFIX = "";
@@ -443,9 +443,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 0.8;
 				DYLIB_CURRENT_VERSION = 0.8.2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/annejan/Qt/5.4/clang_64/lib,
-					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -459,20 +460,20 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					.,
-					../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
-					../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtWidgets.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtGui.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtNetwork.framework/Versions/5/Headers,
+					../../Qt/5.5/clang_64/lib/QtCore.framework/Versions/5/Headers,
 					.,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers,
 					.,
-					"../../Qt/5.4/clang_64/mkspecs/macx-clang",
+					"../../Qt/5.5/clang_64/mkspecs/macx-clang",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
 				LIBRARY_SEARCH_PATHS = (
-					/Users/annejan/Qt/5.4/clang_64/lib,
+					/Users/annejan/Qt/5.5/clang_64/lib,
 					/System/Library/Frameworks/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -509,8 +510,8 @@
 				OTHER_LDFLAGS = (
 					"-headerpad_max_install_names",
 					"-stdlib=libc++",
-					"-Wl,-rpath,/Users/annejan/Qt/5.4/clang_64/lib",
-					"-F/Users/annejan/Qt/5.4/clang_64/lib",
+					"-Wl,-rpath,/Users/annejan/Qt/5.5/clang_64/lib",
+					"-F/Users/annejan/Qt/5.5/clang_64/lib",
 				);
 				PRODUCT_NAME = QtPass;
 				QT_LIBRARY_SUFFIX = _debug;
@@ -525,6 +526,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ijhack.QtPass;
 				PRODUCT_NAME = QtPass;
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
@@ -538,6 +540,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ijhack.QtPass;
 				PRODUCT_NAME = QtPass;
 				QT_LIBRARY_SUFFIX = _debug;
 				SDKROOT = macosx;
