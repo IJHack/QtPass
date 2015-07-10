@@ -91,6 +91,7 @@ private:
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
+    QString pwgenExecutable;
     QString gpgHome;
     bool useWebDav;
     QString webDavUrl;
@@ -112,6 +113,7 @@ private:
     trayIcon *tray;
     bool useTrayIcon;
     bool hideOnClose;
+    bool useGit;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());

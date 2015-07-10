@@ -51,6 +51,10 @@ public:
     bool hideOnClose();
     void useTrayIcon(bool);
     void hideOnClose(bool);
+    void useGit(bool);
+    bool useGit();
+    QString getPwgenPath();
+    void setPwgenPath(QString);
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -60,6 +64,7 @@ private slots:
     void on_radioButtonPass_clicked();
     void on_toolButtonGit_clicked();
     void on_toolButtonGpg_clicked();
+    void on_toolButtonPwgen_clicked();
     void on_toolButtonPass_clicked();
     void on_toolButtonStore_clicked();
     void on_checkBoxClipboard_clicked();
@@ -67,6 +72,7 @@ private slots:
     void on_addButton_clicked();
     void on_deleteButton_clicked();
     void on_checkBoxUseTrayIcon_clicked();
+    void on_checkBoxUseGit_clicked();
 
 private:
     QScopedPointer<Ui::Dialog> ui;

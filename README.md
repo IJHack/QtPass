@@ -61,7 +61,7 @@ Planned features
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
-* Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)
+* Some other form of remote storage that allows for accountability / auditing (web API to retrieve the .gpg files?)
 
 Installation
 ------------
