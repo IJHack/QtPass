@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>495</width>
-    <height>215</height>
+    <width>563</width>
+    <height>240</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,25 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
        <string>Programs</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
@@ -140,98 +152,96 @@
         </widget>
        </item>
       </layout>
-      <zorder>groupBoxNative</zorder>
-      <zorder>widget</zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>Settings</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <layout class="QGridLayout" name="gridLayout_3">
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="checkBoxClipboard">
-           <property name="text">
-            <string>Clipboard</string>
-           </property>
-          </widget>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkBoxClipboard">
+         <property name="text">
+          <string>Use clipboard</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="checkBoxAutoclear">
+         <property name="text">
+          <string>Autoclear</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QSpinBox" name="spinBoxAutoclearSeconds"/>
          </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="checkBoxAutoclear">
+         <item>
+          <widget class="QLabel" name="labelSeconds">
            <property name="text">
-            <string>Autoclear</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QSpinBox" name="spinBoxAutoclearSeconds"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="labelSeconds">
-             <property name="text">
-              <string>Seconds</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0">
-          <widget class="QCheckBox" name="checkBoxHidePassword">
-           <property name="text">
-            <string>Hide password</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QCheckBox" name="checkBoxHideContent">
-           <property name="text">
-            <string>Hide content</string>
+            <string>Seconds</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QCheckBox" name="checkBoxUseGit">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Use git</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBoxAddGPGId">
-           <property name="text">
-            <string>Automatically add .gpg-id files</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="checkBoxHidePassword">
+         <property name="text">
+          <string>Hide password</string>
+         </property>
+        </widget>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QCheckBox" name="checkBoxUseTrayIcon">
-           <property name="text">
-            <string>Use TrayIcon</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBoxHideOnClose">
-           <property name="text">
-            <string>Hide on close</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="checkBoxHideContent">
+         <property name="text">
+          <string>Hide content</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="checkBoxUseGit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Use git</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="3">
+        <widget class="QCheckBox" name="checkBoxAddGPGId">
+         <property name="text">
+          <string>Automatically add .gpg-id files</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="checkBoxUseTrayIcon">
+         <property name="text">
+          <string>Use TrayIcon</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="checkBoxHideOnClose">
+         <property name="text">
+          <string>Hide on close</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -240,6 +250,18 @@
        <string>Profiles</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QTableWidget" name="profileTable">
          <property name="editTriggers">
