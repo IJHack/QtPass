@@ -186,6 +186,12 @@ bool MainWindow::checkConfig() {
     if (gpgExecutable.isEmpty()) {
         gpgExecutable = Util::findBinaryInPath("gpg2");
     }
+
+    pwgenExecutable = settings.value("pwgenExecutable").toString();
+    if (pwgenExecutable.isEmpty()) {
+        pwgenExecutable = Util::findBinaryInPath("pwgen");
+    }
+
     gpgHome = settings.value("gpgHome").toString();
 
     useWebDav = (settings.value("useWebDav") == "true");
@@ -200,6 +206,8 @@ bool MainWindow::checkConfig() {
          profiles[key] = settings.value(key).toString();
     }
     settings.endGroup();
+
+    useGit = (settings.value("useGit") == "true");
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
@@ -271,10 +279,13 @@ bool MainWindow::checkConfig() {
 
     updateEnv();
 
-    if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+    if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
     {
         ui->pushButton->hide();
         ui->updateButton->hide();
+    } else {
+        ui->pushButton->show();
+        ui->updateButton->show();
     }
     ui->lineEdit->setFocus();
 
@@ -306,6 +317,8 @@ void MainWindow::config() {
     d->useTrayIcon(useTrayIcon);
     d->hideOnClose(hideOnClose);
     d->setProfiles(profiles, profile);
+    d->useGit(useGit);
+    d->setPwgenPath(pwgenExecutable);
     d->wizard(); // does shit
 
     if (d->exec()) {
@@ -324,6 +337,8 @@ void MainWindow::config() {
             useTrayIcon = d->useTrayIcon();
             hideOnClose = d->hideOnClose();
             profiles = d->getProfiles();
+            useGit = d->useGit();
+            pwgenExecutable = d->getPwgenPath();
 
             QSettings &settings(getSettings());
 
@@ -340,6 +355,8 @@ void MainWindow::config() {
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
             settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");
             settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
+            settings.setValue("useGit", useGit ? "true" : "false");
+            settings.setValue("pwgenExecutable", pwgenExecutable);
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");
@@ -369,14 +386,14 @@ void MainWindow::config() {
                 config();
             }
             updateEnv();
-            if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+            if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
             {
                 ui->pushButton->hide();
                 ui->updateButton->hide();
             } else {
                 ui->pushButton->show();
                 ui->updateButton->show();
-	    }
+            }
             if (useTrayIcon && tray == NULL) {
                 initTrayIcon();
             } else if (!useTrayIcon && tray != NULL) {
@@ -1098,7 +1115,7 @@ void MainWindow::on_usersButton_clicked()
             tr("None of the selected keys have a secret key available.\n"
                "You will not be able to decrypt any newly added passwords!"));
     }
-    if (!useWebDav && !gitExecutable.isEmpty()){
+    if (!useWebDav && useGit && !gitExecutable.isEmpty()){
         if (addFile) {
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
         }

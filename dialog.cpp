@@ -182,7 +182,7 @@ QString Dialog::selectFolder() {
 void Dialog::on_toolButtonGit_clicked()
 {
     QString git = selectExecutable();
-    if (git != "") {
+    if (!git.isEmpty()) {
         ui->gitPath->setText(git);
     }
 }
@@ -567,4 +567,59 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
 void Dialog::closeEvent(QCloseEvent *event) {
     // TODO save window size or somethign
     event->accept();
+}
+
+/**
+ * @brief Dialog::useGit
+ * @param useGit
+ */
+void Dialog::useGit(bool useGit)
+{
+    ui->checkBoxUseGit->setChecked(useGit);
+    ui->checkBoxAddGPGId->setEnabled(useGit);
+}
+
+/**
+ * @brief Dialog::useGit
+ * @return
+ */
+bool Dialog::useGit()
+{
+    return ui->checkBoxUseGit->isChecked();
+}
+
+/**
+ * @brief Dialog::on_checkBoxUseGit_clicked
+ */
+void Dialog::on_checkBoxUseGit_clicked()
+{
+    ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
+}
+
+/**
+ * @brief Dialog::on_toolButtonPwgen_clicked
+ */
+void Dialog::on_toolButtonPwgen_clicked()
+{
+    QString pwgen = selectExecutable();
+    if (!pwgen.isEmpty()) {
+        ui->pwgenPath->setText(pwgen);
+    }
+}
+
+/**
+ * @brief Dialog::getPwgenPath
+ * @return
+ */
+QString Dialog::getPwgenPath() {
+    return ui->pwgenPath->text();
+}
+
+/**
+ * @brief Dialog::setPwgenPath
+ * @param pwgen
+ */
+void Dialog::setPwgenPath(QString pwgen)
+{
+    ui->pwgenPath->setText(pwgen);
 }
