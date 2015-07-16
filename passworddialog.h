@@ -2,6 +2,7 @@
 #define PASSWORDDIALOG_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class PasswordDialog;
@@ -12,7 +13,7 @@ class PasswordDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit PasswordDialog(QWidget *parent = 0);
+    explicit PasswordDialog(MainWindow *parent = 0);
     ~PasswordDialog();
     void setPassword(QString);
     QString getPassword();
@@ -23,6 +24,8 @@ private slots:
 
 private:
     Ui::PasswordDialog *ui;
+    MainWindow *mainWindow;
+
 };
 
 #endif // PASSWORDDIALOG_H

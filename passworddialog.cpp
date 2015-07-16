@@ -1,10 +1,11 @@
 #include "passworddialog.h"
 #include "ui_passworddialog.h"
 
-PasswordDialog::PasswordDialog(QWidget *parent) :
+PasswordDialog::PasswordDialog(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::PasswordDialog)
 {
+    mainWindow = parent;
     ui->setupUi(this);
 }
 
@@ -24,8 +25,9 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1)
 
 void PasswordDialog::on_createPasswordButton_clicked()
 {
-    // TODO
-    ui->lineEditPassword->setText("generated");
+    ui->widget->setEnabled(false);
+    ui->lineEditPassword->setText(mainWindow->generatePassword());
+    ui->widget->setEnabled(true);
 }
 
 void PasswordDialog::setPassword(QString password)
