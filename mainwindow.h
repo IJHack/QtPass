@@ -31,7 +31,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL };
+enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
     explicit MainWindow(QWidget *parent = 0);

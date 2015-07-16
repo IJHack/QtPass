@@ -371,7 +371,7 @@ void MainWindow::config() {
             settings.setValue("useGit", useGit ? "true" : "false");
             settings.setValue("pwgenExecutable", pwgenExecutable);
             settings.setValue("usePwgen", usePwgen ? "true" : "false");
-            settings.setValue("useGit", useSymbols ? "useSymbols" : "false");
+            settings.setValue("useSymbols", useSymbols ? "true" : "false");
             settings.setValue("passwordLength", passwordLength);
             settings.setValue("passwordChars", passwordChars);
 
@@ -513,6 +513,7 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    //qDebug() << app + " " + args;
     // Happens a lot if e.g. git binary is not set.
     // This will result in bogus "QProcess::FailedToStart" messages,
     // also hiding legitimate errors from the gpg commands.
@@ -548,6 +549,9 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
+    if (currentAction == PWGEN) {
+        return;
+    }
     QString output = "";
     QString error = process->readAllStandardError();
     if (currentAction != GPG_INTERNAL) {
@@ -1442,5 +1446,27 @@ void MainWindow::editPassword()
  * @return
  */
 QString MainWindow::generatePassword() {
-    return "test";
+    QString passwd;
+    if (usePwgen) {
+        while (!process->atEnd() || !execQueue->isEmpty()) {
+            Util::qSleep(100);
+        }
+        QString args = (useSymbols?"--symbols -1 ":"-1 ") + QString::number(passwordLength);
+        currentAction = PWGEN;
+        executeWrapper(pwgenExecutable, args);
+        process->waitForFinished(1000);
+        if (process->exitStatus() == QProcess::NormalExit) {
+            passwd = QString(process->readAllStandardOutput());
+        } else {
+            qDebug() << "pwgen fail";
+        }
+    } else {
+        for(int i=0; i<passwordLength; ++i)
+        {
+           int index = qrand() % passwordChars.length();
+           QChar nextChar = passwordChars.at(index);
+           passwd.append(nextChar);
+        }
+    }
+    return passwd;
 }
