@@ -216,6 +216,11 @@ bool MainWindow::checkConfig() {
         }
     }
 
+    usePwgen = (settings.value("usePwgen") == "true");
+    useSymbols = (settings.value("useSymbols") == "true");
+    passwordLength = settings.value("passwordLength").toInt();
+    passwordChars = settings.value("passwordChars").toString();
+
     useTrayIcon = settings.value("useTrayIcon").toBool();
     hideOnClose = settings.value("hideOnClose").toBool();
 
@@ -319,6 +324,10 @@ void MainWindow::config() {
     d->setProfiles(profiles, profile);
     d->useGit(useGit);
     d->setPwgenPath(pwgenExecutable);
+    d->usePwgen(usePwgen);
+    d->useSymbols(useSymbols);
+    d->setPasswordLength(passwordLength);
+    d->setPasswordChars(passwordChars);
     d->wizard(); // does shit
 
     if (d->exec()) {
@@ -339,6 +348,10 @@ void MainWindow::config() {
             profiles = d->getProfiles();
             useGit = d->useGit();
             pwgenExecutable = d->getPwgenPath();
+            usePwgen = d->usePwgen();
+            useSymbols = d->useSymbols();
+            passwordLength = d->getPasswordLength();
+            passwordChars = d->getPasswordChars();
 
             QSettings &settings(getSettings());
 
@@ -357,6 +370,10 @@ void MainWindow::config() {
             settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
             settings.setValue("useGit", useGit ? "true" : "false");
             settings.setValue("pwgenExecutable", pwgenExecutable);
+            settings.setValue("usePwgen", usePwgen ? "true" : "false");
+            settings.setValue("useGit", useSymbols ? "useSymbols" : "false");
+            settings.setValue("passwordLength", passwordLength);
+            settings.setValue("passwordChars", passwordChars);
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");

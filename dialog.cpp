@@ -623,3 +623,74 @@ void Dialog::setPwgenPath(QString pwgen)
 {
     ui->pwgenPath->setText(pwgen);
 }
+
+/**
+ * @brief Dialog::on_checkBoxUsPwgen_clicked
+ */
+void Dialog::on_checkBoxUsePwgen_clicked()
+{
+    ui->checkBoxUseSymbols->setEnabled(ui->checkBoxUsePwgen->isChecked());
+    ui->lineEditPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
+    ui->labelPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
+}
+
+/**
+ * @brief Dialog::usePwgen
+ * @param usePwgen
+ */
+void Dialog::usePwgen(bool usePwgen) {
+    ui->checkBoxUsePwgen->setChecked(usePwgen);
+    on_checkBoxUsePwgen_clicked();
+}
+
+/**
+ * @brief Dialog::useSymbols
+ * @param useSymbols
+ */
+void Dialog::useSymbols(bool useSymbols) {
+    ui->checkBoxUseSymbols->setChecked(useSymbols);
+}
+
+/**
+ * @brief Dialog::setPasswordLength
+ * @param pwLen
+ */
+void Dialog::setPasswordLength(int pwLen) {
+    ui->spinBoxPasswordLength->setValue(pwLen);
+}
+
+void Dialog::setPasswordChars(QString pwChars) {
+    ui->lineEditPasswordChars->setText(pwChars);
+}
+
+/**
+ * @brief Dialog::usePwgen
+ * @return
+ */
+bool Dialog::usePwgen() {
+    return ui->checkBoxUsePwgen->isChecked();
+}
+
+/**
+ * @brief Dialog::useSymbols
+ * @return
+ */
+bool Dialog::useSymbols() {
+    return ui->checkBoxUseSymbols->isChecked();
+}
+
+/**
+ * @brief Dialog::getPasswordLength
+ * @return
+ */
+int Dialog::getPasswordLength() {
+    return ui->spinBoxPasswordLength->value();
+}
+
+/**
+ * @brief Dialog::getPasswordChars
+ * @return
+ */
+QString Dialog::getPasswordChars() {
+    return ui->lineEditPasswordChars->text();
+}

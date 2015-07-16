@@ -114,6 +114,10 @@ private:
     bool useTrayIcon;
     bool hideOnClose;
     bool useGit;
+    bool usePwgen;
+    bool useSymbols;
+    int passwordLength;
+    QString passwordChars;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
