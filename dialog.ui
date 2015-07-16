@@ -213,14 +213,20 @@
            <item>
             <widget class="QSpinBox" name="spinBoxPasswordLength">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
+             </property>
+             <property name="minimum">
+              <number>8</number>
+             </property>
+             <property name="value">
+              <number>16</number>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="labelLength">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="text">
               <string>Characters</string>
@@ -237,9 +243,9 @@
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QCheckBox" name="checkBoxUsPwgen">
+          <widget class="QCheckBox" name="checkBoxUsePwgen">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="text">
             <string>Use pwgen</string>
@@ -256,7 +262,14 @@
          <item row="0" column="3">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QSpinBox" name="spinBoxAutoclearSeconds"/>
+            <widget class="QSpinBox" name="spinBoxAutoclearSeconds">
+             <property name="minimum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="labelSeconds">
@@ -308,7 +321,7 @@
          <item row="3" column="1">
           <widget class="QCheckBox" name="checkBoxUseSymbols">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="text">
             <string>Include special symbols </string>
@@ -325,14 +338,17 @@
          <item row="4" column="1" colspan="3">
           <widget class="QLineEdit" name="lineEditPasswordChars">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</string>
            </property>
           </widget>
          </item>
          <item row="4" column="0">
           <widget class="QLabel" name="labelPasswordChars">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="text">
             <string>Use characters</string>

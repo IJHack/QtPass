@@ -55,6 +55,14 @@ public:
     bool useGit();
     QString getPwgenPath();
     void setPwgenPath(QString);
+    void usePwgen(bool);
+    void useSymbols(bool);
+    void setPasswordLength(int);
+    void setPasswordChars(QString);
+    bool usePwgen();
+    bool useSymbols();
+    int getPasswordLength();
+    QString getPasswordChars();
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -73,6 +81,7 @@ private slots:
     void on_deleteButton_clicked();
     void on_checkBoxUseTrayIcon_clicked();
     void on_checkBoxUseGit_clicked();
+    void on_checkBoxUsePwgen_clicked();
 
 private:
     QScopedPointer<Ui::Dialog> ui;
