@@ -1220,7 +1220,7 @@ QStringList MainWindow::getSecretKeys()
  * @brief Dialog::genKey
  * @param QString batch
  */
-void MainWindow::genKey(QString batch, QDialog *keygenWindow)
+void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow)
 {
     keygen = keygenWindow;
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
@@ -1435,4 +1435,12 @@ void MainWindow::editPassword()
             on_editButton_clicked();
         }
     }
+}
+
+/**
+ * @brief MainWindow::generatePassword
+ * @return
+ */
+QString MainWindow::generatePassword() {
+    return "test";
 }

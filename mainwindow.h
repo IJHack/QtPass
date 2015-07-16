@@ -44,8 +44,9 @@ public:
     void setApp(SingleApplication* app);
     void setText(QString);
     QStringList getSecretKeys();
-    void genKey(QString, QDialog *);
+    void generateKeyPair(QString, QDialog *);
     void userDialog(QString = "");
+    QString generatePassword();
 
 protected:
     void closeEvent(QCloseEvent *event);

@@ -368,7 +368,7 @@ void Dialog::addGPGId(bool addGPGId)
  */
 void Dialog::genKey(QString batch, QDialog *dialog)
 {
-    mainWindow->genKey(batch, dialog);
+    mainWindow->generateKeyPair(batch, dialog);
 }
 
 /**
