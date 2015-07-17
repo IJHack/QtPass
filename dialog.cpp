@@ -496,6 +496,7 @@ void Dialog::wizard()
             tr("Would you like to create a password-store at %1?").arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
                 QDir().mkdir(passStore);
+                mainWindow->userDialog(passStore);
         }
     }
 
