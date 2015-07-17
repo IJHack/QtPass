@@ -210,14 +210,6 @@ bool MainWindow::checkConfig() {
     settings.endGroup();
 
     useGit = (settings.value("useGit") == "true");
-
-    if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
-        config();
-        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
-            return false;
-        }
-    }
-
     usePwgen = (settings.value("usePwgen") == "true");
     useSymbols = (settings.value("useSymbols") == "true");
     passwordLength = settings.value("passwordLength").toInt();
@@ -231,6 +223,8 @@ bool MainWindow::checkConfig() {
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
     }
+
+    //qDebug() << version;
 
     // Config updates
     if (version.isEmpty()) {
@@ -254,6 +248,13 @@ bool MainWindow::checkConfig() {
     }*/
 
     settings.setValue("version", VERSION);
+
+    if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+        config();
+        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            return false;
+        }
+    }
 
     freshStart = false;
 

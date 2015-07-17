@@ -490,7 +490,7 @@ void Dialog::wizard()
 
     QString passStore = ui->storePath->text();
 
-    if (clean && !QFile(passStore).exists()) {
+    if (!QFile(passStore).exists()) {
         // TODO pass version?
         if (QMessageBox::question(this, tr("Create password-store?"),
             tr("Would you like to create a password-store at %1?").arg(passStore),
