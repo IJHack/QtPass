@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
-    firstRun = true;
+    freshStart = true;
     startupPhase = true;
     if (!checkConfig()) {
         // no working config
@@ -139,7 +139,7 @@ bool MainWindow::checkConfig() {
 
     QString version = settings.value("version").toString();
 
-    if (firstRun) {
+    if (freshStart) {
         settings.beginGroup( "mainwindow" );
         restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
         restoreState(settings.value( "savestate", saveState() ).toByteArray());
@@ -213,7 +213,7 @@ bool MainWindow::checkConfig() {
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
-        if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
             return false;
         }
     }
@@ -245,17 +245,17 @@ bool MainWindow::checkConfig() {
         } else {
             usePwgen = false;
         }
-    } else {
+    } /*else {
         QStringList ver = version.split(".");
         qDebug() << ver;
         if (ver[0] == "0" && ver[1] == "8") {
             // upgrade to 0.9
         }
-    }
+    }*/
 
     settings.setValue("version", VERSION);
 
-    firstRun = false;
+    freshStart = false;
 
     // TODO: this needs to be before we try to access the store,
     // but it would be better to do it after the Window is shown,
@@ -331,7 +331,7 @@ void MainWindow::config() {
     d->setModal(true);
 
     // Automatically default to pass if it's available
-    usePass = firstRun ? QFile(passExecutable).exists() : usePass;
+    usePass = freshStart ? QFile(passExecutable).exists() : usePass;
 
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
@@ -425,7 +425,7 @@ void MainWindow::config() {
             updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
-            if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
                 config();
             }
             updateEnv();
@@ -443,7 +443,7 @@ void MainWindow::config() {
                 destroyTrayIcon();
             }
         }
-        firstRun = false;
+        freshStart = false;
     }
 }
 
