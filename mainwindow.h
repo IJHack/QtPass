@@ -105,7 +105,7 @@ private:
     bool wrapperRunning;
     QStringList env;
     QQueue<execQueueItem> *execQueue;
-    bool firstRun;
+    bool freshStart;
     QDialog *keygen;
     QString currentDir;
     QHash<QString, QString> profiles;

@@ -378,6 +378,12 @@ void Dialog::genKey(QString batch, QDialog *dialog)
  */
 void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 {
+    //qDebug() << profiles;
+    if (profiles.contains("")) {
+        profiles.remove("");
+        // remove weird "" key value pairs
+    }
+
     ui->profileTable->setRowCount(profiles.count());
     QHashIterator<QString, QString> i(profiles);
     int n = 0;
@@ -622,6 +628,10 @@ QString Dialog::getPwgenPath() {
 void Dialog::setPwgenPath(QString pwgen)
 {
     ui->pwgenPath->setText(pwgen);
+    if (pwgen.isEmpty()) {
+        ui->checkBoxUsePwgen->setChecked(false);
+    }
+    on_checkBoxUsePwgen_clicked();
 }
 
 /**
@@ -639,6 +649,9 @@ void Dialog::on_checkBoxUsePwgen_clicked()
  * @param usePwgen
  */
 void Dialog::usePwgen(bool usePwgen) {
+    if (ui->pwgenPath->text().isEmpty()) {
+        usePwgen = false;
+    }
     ui->checkBoxUsePwgen->setChecked(usePwgen);
     on_checkBoxUsePwgen_clicked();
 }
