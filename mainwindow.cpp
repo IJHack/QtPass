@@ -137,6 +137,8 @@ bool MainWindow::checkConfig() {
 
     QSettings &settings(getSettings());
 
+    QString version = settings.value("version").toString();
+
     if (firstRun) {
         settings.beginGroup( "mainwindow" );
         restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
@@ -228,6 +230,24 @@ bool MainWindow::checkConfig() {
         initTrayIcon();
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
+    }
+
+    // Config updates
+    if (version != VERSION) {
+        qDebug() << "Config update from version " + version;
+        //    QStringList ver = version.split(".");
+        //    qDebug() << ver;
+        // worry ^ about that next time, since this is first implement
+        if (autoclearSeconds < 5) {
+            autoclearSeconds = 10;
+        }
+        passwordLength = 16;
+        passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
+        if (!pwgenExecutable.isEmpty()) {
+            usePwgen = true;
+        } else {
+            usePwgen = false;
+        }
     }
 
     firstRun = false;
@@ -355,6 +375,7 @@ void MainWindow::config() {
 
             QSettings &settings(getSettings());
 
+            settings.setValue("version", VERSION);
             settings.setValue("passExecutable", passExecutable);
             settings.setValue("gitExecutable", gitExecutable);
             settings.setValue("gpgExecutable", gpgExecutable);
