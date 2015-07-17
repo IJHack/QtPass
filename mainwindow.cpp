@@ -233,11 +233,8 @@ bool MainWindow::checkConfig() {
     }
 
     // Config updates
-    if (version != VERSION) {
-        qDebug() << "Config update from version " + version;
-        //    QStringList ver = version.split(".");
-        //    qDebug() << ver;
-        // worry ^ about that next time, since this is first implement
+    if (version.isEmpty()) {
+        qDebug() << "assuming fresh install";
         if (autoclearSeconds < 5) {
             autoclearSeconds = 10;
         }
@@ -248,7 +245,15 @@ bool MainWindow::checkConfig() {
         } else {
             usePwgen = false;
         }
+    } else {
+        QStringList ver = version.split(".");
+        qDebug() << ver;
+        if (ver[0] == "0" && ver[1] == "8") {
+            // upgrade to 0.9
+        }
     }
+
+    settings.setValue("version", VERSION);
 
     firstRun = false;
 

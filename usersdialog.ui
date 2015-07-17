@@ -24,16 +24,16 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>12</number>
+    <number>6</number>
    </property>
    <property name="topMargin">
-    <number>12</number>
+    <number>6</number>
    </property>
    <property name="rightMargin">
-    <number>12</number>
+    <number>6</number>
    </property>
    <property name="bottomMargin">
-    <number>12</number>
+    <number>6</number>
    </property>
    <item>
     <widget class="QLabel" name="label">
@@ -87,6 +87,11 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>clearButton</tabstop>
+  <tabstop>listWidget</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

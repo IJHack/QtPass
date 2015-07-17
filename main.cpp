@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[])
 {
+    // check for stupid apple psid or whatever flag
     QString text = "";
     for (int i = 1; i < argc; ++i) {
         if (i > 1) {
