@@ -49,8 +49,10 @@ public:
     void genKey(QString, QDialog *);
     bool useTrayIcon();
     bool hideOnClose();
+    bool startMinimized();
     void useTrayIcon(bool);
     void hideOnClose(bool);
+    void startMinimized(bool);
     void useGit(bool);
     bool useGit();
     QString getPwgenPath();
