@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -352,6 +352,13 @@
            </property>
            <property name="text">
             <string>Use characters</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QCheckBox" name="checkBoxStartMinimized">
+           <property name="text">
+            <string>Start minimized</string>
            </property>
           </widget>
          </item>
