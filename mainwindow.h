@@ -114,6 +114,7 @@ private:
     trayIcon *tray;
     bool useTrayIcon;
     bool hideOnClose;
+    bool startMinimized;
     bool useGit;
     bool usePwgen;
     bool useSymbols;

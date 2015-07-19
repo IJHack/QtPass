@@ -543,8 +543,10 @@ bool Dialog::hideOnClose() {
 void Dialog::useTrayIcon(bool useSystray) {
     ui->checkBoxUseTrayIcon->setChecked(useSystray);
     ui->checkBoxHideOnClose->setEnabled(useSystray);
+    ui->checkBoxStartMinimized->setEnabled(useSystray);
     if (!useSystray) {
         ui->checkBoxHideOnClose->setChecked(false);
+        ui->checkBoxStartMinimized->setChecked(false);
     }
 }
 
@@ -562,7 +564,9 @@ void Dialog::hideOnClose(bool hideOnClose) {
 void Dialog::on_checkBoxUseTrayIcon_clicked() {
     if (ui->checkBoxUseTrayIcon->isChecked()) {
         ui->checkBoxHideOnClose->setEnabled(true);
+        ui->checkBoxStartMinimized->setEnabled(true);
     } else {
+        ui->checkBoxStartMinimized->setEnabled(false);
         ui->checkBoxHideOnClose->setEnabled(false);
     }
 }
@@ -707,4 +711,20 @@ int Dialog::getPasswordLength() {
  */
 QString Dialog::getPasswordChars() {
     return ui->lineEditPasswordChars->text();
+}
+
+/**
+ * @brief Dialog::startMinimized
+ * @return
+ */
+bool Dialog::startMinimized() {
+    return ui->checkBoxStartMinimized->isChecked();
+}
+
+/**
+ * @brief Dialog::startMinimized
+ * @param startMinimized
+ */
+void Dialog::startMinimized(bool startMinimized) {
+    ui->checkBoxStartMinimized->setChecked(startMinimized);
 }

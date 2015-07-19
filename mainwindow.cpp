@@ -217,9 +217,14 @@ bool MainWindow::checkConfig() {
 
     useTrayIcon = settings.value("useTrayIcon").toBool();
     hideOnClose = settings.value("hideOnClose").toBool();
+    startMinimized = settings.value("startMinimized").toBool();
 
     if (useTrayIcon && tray == NULL) {
         initTrayIcon();
+        if (freshStart && startMinimized) {
+            // since we are still in constructor, can't directly hide
+            QTimer::singleShot(10*autoclearSeconds, this, SLOT(hide()));
+        }
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
     }
@@ -347,6 +352,7 @@ void MainWindow::config() {
     d->addGPGId(addGPGId);
     d->useTrayIcon(useTrayIcon);
     d->hideOnClose(hideOnClose);
+    d->startMinimized(startMinimized);
     d->setProfiles(profiles, profile);
     d->useGit(useGit);
     d->setPwgenPath(pwgenExecutable);
@@ -371,6 +377,7 @@ void MainWindow::config() {
             addGPGId = d->addGPGId();
             useTrayIcon = d->useTrayIcon();
             hideOnClose = d->hideOnClose();
+            startMinimized = d->startMinimized();
             profiles = d->getProfiles();
             useGit = d->useGit();
             pwgenExecutable = d->getPwgenPath();
@@ -395,6 +402,7 @@ void MainWindow::config() {
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
             settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");
             settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
+            settings.setValue("startMinimized", startMinimized ? "true" : "false");
             settings.setValue("useGit", useGit ? "true" : "false");
             settings.setValue("pwgenExecutable", pwgenExecutable);
             settings.setValue("usePwgen", usePwgen ? "true" : "false");
