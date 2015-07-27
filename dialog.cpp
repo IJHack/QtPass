@@ -635,6 +635,7 @@ void Dialog::setPwgenPath(QString pwgen)
     ui->pwgenPath->setText(pwgen);
     if (pwgen.isEmpty()) {
         ui->checkBoxUsePwgen->setChecked(false);
+        ui->checkBoxUsePwgen->setEnabled(false);
     }
     on_checkBoxUsePwgen_clicked();
 }
