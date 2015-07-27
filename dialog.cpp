@@ -45,6 +45,12 @@ void Dialog::setPassPath(QString path) {
  */
 void Dialog::setGitPath(QString path) {
     ui->gitPath->setText(path);
+    if (path.isEmpty()) {
+        useGit(false);
+        ui->checkBoxUseGit->setEnabled(false);
+    } else {
+        ui->checkBoxUseGit->setEnabled(true);
+    }
 }
 
 /**
@@ -184,6 +190,10 @@ void Dialog::on_toolButtonGit_clicked()
     QString git = selectExecutable();
     if (!git.isEmpty()) {
         ui->gitPath->setText(git);
+        ui->checkBoxUseGit->setEnabled(true);
+    } else {
+        useGit(false);
+        ui->checkBoxUseGit->setEnabled(false);
     }
 }
 
@@ -576,7 +586,7 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
  * @param event
  */
 void Dialog::closeEvent(QCloseEvent *event) {
-    // TODO save window size or somethign
+    // TODO save window size or something?
     event->accept();
 }
 
