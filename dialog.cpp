@@ -615,6 +615,10 @@ void Dialog::on_toolButtonPwgen_clicked()
     QString pwgen = selectExecutable();
     if (!pwgen.isEmpty()) {
         ui->pwgenPath->setText(pwgen);
+        ui->checkBoxUsePwgen->setEnabled(true);
+    } else {
+        ui->checkBoxUsePwgen->setEnabled(false);
+        ui->checkBoxUsePwgen->setChecked(false);
     }
 }
 
@@ -635,6 +639,7 @@ void Dialog::setPwgenPath(QString pwgen)
     ui->pwgenPath->setText(pwgen);
     if (pwgen.isEmpty()) {
         ui->checkBoxUsePwgen->setChecked(false);
+        ui->checkBoxUsePwgen->setEnabled(false);
     }
     on_checkBoxUsePwgen_clicked();
 }

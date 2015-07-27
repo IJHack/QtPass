@@ -974,8 +974,11 @@ void MainWindow::on_deleteButton_clicked()
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
         } else {
-            // TODO GIT
-            QFile(file).remove();
+            if (useGit) {
+                executeWrapper(gitExecutable, "rm -f \"" + file + '"');
+            } else {
+                QFile(file).remove();
+            }
         }
     } else {
         file = getDir(ui->treeView->currentIndex(), usePass);
