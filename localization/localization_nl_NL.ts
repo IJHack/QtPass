@@ -653,7 +653,7 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../usersdialog.ui" line="69"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon onbruikbare sleutels</translation>
     </message>
 </context>
 <context>
