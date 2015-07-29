@@ -11,29 +11,29 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <div class="background"></div>
     <div class="wrapper">
       <header>
-        <h1>QtPass <small>beta</small></h1>
+        <h1>QtPass <small>0.9.1</small></h1>
         <p>QtPass is a multi-platform GUI for <a href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 
         <p class="view">
@@ -46,108 +46,110 @@
           <li><a href="https://github.com/IJHack/qtpass">View On <strong>GitHub</strong></a></li>
         </ul>
         
-	<div class="screenshots">   
-		<img id="qtpass" src="images/qtpass.png" alt="QtPass beta" />
-        	<img id="config" class="hidden" src="images/config.png" alt="QtPass configuration" />
-	</div>
+      	<div class="screenshots">   
+      		<img id="qtpass" src="images/qtpass.png" alt="QtPass beta" />
+              	<img id="config" class="hidden" src="images/config.png" alt="QtPass configuration" />
+      	</div>
 
       </header>
       <section>
-        <h2>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+        <h2><a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
-<ul>
-<li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
-<li>Cross platform: Linux, BSD, OS X and Windows</li>
-<li>Reading pass <a href="http://www.passwordstore.org/">password stores</a></li>
-<li>Decrypting and displaying the password and related info</li>
-<li>Editing and adding of passwords and information</li>
-<li>Updating to and from a git repository</li>
-<li>Per-folder user selection for multi recipient encryption</li>
-<li>Configuration options for backends and executable/folder locations</li>
-<li>Copying password to clipboard</li>
-<li>Configurable shoulder surfing protection options</li>
-<li>Experimental WebDAV support </li>
-</ul>
+        <ul>
+        <li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
+        <li>Cross platform: Linux, BSD, OS X and Windows</li>
+        <li>Reading pass <a href="http://www.passwordstore.org/">password stores</a></li>
+        <li>Decrypting and displaying the password and related info</li>
+        <li>Editing and adding of passwords and information</li>
+        <li>Updating to and from a git repository</li>
+        <li>Per-folder user selection for multi recipient encryption</li>
+        <li>Configuration options for backends and executable/folder locations</li>
+        <li>Copying password to clipboard</li>
+        <li>Configurable shoulder surfing protection options</li>
+        <li>Experimental WebDAV support </li>
+        </ul>
 
-<p>While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5.</p>
+        <p>While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5.</p>
 
-<h2>
-<a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
+        <h2><a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
 
-<p>Using this program will not magically keep your passwords secure against
-compromised computers even if you use it in combination with a smartcard.</p>
+        <p>Using this program will not magically keep your passwords secure against
+        compromised computers even if you use it in combination with a smartcard.</p>
 
-<p>It does protect future and changed passwords though against anyone with access to
-your password store only but not your keys.
-Used with a smartcard it also protects against anyone just monitoring/copying
-all files/keystrokes on that machine and such an attacker would only gain access
-to the passwords you actually use.
-Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298
-even without your PIN) all your passwords available to the machine can be
-decrypted by it, if there is malicious software targeted specifically against
-it installed (or at least one that knows how to use a smartcard).</p>
+        <p>It does protect future and changed passwords though against anyone with access to
+        your password store only but not your keys.
+        Used with a smartcard it also protects against anyone just monitoring/copying
+        all files/keystrokes on that machine and such an attacker would only gain access
+        to the passwords you actually use.
+        Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298
+        even without your PIN) all your passwords available to the machine can be
+        decrypted by it, if there is malicious software targeted specifically against
+        it installed (or at least one that knows how to use a smartcard).</p>
 
-<p>To get better protection out of use with a smartcard even against a targeted
-attack I can think of at least two options:</p>
+        <p>To get better protection out of use with a smartcard even against a targeted
+        attack I can think of at least two options:</p>
 
-<ul>
-<li>The smartcard must require explicit confirmation for each decryption operation.
-Or if it just provides a counter for decrypted data you could at least notice
-an attack afterwards, though at quite some effort on your part.</li>
-<li>Use a different smartcard for each (group of) key.</li>
-<li>If using a YubiKey or U2F module or similar that requires a "button" press for
-other authentication methods you can use one OTP/U2F enabled WebDAV account per
-password (or groups of passwords) as a quite inconvenient workaround.
-Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
-(so you would have to run your own server).</li>
-</ul>
+        <ul>
+          <li>The smartcard must require explicit confirmation for each decryption operation.
+          Or if it just provides a counter for decrypted data you could at least notice
+          an attack afterwards, though at quite some effort on your part.</li>
+          <li>Use a different smartcard for each (group of) key.</li>
+          <li>If using a YubiKey or U2F module or similar that requires a "button" press for
+          other authentication methods you can use one OTP/U2F enabled WebDAV account per
+          password (or groups of passwords) as a quite inconvenient workaround.
+          Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
+          (so you would have to run your own server).</li>
+        </ul>
 
-<h2>
-<a id="planned-features" class="anchor" href="#planned-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planned features</h2>
+        <h2><a id="planned-features" class="anchor" href="#planned-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planned features</h2>
 
-<ul>
-<li>Re-encryption after users-change (optional ofcourse)</li>
-<li><del>Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)</del></li>
-<li><del>Right click handlers for file/folder and content</del></li>
-<li><del>First use wizards to set up password-store (and decryption key, currently always the gpg default key)</del></li>
-<li><del>Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen</del></li>
-<li><del>Password generation with options for what kind you'd like</del></li>
-<li>Templates (username, url etc) in Add / Edit screen (configurable templates)</li>
-<li><del>Colour coding or disabling of people you can't encrypt for (trust settings) in User management</del></li>
-<li>Colour coding folders (possibly disabling folders you can't decrypt)</li>
-<li>WebDAV (configuration) support</li>
-<li>Optional table view of decrypted folder contents</li>
-<li>Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?</li>
-<li>Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)</li>
-</ul>
+          <ul>
+          <li>Re-encryption after users-change (optional ofcourse)</li>
+          <li><del>Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)</del></li>
+          <li><del>Right click handlers for file/folder and content</del></li>
+          <li><del>First use wizards to set up password-store (and decryption key, currently always the gpg default key)</del></li>
+          <li><del>Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen</del></li>
+          <li><del>Password generation with options for what kind you'd like</del></li>
+          <li>Templates (username, url etc) in Add / Edit screen (configurable templates)</li>
+          <li><del>Colour coding or disabling of people you can't encrypt for (trust settings) in User management</del></li>
+          <li>Colour coding folders (possibly disabling folders you can't decrypt)</li>
+          <li>WebDAV (configuration) support</li>
+          <li>Optional table view of decrypted folder contents</li>
+          <li>Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?</li>
+          <li>Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)</li>
+        </ul>
 
-<h2>
-<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known issues</h2>
+        <h2><a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known issues</h2>
 
-<ul>
-<li>Filtering (searching) breaks the tree/model sometimes </li>
-<li>On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN</li>
-</ul>
+        <ul>
+          <li>Filtering (searching) breaks the tree/model sometimes </li>
+          <li>On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN</li>
+        </ul>
 
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+        <h2><a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>On most systems all you need is:
-<code>qmake &amp;&amp; make &amp;&amp; make install</code></p>
+        <p>On most systems all you need is:
+          <code>qmake &amp;&amp; make &amp;&amp; make install</code>
+        </p>
 
-<p>On MacOsX:
-<code>qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app -dmg</code><br />
-Currently seems to only work with MacGPG2</p>
+        <p>On MacOsX:
+          <code>qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app -dmg</code><br />
+          Currently seems to only work with MacGPG2
+        </p>
 
-<p>
-	<a href="https://travis-ci.org/IJHack/qtpass"><img src="https://travis-ci.org/IJHack/qtpass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/qtpass.svg?branch=master" style="max-width:100%;"></a>
-	<a href="https://scan.coverity.com/projects/5266"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
-</p>
+        <p>
+        	<br />
+        	<img class="compatible" src="images/linux.png" alt="Linux Compatible" />
+        	<img class="compatible" src="images/win10.png" alt="Windows 10 Compatible" />
+        	<img class="compatible" src="images/osxy.png" alt="OS X Compatible" />
+        	<img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible" />
+        </p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/IJHack">IJHack</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      	<a href="https://travis-ci.org/IJHack/qtpass"><img src="https://travis-ci.org/IJHack/qtpass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/qtpass.svg?branch=master" style="max-width:100%;"></a>
+      	<a href="https://scan.coverity.com/projects/5266"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

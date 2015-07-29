@@ -183,6 +183,12 @@ footer {
   bottom:50px;
 }
 
+.compatible {
+	width: auto;
+	height: 120px;
+	margin-right: 10px;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
@@ -232,6 +238,10 @@ footer {
     height: 500px;
     width: 175%;
   }
+
+  .compatible {
+	height: 110px;
+  }
 }
   
 @media print, screen and (max-width: 720px) {
@@ -255,6 +265,10 @@ footer {
   pre, code {
     word-wrap:normal;
   }
+
+  .compatible {
+	height: 90px;
+  }
 }
 
 @media print, screen and (max-width: 480px) {
@@ -268,6 +282,10 @@ footer {
 
   header ul {
     display:none;
+  }
+
+  .compatible {
+	height: 70px;
   }
 }
 
@@ -306,6 +324,5 @@ footer {
   width: 100%;
   height: 100%;
   background: url(../images/logo.png) no-repeat 200px 100px;
-  opacity: 0.2;
+  opacity: 0.1;
 }
-
