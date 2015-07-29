@@ -10,13 +10,17 @@ Where can I ask for help?
 * Send an email to help@qtpass.org
 
 Where did you get that awesome logo?
+* The logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
 
-Can I help?
+How can I help improve QtPass?
+------------------------------
 
 I hate the design, what gives?
+* It's all on github, clone, change and send a pull request.
+* Open an issue and point out defects or better yet propose changes.
 
 Can I import from KeePass, LastPass or X?
-* Probably, check http://passowrd-store.org/ for more info.
+* Probably, check http://www.passwordstore.org/ for more info.
 
 I would like to donate!
 * Time
