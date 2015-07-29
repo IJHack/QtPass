@@ -3,7 +3,6 @@ QtPass [![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](
 
 QtPass is a GUI for [pass](http://www.passwordstore.org/), the standard unix password manager.
 
-
 Features
 --------
 * Using pass or git and gpg2 directly
@@ -71,9 +70,6 @@ On most systems all you need is:
 On Mac OS X:
 `qmake && make && macdeployqt QtPass.app`
 * Currently seems to only work with MacGPG2
-
-On some systems there are issues with qt4 and qt5 being installed at the same time.
-An easy fix is regenerating the Makefile with: `make clean && rm Makefile && qmake -qt5` or if qmake is ambiguous: `qmake-qt5`. On Debian (and derivatives such as Ubuntu), the `qt5-default` package will install the required build tools.
 
 Further reading
 ---------------
