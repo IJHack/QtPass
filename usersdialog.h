@@ -37,6 +37,7 @@ private slots:
     void itemChange(QListWidgetItem *);
     void on_clearButton_clicked();
     void on_lineEdit_textChanged(const QString &filter);
+    void on_checkBox_clicked();
 
 private:
     Ui::UsersDialog *ui;

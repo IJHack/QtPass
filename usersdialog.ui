@@ -63,6 +63,13 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Show unusable keys</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>

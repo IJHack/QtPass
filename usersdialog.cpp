@@ -44,6 +44,9 @@ void UsersDialog::populateList(const QString &filter)
         for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
             UserInfo &user(*it);
             if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
+                if (user.validity == '-' && !ui->checkBox->isChecked()) {
+                    continue;
+                }
                 QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
@@ -61,7 +64,7 @@ void UsersDialog::populateList(const QString &filter)
 void UsersDialog::on_clearButton_clicked()
 {
     ui->lineEdit->clear();
-    on_lineEdit_textChanged("");
+    populateList("");
 }
 
 void UsersDialog::on_lineEdit_textChanged(const QString &filter)
@@ -72,4 +75,8 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter)
 void UsersDialog::closeEvent(QCloseEvent *event) {
     // TODO save window size or somethign
     event->accept();
+}
+
+void UsersDialog::on_checkBox_clicked() {
+    populateList(ui->lineEdit->text());
 }
