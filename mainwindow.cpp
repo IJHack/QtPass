@@ -360,8 +360,9 @@ void MainWindow::config() {
     d->useSymbols(useSymbols);
     d->setPasswordLength(passwordLength);
     d->setPasswordChars(passwordChars);
-    d->wizard(); // does shit
-
+    if (startupPhase) {
+        d->wizard(); // does shit
+    }
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
             passExecutable = d->getPassPath();
@@ -1047,7 +1048,7 @@ void MainWindow::on_editButton_clicked()
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
-    waitFor(20);
+    waitFor(5);
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
@@ -1479,7 +1480,7 @@ void MainWindow::editPassword()
 QString MainWindow::generatePassword() {
     QString passwd;
     if (usePwgen) {
-        waitFor(10);
+        waitFor(2);
         QString args = (useSymbols?"--symbols -1 ":"-1 ") + QString::number(passwordLength);
         currentAction = PWGEN;
         executeWrapper(pwgenExecutable, args);
