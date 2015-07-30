@@ -1047,9 +1047,7 @@ void MainWindow::on_editButton_clicked()
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
-    while (!process->atEnd() || !execQueue->isEmpty()) {
-        Util::qSleep(100);
-    }
+    waitFor(20);
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
@@ -1455,9 +1453,7 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
-    while (!process->atEnd() || !execQueue->isEmpty()) {
-        Util::qSleep(100);
-    }
+    waitFor(30);
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";
@@ -1483,9 +1479,7 @@ void MainWindow::editPassword()
 QString MainWindow::generatePassword() {
     QString passwd;
     if (usePwgen) {
-        while (!process->atEnd() || !execQueue->isEmpty()) {
-            Util::qSleep(100);
-        }
+        waitFor(10);
         QString args = (useSymbols?"--symbols -1 ":"-1 ") + QString::number(passwordLength);
         currentAction = PWGEN;
         executeWrapper(pwgenExecutable, args);
@@ -1504,4 +1498,19 @@ QString MainWindow::generatePassword() {
         }
     }
     return passwd;
+}
+
+void MainWindow::waitFor(int seconds)
+{
+    QDateTime current = QDateTime::currentDateTime();
+    uint stop =  current.toTime_t() + seconds;
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        current = QDateTime::currentDateTime();
+        if (stop < current.toTime_t()) {
+            QMessageBox::critical(this, tr("Timed out"),
+                tr("Can't start process, previous one is still running!"));
+            return;
+        }
+        Util::qSleep(100);
+    }
 }

@@ -140,6 +140,7 @@ private:
     void initTrayIcon();
     void destroyTrayIcon();
     bool removeDir(const QString & dirName);
+    void waitFor(int);
 };
 
 #endif // MAINWINDOW_H
