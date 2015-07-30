@@ -5,6 +5,7 @@
 #include <QList>
 #include <QStandardItemModel>
 #include <QCloseEvent>
+#include <QDateTime>
 
 namespace Ui {
 class UsersDialog;
@@ -19,6 +20,8 @@ struct UserInfo {
     char validity;
     bool have_secret;
     bool enabled;
+    QDateTime expiry;
+    QDateTime created;
 };
 
 class UsersDialog : public QDialog
