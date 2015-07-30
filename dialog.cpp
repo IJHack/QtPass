@@ -422,7 +422,12 @@ QHash<QString, QString> Dialog::getProfiles()
     for (int i = 0; i < ui->profileTable->rowCount(); i++) {
         QTableWidgetItem* pathItem = ui->profileTable->item(i, 1);
         if (0 != pathItem) {
-            profiles.insert(ui->profileTable->item(i, 0)->text(),
+            QTableWidgetItem* item = ui->profileTable->item(i, 0);
+            if (item == 0) {
+                qDebug() << "empty name, shoud fix in frontend";
+                continue;
+            }
+            profiles.insert(item->text(),
                             pathItem->text());
         }
     }
