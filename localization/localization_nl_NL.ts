@@ -215,42 +215,42 @@
         <translation>Verberg inhoud</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="487"/>
+        <location filename="../dialog.cpp" line="492"/>
         <source>GnuPG not found</source>
         <translation>GnuPG niet gevonden</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="488"/>
+        <location filename="../dialog.cpp" line="493"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="505"/>
+        <location filename="../dialog.cpp" line="510"/>
         <source>Create password-store?</source>
         <translation>Maak password-store aan?</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="506"/>
+        <location filename="../dialog.cpp" line="511"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wil je een password-store maken op %1?</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="520"/>
         <source>Password store not initialised</source>
         <translation>Password-store niet geïnitialiseerd</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="516"/>
+        <location filename="../dialog.cpp" line="521"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="452"/>
+        <location filename="../dialog.cpp" line="457"/>
         <source>No profile selected</source>
         <translation>Geen profiel geselecteerd</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="453"/>
+        <location filename="../dialog.cpp" line="458"/>
         <source>No profile selected to delete</source>
         <translation>Geen profiel geselecteerd om te verwijderen</translation>
     </message>
@@ -331,13 +331,13 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="61"/>
-        <location filename="../mainwindow.cpp" line="1426"/>
+        <location filename="../mainwindow.cpp" line="1421"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="68"/>
-        <location filename="../mainwindow.cpp" line="1430"/>
+        <location filename="../mainwindow.cpp" line="1425"/>
         <source>Delete</source>
         <translation>Verwijderen</translation>
     </message>
@@ -353,7 +353,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="89"/>
-        <location filename="../mainwindow.cpp" line="1421"/>
+        <location filename="../mainwindow.cpp" line="1416"/>
         <source>Users</source>
         <translation>Gebruikers</translation>
     </message>
@@ -457,7 +457,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="652"/>
         <source>Clipboard not cleared</source>
-        <translation>Klembord niet leeg gemaakt, er stond geen wachtwoord in.</translation>
+        <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="702"/>
@@ -490,24 +490,34 @@ p, li { white-space: pre-wrap; }
         <translation>Er ging iets raars mis met proces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="945"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>New password file, will be placed in folder %1:</source>
         <translation>Nieuw wachtwoord bestand, komt in map %1:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1419"/>
+        <location filename="../mainwindow.cpp" line="1414"/>
         <source>Add folder</source>
         <translation>Voeg map toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1420"/>
+        <location filename="../mainwindow.cpp" line="1415"/>
         <source>Add password</source>
         <translation>Voeg wachtwoord toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1445"/>
+        <location filename="../mainwindow.cpp" line="1440"/>
         <source>New folder, will be placed in folder %1:</source>
         <translation>Nieuwe map, wordt geplaatst in map %1:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1510"/>
+        <source>Timed out</source>
+        <translation>Duurt te lang</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1511"/>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation>Kan process niet starten, vorige loopt nog steeds!</translation>
     </message>
     <message>
         <source>Looking for: </source>
@@ -519,92 +529,92 @@ p, li { white-space: pre-wrap; }
         <translation>Welkom bij QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="778"/>
+        <location filename="../mainwindow.cpp" line="773"/>
         <source>Looking for: %1</source>
         <translation>Op zoek naar: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
-        <location filename="../mainwindow.cpp" line="1040"/>
+        <location filename="../mainwindow.cpp" line="914"/>
+        <location filename="../mainwindow.cpp" line="1035"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="920"/>
+        <location filename="../mainwindow.cpp" line="915"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="944"/>
-        <location filename="../mainwindow.cpp" line="1444"/>
+        <location filename="../mainwindow.cpp" line="939"/>
+        <location filename="../mainwindow.cpp" line="1439"/>
         <source>New file</source>
         <translation>Nieuw bestand</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="968"/>
+        <location filename="../mainwindow.cpp" line="963"/>
         <source>Delete password?</source>
         <translation>Verwijder wachtwoord?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="969"/>
-        <location filename="../mainwindow.cpp" line="986"/>
+        <location filename="../mainwindow.cpp" line="964"/>
+        <location filename="../mainwindow.cpp" line="981"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Weet je zeker dat je %1 wil verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="985"/>
+        <location filename="../mainwindow.cpp" line="980"/>
         <source>Delete folder?</source>
         <translation>Verwijder map?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1041"/>
+        <location filename="../mainwindow.cpp" line="1036"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Geselecteerde wachtwoord bestand bestaat niet, kan niet bewerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1100"/>
         <source>Can not get key list</source>
         <translation>Kan sleutel lijst niet verkrijgen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1106"/>
+        <location filename="../mainwindow.cpp" line="1101"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1138"/>
+        <location filename="../mainwindow.cpp" line="1133"/>
         <source>Key not found in keyring</source>
         <translation>Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1155"/>
         <source>Cannot update</source>
         <translation>Kan niet updaten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1161"/>
+        <location filename="../mainwindow.cpp" line="1156"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Kon .gpg-id bestand niet openen om te schrijven.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1173"/>
+        <location filename="../mainwindow.cpp" line="1168"/>
         <source>Check selected users!</source>
         <translation>Kontroleer geselecteerde gebruikers!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1174"/>
+        <location filename="../mainwindow.cpp" line="1169"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
 Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1268"/>
+        <location filename="../mainwindow.cpp" line="1263"/>
         <source>Generating GPG key pair</source>
         <translation>Nieuw GPG sleutelpaar genereren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1316"/>
+        <location filename="../mainwindow.cpp" line="1311"/>
         <source>Profile changed to %1</source>
         <translation>Profiel veranderd naar %1</translation>
     </message>
@@ -654,6 +664,16 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <location filename="../usersdialog.ui" line="69"/>
         <source>Show unusable keys</source>
         <translation>Toon onbruikbare sleutels</translation>
+    </message>
+    <message>
+        <location filename="../usersdialog.cpp" line="56"/>
+        <source>created</source>
+        <translation>aangemaakt</translation>
+    </message>
+    <message>
+        <location filename="../usersdialog.cpp" line="60"/>
+        <source>expires</source>
+        <translation>vervalt</translation>
     </message>
 </context>
 <context>
