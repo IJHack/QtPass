@@ -740,12 +740,7 @@ void MainWindow::setGitExecutable(QString path) {
 }
 
 /**
- * @briefUsersDialog d(this);
-    d.setUsers(&users);
-    if (!d.exec()) {
-        d.setUsers(NULL);
-        return;
-    } MainWindow::setGpgExecutable
+ * @brief MainWindow::setGpgExecutable
  * @param path
  */
 void MainWindow::setGpgExecutable(QString path) {
@@ -1079,6 +1074,8 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
             current_user.key_id = props[4];
             current_user.name   = props[9];
             current_user.validity = props[8][0].toLatin1();
+            current_user.created.setTime_t(props[5].toInt());
+            current_user.expiry.setTime_t(props[6].toInt());
         } else if (current_user.name.isEmpty() && props[0] == "uid") {
             current_user.name = props[9];
         }

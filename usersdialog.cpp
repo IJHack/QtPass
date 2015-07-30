@@ -1,6 +1,7 @@
 #include "usersdialog.h"
 #include "ui_usersdialog.h"
 #include <QRegExp>
+#include <QDebug>
 
 UsersDialog::UsersDialog(QWidget *parent) :
     QDialog(parent),
@@ -47,7 +48,18 @@ void UsersDialog::populateList(const QString &filter)
                 if (user.validity == '-' && !ui->checkBox->isChecked()) {
                     continue;
                 }
-                QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
+                if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0 && !ui->checkBox->isChecked()) {
+                    continue;
+                }
+                QString userText = user.name + "\n" + user.key_id;
+                if (user.created.toTime_t() > 0) {
+                    userText += " " + tr("created")  + " " + user.created.toString(Qt::SystemLocaleShortDate);
+
+                }
+                if (user.expiry.toTime_t() > 0) {
+                    userText += " " + tr("expires")  + " " + user.expiry.toString(Qt::SystemLocaleShortDate);
+                }
+                QListWidgetItem *item = new QListWidgetItem(userText, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
                 if (user.have_secret) {

@@ -18,7 +18,7 @@ macx {
 }
 
 TEMPLATE   = app
-VERSION    = 0.9.1
+VERSION    = 0.9.2
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
