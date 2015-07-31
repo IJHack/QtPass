@@ -748,3 +748,27 @@ bool Dialog::startMinimized() {
 void Dialog::startMinimized(bool startMinimized) {
     ui->checkBoxStartMinimized->setChecked(startMinimized);
 }
+
+/**
+ * @brief Dialog::on_checkBoxUseTemplate_clicked
+ */
+void Dialog::on_checkBoxUseTemplate_clicked() {
+    ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
+}
+
+void Dialog::useTemplate(bool useTemplate) {
+   ui->checkBoxUseTemplate->setChecked(useTemplate);
+   on_checkBoxUseTemplate_clicked();
+}
+
+bool Dialog::useTemplate() {
+    return ui->checkBoxUseTemplate->isChecked();
+}
+
+void Dialog::setTemplate(QString passTemplate) {
+    ui->plainTextEditTemplate->setPlainText(passTemplate);
+}
+
+QString Dialog::getTemplate() {
+    return ui->plainTextEditTemplate->toPlainText();
+}

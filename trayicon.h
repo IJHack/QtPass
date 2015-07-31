@@ -28,7 +28,7 @@ private:
 
 //    QAction *minimizeAction;
 //    QAction *maximizeAction;
-//    QAction *restoreAction;
+    QAction *settingsAction;
     QAction *quitAction;
 
     QSystemTrayIcon *sysTrayIcon;

@@ -9,6 +9,8 @@ PasswordDialog::PasswordDialog(MainWindow *parent) :
     ui->setupUi(this);
 }
 
+
+
 PasswordDialog::~PasswordDialog()
 {
     delete ui;
@@ -41,4 +43,10 @@ void PasswordDialog::setPassword(QString password)
 QString PasswordDialog::getPassword()
 {
     return ui->lineEditPassword->text() + "\n" + ui->plainTextEdit->toPlainText();
+}
+
+void PasswordDialog::setTemplate(QString fields) {
+
+    //ui->templateHolderWidget->addWidget();
+    return;
 }
