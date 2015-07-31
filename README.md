@@ -48,14 +48,9 @@ Known issues
 
 Planned features
 ----------------
-* Re-encryption after users-change (optional ofcourse)
-* ~~Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)~~
-* ~~Right click handlers for file/folder and content~~
-* ~~First use wizards to set up password-store (and decryption key, currently always the gpg default key)~~
-* ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
-* ~~Password generation with options for what kind you'd like~~
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
-* ~~Colour coding or disabling of people you can't encrypt for (trust settings) in User management~~
+* PLugins based on field name, plugins follow same format as password files
+* Re-encryption after users-change (optional of course)
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
