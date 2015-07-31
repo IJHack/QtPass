@@ -229,6 +229,9 @@ bool MainWindow::checkConfig() {
         destroyTrayIcon();
     }
 
+    passTemplate = settings.value("passTemplate").toString();
+    useTemplate = settings.value("useTemplate").toBool();
+
     //qDebug() << version;
 
     // Config updates
@@ -251,7 +254,6 @@ bool MainWindow::checkConfig() {
             // upgrade to 0.9
         }
     }*/
-
     settings.setValue("version", VERSION);
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
@@ -360,6 +362,8 @@ void MainWindow::config() {
     d->useSymbols(useSymbols);
     d->setPasswordLength(passwordLength);
     d->setPasswordChars(passwordChars);
+    d->useTemplate(useTemplate);
+    d->setTemplate(passTemplate);
     if (startupPhase) {
         d->wizard(); // does shit
     }
@@ -386,6 +390,8 @@ void MainWindow::config() {
             useSymbols = d->useSymbols();
             passwordLength = d->getPasswordLength();
             passwordChars = d->getPasswordChars();
+            useTemplate = d->useTemplate();
+            passTemplate = d->getTemplate();
 
             QSettings &settings(getSettings());
 
@@ -410,6 +416,8 @@ void MainWindow::config() {
             settings.setValue("useSymbols", useSymbols ? "true" : "false");
             settings.setValue("passwordLength", passwordLength);
             settings.setValue("passwordChars", passwordChars);
+            settings.setValue("useTemplate", useTemplate);
+            settings.setValue("passTemplate", passTemplate);
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");
@@ -896,6 +904,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
     }
     PasswordDialog d(this);
     d.setPassword(lastDecrypt);
+    d.setTemplate(passTemplate);
     if (!d.exec()) {
         d.setPassword(NULL);
         return;

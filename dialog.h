@@ -65,6 +65,10 @@ public:
     bool useSymbols();
     int getPasswordLength();
     QString getPasswordChars();
+    bool useTemplate();
+    void useTemplate(bool);
+    QString getTemplate();
+    void setTemplate(QString);
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -84,6 +88,7 @@ private slots:
     void on_checkBoxUseTrayIcon_clicked();
     void on_checkBoxUseGit_clicked();
     void on_checkBoxUsePwgen_clicked();
+    void on_checkBoxUseTemplate_clicked();
 
 private:
     QScopedPointer<Ui::Dialog> ui;

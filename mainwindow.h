@@ -47,6 +47,7 @@ public:
     void generateKeyPair(QString, QDialog *);
     void userDialog(QString = "");
     QString generatePassword();
+    void config();
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -120,10 +121,11 @@ private:
     bool useSymbols;
     int passwordLength;
     QString passwordChars;
+    bool useTemplate;
+    QString passTemplate;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
-    void config();
     void enableUiElements(bool);
     void selectFirstFile();
     QModelIndex firstFile(QModelIndex parentIndex);

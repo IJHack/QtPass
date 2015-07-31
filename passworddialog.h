@@ -17,6 +17,7 @@ public:
     ~PasswordDialog();
     void setPassword(QString);
     QString getPassword();
+    void setTemplate(QString);
 
 private slots:
     void on_checkBoxShow_stateChanged(int arg1);
@@ -25,6 +26,8 @@ private slots:
 private:
     Ui::PasswordDialog *ui;
     MainWindow *mainWindow;
+    QString passTemplate;
+    void addFields();
 
 };
 
