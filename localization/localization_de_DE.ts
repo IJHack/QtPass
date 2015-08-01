@@ -97,7 +97,7 @@
     <message>
         <location filename="../dialog.ui" line="286"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort ausblenden</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="158"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../dialog.ui" line="36"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programme</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="130"/>
@@ -122,12 +122,12 @@
     <message>
         <location filename="../dialog.ui" line="194"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="232"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="251"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../dialog.ui" line="258"/>
         <source>Use clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwischenablage verwenden</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="293"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../dialog.ui" line="371"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profile</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="405"/>
@@ -187,12 +187,12 @@
     <message>
         <location filename="../dialog.ui" line="410"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="420"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="434"/>
@@ -207,12 +207,12 @@
     <message>
         <location filename="../dialog.ui" line="427"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="317"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhalt ausblenden</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="492"/>
@@ -247,12 +247,12 @@
     <message>
         <location filename="../dialog.cpp" line="457"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Profil ausgewählt</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="458"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kein Profil zum Löschen ausgewählt</translation>
     </message>
 </context>
 <context>
@@ -327,19 +327,19 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="54"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="61"/>
         <location filename="../mainwindow.cpp" line="1421"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="68"/>
         <location filename="../mainwindow.cpp" line="1425"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="75"/>
@@ -355,7 +355,7 @@ Expire-Date: 0
         <location filename="../mainwindow.ui" line="89"/>
         <location filename="../mainwindow.cpp" line="1416"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
@@ -432,17 +432,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="607"/>
         <source>Password hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort ausgeblendet</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="611"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhalt ausgeblendet</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="652"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwischenablage nicht leer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="702"/>
@@ -477,17 +477,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="940"/>
         <source>New password file, will be placed in folder %1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Passwortdatei wird gespeichert im Ordner %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1414"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1415"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1440"/>
@@ -497,7 +497,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1510"/>
         <source>Timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitüberschreitung</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1511"/>
@@ -512,13 +512,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="773"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche nach: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="914"/>
         <location filename="../mainwindow.cpp" line="1035"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="915"/>
@@ -529,23 +529,23 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="939"/>
         <location filename="../mainwindow.cpp" line="1439"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Datei</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="963"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort löschen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="964"/>
         <location filename="../mainwindow.cpp" line="981"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sicher, dassSie %1 löschen wollen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="980"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner löschen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1036"/>
@@ -570,7 +570,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1155"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Update nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1156"/>
@@ -580,7 +580,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1168"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausgewählte Benutzer prüfen!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1169"/>
@@ -596,7 +596,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../mainwindow.cpp" line="1311"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil geändert zu %1</translation>
     </message>
 </context>
 <context>
@@ -604,17 +604,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../passworddialog.ui" line="14"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="59"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="68"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort anzeigen</translation>
     </message>
 </context>
 <context>
@@ -645,12 +645,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../usersdialog.cpp" line="56"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>erstellt</translation>
     </message>
     <message>
         <location filename="../usersdialog.cpp" line="60"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>gültig bis</translation>
     </message>
 </context>
 <context>
@@ -658,7 +658,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../trayicon.cpp" line="39"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 </TS>
