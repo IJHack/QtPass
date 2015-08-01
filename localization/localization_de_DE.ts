@@ -34,7 +34,7 @@
     </message>
     <message>
         <source>Executable pass</source>
-        <translation type="vanished">Ausführbares pass</translation>
+        <translation type="vanished">Ausführbarer Pass</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="87"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../dialog.ui" line="327"/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Sonderzeichen verwenden </translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="344"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../dialog.ui" line="361"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimiert starten</translation>
     </message>
     <message>
         <location filename="../dialog.ui" line="371"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../dialog.cpp" line="492"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>GnuPG nicht gefunden</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="493"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../dialog.cpp" line="458"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished">Kein Profil zum Löschen ausgewählt</translation>
+        <translation>Kein Profil zum Löschen ausgewählt</translation>
     </message>
 </context>
 <context>
@@ -275,7 +275,7 @@
     <message>
         <location filename="../keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-Mail</translation>
     </message>
     <message>
         <location filename="../keygendialog.ui" line="108"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../keygendialog.ui" line="138"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Experte</translation>
     </message>
     <message>
         <location filename="../keygendialog.ui" line="151"/>
@@ -410,18 +410,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="107"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass WebDAV Passwort</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="108"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort für WebDAV eingeben:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="124"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Unerwarteter Abbruch durch fusedav</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="128"/>
@@ -540,7 +540,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="964"/>
         <location filename="../mainwindow.cpp" line="981"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Sind Sie sicher, dassSie %1 löschen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie %1 löschen wollen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="980"/>
@@ -580,7 +580,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1168"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">Ausgewählte Benutzer prüfen!</translation>
+        <translation>Ausgewählte Benutzer prüfen!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1169"/>
