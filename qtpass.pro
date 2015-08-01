@@ -69,6 +69,10 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_he_IL.ts \
                     localization/localization_zh_CN.ts
 
+CODECFORSRC     = UTF-8
+CODECFORTR      = UTF-8
+
+
 RESOURCES   += resources.qrc
 
 win32 {
