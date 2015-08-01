@@ -20,5 +20,9 @@
         <file>artwork/icon.ico</file>
         <file>artwork/icon.png</file>
         <file>artwork/icon.svg</file>
+        <file>localization/localization_zh_CN.qm</file>
+        <file>localization/localization_zh_CN.ts</file>
+        <file>localization/localization_he_IL.ts</file>
+        <file>localization/localization_he_IL.qm</file>
     </qresource>
 </RCC>
