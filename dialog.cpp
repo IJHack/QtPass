@@ -495,7 +495,7 @@ void Dialog::wizard()
     }
 
     QStringList names = mainWindow->getSecretKeys();
-    //qDebug() << names;
+    qDebug() << names;
     if (QFile(gpg).exists() && names.empty()) {
         KeygenDialog d(this);
         if (!d.exec()) {
@@ -511,11 +511,17 @@ void Dialog::wizard()
             tr("Would you like to create a password-store at %1?").arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
                 QDir().mkdir(passStore);
+
+                if(useGit()) {
+                    mainWindow->executePassGitInit();
+                }
                 mainWindow->userDialog(passStore);
         }
     }
 
     if(!QFile(passStore + ".gpg-id").exists()){
+        qDebug() << ".gpg-id file does not exist";
+
         if (!clean) {
             criticalMessage(tr("Password store not initialised"),
                 tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
@@ -528,6 +534,7 @@ void Dialog::wizard()
             passStore = ui->storePath->text();
         }
         if (!QFile(passStore + ".gpg-id").exists()) {
+            qDebug() << ".gpg-id file still does not exist :/";
             // appears not to be store
             // init yes / no ?
             mainWindow->userDialog(passStore);
