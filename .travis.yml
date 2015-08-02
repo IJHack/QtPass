@@ -1,4 +1,5 @@
 language: cpp
+sudo: false
 
 os:
   - linux
@@ -8,28 +9,14 @@ compiler:
   - gcc
   - clang
 
-before_install:
-  - if [ "$CXX" = "g++" ]; then sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y; fi
-  - if [ "$CXX" = "g++" ]; then sudo apt-get update -qq; fi
-  - if [ "$CXX" = "g++" ]; then sudo apt-get install g++-4.8; fi
-  - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50; fi
-  - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50; fi
-  - QtMkspec=$CC
-  - $CC --version
-  - which $CC
-  # workaround clang not system wide, fail on sudo make install
-  - export CC=`which $CC`
-  - wget -O Qt5.2.0.tar.xz https://dl.dropboxusercontent.com/u/20447449/Qt5.2.0.tar.xz
-  - mkdir ~/Qt5.2.0
-  - tar -xJf Qt5.2.0.tar.xz -C ~/Qt5.2.0
-  - sudo chmod -R 777 ~/Qt5.2.0/
-  - ln -s ~/Qt5.2.0/5.2.0/gcc_64/mkspecs/linux-g++ ~/Qt5.2.0/5.2.0/gcc_64/mkspecs/linux-gcc
-  - cd ..
+addons:
+  apt:
+    packages:
+    - qt5-default
 
 script:
-  - cd qtpass
-  - ~/Qt5.2.0/5.2.0/gcc_64/bin/qmake -v
-  - ~/Qt5.2.0/5.2.0/gcc_64/bin/qmake -spec linux-$QtMkspec -Wall qtpass.pro
+  - qmake -v
+  - qmake -Wall qtpass.pro
   - make -j$(nproc)
 
 notifications:

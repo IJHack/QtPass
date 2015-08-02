@@ -31,7 +31,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL };
+enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -44,8 +44,9 @@ public:
     void setApp(SingleApplication* app);
     void setText(QString);
     QStringList getSecretKeys();
-    void genKey(QString, QDialog *);
+    void generateKeyPair(QString, QDialog *);
     void userDialog(QString = "");
+    QString generatePassword();
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -91,6 +92,7 @@ private:
     QString passExecutable;
     QString gitExecutable;
     QString gpgExecutable;
+    QString pwgenExecutable;
     QString gpgHome;
     bool useWebDav;
     QString webDavUrl;
@@ -103,7 +105,7 @@ private:
     bool wrapperRunning;
     QStringList env;
     QQueue<execQueueItem> *execQueue;
-    bool firstRun;
+    bool freshStart;
     QDialog *keygen;
     QString currentDir;
     QHash<QString, QString> profiles;
@@ -112,6 +114,12 @@ private:
     trayIcon *tray;
     bool useTrayIcon;
     bool hideOnClose;
+    bool startMinimized;
+    bool useGit;
+    bool usePwgen;
+    bool useSymbols;
+    int passwordLength;
+    QString passwordChars;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
@@ -132,6 +140,7 @@ private:
     void initTrayIcon();
     void destroyTrayIcon();
     bool removeDir(const QString & dirName);
+    void waitFor(int);
 };
 
 #endif // MAINWINDOW_H

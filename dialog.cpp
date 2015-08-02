@@ -45,6 +45,12 @@ void Dialog::setPassPath(QString path) {
  */
 void Dialog::setGitPath(QString path) {
     ui->gitPath->setText(path);
+    if (path.isEmpty()) {
+        useGit(false);
+        ui->checkBoxUseGit->setEnabled(false);
+    } else {
+        ui->checkBoxUseGit->setEnabled(true);
+    }
 }
 
 /**
@@ -182,8 +188,12 @@ QString Dialog::selectFolder() {
 void Dialog::on_toolButtonGit_clicked()
 {
     QString git = selectExecutable();
-    if (git != "") {
+    if (!git.isEmpty()) {
         ui->gitPath->setText(git);
+        ui->checkBoxUseGit->setEnabled(true);
+    } else {
+        useGit(false);
+        ui->checkBoxUseGit->setEnabled(false);
     }
 }
 
@@ -368,7 +378,7 @@ void Dialog::addGPGId(bool addGPGId)
  */
 void Dialog::genKey(QString batch, QDialog *dialog)
 {
-    mainWindow->genKey(batch, dialog);
+    mainWindow->generateKeyPair(batch, dialog);
 }
 
 /**
@@ -378,6 +388,12 @@ void Dialog::genKey(QString batch, QDialog *dialog)
  */
 void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 {
+    //qDebug() << profiles;
+    if (profiles.contains("")) {
+        profiles.remove("");
+        // remove weird "" key value pairs
+    }
+
     ui->profileTable->setRowCount(profiles.count());
     QHashIterator<QString, QString> i(profiles);
     int n = 0;
@@ -406,7 +422,12 @@ QHash<QString, QString> Dialog::getProfiles()
     for (int i = 0; i < ui->profileTable->rowCount(); i++) {
         QTableWidgetItem* pathItem = ui->profileTable->item(i, 1);
         if (0 != pathItem) {
-            profiles.insert(ui->profileTable->item(i, 0)->text(),
+            QTableWidgetItem* item = ui->profileTable->item(i, 0);
+            if (item == 0) {
+                qDebug() << "empty name, shoud fix in frontend";
+                continue;
+            }
+            profiles.insert(item->text(),
                             pathItem->text());
         }
     }
@@ -484,12 +505,13 @@ void Dialog::wizard()
 
     QString passStore = ui->storePath->text();
 
-    if (clean && !QFile(passStore).exists()) {
+    if (!QFile(passStore).exists()) {
         // TODO pass version?
         if (QMessageBox::question(this, tr("Create password-store?"),
             tr("Would you like to create a password-store at %1?").arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
                 QDir().mkdir(passStore);
+                mainWindow->userDialog(passStore);
         }
     }
 
@@ -536,8 +558,10 @@ bool Dialog::hideOnClose() {
 void Dialog::useTrayIcon(bool useSystray) {
     ui->checkBoxUseTrayIcon->setChecked(useSystray);
     ui->checkBoxHideOnClose->setEnabled(useSystray);
+    ui->checkBoxStartMinimized->setEnabled(useSystray);
     if (!useSystray) {
         ui->checkBoxHideOnClose->setChecked(false);
+        ui->checkBoxStartMinimized->setChecked(false);
     }
 }
 
@@ -555,7 +579,9 @@ void Dialog::hideOnClose(bool hideOnClose) {
 void Dialog::on_checkBoxUseTrayIcon_clicked() {
     if (ui->checkBoxUseTrayIcon->isChecked()) {
         ui->checkBoxHideOnClose->setEnabled(true);
+        ui->checkBoxStartMinimized->setEnabled(true);
     } else {
+        ui->checkBoxStartMinimized->setEnabled(false);
         ui->checkBoxHideOnClose->setEnabled(false);
     }
 }
@@ -565,6 +591,160 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
  * @param event
  */
 void Dialog::closeEvent(QCloseEvent *event) {
-    // TODO save window size or somethign
+    // TODO save window size or something?
     event->accept();
+}
+
+/**
+ * @brief Dialog::useGit
+ * @param useGit
+ */
+void Dialog::useGit(bool useGit)
+{
+    ui->checkBoxUseGit->setChecked(useGit);
+    ui->checkBoxAddGPGId->setEnabled(useGit);
+}
+
+/**
+ * @brief Dialog::useGit
+ * @return
+ */
+bool Dialog::useGit()
+{
+    return ui->checkBoxUseGit->isChecked();
+}
+
+/**
+ * @brief Dialog::on_checkBoxUseGit_clicked
+ */
+void Dialog::on_checkBoxUseGit_clicked()
+{
+    ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
+}
+
+/**
+ * @brief Dialog::on_toolButtonPwgen_clicked
+ */
+void Dialog::on_toolButtonPwgen_clicked()
+{
+    QString pwgen = selectExecutable();
+    if (!pwgen.isEmpty()) {
+        ui->pwgenPath->setText(pwgen);
+        ui->checkBoxUsePwgen->setEnabled(true);
+    } else {
+        ui->checkBoxUsePwgen->setEnabled(false);
+        ui->checkBoxUsePwgen->setChecked(false);
+    }
+}
+
+/**
+ * @brief Dialog::getPwgenPath
+ * @return
+ */
+QString Dialog::getPwgenPath() {
+    return ui->pwgenPath->text();
+}
+
+/**
+ * @brief Dialog::setPwgenPath
+ * @param pwgen
+ */
+void Dialog::setPwgenPath(QString pwgen)
+{
+    ui->pwgenPath->setText(pwgen);
+    if (pwgen.isEmpty()) {
+        ui->checkBoxUsePwgen->setChecked(false);
+        ui->checkBoxUsePwgen->setEnabled(false);
+    }
+    on_checkBoxUsePwgen_clicked();
+}
+
+/**
+ * @brief Dialog::on_checkBoxUsPwgen_clicked
+ */
+void Dialog::on_checkBoxUsePwgen_clicked()
+{
+    ui->checkBoxUseSymbols->setEnabled(ui->checkBoxUsePwgen->isChecked());
+    ui->lineEditPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
+    ui->labelPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
+}
+
+/**
+ * @brief Dialog::usePwgen
+ * @param usePwgen
+ */
+void Dialog::usePwgen(bool usePwgen) {
+    if (ui->pwgenPath->text().isEmpty()) {
+        usePwgen = false;
+    }
+    ui->checkBoxUsePwgen->setChecked(usePwgen);
+    on_checkBoxUsePwgen_clicked();
+}
+
+/**
+ * @brief Dialog::useSymbols
+ * @param useSymbols
+ */
+void Dialog::useSymbols(bool useSymbols) {
+    ui->checkBoxUseSymbols->setChecked(useSymbols);
+}
+
+/**
+ * @brief Dialog::setPasswordLength
+ * @param pwLen
+ */
+void Dialog::setPasswordLength(int pwLen) {
+    ui->spinBoxPasswordLength->setValue(pwLen);
+}
+
+void Dialog::setPasswordChars(QString pwChars) {
+    ui->lineEditPasswordChars->setText(pwChars);
+}
+
+/**
+ * @brief Dialog::usePwgen
+ * @return
+ */
+bool Dialog::usePwgen() {
+    return ui->checkBoxUsePwgen->isChecked();
+}
+
+/**
+ * @brief Dialog::useSymbols
+ * @return
+ */
+bool Dialog::useSymbols() {
+    return ui->checkBoxUseSymbols->isChecked();
+}
+
+/**
+ * @brief Dialog::getPasswordLength
+ * @return
+ */
+int Dialog::getPasswordLength() {
+    return ui->spinBoxPasswordLength->value();
+}
+
+/**
+ * @brief Dialog::getPasswordChars
+ * @return
+ */
+QString Dialog::getPasswordChars() {
+    return ui->lineEditPasswordChars->text();
+}
+
+/**
+ * @brief Dialog::startMinimized
+ * @return
+ */
+bool Dialog::startMinimized() {
+    return ui->checkBoxStartMinimized->isChecked();
+}
+
+/**
+ * @brief Dialog::startMinimized
+ * @param startMinimized
+ */
+void Dialog::startMinimized(bool startMinimized) {
+    ui->checkBoxStartMinimized->setChecked(startMinimized);
 }

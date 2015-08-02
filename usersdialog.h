@@ -5,6 +5,7 @@
 #include <QList>
 #include <QStandardItemModel>
 #include <QCloseEvent>
+#include <QDateTime>
 
 namespace Ui {
 class UsersDialog;
@@ -19,6 +20,8 @@ struct UserInfo {
     char validity;
     bool have_secret;
     bool enabled;
+    QDateTime expiry;
+    QDateTime created;
 };
 
 class UsersDialog : public QDialog
@@ -37,6 +40,7 @@ private slots:
     void itemChange(QListWidgetItem *);
     void on_clearButton_clicked();
     void on_lineEdit_textChanged(const QString &filter);
+    void on_checkBox_clicked();
 
 private:
     Ui::UsersDialog *ui;
