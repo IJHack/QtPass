@@ -1,6 +1,7 @@
 #include "usersdialog.h"
 #include "ui_usersdialog.h"
 #include <QRegExp>
+#include <QDebug>
 
 UsersDialog::UsersDialog(QWidget *parent) :
     QDialog(parent),
@@ -44,7 +45,21 @@ void UsersDialog::populateList(const QString &filter)
         for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
             UserInfo &user(*it);
             if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
-                QListWidgetItem *item = new QListWidgetItem(user.name + "\n" + user.key_id, ui->listWidget);
+                if (user.validity == '-' && !ui->checkBox->isChecked()) {
+                    continue;
+                }
+                if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0 && !ui->checkBox->isChecked()) {
+                    continue;
+                }
+                QString userText = user.name + "\n" + user.key_id;
+                if (user.created.toTime_t() > 0) {
+                    userText += " " + tr("created")  + " " + user.created.toString(Qt::SystemLocaleShortDate);
+
+                }
+                if (user.expiry.toTime_t() > 0) {
+                    userText += " " + tr("expires")  + " " + user.expiry.toString(Qt::SystemLocaleShortDate);
+                }
+                QListWidgetItem *item = new QListWidgetItem(userText, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
                 if (user.have_secret) {
@@ -61,7 +76,7 @@ void UsersDialog::populateList(const QString &filter)
 void UsersDialog::on_clearButton_clicked()
 {
     ui->lineEdit->clear();
-    on_lineEdit_textChanged("");
+    populateList("");
 }
 
 void UsersDialog::on_lineEdit_textChanged(const QString &filter)
@@ -72,4 +87,8 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter)
 void UsersDialog::closeEvent(QCloseEvent *event) {
     // TODO save window size or somethign
     event->accept();
+}
+
+void UsersDialog::on_checkBox_clicked() {
+    populateList(ui->lineEdit->text());
 }

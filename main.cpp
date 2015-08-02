@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[])
 {
+    // check for stupid apple psid or whatever flag
     QString text = "";
     for (int i = 1; i < argc; ++i) {
         if (i > 1) {
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
     //Setup and load translator for localization
     QTranslator translator;
     QString locale = QLocale::system().name();
+    //locale = "zh_CN";
     translator.load(QString(":localization/localization_") + locale + QString(".qm"));
     app.installTranslator(&translator);
 

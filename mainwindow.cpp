@@ -3,6 +3,7 @@
 #include "dialog.h"
 #include "usersdialog.h"
 #include "keygendialog.h"
+#include "passworddialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QDebug>
@@ -40,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     wrapperRunning = false;
     execQueue = new QQueue<execQueueItem>;
     ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
-    firstRun = true;
+    freshStart = true;
     startupPhase = true;
     if (!checkConfig()) {
         // no working config
@@ -136,7 +137,9 @@ bool MainWindow::checkConfig() {
 
     QSettings &settings(getSettings());
 
-    if (firstRun) {
+    QString version = settings.value("version").toString();
+
+    if (freshStart) {
         settings.beginGroup( "mainwindow" );
         restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
         restoreState(settings.value( "savestate", saveState() ).toByteArray());
@@ -185,6 +188,12 @@ bool MainWindow::checkConfig() {
     if (gpgExecutable.isEmpty()) {
         gpgExecutable = Util::findBinaryInPath("gpg2");
     }
+
+    pwgenExecutable = settings.value("pwgenExecutable").toString();
+    if (pwgenExecutable.isEmpty()) {
+        pwgenExecutable = Util::findBinaryInPath("pwgen");
+    }
+
     gpgHome = settings.value("gpgHome").toString();
 
     useWebDav = (settings.value("useWebDav") == "true");
@@ -200,23 +209,59 @@ bool MainWindow::checkConfig() {
     }
     settings.endGroup();
 
-    if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
-        config();
-        if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
-            return false;
-        }
-    }
+    useGit = (settings.value("useGit") == "true");
+    usePwgen = (settings.value("usePwgen") == "true");
+    useSymbols = (settings.value("useSymbols") == "true");
+    passwordLength = settings.value("passwordLength").toInt();
+    passwordChars = settings.value("passwordChars").toString();
 
     useTrayIcon = settings.value("useTrayIcon").toBool();
     hideOnClose = settings.value("hideOnClose").toBool();
+    startMinimized = settings.value("startMinimized").toBool();
 
     if (useTrayIcon && tray == NULL) {
         initTrayIcon();
+        if (freshStart && startMinimized) {
+            // since we are still in constructor, can't directly hide
+            QTimer::singleShot(10*autoclearSeconds, this, SLOT(hide()));
+        }
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
     }
 
-    firstRun = false;
+    //qDebug() << version;
+
+    // Config updates
+    if (version.isEmpty()) {
+        qDebug() << "assuming fresh install";
+        if (autoclearSeconds < 5) {
+            autoclearSeconds = 10;
+        }
+        passwordLength = 16;
+        passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
+        if (!pwgenExecutable.isEmpty()) {
+            usePwgen = true;
+        } else {
+            usePwgen = false;
+        }
+    } /*else {
+        QStringList ver = version.split(".");
+        qDebug() << ver;
+        if (ver[0] == "0" && ver[1] == "8") {
+            // upgrade to 0.9
+        }
+    }*/
+
+    settings.setValue("version", VERSION);
+
+    if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+        config();
+        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            return false;
+        }
+    }
+
+    freshStart = false;
 
     // TODO: this needs to be before we try to access the store,
     // but it would be better to do it after the Window is shown,
@@ -270,10 +315,13 @@ bool MainWindow::checkConfig() {
 
     updateEnv();
 
-    if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+    if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
     {
         ui->pushButton->hide();
         ui->updateButton->hide();
+    } else {
+        ui->pushButton->show();
+        ui->updateButton->show();
     }
     ui->lineEdit->setFocus();
 
@@ -289,7 +337,7 @@ void MainWindow::config() {
     d->setModal(true);
 
     // Automatically default to pass if it's available
-    usePass = firstRun ? QFile(passExecutable).exists() : usePass;
+    usePass = freshStart ? QFile(passExecutable).exists() : usePass;
 
     d->setPassPath(passExecutable);
     d->setGitPath(gitExecutable);
@@ -304,9 +352,17 @@ void MainWindow::config() {
     d->addGPGId(addGPGId);
     d->useTrayIcon(useTrayIcon);
     d->hideOnClose(hideOnClose);
+    d->startMinimized(startMinimized);
     d->setProfiles(profiles, profile);
-    d->wizard(); // does shit
-
+    d->useGit(useGit);
+    d->setPwgenPath(pwgenExecutable);
+    d->usePwgen(usePwgen);
+    d->useSymbols(useSymbols);
+    d->setPasswordLength(passwordLength);
+    d->setPasswordChars(passwordChars);
+    if (startupPhase) {
+        d->wizard(); // does shit
+    }
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
             passExecutable = d->getPassPath();
@@ -322,10 +378,18 @@ void MainWindow::config() {
             addGPGId = d->addGPGId();
             useTrayIcon = d->useTrayIcon();
             hideOnClose = d->hideOnClose();
+            startMinimized = d->startMinimized();
             profiles = d->getProfiles();
+            useGit = d->useGit();
+            pwgenExecutable = d->getPwgenPath();
+            usePwgen = d->usePwgen();
+            useSymbols = d->useSymbols();
+            passwordLength = d->getPasswordLength();
+            passwordChars = d->getPasswordChars();
 
             QSettings &settings(getSettings());
 
+            settings.setValue("version", VERSION);
             settings.setValue("passExecutable", passExecutable);
             settings.setValue("gitExecutable", gitExecutable);
             settings.setValue("gpgExecutable", gpgExecutable);
@@ -339,6 +403,13 @@ void MainWindow::config() {
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
             settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");
             settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
+            settings.setValue("startMinimized", startMinimized ? "true" : "false");
+            settings.setValue("useGit", useGit ? "true" : "false");
+            settings.setValue("pwgenExecutable", pwgenExecutable);
+            settings.setValue("usePwgen", usePwgen ? "true" : "false");
+            settings.setValue("useSymbols", useSymbols ? "true" : "false");
+            settings.setValue("passwordLength", passwordLength);
+            settings.setValue("passwordChars", passwordChars);
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");
@@ -364,25 +435,25 @@ void MainWindow::config() {
             updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
-            if (firstRun && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
                 config();
             }
             updateEnv();
-            if (gitExecutable.isEmpty() && passExecutable.isEmpty())
+            if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
             {
                 ui->pushButton->hide();
                 ui->updateButton->hide();
             } else {
                 ui->pushButton->show();
                 ui->updateButton->show();
-	    }
+            }
             if (useTrayIcon && tray == NULL) {
                 initTrayIcon();
             } else if (!useTrayIcon && tray != NULL) {
                 destroyTrayIcon();
             }
         }
-        firstRun = false;
+        freshStart = false;
     }
 }
 
@@ -478,6 +549,7 @@ void MainWindow::executePass(QString args, QString input) {
  * @param args
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
+    //qDebug() << app + " " + args;
     // Happens a lot if e.g. git binary is not set.
     // This will result in bogus "QProcess::FailedToStart" messages,
     // also hiding legitimate errors from the gpg commands.
@@ -513,13 +585,16 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
  * @brief MainWindow::readyRead
  */
 void MainWindow::readyRead(bool finished = false) {
+    if (currentAction == PWGEN) {
+        return;
+    }
     QString output = "";
     QString error = process->readAllStandardError();
     if (currentAction != GPG_INTERNAL) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            if (useClipboard) {
+            if (useClipboard && !output.isEmpty()) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
                 clip->setText(tokens[0]);
@@ -819,19 +894,17 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         // warn?
         return;
     }
-    bool ok;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-    QString newValue = QInputDialog::getMultiLineText(this, tr("New Value"),
-        tr("New password value:"),
-        lastDecrypt, &ok);
-#else
-    QString newValue = QInputDialog::getText(this, tr("New Value"),
-        tr("New password value:"), QLineEdit::Normal,
-        lastDecrypt, &ok);
-#endif
-    if (!ok || newValue.isEmpty()) {
+    PasswordDialog d(this);
+    d.setPassword(lastDecrypt);
+    if (!d.exec()) {
+        d.setPassword(NULL);
         return;
     }
+    QString newValue = d.getPassword();
+    if (newValue.isEmpty()) {
+        return;
+    }
+
     currentAction = EDIT;
     if (usePass) {
         QString force(overwrite ? " -f " : " ");
@@ -897,8 +970,11 @@ void MainWindow::on_deleteButton_clicked()
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
         } else {
-            // TODO GIT
-            QFile(file).remove();
+            if (useGit) {
+                executeWrapper(gitExecutable, "rm -f \"" + file + '"');
+            } else {
+                QFile(file).remove();
+            }
         }
     } else {
         file = getDir(ui->treeView->currentIndex(), usePass);
@@ -972,9 +1048,7 @@ void MainWindow::on_editButton_clicked()
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
 {
-    while (!process->atEnd() || !execQueue->isEmpty()) {
-        Util::qSleep(100);
-    }
+    waitFor(5);
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
@@ -999,6 +1073,8 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
             current_user.key_id = props[4];
             current_user.name   = props[9];
             current_user.validity = props[8][0].toLatin1();
+            current_user.created.setTime_t(props[5].toInt());
+            current_user.expiry.setTime_t(props[6].toInt());
         } else if (current_user.name.isEmpty() && props[0] == "uid") {
             current_user.name = props[9];
         }
@@ -1094,7 +1170,7 @@ void MainWindow::on_usersButton_clicked()
             tr("None of the selected keys have a secret key available.\n"
                "You will not be able to decrypt any newly added passwords!"));
     }
-    if (!useWebDav && !gitExecutable.isEmpty()){
+    if (!useWebDav && useGit && !gitExecutable.isEmpty()){
         if (addFile) {
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
         }
@@ -1182,7 +1258,7 @@ QStringList MainWindow::getSecretKeys()
  * @brief Dialog::genKey
  * @param QString batch
  */
-void MainWindow::genKey(QString batch, QDialog *keygenWindow)
+void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow)
 {
     keygen = keygenWindow;
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
@@ -1378,9 +1454,7 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
-    while (!process->atEnd() || !execQueue->isEmpty()) {
-        Util::qSleep(100);
-    }
+    waitFor(30);
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";
@@ -1396,5 +1470,48 @@ void MainWindow::editPassword()
         if (process->exitStatus() == QProcess::NormalExit) {
             on_editButton_clicked();
         }
+    }
+}
+
+/**
+ * @brief MainWindow::generatePassword
+ * @return
+ */
+QString MainWindow::generatePassword() {
+    QString passwd;
+    if (usePwgen) {
+        waitFor(2);
+        QString args = (useSymbols?"--symbols -1 ":"-1 ") + QString::number(passwordLength);
+        currentAction = PWGEN;
+        executeWrapper(pwgenExecutable, args);
+        process->waitForFinished(1000);
+        if (process->exitStatus() == QProcess::NormalExit) {
+            passwd = QString(process->readAllStandardOutput());
+        } else {
+            qDebug() << "pwgen fail";
+        }
+    } else {
+        for(int i=0; i<passwordLength; ++i)
+        {
+           int index = qrand() % passwordChars.length();
+           QChar nextChar = passwordChars.at(index);
+           passwd.append(nextChar);
+        }
+    }
+    return passwd;
+}
+
+void MainWindow::waitFor(int seconds)
+{
+    QDateTime current = QDateTime::currentDateTime();
+    uint stop =  current.toTime_t() + seconds;
+    while (!process->atEnd() || !execQueue->isEmpty()) {
+        current = QDateTime::currentDateTime();
+        if (stop < current.toTime_t()) {
+            QMessageBox::critical(this, tr("Timed out"),
+                tr("Can't start process, previous one is still running!"));
+            return;
+        }
+        Util::qSleep(100);
     }
 }

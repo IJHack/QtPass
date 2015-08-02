@@ -14,6 +14,18 @@
    <string>Generate GnuPG keypair</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item>
     <widget class="QLabel" name="label">
      <property name="sizePolicy">
@@ -54,6 +66,18 @@
       <item>
        <widget class="QWidget" name="widget" native="true">
         <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="1" column="0" colspan="2">
           <widget class="QLabel" name="labelPassphrase">
            <property name="text">

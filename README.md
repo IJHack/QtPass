@@ -3,7 +3,6 @@ QtPass [![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](
 
 QtPass is a GUI for [pass](http://www.passwordstore.org/), the standard unix password manager.
 
-
 Features
 --------
 * Using pass or git and gpg2 directly
@@ -11,8 +10,6 @@ Features
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
-
-While QtPass will work with Qt4, currently multi-line editing is restricted to Qt5 only.
 
 Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
 
@@ -51,19 +48,14 @@ Known issues
 
 Planned features
 ----------------
-* Re-encryption after users-change (optional ofcourse)
-* ~~Showing path in Add and Edit screen (currently sometimes confusing where I'm adding this password)~~
-* ~~Right click handlers for file/folder and content~~
-* ~~First use wizards to set up password-store (and decryption key, currently always the gpg default key)~~
-* ~~Profiles (to allow use of multiple password stores and decryption keys) with dropdown in main screen~~
-* Password generation with options for what kind you'd like
 * Templates (username, url etc) in Add / Edit screen (configurable templates)
-* ~~Colour coding or disabling of people you can't encrypt for (trust settings) in User management~~
+* PLugins based on field name, plugins follow same format as password files
+* Re-encryption after users-change (optional of course)
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
-* Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files?)
+* Some other form of remote storage that allows for accountability / auditing (web API to retrieve the .gpg files?)
 
 Installation
 ------------
@@ -73,9 +65,6 @@ On most systems all you need is:
 On Mac OS X:
 `qmake && make && macdeployqt QtPass.app`
 * Currently seems to only work with MacGPG2
-
-On some systems there are issues with qt4 and qt5 being installed at the same time.
-An easy fix is regenerating the Makefile with: `make clean && rm Makefile && qmake -qt5` or if qmake is ambiguous: `qmake-qt5`. On Debian (and derivatives such as Ubuntu), the `qt5-default` package will install the required build tools.
 
 Further reading
 ---------------
