@@ -68,9 +68,12 @@ MainWindow::~MainWindow()
 QSettings &MainWindow::getSettings() {
     if (!settings) {
         QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
+        qDebug() << "Settings file: " + portable_ini;
         if (QFile(portable_ini).exists()) {
+            qDebug() << "Settings file exists, loading it in";
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
+            qDebug() << "Settings file does not exist, use defaults";
             settings.reset(new QSettings("IJHack", "QtPass"));
         }
     }
@@ -543,6 +546,11 @@ void MainWindow::executePass(QString args, QString input) {
     executeWrapper(passExecutable, args, input);
 }
 
+void MainWindow::executePassGitInit() {
+    qDebug() << "Pass git init called";
+    executePass("git init");
+}
+
 /**
  * @brief MainWindow::executeWrapper
  * @param app
@@ -564,8 +572,9 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
         item.app = app;
         item.args = args;
         item.input = input;
+
         execQueue->enqueue(item);
-        //qDebug() << item.app + "," + item.args + "," + item.input;
+        qDebug() << item.app + "," + item.args + "," + item.input;
         return;
     }
     wrapperRunning = true;
