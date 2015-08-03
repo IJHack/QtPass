@@ -47,6 +47,7 @@ public:
     void generateKeyPair(QString, QDialog *);
     void userDialog(QString = "");
     QString generatePassword();
+    void executePassGitInit();
 
 protected:
     void closeEvent(QCloseEvent *event);
