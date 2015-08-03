@@ -548,7 +548,11 @@ void MainWindow::executePass(QString args, QString input) {
 
 void MainWindow::executePassGitInit() {
     qDebug() << "Pass git init called";
-    executePass("git init");
+    if (usePass) {
+        executePass("git init");
+    } else {
+        executeWrapper("git", "init \"" + passStore + '"');
+    }
 }
 
 /**
