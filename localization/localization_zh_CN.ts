@@ -210,7 +210,7 @@
     <message>
         <location filename="../dialog.cpp" line="511"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>您需要在哪里创建密码路径？</translation>
+        <translation>您需要里创建密码路径%1?</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="520"/>
@@ -220,7 +220,7 @@
     <message>
         <location filename="../dialog.cpp" line="521"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>文件夹未找到或未初始化</translation>
+        <translation>文件夹未%1找到或未初始化</translation>
     </message>
 </context>
 <context>
