@@ -65,8 +65,12 @@ void UsersDialog::populateList(const QString &filter)
                 if (user.have_secret) {
                     item->setForeground(Qt::blue);
                 } else if (user.validity == '-') {
-                    item->setBackground(Qt::red);
+                    item->setBackground(QColor(164, 0, 0));
+                    item->setForeground(Qt::white);
+                } else if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
+                    item->setForeground(Qt::red);
                 }
+
                 ui->listWidget->addItem(item);
             }
         }
