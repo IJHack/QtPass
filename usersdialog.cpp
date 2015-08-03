@@ -65,6 +65,10 @@ void UsersDialog::populateList(const QString &filter)
                 if (user.have_secret) {
                     //item->setForeground(QColor(32, 74, 135));
                     item->setForeground(Qt::blue);
+                    QFont font;
+                    font.setFamily(font.defaultFamily());
+                    font.setBold(true);
+                    item->setFont(font);
                 } else if (user.validity == '-') {
                     item->setBackground(QColor(164, 0, 0));
                     item->setForeground(Qt::white);
