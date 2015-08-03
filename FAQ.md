@@ -16,6 +16,18 @@ use-standard-socket
 default-cache-ttl 600
 max-cache-ttl 7200
 ```
+
+Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:
+
+```
+# OpenPGP applet support for YubiKey NEO
+if [ ! -f /tmp/gpg-agent.env ]; then
+    killall gpg-agent;
+        eval $(gpg-agent --daemon --enable-ssh-support > /tmp/gpg-agent.env);
+fi
+. /tmp/gpg-agent.env
+```
+
 * More info: [issue 60](https://github.com/IJHack/qtpass/issues/60) and [issue 73](https://github.com/IJHack/qtpass/issues/73)
 
 ### Where can I ask for help?
@@ -36,6 +48,6 @@ max-cache-ttl 7200
 
 * Time:
   * Fork, clone hack and send a pull request.
-  * Find an [issue](https://github.com/IJHack/qtpass/issues) to work on.. 
-* Money: 
+  * Find an [issue](https://github.com/IJHack/qtpass/issues) to work on..
+* Money:
 IJhack takes donations in [bitcoin](https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb)
