@@ -130,6 +130,54 @@
           Currently seems to only work with MacGPG2
         </p>
 
+        <h2><a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span class="octicon octicon-link"></span></a>FAQ</h2>
+        
+        <h3><a id="user-content-cant-save-a-password" class="anchor" href="#cant-save-a-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can't save a password</h3>
+        
+        <ul>
+        <li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (eg. yourself)</li>
+        <li>Are you using git? If not, make sure it is switched off.</li>
+        </ul>
+        
+        <h3><a id="user-content-i-have-an-issue-with-gnome-keyring" class="anchor" href="#i-have-an-issue-with-gnome-keyring" aria-hidden="true"><span class="octicon octicon-link"></span></a>I have an issue with GNOME keyring</h3>
+        
+        <ul>
+        <li>Disable GNOME keyring</li>
+        <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
+        </ul>
+        
+        <pre><code>enable-ssh-support
+write-env-file
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200</code></pre>
+        
+        <p>Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:</p>
+        
+        <pre><code># OpenPGP applet support for YubiKey NEO
+if [ ! -f /tmp/gpg-agent.env ]; then
+    killall gpg-agent;
+        eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);
+fi
+. /tmp/gpg-agent.env</code></pre>
+        
+        <ul>
+        <li>More info: <a href="https://github.com/IJHack/qtpass/issues/60">issue 60</a> and <a href="https://github.com/IJHack/qtpass/issues/73">issue 73</a></li>
+        </ul>
+        
+        <h3><a id="user-content-where-can-i-ask-for-help" class="anchor" href="#where-can-i-ask-for-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where can I ask for help?</h3>
+        
+        <ul>
+        <li>Create an <a href="https://github.com/IJHack/qtpass/">issue</a> issues on github.</li>
+        <li>Send an email to <a href="/IJHack/qtpass/blob/master/help@qtpass.org">help@qtpass.org</a></li>
+        </ul>
+        
+        <h3><a id="user-content-can-i-import-from-keepass-lastpass-or-x" class="anchor" href="#can-i-import-from-keepass-lastpass-or-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can I import from KeePass, LastPass or X?</h3>
+        
+        <ul>
+        <li>Yes, check <a href="http://www.passwordstore.org/#migration">passwordstore.org/#migration</a> for more info.</li>
+        </ul>
+        
         <p>
         	<br />
         	<img class="compatible" src="images/linux.png" alt="Linux Compatible" />
