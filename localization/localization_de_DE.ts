@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de_DE">
+<TS version="2.1" language="de_DE">
 <context>
     <name>Dialog</name>
     <message>
@@ -610,7 +610,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../passworddialog.ui" line="59"/>
         <source>Generate</source>
-        <translation>Erstellen</translation>
+        <translation>Generieren</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="68"/>
