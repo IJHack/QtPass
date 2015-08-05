@@ -472,7 +472,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="941"/>
         <source>New password file, will be placed in folder %1:</source>
-        <translation>新密码文件，将放置在文件夹％1：</translation>
+        <translation>新密码文件，将放置在文件夹 ％1：</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="964"/>
@@ -483,7 +483,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="965"/>
         <location filename="../mainwindow.cpp" line="982"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>您确定要删除％1吗？</translation>
+        <translation>您确定要删除 ％1 吗？</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="981"/>
