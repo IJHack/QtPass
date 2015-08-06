@@ -256,6 +256,20 @@ void Dialog::on_checkBoxClipboard_clicked()
 }
 
 /**
+ * @brief Dialog::on_checkBoxAutoclearPanel_clicked
+ */
+void Dialog::on_checkBoxAutoclearPanel_clicked()
+{
+    if (ui->checkBoxAutoclearPanel->isChecked()) {
+        ui->spinBoxAutoclearPanelSeconds->setEnabled(true);
+        ui->labelPanelSeconds->setEnabled(true);
+    } else {
+        ui->spinBoxAutoclearPanelSeconds->setEnabled(false);
+        ui->labelPanelSeconds->setEnabled(false);
+    }
+}
+
+/**
  * @brief Dialog::useClipboard
  */
 void Dialog::useClipboard(bool useClipboard)
@@ -281,6 +295,25 @@ void Dialog::useAutoclear(bool useAutoclear)
 void Dialog::setAutoclear(int seconds)
 {
     ui->spinBoxAutoclearSeconds->setValue(seconds);
+}
+
+/**
+ * @brief Dialog::useAutoclearPanel
+ * @param useAutoclearPanel
+ */
+void Dialog::useAutoclearPanel(bool useAutoclearPanel)
+{
+    ui->checkBoxAutoclearPanel->setChecked(useAutoclearPanel);
+    on_checkBoxAutoclearPanel_clicked();
+}
+
+/**
+ * @brief Dialog::setAutoclearPanel
+ * @param seconds
+ */
+void Dialog::setAutoclearPanel(int seconds)
+{
+    ui->spinBoxAutoclearPanelSeconds->setValue(seconds);
 }
 
 /**
@@ -316,6 +349,24 @@ int Dialog::getAutoclear()
 void Dialog::on_checkBoxAutoclear_clicked()
 {
     on_checkBoxClipboard_clicked();
+}
+
+/**
+ * @brief Dialog::useAutoclearPanel
+ * @return
+ */
+bool Dialog::useAutoclearPanel()
+{
+    return ui->checkBoxAutoclearPanel->isChecked();
+}
+
+/**
+ * @brief Dialog::getAutoclearPanel
+ * @return
+ */
+int Dialog::getAutoclearPanel()
+{
+    return ui->spinBoxAutoclearPanelSeconds->value();
 }
 
 /**
