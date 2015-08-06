@@ -82,3 +82,7 @@ void PasswordDialog::setTemplate(QString rawFields) {
         ui->formLayout->addRow(new QLabel(field), line);
     }
 }
+
+void PasswordDialog::setFile(QString file) {
+    this->setWindowTitle(this->windowTitle()+" "+file);
+}

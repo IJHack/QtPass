@@ -948,6 +948,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         return;
     }
     PasswordDialog d(this);
+    d.setFile(file);
     d.setTemplate(passTemplate);
     d.setPassword(lastDecrypt);
     if (!d.exec()) {

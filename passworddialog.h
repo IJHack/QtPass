@@ -18,6 +18,7 @@ public:
     void setPassword(QString);
     QString getPassword();
     void setTemplate(QString);
+    void setFile(QString);
 
 private slots:
     void on_checkBoxShow_stateChanged(int arg1);
