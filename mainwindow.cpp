@@ -963,7 +963,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         }
         QString force(overwrite ? " --yes " : " ");
         executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
-        if (!useWebDav) {
+        if (!useWebDav && useGit) {
             if (!overwrite) {
                 executeWrapper(gitExecutable, "add \"" + file + '"');
             }
@@ -971,6 +971,9 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
             path.replace(QRegExp("\\.gpg$"), "");
             path.replace(QRegExp("^" + passStore), "");
             executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.\"");
+            if (autoPush) {
+                on_pushButton_clicked();
+            }
         }
     }
 }
@@ -1014,10 +1017,16 @@ void MainWindow::on_deleteButton_clicked()
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
+            if (useGit && autoPush) {
+                on_pushButton_clicked();
+            }
         } else {
             if (useGit) {
                 executeWrapper(gitExecutable, "rm -f \"" + file + '"');
                 executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush) {
+                    on_pushButton_clicked();
+                }
             } else {
                 QFile(file).remove();
             }
@@ -1223,6 +1232,9 @@ void MainWindow::on_usersButton_clicked()
         QString path = gpgIdFile;
         path.replace(QRegExp("\\.gpg$"), "");
         executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass.\"");
+        if (autoPush) {
+            on_pushButton_clicked();
+        }
     }
 }
 
