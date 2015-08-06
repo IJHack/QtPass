@@ -69,6 +69,10 @@ public:
     bool useSymbols();
     int getPasswordLength();
     QString getPasswordChars();
+    bool autoPull();
+    void autoPull(bool);
+    bool autoPush();
+    void autoPush(bool);
 
 protected:
     void closeEvent(QCloseEvent *event);

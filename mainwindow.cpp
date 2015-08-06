@@ -68,12 +68,12 @@ MainWindow::~MainWindow()
 QSettings &MainWindow::getSettings() {
     if (!settings) {
         QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
-        qDebug() << "Settings file: " + portable_ini;
+        //qDebug() << "Settings file: " + portable_ini;
         if (QFile(portable_ini).exists()) {
-            qDebug() << "Settings file exists, loading it in";
+           // qDebug() << "Settings file exists, loading it in";
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
-            qDebug() << "Settings file does not exist, use defaults";
+            //qDebug() << "Settings file does not exist, use defaults";
             settings.reset(new QSettings("IJHack", "QtPass"));
         }
     }
@@ -224,6 +224,9 @@ bool MainWindow::checkConfig() {
     hideOnClose = settings.value("hideOnClose").toBool();
     startMinimized = settings.value("startMinimized").toBool();
 
+    autoPull = settings.value("autoPull").toBool();
+    autoPush = settings.value("autoPush").toBool();
+
     if (useTrayIcon && tray == NULL) {
         initTrayIcon();
         if (freshStart && startMinimized) {
@@ -370,6 +373,8 @@ void MainWindow::config() {
     d->useSymbols(useSymbols);
     d->setPasswordLength(passwordLength);
     d->setPasswordChars(passwordChars);
+    d->autoPull(autoPull);
+    d->autoPush(autoPush);
     if (startupPhase) {
         d->wizard(); // does shit
     }
@@ -398,6 +403,8 @@ void MainWindow::config() {
             useSymbols = d->useSymbols();
             passwordLength = d->getPasswordLength();
             passwordChars = d->getPasswordChars();
+            autoPush = d->autoPush();
+            autoPull = d->autoPull();
 
             QSettings &settings(getSettings());
 
@@ -424,6 +431,8 @@ void MainWindow::config() {
             settings.setValue("useSymbols", useSymbols ? "true" : "false");
             settings.setValue("passwordLength", passwordLength);
             settings.setValue("passwordChars", passwordChars);
+            settings.setValue("autoPull", autoPull ? "true" : "false");
+            settings.setValue("autoPush", autoPush ? "true" : "false");
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");

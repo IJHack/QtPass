@@ -659,7 +659,7 @@ void Dialog::closeEvent(QCloseEvent *event) {
 void Dialog::useGit(bool useGit)
 {
     ui->checkBoxUseGit->setChecked(useGit);
-    ui->checkBoxAddGPGId->setEnabled(useGit);
+    on_checkBoxUseGit_clicked();
 }
 
 /**
@@ -677,6 +677,8 @@ bool Dialog::useGit()
 void Dialog::on_checkBoxUseGit_clicked()
 {
     ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
+    ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
+    ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
 }
 
 /**
@@ -804,4 +806,20 @@ bool Dialog::startMinimized() {
  */
 void Dialog::startMinimized(bool startMinimized) {
     ui->checkBoxStartMinimized->setChecked(startMinimized);
+}
+
+void Dialog::autoPull(bool autoPull) {
+    ui->checkBoxAutoPull->setChecked(autoPull);
+}
+
+void Dialog::autoPush(bool autoPush) {
+    ui->checkBoxAutoPush->setChecked(autoPush);
+}
+
+bool Dialog::autoPull() {
+    return ui->checkBoxAutoPull->isChecked();
+}
+
+bool Dialog::autoPush() {
+    return ui->checkBoxAutoPush->isChecked();
 }
