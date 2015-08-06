@@ -273,6 +273,34 @@
            </item>
           </layout>
          </item>
+         <item row="1" column="2">
+          <widget class="QCheckBox" name="checkBoxAutoclearPanel">
+           <property name="text">
+            <string>Autoclear panel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QSpinBox" name="spinBoxAutoclearPanelSeconds">
+             <property name="minimum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelPanelSeconds">
+             <property name="text">
+              <string>Seconds</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
          <item row="1" column="0">
           <widget class="QCheckBox" name="checkBoxHidePassword">
            <property name="text">
@@ -519,6 +547,8 @@
   <tabstop>checkBoxClipboard</tabstop>
   <tabstop>checkBoxAutoclear</tabstop>
   <tabstop>spinBoxAutoclearSeconds</tabstop>
+  <tabstop>checkBoxAutoclearPanel</tabstop>
+  <tabstop>spinBoxAutoclearPanelSeconds</tabstop>
   <tabstop>checkBoxHidePassword</tabstop>
   <tabstop>checkBoxHideContent</tabstop>
   <tabstop>checkBoxUseGit</tabstop>
