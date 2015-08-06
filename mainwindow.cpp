@@ -166,6 +166,8 @@ bool MainWindow::checkConfig() {
     useClipboard = (settings.value("useClipboard") == "true");
     useAutoclear = (settings.value("useAutoclear") == "true");
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
+    useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");
+    autoclearPanelSeconds = settings.value("autoclearPanelSeconds").toInt();
     hidePassword = (settings.value("hidePassword") == "true");
     hideContent = (settings.value("hideContent") == "true");
     addGPGId = (settings.value("addGPGId") != "false");
@@ -227,6 +229,7 @@ bool MainWindow::checkConfig() {
         if (freshStart && startMinimized) {
             // since we are still in constructor, can't directly hide
             QTimer::singleShot(10*autoclearSeconds, this, SLOT(hide()));
+            QTimer::singleShot(10*autoclearPanelSeconds, this, SLOT(hide()));
         }
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
@@ -239,6 +242,9 @@ bool MainWindow::checkConfig() {
         qDebug() << "assuming fresh install";
         if (autoclearSeconds < 5) {
             autoclearSeconds = 10;
+        }
+        if (autoclearPanelSeconds < 5) {
+            autoclearPanelSeconds = 10;
         }
         passwordLength = 16;
         passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
@@ -350,6 +356,8 @@ void MainWindow::config() {
     d->useClipboard(useClipboard);
     d->useAutoclear(useAutoclear);
     d->setAutoclear(autoclearSeconds);
+    d->useAutoclearPanel(useAutoclearPanel);
+    d->setAutoclearPanel(autoclearPanelSeconds);
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
@@ -376,6 +384,8 @@ void MainWindow::config() {
             useClipboard = d->useClipboard();
             useAutoclear = d->useAutoclear();
             autoclearSeconds = d->getAutoclear();
+            useAutoclearPanel = d->useAutoclearPanel();
+            autoclearPanelSeconds = d->getAutoclearPanel();
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
@@ -401,6 +411,8 @@ void MainWindow::config() {
             settings.setValue("useClipboard", useClipboard ? "true" : "false");
             settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
             settings.setValue("autoclearSeconds", autoclearSeconds);
+            settings.setValue("useAutoclearPanel", useAutoclearPanel ? "true" : "false");
+            settings.setValue("autoclearPanelSeconds", autoclearPanelSeconds);
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
@@ -616,6 +628,9 @@ void MainWindow::readyRead(bool finished = false) {
                       clippedPass = tokens[0];
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
                 }
+                if (useAutoclearPanel) {
+                      QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
+                }
                 if (hidePassword) {
                     //tokens.pop_front();
                     tokens[0] = "***" + tr("Password hidden") + "***";
@@ -665,6 +680,15 @@ void MainWindow::clearClipboard()
     } else {
         ui->statusBar->showMessage(tr("Clipboard not cleared"), 3000);
     }
+}
+
+/**
+ * @brief MainWindow::clearPanel
+ */
+void MainWindow::clearPanel()
+{
+    QString output = "***" + tr("Password and Content hidden") + "***";
+    ui->textBrowser->setHtml(output);
 }
 
 /**
