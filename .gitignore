@@ -10,4 +10,4 @@ qtpass.xcodeproj/xcuserdata/*
 qtpass.xcworkspace/xcuserdata/*
 .DS_Store
 .qmake.stash
-
+*.o
