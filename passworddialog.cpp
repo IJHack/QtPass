@@ -77,6 +77,9 @@ QString PasswordDialog::getPassword()
 void PasswordDialog::setTemplate(QString rawFields) {
     fields = rawFields.split('\n');
     foreach (QString field, fields) {
+        if (field.isEmpty()) {
+            continue;
+        }
         QLineEdit *line = new QLineEdit();
         line->setObjectName(field);
         ui->formLayout->addRow(new QLabel(field), line);
