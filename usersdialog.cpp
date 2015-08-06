@@ -63,10 +63,19 @@ void UsersDialog::populateList(const QString &filter)
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
                 if (user.have_secret) {
+                    //item->setForeground(QColor(32, 74, 135));
                     item->setForeground(Qt::blue);
+                    QFont font;
+                    font.setFamily(font.defaultFamily());
+                    font.setBold(true);
+                    item->setFont(font);
                 } else if (user.validity == '-') {
-                    item->setBackground(Qt::red);
+                    item->setBackground(QColor(164, 0, 0));
+                    item->setForeground(Qt::white);
+                } else if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
+                    item->setForeground(QColor(164, 0, 0));
                 }
+
                 ui->listWidget->addItem(item);
             }
         }

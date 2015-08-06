@@ -48,6 +48,7 @@ public:
     void userDialog(QString = "");
     QString generatePassword();
     void config();
+    void executePassGitInit();
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -61,6 +62,7 @@ private slots:
     void processFinished(int, QProcess::ExitStatus);
     void processError(QProcess::ProcessError);
     void clearClipboard();
+    void clearPanel();
     void on_lineEdit_textChanged(const QString &arg1);
     void on_lineEdit_returnPressed();
     void on_clearButton_clicked();
@@ -85,10 +87,12 @@ private:
     bool usePass;
     bool useClipboard;
     bool useAutoclear;
+    bool useAutoclearPanel;
     bool hidePassword;
     bool hideContent;
     bool addGPGId;
     int autoclearSeconds;
+    int autoclearPanelSeconds;
     QString passStore;
     QString passExecutable;
     QString gitExecutable;
@@ -123,6 +127,8 @@ private:
     QString passwordChars;
     bool useTemplate;
     QString passTemplate;
+    bool autoPull;
+    bool autoPush;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());

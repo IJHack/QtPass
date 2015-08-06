@@ -68,9 +68,12 @@ MainWindow::~MainWindow()
 QSettings &MainWindow::getSettings() {
     if (!settings) {
         QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
+        //qDebug() << "Settings file: " + portable_ini;
         if (QFile(portable_ini).exists()) {
+           // qDebug() << "Settings file exists, loading it in";
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
+            //qDebug() << "Settings file does not exist, use defaults";
             settings.reset(new QSettings("IJHack", "QtPass"));
         }
     }
@@ -163,6 +166,8 @@ bool MainWindow::checkConfig() {
     useClipboard = (settings.value("useClipboard") == "true");
     useAutoclear = (settings.value("useAutoclear") == "true");
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
+    useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");
+    autoclearPanelSeconds = settings.value("autoclearPanelSeconds").toInt();
     hidePassword = (settings.value("hidePassword") == "true");
     hideContent = (settings.value("hideContent") == "true");
     addGPGId = (settings.value("addGPGId") != "false");
@@ -219,11 +224,14 @@ bool MainWindow::checkConfig() {
     hideOnClose = settings.value("hideOnClose").toBool();
     startMinimized = settings.value("startMinimized").toBool();
 
+    autoPull = settings.value("autoPull").toBool();
+    autoPush = settings.value("autoPush").toBool();
+
     if (useTrayIcon && tray == NULL) {
         initTrayIcon();
         if (freshStart && startMinimized) {
             // since we are still in constructor, can't directly hide
-            QTimer::singleShot(10*autoclearSeconds, this, SLOT(hide()));
+            QTimer::singleShot(10, this, SLOT(hide()));
         }
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
@@ -239,6 +247,9 @@ bool MainWindow::checkConfig() {
         qDebug() << "assuming fresh install";
         if (autoclearSeconds < 5) {
             autoclearSeconds = 10;
+        }
+        if (autoclearPanelSeconds < 5) {
+            autoclearPanelSeconds = 10;
         }
         passwordLength = 16;
         passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
@@ -349,6 +360,8 @@ void MainWindow::config() {
     d->useClipboard(useClipboard);
     d->useAutoclear(useAutoclear);
     d->setAutoclear(autoclearSeconds);
+    d->useAutoclearPanel(useAutoclearPanel);
+    d->setAutoclearPanel(autoclearPanelSeconds);
     d->hidePassword(hidePassword);
     d->hideContent(hideContent);
     d->addGPGId(addGPGId);
@@ -364,6 +377,8 @@ void MainWindow::config() {
     d->setPasswordChars(passwordChars);
     d->useTemplate(useTemplate);
     d->setTemplate(passTemplate);
+    d->autoPull(autoPull);
+    d->autoPush(autoPush);
     if (startupPhase) {
         d->wizard(); // does shit
     }
@@ -377,6 +392,8 @@ void MainWindow::config() {
             useClipboard = d->useClipboard();
             useAutoclear = d->useAutoclear();
             autoclearSeconds = d->getAutoclear();
+            useAutoclearPanel = d->useAutoclearPanel();
+            autoclearPanelSeconds = d->getAutoclearPanel();
             hidePassword = d->hidePassword();
             hideContent = d->hideContent();
             addGPGId = d->addGPGId();
@@ -392,6 +409,8 @@ void MainWindow::config() {
             passwordChars = d->getPasswordChars();
             useTemplate = d->useTemplate();
             passTemplate = d->getTemplate();
+            autoPush = d->autoPush();
+            autoPull = d->autoPull();
 
             QSettings &settings(getSettings());
 
@@ -404,6 +423,8 @@ void MainWindow::config() {
             settings.setValue("useClipboard", useClipboard ? "true" : "false");
             settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
             settings.setValue("autoclearSeconds", autoclearSeconds);
+            settings.setValue("useAutoclearPanel", useAutoclearPanel ? "true" : "false");
+            settings.setValue("autoclearPanelSeconds", autoclearPanelSeconds);
             settings.setValue("hidePassword", hidePassword ? "true" : "false");
             settings.setValue("hideContent", hideContent ? "true" : "false");
             settings.setValue("addGPGId", addGPGId ? "true" : "false");
@@ -418,6 +439,8 @@ void MainWindow::config() {
             settings.setValue("passwordChars", passwordChars);
             settings.setValue("useTemplate", useTemplate);
             settings.setValue("passTemplate", passTemplate);
+            settings.setValue("autoPull", autoPull ? "true" : "false");
+            settings.setValue("autoPush", autoPush ? "true" : "false");
 
             if (!profiles.isEmpty()) {
                 settings.beginGroup("profiles");
@@ -551,6 +574,15 @@ void MainWindow::executePass(QString args, QString input) {
     executeWrapper(passExecutable, args, input);
 }
 
+void MainWindow::executePassGitInit() {
+    qDebug() << "Pass git init called";
+    if (usePass) {
+        executePass("git init");
+    } else {
+        executeWrapper("git", "init \"" + passStore + '"');
+    }
+}
+
 /**
  * @brief MainWindow::executeWrapper
  * @param app
@@ -572,8 +604,9 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
         item.app = app;
         item.args = args;
         item.input = input;
+
         execQueue->enqueue(item);
-        //qDebug() << item.app + "," + item.args + "," + item.input;
+        qDebug() << item.app + "," + item.args + "," + item.input;
         return;
     }
     wrapperRunning = true;
@@ -610,6 +643,9 @@ void MainWindow::readyRead(bool finished = false) {
                 if (useAutoclear) {
                       clippedPass = tokens[0];
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+                }
+                if (useAutoclearPanel) {
+                      QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
                 }
                 if (hidePassword) {
                     //tokens.pop_front();
@@ -660,6 +696,15 @@ void MainWindow::clearClipboard()
     } else {
         ui->statusBar->showMessage(tr("Clipboard not cleared"), 3000);
     }
+}
+
+/**
+ * @brief MainWindow::clearPanel
+ */
+void MainWindow::clearPanel()
+{
+    QString output = "***" + tr("Password and Content hidden") + "***";
+    ui->textBrowser->setHtml(output);
 }
 
 /**
@@ -927,14 +972,17 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         }
         QString force(overwrite ? " --yes " : " ");
         executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
-        if (!useWebDav) {
+        if (!useWebDav && useGit) {
             if (!overwrite) {
                 executeWrapper(gitExecutable, "add \"" + file + '"');
             }
             QString path = file;
             path.replace(QRegExp("\\.gpg$"), "");
             path.replace(QRegExp("^" + passStore), "");
-            executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass\"");
+            executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.\"");
+            if (autoPush) {
+                on_pushButton_clicked();
+            }
         }
     }
 }
@@ -978,9 +1026,16 @@ void MainWindow::on_deleteButton_clicked()
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
+            if (useGit && autoPush) {
+                on_pushButton_clicked();
+            }
         } else {
             if (useGit) {
                 executeWrapper(gitExecutable, "rm -f \"" + file + '"');
+                executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush) {
+                    on_pushButton_clicked();
+                }
             } else {
                 QFile(file).remove();
             }
@@ -995,14 +1050,24 @@ void MainWindow::on_deleteButton_clicked()
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -r \"" + file + '"');
+            if (useGit && autoPush) {
+                on_pushButton_clicked();
+            }
         } else {
-            // TODO GIT
+            if (useGit) {
+                executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
+                executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush) {
+                    on_pushButton_clicked();
+                }
+            } else {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-            QDir dir(file);
-            dir.removeRecursively();
+                QDir dir(file);
+                dir.removeRecursively();
 #else
-            removeDir(file);
+                removeDir(file);
 #endif
+            }
         }
     }
 }
@@ -1185,7 +1250,10 @@ void MainWindow::on_usersButton_clicked()
         }
         QString path = gpgIdFile;
         path.replace(QRegExp("\\.gpg$"), "");
-        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass\"");
+        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass.\"");
+        if (autoPush) {
+            on_pushButton_clicked();
+        }
     }
 }
 
@@ -1463,6 +1531,9 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
+    if (useGit && autoPull) {
+        on_updateButton_clicked();
+    }
     waitFor(30);
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);

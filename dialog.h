@@ -30,6 +30,8 @@ public:
     void useClipboard(bool);
     void useAutoclear(bool);
     void setAutoclear(int);
+    void useAutoclearPanel(bool);
+    void setAutoclearPanel(int);
     void hidePassword(bool);
     void hideContent(bool);
     void addGPGId(bool);
@@ -42,6 +44,8 @@ public:
     bool useClipboard();
     bool useAutoclear();
     int getAutoclear();
+    bool useAutoclearPanel();
+    int getAutoclearPanel();
     bool hidePassword();
     bool hideContent();
     bool addGPGId();
@@ -69,6 +73,10 @@ public:
     void useTemplate(bool);
     QString getTemplate();
     void setTemplate(QString);
+    bool autoPull();
+    void autoPull(bool);
+    bool autoPush();
+    void autoPush(bool);
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -83,6 +91,7 @@ private slots:
     void on_toolButtonStore_clicked();
     void on_checkBoxClipboard_clicked();
     void on_checkBoxAutoclear_clicked();
+    void on_checkBoxAutoclearPanel_clicked();
     void on_addButton_clicked();
     void on_deleteButton_clicked();
     void on_checkBoxUseTrayIcon_clicked();
