@@ -28,6 +28,7 @@ private:
     MainWindow *mainWindow;
     QString passTemplate;
     void addFields();
+    QStringList fields;
 
 };
 
