@@ -1522,6 +1522,9 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
+    if (useGit && autoPull) {
+        on_updateButton_clicked();
+    }
     waitFor(30);
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
