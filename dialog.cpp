@@ -256,6 +256,20 @@ void Dialog::on_checkBoxClipboard_clicked()
 }
 
 /**
+ * @brief Dialog::on_checkBoxAutoclearPanel_clicked
+ */
+void Dialog::on_checkBoxAutoclearPanel_clicked()
+{
+    if (ui->checkBoxAutoclearPanel->isChecked()) {
+        ui->spinBoxAutoclearPanelSeconds->setEnabled(true);
+        ui->labelPanelSeconds->setEnabled(true);
+    } else {
+        ui->spinBoxAutoclearPanelSeconds->setEnabled(false);
+        ui->labelPanelSeconds->setEnabled(false);
+    }
+}
+
+/**
  * @brief Dialog::useClipboard
  */
 void Dialog::useClipboard(bool useClipboard)
@@ -281,6 +295,25 @@ void Dialog::useAutoclear(bool useAutoclear)
 void Dialog::setAutoclear(int seconds)
 {
     ui->spinBoxAutoclearSeconds->setValue(seconds);
+}
+
+/**
+ * @brief Dialog::useAutoclearPanel
+ * @param useAutoclearPanel
+ */
+void Dialog::useAutoclearPanel(bool useAutoclearPanel)
+{
+    ui->checkBoxAutoclearPanel->setChecked(useAutoclearPanel);
+    on_checkBoxAutoclearPanel_clicked();
+}
+
+/**
+ * @brief Dialog::setAutoclearPanel
+ * @param seconds
+ */
+void Dialog::setAutoclearPanel(int seconds)
+{
+    ui->spinBoxAutoclearPanelSeconds->setValue(seconds);
 }
 
 /**
@@ -316,6 +349,24 @@ int Dialog::getAutoclear()
 void Dialog::on_checkBoxAutoclear_clicked()
 {
     on_checkBoxClipboard_clicked();
+}
+
+/**
+ * @brief Dialog::useAutoclearPanel
+ * @return
+ */
+bool Dialog::useAutoclearPanel()
+{
+    return ui->checkBoxAutoclearPanel->isChecked();
+}
+
+/**
+ * @brief Dialog::getAutoclearPanel
+ * @return
+ */
+int Dialog::getAutoclearPanel()
+{
+    return ui->spinBoxAutoclearPanelSeconds->value();
 }
 
 /**
@@ -495,7 +546,7 @@ void Dialog::wizard()
     }
 
     QStringList names = mainWindow->getSecretKeys();
-    //qDebug() << names;
+    qDebug() << names;
     if (QFile(gpg).exists() && names.empty()) {
         KeygenDialog d(this);
         if (!d.exec()) {
@@ -511,11 +562,16 @@ void Dialog::wizard()
             tr("Would you like to create a password-store at %1?").arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
                 QDir().mkdir(passStore);
+                if(useGit()) {
+                    mainWindow->executePassGitInit();
+                }
                 mainWindow->userDialog(passStore);
         }
     }
 
     if(!QFile(passStore + ".gpg-id").exists()){
+        qDebug() << ".gpg-id file does not exist";
+
         if (!clean) {
             criticalMessage(tr("Password store not initialised"),
                 tr("The folder %1 doesn't seem to be a password store or is not yet initialised.").arg(passStore));
@@ -528,6 +584,7 @@ void Dialog::wizard()
             passStore = ui->storePath->text();
         }
         if (!QFile(passStore + ".gpg-id").exists()) {
+            qDebug() << ".gpg-id file still does not exist :/";
             // appears not to be store
             // init yes / no ?
             mainWindow->userDialog(passStore);
@@ -602,7 +659,7 @@ void Dialog::closeEvent(QCloseEvent *event) {
 void Dialog::useGit(bool useGit)
 {
     ui->checkBoxUseGit->setChecked(useGit);
-    ui->checkBoxAddGPGId->setEnabled(useGit);
+    on_checkBoxUseGit_clicked();
 }
 
 /**
@@ -620,6 +677,8 @@ bool Dialog::useGit()
 void Dialog::on_checkBoxUseGit_clicked()
 {
     ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
+    ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
+    ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
 }
 
 /**
@@ -771,4 +830,20 @@ void Dialog::setTemplate(QString passTemplate) {
 
 QString Dialog::getTemplate() {
     return ui->plainTextEditTemplate->toPlainText();
+}
+
+void Dialog::autoPull(bool autoPull) {
+    ui->checkBoxAutoPull->setChecked(autoPull);
+}
+
+void Dialog::autoPush(bool autoPush) {
+    ui->checkBoxAutoPush->setChecked(autoPush);
+}
+
+bool Dialog::autoPull() {
+    return ui->checkBoxAutoPull->isChecked();
+}
+
+bool Dialog::autoPush() {
+    return ui->checkBoxAutoPush->isChecked();
 }

@@ -18,7 +18,7 @@ macx {
 }
 
 TEMPLATE   = app
-VERSION    = 0.9.2
+VERSION    = 1.0.1
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
@@ -65,7 +65,13 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_hu_HU.ts \
                     localization/localization_sv_SE.ts \
                     localization/localization_pl_PL.ts \
-                    localization/localization_ru_RU.ts
+                    localization/localization_ru_RU.ts \
+                    localization/localization_he_IL.ts \
+                    localization/localization_zh_CN.ts
+
+CODECFORSRC     = UTF-8
+CODECFORTR      = UTF-8
+
 
 RESOURCES   += resources.qrc
 
