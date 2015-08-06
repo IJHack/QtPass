@@ -1041,14 +1041,24 @@ void MainWindow::on_deleteButton_clicked()
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -r \"" + file + '"');
+            if (useGit && autoPush) {
+                on_pushButton_clicked();
+            }
         } else {
-            // TODO GIT
+            if (useGit) {
+                executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
+                executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush) {
+                    on_pushButton_clicked();
+                }
+            } else {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-            QDir dir(file);
-            dir.removeRecursively();
+                QDir dir(file);
+                dir.removeRecursively();
 #else
-            removeDir(file);
+                removeDir(file);
 #endif
+            }
         }
     }
 }
