@@ -11,3 +11,6 @@ qtpass.xcworkspace/xcuserdata/*
 .DS_Store
 .qmake.stash
 *.o
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
