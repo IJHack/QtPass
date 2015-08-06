@@ -124,6 +124,8 @@ private:
     bool useSymbols;
     int passwordLength;
     QString passwordChars;
+    bool autoPull;
+    bool autoPush;
     void updateText();
     void executePass(QString, QString = QString());
     void executeWrapper(QString, QString, QString = QString());
