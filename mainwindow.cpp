@@ -228,8 +228,7 @@ bool MainWindow::checkConfig() {
         initTrayIcon();
         if (freshStart && startMinimized) {
             // since we are still in constructor, can't directly hide
-            QTimer::singleShot(10*autoclearSeconds, this, SLOT(hide()));
-            QTimer::singleShot(10*autoclearPanelSeconds, this, SLOT(hide()));
+            QTimer::singleShot(10, this, SLOT(hide()));
         }
     } else if (!useTrayIcon && tray != NULL) {
         destroyTrayIcon();
