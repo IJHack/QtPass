@@ -19,6 +19,8 @@ public:
     QString getPassword();
     void setTemplate(QString);
     void setFile(QString);
+    void useTemplate(bool);
+    void templateAll(bool);
 
 private slots:
     void on_checkBoxShow_stateChanged(int arg1);
@@ -28,9 +30,9 @@ private:
     Ui::PasswordDialog *ui;
     MainWindow *mainWindow;
     QString passTemplate;
-    void addFields();
     QStringList fields;
-
+    bool templating;
+    bool allFields;
 };
 
 #endif // PASSWORDDIALOG_H

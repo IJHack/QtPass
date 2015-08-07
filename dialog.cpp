@@ -847,3 +847,11 @@ bool Dialog::autoPull() {
 bool Dialog::autoPush() {
     return ui->checkBoxAutoPush->isChecked();
 }
+
+bool Dialog::templateAllFields() {
+    return ui->checkBoxTemplateAllFields->isChecked();
+}
+
+void Dialog::templateAllFields(bool templateAll) {
+    ui->checkBoxTemplateAllFields->setChecked(templateAll);
+}

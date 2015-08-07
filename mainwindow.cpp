@@ -239,6 +239,7 @@ bool MainWindow::checkConfig() {
 
     passTemplate = settings.value("passTemplate").toString();
     useTemplate = settings.value("useTemplate").toBool();
+    templateAllFields = settings.value("templateAllFields").toBool();
 
     //qDebug() << version;
 
@@ -377,6 +378,7 @@ void MainWindow::config() {
     d->setPasswordChars(passwordChars);
     d->useTemplate(useTemplate);
     d->setTemplate(passTemplate);
+    d->templateAllFields(templateAllFields);
     d->autoPull(autoPull);
     d->autoPush(autoPush);
     if (startupPhase) {
@@ -409,6 +411,7 @@ void MainWindow::config() {
             passwordChars = d->getPasswordChars();
             useTemplate = d->useTemplate();
             passTemplate = d->getTemplate();
+            templateAllFields = d->templateAllFields();
             autoPush = d->autoPush();
             autoPull = d->autoPull();
 
@@ -439,6 +442,7 @@ void MainWindow::config() {
             settings.setValue("passwordChars", passwordChars);
             settings.setValue("useTemplate", useTemplate);
             settings.setValue("passTemplate", passTemplate);
+            settings.setValue("templateAllFields", templateAllFields);
             settings.setValue("autoPull", autoPull ? "true" : "false");
             settings.setValue("autoPush", autoPush ? "true" : "false");
 
@@ -950,6 +954,8 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
     PasswordDialog d(this);
     d.setFile(file);
     d.setTemplate(passTemplate);
+    d.useTemplate(useTemplate);
+    d.templateAll(templateAllFields);
     d.setPassword(lastDecrypt);
     if (!d.exec()) {
         d.setPassword(NULL);

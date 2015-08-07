@@ -73,6 +73,8 @@ public:
     void useTemplate(bool);
     QString getTemplate();
     void setTemplate(QString);
+    void templateAllFields(bool);
+    bool templateAllFields();
     bool autoPull();
     void autoPull(bool);
     bool autoPush();
