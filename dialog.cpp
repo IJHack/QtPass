@@ -813,6 +813,7 @@ void Dialog::startMinimized(bool startMinimized) {
  */
 void Dialog::on_checkBoxUseTemplate_clicked() {
     ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
+    ui->checkBoxTemplateAllFields->setEnabled(ui->checkBoxUseTemplate->isChecked());
 }
 
 void Dialog::useTemplate(bool useTemplate) {
