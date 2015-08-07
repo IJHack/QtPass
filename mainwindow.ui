@@ -145,6 +145,12 @@
       </widget>
       <widget class="QWidget" name="verticalLayoutWidget">
        <layout class="QVBoxLayout" name="verticalLayoutPassword">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="formLayout"/>
+        </item>
         <item>
          <widget class="QTextBrowser" name="textBrowser">
           <property name="html">
