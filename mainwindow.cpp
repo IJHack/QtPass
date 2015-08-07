@@ -642,6 +642,9 @@ void MainWindow::readyRead(bool finished = false) {
             if (useClipboard && !output.isEmpty()) {
                 QClipboard *clip = QApplication::clipboard();
                 QStringList tokens =  output.split("\n");
+
+                // TODO
+
                 clip->setText(tokens[0]);
                 ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
                 if (useAutoclear) {

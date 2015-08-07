@@ -58,7 +58,6 @@ void PasswordDialog::setPassword(QString password)
             for (int j = 0; j < tokens.length(); j++) {
                 QString token = tokens.at(j);
                 if (token.contains(':')) {
-                    tokens.removeAt(j);
                     int colon = token.indexOf(':');
                     QString field = token.left(colon);
                     QString value = token.right(token.length()-colon-1);
@@ -66,6 +65,8 @@ void PasswordDialog::setPassword(QString password)
                     line->setObjectName(field);
                     line->setText(value);
                     ui->formLayout->addRow(new QLabel(field), line);
+                    tokens.removeAt(j);
+                    j--; // tokens.length() also got shortened by the remove..
                 }
             }
         }
