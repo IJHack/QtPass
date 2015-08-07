@@ -13,6 +13,7 @@
 #include <QFileInfo>
 #include <QQueue>
 #include <QCloseEvent>
+#include <QLabel>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN/*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -639,12 +640,9 @@ void MainWindow::readyRead(bool finished = false) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
+            QStringList tokens =  output.split("\n");
             if (useClipboard && !output.isEmpty()) {
                 QClipboard *clip = QApplication::clipboard();
-                QStringList tokens =  output.split("\n");
-
-                // TODO
-
                 clip->setText(tokens[0]);
                 ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
                 if (useAutoclear) {
@@ -654,14 +652,50 @@ void MainWindow::readyRead(bool finished = false) {
                 if (useAutoclearPanel) {
                       QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
                 }
-                if (hidePassword) {
-                    //tokens.pop_front();
+
+                if (hidePassword && !useTemplate) {
                     tokens[0] = "***" + tr("Password hidden") + "***";
                     output = tokens.join("\n");
                 }
                 if (hideContent) {
                     output = "***" + tr("Content hidden") + "***";
                 }
+            }
+
+            if (useTemplate) {
+                while(ui->formLayout->count() > 0){
+                    QLayoutItem *item = ui->formLayout->takeAt(0);
+                    delete item->widget();
+                    delete item;
+                }
+                QLineEdit *pass = new QLineEdit();
+                pass->setText(tokens[0]);
+                tokens.pop_front();
+                if (hidePassword) {
+                    pass->setEchoMode(QLineEdit::Password);
+                }
+                pass->setReadOnly(true);
+                ui->formLayout->addRow(pass);
+
+                for (int j = 0; j < tokens.length(); j++) {
+                    QString token = tokens.at(j);
+                    if (token.contains(':')) {
+                        int colon = token.indexOf(':');
+                        QString field = token.left(colon);
+                        if (templateAllFields || passTemplate.contains(field)) {
+                            QString value = token.right(token.length()-colon-1);
+                            QLineEdit *line = new QLineEdit();
+                            line->setObjectName(field);
+                            line->setText(value);
+                            line->setReadOnly(true);
+                            ui->formLayout->addRow(new QLabel(field), line);
+                            tokens.removeAt(j);
+                            j--; // tokens.length() also got shortened by the remove..
+                        }
+                    }
+                }
+
+                output = tokens.join("\n");
             }
         }
         output.replace(QRegExp("<"), "&lt;");
@@ -710,6 +744,11 @@ void MainWindow::clearClipboard()
  */
 void MainWindow::clearPanel()
 {
+    while(ui->formLayout->count() > 0){
+        QLayoutItem *item = ui->formLayout->takeAt(0);
+        delete item->widget();
+        delete item;
+    }
     QString output = "***" + tr("Password and Content hidden") + "***";
     ui->textBrowser->setHtml(output);
 }
@@ -733,7 +772,8 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
     }
 }
 
-/**
+/**                QStringList tokens =  output.split("\n");
+
  * @brief MainWindow::enableUiElements
  * @param state
  */
