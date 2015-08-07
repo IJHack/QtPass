@@ -2,6 +2,7 @@
 #include "ui_passworddialog.h"
 #include <QLabel>
 #include <QLineEdit>
+#include <QDebug>
 
 PasswordDialog::PasswordDialog(MainWindow *parent) :
     QDialog(parent),
@@ -37,18 +38,35 @@ void PasswordDialog::setPassword(QString password)
     QStringList tokens =  password.split("\n");
     ui->lineEditPassword->setText(tokens[0]);
     tokens.pop_front();
-    for (int i = 0; i < ui->formLayout->rowCount(); i++) {
-        QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
-        if (item == NULL) {
-            continue;
+    if (templating) {
+        for (int i = 0; i < ui->formLayout->rowCount(); i++) {
+            QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
+            if (item == NULL) {
+                continue;
+            }
+            QWidget *widget = item->widget();
+            for (int j = 0; j < tokens.length(); j++) {
+                QString token = tokens.at(j);
+                if (token.startsWith(widget->objectName()+':')) {
+                    tokens.removeAt(j);
+                    QString value = token.remove(0, widget->objectName().length()+1);
+                    ((QLineEdit*)widget)->setText(value);
+                }
+            }
         }
-        QWidget *widget = item->widget();
-        for (int j = 0; j < tokens.length(); j++) {
-            QString token = tokens.at(j);
-            if (token.startsWith(widget->objectName()+':')) {
-                tokens.removeAt(j);
-                QString value = token.remove(0, widget->objectName().length()+1);
-                ((QLineEdit*)widget)->setText(value);
+        if (allFields) {
+            for (int j = 0; j < tokens.length(); j++) {
+                QString token = tokens.at(j);
+                if (token.contains(':')) {
+                    tokens.removeAt(j);
+                    int colon = token.indexOf(':');
+                    QString field = token.left(colon);
+                    QString value = token.right(token.length()-colon-1);
+                    QLineEdit *line = new QLineEdit();
+                    line->setObjectName(field);
+                    line->setText(value);
+                    ui->formLayout->addRow(new QLabel(field), line);
+                }
             }
         }
     }
@@ -88,4 +106,12 @@ void PasswordDialog::setTemplate(QString rawFields) {
 
 void PasswordDialog::setFile(QString file) {
     this->setWindowTitle(this->windowTitle()+" "+file);
+}
+
+void PasswordDialog::templateAll(bool templateAll) {
+    allFields = templateAll;
+}
+
+void PasswordDialog::useTemplate(bool useTemplate) {
+    templating = useTemplate;
 }

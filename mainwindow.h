@@ -127,6 +127,7 @@ private:
     QString passwordChars;
     bool useTemplate;
     QString passTemplate;
+    bool templateAllFields;
     bool autoPull;
     bool autoPush;
     void updateText();
