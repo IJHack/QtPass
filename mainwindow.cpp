@@ -49,6 +49,13 @@ MainWindow::MainWindow(QWidget *parent) :
         QApplication::quit();
     }
     QtPass = NULL;
+    QTimer::singleShot(10, this, SLOT(focusInput()));
+
+}
+
+void MainWindow::focusInput() {
+    ui->lineEdit->selectAll();
+    ui->lineEdit->setFocus();
 }
 
 /**
@@ -338,7 +345,6 @@ bool MainWindow::checkConfig() {
         ui->pushButton->show();
         ui->updateButton->show();
     }
-    ui->lineEdit->setFocus();
 
     startupPhase = false;
     return true;
@@ -1325,8 +1331,7 @@ void MainWindow::setApp(SingleApplication *app)
 void MainWindow::messageAvailable(QString message)
 {
     if (message.isEmpty()) {
-        ui->lineEdit->selectAll();
-        ui->lineEdit->setFocus();
+        focusInput();
     } else {
         ui->treeView->expandAll();
         ui->lineEdit->setText(message);
