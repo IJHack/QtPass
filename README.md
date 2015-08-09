@@ -13,6 +13,15 @@ Features
 
 Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
 
+Installation
+------------
+On most systems all you need is:
+`qmake && make && make install`
+
+On Mac OS X:
+`qmake && make && macdeployqt QtPass.app`
+* Currently seems to only work with MacGPG2
+
 Security considerations
 -----------------------
 Using this program will not magically keep your passwords secure against
@@ -55,15 +64,6 @@ Planned features
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
 * Some other form of remote storage that allows for accountability / auditing (web API to retrieve the .gpg files?)
-
-Installation
-------------
-On most systems all you need is:
-`qmake && make && make install`
-
-On Mac OS X:
-`qmake && make && macdeployqt QtPass.app`
-* Currently seems to only work with MacGPG2
 
 Further reading
 ---------------
