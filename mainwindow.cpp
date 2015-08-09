@@ -700,8 +700,19 @@ void MainWindow::readyRead(bool finished = false) {
                         }
                     }
                 }
-
+                if (ui->formLayout->count() == 0) {
+                    ui->verticalLayoutPassword->setSpacing(0);
+                } else {
+                    ui->verticalLayoutPassword->setSpacing(6);
+                }
                 output = tokens.join("\n");
+            } else {
+                while(ui->formLayout->count() > 0){
+                    QLayoutItem *item = ui->formLayout->takeAt(0);
+                    delete item->widget();
+                    delete item;
+                }
+                ui->verticalLayoutPassword->setSpacing(0);
             }
         }
         output.replace(QRegExp("<"), "&lt;");
