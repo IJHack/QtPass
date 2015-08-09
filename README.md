@@ -48,9 +48,8 @@ Known issues
 
 Planned features
 ----------------
-* Templates (username, url etc) in Add / Edit screen (configurable templates)
-* Plugins based on field name, plugins follow same format as password files
 * Re-encryption after users-change (optional of course)
+* Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
