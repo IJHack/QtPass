@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,900italic,300,700,900);
 
 body {
   padding:50px;
@@ -22,6 +22,7 @@ h1, h2, h3 {
 
 h1 {
   font-size:28px;
+  font-weight: 900;
 }
 
 h2 {
