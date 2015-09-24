@@ -267,13 +267,16 @@ bool MainWindow::checkConfig() {
         } else {
             usePwgen = false;
         }
-    } /*else {
-        QStringList ver = version.split(".");
-        qDebug() << ver;
-        if (ver[0] == "0" && ver[1] == "8") {
-            // upgrade to 0.9
+    } else {
+//        QStringList ver = version.split(".");
+//        qDebug() << ver;
+//        if (ver[0] == "0" && ver[1] == "8") {
+//            // upgrade to 0.9
+//        }
+        if (passwordChars.isEmpty()) {
+            passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
         }
-    }*/
+    }
     settings.setValue("version", VERSION);
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
