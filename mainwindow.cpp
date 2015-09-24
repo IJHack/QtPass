@@ -1637,11 +1637,17 @@ QString MainWindow::generatePassword() {
             qDebug() << "pwgen fail";
         }
     } else {
-        for(int i=0; i<passwordLength; ++i)
-        {
-           int index = qrand() % passwordChars.length();
-           QChar nextChar = passwordChars.at(index);
-           passwd.append(nextChar);
+        int length = passwordChars.length();
+        if (length > 0) {
+            for(int i=0; i<passwordLength; ++i)
+            {
+               int index = qrand() % length;
+               QChar nextChar = passwordChars.at(index);
+               passwd.append(nextChar);
+            }
+        } else {
+            QMessageBox::critical(this, tr("No characters chosen"),
+                tr("Can't generate password, there are no characters to choose from set in the configuration!"));
         }
     }
     return passwd;
