@@ -13,6 +13,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 macx {
     TARGET = QtPass
+    QMAKE_MAC_SDK = macosx10.11
 } else {
     TARGET = qtpass
 }
