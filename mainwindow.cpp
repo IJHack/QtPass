@@ -732,7 +732,7 @@ void MainWindow::readyRead(bool finished = false) {
         output = "<span style=\"color: red;\">" + error + "</span><br />" + output;
     }
 
-    output.replace(QRegExp("((http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\+&amp;%\\$#\\=~])*)"), "<a href=\"\\1\">\\1</a>");
+    output.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
     if (!ui->textBrowser->toPlainText().isEmpty()) {
         output = ui->textBrowser->toHtml() + output;
@@ -1212,7 +1212,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
             }
             current_user = UserInfo();
             current_user.key_id = props[4];
-            current_user.name   = props[9];
+            current_user.name   = props[9].toUtf8();
             current_user.validity = props[8][0].toLatin1();
             current_user.created.setTime_t(props[5].toInt());
             current_user.expiry.setTime_t(props[6].toInt());
