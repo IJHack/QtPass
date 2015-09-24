@@ -91,7 +91,11 @@ win32 {
 OTHER_FILES += LICENSE \
                README.md
 
-target.path = /usr/local/bin/
+isEmpty(PREFIX) {
+ PREFIX = /usr/local/bin
+}
+target.path = $$PREFIX/
+
 INSTALLS    += target
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
