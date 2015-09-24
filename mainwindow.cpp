@@ -1026,6 +1026,10 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         return;
     }
 
+    if (newValue.right(1) != "\n") {
+        newValue += "\n";
+    }
+
     currentAction = EDIT;
     if (usePass) {
         QString force(overwrite ? " -f " : " ");
