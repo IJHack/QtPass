@@ -94,7 +94,7 @@ OTHER_FILES += LICENSE \
 isEmpty(PREFIX) {
  PREFIX = /usr/local/bin
 }
-target.path = $$PREFIX/
+target.path = $$(PREFIX)/
 
 INSTALLS    += target
 
