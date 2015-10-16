@@ -14,6 +14,10 @@ addons:
     packages:
     - qt5-default
 
+install:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
+
 script:
   - qmake -v
   - qmake -Wall qtpass.pro
