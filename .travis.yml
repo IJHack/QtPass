@@ -32,7 +32,3 @@ notifications:
     on_success: change
     on_failure: always
 
-matrix:
-  allow_failures:
-    - os: osx
-
