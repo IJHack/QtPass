@@ -570,7 +570,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     if (!file.isEmpty()){
         currentAction = GPG;
         if (usePass) {
-            executePass('"' + file + '"');
+            executePass("show \"" + file + '"');
         } else {
             executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
         }
