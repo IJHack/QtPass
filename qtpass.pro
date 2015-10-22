@@ -92,6 +92,10 @@ OTHER_FILES += LICENSE \
                README.md
 
 isEmpty(PREFIX) {
+ PREFIX = $$(PREFIX)
+}
+
+isEmpty(PREFIX) {
  PREFIX = /usr/local/bin
 }
 target.path = $$PREFIX/
