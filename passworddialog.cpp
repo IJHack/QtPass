@@ -61,6 +61,9 @@ void PasswordDialog::setPassword(QString password)
                     int colon = token.indexOf(':');
                     QString field = token.left(colon);
                     QString value = token.right(token.length()-colon-1);
+                    if (!passTemplate.contains(field) && value.startsWith("//")) {
+                        continue;   // colon is probably from a url
+                    }
                     QLineEdit *line = new QLineEdit();
                     line->setObjectName(field);
                     line->setText(value);
