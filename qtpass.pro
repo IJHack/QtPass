@@ -7,6 +7,8 @@
 #
 #-------------------------------------------------
 
+VERSION    = 1.0.3
+TEMPLATE   = app
 QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -17,9 +19,6 @@ macx {
 } else {
     TARGET = qtpass
 }
-
-TEMPLATE   = app
-VERSION    = 1.0.2
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
