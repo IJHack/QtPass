@@ -693,6 +693,9 @@ void MainWindow::readyRead(bool finished = false) {
                         QString field = token.left(colon);
                         if (templateAllFields || passTemplate.contains(field)) {
                             QString value = token.right(token.length()-colon-1);
+                            if (!passTemplate.contains(field) && value.startsWith("//")) {
+                                continue;   // colon is probably from a url
+                            }
                             QLineEdit *line = new QLineEdit();
                             line->setObjectName(field);
                             line->setText(value);
