@@ -49,5 +49,6 @@ fi
 * Time:
   * Fork, clone hack and send a pull request.
   * Find an [issue](https://github.com/IJHack/qtpass/issues) to work on..
+  * Participate in our bug bounty, you submit an issue and help us fix it, I send you a bounty.
 * Money:
 IJhack takes donations in [bitcoin](https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb)
