@@ -86,8 +86,9 @@ win32 {
 } else:macx {
     ICON = artwork/icon.icns
     QMAKE_INFO_PLIST = Info.plist
+} else:bsd {
+    LIBS += -L/usr/local/lib
 }
-
 OTHER_FILES += LICENSE \
                README.md
 
