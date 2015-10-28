@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     //locale = "nl_NL";
     translator.load(QString(":localization/localization_") + locale + QString(".qm"));
     app.installTranslator(&translator);
+    app.setLayoutDirection(QObject::tr("LTR")=="RTL" ? Qt::RightToLeft : Qt::LeftToRight);
 
     MainWindow w;
 
