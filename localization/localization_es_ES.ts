@@ -694,7 +694,7 @@ Usted no será capaz de descifrar cualquier contraseña que acaba de agregar!</t
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="40"/>
+        <location filename="../main.cpp" line="42"/>
         <source>LTR</source>
         <translation type="unfinished"></translation>
     </message>
