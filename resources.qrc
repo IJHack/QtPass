@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
+        <file>localization/localization_ar_MA.qm</file>
+        <file>localization/localization_ar_MA.ts</file>
         <file>localization/localization_de_DE.qm</file>
         <file>localization/localization_de_DE.ts</file>
         <file>localization/localization_es_ES.qm</file>
