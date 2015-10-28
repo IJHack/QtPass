@@ -7,7 +7,7 @@
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
-#unclude <sys/time.h>
+#include <sys/time.h>
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
