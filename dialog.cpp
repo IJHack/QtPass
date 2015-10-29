@@ -562,6 +562,9 @@ void Dialog::wizard()
             tr("Would you like to create a password-store at %1?").arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
                 QDir().mkdir(passStore);
+#ifdef Q_OS_WIN
+                SetFileAttributes(passStore, FILE_ATTRIBUTE_HIDDEN);
+#endif
                 if(useGit()) {
                     mainWindow->executePassGitInit();
                 }
