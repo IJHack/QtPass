@@ -47,6 +47,7 @@ fi
 ###I would like to donate!
 
 * Time:
+  * Read [contributing](CONTRIBUTING.md) documentation.
   * Fork, clone hack and send a pull request.
   * Find an [issue](https://github.com/IJHack/qtpass/issues) to work on..
   * Participate in our bug bounty, you submit an issue and help us fix it, I send you a bounty.
