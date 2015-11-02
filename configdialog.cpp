@@ -1,5 +1,5 @@
-#include "dialog.h"
-#include "ui_dialog.h"
+#include "configdialog.h"
+#include "ui_configdialog.h"
 #include "mainwindow.h"
 #include "keygendialog.h"
 #include <QDebug>
@@ -10,9 +10,9 @@
  * @brief Dialog::Dialog
  * @param parent
  */
-Dialog::Dialog(MainWindow *parent) :
+ConfigDialog::ConfigDialog(MainWindow *parent) :
     QDialog(parent),
-    ui(new Ui::Dialog)
+    ui(new Ui::ConfigDialog)
 {
     mainWindow = parent;
     ui->setupUi(this);
@@ -24,7 +24,7 @@ Dialog::Dialog(MainWindow *parent) :
 /**
  * @brief Dialog::~Dialog
  */
-Dialog::~Dialog()
+ConfigDialog::~ConfigDialog()
 {
     mainWindow->setGitExecutable(ui->gitPath->text());
     mainWindow->setGpgExecutable(ui->gpgPath->text());
@@ -35,7 +35,7 @@ Dialog::~Dialog()
  * @brief Dialog::setPassPath
  * @param path
  */
-void Dialog::setPassPath(QString path) {
+void ConfigDialog::setPassPath(QString path) {
     ui->passPath->setText(path);
 }
 
@@ -43,7 +43,7 @@ void Dialog::setPassPath(QString path) {
  * @brief Dialog::setGitPath
  * @param path
  */
-void Dialog::setGitPath(QString path) {
+void ConfigDialog::setGitPath(QString path) {
     ui->gitPath->setText(path);
     if (path.isEmpty()) {
         useGit(false);
@@ -57,7 +57,7 @@ void Dialog::setGitPath(QString path) {
  * @brief Dialog::setGpgPath
  * @param path
  */
-void Dialog::setGpgPath(QString path) {
+void ConfigDialog::setGpgPath(QString path) {
     ui->gpgPath->setText(path);
 }
 
@@ -65,7 +65,7 @@ void Dialog::setGpgPath(QString path) {
  * @brief Dialog::setStorePath
  * @param path
  */
-void Dialog::setStorePath(QString path) {
+void ConfigDialog::setStorePath(QString path) {
     ui->storePath->setText(path);
 }
 
@@ -73,7 +73,7 @@ void Dialog::setStorePath(QString path) {
  * @brief Dialog::getPassPath
  * @return
  */
-QString Dialog::getPassPath() {
+QString ConfigDialog::getPassPath() {
     return ui->passPath->text();
 }
 
@@ -81,7 +81,7 @@ QString Dialog::getPassPath() {
  * @brief Dialog::getGitPath
  * @return
  */
-QString Dialog::getGitPath() {
+QString ConfigDialog::getGitPath() {
     return ui->gitPath->text();
 }
 
@@ -89,7 +89,7 @@ QString Dialog::getGitPath() {
  * @brief Dialog::getGpgPath
  * @return
  */
-QString Dialog::getGpgPath() {
+QString ConfigDialog::getGpgPath() {
     return ui->gpgPath->text();
 }
 
@@ -97,7 +97,7 @@ QString Dialog::getGpgPath() {
  * @brief Dialog::getStorePath
  * @return
  */
-QString Dialog::getStorePath() {
+QString ConfigDialog::getStorePath() {
     return ui->storePath->text();
 }
 
@@ -105,7 +105,7 @@ QString Dialog::getStorePath() {
  * @brief Dialog::usePass
  * @return
  */
-bool Dialog::usePass() {
+bool ConfigDialog::usePass() {
     return ui->radioButtonPass->isChecked();
 }
 
@@ -113,7 +113,7 @@ bool Dialog::usePass() {
  * @brief Dialog::usePass
  * @param pass
  */
-void Dialog::usePass(bool usePass) {
+void ConfigDialog::usePass(bool usePass) {
     if (usePass) {
         ui->radioButtonNative->setChecked(false);
         ui->radioButtonPass->setChecked(true);
@@ -127,7 +127,7 @@ void Dialog::usePass(bool usePass) {
 /**
  * @brief Dialog::on_radioButtonNative_clicked
  */
-void Dialog::on_radioButtonNative_clicked()
+void ConfigDialog::on_radioButtonNative_clicked()
 {
     setGroupBoxState();
 }
@@ -135,7 +135,7 @@ void Dialog::on_radioButtonNative_clicked()
 /**
  * @brief Dialog::on_radioButtonPass_clicked
  */
-void Dialog::on_radioButtonPass_clicked()
+void ConfigDialog::on_radioButtonPass_clicked()
 {
     setGroupBoxState();
 }
@@ -143,7 +143,7 @@ void Dialog::on_radioButtonPass_clicked()
 /**
  * @brief Dialog::setGroupBoxState
  */
-void Dialog::setGroupBoxState() {
+void ConfigDialog::setGroupBoxState() {
     if (ui->radioButtonPass->isChecked()) {
         ui->groupBoxNative->setEnabled(false);
         ui->groupBoxPass->setEnabled(true);
@@ -157,7 +157,7 @@ void Dialog::setGroupBoxState() {
  * @brief Dialog::selectExecutable
  * @return
  */
-QString Dialog::selectExecutable() {
+QString ConfigDialog::selectExecutable() {
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setOption(QFileDialog::ReadOnly);
@@ -171,7 +171,7 @@ QString Dialog::selectExecutable() {
  * @brief Dialog::selectFolder
  * @return
  */
-QString Dialog::selectFolder() {
+QString ConfigDialog::selectFolder() {
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::Directory);
     dialog.setFilter(QDir::NoFilter);
@@ -185,7 +185,7 @@ QString Dialog::selectFolder() {
 /**
  * @brief Dialog::on_toolButtonGit_clicked
  */
-void Dialog::on_toolButtonGit_clicked()
+void ConfigDialog::on_toolButtonGit_clicked()
 {
     QString git = selectExecutable();
     if (!git.isEmpty()) {
@@ -200,7 +200,7 @@ void Dialog::on_toolButtonGit_clicked()
 /**
  * @brief Dialog::on_toolButtonGpg_clicked
  */
-void Dialog::on_toolButtonGpg_clicked()
+void ConfigDialog::on_toolButtonGpg_clicked()
 {
     QString gpg = selectExecutable();
     if (!gpg.isEmpty()) {
@@ -211,7 +211,7 @@ void Dialog::on_toolButtonGpg_clicked()
 /**
  * @brief Dialog::on_toolButtonPass_clicked
  */
-void Dialog::on_toolButtonPass_clicked()
+void ConfigDialog::on_toolButtonPass_clicked()
 {
     QString pass = selectExecutable();
     if (!pass.isEmpty()) {
@@ -222,7 +222,7 @@ void Dialog::on_toolButtonPass_clicked()
 /**
  * @brief Dialog::on_toolButtonStore_clicked
  */
-void Dialog::on_toolButtonStore_clicked()
+void ConfigDialog::on_toolButtonStore_clicked()
 {
     QString store = selectFolder();
     if (!store.isEmpty()) { // TODO call check
@@ -233,7 +233,7 @@ void Dialog::on_toolButtonStore_clicked()
 /**
  * @brief Dialog::on_checkBoxClipboard_clicked
  */
-void Dialog::on_checkBoxClipboard_clicked()
+void ConfigDialog::on_checkBoxClipboard_clicked()
 {
     if (ui->checkBoxClipboard->isChecked()) {
         ui->checkBoxAutoclear->setEnabled(true);
@@ -258,7 +258,7 @@ void Dialog::on_checkBoxClipboard_clicked()
 /**
  * @brief Dialog::on_checkBoxAutoclearPanel_clicked
  */
-void Dialog::on_checkBoxAutoclearPanel_clicked()
+void ConfigDialog::on_checkBoxAutoclearPanel_clicked()
 {
     if (ui->checkBoxAutoclearPanel->isChecked()) {
         ui->spinBoxAutoclearPanelSeconds->setEnabled(true);
@@ -272,7 +272,7 @@ void Dialog::on_checkBoxAutoclearPanel_clicked()
 /**
  * @brief Dialog::useClipboard
  */
-void Dialog::useClipboard(bool useClipboard)
+void ConfigDialog::useClipboard(bool useClipboard)
 {
     ui->checkBoxClipboard->setChecked(useClipboard);
     on_checkBoxClipboard_clicked();
@@ -282,7 +282,7 @@ void Dialog::useClipboard(bool useClipboard)
  * @brief Dialog::useAutoclear
  * @param useAutoclear
  */
-void Dialog::useAutoclear(bool useAutoclear)
+void ConfigDialog::useAutoclear(bool useAutoclear)
 {
     ui->checkBoxAutoclear->setChecked(useAutoclear);
     on_checkBoxAutoclear_clicked();
@@ -292,7 +292,7 @@ void Dialog::useAutoclear(bool useAutoclear)
  * @brief Dialog::setAutoclear
  * @param seconds
  */
-void Dialog::setAutoclear(int seconds)
+void ConfigDialog::setAutoclear(int seconds)
 {
     ui->spinBoxAutoclearSeconds->setValue(seconds);
 }
@@ -301,7 +301,7 @@ void Dialog::setAutoclear(int seconds)
  * @brief Dialog::useAutoclearPanel
  * @param useAutoclearPanel
  */
-void Dialog::useAutoclearPanel(bool useAutoclearPanel)
+void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel)
 {
     ui->checkBoxAutoclearPanel->setChecked(useAutoclearPanel);
     on_checkBoxAutoclearPanel_clicked();
@@ -311,7 +311,7 @@ void Dialog::useAutoclearPanel(bool useAutoclearPanel)
  * @brief Dialog::setAutoclearPanel
  * @param seconds
  */
-void Dialog::setAutoclearPanel(int seconds)
+void ConfigDialog::setAutoclearPanel(int seconds)
 {
     ui->spinBoxAutoclearPanelSeconds->setValue(seconds);
 }
@@ -320,7 +320,7 @@ void Dialog::setAutoclearPanel(int seconds)
  * @brief Dialog::useClipboard
  * @return
  */
-bool Dialog::useClipboard()
+bool ConfigDialog::useClipboard()
 {
     return ui->checkBoxClipboard->isChecked();
 }
@@ -329,7 +329,7 @@ bool Dialog::useClipboard()
  * @brief Dialog::useAutoclear
  * @return
  */
-bool Dialog::useAutoclear()
+bool ConfigDialog::useAutoclear()
 {
     return ui->checkBoxAutoclear->isChecked();
 }
@@ -338,7 +338,7 @@ bool Dialog::useAutoclear()
  * @brief Dialog::getAutoclear
  * @return
  */
-int Dialog::getAutoclear()
+int ConfigDialog::getAutoclear()
 {
     return ui->spinBoxAutoclearSeconds->value();
 }
@@ -346,7 +346,7 @@ int Dialog::getAutoclear()
 /**
  * @brief Dialog::on_checkBoxAutoclear_clicked
  */
-void Dialog::on_checkBoxAutoclear_clicked()
+void ConfigDialog::on_checkBoxAutoclear_clicked()
 {
     on_checkBoxClipboard_clicked();
 }
@@ -355,7 +355,7 @@ void Dialog::on_checkBoxAutoclear_clicked()
  * @brief Dialog::useAutoclearPanel
  * @return
  */
-bool Dialog::useAutoclearPanel()
+bool ConfigDialog::useAutoclearPanel()
 {
     return ui->checkBoxAutoclearPanel->isChecked();
 }
@@ -364,7 +364,7 @@ bool Dialog::useAutoclearPanel()
  * @brief Dialog::getAutoclearPanel
  * @return
  */
-int Dialog::getAutoclearPanel()
+int ConfigDialog::getAutoclearPanel()
 {
     return ui->spinBoxAutoclearPanelSeconds->value();
 }
@@ -373,7 +373,7 @@ int Dialog::getAutoclearPanel()
  * @brief Dialog::hidePassword
  * @return
  */
-bool Dialog::hidePassword()
+bool ConfigDialog::hidePassword()
 {
     return ui->checkBoxHidePassword->isChecked();
 }
@@ -382,7 +382,7 @@ bool Dialog::hidePassword()
  * @brief Dialog::hideContent
  * @return
  */
-bool Dialog::hideContent()
+bool ConfigDialog::hideContent()
 {
     return ui->checkBoxHideContent->isChecked();
 }
@@ -391,7 +391,7 @@ bool Dialog::hideContent()
  * @brief Dialog::hidePassword
  * @param hidePassword
  */
-void Dialog::hidePassword(bool hidePassword)
+void ConfigDialog::hidePassword(bool hidePassword)
 {
     ui->checkBoxHidePassword->setChecked(hidePassword);
 }
@@ -400,7 +400,7 @@ void Dialog::hidePassword(bool hidePassword)
  * @brief Dialog::hideContent
  * @param hideContent
  */
-void Dialog::hideContent(bool hideContent)
+void ConfigDialog::hideContent(bool hideContent)
 {
     ui->checkBoxHideContent->setChecked(hideContent);
 }
@@ -409,7 +409,7 @@ void Dialog::hideContent(bool hideContent)
  * @brief Dialog::addGPGId
  * @return
  */
-bool Dialog::addGPGId()
+bool ConfigDialog::addGPGId()
 {
     return ui->checkBoxAddGPGId->isChecked();
 }
@@ -418,7 +418,7 @@ bool Dialog::addGPGId()
  * @brief Dialog::addGPGId
  * @param addGPGId
  */
-void Dialog::addGPGId(bool addGPGId)
+void ConfigDialog::addGPGId(bool addGPGId)
 {
     ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
@@ -427,7 +427,7 @@ void Dialog::addGPGId(bool addGPGId)
  * @brief Dialog::genKey
  * @param QString batch
  */
-void Dialog::genKey(QString batch, QDialog *dialog)
+void ConfigDialog::genKey(QString batch, QDialog *dialog)
 {
     mainWindow->generateKeyPair(batch, dialog);
 }
@@ -437,7 +437,7 @@ void Dialog::genKey(QString batch, QDialog *dialog)
  * @param profiles
  * @param profile
  */
-void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
+void ConfigDialog::setProfiles(QHash<QString, QString> profiles, QString profile)
 {
     //qDebug() << profiles;
     if (profiles.contains("")) {
@@ -466,7 +466,7 @@ void Dialog::setProfiles(QHash<QString, QString> profiles, QString profile)
  * @brief Dialog::getProfiles
  * @return
  */
-QHash<QString, QString> Dialog::getProfiles()
+QHash<QString, QString> ConfigDialog::getProfiles()
 {
     QHash<QString, QString> profiles;
     // Check?
@@ -488,7 +488,7 @@ QHash<QString, QString> Dialog::getProfiles()
 /**
  * @brief Dialog::on_addButton_clicked
  */
-void Dialog::on_addButton_clicked()
+void ConfigDialog::on_addButton_clicked()
 {
     int n = ui->profileTable->rowCount();
     ui->profileTable->insertRow(n);
@@ -500,7 +500,7 @@ void Dialog::on_addButton_clicked()
 /**
  * @brief Dialog::on_deleteButton_clicked
  */
-void Dialog::on_deleteButton_clicked()
+void ConfigDialog::on_deleteButton_clicked()
 {
     QSet<int> selectedRows; //we use a set to prevent doubles
     QList<QTableWidgetItem*> itemList = ui->profileTable->selectedItems();
@@ -524,7 +524,7 @@ void Dialog::on_deleteButton_clicked()
     }
 }
 
-void Dialog::criticalMessage(const QString &title, const QString &text)
+void ConfigDialog::criticalMessage(const QString &title, const QString &text)
 {
     QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
@@ -532,7 +532,7 @@ void Dialog::criticalMessage(const QString &title, const QString &text)
 /**
  * @brief Dialog::wizard
  */
-void Dialog::wizard()
+void ConfigDialog::wizard()
 {
     //mainWindow->checkConfig();
     bool clean = false;
@@ -599,7 +599,7 @@ void Dialog::wizard()
  * @brief Dialog::useTrayIcon
  * @return
  */
-bool Dialog::useTrayIcon() {
+bool ConfigDialog::useTrayIcon() {
     return ui->checkBoxUseTrayIcon->isChecked();
 }
 
@@ -607,7 +607,7 @@ bool Dialog::useTrayIcon() {
  * @brief Dialog::hideOnClose
  * @return
  */
-bool Dialog::hideOnClose() {
+bool ConfigDialog::hideOnClose() {
     return ui->checkBoxHideOnClose->isEnabled() && ui->checkBoxHideOnClose->isChecked();
 }
 
@@ -615,7 +615,7 @@ bool Dialog::hideOnClose() {
  * @brief Dialog::useTrayIcon
  * @param useSystray
  */
-void Dialog::useTrayIcon(bool useSystray) {
+void ConfigDialog::useTrayIcon(bool useSystray) {
     ui->checkBoxUseTrayIcon->setChecked(useSystray);
     ui->checkBoxHideOnClose->setEnabled(useSystray);
     ui->checkBoxStartMinimized->setEnabled(useSystray);
@@ -629,14 +629,14 @@ void Dialog::useTrayIcon(bool useSystray) {
  * @brief Dialog::hideOnClose
  * @param hideOnClose
  */
-void Dialog::hideOnClose(bool hideOnClose) {
+void ConfigDialog::hideOnClose(bool hideOnClose) {
     ui->checkBoxHideOnClose->setChecked(hideOnClose);
 }
 
 /**
  * @brief Dialog::on_checkBoxUseTrayIcon_clicked
  */
-void Dialog::on_checkBoxUseTrayIcon_clicked() {
+void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
     if (ui->checkBoxUseTrayIcon->isChecked()) {
         ui->checkBoxHideOnClose->setEnabled(true);
         ui->checkBoxStartMinimized->setEnabled(true);
@@ -650,7 +650,7 @@ void Dialog::on_checkBoxUseTrayIcon_clicked() {
  * @brief Dialog::closeEvent
  * @param event
  */
-void Dialog::closeEvent(QCloseEvent *event) {
+void ConfigDialog::closeEvent(QCloseEvent *event) {
     // TODO save window size or something?
     event->accept();
 }
@@ -659,7 +659,7 @@ void Dialog::closeEvent(QCloseEvent *event) {
  * @brief Dialog::useGit
  * @param useGit
  */
-void Dialog::useGit(bool useGit)
+void ConfigDialog::useGit(bool useGit)
 {
     ui->checkBoxUseGit->setChecked(useGit);
     on_checkBoxUseGit_clicked();
@@ -669,7 +669,7 @@ void Dialog::useGit(bool useGit)
  * @brief Dialog::useGit
  * @return
  */
-bool Dialog::useGit()
+bool ConfigDialog::useGit()
 {
     return ui->checkBoxUseGit->isChecked();
 }
@@ -677,7 +677,7 @@ bool Dialog::useGit()
 /**
  * @brief Dialog::on_checkBoxUseGit_clicked
  */
-void Dialog::on_checkBoxUseGit_clicked()
+void ConfigDialog::on_checkBoxUseGit_clicked()
 {
     ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
     ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
@@ -687,7 +687,7 @@ void Dialog::on_checkBoxUseGit_clicked()
 /**
  * @brief Dialog::on_toolButtonPwgen_clicked
  */
-void Dialog::on_toolButtonPwgen_clicked()
+void ConfigDialog::on_toolButtonPwgen_clicked()
 {
     QString pwgen = selectExecutable();
     if (!pwgen.isEmpty()) {
@@ -703,7 +703,7 @@ void Dialog::on_toolButtonPwgen_clicked()
  * @brief Dialog::getPwgenPath
  * @return
  */
-QString Dialog::getPwgenPath() {
+QString ConfigDialog::getPwgenPath() {
     return ui->pwgenPath->text();
 }
 
@@ -711,7 +711,7 @@ QString Dialog::getPwgenPath() {
  * @brief Dialog::setPwgenPath
  * @param pwgen
  */
-void Dialog::setPwgenPath(QString pwgen)
+void ConfigDialog::setPwgenPath(QString pwgen)
 {
     ui->pwgenPath->setText(pwgen);
     if (pwgen.isEmpty()) {
@@ -724,7 +724,7 @@ void Dialog::setPwgenPath(QString pwgen)
 /**
  * @brief Dialog::on_checkBoxUsPwgen_clicked
  */
-void Dialog::on_checkBoxUsePwgen_clicked()
+void ConfigDialog::on_checkBoxUsePwgen_clicked()
 {
     ui->checkBoxUseSymbols->setEnabled(ui->checkBoxUsePwgen->isChecked());
     ui->lineEditPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
@@ -735,7 +735,7 @@ void Dialog::on_checkBoxUsePwgen_clicked()
  * @brief Dialog::usePwgen
  * @param usePwgen
  */
-void Dialog::usePwgen(bool usePwgen) {
+void ConfigDialog::usePwgen(bool usePwgen) {
     if (ui->pwgenPath->text().isEmpty()) {
         usePwgen = false;
     }
@@ -747,7 +747,7 @@ void Dialog::usePwgen(bool usePwgen) {
  * @brief Dialog::useSymbols
  * @param useSymbols
  */
-void Dialog::useSymbols(bool useSymbols) {
+void ConfigDialog::useSymbols(bool useSymbols) {
     ui->checkBoxUseSymbols->setChecked(useSymbols);
 }
 
@@ -755,11 +755,11 @@ void Dialog::useSymbols(bool useSymbols) {
  * @brief Dialog::setPasswordLength
  * @param pwLen
  */
-void Dialog::setPasswordLength(int pwLen) {
+void ConfigDialog::setPasswordLength(int pwLen) {
     ui->spinBoxPasswordLength->setValue(pwLen);
 }
 
-void Dialog::setPasswordChars(QString pwChars) {
+void ConfigDialog::setPasswordChars(QString pwChars) {
     ui->lineEditPasswordChars->setText(pwChars);
 }
 
@@ -767,7 +767,7 @@ void Dialog::setPasswordChars(QString pwChars) {
  * @brief Dialog::usePwgen
  * @return
  */
-bool Dialog::usePwgen() {
+bool ConfigDialog::usePwgen() {
     return ui->checkBoxUsePwgen->isChecked();
 }
 
@@ -775,7 +775,7 @@ bool Dialog::usePwgen() {
  * @brief Dialog::useSymbols
  * @return
  */
-bool Dialog::useSymbols() {
+bool ConfigDialog::useSymbols() {
     return ui->checkBoxUseSymbols->isChecked();
 }
 
@@ -783,7 +783,7 @@ bool Dialog::useSymbols() {
  * @brief Dialog::getPasswordLength
  * @return
  */
-int Dialog::getPasswordLength() {
+int ConfigDialog::getPasswordLength() {
     return ui->spinBoxPasswordLength->value();
 }
 
@@ -791,7 +791,7 @@ int Dialog::getPasswordLength() {
  * @brief Dialog::getPasswordChars
  * @return
  */
-QString Dialog::getPasswordChars() {
+QString ConfigDialog::getPasswordChars() {
     return ui->lineEditPasswordChars->text();
 }
 
@@ -799,7 +799,7 @@ QString Dialog::getPasswordChars() {
  * @brief Dialog::startMinimized
  * @return
  */
-bool Dialog::startMinimized() {
+bool ConfigDialog::startMinimized() {
     return ui->checkBoxStartMinimized->isChecked();
 }
 
@@ -807,55 +807,55 @@ bool Dialog::startMinimized() {
  * @brief Dialog::startMinimized
  * @param startMinimized
  */
-void Dialog::startMinimized(bool startMinimized) {
+void ConfigDialog::startMinimized(bool startMinimized) {
     ui->checkBoxStartMinimized->setChecked(startMinimized);
 }
 
 /**
  * @brief Dialog::on_checkBoxUseTemplate_clicked
  */
-void Dialog::on_checkBoxUseTemplate_clicked() {
+void ConfigDialog::on_checkBoxUseTemplate_clicked() {
     ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
     ui->checkBoxTemplateAllFields->setEnabled(ui->checkBoxUseTemplate->isChecked());
 }
 
-void Dialog::useTemplate(bool useTemplate) {
+void ConfigDialog::useTemplate(bool useTemplate) {
    ui->checkBoxUseTemplate->setChecked(useTemplate);
    on_checkBoxUseTemplate_clicked();
 }
 
-bool Dialog::useTemplate() {
+bool ConfigDialog::useTemplate() {
     return ui->checkBoxUseTemplate->isChecked();
 }
 
-void Dialog::setTemplate(QString passTemplate) {
+void ConfigDialog::setTemplate(QString passTemplate) {
     ui->plainTextEditTemplate->setPlainText(passTemplate);
 }
 
-QString Dialog::getTemplate() {
+QString ConfigDialog::getTemplate() {
     return ui->plainTextEditTemplate->toPlainText();
 }
 
-void Dialog::autoPull(bool autoPull) {
+void ConfigDialog::autoPull(bool autoPull) {
     ui->checkBoxAutoPull->setChecked(autoPull);
 }
 
-void Dialog::autoPush(bool autoPush) {
+void ConfigDialog::autoPush(bool autoPush) {
     ui->checkBoxAutoPush->setChecked(autoPush);
 }
 
-bool Dialog::autoPull() {
+bool ConfigDialog::autoPull() {
     return ui->checkBoxAutoPull->isChecked();
 }
 
-bool Dialog::autoPush() {
+bool ConfigDialog::autoPush() {
     return ui->checkBoxAutoPush->isChecked();
 }
 
-bool Dialog::templateAllFields() {
+bool ConfigDialog::templateAllFields() {
     return ui->checkBoxTemplateAllFields->isChecked();
 }
 
-void Dialog::templateAllFields(bool templateAll) {
+void ConfigDialog::templateAllFields(bool templateAll) {
     ui->checkBoxTemplateAllFields->setChecked(templateAll);
 }

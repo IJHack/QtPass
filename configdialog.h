@@ -11,16 +11,16 @@ namespace Ui {
 
 struct UserInfo;
 
-class Dialog;
+class ConfigDialog;
 }
 
-class Dialog : public QDialog
+class ConfigDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Dialog(MainWindow *parent);
-    ~Dialog();
+    explicit ConfigDialog(MainWindow *parent);
+    ~ConfigDialog();
     void setPassPath(QString);
     void setGitPath(QString);
     void setGpgPath(QString);
@@ -102,7 +102,7 @@ private slots:
     void on_checkBoxUseTemplate_clicked();
 
 private:
-    QScopedPointer<Ui::Dialog> ui;
+    QScopedPointer<Ui::ConfigDialog> ui;
     void setGroupBoxState();
     QString selectExecutable();
     QString selectFolder();
