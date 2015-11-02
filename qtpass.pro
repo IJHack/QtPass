@@ -7,7 +7,7 @@
 #
 #-------------------------------------------------
 
-VERSION    = 1.0.3
+VERSION    = 1.0.4
 TEMPLATE   = app
 QT        += core gui
 
@@ -22,7 +22,7 @@ macx {
 
 SOURCES   += main.cpp\
              mainwindow.cpp \
-             dialog.cpp \
+             configdialog.cpp \
              storemodel.cpp \
              util.cpp \
              usersdialog.cpp \ 
@@ -32,7 +32,7 @@ SOURCES   += main.cpp\
     passworddialog.cpp
 
 HEADERS   += mainwindow.h \
-             dialog.h \
+             configdialog.h \
              storemodel.h \
              util.h \
              usersdialog.h \
@@ -42,7 +42,7 @@ HEADERS   += mainwindow.h \
     passworddialog.h
 
 FORMS     += mainwindow.ui \
-             dialog.ui \
+             configdialog.ui \
              usersdialog.ui \ 
              keygendialog.ui \
     passworddialog.ui

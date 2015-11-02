@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QCloseEvent>
-#include "dialog.h"
+#include "configdialog.h"
 
 namespace Ui {
 class KeygenDialog;
@@ -14,7 +14,7 @@ class KeygenDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit KeygenDialog(Dialog *parent = 0);
+    explicit KeygenDialog(ConfigDialog *parent = 0);
     ~KeygenDialog();
 
 protected:
@@ -32,7 +32,7 @@ private:
     void replace(QString, QString);
     void done(int r);
     void no_protection(bool enable);
-    Dialog *dialog;
+    ConfigDialog *dialog;
 
 };
 

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "dialog.h"
+#include "configdialog.h"
 #include "usersdialog.h"
 #include "keygendialog.h"
 #include "passworddialog.h"
@@ -357,7 +357,7 @@ bool MainWindow::checkConfig() {
  * @brief MainWindow::config
  */
 void MainWindow::config() {
-    QScopedPointer<Dialog> d(new Dialog(this));
+    QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
     d->setModal(true);
 
     // Automatically default to pass if it's available

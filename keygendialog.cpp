@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QMessageBox>
 
-KeygenDialog::KeygenDialog(Dialog *parent) :
+KeygenDialog::KeygenDialog(ConfigDialog *parent) :
     QDialog(parent),
     ui(new Ui::KeygenDialog)
 {
