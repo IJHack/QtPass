@@ -69,6 +69,6 @@ Further reading
 ---------------
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
-[Documentation](http://qtpass.org/)
+[Documentation](https://qtpass.org/)
 
 [Source code](https://github.com/IJHack/qtpass)
