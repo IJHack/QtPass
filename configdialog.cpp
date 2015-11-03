@@ -5,9 +5,12 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QDir>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 
 /**
- * @brief Dialog::Dialog
+ * @brief ConfigDialog::ConfigDialog
  * @param parent
  */
 ConfigDialog::ConfigDialog(MainWindow *parent) :
@@ -22,7 +25,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent) :
 }
 
 /**
- * @brief Dialog::~Dialog
+ * @brief ConfigDialog::~ConfigDialog
  */
 ConfigDialog::~ConfigDialog()
 {
@@ -32,7 +35,7 @@ ConfigDialog::~ConfigDialog()
 }
 
 /**
- * @brief Dialog::setPassPath
+ * @brief ConfigDialog::setPassPath
  * @param path
  */
 void ConfigDialog::setPassPath(QString path) {
@@ -40,7 +43,7 @@ void ConfigDialog::setPassPath(QString path) {
 }
 
 /**
- * @brief Dialog::setGitPath
+ * @brief ConfigDialog::setGitPath
  * @param path
  */
 void ConfigDialog::setGitPath(QString path) {
@@ -54,7 +57,7 @@ void ConfigDialog::setGitPath(QString path) {
 }
 
 /**
- * @brief Dialog::setGpgPath
+ * @brief ConfigDialog::setGpgPath
  * @param path
  */
 void ConfigDialog::setGpgPath(QString path) {
@@ -62,7 +65,7 @@ void ConfigDialog::setGpgPath(QString path) {
 }
 
 /**
- * @brief Dialog::setStorePath
+ * @brief ConfigDialog::setStorePath
  * @param path
  */
 void ConfigDialog::setStorePath(QString path) {
@@ -70,7 +73,7 @@ void ConfigDialog::setStorePath(QString path) {
 }
 
 /**
- * @brief Dialog::getPassPath
+ * @brief ConfigDialog::getPassPath
  * @return
  */
 QString ConfigDialog::getPassPath() {
@@ -78,7 +81,7 @@ QString ConfigDialog::getPassPath() {
 }
 
 /**
- * @brief Dialog::getGitPath
+ * @brief ConfigDialog::getGitPath
  * @return
  */
 QString ConfigDialog::getGitPath() {
@@ -86,7 +89,7 @@ QString ConfigDialog::getGitPath() {
 }
 
 /**
- * @brief Dialog::getGpgPath
+ * @brief ConfigDialog::getGpgPath
  * @return
  */
 QString ConfigDialog::getGpgPath() {
@@ -94,7 +97,7 @@ QString ConfigDialog::getGpgPath() {
 }
 
 /**
- * @brief Dialog::getStorePath
+ * @brief ConfigDialog::getStorePath
  * @return
  */
 QString ConfigDialog::getStorePath() {
@@ -102,7 +105,7 @@ QString ConfigDialog::getStorePath() {
 }
 
 /**
- * @brief Dialog::usePass
+ * @brief ConfigDialog::usePass
  * @return
  */
 bool ConfigDialog::usePass() {
@@ -110,7 +113,7 @@ bool ConfigDialog::usePass() {
 }
 
 /**
- * @brief Dialog::usePass
+ * @brief ConfigDialog::usePass
  * @param pass
  */
 void ConfigDialog::usePass(bool usePass) {
@@ -125,7 +128,7 @@ void ConfigDialog::usePass(bool usePass) {
 }
 
 /**
- * @brief Dialog::on_radioButtonNative_clicked
+ * @brief ConfigDialog::on_radioButtonNative_clicked
  */
 void ConfigDialog::on_radioButtonNative_clicked()
 {
@@ -133,7 +136,7 @@ void ConfigDialog::on_radioButtonNative_clicked()
 }
 
 /**
- * @brief Dialog::on_radioButtonPass_clicked
+ * @brief ConfigDialog::on_radioButtonPass_clicked
  */
 void ConfigDialog::on_radioButtonPass_clicked()
 {
@@ -141,7 +144,7 @@ void ConfigDialog::on_radioButtonPass_clicked()
 }
 
 /**
- * @brief Dialog::setGroupBoxState
+ * @brief ConfigDialog::setGroupBoxState
  */
 void ConfigDialog::setGroupBoxState() {
     if (ui->radioButtonPass->isChecked()) {
@@ -154,7 +157,7 @@ void ConfigDialog::setGroupBoxState() {
 }
 
 /**
- * @brief Dialog::selectExecutable
+ * @brief ConfigDialog::selectExecutable
  * @return
  */
 QString ConfigDialog::selectExecutable() {
@@ -168,7 +171,7 @@ QString ConfigDialog::selectExecutable() {
 }
 
 /**
- * @brief Dialog::selectFolder
+ * @brief ConfigDialog::selectFolder
  * @return
  */
 QString ConfigDialog::selectFolder() {
@@ -183,7 +186,7 @@ QString ConfigDialog::selectFolder() {
 }
 
 /**
- * @brief Dialog::on_toolButtonGit_clicked
+ * @brief ConfigDialog::on_toolButtonGit_clicked
  */
 void ConfigDialog::on_toolButtonGit_clicked()
 {
@@ -198,7 +201,7 @@ void ConfigDialog::on_toolButtonGit_clicked()
 }
 
 /**
- * @brief Dialog::on_toolButtonGpg_clicked
+ * @brief ConfigDialog::on_toolButtonGpg_clicked
  */
 void ConfigDialog::on_toolButtonGpg_clicked()
 {
@@ -209,7 +212,7 @@ void ConfigDialog::on_toolButtonGpg_clicked()
 }
 
 /**
- * @brief Dialog::on_toolButtonPass_clicked
+ * @brief ConfigDialog::on_toolButtonPass_clicked
  */
 void ConfigDialog::on_toolButtonPass_clicked()
 {
@@ -220,7 +223,7 @@ void ConfigDialog::on_toolButtonPass_clicked()
 }
 
 /**
- * @brief Dialog::on_toolButtonStore_clicked
+ * @brief ConfigDialog::on_toolButtonStore_clicked
  */
 void ConfigDialog::on_toolButtonStore_clicked()
 {
@@ -231,7 +234,7 @@ void ConfigDialog::on_toolButtonStore_clicked()
 }
 
 /**
- * @brief Dialog::on_checkBoxClipboard_clicked
+ * @brief ConfigDialog::on_checkBoxClipboard_clicked
  */
 void ConfigDialog::on_checkBoxClipboard_clicked()
 {
@@ -256,7 +259,7 @@ void ConfigDialog::on_checkBoxClipboard_clicked()
 }
 
 /**
- * @brief Dialog::on_checkBoxAutoclearPanel_clicked
+ * @brief ConfigDialog::on_checkBoxAutoclearPanel_clicked
  */
 void ConfigDialog::on_checkBoxAutoclearPanel_clicked()
 {
@@ -270,7 +273,7 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked()
 }
 
 /**
- * @brief Dialog::useClipboard
+ * @brief ConfigDialog::useClipboard
  */
 void ConfigDialog::useClipboard(bool useClipboard)
 {
@@ -279,7 +282,7 @@ void ConfigDialog::useClipboard(bool useClipboard)
 }
 
 /**
- * @brief Dialog::useAutoclear
+ * @brief ConfigDialog::useAutoclear
  * @param useAutoclear
  */
 void ConfigDialog::useAutoclear(bool useAutoclear)
@@ -289,7 +292,7 @@ void ConfigDialog::useAutoclear(bool useAutoclear)
 }
 
 /**
- * @brief Dialog::setAutoclear
+ * @brief ConfigDialog::setAutoclear
  * @param seconds
  */
 void ConfigDialog::setAutoclear(int seconds)
@@ -298,7 +301,7 @@ void ConfigDialog::setAutoclear(int seconds)
 }
 
 /**
- * @brief Dialog::useAutoclearPanel
+ * @brief ConfigDialog::useAutoclearPanel
  * @param useAutoclearPanel
  */
 void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel)
@@ -308,7 +311,7 @@ void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel)
 }
 
 /**
- * @brief Dialog::setAutoclearPanel
+ * @brief ConfigDialog::setAutoclearPanel
  * @param seconds
  */
 void ConfigDialog::setAutoclearPanel(int seconds)
@@ -317,7 +320,7 @@ void ConfigDialog::setAutoclearPanel(int seconds)
 }
 
 /**
- * @brief Dialog::useClipboard
+ * @brief ConfigDialog::useClipboard
  * @return
  */
 bool ConfigDialog::useClipboard()
@@ -326,7 +329,7 @@ bool ConfigDialog::useClipboard()
 }
 
 /**
- * @brief Dialog::useAutoclear
+ * @brief ConfigDialog::useAutoclear
  * @return
  */
 bool ConfigDialog::useAutoclear()
@@ -335,7 +338,7 @@ bool ConfigDialog::useAutoclear()
 }
 
 /**
- * @brief Dialog::getAutoclear
+ * @brief ConfigDialog::getAutoclear
  * @return
  */
 int ConfigDialog::getAutoclear()
@@ -344,7 +347,7 @@ int ConfigDialog::getAutoclear()
 }
 
 /**
- * @brief Dialog::on_checkBoxAutoclear_clicked
+ * @brief ConfigDialog::on_checkBoxAutoclear_clicked
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked()
 {
@@ -352,7 +355,7 @@ void ConfigDialog::on_checkBoxAutoclear_clicked()
 }
 
 /**
- * @brief Dialog::useAutoclearPanel
+ * @brief ConfigDialog::useAutoclearPanel
  * @return
  */
 bool ConfigDialog::useAutoclearPanel()
@@ -361,7 +364,7 @@ bool ConfigDialog::useAutoclearPanel()
 }
 
 /**
- * @brief Dialog::getAutoclearPanel
+ * @brief ConfigDialog::getAutoclearPanel
  * @return
  */
 int ConfigDialog::getAutoclearPanel()
@@ -370,7 +373,7 @@ int ConfigDialog::getAutoclearPanel()
 }
 
 /**
- * @brief Dialog::hidePassword
+ * @brief ConfigDialog::hidePassword
  * @return
  */
 bool ConfigDialog::hidePassword()
@@ -379,7 +382,7 @@ bool ConfigDialog::hidePassword()
 }
 
 /**
- * @brief Dialog::hideContent
+ * @brief ConfigDialog::hideContent
  * @return
  */
 bool ConfigDialog::hideContent()
@@ -388,7 +391,7 @@ bool ConfigDialog::hideContent()
 }
 
 /**
- * @brief Dialog::hidePassword
+ * @brief ConfigDialog::hidePassword
  * @param hidePassword
  */
 void ConfigDialog::hidePassword(bool hidePassword)
@@ -397,7 +400,7 @@ void ConfigDialog::hidePassword(bool hidePassword)
 }
 
 /**
- * @brief Dialog::hideContent
+ * @brief ConfigDialog::hideContent
  * @param hideContent
  */
 void ConfigDialog::hideContent(bool hideContent)
@@ -406,7 +409,7 @@ void ConfigDialog::hideContent(bool hideContent)
 }
 
 /**
- * @brief Dialog::addGPGId
+ * @brief ConfigDialog::addGPGId
  * @return
  */
 bool ConfigDialog::addGPGId()
@@ -415,7 +418,7 @@ bool ConfigDialog::addGPGId()
 }
 
 /**
- * @brief Dialog::addGPGId
+ * @brief ConfigDialog::addGPGId
  * @param addGPGId
  */
 void ConfigDialog::addGPGId(bool addGPGId)
@@ -424,7 +427,7 @@ void ConfigDialog::addGPGId(bool addGPGId)
 }
 
 /**
- * @brief Dialog::genKey
+ * @brief ConfigDialog::genKey
  * @param QString batch
  */
 void ConfigDialog::genKey(QString batch, QDialog *dialog)
@@ -433,7 +436,7 @@ void ConfigDialog::genKey(QString batch, QDialog *dialog)
 }
 
 /**
- * @brief Dialog::setProfiles
+ * @brief ConfigDialog::setProfiles
  * @param profiles
  * @param profile
  */
@@ -463,7 +466,7 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles, QString profile
 }
 
 /**
- * @brief Dialog::getProfiles
+ * @brief ConfigDialog::getProfiles
  * @return
  */
 QHash<QString, QString> ConfigDialog::getProfiles()
@@ -486,7 +489,7 @@ QHash<QString, QString> ConfigDialog::getProfiles()
 }
 
 /**
- * @brief Dialog::on_addButton_clicked
+ * @brief ConfigDialog::on_addButton_clicked
  */
 void ConfigDialog::on_addButton_clicked()
 {
@@ -498,7 +501,7 @@ void ConfigDialog::on_addButton_clicked()
 }
 
 /**
- * @brief Dialog::on_deleteButton_clicked
+ * @brief ConfigDialog::on_deleteButton_clicked
  */
 void ConfigDialog::on_deleteButton_clicked()
 {
@@ -530,7 +533,7 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text)
 }
 
 /**
- * @brief Dialog::wizard
+ * @brief ConfigDialog::wizard
  */
 void ConfigDialog::wizard()
 {
@@ -596,7 +599,7 @@ void ConfigDialog::wizard()
 }
 
 /**
- * @brief Dialog::useTrayIcon
+ * @brief ConfigDialog::useTrayIcon
  * @return
  */
 bool ConfigDialog::useTrayIcon() {
@@ -604,7 +607,7 @@ bool ConfigDialog::useTrayIcon() {
 }
 
 /**
- * @brief Dialog::hideOnClose
+ * @brief ConfigDialog::hideOnClose
  * @return
  */
 bool ConfigDialog::hideOnClose() {
@@ -612,7 +615,7 @@ bool ConfigDialog::hideOnClose() {
 }
 
 /**
- * @brief Dialog::useTrayIcon
+ * @brief ConfigDialog::useTrayIcon
  * @param useSystray
  */
 void ConfigDialog::useTrayIcon(bool useSystray) {
@@ -626,7 +629,7 @@ void ConfigDialog::useTrayIcon(bool useSystray) {
 }
 
 /**
- * @brief Dialog::hideOnClose
+ * @brief ConfigDialog::hideOnClose
  * @param hideOnClose
  */
 void ConfigDialog::hideOnClose(bool hideOnClose) {
@@ -634,7 +637,7 @@ void ConfigDialog::hideOnClose(bool hideOnClose) {
 }
 
 /**
- * @brief Dialog::on_checkBoxUseTrayIcon_clicked
+ * @brief ConfigDialog::on_checkBoxUseTrayIcon_clicked
  */
 void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
     if (ui->checkBoxUseTrayIcon->isChecked()) {
@@ -647,7 +650,7 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
 }
 
 /**
- * @brief Dialog::closeEvent
+ * @brief ConfigDialog::closeEvent
  * @param event
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
@@ -656,7 +659,7 @@ void ConfigDialog::closeEvent(QCloseEvent *event) {
 }
 
 /**
- * @brief Dialog::useGit
+ * @brief ConfigDialog::useGit
  * @param useGit
  */
 void ConfigDialog::useGit(bool useGit)
@@ -666,7 +669,7 @@ void ConfigDialog::useGit(bool useGit)
 }
 
 /**
- * @brief Dialog::useGit
+ * @brief ConfigDialog::useGit
  * @return
  */
 bool ConfigDialog::useGit()
@@ -675,7 +678,7 @@ bool ConfigDialog::useGit()
 }
 
 /**
- * @brief Dialog::on_checkBoxUseGit_clicked
+ * @brief ConfigDialog::on_checkBoxUseGit_clicked
  */
 void ConfigDialog::on_checkBoxUseGit_clicked()
 {
@@ -685,7 +688,7 @@ void ConfigDialog::on_checkBoxUseGit_clicked()
 }
 
 /**
- * @brief Dialog::on_toolButtonPwgen_clicked
+ * @brief ConfigDialog::on_toolButtonPwgen_clicked
  */
 void ConfigDialog::on_toolButtonPwgen_clicked()
 {
@@ -700,7 +703,7 @@ void ConfigDialog::on_toolButtonPwgen_clicked()
 }
 
 /**
- * @brief Dialog::getPwgenPath
+ * @brief ConfigDialog::getPwgenPath
  * @return
  */
 QString ConfigDialog::getPwgenPath() {
@@ -708,7 +711,7 @@ QString ConfigDialog::getPwgenPath() {
 }
 
 /**
- * @brief Dialog::setPwgenPath
+ * @brief ConfigDialog::setPwgenPath
  * @param pwgen
  */
 void ConfigDialog::setPwgenPath(QString pwgen)
@@ -722,7 +725,7 @@ void ConfigDialog::setPwgenPath(QString pwgen)
 }
 
 /**
- * @brief Dialog::on_checkBoxUsPwgen_clicked
+ * @brief ConfigDialog::on_checkBoxUsPwgen_clicked
  */
 void ConfigDialog::on_checkBoxUsePwgen_clicked()
 {
@@ -732,7 +735,7 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked()
 }
 
 /**
- * @brief Dialog::usePwgen
+ * @brief ConfigDialog::usePwgen
  * @param usePwgen
  */
 void ConfigDialog::usePwgen(bool usePwgen) {
@@ -744,7 +747,7 @@ void ConfigDialog::usePwgen(bool usePwgen) {
 }
 
 /**
- * @brief Dialog::useSymbols
+ * @brief ConfigDialog::useSymbols
  * @param useSymbols
  */
 void ConfigDialog::useSymbols(bool useSymbols) {
@@ -752,7 +755,7 @@ void ConfigDialog::useSymbols(bool useSymbols) {
 }
 
 /**
- * @brief Dialog::setPasswordLength
+ * @brief ConfigDialog::setPasswordLength
  * @param pwLen
  */
 void ConfigDialog::setPasswordLength(int pwLen) {
@@ -764,7 +767,7 @@ void ConfigDialog::setPasswordChars(QString pwChars) {
 }
 
 /**
- * @brief Dialog::usePwgen
+ * @brief ConfigDialog::usePwgen
  * @return
  */
 bool ConfigDialog::usePwgen() {
@@ -772,7 +775,7 @@ bool ConfigDialog::usePwgen() {
 }
 
 /**
- * @brief Dialog::useSymbols
+ * @brief ConfigDialog::useSymbols
  * @return
  */
 bool ConfigDialog::useSymbols() {
@@ -780,7 +783,7 @@ bool ConfigDialog::useSymbols() {
 }
 
 /**
- * @brief Dialog::getPasswordLength
+ * @brief ConfigDialog::getPasswordLength
  * @return
  */
 int ConfigDialog::getPasswordLength() {
@@ -788,7 +791,7 @@ int ConfigDialog::getPasswordLength() {
 }
 
 /**
- * @brief Dialog::getPasswordChars
+ * @brief ConfigDialog::getPasswordChars
  * @return
  */
 QString ConfigDialog::getPasswordChars() {
@@ -796,7 +799,7 @@ QString ConfigDialog::getPasswordChars() {
 }
 
 /**
- * @brief Dialog::startMinimized
+ * @brief ConfigDialog::startMinimized
  * @return
  */
 bool ConfigDialog::startMinimized() {
@@ -804,7 +807,7 @@ bool ConfigDialog::startMinimized() {
 }
 
 /**
- * @brief Dialog::startMinimized
+ * @brief ConfigDialog::startMinimized
  * @param startMinimized
  */
 void ConfigDialog::startMinimized(bool startMinimized) {
@@ -812,50 +815,90 @@ void ConfigDialog::startMinimized(bool startMinimized) {
 }
 
 /**
- * @brief Dialog::on_checkBoxUseTemplate_clicked
+ * @brief ConfigDialog::on_checkBoxUseTemplate_clicked
  */
 void ConfigDialog::on_checkBoxUseTemplate_clicked() {
     ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
     ui->checkBoxTemplateAllFields->setEnabled(ui->checkBoxUseTemplate->isChecked());
 }
 
+/**
+ * @brief ConfigDialog::useTemplate
+ * @param useTemplate
+ */
 void ConfigDialog::useTemplate(bool useTemplate) {
    ui->checkBoxUseTemplate->setChecked(useTemplate);
    on_checkBoxUseTemplate_clicked();
 }
 
+/**
+ * @brief ConfigDialog::useTemplate
+ * @return
+ */
 bool ConfigDialog::useTemplate() {
     return ui->checkBoxUseTemplate->isChecked();
 }
 
+/**
+ * @brief ConfigDialog::setTemplate
+ * @param passTemplate
+ */
 void ConfigDialog::setTemplate(QString passTemplate) {
     ui->plainTextEditTemplate->setPlainText(passTemplate);
 }
 
+/**
+ * @brief ConfigDialog::getTemplate
+ * @return
+ */
 QString ConfigDialog::getTemplate() {
     return ui->plainTextEditTemplate->toPlainText();
 }
 
+/**
+ * @brief ConfigDialog::autoPull
+ * @param autoPull
+ */
 void ConfigDialog::autoPull(bool autoPull) {
     ui->checkBoxAutoPull->setChecked(autoPull);
 }
 
+/**
+ * @brief ConfigDialog::autoPush
+ * @param autoPush
+ */
 void ConfigDialog::autoPush(bool autoPush) {
     ui->checkBoxAutoPush->setChecked(autoPush);
 }
 
+/**
+ * @brief ConfigDialog::autoPull
+ * @return
+ */
 bool ConfigDialog::autoPull() {
     return ui->checkBoxAutoPull->isChecked();
 }
 
+/**
+ * @brief ConfigDialog::autoPush
+ * @return
+ */
 bool ConfigDialog::autoPush() {
     return ui->checkBoxAutoPush->isChecked();
 }
 
+/**
+ * @brief ConfigDialog::templateAllFields
+ * @return
+ */
 bool ConfigDialog::templateAllFields() {
     return ui->checkBoxTemplateAllFields->isChecked();
 }
 
+/**
+ * @brief ConfigDialog::templateAllFields
+ * @param templateAll
+ */
 void ConfigDialog::templateAllFields(bool templateAll) {
     ui->checkBoxTemplateAllFields->setChecked(templateAll);
 }
