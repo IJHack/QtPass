@@ -21,7 +21,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=C:\Users\IEUser\Desktop\QtPass\LICENSE.txt
+LicenseFile=..\..\Desktop\QtPass\LICENSE.txt
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
@@ -60,7 +60,7 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\IEUser\Desktop\QtPass\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\Desktop\QtPass\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
