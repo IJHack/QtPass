@@ -1,15 +1,31 @@
-#-------------------------------------------------
-#
-#   QtPass is a GUI for pass,
-#           the standard unix password manager.
-#
-# Project created by QtCreator 2014-07-30T21:56:15
-#
-#-------------------------------------------------
+#----------------------------------------------------------
+#                                                         #
+#   QtPass is a GUI for pass,                             #
+#           the standard unix password manager.           #
+#                                                         #
+# Project started by Anne Jan Brouwer 2014-07-30T21:56:15 #
+#                                                         #
+#----------------------------------------------------------
 
 VERSION    = 1.0.4
 TEMPLATE   = app
 QT        += core gui
+
+isEmpty(QMAKE_LRELEASE) {
+    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\lrelease.exe
+    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+    unix {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt4 }
+    } else {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+    }
+}
+
+updateqm.input = TRANSLATIONS
+updateqm.output = localization/${QMAKE_FILE_BASE}.qm
+updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm localization/${QMAKE_FILE_BASE}.qm
+updateqm.CONFIG += no_link target_predeps 
+QMAKE_EXTRA_COMPILERS += updateqm
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,7 +45,7 @@ SOURCES   += main.cpp\
              keygendialog.cpp \
              progressindicator.cpp \
              trayicon.cpp \
-    passworddialog.cpp
+             passworddialog.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -39,13 +55,13 @@ HEADERS   += mainwindow.h \
              keygendialog.h \
              progressindicator.h \
              trayicon.h \
-    passworddialog.h
+             passworddialog.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
              usersdialog.ui \ 
              keygendialog.ui \
-    passworddialog.ui
+             passworddialog.ui
 
 QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 
@@ -101,6 +117,6 @@ isEmpty(PREFIX) {
 }
 target.path = $$PREFIX/
 
-INSTALLS    += target
+INSTALLS += target
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""

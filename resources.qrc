@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
+        <file>artwork/icon.icns</file>
+        <file>artwork/icon.ico</file>
+        <file>artwork/icon.png</file>
+        <file>artwork/icon.svg</file>
         <file>localization/localization_ar_MA.qm</file>
         <file>localization/localization_ar_MA.ts</file>
         <file>localization/localization_de_DE.qm</file>
@@ -18,10 +22,6 @@
         <file>localization/localization_pl_PL.ts</file>
         <file>localization/localization_ru_RU.qm</file>
         <file>localization/localization_ru_RU.ts</file>
-        <file>artwork/icon.icns</file>
-        <file>artwork/icon.ico</file>
-        <file>artwork/icon.png</file>
-        <file>artwork/icon.svg</file>
         <file>localization/localization_zh_CN.qm</file>
         <file>localization/localization_zh_CN.ts</file>
         <file>localization/localization_he_IL.ts</file>
