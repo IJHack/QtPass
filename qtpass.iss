@@ -65,9 +65,9 @@ Source: "..\..\Desktop\QtPass\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversio
 Source: "..\..\Desktop\QtPass\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\README.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\Desktop\QtPass\icudt53.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\Desktop\QtPass\icuin53.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\Desktop\QtPass\icuuc53.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\Desktop\QtPass\icudt54.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\Desktop\QtPass\icuin54.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\Desktop\QtPass\icuuc54.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Desktop\QtPass\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
