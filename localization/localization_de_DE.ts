@@ -2,33 +2,33 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
-    <name>Dialog</name>
+    <name>ConfigDialog</name>
     <message>
-        <location filename="../dialog.ui" line="14"/>
+        <location filename="../configdialog.ui" line="14"/>
         <source>Configuration</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="117"/>
+        <location filename="../configdialog.ui" line="117"/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="93"/>
+        <location filename="../configdialog.ui" line="93"/>
         <source>git</source>
         <translation>git</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="147"/>
+        <location filename="../configdialog.ui" line="147"/>
         <source>Pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="103"/>
-        <location filename="../dialog.ui" line="110"/>
-        <location filename="../dialog.ui" line="137"/>
-        <location filename="../dialog.ui" line="168"/>
-        <location filename="../dialog.ui" line="483"/>
+        <location filename="../configdialog.ui" line="103"/>
+        <location filename="../configdialog.ui" line="110"/>
+        <location filename="../configdialog.ui" line="137"/>
+        <location filename="../configdialog.ui" line="168"/>
+        <location filename="../configdialog.ui" line="483"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -37,17 +37,17 @@
         <translation type="vanished">Ausführbarer Pass</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="87"/>
+        <location filename="../configdialog.ui" line="87"/>
         <source>Native</source>
         <translation>Nativ</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="56"/>
+        <location filename="../configdialog.ui" line="56"/>
         <source>&amp;Native git/gpg</source>
         <translation>git/pgp verwenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="63"/>
+        <location filename="../configdialog.ui" line="63"/>
         <source>&amp;Use pass</source>
         <translation>pass verwenden</translation>
     </message>
@@ -80,113 +80,113 @@
         <translation type="vanished">Zwischenablage</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="355"/>
+        <location filename="../configdialog.ui" line="355"/>
         <source>Autoclear</source>
         <translation>Zwischenablage leeren in</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="389"/>
+        <location filename="../configdialog.ui" line="389"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id Dateien automatisch hinzufuegen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="270"/>
-        <location filename="../dialog.ui" line="298"/>
+        <location filename="../configdialog.ui" line="270"/>
+        <location filename="../configdialog.ui" line="298"/>
         <source>Seconds</source>
         <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="307"/>
+        <location filename="../configdialog.ui" line="307"/>
         <source>Hide password</source>
         <translation>Passwort ausblenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="158"/>
+        <location filename="../configdialog.ui" line="158"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="36"/>
+        <location filename="../configdialog.ui" line="36"/>
         <source>Programs</source>
         <translation>Programme</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="130"/>
+        <location filename="../configdialog.ui" line="130"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="177"/>
+        <location filename="../configdialog.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="194"/>
+        <location filename="../configdialog.ui" line="194"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="232"/>
+        <location filename="../configdialog.ui" line="232"/>
         <source>Characters</source>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="244"/>
+        <location filename="../configdialog.ui" line="244"/>
         <source>Use pwgen</source>
         <translation>pwgen verwenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="251"/>
+        <location filename="../configdialog.ui" line="251"/>
         <source>Use clipboard</source>
         <translation>Zwischenablage verwenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="279"/>
+        <location filename="../configdialog.ui" line="279"/>
         <source>Autoclear panel</source>
         <translation>Textplatte leeren in</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="314"/>
+        <location filename="../configdialog.ui" line="314"/>
         <source>Use TrayIcon</source>
         <translation>Im System Tray anzeigen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="338"/>
+        <location filename="../configdialog.ui" line="338"/>
         <source>Hide on close</source>
         <translation>Nur minimieren nicht beenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="396"/>
+        <location filename="../configdialog.ui" line="396"/>
         <source>Automatically push</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="403"/>
+        <location filename="../configdialog.ui" line="403"/>
         <source>Automatically pull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="331"/>
+        <location filename="../configdialog.ui" line="331"/>
         <source>Use git</source>
         <translation>Git verwenden</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="348"/>
+        <location filename="../configdialog.ui" line="348"/>
         <source>Include special symbols </source>
         <translation>Sonderzeichen zulassen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="365"/>
+        <location filename="../configdialog.ui" line="365"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="382"/>
+        <location filename="../configdialog.ui" line="382"/>
         <source>Use characters</source>
         <translation>Diese Zeichen zulassen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="372"/>
+        <location filename="../configdialog.ui" line="372"/>
         <source>Start minimized</source>
         <translation>Minimiert starten</translation>
     </message>
@@ -199,103 +199,103 @@
         <translation type="vanished">Automatisch herunterladen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="413"/>
+        <location filename="../configdialog.ui" line="413"/>
         <source>Profiles</source>
         <translation>Profile</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="447"/>
+        <location filename="../configdialog.ui" line="447"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="452"/>
+        <location filename="../configdialog.ui" line="452"/>
         <source>Path</source>
         <translation>Pfad</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="462"/>
+        <location filename="../configdialog.ui" line="462"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="476"/>
+        <location filename="../configdialog.ui" line="476"/>
         <source>Current password-store</source>
         <translation>aktueller Password Store</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="496"/>
+        <location filename="../configdialog.ui" line="496"/>
         <source>Template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="504"/>
+        <location filename="../configdialog.ui" line="516"/>
         <source>Use template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="511"/>
+        <location filename="../configdialog.ui" line="523"/>
         <source>Show all fields templated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="520"/>
+        <location filename="../configdialog.ui" line="532"/>
         <source>login
 url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="534"/>
+        <location filename="../configdialog.ui" line="546"/>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="469"/>
+        <location filename="../configdialog.ui" line="469"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../dialog.ui" line="321"/>
+        <location filename="../configdialog.ui" line="321"/>
         <source>Hide content</source>
         <translation>Inhalt ausblenden</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="543"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="544"/>
+        <location filename="../configdialog.cpp" line="544"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>GnuPG ist nicht installiert. &lt;br&gt;Installiere &lt;strong&gt;gpg&lt;/strong&gt; mit dem favoriten Package Manager&lt;br&gt;oder von GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="561"/>
+        <location filename="../configdialog.cpp" line="561"/>
         <source>Create password-store?</source>
         <translation>Password Store erstellen?</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="562"/>
+        <location filename="../configdialog.cpp" line="562"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Soll ein Password Store in %1 erstellt werden?</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="576"/>
+        <location filename="../configdialog.cpp" line="579"/>
         <source>Password store not initialised</source>
         <translation>Password Store nicht initialisiert</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="577"/>
+        <location filename="../configdialog.cpp" line="580"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Ordner %1 ist kein Password Store oder wurde noch nicht initialisiert.</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="508"/>
+        <location filename="../configdialog.cpp" line="508"/>
         <source>No profile selected</source>
         <translation>Kein Profil ausgewählt</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="509"/>
+        <location filename="../configdialog.cpp" line="509"/>
         <source>No profile selected to delete</source>
         <translation>Kein Profil zum Löschen ausgewählt</translation>
     </message>
