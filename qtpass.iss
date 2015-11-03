@@ -4,7 +4,7 @@
 #define MyAppName "QtPass"
 #define MyAppVersion "1.0.4"
 #define MyAppPublisher "IJhack"
-#define MyAppURL "http://qtpass.org/"
+#define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
 
 [Setup]
