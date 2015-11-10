@@ -31,9 +31,8 @@ fi
 * More info: [issue 60](https://github.com/IJHack/qtpass/issues/60) and [issue 73](https://github.com/IJHack/qtpass/issues/73)
 
 ### I don't get a passphrase / PIN dialog
-
-You'll need to install pinentry-qt (or -qt4 or -qt5 or even -gtk) and possibly set the full path to that executable in your `~/.gnupg/gpg-agent.conf` for example: `pinentry-program /usr/bin/pinentry-qt4`
-On some esotheric systems it might be necessary to create a symbolic link `/usr/bin/pinentry` to your pinentry application of choice eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
+* You'll need to install pinentry-qt (or -qt4 or -qt5 or even -gtk) and possibly set the full path to that executable in your `~/.gnupg/gpg-agent.conf` for example: `pinentry-program /usr/bin/pinentry-qt4`
+* On some esotheric systems it might be necessary to create a symbolic link `/usr/bin/pinentry` to your pinentry application of choice eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
 
 ### Where can I ask for help?
 * Create an [issue](https://github.com/IJHack/qtpass/) issues on github.
