@@ -19,7 +19,9 @@ int main(int argc, char *argv[])
     //qDebug() << name;
     SingleApplication app(argc, argv, name + "QtPass");
     if (app.isRunning()) {
-        app.sendMessage(text);
+        if (text.length() > 0) {
+            app.sendMessage(text);
+        }
         return 0;
     }
 #else
