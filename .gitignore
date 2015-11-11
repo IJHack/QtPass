@@ -14,3 +14,4 @@ qtpass.xcworkspace/xcuserdata/*
 moc_*.cpp
 qrc_*.cpp
 ui_*.h
+localization/*.qm
