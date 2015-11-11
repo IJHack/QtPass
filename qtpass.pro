@@ -96,8 +96,11 @@ updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 PRE_TARGETDEPS += compiler_updateqm_make_all
 
-system($$QMAKE_LRELEASE $$_PRO_FILE_)
-
+win32 {
+	system($$QMAKE_LRELEASE qtpass.pro)
+} else {
+	system($$QMAKE_LRELEASE $$_PRO_FILE_)
+}
 RESOURCES   += resources.qrc
 
 win32 {
