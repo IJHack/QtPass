@@ -11,23 +11,6 @@ VERSION    = 1.0.4
 TEMPLATE   = app
 QT        += core gui
 
-isEmpty(QMAKE_LRELEASE) {
-    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
-    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
-    unix {
-        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt4 }
-    } else {
-        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
-    }
-}
-
-updateqm.input = TRANSLATIONS
-updateqm.output = localization/${QMAKE_FILE_BASE}.qm
-updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm localization/${QMAKE_FILE_BASE}.qm
-updateqm.CONFIG += no_link target_predeps 
-QMAKE_EXTRA_COMPILERS += updateqm
-PRE_TARGETDEPS += compiler_updateqm_make_all
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 macx {
@@ -90,6 +73,30 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
 CODECFORSRC     = UTF-8
 CODECFORTR      = UTF-8
 
+isEmpty(QMAKE_LRELEASE) {
+    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
+    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+    unix {
+        !exists($$QMAKE_LRELEASE) {
+            greaterThan(QT_MAJOR_VERSION, 4) {
+                QMAKE_LRELEASE = lrelease-qt5
+            } else {
+                QMAKE_LRELEASE = lrelease-qt4
+            }
+        }
+    } else {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+    }
+}
+
+updateqm.input = TRANSLATIONS
+updateqm.output = localization/${QMAKE_FILE_BASE}.qm
+updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm localization/${QMAKE_FILE_BASE}.qm
+updateqm.CONFIG += no_link target_predeps
+QMAKE_EXTRA_COMPILERS += updateqm
+PRE_TARGETDEPS += compiler_updateqm_make_all
+
+system($$QMAKE_LRELEASE $$_PRO_FILE_)
 
 RESOURCES   += resources.qrc
 
