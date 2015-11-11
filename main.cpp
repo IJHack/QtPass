@@ -16,10 +16,11 @@ int main(int argc, char *argv[])
     QString name = qgetenv("USER");
     if (name.isEmpty())
         name = qgetenv("USERNAME");
-    //qDebug() << name;
     SingleApplication app(argc, argv, name + "QtPass");
     if (app.isRunning()) {
-        app.sendMessage(text);
+        if (text.length() > 0) {
+            app.sendMessage(text);
+        }
         return 0;
     }
 #else
@@ -31,12 +32,12 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("QtPass");
     QCoreApplication::setApplicationVersion(VERSION);
 
-    //Setup and load translator for localization
+    // Setup and load translator for localization
     QTranslator translator;
     QString locale = QLocale::system().name();
-    //locale = "nl_NL";
-    //locale = "he_IL";
-    //locale = "ar_MA";
+    // locale = "nl_NL";
+    // locale = "he_IL";
+    // locale = "ar_MA";
     translator.load(QString(":localization/localization_") + locale + QString(".qm"));
     app.installTranslator(&translator);
     app.setLayoutDirection(QObject::tr("LTR")=="RTL" ? Qt::RightToLeft : Qt::LeftToRight);
