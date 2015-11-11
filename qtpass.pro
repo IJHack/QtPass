@@ -26,6 +26,7 @@ updateqm.output = localization/${QMAKE_FILE_BASE}.qm
 updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm localization/${QMAKE_FILE_BASE}.qm
 updateqm.CONFIG += no_link target_predeps 
 QMAKE_EXTRA_COMPILERS += updateqm
+PRE_TARGETDEPS += compiler_updateqm_make_all
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
