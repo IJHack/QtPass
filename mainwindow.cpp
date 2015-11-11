@@ -735,7 +735,12 @@ void MainWindow::readyRead(bool finished = false) {
     }
 
     if (!error.isEmpty()) {
-        output = "<span style=\"color: red;\">" + error + "</span><br />" + output;
+        if (currentAction == GIT) {
+            // https://github.com/IJHack/qtpass/issues/111
+            output = "<span style=\"color: darkgray;\">" + error + "</span><br />" + output;
+        } else {
+            output = "<span style=\"color: red;\">" + error + "</span><br />" + output;
+        }
     }
 
     output.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");
