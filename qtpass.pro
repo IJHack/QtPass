@@ -101,6 +101,7 @@ win32 {
 } else {
 	system($$QMAKE_LRELEASE $$_PRO_FILE_)
 }
+
 RESOURCES   += resources.qrc
 
 win32 {
