@@ -16,16 +16,6 @@ install:
   fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin;
   fi
-script:
-- qmake -v
-- qmake -Wall qtpass.pro
-- make -j$(nproc)
-notifications:
-  irc:
-    channels:
-    - chat.freenode.net#IJhack
-    on_success: change
-    on_failure: always
 env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
@@ -38,3 +28,13 @@ addons:
     build_command_prepend: "qmake; make clean"
     build_command:   "make"
     branch_pattern: coverity_scan
+script:
+- qmake -v
+- qmake -Wall qtpass.pro
+- make -j$(nproc)
+notifications:
+  irc:
+    channels:
+    - chat.freenode.net#IJhack
+    on_success: change
+    on_failure: always
