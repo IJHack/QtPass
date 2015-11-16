@@ -1,0 +1,4 @@
+os: unstable
+build_script:
+qmake qtpass.pro
+mingw32-make
