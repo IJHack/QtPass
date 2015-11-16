@@ -36,5 +36,5 @@ addons:
       description: "Build submitted via Travis CI"
     notification_email: brouwer@annejan.com
     build_command_prepend: "qmake; make clean"
-    build_command:   "make -j$(nproc)"
+    build_command:   "make"
     branch_pattern: coverity_scan
