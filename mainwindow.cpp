@@ -49,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QApplication::quit();
     }
     QtPass = NULL;
+    autoclearTimer = NULL;
     QTimer::singleShot(10, this, SLOT(focusInput()));
 
 }
@@ -718,7 +719,15 @@ void MainWindow::readyRead(bool finished = false) {
             }
             if (useAutoclearPanel) {
                   autoclearPass = output;
-                  QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
+                  if (autoclearTimer != NULL) {
+                      autoclearTimer->stop();
+
+                  }
+                  autoclearTimer = new QTimer(this);
+                  autoclearTimer->setSingleShot(true);
+                  autoclearTimer->setInterval(1000*autoclearPanelSeconds);
+                  connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+                  autoclearTimer->start();
             }
         }
         output.replace(QRegExp("<"), "&lt;");

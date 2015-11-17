@@ -7,6 +7,7 @@
 #include <QProcess>
 #include <QQueue>
 #include <QSettings>
+#include <QTimer>
 #include "storemodel.h"
 #include "trayicon.h"
 #if SINGLE_APP
@@ -107,6 +108,7 @@ private:
     QProcess fusedav;
     QString clippedPass;
     QString autoclearPass;
+    QTimer *autoclearTimer;
     actionType currentAction;
     QString lastDecrypt;
     bool wrapperRunning;
