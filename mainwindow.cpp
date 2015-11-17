@@ -268,6 +268,7 @@ bool MainWindow::checkConfig() {
         } else {
             usePwgen = false;
         }
+        passTemplate = "login/nurl";
     } else {
 //        QStringList ver = version.split(".");
 //        qDebug() << ver;
