@@ -627,6 +627,7 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     wrapperRunning = true;
     process->setWorkingDirectory(passStore);
     process->setEnvironment(env);
+    clearTemplateWidgets();
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
@@ -710,12 +711,7 @@ void MainWindow::readyRead(bool finished = false) {
                 }
                 output = tokens.join("\n");
             } else {
-                while(ui->formLayout->count() > 0){
-                    QLayoutItem *item = ui->formLayout->takeAt(0);
-                    delete item->widget();
-                    delete item;
-                }
-                ui->verticalLayoutPassword->setSpacing(0);
+                clearTemplateWidgets();
             }
             if (useAutoclearPanel) {
                   autoclearPass = output;
@@ -780,15 +776,13 @@ void MainWindow::clearClipboard()
  */
 void MainWindow::clearPanel()
 {
-    if (true) { // TODO when ??
-        while(ui->formLayout->count() > 0){
-            QLayoutItem *item = ui->formLayout->takeAt(0);
-            delete item->widget();
-            delete item;
-        }
-        QString output = "***" + tr("Password and Content hidden") + "***";
-        ui->textBrowser->setHtml(output);
+    while(ui->formLayout->count() > 0){
+        QLayoutItem *item = ui->formLayout->takeAt(0);
+        delete item->widget();
+        delete item;
     }
+    QString output = "***" + tr("Password and Content hidden") + "***";
+    ui->textBrowser->setHtml(output);
 }
 
 /**
@@ -1678,6 +1672,10 @@ QString MainWindow::generatePassword() {
     return passwd;
 }
 
+/**
+ * @brief MainWindow::waitFor
+ * @param seconds
+ */
 void MainWindow::waitFor(int seconds)
 {
     QDateTime current = QDateTime::currentDateTime();
@@ -1691,4 +1689,17 @@ void MainWindow::waitFor(int seconds)
         }
         Util::qSleep(100);
     }
+}
+
+/**
+ * @brief MainWindow::clearTemplateWidgets
+ */
+void MainWindow::clearTemplateWidgets()
+{
+    while(ui->formLayout->count() > 0){
+        QLayoutItem *item = ui->formLayout->takeAt(0);
+        delete item->widget();
+        delete item;
+    }
+    ui->verticalLayoutPassword->setSpacing(0);
 }
