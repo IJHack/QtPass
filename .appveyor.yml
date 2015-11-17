@@ -1,0 +1,24 @@
+os: unstable
+install:
+  # Configuring Qt
+  - set QTDIR=C:\Qt\5.5\mingw492_32
+  - choco install -y InnoSetup
+  - set PATH=%QTDIR%\bin;C:\MinGW\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
+build_script:
+ - qmake qtpass.pro CONFIG+=static
+ - mingw32-make
+after_build:
+ - cmd: copy README.md release\README.txt
+ - cmd: copy LICENSE release\LICENSE.txt
+ - iscc qtpass.iss
+artifacts:
+  - path: Output\QtPass_v*.exe
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: YfscG1DR0+kApThPXxQSr+ZEjUOUlIG0Tqc5+90IFsUInyICRRMdbJsbxR2qhq/p
+  artifact: /QtPass_v[0-9]+\.[0-9]+\.[0-9]+\.exe/
+  draft: true
+  prerelease: false
+  on:
+    appveyor_repo_tag: true
