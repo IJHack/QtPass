@@ -10,7 +10,11 @@ This document is stil in a very early stage and needs a lot more work.
 
 ## Translations
 
-Qt has very nice in-context translation options https://doc-snapshots.qt.io/qt5-5.6/linguist-translators.html
+* Add you language to the `qtpass.pro` file under TRANSLATIONS and in the `resources.qrc` file.
+* Next run the command `lupdate qtpass.pro` which will create the localization files.
+* Edit your file with (let's imagine your language is sv_SE (Swedish)  `linguist localization/localization_sv_SE.ts`
+
+Qt Linguist has very nice in-context translation options https://doc-snapshots.qt.io/qt5-5.6/linguist-translators.html
 
 ## IRC
 
