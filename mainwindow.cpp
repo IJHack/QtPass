@@ -589,6 +589,9 @@ void MainWindow::executePass(QString args, QString input) {
     executeWrapper(passExecutable, args, input);
 }
 
+/**
+ * @brief MainWindow::executePassGitInit
+ */
 void MainWindow::executePassGitInit() {
     qDebug() << "Pass git init called";
     if (usePass) {
@@ -631,6 +634,11 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
     ui->textBrowser->clear();
     ui->textBrowser->setTextColor(Qt::black);
     enableUiElements(false);
+    if (autoclearTimer != NULL) {
+        autoclearTimer->stop();
+        delete autoclearTimer;
+        autoclearTimer = NULL;
+    }
     process->start('"' + app + "\" " + args);
     if (!input.isEmpty()) {
         process->write(input.toUtf8());
@@ -715,10 +723,6 @@ void MainWindow::readyRead(bool finished = false) {
             }
             if (useAutoclearPanel) {
                   autoclearPass = output;
-                  if (autoclearTimer != NULL) {
-                      autoclearTimer->stop();
-
-                  }
                   autoclearTimer = new QTimer(this);
                   autoclearTimer->setSingleShot(true);
                   autoclearTimer->setInterval(1000*autoclearPanelSeconds);
