@@ -154,6 +154,7 @@ private:
     void destroyTrayIcon();
     bool removeDir(const QString & dirName);
     void waitFor(int);
+    void clearTemplateWidgets();
 };
 
 #endif // MAINWINDOW_H
