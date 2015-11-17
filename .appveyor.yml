@@ -8,6 +8,7 @@ build_script:
  - qmake qtpass.pro CONFIG+=static
  - mingw32-make
 after_build:
+ - dir /s /b
  - cmd: copy README.md release/README.txt
  - cmd: copy LICENSE release/LICENSE.txt
  - iscc qtpass.iss
