@@ -72,7 +72,7 @@ Source: "{#QtDir}\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversio
 Source: "{#QtDir}\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#QtDir}\bin\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
+Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
 
 Source: "release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
