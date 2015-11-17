@@ -1,6 +1,4 @@
-os: unstable
 install:
-  # Configuring Qt
   - set QTDIR=C:\Qt\5.5\mingw492_32
   - choco install -y InnoSetup
   - set PATH=%QTDIR%\bin;C:\MinGW\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
