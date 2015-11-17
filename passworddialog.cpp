@@ -41,6 +41,7 @@ void PasswordDialog::setPassword(QString password)
     ui->lineEditPassword->setText(tokens[0]);
     tokens.pop_front();
     if (templating) {
+        QWidget *previous = ui->checkBoxShow;
         for (int i = 0; i < ui->formLayout->rowCount(); i++) {
             QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
             if (item == NULL) {
@@ -55,6 +56,7 @@ void PasswordDialog::setPassword(QString password)
                     ((QLineEdit*)widget)->setText(value);
                 }
             }
+            previous = widget;
         }
         if (allFields) {
             for (int j = 0; j < tokens.length(); j++) {
@@ -70,6 +72,8 @@ void PasswordDialog::setPassword(QString password)
                     line->setObjectName(field);
                     line->setText(value);
                     ui->formLayout->addRow(new QLabel(field), line);
+                    setTabOrder(previous, line);
+                    previous = line;
                     tokens.removeAt(j);
                     j--; // tokens.length() also got shortened by the remove..
                 }
@@ -100,6 +104,7 @@ QString PasswordDialog::getPassword()
 
 void PasswordDialog::setTemplate(QString rawFields) {
     fields = rawFields.split('\n');
+    QWidget *previous = ui->checkBoxShow;
     foreach (QString field, fields) {
         if (field.isEmpty()) {
             continue;
@@ -107,6 +112,8 @@ void PasswordDialog::setTemplate(QString rawFields) {
         QLineEdit *line = new QLineEdit();
         line->setObjectName(field);
         ui->formLayout->addRow(new QLabel(field), line);
+        setTabOrder(previous, line);
+        previous = line;
     }
 }
 
