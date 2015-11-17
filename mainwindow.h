@@ -106,6 +106,7 @@ private:
     QString webDavPassword;
     QProcess fusedav;
     QString clippedPass;
+    QString autoclearPass;
     actionType currentAction;
     QString lastDecrypt;
     bool wrapperRunning;
