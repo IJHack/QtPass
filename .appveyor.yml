@@ -1,8 +1,14 @@
 os: unstable
 install:
   # Configuring Qt
-  - set QTDIR=C:\Qt\5.4\mingw491_32
-  - set PATH=%QTDIR%\bin;C:\MinGW\bin;%PATH%
+  - set QTDIR=C:\Qt\5.5\mingw492_32
+  - choco install -y InnoSetup
+  - set PATH=%QTDIR%\bin;C:\MinGW\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
 build_script:
  - qmake qtpass.pro
  - mingw32-make
+ - copy README.md release/README.txt
+ - copy LICENSE release/LICENSE.txt
+ - iscc qtpass.iss
+artifacts:
+  - path: QtPass_v*.exe
