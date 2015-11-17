@@ -9,6 +9,8 @@ PasswordDialog::PasswordDialog(MainWindow *parent) :
     ui(new Ui::PasswordDialog)
 {
     mainWindow = parent;
+    templating = false;
+    allFields = false;    
     ui->setupUi(this);
 }
 
