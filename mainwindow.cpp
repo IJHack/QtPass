@@ -658,10 +658,6 @@ void MainWindow::readyRead(bool finished = false) {
                       clippedPass = tokens[0];
                       QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
                 }
-                if (useAutoclearPanel) {
-                      QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
-                }
-
                 if (hidePassword && !useTemplate) {
                     tokens[0] = "***" + tr("Password hidden") + "***";
                     output = tokens.join("\n");
@@ -720,6 +716,10 @@ void MainWindow::readyRead(bool finished = false) {
                 }
                 ui->verticalLayoutPassword->setSpacing(0);
             }
+            if (useAutoclearPanel) {
+                  autoclearPass = output;
+                  QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
+            }
         }
         output.replace(QRegExp("<"), "&lt;");
         output.replace(QRegExp(">"), "&gt;");
@@ -753,7 +753,6 @@ void MainWindow::readyRead(bool finished = false) {
 
 /**
  * @brief MainWindow::clearClipboard
- * @TODO check clipboard content (only clear if contains the password)
  */
 void MainWindow::clearClipboard()
 {
@@ -772,13 +771,15 @@ void MainWindow::clearClipboard()
  */
 void MainWindow::clearPanel()
 {
-    while(ui->formLayout->count() > 0){
-        QLayoutItem *item = ui->formLayout->takeAt(0);
-        delete item->widget();
-        delete item;
+    if (true) { // TODO when ??
+        while(ui->formLayout->count() > 0){
+            QLayoutItem *item = ui->formLayout->takeAt(0);
+            delete item->widget();
+            delete item;
+        }
+        QString output = "***" + tr("Password and Content hidden") + "***";
+        ui->textBrowser->setHtml(output);
     }
-    QString output = "***" + tr("Password and Content hidden") + "***";
-    ui->textBrowser->setHtml(output);
 }
 
 /**
