@@ -12,7 +12,7 @@ after_build:
  - cmd: copy LICENSE release\LICENSE.txt
  - iscc qtpass.iss
 artifacts:
-  - path: QtPass_v*.exe
+  - path: Output\QtPass_v*.exe
 deploy:
   provider: GitHub
   auth_token:
