@@ -1647,7 +1647,7 @@ QString MainWindow::generatePassword() {
         executeWrapper(pwgenExecutable, args);
         process->waitForFinished(1000);
         if (process->exitStatus() == QProcess::NormalExit) {
-            passwd = QString(process->readAllStandardOutput());
+            passwd = QString(process->readAllStandardOutput()).remove(QRegExp("[\\n\\r]"));
         } else {
             qDebug() << "pwgen fail";
         }
