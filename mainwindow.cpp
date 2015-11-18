@@ -1165,6 +1165,7 @@ void MainWindow::on_deleteButton_clicked()
             }
         }
     }
+    lastDecrypt = "";
 }
 
 /**
