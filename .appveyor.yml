@@ -10,12 +10,12 @@ after_build:
  - cmd: copy LICENSE release\LICENSE.txt
  - iscc qtpass.iss
 artifacts:
-  - path: Output\QtPass_v*.exe
+  - path: Output\qtpass-*.exe
 deploy:
   provider: GitHub
   auth_token:
     secure: YfscG1DR0+kApThPXxQSr+ZEjUOUlIG0Tqc5+90IFsUInyICRRMdbJsbxR2qhq/p
-  artifact: /QtPass_v[0-9]+\.[0-9]+\.[0-9]+\.exe/
+  artifact: /qtpass-[0-9]+\.[0-9]+\.[0-9]+\.exe/
   draft: true
   prerelease: false
   on:
