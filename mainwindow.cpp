@@ -268,7 +268,7 @@ bool MainWindow::checkConfig() {
         } else {
             usePwgen = false;
         }
-        passTemplate = "login/nurl";
+        passTemplate = "login\nurl";
     } else {
 //        QStringList ver = version.split(".");
 //        qDebug() << ver;
@@ -278,7 +278,11 @@ bool MainWindow::checkConfig() {
         if (passwordChars.isEmpty()) {
             passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
         }
+        if (passTemplate.isEmpty()) {
+            passTemplate = "login\nurl";
+        }
     }
+
     settings.setValue("version", VERSION);
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
