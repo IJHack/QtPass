@@ -283,7 +283,7 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked()
  */
 void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard)
 {
-    ui->comboBoxClipboard->setCurrentIndex((int)useClipboard);
+    ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
     on_comboBoxClipboard_activated();
 }
 
