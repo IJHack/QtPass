@@ -53,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QtPass = NULL;
     autoclearTimer = NULL;
     QTimer::singleShot(10, this, SLOT(focusInput()));
-
 }
 
 void MainWindow::focusInput() {
@@ -175,7 +174,8 @@ bool MainWindow::checkConfig() {
     usePass = (settings.value("usePass") == "true");
 
     useClipboard = CLIPBOARD_NEVER;
-    if (settings.value("useClipboard") == "true" || settings.value("useClipboard") == "1") {
+    if (settings.value("useClipboard") == "true" || 
+        settings.value("useClipboard") == "1") {
         useClipboard = CLIPBOARD_ALWAYS;
     } else if (settings.value("useClipboard") == "2") {
         useClipboard = CLIPBOARD_ON_DEMAND;
@@ -450,9 +450,15 @@ void MainWindow::config() {
             settings.setValue("passStore", passStore);
             settings.setValue("usePass", usePass ? "true" : "false");
             switch (useClipboard) {
-                case CLIPBOARD_ALWAYS: settings.setValue("useClipboard", "true"); break;
-                case CLIPBOARD_ON_DEMAND: settings.setValue("useClipboard", "2"); break;
-                default: settings.setValue("useClipboard", "false"); break;
+                case CLIPBOARD_ALWAYS: 
+                    settings.setValue("useClipboard", "true"); 
+                    break;
+                case CLIPBOARD_ON_DEMAND:
+                    settings.setValue("useClipboard", "2");
+                    break;
+                default:
+                    settings.setValue("useClipboard", "false");
+                    break;
             }
             settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
             settings.setValue("autoclearSeconds", autoclearSeconds);
@@ -680,12 +686,14 @@ void MainWindow::readyRead(bool finished = false) {
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
             QStringList tokens =  output.split("\n");
-            
+
             if (useClipboard != CLIPBOARD_NEVER && !output.isEmpty()) {
                 setClippedPassword(tokens[0]);
                 if (useClipboard == CLIPBOARD_ALWAYS) copyPasswordToClipboard();
                 if (useAutoclearPanel) {
-                      QTimer::singleShot(1000*autoclearPanelSeconds, this, SLOT(clearPanel()));
+                      QTimer::singleShot(1000*autoclearPanelSeconds, \
+                        this, \
+                        SLOT(clearPanel()));
                 }
                 if (hidePassword && !useTemplate) {
                     tokens[0] = "***" + tr("Password hidden") + "***";
@@ -1625,7 +1633,7 @@ void MainWindow::showContextMenu(const QPoint& pos)
     }
 
     contextMenu.exec(globalPos);
- }
+}
 
 /**
  * @brief MainWindow::showContextMenu
@@ -1634,12 +1642,15 @@ void MainWindow::showContextMenu(const QPoint& pos)
 void MainWindow::showBrowserContextMenu(const QPoint& pos)
 {
     QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
-    
+
     if (useClipboard != CLIPBOARD_NEVER) {
         contextMenu->addSeparator();
         QAction* copyItem = contextMenu->addAction(tr("Copy Password"));
         if (getClippedPassword().length() == 0) copyItem->setEnabled(false);
-        connect(copyItem, SIGNAL(triggered()), this, SLOT(copyPasswordToClipboard()));
+        connect(copyItem, \
+            SIGNAL(triggered()), \
+            this, \
+            SLOT(copyPasswordToClipboard()));
     }
     QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
@@ -1769,7 +1780,9 @@ void MainWindow::copyPasswordToClipboard()
         clip->setText(clippedPass);
         ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
         if (useAutoclear) {
-            QTimer::singleShot(1000*autoclearSeconds, this, SLOT(clearClipboard()));
+            QTimer::singleShot(1000*autoclearSeconds, \
+                this, \
+                SLOT(clearClipboard()));
         }
     }
 }

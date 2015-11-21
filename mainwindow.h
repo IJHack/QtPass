@@ -35,8 +35,9 @@ class MainWindow : public QMainWindow
 enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
-
-    enum clipBoardType { CLIPBOARD_NEVER=0, CLIPBOARD_ALWAYS=1, CLIPBOARD_ON_DEMAND=2 };
+    enum clipBoardType { CLIPBOARD_NEVER = 0, 
+                        CLIPBOARD_ALWAYS = 1,
+                        CLIPBOARD_ON_DEMAND = 2 };
 
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
