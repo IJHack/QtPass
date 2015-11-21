@@ -245,13 +245,6 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="checkBoxClipboard">
-           <property name="text">
-            <string>Use clipboard</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="3">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
@@ -403,6 +396,9 @@
             <string>Automatically pull</string>
            </property>
           </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QComboBox" name="comboBoxClipboard"/>
          </item>
         </layout>
        </item>
@@ -589,7 +585,6 @@ url</string>
   <tabstop>toolButtonPwgen</tabstop>
   <tabstop>passPath</tabstop>
   <tabstop>toolButtonPass</tabstop>
-  <tabstop>checkBoxClipboard</tabstop>
   <tabstop>checkBoxAutoclear</tabstop>
   <tabstop>spinBoxAutoclearSeconds</tabstop>
   <tabstop>checkBoxAutoclearPanel</tabstop>

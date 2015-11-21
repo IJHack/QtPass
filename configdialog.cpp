@@ -22,6 +22,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent) :
     ui->profileTable->verticalHeader()->hide();
     ui->profileTable->horizontalHeader()->setStretchLastSection(true);
     ui->label->setText(ui->label->text() + VERSION);
+    ui->comboBoxClipboard->clear();
+
+    ui->comboBoxClipboard->addItem(tr("No Clipboard"));
+    ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
+    ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
+    ui->comboBoxClipboard->setCurrentIndex(0);
 }
 
 /**
@@ -234,11 +240,11 @@ void ConfigDialog::on_toolButtonStore_clicked()
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxClipboard_clicked
+ * @brief ConfigDialog::on_comboBoxClipboard_activated
  */
-void ConfigDialog::on_checkBoxClipboard_clicked()
+void ConfigDialog::on_comboBoxClipboard_activated()
 {
-    if (ui->checkBoxClipboard->isChecked()) {
+    if (ui->comboBoxClipboard->currentIndex() > 0) {
         ui->checkBoxAutoclear->setEnabled(true);
         ui->checkBoxHidePassword->setEnabled(true);
         ui->checkBoxHideContent->setEnabled(true);
@@ -275,10 +281,10 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked()
 /**
  * @brief ConfigDialog::useClipboard
  */
-void ConfigDialog::useClipboard(bool useClipboard)
+void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard)
 {
-    ui->checkBoxClipboard->setChecked(useClipboard);
-    on_checkBoxClipboard_clicked();
+    ui->comboBoxClipboard->setCurrentIndex((int)useClipboard);
+    on_comboBoxClipboard_activated();
 }
 
 /**
@@ -323,9 +329,9 @@ void ConfigDialog::setAutoclearPanel(int seconds)
  * @brief ConfigDialog::useClipboard
  * @return
  */
-bool ConfigDialog::useClipboard()
+MainWindow::clipBoardType ConfigDialog::useClipboard()
 {
-    return ui->checkBoxClipboard->isChecked();
+    return static_cast<MainWindow::clipBoardType>(ui->comboBoxClipboard->currentIndex());
 }
 
 /**
@@ -351,7 +357,7 @@ int ConfigDialog::getAutoclear()
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked()
 {
-    on_checkBoxClipboard_clicked();
+    on_comboBoxClipboard_activated();
 }
 
 /**
