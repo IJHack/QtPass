@@ -35,6 +35,10 @@ class MainWindow : public QMainWindow
 enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
+    enum clipBoardType { CLIPBOARD_NEVER = 0, 
+                        CLIPBOARD_ALWAYS = 1,
+                        CLIPBOARD_ON_DEMAND = 2 };
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void setPassExecutable(QString);
@@ -73,10 +77,13 @@ private slots:
     void on_usersButton_clicked();
     void messageAvailable(QString message);
     void on_profileBox_currentIndexChanged(QString);
+    void on_copyPasswordButton_clicked();
     void showContextMenu(const QPoint& pos);
+    void showBrowserContextMenu(const QPoint& pos);
     void addFolder();
     void editPassword();
     void focusInput();
+    void copyPasswordToClipboard();
 
 private:
     QApplication *QtPass;
@@ -87,7 +94,7 @@ private:
     QScopedPointer<QItemSelectionModel> selectionModel;
     QScopedPointer<QProcess> process;
     bool usePass;
-    bool useClipboard;
+    clipBoardType useClipboard;
     bool useAutoclear;
     bool useAutoclearPanel;
     bool hidePassword;
@@ -155,6 +162,8 @@ private:
     bool removeDir(const QString & dirName);
     void waitFor(int);
     void clearTemplateWidgets();
+    void setClippedPassword(const QString & pass);
+    const QString &getClippedPassword();
 };
 
 #endif // MAINWINDOW_H

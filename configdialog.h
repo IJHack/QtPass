@@ -27,7 +27,7 @@ public:
     void setStorePath(QString);
     void setProfiles(QHash<QString, QString>, QString);
     void usePass(bool);
-    void useClipboard(bool);
+    void useClipboard(MainWindow::clipBoardType);
     void useAutoclear(bool);
     void setAutoclear(int);
     void useAutoclearPanel(bool);
@@ -41,7 +41,7 @@ public:
     QString getStorePath();
     QHash<QString,QString> getProfiles();
     bool usePass();
-    bool useClipboard();
+    MainWindow::clipBoardType useClipboard();
     bool useAutoclear();
     int getAutoclear();
     bool useAutoclearPanel();
@@ -91,7 +91,7 @@ private slots:
     void on_toolButtonPwgen_clicked();
     void on_toolButtonPass_clicked();
     void on_toolButtonStore_clicked();
-    void on_checkBoxClipboard_clicked();
+    void on_comboBoxClipboard_activated();
     void on_checkBoxAutoclear_clicked();
     void on_checkBoxAutoclearPanel_clicked();
     void on_addButton_clicked();
