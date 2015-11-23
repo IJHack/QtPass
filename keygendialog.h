@@ -33,7 +33,6 @@ private:
     void done(int r);
     void no_protection(bool enable);
     ConfigDialog *dialog;
-
 };
 
 #endif // KEYGENDIALOG_H

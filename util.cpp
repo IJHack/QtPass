@@ -23,12 +23,10 @@ void Util::initialiseEnvironment()
         QString path = _env.value("PATH");
 
         if (!path.contains("/usr/local/MacGPG2/bin")
-                && QFile("/usr/local/MacGPG2/bin").exists()) {
+            && QFile("/usr/local/MacGPG2/bin").exists())
             path += ":/usr/local/MacGPG2/bin";
-        }
-        if (!path.contains("/usr/local/bin")) {
+        if (!path.contains("/usr/local/bin"))
             path += ":/usr/local/bin";
-        }
         _env.insert("PATH", path);
 #endif
         _envInitialised = true;
@@ -48,10 +46,10 @@ QString Util::findPasswordStore()
     } else {
 #ifdef Q_OS_WIN
         path = QDir::homePath() + QDir::separator()
-                + "password-store" + QDir::separator();
+               + "password-store" + QDir::separator();
 #else
         path = QDir::homePath() + QDir::separator()
-                + ".password-store" + QDir::separator();
+               + ".password-store" + QDir::separator();
 #endif
     }
     return Util::normalizeFolderPath(path);
@@ -62,13 +60,12 @@ QString Util::findPasswordStore()
  * @param path
  * @return
  */
-QString Util::normalizeFolderPath(QString path) {
-    if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
+QString Util::normalizeFolderPath(QString path)
+{
+    if (!path.endsWith("/") && !path.endsWith(QDir::separator()))
         path += QDir::separator();
-    }
     return path;
 }
-
 
 QString Util::findBinaryInPath(QString binary)
 {
@@ -86,22 +83,21 @@ QString Util::findBinaryInPath(QString binary)
         entries = path.split(':');
         if (entries.length() < 2) {
 #endif
-            entries = path.split(';');
+        entries = path.split(';');
 #ifndef Q_OS_WIN
-        }
+    }
 #endif
 
-        foreach(QString entry, entries) {
+        foreach (QString entry, entries) {
             QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
 #ifdef Q_OS_WIN
-            if (!qfi->exists()) {
+            if (!qfi->exists())
                 qfi.reset(new QFileInfo(entry.append(".exe")));
-            }
+
 #endif
             qDebug() << entry;
-            if (!qfi->isExecutable()) {
+            if (!qfi->isExecutable())
                 continue;
-            }
 
             ret = qfi->absoluteFilePath();
             break;
@@ -121,20 +117,21 @@ QString Util::findBinaryInPath(QString binary)
 bool Util::checkConfig(QString passStore, QString passExecutable, QString gpgExecutable)
 {
     return !QFile(passStore + ".gpg-id").exists()
-            || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
+           || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
 }
-
 
 /**
  * @brief Util::qSleep
  * @param ms
  */\
-void Util::qSleep(int ms)
+    void Util::qSleep(int ms)
 {
 #ifdef Q_OS_WIN
     Sleep(uint(ms));
 #else
-    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
+    struct timespec ts = {
+        ms / 1000, (ms % 1000) * 1000 * 1000
+    };
     nanosleep(&ts, NULL);
 #endif
 }

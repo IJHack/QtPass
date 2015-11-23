@@ -7,9 +7,8 @@ int main(int argc, char *argv[])
     // check for stupid apple psid or whatever flag
     QString text = "";
     for (int i = 1; i < argc; ++i) {
-        if (i > 1) {
+        if (i > 1)
             text += " ";
-        }
         text += argv[i];
     }
 #if SINGLE_APP
@@ -18,9 +17,8 @@ int main(int argc, char *argv[])
         name = qgetenv("USERNAME");
     SingleApplication app(argc, argv, name + "QtPass");
     if (app.isRunning()) {
-        if (text.length() > 0) {
+        if (text.length() > 0)
             app.sendMessage(text);
-        }
         return 0;
     }
 #else
@@ -40,7 +38,7 @@ int main(int argc, char *argv[])
     // locale = "ar_MA";
     translator.load(QString(":localization/localization_") + locale + QString(".qm"));
     app.installTranslator(&translator);
-    app.setLayoutDirection(QObject::tr("LTR")=="RTL" ? Qt::RightToLeft : Qt::LeftToRight);
+    app.setLayoutDirection(QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
 
     MainWindow w;
 

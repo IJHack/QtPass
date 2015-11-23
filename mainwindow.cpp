@@ -34,9 +34,11 @@ MainWindow::MainWindow(QWidget *parent) :
     keygen(NULL),
     tray(NULL)
 {
-//    connect(process.data(), SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
-    connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this, SLOT(processError(QProcess::ProcessError)));
-    connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
+// connect(process.data(), SIGNAL(readyReadStandardOutput()), this, SLOT(readyRead()));
+    connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this,
+            SLOT(processError(QProcess::ProcessError)));
+    connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this,
+            SLOT(processFinished(int, QProcess::ExitStatus)));
     ui->setupUi(this);
     enableUiElements(true);
     wrapperRunning = false;
@@ -55,7 +57,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QTimer::singleShot(10, this, SLOT(focusInput()));
 }
 
-void MainWindow::focusInput() {
+void MainWindow::focusInput()
+{
     ui->lineEdit->selectAll();
     ui->lineEdit->setFocus();
 }
@@ -75,22 +78,25 @@ MainWindow::~MainWindow()
 #endif
 }
 
-QSettings &MainWindow::getSettings() {
+QSettings &MainWindow::getSettings()
+{
     if (!settings) {
-        QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
-        //qDebug() << "Settings file: " + portable_ini;
+        QString portable_ini = QCoreApplication::applicationDirPath() + QDir::separator()
+                               + "qtpass.ini";
+        // qDebug() << "Settings file: " + portable_ini;
         if (QFile(portable_ini).exists()) {
-           // qDebug() << "Settings file exists, loading it in";
+            // qDebug() << "Settings file exists, loading it in";
             settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
         } else {
-            //qDebug() << "Settings file does not exist, use defaults";
+            // qDebug() << "Settings file does not exist, use defaults";
             settings.reset(new QSettings("IJHack", "QtPass"));
         }
     }
     return *settings;
 }
 
-void MainWindow::mountWebDav() {
+void MainWindow::mountWebDav()
+{
 #ifdef Q_OS_WIN
     char dst[20] = {0};
     NETRESOURCEA netres;
@@ -99,26 +105,32 @@ void MainWindow::mountWebDav() {
     netres.lpLocalName = 0;
     netres.lpRemoteName = webDavUrl.toUtf8().data();
     DWORD size = sizeof(dst);
-    DWORD r = WNetUseConnectionA(reinterpret_cast<HWND>(effectiveWinId()), &netres, webDavPassword.toUtf8().constData(),
-                                 webDavUser.toUtf8().constData(), CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT,
-                                 dst, &size, 0);
+    DWORD r = WNetUseConnectionA(
+        reinterpret_cast<HWND>(effectiveWinId()), &netres, webDavPassword.toUtf8().constData(),
+        webDavUser.toUtf8().constData(), CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT,
+        dst, &size, 0);
     if (r == NO_ERROR) {
         passStore = dst;
     } else {
         char message[256] = {0};
         FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message, sizeof(message), 0);
         ui->textBrowser->setTextColor(Qt::red);
-        ui->textBrowser->setText(tr("Failed to connect WebDAV:\n") + message + " (0x" + QString::number(r, 16) + ")");
+        ui->textBrowser->setText(tr(
+                                     "Failed to connect WebDAV:\n") + message + " (0x"
+                                 + QString::number(r, 16) + ")");
     }
 #else
-    fusedav.start("fusedav -o nonempty -u \"" + webDavUser + "\" " + webDavUrl + " \"" + passStore + '"');
+    fusedav.start(
+        "fusedav -o nonempty -u \"" + webDavUser + "\" " + webDavUrl + " \"" + passStore + '"');
     fusedav.waitForStarted();
     if (fusedav.state() == QProcess::Running) {
         QString pwd = webDavPassword;
         bool ok = true;
         if (pwd.isEmpty()) {
             pwd = QInputDialog::getText(this, tr("QtPass WebDAV password"),
-               tr("Enter password to connect to WebDAV:"), QLineEdit::Password, "", &ok);
+                                        tr(
+                                            "Enter password to connect to WebDAV:"), QLineEdit::Password, "",
+                                        &ok);
         }
         if (ok && !pwd.isEmpty()) {
             fusedav.write(pwd.toUtf8() + '\n');
@@ -130,12 +142,10 @@ void MainWindow::mountWebDav() {
     }
     QString error = fusedav.readAllStandardError();
     int prompt = error.indexOf("Password:");
-    if (prompt >= 0) {
+    if (prompt >= 0)
         error.remove(0, prompt + 10);
-    }
-    if (fusedav.state() != QProcess::Running) {
+    if (fusedav.state() != QProcess::Running)
         error = tr("fusedav exited unexpectedly\n") + error;
-    }
     if (error.size() > 0) {
         ui->textBrowser->setTextColor(Qt::red);
         ui->textBrowser->setText(tr("Failed to start fusedav to connect WebDAV:\n") + error);
@@ -146,27 +156,27 @@ void MainWindow::mountWebDav() {
 /**
  * @brief MainWindow::checkConfig
  */
-bool MainWindow::checkConfig() {
-
+bool MainWindow::checkConfig()
+{
     QSettings &settings(getSettings());
 
     QString version = settings.value("version").toString();
 
     if (freshStart) {
-        settings.beginGroup( "mainwindow" );
-        restoreGeometry(settings.value( "geometry", saveGeometry() ).toByteArray());
-        restoreState(settings.value( "savestate", saveState() ).toByteArray());
-        move(settings.value( "pos", pos() ).toPoint());
-        resize(settings.value( "size", size() ).toSize());
+        settings.beginGroup("mainwindow");
+        restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray());
+        restoreState(settings.value("savestate", saveState()).toByteArray());
+        move(settings.value("pos", pos()).toPoint());
+        resize(settings.value("size", size()).toSize());
         QList<int> splitter = ui->splitter->sizes();
         int left = settings.value("splitterLeft", splitter[0]).toInt();
-        int right= settings.value("splitterRight", splitter[1]).toInt();
+        int right = settings.value("splitterRight", splitter[1]).toInt();
         if (left > 0 || right > 0) {
             splitter[0] = left;
             splitter[1] = right;
             ui->splitter->setSizes(splitter);
         }
-        if ( settings.value( "maximized", isMaximized() ).toBool() )
+        if (settings.value("maximized", isMaximized()).toBool())
             showMaximized();
         settings.endGroup();
     }
@@ -174,12 +184,11 @@ bool MainWindow::checkConfig() {
     usePass = (settings.value("usePass") == "true");
 
     useClipboard = CLIPBOARD_NEVER;
-    if (settings.value("useClipboard") == "true" || 
-        settings.value("useClipboard") == "1") {
+    if (settings.value("useClipboard") == "true"
+        || settings.value("useClipboard") == "1")
         useClipboard = CLIPBOARD_ALWAYS;
-    } else if (settings.value("useClipboard") == "2") {
+    else if (settings.value("useClipboard") == "2")
         useClipboard = CLIPBOARD_ON_DEMAND;
-    }
     useAutoclear = (settings.value("useAutoclear") == "true");
     autoclearSeconds = settings.value("autoclearSeconds").toInt();
     useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");
@@ -196,24 +205,20 @@ bool MainWindow::checkConfig() {
     passStore = Util::normalizeFolderPath(passStore);
 
     passExecutable = settings.value("passExecutable").toString();
-    if (passExecutable.isEmpty()) {
+    if (passExecutable.isEmpty())
         passExecutable = Util::findBinaryInPath("pass");
-    }
 
     gitExecutable = settings.value("gitExecutable").toString();
-    if (gitExecutable.isEmpty()) {
+    if (gitExecutable.isEmpty())
         gitExecutable = Util::findBinaryInPath("git");
-    }
 
     gpgExecutable = settings.value("gpgExecutable").toString();
-    if (gpgExecutable.isEmpty()) {
+    if (gpgExecutable.isEmpty())
         gpgExecutable = Util::findBinaryInPath("gpg2");
-    }
 
     pwgenExecutable = settings.value("pwgenExecutable").toString();
-    if (pwgenExecutable.isEmpty()) {
+    if (pwgenExecutable.isEmpty())
         pwgenExecutable = Util::findBinaryInPath("pwgen");
-    }
 
     gpgHome = settings.value("gpgHome").toString();
 
@@ -225,9 +230,8 @@ bool MainWindow::checkConfig() {
     profile = settings.value("profile").toString();
     settings.beginGroup("profiles");
     QStringList keys = settings.childKeys();
-    foreach (QString key, keys) {
-         profiles[key] = settings.value(key).toString();
-    }
+    foreach (QString key, keys)
+        profiles[key] = settings.value(key).toString();
     settings.endGroup();
 
     useGit = (settings.value("useGit") == "true");
@@ -257,46 +261,44 @@ bool MainWindow::checkConfig() {
     useTemplate = settings.value("useTemplate").toBool();
     templateAllFields = settings.value("templateAllFields").toBool();
 
-    //qDebug() << version;
+    // qDebug() << version;
 
     // Config updates
     if (version.isEmpty()) {
         qDebug() << "assuming fresh install";
-        if (autoclearSeconds < 5) {
+        if (autoclearSeconds < 5)
             autoclearSeconds = 10;
-        }
-        if (autoclearPanelSeconds < 5) {
+        if (autoclearPanelSeconds < 5)
             autoclearPanelSeconds = 10;
-        }
         passwordLength = 16;
-        passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
-        if (!pwgenExecutable.isEmpty()) {
+        passwordChars
+            =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
+        if (!pwgenExecutable.isEmpty())
             usePwgen = true;
-        } else {
+        else
             usePwgen = false;
-        }
         passTemplate = "login\nurl";
     } else {
-//        QStringList ver = version.split(".");
-//        qDebug() << ver;
-//        if (ver[0] == "0" && ver[1] == "8") {
-//            // upgrade to 0.9
-//        }
-        if (passwordChars.isEmpty()) {
-            passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
-        }
-        if (passTemplate.isEmpty()) {
+// QStringList ver = version.split(".");
+// qDebug() << ver;
+// if (ver[0] == "0" && ver[1] == "8") {
+//// upgrade to 0.9
+// }
+        if (passwordChars.isEmpty())
+            passwordChars
+                =
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";
+        if (passTemplate.isEmpty())
             passTemplate = "login\nurl";
-        }
     }
 
     settings.setValue("version", VERSION);
 
     if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
         config();
-        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+        if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable))
             return false;
-        }
     }
 
     freshStart = false;
@@ -304,9 +306,8 @@ bool MainWindow::checkConfig() {
     // TODO: this needs to be before we try to access the store,
     // but it would be better to do it after the Window is shown,
     // as the long delay it can cause is irritating otherwise.
-    if (useWebDav) {
+    if (useWebDav)
         mountWebDav();
-    }
 
     model.setNameFilters(QStringList() << "*.gpg");
     model.setNameFilterDisables(false);
@@ -326,13 +327,13 @@ bool MainWindow::checkConfig() {
     ui->treeView->setIndentation(15);
     ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint&)),
-        this, SLOT(showContextMenu(const QPoint&)));
+    connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
+            this, SLOT(showContextMenu(const QPoint &)));
 
     ui->textBrowser->setOpenExternalLinks(true);
     ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint&)),
-        this, SLOT(showBrowserContextMenu(const QPoint&)));
+    connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint &)),
+            this, SLOT(showBrowserContextMenu(const QPoint &)));
 
     updateProfileBox();
 
@@ -344,20 +345,18 @@ bool MainWindow::checkConfig() {
     }
 #ifdef __APPLE__
     // If it exists, add the gpgtools to PATH
-    if (QFile("/usr/local/MacGPG2/bin").exists()) {
+    if (QFile("/usr/local/MacGPG2/bin").exists())
         env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
-    }
     // Add missing /usr/local/bin
-    if (env.filter("/usr/local/bin").isEmpty()) {
+    if (env.filter("/usr/local/bin").isEmpty())
         env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
-    }
+
 #endif
-    //QMessageBox::information(this, "env", env.join("\n"));
+    // QMessageBox::information(this, "env", env.join("\n"));
 
     updateEnv();
 
-    if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
-    {
+    if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
         ui->pushButton->hide();
         ui->updateButton->hide();
     } else {
@@ -372,7 +371,8 @@ bool MainWindow::checkConfig() {
 /**
  * @brief MainWindow::config
  */
-void MainWindow::config() {
+void MainWindow::config()
+{
     QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
     d->setModal(true);
 
@@ -407,9 +407,8 @@ void MainWindow::config() {
     d->templateAllFields(templateAllFields);
     d->autoPull(autoPull);
     d->autoPush(autoPush);
-    if (startupPhase) {
+    if (startupPhase)
         d->wizard(); // does shit
-    }
     if (d->exec()) {
         if (d->result() == QDialog::Accepted) {
             passExecutable = d->getPassPath();
@@ -450,15 +449,15 @@ void MainWindow::config() {
             settings.setValue("passStore", passStore);
             settings.setValue("usePass", usePass ? "true" : "false");
             switch (useClipboard) {
-                case CLIPBOARD_ALWAYS: 
-                    settings.setValue("useClipboard", "true"); 
-                    break;
-                case CLIPBOARD_ON_DEMAND:
-                    settings.setValue("useClipboard", "2");
-                    break;
-                default:
-                    settings.setValue("useClipboard", "false");
-                    break;
+            case CLIPBOARD_ALWAYS:
+                settings.setValue("useClipboard", "true");
+                break;
+            case CLIPBOARD_ON_DEMAND:
+                settings.setValue("useClipboard", "2");
+                break;
+            default:
+                settings.setValue("useClipboard", "false");
+                break;
             }
             settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
             settings.setValue("autoclearSeconds", autoclearSeconds);
@@ -489,10 +488,9 @@ void MainWindow::config() {
                 QHashIterator<QString, QString> i(profiles);
                 while (i.hasNext()) {
                     i.next();
-                    //qDebug() << i.key() + "|" + i.value();
-                    if (i.key() == profile) {
+                    // qDebug() << i.key() + "|" + i.value();
+                    if (i.key() == profile)
                         profileExists = true;
-                    }
                     settings.setValue(i.key(), i.value());
                 }
                 if (!profileExists) {
@@ -506,23 +504,20 @@ void MainWindow::config() {
             updateProfileBox();
             ui->treeView->setRootIndex(proxyModel.mapFromSource(model.setRootPath(passStore)));
 
-            if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
+            if (freshStart && Util::checkConfig(passStore, passExecutable, gpgExecutable))
                 config();
-            }
             updateEnv();
-            if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty()))
-            {
+            if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
                 ui->pushButton->hide();
                 ui->updateButton->hide();
             } else {
                 ui->pushButton->show();
                 ui->updateButton->show();
             }
-            if (useTrayIcon && tray == NULL) {
+            if (useTrayIcon && tray == NULL)
                 initTrayIcon();
-            } else if (!useTrayIcon && tray != NULL) {
+            else if (!useTrayIcon && tray != NULL)
                 destroyTrayIcon();
-            }
         }
         freshStart = false;
     }
@@ -535,11 +530,10 @@ void MainWindow::on_updateButton_clicked()
 {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     currentAction = GIT;
-    if (usePass) {
+    if (usePass)
         executePass("git pull");
-    } else {
+    else
         executeWrapper(gitExecutable, "pull");
-    }
 }
 
 /**
@@ -549,19 +543,17 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     currentAction = GIT;
-    if (usePass) {
+    if (usePass)
         executePass("git push");
-    } else {
+    else
         executeWrapper(gitExecutable, "push");
-    }
 }
 
 QString MainWindow::getDir(const QModelIndex &index, bool forPass)
 {
     QString abspath = QDir(passStore).absolutePath() + '/';
-    if (!index.isValid()) {
+    if (!index.isValid())
         return forPass ? "" : abspath;
-    }
     QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
     QString filePath = (info.isFile() ? info.absolutePath() : info.absoluteFilePath()) + '/';
     if (forPass) {
@@ -573,9 +565,8 @@ QString MainWindow::getDir(const QModelIndex &index, bool forPass)
 
 QString MainWindow::getFile(const QModelIndex &index, bool forPass)
 {
-    if (!index.isValid() || !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+    if (!index.isValid() || !model.fileInfo(proxyModel.mapToSource(index)).isFile())
         return QString();
-    }
     QString filePath = model.filePath(proxyModel.mapToSource(index));
     if (forPass) {
         filePath.replace(QRegExp("\\.gpg$"), "");
@@ -594,13 +585,13 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     lastDecrypt = "Could not decrypt";
     setClippedPassword("");
     QString file = getFile(index, usePass);
-    if (!file.isEmpty()){
+    if (!file.isEmpty()) {
         currentAction = GPG;
-        if (usePass) {
+        if (usePass)
             executePass("show \"" + file + '"');
-        } else {
-            executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
-        }
+        else
+            executeWrapper(gpgExecutable,
+                           "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
     } else {
         ui->editButton->setEnabled(false);
         ui->deleteButton->setEnabled(true);
@@ -611,20 +602,21 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
  * @brief MainWindow::executePass
  * @param args
  */
-void MainWindow::executePass(QString args, QString input) {
+void MainWindow::executePass(QString args, QString input)
+{
     executeWrapper(passExecutable, args, input);
 }
 
 /**
  * @brief MainWindow::executePassGitInit
  */
-void MainWindow::executePassGitInit() {
+void MainWindow::executePassGitInit()
+{
     qDebug() << "Pass git init called";
-    if (usePass) {
+    if (usePass)
         executePass("git init");
-    } else {
+    else
         executeWrapper("git", "init \"" + passStore + '"');
-    }
 }
 
 /**
@@ -632,8 +624,9 @@ void MainWindow::executePassGitInit() {
  * @param app
  * @param args
  */
-void MainWindow::executeWrapper(QString app, QString args, QString input) {
-    //qDebug() << app + " " + args;
+void MainWindow::executeWrapper(QString app, QString args, QString input)
+{
+    // qDebug() << app + " " + args;
     // Happens a lot if e.g. git binary is not set.
     // This will result in bogus "QProcess::FailedToStart" messages,
     // also hiding legitimate errors from the gpg commands.
@@ -666,46 +659,44 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
         autoclearTimer = NULL;
     }
     process->start('"' + app + "\" " + args);
-    if (!input.isEmpty()) {
+    if (!input.isEmpty())
         process->write(input.toUtf8());
-    }
     process->closeWriteChannel();
 }
 
 /**
  * @brief MainWindow::readyRead
  */
-void MainWindow::readyRead(bool finished = false) {
-    if (currentAction == PWGEN) {
+void MainWindow::readyRead(bool finished = false)
+{
+    if (currentAction == PWGEN)
         return;
-    }
     QString output = "";
     QString error = process->readAllStandardError();
     if (currentAction != GPG_INTERNAL) {
         output = process->readAllStandardOutput();
         if (finished && currentAction == GPG) {
             lastDecrypt = output;
-            QStringList tokens =  output.split("\n");
+            QStringList tokens = output.split("\n");
 
             if (useClipboard != CLIPBOARD_NEVER && !output.isEmpty()) {
                 setClippedPassword(tokens[0]);
                 if (useClipboard == CLIPBOARD_ALWAYS) copyPasswordToClipboard();
                 if (useAutoclearPanel) {
-                      QTimer::singleShot(1000*autoclearPanelSeconds, \
-                        this, \
-                        SLOT(clearPanel()));
+                    QTimer::singleShot(1000*autoclearPanelSeconds, \
+                                       this, \
+                                       SLOT(clearPanel()));
                 }
                 if (hidePassword && !useTemplate) {
                     tokens[0] = "***" + tr("Password hidden") + "***";
                     output = tokens.join("\n");
                 }
-                if (hideContent) {
+                if (hideContent)
                     output = "***" + tr("Content hidden") + "***";
-                }
             }
 
             if (useTemplate) {
-                while(ui->formLayout->count() > 0){
+                while (ui->formLayout->count() > 0) {
                     QLayoutItem *item = ui->formLayout->takeAt(0);
                     delete item->widget();
                     delete item;
@@ -713,9 +704,8 @@ void MainWindow::readyRead(bool finished = false) {
                 QLineEdit *pass = new QLineEdit();
                 pass->setText(tokens[0]);
                 tokens.pop_front();
-                if (hidePassword) {
+                if (hidePassword)
                     pass->setEchoMode(QLineEdit::Password);
-                }
                 pass->setReadOnly(true);
                 ui->formLayout->addRow(pass);
 
@@ -726,9 +716,8 @@ void MainWindow::readyRead(bool finished = false) {
                         QString field = token.left(colon);
                         if (templateAllFields || passTemplate.contains(field)) {
                             QString value = token.right(token.length()-colon-1);
-                            if (!passTemplate.contains(field) && value.startsWith("//")) {
-                                continue;   // colon is probably from a url
-                            }
+                            if (!passTemplate.contains(field) && value.startsWith("//"))
+                                continue; // colon is probably from a url
                             QLineEdit *line = new QLineEdit();
                             line->setObjectName(field);
                             line->setText(value);
@@ -739,29 +728,28 @@ void MainWindow::readyRead(bool finished = false) {
                         }
                     }
                 }
-                if (ui->formLayout->count() == 0) {
+                if (ui->formLayout->count() == 0)
                     ui->verticalLayoutPassword->setSpacing(0);
-                } else {
+                else
                     ui->verticalLayoutPassword->setSpacing(6);
-                }
                 output = tokens.join("\n");
             } else {
                 clearTemplateWidgets();
             }
             if (useAutoclearPanel) {
-                  autoclearPass = output;
-                  autoclearTimer = new QTimer(this);
-                  autoclearTimer->setSingleShot(true);
-                  autoclearTimer->setInterval(1000*autoclearPanelSeconds);
-                  connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
-                  autoclearTimer->start();
+                autoclearPass = output;
+                autoclearTimer = new QTimer(this);
+                autoclearTimer->setSingleShot(true);
+                autoclearTimer->setInterval(1000*autoclearPanelSeconds);
+                connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+                autoclearTimer->start();
             }
         }
         output.replace(QRegExp("<"), "&lt;");
         output.replace(QRegExp(">"), "&gt;");
     } else {
-        //qDebug() << process->readAllStandardOutput();
-        //qDebug() << process->readAllStandardError();
+        // qDebug() << process->readAllStandardOutput();
+        // qDebug() << process->readAllStandardError();
         if (finished && 0 != keygen) {
             qDebug() << "Keygen Done";
             keygen->close();
@@ -781,9 +769,8 @@ void MainWindow::readyRead(bool finished = false) {
 
     output.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
-    if (!ui->textBrowser->toPlainText().isEmpty()) {
+    if (!ui->textBrowser->toPlainText().isEmpty())
         output = ui->textBrowser->toHtml() + output;
-    }
     ui->textBrowser->setHtml(output);
 }
 
@@ -806,7 +793,7 @@ void MainWindow::clearClipboard()
  */
 void MainWindow::clearPanel()
 {
-    while(ui->formLayout->count() > 0){
+    while (ui->formLayout->count() > 0) {
         QLayoutItem *item = ui->formLayout->takeAt(0);
         delete item->widget();
         delete item;
@@ -820,14 +807,14 @@ void MainWindow::clearPanel()
  * @param exitCode
  * @param exitStatus
  */
-void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
+void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
     wrapperRunning = false;
     bool error = exitStatus != QProcess::NormalExit || exitCode > 0;
     readyRead(true);
     enableUiElements(true);
-    if (!error && currentAction == EDIT) {
+    if (!error && currentAction == EDIT)
         on_treeView_clicked(ui->treeView->currentIndex());
-    }
     if (!execQueue->isEmpty()) {
         execQueueItem item = execQueue->dequeue();
         executeWrapper(item.app, item.args, item.input);
@@ -839,7 +826,8 @@ void MainWindow::processFinished(int exitCode, QProcess::ExitStatus exitStatus) 
  * @brief MainWindow::enableUiElements
  * @param state
  */
-void MainWindow::enableUiElements(bool state) {
+void MainWindow::enableUiElements(bool state)
+{
     ui->updateButton->setEnabled(state);
     ui->treeView->setEnabled(state);
     ui->lineEdit->setEnabled(state);
@@ -861,24 +849,24 @@ void MainWindow::processError(QProcess::ProcessError error)
 {
     QString errorString;
     switch (error) {
-        case QProcess::FailedToStart:
-            errorString = tr("QProcess::FailedToStart");
-            break;
-        case QProcess::Crashed:
-            errorString = tr("QProcess::Crashed");
-            break;
-        case QProcess::Timedout:
-            errorString = tr("QProcess::Timedout");
-            break;
-        case QProcess::ReadError:
-            errorString = tr("QProcess::ReadError");
-            break;
-        case QProcess::WriteError:
-            errorString = tr("QProcess::WriteError");
-            break;
-        case QProcess::UnknownError:
-            errorString = tr("QProcess::UnknownError");
-            break;
+    case QProcess::FailedToStart:
+        errorString = tr("QProcess::FailedToStart");
+        break;
+    case QProcess::Crashed:
+        errorString = tr("QProcess::Crashed");
+        break;
+    case QProcess::Timedout:
+        errorString = tr("QProcess::Timedout");
+        break;
+    case QProcess::ReadError:
+        errorString = tr("QProcess::ReadError");
+        break;
+    case QProcess::WriteError:
+        errorString = tr("QProcess::WriteError");
+        break;
+    case QProcess::UnknownError:
+        errorString = tr("QProcess::UnknownError");
+        break;
     }
     ui->textBrowser->setTextColor(Qt::red);
     ui->textBrowser->setText(errorString);
@@ -890,7 +878,8 @@ void MainWindow::processError(QProcess::ProcessError error)
  * @brief MainWindow::setPassExecutable
  * @param path
  */
-void MainWindow::setPassExecutable(QString path) {
+void MainWindow::setPassExecutable(QString path)
+{
     passExecutable = path;
 }
 
@@ -898,7 +887,8 @@ void MainWindow::setPassExecutable(QString path) {
  * @brief MainWindow::setGitExecutable
  * @param path
  */
-void MainWindow::setGitExecutable(QString path) {
+void MainWindow::setGitExecutable(QString path)
+{
     gitExecutable = path;
 }
 
@@ -906,7 +896,8 @@ void MainWindow::setGitExecutable(QString path) {
  * @brief MainWindow::setGpgExecutable
  * @param path
  */
-void MainWindow::setGpgExecutable(QString path) {
+void MainWindow::setGpgExecutable(QString path)
+{
     gpgExecutable = path;
 }
 
@@ -914,7 +905,8 @@ void MainWindow::setGpgExecutable(QString path) {
  * @brief MainWindow::getGpgExecutable
  * @return
  */
-QString MainWindow::getGpgExecutable() {
+QString MainWindow::getGpgExecutable()
+{
     return gpgExecutable;
 }
 
@@ -966,17 +958,16 @@ void MainWindow::selectFirstFile()
  * @param parentIndex
  * @return QModelIndex
  */
-QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
+QModelIndex MainWindow::firstFile(QModelIndex parentIndex)
+{
     QModelIndex index = parentIndex;
     int numRows = proxyModel.rowCount(parentIndex);
     for (int row = 0; row < numRows; ++row) {
         index = proxyModel.index(row, 0, parentIndex);
-        if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+        if (model.fileInfo(proxyModel.mapToSource(index)).isFile())
             return index;
-        }
-        if (proxyModel.hasChildren(index)) {
+        if (proxyModel.hasChildren(index))
             return firstFile(index);
-        }
     }
     return index;
 }
@@ -996,7 +987,8 @@ void MainWindow::on_clearButton_clicked()
  */
 QStringList MainWindow::getRecipientList(QString for_file)
 {
-    QDir gpgIdPath(QFileInfo(for_file.startsWith(passStore) ? for_file : passStore + for_file).absoluteDir());
+    QDir gpgIdPath(QFileInfo(for_file.startsWith(
+                                 passStore) ? for_file : passStore + for_file).absoluteDir());
     bool found = false;
     while (gpgIdPath.exists() && gpgIdPath.absolutePath().startsWith(passStore))
     {
@@ -1004,21 +996,18 @@ QStringList MainWindow::getRecipientList(QString for_file)
             found = true;
             break;
         }
-        if (!gpgIdPath.cdUp()) {
+        if (!gpgIdPath.cdUp())
             break;
-        }
     }
     QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id") : passStore + ".gpg-id");
-    if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
         return QStringList();
-    }
     QStringList recipients;
     while (!gpgId.atEnd()) {
         QString recipient(gpgId.readLine());
         recipient = recipient.trimmed();
-        if (!recipient.isEmpty()) {
+        if (!recipient.isEmpty())
             recipients += recipient;
-        }
     }
     return recipients;
 }
@@ -1035,13 +1024,9 @@ QString MainWindow::getRecipientString(QString for_file, QString separator, int 
     QString recipients_str;
     QStringList recipients_list = getRecipientList(for_file);
     if (count)
-    {
         *count = recipients_list.size();
-    }
     foreach (const QString recipient, recipients_list)
-    {
         recipients_str += separator + '"' + recipient + '"';
-    }
     return recipients_str;
 }
 
@@ -1067,13 +1052,11 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         return;
     }
     QString newValue = d.getPassword();
-    if (newValue.isEmpty()) {
+    if (newValue.isEmpty())
         return;
-    }
 
-    if (newValue.right(1) != "\n") {
+    if (newValue.right(1) != "\n")
         newValue += "\n";
-    }
 
     currentAction = EDIT;
     if (usePass) {
@@ -1083,22 +1066,25 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false)
         QString recipients = getRecipientString(file, " -r ");
         if (recipients.isEmpty()) {
             QMessageBox::critical(this, tr("Can not edit"),
-                tr("Could not read encryption key to use, .gpg-id file missing or invalid."));
+                                  tr(
+                                      "Could not read encryption key to use, .gpg-id file missing or invalid."));
             return;
         }
         QString force(overwrite ? " --yes " : " ");
-        executeWrapper(gpgExecutable , force + "--batch -eq --output \"" + file + "\" " + recipients + " -", newValue);
+        executeWrapper(gpgExecutable,
+                       force + "--batch -eq --output \"" + file + "\" " + recipients + " -",
+                       newValue);
         if (!useWebDav && useGit) {
-            if (!overwrite) {
+            if (!overwrite)
                 executeWrapper(gitExecutable, "add \"" + file + '"');
-            }
             QString path = file;
             path.replace(QRegExp("\\.gpg$"), "");
             path.replace(QRegExp("^" + passStore), "");
-            executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.\"");
-            if (autoPush) {
+            executeWrapper(gitExecutable,
+                           "commit \"" + file + "\" -m \"" + (overwrite ? "Edit" : "Add") + " for " + path
+                           + " using QtPass.\"");
+            if (autoPush)
                 on_pushButton_clicked();
-            }
         }
     }
 }
@@ -1111,15 +1097,16 @@ void MainWindow::on_addButton_clicked()
     bool ok;
     QString dir = getDir(ui->treeView->currentIndex(), usePass);
     QString file = QInputDialog::getText(this, tr("New file"),
-        tr("New password file, will be placed in folder %1:").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)), QLineEdit::Normal,
-        "", &ok);
-    if (!ok || file.isEmpty()) {
+                                         tr("New password file, will be placed in folder %1:").arg(
+                                             QDir::separator()
+                                             + getDir(
+                                                 ui->treeView->currentIndex(), true)), QLineEdit::Normal,
+                                         "", &ok);
+    if (!ok || file.isEmpty())
         return;
-    }
     file = dir + file;
-    if (!usePass) {
+    if (!usePass)
         file += ".gpg";
-    }
     lastDecrypt = "";
     setPassword(file, false, true);
 }
@@ -1135,23 +1122,26 @@ void MainWindow::on_deleteButton_clicked()
     if (fileOrFolder.isFile()) {
         file = getFile(ui->treeView->currentIndex(), usePass);
         if (QMessageBox::question(this, tr("Delete password?"),
-            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getFile(ui->treeView->currentIndex(), true)),
-            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-                return;
-        }
+                                  tr("Are you sure you want to delete %1?").arg(QDir::separator()
+                                                                                + getFile(ui->
+                                                                                          treeView->
+                                                                                          currentIndex(),
+        true)),
+                                  QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+            return;
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -f \"" + file + '"');
-            if (useGit && autoPush) {
+            if (useGit && autoPush)
                 on_pushButton_clicked();
-            }
         } else {
             if (useGit) {
                 executeWrapper(gitExecutable, "rm -f \"" + file + '"');
-                executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
-                if (autoPush) {
+                executeWrapper(gitExecutable,
+                               "commit \"" + file + "\" -m \" Remove for "
+                               + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush)
                     on_pushButton_clicked();
-                }
             } else {
                 QFile(file).remove();
             }
@@ -1159,23 +1149,26 @@ void MainWindow::on_deleteButton_clicked()
     } else {
         file = getDir(ui->treeView->currentIndex(), usePass);
         if (QMessageBox::question(this, tr("Delete folder?"),
-            tr("Are you sure you want to delete %1?").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
-            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+                                  tr("Are you sure you want to delete %1?").arg(QDir::separator()
+                                                                                + getDir(ui->
+                                                                                         treeView->
+                                                                                         currentIndex(),
+        true)),
+                                  QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
             return;
-        }
         if (usePass) {
             currentAction = DELETE;
             executePass("rm -r \"" + file + '"');
-            if (useGit && autoPush) {
+            if (useGit && autoPush)
                 on_pushButton_clicked();
-            }
         } else {
             if (useGit) {
                 executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
-                executeWrapper(gitExecutable, "commit \"" + file + "\" -m \" Remove for " + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
-                if (autoPush) {
+                executeWrapper(gitExecutable,
+                               "commit \"" + file + "\" -m \" Remove for "
+                               + getFile(ui->treeView->currentIndex(), true) + " using QtPass.\"");
+                if (autoPush)
                     on_pushButton_clicked();
-                }
             } else {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
                 QDir dir(file);
@@ -1194,23 +1187,23 @@ void MainWindow::on_deleteButton_clicked()
  * @param dirName
  * @return
  */
-bool MainWindow::removeDir(const QString & dirName)
+bool MainWindow::removeDir(const QString &dirName)
 {
     bool result = true;
     QDir dir(dirName);
 
     if (dir.exists(dirName)) {
-        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
-            if (info.isDir()) {
+        Q_FOREACH(QFileInfo info,
+                  dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden
+                                    | QDir::AllDirs
+                                    | QDir::Files, QDir::DirsFirst)) {
+            if (info.isDir())
                 result = removeDir(info.absoluteFilePath());
-            }
-            else {
+            else
                 result = QFile::remove(info.absoluteFilePath());
-            }
 
-            if (!result) {
+            if (!result)
                 return result;
-            }
         }
         result = dir.rmdir(dirName);
     }
@@ -1225,7 +1218,7 @@ void MainWindow::on_editButton_clicked()
     QString file = getFile(ui->treeView->currentIndex(), usePass);
     if (file.isEmpty()) {
         QMessageBox::critical(this, tr("Can not edit"),
-            tr("Selected password file does not exist, not able to edit"));
+                              tr("Selected password file does not exist, not able to edit"));
         return;
     }
     setPassword(file, true);
@@ -1243,26 +1236,24 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
     QList<UserInfo> users;
     currentAction = GPG_INTERNAL;
     QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
-    executeWrapper(gpgExecutable , "--no-tty --with-colons " + listopt + keystring);
+    executeWrapper(gpgExecutable, "--no-tty --with-colons " + listopt + keystring);
     process->waitForFinished(2000);
-    if (process->exitStatus() != QProcess::NormalExit) {
+    if (process->exitStatus() != QProcess::NormalExit)
         return users;
-    }
-    QStringList keys = QString(process->readAllStandardOutput()).split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+    QStringList keys = QString(process->readAllStandardOutput()).split(QRegExp(
+                                                                           "[\r\n]"),
+                                                                       QString::SkipEmptyParts);
     UserInfo current_user;
     foreach (QString key, keys) {
         QStringList props = key.split(':');
-        if (props.size() < 10) {
+        if (props.size() < 10)
             continue;
-        }
         if (props[0] == (secret ? "sec" : "pub")) {
             if (!current_user.key_id.isEmpty())
-            {
                 users.append(current_user);
-            }
             current_user = UserInfo();
             current_user.key_id = props[4];
-            current_user.name   = props[9].toUtf8();
+            current_user.name = props[9].toUtf8();
             current_user.validity = props[8][0].toLatin1();
             current_user.created.setTime_t(props[5].toInt());
             current_user.expiry.setTime_t(props[6].toInt());
@@ -1271,17 +1262,14 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret)
         }
     }
     if (!current_user.key_id.isEmpty())
-    {
         users.append(current_user);
-    }
     return users;
 }
 
 void MainWindow::userDialog(QString dir)
 {
-    if (!dir.isEmpty()) {
+    if (!dir.isEmpty())
         currentDir = dir;
-    }
     on_usersButton_clicked();
 }
 
@@ -1290,35 +1278,29 @@ void MainWindow::on_usersButton_clicked()
     QList<UserInfo> users = listKeys();
     if (users.size() == 0) {
         QMessageBox::critical(this, tr("Can not get key list"),
-            tr("Unable to get list of available gpg keys"));
+                              tr("Unable to get list of available gpg keys"));
         return;
     }
     QList<UserInfo> secret_keys = listKeys("", true);
     foreach (const UserInfo &sec, secret_keys) {
-        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
             if (sec.key_id == it->key_id) it->have_secret = true;
-        }
     }
     QList<UserInfo> selected_users;
-    QString dir = currentDir.isEmpty()?getDir(ui->treeView->currentIndex(), false):currentDir;
+    QString dir = currentDir.isEmpty() ? getDir(ui->treeView->currentIndex(), false) : currentDir;
     int count = 0;
     QString recipients = getRecipientString(dir.isEmpty() ? "" : dir, " ", &count);
-    if (!recipients.isEmpty()) {
+    if (!recipients.isEmpty())
         selected_users = listKeys(recipients);
-    }
     foreach (const UserInfo &sel, selected_users) {
-        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it) {
+        for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
             if (sel.key_id == it->key_id) it->enabled = true;
-        }
     }
-    if (count > selected_users.size())
-    {
+    if (count > selected_users.size()) {
         // Some keys seem missing from keyring, add them separately
         QStringList recipients = getRecipientList(dir.isEmpty() ? "" : dir);
-        foreach (const QString recipient, recipients)
-        {
-            if (listKeys(recipient).size() < 1)
-            {
+        foreach (const QString recipient, recipients) {
+            if (listKeys(recipient).size() < 1) {
                 UserInfo i;
                 i.enabled = true;
                 i.key_id = recipient;
@@ -1339,13 +1321,12 @@ void MainWindow::on_usersButton_clicked()
     bool addFile = false;
     if (addGPGId) {
         QFileInfo checkFile(gpgIdFile);
-        if (!checkFile.exists() || !checkFile.isFile()) {
+        if (!checkFile.exists() || !checkFile.isFile())
             addFile = true;
-        }
     }
     if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this, tr("Cannot update"),
-            tr("Failed to open .gpg-id for writing."));
+                              tr("Failed to open .gpg-id for writing."));
         return;
     }
     bool secret_selected = false;
@@ -1358,19 +1339,18 @@ void MainWindow::on_usersButton_clicked()
     gpgId.close();
     if (!secret_selected) {
         QMessageBox::critical(this, tr("Check selected users!"),
-            tr("None of the selected keys have a secret key available.\n"
-               "You will not be able to decrypt any newly added passwords!"));
+                              tr("None of the selected keys have a secret key available.\n"
+                                 "You will not be able to decrypt any newly added passwords!"));
     }
-    if (!useWebDav && useGit && !gitExecutable.isEmpty()){
-        if (addFile) {
+    if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
+        if (addFile)
             executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
-        }
         QString path = gpgIdFile;
         path.replace(QRegExp("\\.gpg$"), "");
-        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass.\"");
-        if (autoPush) {
+        executeWrapper(gitExecutable,
+                       "commit \"" + gpgIdFile + "\" -m \"Added "+ path + " using QtPass.\"");
+        if (autoPush)
             on_pushButton_clicked();
-        }
     }
 }
 
@@ -1419,10 +1399,10 @@ void MainWindow::updateEnv()
     QStringList store = env.filter("PASSWORD_STORE_DIR");
     // put PASSWORD_STORE_DIR in env
     if (store.isEmpty()) {
-        //qDebug() << "Added PASSWORD_STORE_DIR";
+        // qDebug() << "Added PASSWORD_STORE_DIR";
         env.append("PASSWORD_STORE_DIR=" + passStore);
     } else {
-        //qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
+        // qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
         env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
     }
 }
@@ -1436,13 +1416,11 @@ QStringList MainWindow::getSecretKeys()
     QList<UserInfo> keys = listKeys("", true);
     QStringList names;
 
-    if (keys.size() == 0) {
+    if (keys.size() == 0)
         return names;
-    }
 
-    foreach (const UserInfo &sec, keys) {
+    foreach (const UserInfo &sec, keys)
         names << sec.name;
-    }
 
     return names;
 }
@@ -1456,38 +1434,34 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow)
     keygen = keygenWindow;
     ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
     currentAction = GPG_INTERNAL;
-    executeWrapper(gpgExecutable , "--gen-key --no-tty --batch", batch);
+    executeWrapper(gpgExecutable, "--gen-key --no-tty --batch", batch);
 }
-
 
 /**
  * @brief MainWindow::updateProfileBox
  */
 void MainWindow::updateProfileBox()
 {
-    //qDebug() << profiles.size();
+    // qDebug() << profiles.size();
     if (profiles.isEmpty()) {
         ui->profileBox->hide();
     } else {
         ui->profileBox->show();
-        if (profiles.size() < 2) {
+        if (profiles.size() < 2)
             ui->profileBox->setEnabled(false);
-        } else {
+        else
             ui->profileBox->setEnabled(true);
-        }
         ui->profileBox->clear();
         QHashIterator<QString, QString> i(profiles);
         while (i.hasNext()) {
             i.next();
-            if (!i.key().isEmpty()) {
+            if (!i.key().isEmpty())
                 ui->profileBox->addItem(i.key());
-            }
         }
     }
     int index = ui->profileBox->findText(profile);
-    if ( index != -1 ) { // -1 for not found
-       ui->profileBox->setCurrentIndex(index);
-    }
+    if (index != -1)     // -1 for not found
+        ui->profileBox->setCurrentIndex(index);
 }
 
 /**
@@ -1496,9 +1470,8 @@ void MainWindow::updateProfileBox()
  */
 void MainWindow::on_profileBox_currentIndexChanged(QString name)
 {
-    if (startupPhase || name == profile) {
+    if (startupPhase || name == profile)
         return;
-    }
     profile = name;
 
     passStore = profiles[name];
@@ -1513,10 +1486,10 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
     QStringList store = env.filter("PASSWORD_STORE_DIR");
     // put PASSWORD_STORE_DIR in env
     if (store.isEmpty()) {
-        //qDebug() << "Added PASSWORD_STORE_DIR";
+        // qDebug() << "Added PASSWORD_STORE_DIR";
         env.append("PASSWORD_STORE_DIR=" + passStore);
     } else {
-        //qDebug() << "Update PASSWORD_STORE_DIR";
+        // qDebug() << "Update PASSWORD_STORE_DIR";
         env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + passStore);
     }
 
@@ -1528,16 +1501,15 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name)
  */
 void MainWindow::initTrayIcon()
 {
-    if(tray != NULL){
+    if (tray != NULL) {
         qDebug() << "Creating tray icon again?";
         return;
     }
-    if(QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
         // Setup tray icon
         this->tray = new TrayIcon(this);
-        if(tray == NULL){
+        if (tray == NULL)
             qDebug() << "Allocating tray icon failed.";
-        }
     } else {
         qDebug() << "No tray icon for this OS possibly also not show options?";
     }
@@ -1548,7 +1520,7 @@ void MainWindow::initTrayIcon()
  */
 void MainWindow::destroyTrayIcon()
 {
-    if(tray == NULL){
+    if (tray == NULL) {
         qDebug() << "Destroy non existing tray icon?";
         return;
     }
@@ -1566,13 +1538,13 @@ void MainWindow::closeEvent(QCloseEvent *event)
         this->hide();
         event->ignore();
     } else {
-        settings->beginGroup( "mainwindow" );
-        settings->setValue( "geometry", saveGeometry() );
-        settings->setValue( "savestate", saveState() );
-        settings->setValue( "maximized", isMaximized() );
-        if ( !isMaximized() ) {
-            settings->setValue( "pos", pos() );
-            settings->setValue( "size", size() );
+        settings->beginGroup("mainwindow");
+        settings->setValue("geometry", saveGeometry());
+        settings->setValue("savestate", saveState());
+        settings->setValue("maximized", isMaximized());
+        if (!isMaximized()) {
+            settings->setValue("pos", pos());
+            settings->setValue("size", size());
         }
         settings->setValue("splitterLeft", ui->splitter->sizes()[0]);
         settings->setValue("splitterRight", ui->splitter->sizes()[1]);
@@ -1590,9 +1562,9 @@ void MainWindow::on_copyPasswordButton_clicked()
  * @brief MainWindow::showContextMenu
  * @param pos
  */
-void MainWindow::showContextMenu(const QPoint& pos)
+void MainWindow::showContextMenu(const QPoint &pos)
 {
-    QModelIndex index =  ui->treeView->indexAt(pos);
+    QModelIndex index = ui->treeView->indexAt(pos);
     bool selected = true;
     if (!index.isValid()) {
         ui->treeView->clearSelection();
@@ -1610,25 +1582,25 @@ void MainWindow::showContextMenu(const QPoint& pos)
 
     QMenu contextMenu;
     if (!selected || fileOrFolder.isDir()) {
-        QAction* addFolder = contextMenu.addAction(tr("Add folder"));
-        QAction* addPassword = contextMenu.addAction(tr("Add password"));
-        QAction* users = contextMenu.addAction(tr("Users"));
+        QAction *addFolder = contextMenu.addAction(tr("Add folder"));
+        QAction *addPassword = contextMenu.addAction(tr("Add password"));
+        QAction *users = contextMenu.addAction(tr("Users"));
         connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
         connect(addPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
         connect(users, SIGNAL(triggered()), this, SLOT(on_usersButton_clicked()));
     } else if (fileOrFolder.isFile()) {
-        QAction* edit = contextMenu.addAction(tr("Edit"));
+        QAction *edit = contextMenu.addAction(tr("Edit"));
         connect(edit, SIGNAL(triggered()), this, SLOT(editPassword()));
     }
     if (selected) {
-        //if (useClipboard != CLIPBOARD_NEVER) {
-        //    contextMenu.addSeparator();
-        //    QAction* copyItem = contextMenu.addAction(tr("Copy Password"));
-        //    if (getClippedPassword().length() == 0) copyItem->setEnabled(false);
-        //    connect(copyItem, SIGNAL(triggered()), this, SLOT(copyPasswordToClipboard()));
-        //}
+        // if (useClipboard != CLIPBOARD_NEVER) {
+        // contextMenu.addSeparator();
+        // QAction* copyItem = contextMenu.addAction(tr("Copy Password"));
+        // if (getClippedPassword().length() == 0) copyItem->setEnabled(false);
+        // connect(copyItem, SIGNAL(triggered()), this, SLOT(copyPasswordToClipboard()));
+        // }
         contextMenu.addSeparator();
-        QAction* deleteItem = contextMenu.addAction(tr("Delete"));
+        QAction *deleteItem = contextMenu.addAction(tr("Delete"));
         connect(deleteItem, SIGNAL(triggered()), this, SLOT(on_deleteButton_clicked()));
     }
 
@@ -1639,18 +1611,18 @@ void MainWindow::showContextMenu(const QPoint& pos)
  * @brief MainWindow::showContextMenu
  * @param pos
  */
-void MainWindow::showBrowserContextMenu(const QPoint& pos)
+void MainWindow::showBrowserContextMenu(const QPoint &pos)
 {
     QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
 
     if (useClipboard != CLIPBOARD_NEVER) {
         contextMenu->addSeparator();
-        QAction* copyItem = contextMenu->addAction(tr("Copy Password"));
+        QAction *copyItem = contextMenu->addAction(tr("Copy Password"));
         if (getClippedPassword().length() == 0) copyItem->setEnabled(false);
         connect(copyItem, \
-            SIGNAL(triggered()), \
-            this, \
-            SLOT(copyPasswordToClipboard()));
+                SIGNAL(triggered()), \
+                this, \
+                SLOT(copyPasswordToClipboard()));
     }
     QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
@@ -1665,13 +1637,16 @@ void MainWindow::addFolder()
     bool ok;
     QString dir = getDir(ui->treeView->currentIndex(), false);
     QString newdir = QInputDialog::getText(this, tr("New file"),
-        tr("New folder, will be placed in folder %1:").arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)), QLineEdit::Normal,
-        "", &ok);
-    if (!ok || newdir.isEmpty()) {
+                                           tr("New folder, will be placed in folder %1:").arg(QDir::
+                                                                                              separator()
+                                                                                              +
+                                                                                              getDir(
+    ui->treeView->currentIndex(), true)), QLineEdit::Normal,
+                                           "", &ok);
+    if (!ok || newdir.isEmpty())
         return;
-    }
     newdir.prepend(dir);
-    //qDebug() << newdir;
+    // qDebug() << newdir;
     QDir().mkdir(newdir);
     // TODO add to git?
 }
@@ -1681,25 +1656,23 @@ void MainWindow::addFolder()
  */
 void MainWindow::editPassword()
 {
-    if (useGit && autoPull) {
+    if (useGit && autoPull)
         on_updateButton_clicked();
-    }
     waitFor(30);
     // TODO move to editbutton stuff possibly?
     currentDir = getDir(ui->treeView->currentIndex(), false);
     lastDecrypt = "Could not decrypt";
     QString file = getFile(ui->treeView->currentIndex(), usePass);
-    if (!file.isEmpty()){
+    if (!file.isEmpty()) {
         currentAction = GPG;
-        if (usePass) {
+        if (usePass)
             executePass('"' + file + '"');
-        } else {
-            executeWrapper(gpgExecutable , "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
-        }
-        process->waitForFinished(30000);    // long wait (passphrase stuff)
-        if (process->exitStatus() == QProcess::NormalExit) {
+        else
+            executeWrapper(gpgExecutable,
+                           "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" + file + '"');
+        process->waitForFinished(30000); // long wait (passphrase stuff)
+        if (process->exitStatus() == QProcess::NormalExit)
             on_editButton_clicked();
-        }
     }
 }
 
@@ -1707,31 +1680,31 @@ void MainWindow::editPassword()
  * @brief MainWindow::generatePassword
  * @return
  */
-QString MainWindow::generatePassword() {
+QString MainWindow::generatePassword()
+{
     QString passwd;
     if (usePwgen) {
         waitFor(2);
-        QString args = (useSymbols?"--symbols -1 ":"-1 ") + QString::number(passwordLength);
+        QString args = (useSymbols ? "--symbols -1 " : "-1 ") + QString::number(passwordLength);
         currentAction = PWGEN;
         executeWrapper(pwgenExecutable, args);
         process->waitForFinished(1000);
-        if (process->exitStatus() == QProcess::NormalExit) {
+        if (process->exitStatus() == QProcess::NormalExit)
             passwd = QString(process->readAllStandardOutput()).remove(QRegExp("[\\n\\r]"));
-        } else {
+        else
             qDebug() << "pwgen fail";
-        }
     } else {
         int length = passwordChars.length();
         if (length > 0) {
-            for(int i=0; i<passwordLength; ++i)
-            {
-               int index = qrand() % length;
-               QChar nextChar = passwordChars.at(index);
-               passwd.append(nextChar);
+            for (int i = 0; i < passwordLength; ++i) {
+                int index = qrand() % length;
+                QChar nextChar = passwordChars.at(index);
+                passwd.append(nextChar);
             }
         } else {
             QMessageBox::critical(this, tr("No characters chosen"),
-                tr("Can't generate password, there are no characters to choose from set in the configuration!"));
+                                  tr(
+                                      "Can't generate password, there are no characters to choose from set in the configuration!"));
         }
     }
     return passwd;
@@ -1744,12 +1717,12 @@ QString MainWindow::generatePassword() {
 void MainWindow::waitFor(int seconds)
 {
     QDateTime current = QDateTime::currentDateTime();
-    uint stop =  current.toTime_t() + seconds;
+    uint stop = current.toTime_t() + seconds;
     while (!process->atEnd() || !execQueue->isEmpty()) {
         current = QDateTime::currentDateTime();
         if (stop < current.toTime_t()) {
             QMessageBox::critical(this, tr("Timed out"),
-                tr("Can't start process, previous one is still running!"));
+                                  tr("Can't start process, previous one is still running!"));
             return;
         }
         Util::qSleep(100);
@@ -1761,7 +1734,7 @@ void MainWindow::waitFor(int seconds)
  */
 void MainWindow::clearTemplateWidgets()
 {
-    while(ui->formLayout->count() > 0){
+    while (ui->formLayout->count() > 0) {
         QLayoutItem *item = ui->formLayout->takeAt(0);
         delete item->widget();
         delete item;
@@ -1781,8 +1754,8 @@ void MainWindow::copyPasswordToClipboard()
         ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
         if (useAutoclear) {
             QTimer::singleShot(1000*autoclearSeconds, \
-                this, \
-                SLOT(clearClipboard()));
+                               this, \
+                               SLOT(clearClipboard()));
         }
     }
 }
@@ -1791,16 +1764,16 @@ void MainWindow::copyPasswordToClipboard()
  * @brief Mainwindow::setClippedPassword - set the stored clipped password
  * @return none
  */
-void MainWindow::setClippedPassword(const QString & pass)
+void MainWindow::setClippedPassword(const QString &pass)
 {
     clippedPass = pass;
-    if (clippedPass.length() == 0) {
+    if (clippedPass.length() == 0)
         ui->copyPasswordButton->setEnabled(false);
-    } else {
+    else
         ui->copyPasswordButton->setEnabled(true);
-    }
 }
 
-const QString &MainWindow::getClippedPassword() {
+const QString &MainWindow::getClippedPassword()
+{
     return clippedPass;
 }
