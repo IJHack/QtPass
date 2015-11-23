@@ -4,19 +4,18 @@
 #include <QString>
 #include <QProcessEnvironment>
 
-class Util
-{
+class Util {
 public:
-    static QString findBinaryInPath(QString);
-    static QString findPasswordStore();
-    static QString normalizeFolderPath(QString);
-    static bool checkConfig(QString, QString, QString);
-    static void qSleep(int);
+  static QString findBinaryInPath(QString);
+  static QString findPasswordStore();
+  static QString normalizeFolderPath(QString);
+  static bool checkConfig(QString, QString, QString);
+  static void qSleep(int);
 
 private:
-    static void initialiseEnvironment();
-    static QProcessEnvironment _env;
-    static bool _envInitialised;
+  static void initialiseEnvironment();
+  static QProcessEnvironment _env;
+  static bool _envInitialised;
 };
 
 #endif // UTIL_H
