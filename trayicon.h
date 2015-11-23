@@ -26,8 +26,8 @@ private:
     void createActions();
     void createTrayIcon();
 
-//    QAction *minimizeAction;
-//    QAction *maximizeAction;
+// QAction *minimizeAction;
+// QAction *maximizeAction;
     QAction *settingsAction;
     QAction *quitAction;
 

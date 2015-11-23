@@ -8,7 +8,6 @@
 #include <QCloseEvent>
 
 namespace Ui {
-
 struct UserInfo;
 
 class ConfigDialog;
@@ -39,7 +38,7 @@ public:
     QString getGitPath();
     QString getGpgPath();
     QString getStorePath();
-    QHash<QString,QString> getProfiles();
+    QHash<QString, QString> getProfiles();
     bool usePass();
     MainWindow::clipBoardType useClipboard();
     bool useAutoclear();
@@ -106,8 +105,8 @@ private:
     void setGroupBoxState();
     QString selectExecutable();
     QString selectFolder();
-    // QMessageBox::critical with hack to avoid crashes with
-    // Qt 5.4.1 when QApplication::exec was not yet called
+// QMessageBox::critical with hack to avoid crashes with
+// Qt 5.4.1 when QApplication::exec was not yet called
     void criticalMessage(const QString &title, const QString &text);
     MainWindow *mainWindow;
 };

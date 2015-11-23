@@ -32,12 +32,16 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
+    enum actionType {
+        GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN
+    };
 
 public:
-    enum clipBoardType { CLIPBOARD_NEVER = 0, 
-                        CLIPBOARD_ALWAYS = 1,
-                        CLIPBOARD_ON_DEMAND = 2 };
+    enum clipBoardType {
+        CLIPBOARD_NEVER = 0,
+        CLIPBOARD_ALWAYS = 1,
+        CLIPBOARD_ON_DEMAND = 2
+    };
 
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -46,7 +50,7 @@ public:
     void setGpgExecutable(QString);
     QString getGpgExecutable();
     bool checkConfig();
-    void setApp(SingleApplication* app);
+    void setApp(SingleApplication *app);
     void setText(QString);
     QStringList getSecretKeys();
     void generateKeyPair(QString, QDialog *);
@@ -78,8 +82,8 @@ private slots:
     void messageAvailable(QString message);
     void on_profileBox_currentIndexChanged(QString);
     void on_copyPasswordButton_clicked();
-    void showContextMenu(const QPoint& pos);
-    void showBrowserContextMenu(const QPoint& pos);
+    void showContextMenu(const QPoint &pos);
+    void showBrowserContextMenu(const QPoint &pos);
     void addFolder();
     void editPassword();
     void focusInput();
@@ -159,10 +163,10 @@ private:
     void updateProfileBox();
     void initTrayIcon();
     void destroyTrayIcon();
-    bool removeDir(const QString & dirName);
+    bool removeDir(const QString &dirName);
     void waitFor(int);
     void clearTemplateWidgets();
-    void setClippedPassword(const QString & pass);
+    void setClippedPassword(const QString &pass);
     const QString &getClippedPassword();
 };
 

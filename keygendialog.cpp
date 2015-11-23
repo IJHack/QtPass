@@ -22,11 +22,10 @@ void KeygenDialog::on_passphrase1_textChanged(const QString &arg1)
     if (ui->passphrase1->text() == ui->passphrase2->text()) {
         ui->buttonBox->setEnabled(true);
         replace("Passphrase", arg1);
-        if (arg1 == "") {
+        if (arg1 == "")
             no_protection(true);
-        } else {
+        else
             no_protection(false);
-        }
     } else {
         ui->buttonBox->setEnabled(false);
     }
@@ -66,13 +65,12 @@ void KeygenDialog::on_name_textChanged(const QString &arg1)
 void KeygenDialog::replace(QString key, QString value)
 {
     QStringList clear;
-    QString expert  = ui->plainTextEdit->toPlainText();
-    QStringList lines = expert.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+    QString expert = ui->plainTextEdit->toPlainText();
+    QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     foreach (QString line, lines) {
         line.replace(QRegExp(key+":.*"), key + ": " + value);
-        if (key == "Passphrase") {
+        if (key == "Passphrase")
             line.replace("%no-protection", "Passphrase: " + value);
-        }
         clear.append(line);
     }
     ui->plainTextEdit->setPlainText(clear.join("\n"));
@@ -82,25 +80,22 @@ void KeygenDialog::replace(QString key, QString value)
  * @brief KeygenDialog::no_protection
  * @param enable
  */\
-void KeygenDialog::no_protection(bool enable)
+    void KeygenDialog::no_protection(bool enable)
 {
     QStringList clear;
-    QString expert  = ui->plainTextEdit->toPlainText();
-    QStringList lines = expert.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+    QString expert = ui->plainTextEdit->toPlainText();
+    QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     foreach (QString line, lines) {
         bool remove = false;
         if (!enable) {
-            if (line.indexOf("%no-protection") == 0) {
+            if (line.indexOf("%no-protection") == 0)
                 remove = true;
-            }
         } else {
-            if (line.indexOf("Passphrase") == 0) {
+            if (line.indexOf("Passphrase") == 0)
                 line = "%no-protection";
-            }
         }
-        if (!remove) {
+        if (!remove)
             clear.append(line);
-        }
     }
     ui->plainTextEdit->setPlainText(clear.join("\n"));
 }
@@ -111,37 +106,36 @@ void KeygenDialog::no_protection(bool enable)
  */
 void KeygenDialog::done(int r)
 {
-    if(QDialog::Accepted == r)  // ok was pressed
-    {
+    if (QDialog::Accepted == r) { // ok was pressed
         ui->widget->setEnabled(false);
         ui->buttonBox->setEnabled(false);
         ui->checkBox->setEnabled(false);
         ui->plainTextEdit->setEnabled(false);
 
-        QProgressIndicator* pi = new QProgressIndicator();
+        QProgressIndicator *pi = new QProgressIndicator();
         pi->startAnimation();
         pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
         ui->frame->hide();
-        ui->label->setText(QString("This operation can take some minutes.<br />") +
-                           "We need to generate a lot of random bytes. It is a good idea to perform "
-                           "some other action (type on the keyboard, move the mouse, utilize the "
-                           "disks) during the prime generation; this gives the random number "
-                           "generator a better chance to gain enough entropy.");
+        ui->label->setText(QString(
+                               "This operation can take some minutes.<br />")
+                           +"We need to generate a lot of random bytes. It is a good idea to perform "
+                            "some other action (type on the keyboard, move the mouse, utilize the "
+                            "disks) during the prime generation; this gives the random number "
+                            "generator a better chance to gain enough entropy.");
 
         this->layout()->addWidget(pi);
 
         this->show();
         dialog->genKey(ui->plainTextEdit->toPlainText(), this);
-    }
-    else    // cancel, close or exc was pressed
-    {
+    } else { // cancel, close or exc was pressed
         QDialog::done(r);
         return;
     }
 }
 
-void KeygenDialog::closeEvent(QCloseEvent *event) {
+void KeygenDialog::closeEvent(QCloseEvent *event)
+{
     // TODO save window size or somethign
     event->accept();
 }

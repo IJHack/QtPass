@@ -10,7 +10,8 @@ UsersDialog::UsersDialog(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this, SLOT(itemChange(QListWidgetItem *)));
+    connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this,
+            SLOT(itemChange(QListWidgetItem *)));
     userList = NULL;
 }
 
@@ -45,25 +46,25 @@ void UsersDialog::populateList(const QString &filter)
         for (QList<UserInfo>::iterator it = userList->begin(); it != userList->end(); ++it) {
             UserInfo &user(*it);
             if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
-                if (user.validity == '-' && !ui->checkBox->isChecked()) {
+                if (user.validity == '-' && !ui->checkBox->isChecked())
                     continue;
-                }
-                if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0 && !ui->checkBox->isChecked()) {
+                if (user.expiry.toTime_t() > 0
+                    && user.expiry.daysTo(QDateTime::currentDateTime()) > 0
+                    && !ui->checkBox->isChecked())
                     continue;
-                }
                 QString userText = user.name + "\n" + user.key_id;
                 if (user.created.toTime_t() > 0) {
-                    userText += " " + tr("created")  + " " + user.created.toString(Qt::SystemLocaleShortDate);
-
+                    userText += " " + tr("created")  + " " + user.created.toString(
+                        Qt::SystemLocaleShortDate);
                 }
-                if (user.expiry.toTime_t() > 0) {
-                    userText += " " + tr("expires")  + " " + user.expiry.toString(Qt::SystemLocaleShortDate);
-                }
+                if (user.expiry.toTime_t() > 0)
+                    userText += " " + tr("expires")  + " " + user.expiry.toString(
+                        Qt::SystemLocaleShortDate);
                 QListWidgetItem *item = new QListWidgetItem(userText, ui->listWidget);
                 item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
                 item->setData(Qt::UserRole, QVariant::fromValue(&user));
                 if (user.have_secret) {
-                    //item->setForeground(QColor(32, 74, 135));
+                    // item->setForeground(QColor(32, 74, 135));
                     item->setForeground(Qt::blue);
                     QFont font;
                     font.setFamily(font.defaultFamily());
@@ -72,7 +73,8 @@ void UsersDialog::populateList(const QString &filter)
                 } else if (user.validity == '-') {
                     item->setBackground(QColor(164, 0, 0));
                     item->setForeground(Qt::white);
-                } else if (user.expiry.toTime_t() > 0 && user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
+                } else if (user.expiry.toTime_t() > 0
+                           && user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
                     item->setForeground(QColor(164, 0, 0));
                 }
 
@@ -93,11 +95,13 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter)
     populateList(filter);
 }
 
-void UsersDialog::closeEvent(QCloseEvent *event) {
+void UsersDialog::closeEvent(QCloseEvent *event)
+{
     // TODO save window size or somethign
     event->accept();
 }
 
-void UsersDialog::on_checkBox_clicked() {
+void UsersDialog::on_checkBox_clicked()
+{
     populateList(ui->lineEdit->text());
 }

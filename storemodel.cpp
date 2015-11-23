@@ -15,8 +15,7 @@ StoreModel::StoreModel()
  * @param sourceParent
  * @return
  */
-bool StoreModel::filterAcceptsRow(int sourceRow,
-                                           const QModelIndex &sourceParent) const
+bool StoreModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
     return ShowThis(index);
@@ -30,28 +29,19 @@ bool StoreModel::filterAcceptsRow(int sourceRow,
 bool StoreModel::ShowThis(const QModelIndex index) const
 {
     bool retVal = false;
-    if (fs == NULL) {
+    if (fs == NULL)
         return retVal;
-    }
-    //Gives you the info for number of childs with a parent
-    if ( sourceModel()->rowCount(index) > 0 )
-    {
-        for( int nChild = 0; nChild < sourceModel()->rowCount(index); nChild++)
-        {
-            QModelIndex childIndex = sourceModel()->index(nChild,0,index);
+    // Gives you the info for number of childs with a parent
+    if (sourceModel()->rowCount(index) > 0) {
+        for (int nChild = 0; nChild < sourceModel()->rowCount(index); nChild++) {
+            QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
             if (!childIndex.isValid())
-            {
                 break;
-            }
             retVal = ShowThis(childIndex);
             if (retVal)
-            {
                 break;
-            }
         }
-    }
-    else
-    {
+    } else {
         QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
         QString path = fs->filePath(useIndex);
         path.replace(QRegExp("\\.gpg$"), "");
@@ -66,7 +56,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const
  * @param sourceModel
  * @param passStore
  */
-void StoreModel::setModelAndStore(QFileSystemModel *sourceModel, QString passStore) {
+void StoreModel::setModelAndStore(QFileSystemModel *sourceModel, QString passStore)
+{
     fs = sourceModel;
     store = passStore;
 }

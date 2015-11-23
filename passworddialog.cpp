@@ -10,7 +10,7 @@ PasswordDialog::PasswordDialog(MainWindow *parent) :
 {
     mainWindow = parent;
     templating = false;
-    allFields = false;    
+    allFields = false;
     ui->setupUi(this);
 }
 
@@ -21,11 +21,10 @@ PasswordDialog::~PasswordDialog()
 
 void PasswordDialog::on_checkBoxShow_stateChanged(int arg1)
 {
-    if (arg1) {
+    if (arg1)
         ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
-    } else {
+    else
         ui->lineEditPassword->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void PasswordDialog::on_createPasswordButton_clicked()
@@ -37,23 +36,22 @@ void PasswordDialog::on_createPasswordButton_clicked()
 
 void PasswordDialog::setPassword(QString password)
 {
-    QStringList tokens =  password.split("\n");
+    QStringList tokens = password.split("\n");
     ui->lineEditPassword->setText(tokens[0]);
     tokens.pop_front();
     if (templating) {
         QWidget *previous = ui->checkBoxShow;
         for (int i = 0; i < ui->formLayout->rowCount(); i++) {
             QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
-            if (item == NULL) {
+            if (item == NULL)
                 continue;
-            }
             QWidget *widget = item->widget();
             for (int j = 0; j < tokens.length(); j++) {
                 QString token = tokens.at(j);
                 if (token.startsWith(widget->objectName()+':')) {
                     tokens.removeAt(j);
                     QString value = token.remove(0, widget->objectName().length()+1);
-                    ((QLineEdit*)widget)->setText(value);
+                    ((QLineEdit *)widget)->setText(value);
                 }
             }
             previous = widget;
@@ -65,9 +63,8 @@ void PasswordDialog::setPassword(QString password)
                     int colon = token.indexOf(':');
                     QString field = token.left(colon);
                     QString value = token.right(token.length()-colon-1);
-                    if (!passTemplate.contains(field) && value.startsWith("//")) {
-                        continue;   // colon is probably from a url
-                    }
+                    if (!passTemplate.contains(field) && value.startsWith("//"))
+                        continue; // colon is probably from a url
                     QLineEdit *line = new QLineEdit();
                     line->setObjectName(field);
                     line->setText(value);
@@ -88,27 +85,25 @@ QString PasswordDialog::getPassword()
     QString passFile = ui->lineEditPassword->text() + "\n";
     for (int i = 0; i < ui->formLayout->rowCount(); i++) {
         QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
-        if (item == NULL) {
+        if (item == NULL)
             continue;
-        }
         QWidget *widget = item->widget();
-        QString text = ((QLineEdit*)widget)->text();
-        if (text.isEmpty()) {
+        QString text = ((QLineEdit *)widget)->text();
+        if (text.isEmpty())
             continue;
-        }
         passFile += widget->objectName() + ":" + text + "\n";
     }
     passFile += ui->plainTextEdit->toPlainText();
     return passFile;
 }
 
-void PasswordDialog::setTemplate(QString rawFields) {
+void PasswordDialog::setTemplate(QString rawFields)
+{
     fields = rawFields.split('\n');
     QWidget *previous = ui->checkBoxShow;
     foreach (QString field, fields) {
-        if (field.isEmpty()) {
+        if (field.isEmpty())
             continue;
-        }
         QLineEdit *line = new QLineEdit();
         line->setObjectName(field);
         ui->formLayout->addRow(new QLabel(field), line);
@@ -117,14 +112,17 @@ void PasswordDialog::setTemplate(QString rawFields) {
     }
 }
 
-void PasswordDialog::setFile(QString file) {
+void PasswordDialog::setFile(QString file)
+{
     this->setWindowTitle(this->windowTitle()+" "+file);
 }
 
-void PasswordDialog::templateAll(bool templateAll) {
+void PasswordDialog::templateAll(bool templateAll)
+{
     allFields = templateAll;
 }
 
-void PasswordDialog::useTemplate(bool useTemplate) {
+void PasswordDialog::useTemplate(bool useTemplate)
+{
     templating = useTemplate;
 }
