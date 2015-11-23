@@ -10,3 +10,4 @@ analyzers:
    - -whitespace
    - +whitespace/braces
    style: google
+ - markdownlint: true
