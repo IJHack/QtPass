@@ -22,7 +22,8 @@ void Util::initialiseEnvironment()
         // TODO checks here
         QString path = _env.value("PATH");
 
-        if (!path.contains("/usr/local/MacGPG2/bin") && QFile("/usr/local/MacGPG2/bin").exists()) {
+        if (!path.contains("/usr/local/MacGPG2/bin")
+                && QFile("/usr/local/MacGPG2/bin").exists()) {
             path += ":/usr/local/MacGPG2/bin";
         }
         if (!path.contains("/usr/local/bin")) {
@@ -46,9 +47,11 @@ QString Util::findPasswordStore()
         path = _env.value("PASSWORD_STORE_DIR");
     } else {
 #ifdef Q_OS_WIN
-        path = QDir::homePath() + QDir::separator() + "password-store" + QDir::separator();
+        path = QDir::homePath() + QDir::separator()
+                + "password-store" + QDir::separator();
 #else
-        path = QDir::homePath() + QDir::separator() + ".password-store" + QDir::separator();
+        path = QDir::homePath() + QDir::separator()
+                + ".password-store" + QDir::separator();
 #endif
     }
     return Util::normalizeFolderPath(path);
@@ -117,7 +120,8 @@ QString Util::findBinaryInPath(QString binary)
  */
 bool Util::checkConfig(QString passStore, QString passExecutable, QString gpgExecutable)
 {
-    return !QFile(passStore + ".gpg-id").exists() || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
+    return !QFile(passStore + ".gpg-id").exists()
+            || (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
 }
 
 
