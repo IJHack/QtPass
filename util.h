@@ -11,7 +11,7 @@ class Util {
   static QString normalizeFolderPath(QString path);
   static bool checkConfig(QString passStore, QString passExecutable,
                           QString gpgExecutable);
-  static void qSleep(int);
+  static void qSleep(int ms);
 
  private:
   static void initialiseEnvironment();

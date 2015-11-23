@@ -33,7 +33,7 @@ class MainWindow : public QMainWindow {
 
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
-public:
+ public:
   enum clipBoardType {
     CLIPBOARD_NEVER = 0,
     CLIPBOARD_ALWAYS = 1,
@@ -56,10 +56,10 @@ public:
   void config();
   void executePassGitInit();
 
-protected:
+ protected:
   void closeEvent(QCloseEvent *event);
 
-private slots:
+ private slots:
   void on_updateButton_clicked();
   void on_pushButton_clicked();
   void on_treeView_clicked(const QModelIndex &index);
@@ -86,7 +86,7 @@ private slots:
   void focusInput();
   void copyPasswordToClipboard();
 
-private:
+ private:
   QApplication *QtPass;
   QScopedPointer<QSettings> settings;
   QScopedPointer<Ui::MainWindow> ui;
@@ -145,7 +145,7 @@ private:
   void updateText();
   void executePass(QString, QString = QString());
   void executeWrapper(QString, QString, QString = QString());
-  void enableUiElements(bool);
+  void enableUiElements(bool state);
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getDir(const QModelIndex &, bool);
@@ -162,10 +162,10 @@ private:
   void initTrayIcon();
   void destroyTrayIcon();
   bool removeDir(const QString &dirName);
-  void waitFor(int);
+  void waitFor(int seconds);
   void clearTemplateWidgets();
   void setClippedPassword(const QString &pass);
   const QString &getClippedPassword();
 };
 
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H_
