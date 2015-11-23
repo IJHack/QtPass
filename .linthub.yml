@@ -5,7 +5,7 @@ build:
 analyzers:
  - cpplint: true
    include: ["*.cpp", "*.h", "*.hpp", "*.c"]
-   path: .
+   path: ./
    filters:
    - -whitespace
    - +whitespace/braces
