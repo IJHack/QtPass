@@ -1,0 +1,12 @@
+platform: linux | osx
+build:
+- qmake 
+- make
+analyzers:
+ - cpplint: true
+   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
+   path: .
+   filters:
+   - -whitespace
+   - +whitespace/braces
+   style: google
