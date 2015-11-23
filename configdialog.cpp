@@ -203,7 +203,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty()) // TODO call check
+  if (!store.isEmpty())  // TODO(annejan) call check
     ui->storePath->setText(store);
 }
 
@@ -451,7 +451,7 @@ void ConfigDialog::on_addButton_clicked() {
  * @brief ConfigDialog::on_deleteButton_clicked
  */
 void ConfigDialog::on_deleteButton_clicked() {
-  QSet<int> selectedRows; // we use a set to prevent doubles
+  QSet<int> selectedRows;  // we use a set to prevent doubles
   QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
   if (itemList.count() == 0) {
     QMessageBox::warning(this, tr("No profile selected"),
@@ -459,13 +459,13 @@ void ConfigDialog::on_deleteButton_clicked() {
     return;
   }
   QTableWidgetItem *item;
-  foreach (item, itemList)
+  foreach(item, itemList)
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.toList();
   qSort(rows.begin(), rows.end());
   // now actually do the removing:
-  foreach (int row, rows)
+  foreach(int row, rows)
     ui->profileTable->removeRow(row);
   if (ui->profileTable->rowCount() < 1)
     ui->deleteButton->setEnabled(false);
@@ -505,7 +505,7 @@ void ConfigDialog::wizard() {
   QString passStore = ui->storePath->text();
 
   if (!QFile(passStore).exists()) {
-    // TODO pass version?
+    // TODO(annejan) pass version?
     if (QMessageBox::question(
             this, tr("Create password-store?"),
             tr("Would you like to create a password-store at %1?")
@@ -604,7 +604,7 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
  * @param event
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
-  // TODO save window size or something?
+  // TODO(annejan) save window size or something?
   event->accept();
 }
 

@@ -7,11 +7,11 @@
 
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
-private:
+ private:
   QFileSystemModel *fs;
   QString store;
 
-public:
+ public:
   StoreModel();
 
   bool filterAcceptsRow(int, const QModelIndex &) const;
@@ -20,4 +20,4 @@ public:
   QVariant data(const QModelIndex &index, int role) const;
 };
 
-#endif // STOREMODEL_H
+#endif  // STOREMODEL_H_
