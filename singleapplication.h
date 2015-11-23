@@ -7,19 +7,19 @@
 
 class SingleApplication : public QApplication {
   Q_OBJECT
-public:
+ public:
   SingleApplication(int &argc, char *argv[], const QString uniqueKey);
 
   bool isRunning();
   bool sendMessage(const QString &message);
 
-public slots:
+ public slots:
   void receiveMessage();
 
-signals:
+ signals:
   void messageAvailable(QString message);
 
-private:
+ private:
   bool _isRunning;
   QString _uniqueKey;
   QSharedMemory sharedMemory;
@@ -27,4 +27,5 @@ private:
 
   static const int timeout = 1000;
 };
-#endif // SINGLE_APPLICATION_H
+
+#endif  // SINGLE_APPLICATION_H_
