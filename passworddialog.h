@@ -11,21 +11,21 @@ class PasswordDialog;
 class PasswordDialog : public QDialog {
   Q_OBJECT
 
-public:
+ public:
   explicit PasswordDialog(MainWindow *parent = 0);
   ~PasswordDialog();
   void setPassword(QString);
   QString getPassword();
   void setTemplate(QString);
   void setFile(QString);
-  void useTemplate(bool);
-  void templateAll(bool);
+  void useTemplate(bool useTemplate);
+  void templateAll(bool templateAll);
 
-private slots:
+ private slots:
   void on_checkBoxShow_stateChanged(int arg1);
   void on_createPasswordButton_clicked();
 
-private:
+ private:
   Ui::PasswordDialog *ui;
   MainWindow *mainWindow;
   QString passTemplate;
@@ -34,4 +34,4 @@ private:
   bool allFields;
 };
 
-#endif // PASSWORDDIALOG_H
+#endif  // PASSWORDDIALOG_H_

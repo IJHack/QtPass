@@ -1,6 +1,6 @@
-#include "mainwindow.h"
 #include <QApplication>
 #include <QTranslator>
+#include "mainwindow.h"
 
 int main(int argc, char *argv[]) {
   // check for stupid apple psid or whatever flag
