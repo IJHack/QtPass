@@ -113,7 +113,7 @@ win32 {
     LIBS    += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
-    QMAKE_INFO_PLIST = Info.plist
+    QMAKE_INFO_PLIST = qtpass.plist
 } else:bsd {
     LIBS += -L/usr/local/lib
 }

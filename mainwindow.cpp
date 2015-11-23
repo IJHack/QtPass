@@ -1534,7 +1534,7 @@ void MainWindow::initTrayIcon()
     }
     if(QSystemTrayIcon::isSystemTrayAvailable() == true) {
         // Setup tray icon
-        this->tray = new trayIcon(this);
+        this->tray = new TrayIcon(this);
         if(tray == NULL){
             qDebug() << "Allocating tray icon failed.";
         }

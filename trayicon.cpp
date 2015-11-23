@@ -1,6 +1,6 @@
 #include "trayicon.h"
 
-trayIcon::trayIcon(QMainWindow *parent)
+TrayIcon::TrayIcon(QMainWindow *parent)
 {
   parentwin = parent;
 
@@ -16,7 +16,7 @@ trayIcon::trayIcon(QMainWindow *parent)
 
 }
 
-void trayIcon::setVisible(bool visible)
+void TrayIcon::setVisible(bool visible)
 {
   if(visible == true) {
     parentwin->show();
@@ -25,7 +25,7 @@ void trayIcon::setVisible(bool visible)
   }
 }
 
-void trayIcon::createActions()
+void TrayIcon::createActions()
 {
 //  minimizeAction = new QAction(tr("Mi&nimize"), this);
 //  connect(minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
@@ -41,7 +41,7 @@ void trayIcon::createActions()
 }
 
 
-void trayIcon::createTrayIcon()
+void TrayIcon::createTrayIcon()
 {
   trayIconMenu = new QMenu(this);
 //  trayIconMenu->addAction(minimizeAction);
@@ -54,7 +54,7 @@ void trayIcon::createTrayIcon()
   sysTrayIcon->setContextMenu(trayIconMenu);
 }
 
-void trayIcon::showHideParent()
+void TrayIcon::showHideParent()
 {
   if(parentwin->isVisible() == true) {
     parentwin->hide();
@@ -63,7 +63,7 @@ void trayIcon::showHideParent()
   }
 }
 
-void trayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
+void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason) {
     case QSystemTrayIcon::Trigger:
@@ -78,7 +78,7 @@ void trayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-void trayIcon::showMessage(QString title, QString msg, int time)
+void TrayIcon::showMessage(QString title, QString msg, int time)
 {
     sysTrayIcon->showMessage(title, msg, QSystemTrayIcon::Information, time);
 }
