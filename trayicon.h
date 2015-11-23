@@ -8,11 +8,11 @@
 #include <QSystemTrayIcon>
 #include <QWidget>
 
-class trayIcon : public QWidget
+class TrayIcon : public QWidget
 {
     Q_OBJECT
 public:
-    explicit trayIcon(QMainWindow *parent);
+    explicit TrayIcon(QMainWindow *parent);
     void showMessage(QString title, QString msg, int time);
     void setVisible(bool visible);
 

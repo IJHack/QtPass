@@ -127,7 +127,7 @@ private:
     QHash<QString, QString> profiles;
     QString profile;
     bool startupPhase;
-    trayIcon *tray;
+    TrayIcon *tray;
     bool useTrayIcon;
     bool hideOnClose;
     bool startMinimized;
