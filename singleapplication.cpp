@@ -1,6 +1,5 @@
-#include <QLocalSocket>
-
 #include "singleapplication.h"
+#include <QLocalSocket>
 
 /**
  * @brief SingleApplication::SingleApplication
