@@ -1620,7 +1620,7 @@ void MainWindow::editPassword() {
       executeWrapper(gpgExecutable,
                      "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
                          file + '"');
-    process->waitForFinished(30000); // long wait (passphrase stuff)
+    process->waitForFinished(30000);  // long wait (passphrase stuff)
     if (process->exitStatus() == QProcess::NormalExit)
       on_editButton_clicked();
   }

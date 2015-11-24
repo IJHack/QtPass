@@ -36,7 +36,7 @@ class UsersDialog : public QDialog {
  protected:
   void closeEvent(QCloseEvent *event);
 
-private slots:
+ private slots:
   void itemChange(QListWidgetItem *item);
   void on_clearButton_clicked();
   void on_lineEdit_textChanged(const QString &filter);
