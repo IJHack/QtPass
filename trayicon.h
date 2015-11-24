@@ -1,5 +1,5 @@
-#ifndef TRAYICON_H
-#define TRAYICON_H
+#ifndef TRAYICON_H_
+#define TRAYICON_H_
 
 #include <QApplication>
 #include <QMenu>

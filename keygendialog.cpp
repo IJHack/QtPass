@@ -2,7 +2,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "ui_keygendialog.h"
-#include "progressindicator.h"
+#include "qprogressindicator.h"
 
 KeygenDialog::KeygenDialog(ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog) {

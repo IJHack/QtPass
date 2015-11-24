@@ -1,5 +1,5 @@
-#ifndef SINGLEAPPLICATION_H
-#define SINGLEAPPLICATION_H
+#ifndef SINGLEAPPLICATION_H_
+#define SINGLEAPPLICATION_H_
 
 #include <QApplication>
 #include <QSharedMemory>

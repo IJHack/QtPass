@@ -1,5 +1,5 @@
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef UTIL_H_
+#define UTIL_H_
 
 #include <QString>
 #include <QProcessEnvironment>

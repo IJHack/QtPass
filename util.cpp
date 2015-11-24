@@ -18,7 +18,7 @@ void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
 #ifdef __APPLE__
-    // TODO checks here
+    // TODO(annejan) checks here
     QString path = _env.value("PATH");
 
     if (!path.contains("/usr/local/MacGPG2/bin") &&
@@ -84,7 +84,7 @@ QString Util::findBinaryInPath(QString binary) {
     }
 #endif
 
-    foreach (QString entry, entries) {
+    foreach(QString entry, entries) {
       QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
 #ifdef Q_OS_WIN
       if (!qfi->exists())
