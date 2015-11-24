@@ -1,5 +1,5 @@
-#ifndef KEYGENDIALOG_H
-#define KEYGENDIALOG_H
+#ifndef KEYGENDIALOG_H_
+#define KEYGENDIALOG_H_
 
 #include <QDialog>
 #include <QCloseEvent>
@@ -19,7 +19,7 @@ class KeygenDialog : public QDialog {
  protected:
   void closeEvent(QCloseEvent *event);
 
- private slots:
+private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   void on_checkBox_stateChanged(int arg1);

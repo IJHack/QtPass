@@ -1,7 +1,7 @@
 #include "usersdialog.h"
-#include "ui_usersdialog.h"
 #include <QRegExp>
 #include <QDebug>
+#include "ui_usersdialog.h"
 
 UsersDialog::UsersDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog) {
@@ -89,7 +89,7 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 }
 
 void UsersDialog::closeEvent(QCloseEvent *event) {
-  // TODO save window size or somethign
+  // TODO(annejan) save window size or somethign
   event->accept();
 }
 

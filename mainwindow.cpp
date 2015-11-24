@@ -1,10 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "configdialog.h"
-#include "usersdialog.h"
-#include "keygendialog.h"
-#include "passworddialog.h"
-#include "util.h"
 #include <QClipboard>
 #include <QDebug>
 #include <QInputDialog>
@@ -21,6 +15,12 @@
 #include <winnetwk.h>
 #undef DELETE
 #endif
+#include "ui_mainwindow.h"
+#include "configdialog.h"
+#include "usersdialog.h"
+#include "keygendialog.h"
+#include "passworddialog.h"
+#include "util.h"
 
 /**
  * @brief MainWindow::MainWindow
@@ -223,7 +223,7 @@ bool MainWindow::checkConfig() {
   profile = settings.value("profile").toString();
   settings.beginGroup("profiles");
   QStringList keys = settings.childKeys();
-  foreach (QString key, keys)
+  foreach(QString key, keys)
     profiles[key] = settings.value(key).toString();
   settings.endGroup();
 
@@ -295,7 +295,7 @@ bool MainWindow::checkConfig() {
 
   freshStart = false;
 
-  // TODO: this needs to be before we try to access the store,
+  // TODO(annejan): this needs to be before we try to access the store,
   // but it would be better to do it after the Window is shown,
   // as the long delay it can cause is irritating otherwise.
   if (useWebDav)
@@ -400,7 +400,7 @@ void MainWindow::config() {
   d->autoPull(autoPull);
   d->autoPush(autoPush);
   if (startupPhase)
-    d->wizard(); // does shit
+    d->wizard();  // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
       passExecutable = d->getPassPath();
@@ -698,7 +698,7 @@ void MainWindow::readyRead(bool finished = false) {
         pass->setReadOnly(true);
         ui->formLayout->addRow(pass);
 
-        for (int j = 0; j < tokens.length(); j++) {
+        for (int j = 0; j < tokens.length(); ++j) {
           QString token = tokens.at(j);
           if (token.contains(':')) {
             int colon = token.indexOf(':');
@@ -706,14 +706,14 @@ void MainWindow::readyRead(bool finished = false) {
             if (templateAllFields || passTemplate.contains(field)) {
               QString value = token.right(token.length() - colon - 1);
               if (!passTemplate.contains(field) && value.startsWith("//"))
-                continue; // colon is probably from a url
+                continue;  // colon is probably from a url
               QLineEdit *line = new QLineEdit();
               line->setObjectName(field);
               line->setText(value);
               line->setReadOnly(true);
               ui->formLayout->addRow(new QLabel(field), line);
               tokens.removeAt(j);
-              j--; // tokens.length() also got shortened by the remove..
+              --j;  // tokens.length() also got shortened by the remove..
             }
           }
         }
@@ -743,7 +743,7 @@ void MainWindow::readyRead(bool finished = false) {
       qDebug() << "Keygen Done";
       keygen->close();
       keygen = 0;
-      // TODO some sanity checking ?
+      // TODO(annejan) some sanity checking ?
     }
   }
 
@@ -992,7 +992,7 @@ QString MainWindow::getRecipientString(QString for_file, QString separator,
   QStringList recipients_list = getRecipientList(for_file);
   if (count)
     *count = recipients_list.size();
-  foreach (const QString recipient, recipients_list)
+  foreach(const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
 }
@@ -1156,7 +1156,7 @@ bool MainWindow::removeDir(const QString &dirName) {
   QDir dir(dirName);
 
   if (dir.exists(dirName)) {
-    Q_FOREACH (QFileInfo info,
+    Q_FOREACH(QFileInfo info,
                dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System |
                                      QDir::Hidden | QDir::AllDirs | QDir::Files,
                                  QDir::DirsFirst)) {
@@ -1206,7 +1206,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
   QStringList keys = QString(process->readAllStandardOutput())
                          .split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
   UserInfo current_user;
-  foreach (QString key, keys) {
+  foreach(QString key, keys) {
     QStringList props = key.split(':');
     if (props.size() < 10)
       continue;
@@ -1242,7 +1242,7 @@ void MainWindow::on_usersButton_clicked() {
     return;
   }
   QList<UserInfo> secret_keys = listKeys("", true);
-  foreach (const UserInfo &sec, secret_keys) {
+  foreach(const UserInfo &sec, secret_keys) {
     for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
       if (sec.key_id == it->key_id)
         it->have_secret = true;
@@ -1256,7 +1256,7 @@ void MainWindow::on_usersButton_clicked() {
       getRecipientString(dir.isEmpty() ? "" : dir, " ", &count);
   if (!recipients.isEmpty())
     selected_users = listKeys(recipients);
-  foreach (const UserInfo &sel, selected_users) {
+  foreach(const UserInfo &sel, selected_users) {
     for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
       if (sel.key_id == it->key_id)
         it->enabled = true;
@@ -1264,7 +1264,7 @@ void MainWindow::on_usersButton_clicked() {
   if (count > selected_users.size()) {
     // Some keys seem missing from keyring, add them separately
     QStringList recipients = getRecipientList(dir.isEmpty() ? "" : dir);
-    foreach (const QString recipient, recipients) {
+    foreach(const QString recipient, recipients) {
       if (listKeys(recipient).size() < 1) {
         UserInfo i;
         i.enabled = true;
@@ -1295,7 +1295,7 @@ void MainWindow::on_usersButton_clicked() {
     return;
   }
   bool secret_selected = false;
-  foreach (const UserInfo &user, users) {
+  foreach(const UserInfo &user, users) {
     if (user.enabled) {
       gpgId.write((user.key_id + "\n").toUtf8());
       secret_selected |= user.have_secret;
@@ -1379,7 +1379,7 @@ QStringList MainWindow::getSecretKeys() {
   if (keys.size() == 0)
     return names;
 
-  foreach (const UserInfo &sec, keys)
+  foreach(const UserInfo &sec, keys)
     names << sec.name;
 
   return names;
@@ -1418,7 +1418,7 @@ void MainWindow::updateProfileBox() {
     }
   }
   int index = ui->profileBox->findText(profile);
-  if (index != -1) // -1 for not found
+  if (index != -1)  // -1 for not found
     ui->profileBox->setCurrentIndex(index);
 }
 
@@ -1598,7 +1598,7 @@ void MainWindow::addFolder() {
   newdir.prepend(dir);
   // qDebug() << newdir;
   QDir().mkdir(newdir);
-  // TODO add to git?
+  // TODO(annejan) add to git?
 }
 
 /**
@@ -1608,7 +1608,7 @@ void MainWindow::editPassword() {
   if (useGit && autoPull)
     on_updateButton_clicked();
   waitFor(30);
-  // TODO move to editbutton stuff possibly?
+  // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
   QString file = getFile(ui->treeView->currentIndex(), usePass);

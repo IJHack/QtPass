@@ -1,5 +1,5 @@
-#ifndef PASSWORDDIALOG_H
-#define PASSWORDDIALOG_H
+#ifndef PASSWORDDIALOG_H_
+#define PASSWORDDIALOG_H_
 
 #include <QDialog>
 #include "mainwindow.h"

@@ -1,11 +1,11 @@
-#ifndef DIALOG_H
-#define DIALOG_H
+#ifndef CONFIGDIALOG_H_
+#define CONFIGDIALOG_H_
 
 #include <QDialog>
 #include <QFileDialog>
-#include "mainwindow.h"
 #include <QTableWidgetItem>
 #include <QCloseEvent>
+#include "mainwindow.h"
 
 namespace Ui {
 struct UserInfo;
@@ -16,7 +16,7 @@ class ConfigDialog;
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
-public:
+ public:
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog();
   void setPassPath(QString);
@@ -24,15 +24,15 @@ public:
   void setGpgPath(QString);
   void setStorePath(QString);
   void setProfiles(QHash<QString, QString>, QString);
-  void usePass(bool);
+  void usePass(bool usePass);
   void useClipboard(MainWindow::clipBoardType);
-  void useAutoclear(bool);
-  void setAutoclear(int);
-  void useAutoclearPanel(bool);
-  void setAutoclearPanel(int);
-  void hidePassword(bool);
-  void hideContent(bool);
-  void addGPGId(bool);
+  void useAutoclear(bool useAutoclear);
+  void setAutoclear(int seconds);
+  void useAutoclearPanel(bool useAutoclearPanel);
+  void setAutoclearPanel(int seconds);
+  void hidePassword(bool hidePassword);
+  void hideContent(bool hideContent);
+  void addGPGId(bool addGPGId);
   QString getPassPath();
   QString getGitPath();
   QString getGpgPath();
@@ -52,36 +52,36 @@ public:
   bool useTrayIcon();
   bool hideOnClose();
   bool startMinimized();
-  void useTrayIcon(bool);
-  void hideOnClose(bool);
-  void startMinimized(bool);
-  void useGit(bool);
+  void useTrayIcon(bool useTrayIdon);
+  void hideOnClose(bool hideOnClose);
+  void startMinimized(bool startMinimized);
+  void useGit(bool useGit);
   bool useGit();
   QString getPwgenPath();
   void setPwgenPath(QString);
-  void usePwgen(bool);
-  void useSymbols(bool);
-  void setPasswordLength(int);
+  void usePwgen(bool usePwgen);
+  void useSymbols(bool useSymbols);
+  void setPasswordLength(int pwLen);
   void setPasswordChars(QString);
   bool usePwgen();
   bool useSymbols();
   int getPasswordLength();
   QString getPasswordChars();
   bool useTemplate();
-  void useTemplate(bool);
+  void useTemplate(bool useTemplate);
   QString getTemplate();
   void setTemplate(QString);
-  void templateAllFields(bool);
+  void templateAllFields(bool templateAllFields);
   bool templateAllFields();
   bool autoPull();
-  void autoPull(bool);
+  void autoPull(bool autoPull);
   bool autoPush();
-  void autoPush(bool);
+  void autoPush(bool autoPush);
 
-protected:
+ protected:
   void closeEvent(QCloseEvent *event);
 
-private slots:
+ private slots:
   void on_radioButtonNative_clicked();
   void on_radioButtonPass_clicked();
   void on_toolButtonGit_clicked();
@@ -99,7 +99,7 @@ private slots:
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
 
-private:
+ private:
   QScopedPointer<Ui::ConfigDialog> ui;
   void setGroupBoxState();
   QString selectExecutable();
@@ -110,4 +110,4 @@ private:
   MainWindow *mainWindow;
 };
 
-#endif // DIALOG_H
+#endif  // CONFIGDIALOG_H_

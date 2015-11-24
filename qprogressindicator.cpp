@@ -1,5 +1,4 @@
-#include "progressindicator.h"
-
+#include "qprogressindicator.h"
 #include <QPainter>
 
 QProgressIndicator::QProgressIndicator(QWidget *parent)

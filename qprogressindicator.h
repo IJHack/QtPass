@@ -1,5 +1,5 @@
-#ifndef QPROGRESSINDICATOR_H
-#define QPROGRESSINDICATOR_H
+#ifndef QPROGRESSINDICATOR_H_
+#define QPROGRESSINDICATOR_H_
 
 #include <QWidget>
 #include <QColor>

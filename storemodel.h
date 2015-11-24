@@ -1,5 +1,5 @@
-#ifndef STOREMODEL_H
-#define STOREMODEL_H
+#ifndef STOREMODEL_H_
+#define STOREMODEL_H_
 
 #include <QSortFilterProxyModel>
 #include <QFileSystemModel>
