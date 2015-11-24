@@ -19,7 +19,7 @@ class KeygenDialog : public QDialog {
  protected:
   void closeEvent(QCloseEvent *event);
 
-private slots:
+ private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   void on_checkBox_stateChanged(int arg1);
