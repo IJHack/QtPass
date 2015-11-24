@@ -1,9 +1,9 @@
+#include "util.h"
 #include <QDebug>
 #include <QFileInfo>
 #include <QProcessEnvironment>
 #include <QString>
 #include <QDir>
-#include "util.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif

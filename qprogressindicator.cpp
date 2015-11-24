@@ -78,7 +78,7 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
   int capsuleWidth = (width > 32) ? capsuleHeight * .23 : capsuleHeight * .35;
   int capsuleRadius = capsuleWidth / 2;
 
-  for (int i = 0; i < 12; i++) {
+  for (int i = 0; i < 12; ++i) {
     QColor color = m_color;
     color.setAlphaF(1.0f - (i / 12.0f));
     p.setPen(Qt::NoPen);

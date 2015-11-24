@@ -411,7 +411,7 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
       if (i.key() == profile)
         ui->profileTable->selectRow(n);
     }
-    n++;
+    ++n;
   }
 }
 
@@ -422,7 +422,7 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
 QHash<QString, QString> ConfigDialog::getProfiles() {
   QHash<QString, QString> profiles;
   // Check?
-  for (int i = 0; i < ui->profileTable->rowCount(); i++) {
+  for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
     QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
     if (0 != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);

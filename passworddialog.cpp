@@ -33,12 +33,12 @@ void PasswordDialog::setPassword(QString password) {
   tokens.pop_front();
   if (templating) {
     QWidget *previous = ui->checkBoxShow;
-    for (int i = 0; i < ui->formLayout->rowCount(); i++) {
+    for (int i = 0; i < ui->formLayout->rowCount(); ++i) {
       QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
       if (item == NULL)
         continue;
       QWidget *widget = item->widget();
-      for (int j = 0; j < tokens.length(); j++) {
+      for (int j = 0; j < tokens.length(); ++j) {
         QString token = tokens.at(j);
         if (token.startsWith(widget->objectName() + ':')) {
           tokens.removeAt(j);
@@ -74,7 +74,7 @@ void PasswordDialog::setPassword(QString password) {
 
 QString PasswordDialog::getPassword() {
   QString passFile = ui->lineEditPassword->text() + "\n";
-  for (int i = 0; i < ui->formLayout->rowCount(); i++) {
+  for (int i = 0; i < ui->formLayout->rowCount(); ++i) {
     QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
     if (item == NULL)
       continue;
