@@ -43,7 +43,7 @@ void PasswordDialog::setPassword(QString password) {
         if (token.startsWith(widget->objectName() + ':')) {
           tokens.removeAt(j);
           QString value = token.remove(0, widget->objectName().length() + 1);
-          ((QLineEdit *)widget)->setText(value);
+          reinterpret_cast<QLineEdit*>(widget)->setText(value);
         }
       }
       previous = widget;
@@ -79,7 +79,7 @@ QString PasswordDialog::getPassword() {
     if (item == NULL)
       continue;
     QWidget *widget = item->widget();
-    QString text = ((QLineEdit *)widget)->text();
+    QString text = reinterpret_cast<QLineEdit*>(widget)->text();
     if (text.isEmpty())
       continue;
     passFile += widget->objectName() + ":" + text + "\n";
