@@ -1,5 +1,5 @@
-#ifndef USERSDIALOG_H
-#define USERSDIALOG_H
+#ifndef USERSDIALOG_H_
+#define USERSDIALOG_H_
 
 #include <QDialog>
 #include <QList>
@@ -14,38 +14,38 @@ class UsersDialog;
 class QListWidgetItem;
 
 struct UserInfo {
-    UserInfo() : validity('-'), have_secret(false), enabled(false) {}
-    QString name;
-    QString key_id;
-    char validity;
-    bool have_secret;
-    bool enabled;
-    QDateTime expiry;
-    QDateTime created;
+  UserInfo() : validity('-'), have_secret(false), enabled(false) {}
+
+  QString name;
+  QString key_id;
+  char validity;
+  bool have_secret;
+  bool enabled;
+  QDateTime expiry;
+  QDateTime created;
 };
 
-class UsersDialog : public QDialog
-{
-    Q_OBJECT
+class UsersDialog : public QDialog {
+  Q_OBJECT
 
-public:
-    explicit UsersDialog(QWidget *parent = 0);
-    ~UsersDialog();
-    void setUsers(QList<UserInfo> *);
+ public:
+  explicit UsersDialog(QWidget *parent = 0);
+  ~UsersDialog();
+  void setUsers(QList<UserInfo> *);
 
-protected:
-    void closeEvent(QCloseEvent *event);
+ protected:
+  void closeEvent(QCloseEvent *event);
 
-private slots:
-    void itemChange(QListWidgetItem *);
-    void on_clearButton_clicked();
-    void on_lineEdit_textChanged(const QString &filter);
-    void on_checkBox_clicked();
+ private slots:
+  void itemChange(QListWidgetItem *item);
+  void on_clearButton_clicked();
+  void on_lineEdit_textChanged(const QString &filter);
+  void on_checkBox_clicked();
 
-private:
-    Ui::UsersDialog *ui;
-    QList<UserInfo> *userList;
-    void populateList(const QString &filter);
+ private:
+  Ui::UsersDialog *ui;
+  QList<UserInfo> *userList;
+  void populateList(const QString &filter);
 };
 
-#endif // USERSDIALOG_H
+#endif  // USERSDIALOG_H_

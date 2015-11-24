@@ -1,29 +1,37 @@
-QtPass [![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](https://travis-ci.org/IJHack/qtpass) [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
+QtPass
 ======
 
-QtPass is a GUI for [pass](http://www.passwordstore.org/), the standard unix password manager.
+[![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](https://travis-ci.org/IJHack/qtpass)
+[![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
+[![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
+
+QtPass is a GUI for [pass](http://www.passwordstore.org/),
+the standard unix password manager.
 
 Features
 --------
+
 * Using pass or git and gpg2 directly
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
 
-Logo based on https://commons.wikimedia.org/wiki/File:Heart-padlock.svg by AnonMoos.
+Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
 Installation
 ------------
+
 On most systems all you need is:
 `qmake && make && make install`
 
 On Mac OS X:
 `qmake && make && macdeployqt QtPass.app`
-* Currently seems to only work with MacGPG2
+Currently seems to only work with MacGPG2
 
 Security considerations
 -----------------------
+
 Using this program will not magically keep your passwords secure against
 compromised computers even if you use it in combination with a smartcard.
 
@@ -39,6 +47,7 @@ it installed (or at least one that knows how to use a smartcard).
 
 To get better protection out of use with a smartcard even against a targeted
 attack I can think of at least two options:
+
 * The smartcard must require explicit confirmation for each decryption operation.
   Or if it just provides a counter for decrypted data you could at least notice
   an attack afterwards, though at quite some effort on your part.
@@ -51,22 +60,28 @@ attack I can think of at least two options:
 
 Known issues
 ------------
-* Filtering (searching) breaks the tree/model sometimes 
-* Starting without a correctly set password-store folder give weird results in the tree view
+
+* Filtering (searching) breaks the tree/model sometimes
+* Starting without a correctly set password-store folder
+  gives weird results in the tree view
 * On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN
 
 Planned features
 ----------------
+
 * Re-encryption after users-change (optional of course)
 * Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * WebDAV (configuration) support
 * Optional table view of decrypted folder contents
-* Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?
-* Some other form of remote storage that allows for accountability / auditing (web API to retrieve the .gpg files?)
+* Opening of (basic auth) urls in default browser?
+  Possibly with helper plugin for filling out forms?
+* Some other form of remote storage that allows for
+  accountability / auditing (web API to retrieve the .gpg files?)
 
 Further reading
 ---------------
+
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
 [Documentation](https://qtpass.org/)

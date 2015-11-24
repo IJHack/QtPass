@@ -1,5 +1,5 @@
-#ifndef TRAYICON_H
-#define TRAYICON_H
+#ifndef TRAYICON_H_
+#define TRAYICON_H_
 
 #include <QApplication>
 #include <QMenu>
@@ -8,32 +8,32 @@
 #include <QSystemTrayIcon>
 #include <QWidget>
 
-class trayIcon : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit trayIcon(QMainWindow *parent);
-    void showMessage(QString title, QString msg, int time);
-    void setVisible(bool visible);
+class TrayIcon : public QWidget {
+  Q_OBJECT
 
-signals:
+ public:
+  explicit TrayIcon(QMainWindow *parent);
+  void showMessage(QString title, QString msg, int time);
+  void setVisible(bool visible);
 
-public slots:
-    void showHideParent();
-    void iconActivated(QSystemTrayIcon::ActivationReason reason);
+ signals:
 
-private:
-    void createActions();
-    void createTrayIcon();
+ public slots:
+  void showHideParent();
+  void iconActivated(QSystemTrayIcon::ActivationReason reason);
 
-//    QAction *minimizeAction;
-//    QAction *maximizeAction;
-    QAction *settingsAction;
-    QAction *quitAction;
+ private:
+  void createActions();
+  void createTrayIcon();
 
-    QSystemTrayIcon *sysTrayIcon;
-    QMenu *trayIconMenu;
-    QMainWindow *parentwin;
+  // QAction *minimizeAction;
+  // QAction *maximizeAction;
+  QAction *settingsAction;
+  QAction *quitAction;
+
+  QSystemTrayIcon *sysTrayIcon;
+  QMenu *trayIconMenu;
+  QMainWindow *parentwin;
 };
 
-#endif // TRAYICON_H
+#endif  // TRAYICON_H_
