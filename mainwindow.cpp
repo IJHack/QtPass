@@ -42,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
   freshStart = true;
   startupPhase = true;
+  autoclearTimer = NULL;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
@@ -49,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent)
   ui->copyPasswordButton->setEnabled(false);
   setClippedPassword("");
   QtPass = NULL;
-  autoclearTimer = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 }
 
