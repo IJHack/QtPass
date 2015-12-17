@@ -606,14 +606,6 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
     setPassword(file, true, false);
 }
 
-/**
- * @brief MainWindow::on_treeView_doubleClicked
- * @param index
- */
-/*void MainWindow::on_treeView_keyPressEvent(QKeyEvent * event){
-    qDebug() << "Pressed Key" << event->text() <<  endl;
-}*/
-
 
 
 /**
