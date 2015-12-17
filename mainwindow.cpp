@@ -592,6 +592,22 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
 }
 
 /**
+ * @brief MainWindow::on_treeView_doubleClicked
+ * @param index
+ */
+void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
+    QString file = getFile(index, usePass);
+    if (file.isEmpty()) {
+      QMessageBox::critical(
+          this, tr("Can not edit"),
+          tr("Selected password file does not exist, not able to edit"));
+      return;
+    }
+    setPassword(file, true, false);
+}
+
+
+/**
  * @brief MainWindow::executePass
  * @param args
  */
