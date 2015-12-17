@@ -58,13 +58,14 @@ class MainWindow : public QMainWindow {
 
  protected:
   void closeEvent(QCloseEvent *event);
+  void keyPressEvent(QKeyEvent * event);
+
 
  private slots:
   void on_updateButton_clicked();
   void on_pushButton_clicked();
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
-  //void on_treeView_keyPressEvent(QKeyEvent * event);
   void on_configButton_clicked();
   void readyRead(bool finished);
   void processFinished(int, QProcess::ExitStatus);
