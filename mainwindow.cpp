@@ -592,7 +592,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
 }
 
 /**
- * @brief MainWindow::on_treeView_doubleClicked
+ * @brief When doubleclicked on TreeViewItem, open the edit Window
  * @param index
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
@@ -605,6 +605,15 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
     }
     setPassword(file, true, false);
 }
+
+/**
+ * @brief MainWindow::on_treeView_doubleClicked
+ * @param index
+ */
+/*void MainWindow::on_treeView_keyPressEvent(QKeyEvent * event){
+    qDebug() << "Pressed Key" << event->text() <<  endl;
+}*/
+
 
 
 /**
@@ -907,7 +916,7 @@ QString MainWindow::getGpgExecutable() { return gpgExecutable; }
 void MainWindow::on_configButton_clicked() { config(); }
 
 /**
- * @brief MainWindow::on_lineEdit_textChanged
+ * @brief Executes when the string in the search box changes, collapses the TreeView
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
@@ -921,6 +930,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
       proxyModel.mapFromSource(model.setRootPath(passStore)));
   selectFirstFile();
 }
+
 
 /**
  * @brief MainWindow::on_lineEdit_returnPressed
