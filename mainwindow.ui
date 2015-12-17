@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
+    <width>834</width>
     <height>363</height>
    </rect>
   </property>
@@ -42,7 +42,9 @@
           <string>Add</string>
          </property>
          <property name="icon">
-          <iconset theme="document-new"/>
+          <iconset theme="document-new">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -55,7 +57,9 @@
           <string>Edit</string>
          </property>
          <property name="icon">
-          <iconset theme="document-properties"/>
+          <iconset theme="document-properties">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -68,7 +72,9 @@
           <string>Delete</string>
          </property>
          <property name="icon">
-          <iconset theme="edit-delete"/>
+          <iconset theme="edit-delete">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -97,7 +103,9 @@
           <string>Push</string>
          </property>
          <property name="icon">
-          <iconset theme="go-top"/>
+          <iconset theme="go-top">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -110,7 +118,9 @@
           <string>Update</string>
          </property>
          <property name="icon">
-          <iconset theme="view-refresh"/>
+          <iconset theme="view-refresh">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -139,7 +149,9 @@
           <string>Users</string>
          </property>
          <property name="icon">
-          <iconset theme="stock_new-bcard"/>
+          <iconset theme="stock_new-bcard">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -152,7 +164,9 @@
           <string>Config</string>
          </property>
          <property name="icon">
-          <iconset theme="document-properties"/>
+          <iconset theme="document-properties">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -184,7 +198,9 @@
           <string>Copy Password</string>
          </property>
          <property name="icon">
-          <iconset theme="edit-copy"/>
+          <iconset theme="edit-copy">
+           <normaloff/>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -233,15 +249,30 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QToolButton" name="clearButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
             <property name="text">
              <string>X</string>
             </property>
             <property name="icon">
-             <iconset theme="edit-clear"/>
+             <iconset theme="edit-clear">
+              <normaloff/>
+             </iconset>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonIconOnly</enum>
