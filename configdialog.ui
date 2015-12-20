@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="Tab_Settings">
       <attribute name="title">
@@ -693,6 +693,9 @@
        </property>
        <item>
         <widget class="QLabel" name="label_2">
+         <property name="locale">
+          <locale language="German" country="Germany"/>
+         </property>
          <property name="text">
           <string>Templates add extra fields in the password generation dialouge and in the password view.</string>
          </property>
