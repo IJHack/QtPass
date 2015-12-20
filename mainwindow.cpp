@@ -352,11 +352,11 @@ bool MainWindow::checkConfig() {
   if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
     ui->pushButton->hide();
     ui->updateButton->hide();
-    ui->horizontalSpacer->changeSize(0,20, QSizePolicy::Maximum, QSizePolicy::Minimum);
+    ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
   } else {
     ui->pushButton->show();
     ui->updateButton->show();
-    ui->horizontalSpacer->changeSize(24,24, QSizePolicy::Minimum, QSizePolicy::Minimum);
+    ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
   }
 
   startupPhase = false;
@@ -507,11 +507,11 @@ void MainWindow::config() {
       if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
           ui->pushButton->hide();
           ui->updateButton->hide();
-          ui->horizontalSpacer->changeSize(0,20, QSizePolicy::Maximum, QSizePolicy::Minimum);
+          ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
       } else {
           ui->pushButton->show();
           ui->updateButton->show();
-          ui->horizontalSpacer->changeSize(24,24, QSizePolicy::Minimum, QSizePolicy::Minimum);
+          ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
       }
       if (useTrayIcon && tray == NULL)
         initTrayIcon();
@@ -1530,7 +1530,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   }
 }
 
-void MainWindow::keyPressEvent(QKeyEvent * event){
+void MainWindow::keyPressEvent(QKeyEvent * event) {
     switch (event->key()) {
     case Qt::Key_Delete:
         on_deleteButton_clicked();
