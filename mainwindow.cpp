@@ -1081,6 +1081,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
  * @brief MainWindow::on_addButton_clicked
  */
 void MainWindow::on_addButton_clicked() {
+  // Check for active and selected encryption key
 //  QList<UserInfo> users=listKeys();
 //  UserInfo testuser;
 //  bool noUserEnabled = false;
@@ -1099,7 +1100,7 @@ void MainWindow::on_addButton_clicked() {
   QString dir = getDir(ui->treeView->currentIndex(), usePass);
   QString file = QInputDialog::getText(
       this, tr("New file"),
-      tr("New password file. \n(Will be placed in folder %1 )")
+      tr("New password file: \n(Will be placed in %1 )")
           .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
