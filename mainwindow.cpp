@@ -1081,12 +1081,26 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
  * @brief MainWindow::on_addButton_clicked
  */
 void MainWindow::on_addButton_clicked() {
+//  QList<UserInfo> users=listKeys();
+//  UserInfo testuser;
+//  bool noUserEnabled = false;
+//  // Check if at least one active user is selected
+//  for (int i = 0; i< users.length();i++) {
+//    testuser = users[i];
+//    noUserEnabled = users[i].enabled | noUserEnabled;
+//  }
+//  // Error if no user is enabled, so a password doesn't get saved
+//  if (noUserEnabled==false) {
+//    QMessageBox::critical(this, tr("Can not get key list"),
+//                          tr("No Key for encryption selected! \nPlease select a valid key pair in the users dialouge"));
+//    return;
+//  }
   bool ok;
   QString dir = getDir(ui->treeView->currentIndex(), usePass);
   QString file = QInputDialog::getText(
       this, tr("New file"),
-      tr("New password file, will be placed in folder %1:")
-          .arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+      tr("New password file. \n(Will be placed in folder %1 )")
+          .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
