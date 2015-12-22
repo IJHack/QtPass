@@ -613,6 +613,11 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
     // TODO: do nothing when clicked on folder
+  QFileInfo fileOrFolder =
+      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QString file = "";
+
+  if (fileOrFolder.isFile()) {
     QString file = getFile(index, usePass);
     if (file.isEmpty()) {
       QMessageBox::critical(
@@ -621,6 +626,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
       return;
     }
     setPassword(file, true, false);
+  }
 }
 
 
@@ -1675,8 +1681,8 @@ void MainWindow::addFolder() {
   QString dir = getDir(ui->treeView->currentIndex(), false);
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
-        tr("New Folder: \n(Will be placed in %1 )")
-          .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
+      tr("New Folder: \n(Will be placed in %1 )")
+      .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
