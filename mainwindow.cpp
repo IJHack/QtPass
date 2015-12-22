@@ -52,23 +52,17 @@ MainWindow::MainWindow(QWidget *parent)
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
-  // Add a Menu to the Add-Button
-  //addMenu   = new QMenu(this);
+  // Add a Actions to the Add-Button
   QIcon addFileIcon = QIcon::fromTheme("file_new");
   QIcon addFolderIcon = QIcon::fromTheme("folder_new");
   actionAddPassword = new QAction(addFileIcon,tr("Add Password"),this);
   actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"),this);
-//  actionAddPassword->setObjectName("Add Password");
-//  actionAddFolder->setObjectName("Add Folder");
-//  //addMenu->addAction(actionAddPassword);
-//  //addMenu->addAction(actionAddFolder);
+
   ui->addButton->addAction(actionAddPassword);
   ui->addButton->addAction(actionAddFolder);
 
   connect(actionAddPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-
-  //ui->addButton->setMenu(addMenu);
 }
 
 void MainWindow::focusInput() {
