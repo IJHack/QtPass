@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>834</width>
+    <width>835</width>
     <height>363</height>
    </rect>
   </property>
@@ -38,16 +38,27 @@
        </property>
        <item>
         <widget class="QToolButton" name="addButton">
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>Add</string>
          </property>
          <property name="icon">
           <iconset theme="document-new">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::MenuButtonPopup</enum>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>false</bool>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::NoArrow</enum>
          </property>
         </widget>
        </item>
@@ -58,8 +69,7 @@
          </property>
          <property name="icon">
           <iconset theme="document-properties">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -73,8 +83,7 @@
          </property>
          <property name="icon">
           <iconset theme="edit-delete">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -104,8 +113,7 @@
          </property>
          <property name="icon">
           <iconset theme="go-top">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -119,8 +127,7 @@
          </property>
          <property name="icon">
           <iconset theme="view-refresh">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -150,8 +157,7 @@
          </property>
          <property name="icon">
           <iconset theme="stock_new-bcard">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -165,8 +171,7 @@
          </property>
          <property name="icon">
           <iconset theme="document-properties">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -199,8 +204,7 @@
          </property>
          <property name="icon">
           <iconset theme="edit-copy">
-           <normaloff/>
-          </iconset>
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -271,8 +275,7 @@
             </property>
             <property name="icon">
              <iconset theme="edit-clear">
-              <normaloff/>
-             </iconset>
+              <normaloff>.</normaloff>.</iconset>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonIconOnly</enum>
