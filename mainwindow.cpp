@@ -51,6 +51,24 @@ MainWindow::MainWindow(QWidget *parent)
   setClippedPassword("");
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
+
+  // Add a Menu to the Add-Button
+  //addMenu   = new QMenu(this);
+  QIcon addFileIcon = QIcon::fromTheme("file_new");
+  QIcon addFolderIcon = QIcon::fromTheme("folder_new");
+  actionAddPassword = new QAction(addFileIcon,tr("Add Password"),this);
+  actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"),this);
+//  actionAddPassword->setObjectName("Add Password");
+//  actionAddFolder->setObjectName("Add Folder");
+//  //addMenu->addAction(actionAddPassword);
+//  //addMenu->addAction(actionAddFolder);
+  ui->addButton->addAction(actionAddPassword);
+  ui->addButton->addAction(actionAddFolder);
+
+  connect(actionAddPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
+  connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+
+  //ui->addButton->setMenu(addMenu);
 }
 
 void MainWindow::focusInput() {
@@ -1112,6 +1130,7 @@ void MainWindow::on_addButton_clicked() {
   setPassword(file, false, true);
 }
 
+
 /**
  * @brief MainWindow::on_deleteButton_clicked
  */
@@ -1149,6 +1168,7 @@ void MainWindow::on_deleteButton_clicked() {
     }
   } else {
     file = getDir(ui->treeView->currentIndex(), usePass);
+    // TODO: message box should accept enter key
     if (QMessageBox::question(
             this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?")
@@ -1158,6 +1178,7 @@ void MainWindow::on_deleteButton_clicked() {
       return;
     if (usePass) {
       currentAction = DELETE;
+      // TODO: Delete Folder not by using pass!
       executePass("rm -r \"" + file + '"');
       if (useGit && autoPush)
         on_pushButton_clicked();

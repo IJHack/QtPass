@@ -90,6 +90,11 @@ class MainWindow : public QMainWindow {
   void copyPasswordToClipboard();
 
  private:
+
+  QMenu *addMenu;
+  QAction *actionAddPassword;
+  QAction *actionAddFolder;
+
   QApplication *QtPass;
   QScopedPointer<QSettings> settings;
   QScopedPointer<Ui::MainWindow> ui;
