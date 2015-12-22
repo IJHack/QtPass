@@ -1173,34 +1173,11 @@ void MainWindow::on_deleteButton_clicked() {
     if (QMessageBox::question(
             this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?")
-                .arg(QDir::separator() +
-                     getDir(ui->treeView->currentIndex(), true)),
+            .arg(QDir::separator() +
+            getDir(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
       return;
-    if (usePass) {
-      currentAction = DELETE;
-
-      // Recursively deletes Folder, Subfolders and Files
-      QDir dir(passStore + file);
-      bool result = true;
-      if (dir.exists(passStore + file)) {
-          Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
-              if (info.isDir()) {
-                  result = removeDir(info.absoluteFilePath());
-              }
-              else {
-                  result = QFile::remove(info.absoluteFilePath());
-              }
-
-              if (!result) {
-                 qDebug() << "Could not remove Directory!";
-              }
-          }
-      }
-
-      if (useGit && autoPush)
-        on_pushButton_clicked();
-    } else {
+    else {
       if (useGit) {
         executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
         executeWrapper(gitExecutable,
@@ -1214,7 +1191,7 @@ void MainWindow::on_deleteButton_clicked() {
         QDir dir(file);
         dir.removeRecursively();
 #else
-        removeDir(file);
+        removeDir(passStore + file);
 #endif
       }
     }
