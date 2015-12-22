@@ -612,6 +612,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
  * @param index
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
+    // TODO: do nothing when clicked on folder
     QString file = getFile(index, usePass);
     if (file.isEmpty()) {
       QMessageBox::critical(
@@ -1172,8 +1173,25 @@ void MainWindow::on_deleteButton_clicked() {
       return;
     if (usePass) {
       currentAction = DELETE;
-      // TODO: Delete Folder not by using pass!
-      executePass("rm -r \"" + file + '"');
+
+      // Recursively deletes Folder, Subfolders and Files
+      QDir dir(passStore + file);
+      bool result = true;
+      if (dir.exists(passStore + file)) {
+          Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+              if (info.isDir()) {
+                  result = removeDir(info.absoluteFilePath());
+              }
+              else {
+                  result = QFile::remove(info.absoluteFilePath());
+              }
+
+              if (!result) {
+                 qDebug() << "Could not remove Directory!";
+              }
+          }
+      }
+
       if (useGit && autoPush)
         on_pushButton_clicked();
     } else {
@@ -1657,8 +1675,8 @@ void MainWindow::addFolder() {
   QString dir = getDir(ui->treeView->currentIndex(), false);
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
-      tr("New folder, will be placed in folder %1:")
-          .arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+        tr("New Folder: \n(Will be placed in %1 )")
+          .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
