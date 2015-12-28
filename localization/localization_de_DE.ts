@@ -226,7 +226,7 @@
     <message>
         <location filename="../configdialog.ui" line="496"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vorlage</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="516"/>
