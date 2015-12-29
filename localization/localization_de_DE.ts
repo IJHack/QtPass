@@ -87,7 +87,7 @@
     <message>
         <location filename="../configdialog.ui" line="389"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>.gpg-id Dateien automatisch hinzufuegen</translation>
+        <translation>.gpg-id Dateien automatisch hinzufügen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="270"/>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../configdialog.ui" line="365"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="382"/>
@@ -226,12 +226,12 @@
     <message>
         <location filename="../configdialog.ui" line="496"/>
         <source>Template</source>
-        <translation type="unfinished">Vorlage</translation>
+        <translation>Vorlage</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="516"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorlage verwenden</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="523"/>
@@ -389,7 +389,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="63"/>
         <source>Push</source>
-        <translation>Eindrücken</translation>
+        <translation>Hochladen (push)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="70"/>
