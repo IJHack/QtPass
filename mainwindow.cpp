@@ -63,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(actionAddPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+  qsrand(QDateTime::currentDateTime().toTime_t());
 }
 
 void MainWindow::focusInput() {

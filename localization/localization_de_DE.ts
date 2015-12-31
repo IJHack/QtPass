@@ -87,7 +87,7 @@
     <message>
         <location filename="../configdialog.ui" line="344"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>.gpg-id Dateien automatisch hinzufuegen</translation>
+        <translation>.gpg-id Dateien automatisch hinzufügen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="98"/>
@@ -236,7 +236,7 @@ email</translation>
     <message>
         <location filename="../configdialog.ui" line="278"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <source>Use characters</source>
@@ -472,7 +472,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="103"/>
         <source>Push</source>
-        <translation>Eindrücken</translation>
+        <translation>Hochladen (push)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="118"/>
