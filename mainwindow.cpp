@@ -51,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
   setClippedPassword("");
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
+  qsrand(QDateTime::currentDateTime().toTime_t());
 }
 
 void MainWindow::focusInput() {
