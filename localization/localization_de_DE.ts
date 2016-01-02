@@ -53,31 +53,31 @@
     </message>
     <message>
         <source>Executable git</source>
-        <translation type="vanished">Ausführbares git</translation>
+        <translation>Ausführbares git</translation>
     </message>
     <message>
         <source>Executable gpg</source>
-        <translation type="vanished">Ausführbares gpg</translation>
+        <translation>Ausführbares gpg</translation>
     </message>
     <message>
         <source>Native git/gpg</source>
-        <translation type="vanished">Systemeigenes git/gpg</translation>
+        <translation>Systemeigenes git/gpg</translation>
     </message>
     <message>
         <source>Use pass</source>
-        <translation type="vanished">Pass benutzen</translation>
+        <translation>Pass benutzen</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="vanished">Weiteres</translation>
+        <translation>Weiteres</translation>
     </message>
     <message>
         <source>Folder password-store</source>
-        <translation type="vanished">Ordner für Password Store</translation>
+        <translation>Ordner für Password Store</translation>
     </message>
     <message>
         <source>Clipboard</source>
-        <translation type="vanished">Zwischenablage</translation>
+        <translation>Zwischenablage</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="355"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../configdialog.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="194"/>
@@ -192,7 +192,7 @@
     </message>
     <message>
         <source>Automatically push updates</source>
-        <translation type="vanished">Automatisch hochladen</translation>
+        <translation>Automatisch hochladen</translation>
     </message>
     <message>
         <source>Automatically pull in updates</source>
@@ -240,14 +240,13 @@
     </message>
     <message>
         <location filename="../configdialog.ui" line="532"/>
-        <source>login
-url</source>
+        <source>login url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="546"/>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation></translation>
+        <translation>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; Version </translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="469"/>
@@ -465,8 +464,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="110"/>
-        <source>Failed to connect WebDAV:
-</source>
+        <source>Failed to connect WebDAV:</source>
         <translation>Verbindung zu WebDAV fehlgeschlagen:</translation>
     </message>
     <message>
@@ -481,14 +479,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="136"/>
-        <source>fusedav exited unexpectedly
-</source>
+        <source>fusedav exited unexpectedly</source>
         <translation>Unerwarteter Abbruch durch fusedav</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="140"/>
-        <source>Failed to start fusedav to connect WebDAV:
-</source>
+        <source>Failed to start fusedav to connect WebDAV:</source>
         <translation>fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
     </message>
     <message>
@@ -514,32 +510,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="844"/>
         <source>QProcess::FailedToStart</source>
-        <translation></translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="847"/>
         <source>QProcess::Crashed</source>
-        <translation></translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="850"/>
         <source>QProcess::Timedout</source>
-        <translation></translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="853"/>
         <source>QProcess::ReadError</source>
-        <translation></translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="856"/>
         <source>QProcess::WriteError</source>
-        <translation></translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
         <source>QProcess::UnknownError</source>
-        <translation></translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1093"/>
@@ -564,7 +560,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1678"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Zeichen ausgewählt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1679"/>
@@ -584,7 +580,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Wilkommen bei qtpass %1</translation>
+        <translation>Wilkommen bei QtPass %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="915"/>
@@ -627,17 +623,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1207"/>
         <source>Selected password file does not exist, not able to edit</source>
-        <translation>Gewählte Passwort Datei existiert nicht, Änderung nicht möglich</translation>
+        <translation>Gewählte Passwort-Datei existiert nicht, Änderung nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1271"/>
         <source>Can not get key list</source>
-        <translation>Schlüssel Liste nicht gefunden</translation>
+        <translation>Schlüssel-Liste nicht gefunden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1272"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation>gpg Schlüssel - Liste konnte nicht gefunden werden</translation>
+        <translation>gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1304"/>
@@ -663,7 +659,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1340"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Den selektierten Schlüssel fehlt sein Partnerschlüssel.
+        <translation>Der Partnerschlüssel der selektierten Schlüssel fehlt.
 Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!</translation>
     </message>
     <message>
@@ -700,7 +696,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../main.cpp" line="43"/>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
