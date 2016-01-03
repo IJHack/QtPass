@@ -834,3 +834,19 @@ bool ConfigDialog::templateAllFields() {
 void ConfigDialog::templateAllFields(bool templateAll) {
   ui->checkBoxTemplateAllFields->setChecked(templateAll);
 }
+
+/**
+ * @brief ConfigDialog::alwaysOnTop
+ * @param alwaysOnTop
+ */
+void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
+    ui->checkBoxAlwaysOnTop->setChecked(alwaysOnTop);
+}
+
+/**
+ * @brief ConfigDialog::alwaysOnTop
+ * @return
+ */
+bool ConfigDialog::alwaysOnTop() {
+    return ui->checkBoxAlwaysOnTop->isChecked();
+}

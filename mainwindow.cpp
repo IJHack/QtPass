@@ -237,6 +237,13 @@ bool MainWindow::checkConfig() {
   useTrayIcon = settings.value("useTrayIcon").toBool();
   hideOnClose = settings.value("hideOnClose").toBool();
   startMinimized = settings.value("startMinimized").toBool();
+  alwaysOnTop = settings.value("alwaysOnTop").toBool();
+
+  if (alwaysOnTop) {
+      Qt::WindowFlags flags = windowFlags();
+      this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
+      this->show();
+  }
 
   autoPull = settings.value("autoPull").toBool();
   autoPush = settings.value("autoPush").toBool();
@@ -400,6 +407,7 @@ void MainWindow::config() {
   d->templateAllFields(templateAllFields);
   d->autoPull(autoPull);
   d->autoPush(autoPush);
+  d->alwaysOnTop(alwaysOnTop);
   if (startupPhase)
     d->wizard();  // does shit
   if (d->exec()) {
@@ -432,6 +440,7 @@ void MainWindow::config() {
       templateAllFields = d->templateAllFields();
       autoPush = d->autoPush();
       autoPull = d->autoPull();
+      alwaysOnTop = d->alwaysOnTop();
 
       QSettings &settings(getSettings());
 
@@ -473,7 +482,17 @@ void MainWindow::config() {
       settings.setValue("passTemplate", passTemplate);
       settings.setValue("templateAllFields", templateAllFields);
       settings.setValue("autoPull", autoPull ? "true" : "false");
-      settings.setValue("autoPush", autoPush ? "true" : "false");
+      settings.setValue("autoPush", autoPush ? "true" : "false");      
+      settings.setValue("alwaysOnTop", alwaysOnTop ? "true" : "false");
+
+      if (alwaysOnTop) {
+          Qt::WindowFlags flags = windowFlags();
+          this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
+          this->show();
+      } else {
+          this->setWindowFlags(Qt::Window);
+          this->show();
+      }
 
       if (!profiles.isEmpty()) {
         settings.beginGroup("profiles");
