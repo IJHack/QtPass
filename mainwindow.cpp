@@ -710,15 +710,15 @@ void MainWindow::readyRead(bool finished = false) {
           delete item->widget();
           delete item;
         }
-        QLineEdit *pass = new QLineEdit();
+        QLineEdit *pass = new QLineEdit();  // создает строку для вывода пароля
         pass->setText(tokens[0]);
         tokens.pop_front();
         if (hidePassword)
-          pass->setEchoMode(QLineEdit::Password);
+          pass->setEchoMode(QLineEdit::Password);   // ставим отображение пароля спрятанное звездочками
         pass->setReadOnly(true);
-        ui->formLayout->addRow(pass);
+        ui->formLayout->addRow(pass); // добавляет новую строку с паролем в слой
 
-        for (int j = 0; j < tokens.length(); ++j) {
+        for (int j = 0; j < tokens.length(); ++j) { // цикл для создания строк, так как их надо две: для логина и урла
           QString token = tokens.at(j);
           if (token.contains(':')) {
             int colon = token.indexOf(':');
@@ -727,20 +727,23 @@ void MainWindow::readyRead(bool finished = false) {
               QString value = token.right(token.length() - colon - 1);
               if (!passTemplate.contains(field) && value.startsWith("//"))
                 continue;  // colon is probably from a url
-              QLineEdit *line = new QLineEdit();
+              QLineEdit *line = new QLineEdit(); // создаем строку для вывода логина и урла (по-одной за итерацию)
               line->setObjectName(field);
-              line->setText(value);
+              line->setText(value); // заполняет созданные строки данными из токена
               line->setReadOnly(true);
-              ui->formLayout->addRow(new QLabel(field), line);
+              ui->formLayout->addRow(new QLabel(field), line);  // создает лейбаки в отдельных столбцах слоя
               tokens.removeAt(j);
               --j;  // tokens.length() also got shortened by the remove..
             }
           }
         }
         if (ui->formLayout->count() == 0)
-          ui->verticalLayoutPassword->setSpacing(0);
-        else
-          ui->verticalLayoutPassword->setSpacing(6);
+          ui->verticalLayoutPassword->setSpacing(0); // если данные скрыты, то отступ слоя 0
+        else {
+          ui->verticalLayoutPassword->setSpacing(3); // если видны, то отступ слоя сверху и снизу такой-то
+          ui->formLayout->setVerticalSpacing(3); // отступ между элементами слоя
+        }
+
         output = tokens.join("\n");
       } else {
         clearTemplateWidgets();
@@ -806,9 +809,11 @@ void MainWindow::clearPanel() {
     QLayoutItem *item = ui->formLayout->takeAt(0);
     delete item->widget();
     delete item;
+    ui->verticalLayoutPassword->setSpacing(0);   // возвращаем отступ лэйера, иначе перекосит окно вывода, когда   спрячутся строки с логином и паролем
   }
   QString output = "***" + tr("Password and Content hidden") + "***";
   ui->textBrowser->setHtml(output);
+  ui->textBrowser->setAlignment(Qt::AlignCenter); // выравниваем выводимое сообщение по центру
 }
 
 /**

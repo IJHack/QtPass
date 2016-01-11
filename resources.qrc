@@ -15,5 +15,17 @@
         <file>localization/localization_ru_RU.qm</file>
         <file>localization/localization_zh_CN.qm</file>
         <file>localization/localization_he_IL.qm</file>
+        <file>artwork/delete.png</file>
+        <file>artwork/down_arrow.png</file>
+        <file>artwork/ok.png</file>
+        <file>artwork/right_arrow.png</file>
+        <file>artwork/search.png</file>
+        <file>artwork/settings.png</file>
+        <file>artwork/user.png</file>
+        <file>artwork/left_arrow.png</file>
+        <file>artwork/up_arrow.png</file>
+        <file>artwork/add.png</file>
+        <file>artwork/edit.png</file>
+        <file>artwork/key.png</file>
     </qresource>
 </RCC>

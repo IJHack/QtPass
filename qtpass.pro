@@ -112,7 +112,7 @@ win32 {
     QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
     LIBS    += -lmpr
 } else:macx {
-    ICON = artwork/icon.icns
+    ICON =
     QMAKE_INFO_PLIST = qtpass.plist
 } else:bsd {
     LIBS += -L/usr/local/lib
