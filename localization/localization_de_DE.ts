@@ -157,12 +157,12 @@
     <message>
         <location filename="../configdialog.ui" line="389"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch hochladen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="396"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch herunterladen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="324"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../configdialog.ui" line="406"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Immer an der Spitze</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="416"/>
@@ -240,13 +240,14 @@
     <message>
         <location filename="../configdialog.ui" line="526"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Felder Vorlage</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="535"/>
         <source>login
 url</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+url</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="549"/>
@@ -301,17 +302,17 @@ url</source>
     <message>
         <location filename="../configdialog.cpp" line="25"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Zwischenablage</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="26"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Immer die Zwischenablage kopieren</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="27"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>On-Demand-Zwischenablage kopieren</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="458"/>
@@ -417,7 +418,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="299"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="312"/>
@@ -436,18 +437,18 @@ Expire-Date: 0
         <location filename="../mainwindow.ui" line="364"/>
         <location filename="../mainwindow.ui" line="367"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurieren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="531"/>
         <location filename="../mainwindow.cpp" line="1599"/>
         <source>Copy Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennwort kopieren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="534"/>
         <source>Copy pwd</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieren pwd</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="590"/>
@@ -616,7 +617,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1683"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann kein Kennwort erstellen, es gibt keine Charaktere zur Satz in der Konfiguration zu wählen!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1701"/>
@@ -637,19 +638,22 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="114"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim WebDAV zu verbinden:
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="142"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation>fusedav wurde unerwartet beendet
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="146"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim fusedav beginnen, WebDAV zu verbinden:
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="924"/>
@@ -773,7 +777,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../trayicon.cpp" line="35"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">Schließen</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
