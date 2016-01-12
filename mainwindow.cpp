@@ -51,6 +51,19 @@ MainWindow::MainWindow(QWidget *parent)
   setClippedPassword("");
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
+
+  // Add a Actions to the Add-Button
+  QIcon addFileIcon = QIcon::fromTheme("file_new");
+  QIcon addFolderIcon = QIcon::fromTheme("folder_new");
+  actionAddPassword = new QAction(addFileIcon,tr("Add Password"),this);
+  actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"),this);
+
+  ui->addButton->addAction(actionAddPassword);
+  ui->addButton->addAction(actionAddFolder);
+
+  connect(actionAddPassword, SIGNAL(triggered()), this, SLOT(on_addButton_clicked()));
+  connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+  qsrand(QDateTime::currentDateTime().toTime_t());
 }
 
 void MainWindow::focusInput() {
@@ -352,9 +365,11 @@ bool MainWindow::checkConfig() {
   if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
     ui->pushButton->hide();
     ui->updateButton->hide();
+    ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
   } else {
     ui->pushButton->show();
     ui->updateButton->show();
+    ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
   }
 
   startupPhase = false;
@@ -503,11 +518,13 @@ void MainWindow::config() {
         config();
       updateEnv();
       if (!useGit || (gitExecutable.isEmpty() && passExecutable.isEmpty())) {
-        ui->pushButton->hide();
-        ui->updateButton->hide();
+          ui->pushButton->hide();
+          ui->updateButton->hide();
+          ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
       } else {
-        ui->pushButton->show();
-        ui->updateButton->show();
+          ui->pushButton->show();
+          ui->updateButton->show();
+          ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
       }
       if (useTrayIcon && tray == NULL)
         initTrayIcon();
@@ -590,6 +607,30 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
     ui->deleteButton->setEnabled(true);
   }
 }
+
+/**
+ * @brief When doubleclicked on TreeViewItem, open the edit Window
+ * @param index
+ */
+void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
+    // TODO: do nothing when clicked on folder
+  QFileInfo fileOrFolder =
+      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QString file = "";
+
+  if (fileOrFolder.isFile()) {
+    QString file = getFile(index, usePass);
+    if (file.isEmpty()) {
+      QMessageBox::critical(
+          this, tr("Can not edit"),
+          tr("Selected password file does not exist, not able to edit"));
+      return;
+    }
+    setPassword(file, true, false);
+  }
+}
+
+
 
 /**
  * @brief MainWindow::executePass
@@ -891,7 +932,7 @@ QString MainWindow::getGpgExecutable() { return gpgExecutable; }
 void MainWindow::on_configButton_clicked() { config(); }
 
 /**
- * @brief MainWindow::on_lineEdit_textChanged
+ * @brief Executes when the string in the search box changes, collapses the TreeView
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
@@ -905,6 +946,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
       proxyModel.mapFromSource(model.setRootPath(passStore)));
   selectFirstFile();
 }
+
 
 /**
  * @brief MainWindow::on_lineEdit_returnPressed
@@ -1059,12 +1101,27 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
  * @brief MainWindow::on_addButton_clicked
  */
 void MainWindow::on_addButton_clicked() {
+  // Check for active and selected encryption key
+//  QList<UserInfo> users=listKeys();
+//  UserInfo testuser;
+//  bool noUserEnabled = false;
+//  // Check if at least one active user is selected
+//  for (int i = 0; i< users.length();i++) {
+//    testuser = users[i];
+//    noUserEnabled = users[i].enabled | noUserEnabled;
+//  }
+//  // Error if no user is enabled, so a password doesn't get saved
+//  if (noUserEnabled==false) {
+//    QMessageBox::critical(this, tr("Can not get key list"),
+//                          tr("No Key for encryption selected! \nPlease select a valid key pair in the users dialouge"));
+//    return;
+//  }
   bool ok;
   QString dir = getDir(ui->treeView->currentIndex(), usePass);
   QString file = QInputDialog::getText(
       this, tr("New file"),
-      tr("New password file, will be placed in folder %1:")
-          .arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+      tr("New password file: \n(Will be placed in %1 )")
+          .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
@@ -1074,6 +1131,7 @@ void MainWindow::on_addButton_clicked() {
   lastDecrypt = "";
   setPassword(file, false, true);
 }
+
 
 /**
  * @brief MainWindow::on_deleteButton_clicked
@@ -1112,19 +1170,15 @@ void MainWindow::on_deleteButton_clicked() {
     }
   } else {
     file = getDir(ui->treeView->currentIndex(), usePass);
+    // TODO: message box should accept enter key
     if (QMessageBox::question(
             this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?")
-                .arg(QDir::separator() +
-                     getDir(ui->treeView->currentIndex(), true)),
+            .arg(QDir::separator() +
+            getDir(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
       return;
-    if (usePass) {
-      currentAction = DELETE;
-      executePass("rm -r \"" + file + '"');
-      if (useGit && autoPush)
-        on_pushButton_clicked();
-    } else {
+    else {
       if (useGit) {
         executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
         executeWrapper(gitExecutable,
@@ -1138,7 +1192,7 @@ void MainWindow::on_deleteButton_clicked() {
         QDir dir(file);
         dir.removeRecursively();
 #else
-        removeDir(file);
+        removeDir(passStore + file);
 #endif
       }
     }
@@ -1508,6 +1562,21 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   }
 }
 
+void MainWindow::keyPressEvent(QKeyEvent * event) {
+    switch (event->key()) {
+    case Qt::Key_Delete:
+        on_deleteButton_clicked();
+        break;
+    case Qt::Key_Return:
+    case Qt::Key_Enter:
+        on_editButton_clicked();
+        break;
+    default:
+        break;
+    }
+}
+
+
 void MainWindow::on_copyPasswordButton_clicked() { copyPasswordToClipboard(); }
 
 /**
@@ -1590,8 +1659,8 @@ void MainWindow::addFolder() {
   QString dir = getDir(ui->treeView->currentIndex(), false);
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
-      tr("New folder, will be placed in folder %1:")
-          .arg(QDir::separator() + getDir(ui->treeView->currentIndex(), true)),
+      tr("New Folder: \n(Will be placed in %1 )")
+      .arg(passStore + getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
