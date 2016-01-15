@@ -4,17 +4,6 @@
         <file>artwork/icon.ico</file>
         <file>artwork/icon.png</file>
         <file>artwork/icon.svg</file>
-        <file>localization/localization_ar_MA.qm</file>
-        <file>localization/localization_de_DE.qm</file>
-        <file>localization/localization_es_ES.qm</file>
-        <file>localization/localization_gl_ES.qm</file>
-        <file>localization/localization_hu_HU.qm</file>
-        <file>localization/localization_nl_NL.qm</file>
-        <file>localization/localization_sv_SE.qm</file>
-        <file>localization/localization_pl_PL.qm</file>
-        <file>localization/localization_ru_RU.qm</file>
-        <file>localization/localization_zh_CN.qm</file>
-        <file>localization/localization_he_IL.qm</file>
         <file>artwork/delete.png</file>
         <file>artwork/down_arrow.png</file>
         <file>artwork/ok.png</file>
@@ -27,5 +16,19 @@
         <file>artwork/add.png</file>
         <file>artwork/edit.png</file>
         <file>artwork/key.png</file>
+        <file>localization/localization_ar_MA.ts</file>
+        <file>localization/localization_de_DE.ts</file>
+        <file>localization/localization_en_US.ts</file>
+        <file>localization/localization_es_ES.ts</file>
+        <file>localization/localization_fr_BE.ts</file>
+        <file>localization/localization_fr_FR.ts</file>
+        <file>localization/localization_gl_ES.ts</file>
+        <file>localization/localization_he_IL.ts</file>
+        <file>localization/localization_hu_HU.ts</file>
+        <file>localization/localization_nl_NL.ts</file>
+        <file>localization/localization_pl_PL.ts</file>
+        <file>localization/localization_sv_SE.ts</file>
+        <file>localization/localization_zh_CN.ts</file>
+        <file>localization/localization_ru_RU.ts</file>
     </qresource>
 </RCC>

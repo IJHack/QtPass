@@ -52,6 +52,181 @@
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QRadioButton" name="radioButtonNative">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Highlight">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="NoRole">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ToolTipText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Highlight">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="NoRole">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ToolTipText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>128</red>
+                 <green>128</green>
+                 <blue>128</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>128</red>
+                 <green>128</green>
+                 <blue>128</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>128</red>
+                 <green>128</green>
+                 <blue>128</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Highlight">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>186</red>
+                 <green>186</green>
+                 <blue>186</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="NoRole">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ToolTipText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>86</red>
+                 <green>148</green>
+                 <blue>242</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string>&amp;Native git/gpg</string>
            </property>
