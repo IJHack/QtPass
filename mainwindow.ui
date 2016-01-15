@@ -252,7 +252,7 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>7</width>
+              <width>6</width>
               <height>20</height>
              </size>
             </property>
@@ -266,11 +266,14 @@
               <height>25</height>
              </size>
             </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::DefaultContextMenu</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/artwork/search.png</pixmap>
+             <pixmap resource="resources.qrc">:/artwork/new blue/search_25_2.png</pixmap>
             </property>
            </widget>
           </item>
@@ -419,12 +422,12 @@
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
-              <normaloff>:/artwork/delete.png</normaloff>:/artwork/delete.png</iconset>
+              <normaloff>:/artwork/new blue/cancel.png</normaloff>:/artwork/new blue/cancel.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>18</width>
-              <height>18</height>
+              <width>25</width>
+              <height>25</height>
              </size>
             </property>
            </widget>
@@ -478,33 +481,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/add.png</normaloff>:/artwork/add.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>25</width>
-                <height>25</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="editButton">
-              <property name="minimumSize">
-               <size>
-                <width>37</width>
-                <height>31</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>Edit</string>
-              </property>
-              <property name="text">
-               <string>Edit</string>
-              </property>
-              <property name="icon">
-               <iconset resource="resources.qrc">
-                <normaloff>:/artwork/edit.png</normaloff>:/artwork/edit.png</iconset>
+                <normaloff>:/artwork/new blue/add.png</normaloff>:/artwork/new blue/add.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -530,7 +507,33 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/delete.png</normaloff>:/artwork/delete.png</iconset>
+                <normaloff>:/artwork/new blue/delete.png</normaloff>:/artwork/new blue/delete.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="editButton">
+              <property name="minimumSize">
+               <size>
+                <width>37</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Edit</string>
+              </property>
+              <property name="text">
+               <string>Edit</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/artwork/new blue/edit.png</normaloff>:/artwork/new blue/edit.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -556,7 +559,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/down_arrow.png</normaloff>:/artwork/down_arrow.png</iconset>
+                <normaloff>:/artwork/new blue/down-arrow.png</normaloff>:/artwork/new blue/down-arrow.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -585,7 +588,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/up_arrow.png</normaloff>:/artwork/up_arrow.png</iconset>
+                <normaloff>:/artwork/new blue/up-arrow.png</normaloff>:/artwork/new blue/up-arrow.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -611,7 +614,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/user.png</normaloff>:/artwork/user.png</iconset>
+                <normaloff>:/artwork/new blue/user.png</normaloff>:/artwork/new blue/user.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -637,7 +640,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/artwork/settings.png</normaloff>:/artwork/settings.png</iconset>
+                <normaloff>:/artwork/new blue/settings.png</normaloff>:/artwork/new blue/settings.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -952,7 +955,7 @@
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
-              <normaloff>:/artwork/key.png</normaloff>:/artwork/key.png</iconset>
+              <normaloff>:/artwork/new blue/key.png</normaloff>:/artwork/new blue/key.png</iconset>
             </property>
             <property name="iconSize">
              <size>
