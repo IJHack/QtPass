@@ -29,7 +29,6 @@
         <file>localization/localization_pl_PL.ts</file>
         <file>localization/localization_sv_SE.ts</file>
         <file>localization/localization_zh_CN.ts</file>
-        <file>localization/localization_ru_RU.ts</file>
         <file>artwork/new blue/cancel.png</file>
         <file>artwork/new blue/delete.png</file>
         <file>artwork/new blue/down-arrow.png</file>
@@ -47,5 +46,6 @@
         <file>artwork/new blue/search_25_1.png</file>
         <file>artwork/new blue/search_25_2.png</file>
         <file>artwork/new blue/add.png</file>
+        <file>localization/localization_ru_RU.ts</file>
     </qresource>
 </RCC>
