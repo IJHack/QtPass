@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -225,7 +225,7 @@
             </palette>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QLabel {background-color: #000000; color: #ffffff;}</string>
            </property>
            <property name="text">
             <string>&amp;Native git/gpg</string>

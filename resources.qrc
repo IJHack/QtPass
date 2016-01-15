@@ -47,5 +47,6 @@
         <file>artwork/new blue/search_25_2.png</file>
         <file>artwork/new blue/add.png</file>
         <file>localization/localization_ru_RU.ts</file>
+        <file>artwork/progress.gif</file>
     </qresource>
 </RCC>

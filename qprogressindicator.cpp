@@ -47,12 +47,12 @@ void QProgressIndicator::setAnimationDelay(int delay) {
 }
 
 void QProgressIndicator::setColor(const QColor &color) {
-  m_color = color;
+    m_color = color;
 
   update();
 }
 
-QSize QProgressIndicator::sizeHint() const { return QSize(20, 20); }
+QSize QProgressIndicator::sizeHint() const { return QSize(10, 10); }
 
 int QProgressIndicator::heightForWidth(int w) const { return w; }
 
@@ -76,10 +76,11 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
 
   int capsuleHeight = outerRadius - innerRadius;
   int capsuleWidth = (width > 32) ? capsuleHeight * .23 : capsuleHeight * .35;
-  int capsuleRadius = capsuleWidth / 2;
+  int capsuleRadius = capsuleWidth / 4;
 
   for (int i = 0; i < 12; ++i) {
-    QColor color = m_color;
+    // QColor color = m_color;
+    QColor color = "#5694F2";
     color.setAlphaF(1.0f - (i / 12.0f));
     p.setPen(Qt::NoPen);
     p.setBrush(color);
@@ -91,4 +92,13 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
                       capsuleRadius);
     p.restore();
   }
+
+
+  /*QGraphicsScene scene;
+  QLabel *gif_anim = new QLabel();
+  QMovie *movie = new QMovie(":/artwork/progress.gif");
+  gif_anim->setMovie(movie);
+  movie->start();
+  QGraphicsProxyWidget *proxy = scene.addWidget(gif_anim);*/
+
 }
