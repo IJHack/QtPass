@@ -2,7 +2,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "ui_keygendialog.h"
-#include "qprogressindicator.h"
+#include <QtGui>
 
 KeygenDialog::KeygenDialog(ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog) {
@@ -98,11 +98,6 @@ void KeygenDialog::done(int r) {
     ui->buttonBox->setEnabled(false);
     ui->checkBox->setEnabled(false);
     ui->plainTextEdit->setEnabled(false);
-
-    QProgressIndicator *pi = new QProgressIndicator();
-    pi->startAnimation();
-    pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
     ui->frame->hide();
     ui->label->setText(
         QString("This operation can take some minutes.<br />") +
@@ -112,7 +107,21 @@ void KeygenDialog::done(int r) {
         "disks) during the prime generation; this gives the random number "
         "generator a better chance to gain enough entropy.");
 
-    this->layout()->addWidget(pi);
+
+    QLabel* label = new QLabel();
+
+    label-> setWindowFlags(Qt::FramelessWindowHint);
+    label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    //label->setGeometry(QRect(100, 100, 200, 200));
+    label->setMask((new QPixmap(":/artwork/progress.gif"))->mask());
+
+    this->layout()->addWidget(label);
+
+    QMovie *movie = new QMovie(":/artwork/progress.gif");
+    label->setMovie(movie);
+    movie->start();
+
+    label->show();
 
     this->show();
     dialog->genKey(ui->plainTextEdit->toPlainText(), this);
