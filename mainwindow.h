@@ -148,6 +148,7 @@ class MainWindow : public QMainWindow {
   bool templateAllFields;
   bool autoPull;
   bool autoPush;
+  bool alwaysOnTop;
   void updateText();
   void executePass(QString, QString = QString());
   void executeWrapper(QString, QString, QString = QString());
