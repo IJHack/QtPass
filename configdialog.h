@@ -77,6 +77,8 @@ class ConfigDialog : public QDialog {
   void autoPull(bool autoPull);
   bool autoPush();
   void autoPush(bool autoPush);
+  bool alwaysOnTop();
+  void alwaysOnTop(bool alwaysOnTop);
 
  protected:
   void closeEvent(QCloseEvent *event);
