@@ -476,7 +476,7 @@
             <bool>false</bool>
            </property>
            <property name="styleSheet">
-            <string notr="true">QLineEdit { background-color: #333333;}</string>
+            <string notr="true">QLineEdit { background-color: #333333; }</string>
            </property>
           </widget>
          </item>
