@@ -44,6 +44,10 @@ fi
   link `/usr/bin/pinentry` to your pinentry application of choice
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
 
+### Git doesn't work on Windows
+
+git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
+
 ### Where can I ask for help?
 
 * Create an [issue](https://github.com/IJHack/qtpass/) issues on github.
