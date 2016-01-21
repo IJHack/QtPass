@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>527</height>
+    <width>561</width>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -659,6 +659,9 @@
             <iconset theme="list-add">
              <normaloff>.</normaloff>.</iconset>
            </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonFollowStyle</enum>
+           </property>
           </widget>
          </item>
          <item row="0" column="1">
@@ -669,6 +672,9 @@
            <property name="icon">
             <iconset theme="list-remove">
              <normaloff>.</normaloff>.</iconset>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonFollowStyle</enum>
            </property>
           </widget>
          </item>
