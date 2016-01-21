@@ -61,6 +61,10 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
        <property name="text">
         <string>X</string>
        </property>
+       <property name="icon">
+        <iconset theme="edit-clear">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
       </widget>
      </item>
      <item>

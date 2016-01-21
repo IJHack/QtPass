@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Tab_Settings">
       <attribute name="title">
@@ -453,7 +453,7 @@
          <item>
           <widget class="QRadioButton" name="radioButtonNative">
            <property name="text">
-            <string>&amp;Native git/gpg</string>
+            <string>Nati&amp;ve git/gpg</string>
            </property>
           </widget>
          </item>
@@ -655,12 +655,20 @@
            <property name="text">
             <string>Add</string>
            </property>
+           <property name="icon">
+            <iconset theme="list-add">
+             <normaloff>.</normaloff>.</iconset>
+           </property>
           </widget>
          </item>
          <item row="0" column="1">
           <widget class="QToolButton" name="deleteButton">
            <property name="text">
             <string>Delete</string>
+           </property>
+           <property name="icon">
+            <iconset theme="list-remove">
+             <normaloff>.</normaloff>.</iconset>
            </property>
           </widget>
          </item>
