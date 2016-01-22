@@ -9,7 +9,7 @@
 
 VERSION    = 1.1.0
 TEMPLATE   = app
-QT        += core gui
+QT        += core gui svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -116,6 +116,7 @@ win32 {
 } else:macx {
     ICON = artwork/icon.icns
     QMAKE_INFO_PLIST = qtpass.plist
+    QMAKE_POST_LINK = cp -r $$PWD/icons $$OUT_PWD/QtPass.app/Contents/MacOS
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
