@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Settings</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#DEDEDE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="QTPass" sketch:type="MSArtboardGroup" transform="translate(-19.000000, -334.000000)">
+            <g id="Icon-Sidebar" sketch:type="MSLayerGroup" transform="translate(20.000000, 100.000000)">
+                <g id="Settings" transform="translate(0.000000, 235.000000)" sketch:type="MSShapeGroup">
+                    <circle id="Oval-4" stroke="#DEDEDE" fill="url(#linearGradient-1)" cx="15" cy="15" r="15"></circle>
+                    <path d="M12.9021568,23 L15,21.2506815 L17.0978432,23 C17.8348766,22.8072581 18.5318091,22.5153595 19.1735312,22.1394136 L19.4198993,19.4198993 L22.1394136,19.1735312 C22.5153595,18.5318091 22.8072581,17.8348766 23,17.0978432 L21.2506815,15 L23,12.9021568 C22.8072581,12.1651234 22.5153595,11.4681909 22.1394136,10.8264688 L19.4198993,10.5801007 L19.1735312,7.86058635 C18.5318091,7.48464054 17.8348766,7.19274192 17.0978432,7 L15,8.74931851 L12.9021568,7 C12.1651234,7.19274192 11.4681909,7.48464054 10.8264688,7.86058635 L10.5801007,10.5801007 L7.86058635,10.8264688 C7.48464054,11.4681909 7.19274192,12.1651234 7,12.9021568 L8.74931851,15 L7,17.0978432 C7.19274192,17.8348766 7.48464054,18.5318091 7.86058635,19.1735312 L10.5801007,19.4198993 L10.8264688,22.1394136 C11.4681909,22.5153595 12.1651234,22.8072581 12.9021568,23 Z M15.1895701,18.9284469 C17.3328964,18.9284469 19.0704056,17.1909377 19.0704056,15.0476114 C19.0704056,12.9042851 17.3328964,11.1667759 15.1895701,11.1667759 C13.0462438,11.1667759 11.3087346,12.9042851 11.3087346,15.0476114 C11.3087346,17.1909377 13.0462438,18.9284469 15.1895701,18.9284469 Z" id="Star-1" fill="#9A9A9A"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

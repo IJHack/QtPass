@@ -15,5 +15,19 @@
         <file>localization/localization_ru_RU.qm</file>
         <file>localization/localization_zh_CN.qm</file>
         <file>localization/localization_he_IL.qm</file>
+        <file>icons/document-new.png</file>
+        <file>icons/document-new.svg</file>
+        <file>icons/document-properties.png</file>
+        <file>icons/document-properties.svg</file>
+        <file>icons/edit-delete.png</file>
+        <file>icons/edit-delete.svg</file>
+        <file>icons/go-bottom.png</file>
+        <file>icons/go-bottom.svg</file>
+        <file>icons/go-top.png</file>
+        <file>icons/go-top.svg</file>
+        <file>icons/properties.png</file>
+        <file>icons/properties.svg</file>
+        <file>icons/x-office-address-book.png</file>
+        <file>icons/x-office-address-book.svg</file>
     </qresource>
 </RCC>
