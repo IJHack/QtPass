@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>User</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="QTPass" sketch:type="MSArtboardGroup" transform="translate(-28.000000, -302.000000)" fill="#9A9A9A">
-            <g id="Icon-Sidebar" sketch:type="MSLayerGroup" transform="translate(20.000000, 100.000000)">
-                <g id="Users" transform="translate(0.000000, 196.000000)" sketch:type="MSShapeGroup">
-                    <path d="M15,14 C17.209139,14 19,12.209139 19,10 C19,7.790861 17.209139,6 15,6 C12.790861,6 11,7.790861 11,10 C11,12.209139 12.790861,14 15,14 Z M19,23.9999982 C18.9988831,23.9999994 18.997766,24 18.9966488,24 L11.0033512,24 C11.002234,24 11.0011169,23.9999994 11,23.9999982 L11,19.5034227 C11,19.2329025 10.7761424,19 10.5,19 C10.2319336,19 10,19.22539 10,19.5034227 L10,23.8280829 C8.83467321,23.4147605 8,22.3027041 8,21.0031303 L8,17.9968697 C8,16.3417443 9.34237885,15 11.0033512,15 L18.9966488,15 C20.6553538,15 22,16.3473909 22,17.9968697 L22,21.0031303 C22,22.3074869 21.1663074,23.4172162 20,23.8289998 L20,19.5034227 C20,19.2329025 19.7761424,19 19.5,19 C19.2319336,19 19,19.22539 19,19.5034227 L19,23.9999983 Z" id="User"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="14" height="18" viewBox="0 0 14 18" xmlns="http://www.w3.org/2000/svg"><title>User</title><path d="M7 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm4 10H3.003 3v-4.497A.507.507 0 0 0 2.5 13c-.268 0-.5.225-.5.503v4.325a3.003 3.003 0 0 1-2-2.825v-3.006A3 3 0 0 1 3.003 9h7.994A3.004 3.004 0 0 1 14 11.997v3.006a2.997 2.997 0 0 1-2 2.826v-4.327a.507.507 0 0 0-.5-.503c-.268 0-.5.225-.5.503V18z" fill="#9A9A9A" fill-rule="evenodd"/></svg>
