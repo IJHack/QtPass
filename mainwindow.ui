@@ -70,7 +70,8 @@
          </property>
          <property name="icon">
           <iconset theme="document-properties">
-           <normaloff>icons/document-properties.svg</normaloff>icons/document-properties.svg</iconset>
+           <normalon>:/icons/icons/document-properties.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -84,7 +85,8 @@
          </property>
          <property name="icon">
           <iconset theme="edit-delete">
-           <normaloff>icons/edit-delete.svg</normaloff>icons/edit-delete.svg</iconset>
+           <normalon>:/icons/icons/edit-delete.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -114,7 +116,8 @@
          </property>
          <property name="icon">
           <iconset theme="go-top">
-           <normaloff>icons/go-top.svg</normaloff>icons/go-top.svg</iconset>
+           <normalon>:/icons/icons/go-top.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -128,7 +131,8 @@
          </property>
          <property name="icon">
           <iconset theme="go-bottom">
-           <normaloff>icons/go-bottom.svg</normaloff>icons/go-bottom.svg</iconset>
+           <normalon>:/icons/icons/go-bottom.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -158,7 +162,8 @@
          </property>
          <property name="icon">
           <iconset theme="x-office-address-book">
-           <normaloff>icons/x-office-address-book.svg</normaloff>icons/x-office-address-book.svg</iconset>
+           <normalon>:/icons/icons/x-office-address-book.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -172,7 +177,8 @@
          </property>
          <property name="icon">
           <iconset theme="properties">
-           <normaloff>icons/properties.svg</normaloff>icons/properties.svg</iconset>
+           <normalon>:/icons/icons/properties.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -254,6 +260,9 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
+           <widget class="QTreeView" name="treeView"/>
+          </item>
+          <item>
            <widget class="QLineEdit" name="lineEdit">
             <property name="minimumSize">
              <size>
@@ -284,9 +293,6 @@
            </widget>
           </item>
          </layout>
-        </item>
-        <item>
-         <widget class="QTreeView" name="treeView"/>
         </item>
        </layout>
       </widget>
@@ -336,7 +342,6 @@ p, li { white-space: pre-wrap; }
  <tabstops>
   <tabstop>lineEdit</tabstop>
   <tabstop>clearButton</tabstop>
-  <tabstop>treeView</tabstop>
   <tabstop>addButton</tabstop>
   <tabstop>editButton</tabstop>
   <tabstop>deleteButton</tabstop>

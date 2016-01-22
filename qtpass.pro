@@ -116,7 +116,7 @@ win32 {
 } else:macx {
     ICON = artwork/icon.icns
     QMAKE_INFO_PLIST = qtpass.plist
-    QMAKE_POST_LINK = cp -r $$PWD/icons $$OUT_PWD/QtPass.app/Contents/MacOS
+    #QMAKE_POST_LINK = cp -r $$PWD/icons $$OUT_PWD/QtPass.app/Contents/MacOS
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
