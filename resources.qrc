@@ -23,7 +23,7 @@
         <file alias="go-bottom.svg">icons/go-bottom.svg</file>
         <file alias="x-office-address-book.svg">icons/x-office-address-book.svg</file>
         <file alias="go-top.svg">icons/go-top.svg</file>
-        <file alias="preferences-system.svg">icons/preferences-system.svg</file>
+        <file alias="application-system.svg">icons/application-system.svg</file>
         <file alias="edit-copy.svg">icons/edit-copy.svg</file>
         <file alias="edit-clear.svg">icons/edit-clear.svg</file>
     </qresource>
