@@ -54,12 +54,24 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>26</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QToolButton" name="clearButton">
        <property name="text">
         <string>X</string>
+       </property>
+       <property name="icon">
+        <iconset theme="edit-clear">
+         <normalon>:/icons/edit-clear.svg</normalon>
+        </iconset>
        </property>
       </widget>
      </item>
