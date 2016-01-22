@@ -55,8 +55,8 @@ MainWindow::MainWindow(QWidget *parent)
   // Add a Actions to the Add-Button
   QIcon addFileIcon = QIcon::fromTheme("file_new");
   QIcon addFolderIcon = QIcon::fromTheme("folder_new");
-  actionAddPassword = new QAction(addFileIcon,tr("Add Password"),this);
-  actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"),this);
+  actionAddPassword = new QAction(addFileIcon, tr("Add Password"), this);
+  actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"), this);
 
   ui->addButton->addAction(actionAddPassword);
   ui->addButton->addAction(actionAddFolder);
@@ -1195,9 +1195,9 @@ void MainWindow::on_deleteButton_clicked() {
             tr("Are you sure you want to delete %1?")
             .arg(QDir::separator() +
             getDir(ui->treeView->currentIndex(), true)),
-            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
       return;
-    else {
+    } else {
       if (useGit) {
         executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
         executeWrapper(gitExecutable,
