@@ -17,12 +17,12 @@
         <file>localization/localization_he_IL.qm</file>
     </qresource>
     <qresource prefix="/icons">
-        <file>icons/document-new.svg</file>
-        <file>icons/document-properties.svg</file>
-        <file>icons/edit-delete.svg</file>
-        <file>icons/go-bottom.svg</file>
-        <file>icons/x-office-address-book.svg</file>
-        <file>icons/go-top.svg</file>
-        <file>icons/properties.svg</file>
+        <file alias="document-new.svg">icons/document-new.svg</file>
+        <file alias="document-properties.svg">icons/document-properties.svg</file>
+        <file alias="edit-delete.svg">icons/edit-delete.svg</file>
+        <file alias="go-bottom.svg">icons/go-bottom.svg</file>
+        <file alias="x-office-address-book.svg">icons/x-office-address-book.svg</file>
+        <file alias="go-top.svg">icons/go-top.svg</file>
+        <file alias="preferences-system.svg">icons/preferences-system.svg</file>
     </qresource>
 </RCC>

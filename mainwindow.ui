@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
+    <width>498</width>
     <height>299</height>
    </rect>
   </property>
@@ -46,7 +46,7 @@
          </property>
          <property name="icon">
           <iconset theme="document-new">
-           <normalon>:/icons/icons/document-new.svg</normalon>
+           <normalon>:/icons/document-new.svg</normalon>
           </iconset>
          </property>
          <property name="popupMode">
@@ -70,7 +70,7 @@
          </property>
          <property name="icon">
           <iconset theme="document-properties">
-           <normalon>:/icons/icons/document-properties.svg</normalon>
+           <normalon>:/icons/document-properties.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -85,7 +85,7 @@
          </property>
          <property name="icon">
           <iconset theme="edit-delete">
-           <normalon>:/icons/icons/edit-delete.svg</normalon>
+           <normalon>:/icons/edit-delete.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -116,7 +116,7 @@
          </property>
          <property name="icon">
           <iconset theme="go-top">
-           <normalon>:/icons/icons/go-top.svg</normalon>
+           <normalon>:/icons/go-top.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -131,7 +131,7 @@
          </property>
          <property name="icon">
           <iconset theme="go-bottom">
-           <normalon>:/icons/icons/go-bottom.svg</normalon>
+           <normalon>:/icons/go-bottom.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -162,7 +162,7 @@
          </property>
          <property name="icon">
           <iconset theme="x-office-address-book">
-           <normalon>:/icons/icons/x-office-address-book.svg</normalon>
+           <normalon>:/icons/x-office-address-book.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -176,8 +176,8 @@
           <string>Config</string>
          </property>
          <property name="icon">
-          <iconset theme="properties">
-           <normalon>:/icons/icons/properties.svg</normalon>
+          <iconset theme="preferences-system">
+           <normalon>:/icons/preferences-system.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
@@ -210,8 +210,7 @@
           <string>Copy Password</string>
          </property>
          <property name="icon">
-          <iconset theme="edit-copy">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="edit-copy"/>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
