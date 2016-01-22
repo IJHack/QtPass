@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>Push</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Tablet-Portrait" sketch:type="MSArtboardGroup" transform="translate(-160.000000, -6.000000)" fill="#9A9A9A">
-            <path d="M172,6 L164,6 L164,12.2222222 L160,12.2222222 L168,20 L176,12.2222222 L172,12.2222222 L172,6 Z" id="Push" sketch:type="MSShapeGroup" transform="translate(168.000000, 13.000000) scale(1, -1) rotate(-180.000000) translate(-168.000000, -13.000000) "></path>
-        </g>
-    </g>
-</svg>
+<svg width="16" height="14" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><title>Push</title><path d="M4 0h8v6.222h4L8 14 0 6.222h4V0z" fill="#9A9A9A" fill-rule="evenodd"/></svg>
