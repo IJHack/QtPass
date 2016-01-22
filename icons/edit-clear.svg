@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="11px" viewBox="0 0 19 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Clear</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Tablet-Portrait" sketch:type="MSArtboardGroup" transform="translate(-120.000000, -5.000000)" fill="#9A9A9A">
+            <path d="M126.823781,5 L137.106867,5 C138.152416,5 139,5.93785381 139,7.06901586 L139,13.9309841 C139,15.07367 138.140631,16 137.106867,16 L126.823781,16 L125.588235,16 L120,10.5 L125.588235,5 L126.823781,5 Z M133.764706,10.2941176 L135.882353,8.17647059 L134.470588,6.76470588 L132.352941,8.88235294 L130.235294,6.76470588 L128.823529,8.17647059 L130.941176,10.2941176 L128.823529,12.4117647 L130.235294,13.8235294 L132.352941,11.7058824 L134.470588,13.8235294 L135.882353,12.4117647 L133.764706,10.2941176 L133.764706,10.2941176 Z" id="Clear" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
