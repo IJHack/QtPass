@@ -9,13 +9,14 @@
 
 VERSION    = 1.1.0
 TEMPLATE   = app
-QT        += core gui svg
+QT        += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 macx {
     TARGET = QtPass
     QMAKE_MAC_SDK = macosx
+    QT += svg
 } else {
     TARGET = qtpass
 }
