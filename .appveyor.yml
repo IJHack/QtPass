@@ -11,6 +11,7 @@ after_build:
  - iscc qtpass.iss
 artifacts:
   - path: Output\qtpass-*.exe
+  - path: release\qtpass.exe
 deploy:
   provider: GitHub
   auth_token:
