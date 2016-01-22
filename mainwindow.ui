@@ -197,8 +197,8 @@
           <string>Config</string>
          </property>
          <property name="icon">
-          <iconset theme="application-system">
-           <normalon>:/icons/application-system.svg</normalon>
+          <iconset theme="applications-system">
+           <normalon>:/icons/applications-system.svg</normalon>
           </iconset>
          </property>
          <property name="toolButtonStyle">
