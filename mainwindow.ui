@@ -41,6 +41,9 @@
          <property name="acceptDrops">
           <bool>false</bool>
          </property>
+         <property name="toolTip">
+          <string>Add</string>
+         </property>
          <property name="text">
           <string>Add</string>
          </property>
@@ -65,6 +68,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="editButton">
+         <property name="toolTip">
+          <string>Edit</string>
+         </property>
          <property name="text">
           <string>Edit</string>
          </property>
@@ -80,6 +86,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="deleteButton">
+         <property name="toolTip">
+          <string>Delete</string>
+         </property>
          <property name="text">
           <string>Delete</string>
          </property>
@@ -111,6 +120,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="pushButton">
+         <property name="toolTip">
+          <string>git push</string>
+         </property>
          <property name="text">
           <string>Push</string>
          </property>
@@ -126,6 +138,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="updateButton">
+         <property name="toolTip">
+          <string>git pull</string>
+         </property>
          <property name="text">
           <string>Update</string>
          </property>
@@ -157,6 +172,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="usersButton">
+         <property name="toolTip">
+          <string>Manage who can read password in folder</string>
+         </property>
          <property name="text">
           <string>Users</string>
          </property>
@@ -172,6 +190,9 @@
        </item>
        <item>
         <widget class="QToolButton" name="configButton">
+         <property name="toolTip">
+          <string>Configuration</string>
+         </property>
          <property name="text">
           <string>Config</string>
          </property>
@@ -280,6 +301,9 @@
               <width>0</width>
               <height>26</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string>Clear search</string>
             </property>
             <property name="text">
              <string>X</string>

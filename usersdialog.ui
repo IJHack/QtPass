@@ -65,6 +65,9 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
      </item>
      <item>
       <widget class="QToolButton" name="clearButton">
+       <property name="toolTip">
+        <string>Clear search</string>
+       </property>
        <property name="text">
         <string>X</string>
        </property>
