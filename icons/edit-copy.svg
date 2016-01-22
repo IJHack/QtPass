@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="15px" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Copy Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Tablet-Portrait" sketch:type="MSArtboardGroup" transform="translate(-144.000000, -3.000000)" fill="#9A9A9A">
+            <path d="M154,5 L154,3 L144,3 L144,15 L146,15 L146,5 L154,5 Z M147,6 L157,6 L157,18 L147,18 L147,6 Z M149,11 L155,11 L155,12 L149,12 L149,11 Z M149,13 L155,13 L155,14 L149,14 L149,13 Z M149,15 L155,15 L155,16 L149,16 L149,15 Z M149,9 L155,9 L155,10 L149,10 L149,9 Z" id="Copy-Icon" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>498</width>
-    <height>299</height>
+    <width>398</width>
+    <height>291</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -210,7 +210,9 @@
           <string>Copy Password</string>
          </property>
          <property name="icon">
-          <iconset theme="edit-copy"/>
+          <iconset theme="edit-copy">
+           <normalon>:/icons/edit-copy.svg</normalon>
+          </iconset>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -241,7 +243,7 @@
          <property name="minimumSize">
           <size>
            <width>100</width>
-           <height>10</height>
+           <height>26</height>
           </size>
          </property>
         </widget>
@@ -256,6 +258,9 @@
       </property>
       <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayoutTree">
+        <property name="spacing">
+         <number>6</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
@@ -263,7 +268,7 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>36</height>
+              <height>26</height>
              </size>
             </property>
            </widget>
@@ -273,7 +278,7 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>36</height>
+              <height>26</height>
              </size>
             </property>
             <property name="text">
@@ -281,7 +286,8 @@
             </property>
             <property name="icon">
              <iconset theme="edit-clear">
-              <normaloff>.</normaloff>.</iconset>
+              <normalon>:/icons/edit-clear.svg</normalon>
+             </iconset>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonIconOnly</enum>
