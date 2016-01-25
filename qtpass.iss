@@ -65,6 +65,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#QtDir}\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#QtDir}\bin\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icudt54.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icuin54.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icuuc54.dll"; DestDir: "{app}"; Flags: ignoreversion
