@@ -22,11 +22,24 @@ Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/Fil
 Installation
 ------------
 
-On most systems all you need is:
-`qmake && make && make install`
+### Dependencies
+
+* QtPass requires Qt 4.8 or later, preferably Qt5.
+* The Linguist package is required to compile the translations.
+* For use of the fallback icons the SVG library is required.
+
+On most *nix systems all you need is:
+```
+qmake && make && make install
+```
 
 On Mac OS X:
-`qmake && make && macdeployqt QtPass.app`
+```
+brew install qt5
+brew link --force qt5
+xcode-select --install
+qmake && make && macdeployqt QtPass.app
+```
 Currently seems to only work with MacGPG2
 
 Security considerations
