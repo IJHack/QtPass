@@ -58,6 +58,18 @@ git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpas
 * Yes, check [passwordstore.org/#migration](http://www.passwordstore.org/#migration)
   for more info.
 
+### I don't see icons on the buttons
+
+You do not have the Qt SVG library installed.
+Please install using your favorite package manager.
+
+### I get icons that do not fit my (X11) default
+
+On some WindowManagers (Cinnamon for example) Qt doesn't know what icon set to use, a trick
+```
+export DESKTOP_SESSION=gnome
+```
+
 ### I don't like the design, what gives?
 
 * It's all on github, clone, change and send a pull request.
