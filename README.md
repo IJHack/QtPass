@@ -22,8 +22,16 @@ Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/Fil
 Installation
 ------------
 
-On most systems all you need is:
-`qmake && make && make install`
+### Dependencies
+
+* QtPass requires Qt 4.8 or later, preferably Qt5.
+* The Linguist package is required to compile the translations.
+* For use of the fallback icons the SVG library is required.
+
+On most *nix systems all you need is:
+```
+qmake && make && make install
+```
 
 On Mac OS X:
 ```
