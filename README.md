@@ -26,7 +26,12 @@ On most systems all you need is:
 `qmake && make && make install`
 
 On Mac OS X:
-`qmake && make && macdeployqt QtPass.app`
+```
+brew install qt5
+brew link --force qt5
+xcode-select --install
+qmake && make && macdeployqt QtPass.app
+```
 Currently seems to only work with MacGPG2
 
 Security considerations
