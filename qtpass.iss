@@ -74,6 +74,7 @@ Source: "{#QtDir}\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
+Source: "{#QtDir}\plugins\iconengines\qsvgicon.dll"; DestDir: "{app}\iconengines\"; Flags: ignoreversion
 
 Source: "release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
