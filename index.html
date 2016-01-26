@@ -45,7 +45,7 @@
     <div class="background"></div>
     <div class="wrapper">
       <header>
-        <h1>QtPass <small>1.0</small></h1>
+        <h1>QtPass <small>1.1</small></h1>
         <p>QtPass is a multi-platform GUI for <a href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 
         <p class="view">
@@ -71,6 +71,7 @@
         <ul>
         <li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
         <li>Cross platform: Linux, BSD, OS X and Windows</li>
+        <li>Using native widgets and iconography where possible</li>
         <li>Reading pass <a href="http://www.passwordstore.org/">password stores</a></li>
         <li>Decrypting and displaying the password and related info</li>
         <li>Editing and adding of passwords and information</li>
@@ -83,16 +84,25 @@
         </ul>
 
         <h2><a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
-        
-        <p>On most systems all you need is:
-            <code>qmake &amp;&amp; make &amp;&amp; make install</code>
-        </p>
-        
-        <p>On MacOsX:
-            <code>qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app -dmg</code><br />
-            Currently seems to only work with MacGPG2
-        </p>
-        
+        <h3><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
+        <ul>
+          <li>QtPass requires Qt 4.8 or later, preferably Qt5.</li>
+          <li>The Linguist package is required to compile the translations.</li>
+          <li>For use of the fallback icons the SVG library is required.</li>
+        </ul>
+
+        <p>On most *nix systems all you need is:</p>
+
+        <pre><code>qmake &amp;&amp; make &amp;&amp; make install</code></pre>
+
+                <p>On Mac OS X:</p>
+
+        <pre><code>brew install qt5
+          brew link --force qt5
+          xcode-select --install
+          qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+
+        <p>Currently seems to only work with MacGPG2</p>
         <h2><a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
 
         <p>Using this program will not magically keep your passwords secure against
