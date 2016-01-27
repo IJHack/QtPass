@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>QtPass GUI for pass, the standard UNIX password manager</title>
@@ -40,183 +40,206 @@
     <meta name="twitter:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
     <meta name="twitter:image:src" content="https://qtpass.org/images/icon.svg">
     <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
-  </head>
-  <body>
-    <div class="background"></div>
-    <div class="wrapper">
-      <header>
+</head>
+<body>
+<div class="background"></div>
+<div class="wrapper">
+    <header>
         <h1>QtPass <small>1.1</small></h1>
         <p>QtPass is a multi-platform GUI for <a href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 
         <p class="view">
-        	<a href="https://github.com/IJHack/qtpass">View the Project on GitHub <small>IJHack/qtpass</small></a> 
+            <a href="https://github.com/IJHack/qtpass">View the Project on GitHub <small>IJHack/qtpass</small></a>
         </p>
 
         <ul>
-          <li><a href="https://github.com/IJHack/qtpass/releases">Download <strong>Releases</strong></a></li>
-          <li><a href="https://github.com/IJHack/qtpass/tarball/master">Latest <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/IJHack/qtpass">View On <strong>GitHub</strong></a></li>
+            <li><a href="https://github.com/IJHack/qtpass/releases">Download <strong>Releases</strong></a></li>
+            <li><a href="https://github.com/IJHack/qtpass/tarball/master">Latest <strong>TAR Ball</strong></a></li>
+            <li><a href="https://github.com/IJHack/qtpass">View On <strong>GitHub</strong></a></li>
         </ul>
-        
-      	<div class="screenshots">   
-      		<img id="qtpass" src="images/qtpass.png" alt="QtPass beta" />
-              	<img id="config" class="hidden" src="images/config.png" alt="QtPass configuration" />
-      	</div>
 
-      </header>
-      <section>
+        <div class="screenshots">
+            <img id="qtpass" src="images/qtpass.png" alt="QtPass beta" />
+            <img id="config" class="hidden" src="images/config.png" alt="QtPass configuration" />
+        </div>
+
+    </header>
+    <section>
 
         <h2><a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
         <ul>
-        <li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
-        <li>Cross platform: Linux, BSD, OS X and Windows</li>
-        <li>Using native widgets and iconography where possible</li>
-        <li>Reading pass <a href="http://www.passwordstore.org/">password stores</a></li>
-        <li>Decrypting and displaying the password and related info</li>
-        <li>Editing and adding of passwords and information</li>
-        <li>Updating to and from a git repository</li>
-        <li>Per-folder user selection for multi recipient encryption</li>
-        <li>Configuration options for backends and executable/folder locations</li>
-        <li>Copying password to clipboard</li>
-        <li>Configurable shoulder surfing protection options</li>
-        <li>Experimental WebDAV support </li>
+            <li>Using <a href="http://www.passwordstore.org/">pass</a> or git and gpg2 directly</li>
+            <li>Cross platform: Linux, BSD, OS X and Windows</li>
+            <li>Using native widgets and iconography where possible</li>
+            <li>Reading pass <a href="http://www.passwordstore.org/">password stores</a></li>
+            <li>Decrypting and displaying the password and related info</li>
+            <li>Editing and adding of passwords and information</li>
+            <li>Updating to and from a git repository</li>
+            <li>Per-folder user selection for multi recipient encryption</li>
+            <li>Configuration options for backends and executable/folder locations</li>
+            <li>Copying password to clipboard</li>
+            <li>Configurable shoulder surfing protection options</li>
+            <li>Experimental WebDAV support </li>
         </ul>
-
         <h2><a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+        <h3><a id="downloads-linux" class="anchor" href="#linux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Linux</h3>
+
+        <h4>Arch</h4>
+        Latest <a href="https://aur.archlinux.org/packages/qtpass/">stable</a> and <a href="https://aur.archlinux.org/packages/qtpass-git">git</a> via <a href="https://aur.archlinux.org/">aur</a>.
+        <pre><code>packer qtpass</code></pre><pre><code>yaourt -S qtpass</code></pre>
+        <h4>Debian</h4>
+        In <a href="https://packages.debian.org/testing/utils/qtpass">testing</a> and <a href="https://packages.debian.org/unstable/utils/qtpass">sid</a>.
+        <pre><code>apt-get install qtpass</code></pre>
+
+        <h4>TODO more</h4>
+
+        <h3><a id="downloads-windows" class="anchor" href="#windows" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Windows</h3>
+
+        <p>Latest stable on the <a href="https://github.com/IJHack/qtpass/releases">releases page</a>, latest build via <a href="https://ci.appveyor.com/project/annejan/qtpass/build/artifacts">AppVeyor</a>.</p>
+
+        Via <a href="https://chocolatey.org/packages/qtpass">Chocolatey</a> <pre><code>choco install qtpass</code></pre>
+
+        <h3><a id="downloads-osx" class="anchor" href="#osx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OSX</h3>
+
+        <p>Latest stable on the <a href="https://github.com/IJHack/qtpass/releases">releases page</a>, latest build via <a href="https://annejan.com/media/qtpass.php">AnneJan</a>.</p>
+
+        Via <a href="caskroom.io">Homebrew Cask</a> <pre><code>brew cask install qtpass</code></pre>
+
         <h3><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
         <ul>
-          <li>QtPass requires Qt 4.8 or later, preferably Qt5.</li>
-          <li>The Linguist package is required to compile the translations.</li>
-          <li>For use of the fallback icons the SVG library is required.</li>
+            <li>QtPass requires Qt 4.8 or later, preferably Qt5.</li>
+            <li>The Linguist package is required to compile the translations.</li>
+            <li>For use of the fallback icons the SVG library is required.</li>
         </ul>
 
         <p>On most *nix systems all you need is:</p>
 
         <pre><code>qmake &amp;&amp; make &amp;&amp; make install</code></pre>
 
-                <p>On Mac OS X:</p>
+        <p>On Mac OS X:</p>
 
         <pre><code>brew install qt5
-brew link --force qt5
-xcode-select --install
-qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+            brew link --force qt5
+            xcode-select --install
+            qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
 
         <p>Currently seems to only work with MacGPG2</p>
         <h2><a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
 
         <p>Using this program will not magically keep your passwords secure against
-        compromised computers even if you use it in combination with a smartcard.</p>
+            compromised computers even if you use it in combination with a smartcard.</p>
 
         <p>It does protect future and changed passwords though against anyone with access to
-        your password store only but not your keys.
-        Used with a smartcard it also protects against anyone just monitoring/copying
-        all files/keystrokes on that machine and such an attacker would only gain access
-        to the passwords you actually use.
-        Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298
-        even without your PIN) all your passwords available to the machine can be
-        decrypted by it, if there is malicious software targeted specifically against
-        it installed (or at least one that knows how to use a smartcard).</p>
+            your password store only but not your keys.
+            Used with a smartcard it also protects against anyone just monitoring/copying
+            all files/keystrokes on that machine and such an attacker would only gain access
+            to the passwords you actually use.
+            Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298
+            even without your PIN) all your passwords available to the machine can be
+            decrypted by it, if there is malicious software targeted specifically against
+            it installed (or at least one that knows how to use a smartcard).</p>
 
         <p>To get better protection out of use with a smartcard even against a targeted
-        attack I can think of at least two options:</p>
+            attack I can think of at least two options:</p>
 
         <ul>
-          <li>The smartcard must require explicit confirmation for each decryption operation.
-          Or if it just provides a counter for decrypted data you could at least notice
-          an attack afterwards, though at quite some effort on your part.</li>
-          <li>Use a different smartcard for each (group of) key.</li>
-          <li>If using a YubiKey or U2F module or similar that requires a "button" press for
-          other authentication methods you can use one OTP/U2F enabled WebDAV account per
-          password (or groups of passwords) as a quite inconvenient workaround.
-          Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
-          (so you would have to run your own server).</li>
+            <li>The smartcard must require explicit confirmation for each decryption operation.
+                Or if it just provides a counter for decrypted data you could at least notice
+                an attack afterwards, though at quite some effort on your part.</li>
+            <li>Use a different smartcard for each (group of) key.</li>
+            <li>If using a YubiKey or U2F module or similar that requires a "button" press for
+                other authentication methods you can use one OTP/U2F enabled WebDAV account per
+                password (or groups of passwords) as a quite inconvenient workaround.
+                Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
+                (so you would have to run your own server).</li>
         </ul>
 
         <h2><a id="planned-features" class="anchor" href="#planned-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planned features</h2>
 
         <ul>
-          <li>Re-encryption after users-change (optional ofcourse).</li>
-          <li>Plugins based on key, format is same as password file.</li>
-          <li>Colour coding folders (possibly disabling folders you can't decrypt).</li>
-          <li>WebDAV (configuration) support.</li>
-          <li>Optional table view of decrypted folder contents.</li>
-          <li>Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?</li>
-          <li>Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files)?</li>
+            <li>Re-encryption after users-change (optional ofcourse).</li>
+            <li>Plugins based on key, format is same as password file.</li>
+            <li>Colour coding folders (possibly disabling folders you can't decrypt).</li>
+            <li>WebDAV (configuration) support.</li>
+            <li>Optional table view of decrypted folder contents.</li>
+            <li>Opening of (basic auth) urls in default browser? Possibly with helper plugin for filling out forms?</li>
+            <li>Some other form of remote storage that allows for accountability / auditing (web API to retreive the .gpg files)?</li>
         </ul>
 
         <h2><a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known issues</h2>
 
         <ul>
-          <li>Filtering (searching) breaks the tree/model sometimes.</li>
-          <li>On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN.</li>
+            <li>Filtering (searching) breaks the tree/model sometimes.</li>
+            <li>On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN.</li>
         </ul>
 
         <h2><a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><span class="octicon octicon-link"></span></a>FAQ</h2>
-        
+
         <h3><a id="user-content-cant-save-a-password" class="anchor" href="#cant-save-a-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can't save a password</h3>
-        
+
         <ul>
-        <li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (eg. yourself)</li>
-        <li>Are you using git? If not, make sure it is switched off.</li>
+            <li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (eg. yourself)</li>
+            <li>Are you using git? If not, make sure it is switched off.</li>
         </ul>
-        
+
         <h3><a id="user-content-i-have-an-issue-with-gnome-keyring" class="anchor" href="#i-have-an-issue-with-gnome-keyring" aria-hidden="true"><span class="octicon octicon-link"></span></a>I have an issue with GNOME keyring</h3>
-        
+
         <ul>
-        <li>Disable GNOME keyring</li>
-        <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
+            <li>Disable GNOME keyring</li>
+            <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
         </ul>
         
         <pre><code>enable-ssh-support
-write-env-file
-use-standard-socket
-default-cache-ttl 600
-max-cache-ttl 7200</code></pre>
-        
+            write-env-file
+            use-standard-socket
+            default-cache-ttl 600
+            max-cache-ttl 7200</code></pre>
+
         <p>Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:</p>
         
         <pre><code># OpenPGP applet support for YubiKey NEO
-if [ ! -f /tmp/gpg-agent.env ]; then
-    killall gpg-agent;
-        eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);
-fi
-. /tmp/gpg-agent.env</code></pre>
-        
+            if [ ! -f /tmp/gpg-agent.env ]; then
+            killall gpg-agent;
+            eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);
+            fi
+            . /tmp/gpg-agent.env</code></pre>
+
         <ul>
-        <li>More info: <a href="https://github.com/IJHack/qtpass/issues/60">issue 60</a> and <a href="https://github.com/IJHack/qtpass/issues/73">issue 73</a></li>
+            <li>More info: <a href="https://github.com/IJHack/qtpass/issues/60">issue 60</a> and <a href="https://github.com/IJHack/qtpass/issues/73">issue 73</a></li>
         </ul>
-        
+
         <h3><a id="user-content-can-i-import-from-keepass-lastpass-or-x" class="anchor" href="#can-i-import-from-keepass-lastpass-or-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can I import from KeePass, LastPass or X?</h3>
-        
+
         <ul>
-        <li>Yes, check <a href="http://www.passwordstore.org/#migration">passwordstore.org/#migration</a> for more info.</li>
+            <li>Yes, check <a href="http://www.passwordstore.org/#migration">passwordstore.org/#migration</a> for more info.</li>
         </ul>
-        
+
         <h3><a id="user-content-where-can-i-ask-for-help" class="anchor" href="#where-can-i-ask-for-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where can I ask for help?</h3>
-        
+
         <ul>
-        <li>Create an <a href="https://github.com/IJHack/qtpass/">issue</a> issues on github.</li>
-        <li>Send an email to <a href="mailto:help@qtpass.org">help@qtpass.org</a></li>
+            <li>Create an <a href="https://github.com/IJHack/qtpass/">issue</a> issues on github.</li>
+            <li>Send an email to <a href="mailto:help@qtpass.org">help@qtpass.org</a></li>
         </ul>
-        
+
         <p>
-        	<br />
-        	<img class="compatible" src="images/linux.png" alt="Linux Compatible" />
-        	<img class="compatible" src="images/win10.png" alt="Windows 10 Compatible" />
-        	<img class="compatible" src="images/osxy.png" alt="OS X Compatible" />
-        	<img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible" />
+            <br />
+            <img class="compatible" src="images/linux.png" alt="Linux Compatible" />
+            <img class="compatible" src="images/win10.png" alt="Windows 10 Compatible" />
+            <img class="compatible" src="images/osxy.png" alt="OS X Compatible" />
+            <img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible" />
         </p>
-      </section>
-      <footer>
+    </section>
+    <footer>
         <p>This project is maintained by <a href="https://github.com/IJHack">IJHack</a></p>
         <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      	<a href="https://travis-ci.org/IJHack/qtpass"><img src="https://api.travis-ci.org/IJHack/qtpass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/qtpass.svg?branch=master"></a>
-        <a href="https://ci.appveyor.com/project/annejan/qtpass"><img src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true" alt="AppVeyor Build Status"/></a>  
-      	<a href="https://scan.coverity.com/projects/ijhack-qtpass"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    <script src="javascripts/main.js"></script>
-  </body>
+        <a href="https://travis-ci.org/IJHack/qtpass"><img src="https://api.travis-ci.org/IJHack/qtpass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/qtpass.svg?branch=master"></a>
+        <a href="https://ci.appveyor.com/project/annejan/qtpass"><img src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true" alt="AppVeyor Build Status"/></a>
+        <a href="https://scan.coverity.com/projects/ijhack-qtpass"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
+    </footer>
+</div>
+<script src="javascripts/scale.fix.js"></script>
+<script src="javascripts/main.js"></script>
+</body>
 </html>
