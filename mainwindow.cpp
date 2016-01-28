@@ -1003,11 +1003,6 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
 }
 
 /**
- * @brief MainWindow::on_clearButton_clicked
- */
-void MainWindow::on_clearButton_clicked() { ui->lineEdit->clear(); }
-
-/**
  * @brief MainWindow::getRecipientList
  * @param for_file
  * @return
