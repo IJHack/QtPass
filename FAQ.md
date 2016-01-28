@@ -71,7 +71,7 @@ export DESKTOP_SESSION=gnome
 ```
 
 * Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3) 
-Then you have to install the current version via your package manager or if this is not upt to date,
+Then you have to install the current version via your package manager or if this is not up-to-date,
 download it from http://www.qt.io/download/ install it and run:
 ```
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
