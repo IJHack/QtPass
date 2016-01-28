@@ -65,7 +65,7 @@ Please install using your favorite package manager.
 
 ### I get icons that do not fit my (X11) default
 
-* On some WindowManagers Qt doesn't know what icon set to use, a trick
+* On some WindowManagers, Qt doesn't know what icon set to use. A trick:
 ```
 export DESKTOP_SESSION=gnome
 ```
