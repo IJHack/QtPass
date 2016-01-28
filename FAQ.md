@@ -65,10 +65,21 @@ Please install using your favorite package manager.
 
 ### I get icons that do not fit my (X11) default
 
-On some WindowManagers (Cinnamon for example) Qt doesn't know what icon set to use, a trick
+* On some WindowManagers, Qt doesn't know what icon set to use. A trick:
 ```
 export DESKTOP_SESSION=gnome
 ```
+
+* Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3) 
+Then you have to install the current version via your package manager or if this is not up-to-date,
+download it from http://www.qt.io/download/ install it and run:
+```
+/PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
+make 
+(sudo) make install
+```
+where `PATHTOYOURINSTALLATION` is the path you selected in the qt installer (default `/home/YOURUSER/Qt/` )
+and 5.5 has to be adapted for the Qt version you downloaded.
 
 ### I don't like the design, what gives?
 
