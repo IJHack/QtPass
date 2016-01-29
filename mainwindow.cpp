@@ -1585,6 +1585,9 @@ void MainWindow::keyPressEvent(QKeyEvent * event) {
     case Qt::Key_Enter:
         on_editButton_clicked();
         break;
+     case Qt::Key_Escape:
+        ui->lineEdit->clear();
+        break;
     default:
         break;
     }
