@@ -61,20 +61,11 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
          <height>26</height>
         </size>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QToolButton" name="clearButton">
-       <property name="toolTip">
-        <string>Clear search</string>
+       <property name="placeholderText">
+        <string>Search Users</string>
        </property>
-       <property name="text">
-        <string>X</string>
-       </property>
-       <property name="icon">
-        <iconset theme="edit-clear">
-         <normalon>:/icons/edit-clear.svg</normalon>
-        </iconset>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -111,7 +102,6 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
  </widget>
  <tabstops>
   <tabstop>lineEdit</tabstop>
-  <tabstop>clearButton</tabstop>
   <tabstop>listWidget</tabstop>
  </tabstops>
  <resources/>
