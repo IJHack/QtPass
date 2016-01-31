@@ -11,6 +11,10 @@ UsersDialog::UsersDialog(QWidget *parent)
   connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this,
           SLOT(itemChange(QListWidgetItem *)));
   userList = NULL;
+
+#if QT_VERSION >= 0x050200
+  ui->lineEdit->setClearButtonEnabled(true);
+#endif
 }
 
 UsersDialog::~UsersDialog() { delete ui; }
