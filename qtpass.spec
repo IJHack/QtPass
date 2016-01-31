@@ -2,12 +2,12 @@
 # Replace the Version number with the current version number (at the time of writing 1.0.5.1) 
 # Check qtpass.pro for the current version. 
 # After that
-#  tar cvfz qtpass-1.0.5.1.tar.gz qtpass-1.0.5.1
-#  rpmbuild -tb qtpass-1.0.5.1.tar.gz
+#  tar cvfz qtpass-1.1.0.tar.gz qtpass-1.1.0
+#  rpmbuild -tb qtpass-1.1.0.tar.gz
 # This should probably be part of a release process.
 
 Name: qtpass		
-Version: 1.0.5.1
+Version: 1.1.0
 Release: 2%{?dist}
 Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.	
 License: GPLv3
@@ -61,6 +61,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Tue Jan 26 2016 Anne Jan Brouwer <qtpass@annejan.com> 1.1.0
+- Updated spec to latest version
+
 * Wed Dec 30 2015 Andrew DeMaria <lostonamountain@gmail.com> 1.0.5.1-2
 - Added desktop/icon resources
 - Added required build deps for a clean build

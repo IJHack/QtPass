@@ -74,7 +74,6 @@ class MainWindow : public QMainWindow {
   void clearPanel();
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void on_clearButton_clicked();
   void on_addButton_clicked();
   void on_deleteButton_clicked();
   void on_editButton_clicked();

@@ -65,6 +65,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#QtDir}\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#QtDir}\bin\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icudt54.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icuin54.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\icuuc54.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -73,6 +74,7 @@ Source: "{#QtDir}\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
+Source: "{#QtDir}\plugins\iconengines\qsvgicon.dll"; DestDir: "{app}\iconengines\"; Flags: ignoreversion
 
 Source: "release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
