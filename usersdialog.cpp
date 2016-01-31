@@ -94,3 +94,13 @@ void UsersDialog::closeEvent(QCloseEvent *event) {
 }
 
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
+
+void UsersDialog::keyPressEvent(QKeyEvent * event) {
+    switch (event->key()) {
+     case Qt::Key_Escape:
+        ui->lineEdit->clear();
+        break;
+    default:
+        break;
+    }
+}
