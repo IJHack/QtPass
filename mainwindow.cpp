@@ -1003,11 +1003,6 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
 }
 
 /**
- * @brief MainWindow::on_clearButton_clicked
- */
-void MainWindow::on_clearButton_clicked() { ui->lineEdit->clear(); }
-
-/**
  * @brief MainWindow::getRecipientList
  * @param for_file
  * @return
@@ -1589,6 +1584,9 @@ void MainWindow::keyPressEvent(QKeyEvent * event) {
     case Qt::Key_Return:
     case Qt::Key_Enter:
         on_editButton_clicked();
+        break;
+     case Qt::Key_Escape:
+        ui->lineEdit->clear();
         break;
     default:
         break;
