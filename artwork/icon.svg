@@ -1,13 +1,1 @@
-<?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="646" viewBox="-1250 -1050 2500 3230">
-<title>Padlocked heart.</title>
-<g transform="translate(0,1136) scale(1,-1)">
-<g stroke-width="360" fill="none">
-<path stroke="#c0c0c0" d="M-630,0V1320A630,630 0 0,0 630,1320V0"/>
-<path stroke="#c0c0c0" stroke-width="180" d="M-630,0V1320A630,630 0 0,0 630,1320V0"/>
-<path stroke="#c0c0c0" d="M-630,0V1320"/><path stroke="#c0c0c0" d="M630,1320V0"/>
-<path stroke="#c0c0c0" d="M-630,1320A630,630 0 0,0 630,1320"/></g>
-<path fill="#19528a" d="M0,-1000L-1000,0A635.6743,635.6743 0 1,0 0,767.327
-A635.6743,635.6743 0 1,0 1000,0Z"/>
-<circle cy="296.5" r="209"/><path d="M-76,220.5L-218.5,-416H218.5L76,220.5H-76Z"/></g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="646" viewBox="-1250 -1050 2500 3230"><title>Padlocked heart.</title><g transform="matrix(1 0 0 -1 0 1136)"><g stroke-width="360" fill="none" stroke="silver"><path d="M-630 0v1320a630 630 0 0 0 1260 0V0"/><path stroke-width="180" d="M-630 0v1320a630 630 0 0 0 1260 0V0"/><path d="M-630 0v1320M630 1320V0M-630 1320a630 630 0 0 0 1260 0"/></g><path fill="#19528a" d="M0-1000L-1000 0A635.674 635.674 0 1 0 0 767.327 635.674 635.674 0 1 0 1000 0z"/><circle cy="296.5" r="209"/><path d="M-76 220.5L-218.5-416h437L76 220.5H-76z"/></g></svg>
