@@ -65,7 +65,7 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
         <string>Search Users</string>
        </property>
        <property name="clearButtonEnabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
