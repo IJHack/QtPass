@@ -59,6 +59,8 @@ class MainWindow : public QMainWindow {
  protected:
   void closeEvent(QCloseEvent *event);
   void keyPressEvent(QKeyEvent * event);
+  void changeEvent(QEvent *event);
+  bool eventFilter(QObject *obj, QEvent *event);
 
 
  private slots:
