@@ -106,6 +106,20 @@ QSettings &MainWindow::getSettings() {
   return *settings;
 }
 
+void MainWindow::changeEvent(QEvent *event)
+{   
+    QWidget::changeEvent(event);
+    if (event->type() == QEvent::ActivationChange)
+    {
+        if(this->isActiveWindow())
+        {
+            ui->lineEdit->selectAll();
+            ui->lineEdit->setFocus();
+        }
+    }
+}
+
+
 void MainWindow::mountWebDav() {
 #ifdef Q_OS_WIN
   char dst[20] = {0};
