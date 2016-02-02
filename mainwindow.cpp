@@ -106,6 +106,20 @@ QSettings &MainWindow::getSettings() {
   return *settings;
 }
 
+void MainWindow::changeEvent(QEvent *event)
+{   
+    QWidget::changeEvent(event);
+    if (event->type() == QEvent::ActivationChange)
+    {
+        if(this->isActiveWindow())
+        {
+            ui->lineEdit->selectAll();
+            ui->lineEdit->setFocus();
+        }
+    }
+}
+
+
 void MainWindow::mountWebDav() {
 #ifdef Q_OS_WIN
   char dst[20] = {0};
@@ -883,6 +897,7 @@ void MainWindow::enableUiElements(bool state) {
   ui->updateButton->setEnabled(state);
   ui->treeView->setEnabled(state);
   ui->lineEdit->setEnabled(state);
+  ui->lineEdit->installEventFilter(this);
   ui->addButton->setEnabled(state);
   ui->usersButton->setEnabled(state);
   ui->configButton->setEnabled(state);
@@ -975,6 +990,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * @brief MainWindow::on_lineEdit_returnPressed
  */
 void MainWindow::on_lineEdit_returnPressed() {
+    qDebug() << "on_lineEdit_returnPressed";
   selectFirstFile();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
@@ -1580,6 +1596,18 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   }
 }
 
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == ui->lineEdit && event->type() == QEvent::KeyPress)
+    {
+        QKeyEvent *key = static_cast<QKeyEvent *>(event);
+        if(key->key() == Qt::Key_Down) {
+            ui->treeView->setFocus();
+        }
+    }
+    return QObject::eventFilter(obj, event);
+}
+
 void MainWindow::keyPressEvent(QKeyEvent * event) {
     switch (event->key()) {
     case Qt::Key_Delete:
@@ -1587,7 +1615,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event) {
         break;
     case Qt::Key_Return:
     case Qt::Key_Enter:
-        on_editButton_clicked();
+        on_treeView_clicked(ui->treeView->currentIndex());
         break;
      case Qt::Key_Escape:
         ui->lineEdit->clear();
