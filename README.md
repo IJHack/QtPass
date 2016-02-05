@@ -28,19 +28,15 @@ Installation
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 
+At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
+
+Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
+On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
+
 On most *nix systems all you need is:
 ```
 qmake && make && make install
 ```
-
-On Mac OS X:
-```
-brew install qt5
-brew link --force qt5
-xcode-select --install
-qmake && make && macdeployqt QtPass.app
-```
-Currently seems to only work with MacGPG2
 
 Security considerations
 -----------------------
