@@ -11,12 +11,12 @@
     <message>
         <location filename="../configdialog.ui" line="506"/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="482"/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="536"/>
@@ -30,11 +30,11 @@
         <location filename="../configdialog.ui" line="557"/>
         <location filename="../configdialog.ui" line="856"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Executable pass</source>
-        <translation type="obsolete">Executable pass</translation>
+        <translation>Executable pass</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="476"/>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../configdialog.ui" line="445"/>
         <source>&amp;Native git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;git/gpg nativo</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="452"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Utilice pass</translation>
     </message>
     <message>
         <source>Executable git</source>
@@ -82,13 +82,13 @@
     <message>
         <location filename="../configdialog.ui" line="718"/>
         <source>Autoclear</source>
-        <translation type="unfinished">Limpado automático</translation>
+        <translation>Limpado automático</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="344"/>
         <location filename="../configdialog.ui" line="752"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir automáticamente ficheiros .gpg-id</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="98"/>
@@ -101,17 +101,17 @@
     <message>
         <location filename="../configdialog.ui" line="62"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comportamento do portapapéis:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="81"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Autolimpeza tras:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="130"/>
         <source>Password Behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comportamento do contrasinal:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="149"/>
@@ -122,204 +122,204 @@
     <message>
         <location filename="../configdialog.ui" line="158"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Autolimpeza do panel tras:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="202"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear contrasinal</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="211"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lonxitude do contrasinal:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="268"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar caracteres:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="322"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="380"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="436"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar programa de almacenamento de contrasinal</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="547"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="642"/>
         <source>Autoclear panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Autolimpeza do panel</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="745"/>
         <source>Use characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar caracteres</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="776"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Sempre en primeiro plano</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="918"/>
         <source>login
 url
 email</source>
-        <translation type="unfinished"></translation>
+        <translation>login url email</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="418"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Progrmas</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="519"/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="566"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="36"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="240"/>
         <location filename="../configdialog.ui" line="602"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="293"/>
         <location filename="../configdialog.ui" line="614"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar pwgen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="392"/>
         <location filename="../configdialog.ui" line="677"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ícona de estado</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="406"/>
         <location filename="../configdialog.ui" line="701"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar ao pechar</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="351"/>
         <location filename="../configdialog.ui" line="759"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar automáticamente</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="358"/>
         <location filename="../configdialog.ui" line="766"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Recibir automáticamente</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="332"/>
         <location filename="../configdialog.ui" line="694"/>
         <source>Use git</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar git</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="303"/>
         <location filename="../configdialog.ui" line="711"/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Incluír símbolos especiais</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="278"/>
         <location filename="../configdialog.ui" line="728"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="399"/>
         <location filename="../configdialog.ui" line="735"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar minimizado</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="786"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfiles</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="820"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="825"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="835"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="849"/>
         <source>Current password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>password-store actual</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="869"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Plantilla</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="890"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>As plantillas engaden campos extra no diálogo de xeración de contrasinais e na vista de contrasinal.</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="899"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar plantilla</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar todas as liñas que comezan por unha palabra seguida dunha coma como campos nos campos de contrasinal, non só os listados</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="909"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar todos os campos da plantilla</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="933"/>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versión</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="842"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="142"/>
