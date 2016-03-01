@@ -260,6 +260,9 @@ bool MainWindow::checkConfig() {
 
   useGit = (settings.value("useGit") == "true");
   usePwgen = (settings.value("usePwgen") == "true");
+  avoidCapitals = settings.value("avoidCapitals").toBool();
+  avoidNumbers = settings.value("avoidNumbers").toBool();
+  lessRandom = settings.value("lessRandom").toBool();
   useSymbols = (settings.value("useSymbols") == "true");
   passwordLength = settings.value("passwordLength").toInt();
   passwordChars = settings.value("passwordChars").toString();
@@ -431,6 +434,9 @@ void MainWindow::config() {
   d->useGit(useGit);
   d->setPwgenPath(pwgenExecutable);
   d->usePwgen(usePwgen);
+  d->avoidCapitals(avoidCapitals);
+  d->avoidNumbers(avoidNumbers);
+  d->lessRandom(lessRandom);
   d->useSymbols(useSymbols);
   d->setPasswordLength(passwordLength);
   d->setPasswordChars(passwordChars);
@@ -464,6 +470,9 @@ void MainWindow::config() {
       useGit = d->useGit();
       pwgenExecutable = d->getPwgenPath();
       usePwgen = d->usePwgen();
+      avoidCapitals = d->avoidCapitals();
+      avoidNumbers = d->avoidNumbers();
+      lessRandom = d->lessRandom();
       useSymbols = d->useSymbols();
       passwordLength = d->getPasswordLength();
       passwordChars = d->getPasswordChars();
@@ -507,6 +516,9 @@ void MainWindow::config() {
       settings.setValue("useGit", useGit ? "true" : "false");
       settings.setValue("pwgenExecutable", pwgenExecutable);
       settings.setValue("usePwgen", usePwgen ? "true" : "false");
+      settings.setValue("avoidCapitals", avoidCapitals ? "true" : "false");
+      settings.setValue("avoidNumbers", avoidNumbers ? "true" : "false");
+      settings.setValue("lessRandom", lessRandom ? "true" : "false");
       settings.setValue("useSymbols", useSymbols ? "true" : "false");
       settings.setValue("passwordLength", passwordLength);
       settings.setValue("passwordChars", passwordChars);
@@ -1752,7 +1764,12 @@ QString MainWindow::generatePassword() {
   QString passwd;
   if (usePwgen) {
     waitFor(2);
-    QString args = (useSymbols ? "--symbols -1 " : "-1 ") +
+    // --secure goes first as it overrides --no-* otherwise
+    QString args = QString("-1 ") +
+                   (lessRandom    ? ""                 : "--secure ") +
+                   (avoidCapitals ? "--no-capitalize " : "--capitalize ") +
+                   (avoidNumbers  ? "--no-numerals "   : "--numerals ") +
+                   (useSymbols    ? "--symbols "       : "") +
                    QString::number(passwordLength);
     currentAction = PWGEN;
     executeWrapper(pwgenExecutable, args);

@@ -141,6 +141,9 @@ class MainWindow : public QMainWindow {
   bool startMinimized;
   bool useGit;
   bool usePwgen;
+  bool avoidCapitals;
+  bool avoidNumbers;
+  bool lessRandom;
   bool useSymbols;
   int passwordLength;
   QString passwordChars;

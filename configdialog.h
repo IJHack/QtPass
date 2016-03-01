@@ -60,10 +60,16 @@ class ConfigDialog : public QDialog {
   QString getPwgenPath();
   void setPwgenPath(QString);
   void usePwgen(bool usePwgen);
+  void avoidCapitals(bool avoidCapitals);
+  void avoidNumbers(bool avoidNumbers);
+  void lessRandom(bool lessRandom);
   void useSymbols(bool useSymbols);
   void setPasswordLength(int pwLen);
   void setPasswordChars(QString);
   bool usePwgen();
+  bool avoidCapitals();
+  bool avoidNumbers();
+  bool lessRandom();
   bool useSymbols();
   int getPasswordLength();
   QString getPasswordChars();
