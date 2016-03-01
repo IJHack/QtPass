@@ -280,11 +280,11 @@
           </widget>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <layout class="QFormLayout" name="formLayout">
            <property name="topMargin">
             <number>0</number>
            </property>
-           <item>
+           <item row="0" column="0">
             <widget class="QCheckBox" name="checkBoxUsePwgen">
              <property name="enabled">
               <bool>true</bool>
@@ -294,13 +294,34 @@
              </property>
             </widget>
            </item>
-           <item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="checkBoxAvoidCapitals">
+             <property name="text">
+              <string>Exclude capital letters</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
             <widget class="QCheckBox" name="checkBoxUseSymbols">
              <property name="enabled">
               <bool>true</bool>
              </property>
              <property name="text">
               <string>Include special symbols </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="checkBoxLessRandom">
+             <property name="text">
+              <string>Generate easy to memorize but less secure passwords</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="checkBoxAvoidNumbers">
+             <property name="text">
+              <string>Exclude numbers</string>
              </property>
             </widget>
            </item>
@@ -826,8 +847,8 @@ email</string>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>204</y>
+     <x>556</x>
+     <y>518</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -842,8 +863,8 @@ email</string>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>204</y>
+     <x>556</x>
+     <y>518</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>

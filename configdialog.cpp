@@ -669,9 +669,13 @@ void ConfigDialog::setPwgenPath(QString pwgen) {
  * @brief ConfigDialog::on_checkBoxUsPwgen_clicked
  */
 void ConfigDialog::on_checkBoxUsePwgen_clicked() {
-  ui->checkBoxUseSymbols->setEnabled(ui->checkBoxUsePwgen->isChecked());
-  ui->lineEditPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
-  ui->labelPasswordChars->setEnabled(!ui->checkBoxUsePwgen->isChecked());
+  bool usePwgen = ui->checkBoxUsePwgen->isChecked();
+  ui->checkBoxAvoidCapitals->setEnabled(usePwgen);
+  ui->checkBoxAvoidNumbers->setEnabled(usePwgen);
+  ui->checkBoxLessRandom->setEnabled(usePwgen);
+  ui->checkBoxUseSymbols->setEnabled(usePwgen);
+  ui->lineEditPasswordChars->setEnabled(!usePwgen);
+  ui->labelPasswordChars->setEnabled(!usePwgen);
 }
 
 /**
@@ -683,6 +687,18 @@ void ConfigDialog::usePwgen(bool usePwgen) {
     usePwgen = false;
   ui->checkBoxUsePwgen->setChecked(usePwgen);
   on_checkBoxUsePwgen_clicked();
+}
+
+void ConfigDialog::avoidCapitals(bool avoidCapitals) {
+  ui->checkBoxAvoidCapitals->setChecked(avoidCapitals);
+}
+
+void ConfigDialog::avoidNumbers(bool avoidNumbers) {
+  ui->checkBoxAvoidNumbers->setChecked(avoidNumbers);
+}
+
+void ConfigDialog::lessRandom(bool lessRandom) {
+  ui->checkBoxLessRandom->setChecked(lessRandom);
 }
 
 /**
@@ -710,6 +726,11 @@ void ConfigDialog::setPasswordChars(QString pwChars) {
  * @return
  */
 bool ConfigDialog::usePwgen() { return ui->checkBoxUsePwgen->isChecked(); }
+
+bool ConfigDialog::avoidCapitals() { return ui->checkBoxAvoidCapitals->isChecked(); }
+bool ConfigDialog::avoidNumbers() { return ui->checkBoxAvoidNumbers->isChecked(); }
+bool ConfigDialog::lessRandom() { return ui->checkBoxLessRandom->isChecked(); }
+
 
 /**
  * @brief ConfigDialog::useSymbols
