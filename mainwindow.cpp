@@ -1204,7 +1204,7 @@ void MainWindow::on_deleteButton_clicked() {
       if (useGit) {
         executeWrapper(gitExecutable, "rm -f \"" + file + '"');
         executeWrapper(gitExecutable,
-                       "commit \"" + file + "\" -m \" Remove for " +
+                       "commit \"" + file + "\" -m \"Remove for " +
                            getFile(ui->treeView->currentIndex(), true) +
                            " using QtPass.\"");
         if (autoPush)
@@ -1227,7 +1227,7 @@ void MainWindow::on_deleteButton_clicked() {
       if (useGit) {
         executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
         executeWrapper(gitExecutable,
-                       "commit \"" + file + "\" -m \" Remove for " +
+                       "commit \"" + file + "\" -m \"Remove for " +
                            getFile(ui->treeView->currentIndex(), true) +
                            " using QtPass.\"");
         if (autoPush)
