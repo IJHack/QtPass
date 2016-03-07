@@ -41,8 +41,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
   } else {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
     QString path = fs->filePath(useIndex);
+    path = QDir(store).relativeFilePath(path);
     path.replace(QRegExp("\\.gpg$"), "");
-    path.replace(QRegExp("^" + store), "");
     retVal = path.contains(filterRegExp());
   }
   return retVal;

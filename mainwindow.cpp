@@ -614,11 +614,11 @@ QString MainWindow::getDir(const QModelIndex &index, bool forPass) {
     return forPass ? "" : abspath;
   QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
   QString filePath =
-      (info.isFile() ? info.absolutePath() : info.absoluteFilePath()) + '/';
+      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());
   if (forPass) {
-    filePath.replace(QRegExp("^" + passStore), "");
-    filePath.replace(QRegExp("^" + abspath), "");
+    filePath = QDir(abspath).relativeFilePath(filePath);
   }
+  filePath += '/';
   return filePath;
 }
 
@@ -628,8 +628,8 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
     return QString();
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
+    filePath = QDir(passStore).relativeFilePath(filePath);
     filePath.replace(QRegExp("\\.gpg$"), "");
-    filePath.replace(QRegExp("^" + passStore), "");
   }
   return filePath;
 }
@@ -1131,9 +1131,8 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
     if (!useWebDav && useGit) {
       if (!overwrite)
         executeWrapper(gitExecutable, "add \"" + file + '"');
-      QString path = file;
+      QString path = QDir(passStore).relativeFilePath(file);
       path.replace(QRegExp("\\.gpg$"), "");
-      path.replace(QRegExp("^" + passStore), "");
       executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" +
                                         (overwrite ? "Edit" : "Add") + " for " +
                                         path + " using QtPass.\"");
