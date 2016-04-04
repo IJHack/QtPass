@@ -1393,9 +1393,11 @@ void MainWindow::on_usersButton_clicked() {
                           tr("Failed to open .gpg-id for writing."));
     return;
   }
+  QString initstring = "";
   bool secret_selected = false;
   foreach(const UserInfo &user, users) {
     if (user.enabled) {
+      initstring += " " + user.key_id;
       gpgId.write((user.key_id + "\n").toUtf8());
       secret_selected |= user.have_secret;
     }
@@ -1407,15 +1409,26 @@ void MainWindow::on_usersButton_clicked() {
         tr("None of the selected keys have a secret key available.\n"
            "You will not be able to decrypt any newly added passwords!"));
   }
-  if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
-    if (addFile)
-      executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
-    QString path = gpgIdFile;
-    path.replace(QRegExp("\\.gpg$"), "");
-    executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
-                                      path + " using QtPass.\"");
-    if (autoPush)
-      on_pushButton_clicked();
+  if (usePass) {
+     QString initDir = currentDir.isEmpty()
+                          ? getDir(ui->treeView->currentIndex(), true)
+                          : currentDir;
+     executePass("init \"" + initDir + "\" " + initstring);
+     qDebug() << initDir + initstring;
+  } else {
+     // TODO reencrypt
+
+
+      if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
+        if (addFile)
+          executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
+        QString path = gpgIdFile;
+        path.replace(QRegExp("\\.gpg$"), "");
+        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
+                                          path + " using QtPass.\"");
+        if (autoPush)
+          on_pushButton_clicked();
+      }
   }
 }
 
