@@ -107,7 +107,7 @@ QSettings &MainWindow::getSettings() {
 }
 
 void MainWindow::changeEvent(QEvent *event)
-{   
+{
     QWidget::changeEvent(event);
     if (event->type() == QEvent::ActivationChange)
     {
@@ -526,7 +526,7 @@ void MainWindow::config() {
       settings.setValue("passTemplate", passTemplate);
       settings.setValue("templateAllFields", templateAllFields);
       settings.setValue("autoPull", autoPull ? "true" : "false");
-      settings.setValue("autoPush", autoPush ? "true" : "false");      
+      settings.setValue("autoPush", autoPush ? "true" : "false");
       settings.setValue("alwaysOnTop", alwaysOnTop ? "true" : "false");
 
       if (alwaysOnTop) {

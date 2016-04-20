@@ -70,12 +70,12 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
-* Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3) 
+* Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3)
 Then you have to install the current version via your package manager or if this is not up-to-date,
 download it from http://www.qt.io/download/ install it and run:
 ```
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
-make 
+make
 (sudo) make install
 ```
 where `PATHTOYOURINSTALLATION` is the path you selected in the qt installer (default `/home/YOURUSER/Qt/` )

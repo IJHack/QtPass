@@ -151,13 +151,13 @@
          <string>#           QtPass GPG key generator
 #
 #      first test version please comment
-# 
+#
 %echo Generating a default key
 Key-Type: default
 Subkey-Type: default
-Name-Real: 
+Name-Real:
 Name-Comment: QtPass
-Name-Email: 
+Name-Email:
 Expire-Date: 0
 %no-protection
 # Do a commit here, so that we can later print &quot;done&quot; :-)
