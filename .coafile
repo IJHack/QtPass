@@ -1,0 +1,12 @@
+[Default]
+bears = SpaceConsistencyBear
+files = *.cpp, *.h, *.ui
+use_spaces = true
+default_actions = SpaceConsistencyBear: ApplyPatchAction
+
+[DOCS]
+bears = SpaceConsistencyBear
+files = *.md
+
+[commit]
+bears = GitCommitBear
