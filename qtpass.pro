@@ -48,7 +48,7 @@ FORMS     += mainwindow.ui \
              keygendialog.ui \
              passworddialog.ui
 
-QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+clang|gcc:QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 
 nosingleapp {
     QMAKE_CXXFLAGS += -DSINGLE_APP=0
@@ -112,7 +112,8 @@ win32 {
     static {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }
-    QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
+    gcc:QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
+    msvc:QMAKE_LFLAGS += /DYNAMICBASE /NXCOMPAT
     LIBS    += -lmpr
 } else:macx {
     ICON = artwork/icon.icns
