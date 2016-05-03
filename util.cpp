@@ -6,8 +6,9 @@
 #include <QDir>
 #ifdef Q_OS_WIN
 #include <windows.h>
-#endif
+#else
 #include <sys/time.h>
+#endif
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
