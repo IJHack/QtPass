@@ -3,7 +3,8 @@ debian/qtpass*
 debian/files
 build-stamp
 qtpass
-QtPass.*
+QtPass.app
+QtPass.dmg
 qtpass.pro.user
 qtpass.xcodeproj/project.xcworkspace/xcuserdata/*
 qtpass.xcodeproj/xcuserdata/*
