@@ -55,7 +55,7 @@ git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpas
 
 ### Can I import from KeePass, LastPass or X?
 
-* Yes, check [passwordstore.org/#migration](http://www.passwordstore.org/#migration)
+* Yes, check [passwordstore.org/#migration](https://www.passwordstore.org/#migration)
   for more info.
 
 ### I don't see icons on the buttons
@@ -72,7 +72,7 @@ export DESKTOP_SESSION=gnome
 
 * Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3)
 Then you have to install the current version via your package manager or if this is not up-to-date,
-download it from http://www.qt.io/download/ install it and run:
+download it from https://www.qt.io/download/ install it and run:
 ```
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
 make
@@ -97,4 +97,4 @@ and 5.5 has to be adapted for the Qt version you downloaded.
   * Participate in our bug bounty, you submit an issue and help us
     fix it, I send you a bounty.
 * Money:
-  * IJhack takes donations in [bitcoin](https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb)
+  * IJhack takes donations in [Bitcoin](https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb)
