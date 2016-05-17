@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>qtpass.desktop</id>
+  <name>QtPass</name>
+  <summary>GUI for the standard unix password store</summary>
+  <summary xml:lang="nl_NL">GUI voor de standaard unix wachtwoord opslag</summary>
+  <developer_name>IJHack</developer_name>
+  <description>
+   <p>
+    QtPass is a multi-platform GUI for pass, the standard unix password manager.
+   </p>
+   <p>Features:</p>
+   <ul>
+    <li>Using pass or git and gpg2 directly</li>
+    <li>Cross platform: Linux, BSD, OS X and Windows</li>
+    <li>Using native widgets and iconography where possible</li>
+    <li>Reading pass password stores</li>
+    <li>Decrypting and displaying the password and related info</li>
+    <li>Editing and adding of passwords and information</li>
+    <li>Updating to and from a git repository</li>
+    <li>Per-folder user selection for multi recipient encryption</li>
+    <li>Configuration options for backends and executable/folder locations</li>
+    <li>Copying password to clipboard</li>
+    <li>Configurable shoulder surfing protection options</li>
+    <li>Experimental WebDAV support</li>
+   </ul>
+  </description>
+  <!--<description xml:lang="nl_NL"></description>--><!-- other languages are supported -->
+  <metadata_license>GFDL-1.3</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <url type="bugtracker">https://github.com/IJHack/qtpass/issues</url>
+  <!--<url type="donation"></url>-->
+  <url type="faq">https://github.com/IJHack/qtpass/blob/master/FAQ.md</url>
+  <!--<url type="help"></url>-->
+  <url type="homepage">https://qtpass.org/</url>
+  <project_group>IJHack</project_group>
+  <screenshots>
+    <screenshot type="default">
+      <!--<caption></caption> -->
+      <image width="768" height="596">https://qtpass.org/images/qtpass.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Configuration</caption>
+      <caption xml:lang="nl_NL">Configuratie</caption>
+      <image width="900" height="637">https://qtpass.org/images/config.png</image>
+    </screenshot>
+  </screenshots>
+</component>
