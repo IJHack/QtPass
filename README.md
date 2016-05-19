@@ -5,7 +5,7 @@ QtPass
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 
-QtPass is a GUI for [pass](http://www.passwordstore.org/),
+QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
 
 Features
