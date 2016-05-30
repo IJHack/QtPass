@@ -200,19 +200,19 @@ qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
         </ul>
         
         <pre><code>enable-ssh-support
-            write-env-file
-            use-standard-socket
-            default-cache-ttl 600
-            max-cache-ttl 7200</code></pre>
+write-env-file
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200</code></pre>
 
         <p>Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:</p>
         
         <pre><code># OpenPGP applet support for YubiKey NEO
-            if [ ! -f /tmp/gpg-agent.env ]; then
-            killall gpg-agent;
-            eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);
-            fi
-            . /tmp/gpg-agent.env</code></pre>
+if [ ! -f /tmp/gpg-agent.env ]; then
+  killall gpg-agent;
+  eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);
+fi
+. /tmp/gpg-agent.env</code></pre>
 
         <ul>
             <li>More info: <a href="https://github.com/IJHack/qtpass/issues/60">issue 60</a> and <a href="https://github.com/IJHack/qtpass/issues/73">issue 73</a></li>
