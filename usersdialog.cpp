@@ -1,7 +1,7 @@
 #include "usersdialog.h"
-#include <QRegExp>
-#include <QDebug>
 #include "ui_usersdialog.h"
+#include <QDebug>
+#include <QRegExp>
 
 UsersDialog::UsersDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog) {
@@ -99,12 +99,12 @@ void UsersDialog::closeEvent(QCloseEvent *event) {
 
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
-void UsersDialog::keyPressEvent(QKeyEvent * event) {
-    switch (event->key()) {
-     case Qt::Key_Escape:
-        ui->lineEdit->clear();
-        break;
-    default:
-        break;
-    }
+void UsersDialog::keyPressEvent(QKeyEvent *event) {
+  switch (event->key()) {
+  case Qt::Key_Escape:
+    ui->lineEdit->clear();
+    break;
+  default:
+    break;
+  }
 }

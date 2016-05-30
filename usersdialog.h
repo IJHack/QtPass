@@ -1,11 +1,11 @@
 #ifndef USERSDIALOG_H_
 #define USERSDIALOG_H_
 
+#include <QCloseEvent>
+#include <QDateTime>
 #include <QDialog>
 #include <QList>
 #include <QStandardItemModel>
-#include <QCloseEvent>
-#include <QDateTime>
 
 namespace Ui {
 class UsersDialog;
@@ -28,25 +28,25 @@ struct UserInfo {
 class UsersDialog : public QDialog {
   Q_OBJECT
 
- public:
+public:
   explicit UsersDialog(QWidget *parent = 0);
   ~UsersDialog();
   void setUsers(QList<UserInfo> *);
 
- protected:
+protected:
   void closeEvent(QCloseEvent *event);
-  void keyPressEvent(QKeyEvent * event);
+  void keyPressEvent(QKeyEvent *event);
 
- private slots:
+private slots:
   void itemChange(QListWidgetItem *item);
   void on_clearButton_clicked();
   void on_lineEdit_textChanged(const QString &filter);
   void on_checkBox_clicked();
 
- private:
+private:
   Ui::UsersDialog *ui;
   QList<UserInfo> *userList;
   void populateList(const QString &filter);
 };
 
-#endif  // USERSDIALOG_H_
+#endif // USERSDIALOG_H_

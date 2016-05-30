@@ -2,23 +2,23 @@
 #define SINGLEAPPLICATION_H_
 
 #include <QApplication>
-#include <QSharedMemory>
 #include <QLocalServer>
+#include <QSharedMemory>
 
 class SingleApplication : public QApplication {
   Q_OBJECT
- public:
+public:
   SingleApplication(int &argc, char *argv[], const QString uniqueKey);
   bool isRunning();
   bool sendMessage(const QString &message);
 
- public slots:
+public slots:
   void receiveMessage();
 
- signals:
+signals:
   void messageAvailable(QString message);
 
- private:
+private:
   bool _isRunning;
   QString _uniqueKey;
   QSharedMemory sharedMemory;
@@ -27,4 +27,4 @@ class SingleApplication : public QApplication {
   static const int timeout = 1000;
 };
 
-#endif  // SINGLEAPPLICATION_H_
+#endif // SINGLEAPPLICATION_H_

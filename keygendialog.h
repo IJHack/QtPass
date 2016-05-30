@@ -1,9 +1,9 @@
 #ifndef KEYGENDIALOG_H_
 #define KEYGENDIALOG_H_
 
-#include <QDialog>
-#include <QCloseEvent>
 #include "configdialog.h"
+#include <QCloseEvent>
+#include <QDialog>
 
 namespace Ui {
 class KeygenDialog;
@@ -12,21 +12,21 @@ class KeygenDialog;
 class KeygenDialog : public QDialog {
   Q_OBJECT
 
- public:
+public:
   explicit KeygenDialog(ConfigDialog *parent = 0);
   ~KeygenDialog();
 
- protected:
+protected:
   void closeEvent(QCloseEvent *event);
 
- private slots:
+private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   void on_checkBox_stateChanged(int arg1);
   void on_email_textChanged(const QString &arg1);
   void on_name_textChanged(const QString &arg1);
 
- private:
+private:
   Ui::KeygenDialog *ui;
   void replace(QString, QString);
   void done(int r);
@@ -34,4 +34,4 @@ class KeygenDialog : public QDialog {
   ConfigDialog *dialog;
 };
 
-#endif  // KEYGENDIALOG_H_
+#endif // KEYGENDIALOG_H_

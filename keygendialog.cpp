@@ -1,8 +1,8 @@
 #include "keygendialog.h"
+#include "qprogressindicator.h"
+#include "ui_keygendialog.h"
 #include <QDebug>
 #include <QMessageBox>
-#include "ui_keygendialog.h"
-#include "qprogressindicator.h"
 
 KeygenDialog::KeygenDialog(ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog) {
@@ -56,7 +56,7 @@ void KeygenDialog::replace(QString key, QString value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
   QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
-  foreach(QString line, lines) {
+  foreach (QString line, lines) {
     line.replace(QRegExp(key + ":.*"), key + ": " + value);
     if (key == "Passphrase")
       line.replace("%no-protection", "Passphrase: " + value);
@@ -73,7 +73,7 @@ void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
   QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
-  foreach(QString line, lines) {
+  foreach (QString line, lines) {
     bool remove = false;
     if (!enable) {
       if (line.indexOf("%no-protection") == 0)
@@ -93,7 +93,7 @@ void KeygenDialog::no_protection(bool enable) {
  * @param r
  */
 void KeygenDialog::done(int r) {
-  if (QDialog::Accepted == r) {  // ok was pressed
+  if (QDialog::Accepted == r) { // ok was pressed
     ui->widget->setEnabled(false);
     ui->buttonBox->setEnabled(false);
     ui->checkBox->setEnabled(false);
@@ -116,7 +116,7 @@ void KeygenDialog::done(int r) {
 
     this->show();
     dialog->genKey(ui->plainTextEdit->toPlainText(), this);
-  } else {  // cancel, close or exc was pressed
+  } else { // cancel, close or exc was pressed
     QDialog::done(r);
     return;
   }

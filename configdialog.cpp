@@ -1,10 +1,10 @@
 #include "configdialog.h"
-#include "ui_configdialog.h"
-#include "mainwindow.h"
 #include "keygendialog.h"
+#include "mainwindow.h"
+#include "ui_configdialog.h"
 #include <QDebug>
-#include <QMessageBox>
 #include <QDir>
+#include <QMessageBox>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
@@ -203,7 +203,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty())  // TODO(annejan) call check
+  if (!store.isEmpty()) // TODO(annejan) call check
     ui->storePath->setText(store);
 }
 
@@ -451,7 +451,7 @@ void ConfigDialog::on_addButton_clicked() {
  * @brief ConfigDialog::on_deleteButton_clicked
  */
 void ConfigDialog::on_deleteButton_clicked() {
-  QSet<int> selectedRows;  // we use a set to prevent doubles
+  QSet<int> selectedRows; // we use a set to prevent doubles
   QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
   if (itemList.count() == 0) {
     QMessageBox::warning(this, tr("No profile selected"),
@@ -459,13 +459,13 @@ void ConfigDialog::on_deleteButton_clicked() {
     return;
   }
   QTableWidgetItem *item;
-  foreach(item, itemList)
+  foreach (item, itemList)
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.toList();
   qSort(rows.begin(), rows.end());
   // now actually do the removing:
-  foreach(int row, rows)
+  foreach (int row, rows)
     ui->profileTable->removeRow(row);
   if (ui->profileTable->rowCount() < 1)
     ui->deleteButton->setEnabled(false);
@@ -727,10 +727,13 @@ void ConfigDialog::setPasswordChars(QString pwChars) {
  */
 bool ConfigDialog::usePwgen() { return ui->checkBoxUsePwgen->isChecked(); }
 
-bool ConfigDialog::avoidCapitals() { return ui->checkBoxAvoidCapitals->isChecked(); }
-bool ConfigDialog::avoidNumbers() { return ui->checkBoxAvoidNumbers->isChecked(); }
+bool ConfigDialog::avoidCapitals() {
+  return ui->checkBoxAvoidCapitals->isChecked();
+}
+bool ConfigDialog::avoidNumbers() {
+  return ui->checkBoxAvoidNumbers->isChecked();
+}
 bool ConfigDialog::lessRandom() { return ui->checkBoxLessRandom->isChecked(); }
-
 
 /**
  * @brief ConfigDialog::useSymbols
@@ -861,7 +864,7 @@ void ConfigDialog::templateAllFields(bool templateAll) {
  * @param alwaysOnTop
  */
 void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
-    ui->checkBoxAlwaysOnTop->setChecked(alwaysOnTop);
+  ui->checkBoxAlwaysOnTop->setChecked(alwaysOnTop);
 }
 
 /**
@@ -869,5 +872,5 @@ void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
  * @return
  */
 bool ConfigDialog::alwaysOnTop() {
-    return ui->checkBoxAlwaysOnTop->isChecked();
+  return ui->checkBoxAlwaysOnTop->isChecked();
 }

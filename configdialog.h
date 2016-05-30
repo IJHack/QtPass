@@ -1,11 +1,11 @@
 #ifndef CONFIGDIALOG_H_
 #define CONFIGDIALOG_H_
 
+#include "mainwindow.h"
+#include <QCloseEvent>
 #include <QDialog>
 #include <QFileDialog>
 #include <QTableWidgetItem>
-#include <QCloseEvent>
-#include "mainwindow.h"
 
 namespace Ui {
 struct UserInfo;
@@ -16,7 +16,7 @@ class ConfigDialog;
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
- public:
+public:
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog();
   void setPassPath(QString);
@@ -86,10 +86,10 @@ class ConfigDialog : public QDialog {
   bool alwaysOnTop();
   void alwaysOnTop(bool alwaysOnTop);
 
- protected:
+protected:
   void closeEvent(QCloseEvent *event);
 
- private slots:
+private slots:
   void on_radioButtonNative_clicked();
   void on_radioButtonPass_clicked();
   void on_toolButtonGit_clicked();
@@ -107,7 +107,7 @@ class ConfigDialog : public QDialog {
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
 
- private:
+private:
   QScopedPointer<Ui::ConfigDialog> ui;
   void setGroupBoxState();
   QString selectExecutable();
@@ -118,4 +118,4 @@ class ConfigDialog : public QDialog {
   MainWindow *mainWindow;
 };
 
-#endif  // CONFIGDIALOG_H_
+#endif // CONFIGDIALOG_H_

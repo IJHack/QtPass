@@ -1,15 +1,15 @@
 #ifndef MAINWINDOW_H_
 #define MAINWINDOW_H_
 
-#include <QMainWindow>
-#include <QTreeView>
+#include "storemodel.h"
+#include "trayicon.h"
 #include <QFileSystemModel>
+#include <QMainWindow>
 #include <QProcess>
 #include <QQueue>
 #include <QSettings>
 #include <QTimer>
-#include "storemodel.h"
-#include "trayicon.h"
+#include <QTreeView>
 #if SINGLE_APP
 #include "singleapplication.h"
 #else
@@ -33,7 +33,7 @@ class MainWindow : public QMainWindow {
 
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
- public:
+public:
   enum clipBoardType {
     CLIPBOARD_NEVER = 0,
     CLIPBOARD_ALWAYS = 1,
@@ -56,14 +56,13 @@ class MainWindow : public QMainWindow {
   void config();
   void executePassGitInit();
 
- protected:
+protected:
   void closeEvent(QCloseEvent *event);
-  void keyPressEvent(QKeyEvent * event);
+  void keyPressEvent(QKeyEvent *event);
   void changeEvent(QEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
 
-
- private slots:
+private slots:
   void on_updateButton_clicked();
   void on_pushButton_clicked();
   void on_treeView_clicked(const QModelIndex &index);
@@ -90,7 +89,7 @@ class MainWindow : public QMainWindow {
   void focusInput();
   void copyPasswordToClipboard();
 
- private:
+private:
   QAction *actionAddPassword;
   QAction *actionAddFolder;
 
@@ -179,4 +178,4 @@ class MainWindow : public QMainWindow {
   const QString &getClippedPassword();
 };
 
-#endif  // MAINWINDOW_H_
+#endif // MAINWINDOW_H_
