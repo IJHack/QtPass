@@ -1177,7 +1177,6 @@ void MainWindow::on_addButton_clicked() {
   setPassword(file, false, true);
 }
 
-
 /**
  * @brief MainWindow::on_deleteButton_clicked
  */
@@ -1219,26 +1218,41 @@ void MainWindow::on_deleteButton_clicked() {
     if (QMessageBox::question(
             this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?")
-            .arg(QDir::separator() +
-            getDir(ui->treeView->currentIndex(), true)),
+                .arg(QDir::separator() +
+                     getDir(ui->treeView->currentIndex(), true)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
       return;
     } else {
-      if (useGit) {
-        executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
-        executeWrapper(gitExecutable,
-                       "commit \"" + file + "\" -m \"Remove for " +
-                           getFile(ui->treeView->currentIndex(), true) +
-                           " using QtPass.\"");
-        if (autoPush)
+      if (usePass) {
+        currentAction = DELETE;
+        executePass("rm -rf \"" + file + '"');
+        if (useGit && autoPush) {
           on_pushButton_clicked();
+        }
       } else {
+        if (useGit) {
+          executeWrapper(gitExecutable, "rm -rf \"" + file + '"');
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-        QDir dir(file);
-        dir.removeRecursively();
+          QDir dir(file);
+          dir.removeRecursively();
 #else
-        removeDir(passStore + file);
+          removeDir(passStore + file);
 #endif
+          executeWrapper(gitExecutable,
+                         "commit \"" + file + "\" -m \"Remove for " +
+                             getFile(ui->treeView->currentIndex(), true) +
+                             " using QtPass.\"");
+          if (autoPush) {
+            on_pushButton_clicked();
+          }
+        } else {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+          QDir dir(file);
+          dir.removeRecursively();
+#else
+          removeDir(passStore + file);
+#endif
+        }
       }
     }
   }
