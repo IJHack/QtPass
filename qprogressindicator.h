@@ -1,8 +1,8 @@
 #ifndef QPROGRESSINDICATOR_H_
 #define QPROGRESSINDICATOR_H_
 
-#include <QWidget>
 #include <QColor>
+#include <QWidget>
 
 /*!
     \class QProgressIndicator
@@ -20,7 +20,7 @@ class QProgressIndicator : public QWidget {
                  setDisplayedWhenStopped)
   Q_PROPERTY(QColor color READ color WRITE setColor)
 
- public:
+public:
   explicit QProgressIndicator(QWidget *parent = 0);
 
   /*! Returns the delay between animation steps.
@@ -53,7 +53,7 @@ class QProgressIndicator : public QWidget {
   virtual QSize sizeHint() const;
   int heightForWidth(int w) const;
 
- public slots:
+public slots:
   /*! Starts the spin animation.
       \sa stopAnimation isAnimated
    */
@@ -84,11 +84,11 @@ class QProgressIndicator : public QWidget {
    */
   void setColor(const QColor &color);
 
- protected:
+protected:
   virtual void timerEvent(QTimerEvent *event);
   virtual void paintEvent(QPaintEvent *event);
 
- private:
+private:
   int m_angle;
   int m_timerId;
   int m_delay;
@@ -96,4 +96,4 @@ class QProgressIndicator : public QWidget {
   QColor m_color;
 };
 
-#endif  // QPROGRESSINDICATOR_H_
+#endif // QPROGRESSINDICATOR_H_

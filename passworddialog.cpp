@@ -1,8 +1,8 @@
 #include "passworddialog.h"
+#include "ui_passworddialog.h"
+#include <QDebug>
 #include <QLabel>
 #include <QLineEdit>
-#include <QDebug>
-#include "ui_passworddialog.h"
 
 PasswordDialog::PasswordDialog(MainWindow *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog) {
@@ -43,7 +43,7 @@ void PasswordDialog::setPassword(QString password) {
         if (token.startsWith(widget->objectName() + ':')) {
           tokens.removeAt(j);
           QString value = token.remove(0, widget->objectName().length() + 1);
-          reinterpret_cast<QLineEdit*>(widget)->setText(value);
+          reinterpret_cast<QLineEdit *>(widget)->setText(value);
         }
       }
       previous = widget;
@@ -56,7 +56,7 @@ void PasswordDialog::setPassword(QString password) {
           QString field = token.left(colon);
           QString value = token.right(token.length() - colon - 1);
           if (!passTemplate.contains(field) && value.startsWith("//"))
-            continue;  // colon is probably from a url
+            continue; // colon is probably from a url
           QLineEdit *line = new QLineEdit();
           line->setObjectName(field);
           line->setText(value);
@@ -64,7 +64,7 @@ void PasswordDialog::setPassword(QString password) {
           setTabOrder(previous, line);
           previous = line;
           tokens.removeAt(j);
-          --j;  // tokens.length() also got shortened by the remove..
+          --j; // tokens.length() also got shortened by the remove..
         }
       }
     }
@@ -79,7 +79,7 @@ QString PasswordDialog::getPassword() {
     if (item == NULL)
       continue;
     QWidget *widget = item->widget();
-    QString text = reinterpret_cast<QLineEdit*>(widget)->text();
+    QString text = reinterpret_cast<QLineEdit *>(widget)->text();
     if (text.isEmpty())
       continue;
     passFile += widget->objectName() + ":" + text + "\n";
@@ -91,7 +91,7 @@ QString PasswordDialog::getPassword() {
 void PasswordDialog::setTemplate(QString rawFields) {
   fields = rawFields.split('\n');
   QWidget *previous = ui->checkBoxShow;
-  foreach(QString field, fields) {
+  foreach (QString field, fields) {
     if (field.isEmpty())
       continue;
     QLineEdit *line = new QLineEdit();

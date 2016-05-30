@@ -1,8 +1,8 @@
 #ifndef PASSWORDDIALOG_H_
 #define PASSWORDDIALOG_H_
 
-#include <QDialog>
 #include "mainwindow.h"
+#include <QDialog>
 
 namespace Ui {
 class PasswordDialog;
@@ -11,7 +11,7 @@ class PasswordDialog;
 class PasswordDialog : public QDialog {
   Q_OBJECT
 
- public:
+public:
   explicit PasswordDialog(MainWindow *parent = 0);
   ~PasswordDialog();
   void setPassword(QString);
@@ -21,11 +21,11 @@ class PasswordDialog : public QDialog {
   void useTemplate(bool useTemplate);
   void templateAll(bool templateAll);
 
- private slots:
+private slots:
   void on_checkBoxShow_stateChanged(int arg1);
   void on_createPasswordButton_clicked();
 
- private:
+private:
   Ui::PasswordDialog *ui;
   MainWindow *mainWindow;
   QString passTemplate;
@@ -34,4 +34,4 @@ class PasswordDialog : public QDialog {
   bool allFields;
 };
 
-#endif  // PASSWORDDIALOG_H_
+#endif // PASSWORDDIALOG_H_

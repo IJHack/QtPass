@@ -1,9 +1,9 @@
 #include "util.h"
 #include <QDebug>
+#include <QDir>
 #include <QFileInfo>
 #include <QProcessEnvironment>
 #include <QString>
-#include <QDir>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else
@@ -85,7 +85,7 @@ QString Util::findBinaryInPath(QString binary) {
     }
 #endif
 
-    foreach(QString entry, entries) {
+    foreach (QString entry, entries) {
       QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
 #ifdef Q_OS_WIN
       if (!qfi->exists())

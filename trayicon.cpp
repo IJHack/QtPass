@@ -64,7 +64,7 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   case QSystemTrayIcon::MiddleClick:
     showMessage("test", "test msg", 1000);
     break;
-  default:{};
+  default: {};
   }
 }
 

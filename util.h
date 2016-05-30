@@ -1,11 +1,11 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 
-#include <QString>
 #include <QProcessEnvironment>
+#include <QString>
 
 class Util {
- public:
+public:
   static QString findBinaryInPath(QString binary);
   static QString findPasswordStore();
   static QString normalizeFolderPath(QString path);
@@ -13,10 +13,10 @@ class Util {
                           QString gpgExecutable);
   static void qSleep(int ms);
 
- private:
+private:
   static void initialiseEnvironment();
   static QProcessEnvironment _env;
   static bool _envInitialised;
 };
 
-#endif  // UTIL_H_
+#endif // UTIL_H_
