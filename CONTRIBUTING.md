@@ -1,6 +1,6 @@
 # Contributing
 
-Make sure you have read the [FAQ](doc/FAQ.md)
+Make sure you have read the [FAQ](docs/FAQ.md)
 
 Thank you for wanting to contribute to making QtPass awesome.
 
