@@ -20,8 +20,9 @@
  *
  * \subsection source From source
  *
- * qmake && make && make install
+ * On most *nix systems all you need is:
  *
+ * `qmake && make && make install`
  */
 
 /**
