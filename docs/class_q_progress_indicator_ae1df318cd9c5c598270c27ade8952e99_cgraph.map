@@ -1,0 +1,12 @@
+<map id="QProgressIndicator::color" name="QProgressIndicator::color">
+<area shape="rect" id="node2" href="$class_q_progress_indicator.html#ac0bc58be6c63b849e2d31de38d2e5b5c" title="QProgressIndicator\l::sizeHint" alt="" coords="216,5,352,44"/>
+<area shape="rect" id="node3" href="$class_q_progress_indicator.html#a3a8f2fdae68119717055ad1019b688e8" title="QProgressIndicator\l::heightForWidth" alt="" coords="216,68,352,107"/>
+<area shape="rect" id="node4" href="$class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="216,131,352,169"/>
+<area shape="rect" id="node5" href="$class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. " alt="" coords="216,193,352,232"/>
+<area shape="rect" id="node6" href="$class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. " alt="" coords="214,256,354,295"/>
+<area shape="rect" id="node7" href="$class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. " alt="" coords="190,319,379,357"/>
+<area shape="rect" id="node8" href="$class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="216,381,352,420"/>
+<area shape="rect" id="node9" href="$class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator\l::timerEvent" alt="" coords="216,444,352,483"/>
+<area shape="rect" id="node10" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator\l::paintEvent" alt="" coords="216,507,352,545"/>
+<area shape="rect" id="node11" href="$class_q_progress_indicator.html#aae9ecced306af7013847de32f36b811c" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="427,507,563,545"/>
+</map>

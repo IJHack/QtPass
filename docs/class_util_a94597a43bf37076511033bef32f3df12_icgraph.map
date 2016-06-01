@@ -1,0 +1,7 @@
+<map id="Util::normalizeFolderPath" name="Util::normalizeFolderPath">
+<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig. " alt="" coords="450,23,629,48"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config. " alt="" coords="234,72,375,97"/>
+<area shape="rect" id="node6" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore. " alt="" coords="224,23,384,48"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow. " alt="" coords="695,23,876,48"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a284c45f4f794bc0dd28a184a08f83455" title="MainWindow::getGpgExecutable. " alt="" coords="432,72,647,97"/>
+</map>
