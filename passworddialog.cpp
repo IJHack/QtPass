@@ -43,7 +43,7 @@ void PasswordDialog::setPassword(QString password) {
         if (token.startsWith(widget->objectName() + ':')) {
           tokens.removeAt(j);
           QString value = token.remove(0, widget->objectName().length() + 1);
-          reinterpret_cast<QLineEdit *>(widget)->setText(value);
+          reinterpret_cast<QLineEdit *>(widget)->setText(value.trimmed());
         }
       }
       previous = widget;
@@ -58,8 +58,8 @@ void PasswordDialog::setPassword(QString password) {
           if (!passTemplate.contains(field) && value.startsWith("//"))
             continue; // colon is probably from a url
           QLineEdit *line = new QLineEdit();
-          line->setObjectName(field);
-          line->setText(value);
+          line->setObjectName(field.trimmed());
+          line->setText(value.trimmed());
           ui->formLayout->addRow(new QLabel(field), line);
           setTabOrder(previous, line);
           previous = line;
@@ -82,7 +82,7 @@ QString PasswordDialog::getPassword() {
     QString text = reinterpret_cast<QLineEdit *>(widget)->text();
     if (text.isEmpty())
       continue;
-    passFile += widget->objectName() + ":" + text + "\n";
+    passFile += widget->objectName() + ": " + text + "\n";
   }
   passFile += ui->plainTextEdit->toPlainText();
   return passFile;
