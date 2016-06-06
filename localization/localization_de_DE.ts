@@ -137,17 +137,17 @@
     <message>
         <location filename="../configdialog.ui" line="300"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Großbuchstaben Ausschließen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="317"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiere einfach zu merken, aber weniger sichere Passwörter</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="324"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummern ausschließen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="343"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../configdialog.ui" line="477"/>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Einh&amp;eimische git/gpg</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="579"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../configdialog.ui" line="438"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Immer oben</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="774"/>
@@ -498,7 +498,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="124"/>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="127"/>
@@ -508,7 +508,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="142"/>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="145"/>
@@ -518,7 +518,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="176"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordne wer Kennworten in Ordner lesen kann</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
@@ -529,7 +529,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Configuration</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
@@ -547,7 +547,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="299"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennwort suchen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="328"/>
@@ -559,14 +559,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Helvetica Neue DeskInterface&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt; ist eine GUI für  &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;, den standard Passwordmanager für UNIX.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;&lt;br /&gt;Probleme und Bugs bitte &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4;&quot;&gt;melden&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Dokumentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source Code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {3C?} {4.0/?} {3.?} {40/?} {1&quot;?} {10p?} {400;?} {12p?} {12p?} {0p?} {0p?} {0;?} {0p?} {13p?} {600;?} {333333;?} {13p?} {333333;?} {13p?} {4183c?} {4;?} {13p?} {333333;?} {12p?} {12p?} {0p?} {0p?} {0;?} {0p?} {13p?} {333333;?} {13p?} {4183c?} {4;?} {13p?} {333333;?} {12p?} {12p?} {0p?} {0p?} {0;?} {0p?} {13p?} {4183c?} {4;?} {12p?} {12p?} {0p?} {0p?} {0;?} {0p?} {13p?} {4183c?} {4;?}</translation>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source Code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>X</source>
@@ -646,7 +646,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1722"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer Ordner:
+(Wird in %1 platziert werden)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1839"/>
@@ -662,12 +663,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="58"/>
         <source>Add Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennwort Hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="59"/>
         <source>Add Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner Hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="155"/>
@@ -833,7 +834,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1168"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Neues Passwort-Datei:
+(Wird in %1 platziert werden)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1339"/>
@@ -939,7 +942,7 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
     <message>
         <location filename="../usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzer suchen</translation>
     </message>
     <message>
         <source>X</source>
