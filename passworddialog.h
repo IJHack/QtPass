@@ -20,10 +20,29 @@ class PasswordDialog : public QDialog {
 public:
   explicit PasswordDialog(MainWindow *parent = 0);
   ~PasswordDialog();
-  void setPassword(QString);
+
+  /*! Sets content in the password field in the interface.
+      \param password the password as a QString
+      \sa getPassword
+   */
+  void setPassword(QString password);
+
+  /*! Returns the password as set in the password field in the interface.
+      \return password as a QString
+      \sa setPassword
+   */
   QString getPassword();
+
+  /*! Sets content in the template for the interface.
+      \param template is the template as a QString
+   */
   void setTemplate(QString);
+
+  /*! Sets the file (name) in the interface.
+      \param file name as a QString
+   */
   void setFile(QString);
+
   void useTemplate(bool useTemplate);
   void templateAll(bool templateAll);
 
