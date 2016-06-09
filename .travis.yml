@@ -17,6 +17,7 @@ install:
   fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin;
   fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg;
   fi
 env:
@@ -36,6 +37,8 @@ script:
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt QtPass.app;
+  fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown --to=rtf --output=README.rtf README.md;
   fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION qtpass.pro | cut -d " " -f 6).dmg;
   fi
