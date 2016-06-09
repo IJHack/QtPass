@@ -28,6 +28,13 @@ struct execQueueItem {
 
 struct UserInfo;
 
+/*!
+    \class MainWindow
+    \brief The MainWindow class does way too much, not only is it a switchboard,
+    configuration handler and more, it's also the process-manager.
+
+    This class could really do with an overhaul.
+ */
 class MainWindow : public QMainWindow {
   Q_OBJECT
 

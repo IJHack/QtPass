@@ -25,6 +25,13 @@ struct UserInfo {
   QDateTime created;
 };
 
+
+/*!
+    \class UsersDialog
+    \brief Handles listing and editing of GPG users.
+
+    Selection of whom to encrypt to.
+ */
 class UsersDialog : public QDialog {
   Q_OBJECT
 

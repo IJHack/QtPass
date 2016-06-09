@@ -5,6 +5,12 @@
 #include <QLocalServer>
 #include <QSharedMemory>
 
+/*!
+    \class SingleApplication
+    \brief The SingleApplication class is used for commandline intergration.
+
+    This class needs a bit of work or possibly replacement.
+ */
 class SingleApplication : public QApplication {
   Q_OBJECT
 public:

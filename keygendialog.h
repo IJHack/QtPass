@@ -9,6 +9,10 @@ namespace Ui {
 class KeygenDialog;
 }
 
+/*!
+    \class KeygenDialog
+    \brief Handles GPG keypair generation.
+ */
 class KeygenDialog : public QDialog {
   Q_OBJECT
 

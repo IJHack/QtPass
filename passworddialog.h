@@ -8,6 +8,12 @@ namespace Ui {
 class PasswordDialog;
 }
 
+/*!
+    \class PasswordDialog
+    \brief PasswordDialog Handles the inserting and editing of passwords.
+
+    Includes templated views.
+ */
 class PasswordDialog : public QDialog {
   Q_OBJECT
 

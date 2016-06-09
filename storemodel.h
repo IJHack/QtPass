@@ -5,6 +5,10 @@
 #include <QRegExp>
 #include <QSortFilterProxyModel>
 
+/*!
+    \class StoreModel
+    \brief The QSortFilterProxyModel for handling filesystem searches.
+ */
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
 private:

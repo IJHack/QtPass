@@ -4,6 +4,10 @@
 #include <QProcessEnvironment>
 #include <QString>
 
+/*!
+    \class Util
+    \brief Some static utilities to be used elsewhere.
+ */
 class Util {
 public:
   static QString findBinaryInPath(QString binary);

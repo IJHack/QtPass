@@ -8,6 +8,10 @@
 #include <QSystemTrayIcon>
 #include <QWidget>
 
+/*!
+    \class TrayIcon
+    \brief Handles the systemtray icon and menu.
+ */
 class TrayIcon : public QWidget {
   Q_OBJECT
 

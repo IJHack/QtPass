@@ -13,6 +13,12 @@ struct UserInfo;
 class ConfigDialog;
 }
 
+/*!
+    \class ConfigDialog
+    \brief The ConfigDialog handles the configuration interface.
+
+    This class should also take the handling from the MainWindow class.
+*/
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
