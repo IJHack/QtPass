@@ -91,7 +91,7 @@ Planned features
 Further reading
 ---------------
 
-[FAQ](docs/FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
+[FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
 [Documentation](https://qtpass.org/)
 
