@@ -20,6 +20,10 @@ namespace Ui {
 class MainWindow;
 }
 
+/*!
+    \struct execQueueItem
+    \brief Execution queu items for non-interactive ordered execution.
+ */
 struct execQueueItem {
   QString app;
   QString args;

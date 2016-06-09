@@ -13,6 +13,10 @@ class UsersDialog;
 
 class QListWidgetItem;
 
+/*!
+    \struct UserInfo
+    \brief Stores key info lines including validity, creation date and more.
+ */
 struct UserInfo {
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 
