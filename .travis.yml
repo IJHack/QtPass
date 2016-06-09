@@ -1,11 +1,10 @@
-language: node_js
-node_js:
-  - "5.1"
 language: cpp
 sudo: false
 os:
 - linux
 - osx
+node_js:
+  - "5.1"
 compiler:
 - gcc
 - clang
