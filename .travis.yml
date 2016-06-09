@@ -34,6 +34,8 @@ script:
 - qmake -v
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION qtpass.pro | cut -d " " -f 6).dmg;
+  fi
 notifications:
   irc:
     channels:
