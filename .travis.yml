@@ -12,15 +12,10 @@ env:
 addons:
   apt:
     sources:
-    - ubuntu-sdk-team
     - debian-sid
     packages:
-    - debian-keyring
-    - debian-archive-keyring
     - qt5-default
     - qt5-qmake
-    - libqt5svg5
-    
   coverity_scan:
     project:
       name: "IJHack/qtpass"
