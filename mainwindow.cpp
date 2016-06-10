@@ -1442,6 +1442,8 @@ void MainWindow::on_usersButton_clicked() {
         if (autoPush)
           on_pushButton_clicked();
       }
+
+      reencryptPath(dir);
   }
 
 
@@ -1763,6 +1765,7 @@ void MainWindow::editPassword() {
   if (useGit && autoPull)
     on_updateButton_clicked();
   waitFor(30);
+  process->waitForFinished();
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
@@ -1882,10 +1885,22 @@ void MainWindow::setClippedPassword(const QString &pass) {
 
 const QString &MainWindow::getClippedPassword() { return clippedPass; }
 
+/**
+ * @brief MainWindow::reencryptPath reencrypt all files under the chosen directory
+ * @param dir
+ */
 void MainWindow::reencryptPath(QString dir) {
+    qDebug() << "reencrypt: " << dir;
+    // @TODO(annejan) disable interface until done
+    QDirIterator it(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        QString fileName = it.next();
+        qDebug() << fileName;
+    }
+
     QMessageBox::information(
         this, tr("Recursing not yet implemented!"),
         tr("This is an issue that only happens when you are not using pass.\n"
-           "Some people might not correctly be encrypted for %1!").arg(dir));
+           "Passwords are not reencrypted in folder %1!").arg(dir));
 }
 
