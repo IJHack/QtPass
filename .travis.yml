@@ -12,7 +12,8 @@ env:
 addons:
   apt:
     packages:
-    - qt5-default
+    - qtbase5-dev
+    - qttools5-dev-tools
   coverity_scan:
     project:
       name: "IJHack/qtpass"
