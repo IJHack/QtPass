@@ -58,4 +58,5 @@ deploy:
   on:
     repo: IJHack/qtpass
     tags: true
+    condition: $TRAVIS_OS_NAME = osx && $CC = clang
   skip_cleanup: true
