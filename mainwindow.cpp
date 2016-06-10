@@ -1891,7 +1891,10 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
-    waitFor(5);
+    if (autoPull)
+      on_updateButton_clicked();
+    waitFor(50);
+    process->waitForFinished();
     QDir currentDir;
     currentAction = GPG_INTERNAL;
     QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
@@ -1932,13 +1935,39 @@ void MainWindow::reencryptPath(QString dir) {
         actualKeys.sort();
         if (actualKeys != gpgId) {
             qDebug() << "reencrypt " << fileName << " for " << gpgId;
+            lastDecrypt = "Could not decrypt";
+            currentAction = GPG_INTERNAL;
+            executeWrapper(gpgExecutable,
+                           "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
+                               fileName + '"');
+            process->waitForFinished(30000); // long wait (passphrase stuff)
+            lastDecrypt = process->readAllStandardOutput();
+            if (lastDecrypt.right(1) != "\n")
+            lastDecrypt += "\n";
 
+            QString recipients = getRecipientString(fileName, " -r ");
+            if (recipients.isEmpty()) {
+            QMessageBox::critical(this, tr("Can not edit"),
+                tr("Could not read encryption key to use, .gpg-id "
+                    "file missing or invalid."));
+                return;
+            }
+            currentAction = EDIT;
+            executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
+                                          "\" " + recipients + " -", lastDecrypt);
+            qDebug() << lastDecrypt;
+            if (!useWebDav && useGit) {
+                process->waitForFinished(3000);
+                executeWrapper(gitExecutable, "add \"" + fileName + '"');
+                QString path = QDir(passStore).relativeFilePath(fileName);
+                path.replace(QRegExp("\\.gpg$"), "");
+                executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
+                                           "Edit for " + path + " using QtPass.\"");
+            }
+            process->waitForFinished(3000);
         }
     }
-
-    QMessageBox::information(
-        this, tr("Recursing not yet implemented!"),
-        tr("This is an issue that only happens when you are not using pass.\n"
-           "Passwords are not reencrypted in folder %1!").arg(dir));
+    if (autoPush)
+      on_pushButton_clicked();
 }
 
