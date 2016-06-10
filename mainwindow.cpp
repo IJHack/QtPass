@@ -1431,10 +1431,7 @@ void MainWindow::on_usersButton_clicked() {
             tr("None of the selected keys have a secret key available.\n"
                "You will not be able to decrypt any newly added passwords!"));
       }
-      QMessageBox::information(
-          this, tr("Recursing not yet implemented!"),
-          tr("This is an issue that only happens when you are not using pass.\n"
-             "Some people might not correctly be encrypted for!"));
+
       if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
         if (addFile)
           executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
@@ -1884,3 +1881,11 @@ void MainWindow::setClippedPassword(const QString &pass) {
 }
 
 const QString &MainWindow::getClippedPassword() { return clippedPass; }
+
+void MainWindow::reencryptPath(QString dir) {
+    QMessageBox::information(
+        this, tr("Recursing not yet implemented!"),
+        tr("This is an issue that only happens when you are not using pass.\n"
+           "Some people might not correctly be encrypted for %1!").arg(dir));
+}
+

@@ -187,6 +187,7 @@ private:
   void clearTemplateWidgets();
   void setClippedPassword(const QString &pass);
   const QString &getClippedPassword();
+  void reencryptPath(QString dir);
 };
 
 #endif // MAINWINDOW_H_
