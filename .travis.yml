@@ -7,7 +7,6 @@ compiler:
 - gcc
 - clang
 env:
-  - VERSION=1.1.3
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
@@ -38,7 +37,7 @@ script:
 - make -j$(nproc)
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt QtPass.app; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown --to=rtf --output=README.rtf README.md; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$VERSION.dmg; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg; fi
 notifications:
   irc:
     channels:
