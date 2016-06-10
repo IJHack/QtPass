@@ -1394,43 +1394,60 @@ void MainWindow::on_usersButton_clicked() {
     return;
   }
   d.setUsers(NULL);
-  QString gpgIdFile = dir + ".gpg-id";
-  QFile gpgId(gpgIdFile);
-  bool addFile = false;
-  if (addGPGId) {
-    QFileInfo checkFile(gpgIdFile);
-    if (!checkFile.exists() || !checkFile.isFile())
-      addFile = true;
+
+  if (usePass) {
+      QString gpgIds = "";
+      foreach (const UserInfo &user, users) {
+        if (user.enabled) {
+          gpgIds += user.key_id + " ";
+        }
+      }
+      executePass("init --path=" + dir + " " + gpgIds);
+  } else {
+      QString gpgIdFile = dir + ".gpg-id";
+      QFile gpgId(gpgIdFile);
+      bool addFile = false;
+      if (addGPGId) {
+        QFileInfo checkFile(gpgIdFile);
+        if (!checkFile.exists() || !checkFile.isFile())
+          addFile = true;
+      }
+      if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, tr("Cannot update"),
+                              tr("Failed to open .gpg-id for writing."));
+        return;
+      }
+      bool secret_selected = false;
+      foreach (const UserInfo &user, users) {
+        if (user.enabled) {
+          gpgId.write((user.key_id + "\n").toUtf8());
+          secret_selected |= user.have_secret;
+        }
+      }
+      gpgId.close();
+      if (!secret_selected) {
+        QMessageBox::critical(
+            this, tr("Check selected users!"),
+            tr("None of the selected keys have a secret key available.\n"
+               "You will not be able to decrypt any newly added passwords!"));
+      }
+      QMessageBox::information(
+          this, tr("Recursing not yet implemented!"),
+          tr("This is an issue that only happens when you are not using pass.\n"
+             "Some people might not correctly be encrypted for!"));
+      if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
+        if (addFile)
+          executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
+        QString path = gpgIdFile;
+        path.replace(QRegExp("\\.gpg$"), "");
+        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
+                                          path + " using QtPass.\"");
+        if (autoPush)
+          on_pushButton_clicked();
+      }
   }
-  if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    QMessageBox::critical(this, tr("Cannot update"),
-                          tr("Failed to open .gpg-id for writing."));
-    return;
-  }
-  bool secret_selected = false;
-  foreach (const UserInfo &user, users) {
-    if (user.enabled) {
-      gpgId.write((user.key_id + "\n").toUtf8());
-      secret_selected |= user.have_secret;
-    }
-  }
-  gpgId.close();
-  if (!secret_selected) {
-    QMessageBox::critical(
-        this, tr("Check selected users!"),
-        tr("None of the selected keys have a secret key available.\n"
-           "You will not be able to decrypt any newly added passwords!"));
-  }
-  if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
-    if (addFile)
-      executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
-    QString path = gpgIdFile;
-    path.replace(QRegExp("\\.gpg$"), "");
-    executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
-                                      path + " using QtPass.\"");
-    if (autoPush)
-      on_pushButton_clicked();
-  }
+
+
 }
 
 /**
