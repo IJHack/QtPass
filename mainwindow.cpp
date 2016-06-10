@@ -1955,7 +1955,6 @@ void MainWindow::reencryptPath(QString dir) {
             currentAction = EDIT;
             executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
                                           "\" " + recipients + " -", lastDecrypt);
-            qDebug() << lastDecrypt;
             if (!useWebDav && useGit) {
                 process->waitForFinished(3000);
                 executeWrapper(gitExecutable, "add \"" + fileName + '"');
