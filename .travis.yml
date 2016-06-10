@@ -14,8 +14,7 @@ addons:
     sources:
     - ubuntu-sdk-team
     packages:
-    - qtbase5-dev
-    - qttools5-dev-tools
+    - qt-latest
   coverity_scan:
     project:
       name: "IJHack/qtpass"
@@ -49,4 +48,4 @@ notifications:
     channels:
     - chat.freenode.net#IJhack
     on_success: change
-    on_failure: always
+#    on_failure: always
