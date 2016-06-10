@@ -1891,6 +1891,9 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
+    ui->statusBar->showMessage(tr("Re-encrypting from folder %1").arg(dir), 3000);
+    enableUiElements(false);
+    ui->treeView->setDisabled(true);
     if (autoPull)
       on_updateButton_clicked();
     waitFor(50);
@@ -1968,5 +1971,6 @@ void MainWindow::reencryptPath(QString dir) {
     }
     if (autoPush)
       on_pushButton_clicked();
+    enableUiElements(true);
 }
 
