@@ -6,10 +6,21 @@ os:
 compiler:
 - gcc
 - clang
+env:
+  global:
+    secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 addons:
   apt:
     packages:
     - qt5-default
+  coverity_scan:
+    project:
+      name: "IJHack/qtpass"
+      description: "Build submitted via Travis CI"
+    notification_email: brouwer@annejan.com
+    build_command_prepend: "qmake; make clean"
+    build_command:   "make"
+    branch_pattern: coverity_scan
 install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew unlink node; brew install node; fi
@@ -20,18 +31,6 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg;
   fi
-env:
-  global:
-    secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
-addons:
-  coverity_scan:
-    project:
-      name: "IJHack/qtpass"
-      description: "Build submitted via Travis CI"
-    notification_email: brouwer@annejan.com
-    build_command_prepend: "qmake; make clean"
-    build_command:   "make"
-    branch_pattern: coverity_scan
 script:
 - qmake -v
 - qmake -Wall qtpass.pro
