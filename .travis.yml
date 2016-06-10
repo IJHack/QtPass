@@ -6,16 +6,15 @@ os:
 compiler:
 - gcc
 #- clang
-dist: trusty
 env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 addons:
   apt:
     sources:
-    - ubuntu-sdk-team
+    - debian-sid
     packages:
-    - qtbase5-dev
+    - qt5-default
   coverity_scan:
     project:
       name: "IJHack/qtpass"
