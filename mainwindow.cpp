@@ -1892,11 +1892,27 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
  */
 void MainWindow::reencryptPath(QString dir) {
     waitFor(5);
+    QDir currentDir;
     currentAction = GPG_INTERNAL;
-    QDirIterator it(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
-    while (it.hasNext()) {
-        QString fileName = it.next();
-        qDebug() << fileName;
+    QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
+    QStringList gpgId;
+    QStringList prevGpgId;
+    while (gpgFiles.hasNext()) {
+        QString fileName = gpgFiles.next();
+        if (gpgFiles.fileInfo().path() != currentDir.path()) {
+            QFile file(gpgFiles.fileInfo().path() + "/.gpg-id");
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                gpgId.clear();
+                QTextStream in(&file);
+                while (!in.atEnd()) {
+                   gpgId << in.readLine();
+                }
+                gpgId.sort();
+                currentDir.setPath(gpgFiles.fileInfo().path());
+                qDebug() << "folder changed to " + currentDir.path();
+            }
+            // @TODO(annejan) recursive down if not found instead?
+        }
         executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
         process->waitForFinished(3000);
         QStringList actualKeys;
@@ -1914,7 +1930,10 @@ void MainWindow::reencryptPath(QString dir) {
            }
         }
         actualKeys.sort();
-        qDebug() << actualKeys;
+        if (actualKeys != gpgId) {
+            qDebug() << "reencrypt " << fileName << " for " << gpgId;
+
+        }
     }
 
     QMessageBox::information(
