@@ -1606,6 +1606,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     this->hide();
     event->ignore();
   } else {
+    clearClipboard();
     settings->beginGroup("mainwindow");
     settings->setValue("geometry", saveGeometry());
     settings->setValue("savestate", saveState());
