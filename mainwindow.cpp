@@ -1892,10 +1892,14 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
 void MainWindow::reencryptPath(QString dir) {
     qDebug() << "reencrypt: " << dir;
     // @TODO(annejan) disable interface until done
+    process->waitForFinished();
     QDirIterator it(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         QString fileName = it.next();
         qDebug() << fileName;
+        executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
+        process->waitForFinished(300);
+        qDebug() << process->readAllStandardOutput();
     }
 
     QMessageBox::information(
