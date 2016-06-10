@@ -750,8 +750,9 @@ void MainWindow::readyRead(bool finished = false) {
   if (currentAction == PWGEN)
     return;
   QString output = "";
-  QString error = process->readAllStandardError();
+  QString error = "";
   if (currentAction != GPG_INTERNAL) {
+    error = process->readAllStandardError();
     output = process->readAllStandardOutput();
     if (finished && currentAction == GPG) {
       lastDecrypt = output;
@@ -1890,16 +1891,30 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
-    qDebug() << "reencrypt: " << dir;
-    // @TODO(annejan) disable interface until done
-    process->waitForFinished();
+    waitFor(5);
+    currentAction = GPG_INTERNAL;
     QDirIterator it(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         QString fileName = it.next();
         qDebug() << fileName;
         executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
-        process->waitForFinished(300);
-        qDebug() << process->readAllStandardOutput();
+        process->waitForFinished(3000);
+        QStringList actualKeys;
+        QString keys = process->readAllStandardOutput() + process->readAllStandardError();
+        QStringList key = keys.split("\n");
+        QListIterator<QString> itr (key);
+        while (itr.hasNext()) {
+           QString current = itr.next();
+           QStringList cur = current.split(" ");
+           if (cur.length() > 4) {
+               QString actualKey = cur.takeAt(4);
+               if (actualKey.length() == 16) {
+                   actualKeys << actualKey;
+               }
+           }
+        }
+        actualKeys.sort();
+        qDebug() << actualKeys;
     }
 
     QMessageBox::information(
