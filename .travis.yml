@@ -14,7 +14,8 @@ addons:
     sources:
     - ubuntu-sdk-team
     packages:
-    - qt-latest
+    - qt5-default
+    - qt5-qmake
   coverity_scan:
     project:
       name: "IJHack/qtpass"
