@@ -7,6 +7,7 @@ compiler:
 - gcc
 - clang
 env:
+  - VERSION=$(grep ^VERSION  qtpass.pro | cut -d " " -f 6)
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
@@ -37,7 +38,7 @@ script:
 - make -j$(nproc)
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt QtPass.app; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown --to=rtf --output=README.rtf README.md; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$VERSION.dmg; fi
 notifications:
   irc:
     channels:
@@ -48,7 +49,7 @@ deploy:
   provider: releases
   api_key:
     secure: O6LAl2R5QIe/mgQwG5/pzbdC8gS58wtGVF2ebTVGgYsCgY0nRjLZ19H7BiQrYjbbXs8yw6cQjA+xbxNiVsIVs+Dx9j/fy2JOBeBTrGijlWLcJPT6/Ab65EjI2T96XvI8/YejRmbgjIdXFfuKtD/V4MM12LrvrvktwJp00G9l1Go=
-  file: qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg
+  file: "qtpass-$VERSION.dmg"
   on:
     repo: IJHack/qtpass
     tags: true
