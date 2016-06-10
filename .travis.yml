@@ -3,7 +3,6 @@ sudo: true
 os:
 - linux
 compiler:
-- gcc
 - clang
 env:
   global:
