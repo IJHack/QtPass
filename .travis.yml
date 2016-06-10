@@ -28,7 +28,7 @@ install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt56base qt56toolsi libqt5svg5*; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt56base qt56tools qt56svg; fi
 before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt56/bin/qt56-env.sh; fi
 script:
