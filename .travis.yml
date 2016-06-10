@@ -2,7 +2,6 @@ language: cpp
 sudo: true
 os:
 - linux
-- osx
 compiler:
 - gcc
 - clang
