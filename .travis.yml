@@ -12,10 +12,9 @@ env:
 addons:
   apt:
     sources:
-    - debian-sid
+    - ubuntu-sdk-team
     packages:
-    - qt5-default
-    - qt5-qmake
+    - qtcreator
   coverity_scan:
     project:
       name: "IJHack/qtpass"
