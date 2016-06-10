@@ -69,13 +69,15 @@ int main(int argc, char *argv[]) {
   app.installTranslator(&translator);
   app.setLayoutDirection(QObject::tr("LTR") == "RTL" ? Qt::RightToLeft
                                                      : Qt::LeftToRight);
-
   MainWindow w;
+
+  QObject::connect(&app, SIGNAL(aboutToQuit()), &w, SLOT(clearClipboard()));
 
   app.setActiveWindow(&w);
   app.setWindowIcon(QIcon(":artwork/icon.png"));
   w.setApp(&app);
   w.setText(text);
   w.show();
+
   return app.exec();
 }

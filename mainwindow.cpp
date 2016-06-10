@@ -750,8 +750,9 @@ void MainWindow::readyRead(bool finished = false) {
   if (currentAction == PWGEN)
     return;
   QString output = "";
-  QString error = process->readAllStandardError();
+  QString error = "";
   if (currentAction != GPG_INTERNAL) {
+    error = process->readAllStandardError();
     output = process->readAllStandardOutput();
     if (finished && currentAction == GPG) {
       lastDecrypt = output;
@@ -773,7 +774,7 @@ void MainWindow::readyRead(bool finished = false) {
           output = "***" + tr("Content hidden") + "***";
       }
 
-      if (useTemplate) {
+      if (useTemplate && !hideContent) {
         while (ui->formLayout->count() > 0) {
           QLayoutItem *item = ui->formLayout->takeAt(0);
           delete item->widget();
@@ -1394,43 +1395,59 @@ void MainWindow::on_usersButton_clicked() {
     return;
   }
   d.setUsers(NULL);
-  QString gpgIdFile = dir + ".gpg-id";
-  QFile gpgId(gpgIdFile);
-  bool addFile = false;
-  if (addGPGId) {
-    QFileInfo checkFile(gpgIdFile);
-    if (!checkFile.exists() || !checkFile.isFile())
-      addFile = true;
+
+  if (usePass) {
+      QString gpgIds = "";
+      foreach (const UserInfo &user, users) {
+        if (user.enabled) {
+          gpgIds += user.key_id + " ";
+        }
+      }
+      executePass("init --path=" + dir + " " + gpgIds);
+  } else {
+      QString gpgIdFile = dir + ".gpg-id";
+      QFile gpgId(gpgIdFile);
+      bool addFile = false;
+      if (addGPGId) {
+        QFileInfo checkFile(gpgIdFile);
+        if (!checkFile.exists() || !checkFile.isFile())
+          addFile = true;
+      }
+      if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, tr("Cannot update"),
+                              tr("Failed to open .gpg-id for writing."));
+        return;
+      }
+      bool secret_selected = false;
+      foreach (const UserInfo &user, users) {
+        if (user.enabled) {
+          gpgId.write((user.key_id + "\n").toUtf8());
+          secret_selected |= user.have_secret;
+        }
+      }
+      gpgId.close();
+      if (!secret_selected) {
+        QMessageBox::critical(
+            this, tr("Check selected users!"),
+            tr("None of the selected keys have a secret key available.\n"
+               "You will not be able to decrypt any newly added passwords!"));
+      }
+
+      if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
+        if (addFile)
+          executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
+        QString path = gpgIdFile;
+        path.replace(QRegExp("\\.gpg$"), "");
+        executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
+                                          path + " using QtPass.\"");
+        if (autoPush)
+          on_pushButton_clicked();
+      }
+
+      reencryptPath(dir);
   }
-  if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    QMessageBox::critical(this, tr("Cannot update"),
-                          tr("Failed to open .gpg-id for writing."));
-    return;
-  }
-  bool secret_selected = false;
-  foreach (const UserInfo &user, users) {
-    if (user.enabled) {
-      gpgId.write((user.key_id + "\n").toUtf8());
-      secret_selected |= user.have_secret;
-    }
-  }
-  gpgId.close();
-  if (!secret_selected) {
-    QMessageBox::critical(
-        this, tr("Check selected users!"),
-        tr("None of the selected keys have a secret key available.\n"
-           "You will not be able to decrypt any newly added passwords!"));
-  }
-  if (!useWebDav && useGit && !gitExecutable.isEmpty()) {
-    if (addFile)
-      executeWrapper(gitExecutable, "add \"" + gpgIdFile + '"');
-    QString path = gpgIdFile;
-    path.replace(QRegExp("\\.gpg$"), "");
-    executeWrapper(gitExecutable, "commit \"" + gpgIdFile + "\" -m \"Added " +
-                                      path + " using QtPass.\"");
-    if (autoPush)
-      on_pushButton_clicked();
-  }
+
+
 }
 
 /**
@@ -1606,6 +1623,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     this->hide();
     event->ignore();
   } else {
+    clearClipboard();
     settings->beginGroup("mainwindow");
     settings->setValue("geometry", saveGeometry());
     settings->setValue("savestate", saveState());
@@ -1748,6 +1766,7 @@ void MainWindow::editPassword() {
   if (useGit && autoPull)
     on_updateButton_clicked();
   waitFor(30);
+  process->waitForFinished();
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
@@ -1866,3 +1885,92 @@ void MainWindow::setClippedPassword(const QString &pass) {
 }
 
 const QString &MainWindow::getClippedPassword() { return clippedPass; }
+
+/**
+ * @brief MainWindow::reencryptPath reencrypt all files under the chosen directory
+ * @param dir
+ */
+void MainWindow::reencryptPath(QString dir) {
+    ui->statusBar->showMessage(tr("Re-encrypting from folder %1").arg(dir), 3000);
+    enableUiElements(false);
+    ui->treeView->setDisabled(true);
+    if (autoPull)
+      on_updateButton_clicked();
+    waitFor(50);
+    process->waitForFinished();
+    QDir currentDir;
+    currentAction = GPG_INTERNAL;
+    QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
+    QStringList gpgId;
+    QStringList prevGpgId;
+    while (gpgFiles.hasNext()) {
+        QString fileName = gpgFiles.next();
+        if (gpgFiles.fileInfo().path() != currentDir.path()) {
+            QFile file(gpgFiles.fileInfo().path() + "/.gpg-id");
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                gpgId.clear();
+                QTextStream in(&file);
+                while (!in.atEnd()) {
+                   gpgId << in.readLine();
+                }
+                gpgId.sort();
+                currentDir.setPath(gpgFiles.fileInfo().path());
+                qDebug() << "folder changed to " + currentDir.path();
+            }
+            // @TODO(annejan) recursive down if not found instead?
+        }
+        executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
+        process->waitForFinished(3000);
+        QStringList actualKeys;
+        QString keys = process->readAllStandardOutput() + process->readAllStandardError();
+        QStringList key = keys.split("\n");
+        QListIterator<QString> itr (key);
+        while (itr.hasNext()) {
+           QString current = itr.next();
+           QStringList cur = current.split(" ");
+           if (cur.length() > 4) {
+               QString actualKey = cur.takeAt(4);
+               if (actualKey.length() == 16) {
+                   actualKeys << actualKey;
+               }
+           }
+        }
+        actualKeys.sort();
+        if (actualKeys != gpgId) {
+            qDebug() << "reencrypt " << fileName << " for " << gpgId;
+            lastDecrypt = "Could not decrypt";
+            currentAction = GPG_INTERNAL;
+            executeWrapper(gpgExecutable,
+                           "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
+                               fileName + '"');
+            process->waitForFinished(30000); // long wait (passphrase stuff)
+            lastDecrypt = process->readAllStandardOutput();
+            if (lastDecrypt.right(1) != "\n")
+            lastDecrypt += "\n";
+
+            QString recipients = getRecipientString(fileName, " -r ");
+            if (recipients.isEmpty()) {
+            QMessageBox::critical(this, tr("Can not edit"),
+                tr("Could not read encryption key to use, .gpg-id "
+                    "file missing or invalid."));
+                return;
+            }
+            currentAction = EDIT;
+            executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
+                                          "\" " + recipients + " -", lastDecrypt);
+            if (!useWebDav && useGit) {
+                process->waitForFinished(3000);
+                executeWrapper(gitExecutable, "add \"" + fileName + '"');
+                QString path = QDir(passStore).relativeFilePath(fileName);
+                path.replace(QRegExp("\\.gpg$"), "");
+                executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
+                                           "Edit for " + path + " using QtPass.\"");
+            }
+            process->waitForFinished(3000);
+        }
+    }
+    if (autoPush)
+      on_pushButton_clicked();
+    enableUiElements(true);
+}
+
