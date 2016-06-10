@@ -773,7 +773,7 @@ void MainWindow::readyRead(bool finished = false) {
           output = "***" + tr("Content hidden") + "***";
       }
 
-      if (useTemplate) {
+      if (useTemplate && !hideContent) {
         while (ui->formLayout->count() > 0) {
           QLayoutItem *item = ui->formLayout->takeAt(0);
           delete item->widget();
