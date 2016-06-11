@@ -1899,10 +1899,8 @@ void MainWindow::reencryptPath(QString dir) {
     waitFor(50);
     process->waitForFinished();
     QDir currentDir;
-    currentAction = GPG_INTERNAL;
     QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
     QStringList gpgId;
-    QStringList prevGpgId;
     while (gpgFiles.hasNext()) {
         QString fileName = gpgFiles.next();
         if (gpgFiles.fileInfo().path() != currentDir.path()) {
@@ -1919,6 +1917,8 @@ void MainWindow::reencryptPath(QString dir) {
             }
             // @TODO(annejan) recursive down if not found instead?
         }
+        currentAction = GPG_INTERNAL;
+        process->waitForFinished();
         executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
         process->waitForFinished(3000);
         QStringList actualKeys;
@@ -1937,7 +1937,8 @@ void MainWindow::reencryptPath(QString dir) {
         }
         actualKeys.sort();
         if (actualKeys != gpgId) {
-            qDebug() << "reencrypt " << fileName << " for " << gpgId;
+            qDebug() << actualKeys << gpgId << getRecipientList(fileName);
+            //qDebug() << "reencrypt " << fileName << " for " << gpgId;
             lastDecrypt = "Could not decrypt";
             currentAction = GPG_INTERNAL;
             executeWrapper(gpgExecutable,
@@ -1945,28 +1946,33 @@ void MainWindow::reencryptPath(QString dir) {
                                fileName + '"');
             process->waitForFinished(30000); // long wait (passphrase stuff)
             lastDecrypt = process->readAllStandardOutput();
-            if (lastDecrypt.right(1) != "\n")
-            lastDecrypt += "\n";
 
-            QString recipients = getRecipientString(fileName, " -r ");
-            if (recipients.isEmpty()) {
-            QMessageBox::critical(this, tr("Can not edit"),
-                tr("Could not read encryption key to use, .gpg-id "
-                    "file missing or invalid."));
-                return;
-            }
-            currentAction = EDIT;
-            executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
-                                          "\" " + recipients + " -", lastDecrypt);
-            if (!useWebDav && useGit) {
+            if (!lastDecrypt.isEmpty()) {
+                if (lastDecrypt.right(1) != "\n")
+                    lastDecrypt += "\n";
+
+                QString recipients = getRecipientString(fileName, " -r ");
+                if (recipients.isEmpty()) {
+                QMessageBox::critical(this, tr("Can not edit"),
+                    tr("Could not read encryption key to use, .gpg-id "
+                        "file missing or invalid."));
+                    return;
+                }
+                currentAction = EDIT;
+                executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
+                                              "\" " + recipients + " -", lastDecrypt);
+                if (!useWebDav && useGit) {
+                    process->waitForFinished(3000);
+                    executeWrapper(gitExecutable, "add \"" + fileName + '"');
+                    QString path = QDir(passStore).relativeFilePath(fileName);
+                    path.replace(QRegExp("\\.gpg$"), "");
+                    executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
+                                               "Edit for " + path + " using QtPass.\"");
+                }
                 process->waitForFinished(3000);
-                executeWrapper(gitExecutable, "add \"" + fileName + '"');
-                QString path = QDir(passStore).relativeFilePath(fileName);
-                path.replace(QRegExp("\\.gpg$"), "");
-                executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
-                                           "Edit for " + path + " using QtPass.\"");
+            } else {
+                qDebug() << "Decrypt error on re-encrypt";
             }
-            process->waitForFinished(3000);
         }
     }
     if (autoPush)
