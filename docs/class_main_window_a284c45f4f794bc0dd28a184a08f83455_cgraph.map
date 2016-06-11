@@ -1,5 +1,5 @@
 <map id="MainWindow::getGpgExecutable" name="MainWindow::getGpgExecutable">
-<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config. " alt="" coords="299,29,440,55"/>
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="299,29,440,55"/>
 <area shape="rect" id="node5" href="$class_password_dialog.html#a21d879d779c3a51039b4cbc82bedf282" title="Sets the file (name) in the interface. " alt="" coords="287,79,451,104"/>
 <area shape="rect" id="node6" href="$class_password_dialog.html#a0e1d5305cb76b325312b93533a9751dc" title="Sets content in the template for the interface. " alt="" coords="271,128,468,153"/>
 <area shape="rect" id="node7" href="$class_password_dialog.html#a5e75eb4d58a6100822db1fb95c2b2738" title="PasswordDialog::useTemplate" alt="" coords="269,177,470,203"/>
