@@ -1904,18 +1904,8 @@ void MainWindow::reencryptPath(QString dir) {
     while (gpgFiles.hasNext()) {
         QString fileName = gpgFiles.next();
         if (gpgFiles.fileInfo().path() != currentDir.path()) {
-            QFile file(gpgFiles.fileInfo().path() + "/.gpg-id");
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                gpgId.clear();
-                QTextStream in(&file);
-                while (!in.atEnd()) {
-                   gpgId << in.readLine();
-                }
-                gpgId.sort();
-                currentDir.setPath(gpgFiles.fileInfo().path());
-                qDebug() << "folder changed to " + currentDir.path();
-            }
-            // @TODO(annejan) recursive down if not found instead?
+            gpgId = getRecipientList(fileName);
+            gpgId.sort();
         }
         currentAction = GPG_INTERNAL;
         process->waitForFinished();
@@ -1937,8 +1927,8 @@ void MainWindow::reencryptPath(QString dir) {
         }
         actualKeys.sort();
         if (actualKeys != gpgId) {
-            qDebug() << actualKeys << gpgId << getRecipientList(fileName);
-            //qDebug() << "reencrypt " << fileName << " for " << gpgId;
+            //qDebug() << actualKeys << gpgId << getRecipientList(fileName);
+            qDebug() << "reencrypt " << fileName << " for " << gpgId;
             lastDecrypt = "Could not decrypt";
             currentAction = GPG_INTERNAL;
             executeWrapper(gpgExecutable,
@@ -1961,15 +1951,17 @@ void MainWindow::reencryptPath(QString dir) {
                 currentAction = EDIT;
                 executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
                                               "\" " + recipients + " -", lastDecrypt);
+                process->waitForFinished(3000);
+
                 if (!useWebDav && useGit) {
-                    process->waitForFinished(3000);
                     executeWrapper(gitExecutable, "add \"" + fileName + '"');
                     QString path = QDir(passStore).relativeFilePath(fileName);
                     path.replace(QRegExp("\\.gpg$"), "");
                     executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
                                                "Edit for " + path + " using QtPass.\"");
+                    process->waitForFinished(3000);
                 }
-                process->waitForFinished(3000);
+
             } else {
                 qDebug() << "Decrypt error on re-encrypt";
             }
