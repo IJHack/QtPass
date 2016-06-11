@@ -1,5 +1,5 @@
 <map id="ConfigDialog::~ConfigDialog" name="ConfigDialog::~ConfigDialog">
-<area shape="rect" id="node2" href="$class_main_window.html#a666bfa55a43280416de60680dee888c1" title="MainWindow::setGitExecutable. " alt="" coords="249,5,455,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#ababd7cad87306ba4ba01866f943dcbd4" title="MainWindow::setGpgExecutable. " alt="" coords="245,55,459,80"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a492d8547f547bedfe833a5efd51ee3db" title="MainWindow::setPassExecutable. " alt="" coords="243,104,461,129"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a666bfa55a43280416de60680dee888c1" title="MainWindow::setGitExecutable set the executable for git eg: /usr/local/bin/git. " alt="" coords="249,5,455,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ababd7cad87306ba4ba01866f943dcbd4" title="MainWindow::setGpgExecutable set the executable for gpg eg: /usr/local/bin/gig. " alt="" coords="245,55,459,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a492d8547f547bedfe833a5efd51ee3db" title="MainWindow::setPassExecutable set the executable for pass eg: /usr/local/bin/pass. " alt="" coords="243,104,461,129"/>
 </map>
