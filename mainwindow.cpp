@@ -1485,7 +1485,7 @@ void MainWindow::on_usersButton_clicked() {
 }
 
 /**
- * @brief MainWindow::setApp
+ * @brief MainWindow::setApp make sure we know what/who/where we are
  * @param app
  */
 void MainWindow::setApp(SingleApplication *app) {
@@ -1496,7 +1496,7 @@ void MainWindow::setApp(SingleApplication *app) {
 }
 
 /**
- * @brief MainWindow::messageAvailable
+ * @brief MainWindow::messageAvailable we have some text/message/search to do . .
  * @param message
  */
 void MainWindow::messageAvailable(QString message) {
@@ -1512,13 +1512,13 @@ void MainWindow::messageAvailable(QString message) {
 }
 
 /**
- * @brief MainWindow::setText
+ * @brief MainWindow::setText do a search from an external source (eg: commandline)
  * @param message
  */
 void MainWindow::setText(QString text) { ui->lineEdit->setText(text); }
 
 /**
- * @brief MainWindow::updateEnv
+ * @brief MainWindow::updateEnv update the execution environment (used when switching profiles)
  */
 void MainWindow::updateEnv() {
   QStringList store = env.filter("PASSWORD_STORE_DIR");
@@ -1533,7 +1533,7 @@ void MainWindow::updateEnv() {
 }
 
 /**
- * @brief MainWindow::getSecretKeys
+ * @brief MainWindow::getSecretKeys get list of secret/private keys
  * @return QStringList keys
  */
 QStringList MainWindow::getSecretKeys() {
@@ -1550,7 +1550,7 @@ QStringList MainWindow::getSecretKeys() {
 }
 
 /**
- * @brief Dialog::genKey
+ * @brief Dialog::genKey internal gpg keypair generator . .
  * @param QString batch
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
@@ -1561,7 +1561,7 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
 }
 
 /**
- * @brief MainWindow::updateProfileBox
+ * @brief MainWindow::updateProfileBox update the list of profiles, optionally select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
   // qDebug() << profiles.size();
@@ -1587,7 +1587,7 @@ void MainWindow::updateProfileBox() {
 }
 
 /**
- * @brief MainWindow::on_profileBox_currentIndexChanged
+ * @brief MainWindow::on_profileBox_currentIndexChanged make sure we show the correct "profile"
  * @param name
  */
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
@@ -1619,7 +1619,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 }
 
 /**
- * @brief MainWindow::initTrayIcon
+ * @brief MainWindow::initTrayIcon show a nice tray icon on systems that support it
  */
 void MainWindow::initTrayIcon() {
   if (tray != NULL) {
@@ -1637,7 +1637,7 @@ void MainWindow::initTrayIcon() {
 }
 
 /**
- * @brief MainWindow::destroyTrayIcon
+ * @brief MainWindow::destroyTrayIcon remove that pesky tray icon
  */
 void MainWindow::destroyTrayIcon() {
   if (tray == NULL) {
@@ -1649,7 +1649,7 @@ void MainWindow::destroyTrayIcon() {
 }
 
 /**
- * @brief MainWindow::closeEvent
+ * @brief MainWindow::closeEvent hide or quit
  * @param event
  */
 void MainWindow::closeEvent(QCloseEvent *event) {
@@ -1673,6 +1673,12 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   }
 }
 
+/**
+ * @brief MainWindow::eventFilter filter out some events and focus the treeview
+ * @param obj
+ * @param event
+ * @return
+ */
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     QKeyEvent *key = static_cast<QKeyEvent *>(event);
@@ -1683,6 +1689,10 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   return QObject::eventFilter(obj, event);
 }
 
+/**
+ * @brief MainWindow::keyPressEvent did anyone press return, enter or escape?
+ * @param event
+ */
 void MainWindow::keyPressEvent(QKeyEvent *event) {
   switch (event->key()) {
   case Qt::Key_Delete:
@@ -1700,10 +1710,13 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
   }
 }
 
+/**
+ * @brief MainWindow::on_copyPasswordButton_clicked just a launcher for MainWindow::copyPasswordToClipboard()
+ */
 void MainWindow::on_copyPasswordButton_clicked() { copyPasswordToClipboard(); }
 
 /**
- * @brief MainWindow::showContextMenu
+ * @brief MainWindow::showContextMenu show us the (file or folder) context menu
  * @param pos
  */
 void MainWindow::showContextMenu(const QPoint &pos) {
@@ -1755,7 +1768,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 }
 
 /**
- * @brief MainWindow::showContextMenu
+ * @brief MainWindow::showBrowserContextMenu show us the context menu in password window
  * @param pos
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
@@ -1775,7 +1788,7 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
 }
 
 /**
- * @brief MainWindow::addFolder
+ * @brief MainWindow::addFolder add a new folder to store passwords in
  */
 void MainWindow::addFolder() {
   bool ok;
@@ -1794,7 +1807,7 @@ void MainWindow::addFolder() {
 }
 
 /**
- * @brief MainWindow::editPassword
+ * @brief MainWindow::editPassword read password and open edit window via MainWindow::on_editButton_clicked()
  */
 void MainWindow::editPassword() {
   if (useGit && autoPull)
@@ -1820,8 +1833,8 @@ void MainWindow::editPassword() {
 }
 
 /**
- * @brief MainWindow::generatePassword
- * @return
+ * @brief MainWindow::generatePassword use either pwgen or internal password generator
+ * @return the password
  */
 QString MainWindow::generatePassword() {
   QString passwd;
@@ -1860,7 +1873,7 @@ QString MainWindow::generatePassword() {
 }
 
 /**
- * @brief MainWindow::waitFor
+ * @brief MainWindow::waitFor wait until process->atEnd and execQueue->isEmpty or timeout after x-seconds
  * @param seconds
  */
 void MainWindow::waitFor(int seconds) {
@@ -1879,7 +1892,7 @@ void MainWindow::waitFor(int seconds) {
 }
 
 /**
- * @brief MainWindow::clearTemplateWidgets
+ * @brief MainWindow::clearTemplateWidgets empty the template widget fields in the UI
  */
 void MainWindow::clearTemplateWidgets() {
   while (ui->formLayout->count() > 0) {
@@ -1890,10 +1903,8 @@ void MainWindow::clearTemplateWidgets() {
   ui->verticalLayoutPassword->setSpacing(0);
 }
 
-/*
- * @brief Mainwindow::copyPasswordToClipboard - copy the clipped password (if
- * not "") to the clipboard
- * @return
+/**
+ * @brief Mainwindow::copyPasswordToClipboard - copy the clipped password (if not "") to the clipboard
  */
 void MainWindow::copyPasswordToClipboard() {
   if (clippedPass.length() > 0) {
@@ -1908,7 +1919,6 @@ void MainWindow::copyPasswordToClipboard() {
 
 /**
  * @brief Mainwindow::setClippedPassword - set the stored clipped password
- * @return none
  */
 void MainWindow::setClippedPassword(const QString &pass) {
   clippedPass = pass;
@@ -1922,6 +1932,8 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
 
 /**
  * @brief MainWindow::reencryptPath reencrypt all files under the chosen directory
+ *
+ * This is stil quite experimental..s
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
