@@ -23,7 +23,7 @@
 #include "util.h"
 
 /**
- * @brief MainWindow::MainWindow
+ * @brief MainWindow::MainWindow handles all of the main functionality and also the main window.
  * @param parent
  */
 MainWindow::MainWindow(QWidget *parent)
@@ -77,7 +77,7 @@ void MainWindow::focusInput() {
 }
 
 /**
- * @brief MainWindow::~MainWindow
+ * @brief MainWindow::~MainWindow destroy!
  */
 MainWindow::~MainWindow() {
 #ifdef Q_OS_WIN
@@ -91,6 +91,10 @@ MainWindow::~MainWindow() {
 #endif
 }
 
+/**
+ * @brief MainWindow::getSettings make sure to only have one set of settings.
+ * @return QScopedPointer<QSettings> settings
+ */
 QSettings &MainWindow::getSettings() {
   if (!settings) {
     QString portable_ini = QCoreApplication::applicationDirPath() +
@@ -107,6 +111,10 @@ QSettings &MainWindow::getSettings() {
   return *settings;
 }
 
+/**
+ * @brief MainWindow::changeEvent sets focus to the search box
+ * @param event
+ */
 void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
   if (event->type() == QEvent::ActivationChange) {
@@ -117,6 +125,9 @@ void MainWindow::changeEvent(QEvent *event) {
   }
 }
 
+/**
+ * @brief MainWindow::mountWebDav is some scary voodoo magic
+ */
 void MainWindow::mountWebDav() {
 #ifdef Q_OS_WIN
   char dst[20] = {0};
@@ -176,7 +187,7 @@ void MainWindow::mountWebDav() {
 }
 
 /**
- * @brief MainWindow::checkConfig
+ * @brief MainWindow::checkConfig make sure we are ready to go as soon as possible
  */
 bool MainWindow::checkConfig() {
   QSettings &settings(getSettings());
@@ -404,7 +415,7 @@ bool MainWindow::checkConfig() {
 }
 
 /**
- * @brief MainWindow::config
+ * @brief MainWindow::config pops up the configuration screen and handles all inter-window communication
  */
 void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
@@ -586,7 +597,7 @@ void MainWindow::config() {
 }
 
 /**
- * @brief MainWindow::on_updateButton_clicked
+ * @brief MainWindow::on_updateButton_clicked do a git pull
  */
 void MainWindow::on_updateButton_clicked() {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
@@ -598,7 +609,7 @@ void MainWindow::on_updateButton_clicked() {
 }
 
 /**
- * @brief MainWindow::on_pushButton_clicked
+ * @brief MainWindow::on_pushButton_clicked do a git push
  */
 void MainWindow::on_pushButton_clicked() {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
@@ -609,6 +620,12 @@ void MainWindow::on_pushButton_clicked() {
     executeWrapper(gitExecutable, "push");
 }
 
+/**
+ * @brief MainWindow::getDir get selectd folder path
+ * @param index
+ * @param forPass short or full path
+ * @return path
+ */
 QString MainWindow::getDir(const QModelIndex &index, bool forPass) {
   QString abspath = QDir(passStore).absolutePath() + '/';
   if (!index.isValid())
@@ -623,6 +640,13 @@ QString MainWindow::getDir(const QModelIndex &index, bool forPass) {
   return filePath;
 }
 
+/**
+ * @brief MainWindow::getFile get the selected file path
+ * @param index
+ * @param forPass short or full path
+ * @return path
+ * @return
+ */
 QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
   if (!index.isValid() ||
       !model.fileInfo(proxyModel.mapToSource(index)).isFile())
@@ -636,7 +660,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
 }
 
 /**
- * @brief MainWindow::on_treeView_clicked
+ * @brief MainWindow::on_treeView_clicked read the selected password file
  * @param index
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
@@ -659,7 +683,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
 }
 
 /**
- * @brief When doubleclicked on TreeViewItem, open the edit Window
+ * @brief MainWindow::on_treeView_doubleClicked when doubleclicked on TreeViewItem, open the edit Window
  * @param index
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
@@ -681,7 +705,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
 }
 
 /**
- * @brief MainWindow::executePass
+ * @brief MainWindow::executePass easy wrapper for running pass
  * @param args
  */
 void MainWindow::executePass(QString args, QString input) {
@@ -689,7 +713,7 @@ void MainWindow::executePass(QString args, QString input) {
 }
 
 /**
- * @brief MainWindow::executePassGitInit
+ * @brief MainWindow::executePassGitInit git init wrapper
  */
 void MainWindow::executePassGitInit() {
   qDebug() << "Pass git init called";
@@ -700,9 +724,10 @@ void MainWindow::executePassGitInit() {
 }
 
 /**
- * @brief MainWindow::executeWrapper
- * @param app
- * @param args
+ * @brief MainWindow::executeWrapper run an application, queue when needed.
+ * @param app path to application to run
+ * @param args required arguements
+ * @param input optional input
  */
 void MainWindow::executeWrapper(QString app, QString args, QString input) {
   // qDebug() << app + " " + args;
@@ -744,7 +769,7 @@ void MainWindow::executeWrapper(QString app, QString args, QString input) {
 }
 
 /**
- * @brief MainWindow::readyRead
+ * @brief MainWindow::readyRead we have data
  */
 void MainWindow::readyRead(bool finished = false) {
   if (currentAction == PWGEN)
@@ -856,7 +881,7 @@ void MainWindow::readyRead(bool finished = false) {
 }
 
 /**
- * @brief MainWindow::clearClipboard
+ * @brief MainWindow::clearClipboard remove clipboard contents.
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
@@ -869,7 +894,7 @@ void MainWindow::clearClipboard() {
 }
 
 /**
- * @brief MainWindow::clearPanel
+ * @brief MainWindow::clearPanel hide the information from shoulder surfers
  */
 void MainWindow::clearPanel() {
   while (ui->formLayout->count() > 0) {
@@ -882,7 +907,7 @@ void MainWindow::clearPanel() {
 }
 
 /**
- * @brief MainWindow::processFinished
+ * @brief MainWindow::processFinished process is finished, if there is another one queued up to run, start it.
  * @param exitCode
  * @param exitStatus
  */
@@ -900,9 +925,8 @@ void MainWindow::processFinished(int exitCode,
   }
 }
 
-/**                QStringList tokens =  output.split("\n");
-
- * @brief MainWindow::enableUiElements
+/**
+ * @brief MainWindow::enableUiElements enable or disable the relevant UI elements
  * @param state
  */
 void MainWindow::enableUiElements(bool state) {
@@ -921,7 +945,7 @@ void MainWindow::enableUiElements(bool state) {
 }
 
 /**
- * @brief MainWindow::processError
+ * @brief MainWindow::processError something went wrong
  * @param error
  */
 void MainWindow::processError(QProcess::ProcessError error) {
@@ -953,31 +977,31 @@ void MainWindow::processError(QProcess::ProcessError error) {
 }
 
 /**
- * @brief MainWindow::setPassExecutable
+ * @brief MainWindow::setPassExecutable set the executable for pass eg: /usr/local/bin/pass
  * @param path
  */
 void MainWindow::setPassExecutable(QString path) { passExecutable = path; }
 
 /**
- * @brief MainWindow::setGitExecutable
+ * @brief MainWindow::setGitExecutable set the executable for git eg: /usr/local/bin/git
  * @param path
  */
 void MainWindow::setGitExecutable(QString path) { gitExecutable = path; }
 
 /**
- * @brief MainWindow::setGpgExecutable
+ * @brief MainWindow::setGpgExecutable set the executable for gpg eg: /usr/local/bin/gig
  * @param path
  */
 void MainWindow::setGpgExecutable(QString path) { gpgExecutable = path; }
 
 /**
  * @brief MainWindow::getGpgExecutable
- * @return
+ * @return path to the gpg executable
  */
 QString MainWindow::getGpgExecutable() { return gpgExecutable; }
 
 /**
- * @brief MainWindow::on_configButton_clicked
+ * @brief MainWindow::on_configButton_clicked run Mainwindow::config
  */
 void MainWindow::on_configButton_clicked() { config(); }
 
@@ -999,7 +1023,9 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
 }
 
 /**
- * @brief MainWindow::on_lineEdit_returnPressed
+ * @brief MainWindow::on_lineEdit_returnPressed get searching
+ *
+ * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
   qDebug() << "on_lineEdit_returnPressed";
@@ -1008,7 +1034,7 @@ void MainWindow::on_lineEdit_returnPressed() {
 }
 
 /**
- * @brief MainWindow::selectFirstFile
+ * @brief MainWindow::selectFirstFile select the first possible file in the tree
  */
 void MainWindow::selectFirstFile() {
   QModelIndex index = proxyModel.mapFromSource(model.setRootPath(passStore));
@@ -1017,7 +1043,7 @@ void MainWindow::selectFirstFile() {
 }
 
 /**
- * @brief MainWindow::firstFile
+ * @brief MainWindow::firstFile return location of first possible file
  * @param parentIndex
  * @return QModelIndex
  */
@@ -1035,9 +1061,9 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
 }
 
 /**
- * @brief MainWindow::getRecipientList
- * @param for_file
- * @return
+ * @brief MainWindow::getRecipientList return list op gpg-id's to encrypt for
+ * @param for_file which file (folder) would you like recepients for
+ * @return recepients gpg-id contents
  */
 QStringList MainWindow::getRecipientList(QString for_file) {
   QDir gpgIdPath(QFileInfo(for_file.startsWith(passStore)
@@ -1068,11 +1094,11 @@ QStringList MainWindow::getRecipientList(QString for_file) {
 }
 
 /**
- * @brief MainWindow::getRecipientString
- * @param for_file
- * @param separator
+ * @brief MainWindow::getRecipientString formated string for use with GPG
+ * @param for_file which file (folder) would you like recepients for
+ * @param separator formating separator eg: " -r "
  * @param count
- * @return
+ * @return recepient string
  */
 QString MainWindow::getRecipientString(QString for_file, QString separator,
                                        int *count) {
@@ -1086,9 +1112,10 @@ QString MainWindow::getRecipientString(QString for_file, QString separator,
 }
 
 /**
- * @brief MainWindow::setPassword
- * @param file
- * @param overwrite
+ * @brief MainWindow::setPassword open passworddialog and save file (if not canceled)
+ * @param file which pgp file
+ * @param overwrite update file (not insert)
+ * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   if (!isNew && lastDecrypt.isEmpty()) {
@@ -1143,7 +1170,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
 }
 
 /**
- * @brief MainWindow::on_addButton_clicked
+ * @brief MainWindow::on_addButton_clicked add a new password by showing a number of dialogs.
  */
 void MainWindow::on_addButton_clicked() {
   // Check for active and selected encryption key
@@ -1179,7 +1206,7 @@ void MainWindow::on_addButton_clicked() {
 }
 
 /**
- * @brief MainWindow::on_deleteButton_clicked
+ * @brief MainWindow::on_deleteButton_clicked remove password, if you are sure.
  */
 void MainWindow::on_deleteButton_clicked() {
   QFileInfo fileOrFolder =
@@ -1261,9 +1288,9 @@ void MainWindow::on_deleteButton_clicked() {
 }
 
 /**
- * @brief MainWindow::removeDir
- * @param dirName
- * @return
+ * @brief MainWindow::removeDir delete folder recursive.
+ * @param dirName which folder.
+ * @return was removal succesful?
  */
 bool MainWindow::removeDir(const QString &dirName) {
   bool result = true;
@@ -1288,7 +1315,7 @@ bool MainWindow::removeDir(const QString &dirName) {
 }
 
 /**
- * @brief MainWindow::on_editButton_clicked
+ * @brief MainWindow::on_editButton_clicked try and edit (selected) password.
  */
 void MainWindow::on_editButton_clicked() {
   QString file = getFile(ui->treeView->currentIndex(), usePass);
@@ -1302,10 +1329,10 @@ void MainWindow::on_editButton_clicked() {
 }
 
 /**
- * @brief MainWindow::listKeys
+ * @brief MainWindow::listKeys list users
  * @param keystring
- * @param secret
- * @return
+ * @param secret list private keys
+ * @return QList<UserInfo> users
  */
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
   waitFor(5);
@@ -1342,12 +1369,19 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
   return users;
 }
 
+/**
+ * @brief MainWindow::userDialog see MainWindow::on_usersButton_clicked()
+ * @param dir folder to edit users for.
+ */
 void MainWindow::userDialog(QString dir) {
   if (!dir.isEmpty())
     currentDir = dir;
   on_usersButton_clicked();
 }
 
+/**
+ * @brief MainWindow::on_usersButton_clicked edit users for the current folder, gets lists and opens UserDialog.
+ */
 void MainWindow::on_usersButton_clicked() {
   QList<UserInfo> users = listKeys();
   if (users.size() == 0) {
@@ -1451,7 +1485,7 @@ void MainWindow::on_usersButton_clicked() {
 }
 
 /**
- * @brief MainWindow::setApp
+ * @brief MainWindow::setApp make sure we know what/who/where we are
  * @param app
  */
 void MainWindow::setApp(SingleApplication *app) {
@@ -1462,7 +1496,7 @@ void MainWindow::setApp(SingleApplication *app) {
 }
 
 /**
- * @brief MainWindow::messageAvailable
+ * @brief MainWindow::messageAvailable we have some text/message/search to do . .
  * @param message
  */
 void MainWindow::messageAvailable(QString message) {
@@ -1478,13 +1512,13 @@ void MainWindow::messageAvailable(QString message) {
 }
 
 /**
- * @brief MainWindow::setText
+ * @brief MainWindow::setText do a search from an external source (eg: commandline)
  * @param message
  */
 void MainWindow::setText(QString text) { ui->lineEdit->setText(text); }
 
 /**
- * @brief MainWindow::updateEnv
+ * @brief MainWindow::updateEnv update the execution environment (used when switching profiles)
  */
 void MainWindow::updateEnv() {
   QStringList store = env.filter("PASSWORD_STORE_DIR");
@@ -1499,7 +1533,7 @@ void MainWindow::updateEnv() {
 }
 
 /**
- * @brief MainWindow::getSecretKeys
+ * @brief MainWindow::getSecretKeys get list of secret/private keys
  * @return QStringList keys
  */
 QStringList MainWindow::getSecretKeys() {
@@ -1516,7 +1550,7 @@ QStringList MainWindow::getSecretKeys() {
 }
 
 /**
- * @brief Dialog::genKey
+ * @brief Dialog::genKey internal gpg keypair generator . .
  * @param QString batch
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
@@ -1527,7 +1561,7 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
 }
 
 /**
- * @brief MainWindow::updateProfileBox
+ * @brief MainWindow::updateProfileBox update the list of profiles, optionally select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
   // qDebug() << profiles.size();
@@ -1553,7 +1587,7 @@ void MainWindow::updateProfileBox() {
 }
 
 /**
- * @brief MainWindow::on_profileBox_currentIndexChanged
+ * @brief MainWindow::on_profileBox_currentIndexChanged make sure we show the correct "profile"
  * @param name
  */
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
@@ -1585,7 +1619,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 }
 
 /**
- * @brief MainWindow::initTrayIcon
+ * @brief MainWindow::initTrayIcon show a nice tray icon on systems that support it
  */
 void MainWindow::initTrayIcon() {
   if (tray != NULL) {
@@ -1603,7 +1637,7 @@ void MainWindow::initTrayIcon() {
 }
 
 /**
- * @brief MainWindow::destroyTrayIcon
+ * @brief MainWindow::destroyTrayIcon remove that pesky tray icon
  */
 void MainWindow::destroyTrayIcon() {
   if (tray == NULL) {
@@ -1615,7 +1649,7 @@ void MainWindow::destroyTrayIcon() {
 }
 
 /**
- * @brief MainWindow::closeEvent
+ * @brief MainWindow::closeEvent hide or quit
  * @param event
  */
 void MainWindow::closeEvent(QCloseEvent *event) {
@@ -1639,6 +1673,12 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   }
 }
 
+/**
+ * @brief MainWindow::eventFilter filter out some events and focus the treeview
+ * @param obj
+ * @param event
+ * @return
+ */
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     QKeyEvent *key = static_cast<QKeyEvent *>(event);
@@ -1649,6 +1689,10 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   return QObject::eventFilter(obj, event);
 }
 
+/**
+ * @brief MainWindow::keyPressEvent did anyone press return, enter or escape?
+ * @param event
+ */
 void MainWindow::keyPressEvent(QKeyEvent *event) {
   switch (event->key()) {
   case Qt::Key_Delete:
@@ -1666,10 +1710,13 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
   }
 }
 
+/**
+ * @brief MainWindow::on_copyPasswordButton_clicked just a launcher for MainWindow::copyPasswordToClipboard()
+ */
 void MainWindow::on_copyPasswordButton_clicked() { copyPasswordToClipboard(); }
 
 /**
- * @brief MainWindow::showContextMenu
+ * @brief MainWindow::showContextMenu show us the (file or folder) context menu
  * @param pos
  */
 void MainWindow::showContextMenu(const QPoint &pos) {
@@ -1721,7 +1768,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 }
 
 /**
- * @brief MainWindow::showContextMenu
+ * @brief MainWindow::showBrowserContextMenu show us the context menu in password window
  * @param pos
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
@@ -1741,7 +1788,7 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
 }
 
 /**
- * @brief MainWindow::addFolder
+ * @brief MainWindow::addFolder add a new folder to store passwords in
  */
 void MainWindow::addFolder() {
   bool ok;
@@ -1760,7 +1807,7 @@ void MainWindow::addFolder() {
 }
 
 /**
- * @brief MainWindow::editPassword
+ * @brief MainWindow::editPassword read password and open edit window via MainWindow::on_editButton_clicked()
  */
 void MainWindow::editPassword() {
   if (useGit && autoPull)
@@ -1786,8 +1833,8 @@ void MainWindow::editPassword() {
 }
 
 /**
- * @brief MainWindow::generatePassword
- * @return
+ * @brief MainWindow::generatePassword use either pwgen or internal password generator
+ * @return the password
  */
 QString MainWindow::generatePassword() {
   QString passwd;
@@ -1826,7 +1873,7 @@ QString MainWindow::generatePassword() {
 }
 
 /**
- * @brief MainWindow::waitFor
+ * @brief MainWindow::waitFor wait until process->atEnd and execQueue->isEmpty or timeout after x-seconds
  * @param seconds
  */
 void MainWindow::waitFor(int seconds) {
@@ -1845,7 +1892,7 @@ void MainWindow::waitFor(int seconds) {
 }
 
 /**
- * @brief MainWindow::clearTemplateWidgets
+ * @brief MainWindow::clearTemplateWidgets empty the template widget fields in the UI
  */
 void MainWindow::clearTemplateWidgets() {
   while (ui->formLayout->count() > 0) {
@@ -1856,10 +1903,8 @@ void MainWindow::clearTemplateWidgets() {
   ui->verticalLayoutPassword->setSpacing(0);
 }
 
-/*
- * @brief Mainwindow::copyPasswordToClipboard - copy the clipped password (if
- * not "") to the clipboard
- * @return
+/**
+ * @brief Mainwindow::copyPasswordToClipboard - copy the clipped password (if not "") to the clipboard
  */
 void MainWindow::copyPasswordToClipboard() {
   if (clippedPass.length() > 0) {
@@ -1874,7 +1919,6 @@ void MainWindow::copyPasswordToClipboard() {
 
 /**
  * @brief Mainwindow::setClippedPassword - set the stored clipped password
- * @return none
  */
 void MainWindow::setClippedPassword(const QString &pass) {
   clippedPass = pass;
@@ -1888,6 +1932,8 @@ const QString &MainWindow::getClippedPassword() { return clippedPass; }
 
 /**
  * @brief MainWindow::reencryptPath reencrypt all files under the chosen directory
+ *
+ * This is stil quite experimental..s
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
@@ -1899,26 +1945,16 @@ void MainWindow::reencryptPath(QString dir) {
     waitFor(50);
     process->waitForFinished();
     QDir currentDir;
-    currentAction = GPG_INTERNAL;
     QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files, QDirIterator::Subdirectories);
     QStringList gpgId;
-    QStringList prevGpgId;
     while (gpgFiles.hasNext()) {
         QString fileName = gpgFiles.next();
         if (gpgFiles.fileInfo().path() != currentDir.path()) {
-            QFile file(gpgFiles.fileInfo().path() + "/.gpg-id");
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                gpgId.clear();
-                QTextStream in(&file);
-                while (!in.atEnd()) {
-                   gpgId << in.readLine();
-                }
-                gpgId.sort();
-                currentDir.setPath(gpgFiles.fileInfo().path());
-                qDebug() << "folder changed to " + currentDir.path();
-            }
-            // @TODO(annejan) recursive down if not found instead?
+            gpgId = getRecipientList(fileName);
+            gpgId.sort();
         }
+        currentAction = GPG_INTERNAL;
+        process->waitForFinished();
         executeWrapper(gpgExecutable, "-v --no-secmem-warning --no-permission-warning --list-only --keyid-format long " + fileName);
         process->waitForFinished(3000);
         QStringList actualKeys;
@@ -1937,6 +1973,7 @@ void MainWindow::reencryptPath(QString dir) {
         }
         actualKeys.sort();
         if (actualKeys != gpgId) {
+            //qDebug() << actualKeys << gpgId << getRecipientList(fileName);
             qDebug() << "reencrypt " << fileName << " for " << gpgId;
             lastDecrypt = "Could not decrypt";
             currentAction = GPG_INTERNAL;
@@ -1945,28 +1982,35 @@ void MainWindow::reencryptPath(QString dir) {
                                fileName + '"');
             process->waitForFinished(30000); // long wait (passphrase stuff)
             lastDecrypt = process->readAllStandardOutput();
-            if (lastDecrypt.right(1) != "\n")
-            lastDecrypt += "\n";
 
-            QString recipients = getRecipientString(fileName, " -r ");
-            if (recipients.isEmpty()) {
-            QMessageBox::critical(this, tr("Can not edit"),
-                tr("Could not read encryption key to use, .gpg-id "
-                    "file missing or invalid."));
-                return;
-            }
-            currentAction = EDIT;
-            executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
-                                          "\" " + recipients + " -", lastDecrypt);
-            if (!useWebDav && useGit) {
+            if (!lastDecrypt.isEmpty() && lastDecrypt != "Could not decrypt") {
+                if (lastDecrypt.right(1) != "\n")
+                    lastDecrypt += "\n";
+
+                QString recipients = getRecipientString(fileName, " -r ");
+                if (recipients.isEmpty()) {
+                QMessageBox::critical(this, tr("Can not edit"),
+                    tr("Could not read encryption key to use, .gpg-id "
+                        "file missing or invalid."));
+                    return;
+                }
+                currentAction = EDIT;
+                executeWrapper(gpgExecutable, "--yes --batch -eq --output \"" + fileName +
+                                              "\" " + recipients + " -", lastDecrypt);
                 process->waitForFinished(3000);
-                executeWrapper(gitExecutable, "add \"" + fileName + '"');
-                QString path = QDir(passStore).relativeFilePath(fileName);
-                path.replace(QRegExp("\\.gpg$"), "");
-                executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
-                                           "Edit for " + path + " using QtPass.\"");
+
+                if (!useWebDav && useGit) {
+                    executeWrapper(gitExecutable, "add \"" + fileName + '"');
+                    QString path = QDir(passStore).relativeFilePath(fileName);
+                    path.replace(QRegExp("\\.gpg$"), "");
+                    executeWrapper(gitExecutable, "commit \"" + fileName + "\" -m \"" +
+                                               "Edit for " + path + " using QtPass.\"");
+                    process->waitForFinished(3000);
+                }
+
+            } else {
+                qDebug() << "Decrypt error on re-encrypt";
             }
-            process->waitForFinished(3000);
         }
     }
     if (autoPush)
