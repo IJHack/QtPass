@@ -1,7 +1,7 @@
 <map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
-<area shape="rect" id="node2" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="209,5,401,31"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#a796f48c56e5e436065f41f55b5fd7509" title="ConfigDialog::useGit. " alt="" coords="233,55,377,80"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="197,104,413,129"/>
-<area shape="rect" id="node5" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="221,153,389,179"/>
-<area shape="rect" id="node6" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers" alt="" coords="461,153,615,179"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="217,5,418,32"/>
+<area shape="rect" id="node3" href="$class_config_dialog.html#a796f48c56e5e436065f41f55b5fd7509" title="ConfigDialog::useGit. " alt="" coords="243,56,392,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="204,107,431,133"/>
+<area shape="rect" id="node5" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="229,157,405,184"/>
+<area shape="rect" id="node6" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers" alt="" coords="479,157,640,184"/>
 </map>

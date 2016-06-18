@@ -1,12 +1,12 @@
 <map id="trayicon.h" name="trayicon.h">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="300,79,405,104"/>
-<area shape="rect" id="node11" href="$trayicon_8cpp.html" title="trayicon.cpp" alt="" coords="428,79,521,104"/>
-<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="183,152,287,177"/>
-<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,299,123,324"/>
-<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,299,416,324"/>
-<area shape="rect" id="node8" href="$main_8cpp.html" title="main.cpp" alt="" coords="538,152,614,177"/>
-<area shape="rect" id="node9" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="390,152,515,177"/>
-<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,225,264,251"/>
-<area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,299,272,324"/>
-<area shape="rect" id="node10" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="440,225,579,251"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="309,80,420,107"/>
+<area shape="rect" id="node11" href="$trayicon_8cpp.html" title="trayicon.cpp" alt="" coords="445,80,543,107"/>
+<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="190,155,299,181"/>
+<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,304,129,331"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="310,304,435,331"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="main.cpp" alt="" coords="559,155,637,181"/>
+<area shape="rect" id="node9" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="403,155,535,181"/>
+<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="159,229,277,256"/>
+<area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="153,304,285,331"/>
+<area shape="rect" id="node10" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="453,229,599,256"/>
 </map>

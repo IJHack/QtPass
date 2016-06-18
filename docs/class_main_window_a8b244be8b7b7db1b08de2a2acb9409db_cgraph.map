@@ -1,9 +1,9 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="235,132,413,157"/>
-<area shape="rect" id="node3" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore. " alt="" coords="485,5,644,31"/>
-<area shape="rect" id="node4" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath. " alt="" coords="716,56,887,81"/>
-<area shape="rect" id="node5" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath" alt="" coords="492,107,637,132"/>
-<area shape="rect" id="node6" href="$class_util.html#af23940548a0dcd3ade9c052d38ad0549" title="Util::checkConfig. " alt="" coords="741,181,862,207"/>
-<area shape="rect" id="node7" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="494,156,635,181"/>
-<area shape="rect" id="node8" href="$class_store_model.html#af223e13120a72e556a394aae4a92ad0f" title="StoreModel::setModelAndStore. " alt="" coords="461,257,668,283"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="244,132,431,159"/>
+<area shape="rect" id="node3" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore. " alt="" coords="505,5,671,32"/>
+<area shape="rect" id="node4" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath. " alt="" coords="745,56,924,83"/>
+<area shape="rect" id="node5" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath" alt="" coords="512,107,664,133"/>
+<area shape="rect" id="node6" href="$class_util.html#af23940548a0dcd3ade9c052d38ad0549" title="Util::checkConfig. " alt="" coords="771,183,898,209"/>
+<area shape="rect" id="node7" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="515,157,661,184"/>
+<area shape="rect" id="node8" href="$class_store_model.html#af223e13120a72e556a394aae4a92ad0f" title="StoreModel::setModelAndStore. " alt="" coords="479,259,697,285"/>
 </map>

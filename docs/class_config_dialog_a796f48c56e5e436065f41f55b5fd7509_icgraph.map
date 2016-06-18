@@ -1,5 +1,5 @@
 <map id="ConfigDialog::useGit" name="ConfigDialog::useGit">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a5246b29bdf5ec2db15e3326d634a560c" title="ConfigDialog::setGitPath. " alt="" coords="197,5,364,31"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="ConfigDialog::usePass. " alt="" coords="203,55,359,80"/>
-<area shape="rect" id="node4" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard. " alt="" coords="209,104,352,129"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a5246b29bdf5ec2db15e3326d634a560c" title="ConfigDialog::setGitPath. " alt="" coords="203,5,377,32"/>
+<area shape="rect" id="node3" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="ConfigDialog::usePass. " alt="" coords="209,56,371,83"/>
+<area shape="rect" id="node4" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard. " alt="" coords="215,107,365,133"/>
 </map>

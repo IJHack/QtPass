@@ -1,4 +1,4 @@
 <map id="QProgressIndicator::animationDelay" name="QProgressIndicator::animationDelay">
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html#aae9ecced306af7013847de32f36b811c" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="212,5,348,44"/>
-<area shape="rect" id="node3" href="$class_q_progress_indicator.html#a73b805fe001b2c3bd15e21e128160c56" title="Returns a Boolean value indicating whether the receiver shows itself even when it is not animating..." alt="" coords="190,68,371,107"/>
+<area shape="rect" id="node2" href="$class_q_progress_indicator.html#aae9ecced306af7013847de32f36b811c" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="221,5,367,47"/>
+<area shape="rect" id="node3" href="$class_q_progress_indicator.html#a73b805fe001b2c3bd15e21e128160c56" title="Returns a Boolean value indicating whether the receiver shows itself even when it is not animating..." alt="" coords="199,71,389,112"/>
 </map>

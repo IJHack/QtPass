@@ -1,4 +1,4 @@
 <map id="TrayIcon::iconActivated" name="TrayIcon::iconActivated">
-<area shape="rect" id="node2" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent" alt="" coords="213,5,391,31"/>
-<area shape="rect" id="node3" href="$class_tray_icon.html#a1299ba958c0c1b2b549ea0f9bcfdffee" title="TrayIcon::showMessage" alt="" coords="219,55,384,80"/>
+<area shape="rect" id="node2" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent" alt="" coords="221,5,409,32"/>
+<area shape="rect" id="node3" href="$class_tray_icon.html#a1299ba958c0c1b2b549ea0f9bcfdffee" title="TrayIcon::showMessage" alt="" coords="228,56,403,83"/>
 </map>
