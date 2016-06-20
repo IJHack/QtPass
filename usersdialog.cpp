@@ -3,6 +3,10 @@
 #include <QDebug>
 #include <QRegExp>
 
+/**
+ * @brief UsersDialog::UsersDialog basic constructor
+ * @param parent
+ */
 UsersDialog::UsersDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog) {
   ui->setupUi(this);
@@ -17,10 +21,17 @@ UsersDialog::UsersDialog(QWidget *parent)
 #endif
 }
 
+/**
+ * @brief UsersDialog::~UsersDialog basic destructor.
+ */
 UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
 
+/**
+ * @brief UsersDialog::itemChange update the item information.
+ * @param item
+ */
 void UsersDialog::itemChange(QListWidgetItem *item) {
   if (!item)
     return;
@@ -30,11 +41,19 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
   info->enabled = item->checkState() == Qt::Checked;
 }
 
+/**
+ * @brief UsersDialog::setUsers update all the users.
+ * @param users
+ */
 void UsersDialog::setUsers(QList<UserInfo> *users) {
   userList = users;
   populateList("");
 }
 
+/**
+ * @brief UsersDialog::populateList update the view based on filter options (such as searching).
+ * @param filter
+ */
 void UsersDialog::populateList(const QString &filter) {
   QRegExp nameFilter("*" + filter + "*");
   nameFilter.setPatternSyntax(QRegExp::Wildcard);
@@ -83,22 +102,33 @@ void UsersDialog::populateList(const QString &filter) {
   }
 }
 
-void UsersDialog::on_clearButton_clicked() {
-  ui->lineEdit->clear();
-  populateList("");
-}
-
+/**
+ * @brief UsersDialog::on_lineEdit_textChanged typing in the searchbox.
+ * @param filter
+ */
 void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
   populateList(filter);
 }
 
+/**
+ * @brief UsersDialog::closeEvent might have to store size and location if that is wanted.
+ * @param event
+ */
 void UsersDialog::closeEvent(QCloseEvent *event) {
   // TODO(annejan) save window size or somethign
   event->accept();
 }
 
+/**
+ * @brief UsersDialog::on_checkBox_clicked filtering.
+ */
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
+/**
+ * @brief UsersDialog::keyPressEvent clear the lineEdit when escape is pressed.
+ * No action for Enter currently.
+ * @param event
+ */
 void UsersDialog::keyPressEvent(QKeyEvent *event) {
   switch (event->key()) {
   case Qt::Key_Escape:
