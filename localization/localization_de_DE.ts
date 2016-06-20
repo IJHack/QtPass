@@ -444,7 +444,7 @@ e-mail</translation>
     <message>
         <location filename="../keygendialog.ui" line="128"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head /&gt;&lt;body&gt;&lt;p&gt;Es gibt keine Begrenzung für die Länge eines Passworts, und es sollte sorgfältig ausgewählt werden. Aus der Sicht der Sicherheit, um das Passwort des privaten Schlüssels entsperren ist einer der schwächsten Punkte in GnuPG (und andere Public-Key-Verschlüsselungssysteme als auch), da es der einzige Schutz, den Sie haben, wenn eine andere Person Ihren privaten Schlüssel bekommt. &lt;br/&gt; Idealerweise sollte das Passwort nicht Wörter aus einem Wörterbuch verwenden und sollte den Fall von Buchstaben mischen sowie die Verwendung nicht-alphabetische Zeichen. &lt;br/&gt; Ein gutes Passwort ist entscheidend für die sichere Nutzung von GnuPG. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../keygendialog.ui" line="138"/>

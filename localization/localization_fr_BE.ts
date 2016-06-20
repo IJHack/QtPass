@@ -420,7 +420,7 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../keygendialog.ui" line="178"/>
@@ -761,7 +761,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../mainwindow.cpp" line="1599"/>
         <source>Profile changed to %1</source>
-        <translation>Profil changé à 1%</translation>
+        <translation>Profil changé à %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1742"/>
