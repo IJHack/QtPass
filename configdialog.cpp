@@ -105,7 +105,7 @@ bool ConfigDialog::usePass() { return ui->radioButtonPass->isChecked(); }
 /**
  * @brief ConfigDialog::usePass set wether or not we want to use pass.
  * Update radio buttons accordingly.
- * @param pass
+ * @param usePass
  */
 void ConfigDialog::usePass(bool usePass) {
   if (usePass) {
@@ -403,7 +403,8 @@ void ConfigDialog::addGPGId(bool addGPGId) {
  * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a gpg
  * key pair.
  * @todo refactor the process to not be entangled so much.
- * @param QString batch
+ * @param batch
+ * @param dialog
  */
 void ConfigDialog::genKey(QString batch, QDialog *dialog) {
   mainWindow->generateKeyPair(batch, dialog);

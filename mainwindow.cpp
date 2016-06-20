@@ -1512,8 +1512,7 @@ void MainWindow::setApp(SingleApplication *app) {
 }
 
 /**
- * @brief MainWindow::messageAvailable we have some text/message/search to do .
- * .
+ * @brief MainWindow::messageAvailable we have some text/message/search to do.
  * @param message
  */
 void MainWindow::messageAvailable(QString message) {
@@ -1529,9 +1528,9 @@ void MainWindow::messageAvailable(QString message) {
 }
 
 /**
- * @brief MainWindow::setText do a search from an external source (eg:
- * commandline)
- * @param message
+ * @brief MainWindow::setText do a search from an external source
+ * (eg: commandline)
+ * @param text
  */
 void MainWindow::setText(QString text) { ui->lineEdit->setText(text); }
 
@@ -1569,8 +1568,9 @@ QStringList MainWindow::getSecretKeys() {
 }
 
 /**
- * @brief Dialog::genKey internal gpg keypair generator . .
- * @param QString batch
+ * @brief MainWindow::generateKeyPair internal gpg keypair generator . .
+ * @param batch
+ * @param keygenWindow
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
