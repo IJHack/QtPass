@@ -2,7 +2,8 @@
 #include <QLocalSocket>
 
 /**
- * @brief SingleApplication::SingleApplication
+ * @brief SingleApplication::SingleApplication this replaces the QApplication
+ * allowing for local socket based communications.
  * @param argc
  * @param argv
  * @param uniqueKey
@@ -32,7 +33,8 @@ SingleApplication::SingleApplication(int &argc, char *argv[],
 // public slots.
 
 /**
- * @brief SingleApplication::receiveMessage
+ * @brief SingleApplication::receiveMessage we have received (a command line)
+ * message.
  */
 void SingleApplication::receiveMessage() {
   QLocalSocket *localSocket = localServer->nextPendingConnection();
@@ -48,13 +50,15 @@ void SingleApplication::receiveMessage() {
 
 // public functions.
 /**
- * @brief SingleApplication::isRunning
+ * @brief SingleApplication::isRunning is there already a QtPass instance
+ * running, to check wether to be server or client.
  * @return
  */
 bool SingleApplication::isRunning() { return _isRunning; }
 
 /**
- * @brief SingleApplication::sendMessage
+ * @brief SingleApplication::sendMessage send a message (from commandline) to an
+ * already running QtPass instance.
  * @param message
  * @return
  */

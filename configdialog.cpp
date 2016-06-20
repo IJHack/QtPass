@@ -10,7 +10,7 @@
 #endif
 
 /**
- * @brief ConfigDialog::ConfigDialog
+ * @brief ConfigDialog::ConfigDialog this sets up the configuration screen.
  * @param parent
  */
 ConfigDialog::ConfigDialog(MainWindow *parent)
@@ -29,7 +29,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 }
 
 /**
- * @brief ConfigDialog::~ConfigDialog
+ * @brief ConfigDialog::~ConfigDialog config destructor, makes sure the
+ * mainWindow knows about git, gpg and pass executables.
  */
 ConfigDialog::~ConfigDialog() {
   mainWindow->setGitExecutable(ui->gitPath->text());
@@ -38,13 +39,14 @@ ConfigDialog::~ConfigDialog() {
 }
 
 /**
- * @brief ConfigDialog::setPassPath
+ * @brief ConfigDialog::setPassPath set the pass executable path.
  * @param path
  */
 void ConfigDialog::setPassPath(QString path) { ui->passPath->setText(path); }
 
 /**
- * @brief ConfigDialog::setGitPath
+ * @brief ConfigDialog::setGitPath set the git executable path.
+ * Make sure the checkBoxUseGit is updated.
  * @param path
  */
 void ConfigDialog::setGitPath(QString path) {
@@ -58,49 +60,51 @@ void ConfigDialog::setGitPath(QString path) {
 }
 
 /**
- * @brief ConfigDialog::setGpgPath
+ * @brief ConfigDialog::setGpgPath set the gpg executable path.
  * @param path
  */
 void ConfigDialog::setGpgPath(QString path) { ui->gpgPath->setText(path); }
 
 /**
- * @brief ConfigDialog::setStorePath
+ * @brief ConfigDialog::setStorePath set the .password-store folder path.
  * @param path
  */
 void ConfigDialog::setStorePath(QString path) { ui->storePath->setText(path); }
 
 /**
- * @brief ConfigDialog::getPassPath
+ * @brief ConfigDialog::getPassPath return path to pass.
  * @return
  */
 QString ConfigDialog::getPassPath() { return ui->passPath->text(); }
 
 /**
- * @brief ConfigDialog::getGitPath
+ * @brief ConfigDialog::getGitPath return path to git.
  * @return
  */
 QString ConfigDialog::getGitPath() { return ui->gitPath->text(); }
 
 /**
- * @brief ConfigDialog::getGpgPath
+ * @brief ConfigDialog::getGpgPath return path to gpg.
  * @return
  */
 QString ConfigDialog::getGpgPath() { return ui->gpgPath->text(); }
 
 /**
- * @brief ConfigDialog::getStorePath
+ * @brief ConfigDialog::getStorePath return path to .password-store.
  * @return
  */
 QString ConfigDialog::getStorePath() { return ui->storePath->text(); }
 
 /**
- * @brief ConfigDialog::usePass
+ * @brief ConfigDialog::usePass return wether or not we want to use pass (or
+ * native gpg+git etc).
  * @return
  */
 bool ConfigDialog::usePass() { return ui->radioButtonPass->isChecked(); }
 
 /**
- * @brief ConfigDialog::usePass
+ * @brief ConfigDialog::usePass set wether or not we want to use pass.
+ * Update radio buttons accordingly.
  * @param pass
  */
 void ConfigDialog::usePass(bool usePass) {
@@ -115,17 +119,19 @@ void ConfigDialog::usePass(bool usePass) {
 }
 
 /**
- * @brief ConfigDialog::on_radioButtonNative_clicked
+ * @brief ConfigDialog::on_radioButtonNative_clicked wrapper for
+ * ConfigDialog::setGroupBoxState()
  */
 void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }
 
 /**
- * @brief ConfigDialog::on_radioButtonPass_clicked
+ * @brief ConfigDialog::on_radioButtonPass_clicked wrapper for
+ * ConfigDialog::setGroupBoxState()
  */
 void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
 
 /**
- * @brief ConfigDialog::setGroupBoxState
+ * @brief ConfigDialog::setGroupBoxState update checkboxes.
  */
 void ConfigDialog::setGroupBoxState() {
   if (ui->radioButtonPass->isChecked()) {
@@ -138,7 +144,7 @@ void ConfigDialog::setGroupBoxState() {
 }
 
 /**
- * @brief ConfigDialog::selectExecutable
+ * @brief ConfigDialog::selectExecutable pop-up to choose an executable.
  * @return
  */
 QString ConfigDialog::selectExecutable() {
@@ -152,7 +158,7 @@ QString ConfigDialog::selectExecutable() {
 }
 
 /**
- * @brief ConfigDialog::selectFolder
+ * @brief ConfigDialog::selectFolder pop-up to choose a folder.
  * @return
  */
 QString ConfigDialog::selectFolder() {
@@ -167,7 +173,8 @@ QString ConfigDialog::selectFolder() {
 }
 
 /**
- * @brief ConfigDialog::on_toolButtonGit_clicked
+ * @brief ConfigDialog::on_toolButtonGit_clicked get git application.
+ * Enable checkboxes if found.
  */
 void ConfigDialog::on_toolButtonGit_clicked() {
   QString git = selectExecutable();
@@ -181,7 +188,7 @@ void ConfigDialog::on_toolButtonGit_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_toolButtonGpg_clicked
+ * @brief ConfigDialog::on_toolButtonGpg_clicked get gpg application.
  */
 void ConfigDialog::on_toolButtonGpg_clicked() {
   QString gpg = selectExecutable();
@@ -190,7 +197,7 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_toolButtonPass_clicked
+ * @brief ConfigDialog::on_toolButtonPass_clicked get pass application.
  */
 void ConfigDialog::on_toolButtonPass_clicked() {
   QString pass = selectExecutable();
@@ -199,7 +206,8 @@ void ConfigDialog::on_toolButtonPass_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_toolButtonStore_clicked
+ * @brief ConfigDialog::on_toolButtonStore_clicked get .password-store
+ * location.s
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
@@ -208,10 +216,11 @@ void ConfigDialog::on_toolButtonStore_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_comboBoxClipboard_activated
+ * @brief ConfigDialog::on_comboBoxClipboard_activated show and hide options.
+ * @param index of selectbox (0 = no clipboard).
  */
-void ConfigDialog::on_comboBoxClipboard_activated() {
-  if (ui->comboBoxClipboard->currentIndex() > 0) {
+void ConfigDialog::on_comboBoxClipboard_activated(int index) {
+  if (index > 0) {
     ui->checkBoxAutoclear->setEnabled(true);
     ui->checkBoxHidePassword->setEnabled(true);
     ui->checkBoxHideContent->setEnabled(true);
@@ -232,7 +241,8 @@ void ConfigDialog::on_comboBoxClipboard_activated() {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxAutoclearPanel_clicked
+ * @brief ConfigDialog::on_checkBoxAutoclearPanel_clicked enable and disable
+ * options based on autoclear use.
  */
 void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
   if (ui->checkBoxAutoclearPanel->isChecked()) {
@@ -245,15 +255,16 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
 }
 
 /**
- * @brief ConfigDialog::useClipboard
+ * @brief ConfigDialog::useClipboard set the clipboard use from MainWindow.
  */
 void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard) {
   ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
-  on_comboBoxClipboard_activated();
+  on_comboBoxClipboard_activated(static_cast<int>(useClipboard));
 }
 
 /**
- * @brief ConfigDialog::useAutoclear
+ * @brief ConfigDialog::useAutoclear set the clipboard autoclear use from
+ * MainWindow.
  * @param useAutoclear
  */
 void ConfigDialog::useAutoclear(bool useAutoclear) {
@@ -262,7 +273,8 @@ void ConfigDialog::useAutoclear(bool useAutoclear) {
 }
 
 /**
- * @brief ConfigDialog::setAutoclear
+ * @brief ConfigDialog::setAutoclear set the clipboard autoclear timout from
+ * MainWindow.
  * @param seconds
  */
 void ConfigDialog::setAutoclear(int seconds) {
@@ -270,7 +282,8 @@ void ConfigDialog::setAutoclear(int seconds) {
 }
 
 /**
- * @brief ConfigDialog::useAutoclearPanel
+ * @brief ConfigDialog::useAutoclearPanel set the panel autoclear use from
+ * MainWindow.
  * @param useAutoclearPanel
  */
 void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {
@@ -279,7 +292,8 @@ void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {
 }
 
 /**
- * @brief ConfigDialog::setAutoclearPanel
+ * @brief ConfigDialog::setAutoclearPanel set the panel autoclear timout from
+ * MainWindow.
  * @param seconds
  */
 void ConfigDialog::setAutoclearPanel(int seconds) {
@@ -287,7 +301,7 @@ void ConfigDialog::setAutoclearPanel(int seconds) {
 }
 
 /**
- * @brief ConfigDialog::useClipboard
+ * @brief ConfigDialog::useClipboard set the use of clipboard from MainWindow.
  * @return
  */
 MainWindow::clipBoardType ConfigDialog::useClipboard() {
@@ -296,13 +310,13 @@ MainWindow::clipBoardType ConfigDialog::useClipboard() {
 }
 
 /**
- * @brief ConfigDialog::useAutoclear
+ * @brief ConfigDialog::useAutoclear return the use of clipboard autoclear.
  * @return
  */
 bool ConfigDialog::useAutoclear() { return ui->checkBoxAutoclear->isChecked(); }
 
 /**
- * @brief ConfigDialog::getAutoclear
+ * @brief ConfigDialog::getAutoclear return the clipboard autoclear timout.
  * @return
  */
 int ConfigDialog::getAutoclear() {
@@ -310,14 +324,15 @@ int ConfigDialog::getAutoclear() {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxAutoclear_clicked
+ * @brief ConfigDialog::on_checkBoxAutoclear_clicked checkbox clicked, update
+ * state via ConfigDialog::on_comboBoxClipboard_activated
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
-  on_comboBoxClipboard_activated();
+  on_comboBoxClipboard_activated(1);
 }
 
 /**
- * @brief ConfigDialog::useAutoclearPanel
+ * @brief ConfigDialog::useAutoclearPanel return panel autoclear usage.
  * @return
  */
 bool ConfigDialog::useAutoclearPanel() {
@@ -325,7 +340,7 @@ bool ConfigDialog::useAutoclearPanel() {
 }
 
 /**
- * @brief ConfigDialog::getAutoclearPanel
+ * @brief ConfigDialog::getAutoclearPanel return panel autoclear timeout.
  * @return
  */
 int ConfigDialog::getAutoclearPanel() {
@@ -333,7 +348,8 @@ int ConfigDialog::getAutoclearPanel() {
 }
 
 /**
- * @brief ConfigDialog::hidePassword
+ * @brief ConfigDialog::hidePassword return preference for hiding passwords from
+ * shoulder-surfers.
  * @return
  */
 bool ConfigDialog::hidePassword() {
@@ -341,7 +357,8 @@ bool ConfigDialog::hidePassword() {
 }
 
 /**
- * @brief ConfigDialog::hideContent
+ * @brief ConfigDialog::hideContent return preference for hiding all information
+ * from shoulder-surfers.
  * @return
  */
 bool ConfigDialog::hideContent() {
@@ -349,7 +366,8 @@ bool ConfigDialog::hideContent() {
 }
 
 /**
- * @brief ConfigDialog::hidePassword
+ * @brief ConfigDialog::hidePassword set preference for hiding passwords from
+ * shoulder-surfers.
  * @param hidePassword
  */
 void ConfigDialog::hidePassword(bool hidePassword) {
@@ -357,7 +375,8 @@ void ConfigDialog::hidePassword(bool hidePassword) {
 }
 
 /**
- * @brief ConfigDialog::hideContent
+ * @brief ConfigDialog::hideContent set preference for hiding all content from
+ * shoulder-surfers.
  * @param hideContent
  */
 void ConfigDialog::hideContent(bool hideContent) {
@@ -365,13 +384,15 @@ void ConfigDialog::hideContent(bool hideContent) {
 }
 
 /**
- * @brief ConfigDialog::addGPGId
+ * @brief ConfigDialog::addGPGId return preference for always adding gpg-id
+ * changes to git.
  * @return
  */
 bool ConfigDialog::addGPGId() { return ui->checkBoxAddGPGId->isChecked(); }
 
 /**
- * @brief ConfigDialog::addGPGId
+ * @brief ConfigDialog::addGPGId set preference for always adding gpg-id changes
+ * to git.
  * @param addGPGId
  */
 void ConfigDialog::addGPGId(bool addGPGId) {
@@ -379,7 +400,9 @@ void ConfigDialog::addGPGId(bool addGPGId) {
 }
 
 /**
- * @brief ConfigDialog::genKey
+ * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a gpg
+ * key pair.
+ * @todo refactor the process to not be entangled so much.
  * @param QString batch
  */
 void ConfigDialog::genKey(QString batch, QDialog *dialog) {
@@ -387,7 +410,8 @@ void ConfigDialog::genKey(QString batch, QDialog *dialog) {
 }
 
 /**
- * @brief ConfigDialog::setProfiles
+ * @brief ConfigDialog::setProfiles set the profiles and chosen profile from
+ * MainWindow.
  * @param profiles
  * @param profile
  */
@@ -416,7 +440,7 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
 }
 
 /**
- * @brief ConfigDialog::getProfiles
+ * @brief ConfigDialog::getProfiles return profile list.
  * @return
  */
 QHash<QString, QString> ConfigDialog::getProfiles() {
@@ -437,7 +461,7 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
 }
 
 /**
- * @brief ConfigDialog::on_addButton_clicked
+ * @brief ConfigDialog::on_addButton_clicked add a profile row.
  */
 void ConfigDialog::on_addButton_clicked() {
   int n = ui->profileTable->rowCount();
@@ -448,7 +472,7 @@ void ConfigDialog::on_addButton_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_deleteButton_clicked
+ * @brief ConfigDialog::on_deleteButton_clicked remove a profile row.
  */
 void ConfigDialog::on_deleteButton_clicked() {
   QSet<int> selectedRows; // we use a set to prevent doubles
@@ -471,12 +495,19 @@ void ConfigDialog::on_deleteButton_clicked() {
     ui->deleteButton->setEnabled(false);
 }
 
+/**
+ * @brief ConfigDialog::criticalMessage weapper for showing critical messages in
+ * a popup.
+ * @param title
+ * @param text
+ */
 void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
 /**
- * @brief ConfigDialog::wizard
+ * @brief ConfigDialog::wizard first-time use wizard.
+ * @todo make this thing more reliable.
  */
 void ConfigDialog::wizard() {
   // mainWindow->checkConfig();
@@ -548,7 +579,8 @@ void ConfigDialog::wizard() {
 }
 
 /**
- * @brief ConfigDialog::useTrayIcon
+ * @brief ConfigDialog::useTrayIcon return preference for using a (system) tray
+ * icon.
  * @return
  */
 bool ConfigDialog::useTrayIcon() {
@@ -556,7 +588,8 @@ bool ConfigDialog::useTrayIcon() {
 }
 
 /**
- * @brief ConfigDialog::hideOnClose
+ * @brief ConfigDialog::hideOnClose return preference for hiding instead of
+ * closing (quitting) application.
  * @return
  */
 bool ConfigDialog::hideOnClose() {
@@ -565,7 +598,8 @@ bool ConfigDialog::hideOnClose() {
 }
 
 /**
- * @brief ConfigDialog::useTrayIcon
+ * @brief ConfigDialog::useTrayIcon set preference for using trayicon.
+ * Enable or disable related checkboxes accordingly.
  * @param useSystray
  */
 void ConfigDialog::useTrayIcon(bool useSystray) {
@@ -579,7 +613,8 @@ void ConfigDialog::useTrayIcon(bool useSystray) {
 }
 
 /**
- * @brief ConfigDialog::hideOnClose
+ * @brief ConfigDialog::hideOnClose set preference for hiding instead of closing
+ * (quitting) application.
  * @param hideOnClose
  */
 void ConfigDialog::hideOnClose(bool hideOnClose) {
@@ -587,7 +622,8 @@ void ConfigDialog::hideOnClose(bool hideOnClose) {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxUseTrayIcon_clicked
+ * @brief ConfigDialog::on_checkBoxUseTrayIcon_clicked enable and disable
+ * related checkboxes.
  */
 void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
   if (ui->checkBoxUseTrayIcon->isChecked()) {
@@ -600,7 +636,7 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
 }
 
 /**
- * @brief ConfigDialog::closeEvent
+ * @brief ConfigDialog::closeEvent close this window.
  * @param event
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
@@ -609,7 +645,7 @@ void ConfigDialog::closeEvent(QCloseEvent *event) {
 }
 
 /**
- * @brief ConfigDialog::useGit
+ * @brief ConfigDialog::useGit set preference for using git.
  * @param useGit
  */
 void ConfigDialog::useGit(bool useGit) {
@@ -618,13 +654,14 @@ void ConfigDialog::useGit(bool useGit) {
 }
 
 /**
- * @brief ConfigDialog::useGit
+ * @brief ConfigDialog::useGit retrun preference for using git.
  * @return
  */
 bool ConfigDialog::useGit() { return ui->checkBoxUseGit->isChecked(); }
 
 /**
- * @brief ConfigDialog::on_checkBoxUseGit_clicked
+ * @brief ConfigDialog::on_checkBoxUseGit_clicked enable or disable related
+ * checkboxes.
  */
 void ConfigDialog::on_checkBoxUseGit_clicked() {
   ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
@@ -633,7 +670,8 @@ void ConfigDialog::on_checkBoxUseGit_clicked() {
 }
 
 /**
- * @brief ConfigDialog::on_toolButtonPwgen_clicked
+ * @brief ConfigDialog::on_toolButtonPwgen_clicked enable or disable related
+ * options in the interface.
  */
 void ConfigDialog::on_toolButtonPwgen_clicked() {
   QString pwgen = selectExecutable();
@@ -647,13 +685,14 @@ void ConfigDialog::on_toolButtonPwgen_clicked() {
 }
 
 /**
- * @brief ConfigDialog::getPwgenPath
+ * @brief ConfigDialog::getPwgenPath return pwgen executable path.
  * @return
  */
 QString ConfigDialog::getPwgenPath() { return ui->pwgenPath->text(); }
 
 /**
- * @brief ConfigDialog::setPwgenPath
+ * @brief ConfigDialog::setPwgenPath set pwgen executable path.
+ * Enable or disable related options in the interface.
  * @param pwgen
  */
 void ConfigDialog::setPwgenPath(QString pwgen) {
@@ -666,7 +705,8 @@ void ConfigDialog::setPwgenPath(QString pwgen) {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxUsPwgen_clicked
+ * @brief ConfigDialog::on_checkBoxUsPwgen_clicked enable or disable related
+ * options in the interface.
  */
 void ConfigDialog::on_checkBoxUsePwgen_clicked() {
   bool usePwgen = ui->checkBoxUsePwgen->isChecked();
@@ -679,7 +719,10 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked() {
 }
 
 /**
- * @brief ConfigDialog::usePwgen
+ * @brief ConfigDialog::usePwgen set preference for using pwgen (can be
+ * overruled buy empty pwgenPath).
+ * enable or disable related options in the interface via
+ * ConfigDialog::on_checkBoxUsePwgen_clicked
  * @param usePwgen
  */
 void ConfigDialog::usePwgen(bool usePwgen) {
@@ -689,20 +732,36 @@ void ConfigDialog::usePwgen(bool usePwgen) {
   on_checkBoxUsePwgen_clicked();
 }
 
+/**
+ * @brief ConfigDialog::avoidCapitals set preference for avoiding uppercase
+ * letters using pwgen.
+ * @param avoidCapitals
+ */
 void ConfigDialog::avoidCapitals(bool avoidCapitals) {
   ui->checkBoxAvoidCapitals->setChecked(avoidCapitals);
 }
 
+/**
+ * @brief ConfigDialog::avoidNumbers set preference for using numbers in pwgen
+ * generated password.
+ * @param avoidNumbers
+ */
 void ConfigDialog::avoidNumbers(bool avoidNumbers) {
   ui->checkBoxAvoidNumbers->setChecked(avoidNumbers);
 }
 
+/**
+ * @brief ConfigDialog::lessRandom set preference for using less random
+ * passwords.
+ * @param lessRandom
+ */
 void ConfigDialog::lessRandom(bool lessRandom) {
   ui->checkBoxLessRandom->setChecked(lessRandom);
 }
 
 /**
- * @brief ConfigDialog::useSymbols
+ * @brief ConfigDialog::useSymbols set preference for using special characters
+ * in pwgen.
  * @param useSymbols
  */
 void ConfigDialog::useSymbols(bool useSymbols) {
@@ -710,39 +769,64 @@ void ConfigDialog::useSymbols(bool useSymbols) {
 }
 
 /**
- * @brief ConfigDialog::setPasswordLength
+ * @brief ConfigDialog::setPasswordLength set the length of desired (generated)
+ * passwords.
  * @param pwLen
  */
 void ConfigDialog::setPasswordLength(int pwLen) {
   ui->spinBoxPasswordLength->setValue(pwLen);
 }
 
+/**
+ * @brief ConfigDialog::setPasswordChars use these charcters to generate
+ * password (non-pwgen option).
+ * @param pwChars
+ */
 void ConfigDialog::setPasswordChars(QString pwChars) {
   ui->lineEditPasswordChars->setText(pwChars);
 }
 
 /**
- * @brief ConfigDialog::usePwgen
+ * @brief ConfigDialog::usePwgen return preference for using pwgen.
  * @return
  */
 bool ConfigDialog::usePwgen() { return ui->checkBoxUsePwgen->isChecked(); }
 
+/**
+ * @brief ConfigDialog::avoidCapitals return preference for avoiding uppercase
+ * letters using pwgen.
+ * @return
+ */
 bool ConfigDialog::avoidCapitals() {
   return ui->checkBoxAvoidCapitals->isChecked();
 }
+
+/**
+ * @brief ConfigDialog::avoidNumbers return preference for using numbers in
+ * generated password using pwgen.
+ * @return
+ */
 bool ConfigDialog::avoidNumbers() {
   return ui->checkBoxAvoidNumbers->isChecked();
 }
+
+/**
+ * @brief ConfigDialog::lessRandom return preference for using less random
+ * passwords in pwgen.
+ * @return
+ */
 bool ConfigDialog::lessRandom() { return ui->checkBoxLessRandom->isChecked(); }
 
 /**
- * @brief ConfigDialog::useSymbols
+ * @brief ConfigDialog::useSymbols return preference for using special
+ * characters with pwgen.
  * @return
  */
 bool ConfigDialog::useSymbols() { return ui->checkBoxUseSymbols->isChecked(); }
 
 /**
- * @brief ConfigDialog::getPasswordLength
+ * @brief ConfigDialog::getPasswordLength return desired length for generated
+ * passwords.
  * @return
  */
 int ConfigDialog::getPasswordLength() {
@@ -750,7 +834,8 @@ int ConfigDialog::getPasswordLength() {
 }
 
 /**
- * @brief ConfigDialog::getPasswordChars
+ * @brief ConfigDialog::getPasswordChars return characters to use in password
+ * generation (non-pwgen).
  * @return
  */
 QString ConfigDialog::getPasswordChars() {
@@ -758,7 +843,8 @@ QString ConfigDialog::getPasswordChars() {
 }
 
 /**
- * @brief ConfigDialog::startMinimized
+ * @brief ConfigDialog::startMinimized return preference for starting
+ * application minimized (tray icon).
  * @return
  */
 bool ConfigDialog::startMinimized() {
@@ -766,7 +852,8 @@ bool ConfigDialog::startMinimized() {
 }
 
 /**
- * @brief ConfigDialog::startMinimized
+ * @brief ConfigDialog::startMinimized set preference for starting application
+ * minimized (tray icon).
  * @param startMinimized
  */
 void ConfigDialog::startMinimized(bool startMinimized) {
@@ -774,7 +861,8 @@ void ConfigDialog::startMinimized(bool startMinimized) {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxUseTemplate_clicked
+ * @brief ConfigDialog::on_checkBoxUseTemplate_clicked enable or disable the
+ * template field and options.
  */
 void ConfigDialog::on_checkBoxUseTemplate_clicked() {
   ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
@@ -783,7 +871,7 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
 }
 
 /**
- * @brief ConfigDialog::useTemplate
+ * @brief ConfigDialog::useTemplate set preference for using templates.
  * @param useTemplate
  */
 void ConfigDialog::useTemplate(bool useTemplate) {
@@ -792,7 +880,7 @@ void ConfigDialog::useTemplate(bool useTemplate) {
 }
 
 /**
- * @brief ConfigDialog::useTemplate
+ * @brief ConfigDialog::useTemplate return preference for using templates.
  * @return
  */
 bool ConfigDialog::useTemplate() {
@@ -800,7 +888,7 @@ bool ConfigDialog::useTemplate() {
 }
 
 /**
- * @brief ConfigDialog::setTemplate
+ * @brief ConfigDialog::setTemplate set the desired template.
  * @param passTemplate
  */
 void ConfigDialog::setTemplate(QString passTemplate) {
@@ -808,7 +896,7 @@ void ConfigDialog::setTemplate(QString passTemplate) {
 }
 
 /**
- * @brief ConfigDialog::getTemplate
+ * @brief ConfigDialog::getTemplate return the desired template.
  * @return
  */
 QString ConfigDialog::getTemplate() {
@@ -816,7 +904,8 @@ QString ConfigDialog::getTemplate() {
 }
 
 /**
- * @brief ConfigDialog::autoPull
+ * @brief ConfigDialog::autoPull set preference for automatically pulling from
+ * git
  * @param autoPull
  */
 void ConfigDialog::autoPull(bool autoPull) {
@@ -824,7 +913,7 @@ void ConfigDialog::autoPull(bool autoPull) {
 }
 
 /**
- * @brief ConfigDialog::autoPush
+ * @brief ConfigDialog::autoPush set preference for automatically pushing to git
  * @param autoPush
  */
 void ConfigDialog::autoPush(bool autoPush) {
@@ -832,19 +921,22 @@ void ConfigDialog::autoPush(bool autoPush) {
 }
 
 /**
- * @brief ConfigDialog::autoPull
+ * @brief ConfigDialog::autoPull return preference for automatically pulling
+ * from git
  * @return
  */
 bool ConfigDialog::autoPull() { return ui->checkBoxAutoPull->isChecked(); }
 
 /**
- * @brief ConfigDialog::autoPush
+ * @brief ConfigDialog::autoPush return preference for automatically pushing to
+ * git
  * @return
  */
 bool ConfigDialog::autoPush() { return ui->checkBoxAutoPush->isChecked(); }
 
 /**
- * @brief ConfigDialog::templateAllFields
+ * @brief ConfigDialog::templateAllFields return preference for templating all
+ * tokenisable fields
  * @return
  */
 bool ConfigDialog::templateAllFields() {
@@ -852,7 +944,8 @@ bool ConfigDialog::templateAllFields() {
 }
 
 /**
- * @brief ConfigDialog::templateAllFields
+ * @brief ConfigDialog::templateAllFields set preference for templating all
+ * tokenisable fields
  * @param templateAll
  */
 void ConfigDialog::templateAllFields(bool templateAll) {
@@ -860,7 +953,8 @@ void ConfigDialog::templateAllFields(bool templateAll) {
 }
 
 /**
- * @brief ConfigDialog::alwaysOnTop
+ * @brief ConfigDialog::alwaysOnTop set preference for running application on
+ * top of others
  * @param alwaysOnTop
  */
 void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
@@ -868,7 +962,8 @@ void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
 }
 
 /**
- * @brief ConfigDialog::alwaysOnTop
+ * @brief ConfigDialog::alwaysOnTop return preference for running application on
+ * top of others.
  * @return
  */
 bool ConfigDialog::alwaysOnTop() {

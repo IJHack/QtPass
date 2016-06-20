@@ -103,7 +103,7 @@ private slots:
   void on_toolButtonPwgen_clicked();
   void on_toolButtonPass_clicked();
   void on_toolButtonStore_clicked();
-  void on_comboBoxClipboard_activated();
+  void on_comboBoxClipboard_activated(int);
   void on_checkBoxAutoclear_clicked();
   void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();

@@ -1,5 +1,10 @@
 #include "trayicon.h"
 
+/**
+ * @brief TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on
+ * it (currently) only Quits.
+ * @param parent
+ */
 TrayIcon::TrayIcon(QMainWindow *parent) {
   parentwin = parent;
 
@@ -15,6 +20,10 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
                    SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
+/**
+ * @brief TrayIcon::setVisible show or hide the icon.
+ * @param visible
+ */
 void TrayIcon::setVisible(bool visible) {
   if (visible == true)
     parentwin->show();
@@ -22,6 +31,9 @@ void TrayIcon::setVisible(bool visible) {
     parentwin->hide();
 }
 
+/**
+ * @brief TrayIcon::createActions setup the signals.
+ */
 void TrayIcon::createActions() {
   // minimizeAction = new QAction(tr("Mi&nimize"), this);
   // connect(minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
@@ -36,6 +48,9 @@ void TrayIcon::createActions() {
   connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 }
 
+/**
+ * @brief TrayIcon::createTrayIcon set up menu.
+ */
 void TrayIcon::createTrayIcon() {
   trayIconMenu = new QMenu(this);
   // trayIconMenu->addAction(minimizeAction);
@@ -48,6 +63,9 @@ void TrayIcon::createTrayIcon() {
   sysTrayIcon->setContextMenu(trayIconMenu);
 }
 
+/**
+ * @brief TrayIcon::showHideParent toggle app visibility.
+ */
 void TrayIcon::showHideParent() {
   if (parentwin->isVisible() == true)
     parentwin->hide();
@@ -55,6 +73,10 @@ void TrayIcon::showHideParent() {
     parentwin->show();
 }
 
+/**
+ * @brief TrayIcon::iconActivated you clicked on the trayicon.
+ * @param reason
+ */
 void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   switch (reason) {
   case QSystemTrayIcon::Trigger:
@@ -68,6 +90,12 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   }
 }
 
+/**
+ * @brief TrayIcon::showMessage show a systray message for notification.
+ * @param title
+ * @param msg
+ * @param time
+ */
 void TrayIcon::showMessage(QString title, QString msg, int time) {
   sysTrayIcon->showMessage(title, msg, QSystemTrayIcon::Information, time);
 }

@@ -51,7 +51,8 @@ void UsersDialog::setUsers(QList<UserInfo> *users) {
 }
 
 /**
- * @brief UsersDialog::populateList update the view based on filter options (such as searching).
+ * @brief UsersDialog::populateList update the view based on filter options
+ * (such as searching).
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
@@ -111,7 +112,8 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 }
 
 /**
- * @brief UsersDialog::closeEvent might have to store size and location if that is wanted.
+ * @brief UsersDialog::closeEvent might have to store size and location if that
+ * is wanted.
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {

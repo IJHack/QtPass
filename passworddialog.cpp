@@ -4,6 +4,10 @@
 #include <QLabel>
 #include <QLineEdit>
 
+/**
+ * @brief PasswordDialog::PasswordDialog basic constructor.
+ * @param parent
+ */
 PasswordDialog::PasswordDialog(MainWindow *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog) {
   mainWindow = parent;
@@ -12,8 +16,15 @@ PasswordDialog::PasswordDialog(MainWindow *parent)
   ui->setupUi(this);
 }
 
+/**
+ * @brief PasswordDialog::~PasswordDialog basic destructor.
+ */
 PasswordDialog::~PasswordDialog() { delete ui; }
 
+/**
+ * @brief PasswordDialog::on_checkBoxShow_stateChanged hide or show passwords.
+ * @param arg1
+ */
 void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
   if (arg1)
     ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
@@ -21,12 +32,21 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
     ui->lineEditPassword->setEchoMode(QLineEdit::Password);
 }
 
+/**
+ * @brief PasswordDialog::on_createPasswordButton_clicked generate a random
+ * passwords.
+ * @todo refactor when process is untangled from MainWindow class.
+ */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   ui->lineEditPassword->setText(mainWindow->generatePassword());
   ui->widget->setEnabled(true);
 }
 
+/**
+ * @brief PasswordDialog::setPassword populate the (templated) fields.
+ * @param password
+ */
 void PasswordDialog::setPassword(QString password) {
   QStringList tokens = password.split("\n");
   ui->lineEditPassword->setText(tokens[0]);
@@ -72,6 +92,11 @@ void PasswordDialog::setPassword(QString password) {
   ui->plainTextEdit->insertPlainText(tokens.join("\n"));
 }
 
+/**
+ * @brief PasswordDialog::getPassword  join the (templated) fields to a QString
+ * for writing back.
+ * @return collappsed password.
+ */
 QString PasswordDialog::getPassword() {
   QString passFile = ui->lineEditPassword->text() + "\n";
   for (int i = 0; i < ui->formLayout->rowCount(); ++i) {
@@ -88,6 +113,10 @@ QString PasswordDialog::getPassword() {
   return passFile;
 }
 
+/**
+ * @brief PasswordDialog::setTemplate set the template and create the fields.
+ * @param rawFields
+ */
 void PasswordDialog::setTemplate(QString rawFields) {
   fields = rawFields.split('\n');
   QWidget *previous = ui->checkBoxShow;
@@ -102,10 +131,24 @@ void PasswordDialog::setTemplate(QString rawFields) {
   }
 }
 
+/**
+ * @brief PasswordDialog::setFile show which (password) file we are editing.
+ * @param file
+ */
 void PasswordDialog::setFile(QString file) {
   this->setWindowTitle(this->windowTitle() + " " + file);
 }
 
+/**
+ * @brief PasswordDialog::templateAll basic setter for use in
+ * PasswordDialog::setPassword templating all tokenisable lines.
+ * @param templateAll
+ */
 void PasswordDialog::templateAll(bool templateAll) { allFields = templateAll; }
 
+/**
+ * @brief PasswordDialog::useTemplate basic setter for use in
+ * PasswordDialog::setPassword templating.
+ * @param useTemplate
+ */
 void PasswordDialog::useTemplate(bool useTemplate) { templating = useTemplate; }
