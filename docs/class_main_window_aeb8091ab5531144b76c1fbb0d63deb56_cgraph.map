@@ -1,4 +1,4 @@
 <map id="MainWindow::config" name="MainWindow::config">
-<area shape="rect" id="node2" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath. " alt="" coords="200,5,379,32"/>
-<area shape="rect" id="node3" href="$class_util.html#af23940548a0dcd3ade9c052d38ad0549" title="Util::checkConfig. " alt="" coords="226,56,353,83"/>
+<area shape="rect" id="node2" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() " alt="" coords="194,5,365,31"/>
+<area shape="rect" id="node3" href="$class_util.html#af23940548a0dcd3ade9c052d38ad0549" title="Util::checkConfig do we have prequisite settings? " alt="" coords="219,55,340,80"/>
 </map>

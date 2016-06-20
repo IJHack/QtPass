@@ -1,10 +1,10 @@
 <map id="mainwindow.h" name="mainwindow.h">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="190,80,299,107"/>
-<area shape="rect" id="node3" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,229,129,256"/>
-<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="310,229,435,256"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="main.cpp" alt="" coords="559,80,637,107"/>
-<area shape="rect" id="node8" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="403,80,535,107"/>
-<area shape="rect" id="node4" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="159,155,277,181"/>
-<area shape="rect" id="node5" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="153,229,285,256"/>
-<area shape="rect" id="node9" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="453,155,599,181"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="183,79,287,104"/>
+<area shape="rect" id="node3" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,225,123,251"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,225,416,251"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="main.cpp" alt="" coords="538,79,614,104"/>
+<area shape="rect" id="node8" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="390,79,515,104"/>
+<area shape="rect" id="node4" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,152,264,177"/>
+<area shape="rect" id="node5" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,225,272,251"/>
+<area shape="rect" id="node9" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="440,152,579,177"/>
 </map>

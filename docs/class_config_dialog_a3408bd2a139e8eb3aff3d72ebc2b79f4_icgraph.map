@@ -1,3 +1,3 @@
 <map id="ConfigDialog::usePwgen" name="ConfigDialog::usePwgen">
-<area shape="rect" id="node2" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath. " alt="" coords="228,5,428,32"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="221,5,412,31"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey. " alt="" coords="268,5,425,32"/>
-<area shape="rect" id="node3" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog" alt="" coords="473,5,685,32"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="258,5,408,31"/>
+<area shape="rect" id="node3" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="456,5,659,31"/>
 </map>
