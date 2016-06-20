@@ -13,7 +13,8 @@ QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
 /**
- * @brief Util::initialiseEnvironment
+ * @brief Util::initialiseEnvironment set the correct PATH for use with gpg, git
+ * etc.
  */
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
@@ -34,7 +35,8 @@ void Util::initialiseEnvironment() {
 }
 
 /**
- * @brief Util::findPasswordStore
+ * @brief Util::findPasswordStore look for common .password-store folder
+ * location.
  * @return
  */
 QString Util::findPasswordStore() {
@@ -55,7 +57,8 @@ QString Util::findPasswordStore() {
 }
 
 /**
- * @brief Util::normalizeFolderPath
+ * @brief Util::normalizeFolderPath let's always end folders with a
+ * QDir::separator()
  * @param path
  * @return
  */
@@ -65,6 +68,11 @@ QString Util::normalizeFolderPath(QString path) {
   return path;
 }
 
+/**
+ * @brief Util::findBinaryInPath search for executables.
+ * @param binary
+ * @return
+ */
 QString Util::findBinaryInPath(QString binary) {
   initialiseEnvironment();
 
@@ -105,7 +113,7 @@ QString Util::findBinaryInPath(QString binary) {
 }
 
 /**
- * @brief Util::checkConfig
+ * @brief Util::checkConfig do we have prequisite settings?
  * @param passStore
  * @param passExecutable
  * @param gpgExecutable
@@ -118,7 +126,7 @@ bool Util::checkConfig(QString passStore, QString passExecutable,
 }
 
 /**
- * @brief Util::qSleep
+ * @brief Util::qSleep because . . windows sleep.
  * @param ms
  */
 void Util::qSleep(int ms) {

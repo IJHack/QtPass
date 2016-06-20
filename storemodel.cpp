@@ -8,7 +8,8 @@
 StoreModel::StoreModel() { fs = NULL; }
 
 /**
- * @brief StoreModel::filterAcceptsRow
+ * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for
+ * StoreModel::ShowThis method.
  * @param sourceRow
  * @param sourceParent
  * @return
@@ -20,7 +21,8 @@ bool StoreModel::filterAcceptsRow(int sourceRow,
 }
 
 /**
- * @brief StoreModel::ShowThis
+ * @brief StoreModel::ShowThis should a row be shown, based on our search
+ * criteria.
  * @param index
  * @return
  */
@@ -49,7 +51,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
 }
 
 /**
- * @brief StoreModel::setModelAndStore
+ * @brief StoreModel::setModelAndStore update the source model and store.
  * @param sourceModel
  * @param passStore
  */
@@ -60,7 +62,7 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 }
 
 /**
- * @brief StoreModel::data
+ * @brief StoreModel::data don't show the .gpg at the end of a file.
  * @param index
  * @param role
  * @return

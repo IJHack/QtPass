@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_DE">
+<TS version="2.1" language="de_LU">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -478,8 +478,7 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="142"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translatorcomment>Google translate FTW</translatorcomment>
-        <translation>Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir brauchen eine Menge von zufälligen Bytes zu erzeugen. Es ist eine gute Idee, eine andere Aktion (Typ auf der Tastatur, bewegen Sie die Maus verwenden, um die Scheiben) während der Prime-Generation zu erfüllen; Dies gibt dem Zufallszahlengenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

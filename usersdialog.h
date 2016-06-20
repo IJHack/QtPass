@@ -50,7 +50,6 @@ protected:
 
 private slots:
   void itemChange(QListWidgetItem *item);
-  void on_clearButton_clicked();
   void on_lineEdit_textChanged(const QString &filter);
   void on_checkBox_clicked();
 

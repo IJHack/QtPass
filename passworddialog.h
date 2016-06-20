@@ -34,7 +34,7 @@ public:
   QString getPassword();
 
   /*! Sets content in the template for the interface.
-      \param template is the template as a QString
+      \param rawFields is the template as a QString
    */
   void setTemplate(QString);
 
