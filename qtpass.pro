@@ -92,6 +92,22 @@ isEmpty(QMAKE_LRELEASE) {
     }
 }
 
+isEmpty(QMAKE_LUPDATE) {
+    win32|os2:QMAKE_LUPDATE = $$[QT_INSTALL_BINS]\\lupdate.exe
+    else:QMAKE_LUPDATE = $$[QT_INSTALL_BINS]/lupdate
+    unix {
+        !exists($$QMAKE_LUPDATE) {
+            greaterThan(QT_MAJOR_VERSION, 4) {
+                QMAKE_LUPDATE = lupdate-qt5
+            } else {
+                QMAKE_LUPDATE = lupdate-qt4
+            }
+        }
+    } else {
+        !exists($$QMAKE_LUPDATE) { QMAKE_LUPDATE = lupdate }
+    }
+}
+
 updateqm.input = TRANSLATIONS
 updateqm.output = localization/${QMAKE_FILE_BASE}.qm
 updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm localization/${QMAKE_FILE_BASE}.qm
@@ -100,8 +116,10 @@ QMAKE_EXTRA_COMPILERS += updateqm
 PRE_TARGETDEPS += compiler_updateqm_make_all
 
 win32 {
+	system($$QMAKE_LUPDATE qtpass.pro)
 	system($$QMAKE_LRELEASE qtpass.pro)
 } else {
+	system($$QMAKE_LUPDATE $$_PRO_FILE_)
 	system($$QMAKE_LRELEASE $$_PRO_FILE_)
 }
 
@@ -123,7 +141,8 @@ win32 {
     LIBS += -L/usr/local/lib
 }
 OTHER_FILES += LICENSE \
-               README.md
+               README.md \
+               qtpass.1
 
 isEmpty(PREFIX) {
  PREFIX = $$(PREFIX)
