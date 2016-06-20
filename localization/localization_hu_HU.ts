@@ -317,37 +317,37 @@ email</source>
         <translation>Oldal elrejtése</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="496"/>
+        <location filename="../configdialog.cpp" line="521"/>
         <source>GnuPG not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="497"/>
+        <location filename="../configdialog.cpp" line="522"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="517"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Create password-store?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="518"/>
+        <location filename="../configdialog.cpp" line="543"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="536"/>
+        <location filename="../configdialog.cpp" line="561"/>
         <source>Password store not initialised</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="537"/>
+        <location filename="../configdialog.cpp" line="562"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="464"/>
+        <location filename="../configdialog.cpp" line="482"/>
         <source>No profile selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -367,7 +367,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="465"/>
+        <location filename="../configdialog.cpp" line="483"/>
         <source>No profile selected to delete</source>
         <translation type="unfinished"></translation>
     </message>
