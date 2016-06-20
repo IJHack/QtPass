@@ -71,6 +71,11 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
 }
 
+/**
+ * @brief MainWindow::focusInput selects any text (if applicable) in the search box and sets focus to it.
+ * Allows for easy searching, called at application start and when receiving empty message
+ * in MainWindow::messageAvailable when compiled with SINGLE_APP=1 (default).
+ */
 void MainWindow::focusInput() {
   ui->lineEdit->selectAll();
   ui->lineEdit->setFocus();
