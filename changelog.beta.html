@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>QtPass 1.0 Changelog</title>
+    <meta name="description" content="Older changes to QtPass">
+    <meta name="keywords" content="qtpass, pass, gpg, git, password, store, manager, security">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="QtPass GUI for pass, the standard UNIX password manager">
+    <meta property="og:site_name" content="QtPass">
+    <meta property="og:url" content="https://qtpass.org/">
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
+    <meta property="og:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
+    <meta property="og:type" content="product">
+    <meta name="twitter:card" content="product">
+    <meta name="twitter:site" content="@annejanbrouwer">
+    <meta name="twitter:title" content="QtPass GUI for pass, the standard UNIX password manager">
+    <meta name="twitter:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
+    <meta name="twitter:url" content="https://qtpass.org/">
+    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png">
+    <meta name="twitter:image:src" content="https://qtpass.org/images/icon.svg">
+    <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "QtPass",
+  "url" : "https://qtpass.org/",
+  "author" : {
+    "@type" : "Organization",
+    "name" : "IJHack"
+  },
+  "downloadUrl" : "https://github.com/IJHack/qtpass/releases",
+  "operatingSystem" : "Linux, BSD, OS X and Windows",
+  "requirements" : "pass or git and gpg2",
+  "screenshot" : "https://qtpass.org/images/qtpass.png",
+  "softwareVersion" : "1.1",
+  "applicationCategory" : "Security, Utility",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "EUR"
+  },
+  "aggregateRating" : {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "8"
+  }
+}
+</script>
+</head>
+<body>
+<div class="background"></div>
+<div class="wrapper">
+    <header>
+        <h1>QtPass <small>beta</small></h1>
+        <p><a title="QtPass GUI for pass, the standard UNIX password manager" href="https://qtpass.org/">QtPass</a> is a multi-platform GUI for <a title="pass, the standard unix password manager" href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
+
+        <p class="view">
+            <a title="QtPass project" href="https://github.com/IJHack/qtpass">View the Project on GitHub <small>IJHack/qtpass</small></a>
+        </p>
+
+        <ul>
+            <li><a title="QtPass releases" href="https://github.com/IJHack/qtpass/releases">Download <strong>Releases</strong></a></li>
+            <li><a title="QtPass latest source" href="https://github.com/IJHack/qtpass/tarball/master">Latest <strong>TAR Ball</strong></a></li>
+            <li><a title="QtPass project" href="https://github.com/IJHack/qtpass">View On <strong>GitHub</strong></a></li>
+        </ul>
+
+        <div class="screenshots">
+            <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+            <img id="config" class="hidden" src="images/config.png" alt="QtPass Configuration" />
+        </div>
+
+    </header>
+    <section>
+
+        <h2><a id=v0.9.2" class="anchor" href="#v0.9.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.9.2 Informed decisions</h2>
+
+        <ul>
+            <li>Filter expired keys and show creation and expiry date of keys <a href="https://github.com/IJHack/qtpass/issues/70" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/70" data-id="96077668" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#70</a>
+            </li>
+            <li>Fixed stupid sigsev on empty profile names found by <a href="https://github.com/sigio" class="user-mention">@sigio</a>
+            </li>
+            <li>Minor tweaks for usability</li>
+        </ul>
+
+        <h2><a id=v0.9.1" class="anchor" href="#v0.9.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.9.1 Config with ease</h2>
+
+        <ul>
+            <li>
+                <code>pwgen</code> and <code>git</code> options not available when not applicable</li>
+            <li>git removal of files (when applicable) <a href="https://github.com/IJHack/qtpass/issues/57" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/57" data-id="88679104" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#57</a>
+            </li>
+            <li>filtering of unusable keys in user dialog</li>
+        </ul>
+
+        <h2><a id=v0.9.0" class="anchor" href="#v0.9.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.9.0 Feature complete</h2>
+
+        <ul>
+            <li>Fixed first run order issues</li>
+            <li>Dutch translation updated</li>
+            <li>Interface margins redefined</li>
+        </ul>
+
+        <p>Now it's time to get more translations in and work out all the platform dependent and git related issues.</p>
+
+        <h2><a id=v0.8.6" class="anchor" href="#v0.8.6" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.6 Interoperability and pwgen</h2>
+
+        <ul>
+            <li>Handle copying and hiding also when errors (warnings) occur <a href="https://github.com/IJHack/qtpass/issues/60" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/60" data-id="90717791" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#60</a>
+            </li>
+            <li>Remember MainWindow position, size and splitter location <a href="https://github.com/IJHack/qtpass/issues/59" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/59" data-id="89883115" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#59</a>
+            </li>
+            <li>Fixed nasty deadlocks and possibly other breakages with process handling <a href="https://github.com/IJHack/qtpass/issues/63" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/63" data-id="93221427" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#63</a>
+            </li>
+            <li>Many small fixes.</li>
+        </ul>
+
+        <h2><a id=v0.8.5.1" class="anchor" href="#v0.8.5.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.5.1 Stability and small stuff</h2>
+
+        <ul>
+            <li>Handle copying and hiding also when errors (warnings) occur <a href="https://github.com/IJHack/qtpass/issues/60" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/60" data-id="90717791" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#60</a>
+            </li>
+            <li>Remember MainWindow position, size and splitter location <a href="https://github.com/IJHack/qtpass/issues/59" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/59" data-id="89883115" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#59</a>
+            </li>
+            <li>Fixed nasty deadlocks and possibly other breakages with process handling <a href="https://github.com/IJHack/qtpass/issues/63" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/63" data-id="93221427" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#63</a>
+            </li>
+            <li>Many small fixes.</li>
+        </ul>
+
+        <h2><a id=v0.8.5" class="anchor" href="#v0.8.5" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.5 Trigger finger</h2>
+
+        <p>Pressed the release button a bit prematurely.</p>
+
+        <h2><a id=v0.8.4" class="anchor" href="#v0.8.4" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.4 Righteous actions</h2>
+
+        <ul>
+            <li>Right mouse button actions</li>
+            <li>Correct selection of file/folder actions</li>
+            <li>Root folder actions</li>
+            <li>Fixes after static analysis <a href="https://scan4.coverity.com/reports.htm#v19535/p11313">https://scan4.coverity.com/reports.htm#v19535/p11313</a>
+            </li>
+            <li>Many small fixes and some cleanup</li>
+        </ul>
+
+        <h2><a id=v0.8.3" class="anchor" href="#v0.8.3" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.3 Win fixes and TrayIcon</h2>
+
+        <ul>
+            <li>Windows executable detection fixes</li>
+            <li>Tray Icon base added for future use (hotkeys etc)</li>
+            <li>Hide git related buttons when not needed</li>
+        </ul>
+
+        <h2><a id=v0.8.2" class="anchor" href="#v0.8.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.2 Wizards and fixes</h2>
+
+        <p>Release to test out the new wizards for first time users.</p>
+
+        <h2>Features</h2>
+
+        <ul>
+            <li>Wizards to get you on the way</li>
+            <li>GPG key pair generation</li>
+            <li>Many small fixes</li>
+        </ul>
+
+        <h2><a id=v0.8.1" class="anchor" href="#v0.8.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.8.1 First pre-release test build</h2>
+
+        <p>QtPass is getting closer to a real release candidate.</p>
+
+        <p>So I thought I'd just build a Windows and Mac version for people to try out.</p>
+
+        <h2>Features</h2>
+
+        <ul>
+            <li>Using pass or git and gpg2 directly</li>
+            <li>Configurable shoulder surfing protection options</li>
+            <li>Per-folder user selection for multi recipient encryption</li>
+            <li>Cross platform: Linux, BSD, OS X and Windows</li>
+        </ul>
+
+        <h2><a id=v1.1" class="anchor" href="#v1.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>More releases</h2>
+
+        <ul>
+            <li><a href="/changelog">Changelog of 1.1 releases</a></li>
+            <li><a href="/changelog.old">Changelog of 1.0 releases</a></li>
+        </ul>
+
+        <p>
+            <br />
+            <img class="compatible" src="images/linux.png" alt="Linux Compatible" />
+            <img class="compatible" src="images/win10.png" alt="Windows 10 Compatible" />
+            <img class="compatible" src="images/osxy.png" alt="OS X Compatible" />
+            <img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible" />
+        </p>
+    </section>
+    <footer>
+        <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
+        <p>Doxygen autogenerated <a title="Latest documentation" href="/docs/">documentation</a></p>
+        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <a title="Travis CI" href="https://travis-ci.org/IJHack/qtpass"><img src="https://api.travis-ci.org/IJHack/qtpass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/qtpass.svg?branch=master"></a>
+        <a title="AppVeyor CI" href="https://ci.appveyor.com/project/annejan/qtpass"><img src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true" alt="AppVeyor Build Status"/></a>
+        <a title="Coverity static analysis" href="https://scan.coverity.com/projects/ijhack-qtpass"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
+    </footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://qtpass.org"
+}
+</script>
+<script src="javascripts/scale.fix.js"></script>
+<script src="javascripts/main.js"></script>
+</body>
+</html>
