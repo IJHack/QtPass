@@ -154,9 +154,9 @@ isEmpty(PREFIX) {
 }
 
 isEmpty(PREFIX) {
- PREFIX = /usr/local/bin
+ PREFIX = /usr/local
 }
-target.path = $$PREFIX/
+target.path = $$PREFIX/bin/
 
 INSTALLS += target
 
