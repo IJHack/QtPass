@@ -1,4 +1,3 @@
-github_changelog_generator --token=88ef40e6c24b49bd4fb769a9fcf0f10155de587a
 sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq
 sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib
 sed 's/\[\!.*//' < README.contrib > README.clean
