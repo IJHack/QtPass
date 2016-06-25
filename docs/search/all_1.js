@@ -1,6 +1,7 @@
 var searchData=
 [
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
+  ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#af23940548a0dcd3ade9c052d38ad0549',1,'Util::checkConfig()']]],
   ['clipboard_5falways',['CLIPBOARD_ALWAYS',['../class_main_window.html#aa75543f0c997c2edb55c4ee7bb3e7b5da8e94f384499197770c492c21807465f9',1,'MainWindow']]],
   ['clipboard_5fnever',['CLIPBOARD_NEVER',['../class_main_window.html#aa75543f0c997c2edb55c4ee7bb3e7b5daa37795c77954f8d72c392ba13d245ed6',1,'MainWindow']]],
@@ -14,5 +15,6 @@ var searchData=
   ['configdialog_2eh',['configdialog.h',['../configdialog_8h.html',1,'']]],
   ['contributing_2emd',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
   ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
+  ['change_20log',['Change Log',['../md_CHANGELOG.html',1,'']]],
   ['contributing',['Contributing',['../md_CONTRIBUTING.html',1,'']]]
 ];
