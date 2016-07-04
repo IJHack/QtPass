@@ -14,6 +14,7 @@
 
 **Closed issues:**
 
+- Signed releases [\#186](https://github.com/IJHack/qtpass/issues/186)
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/qtpass/issues/164)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/qtpass/issues/138)
 
