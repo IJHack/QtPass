@@ -836,7 +836,7 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="72"/>
         <source>LTR</source>
         <translation type="unfinished"></translation>
     </message>

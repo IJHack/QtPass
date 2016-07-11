@@ -1,1 +1,6 @@
+sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq
+sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib
+sed 's/\[\!.*//' < README.contrib > README.clean
+pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean
+doxygen
 qmake CONFIG+=release && make && macdeployqt QtPass.app && appdmg appdmg.json QtPass.dmg

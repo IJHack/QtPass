@@ -34,7 +34,10 @@ script:
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt QtPass.app; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown --to=rtf --output=README.rtf README.md; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/\[\!.*//' < README.contrib > README.clean; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pro | cut -d " " -f 6); fi
 notifications:

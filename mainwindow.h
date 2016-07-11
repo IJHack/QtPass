@@ -22,7 +22,7 @@ class MainWindow;
 
 /*!
     \struct execQueueItem
-    \brief Execution queu items for non-interactive ordered execution.
+    \brief Execution queue items for non-interactive ordered execution.
  */
 struct execQueueItem {
   QString app;

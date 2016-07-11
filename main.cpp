@@ -8,6 +8,8 @@
  *
  * QtPass is a multi-platform GUI for pass, the standard unix password manager.
  *
+ * https://qtpass.org/
+ *
  * \section install_sec Installation
  *
  * \subsection dependencies Dependencies

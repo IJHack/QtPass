@@ -1,13 +1,14 @@
-#----------------------------------------------------------
+#---------------------------------------------------------#
 #                                                         #
 #   QtPass is a GUI for pass,                             #
 #           the standard unix password manager.           #
 #                                                         #
 # Project started by Anne Jan Brouwer 2014-07-30T21:56:15 #
 #                                                         #
-#----------------------------------------------------------
+#---------------------------------------------------------#
 
 VERSION    = 1.1.3
+
 TEMPLATE   = app
 QT        += core gui
 
@@ -75,7 +76,8 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_nl_BE.ts \
                     localization/localization_fr_LU.ts \
                     localization/localization_de_LU.ts \
-                    localization/localization_lb_LU.ts
+                    localization/localization_lb_LU.ts \
+                    localization/localization_en_GB.ts
 
 CODECFORSRC     = UTF-8
 CODECFORTR      = UTF-8
@@ -153,9 +155,9 @@ isEmpty(PREFIX) {
 }
 
 isEmpty(PREFIX) {
- PREFIX = /usr/local/bin
+ PREFIX = /usr/local
 }
-target.path = $$PREFIX/
+target.path = $$PREFIX/bin/
 
 INSTALLS += target
 

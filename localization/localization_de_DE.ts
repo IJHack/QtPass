@@ -948,7 +948,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="72"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
