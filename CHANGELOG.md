@@ -10,6 +10,7 @@
 
 **Fixed bugs:**
 
+- Error after change configuration [\#190](https://github.com/IJHack/qtpass/issues/190)
 - Re-assign permissions when adding users [\#161](https://github.com/IJHack/qtpass/issues/161)
 
 **Closed issues:**
