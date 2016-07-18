@@ -4,567 +4,580 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
 <url>
   <loc>https://qtpass.org/</loc>
-  <lastmod>2016-06-20T13:07:47+00:00</lastmod>
+  <lastmod>2016-06-27T19:55:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://qtpass.org/changelog</loc>
-  <lastmod>2016-06-20T10:59:47+00:00</lastmod>
+  <lastmod>2016-06-25T20:44:50+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/md_README.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/downloads</loc>
-  <lastmod>2016-06-20T13:07:47+00:00</lastmod>
+  <lastmod>2016-06-25T20:44:50+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_main_window.html</loc>
-  <lastmod>2016-06-18T11:31:08+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/md_FAQ.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/md_CONTRIBUTING.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/md_CHANGELOG.html</loc>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/changelog.old</loc>
-  <lastmod>2016-06-20T10:59:47+00:00</lastmod>
+  <lastmod>2016-06-25T20:44:50+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/changelog.beta</loc>
-  <lastmod>2016-06-20T10:59:47+00:00</lastmod>
+  <lastmod>2016-06-25T20:44:50+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/sitemap</loc>
-  <lastmod>2016-06-20T11:36:34+00:00</lastmod>
+  <lastmod>2016-06-25T20:45:30+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/index.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/pages.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/annotated.html</loc>
-  <lastmod>2016-06-18T11:31:03+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:13+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/files.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/classes.html</loc>
-  <lastmod>2016-06-18T11:31:05+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/inherits.html</loc>
-  <lastmod>2016-06-18T11:31:17+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_main_window-members.html</loc>
-  <lastmod>2016-06-18T11:31:08+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/mainwindow_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/graph_legend.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_single_application.html</loc>
-  <lastmod>2016-06-18T11:31:11+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/mainwindow_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:18+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_util.html</loc>
-  <lastmod>2016-06-18T11:31:14+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_store_model.html</loc>
-  <lastmod>2016-06-18T11:31:12+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_config_dialog.html</loc>
-  <lastmod>2016-06-18T11:31:05+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:13+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_keygen_dialog.html</loc>
-  <lastmod>2016-06-18T11:31:05+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:13+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_password_dialog.html</loc>
-  <lastmod>2016-06-18T11:31:09+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/main_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:18+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_users_dialog.html</loc>
-  <lastmod>2016-06-18T11:31:13+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>https://qtpass.org/docs/todo.html</loc>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
   <loc>https://qtpass.org/docs/structexec_queue_item.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_q_progress_indicator.html</loc>
-  <lastmod>2016-06-18T11:31:11+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_tray_icon.html</loc>
-  <lastmod>2016-06-18T11:31:13+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/struct_user_info.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/globals.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/configdialog_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/configdialog_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:14+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/configdialog_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/configdialog_8h.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/keygendialog_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:17+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/keygendialog_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:17+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/keygendialog_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:18+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/keygendialog_8h.html</loc>
-  <lastmod>2016-06-18T11:31:17+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/main_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:18+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/mainwindow_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:18+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/mainwindow_8h.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/passworddialog_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/passworddialog_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/passworddialog_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:20+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/passworddialog_8h.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/qprogressindicator_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:20+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/qprogressindicator_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:20+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/qprogressindicator_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:20+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/qprogressindicator_8h.html</loc>
-  <lastmod>2016-06-18T11:31:20+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/singleapplication_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:26+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/singleapplication_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:26+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/singleapplication_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/singleapplication_8h.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/storemodel_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/storemodel_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/storemodel_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/storemodel_8h.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/trayicon_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:28+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/trayicon_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:28+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/trayicon_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:28+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/trayicon_8h.html</loc>
-  <lastmod>2016-06-18T11:31:28+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/usersdialog_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/usersdialog_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:28+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/usersdialog_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/usersdialog_8h.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/util_8cpp_source.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/util_8cpp.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/util_8h_source.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/util_8h.html</loc>
-  <lastmod>2016-06-18T11:31:29+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:19+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/hierarchy.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions_func.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions_vars.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions_enum.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions_eval.html</loc>
-  <lastmod>2016-06-18T11:31:15+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/functions_prop.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/namespace_ui.html</loc>
-  <lastmod>2016-06-18T11:31:19+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:17+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_single_application-members.html</loc>
-  <lastmod>2016-06-18T11:31:12+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_util-members.html</loc>
-  <lastmod>2016-06-18T11:31:14+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_store_model-members.html</loc>
-  <lastmod>2016-06-18T11:31:12+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_config_dialog-members.html</loc>
-  <lastmod>2016-06-18T11:31:05+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:13+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_keygen_dialog-members.html</loc>
-  <lastmod>2016-06-18T11:31:05+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:13+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_password_dialog-members.html</loc>
-  <lastmod>2016-06-18T11:31:09+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_users_dialog-members.html</loc>
-  <lastmod>2016-06-18T11:31:13+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/structexec_queue_item-members.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_q_progress_indicator-members.html</loc>
-  <lastmod>2016-06-18T11:31:11+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:14+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/class_tray_icon-members.html</loc>
-  <lastmod>2016-06-18T11:31:13+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:15+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/struct_user_info-members.html</loc>
-  <lastmod>2016-06-18T11:31:27+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/globals_func.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://qtpass.org/docs/globals_defs.html</loc>
-  <lastmod>2016-06-18T11:31:16+00:00</lastmod>
+  <lastmod>2016-07-18T08:44:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.41</priority>
 </url>
