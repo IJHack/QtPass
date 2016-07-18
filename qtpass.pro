@@ -77,7 +77,8 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_fr_LU.ts \
                     localization/localization_de_LU.ts \
                     localization/localization_lb_LU.ts \
-                    localization/localization_en_GB.ts
+                    localization/localization_en_GB.ts \
+                    localization/localization_el_GR.ts
 
 CODECFORSRC     = UTF-8
 CODECFORTR      = UTF-8
