@@ -7,6 +7,7 @@
 **Implemented enhancements:**
 
 - Re-assign permissions when adding users [\#161](https://github.com/IJHack/qtpass/issues/161)
+- Main window immediately closes upon app launch [\#139](https://github.com/IJHack/qtpass/issues/139)
 
 **Fixed bugs:**
 
