@@ -956,9 +956,34 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
 <context>
     <name>TrayIcon</name>
     <message>
+        <location filename="../trayicon.cpp" line="38"/>
+        <source>&amp;Show</source>
+        <translation>&amp;Schauen</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="40"/>
+        <source>&amp;Hide</source>
+        <translation>&amp;Verstecken</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="43"/>
+        <source>Mi&amp;nimize</source>
+        <translation>M&amp;inimieren</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="45"/>
+        <source>Ma&amp;ximize</source>
+        <translation>M&amp;aximieren</translation>
+    </message>
+    <message>
         <location filename="../trayicon.cpp" line="47"/>
+        <source>&amp;Restore</source>
+        <translation>&amp;Wiederherstellen</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation></translation>
+        <translation>&amp;Schließen</translation>
     </message>
 </context>
 <context>

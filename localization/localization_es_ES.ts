@@ -867,7 +867,32 @@ Usted no será capaz de descifrar cualquier contraseña que acaba de agregar!</t
 <context>
     <name>TrayIcon</name>
     <message>
+        <location filename="../trayicon.cpp" line="38"/>
+        <source>&amp;Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="40"/>
+        <source>&amp;Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="43"/>
+        <source>Mi&amp;nimize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="45"/>
+        <source>Ma&amp;ximize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../trayicon.cpp" line="47"/>
+        <source>&amp;Restore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="50"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Salir</translation>
     </message>

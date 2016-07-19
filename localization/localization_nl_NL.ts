@@ -1032,7 +1032,32 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
 <context>
     <name>TrayIcon</name>
     <message>
+        <location filename="../trayicon.cpp" line="38"/>
+        <source>&amp;Show</source>
+        <translation>&amp;Tonen</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="40"/>
+        <source>&amp;Hide</source>
+        <translation>&amp;Verbergen</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="43"/>
+        <source>Mi&amp;nimize</source>
+        <translation>M&amp;inimaliseren</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="45"/>
+        <source>Ma&amp;ximize</source>
+        <translation>M&amp;aximaliseren</translation>
+    </message>
+    <message>
         <location filename="../trayicon.cpp" line="47"/>
+        <source>&amp;Restore</source>
+        <translation>&amp;Herstellen</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="50"/>
         <source>&amp;Quit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
