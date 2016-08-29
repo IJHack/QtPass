@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['validity',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
   ['variables_5f10_2ejs',['variables_10.js',['../variables__10_8js.html',1,'']]],
   ['variables_5f11_2ejs',['variables_11.js',['../variables__11_8js.html',1,'']]],
   ['variables_5f12_2ejs',['variables_12.js',['../variables__12_8js.html',1,'']]],
