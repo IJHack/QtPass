@@ -20,6 +20,10 @@
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/qtpass/issues/164)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/qtpass/issues/138)
 
+**Merged pull requests:**
+
+- Czech translation [\#195](https://github.com/IJHack/qtpass/pull/195) ([svetlemodry](https://github.com/svetlemodry))
+
 ## [v1.1.3](https://github.com/IJHack/qtpass/tree/v1.1.3) (2016-06-10)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.2...v1.1.3)
 
