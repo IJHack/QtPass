@@ -22,6 +22,7 @@
 
 **Merged pull requests:**
 
+- ArchLinux: moved from AUR to \[community\] [\#196](https://github.com/IJHack/qtpass/pull/196) ([eworm-de](https://github.com/eworm-de))
 - Czech translation [\#195](https://github.com/IJHack/qtpass/pull/195) ([svetlemodry](https://github.com/svetlemodry))
 
 ## [v1.1.3](https://github.com/IJHack/qtpass/tree/v1.1.3) (2016-06-10)
@@ -30,7 +31,6 @@
 **Fixed bugs:**
 
 - edit of password broken with active "Automatically push" [\#177](https://github.com/IJHack/qtpass/issues/177)
-- Clipboard not cleared when quitting or killing application [\#171](https://github.com/IJHack/qtpass/issues/171)
 - Hide content doesn't work when using templates [\#160](https://github.com/IJHack/qtpass/issues/160)
 
 **Closed issues:**
