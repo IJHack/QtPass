@@ -31,6 +31,7 @@
 **Fixed bugs:**
 
 - edit of password broken with active "Automatically push" [\#177](https://github.com/IJHack/qtpass/issues/177)
+- Clipboard not cleared when quitting or killing application [\#171](https://github.com/IJHack/qtpass/issues/171)
 - Hide content doesn't work when using templates [\#160](https://github.com/IJHack/qtpass/issues/160)
 
 **Closed issues:**
