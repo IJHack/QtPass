@@ -48,6 +48,21 @@ fi
 
 git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
 
+### Where is the configuration stored?
+
+QtPass tries to use the native config choice for the OS it's running.
+
+* Linux and BSD: `$HOME/.config/IJHack/QtPass.conf`
+* macOS: `$HOME/Library/Preferences/com.IJHack.QtPass.plist`
+* Windows registry: `HKEY_CURRENT_USER\Software\IJhack\QtPass`
+
+These settings can be over-ruled by a `qtpass.ini` file in the folder where the application resides.
+So called "portable config".
+
+There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).
+
+More information: http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes
+
 ### Where can I ask for help?
 
 * Create an [issue](https://github.com/IJHack/qtpass/) issues on github.
@@ -70,8 +85,8 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
-* Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3)
-Then you have to install the current version via your package manager or if this is not up-to-date,
+* Another possible reason is, that the currently installed Qt Version gives problems (e.g. on Linux Mint 17.3)
+Then you'll have to install the current version via your package manager or if this is not up-to-date,
 download it from https://www.qt.io/download/ install it and run:
 ```
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
