@@ -87,6 +87,16 @@ $(function() {
 </ul>
 <h3>Git doesn't work on Windows</h3>
 <p>git for Windows comes with an <code>ssh-askpass</code> compatible command, git <code>gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
+<h3>Where is the configuration stored?</h3>
+<p>QtPass tries to use the native config choice for the OS it's running.</p>
+<ul>
+<li>Linux and BSD: <code>$HOME/.config/IJHack/QtPass.conf</code></li>
+<li>macOS: <code>$HOME/Library/Preferences/com.IJHack.QtPass.plist</code></li>
+<li>Windows registry: <code>HKEY_CURRENT_USER\Software\IJhack\QtPass</code></li>
+</ul>
+<p>These settings can be over-ruled by a <code>qtpass.ini</code> file in the folder where the application resides. So called "portable config".</p>
+<p>There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).</p>
+<p>More information: <a href="http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
 <h3>Where can I ask for help?</h3>
 <ul>
 <li>Create an <a href="https://github.com/IJHack/qtpass/">issue</a> issues on github.</li>
@@ -101,7 +111,7 @@ $(function() {
 <h3>I get icons that do not fit my (X11) default</h3>
 <ul>
 <li>On some WindowManagers, Qt doesn't know what icon set to use. A trick: <div class="fragment"><div class="line">export DESKTOP_SESSION=gnome</div></div><!-- fragment --></li>
-<li>Another possible reason is, that the currently installed Qt Version makes problems (e.g. on Linux Mint 17.3) Then you have to install the current version via your package manager or if this is not up-to-date, download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> install it and run: <div class="fragment"><div class="line">/PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake</div><div class="line">make</div><div class="line">(sudo) make install</div></div><!-- fragment --> where <code>PATHTOYOURINSTALLATION</code> is the path you selected in the qt installer (default <code>/home/YOURUSER/Qt/</code> ) and 5.5 has to be adapted for the Qt version you downloaded.</li>
+<li>Another possible reason is, that the currently installed Qt Version gives problems (e.g. on Linux Mint 17.3) Then you'll have to install the current version via your package manager or if this is not up-to-date, download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> install it and run: <div class="fragment"><div class="line">/PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake</div><div class="line">make</div><div class="line">(sudo) make install</div></div><!-- fragment --> where <code>PATHTOYOURINSTALLATION</code> is the path you selected in the qt installer (default <code>/home/YOURUSER/Qt/</code> ) and 5.5 has to be adapted for the Qt version you downloaded.</li>
 </ul>
 <h3>I don't like the design, what gives?</h3>
 <ul>
