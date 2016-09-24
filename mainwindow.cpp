@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QQueue>
 #include <QTimer>
+#include <QTextCodec>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -1361,7 +1362,10 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
   process->waitForFinished(2000);
   if (process->exitStatus() != QProcess::NormalExit)
     return users;
-  QStringList keys = QString(process->readAllStandardOutput())
+  QByteArray processOutBytes = process->readAllStandardOutput();
+  QTextCodec *codec = QTextCodec::codecForLocale();
+  QString processOutString = codec->toUnicode(processOutBytes);
+  QStringList keys = QString(processOutString)
                          .split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
   UserInfo current_user;
   foreach (QString key, keys) {
