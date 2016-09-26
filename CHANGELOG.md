@@ -11,9 +11,12 @@
 
 **Fixed bugs:**
 
+- German umlauts fails [\#192](https://github.com/IJHack/qtpass/issues/192)
 - Error after change configuration [\#190](https://github.com/IJHack/qtpass/issues/190)
 - Re-assign permissions when adding users [\#161](https://github.com/IJHack/qtpass/issues/161)
+- Bug: Special characters in Template [\#131](https://github.com/IJHack/qtpass/issues/131)
 - Character encoding issue with GPG key [\#101](https://github.com/IJHack/qtpass/issues/101)
+- saved password '§' turns to 'Â§' when copied to clipboard or shown when editing [\#91](https://github.com/IJHack/qtpass/issues/91)
 
 **Closed issues:**
 
@@ -23,6 +26,7 @@
 
 **Merged pull requests:**
 
+- issue 91 bugfix [\#199](https://github.com/IJHack/qtpass/pull/199) ([asalamon74](https://github.com/asalamon74))
 - issue 101 bugfix [\#198](https://github.com/IJHack/qtpass/pull/198) ([asalamon74](https://github.com/asalamon74))
 - ArchLinux: moved from AUR to \[community\] [\#196](https://github.com/IJHack/qtpass/pull/196) ([eworm-de](https://github.com/eworm-de))
 - Czech translation [\#195](https://github.com/IJHack/qtpass/pull/195) ([svetlemodry](https://github.com/svetlemodry))
