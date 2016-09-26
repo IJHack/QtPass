@@ -789,7 +789,9 @@ void MainWindow::readyRead(bool finished = false) {
   QString error = "";
   if (currentAction != GPG_INTERNAL) {
     error = process->readAllStandardError();
-    output = process->readAllStandardOutput();
+    QByteArray processOutBytes = process->readAllStandardOutput();
+    QTextCodec *codec = QTextCodec::codecForLocale();
+    output = codec->toUnicode(processOutBytes);
     if (finished && currentAction == GPG) {
       lastDecrypt = output;
       QStringList tokens = output.split("\n");
