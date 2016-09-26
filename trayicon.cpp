@@ -35,17 +35,20 @@ void TrayIcon::setVisible(bool visible) {
  * @brief TrayIcon::createActions setup the signals.
  */
 void TrayIcon::createActions() {
-  // minimizeAction = new QAction(tr("Mi&nimize"), this);
-  // connect(minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
+    showAction = new QAction(tr("&Show"), this);
+    connect(showAction, SIGNAL(triggered()), parentwin, SLOT(show()));
+    hideAction = new QAction(tr("&Hide"), this);
+    connect(hideAction, SIGNAL(triggered()), parentwin, SLOT(hide()));
 
-  // maximizeAction = new QAction(tr("Ma&ximize"), this);
-  // connect(maximizeAction, SIGNAL(triggered()), this, SLOT(showMaximized()));
+    minimizeAction = new QAction(tr("Mi&nimize"), this);
+    connect(minimizeAction, SIGNAL(triggered()), parentwin, SLOT(showMinimized()));
+    maximizeAction = new QAction(tr("Ma&ximize"), this);
+    connect(maximizeAction, SIGNAL(triggered()), parentwin, SLOT(showMaximized()));
+    restoreAction = new QAction(tr("&Restore"), this);
+    connect(restoreAction, SIGNAL(triggered()), parentwin, SLOT(showNormal()));
 
-  // restoreAction = new QAction(tr("&Restore"), this);
-  // connect(restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
-
-  quitAction = new QAction(tr("&Quit"), this);
-  connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+    quitAction = new QAction(tr("&Quit"), this);
+    connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 }
 
 /**
@@ -53,10 +56,12 @@ void TrayIcon::createActions() {
  */
 void TrayIcon::createTrayIcon() {
   trayIconMenu = new QMenu(this);
-  // trayIconMenu->addAction(minimizeAction);
-  // trayIconMenu->addAction(maximizeAction);
-  // trayIconMenu->addAction(restoreAction);
-  // trayIconMenu->addSeparator();
+  trayIconMenu->addAction(showAction);
+  trayIconMenu->addAction(hideAction);
+  trayIconMenu->addAction(minimizeAction);
+  trayIconMenu->addAction(maximizeAction);
+  trayIconMenu->addAction(restoreAction);
+  trayIconMenu->addSeparator();
   trayIconMenu->addAction(quitAction);
 
   sysTrayIcon = new QSystemTrayIcon(this);
@@ -79,14 +84,14 @@ void TrayIcon::showHideParent() {
  */
 void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   switch (reason) {
-  case QSystemTrayIcon::Trigger:
-  case QSystemTrayIcon::DoubleClick:
-    showHideParent();
-    break;
-  case QSystemTrayIcon::MiddleClick:
-    showMessage("test", "test msg", 1000);
-    break;
-  default: {};
+      case QSystemTrayIcon::Trigger:
+      case QSystemTrayIcon::DoubleClick:
+        showHideParent();
+        break;
+      case QSystemTrayIcon::MiddleClick:
+        showMessage("test", "test msg", 1000);
+        break;
+      default: {};
   }
 }
 
