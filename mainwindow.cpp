@@ -1380,7 +1380,7 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
       current_user = UserInfo();
       current_user.key_id = props[4];
       current_user.name = props[9].toUtf8();
-      current_user.validity = props[8][0].toLatin1();
+      current_user.validity = props[1][0].toLatin1();
       current_user.created.setTime_t(props[5].toInt());
       current_user.expiry.setTime_t(props[6].toInt());
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
