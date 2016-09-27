@@ -1,3 +1,5 @@
 <map id="MainWindow::userDialog" name="MainWindow::userDialog">
-<area shape="rect" id="node2" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="222,5,376,31"/>
+<area shape="rect" id="node2" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="222,31,376,56"/>
+<area shape="rect" id="node3" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid" alt="" coords="431,5,549,31"/>
+<area shape="rect" id="node4" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid" alt="" coords="424,55,556,80"/>
 </map>
