@@ -1,5 +1,14 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...HEAD)
+
+**Merged pull requests:**
+
+- Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/qtpass/pull/201) ([thotypous](https://github.com/thotypous))
+- Fix spelling error [\#200](https://github.com/IJHack/qtpass/pull/200) ([innir](https://github.com/innir))
+
 ## [v1.1.4](https://github.com/IJHack/qtpass/tree/v1.1.4) (2016-09-26)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.3...v1.1.4)
 
