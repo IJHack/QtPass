@@ -452,7 +452,7 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
     if (0 != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == 0) {
-        qDebug() << "empty name, shoud fix in frontend";
+        qDebug() << "empty name, should fix in frontend";
         continue;
       }
       profiles.insert(item->text(), pathItem->text());
