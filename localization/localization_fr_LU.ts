@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_LU">
+<TS version="2.0" language="fr_LU">
+<defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -15,7 +16,7 @@
     </message>
     <message>
         <source>&amp;Native git/gpg</source>
-        <translation type="vanished">&amp;Natif git/gpg</translation>
+        <translation type="obsolete">&amp;Natif git/gpg</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="484"/>
@@ -63,7 +64,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="36"/>
@@ -123,7 +124,7 @@
     </message>
     <message>
         <source>Autoclear panel</source>
-        <translation type="vanished">Effacer automatiquement le panneau</translation>
+        <translation type="obsolete">Effacer automatiquement le panneau</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="149"/>
@@ -177,7 +178,7 @@
     </message>
     <message>
         <source>Autoclear</source>
-        <translation type="vanished">Effacer automatique</translation>
+        <translation type="obsolete">Effacer automatique</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="278"/>
@@ -191,7 +192,7 @@
     </message>
     <message>
         <source>Use characters</source>
-        <translation type="vanished">Utiliser les caractères</translation>
+        <translation type="obsolete">Utiliser les caractères</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="369"/>
@@ -303,12 +304,12 @@ email</source>
     <message>
         <source>login
 url</source>
-        <translation type="vanished">login
+        <translation type="obsolete">login
 url</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="vanished">version &lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
+        <translation type="obsolete">version &lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="25"/>
@@ -428,7 +429,17 @@ Expire-Date: 0
         <translation>Pour les options avancées, veuillez consulter le &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuel GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>The name should be longer than 4 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="148"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -442,7 +453,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="45"/>
@@ -508,7 +519,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="vanished">Ctrl-S</translation>
+        <translation type="obsolete">Ctrl-S</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="145"/>
@@ -528,7 +539,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Configure</source>
-        <translation type="vanished">Configurer</translation>
+        <translation type="obsolete">Configurer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="228"/>
@@ -539,7 +550,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Copy pwd</source>
-        <translation type="vanished">Copier le mdp</translation>
+        <translation type="obsolete">Copier le mdp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="348"/>
@@ -691,7 +702,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New password file, will be placed in folder %1:</source>
-        <translation type="vanished">Nouveau fichier de mot de passe, sera placé dans le dossier %1:</translation>
+        <translation type="obsolete">Nouveau fichier de mot de passe, sera placé dans le dossier %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1239"/>
@@ -780,7 +791,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     </message>
     <message>
         <source>New folder, will be placed in folder %1:</source>
-        <translation type="vanished">Nouveau dossier, sera placé dans le dossier %1:</translation>
+        <translation type="obsolete">Nouveau dossier, sera placé dans le dossier %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1899"/>
@@ -893,7 +904,7 @@ Les entrées en rouges ne sont pas valides, vous ne pourrez pas chiffrer avec ce
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>

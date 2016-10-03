@@ -128,6 +128,21 @@ void KeygenDialog::no_protection(bool enable) {
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { // ok was pressed
+    // check name
+    if (ui->name->text().length() < 5) {
+      QMessageBox::critical(this, tr("Invalid name"), tr("Name must be at least 5 characters long."));
+      return;
+    }
+
+    // check email
+    QRegExp mailre("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+    mailre.setCaseSensitivity(Qt::CaseInsensitive);
+    mailre.setPatternSyntax(QRegExp::RegExp);
+    if (!mailre.exactMatch(ui->email->text())) {
+      QMessageBox::critical(this, tr("Invalid email"), tr("The email address you typed is not a valid email address."));
+      return;
+    }
+
     ui->widget->setEnabled(false);
     ui->buttonBox->setEnabled(false);
     ui->checkBox->setEnabled(false);
