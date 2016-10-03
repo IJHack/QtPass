@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- Italian translation [\#204](https://github.com/IJHack/qtpass/pull/204) ([dakk](https://github.com/dakk))
+- keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/qtpass/pull/203) ([dakk](https://github.com/dakk))
 - Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/qtpass/pull/201) ([thotypous](https://github.com/thotypous))
 - Fix spelling error [\#200](https://github.com/IJHack/qtpass/pull/200) ([innir](https://github.com/innir))
 

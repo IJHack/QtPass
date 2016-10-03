@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nl_BE">
-<defaultcodec>UTF-8</defaultcodec>
+<TS version="2.1" language="nl_BE">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -472,15 +471,29 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige naam</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="133"/>
-        <source>The name should be longer than 4 characters.</source>
+        <source>Name must be at least 5 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="148"/>
+        <location filename="../keygendialog.cpp" line="142"/>
+        <source>Invalid email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="142"/>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name should be longer than 4 characters.</source>
+        <translation type="vanished">De naam dient langer te zijn dan 4 karakters.</translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="157"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
@@ -1045,27 +1058,27 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../trayicon.cpp" line="38"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tonen</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="40"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verbergen</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="43"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;inimaliseren</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="45"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;aximaliseren</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="47"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Herstellen</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="50"/>

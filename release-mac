@@ -1,5 +1,5 @@
-sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq
-sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib
+sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' < README.md > README.faq
+sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' < README.faq > README.contrib
 sed 's/\[\!.*//' < README.contrib > README.clean
 pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean
 doxygen
