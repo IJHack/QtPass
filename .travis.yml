@@ -26,7 +26,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt56base qt56tools qt56svg; fi
 before_script:
@@ -36,26 +36,26 @@ script:
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt QtPass.app; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/\[\!.*//' < README.contrib > README.clean; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pro | cut -d " " -f 6); fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/\[\!.*//' < README.contrib > README.clean; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pro | cut -d " " -f 6).dmg; fi
+#- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pro | cut -d " " -f 6); fi
 notifications:
   irc:
     channels:
     - chat.freenode.net#IJhack
     on_success: change
     on_failure: always
-deploy:
-  provider: releases
-  api_key:
-    secure: O6LAl2R5QIe/mgQwG5/pzbdC8gS58wtGVF2ebTVGgYsCgY0nRjLZ19H7BiQrYjbbXs8yw6cQjA+xbxNiVsIVs+Dx9j/fy2JOBeBTrGijlWLcJPT6/Ab65EjI2T96XvI8/YejRmbgjIdXFfuKtD/V4MM12LrvrvktwJp00G9l1Go=
-  file: "qtpass-$VERSION.dmg"
-  on:
-    repo: IJHack/qtpass
-    tags: true
-    condition: $TRAVIS_OS_NAME = osx && $CC = clang
-  skip_cleanup: true
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: O6LAl2R5QIe/mgQwG5/pzbdC8gS58wtGVF2ebTVGgYsCgY0nRjLZ19H7BiQrYjbbXs8yw6cQjA+xbxNiVsIVs+Dx9j/fy2JOBeBTrGijlWLcJPT6/Ab65EjI2T96XvI8/YejRmbgjIdXFfuKtD/V4MM12LrvrvktwJp00G9l1Go=
+#  file: "qtpass-$VERSION.dmg"
+#  on:
+#    repo: IJHack/qtpass
+#    tags: true
+#    condition: $TRAVIS_OS_NAME = osx && $CC = clang
+#  skip_cleanup: true
 
