@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.0" language="nl_NL">
+<defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -151,7 +152,7 @@
     </message>
     <message>
         <source>&amp;Native git/gpg</source>
-        <translation type="vanished">&amp;git en gpg direct</translation>
+        <translation type="obsolete">&amp;git en gpg direct</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="484"/>
@@ -338,7 +339,7 @@ url</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="vanished">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versie </translation>
+        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versie </translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="691"/>
@@ -469,7 +470,17 @@ Expire-Date: 0
         <translation>Voor expert instellingen lees de &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>The name should be longer than 4 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="148"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
@@ -595,7 +606,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt;
@@ -705,7 +716,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">Wissen</translation>
+        <translation type="obsolete">Wissen</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -855,7 +866,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New password file, will be placed in folder %1:</source>
-        <translation type="vanished">Nieuw wachtwoord bestand, komt in map %1:</translation>
+        <translation type="obsolete">Nieuw wachtwoord bestand, komt in map %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1771"/>
@@ -869,7 +880,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New folder, will be placed in folder %1:</source>
-        <translation type="vanished">Nieuwe map, wordt geplaatst in map %1:</translation>
+        <translation type="obsolete">Nieuwe map, wordt geplaatst in map %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1899"/>
@@ -1087,7 +1098,7 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">Wissen</translation>
+        <translation type="obsolete">Wissen</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>

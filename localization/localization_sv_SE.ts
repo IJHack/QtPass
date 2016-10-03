@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.0" language="sv_SE">
+<defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -43,7 +44,7 @@
     </message>
     <message>
         <source>&amp;Native git/gpg</source>
-        <translation type="vanished">&amp;git/gpg</translation>
+        <translation type="obsolete">&amp;git/gpg</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="484"/>
@@ -217,11 +218,11 @@ email</source>
     </message>
     <message>
         <source>Use clipboard</source>
-        <translation type="vanished">Använd clipboard</translation>
+        <translation type="obsolete">Använd clipboard</translation>
     </message>
     <message>
         <source>Autoclear panel</source>
-        <translation type="vanished">Rensa panel automatiskt</translation>
+        <translation type="obsolete">Rensa panel automatiskt</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="417"/>
@@ -260,7 +261,7 @@ email</source>
     </message>
     <message>
         <source>Use characters</source>
-        <translation type="vanished">Använd tecken</translation>
+        <translation type="obsolete">Använd tecken</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="424"/>
@@ -320,7 +321,7 @@ email</source>
     <message>
         <source>login
 url</source>
-        <translation type="vanished">användare
+        <translation type="obsolete">användare
 url</translation>
     </message>
     <message>
@@ -330,7 +331,7 @@ url</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="vanished">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version</translation>
+        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="691"/>
@@ -461,7 +462,17 @@ Expire-Date: 0
         <translation>För avancerade inställningar se manualen för &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG&lt;/a&gt; </translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>The name should be longer than 4 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="148"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -560,7 +571,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="348"/>
@@ -684,7 +695,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New password file, will be placed in folder %1:</source>
-        <translation type="vanished">Ny lösenordsfil, kommer skapas i mapp %1:</translation>
+        <translation type="obsolete">Ny lösenordsfil, kommer skapas i mapp %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1771"/>
@@ -698,7 +709,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New folder, will be placed in folder %1:</source>
-        <translation type="vanished">Ny mapp, kommer skapas i %1:</translation>
+        <translation type="obsolete">Ny mapp, kommer skapas i %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1899"/>
@@ -912,7 +923,7 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>
@@ -934,7 +945,7 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     <name>trayIcon</name>
     <message>
         <source>&amp;Quit</source>
-        <translation type="vanished">&amp;Avsluta</translation>
+        <translation type="obsolete">&amp;Avsluta</translation>
     </message>
 </context>
 </TS>
