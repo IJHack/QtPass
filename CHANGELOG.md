@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...HEAD)
 
+**Closed issues:**
+
+- PREFIX is now really a prefix [\#185](https://github.com/IJHack/qtpass/issues/185)
+
 **Merged pull requests:**
 
 - Italian translation [\#204](https://github.com/IJHack/qtpass/pull/204) ([dakk](https://github.com/dakk))
