@@ -7,6 +7,7 @@
 **Closed issues:**
 
 - PREFIX is now really a prefix [\#185](https://github.com/IJHack/qtpass/issues/185)
+- QtPass, git and windows [\#173](https://github.com/IJHack/qtpass/issues/173)
 
 **Merged pull requests:**
 
