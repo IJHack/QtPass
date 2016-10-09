@@ -20,6 +20,11 @@ class QListWidgetItem;
 struct UserInfo {
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 
+  // see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
+  bool fullyValid() { return validity == 'f' || validity == 'u'; }
+  bool marginallyValid() { return validity == 'm'; }
+  bool isValid() { return fullyValid() || marginallyValid(); }
+
   QString name;
   QString key_id;
   char validity;

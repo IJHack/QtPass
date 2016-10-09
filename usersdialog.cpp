@@ -65,7 +65,7 @@ void UsersDialog::populateList(const QString &filter) {
          it != userList->end(); ++it) {
       UserInfo &user(*it);
       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
-        if (user.validity == '-' && !ui->checkBox->isChecked())
+        if (!user.isValid() && !ui->checkBox->isChecked())
           continue;
         if (user.expiry.toTime_t() > 0 &&
             user.expiry.daysTo(QDateTime::currentDateTime()) > 0 &&
@@ -89,12 +89,15 @@ void UsersDialog::populateList(const QString &filter) {
           font.setFamily(font.defaultFamily());
           font.setBold(true);
           item->setFont(font);
-        } else if (user.validity == '-') {
+        } else if (!user.isValid()) {
           item->setBackground(QColor(164, 0, 0));
           item->setForeground(Qt::white);
         } else if (user.expiry.toTime_t() > 0 &&
                    user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
           item->setForeground(QColor(164, 0, 0));
+        } else if (!user.fullyValid()) {
+          item->setBackground(QColor(164, 80, 0));
+          item->setForeground(Qt::white);
         }
 
         ui->listWidget->addItem(item);

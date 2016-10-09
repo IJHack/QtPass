@@ -7,7 +7,7 @@
 # This should probably be part of a release process.
 
 Name: qtpass		
-Version: 1.1.3
+Version: 1.1.4
 Release: 2%{?dist}
 Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.	
 License: GPLv3

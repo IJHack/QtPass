@@ -2,7 +2,22 @@
 
 ## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.3...HEAD)
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...HEAD)
+
+**Closed issues:**
+
+- PREFIX is now really a prefix [\#185](https://github.com/IJHack/qtpass/issues/185)
+- QtPass, git and windows [\#173](https://github.com/IJHack/qtpass/issues/173)
+
+**Merged pull requests:**
+
+- Italian translation [\#204](https://github.com/IJHack/qtpass/pull/204) ([dakk](https://github.com/dakk))
+- keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/qtpass/pull/203) ([dakk](https://github.com/dakk))
+- Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/qtpass/pull/201) ([thotypous](https://github.com/thotypous))
+- Fix spelling error [\#200](https://github.com/IJHack/qtpass/pull/200) ([innir](https://github.com/innir))
+
+## [v1.1.4](https://github.com/IJHack/qtpass/tree/v1.1.4) (2016-09-26)
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.3...v1.1.4)
 
 **Implemented enhancements:**
 

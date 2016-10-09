@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>&amp;Native git/gpg</source>
-        <translation type="vanished">本地应用 git/gpg</translation>
+        <translation type="obsolete">本地应用 git/gpg</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="484"/>
@@ -298,7 +298,7 @@ email</source>
     </message>
     <message>
         <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="vanished">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本</translation>
+        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="25"/>
@@ -418,7 +418,27 @@ Expire-Date: 0
         <translation>高级用户请查看 &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG用户手册&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Name must be at least 5 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../keygendialog.cpp" line="142"/>
+        <source>Invalid email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="142"/>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="157"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -517,7 +537,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">重置</translation>
+        <translation type="obsolete">重置</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="348"/>
@@ -671,7 +691,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New password file, will be placed in folder %1:</source>
-        <translation type="vanished">新密码文件，将放置在文件夹 ％1：</translation>
+        <translation type="obsolete">新密码文件，将放置在文件夹 ％1：</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1239"/>
@@ -759,7 +779,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <source>New folder, will be placed in folder %1:</source>
-        <translation type="vanished">新文件夹，将放置在文件夹％1：</translation>
+        <translation type="obsolete">新文件夹，将放置在文件夹％1：</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1899"/>
@@ -867,7 +887,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">重置</translation>
+        <translation type="obsolete">重置</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>

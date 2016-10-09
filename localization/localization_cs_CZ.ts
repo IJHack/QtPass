@@ -414,7 +414,27 @@ Expire-Date: 0
         <translation>Možnosti expertního nastavení můžete nalézt v &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuálu&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Name must be at least 5 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../keygendialog.cpp" line="142"/>
+        <source>Invalid email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="142"/>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="157"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Tato operace může zabrat několik minut.&lt;br /&gt;Je třeba vygenerovat množství náhodných dat. Pro urychlení můžete pomoci (psaním na klávesnici, pohybováním myší, zapisováním na disk) s jejich generováním; toto pomůže generátoru náhodných čísel zvýšit šanci na získání dostatečné entropie.</translation>
     </message>

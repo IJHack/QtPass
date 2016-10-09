@@ -450,7 +450,27 @@ Expire-Date: 0
         <translation>Para las opciones avanzadas revisan el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="133"/>
+        <source>Name must be at least 5 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../keygendialog.cpp" line="142"/>
+        <source>Invalid email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="142"/>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keygendialog.cpp" line="157"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -549,7 +569,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>X</source>
-        <translation type="vanished">X</translation>
+        <translation type="obsolete">X</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -705,7 +725,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>New folder, will be placed in folder %1:</source>
-        <translation type="vanished">Nueva carpeta, será creada en carpeta %1:</translation>
+        <translation type="obsolete">Nueva carpeta, será creada en carpeta %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1899"/>
