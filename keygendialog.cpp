@@ -130,7 +130,8 @@ void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { // ok was pressed
     // check name
     if (ui->name->text().length() < 5) {
-      QMessageBox::critical(this, tr("Invalid name"), tr("Name must be at least 5 characters long."));
+      QMessageBox::critical(this, tr("Invalid name"),
+                            tr("Name must be at least 5 characters long."));
       return;
     }
 
@@ -139,7 +140,9 @@ void KeygenDialog::done(int r) {
     mailre.setCaseSensitivity(Qt::CaseInsensitive);
     mailre.setPatternSyntax(QRegExp::RegExp);
     if (!mailre.exactMatch(ui->email->text())) {
-      QMessageBox::critical(this, tr("Invalid email"), tr("The email address you typed is not a valid email address."));
+      QMessageBox::critical(
+          this, tr("Invalid email"),
+          tr("The email address you typed is not a valid email address."));
       return;
     }
 

@@ -7,8 +7,8 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QQueue>
-#include <QTimer>
 #include <QTextCodec>
+#include <QTimer>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
