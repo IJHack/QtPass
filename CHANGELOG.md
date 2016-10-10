@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...HEAD)
 
+**Implemented enhancements:**
+
+- More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
+- Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
+
 **Closed issues:**
 
 - PREFIX is now really a prefix [\#185](https://github.com/IJHack/QtPass/issues/185)

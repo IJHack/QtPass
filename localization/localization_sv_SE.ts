@@ -466,22 +466,22 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="133"/>
+        <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="157"/>
+        <location filename="../keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -868,7 +868,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../main.cpp" line="73"/>
         <source>LTR</source>
         <translation></translation>
     </message>
@@ -891,17 +891,17 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="45"/>
+        <location filename="../trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="47"/>
+        <location filename="../trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="50"/>
+        <location filename="../trayicon.cpp" line="52"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Avsluta</translation>
     </message>

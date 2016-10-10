@@ -474,17 +474,17 @@ Expire-Date: 0
         <translation>Ongeldige naam</translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="133"/>
+        <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="142"/>
+        <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -493,7 +493,7 @@ Expire-Date: 0
         <translation type="vanished">De naam dient langer te zijn dan 4 karakters.</translation>
     </message>
     <message>
-        <location filename="../keygendialog.cpp" line="157"/>
+        <location filename="../keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
@@ -1048,7 +1048,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../main.cpp" line="73"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1071,17 +1071,17 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
         <translation>M&amp;inimaliseren</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="45"/>
+        <location filename="../trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
         <translation>M&amp;aximaliseren</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="47"/>
+        <location filename="../trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
         <translation>&amp;Herstellen</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="50"/>
+        <location filename="../trayicon.cpp" line="52"/>
         <source>&amp;Quit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
