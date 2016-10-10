@@ -65,7 +65,7 @@ $(function() {
 <div class="title">QtPass </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.org/IJHack/qtpass"></a> <a href="https://ci.appveyor.com/project/annejan/qtpass/branch/master"></a> <a href="https://scan.coverity.com/projects/ijhack-qtpass"></a></p>
+<div class="textblock"><p><a href="https://travis-ci.org/IJHack/QtPass"></a> <a href="https://ci.appveyor.com/project/annejan/qtpass/branch/master"></a> <a href="https://scan.coverity.com/projects/ijhack-qtpass"></a></p>
 <p>QtPass is a GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 <h2>Features </h2>
 <ul>
@@ -77,7 +77,16 @@ $(function() {
 </ul>
 <p>Logo based on <a href="https://commons.wikimedia.org/wiki/File:Heart-padlock.svg">Heart-padlock by AnonMoos</a>.</p>
 <h2>Installation </h2>
-<h3>Dependencies</h3>
+<h3>From package</h3>
+<p>OpenSUSE &amp; Fedora <code>yum install qtpass</code> <code>dnf install qtpass</code></p>
+<p>Debian, Ubuntu and derivates like Mint, Kali &amp; Raspbian <code>apt-get install qtpass</code></p>
+<p>Arch Linux <code>pacman -S qtpass</code></p>
+<p>Gentoo <code>emerge -atv qtpass</code></p>
+<p>FreeBSD <code>pkg install qtpass</code></p>
+<p>macOS <code>brew cask install qtpass</code></p>
+<p>Windows <code>choco install qtpass</code></p>
+<h3>From Source</h3>
+<p><b>Dependencies</b></p>
 <ul>
 <li>QtPass requires Qt 4.8 or later, preferably Qt5.</li>
 <li>The Linguist package is required to compile the translations.</li>
