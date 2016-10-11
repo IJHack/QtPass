@@ -1871,7 +1871,6 @@ void MainWindow::editPassword() {
  * generator
  * @return the password
  */
-// TODO Jounathaen Passwordlength as call parameter
 QString MainWindow::generatePassword(int length, clipBoardType selection) {
   QString passwd;
   if (usePwgen) {
