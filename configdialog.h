@@ -73,6 +73,7 @@ public:
   void setPasswordLength(int pwLen);
   void setPasswordChars(QString);
   void setPwdTemplateSelector(int selection);
+  void setLineEditEnabled(bool b);
   int getPwdTemplateSelector();
   bool usePwgen();
   bool avoidCapitals();

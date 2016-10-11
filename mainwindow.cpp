@@ -456,6 +456,8 @@ void MainWindow::config() {
   d->useSymbols(useSymbols);
   d->setPasswordLength(pwdConfig.length);
   d->setPwdTemplateSelector(pwdConfig.selected);
+  if (pwdConfig.selected!=3)
+     d->setLineEditEnabled(false);
   d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(useTemplate);
   d->setTemplate(passTemplate);

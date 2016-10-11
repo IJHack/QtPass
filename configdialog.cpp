@@ -862,16 +862,28 @@ int ConfigDialog::getPwdTemplateSelector(){
   return ui->passwordCharTemplateSelector->currentIndex();
 }
 
+/**
+ * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the passwordChar Template
+ * combo box to the desired entry
+ * @param entry of
+ */
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index){
   ui->lineEditPasswordChars->setText(mainWindow->pwdConfig.Characters[index]);
   if (index != 3){
     ui->lineEditPasswordChars->setEnabled(false);
-    ui->labelPasswordChars->setEnabled(false);
   }
   else {
     ui->lineEditPasswordChars->setEnabled(true);
-    ui->labelPasswordChars->setEnabled(true);
   }
+}
+
+/**
+ * @brief ConfigDialog::setLineEditEnabled enabling/disabling the textbox with the
+ * password characters
+ * @param b enable/disable
+ */
+void ConfigDialog::setLineEditEnabled(bool b){
+  ui->lineEditPasswordChars->setEnabled(b);
 }
 
 /**
