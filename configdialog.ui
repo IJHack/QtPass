@@ -47,7 +47,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Tab_Settings">
       <attribute name="title">
@@ -771,6 +771,21 @@
        </property>
        <item>
         <widget class="QTableWidget" name="profileTable">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
          </property>
@@ -899,6 +914,9 @@
        </item>
        <item>
         <widget class="QPlainTextEdit" name="plainTextEditTemplate">
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
          <property name="plainText">
           <string>login
 url

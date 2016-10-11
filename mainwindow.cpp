@@ -54,6 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
+  treeview();
+
   // Add a Actions to the Add-Button
   QIcon addFileIcon = QIcon::fromTheme("file_new");
   QIcon addFolderIcon = QIcon::fromTheme("folder_new");
@@ -679,6 +681,8 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   lastDecrypt = "Could not decrypt";
   setClippedPassword("");
   QString file = getFile(index, usePass);
+  QFileInfo fileinfo = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  ui->Passwordname->setText(fileinfo.fileName());
   if (!file.isEmpty()) {
     currentAction = GPG;
     if (usePass)
