@@ -478,7 +478,7 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Name</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="134"/>

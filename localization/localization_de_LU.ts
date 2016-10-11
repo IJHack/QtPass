@@ -478,27 +478,27 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültiger Name</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Name muss mindestens 5 Zeichen lang sein.</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Email</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die eingegebene Email Addresse ist ungültig.</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Vorgang kann einige Minuten dauern. &lt;br /&gt; Das System muss Entropie für die Zufallsbytes sammeln. Führen sie in der Zwischenzeit andere Aufgaben mit dem PC durch um die Entropiegeneration zu beschleunigen.</translation>
     </message>
 </context>
 <context>
