@@ -1148,6 +1148,8 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   d.useTemplate(useTemplate);
   d.templateAll(templateAllFields);
   d.setPassword(lastDecrypt);
+  d.setLength(pwdConfig.length);
+  d.setPasswordCharTemplate(pwdConfig.selected);
   if (!d.exec()) {
     d.setPassword(NULL);
     return;
@@ -1870,7 +1872,7 @@ void MainWindow::editPassword() {
  * @return the password
  */
 // TODO Jounathaen Passwordlength as call parameter
-QString MainWindow::generatePassword() {
+QString MainWindow::generatePassword(int length, clipBoardType selection) {
   QString passwd;
   if (usePwgen) {
     waitFor(2);
@@ -1879,7 +1881,7 @@ QString MainWindow::generatePassword() {
                    (avoidCapitals ? "--no-capitalize " : "--capitalize ") +
                    (avoidNumbers ? "--no-numerals " : "--numerals ") +
                    (useSymbols ? "--symbols " : "") +
-                   QString::number(pwdConfig.length);
+                   QString::number(length);
     currentAction = PWGEN;
     executeWrapper(pwgenExecutable, args);
     process->waitForFinished(1000);
@@ -1889,11 +1891,11 @@ QString MainWindow::generatePassword() {
     else
       qDebug() << "pwgen fail";
   } else {
-    int length = pwdConfig.Characters[pwdConfig.selected].length();
-    if (length > 0) {
-      for (int i = 0; i < pwdConfig.length; ++i) {
-        int index = qrand() % length;
-        QChar nextChar = pwdConfig.Characters[pwdConfig.selected].at(index);
+    int charsetLength = pwdConfig.Characters[selection].length();
+    if (charsetLength > 0) {
+      for (int i = 0; i < length; ++i) {
+        int index = qrand() % charsetLength;
+        QChar nextChar = pwdConfig.Characters[selection].at(index);
         passwd.append(nextChar);
       }
     } else {
