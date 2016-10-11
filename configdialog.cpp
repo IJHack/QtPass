@@ -717,6 +717,7 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked() {
   ui->checkBoxUseSymbols->setEnabled(usePwgen);
   ui->lineEditPasswordChars->setEnabled(!usePwgen);
   ui->labelPasswordChars->setEnabled(!usePwgen);
+  ui->passwordCharTemplateSelector->setEnabled(!usePwgen);
 }
 
 /**
@@ -841,6 +842,36 @@ int ConfigDialog::getPasswordLength() {
  */
 QString ConfigDialog::getPasswordChars() {
   return ui->lineEditPasswordChars->text();
+}
+
+/**
+ * @brief ConfigDialog::setPwdTemplateSelector sets the current index of the
+ * password characters template combobox
+ * @return
+ */
+void ConfigDialog::setPwdTemplateSelector(int selection){
+  ui->passwordCharTemplateSelector->setCurrentIndex(selection);
+}
+
+/**
+ * @brief ConfigDialog::getPwdTemplateSelector returns the selection of the
+ * password characters template combobox
+ * @return
+ */
+int ConfigDialog::getPwdTemplateSelector(){
+  return ui->passwordCharTemplateSelector->currentIndex();
+}
+
+void ConfigDialog::on_passwordCharTemplateSelector_activated(int index){
+  ui->lineEditPasswordChars->setText(mainWindow->pwdConfig.Characters[index]);
+  if (index != 3){
+    ui->lineEditPasswordChars->setEnabled(false);
+    ui->labelPasswordChars->setEnabled(false);
+  }
+  else {
+    ui->lineEditPasswordChars->setEnabled(true);
+    ui->labelPasswordChars->setEnabled(true);
+  }
 }
 
 /**

@@ -281,8 +281,10 @@ bool MainWindow::checkConfig() {
   avoidNumbers = settings.value("avoidNumbers").toBool();
   lessRandom = settings.value("lessRandom").toBool();
   useSymbols = (settings.value("useSymbols") == "true");
-  passwordLength = settings.value("passwordLength").toInt();
-  passwordChars = settings.value("passwordChars").toString();
+  pwdConfig.selected = settings.value("passwordCharsSelected").toInt();
+  pwdConfig.length = settings.value("passwordLength").toInt();
+  pwdConfig.selected = settings.value("passwordCharsselection").toInt();
+  pwdConfig.Characters[3] = settings.value("passwordChars").toString();
 
   useTrayIcon = settings.value("useTrayIcon").toBool();
   hideOnClose = settings.value("hideOnClose").toBool();
@@ -321,9 +323,6 @@ bool MainWindow::checkConfig() {
       autoclearSeconds = 10;
     if (autoclearPanelSeconds < 5)
       autoclearPanelSeconds = 10;
-    passwordLength = 16;
-    passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456"
-                    "7890~!@#$%^&*()_-+={}[]|:;<>,.?";
     if (!pwgenExecutable.isEmpty())
       usePwgen = true;
     else
@@ -335,9 +334,6 @@ bool MainWindow::checkConfig() {
     // if (ver[0] == "0" && ver[1] == "8") {
     //// upgrade to 0.9
     // }
-    if (passwordChars.isEmpty())
-      passwordChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234"
-                      "567890~!@#$%^&*()_-+={}[]|:;<>,.?";
     if (passTemplate.isEmpty())
       passTemplate = "login\nurl";
   }
@@ -458,8 +454,9 @@ void MainWindow::config() {
   d->avoidNumbers(avoidNumbers);
   d->lessRandom(lessRandom);
   d->useSymbols(useSymbols);
-  d->setPasswordLength(passwordLength);
-  d->setPasswordChars(passwordChars);
+  d->setPasswordLength(pwdConfig.length);
+  d->setPwdTemplateSelector(pwdConfig.selected);
+  d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(useTemplate);
   d->setTemplate(passTemplate);
   d->templateAllFields(templateAllFields);
@@ -494,8 +491,9 @@ void MainWindow::config() {
       avoidNumbers = d->avoidNumbers();
       lessRandom = d->lessRandom();
       useSymbols = d->useSymbols();
-      passwordLength = d->getPasswordLength();
-      passwordChars = d->getPasswordChars();
+      pwdConfig.length = d->getPasswordLength();
+      pwdConfig.selected = d->getPwdTemplateSelector();
+      pwdConfig.Characters[3] = d->getPasswordChars();
       useTemplate = d->useTemplate();
       passTemplate = d->getTemplate();
       templateAllFields = d->templateAllFields();
@@ -540,8 +538,9 @@ void MainWindow::config() {
       settings.setValue("avoidNumbers", avoidNumbers ? "true" : "false");
       settings.setValue("lessRandom", lessRandom ? "true" : "false");
       settings.setValue("useSymbols", useSymbols ? "true" : "false");
-      settings.setValue("passwordLength", passwordLength);
-      settings.setValue("passwordChars", passwordChars);
+      settings.setValue("passwordLength", pwdConfig.length);
+      settings.setValue("passwordCharsselection", pwdConfig.selected);
+      settings.setValue("passwordChars", pwdConfig.Characters[3]);
       settings.setValue("useTemplate", useTemplate);
       settings.setValue("passTemplate", passTemplate);
       settings.setValue("templateAllFields", templateAllFields);
@@ -1868,6 +1867,7 @@ void MainWindow::editPassword() {
  * generator
  * @return the password
  */
+// TODO Jounathaen Passwordlength as call parameter
 QString MainWindow::generatePassword() {
   QString passwd;
   if (usePwgen) {
@@ -1877,7 +1877,7 @@ QString MainWindow::generatePassword() {
                    (avoidCapitals ? "--no-capitalize " : "--capitalize ") +
                    (avoidNumbers ? "--no-numerals " : "--numerals ") +
                    (useSymbols ? "--symbols " : "") +
-                   QString::number(passwordLength);
+                   QString::number(pwdConfig.length);
     currentAction = PWGEN;
     executeWrapper(pwgenExecutable, args);
     process->waitForFinished(1000);
@@ -1887,11 +1887,11 @@ QString MainWindow::generatePassword() {
     else
       qDebug() << "pwgen fail";
   } else {
-    int length = passwordChars.length();
+    int length = pwdConfig.Characters[pwdConfig.selected].length();
     if (length > 0) {
-      for (int i = 0; i < passwordLength; ++i) {
+      for (int i = 0; i < pwdConfig.length; ++i) {
         int index = qrand() % length;
-        QChar nextChar = passwordChars.at(index);
+        QChar nextChar = pwdConfig.Characters[pwdConfig.selected].at(index);
         passwd.append(nextChar);
       }
     } else {

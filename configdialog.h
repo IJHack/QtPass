@@ -72,6 +72,8 @@ public:
   void useSymbols(bool useSymbols);
   void setPasswordLength(int pwLen);
   void setPasswordChars(QString);
+  void setPwdTemplateSelector(int selection);
+  int getPwdTemplateSelector();
   bool usePwgen();
   bool avoidCapitals();
   bool avoidNumbers();
@@ -104,6 +106,7 @@ private slots:
   void on_toolButtonPass_clicked();
   void on_toolButtonStore_clicked();
   void on_comboBoxClipboard_activated(int);
+  void on_passwordCharTemplateSelector_activated(int);
   void on_checkBoxAutoclear_clicked();
   void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();
