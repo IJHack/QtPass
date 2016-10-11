@@ -237,7 +237,7 @@
          <item>
           <layout class="QFormLayout" name="formLayout_2">
            <property name="topMargin">
-            <number>10</number>
+            <number>0</number>
            </property>
            <item row="0" column="0">
             <widget class="QLabel" name="label_7">
