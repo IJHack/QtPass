@@ -42,6 +42,7 @@ struct passwordConfiguration {
   QString Characters[4];
   passwordConfiguration() {
     length = 16;
+    selected = 0;
     enum selected { ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM };
     Characters[ALLCHARS] =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
