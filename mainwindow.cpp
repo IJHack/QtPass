@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
   freshStart = true;
   startupPhase = true;
   autoclearTimer = NULL;
+  pwdConfig.selected = 0;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
