@@ -567,14 +567,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1783"/>
+        <location filename="../mainwindow.cpp" line="1784"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1795"/>
+        <location filename="../mainwindow.cpp" line="1796"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -595,7 +595,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
@@ -612,7 +612,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1813"/>
+        <location filename="../mainwindow.cpp" line="1814"/>
         <source>Copy Password</source>
         <translation>Скопировать пароль в буфер обмена</translation>
     </message>
@@ -748,14 +748,14 @@ p, li { white-space: pre-wrap; }
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1833"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
 (будет добавлена в %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1952"/>
+        <location filename="../mainwindow.cpp" line="1953"/>
         <source>Password copied to clipboard</source>
         <translation>Пароль скопирован в буфер обмена</translation>
     </message>
@@ -830,52 +830,52 @@ p, li { white-space: pre-wrap; }
         <translation>Ищем: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1271"/>
+        <location filename="../mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
         <translation>Удалить папку?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1587"/>
+        <location filename="../mainwindow.cpp" line="1588"/>
         <source>Generating GPG key pair</source>
         <translation>Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1630"/>
+        <location filename="../mainwindow.cpp" line="1631"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1775"/>
+        <location filename="../mainwindow.cpp" line="1776"/>
         <source>Add folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1777"/>
         <source>Add password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1903"/>
+        <location filename="../mainwindow.cpp" line="1904"/>
         <source>No characters chosen</source>
         <translation>Ни одного символа не выбрано</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1905"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1923"/>
+        <location filename="../mainwindow.cpp" line="1924"/>
         <source>Timed out</source>
         <translation>Время ожидания истекло</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1925"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Не могу запустить процесс, предыдущий всё ещё не завершился!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1980"/>
+        <location filename="../mainwindow.cpp" line="1981"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Перешифровании из папки %1</translation>
     </message>
@@ -893,57 +893,57 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="712"/>
-        <location filename="../mainwindow.cpp" line="1172"/>
-        <location filename="../mainwindow.cpp" line="1348"/>
-        <location filename="../mainwindow.cpp" line="2038"/>
+        <location filename="../mainwindow.cpp" line="1173"/>
+        <location filename="../mainwindow.cpp" line="1349"/>
+        <location filename="../mainwindow.cpp" line="2039"/>
         <source>Can not edit</source>
         <translation>Невозможно изменить содержимое</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1173"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="1174"/>
+        <location filename="../mainwindow.cpp" line="2040"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не удалось прочитать ключ шифрования: .gpg-id файл не существует или повреждён.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1220"/>
+        <location filename="../mainwindow.cpp" line="1221"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
 (будет создан в %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1416"/>
+        <location filename="../mainwindow.cpp" line="1417"/>
         <source>Can not get key list</source>
         <translation>Не удалось получить список ключей</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1417"/>
+        <location filename="../mainwindow.cpp" line="1418"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Не удалось получить список доступных ключей GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1448"/>
+        <location filename="../mainwindow.cpp" line="1449"/>
         <source>Key not found in keyring</source>
         <translation>Ключ не найден в хранилище ключей GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1479"/>
+        <location filename="../mainwindow.cpp" line="1480"/>
         <source>Cannot update</source>
         <translation>Не удалось обновить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1480"/>
+        <location filename="../mainwindow.cpp" line="1481"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Не получилось записать .gpg-id файла.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1493"/>
+        <location filename="../mainwindow.cpp" line="1494"/>
         <source>Check selected users!</source>
         <translation>Отметьте выбранных пользователей!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1494"/>
+        <location filename="../mainwindow.cpp" line="1495"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ни один из выбранных ключей не имеет секретного ключа.
@@ -958,8 +958,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">Не удалось получить id ключа шифрования (.gpg-id)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1219"/>
-        <location filename="../mainwindow.cpp" line="1831"/>
+        <location filename="../mainwindow.cpp" line="1220"/>
+        <location filename="../mainwindow.cpp" line="1832"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
@@ -968,19 +968,19 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">Новый файл с паролем:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1243"/>
+        <location filename="../mainwindow.cpp" line="1244"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1244"/>
-        <location filename="../mainwindow.cpp" line="1272"/>
+        <location filename="../mainwindow.cpp" line="1245"/>
+        <location filename="../mainwindow.cpp" line="1273"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Вы в самом деле хотите удалить %1?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="713"/>
-        <location filename="../mainwindow.cpp" line="1349"/>
+        <location filename="../mainwindow.cpp" line="1350"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Выбранный файл с паролем не существует</translation>
     </message>
@@ -989,47 +989,47 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>PasswordDialog</name>
     <message>
         <location filename="../passworddialog.ui" line="14"/>
-        <location filename="../passworddialog.ui" line="55"/>
+        <location filename="../passworddialog.ui" line="61"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="65"/>
+        <location filename="../passworddialog.ui" line="71"/>
         <source>Generate</source>
         <translation>Сгенерировать</translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="76"/>
+        <location filename="../passworddialog.ui" line="82"/>
         <source>Show password</source>
         <translation>Показать пароль</translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="96"/>
+        <location filename="../passworddialog.ui" line="102"/>
         <source>Character Set:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="104"/>
+        <location filename="../passworddialog.ui" line="110"/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="109"/>
+        <location filename="../passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="114"/>
+        <location filename="../passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="119"/>
+        <location filename="../passworddialog.ui" line="125"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passworddialog.ui" line="133"/>
+        <location filename="../passworddialog.ui" line="139"/>
         <source>Length:</source>
         <translation type="unfinished"></translation>
     </message>

@@ -150,21 +150,33 @@ void PasswordDialog::templateAll(bool templateAll) { allFields = templateAll; }
 
 /**
  * @brief PasswordDialog::useTemplate basic setter for use in
- * PasswordDialog::setPassword templating.
+ * PasswordDialog::useTemplate templating.
  * @param useTemplate
  */
 void PasswordDialog::useTemplate(bool useTemplate) { templating = useTemplate; }
 
 /**
  * @brief PasswordDialog::setLength
+ * PasswordDialog::setLength password length.
  * @param l
  */
 void PasswordDialog::setLength(int l) { ui->spinBox_pwdLength->setValue(l); }
 
 /**
  * @brief PasswordDialog::setPasswordCharTemplate
+ * PasswordDialog::setPasswordCharTemplate chose the template style.
  * @param t
  */
 void PasswordDialog::setPasswordCharTemplate(int t) {
   ui->passwordTemplateSwitch->setCurrentIndex(t);
+}
+
+/**
+ * @brief PasswordDialog::usePwgen
+ * PasswordDialog::usePwgen don't use own password generator.
+ * @param usePwgen
+ */
+void PasswordDialog::usePwgen(bool usePwgen) {
+  ui->passwordTemplateSwitch->setDisabled(usePwgen);
+  ui->label_characterset->setDisabled(usePwgen);
 }

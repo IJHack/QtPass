@@ -1145,6 +1145,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   }
   PasswordDialog d(this);
   d.setFile(file);
+  d.usePwgen(usePwgen);
   d.setTemplate(passTemplate);
   d.useTemplate(useTemplate);
   d.templateAll(templateAllFields);
