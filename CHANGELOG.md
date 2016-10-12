@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
 - I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
 
