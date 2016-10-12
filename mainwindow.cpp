@@ -45,7 +45,6 @@ MainWindow::MainWindow(QWidget *parent)
   freshStart = true;
   startupPhase = true;
   autoclearTimer = NULL;
-  pwdConfig.selected = 0;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
@@ -282,6 +281,7 @@ bool MainWindow::checkConfig() {
   avoidNumbers = settings.value("avoidNumbers").toBool();
   lessRandom = settings.value("lessRandom").toBool();
   useSymbols = (settings.value("useSymbols") == "true");
+  pwdConfig.selected = settings.value("passwordCharsSelected").toInt();
   pwdConfig.length = settings.value("passwordLength").toInt();
   pwdConfig.selected = settings.value("passwordCharsselection").toInt();
   pwdConfig.Characters[3] = settings.value("passwordChars").toString();
