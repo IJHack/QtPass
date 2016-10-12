@@ -5,7 +5,7 @@ var searchData=
   ['useclipboard',['useClipboard',['../class_config_dialog.html#a9918e062b7bd0d971b21e4586e2a82ca',1,'ConfigDialog::useClipboard(MainWindow::clipBoardType)'],['../class_config_dialog.html#a78b04b446d2fde142e259c713a42e6ba',1,'ConfigDialog::useClipboard()']]],
   ['usegit',['useGit',['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog::useGit(bool useGit)'],['../class_config_dialog.html#a796f48c56e5e436065f41f55b5fd7509',1,'ConfigDialog::useGit()']]],
   ['usepass',['usePass',['../class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a',1,'ConfigDialog::usePass(bool usePass)'],['../class_config_dialog.html#a393523460c9f09d76ee01d184e3699ad',1,'ConfigDialog::usePass()']]],
-  ['usepwgen',['usePwgen',['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen(bool usePwgen)'],['../class_config_dialog.html#a3408bd2a139e8eb3aff3d72ebc2b79f4',1,'ConfigDialog::usePwgen()']]],
+  ['usepwgen',['usePwgen',['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen(bool usePwgen)'],['../class_config_dialog.html#a3408bd2a139e8eb3aff3d72ebc2b79f4',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
   ['userdialog',['userDialog',['../class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9',1,'MainWindow']]],
   ['userinfo',['UserInfo',['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo']]],
   ['usersdialog',['UsersDialog',['../class_users_dialog.html#a927bd252b8ae90c9b55fa9aeaaa00d2e',1,'UsersDialog']]],
