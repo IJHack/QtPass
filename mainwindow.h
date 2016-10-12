@@ -33,6 +33,24 @@ struct execQueueItem {
 struct UserInfo;
 
 /*!
+    \struct passwordConfiguration
+    \brief  holds the Password configuration settings
+ */
+struct passwordConfiguration{
+  int selected;
+  int length;
+  QString Characters[4];
+  passwordConfiguration(){
+    length = 16;
+    enum selected  {ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM};
+    Characters[ALLCHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*AllChars*/
+    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";                                       /*Only Alphabetical*/
+    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";                             /*Alphabetical and Numerical*/
+    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*Custom*/
+  }
+};
+
+/*!
     \class MainWindow
     \brief The MainWindow class does way too much, not only is it a switchboard,
     configuration handler and more, it's also the process-manager.
@@ -63,9 +81,11 @@ public:
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
-  QString generatePassword();
+  QString generatePassword(int length, clipBoardType selection);
   void config();
   void executePassGitInit();
+
+  passwordConfiguration pwdConfig;
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -155,8 +175,6 @@ private:
   bool avoidNumbers;
   bool lessRandom;
   bool useSymbols;
-  int passwordLength;
-  QString passwordChars;
   bool useTemplate;
   QString passTemplate;
   bool templateAllFields;

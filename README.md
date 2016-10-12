@@ -1,7 +1,7 @@
 QtPass
 ======
 
-[![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](https://travis-ci.org/IJHack/qtpass)
+[![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 
@@ -22,7 +22,33 @@ Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/Fil
 Installation
 ------------
 
-### Dependencies
+### From package
+
+OpenSUSE & Fedora
+`yum install qtpass`
+`dnf install qtpass`
+
+Debian, Ubuntu and derivates like Mint, Kali & Raspbian
+`apt-get install qtpass`
+
+Arch Linux
+`pacman -S qtpass`
+
+Gentoo
+`emerge -atv qtpass`
+
+FreeBSD
+`pkg install qtpass`
+
+macOS
+`brew cask install qtpass`
+
+Windows
+`choco install qtpass`
+
+### From Source
+
+**Dependencies**
 
 * QtPass requires Qt 4.8 or later, preferably Qt5.
 * The Linguist package is required to compile the translations.
@@ -92,6 +118,6 @@ Further reading
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
-[Website](https://qtpass.org/) 
+[Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)

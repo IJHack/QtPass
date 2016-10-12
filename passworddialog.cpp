@@ -14,6 +14,7 @@ PasswordDialog::PasswordDialog(MainWindow *parent)
   templating = false;
   allFields = false;
   ui->setupUi(this);
+
 }
 
 /**
@@ -39,7 +40,9 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
-  ui->lineEditPassword->setText(mainWindow->generatePassword());
+  ui->lineEditPassword->setText(mainWindow->generatePassword(\
+                                  ui->spinBox_pwdLength->value(), \
+                                  (MainWindow::clipBoardType) ui->passwordTemplateSwitch->currentIndex()));
   ui->widget->setEnabled(true);
 }
 
@@ -152,3 +155,7 @@ void PasswordDialog::templateAll(bool templateAll) { allFields = templateAll; }
  * @param useTemplate
  */
 void PasswordDialog::useTemplate(bool useTemplate) { templating = useTemplate; }
+
+void PasswordDialog::setLength(int l) {ui->spinBox_pwdLength->setValue(l); }
+
+void PasswordDialog::setPasswordCharTemplate(int t) {ui->passwordTemplateSwitch->setCurrentIndex(t);}

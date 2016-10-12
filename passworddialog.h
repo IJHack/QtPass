@@ -45,6 +45,8 @@ public:
 
   void useTemplate(bool useTemplate);
   void templateAll(bool templateAll);
+  void setLength(int l);
+  void setPasswordCharTemplate(int t);
 
 private slots:
   void on_checkBoxShow_stateChanged(int arg1);

@@ -18,7 +18,8 @@
  * - The Linguist package is required to compile the translations.
  * - For use of the fallback icons the SVG library is required.
  *
- * At runtime the only real dependency is gpg2 but to make the most of it, you'll need git and pass too.
+ * At runtime the only real dependency is gpg2 but to make the most of it,
+ * you'll need git and pass too.
  *
  * \subsection source From source
  *
