@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
 
 **Closed issues:**
