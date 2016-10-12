@@ -543,14 +543,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1786"/>
         <source>Edit</source>
         <translation>Ändern</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1796"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
@@ -581,7 +581,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1778"/>
+        <location filename="../mainwindow.cpp" line="1780"/>
         <source>Users</source>
         <translation>Benutzer</translation>
     </message>
@@ -598,7 +598,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1814"/>
+        <location filename="../mainwindow.cpp" line="1816"/>
         <source>Copy Password</source>
         <translatorcomment>Das Passwort</translatorcomment>
         <translation>Kopieren</translation>
@@ -720,14 +720,14 @@ p, li { white-space: pre-wrap; }
         <translation>Zwischenablage gelöscht</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1833"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Neuer Ordner:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1953"/>
+        <location filename="../mainwindow.cpp" line="1955"/>
         <source>Password copied to clipboard</source>
         <translation>Passwort in Zwischenablage kopiert</translation>
     </message>
@@ -820,7 +820,7 @@ p, li { white-space: pre-wrap; }
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1981"/>
+        <location filename="../mainwindow.cpp" line="1983"/>
         <source>Re-encrypting from folder %1</source>
         <translatorcomment>Erneut verschlüsseln aus dem Ordner %1</translatorcomment>
         <translation></translation>
@@ -830,12 +830,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Neue Passwortdatei wird gespeichert im Ordner %1:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Add folder</source>
         <translation>Ordner hinzufügen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1779"/>
         <source>Add password</source>
         <translation>Passwort hinzufügen</translation>
     </message>
@@ -844,22 +844,22 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Neuer Ordner wird in Verzeichnis %1 erstellt:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>Keine Zeichen ausgewählt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1905"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>Zeitüberschreitung</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Prozess kann nicht starten, vorheriger Prozess läuft noch!</translation>
     </message>
@@ -877,19 +877,19 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="712"/>
         <location filename="../mainwindow.cpp" line="1173"/>
         <location filename="../mainwindow.cpp" line="1349"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="2041"/>
         <source>Can not edit</source>
         <translation>Ändern nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1174"/>
-        <location filename="../mainwindow.cpp" line="2040"/>
+        <location filename="../mainwindow.cpp" line="2042"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Schlüssel nicht lesbar, .gpg-id Datei fehlt oder ist ungültig.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1834"/>
         <source>New file</source>
         <translation>Neue Datei</translation>
     </message>
@@ -966,7 +966,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <translation>GPG Schlüssel-Paar wird generiert</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1633"/>
         <source>Profile changed to %1</source>
         <translation>Profil geändert zu %1</translation>
     </message>

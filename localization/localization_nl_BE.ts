@@ -480,14 +480,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1786"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1796"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
         <source>Delete</source>
         <translation>Verwijderen</translation>
     </message>
@@ -518,7 +518,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1778"/>
+        <location filename="../mainwindow.cpp" line="1780"/>
         <source>Users</source>
         <translation>Gebruikers</translation>
     </message>
@@ -535,7 +535,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1814"/>
+        <location filename="../mainwindow.cpp" line="1816"/>
         <source>Copy Password</source>
         <translation>Kopieer wachtwoord</translation>
     </message>
@@ -648,7 +648,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="712"/>
         <location filename="../mainwindow.cpp" line="1173"/>
         <location filename="../mainwindow.cpp" line="1349"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="2041"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
@@ -720,13 +720,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1174"/>
-        <location filename="../mainwindow.cpp" line="2040"/>
+        <location filename="../mainwindow.cpp" line="2042"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1834"/>
         <source>New file</source>
         <translation>Nieuw bestand</translation>
     </message>
@@ -796,54 +796,54 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
         <translation>Nieuw GPG sleutelpaar genereren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1633"/>
         <source>Profile changed to %1</source>
         <translation>Profiel veranderd naar %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Add folder</source>
         <translation>Voeg map toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1779"/>
         <source>Add password</source>
         <translation>Voeg wachtwoord toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1833"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nieuwe map: 
 (Wordt geplaatst in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>Geen karakters gekozen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1905"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>Duurt te lang</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Kan process niet starten, vorige loopt nog steeds!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1953"/>
+        <location filename="../mainwindow.cpp" line="1955"/>
         <source>Password copied to clipboard</source>
         <translation>Wachtwoord gekopieërd</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1981"/>
+        <location filename="../mainwindow.cpp" line="1983"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Her-encrypten vanaf map %1</translation>
     </message>

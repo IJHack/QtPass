@@ -480,14 +480,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1786"/>
         <source>Edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1796"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
@@ -518,7 +518,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1778"/>
+        <location filename="../mainwindow.cpp" line="1780"/>
         <source>Users</source>
         <translation>Uživatelé</translation>
     </message>
@@ -535,7 +535,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1814"/>
+        <location filename="../mainwindow.cpp" line="1816"/>
         <source>Copy Password</source>
         <translation>Kopírovat heslo</translation>
     </message>
@@ -624,7 +624,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="712"/>
         <location filename="../mainwindow.cpp" line="1173"/>
         <location filename="../mainwindow.cpp" line="1349"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="2041"/>
         <source>Can not edit</source>
         <translation>Nelze upravovat</translation>
     </message>
@@ -696,13 +696,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1174"/>
-        <location filename="../mainwindow.cpp" line="2040"/>
+        <location filename="../mainwindow.cpp" line="2042"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nelze načíst šifrovací klíč, .gpg-id soubor chybí nebo je neplatný.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1834"/>
         <source>New file</source>
         <translation>Nový soubor</translation>
     </message>
@@ -772,54 +772,54 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
         <translation>Generování páru GPG klíčů</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1633"/>
         <source>Profile changed to %1</source>
         <translation>Profil změněn na %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Add folder</source>
         <translation>Přidat adresář</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1779"/>
         <source>Add password</source>
         <translation>Přidat heslo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1833"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nový adresář: 
 (Bude umístěn do %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>Znaky nebyly vybrány</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1905"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nelze generovat heslo, v nastavení nebyla vybrána skladba znaků pro heslo!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>Vypršelo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Nelze spustit, předchozí proces stále běží!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1953"/>
+        <location filename="../mainwindow.cpp" line="1955"/>
         <source>Password copied to clipboard</source>
         <translation>Heslo zkopírováno do schránky</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1981"/>
+        <location filename="../mainwindow.cpp" line="1983"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Nově šifrováno z adresáře %1</translation>
     </message>

@@ -567,14 +567,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1786"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1796"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -595,7 +595,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1778"/>
+        <location filename="../mainwindow.cpp" line="1780"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
@@ -612,7 +612,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1814"/>
+        <location filename="../mainwindow.cpp" line="1816"/>
         <source>Copy Password</source>
         <translation>Скопировать пароль в буфер обмена</translation>
     </message>
@@ -748,14 +748,14 @@ p, li { white-space: pre-wrap; }
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1833"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
 (будет добавлена в %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1953"/>
+        <location filename="../mainwindow.cpp" line="1955"/>
         <source>Password copied to clipboard</source>
         <translation>Пароль скопирован в буфер обмена</translation>
     </message>
@@ -840,42 +840,42 @@ p, li { white-space: pre-wrap; }
         <translation>Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1633"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Add folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1779"/>
         <source>Add password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>Ни одного символа не выбрано</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1905"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>Время ожидания истекло</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Не могу запустить процесс, предыдущий всё ещё не завершился!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1981"/>
+        <location filename="../mainwindow.cpp" line="1983"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Перешифровании из папки %1</translation>
     </message>
@@ -895,13 +895,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="712"/>
         <location filename="../mainwindow.cpp" line="1173"/>
         <location filename="../mainwindow.cpp" line="1349"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="2041"/>
         <source>Can not edit</source>
         <translation>Невозможно изменить содержимое</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1174"/>
-        <location filename="../mainwindow.cpp" line="2040"/>
+        <location filename="../mainwindow.cpp" line="2042"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не удалось прочитать ключ шифрования: .gpg-id файл не существует или повреждён.</translation>
     </message>
@@ -959,7 +959,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1834"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>

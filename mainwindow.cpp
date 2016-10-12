@@ -1588,6 +1588,8 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
   currentAction = GPG_INTERNAL;
   executeWrapper(gpgExecutable, "--gen-key --no-tty --batch", batch);
+  // TODO check status / error messages
+  // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
 
 /**

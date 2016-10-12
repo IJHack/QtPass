@@ -480,14 +480,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1786"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1796"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -518,7 +518,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1778"/>
+        <location filename="../mainwindow.cpp" line="1780"/>
         <source>Users</source>
         <translation>用户</translation>
     </message>
@@ -535,7 +535,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1814"/>
+        <location filename="../mainwindow.cpp" line="1816"/>
         <source>Copy Password</source>
         <translation>复制密码</translation>
     </message>
@@ -625,7 +625,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="712"/>
         <location filename="../mainwindow.cpp" line="1173"/>
         <location filename="../mainwindow.cpp" line="1349"/>
-        <location filename="../mainwindow.cpp" line="2039"/>
+        <location filename="../mainwindow.cpp" line="2041"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
@@ -697,13 +697,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1174"/>
-        <location filename="../mainwindow.cpp" line="2040"/>
+        <location filename="../mainwindow.cpp" line="2042"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
-        <location filename="../mainwindow.cpp" line="1832"/>
+        <location filename="../mainwindow.cpp" line="1834"/>
         <source>New file</source>
         <translation>新密码</translation>
     </message>
@@ -772,54 +772,54 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>正在生成 GPG 密钥对</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1633"/>
         <source>Profile changed to %1</source>
         <translation>用户已更改为 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1776"/>
+        <location filename="../mainwindow.cpp" line="1778"/>
         <source>Add folder</source>
         <translation>新文件夹</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1777"/>
+        <location filename="../mainwindow.cpp" line="1779"/>
         <source>Add password</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1833"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>新建文件夹：
 （将被放在 %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1904"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>未选择任何字符</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1905"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>未选择任何字符，无法生成密码！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1924"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>超时</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>程序已经运行，无法启动！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1953"/>
+        <location filename="../mainwindow.cpp" line="1955"/>
         <source>Password copied to clipboard</source>
         <translation>已复制至剪贴板</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1981"/>
+        <location filename="../mainwindow.cpp" line="1983"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>
