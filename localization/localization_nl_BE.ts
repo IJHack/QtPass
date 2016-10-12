@@ -117,27 +117,27 @@
     <message>
         <location filename="../configdialog.ui" line="322"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies tekenset voor wachtwoord generatie</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="326"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle tekens</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="331"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="336"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumeriek</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="341"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigen tekenset</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="403"/>
@@ -501,17 +501,17 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam dient minstens 5 karakters lang te zijn.</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldig emailadres</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het emailadres dat u heeft ingevoerd is voldoet niet aan de email standaard.</translation>
     </message>
     <message>
         <source>The name should be longer than 4 characters.</source>
@@ -1072,32 +1072,32 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../passworddialog.ui" line="101"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakterset:</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="109"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle karakters</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="114"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="119"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumeriek</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="124"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigen tekenset</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="142"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengte:</translation>
     </message>
 </context>
 <context>

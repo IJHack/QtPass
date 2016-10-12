@@ -6,7 +6,6 @@
 
 **Implemented enhancements:**
 
-- More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
 - Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
 
 **Closed issues:**
@@ -16,6 +15,8 @@
 
 **Merged pull requests:**
 
+- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
+- Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
 - Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/QtPass/pull/201) ([thotypous](https://github.com/thotypous))
