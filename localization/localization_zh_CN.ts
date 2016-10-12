@@ -72,27 +72,27 @@
     <message>
         <location filename="../configdialog.ui" line="322"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>选择密码所用的的字符集</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="326"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>所有字符</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="331"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>英文字母</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="336"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>字母和数字</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="341"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="379"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../configdialog.ui" line="420"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>生成好记的密码（不安全）</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="427"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../configdialog.ui" line="547"/>
         <source>Hide on close</source>
-        <translation>后台运行</translation>
+        <translation>关闭窗口后台运行</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="554"/>
@@ -187,12 +187,12 @@
     <message>
         <location filename="../configdialog.ui" line="606"/>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>使用原生 git/gpg（推荐）</translation>
+        <translation>使用原生 git/gpg（推荐） (&amp;V)</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="613"/>
         <source>&amp;Use pass</source>
-        <translation>使用 pass</translation>
+        <translation>使用 pass (&amp;U)</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="637"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../configdialog.ui" line="875"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="884"/>
@@ -398,7 +398,7 @@ email</source>
     <message>
         <location filename="../keygendialog.ui" line="138"/>
         <source>Expert</source>
-        <translation>高级选项</translation>
+        <translation>专家模式</translation>
     </message>
     <message>
         <location filename="../keygendialog.ui" line="151"/>
@@ -441,27 +441,27 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>不合法的姓名</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名至少需要5个字符。</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>不合法的邮箱地址</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>您输入的邮箱不是一个合法的邮箱地址。</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>密码生成需要较长时间，请耐心等待。&lt;br /&gt;程序需要收集很多随机数，在此期间使用电脑进行一些其他操作（例如敲击键盘，移动鼠标，读写硬盘等）会加快此过程，并且使随机数生成器更随机化。</translation>
     </message>
 </context>
 <context>
@@ -572,7 +572,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
         <source>Welcome to QtPass %1</source>
-        <translation>欢迎使用QtPass %1</translation>
+        <translation>欢迎使用 QtPass %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="60"/>
@@ -663,17 +663,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="971"/>
         <source>QProcess::FailedToStart</source>
-        <translation>系统错误：未能开启进程 QProcess::FailedToStart</translation>
+        <translation>系统错误：启动失败 QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="974"/>
         <source>QProcess::Crashed</source>
-        <translation>系统错误：崩溃 QProcess::Crashed</translation>
+        <translation>系统错误：程序崩溃 QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="977"/>
         <source>QProcess::Timedout</source>
-        <translation>系统错误：超时 QProcess::Timedout</translation>
+        <translation>系统错误：响应超时 QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="980"/>
@@ -693,13 +693,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1034"/>
         <source>Looking for: %1</source>
-        <translation>查找：%1</translation>
+        <translation>搜索：%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1172"/>
         <location filename="../mainwindow.cpp" line="2039"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>无法读取加密密钥，gpg-id 文件丢失或无效</translation>
+        <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1218"/>
@@ -769,7 +769,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../mainwindow.cpp" line="1586"/>
         <source>Generating GPG key pair</source>
-        <translation>正在生成GPG密钥对</translation>
+        <translation>正在生成 GPG 密钥对</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1629"/>
@@ -845,32 +845,32 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../passworddialog.ui" line="101"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>所用字符：</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="109"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>所有字符</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="114"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>英文字母</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="119"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>字母和数字</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="124"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="142"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>长度：</translation>
     </message>
 </context>
 <context>
@@ -886,32 +886,32 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../trayicon.cpp" line="38"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>显示 (&amp;S)</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="40"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>隐藏 (&amp;H)</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="43"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>最小化 (&amp;N)</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>最大化 (&amp;X)</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>恢复 (&amp;R)</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="52"/>
         <source>&amp;Quit</source>
-        <translation>退出</translation>
+        <translation>退出 (&amp;Q)</translation>
     </message>
 </context>
 <context>
@@ -945,12 +945,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../usersdialog.cpp" line="76"/>
         <source>created</source>
-        <translation>创建时间</translation>
+        <translation>创建于</translation>
     </message>
     <message>
         <location filename="../usersdialog.cpp" line="80"/>
         <source>expires</source>
-        <translation>过期时间</translation>
+        <translation>过期于</translation>
     </message>
 </context>
 </TS>
