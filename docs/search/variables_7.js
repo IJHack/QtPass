@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validity',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]]
+  ['name',['name',['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo']]]
 ];

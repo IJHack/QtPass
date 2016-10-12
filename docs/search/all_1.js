@@ -2,6 +2,7 @@ var searchData=
 [
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
+  ['characters',['Characters',['../structpassword_configuration.html#a94d4635ce78810129d2cd15421d25e0a',1,'passwordConfiguration']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#af23940548a0dcd3ade9c052d38ad0549',1,'Util::checkConfig()']]],
   ['clipboard_5falways',['CLIPBOARD_ALWAYS',['../class_main_window.html#aa75543f0c997c2edb55c4ee7bb3e7b5da8e94f384499197770c492c21807465f9',1,'MainWindow']]],
   ['clipboard_5fnever',['CLIPBOARD_NEVER',['../class_main_window.html#aa75543f0c997c2edb55c4ee7bb3e7b5daa37795c77954f8d72c392ba13d245ed6',1,'MainWindow']]],
