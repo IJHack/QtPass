@@ -508,17 +508,17 @@ Expire-Date: 0
     <message>
         <location filename="../keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Name muss mindestens 5 Zeichen lang sein.</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige E-Mail</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die E-Mail-Adresse eingegeben ist keine gültige E-Mail-Adresse.</translation>
     </message>
     <message>
         <location filename="../keygendialog.cpp" line="160"/>
@@ -992,7 +992,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../passworddialog.ui" line="101"/>
         <source>Character Set:</source>
-        <translation>Zeichensatz</translation>
+        <translation>Zeichensatz:</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="109"/>
@@ -1017,7 +1017,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../passworddialog.ui" line="142"/>
         <source>Length:</source>
-        <translation>Länge</translation>
+        <translation>Länge:</translation>
     </message>
 </context>
 <context>
