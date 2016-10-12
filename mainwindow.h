@@ -37,8 +37,8 @@ struct UserInfo;
     \brief  holds the Password configuration settings
  */
 struct passwordConfiguration {
-  int selected = 0;
-  int length = 16;
+  int selected;
+  int length;
   QString Characters[4];
   passwordConfiguration() {
     length = 16;
