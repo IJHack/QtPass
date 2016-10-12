@@ -456,8 +456,8 @@ void MainWindow::config() {
   d->useSymbols(useSymbols);
   d->setPasswordLength(pwdConfig.length);
   d->setPwdTemplateSelector(pwdConfig.selected);
-  if (pwdConfig.selected!=3)
-     d->setLineEditEnabled(false);
+  if (pwdConfig.selected != 3)
+    d->setLineEditEnabled(false);
   d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(useTemplate);
   d->setTemplate(passTemplate);
@@ -1880,8 +1880,7 @@ QString MainWindow::generatePassword(int length, clipBoardType selection) {
     QString args = QString("-1 ") + (lessRandom ? "" : "--secure ") +
                    (avoidCapitals ? "--no-capitalize " : "--capitalize ") +
                    (avoidNumbers ? "--no-numerals " : "--numerals ") +
-                   (useSymbols ? "--symbols " : "") +
-                   QString::number(length);
+                   (useSymbols ? "--symbols " : "") + QString::number(length);
     currentAction = PWGEN;
     executeWrapper(pwgenExecutable, args);
     process->waitForFinished(1000);
