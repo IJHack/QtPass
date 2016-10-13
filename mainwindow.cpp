@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
   freshStart = true;
   startupPhase = true;
   autoclearTimer = NULL;
+  pwdConfig.selected = 0;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
@@ -456,8 +457,8 @@ void MainWindow::config() {
   d->useSymbols(useSymbols);
   d->setPasswordLength(pwdConfig.length);
   d->setPwdTemplateSelector(pwdConfig.selected);
-  if (pwdConfig.selected!=3)
-     d->setLineEditEnabled(false);
+  if (pwdConfig.selected != 3)
+    d->setLineEditEnabled(false);
   d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(useTemplate);
   d->setTemplate(passTemplate);
@@ -1144,6 +1145,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   }
   PasswordDialog d(this);
   d.setFile(file);
+  d.usePwgen(usePwgen);
   d.setTemplate(passTemplate);
   d.useTemplate(useTemplate);
   d.templateAll(templateAllFields);
@@ -1586,6 +1588,8 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
   currentAction = GPG_INTERNAL;
   executeWrapper(gpgExecutable, "--gen-key --no-tty --batch", batch);
+  // TODO check status / error messages
+  // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
 
 /**
@@ -1880,8 +1884,7 @@ QString MainWindow::generatePassword(int length, clipBoardType selection) {
     QString args = QString("-1 ") + (lessRandom ? "" : "--secure ") +
                    (avoidCapitals ? "--no-capitalize " : "--capitalize ") +
                    (avoidNumbers ? "--no-numerals " : "--numerals ") +
-                   (useSymbols ? "--symbols " : "") +
-                   QString::number(length);
+                   (useSymbols ? "--symbols " : "") + QString::number(length);
     currentAction = PWGEN;
     executeWrapper(pwgenExecutable, args);
     process->waitForFinished(1000);

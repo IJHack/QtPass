@@ -7,7 +7,13 @@
 **Implemented enhancements:**
 
 - I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
+- Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
+- More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
 - Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
+
+**Fixed bugs:**
+
+- Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 
 **Closed issues:**
 

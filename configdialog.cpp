@@ -849,7 +849,7 @@ QString ConfigDialog::getPasswordChars() {
  * password characters template combobox
  * @return
  */
-void ConfigDialog::setPwdTemplateSelector(int selection){
+void ConfigDialog::setPwdTemplateSelector(int selection) {
   ui->passwordCharTemplateSelector->setCurrentIndex(selection);
 }
 
@@ -858,31 +858,32 @@ void ConfigDialog::setPwdTemplateSelector(int selection){
  * password characters template combobox
  * @return
  */
-int ConfigDialog::getPwdTemplateSelector(){
+int ConfigDialog::getPwdTemplateSelector() {
   return ui->passwordCharTemplateSelector->currentIndex();
 }
 
 /**
- * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the passwordChar Template
+ * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the
+ * passwordChar Template
  * combo box to the desired entry
  * @param entry of
  */
-void ConfigDialog::on_passwordCharTemplateSelector_activated(int index){
+void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   ui->lineEditPasswordChars->setText(mainWindow->pwdConfig.Characters[index]);
-  if (index != 3){
+  if (index != 3) {
     ui->lineEditPasswordChars->setEnabled(false);
-  }
-  else {
+  } else {
     ui->lineEditPasswordChars->setEnabled(true);
   }
 }
 
 /**
- * @brief ConfigDialog::setLineEditEnabled enabling/disabling the textbox with the
+ * @brief ConfigDialog::setLineEditEnabled enabling/disabling the textbox with
+ * the
  * password characters
  * @param b enable/disable
  */
-void ConfigDialog::setLineEditEnabled(bool b){
+void ConfigDialog::setLineEditEnabled(bool b) {
   ui->lineEditPasswordChars->setEnabled(b);
 }
 

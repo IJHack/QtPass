@@ -36,17 +36,23 @@ struct UserInfo;
     \struct passwordConfiguration
     \brief  holds the Password configuration settings
  */
-struct passwordConfiguration{
-  int selected = 0;
-  int length = 16;
+struct passwordConfiguration {
+  int selected;
+  int length;
   QString Characters[4];
-  passwordConfiguration(){
+  passwordConfiguration() {
     length = 16;
-    enum selected  {ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM};
-    Characters[ALLCHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*AllChars*/
-    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";                                       /*Only Alphabetical*/
-    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";                             /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*Custom*/
+    selected = 0;
+    enum selected { ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM };
+    Characters[ALLCHARS] =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
+        "*()_-+={}[]|:;<>,.?"; /*AllChars*/
+    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
+                               "vwxyz"; /*Only Alphabetical*/
+    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
+                               "vwxyz1234567890"; /*Alphabetical and Numerical*/
+    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1"
+                         "234567890~!@#$%^&*()_-+={}[]|:;<>,.?"; /*Custom*/
   }
 };
 
