@@ -60,241 +60,241 @@
         <translation>Délka hesla:</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="276"/>
+        <location filename="../configdialog.ui" line="279"/>
         <source>Characters</source>
         <translation>znaků</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="304"/>
+        <location filename="../configdialog.ui" line="307"/>
         <source>Use characters:</source>
         <translation>Použít znaky:</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="322"/>
+        <location filename="../configdialog.ui" line="325"/>
         <source>Select character set for password generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="326"/>
+        <location filename="../configdialog.ui" line="329"/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="331"/>
+        <location filename="../configdialog.ui" line="334"/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="336"/>
+        <location filename="../configdialog.ui" line="339"/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="341"/>
+        <location filename="../configdialog.ui" line="344"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="379"/>
+        <location filename="../configdialog.ui" line="382"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="396"/>
+        <location filename="../configdialog.ui" line="399"/>
         <source>Use pwgen</source>
         <translation>Použít pwgen</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="403"/>
+        <location filename="../configdialog.ui" line="406"/>
         <source>Exclude capital letters</source>
         <translation>Nepoužívat VELKÁ písmena</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="413"/>
+        <location filename="../configdialog.ui" line="416"/>
         <source>Include special symbols </source>
         <translation>Používat speciální znaky</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="420"/>
+        <location filename="../configdialog.ui" line="423"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generovat zapamatovatelná méně bezpečná hesla</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="427"/>
+        <location filename="../configdialog.ui" line="430"/>
         <source>Exclude numbers</source>
         <translation>Nepoužívat čísla</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="446"/>
+        <location filename="../configdialog.ui" line="449"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="458"/>
+        <location filename="../configdialog.ui" line="461"/>
         <source>Use git</source>
         <translation>Použít git</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="472"/>
+        <location filename="../configdialog.ui" line="475"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Automaticky přidat .gpg-id soubory</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="479"/>
+        <location filename="../configdialog.ui" line="482"/>
         <source>Automatically push</source>
         <translation>Automaticky odesílat</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="486"/>
+        <location filename="../configdialog.ui" line="489"/>
         <source>Automatically pull</source>
         <translation>Automaticky stahovat</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="521"/>
+        <location filename="../configdialog.ui" line="524"/>
         <source>System:</source>
         <translation>Systém:</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="533"/>
+        <location filename="../configdialog.ui" line="536"/>
         <source>Use TrayIcon</source>
         <translation>Zobrazit ikonu</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="540"/>
+        <location filename="../configdialog.ui" line="543"/>
         <source>Start minimized</source>
         <translation>Spustit skryté</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="547"/>
+        <location filename="../configdialog.ui" line="550"/>
         <source>Hide on close</source>
         <translation>Zavřením skrýt</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="554"/>
+        <location filename="../configdialog.ui" line="557"/>
         <source>Always on top</source>
         <translation>Vždy navrchu</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="579"/>
+        <location filename="../configdialog.ui" line="582"/>
         <source>Programs</source>
         <translation>Programy</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="597"/>
+        <location filename="../configdialog.ui" line="600"/>
         <source>Select password storage program:</source>
         <translation>Vybrat program správce hesel:</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="606"/>
+        <location filename="../configdialog.ui" line="609"/>
         <source>Nati&amp;ve git/gpg</source>
         <translation>&amp;Výchozí git/gpg</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="613"/>
+        <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation>Po&amp;užít pass</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="637"/>
+        <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="643"/>
+        <location filename="../configdialog.ui" line="646"/>
         <source>git</source>
         <translation>git</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="653"/>
-        <location filename="../configdialog.ui" line="660"/>
-        <location filename="../configdialog.ui" line="687"/>
-        <location filename="../configdialog.ui" line="718"/>
-        <location filename="../configdialog.ui" line="841"/>
+        <location filename="../configdialog.ui" line="656"/>
+        <location filename="../configdialog.ui" line="663"/>
+        <location filename="../configdialog.ui" line="690"/>
+        <location filename="../configdialog.ui" line="721"/>
+        <location filename="../configdialog.ui" line="844"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="667"/>
+        <location filename="../configdialog.ui" line="670"/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="680"/>
+        <location filename="../configdialog.ui" line="683"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="697"/>
+        <location filename="../configdialog.ui" line="700"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="708"/>
+        <location filename="../configdialog.ui" line="711"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="727"/>
+        <location filename="../configdialog.ui" line="730"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="757"/>
+        <location filename="../configdialog.ui" line="760"/>
         <source>Profiles</source>
         <translation>Profily</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="791"/>
+        <location filename="../configdialog.ui" line="794"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="796"/>
+        <location filename="../configdialog.ui" line="799"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="806"/>
+        <location filename="../configdialog.ui" line="809"/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="820"/>
+        <location filename="../configdialog.ui" line="823"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="834"/>
+        <location filename="../configdialog.ui" line="837"/>
         <source>Current password-store</source>
         <translation>Aktuální úložiště hesel</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="854"/>
+        <location filename="../configdialog.ui" line="857"/>
         <source>Template</source>
         <translation>Šablona</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="875"/>
+        <location filename="../configdialog.ui" line="878"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>Šablony přidávají další pole v dialogu generování hesla a v náhledu hesla.</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="884"/>
+        <location filename="../configdialog.ui" line="887"/>
         <source>Use template</source>
         <translation>Použít šablonu</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="891"/>
+        <location filename="../configdialog.ui" line="894"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Zobrazit všechny řádky začínající slovem následovaným středníkem jako pole v polích hesla, nejen vypsaná</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="894"/>
+        <location filename="../configdialog.ui" line="897"/>
         <source>Show all fields templated</source>
         <translation>Zobrazit všechna pole v šabloně</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="903"/>
+        <location filename="../configdialog.ui" line="906"/>
         <source>login
 url
 email</source>
@@ -303,7 +303,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="918"/>
+        <location filename="../configdialog.ui" line="921"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verze </translation>
     </message>
