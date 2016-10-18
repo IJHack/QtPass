@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ui</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L19'>ui</a>                 19 configdialog.cpp   ui-&gt;setupUi(this);</span>
+<span class='curline'><a href='../S/5.html#L20'>ui</a>                 20 configdialog.cpp   ui-&gt;profileTable-&gt;verticalHeader()-&gt;hide();</span>
+<span class='curline'><a href='../S/5.html#L21'>ui</a>                 21 configdialog.cpp   ui-&gt;profileTable-&gt;horizontalHeader()-&gt;setStretchLastSection(true);</span>
+<span class='curline'><a href='../S/5.html#L22'>ui</a>                 22 configdialog.cpp   ui-&gt;label-&gt;setText(ui-&gt;label-&gt;text() + VERSION);</span>
+<span class='curline'><a href='../S/5.html#L23'>ui</a>                 23 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;clear();</span>
+<span class='curline'><a href='../S/5.html#L25'>ui</a>                 25 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;addItem(tr("No Clipboard"));</span>
+<span class='curline'><a href='../S/5.html#L26'>ui</a>                 26 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;addItem(tr("Always copy to clipboard"));</span>
+<span class='curline'><a href='../S/5.html#L27'>ui</a>                 27 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;addItem(tr("On-demand copy to clipboard"));</span>
+<span class='curline'><a href='../S/5.html#L28'>ui</a>                 28 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(0);</span>
+<span class='curline'><a href='../S/5.html#L36'>ui</a>                 36 configdialog.cpp   mainWindow-&gt;setGitExecutable(ui-&gt;gitPath-&gt;text());</span>
+<span class='curline'><a href='../S/5.html#L37'>ui</a>                 37 configdialog.cpp   mainWindow-&gt;setGpgExecutable(ui-&gt;gpgPath-&gt;text());</span>
+<span class='curline'><a href='../S/5.html#L38'>ui</a>                 38 configdialog.cpp   mainWindow-&gt;setPassExecutable(ui-&gt;passPath-&gt;text());</span>
+<span class='curline'><a href='../S/5.html#L45'>ui</a>                 45 configdialog.cpp void ConfigDialog::setPassPath(QString path) { ui-&gt;passPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L53'>ui</a>                 53 configdialog.cpp   ui-&gt;gitPath-&gt;setText(path);</span>
+<span class='curline'><a href='../S/5.html#L56'>ui</a>                 56 configdialog.cpp     ui-&gt;checkBoxUseGit-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L58'>ui</a>                 58 configdialog.cpp     ui-&gt;checkBoxUseGit-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L66'>ui</a>                 66 configdialog.cpp void ConfigDialog::setGpgPath(QString path) { ui-&gt;gpgPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L72'>ui</a>                 72 configdialog.cpp void ConfigDialog::setStorePath(QString path) { ui-&gt;storePath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L78'>ui</a>                 78 configdialog.cpp QString ConfigDialog::getPassPath() { return ui-&gt;passPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L84'>ui</a>                 84 configdialog.cpp QString ConfigDialog::getGitPath() { return ui-&gt;gitPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L90'>ui</a>                 90 configdialog.cpp QString ConfigDialog::getGpgPath() { return ui-&gt;gpgPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L96'>ui</a>                 96 configdialog.cpp QString ConfigDialog::getStorePath() { return ui-&gt;storePath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L103'>ui</a>                103 configdialog.cpp bool ConfigDialog::usePass() { return ui-&gt;radioButtonPass-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L112'>ui</a>                112 configdialog.cpp     ui-&gt;radioButtonNative-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L113'>ui</a>                113 configdialog.cpp     ui-&gt;radioButtonPass-&gt;setChecked(true);</span>
+<span class='curline'><a href='../S/5.html#L115'>ui</a>                115 configdialog.cpp     ui-&gt;radioButtonNative-&gt;setChecked(true);</span>
+<span class='curline'><a href='../S/5.html#L116'>ui</a>                116 configdialog.cpp     ui-&gt;radioButtonPass-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L137'>ui</a>                137 configdialog.cpp   if (ui-&gt;radioButtonPass-&gt;isChecked()) {</span>
+<span class='curline'><a href='../S/5.html#L138'>ui</a>                138 configdialog.cpp     ui-&gt;groupBoxNative-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L139'>ui</a>                139 configdialog.cpp     ui-&gt;groupBoxPass-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L141'>ui</a>                141 configdialog.cpp     ui-&gt;groupBoxNative-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L142'>ui</a>                142 configdialog.cpp     ui-&gt;groupBoxPass-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L182'>ui</a>                182 configdialog.cpp     ui-&gt;gitPath-&gt;setText(git);</span>
+<span class='curline'><a href='../S/5.html#L183'>ui</a>                183 configdialog.cpp     ui-&gt;checkBoxUseGit-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L186'>ui</a>                186 configdialog.cpp     ui-&gt;checkBoxUseGit-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L196'>ui</a>                196 configdialog.cpp     ui-&gt;gpgPath-&gt;setText(gpg);</span>
+<span class='curline'><a href='../S/5.html#L205'>ui</a>                205 configdialog.cpp     ui-&gt;passPath-&gt;setText(pass);</span>
+<span class='curline'><a href='../S/5.html#L215'>ui</a>                215 configdialog.cpp     ui-&gt;storePath-&gt;setText(store);</span>
+<span class='curline'><a href='../S/5.html#L224'>ui</a>                224 configdialog.cpp     ui-&gt;checkBoxAutoclear-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L225'>ui</a>                225 configdialog.cpp     ui-&gt;checkBoxHidePassword-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L226'>ui</a>                226 configdialog.cpp     ui-&gt;checkBoxHideContent-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L227'>ui</a>                227 configdialog.cpp     if (ui-&gt;checkBoxAutoclear-&gt;isChecked()) {</span>
+<span class='curline'><a href='../S/5.html#L228'>ui</a>                228 configdialog.cpp       ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L229'>ui</a>                229 configdialog.cpp       ui-&gt;labelSeconds-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L231'>ui</a>                231 configdialog.cpp       ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L232'>ui</a>                232 configdialog.cpp       ui-&gt;labelSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L235'>ui</a>                235 configdialog.cpp     ui-&gt;checkBoxAutoclear-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L236'>ui</a>                236 configdialog.cpp     ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L237'>ui</a>                237 configdialog.cpp     ui-&gt;labelSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L238'>ui</a>                238 configdialog.cpp     ui-&gt;checkBoxHidePassword-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L239'>ui</a>                239 configdialog.cpp     ui-&gt;checkBoxHideContent-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L248'>ui</a>                248 configdialog.cpp   if (ui-&gt;checkBoxAutoclearPanel-&gt;isChecked()) {</span>
+<span class='curline'><a href='../S/5.html#L249'>ui</a>                249 configdialog.cpp     ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L250'>ui</a>                250 configdialog.cpp     ui-&gt;labelPanelSeconds-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L252'>ui</a>                252 configdialog.cpp     ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L253'>ui</a>                253 configdialog.cpp     ui-&gt;labelPanelSeconds-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L261'>ui</a>                261 configdialog.cpp   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(static_cast&lt;int&gt;(useClipboard));</span>
+<span class='curline'><a href='../S/5.html#L271'>ui</a>                271 configdialog.cpp   ui-&gt;checkBoxAutoclear-&gt;setChecked(useAutoclear);</span>
+<span class='curline'><a href='../S/5.html#L281'>ui</a>                281 configdialog.cpp   ui-&gt;spinBoxAutoclearSeconds-&gt;setValue(seconds);</span>
+<span class='curline'><a href='../S/5.html#L290'>ui</a>                290 configdialog.cpp   ui-&gt;checkBoxAutoclearPanel-&gt;setChecked(useAutoclearPanel);</span>
+<span class='curline'><a href='../S/5.html#L300'>ui</a>                300 configdialog.cpp   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setValue(seconds);</span>
+<span class='curline'><a href='../S/5.html#L309'>ui</a>                309 configdialog.cpp       ui-&gt;comboBoxClipboard-&gt;currentIndex());</span>
+<span class='curline'><a href='../S/5.html#L316'>ui</a>                316 configdialog.cpp bool ConfigDialog::useAutoclear() { return ui-&gt;checkBoxAutoclear-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L323'>ui</a>                323 configdialog.cpp   return ui-&gt;spinBoxAutoclearSeconds-&gt;value();</span>
+<span class='curline'><a href='../S/5.html#L339'>ui</a>                339 configdialog.cpp   return ui-&gt;checkBoxAutoclearPanel-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L347'>ui</a>                347 configdialog.cpp   return ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value();</span>
+<span class='curline'><a href='../S/5.html#L356'>ui</a>                356 configdialog.cpp   return ui-&gt;checkBoxHidePassword-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L365'>ui</a>                365 configdialog.cpp   return ui-&gt;checkBoxHideContent-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L374'>ui</a>                374 configdialog.cpp   ui-&gt;checkBoxHidePassword-&gt;setChecked(hidePassword);</span>
+<span class='curline'><a href='../S/5.html#L383'>ui</a>                383 configdialog.cpp   ui-&gt;checkBoxHideContent-&gt;setChecked(hideContent);</span>
+<span class='curline'><a href='../S/5.html#L391'>ui</a>                391 configdialog.cpp bool ConfigDialog::addGPGId() { return ui-&gt;checkBoxAddGPGId-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L399'>ui</a>                399 configdialog.cpp   ui-&gt;checkBoxAddGPGId-&gt;setChecked(addGPGId);</span>
+<span class='curline'><a href='../S/5.html#L427'>ui</a>                427 configdialog.cpp   ui-&gt;profileTable-&gt;setRowCount(profiles.count());</span>
+<span class='curline'><a href='../S/5.html#L433'>ui</a>                433 configdialog.cpp       ui-&gt;profileTable-&gt;setItem(n, 0, new QTableWidgetItem(i.key()));</span>
+<span class='curline'><a href='../S/5.html#L434'>ui</a>                434 configdialog.cpp       ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(i.value()));</span>
+<span class='curline'><a href='../S/5.html#L437'>ui</a>                437 configdialog.cpp         ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class='curline'><a href='../S/5.html#L450'>ui</a>                450 configdialog.cpp   for (int i = 0; i &lt; ui-&gt;profileTable-&gt;rowCount(); ++i) {</span>
+<span class='curline'><a href='../S/5.html#L451'>ui</a>                451 configdialog.cpp     QTableWidgetItem *pathItem = ui-&gt;profileTable-&gt;item(i, 1);</span>
+<span class='curline'><a href='../S/5.html#L453'>ui</a>                453 configdialog.cpp       QTableWidgetItem *item = ui-&gt;profileTable-&gt;item(i, 0);</span>
+<span class='curline'><a href='../S/5.html#L468'>ui</a>                468 configdialog.cpp   int n = ui-&gt;profileTable-&gt;rowCount();</span>
+<span class='curline'><a href='../S/5.html#L469'>ui</a>                469 configdialog.cpp   ui-&gt;profileTable-&gt;insertRow(n);</span>
+<span class='curline'><a href='../S/5.html#L470'>ui</a>                470 configdialog.cpp   ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(ui-&gt;storePath-&gt;text()));</span>
+<span class='curline'><a href='../S/5.html#L471'>ui</a>                471 configdialog.cpp   ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class='curline'><a href='../S/5.html#L472'>ui</a>                472 configdialog.cpp   ui-&gt;deleteButton-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L480'>ui</a>                480 configdialog.cpp   QList&lt;QTableWidgetItem *&gt; itemList = ui-&gt;profileTable-&gt;selectedItems();</span>
+<span class='curline'><a href='../S/5.html#L494'>ui</a>                494 configdialog.cpp     ui-&gt;profileTable-&gt;removeRow(row);</span>
+<span class='curline'><a href='../S/5.html#L495'>ui</a>                495 configdialog.cpp   if (ui-&gt;profileTable-&gt;rowCount() &lt; 1)</span>
+<span class='curline'><a href='../S/5.html#L496'>ui</a>                496 configdialog.cpp     ui-&gt;deleteButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L517'>ui</a>                517 configdialog.cpp   QString gpg = ui-&gt;gpgPath-&gt;text();</span>
+<span class='curline'><a href='../S/5.html#L537'>ui</a>                537 configdialog.cpp   QString passStore = ui-&gt;storePath-&gt;text();</span>
+<span class='curline'><a href='../S/5.html#L569'>ui</a>                569 configdialog.cpp       if (passStore == ui-&gt;storePath-&gt;text())</span>
+<span class='curline'><a href='../S/5.html#L571'>ui</a>                571 configdialog.cpp       passStore = ui-&gt;storePath-&gt;text();</span>
+<span class='curline'><a href='../S/5.html#L588'>ui</a>                588 configdialog.cpp   return ui-&gt;checkBoxUseTrayIcon-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L597'>ui</a>                597 configdialog.cpp   return ui-&gt;checkBoxHideOnClose-&gt;isEnabled() &amp;&amp;</span>
+<span class='curline'><a href='../S/5.html#L598'>ui</a>                598 configdialog.cpp          ui-&gt;checkBoxHideOnClose-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L607'>ui</a>                607 configdialog.cpp   ui-&gt;checkBoxUseTrayIcon-&gt;setChecked(useSystray);</span>
+<span class='curline'><a href='../S/5.html#L608'>ui</a>                608 configdialog.cpp   ui-&gt;checkBoxHideOnClose-&gt;setEnabled(useSystray);</span>
+<span class='curline'><a href='../S/5.html#L609'>ui</a>                609 configdialog.cpp   ui-&gt;checkBoxStartMinimized-&gt;setEnabled(useSystray);</span>
+<span class='curline'><a href='../S/5.html#L611'>ui</a>                611 configdialog.cpp     ui-&gt;checkBoxHideOnClose-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L612'>ui</a>                612 configdialog.cpp     ui-&gt;checkBoxStartMinimized-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L622'>ui</a>                622 configdialog.cpp   ui-&gt;checkBoxHideOnClose-&gt;setChecked(hideOnClose);</span>
+<span class='curline'><a href='../S/5.html#L630'>ui</a>                630 configdialog.cpp   if (ui-&gt;checkBoxUseTrayIcon-&gt;isChecked()) {</span>
+<span class='curline'><a href='../S/5.html#L631'>ui</a>                631 configdialog.cpp     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L632'>ui</a>                632 configdialog.cpp     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L634'>ui</a>                634 configdialog.cpp     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L635'>ui</a>                635 configdialog.cpp     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L653'>ui</a>                653 configdialog.cpp   ui-&gt;checkBoxUseGit-&gt;setChecked(useGit);</span>
+<span class='curline'><a href='../S/5.html#L661'>ui</a>                661 configdialog.cpp bool ConfigDialog::useGit() { return ui-&gt;checkBoxUseGit-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L668'>ui</a>                668 configdialog.cpp   ui-&gt;checkBoxAddGPGId-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class='curline'><a href='../S/5.html#L669'>ui</a>                669 configdialog.cpp   ui-&gt;checkBoxAutoPull-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class='curline'><a href='../S/5.html#L670'>ui</a>                670 configdialog.cpp   ui-&gt;checkBoxAutoPush-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class='curline'><a href='../S/5.html#L680'>ui</a>                680 configdialog.cpp     ui-&gt;pwgenPath-&gt;setText(pwgen);</span>
+<span class='curline'><a href='../S/5.html#L681'>ui</a>                681 configdialog.cpp     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L683'>ui</a>                683 configdialog.cpp     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L684'>ui</a>                684 configdialog.cpp     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L692'>ui</a>                692 configdialog.cpp QString ConfigDialog::getPwgenPath() { return ui-&gt;pwgenPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L700'>ui</a>                700 configdialog.cpp   ui-&gt;pwgenPath-&gt;setText(pwgen);</span>
+<span class='curline'><a href='../S/5.html#L702'>ui</a>                702 configdialog.cpp     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span>
+<span class='curline'><a href='../S/5.html#L703'>ui</a>                703 configdialog.cpp     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L713'>ui</a>                713 configdialog.cpp   bool usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L714'>ui</a>                714 configdialog.cpp   ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L715'>ui</a>                715 configdialog.cpp   ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L716'>ui</a>                716 configdialog.cpp   ui-&gt;checkBoxLessRandom-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L717'>ui</a>                717 configdialog.cpp   ui-&gt;checkBoxUseSymbols-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L718'>ui</a>                718 configdialog.cpp   ui-&gt;lineEditPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L719'>ui</a>                719 configdialog.cpp   ui-&gt;labelPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L720'>ui</a>                720 configdialog.cpp   ui-&gt;passwordCharTemplateSelector-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L731'>ui</a>                731 configdialog.cpp   if (ui-&gt;pwgenPath-&gt;text().isEmpty())</span>
+<span class='curline'><a href='../S/5.html#L733'>ui</a>                733 configdialog.cpp   ui-&gt;checkBoxUsePwgen-&gt;setChecked(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L743'>ui</a>                743 configdialog.cpp   ui-&gt;checkBoxAvoidCapitals-&gt;setChecked(avoidCapitals);</span>
+<span class='curline'><a href='../S/5.html#L752'>ui</a>                752 configdialog.cpp   ui-&gt;checkBoxAvoidNumbers-&gt;setChecked(avoidNumbers);</span>
+<span class='curline'><a href='../S/5.html#L761'>ui</a>                761 configdialog.cpp   ui-&gt;checkBoxLessRandom-&gt;setChecked(lessRandom);</span>
+<span class='curline'><a href='../S/5.html#L770'>ui</a>                770 configdialog.cpp   ui-&gt;checkBoxUseSymbols-&gt;setChecked(useSymbols);</span>
+<span class='curline'><a href='../S/5.html#L779'>ui</a>                779 configdialog.cpp   ui-&gt;spinBoxPasswordLength-&gt;setValue(pwLen);</span>
+<span class='curline'><a href='../S/5.html#L788'>ui</a>                788 configdialog.cpp   ui-&gt;lineEditPasswordChars-&gt;setText(pwChars);</span>
+<span class='curline'><a href='../S/5.html#L795'>ui</a>                795 configdialog.cpp bool ConfigDialog::usePwgen() { return ui-&gt;checkBoxUsePwgen-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L803'>ui</a>                803 configdialog.cpp   return ui-&gt;checkBoxAvoidCapitals-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L812'>ui</a>                812 configdialog.cpp   return ui-&gt;checkBoxAvoidNumbers-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L820'>ui</a>                820 configdialog.cpp bool ConfigDialog::lessRandom() { return ui-&gt;checkBoxLessRandom-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L827'>ui</a>                827 configdialog.cpp bool ConfigDialog::useSymbols() { return ui-&gt;checkBoxUseSymbols-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L835'>ui</a>                835 configdialog.cpp   return ui-&gt;spinBoxPasswordLength-&gt;value();</span>
+<span class='curline'><a href='../S/5.html#L844'>ui</a>                844 configdialog.cpp   return ui-&gt;lineEditPasswordChars-&gt;text();</span>
+<span class='curline'><a href='../S/5.html#L853'>ui</a>                853 configdialog.cpp   ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(selection);</span>
+<span class='curline'><a href='../S/5.html#L862'>ui</a>                862 configdialog.cpp   return ui-&gt;passwordCharTemplateSelector-&gt;currentIndex();</span>
+<span class='curline'><a href='../S/5.html#L872'>ui</a>                872 configdialog.cpp   ui-&gt;lineEditPasswordChars-&gt;setText(mainWindow-&gt;pwdConfig.Characters[index]);</span>
+<span class='curline'><a href='../S/5.html#L874'>ui</a>                874 configdialog.cpp     ui-&gt;lineEditPasswordChars-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/5.html#L876'>ui</a>                876 configdialog.cpp     ui-&gt;lineEditPasswordChars-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/5.html#L887'>ui</a>                887 configdialog.cpp   ui-&gt;lineEditPasswordChars-&gt;setEnabled(b);</span>
+<span class='curline'><a href='../S/5.html#L896'>ui</a>                896 configdialog.cpp   return ui-&gt;checkBoxStartMinimized-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L905'>ui</a>                905 configdialog.cpp   ui-&gt;checkBoxStartMinimized-&gt;setChecked(startMinimized);</span>
+<span class='curline'><a href='../S/5.html#L913'>ui</a>                913 configdialog.cpp   ui-&gt;plainTextEditTemplate-&gt;setEnabled(ui-&gt;checkBoxUseTemplate-&gt;isChecked());</span>
+<span class='curline'><a href='../S/5.html#L914'>ui</a>                914 configdialog.cpp   ui-&gt;checkBoxTemplateAllFields-&gt;setEnabled(</span>
+<span class='curline'><a href='../S/5.html#L915'>ui</a>                915 configdialog.cpp       ui-&gt;checkBoxUseTemplate-&gt;isChecked());</span>
+<span class='curline'><a href='../S/5.html#L923'>ui</a>                923 configdialog.cpp   ui-&gt;checkBoxUseTemplate-&gt;setChecked(useTemplate);</span>
+<span class='curline'><a href='../S/5.html#L932'>ui</a>                932 configdialog.cpp   return ui-&gt;checkBoxUseTemplate-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L940'>ui</a>                940 configdialog.cpp   ui-&gt;plainTextEditTemplate-&gt;setPlainText(passTemplate);</span>
+<span class='curline'><a href='../S/5.html#L948'>ui</a>                948 configdialog.cpp   return ui-&gt;plainTextEditTemplate-&gt;toPlainText();</span>
+<span class='curline'><a href='../S/5.html#L957'>ui</a>                957 configdialog.cpp   ui-&gt;checkBoxAutoPull-&gt;setChecked(autoPull);</span>
+<span class='curline'><a href='../S/5.html#L965'>ui</a>                965 configdialog.cpp   ui-&gt;checkBoxAutoPush-&gt;setChecked(autoPush);</span>
+<span class='curline'><a href='../S/5.html#L973'>ui</a>                973 configdialog.cpp bool ConfigDialog::autoPull() { return ui-&gt;checkBoxAutoPull-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L980'>ui</a>                980 configdialog.cpp bool ConfigDialog::autoPush() { return ui-&gt;checkBoxAutoPush-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L988'>ui</a>                988 configdialog.cpp   return ui-&gt;checkBoxTemplateAllFields-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L997'>ui</a>                997 configdialog.cpp   ui-&gt;checkBoxTemplateAllFields-&gt;setChecked(templateAll);</span>
+<span class='curline'><a href='../S/5.html#L1006'>ui</a>               1006 configdialog.cpp   ui-&gt;checkBoxAlwaysOnTop-&gt;setChecked(alwaysOnTop);</span>
+<span class='curline'><a href='../S/5.html#L1015'>ui</a>               1015 configdialog.cpp   return ui-&gt;checkBoxAlwaysOnTop-&gt;isChecked();</span>
+<span class='curline'><a href='../S/6.html#L121'>ui</a>                121 configdialog.h   QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</span>
+<span class='curline'><a href='../S/31.html#L13'>ui</a>                 13 keygendialog.cpp   ui-&gt;setupUi(this);</span>
+<span class='curline'><a href='../S/31.html#L20'>ui</a>                 20 keygendialog.cpp KeygenDialog::~KeygenDialog() { delete ui; }</span>
+<span class='curline'><a href='../S/31.html#L28'>ui</a>                 28 keygendialog.cpp   if (ui-&gt;passphrase1-&gt;text() == ui-&gt;passphrase2-&gt;text()) {</span>
+<span class='curline'><a href='../S/31.html#L29'>ui</a>                 29 keygendialog.cpp     ui-&gt;buttonBox-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/31.html#L36'>ui</a>                 36 keygendialog.cpp     ui-&gt;buttonBox-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L55'>ui</a>                 55 keygendialog.cpp     ui-&gt;plainTextEdit-&gt;setReadOnly(false);</span>
+<span class='curline'><a href='../S/31.html#L56'>ui</a>                 56 keygendialog.cpp     ui-&gt;plainTextEdit-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/31.html#L58'>ui</a>                 58 keygendialog.cpp     ui-&gt;plainTextEdit-&gt;setReadOnly(true);</span>
+<span class='curline'><a href='../S/31.html#L59'>ui</a>                 59 keygendialog.cpp     ui-&gt;plainTextEdit-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L89'>ui</a>                 89 keygendialog.cpp   QString expert = ui-&gt;plainTextEdit-&gt;toPlainText();</span>
+<span class='curline'><a href='../S/31.html#L97'>ui</a>                 97 keygendialog.cpp   ui-&gt;plainTextEdit-&gt;setPlainText(clear.join("\n"));</span>
+<span class='curline'><a href='../S/31.html#L107'>ui</a>                107 keygendialog.cpp   QString expert = ui-&gt;plainTextEdit-&gt;toPlainText();</span>
+<span class='curline'><a href='../S/31.html#L121'>ui</a>                121 keygendialog.cpp   ui-&gt;plainTextEdit-&gt;setPlainText(clear.join("\n"));</span>
+<span class='curline'><a href='../S/31.html#L132'>ui</a>                132 keygendialog.cpp     if (ui-&gt;name-&gt;text().length() &lt; 5) {</span>
+<span class='curline'><a href='../S/31.html#L142'>ui</a>                142 keygendialog.cpp     if (!mailre.exactMatch(ui-&gt;email-&gt;text())) {</span>
+<span class='curline'><a href='../S/31.html#L149'>ui</a>                149 keygendialog.cpp     ui-&gt;widget-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L150'>ui</a>                150 keygendialog.cpp     ui-&gt;buttonBox-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L151'>ui</a>                151 keygendialog.cpp     ui-&gt;checkBox-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L152'>ui</a>                152 keygendialog.cpp     ui-&gt;plainTextEdit-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/31.html#L158'>ui</a>                158 keygendialog.cpp     ui-&gt;frame-&gt;hide();</span>
+<span class='curline'><a href='../S/31.html#L159'>ui</a>                159 keygendialog.cpp     ui-&gt;label-&gt;setText(</span>
+<span class='curline'><a href='../S/31.html#L169'>ui</a>                169 keygendialog.cpp     dialog-&gt;genKey(ui-&gt;plainTextEdit-&gt;toPlainText(), this);</span>
+<span class='curline'><a href='../S/32.html#L34'>ui</a>                 34 keygendialog.h   Ui::KeygenDialog *ui;</span>
+<span class='curline'><a href='../S/59.html#L32'>ui</a>                 32 mainwindow.cpp     : QMainWindow(parent), ui(new Ui::MainWindow), process(new QProcess(this)),</span>
+<span class='curline'><a href='../S/59.html#L40'>ui</a>                 40 mainwindow.cpp   ui-&gt;setupUi(this);</span>
+<span class='curline'><a href='../S/59.html#L44'>ui</a>                 44 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);</span>
+<span class='curline'><a href='../S/59.html#L53'>ui</a>                 53 mainwindow.cpp   ui-&gt;copyPasswordButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L64'>ui</a>                 64 mainwindow.cpp   ui-&gt;addButton-&gt;addAction(actionAddPassword);</span>
+<span class='curline'><a href='../S/59.html#L65'>ui</a>                 65 mainwindow.cpp   ui-&gt;addButton-&gt;addAction(actionAddFolder);</span>
+<span class='curline'><a href='../S/59.html#L73'>ui</a>                 73 mainwindow.cpp   ui-&gt;lineEdit-&gt;setClearButtonEnabled(true);</span>
+<span class='curline'><a href='../S/59.html#L84'>ui</a>                 84 mainwindow.cpp   ui-&gt;lineEdit-&gt;selectAll();</span>
+<span class='curline'><a href='../S/59.html#L85'>ui</a>                 85 mainwindow.cpp   ui-&gt;lineEdit-&gt;setFocus();</span>
+<span class='curline'><a href='../S/59.html#L131'>ui</a>                131 mainwindow.cpp       ui-&gt;lineEdit-&gt;selectAll();</span>
+<span class='curline'><a href='../S/59.html#L132'>ui</a>                132 mainwindow.cpp       ui-&gt;lineEdit-&gt;setFocus();</span>
+<span class='curline'><a href='../S/59.html#L160'>ui</a>                160 mainwindow.cpp     ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span>
+<span class='curline'><a href='../S/59.html#L161'>ui</a>                161 mainwindow.cpp     ui-&gt;textBrowser-&gt;setText(tr("Failed to connect WebDAV:\n") + message +</span>
+<span class='curline'><a href='../S/59.html#L191'>ui</a>                191 mainwindow.cpp     ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span>
+<span class='curline'><a href='../S/59.html#L192'>ui</a>                192 mainwindow.cpp     ui-&gt;textBrowser-&gt;setText(</span>
+<span class='curline'><a href='../S/59.html#L213'>ui</a>                213 mainwindow.cpp     QList&lt;int&gt; splitter = ui-&gt;splitter-&gt;sizes();</span>
+<span class='curline'><a href='../S/59.html#L219'>ui</a>                219 mainwindow.cpp       ui-&gt;splitter-&gt;setSizes(splitter);</span>
+<span class='curline'><a href='../S/59.html#L368'>ui</a>                368 mainwindow.cpp   ui-&gt;treeView-&gt;setModel(&amp;proxyModel);</span>
+<span class='curline'><a href='../S/59.html#L369'>ui</a>                369 mainwindow.cpp   ui-&gt;treeView-&gt;setRootIndex(</span>
+<span class='curline'><a href='../S/59.html#L371'>ui</a>                371 mainwindow.cpp   ui-&gt;treeView-&gt;setColumnHidden(1, true);</span>
+<span class='curline'><a href='../S/59.html#L372'>ui</a>                372 mainwindow.cpp   ui-&gt;treeView-&gt;setColumnHidden(2, true);</span>
+<span class='curline'><a href='../S/59.html#L373'>ui</a>                373 mainwindow.cpp   ui-&gt;treeView-&gt;setColumnHidden(3, true);</span>
+<span class='curline'><a href='../S/59.html#L374'>ui</a>                374 mainwindow.cpp   ui-&gt;treeView-&gt;setHeaderHidden(true);</span>
+<span class='curline'><a href='../S/59.html#L375'>ui</a>                375 mainwindow.cpp   ui-&gt;treeView-&gt;setIndentation(15);</span>
+<span class='curline'><a href='../S/59.html#L376'>ui</a>                376 mainwindow.cpp   ui-&gt;treeView-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span>
+<span class='curline'><a href='../S/59.html#L377'>ui</a>                377 mainwindow.cpp   ui-&gt;treeView-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span>
+<span class='curline'><a href='../S/59.html#L378'>ui</a>                378 mainwindow.cpp   connect(ui-&gt;treeView, SIGNAL(customContextMenuRequested(const QPoint &amp;)),</span>
+<span class='curline'><a href='../S/59.html#L381'>ui</a>                381 mainwindow.cpp   ui-&gt;textBrowser-&gt;setOpenExternalLinks(true);</span>
+<span class='curline'><a href='../S/59.html#L382'>ui</a>                382 mainwindow.cpp   ui-&gt;textBrowser-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span>
+<span class='curline'><a href='../S/59.html#L383'>ui</a>                383 mainwindow.cpp   connect(ui-&gt;textBrowser, SIGNAL(customContextMenuRequested(const QPoint &amp;)),</span>
+<span class='curline'><a href='../S/59.html#L408'>ui</a>                408 mainwindow.cpp     ui-&gt;pushButton-&gt;hide();</span>
+<span class='curline'><a href='../S/59.html#L409'>ui</a>                409 mainwindow.cpp     ui-&gt;updateButton-&gt;hide();</span>
+<span class='curline'><a href='../S/59.html#L410'>ui</a>                410 mainwindow.cpp     ui-&gt;horizontalSpacer-&gt;changeSize(0, 20, QSizePolicy::Maximum,</span>
+<span class='curline'><a href='../S/59.html#L413'>ui</a>                413 mainwindow.cpp     ui-&gt;pushButton-&gt;show();</span>
+<span class='curline'><a href='../S/59.html#L414'>ui</a>                414 mainwindow.cpp     ui-&gt;updateButton-&gt;show();</span>
+<span class='curline'><a href='../S/59.html#L415'>ui</a>                415 mainwindow.cpp     ui-&gt;horizontalSpacer-&gt;changeSize(24, 24, QSizePolicy::Minimum,</span>
+<span class='curline'><a href='../S/59.html#L584'>ui</a>                584 mainwindow.cpp       ui-&gt;treeView-&gt;setRootIndex(</span>
+<span class='curline'><a href='../S/59.html#L592'>ui</a>                592 mainwindow.cpp         ui-&gt;pushButton-&gt;hide();</span>
+<span class='curline'><a href='../S/59.html#L593'>ui</a>                593 mainwindow.cpp         ui-&gt;updateButton-&gt;hide();</span>
+<span class='curline'><a href='../S/59.html#L594'>ui</a>                594 mainwindow.cpp         ui-&gt;horizontalSpacer-&gt;changeSize(0, 20, QSizePolicy::Maximum,</span>
+<span class='curline'><a href='../S/59.html#L597'>ui</a>                597 mainwindow.cpp         ui-&gt;pushButton-&gt;show();</span>
+<span class='curline'><a href='../S/59.html#L598'>ui</a>                598 mainwindow.cpp         ui-&gt;updateButton-&gt;show();</span>
+<span class='curline'><a href='../S/59.html#L599'>ui</a>                599 mainwindow.cpp         ui-&gt;horizontalSpacer-&gt;changeSize(24, 24, QSizePolicy::Minimum,</span>
+<span class='curline'><a href='../S/59.html#L615'>ui</a>                615 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Updating password-store"), 2000);</span>
+<span class='curline'><a href='../S/59.html#L627'>ui</a>                627 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Updating password-store"), 2000);</span>
+<span class='curline'><a href='../S/59.html#L679'>ui</a>                679 mainwindow.cpp   currentDir = getDir(ui-&gt;treeView-&gt;currentIndex(), false);</span>
+<span class='curline'><a href='../S/59.html#L692'>ui</a>                692 mainwindow.cpp     ui-&gt;editButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L693'>ui</a>                693 mainwindow.cpp     ui-&gt;deleteButton-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/59.html#L705'>ui</a>                705 mainwindow.cpp       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class='curline'><a href='../S/59.html#L770'>ui</a>                770 mainwindow.cpp   ui-&gt;textBrowser-&gt;clear();</span>
+<span class='curline'><a href='../S/59.html#L771'>ui</a>                771 mainwindow.cpp   ui-&gt;textBrowser-&gt;setTextColor(Qt::black);</span>
+<span class='curline'><a href='../S/59.html#L818'>ui</a>                818 mainwindow.cpp         while (ui-&gt;formLayout-&gt;count() &gt; 0) {</span>
+<span class='curline'><a href='../S/59.html#L819'>ui</a>                819 mainwindow.cpp           QLayoutItem *item = ui-&gt;formLayout-&gt;takeAt(0);</span>
+<span class='curline'><a href='../S/59.html#L829'>ui</a>                829 mainwindow.cpp         ui-&gt;formLayout-&gt;addRow(pass);</span>
+<span class='curline'><a href='../S/59.html#L844'>ui</a>                844 mainwindow.cpp               ui-&gt;formLayout-&gt;addRow(new QLabel(field), line);</span>
+<span class='curline'><a href='../S/59.html#L850'>ui</a>                850 mainwindow.cpp         if (ui-&gt;formLayout-&gt;count() == 0)</span>
+<span class='curline'><a href='../S/59.html#L851'>ui</a>                851 mainwindow.cpp           ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</span>
+<span class='curline'><a href='../S/59.html#L853'>ui</a>                853 mainwindow.cpp           ui-&gt;verticalLayoutPassword-&gt;setSpacing(6);</span>
+<span class='curline'><a href='../S/59.html#L893'>ui</a>                893 mainwindow.cpp   if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty())</span>
+<span class='curline'><a href='../S/59.html#L894'>ui</a>                894 mainwindow.cpp     output = ui-&gt;textBrowser-&gt;toHtml() + output;</span>
+<span class='curline'><a href='../S/59.html#L895'>ui</a>                895 mainwindow.cpp   ui-&gt;textBrowser-&gt;setHtml(output);</span>
+<span class='curline'><a href='../S/59.html#L905'>ui</a>                905 mainwindow.cpp     ui-&gt;statusBar-&gt;showMessage(tr("Clipboard cleared"), 3000);</span>
+<span class='curline'><a href='../S/59.html#L907'>ui</a>                907 mainwindow.cpp     ui-&gt;statusBar-&gt;showMessage(tr("Clipboard not cleared"), 3000);</span>
+<span class='curline'><a href='../S/59.html#L915'>ui</a>                915 mainwindow.cpp   while (ui-&gt;formLayout-&gt;count() &gt; 0) {</span>
+<span class='curline'><a href='../S/59.html#L916'>ui</a>                916 mainwindow.cpp     QLayoutItem *item = ui-&gt;formLayout-&gt;takeAt(0);</span>
+<span class='curline'><a href='../S/59.html#L921'>ui</a>                921 mainwindow.cpp   ui-&gt;textBrowser-&gt;setHtml(output);</span>
+<span class='curline'><a href='../S/59.html#L937'>ui</a>                937 mainwindow.cpp     on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<span class='curline'><a href='../S/59.html#L950'>ui</a>                950 mainwindow.cpp   ui-&gt;updateButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L951'>ui</a>                951 mainwindow.cpp   ui-&gt;treeView-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L952'>ui</a>                952 mainwindow.cpp   ui-&gt;lineEdit-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L953'>ui</a>                953 mainwindow.cpp   ui-&gt;lineEdit-&gt;installEventFilter(this);</span>
+<span class='curline'><a href='../S/59.html#L954'>ui</a>                954 mainwindow.cpp   ui-&gt;addButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L955'>ui</a>                955 mainwindow.cpp   ui-&gt;usersButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L956'>ui</a>                956 mainwindow.cpp   ui-&gt;configButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L958'>ui</a>                958 mainwindow.cpp   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid();</span>
+<span class='curline'><a href='../S/59.html#L959'>ui</a>                959 mainwindow.cpp   ui-&gt;deleteButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L960'>ui</a>                960 mainwindow.cpp   ui-&gt;editButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L961'>ui</a>                961 mainwindow.cpp   ui-&gt;pushButton-&gt;setEnabled(state);</span>
+<span class='curline'><a href='../S/59.html#L990'>ui</a>                990 mainwindow.cpp   ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span>
+<span class='curline'><a href='../S/59.html#L991'>ui</a>                991 mainwindow.cpp   ui-&gt;textBrowser-&gt;setText(errorString);</span>
+<span class='curline'><a href='../S/59.html#L1034'>ui</a>               1034 mainwindow.cpp   ui-&gt;treeView-&gt;expandAll();</span>
+<span class='curline'><a href='../S/59.html#L1035'>ui</a>               1035 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Looking for: %1").arg(arg1), 1000);</span>
+<span class='curline'><a href='../S/59.html#L1040'>ui</a>               1040 mainwindow.cpp   ui-&gt;treeView-&gt;setRootIndex(</span>
+<span class='curline'><a href='../S/59.html#L1053'>ui</a>               1053 mainwindow.cpp   on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<span class='curline'><a href='../S/59.html#L1062'>ui</a>               1062 mainwindow.cpp   ui-&gt;treeView-&gt;setCurrentIndex(index);</span>
+<span class='curline'><a href='../S/59.html#L1218'>ui</a>               1218 mainwindow.cpp   QString dir = getDir(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1222'>ui</a>               1222 mainwindow.cpp           .arg(passStore + getDir(ui-&gt;treeView-&gt;currentIndex(), true)),</span>
+<span class='curline'><a href='../S/59.html#L1238'>ui</a>               1238 mainwindow.cpp       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class='curline'><a href='../S/59.html#L1242'>ui</a>               1242 mainwindow.cpp     file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1247'>ui</a>               1247 mainwindow.cpp                      getFile(ui-&gt;treeView-&gt;currentIndex(), true)),</span>
+<span class='curline'><a href='../S/59.html#L1260'>ui</a>               1260 mainwindow.cpp                            getFile(ui-&gt;treeView-&gt;currentIndex(), true) +</span>
+<span class='curline'><a href='../S/59.html#L1269'>ui</a>               1269 mainwindow.cpp     file = getDir(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1275'>ui</a>               1275 mainwindow.cpp                      getDir(ui-&gt;treeView-&gt;currentIndex(), true)),</span>
+<span class='curline'><a href='../S/59.html#L1296'>ui</a>               1296 mainwindow.cpp                              getFile(ui-&gt;treeView-&gt;currentIndex(), true) +</span>
+<span class='curline'><a href='../S/59.html#L1346'>ui</a>               1346 mainwindow.cpp   QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1429'>ui</a>               1429 mainwindow.cpp                     ? getDir(ui-&gt;treeView-&gt;currentIndex(), false)</span>
+<span class='curline'><a href='../S/59.html#L1533'>ui</a>               1533 mainwindow.cpp     ui-&gt;treeView-&gt;expandAll();</span>
+<span class='curline'><a href='../S/59.html#L1534'>ui</a>               1534 mainwindow.cpp     ui-&gt;lineEdit-&gt;setText(message);</span>
+<span class='curline'><a href='../S/59.html#L1546'>ui</a>               1546 mainwindow.cpp void MainWindow::setText(QString text) { ui-&gt;lineEdit-&gt;setText(text); }</span>
+<span class='curline'><a href='../S/59.html#L1588'>ui</a>               1588 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Generating GPG key pair"), 60000);</span>
+<span class='curline'><a href='../S/59.html#L1602'>ui</a>               1602 mainwindow.cpp     ui-&gt;profileBox-&gt;hide();</span>
+<span class='curline'><a href='../S/59.html#L1604'>ui</a>               1604 mainwindow.cpp     ui-&gt;profileBox-&gt;show();</span>
+<span class='curline'><a href='../S/59.html#L1606'>ui</a>               1606 mainwindow.cpp       ui-&gt;profileBox-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L1608'>ui</a>               1608 mainwindow.cpp       ui-&gt;profileBox-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/59.html#L1609'>ui</a>               1609 mainwindow.cpp     ui-&gt;profileBox-&gt;clear();</span>
+<span class='curline'><a href='../S/59.html#L1614'>ui</a>               1614 mainwindow.cpp         ui-&gt;profileBox-&gt;addItem(i.key());</span>
+<span class='curline'><a href='../S/59.html#L1617'>ui</a>               1617 mainwindow.cpp   int index = ui-&gt;profileBox-&gt;findText(profile);</span>
+<span class='curline'><a href='../S/59.html#L1619'>ui</a>               1619 mainwindow.cpp     ui-&gt;profileBox-&gt;setCurrentIndex(index);</span>
+<span class='curline'><a href='../S/59.html#L1633'>ui</a>               1633 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Profile changed to %1").arg(name), 2000);</span>
+<span class='curline'><a href='../S/59.html#L1651'>ui</a>               1651 mainwindow.cpp   ui-&gt;treeView-&gt;setRootIndex(</span>
+<span class='curline'><a href='../S/59.html#L1704'>ui</a>               1704 mainwindow.cpp     settings-&gt;setValue("splitterLeft", ui-&gt;splitter-&gt;sizes()[0]);</span>
+<span class='curline'><a href='../S/59.html#L1705'>ui</a>               1705 mainwindow.cpp     settings-&gt;setValue("splitterRight", ui-&gt;splitter-&gt;sizes()[1]);</span>
+<span class='curline'><a href='../S/59.html#L1718'>ui</a>               1718 mainwindow.cpp   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span>
+<span class='curline'><a href='../S/59.html#L1721'>ui</a>               1721 mainwindow.cpp       ui-&gt;treeView-&gt;setFocus();</span>
+<span class='curline'><a href='../S/59.html#L1738'>ui</a>               1738 mainwindow.cpp     on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<span class='curline'><a href='../S/59.html#L1741'>ui</a>               1741 mainwindow.cpp     ui-&gt;lineEdit-&gt;clear();</span>
+<span class='curline'><a href='../S/59.html#L1759'>ui</a>               1759 mainwindow.cpp   QModelIndex index = ui-&gt;treeView-&gt;indexAt(pos);</span>
+<span class='curline'><a href='../S/59.html#L1762'>ui</a>               1762 mainwindow.cpp     ui-&gt;treeView-&gt;clearSelection();</span>
+<span class='curline'><a href='../S/59.html#L1763'>ui</a>               1763 mainwindow.cpp     ui-&gt;deleteButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L1764'>ui</a>               1764 mainwindow.cpp     ui-&gt;editButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L1769'>ui</a>               1769 mainwindow.cpp   ui-&gt;treeView-&gt;setCurrentIndex(index);</span>
+<span class='curline'><a href='../S/59.html#L1771'>ui</a>               1771 mainwindow.cpp   QPoint globalPos = ui-&gt;treeView-&gt;viewport()-&gt;mapToGlobal(pos);</span>
+<span class='curline'><a href='../S/59.html#L1774'>ui</a>               1774 mainwindow.cpp       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class='curline'><a href='../S/59.html#L1812'>ui</a>               1812 mainwindow.cpp   QMenu *contextMenu = ui-&gt;textBrowser-&gt;createStandardContextMenu(pos);</span>
+<span class='curline'><a href='../S/59.html#L1822'>ui</a>               1822 mainwindow.cpp   QPoint globalPos = ui-&gt;textBrowser-&gt;viewport()-&gt;mapToGlobal(pos);</span>
+<span class='curline'><a href='../S/59.html#L1832'>ui</a>               1832 mainwindow.cpp   QString dir = getDir(ui-&gt;treeView-&gt;currentIndex(), false);</span>
+<span class='curline'><a href='../S/59.html#L1836'>ui</a>               1836 mainwindow.cpp           .arg(passStore + getDir(ui-&gt;treeView-&gt;currentIndex(), true)),</span>
+<span class='curline'><a href='../S/59.html#L1856'>ui</a>               1856 mainwindow.cpp   currentDir = getDir(ui-&gt;treeView-&gt;currentIndex(), false);</span>
+<span class='curline'><a href='../S/59.html#L1858'>ui</a>               1858 mainwindow.cpp   QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1939'>ui</a>               1939 mainwindow.cpp   while (ui-&gt;formLayout-&gt;count() &gt; 0) {</span>
+<span class='curline'><a href='../S/59.html#L1940'>ui</a>               1940 mainwindow.cpp     QLayoutItem *item = ui-&gt;formLayout-&gt;takeAt(0);</span>
+<span class='curline'><a href='../S/59.html#L1944'>ui</a>               1944 mainwindow.cpp   ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</span>
+<span class='curline'><a href='../S/59.html#L1955'>ui</a>               1955 mainwindow.cpp     ui-&gt;statusBar-&gt;showMessage(tr("Password copied to clipboard"), 3000);</span>
+<span class='curline'><a href='../S/59.html#L1968'>ui</a>               1968 mainwindow.cpp     ui-&gt;copyPasswordButton-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/59.html#L1970'>ui</a>               1970 mainwindow.cpp     ui-&gt;copyPasswordButton-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/59.html#L1983'>ui</a>               1983 mainwindow.cpp   ui-&gt;statusBar-&gt;showMessage(tr("Re-encrypting from folder %1").arg(dir), 3000);</span>
+<span class='curline'><a href='../S/59.html#L1985'>ui</a>               1985 mainwindow.cpp   ui-&gt;treeView-&gt;setDisabled(true);</span>
+<span class='curline'><a href='../S/60.html#L163'>ui</a>                163 mainwindow.h     QScopedPointer&lt;Ui::MainWindow&gt; ui;</span>
+<span class='curline'><a href='../S/63.html#L16'>ui</a>                 16 passworddialog.cpp   ui-&gt;setupUi(this);</span>
+<span class='curline'><a href='../S/63.html#L22'>ui</a>                 22 passworddialog.cpp PasswordDialog::~PasswordDialog() { delete ui; }</span>
+<span class='curline'><a href='../S/63.html#L30'>ui</a>                 30 passworddialog.cpp     ui-&gt;lineEditPassword-&gt;setEchoMode(QLineEdit::Normal);</span>
+<span class='curline'><a href='../S/63.html#L32'>ui</a>                 32 passworddialog.cpp     ui-&gt;lineEditPassword-&gt;setEchoMode(QLineEdit::Password);</span>
+<span class='curline'><a href='../S/63.html#L41'>ui</a>                 41 passworddialog.cpp   ui-&gt;widget-&gt;setEnabled(false);</span>
+<span class='curline'><a href='../S/63.html#L42'>ui</a>                 42 passworddialog.cpp   ui-&gt;lineEditPassword-&gt;setText(mainWindow-&gt;generatePassword(</span>
+<span class='curline'><a href='../S/63.html#L43'>ui</a>                 43 passworddialog.cpp       ui-&gt;spinBox_pwdLength-&gt;value(),</span>
+<span class='curline'><a href='../S/63.html#L44'>ui</a>                 44 passworddialog.cpp       (MainWindow::clipBoardType)ui-&gt;passwordTemplateSwitch-&gt;currentIndex()));</span>
+<span class='curline'><a href='../S/63.html#L45'>ui</a>                 45 passworddialog.cpp   ui-&gt;widget-&gt;setEnabled(true);</span>
+<span class='curline'><a href='../S/63.html#L54'>ui</a>                 54 passworddialog.cpp   ui-&gt;lineEditPassword-&gt;setText(tokens[0]);</span>
+<span class='curline'><a href='../S/63.html#L57'>ui</a>                 57 passworddialog.cpp     QWidget *previous = ui-&gt;checkBoxShow;</span>
+<span class='curline'><a href='../S/63.html#L58'>ui</a>                 58 passworddialog.cpp     for (int i = 0; i &lt; ui-&gt;formLayout-&gt;rowCount(); ++i) {</span>
+<span class='curline'><a href='../S/63.html#L59'>ui</a>                 59 passworddialog.cpp       QLayoutItem *item = ui-&gt;formLayout-&gt;itemAt(i, QFormLayout::FieldRole);</span>
+<span class='curline'><a href='../S/63.html#L85'>ui</a>                 85 passworddialog.cpp           ui-&gt;formLayout-&gt;addRow(new QLabel(field), line);</span>
+<span class='curline'><a href='../S/63.html#L94'>ui</a>                 94 passworddialog.cpp   ui-&gt;plainTextEdit-&gt;insertPlainText(tokens.join("\n"));</span>
+<span class='curline'><a href='../S/63.html#L103'>ui</a>                103 passworddialog.cpp   QString passFile = ui-&gt;lineEditPassword-&gt;text() + "\n";</span>
+<span class='curline'><a href='../S/63.html#L104'>ui</a>                104 passworddialog.cpp   for (int i = 0; i &lt; ui-&gt;formLayout-&gt;rowCount(); ++i) {</span>
+<span class='curline'><a href='../S/63.html#L105'>ui</a>                105 passworddialog.cpp     QLayoutItem *item = ui-&gt;formLayout-&gt;itemAt(i, QFormLayout::FieldRole);</span>
+<span class='curline'><a href='../S/63.html#L114'>ui</a>                114 passworddialog.cpp   passFile += ui-&gt;plainTextEdit-&gt;toPlainText();</span>
+<span class='curline'><a href='../S/63.html#L124'>ui</a>                124 passworddialog.cpp   QWidget *previous = ui-&gt;checkBoxShow;</span>
+<span class='curline'><a href='../S/63.html#L130'>ui</a>                130 passworddialog.cpp     ui-&gt;formLayout-&gt;addRow(new QLabel(field), line);</span>
+<span class='curline'><a href='../S/63.html#L163'>ui</a>                163 passworddialog.cpp void PasswordDialog::setLength(int l) { ui-&gt;spinBox_pwdLength-&gt;setValue(l); }</span>
+<span class='curline'><a href='../S/63.html#L171'>ui</a>                171 passworddialog.cpp   ui-&gt;passwordTemplateSwitch-&gt;setCurrentIndex(t);</span>
+<span class='curline'><a href='../S/63.html#L180'>ui</a>                180 passworddialog.cpp   ui-&gt;passwordTemplateSwitch-&gt;setDisabled(usePwgen);</span>
+<span class='curline'><a href='../S/63.html#L181'>ui</a>                181 passworddialog.cpp   ui-&gt;label_characterset-&gt;setDisabled(usePwgen);</span>
+<span class='curline'><a href='../S/64.html#L57'>ui</a>                 57 passworddialog.h   Ui::PasswordDialog *ui;</span>
+<span class='curline'><a href='../S/88.html#L12'>ui</a>                 12 usersdialog.cpp   ui-&gt;setupUi(this);</span>
+<span class='curline'><a href='../S/88.html#L13'>ui</a>                 13 usersdialog.cpp   connect(ui-&gt;buttonBox, SIGNAL(accepted()), this, SLOT(accept()));</span>
+<span class='curline'><a href='../S/88.html#L14'>ui</a>                 14 usersdialog.cpp   connect(ui-&gt;buttonBox, SIGNAL(rejected()), this, SLOT(reject()));</span>
+<span class='curline'><a href='../S/88.html#L15'>ui</a>                 15 usersdialog.cpp   connect(ui-&gt;listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this,</span>
+<span class='curline'><a href='../S/88.html#L20'>ui</a>                 20 usersdialog.cpp   ui-&gt;lineEdit-&gt;setClearButtonEnabled(true);</span>
+<span class='curline'><a href='../S/88.html#L27'>ui</a>                 27 usersdialog.cpp UsersDialog::~UsersDialog() { delete ui; }</span>
+<span class='curline'><a href='../S/88.html#L62'>ui</a>                 62 usersdialog.cpp   ui-&gt;listWidget-&gt;clear();</span>
+<span class='curline'><a href='../S/88.html#L68'>ui</a>                 68 usersdialog.cpp         if (!user.isValid() &amp;&amp; !ui-&gt;checkBox-&gt;isChecked())</span>
+<span class='curline'><a href='../S/88.html#L72'>ui</a>                 72 usersdialog.cpp             !ui-&gt;checkBox-&gt;isChecked())</span>
+<span class='curline'><a href='../S/88.html#L82'>ui</a>                 82 usersdialog.cpp         QListWidgetItem *item = new QListWidgetItem(userText, ui-&gt;listWidget);</span>
+<span class='curline'><a href='../S/88.html#L103'>ui</a>                103 usersdialog.cpp         ui-&gt;listWidget-&gt;addItem(item);</span>
+<span class='curline'><a href='../S/88.html#L130'>ui</a>                130 usersdialog.cpp void UsersDialog::on_checkBox_clicked() { populateList(ui-&gt;lineEdit-&gt;text()); }</span>
+<span class='curline'><a href='../S/88.html#L140'>ui</a>                140 usersdialog.cpp     ui-&gt;lineEdit-&gt;clear();</span>
+<span class='curline'><a href='../S/89.html#L94'>ui</a>                 94 usersdialog.h    Ui::UsersDialog *ui;</span>
+</pre>
+</body>
+</html>

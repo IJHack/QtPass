@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>MainWindow</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L16'>MainWindow</a>         16 configdialog.cpp ConfigDialog::ConfigDialog(MainWindow *parent)</span>
+<span class='curline'><a href='../S/5.html#L260'>MainWindow</a>        260 configdialog.cpp void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard) {</span>
+<span class='curline'><a href='../S/5.html#L307'>MainWindow</a>        307 configdialog.cpp MainWindow::clipBoardType ConfigDialog::useClipboard() {</span>
+<span class='curline'><a href='../S/5.html#L308'>MainWindow</a>        308 configdialog.cpp   return static_cast&lt;MainWindow::clipBoardType&gt;(</span>
+<span class='curline'><a href='../S/6.html#L26'>MainWindow</a>         26 configdialog.h   explicit ConfigDialog(MainWindow *parent);</span>
+<span class='curline'><a href='../S/6.html#L34'>MainWindow</a>         34 configdialog.h   void useClipboard(MainWindow::clipBoardType);</span>
+<span class='curline'><a href='../S/6.html#L48'>MainWindow</a>         48 configdialog.h   MainWindow::clipBoardType useClipboard();</span>
+<span class='curline'><a href='../S/6.html#L128'>MainWindow</a>        128 configdialog.h   MainWindow *mainWindow;</span>
+<span class='curline'><a href='../S/58.html#L75'>MainWindow</a>         75 main.cpp         MainWindow w;</span>
+<span class='curline'><a href='../S/59.html#L31'>MainWindow</a>         31 mainwindow.cpp MainWindow::MainWindow(QWidget *parent)</span>
+<span class='curline'><a href='../S/59.html#L32'>MainWindow</a>         32 mainwindow.cpp     : QMainWindow(parent), ui(new Ui::MainWindow), process(new QProcess(this)),</span>
+<span class='curline'><a href='../S/59.html#L83'>MainWindow</a>         83 mainwindow.cpp void MainWindow::focusInput() {</span>
+<span class='curline'><a href='../S/59.html#L91'>MainWindow</a>         91 mainwindow.cpp MainWindow::~MainWindow() {</span>
+<span class='curline'><a href='../S/59.html#L107'>MainWindow</a>        107 mainwindow.cpp QSettings &amp;MainWindow::getSettings() {</span>
+<span class='curline'><a href='../S/59.html#L127'>MainWindow</a>        127 mainwindow.cpp void MainWindow::changeEvent(QEvent *event) {</span>
+<span class='curline'><a href='../S/59.html#L140'>MainWindow</a>        140 mainwindow.cpp void MainWindow::mountWebDav() {</span>
+<span class='curline'><a href='../S/59.html#L202'>MainWindow</a>        202 mainwindow.cpp bool MainWindow::checkConfig() {</span>
+<span class='curline'><a href='../S/59.html#L427'>MainWindow</a>        427 mainwindow.cpp void MainWindow::config() {</span>
+<span class='curline'><a href='../S/59.html#L614'>MainWindow</a>        614 mainwindow.cpp void MainWindow::on_updateButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L626'>MainWindow</a>        626 mainwindow.cpp void MainWindow::on_pushButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L641'>MainWindow</a>        641 mainwindow.cpp QString MainWindow::getDir(const QModelIndex &amp;index, bool forPass) {</span>
+<span class='curline'><a href='../S/59.html#L662'>MainWindow</a>        662 mainwindow.cpp QString MainWindow::getFile(const QModelIndex &amp;index, bool forPass) {</span>
+<span class='curline'><a href='../S/59.html#L678'>MainWindow</a>        678 mainwindow.cpp void MainWindow::on_treeView_clicked(const QModelIndex &amp;index) {</span>
+<span class='curline'><a href='../S/59.html#L702'>MainWindow</a>        702 mainwindow.cpp void MainWindow::on_treeView_doubleClicked(const QModelIndex &amp;index) {</span>
+<span class='curline'><a href='../S/59.html#L724'>MainWindow</a>        724 mainwindow.cpp void MainWindow::executePass(QString args, QString input) {</span>
+<span class='curline'><a href='../S/59.html#L731'>MainWindow</a>        731 mainwindow.cpp void MainWindow::executePassGitInit() {</span>
+<span class='curline'><a href='../S/59.html#L745'>MainWindow</a>        745 mainwindow.cpp void MainWindow::executeWrapper(QString app, QString args, QString input) {</span>
+<span class='curline'><a href='../S/59.html#L787'>MainWindow</a>        787 mainwindow.cpp void MainWindow::readyRead(bool finished = false) {</span>
+<span class='curline'><a href='../S/59.html#L901'>MainWindow</a>        901 mainwindow.cpp void MainWindow::clearClipboard() {</span>
+<span class='curline'><a href='../S/59.html#L914'>MainWindow</a>        914 mainwindow.cpp void MainWindow::clearPanel() {</span>
+<span class='curline'><a href='../S/59.html#L930'>MainWindow</a>        930 mainwindow.cpp void MainWindow::processFinished(int exitCode,</span>
+<span class='curline'><a href='../S/59.html#L949'>MainWindow</a>        949 mainwindow.cpp void MainWindow::enableUiElements(bool state) {</span>
+<span class='curline'><a href='../S/59.html#L968'>MainWindow</a>        968 mainwindow.cpp void MainWindow::processError(QProcess::ProcessError error) {</span>
+<span class='curline'><a href='../S/59.html#L1001'>MainWindow</a>       1001 mainwindow.cpp void MainWindow::setPassExecutable(QString path) { passExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1008'>MainWindow</a>       1008 mainwindow.cpp void MainWindow::setGitExecutable(QString path) { gitExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1015'>MainWindow</a>       1015 mainwindow.cpp void MainWindow::setGpgExecutable(QString path) { gpgExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1021'>MainWindow</a>       1021 mainwindow.cpp QString MainWindow::getGpgExecutable() { return gpgExecutable; }</span>
+<span class='curline'><a href='../S/59.html#L1026'>MainWindow</a>       1026 mainwindow.cpp void MainWindow::on_configButton_clicked() { config(); }</span>
+<span class='curline'><a href='../S/59.html#L1033'>MainWindow</a>       1033 mainwindow.cpp void MainWindow::on_lineEdit_textChanged(const QString &amp;arg1) {</span>
+<span class='curline'><a href='../S/59.html#L1050'>MainWindow</a>       1050 mainwindow.cpp void MainWindow::on_lineEdit_returnPressed() {</span>
+<span class='curline'><a href='../S/59.html#L1059'>MainWindow</a>       1059 mainwindow.cpp void MainWindow::selectFirstFile() {</span>
+<span class='curline'><a href='../S/59.html#L1070'>MainWindow</a>       1070 mainwindow.cpp QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {</span>
+<span class='curline'><a href='../S/59.html#L1088'>MainWindow</a>       1088 mainwindow.cpp QStringList MainWindow::getRecipientList(QString for_file) {</span>
+<span class='curline'><a href='../S/59.html#L1123'>MainWindow</a>       1123 mainwindow.cpp QString MainWindow::getRecipientString(QString for_file, QString separator,</span>
+<span class='curline'><a href='../S/59.html#L1141'>MainWindow</a>       1141 mainwindow.cpp void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {</span>
+<span class='curline'><a href='../S/59.html#L1200'>MainWindow</a>       1200 mainwindow.cpp void MainWindow::on_addButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L1236'>MainWindow</a>       1236 mainwindow.cpp void MainWindow::on_deleteButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L1320'>MainWindow</a>       1320 mainwindow.cpp bool MainWindow::removeDir(const QString &amp;dirName) {</span>
+<span class='curline'><a href='../S/59.html#L1345'>MainWindow</a>       1345 mainwindow.cpp void MainWindow::on_editButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L1362'>MainWindow</a>       1362 mainwindow.cpp QList&lt;UserInfo&gt; MainWindow::listKeys(QString keystring, bool secret) {</span>
+<span class='curline'><a href='../S/59.html#L1404'>MainWindow</a>       1404 mainwindow.cpp void MainWindow::userDialog(QString dir) {</span>
+<span class='curline'><a href='../S/59.html#L1414'>MainWindow</a>       1414 mainwindow.cpp void MainWindow::on_usersButton_clicked() {</span>
+<span class='curline'><a href='../S/59.html#L1518'>MainWindow</a>       1518 mainwindow.cpp void MainWindow::setApp(SingleApplication *app) {</span>
+<span class='curline'><a href='../S/59.html#L1529'>MainWindow</a>       1529 mainwindow.cpp void MainWindow::messageAvailable(QString message) {</span>
+<span class='curline'><a href='../S/59.html#L1546'>MainWindow</a>       1546 mainwindow.cpp void MainWindow::setText(QString text) { ui-&gt;lineEdit-&gt;setText(text); }</span>
+<span class='curline'><a href='../S/59.html#L1552'>MainWindow</a>       1552 mainwindow.cpp void MainWindow::updateEnv() {</span>
+<span class='curline'><a href='../S/59.html#L1568'>MainWindow</a>       1568 mainwindow.cpp QStringList MainWindow::getSecretKeys() {</span>
+<span class='curline'><a href='../S/59.html#L1586'>MainWindow</a>       1586 mainwindow.cpp void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {</span>
+<span class='curline'><a href='../S/59.html#L1599'>MainWindow</a>       1599 mainwindow.cpp void MainWindow::updateProfileBox() {</span>
+<span class='curline'><a href='../S/59.html#L1627'>MainWindow</a>       1627 mainwindow.cpp void MainWindow::on_profileBox_currentIndexChanged(QString name) {</span>
+<span class='curline'><a href='../S/59.html#L1659'>MainWindow</a>       1659 mainwindow.cpp void MainWindow::initTrayIcon() {</span>
+<span class='curline'><a href='../S/59.html#L1677'>MainWindow</a>       1677 mainwindow.cpp void MainWindow::destroyTrayIcon() {</span>
+<span class='curline'><a href='../S/59.html#L1690'>MainWindow</a>       1690 mainwindow.cpp void MainWindow::closeEvent(QCloseEvent *event) {</span>
+<span class='curline'><a href='../S/59.html#L1717'>MainWindow</a>       1717 mainwindow.cpp bool MainWindow::eventFilter(QObject *obj, QEvent *event) {</span>
+<span class='curline'><a href='../S/59.html#L1731'>MainWindow</a>       1731 mainwindow.cpp void MainWindow::keyPressEvent(QKeyEvent *event) {</span>
+<span class='curline'><a href='../S/59.html#L1752'>MainWindow</a>       1752 mainwindow.cpp void MainWindow::on_copyPasswordButton_clicked() { copyPasswordToClipboard(); }</span>
+<span class='curline'><a href='../S/59.html#L1758'>MainWindow</a>       1758 mainwindow.cpp void MainWindow::showContextMenu(const QPoint &amp;pos) {</span>
+<span class='curline'><a href='../S/59.html#L1811'>MainWindow</a>       1811 mainwindow.cpp void MainWindow::showBrowserContextMenu(const QPoint &amp;pos) {</span>
+<span class='curline'><a href='../S/59.html#L1830'>MainWindow</a>       1830 mainwindow.cpp void MainWindow::addFolder() {</span>
+<span class='curline'><a href='../S/59.html#L1850'>MainWindow</a>       1850 mainwindow.cpp void MainWindow::editPassword() {</span>
+<span class='curline'><a href='../S/59.html#L1879'>MainWindow</a>       1879 mainwindow.cpp QString MainWindow::generatePassword(int length, clipBoardType selection) {</span>
+<span class='curline'><a href='../S/59.html#L1919'>MainWindow</a>       1919 mainwindow.cpp void MainWindow::waitFor(int seconds) {</span>
+<span class='curline'><a href='../S/59.html#L1938'>MainWindow</a>       1938 mainwindow.cpp void MainWindow::clearTemplateWidgets() {</span>
+<span class='curline'><a href='../S/59.html#L1951'>MainWindow</a>       1951 mainwindow.cpp void MainWindow::copyPasswordToClipboard() {</span>
+<span class='curline'><a href='../S/59.html#L1965'>MainWindow</a>       1965 mainwindow.cpp void MainWindow::setClippedPassword(const QString &amp;pass) {</span>
+<span class='curline'><a href='../S/59.html#L1973'>MainWindow</a>       1973 mainwindow.cpp const QString &amp;MainWindow::getClippedPassword() { return clippedPass; }</span>
+<span class='curline'><a href='../S/59.html#L1982'>MainWindow</a>       1982 mainwindow.cpp void MainWindow::reencryptPath(QString dir) {</span>
+<span class='curline'><a href='../S/60.html#L20'>MainWindow</a>         20 mainwindow.h   class MainWindow;</span>
+<span class='curline'><a href='../S/60.html#L84'>MainWindow</a>         84 mainwindow.h   class MainWindow : public QMainWindow {</span>
+<span class='curline'><a href='../S/60.html#L102'>MainWindow</a>        102 mainwindow.h     explicit MainWindow(QWidget *parent = 0);</span>
+<span class='curline'><a href='../S/60.html#L103'>MainWindow</a>        103 mainwindow.h     ~MainWindow();</span>
+<span class='curline'><a href='../S/60.html#L163'>MainWindow</a>        163 mainwindow.h     QScopedPointer&lt;Ui::MainWindow&gt; ui;</span>
+<span class='curline'><a href='../S/63.html#L11'>MainWindow</a>         11 passworddialog.cpp PasswordDialog::PasswordDialog(MainWindow *parent)</span>
+<span class='curline'><a href='../S/63.html#L44'>MainWindow</a>         44 passworddialog.cpp       (MainWindow::clipBoardType)ui-&gt;passwordTemplateSwitch-&gt;currentIndex()));</span>
+<span class='curline'><a href='../S/64.html#L21'>MainWindow</a>         21 passworddialog.h   explicit PasswordDialog(MainWindow *parent = 0);</span>
+<span class='curline'><a href='../S/64.html#L58'>MainWindow</a>         58 passworddialog.h   MainWindow *mainWindow;</span>
+</pre>
+</body>
+</html>

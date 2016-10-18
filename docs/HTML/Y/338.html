@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>file</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L682'>file</a>              682 mainwindow.cpp   QString file = getFile(index, usePass);</span>
+<span class='curline'><a href='../S/59.html#L683'>file</a>              683 mainwindow.cpp   if (!file.isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L686'>file</a>              686 mainwindow.cpp       executePass("show \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L690'>file</a>              690 mainwindow.cpp                          file + '"');</span>
+<span class='curline'><a href='../S/59.html#L706'>file</a>              706 mainwindow.cpp   QString file = "";</span>
+<span class='curline'><a href='../S/59.html#L709'>file</a>              709 mainwindow.cpp     QString file = getFile(index, usePass);</span>
+<span class='curline'><a href='../S/59.html#L710'>file</a>              710 mainwindow.cpp     if (file.isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L716'>file</a>              716 mainwindow.cpp     setPassword(file, true, false);</span>
+<span class='curline'><a href='../S/59.html#L1141'>file</a>             1141 mainwindow.cpp void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {</span>
+<span class='curline'><a href='../S/59.html#L1147'>file</a>             1147 mainwindow.cpp   d.setFile(file);</span>
+<span class='curline'><a href='../S/59.html#L1169'>file</a>             1169 mainwindow.cpp     executePass("insert" + force + "-m \"" + file + '"', newValue);</span>
+<span class='curline'><a href='../S/59.html#L1171'>file</a>             1171 mainwindow.cpp     QString recipients = getRecipientString(file, " -r ");</span>
+<span class='curline'><a href='../S/59.html#L1179'>file</a>             1179 mainwindow.cpp     executeWrapper(gpgExecutable, force + "--batch -eq --output \"" + file +</span>
+<span class='curline'><a href='../S/59.html#L1184'>file</a>             1184 mainwindow.cpp         executeWrapper(gitExecutable, "add \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1185'>file</a>             1185 mainwindow.cpp       QString path = QDir(passStore).relativeFilePath(file);</span>
+<span class='curline'><a href='../S/59.html#L1187'>file</a>             1187 mainwindow.cpp       executeWrapper(gitExecutable, "commit \"" + file + "\" -m \"" +</span>
+<span class='curline'><a href='../S/59.html#L1219'>file</a>             1219 mainwindow.cpp   QString file = QInputDialog::getText(</span>
+<span class='curline'><a href='../S/59.html#L1224'>file</a>             1224 mainwindow.cpp   if (!ok || file.isEmpty())</span>
+<span class='curline'><a href='../S/59.html#L1226'>file</a>             1226 mainwindow.cpp   file = dir + file;</span>
+<span class='curline'><a href='../S/59.html#L1228'>file</a>             1228 mainwindow.cpp     file += ".gpg";</span>
+<span class='curline'><a href='../S/59.html#L1230'>file</a>             1230 mainwindow.cpp   setPassword(file, false, true);</span>
+<span class='curline'><a href='../S/59.html#L1239'>file</a>             1239 mainwindow.cpp   QString file = "";</span>
+<span class='curline'><a href='../S/59.html#L1242'>file</a>             1242 mainwindow.cpp     file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1252'>file</a>             1252 mainwindow.cpp       executePass("rm -f \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1257'>file</a>             1257 mainwindow.cpp         executeWrapper(gitExecutable, "rm -f \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1259'>file</a>             1259 mainwindow.cpp                        "commit \"" + file + "\" -m \"Remove for " +</span>
+<span class='curline'><a href='../S/59.html#L1265'>file</a>             1265 mainwindow.cpp         QFile(file).remove();</span>
+<span class='curline'><a href='../S/59.html#L1269'>file</a>             1269 mainwindow.cpp     file = getDir(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1281'>file</a>             1281 mainwindow.cpp         executePass("rm -rf \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1287'>file</a>             1287 mainwindow.cpp           executeWrapper(gitExecutable, "rm -rf \"" + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1289'>file</a>             1289 mainwindow.cpp           QDir dir(file);</span>
+<span class='curline'><a href='../S/59.html#L1292'>file</a>             1292 mainwindow.cpp           removeDir(passStore + file);</span>
+<span class='curline'><a href='../S/59.html#L1295'>file</a>             1295 mainwindow.cpp                          "commit \"" + file + "\" -m \"Remove for " +</span>
+<span class='curline'><a href='../S/59.html#L1303'>file</a>             1303 mainwindow.cpp           QDir dir(file);</span>
+<span class='curline'><a href='../S/59.html#L1306'>file</a>             1306 mainwindow.cpp           removeDir(passStore + file);</span>
+<span class='curline'><a href='../S/59.html#L1346'>file</a>             1346 mainwindow.cpp   QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1347'>file</a>             1347 mainwindow.cpp   if (file.isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L1353'>file</a>             1353 mainwindow.cpp   setPassword(file, true);</span>
+<span class='curline'><a href='../S/59.html#L1858'>file</a>             1858 mainwindow.cpp   QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), usePass);</span>
+<span class='curline'><a href='../S/59.html#L1859'>file</a>             1859 mainwindow.cpp   if (!file.isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L1862'>file</a>             1862 mainwindow.cpp       executePass('"' + file + '"');</span>
+<span class='curline'><a href='../S/59.html#L1866'>file</a>             1866 mainwindow.cpp                          file + '"');</span>
+<span class='curline'><a href='../S/63.html#L140'>file</a>              140 passworddialog.cpp void PasswordDialog::setFile(QString file) {</span>
+<span class='curline'><a href='../S/63.html#L141'>file</a>              141 passworddialog.cpp   this-&gt;setWindowTitle(this-&gt;windowTitle() + " " + file);</span>
+</pre>
+</body>
+</html>

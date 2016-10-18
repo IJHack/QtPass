@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>user</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L1464'>user</a>             1464 mainwindow.cpp     foreach (const UserInfo &amp;user, users) {</span>
+<span class='curline'><a href='../S/59.html#L1465'>user</a>             1465 mainwindow.cpp       if (user.enabled) {</span>
+<span class='curline'><a href='../S/59.html#L1466'>user</a>             1466 mainwindow.cpp         gpgIds += user.key_id + " ";</span>
+<span class='curline'><a href='../S/59.html#L1485'>user</a>             1485 mainwindow.cpp     foreach (const UserInfo &amp;user, users) {</span>
+<span class='curline'><a href='../S/59.html#L1486'>user</a>             1486 mainwindow.cpp       if (user.enabled) {</span>
+<span class='curline'><a href='../S/59.html#L1487'>user</a>             1487 mainwindow.cpp         gpgId.write((user.key_id + "\n").toUtf8());</span>
+<span class='curline'><a href='../S/59.html#L1488'>user</a>             1488 mainwindow.cpp         secret_selected |= user.have_secret;</span>
+<span class='curline'><a href='../S/88.html#L66'>user</a>               66 usersdialog.cpp       UserInfo &amp;user(*it);</span>
+<span class='curline'><a href='../S/88.html#L67'>user</a>               67 usersdialog.cpp       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {</span>
+<span class='curline'><a href='../S/88.html#L68'>user</a>               68 usersdialog.cpp         if (!user.isValid() &amp;&amp; !ui-&gt;checkBox-&gt;isChecked())</span>
+<span class='curline'><a href='../S/88.html#L70'>user</a>               70 usersdialog.cpp         if (user.expiry.toTime_t() &gt; 0 &amp;&amp;</span>
+<span class='curline'><a href='../S/88.html#L71'>user</a>               71 usersdialog.cpp             user.expiry.daysTo(QDateTime::currentDateTime()) &gt; 0 &amp;&amp;</span>
+<span class='curline'><a href='../S/88.html#L74'>user</a>               74 usersdialog.cpp         QString userText = user.name + "\n" + user.key_id;</span>
+<span class='curline'><a href='../S/88.html#L75'>user</a>               75 usersdialog.cpp         if (user.created.toTime_t() &gt; 0) {</span>
+<span class='curline'><a href='../S/88.html#L77'>user</a>               77 usersdialog.cpp                       user.created.toString(Qt::SystemLocaleShortDate);</span>
+<span class='curline'><a href='../S/88.html#L79'>user</a>               79 usersdialog.cpp         if (user.expiry.toTime_t() &gt; 0)</span>
+<span class='curline'><a href='../S/88.html#L81'>user</a>               81 usersdialog.cpp                       user.expiry.toString(Qt::SystemLocaleShortDate);</span>
+<span class='curline'><a href='../S/88.html#L83'>user</a>               83 usersdialog.cpp         item-&gt;setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);</span>
+<span class='curline'><a href='../S/88.html#L84'>user</a>               84 usersdialog.cpp         item-&gt;setData(Qt::UserRole, QVariant::fromValue(&amp;user));</span>
+<span class='curline'><a href='../S/88.html#L85'>user</a>               85 usersdialog.cpp         if (user.have_secret) {</span>
+<span class='curline'><a href='../S/88.html#L92'>user</a>               92 usersdialog.cpp         } else if (!user.isValid()) {</span>
+<span class='curline'><a href='../S/88.html#L95'>user</a>               95 usersdialog.cpp         } else if (user.expiry.toTime_t() &gt; 0 &amp;&amp;</span>
+<span class='curline'><a href='../S/88.html#L96'>user</a>               96 usersdialog.cpp                    user.expiry.daysTo(QDateTime::currentDateTime()) &gt; 0) {</span>
+<span class='curline'><a href='../S/88.html#L98'>user</a>               98 usersdialog.cpp         } else if (!user.fullyValid()) {</span>
+</pre>
+</body>
+</html>

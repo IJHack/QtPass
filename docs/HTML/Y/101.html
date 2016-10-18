@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>QProcess</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L32'>QProcess</a>           32 mainwindow.cpp     : QMainWindow(parent), ui(new Ui::MainWindow), process(new QProcess(this)),</span>
+<span class='curline'><a href='../S/59.html#L36'>QProcess</a>           36 mainwindow.cpp   connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this,</span>
+<span class='curline'><a href='../S/59.html#L37'>QProcess</a>           37 mainwindow.cpp           SLOT(processError(QProcess::ProcessError)));</span>
+<span class='curline'><a href='../S/59.html#L38'>QProcess</a>           38 mainwindow.cpp   connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this,</span>
+<span class='curline'><a href='../S/59.html#L39'>QProcess</a>           39 mainwindow.cpp           SLOT(processFinished(int, QProcess::ExitStatus)));</span>
+<span class='curline'><a href='../S/59.html#L96'>QProcess</a>           96 mainwindow.cpp   if (fusedav.state() == QProcess::Running) {</span>
+<span class='curline'><a href='../S/59.html#L168'>QProcess</a>          168 mainwindow.cpp   if (fusedav.state() == QProcess::Running) {</span>
+<span class='curline'><a href='../S/59.html#L188'>QProcess</a>          188 mainwindow.cpp   if (fusedav.state() != QProcess::Running)</span>
+<span class='curline'><a href='../S/59.html#L388'>QProcess</a>          388 mainwindow.cpp   env = QProcess::systemEnvironment();</span>
+<span class='curline'><a href='../S/59.html#L931'>QProcess</a>          931 mainwindow.cpp                                  QProcess::ExitStatus exitStatus) {</span>
+<span class='curline'><a href='../S/59.html#L933'>QProcess</a>          933 mainwindow.cpp   bool error = exitStatus != QProcess::NormalExit || exitCode &gt; 0;</span>
+<span class='curline'><a href='../S/59.html#L968'>QProcess</a>          968 mainwindow.cpp void MainWindow::processError(QProcess::ProcessError error) {</span>
+<span class='curline'><a href='../S/59.html#L971'>QProcess</a>          971 mainwindow.cpp   case QProcess::FailedToStart:</span>
+<span class='curline'><a href='../S/59.html#L974'>QProcess</a>          974 mainwindow.cpp   case QProcess::Crashed:</span>
+<span class='curline'><a href='../S/59.html#L977'>QProcess</a>          977 mainwindow.cpp   case QProcess::Timedout:</span>
+<span class='curline'><a href='../S/59.html#L980'>QProcess</a>          980 mainwindow.cpp   case QProcess::ReadError:</span>
+<span class='curline'><a href='../S/59.html#L983'>QProcess</a>          983 mainwindow.cpp   case QProcess::WriteError:</span>
+<span class='curline'><a href='../S/59.html#L986'>QProcess</a>          986 mainwindow.cpp   case QProcess::UnknownError:</span>
+<span class='curline'><a href='../S/59.html#L992'>QProcess</a>          992 mainwindow.cpp   if (process-&gt;state() == QProcess::NotRunning)</span>
+<span class='curline'><a href='../S/59.html#L1370'>QProcess</a>         1370 mainwindow.cpp   if (process-&gt;exitStatus() != QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/59.html#L1868'>QProcess</a>         1868 mainwindow.cpp     if (process-&gt;exitStatus() == QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/59.html#L1891'>QProcess</a>         1891 mainwindow.cpp     if (process-&gt;exitStatus() == QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/60.html#L137'>QProcess</a>          137 mainwindow.h     void processFinished(int, QProcess::ExitStatus);</span>
+<span class='curline'><a href='../S/60.html#L138'>QProcess</a>          138 mainwindow.h     void processError(QProcess::ProcessError);</span>
+<span class='curline'><a href='../S/60.html#L167'>QProcess</a>          167 mainwindow.h     QScopedPointer&lt;QProcess&gt; process;</span>
+<span class='curline'><a href='../S/60.html#L187'>QProcess</a>          187 mainwindow.h     QProcess fusedav;</span>
+</pre>
+</body>
+</html>

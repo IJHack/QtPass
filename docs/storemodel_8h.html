@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('storemodel_8h.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
@@ -70,32 +91,24 @@ $(function() {
 <div class="textblock"><code>#include &lt;QFileSystemModel&gt;</code><br />
 <code>#include &lt;QRegExp&gt;</code><br />
 <code>#include &lt;QSortFilterProxyModel&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for storemodel.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="storemodel_8h__incl.png" border="0" usemap="#storemodel_8h" alt=""/></div>
-<map name="storemodel_8h" id="storemodel_8h">
-</map>
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for storemodel.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="storemodel_8h__dep__incl.png" border="0" usemap="#storemodel_8hdep" alt=""/></div>
-<map name="storemodel_8hdep" id="storemodel_8hdep">
-<area shape="rect" id="node2" href="mainwindow_8h.html" title="mainwindow.h" alt="" coords="300,79,405,104"/>
-<area shape="rect" id="node11" href="storemodel_8cpp.html" title="storemodel.cpp" alt="" coords="429,79,542,104"/>
-<area shape="rect" id="node3" href="configdialog_8h.html" title="configdialog.h" alt="" coords="183,152,287,177"/>
-<area shape="rect" id="node4" href="configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,299,123,324"/>
-<area shape="rect" id="node7" href="mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,299,416,324"/>
-<area shape="rect" id="node8" href="main_8cpp.html" title="main.cpp" alt="" coords="538,152,614,177"/>
-<area shape="rect" id="node9" href="passworddialog_8h.html" title="passworddialog.h" alt="" coords="390,152,515,177"/>
-<area shape="rect" id="node5" href="keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,225,264,251"/>
-<area shape="rect" id="node6" href="keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,299,272,324"/>
-<area shape="rect" id="node10" href="passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="440,225,579,251"/>
-</map>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="storemodel_8h__incl.svg" width="428" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<p><a href="storemodel_8h_source.html">Go to the source code of this file.</a></p>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="storemodel_8h__dep__incl.svg" width="619" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="HTML/S/84.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -104,11 +117,15 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="storemodel_8h.html">storemodel.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

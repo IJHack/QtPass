@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>qprogressindicator.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/qprogressindicator.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/11.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/67.html#L2' title='Defined at 2 in qprogressindicator.h.'>QPROGRESSINDICATOR_H_</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/67.html#L1' title='Referred from 1 in qprogressindicator.h.'>QPROGRESSINDICATOR_H_</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;QColor&gt;
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;QWidget&gt;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 <em class='comment'>/*!</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'>    \class QProgressIndicator</em>
+<a id='L9' name='L9'></a>   9 <em class='comment'>    \brief The QProgressIndicator class lets an application display a progress</em>
+<a id='L10' name='L10'></a>  10 <em class='comment'>   indicator to show that a lengthy task is under way.</em>
+<a id='L11' name='L11'></a>  11 <em class='comment'></em>
+<a id='L12' name='L12'></a>  12 <em class='comment'>    Progress indicators are indeterminate and do nothing more than spin to show</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'>   that the application is busy.</em>
+<a id='L14' name='L14'></a>  14 <em class='comment'>    \sa QProgressBar</em>
+<a id='L15' name='L15'></a>  15 <em class='comment'> */</em>
+<a id='L16' name='L16'></a>  16 <a href='../Y/255.html' title='Multiple used in 16 places.'>class</a> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a> : <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a> <a href='../Y/124.html' title='Multiple used in 14 places.'>QWidget</a> <em class='brace'>{</em>
+<a id='L17' name='L17'></a>  17   <a href='../Y/126.html' title='Multiple used in 9 places.'>Q_OBJECT</a>
+<a id='L18' name='L18'></a>  18   <em class='comment'>/**</em>
+<a id='L19' name='L19'></a>  19 <em class='comment'>   *  @brief QProgressIndicator::delay in miliseconds.</em>
+<a id='L20' name='L20'></a>  20 <em class='comment'>   */</em>
+<a id='L21' name='L21'></a>  21   <a href='../Y/128.html' title='Multiple used in 3 places.'>Q_PROPERTY</a>(<strong class='reserved'>int</strong> <a href='../Y/293.html' title='Multiple used in 4 places.'>delay</a> <a href='../Y/131.html' title='Multiple used in 3 places.'>READ</a> <a href='../Y/196.html' title='Multiple used in 2 places.'>animationDelay</a> <a href='../Y/160.html' title='Multiple used in 3 places.'>WRITE</a> <a href='../S/66.html#L43' title='Defined at 43 in qprogressindicator.cpp.'>setAnimationDelay</a>)
+<a id='L22' name='L22'></a>  22   <em class='comment'>/**</em>
+<a id='L23' name='L23'></a>  23 <em class='comment'>   *  @brief QProgressIndicator::displayedWhenStopped render when not spinning.</em>
+<a id='L24' name='L24'></a>  24 <em class='comment'>   */</em>
+<a id='L25' name='L25'></a>  25   <a href='../Y/128.html' title='Multiple used in 3 places.'>Q_PROPERTY</a>(<a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> displayedWhenStopped <a href='../Y/131.html' title='Multiple used in 3 places.'>READ</a> <a href='../S/66.html#L23' title='Defined at 23 in qprogressindicator.cpp.'>isDisplayedWhenStopped</a> <a href='../Y/160.html' title='Multiple used in 3 places.'>WRITE</a>
+<a id='L26' name='L26'></a>  26                  <a href='../S/66.html#L17' title='Defined at 17 in qprogressindicator.cpp.'>setDisplayedWhenStopped</a>)
+<a id='L27' name='L27'></a>  27   <em class='comment'>/**</em>
+<a id='L28' name='L28'></a>  28 <em class='comment'>   *  @brief QProgressIndicator::color of the component..</em>
+<a id='L29' name='L29'></a>  29 <em class='comment'>   */</em>
+<a id='L30' name='L30'></a>  30   <a href='../Y/128.html' title='Multiple used in 3 places.'>Q_PROPERTY</a>(<a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> <a href='../Y/267.html' title='Multiple used in 8 places.'>color</a> <a href='../Y/131.html' title='Multiple used in 3 places.'>READ</a> <a href='../Y/267.html' title='Multiple used in 8 places.'>color</a> <a href='../Y/160.html' title='Multiple used in 3 places.'>WRITE</a> <a href='../S/66.html#L53' title='Defined at 53 in qprogressindicator.cpp.'>setColor</a>)
+<a id='L31' name='L31'></a>  31 
+<a id='L32' name='L32'></a>  32 <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a>:
+<a id='L33' name='L33'></a>  33   <a href='../Y/333.html' title='Multiple used in 7 places.'>explicit</a> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>(<a href='../Y/124.html' title='Multiple used in 14 places.'>QWidget</a> *<a href='../Y/500.html' title='Multiple used in 25 places.'>parent</a> = 0);
+<a id='L34' name='L34'></a>  34 
+<a id='L35' name='L35'></a>  35   <em class='comment'>/*! Returns the delay between animation steps.</em>
+<a id='L36' name='L36'></a>  36 <em class='comment'>      \return The number of milliseconds between animation steps. By default,</em>
+<a id='L37' name='L37'></a>  37 <em class='comment'>     the animation delay is set to 40 milliseconds.</em>
+<a id='L38' name='L38'></a>  38 <em class='comment'>      \sa setAnimationDelay</em>
+<a id='L39' name='L39'></a>  39 <em class='comment'>   */</em>
+<a id='L40' name='L40'></a>  40   <strong class='reserved'>int</strong> <a href='../Y/196.html' title='Multiple used in 2 places.'>animationDelay</a>() <strong class='reserved'>const</strong> <em class='brace'>{</em> <strong class='reserved'>return</strong> <a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a>; <em class='brace'>}</em>
+<a id='L41' name='L41'></a>  41 
+<a id='L42' name='L42'></a>  42   <em class='comment'>/*! Returns a Boolean value indicating whether the component is currently</em>
+<a id='L43' name='L43'></a>  43 <em class='comment'>     animated.</em>
+<a id='L44' name='L44'></a>  44 <em class='comment'>      \return Animation state.</em>
+<a id='L45' name='L45'></a>  45 <em class='comment'>      \sa startAnimation stopAnimation</em>
+<a id='L46' name='L46'></a>  46 <em class='comment'>   */</em>
+<a id='L47' name='L47'></a>  47   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../S/66.html#L15' title='Defined at 15 in qprogressindicator.cpp.'>isAnimated</a>() <strong class='reserved'>const</strong>;
+<a id='L48' name='L48'></a>  48 
+<a id='L49' name='L49'></a>  49   <em class='comment'>/*! Returns a Boolean value indicating whether the receiver shows itself even</em>
+<a id='L50' name='L50'></a>  50 <em class='comment'>     when it is not animating.</em>
+<a id='L51' name='L51'></a>  51 <em class='comment'>      \return Return true if the progress indicator shows itself even when it is</em>
+<a id='L52' name='L52'></a>  52 <em class='comment'>     not animating. By default, it returns false.</em>
+<a id='L53' name='L53'></a>  53 <em class='comment'>      \sa setDisplayedWhenStopped</em>
+<a id='L54' name='L54'></a>  54 <em class='comment'>   */</em>
+<a id='L55' name='L55'></a>  55   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../S/66.html#L23' title='Defined at 23 in qprogressindicator.cpp.'>isDisplayedWhenStopped</a>() <strong class='reserved'>const</strong>;
+<a id='L56' name='L56'></a>  56 
+<a id='L57' name='L57'></a>  57   <em class='comment'>/*! Returns the color of the component.</em>
+<a id='L58' name='L58'></a>  58 <em class='comment'>      \sa setColor</em>
+<a id='L59' name='L59'></a>  59 <em class='comment'>   */</em>
+<a id='L60' name='L60'></a>  60   <strong class='reserved'>const</strong> <a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> &amp;<a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>() <strong class='reserved'>const</strong> <em class='brace'>{</em> <strong class='reserved'>return</strong> <a href='../S/66.html#L10' title='Defined at 10 in qprogressindicator.cpp.'>m_color</a>; <em class='brace'>}</em>
+<a id='L61' name='L61'></a>  61 
+<a id='L62' name='L62'></a>  62   <a href='../Y/776.html' title='Multiple used in 3 places.'>virtual</a> <a href='../Y/110.html' title='Multiple used in 2 places.'>QSize</a> <a href='../S/66.html#L63' title='Defined at 63 in qprogressindicator.cpp.'>sizeHint</a>() <strong class='reserved'>const</strong>;
+<a id='L63' name='L63'></a>  63   <strong class='reserved'>int</strong> <a href='../S/66.html#L70' title='Defined at 70 in qprogressindicator.cpp.'>heightForWidth</a>(<strong class='reserved'>int</strong> <a href='../Y/778.html' title='Multiple used in 8 places.'>w</a>) <strong class='reserved'>const</strong>;
+<a id='L64' name='L64'></a>  64 
+<a id='L65' name='L65'></a>  65 <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a> <a href='../Y/698.html' title='Multiple used in 8 places.'>slots</a>:
+<a id='L66' name='L66'></a>  66   <em class='comment'>/*! Starts the spin animation.</em>
+<a id='L67' name='L67'></a>  67 <em class='comment'>      \sa stopAnimation isAnimated</em>
+<a id='L68' name='L68'></a>  68 <em class='comment'>   */</em>
+<a id='L69' name='L69'></a>  69   <strong class='reserved'>void</strong> <a href='../S/66.html#L27' title='Defined at 27 in qprogressindicator.cpp.'>startAnimation</a>();
+<a id='L70' name='L70'></a>  70 
+<a id='L71' name='L71'></a>  71   <em class='comment'>/*! Stops the spin animation.</em>
+<a id='L72' name='L72'></a>  72 <em class='comment'>      \sa startAnimation isAnimated</em>
+<a id='L73' name='L73'></a>  73 <em class='comment'>   */</em>
+<a id='L74' name='L74'></a>  74   <strong class='reserved'>void</strong> <a href='../S/66.html#L34' title='Defined at 34 in qprogressindicator.cpp.'>stopAnimation</a>();
+<a id='L75' name='L75'></a>  75 
+<a id='L76' name='L76'></a>  76   <em class='comment'>/*! Sets the delay between animation steps.</em>
+<a id='L77' name='L77'></a>  77 <em class='comment'>      Setting the \a delay to a value larger than 40 slows the animation, while</em>
+<a id='L78' name='L78'></a>  78 <em class='comment'>     setting the \a delay to a smaller value speeds it up.</em>
+<a id='L79' name='L79'></a>  79 <em class='comment'>      \param delay The delay, in milliseconds.</em>
+<a id='L80' name='L80'></a>  80 <em class='comment'>      \sa animationDelay</em>
+<a id='L81' name='L81'></a>  81 <em class='comment'>   */</em>
+<a id='L82' name='L82'></a>  82   <strong class='reserved'>void</strong> <a href='../S/66.html#L43' title='Defined at 43 in qprogressindicator.cpp.'>setAnimationDelay</a>(<strong class='reserved'>int</strong> <a href='../Y/293.html' title='Multiple used in 4 places.'>delay</a>);
+<a id='L83' name='L83'></a>  83 
+<a id='L84' name='L84'></a>  84   <em class='comment'>/*! Sets whether the component hides itself when it is not animating.</em>
+<a id='L85' name='L85'></a>  85 <em class='comment'>     \param state The animation state. Set false to hide the progress indicator</em>
+<a id='L86' name='L86'></a>  86 <em class='comment'>     when it is not animating; otherwise true.</em>
+<a id='L87' name='L87'></a>  87 <em class='comment'>     \sa isDisplayedWhenStopped</em>
+<a id='L88' name='L88'></a>  88 <em class='comment'>   */</em>
+<a id='L89' name='L89'></a>  89   <strong class='reserved'>void</strong> <a href='../S/66.html#L17' title='Defined at 17 in qprogressindicator.cpp.'>setDisplayedWhenStopped</a>(<a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../Y/713.html' title='Multiple used in 19 places.'>state</a>);
+<a id='L90' name='L90'></a>  90 
+<a id='L91' name='L91'></a>  91   <em class='comment'>/*! Sets the color of the components to the given color.</em>
+<a id='L92' name='L92'></a>  92 <em class='comment'>      \sa color</em>
+<a id='L93' name='L93'></a>  93 <em class='comment'>   */</em>
+<a id='L94' name='L94'></a>  94   <strong class='reserved'>void</strong> <a href='../S/66.html#L53' title='Defined at 53 in qprogressindicator.cpp.'>setColor</a>(<strong class='reserved'>const</strong> <a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> &amp;<a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>);
+<a id='L95' name='L95'></a>  95 
+<a id='L96' name='L96'></a>  96 <a href='../Y/536.html' title='Multiple used in 5 places.'>protected</a>:
+<a id='L97' name='L97'></a>  97   <a href='../Y/776.html' title='Multiple used in 3 places.'>virtual</a> <strong class='reserved'>void</strong> <a href='../S/66.html#L75' title='Defined at 75 in qprogressindicator.cpp.'>timerEvent</a>(<a href='../Y/121.html' title='Multiple used in 2 places.'>QTimerEvent</a> *<a href='../Y/323.html' title='Multiple used in 30 places.'>event</a>);
+<a id='L98' name='L98'></a>  98   <a href='../Y/776.html' title='Multiple used in 3 places.'>virtual</a> <strong class='reserved'>void</strong> <a href='../S/66.html#L84' title='Defined at 84 in qprogressindicator.cpp.'>paintEvent</a>(<a href='../Y/98.html' title='Multiple used in 2 places.'>QPaintEvent</a> *<a href='../Y/323.html' title='Multiple used in 30 places.'>event</a>);
+<a id='L99' name='L99'></a>  99 
+<a id='L100' name='L100'></a> 100 <a href='../Y/525.html' title='Multiple used in 15 places.'>private</a>:
+<a id='L101' name='L101'></a> 101   <strong class='reserved'>int</strong> <a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a>;
+<a id='L102' name='L102'></a> 102   <strong class='reserved'>int</strong> <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a>;
+<a id='L103' name='L103'></a> 103   <strong class='reserved'>int</strong> <a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a>;
+<a id='L104' name='L104'></a> 104   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../Y/458.html' title='Multiple used in 5 places.'>m_displayedWhenStopped</a>;
+<a id='L105' name='L105'></a> 105   <a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> <a href='../S/66.html#L10' title='Defined at 10 in qprogressindicator.cpp.'>m_color</a>;
+<a id='L106' name='L106'></a> 106 <em class='brace'>}</em>;
+<a id='L107' name='L107'></a> 107 
+<a id='L108' name='L108'></a> 108 <em class='sharp'>#endif</em> <em class='comment'>// QPROGRESSINDICATOR_H_</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

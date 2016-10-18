@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_store_model.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,21 +93,23 @@ $(function() {
 <p>The QSortFilterProxyModel for handling filesystem searches.  
  <a href="class_store_model.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="storemodel_8h_source.html">storemodel.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for StoreModel:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_store_model__inherit__graph.png" border="0" usemap="#_store_model_inherit__map" alt="Inheritance graph"/></div>
-<map name="_store_model_inherit__map" id="_store_model_inherit__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for StoreModel:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_store_model__coll__graph.png" border="0" usemap="#_store_model_coll__map" alt="Collaboration graph"/></div>
-<map name="_store_model_coll__map" id="_store_model_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<p><code>#include &lt;<a class="el" href="HTML/S/84.html">storemodel.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for StoreModel:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_store_model__inherit__graph.svg" width="167" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for StoreModel:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_store_model__coll__graph.svg" width="167" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -109,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The QSortFilterProxyModel for handling filesystem searches. </p>
 
-<p>Definition at line <a class="el" href="storemodel_8h_source.html#l00012">12</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/84.html#L12">12</a> of file <a class="el" href="HTML/S/84.html">storemodel.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d113aadab8e115cdd963f2246333664"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d113aadab8e115cdd963f2246333664">&sect;&nbsp;</a></span>StoreModel()</h2>
@@ -128,7 +151,7 @@ Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="class_store_model.html#a1d113aadab8e115cdd963f2246333664" title="StoreModel::StoreModel SubClass of QSortFilterProxyModel via http://www.qtcentre.org/threads/46471-QT...">StoreModel::StoreModel</a> SubClass of QSortFilterProxyModel via <a href="http://www.qtcentre.org/threads/46471-QTreeView-Filter">http://www.qtcentre.org/threads/46471-QTreeView-Filter</a>. </p>
 
-<p>Definition at line <a class="el" href="storemodel_8cpp_source.html#l00008">8</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/83.html#L8">8</a> of file <a class="el" href="HTML/S/83.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +192,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="storemodel_8cpp_source.html#l00070">70</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/83.html#L70">70</a> of file <a class="el" href="HTML/S/83.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,15 +232,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="storemodel_8cpp_source.html#l00017">17</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_store_model_a2ec37506053f93f36e5aecf11b78b5ef_cgraph.png" border="0" usemap="#class_store_model_a2ec37506053f93f36e5aecf11b78b5ef_cgraph" alt=""/></div>
-<map name="class_store_model_a2ec37506053f93f36e5aecf11b78b5ef_cgraph" id="class_store_model_a2ec37506053f93f36e5aecf11b78b5ef_cgraph">
-<area shape="rect" id="node2" href="class_store_model.html#a907e6b71fd0fdcbd074e28938990a8e3" title="StoreModel::ShowThis should a row be shown, based on our search criteria. " alt="" coords="250,5,405,31"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/83.html#L17">17</a> of file <a class="el" href="HTML/S/83.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -256,16 +271,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="storemodel_8cpp_source.html#l00058">58</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_store_model_af223e13120a72e556a394aae4a92ad0f_icgraph.png" border="0" usemap="#class_store_model_af223e13120a72e556a394aae4a92ad0f_icgraph" alt=""/></div>
-<map name="class_store_model_af223e13120a72e556a394aae4a92ad0f_icgraph" id="class_store_model_af223e13120a72e556a394aae4a92ad0f_icgraph">
-<area shape="rect" id="node2" href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="260,5,438,31"/>
-<area shape="rect" id="node3" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="486,5,668,31"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/83.html#L58">58</a> of file <a class="el" href="HTML/S/83.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,28 +300,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="storemodel_8cpp_source.html#l00029">29</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_store_model_a907e6b71fd0fdcbd074e28938990a8e3_icgraph.png" border="0" usemap="#class_store_model_a907e6b71fd0fdcbd074e28938990a8e3_icgraph" alt=""/></div>
-<map name="class_store_model_a907e6b71fd0fdcbd074e28938990a8e3_icgraph" id="class_store_model_a907e6b71fd0fdcbd074e28938990a8e3_icgraph">
-<area shape="rect" id="node2" href="class_store_model.html#a2ec37506053f93f36e5aecf11b78b5ef" title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method..." alt="" coords="209,5,405,31"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/83.html#L29">29</a> of file <a class="el" href="HTML/S/83.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="storemodel_8h_source.html">storemodel.h</a></li>
-<li><a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a></li>
+<li><a class="el" href="HTML/S/84.html">storemodel.h</a></li>
+<li><a class="el" href="HTML/S/83.html">storemodel.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_store_model.html">StoreModel</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

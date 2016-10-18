@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_q_progress_indicator.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -75,21 +96,23 @@ $(function() {
 <p>The <a class="el" href="class_q_progress_indicator.html" title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">QProgressIndicator</a> class lets an application display a progress indicator to show that a lengthy task is under way.  
  <a href="class_q_progress_indicator.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for QProgressIndicator:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator__inherit__graph.png" border="0" usemap="#_q_progress_indicator_inherit__map" alt="Inheritance graph"/></div>
-<map name="_q_progress_indicator_inherit__map" id="_q_progress_indicator_inherit__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for QProgressIndicator:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator__coll__graph.png" border="0" usemap="#_q_progress_indicator_coll__map" alt="Collaboration graph"/></div>
-<map name="_q_progress_indicator_coll__map" id="_q_progress_indicator_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<p><code>#include &lt;<a class="el" href="HTML/S/67.html">qprogressindicator.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for QProgressIndicator:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_q_progress_indicator__inherit__graph.svg" width="147" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for QProgressIndicator:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_q_progress_indicator__coll__graph.svg" width="147" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -158,7 +181,7 @@ Properties</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="class_q_progress_indicator.html" title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">QProgressIndicator</a> class lets an application display a progress indicator to show that a lengthy task is under way. </p>
 <p>Progress indicators are indeterminate and do nothing more than spin to show that the application is busy. </p><dl class="section see"><dt>See also</dt><dd>QProgressBar </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00016">16</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L16">16</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac39e6f6b55a90ef02eaa6848c894281d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac39e6f6b55a90ef02eaa6848c894281d">&sect;&nbsp;</a></span>QProgressIndicator()</h2>
@@ -192,7 +215,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00008">8</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L8">8</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,16 +247,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of milliseconds between animation steps. By default, the animation delay is set to 40 milliseconds. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. ">setAnimationDelay</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00040">40</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a9ec91d7e35b27320f6499ad81b238634_cgraph.png" border="0" usemap="#class_q_progress_indicator_a9ec91d7e35b27320f6499ad81b238634_cgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a9ec91d7e35b27320f6499ad81b238634_cgraph" id="class_q_progress_indicator_a9ec91d7e35b27320f6499ad81b238634_cgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="212,5,348,44"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a46ab1d0b77a96eea451e27c43e020286" title="Returns a Boolean value indicating whether the receiver shows itself even when it is not animating..." alt="" coords="190,68,371,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L40">40</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
@@ -263,33 +277,7 @@ Here is the call graph for this function:</div>
 <p>Returns the color of the component. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. ">setColor</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00060">60</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_cgraph.png" border="0" usemap="#class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_cgraph" alt=""/></div>
-<map name="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_cgraph" id="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_cgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d" title="QProgressIndicator::sizeHint default minimum size. " alt="" coords="216,5,352,44"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#adf5a0a0297ca8a78e601085d2283d183" title="QProgressIndicator::heightForWidth square ratio. " alt="" coords="216,68,352,107"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="216,131,352,169"/>
-<area shape="rect" id="node5" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. " alt="" coords="216,193,352,232"/>
-<area shape="rect" id="node6" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. " alt="" coords="214,256,354,295"/>
-<area shape="rect" id="node7" href="class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. " alt="" coords="190,319,379,357"/>
-<area shape="rect" id="node8" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="216,381,352,420"/>
-<area shape="rect" id="node9" href="class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator::timerEvent do the actual animation. " alt="" coords="216,444,352,483"/>
-<area shape="rect" id="node10" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="216,507,352,545"/>
-<area shape="rect" id="node11" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="427,507,563,545"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_icgraph.png" border="0" usemap="#class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_icgraph" id="class_q_progress_indicator_afdc92dfc35132dadcce9fd45adc51c65_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="190,5,326,44"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="190,68,326,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L60">60</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
@@ -318,17 +306,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>w returned height </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00070">70</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_adf5a0a0297ca8a78e601085d2283d183_icgraph.png" border="0" usemap="#class_q_progress_indicator_adf5a0a0297ca8a78e601085d2283d183_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_adf5a0a0297ca8a78e601085d2283d183_icgraph" id="class_q_progress_indicator_adf5a0a0297ca8a78e601085d2283d183_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,37,326,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,68,510,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L70">70</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -351,18 +329,7 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Animation state. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. ">startAnimation</a> <a class="el" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. ">stopAnimation</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00015">15</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_aa145f555e2d7c48ecdd1517a7addf080_icgraph.png" border="0" usemap="#class_q_progress_indicator_aa145f555e2d7c48ecdd1517a7addf080_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_aa145f555e2d7c48ecdd1517a7addf080_icgraph" id="class_q_progress_indicator_aa145f555e2d7c48ecdd1517a7addf080_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="190,5,326,44"/>
-<area shape="rect" id="node5" href="class_q_progress_indicator.html#a9ec91d7e35b27320f6499ad81b238634" title="Returns the delay between animation steps. " alt="" coords="190,68,326,107"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="558,5,694,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L15">15</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -385,15 +352,7 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Return true if the progress indicator shows itself even when it is not animating. By default, it returns false. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. ">setDisplayedWhenStopped</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00023">23</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a46ab1d0b77a96eea451e27c43e020286_icgraph.png" border="0" usemap="#class_q_progress_indicator_a46ab1d0b77a96eea451e27c43e020286_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a46ab1d0b77a96eea451e27c43e020286_icgraph" id="class_q_progress_indicator_a46ab1d0b77a96eea451e27c43e020286_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#a9ec91d7e35b27320f6499ad81b238634" title="Returns the delay between animation steps. " alt="" coords="235,5,371,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L23">23</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -423,33 +382,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. ">QProgressIndicator::paintEvent</a> draw the spinner. </p>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00084">84</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_cgraph.png" border="0" usemap="#class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_cgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_cgraph" id="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_cgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="190,193,326,232"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,256,326,295"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d" title="QProgressIndicator::sizeHint default minimum size. " alt="" coords="400,5,537,44"/>
-<area shape="rect" id="node5" href="class_q_progress_indicator.html#adf5a0a0297ca8a78e601085d2283d183" title="QProgressIndicator::heightForWidth square ratio. " alt="" coords="400,68,537,107"/>
-<area shape="rect" id="node6" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="400,131,537,169"/>
-<area shape="rect" id="node7" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. " alt="" coords="400,193,537,232"/>
-<area shape="rect" id="node8" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. " alt="" coords="399,256,538,295"/>
-<area shape="rect" id="node9" href="class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. " alt="" coords="374,319,563,357"/>
-<area shape="rect" id="node10" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="400,381,537,420"/>
-<area shape="rect" id="node11" href="class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator::timerEvent do the actual animation. " alt="" coords="400,444,537,483"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_icgraph.png" border="0" usemap="#class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_icgraph" id="class_q_progress_indicator_a38d3e8644a4e74d892b42270c9b6ae8f_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,5,326,44"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L84">84</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -486,17 +419,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a9ec91d7e35b27320f6499ad81b238634" title="Returns the delay between animation steps. ">animationDelay</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00043">43</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_acf826f02de241cb47fa329bf437d450d_icgraph.png" border="0" usemap="#class_q_progress_indicator_acf826f02de241cb47fa329bf437d450d_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_acf826f02de241cb47fa329bf437d450d_icgraph" id="class_q_progress_indicator_acf826f02de241cb47fa329bf437d450d_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="193,37,329,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="377,5,514,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="377,68,514,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L43">43</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -527,33 +450,7 @@ Here is the caller graph for this function:</div>
 <p>Sets the color of the components to the given color. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#aa720dbc15aeaee469294a079ab819dad" title="QProgressIndicator::color of the component.. ">color</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00053">53</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_cgraph.png" border="0" usemap="#class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_cgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_cgraph" id="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_cgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,256,326,295"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d" title="QProgressIndicator::sizeHint default minimum size. " alt="" coords="400,5,537,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#adf5a0a0297ca8a78e601085d2283d183" title="QProgressIndicator::heightForWidth square ratio. " alt="" coords="400,68,537,107"/>
-<area shape="rect" id="node5" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="400,131,537,169"/>
-<area shape="rect" id="node6" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. " alt="" coords="400,193,537,232"/>
-<area shape="rect" id="node7" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. " alt="" coords="399,256,538,295"/>
-<area shape="rect" id="node8" href="class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. " alt="" coords="374,319,563,357"/>
-<area shape="rect" id="node9" href="class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator::timerEvent do the actual animation. " alt="" coords="400,381,537,420"/>
-<area shape="rect" id="node10" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="400,444,537,483"/>
-<area shape="rect" id="node11" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="611,444,748,483"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_icgraph.png" border="0" usemap="#class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_icgraph" id="class_q_progress_indicator_a62161c81afb5ce019e9a7a55c69e3654_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,5,326,44"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,5,510,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L53">53</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -590,17 +487,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a46ab1d0b77a96eea451e27c43e020286" title="Returns a Boolean value indicating whether the receiver shows itself even when it is not animating...">isDisplayedWhenStopped</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00017">17</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_ab50e609e706868a0cd28caee364c3d13_icgraph.png" border="0" usemap="#class_q_progress_indicator_ab50e609e706868a0cd28caee364c3d13_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_ab50e609e706868a0cd28caee364c3d13_icgraph" id="class_q_progress_indicator_ab50e609e706868a0cd28caee364c3d13_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="243,37,379,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="427,5,563,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="427,68,563,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L17">17</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -630,17 +517,7 @@ Here is the caller graph for this function:</div>
 <p><a class="el" href="class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d" title="QProgressIndicator::sizeHint default minimum size. ">QProgressIndicator::sizeHint</a> default minimum size. </p>
 <dl class="section return"><dt>Returns</dt><dd>QSize(20, 20) </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00063">63</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a9c40197f0b508b4ff76439e1a3fc9d8d_icgraph.png" border="0" usemap="#class_q_progress_indicator_a9c40197f0b508b4ff76439e1a3fc9d8d_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a9c40197f0b508b4ff76439e1a3fc9d8d_icgraph" id="class_q_progress_indicator_a9c40197f0b508b4ff76439e1a3fc9d8d_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,37,326,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,68,510,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L63">63</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -670,18 +547,7 @@ Here is the caller graph for this function:</div>
 <p>Starts the spin animation. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. ">stopAnimation</a> <a class="el" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. ">isAnimated</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00027">27</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a53aa626e870ee75390766c6044788d06_icgraph.png" border="0" usemap="#class_q_progress_indicator_a53aa626e870ee75390766c6044788d06_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a53aa626e870ee75390766c6044788d06_icgraph" id="class_q_progress_indicator_a53aa626e870ee75390766c6044788d06_icgraph">
-<area shape="rect" id="node2" href="class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="190,5,392,31"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="223,55,359,93"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="440,23,576,61"/>
-<area shape="rect" id="node5" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="440,85,576,124"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L27">27</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -711,17 +577,7 @@ Here is the caller graph for this function:</div>
 <p>Stops the spin animation. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. ">startAnimation</a> <a class="el" href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. ">isAnimated</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00034">34</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a27ea54a92ade9c85761918cb98c96f95_icgraph.png" border="0" usemap="#class_q_progress_indicator_a27ea54a92ade9c85761918cb98c96f95_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a27ea54a92ade9c85761918cb98c96f95_icgraph" id="class_q_progress_indicator_a27ea54a92ade9c85761918cb98c96f95_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,37,326,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,68,510,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L34">34</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -751,17 +607,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator::timerEvent do the actual animation. ">QProgressIndicator::timerEvent</a> do the actual animation. </p>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8cpp_source.html#l00075">75</a> of file <a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_q_progress_indicator_a121c7de89fecff682c45d2adee60310d_icgraph.png" border="0" usemap="#class_q_progress_indicator_a121c7de89fecff682c45d2adee60310d_icgraph" alt=""/></div>
-<map name="class_q_progress_indicator_a121c7de89fecff682c45d2adee60310d_icgraph" id="class_q_progress_indicator_a121c7de89fecff682c45d2adee60310d_icgraph">
-<area shape="rect" id="node2" href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,37,326,76"/>
-<area shape="rect" id="node3" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,68,510,107"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/66.html#L75">75</a> of file <a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a>.</p>
 
 </div>
 </div>
@@ -788,7 +634,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_q_progress_indicator.html#aa720dbc15aeaee469294a079ab819dad" title="QProgressIndicator::color of the component.. ">QProgressIndicator::color</a> of the component.. </p>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00030">30</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L30">30</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
@@ -814,7 +660,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_q_progress_indicator.html#a4a11f4c4627b15d0376b509b8d87abb2" title="QProgressIndicator::delay in miliseconds. ">QProgressIndicator::delay</a> in miliseconds. </p>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00021">21</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L21">21</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
@@ -840,20 +686,24 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_q_progress_indicator.html#a80f5089148132b3fae4c45aa2d0df343" title="QProgressIndicator::displayedWhenStopped render when not spinning. ">QProgressIndicator::displayedWhenStopped</a> render when not spinning. </p>
 
-<p>Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00026">26</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/67.html#L26">26</a> of file <a class="el" href="HTML/S/67.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a></li>
-<li><a class="el" href="qprogressindicator_8cpp_source.html">qprogressindicator.cpp</a></li>
+<li><a class="el" href="HTML/S/67.html">qprogressindicator.h</a></li>
+<li><a class="el" href="HTML/S/66.html">qprogressindicator.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_q_progress_indicator.html">QProgressIndicator</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

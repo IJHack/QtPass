@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>settings</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L108'>settings</a>          108 mainwindow.cpp   if (!settings) {</span>
+<span class='curline'><a href='../S/59.html#L114'>settings</a>          114 mainwindow.cpp       settings.reset(new QSettings(portable_ini, QSettings::IniFormat));</span>
+<span class='curline'><a href='../S/59.html#L117'>settings</a>          117 mainwindow.cpp       settings.reset(new QSettings("IJHack", "QtPass"));</span>
+<span class='curline'><a href='../S/59.html#L120'>settings</a>          120 mainwindow.cpp   return *settings;</span>
+<span class='curline'><a href='../S/59.html#L203'>settings</a>          203 mainwindow.cpp   QSettings &amp;settings(getSettings());</span>
+<span class='curline'><a href='../S/59.html#L205'>settings</a>          205 mainwindow.cpp   QString version = settings.value("version").toString();</span>
+<span class='curline'><a href='../S/59.html#L208'>settings</a>          208 mainwindow.cpp     settings.beginGroup("mainwindow");</span>
+<span class='curline'><a href='../S/59.html#L209'>settings</a>          209 mainwindow.cpp     restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray());</span>
+<span class='curline'><a href='../S/59.html#L210'>settings</a>          210 mainwindow.cpp     restoreState(settings.value("savestate", saveState()).toByteArray());</span>
+<span class='curline'><a href='../S/59.html#L211'>settings</a>          211 mainwindow.cpp     move(settings.value("pos", pos()).toPoint());</span>
+<span class='curline'><a href='../S/59.html#L212'>settings</a>          212 mainwindow.cpp     resize(settings.value("size", size()).toSize());</span>
+<span class='curline'><a href='../S/59.html#L214'>settings</a>          214 mainwindow.cpp     int left = settings.value("splitterLeft", splitter[0]).toInt();</span>
+<span class='curline'><a href='../S/59.html#L215'>settings</a>          215 mainwindow.cpp     int right = settings.value("splitterRight", splitter[1]).toInt();</span>
+<span class='curline'><a href='../S/59.html#L221'>settings</a>          221 mainwindow.cpp     if (settings.value("maximized", isMaximized()).toBool())</span>
+<span class='curline'><a href='../S/59.html#L223'>settings</a>          223 mainwindow.cpp     settings.endGroup();</span>
+<span class='curline'><a href='../S/59.html#L226'>settings</a>          226 mainwindow.cpp   usePass = (settings.value("usePass") == "true");</span>
+<span class='curline'><a href='../S/59.html#L229'>settings</a>          229 mainwindow.cpp   if (settings.value("useClipboard") == "true" ||</span>
+<span class='curline'><a href='../S/59.html#L230'>settings</a>          230 mainwindow.cpp       settings.value("useClipboard") == "1")</span>
+<span class='curline'><a href='../S/59.html#L232'>settings</a>          232 mainwindow.cpp   else if (settings.value("useClipboard") == "2")</span>
+<span class='curline'><a href='../S/59.html#L234'>settings</a>          234 mainwindow.cpp   useAutoclear = (settings.value("useAutoclear") == "true");</span>
+<span class='curline'><a href='../S/59.html#L235'>settings</a>          235 mainwindow.cpp   autoclearSeconds = settings.value("autoclearSeconds").toInt();</span>
+<span class='curline'><a href='../S/59.html#L236'>settings</a>          236 mainwindow.cpp   useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");</span>
+<span class='curline'><a href='../S/59.html#L237'>settings</a>          237 mainwindow.cpp   autoclearPanelSeconds = settings.value("autoclearPanelSeconds").toInt();</span>
+<span class='curline'><a href='../S/59.html#L238'>settings</a>          238 mainwindow.cpp   hidePassword = (settings.value("hidePassword") == "true");</span>
+<span class='curline'><a href='../S/59.html#L239'>settings</a>          239 mainwindow.cpp   hideContent = (settings.value("hideContent") == "true");</span>
+<span class='curline'><a href='../S/59.html#L240'>settings</a>          240 mainwindow.cpp   addGPGId = (settings.value("addGPGId") != "false");</span>
+<span class='curline'><a href='../S/59.html#L242'>settings</a>          242 mainwindow.cpp   passStore = settings.value("passStore").toString();</span>
+<span class='curline'><a href='../S/59.html#L245'>settings</a>          245 mainwindow.cpp     settings.setValue("passStore", passStore);</span>
+<span class='curline'><a href='../S/59.html#L249'>settings</a>          249 mainwindow.cpp   passExecutable = settings.value("passExecutable").toString();</span>
+<span class='curline'><a href='../S/59.html#L253'>settings</a>          253 mainwindow.cpp   gitExecutable = settings.value("gitExecutable").toString();</span>
+<span class='curline'><a href='../S/59.html#L257'>settings</a>          257 mainwindow.cpp   gpgExecutable = settings.value("gpgExecutable").toString();</span>
+<span class='curline'><a href='../S/59.html#L261'>settings</a>          261 mainwindow.cpp   pwgenExecutable = settings.value("pwgenExecutable").toString();</span>
+<span class='curline'><a href='../S/59.html#L265'>settings</a>          265 mainwindow.cpp   gpgHome = settings.value("gpgHome").toString();</span>
+<span class='curline'><a href='../S/59.html#L267'>settings</a>          267 mainwindow.cpp   useWebDav = (settings.value("useWebDav") == "true");</span>
+<span class='curline'><a href='../S/59.html#L268'>settings</a>          268 mainwindow.cpp   webDavUrl = settings.value("webDavUrl").toString();</span>
+<span class='curline'><a href='../S/59.html#L269'>settings</a>          269 mainwindow.cpp   webDavUser = settings.value("webDavUser").toString();</span>
+<span class='curline'><a href='../S/59.html#L270'>settings</a>          270 mainwindow.cpp   webDavPassword = settings.value("webDavPassword").toString();</span>
+<span class='curline'><a href='../S/59.html#L272'>settings</a>          272 mainwindow.cpp   profile = settings.value("profile").toString();</span>
+<span class='curline'><a href='../S/59.html#L273'>settings</a>          273 mainwindow.cpp   settings.beginGroup("profiles");</span>
+<span class='curline'><a href='../S/59.html#L274'>settings</a>          274 mainwindow.cpp   QStringList keys = settings.childKeys();</span>
+<span class='curline'><a href='../S/59.html#L276'>settings</a>          276 mainwindow.cpp     profiles[key] = settings.value(key).toString();</span>
+<span class='curline'><a href='../S/59.html#L277'>settings</a>          277 mainwindow.cpp   settings.endGroup();</span>
+<span class='curline'><a href='../S/59.html#L279'>settings</a>          279 mainwindow.cpp   useGit = (settings.value("useGit") == "true");</span>
+<span class='curline'><a href='../S/59.html#L280'>settings</a>          280 mainwindow.cpp   usePwgen = (settings.value("usePwgen") == "true");</span>
+<span class='curline'><a href='../S/59.html#L281'>settings</a>          281 mainwindow.cpp   avoidCapitals = settings.value("avoidCapitals").toBool();</span>
+<span class='curline'><a href='../S/59.html#L282'>settings</a>          282 mainwindow.cpp   avoidNumbers = settings.value("avoidNumbers").toBool();</span>
+<span class='curline'><a href='../S/59.html#L283'>settings</a>          283 mainwindow.cpp   lessRandom = settings.value("lessRandom").toBool();</span>
+<span class='curline'><a href='../S/59.html#L284'>settings</a>          284 mainwindow.cpp   useSymbols = (settings.value("useSymbols") == "true");</span>
+<span class='curline'><a href='../S/59.html#L285'>settings</a>          285 mainwindow.cpp   pwdConfig.selected = settings.value("passwordCharsSelected").toInt();</span>
+<span class='curline'><a href='../S/59.html#L286'>settings</a>          286 mainwindow.cpp   pwdConfig.length = settings.value("passwordLength").toInt();</span>
+<span class='curline'><a href='../S/59.html#L287'>settings</a>          287 mainwindow.cpp   pwdConfig.selected = settings.value("passwordCharsselection").toInt();</span>
+<span class='curline'><a href='../S/59.html#L288'>settings</a>          288 mainwindow.cpp   pwdConfig.Characters[3] = settings.value("passwordChars").toString();</span>
+<span class='curline'><a href='../S/59.html#L290'>settings</a>          290 mainwindow.cpp   useTrayIcon = settings.value("useTrayIcon").toBool();</span>
+<span class='curline'><a href='../S/59.html#L291'>settings</a>          291 mainwindow.cpp   hideOnClose = settings.value("hideOnClose").toBool();</span>
+<span class='curline'><a href='../S/59.html#L292'>settings</a>          292 mainwindow.cpp   startMinimized = settings.value("startMinimized").toBool();</span>
+<span class='curline'><a href='../S/59.html#L293'>settings</a>          293 mainwindow.cpp   alwaysOnTop = settings.value("alwaysOnTop").toBool();</span>
+<span class='curline'><a href='../S/59.html#L301'>settings</a>          301 mainwindow.cpp   autoPull = settings.value("autoPull").toBool();</span>
+<span class='curline'><a href='../S/59.html#L302'>settings</a>          302 mainwindow.cpp   autoPush = settings.value("autoPush").toBool();</span>
+<span class='curline'><a href='../S/59.html#L314'>settings</a>          314 mainwindow.cpp   passTemplate = settings.value("passTemplate").toString();</span>
+<span class='curline'><a href='../S/59.html#L315'>settings</a>          315 mainwindow.cpp   useTemplate = settings.value("useTemplate").toBool();</span>
+<span class='curline'><a href='../S/59.html#L316'>settings</a>          316 mainwindow.cpp   templateAllFields = settings.value("templateAllFields").toBool();</span>
+<span class='curline'><a href='../S/59.html#L342'>settings</a>          342 mainwindow.cpp   settings.setValue("version", VERSION);</span>
+<span class='curline'><a href='../S/59.html#L507'>settings</a>          507 mainwindow.cpp       QSettings &amp;settings(getSettings());</span>
+<span class='curline'><a href='../S/59.html#L509'>settings</a>          509 mainwindow.cpp       settings.setValue("version", VERSION);</span>
+<span class='curline'><a href='../S/59.html#L510'>settings</a>          510 mainwindow.cpp       settings.setValue("passExecutable", passExecutable);</span>
+<span class='curline'><a href='../S/59.html#L511'>settings</a>          511 mainwindow.cpp       settings.setValue("gitExecutable", gitExecutable);</span>
+<span class='curline'><a href='../S/59.html#L512'>settings</a>          512 mainwindow.cpp       settings.setValue("gpgExecutable", gpgExecutable);</span>
+<span class='curline'><a href='../S/59.html#L513'>settings</a>          513 mainwindow.cpp       settings.setValue("passStore", passStore);</span>
+<span class='curline'><a href='../S/59.html#L514'>settings</a>          514 mainwindow.cpp       settings.setValue("usePass", usePass ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L517'>settings</a>          517 mainwindow.cpp         settings.setValue("useClipboard", "true");</span>
+<span class='curline'><a href='../S/59.html#L520'>settings</a>          520 mainwindow.cpp         settings.setValue("useClipboard", "2");</span>
+<span class='curline'><a href='../S/59.html#L523'>settings</a>          523 mainwindow.cpp         settings.setValue("useClipboard", "false");</span>
+<span class='curline'><a href='../S/59.html#L526'>settings</a>          526 mainwindow.cpp       settings.setValue("useAutoclear", useAutoclear ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L527'>settings</a>          527 mainwindow.cpp       settings.setValue("autoclearSeconds", autoclearSeconds);</span>
+<span class='curline'><a href='../S/59.html#L528'>settings</a>          528 mainwindow.cpp       settings.setValue("useAutoclearPanel",</span>
+<span class='curline'><a href='../S/59.html#L530'>settings</a>          530 mainwindow.cpp       settings.setValue("autoclearPanelSeconds", autoclearPanelSeconds);</span>
+<span class='curline'><a href='../S/59.html#L531'>settings</a>          531 mainwindow.cpp       settings.setValue("hidePassword", hidePassword ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L532'>settings</a>          532 mainwindow.cpp       settings.setValue("hideContent", hideContent ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L533'>settings</a>          533 mainwindow.cpp       settings.setValue("addGPGId", addGPGId ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L534'>settings</a>          534 mainwindow.cpp       settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L535'>settings</a>          535 mainwindow.cpp       settings.setValue("hideOnClose", hideOnClose ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L536'>settings</a>          536 mainwindow.cpp       settings.setValue("startMinimized", startMinimized ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L537'>settings</a>          537 mainwindow.cpp       settings.setValue("useGit", useGit ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L538'>settings</a>          538 mainwindow.cpp       settings.setValue("pwgenExecutable", pwgenExecutable);</span>
+<span class='curline'><a href='../S/59.html#L539'>settings</a>          539 mainwindow.cpp       settings.setValue("usePwgen", usePwgen ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L540'>settings</a>          540 mainwindow.cpp       settings.setValue("avoidCapitals", avoidCapitals ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L541'>settings</a>          541 mainwindow.cpp       settings.setValue("avoidNumbers", avoidNumbers ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L542'>settings</a>          542 mainwindow.cpp       settings.setValue("lessRandom", lessRandom ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L543'>settings</a>          543 mainwindow.cpp       settings.setValue("useSymbols", useSymbols ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L544'>settings</a>          544 mainwindow.cpp       settings.setValue("passwordLength", pwdConfig.length);</span>
+<span class='curline'><a href='../S/59.html#L545'>settings</a>          545 mainwindow.cpp       settings.setValue("passwordCharsselection", pwdConfig.selected);</span>
+<span class='curline'><a href='../S/59.html#L546'>settings</a>          546 mainwindow.cpp       settings.setValue("passwordChars", pwdConfig.Characters[3]);</span>
+<span class='curline'><a href='../S/59.html#L547'>settings</a>          547 mainwindow.cpp       settings.setValue("useTemplate", useTemplate);</span>
+<span class='curline'><a href='../S/59.html#L548'>settings</a>          548 mainwindow.cpp       settings.setValue("passTemplate", passTemplate);</span>
+<span class='curline'><a href='../S/59.html#L549'>settings</a>          549 mainwindow.cpp       settings.setValue("templateAllFields", templateAllFields);</span>
+<span class='curline'><a href='../S/59.html#L550'>settings</a>          550 mainwindow.cpp       settings.setValue("autoPull", autoPull ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L551'>settings</a>          551 mainwindow.cpp       settings.setValue("autoPush", autoPush ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L552'>settings</a>          552 mainwindow.cpp       settings.setValue("alwaysOnTop", alwaysOnTop ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L564'>settings</a>          564 mainwindow.cpp         settings.beginGroup("profiles");</span>
+<span class='curline'><a href='../S/59.html#L565'>settings</a>          565 mainwindow.cpp         settings.remove("");</span>
+<span class='curline'><a href='../S/59.html#L573'>settings</a>          573 mainwindow.cpp           settings.setValue(i.key(), i.value());</span>
+<span class='curline'><a href='../S/59.html#L579'>settings</a>          579 mainwindow.cpp         settings.endGroup();</span>
+<span class='curline'><a href='../S/59.html#L581'>settings</a>          581 mainwindow.cpp         settings.remove("profiles");</span>
+<span class='curline'><a href='../S/59.html#L1635'>settings</a>         1635 mainwindow.cpp   QSettings &amp;settings(getSettings());</span>
+<span class='curline'><a href='../S/59.html#L1637'>settings</a>         1637 mainwindow.cpp   settings.setValue("profile", profile);</span>
+<span class='curline'><a href='../S/59.html#L1638'>settings</a>         1638 mainwindow.cpp   settings.setValue("passStore", passStore);</span>
+<span class='curline'><a href='../S/59.html#L1696'>settings</a>         1696 mainwindow.cpp     settings-&gt;beginGroup("mainwindow");</span>
+<span class='curline'><a href='../S/59.html#L1697'>settings</a>         1697 mainwindow.cpp     settings-&gt;setValue("geometry", saveGeometry());</span>
+<span class='curline'><a href='../S/59.html#L1698'>settings</a>         1698 mainwindow.cpp     settings-&gt;setValue("savestate", saveState());</span>
+<span class='curline'><a href='../S/59.html#L1699'>settings</a>         1699 mainwindow.cpp     settings-&gt;setValue("maximized", isMaximized());</span>
+<span class='curline'><a href='../S/59.html#L1701'>settings</a>         1701 mainwindow.cpp       settings-&gt;setValue("pos", pos());</span>
+<span class='curline'><a href='../S/59.html#L1702'>settings</a>         1702 mainwindow.cpp       settings-&gt;setValue("size", size());</span>
+<span class='curline'><a href='../S/59.html#L1704'>settings</a>         1704 mainwindow.cpp     settings-&gt;setValue("splitterLeft", ui-&gt;splitter-&gt;sizes()[0]);</span>
+<span class='curline'><a href='../S/59.html#L1705'>settings</a>         1705 mainwindow.cpp     settings-&gt;setValue("splitterRight", ui-&gt;splitter-&gt;sizes()[1]);</span>
+<span class='curline'><a href='../S/59.html#L1706'>settings</a>         1706 mainwindow.cpp     settings-&gt;endGroup();</span>
+<span class='curline'><a href='../S/60.html#L162'>settings</a>          162 mainwindow.h     QScopedPointer&lt;QSettings&gt; settings;</span>
+</pre>
+</body>
+</html>

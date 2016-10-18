@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>message</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L157'>message</a>           157 mainwindow.cpp     char message[256] = {0};</span>
+<span class='curline'><a href='../S/59.html#L158'>message</a>           158 mainwindow.cpp     FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,</span>
+<span class='curline'><a href='../S/59.html#L159'>message</a>           159 mainwindow.cpp                    sizeof(message), 0);</span>
+<span class='curline'><a href='../S/59.html#L161'>message</a>           161 mainwindow.cpp     ui-&gt;textBrowser-&gt;setText(tr("Failed to connect WebDAV:\n") + message +</span>
+<span class='curline'><a href='../S/59.html#L1529'>message</a>          1529 mainwindow.cpp void MainWindow::messageAvailable(QString message) {</span>
+<span class='curline'><a href='../S/59.html#L1530'>message</a>          1530 mainwindow.cpp   if (message.isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L1534'>message</a>          1534 mainwindow.cpp     ui-&gt;lineEdit-&gt;setText(message);</span>
+<span class='curline'><a href='../S/60.html#L147'>message</a>           147 mainwindow.h     void messageAvailable(QString message);</span>
+<span class='curline'><a href='../S/81.html#L46'>message</a>            46 singleapplication.cpp   QString message = QString::fromUtf8(byteArray.constData());</span>
+<span class='curline'><a href='../S/81.html#L47'>message</a>            47 singleapplication.cpp   emit messageAvailable(message);</span>
+<span class='curline'><a href='../S/81.html#L65'>message</a>            65 singleapplication.cpp bool SingleApplication::sendMessage(const QString &amp;message) {</span>
+<span class='curline'><a href='../S/81.html#L74'>message</a>            74 singleapplication.cpp   localSocket.write(message.toUtf8());</span>
+<span class='curline'><a href='../S/82.html#L19'>message</a>            19 singleapplication.h   bool sendMessage(const QString &amp;message);</span>
+<span class='curline'><a href='../S/82.html#L29'>message</a>            29 singleapplication.h   void messageAvailable(QString message);</span>
+</pre>
+</body>
+</html>

@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('mainwindow_8h.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -69,8 +90,8 @@ $(function() {
 <div class="title">mainwindow.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="storemodel_8h_source.html">storemodel.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="trayicon_8h_source.html">trayicon.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="HTML/S/84.html">storemodel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="HTML/S/86.html">trayicon.h</a>&quot;</code><br />
 <code>#include &lt;QFileSystemModel&gt;</code><br />
 <code>#include &lt;QMainWindow&gt;</code><br />
 <code>#include &lt;QProcess&gt;</code><br />
@@ -78,32 +99,24 @@ $(function() {
 <code>#include &lt;QSettings&gt;</code><br />
 <code>#include &lt;QTimer&gt;</code><br />
 <code>#include &lt;QTreeView&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for mainwindow.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="mainwindow_8h__incl.png" border="0" usemap="#mainwindow_8h" alt=""/></div>
-<map name="mainwindow_8h" id="mainwindow_8h">
-<area shape="rect" id="node2" href="storemodel_8h.html" title="storemodel.h" alt="" coords="224,79,323,104"/>
-<area shape="rect" id="node6" href="trayicon_8h.html" title="trayicon.h" alt="" coords="573,79,652,104"/>
-</map>
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for mainwindow.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="mainwindow_8h__dep__incl.png" border="0" usemap="#mainwindow_8hdep" alt=""/></div>
-<map name="mainwindow_8hdep" id="mainwindow_8hdep">
-<area shape="rect" id="node2" href="configdialog_8h.html" title="configdialog.h" alt="" coords="183,79,287,104"/>
-<area shape="rect" id="node3" href="configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,225,123,251"/>
-<area shape="rect" id="node6" href="mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,225,416,251"/>
-<area shape="rect" id="node7" href="main_8cpp.html" title="main.cpp" alt="" coords="538,79,614,104"/>
-<area shape="rect" id="node8" href="passworddialog_8h.html" title="passworddialog.h" alt="" coords="390,79,515,104"/>
-<area shape="rect" id="node4" href="keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,152,264,177"/>
-<area shape="rect" id="node5" href="keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,225,272,251"/>
-<area shape="rect" id="node9" href="passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="440,152,579,177"/>
-</map>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mainwindow_8h__incl.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-<p><a href="mainwindow_8h_source.html">Go to the source code of this file.</a></p>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mainwindow_8h__dep__incl.svg" width="619" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="HTML/S/60.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -140,16 +153,20 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mainwindow_8h_source.html#l00016">16</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/60.html#L16">16</a> of file <a class="el" href="HTML/S/60.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="mainwindow_8h.html">mainwindow.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

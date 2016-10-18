@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>qprogressindicator.cpp</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/qprogressindicator.cpp</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L10'>[^]</a><a href='#L84'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L10' title='Defined at 10.'>m_color</a></li>
+<li><a href='#L15' title='Defined at 15.'>isAnimated</a></li>
+<li><a href='#L17' title='Defined at 17.'>setDisplayedWhenStopped</a></li>
+<li><a href='#L23' title='Defined at 23.'>isDisplayedWhenStopped</a></li>
+<li><a href='#L27' title='Defined at 27.'>startAnimation</a></li>
+<li><a href='#L34' title='Defined at 34.'>stopAnimation</a></li>
+<li><a href='#L43' title='Defined at 43.'>setAnimationDelay</a></li>
+<li><a href='#L53' title='Defined at 53.'>setColor</a></li>
+<li><a href='#L63' title='Defined at 63.'>sizeHint</a></li>
+<li><a href='#L70' title='Defined at 70.'>heightForWidth</a></li>
+<li><a href='#L75' title='Defined at 75.'>timerEvent</a></li>
+<li><a href='#L84' title='Defined at 84.'>paintEvent</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='67.html'>qprogressindicator.h</a>"
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#include</em> &lt;QPainter&gt;
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='comment'>/**</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'> * @brief QProgressIndicator::QProgressIndicator constructor.</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'> * @param parent widget the indicator is placed in.</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'> */</em>
+<a id='L8' name='L8'></a>   8 <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>(<a href='../Y/124.html' title='Multiple used in 14 places.'>QWidget</a> *<a href='../Y/500.html' title='Multiple used in 25 places.'>parent</a>)
+<a id='L9' name='L9'></a>   9     : <a href='../Y/124.html' title='Multiple used in 14 places.'>QWidget</a>(<a href='../Y/500.html' title='Multiple used in 25 places.'>parent</a>), <a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a>(0), <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a>(-1), <a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a>(40),
+<a id='L10' name='L10'></a>  10       <a href='../Y/458.html' title='Multiple used in 5 places.'>m_displayedWhenStopped</a>(<strong class='reserved'>false</strong>), <a href='../R/107.html' title='Multiple referred from 4 places.'>m_color</a>(<a href='../Y/129.html' title='Multiple used in 37 places.'>Qt</a>::<a href='../Y/217.html' title='Multiple used in 2 places.'>black</a>) <em class='brace'>{</em>
+<a id='L11' name='L11'></a>  11   <a href='../Y/673.html' title='Multiple used in 2 places.'>setSizePolicy</a>(<a href='../Y/111.html' title='Multiple used in 10 places.'>QSizePolicy</a>::Fixed, <a href='../Y/111.html' title='Multiple used in 10 places.'>QSizePolicy</a>::Fixed);
+<a id='L12' name='L12'></a>  12   setFocusPolicy(<a href='../Y/129.html' title='Multiple used in 37 places.'>Qt</a>::NoFocus);
+<a id='L13' name='L13'></a>  13 <em class='brace'>}</em>
+<a id='L14' name='L14'></a>  14 
+<a id='L15' name='L15'></a>  15 <strong class='reserved'>bool</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/101.html' title='Multiple referred from 2 places.'>isAnimated</a>() <strong class='reserved'>const</strong> <em class='brace'>{</em> <strong class='reserved'>return</strong> <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> != -1; <em class='brace'>}</em>
+<a id='L16' name='L16'></a>  16 
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/170.html' title='Multiple referred from 2 places.'>setDisplayedWhenStopped</a>(<strong class='reserved'>bool</strong> <a href='../Y/713.html' title='Multiple used in 19 places.'>state</a>) <em class='brace'>{</em>
+<a id='L18' name='L18'></a>  18   <a href='../Y/458.html' title='Multiple used in 5 places.'>m_displayedWhenStopped</a> = <a href='../Y/713.html' title='Multiple used in 19 places.'>state</a>;
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20   <a href='../Y/758.html' title='Multiple used in 4 places.'>update</a>();
+<a id='L21' name='L21'></a>  21 <em class='brace'>}</em>
+<a id='L22' name='L22'></a>  22 
+<a id='L23' name='L23'></a>  23 <strong class='reserved'>bool</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/102.html' title='Multiple referred from 2 places.'>isDisplayedWhenStopped</a>() <strong class='reserved'>const</strong> <em class='brace'>{</em>
+<a id='L24' name='L24'></a>  24   <strong class='reserved'>return</strong> <a href='../Y/458.html' title='Multiple used in 5 places.'>m_displayedWhenStopped</a>;
+<a id='L25' name='L25'></a>  25 <em class='brace'>}</em>
+<a id='L26' name='L26'></a>  26 
+<a id='L27' name='L27'></a>  27 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/199.html' title='Multiple referred from 2 places.'>startAnimation</a>() <em class='brace'>{</em>
+<a id='L28' name='L28'></a>  28   <a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a> = 0;
+<a id='L29' name='L29'></a>  29 
+<a id='L30' name='L30'></a>  30   <strong class='reserved'>if</strong> (<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> == -1)
+<a id='L31' name='L31'></a>  31     <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> = <a href='../Y/710.html' title='Multiple used in 2 places.'>startTimer</a>(<a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a>);
+<a id='L32' name='L32'></a>  32 <em class='brace'>}</em>
+<a id='L33' name='L33'></a>  33 
+<a id='L34' name='L34'></a>  34 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../S/67.html#L74' title='Referred from 74 in qprogressindicator.h.'>stopAnimation</a>() <em class='brace'>{</em>
+<a id='L35' name='L35'></a>  35   <strong class='reserved'>if</strong> (<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> != -1)
+<a id='L36' name='L36'></a>  36     <a href='../Y/431.html' title='Multiple used in 2 places.'>killTimer</a>(<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a>);
+<a id='L37' name='L37'></a>  37 
+<a id='L38' name='L38'></a>  38   <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> = -1;
+<a id='L39' name='L39'></a>  39 
+<a id='L40' name='L40'></a>  40   <a href='../Y/758.html' title='Multiple used in 4 places.'>update</a>();
+<a id='L41' name='L41'></a>  41 <em class='brace'>}</em>
+<a id='L42' name='L42'></a>  42 
+<a id='L43' name='L43'></a>  43 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/164.html' title='Multiple referred from 2 places.'>setAnimationDelay</a>(<strong class='reserved'>int</strong> <a href='../Y/293.html' title='Multiple used in 4 places.'>delay</a>) <em class='brace'>{</em>
+<a id='L44' name='L44'></a>  44   <strong class='reserved'>if</strong> (<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> != -1)
+<a id='L45' name='L45'></a>  45     <a href='../Y/431.html' title='Multiple used in 2 places.'>killTimer</a>(<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a>);
+<a id='L46' name='L46'></a>  46 
+<a id='L47' name='L47'></a>  47   <a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a> = <a href='../Y/293.html' title='Multiple used in 4 places.'>delay</a>;
+<a id='L48' name='L48'></a>  48 
+<a id='L49' name='L49'></a>  49   <strong class='reserved'>if</strong> (<a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> != -1)
+<a id='L50' name='L50'></a>  50     <a href='../Y/459.html' title='Multiple used in 12 places.'>m_timerId</a> = <a href='../Y/710.html' title='Multiple used in 2 places.'>startTimer</a>(<a href='../Y/457.html' title='Multiple used in 6 places.'>m_delay</a>);
+<a id='L51' name='L51'></a>  51 <em class='brace'>}</em>
+<a id='L52' name='L52'></a>  52 
+<a id='L53' name='L53'></a>  53 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../R/169.html' title='Multiple referred from 2 places.'>setColor</a>(<strong class='reserved'>const</strong> <a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> &amp;<a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>) <em class='brace'>{</em>
+<a id='L54' name='L54'></a>  54   <a href='../S/66.html#L10' title='Defined at 10 in qprogressindicator.cpp.'>m_color</a> = <a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>;
+<a id='L55' name='L55'></a>  55 
+<a id='L56' name='L56'></a>  56   <a href='../Y/758.html' title='Multiple used in 4 places.'>update</a>();
+<a id='L57' name='L57'></a>  57 <em class='brace'>}</em>
+<a id='L58' name='L58'></a>  58 
+<a id='L59' name='L59'></a>  59 <em class='comment'>/**</em>
+<a id='L60' name='L60'></a>  60 <em class='comment'> * @brief QProgressIndicator::sizeHint default minimum size.</em>
+<a id='L61' name='L61'></a>  61 <em class='comment'> * @return QSize(20, 20)</em>
+<a id='L62' name='L62'></a>  62 <em class='comment'> */</em>
+<a id='L63' name='L63'></a>  63 <a href='../Y/110.html' title='Multiple used in 2 places.'>QSize</a> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../S/67.html#L62' title='Referred from 62 in qprogressindicator.h.'>sizeHint</a>() <strong class='reserved'>const</strong> <em class='brace'>{</em> <strong class='reserved'>return</strong> <a href='../Y/110.html' title='Multiple used in 2 places.'>QSize</a>(20, 20); <em class='brace'>}</em>
+<a id='L64' name='L64'></a>  64 
+<a id='L65' name='L65'></a>  65 <em class='comment'>/**</em>
+<a id='L66' name='L66'></a>  66 <em class='comment'> * @brief QProgressIndicator::heightForWidth square ratio.</em>
+<a id='L67' name='L67'></a>  67 <em class='comment'> * @param w requested width</em>
+<a id='L68' name='L68'></a>  68 <em class='comment'> * @return w returned height</em>
+<a id='L69' name='L69'></a>  69 <em class='comment'> */</em>
+<a id='L70' name='L70'></a>  70 <strong class='reserved'>int</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../S/67.html#L63' title='Referred from 63 in qprogressindicator.h.'>heightForWidth</a>(<strong class='reserved'>int</strong> <a href='../Y/778.html' title='Multiple used in 8 places.'>w</a>) <strong class='reserved'>const</strong> <em class='brace'>{</em> <strong class='reserved'>return</strong> <a href='../Y/778.html' title='Multiple used in 8 places.'>w</a>; <em class='brace'>}</em>
+<a id='L71' name='L71'></a>  71 
+<a id='L72' name='L72'></a>  72 <em class='comment'>/**</em>
+<a id='L73' name='L73'></a>  73 <em class='comment'> * @brief QProgressIndicator::timerEvent do the actual animation.</em>
+<a id='L74' name='L74'></a>  74 <em class='comment'> */</em>
+<a id='L75' name='L75'></a>  75 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../S/67.html#L97' title='Referred from 97 in qprogressindicator.h.'>timerEvent</a>(<a href='../Y/121.html' title='Multiple used in 2 places.'>QTimerEvent</a> * <em class='comment'>/*event*/</em>) <em class='brace'>{</em>
+<a id='L76' name='L76'></a>  76   <a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a> = (<a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a> + 30) % 360;
+<a id='L77' name='L77'></a>  77 
+<a id='L78' name='L78'></a>  78   <a href='../Y/758.html' title='Multiple used in 4 places.'>update</a>();
+<a id='L79' name='L79'></a>  79 <em class='brace'>}</em>
+<a id='L80' name='L80'></a>  80 
+<a id='L81' name='L81'></a>  81 <em class='comment'>/**</em>
+<a id='L82' name='L82'></a>  82 <em class='comment'> * @brief QProgressIndicator::paintEvent draw the spinner.</em>
+<a id='L83' name='L83'></a>  83 <em class='comment'> */</em>
+<a id='L84' name='L84'></a>  84 <strong class='reserved'>void</strong> <a href='../Y/103.html' title='Multiple used in 15 places.'>QProgressIndicator</a>::<a href='../S/67.html#L98' title='Referred from 98 in qprogressindicator.h.'>paintEvent</a>(<a href='../Y/98.html' title='Multiple used in 2 places.'>QPaintEvent</a> * <em class='comment'>/*event*/</em>) <em class='brace'>{</em>
+<a id='L85' name='L85'></a>  85   <strong class='reserved'>if</strong> (!<a href='../Y/458.html' title='Multiple used in 5 places.'>m_displayedWhenStopped</a> &amp;&amp; !<a href='../S/66.html#L15' title='Defined at 15 in qprogressindicator.cpp.'>isAnimated</a>())
+<a id='L86' name='L86'></a>  86     <strong class='reserved'>return</strong>;
+<a id='L87' name='L87'></a>  87 
+<a id='L88' name='L88'></a>  88   <strong class='reserved'>int</strong> <a href='../Y/790.html' title='Multiple used in 4 places.'>width</a> = qMin(<strong class='reserved'>this</strong>-&gt;<a href='../Y/790.html' title='Multiple used in 4 places.'>width</a>(), <strong class='reserved'>this</strong>-&gt;height());
+<a id='L89' name='L89'></a>  89 
+<a id='L90' name='L90'></a>  90   <a href='../Y/99.html' title='Multiple used in 2 places.'>QPainter</a> <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>(<strong class='reserved'>this</strong>);
+<a id='L91' name='L91'></a>  91   <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.setRenderHint(<a href='../Y/99.html' title='Multiple used in 2 places.'>QPainter</a>::Antialiasing);
+<a id='L92' name='L92'></a>  92 
+<a id='L93' name='L93'></a>  93   <strong class='reserved'>int</strong> <a href='../Y/496.html' title='Multiple used in 2 places.'>outerRadius</a> = <strong class='reserved'>int</strong>((<a href='../Y/790.html' title='Multiple used in 4 places.'>width</a> - 1) * 0.5);
+<a id='L94' name='L94'></a>  94   <strong class='reserved'>int</strong> <a href='../Y/396.html' title='Multiple used in 3 places.'>innerRadius</a> = <strong class='reserved'>int</strong>((<a href='../Y/790.html' title='Multiple used in 4 places.'>width</a> - 1) * 0.5 * 0.38);
+<a id='L95' name='L95'></a>  95 
+<a id='L96' name='L96'></a>  96   <strong class='reserved'>int</strong> <a href='../Y/223.html' title='Multiple used in 4 places.'>capsuleHeight</a> = <a href='../Y/496.html' title='Multiple used in 2 places.'>outerRadius</a> - <a href='../Y/396.html' title='Multiple used in 3 places.'>innerRadius</a>;
+<a id='L97' name='L97'></a>  97   <strong class='reserved'>int</strong> <a href='../Y/225.html' title='Multiple used in 4 places.'>capsuleWidth</a> =
+<a id='L98' name='L98'></a>  98       (<a href='../Y/790.html' title='Multiple used in 4 places.'>width</a> &gt; 32) ? <strong class='reserved'>int</strong>(<a href='../Y/223.html' title='Multiple used in 4 places.'>capsuleHeight</a> * 0.23) : <strong class='reserved'>int</strong>(<a href='../Y/223.html' title='Multiple used in 4 places.'>capsuleHeight</a> * 0.35);
+<a id='L99' name='L99'></a>  99   <strong class='reserved'>int</strong> <a href='../Y/224.html' title='Multiple used in 3 places.'>capsuleRadius</a> = <a href='../Y/225.html' title='Multiple used in 4 places.'>capsuleWidth</a> / 2;
+<a id='L100' name='L100'></a> 100 
+<a id='L101' name='L101'></a> 101   <strong class='reserved'>for</strong> (<strong class='reserved'>int</strong> <a href='../Y/389.html' title='Multiple used in 37 places.'>i</a> = 0; <a href='../Y/389.html' title='Multiple used in 37 places.'>i</a> &lt; 12; ++<a href='../Y/389.html' title='Multiple used in 37 places.'>i</a>) <em class='brace'>{</em>
+<a id='L102' name='L102'></a> 102     <a href='../Y/64.html' title='Multiple used in 9 places.'>QColor</a> <a href='../Y/267.html' title='Multiple used in 8 places.'>color</a> = <a href='../S/66.html#L10' title='Defined at 10 in qprogressindicator.cpp.'>m_color</a>;
+<a id='L103' name='L103'></a> 103     <a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>.setAlphaF(<strong class='reserved'>int</strong>(1.0f - (<a href='../Y/389.html' title='Multiple used in 37 places.'>i</a> / 12.0f)));
+<a id='L104' name='L104'></a> 104     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.setPen(<a href='../Y/129.html' title='Multiple used in 37 places.'>Qt</a>::NoPen);
+<a id='L105' name='L105'></a> 105     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.setBrush(<a href='../Y/267.html' title='Multiple used in 8 places.'>color</a>);
+<a id='L106' name='L106'></a> 106     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.save();
+<a id='L107' name='L107'></a> 107     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.translate(rect().center());
+<a id='L108' name='L108'></a> 108     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.rotate(<strong class='reserved'>int</strong>(<a href='../Y/456.html' title='Multiple used in 5 places.'>m_angle</a> - <a href='../Y/389.html' title='Multiple used in 37 places.'>i</a> * 30.0f));
+<a id='L109' name='L109'></a> 109     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.drawRoundedRect(<strong class='reserved'>int</strong>(-<a href='../Y/225.html' title='Multiple used in 4 places.'>capsuleWidth</a> * 0.5), -(<a href='../Y/396.html' title='Multiple used in 3 places.'>innerRadius</a> + <a href='../Y/223.html' title='Multiple used in 4 places.'>capsuleHeight</a>),
+<a id='L110' name='L110'></a> 110                       <a href='../Y/225.html' title='Multiple used in 4 places.'>capsuleWidth</a>, <a href='../Y/223.html' title='Multiple used in 4 places.'>capsuleHeight</a>, <a href='../Y/224.html' title='Multiple used in 3 places.'>capsuleRadius</a>,
+<a id='L111' name='L111'></a> 111                       <a href='../Y/224.html' title='Multiple used in 3 places.'>capsuleRadius</a>);
+<a id='L112' name='L112'></a> 112     <a href='../Y/499.html' title='Multiple used in 9 places.'>p</a>.restore();
+<a id='L113' name='L113'></a> 113   <em class='brace'>}</em>
+<a id='L114' name='L114'></a> 114 <em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L10'>[^]</a><a href='#L84'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>sourceModel</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/83.html#L19'>sourceModel</a>        19 storemodel.cpp   QModelIndex index = sourceModel()-&gt;index(sourceRow, 0, sourceParent);</span>
+<span class='curline'><a href='../S/83.html#L34'>sourceModel</a>        34 storemodel.cpp   if (sourceModel()-&gt;rowCount(index) &gt; 0) {</span>
+<span class='curline'><a href='../S/83.html#L35'>sourceModel</a>        35 storemodel.cpp     for (int nChild = 0; nChild &lt; sourceModel()-&gt;rowCount(index); ++nChild) {</span>
+<span class='curline'><a href='../S/83.html#L36'>sourceModel</a>        36 storemodel.cpp       QModelIndex childIndex = sourceModel()-&gt;index(nChild, 0, index);</span>
+<span class='curline'><a href='../S/83.html#L44'>sourceModel</a>        44 storemodel.cpp     QModelIndex useIndex = sourceModel()-&gt;index(index.row(), 0, index.parent());</span>
+<span class='curline'><a href='../S/83.html#L58'>sourceModel</a>        58 storemodel.cpp void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,</span>
+<span class='curline'><a href='../S/83.html#L60'>sourceModel</a>        60 storemodel.cpp   fs = sourceModel;</span>
+<span class='curline'><a href='../S/84.html#L23'>sourceModel</a>        23 storemodel.h     void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);</span>
+</pre>
+</body>
+</html>

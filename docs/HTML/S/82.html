@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>singleapplication.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/singleapplication.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/13.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/82.html#L2' title='Defined at 2 in singleapplication.h.'>SINGLEAPPLICATION_H_</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/82.html#L1' title='Referred from 1 in singleapplication.h.'>SINGLEAPPLICATION_H_</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;QApplication&gt;
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;QLocalServer&gt;
+<a id='L6' name='L6'></a>   6 <em class='sharp'>#include</em> &lt;QSharedMemory&gt;
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8 <em class='comment'>/*!</em>
+<a id='L9' name='L9'></a>   9 <em class='comment'>    \class SingleApplication</em>
+<a id='L10' name='L10'></a>  10 <em class='comment'>    \brief The SingleApplication class is used for commandline intergration.</em>
+<a id='L11' name='L11'></a>  11 <em class='comment'></em>
+<a id='L12' name='L12'></a>  12 <em class='comment'>    This class needs a bit of work or possibly replacement.</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'> */</em>
+<a id='L14' name='L14'></a>  14 <a href='../Y/255.html' title='Multiple used in 16 places.'>class</a> <a href='../S/60.html#L16' title='Defined at 16 in mainwindow.h.'>SingleApplication</a> : <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a> <a href='../Y/59.html' title='Multiple used in 8 places.'>QApplication</a> <em class='brace'>{</em>
+<a id='L15' name='L15'></a>  15   <a href='../Y/126.html' title='Multiple used in 9 places.'>Q_OBJECT</a>
+<a id='L16' name='L16'></a>  16 <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a>:
+<a id='L17' name='L17'></a>  17   <a href='../S/60.html#L16' title='Defined at 16 in mainwindow.h.'>SingleApplication</a>(<strong class='reserved'>int</strong> &amp;<a href='../Y/202.html' title='Multiple used in 7 places.'>argc</a>, <strong class='reserved'>char</strong> *<a href='../Y/204.html' title='Multiple used in 7 places.'>argv</a>[], <strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../Y/757.html' title='Multiple used in 3 places.'>uniqueKey</a>);
+<a id='L18' name='L18'></a>  18   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../S/81.html#L57' title='Defined at 57 in singleapplication.cpp.'>isRunning</a>();
+<a id='L19' name='L19'></a>  19   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../S/81.html#L65' title='Defined at 65 in singleapplication.cpp.'>sendMessage</a>(<strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> &amp;<a href='../Y/469.html' title='Multiple used in 14 places.'>message</a>);
+<a id='L20' name='L20'></a>  20 
+<a id='L21' name='L21'></a>  21 <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a> <a href='../Y/698.html' title='Multiple used in 8 places.'>slots</a>:
+<a id='L22' name='L22'></a>  22   <strong class='reserved'>void</strong> <a href='../S/81.html#L39' title='Defined at 39 in singleapplication.cpp.'>receiveMessage</a>();
+<a id='L23' name='L23'></a>  23 
+<a id='L24' name='L24'></a>  24 <a href='../Y/694.html' title='Multiple used in 2 places.'>signals</a>:
+<a id='L25' name='L25'></a>  25   <em class='comment'>/**</em>
+<a id='L26' name='L26'></a>  26 <em class='comment'>   * @brief messageAvailable notification from commandline</em>
+<a id='L27' name='L27'></a>  27 <em class='comment'>   * @param message args sent to qtpass executable</em>
+<a id='L28' name='L28'></a>  28 <em class='comment'>   */</em>
+<a id='L29' name='L29'></a>  29   <strong class='reserved'>void</strong> <a href='../S/59.html#L1529' title='Defined at 1529 in mainwindow.cpp.'>messageAvailable</a>(<a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../Y/469.html' title='Multiple used in 14 places.'>message</a>);
+<a id='L30' name='L30'></a>  30 
+<a id='L31' name='L31'></a>  31 <a href='../Y/525.html' title='Multiple used in 15 places.'>private</a>:
+<a id='L32' name='L32'></a>  32   <a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../Y/171.html' title='Multiple used in 5 places.'>_isRunning</a>;
+<a id='L33' name='L33'></a>  33   <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../S/81.html#L13' title='Defined at 13 in singleapplication.cpp.'>_uniqueKey</a>;
+<a id='L34' name='L34'></a>  34   QSharedMemory <a href='../Y/688.html' title='Multiple used in 4 places.'>sharedMemory</a>;
+<a id='L35' name='L35'></a>  35   <a href='../Y/106.html' title='Multiple used in 8 places.'>QScopedPointer</a>&lt;<a href='../Y/90.html' title='Multiple used in 2 places.'>QLocalServer</a>&gt; <a href='../Y/451.html' title='Multiple used in 5 places.'>localServer</a>;
+<a id='L36' name='L36'></a>  36 
+<a id='L37' name='L37'></a>  37   <strong class='reserved'>static</strong> <strong class='reserved'>const</strong> <strong class='reserved'>int</strong> <a href='../Y/728.html' title='Multiple used in 5 places.'>timeout</a> = 1000;
+<a id='L38' name='L38'></a>  38 <em class='brace'>}</em>;
+<a id='L39' name='L39'></a>  39 
+<a id='L40' name='L40'></a>  40 <em class='sharp'>#endif</em> <em class='comment'>// SINGLEAPPLICATION_H_</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

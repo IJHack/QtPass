@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_single_application.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -74,21 +95,23 @@ $(function() {
 <p>The <a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration. ">SingleApplication</a> class is used for commandline intergration.  
  <a href="class_single_application.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for SingleApplication:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application__inherit__graph.png" border="0" usemap="#_single_application_inherit__map" alt="Inheritance graph"/></div>
-<map name="_single_application_inherit__map" id="_single_application_inherit__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for SingleApplication:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application__coll__graph.png" border="0" usemap="#_single_application_coll__map" alt="Collaboration graph"/></div>
-<map name="_single_application_coll__map" id="_single_application_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<p><code>#include &lt;<a class="el" href="HTML/S/82.html">singleapplication.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SingleApplication:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_single_application__inherit__graph.svg" width="135" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for SingleApplication:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_single_application__coll__graph.svg" width="135" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -118,7 +141,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration. ">SingleApplication</a> class is used for commandline intergration. </p>
 <p>This class needs a bit of work or possibly replacement. </p>
 
-<p>Definition at line <a class="el" href="singleapplication_8h_source.html#l00014">14</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/82.html#L14">14</a> of file <a class="el" href="HTML/S/82.html">singleapplication.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a913b6f1a9f438b67c05b32ac79ce5b72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a913b6f1a9f438b67c05b32ac79ce5b72">&sect;&nbsp;</a></span>SingleApplication()</h2>
@@ -162,15 +185,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00011">11</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application_a913b6f1a9f438b67c05b32ac79ce5b72_cgraph.png" border="0" usemap="#class_single_application_a913b6f1a9f438b67c05b32ac79ce5b72_cgraph" alt=""/></div>
-<map name="class_single_application_a913b6f1a9f438b67c05b32ac79ce5b72_cgraph" id="class_single_application_a913b6f1a9f438b67c05b32ac79ce5b72_cgraph">
-<area shape="rect" id="node2" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message. " alt="" coords="184,5,315,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/81.html#L11">11</a> of file <a class="el" href="HTML/S/81.html">singleapplication.cpp</a>.</p>
 
 </div>
 </div>
@@ -193,15 +208,7 @@ Here is the call graph for this function:</div>
 <p><a class="el" href="class_single_application.html#a226f6a08af235dd032f07bac926cce85" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server...">SingleApplication::isRunning</a> is there already a QtPass instance running, to check wether to be server or client. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00057">57</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application_a226f6a08af235dd032f07bac926cce85_icgraph.png" border="0" usemap="#class_single_application_a226f6a08af235dd032f07bac926cce85_icgraph" alt=""/></div>
-<map name="class_single_application_a226f6a08af235dd032f07bac926cce85_icgraph" id="class_single_application_a226f6a08af235dd032f07bac926cce85_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main " alt="" coords="184,12,235,37"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/81.html#L57">57</a> of file <a class="el" href="HTML/S/81.html">singleapplication.cpp</a>.</p>
 
 </div>
 </div>
@@ -236,15 +243,6 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application_ab0b90cb05c710731ed553cea4465543e_icgraph.png" border="0" usemap="#class_single_application_ab0b90cb05c710731ed553cea4465543e_icgraph" alt=""/></div>
-<map name="class_single_application_ab0b90cb05c710731ed553cea4465543e_icgraph" id="class_single_application_ab0b90cb05c710731ed553cea4465543e_icgraph">
-<area shape="rect" id="node2" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message. " alt="" coords="184,5,315,44"/>
-<area shape="rect" id="node3" href="class_single_application.html#a913b6f1a9f438b67c05b32ac79ce5b72" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c..." alt="" coords="363,5,494,44"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -273,15 +271,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message. ">SingleApplication::receiveMessage</a> we have received (a command line) message. </p>
 
-<p>Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00039">39</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph.png" border="0" usemap="#class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph" alt=""/></div>
-<map name="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph" id="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph">
-<area shape="rect" id="node2" href="class_single_application.html#a913b6f1a9f438b67c05b32ac79ce5b72" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c..." alt="" coords="184,5,315,44"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/81.html#L39">39</a> of file <a class="el" href="HTML/S/81.html">singleapplication.cpp</a>.</p>
 
 </div>
 </div>
@@ -310,28 +300,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00065">65</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_single_application_aa239b90b18119ba78a63e62d8da3738f_icgraph.png" border="0" usemap="#class_single_application_aa239b90b18119ba78a63e62d8da3738f_icgraph" alt=""/></div>
-<map name="class_single_application_aa239b90b18119ba78a63e62d8da3738f_icgraph" id="class_single_application_aa239b90b18119ba78a63e62d8da3738f_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main " alt="" coords="184,12,235,37"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/81.html#L65">65</a> of file <a class="el" href="HTML/S/81.html">singleapplication.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="singleapplication_8h_source.html">singleapplication.h</a></li>
-<li><a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a></li>
+<li><a class="el" href="HTML/S/82.html">singleapplication.h</a></li>
+<li><a class="el" href="HTML/S/81.html">singleapplication.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_single_application.html">SingleApplication</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

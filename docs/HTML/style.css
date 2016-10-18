@@ -1,0 +1,78 @@
+/*
+ * Copyright (c) 2005, 2010, 2011 Tama Communications Corporation
+ *
+ * This file is free software; as a special exception the author gives
+ * unlimited permission to copy and/or distribute it, with or without
+ * modifications, as long as this notice is preserved.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+/*
+ * Souce code
+ */
+body		{ color: #191970; background-color: #f5f5dc; }
+a.visited	{ color: gray; }
+.title		{ color: #cc0000; }
+.poweredby	{ text-align: right; }
+.error		{ color: red; }
+.loading	{ color: white; background-color: red; }
+.cvs		{ font-size: 90%; }
+.caution	{ text-align: center; margin: 1em 40px; }
+img.icon	{ vertical-align: top; border: 0; }
+.curline:hover	{ background-color:lightgray; }
+table.flist	{ border-spacing: 2px; width: 100%; }
+/*
+ * Parts
+ */
+em		{ font-style: normal; }
+em.comment	{ color: green; font-style: italic; }
+em.sharp	{ color: #8b0000; }
+em.brace	{ color: red; }
+em.position	{ color: gray; font-style: italic; }
+em.warned	{ background-color: yellow; }
+em.string	{ text-decoration: underline; }
+strong.reserved	{ font-weight: bold; }
+/*
+ * Tag list using table (--table-list)
+ */
+th, td		{ white-space: nowrap; }
+th.tag		{ text-align: left; }
+th.line		{ text-align: right; }
+th.file		{ text-align: left; }
+th.code		{ text-align: left; }
+td.tag		{ text-align: left; }
+td.line		{ text-align: right; }
+td.file		{ text-align: left; }
+td.code		{ text-align: left; }
+/* end of TAG LIST */
+/*
+ * Fixed guide (--fixed-guide)
+ */
+#guide {
+	height: 35px;
+	position: fixed;
+	bottom:0px; left:0px; right:0px;
+	background: #f5f5dc;
+	border: 1px solid #ccc;
+}
+#guide ul {
+	height: 25px;
+	margin: 5px;
+	width: 90%;
+}
+#guide ul li {
+	float: left;
+	display: inline;
+	margin: 1px 1px;
+}
+#guide a {
+	line-height: 24px;
+}
+#guide ul li.standout span {
+	margin: 0px 4px;
+	font-size: 115%;
+	font-weight: bold;
+}
+/* end of FIXED GUIDE */

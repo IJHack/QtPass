@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>usePwgen</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L713'>usePwgen</a>          713 configdialog.cpp   bool usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span>
+<span class='curline'><a href='../S/5.html#L714'>usePwgen</a>          714 configdialog.cpp   ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L715'>usePwgen</a>          715 configdialog.cpp   ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L716'>usePwgen</a>          716 configdialog.cpp   ui-&gt;checkBoxLessRandom-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L717'>usePwgen</a>          717 configdialog.cpp   ui-&gt;checkBoxUseSymbols-&gt;setEnabled(usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L718'>usePwgen</a>          718 configdialog.cpp   ui-&gt;lineEditPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L719'>usePwgen</a>          719 configdialog.cpp   ui-&gt;labelPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L720'>usePwgen</a>          720 configdialog.cpp   ui-&gt;passwordCharTemplateSelector-&gt;setEnabled(!usePwgen);</span>
+<span class='curline'><a href='../S/5.html#L730'>usePwgen</a>          730 configdialog.cpp void ConfigDialog::usePwgen(bool usePwgen) {</span>
+<span class='curline'><a href='../S/5.html#L732'>usePwgen</a>          732 configdialog.cpp     usePwgen = false;</span>
+<span class='curline'><a href='../S/5.html#L733'>usePwgen</a>          733 configdialog.cpp   ui-&gt;checkBoxUsePwgen-&gt;setChecked(usePwgen);</span>
+<span class='curline'><a href='../S/6.html#L68'>usePwgen</a>           68 configdialog.h   void usePwgen(bool usePwgen);</span>
+<span class='curline'><a href='../S/6.html#L78'>usePwgen</a>           78 configdialog.h   bool usePwgen();</span>
+<span class='curline'><a href='../S/59.html#L280'>usePwgen</a>          280 mainwindow.cpp   usePwgen = (settings.value("usePwgen") == "true");</span>
+<span class='curline'><a href='../S/59.html#L328'>usePwgen</a>          328 mainwindow.cpp       usePwgen = true;</span>
+<span class='curline'><a href='../S/59.html#L330'>usePwgen</a>          330 mainwindow.cpp       usePwgen = false;</span>
+<span class='curline'><a href='../S/59.html#L453'>usePwgen</a>          453 mainwindow.cpp   d-&gt;usePwgen(usePwgen);</span>
+<span class='curline'><a href='../S/59.html#L492'>usePwgen</a>          492 mainwindow.cpp       usePwgen = d-&gt;usePwgen();</span>
+<span class='curline'><a href='../S/59.html#L539'>usePwgen</a>          539 mainwindow.cpp       settings.setValue("usePwgen", usePwgen ? "true" : "false");</span>
+<span class='curline'><a href='../S/59.html#L1148'>usePwgen</a>         1148 mainwindow.cpp   d.usePwgen(usePwgen);</span>
+<span class='curline'><a href='../S/59.html#L1881'>usePwgen</a>         1881 mainwindow.cpp   if (usePwgen) {</span>
+<span class='curline'><a href='../S/60.html#L207'>usePwgen</a>          207 mainwindow.h     bool usePwgen;</span>
+<span class='curline'><a href='../S/63.html#L179'>usePwgen</a>          179 passworddialog.cpp void PasswordDialog::usePwgen(bool usePwgen) {</span>
+<span class='curline'><a href='../S/63.html#L180'>usePwgen</a>          180 passworddialog.cpp   ui-&gt;passwordTemplateSwitch-&gt;setDisabled(usePwgen);</span>
+<span class='curline'><a href='../S/63.html#L181'>usePwgen</a>          181 passworddialog.cpp   ui-&gt;label_characterset-&gt;setDisabled(usePwgen);</span>
+<span class='curline'><a href='../S/64.html#L50'>usePwgen</a>           50 passworddialog.h   void usePwgen(bool usePwgen);</span>
+</pre>
+</body>
+</html>

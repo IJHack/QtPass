@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>_env</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/91.html#L12'>_env</a>               12 util.cpp       QProcessEnvironment Util::_env;</span>
+<span class='curline'><a href='../S/91.html#L21'>_env</a>               21 util.cpp           _env = QProcessEnvironment::systemEnvironment();</span>
+<span class='curline'><a href='../S/91.html#L24'>_env</a>               24 util.cpp           QString path = _env.value("PATH");</span>
+<span class='curline'><a href='../S/91.html#L31'>_env</a>               31 util.cpp           _env.insert("PATH", path);</span>
+<span class='curline'><a href='../S/91.html#L45'>_env</a>               45 util.cpp         if (_env.contains("PASSWORD_STORE_DIR")) {</span>
+<span class='curline'><a href='../S/91.html#L46'>_env</a>               46 util.cpp           path = _env.value("PASSWORD_STORE_DIR");</span>
+<span class='curline'><a href='../S/91.html#L83'>_env</a>               83 util.cpp         if (_env.contains("PATH")) {</span>
+<span class='curline'><a href='../S/91.html#L84'>_env</a>               84 util.cpp           QString path = _env.value("PATH");</span>
+<span class='curline'><a href='../S/92.html#L22'>_env</a>               22 util.h           static QProcessEnvironment _env;</span>
+</pre>
+</body>
+</html>

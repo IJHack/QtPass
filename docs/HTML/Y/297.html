@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>dialog</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L151'>dialog</a>            151 configdialog.cpp   QFileDialog dialog(this);</span>
+<span class='curline'><a href='../S/5.html#L152'>dialog</a>            152 configdialog.cpp   dialog.setFileMode(QFileDialog::ExistingFile);</span>
+<span class='curline'><a href='../S/5.html#L153'>dialog</a>            153 configdialog.cpp   dialog.setOption(QFileDialog::ReadOnly);</span>
+<span class='curline'><a href='../S/5.html#L154'>dialog</a>            154 configdialog.cpp   if (dialog.exec())</span>
+<span class='curline'><a href='../S/5.html#L155'>dialog</a>            155 configdialog.cpp     return dialog.selectedFiles().first();</span>
+<span class='curline'><a href='../S/5.html#L165'>dialog</a>            165 configdialog.cpp   QFileDialog dialog(this);</span>
+<span class='curline'><a href='../S/5.html#L166'>dialog</a>            166 configdialog.cpp   dialog.setFileMode(QFileDialog::Directory);</span>
+<span class='curline'><a href='../S/5.html#L167'>dialog</a>            167 configdialog.cpp   dialog.setFilter(QDir::NoFilter);</span>
+<span class='curline'><a href='../S/5.html#L168'>dialog</a>            168 configdialog.cpp   dialog.setOption(QFileDialog::ShowDirsOnly);</span>
+<span class='curline'><a href='../S/5.html#L169'>dialog</a>            169 configdialog.cpp   if (dialog.exec())</span>
+<span class='curline'><a href='../S/5.html#L170'>dialog</a>            170 configdialog.cpp     return dialog.selectedFiles().first();</span>
+<span class='curline'><a href='../S/5.html#L409'>dialog</a>            409 configdialog.cpp void ConfigDialog::genKey(QString batch, QDialog *dialog) {</span>
+<span class='curline'><a href='../S/5.html#L410'>dialog</a>            410 configdialog.cpp   mainWindow-&gt;generateKeyPair(batch, dialog);</span>
+<span class='curline'><a href='../S/31.html#L14'>dialog</a>             14 keygendialog.cpp   dialog = parent;</span>
+<span class='curline'><a href='../S/31.html#L169'>dialog</a>            169 keygendialog.cpp     dialog-&gt;genKey(ui-&gt;plainTextEdit-&gt;toPlainText(), this);</span>
+<span class='curline'><a href='../S/32.html#L38'>dialog</a>             38 keygendialog.h   ConfigDialog *dialog;</span>
+</pre>
+</body>
+</html>

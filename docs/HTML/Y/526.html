@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>process</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L32'>process</a>            32 mainwindow.cpp     : QMainWindow(parent), ui(new Ui::MainWindow), process(new QProcess(this)),</span>
+<span class='curline'><a href='../S/59.html#L36'>process</a>            36 mainwindow.cpp   connect(process.data(), SIGNAL(error(QProcess::ProcessError)), this,</span>
+<span class='curline'><a href='../S/59.html#L38'>process</a>            38 mainwindow.cpp   connect(process.data(), SIGNAL(finished(int, QProcess::ExitStatus)), this,</span>
+<span class='curline'><a href='../S/59.html#L767'>process</a>           767 mainwindow.cpp   process-&gt;setWorkingDirectory(passStore);</span>
+<span class='curline'><a href='../S/59.html#L768'>process</a>           768 mainwindow.cpp   process-&gt;setEnvironment(env);</span>
+<span class='curline'><a href='../S/59.html#L778'>process</a>           778 mainwindow.cpp   process-&gt;start('"' + app + "\" " + args);</span>
+<span class='curline'><a href='../S/59.html#L780'>process</a>           780 mainwindow.cpp     process-&gt;write(input.toUtf8());</span>
+<span class='curline'><a href='../S/59.html#L781'>process</a>           781 mainwindow.cpp   process-&gt;closeWriteChannel();</span>
+<span class='curline'><a href='../S/59.html#L793'>process</a>           793 mainwindow.cpp     error = process-&gt;readAllStandardError();</span>
+<span class='curline'><a href='../S/59.html#L794'>process</a>           794 mainwindow.cpp     QByteArray processOutBytes = process-&gt;readAllStandardOutput();</span>
+<span class='curline'><a href='../S/59.html#L992'>process</a>           992 mainwindow.cpp   if (process-&gt;state() == QProcess::NotRunning)</span>
+<span class='curline'><a href='../S/59.html#L1369'>process</a>          1369 mainwindow.cpp   process-&gt;waitForFinished(2000);</span>
+<span class='curline'><a href='../S/59.html#L1370'>process</a>          1370 mainwindow.cpp   if (process-&gt;exitStatus() != QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/59.html#L1372'>process</a>          1372 mainwindow.cpp   QByteArray processOutBytes = process-&gt;readAllStandardOutput();</span>
+<span class='curline'><a href='../S/59.html#L1854'>process</a>          1854 mainwindow.cpp   process-&gt;waitForFinished();</span>
+<span class='curline'><a href='../S/59.html#L1867'>process</a>          1867 mainwindow.cpp     process-&gt;waitForFinished(30000); // long wait (passphrase stuff)</span>
+<span class='curline'><a href='../S/59.html#L1868'>process</a>          1868 mainwindow.cpp     if (process-&gt;exitStatus() == QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/59.html#L1890'>process</a>          1890 mainwindow.cpp     process-&gt;waitForFinished(1000);</span>
+<span class='curline'><a href='../S/59.html#L1891'>process</a>          1891 mainwindow.cpp     if (process-&gt;exitStatus() == QProcess::NormalExit)</span>
+<span class='curline'><a href='../S/59.html#L1893'>process</a>          1893 mainwindow.cpp           QString(process-&gt;readAllStandardOutput()).remove(QRegExp("[\\n\\r]"));</span>
+<span class='curline'><a href='../S/59.html#L1922'>process</a>          1922 mainwindow.cpp   while (!process-&gt;atEnd() || !execQueue-&gt;isEmpty()) {</span>
+<span class='curline'><a href='../S/59.html#L1989'>process</a>          1989 mainwindow.cpp   process-&gt;waitForFinished();</span>
+<span class='curline'><a href='../S/59.html#L2001'>process</a>          2001 mainwindow.cpp     process-&gt;waitForFinished();</span>
+<span class='curline'><a href='../S/59.html#L2006'>process</a>          2006 mainwindow.cpp     process-&gt;waitForFinished(3000);</span>
+<span class='curline'><a href='../S/59.html#L2009'>process</a>          2009 mainwindow.cpp         process-&gt;readAllStandardOutput() + process-&gt;readAllStandardError();</span>
+<span class='curline'><a href='../S/59.html#L2031'>process</a>          2031 mainwindow.cpp       process-&gt;waitForFinished(30000); // long wait (passphrase stuff)</span>
+<span class='curline'><a href='../S/59.html#L2032'>process</a>          2032 mainwindow.cpp       lastDecrypt = process-&gt;readAllStandardOutput();</span>
+<span class='curline'><a href='../S/59.html#L2050'>process</a>          2050 mainwindow.cpp         process-&gt;waitForFinished(3000);</span>
+<span class='curline'><a href='../S/59.html#L2059'>process</a>          2059 mainwindow.cpp           process-&gt;waitForFinished(3000);</span>
+<span class='curline'><a href='../S/60.html#L167'>process</a>           167 mainwindow.h     QScopedPointer&lt;QProcess&gt; process;</span>
+</pre>
+</body>
+</html>

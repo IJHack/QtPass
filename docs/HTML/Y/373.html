@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>gpgId</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L1102'>gpgId</a>            1102 mainwindow.cpp   QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id")</span>
+<span class='curline'><a href='../S/59.html#L1104'>gpgId</a>            1104 mainwindow.cpp   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))</span>
+<span class='curline'><a href='../S/59.html#L1107'>gpgId</a>            1107 mainwindow.cpp   while (!gpgId.atEnd()) {</span>
+<span class='curline'><a href='../S/59.html#L1108'>gpgId</a>            1108 mainwindow.cpp     QString recipient(gpgId.readLine());</span>
+<span class='curline'><a href='../S/59.html#L1472'>gpgId</a>            1472 mainwindow.cpp     QFile gpgId(gpgIdFile);</span>
+<span class='curline'><a href='../S/59.html#L1479'>gpgId</a>            1479 mainwindow.cpp     if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {</span>
+<span class='curline'><a href='../S/59.html#L1487'>gpgId</a>            1487 mainwindow.cpp         gpgId.write((user.key_id + "\n").toUtf8());</span>
+<span class='curline'><a href='../S/59.html#L1491'>gpgId</a>            1491 mainwindow.cpp     gpgId.close();</span>
+<span class='curline'><a href='../S/59.html#L1993'>gpgId</a>            1993 mainwindow.cpp   QStringList gpgId;</span>
+<span class='curline'><a href='../S/59.html#L1997'>gpgId</a>            1997 mainwindow.cpp       gpgId = getRecipientList(fileName);</span>
+<span class='curline'><a href='../S/59.html#L1998'>gpgId</a>            1998 mainwindow.cpp       gpgId.sort();</span>
+<span class='curline'><a href='../S/59.html#L2023'>gpgId</a>            2023 mainwindow.cpp     if (actualKeys != gpgId) {</span>
+<span class='curline'><a href='../S/59.html#L2025'>gpgId</a>            2025 mainwindow.cpp       qDebug() &lt;&lt; "reencrypt " &lt;&lt; fileName &lt;&lt; " for " &lt;&lt; gpgId;</span>
+</pre>
+</body>
+</html>

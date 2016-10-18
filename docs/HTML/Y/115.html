@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>QSystemTrayIcon</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/59.html#L1664'>QSystemTrayIcon</a>  1664 mainwindow.cpp   if (QSystemTrayIcon::isSystemTrayAvailable() == true) {</span>
+<span class='curline'><a href='../S/85.html#L19'>QSystemTrayIcon</a>    19 trayicon.cpp                      SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,</span>
+<span class='curline'><a href='../S/85.html#L20'>QSystemTrayIcon</a>    20 trayicon.cpp                      SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));</span>
+<span class='curline'><a href='../S/85.html#L69'>QSystemTrayIcon</a>    69 trayicon.cpp     sysTrayIcon = new QSystemTrayIcon(this);</span>
+<span class='curline'><a href='../S/85.html#L87'>QSystemTrayIcon</a>    87 trayicon.cpp   void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {</span>
+<span class='curline'><a href='../S/85.html#L89'>QSystemTrayIcon</a>    89 trayicon.cpp     case QSystemTrayIcon::Trigger:</span>
+<span class='curline'><a href='../S/85.html#L90'>QSystemTrayIcon</a>    90 trayicon.cpp     case QSystemTrayIcon::DoubleClick:</span>
+<span class='curline'><a href='../S/85.html#L93'>QSystemTrayIcon</a>    93 trayicon.cpp     case QSystemTrayIcon::MiddleClick:</span>
+<span class='curline'><a href='../S/85.html#L107'>QSystemTrayIcon</a>   107 trayicon.cpp     sysTrayIcon-&gt;showMessage(title, msg, QSystemTrayIcon::Information, time);</span>
+<span class='curline'><a href='../S/86.html#L27'>QSystemTrayIcon</a>    27 trayicon.h       void iconActivated(QSystemTrayIcon::ActivationReason reason);</span>
+<span class='curline'><a href='../S/86.html#L40'>QSystemTrayIcon</a>    40 trayicon.h       QSystemTrayIcon *sysTrayIcon;</span>
+</pre>
+</body>
+</html>

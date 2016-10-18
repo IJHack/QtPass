@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>storemodel.cpp</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/storemodel.cpp</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L17'>[^]</a><a href='#L70'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L17' title='Defined at 17.'>filterAcceptsRow</a></li>
+<li><a href='#L29' title='Defined at 29.'>ShowThis</a></li>
+<li><a href='#L58' title='Defined at 58.'>setModelAndStore</a></li>
+<li><a href='#L70' title='Defined at 70.'>data</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='84.html'>storemodel.h</a>"
+<a id='L2' name='L2'></a>   2 
+<a id='L3' name='L3'></a>   3 <em class='comment'>/**</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'> * @brief StoreModel::StoreModel</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'> * SubClass of QSortFilterProxyModel via</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'> * http://www.qtcentre.org/threads/46471-QTreeView-Filter</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'> */</em>
+<a id='L8' name='L8'></a>   8 <a href='../S/83.html#L8' title='Defined at 8 in storemodel.cpp.'>StoreModel</a>::<a href='../R/27.html' title='Multiple referred from 8 places.'>StoreModel</a>() <em class='brace'>{</em> <a href='../Y/361.html' title='Multiple used in 5 places.'>fs</a> = <a href='../Y/46.html' title='Multiple used in 23 places.'>NULL</a>; <em class='brace'>}</em>
+<a id='L9' name='L9'></a>   9 
+<a id='L10' name='L10'></a>  10 <em class='comment'>/**</em>
+<a id='L11' name='L11'></a>  11 <em class='comment'> * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for</em>
+<a id='L12' name='L12'></a>  12 <em class='comment'> * StoreModel::ShowThis method.</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'> * @param sourceRow</em>
+<a id='L14' name='L14'></a>  14 <em class='comment'> * @param sourceParent</em>
+<a id='L15' name='L15'></a>  15 <em class='comment'> * @return</em>
+<a id='L16' name='L16'></a>  16 <em class='comment'> */</em>
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>bool</strong> <a href='../S/83.html#L8' title='Defined at 8 in storemodel.cpp.'>StoreModel</a>::<a href='../S/84.html#L21' title='Referred from 21 in storemodel.h.'>filterAcceptsRow</a>(<strong class='reserved'>int</strong> <a href='../Y/702.html' title='Multiple used in 2 places.'>sourceRow</a>,
+<a id='L18' name='L18'></a>  18                                   <strong class='reserved'>const</strong> <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> &amp;<a href='../Y/701.html' title='Multiple used in 2 places.'>sourceParent</a>) <strong class='reserved'>const</strong> <em class='brace'>{</em>
+<a id='L19' name='L19'></a>  19   <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> <a href='../Y/391.html' title='Multiple used in 47 places.'>index</a> = <a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>()-&gt;<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>(<a href='../Y/702.html' title='Multiple used in 2 places.'>sourceRow</a>, 0, <a href='../Y/701.html' title='Multiple used in 2 places.'>sourceParent</a>);
+<a id='L20' name='L20'></a>  20   <strong class='reserved'>return</strong> <a href='../S/83.html#L29' title='Defined at 29 in storemodel.cpp.'>ShowThis</a>(<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>);
+<a id='L21' name='L21'></a>  21 <em class='brace'>}</em>
+<a id='L22' name='L22'></a>  22 
+<a id='L23' name='L23'></a>  23 <em class='comment'>/**</em>
+<a id='L24' name='L24'></a>  24 <em class='comment'> * @brief StoreModel::ShowThis should a row be shown, based on our search</em>
+<a id='L25' name='L25'></a>  25 <em class='comment'> * criteria.</em>
+<a id='L26' name='L26'></a>  26 <em class='comment'> * @param index</em>
+<a id='L27' name='L27'></a>  27 <em class='comment'> * @return</em>
+<a id='L28' name='L28'></a>  28 <em class='comment'> */</em>
+<a id='L29' name='L29'></a>  29 <strong class='reserved'>bool</strong> <a href='../S/83.html#L8' title='Defined at 8 in storemodel.cpp.'>StoreModel</a>::<a href='../R/25.html' title='Multiple referred from 3 places.'>ShowThis</a>(<strong class='reserved'>const</strong> <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> <a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>) <strong class='reserved'>const</strong> <em class='brace'>{</em>
+<a id='L30' name='L30'></a>  30   <strong class='reserved'>bool</strong> <a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a> = <strong class='reserved'>false</strong>;
+<a id='L31' name='L31'></a>  31   <strong class='reserved'>if</strong> (<a href='../Y/361.html' title='Multiple used in 5 places.'>fs</a> == <a href='../Y/46.html' title='Multiple used in 23 places.'>NULL</a>)
+<a id='L32' name='L32'></a>  32     <strong class='reserved'>return</strong> <a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a>;
+<a id='L33' name='L33'></a>  33   <em class='comment'>// Gives you the info for number of childs with a parent</em>
+<a id='L34' name='L34'></a>  34   <strong class='reserved'>if</strong> (<a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>()-&gt;<a href='../Y/598.html' title='Multiple used in 8 places.'>rowCount</a>(<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>) &gt; 0) <em class='brace'>{</em>
+<a id='L35' name='L35'></a>  35     <strong class='reserved'>for</strong> (<strong class='reserved'>int</strong> <a href='../Y/477.html' title='Multiple used in 2 places.'>nChild</a> = 0; <a href='../Y/477.html' title='Multiple used in 2 places.'>nChild</a> &lt; <a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>()-&gt;<a href='../Y/598.html' title='Multiple used in 8 places.'>rowCount</a>(<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>); ++<a href='../Y/477.html' title='Multiple used in 2 places.'>nChild</a>) <em class='brace'>{</em>
+<a id='L36' name='L36'></a>  36       <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> <a href='../Y/253.html' title='Multiple used in 3 places.'>childIndex</a> = <a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>()-&gt;<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>(<a href='../Y/477.html' title='Multiple used in 2 places.'>nChild</a>, 0, <a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>);
+<a id='L37' name='L37'></a>  37       <strong class='reserved'>if</strong> (!<a href='../Y/253.html' title='Multiple used in 3 places.'>childIndex</a>.<a href='../Y/413.html' title='Multiple used in 9 places.'>isValid</a>())
+<a id='L38' name='L38'></a>  38         <strong class='reserved'>break</strong>;
+<a id='L39' name='L39'></a>  39       <a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a> = <a href='../S/83.html#L29' title='Defined at 29 in storemodel.cpp.'>ShowThis</a>(<a href='../Y/253.html' title='Multiple used in 3 places.'>childIndex</a>);
+<a id='L40' name='L40'></a>  40       <strong class='reserved'>if</strong> (<a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a>)
+<a id='L41' name='L41'></a>  41         <strong class='reserved'>break</strong>;
+<a id='L42' name='L42'></a>  42     <em class='brace'>}</em>
+<a id='L43' name='L43'></a>  43   <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L44' name='L44'></a>  44     <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> <a href='../Y/761.html' title='Multiple used in 2 places.'>useIndex</a> = <a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>()-&gt;<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>(<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>.<a href='../Y/597.html' title='Multiple used in 6 places.'>row</a>(), 0, <a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>.<a href='../Y/500.html' title='Multiple used in 25 places.'>parent</a>());
+<a id='L45' name='L45'></a>  45     <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../Y/515.html' title='Multiple used in 43 places.'>path</a> = <a href='../Y/361.html' title='Multiple used in 5 places.'>fs</a>-&gt;<a href='../Y/342.html' title='Multiple used in 9 places.'>filePath</a>(<a href='../Y/761.html' title='Multiple used in 2 places.'>useIndex</a>);
+<a id='L46' name='L46'></a>  46     <a href='../Y/515.html' title='Multiple used in 43 places.'>path</a> = <a href='../Y/68.html' title='Multiple used in 30 places.'>QDir</a>(<a href='../Y/716.html' title='Multiple used in 12 places.'>store</a>).<a href='../Y/578.html' title='Multiple used in 5 places.'>relativeFilePath</a>(<a href='../Y/515.html' title='Multiple used in 43 places.'>path</a>);
+<a id='L47' name='L47'></a>  47     <a href='../Y/515.html' title='Multiple used in 43 places.'>path</a>.<a href='../S/31.html#L87' title='Defined at 87 in keygendialog.cpp.'>replace</a>(<a href='../Y/105.html' title='Multiple used in 21 places.'>QRegExp</a>("\\.gpg$"), "");
+<a id='L48' name='L48'></a>  48     <a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a> = <a href='../Y/515.html' title='Multiple used in 43 places.'>path</a>.<a href='../Y/273.html' title='Multiple used in 11 places.'>contains</a>(filterRegExp());
+<a id='L49' name='L49'></a>  49   <em class='brace'>}</em>
+<a id='L50' name='L50'></a>  50   <strong class='reserved'>return</strong> <a href='../Y/592.html' title='Multiple used in 6 places.'>retVal</a>;
+<a id='L51' name='L51'></a>  51 <em class='brace'>}</em>
+<a id='L52' name='L52'></a>  52 
+<a id='L53' name='L53'></a>  53 <em class='comment'>/**</em>
+<a id='L54' name='L54'></a>  54 <em class='comment'> * @brief StoreModel::setModelAndStore update the source model and store.</em>
+<a id='L55' name='L55'></a>  55 <em class='comment'> * @param sourceModel</em>
+<a id='L56' name='L56'></a>  56 <em class='comment'> * @param passStore</em>
+<a id='L57' name='L57'></a>  57 <em class='comment'> */</em>
+<a id='L58' name='L58'></a>  58 <strong class='reserved'>void</strong> <a href='../S/83.html#L8' title='Defined at 8 in storemodel.cpp.'>StoreModel</a>::<a href='../R/179.html' title='Multiple referred from 2 places.'>setModelAndStore</a>(<a href='../Y/74.html' title='Multiple used in 4 places.'>QFileSystemModel</a> *<a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>,
+<a id='L59' name='L59'></a>  59                                   <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../Y/507.html' title='Multiple used in 61 places.'>passStore</a>) <em class='brace'>{</em>
+<a id='L60' name='L60'></a>  60   <a href='../Y/361.html' title='Multiple used in 5 places.'>fs</a> = <a href='../Y/700.html' title='Multiple used in 8 places.'>sourceModel</a>;
+<a id='L61' name='L61'></a>  61   <a href='../Y/716.html' title='Multiple used in 12 places.'>store</a> = <a href='../Y/507.html' title='Multiple used in 61 places.'>passStore</a>;
+<a id='L62' name='L62'></a>  62 <em class='brace'>}</em>
+<a id='L63' name='L63'></a>  63 
+<a id='L64' name='L64'></a>  64 <em class='comment'>/**</em>
+<a id='L65' name='L65'></a>  65 <em class='comment'> * @brief StoreModel::data don't show the .gpg at the end of a file.</em>
+<a id='L66' name='L66'></a>  66 <em class='comment'> * @param index</em>
+<a id='L67' name='L67'></a>  67 <em class='comment'> * @param role</em>
+<a id='L68' name='L68'></a>  68 <em class='comment'> * @return</em>
+<a id='L69' name='L69'></a>  69 <em class='comment'> */</em>
+<a id='L70' name='L70'></a>  70 <a href='../Y/123.html' title='Multiple used in 5 places.'>QVariant</a> <a href='../S/83.html#L8' title='Defined at 8 in storemodel.cpp.'>StoreModel</a>::<a href='../R/55.html' title='Multiple referred from 7 places.'>data</a>(<strong class='reserved'>const</strong> <a href='../Y/96.html' title='Multiple used in 22 places.'>QModelIndex</a> &amp;<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>, <strong class='reserved'>int</strong> <a href='../Y/595.html' title='Multiple used in 4 places.'>role</a>) <strong class='reserved'>const</strong> <em class='brace'>{</em>
+<a id='L71' name='L71'></a>  71   <strong class='reserved'>if</strong> (!<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>.<a href='../Y/413.html' title='Multiple used in 9 places.'>isValid</a>())
+<a id='L72' name='L72'></a>  72     <strong class='reserved'>return</strong> <a href='../Y/123.html' title='Multiple used in 5 places.'>QVariant</a>();
+<a id='L73' name='L73'></a>  73 
+<a id='L74' name='L74'></a>  74   <a href='../Y/123.html' title='Multiple used in 5 places.'>QVariant</a> <a href='../Y/395.html' title='Multiple used in 5 places.'>initial_value</a>;
+<a id='L75' name='L75'></a>  75   <a href='../Y/395.html' title='Multiple used in 5 places.'>initial_value</a> = <a href='../Y/112.html' title='Multiple used in 2 places.'>QSortFilterProxyModel</a>::<a href='../S/83.html#L70' title='Defined at 70 in storemodel.cpp.'>data</a>(<a href='../Y/391.html' title='Multiple used in 47 places.'>index</a>, <a href='../Y/595.html' title='Multiple used in 4 places.'>role</a>);
+<a id='L76' name='L76'></a>  76 
+<a id='L77' name='L77'></a>  77   <strong class='reserved'>if</strong> (<a href='../Y/595.html' title='Multiple used in 4 places.'>role</a> == <a href='../Y/129.html' title='Multiple used in 37 places.'>Qt</a>::DisplayRole) <em class='brace'>{</em>
+<a id='L78' name='L78'></a>  78     <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> <a href='../Y/478.html' title='Multiple used in 22 places.'>name</a> = <a href='../Y/395.html' title='Multiple used in 5 places.'>initial_value</a>.<a href='../Y/741.html' title='Multiple used in 17 places.'>toString</a>();
+<a id='L79' name='L79'></a>  79     <a href='../Y/478.html' title='Multiple used in 22 places.'>name</a>.<a href='../S/31.html#L87' title='Defined at 87 in keygendialog.cpp.'>replace</a>(<a href='../Y/105.html' title='Multiple used in 21 places.'>QRegExp</a>("\\.gpg$"), "");
+<a id='L80' name='L80'></a>  80     <a href='../Y/395.html' title='Multiple used in 5 places.'>initial_value</a>.<a href='../Y/681.html' title='Multiple used in 52 places.'>setValue</a>(<a href='../Y/478.html' title='Multiple used in 22 places.'>name</a>);
+<a id='L81' name='L81'></a>  81   <em class='brace'>}</em>
+<a id='L82' name='L82'></a>  82 
+<a id='L83' name='L83'></a>  83   <strong class='reserved'>return</strong> <a href='../Y/395.html' title='Multiple used in 5 places.'>initial_value</a>;
+<a id='L84' name='L84'></a>  84 <em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L17'>[^]</a><a href='#L70'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

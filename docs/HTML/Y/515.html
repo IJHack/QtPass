@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>path</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L45'>path</a>               45 configdialog.cpp void ConfigDialog::setPassPath(QString path) { ui-&gt;passPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L52'>path</a>               52 configdialog.cpp void ConfigDialog::setGitPath(QString path) {</span>
+<span class='curline'><a href='../S/5.html#L53'>path</a>               53 configdialog.cpp   ui-&gt;gitPath-&gt;setText(path);</span>
+<span class='curline'><a href='../S/5.html#L54'>path</a>               54 configdialog.cpp   if (path.isEmpty()) {</span>
+<span class='curline'><a href='../S/5.html#L66'>path</a>               66 configdialog.cpp void ConfigDialog::setGpgPath(QString path) { ui-&gt;gpgPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L72'>path</a>               72 configdialog.cpp void ConfigDialog::setStorePath(QString path) { ui-&gt;storePath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/59.html#L392'>path</a>              392 mainwindow.cpp     env &lt;&lt; "GNUPGHOME=" + absHome.path();</span>
+<span class='curline'><a href='../S/59.html#L1001'>path</a>             1001 mainwindow.cpp void MainWindow::setPassExecutable(QString path) { passExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1008'>path</a>             1008 mainwindow.cpp void MainWindow::setGitExecutable(QString path) { gitExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1015'>path</a>             1015 mainwindow.cpp void MainWindow::setGpgExecutable(QString path) { gpgExecutable = path; }</span>
+<span class='curline'><a href='../S/59.html#L1185'>path</a>             1185 mainwindow.cpp       QString path = QDir(passStore).relativeFilePath(file);</span>
+<span class='curline'><a href='../S/59.html#L1186'>path</a>             1186 mainwindow.cpp       path.replace(QRegExp("\\.gpg$"), "");</span>
+<span class='curline'><a href='../S/59.html#L1189'>path</a>             1189 mainwindow.cpp                                         path + " using QtPass.\"");</span>
+<span class='curline'><a href='../S/59.html#L1502'>path</a>             1502 mainwindow.cpp       QString path = gpgIdFile;</span>
+<span class='curline'><a href='../S/59.html#L1503'>path</a>             1503 mainwindow.cpp       path.replace(QRegExp("\\.gpg$"), "");</span>
+<span class='curline'><a href='../S/59.html#L1505'>path</a>             1505 mainwindow.cpp                                         path + " using QtPass.\"");</span>
+<span class='curline'><a href='../S/59.html#L1996'>path</a>             1996 mainwindow.cpp     if (gpgFiles.fileInfo().path() != currentDir.path()) {</span>
+<span class='curline'><a href='../S/59.html#L2054'>path</a>             2054 mainwindow.cpp           QString path = QDir(passStore).relativeFilePath(fileName);</span>
+<span class='curline'><a href='../S/59.html#L2055'>path</a>             2055 mainwindow.cpp           path.replace(QRegExp("\\.gpg$"), "");</span>
+<span class='curline'><a href='../S/59.html#L2057'>path</a>             2057 mainwindow.cpp                                             "Edit for " + path +</span>
+<span class='curline'><a href='../S/83.html#L45'>path</a>               45 storemodel.cpp     QString path = fs-&gt;filePath(useIndex);</span>
+<span class='curline'><a href='../S/83.html#L46'>path</a>               46 storemodel.cpp     path = QDir(store).relativeFilePath(path);</span>
+<span class='curline'><a href='../S/83.html#L47'>path</a>               47 storemodel.cpp     path.replace(QRegExp("\\.gpg$"), "");</span>
+<span class='curline'><a href='../S/83.html#L48'>path</a>               48 storemodel.cpp     retVal = path.contains(filterRegExp());</span>
+<span class='curline'><a href='../S/91.html#L24'>path</a>               24 util.cpp           QString path = _env.value("PATH");</span>
+<span class='curline'><a href='../S/91.html#L26'>path</a>               26 util.cpp           if (!path.contains("/usr/local/MacGPG2/bin") &amp;&amp;</span>
+<span class='curline'><a href='../S/91.html#L28'>path</a>               28 util.cpp             path += ":/usr/local/MacGPG2/bin";</span>
+<span class='curline'><a href='../S/91.html#L29'>path</a>               29 util.cpp           if (!path.contains("/usr/local/bin"))</span>
+<span class='curline'><a href='../S/91.html#L30'>path</a>               30 util.cpp             path += ":/usr/local/bin";</span>
+<span class='curline'><a href='../S/91.html#L31'>path</a>               31 util.cpp           _env.insert("PATH", path);</span>
+<span class='curline'><a href='../S/91.html#L43'>path</a>               43 util.cpp         QString path;</span>
+<span class='curline'><a href='../S/91.html#L46'>path</a>               46 util.cpp           path = _env.value("PASSWORD_STORE_DIR");</span>
+<span class='curline'><a href='../S/91.html#L49'>path</a>               49 util.cpp           path = QDir::homePath() + QDir::separator() + "password-store" +</span>
+<span class='curline'><a href='../S/91.html#L52'>path</a>               52 util.cpp           path = QDir::homePath() + QDir::separator() + ".password-store" +</span>
+<span class='curline'><a href='../S/91.html#L56'>path</a>               56 util.cpp         return Util::normalizeFolderPath(path);</span>
+<span class='curline'><a href='../S/91.html#L65'>path</a>               65 util.cpp       QString Util::normalizeFolderPath(QString path) {</span>
+<span class='curline'><a href='../S/91.html#L66'>path</a>               66 util.cpp         if (!path.endsWith("/") &amp;&amp; !path.endsWith(QDir::separator()))</span>
+<span class='curline'><a href='../S/91.html#L67'>path</a>               67 util.cpp           path += QDir::separator();</span>
+<span class='curline'><a href='../S/91.html#L68'>path</a>               68 util.cpp         return path;</span>
+<span class='curline'><a href='../S/91.html#L84'>path</a>               84 util.cpp           QString path = _env.value("PATH");</span>
+<span class='curline'><a href='../S/91.html#L88'>path</a>               88 util.cpp           entries = path.split(':');</span>
+<span class='curline'><a href='../S/91.html#L91'>path</a>               91 util.cpp             entries = path.split(';');</span>
+<span class='curline'><a href='../S/92.html#L15'>path</a>               15 util.h           static QString normalizeFolderPath(QString path);</span>
+</pre>
+</body>
+</html>

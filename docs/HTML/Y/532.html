@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>profileTable</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L20'>profileTable</a>       20 configdialog.cpp   ui-&gt;profileTable-&gt;verticalHeader()-&gt;hide();</span>
+<span class='curline'><a href='../S/5.html#L21'>profileTable</a>       21 configdialog.cpp   ui-&gt;profileTable-&gt;horizontalHeader()-&gt;setStretchLastSection(true);</span>
+<span class='curline'><a href='../S/5.html#L427'>profileTable</a>      427 configdialog.cpp   ui-&gt;profileTable-&gt;setRowCount(profiles.count());</span>
+<span class='curline'><a href='../S/5.html#L433'>profileTable</a>      433 configdialog.cpp       ui-&gt;profileTable-&gt;setItem(n, 0, new QTableWidgetItem(i.key()));</span>
+<span class='curline'><a href='../S/5.html#L434'>profileTable</a>      434 configdialog.cpp       ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(i.value()));</span>
+<span class='curline'><a href='../S/5.html#L437'>profileTable</a>      437 configdialog.cpp         ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class='curline'><a href='../S/5.html#L450'>profileTable</a>      450 configdialog.cpp   for (int i = 0; i &lt; ui-&gt;profileTable-&gt;rowCount(); ++i) {</span>
+<span class='curline'><a href='../S/5.html#L451'>profileTable</a>      451 configdialog.cpp     QTableWidgetItem *pathItem = ui-&gt;profileTable-&gt;item(i, 1);</span>
+<span class='curline'><a href='../S/5.html#L453'>profileTable</a>      453 configdialog.cpp       QTableWidgetItem *item = ui-&gt;profileTable-&gt;item(i, 0);</span>
+<span class='curline'><a href='../S/5.html#L468'>profileTable</a>      468 configdialog.cpp   int n = ui-&gt;profileTable-&gt;rowCount();</span>
+<span class='curline'><a href='../S/5.html#L469'>profileTable</a>      469 configdialog.cpp   ui-&gt;profileTable-&gt;insertRow(n);</span>
+<span class='curline'><a href='../S/5.html#L470'>profileTable</a>      470 configdialog.cpp   ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(ui-&gt;storePath-&gt;text()));</span>
+<span class='curline'><a href='../S/5.html#L471'>profileTable</a>      471 configdialog.cpp   ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class='curline'><a href='../S/5.html#L480'>profileTable</a>      480 configdialog.cpp   QList&lt;QTableWidgetItem *&gt; itemList = ui-&gt;profileTable-&gt;selectedItems();</span>
+<span class='curline'><a href='../S/5.html#L494'>profileTable</a>      494 configdialog.cpp     ui-&gt;profileTable-&gt;removeRow(row);</span>
+<span class='curline'><a href='../S/5.html#L495'>profileTable</a>      495 configdialog.cpp   if (ui-&gt;profileTable-&gt;rowCount() &lt; 1)</span>
+</pre>
+</body>
+</html>

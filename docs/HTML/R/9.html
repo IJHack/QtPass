@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ConfigDialog</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/5.html#L16'>ConfigDialog</a>       16 configdialog.cpp ConfigDialog::ConfigDialog(MainWindow *parent)</span>
+<span class='curline'><a href='../S/5.html#L17'>ConfigDialog</a>       17 configdialog.cpp     : QDialog(parent), ui(new Ui::ConfigDialog) {</span>
+<span class='curline'><a href='../S/5.html#L35'>ConfigDialog</a>       35 configdialog.cpp ConfigDialog::~ConfigDialog() {</span>
+<span class='curline'><a href='../S/5.html#L45'>ConfigDialog</a>       45 configdialog.cpp void ConfigDialog::setPassPath(QString path) { ui-&gt;passPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L52'>ConfigDialog</a>       52 configdialog.cpp void ConfigDialog::setGitPath(QString path) {</span>
+<span class='curline'><a href='../S/5.html#L66'>ConfigDialog</a>       66 configdialog.cpp void ConfigDialog::setGpgPath(QString path) { ui-&gt;gpgPath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L72'>ConfigDialog</a>       72 configdialog.cpp void ConfigDialog::setStorePath(QString path) { ui-&gt;storePath-&gt;setText(path); }</span>
+<span class='curline'><a href='../S/5.html#L78'>ConfigDialog</a>       78 configdialog.cpp QString ConfigDialog::getPassPath() { return ui-&gt;passPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L84'>ConfigDialog</a>       84 configdialog.cpp QString ConfigDialog::getGitPath() { return ui-&gt;gitPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L90'>ConfigDialog</a>       90 configdialog.cpp QString ConfigDialog::getGpgPath() { return ui-&gt;gpgPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L96'>ConfigDialog</a>       96 configdialog.cpp QString ConfigDialog::getStorePath() { return ui-&gt;storePath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L103'>ConfigDialog</a>      103 configdialog.cpp bool ConfigDialog::usePass() { return ui-&gt;radioButtonPass-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L110'>ConfigDialog</a>      110 configdialog.cpp void ConfigDialog::usePass(bool usePass) {</span>
+<span class='curline'><a href='../S/5.html#L125'>ConfigDialog</a>      125 configdialog.cpp void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }</span>
+<span class='curline'><a href='../S/5.html#L131'>ConfigDialog</a>      131 configdialog.cpp void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }</span>
+<span class='curline'><a href='../S/5.html#L136'>ConfigDialog</a>      136 configdialog.cpp void ConfigDialog::setGroupBoxState() {</span>
+<span class='curline'><a href='../S/5.html#L150'>ConfigDialog</a>      150 configdialog.cpp QString ConfigDialog::selectExecutable() {</span>
+<span class='curline'><a href='../S/5.html#L164'>ConfigDialog</a>      164 configdialog.cpp QString ConfigDialog::selectFolder() {</span>
+<span class='curline'><a href='../S/5.html#L179'>ConfigDialog</a>      179 configdialog.cpp void ConfigDialog::on_toolButtonGit_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L193'>ConfigDialog</a>      193 configdialog.cpp void ConfigDialog::on_toolButtonGpg_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L202'>ConfigDialog</a>      202 configdialog.cpp void ConfigDialog::on_toolButtonPass_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L212'>ConfigDialog</a>      212 configdialog.cpp void ConfigDialog::on_toolButtonStore_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L222'>ConfigDialog</a>      222 configdialog.cpp void ConfigDialog::on_comboBoxClipboard_activated(int index) {</span>
+<span class='curline'><a href='../S/5.html#L247'>ConfigDialog</a>      247 configdialog.cpp void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L260'>ConfigDialog</a>      260 configdialog.cpp void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard) {</span>
+<span class='curline'><a href='../S/5.html#L270'>ConfigDialog</a>      270 configdialog.cpp void ConfigDialog::useAutoclear(bool useAutoclear) {</span>
+<span class='curline'><a href='../S/5.html#L280'>ConfigDialog</a>      280 configdialog.cpp void ConfigDialog::setAutoclear(int seconds) {</span>
+<span class='curline'><a href='../S/5.html#L289'>ConfigDialog</a>      289 configdialog.cpp void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {</span>
+<span class='curline'><a href='../S/5.html#L299'>ConfigDialog</a>      299 configdialog.cpp void ConfigDialog::setAutoclearPanel(int seconds) {</span>
+<span class='curline'><a href='../S/5.html#L307'>ConfigDialog</a>      307 configdialog.cpp MainWindow::clipBoardType ConfigDialog::useClipboard() {</span>
+<span class='curline'><a href='../S/5.html#L316'>ConfigDialog</a>      316 configdialog.cpp bool ConfigDialog::useAutoclear() { return ui-&gt;checkBoxAutoclear-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L322'>ConfigDialog</a>      322 configdialog.cpp int ConfigDialog::getAutoclear() {</span>
+<span class='curline'><a href='../S/5.html#L330'>ConfigDialog</a>      330 configdialog.cpp void ConfigDialog::on_checkBoxAutoclear_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L338'>ConfigDialog</a>      338 configdialog.cpp bool ConfigDialog::useAutoclearPanel() {</span>
+<span class='curline'><a href='../S/5.html#L346'>ConfigDialog</a>      346 configdialog.cpp int ConfigDialog::getAutoclearPanel() {</span>
+<span class='curline'><a href='../S/5.html#L355'>ConfigDialog</a>      355 configdialog.cpp bool ConfigDialog::hidePassword() {</span>
+<span class='curline'><a href='../S/5.html#L364'>ConfigDialog</a>      364 configdialog.cpp bool ConfigDialog::hideContent() {</span>
+<span class='curline'><a href='../S/5.html#L373'>ConfigDialog</a>      373 configdialog.cpp void ConfigDialog::hidePassword(bool hidePassword) {</span>
+<span class='curline'><a href='../S/5.html#L382'>ConfigDialog</a>      382 configdialog.cpp void ConfigDialog::hideContent(bool hideContent) {</span>
+<span class='curline'><a href='../S/5.html#L391'>ConfigDialog</a>      391 configdialog.cpp bool ConfigDialog::addGPGId() { return ui-&gt;checkBoxAddGPGId-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L398'>ConfigDialog</a>      398 configdialog.cpp void ConfigDialog::addGPGId(bool addGPGId) {</span>
+<span class='curline'><a href='../S/5.html#L409'>ConfigDialog</a>      409 configdialog.cpp void ConfigDialog::genKey(QString batch, QDialog *dialog) {</span>
+<span class='curline'><a href='../S/5.html#L419'>ConfigDialog</a>      419 configdialog.cpp void ConfigDialog::setProfiles(QHash&lt;QString, QString&gt; profiles,</span>
+<span class='curline'><a href='../S/5.html#L447'>ConfigDialog</a>      447 configdialog.cpp QHash&lt;QString, QString&gt; ConfigDialog::getProfiles() {</span>
+<span class='curline'><a href='../S/5.html#L467'>ConfigDialog</a>      467 configdialog.cpp void ConfigDialog::on_addButton_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L478'>ConfigDialog</a>      478 configdialog.cpp void ConfigDialog::on_deleteButton_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L505'>ConfigDialog</a>      505 configdialog.cpp void ConfigDialog::criticalMessage(const QString &amp;title, const QString &amp;text) {</span>
+<span class='curline'><a href='../S/5.html#L513'>ConfigDialog</a>      513 configdialog.cpp void ConfigDialog::wizard() {</span>
+<span class='curline'><a href='../S/5.html#L587'>ConfigDialog</a>      587 configdialog.cpp bool ConfigDialog::useTrayIcon() {</span>
+<span class='curline'><a href='../S/5.html#L596'>ConfigDialog</a>      596 configdialog.cpp bool ConfigDialog::hideOnClose() {</span>
+<span class='curline'><a href='../S/5.html#L606'>ConfigDialog</a>      606 configdialog.cpp void ConfigDialog::useTrayIcon(bool useSystray) {</span>
+<span class='curline'><a href='../S/5.html#L621'>ConfigDialog</a>      621 configdialog.cpp void ConfigDialog::hideOnClose(bool hideOnClose) {</span>
+<span class='curline'><a href='../S/5.html#L629'>ConfigDialog</a>      629 configdialog.cpp void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L643'>ConfigDialog</a>      643 configdialog.cpp void ConfigDialog::closeEvent(QCloseEvent *event) {</span>
+<span class='curline'><a href='../S/5.html#L652'>ConfigDialog</a>      652 configdialog.cpp void ConfigDialog::useGit(bool useGit) {</span>
+<span class='curline'><a href='../S/5.html#L661'>ConfigDialog</a>      661 configdialog.cpp bool ConfigDialog::useGit() { return ui-&gt;checkBoxUseGit-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L667'>ConfigDialog</a>      667 configdialog.cpp void ConfigDialog::on_checkBoxUseGit_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L677'>ConfigDialog</a>      677 configdialog.cpp void ConfigDialog::on_toolButtonPwgen_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L692'>ConfigDialog</a>      692 configdialog.cpp QString ConfigDialog::getPwgenPath() { return ui-&gt;pwgenPath-&gt;text(); }</span>
+<span class='curline'><a href='../S/5.html#L699'>ConfigDialog</a>      699 configdialog.cpp void ConfigDialog::setPwgenPath(QString pwgen) {</span>
+<span class='curline'><a href='../S/5.html#L712'>ConfigDialog</a>      712 configdialog.cpp void ConfigDialog::on_checkBoxUsePwgen_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L730'>ConfigDialog</a>      730 configdialog.cpp void ConfigDialog::usePwgen(bool usePwgen) {</span>
+<span class='curline'><a href='../S/5.html#L742'>ConfigDialog</a>      742 configdialog.cpp void ConfigDialog::avoidCapitals(bool avoidCapitals) {</span>
+<span class='curline'><a href='../S/5.html#L751'>ConfigDialog</a>      751 configdialog.cpp void ConfigDialog::avoidNumbers(bool avoidNumbers) {</span>
+<span class='curline'><a href='../S/5.html#L760'>ConfigDialog</a>      760 configdialog.cpp void ConfigDialog::lessRandom(bool lessRandom) {</span>
+<span class='curline'><a href='../S/5.html#L769'>ConfigDialog</a>      769 configdialog.cpp void ConfigDialog::useSymbols(bool useSymbols) {</span>
+<span class='curline'><a href='../S/5.html#L778'>ConfigDialog</a>      778 configdialog.cpp void ConfigDialog::setPasswordLength(int pwLen) {</span>
+<span class='curline'><a href='../S/5.html#L787'>ConfigDialog</a>      787 configdialog.cpp void ConfigDialog::setPasswordChars(QString pwChars) {</span>
+<span class='curline'><a href='../S/5.html#L795'>ConfigDialog</a>      795 configdialog.cpp bool ConfigDialog::usePwgen() { return ui-&gt;checkBoxUsePwgen-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L802'>ConfigDialog</a>      802 configdialog.cpp bool ConfigDialog::avoidCapitals() {</span>
+<span class='curline'><a href='../S/5.html#L811'>ConfigDialog</a>      811 configdialog.cpp bool ConfigDialog::avoidNumbers() {</span>
+<span class='curline'><a href='../S/5.html#L820'>ConfigDialog</a>      820 configdialog.cpp bool ConfigDialog::lessRandom() { return ui-&gt;checkBoxLessRandom-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L827'>ConfigDialog</a>      827 configdialog.cpp bool ConfigDialog::useSymbols() { return ui-&gt;checkBoxUseSymbols-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L834'>ConfigDialog</a>      834 configdialog.cpp int ConfigDialog::getPasswordLength() {</span>
+<span class='curline'><a href='../S/5.html#L843'>ConfigDialog</a>      843 configdialog.cpp QString ConfigDialog::getPasswordChars() {</span>
+<span class='curline'><a href='../S/5.html#L852'>ConfigDialog</a>      852 configdialog.cpp void ConfigDialog::setPwdTemplateSelector(int selection) {</span>
+<span class='curline'><a href='../S/5.html#L861'>ConfigDialog</a>      861 configdialog.cpp int ConfigDialog::getPwdTemplateSelector() {</span>
+<span class='curline'><a href='../S/5.html#L871'>ConfigDialog</a>      871 configdialog.cpp void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {</span>
+<span class='curline'><a href='../S/5.html#L886'>ConfigDialog</a>      886 configdialog.cpp void ConfigDialog::setLineEditEnabled(bool b) {</span>
+<span class='curline'><a href='../S/5.html#L895'>ConfigDialog</a>      895 configdialog.cpp bool ConfigDialog::startMinimized() {</span>
+<span class='curline'><a href='../S/5.html#L904'>ConfigDialog</a>      904 configdialog.cpp void ConfigDialog::startMinimized(bool startMinimized) {</span>
+<span class='curline'><a href='../S/5.html#L912'>ConfigDialog</a>      912 configdialog.cpp void ConfigDialog::on_checkBoxUseTemplate_clicked() {</span>
+<span class='curline'><a href='../S/5.html#L922'>ConfigDialog</a>      922 configdialog.cpp void ConfigDialog::useTemplate(bool useTemplate) {</span>
+<span class='curline'><a href='../S/5.html#L931'>ConfigDialog</a>      931 configdialog.cpp bool ConfigDialog::useTemplate() {</span>
+<span class='curline'><a href='../S/5.html#L939'>ConfigDialog</a>      939 configdialog.cpp void ConfigDialog::setTemplate(QString passTemplate) {</span>
+<span class='curline'><a href='../S/5.html#L947'>ConfigDialog</a>      947 configdialog.cpp QString ConfigDialog::getTemplate() {</span>
+<span class='curline'><a href='../S/5.html#L956'>ConfigDialog</a>      956 configdialog.cpp void ConfigDialog::autoPull(bool autoPull) {</span>
+<span class='curline'><a href='../S/5.html#L964'>ConfigDialog</a>      964 configdialog.cpp void ConfigDialog::autoPush(bool autoPush) {</span>
+<span class='curline'><a href='../S/5.html#L973'>ConfigDialog</a>      973 configdialog.cpp bool ConfigDialog::autoPull() { return ui-&gt;checkBoxAutoPull-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L980'>ConfigDialog</a>      980 configdialog.cpp bool ConfigDialog::autoPush() { return ui-&gt;checkBoxAutoPush-&gt;isChecked(); }</span>
+<span class='curline'><a href='../S/5.html#L987'>ConfigDialog</a>      987 configdialog.cpp bool ConfigDialog::templateAllFields() {</span>
+<span class='curline'><a href='../S/5.html#L996'>ConfigDialog</a>      996 configdialog.cpp void ConfigDialog::templateAllFields(bool templateAll) {</span>
+<span class='curline'><a href='../S/5.html#L1005'>ConfigDialog</a>     1005 configdialog.cpp void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {</span>
+<span class='curline'><a href='../S/5.html#L1014'>ConfigDialog</a>     1014 configdialog.cpp bool ConfigDialog::alwaysOnTop() {</span>
+<span class='curline'><a href='../S/6.html#L13'>ConfigDialog</a>       13 configdialog.h class ConfigDialog;</span>
+<span class='curline'><a href='../S/6.html#L22'>ConfigDialog</a>       22 configdialog.h class ConfigDialog : public QDialog {</span>
+<span class='curline'><a href='../S/6.html#L26'>ConfigDialog</a>       26 configdialog.h   explicit ConfigDialog(MainWindow *parent);</span>
+<span class='curline'><a href='../S/6.html#L27'>ConfigDialog</a>       27 configdialog.h   ~ConfigDialog();</span>
+<span class='curline'><a href='../S/6.html#L121'>ConfigDialog</a>      121 configdialog.h   QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</span>
+<span class='curline'><a href='../S/31.html#L11'>ConfigDialog</a>       11 keygendialog.cpp KeygenDialog::KeygenDialog(ConfigDialog *parent)</span>
+<span class='curline'><a href='../S/32.html#L20'>ConfigDialog</a>       20 keygendialog.h   explicit KeygenDialog(ConfigDialog *parent = 0);</span>
+<span class='curline'><a href='../S/32.html#L38'>ConfigDialog</a>       38 keygendialog.h   ConfigDialog *dialog;</span>
+<span class='curline'><a href='../S/59.html#L428'>ConfigDialog</a>      428 mainwindow.cpp   QScopedPointer&lt;ConfigDialog&gt; d(new ConfigDialog(this));</span>
+</pre>
+</body>
+</html>

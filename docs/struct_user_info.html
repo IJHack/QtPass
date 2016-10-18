@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('struct_user_info.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -73,7 +94,7 @@ $(function() {
 <p>Stores key info lines including validity, creation date and more.  
  <a href="struct_user_info.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="HTML/S/89.html">usersdialog.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,7 +137,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores key info lines including validity, creation date and more. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00020">20</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L20">20</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aebbc7aa95fa4142a0059e7dec61acefa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebbc7aa95fa4142a0059e7dec61acefa">&sect;&nbsp;</a></span>UserInfo()</h2>
@@ -141,7 +162,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00021">21</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L21">21</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -171,17 +192,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">UserInfo::fullyValid</a> when validity is f or u. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00027">27</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="struct_user_info_a872a0a62c92c6601c1378fd3b893f984_icgraph.png" border="0" usemap="#struct_user_info_a872a0a62c92c6601c1378fd3b893f984_icgraph" alt=""/></div>
-<map name="struct_user_info_a872a0a62c92c6601c1378fd3b893f984_icgraph" id="struct_user_info_a872a0a62c92c6601c1378fd3b893f984_icgraph">
-<area shape="rect" id="node2" href="class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="185,5,339,31"/>
-<area shape="rect" id="node3" href="class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="387,5,556,31"/>
-<area shape="rect" id="node4" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="604,5,747,31"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L27">27</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -210,17 +221,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. ">UserInfo::isValid</a> when fullyValid or marginallyValid. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00036">36</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="struct_user_info_ac25fb2641e8ff271db5243409dccbaf3_icgraph.png" border="0" usemap="#struct_user_info_ac25fb2641e8ff271db5243409dccbaf3_icgraph" alt=""/></div>
-<map name="struct_user_info_ac25fb2641e8ff271db5243409dccbaf3_icgraph" id="struct_user_info_ac25fb2641e8ff271db5243409dccbaf3_icgraph">
-<area shape="rect" id="node2" href="class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="171,5,325,31"/>
-<area shape="rect" id="node3" href="class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="373,5,542,31"/>
-<area shape="rect" id="node4" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="590,5,733,31"/>
-</map>
-</div>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L36">36</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -249,7 +250,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#a7d651f28a61ede830811b5fbea5f3bb2" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">UserInfo::marginallyValid</a> when validity is m. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00032">32</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L32">32</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -268,7 +269,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6" title="UserInfo::created date/time key was created. ">UserInfo::created</a> date/time key was created. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00067">67</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L67">67</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -286,7 +287,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f" title="UserInfo::enabled. ">UserInfo::enabled</a>. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00059">59</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L59">59</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +305,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa" title="UserInfo::expiry date/time key expires. ">UserInfo::expiry</a> date/time key expires. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00063">63</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L63">63</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +323,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99" title="UserInfo::have_secret secret key is available (can decrypt with this key) ">UserInfo::have_secret</a> secret key is available (can decrypt with this key) </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00055">55</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L55">55</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -340,7 +341,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6" title="UserInfo::key_id hexadecimal representation. ">UserInfo::key_id</a> hexadecimal representation. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00045">45</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L45">45</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -358,7 +359,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb" title="UserInfo::name full name. ">UserInfo::name</a> full name. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00041">41</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L41">41</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -376,19 +377,23 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766" title="UserInfo::validity GnuPG representation of validity http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">UserInfo::validity</a> GnuPG representation of validity <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
 
-<p>Definition at line <a class="el" href="usersdialog_8h_source.html#l00050">50</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p>Definition at line <a class="el" href="HTML/S/89.html#L50">50</a> of file <a class="el" href="HTML/S/89.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="usersdialog_8h_source.html">usersdialog.h</a></li>
+<li><a class="el" href="HTML/S/89.html">usersdialog.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_user_info.html">UserInfo</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>keygendialog.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.5' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/keygendialog.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/4.html' title='Multiple included from 3 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/32.html#L2' title='Defined at 2 in keygendialog.h.'>KEYGENDIALOG_H_</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/32.html#L1' title='Referred from 1 in keygendialog.h.'>KEYGENDIALOG_H_</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='6.html'>configdialog.h</a>"
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;QCloseEvent&gt;
+<a id='L6' name='L6'></a>   6 <em class='sharp'>#include</em> &lt;QDialog&gt;
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8 <a href='../Y/481.html' title='Multiple used in 5 places.'>namespace</a> <a href='../Y/152.html' title='Multiple used in 15 places.'>Ui</a> <em class='brace'>{</em>
+<a id='L9' name='L9'></a>   9 <a href='../Y/255.html' title='Multiple used in 16 places.'>class</a> <a href='../S/31.html#L20' title='Defined at 20 in keygendialog.cpp.'>KeygenDialog</a>;
+<a id='L10' name='L10'></a>  10 <em class='brace'>}</em>
+<a id='L11' name='L11'></a>  11 
+<a id='L12' name='L12'></a>  12 <em class='comment'>/*!</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'>    \class KeygenDialog</em>
+<a id='L14' name='L14'></a>  14 <em class='comment'>    \brief Handles GPG keypair generation.</em>
+<a id='L15' name='L15'></a>  15 <em class='comment'> */</em>
+<a id='L16' name='L16'></a>  16 <a href='../Y/255.html' title='Multiple used in 16 places.'>class</a> <a href='../S/31.html#L20' title='Defined at 20 in keygendialog.cpp.'>KeygenDialog</a> : <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a> <a href='../Y/67.html' title='Multiple used in 16 places.'>QDialog</a> <em class='brace'>{</em>
+<a id='L17' name='L17'></a>  17   <a href='../Y/126.html' title='Multiple used in 9 places.'>Q_OBJECT</a>
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 <a href='../Y/538.html' title='Multiple used in 22 places.'>public</a>:
+<a id='L20' name='L20'></a>  20   <a href='../Y/333.html' title='Multiple used in 7 places.'>explicit</a> <a href='../S/31.html#L20' title='Defined at 20 in keygendialog.cpp.'>KeygenDialog</a>(<a href='../S/5.html#L35' title='Defined at 35 in configdialog.cpp.'>ConfigDialog</a> *<a href='../Y/500.html' title='Multiple used in 25 places.'>parent</a> = 0);
+<a id='L21' name='L21'></a>  21   ~<a href='../S/31.html#L20' title='Defined at 20 in keygendialog.cpp.'>KeygenDialog</a>();
+<a id='L22' name='L22'></a>  22 
+<a id='L23' name='L23'></a>  23 <a href='../Y/536.html' title='Multiple used in 5 places.'>protected</a>:
+<a id='L24' name='L24'></a>  24   <strong class='reserved'>void</strong> <a href='../D/52.html' title='Multiple defined in 4 places.'>closeEvent</a>(<a href='../Y/63.html' title='Multiple used in 8 places.'>QCloseEvent</a> *<a href='../Y/323.html' title='Multiple used in 30 places.'>event</a>);
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 <a href='../Y/525.html' title='Multiple used in 15 places.'>private</a> <a href='../Y/698.html' title='Multiple used in 8 places.'>slots</a>:
+<a id='L27' name='L27'></a>  27   <strong class='reserved'>void</strong> <a href='../S/31.html#L27' title='Defined at 27 in keygendialog.cpp.'>on_passphrase1_textChanged</a>(<strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> &amp;<a href='../Y/201.html' title='Multiple used in 23 places.'>arg1</a>);
+<a id='L28' name='L28'></a>  28   <strong class='reserved'>void</strong> <a href='../S/31.html#L45' title='Defined at 45 in keygendialog.cpp.'>on_passphrase2_textChanged</a>(<strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> &amp;<a href='../Y/201.html' title='Multiple used in 23 places.'>arg1</a>);
+<a id='L29' name='L29'></a>  29   <strong class='reserved'>void</strong> <a href='../S/31.html#L53' title='Defined at 53 in keygendialog.cpp.'>on_checkBox_stateChanged</a>(<strong class='reserved'>int</strong> <a href='../Y/201.html' title='Multiple used in 23 places.'>arg1</a>);
+<a id='L30' name='L30'></a>  30   <strong class='reserved'>void</strong> <a href='../S/31.html#L68' title='Defined at 68 in keygendialog.cpp.'>on_email_textChanged</a>(<strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> &amp;<a href='../Y/201.html' title='Multiple used in 23 places.'>arg1</a>);
+<a id='L31' name='L31'></a>  31   <strong class='reserved'>void</strong> <a href='../S/31.html#L77' title='Defined at 77 in keygendialog.cpp.'>on_name_textChanged</a>(<strong class='reserved'>const</strong> <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a> &amp;<a href='../Y/201.html' title='Multiple used in 23 places.'>arg1</a>);
+<a id='L32' name='L32'></a>  32 
+<a id='L33' name='L33'></a>  33 <a href='../Y/525.html' title='Multiple used in 15 places.'>private</a>:
+<a id='L34' name='L34'></a>  34   <a href='../Y/152.html' title='Multiple used in 15 places.'>Ui</a>::<a href='../S/31.html#L20' title='Defined at 20 in keygendialog.cpp.'>KeygenDialog</a> *<a href='../D/210.html' title='Multiple defined in 4 places.'>ui</a>;
+<a id='L35' name='L35'></a>  35   <strong class='reserved'>void</strong> <a href='../S/31.html#L87' title='Defined at 87 in keygendialog.cpp.'>replace</a>(<a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a>, <a href='../Y/113.html' title='Multiple used in 252 places.'>QString</a>);
+<a id='L36' name='L36'></a>  36   <strong class='reserved'>void</strong> <a href='../S/31.html#L129' title='Defined at 129 in keygendialog.cpp.'>done</a>(<strong class='reserved'>int</strong> <a href='../Y/559.html' title='Multiple used in 8 places.'>r</a>);
+<a id='L37' name='L37'></a>  37   <strong class='reserved'>void</strong> <a href='../S/31.html#L105' title='Defined at 105 in keygendialog.cpp.'>no_protection</a>(<a href='../Y/219.html' title='Multiple used in 98 places.'>bool</a> <a href='../Y/311.html' title='Multiple used in 3 places.'>enable</a>);
+<a id='L38' name='L38'></a>  38   <a href='../S/5.html#L35' title='Defined at 35 in configdialog.cpp.'>ConfigDialog</a> *<a href='../Y/297.html' title='Multiple used in 16 places.'>dialog</a>;
+<a id='L39' name='L39'></a>  39 <em class='brace'>}</em>;
+<a id='L40' name='L40'></a>  40 
+<a id='L41' name='L41'></a>  41 <em class='sharp'>#endif</em> <em class='comment'>// KEYGENDIALOG_H_</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>
