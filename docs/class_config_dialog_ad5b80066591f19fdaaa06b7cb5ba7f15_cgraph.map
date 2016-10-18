@@ -4,6 +4,6 @@
 <area shape="rect" id="node4" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="197,104,413,129"/>
 <area shape="rect" id="node5" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="221,153,389,179"/>
 <area shape="rect" id="node6" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="461,153,615,179"/>
-<area shape="rect" id="node7" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid" alt="" coords="670,128,788,153"/>
-<area shape="rect" id="node8" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid" alt="" coords="663,177,795,203"/>
+<area shape="rect" id="node7" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="670,128,788,153"/>
+<area shape="rect" id="node8" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="663,177,795,203"/>
 </map>

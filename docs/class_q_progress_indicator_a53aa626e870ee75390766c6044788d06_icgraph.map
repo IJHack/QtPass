@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="190,5,392,31"/>
 <area shape="rect" id="node3" href="$class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="223,55,359,93"/>
 <area shape="rect" id="node4" href="$class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="440,23,576,61"/>
-<area shape="rect" id="node5" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator\l::paintEvent" alt="" coords="440,85,576,124"/>
+<area shape="rect" id="node5" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="440,85,576,124"/>
 </map>
