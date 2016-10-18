@@ -25,8 +25,17 @@ class MainWindow;
     \brief Execution queue items for non-interactive ordered execution.
  */
 struct execQueueItem {
+  /**
+   * @brief app executable path.
+   */
   QString app;
+  /**
+   * @brief args arguments for executable.
+   */
   QString args;
+  /**
+   * @brief input stdio input.
+   */
   QString input;
 };
 
@@ -37,8 +46,17 @@ struct UserInfo;
     \brief  holds the Password configuration settings
  */
 struct passwordConfiguration {
+  /**
+   * @brief passwordConfiguration::selected character set.
+   */
   int selected;
+  /**
+   * @brief passwordConfiguration::length of password.
+   */
   int length;
+  /**
+   * @brief passwordConfiguration::Characters the different character sets.
+   */
   QString Characters[4];
   passwordConfiguration() {
     length = 16;
@@ -69,6 +87,12 @@ class MainWindow : public QMainWindow {
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
+  /**
+   * @brief MainWindow::clipBoardType enum
+   * 0 Never
+   * 1 Always
+   * 2 On demand
+   */
   enum clipBoardType {
     CLIPBOARD_NEVER = 0,
     CLIPBOARD_ALWAYS = 1,
@@ -91,6 +115,10 @@ public:
   void config();
   void executePassGitInit();
 
+  /**
+   * @brief MainWindow::pwdConfig instance of passwordConfiguration.
+   * @sa MainWindow::passwordConfiguration
+   */
   passwordConfiguration pwdConfig;
 
 protected:

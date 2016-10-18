@@ -15,9 +15,18 @@
  */
 class QProgressIndicator : public QWidget {
   Q_OBJECT
+  /**
+   *  @brief QProgressIndicator::delay in miliseconds.
+   */
   Q_PROPERTY(int delay READ animationDelay WRITE setAnimationDelay)
+  /**
+   *  @brief QProgressIndicator::displayedWhenStopped render when not spinning.
+   */
   Q_PROPERTY(bool displayedWhenStopped READ isDisplayedWhenStopped WRITE
                  setDisplayedWhenStopped)
+  /**
+   *  @brief QProgressIndicator::color of the component..
+   */
   Q_PROPERTY(QColor color READ color WRITE setColor)
 
 public:

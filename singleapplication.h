@@ -22,6 +22,10 @@ public slots:
   void receiveMessage();
 
 signals:
+  /**
+   * @brief messageAvailable notification from commandline
+   * @param message args sent to qtpass executable
+   */
   void messageAvailable(QString message);
 
 private:
