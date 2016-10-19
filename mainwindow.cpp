@@ -888,7 +888,7 @@ void MainWindow::readyRead(bool finished = false) {
     }
   }
 
-  output.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");
+  output.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"), "<a href=\"\\1\">\\1</a>");
   output.replace(QRegExp("\n"), "<br />");
   if (!ui->textBrowser->toPlainText().isEmpty())
     output = ui->textBrowser->toHtml() + output;
