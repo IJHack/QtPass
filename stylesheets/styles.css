@@ -60,3 +60,6 @@ header ul{display:none;}
 .screenshots img{position:absolute;cursor:pointer;top:0;}
 #config{top:8px;left:0;}
 .background{z-index:-1;top:0;left:0;position:fixed;width:100%;height:100%;background:url(../images/logo.png) no-repeat 200px 100px;opacity:0.4;}
+.app{width:48px;height:48px;display:block;background-size:contain;font-size:0;}
+.windows{background-image:url(../images/windows.png);}
+.macos{background-image:url(../images/logo.png);}
