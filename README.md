@@ -50,7 +50,7 @@ Windows
 
 **Dependencies**
 
-* QtPass requires Qt 4.8 or later, preferably Qt5.
+* QtPass requires Qt 5.
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 
