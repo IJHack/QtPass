@@ -866,6 +866,7 @@ void MainWindow::readyRead(bool finished = false) {
     }
     output.replace(QRegExp("<"), "&lt;");
     output.replace(QRegExp(">"), "&gt;");
+    output.replace(QRegExp(" "), "&nbsp;");
   } else {
     // qDebug() << process->readAllStandardOutput();
     // qDebug() << process->readAllStandardError();
