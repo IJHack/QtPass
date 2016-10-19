@@ -13,6 +13,7 @@
 
 **Fixed bugs:**
 
+- view box is trimming whitespace [\#210](https://github.com/IJHack/QtPass/issues/210)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 
 **Closed issues:**
