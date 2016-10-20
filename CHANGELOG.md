@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...HEAD)
+
+**Closed issues:**
+
+- We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
+
 ## [v1.1.5](https://github.com/IJHack/qtpass/tree/v1.1.5) (2016-10-19)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...v1.1.5)
 
