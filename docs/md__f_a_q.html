@@ -85,6 +85,13 @@ $(function() {
 <li>You'll need to install pinentry-qt (or -qt4 or -qt5 or even -gtk) and possibly set the full path to that executable in your <code>~/.gnupg/gpg-agent.conf</code> for example: <code>pinentry-program /usr/bin/pinentry-qt4</code></li>
 <li>On some esotheric systems it might be necessary to create a symbolic link <code>/usr/bin/pinentry</code> to your pinentry application of choice eg: <code>ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry</code></li>
 </ul>
+<h3>I have an other issue with gpg</h3>
+<ul>
+<li>Possibly you have you key only in gpg and not in gpg2</li>
+</ul>
+<div class="fragment"><div class="line">gpg --export [ID] &gt; public.key</div><div class="line">gpg --export-secret-key [ID] &gt; private.key</div><div class="line">gpg2 --import public.key</div><div class="line">gpg2 --import private.key</div><div class="line">rm public.key private.key</div></div><!-- fragment --><p> Where [ID] is your gpg key-id.</p><ul>
+<li>It might be the case where it is the other way around, exchange gpg and gpg2 accordingly . .</li>
+</ul>
 <h3>Git doesn't work on Windows</h3>
 <p>git for Windows comes with an <code>ssh-askpass</code> compatible command, git <code>gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
 <h3>Where is the configuration stored?</h3>
