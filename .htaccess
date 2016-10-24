@@ -9,6 +9,8 @@ RewriteBase /
 RewriteCond %{HTTP_HOST} !^qtpass.org$ [NC]
 RewriteRule ^(.*)$ https://qtpass.org/$1 [L,R=301]
 
+ErrorDocument 404 /404.html
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
