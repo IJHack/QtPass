@@ -8,6 +8,10 @@
 
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
 
+**Merged pull requests:**
+
+- creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
+
 ## [v1.1.5](https://github.com/IJHack/qtpass/tree/v1.1.5) (2016-10-19)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...v1.1.5)
 
@@ -101,7 +105,7 @@
 **Merged pull requests:**
 
 - add Appdata file and update desktop file [\#178](https://github.com/IJHack/QtPass/pull/178) ([daveol](https://github.com/daveol))
-- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([Aeyoun](https://github.com/Aeyoun))
+- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([da2x](https://github.com/da2x))
 - Fix build issues with MSVC2015 on Windows [\#175](https://github.com/IJHack/QtPass/pull/175) ([msvi](https://github.com/msvi))
 
 ## [v1.1.1](https://github.com/IJHack/qtpass/tree/v1.1.1) (2016-04-04)
