@@ -244,6 +244,10 @@ bool MainWindow::checkConfig() {
     passStore = Util::findPasswordStore();
     settings.setValue("passStore", passStore);
   }
+  // ensure directory exists if never used pass or misconfigured.
+  // otherwise process->setWorkingDirectory(passStore); will fail on execution.
+  QDir().mkdir(passStore);
+
   passStore = Util::normalizeFolderPath(passStore);
 
   passExecutable = settings.value("passExecutable").toString();
