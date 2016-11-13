@@ -33,10 +33,6 @@
         <translation>…</translation>
     </message>
     <message>
-        <source>Executable pass</source>
-        <translation type="obsolete">Ejecutable pass</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Nativo</translation>
@@ -45,38 +41,6 @@
         <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilizar pass</translation>
-    </message>
-    <message>
-        <source>Executable git</source>
-        <translation type="obsolete">Ejecutable git</translation>
-    </message>
-    <message>
-        <source>Executable gpg</source>
-        <translation type="obsolete">Ejecutable gpg</translation>
-    </message>
-    <message>
-        <source>Native git/gpg</source>
-        <translation type="obsolete">git/gpg nativo</translation>
-    </message>
-    <message>
-        <source>Use pass</source>
-        <translation type="obsolete">Utilizar pass</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="obsolete">Otros</translation>
-    </message>
-    <message>
-        <source>Folder password-store</source>
-        <translation type="obsolete">Carpeta password-store</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="obsolete">Portapapeles</translation>
-    </message>
-    <message>
-        <source>Autoclear</source>
-        <translation type="obsolete">Limpieza automática</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="475"/>
@@ -222,10 +186,6 @@ email</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="54"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
@@ -239,10 +199,6 @@ email</source>
         <location filename="../configdialog.ui" line="399"/>
         <source>Use pwgen</source>
         <translation>Usar pwgen</translation>
-    </message>
-    <message>
-        <source>Use clipboard</source>
-        <translation type="obsolete">Usar portapapeles</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="536"/>
@@ -278,10 +234,6 @@ email</source>
         <location filename="../configdialog.ui" line="382"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use characters</source>
-        <translation type="obsolete">Use caracteres</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="543"/>
@@ -342,10 +294,6 @@ email</source>
         <location filename="../configdialog.ui" line="897"/>
         <source>Show all fields templated</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="823"/>
@@ -593,28 +541,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; es un interfaz gráfico para &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, el gestor de contraseñas estándar de Unix.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Por favor, informar de cualquier &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;problema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; que tenga con este software.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentación&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Código fuente&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
@@ -735,10 +661,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New password file, will be placed in folder %1:</source>
-        <translation type="obsolete">Nuevo fichero de contraseña será puesto en la carpeta %1:</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="1780"/>
         <source>Add folder</source>
         <translation>Añadir carpeta</translation>
@@ -747,10 +669,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1781"/>
         <source>Add password</source>
         <translation>Añadir contraseña</translation>
-    </message>
-    <message>
-        <source>New folder, will be placed in folder %1:</source>
-        <translation type="obsolete">Nueva carpeta, será creada en carpeta %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1908"/>
@@ -771,10 +689,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1929"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>No se puede iniciar el proceso, anterior sigue funcionando!</translation>
-    </message>
-    <message>
-        <source>Looking for: </source>
-        <translation type="obsolete">Buscando: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
@@ -996,10 +910,6 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../usersdialog.ui" line="72"/>
         <source>Show unusable keys</source>
         <translation>Mostrar claves no usables</translation>
@@ -1013,13 +923,6 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <location filename="../usersdialog.cpp" line="80"/>
         <source>expires</source>
         <translation>caduca</translation>
-    </message>
-</context>
-<context>
-    <name>trayIcon</name>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Salir</translation>
     </message>
 </context>
 </TS>

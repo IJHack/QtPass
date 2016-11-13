@@ -33,10 +33,6 @@
         <translation>...</translation>
     </message>
     <message>
-        <source>Executable pass</source>
-        <translation type="obsolete">Futtatható Pass</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Natív</translation>
@@ -45,38 +41,6 @@
         <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Executable git</source>
-        <translation type="obsolete">Futtatható git</translation>
-    </message>
-    <message>
-        <source>Executable gpg</source>
-        <translation type="obsolete">Futattható gpg</translation>
-    </message>
-    <message>
-        <source>Native git/gpg</source>
-        <translation type="obsolete">Natív git/gpg</translation>
-    </message>
-    <message>
-        <source>Use pass</source>
-        <translation type="obsolete">Pass alkalmazása</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="obsolete">Más</translation>
-    </message>
-    <message>
-        <source>Folder password-store</source>
-        <translation type="obsolete">Jelszó-tároló mappa</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="obsolete">Vágólap</translation>
-    </message>
-    <message>
-        <source>Autoclear</source>
-        <translation type="obsolete">Automatikus tisztítás</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="475"/>
@@ -577,10 +541,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
@@ -729,10 +689,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1985"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Looking for: </source>
-        <translation type="obsolete">Keresés: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
@@ -948,10 +904,6 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <location filename="../usersdialog.ui" line="65"/>
         <source>Search Users</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>

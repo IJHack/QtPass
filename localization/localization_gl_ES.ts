@@ -33,54 +33,14 @@
         <translation>...</translation>
     </message>
     <message>
-        <source>Executable pass</source>
-        <translation type="obsolete">Executable pass</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
-        <source>&amp;Native git/gpg</source>
-        <translation type="obsolete">&amp;git/gpg nativo</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilice pass</translation>
-    </message>
-    <message>
-        <source>Executable git</source>
-        <translation type="obsolete">Executable git</translation>
-    </message>
-    <message>
-        <source>Executable gpg</source>
-        <translation type="obsolete">Executable gpg</translation>
-    </message>
-    <message>
-        <source>Native git/gpg</source>
-        <translation type="obsolete">git/gpg nativo</translation>
-    </message>
-    <message>
-        <source>Use pass</source>
-        <translation type="obsolete">Usar pass</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="obsolete">Outros</translation>
-    </message>
-    <message>
-        <source>Folder password-store</source>
-        <translation type="obsolete">Cartafol da password-store</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="obsolete">Portapapeis</translation>
-    </message>
-    <message>
-        <source>Autoclear</source>
-        <translation type="obsolete">Limpado automático</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="475"/>
@@ -204,14 +164,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Autoclear panel</source>
-        <translation type="obsolete">Autolimpeza do panel</translation>
-    </message>
-    <message>
-        <source>Use characters</source>
-        <translation type="obsolete">Utilizar caracteres</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="557"/>
         <source>Always on top</source>
         <translation>Sempre en primeiro plano</translation>
@@ -232,10 +184,6 @@ email</source>
         <location filename="../configdialog.ui" line="683"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="54"/>
@@ -346,10 +294,6 @@ email</source>
         <location filename="../configdialog.ui" line="897"/>
         <source>Show all fields templated</source>
         <translation>Mostrar todos os campos da plantilla</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versión</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="823"/>
@@ -597,10 +541,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
@@ -749,10 +689,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1985"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Looking for: </source>
-        <translation type="obsolete">Buscando: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
@@ -968,10 +904,6 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <location filename="../usersdialog.ui" line="65"/>
         <source>Search Users</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>
