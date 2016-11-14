@@ -876,7 +876,7 @@ Vous ne serez pas en mesure de d√©chiffrer les mots de passe nouvellement ajout√
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="77"/>
         <source>LTR</source>
         <translation>GAD</translation>
     </message>

@@ -857,7 +857,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="77"/>
         <source>LTR</source>
         <translation></translation>
     </message>

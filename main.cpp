@@ -35,13 +35,17 @@
  * @return
  */
 int main(int argc, char *argv[]) {
-  // @todo(annejan) check for stupid apple psid or whatever flag
   QString text = "";
   for (int i = 1; i < argc; ++i) {
     if (i > 1)
       text += " ";
     text += argv[i];
   }
+
+  if (text.indexOf("-psn_") == 0) {
+      text.clear();
+  }
+
 #if SINGLE_APP
   QString name = qgetenv("USER");
   if (name.isEmpty())
