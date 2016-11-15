@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...HEAD)
 
+**Implemented enhancements:**
+
+- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+
 **Closed issues:**
 
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
