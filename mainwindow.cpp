@@ -9,6 +9,7 @@
 #include <QQueue>
 #include <QTextCodec>
 #include <QTimer>
+
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -22,7 +23,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
-#include "qlabelwithclipboard.h"
+#include "qpushbuttonwithclipboard.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -51,9 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     // no working config
     QApplication::quit();
   }
-  ui->copyPasswordButton->setEnabled(false);
-  setClippedPassword("");
-  lastClippedText="";
+  clippedText="";
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
@@ -684,8 +683,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
-  setClippedPassword("");
-  lastClippedText="";
+  clippedText="";
   QString file = getFile(index, usePass);
   if (!file.isEmpty()) {
     currentAction = GPG;
@@ -804,11 +802,12 @@ void MainWindow::readyRead(bool finished = false) {
     if (finished && currentAction == GPG) {
       lastDecrypt = output;
       QStringList tokens = output.split("\n");
+      QString password = tokens.at(0);
 
       if (useClipboard != CLIPBOARD_NEVER && !output.isEmpty()) {
-        setClippedPassword(tokens[0]);
+        clippedText=tokens[0];
         if (useClipboard == CLIPBOARD_ALWAYS)
-          copyPasswordToClipboard();
+          copyTextToClipboard(tokens[0]);
         if (useAutoclearPanel) {
           QTimer::singleShot(1000 * autoclearPanelSeconds, this,
                              SLOT(clearPanel()));
@@ -822,48 +821,39 @@ void MainWindow::readyRead(bool finished = false) {
       }
 
       if (useTemplate && !hideContent) {
-        while (ui->formLayout->count() > 0) {
-          QLayoutItem *item = ui->formLayout->takeAt(0);
+        while (ui->gridLayout->count() > 0) {
+          QLayoutItem *item = ui->gridLayout->takeAt(0);
           delete item->widget();
           delete item;
         }
-        QLineEdit *pass = new QLineEdit();
-        pass->setText(tokens[0]);
-        tokens.pop_front();
-        if (hidePassword)
-          pass->setEchoMode(QLineEdit::Password);
-        pass->setReadOnly(true);
-        ui->formLayout->addRow(pass);
-
-        for (int j = 0; j < tokens.length(); ++j) {
+        QStringList remainingTokens;
+        for (int j = 1; j < tokens.length(); ++j) {
           QString token = tokens.at(j);
           if (token.contains(':')) {
             int colon = token.indexOf(':');
             QString field = token.left(colon);
             if (templateAllFields || passTemplate.contains(field)) {
               QString value = token.right(token.length() - colon - 1);
-              if (!passTemplate.contains(field) && value.startsWith("//"))
+              if (!passTemplate.contains(field) && value.startsWith("//")){
                 continue; // colon is probably from a url
-              QString trimmedField = field.trimmed();
-              QString trimmedValue = value.trimmed();
-              QLineEdit *line = new QLineEdit();
-              line->setObjectName(trimmedField);
-              line->setText(trimmedValue);
-              line->setReadOnly(true);
-              QLabelWithClipboard *fieldLabel = new QLabelWithClipboard(trimmedValue, trimmedField, this);
-              ui->formLayout->addRow(fieldLabel, line);
-              tokens.removeAt(j);
-              --j; // tokens.length() also got shortened by the remove..
+              }
+              addToGridLayout(j, field, value);
             }
+          }else{
+              remainingTokens.append(token);
           }
         }
-        if (ui->formLayout->count() == 0)
+        if (ui->gridLayout->count() == 0)
           ui->verticalLayoutPassword->setSpacing(0);
         else
           ui->verticalLayoutPassword->setSpacing(6);
-        output = tokens.join("\n");
+        output = remainingTokens.join("\n");
       } else {
         clearTemplateWidgets();
+      }
+      if (!hideContent){
+        // now set the password. If we set it earlier, the layout will be cleared
+        addToGridLayout(0, tr("Password"), password);
       }
       if (useAutoclearPanel) {
         autoclearPass = output;
@@ -913,7 +903,7 @@ void MainWindow::readyRead(bool finished = false) {
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
   QString clippedText = clipboard->text();
-  if (clippedText == getClippedPassword() || clippedText == lastClippedText) {
+  if (clippedText == clippedText) {
     clipboard->clear();
     ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
   } else {
@@ -925,8 +915,8 @@ void MainWindow::clearClipboard() {
  * @brief MainWindow::clearPanel hide the information from shoulder surfers
  */
 void MainWindow::clearPanel() {
-  while (ui->formLayout->count() > 0) {
-    QLayoutItem *item = ui->formLayout->takeAt(0);
+  while (ui->gridLayout->count() > 0) {
+    QLayoutItem *item = ui->gridLayout->takeAt(0);
     delete item->widget();
     delete item;
   }
@@ -1763,12 +1753,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 }
 
 /**
- * @brief MainWindow::on_copyPasswordButton_clicked just a launcher for
- * MainWindow::copyPasswordToClipboard()
- */
-void MainWindow::on_copyPasswordButton_clicked() { copyPasswordToClipboard(); }
-
-/**
  * @brief MainWindow::showContextMenu show us the (file or folder) context menu
  * @param pos
  */
@@ -1827,15 +1811,6 @@ void MainWindow::showContextMenu(const QPoint &pos) {
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
-
-  if (useClipboard != CLIPBOARD_NEVER) {
-    contextMenu->addSeparator();
-    QAction *copyItem = contextMenu->addAction(tr("Copy Password"));
-    if (getClippedPassword().length() == 0)
-      copyItem->setEnabled(false);
-    connect(copyItem, SIGNAL(triggered()), this,
-            SLOT(copyPasswordToClipboard()));
-  }
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
@@ -1953,8 +1928,8 @@ void MainWindow::waitFor(int seconds) {
  * the UI
  */
 void MainWindow::clearTemplateWidgets() {
-  while (ui->formLayout->count() > 0) {
-    QLayoutItem *item = ui->formLayout->takeAt(0);
+  while (ui->gridLayout->count() > 0) {
+    QLayoutItem *item = ui->gridLayout->takeAt(0);
     delete item->widget();
     delete item;
   }
@@ -1962,37 +1937,25 @@ void MainWindow::clearTemplateWidgets() {
 }
 
 /**
- * @brief Mainwindow::copyPasswordToClipboard - copy the clipped password (if
- * not "") to the clipboard
+ * @brief Mainwindow::copyTextByButtonClick - copy the text to the clipboard
+ * @param checked
+ *  no use, we need it, because of QPushButtonWithClipboard::clicked function
  */
-void MainWindow::copyPasswordToClipboard() {
-  if (clippedPass.length() > 0) {
-    copyTextToClipboard(clippedPass);
-  }
+void MainWindow::copyTextByButtonClick(bool checked)
+{
+    QString textToCopy = ((QPushButtonWithClipboard*)sender())->getTextToCopy();
+    copyTextToClipboard(textToCopy);
 }
+
 void MainWindow::copyTextToClipboard(const QString &text) {
     QClipboard *clip = QApplication::clipboard();
     clip->setText(text);
-    lastClippedText=text;
+    clippedText=text;
     ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
     if (useAutoclear) {
       QTimer::singleShot(1000 * autoclearSeconds, this, SLOT(clearClipboard()));
   }
 }
-
-/**
- * @brief Mainwindow::setClippedPassword - set the stored clipped password
- */
-void MainWindow::setClippedPassword(const QString &pass) {
-  clippedPass = pass;
-  lastClippedText = pass;
-  if (clippedPass.length() == 0)
-    ui->copyPasswordButton->setEnabled(false);
-  else
-    ui->copyPasswordButton->setEnabled(true);
-}
-
-const QString &MainWindow::getClippedPassword() { return clippedPass; }
 
 /**
  * @brief MainWindow::reencryptPath reencrypt all files under the chosen
@@ -2089,4 +2052,24 @@ void MainWindow::reencryptPath(QString dir) {
   if (autoPush)
     on_pushButton_clicked();
   enableUiElements(true);
+}
+
+void MainWindow::addToGridLayout(int position, const QString &field, const QString &value)
+{
+    QString trimmedField = field.trimmed();
+    QString trimmedValue = value.trimmed();
+    QLineEdit *line = new QLineEdit();
+    line->setObjectName(trimmedField);
+    line->setText(trimmedValue);
+    line->setReadOnly(true);
+    // set the echo mode to password, if the field is "password"
+    if (hidePassword && trimmedField == tr("Password")){
+      line->setEchoMode(QLineEdit::Password);
+    }
+    QPushButtonWithClipboard *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
+    connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+    // set into the layout
+    ui->gridLayout->addWidget(fieldLabel, position, 0);
+    ui->gridLayout->addWidget(new QLabel(trimmedField), position, 1);
+    ui->gridLayout->addWidget(line, position, 2);
 }

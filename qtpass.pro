@@ -32,7 +32,7 @@ SOURCES   += main.cpp\
              trayicon.cpp \
              passworddialog.cpp \
              qprogressindicator.cpp \
-             qlabelwithclipboard.cpp
+             qpushbuttonwithclipboard.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -43,7 +43,7 @@ HEADERS   += mainwindow.h \
              trayicon.h \
              passworddialog.h \
              qprogressindicator.h \
-             qlabelwithclipboard.h
+             qpushbuttonwithclipboard.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
