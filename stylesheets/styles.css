@@ -24,7 +24,7 @@ strong{color:#222;font-weight:700;}
 header ul li + li{width:88px;border-left:1px solid #fff;}
 header ul li + li + li{border-right:none;width:89px;}
 header ul a strong{font-size:14px;display:block;color:#222;}
-section{width:500px;float:right;padding-bottom:50px;}
+section{width:500px;float:right;padding-bottom:180px;}
 small{font-size:11px;}
 hr{border:0;background:#e5e5e5;height:1px;margin:0 0 20px;}
 footer{width:inherit;float:left;position:fixed;bottom:50px;}
