@@ -18,7 +18,7 @@ private:
 
     // QWidget interface
 protected:
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
+    void mouseDoubleClickEvent(QMouseEvent *event);
 };
 
 #endif // QLABELWITHCLIPBOARD_H_
