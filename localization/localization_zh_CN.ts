@@ -480,14 +480,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1792"/>
+        <location filename="../mainwindow.cpp" line="1803"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1804"/>
+        <location filename="../mainwindow.cpp" line="1815"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -518,7 +518,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1786"/>
+        <location filename="../mainwindow.cpp" line="1797"/>
         <source>Users</source>
         <translation>用户</translation>
     </message>
@@ -535,7 +535,7 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
-        <location filename="../mainwindow.cpp" line="1822"/>
+        <location filename="../mainwindow.cpp" line="1833"/>
         <source>Copy Password</source>
         <translation>复制密码</translation>
     </message>
@@ -570,256 +570,256 @@ p, li { white-space: pre-wrap; }
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="44"/>
+        <location filename="../mainwindow.cpp" line="45"/>
         <source>Welcome to QtPass %1</source>
         <translation>欢迎使用 QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="61"/>
+        <location filename="../mainwindow.cpp" line="63"/>
         <source>Add Password</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
+        <location filename="../mainwindow.cpp" line="64"/>
         <source>Add Folder</source>
         <translation>新文件夹</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="161"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>无法连接 WebDAV：
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="174"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV 密码</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
+        <location filename="../mainwindow.cpp" line="175"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>输入 WebDAV 密码以连接：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="191"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav 意外退出
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="193"/>
+        <location filename="../mainwindow.cpp" line="195"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>无法连接 WebDAV，fusedav无法启动：
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="619"/>
-        <location filename="../mainwindow.cpp" line="631"/>
+        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="633"/>
         <source>Updating password-store</source>
         <translation>正在更新密码库...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="716"/>
-        <location filename="../mainwindow.cpp" line="1179"/>
-        <location filename="../mainwindow.cpp" line="1355"/>
-        <location filename="../mainwindow.cpp" line="2047"/>
+        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
+        <location filename="../mainwindow.cpp" line="2063"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
-        <location filename="../mainwindow.cpp" line="1356"/>
+        <location filename="../mainwindow.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="1363"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>选定的密码文件不存在，不可编辑</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="814"/>
+        <location filename="../mainwindow.cpp" line="817"/>
         <source>Password hidden</source>
         <translation>密码已隐藏</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
+        <location filename="../mainwindow.cpp" line="821"/>
         <source>Content hidden</source>
         <translation>内容已隐藏</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="918"/>
         <source>Clipboard cleared</source>
         <translation>剪贴板已清除</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="913"/>
+        <location filename="../mainwindow.cpp" line="920"/>
         <source>Clipboard not cleared</source>
         <translation>剪贴板未清除</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Password and Content hidden</source>
         <translation>密码和内容已隐藏</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="978"/>
+        <location filename="../mainwindow.cpp" line="985"/>
         <source>QProcess::FailedToStart</source>
         <translation>系统错误：启动失败 QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="981"/>
+        <location filename="../mainwindow.cpp" line="988"/>
         <source>QProcess::Crashed</source>
         <translation>系统错误：程序崩溃 QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="984"/>
+        <location filename="../mainwindow.cpp" line="991"/>
         <source>QProcess::Timedout</source>
         <translation>系统错误：响应超时 QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="987"/>
+        <location filename="../mainwindow.cpp" line="994"/>
         <source>QProcess::ReadError</source>
         <translation>系统错误：读取错误 QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="990"/>
+        <location filename="../mainwindow.cpp" line="997"/>
         <source>QProcess::WriteError</source>
         <translation>系统错误：写入错误 QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="993"/>
+        <location filename="../mainwindow.cpp" line="1000"/>
         <source>QProcess::UnknownError</source>
         <translation>系统错误：未知错误 QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1041"/>
+        <location filename="../mainwindow.cpp" line="1048"/>
         <source>Looking for: %1</source>
         <translation>搜索：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1180"/>
-        <location filename="../mainwindow.cpp" line="2048"/>
+        <location filename="../mainwindow.cpp" line="1187"/>
+        <location filename="../mainwindow.cpp" line="2064"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1226"/>
-        <location filename="../mainwindow.cpp" line="1840"/>
+        <location filename="../mainwindow.cpp" line="1233"/>
+        <location filename="../mainwindow.cpp" line="1851"/>
         <source>New file</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1227"/>
+        <location filename="../mainwindow.cpp" line="1234"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>新建密码：
 （将被放在 %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1250"/>
+        <location filename="../mainwindow.cpp" line="1257"/>
         <source>Delete password?</source>
         <translation>删除密码？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1251"/>
-        <location filename="../mainwindow.cpp" line="1279"/>
+        <location filename="../mainwindow.cpp" line="1258"/>
+        <location filename="../mainwindow.cpp" line="1286"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>确定删除 %1 ？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1278"/>
+        <location filename="../mainwindow.cpp" line="1285"/>
         <source>Delete folder?</source>
         <translation>删除文件夹？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1423"/>
+        <location filename="../mainwindow.cpp" line="1430"/>
         <source>Can not get key list</source>
         <translation>无法获取密钥列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1424"/>
+        <location filename="../mainwindow.cpp" line="1431"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>无法获取可用的 GPG 密钥列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1455"/>
+        <location filename="../mainwindow.cpp" line="1462"/>
         <source>Key not found in keyring</source>
         <translation>所选密钥未找到</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1486"/>
+        <location filename="../mainwindow.cpp" line="1497"/>
         <source>Cannot update</source>
         <translation>无法更新</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1487"/>
+        <location filename="../mainwindow.cpp" line="1498"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>.gpg-id 无法写入</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1500"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
         <source>Check selected users!</source>
         <translation>请核对所选用户！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1501"/>
+        <location filename="../mainwindow.cpp" line="1512"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>警告：所选用户都没有私钥，任何新添加的密码将无法解密！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1594"/>
+        <location filename="../mainwindow.cpp" line="1605"/>
         <source>Generating GPG key pair</source>
         <translation>正在生成 GPG 密钥对</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1639"/>
+        <location filename="../mainwindow.cpp" line="1650"/>
         <source>Profile changed to %1</source>
         <translation>用户已更改为 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1784"/>
+        <location filename="../mainwindow.cpp" line="1795"/>
         <source>Add folder</source>
         <translation>新文件夹</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1785"/>
+        <location filename="../mainwindow.cpp" line="1796"/>
         <source>Add password</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1841"/>
+        <location filename="../mainwindow.cpp" line="1852"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>新建文件夹：
 （将被放在 %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1912"/>
+        <location filename="../mainwindow.cpp" line="1923"/>
         <source>No characters chosen</source>
         <translation>未选择任何字符</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1913"/>
+        <location filename="../mainwindow.cpp" line="1924"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>未选择任何字符，无法生成密码！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1932"/>
+        <location filename="../mainwindow.cpp" line="1943"/>
         <source>Timed out</source>
         <translation>超时</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1933"/>
+        <location filename="../mainwindow.cpp" line="1944"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>程序已经运行，无法启动！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1961"/>
-        <source>Password copied to clipboard</source>
-        <translation>已复制至剪贴板</translation>
+        <location filename="../mainwindow.cpp" line="1977"/>
+        <source>Copied to clipboard</source>
+        <translation>复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1989"/>
+        <location filename="../mainwindow.cpp" line="2005"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>

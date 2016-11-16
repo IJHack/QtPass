@@ -22,6 +22,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include "qlabelwithclipboard.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -52,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
   }
   ui->copyPasswordButton->setEnabled(false);
   setClippedPassword("");
+  lastClippedText="";
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
@@ -683,6 +685,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
   setClippedPassword("");
+  lastClippedText="";
   QString file = getFile(index, usePass);
   if (!file.isEmpty()) {
     currentAction = GPG;
@@ -841,11 +844,14 @@ void MainWindow::readyRead(bool finished = false) {
               QString value = token.right(token.length() - colon - 1);
               if (!passTemplate.contains(field) && value.startsWith("//"))
                 continue; // colon is probably from a url
+              QString trimmedField = field.trimmed();
+              QString trimmedValue = value.trimmed();
               QLineEdit *line = new QLineEdit();
-              line->setObjectName(field);
-              line->setText(value);
+              line->setObjectName(trimmedField);
+              line->setText(trimmedValue);
               line->setReadOnly(true);
-              ui->formLayout->addRow(new QLabel(field), line);
+              QLabelWithClipboard *fieldLabel = new QLabelWithClipboard(trimmedValue, trimmedField, this);
+              ui->formLayout->addRow(fieldLabel, line);
               tokens.removeAt(j);
               --j; // tokens.length() also got shortened by the remove..
             }
@@ -906,7 +912,8 @@ void MainWindow::readyRead(bool finished = false) {
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
-  if (clipboard->text() == getClippedPassword()) {
+  QString clippedText = clipboard->text();
+  if (clippedText == getClippedPassword() || clippedText == lastClippedText) {
     clipboard->clear();
     ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
   } else {
@@ -1472,7 +1479,11 @@ void MainWindow::on_usersButton_clicked() {
         gpgIds += user.key_id + " ";
       }
     }
-    executePass("init --path=" + dir + " " + gpgIds);
+    // remove the passStore directory otherwise,
+    // pass would create a passStore/passStore/dir
+    // but you want passStore/dir
+    QString dirWithoutPassdir=dir.remove(0,passStore.size());
+    executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
   } else {
     QString gpgIdFile = dir + ".gpg-id";
     QFile gpgId(gpgIdFile);
@@ -1956,12 +1967,16 @@ void MainWindow::clearTemplateWidgets() {
  */
 void MainWindow::copyPasswordToClipboard() {
   if (clippedPass.length() > 0) {
+    copyTextToClipboard(clippedPass);
+  }
+}
+void MainWindow::copyTextToClipboard(const QString &text) {
     QClipboard *clip = QApplication::clipboard();
-    clip->setText(clippedPass);
-    ui->statusBar->showMessage(tr("Password copied to clipboard"), 3000);
+    clip->setText(text);
+    lastClippedText=text;
+    ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
     if (useAutoclear) {
       QTimer::singleShot(1000 * autoclearSeconds, this, SLOT(clearClipboard()));
-    }
   }
 }
 
@@ -1970,6 +1985,7 @@ void MainWindow::copyPasswordToClipboard() {
  */
 void MainWindow::setClippedPassword(const QString &pass) {
   clippedPass = pass;
+  lastClippedText = pass;
   if (clippedPass.length() == 0)
     ui->copyPasswordButton->setEnabled(false);
   else

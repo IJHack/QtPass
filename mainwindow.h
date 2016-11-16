@@ -114,6 +114,7 @@ public:
   QString generatePassword(int length, clipBoardType selection);
   void config();
   void executePassGitInit();
+  void copyTextToClipboard(const QString &text);
 
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
@@ -186,6 +187,7 @@ private:
   QString webDavPassword;
   QProcess fusedav;
   QString clippedPass;
+  QString lastClippedText;
   QString autoclearPass;
   QTimer *autoclearTimer;
   actionType currentAction;
