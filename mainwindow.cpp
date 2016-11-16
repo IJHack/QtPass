@@ -737,7 +737,7 @@ void MainWindow::executePassGitInit() {
   if (usePass)
     executePass("git init");
   else
-    executeWrapper("git", "init \"" + passStore + '"');
+    executeWrapper(gitExecutable, "init \"" + passStore + '"');
 }
 
 /**
