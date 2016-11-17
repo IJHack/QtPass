@@ -95,7 +95,7 @@ isEmpty(QMAKE_LRELEASE) {
     unix {
         !exists($$QMAKE_LRELEASE) {
             greaterThan(QT_MAJOR_VERSION, 4) {
-                QMAKE_LRELEASE = lrelease
+                QMAKE_LRELEASE = lrelease-qt5
             } else {
                 QMAKE_LRELEASE = lrelease-qt4
             }
