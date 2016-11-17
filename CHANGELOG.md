@@ -7,6 +7,12 @@
 **Implemented enhancements:**
 
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+- added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
+
+**Fixed bugs:**
+
+- Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
+- Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
 
 **Closed issues:**
 
