@@ -28,7 +28,7 @@
         <location filename="../configdialog.ui" line="663"/>
         <location filename="../configdialog.ui" line="690"/>
         <location filename="../configdialog.ui" line="721"/>
-        <location filename="../configdialog.ui" line="844"/>
+        <location filename="../configdialog.ui" line="859"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -159,7 +159,7 @@
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="921"/>
+        <location filename="../configdialog.ui" line="939"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation type="unfinished"></translation>
     </message>
@@ -169,7 +169,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="906"/>
+        <location filename="../configdialog.ui" line="924"/>
         <source>login
 url
 email</source>
@@ -251,52 +251,52 @@ email</source>
         <translation>Profiler</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="794"/>
+        <location filename="../configdialog.ui" line="809"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="799"/>
+        <location filename="../configdialog.ui" line="814"/>
         <source>Path</source>
         <translation>Sökväg</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="809"/>
+        <location filename="../configdialog.ui" line="824"/>
         <source>Add</source>
         <translation>Lägg till</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="837"/>
+        <location filename="../configdialog.ui" line="852"/>
         <source>Current password-store</source>
         <translation>Nuvarande lösenordsutrymme</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="857"/>
+        <location filename="../configdialog.ui" line="872"/>
         <source>Template</source>
         <translation>Mall</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="878"/>
+        <location filename="../configdialog.ui" line="893"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="887"/>
+        <location filename="../configdialog.ui" line="902"/>
         <source>Use template</source>
         <translation>Använd mall</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="897"/>
+        <location filename="../configdialog.ui" line="912"/>
         <source>Show all fields templated</source>
         <translation>Visa samtliga fält i mallen</translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="894"/>
+        <location filename="../configdialog.ui" line="909"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.ui" line="823"/>
+        <location filename="../configdialog.ui" line="838"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -400,7 +400,7 @@ email</source>
         <translation>Avancerat</translation>
     </message>
     <message>
-        <location filename="../keygendialog.ui" line="151"/>
+        <location filename="../keygendialog.ui" line="157"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -419,7 +419,7 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keygendialog.ui" line="178"/>
+        <location filename="../keygendialog.ui" line="184"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>För avancerade inställningar se manualen för &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG&lt;/a&gt; </translation>
     </message>
@@ -453,6 +453,7 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../mainwindow.ui" line="332"/>
         <source>QtPass</source>
         <translation></translation>
     </message>
@@ -465,14 +466,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1787"/>
+        <location filename="../mainwindow.cpp" line="1796"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1799"/>
+        <location filename="../mainwindow.cpp" line="1808"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -503,7 +504,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1781"/>
+        <location filename="../mainwindow.cpp" line="1790"/>
         <source>Users</source>
         <translation>Användare</translation>
     </message>
@@ -518,40 +519,40 @@ Expire-Date: 0
         <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="268"/>
+        <location filename="../mainwindow.ui" line="278"/>
         <source>Search Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="290"/>
+        <location filename="../mainwindow.ui" line="382"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="310"/>
+        <location filename="../mainwindow.ui" line="453"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="620"/>
-        <location filename="../mainwindow.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="619"/>
+        <location filename="../mainwindow.cpp" line="631"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="908"/>
+        <location filename="../mainwindow.cpp" line="917"/>
         <source>Clipboard cleared</source>
         <translation>Urklippet rensat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1827"/>
+        <location filename="../mainwindow.cpp" line="1836"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -595,98 +596,98 @@ p, li { white-space: pre-wrap; }
         <translation>Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="816"/>
+        <location filename="../mainwindow.cpp" line="825"/>
         <source>Password hidden</source>
         <translation>Gömt lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="820"/>
+        <location filename="../mainwindow.cpp" line="829"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="856"/>
-        <location filename="../mainwindow.cpp" line="2066"/>
+        <location filename="../mainwindow.cpp" line="865"/>
+        <location filename="../mainwindow.cpp" line="2074"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="919"/>
         <source>Clipboard not cleared</source>
         <translation>Urklippet ej rensat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="923"/>
+        <location filename="../mainwindow.cpp" line="932"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="975"/>
+        <location filename="../mainwindow.cpp" line="984"/>
         <source>QProcess::FailedToStart</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="978"/>
+        <location filename="../mainwindow.cpp" line="987"/>
         <source>QProcess::Crashed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="981"/>
+        <location filename="../mainwindow.cpp" line="990"/>
         <source>QProcess::Timedout</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="984"/>
+        <location filename="../mainwindow.cpp" line="993"/>
         <source>QProcess::ReadError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="987"/>
+        <location filename="../mainwindow.cpp" line="996"/>
         <source>QProcess::WriteError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="990"/>
+        <location filename="../mainwindow.cpp" line="999"/>
         <source>QProcess::UnknownError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1954"/>
+        <location filename="../mainwindow.cpp" line="1962"/>
         <source>Copied to clipboard</source>
         <translation>kopieras till Urklipp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1968"/>
+        <location filename="../mainwindow.cpp" line="1976"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1779"/>
+        <location filename="../mainwindow.cpp" line="1788"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1780"/>
+        <location filename="../mainwindow.cpp" line="1789"/>
         <source>Add password</source>
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1898"/>
+        <location filename="../mainwindow.cpp" line="1906"/>
         <source>No characters chosen</source>
         <translation>Inga valda tecken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1899"/>
+        <location filename="../mainwindow.cpp" line="1907"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan inte skapa lösenord. Konfigurationen saknar tecken att välja från!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1918"/>
+        <location filename="../mainwindow.cpp" line="1926"/>
         <source>Timed out</source>
         <translation>Tajmade ut</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1919"/>
+        <location filename="../mainwindow.cpp" line="1927"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Kan inte starta process, den förra körs fortfarande!</translation>
     </message>
@@ -696,102 +697,102 @@ p, li { white-space: pre-wrap; }
         <translation>Välkommen till QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1038"/>
+        <location filename="../mainwindow.cpp" line="1047"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
-        <location filename="../mainwindow.cpp" line="1176"/>
-        <location filename="../mainwindow.cpp" line="1352"/>
-        <location filename="../mainwindow.cpp" line="2026"/>
+        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="../mainwindow.cpp" line="1185"/>
+        <location filename="../mainwindow.cpp" line="1361"/>
+        <location filename="../mainwindow.cpp" line="2034"/>
         <source>Can not edit</source>
         <translation>Kan inte ändra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1177"/>
-        <location filename="../mainwindow.cpp" line="2027"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
+        <location filename="../mainwindow.cpp" line="2035"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kunde inte läsa krypteringsnyckel, .gpg-id fil saknas eller är ogiltig.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1223"/>
-        <location filename="../mainwindow.cpp" line="1826"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
+        <location filename="../mainwindow.cpp" line="1835"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1247"/>
+        <location filename="../mainwindow.cpp" line="1256"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1248"/>
-        <location filename="../mainwindow.cpp" line="1276"/>
+        <location filename="../mainwindow.cpp" line="1257"/>
+        <location filename="../mainwindow.cpp" line="1285"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Vill du verkligen ta bort %1?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1275"/>
+        <location filename="../mainwindow.cpp" line="1284"/>
         <source>Delete folder?</source>
         <translation>Ta bort mapp?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
-        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Kan inte ändra då vald lösenordsfil inte finns</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1224"/>
+        <location filename="../mainwindow.cpp" line="1233"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1420"/>
+        <location filename="../mainwindow.cpp" line="1429"/>
         <source>Can not get key list</source>
         <translation>Kan inte hämta nyckellista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1421"/>
+        <location filename="../mainwindow.cpp" line="1430"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Kunde inte hämta gpgnycklar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1452"/>
+        <location filename="../mainwindow.cpp" line="1461"/>
         <source>Key not found in keyring</source>
         <translation>Kunde inte hitta nyckel i nyckelring</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1487"/>
+        <location filename="../mainwindow.cpp" line="1496"/>
         <source>Cannot update</source>
         <translation>Kan inte uppdatera</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1488"/>
+        <location filename="../mainwindow.cpp" line="1497"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Kunde inte skriva till .gpg-id.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1501"/>
+        <location filename="../mainwindow.cpp" line="1510"/>
         <source>Check selected users!</source>
         <translation>Kolla valda användare!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1502"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ingen av de valda nycklarna har en tillgänglig hemlig nyckel.
 Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1595"/>
+        <location filename="../mainwindow.cpp" line="1604"/>
         <source>Generating GPG key pair</source>
         <translation>Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1640"/>
+        <location filename="../mainwindow.cpp" line="1649"/>
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>

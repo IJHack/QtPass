@@ -43,6 +43,7 @@ HEADERS   += mainwindow.h \
              trayicon.h \
              passworddialog.h \
              qprogressindicator.h \
+             deselectabletreeview.h \
              qpushbuttonwithclipboard.h
 
 FORMS     += mainwindow.ui \

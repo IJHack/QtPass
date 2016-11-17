@@ -382,7 +382,7 @@ bool MainWindow::checkConfig() {
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
           this, SLOT(showContextMenu(const QPoint &)));
-
+  connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint &)),
@@ -432,7 +432,6 @@ bool MainWindow::checkConfig() {
 void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
-
   // Automatically default to pass if it's available
   usePass = freshStart ? QFile(passExecutable).exists() : usePass;
 
@@ -685,6 +684,8 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   lastDecrypt = "Could not decrypt";
   clippedText="";
   QString file = getFile(index, usePass);
+  QFileInfo fileinfo = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  ui->Passwordname->setText(fileinfo.fileName());
   if (!file.isEmpty()) {
     currentAction = GPG;
     if (usePass)
@@ -694,6 +695,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
                      "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
                          file + '"');
   } else {
+    clearPanel();
     ui->editButton->setEnabled(false);
     ui->deleteButton->setEnabled(true);
   }
@@ -720,6 +722,13 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
     }
     setPassword(file, true, false);
   }
+}
+
+void MainWindow::deselect(){
+  currentDir = "/";
+  copyTextToClipboard("");
+  ui->Passwordname->setText("");
+  clearPanel();
 }
 
 /**
@@ -1867,7 +1876,6 @@ void MainWindow::editPassword() {
  * generator
  * @return the password
  */
-// TODO Jounathaen Passwordlength as call parameter
 QString MainWindow::generatePassword(int length, clipBoardType selection) {
   QString passwd;
   if (usePwgen) {
