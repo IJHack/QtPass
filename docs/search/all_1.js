@@ -15,6 +15,7 @@ var searchData=
   ['configdialog_2ecpp',['configdialog.cpp',['../configdialog_8cpp.html',1,'']]],
   ['configdialog_2eh',['configdialog.h',['../configdialog_8h.html',1,'']]],
   ['contributing_2emd',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
+  ['copytexttoclipboard',['copyTextToClipboard',['../class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b',1,'MainWindow']]],
   ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
   ['change_20log',['Change Log',['../md__c_h_a_n_g_e_l_o_g.html',1,'']]],
   ['contributing',['Contributing',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html',1,'']]]

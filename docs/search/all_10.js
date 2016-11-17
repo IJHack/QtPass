@@ -28,6 +28,7 @@ var searchData=
   ['setstorepath',['setStorePath',['../class_config_dialog.html#a0f64db40ec749d2bc58b80ae37498e98',1,'ConfigDialog']]],
   ['settemplate',['setTemplate',['../class_config_dialog.html#aa517dc183f48df5366760a0be0588267',1,'ConfigDialog::setTemplate()'],['../class_password_dialog.html#a0e1d5305cb76b325312b93533a9751dc',1,'PasswordDialog::setTemplate()']]],
   ['settext',['setText',['../class_main_window.html#affba132ed066e5094fd6aabc8debaa01',1,'MainWindow']]],
+  ['settexttocopy',['setTextToCopy',['../class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8',1,'QPushButtonWithClipboard']]],
   ['setusers',['setUsers',['../class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c',1,'UsersDialog']]],
   ['setvisible',['setVisible',['../class_tray_icon.html#ab4cb316b0b39606fcb9b796cbed59bd1',1,'TrayIcon']]],
   ['showhideparent',['showHideParent',['../class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc',1,'TrayIcon']]],

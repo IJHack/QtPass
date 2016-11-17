@@ -18,5 +18,6 @@ var searchData=
   ['getpwgenpath',['getPwgenPath',['../class_config_dialog.html#a917ed09ffbd17065daad718ec00bc2dd',1,'ConfigDialog']]],
   ['getsecretkeys',['getSecretKeys',['../class_main_window.html#a38957de181a576efc28befeb7c47abec',1,'MainWindow']]],
   ['getstorepath',['getStorePath',['../class_config_dialog.html#aacb1ce8d9c6ec15815063f261150040b',1,'ConfigDialog']]],
-  ['gettemplate',['getTemplate',['../class_config_dialog.html#a18d7ac027447c91dc841a7448a5523b3',1,'ConfigDialog']]]
+  ['gettemplate',['getTemplate',['../class_config_dialog.html#a18d7ac027447c91dc841a7448a5523b3',1,'ConfigDialog']]],
+  ['gettexttocopy',['getTextToCopy',['../class_q_push_button_with_clipboard.html#a6ffc2d84fb3bcf62a2a3a4c4bc238d7f',1,'QPushButtonWithClipboard']]]
 ];
