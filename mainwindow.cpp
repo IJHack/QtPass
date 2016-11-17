@@ -2066,18 +2066,33 @@ void MainWindow::addToGridLayout(int position, const QString &field, const QStri
 {
     QString trimmedField = field.trimmed();
     QString trimmedValue = value.trimmed();
+
     QLineEdit *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
     line->setReadOnly(true);
+    line->setStyleSheet("border-style: none ; background: transparent;");
+    line->setContentsMargins(0,0,0,0);
     // set the echo mode to password, if the field is "password"
     if (hidePassword && trimmedField == tr("Password")){
       line->setEchoMode(QLineEdit::Password);
     }
+
     QPushButtonWithClipboard *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+    fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
+    //fieldLabel->setContentsMargins(0,5,5,0);
+
+    //Combine the Copy button and the line edit in one widget
+    QFrame *frame = new QFrame();
+    QLayout *ly = new QHBoxLayout();
+    ly->setContentsMargins(5,2,2,2);
+    frame->setLayout(ly);
+    frame->layout()->addWidget(fieldLabel);
+    frame->layout()->addWidget(line);
+    frame->setStyleSheet(".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
+
     // set into the layout
-    ui->gridLayout->addWidget(fieldLabel, position, 0);
-    ui->gridLayout->addWidget(new QLabel(trimmedField), position, 1);
-    ui->gridLayout->addWidget(line, position, 2);
+    ui->gridLayout->addWidget(new QLabel(trimmedField), position, 0);
+    ui->gridLayout->addWidget(frame, position, 1);
 }
