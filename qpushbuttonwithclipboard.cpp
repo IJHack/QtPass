@@ -12,7 +12,7 @@
  * @param parent
  *  the parent window
  */
-QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy, MainWindow *parent) : QPushButton(*new QIcon(":/icons/go-top.svg"), "", parent)
+QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy, MainWindow *parent) : QPushButton(*new QIcon(QIcon::fromTheme("edit-copy" ,QIcon(":/icons/edit-copy.svg"))), "", parent)
 {
     this->textToCopy = textToCopy;
     this->parent = parent;
