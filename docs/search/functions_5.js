@@ -3,7 +3,6 @@ var searchData=
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['generatepassword',['generatePassword',['../class_main_window.html#a7d1fc89a984ba5a000b881a1f1e3faef',1,'MainWindow']]],
   ['genkey',['genKey',['../class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138',1,'ConfigDialog']]],
-  ['get_5fdata',['get_data',['../namespacegrava.html#a410222374a433f6cdd433ae907686378',1,'grava']]],
   ['getautoclear',['getAutoclear',['../class_config_dialog.html#a0eceb941d1af175e430fa9a7ab1704d6',1,'ConfigDialog']]],
   ['getautoclearpanel',['getAutoclearPanel',['../class_config_dialog.html#a34c7f3f64e7db894517dc6fe7c15abea',1,'ConfigDialog']]],
   ['getgitpath',['getGitPath',['../class_config_dialog.html#ac151948050ce723cd3157ea849afd701',1,'ConfigDialog']]],
