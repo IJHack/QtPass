@@ -849,7 +849,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="78"/>
         <source>LTR</source>
         <translation></translation>
     </message>

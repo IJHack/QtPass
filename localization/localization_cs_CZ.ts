@@ -876,7 +876,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="78"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
