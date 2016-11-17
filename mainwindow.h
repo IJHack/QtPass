@@ -87,11 +87,15 @@ public:
 
   passwordConfiguration pwdConfig;
 
+
 protected:
   void closeEvent(QCloseEvent *event);
   void keyPressEvent(QKeyEvent *event);
   void changeEvent(QEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
+
+public slots:
+  void deselect();
 
 private slots:
   void on_updateButton_clicked();
@@ -131,6 +135,7 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QScopedPointer<QProcess> process;
+  QTreeView *treeView;
   bool usePass;
   clipBoardType useClipboard;
   bool useAutoclear;

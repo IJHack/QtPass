@@ -54,8 +54,6 @@ MainWindow::MainWindow(QWidget *parent)
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
-  treeview();
-
   // Add a Actions to the Add-Button
   QIcon addFileIcon = QIcon::fromTheme("file_new");
   QIcon addFolderIcon = QIcon::fromTheme("folder_new");
@@ -378,7 +376,7 @@ bool MainWindow::checkConfig() {
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
           this, SLOT(showContextMenu(const QPoint &)));
-
+  connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint &)),
@@ -428,7 +426,6 @@ bool MainWindow::checkConfig() {
 void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
-
   // Automatically default to pass if it's available
   usePass = freshStart ? QFile(passExecutable).exists() : usePass;
 
@@ -692,6 +689,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
                      "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
                          file + '"');
   } else {
+    clearPanel();
     ui->editButton->setEnabled(false);
     ui->deleteButton->setEnabled(true);
   }
@@ -718,6 +716,13 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
     }
     setPassword(file, true, false);
   }
+}
+
+void MainWindow::deselect(){
+  currentDir = "/";
+  setClippedPassword("");
+  ui->Passwordname->setText("");
+  clearPanel();
 }
 
 /**

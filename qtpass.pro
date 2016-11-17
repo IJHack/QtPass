@@ -41,7 +41,8 @@ HEADERS   += mainwindow.h \
              keygendialog.h \
              trayicon.h \
              passworddialog.h \
-             qprogressindicator.h
+             qprogressindicator.h \
+             deselectabletreeview.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
@@ -92,7 +93,7 @@ isEmpty(QMAKE_LRELEASE) {
     unix {
         !exists($$QMAKE_LRELEASE) {
             greaterThan(QT_MAJOR_VERSION, 4) {
-                QMAKE_LRELEASE = lrelease-qt5
+                QMAKE_LRELEASE = lrelease
             } else {
                 QMAKE_LRELEASE = lrelease-qt4
             }
