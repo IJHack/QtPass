@@ -25,8 +25,17 @@ class MainWindow;
     \brief Execution queue items for non-interactive ordered execution.
  */
 struct execQueueItem {
+  /**
+   * @brief app executable path.
+   */
   QString app;
+  /**
+   * @brief args arguments for executable.
+   */
   QString args;
+  /**
+   * @brief input stdio input.
+   */
   QString input;
 };
 
@@ -36,17 +45,32 @@ struct UserInfo;
     \struct passwordConfiguration
     \brief  holds the Password configuration settings
  */
-struct passwordConfiguration{
+struct passwordConfiguration {
+  /**
+   * @brief passwordConfiguration::selected character set.
+   */
   int selected;
+  /**
+   * @brief passwordConfiguration::length of password.
+   */
   int length;
+  /**
+   * @brief passwordConfiguration::Characters the different character sets.
+   */
   QString Characters[4];
-  passwordConfiguration(){
+  passwordConfiguration() {
     length = 16;
-    enum selected  {ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM};
-    Characters[ALLCHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*AllChars*/
-    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";                                       /*Only Alphabetical*/
-    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";                             /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_-+={}[]|:;<>,.?";  /*Custom*/
+    selected = 0;
+    enum selected { ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM };
+    Characters[ALLCHARS] =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
+        "*()_-+={}[]|:;<>,.?"; /*AllChars*/
+    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
+                               "vwxyz"; /*Only Alphabetical*/
+    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
+                               "vwxyz1234567890"; /*Alphabetical and Numerical*/
+    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1"
+                         "234567890~!@#$%^&*()_-+={}[]|:;<>,.?"; /*Custom*/
   }
 };
 
@@ -63,6 +87,12 @@ class MainWindow : public QMainWindow {
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
+  /**
+   * @brief MainWindow::clipBoardType enum
+   * 0 Never
+   * 1 Always
+   * 2 On demand
+   */
   enum clipBoardType {
     CLIPBOARD_NEVER = 0,
     CLIPBOARD_ALWAYS = 1,
@@ -84,7 +114,13 @@ public:
   QString generatePassword(int length, clipBoardType selection);
   void config();
   void executePassGitInit();
+  void copyTextToClipboard(const QString &text);
 
+
+  /**
+   * @brief MainWindow::pwdConfig instance of passwordConfiguration.
+   * @sa MainWindow::passwordConfiguration
+   */
   passwordConfiguration pwdConfig;
 
 
@@ -116,13 +152,12 @@ private slots:
   void on_usersButton_clicked();
   void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
-  void on_copyPasswordButton_clicked();
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void addFolder();
   void editPassword();
   void focusInput();
-  void copyPasswordToClipboard();
+  void copyTextByButtonClick(bool checked = false);
 
 private:
   QAction *actionAddPassword;
@@ -156,7 +191,7 @@ private:
   QString webDavUser;
   QString webDavPassword;
   QProcess fusedav;
-  QString clippedPass;
+  QString clippedText;
   QString autoclearPass;
   QTimer *autoclearTimer;
   actionType currentAction;
@@ -208,9 +243,8 @@ private:
   bool removeDir(const QString &dirName);
   void waitFor(int seconds);
   void clearTemplateWidgets();
-  void setClippedPassword(const QString &pass);
-  const QString &getClippedPassword();
   void reencryptPath(QString dir);
+  void addToGridLayout(int position, const QString &field, const QString &value);
 };
 
 #endif // MAINWINDOW_H_

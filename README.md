@@ -16,6 +16,7 @@ Features
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
+* Easy onboarding
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
@@ -50,7 +51,7 @@ Windows
 
 **Dependencies**
 
-* QtPass requires Qt 4.8 or later, preferably Qt5.
+* QtPass requires Qt 5.
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 
@@ -118,6 +119,6 @@ Further reading
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
-[Website](https://qtpass.org/) 
+[Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)

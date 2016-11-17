@@ -7,7 +7,7 @@
 #                                                         #
 #---------------------------------------------------------#
 
-VERSION    = 1.1.4
+VERSION    = 1.1.5
 
 TEMPLATE   = app
 QT        += core gui
@@ -27,11 +27,12 @@ SOURCES   += main.cpp\
              configdialog.cpp \
              storemodel.cpp \
              util.cpp \
-             usersdialog.cpp \ 
+             usersdialog.cpp \
              keygendialog.cpp \
              trayicon.cpp \
              passworddialog.cpp \
-             qprogressindicator.cpp
+             qprogressindicator.cpp \
+             qpushbuttonwithclipboard.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -42,11 +43,12 @@ HEADERS   += mainwindow.h \
              trayicon.h \
              passworddialog.h \
              qprogressindicator.h \
-             deselectabletreeview.h
+             deselectabletreeview.h \
+             qpushbuttonwithclipboard.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
-             usersdialog.ui \ 
+             usersdialog.ui \
              keygendialog.ui \
              passworddialog.ui
 
