@@ -8,6 +8,7 @@
 
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+- Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
 
 **Fixed bugs:**
@@ -21,6 +22,8 @@
 
 **Merged pull requests:**
 
+- Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
+- UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
 - creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
 
 ## [v1.1.5](https://github.com/IJHack/qtpass/tree/v1.1.5) (2016-10-19)
