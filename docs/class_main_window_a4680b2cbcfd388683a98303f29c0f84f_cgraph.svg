@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 377.80 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::executePassGitInit</title>
-<!-- Node39 -->
-<g id="node1" class="node"><title>Node39</title>
+<!-- Node51 -->
+<g id="node1" class="node"><title>Node51</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 162.172,-18.5 162.172,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="81.0859" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </g>
-<!-- Node40 -->
-<g id="node2" class="node"><title>Node40</title>
+<!-- Node52 -->
+<g id="node2" class="node"><title>Node52</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" target="_top" xlink:title="MainWindow::copyTextToClipboard">
 <polygon fill="none" stroke="black" points="198.172,-0.5 198.172,-18.5 369.797,-18.5 369.797,-0.5 198.172,-0.5"/>
 <text text-anchor="middle" x="283.984" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyTextToClipboard</text>
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node40 -->
-<g id="edge1" class="edge"><title>Node39&#45;&gt;Node40</title>
+<!-- Node51&#45;&gt;Node52 -->
+<g id="edge1" class="edge"><title>Node51&#45;&gt;Node52</title>
 <path fill="none" stroke="midnightblue" d="M162.352,-9.5C170.666,-9.5 179.173,-9.5 187.631,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="187.908,-13.0001 197.908,-9.5 187.908,-6.0001 187.908,-13.0001"/>
 </g>

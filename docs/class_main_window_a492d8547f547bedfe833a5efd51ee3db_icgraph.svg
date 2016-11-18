@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 349.75 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::setPassExecutable</title>
-<!-- Node81 -->
-<g id="node1" class="node"><title>Node81</title>
+<!-- Node93 -->
+<g id="node1" class="node"><title>Node93</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 163.847,-18.5 163.847,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="81.9233" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setPassExecutable</text>
 </g>
-<!-- Node82 -->
-<g id="node2" class="node"><title>Node82</title>
+<!-- Node94 -->
+<g id="node2" class="node"><title>Node94</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git...">
 <polygon fill="none" stroke="black" points="199.847,-0.5 199.847,-18.5 341.755,-18.5 341.755,-0.5 199.847,-0.5"/>
 <text text-anchor="middle" x="270.801" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::~ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node81&#45;&gt;Node82 -->
-<g id="edge1" class="edge"><title>Node81&#45;&gt;Node82</title>
+<!-- Node93&#45;&gt;Node94 -->
+<g id="edge1" class="edge"><title>Node93&#45;&gt;Node94</title>
 <path fill="none" stroke="midnightblue" d="M174.095,-9.5C182.654,-9.5 191.239,-9.5 199.562,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="174.075,-6.0001 164.075,-9.5 174.075,-13.0001 174.075,-6.0001"/>
 </g>

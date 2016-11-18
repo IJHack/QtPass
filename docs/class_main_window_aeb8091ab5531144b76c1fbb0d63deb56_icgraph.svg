@@ -8,47 +8,47 @@
  viewBox="0.00 0.00 482.60 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>MainWindow::config</title>
-<!-- Node27 -->
-<g id="node1" class="node"><title>Node27</title>
+<!-- Node31 -->
+<g id="node1" class="node"><title>Node31</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 105.482,-36.5 105.482,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="52.7412" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </g>
-<!-- Node28 -->
-<g id="node2" class="node"><title>Node28</title>
+<!-- Node32 -->
+<g id="node2" class="node"><title>Node32</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="black" points="155.108,-37.5 155.108,-55.5 288.935,-55.5 288.935,-37.5 155.108,-37.5"/>
 <text text-anchor="middle" x="222.021" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node28 -->
-<g id="edge1" class="edge"><title>Node27&#45;&gt;Node28</title>
+<!-- Node31&#45;&gt;Node32 -->
+<g id="edge1" class="edge"><title>Node31&#45;&gt;Node32</title>
 <path fill="none" stroke="midnightblue" d="M115.788,-34.5474C128.524,-35.994 141.977,-37.522 154.852,-38.9843"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="116.084,-31.0586 105.753,-33.4076 115.294,-38.0139 116.084,-31.0586"/>
 </g>
-<!-- Node30 -->
-<g id="node4" class="node"><title>Node30</title>
+<!-- Node34 -->
+<g id="node4" class="node"><title>Node34</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a284c45f4f794bc0dd28a184a08f83455" target="_top" xlink:title="MainWindow::getGpgExecutable. ">
 <polygon fill="none" stroke="black" points="141.482,-0.5 141.482,-18.5 302.561,-18.5 302.561,-0.5 141.482,-0.5"/>
 <text text-anchor="middle" x="222.021" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::getGpgExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node30 -->
-<g id="edge3" class="edge"><title>Node27&#45;&gt;Node30</title>
+<!-- Node31&#45;&gt;Node34 -->
+<g id="edge3" class="edge"><title>Node31&#45;&gt;Node34</title>
 <path fill="none" stroke="midnightblue" d="M115.769,-20.8255C124.127,-19.9262 132.794,-18.9936 141.404,-18.0671"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="115.321,-17.3535 105.753,-21.9034 116.07,-24.3133 115.321,-17.3535"/>
 </g>
-<!-- Node29 -->
-<g id="node3" class="node"><title>Node29</title>
+<!-- Node33 -->
+<g id="node3" class="node"><title>Node33</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="338.561,-37.5 338.561,-55.5 474.6,-55.5 474.6,-37.5 338.561,-37.5"/>
 <text text-anchor="middle" x="406.58" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node29 -->
-<g id="edge2" class="edge"><title>Node28&#45;&gt;Node29</title>
+<!-- Node32&#45;&gt;Node33 -->
+<g id="edge2" class="edge"><title>Node32&#45;&gt;Node33</title>
 <path fill="none" stroke="midnightblue" d="M299.454,-46.5C312.391,-46.5 325.736,-46.5 338.414,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="299.187,-43.0001 289.187,-46.5 299.187,-50.0001 299.187,-43.0001"/>
 </g>

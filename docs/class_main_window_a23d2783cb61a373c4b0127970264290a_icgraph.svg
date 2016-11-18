@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 313.87 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::checkConfig</title>
-<!-- Node20 -->
-<g id="node1" class="node"><title>Node20</title>
+<!-- Node24 -->
+<g id="node1" class="node"><title>Node24</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 133.827,-18.5 133.827,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="66.9136" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </g>
-<!-- Node21 -->
-<g id="node2" class="node"><title>Node21</title>
+<!-- Node25 -->
+<g id="node2" class="node"><title>Node25</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="169.827,-0.5 169.827,-18.5 305.866,-18.5 305.866,-0.5 169.827,-0.5"/>
 <text text-anchor="middle" x="237.847" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node21 -->
-<g id="edge1" class="edge"><title>Node20&#45;&gt;Node21</title>
+<!-- Node24&#45;&gt;Node25 -->
+<g id="edge1" class="edge"><title>Node24&#45;&gt;Node25</title>
 <path fill="none" stroke="midnightblue" d="M144.394,-9.5C152.818,-9.5 161.348,-9.5 169.646,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="144.196,-6.0001 134.196,-9.5 144.196,-13.0001 144.196,-6.0001"/>
 </g>

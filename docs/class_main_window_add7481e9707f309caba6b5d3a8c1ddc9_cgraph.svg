@@ -8,47 +8,47 @@
  viewBox="0.00 0.00 420.71 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>MainWindow::userDialog</title>
-<!-- Node86 -->
-<g id="node1" class="node"><title>Node86</title>
+<!-- Node98 -->
+<g id="node1" class="node"><title>Node98</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 126.601,-36.5 126.601,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="63.3003" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::userDialog</text>
 </g>
-<!-- Node87 -->
-<g id="node2" class="node"><title>Node87</title>
+<!-- Node99 -->
+<g id="node2" class="node"><title>Node99</title>
 <g id="a_node2"><a xlink:href="class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" target="_top" xlink:title="UsersDialog::setUsers update all the users. ">
 <polygon fill="none" stroke="black" points="162.601,-18.5 162.601,-36.5 278.073,-36.5 278.073,-18.5 162.601,-18.5"/>
 <text text-anchor="middle" x="220.337" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::setUsers</text>
 </a>
 </g>
 </g>
-<!-- Node86&#45;&gt;Node87 -->
-<g id="edge1" class="edge"><title>Node86&#45;&gt;Node87</title>
+<!-- Node98&#45;&gt;Node99 -->
+<g id="edge1" class="edge"><title>Node98&#45;&gt;Node99</title>
 <path fill="none" stroke="midnightblue" d="M126.913,-27.5C135.277,-27.5 143.883,-27.5 152.319,-27.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="152.498,-31.0001 162.498,-27.5 152.498,-24.0001 152.498,-31.0001"/>
 </g>
-<!-- Node88 -->
-<g id="node3" class="node"><title>Node88</title>
+<!-- Node100 -->
+<g id="node3" class="node"><title>Node100</title>
 <g id="a_node3"><a xlink:href="struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" target="_top" xlink:title="UserInfo::isValid when fullyValid or marginallyValid. ">
 <polygon fill="none" stroke="black" points="319.354,-37.5 319.354,-55.5 407.424,-55.5 407.424,-37.5 319.354,-37.5"/>
 <text text-anchor="middle" x="363.389" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::isValid</text>
 </a>
 </g>
 </g>
-<!-- Node87&#45;&gt;Node88 -->
-<g id="edge2" class="edge"><title>Node87&#45;&gt;Node88</title>
+<!-- Node99&#45;&gt;Node100 -->
+<g id="edge2" class="edge"><title>Node99&#45;&gt;Node100</title>
 <path fill="none" stroke="midnightblue" d="M278.302,-35.1733C288.403,-36.5339 298.889,-37.9465 308.89,-39.2936"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="308.722,-42.8025 319.1,-40.6688 309.657,-35.8651 308.722,-42.8025"/>
 </g>
-<!-- Node89 -->
-<g id="node4" class="node"><title>Node89</title>
+<!-- Node101 -->
+<g id="node4" class="node"><title>Node101</title>
 <g id="a_node4"><a xlink:href="struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" target="_top" xlink:title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">
 <polygon fill="none" stroke="black" points="314.073,-0.5 314.073,-18.5 412.705,-18.5 412.705,-0.5 314.073,-0.5"/>
 <text text-anchor="middle" x="363.389" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::fullyValid</text>
 </a>
 </g>
 </g>
-<!-- Node87&#45;&gt;Node89 -->
-<g id="edge3" class="edge"><title>Node87&#45;&gt;Node89</title>
+<!-- Node99&#45;&gt;Node101 -->
+<g id="edge3" class="edge"><title>Node99&#45;&gt;Node101</title>
 <path fill="none" stroke="midnightblue" d="M278.302,-20.2306C286.673,-19.1623 295.309,-18.0603 303.714,-16.9877"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="304.341,-20.4361 313.818,-15.6983 303.455,-13.4924 304.341,-20.4361"/>
 </g>

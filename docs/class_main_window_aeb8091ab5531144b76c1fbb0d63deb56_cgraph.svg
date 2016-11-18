@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 277.75 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>MainWindow::config</title>
-<!-- Node24 -->
-<g id="node1" class="node"><title>Node24</title>
+<!-- Node28 -->
+<g id="node1" class="node"><title>Node28</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 105.482,-36.5 105.482,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="52.7412" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </g>
-<!-- Node25 -->
-<g id="node2" class="node"><title>Node25</title>
+<!-- Node29 -->
+<g id="node2" class="node"><title>Node29</title>
 <g id="a_node2"><a xlink:href="class_util.html#a94597a43bf37076511033bef32f3df12" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() ">
 <polygon fill="none" stroke="black" points="141.482,-37.5 141.482,-55.5 269.748,-55.5 269.748,-37.5 141.482,-37.5"/>
 <text text-anchor="middle" x="205.615" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">Util::normalizeFolderPath</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node25 -->
-<g id="edge1" class="edge"><title>Node24&#45;&gt;Node25</title>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge1" class="edge"><title>Node28&#45;&gt;Node29</title>
 <path fill="none" stroke="midnightblue" d="M105.663,-34.0387C113.934,-35.0803 122.624,-36.1746 131.277,-37.2643"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="131.032,-40.761 141.391,-38.538 131.907,-33.8159 131.032,-40.761"/>
 </g>
-<!-- Node26 -->
-<g id="node3" class="node"><title>Node26</title>
+<!-- Node30 -->
+<g id="node3" class="node"><title>Node30</title>
 <g id="a_node3"><a xlink:href="class_util.html#af23940548a0dcd3ade9c052d38ad0549" target="_top" xlink:title="Util::checkConfig do we have prequisite settings? ">
 <polygon fill="none" stroke="black" points="160.101,-0.5 160.101,-18.5 251.13,-18.5 251.13,-0.5 160.101,-0.5"/>
 <text text-anchor="middle" x="205.615" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node26 -->
-<g id="edge2" class="edge"><title>Node24&#45;&gt;Node26</title>
+<!-- Node28&#45;&gt;Node30 -->
+<g id="edge2" class="edge"><title>Node28&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M105.663,-21.3054C119.793,-19.6197 135.146,-17.788 149.448,-16.0817"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="150.13,-19.5253 159.645,-14.8652 149.301,-12.5746 150.13,-19.5253"/>
 </g>

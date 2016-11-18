@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 192.15 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::setText</title>
-<!-- Node84 -->
-<g id="node1" class="node"><title>Node84</title>
+<!-- Node96 -->
+<g id="node1" class="node"><title>Node96</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 110.478,-18.5 110.478,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="55.2388" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setText</text>
 </g>
-<!-- Node85 -->
-<g id="node2" class="node"><title>Node85</title>
+<!-- Node97 -->
+<g id="node2" class="node"><title>Node97</title>
 <g id="a_node2"><a xlink:href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" target="_top" xlink:title="main ">
 <polygon fill="none" stroke="black" points="146.478,-0.5 146.478,-18.5 184.152,-18.5 184.152,-0.5 146.478,-0.5"/>
 <text text-anchor="middle" x="165.315" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>
 </g>
 </g>
-<!-- Node84&#45;&gt;Node85 -->
-<g id="edge1" class="edge"><title>Node84&#45;&gt;Node85</title>
+<!-- Node96&#45;&gt;Node97 -->
+<g id="edge1" class="edge"><title>Node96&#45;&gt;Node97</title>
 <path fill="none" stroke="midnightblue" d="M120.755,-9.5C130.015,-9.5 138.848,-9.5 146.109,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="120.594,-6.0001 110.593,-9.5 120.593,-13.0001 120.594,-6.0001"/>
 </g>

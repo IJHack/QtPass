@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['usersdialog_2ecpp',['usersdialog.cpp',['../usersdialog_8cpp.html',1,'']]],
-  ['usersdialog_2eh',['usersdialog.h',['../usersdialog_8h.html',1,'']]],
-  ['util_2ecpp',['util.cpp',['../util_8cpp.html',1,'']]],
-  ['util_2eh',['util.h',['../util_8h.html',1,'']]]
+  ['trayicon_2ecpp',['trayicon.cpp',['../trayicon_8cpp.html',1,'']]],
+  ['trayicon_2eh',['trayicon.h',['../trayicon_8h.html',1,'']]]
 ];

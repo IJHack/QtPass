@@ -1,6 +1,9 @@
 <map id="MainWindow::copyTextToClipboard" name="MainWindow::copyTextToClipboard">
-<area shape="rect" id="node2" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="282,8,498,33"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a7d1fc89a984ba5a000b881a1f1e3faef" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="282,59,498,84"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="570,5,714,31"/>
-<area shape="rect" id="node5" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="546,55,738,93"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect" alt="" coords="313,5,468,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="282,55,498,80"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a7d1fc89a984ba5a000b881a1f1e3faef" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="282,107,498,132"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="553,5,731,31"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="786,5,967,31"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="570,55,714,80"/>
+<area shape="rect" id="node8" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="546,104,738,143"/>
 </map>

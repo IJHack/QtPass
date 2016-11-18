@@ -1,12 +1,13 @@
 <map id="mainwindow.h" name="mainwindow.h">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="178,79,281,104"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="170,79,273,104"/>
 <area shape="rect" id="node3" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,225,123,251"/>
 <area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,225,416,251"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="main.cpp" alt="" coords="384,79,459,104"/>
-<area shape="rect" id="node8" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="483,79,608,104"/>
-<area shape="rect" id="node10" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="632,79,816,104"/>
+<area shape="rect" id="node7" href="$deselectabletreeview_8h.html" title="deselectabletreeview.h" alt="" coords="375,79,532,104"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="main.cpp" alt="" coords="556,79,631,104"/>
+<area shape="rect" id="node9" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="655,79,780,104"/>
+<area shape="rect" id="node11" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="804,79,988,104"/>
 <area shape="rect" id="node4" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,152,264,177"/>
 <area shape="rect" id="node5" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,225,272,251"/>
-<area shape="rect" id="node9" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="471,152,610,177"/>
-<area shape="rect" id="node11" href="$qpushbuttonwithclipboard_8cpp.html" title="qpushbuttonwithclipboard.cpp" alt="" coords="684,152,882,177"/>
+<area shape="rect" id="node10" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="616,152,755,177"/>
+<area shape="rect" id="node12" href="$qpushbuttonwithclipboard_8cpp.html" title="qpushbuttonwithclipboard.cpp" alt="" coords="829,152,1027,177"/>
 </map>
