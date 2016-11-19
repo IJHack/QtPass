@@ -1,7 +1,6 @@
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
 
-
 QtPassSettings::QtPassSettings(QObject *parent) : QObject(parent)
 {
 
