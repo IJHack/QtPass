@@ -257,7 +257,7 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
 /**
  * @brief ConfigDialog::useClipboard set the clipboard use from MainWindow.
  */
-void ConfigDialog::useClipboard(MainWindow::clipBoardType useClipboard) {
+void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
   ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
   on_comboBoxClipboard_activated(static_cast<int>(useClipboard));
 }
@@ -304,8 +304,8 @@ void ConfigDialog::setAutoclearPanel(int seconds) {
  * @brief ConfigDialog::useClipboard set the use of clipboard from MainWindow.
  * @return
  */
-MainWindow::clipBoardType ConfigDialog::useClipboard() {
-  return static_cast<MainWindow::clipBoardType>(
+Enums::clipBoardType ConfigDialog::useClipboard() {
+  return static_cast<Enums::clipBoardType>(
       ui->comboBoxClipboard->currentIndex());
 }
 

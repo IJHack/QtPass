@@ -226,12 +226,6 @@ bool MainWindow::checkConfig() {
 
   usePass = (settings.value("usePass") == "true");
 
-  useClipboard = CLIPBOARD_NEVER;
-  if (settings.value("useClipboard") == "true" ||
-      settings.value("useClipboard") == "1")
-    useClipboard = CLIPBOARD_ALWAYS;
-  else if (settings.value("useClipboard") == "2")
-    useClipboard = CLIPBOARD_ON_DEMAND;
   useAutoclear = (settings.value("useAutoclear") == "true");
   autoclearSeconds = settings.value("autoclearSeconds").toInt();
   useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");
@@ -517,10 +511,10 @@ void MainWindow::config() {
       settings.setValue("passStore", passStore);
       settings.setValue("usePass", usePass ? "true" : "false");
       switch (useClipboard) {
-      case CLIPBOARD_ALWAYS:
+      case Enums::CLIPBOARD_ALWAYS:
         settings.setValue("useClipboard", "true");
         break;
-      case CLIPBOARD_ON_DEMAND:
+      case Enums::CLIPBOARD_ON_DEMAND:
         settings.setValue("useClipboard", "2");
         break;
       default:
@@ -813,9 +807,9 @@ void MainWindow::readyRead(bool finished = false) {
       QStringList tokens = output.split("\n");
       QString password = tokens.at(0);
 
-      if (useClipboard != CLIPBOARD_NEVER && !output.isEmpty()) {
+      if (useClipboard != Enums::CLIPBOARD_NEVER && !output.isEmpty()) {
         clippedText=tokens[0];
-        if (useClipboard == CLIPBOARD_ALWAYS)
+        if (useClipboard == Enums::CLIPBOARD_ALWAYS)
           copyTextToClipboard(tokens[0]);
         if (useAutoclearPanel) {
           QTimer::singleShot(1000 * autoclearPanelSeconds, this,
@@ -1876,7 +1870,7 @@ void MainWindow::editPassword() {
  * generator
  * @return the password
  */
-QString MainWindow::generatePassword(int length, clipBoardType selection) {
+QString MainWindow::generatePassword(int length, Enums::clipBoardType selection) {
   QString passwd;
   if (usePwgen) {
     waitFor(2);

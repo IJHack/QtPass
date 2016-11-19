@@ -3,6 +3,7 @@
 
 #include "storemodel.h"
 #include "trayicon.h"
+#include "enums.h"
 #include <QFileSystemModel>
 #include <QMainWindow>
 #include <QProcess>
@@ -10,6 +11,7 @@
 #include <QSettings>
 #include <QTimer>
 #include <QTreeView>
+
 #if SINGLE_APP
 #include "singleapplication.h"
 #else
@@ -87,17 +89,6 @@ class MainWindow : public QMainWindow {
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
-  /**
-   * @brief MainWindow::clipBoardType enum
-   * 0 Never
-   * 1 Always
-   * 2 On demand
-   */
-  enum clipBoardType {
-    CLIPBOARD_NEVER = 0,
-    CLIPBOARD_ALWAYS = 1,
-    CLIPBOARD_ON_DEMAND = 2
-  };
 
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
@@ -111,7 +102,7 @@ public:
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
-  QString generatePassword(int length, clipBoardType selection);
+  QString generatePassword(int length, Enums::clipBoardType selection);
   void config();
   void executePassGitInit();
   void copyTextToClipboard(const QString &text);
@@ -172,7 +163,7 @@ private:
   QScopedPointer<QProcess> process;
   QTreeView *treeView;
   bool usePass;
-  clipBoardType useClipboard;
+  Enums::clipBoardType useClipboard;
   bool useAutoclear;
   bool useAutoclearPanel;
   bool hidePassword;
