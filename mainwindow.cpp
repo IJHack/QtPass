@@ -2034,7 +2034,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QLayout *ly = new QHBoxLayout();
   ly->setContentsMargins(5, 2, 2, 2);
   frame->setLayout(ly);
-  if (useClipboard != CLIPBOARD_NEVER) {
+  if (useClipboard != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
