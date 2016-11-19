@@ -1404,8 +1404,8 @@ QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
       current_user.key_id = props[4];
       current_user.name = props[9].toUtf8();
       current_user.validity = props[1][0].toLatin1();
-      current_user.created.setTime_t(props[5].toInt());
-      current_user.expiry.setTime_t(props[6].toInt());
+      current_user.created.setTime_t(props[5].toUInt());
+      current_user.expiry.setTime_t(props[6].toUInt());
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
       current_user.name = props[9];
     }
@@ -1880,6 +1880,9 @@ void MainWindow::editPassword() {
 /**
  * @brief MainWindow::generatePassword use either pwgen or internal password
  * generator
+ * @param length of the desired password
+ * @param selection character set
+ * TODO(annejan) don't overload clipBoardType for this
  * @return the password
  */
 QString MainWindow::generatePassword(int length, clipBoardType selection) {
@@ -1922,7 +1925,7 @@ QString MainWindow::generatePassword(int length, clipBoardType selection) {
  * or timeout after x-seconds
  * @param seconds
  */
-void MainWindow::waitFor(int seconds) {
+void MainWindow::waitFor(uint seconds) {
   QDateTime current = QDateTime::currentDateTime();
   uint stop = current.toTime_t() + seconds;
   while (!process->atEnd() || !execQueue->isEmpty()) {
