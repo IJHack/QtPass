@@ -1951,7 +1951,10 @@ void MainWindow::clearTemplateWidgets() {
  */
 void MainWindow::copyTextByButtonClick(bool checked)
 {
-    QString textToCopy = ((QPushButtonWithClipboard*)sender())->getTextToCopy();
+    if (checked) {
+        qDebug() << "checked";
+    }
+    QString textToCopy = dynamic_cast<QPushButtonWithClipboard*>(sender())->getTextToCopy();
     copyTextToClipboard(textToCopy);
 }
 
