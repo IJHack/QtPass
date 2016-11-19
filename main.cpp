@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (text.indexOf("-psn_") == 0) {
-      text.clear();
+    text.clear();
   }
 
 #if SINGLE_APP

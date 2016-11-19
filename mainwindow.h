@@ -106,13 +106,11 @@ public:
   void executePassGitInit();
   void copyTextToClipboard(const QString &text);
 
-
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
    * @sa MainWindow::passwordConfiguration
    */
   passwordConfiguration pwdConfig;
-
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -232,7 +230,8 @@ private:
   void waitFor(int seconds);
   void clearTemplateWidgets();
   void reencryptPath(QString dir);
-  void addToGridLayout(int position, const QString &field, const QString &value);
+  void addToGridLayout(int position, const QString &field,
+                       const QString &value);
 };
 
 #endif // MAINWINDOW_H_

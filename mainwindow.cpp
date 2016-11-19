@@ -20,6 +20,7 @@
 #include "configdialog.h"
 #include "keygendialog.h"
 #include "passworddialog.h"
+#include "qpushbuttonwithclipboard.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
@@ -54,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     // no working config
     QApplication::quit();
   }
-  clippedText="";
+  clippedText = "";
   QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
@@ -609,9 +610,10 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
-  clippedText="";
+  clippedText = "";
   QString file = getFile(index, usePass);
-  QFileInfo fileinfo = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileinfo =
+      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
   ui->Passwordname->setText(fileinfo.fileName());
   if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
@@ -654,7 +656,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
 /**
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
-void MainWindow::deselect(){
+void MainWindow::deselect() {
   currentDir = "/";
   copyTextToClipboard("");
   ui->Passwordname->setText("");
@@ -773,13 +775,13 @@ void MainWindow::readyRead(bool finished = false) {
             QString field = token.left(colon);
             if (templateAllFields || passTemplate.contains(field)) {
               QString value = token.right(token.length() - colon - 1);
-              if (!passTemplate.contains(field) && value.startsWith("//")){
+              if (!passTemplate.contains(field) && value.startsWith("//")) {
                 continue; // colon is probably from a url
               }
               addToGridLayout(j, field, value);
             }
-          }else{
-              remainingTokens.append(token);
+          } else {
+            remainingTokens.append(token);
           }
         }
         if (ui->gridLayout->count() == 0)
@@ -790,8 +792,9 @@ void MainWindow::readyRead(bool finished = false) {
       } else {
         clearTemplateWidgets();
       }
-      if (!hideContent){
-        // now set the password. If we set it earlier, the layout will be cleared
+      if (!hideContent) {
+        // now set the password. If we set it earlier, the layout will be
+        // cleared
         addToGridLayout(0, tr("Password"), password);
       }
       if (useAutoclearPanel) {
@@ -1411,7 +1414,7 @@ void MainWindow::on_usersButton_clicked() {
     // remove the passStore directory otherwise,
     // pass would create a passStore/passStore/dir
     // but you want passStore/dir
-    QString dirWithoutPassdir=dir.remove(0,passStore.size());
+    QString dirWithoutPassdir = dir.remove(0, passStore.size());
     executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
   } else {
     QString gpgIdFile = dir + ".gpg-id";
@@ -1876,22 +1879,22 @@ void MainWindow::clearTemplateWidgets() {
  * @param checked
  *  no use, we need it, because of QPushButtonWithClipboard::clicked function
  */
-void MainWindow::copyTextByButtonClick(bool checked)
-{
-    if (checked) {
-        qDebug() << "checked";
-    }
-    QString textToCopy = dynamic_cast<QPushButtonWithClipboard*>(sender())->getTextToCopy();
-    copyTextToClipboard(textToCopy);
+void MainWindow::copyTextByButtonClick(bool checked) {
+  if (checked) {
+    qDebug() << "checked";
+  }
+  QString textToCopy =
+      dynamic_cast<QPushButtonWithClipboard *>(sender())->getTextToCopy();
+  copyTextToClipboard(textToCopy);
 }
 
 void MainWindow::copyTextToClipboard(const QString &text) {
-    QClipboard *clip = QApplication::clipboard();
-    clip->setText(text);
-    clippedText=text;
-    ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
-    if (useAutoclear) {
-      QTimer::singleShot(1000 * autoclearSeconds, this, SLOT(clearClipboard()));
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(text);
+  clippedText = text;
+  ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
+  if (useAutoclear) {
+    QTimer::singleShot(1000 * autoclearSeconds, this, SLOT(clearClipboard()));
   }
 }
 
@@ -1992,37 +1995,39 @@ void MainWindow::reencryptPath(QString dir) {
   enableUiElements(true);
 }
 
-void MainWindow::addToGridLayout(int position, const QString &field, const QString &value)
-{
-    QString trimmedField = field.trimmed();
-    QString trimmedValue = value.trimmed();
+void MainWindow::addToGridLayout(int position, const QString &field,
+                                 const QString &value) {
+  QString trimmedField = field.trimmed();
+  QString trimmedValue = value.trimmed();
 
-    QLineEdit *line = new QLineEdit();
-    line->setObjectName(trimmedField);
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet("border-style: none ; background: transparent;");
-    line->setContentsMargins(0,0,0,0);
-    // set the echo mode to password, if the field is "password"
-    if (hidePassword && trimmedField == tr("Password")){
-      line->setEchoMode(QLineEdit::Password);
-    }
+  QLineEdit *line = new QLineEdit();
+  line->setObjectName(trimmedField);
+  line->setText(trimmedValue);
+  line->setReadOnly(true);
+  line->setStyleSheet("border-style: none ; background: transparent;");
+  line->setContentsMargins(0, 0, 0, 0);
+  // set the echo mode to password, if the field is "password"
+  if (hidePassword && trimmedField == tr("Password")) {
+    line->setEchoMode(QLineEdit::Password);
+  }
 
-    QPushButtonWithClipboard *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
-    fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
-    //fieldLabel->setContentsMargins(0,5,5,0);
+  QPushButtonWithClipboard *fieldLabel =
+      new QPushButtonWithClipboard(trimmedValue, this);
+  connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+  fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
+  // fieldLabel->setContentsMargins(0,5,5,0);
 
-    //Combine the Copy button and the line edit in one widget
-    QFrame *frame = new QFrame();
-    QLayout *ly = new QHBoxLayout();
-    ly->setContentsMargins(5,2,2,2);
-    frame->setLayout(ly);
-    frame->layout()->addWidget(fieldLabel);
-    frame->layout()->addWidget(line);
-    frame->setStyleSheet(".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
+  // Combine the Copy button and the line edit in one widget
+  QFrame *frame = new QFrame();
+  QLayout *ly = new QHBoxLayout();
+  ly->setContentsMargins(5, 2, 2, 2);
+  frame->setLayout(ly);
+  frame->layout()->addWidget(fieldLabel);
+  frame->layout()->addWidget(line);
+  frame->setStyleSheet(
+      ".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
 
-    // set into the layout
-    ui->gridLayout->addWidget(new QLabel(trimmedField), position, 0);
-    ui->gridLayout->addWidget(frame, position, 1);
+  // set into the layout
+  ui->gridLayout->addWidget(new QLabel(trimmedField), position, 0);
+  ui->gridLayout->addWidget(frame, position, 1);
 }

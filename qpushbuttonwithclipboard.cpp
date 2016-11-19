@@ -1,6 +1,6 @@
 #include "qpushbuttonwithclipboard.h"
-#include <QLabel>
 #include <QDebug>
+#include <QLabel>
 
 /**
  * @brief QPushButtonWithClipboard::QPushButtonWithClipboard
@@ -12,18 +12,27 @@
  * @param parent
  *  the parent window
  */
-QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy, MainWindow *parent) : QPushButton(*new QIcon(QIcon::fromTheme("edit-copy" ,QIcon(":/icons/edit-copy.svg"))), "", parent)
-{
-    this->textToCopy = textToCopy;
-    this->parent = parent;
+QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
+                                                   MainWindow *parent)
+    : QPushButton(*new QIcon(QIcon::fromTheme("edit-copy",
+                                              QIcon(":/icons/edit-copy.svg"))),
+                  "", parent) {
+  this->textToCopy = textToCopy;
+  this->parent = parent;
 }
 
-QString QPushButtonWithClipboard::getTextToCopy() const
-{
-    return textToCopy;
-}
+/**
+ * @brief QPushButtonWithClipboard::getTextToCopy returns the text of associated
+ * text field
+ * @return QString textToCopy
+ */
+QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
 
-void QPushButtonWithClipboard::setTextToCopy(const QString &value)
-{
-    textToCopy = value;
+/**
+ * @brief QPushButtonWithClipboard::setTextToCopy sets text from associated
+ * text field
+ * @param QString value
+ */
+void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
+  textToCopy = value;
 }
