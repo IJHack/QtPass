@@ -1911,7 +1911,7 @@ void MainWindow::copyTextToClipboard(const QString &text) {
  * @brief MainWindow::reencryptPath reencrypt all files under the chosen
  * directory
  *
- * This is stil quite experimental..s
+ * This is stil quite experimental..
  * @param dir
  */
 void MainWindow::reencryptPath(QString dir) {
@@ -2005,7 +2005,7 @@ void MainWindow::reencryptPath(QString dir) {
 }
 
 /**
- * @brief MainWindow::addToGridLayout add fields to the template grid
+ * @brief MainWindow::addToGridLayout add a field to the template grid
  * @param position
  * @param field
  * @param value
