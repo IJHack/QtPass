@@ -614,7 +614,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   QString file = getFile(index, usePass);
   QFileInfo fileinfo =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
-  ui->Passwordname->setText(fileinfo.fileName());
+  ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
     if (usePass)
@@ -659,7 +659,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
 void MainWindow::deselect() {
   currentDir = "/";
   copyTextToClipboard("");
-  ui->Passwordname->setText("");
+  ui->passwordName->setText("");
   clearPanel();
 }
 
