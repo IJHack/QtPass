@@ -202,7 +202,6 @@ void MainWindow::mountWebDav() {
  */
 bool MainWindow::checkConfig() {
   QSettings &settings(getSettings());
-
   QString version = settings.value("version").toString();
 
   if (freshStart) {
@@ -849,6 +848,7 @@ void MainWindow::readyRead(bool finished = false) {
             if (templateAllFields || passTemplate.contains(field)) {
               QString value = token.right(token.length() - colon - 1);
               if (!passTemplate.contains(field) && value.startsWith("//")) {
+                remainingTokens.append(token);
                 continue; // colon is probably from a url
               }
               addToGridLayout(j, field, value);
@@ -865,7 +865,7 @@ void MainWindow::readyRead(bool finished = false) {
       } else {
         clearTemplateWidgets();
       }
-      if (!hideContent) {
+      if (!hideContent && !password.isEmpty()) {
         // now set the password. If we set it earlier, the layout will be
         // cleared
         addToGridLayout(0, tr("Password"), password);
@@ -1964,6 +1964,10 @@ void MainWindow::copyTextByButtonClick(bool checked) {
   copyTextToClipboard(textToCopy);
 }
 
+/**
+ * @brief MainWindow::copyTextToClipboard copies text to your clipboard
+ * @param text
+ */
 void MainWindow::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
   clip->setText(text);
@@ -2071,6 +2075,12 @@ void MainWindow::reencryptPath(QString dir) {
   enableUiElements(true);
 }
 
+/**
+ * @brief MainWindow::addToGridLayout add fields to the template grid
+ * @param position
+ * @param field
+ * @param value
+ */
 void MainWindow::addToGridLayout(int position, const QString &field,
                                  const QString &value) {
   QString trimmedField = field.trimmed();
