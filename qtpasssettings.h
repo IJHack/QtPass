@@ -165,7 +165,9 @@ public:
     static bool isTemplateAllFields(const bool &defaultValue = QVariant().toBool());
     static void setTemplateAllFields(const bool &templateAllFields);
 
-    QHash<QString, QString> getProfiles();
+    static QHash<QString, QString> getProfiles();
+    static void setProfiles(QHash<QString, QString> &profiles);
+
 signals:
 
 public slots:
@@ -211,6 +213,7 @@ private:
     static void beginProfilesGroup();
 
     static QVariant getSetting(const QString &key, const QVariant &defaultValue = QVariant());
+    static void setSetting(const QString &key, const QVariant &value);
 };
 
 #endif // QTPASSSETTINGS_H

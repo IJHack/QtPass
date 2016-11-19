@@ -8,7 +8,6 @@
 #include <QMainWindow>
 #include <QProcess>
 #include <QQueue>
-#include <QSettings>
 #include <QTimer>
 #include <QTreeView>
 
@@ -155,7 +154,6 @@ private:
   QAction *actionAddFolder;
 
   QApplication *QtPass;
-  QScopedPointer<QSettings> settings;
   QScopedPointer<Ui::MainWindow> ui;
   QFileSystemModel model;
   StoreModel proxyModel;
@@ -221,7 +219,6 @@ private:
   QString getDir(const QModelIndex &, bool);
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool, bool);
-  QSettings &getSettings();
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   QStringList getRecipientList(QString for_file);
   QString getRecipientString(QString for_file, QString separator = " ",

@@ -238,7 +238,11 @@ void QtPassSettings::setAddGPGId(const bool &addGPGId)
 
 QString QtPassSettings::getPassStore(const QString &defaultValue)
 {
-    return getStringValue("passStore", defaultValue);
+    QString returnValue = getStringValue("passStore", defaultValue);
+    // ensure directory exists if never used pass or misconfigured.
+    // otherwise process->setWorkingDirectory(passStore); will fail on execution.
+    QDir().mkdir(returnValue);
+    return returnValue;
 }
 
 void QtPassSettings::setPassStore(const QString &passStore)
@@ -553,16 +557,25 @@ QHash<QString, QString> QtPassSettings::getProfiles()
     return profiles;
 }
 
+void QtPassSettings::setProfiles(QHash<QString, QString> &profiles)
+{
+    getSettings().remove("profiles");
+    beginSettingsGroup("profiles");
+    QHash<QString, QString>::iterator i=profiles.begin();
+    for(; i !=profiles.end(); ++i)
+    {
+        setSetting(i.key() ,i.value());
+    }
+    endSettingsGroup();
+}
+
 QSettings &QtPassSettings::getSettings() {
   if (!QtPassSettings::initialized) {
     QString portable_ini = QCoreApplication::applicationDirPath() +
                            QDir::separator() + "qtpass.ini";
-    // qDebug() << "Settings file: " + portable_ini;
     if (QFile(portable_ini).exists()) {
-      // qDebug() << "Settings file exists, loading it in";
       settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
     } else {
-      // qDebug() << "Settings file does not exist, use defaults";
       settings.reset(new QSettings("IJHack", "QtPass"));
     }
   }
@@ -701,7 +714,12 @@ void QtPassSettings::beginProfilesGroup()
 
 }
 
-QVariant QtPassSettings::getSetting(const QString &key, const QVariant &defalutValue)
+QVariant QtPassSettings::getSetting(const QString &key, const QVariant &defaultValue)
 {
-    return getSettings().value(key, defalutValue);
+    return getSettings().value(key, defaultValue);
+}
+
+void QtPassSettings::setSetting(const QString &key, const QVariant &value)
+{
+    getSettings().setValue(key, value);
 }
