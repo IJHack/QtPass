@@ -1,23 +1,40 @@
 #ifndef DESELECTABLETREEVIEW_H
 #define DESELECTABLETREEVIEW_H
-/* taken from http://stackoverflow.com/questions/2761284/ thanks to Yassir Ennazk */
 #include "QTreeView"
 #include "QMouseEvent"
 #include "QDebug"
 #include "mainwindow.h"
 
+/**
+ * @brief The DeselectableTreeView class
+ * taken from http://stackoverflow.com/questions/2761284/ thanks to Yassir Ennazk
+ */
 class DeselectableTreeView : public QTreeView
 {
      Q_OBJECT
 
 public:
+    /**
+     * @brief DeselectableTreeView standard constructor
+     * @param parent
+     */
     DeselectableTreeView(QWidget *parent) : QTreeView(parent) {}
+    /**
+     * @brief ~DeselectableTreeView standard destructor
+     */
     virtual ~DeselectableTreeView() {}
 
 signals:
+    /**
+     * @brief emptyClicked event
+     */
     void emptyClicked();
 
 private:
+    /**
+     * @brief mousePressEvent now deselects on second click
+     * @param event
+     */
     virtual void mousePressEvent(QMouseEvent *event)
     {
         QModelIndex item = indexAt(event->pos());

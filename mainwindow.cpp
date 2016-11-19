@@ -680,13 +680,14 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
  * @param index
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
+  bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
   clippedText="";
   QString file = getFile(index, usePass);
   QFileInfo fileinfo = model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
   ui->Passwordname->setText(fileinfo.fileName());
-  if (!file.isEmpty()) {
+  if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
     if (usePass)
       executePass("show \"" + file + '"');
@@ -724,6 +725,9 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
   }
 }
 
+/**
+ * @brief MainWindow::deselect clear the selection, password and copy buffer
+ */
 void MainWindow::deselect(){
   currentDir = "/";
   copyTextToClipboard("");
