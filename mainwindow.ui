@@ -397,6 +397,9 @@ p, li { white-space: pre-wrap; }
           <property name="acceptRichText">
            <bool>true</bool>
           </property>
+          <property name="openExternalLinks">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
