@@ -44,6 +44,20 @@ fi
   link `/usr/bin/pinentry` to your pinentry application of choice
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
 
+### I have an other issue with gpg
+
+* Possibly you have you key only in gpg and not in gpg2
+
+```
+gpg --export [ID] > public.key
+gpg --export-secret-key [ID] > private.key
+gpg2 --import public.key
+gpg2 --import private.key
+rm public.key private.key
+```
+Where [ID] is your gpg key-id.
+* It might be the case where it is the other way around, exchange gpg and gpg2 accordingly . .
+
 ### Git doesn't work on Windows
 
 git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).

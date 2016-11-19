@@ -114,6 +114,7 @@ public:
   QString generatePassword(int length, clipBoardType selection);
   void config();
   void executePassGitInit();
+  void copyTextToClipboard(const QString &text);
 
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
@@ -126,6 +127,9 @@ protected:
   void keyPressEvent(QKeyEvent *event);
   void changeEvent(QEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
+
+public slots:
+  void deselect();
 
 private slots:
   void on_updateButton_clicked();
@@ -146,13 +150,12 @@ private slots:
   void on_usersButton_clicked();
   void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
-  void on_copyPasswordButton_clicked();
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void addFolder();
   void editPassword();
   void focusInput();
-  void copyPasswordToClipboard();
+  void copyTextByButtonClick(bool checked = false);
 
 private:
   QAction *actionAddPassword;
@@ -165,6 +168,7 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QScopedPointer<QProcess> process;
+  QTreeView *treeView;
   bool usePass;
   clipBoardType useClipboard;
   bool useAutoclear;
@@ -185,7 +189,7 @@ private:
   QString webDavUser;
   QString webDavPassword;
   QProcess fusedav;
-  QString clippedPass;
+  QString clippedText;
   QString autoclearPass;
   QTimer *autoclearTimer;
   actionType currentAction;
@@ -237,9 +241,9 @@ private:
   bool removeDir(const QString &dirName);
   void waitFor(int seconds);
   void clearTemplateWidgets();
-  void setClippedPassword(const QString &pass);
-  const QString &getClippedPassword();
   void reencryptPath(QString dir);
+  void addToGridLayout(int position, const QString &field,
+                       const QString &value);
 };
 
 #endif // MAINWINDOW_H_

@@ -2,7 +2,37 @@
 
 ## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...HEAD)
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...HEAD)
+
+**Implemented enhancements:**
+
+- Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
+- Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
+- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+- Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
+- Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
+- Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
+- added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
+
+**Fixed bugs:**
+
+- Regression with new view mode when using templates and urls [\#223](https://github.com/IJHack/QtPass/issues/223)
+- Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
+- Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
+- Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
+
+**Closed issues:**
+
+- We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
+
+**Merged pull requests:**
+
+- Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
+- UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
+- creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
+
+## [v1.1.5](https://github.com/IJHack/qtpass/tree/v1.1.5) (2016-10-19)
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...v1.1.5)
 
 **Implemented enhancements:**
 
@@ -13,6 +43,7 @@
 
 **Fixed bugs:**
 
+- view box is trimming whitespace [\#210](https://github.com/IJHack/QtPass/issues/210)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 
 **Closed issues:**
@@ -22,6 +53,7 @@
 
 **Merged pull requests:**
 
+- Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
 - Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
@@ -92,7 +124,7 @@
 **Merged pull requests:**
 
 - add Appdata file and update desktop file [\#178](https://github.com/IJHack/QtPass/pull/178) ([daveol](https://github.com/daveol))
-- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([Aeyoun](https://github.com/Aeyoun))
+- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([da2x](https://github.com/da2x))
 - Fix build issues with MSVC2015 on Windows [\#175](https://github.com/IJHack/QtPass/pull/175) ([msvi](https://github.com/msvi))
 
 ## [v1.1.1](https://github.com/IJHack/qtpass/tree/v1.1.1) (2016-04-04)
