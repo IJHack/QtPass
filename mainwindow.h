@@ -227,7 +227,7 @@ private:
   void initTrayIcon();
   void destroyTrayIcon();
   bool removeDir(const QString &dirName);
-  void waitFor(int seconds);
+  void waitFor(uint seconds);
   void clearTemplateWidgets();
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
