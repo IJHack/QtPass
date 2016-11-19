@@ -602,7 +602,7 @@ p, li { white-space: pre-wrap; }
 &lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="459"/>
+        <location filename="../mainwindow.ui" line="462"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
     </message>
