@@ -20,6 +20,7 @@
 - Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
 - Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
+- Re-opening entry in QtPass on Windows does not put login or url values back in the right place [\#183](https://github.com/IJHack/QtPass/issues/183)
 
 **Closed issues:**
 

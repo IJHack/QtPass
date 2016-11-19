@@ -651,7 +651,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow.cpp" line="2100"/>
+        <location filename="../mainwindow.cpp" line="2103"/>
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
@@ -731,32 +731,32 @@ p, li { white-space: pre-wrap; }
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1912"/>
+        <location filename="../mainwindow.cpp" line="1915"/>
         <source>No characters chosen</source>
         <translation>Ни одного символа не выбрано</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1913"/>
+        <location filename="../mainwindow.cpp" line="1916"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1932"/>
+        <location filename="../mainwindow.cpp" line="1935"/>
         <source>Timed out</source>
         <translation>Время ожидания истекло</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1933"/>
+        <location filename="../mainwindow.cpp" line="1936"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Не могу запустить процесс, предыдущий всё ещё не завершился!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1979"/>
+        <location filename="../mainwindow.cpp" line="1982"/>
         <source>Copied to clipboard</source>
         <translation>скопировать в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1993"/>
+        <location filename="../mainwindow.cpp" line="1996"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Перешифровании из папки %1</translation>
     </message>
@@ -764,13 +764,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="720"/>
         <location filename="../mainwindow.cpp" line="1191"/>
         <location filename="../mainwindow.cpp" line="1367"/>
-        <location filename="../mainwindow.cpp" line="2051"/>
+        <location filename="../mainwindow.cpp" line="2054"/>
         <source>Can not edit</source>
         <translation>Невозможно изменить содержимое</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1192"/>
-        <location filename="../mainwindow.cpp" line="2052"/>
+        <location filename="../mainwindow.cpp" line="2055"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не удалось прочитать ключ шифрования: .gpg-id файл не существует или повреждён.</translation>
     </message>

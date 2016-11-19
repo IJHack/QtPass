@@ -637,7 +637,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="720"/>
         <location filename="../mainwindow.cpp" line="1191"/>
         <location filename="../mainwindow.cpp" line="1367"/>
-        <location filename="../mainwindow.cpp" line="2051"/>
+        <location filename="../mainwindow.cpp" line="2054"/>
         <source>Can not edit</source>
         <translation>Can not edit</translation>
     </message>
@@ -659,7 +659,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow.cpp" line="2100"/>
+        <location filename="../mainwindow.cpp" line="2103"/>
         <source>Password</source>
         <translation type="unfinished">Password</translation>
     </message>
@@ -715,7 +715,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1192"/>
-        <location filename="../mainwindow.cpp" line="2052"/>
+        <location filename="../mainwindow.cpp" line="2055"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Could not read encryption key to use, .gpg-id file missing or invalid.</translation>
     </message>
@@ -813,32 +813,32 @@ You will not be able to decrypt any newly added passwords!</translation>
 (Will be placed in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1912"/>
+        <location filename="../mainwindow.cpp" line="1915"/>
         <source>No characters chosen</source>
         <translation>No characters chosen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1913"/>
+        <location filename="../mainwindow.cpp" line="1916"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Can&apos;t generate password, there are no characters to choose from set in the configuration!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1932"/>
+        <location filename="../mainwindow.cpp" line="1935"/>
         <source>Timed out</source>
         <translation>Timed out</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1933"/>
+        <location filename="../mainwindow.cpp" line="1936"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Can&apos;t start process, previous one is still running!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1979"/>
+        <location filename="../mainwindow.cpp" line="1982"/>
         <source>Copied to clipboard</source>
         <translation>Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1993"/>
+        <location filename="../mainwindow.cpp" line="1996"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-encrypting from folder %1</translation>
     </message>

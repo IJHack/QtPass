@@ -610,7 +610,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow.cpp" line="2100"/>
+        <location filename="../mainwindow.cpp" line="2103"/>
         <source>Password</source>
         <translation type="unfinished">Contraseña</translation>
     </message>
@@ -655,12 +655,12 @@ p, li { white-space: pre-wrap; }
         <translation>QProcess::Error desconocido</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1979"/>
+        <location filename="../mainwindow.cpp" line="1982"/>
         <source>Copied to clipboard</source>
         <translation>copiado en el portapapeles</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1993"/>
+        <location filename="../mainwindow.cpp" line="1996"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -675,22 +675,22 @@ p, li { white-space: pre-wrap; }
         <translation>Añadir contraseña</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1912"/>
+        <location filename="../mainwindow.cpp" line="1915"/>
         <source>No characters chosen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1913"/>
+        <location filename="../mainwindow.cpp" line="1916"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1932"/>
+        <location filename="../mainwindow.cpp" line="1935"/>
         <source>Timed out</source>
         <translation>Caducado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1933"/>
+        <location filename="../mainwindow.cpp" line="1936"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>No se puede iniciar el proceso, anterior sigue funcionando!</translation>
     </message>
@@ -708,13 +708,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="720"/>
         <location filename="../mainwindow.cpp" line="1191"/>
         <location filename="../mainwindow.cpp" line="1367"/>
-        <location filename="../mainwindow.cpp" line="2051"/>
+        <location filename="../mainwindow.cpp" line="2054"/>
         <source>Can not edit</source>
         <translation>No se puede editar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1192"/>
-        <location filename="../mainwindow.cpp" line="2052"/>
+        <location filename="../mainwindow.cpp" line="2055"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished">No se pudo leer la clave de cifrado, fichero gpg-id falta o no es valido.</translation>
     </message>
