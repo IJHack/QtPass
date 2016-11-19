@@ -34,7 +34,8 @@ SOURCES   += main.cpp\
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qtpasssettings.cpp \
-             enums.cpp
+             enums.cpp \
+             settingsconstants.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -48,7 +49,8 @@ HEADERS   += mainwindow.h \
              deselectabletreeview.h \
              qpushbuttonwithclipboard.h \
              qtpasssettings.h \
-             enums.h
+             enums.h \
+             settingsconstants.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

@@ -24,6 +24,8 @@
 #include "usersdialog.h"
 #include "util.h"
 #include "qpushbuttonwithclipboard.h"
+#include "settingsconstants.h"
+#include "qtpasssettings.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -203,41 +205,41 @@ void MainWindow::mountWebDav() {
 bool MainWindow::checkConfig() {
   QSettings &settings(getSettings());
 
-  QString version = settings.value("version").toString();
+  QString version = QtPassSettings::getVersion();
 
   if (freshStart) {
-    settings.beginGroup("mainwindow");
-    restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray());
-    restoreState(settings.value("savestate", saveState()).toByteArray());
-    move(settings.value("pos", pos()).toPoint());
-    resize(settings.value("size", size()).toSize());
+    settings.beginGroup(SettingsConstants::groupMainwindow);
+    restoreGeometry(settings.value(SettingsConstants::geometry, saveGeometry()).toByteArray());
+    restoreState(settings.value(SettingsConstants::savestate, saveState()).toByteArray());
+    move(settings.value(SettingsConstants::pos, pos()).toPoint());
+    resize(settings.value(SettingsConstants::size, size()).toSize());
     QList<int> splitter = ui->splitter->sizes();
-    int left = settings.value("splitterLeft", splitter[0]).toInt();
-    int right = settings.value("splitterRight", splitter[1]).toInt();
+    int left = settings.value(SettingsConstants::splitterLeft, splitter[0]).toInt();
+    int right = settings.value(SettingsConstants::splitterRight, splitter[1]).toInt();
     if (left > 0 || right > 0) {
       splitter[0] = left;
       splitter[1] = right;
       ui->splitter->setSizes(splitter);
     }
-    if (settings.value("maximized", isMaximized()).toBool())
+    if (settings.value(SettingsConstants::maximized, isMaximized()).toBool())
       showMaximized();
     settings.endGroup();
   }
 
-  usePass = (settings.value("usePass") == "true");
+  usePass = (settings.value(SettingsConstants::usePass) == "true");
 
-  useAutoclear = (settings.value("useAutoclear") == "true");
-  autoclearSeconds = settings.value("autoclearSeconds").toInt();
-  useAutoclearPanel = (settings.value("useAutoclearPanel") == "true");
-  autoclearPanelSeconds = settings.value("autoclearPanelSeconds").toInt();
-  hidePassword = (settings.value("hidePassword") == "true");
-  hideContent = (settings.value("hideContent") == "true");
-  addGPGId = (settings.value("addGPGId") != "false");
+  useAutoclear = (settings.value(SettingsConstants::useAutoclear) == "true");
+  autoclearSeconds = settings.value(SettingsConstants::autoclearSeconds).toInt();
+  useAutoclearPanel = (settings.value(SettingsConstants::useAutoclearPanel) == "true");
+  autoclearPanelSeconds = settings.value(SettingsConstants::autoclearPanelSeconds).toInt();
+  hidePassword = (settings.value(SettingsConstants::hidePassword) == "true");
+  hideContent = (settings.value(SettingsConstants::hideContent) == "true");
+  addGPGId = (settings.value(SettingsConstants::addGPGId) != "false");
 
-  passStore = settings.value("passStore").toString();
+  passStore = settings.value(SettingsConstants::passStore).toString();
   if (passStore.isEmpty()) {
     passStore = Util::findPasswordStore();
-    settings.setValue("passStore", passStore);
+    settings.setValue(SettingsConstants::passStore, passStore);
   }
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
@@ -245,51 +247,51 @@ bool MainWindow::checkConfig() {
 
   passStore = Util::normalizeFolderPath(passStore);
 
-  passExecutable = settings.value("passExecutable").toString();
+  passExecutable = settings.value(SettingsConstants::passExecutable).toString();
   if (passExecutable.isEmpty())
     passExecutable = Util::findBinaryInPath("pass");
 
-  gitExecutable = settings.value("gitExecutable").toString();
+  gitExecutable = settings.value(SettingsConstants::gitExecutable).toString();
   if (gitExecutable.isEmpty())
     gitExecutable = Util::findBinaryInPath("git");
 
-  gpgExecutable = settings.value("gpgExecutable").toString();
+  gpgExecutable = settings.value(SettingsConstants::gpgExecutable).toString();
   if (gpgExecutable.isEmpty())
     gpgExecutable = Util::findBinaryInPath("gpg2");
 
-  pwgenExecutable = settings.value("pwgenExecutable").toString();
+  pwgenExecutable = settings.value(SettingsConstants::pwgenExecutable).toString();
   if (pwgenExecutable.isEmpty())
     pwgenExecutable = Util::findBinaryInPath("pwgen");
 
-  gpgHome = settings.value("gpgHome").toString();
+  gpgHome = settings.value(SettingsConstants::gpgHome).toString();
 
-  useWebDav = (settings.value("useWebDav") == "true");
-  webDavUrl = settings.value("webDavUrl").toString();
-  webDavUser = settings.value("webDavUser").toString();
-  webDavPassword = settings.value("webDavPassword").toString();
+  useWebDav = (settings.value(SettingsConstants::useWebDav) == "true");
+  webDavUrl = settings.value(SettingsConstants::webDavUrl).toString();
+  webDavUser = settings.value(SettingsConstants::webDavUser).toString();
+  webDavPassword = settings.value(SettingsConstants::webDavPassword).toString();
 
-  profile = settings.value("profile").toString();
-  settings.beginGroup("profiles");
+  profile = settings.value(SettingsConstants::profile).toString();
+  settings.beginGroup(SettingsConstants::groupProfiles);
   QStringList keys = settings.childKeys();
   foreach (QString key, keys)
     profiles[key] = settings.value(key).toString();
   settings.endGroup();
 
-  useGit = (settings.value("useGit") == "true");
-  usePwgen = (settings.value("usePwgen") == "true");
-  avoidCapitals = settings.value("avoidCapitals").toBool();
-  avoidNumbers = settings.value("avoidNumbers").toBool();
-  lessRandom = settings.value("lessRandom").toBool();
-  useSymbols = (settings.value("useSymbols") == "true");
-  pwdConfig.selected = settings.value("passwordCharsSelected").toInt();
-  pwdConfig.length = settings.value("passwordLength").toInt();
-  pwdConfig.selected = settings.value("passwordCharsselection").toInt();
-  pwdConfig.Characters[3] = settings.value("passwordChars").toString();
+  useGit = (settings.value(SettingsConstants::useGit) == "true");
+  usePwgen = (settings.value(SettingsConstants::usePwgen) == "true");
+  avoidCapitals = settings.value(SettingsConstants::avoidCapitals).toBool();
+  avoidNumbers = settings.value(SettingsConstants::avoidNumbers).toBool();
+  lessRandom = settings.value(SettingsConstants::lessRandom).toBool();
+  useSymbols = (settings.value(SettingsConstants::useSymbols) == "true");
+  pwdConfig.selected = settings.value(SettingsConstants::passwordCharsSelected).toInt();
+  pwdConfig.length = settings.value(SettingsConstants::passwordLength).toInt();
+  pwdConfig.selected = settings.value(SettingsConstants::passwordCharsselection).toInt();
+  pwdConfig.Characters[3] = settings.value(SettingsConstants::passwordChars).toString();
 
-  useTrayIcon = settings.value("useTrayIcon").toBool();
-  hideOnClose = settings.value("hideOnClose").toBool();
-  startMinimized = settings.value("startMinimized").toBool();
-  alwaysOnTop = settings.value("alwaysOnTop").toBool();
+  useTrayIcon = settings.value(SettingsConstants::useTrayIcon).toBool();
+  hideOnClose = settings.value(SettingsConstants::hideOnClose).toBool();
+  startMinimized = settings.value(SettingsConstants::startMinimized).toBool();
+  alwaysOnTop = settings.value(SettingsConstants::alwaysOnTop).toBool();
 
   if (alwaysOnTop) {
     Qt::WindowFlags flags = windowFlags();
@@ -297,8 +299,8 @@ bool MainWindow::checkConfig() {
     this->show();
   }
 
-  autoPull = settings.value("autoPull").toBool();
-  autoPush = settings.value("autoPush").toBool();
+  autoPull = settings.value(SettingsConstants::autoPull).toBool();
+  autoPush = settings.value(SettingsConstants::autoPush).toBool();
 
   if (useTrayIcon && tray == NULL) {
     initTrayIcon();
@@ -310,9 +312,9 @@ bool MainWindow::checkConfig() {
     destroyTrayIcon();
   }
 
-  passTemplate = settings.value("passTemplate").toString();
-  useTemplate = settings.value("useTemplate").toBool();
-  templateAllFields = settings.value("templateAllFields").toBool();
+  passTemplate = settings.value(SettingsConstants::passTemplate).toString();
+  useTemplate = settings.value(SettingsConstants::useTemplate).toBool();
+  templateAllFields = settings.value(SettingsConstants::templateAllFields).toBool();
 
   // qDebug() << version;
 
@@ -338,7 +340,7 @@ bool MainWindow::checkConfig() {
       passTemplate = "login\nurl";
   }
 
-  settings.setValue("version", VERSION);
+  settings.setValue(SettingsConstants::version, VERSION);
 
   if (Util::checkConfig(passStore, passExecutable, gpgExecutable)) {
     config();
@@ -504,50 +506,50 @@ void MainWindow::config() {
 
       QSettings &settings(getSettings());
 
-      settings.setValue("version", VERSION);
-      settings.setValue("passExecutable", passExecutable);
-      settings.setValue("gitExecutable", gitExecutable);
-      settings.setValue("gpgExecutable", gpgExecutable);
-      settings.setValue("passStore", passStore);
-      settings.setValue("usePass", usePass ? "true" : "false");
+      settings.setValue(SettingsConstants::version, VERSION);
+      settings.setValue(SettingsConstants::passExecutable, passExecutable);
+      settings.setValue(SettingsConstants::gitExecutable, gitExecutable);
+      settings.setValue(SettingsConstants::gpgExecutable, gpgExecutable);
+      settings.setValue(SettingsConstants::passStore, passStore);
+      settings.setValue(SettingsConstants::usePass, usePass ? "true" : "false");
       switch (useClipboard) {
       case Enums::CLIPBOARD_ALWAYS:
-        settings.setValue("useClipboard", "true");
+        settings.setValue(SettingsConstants::useClipboard, "true");
         break;
       case Enums::CLIPBOARD_ON_DEMAND:
-        settings.setValue("useClipboard", "2");
+        settings.setValue(SettingsConstants::useClipboard, "2");
         break;
       default:
-        settings.setValue("useClipboard", "false");
+        settings.setValue(SettingsConstants::useClipboard, "false");
         break;
       }
-      settings.setValue("useAutoclear", useAutoclear ? "true" : "false");
-      settings.setValue("autoclearSeconds", autoclearSeconds);
-      settings.setValue("useAutoclearPanel",
+      settings.setValue(SettingsConstants::useAutoclear, useAutoclear ? "true" : "false");
+      settings.setValue(SettingsConstants::autoclearSeconds, autoclearSeconds);
+      settings.setValue(SettingsConstants::useAutoclearPanel,
                         useAutoclearPanel ? "true" : "false");
-      settings.setValue("autoclearPanelSeconds", autoclearPanelSeconds);
-      settings.setValue("hidePassword", hidePassword ? "true" : "false");
-      settings.setValue("hideContent", hideContent ? "true" : "false");
-      settings.setValue("addGPGId", addGPGId ? "true" : "false");
-      settings.setValue("useTrayIcon", useTrayIcon ? "true" : "false");
-      settings.setValue("hideOnClose", hideOnClose ? "true" : "false");
-      settings.setValue("startMinimized", startMinimized ? "true" : "false");
-      settings.setValue("useGit", useGit ? "true" : "false");
-      settings.setValue("pwgenExecutable", pwgenExecutable);
-      settings.setValue("usePwgen", usePwgen ? "true" : "false");
-      settings.setValue("avoidCapitals", avoidCapitals ? "true" : "false");
-      settings.setValue("avoidNumbers", avoidNumbers ? "true" : "false");
-      settings.setValue("lessRandom", lessRandom ? "true" : "false");
-      settings.setValue("useSymbols", useSymbols ? "true" : "false");
-      settings.setValue("passwordLength", pwdConfig.length);
-      settings.setValue("passwordCharsselection", pwdConfig.selected);
-      settings.setValue("passwordChars", pwdConfig.Characters[3]);
-      settings.setValue("useTemplate", useTemplate);
-      settings.setValue("passTemplate", passTemplate);
-      settings.setValue("templateAllFields", templateAllFields);
-      settings.setValue("autoPull", autoPull ? "true" : "false");
-      settings.setValue("autoPush", autoPush ? "true" : "false");
-      settings.setValue("alwaysOnTop", alwaysOnTop ? "true" : "false");
+      settings.setValue(SettingsConstants::autoclearPanelSeconds, autoclearPanelSeconds);
+      settings.setValue(SettingsConstants::hidePassword, hidePassword ? "true" : "false");
+      settings.setValue(SettingsConstants::hideContent, hideContent ? "true" : "false");
+      settings.setValue(SettingsConstants::addGPGId, addGPGId ? "true" : "false");
+      settings.setValue(SettingsConstants::useTrayIcon, useTrayIcon ? "true" : "false");
+      settings.setValue(SettingsConstants::hideOnClose, hideOnClose ? "true" : "false");
+      settings.setValue(SettingsConstants::startMinimized, startMinimized ? "true" : "false");
+      settings.setValue(SettingsConstants::useGit, useGit ? "true" : "false");
+      settings.setValue(SettingsConstants::pwgenExecutable, pwgenExecutable);
+      settings.setValue(SettingsConstants::usePwgen, usePwgen ? "true" : "false");
+      settings.setValue(SettingsConstants::avoidCapitals, avoidCapitals ? "true" : "false");
+      settings.setValue(SettingsConstants::avoidNumbers, avoidNumbers ? "true" : "false");
+      settings.setValue(SettingsConstants::lessRandom, lessRandom ? "true" : "false");
+      settings.setValue(SettingsConstants::useSymbols, useSymbols ? "true" : "false");
+      settings.setValue(SettingsConstants::passwordLength, pwdConfig.length);
+      settings.setValue(SettingsConstants::passwordCharsselection, pwdConfig.selected);
+      settings.setValue(SettingsConstants::passwordChars, pwdConfig.Characters[3]);
+      settings.setValue(SettingsConstants::useTemplate, useTemplate);
+      settings.setValue(SettingsConstants::passTemplate, passTemplate);
+      settings.setValue(SettingsConstants::templateAllFields, templateAllFields);
+      settings.setValue(SettingsConstants::autoPull, autoPull ? "true" : "false");
+      settings.setValue(SettingsConstants::autoPush, autoPush ? "true" : "false");
+      settings.setValue(SettingsConstants::alwaysOnTop, alwaysOnTop ? "true" : "false");
 
       if (alwaysOnTop) {
         Qt::WindowFlags flags = windowFlags();
@@ -1644,8 +1646,8 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 
   QSettings &settings(getSettings());
 
-  settings.setValue("profile", profile);
-  settings.setValue("passStore", passStore);
+  settings.setValue(SettingsConstants::profile, profile);
+  settings.setValue(SettingsConstants::passStore, passStore);
 
   // qDebug() << env;
   QStringList store = env.filter("PASSWORD_STORE_DIR");
@@ -1703,16 +1705,16 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     event->ignore();
   } else {
     clearClipboard();
-    settings->beginGroup("mainwindow");
-    settings->setValue("geometry", saveGeometry());
-    settings->setValue("savestate", saveState());
-    settings->setValue("maximized", isMaximized());
+    settings->beginGroup(SettingsConstants::groupMainwindow);
+    settings->setValue(SettingsConstants::geometry, saveGeometry());
+    settings->setValue(SettingsConstants::savestate, saveState());
+    settings->setValue(SettingsConstants::maximized, isMaximized());
     if (!isMaximized()) {
-      settings->setValue("pos", pos());
-      settings->setValue("size", size());
+      settings->setValue(SettingsConstants::pos, pos());
+      settings->setValue(SettingsConstants::size, size());
     }
-    settings->setValue("splitterLeft", ui->splitter->sizes()[0]);
-    settings->setValue("splitterRight", ui->splitter->sizes()[1]);
+    settings->setValue(SettingsConstants::splitterLeft, ui->splitter->sizes()[0]);
+    settings->setValue(SettingsConstants::splitterRight, ui->splitter->sizes()[1]);
     settings->endGroup();
     event->accept();
   }

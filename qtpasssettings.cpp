@@ -1,5 +1,5 @@
 #include "qtpasssettings.h"
-
+#include "settingsconstants.h"
 
 QtPassSettings::QtPassSettings(QObject *parent) : QObject(parent)
 {
@@ -47,12 +47,12 @@ void QtPassSettings::saveAllSettings()
 
 QString QtPassSettings::getVersion(const QString &defaultValue)
 {
-    return getStringValue("version", defaultValue);
+    return getStringValue(SettingsConstants::version, defaultValue);
 }
 
 void QtPassSettings::setVersion(const QString &version)
 {
-    setStringValue("version", version);
+    setStringValue(SettingsConstants::version, version);
 }
 
 QByteArray QtPassSettings::getGeometry(const QByteArray &defaultValue)
