@@ -1884,8 +1884,12 @@ void MainWindow::copyTextByButtonClick(bool checked) {
   if (checked) {
     qDebug() << "checked";
   }
-  QString textToCopy =
-      dynamic_cast<QPushButtonWithClipboard *>(sender())->getTextToCopy();
+  QPushButtonWithClipboard *button =
+      dynamic_cast<QPushButtonWithClipboard *>(sender());
+  if (button == NULL) {
+    return;
+  }
+  QString textToCopy = button->getTextToCopy();
   copyTextToClipboard(textToCopy);
 }
 

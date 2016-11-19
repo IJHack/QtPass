@@ -638,7 +638,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="720"/>
         <location filename="../mainwindow.cpp" line="1191"/>
         <location filename="../mainwindow.cpp" line="1367"/>
-        <location filename="../mainwindow.cpp" line="2047"/>
+        <location filename="../mainwindow.cpp" line="2051"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
@@ -660,7 +660,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow.cpp" line="2096"/>
+        <location filename="../mainwindow.cpp" line="2100"/>
         <source>Password</source>
         <translation type="unfinished">密码</translation>
     </message>
@@ -716,7 +716,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1192"/>
-        <location filename="../mainwindow.cpp" line="2048"/>
+        <location filename="../mainwindow.cpp" line="2052"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
     </message>
@@ -833,12 +833,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>程序已经运行，无法启动！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1975"/>
+        <location filename="../mainwindow.cpp" line="1979"/>
         <source>Copied to clipboard</source>
         <translation>复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1989"/>
+        <location filename="../mainwindow.cpp" line="1993"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>
