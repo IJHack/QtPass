@@ -9,13 +9,16 @@
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+- Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
 
 **Fixed bugs:**
 
+- Regression with new view mode when using templates and urls [\#223](https://github.com/IJHack/QtPass/issues/223)
 - Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
 - Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
+- Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 
 **Closed issues:**
 
