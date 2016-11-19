@@ -589,6 +589,16 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="64"/>
+        <source>Add Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="65"/>
+        <source>Add Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="699"/>
         <source>Content hidden</source>
         <translation type="unfinished"></translation>
@@ -688,16 +698,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="48"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="64"/>
-        <source>Add Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="65"/>
-        <source>Add Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
