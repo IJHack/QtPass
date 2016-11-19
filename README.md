@@ -118,6 +118,7 @@ Further reading
 ---------------
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
+[CHANGELOG](CHANGELOG.md)
 
 [Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
