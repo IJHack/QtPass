@@ -1,39 +1,49 @@
 #include "qtpasssettings.h"
 
+
 QtPassSettings::QtPassSettings(QObject *parent) : QObject(parent)
 {
 
 }
 
+bool QtPassSettings::initialized = false;
+
+QScopedPointer<QSettings> QtPassSettings::settings;
+QHash<QString, QString> QtPassSettings::stringSettings;
+QHash<QString, QByteArray> QtPassSettings::byteArraySettings;
+QHash<QString, QPoint> QtPassSettings::pointSettings;
+QHash<QString, QSize> QtPassSettings::sizeSettings;
+QHash<QString, int> QtPassSettings::intSettings;
+QHash<QString, bool> QtPassSettings::boolSettings;
+
 void QtPassSettings::saveAllSettings()
 {
 
-    for(QHash<QString, QString>::iterator i=this->stringSettings.begin(); i != stringSettings.end(); ++i)
+    for(QHash<QString, QString>::iterator i=stringSettings.begin(); i != QtPassSettings::stringSettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
-    for(QHash<QString, QByteArray>::iterator i=this->byteArraySettings.begin(); i != byteArraySettings.end(); ++i)
+    for(QHash<QString, QByteArray>::iterator i=QtPassSettings::byteArraySettings.begin(); i != QtPassSettings::byteArraySettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
-    for(QHash<QString, QPoint>::iterator i=this->pointSettings.begin(); i != pointSettings.end(); ++i)
+    for(QHash<QString, QPoint>::iterator i=QtPassSettings::pointSettings.begin(); i != QtPassSettings::pointSettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
-    for(QHash<QString, QSize>::iterator i=this->sizeSettings.begin(); i != sizeSettings.end(); ++i)
+    for(QHash<QString, QSize>::iterator i=QtPassSettings::sizeSettings.begin(); i != QtPassSettings::sizeSettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
-    for(QHash<QString, int>::iterator i=this->intSettings.begin(); i != intSettings.end(); ++i)
+    for(QHash<QString, int>::iterator i=QtPassSettings::intSettings.begin(); i != QtPassSettings::intSettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
-    for(QHash<QString, bool>::iterator i=this->boolSettings.begin(); i != boolSettings.end(); ++i)
+    for(QHash<QString, bool>::iterator i=QtPassSettings::boolSettings.begin(); i !=QtPassSettings::boolSettings.end(); ++i)
     {
         getSettings().setValue(i.key(),i.value());
     }
 }
-
 
 QString QtPassSettings::getVersion(const QString &defaultValue)
 {
@@ -47,7 +57,10 @@ void QtPassSettings::setVersion(const QString &version)
 
 QByteArray QtPassSettings::getGeometry(const QByteArray &defaultValue)
 {
-    return getByteArrayValue("geometry", defaultValue);
+    beginMainwindowGroup();
+    QByteArray returnValue = getByteArrayValue("geometry", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setGeometry(const QByteArray &geometry)
@@ -57,7 +70,10 @@ void QtPassSettings::setGeometry(const QByteArray &geometry)
 
 QByteArray QtPassSettings::getSavestate(const QByteArray &defaultValue)
 {
-    return getByteArrayValue("savestate", defaultValue);
+    beginMainwindowGroup();
+    QByteArray returnValue = getByteArrayValue("savestate", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setSavestate(const QByteArray &saveState)
@@ -67,7 +83,10 @@ void QtPassSettings::setSavestate(const QByteArray &saveState)
 
 QPoint QtPassSettings::getPos(const QPoint &defaultValue)
 {
-    return getPointValue("pos", defaultValue);
+    beginMainwindowGroup();
+    QPoint returnValue = getPointValue("pos", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setPos(const QPoint &pos)
@@ -77,7 +96,10 @@ void QtPassSettings::setPos(const QPoint &pos)
 
 QSize QtPassSettings::getSize(const QSize &defaultValue)
 {
-    return getSizeValue("size", defaultValue);
+    beginMainwindowGroup();
+    QSize returnValue = getSizeValue("size", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setSize(const QSize &size)
@@ -87,7 +109,10 @@ void QtPassSettings::setSize(const QSize &size)
 
 int QtPassSettings::getSplitterLeft(const int &defaultValue)
 {
-    return getIntValue("splitterLeft", defaultValue);
+    beginMainwindowGroup();
+    int returnValue = getIntValue("splitterLeft", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setSplitterLeft(const int &splitterLeft)
@@ -97,7 +122,10 @@ void QtPassSettings::setSplitterLeft(const int &splitterLeft)
 
 int QtPassSettings::getSplitterRight(const int &defaultValue)
 {
-    return getIntValue("splitterRight", defaultValue);
+    beginMainwindowGroup();
+    int returnValue = getIntValue("splitterRight", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setSplitterRight(const int &splitterRight)
@@ -107,7 +135,10 @@ void QtPassSettings::setSplitterRight(const int &splitterRight)
 
 bool QtPassSettings::isMaximized(const bool &defaultValue)
 {
-    return getBoolValue("maximized", defaultValue);
+    beginMainwindowGroup();
+    bool returnValue = getBoolValue("maximized", defaultValue);
+    endSettingsGroup();
+    return returnValue;
 }
 
 void QtPassSettings::setMaximized(const bool &maximized)
@@ -505,10 +536,25 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields)
     setBoolValue("templateAllFields", templateAllFields);
 }
 
+QStringList QtPassSettings::getChildKeysFromCurrentGroup()
+{
+    return getSettings().childKeys();
+}
+
+QHash<QString, QString> QtPassSettings::getProfiles()
+{
+    beginProfilesGroup();
+    QStringList childrenKeys = getChildKeysFromCurrentGroup();
+    QHash<QString, QString> profiles;
+    foreach (QString key, childrenKeys){
+      profiles.insert(key, getSetting(key).toString());
+    }
+    endSettingsGroup();
+    return profiles;
+}
 
 QSettings &QtPassSettings::getSettings() {
-
-  if (!settings) {
+  if (!QtPassSettings::initialized) {
     QString portable_ini = QCoreApplication::applicationDirPath() +
                            QDir::separator() + "qtpass.ini";
     // qDebug() << "Settings file: " + portable_ini;
@@ -520,6 +566,7 @@ QSettings &QtPassSettings::getSettings() {
       settings.reset(new QSettings("IJHack", "QtPass"));
     }
   }
+  initialized = true;
   return *settings;
 }
 
@@ -599,31 +646,62 @@ QSize QtPassSettings::getSizeValue(const QString &key, const QSize &defaultValue
 void QtPassSettings::setStringValue(const QString &key, const QString &stringValue)
 {
     stringSettings.insert(key, stringValue);
+    getSettings().setValue(key, stringValue);
 }
 
 void QtPassSettings::setIntValue(const QString &key, const int &intValue)
 {
     intSettings.insert(key, intValue);
+    getSettings().setValue(key, intValue);
 }
 
 void QtPassSettings::setBoolValue(const QString &key, const bool &boolValue)
 {
     boolSettings.insert(key, boolValue);
+    getSettings().setValue(key, boolValue);
 }
 
 void QtPassSettings::setByteArrayValue(const QString &key, const QByteArray &byteArrayValue)
 {
     byteArraySettings.insert(key, byteArrayValue);
+    getSettings().setValue(key, byteArrayValue);
 }
 
 void QtPassSettings::setPointValue(const QString &key, const QPoint &pointValue)
 {
     pointSettings.insert(key, pointValue);
+    getSettings().setValue(key, pointValue);
 }
 
 void QtPassSettings::setSizeValue(const QString &key, const QSize &sizeValue)
 {
     sizeSettings.insert(key, sizeValue);
+    getSettings().setValue(key, sizeValue);
 }
 
+void QtPassSettings::beginSettingsGroup(const QString &groupName)
+{
+    getSettings().beginGroup(groupName);
+}
 
+void QtPassSettings::endSettingsGroup()
+{
+    getSettings().endGroup();
+}
+
+void QtPassSettings::beginMainwindowGroup()
+{
+    getSettings().beginGroup("mainwindow");
+
+}
+
+void QtPassSettings::beginProfilesGroup()
+{
+    getSettings().beginGroup("profiles");
+
+}
+
+QVariant QtPassSettings::getSetting(const QString &key, const QVariant &defalutValue)
+{
+    return getSettings().value(key, defalutValue);
+}
