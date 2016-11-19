@@ -5,6 +5,6 @@
 <area shape="rect" id="node5" href="$class_util.html#af23940548a0dcd3ade9c052d38ad0549" title="Util::checkConfig do we have prequisite settings? " alt="" coords="540,181,661,207"/>
 <area shape="rect" id="node6" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="265,156,405,181"/>
 <area shape="rect" id="node7" href="$class_store_model.html#af223e13120a72e556a394aae4a92ad0f" title="StoreModel::setModelAndStore update the source model and store. " alt="" coords="232,257,438,283"/>
-<area shape="rect" id="node8" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect" alt="" coords="258,307,412,332"/>
-<area shape="rect" id="node9" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard" alt="" coords="486,307,715,332"/>
+<area shape="rect" id="node8" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="258,307,412,332"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="486,307,715,332"/>
 </map>

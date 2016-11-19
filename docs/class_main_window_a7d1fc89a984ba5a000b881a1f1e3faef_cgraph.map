@@ -1,4 +1,4 @@
 <map id="MainWindow::generatePassword" name="MainWindow::generatePassword">
 <area shape="rect" id="node2" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="339,5,429,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard" alt="" coords="270,55,498,80"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="270,55,498,80"/>
 </map>

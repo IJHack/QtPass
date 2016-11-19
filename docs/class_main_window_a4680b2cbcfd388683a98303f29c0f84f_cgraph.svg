@@ -15,7 +15,7 @@
 </g>
 <!-- Node52 -->
 <g id="node2" class="node"><title>Node52</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" target="_top" xlink:title="MainWindow::copyTextToClipboard">
+<g id="a_node2"><a xlink:href="class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" target="_top" xlink:title="MainWindow::copyTextToClipboard copies text to your clipboard. ">
 <polygon fill="none" stroke="black" points="198.172,-0.5 198.172,-18.5 369.797,-18.5 369.797,-0.5 198.172,-0.5"/>
 <text text-anchor="middle" x="283.984" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyTextToClipboard</text>
 </a>

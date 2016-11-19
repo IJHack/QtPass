@@ -106,7 +106,7 @@
 </g>
 <!-- Node8 -->
 <g id="node9" class="node"><title>Node8</title>
-<g id="a_node9"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect">
+<g id="a_node9"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
 <polygon fill="none" stroke="black" points="361.327,-0.5 361.327,-18.5 477.371,-18.5 477.371,-0.5 361.327,-0.5"/>
 <text text-anchor="middle" x="419.349" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::deselect</text>
 </a>
@@ -134,7 +134,7 @@
 </g>
 <!-- Node9 -->
 <g id="node10" class="node"><title>Node9</title>
-<g id="a_node10"><a xlink:href="class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" target="_top" xlink:title="MainWindow::copyTextToClipboard">
+<g id="a_node10"><a xlink:href="class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" target="_top" xlink:title="MainWindow::copyTextToClipboard copies text to your clipboard. ">
 <polygon fill="none" stroke="black" points="532.831,-0.5 532.831,-18.5 704.456,-18.5 704.456,-0.5 532.831,-0.5"/>
 <text text-anchor="middle" x="618.644" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyTextToClipboard</text>
 </a>

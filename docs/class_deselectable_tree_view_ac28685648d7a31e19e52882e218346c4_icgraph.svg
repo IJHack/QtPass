@@ -16,7 +16,7 @@
 </g>
 <!-- Node6 -->
 <g id="node2" class="node"><title>Node6</title>
-<g id="a_node2"><a xlink:href="class_deselectable_tree_view.html#a2fb0a1c4a059b6d63a312992006192f1" target="_top" xlink:title="DeselectableTreeView\l::~DeselectableTreeView">
+<g id="a_node2"><a xlink:href="class_deselectable_tree_view.html#a2fb0a1c4a059b6d63a312992006192f1" target="_top" xlink:title="~DeselectableTreeView standard destructor ">
 <polygon fill="none" stroke="black" points="151.507,-0.5 151.507,-28.5 278.41,-28.5 278.41,-0.5 151.507,-0.5"/>
 <text text-anchor="start" x="159.507" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">DeselectableTreeView</text>
 <text text-anchor="middle" x="214.958" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">::~DeselectableTreeView</text>

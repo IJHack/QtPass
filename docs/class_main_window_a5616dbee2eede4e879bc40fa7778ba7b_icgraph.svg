@@ -61,7 +61,7 @@ var sectionId = 'dynsection-7';
 </g>
 <!-- Node37 -->
 <g id="node2" class="node"><title>Node37</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect">
+<g id="a_node2"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
 <polygon fill="none" stroke="black" points="230.694,-84.5 230.694,-102.5 346.738,-102.5 346.738,-84.5 230.694,-84.5"/>
 <text text-anchor="middle" x="288.716" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::deselect</text>
 </a>

@@ -1,5 +1,5 @@
 <map id="MainWindow::copyTextToClipboard" name="MainWindow::copyTextToClipboard">
-<area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect" alt="" coords="313,5,468,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="313,5,468,31"/>
 <area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="282,55,498,80"/>
 <area shape="rect" id="node7" href="$class_main_window.html#a7d1fc89a984ba5a000b881a1f1e3faef" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="282,107,498,132"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="553,5,731,31"/>
