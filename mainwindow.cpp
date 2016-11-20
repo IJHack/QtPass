@@ -1108,7 +1108,7 @@ void MainWindow::on_deleteButton_clicked() {
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
       return;
     if (QtPassSettings::isUsePass()) {
-      currentAction = DELETE;
+      currentAction = REMOVE;
       executePass("rm -f \"" + file + '"');
       if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
         on_pushButton_clicked();
@@ -1137,7 +1137,7 @@ void MainWindow::on_deleteButton_clicked() {
       return;
     } else {
       if (QtPassSettings::isUsePass()) {
-        currentAction = DELETE;
+        currentAction = REMOVE;
         executePass("rm -rf \"" + file + '"');
         if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
           on_pushButton_clicked();

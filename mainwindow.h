@@ -85,7 +85,7 @@ struct passwordConfiguration {
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
-  enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
+  enum actionType { GPG, GIT, EDIT, REMOVE, GPG_INTERNAL, PWGEN };
 
 public:
 
