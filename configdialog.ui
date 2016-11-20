@@ -16,18 +16,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>571</width>
-    <height>604</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>571</width>
-    <height>604</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Configuration</string>
   </property>
@@ -47,7 +35,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="Tab_Settings">
       <attribute name="title">
