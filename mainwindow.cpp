@@ -94,7 +94,7 @@ void MainWindow::focusInput() {
 MainWindow::~MainWindow() {
 #ifdef Q_OS_WIN
   if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(passStore.toUtf8().constData(), 0, 1);
+    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(), 0, 1);
 #else
   if (fusedav.state() == QProcess::Running) {
     fusedav.terminate();
