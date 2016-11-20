@@ -21,11 +21,11 @@
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qtpasssettings.h"
+#include "settingsconstants.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
-#include "settingsconstants.h"
-#include "qtpasssettings.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -94,7 +94,8 @@ void MainWindow::focusInput() {
 MainWindow::~MainWindow() {
 #ifdef Q_OS_WIN
   if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(), 0, 1);
+    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
+                           0, 1);
 #else
   if (fusedav.state() == QProcess::Running) {
     fusedav.terminate();
@@ -131,11 +132,12 @@ void MainWindow::mountWebDav() {
   DWORD size = sizeof(dst);
   DWORD r = WNetUseConnectionA(
       reinterpret_cast<HWND>(effectiveWinId()), &netres,
-      QtPassSettings::getWebDavPassword().toUtf8().constData(), QtPassSettings::getWebDavUser().toUtf8().constData(),
+      QtPassSettings::getWebDavPassword().toUtf8().constData(),
+      QtPassSettings::getWebDavUser().toUtf8().constData(),
       CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
       0);
   if (r == NO_ERROR) {
-   QtPassSettings::setPassStore(dst);
+    QtPassSettings::setPassStore(dst);
   } else {
     char message[256] = {0};
     FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
@@ -145,8 +147,9 @@ void MainWindow::mountWebDav() {
                              " (0x" + QString::number(r, 16) + ")");
   }
 #else
-  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() + "\" " + QtPassSettings::getWebDavUrl() +
-                " \"" + QtPassSettings::getPassStore() + '"');
+  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
+                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
+                QtPassSettings::getPassStore() + '"');
   fusedav.waitForStarted();
   if (fusedav.state() == QProcess::Running) {
     QString pwd = QtPassSettings::getWebDavPassword();
@@ -202,7 +205,7 @@ bool MainWindow::checkConfig() {
       splitter[1] = right;
       ui->splitter->setSizes(splitter);
     }
-    if (QtPassSettings::isMaximized(isMaximized())){
+    if (QtPassSettings::isMaximized(isMaximized())) {
       showMaximized();
     }
   }
@@ -210,18 +213,21 @@ bool MainWindow::checkConfig() {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
-  QString passExecutable = QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
+  QString passExecutable =
+      QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
   QtPassSettings::setPassExecutable(passExecutable);
 
-  QString gitExecutable = QtPassSettings::getGitExecutable(Util::findBinaryInPath("git"));
+  QString gitExecutable =
+      QtPassSettings::getGitExecutable(Util::findBinaryInPath("git"));
   QtPassSettings::setGitExecutable(gitExecutable);
 
-  QString gpgExecutable = QtPassSettings::getGpgExecutable(Util::findBinaryInPath("gpg2"));
+  QString gpgExecutable =
+      QtPassSettings::getGpgExecutable(Util::findBinaryInPath("gpg2"));
   QtPassSettings::setGpgExecutable(gpgExecutable);
 
-  QString pwgenExecutable = QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
+  QString pwgenExecutable =
+      QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
   QtPassSettings::setPwgenExecutable(pwgenExecutable);
-
 
   pwdConfig.selected = QtPassSettings::getPasswordCharsSelected();
   pwdConfig.length = QtPassSettings::getPasswordLength();
@@ -251,7 +257,7 @@ bool MainWindow::checkConfig() {
     qDebug() << "assuming fresh install";
     if (QtPassSettings::getAutoclearSeconds() < 5)
       QtPassSettings::setAutoclearSeconds(10);
-    if (QtPassSettings::getAutoclearPanelSeconds()< 5)
+    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
       QtPassSettings::setAutoclearPanelSeconds(10);
     if (!QtPassSettings::getPwgenExecutable().isEmpty())
       QtPassSettings::setUsePwgen(true);
@@ -272,8 +278,7 @@ bool MainWindow::checkConfig() {
 
   if (Util::checkConfig()) {
     config();
-    if (freshStart &&
-        Util::checkConfig())
+    if (freshStart && Util::checkConfig())
       return false;
   }
 
@@ -295,8 +300,8 @@ bool MainWindow::checkConfig() {
   model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(QtPassSettings::getPassStore())));
+  ui->treeView->setRootIndex(proxyModel.mapFromSource(
+      model.setRootPath(QtPassSettings::getPassStore())));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
@@ -333,7 +338,9 @@ bool MainWindow::checkConfig() {
 
   updateEnv();
 
-  if (!QtPassSettings::isUseGit() || (QtPassSettings::getGitExecutable().isEmpty() && QtPassSettings::getPassExecutable().isEmpty())) {
+  if (!QtPassSettings::isUseGit() ||
+      (QtPassSettings::getGitExecutable().isEmpty() &&
+       QtPassSettings::getPassExecutable().isEmpty())) {
     ui->pushButton->hide();
     ui->updateButton->hide();
     ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
@@ -357,10 +364,9 @@ void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
   // Automatically default to pass if it's available
-  if (freshStart && QFile(QtPassSettings::getPassExecutable()).exists()){
-      QtPassSettings::setUsePass(true);
+  if (freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
+    QtPassSettings::setUsePass(true);
   }
-
 
   d->setPassPath(QtPassSettings::getPassExecutable());
   d->setGitPath(QtPassSettings::getGitExecutable());
@@ -404,7 +410,8 @@ void MainWindow::config() {
       QtPassSettings::setPassExecutable(d->getPassPath());
       QtPassSettings::setGitExecutable(d->getGitPath());
       QtPassSettings::setGpgExecutable(d->getGpgPath());
-      QtPassSettings::setPassStore(Util::normalizeFolderPath(d->getStorePath()));
+      QtPassSettings::setPassStore(
+          Util::normalizeFolderPath(d->getStorePath()));
       QtPassSettings::setUsePass(d->usePass());
       QtPassSettings::setClipBoardType(d->useClipboard());
       QtPassSettings::setUseAutoclear(d->useAutoclear());
@@ -450,14 +457,15 @@ void MainWindow::config() {
       }
 
       updateProfileBox();
-      ui->treeView->setRootIndex(
-          proxyModel.mapFromSource(model.setRootPath(QtPassSettings::getPassStore())));
+      ui->treeView->setRootIndex(proxyModel.mapFromSource(
+          model.setRootPath(QtPassSettings::getPassStore())));
 
-      if (freshStart &&
-          Util::checkConfig())
+      if (freshStart && Util::checkConfig())
         config();
       updateEnv();
-      if (!QtPassSettings::isUseGit() || (QtPassSettings::getGitExecutable().isEmpty() && QtPassSettings::getPassExecutable().isEmpty())) {
+      if (!QtPassSettings::isUseGit() ||
+          (QtPassSettings::getGitExecutable().isEmpty() &&
+           QtPassSettings::getPassExecutable().isEmpty())) {
         ui->pushButton->hide();
         ui->updateButton->hide();
         ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
@@ -617,7 +625,8 @@ void MainWindow::executePassGitInit() {
   if (QtPassSettings::isUsePass())
     executePass("git init");
   else
-    executeWrapper(QtPassSettings::getGitExecutable(), "init \"" + QtPassSettings::getPassStore() + '"');
+    executeWrapper(QtPassSettings::getGitExecutable(),
+                   "init \"" + QtPassSettings::getPassStore() + '"');
 }
 
 /**
@@ -683,15 +692,17 @@ void MainWindow::readyRead(bool finished = false) {
       QStringList tokens = output.split("\n");
       QString password = tokens.at(0);
 
-      if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER && !output.isEmpty()) {
-        clippedText=tokens[0];
+      if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
+          !output.isEmpty()) {
+        clippedText = tokens[0];
         if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
           copyTextToClipboard(tokens[0]);
         if (QtPassSettings::isUseAutoclearPanel()) {
-          QTimer::singleShot(1000 * QtPassSettings::getAutoclearPanelSeconds(), this,
-                             SLOT(clearPanel()));
+          QTimer::singleShot(1000 * QtPassSettings::getAutoclearPanelSeconds(),
+                             this, SLOT(clearPanel()));
         }
-        if (QtPassSettings::isHidePassword() && !QtPassSettings::isUseTemplate()) {
+        if (QtPassSettings::isHidePassword() &&
+            !QtPassSettings::isUseTemplate()) {
           tokens[0] = "***" + tr("Password hidden") + "***";
           output = tokens.join("\n");
         }
@@ -711,9 +722,11 @@ void MainWindow::readyRead(bool finished = false) {
           if (token.contains(':')) {
             int colon = token.indexOf(':');
             QString field = token.left(colon);
-            if (QtPassSettings::isTemplateAllFields() || QtPassSettings::getPassTemplate().contains(field)) {
+            if (QtPassSettings::isTemplateAllFields() ||
+                QtPassSettings::getPassTemplate().contains(field)) {
               QString value = token.right(token.length() - colon - 1);
-              if (!QtPassSettings::getPassTemplate().contains(field) && value.startsWith("//")) {
+              if (!QtPassSettings::getPassTemplate().contains(field) &&
+                  value.startsWith("//")) {
                 remainingTokens.append(token);
                 continue; // colon is probably from a url
               }
@@ -740,7 +753,8 @@ void MainWindow::readyRead(bool finished = false) {
         autoclearPass = output;
         autoclearTimer = new QTimer(this);
         autoclearTimer->setSingleShot(true);
-        autoclearTimer->setInterval(1000 * QtPassSettings::getAutoclearPanelSeconds());
+        autoclearTimer->setInterval(1000 *
+                                    QtPassSettings::getAutoclearPanelSeconds());
         connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
         autoclearTimer->start();
       }
@@ -877,9 +891,6 @@ void MainWindow::processError(QProcess::ProcessError error) {
     enableUiElements(true);
 }
 
-
-
-
 /**
  * @brief MainWindow::on_configButton_clicked run Mainwindow::config
  */
@@ -897,8 +908,8 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
   query.replace(QRegExp(" "), ".*");
   QRegExp regExp(query, Qt::CaseInsensitive);
   proxyModel.setFilterRegExp(regExp);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(QtPassSettings::getPassStore())));
+  ui->treeView->setRootIndex(proxyModel.mapFromSource(
+      model.setRootPath(QtPassSettings::getPassStore())));
   selectFirstFile();
 }
 
@@ -917,7 +928,8 @@ void MainWindow::on_lineEdit_returnPressed() {
  * @brief MainWindow::selectFirstFile select the first possible file in the tree
  */
 void MainWindow::selectFirstFile() {
-  QModelIndex index = proxyModel.mapFromSource(model.setRootPath(QtPassSettings::getPassStore()));
+  QModelIndex index = proxyModel.mapFromSource(
+      model.setRootPath(QtPassSettings::getPassStore()));
   index = firstFile(index);
   ui->treeView->setCurrentIndex(index);
 }
@@ -951,7 +963,8 @@ QStringList MainWindow::getRecipientList(QString for_file) {
                                : QtPassSettings::getPassStore() + for_file)
                      .absoluteDir());
   bool found = false;
-  while (gpgIdPath.exists() && gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {
+  while (gpgIdPath.exists() &&
+         gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {
     if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
       found = true;
       break;
@@ -1036,17 +1049,21 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
       return;
     }
     QString force(overwrite ? " --yes " : " ");
-    executeWrapper(QtPassSettings::getGpgExecutable(), force + "--batch -eq --output \"" + file +
-                                      "\" " + recipients + " -",
+    executeWrapper(QtPassSettings::getGpgExecutable(),
+                   force + "--batch -eq --output \"" + file + "\" " +
+                       recipients + " -",
                    newValue);
     if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
       if (!overwrite)
-        executeWrapper(QtPassSettings::getGitExecutable(), "add \"" + file + '"');
-      QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
+        executeWrapper(QtPassSettings::getGitExecutable(),
+                       "add \"" + file + '"');
+      QString path =
+          QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
       path.replace(QRegExp("\\.gpg$"), "");
-      executeWrapper(QtPassSettings::getGitExecutable(), "commit \"" + file + "\" -m \"" +
-                                        (overwrite ? "Edit" : "Add") + " for " +
-                                        path + " using QtPass.\"");
+      executeWrapper(QtPassSettings::getGitExecutable(),
+                     "commit \"" + file + "\" -m \"" +
+                         (overwrite ? "Edit" : "Add") + " for " + path +
+                         " using QtPass.\"");
       if (QtPassSettings::isAutoPush())
         on_pushButton_clicked();
     }
@@ -1075,11 +1092,13 @@ void MainWindow::on_addButton_clicked() {
   //    return;
   //  }
   bool ok;
-  QString dir = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString dir =
+      getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
   QString file = QInputDialog::getText(
       this, tr("New file"),
       tr("New password file: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() + getDir(ui->treeView->currentIndex(), true)),
+          .arg(QtPassSettings::getPassStore() +
+               getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
@@ -1114,7 +1133,8 @@ void MainWindow::on_deleteButton_clicked() {
         on_pushButton_clicked();
     } else {
       if (QtPassSettings::isUseGit()) {
-        executeWrapper(QtPassSettings::getGitExecutable(), "rm -f \"" + file + '"');
+        executeWrapper(QtPassSettings::getGitExecutable(),
+                       "rm -f \"" + file + '"');
         executeWrapper(QtPassSettings::getGitExecutable(),
                        "commit \"" + file + "\" -m \"Remove for " +
                            getFile(ui->treeView->currentIndex(), true) +
@@ -1144,7 +1164,8 @@ void MainWindow::on_deleteButton_clicked() {
         }
       } else {
         if (QtPassSettings::isUseGit()) {
-          executeWrapper(QtPassSettings::getGitExecutable(), "rm -rf \"" + file + '"');
+          executeWrapper(QtPassSettings::getGitExecutable(),
+                         "rm -rf \"" + file + '"');
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
           QDir dir(file);
           dir.removeRecursively();
@@ -1203,7 +1224,8 @@ bool MainWindow::removeDir(const QString &dirName) {
  * @brief MainWindow::on_editButton_clicked try and edit (selected) password.
  */
 void MainWindow::on_editButton_clicked() {
-  QString file = getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file =
+      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
   if (file.isEmpty()) {
     QMessageBox::critical(
         this, tr("Can not edit"),
@@ -1329,7 +1351,8 @@ void MainWindow::on_usersButton_clicked() {
     // remove the passStore directory otherwise,
     // pass would create a passStore/passStore/dir
     // but you want passStore/dir
-    QString dirWithoutPassdir = dir.remove(0, QtPassSettings::getPassStore().size());
+    QString dirWithoutPassdir =
+        dir.remove(0, QtPassSettings::getPassStore().size());
     executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
   } else {
     QString gpgIdFile = dir + ".gpg-id";
@@ -1360,13 +1383,16 @@ void MainWindow::on_usersButton_clicked() {
              "You will not be able to decrypt any newly added passwords!"));
     }
 
-    if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() && !QtPassSettings::getGitExecutable().isEmpty()) {
+    if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
+        !QtPassSettings::getGitExecutable().isEmpty()) {
       if (addFile)
-        executeWrapper(QtPassSettings::getGitExecutable(), "add \"" + gpgIdFile + '"');
+        executeWrapper(QtPassSettings::getGitExecutable(),
+                       "add \"" + gpgIdFile + '"');
       QString path = gpgIdFile;
       path.replace(QRegExp("\\.gpg$"), "");
-      executeWrapper(QtPassSettings::getGitExecutable(), "commit \"" + gpgIdFile + "\" -m \"Added " +
-                                        path + " using QtPass.\"");
+      executeWrapper(QtPassSettings::getGitExecutable(),
+                     "commit \"" + gpgIdFile + "\" -m \"Added " + path +
+                         " using QtPass.\"");
       if (QtPassSettings::isAutoPush())
         on_pushButton_clicked();
     }
@@ -1421,7 +1447,8 @@ void MainWindow::updateEnv() {
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
     // qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
+    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
+                                            QtPassSettings::getPassStore());
   }
 }
 
@@ -1451,7 +1478,8 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
   ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
   currentAction = GPG_INTERNAL;
-  executeWrapper(QtPassSettings::getGpgExecutable(), "--gen-key --no-tty --batch", batch);
+  executeWrapper(QtPassSettings::getGpgExecutable(),
+                 "--gen-key --no-tty --batch", batch);
   // TODO check status / error messages
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
@@ -1504,11 +1532,12 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
     // qDebug() << "Update PASSWORD_STORE_DIR";
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
+    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
+                                            QtPassSettings::getPassStore());
   }
 
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(QtPassSettings::getPassStore())));
+  ui->treeView->setRootIndex(proxyModel.mapFromSource(
+      model.setRootPath(QtPassSettings::getPassStore())));
 }
 
 /**
@@ -1676,7 +1705,8 @@ void MainWindow::addFolder() {
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
       tr("New Folder: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() + getDir(ui->treeView->currentIndex(), true)),
+          .arg(QtPassSettings::getPassStore() +
+               getDir(ui->treeView->currentIndex(), true)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
@@ -1698,7 +1728,8 @@ void MainWindow::editPassword() {
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
-  QString file = getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file =
+      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
   if (!file.isEmpty()) {
     currentAction = GPG;
     if (QtPassSettings::isUsePass())
@@ -1721,15 +1752,19 @@ void MainWindow::editPassword() {
  * TODO(annejan) don't overload clipBoardType for this
  * @return the password
  */
-QString MainWindow::generatePassword(int length, Enums::clipBoardType selection) {
+QString MainWindow::generatePassword(int length,
+                                     Enums::clipBoardType selection) {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     waitFor(2);
     // --secure goes first as it overrides --no-* otherwise
-    QString args = QString("-1 ") + (QtPassSettings::isLessRandom() ? "" : "--secure ") +
-                   (QtPassSettings::isAvoidCapitals()? "--no-capitalize " : "--capitalize ") +
-                   (QtPassSettings::isAvoidNumbers()? "--no-numerals " : "--numerals ") +
-                   (QtPassSettings::isUseSymbols() ? "--symbols " : "") + QString::number(length);
+    QString args =
+        QString("-1 ") + (QtPassSettings::isLessRandom() ? "" : "--secure ") +
+        (QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
+                                           : "--capitalize ") +
+        (QtPassSettings::isAvoidNumbers() ? "--no-numerals " : "--numerals ") +
+        (QtPassSettings::isUseSymbols() ? "--symbols " : "") +
+        QString::number(length);
     currentAction = PWGEN;
     executeWrapper(QtPassSettings::getPwgenExecutable(), args);
     process->waitForFinished(1000);
@@ -1817,7 +1852,8 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
   if (QtPassSettings::isUseAutoclear()) {
-    QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this, SLOT(clearClipboard()));
+    QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this,
+                       SLOT(clearClipboard()));
   }
 }
 
@@ -1848,10 +1884,11 @@ void MainWindow::reencryptPath(QString dir) {
     }
     currentAction = GPG_INTERNAL;
     process->waitForFinished();
-    executeWrapper(QtPassSettings::getGpgExecutable(), "-v --no-secmem-warning "
-                                  "--no-permission-warning --list-only "
-                                  "--keyid-format long " +
-                                      fileName);
+    executeWrapper(QtPassSettings::getGpgExecutable(),
+                   "-v --no-secmem-warning "
+                   "--no-permission-warning --list-only "
+                   "--keyid-format long " +
+                       fileName);
     process->waitForFinished(3000);
     QStringList actualKeys;
     QString keys =
@@ -1893,18 +1930,21 @@ void MainWindow::reencryptPath(QString dir) {
           return;
         }
         currentAction = EDIT;
-        executeWrapper(QtPassSettings::getGpgExecutable(), "--yes --batch -eq --output \"" +
-                                          fileName + "\" " + recipients + " -",
+        executeWrapper(QtPassSettings::getGpgExecutable(),
+                       "--yes --batch -eq --output \"" + fileName + "\" " +
+                           recipients + " -",
                        lastDecrypt);
         process->waitForFinished(3000);
 
         if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-          executeWrapper(QtPassSettings::getGitExecutable(), "add \"" + fileName + '"');
-          QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(fileName);
+          executeWrapper(QtPassSettings::getGitExecutable(),
+                         "add \"" + fileName + '"');
+          QString path =
+              QDir(QtPassSettings::getPassStore()).relativeFilePath(fileName);
           path.replace(QRegExp("\\.gpg$"), "");
-          executeWrapper(QtPassSettings::getGitExecutable(), "commit \"" + fileName + "\" -m \"" +
-                                            "Edit for " + path +
-                                            " using QtPass.\"");
+          executeWrapper(QtPassSettings::getGitExecutable(),
+                         "commit \"" + fileName + "\" -m \"" + "Edit for " +
+                             path + " using QtPass.\"");
           process->waitForFinished(3000);
         }
 

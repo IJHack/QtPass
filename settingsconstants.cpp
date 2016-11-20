@@ -1,9 +1,6 @@
 #include "settingsconstants.h"
 
-SettingsConstants::SettingsConstants()
-{
-
-}
+SettingsConstants::SettingsConstants() {}
 
 const QString SettingsConstants::version = "version";
 const QString SettingsConstants::groupMainwindow = "mainwindow";
@@ -18,7 +15,8 @@ const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useAutoclear = "useAutoclear";
 const QString SettingsConstants::autoclearSeconds = "autoclearSeconds";
 const QString SettingsConstants::useAutoclearPanel = "useAutoclearPanel";
-const QString SettingsConstants::autoclearPanelSeconds = "autoclearPanelSeconds";
+const QString SettingsConstants::autoclearPanelSeconds =
+    "autoclearPanelSeconds";
 const QString SettingsConstants::hidePassword = "hidePassword";
 const QString SettingsConstants::hideContent = "hideContent";
 const QString SettingsConstants::addGPGId = "addGPGId";
@@ -41,9 +39,11 @@ const QString SettingsConstants::avoidCapitals = "avoidCapitals";
 const QString SettingsConstants::avoidNumbers = "avoidNumbers";
 const QString SettingsConstants::lessRandom = "lessRandom";
 const QString SettingsConstants::useSymbols = "useSymbols";
-const QString SettingsConstants::passwordCharsSelected = "passwordCharsSelected";
+const QString SettingsConstants::passwordCharsSelected =
+    "passwordCharsSelected";
 const QString SettingsConstants::passwordLength = "passwordLength";
-const QString SettingsConstants::passwordCharsselection = "passwordCharsselection";
+const QString SettingsConstants::passwordCharsselection =
+    "passwordCharsselection";
 const QString SettingsConstants::passwordChars = "passwordChars";
 const QString SettingsConstants::useTrayIcon = "useTrayIcon";
 const QString SettingsConstants::hideOnClose = "hideOnClose";
