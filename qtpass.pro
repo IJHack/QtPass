@@ -34,7 +34,6 @@ SOURCES   += main.cpp\
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qtpasssettings.cpp \
-             enums.cpp \
              settingsconstants.cpp
 
 HEADERS   += mainwindow.h \
