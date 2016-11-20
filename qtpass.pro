@@ -175,3 +175,6 @@ target.path = $$PREFIX/bin/
 INSTALLS += target
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
+
+DISTFILES += \
+    settingsToDelete.txt

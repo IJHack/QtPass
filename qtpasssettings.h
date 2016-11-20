@@ -17,9 +17,9 @@
 
 
 
-class QtPassSettings : public QObject
+class QtPassSettings
 {
-    Q_OBJECT
+
 public:
 
     static void saveAllSettings();
@@ -166,7 +166,7 @@ public:
     static void setTemplateAllFields(const bool &templateAllFields);
 
     static QHash<QString, QString> getProfiles();
-    static void setProfiles(QHash<QString, QString> &profiles);
+    static void setProfiles(const QHash<QString, QString> &profiles);
 
 signals:
 
@@ -174,7 +174,7 @@ public slots:
 
 private:
     // constructor
-    explicit QtPassSettings(QObject *parent = 0);
+    explicit QtPassSettings();
 
 
     static bool initialized;

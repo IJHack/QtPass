@@ -1,7 +1,7 @@
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
 
-QtPassSettings::QtPassSettings(QObject *parent) : QObject(parent)
+QtPassSettings::QtPassSettings()
 {
 
 }
@@ -571,11 +571,11 @@ QHash<QString, QString> QtPassSettings::getProfiles()
     return profiles;
 }
 
-void QtPassSettings::setProfiles(QHash<QString, QString> &profiles)
+void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles)
 {
     getSettings().remove(SettingsConstants::groupProfiles);
     beginProfilesGroup();
-    QHash<QString, QString>::iterator i=profiles.begin();
+    QHash<QString, QString>::const_iterator i=profiles.begin();
     for(; i !=profiles.end(); ++i)
     {
         setSetting(i.key() ,i.value());

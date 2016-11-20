@@ -2,6 +2,7 @@
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "ui_configdialog.h"
+#include "qtpasssettings.h"
 #include <QDebug>
 #include <QDir>
 #include <QMessageBox>
@@ -33,9 +34,9 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
  * mainWindow knows about git, gpg and pass executables.
  */
 ConfigDialog::~ConfigDialog() {
-  mainWindow->setGitExecutable(ui->gitPath->text());
-  mainWindow->setGpgExecutable(ui->gpgPath->text());
-  mainWindow->setPassExecutable(ui->passPath->text());
+  QtPassSettings::setGitExecutable(ui->gitPath->text());
+  QtPassSettings::setGpgExecutable(ui->gpgPath->text());
+  QtPassSettings::setPassExecutable(ui->passPath->text());
 }
 
 /**
@@ -554,7 +555,7 @@ void ConfigDialog::wizard() {
     }
   }
 
-  if (!QFile(passStore + ".gpg-id").exists()) {
+  if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
     qDebug() << ".gpg-id file does not exist";
 
     if (!clean) {
@@ -870,10 +871,10 @@ int ConfigDialog::getPwdTemplateSelector() {
  */
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   ui->lineEditPasswordChars->setText(mainWindow->pwdConfig.Characters[index]);
-  if (index != 3) {
-    ui->lineEditPasswordChars->setEnabled(false);
-  } else {
+  if (index == 3) {
     ui->lineEditPasswordChars->setEnabled(true);
+  } else {
+    ui->lineEditPasswordChars->setEnabled(false);
   }
 }
 
