@@ -87,7 +87,7 @@ var sectionId = 'dynsection-43';
 </g>
 <!-- Node337 -->
 <g id="node7" class="node"><title>Node337</title>
-<g id="a_node7"><a xlink:href="class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
+<g id="a_node7"><a xlink:href="class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="black" points="182.059,-6.5 182.059,-24.5 344.24,-24.5 344.24,-6.5 182.059,-6.5"/>
 <text text-anchor="middle" x="263.149" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
 </a>

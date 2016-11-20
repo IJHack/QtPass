@@ -256,7 +256,7 @@
 </g>
 <!-- Node92 -->
 <g id="node18" class="node"><title>Node92</title>
-<g id="a_node18"><a xlink:href="class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
+<g id="a_node18"><a xlink:href="class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="black" points="394.137,-262.5 394.137,-280.5 556.318,-280.5 556.318,-262.5 394.137,-262.5"/>
 <text text-anchor="middle" x="475.228" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
 </a>

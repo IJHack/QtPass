@@ -3,6 +3,7 @@ var searchData=
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
   ['characters',['Characters',['../structpassword_configuration.html#a94d4635ce78810129d2cd15421d25e0a',1,'passwordConfiguration']]],
+  ['characterset',['characterSet',['../class_enums.html#ade574fadd31001ddeea17f51f56a8f63',1,'Enums']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],
   ['clipboard_5falways',['CLIPBOARD_ALWAYS',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e',1,'Enums']]],
   ['clipboard_5fnever',['CLIPBOARD_NEVER',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef',1,'Enums']]],
@@ -17,6 +18,7 @@ var searchData=
   ['contributing_2emd',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
   ['copytexttoclipboard',['copyTextToClipboard',['../class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b',1,'MainWindow']]],
   ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
+  ['custom',['CUSTOM',['../class_enums.html#ade574fadd31001ddeea17f51f56a8f63a693157bb8c83711463c320c0cbde6a8c',1,'Enums']]],
   ['change_20log',['Change Log',['../md__c_h_a_n_g_e_l_o_g.html',1,'']]],
   ['contributing',['Contributing',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html',1,'']]]
 ];

@@ -1,9 +1,9 @@
 <map id="configdialog.cpp" name="configdialog.cpp">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="731,152,835,177"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="521,225,626,251"/>
-<area shape="rect" id="node24" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="845,79,956,104"/>
-<area shape="rect" id="node26" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1319,79,1437,104"/>
-<area shape="rect" id="node4" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="815,299,914,324"/>
-<area shape="rect" id="node8" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="189,299,268,324"/>
-<area shape="rect" id="node15" href="$enums_8h.html" title="enums.h" alt="" coords="1140,299,1213,324"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="1089,152,1192,177"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="602,225,708,251"/>
+<area shape="rect" id="node24" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="1129,79,1240,104"/>
+<area shape="rect" id="node25" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="592,79,710,104"/>
+<area shape="rect" id="node4" href="$enums_8h.html" title="enums.h" alt="" coords="947,299,1019,324"/>
+<area shape="rect" id="node5" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="824,299,923,324"/>
+<area shape="rect" id="node9" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="270,299,349,324"/>
 </map>

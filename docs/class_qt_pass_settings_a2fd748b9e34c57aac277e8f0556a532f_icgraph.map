@@ -8,6 +8,6 @@
 <area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1005,22,1186,48"/>
 <area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="789,200,933,225"/>
 <area shape="rect" id="node10" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="532,73,687,98"/>
-<area shape="rect" id="node11" href="$class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="501,122,717,148"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="501,122,717,148"/>
 <area shape="rect" id="node12" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="765,116,957,154"/>
 </map>
