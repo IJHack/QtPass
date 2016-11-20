@@ -135,7 +135,7 @@ void MainWindow::mountWebDav() {
       CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
       0);
   if (r == NO_ERROR) {
-   passStore = dst;
+   QtPassSettings::setPassStore(dst);
   } else {
     char message[256] = {0};
     FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,

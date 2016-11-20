@@ -118,7 +118,7 @@ QString Util::findBinaryInPath(QString binary) {
  * @return
  */
 bool Util::checkConfig() {
-  return !QFile(QtPassSettings::getPassStore() + ".gpg-id").exists() ||
+  return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id")).exists() ||
          (!QFile(QtPassSettings::getPassExecutable()).exists() && !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
