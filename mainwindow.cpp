@@ -1748,12 +1748,11 @@ void MainWindow::editPassword() {
  * @brief MainWindow::generatePassword use either pwgen or internal password
  * generator
  * @param length of the desired password
- * @param selection character set
- * TODO(annejan) don't overload clipBoardType for this
+ * @param selection character set to use for generation
  * @return the password
  */
 QString MainWindow::generatePassword(int length,
-                                     Enums::clipBoardType selection) {
+                                     Enums::characterSet selection) {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     waitFor(2);

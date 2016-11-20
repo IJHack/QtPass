@@ -96,7 +96,7 @@ public:
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
-  QString generatePassword(int length, Enums::clipBoardType selection);
+  QString generatePassword(int length, Enums::characterSet selection);
   void config();
   void executePassGitInit();
   void copyTextToClipboard(const QString &text);
