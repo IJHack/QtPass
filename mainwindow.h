@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H_
 #define MAINWINDOW_H_
 
+#include "enums.h"
 #include "storemodel.h"
 #include "trayicon.h"
-#include "enums.h"
 #include <QFileSystemModel>
 #include <QMainWindow>
 #include <QProcess>
@@ -88,7 +88,6 @@ class MainWindow : public QMainWindow {
   enum actionType { GPG, GIT, EDIT, REMOVE, GPG_INTERNAL, PWGEN };
 
 public:
-
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
   bool checkConfig();

@@ -1,8 +1,8 @@
 #include "configdialog.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
-#include "ui_configdialog.h"
 #include "qtpasssettings.h"
+#include "ui_configdialog.h"
 #include <QDebug>
 #include <QDir>
 #include <QMessageBox>
