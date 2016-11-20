@@ -3,13 +3,14 @@
 
 #include "storemodel.h"
 #include "trayicon.h"
+#include "enums.h"
 #include <QFileSystemModel>
 #include <QMainWindow>
 #include <QProcess>
 #include <QQueue>
-#include <QSettings>
 #include <QTimer>
 #include <QTreeView>
+
 #if SINGLE_APP
 #include "singleapplication.h"
 #else
@@ -87,31 +88,16 @@ class MainWindow : public QMainWindow {
   enum actionType { GPG, GIT, EDIT, DELETE, GPG_INTERNAL, PWGEN };
 
 public:
-  /**
-   * @brief MainWindow::clipBoardType enum
-   * 0 Never
-   * 1 Always
-   * 2 On demand
-   */
-  enum clipBoardType {
-    CLIPBOARD_NEVER = 0,
-    CLIPBOARD_ALWAYS = 1,
-    CLIPBOARD_ON_DEMAND = 2
-  };
 
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
-  void setPassExecutable(QString);
-  void setGitExecutable(QString);
-  void setGpgExecutable(QString);
-  QString getGpgExecutable();
   bool checkConfig();
   void setApp(SingleApplication *app);
   void setText(QString);
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
-  QString generatePassword(int length, clipBoardType selection);
+  QString generatePassword(int length, Enums::clipBoardType selection);
   void config();
   void executePassGitInit();
   void copyTextToClipboard(const QString &text);
@@ -162,32 +148,12 @@ private:
   QAction *actionAddFolder;
 
   QApplication *QtPass;
-  QScopedPointer<QSettings> settings;
   QScopedPointer<Ui::MainWindow> ui;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QScopedPointer<QProcess> process;
   QTreeView *treeView;
-  bool usePass;
-  clipBoardType useClipboard;
-  bool useAutoclear;
-  bool useAutoclearPanel;
-  bool hidePassword;
-  bool hideContent;
-  bool addGPGId;
-  int autoclearSeconds;
-  int autoclearPanelSeconds;
-  QString passStore;
-  QString passExecutable;
-  QString gitExecutable;
-  QString gpgExecutable;
-  QString pwgenExecutable;
-  QString gpgHome;
-  bool useWebDav;
-  QString webDavUrl;
-  QString webDavUser;
-  QString webDavPassword;
   QProcess fusedav;
   QString clippedText;
   QString autoclearPass;
@@ -200,25 +166,8 @@ private:
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
-  QHash<QString, QString> profiles;
-  QString profile;
   bool startupPhase;
   TrayIcon *tray;
-  bool useTrayIcon;
-  bool hideOnClose;
-  bool startMinimized;
-  bool useGit;
-  bool usePwgen;
-  bool avoidCapitals;
-  bool avoidNumbers;
-  bool lessRandom;
-  bool useSymbols;
-  bool useTemplate;
-  QString passTemplate;
-  bool templateAllFields;
-  bool autoPull;
-  bool autoPush;
-  bool alwaysOnTop;
   void updateText();
   void executePass(QString, QString = QString());
   void executeWrapper(QString, QString, QString = QString());
@@ -228,7 +177,6 @@ private:
   QString getDir(const QModelIndex &, bool);
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool, bool);
-  QSettings &getSettings();
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   QStringList getRecipientList(QString for_file);
   QString getRecipientString(QString for_file, QString separator = " ",

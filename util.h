@@ -13,8 +13,7 @@ public:
   static QString findBinaryInPath(QString binary);
   static QString findPasswordStore();
   static QString normalizeFolderPath(QString path);
-  static bool checkConfig(QString passStore, QString passExecutable,
-                          QString gpgExecutable);
+  static bool checkConfig();
   static void qSleep(int ms);
 
 private:
