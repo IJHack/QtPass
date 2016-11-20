@@ -54,4 +54,4 @@ const QString SettingsConstants::autoPush = "autoPush";
 const QString SettingsConstants::passTemplate = "passTemplate";
 const QString SettingsConstants::useTemplate = "useTemplate";
 const QString SettingsConstants::templateAllFields = "templateAllFields";
-
+const QString SettingsConstants::clipBoardType = "clipBoardType";

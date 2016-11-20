@@ -56,6 +56,7 @@ public:
     const static QString passTemplate;
     const static QString useTemplate;
     const static QString templateAllFields;
+    const static QString clipBoardType;
 
 private:
     explicit SettingsConstants();
