@@ -1,0 +1,12 @@
+<map id="QtPassSettings::getGitExecutable" name="QtPassSettings::getGitExecutable">
+<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="823,9,1002,34"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="320,58,460,84"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="552,158,769,184"/>
+<area shape="rect" id="node7" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="306,209,474,234"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="276,108,504,133"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1056,9,1237,34"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="840,188,984,213"/>
+<area shape="rect" id="node9" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="583,60,738,85"/>
+<area shape="rect" id="node10" href="$class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="552,109,769,134"/>
+<area shape="rect" id="node11" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="817,102,1008,141"/>
+</map>

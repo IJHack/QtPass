@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clipboardtype',['clipBoardType',['../class_main_window.html#aa75543f0c997c2edb55c4ee7bb3e7b5d',1,'MainWindow']]]
+  ['clipboardtype',['clipBoardType',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52d',1,'Enums']]]
 ];

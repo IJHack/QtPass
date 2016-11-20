@@ -1,0 +1,11 @@
+<map id="MainWindow::closeEvent" name="MainWindow::closeEvent">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title="QtPassSettings::isHideOn\lClose" alt="" coords="242,5,417,44"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title="QtPassSettings::setGeometry" alt="" coords="231,68,428,93"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title="QtPassSettings::setSavestate" alt="" coords="231,117,428,143"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c" title="QtPassSettings::setMaximized" alt="" coords="228,167,431,192"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0" title="QtPassSettings::setPos" alt="" coords="249,216,410,241"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6" title="QtPassSettings::setSize" alt="" coords="247,265,412,291"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#aeb7439b3884140165d0ba07e3af34498" title="QtPassSettings::setSplitterLeft" alt="" coords="228,315,431,340"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a615c198bda5e7529dfdd4b744a39391c" title="QtPassSettings::setSplitter\lRight" alt="" coords="240,364,419,403"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a15f8f89169eb46aa39622df497d95f94" title="QtPassSettings::saveAllSettings" alt="" coords="224,427,435,452"/>
+</map>

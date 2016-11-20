@@ -1,5 +1,11 @@
 <map id="KeygenDialog::~KeygenDialog" name="KeygenDialog::~KeygenDialog">
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="263,5,399,44"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="256,68,406,93"/>
-<area shape="rect" id="node4" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="454,68,659,93"/>
+<area shape="rect" id="node2" href="$class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="263,67,399,105"/>
+<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="256,129,406,155"/>
+<area shape="rect" id="node4" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="454,129,659,155"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="707,5,937,31"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="730,55,914,80"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="733,104,910,129"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="734,153,910,179"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="722,203,922,228"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="721,252,922,277"/>
 </map>

@@ -1,0 +1,9 @@
+<map id="QtPassSettings::isAvoidNumbers" name="QtPassSettings::isAvoidNumbers">
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="309,55,449,80"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="271,107,487,132"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="554,5,732,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="535,55,751,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="799,5,981,31"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="818,55,962,80"/>
+<area shape="rect" id="node8" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="547,104,739,143"/>
+</map>

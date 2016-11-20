@@ -1,11 +1,14 @@
 <map id="mainwindow.cpp" name="mainwindow.cpp">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="306,225,411,251"/>
-<area shape="rect" id="node27" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="584,152,688,177"/>
-<area shape="rect" id="node31" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="671,79,782,104"/>
-<area shape="rect" id="node32" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="435,152,560,177"/>
-<area shape="rect" id="node33" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="176,152,360,177"/>
-<area shape="rect" id="node36" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="891,152,992,177"/>
-<area shape="rect" id="node40" href="$util_8h.html" title="util.h" alt="" coords="1824,79,1874,104"/>
-<area shape="rect" id="node3" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="856,299,954,324"/>
-<area shape="rect" id="node7" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="403,299,482,324"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="884,225,989,251"/>
+<area shape="rect" id="node23" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="654,152,757,177"/>
+<area shape="rect" id="node27" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="890,79,1001,104"/>
+<area shape="rect" id="node28" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="883,152,1008,177"/>
+<area shape="rect" id="node29" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="1252,152,1436,177"/>
+<area shape="rect" id="node32" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="1127,152,1228,177"/>
+<area shape="rect" id="node36" href="$util_8h.html" title="util.h" alt="" coords="1513,79,1562,104"/>
+<area shape="rect" id="node39" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1595,79,1730,104"/>
+<area shape="rect" id="node40" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1915,152,2032,177"/>
+<area shape="rect" id="node3" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="974,299,1072,324"/>
+<area shape="rect" id="node7" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1242,299,1321,324"/>
+<area shape="rect" id="node10" href="$enums_8h.html" title="enums.h" alt="" coords="1549,299,1622,324"/>
 </map>

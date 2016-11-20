@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['url',['url',['../namespacegrava.html#af810c44fc4ef1f4c0ec50ed82880d1cc',1,'grava']]],
-  ['username',['username',['../namespacegrava.html#a844de0985a258395d703eecb8a5b0e8f',1,'grava']]]
+  ['validity',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
+  ['version',['version',['../class_settings_constants.html#a3de52d12e7e80ae5b7873fddff1b9f8e',1,'SettingsConstants']]]
 ];

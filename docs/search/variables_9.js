@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['selected',['selected',['../structpassword_configuration.html#ac3affdf464b9fbae39a0300f1d272dca',1,'passwordConfiguration']]]
+  ['name',['name',['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo']]]
 ];

@@ -1,6 +1,7 @@
 <map id="keygendialog.h" name="keygendialog.h">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="787,79,891,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="664,152,769,177"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="783,79,887,104"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="660,152,765,177"/>
 <area shape="rect" id="node4" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="224,225,323,251"/>
 <area shape="rect" id="node8" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="573,225,652,251"/>
+<area shape="rect" id="node15" href="$enums_8h.html" title="enums.h" alt="" coords="676,225,749,251"/>
 </map>

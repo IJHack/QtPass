@@ -1,5 +1,12 @@
 <map id="MainWindow::userDialog" name="MainWindow::userDialog">
-<area shape="rect" id="node2" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="222,31,376,56"/>
-<area shape="rect" id="node3" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="431,5,549,31"/>
-<area shape="rect" id="node4" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="424,55,556,80"/>
+<area shape="rect" id="node2" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="256,29,410,55"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="241,79,425,104"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="233,128,434,153"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="236,177,431,203"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="231,227,436,252"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="248,276,419,301"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="222,325,444,351"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="239,375,427,400"/>
+<area shape="rect" id="node3" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="499,5,617,31"/>
+<area shape="rect" id="node4" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="492,55,624,80"/>
 </map>

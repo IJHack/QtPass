@@ -8,26 +8,26 @@
  viewBox="0.00 0.00 452.88 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>Util::qSleep</title>
-<!-- Node23 -->
-<g id="node1" class="node"><title>Node23</title>
+<!-- Node28 -->
+<g id="node1" class="node"><title>Node28</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-5.5 0,-23.5 67.1377,-23.5 67.1377,-5.5 0,-5.5"/>
 <text text-anchor="middle" x="33.5688" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00">Util::qSleep</text>
 </g>
-<!-- Node24 -->
-<g id="node2" class="node"><title>Node24</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#a7d1fc89a984ba5a000b881a1f1e3faef" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
+<!-- Node29 -->
+<g id="node2" class="node"><title>Node29</title>
+<g id="a_node2"><a xlink:href="class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="black" points="103.138,-5.5 103.138,-23.5 265.319,-23.5 265.319,-5.5 103.138,-5.5"/>
 <text text-anchor="middle" x="184.229" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
 </a>
 </g>
 </g>
-<!-- Node23&#45;&gt;Node24 -->
-<g id="edge1" class="edge"><title>Node23&#45;&gt;Node24</title>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge1" class="edge"><title>Node28&#45;&gt;Node29</title>
 <path fill="none" stroke="midnightblue" d="M77.3903,-14.5C85.4442,-14.5 94.1039,-14.5 102.876,-14.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="77.1929,-11.0001 67.1928,-14.5 77.1928,-18.0001 77.1929,-11.0001"/>
 </g>
-<!-- Node25 -->
-<g id="node3" class="node"><title>Node25</title>
+<!-- Node30 -->
+<g id="node3" class="node"><title>Node30</title>
 <g id="a_node3"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
 <polygon fill="none" stroke="black" points="301.319,-0.5 301.319,-28.5 444.878,-28.5 444.878,-0.5 301.319,-0.5"/>
 <text text-anchor="start" x="309.319" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog::~Password</text>
@@ -35,8 +35,8 @@
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node25 -->
-<g id="edge2" class="edge"><title>Node24&#45;&gt;Node25</title>
+<!-- Node29&#45;&gt;Node30 -->
+<g id="edge2" class="edge"><title>Node29&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M275.629,-14.5C284.233,-14.5 292.871,-14.5 301.251,-14.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="275.563,-11.0001 265.563,-14.5 275.563,-18.0001 275.563,-11.0001"/>
 </g>

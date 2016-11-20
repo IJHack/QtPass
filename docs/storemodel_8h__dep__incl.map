@@ -1,15 +1,18 @@
 <map id="storemodel.h" name="storemodel.h">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="401,79,506,104"/>
-<area shape="rect" id="node14" href="$storemodel_8cpp.html" title="storemodel.cpp" alt="" coords="531,79,643,104"/>
-<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="170,152,273,177"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="505,79,610,104"/>
+<area shape="rect" id="node17" href="$storemodel_8cpp.html" title="storemodel.cpp" alt="" coords="635,79,747,104"/>
+<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="214,152,317,177"/>
 <area shape="rect" id="node4" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,299,123,324"/>
-<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,299,416,324"/>
-<area shape="rect" id="node8" href="$deselectabletreeview_8h.html" title="deselectabletreeview.h" alt="" coords="375,152,532,177"/>
-<area shape="rect" id="node9" href="$main_8cpp.html" title="main.cpp" alt="" coords="556,152,631,177"/>
-<area shape="rect" id="node10" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="655,152,780,177"/>
-<area shape="rect" id="node12" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="804,152,988,177"/>
-<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,225,264,251"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="539,299,658,324"/>
+<area shape="rect" id="node8" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="303,225,420,251"/>
+<area shape="rect" id="node11" href="$deselectabletreeview_8h.html" title="deselectabletreeview.h" alt="" coords="902,152,1058,177"/>
+<area shape="rect" id="node12" href="$main_8cpp.html" title="main.cpp" alt="" coords="1082,152,1158,177"/>
+<area shape="rect" id="node13" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="546,152,671,177"/>
+<area shape="rect" id="node15" href="$qpushbuttonwithclipboard_8h.html" title="qpushbuttonwithclipboard.h" alt="" coords="695,152,879,177"/>
+<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="161,225,272,251"/>
 <area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,299,272,324"/>
-<area shape="rect" id="node11" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="616,225,755,251"/>
-<area shape="rect" id="node13" href="$qpushbuttonwithclipboard_8cpp.html" title="qpushbuttonwithclipboard.cpp" alt="" coords="829,225,1027,251"/>
+<area shape="rect" id="node9" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="296,299,427,324"/>
+<area shape="rect" id="node10" href="$util_8cpp.html" title="util.cpp" alt="" coords="451,299,515,324"/>
+<area shape="rect" id="node14" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="604,225,743,251"/>
+<area shape="rect" id="node16" href="$qpushbuttonwithclipboard_8cpp.html" title="qpushbuttonwithclipboard.cpp" alt="" coords="817,225,1015,251"/>
 </map>

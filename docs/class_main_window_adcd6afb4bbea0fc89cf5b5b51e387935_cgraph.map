@@ -1,0 +1,8 @@
+<map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="258,5,488,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="281,55,465,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="284,104,461,129"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="285,153,461,179"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="273,203,473,228"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="273,252,473,277"/>
+</map>

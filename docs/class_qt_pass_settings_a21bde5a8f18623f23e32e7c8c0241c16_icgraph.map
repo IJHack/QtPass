@@ -1,0 +1,7 @@
+<map id="QtPassSettings::setUseTrayIcon" name="QtPassSettings::setUseTrayIcon">
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="267,31,407,56"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="474,5,653,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="455,55,672,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="720,5,901,31"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="739,55,882,80"/>
+</map>

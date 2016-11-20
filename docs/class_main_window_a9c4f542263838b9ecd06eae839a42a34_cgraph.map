@@ -1,0 +1,7 @@
+<map id="MainWindow::keyPressEvent" name="MainWindow::keyPressEvent">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="262,5,463,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="277,55,448,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="273,104,452,129"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="271,153,454,179"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="247,203,478,228"/>
+</map>

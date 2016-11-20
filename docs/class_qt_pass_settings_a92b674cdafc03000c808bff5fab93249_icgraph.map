@@ -1,0 +1,16 @@
+<map id="QtPassSettings::getGpgExecutable" name="QtPassSettings::getGpgExecutable">
+<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="844,40,1022,65"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="598,65,739,91"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="825,165,1041,191"/>
+<area shape="rect" id="node7" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="296,267,500,292"/>
+<area shape="rect" id="node10" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="301,316,495,341"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="284,165,513,191"/>
+<area shape="rect" id="node15" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="337,64,459,89"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1089,40,1270,65"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="1108,165,1251,191"/>
+<area shape="rect" id="node8" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="593,317,744,343"/>
+<area shape="rect" id="node9" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="832,320,1034,345"/>
+<area shape="rect" id="node12" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="591,115,746,140"/>
+<area shape="rect" id="node13" href="$class_main_window.html#a6958f8680eec3ef764d82ddafd4fef1f" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="561,267,777,292"/>
+<area shape="rect" id="node14" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="837,257,1029,296"/>
+</map>
