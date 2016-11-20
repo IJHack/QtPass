@@ -306,57 +306,57 @@ email</source>
         <translation>Dölj innehåll</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="521"/>
+        <location filename="../configdialog.cpp" line="522"/>
         <source>GnuPG not found</source>
         <translation>Kan inte hitta GnuPG</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="522"/>
+        <location filename="../configdialog.cpp" line="523"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Var vänlig installera GnuPG på ditt system.&lt;br&gt;Installera &lt;strong&gt;gpg&lt;/strong&gt; med din pakethanterare&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ladda ner&lt;/a&gt; från GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="542"/>
+        <location filename="../configdialog.cpp" line="543"/>
         <source>Create password-store?</source>
         <translation>Skapa utrymme för lösenord?</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="544"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Vill du skapa ett lösenordsutrymme på %1?</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="561"/>
+        <location filename="../configdialog.cpp" line="562"/>
         <source>Password store not initialised</source>
         <translation>Lösenordsutrymme ej initliaserat</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="562"/>
+        <location filename="../configdialog.cpp" line="563"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="482"/>
+        <location filename="../configdialog.cpp" line="483"/>
         <source>No profile selected</source>
         <translation>Ingen profil vald</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="25"/>
+        <location filename="../configdialog.cpp" line="26"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="26"/>
+        <location filename="../configdialog.cpp" line="27"/>
         <source>Always copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="27"/>
+        <location filename="../configdialog.cpp" line="28"/>
         <source>On-demand copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="483"/>
+        <location filename="../configdialog.cpp" line="484"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil vald att tas bort</translation>
     </message>
@@ -465,14 +465,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1812"/>
+        <location filename="../mainwindow.cpp" line="1638"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1824"/>
+        <location filename="../mainwindow.cpp" line="1650"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -503,7 +503,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1806"/>
+        <location filename="../mainwindow.cpp" line="1632"/>
         <source>Users</source>
         <translation>Användare</translation>
     </message>
@@ -545,247 +545,258 @@ p, li { white-space: pre-wrap; }
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="628"/>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="484"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="789"/>
         <source>Clipboard cleared</source>
         <translation>Urklippet rensat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1852"/>
+        <location filename="../mainwindow.cpp" line="1678"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="168"/>
+        <location filename="../mainwindow.cpp" line="144"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Kunde inte ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="179"/>
+        <location filename="../mainwindow.cpp" line="64"/>
+        <source>Add Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="65"/>
+        <source>Add Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="155"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="180"/>
+        <location filename="../mainwindow.cpp" line="156"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Mata in WebDAV lösenord:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="172"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav avslutades oväntat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="200"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="695"/>
         <source>Password hidden</source>
         <translation>Gömt lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="699"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
-        <location filename="../mainwindow.cpp" line="2113"/>
+        <location filename="../mainwindow.cpp" line="737"/>
+        <location filename="../mainwindow.cpp" line="1939"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="935"/>
+        <location filename="../mainwindow.cpp" line="791"/>
         <source>Clipboard not cleared</source>
         <translation>Urklippet ej rensat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="948"/>
+        <location filename="../mainwindow.cpp" line="804"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1000"/>
+        <location filename="../mainwindow.cpp" line="856"/>
         <source>QProcess::FailedToStart</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1003"/>
+        <location filename="../mainwindow.cpp" line="859"/>
         <source>QProcess::Crashed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1006"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>QProcess::Timedout</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1009"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>QProcess::ReadError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>QProcess::WriteError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1015"/>
+        <location filename="../mainwindow.cpp" line="871"/>
         <source>QProcess::UnknownError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1992"/>
+        <location filename="../mainwindow.cpp" line="1818"/>
         <source>Copied to clipboard</source>
         <translation>kopieras till Urklipp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="2006"/>
+        <location filename="../mainwindow.cpp" line="1832"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1804"/>
+        <location filename="../mainwindow.cpp" line="1630"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1805"/>
+        <location filename="../mainwindow.cpp" line="1631"/>
         <source>Add password</source>
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1925"/>
+        <location filename="../mainwindow.cpp" line="1751"/>
         <source>No characters chosen</source>
         <translation>Inga valda tecken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1926"/>
+        <location filename="../mainwindow.cpp" line="1752"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan inte skapa lösenord. Konfigurationen saknar tecken att välja från!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1945"/>
+        <location filename="../mainwindow.cpp" line="1771"/>
         <source>Timed out</source>
         <translation>Tajmade ut</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1946"/>
+        <location filename="../mainwindow.cpp" line="1772"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation>Kan inte starta process, den förra körs fortfarande!</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="48"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="vanished">Välkommen till QtPass %1</translation>
+        <translation>Välkommen till QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1063"/>
+        <location filename="../mainwindow.cpp" line="895"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="730"/>
-        <location filename="../mainwindow.cpp" line="1201"/>
-        <location filename="../mainwindow.cpp" line="1377"/>
-        <location filename="../mainwindow.cpp" line="2064"/>
+        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="1033"/>
+        <location filename="../mainwindow.cpp" line="1209"/>
+        <location filename="../mainwindow.cpp" line="1890"/>
         <source>Can not edit</source>
         <translation>Kan inte ändra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1202"/>
-        <location filename="../mainwindow.cpp" line="2065"/>
+        <location filename="../mainwindow.cpp" line="1034"/>
+        <location filename="../mainwindow.cpp" line="1891"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kunde inte läsa krypteringsnyckel, .gpg-id fil saknas eller är ogiltig.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1248"/>
-        <location filename="../mainwindow.cpp" line="1851"/>
+        <location filename="../mainwindow.cpp" line="1080"/>
+        <location filename="../mainwindow.cpp" line="1677"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1272"/>
+        <location filename="../mainwindow.cpp" line="1104"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1273"/>
-        <location filename="../mainwindow.cpp" line="1301"/>
+        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1133"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Vill du verkligen ta bort %1?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1132"/>
         <source>Delete folder?</source>
         <translation>Ta bort mapp?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="731"/>
-        <location filename="../mainwindow.cpp" line="1378"/>
+        <location filename="../mainwindow.cpp" line="587"/>
+        <location filename="../mainwindow.cpp" line="1210"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Kan inte ändra då vald lösenordsfil inte finns</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1249"/>
+        <location filename="../mainwindow.cpp" line="1081"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1445"/>
+        <location filename="../mainwindow.cpp" line="1277"/>
         <source>Can not get key list</source>
         <translation>Kan inte hämta nyckellista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1446"/>
+        <location filename="../mainwindow.cpp" line="1278"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Kunde inte hämta gpgnycklar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1477"/>
+        <location filename="../mainwindow.cpp" line="1309"/>
         <source>Key not found in keyring</source>
         <translation>Kunde inte hitta nyckel i nyckelring</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1512"/>
+        <location filename="../mainwindow.cpp" line="1344"/>
         <source>Cannot update</source>
         <translation>Kan inte uppdatera</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1513"/>
+        <location filename="../mainwindow.cpp" line="1345"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Kunde inte skriva till .gpg-id.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1526"/>
+        <location filename="../mainwindow.cpp" line="1358"/>
         <source>Check selected users!</source>
         <translation>Kolla valda användare!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1527"/>
+        <location filename="../mainwindow.cpp" line="1359"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ingen av de valda nycklarna har en tillgänglig hemlig nyckel.
 Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1620"/>
+        <location filename="../mainwindow.cpp" line="1452"/>
         <source>Generating GPG key pair</source>
         <translation>Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1665"/>
+        <location filename="../mainwindow.cpp" line="1497"/>
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>
