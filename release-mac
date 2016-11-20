@@ -1,6 +1,7 @@
 sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' < README.md > README.faq
-sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' < README.faq > README.contrib
-sed 's/\[\!.*//' < README.contrib > README.clean
+sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_o_n_t_r_i_b_u_t_i_n_g.html/' < README.faq > README.contrib
+sed 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' < README.contrib > README.changelog
+sed 's/\[\!.*//' < README.changelog > README.clean
 pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean FAQ.md CONTRIBUTING.md CHANGELOG.md 
 doxygen
 qmake CONFIG+=release && make && macdeployqt QtPass.app && appdmg appdmg.json QtPass.dmg

@@ -31,7 +31,7 @@ public:
   void setStorePath(QString);
   void setProfiles(QHash<QString, QString>, QString);
   void usePass(bool usePass);
-  void useClipboard(MainWindow::clipBoardType);
+  void useClipboard(Enums::clipBoardType);
   void useAutoclear(bool useAutoclear);
   void setAutoclear(int seconds);
   void useAutoclearPanel(bool useAutoclearPanel);
@@ -45,7 +45,7 @@ public:
   QString getStorePath();
   QHash<QString, QString> getProfiles();
   bool usePass();
-  MainWindow::clipBoardType useClipboard();
+  Enums::clipBoardType useClipboard();
   bool useAutoclear();
   int getAutoclear();
   bool useAutoclearPanel();

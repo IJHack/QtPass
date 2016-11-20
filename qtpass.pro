@@ -32,7 +32,10 @@ SOURCES   += main.cpp\
              trayicon.cpp \
              passworddialog.cpp \
              qprogressindicator.cpp \
-             qpushbuttonwithclipboard.cpp
+             qpushbuttonwithclipboard.cpp \
+             qtpasssettings.cpp \
+             enums.cpp \
+             settingsconstants.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -44,7 +47,10 @@ HEADERS   += mainwindow.h \
              passworddialog.h \
              qprogressindicator.h \
              deselectabletreeview.h \
-             qpushbuttonwithclipboard.h
+             qpushbuttonwithclipboard.h \
+             qtpasssettings.h \
+             enums.h \
+             settingsconstants.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
@@ -169,3 +175,6 @@ target.path = $$PREFIX/bin/
 INSTALLS += target
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
+
+DISTFILES += \
+    settingsToDelete.txt

@@ -9,6 +9,7 @@
 #else
 #include <sys/time.h>
 #endif
+#include "qtpasssettings.h"
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 
@@ -114,15 +115,11 @@ QString Util::findBinaryInPath(QString binary) {
 
 /**
  * @brief Util::checkConfig do we have prequisite settings?
- * @param passStore
- * @param passExecutable
- * @param gpgExecutable
  * @return
  */
-bool Util::checkConfig(QString passStore, QString passExecutable,
-                       QString gpgExecutable) {
-  return !QFile(passStore + ".gpg-id").exists() ||
-         (!QFile(passExecutable).exists() && !QFile(gpgExecutable).exists());
+bool Util::checkConfig() {
+  return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id")).exists() ||
+         (!QFile(QtPassSettings::getPassExecutable()).exists() && !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
 /**
