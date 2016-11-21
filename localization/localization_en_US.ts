@@ -659,7 +659,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="750"/>
-        <location filename="../mainwindow.cpp" line="1978"/>
+        <location filename="../mainwindow.cpp" line="1987"/>
         <source>Password</source>
         <translation type="unfinished">Password</translation>
     </message>

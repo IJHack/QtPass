@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
@@ -20,6 +21,7 @@
 - Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
 - Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
+- recent change to passworddialog.cpp [\#188](https://github.com/IJHack/QtPass/issues/188)
 - Re-opening entry in QtPass on Windows does not put login or url values back in the right place [\#183](https://github.com/IJHack/QtPass/issues/183)
 
 **Closed issues:**
