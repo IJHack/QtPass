@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
