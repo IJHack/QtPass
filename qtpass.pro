@@ -49,7 +49,10 @@ HEADERS   += mainwindow.h \
              qpushbuttonwithclipboard.h \
              qtpasssettings.h \
              enums.h \
-             settingsconstants.h
+             settingsconstants.h \
+             pass.h \
+             realpass.h \
+             imitatepass.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \
