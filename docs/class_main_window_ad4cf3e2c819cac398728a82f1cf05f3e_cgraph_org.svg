@@ -159,9 +159,9 @@
 </g>
 <!-- Node306 -->
 <g id="node12" class="node"><title>Node306</title>
-<g id="a_node12"><a xlink:href="class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" target="_top" xlink:title="QtPassSettings::isHidePassword">
-<polygon fill="none" stroke="black" points="369.425,-37.5 369.425,-55.5 531.597,-55.5 531.597,-37.5 369.425,-37.5"/>
-<text text-anchor="middle" x="450.511" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHidePassword</text>
+<g id="a_node12"><a xlink:href="class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" target="_top" xlink:title="QtPassSettings::getClipBoardType">
+<polygon fill="none" stroke="black" points="365.523,-37.5 365.523,-55.5 535.498,-55.5 535.498,-37.5 365.523,-37.5"/>
+<text text-anchor="middle" x="450.511" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoardType</text>
 </a>
 </g>
 </g>
@@ -172,9 +172,9 @@
 </g>
 <!-- Node307 -->
 <g id="node13" class="node"><title>Node307</title>
-<g id="a_node13"><a xlink:href="class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" target="_top" xlink:title="QtPassSettings::getClipBoardType">
-<polygon fill="none" stroke="black" points="365.523,-0.5 365.523,-18.5 535.498,-18.5 535.498,-0.5 365.523,-0.5"/>
-<text text-anchor="middle" x="450.511" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoardType</text>
+<g id="a_node13"><a xlink:href="class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" target="_top" xlink:title="QtPassSettings::isHidePassword">
+<polygon fill="none" stroke="black" points="369.425,-0.5 369.425,-18.5 531.597,-18.5 531.597,-0.5 369.425,-0.5"/>
+<text text-anchor="middle" x="450.511" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHidePassword</text>
 </a>
 </g>
 </g>
