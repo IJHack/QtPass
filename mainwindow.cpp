@@ -1968,17 +1968,6 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QString trimmedField = field.trimmed();
   QString trimmedValue = value.trimmed();
 
-  QLineEdit *line = new QLineEdit();
-  line->setObjectName(trimmedField);
-  line->setText(trimmedValue);
-  line->setReadOnly(true);
-  line->setStyleSheet("border-style: none ; background: transparent;");
-  line->setContentsMargins(0, 0, 0, 0);
-  // set the echo mode to password, if the field is "password"
-  if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
-    line->setEchoMode(QLineEdit::Password);
-  }
-
   // Combine the Copy button and the line edit in one widget
   QFrame *frame = new QFrame();
   QLayout *ly = new QHBoxLayout();
@@ -1993,7 +1982,35 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     // fieldLabel->setContentsMargins(0,5,5,0);
     frame->layout()->addWidget(fieldLabel);
   }
-  frame->layout()->addWidget(line);
+
+  // set the echo mode to password, if the field is "password"
+  if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
+    QLineEdit *line = new QLineEdit();
+    line->setObjectName(trimmedField);
+    line->setText(trimmedValue);
+    line->setReadOnly(true);
+    line->setStyleSheet("border-style: none ; background: transparent;");
+    line->setContentsMargins(0, 0, 0, 0);
+    line->setEchoMode(QLineEdit::Password);
+    frame->layout()->addWidget(line);
+  } else {
+    QTextBrowser *line = new QTextBrowser();
+    line->setOpenExternalLinks(true);
+    line->setOpenLinks(true);
+    line->setMaximumHeight(26);
+    line->setMinimumHeight(26);
+    line->setSizePolicy(
+        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
+    line->setObjectName(trimmedField);
+    trimmedValue.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
+                         "<a href=\"\\1\">\\1</a>");
+    line->setText(trimmedValue);
+    line->setReadOnly(true);
+    line->setStyleSheet("border-style: none ; background: transparent;");
+    line->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(line);
+  }
+
   frame->setStyleSheet(
       ".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
 
