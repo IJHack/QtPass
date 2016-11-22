@@ -604,7 +604,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  */
 void MainWindow::deselect() {
   currentDir = "/";
-  copyTextToClipboard("");
+  clearClipboard();
   ui->passwordName->setText("");
   clearPanel(false);
 }
@@ -801,9 +801,9 @@ void MainWindow::clearClipboard() {
   QString clippedText = clipboard->text();
   if (clippedText == clippedText) {
     clipboard->clear();
-    ui->statusBar->showMessage(tr("Clipboard cleared"), 3000);
+    ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
-    ui->statusBar->showMessage(tr("Clipboard not cleared"), 3000);
+    ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
   }
 }
 
@@ -1854,8 +1854,9 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
   clip->setText(text);
   clippedText = text;
-  ui->statusBar->showMessage(tr("Copied to clipboard"), 3000);
+  ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {
+    qDebug() << QtPassSettings::getAutoclearSeconds();
     QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this,
                        SLOT(clearClipboard()));
   }
