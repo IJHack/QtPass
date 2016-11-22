@@ -1842,6 +1842,7 @@ void MainWindow::copyTextByButtonClick(bool checked) {
   if (button == NULL) {
     return;
   }
+  button->changeIconPushed();
   QString textToCopy = button->getTextToCopy();
   copyTextToClipboard(textToCopy);
 }

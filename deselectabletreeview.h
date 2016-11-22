@@ -54,6 +54,7 @@ private:
     QTime dieTime= QTime::currentTime().addMSecs(200);
     while (QTime::currentTime() < dieTime)
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    // could this be done nicer?
     if (!doubleClickHappened && clickSelected){
       QModelIndex item = indexAt(event->pos());
       bool selected = selectionModel()->isSelected(indexAt(event->pos()));
