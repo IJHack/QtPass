@@ -755,7 +755,8 @@ void MainWindow::readyRead(bool finished = false) {
         autoclearTimer->setSingleShot(true);
         autoclearTimer->setInterval(1000 *
                                     QtPassSettings::getAutoclearPanelSeconds());
-        connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel(true)));
+        connect(autoclearTimer, SIGNAL(timeout()), this,
+                SLOT(clearPanel(true)));
         autoclearTimer->start();
       }
     }
@@ -818,6 +819,8 @@ void MainWindow::clearPanel(bool notify = true) {
   if (notify) {
     QString output = "***" + tr("Password and Content hidden") + "***";
     ui->textBrowser->setHtml(output);
+  } else {
+    ui->textBrowser->setHtml("");
   }
 }
 
