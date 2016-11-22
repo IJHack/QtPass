@@ -570,7 +570,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
                      "-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
                          file + '"');
   } else {
-    clearPanel();
+    clearPanel(false);
     ui->editButton->setEnabled(false);
     ui->deleteButton->setEnabled(true);
   }
@@ -606,7 +606,7 @@ void MainWindow::deselect() {
   currentDir = "/";
   copyTextToClipboard("");
   ui->passwordName->setText("");
-  clearPanel();
+  clearPanel(false);
 }
 
 /**
@@ -699,7 +699,7 @@ void MainWindow::readyRead(bool finished = false) {
           copyTextToClipboard(tokens[0]);
         if (QtPassSettings::isUseAutoclearPanel()) {
           QTimer::singleShot(1000 * QtPassSettings::getAutoclearPanelSeconds(),
-                             this, SLOT(clearPanel()));
+                             this, SLOT(clearPanel(true)));
         }
         if (QtPassSettings::isHidePassword() &&
             !QtPassSettings::isUseTemplate()) {
@@ -755,7 +755,7 @@ void MainWindow::readyRead(bool finished = false) {
         autoclearTimer->setSingleShot(true);
         autoclearTimer->setInterval(1000 *
                                     QtPassSettings::getAutoclearPanelSeconds());
-        connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+        connect(autoclearTimer, SIGNAL(timeout()), this, SLOT(clearPanel(true)));
         autoclearTimer->start();
       }
     }
@@ -809,14 +809,16 @@ void MainWindow::clearClipboard() {
 /**
  * @brief MainWindow::clearPanel hide the information from shoulder surfers
  */
-void MainWindow::clearPanel() {
+void MainWindow::clearPanel(bool notify = true) {
   while (ui->gridLayout->count() > 0) {
     QLayoutItem *item = ui->gridLayout->takeAt(0);
     delete item->widget();
     delete item;
   }
-  QString output = "***" + tr("Password and Content hidden") + "***";
-  ui->textBrowser->setHtml(output);
+  if (notify) {
+    QString output = "***" + tr("Password and Content hidden") + "***";
+    ui->textBrowser->setHtml(output);
+  }
 }
 
 /**

@@ -126,7 +126,7 @@ private slots:
   void processFinished(int, QProcess::ExitStatus);
   void processError(QProcess::ProcessError);
   void clearClipboard();
-  void clearPanel();
+  void clearPanel(bool notify);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
