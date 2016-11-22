@@ -5,6 +5,7 @@
 
 class ImitatePass : public Pass
 {
+    Q_OBJECT
 
     bool removeDir(const QString &dirName);
 public:
@@ -19,6 +20,11 @@ public:
     virtual void Init(QString path, const QList<UserInfo> &list) override;
 
     void reencryptPath(QString dir);
+signals:
+    void startReencryptPath();
+    void endReencryptPath();
+    void lastDecrypt(QString);
+
 };
 
 #endif // IMITATEPASS_H
