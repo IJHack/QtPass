@@ -51,11 +51,11 @@ private:
   void mouseReleaseEvent(QMouseEvent *event) {
     doubleClickHappened = false;
     // The timer is to distinguish between single and double click
-    QTime dieTime= QTime::currentTime().addMSecs(200);
+    QTime dieTime = QTime::currentTime().addMSecs(200);
     while (QTime::currentTime() < dieTime)
-        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+      QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
     // could this be done nicer?
-    if (!doubleClickHappened && clickSelected){
+    if (!doubleClickHappened && clickSelected) {
       QModelIndex item = indexAt(event->pos());
       bool selected = selectionModel()->isSelected(indexAt(event->pos()));
       if ((item.row() == -1 && item.column() == -1) || selected) {
@@ -64,24 +64,22 @@ private:
         selectionModel()->setCurrentIndex(index, QItemSelectionModel::Select);
         emit emptyClicked();
       } else {
-          QTreeView::mouseReleaseEvent(event);
+        QTreeView::mouseReleaseEvent(event);
       }
     } else {
-        QTreeView::mouseReleaseEvent(event);
+      QTreeView::mouseReleaseEvent(event);
     }
     clickSelected = false;
   }
-
 
   /**
    * @brief mouseDoubleClickEvent
    * @param event
    */
-  void mouseDoubleClickEvent(QMouseEvent *event){
+  void mouseDoubleClickEvent(QMouseEvent *event) {
     doubleClickHappened = true;
     QTreeView::mouseDoubleClickEvent(event);
   }
-
 };
 
 #endif // DESELECTABLETREEVIEW_H

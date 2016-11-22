@@ -1597,7 +1597,6 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     QtPassSettings::setSplitterRight(ui->splitter->sizes()[1]);
     event->accept();
   }
-  QtPassSettings::saveAllSettings();
 }
 
 /**
