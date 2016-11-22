@@ -1856,7 +1856,6 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {
-    qDebug() << QtPassSettings::getAutoclearSeconds();
     QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this,
                        SLOT(clearClipboard()));
   }
