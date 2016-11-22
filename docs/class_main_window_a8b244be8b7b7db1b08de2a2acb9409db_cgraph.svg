@@ -607,7 +607,7 @@ var sectionId = 'dynsection-2';
 <!-- Node86 -->
 <g id="node49" class="node"><title>Node86</title>
 <g id="a_node49"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
-<polygon fill="none" stroke="red" points="361.327,-150.5 361.327,-168.5 477.371,-168.5 477.371,-150.5 361.327,-150.5"/>
+<polygon fill="none" stroke="black" points="361.327,-150.5 361.327,-168.5 477.371,-168.5 477.371,-150.5 361.327,-150.5"/>
 <text text-anchor="middle" x="419.349" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::deselect</text>
 </a>
 </g>
@@ -617,16 +617,16 @@ var sectionId = 'dynsection-2';
 <path fill="none" stroke="midnightblue" d="M240.091,-829.473C241.365,-758.23 253.105,-286.654 341.866,-183.5 345.351,-179.45 349.511,-176.075 354.064,-173.264"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="355.958,-176.225 363.233,-168.523 352.743,-170.007 355.958,-176.225"/>
 </g>
-<!-- Node88 -->
-<g id="node50" class="node"><title>Node88</title>
+<!-- Node87 -->
+<g id="node50" class="node"><title>Node87</title>
 <g id="a_node50"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
 <polygon fill="none" stroke="black" points="344.371,-0.5 344.371,-18.5 494.326,-18.5 494.326,-0.5 344.371,-0.5"/>
 <text text-anchor="middle" x="419.349" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgHome</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node88 -->
-<g id="edge76" class="edge"><title>Node1&#45;&gt;Node88</title>
+<!-- Node1&#45;&gt;Node87 -->
+<g id="edge76" class="edge"><title>Node1&#45;&gt;Node87</title>
 <path fill="none" stroke="midnightblue" d="M239.799,-829.028C238.66,-747.363 234.342,-162.112 341.866,-33.5 345.239,-29.4662 349.281,-26.1002 353.723,-23.2929"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="355.482,-26.3225 362.686,-18.5542 352.21,-20.1342 355.482,-26.3225"/>
 </g>

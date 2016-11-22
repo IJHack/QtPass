@@ -1,12 +1,11 @@
 <map id="QtPassSettings::isAutoPush" name="QtPassSettings::isAutoPush">
-<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="286,107,426,132"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="518,56,734,81"/>
-<area shape="rect" id="node7" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="271,5,440,31"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="241,156,470,181"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="789,128,967,153"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1022,128,1203,153"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="806,31,950,56"/>
-<area shape="rect" id="node9" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="549,157,704,183"/>
-<area shape="rect" id="node10" href="$class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="518,207,734,232"/>
-<area shape="rect" id="node11" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="782,200,974,239"/>
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="286,9,426,35"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="518,109,734,135"/>
+<area shape="rect" id="node7" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="271,160,440,185"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="241,59,470,84"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="537,8,716,33"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="788,5,969,31"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="806,140,950,165"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="518,59,734,84"/>
+<area shape="rect" id="node10" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="782,55,974,93"/>
 </map>

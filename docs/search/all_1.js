@@ -1,6 +1,7 @@
 var searchData=
 [
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
+  ['changeiconpushed',['changeIconPushed',['../class_q_push_button_with_clipboard.html#a2133b5dd9c986b9da626e0f965870431',1,'QPushButtonWithClipboard']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
   ['characters',['Characters',['../structpassword_configuration.html#a94d4635ce78810129d2cd15421d25e0a',1,'passwordConfiguration']]],
   ['characterset',['characterSet',['../class_enums.html#ade574fadd31001ddeea17f51f56a8f63',1,'Enums']]],
