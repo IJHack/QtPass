@@ -18,8 +18,6 @@
 class QtPassSettings {
 
 public:
-  static void saveAllSettings();
-
   static QString
   getVersion(const QString &defaultValue = QVariant().toString());
   static void setVersion(const QString &version);

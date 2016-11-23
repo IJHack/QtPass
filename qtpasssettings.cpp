@@ -13,44 +13,6 @@ QHash<QString, QSize> QtPassSettings::sizeSettings;
 QHash<QString, int> QtPassSettings::intSettings;
 QHash<QString, bool> QtPassSettings::boolSettings;
 
-void QtPassSettings::saveAllSettings() {
-
-  //    for(QHash<QString, QString>::iterator i=stringSettings.begin(); i !=
-  //    QtPassSettings::stringSettings.end(); ++i)
-  //    {
-  //    //    getSettings().setValue(i.key(),i.value());
-  //    }
-  //    for(QHash<QString, QByteArray>::iterator
-  //    i=QtPassSettings::byteArraySettings.begin(); i !=
-  //    QtPassSettings::byteArraySettings.end(); ++i)
-  //    {
-  //    //    getSettings().setValue(i.key(),i.value());
-  //    }
-  //    for(QHash<QString, QPoint>::iterator
-  //    i=QtPassSettings::pointSettings.begin(); i !=
-  //    QtPassSettings::pointSettings.end(); ++i)
-  //    {
-  //    //    getSettings().setValue(i.key(),i.value());
-  //    }
-  //    for(QHash<QString, QSize>::iterator
-  //    i=QtPassSettings::sizeSettings.begin(); i !=
-  //    QtPassSettings::sizeSettings.end(); ++i)
-  //    {
-  //    //    getSettings().setValue(i.key(),i.value());
-  //    }
-  //    for(QHash<QString, int>::iterator i=QtPassSettings::intSettings.begin();
-  //    i != QtPassSettings::intSettings.end(); ++i)
-  //    {
-  //    //    getSettings().setValue(i.key(),i.value());
-  //    }
-  //    for(QHash<QString, bool>::iterator
-  //    i=QtPassSettings::boolSettings.begin(); i
-  //    !=QtPassSettings::boolSettings.end(); ++i)
-  //    {
-  //        getSettings().setValue(i.key(),i.value());
-  //    }
-}
-
 QString QtPassSettings::getVersion(const QString &defaultValue) {
   return getStringValue(SettingsConstants::version, defaultValue);
 }

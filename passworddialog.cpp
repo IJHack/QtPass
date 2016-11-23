@@ -41,7 +41,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   ui->lineEditPassword->setText(mainWindow->generatePassword(
       ui->spinBox_pwdLength->value(),
-      (Enums::clipBoardType)ui->passwordTemplateSwitch->currentIndex()));
+      (Enums::characterSet)ui->passwordTemplateSwitch->currentIndex()));
   ui->widget->setEnabled(true);
 }
 

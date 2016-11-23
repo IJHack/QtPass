@@ -34,8 +34,10 @@ SOURCES   += main.cpp\
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qtpasssettings.cpp \
-             enums.cpp \
-             settingsconstants.cpp
+             settingsconstants.cpp \
+             pass.cpp \
+			 realpass.cpp \
+			 imitatepass.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -50,7 +52,10 @@ HEADERS   += mainwindow.h \
              qpushbuttonwithclipboard.h \
              qtpasssettings.h \
              enums.h \
-             settingsconstants.h
+             settingsconstants.h \
+			 pass.h \
+			 realpass.h \
+			 imitatepass.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

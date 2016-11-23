@@ -14,6 +14,10 @@ public:
 
   QString getTextToCopy() const;
   void setTextToCopy(const QString &value);
+  void changeIconPushed();
+
+private slots:
+  void changeIconDefault();
 
 private:
   QString textToCopy;
