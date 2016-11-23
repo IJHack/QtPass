@@ -364,47 +364,47 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../imitatepass.cpp" line="59"/>
-        <location filename="../imitatepass.cpp" line="253"/>
+        <location filename="../imitatepass.cpp" line="56"/>
+        <location filename="../imitatepass.cpp" line="251"/>
         <source>Can not edit</source>
         <translation type="unfinished">Impossibile modificare</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="60"/>
-        <location filename="../imitatepass.cpp" line="254"/>
+        <location filename="../imitatepass.cpp" line="57"/>
+        <location filename="../imitatepass.cpp" line="252"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished">Impossibile leggere la chiave di criptazione da utilizzare, il file .gpg-id è mancante o non valido.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="124"/>
+        <location filename="../imitatepass.cpp" line="120"/>
         <source>Cannot update</source>
         <translation type="unfinished">Impossibile aggiornare</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="125"/>
+        <location filename="../imitatepass.cpp" line="121"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation type="unfinished">Impossibile aprire .gpg-id in scrittura.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="137"/>
+        <location filename="../imitatepass.cpp" line="134"/>
         <source>Check selected users!</source>
         <translation type="unfinished">Controlla gli utenti selezionati!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="138"/>
+        <location filename="../imitatepass.cpp" line="135"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished">Nessuna delle chiavi selezionate ha una chiave privata disponibile.
 Non sarai in grado di decifrare nessuna delle nuove password create!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="192"/>
+        <location filename="../imitatepass.cpp" line="189"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished">Esegui nuovamente la cifratura dalla cartella %1</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="196"/>
-        <location filename="../imitatepass.cpp" line="282"/>
+        <location filename="../imitatepass.cpp" line="193"/>
+        <location filename="../imitatepass.cpp" line="280"/>
         <source>Updating password-store</source>
         <translation type="unfinished">Aggiornando password-store</translation>
     </message>
@@ -512,14 +512,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1366"/>
+        <location filename="../mainwindow.cpp" line="1353"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1378"/>
+        <location filename="../mainwindow.cpp" line="1365"/>
         <source>Delete</source>
         <translation>Elimina</translation>
     </message>
@@ -550,7 +550,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1360"/>
+        <location filename="../mainwindow.cpp" line="1347"/>
         <source>Users</source>
         <translation>Utenti</translation>
     </message>
@@ -614,129 +614,129 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Codice sorgente&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="74"/>
+        <location filename="../mainwindow.cpp" line="73"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvenuto in QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.cpp" line="89"/>
         <source>Add Password</source>
         <translation>Aggiungi Password</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="90"/>
         <source>Add Folder</source>
         <translation>Aggiungi Cartella</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Impossibile connettersi a WebDAV</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="184"/>
+        <location filename="../mainwindow.cpp" line="183"/>
         <source>QtPass WebDAV password</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="185"/>
+        <location filename="../mainwindow.cpp" line="184"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Inserisci la password per connetersi a WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="201"/>
+        <location filename="../mainwindow.cpp" line="200"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav si è chiuso in modo anomalo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="205"/>
+        <location filename="../mainwindow.cpp" line="204"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Impossibile connettere fusedav a WebDAV</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
-        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="522"/>
         <source>Updating password-store</source>
         <translation>Aggiornando password-store</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="616"/>
-        <location filename="../mainwindow.cpp" line="1053"/>
+        <location filename="../mainwindow.cpp" line="604"/>
+        <location filename="../mainwindow.cpp" line="1040"/>
         <source>Can not edit</source>
         <translation>Impossibile modificare</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="1054"/>
+        <location filename="../mainwindow.cpp" line="605"/>
+        <location filename="../mainwindow.cpp" line="1041"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Il file password selezionato non esiste o non è modificabile</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="684"/>
+        <location filename="../mainwindow.cpp" line="672"/>
         <source>Password hidden</source>
         <translation>Password nascosta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="688"/>
+        <location filename="../mainwindow.cpp" line="676"/>
         <source>Content hidden</source>
         <translation>Contenuto nascosto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="728"/>
-        <location filename="../mainwindow.cpp" line="1535"/>
+        <location filename="../mainwindow.cpp" line="716"/>
+        <location filename="../mainwindow.cpp" line="1523"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="782"/>
+        <location filename="../mainwindow.cpp" line="770"/>
         <source>Clipboard cleared</source>
         <translation>Appunti svuotati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="784"/>
+        <location filename="../mainwindow.cpp" line="772"/>
         <source>Clipboard not cleared</source>
         <translation>Appunti non svuotati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="798"/>
+        <location filename="../mainwindow.cpp" line="786"/>
         <source>Password and Content hidden</source>
         <translation>Password e Contenuto nascosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="848"/>
+        <location filename="../mainwindow.cpp" line="836"/>
         <source>QProcess::FailedToStart</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="851"/>
+        <location filename="../mainwindow.cpp" line="839"/>
         <source>QProcess::Crashed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="842"/>
         <source>QProcess::Timedout</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="857"/>
+        <location filename="../mainwindow.cpp" line="845"/>
         <source>QProcess::ReadError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="860"/>
+        <location filename="../mainwindow.cpp" line="848"/>
         <source>QProcess::WriteError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="863"/>
+        <location filename="../mainwindow.cpp" line="851"/>
         <source>QProcess::UnknownError</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="874"/>
         <source>Looking for: %1</source>
         <translation>Cercando: %1</translation>
     </message>
@@ -745,45 +745,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Impossibile leggere la chiave di criptazione da utilizzare, il file .gpg-id è mancante o non valido.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="998"/>
-        <location filename="../mainwindow.cpp" line="1404"/>
+        <location filename="../mainwindow.cpp" line="987"/>
+        <location filename="../mainwindow.cpp" line="1391"/>
         <source>New file</source>
         <translation>Nuovo file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="999"/>
+        <location filename="../mainwindow.cpp" line="988"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuovo file password:
 (Verrà posizionato in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1029"/>
+        <location filename="../mainwindow.cpp" line="1016"/>
         <source>Delete password?</source>
         <translation>Eliminare password?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1030"/>
+        <location filename="../mainwindow.cpp" line="1017"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Sei sicuro di voler eliminare %1?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1029"/>
+        <location filename="../mainwindow.cpp" line="1016"/>
         <source>Delete folder?</source>
         <translation>Eliminare cartella?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1083"/>
+        <location filename="../mainwindow.cpp" line="1070"/>
         <source>Can not get key list</source>
         <translation>Impossibile ottenere la lista delle chiavi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1084"/>
+        <location filename="../mainwindow.cpp" line="1071"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Impossibile ottenere la lista delle chiavi gpg disponibili</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1102"/>
         <source>Key not found in keyring</source>
         <translation>Chiave non trovata nel portachiavi</translation>
     </message>
@@ -806,39 +806,39 @@ You will not be able to decrypt any newly added passwords!</source>
 Non sarai in grado di decifrare nessuna delle nuove password create!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1192"/>
+        <location filename="../mainwindow.cpp" line="1179"/>
         <source>Generating GPG key pair</source>
         <translation>Generando una coppia di chiavi GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1235"/>
+        <location filename="../mainwindow.cpp" line="1222"/>
         <source>Profile changed to %1</source>
         <translation>Profilo cambiato in %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1358"/>
+        <location filename="../mainwindow.cpp" line="1345"/>
         <source>Add folder</source>
         <translation>Aggiungi cartella</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1359"/>
+        <location filename="../mainwindow.cpp" line="1346"/>
         <source>Add password</source>
         <translation>Aggiungi password</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1405"/>
+        <location filename="../mainwindow.cpp" line="1392"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nuova cartella:
 (Verrà posizionata in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1453"/>
+        <location filename="../mainwindow.cpp" line="1441"/>
         <source>No characters chosen</source>
         <translation>Nessun carattere selezionato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1454"/>
+        <location filename="../mainwindow.cpp" line="1442"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Impossibile generare una password, non ci sono caratteri dai quali scegliere. Cotrolla nella finestra di configurazione!</translation>
     </message>
@@ -851,7 +851,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
         <translation type="vanished">Impossibile avviare la procedura, un altro processo è ancora attivo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1501"/>
+        <location filename="../mainwindow.cpp" line="1489"/>
         <source>Copied to clipboard</source>
         <translation>copiato negli appunti</translation>
     </message>
@@ -863,12 +863,12 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="137"/>
+        <location filename="../pass.cpp" line="143"/>
         <source>Timed out</source>
         <translation type="unfinished">Tempo scaduto</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="138"/>
+        <location filename="../pass.cpp" line="144"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation type="unfinished">Impossibile avviare la procedura, un altro processo è ancora attivo</translation>
     </message>

@@ -1,10 +1,7 @@
 #include "realpass.h"
 #include "qtpasssettings.h"
 
-RealPass::RealPass()
-{
-
-}
+RealPass::RealPass() {}
 
 /**
  * @brief RealPass::executePass easy wrapper for running pass
@@ -17,23 +14,17 @@ void RealPass::executePass(QString args, QString input) {
 /**
  * @brief RealPass::GitInit git init wrapper
  */
-void RealPass::GitInit() {
-    executePass("git init");
-}
+void RealPass::GitInit() { executePass("git init"); }
 
 /**
  * @brief RealPass::GitPull git init wrapper
  */
-void RealPass::GitPull() {
-    executePass("git pull");
-}
+void RealPass::GitPull() { executePass("git pull"); }
 
 /**
  * @brief RealPass::GitPush git init wrapper
  */
-void RealPass::GitPush() {
-    executePass("git push");
-}
+void RealPass::GitPush() { executePass("git push"); }
 
 /**
  * @brief RealPass::Show git init wrapper
@@ -45,24 +36,26 @@ void RealPass::GitPush() {
  *          otherwise returns QProcess::NormalExit
  */
 QProcess::ExitStatus RealPass::Show(QString file, bool block) {
-    executePass("show \"" + file + '"');
-    if(block)
-        return waitForProcess();
-    return QProcess::NormalExit;
+  executePass("show \"" + file + '"');
+  if (block)
+    return waitForProcess();
+  return QProcess::NormalExit;
 }
 
 /**
  * @brief RealPass::Insert git init wrapper
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
-    executePass(QString("insert ") + (overwrite?"-f ":"") + "-m \"" + file + '"', newValue);
+  executePass(QString("insert ") + (overwrite ? "-f " : "") + "-m \"" + file +
+                  '"',
+              newValue);
 }
 
 /**
  * @brief RealPass::Remove git init wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
-    executePass(QString("rm ") + (isDir?"-rf ":"-f ") + '"' + file + '"');
+  executePass(QString("rm ") + (isDir ? "-rf " : "-f ") + '"' + file + '"');
 }
 
 /**
@@ -72,16 +65,16 @@ void RealPass::Remove(QString file, bool isDir) {
  * @param users list of users with ability to decrypt new password-store
  */
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
-    QString gpgIds = "";
-    foreach (const UserInfo &user, users) {
-      if (user.enabled) {
-        gpgIds += user.key_id + " ";
-      }
+  QString gpgIds = "";
+  foreach (const UserInfo &user, users) {
+    if (user.enabled) {
+      gpgIds += user.key_id + " ";
     }
-    // remove the passStore directory otherwise,
-    // pass would create a passStore/passStore/dir
-    // but you want passStore/dir
-    QString dirWithoutPassdir =
-        path.remove(0, QtPassSettings::getPassStore().size());
-    executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
+  }
+  // remove the passStore directory otherwise,
+  // pass would create a passStore/passStore/dir
+  // but you want passStore/dir
+  QString dirWithoutPassdir =
+      path.remove(0, QtPassSettings::getPassStore().size());
+  executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
 }

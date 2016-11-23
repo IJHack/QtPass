@@ -33,6 +33,7 @@
 
 **Merged pull requests:**
 
+- refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
 - Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))

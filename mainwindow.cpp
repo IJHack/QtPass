@@ -33,8 +33,8 @@
  * @param parent
  */
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow),
-      fusedav(this), keygen(NULL), tray(NULL), pass(nullptr) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
+      tray(NULL), pass(nullptr) {
   // connect(process.data(), SIGNAL(readyReadStandardOutput()), this,
   // SLOT(readyRead()));
 
@@ -42,29 +42,28 @@ MainWindow::MainWindow(QWidget *parent)
   connect(&rpass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
   connect(&rpass, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int,QProcess::ExitStatus)));
+          SLOT(processFinished(int, QProcess::ExitStatus)));
   connect(&rpass, SIGNAL(startingExecuteWrapper()), this,
           SLOT(executeWrapperStarted()));
-  connect(&rpass, SIGNAL(statusMsg(QString,int)), this,
-          SLOT(showStatusMessage(QString,int)));
-  connect(&rpass, SIGNAL(critical(QString,QString)), this,
-          SLOT(critical(QString,QString)));
+  connect(&rpass, SIGNAL(statusMsg(QString, int)), this,
+          SLOT(showStatusMessage(QString, int)));
+  connect(&rpass, SIGNAL(critical(QString, QString)), this,
+          SLOT(critical(QString, QString)));
 
   connect(&ipass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
   connect(&ipass, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int,QProcess::ExitStatus)));
+          SLOT(processFinished(int, QProcess::ExitStatus)));
   connect(&ipass, SIGNAL(startingExecuteWrapper()), this,
           SLOT(executeWrapperStarted()));
-  connect(&ipass, SIGNAL(statusMsg(QString,int)), this,
-          SLOT(showStatusMessage(QString,int)));
-  connect(&ipass, SIGNAL(critical(QString,QString)), this,
-          SLOT(critical(QString,QString)));
+  connect(&ipass, SIGNAL(statusMsg(QString, int)), this,
+          SLOT(showStatusMessage(QString, int)));
+  connect(&ipass, SIGNAL(critical(QString, QString)), this,
+          SLOT(critical(QString, QString)));
   //    only for ipass
   connect(&ipass, SIGNAL(startReencryptPath()), this,
           SLOT(startReencryptPath()));
-  connect(&ipass, SIGNAL(endReencryptPath()), this,
-          SLOT(endReencryptPath()));
+  connect(&ipass, SIGNAL(endReencryptPath()), this, SLOT(endReencryptPath()));
   connect(&ipass, SIGNAL(lastDecrypt(QString)), this,
           SLOT(setLastDecrypt(QString)));
 
@@ -347,10 +346,10 @@ bool MainWindow::checkConfig() {
 
   //    TODO(bezet): make this check unnecessary
   if (pass == nullptr) {
-      if (QtPassSettings::isUsePass())
-          pass = &rpass;
-      else
-          pass = &ipass;
+    if (QtPassSettings::isUsePass())
+      pass = &rpass;
+    else
+      pass = &ipass;
   }
   pass->updateEnv();
 
@@ -430,10 +429,10 @@ void MainWindow::config() {
       QtPassSettings::setPassStore(
           Util::normalizeFolderPath(d->getStorePath()));
       QtPassSettings::setUsePass(d->usePass());
-      if(d->usePass())
-          pass = &rpass;
+      if (d->usePass())
+        pass = &rpass;
       else
-          pass = &ipass;
+        pass = &ipass;
       QtPassSettings::setClipBoardType(d->useClipboard());
       QtPassSettings::setUseAutoclear(d->useAutoclear());
       QtPassSettings::setAutoclearSeconds(d->getAutoclear());
@@ -629,16 +628,16 @@ void MainWindow::executePassGitInit() {
 }
 
 void MainWindow::executeWrapperStarted() {
-    clearTemplateWidgets();
-    ui->textBrowser->clear();
-    ui->textBrowser->setTextColor(Qt::black);
-    enableUiElements(false);
-    if (autoclearTimer != NULL) {
-      autoclearTimer->stop();
-      //    TODO(bezet): why dynamic allocation?
-      delete autoclearTimer;
-      autoclearTimer = NULL;
-    }
+  clearTemplateWidgets();
+  ui->textBrowser->clear();
+  ui->textBrowser->setTextColor(Qt::black);
+  enableUiElements(false);
+  if (autoclearTimer != NULL) {
+    autoclearTimer->stop();
+    //    TODO(bezet): why dynamic allocation?
+    delete autoclearTimer;
+    autoclearTimer = NULL;
+  }
 }
 
 /**
@@ -854,7 +853,8 @@ void MainWindow::processError(QProcess::ProcessError error) {
   }
   ui->textBrowser->setTextColor(Qt::red);
   ui->textBrowser->setText(errorString);
-  //    TODO(bezet): this probably shall be done in finished handler(I guess it finishes even on error)
+  //    TODO(bezet): this probably shall be done in finished handler(I guess it
+  //    finishes even on error)
   if (pass->state() == QProcess::NotRunning)
     enableUiElements(true);
 }
@@ -1007,26 +1007,24 @@ void MainWindow::on_deleteButton_clicked() {
 
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
-  }
-  else
-  {
-      file = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
-      isDir = true;
+  } else {
+    file = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    isDir = true;
   }
 
   if (QMessageBox::question(
-              this, isDir?tr("Delete folder?"):tr("Delete password?"),
-              tr("Are you sure you want to delete %1?")
+          this, isDir ? tr("Delete folder?") : tr("Delete password?"),
+          tr("Are you sure you want to delete %1?")
               .arg(QDir::separator() +
                    getFile(ui->treeView->currentIndex(), true)),
-              QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
-      return;
+          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+    return;
 
-    currentAction = REMOVE;
-    pass->Remove(file, isDir);
-    //  TODO(bezet): hide inside interface?
-    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
-      on_pushButton_clicked();
+  currentAction = REMOVE;
+  pass->Remove(file, isDir);
+  //  TODO(bezet): hide inside interface?
+  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
+    on_pushButton_clicked();
 
   lastDecrypt = "";
 }
@@ -1058,8 +1056,8 @@ void MainWindow::userDialog(QString dir) {
 
 //  TODO(bezet): temporary wrapper
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
-    currentAction = GPG_INTERNAL;
-    return pass->listKeys(keystring, secret);
+  currentAction = GPG_INTERNAL;
+  return pass->listKeys(keystring, secret);
 }
 
 /**
@@ -1419,8 +1417,8 @@ void MainWindow::editPassword() {
       getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
   if (!file.isEmpty()) {
     currentAction = GPG;
-    if(pass->Show(file, true) == QProcess::NormalExit)
-        on_editButton_clicked();
+    if (pass->Show(file, true) == QProcess::NormalExit)
+      on_editButton_clicked();
   }
 }
 
@@ -1436,13 +1434,14 @@ QString MainWindow::generatePassword(int length,
   currentAction = PWGEN;
   //    TODO(bezet): move checks inside and catch exceptions
 
-  if(!QtPassSettings::isUsePwgen()) {
-      int charsetLength = pwdConfig.Characters[selection].length();
-      if (charsetLength <= 0)
-          QMessageBox::critical(this, tr("No characters chosen"),
-              tr("Can't generate password, there are no characters to choose from "
-                 "set in the configuration!"));
-      return QString();
+  if (!QtPassSettings::isUsePwgen()) {
+    int charsetLength = pwdConfig.Characters[selection].length();
+    if (charsetLength <= 0)
+      QMessageBox::critical(
+          this, tr("No characters chosen"),
+          tr("Can't generate password, there are no characters to choose from "
+             "set in the configuration!"));
+    return QString();
   }
   return pass->Generate(length, pwdConfig.Characters[selection]);
 }
@@ -1563,23 +1562,18 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   * @params timeout time for which msg shall be visible
   */
 void MainWindow::showStatusMessage(QString msg, int timeout) {
-    ui->statusBar->showMessage(msg, timeout);
+  ui->statusBar->showMessage(msg, timeout);
 }
 
 void MainWindow::startReencryptPath() {
-    enableUiElements(false);
-    ui->treeView->setDisabled(true);
+  enableUiElements(false);
+  ui->treeView->setDisabled(true);
 }
 
-void MainWindow::endReencryptPath() {
-    enableUiElements(true);
-}
+void MainWindow::endReencryptPath() { enableUiElements(true); }
 
 void MainWindow::critical(QString title, QString msg) {
-    QMessageBox::critical(
-        this, title,msg);
+  QMessageBox::critical(this, title, msg);
 }
 
-void MainWindow::setLastDecrypt(QString msg) {
-    lastDecrypt = msg;
-}
+void MainWindow::setLastDecrypt(QString msg) { lastDecrypt = msg; }

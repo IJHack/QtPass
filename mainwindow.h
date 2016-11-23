@@ -2,6 +2,9 @@
 #define MAINWINDOW_H_
 
 #include "enums.h"
+#include "imitatepass.h"
+#include "pass.h"
+#include "realpass.h"
 #include "storemodel.h"
 #include "trayicon.h"
 #include <QFileSystemModel>
@@ -10,9 +13,6 @@
 #include <QQueue>
 #include <QTimer>
 #include <QTreeView>
-#include "pass.h"
-#include "realpass.h"
-#include "imitatepass.h"
 
 #if SINGLE_APP
 #include "singleapplication.h"
@@ -130,7 +130,7 @@ private slots:
   void showStatusMessage(QString msg, int timeout);
   void startReencryptPath();
   void endReencryptPath();
-  void critical(QString,QString);
+  void critical(QString, QString);
   void setLastDecrypt(QString);
 
 private:
