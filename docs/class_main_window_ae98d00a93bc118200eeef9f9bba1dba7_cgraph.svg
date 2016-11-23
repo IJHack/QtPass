@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 339.53 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>MainWindow::~MainWindow</title>
-<!-- Node89 -->
-<g id="node1" class="node"><title>Node89</title>
+<!-- Node92 -->
+<g id="node1" class="node"><title>Node92</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 141.879,-36.5 141.879,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="70.9395" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::~MainWindow</text>
 </g>
-<!-- Node90 -->
-<g id="node2" class="node"><title>Node90</title>
+<!-- Node93 -->
+<g id="node2" class="node"><title>Node93</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" target="_top" xlink:title="QtPassSettings::isUseWebDav">
 <polygon fill="none" stroke="black" points="177.879,-37.5 177.879,-55.5 331.53,-55.5 331.53,-37.5 177.879,-37.5"/>
 <text text-anchor="middle" x="254.705" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>
 </g>
 </g>
-<!-- Node89&#45;&gt;Node90 -->
-<g id="edge1" class="edge"><title>Node89&#45;&gt;Node90</title>
+<!-- Node92&#45;&gt;Node93 -->
+<g id="edge1" class="edge"><title>Node92&#45;&gt;Node93</title>
 <path fill="none" stroke="midnightblue" d="M141.955,-34.8187C150.365,-35.6978 159.027,-36.6033 167.631,-37.5027"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="167.377,-40.9951 177.687,-38.5538 168.105,-34.0331 167.377,-40.9951"/>
 </g>
-<!-- Node91 -->
-<g id="node3" class="node"><title>Node91</title>
+<!-- Node94 -->
+<g id="node3" class="node"><title>Node94</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="black" points="179.449,-0.5 179.449,-18.5 329.96,-18.5 329.96,-0.5 179.449,-0.5"/>
 <text text-anchor="middle" x="254.705" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node89&#45;&gt;Node91 -->
-<g id="edge2" class="edge"><title>Node89&#45;&gt;Node91</title>
+<!-- Node92&#45;&gt;Node94 -->
+<g id="edge2" class="edge"><title>Node92&#45;&gt;Node94</title>
 <path fill="none" stroke="midnightblue" d="M141.955,-20.5665C150.819,-19.6886 159.964,-18.783 169.026,-17.8856"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="169.597,-21.3463 179.203,-16.8778 168.907,-14.3804 169.597,-21.3463"/>
 </g>

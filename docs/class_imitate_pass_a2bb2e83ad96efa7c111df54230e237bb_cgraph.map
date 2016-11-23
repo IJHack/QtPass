@@ -1,0 +1,5 @@
+<map id="ImitatePass::GitInit" name="ImitatePass::GitInit">
+<area shape="rect" id="node2" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="220,5,376,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="457,31,657,56"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="187,107,409,132"/>
+</map>

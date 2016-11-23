@@ -1,0 +1,6 @@
+<map id="ImitatePass::Show" name="ImitatePass::Show">
+<area shape="rect" id="node2" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="222,5,378,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="185,55,415,80"/>
+<area shape="rect" id="node5" href="$class_pass.html#a821812847e66c0db1fce6f770b67d06e" title="Pass::waitForProcess" alt="" coords="225,104,375,129"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="463,5,664,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Pass::Generate" name="Pass::Generate">
+<area shape="rect" id="node2" href="$class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="167,12,384,37"/>
+<area shape="rect" id="node3" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="432,5,623,44"/>
+</map>

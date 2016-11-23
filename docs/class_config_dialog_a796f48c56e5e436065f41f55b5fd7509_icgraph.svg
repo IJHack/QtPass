@@ -8,47 +8,47 @@
  viewBox="0.00 0.00 277.22 101.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>ConfigDialog::useGit</title>
-<!-- Node134 -->
-<g id="node1" class="node"><title>Node134</title>
+<!-- Node137 -->
+<g id="node1" class="node"><title>Node137</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-37.5 0,-55.5 107.714,-55.5 107.714,-37.5 0,-37.5"/>
 <text text-anchor="middle" x="53.8569" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::useGit</text>
 </g>
-<!-- Node135 -->
-<g id="node2" class="node"><title>Node135</title>
+<!-- Node138 -->
+<g id="node2" class="node"><title>Node138</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a5246b29bdf5ec2db15e3326d634a560c" target="_top" xlink:title="ConfigDialog::setGitPath set the git executable path. Make sure the checkBoxUseGit is updated...">
 <polygon fill="none" stroke="black" points="143.714,-74.5 143.714,-92.5 269.216,-92.5 269.216,-74.5 143.714,-74.5"/>
 <text text-anchor="middle" x="206.465" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::setGitPath</text>
 </a>
 </g>
 </g>
-<!-- Node134&#45;&gt;Node135 -->
-<g id="edge1" class="edge"><title>Node134&#45;&gt;Node135</title>
+<!-- Node137&#45;&gt;Node138 -->
+<g id="edge1" class="edge"><title>Node137&#45;&gt;Node138</title>
 <path fill="none" stroke="midnightblue" d="M101.654,-57.9967C123.26,-63.3046 148.539,-69.5149 168.742,-74.4782"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="102.246,-54.5381 91.6998,-55.5512 100.576,-61.336 102.246,-54.5381"/>
 </g>
-<!-- Node136 -->
-<g id="node3" class="node"><title>Node136</title>
+<!-- Node139 -->
+<g id="node3" class="node"><title>Node139</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" target="_top" xlink:title="ConfigDialog::usePass set wether or not we want to use pass. Update radio buttons accordingly...">
 <polygon fill="none" stroke="black" points="147.881,-37.5 147.881,-55.5 265.048,-55.5 265.048,-37.5 147.881,-37.5"/>
 <text text-anchor="middle" x="206.465" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::usePass</text>
 </a>
 </g>
 </g>
-<!-- Node134&#45;&gt;Node136 -->
-<g id="edge2" class="edge"><title>Node134&#45;&gt;Node136</title>
+<!-- Node137&#45;&gt;Node139 -->
+<g id="edge2" class="edge"><title>Node137&#45;&gt;Node139</title>
 <path fill="none" stroke="midnightblue" d="M118.072,-46.5C127.906,-46.5 138.023,-46.5 147.727,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="117.956,-43.0001 107.956,-46.5 117.956,-50.0001 117.956,-43.0001"/>
 </g>
-<!-- Node137 -->
-<g id="node4" class="node"><title>Node137</title>
+<!-- Node140 -->
+<g id="node4" class="node"><title>Node140</title>
 <g id="a_node4"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="152.61,-0.5 152.61,-18.5 260.319,-18.5 260.319,-0.5 152.61,-0.5"/>
 <text text-anchor="middle" x="206.465" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node134&#45;&gt;Node137 -->
-<g id="edge3" class="edge"><title>Node134&#45;&gt;Node137</title>
+<!-- Node137&#45;&gt;Node140 -->
+<g id="edge3" class="edge"><title>Node137&#45;&gt;Node140</title>
 <path fill="none" stroke="midnightblue" d="M101.654,-35.0033C123.26,-29.6954 148.539,-23.4851 168.742,-18.5218"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="100.576,-31.664 91.6998,-37.4488 102.246,-38.4619 100.576,-31.664"/>
 </g>

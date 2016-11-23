@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]]
+  ['keygendialog',['KeygenDialog',['../class_keygen_dialog.html',1,'']]]
 ];

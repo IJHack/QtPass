@@ -1,7 +1,12 @@
 var searchData=
 [
   ['iconactivated',['iconActivated',['../class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8',1,'TrayIcon']]],
+  ['imitatepass',['ImitatePass',['../class_imitate_pass.html',1,'ImitatePass'],['../class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6',1,'ImitatePass::ImitatePass()']]],
+  ['imitatepass_2ecpp',['imitatepass.cpp',['../imitatepass_8cpp.html',1,'']]],
+  ['imitatepass_2eh',['imitatepass.h',['../imitatepass_8h.html',1,'']]],
+  ['init',['Init',['../class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b',1,'ImitatePass::Init()'],['../class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2',1,'Pass::Init()'],['../class_real_pass.html#a12a7e631a5040eee70da06585fe047ba',1,'RealPass::Init()']]],
   ['input',['input',['../structexec_queue_item.html#acb57e88358e5108b54f82521ae2608a0',1,'execQueueItem']]],
+  ['insert',['Insert',['../class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765',1,'ImitatePass::Insert()'],['../class_pass.html#a86ad2005a6517f9c304a9e156755778c',1,'Pass::Insert()'],['../class_real_pass.html#a01965e03d57777ca9db1f564ff893c13',1,'RealPass::Insert()']]],
   ['isaddgpgid',['isAddGPGId',['../class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694',1,'QtPassSettings']]],
   ['isalwaysontop',['isAlwaysOnTop',['../class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3',1,'QtPassSettings']]],
   ['isanimated',['isAnimated',['../class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080',1,'QProgressIndicator']]],

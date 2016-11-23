@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keygendialog',['KeygenDialog',['../class_keygen_dialog.html',1,'']]]
+  ['imitatepass',['ImitatePass',['../class_imitate_pass.html',1,'']]]
 ];

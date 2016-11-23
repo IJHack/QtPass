@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 336.50 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::getWebDavUrl</title>
-<!-- Node170 -->
-<g id="node1" class="node"><title>Node170</title>
+<!-- Node196 -->
+<g id="node1" class="node"><title>Node196</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 155.321,-18.5 155.321,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="77.6606" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getWebDavUrl</text>
 </g>
-<!-- Node171 -->
-<g id="node2" class="node"><title>Node171</title>
+<!-- Node197 -->
+<g id="node2" class="node"><title>Node197</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" target="_top" xlink:title="MainWindow::changeEvent sets focus to the search box. ">
 <polygon fill="none" stroke="black" points="191.321,-0.5 191.321,-18.5 328.498,-18.5 328.498,-0.5 191.321,-0.5"/>
 <text text-anchor="middle" x="259.91" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::changeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node170&#45;&gt;Node171 -->
-<g id="edge1" class="edge"><title>Node170&#45;&gt;Node171</title>
+<!-- Node196&#45;&gt;Node197 -->
+<g id="edge1" class="edge"><title>Node196&#45;&gt;Node197</title>
 <path fill="none" stroke="midnightblue" d="M165.445,-9.5C174.066,-9.5 182.727,-9.5 191.112,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="165.364,-6.0001 155.364,-9.5 165.364,-13.0001 165.364,-6.0001"/>
 </g>

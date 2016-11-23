@@ -1,0 +1,9 @@
+<map id="Pass::getRecipientList" name="Pass::getRecipientList">
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="422,21,603,46"/>
+<area shape="rect" id="node5" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="428,122,597,148"/>
+<area shape="rect" id="node7" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="207,72,374,97"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="665,22,781,48"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="843,22,1019,48"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="651,122,795,148"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert git init wrapper. " alt="" coords="657,72,789,97"/>
+</map>

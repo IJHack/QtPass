@@ -1,8 +1,11 @@
 <map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="258,5,488,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="281,55,465,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="284,104,461,129"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="285,153,461,179"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="273,203,473,228"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="273,252,473,277"/>
+<area shape="rect" id="node2" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="271,55,444,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="784,105,985,131"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="266,156,450,181"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="269,205,446,231"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="270,255,446,280"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="258,304,458,329"/>
+<area shape="rect" id="node10" href="$class_pass.html#a5377c479d9fb9c32ab7e218392b903cf" title="Pass::resetPasswordStoreDir probably temporary helper. " alt="" coords="523,255,719,280"/>
+<area shape="rect" id="node3" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="543,5,699,31"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="506,55,736,80"/>
 </map>

@@ -1,0 +1,24 @@
+<map id="Pass::executeWrapper" name="Pass::executeWrapper">
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="ImitatePass::GitInit git init wrapper. " alt="" coords="724,161,858,186"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" title="ImitatePass::GitPull git init wrapper. " alt="" coords="227,213,365,238"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="442,313,623,338"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="733,363,849,389"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper. " alt="" coords="223,262,369,287"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#a74a162297cb0d1f80171b9c4b3fbb301" title="ImitatePass::Show git init wrapper. " alt="" coords="467,9,599,34"/>
+<area shape="rect" id="node9" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert git init wrapper. " alt="" coords="725,59,857,85"/>
+<area shape="rect" id="node10" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove git init wrapper. " alt="" coords="222,110,370,135"/>
+<area shape="rect" id="node11" href="$class_pass.html#a140443713431e41dc5a7d4989ece82c0" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="476,463,590,489"/>
+<area shape="rect" id="node14" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="209,566,383,591"/>
+<area shape="rect" id="node18" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="481,515,585,541"/>
+<area shape="rect" id="node21" href="$class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x&#45;seconds. " alt="" coords="245,414,347,439"/>
+<area shape="rect" id="node23" href="$class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" title="RealPass::RealPass" alt="" coords="225,615,367,641"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="961,186,1136,211"/>
+<area shape="rect" id="node12" href="$class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" title="MainWindow::generatePassword use either pwgen or internal password generator. " alt="" coords="683,462,899,487"/>
+<area shape="rect" id="node13" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="953,454,1144,493"/>
+<area shape="rect" id="node15" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="431,566,635,591"/>
+<area shape="rect" id="node16" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="716,566,866,591"/>
+<area shape="rect" id="node17" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="947,566,1150,591"/>
+<area shape="rect" id="node19" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="707,517,875,542"/>
+<area shape="rect" id="node20" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="977,517,1120,542"/>
+<area shape="rect" id="node22" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="436,414,630,439"/>
+</map>

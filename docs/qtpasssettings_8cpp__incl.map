@@ -1,8 +1,12 @@
 <map id="qtpasssettings.cpp" name="qtpasssettings.cpp">
-<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="573,79,691,104"/>
-<area shape="rect" id="node30" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="913,79,1049,104"/>
-<area shape="rect" id="node13" href="$enums_8h.html" title="enums.h" alt="" coords="716,225,788,251"/>
-<area shape="rect" id="node14" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1019,152,1124,177"/>
-<area shape="rect" id="node15" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="863,225,961,251"/>
-<area shape="rect" id="node19" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1071,225,1150,251"/>
+<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="514,79,632,104"/>
+<area shape="rect" id="node40" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1220,79,1356,104"/>
+<area shape="rect" id="node13" href="$enums_8h.html" title="enums.h" alt="" coords="369,372,441,397"/>
+<area shape="rect" id="node14" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="683,152,788,177"/>
+<area shape="rect" id="node15" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="599,225,699,251"/>
+<area shape="rect" id="node16" href="$pass_8h.html" title="pass.h" alt="" coords="530,299,590,324"/>
+<area shape="rect" id="node26" href="$realpass_8h.html" title="realpass.h" alt="" coords="443,225,525,251"/>
+<area shape="rect" id="node27" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="973,225,1072,251"/>
+<area shape="rect" id="node31" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1300,225,1379,251"/>
+<area shape="rect" id="node21" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="603,372,704,397"/>
 </map>

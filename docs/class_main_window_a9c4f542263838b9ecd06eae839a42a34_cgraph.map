@@ -1,7 +1,11 @@
 <map id="MainWindow::keyPressEvent" name="MainWindow::keyPressEvent">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="262,5,463,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="277,55,448,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="273,104,452,129"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="271,153,454,179"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="247,203,478,228"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="683,70,884,95"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="254,46,425,71"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="249,95,429,120"/>
+<area shape="rect" id="node5" href="$class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x&#45;seconds. " alt="" coords="288,144,390,170"/>
+<area shape="rect" id="node8" href="$class_pass.html#a821812847e66c0db1fce6f770b67d06e" title="Pass::waitForProcess" alt="" coords="264,194,414,219"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="247,243,431,268"/>
+<area shape="rect" id="node10" href="$class_pass.html#a0f9bdf6589cdfddcfc1a56928a4d49e4" title="Pass::Show" alt="" coords="293,292,385,318"/>
+<area shape="rect" id="node6" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="512,95,602,120"/>
+<area shape="rect" id="node7" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="479,144,635,170"/>
 </map>

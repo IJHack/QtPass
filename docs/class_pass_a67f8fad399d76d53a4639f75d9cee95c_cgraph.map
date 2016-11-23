@@ -1,0 +1,5 @@
+<map id="Pass::waitFor" name="Pass::waitFor">
+<area shape="rect" id="node2" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="189,5,278,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="155,55,311,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="359,55,560,80"/>
+</map>

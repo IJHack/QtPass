@@ -1,6 +1,10 @@
 <map id="deselectabletreeview.h" name="deselectabletreeview.h">
-<area shape="rect" id="node5" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="405,79,510,104"/>
-<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="217,152,290,177"/>
-<area shape="rect" id="node7" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="364,152,463,177"/>
-<area shape="rect" id="node11" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="555,152,635,177"/>
+<area shape="rect" id="node5" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="410,79,515,104"/>
+<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="59,299,132,324"/>
+<area shape="rect" id="node7" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="218,152,318,177"/>
+<area shape="rect" id="node8" href="$pass_8h.html" title="pass.h" alt="" coords="237,225,298,251"/>
+<area shape="rect" id="node18" href="$realpass_8h.html" title="realpass.h" alt="" coords="342,152,425,177"/>
+<area shape="rect" id="node19" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="664,152,762,177"/>
+<area shape="rect" id="node23" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1171,152,1250,177"/>
+<area shape="rect" id="node13" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="207,299,307,324"/>
 </map>

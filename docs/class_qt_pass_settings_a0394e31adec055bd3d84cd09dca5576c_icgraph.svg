@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 323.32 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::setMaximized</title>
-<!-- Node476 -->
-<g id="node1" class="node"><title>Node476</title>
+<!-- Node506 -->
+<g id="node1" class="node"><title>Node506</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 151.605,-18.5 151.605,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="75.8027" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setMaximized</text>
 </g>
-<!-- Node477 -->
-<g id="node2" class="node"><title>Node477</title>
+<!-- Node507 -->
+<g id="node2" class="node"><title>Node507</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit. ">
 <polygon fill="none" stroke="black" points="187.605,-0.5 187.605,-18.5 315.319,-18.5 315.319,-0.5 187.605,-0.5"/>
 <text text-anchor="middle" x="251.462" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::closeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node476&#45;&gt;Node477 -->
-<g id="edge1" class="edge"><title>Node476&#45;&gt;Node477</title>
+<!-- Node506&#45;&gt;Node507 -->
+<g id="edge1" class="edge"><title>Node506&#45;&gt;Node507</title>
 <path fill="none" stroke="midnightblue" d="M161.831,-9.5C170.48,-9.5 179.153,-9.5 187.505,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="161.71,-6.0001 151.71,-9.5 161.71,-13.0001 161.71,-6.0001"/>
 </g>

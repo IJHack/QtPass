@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 733;
+var viewWidth = 684;
 var viewHeight = 111;
 var sectionId = 'dynsection-35';
 </script>
@@ -54,102 +54,115 @@ var sectionId = 'dynsection-35';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::isLessRandom</title>
-<!-- Node256 -->
-<g id="node1" class="node"><title>Node256</title>
+<!-- Node285 -->
+<g id="node1" class="node"><title>Node285</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-27.5 0,-45.5 156.62,-45.5 156.62,-27.5 0,-27.5"/>
 <text text-anchor="middle" x="78.3101" y="-33.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isLessRandom</text>
 </g>
-<!-- Node257 -->
-<g id="node2" class="node"><title>Node257</title>
+<!-- Node286 -->
+<g id="node2" class="node"><title>Node286</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
-<polygon fill="none" stroke="black" points="220.97,-47.5 220.97,-65.5 326.452,-65.5 326.452,-47.5 220.97,-47.5"/>
-<text text-anchor="middle" x="273.711" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
+<polygon fill="none" stroke="black" points="192.62,-47.5 192.62,-65.5 298.103,-65.5 298.103,-47.5 192.62,-47.5"/>
+<text text-anchor="middle" x="245.361" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node256&#45;&gt;Node257 -->
-<g id="edge1" class="edge"><title>Node256&#45;&gt;Node257</title>
-<path fill="none" stroke="midnightblue" d="M167.037,-45.572C185.47,-47.4782 204.341,-49.4297 220.941,-51.1463"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="167.166,-42.0668 156.859,-44.5195 166.446,-49.0297 167.166,-42.0668"/>
+<!-- Node285&#45;&gt;Node286 -->
+<g id="edge1" class="edge"><title>Node285&#45;&gt;Node286</title>
+<path fill="none" stroke="midnightblue" d="M163.719,-46.7282C173.412,-47.9028 183.071,-49.0731 192.159,-50.1744"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="163.976,-43.2338 153.627,-45.5054 163.134,-50.183 163.976,-43.2338"/>
 </g>
-<!-- Node262 -->
-<g id="node7" class="node"><title>Node262</title>
-<g id="a_node7"><a xlink:href="class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
-<polygon fill="none" stroke="black" points="192.62,-8.5 192.62,-26.5 354.802,-26.5 354.802,-8.5 192.62,-8.5"/>
-<text text-anchor="middle" x="273.711" y="-14.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
+<!-- Node291 -->
+<g id="node7" class="node"><title>Node291</title>
+<g id="a_node7"><a xlink:href="class_pass.html#a140443713431e41dc5a7d4989ece82c0" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
+<polygon fill="none" stroke="black" points="202.62,-8.5 202.62,-26.5 288.103,-26.5 288.103,-8.5 202.62,-8.5"/>
+<text text-anchor="middle" x="245.361" y="-14.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate</text>
 </a>
 </g>
 </g>
-<!-- Node256&#45;&gt;Node262 -->
-<g id="edge6" class="edge"><title>Node256&#45;&gt;Node262</title>
-<path fill="none" stroke="midnightblue" d="M166.867,-27.8982C175.445,-27.0556 184.119,-26.2034 192.616,-25.3686"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="166.469,-24.4204 156.859,-28.8815 167.154,-31.3869 166.469,-24.4204"/>
+<!-- Node285&#45;&gt;Node291 -->
+<g id="edge6" class="edge"><title>Node285&#45;&gt;Node291</title>
+<path fill="none" stroke="midnightblue" d="M166.96,-26.4102C179.361,-24.9826 191.607,-23.5729 202.572,-22.3106"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="166.537,-22.9356 157.003,-27.5564 167.337,-29.8897 166.537,-22.9356"/>
 </g>
-<!-- Node258 -->
-<g id="node3" class="node"><title>Node258</title>
+<!-- Node287 -->
+<g id="node3" class="node"><title>Node287</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
-<polygon fill="none" stroke="black" points="404.974,-84.5 404.974,-102.5 538.801,-102.5 538.801,-84.5 404.974,-84.5"/>
-<text text-anchor="middle" x="471.888" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
+<polygon fill="none" stroke="black" points="348.28,-84.5 348.28,-102.5 482.107,-102.5 482.107,-84.5 348.28,-84.5"/>
+<text text-anchor="middle" x="415.193" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node257&#45;&gt;Node258 -->
-<g id="edge2" class="edge"><title>Node257&#45;&gt;Node258</title>
-<path fill="none" stroke="midnightblue" d="M332.38,-67.3767C361.177,-72.8079 395.606,-79.3015 422.934,-84.4557"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="332.926,-63.918 322.45,-65.5039 331.628,-70.7967 332.926,-63.918"/>
+<!-- Node286&#45;&gt;Node287 -->
+<g id="edge2" class="edge"><title>Node286&#45;&gt;Node287</title>
+<path fill="none" stroke="midnightblue" d="M297.207,-67.7093C321.565,-73.0794 350.349,-79.4251 373.27,-84.4782"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="297.937,-64.2863 287.418,-65.5512 296.43,-71.1221 297.937,-64.2863"/>
 </g>
-<!-- Node260 -->
-<g id="node5" class="node"><title>Node260</title>
+<!-- Node289 -->
+<g id="node5" class="node"><title>Node289</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
-<polygon fill="none" stroke="black" points="390.802,-47.5 390.802,-65.5 552.974,-65.5 552.974,-47.5 390.802,-47.5"/>
-<text text-anchor="middle" x="471.888" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
+<polygon fill="none" stroke="black" points="334.107,-47.5 334.107,-65.5 496.279,-65.5 496.279,-47.5 334.107,-47.5"/>
+<text text-anchor="middle" x="415.193" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node257&#45;&gt;Node260 -->
-<g id="edge4" class="edge"><title>Node257&#45;&gt;Node260</title>
-<path fill="none" stroke="midnightblue" d="M336.899,-56.5C353.969,-56.5 372.721,-56.5 390.65,-56.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="336.511,-53.0001 326.511,-56.5 336.511,-60.0001 336.511,-53.0001"/>
+<!-- Node286&#45;&gt;Node289 -->
+<g id="edge4" class="edge"><title>Node286&#45;&gt;Node289</title>
+<path fill="none" stroke="midnightblue" d="M308.782,-56.5C317.009,-56.5 325.532,-56.5 334.004,-56.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="308.544,-53.0001 298.544,-56.5 308.544,-60.0001 308.544,-53.0001"/>
 </g>
-<!-- Node259 -->
-<g id="node4" class="node"><title>Node259</title>
+<!-- Node288 -->
+<g id="node4" class="node"><title>Node288</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="black" points="588.974,-84.5 588.974,-102.5 725.013,-102.5 725.013,-84.5 588.974,-84.5"/>
-<text text-anchor="middle" x="656.993" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
+<polygon fill="none" stroke="black" points="536.044,-84.5 536.044,-102.5 672.083,-102.5 672.083,-84.5 536.044,-84.5"/>
+<text text-anchor="middle" x="604.063" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node258&#45;&gt;Node259 -->
-<g id="edge3" class="edge"><title>Node258&#45;&gt;Node259</title>
-<path fill="none" stroke="midnightblue" d="M549.368,-93.5C562.444,-93.5 575.941,-93.5 588.754,-93.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="548.993,-90.0001 538.993,-93.5 548.993,-97.0001 548.993,-90.0001"/>
+<!-- Node287&#45;&gt;Node288 -->
+<g id="edge3" class="edge"><title>Node287&#45;&gt;Node288</title>
+<path fill="none" stroke="midnightblue" d="M492.628,-93.5C506.917,-93.5 521.755,-93.5 535.744,-93.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="492.34,-90.0001 482.34,-93.5 492.34,-97.0001 492.34,-90.0001"/>
 </g>
-<!-- Node261 -->
-<g id="node6" class="node"><title>Node261</title>
+<!-- Node290 -->
+<g id="node6" class="node"><title>Node290</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
-<polygon fill="none" stroke="black" points="603.139,-47.5 603.139,-65.5 710.848,-65.5 710.848,-47.5 603.139,-47.5"/>
-<text text-anchor="middle" x="656.993" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
+<polygon fill="none" stroke="black" points="550.209,-47.5 550.209,-65.5 657.918,-65.5 657.918,-47.5 550.209,-47.5"/>
+<text text-anchor="middle" x="604.063" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node260&#45;&gt;Node261 -->
-<g id="edge5" class="edge"><title>Node260&#45;&gt;Node261</title>
-<path fill="none" stroke="midnightblue" d="M563.492,-56.5C576.982,-56.5 590.5,-56.5 602.873,-56.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="563.2,-53.0001 553.2,-56.5 563.2,-60.0001 563.2,-53.0001"/>
+<!-- Node289&#45;&gt;Node290 -->
+<g id="edge5" class="edge"><title>Node289&#45;&gt;Node290</title>
+<path fill="none" stroke="midnightblue" d="M506.763,-56.5C521.595,-56.5 536.524,-56.5 550.053,-56.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="506.528,-53.0001 496.528,-56.5 506.528,-60.0001 506.528,-53.0001"/>
 </g>
-<!-- Node263 -->
-<g id="node8" class="node"><title>Node263</title>
-<g id="a_node8"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
-<polygon fill="none" stroke="black" points="400.108,-0.5 400.108,-28.5 543.667,-28.5 543.667,-0.5 400.108,-0.5"/>
-<text text-anchor="start" x="408.108" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog::~Password</text>
-<text text-anchor="middle" x="471.888" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Dialog</text>
+<!-- Node292 -->
+<g id="node8" class="node"><title>Node292</title>
+<g id="a_node8"><a xlink:href="class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
+<polygon fill="none" stroke="black" points="334.103,-7.5 334.103,-25.5 496.284,-25.5 496.284,-7.5 334.103,-7.5"/>
+<text text-anchor="middle" x="415.193" y="-13.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
 </a>
 </g>
 </g>
-<!-- Node262&#45;&gt;Node263 -->
-<g id="edge7" class="edge"><title>Node262&#45;&gt;Node263</title>
-<path fill="none" stroke="midnightblue" d="M365.281,-16.115C376.961,-15.9364 388.785,-15.7555 400.084,-15.5828"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="365.015,-12.6185 355.07,-16.2711 365.122,-19.6177 365.015,-12.6185"/>
+<!-- Node291&#45;&gt;Node292 -->
+<g id="edge7" class="edge"><title>Node291&#45;&gt;Node292</title>
+<path fill="none" stroke="midnightblue" d="M298.353,-17.1902C309.631,-17.123 321.813,-17.0504 333.894,-16.9785"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="298.258,-13.6906 288.28,-17.2502 298.3,-20.6905 298.258,-13.6906"/>
+</g>
+<!-- Node293 -->
+<g id="node9" class="node"><title>Node293</title>
+<g id="a_node9"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
+<polygon fill="none" stroke="black" points="532.284,-0.5 532.284,-28.5 675.843,-28.5 675.843,-0.5 532.284,-0.5"/>
+<text text-anchor="start" x="540.284" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog::~Password</text>
+<text text-anchor="middle" x="604.063" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Dialog</text>
+</a>
+</g>
+</g>
+<!-- Node292&#45;&gt;Node293 -->
+<g id="edge8" class="edge"><title>Node292&#45;&gt;Node293</title>
+<path fill="none" stroke="midnightblue" d="M506.594,-15.5325C515.198,-15.4404 523.836,-15.3479 532.216,-15.2583"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="506.49,-12.0333 496.528,-15.6402 506.565,-19.0329 506.49,-12.0333"/>
 </g>
 </g>
 </svg>

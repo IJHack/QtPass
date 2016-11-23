@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['generate',['Generate',['../class_pass.html#a140443713431e41dc5a7d4989ece82c0',1,'Pass']]],
+  ['generategpgkeys',['GenerateGPGKeys',['../class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f',1,'Pass']]],
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['generatepassword',['generatePassword',['../class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c',1,'MainWindow']]],
   ['genkey',['genKey',['../class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138',1,'ConfigDialog']]],
@@ -29,6 +31,8 @@ var searchData=
   ['getpwdtemplateselector',['getPwdTemplateSelector',['../class_config_dialog.html#a2e144c7fa4e569f22c3bd80c0ef045f5',1,'ConfigDialog']]],
   ['getpwgenexecutable',['getPwgenExecutable',['../class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1',1,'QtPassSettings']]],
   ['getpwgenpath',['getPwgenPath',['../class_config_dialog.html#a917ed09ffbd17065daad718ec00bc2dd',1,'ConfigDialog']]],
+  ['getrecipientlist',['getRecipientList',['../class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e',1,'Pass']]],
+  ['getrecipientstring',['getRecipientString',['../class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf',1,'Pass']]],
   ['getsavestate',['getSavestate',['../class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2',1,'QtPassSettings']]],
   ['getsecretkeys',['getSecretKeys',['../class_main_window.html#a38957de181a576efc28befeb7c47abec',1,'MainWindow']]],
   ['getsize',['getSize',['../class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0',1,'QtPassSettings']]],
@@ -40,5 +44,8 @@ var searchData=
   ['getversion',['getVersion',['../class_qt_pass_settings.html#a060312f3b359d39beb86c176ab6fb0e0',1,'QtPassSettings']]],
   ['getwebdavpassword',['getWebDavPassword',['../class_qt_pass_settings.html#ae2264e1b147abca73fc2f66826a9673b',1,'QtPassSettings']]],
   ['getwebdavurl',['getWebDavUrl',['../class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c',1,'QtPassSettings']]],
-  ['getwebdavuser',['getWebDavUser',['../class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b',1,'QtPassSettings']]]
+  ['getwebdavuser',['getWebDavUser',['../class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b',1,'QtPassSettings']]],
+  ['gitinit',['GitInit',['../class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb',1,'ImitatePass::GitInit()'],['../class_pass.html#a26bec7c69e7c35ccb67f8057db90825e',1,'Pass::GitInit()'],['../class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f',1,'RealPass::GitInit()']]],
+  ['gitpull',['GitPull',['../class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced',1,'ImitatePass::GitPull()'],['../class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8',1,'Pass::GitPull()'],['../class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3',1,'RealPass::GitPull()']]],
+  ['gitpush',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]]
 ];

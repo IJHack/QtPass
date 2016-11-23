@@ -7,5 +7,6 @@ var searchData=
   ['color',['color',['../class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65',1,'QProgressIndicator']]],
   ['config',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
   ['configdialog',['ConfigDialog',['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog']]],
-  ['copytexttoclipboard',['copyTextToClipboard',['../class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b',1,'MainWindow']]]
+  ['copytexttoclipboard',['copyTextToClipboard',['../class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b',1,'MainWindow']]],
+  ['critical',['critical',['../class_pass.html#a4fa78a4366b91a930f6719c3ea57f439',1,'Pass']]]
 ];

@@ -1,6 +1,9 @@
 <map id="qtpasssettings.h" name="qtpasssettings.h">
 <area shape="rect" id="node2" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,79,123,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="147,79,266,104"/>
-<area shape="rect" id="node4" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="290,79,422,104"/>
-<area shape="rect" id="node5" href="$util_8cpp.html" title="util.cpp" alt="" coords="446,79,509,104"/>
+<area shape="rect" id="node3" href="$imitatepass_8cpp.html" title="imitatepass.cpp" alt="" coords="147,79,261,104"/>
+<area shape="rect" id="node4" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="285,79,404,104"/>
+<area shape="rect" id="node5" href="$pass_8cpp.html" title="pass.cpp" alt="" coords="428,79,503,104"/>
+<area shape="rect" id="node6" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="526,79,658,104"/>
+<area shape="rect" id="node7" href="$realpass_8cpp.html" title="realpass.cpp" alt="" coords="682,79,779,104"/>
+<area shape="rect" id="node8" href="$util_8cpp.html" title="util.cpp" alt="" coords="803,79,867,104"/>
 </map>
