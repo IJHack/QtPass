@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['saveallsettings',['saveAllSettings',['../class_qt_pass_settings.html#a15f8f89169eb46aa39622df497d95f94',1,'QtPassSettings']]],
   ['sendmessage',['sendMessage',['../class_single_application.html#aa239b90b18119ba78a63e62d8da3738f',1,'SingleApplication']]],
   ['setaddgpgid',['setAddGPGId',['../class_qt_pass_settings.html#aa70084beefe80e320c69ad69975869bd',1,'QtPassSettings']]],
   ['setalwaysontop',['setAlwaysOnTop',['../class_qt_pass_settings.html#a90501b44c9281579f49e0a56f9ca8cef',1,'QtPassSettings']]],

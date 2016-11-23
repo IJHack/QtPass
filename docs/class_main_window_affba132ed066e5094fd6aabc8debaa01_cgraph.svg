@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 304.99 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::setText</title>
-<!-- Node426 -->
-<g id="node1" class="node"><title>Node426</title>
+<!-- Node425 -->
+<g id="node1" class="node"><title>Node425</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 110.478,-18.5 110.478,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="55.2388" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setText</text>
 </g>
-<!-- Node427 -->
-<g id="node2" class="node"><title>Node427</title>
+<!-- Node426 -->
+<g id="node2" class="node"><title>Node426</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="black" points="146.478,-0.5 146.478,-18.5 296.989,-18.5 296.989,-0.5 146.478,-0.5"/>
 <text text-anchor="middle" x="221.733" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node426&#45;&gt;Node427 -->
-<g id="edge1" class="edge"><title>Node426&#45;&gt;Node427</title>
+<!-- Node425&#45;&gt;Node426 -->
+<g id="edge1" class="edge"><title>Node425&#45;&gt;Node426</title>
 <path fill="none" stroke="midnightblue" d="M110.556,-9.5C118.762,-9.5 127.389,-9.5 136.052,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="136.215,-13.0001 146.215,-9.5 136.215,-6.0001 136.215,-13.0001"/>
 </g>

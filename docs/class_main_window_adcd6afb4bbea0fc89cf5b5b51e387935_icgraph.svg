@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 497.95 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::generateKeyPair</title>
-<!-- Node386 -->
-<g id="node1" class="node"><title>Node386</title>
+<!-- Node385 -->
+<g id="node1" class="node"><title>Node385</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 153.29,-18.5 153.29,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="76.645" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generateKeyPair</text>
 </g>
-<!-- Node387 -->
-<g id="node2" class="node"><title>Node387</title>
+<!-- Node386 -->
+<g id="node2" class="node"><title>Node386</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. ">
 <polygon fill="none" stroke="black" points="189.29,-0.5 189.29,-18.5 302.019,-18.5 302.019,-0.5 189.29,-0.5"/>
 <text text-anchor="middle" x="245.654" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::genKey</text>
 </a>
 </g>
 </g>
-<!-- Node386&#45;&gt;Node387 -->
-<g id="edge1" class="edge"><title>Node386&#45;&gt;Node387</title>
+<!-- Node385&#45;&gt;Node386 -->
+<g id="edge1" class="edge"><title>Node385&#45;&gt;Node386</title>
 <path fill="none" stroke="midnightblue" d="M163.556,-9.5C172.271,-9.5 180.951,-9.5 189.217,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="163.331,-6.0001 153.331,-9.5 163.331,-13.0001 163.331,-6.0001"/>
 </g>
-<!-- Node388 -->
-<g id="node3" class="node"><title>Node388</title>
+<!-- Node387 -->
+<g id="node3" class="node"><title>Node387</title>
 <g id="a_node3"><a xlink:href="class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" target="_top" xlink:title="KeygenDialog::~KeygenDialog even more basic destructor. ">
 <polygon fill="none" stroke="black" points="338.019,-0.5 338.019,-18.5 489.946,-18.5 489.946,-0.5 338.019,-0.5"/>
 <text text-anchor="middle" x="413.982" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">KeygenDialog::~KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node387&#45;&gt;Node388 -->
-<g id="edge2" class="edge"><title>Node387&#45;&gt;Node388</title>
+<!-- Node386&#45;&gt;Node387 -->
+<g id="edge2" class="edge"><title>Node386&#45;&gt;Node387</title>
 <path fill="none" stroke="midnightblue" d="M312.214,-9.5C320.679,-9.5 329.4,-9.5 338.003,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="312.039,-6.0001 302.039,-9.5 312.039,-13.0001 312.039,-6.0001"/>
 </g>

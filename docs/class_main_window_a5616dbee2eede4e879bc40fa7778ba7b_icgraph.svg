@@ -54,52 +54,52 @@ var sectionId = 'dynsection-10';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>MainWindow::copyTextToClipboard</title>
-<!-- Node285 -->
-<g id="node1" class="node"><title>Node285</title>
+<!-- Node284 -->
+<g id="node1" class="node"><title>Node284</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-26.5 0,-44.5 171.625,-44.5 171.625,-26.5 0,-26.5"/>
 <text text-anchor="middle" x="85.8125" y="-32.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyTextToClipboard</text>
 </g>
-<!-- Node286 -->
-<g id="node2" class="node"><title>Node286</title>
+<!-- Node285 -->
+<g id="node2" class="node"><title>Node285</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="black" points="207.63,-45.5 207.63,-63.5 369.802,-63.5 369.802,-45.5 207.63,-45.5"/>
 <text text-anchor="middle" x="288.716" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node285&#45;&gt;Node286 -->
-<g id="edge1" class="edge"><title>Node285&#45;&gt;Node286</title>
+<!-- Node284&#45;&gt;Node285 -->
+<g id="edge1" class="edge"><title>Node284&#45;&gt;Node285</title>
 <path fill="none" stroke="midnightblue" d="M181.808,-44.484C190.433,-45.2997 199.112,-46.1204 207.589,-46.9222"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="182.008,-40.9873 171.722,-43.5302 181.348,-47.9562 182.008,-40.9873"/>
 </g>
-<!-- Node288 -->
-<g id="node4" class="node"><title>Node288</title>
+<!-- Node287 -->
+<g id="node4" class="node"><title>Node287</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a0b9416f68d223f4303ef6e2d8912905c" target="_top" xlink:title="MainWindow::generatePassword use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="black" points="207.625,-7.5 207.625,-25.5 369.807,-25.5 369.807,-7.5 207.625,-7.5"/>
 <text text-anchor="middle" x="288.716" y="-13.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::generatePassword</text>
 </a>
 </g>
 </g>
-<!-- Node285&#45;&gt;Node288 -->
-<g id="edge3" class="edge"><title>Node285&#45;&gt;Node288</title>
+<!-- Node284&#45;&gt;Node287 -->
+<g id="edge3" class="edge"><title>Node284&#45;&gt;Node287</title>
 <path fill="none" stroke="midnightblue" d="M181.808,-26.516C190.433,-25.7003 199.112,-24.8796 207.589,-24.0778"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="181.348,-23.0438 171.722,-27.4698 182.008,-30.0127 181.348,-23.0438"/>
 </g>
-<!-- Node287 -->
-<g id="node3" class="node"><title>Node287</title>
+<!-- Node286 -->
+<g id="node3" class="node"><title>Node286</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="423.731,-47.5 423.731,-65.5 531.44,-65.5 531.44,-47.5 423.731,-47.5"/>
 <text text-anchor="middle" x="477.586" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node286&#45;&gt;Node287 -->
-<g id="edge2" class="edge"><title>Node286&#45;&gt;Node287</title>
+<!-- Node285&#45;&gt;Node286 -->
+<g id="edge2" class="edge"><title>Node285&#45;&gt;Node286</title>
 <path fill="none" stroke="midnightblue" d="M380.285,-55.4693C395.118,-55.6281 410.047,-55.7879 423.575,-55.9326"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="380.087,-51.9671 370.05,-55.3598 380.012,-58.9667 380.087,-51.9671"/>
 </g>
-<!-- Node289 -->
-<g id="node5" class="node"><title>Node289</title>
+<!-- Node288 -->
+<g id="node5" class="node"><title>Node288</title>
 <g id="a_node5"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
 <polygon fill="none" stroke="black" points="405.807,-0.5 405.807,-28.5 549.365,-28.5 549.365,-0.5 405.807,-0.5"/>
 <text text-anchor="start" x="413.807" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog::~Password</text>
@@ -107,8 +107,8 @@ var sectionId = 'dynsection-10';
 </a>
 </g>
 </g>
-<!-- Node288&#45;&gt;Node289 -->
-<g id="edge4" class="edge"><title>Node288&#45;&gt;Node289</title>
+<!-- Node287&#45;&gt;Node288 -->
+<g id="edge4" class="edge"><title>Node287&#45;&gt;Node288</title>
 <path fill="none" stroke="midnightblue" d="M380.117,-15.5325C388.72,-15.4404 397.358,-15.3479 405.739,-15.2583"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="380.012,-12.0333 370.05,-15.6402 380.087,-19.0329 380.012,-12.0333"/>
 </g>

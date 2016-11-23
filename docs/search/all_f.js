@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['saveallsettings',['saveAllSettings',['../class_qt_pass_settings.html#a15f8f89169eb46aa39622df497d95f94',1,'QtPassSettings']]],
   ['savestate',['savestate',['../class_settings_constants.html#a053c1a12c4d9503e87de1750529bab4a',1,'SettingsConstants']]],
   ['selected',['selected',['../structpassword_configuration.html#ac3affdf464b9fbae39a0300f1d272dca',1,'passwordConfiguration']]],
   ['sendmessage',['sendMessage',['../class_single_application.html#aa239b90b18119ba78a63e62d8da3738f',1,'SingleApplication']]],
