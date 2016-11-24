@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(actionAddPassword, SIGNAL(triggered()), this,
           SLOT(on_addButton_clicked()));
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-  qsrand(QDateTime::currentDateTime().toTime_t());
+  qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
 #if QT_VERSION >= 0x050200
   ui->lineEdit->setClearButtonEnabled(true);
