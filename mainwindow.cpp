@@ -69,7 +69,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
-#if QT_VERSION >= 0x050200
+#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
 }
