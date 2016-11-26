@@ -110,6 +110,7 @@ private slots:
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify);
+  void clearPanel();
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
@@ -144,8 +145,8 @@ private:
   QTreeView *treeView;
   QProcess fusedav;
   QString clippedText;
-  QString autoclearPass;
-  QTimer *autoclearTimer;
+  QTimer clearPanelTimer;
+  QTimer clearClipboardTimer;
   actionType currentAction;
   QString lastDecrypt;
   QQueue<execQueueItem> *execQueue;
