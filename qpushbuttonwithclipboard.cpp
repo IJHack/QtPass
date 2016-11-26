@@ -36,3 +36,14 @@ QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
 void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
   textToCopy = value;
 }
+
+void QPushButtonWithClipboard::changeIconPushed() {
+  this->setIcon(*new QIcon(
+      QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))));
+  QTimer::singleShot(500, this, SLOT(changeIconDefault()));
+}
+
+void QPushButtonWithClipboard::changeIconDefault() {
+  this->setIcon(*new QIcon(
+      QIcon::fromTheme("edit-copy", QIcon(":/icons/edit-copy.svg"))));
+}

@@ -2,6 +2,9 @@
 #define MAINWINDOW_H_
 
 #include "enums.h"
+#include "imitatepass.h"
+#include "pass.h"
+#include "realpass.h"
 #include "storemodel.h"
 #include "trayicon.h"
 #include <QFileSystemModel>
@@ -20,25 +23,6 @@
 namespace Ui {
 class MainWindow;
 }
-
-/*!
-    \struct execQueueItem
-    \brief Execution queue items for non-interactive ordered execution.
- */
-struct execQueueItem {
-  /**
-   * @brief app executable path.
-   */
-  QString app;
-  /**
-   * @brief args arguments for executable.
-   */
-  QString args;
-  /**
-   * @brief input stdio input.
-   */
-  QString input;
-};
 
 struct UserInfo;
 
@@ -126,7 +110,7 @@ private slots:
   void processFinished(int, QProcess::ExitStatus);
   void processError(QProcess::ProcessError);
   void clearClipboard();
-  void clearPanel();
+  void clearPanel(bool notify);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
@@ -142,6 +126,13 @@ private slots:
   void focusInput();
   void copyTextByButtonClick(bool checked = false);
 
+  void executeWrapperStarted();
+  void showStatusMessage(QString msg, int timeout);
+  void startReencryptPath();
+  void endReencryptPath();
+  void critical(QString, QString);
+  void setLastDecrypt(QString);
+
 private:
   QAction *actionAddPassword;
   QAction *actionAddFolder;
@@ -151,7 +142,6 @@ private:
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QScopedPointer<QProcess> process;
   QTreeView *treeView;
   QProcess fusedav;
   QString clippedText;
@@ -159,33 +149,28 @@ private:
   QTimer *autoclearTimer;
   actionType currentAction;
   QString lastDecrypt;
-  bool wrapperRunning;
-  QStringList env;
   QQueue<execQueueItem> *execQueue;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
   bool startupPhase;
   TrayIcon *tray;
+  Pass *pass;
+  RealPass rpass;
+  ImitatePass ipass;
+
   void updateText();
-  void executePass(QString, QString = QString());
-  void executeWrapper(QString, QString, QString = QString());
   void enableUiElements(bool state);
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool, bool);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
-  QStringList getRecipientList(QString for_file);
-  QString getRecipientString(QString for_file, QString separator = " ",
-                             int *count = NULL);
+
   void mountWebDav();
-  void updateEnv();
   void updateProfileBox();
   void initTrayIcon();
   void destroyTrayIcon();
-  bool removeDir(const QString &dirName);
-  void waitFor(uint seconds);
   void clearTemplateWidgets();
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,

@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
@@ -26,10 +27,14 @@
 
 **Closed issues:**
 
+- Click does not stick [\#233](https://github.com/IJHack/QtPass/issues/233)
+- Doubleclick on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
 
 **Merged pull requests:**
 
+- refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
+- Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
 - Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
 - UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
