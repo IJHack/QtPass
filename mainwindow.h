@@ -83,7 +83,6 @@ public:
   QString generatePassword(int length, Enums::characterSet selection);
   void config();
   void executePassGitInit();
-  void copyTextToClipboard(const QString &text);
 
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
@@ -124,7 +123,7 @@ private slots:
   void addFolder();
   void editPassword();
   void focusInput();
-  void copyTextByButtonClick(bool checked = false);
+  void copyTextToClipboard(const QString &text);
 
   void executeWrapperStarted();
   void showStatusMessage(QString msg, int timeout);

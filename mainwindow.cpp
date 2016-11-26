@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
 }
@@ -1460,25 +1460,6 @@ void MainWindow::clearTemplateWidgets() {
 }
 
 /**
- * @brief Mainwindow::copyTextByButtonClick - copy the text to the clipboard
- * @param checked
- *  no use, we need it, because of QPushButtonWithClipboard::clicked function
- */
-void MainWindow::copyTextByButtonClick(bool checked) {
-  if (checked) {
-    qDebug() << "checked";
-  }
-  QPushButtonWithClipboard *button =
-      dynamic_cast<QPushButtonWithClipboard *>(sender());
-  if (button == NULL) {
-    return;
-  }
-  button->changeIconPushed();
-  QString textToCopy = button->getTextToCopy();
-  copyTextToClipboard(textToCopy);
-}
-
-/**
  * @brief MainWindow::copyTextToClipboard copies text to your clipboard
  * @param text
  */
@@ -1512,7 +1493,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+    connect(fieldLabel, SIGNAL(clicked(QString)), this,
+            SLOT(copyTextToClipboard(QString)));
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);

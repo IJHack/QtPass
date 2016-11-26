@@ -14,14 +14,18 @@ public:
 
   QString getTextToCopy() const;
   void setTextToCopy(const QString &value);
-  void changeIconPushed();
+
+signals:
+  void clicked(QString);
 
 private slots:
   void changeIconDefault();
+  void buttonClicked(bool);
 
 private:
   QString textToCopy;
-  MainWindow *parent;
+  QIcon iconEdit;
+  QIcon iconEditPushed;
 };
 
 #endif // QPUSHBUTTONWITHCLIPBOARD_H_
