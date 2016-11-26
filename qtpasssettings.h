@@ -13,7 +13,6 @@
 #include <QVariant>
 
 #include "enums.h"
-#include "mainwindow.h"
 
 class QtPassSettings {
 

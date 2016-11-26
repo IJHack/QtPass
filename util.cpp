@@ -136,3 +136,25 @@ void Util::qSleep(int ms) {
   nanosleep(&ts, NULL);
 #endif
 }
+
+/**
+ * @brief Util::getDir get selectd folder path
+ * @param index
+ * @param forPass short or full path
+ * @param model the filesystem model to operate on
+ * @param storeModel our storemodel to operate on
+ * @return path
+ */
+QString Util::getDir(const QModelIndex &index, bool forPass, const QFileSystemModel &model, const StoreModel &storeModel) {
+  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';
+  if (!index.isValid())
+    return forPass ? "" : abspath;
+  QFileInfo info = model.fileInfo(storeModel.mapToSource(index));
+  QString filePath =
+      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());
+  if (forPass) {
+    filePath = QDir(abspath).relativeFilePath(filePath);
+  }
+  filePath += '/';
+  return filePath;
+}

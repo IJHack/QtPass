@@ -509,25 +509,6 @@ void MainWindow::on_pushButton_clicked() {
     executeWrapper(QtPassSettings::getGitExecutable(), "push");
 }
 
-/**
- * @brief MainWindow::getDir get selectd folder path
- * @param index
- * @param forPass short or full path
- * @return path
- */
-QString MainWindow::getDir(const QModelIndex &index, bool forPass) {
-  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';
-  if (!index.isValid())
-    return forPass ? "" : abspath;
-  QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
-  QString filePath =
-      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());
-  if (forPass) {
-    filePath = QDir(abspath).relativeFilePath(filePath);
-  }
-  filePath += '/';
-  return filePath;
-}
 
 /**
  * @brief MainWindow::getFile get the selected file path
@@ -554,7 +535,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
-  currentDir = getDir(ui->treeView->currentIndex(), false);
+  currentDir = Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   lastDecrypt = "Could not decrypt";
   clippedText = "";
   QString file = getFile(index, QtPassSettings::isUsePass());
@@ -1093,12 +1074,12 @@ void MainWindow::on_addButton_clicked() {
   //  }
   bool ok;
   QString dir =
-      getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+      Util::getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass(), model, proxyModel);
   QString file = QInputDialog::getText(
       this, tr("New file"),
       tr("New password file: \n(Will be placed in %1 )")
           .arg(QtPassSettings::getPassStore() +
-               getDir(ui->treeView->currentIndex(), true)),
+               Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
@@ -1146,13 +1127,13 @@ void MainWindow::on_deleteButton_clicked() {
       }
     }
   } else {
-    file = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    file = Util::getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass(), model,proxyModel);
     // TODO: message box should accept enter key
     if (QMessageBox::question(
             this, tr("Delete folder?"),
             tr("Are you sure you want to delete %1?")
                 .arg(QDir::separator() +
-                     getDir(ui->treeView->currentIndex(), true)),
+                     Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel)),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
       return;
     } else {
@@ -1308,7 +1289,7 @@ void MainWindow::on_usersButton_clicked() {
   }
   QList<UserInfo> selected_users;
   QString dir = currentDir.isEmpty()
-                    ? getDir(ui->treeView->currentIndex(), false)
+                    ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
                     : currentDir;
   int count = 0;
   QString recipients =
@@ -1701,12 +1682,12 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
  */
 void MainWindow::addFolder() {
   bool ok;
-  QString dir = getDir(ui->treeView->currentIndex(), false);
+  QString dir = Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
       tr("New Folder: \n(Will be placed in %1 )")
           .arg(QtPassSettings::getPassStore() +
-               getDir(ui->treeView->currentIndex(), true)),
+               Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
@@ -1726,7 +1707,7 @@ void MainWindow::editPassword() {
   waitFor(30);
   process->waitForFinished();
   // TODO(annejan) move to editbutton stuff possibly?
-  currentDir = getDir(ui->treeView->currentIndex(), false);
+  currentDir = Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   lastDecrypt = "Could not decrypt";
   QString file =
       getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
