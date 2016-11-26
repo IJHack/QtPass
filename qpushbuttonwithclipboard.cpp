@@ -1,6 +1,5 @@
 #include "qpushbuttonwithclipboard.h"
-#include <QDebug>
-#include <QLabel>
+#include <QTimer>
 
 /**
  * @brief QPushButtonWithClipboard::QPushButtonWithClipboard
@@ -13,7 +12,7 @@
  *  the parent window
  */
 QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
-                                                   MainWindow *parent)
+                                                   QWidget *parent)
     : QPushButton(parent), textToCopy(textToCopy),
       iconEdit(QIcon::fromTheme("edit-copy", QIcon(":/icons/edit-copy.svg"))),
       iconEditPushed(
