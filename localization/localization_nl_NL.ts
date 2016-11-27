@@ -528,14 +528,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1359"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1371"/>
+        <location filename="../mainwindow.cpp" line="1374"/>
         <source>Delete</source>
         <translation>Verwijderen</translation>
     </message>
@@ -566,7 +566,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow.cpp" line="1356"/>
         <source>Users</source>
         <translation>Gebruikers</translation>
     </message>
@@ -700,86 +700,86 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
-        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="539"/>
         <source>Updating password-store</source>
         <translation>Vernieuwen password-store</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="1046"/>
+        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="1049"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="618"/>
-        <location filename="../mainwindow.cpp" line="1047"/>
+        <location filename="../mainwindow.cpp" line="622"/>
+        <location filename="../mainwindow.cpp" line="1050"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Geselecteerde wachtwoord bestand bestaat niet, kan niet bewerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Password hidden</source>
         <translation>Wachtwoord verborgen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>Content hidden</source>
         <translation>Inhoud verborgen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="723"/>
-        <location filename="../mainwindow.cpp" line="1510"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="1489"/>
         <source>Password</source>
         <translation type="unfinished">Wachtwoord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="770"/>
+        <location filename="../mainwindow.cpp" line="774"/>
         <source>Clipboard cleared</source>
         <translation>Klembord gewist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="772"/>
+        <location filename="../mainwindow.cpp" line="776"/>
         <source>Clipboard not cleared</source>
         <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="786"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Password and Content hidden</source>
         <translation>Wachtwoord en inhoud verborgen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="842"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>QProcess::FailedToStart</source>
         <translation>Proces kon niet worden gestart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="../mainwindow.cpp" line="849"/>
         <source>QProcess::Crashed</source>
         <translation>Proces is gecrashed</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="848"/>
+        <location filename="../mainwindow.cpp" line="852"/>
         <source>QProcess::Timedout</source>
         <translation>Proces duurde te lang</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="851"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>QProcess::ReadError</source>
         <translation>Lees fout met proces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="858"/>
         <source>QProcess::WriteError</source>
         <translation>Kan niet schrijven naar proces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="857"/>
+        <location filename="../mainwindow.cpp" line="861"/>
         <source>QProcess::UnknownError</source>
         <translation>Er ging iets raars mis met proces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="884"/>
         <source>Looking for: %1</source>
         <translation>Op zoek naar: %1</translation>
     </message>
@@ -788,45 +788,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="993"/>
-        <location filename="../mainwindow.cpp" line="1397"/>
+        <location filename="../mainwindow.cpp" line="996"/>
+        <location filename="../mainwindow.cpp" line="1400"/>
         <source>New file</source>
         <translation>Nieuw bestand</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="994"/>
+        <location filename="../mainwindow.cpp" line="997"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nieuw wachtwoord bestand: 
 (Wordt geplaatst in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1022"/>
+        <location filename="../mainwindow.cpp" line="1025"/>
         <source>Delete password?</source>
         <translation>Verwijder wachtwoord?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1023"/>
+        <location filename="../mainwindow.cpp" line="1026"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Weet je zeker dat je %1 wil verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1022"/>
+        <location filename="../mainwindow.cpp" line="1025"/>
         <source>Delete folder?</source>
         <translation>Verwijder map?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1079"/>
         <source>Can not get key list</source>
         <translation>Kan sleutel lijst niet verkrijgen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1077"/>
+        <location filename="../mainwindow.cpp" line="1080"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1108"/>
+        <location filename="../mainwindow.cpp" line="1111"/>
         <source>Key not found in keyring</source>
         <translation>Sleutel niet gevonden in keyring</translation>
     </message>
@@ -849,41 +849,39 @@ You will not be able to decrypt any newly added passwords!</source>
 Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1185"/>
+        <location filename="../mainwindow.cpp" line="1188"/>
         <source>Generating GPG key pair</source>
         <translation>Nieuw GPG sleutelpaar genereren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Profile changed to %1</source>
         <translation>Profiel veranderd naar %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1351"/>
+        <location filename="../mainwindow.cpp" line="1354"/>
         <source>Add folder</source>
         <translation>Voeg map toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1352"/>
+        <location filename="../mainwindow.cpp" line="1355"/>
         <source>Add password</source>
         <translation>Voeg wachtwoord toe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1398"/>
+        <location filename="../mainwindow.cpp" line="1401"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nieuwe map: 
 (Wordt geplaatst in %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1447"/>
         <source>No characters chosen</source>
-        <translation>Geen karakters gekozen</translation>
+        <translation type="vanished">Geen karakters gekozen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1448"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
+        <translation type="vanished">Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
     </message>
     <message>
         <source>Timed out</source>
@@ -894,7 +892,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
         <translation type="vanished">Kan process niet starten, vorige loopt nog steeds!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1476"/>
+        <location filename="../mainwindow.cpp" line="1455"/>
         <source>Copied to clipboard</source>
         <translation>gekopieerd naar het klembord</translation>
     </message>
@@ -906,12 +904,22 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="143"/>
+        <location filename="../pass.cpp" line="73"/>
+        <source>No characters chosen</source>
+        <translation type="unfinished">Geen karakters gekozen</translation>
+    </message>
+    <message>
+        <location filename="../pass.cpp" line="74"/>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="unfinished">Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
+    </message>
+    <message>
+        <location filename="../pass.cpp" line="148"/>
         <source>Timed out</source>
         <translation type="unfinished">Duurt te lang</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="144"/>
+        <location filename="../pass.cpp" line="149"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation type="unfinished">Kan process niet starten, vorige loopt nog steeds!</translation>
     </message>
