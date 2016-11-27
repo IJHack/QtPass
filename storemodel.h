@@ -9,7 +9,6 @@
 #include <QDataStream>
 #include <qtpasssettings.h>
 
-class Util;
 /*!
     \class StoreModel
     \brief The QSortFilterProxyModel for handling filesystem searches.

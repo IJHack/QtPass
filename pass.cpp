@@ -3,30 +3,35 @@
 #include "util.h"
 #include <QTextCodec>
 
+
 Pass::Pass() : wrapperRunning(false) {
-  connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SIGNAL(finished(int, QProcess::ExitStatus)));
-  connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
-          SIGNAL(error(QProcess::ProcessError)));
-  connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int, QProcess::ExitStatus)));
 
-  env = QProcess::systemEnvironment();
+}
 
-#ifdef __APPLE__
-  // If it exists, add the gpgtools to PATH
-  if (QFile("/usr/local/MacGPG2/bin").exists())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
-  // Add missing /usr/local/bin
-  if (env.filter("/usr/local/bin").isEmpty())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
-#endif
+void Pass::init(){
+    connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
+            SIGNAL(finished(int, QProcess::ExitStatus)));
+    connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
+            SIGNAL(error(QProcess::ProcessError)));
+    connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
+            SLOT(processFinished(int, QProcess::ExitStatus)));
 
-  if (!QtPassSettings::getGpgHome().isEmpty()) {
-    QDir absHome(QtPassSettings::getGpgHome());
-    absHome.makeAbsolute();
-    env << "GNUPGHOME=" + absHome.path();
-  }
+    env = QProcess::systemEnvironment();
+
+  #ifdef __APPLE__
+    // If it exists, add the gpgtools to PATH
+    if (QFile("/usr/local/MacGPG2/bin").exists())
+      env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+    // Add missing /usr/local/bin
+    if (env.filter("/usr/local/bin").isEmpty())
+      env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
+  #endif
+
+    if (!QtPassSettings::getGpgHome().isEmpty()) {
+      QDir absHome(QtPassSettings::getGpgHome());
+      absHome.makeAbsolute();
+      env << "GNUPGHOME=" + absHome.path();
+    }
 }
 
 QProcess::ExitStatus Pass::waitForProcess() {

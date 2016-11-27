@@ -155,9 +155,6 @@ private:
   QString currentDir;
   bool startupPhase;
   TrayIcon *tray;
-  Pass *pass;
-  RealPass rpass;
-  ImitatePass ipass;
 
   void updateText();
   void enableUiElements(bool state);

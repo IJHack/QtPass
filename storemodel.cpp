@@ -72,9 +72,9 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
   } else {
       QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
       QString path = fs->filePath(useIndex);
-    path = QDir(store).relativeFilePath(path);
-    path.replace(QRegExp("\\.gpg$"), "");
-    retVal = path.contains(filterRegExp());
+      path = QDir(store).relativeFilePath(path);
+      path.replace(QRegExp("\\.gpg$"), "");
+      retVal = path.contains(filterRegExp());
   }
   return retVal;
 }
@@ -216,7 +216,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
                     if(action == Qt::MoveAction){
                         //@todo some error handling
                         if(QtPassSettings::isUsePass()){
-
+                            QtPassSettings::getPass()->Move(QDir(cleanedSrcDir), QDir(cleanedDestDir));
                         }else if(QtPassSettings::isUseGit()){
 
                         }else{

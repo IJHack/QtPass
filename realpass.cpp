@@ -78,3 +78,18 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       path.remove(0, QtPassSettings::getPassStore().size());
   executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
 }
+void RealPass::Move(QDir srcDir, QDir destDir, bool force)
+{
+}
+
+void RealPass::Move(QFile srcFile, QFile destFile, bool force)
+{
+}
+
+void RealPass::Copy(QDir srcDir, QDir destDir, bool force)
+{
+}
+
+void RealPass::Copy(QFile srcFile, QFile destFile, bool force)
+{
+}

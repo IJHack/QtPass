@@ -282,3 +282,19 @@ void ImitatePass::reencryptPath(QString dir) {
   }
   emit endReencryptPath();
 }
+
+void ImitatePass::Move(QDir srcDir, QDir destDir, bool force)
+{
+}
+
+void ImitatePass::Move(QFile srcFile, QFile destFile, bool force)
+{
+}
+
+void ImitatePass::Copy(QDir srcDir, QDir destDir, bool force)
+{
+}
+
+void ImitatePass::Copy(QFile srcFile, QFile destFile, bool force)
+{
+}

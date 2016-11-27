@@ -5,6 +5,9 @@
 #include <QProcess>
 #include <QQueue>
 #include <QString>
+#include <QDir>
+#include <QDebug>
+
 //  TODO(bezet): extract UserInfo somewhere
 #include "enums.h"
 #include "usersdialog.h"
@@ -41,6 +44,8 @@ protected:
 
 public:
   Pass();
+  void init();
+
   virtual ~Pass() {}
   virtual void GitInit() = 0;
   virtual void GitPull() = 0;
@@ -48,6 +53,10 @@ public:
   virtual QProcess::ExitStatus Show(QString file, bool block = false) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
+  virtual void Move(QDir srcDir, QDir destDir, bool force = false) = 0;
+  virtual void Move(QFile srcFile, QFile destFile, bool force = false) = 0;
+  virtual void Copy(QDir srcDir, QDir destDir, bool force = false) = 0;
+  virtual void Copy(QFile srcFile, QFile destFile, bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   virtual QString Generate(int length, const QString &charset);
 

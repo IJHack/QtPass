@@ -25,6 +25,13 @@ signals:
   void startReencryptPath();
   void endReencryptPath();
   void lastDecrypt(QString);
+
+  // Pass interface
+public:
+  void Move(QDir srcDir, QDir destDir, bool force = false);
+  void Move(QFile srcFile, QFile destFile, bool force = false);
+  void Copy(QDir srcDir, QDir destDir, bool force = false);
+  void Copy(QFile srcFile, QFile destFile, bool force = false);
 };
 
 #endif // IMITATEPASS_H
