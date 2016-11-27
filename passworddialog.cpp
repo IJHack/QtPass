@@ -10,7 +10,8 @@
  */
 PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
                                Pass &pass, QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig), m_pass(pass) {
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig),
+      m_pass(pass) {
   templating = false;
   allFields = false;
   ui->setupUi(this);
