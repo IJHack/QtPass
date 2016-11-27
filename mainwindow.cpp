@@ -73,7 +73,11 @@ MainWindow::MainWindow(QWidget *parent)
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
   freshStart = true;
   startupPhase = true;
-  autoclearTimer = NULL;
+  clearPanelTimer.setSingleShot(true);
+  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+  clearClipboardTimer.setSingleShot(true);
+  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
+          SLOT(clearClipboard()));
   pwdConfig.selected = 0;
   if (!checkConfig()) {
     // no working config
@@ -97,7 +101,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
 }
@@ -353,6 +357,10 @@ bool MainWindow::checkConfig() {
   }
   pass->updateEnv();
 
+  clearPanelTimer.setInterval(1000 *
+                              QtPassSettings::getAutoclearPanelSeconds());
+  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
+
   if (!QtPassSettings::isUseGit() ||
       (QtPassSettings::getGitExecutable().isEmpty() &&
        QtPassSettings::getPassExecutable().isEmpty())) {
@@ -483,6 +491,11 @@ void MainWindow::config() {
       if (freshStart && Util::checkConfig())
         config();
       pass->updateEnv();
+      clearPanelTimer.setInterval(1000 *
+                                  QtPassSettings::getAutoclearPanelSeconds());
+      clearClipboardTimer.setInterval(1000 *
+                                      QtPassSettings::getAutoclearSeconds());
+
       if (!QtPassSettings::isUseGit() ||
           (QtPassSettings::getGitExecutable().isEmpty() &&
            QtPassSettings::getPassExecutable().isEmpty())) {
@@ -632,12 +645,7 @@ void MainWindow::executeWrapperStarted() {
   ui->textBrowser->clear();
   ui->textBrowser->setTextColor(Qt::black);
   enableUiElements(false);
-  if (autoclearTimer != NULL) {
-    autoclearTimer->stop();
-    //    TODO(bezet): why dynamic allocation?
-    delete autoclearTimer;
-    autoclearTimer = NULL;
-  }
+  clearPanelTimer.stop();
 }
 
 /**
@@ -664,8 +672,7 @@ void MainWindow::readyRead(bool finished = false) {
         if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
           copyTextToClipboard(tokens[0]);
         if (QtPassSettings::isUseAutoclearPanel()) {
-          QTimer::singleShot(1000 * QtPassSettings::getAutoclearPanelSeconds(),
-                             this, SLOT(clearPanel(true)));
+          clearPanelTimer.start();
         }
         if (QtPassSettings::isHidePassword() &&
             !QtPassSettings::isUseTemplate()) {
@@ -716,14 +723,7 @@ void MainWindow::readyRead(bool finished = false) {
         addToGridLayout(0, tr("Password"), password);
       }
       if (QtPassSettings::isUseAutoclearPanel()) {
-        autoclearPass = output;
-        autoclearTimer = new QTimer(this);
-        autoclearTimer->setSingleShot(true);
-        autoclearTimer->setInterval(1000 *
-                                    QtPassSettings::getAutoclearPanelSeconds());
-        connect(autoclearTimer, SIGNAL(timeout()), this,
-                SLOT(clearPanel(true)));
-        autoclearTimer->start();
+        clearPanelTimer.start();
       }
     }
     output.replace(QRegExp("<"), "&lt;");
@@ -789,6 +789,12 @@ void MainWindow::clearPanel(bool notify = true) {
     ui->textBrowser->setHtml("");
   }
 }
+
+/**
+ * @brief MainWindow::clearPanel because slots needs the same amout of params as
+ * signals
+ */
+void MainWindow::clearPanel() { clearPanel(true); }
 
 /**
  * @brief MainWindow::processFinished process is finished, if there is another
@@ -1460,25 +1466,6 @@ void MainWindow::clearTemplateWidgets() {
 }
 
 /**
- * @brief Mainwindow::copyTextByButtonClick - copy the text to the clipboard
- * @param checked
- *  no use, we need it, because of QPushButtonWithClipboard::clicked function
- */
-void MainWindow::copyTextByButtonClick(bool checked) {
-  if (checked) {
-    qDebug() << "checked";
-  }
-  QPushButtonWithClipboard *button =
-      dynamic_cast<QPushButtonWithClipboard *>(sender());
-  if (button == NULL) {
-    return;
-  }
-  button->changeIconPushed();
-  QString textToCopy = button->getTextToCopy();
-  copyTextToClipboard(textToCopy);
-}
-
-/**
  * @brief MainWindow::copyTextToClipboard copies text to your clipboard
  * @param text
  */
@@ -1488,8 +1475,7 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {
-    QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this,
-                       SLOT(clearClipboard()));
+    clearClipboardTimer.start();
   }
 }
 
@@ -1512,7 +1498,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+    connect(fieldLabel, SIGNAL(clicked(QString)), this,
+            SLOT(copyTextToClipboard(QString)));
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);

@@ -83,7 +83,6 @@ public:
   QString generatePassword(int length, Enums::characterSet selection);
   void config();
   void executePassGitInit();
-  void copyTextToClipboard(const QString &text);
 
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
@@ -111,6 +110,7 @@ private slots:
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify);
+  void clearPanel();
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
@@ -124,7 +124,7 @@ private slots:
   void addFolder();
   void editPassword();
   void focusInput();
-  void copyTextByButtonClick(bool checked = false);
+  void copyTextToClipboard(const QString &text);
 
   void executeWrapperStarted();
   void showStatusMessage(QString msg, int timeout);
@@ -145,8 +145,8 @@ private:
   QTreeView *treeView;
   QProcess fusedav;
   QString clippedText;
-  QString autoclearPass;
-  QTimer *autoclearTimer;
+  QTimer clearPanelTimer;
+  QTimer clearClipboardTimer;
   actionType currentAction;
   QString lastDecrypt;
   QQueue<execQueueItem> *execQueue;
