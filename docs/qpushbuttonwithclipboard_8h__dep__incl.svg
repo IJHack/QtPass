@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 263.85 82.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 78)">
 <title>qpushbuttonwithclipboard.h</title>
-<!-- Node29 -->
-<g id="node1" class="node"><title>Node29</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="#bfbfbf" stroke="black" points="43.813,-55.5 43.813,-73.5 181.566,-73.5 181.566,-55.5 43.813,-55.5"/>
 <text text-anchor="middle" x="112.689" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">qpushbuttonwithclipboard.h</text>
 </g>
-<!-- Node30 -->
-<g id="node2" class="node"><title>Node30</title>
+<!-- Node4 -->
+<g id="node2" class="node"><title>Node4</title>
 <g id="a_node2"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="mainwindow.cpp">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-18.5 89.3789,-18.5 89.3789,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="44.6895" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">mainwindow.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node30 -->
-<g id="edge1" class="edge"><title>Node29&#45;&gt;Node30</title>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node3&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M94.3545,-49.2095C81.7754,-39.4052 65.5352,-26.7474 55.1144,-18.6253"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="92.3228,-52.0635 102.362,-55.4504 96.626,-46.5424 92.3228,-52.0635"/>
 </g>
-<!-- Node31 -->
-<g id="node3" class="node"><title>Node31</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <g id="a_node3"><a xlink:href="qpushbuttonwithclipboard_8cpp.html" target="_top" xlink:title="qpushbuttonwithclipboard.cpp">
 <polygon fill="none" stroke="black" points="107.532,-0.5 107.532,-18.5 255.847,-18.5 255.847,-0.5 107.532,-0.5"/>
 <text text-anchor="middle" x="181.689" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">qpushbuttonwithclipboard.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node31 -->
-<g id="edge2" class="edge"><title>Node29&#45;&gt;Node31</title>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node3&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M131.294,-49.2095C144.058,-39.4052 160.537,-26.7474 171.111,-18.6253"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="128.968,-46.5832 123.169,-55.4504 133.232,-52.1345 128.968,-46.5832"/>
 </g>

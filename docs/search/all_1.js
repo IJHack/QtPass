@@ -1,11 +1,11 @@
 var searchData=
 [
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
-  ['changeiconpushed',['changeIconPushed',['../class_q_push_button_with_clipboard.html#a2133b5dd9c986b9da626e0f965870431',1,'QPushButtonWithClipboard']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
   ['characters',['Characters',['../structpassword_configuration.html#a94d4635ce78810129d2cd15421d25e0a',1,'passwordConfiguration']]],
   ['characterset',['characterSet',['../class_enums.html#ade574fadd31001ddeea17f51f56a8f63',1,'Enums']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],
+  ['clicked',['clicked',['../class_q_push_button_with_clipboard.html#a2b5ddf0356596a7dea7b209bf4a53e0b',1,'QPushButtonWithClipboard']]],
   ['clipboard_5falways',['CLIPBOARD_ALWAYS',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e',1,'Enums']]],
   ['clipboard_5fnever',['CLIPBOARD_NEVER',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef',1,'Enums']]],
   ['clipboard_5fon_5fdemand',['CLIPBOARD_ON_DEMAND',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b',1,'Enums']]],
@@ -17,7 +17,6 @@ var searchData=
   ['configdialog_2ecpp',['configdialog.cpp',['../configdialog_8cpp.html',1,'']]],
   ['configdialog_2eh',['configdialog.h',['../configdialog_8h.html',1,'']]],
   ['contributing_2emd',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
-  ['copytexttoclipboard',['copyTextToClipboard',['../class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b',1,'MainWindow']]],
   ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
   ['critical',['critical',['../class_pass.html#a4fa78a4366b91a930f6719c3ea57f439',1,'Pass']]],
   ['custom',['CUSTOM',['../class_enums.html#ade574fadd31001ddeea17f51f56a8f63a693157bb8c83711463c320c0cbde6a8c',1,'Enums']]],

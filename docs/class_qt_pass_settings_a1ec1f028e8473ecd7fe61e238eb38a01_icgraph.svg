@@ -70,34 +70,21 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M153.75,-44.0564C163.444,-45.4746 173.238,-46.6829 182.625,-47.5 234.743,-52.0366 294.018,-51.4708 338.137,-49.9436"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="154.121,-40.5723 143.705,-42.5101 153.056,-47.4909 154.121,-40.5723"/>
+<path fill="none" stroke="midnightblue" d="M156.957,-33.0095C212.966,-36.0656 285.995,-40.0505 338.133,-42.8954"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="156.882,-29.5003 146.706,-32.4502 156.501,-36.4899 156.882,-29.5003"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
-<polygon fill="none" stroke="black" points="182.625,-19.5 182.625,-37.5 288.107,-37.5 288.107,-19.5 182.625,-19.5"/>
-<text text-anchor="middle" x="235.366" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
+<polygon fill="none" stroke="black" points="182.625,-0.5 182.625,-18.5 288.107,-18.5 288.107,-0.5 182.625,-0.5"/>
+<text text-anchor="middle" x="235.366" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M156.925,-28.5C165.515,-28.5 174.066,-28.5 182.18,-28.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="156.847,-25.0001 146.847,-28.5 156.847,-32.0001 156.847,-25.0001"/>
-</g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
-<polygon fill="none" stroke="black" points="324.107,-0.5 324.107,-18.5 486.279,-18.5 486.279,-0.5 324.107,-0.5"/>
-<text text-anchor="middle" x="405.193" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge7" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M153.75,-12.9436C163.444,-11.5254 173.238,-10.3171 182.625,-9.5 229.378,-5.43044 281.89,-5.23967 324.054,-6.15498"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="153.056,-9.50915 143.705,-14.4899 154.121,-16.4277 153.056,-9.50915"/>
+<path fill="none" stroke="midnightblue" d="M156.925,-18.693C165.515,-17.6733 174.066,-16.6583 182.18,-15.695"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="156.364,-15.235 146.847,-19.8895 157.19,-22.1862 156.364,-15.235"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -114,13 +101,21 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node4&#45;&gt;Node2 -->
 <g id="edge4" class="edge"><title>Node4&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M298.679,-35.1833C311.538,-36.5624 325.123,-38.0194 338.11,-39.4124"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="298.864,-31.6831 288.548,-34.0966 298.118,-38.6432 298.864,-31.6831"/>
+<path fill="none" stroke="midnightblue" d="M287.21,-20.7093C311.568,-26.0794 340.351,-32.4251 363.272,-37.4782"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="287.94,-17.2863 277.421,-18.5512 286.433,-24.1222 287.94,-17.2863"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node"><title>Node5</title>
+<g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
+<polygon fill="none" stroke="black" points="324.107,-0.5 324.107,-18.5 486.279,-18.5 486.279,-0.5 324.107,-0.5"/>
+<text text-anchor="middle" x="405.193" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge5" class="edge"><title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M298.684,-21.4449C307.142,-20.4873 315.915,-19.4942 324.624,-18.5081"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="298.091,-17.9896 288.548,-22.5924 298.878,-24.9452 298.091,-17.9896"/>
+<path fill="none" stroke="midnightblue" d="M298.785,-9.5C307.012,-9.5 315.535,-9.5 324.007,-9.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="298.548,-6.0001 288.548,-9.5 298.548,-13.0001 298.548,-6.0001"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
