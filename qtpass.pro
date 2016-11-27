@@ -53,9 +53,10 @@ HEADERS   += mainwindow.h \
              qtpasssettings.h \
              enums.h \
              settingsconstants.h \
-			 pass.h \
-			 realpass.h \
-			 imitatepass.h
+             pass.h \
+             realpass.h \
+             imitatepass.h \
+             datahelpers.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

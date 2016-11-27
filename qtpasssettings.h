@@ -136,10 +136,6 @@ public:
   static bool isUseSymbols(const bool &defaultValue = QVariant().toBool());
   static void setUseSymbols(const bool &useSymbols);
 
-  static int
-  getPasswordCharsSelected(const int &defaultValue = QVariant().toInt());
-  static void setPasswordCharsSelected(const int &passwordCharsSelected);
-
   static int getPasswordLength(const int &defaultValue = QVariant().toInt());
   static void setPasswordLength(const int &passwordLength);
 

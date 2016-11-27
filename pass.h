@@ -1,13 +1,12 @@
 #ifndef PASS_H
 #define PASS_H
 
+#include "datahelpers.h"
+#include "enums.h"
 #include <QList>
 #include <QProcess>
 #include <QQueue>
 #include <QString>
-//  TODO(bezet): extract UserInfo somewhere
-#include "enums.h"
-#include "usersdialog.h"
 
 /*!
     \struct execQueueItem
