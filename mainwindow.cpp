@@ -78,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent)
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
           SLOT(clearClipboard()));
-  pwdConfig.selected = 0;
+  pwdConfig.selected = passwordConfiguration::ALLCHARS;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
@@ -258,10 +258,11 @@ bool MainWindow::checkConfig() {
       QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
   QtPassSettings::setPwgenExecutable(pwgenExecutable);
 
-  pwdConfig.selected = QtPassSettings::getPasswordCharsSelected();
   pwdConfig.length = QtPassSettings::getPasswordLength();
-  pwdConfig.selected = QtPassSettings::getPasswordCharsselection();
-  pwdConfig.Characters[3] = QtPassSettings::getPasswordChars();
+  pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
+      QtPassSettings::getPasswordCharsselection());
+  pwdConfig.Characters[passwordConfiguration::CUSTOM] =
+      QtPassSettings::getPasswordChars();
 
   if (QtPassSettings::isAlwaysOnTop()) {
     Qt::WindowFlags flags = windowFlags();
@@ -418,7 +419,7 @@ void MainWindow::config() {
   d->useSymbols(QtPassSettings::isUseSymbols());
   d->setPasswordLength(pwdConfig.length);
   d->setPwdTemplateSelector(pwdConfig.selected);
-  if (pwdConfig.selected != 3)
+  if (pwdConfig.selected != passwordConfiguration::CUSTOM)
     d->setLineEditEnabled(false);
   d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(QtPassSettings::isUseTemplate());
@@ -461,8 +462,10 @@ void MainWindow::config() {
       QtPassSettings::setLessRandom(d->lessRandom());
       QtPassSettings::setUseSymbols(d->useSymbols());
       pwdConfig.length = d->getPasswordLength();
-      pwdConfig.selected = d->getPwdTemplateSelector();
-      pwdConfig.Characters[3] = d->getPasswordChars();
+      pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
+          d->getPwdTemplateSelector());
+      pwdConfig.Characters[passwordConfiguration::CUSTOM] =
+          d->getPasswordChars();
       QtPassSettings::setUseTemplate(d->useTemplate());
       QtPassSettings::setPassTemplate(d->getTemplate());
       QtPassSettings::setTemplateAllFields(d->templateAllFields());
@@ -473,7 +476,8 @@ void MainWindow::config() {
       QtPassSettings::setVersion(VERSION);
       QtPassSettings::setPasswordLength(pwdConfig.length);
       QtPassSettings::setPasswordCharsselection(pwdConfig.selected);
-      QtPassSettings::setPasswordChars(pwdConfig.Characters[3]);
+      QtPassSettings::setPasswordChars(
+          pwdConfig.Characters[passwordConfiguration::CUSTOM]);
 
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
@@ -938,17 +942,16 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
     // warn?
     return;
   }
-  PasswordDialog d(this);
+  PasswordDialog d(pwdConfig, *pass, this);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
   d.setTemplate(QtPassSettings::getPassTemplate());
   d.useTemplate(QtPassSettings::isUseTemplate());
   d.templateAll(QtPassSettings::isTemplateAllFields());
   d.setPassword(lastDecrypt);
-  d.setLength(pwdConfig.length);
-  d.setPasswordCharTemplate(pwdConfig.selected);
+  currentAction = PWGEN;
   if (!d.exec()) {
-    d.setPassword(NULL);
+    d.setPassword(QString());
     return;
   }
   QString newValue = d.getPassword();
@@ -1426,30 +1429,6 @@ void MainWindow::editPassword() {
     if (pass->Show(file, true) == QProcess::NormalExit)
       on_editButton_clicked();
   }
-}
-
-/**
- * @brief MainWindow::generatePassword use either pwgen or internal password
- * generator
- * @param length of the desired password
- * @param selection character set to use for generation
- * @return the password
- */
-QString MainWindow::generatePassword(int length,
-                                     Enums::characterSet selection) {
-  currentAction = PWGEN;
-  //    TODO(bezet): move checks inside and catch exceptions
-
-  if (!QtPassSettings::isUsePwgen()) {
-    int charsetLength = pwdConfig.Characters[selection].length();
-    if (charsetLength <= 0)
-      QMessageBox::critical(
-          this, tr("No characters chosen"),
-          tr("Can't generate password, there are no characters to choose from "
-             "set in the configuration!"));
-    return QString();
-  }
-  return pass->Generate(length, pwdConfig.Characters[selection]);
 }
 
 /**

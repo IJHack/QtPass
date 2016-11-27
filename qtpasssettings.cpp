@@ -332,15 +332,6 @@ void QtPassSettings::setUseSymbols(const bool &useSymbols) {
   setBoolValue(SettingsConstants::useSymbols, useSymbols);
 }
 
-int QtPassSettings::getPasswordCharsSelected(const int &defaultValue) {
-  return getIntValue(SettingsConstants::passwordCharsSelected, defaultValue);
-}
-
-void QtPassSettings::setPasswordCharsSelected(
-    const int &passwordCharsSelected) {
-  setIntValue(SettingsConstants::passwordCharsSelected, passwordCharsSelected);
-}
-
 int QtPassSettings::getPasswordLength(const int &defaultValue) {
   return getIntValue(SettingsConstants::passwordLength, defaultValue);
 }
