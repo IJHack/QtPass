@@ -1,11 +1,11 @@
 <map id="keygendialog.h" name="keygendialog.h">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="607,79,710,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="483,152,589,177"/>
-<area shape="rect" id="node4" href="$enums_8h.html" title="enums.h" alt="" coords="93,372,166,397"/>
-<area shape="rect" id="node5" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="323,225,423,251"/>
-<area shape="rect" id="node6" href="$pass_8h.html" title="pass.h" alt="" coords="260,299,321,324"/>
-<area shape="rect" id="node16" href="$realpass_8h.html" title="realpass.h" alt="" coords="167,225,249,251"/>
-<area shape="rect" id="node17" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="599,225,697,251"/>
-<area shape="rect" id="node21" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1212,225,1292,251"/>
-<area shape="rect" id="node11" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="240,372,341,397"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="563,79,667,104"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="440,152,545,177"/>
+<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="5,372,107,397"/>
+<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="131,372,203,397"/>
+<area shape="rect" id="node8" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="148,225,248,251"/>
+<area shape="rect" id="node9" href="$pass_8h.html" title="pass.h" alt="" coords="254,299,315,324"/>
+<area shape="rect" id="node13" href="$realpass_8h.html" title="realpass.h" alt="" coords="322,225,404,251"/>
+<area shape="rect" id="node14" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="657,225,755,251"/>
+<area shape="rect" id="node18" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1095,225,1175,251"/>
 </map>

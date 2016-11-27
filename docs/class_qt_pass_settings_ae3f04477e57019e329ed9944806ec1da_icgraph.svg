@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 259.97 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::getGpgHome</title>
-<!-- Node62 -->
-<g id="node1" class="node"><title>Node62</title>
+<!-- Node61 -->
+<g id="node1" class="node"><title>Node61</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 149.955,-18.5 149.955,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="74.9775" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgHome</text>
 </g>
-<!-- Node63 -->
-<g id="node2" class="node"><title>Node63</title>
+<!-- Node62 -->
+<g id="node2" class="node"><title>Node62</title>
 <g id="a_node2"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass">
 <polygon fill="none" stroke="black" points="185.955,-0.5 185.955,-18.5 251.975,-18.5 251.975,-0.5 185.955,-0.5"/>
 <text text-anchor="middle" x="218.965" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>
 </g>
 </g>
-<!-- Node62&#45;&gt;Node63 -->
-<g id="edge1" class="edge"><title>Node62&#45;&gt;Node63</title>
+<!-- Node61&#45;&gt;Node62 -->
+<g id="edge1" class="edge"><title>Node61&#45;&gt;Node62</title>
 <path fill="none" stroke="midnightblue" d="M160.473,-9.5C169.402,-9.5 178.035,-9.5 185.779,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="160.298,-6.0001 150.298,-9.5 160.298,-13.0001 160.298,-6.0001"/>
 </g>

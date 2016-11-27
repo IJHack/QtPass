@@ -1,12 +1,12 @@
 <map id="util.cpp" name="util.cpp">
 <area shape="rect" id="node2" href="$util_8h.html" title="util.h" alt="" coords="161,79,210,104"/>
-<area shape="rect" id="node9" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1271,79,1388,104"/>
-<area shape="rect" id="node19" href="$enums_8h.html" title="enums.h" alt="" coords="1306,372,1379,397"/>
-<area shape="rect" id="node20" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1023,152,1129,177"/>
-<area shape="rect" id="node21" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1501,225,1601,251"/>
-<area shape="rect" id="node22" href="$pass_8h.html" title="pass.h" alt="" coords="1511,299,1572,324"/>
-<area shape="rect" id="node31" href="$realpass_8h.html" title="realpass.h" alt="" coords="1393,225,1476,251"/>
-<area shape="rect" id="node32" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="567,225,665,251"/>
-<area shape="rect" id="node36" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="988,225,1068,251"/>
-<area shape="rect" id="node26" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="1403,372,1504,397"/>
+<area shape="rect" id="node9" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1081,79,1199,104"/>
+<area shape="rect" id="node19" href="$enums_8h.html" title="enums.h" alt="" coords="1673,372,1746,397"/>
+<area shape="rect" id="node20" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1037,152,1142,177"/>
+<area shape="rect" id="node21" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="1078,372,1180,397"/>
+<area shape="rect" id="node23" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="885,225,985,251"/>
+<area shape="rect" id="node24" href="$pass_8h.html" title="pass.h" alt="" coords="1020,299,1081,324"/>
+<area shape="rect" id="node28" href="$realpass_8h.html" title="realpass.h" alt="" coords="1009,225,1092,251"/>
+<area shape="rect" id="node29" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1368,225,1467,251"/>
+<area shape="rect" id="node33" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="531,225,610,251"/>
 </map>

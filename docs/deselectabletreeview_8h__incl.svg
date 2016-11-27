@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1241;
+var viewWidth = 1278;
 var viewHeight = 302;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,28 +56,28 @@ var sectionId = 'dynsection-0';
 <title>deselectabletreeview.h</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="217.146,-275.5 217.146,-293.5 334.327,-293.5 334.327,-275.5 217.146,-275.5"/>
-<text text-anchor="middle" x="275.736" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00">deselectabletreeview.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="225.146,-275.5 225.146,-293.5 342.327,-293.5 342.327,-275.5 225.146,-275.5"/>
+<text text-anchor="middle" x="283.736" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00">deselectabletreeview.h</text>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<polygon fill="none" stroke="#bfbfbf" points="97.1133,-220.5 97.1133,-238.5 150.359,-238.5 150.359,-220.5 97.1133,-220.5"/>
-<text text-anchor="middle" x="123.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDebug</text>
+<polygon fill="none" stroke="#bfbfbf" points="105.113,-220.5 105.113,-238.5 158.359,-238.5 158.359,-220.5 105.113,-220.5"/>
+<text text-anchor="middle" x="131.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDebug</text>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M252.651,-275.45C227.095,-266.539 185.692,-252.103 156.721,-242.001"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="157.634,-238.613 147.039,-238.625 155.329,-245.223 157.634,-238.613"/>
+<path fill="none" stroke="midnightblue" d="M260.651,-275.45C235.095,-266.539 193.692,-252.103 164.721,-242.001"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="165.634,-238.613 155.039,-238.625 163.329,-245.223 165.634,-238.613"/>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<polygon fill="none" stroke="#bfbfbf" points="168.054,-220.5 168.054,-238.5 247.418,-238.5 247.418,-220.5 168.054,-220.5"/>
-<text text-anchor="middle" x="207.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMouseEvent</text>
+<polygon fill="none" stroke="#bfbfbf" points="176.054,-220.5 176.054,-238.5 255.418,-238.5 255.418,-220.5 176.054,-220.5"/>
+<text text-anchor="middle" x="215.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMouseEvent</text>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M265.409,-275.45C255.024,-267.357 238.791,-254.704 226.189,-244.882"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="228.2,-242.012 218.161,-238.625 223.897,-247.533 228.2,-242.012"/>
+<path fill="none" stroke="midnightblue" d="M273.409,-275.45C263.024,-267.357 246.791,-254.704 234.189,-244.882"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="236.2,-242.012 226.161,-238.625 231.897,-247.533 236.2,-242.012"/>
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
@@ -86,347 +86,322 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node0&#45;&gt;Node3 -->
 <g id="edge3" class="edge"><title>Node0&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M275.803,-275.084C275.425,-261.397 272.57,-234.402 256.736,-220 253.376,-216.944 139.993,-195.451 75.8622,-183.489"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="76.1089,-179.975 65.6371,-181.585 74.8273,-186.857 76.1089,-179.975"/>
+<path fill="none" stroke="midnightblue" d="M283.814,-275.072C283.451,-261.369 280.617,-234.349 264.736,-220 262.976,-218.41 142.476,-195.855 75.8623,-183.484"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="76.1312,-179.974 65.6604,-181.59 74.8539,-186.856 76.1312,-179.974"/>
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="mainwindow_8h.html" target="_top" xlink:title="mainwindow.h">
-<polygon fill="none" stroke="black" points="303.328,-220.5 303.328,-238.5 382.145,-238.5 382.145,-220.5 303.328,-220.5"/>
-<text text-anchor="middle" x="342.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">mainwindow.h</text>
+<polygon fill="none" stroke="black" points="311.328,-220.5 311.328,-238.5 390.145,-238.5 390.145,-220.5 311.328,-220.5"/>
+<text text-anchor="middle" x="350.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">mainwindow.h</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node0&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M285.912,-275.45C296.144,-267.357 312.139,-254.704 324.555,-244.882"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="326.793,-247.574 332.465,-238.625 322.45,-242.084 326.793,-247.574"/>
+<path fill="none" stroke="midnightblue" d="M293.912,-275.45C304.144,-267.357 320.139,-254.704 332.555,-244.882"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="334.793,-247.574 340.465,-238.625 330.45,-242.084 334.793,-247.574"/>
 </g>
-<!-- Node30 -->
-<g id="node31" class="node"><title>Node30</title>
-<polygon fill="none" stroke="#bfbfbf" points="399.919,-220.5 399.919,-238.5 445.553,-238.5 445.553,-220.5 399.919,-220.5"/>
-<text text-anchor="middle" x="422.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QTime</text>
+<!-- Node27 -->
+<g id="node28" class="node"><title>Node27</title>
+<polygon fill="none" stroke="#bfbfbf" points="407.919,-220.5 407.919,-238.5 453.553,-238.5 453.553,-220.5 407.919,-220.5"/>
+<text text-anchor="middle" x="430.736" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">QTime</text>
 </g>
-<!-- Node0&#45;&gt;Node30 -->
-<g id="edge39" class="edge"><title>Node0&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M298.062,-275.45C322.67,-266.578 362.47,-252.229 390.469,-242.134"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="391.98,-245.31 400.2,-238.625 389.606,-238.725 391.98,-245.31"/>
+<!-- Node0&#45;&gt;Node27 -->
+<g id="edge37" class="edge"><title>Node0&#45;&gt;Node27</title>
+<path fill="none" stroke="midnightblue" d="M306.062,-275.45C330.67,-266.578 370.47,-252.229 398.469,-242.134"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="399.98,-245.31 408.2,-238.625 397.606,-238.725 399.98,-245.31"/>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
-<g id="edge38" class="edge"><title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M303.057,-221.93C251.548,-213.368 158.879,-197.852 79.7363,-184 78.4499,-183.775 77.1438,-183.545 75.8254,-183.313"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="76.0565,-179.799 65.5979,-181.492 74.8297,-186.69 76.0565,-179.799"/>
+<g id="edge36" class="edge"><title>Node4&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M311.09,-222.071C247.023,-211.668 123.491,-191.548 79.7363,-184 78.4493,-183.778 77.1428,-183.551 75.824,-183.321"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="76.051,-179.807 65.5943,-181.512 74.8323,-186.7 76.051,-179.807"/>
 </g>
 <!-- Node5 -->
 <g id="node6" class="node"><title>Node5</title>
-<g id="a_node6"><a xlink:href="enums_8h.html" target="_top" xlink:title="enums.h">
-<polygon fill="none" stroke="black" points="40.5591,-55.5 40.5591,-73.5 94.9136,-73.5 94.9136,-55.5 40.5591,-55.5"/>
-<text text-anchor="middle" x="67.7363" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">enums.h</text>
+<g id="a_node6"><a xlink:href="datahelpers_8h.html" target="_top" xlink:title="datahelpers.h">
+<polygon fill="none" stroke="black" points="53.436,-55.5 53.436,-73.5 130.037,-73.5 130.037,-55.5 53.436,-55.5"/>
+<text text-anchor="middle" x="91.7363" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">datahelpers.h</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge5" class="edge"><title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M302.987,-223.33C252.31,-216.122 168.199,-201.9 142.736,-184 106.499,-158.525 83.888,-109.409 73.8377,-83.1209"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="77.1085,-81.8738 70.3961,-73.6766 70.5315,-84.2706 77.1085,-81.8738"/>
+<path fill="none" stroke="midnightblue" d="M311.116,-222.258C253.454,-212.865 151.823,-195.024 138.736,-184 108.215,-158.289 97.3717,-110.007 93.6281,-83.706"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="97.0824,-83.1182 92.3919,-73.6183 90.1344,-83.9698 97.0824,-83.1182"/>
 </g>
-<!-- Node6 -->
-<g id="node7" class="node"><title>Node6</title>
-<g id="a_node7"><a xlink:href="imitatepass_8h.html" target="_top" xlink:title="imitatepass.h">
+<!-- Node8 -->
+<g id="node9" class="node"><title>Node8</title>
+<g id="a_node9"><a xlink:href="enums_8h.html" target="_top" xlink:title="enums.h">
+<polygon fill="none" stroke="black" points="147.559,-55.5 147.559,-73.5 201.914,-73.5 201.914,-55.5 147.559,-55.5"/>
+<text text-anchor="middle" x="174.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">enums.h</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node8 -->
+<g id="edge8" class="edge"><title>Node4&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M310.969,-222.364C255.559,-213.415 160.751,-196.488 150.736,-184 126.97,-154.365 148.801,-107.408 163.637,-82.4311"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="166.736,-84.0767 169.053,-73.7383 160.794,-80.3752 166.736,-84.0767"/>
+</g>
+<!-- Node9 -->
+<g id="node10" class="node"><title>Node9</title>
+<g id="a_node10"><a xlink:href="imitatepass_8h.html" target="_top" xlink:title="imitatepass.h">
 <polygon fill="none" stroke="black" points="159.278,-165.5 159.278,-183.5 234.194,-183.5 234.194,-165.5 159.278,-165.5"/>
 <text text-anchor="middle" x="196.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">imitatepass.h</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge6" class="edge"><title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M320.562,-220.45C296.122,-211.578 256.593,-197.229 228.785,-187.134"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="229.713,-183.748 219.119,-183.625 227.325,-190.328 229.713,-183.748"/>
-</g>
-<!-- Node7 -->
-<g id="node8" class="node"><title>Node7</title>
-<g id="a_node8"><a xlink:href="pass_8h.html" target="_top" xlink:title="pass.h">
-<polygon fill="none" stroke="black" points="174.005,-110.5 174.005,-128.5 219.468,-128.5 219.468,-110.5 174.005,-110.5"/>
-<text text-anchor="middle" x="196.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">pass.h</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node7 -->
-<g id="edge19" class="edge"><title>Node4&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M303.213,-222.021C249.835,-212.873 160.237,-195.954 150.736,-184 137.562,-167.423 157.38,-147.547 174.961,-134.502"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="177.075,-137.294 183.258,-128.69 173.059,-131.561 177.075,-137.294"/>
-</g>
-<!-- Node9 -->
-<g id="node10" class="node"><title>Node9</title>
-<polygon fill="none" stroke="#bfbfbf" points="312.786,-55.5 312.786,-73.5 372.687,-73.5 372.687,-55.5 312.786,-55.5"/>
-<text text-anchor="middle" x="342.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QProcess</text>
-</g>
 <!-- Node4&#45;&gt;Node9 -->
-<g id="edge35" class="edge"><title>Node4&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M342.736,-220.193C342.736,-195.013 342.736,-119.114 342.736,-83.8621"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="346.236,-83.5971 342.736,-73.5971 339.236,-83.5972 346.236,-83.5971"/>
+<g id="edge9" class="edge"><title>Node4&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M327.347,-220.45C301.38,-211.514 259.263,-197.019 229.9,-186.913"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="230.688,-183.483 220.093,-183.538 228.41,-190.102 230.688,-183.483"/>
 </g>
 <!-- Node10 -->
 <g id="node11" class="node"><title>Node10</title>
-<polygon fill="none" stroke="#bfbfbf" points="390.835,-55.5 390.835,-73.5 444.638,-73.5 444.638,-55.5 390.835,-55.5"/>
-<text text-anchor="middle" x="417.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QQueue</text>
+<g id="a_node11"><a xlink:href="pass_8h.html" target="_top" xlink:title="pass.h">
+<polygon fill="none" stroke="black" points="239.005,-110.5 239.005,-128.5 284.468,-128.5 284.468,-110.5 239.005,-110.5"/>
+<text text-anchor="middle" x="261.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">pass.h</text>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node10 -->
-<g id="edge36" class="edge"><title>Node4&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M346.559,-220.193C358.245,-194.794 393.676,-117.791 409.706,-82.9517"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="413.01,-84.1446 414.011,-73.5971 406.651,-81.2186 413.01,-84.1446"/>
-</g>
-<!-- Node17 -->
-<g id="node18" class="node"><title>Node17</title>
-<g id="a_node18"><a xlink:href="realpass_8h.html" target="_top" xlink:title="realpass.h">
-<polygon fill="none" stroke="black" points="252.667,-165.5 252.667,-183.5 314.805,-183.5 314.805,-165.5 252.667,-165.5"/>
-<text text-anchor="middle" x="283.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">realpass.h</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node17 -->
-<g id="edge20" class="edge"><title>Node4&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M333.775,-220.45C324.939,-212.512 311.22,-200.189 300.381,-190.452"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="302.56,-187.704 292.781,-183.625 297.882,-192.912 302.56,-187.704"/>
-</g>
-<!-- Node18 -->
-<g id="node19" class="node"><title>Node18</title>
-<g id="a_node19"><a xlink:href="storemodel_8h.html" target="_top" xlink:title="storemodel.h">
-<polygon fill="none" stroke="black" points="493.833,-165.5 493.833,-183.5 567.64,-183.5 567.64,-165.5 493.833,-165.5"/>
-<text text-anchor="middle" x="530.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">storemodel.h</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node18 -->
-<g id="edge22" class="edge"><title>Node4&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M371.289,-220.45C403.682,-211.318 456.66,-196.383 492.576,-186.258"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="493.548,-189.62 502.223,-183.538 491.649,-182.883 493.548,-189.62"/>
-</g>
-<!-- Node19 -->
-<g id="node20" class="node"><title>Node19</title>
-<polygon fill="none" stroke="#bfbfbf" points="408.502,-110.5 408.502,-128.5 508.97,-128.5 508.97,-110.5 408.502,-110.5"/>
-<text text-anchor="middle" x="458.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QFileSystemModel</text>
-</g>
-<!-- Node4&#45;&gt;Node19 -->
-<g id="edge33" class="edge"><title>Node4&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M352.895,-220.183C363.518,-211.4 380.582,-197.046 394.736,-184 412.083,-168.012 431.188,-148.839 443.968,-135.774"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="446.57,-138.118 451.036,-128.511 441.553,-133.236 446.57,-138.118"/>
-</g>
-<!-- Node22 -->
-<g id="node23" class="node"><title>Node22</title>
-<g id="a_node23"><a xlink:href="trayicon_8h.html" target="_top" xlink:title="trayicon.h">
-<polygon fill="none" stroke="black" points="874.059,-165.5 874.059,-183.5 933.414,-183.5 933.414,-165.5 874.059,-165.5"/>
-<text text-anchor="middle" x="903.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">trayicon.h</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node22 -->
-<g id="edge26" class="edge"><title>Node4&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M382.246,-221.217C385.115,-220.776 387.967,-220.365 390.736,-220 566.221,-196.897 777.118,-182.912 863.684,-177.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="864.078,-181.243 873.856,-177.162 863.667,-174.256 864.078,-181.243"/>
-</g>
-<!-- Node25 -->
-<g id="node26" class="node"><title>Node25</title>
-<polygon fill="none" stroke="#bfbfbf" points="739.227,-110.5 739.227,-128.5 820.246,-128.5 820.246,-110.5 739.227,-110.5"/>
-<text text-anchor="middle" x="779.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMainWindow</text>
-</g>
-<!-- Node4&#45;&gt;Node25 -->
-<g id="edge34" class="edge"><title>Node4&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M382.469,-221.203C444.243,-209.818 558.184,-188.649 576.736,-184 637.861,-168.682 707.696,-145.57 747.469,-131.861"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="748.845,-135.089 757.147,-128.507 746.552,-128.475 748.845,-135.089"/>
-</g>
-<!-- Node29 -->
-<g id="node30" class="node"><title>Node29</title>
-<polygon fill="none" stroke="#bfbfbf" points="951.254,-165.5 951.254,-183.5 1000.22,-183.5 1000.22,-165.5 951.254,-165.5"/>
-<text text-anchor="middle" x="975.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">QTimer</text>
-</g>
-<!-- Node4&#45;&gt;Node29 -->
-<g id="edge37" class="edge"><title>Node4&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M382.237,-221.15C385.108,-220.725 387.964,-220.335 390.736,-220 631.48,-190.923 698.153,-221.96 940.783,-184.025"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="941.647,-187.432 950.975,-182.408 940.55,-180.518 941.647,-187.432"/>
-</g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge7" class="edge"><title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M196.736,-165.219C196.736,-158.177 196.736,-147.808 196.736,-138.828"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="200.236,-138.55 196.736,-128.55 193.236,-138.55 200.236,-138.55"/>
-</g>
-<!-- Node7&#45;&gt;Node5 -->
-<g id="edge12" class="edge"><title>Node7&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M177.144,-110.45C155.834,-101.695 121.54,-87.6055 97.0282,-77.5346"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="98.0929,-74.1882 87.513,-73.6253 95.4327,-80.6631 98.0929,-74.1882"/>
-</g>
-<!-- Node8 -->
-<g id="node9" class="node"><title>Node8</title>
-<polygon fill="none" stroke="#bfbfbf" points="50.0664,-0.5 50.0664,-18.5 89.4062,-18.5 89.4062,-0.5 50.0664,-0.5"/>
-<text text-anchor="middle" x="69.7363" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QList</text>
-</g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge8" class="edge"><title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M186.494,-110.426C175.368,-101.607 157.123,-86.9999 141.736,-74 122.58,-57.8152 101.068,-38.7187 86.5885,-25.7248"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="88.721,-22.9353 78.9465,-18.8475 84.0384,-28.1385 88.721,-22.9353"/>
-</g>
-<!-- Node7&#45;&gt;Node9 -->
-<g id="edge9" class="edge"><title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M218.911,-110.45C243.351,-101.578 282.88,-87.2288 310.688,-77.134"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="312.148,-80.3276 320.353,-73.6253 309.759,-73.7477 312.148,-80.3276"/>
-</g>
-<!-- Node7&#45;&gt;Node10 -->
-<g id="edge10" class="edge"><title>Node7&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M219.555,-113.028C257.696,-103.881 334.734,-85.4056 380.719,-74.3776"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="381.681,-77.7461 390.589,-72.0105 380.048,-70.9391 381.681,-77.7461"/>
-</g>
-<!-- Node11 -->
-<g id="node12" class="node"><title>Node11</title>
-<polygon fill="none" stroke="#bfbfbf" points="244.786,-55.5 244.786,-73.5 294.687,-73.5 294.687,-55.5 244.786,-55.5"/>
-<text text-anchor="middle" x="269.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QString</text>
-</g>
-<!-- Node7&#45;&gt;Node11 -->
-<g id="edge11" class="edge"><title>Node7&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M207.823,-110.45C219.079,-102.279 236.734,-89.4604 250.316,-79.5996"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="252.509,-82.3327 258.545,-73.6253 248.396,-76.6682 252.509,-82.3327"/>
+<g id="edge17" class="edge"><title>Node4&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M330.738,-220.498C314.981,-213.215 293.594,-200.997 280.736,-184 270.757,-170.808 265.994,-152.409 263.736,-138.81"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="267.182,-138.175 262.368,-128.736 260.245,-139.116 267.182,-138.175"/>
 </g>
 <!-- Node12 -->
 <g id="node13" class="node"><title>Node12</title>
-<g id="a_node13"><a xlink:href="usersdialog_8h.html" target="_top" xlink:title="usersdialog.h">
-<polygon fill="none" stroke="black" points="150.995,-55.5 150.995,-73.5 226.478,-73.5 226.478,-55.5 150.995,-55.5"/>
-<text text-anchor="middle" x="188.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">usersdialog.h</text>
-</a>
+<polygon fill="none" stroke="#bfbfbf" points="315.786,-55.5 315.786,-73.5 375.687,-73.5 375.687,-55.5 315.786,-55.5"/>
+<text text-anchor="middle" x="345.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QProcess</text>
 </g>
-</g>
-<!-- Node7&#45;&gt;Node12 -->
-<g id="edge13" class="edge"><title>Node7&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M195.486,-110.219C194.412,-103.099 192.823,-92.5775 191.458,-83.5289"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="194.905,-82.9151 189.951,-73.5496 187.983,-83.96 194.905,-82.9151"/>
-</g>
-<!-- Node12&#45;&gt;Node8 -->
-<g id="edge17" class="edge"><title>Node12&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M170.663,-55.4504C151.179,-46.7729 119.931,-32.8556 97.3626,-22.8041"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="98.5389,-19.4966 87.98,-18.6253 95.6909,-25.8911 98.5389,-19.4966"/>
+<!-- Node4&#45;&gt;Node12 -->
+<g id="edge33" class="edge"><title>Node4&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M353.128,-220.39C355.603,-211.54 359.304,-196.907 360.736,-184 364.707,-148.221 356.395,-106.477 350.633,-83.3094"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="353.993,-82.3234 348.074,-73.5361 347.221,-84.0965 353.993,-82.3234"/>
 </g>
 <!-- Node13 -->
 <g id="node14" class="node"><title>Node13</title>
-<polygon fill="none" stroke="#bfbfbf" points="107.278,-0.5 107.278,-18.5 182.194,-18.5 182.194,-0.5 107.278,-0.5"/>
-<text text-anchor="middle" x="144.736" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QCloseEvent</text>
+<polygon fill="none" stroke="#bfbfbf" points="393.835,-55.5 393.835,-73.5 447.638,-73.5 447.638,-55.5 393.835,-55.5"/>
+<text text-anchor="middle" x="420.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QQueue</text>
 </g>
-<!-- Node12&#45;&gt;Node13 -->
-<g id="edge14" class="edge"><title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M181.861,-55.2188C175.496,-47.5509 165.855,-35.9387 157.994,-26.4691"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="160.5,-24.008 151.419,-18.5496 155.114,-28.4793 160.5,-24.008"/>
+<!-- Node4&#45;&gt;Node13 -->
+<g id="edge34" class="edge"><title>Node4&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M355.717,-220.49C361.052,-211.725 369.581,-197.165 375.736,-184 391.991,-149.237 406.981,-106.849 414.888,-83.3541"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="418.257,-84.3118 418.088,-73.7183 411.614,-82.1055 418.257,-84.3118"/>
 </g>
 <!-- Node14 -->
 <g id="node15" class="node"><title>Node14</title>
-<polygon fill="none" stroke="#bfbfbf" points="200.358,-0.5 200.358,-18.5 267.115,-18.5 267.115,-0.5 200.358,-0.5"/>
-<text text-anchor="middle" x="233.736" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDateTime</text>
+<g id="a_node15"><a xlink:href="realpass_8h.html" target="_top" xlink:title="realpass.h">
+<polygon fill="none" stroke="black" points="289.667,-165.5 289.667,-183.5 351.805,-183.5 351.805,-165.5 289.667,-165.5"/>
+<text text-anchor="middle" x="320.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">realpass.h</text>
+</a>
 </g>
-<!-- Node12&#45;&gt;Node14 -->
-<g id="edge15" class="edge"><title>Node12&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M195.768,-55.2188C202.344,-47.4727 212.339,-35.7013 220.423,-26.1799"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="223.097,-28.4378 226.902,-18.5496 217.761,-23.9072 223.097,-28.4378"/>
+</g>
+<!-- Node4&#45;&gt;Node14 -->
+<g id="edge18" class="edge"><title>Node4&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M346.049,-220.219C341.841,-212.786 335.536,-201.646 330.271,-192.345"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="333.265,-190.528 325.293,-183.55 327.173,-193.976 333.265,-190.528"/>
 </g>
 <!-- Node15 -->
 <g id="node16" class="node"><title>Node15</title>
-<polygon fill="none" stroke="#bfbfbf" points="284.672,-0.5 284.672,-18.5 336.8,-18.5 336.8,-0.5 284.672,-0.5"/>
-<text text-anchor="middle" x="310.736" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
+<g id="a_node16"><a xlink:href="storemodel_8h.html" target="_top" xlink:title="storemodel.h">
+<polygon fill="none" stroke="black" points="530.833,-165.5 530.833,-183.5 604.64,-183.5 604.64,-165.5 530.833,-165.5"/>
+<text text-anchor="middle" x="567.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">storemodel.h</text>
+</a>
 </g>
-<!-- Node12&#45;&gt;Node15 -->
-<g id="edge16" class="edge"><title>Node12&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M207.266,-55.4504C227.33,-46.734 259.564,-32.7306 282.724,-22.6691"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="284.255,-25.8201 292.033,-18.6253 281.466,-19.3997 284.255,-25.8201"/>
+</g>
+<!-- Node4&#45;&gt;Node15 -->
+<g id="edge20" class="edge"><title>Node4&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M383.694,-220.45C421.483,-211.221 483.542,-196.063 525.012,-185.935"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="525.941,-189.311 534.825,-183.538 524.28,-182.511 525.941,-189.311"/>
 </g>
 <!-- Node16 -->
 <g id="node17" class="node"><title>Node16</title>
-<polygon fill="none" stroke="#bfbfbf" points="355.212,-0.5 355.212,-18.5 466.261,-18.5 466.261,-0.5 355.212,-0.5"/>
-<text text-anchor="middle" x="410.736" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QStandardItemModel</text>
+<polygon fill="none" stroke="#bfbfbf" points="445.502,-110.5 445.502,-128.5 545.97,-128.5 545.97,-110.5 445.502,-110.5"/>
+<text text-anchor="middle" x="495.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QFileSystemModel</text>
 </g>
-<!-- Node12&#45;&gt;Node16 -->
-<g id="edge18" class="edge"><title>Node12&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M222.453,-55.4504C261.195,-46.2014 324.871,-30.9994 367.296,-20.8708"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="368.153,-24.2648 377.066,-18.5383 366.527,-17.4562 368.153,-24.2648"/>
+<!-- Node4&#45;&gt;Node16 -->
+<g id="edge31" class="edge"><title>Node4&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M368.656,-220.449C385.666,-212.402 411.56,-199.083 431.736,-184 450.839,-169.72 469.875,-149.943 482.156,-136.271"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="484.885,-138.468 488.87,-128.651 479.633,-133.84 484.885,-138.468"/>
 </g>
-<!-- Node17&#45;&gt;Node7 -->
-<g id="edge21" class="edge"><title>Node17&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M270.523,-165.45C256.854,-157.123 235.263,-143.97 218.961,-134.039"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="220.435,-130.839 210.074,-128.625 216.793,-136.817 220.435,-130.839"/>
+<!-- Node19 -->
+<g id="node20" class="node"><title>Node19</title>
+<g id="a_node20"><a xlink:href="trayicon_8h.html" target="_top" xlink:title="trayicon.h">
+<polygon fill="none" stroke="black" points="911.059,-165.5 911.059,-183.5 970.414,-183.5 970.414,-165.5 911.059,-165.5"/>
+<text text-anchor="middle" x="940.736" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">trayicon.h</text>
+</a>
 </g>
-<!-- Node18&#45;&gt;Node19 -->
-<g id="edge23" class="edge"><title>Node18&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M519.801,-165.45C508.7,-157.279 491.286,-144.46 477.891,-134.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="479.903,-131.735 469.774,-128.625 475.753,-137.372 479.903,-131.735"/>
 </g>
-<!-- Node20 -->
-<g id="node21" class="node"><title>Node20</title>
-<polygon fill="none" stroke="#bfbfbf" points="527.059,-110.5 527.059,-128.5 586.414,-128.5 586.414,-110.5 527.059,-110.5"/>
-<text text-anchor="middle" x="556.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QRegExp</text>
+<!-- Node4&#45;&gt;Node19 -->
+<g id="edge24" class="edge"><title>Node4&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M390.244,-221.203C393.113,-220.765 395.967,-220.358 398.736,-220 585.853,-195.805 811.111,-182.267 900.941,-177.492"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="901.161,-180.985 910.964,-176.966 900.794,-173.995 901.161,-180.985"/>
 </g>
-<!-- Node18&#45;&gt;Node20 -->
-<g id="edge24" class="edge"><title>Node18&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M534.799,-165.219C538.407,-157.864 543.795,-146.88 548.329,-137.639"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="551.525,-139.069 552.787,-128.55 545.241,-135.986 551.525,-139.069"/>
+<!-- Node22 -->
+<g id="node23" class="node"><title>Node22</title>
+<polygon fill="none" stroke="#bfbfbf" points="776.227,-110.5 776.227,-128.5 857.246,-128.5 857.246,-110.5 776.227,-110.5"/>
+<text text-anchor="middle" x="816.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMainWindow</text>
 </g>
-<!-- Node21 -->
-<g id="node22" class="node"><title>Node21</title>
-<polygon fill="none" stroke="#bfbfbf" points="604.167,-110.5 604.167,-128.5 721.305,-128.5 721.305,-110.5 604.167,-110.5"/>
-<text text-anchor="middle" x="662.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSortFilterProxyModel</text>
-</g>
-<!-- Node18&#45;&gt;Node21 -->
-<g id="edge25" class="edge"><title>Node18&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M550.784,-165.45C572.687,-156.656 607.993,-142.48 633.097,-132.401"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="634.524,-135.599 642.5,-128.625 631.916,-129.103 634.524,-135.599"/>
-</g>
-<!-- Node23 -->
-<g id="node24" class="node"><title>Node23</title>
-<polygon fill="none" stroke="#bfbfbf" points="837.951,-110.5 837.951,-128.5 889.522,-128.5 889.522,-110.5 837.951,-110.5"/>
-<text text-anchor="middle" x="863.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QAction</text>
-</g>
-<!-- Node22&#45;&gt;Node23 -->
-<g id="edge27" class="edge"><title>Node22&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M897.486,-165.219C891.758,-157.629 883.114,-146.175 876.008,-136.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="878.629,-134.423 869.811,-128.55 873.042,-138.64 878.629,-134.423"/>
-</g>
-<!-- Node24 -->
-<g id="node25" class="node"><title>Node24</title>
-<polygon fill="none" stroke="#bfbfbf" points="907.387,-110.5 907.387,-128.5 980.086,-128.5 980.086,-110.5 907.387,-110.5"/>
-<text text-anchor="middle" x="943.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QApplication</text>
-</g>
-<!-- Node22&#45;&gt;Node24 -->
-<g id="edge28" class="edge"><title>Node22&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M909.986,-165.219C915.714,-157.629 924.359,-146.175 931.465,-136.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="934.431,-138.64 937.661,-128.55 928.843,-134.423 934.431,-138.64"/>
-</g>
-<!-- Node22&#45;&gt;Node25 -->
-<g id="edge29" class="edge"><title>Node22&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M884.903,-165.45C864.51,-156.734 831.748,-142.731 808.208,-132.669"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="809.317,-129.337 798.746,-128.625 806.566,-135.774 809.317,-129.337"/>
+<!-- Node4&#45;&gt;Node22 -->
+<g id="edge32" class="edge"><title>Node4&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M390.284,-221.467C393.144,-220.967 395.984,-220.474 398.736,-220 494.216,-203.553 519.503,-206.515 613.736,-184 675.191,-169.317 745.182,-145.894 784.845,-131.974"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="786.225,-135.198 794.487,-128.567 783.893,-128.598 786.225,-135.198"/>
 </g>
 <!-- Node26 -->
 <g id="node27" class="node"><title>Node26</title>
-<polygon fill="none" stroke="#bfbfbf" points="998.34,-110.5 998.34,-128.5 1047.13,-128.5 1047.13,-110.5 998.34,-110.5"/>
-<text text-anchor="middle" x="1022.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMenu</text>
+<polygon fill="none" stroke="#bfbfbf" points="988.254,-165.5 988.254,-183.5 1037.22,-183.5 1037.22,-165.5 988.254,-165.5"/>
+<text text-anchor="middle" x="1012.74" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">QTimer</text>
 </g>
-<!-- Node22&#45;&gt;Node26 -->
-<g id="edge30" class="edge"><title>Node22&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M921.81,-165.45C941.293,-156.773 972.542,-142.856 995.11,-132.804"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="996.782,-135.891 1004.49,-128.625 993.934,-129.497 996.782,-135.891"/>
+<!-- Node4&#45;&gt;Node26 -->
+<g id="edge35" class="edge"><title>Node4&#45;&gt;Node26</title>
+<path fill="none" stroke="midnightblue" d="M390.236,-221.139C393.107,-220.717 395.963,-220.33 398.736,-220 652.376,-189.783 722.429,-223.57 978.024,-183.98"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="978.641,-187.426 987.976,-182.416 977.554,-180.511 978.641,-187.426"/>
 </g>
-<!-- Node27 -->
-<g id="node28" class="node"><title>Node27</title>
-<polygon fill="none" stroke="#bfbfbf" points="1064.91,-110.5 1064.91,-128.5 1160.56,-128.5 1160.56,-110.5 1064.91,-110.5"/>
-<text text-anchor="middle" x="1112.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSystemTrayIcon</text>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
+<polygon fill="none" stroke="#bfbfbf" points="58.3579,-0.5 58.3579,-18.5 125.115,-18.5 125.115,-0.5 58.3579,-0.5"/>
+<text text-anchor="middle" x="91.7363" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDateTime</text>
 </g>
-<!-- Node22&#45;&gt;Node27 -->
-<g id="edge31" class="edge"><title>Node22&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M933.681,-165.906C969.788,-156.75 1030.67,-141.311 1071.28,-131.013"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.3,-134.364 1081.14,-128.513 1070.58,-127.579 1072.3,-134.364"/>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M91.7363,-55.2188C91.7363,-48.1769 91.7363,-37.8083 91.7363,-28.8277"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="95.2364,-28.5495 91.7363,-18.5496 88.2364,-28.5496 95.2364,-28.5495"/>
 </g>
-<!-- Node28 -->
-<g id="node29" class="node"><title>Node28</title>
-<polygon fill="none" stroke="#bfbfbf" points="1178.29,-110.5 1178.29,-128.5 1233.19,-128.5 1233.19,-110.5 1178.29,-110.5"/>
-<text text-anchor="middle" x="1205.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QWidget</text>
+<!-- Node7 -->
+<g id="node8" class="node"><title>Node7</title>
+<polygon fill="none" stroke="#bfbfbf" points="173.786,-0.5 173.786,-18.5 223.687,-18.5 223.687,-0.5 173.786,-0.5"/>
+<text text-anchor="middle" x="198.736" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QString</text>
 </g>
-<!-- Node22&#45;&gt;Node28 -->
-<g id="edge32" class="edge"><title>Node22&#45;&gt;Node28</title>
-<path fill="none" stroke="midnightblue" d="M933.511,-166.827C936.621,-166.185 939.74,-165.564 942.736,-165 1039.99,-146.706 1067.79,-148.607 1168.31,-129.159"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1169.12,-132.566 1178.26,-127.209 1167.78,-125.696 1169.12,-132.566"/>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge7" class="edge"><title>Node5&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M107.987,-55.4504C125.349,-46.8508 153.1,-33.1048 173.348,-23.0755"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="174.925,-26.2003 182.332,-18.6253 171.818,-19.9276 174.925,-26.2003"/>
+</g>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge10" class="edge"><title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M206.608,-165.45C216.439,-157.434 231.754,-144.947 243.749,-135.166"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="246.233,-137.657 251.771,-128.625 241.809,-132.232 246.233,-137.657"/>
+</g>
+<!-- Node10&#45;&gt;Node5 -->
+<g id="edge11" class="edge"><title>Node10&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M238.809,-111.352C210.227,-102.441 161.054,-87.1109 127.502,-76.6505"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="128.219,-73.208 117.631,-73.573 126.136,-79.8908 128.219,-73.208"/>
+</g>
+<!-- Node10&#45;&gt;Node7 -->
+<g id="edge16" class="edge"><title>Node10&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M257.001,-110.382C246.785,-92.8695 222.489,-51.2181 208.714,-27.6045"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="211.589,-25.586 203.527,-18.7118 205.542,-29.1131 211.589,-25.586"/>
+</g>
+<!-- Node10&#45;&gt;Node8 -->
+<g id="edge12" class="edge"><title>Node10&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M248.523,-110.45C234.854,-102.123 213.263,-88.9704 196.961,-79.0394"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="198.435,-75.8389 188.074,-73.6253 194.793,-81.817 198.435,-75.8389"/>
+</g>
+<!-- Node11 -->
+<g id="node12" class="node"><title>Node11</title>
+<polygon fill="none" stroke="#bfbfbf" points="258.066,-55.5 258.066,-73.5 297.406,-73.5 297.406,-55.5 258.066,-55.5"/>
+<text text-anchor="middle" x="277.736" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QList</text>
+</g>
+<!-- Node10&#45;&gt;Node11 -->
+<g id="edge13" class="edge"><title>Node10&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M264.236,-110.219C266.409,-103.02 269.632,-92.3458 272.384,-83.2311"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="275.767,-84.1344 275.306,-73.5496 269.066,-82.1113 275.767,-84.1344"/>
+</g>
+<!-- Node10&#45;&gt;Node12 -->
+<g id="edge14" class="edge"><title>Node10&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M274.494,-110.45C287.692,-102.123 308.538,-88.9704 324.278,-79.0394"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="326.269,-81.9216 332.858,-73.6253 322.534,-76.0014 326.269,-81.9216"/>
+</g>
+<!-- Node10&#45;&gt;Node13 -->
+<g id="edge15" class="edge"><title>Node10&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M284.517,-110.906C311.287,-101.983 355.962,-87.0916 386.811,-76.8085"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="388.317,-79.9959 396.697,-73.5131 386.103,-73.3551 388.317,-79.9959"/>
+</g>
+<!-- Node14&#45;&gt;Node10 -->
+<g id="edge19" class="edge"><title>Node14&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M311.775,-165.45C302.939,-157.512 289.22,-145.189 278.381,-135.452"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="280.56,-132.704 270.781,-128.625 275.882,-137.912 280.56,-132.704"/>
+</g>
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge21" class="edge"><title>Node15&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M556.801,-165.45C545.7,-157.279 528.286,-144.46 514.891,-134.6"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="516.903,-131.735 506.774,-128.625 512.753,-137.372 516.903,-131.735"/>
+</g>
+<!-- Node17 -->
+<g id="node18" class="node"><title>Node17</title>
+<polygon fill="none" stroke="#bfbfbf" points="564.059,-110.5 564.059,-128.5 623.414,-128.5 623.414,-110.5 564.059,-110.5"/>
+<text text-anchor="middle" x="593.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QRegExp</text>
+</g>
+<!-- Node15&#45;&gt;Node17 -->
+<g id="edge22" class="edge"><title>Node15&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M571.799,-165.219C575.407,-157.864 580.795,-146.88 585.329,-137.639"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="588.525,-139.069 589.787,-128.55 582.241,-135.986 588.525,-139.069"/>
+</g>
+<!-- Node18 -->
+<g id="node19" class="node"><title>Node18</title>
+<polygon fill="none" stroke="#bfbfbf" points="641.167,-110.5 641.167,-128.5 758.305,-128.5 758.305,-110.5 641.167,-110.5"/>
+<text text-anchor="middle" x="699.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSortFilterProxyModel</text>
+</g>
+<!-- Node15&#45;&gt;Node18 -->
+<g id="edge23" class="edge"><title>Node15&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M587.784,-165.45C609.687,-156.656 644.993,-142.48 670.097,-132.401"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="671.524,-135.599 679.5,-128.625 668.916,-129.103 671.524,-135.599"/>
+</g>
+<!-- Node20 -->
+<g id="node21" class="node"><title>Node20</title>
+<polygon fill="none" stroke="#bfbfbf" points="874.951,-110.5 874.951,-128.5 926.522,-128.5 926.522,-110.5 874.951,-110.5"/>
+<text text-anchor="middle" x="900.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QAction</text>
+</g>
+<!-- Node19&#45;&gt;Node20 -->
+<g id="edge25" class="edge"><title>Node19&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M934.486,-165.219C928.758,-157.629 920.114,-146.175 913.008,-136.76"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="915.629,-134.423 906.811,-128.55 910.042,-138.64 915.629,-134.423"/>
+</g>
+<!-- Node21 -->
+<g id="node22" class="node"><title>Node21</title>
+<polygon fill="none" stroke="#bfbfbf" points="944.387,-110.5 944.387,-128.5 1017.09,-128.5 1017.09,-110.5 944.387,-110.5"/>
+<text text-anchor="middle" x="980.736" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QApplication</text>
+</g>
+<!-- Node19&#45;&gt;Node21 -->
+<g id="edge26" class="edge"><title>Node19&#45;&gt;Node21</title>
+<path fill="none" stroke="midnightblue" d="M946.986,-165.219C952.714,-157.629 961.359,-146.175 968.465,-136.76"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="971.431,-138.64 974.661,-128.55 965.843,-134.423 971.431,-138.64"/>
+</g>
+<!-- Node19&#45;&gt;Node22 -->
+<g id="edge27" class="edge"><title>Node19&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M921.903,-165.45C901.51,-156.734 868.748,-142.731 845.208,-132.669"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="846.317,-129.337 835.746,-128.625 843.566,-135.774 846.317,-129.337"/>
+</g>
+<!-- Node23 -->
+<g id="node24" class="node"><title>Node23</title>
+<polygon fill="none" stroke="#bfbfbf" points="1035.34,-110.5 1035.34,-128.5 1084.13,-128.5 1084.13,-110.5 1035.34,-110.5"/>
+<text text-anchor="middle" x="1059.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMenu</text>
+</g>
+<!-- Node19&#45;&gt;Node23 -->
+<g id="edge28" class="edge"><title>Node19&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M958.81,-165.45C978.293,-156.773 1009.54,-142.856 1032.11,-132.804"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1033.78,-135.891 1041.49,-128.625 1030.93,-129.497 1033.78,-135.891"/>
+</g>
+<!-- Node24 -->
+<g id="node25" class="node"><title>Node24</title>
+<polygon fill="none" stroke="#bfbfbf" points="1101.91,-110.5 1101.91,-128.5 1197.56,-128.5 1197.56,-110.5 1101.91,-110.5"/>
+<text text-anchor="middle" x="1149.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSystemTrayIcon</text>
+</g>
+<!-- Node19&#45;&gt;Node24 -->
+<g id="edge29" class="edge"><title>Node19&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M970.681,-165.906C1006.79,-156.75 1067.67,-141.311 1108.28,-131.013"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1109.3,-134.364 1118.14,-128.513 1107.58,-127.579 1109.3,-134.364"/>
+</g>
+<!-- Node25 -->
+<g id="node26" class="node"><title>Node25</title>
+<polygon fill="none" stroke="#bfbfbf" points="1215.29,-110.5 1215.29,-128.5 1270.19,-128.5 1270.19,-110.5 1215.29,-110.5"/>
+<text text-anchor="middle" x="1242.74" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">QWidget</text>
+</g>
+<!-- Node19&#45;&gt;Node25 -->
+<g id="edge30" class="edge"><title>Node19&#45;&gt;Node25</title>
+<path fill="none" stroke="midnightblue" d="M970.511,-166.827C973.621,-166.185 976.74,-165.564 979.736,-165 1076.99,-146.706 1104.79,-148.607 1205.31,-129.159"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1206.12,-132.566 1215.26,-127.209 1204.78,-125.696 1206.12,-132.566"/>
 </g>
 </g>
 </svg>

@@ -37,7 +37,6 @@ var searchData=
   ['setpasstemplate',['setPassTemplate',['../class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72',1,'QtPassSettings']]],
   ['setpassword',['setPassword',['../class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623',1,'PasswordDialog']]],
   ['setpasswordchars',['setPasswordChars',['../class_config_dialog.html#ac7d1aa131b15651fd09c575580f8b420',1,'ConfigDialog::setPasswordChars()'],['../class_qt_pass_settings.html#a438558288d25adc0eaeb10e1d9e6001c',1,'QtPassSettings::setPasswordChars()']]],
-  ['setpasswordcharsselected',['setPasswordCharsSelected',['../class_qt_pass_settings.html#ab681dbbad979efe9960e0832db14d908',1,'QtPassSettings']]],
   ['setpasswordcharsselection',['setPasswordCharsselection',['../class_qt_pass_settings.html#a574c4935298bf38e6c634add9ba747d6',1,'QtPassSettings']]],
   ['setpasswordchartemplate',['setPasswordCharTemplate',['../class_password_dialog.html#a19369fdb18d5b280aeadcd91245d9f6a',1,'PasswordDialog']]],
   ['setpasswordlength',['setPasswordLength',['../class_config_dialog.html#a5232330cfb770b84afdccf44383668d1',1,'ConfigDialog::setPasswordLength()'],['../class_qt_pass_settings.html#a371fc64dc2b1f14cd3e8cb21cae1635e',1,'QtPassSettings::setPasswordLength()']]],

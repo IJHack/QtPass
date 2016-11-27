@@ -1,9 +1,9 @@
 <map id="mainwindow.h" name="mainwindow.h">
-<area shape="rect" id="node2" href="$enums_8h.html" title="enums.h" alt="" coords="31,225,104,251"/>
-<area shape="rect" id="node3" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="190,79,290,104"/>
-<area shape="rect" id="node4" href="$pass_8h.html" title="pass.h" alt="" coords="209,152,270,177"/>
-<area shape="rect" id="node14" href="$realpass_8h.html" title="realpass.h" alt="" coords="314,79,397,104"/>
-<area shape="rect" id="node15" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="668,79,766,104"/>
-<area shape="rect" id="node19" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1092,79,1171,104"/>
-<area shape="rect" id="node9" href="$usersdialog_8h.html" title="usersdialog.h" alt="" coords="179,225,279,251"/>
+<area shape="rect" id="node2" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="5,225,107,251"/>
+<area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="131,225,203,251"/>
+<area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="148,79,248,104"/>
+<area shape="rect" id="node7" href="$pass_8h.html" title="pass.h" alt="" coords="254,152,315,177"/>
+<area shape="rect" id="node11" href="$realpass_8h.html" title="realpass.h" alt="" coords="322,79,404,104"/>
+<area shape="rect" id="node12" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="657,79,755,104"/>
+<area shape="rect" id="node16" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1095,79,1175,104"/>
 </map>

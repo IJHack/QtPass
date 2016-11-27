@@ -48,79 +48,79 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 680;
 var viewHeight = 64;
-var sectionId = 'dynsection-86';
+var sectionId = 'dynsection-85';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::setUseSymbols</title>
-<!-- Node635 -->
-<g id="node1" class="node"><title>Node635</title>
+<!-- Node619 -->
+<g id="node1" class="node"><title>Node619</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 159.945,-36.5 159.945,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="79.9727" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setUseSymbols</text>
 </g>
-<!-- Node636 -->
-<g id="node2" class="node"><title>Node636</title>
+<!-- Node620 -->
+<g id="node2" class="node"><title>Node620</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="black" points="195.945,-18.5 195.945,-36.5 301.428,-36.5 301.428,-18.5 195.945,-18.5"/>
 <text text-anchor="middle" x="248.687" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node635&#45;&gt;Node636 -->
-<g id="edge1" class="edge"><title>Node635&#45;&gt;Node636</title>
+<!-- Node619&#45;&gt;Node620 -->
+<g id="edge1" class="edge"><title>Node619&#45;&gt;Node620</title>
 <path fill="none" stroke="midnightblue" d="M170.475,-27.5C179.022,-27.5 187.483,-27.5 195.495,-27.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="170.424,-24.0001 160.424,-27.5 170.423,-31.0001 170.424,-24.0001"/>
 </g>
-<!-- Node637 -->
-<g id="node3" class="node"><title>Node637</title>
+<!-- Node621 -->
+<g id="node3" class="node"><title>Node621</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="black" points="351.6,-37.5 351.6,-55.5 485.427,-55.5 485.427,-37.5 351.6,-37.5"/>
 <text text-anchor="middle" x="418.514" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node636&#45;&gt;Node637 -->
-<g id="edge2" class="edge"><title>Node636&#45;&gt;Node637</title>
+<!-- Node620&#45;&gt;Node621 -->
+<g id="edge2" class="edge"><title>Node620&#45;&gt;Node621</title>
 <path fill="none" stroke="midnightblue" d="M312,-34.5546C324.858,-36.0103 338.443,-37.5483 351.43,-39.0186"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="312.198,-31.0548 301.868,-33.4076 311.411,-38.0104 312.198,-31.0548"/>
 </g>
-<!-- Node639 -->
-<g id="node5" class="node"><title>Node639</title>
+<!-- Node623 -->
+<g id="node5" class="node"><title>Node623</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="black" points="337.428,-0.5 337.428,-18.5 499.6,-18.5 499.6,-0.5 337.428,-0.5"/>
 <text text-anchor="middle" x="418.514" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node636&#45;&gt;Node639 -->
-<g id="edge4" class="edge"><title>Node636&#45;&gt;Node639</title>
+<!-- Node620&#45;&gt;Node623 -->
+<g id="edge4" class="edge"><title>Node620&#45;&gt;Node623</title>
 <path fill="none" stroke="midnightblue" d="M311.831,-20.8348C320.143,-19.9433 328.761,-19.019 337.327,-18.1003"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="311.438,-17.3568 301.868,-21.9034 312.184,-24.3169 311.438,-17.3568"/>
 </g>
-<!-- Node638 -->
-<g id="node4" class="node"><title>Node638</title>
+<!-- Node622 -->
+<g id="node4" class="node"><title>Node622</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="535.6,-37.5 535.6,-55.5 671.639,-55.5 671.639,-37.5 535.6,-37.5"/>
 <text text-anchor="middle" x="603.619" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node637&#45;&gt;Node638 -->
-<g id="edge3" class="edge"><title>Node637&#45;&gt;Node638</title>
+<!-- Node621&#45;&gt;Node622 -->
+<g id="edge3" class="edge"><title>Node621&#45;&gt;Node622</title>
 <path fill="none" stroke="midnightblue" d="M495.994,-46.5C509.07,-46.5 522.567,-46.5 535.38,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="495.619,-43.0001 485.619,-46.5 495.619,-50.0001 495.619,-43.0001"/>
 </g>
-<!-- Node640 -->
-<g id="node6" class="node"><title>Node640</title>
+<!-- Node624 -->
+<g id="node6" class="node"><title>Node624</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="549.765,-0.5 549.765,-18.5 657.474,-18.5 657.474,-0.5 549.765,-0.5"/>
 <text text-anchor="middle" x="603.619" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node639&#45;&gt;Node640 -->
-<g id="edge5" class="edge"><title>Node639&#45;&gt;Node640</title>
+<!-- Node623&#45;&gt;Node624 -->
+<g id="edge5" class="edge"><title>Node623&#45;&gt;Node624</title>
 <path fill="none" stroke="midnightblue" d="M510.118,-9.5C523.608,-9.5 537.126,-9.5 549.499,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="509.826,-6.0001 499.826,-9.5 509.826,-13.0001 509.826,-6.0001"/>
 </g>

@@ -1,18 +1,16 @@
 <map id="imitatepass.h" name="imitatepass.h">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="812,79,917,104"/>
-<area shape="rect" id="node9" href="$imitatepass_8cpp.html" title="imitatepass.cpp" alt="" coords="1117,225,1231,251"/>
-<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="203,152,307,177"/>
-<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,299,123,324"/>
-<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="755,299,874,324"/>
-<area shape="rect" id="node8" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="495,152,612,177"/>
-<area shape="rect" id="node14" href="$deselectabletreeview_8h.html" title="deselectabletreeview.h" alt="" coords="786,152,942,177"/>
-<area shape="rect" id="node15" href="$main_8cpp.html" title="main.cpp" alt="" coords="966,152,1042,177"/>
-<area shape="rect" id="node16" href="$passworddialog_8h.html" title="passworddialog.h" alt="" coords="636,152,761,177"/>
-<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="153,225,264,251"/>
-<area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,299,272,324"/>
-<area shape="rect" id="node10" href="$pass_8cpp.html" title="pass.cpp" alt="" coords="339,225,414,251"/>
-<area shape="rect" id="node11" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="437,225,569,251"/>
-<area shape="rect" id="node12" href="$realpass_8cpp.html" title="realpass.cpp" alt="" coords="593,225,690,251"/>
-<area shape="rect" id="node13" href="$util_8cpp.html" title="util.cpp" alt="" coords="714,225,777,251"/>
-<area shape="rect" id="node17" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="903,225,1042,251"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="394,79,499,104"/>
+<area shape="rect" id="node9" href="$imitatepass_8cpp.html" title="imitatepass.cpp" alt="" coords="5,225,119,251"/>
+<area shape="rect" id="node3" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="735,152,838,177"/>
+<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="899,299,1017,324"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="607,299,726,324"/>
+<area shape="rect" id="node8" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="435,152,553,177"/>
+<area shape="rect" id="node14" href="$deselectabletreeview_8h.html" title="deselectabletreeview.h" alt="" coords="106,152,262,177"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="main.cpp" alt="" coords="286,152,361,177"/>
+<area shape="rect" id="node5" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="757,225,869,251"/>
+<area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="750,299,876,324"/>
+<area shape="rect" id="node10" href="$pass_8cpp.html" title="pass.cpp" alt="" coords="232,225,306,251"/>
+<area shape="rect" id="node11" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="330,225,462,251"/>
+<area shape="rect" id="node12" href="$realpass_8cpp.html" title="realpass.cpp" alt="" coords="535,225,632,251"/>
+<area shape="rect" id="node13" href="$util_8cpp.html" title="util.cpp" alt="" coords="144,225,207,251"/>
 </map>
