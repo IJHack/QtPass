@@ -1,6 +1,5 @@
 #ifndef DESELECTABLETREEVIEW_H
 #define DESELECTABLETREEVIEW_H
-#include "QDebug"
 #include "QMouseEvent"
 #include "QTreeView"
 #include "mainwindow.h"

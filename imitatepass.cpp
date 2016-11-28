@@ -229,8 +229,8 @@ void ImitatePass::reencryptPath(QString dir) {
     }
     actualKeys.sort();
     if (actualKeys != gpgId) {
-      // qDebug() << actualKeys << gpgId << getRecipientList(fileName);
-      qDebug() << "reencrypt " << fileName << " for " << gpgId;
+      // dbg()<< actualKeys << gpgId << getRecipientList(fileName);
+      dbg()<< "reencrypt " << fileName << " for " << gpgId;
       QString local_lastDecrypt = "Could not decrypt";
       emit lastDecrypt(local_lastDecrypt);
       executeWrapper(QtPassSettings::getGpgExecutable(),
@@ -272,7 +272,7 @@ void ImitatePass::reencryptPath(QString dir) {
         }
 
       } else {
-        qDebug() << "Decrypt error on re-encrypt";
+        dbg()<< "Decrypt error on re-encrypt";
       }
     }
   }

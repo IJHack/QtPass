@@ -1,4 +1,5 @@
 #include "pass.h"
+#include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QTextCodec>
@@ -232,10 +233,12 @@ void Pass::updateEnv() {
   QStringList store = env.filter("PASSWORD_STORE_DIR");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
-    // qDebug() << "Added PASSWORD_STORE_DIR";
+    // dbg()<< "Added
+    // PASSWORD_STORE_DIR";
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
-    // qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
+    // dbg()<< "Update
+    // PASSWORD_STORE_DIR with " + passStore;
     env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
                                             QtPassSettings::getPassStore());
   }
@@ -245,14 +248,16 @@ void Pass::updateEnv() {
  * @brief Pass::resetPasswordStoreDir   probably temporary helper
  */
 void Pass::resetPasswordStoreDir() {
-  // qDebug() << env;
+  // dbg()<< env;
   QStringList store = env.filter("PASSWORD_STORE_DIR");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
-    // qDebug() << "Added PASSWORD_STORE_DIR";
+    // dbg()<< "Added
+    // PASSWORD_STORE_DIR";
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
-    // qDebug() << "Update PASSWORD_STORE_DIR";
+    // dbg()<< "Update
+    // PASSWORD_STORE_DIR";
     env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
                                             QtPassSettings::getPassStore());
   }

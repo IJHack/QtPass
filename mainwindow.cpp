@@ -1,7 +1,7 @@
 #include "mainwindow.h"
+#include "debughelper.h"
 #include <QClipboard>
 #include <QCloseEvent>
-#include <QDebug>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
@@ -280,11 +280,11 @@ bool MainWindow::checkConfig() {
     destroyTrayIcon();
   }
 
-  // qDebug() << version;
+  // dbg()<< version;
 
   // Config updates
   if (version.isEmpty()) {
-    qDebug() << "assuming fresh install";
+    dbg() << "assuming fresh install";
     if (QtPassSettings::getAutoclearSeconds() < 5)
       QtPassSettings::setAutoclearSeconds(10);
     if (QtPassSettings::getAutoclearPanelSeconds() < 5)
@@ -296,7 +296,7 @@ bool MainWindow::checkConfig() {
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
     // QStringList ver = version.split(".");
-    // qDebug() << ver;
+    // dbg()<< ver;
     // if (ver[0] == "0" && ver[1] == "8") {
     //// upgrade to 0.9
     // }
@@ -644,7 +644,7 @@ void MainWindow::deselect() {
  * @brief MainWindow::executePassGitInit git init wrapper
  */
 void MainWindow::executePassGitInit() {
-  qDebug() << "Pass git init called";
+  dbg() << "Pass git init called";
   pass->GitInit();
 }
 
@@ -901,7 +901,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
-  qDebug() << "on_lineEdit_returnPressed";
+  dbg() << "on_lineEdit_returnPressed";
   selectFirstFile();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
@@ -1201,7 +1201,7 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  // qDebug() << profiles.size();
+  // dbg()<< profiles.size();
   if (QtPassSettings::getProfiles().isEmpty()) {
     ui->profileBox->hide();
   } else {
@@ -1248,16 +1248,16 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
  */
 void MainWindow::initTrayIcon() {
   if (tray != NULL) {
-    qDebug() << "Creating tray icon again?";
+    dbg() << "Creating tray icon again?";
     return;
   }
   if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
     // Setup tray icon
     this->tray = new TrayIcon(this);
     if (tray == NULL)
-      qDebug() << "Allocating tray icon failed.";
+      dbg() << "Allocating tray icon failed.";
   } else {
-    qDebug() << "No tray icon for this OS possibly also not show options?";
+    dbg() << "No tray icon for this OS possibly also not show options?";
   }
 }
 
@@ -1266,7 +1266,7 @@ void MainWindow::initTrayIcon() {
  */
 void MainWindow::destroyTrayIcon() {
   if (tray == NULL) {
-    qDebug() << "Destroy non existing tray icon?";
+    dbg() << "Destroy non existing tray icon?";
     return;
   }
   delete this->tray;
@@ -1411,9 +1411,8 @@ void MainWindow::addFolder() {
   if (!ok || newdir.isEmpty())
     return;
   newdir.prepend(dir);
-  // qDebug() << newdir;
+  // dbg()<< newdir;
   QDir().mkdir(newdir);
-  // TODO(annejan) add to git?
 }
 
 /**
