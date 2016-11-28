@@ -14,19 +14,6 @@ public:
     CLIPBOARD_ALWAYS = 1,
     CLIPBOARD_ON_DEMAND = 2
   };
-  /**
-   * @brief Enums::characterSet enum
-   * 0 All character
-   * 1 Alphabetical
-   * 2 Alphanumeric
-   * 3 Custon (from config)
-   */
-  enum characterSet {
-    ALLCHARS = 0,
-    ALPHABETICAL = 1,
-    ALPHANUMERIC = 2,
-    CUSTOM = 3
-  };
 };
 
 #endif // ENUMS_H

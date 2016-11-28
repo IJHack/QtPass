@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H_
 #define MAINWINDOW_H_
 
+#include "datahelpers.h"
 #include "enums.h"
 #include "imitatepass.h"
 #include "pass.h"
@@ -24,41 +25,6 @@ namespace Ui {
 class MainWindow;
 }
 
-struct UserInfo;
-
-/*!
-    \struct passwordConfiguration
-    \brief  holds the Password configuration settings
- */
-struct passwordConfiguration {
-  /**
-   * @brief passwordConfiguration::selected character set.
-   */
-  int selected;
-  /**
-   * @brief passwordConfiguration::length of password.
-   */
-  int length;
-  /**
-   * @brief passwordConfiguration::Characters the different character sets.
-   */
-  QString Characters[4];
-  passwordConfiguration() {
-    length = 16;
-    selected = 0;
-    enum selected { ALLCHARS, ALPHABETICAL, ALPHANUMERIC, CUSTOM };
-    Characters[ALLCHARS] =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
-        "*()_-+={}[]|:;<>,.?"; /*AllChars*/
-    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
-                               "vwxyz"; /*Only Alphabetical*/
-    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
-                               "vwxyz1234567890"; /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1"
-                         "234567890~!@#$%^&*()_-+={}[]|:;<>,.?"; /*Custom*/
-  }
-};
-
 /*!
     \class MainWindow
     \brief The MainWindow class does way too much, not only is it a switchboard,
@@ -80,10 +46,8 @@ public:
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
-  QString generatePassword(int length, Enums::characterSet selection);
   void config();
   void executePassGitInit();
-  void copyTextToClipboard(const QString &text);
 
   /**
    * @brief MainWindow::pwdConfig instance of passwordConfiguration.
@@ -111,6 +75,7 @@ private slots:
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify);
+  void clearPanel();
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
@@ -124,7 +89,7 @@ private slots:
   void addFolder();
   void editPassword();
   void focusInput();
-  void copyTextByButtonClick(bool checked = false);
+  void copyTextToClipboard(const QString &text);
 
   void executeWrapperStarted();
   void showStatusMessage(QString msg, int timeout);
@@ -145,8 +110,8 @@ private:
   QTreeView *treeView;
   QProcess fusedav;
   QString clippedText;
-  QString autoclearPass;
-  QTimer *autoclearTimer;
+  QTimer clearPanelTimer;
+  QTimer clearClipboardTimer;
   actionType currentAction;
   QString lastDecrypt;
   QQueue<execQueueItem> *execQueue;

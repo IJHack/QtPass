@@ -1,8 +1,10 @@
 #ifndef PASSWORDDIALOG_H_
 #define PASSWORDDIALOG_H_
 
-#include "mainwindow.h"
+#include "datahelpers.h"
+#include "pass.h"
 #include <QDialog>
+#include <QWidget>
 
 namespace Ui {
 class PasswordDialog;
@@ -18,7 +20,8 @@ class PasswordDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit PasswordDialog(MainWindow *parent = 0);
+  explicit PasswordDialog(const passwordConfiguration &passConfig, Pass &pass,
+                          QWidget *parent = 0);
   ~PasswordDialog();
 
   /*! Sets content in the password field in the interface.
@@ -55,7 +58,8 @@ private slots:
 
 private:
   Ui::PasswordDialog *ui;
-  MainWindow *mainWindow;
+  const passwordConfiguration &m_passConfig;
+  Pass &m_pass;
   QString passTemplate;
   QStringList fields;
   bool templating;

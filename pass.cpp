@@ -68,6 +68,11 @@ QString Pass::Generate(int length, const QString &charset) {
         QChar nextChar = charset.at(index);
         passwd.append(nextChar);
       }
+    } else {
+      emit critical(
+          tr("No characters chosen"),
+          tr("Can't generate password, there are no characters to choose from "
+             "set in the configuration!"));
     }
   }
   return passwd;

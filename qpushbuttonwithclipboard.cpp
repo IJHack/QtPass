@@ -1,6 +1,5 @@
 #include "qpushbuttonwithclipboard.h"
-#include <QDebug>
-#include <QLabel>
+#include <QTimer>
 
 /**
  * @brief QPushButtonWithClipboard::QPushButtonWithClipboard
@@ -13,17 +12,18 @@
  *  the parent window
  */
 QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
-                                                   MainWindow *parent)
-    : QPushButton(*new QIcon(QIcon::fromTheme("edit-copy",
-                                              QIcon(":/icons/edit-copy.svg"))),
-                  "", parent) {
-  this->textToCopy = textToCopy;
-  this->parent = parent;
+                                                   QWidget *parent)
+    : QPushButton(parent), textToCopy(textToCopy),
+      iconEdit(QIcon::fromTheme("edit-copy", QIcon(":/icons/edit-copy.svg"))),
+      iconEditPushed(
+          QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))) {
+  setIcon(iconEdit);
+  connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
 }
 
 /**
- * @brief QPushButtonWithClipboard::getTextToCopy returns the text of associated
- * text field
+ * @brief QPushButtonWithClipboard::getTextToCopy returns the text of
+ * associated text field
  * @return QString textToCopy
  */
 QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
@@ -37,13 +37,14 @@ void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
   textToCopy = value;
 }
 
-void QPushButtonWithClipboard::changeIconPushed() {
-  this->setIcon(*new QIcon(
-      QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))));
+/**
+ * @brief QPushButtonWithClipboard::buttonClicked handles clicked event by
+ * emitting clicked(QString) with string provided to constructor
+ */
+void QPushButtonWithClipboard::buttonClicked(bool) {
+  setIcon(iconEditPushed);
   QTimer::singleShot(500, this, SLOT(changeIconDefault()));
+  emit clicked(textToCopy);
 }
 
-void QPushButtonWithClipboard::changeIconDefault() {
-  this->setIcon(*new QIcon(
-      QIcon::fromTheme("edit-copy", QIcon(":/icons/edit-copy.svg"))));
-}
+void QPushButtonWithClipboard::changeIconDefault() { this->setIcon(iconEdit); }

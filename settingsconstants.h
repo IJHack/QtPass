@@ -42,7 +42,6 @@ public:
   const static QString avoidNumbers;
   const static QString lessRandom;
   const static QString useSymbols;
-  const static QString passwordCharsSelected;
   const static QString passwordLength;
   const static QString passwordCharsselection;
   const static QString passwordChars;
