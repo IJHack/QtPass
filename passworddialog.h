@@ -20,7 +20,7 @@ class PasswordDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit PasswordDialog(const passwordConfiguration &passConfig, Pass &pass,
+  explicit PasswordDialog(const passwordConfiguration &passConfig,
                           QWidget *parent = 0);
   ~PasswordDialog();
 
@@ -59,7 +59,6 @@ private slots:
 private:
   Ui::PasswordDialog *ui;
   const passwordConfiguration &m_passConfig;
-  Pass &m_pass;
   QString passTemplate;
   QStringList fields;
   bool templating;

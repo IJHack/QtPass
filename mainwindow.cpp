@@ -893,7 +893,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
     // warn?
     return;
   }
-  PasswordDialog d(pwdConfig, *pass, this);
+  PasswordDialog d(pwdConfig, this);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
   d.setTemplate(QtPassSettings::getPassTemplate());
