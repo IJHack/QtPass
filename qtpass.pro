@@ -56,6 +56,7 @@ HEADERS   += mainwindow.h \
              pass.h \
              realpass.h \
              imitatepass.h \
+             datahelpers.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

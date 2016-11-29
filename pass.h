@@ -1,6 +1,8 @@
 #ifndef PASS_H
 #define PASS_H
 
+#include "datahelpers.h"
+#include "enums.h"
 #include <QList>
 #include <QProcess>
 #include <QQueue>

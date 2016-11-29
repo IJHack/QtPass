@@ -43,8 +43,12 @@ MainWindow::MainWindow(QWidget *parent)
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
   freshStart = true;
   startupPhase = true;
-  autoclearTimer = NULL;
-  pwdConfig.selected = 0;
+  clearPanelTimer.setSingleShot(true);
+  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+  clearClipboardTimer.setSingleShot(true);
+  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
+          SLOT(clearClipboard()));
+  pwdConfig.selected = passwordConfiguration::ALLCHARS;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
@@ -67,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
   connect(QtPassSettings::getPass(), SIGNAL(error(QProcess::ProcessError)), this,
@@ -241,10 +245,11 @@ bool MainWindow::checkConfig() {
       QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
   QtPassSettings::setPwgenExecutable(pwgenExecutable);
 
-  pwdConfig.selected = QtPassSettings::getPasswordCharsSelected();
   pwdConfig.length = QtPassSettings::getPasswordLength();
-  pwdConfig.selected = QtPassSettings::getPasswordCharsselection();
-  pwdConfig.Characters[3] = QtPassSettings::getPasswordChars();
+  pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
+      QtPassSettings::getPasswordCharsselection());
+  pwdConfig.Characters[passwordConfiguration::CUSTOM] =
+      QtPassSettings::getPasswordChars();
 
   if (QtPassSettings::isAlwaysOnTop()) {
     Qt::WindowFlags flags = windowFlags();
@@ -388,7 +393,7 @@ void MainWindow::config() {
   d->useSymbols(QtPassSettings::isUseSymbols());
   d->setPasswordLength(pwdConfig.length);
   d->setPwdTemplateSelector(pwdConfig.selected);
-  if (pwdConfig.selected != 3)
+  if (pwdConfig.selected != passwordConfiguration::CUSTOM)
     d->setLineEditEnabled(false);
   d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
   d->useTemplate(QtPassSettings::isUseTemplate());
@@ -427,8 +432,10 @@ void MainWindow::config() {
       QtPassSettings::setLessRandom(d->lessRandom());
       QtPassSettings::setUseSymbols(d->useSymbols());
       pwdConfig.length = d->getPasswordLength();
-      pwdConfig.selected = d->getPwdTemplateSelector();
-      pwdConfig.Characters[3] = d->getPasswordChars();
+      pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
+          d->getPwdTemplateSelector());
+      pwdConfig.Characters[passwordConfiguration::CUSTOM] =
+          d->getPasswordChars();
       QtPassSettings::setUseTemplate(d->useTemplate());
       QtPassSettings::setPassTemplate(d->getTemplate());
       QtPassSettings::setTemplateAllFields(d->templateAllFields());
@@ -439,7 +446,8 @@ void MainWindow::config() {
       QtPassSettings::setVersion(VERSION);
       QtPassSettings::setPasswordLength(pwdConfig.length);
       QtPassSettings::setPasswordCharsselection(pwdConfig.selected);
-      QtPassSettings::setPasswordChars(pwdConfig.Characters[3]);
+      QtPassSettings::setPasswordChars(
+          pwdConfig.Characters[passwordConfiguration::CUSTOM]);
 
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
@@ -457,6 +465,11 @@ void MainWindow::config() {
       if (freshStart && Util::checkConfig())
         config();
       QtPassSettings::getPass()->updateEnv();
+      clearPanelTimer.setInterval(1000 *
+                                  QtPassSettings::getAutoclearPanelSeconds());
+      clearClipboardTimer.setInterval(1000 *
+                                      QtPassSettings::getAutoclearSeconds());
+
       if (!QtPassSettings::isUseGit() ||
           (QtPassSettings::getGitExecutable().isEmpty() &&
            QtPassSettings::getPassExecutable().isEmpty())) {
@@ -587,12 +600,7 @@ void MainWindow::executeWrapperStarted() {
   ui->textBrowser->clear();
   ui->textBrowser->setTextColor(Qt::black);
   enableUiElements(false);
-  if (autoclearTimer != NULL) {
-    autoclearTimer->stop();
-    //    TODO(bezet): why dynamic allocation?
-    delete autoclearTimer;
-    autoclearTimer = NULL;
-  }
+  clearPanelTimer.stop();
 }
 
 /**
@@ -619,8 +627,7 @@ void MainWindow::readyRead(bool finished = false) {
         if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
           copyTextToClipboard(tokens[0]);
         if (QtPassSettings::isUseAutoclearPanel()) {
-          QTimer::singleShot(1000 * QtPassSettings::getAutoclearPanelSeconds(),
-                             this, SLOT(clearPanel(true)));
+          clearPanelTimer.start();
         }
         if (QtPassSettings::isHidePassword() &&
             !QtPassSettings::isUseTemplate()) {
@@ -671,14 +678,7 @@ void MainWindow::readyRead(bool finished = false) {
         addToGridLayout(0, tr("Password"), password);
       }
       if (QtPassSettings::isUseAutoclearPanel()) {
-        autoclearPass = output;
-        autoclearTimer = new QTimer(this);
-        autoclearTimer->setSingleShot(true);
-        autoclearTimer->setInterval(1000 *
-                                    QtPassSettings::getAutoclearPanelSeconds());
-        connect(autoclearTimer, SIGNAL(timeout()), this,
-                SLOT(clearPanel(true)));
-        autoclearTimer->start();
+        clearPanelTimer.start();
       }
     }
     output.replace(QRegExp("<"), "&lt;");
@@ -744,6 +744,12 @@ void MainWindow::clearPanel(bool notify = true) {
     ui->textBrowser->setHtml("");
   }
 }
+
+/**
+ * @brief MainWindow::clearPanel because slots needs the same amout of params as
+ * signals
+ */
+void MainWindow::clearPanel() { clearPanel(true); }
 
 /**
  * @brief MainWindow::processFinished process is finished, if there is another
@@ -887,17 +893,16 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
     // warn?
     return;
   }
-  PasswordDialog d(this);
+  PasswordDialog d(pwdConfig, *pass, this);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
   d.setTemplate(QtPassSettings::getPassTemplate());
   d.useTemplate(QtPassSettings::isUseTemplate());
   d.templateAll(QtPassSettings::isTemplateAllFields());
   d.setPassword(lastDecrypt);
-  d.setLength(pwdConfig.length);
-  d.setPasswordCharTemplate(pwdConfig.selected);
+  currentAction = PWGEN;
   if (!d.exec()) {
-    d.setPassword(NULL);
+    d.setPassword(QString());
     return;
   }
   QString newValue = d.getPassword();
@@ -1378,30 +1383,6 @@ void MainWindow::editPassword() {
 }
 
 /**
- * @brief MainWindow::generatePassword use either pwgen or internal password
- * generator
- * @param length of the desired password
- * @param selection character set to use for generation
- * @return the password
- */
-QString MainWindow::generatePassword(int length,
-                                     Enums::characterSet selection) {
-  currentAction = PWGEN;
-  //    TODO(bezet): move checks inside and catch exceptions
-
-  if (!QtPassSettings::isUsePwgen()) {
-    int charsetLength = pwdConfig.Characters[selection].length();
-    if (charsetLength <= 0)
-      QMessageBox::critical(
-          this, tr("No characters chosen"),
-          tr("Can't generate password, there are no characters to choose from "
-             "set in the configuration!"));
-    return QString();
-  }
-  return QtPassSettings::getPass()->Generate(length, pwdConfig.Characters[selection]);
-}
-
-/**
  * @brief MainWindow::clearTemplateWidgets empty the template widget fields in
  * the UI
  */
@@ -1415,25 +1396,6 @@ void MainWindow::clearTemplateWidgets() {
 }
 
 /**
- * @brief Mainwindow::copyTextByButtonClick - copy the text to the clipboard
- * @param checked
- *  no use, we need it, because of QPushButtonWithClipboard::clicked function
- */
-void MainWindow::copyTextByButtonClick(bool checked) {
-  if (checked) {
-    qDebug() << "checked";
-  }
-  QPushButtonWithClipboard *button =
-      dynamic_cast<QPushButtonWithClipboard *>(sender());
-  if (button == NULL) {
-    return;
-  }
-  button->changeIconPushed();
-  QString textToCopy = button->getTextToCopy();
-  copyTextToClipboard(textToCopy);
-}
-
-/**
  * @brief MainWindow::copyTextToClipboard copies text to your clipboard
  * @param text
  */
@@ -1443,8 +1405,7 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {
-    QTimer::singleShot(1000 * QtPassSettings::getAutoclearSeconds(), this,
-                       SLOT(clearClipboard()));
+    clearClipboardTimer.start();
   }
 }
 
@@ -1467,7 +1428,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked()), this, SLOT(copyTextByButtonClick()));
+    connect(fieldLabel, SIGNAL(clicked(QString)), this,
+            SLOT(copyTextToClipboard(QString)));
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);

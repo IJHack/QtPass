@@ -539,14 +539,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1365"/>
+        <location filename="../mainwindow.cpp" line="1374"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -567,7 +567,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1347"/>
+        <location filename="../mainwindow.cpp" line="1356"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
@@ -636,157 +636,155 @@ p, li { white-space: pre-wrap; }
         <translation>QtPass %1 приветствует Вас</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="175"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Не удалось подключить WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="183"/>
+        <location filename="../mainwindow.cpp" line="187"/>
         <source>QtPass WebDAV password</source>
         <translation>Пароль QtPass для WebDAV</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="184"/>
+        <location filename="../mainwindow.cpp" line="188"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Введите пароль для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="200"/>
+        <location filename="../mainwindow.cpp" line="204"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav непредвиденно завершился
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="204"/>
+        <location filename="../mainwindow.cpp" line="208"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Не удалось запустить fusedav для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
-        <location filename="../mainwindow.cpp" line="522"/>
+        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="539"/>
         <source>Updating password-store</source>
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1392"/>
+        <location filename="../mainwindow.cpp" line="1401"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
 (будет добавлена в %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="672"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Password hidden</source>
         <translation>Пароль скрыт</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="89"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>Add Password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>Add Folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="676"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>Content hidden</source>
         <translation>Содержимое скрыто</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="716"/>
-        <location filename="../mainwindow.cpp" line="1523"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="1489"/>
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="770"/>
+        <location filename="../mainwindow.cpp" line="774"/>
         <source>Clipboard cleared</source>
         <translation>Буфер обмена очищен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="772"/>
+        <location filename="../mainwindow.cpp" line="776"/>
         <source>Clipboard not cleared</source>
         <translation>Буфер обмена не очищен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="786"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Password and Content hidden</source>
         <translation>Пароль и содержимое скрыто</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="836"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProsess::Не удалось запустить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="849"/>
         <source>QProcess::Crashed</source>
         <translation>QProsess::Аварийное завершение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="842"/>
+        <location filename="../mainwindow.cpp" line="852"/>
         <source>QProcess::Timedout</source>
         <translation>QProsess::Превышено время ожидания</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>QProcess::ReadError</source>
         <translation>QProsess::Ошибка чтения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="848"/>
+        <location filename="../mainwindow.cpp" line="858"/>
         <source>QProcess::WriteError</source>
         <translation>QProsess::Ошибка записи</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="851"/>
+        <location filename="../mainwindow.cpp" line="861"/>
         <source>QProcess::UnknownError</source>
         <translation>QProsess::Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="884"/>
         <source>Looking for: %1</source>
         <translation>Ищем: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1016"/>
+        <location filename="../mainwindow.cpp" line="1025"/>
         <source>Delete folder?</source>
         <translation>Удалить папку?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1179"/>
+        <location filename="../mainwindow.cpp" line="1188"/>
         <source>Generating GPG key pair</source>
         <translation>Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1222"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1345"/>
+        <location filename="../mainwindow.cpp" line="1354"/>
         <source>Add folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1346"/>
+        <location filename="../mainwindow.cpp" line="1355"/>
         <source>Add password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1441"/>
         <source>No characters chosen</source>
-        <translation>Ни одного символа не выбрано</translation>
+        <translation type="vanished">Ни одного символа не выбрано</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1442"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
+        <translation type="vanished">Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
     </message>
     <message>
         <source>Timed out</source>
@@ -797,7 +795,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Не могу запустить процесс, предыдущий всё ещё не завершился!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1489"/>
+        <location filename="../mainwindow.cpp" line="1455"/>
         <source>Copied to clipboard</source>
         <translation>скопировать в буфер обмена</translation>
     </message>
@@ -806,8 +804,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Перешифровании из папки %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="604"/>
-        <location filename="../mainwindow.cpp" line="1040"/>
+        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="1049"/>
         <source>Can not edit</source>
         <translation>Невозможно изменить содержимое</translation>
     </message>
@@ -816,24 +814,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Не удалось прочитать ключ шифрования: .gpg-id файл не существует или повреждён.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="988"/>
+        <location filename="../mainwindow.cpp" line="997"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
 (будет создан в %1 )</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1070"/>
+        <location filename="../mainwindow.cpp" line="1079"/>
         <source>Can not get key list</source>
         <translation>Не удалось получить список ключей</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1071"/>
+        <location filename="../mainwindow.cpp" line="1080"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Не удалось получить список доступных ключей GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1102"/>
+        <location filename="../mainwindow.cpp" line="1111"/>
         <source>Key not found in keyring</source>
         <translation>Ключ не найден в хранилище ключей GPG</translation>
     </message>
@@ -856,24 +854,24 @@ You will not be able to decrypt any newly added passwords!</source>
 Вы не сможете расшифровать ни один вновь добавленный пароль!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="987"/>
-        <location filename="../mainwindow.cpp" line="1391"/>
+        <location filename="../mainwindow.cpp" line="996"/>
+        <location filename="../mainwindow.cpp" line="1400"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1016"/>
+        <location filename="../mainwindow.cpp" line="1025"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1017"/>
+        <location filename="../mainwindow.cpp" line="1026"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Вы в самом деле хотите удалить %1?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="605"/>
-        <location filename="../mainwindow.cpp" line="1041"/>
+        <location filename="../mainwindow.cpp" line="622"/>
+        <location filename="../mainwindow.cpp" line="1050"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Выбранный файл с паролем не существует</translation>
     </message>
@@ -881,12 +879,22 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="143"/>
+        <location filename="../pass.cpp" line="73"/>
+        <source>No characters chosen</source>
+        <translation type="unfinished">Ни одного символа не выбрано</translation>
+    </message>
+    <message>
+        <location filename="../pass.cpp" line="74"/>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="unfinished">Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
+    </message>
+    <message>
+        <location filename="../pass.cpp" line="148"/>
         <source>Timed out</source>
         <translation type="unfinished">Время ожидания истекло</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="144"/>
+        <location filename="../pass.cpp" line="149"/>
         <source>Can&apos;t start process, previous one is still running!</source>
         <translation type="unfinished">Не могу запустить процесс, предыдущий всё ещё не завершился!</translation>
     </message>

@@ -39,8 +39,6 @@ const QString SettingsConstants::avoidCapitals = "avoidCapitals";
 const QString SettingsConstants::avoidNumbers = "avoidNumbers";
 const QString SettingsConstants::lessRandom = "lessRandom";
 const QString SettingsConstants::useSymbols = "useSymbols";
-const QString SettingsConstants::passwordCharsSelected =
-    "passwordCharsSelected";
 const QString SettingsConstants::passwordLength = "passwordLength";
 const QString SettingsConstants::passwordCharsselection =
     "passwordCharsselection";

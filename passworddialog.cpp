@@ -8,12 +8,15 @@
  * @brief PasswordDialog::PasswordDialog basic constructor.
  * @param parent
  */
-PasswordDialog::PasswordDialog(MainWindow *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog) {
-  mainWindow = parent;
+PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
+                               Pass &pass, QWidget *parent)
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig),
+      m_pass(pass) {
   templating = false;
   allFields = false;
   ui->setupUi(this);
+  setLength(m_passConfig.length);
+  setPasswordCharTemplate(m_passConfig.selected);
 }
 
 /**
@@ -39,9 +42,12 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
-  ui->lineEditPassword->setText(mainWindow->generatePassword(
+  QString newPass = m_pass.Generate(
       ui->spinBox_pwdLength->value(),
-      (Enums::characterSet)ui->passwordTemplateSwitch->currentIndex()));
+      m_passConfig.Characters[(passwordConfiguration::characterSet)
+                                  ui->passwordTemplateSwitch->currentIndex()]);
+  if (newPass.length() > 0)
+    ui->lineEditPassword->setText(newPass);
   ui->widget->setEnabled(true);
 }
 
