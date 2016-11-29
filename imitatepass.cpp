@@ -285,6 +285,34 @@ void ImitatePass::reencryptPath(QString dir) {
 
 void ImitatePass::Move(QDir srcDir, QDir destDir, bool force)
 {
+    QString src = srcDir.absolutePath();
+    QString dest= destDir.absolutePath();
+    if (QtPassSettings::isUseGit()) {
+      QString args = QString("mv %1 %2 %3");
+      // do we need force mode?
+      if(force){
+          args = args.arg("-f");
+      }else{
+          args = args.arg("");
+      }
+      args = args.arg(src).arg(dest);
+      executeWrapper(QtPassSettings::getGitExecutable(),args);
+
+      QString args1=QString("commit -m \"moved dir from %1 to %2 using QTPass.\"");
+      args1= args1.arg(src).arg(dest);
+      executeWrapper(QtPassSettings::getGitExecutable(), args1);
+
+      if(QtPassSettings::isAutoPush()){
+          GitPush();
+      }
+
+    } else {
+        QDir qDir;
+        if(force){
+            qDir.remove(dest);
+        }
+        qDir.rename(src, dest);
+    }
 }
 
 void ImitatePass::Move(QFile srcFile, QFile destFile, bool force)

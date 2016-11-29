@@ -80,6 +80,17 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
 }
 void RealPass::Move(QDir srcDir, QDir destDir, bool force)
 {
+    QString args = QString("mv %1 %2 %3");
+    // do we need force mode?
+    if(force){
+        args = args.arg("-f");
+    }else{
+        args = args.arg("");
+    }
+    QString passSrcDir = QDir(QtPassSettings::getPassStore()).relativeFilePath(srcDir.absolutePath());
+    QString passDestDir = QDir(QtPassSettings::getPassStore()).relativeFilePath(destDir.absolutePath());
+    args = args.arg(passSrcDir).arg(passDestDir);
+    executePass(args);
 }
 
 void RealPass::Move(QFile srcFile, QFile destFile, bool force)

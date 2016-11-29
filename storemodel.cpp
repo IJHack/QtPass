@@ -18,7 +18,6 @@ QDataStream &operator<<(QDataStream &out, const QList<dragAndDropInfoPasswordSto
 
 QDataStream &operator>>(QDataStream &in, QList<dragAndDropInfoPasswordStore> &dragAndDropInfoPasswordStores)
 {
-
     while (in.atEnd() == false){
         dragAndDropInfoPasswordStore info;
         in >> info.isDir
@@ -214,14 +213,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
                     QString cleanedSrcDir = qdir.cleanPath(srcDir.absolutePath());
                     QString cleanedDestDir = qdir.cleanPath(destDir.absolutePath());
                     if(action == Qt::MoveAction){
-                        //@todo some error handling
-                        if(QtPassSettings::isUsePass()){
                             QtPassSettings::getPass()->Move(QDir(cleanedSrcDir), QDir(cleanedDestDir));
-                        }else if(QtPassSettings::isUseGit()){
-
-                        }else{
-                            qdir.rename(cleanedSrcDir, cleanedDestDir);
-                        }
                     }
                 }else if (destFileinfo.isFile()){
                     //@todo nothing to here. show dialog. dont drop directories on files
