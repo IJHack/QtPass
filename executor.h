@@ -2,6 +2,8 @@
 #define EXECUTOR_H
 
 #include <QObject>
+#include <QProcess>
+#include <QQueue>
 
 class Executor : public QObject {
   Q_OBJECT
@@ -34,9 +36,13 @@ class Executor : public QObject {
     /**
      * @brief readStderr    whether to read stderr
      *                      it's read regardless of this setting in case of
-     * non-0 return value of process
+     *                      non-0 return value of process
      */
     bool readStderr;
+    /**
+     * @brief workingDir    working directory in which the process will be
+     *                      started
+     */
     QString workingDir;
   };
 
@@ -47,12 +53,30 @@ class Executor : public QObject {
 
 public:
   explicit Executor(QObject *parent = 0);
-  void execute(int id, QString app, const QStringList &args,
-               bool readStdout = false, bool readStderr = false);
-  void execute(int id, QString app, const QStringList &args,
+
+  void execute(int id, const QString &app, const QStringList &args,
+               bool readStdout, bool readStderr = true);
+
+  void execute(int id, const QString &workDir, const QString &app,
+               const QStringList &args, bool readStdout,
+               bool readStderr = true);
+
+  void execute(int id, const QString &app, const QStringList &args,
                QString input = QString(), bool readStdout = false,
-               bool readStderr = false);
-  void executeBlocking();
+               bool readStderr = true);
+
+  void execute(int id, const QString &workDir, const QString &app,
+               const QStringList &args, QString input = QString(),
+               bool readStdout = false, bool readStderr = true);
+
+  int executeBlocking(QString app, const QStringList &args,
+                      QString input = QString(), QString *process_out = nullptr,
+                      QString *process_err = nullptr);
+
+  int executeBlocking(QString app, const QStringList &args,
+                      QString *process_out, QString *process_err = nullptr);
+
+  void setEnvironment(const QStringList &env);
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
@@ -61,13 +85,15 @@ signals:
    *
    * @param id      identifier given when starting process
    * @param exitCode    return code of the process
-   * @param stdout      stdout produced by the process, if requested when
+   * @param output      stdout produced by the process, if requested when
    * executing
-   * @param stderr      stderr produced by the process, if requested or if
+   * @param errout      stderr produced by the process, if requested or if
    * process failed
    */
-  void finished(int id, int exitCode, const QString &stdout,
-                const QString &stderr);
+  void finished(int exitCode, const QString &output, const QString &errout);
+  void starting();
+  void error(int id, int exitCode, const QString &output,
+             const QString &errout);
 };
 
 #endif // EXECUTOR_H
