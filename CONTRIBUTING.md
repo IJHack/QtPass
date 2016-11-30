@@ -21,3 +21,7 @@ Qt Linguist has very nice in-context translation options [for translators](https
 ## IRC
 
 For questions or brainstorming about features please join #ijhack on freenode.
+
+## Gitter
+
+Or if you prefer to use [gitter](https://gitter.im/IJHack/qtpass)
