@@ -314,3 +314,29 @@ QString Pass::getRecipientString(QString for_file, QString separator,
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
 }
+
+/**
+ * @brief Pass::executePass easy wrapper for running pass
+ * @param args
+ */
+void Pass::executePass(QString args, QString input) {
+    executeWrapper(QtPassSettings::getPassExecutable(), args, input);
+}
+
+/**
+ * @brief Pass::executeGpg easy wrapper for running gpg commands
+ * @param args
+ */
+void Pass::executeGpg(QString args, QString input)
+{
+    executeWrapper(QtPassSettings::getGpgExecutable(), args, input);
+}
+/**
+ * @brief Pass::executeGit easy wrapper for running git commands
+ * @param args
+ */
+void Pass::executeGit(QString args, QString input) {
+    executeWrapper(QtPassSettings::getGitExecutable(), args, input);
+}
+
+

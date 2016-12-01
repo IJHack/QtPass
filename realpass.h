@@ -4,9 +4,6 @@
 #include "pass.h"
 
 class RealPass : public Pass {
-private:
-  void executePass(QString args, QString input = QString());
-
 public:
   RealPass();
   virtual ~RealPass() {}
@@ -21,10 +18,8 @@ public:
 
   // Pass interface
 public:
-  void Move(QDir srcDir, QDir destDir, bool force = false);
-  void Move(QFile srcFile, QFile destFile, bool force = false);
-  void Copy(QDir srcDir, QDir destDir, bool force = false);
-  void Copy(QFile srcFile, QFile destFile, bool force = false);
+  void Move(const QString src, const QString dest, const bool force = false);
+  void Copy(const QString src, const QString dest, const bool force = false);
 };
 
 

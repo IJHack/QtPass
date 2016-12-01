@@ -3,13 +3,7 @@
 
 RealPass::RealPass() {}
 
-/**
- * @brief RealPass::executePass easy wrapper for running pass
- * @param args
- */
-void RealPass::executePass(QString args, QString input) {
-  executeWrapper(QtPassSettings::getPassExecutable(), args, input);
-}
+
 
 /**
  * @brief RealPass::GitInit git init wrapper
@@ -78,29 +72,45 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       path.remove(0, QtPassSettings::getPassStore().size());
   executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
 }
-void RealPass::Move(QDir srcDir, QDir destDir, bool force)
+void RealPass::Move(const QString src, const QString dest, const bool force)
 {
     QString args = QString("mv %1 %2 %3");
+    // force mode?
+    if(force){
+        args = args.arg("-f");
+    }else{
+        args = args.arg("");
+    }
+    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
+    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
+    QFileInfo srcFileInfo= QFileInfo(src);
+    QFileInfo destFileInfo= QFileInfo(dest);
+
+    // remove the .gpg because pass will not work
+    if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
+        passSrc.replace(QRegExp("\\.gpg$"), "");
+    }
+    if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
+        passDest.replace(QRegExp("\\.gpg$"), "");
+    }
+
+    args = args.arg(passSrc).arg(passDest);
+    executePass(args);
+}
+
+
+void RealPass::Copy(const QString src, const QString dest, const bool force)
+{
+    QString args = QString("cp %1 %2 %3");
     // do we need force mode?
     if(force){
         args = args.arg("-f");
     }else{
         args = args.arg("");
     }
-    QString passSrcDir = QDir(QtPassSettings::getPassStore()).relativeFilePath(srcDir.absolutePath());
-    QString passDestDir = QDir(QtPassSettings::getPassStore()).relativeFilePath(destDir.absolutePath());
-    args = args.arg(passSrcDir).arg(passDestDir);
+    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
+    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
+    args = args.arg(passSrc).arg(passDest);
     executePass(args);
 }
 
-void RealPass::Move(QFile srcFile, QFile destFile, bool force)
-{
-}
-
-void RealPass::Copy(QDir srcDir, QDir destDir, bool force)
-{
-}
-
-void RealPass::Copy(QFile srcFile, QFile destFile, bool force)
-{
-}

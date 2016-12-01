@@ -28,10 +28,8 @@ signals:
 
   // Pass interface
 public:
-  void Move(QDir srcDir, QDir destDir, bool force = false);
-  void Move(QFile srcFile, QFile destFile, bool force = false);
-  void Copy(QDir srcDir, QDir destDir, bool force = false);
-  void Copy(QFile srcFile, QFile destFile, bool force = false);
+  void Move(const QString src, const QString dest, const bool force = false);
+  void Copy(const QString src, const QString dest, const bool force = false);
 };
 
 #endif // IMITATEPASS_H

@@ -40,8 +40,9 @@ class Pass : public QObject {
   bool wrapperRunning;
   QStringList env;
 
-protected:
+private :
   void executeWrapper(QString, QString, QString = QString());
+protected:
   QProcess process;
 
 public:
@@ -55,10 +56,8 @@ public:
   virtual QProcess::ExitStatus Show(QString file, bool block = false) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
-  virtual void Move(QDir srcDir, QDir destDir, bool force = false) = 0;
-  virtual void Move(QFile srcFile, QFile destFile, bool force = false) = 0;
-  virtual void Copy(QDir srcDir, QDir destDir, bool force = false) = 0;
-  virtual void Copy(QFile srcFile, QFile destFile, bool force = false) = 0;
+  virtual void Move(const QString srcDir, const QString dest, const bool force = false) = 0;
+  virtual void Copy(const QString srcDir, const QString dest, const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   virtual QString Generate(int length, const QString &charset);
 
@@ -77,6 +76,9 @@ public:
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
+  void executeGit(QString args, QString input = QString());
+  void executePass(QString args, QString input = QString());
+  void executeGpg(QString args, QString input = QString());
 private slots:
   void processFinished(int, QProcess::ExitStatus);
 
