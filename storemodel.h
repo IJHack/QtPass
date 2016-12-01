@@ -36,11 +36,7 @@ public:
   QStringList mimeTypes() const;
   QMimeData *mimeData(const QModelIndexList &indexes) const;
   bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
-  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
-
-private:
-  static const QString qtPassDragAndDropMimeType;
-
+  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
 };
 /*!
     \struct dragAndDropInfo
