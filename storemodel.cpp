@@ -241,7 +241,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
         }else if(destFileinfo.isFile()){
             // dropped file onto a file
             QString cleanedDestFile = qdir.cleanPath(destFileinfo.absoluteFilePath());
-            int answer = QMessageBox::question(0, tr("force overwrite"), tr("overwrite %1 with %2?").arg(cleanedDestFile).arg(cleanedSrc), QMessageBox::Yes | QMessageBox::No);
+            int answer = QMessageBox::question(0, tr("force overwrite?"), tr("overwrite %1 with %2?").arg(cleanedDestFile).arg(cleanedSrc), QMessageBox::Yes | QMessageBox::No);
             bool force = answer==QMessageBox::Yes;
             if(action == Qt::MoveAction){
                 QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestFile, force);
