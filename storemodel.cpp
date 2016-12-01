@@ -23,6 +23,9 @@ QDataStream &operator>>(QDataStream &in, dragAndDropInfoPasswordStore &dragAndDr
     return in;
 }
 
+
+const QString StoreModel::qtPassDragAndDropMimeType = "application/vnd+qtpass.dragAndDropInfoPasswordStore";
+
 /**
  * @brief StoreModel::StoreModel
  * SubClass of QSortFilterProxyModel via
