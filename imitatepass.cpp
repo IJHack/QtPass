@@ -296,10 +296,16 @@ void ImitatePass::Move(const QString src, const QString dest, const bool force)
 
     } else {
         QDir qDir;
-        if(force){
-            qDir.remove(dest);
+        QFileInfo srcFileInfo = QFileInfo(src);
+        QFileInfo destFileInfo = QFileInfo(dest);
+        QString destCopy = dest;
+        if(srcFileInfo.isFile() && destFileInfo.isDir()){
+            destCopy = destFileInfo.absoluteFilePath() + QDir::separator() + srcFileInfo.fileName();
         }
-        qDir.rename(src, dest);
+        if(force){
+            qDir.remove(destCopy);
+        }
+        qDir.rename(src, destCopy);
     }
 }
 
