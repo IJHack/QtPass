@@ -7,14 +7,14 @@ class RealPass : public Pass {
 public:
   RealPass();
   virtual ~RealPass() {}
-  virtual void GitInit() override;
-  virtual void GitPull() override;
-  virtual void GitPush() override;
-  virtual QProcess::ExitStatus Show(QString file, bool block = false) override;
+  virtual void GitInit() Q_DECL_OVERRIDE;
+  virtual void GitPull() Q_DECL_OVERRIDE;
+  virtual void GitPush() Q_DECL_OVERRIDE;
+  virtual QProcess::ExitStatus Show(QString file, bool block = false) Q_DECL_OVERRIDE;
   virtual void Insert(QString file, QString value,
-                      bool overwrite = false) override;
-  virtual void Remove(QString file, bool isDir = false) override;
-  virtual void Init(QString path, const QList<UserInfo> &users) override;
+                      bool overwrite = false) Q_DECL_OVERRIDE;
+  virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
+  virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
 
   // Pass interface
 public:
