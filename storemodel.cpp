@@ -137,7 +137,7 @@ Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const
 QStringList StoreModel::mimeTypes() const
 {
     QStringList types;
-    types << "application/vnd+qtpass.dragAndDropInfoPasswordStore";
+    types << qtPassDragAndDropMimeType;
     return types;
 }
 
@@ -159,7 +159,7 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const
     }
 
     QMimeData *mimeData = new QMimeData();
-    mimeData->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore", encodedData);
+    mimeData->setData(qtPassDragAndDropMimeType, encodedData);
     return mimeData;
 }
 
@@ -169,12 +169,12 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const
 bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const
 {
     QModelIndex useIndex = this->index(parent.row(), parent.column(), parent.parent());
-    QByteArray encodedData = data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+    QByteArray encodedData = data->data(qtPassDragAndDropMimeType);
     QDataStream stream(&encodedData, QIODevice::ReadOnly);
     dragAndDropInfoPasswordStore info;
     stream >> info;
     qDebug() << "action: " << action;
-    if (data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore") == false)
+    if (data->hasFormat(qtPassDragAndDropMimeType) == false)
         return false;
 
 
@@ -198,7 +198,7 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action, i
     return false;
 }
 
-bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
+bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const
 {
     if (!canDropMimeData(data, action, row, column, parent))
         return false;
@@ -206,7 +206,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
     if (action == Qt::IgnoreAction){
         return true;
     }
-    QByteArray encodedData = data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+    QByteArray encodedData = data->data(qtPassDragAndDropMimeType);
 
     QDataStream stream(&encodedData, QIODevice::ReadOnly);
     dragAndDropInfoPasswordStore info;

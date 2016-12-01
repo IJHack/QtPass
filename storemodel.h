@@ -36,7 +36,11 @@ public:
   QStringList mimeTypes() const;
   QMimeData *mimeData(const QModelIndexList &indexes) const;
   bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
-  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
+
+private:
+  QString qtPassDragAndDropMimeType = "application/vnd+qtpass.dragAndDropInfoPasswordStore";
+
 };
 /*!
     \struct dragAndDropInfo
