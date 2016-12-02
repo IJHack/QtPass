@@ -8,24 +8,12 @@
 
 - I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
-- More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
-- Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
-
-**Fixed bugs:**
-
 - view box is trimming whitespace [\#210](https://github.com/IJHack/QtPass/issues/210)
-- Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
-
-**Closed issues:**
-
-- PREFIX is now really a prefix [\#185](https://github.com/IJHack/QtPass/issues/185)
-- QtPass, git and windows [\#173](https://github.com/IJHack/QtPass/issues/173)
 
 **Merged pull requests:**
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
-- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))

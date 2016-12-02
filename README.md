@@ -16,6 +16,7 @@ Features
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
+* Easy onboarding
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
@@ -117,7 +118,9 @@ Further reading
 ---------------
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
+[CHANGELOG](CHANGELOG.md)
 
 [Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)
+[Chat](https://gitter.im/IJHack/qtpass)
