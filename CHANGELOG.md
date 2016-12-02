@@ -9,6 +9,7 @@
 - I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 - view box is trimming whitespace [\#210](https://github.com/IJHack/QtPass/issues/210)
+- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 
 **Fixed bugs:**
 - Better seeder for qrand() as noted in [\#238](https://github.com/IJHack/QtPass/issues/238)
