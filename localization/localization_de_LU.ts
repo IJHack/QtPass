@@ -1022,7 +1022,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="75"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
