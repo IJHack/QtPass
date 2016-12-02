@@ -10,6 +10,9 @@
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 - view box is trimming whitespace [\#210](https://github.com/IJHack/QtPass/issues/210)
 
+**Fixed bugs:**
+- Better seeder for qrand() as noted in [\#238](https://github.com/IJHack/QtPass/issues/238)
+
 **Merged pull requests:**
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
