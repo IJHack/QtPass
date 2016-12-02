@@ -97,6 +97,35 @@
     </header>
     <section>
 
+	<h2><a id=v1.1.6" class="anchor" href="#v1.1.6" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.6 Cherry picking bugfixes and enhancements</h2>
+
+	<p>This is a release to fix some bugs and add some convenience in 1.1 before the upcoming 1.2 release . .</p>
+
+	<p>There is a problem with the build-in fallback password generator, it's use is discouraged.<br>
+	Current fixed version is less bad but still not cryptographically safe and sound!<br>
+	For more information please take a look at  <a href="https://github.com/IJHack/QtPass/issues/238">#238 PRNG seeding is done totally wrong</a></p>
+
+	<ul>
+		<li>Short fullname would hang QtPass keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a>
+		</li>
+		<li>keygendialog email and name validition (issue 202) <a href="https://github.com/IJHack/QtPass/pull/203">#203</a> (<a href="https://github.com/dakk">dakk</a>)</li>
+		<li>Better seeder for qrand() as noted in <a href="https://github.com/IJHack/QtPass/issues/238">#238</a>
+		</li>
+		<li>Lookup validity field to check if keys are valid <a href="https://github.com/IJHack/QtPass/pull/201">#201</a> (<a href="https://github.com/thotypous">thotypous</a>)</li>
+		<li>View box no longer trimming whitespace <a href="https://github.com/IJHack/QtPass/issues/210">#210</a>
+		</li>
+		<li>QtPass starts by searching for -psn_0_12345 on macOS <a href="https://github.com/IJHack/QtPass/issues/213">#213</a>
+		</li>
+		<li>Allow ssh links <a href="https://github.com/IJHack/QtPass/pull/211">#211</a> (<a href="https://github.com/cgonzalez">cgonzalez</a>)</li>
+		<li>Increase maximum password length to 255 <a href="https://github.com/IJHack/QtPass/pull/209">#209</a> (<a href="https://github.com/vladimiroff">vladimiroff</a>)</li>
+		<li>Updated German Translation <a href="https://github.com/IJHack/QtPass/pull/206">#206</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
+		<li>Better seeder for qrand() as noted in <a href="https://github.com/IJHack/QtPass/issues/238">#238</a>
+		</li>
+		<li>Italian translation <a href="https://github.com/IJHack/QtPass/pull/204">#204</a> (<a href="https://github.com/dakk">dakk</a>)</li>
+		<li>Translated for Simplified Chinese.  <a href="https://github.com/IJHack/QtPass/issues/208">#208</a>
+		</li>
+	</ul>
+
 	<h2><a id=v1.1.5" class="anchor" href="#v1.1.5" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.5 The more the merrier</h2>
 
 	<ul>
