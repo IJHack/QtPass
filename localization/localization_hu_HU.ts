@@ -33,10 +33,6 @@
         <translation>...</translation>
     </message>
     <message>
-        <source>Executable pass</source>
-        <translation type="obsolete">Futtatható Pass</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Natív</translation>
@@ -45,38 +41,6 @@
         <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Executable git</source>
-        <translation type="obsolete">Futtatható git</translation>
-    </message>
-    <message>
-        <source>Executable gpg</source>
-        <translation type="obsolete">Futattható gpg</translation>
-    </message>
-    <message>
-        <source>Native git/gpg</source>
-        <translation type="obsolete">Natív git/gpg</translation>
-    </message>
-    <message>
-        <source>Use pass</source>
-        <translation type="obsolete">Pass alkalmazása</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="obsolete">Más</translation>
-    </message>
-    <message>
-        <source>Folder password-store</source>
-        <translation type="obsolete">Jelszó-tároló mappa</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="obsolete">Vágólap</translation>
-    </message>
-    <message>
-        <source>Autoclear</source>
-        <translation type="obsolete">Automatikus tisztítás</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="475"/>
@@ -398,6 +362,13 @@ email</source>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Jelszó-tároló frissítése</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -577,10 +548,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
@@ -603,14 +570,14 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1961"/>
-        <source>Password copied to clipboard</source>
-        <translation>Jelszó vágólapra másolva</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="161"/>
         <source>Failed to connect WebDAV:
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="44"/>
+        <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -696,6 +663,33 @@ p, li { white-space: pre-wrap; }
         <translation>IsmeretlenHiba</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="1180"/>
+        <location filename="../mainwindow.cpp" line="2048"/>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1486"/>
+        <source>Cannot update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1487"/>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1500"/>
+        <source>Check selected users!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1501"/>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="1784"/>
         <source>Add folder</source>
         <translation type="unfinished"></translation>
@@ -726,18 +720,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="1961"/>
+        <source>Password copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Looking for: </source>
-        <translation type="obsolete">Keresés: </translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="44"/>
-        <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">a vágólapra másolt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
@@ -750,12 +744,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1355"/>
         <location filename="../mainwindow.cpp" line="2047"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1180"/>
-        <location filename="../mainwindow.cpp" line="2048"/>
-        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -805,27 +793,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../mainwindow.cpp" line="1455"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1486"/>
-        <source>Cannot update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1487"/>
-        <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1500"/>
-        <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1501"/>
-        <source>None of the selected keys have a secret key available.
-You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -948,10 +915,6 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <location filename="../usersdialog.ui" line="65"/>
         <source>Search Users</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
     </message>
     <message>
         <location filename="../usersdialog.ui" line="72"/>

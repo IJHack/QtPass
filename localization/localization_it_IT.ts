@@ -362,6 +362,43 @@ email</source>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Impossibile modificare</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Impossibile leggere la chiave di criptazione da utilizzare, il file .gpg-id è mancante o non valido.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Impossibile aggiornare</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Impossibile aprire .gpg-id in scrittura.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Controlla gli utenti selezionati!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">Nessuna delle chiavi selezionate ha una chiave privata disponibile.
+Non sarai in grado di decifrare nessuna delle nuove password create!</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">Esegui nuovamente la cifratura dalla cartella %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Aggiornando password-store</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -517,6 +554,11 @@ Expire-Date: 0
         <translation>Configura</translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="348"/>
+        <source>qtpass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="228"/>
         <location filename="../mainwindow.ui" line="231"/>
         <location filename="../mainwindow.cpp" line="1822"/>
@@ -546,11 +588,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Ti preghiamo di riportare ogni &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;problema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; che incontrerai durante l&apos;utilizzo.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentazione&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Codice sorgente&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="348"/>
-        <source>qtpass</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
@@ -797,12 +834,35 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>Password copiata negli appunti</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">copiato negli appunti</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Esegui nuovamente la cifratura dalla cartella %1</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">Nessun carattere selezionato</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Impossibile generare una password, non ci sono caratteri dai quali scegliere. Cotrolla nella finestra di configurazione!</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Tempo scaduto</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Impossibile avviare la procedura, un altro processo è ancora attivo</translation>
     </message>
 </context>
 <context>

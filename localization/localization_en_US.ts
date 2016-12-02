@@ -364,6 +364,43 @@ email</translation>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Can not edit</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Could not read encryption key to use, .gpg-id file missing or invalid.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Cannot update</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Failed to open .gpg-id for writing.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Check selected users!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">Re-encrypting from folder %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Updating password-store</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -645,6 +682,10 @@ p, li { white-space: pre-wrap; }
         <translation>Content hidden</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">Password</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="911"/>
         <source>Clipboard cleared</source>
         <translation>Clipboard cleared</translation>
@@ -816,12 +857,35 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>Password copied to clipboard</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">Copied to clipboard</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-encrypting from folder %1</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">No characters chosen</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Can&apos;t generate password, there are no characters to choose from set in the configuration!</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Timed out</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Can&apos;t start process, previous one is still running!</translation>
     </message>
 </context>
 <context>

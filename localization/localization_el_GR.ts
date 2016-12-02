@@ -794,6 +794,10 @@ You will not be able to decrypt any newly added passwords!</source>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="obsolete">copied to clipboard</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>

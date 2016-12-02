@@ -364,6 +364,43 @@ email</translation>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Nelze upravovat</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Nelze načíst šifrovací klíč, .gpg-id soubor chybí nebo je neplatný.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Nelze aktualizovat</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Selhalo otevření .gpg-id pro zápis.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Zaškrtnout vybrané uživatele!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">Pro žádný z vybraných klíčů není dostupný tajný klíč.
+Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">Nově šifrováno z adresáře %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Aktualizace úložiště hesel</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -645,6 +682,10 @@ p, li { white-space: pre-wrap; }
         <translation>Skrytý obsah</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">Heslo</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="911"/>
         <source>Clipboard cleared</source>
         <translation>Schránka vymazána</translation>
@@ -816,12 +857,35 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>Heslo zkopírováno do schránky</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">zkopírovat do schránky</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Nově šifrováno z adresáře %1</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">Znaky nebyly vybrány</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Nelze generovat heslo, v nastavení nebyla vybrána skladba znaků pro heslo!</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Vypršelo</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Nelze spustit, předchozí proces stále běží!</translation>
     </message>
 </context>
 <context>

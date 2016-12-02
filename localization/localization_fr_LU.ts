@@ -364,6 +364,43 @@ email</translation>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Impossible d&apos;éditer</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Impossible de lire la clé de chiffrement à utiliser, le fichier .gpg-id est manquant ou corrompu.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Impossible de mettre à jour</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Impossible d&apos;ouvrir .gpg-id en écriture.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Cocher les utilisateurs sélectionnés !</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">Aucune des clés sélectionnées n&apos;a de clé privée disponible.
+Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajoutés !</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">Re-chiffrement depuis le dossier %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Mise à jour du magasin de mots de passe</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -645,6 +682,10 @@ p, li { white-space: pre-wrap; }
         <translation>Contenu caché</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">Mot de passe</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="911"/>
         <source>Clipboard cleared</source>
         <translation>Presse-papiers vidé</translation>
@@ -816,12 +857,35 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>Mot de passe copié dans le presse-papiers</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">copié dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-chiffrement depuis le dossier %1</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">Pas de caractères choisis</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Impossible de générer un mot de passe, il n&apos;y a pas de caractères utilisables définis dans la configuration !</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Délai expiré</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Impossible de démarrer le processus,  le précédent est toujours en cours d&apos;exécution !</translation>
     </message>
 </context>
 <context>

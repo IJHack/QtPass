@@ -33,54 +33,14 @@
         <translation>...</translation>
     </message>
     <message>
-        <source>Executable pass</source>
-        <translation type="obsolete">Exekverbar pass</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="640"/>
         <source>Native</source>
         <translation>Nativ</translation>
     </message>
     <message>
-        <source>&amp;Native git/gpg</source>
-        <translation type="obsolete">&amp;git/gpg</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="616"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Använd pass</translation>
-    </message>
-    <message>
-        <source>Executable git</source>
-        <translation type="obsolete">Exekverbar git</translation>
-    </message>
-    <message>
-        <source>Executable gpg</source>
-        <translation type="obsolete">Exekverbar gpg</translation>
-    </message>
-    <message>
-        <source>Native git/gpg</source>
-        <translation type="obsolete">Nativ git/gpg</translation>
-    </message>
-    <message>
-        <source>Use pass</source>
-        <translation type="obsolete">Använd pass</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="obsolete">Annan</translation>
-    </message>
-    <message>
-        <source>Folder password-store</source>
-        <translation type="obsolete">Mapp för lösenordslagring</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="obsolete">Urklipp</translation>
-    </message>
-    <message>
-        <source>Autoclear</source>
-        <translation type="obsolete">Automatiskt rensning</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="475"/>
@@ -241,14 +201,6 @@ email</source>
         <translation>Använd pwgen</translation>
     </message>
     <message>
-        <source>Use clipboard</source>
-        <translation type="obsolete">Använd clipboard</translation>
-    </message>
-    <message>
-        <source>Autoclear panel</source>
-        <translation type="obsolete">Rensa panel automatiskt</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="536"/>
         <source>Use TrayIcon</source>
         <translation>Använd TrayIcon</translation>
@@ -282,10 +234,6 @@ email</source>
         <location filename="../configdialog.ui" line="382"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
-    </message>
-    <message>
-        <source>Use characters</source>
-        <translation type="obsolete">Använd tecken</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="543"/>
@@ -343,19 +291,9 @@ email</source>
         <translation>Visa samtliga fält i mallen</translation>
     </message>
     <message>
-        <source>login
-url</source>
-        <translation type="obsolete">användare
-url</translation>
-    </message>
-    <message>
         <location filename="../configdialog.ui" line="894"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="obsolete">&lt;a href=&quot;http://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="823"/>
@@ -421,6 +359,39 @@ url</translation>
         <location filename="../configdialog.cpp" line="483"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil vald att tas bort</translation>
+    </message>
+</context>
+<context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Kan inte ändra</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Kunde inte läsa krypteringsnyckel, .gpg-id fil saknas eller är ogiltig.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Kan inte uppdatera</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Kunde inte skriva till .gpg-id.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Kolla valda användare!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">Ingen av de valda nycklarna har en tillgänglig hemlig nyckel.
+Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Uppdaterar lösenordsutrymmet</translation>
     </message>
 </context>
 <context>
@@ -604,10 +575,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="348"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
@@ -628,11 +595,6 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1961"/>
-        <source>Password copied to clipboard</source>
-        <translation>Lösenordet kopierat till urklippet</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="161"/>
@@ -683,6 +645,10 @@ p, li { white-space: pre-wrap; }
         <translation>Gömt innehåll</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">Lösenord</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="913"/>
         <source>Clipboard not cleared</source>
         <translation>Urklippet ej rensat</translation>
@@ -723,13 +689,8 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1989"/>
-        <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New password file, will be placed in folder %1:</source>
-        <translation type="obsolete">Ny lösenordsfil, kommer skapas i mapp %1:</translation>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">kopieras till Urklipp</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1784"/>
@@ -740,10 +701,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../mainwindow.cpp" line="1785"/>
         <source>Add password</source>
         <translation>Lägg till lösenord</translation>
-    </message>
-    <message>
-        <source>New folder, will be placed in folder %1:</source>
-        <translation type="obsolete">Ny mapp, kommer skapas i %1:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1912"/>
@@ -870,6 +827,35 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1961"/>
+        <source>Password copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1989"/>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">Inga valda tecken</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Kan inte skapa lösenord. Konfigurationen saknar tecken att välja från!</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Tajmade ut</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Kan inte starta process, den förra körs fortfarande!</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -986,10 +972,6 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X</source>
-        <translation type="obsolete">X</translation>
-    </message>
-    <message>
         <location filename="../usersdialog.ui" line="72"/>
         <source>Show unusable keys</source>
         <translation>Visa oanvändbara nycklar</translation>
@@ -1003,13 +985,6 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <location filename="../usersdialog.cpp" line="80"/>
         <source>expires</source>
         <translation>utgår</translation>
-    </message>
-</context>
-<context>
-    <name>trayIcon</name>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Avsluta</translation>
     </message>
 </context>
 </TS>

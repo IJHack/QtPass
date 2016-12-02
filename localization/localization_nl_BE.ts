@@ -364,6 +364,43 @@ email</translation>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">Kan niet bewerken</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">Kan niet updaten</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">Kon .gpg-id bestand niet openen om te schrijven.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">Kontroleer geselecteerde gebruikers!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">Geen van de geselecteerde keys hebben een secret key beschikbaar.
+Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">Her-encrypten vanaf map %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">Vernieuwen password-store</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -669,6 +706,10 @@ p, li { white-space: pre-wrap; }
         <translation>Inhoud verborgen</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">Wachtwoord</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="911"/>
         <source>Clipboard cleared</source>
         <translation>Klembord gewist</translation>
@@ -840,12 +881,35 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>Wachtwoord gekopieërd</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">gekopieerd naar het klembord</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Her-encrypten vanaf map %1</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">Geen karakters gekozen</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">Duurt te lang</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">Kan process niet starten, vorige loopt nog steeds!</translation>
     </message>
 </context>
 <context>

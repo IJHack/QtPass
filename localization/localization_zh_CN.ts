@@ -364,6 +364,42 @@ email</source>
     </message>
 </context>
 <context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="obsolete">无法编辑</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="obsolete">无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="obsolete">无法更新</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="obsolete">.gpg-id 无法写入</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="obsolete">请核对所选用户！</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="obsolete">警告：所选用户都没有私钥，任何新添加的密码将无法解密！</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="obsolete">重新从文件夹 %1 加密</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="obsolete">正在更新密码库...</translation>
+    </message>
+</context>
+<context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../keygendialog.ui" line="14"/>
@@ -646,6 +682,10 @@ p, li { white-space: pre-wrap; }
         <translation>内容已隐藏</translation>
     </message>
     <message>
+        <source>Password</source>
+        <translation type="obsolete">密码</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="911"/>
         <source>Clipboard cleared</source>
         <translation>剪贴板已清除</translation>
@@ -816,12 +856,35 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../mainwindow.cpp" line="1961"/>
         <source>Password copied to clipboard</source>
-        <translation>已复制至剪贴板</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">复制到剪贴板</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
+    </message>
+</context>
+<context>
+    <name>Pass</name>
+    <message>
+        <source>No characters chosen</source>
+        <translation type="obsolete">未选择任何字符</translation>
+    </message>
+    <message>
+        <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
+        <translation type="obsolete">未选择任何字符，无法生成密码！</translation>
+    </message>
+    <message>
+        <source>Timed out</source>
+        <translation type="obsolete">超时</translation>
+    </message>
+    <message>
+        <source>Can&apos;t start process, previous one is still running!</source>
+        <translation type="obsolete">程序已经运行，无法启动！</translation>
     </message>
 </context>
 <context>
