@@ -15,6 +15,7 @@
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
 - Feature: moving items \(reordering folders\) [\#116](https://github.com/IJHack/QtPass/issues/116)
+- Password dialog decoupling from MW [\#242](https://github.com/IJHack/QtPass/pull/242) ([tezeb](https://github.com/tezeb))
 - Refactoring of qpushbuttonwithclipboard and timers [\#241](https://github.com/IJHack/QtPass/pull/241) ([tezeb](https://github.com/tezeb))
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
 
@@ -31,11 +32,11 @@
 
 - Click does not stick [\#233](https://github.com/IJHack/QtPass/issues/233)
 - Doubleclick on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
+- Windows - Enable GPG SSH Authentication [\#225](https://github.com/IJHack/QtPass/issues/225)
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
 
 **Merged pull requests:**
 
-- Password dialog decoupling from MW [\#242](https://github.com/IJHack/QtPass/pull/242) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
