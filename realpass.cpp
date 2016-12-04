@@ -74,17 +74,25 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
 }
 void RealPass::Move(const QString src, const QString dest, const bool force)
 {
+    QFileInfo srcFileInfo= QFileInfo(src);
+    QFileInfo destFileInfo= QFileInfo(dest);
+
     QString args = QString("mv %1 %2 %3");
     // force mode?
     if(force){
         args = args.arg("-f");
     }else{
+        // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
+        // and the user didnt want to move force
+        if(srcFileInfo.isFile() && destFileInfo.isFile()){
+            return;
+        }
         args = args.arg("");
     }
+
     QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
     QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
-    QFileInfo srcFileInfo= QFileInfo(src);
-    QFileInfo destFileInfo= QFileInfo(dest);
+
 
     // remove the .gpg because pass will not work
     if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
@@ -101,11 +109,18 @@ void RealPass::Move(const QString src, const QString dest, const bool force)
 
 void RealPass::Copy(const QString src, const QString dest, const bool force)
 {
+    QFileInfo srcFileInfo= QFileInfo(src);
+    QFileInfo destFileInfo= QFileInfo(dest);
     QString args = QString("cp %1 %2 %3");
-    // do we need force mode?
+    // force mode?
     if(force){
         args = args.arg("-f");
     }else{
+        // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
+        // and the user didnt want to move force
+        if(srcFileInfo.isFile() && destFileInfo.isFile()){
+            return;
+        }
         args = args.arg("");
     }
     QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());

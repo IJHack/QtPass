@@ -216,12 +216,12 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
     QFileInfo srcFileInfo = QFileInfo(info.path);
     QDir qdir;
     QString cleanedSrc = qdir.cleanPath(srcFileInfo.absoluteFilePath());
+    QString cleanedDest = qdir.cleanPath(destFileinfo.absoluteFilePath());
     if(info.isDir){
         QDir srcDir = QDir(info.path);
         // dropped dir onto dir
         if(destFileinfo.isDir()){
-            QString droppedOnDir = destFileinfo.absoluteFilePath();
-            QDir destDir = QDir(droppedOnDir).filePath(srcFileInfo.fileName());
+            QDir destDir = QDir(cleanedDest).filePath(srcFileInfo.fileName());
             QString cleanedDestDir = qdir.cleanPath(destDir.absolutePath());
             if(action == Qt::MoveAction){
                 QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir);
@@ -232,21 +232,19 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int 
     }else if(info.isFile){
         // dropped file onto a directory
         if(destFileinfo.isDir()){
-            QString cleanedDestDir = qdir.cleanPath(destFileinfo.absoluteFilePath());
             if(action == Qt::MoveAction){
-                QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir);
+                QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest);
             }else if(action == Qt::CopyAction){
-                QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDestDir);
+                QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest);
             }
         }else if(destFileinfo.isFile()){
             // dropped file onto a file
-            QString cleanedDestFile = qdir.cleanPath(destFileinfo.absoluteFilePath());
-            int answer = QMessageBox::question(0, tr("force overwrite?"), tr("overwrite %1 with %2?").arg(cleanedDestFile).arg(cleanedSrc), QMessageBox::Yes | QMessageBox::No);
+            int answer = QMessageBox::question(0, tr("force overwrite?"), tr("overwrite %1 with %2?").arg(cleanedDest).arg(cleanedSrc), QMessageBox::Yes | QMessageBox::No);
             bool force = answer==QMessageBox::Yes;
             if(action == Qt::MoveAction){
-                QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestFile, force);
+                QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest, force);
             }else if(action == Qt::CopyAction){
-                QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDestFile, force);
+                QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest, force);
             }
         }
 
