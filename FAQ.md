@@ -62,6 +62,11 @@ Where [ID] is your gpg key-id.
 
 git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
 
+### Git has issues with GPG SSH Authentication
+
+This tutorial might resolve your issues.
+https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant
+
 ### Where is the configuration stored?
 
 QtPass tries to use the native config choice for the OS it's running.

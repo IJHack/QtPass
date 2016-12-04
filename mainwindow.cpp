@@ -560,7 +560,6 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
  * @param index
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
-  // TODO: do nothing when clicked on folder
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
   QString file = "";
@@ -573,7 +572,12 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
           tr("Selected password file does not exist, not able to edit"));
       return;
     }
+    // TODO this should not be called here but from the "password is read" event
+    // https://github.com/IJHack/QtPass/issues/243
     setPassword(file, true, false);
+    // causes race condition when clicking file A, then double clicking file B
+    // content of file A is shown in editing window of B
+    // which might cause loss of data from file B
   }
 }
 
@@ -1001,7 +1005,9 @@ void MainWindow::on_editButton_clicked() {
         tr("Selected password file does not exist, not able to edit"));
     return;
   }
+  // TODO this should probably be called from the "password is read" event
   setPassword(file, true);
+  // https://github.com/IJHack/QtPass/issues/243
 }
 
 /**
