@@ -36,8 +36,9 @@ SOURCES   += main.cpp\
              qtpasssettings.cpp \
              settingsconstants.cpp \
              pass.cpp \
-			 realpass.cpp \
-			 imitatepass.cpp
+             realpass.cpp \
+             imitatepass.cpp \
+             executor.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -57,7 +58,8 @@ HEADERS   += mainwindow.h \
              realpass.h \
              imitatepass.h \
              datahelpers.h \
-    debughelper.h
+             debughelper.h \
+             executor.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

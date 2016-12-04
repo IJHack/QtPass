@@ -3,48 +3,46 @@
 
 #include "datahelpers.h"
 #include "enums.h"
+#include "executor.h"
 #include <QList>
 #include <QProcess>
 #include <QQueue>
 #include <QString>
 
-/*!
-    \struct execQueueItem
-    \brief Execution queue items for non-interactive ordered execution.
- */
-struct execQueueItem {
-  /**
-   * @brief app executable path.
-   */
-  QString app;
-  /**
-   * @brief args arguments for executable.
-   */
-  QString args;
-  /**
-   * @brief input stdio input.
-   */
-  QString input;
-};
-
 class Pass : public QObject {
   Q_OBJECT
 
-  QQueue<execQueueItem> execQueue;
   bool wrapperRunning;
   QStringList env;
 
 protected:
+  Executor exec;
   void executeWrapper(QString, QString, QString = QString());
-  QProcess process;
+
+  enum PROCESS {
+    GIT_INIT = 0,
+    GIT_ADD,
+    GIT_COMMIT,
+    GIT_RM,
+    GIT_PULL,
+    GIT_PUSH,
+    PASS_SHOW,
+    PASS_INSERT,
+    PASS_REMOVE,
+    PASS_INIT,
+    PASSWD_GENERATE,
+    GPG_GENKEYS,
+  };
 
 public:
   Pass();
   virtual ~Pass() {}
   virtual void GitInit() = 0;
   virtual void GitPull() = 0;
+  virtual void GitPull_b() = 0;
   virtual void GitPush() = 0;
-  virtual QProcess::ExitStatus Show(QString file, bool block = false) = 0;
+  virtual void Show(QString file) = 0;
+  virtual int Show_b(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
@@ -52,12 +50,6 @@ public:
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
-  void waitFor(uint seconds);
-  QProcess::ProcessState state();
-  QByteArray readAllStandardOutput();
-  QByteArray readAllStandardError();
-  //  TODO(bezet): probably not needed in public interface(1 use MainWindow)
-  QProcess::ExitStatus waitForProcess();
   void resetPasswordStoreDir();
   void updateEnv();
   //  TODO(bezet): those are probably temporarly here
@@ -65,15 +57,14 @@ public:
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
-private slots:
-  void processFinished(int, QProcess::ExitStatus);
-
 signals:
-  void finished(int exitCode, QProcess::ExitStatus);
+  void finished(int, const QString &output, const QString &errout);
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
   void statusMsg(QString, int);
   void critical(QString, QString);
+
+  void processErrorExit(int exitCode, const QString &err);
 };
 
 #endif // PASS_H
