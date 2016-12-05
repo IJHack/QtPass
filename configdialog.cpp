@@ -1,9 +1,9 @@
 #include "configdialog.h"
+#include "debughelper.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
-#include "debughelper.h"
 #include <QDir>
 #include <QMessageBox>
 #ifdef Q_OS_WIN
@@ -453,7 +453,7 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
     if (0 != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == 0) {
-        dbg()<< "empty name, should fix in frontend";
+        dbg() << "empty name, should fix in frontend";
         continue;
       }
       profiles.insert(item->text(), pathItem->text());
@@ -528,7 +528,7 @@ void ConfigDialog::wizard() {
   }
 
   QStringList names = mainWindow->getSecretKeys();
-  dbg()<< names;
+  dbg() << names;
   if (QFile(gpg).exists() && names.empty()) {
     KeygenDialog d(this);
     if (!d.exec())
@@ -556,7 +556,7 @@ void ConfigDialog::wizard() {
   }
 
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
-    dbg()<< ".gpg-id file does not exist";
+    dbg() << ".gpg-id file does not exist";
 
     if (!clean) {
       criticalMessage(tr("Password store not initialised"),
@@ -572,7 +572,7 @@ void ConfigDialog::wizard() {
       passStore = ui->storePath->text();
     }
     if (!QFile(passStore + ".gpg-id").exists()) {
-      dbg()<< ".gpg-id file still does not exist :/";
+      dbg() << ".gpg-id file still does not exist :/";
       // appears not to be store
       // init yes / no ?
       mainWindow->userDialog(passStore);

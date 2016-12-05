@@ -1549,8 +1549,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
 /**
   * @brief Displays message in status bar
   *
-  * @params msg     text to be displayed
-  * @params timeout time for which msg shall be visible
+  * @param msg     text to be displayed
+  * @param timeout time for which msg shall be visible
   */
 void MainWindow::showStatusMessage(QString msg, int timeout) {
   ui->statusBar->showMessage(msg, timeout);
