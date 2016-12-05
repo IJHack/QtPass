@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.6...HEAD)
+
+**Merged pull requests:**
+
+- Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
+
 ## [v1.1.6](https://github.com/IJHack/qtpass/tree/v1.1.6) (2016-12-02)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...v1.1.6)
 
