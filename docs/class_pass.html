@@ -65,6 +65,7 @@ $(function() {
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_pass-members.html">List of all members</a>  </div>
@@ -87,14 +88,14 @@ $(function() {
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass__coll__graph.svg" width="82" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass__coll__graph.svg" width="131" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a3668e12fee08afc4ef42e281265ccec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a3668e12fee08afc4ef42e281265ccec9">finished</a> (int exitCode, QProcess::ExitStatus)</td></tr>
-<tr class="separator:a3668e12fee08afc4ef42e281265ccec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae908029137511e94298c52cfa7151c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ae908029137511e94298c52cfa7151c21">finished</a> (int, const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="separator:ae908029137511e94298c52cfa7151c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0afad0f75995803c1aa90d936e3db18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ad0afad0f75995803c1aa90d936e3db18">error</a> (QProcess::ProcessError)</td></tr>
 <tr class="separator:ad0afad0f75995803c1aa90d936e3db18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0345d3ffdb213234031e9c84fe8ca7c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a> ()</td></tr>
@@ -103,6 +104,8 @@ Signals</h2></td></tr>
 <tr class="separator:a4321094d765f8badf733b6d112c74050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fa78a4366b91a930f6719c3ea57f439"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4fa78a4366b91a930f6719c3ea57f439">critical</a> (QString, QString)</td></tr>
 <tr class="separator:a4fa78a4366b91a930f6719c3ea57f439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb040e1a33322a27cd85d8a367ef24f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a> (int exitCode, const QString &amp;err)</td></tr>
+<tr class="separator:a9bb040e1a33322a27cd85d8a367ef24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,10 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a26bec7c69e7c35ccb67f8057db90825e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30c3829a890d65d3e4ba90c12b1852e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">GitPull</a> ()=0</td></tr>
 <tr class="separator:a30c3829a890d65d3e4ba90c12b1852e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a109d5c0a7f565398b7238c32bb6328"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</a> ()=0</td></tr>
+<tr class="separator:a7a109d5c0a7f565398b7238c32bb6328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</a> ()=0</td></tr>
 <tr class="separator:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9bdf6589cdfddcfc1a56928a4d49e4"><td class="memItemLeft" align="right" valign="top">virtual QProcess::ExitStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0f9bdf6589cdfddcfc1a56928a4d49e4">Show</a> (QString file, bool block=false)=0</td></tr>
-<tr class="separator:a0f9bdf6589cdfddcfc1a56928a4d49e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6520ffa669cd7934091934b24593d99c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Show</a> (QString file)=0</td></tr>
+<tr class="separator:a6520ffa669cd7934091934b24593d99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ad8142d920144bf7483211619be978"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a91ad8142d920144bf7483211619be978">Show_b</a> (QString file)=0</td></tr>
+<tr class="separator:a91ad8142d920144bf7483211619be978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ad2005a6517f9c304a9e156755778c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Insert</a> (QString file, QString value, bool force)=0</td></tr>
 <tr class="separator:a86ad2005a6517f9c304a9e156755778c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a> (QString file, bool isDir)=0</td></tr>
@@ -133,19 +140,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a451b0f52aa0332801252ae28665e29b3"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a451b0f52aa0332801252ae28665e29b3">listKeys</a> (QString keystring=&quot;&quot;, bool secret=false)</td></tr>
 <tr class="memdesc:a451b0f52aa0332801252ae28665e29b3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. ">Pass::listKeys</a> list users.  <a href="#a451b0f52aa0332801252ae28665e29b3">More...</a><br /></td></tr>
 <tr class="separator:a451b0f52aa0332801252ae28665e29b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f8fad399d76d53a4639f75d9cee95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a67f8fad399d76d53a4639f75d9cee95c">waitFor</a> (uint seconds)</td></tr>
-<tr class="memdesc:a67f8fad399d76d53a4639f75d9cee95c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x-seconds. ">Pass::waitFor</a> wait until process.atEnd and execQueue.isEmpty or timeout after x-seconds.  <a href="#a67f8fad399d76d53a4639f75d9cee95c">More...</a><br /></td></tr>
-<tr class="separator:a67f8fad399d76d53a4639f75d9cee95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34c3e201f4d1ab23bd93bb55a49a412e"><td class="memItemLeft" align="right" valign="top">QProcess::ProcessState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a34c3e201f4d1ab23bd93bb55a49a412e">state</a> ()</td></tr>
-<tr class="separator:a34c3e201f4d1ab23bd93bb55a49a412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e6cbf2d8105e7d701cde8ad1367454"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ad9e6cbf2d8105e7d701cde8ad1367454">readAllStandardOutput</a> ()</td></tr>
-<tr class="memdesc:ad9e6cbf2d8105e7d701cde8ad1367454"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ad9e6cbf2d8105e7d701cde8ad1367454" title="Pass::readAllStandardOutput temporary helper. ">Pass::readAllStandardOutput</a> temporary helper.  <a href="#ad9e6cbf2d8105e7d701cde8ad1367454">More...</a><br /></td></tr>
-<tr class="separator:ad9e6cbf2d8105e7d701cde8ad1367454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4178692c82beb58f1ee47153117ab0c2"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4178692c82beb58f1ee47153117ab0c2">readAllStandardError</a> ()</td></tr>
-<tr class="memdesc:a4178692c82beb58f1ee47153117ab0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a4178692c82beb58f1ee47153117ab0c2" title="Pass::readAllStandardError temporary helper. ">Pass::readAllStandardError</a> temporary helper.  <a href="#a4178692c82beb58f1ee47153117ab0c2">More...</a><br /></td></tr>
-<tr class="separator:a4178692c82beb58f1ee47153117ab0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a821812847e66c0db1fce6f770b67d06e"><td class="memItemLeft" align="right" valign="top">QProcess::ExitStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a821812847e66c0db1fce6f770b67d06e">waitForProcess</a> ()</td></tr>
-<tr class="separator:a821812847e66c0db1fce6f770b67d06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5377c479d9fb9c32ab7e218392b903cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a5377c479d9fb9c32ab7e218392b903cf">resetPasswordStoreDir</a> ()</td></tr>
 <tr class="memdesc:a5377c479d9fb9c32ab7e218392b903cf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a5377c479d9fb9c32ab7e218392b903cf" title="Pass::resetPasswordStoreDir probably temporary helper. ">Pass::resetPasswordStoreDir</a> probably temporary helper.  <a href="#a5377c479d9fb9c32ab7e218392b903cf">More...</a><br /></td></tr>
 <tr class="separator:a5377c479d9fb9c32ab7e218392b903cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,27 +150,86 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c5400e104ade2f41c8d4a41fc0b4f4e"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e">getRecipientList</a> (QString for_file)</td></tr>
-<tr class="memdesc:a6c5400e104ade2f41c8d4a41fc0b4f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list op gpg-id&#39;s to encrypt for. ">Pass::getRecipientList</a> return list op gpg-id's to encrypt for.  <a href="#a6c5400e104ade2f41c8d4a41fc0b4f4e">More...</a><br /></td></tr>
+<tr class="memdesc:a6c5400e104ade2f41c8d4a41fc0b4f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg-id&#39;s to encrypt for. ">Pass::getRecipientList</a> return list of gpg-id's to encrypt for.  <a href="#a6c5400e104ade2f41c8d4a41fc0b4f4e">More...</a><br /></td></tr>
 <tr class="separator:a6c5400e104ade2f41c8d4a41fc0b4f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8168f4bd51005ae3750c1a9f70eb23cf"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf">getRecipientString</a> (QString for_file, QString separator=&quot; &quot;, int *count=NULL)</td></tr>
 <tr class="memdesc:a8168f4bd51005ae3750c1a9f70eb23cf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. ">Pass::getRecipientString</a> formated string for use with GPG.  <a href="#a8168f4bd51005ae3750c1a9f70eb23cf">More...</a><br /></td></tr>
 <tr class="separator:a8168f4bd51005ae3750c1a9f70eb23cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:af876617125b4464f2a8d9702f9590270"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270">PROCESS</a> { <br />
+&#160;&#160;<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270ac75a08c3d061a7476fdb255955e9b116">GIT_INIT</a> = 0, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a397e47e8bea2b1976d2c5be8e70c57c7">GIT_ADD</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270affecb8d210067c6c1bbf15245afcafe8">GIT_COMMIT</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a26da4bf52ca4109989abffdfbb050548">GIT_RM</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a38ee107eac131a700738ffc9f6361f89">GIT_PULL</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270ad9177d7483027e34e6d0d48ab1d907fa">GIT_PUSH</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a9ae96bfb9bb78fbe12abe3aecedf8e0a">PASS_SHOW</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270ad2ada265835c27b72ae1ae500d63e1e4">PASS_INSERT</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a80b4c8d8e34a17600abdd94fc01bd1c9">PASS_REMOVE</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a19c754533a5611dba3b7b28260224cb6">PASS_INIT</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a8be3c384eb23a4eee3aa4a38f9d496d3">PASSWD_GENERATE</a>, 
+<a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270a3181ee7ce2e11bbd411e084b318c6d08">GPG_GENKEYS</a>
+<br />
+ }</td></tr>
+<tr class="separator:af876617125b4464f2a8d9702f9590270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7cb996367cc9308dee8be90af001d4ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7cb996367cc9308dee8be90af001d4ea">executeWrapper</a> (QString, QString, QString=QString())</td></tr>
-<tr class="memdesc:a7cb996367cc9308dee8be90af001d4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. ">Pass::executeWrapper</a> run an application, queue when needed.  <a href="#a7cb996367cc9308dee8be90af001d4ea">More...</a><br /></td></tr>
 <tr class="separator:a7cb996367cc9308dee8be90af001d4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a7ba893eeed7dbad5c3ad28d6c98cd5ad"><td class="memItemLeft" align="right" valign="top">QProcess&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7ba893eeed7dbad5c3ad28d6c98cd5ad">process</a></td></tr>
-<tr class="separator:a7ba893eeed7dbad5c3ad28d6c98cd5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903a833ade1109f9cb75e3bbeab8d0af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_executor.html">Executor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a></td></tr>
+<tr class="separator:a903a833ade1109f9cb75e3bbeab8d0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="pass_8h_source.html#l00030">30</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>Definition at line <a class="el" href="pass_8h_source.html#l00012">12</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="af876617125b4464f2a8d9702f9590270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af876617125b4464f2a8d9702f9590270">&sect;&nbsp;</a></span>PROCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_pass.html#af876617125b4464f2a8d9702f9590270">Pass::PROCESS</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270ac75a08c3d061a7476fdb255955e9b116"></a>GIT_INIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a397e47e8bea2b1976d2c5be8e70c57c7"></a>GIT_ADD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270affecb8d210067c6c1bbf15245afcafe8"></a>GIT_COMMIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a26da4bf52ca4109989abffdfbb050548"></a>GIT_RM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a38ee107eac131a700738ffc9f6361f89"></a>GIT_PULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270ad9177d7483027e34e6d0d48ab1d907fa"></a>GIT_PUSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a9ae96bfb9bb78fbe12abe3aecedf8e0a"></a>PASS_SHOW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270ad2ada265835c27b72ae1ae500d63e1e4"></a>PASS_INSERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a80b4c8d8e34a17600abdd94fc01bd1c9"></a>PASS_REMOVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a19c754533a5611dba3b7b28260224cb6"></a>PASS_INIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a8be3c384eb23a4eee3aa4a38f9d496d3"></a>PASSWD_GENERATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af876617125b4464f2a8d9702f9590270a3181ee7ce2e11bbd411e084b318c6d08"></a>GPG_GENKEYS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="pass_8h_source.html#l00022">22</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5d0cea4019f5c123fb4a4417de8d95b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d0cea4019f5c123fb4a4417de8d95b9">&sect;&nbsp;</a></span>Pass()</h2>
 
@@ -192,7 +245,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00006">6</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00007">7</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -227,7 +280,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pass_8h_source.html#l00043">43</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p>Definition at line <a class="el" href="pass_8h_source.html#l00039">39</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a8dfa731be7ac962f9f6a5cf8f29097ec_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
@@ -265,12 +326,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a4fa78a4366b91a930f6719c3ea57f439_icgraph.svg" width="100%" height="516"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a4fa78a4366b91a930f6719c3ea57f439_icgraph.svg" width="100%" height="488"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -299,12 +360,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ad0afad0f75995803c1aa90d936e3db18_icgraph.svg" width="234" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ad0afad0f75995803c1aa90d936e3db18_icgraph.svg" width="242" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -323,19 +384,19 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void Pass::executeWrapper </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>app</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>args</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>input</em> = <code>QString()</code>&#160;</td>
+          <td class="paramname"> = <code>QString()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -350,38 +411,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. ">Pass::executeWrapper</a> run an application, queue when needed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">app</td><td>path to application to run </td></tr>
-    <tr><td class="paramname">args</td><td>required arguements </td></tr>
-    <tr><td class="paramname">input</td><td>optional input </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00180">180</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a7cb996367cc9308dee8be90af001d4ea_cgraph.svg" width="415" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a7cb996367cc9308dee8be90af001d4ea_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a3668e12fee08afc4ef42e281265ccec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3668e12fee08afc4ef42e281265ccec9">&sect;&nbsp;</a></span>finished</h2>
+<a id="ae908029137511e94298c52cfa7151c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae908029137511e94298c52cfa7151c21">&sect;&nbsp;</a></span>finished</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,13 +426,19 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void Pass::finished </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>exitCode</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QProcess::ExitStatus&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>errout</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -413,12 +452,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a3668e12fee08afc4ef42e281265ccec9_icgraph.svg" width="251" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ae908029137511e94298c52cfa7151c21_icgraph.svg" width="259" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -468,21 +507,21 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the password </dd></dl>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00045">45</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00040">40</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a140443713431e41dc5a7d4989ece82c0_cgraph.svg" width="391" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a140443713431e41dc5a7d4989ece82c0_cgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a140443713431e41dc5a7d4989ece82c0_icgraph.svg" width="364" height="50"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a140443713431e41dc5a7d4989ece82c0_icgraph.svg" width="364" height="99"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -507,27 +546,27 @@ Protected Attributes</h2></td></tr>
 <p><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . ">Pass::GenerateGPGKeys</a> internal gpg keypair generator . . </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">batch</td><td></td></tr>
+    <tr><td class="paramname">batch</td><td>GnuPG style configuration string </td></tr>
     <tr><td class="paramname">keygenWindow</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00086">86</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00088">88</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_cgraph.svg" width="463" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -557,7 +596,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list op gpg-id&#39;s to encrypt for. ">Pass::getRecipientList</a> return list op gpg-id's to encrypt for. </p>
+<p><a class="el" href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg-id&#39;s to encrypt for. ">Pass::getRecipientList</a> return list of gpg-id's to encrypt for. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>which file (folder) would you like recepients for </td></tr>
@@ -566,21 +605,21 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recepients gpg-id contents </dd></dl>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00266">266</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00179">179</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a6c5400e104ade2f41c8d4a41fc0b4f4e_cgraph.svg" width="412" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a6c5400e104ade2f41c8d4a41fc0b4f4e_icgraph.svg" width="100%" height="415"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a6c5400e104ade2f41c8d4a41fc0b4f4e_icgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -637,21 +676,21 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recepient string </dd></dl>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00302">302</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00215">215</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a8168f4bd51005ae3750c1a9f70eb23cf_cgraph.svg" width="628" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a8168f4bd51005ae3750c1a9f70eb23cf_icgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a8168f4bd51005ae3750c1a9f70eb23cf_icgraph.svg" width="587" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -681,12 +720,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass</a>, and <a class="el" href="class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f">RealPass</a>.</p>
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a26bec7c69e7c35ccb67f8057db90825e_icgraph.svg" width="560" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a26bec7c69e7c35ccb67f8057db90825e_icgraph.svg" width="560" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -716,12 +755,47 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3">RealPass</a>.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a30c3829a890d65d3e4ba90c12b1852e8_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7a109d5c0a7f565398b7238c32bb6328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a109d5c0a7f565398b7238c32bb6328">&sect;&nbsp;</a></span>GitPull_b()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Pass::GitPull_b </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210">RealPass</a>.</p>
 <div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a30c3829a890d65d3e4ba90c12b1852e8_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a7a109d5c0a7f565398b7238c32bb6328_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -756,7 +830,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a7b5fa97ca6f3795512ac7c10db5c8f09_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a7b5fa97ca6f3795512ac7c10db5c8f09_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -802,7 +876,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_aee98d184ed11013a9a9dc08d05fbb1a2_icgraph.svg" width="495" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_aee98d184ed11013a9a9dc08d05fbb1a2_icgraph.svg" width="495" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -854,7 +928,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a86ad2005a6517f9c304a9e156755778c_icgraph.svg" width="559" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a86ad2005a6517f9c304a9e156755778c_icgraph.svg" width="559" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -896,13 +970,13 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00099">99</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00101">101</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a451b0f52aa0332801252ae28665e29b3_cgraph.svg" width="100%" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a451b0f52aa0332801252ae28665e29b3_cgraph.svg" width="394" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -910,67 +984,51 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a451b0f52aa0332801252ae28665e29b3_icgraph.svg" width="524" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a451b0f52aa0332801252ae28665e29b3_icgraph.svg" width="524" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a4178692c82beb58f1ee47153117ab0c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4178692c82beb58f1ee47153117ab0c2">&sect;&nbsp;</a></span>readAllStandardError()</h2>
+<a id="a9bb040e1a33322a27cd85d8a367ef24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb040e1a33322a27cd85d8a367ef24f">&sect;&nbsp;</a></span>processErrorExit</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QByteArray Pass::readAllStandardError </td>
+          <td class="memname">void Pass::processErrorExit </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exitCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>err</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p><a class="el" href="class_pass.html#a4178692c82beb58f1ee47153117ab0c2" title="Pass::readAllStandardError temporary helper. ">Pass::readAllStandardError</a> temporary helper. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00223">223</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a4178692c82beb58f1ee47153117ab0c2_icgraph.svg" width="651" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ad9e6cbf2d8105e7d701cde8ad1367454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e6cbf2d8105e7d701cde8ad1367454">&sect;&nbsp;</a></span>readAllStandardOutput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QByteArray Pass::readAllStandardOutput </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_pass.html#ad9e6cbf2d8105e7d701cde8ad1367454" title="Pass::readAllStandardOutput temporary helper. ">Pass::readAllStandardOutput</a> temporary helper. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00215">215</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ad9e6cbf2d8105e7d701cde8ad1367454_icgraph.svg" width="660" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a9bb040e1a33322a27cd85d8a367ef24f_icgraph.svg" width="312" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1011,12 +1069,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd">RealPass</a>.</p>
-<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a5aedb6df7aa57385eb19a78cdbd3e764_icgraph.svg" width="575" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a5aedb6df7aa57385eb19a78cdbd3e764_icgraph.svg" width="575" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1039,28 +1097,28 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="class_pass.html#a5377c479d9fb9c32ab7e218392b903cf" title="Pass::resetPasswordStoreDir probably temporary helper. ">Pass::resetPasswordStoreDir</a> probably temporary helper. </p>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00247">247</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00158">158</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a5377c479d9fb9c32ab7e218392b903cf_cgraph.svg" width="455" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a5377c479d9fb9c32ab7e218392b903cf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a5377c479d9fb9c32ab7e218392b903cf_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a0f9bdf6589cdfddcfc1a56928a4d49e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f9bdf6589cdfddcfc1a56928a4d49e4">&sect;&nbsp;</a></span>Show()</h2>
+<a id="a6520ffa669cd7934091934b24593d99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6520ffa669cd7934091934b24593d99c">&sect;&nbsp;</a></span>Show()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1069,21 +1127,11 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual QProcess::ExitStatus Pass::Show </td>
+          <td class="memname">virtual void Pass::Show </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>file</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>block</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1093,13 +1141,49 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a74a162297cb0d1f80171b9c4b3fbb301">ImitatePass</a>, and <a class="el" href="class_real_pass.html#afafd163e3cc8264b492dc4e3049b0e62">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1">RealPass</a>.</p>
+<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a6520ffa669cd7934091934b24593d99c_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a91ad8142d920144bf7483211619be978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ad8142d920144bf7483211619be978">&sect;&nbsp;</a></span>Show_b()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Pass::Show_b </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_imitate_pass.html#aecb6c2568d96ae09014ed29b04099076">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a429536af5c42a7b4f0c3efc3eed99c25">RealPass</a>.</p>
 <div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-28-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a0f9bdf6589cdfddcfc1a56928a4d49e4_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a91ad8142d920144bf7483211619be978_icgraph.svg" width="359" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1132,35 +1216,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a0345d3ffdb213234031e9c84fe8ca7c6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a34c3e201f4d1ab23bd93bb55a49a412e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34c3e201f4d1ab23bd93bb55a49a412e">&sect;&nbsp;</a></span>state()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QProcess::ProcessState Pass::state </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Temporary wrapper to ease refactoring, don't get used to it ;) </p>
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00172">172</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a34c3e201f4d1ab23bd93bb55a49a412e_icgraph.svg" width="554" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a0345d3ffdb213234031e9c84fe8ca7c6_icgraph.svg" width="356" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1199,12 +1255,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a4321094d765f8badf733b6d112c74050_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a4321094d765f8badf733b6d112c74050_icgraph.svg" width="100%" height="383"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -1227,100 +1283,29 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) ">Pass::updateEnv</a> update the execution environment (used when switching profiles) </p>
 
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00231">231</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00139">139</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="382" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="382" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a67f8fad399d76d53a4639f75d9cee95c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67f8fad399d76d53a4639f75d9cee95c">&sect;&nbsp;</a></span>waitFor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Pass::waitFor </td>
-          <td>(</td>
-          <td class="paramtype">uint&#160;</td>
-          <td class="paramname"><em>seconds</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x-seconds. ">Pass::waitFor</a> wait until process.atEnd and execQueue.isEmpty or timeout after x-seconds. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">seconds</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00142">142</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a67f8fad399d76d53a4639f75d9cee95c_cgraph.svg" width="566" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_a67f8fad399d76d53a4639f75d9cee95c_icgraph.svg" width="100%" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a821812847e66c0db1fce6f770b67d06e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a821812847e66c0db1fce6f770b67d06e">&sect;&nbsp;</a></span>waitForProcess()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QProcess::ExitStatus Pass::waitForProcess </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="pass_8cpp_source.html#l00032">32</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-36-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a821812847e66c0db1fce6f770b67d06e_icgraph.svg" width="627" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_icgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7ba893eeed7dbad5c3ad28d6c98cd5ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ba893eeed7dbad5c3ad28d6c98cd5ad">&sect;&nbsp;</a></span>process</h2>
+<a id="a903a833ade1109f9cb75e3bbeab8d0af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903a833ade1109f9cb75e3bbeab8d0af">&sect;&nbsp;</a></span>exec</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1329,7 +1314,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QProcess Pass::process</td>
+          <td class="memname"><a class="el" href="class_executor.html">Executor</a> Pass::exec</td>
         </tr>
       </table>
   </td>
@@ -1339,7 +1324,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pass_8h_source.html#l00039">39</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p>Definition at line <a class="el" href="pass_8h_source.html#l00019">19</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

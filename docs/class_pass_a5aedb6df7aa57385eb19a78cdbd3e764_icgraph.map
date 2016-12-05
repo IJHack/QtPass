@@ -1,4 +1,5 @@
 <map id="Pass::Remove" name="Pass::Remove">
 <area shape="rect" id="node2" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="161,5,378,31"/>
+<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="222,55,317,80"/>
 <area shape="rect" id="node3" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="426,5,569,31"/>
 </map>

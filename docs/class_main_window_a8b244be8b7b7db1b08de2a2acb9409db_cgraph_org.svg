@@ -534,7 +534,7 @@
 <!-- Node83 -->
 <g id="node47" class="node"><title>Node83</title>
 <g id="a_node47"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Pass::updateEnv update the execution environment (used when switching profiles) ">
-<polygon fill="none" stroke="black" points="574.792,-150.5 574.792,-168.5 666.397,-168.5 666.397,-150.5 574.792,-150.5"/>
+<polygon fill="none" stroke="red" points="574.792,-150.5 574.792,-168.5 666.397,-168.5 666.397,-150.5 574.792,-150.5"/>
 <text text-anchor="middle" x="620.594" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::updateEnv</text>
 </a>
 </g>
@@ -544,42 +544,42 @@
 <path fill="none" stroke="midnightblue" d="M240.491,-939.3C245.429,-856.32 284.025,-238.727 341.866,-183.5 404.239,-123.946 514.341,-135.671 575.507,-148.299"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="575.099,-151.792 585.613,-150.486 576.579,-144.95 575.099,-151.792"/>
 </g>
-<!-- Node87 -->
-<g id="node48" class="node"><title>Node87</title>
+<!-- Node89 -->
+<g id="node48" class="node"><title>Node89</title>
 <g id="a_node48"><a xlink:href="class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" target="_top" xlink:title="QtPassSettings::isUseWebDav">
 <polygon fill="none" stroke="black" points="342.523,-74.5 342.523,-92.5 496.174,-92.5 496.174,-74.5 342.523,-74.5"/>
 <text text-anchor="middle" x="419.349" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node87 -->
-<g id="edge74" class="edge"><title>Node1&#45;&gt;Node87</title>
+<!-- Node1&#45;&gt;Node89 -->
+<g id="edge74" class="edge"><title>Node1&#45;&gt;Node89</title>
 <path fill="none" stroke="midnightblue" d="M240.466,-939.313C245.409,-852.312 285.564,-175.211 341.866,-107.5 345.228,-103.457 349.263,-100.085 353.7,-97.2734"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="355.458,-100.303 362.656,-92.5287 352.181,-94.1175 355.458,-100.303"/>
 </g>
-<!-- Node88 -->
-<g id="node49" class="node"><title>Node88</title>
+<!-- Node90 -->
+<g id="node49" class="node"><title>Node90</title>
 <g id="a_node49"><a xlink:href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f" target="_top" xlink:title="StoreModel::setModelAndStore update the source model and store. ">
 <polygon fill="none" stroke="black" points="341.866,-37.5 341.866,-55.5 496.831,-55.5 496.831,-37.5 341.866,-37.5"/>
 <text text-anchor="middle" x="419.349" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::setModelAndStore</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node88 -->
-<g id="edge75" class="edge"><title>Node1&#45;&gt;Node88</title>
+<!-- Node1&#45;&gt;Node90 -->
+<g id="edge75" class="edge"><title>Node1&#45;&gt;Node90</title>
 <path fill="none" stroke="midnightblue" d="M240.375,-939.384C244.591,-850.109 280.244,-133.744 341.866,-64.5 342.759,-63.4969 343.696,-62.5443 344.673,-61.6399"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="346.885,-64.3576 352.86,-55.6086 342.733,-58.7216 346.885,-64.3576"/>
 </g>
-<!-- Node89 -->
-<g id="node50" class="node"><title>Node89</title>
+<!-- Node91 -->
+<g id="node50" class="node"><title>Node91</title>
 <g id="a_node50"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
 <polygon fill="none" stroke="black" points="361.327,-0.5 361.327,-18.5 477.371,-18.5 477.371,-0.5 361.327,-0.5"/>
 <text text-anchor="middle" x="419.349" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::deselect</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node89 -->
-<g id="edge76" class="edge"><title>Node1&#45;&gt;Node89</title>
+<!-- Node1&#45;&gt;Node91 -->
+<g id="edge76" class="edge"><title>Node1&#45;&gt;Node91</title>
 <path fill="none" stroke="midnightblue" d="M240.335,-939.292C244.223,-847.56 277.797,-99.8272 341.866,-27.5 344.817,-24.1687 348.258,-21.3941 352.016,-19.0885"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="353.86,-22.0817 361.28,-14.5185 350.763,-15.804 353.86,-22.0817"/>
 </g>

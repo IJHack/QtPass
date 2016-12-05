@@ -1,11 +1,14 @@
 <map id="RealPass::~RealPass" name="RealPass::~RealPass">
-<area shape="rect" id="node2" href="$class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f" title="RealPass::GitInit git init wrapper. " alt="" coords="211,5,332,31"/>
-<area shape="rect" id="node3" href="$class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3" title="RealPass::GitPull git init wrapper. " alt="" coords="209,55,334,80"/>
-<area shape="rect" id="node4" href="$class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b" title="RealPass::GitPush git init wrapper. " alt="" coords="205,104,338,129"/>
-<area shape="rect" id="node5" href="$class_real_pass.html#afafd163e3cc8264b492dc4e3049b0e62" title="RealPass::Show git init wrapper. " alt="" coords="212,153,331,179"/>
-<area shape="rect" id="node7" href="$class_real_pass.html#a01965e03d57777ca9db1f564ff893c13" title="RealPass::Insert git init wrapper. " alt="" coords="212,203,331,228"/>
-<area shape="rect" id="node8" href="$class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd" title="RealPass::Remove git init wrapper. " alt="" coords="204,252,339,277"/>
-<area shape="rect" id="node9" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="RealPass::Init initialize pass repository. " alt="" coords="220,301,324,327"/>
-<area shape="rect" id="node6" href="$class_pass.html#a821812847e66c0db1fce6f770b67d06e" title="Pass::waitForProcess" alt="" coords="413,153,563,179"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="387,301,588,327"/>
+<area shape="rect" id="node2" href="$class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f" title="RealPass::GitInit pass git init wrapper. " alt="" coords="214,5,334,31"/>
+<area shape="rect" id="node3" href="$class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3" title="RealPass::GitPull pass git pull wrapper. " alt="" coords="211,55,336,80"/>
+<area shape="rect" id="node4" href="$class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="204,153,344,179"/>
+<area shape="rect" id="node7" href="$class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b" title="RealPass::GitPush pass git push wrapper. " alt="" coords="207,203,341,228"/>
+<area shape="rect" id="node8" href="$class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1" title="RealPass::Show pass show. " alt="" coords="214,252,334,277"/>
+<area shape="rect" id="node9" href="$class_real_pass.html#a429536af5c42a7b4f0c3efc3eed99c25" title="RealPass::Show_b pass show. " alt="" coords="207,104,341,129"/>
+<area shape="rect" id="node10" href="$class_real_pass.html#a01965e03d57777ca9db1f564ff893c13" title="RealPass::Insert pass insert. " alt="" coords="214,301,334,327"/>
+<area shape="rect" id="node11" href="$class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd" title="RealPass::Remove pass remove wrapper. " alt="" coords="206,351,342,376"/>
+<area shape="rect" id="node12" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="RealPass::Init initialize pass repository. " alt="" coords="222,400,326,425"/>
+<area shape="rect" id="node5" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="420,153,599,179"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="392,104,627,129"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="409,400,610,425"/>
 </map>

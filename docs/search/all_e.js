@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['readallstandarderror',['readAllStandardError',['../class_pass.html#a4178692c82beb58f1ee47153117ab0c2',1,'Pass']]],
-  ['readallstandardoutput',['readAllStandardOutput',['../class_pass.html#ad9e6cbf2d8105e7d701cde8ad1367454',1,'Pass']]],
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['realpass',['RealPass',['../class_real_pass.html',1,'RealPass'],['../class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6',1,'RealPass::RealPass()']]],
   ['realpass_2ecpp',['realpass.cpp',['../realpass_8cpp.html',1,'']]],

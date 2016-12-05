@@ -1,7 +1,4 @@
 <map id="Pass::listKeys" name="Pass::listKeys">
-<area shape="rect" id="node2" href="$class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x&#45;seconds. " alt="" coords="222,5,324,31"/>
-<area shape="rect" id="node4" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="436,55,592,80"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="158,107,388,132"/>
-<area shape="rect" id="node3" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="469,5,559,31"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="640,55,841,80"/>
+<area shape="rect" id="node2" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="184,5,362,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="158,55,388,80"/>
 </map>

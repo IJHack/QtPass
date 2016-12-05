@@ -1,3 +1,4 @@
 <map id="ImitatePass" name="ImitatePass">
-<area shape="rect" id="node2" href="$class_pass.html" title="Pass" alt="" coords="25,79,76,104"/>
+<area shape="rect" id="node2" href="$class_pass.html" title="Pass" alt="" coords="25,167,76,192"/>
+<area shape="rect" id="node4" href="$class_executor.html" title="Executor" alt="" coords="67,80,141,105"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
 <area shape="rect" id="node2" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="227,5,431,31"/>
+<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="281,55,377,80"/>
 <area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="479,5,629,31"/>
 <area shape="rect" id="node4" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="677,5,880,31"/>
 </map>

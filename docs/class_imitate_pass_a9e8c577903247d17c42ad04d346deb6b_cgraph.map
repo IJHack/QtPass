@@ -2,17 +2,14 @@
 <area shape="rect" id="node2" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="170,5,364,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="425,107,630,132"/>
 <area shape="rect" id="node4" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="442,156,613,181"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="691,232,913,257"/>
-<area shape="rect" id="node6" href="$class_pass.html#a7cb996367cc9308dee8be90af001d4ea" title="Pass::executeWrapper run an application, queue when needed. " alt="" coords="724,481,880,507"/>
-<area shape="rect" id="node8" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="176,380,358,405"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="961,607,1161,632"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="437,307,617,332"/>
-<area shape="rect" id="node10" href="$class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" title="ImitatePass::GitPull git init wrapper. " alt="" coords="459,405,596,431"/>
-<area shape="rect" id="node11" href="$class_pass.html#a67f8fad399d76d53a4639f75d9cee95c" title="Pass::waitFor wait until process.atEnd and execQueue.isEmpty or timeout after x&#45;seconds. " alt="" coords="476,556,578,581"/>
-<area shape="rect" id="node13" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list op gpg&#45;id&#39;s to encrypt for. " alt="" coords="725,708,878,733"/>
-<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="412,356,643,381"/>
-<area shape="rect" id="node15" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="444,759,611,784"/>
-<area shape="rect" id="node16" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="433,507,621,532"/>
-<area shape="rect" id="node17" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper. " alt="" coords="455,257,600,283"/>
-<area shape="rect" id="node12" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="757,556,846,581"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="691,281,913,307"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="176,331,358,356"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="437,557,617,583"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="451,405,604,431"/>
+<area shape="rect" id="node9" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="712,431,891,456"/>
+<area shape="rect" id="node10" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="451,607,604,632"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="701,557,902,583"/>
+<area shape="rect" id="node12" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="412,257,643,283"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="433,307,621,332"/>
+<area shape="rect" id="node14" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper. " alt="" coords="455,356,600,381"/>
 </map>
