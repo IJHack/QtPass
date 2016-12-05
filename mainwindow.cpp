@@ -1,7 +1,7 @@
 #include "mainwindow.h"
+#include "debughelper.h"
 #include <QClipboard>
 #include <QCloseEvent>
-#include <QDebug>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
@@ -35,14 +35,11 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
       tray(NULL), pass(nullptr) {
-  // connect(process.data(), SIGNAL(readyReadStandardOutput()), this,
-  // SLOT(readyRead()));
-
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connect(&rpass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
-  connect(&rpass, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int, QProcess::ExitStatus)));
+  connect(&rpass, SIGNAL(finished(int, const QString &, const QString &)), this,
+          SLOT(processFinished(int, const QString &, const QString &)));
   connect(&rpass, SIGNAL(startingExecuteWrapper()), this,
           SLOT(executeWrapperStarted()));
   connect(&rpass, SIGNAL(statusMsg(QString, int)), this,
@@ -52,8 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(&ipass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
-  connect(&ipass, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int, QProcess::ExitStatus)));
+  connect(&ipass, SIGNAL(finished(int, const QString &, const QString &)), this,
+          SLOT(processFinished(int, const QString &, const QString &)));
   connect(&ipass, SIGNAL(startingExecuteWrapper()), this,
           SLOT(executeWrapperStarted()));
   connect(&ipass, SIGNAL(statusMsg(QString, int)), this,
@@ -69,7 +66,6 @@ MainWindow::MainWindow(QWidget *parent)
 
   ui->setupUi(this);
   enableUiElements(true);
-  execQueue = new QQueue<execQueueItem>;
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
   freshStart = true;
   startupPhase = true;
@@ -280,11 +276,11 @@ bool MainWindow::checkConfig() {
     destroyTrayIcon();
   }
 
-  // qDebug() << version;
+  // dbg()<< version;
 
   // Config updates
   if (version.isEmpty()) {
-    qDebug() << "assuming fresh install";
+    dbg() << "assuming fresh install";
     if (QtPassSettings::getAutoclearSeconds() < 5)
       QtPassSettings::setAutoclearSeconds(10);
     if (QtPassSettings::getAutoclearPanelSeconds() < 5)
@@ -296,7 +292,7 @@ bool MainWindow::checkConfig() {
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
     // QStringList ver = version.split(".");
-    // qDebug() << ver;
+    // dbg()<< ver;
     // if (ver[0] == "0" && ver[1] == "8") {
     //// upgrade to 0.9
     // }
@@ -525,11 +521,12 @@ void MainWindow::config() {
 /**
  * @brief MainWindow::on_updateButton_clicked do a git pull
  */
-//  TODO(bezet): add bool block and wait for process to finish
-void MainWindow::on_updateButton_clicked() {
+void MainWindow::on_updateButton_clicked(bool block) {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-  currentAction = GIT;
-  pass->GitPull();
+  if (block)
+    pass->GitPull_b();
+  else
+    pass->GitPull();
 }
 
 /**
@@ -644,7 +641,7 @@ void MainWindow::deselect() {
  * @brief MainWindow::executePassGitInit git init wrapper
  */
 void MainWindow::executePassGitInit() {
-  qDebug() << "Pass git init called";
+  dbg() << "Pass git init called";
   pass->GitInit();
 }
 
@@ -659,112 +656,137 @@ void MainWindow::executeWrapperStarted() {
 /**
  * @brief MainWindow::readyRead we have data
  */
-void MainWindow::readyRead(bool finished = false) {
-  if (currentAction == PWGEN)
+void MainWindow::readyRead(const QString &p_output, const QString &p_errout) {
+  QString output = p_output;
+  QString error = p_errout;
+  if (currentAction == PWGEN) {
     return;
-  QString output = "";
-  QString error = "";
-  if (currentAction != GPG_INTERNAL) {
-    error = pass->readAllStandardError();
-    QByteArray processOutBytes = pass->readAllStandardOutput();
-    QTextCodec *codec = QTextCodec::codecForLocale();
-    output = codec->toUnicode(processOutBytes);
-    if (finished && currentAction == GPG) {
-      lastDecrypt = output;
-      QStringList tokens = output.split("\n");
-      QString password = tokens.at(0);
-
-      if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-          !output.isEmpty()) {
-        clippedText = tokens[0];
-        if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-          copyTextToClipboard(tokens[0]);
-        if (QtPassSettings::isUseAutoclearPanel()) {
-          clearPanelTimer.start();
-        }
-        if (QtPassSettings::isHidePassword() &&
-            !QtPassSettings::isUseTemplate()) {
-          tokens[0] = "***" + tr("Password hidden") + "***";
-          output = tokens.join("\n");
-        }
-        if (QtPassSettings::isHideContent())
-          output = "***" + tr("Content hidden") + "***";
-      }
-
-      if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
-        while (ui->gridLayout->count() > 0) {
-          QLayoutItem *item = ui->gridLayout->takeAt(0);
-          delete item->widget();
-          delete item;
-        }
-        QStringList remainingTokens;
-        for (int j = 1; j < tokens.length(); ++j) {
-          QString token = tokens.at(j);
-          if (token.contains(':')) {
-            int colon = token.indexOf(':');
-            QString field = token.left(colon);
-            if (QtPassSettings::isTemplateAllFields() ||
-                QtPassSettings::getPassTemplate().contains(field)) {
-              QString value = token.right(token.length() - colon - 1);
-              if (!QtPassSettings::getPassTemplate().contains(field) &&
-                  value.startsWith("//")) {
-                remainingTokens.append(token);
-                continue; // colon is probably from a url
-              }
-              addToGridLayout(j, field, value);
-            }
-          } else {
-            remainingTokens.append(token);
-          }
-        }
-        if (ui->gridLayout->count() == 0)
-          ui->verticalLayoutPassword->setSpacing(0);
-        else
-          ui->verticalLayoutPassword->setSpacing(6);
-        output = remainingTokens.join("\n");
-      } else {
-        clearTemplateWidgets();
-      }
-      if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
-        // now set the password. If we set it earlier, the layout will be
-        // cleared
-        addToGridLayout(0, tr("Password"), password);
-      }
-      if (QtPassSettings::isUseAutoclearPanel()) {
-        clearPanelTimer.start();
-      }
-    }
-    output.replace(QRegExp("<"), "&lt;");
-    output.replace(QRegExp(">"), "&gt;");
-    output.replace(QRegExp(" "), "&nbsp;");
-  } else {
+  } else if (currentAction == GPG) {
+    passShowHandler(p_output);
+  } else if (currentAction == GPG_INTERNAL) {
     // qDebug() << process->readAllStandardOutput();
     // qDebug() << process->readAllStandardError();
-    if (finished && 0 != keygen) {
+    if (0 != keygen) {
       qDebug() << "Keygen Done";
       keygen->close();
       keygen = 0;
       // TODO(annejan) some sanity checking ?
     }
+  } else {
+    DisplayInTextBrowser(p_output);
   }
 
-  if (!error.isEmpty()) {
-    if (currentAction == GIT) {
-      // https://github.com/IJHack/qtpass/issues/111
-      output = "<span style=\"color: darkgray;\">" + error + "</span><br />" +
-               output;
+  processErrorExit(p_errout);
+}
+
+void MainWindow::passShowHandler(const QString &p_output) {
+  QString output = p_output;
+  lastDecrypt = p_output;
+  {
+    QStringList tokens = p_output.split("\n");
+    QString password = tokens.at(0);
+
+    if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
+        !p_output.isEmpty()) {
+      clippedText = tokens[0];
+      if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
+        copyTextToClipboard(tokens[0]);
+      if (QtPassSettings::isUseAutoclearPanel()) {
+        clearPanelTimer.start();
+      }
+      if (QtPassSettings::isHidePassword() &&
+          !QtPassSettings::isUseTemplate()) {
+        tokens[0] = "***" + tr("Password hidden") + "***";
+        output = tokens.join("\n");
+      }
+      if (QtPassSettings::isHideContent())
+        output = "***" + tr("Content hidden") + "***";
+    }
+
+    if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
+      while (ui->gridLayout->count() > 0) {
+        QLayoutItem *item = ui->gridLayout->takeAt(0);
+        delete item->widget();
+        delete item;
+      }
+      QStringList remainingTokens;
+      for (int j = 1; j < tokens.length(); ++j) {
+        QString token = tokens.at(j);
+        if (token.contains(':')) {
+          int colon = token.indexOf(':');
+          QString field = token.left(colon);
+          if (QtPassSettings::isTemplateAllFields() ||
+              QtPassSettings::getPassTemplate().contains(field)) {
+            QString value = token.right(token.length() - colon - 1);
+            if (!QtPassSettings::getPassTemplate().contains(field) &&
+                value.startsWith("//")) {
+              remainingTokens.append(token);
+              continue; // colon is probably from a url
+            }
+            addToGridLayout(j, field, value);
+          }
+        } else {
+          remainingTokens.append(token);
+        }
+      }
+      if (ui->gridLayout->count() == 0)
+        ui->verticalLayoutPassword->setSpacing(0);
+      else
+        ui->verticalLayoutPassword->setSpacing(6);
+      output = remainingTokens.join("\n");
     } else {
-      output =
-          "<span style=\"color: red;\">" + error + "</span><br />" + output;
+      clearTemplateWidgets();
+    }
+    if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
+      // now set the password. If we set it earlier, the layout will be
+      // cleared
+      addToGridLayout(0, tr("Password"), password);
+    }
+    if (QtPassSettings::isUseAutoclearPanel()) {
+      clearPanelTimer.start();
     }
   }
+
+  DisplayInTextBrowser(output);
+}
+
+void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
+                                      QString postfix) {
+
+  output.replace(QRegExp("<"), "&lt;");
+  output.replace(QRegExp(">"), "&gt;");
+  output.replace(QRegExp(" "), "&nbsp;");
 
   output.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
                  "<a href=\"\\1\">\\1</a>");
   output.replace(QRegExp("\n"), "<br />");
+  output = prefix + output + postfix;
   if (!ui->textBrowser->toPlainText().isEmpty())
     output = ui->textBrowser->toHtml() + output;
   ui->textBrowser->setHtml(output);
+}
+
+void MainWindow::processErrorExit(const QString &p_error) {
+  if (!p_error.isEmpty()) {
+    QString output;
+    QString error = p_error;
+    error.replace(QRegExp("<"), "&lt;");
+    error.replace(QRegExp(">"), "&gt;");
+    error.replace(QRegExp(" "), "&nbsp;");
+    if (currentAction == GIT) {
+      // https://github.com/IJHack/qtpass/issues/111
+      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
+    } else {
+      output = "<span style=\"color: red;\">" + error + "</span><br />";
+    }
+
+    output.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
+                   "<a href=\"\\1\">\\1</a>");
+    output.replace(QRegExp("\n"), "<br />");
+    if (!ui->textBrowser->toPlainText().isEmpty())
+      output = ui->textBrowser->toHtml() + output;
+    ui->textBrowser->setHtml(output);
+  }
 }
 
 /**
@@ -799,23 +821,23 @@ void MainWindow::clearPanel(bool notify = true) {
 }
 
 /**
- * @brief MainWindow::clearPanel because slots needs the same amout of params as
- * signals
+ * @brief MainWindow::clearPanel because slots needs the same amout of params
+ * 								 as signals
  */
 void MainWindow::clearPanel() { clearPanel(true); }
 
 /**
- * @brief MainWindow::processFinished process is finished, if there is another
- * one queued up to run, start it.
+ * @brief MainWindow::processFinished background process has finished
  * @param exitCode
  * @param exitStatus
+ * @param output    stdout from a process
+ * @param errout    stderr from a process
  */
-void MainWindow::processFinished(int exitCode,
-                                 QProcess::ExitStatus exitStatus) {
-  bool error = exitStatus != QProcess::NormalExit || exitCode > 0;
-  readyRead(true);
+void MainWindow::processFinished(int exitCode, const QString &output,
+                                 const QString &errout) {
+  readyRead(output, errout);
   enableUiElements(true);
-  if (!error && currentAction == EDIT)
+  if (exitCode == 0 && currentAction == EDIT)
     on_treeView_clicked(ui->treeView->currentIndex());
 }
 
@@ -869,8 +891,8 @@ void MainWindow::processError(QProcess::ProcessError error) {
   ui->textBrowser->setText(errorString);
   //    TODO(bezet): this probably shall be done in finished handler(I guess it
   //    finishes even on error)
-  if (pass->state() == QProcess::NotRunning)
-    enableUiElements(true);
+  // if (pass->state() == QProcess::NotRunning)
+  enableUiElements(true);
 }
 
 /**
@@ -901,7 +923,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
-  qDebug() << "on_lineEdit_returnPressed";
+  dbg() << "on_lineEdit_returnPressed";
   selectFirstFile();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
@@ -1201,7 +1223,7 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  // qDebug() << profiles.size();
+  // dbg()<< profiles.size();
   if (QtPassSettings::getProfiles().isEmpty()) {
     ui->profileBox->hide();
   } else {
@@ -1248,16 +1270,16 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
  */
 void MainWindow::initTrayIcon() {
   if (tray != NULL) {
-    qDebug() << "Creating tray icon again?";
+    dbg() << "Creating tray icon again?";
     return;
   }
   if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
     // Setup tray icon
     this->tray = new TrayIcon(this);
     if (tray == NULL)
-      qDebug() << "Allocating tray icon failed.";
+      dbg() << "Allocating tray icon failed.";
   } else {
-    qDebug() << "No tray icon for this OS possibly also not show options?";
+    dbg() << "No tray icon for this OS possibly also not show options?";
   }
 }
 
@@ -1266,7 +1288,7 @@ void MainWindow::initTrayIcon() {
  */
 void MainWindow::destroyTrayIcon() {
   if (tray == NULL) {
-    qDebug() << "Destroy non existing tray icon?";
+    dbg() << "Destroy non existing tray icon?";
     return;
   }
   delete this->tray;
@@ -1411,9 +1433,8 @@ void MainWindow::addFolder() {
   if (!ok || newdir.isEmpty())
     return;
   newdir.prepend(dir);
-  // qDebug() << newdir;
+  // dbg()<< newdir;
   QDir().mkdir(newdir);
-  // TODO(annejan) add to git?
 }
 
 /**
@@ -1422,9 +1443,7 @@ void MainWindow::addFolder() {
  */
 void MainWindow::editPassword() {
   if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
-    on_updateButton_clicked();
-  pass->waitFor(30);
-  pass->waitForProcess();
+    on_updateButton_clicked(true);
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
@@ -1432,7 +1451,7 @@ void MainWindow::editPassword() {
       getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
   if (!file.isEmpty()) {
     currentAction = GPG;
-    if (pass->Show(file, true) == QProcess::NormalExit)
+    if (pass->Show_b(file) == 0)
       on_editButton_clicked();
   }
 }

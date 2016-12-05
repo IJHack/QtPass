@@ -1,4 +1,5 @@
 #include "singleapplication.h"
+#include "debughelper.h"
 #include <QLocalSocket>
 
 /**
@@ -18,7 +19,7 @@ SingleApplication::SingleApplication(int &argc, char *argv[],
     _isRunning = false;
     // create shared memory.
     if (!sharedMemory.create(1)) {
-      qDebug("Unable to create single instance.");
+      dbg() << "Unable to create single instance.";
       return;
     }
     // create local server and listen to incomming messages from other
@@ -39,7 +40,7 @@ SingleApplication::SingleApplication(int &argc, char *argv[],
 void SingleApplication::receiveMessage() {
   QLocalSocket *localSocket = localServer->nextPendingConnection();
   if (!localSocket->waitForReadyRead(timeout)) {
-    qDebug() << localSocket->errorString().toLatin1();
+    dbg() << localSocket->errorString().toLatin1();
     return;
   }
   QByteArray byteArray = localSocket->readAll();
@@ -68,12 +69,12 @@ bool SingleApplication::sendMessage(const QString &message) {
   QLocalSocket localSocket(this);
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!localSocket.waitForConnected(timeout)) {
-    qDebug() << localSocket.errorString().toLatin1();
+    dbg() << localSocket.errorString().toLatin1();
     return false;
   }
   localSocket.write(message.toUtf8());
   if (!localSocket.waitForBytesWritten(timeout)) {
-    qDebug() << localSocket.errorString().toLatin1();
+    dbg() << localSocket.errorString().toLatin1();
     return false;
   }
   localSocket.disconnectFromServer();

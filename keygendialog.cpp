@@ -1,7 +1,7 @@
 #include "keygendialog.h"
 #include "qprogressindicator.h"
 #include "ui_keygendialog.h"
-#include <QDebug>
+#include "debughelper.h"
 #include <QMessageBox>
 
 /**

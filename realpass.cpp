@@ -7,55 +7,88 @@ RealPass::RealPass() {}
  * @brief RealPass::executePass easy wrapper for running pass
  * @param args
  */
-void RealPass::executePass(QString args, QString input) {
-  executeWrapper(QtPassSettings::getPassExecutable(), args, input);
+void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
+                           bool readStdout, bool readStderr) {
+  exec.execute(id, QtPassSettings::getPassExecutable(), args, input, readStdout,
+               readStderr);
 }
 
 /**
- * @brief RealPass::GitInit git init wrapper
+ * @brief RealPass::executePass easy wrapper for running pass
+ * @param args
  */
-void RealPass::GitInit() { executePass("git init"); }
+void RealPass::executePass(PROCESS id, const QStringList &args, bool readStdout,
+                           bool readStderr) {
+  exec.execute(id, QtPassSettings::getPassExecutable(), args, QString(),
+               readStdout, readStderr);
+}
 
 /**
- * @brief RealPass::GitPull git init wrapper
+ * @brief RealPass::GitInit pass git init wrapper
  */
-void RealPass::GitPull() { executePass("git pull"); }
+void RealPass::GitInit() { executePass(GIT_INIT, {"git", "init"}); }
 
 /**
- * @brief RealPass::GitPush git init wrapper
+ * @brief RealPass::GitInit pass git pull wrapper which blocks until process
+ *                          finishes
  */
-void RealPass::GitPush() { executePass("git push"); }
+void RealPass::GitPull_b() {
+  exec.executeBlocking(QtPassSettings::getPassExecutable(), {"git", "pull"});
+}
 
 /**
- * @brief RealPass::Show git init wrapper
+ * @brief RealPass::GitPull pass git pull wrapper
+ */
+void RealPass::GitPull() { executePass(GIT_PULL, {"git", "pull"}); }
+
+/**
+ * @brief RealPass::GitPush pass git push wrapper
+ */
+void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
+
+/**
+ * @brief RealPass::Show pass show
  *
  * @param file      file to decrypt
- * @param block     wheater to wait for decryption process to finish
  *
- * @return  if block is set, returns exit status of internal decryption process
+ * @return  if block is set, returns exit status of internal decryption
+ * process
  *          otherwise returns QProcess::NormalExit
  */
-QProcess::ExitStatus RealPass::Show(QString file, bool block) {
-  executePass("show \"" + file + '"');
-  if (block)
-    return waitForProcess();
-  return QProcess::NormalExit;
+void RealPass::Show(QString file) {
+  executePass(PASS_SHOW, {"show", file}, true);
 }
 
 /**
- * @brief RealPass::Insert git init wrapper
+ * @brief RealPass::Show_b pass show
+ *
+ * @param file      file to decrypt
+ *
+ * @return  if block is set, returns exit status of internal decryption
+ * process
+ *          otherwise returns QProcess::NormalExit
+ */
+int RealPass::Show_b(QString file) {
+  return exec.executeBlocking(QtPassSettings::getPassExecutable(),
+                              {"show", file});
+}
+
+/**
+ * @brief RealPass::Insert pass insert
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
-  executePass(QString("insert ") + (overwrite ? "-f " : "") + "-m \"" + file +
-                  '"',
-              newValue);
+  QStringList args = {"insert", "-m"};
+  if (overwrite)
+    args.append("-f");
+  args.append(file);
+  executePass(PASS_INSERT, args, newValue);
 }
 
 /**
- * @brief RealPass::Remove git init wrapper
+ * @brief RealPass::Remove pass remove wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
-  executePass(QString("rm ") + (isDir ? "-rf " : "-f ") + '"' + file + '"');
+  executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
 }
 
 /**
@@ -65,16 +98,15 @@ void RealPass::Remove(QString file, bool isDir) {
  * @param users list of users with ability to decrypt new password-store
  */
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
-  QString gpgIds = "";
-  foreach (const UserInfo &user, users) {
-    if (user.enabled) {
-      gpgIds += user.key_id + " ";
-    }
-  }
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
   QString dirWithoutPassdir =
       path.remove(0, QtPassSettings::getPassStore().size());
-  executePass("init --path=" + dirWithoutPassdir + " " + gpgIds);
+  QStringList args = {"init", "--path=" + dirWithoutPassdir};
+  foreach (const UserInfo &user, users) {
+    if (user.enabled)
+      args.append(user.key_id);
+  }
+  executePass(PASS_INIT, args);
 }
