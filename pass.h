@@ -50,7 +50,6 @@ public:
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
-  void resetPasswordStoreDir();
   void updateEnv();
   //  TODO(bezet): those are probably temporarly here
   static QStringList getRecipientList(QString for_file);

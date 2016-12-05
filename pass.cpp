@@ -153,25 +153,6 @@ void Pass::updateEnv() {
 }
 
 /**
- * @brief Pass::resetPasswordStoreDir   probably temporary helper
- */
-void Pass::resetPasswordStoreDir() {
-  // dbg()<< env;
-  QStringList store = env.filter("PASSWORD_STORE_DIR");
-  // put PASSWORD_STORE_DIR in env
-  if (store.isEmpty()) {
-    // dbg()<< "Added
-    // PASSWORD_STORE_DIR";
-    env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
-  } else {
-    // dbg()<< "Update
-    // PASSWORD_STORE_DIR";
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
-                                            QtPassSettings::getPassStore());
-  }
-}
-
-/**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents

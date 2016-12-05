@@ -1253,7 +1253,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
-  pass->resetPasswordStoreDir();
+  pass->updateEnv();
 
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
