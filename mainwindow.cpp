@@ -533,9 +533,11 @@ void MainWindow::on_updateButton_clicked(bool block) {
  * @brief MainWindow::on_pushButton_clicked do a git push
  */
 void MainWindow::on_pushButton_clicked() {
-  ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-  currentAction = GIT;
-  pass->GitPush();
+  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
+    currentAction = GIT;
+    pass->GitPush();
+  }
 }
 
 /**
@@ -988,8 +990,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   currentAction = EDIT;
   pass->Insert(file, newValue, overwrite);
 
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+  on_pushButton_clicked();
 }
 
 /**
@@ -1054,9 +1055,8 @@ void MainWindow::on_deleteButton_clicked() {
 
   currentAction = REMOVE;
   pass->Remove(file, isDir);
-  //  TODO(bezet): hide inside interface?
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+
+  on_pushButton_clicked();
 
   lastDecrypt = "";
 }
@@ -1147,8 +1147,7 @@ void MainWindow::on_usersButton_clicked() {
 
   pass->Init(dir, users);
 
-  if (QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+  on_pushButton_clicked();
 }
 
 /**
