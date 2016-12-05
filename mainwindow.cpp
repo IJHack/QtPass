@@ -533,9 +533,11 @@ void MainWindow::on_updateButton_clicked(bool block) {
  * @brief MainWindow::on_pushButton_clicked do a git push
  */
 void MainWindow::on_pushButton_clicked() {
-  ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-  currentAction = GIT;
-  pass->GitPush();
+  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
+    currentAction = GIT;
+    pass->GitPush();
+  }
 }
 
 /**
@@ -586,9 +588,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
   clippedText = "";
-  QString file = getFile(index, QtPassSettings::isUsePass());
-  QFileInfo fileinfo =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
@@ -611,7 +611,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
   QString file = "";
 
   if (fileOrFolder.isFile()) {
-    QString file = getFile(index, QtPassSettings::isUsePass());
+    QString file = getFile(index, true);
     if (file.isEmpty()) {
       QMessageBox::critical(
           this, tr("Can not edit"),
@@ -990,8 +990,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
   currentAction = EDIT;
   pass->Insert(file, newValue, overwrite);
 
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+  on_pushButton_clicked();
 }
 
 /**
@@ -1016,8 +1015,7 @@ void MainWindow::on_addButton_clicked() {
   //    return;
   //  }
   bool ok;
-  QString dir =
-      getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString dir = getDir(ui->treeView->currentIndex(), true);
   QString file = QInputDialog::getText(
       this, tr("New file"),
       tr("New password file: \n(Will be placed in %1 )")
@@ -1041,9 +1039,9 @@ void MainWindow::on_deleteButton_clicked() {
   bool isDir = false;
 
   if (fileOrFolder.isFile()) {
-    file = getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    file = getDir(ui->treeView->currentIndex(), true);
     isDir = true;
   }
 
@@ -1057,9 +1055,8 @@ void MainWindow::on_deleteButton_clicked() {
 
   currentAction = REMOVE;
   pass->Remove(file, isDir);
-  //  TODO(bezet): hide inside interface?
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+
+  on_pushButton_clicked();
 
   lastDecrypt = "";
 }
@@ -1068,8 +1065,7 @@ void MainWindow::on_deleteButton_clicked() {
  * @brief MainWindow::on_editButton_clicked try and edit (selected) password.
  */
 void MainWindow::on_editButton_clicked() {
-  QString file =
-      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file = getFile(ui->treeView->currentIndex(), true);
   if (file.isEmpty()) {
     QMessageBox::critical(
         this, tr("Can not edit"),
@@ -1151,8 +1147,7 @@ void MainWindow::on_usersButton_clicked() {
 
   pass->Init(dir, users);
 
-  if (QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+  on_pushButton_clicked();
 }
 
 /**
@@ -1258,7 +1253,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
-  pass->resetPasswordStoreDir();
+  pass->updateEnv();
 
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
@@ -1447,8 +1442,7 @@ void MainWindow::editPassword() {
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
-  QString file =
-      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file = getFile(ui->treeView->currentIndex(), true);
   if (!file.isEmpty()) {
     currentAction = GPG;
     if (pass->Show_b(file) == 0)

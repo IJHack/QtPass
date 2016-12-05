@@ -55,8 +55,7 @@ void ImitatePass::GitPush() {
  * @brief ImitatePass::Show shows content of file
  */
 void ImitatePass::Show(QString file) {
-  //  TODO(bezet): apparently not yet needed
-  //  file += ".gpg";
+  file = QtPassSettings::getPassStore() + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                       "--batch", "--use-agent", file};
   executeWrapper(PASS_SHOW, QtPassSettings::getGpgExecutable(), args);
@@ -68,6 +67,7 @@ void ImitatePass::Show(QString file) {
  * @returns process exitCode
  */
 int ImitatePass::Show_b(QString file) {
+  file = QtPassSettings::getPassStore() + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                       "--batch", "--use-agent", file};
   return exec.executeBlocking(QtPassSettings::getGpgExecutable(), args);
@@ -81,8 +81,7 @@ int ImitatePass::Show_b(QString file) {
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
-  file += ".gpg";
-  //  TODO(bezet): getRecipientString is in MainWindow for now - fix this ;)
+  file = QtPassSettings::getPassStore() + file + ".gpg";
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
     //  TODO(bezet): probably throw here
@@ -122,6 +121,9 @@ void ImitatePass::GitCommit(const QString &file, const QString &msg) {
  * @brief ImitatePass::Remove git init wrapper
  */
 void ImitatePass::Remove(QString file, bool isDir) {
+  file = QtPassSettings::getPassStore() + file;
+  if (!isDir)
+    file += ".gpg";
   if (QtPassSettings::isUseGit()) {
     executeWrapper(GIT_RM, QtPassSettings::getGitExecutable(),
                    {"rm", (isDir ? "-rf" : "-f"), file});
