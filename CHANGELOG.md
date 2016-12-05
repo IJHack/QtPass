@@ -4,8 +4,18 @@
 
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.6...HEAD)
 
+**Fixed bugs:**
+
+- Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
+
+**Closed issues:**
+
+- Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
+- Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
+
 **Merged pull requests:**
 
+- Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 
 ## [v1.1.6](https://github.com/IJHack/qtpass/tree/v1.1.6) (2016-12-02)

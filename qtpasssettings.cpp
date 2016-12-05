@@ -196,7 +196,13 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
       getStringValue(SettingsConstants::passStore, defaultValue);
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
-  QDir().mkdir(returnValue);
+  if (!QDir(returnValue).exists()) {
+    QDir().mkdir(returnValue);
+  }
+  // ensure path ends in /
+  if (!returnValue.endsWith("/")) {
+    returnValue += "/";
+  }
   return returnValue;
 }
 
