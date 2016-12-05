@@ -586,9 +586,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
   clippedText = "";
-  QString file = getFile(index, QtPassSettings::isUsePass());
-  QFileInfo fileinfo =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
@@ -611,7 +609,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
   QString file = "";
 
   if (fileOrFolder.isFile()) {
-    QString file = getFile(index, QtPassSettings::isUsePass());
+    QString file = getFile(index, true);
     if (file.isEmpty()) {
       QMessageBox::critical(
           this, tr("Can not edit"),
@@ -1016,8 +1014,7 @@ void MainWindow::on_addButton_clicked() {
   //    return;
   //  }
   bool ok;
-  QString dir =
-      getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString dir = getDir(ui->treeView->currentIndex(), true);
   QString file = QInputDialog::getText(
       this, tr("New file"),
       tr("New password file: \n(Will be placed in %1 )")
@@ -1041,9 +1038,9 @@ void MainWindow::on_deleteButton_clicked() {
   bool isDir = false;
 
   if (fileOrFolder.isFile()) {
-    file = getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = getDir(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+    file = getDir(ui->treeView->currentIndex(), true);
     isDir = true;
   }
 
@@ -1068,8 +1065,7 @@ void MainWindow::on_deleteButton_clicked() {
  * @brief MainWindow::on_editButton_clicked try and edit (selected) password.
  */
 void MainWindow::on_editButton_clicked() {
-  QString file =
-      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file = getFile(ui->treeView->currentIndex(), true);
   if (file.isEmpty()) {
     QMessageBox::critical(
         this, tr("Can not edit"),
@@ -1447,8 +1443,7 @@ void MainWindow::editPassword() {
   // TODO(annejan) move to editbutton stuff possibly?
   currentDir = getDir(ui->treeView->currentIndex(), false);
   lastDecrypt = "Could not decrypt";
-  QString file =
-      getFile(ui->treeView->currentIndex(), QtPassSettings::isUsePass());
+  QString file = getFile(ui->treeView->currentIndex(), true);
   if (!file.isEmpty()) {
     currentAction = GPG;
     if (pass->Show_b(file) == 0)
