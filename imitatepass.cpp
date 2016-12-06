@@ -5,7 +5,7 @@
 
 /**
  * @brief ImitatePass::ImitatePass for situaions when pass is not available
- * we imitate the behavior of pass https://password-store.org/
+ * we imitate the behavior of pass https://www.passwordstore.org/
  */
 ImitatePass::ImitatePass() {}
 
