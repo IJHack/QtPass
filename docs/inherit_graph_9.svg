@@ -10,7 +10,7 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<g id="a_node1"><a xlink:href="class_settings_constants.html" target="_top" xlink:title="SettingsConstants">
+<g id="a_node1"><a xlink:href="class_settings_constants.html" target="_top" xlink:title="Table for the naming of configuration items. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-18.5 97.1572,-18.5 97.1572,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="48.5786" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsConstants</text>
 </a>

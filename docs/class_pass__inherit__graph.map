@@ -1,4 +1,4 @@
 <map id="Pass" name="Pass">
-<area shape="rect" id="node3" href="$class_imitate_pass.html" title="ImitatePass" alt="" coords="5,152,96,177"/>
-<area shape="rect" id="node4" href="$class_real_pass.html" title="RealPass" alt="" coords="121,152,199,177"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available. " alt="" coords="5,152,96,177"/>
+<area shape="rect" id="node4" href="$class_real_pass.html" title="Wrapper for executing pass to handle the password&#45;store. " alt="" coords="121,152,199,177"/>
 </map>

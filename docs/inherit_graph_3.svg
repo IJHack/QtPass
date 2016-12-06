@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="class_executor.html" target="_top" xlink:title="Executor">
+<g id="a_node2"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data. ">
 <polygon fill="none" stroke="black" points="88.6797,-55.5 88.6797,-73.5 144.143,-73.5 144.143,-55.5 88.6797,-55.5"/>
 <text text-anchor="middle" x="116.411" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor</text>
 </a>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node15 -->
 <g id="node3" class="node"><title>Node15</title>
-<g id="a_node3"><a xlink:href="class_pass.html" target="_top" xlink:title="Pass">
+<g id="a_node3"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
 <polygon fill="none" stroke="black" points="97.2954,-18.5 97.2954,-36.5 135.527,-36.5 135.527,-18.5 97.2954,-18.5"/>
 <text text-anchor="middle" x="116.411" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass</text>
 </a>
@@ -41,7 +41,7 @@
 </g>
 <!-- Node16 -->
 <g id="node4" class="node"><title>Node16</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="ImitatePass">
+<g id="a_node4"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available. ">
 <polygon fill="none" stroke="black" points="180.143,-37.5 180.143,-55.5 248.384,-55.5 248.384,-37.5 180.143,-37.5"/>
 <text text-anchor="middle" x="214.263" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
 </a>
@@ -54,7 +54,7 @@
 </g>
 <!-- Node17 -->
 <g id="node5" class="node"><title>Node17</title>
-<g id="a_node5"><a xlink:href="class_real_pass.html" target="_top" xlink:title="RealPass">
+<g id="a_node5"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store. ">
 <polygon fill="none" stroke="black" points="184.864,-0.5 184.864,-18.5 243.662,-18.5 243.662,-0.5 184.864,-0.5"/>
 <text text-anchor="middle" x="214.263" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass</text>
 </a>

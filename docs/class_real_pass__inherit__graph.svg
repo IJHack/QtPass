@@ -15,7 +15,7 @@
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Pass">
+<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
 <polygon fill="none" stroke="black" points="10.2832,-55.5 10.2832,-73.5 48.5146,-73.5 48.5146,-55.5 10.2832,-55.5"/>
 <text text-anchor="middle" x="29.3989" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass</text>
 </a>

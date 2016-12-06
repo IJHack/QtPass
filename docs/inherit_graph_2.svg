@@ -10,7 +10,7 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<g id="a_node1"><a xlink:href="class_enums.html" target="_top" xlink:title="Enums">
+<g id="a_node1"><a xlink:href="class_enums.html" target="_top" xlink:title="Enumerators for configuration items. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-18.5 47.123,-18.5 47.123,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="23.5615" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Enums</text>
 </a>

@@ -15,7 +15,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="ImitatePass">
+<g id="a_node3"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-18.5 68.2412,-18.5 68.2412,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="34.1206" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
 </a>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<g id="a_node4"><a xlink:href="class_real_pass.html" target="_top" xlink:title="RealPass">
+<g id="a_node4"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store. ">
 <polygon fill="none" stroke="black" points="86.7217,-0.5 86.7217,-18.5 145.52,-18.5 145.52,-0.5 86.7217,-0.5"/>
 <text text-anchor="middle" x="116.121" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass</text>
 </a>
