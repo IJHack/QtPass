@@ -1,4 +1,4 @@
 <map id="RealPass::RealPass" name="RealPass::RealPass">
-<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute" alt="" coords="250,5,378,31"/>
+<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="250,5,378,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="196,55,431,80"/>
 </map>

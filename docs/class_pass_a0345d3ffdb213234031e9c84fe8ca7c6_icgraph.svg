@@ -15,7 +15,7 @@
 </g>
 <!-- Node154 -->
 <g id="node2" class="node"><title>Node154</title>
-<g id="a_node2"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass">
+<g id="a_node2"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pas imitation. ">
 <polygon fill="none" stroke="black" points="189.803,-37.5 189.803,-55.5 255.822,-55.5 255.822,-37.5 189.803,-37.5"/>
 <text text-anchor="middle" x="222.812" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>

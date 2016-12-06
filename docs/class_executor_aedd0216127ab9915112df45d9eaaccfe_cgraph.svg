@@ -15,7 +15,7 @@
 </g>
 <!-- Node18 -->
 <g id="node2" class="node"><title>Node18</title>
-<g id="a_node2"><a xlink:href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" target="_top" xlink:title="Executor::execute">
+<g id="a_node2"><a xlink:href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" target="_top" xlink:title="Executor::execute execute an app. ">
 <polygon fill="none" stroke="black" points="132.044,-0.5 132.044,-18.5 228.088,-18.5 228.088,-0.5 132.044,-0.5"/>
 <text text-anchor="middle" x="180.066" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::execute</text>
 </a>

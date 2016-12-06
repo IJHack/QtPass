@@ -19,10 +19,10 @@
 <area shape="rect" id="node14" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="380,291,591,316"/>
 <area shape="rect" id="node15" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="377,340,594,365"/>
 <area shape="rect" id="node16" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="383,389,588,415"/>
-<area shape="rect" id="node17" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="396,501,575,527"/>
+<area shape="rect" id="node17" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="396,501,575,527"/>
 <area shape="rect" id="node18" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="396,439,576,477"/>
-<area shape="rect" id="node20" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute" alt="" coords="422,600,550,625"/>
+<area shape="rect" id="node20" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="422,600,550,625"/>
 <area shape="rect" id="node21" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="370,551,601,576"/>
 <area shape="rect" id="node24" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="649,701,849,727"/>
-<area shape="rect" id="node25" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment" alt="" coords="399,701,573,727"/>
+<area shape="rect" id="node25" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="399,701,573,727"/>
 </map>

@@ -15,7 +15,7 @@
 </g>
 <!-- Node46 -->
 <g id="node2" class="node"><title>Node46</title>
-<g id="a_node2"><a xlink:href="class_executor.html#a306776111c35153e55f932bc7bc44b5d" target="_top" xlink:title="Executor::executeBlocking">
+<g id="a_node2"><a xlink:href="class_executor.html#a306776111c35153e55f932bc7bc44b5d" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
 <polygon fill="none" stroke="black" points="157.615,-37.5 157.615,-55.5 291.457,-55.5 291.457,-37.5 157.615,-37.5"/>
 <text text-anchor="middle" x="224.536" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>

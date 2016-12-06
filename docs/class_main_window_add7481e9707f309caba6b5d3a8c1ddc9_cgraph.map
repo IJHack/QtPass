@@ -4,7 +4,7 @@
 <area shape="rect" id="node6" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="476,111,629,136"/>
 <area shape="rect" id="node8" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="229,199,383,224"/>
 <area shape="rect" id="node11" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="268,248,344,273"/>
-<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="463,5,642,31"/>
+<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="463,5,642,31"/>
 <area shape="rect" id="node4" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="437,55,668,80"/>
 <area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="716,111,916,136"/>
 <area shape="rect" id="node9" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="494,172,611,197"/>

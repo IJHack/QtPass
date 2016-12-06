@@ -61,7 +61,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node24 -->
 <g id="node2" class="node"><title>Node24</title>
-<g id="a_node2"><a xlink:href="class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" target="_top" xlink:title="Executor::executeBlocking">
+<g id="a_node2"><a xlink:href="class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor. ">
 <polygon fill="none" stroke="black" points="169.842,-273.5 169.842,-291.5 303.684,-291.5 303.684,-273.5 169.842,-273.5"/>
 <text text-anchor="middle" x="236.763" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>

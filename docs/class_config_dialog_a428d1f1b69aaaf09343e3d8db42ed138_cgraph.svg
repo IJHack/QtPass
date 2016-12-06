@@ -165,7 +165,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node36 -->
 <g id="node4" class="node"><title>Node36</title>
-<g id="a_node4"><a xlink:href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" target="_top" xlink:title="Executor::execute">
+<g id="a_node4"><a xlink:href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" target="_top" xlink:title="Executor::execute execute an app. ">
 <polygon fill="none" stroke="black" points="562.326,-242.5 562.326,-260.5 658.37,-260.5 658.37,-242.5 562.326,-242.5"/>
 <text text-anchor="middle" x="610.348" y="-248.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::execute</text>
 </a>
@@ -196,7 +196,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node44 -->
 <g id="node12" class="node"><title>Node44</title>
-<g id="a_node12"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment">
+<g id="a_node12"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment set environment variables for executor processes. ">
 <polygon fill="none" stroke="black" points="545.099,-0.5 545.099,-18.5 675.596,-18.5 675.596,-0.5 545.099,-0.5"/>
 <text text-anchor="middle" x="610.348" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::setEnvironment</text>
 </a>

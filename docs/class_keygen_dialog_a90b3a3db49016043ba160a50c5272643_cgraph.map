@@ -9,7 +9,7 @@
 <area shape="rect" id="node11" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="707,227,907,252"/>
 <area shape="rect" id="node12" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="745,328,868,353"/>
 <area shape="rect" id="node13" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="969,279,1170,304"/>
-<area shape="rect" id="node6" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute" alt="" coords="1006,5,1134,31"/>
+<area shape="rect" id="node6" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="1006,5,1134,31"/>
 <area shape="rect" id="node7" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="955,55,1185,80"/>
-<area shape="rect" id="node14" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment" alt="" coords="983,328,1157,353"/>
+<area shape="rect" id="node14" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="983,328,1157,353"/>
 </map>

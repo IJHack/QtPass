@@ -6,7 +6,7 @@
 <area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="176,331,358,356"/>
 <area shape="rect" id="node7" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="437,557,617,583"/>
 <area shape="rect" id="node8" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="451,405,604,431"/>
-<area shape="rect" id="node9" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="712,431,891,456"/>
+<area shape="rect" id="node9" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="712,431,891,456"/>
 <area shape="rect" id="node10" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="451,607,604,632"/>
 <area shape="rect" id="node11" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="701,557,902,583"/>
 <area shape="rect" id="node12" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="412,257,643,283"/>

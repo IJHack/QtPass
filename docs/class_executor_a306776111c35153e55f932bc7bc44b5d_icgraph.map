@@ -1,5 +1,5 @@
 <map id="Executor::executeBlocking" name="Executor::executeBlocking">
-<area shape="rect" id="node2" href="$class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" title="Executor::executeBlocking" alt="" coords="232,5,410,31"/>
+<area shape="rect" id="node2" href="$class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" title="Executor::executeBlocking blocking version of the executor. " alt="" coords="232,5,410,31"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="245,107,397,132"/>
 <area shape="rect" id="node4" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="463,56,645,81"/>
 <area shape="rect" id="node7" href="$class_imitate_pass.html#aecb6c2568d96ae09014ed29b04099076" title="ImitatePass::Show_b show content of file, blocking version. " alt="" coords="698,157,844,183"/>

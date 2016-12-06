@@ -4,6 +4,6 @@
 <area shape="rect" id="node4" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="170,104,382,129"/>
 <area shape="rect" id="node5" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="167,153,385,179"/>
 <area shape="rect" id="node6" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="173,203,379,228"/>
-<area shape="rect" id="node7" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="187,252,365,277"/>
+<area shape="rect" id="node7" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="187,252,365,277"/>
 <area shape="rect" id="node8" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="186,301,366,340"/>
 </map>

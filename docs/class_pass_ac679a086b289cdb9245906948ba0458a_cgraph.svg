@@ -28,7 +28,7 @@
 </g>
 <!-- Node164 -->
 <g id="node3" class="node"><title>Node164</title>
-<g id="a_node3"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment">
+<g id="a_node3"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment set environment variables for executor processes. ">
 <polygon fill="none" stroke="black" points="137.613,-0.5 137.613,-18.5 268.11,-18.5 268.11,-0.5 137.613,-0.5"/>
 <text text-anchor="middle" x="202.861" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::setEnvironment</text>
 </a>

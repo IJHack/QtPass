@@ -1,8 +1,8 @@
 <map id="Executor::starting" name="Executor::starting">
-<area shape="rect" id="node2" href="$class_executor.html#a19fdadaa749c44b889287879ecf5f315" title="Executor::Executor" alt="" coords="201,136,335,161"/>
-<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="178,185,357,211"/>
-<area shape="rect" id="node19" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass" alt="" coords="224,235,312,260"/>
-<area shape="rect" id="node4" href="$class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" title="Executor::executeBlocking" alt="" coords="405,5,583,31"/>
+<area shape="rect" id="node2" href="$class_executor.html#a19fdadaa749c44b889287879ecf5f315" title="Executor::Executor executes external applications. " alt="" coords="201,136,335,161"/>
+<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="178,185,357,211"/>
+<area shape="rect" id="node19" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pas imitation. " alt="" coords="224,235,312,260"/>
+<area shape="rect" id="node4" href="$class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" title="Executor::executeBlocking blocking version of the executor. " alt="" coords="405,5,583,31"/>
 <area shape="rect" id="node5" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="418,107,570,132"/>
 <area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="636,56,818,81"/>
 <area shape="rect" id="node9" href="$class_imitate_pass.html#aecb6c2568d96ae09014ed29b04099076" title="ImitatePass::Show_b show content of file, blocking version. " alt="" coords="871,157,1017,183"/>
