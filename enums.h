@@ -1,6 +1,10 @@
 #ifndef ENUMS_H
 #define ENUMS_H
 
+/*!
+    \class Enums
+    \brief Enumerators for configuration items
+*/
 class Enums {
 public:
   /**

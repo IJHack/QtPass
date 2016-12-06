@@ -15,6 +15,10 @@
 #include "enums.h"
 #include "mainwindow.h"
 
+/*!
+    \class QtPassSettings
+    \brief Singleton that stores qtpass' settings, saves and loads config
+*/
 class QtPassSettings {
 
 public:

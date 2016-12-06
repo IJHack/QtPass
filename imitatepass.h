@@ -3,6 +3,10 @@
 
 #include "pass.h"
 
+/*!
+    \class ImitatePass
+    \brief Imitates pass features when pass is not enabled or available
+*/
 class ImitatePass : public Pass {
   Q_OBJECT
 

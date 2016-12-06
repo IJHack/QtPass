@@ -4,6 +4,10 @@
 #include <QPushButton>
 #include <QWidget>
 
+/*!
+    \class QPushButtonWithClipboard
+    \brief Stylish widget to allow copying of password and account details
+*/
 class QPushButtonWithClipboard : public QPushButton {
   Q_OBJECT
 
