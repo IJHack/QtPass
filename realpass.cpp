@@ -5,6 +5,7 @@ RealPass::RealPass() {}
 
 /**
  * @brief RealPass::executePass easy wrapper for running pass
+ * https://password-store.org/
  * @param args
  */
 void RealPass::executePass(PROCESS id, const QStringList &args, QString input,

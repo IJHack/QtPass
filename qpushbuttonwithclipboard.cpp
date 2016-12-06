@@ -47,4 +47,8 @@ void QPushButtonWithClipboard::buttonClicked(bool) {
   emit clicked(textToCopy);
 }
 
+/**
+ * @brief QPushButtonWithClipboard::changeIconDefault change the icon back to
+ * the default copy icon
+ */
 void QPushButtonWithClipboard::changeIconDefault() { this->setIcon(iconEdit); }

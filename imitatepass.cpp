@@ -3,6 +3,10 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 
+/**
+ * @brief ImitatePass::ImitatePass for situaions when pass is not available
+ * we imitate the behavior of pass https://password-store.org/
+ */
 ImitatePass::ImitatePass() {}
 
 void ImitatePass::executeWrapper(int id, const QString &app,
@@ -11,6 +15,15 @@ void ImitatePass::executeWrapper(int id, const QString &app,
   executeWrapper(id, app, args, QString(), readStdout, readStderr);
 }
 
+/**
+ * @brief ImitatePass::executeWrapper wrap the Executor for ease of use
+ * @param id
+ * @param app
+ * @param args
+ * @param input
+ * @param readStdout
+ * @param readStderr
+ */
 void ImitatePass::executeWrapper(int id, const QString &app,
                                  const QStringList &args, QString input,
                                  bool readStdout, bool readStderr) {
@@ -112,6 +125,12 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
 }
 
+/**
+ * @brief ImitatePass::GitCommit commit a file to git with an appropriate commit
+ * message
+ * @param file
+ * @param msg
+ */
 void ImitatePass::GitCommit(const QString &file, const QString &msg) {
   executeWrapper(GIT_COMMIT, QtPassSettings::getGitExecutable(),
                  {"commit", "-m", msg, "--", file});
