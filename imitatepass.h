@@ -8,13 +8,24 @@ class ImitatePass : public Pass {
 
   bool removeDir(const QString &dirName);
 
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      bool readStdout = true, bool readStderr = true);
+
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      QString input, bool readStdout = true,
+                      bool readStderr = true);
+
+  void GitCommit(const QString &file, const QString &msg);
+
 public:
   ImitatePass();
   virtual ~ImitatePass() {}
   virtual void GitInit() Q_DECL_OVERRIDE;
   virtual void GitPull() Q_DECL_OVERRIDE;
+  virtual void GitPull_b() Q_DECL_OVERRIDE;
   virtual void GitPush() Q_DECL_OVERRIDE;
-  virtual QProcess::ExitStatus Show(QString file, bool block = false) Q_DECL_OVERRIDE;
+  virtual void Show(QString file) Q_DECL_OVERRIDE;
+  virtual int Show_b(QString file) Q_DECL_OVERRIDE;
   virtual void Insert(QString file, QString value,
                       bool overwrite = false) Q_DECL_OVERRIDE;
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;

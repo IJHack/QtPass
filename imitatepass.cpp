@@ -1,21 +1,30 @@
 #include "imitatepass.h"
+#include "debughelper.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 
 ImitatePass::ImitatePass() {}
 
+
 /**
  * @brief ImitatePass::GitInit git init wrapper
  */
 void ImitatePass::GitInit() {
-  executeGit("init \"" + QtPassSettings::getPassStore() + '"');
+  executeGit(GIT_INIT, {"init", QtPassSettings::getPassStore()});
 }
 
 /**
  * @brief ImitatePass::GitPull git init wrapper
  */
 void ImitatePass::GitPull() {
-  executeGit("pull");
+  executeGit(GIT_PULL,{"pull"});
+}
+
+/**
+ * @brief ImitatePass::GitPull_b git pull wrapper
+ */
+void ImitatePass::GitPull_b() {
+  exec.executeBlocking(QtPassSettings::getGitExecutable(), {"pull"});
 }
 
 /**
@@ -23,34 +32,43 @@ void ImitatePass::GitPull() {
  */
 void ImitatePass::GitPush() {
   if(QtPassSettings::isUseGit()){
-      executeGit("push");
+      executeGit(GIT_PUSH, {"push"});
   }
 }
 
 /**
- * @brief ImitatePass::Show git init wrapper
+ * @brief ImitatePass::Show shows content of file
  */
-QProcess::ExitStatus ImitatePass::Show(QString file, bool block) {
-  //  TODO(bezet): apparently not yet needed
-  //  file += ".gpg";
-  executeGpg("-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
-                     file + '"');
-  if (block)
-    return waitForProcess();
-  return QProcess::NormalExit;
+
+void ImitatePass::Show(QString file) {
+  file = QtPassSettings::getPassStore() + file + ".gpg";
+  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent", file};
+  executeGpg(PASS_SHOW, args);
 }
 
 /**
- * @brief ImitatePass::Insert git init wrapper
+ * @brief ImitatePass::Show_b show content of file, blocking version
+ *
+ * @returns process exitCode
+ */
+int ImitatePass::Show_b(QString file) {
+  file = QtPassSettings::getPassStore() + file + ".gpg";
+  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent", file};
+  return exec.executeBlocking(QtPassSettings::getGpgExecutable(), args);
+}
+
+/**
+ * @brief ImitatePass::Insert create new file with encrypted content
  *
  * @param file      file to be created
  * @param value     value to be stored in file
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
-  file += ".gpg";
-  //  TODO(bezet): getRecipientString is in MainWindow for now - fix this ;)
-  QString recipients = Pass::getRecipientString(file, " -r ");
+  file = QtPassSettings::getPassStore() + file + ".gpg";
+  QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
     //  TODO(bezet): probably throw here
     emit critical(tr("Can not edit"),
@@ -58,32 +76,43 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                      "file missing or invalid."));
     return;
   }
-  QString force(overwrite ? " --yes " : " ");
-  executeGpg(force + "--batch -eq --output \"" + file + "\" " + recipients +
-                     " -",
+  QStringList args = {"--batch", "-eq", "--output", file};
+  for (auto &r : recipients) {
+    args.append("-r");
+    args.append(r);
+  };
+  if (overwrite)
+    args.append("--yes");
+  args.append("-");
+  executeGpg(PASS_INSERT, args,
                  newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
     if (!overwrite)
-      executeGit("add \"" + file + '"');
+      executeGit(GIT_ADD, {"add", file});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
     path.replace(QRegExp("\\.gpg$"), "");
-    executeGit("commit \"" + file + "\" -m \"" +
-                       (overwrite ? "Edit" : "Add") + " for " + path +
-                       " using QtPass.\"");
+    QString msg = QString(overwrite ? "Edit" : "\"Add") + " for " + path +
+                  " using QtPass.";
+    GitCommit(file, msg);
   }
+}
+
+void ImitatePass::GitCommit(const QString &file, const QString &msg) {
+  executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", file});
 }
 
 /**
  * @brief ImitatePass::Remove git init wrapper
  */
 void ImitatePass::Remove(QString file, bool isDir) {
+  file = QtPassSettings::getPassStore() + file;
+  if (!isDir)
+    file += ".gpg";
   if (QtPassSettings::isUseGit()) {
-    executeGit(QString("rm ") + (isDir ? "-rf " : "-f ") + '"' + file +
-                       '"');
+    executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), file});
     //  TODO(bezet): commit message used to have pass-like file name inside(ie.
     //  getFile(file, true)
-    executeGit("commit \"" + file + "\" -m \"Remove for " + file +
-                       " using QtPass.\"");
+    GitCommit(file, "Remove for " + file + " using QtPass.");
   } else {
     if (isDir) {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
@@ -101,7 +130,8 @@ void ImitatePass::Remove(QString file, bool isDir) {
  * @brief ImitatePass::Init initialize pass repository
  *
  * @param path      path in which new password-store will be created
- * @param users     list of users who shall be able to decrypt passwords in path
+ * @param users     list of users who shall be able to decrypt passwords in
+ * path
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   QString gpgIdFile = path + ".gpg-id";
@@ -136,11 +166,10 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
       !QtPassSettings::getGitExecutable().isEmpty()) {
     if (addFile)
-      executeGit("add \"" + gpgIdFile + '"');
+      executeGit(GIT_ADD, {"add", gpgIdFile});
     QString path = gpgIdFile;
     path.replace(QRegExp("\\.gpg$"), "");
-    executeGit("commit \"" + gpgIdFile + "\" -m \"Added " + path +
-                       " using QtPass.\"");
+    GitCommit(gpgIdFile, "Added " + path + " using QtPass.");
   }
   reencryptPath(path);
 }
@@ -185,10 +214,8 @@ void ImitatePass::reencryptPath(QString dir) {
   if (QtPassSettings::isAutoPull()) {
     //  TODO(bezet): move statuses inside actions?
     emit statusMsg(tr("Updating password-store"), 2000);
-    GitPull();
+    GitPull_b();
   }
-  waitFor(50);
-  process.waitForFinished();
   QDir currentDir;
   QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
                         QDirIterator::Subdirectories);
@@ -199,15 +226,14 @@ void ImitatePass::reencryptPath(QString dir) {
       gpgId = getRecipientList(fileName);
       gpgId.sort();
     }
-    process.waitForFinished();
-    executeGpg(    "-v --no-secmem-warning "
-                   "--no-permission-warning --list-only "
-                   "--keyid-format long " +
-                       fileName);
-    process.waitForFinished(3000);
+    //  TODO(bezet): enable --with-colons for better future-proofness?
+    QStringList args = {
+        "-v",          "--no-secmem-warning", "--no-permission-warning",
+        "--list-only", "--keyid-format=long", fileName};
+    QString keys, err;
+    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys, &err);
     QStringList actualKeys;
-    QString keys =
-        process.readAllStandardOutput() + process.readAllStandardError();
+    keys += err;
     QStringList key = keys.split("\n");
     QListIterator<QString> itr(key);
     while (itr.hasNext()) {
@@ -222,14 +248,14 @@ void ImitatePass::reencryptPath(QString dir) {
     }
     actualKeys.sort();
     if (actualKeys != gpgId) {
-      // qDebug() << actualKeys << gpgId << getRecipientList(fileName);
-      qDebug() << "reencrypt " << fileName << " for " << gpgId;
+      // dbg()<< actualKeys << gpgId << getRecipientList(fileName);
+      dbg() << "reencrypt " << fileName << " for " << gpgId;
       QString local_lastDecrypt = "Could not decrypt";
       emit lastDecrypt(local_lastDecrypt);
-      executeGpg("-d --quiet --yes --no-encrypt-to --batch --use-agent \"" +
-                         fileName + '"');
-      process.waitForFinished(30000); // long wait (passphrase stuff)
-      local_lastDecrypt = process.readAllStandardOutput();
+      args = QStringList{"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+                         "--batch", "--use-agent", fileName};
+      exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
+                           &local_lastDecrypt);
       emit lastDecrypt(local_lastDecrypt);
 
       if (!local_lastDecrypt.isEmpty() &&
@@ -238,31 +264,35 @@ void ImitatePass::reencryptPath(QString dir) {
           local_lastDecrypt += "\n";
 
         emit lastDecrypt(local_lastDecrypt);
-        QString recipients = getRecipientString(fileName, " -r ");
+        QStringList recipients = Pass::getRecipientList(fileName);
         if (recipients.isEmpty()) {
           emit critical(tr("Can not edit"),
                         tr("Could not read encryption key to use, .gpg-id "
                            "file missing or invalid."));
           return;
         }
-        executeGpg(
-                       "--yes --batch -eq --output \"" + fileName + "\" " +
-                           recipients + " -",
-                       local_lastDecrypt);
-        process.waitForFinished(3000);
+        args = QStringList{"--yes", "--batch", "-eq", "--output", fileName};
+        for (auto &i : recipients) {
+          args.append("-r");
+          args.append(i);
+        }
+        args.append("-");
+        exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
+                             local_lastDecrypt);
 
         if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-          executeGit("add \"" + fileName + '"');
+          exec.executeBlocking(QtPassSettings::getGitExecutable(),
+                               {"add", fileName});
           QString path =
               QDir(QtPassSettings::getPassStore()).relativeFilePath(fileName);
           path.replace(QRegExp("\\.gpg$"), "");
-          executeGit("commit \"" + fileName + "\" -m \"" + "Edit for " +
-                             path + " using QtPass.\"");
-          process.waitForFinished(3000);
+          exec.executeBlocking(QtPassSettings::getGitExecutable(),
+                               {"commit", fileName, "-m",
+                                "Edit for " + path + " using QtPass."});
         }
 
       } else {
-        qDebug() << "Decrypt error on re-encrypt";
+        dbg() << "Decrypt error on re-encrypt";
       }
     }
   }
@@ -276,20 +306,11 @@ void ImitatePass::reencryptPath(QString dir) {
 void ImitatePass::Move(const QString src, const QString dest, const bool force)
 {
     if (QtPassSettings::isUseGit()) {
-      QString args = QString("mv %1 %2 %3");
-      // force mode?
-      if(force){
-          args = args.arg("-f");
-      }else{
-          args = args.arg("");
-      }
-      args = args.arg(src).arg(dest);
-      executeGit(args);
+      executeGit(GIT_MOVE, {"mv", force ? "-f" : "", src, dest});
 
-      QString args1=QString("commit -m \"moved from %1 to %2 using QTPass.\"");
-      args1= args1.arg(src).arg(dest);
-      executeGit(args1);
-
+      QString message=QString("moved from %1 to %2 using QTPass.");
+      message= message.arg(src).arg(dest);
+      GitCommit("", message);
       if(QtPassSettings::isAutoPush()){
           GitPush();
       }
@@ -313,23 +334,14 @@ void ImitatePass::Move(const QString src, const QString dest, const bool force)
 void ImitatePass::Copy(const QString src, const QString dest, const bool force)
 {
     if (QtPassSettings::isUseGit()) {
-      QString args = QString("cp %1 %2 %3");
-      // do we need force mode?
-      if(force){
-          args = args.arg("-f");
-      }else{
-          args = args.arg("");
-      }
-      args = args.arg(src).arg(dest);
-      executeGit(args);
+        executeGit(GIT_COPY, {"cp", force ? "-f" : "", src, dest});
 
-      QString args1=QString("commit -m \"copied from %1 to %2 using QTPass.\"");
-      args1= args1.arg(src).arg(dest);
-      executeGit(args1);
-
-      if(QtPassSettings::isAutoPush()){
-          GitPush();
-      }
+        QString message=QString("copied from %1 to %2 using QTPass.");
+        message= message.arg(src).arg(dest);
+        GitCommit("", message);
+        if(QtPassSettings::isAutoPush()){
+            GitPush();
+        }
 
     } else {
         QDir qDir;

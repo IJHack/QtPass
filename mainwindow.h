@@ -65,13 +65,13 @@ public slots:
   void deselect();
 
 private slots:
-  void on_updateButton_clicked();
+  void on_updateButton_clicked(bool block = false);
   void on_pushButton_clicked();
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
   void on_configButton_clicked();
-  void readyRead(bool finished);
-  void processFinished(int, QProcess::ExitStatus);
+  void readyRead(const QString &, const QString &);
+  void processFinished(int, const QString &, const QString &);
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify);
@@ -97,6 +97,9 @@ private slots:
   void endReencryptPath();
   void critical(QString, QString);
   void setLastDecrypt(QString);
+  void passShowHandler(const QString &);
+
+  void processErrorExit(const QString &);
 
 private:
   QAction *actionAddPassword;
@@ -114,7 +117,6 @@ private:
   QTimer clearClipboardTimer;
   actionType currentAction;
   QString lastDecrypt;
-  QQueue<execQueueItem> *execQueue;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
@@ -137,6 +139,8 @@ private:
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
+  void DisplayInTextBrowser(QString toShow, QString prefix = QString(),
+                            QString postfix = QString());
 };
 
 #endif // MAINWINDOW_H_

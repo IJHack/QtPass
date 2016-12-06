@@ -1,4 +1,5 @@
 #include "passworddialog.h"
+#include "debughelper.h"
 #include "ui_passworddialog.h"
 #include "qtpasssettings.h"
 #include <QDebug>

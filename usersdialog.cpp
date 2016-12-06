@@ -1,6 +1,6 @@
 #include "usersdialog.h"
+#include "debughelper.h"
 #include "ui_usersdialog.h"
-#include <QDebug>
 #include <QRegExp>
 
 /**

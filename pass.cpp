@@ -1,19 +1,43 @@
 #include "pass.h"
+#include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QTextCodec>
 
 
-Pass::Pass() : wrapperRunning(false) {
+Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
+  connect(&exec, SIGNAL(finished(int, const QString &, const QString &)), this,
+          SIGNAL(finished(int, const QString &, const QString &)));
+  // TODO(bezet): stop using process
+  // connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
+  //        SIGNAL(error(QProcess::ProcessError)));
 
+  connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+}
+
+void Pass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, bool readStdout,
+                                 bool readStderr) {
+  executeWrapper(id, app, args, QString(), readStdout, readStderr);
+}
+
+void Pass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, QString input,
+                                 bool readStdout, bool readStderr) {
+  QString d;
+  for (auto &i : args)
+    d += " " + i;
+  dbg() << app << d;
+  exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
+               readStderr);
 }
 
 void Pass::init(){
-    connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
+    connect(&exec, SIGNAL(finished(int, QProcess::ExitStatus)), this,
             SIGNAL(finished(int, QProcess::ExitStatus)));
-    connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
+    connect(&exec, SIGNAL(error(QProcess::ProcessError)), this,
             SIGNAL(error(QProcess::ProcessError)));
-    connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)), this,
+    connect(&exec, SIGNAL(finished(int, QProcess::ExitStatus)), this,
             SLOT(processFinished(int, QProcess::ExitStatus)));
 
     env = QProcess::systemEnvironment();
@@ -34,11 +58,6 @@ void Pass::init(){
     }
 }
 
-QProcess::ExitStatus Pass::waitForProcess() {
-  process.waitForFinished(30000);
-  return process.exitStatus();
-}
-
 /**
  * @brief Pass::Generate use either pwgen or internal password
  * generator
@@ -50,22 +69,29 @@ QProcess::ExitStatus Pass::waitForProcess() {
 QString Pass::Generate(int length, const QString &charset) {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
-    waitFor(2);
     // --secure goes first as it overrides --no-* otherwise
-    QString args =
-        QString("-1 ") + (QtPassSettings::isLessRandom() ? "" : "--secure ") +
-        (QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
-                                           : "--capitalize ") +
-        (QtPassSettings::isAvoidNumbers() ? "--no-numerals " : "--numerals ") +
-        (QtPassSettings::isUseSymbols() ? "--symbols " : "") +
-        QString::number(length);
-    executeWrapper(QtPassSettings::getPwgenExecutable(), args);
-    process.waitForFinished(1000);
-    if (process.exitStatus() == QProcess::NormalExit)
-      passwd =
-          QString(process.readAllStandardOutput()).remove(QRegExp("[\\n\\r]"));
-    else
-      qDebug() << "pwgen fail";
+    QStringList args;
+    args.append("-1");
+    if (QtPassSettings::isLessRandom())
+      args.append("--secure ");
+    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
+                                                  : "--capitalize ");
+    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals "
+                                                 : "--numerals ");
+    if (QtPassSettings::isUseSymbols())
+      args.append("--symbols ");
+    args.append(QString::number(length));
+    QString p_out;
+    //  TODO(bezet): try-catch here(2 statuses to merge o_O)
+    if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
+                             &passwd) == 0)
+      passwd.remove(QRegExp("[\\n\\r]"));
+    else {
+      passwd.clear();
+      qDebug() << __FILE__ << ":" << __LINE__ << "\t"
+               << "pwgen fail";
+      //    TODO(bezet): emit critical ?
+    }
   } else {
     if (charset.length() > 0) {
       for (int i = 0; i < length; ++i) {
@@ -85,12 +111,12 @@ QString Pass::Generate(int length, const QString &charset) {
 
 /**
  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
- * @param batch
+ * @param batch     GnuPG style configuration string
  * @param keygenWindow
  */
 void Pass::GenerateGPGKeys(QString batch) {
-  executeWrapper(QtPassSettings::getGpgExecutable(),
-                 "--gen-key --no-tty --batch", batch);
+  exec.execute(PASSWD_GENERATE, QtPassSettings::getGpgExecutable(),
+               {"--gen-key", "--no-tty", "--batch"}, batch);
   // TODO check status / error messages
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
@@ -102,19 +128,16 @@ void Pass::GenerateGPGKeys(QString batch) {
  * @return QList<UserInfo> users
  */
 QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
-  waitFor(5);
   QList<UserInfo> users;
-  QString listopt = secret ? "--list-secret-keys " : "--list-keys ";
-  executeWrapper(QtPassSettings::getGpgExecutable(),
-                 "--no-tty --with-colons " + listopt + keystring);
-  process.waitForFinished(2000);
-  if (process.exitStatus() != QProcess::NormalExit)
+  QStringList args = {"--no-tty", "--with-colons"};
+  args.append(secret ? "--list-secret-keys" : "--list-keys");
+  if (!keystring.isEmpty())
+    args.append(keystring);
+  QString p_out;
+  if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
+      0)
     return users;
-  QByteArray processOutBytes = process.readAllStandardOutput();
-  QTextCodec *codec = QTextCodec::codecForLocale();
-  QString processOutString = codec->toUnicode(processOutBytes);
-  QStringList keys = QString(processOutString)
-                         .split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+  QStringList keys = p_out.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
   UserInfo current_user;
   foreach (QString key, keys) {
     QStringList props = key.split(':');
@@ -139,97 +162,6 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
 }
 
 /**
- * @brief Pass::waitFor wait until process.atEnd and execQueue.isEmpty
- * or timeout after x-seconds
- *
- * @param seconds
- */
-void Pass::waitFor(uint seconds) {
-  QDateTime current = QDateTime::currentDateTime();
-  uint stop = current.toTime_t() + seconds;
-  while (!process.atEnd() || !execQueue.isEmpty()) {
-    current = QDateTime::currentDateTime();
-    if (stop < current.toTime_t()) {
-      emit critical(tr("Timed out"),
-                    tr("Can't start process, previous one is still running!"));
-    }
-    Util::qSleep(100);
-  }
-}
-
-/**
- * @brief Pass::processFinished process is finished, if there is another
- *        one queued up to run, start it.
- * @param exitCode
- * @param exitStatus
- */
-void Pass::processFinished(int, QProcess::ExitStatus) {
-  wrapperRunning = false;
-  if (!execQueue.isEmpty()) {
-    execQueueItem item = execQueue.dequeue();
-    executeWrapper(item.app, item.args, item.input);
-  }
-}
-
-/**
- * Temporary wrapper to ease refactoring, don't get used to it ;)
- */
-QProcess::ProcessState Pass::state() { return process.state(); }
-
-/**
- * @brief Pass::executeWrapper run an application, queue when needed.
- * @param app path to application to run
- * @param args required arguements
- * @param input optional input
- */
-void Pass::executeWrapper(QString app, QString args, QString input) {
-  // qDebug() << app + " " + args;
-  // Happens a lot if e.g. git binary is not set.
-  // This will result in bogus "QProcess::FailedToStart" messages,
-  // also hiding legitimate errors from the gpg commands.
-  if (app.isEmpty()) {
-    qDebug() << "Trying to execute nothing..";
-    return;
-  }
-  // Convert to absolute path, just in case
-  app = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
-  if (wrapperRunning) {
-    execQueueItem item;
-    item.app = app;
-    item.args = args;
-    item.input = input;
-
-    execQueue.enqueue(item);
-    qDebug() << item.app + "," + item.args + "," + item.input;
-    return;
-  }
-  wrapperRunning = true;
-  process.setWorkingDirectory(QtPassSettings::getPassStore());
-  process.setEnvironment(env);
-  emit startingExecuteWrapper();
-  process.start('"' + app + "\" " + args);
-  if (!input.isEmpty())
-    process.write(input.toUtf8());
-  process.closeWriteChannel();
-}
-
-/**
- * @brief Pass::readAllStandardOutput   temporary helper
- * @return
- */
-QByteArray Pass::readAllStandardOutput() {
-  return process.readAllStandardOutput();
-}
-
-/**
- * @brief Pass::readAllStandardError    temporary helper
- * @return
- */
-QByteArray Pass::readAllStandardError() {
-  return process.readAllStandardError();
-}
-
-/**
  * @brief Pass::updateEnv update the execution environment (used when
  * switching profiles)
  */
@@ -237,34 +169,20 @@ void Pass::updateEnv() {
   QStringList store = env.filter("PASSWORD_STORE_DIR");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
-    // qDebug() << "Added PASSWORD_STORE_DIR";
+    // dbg()<< "Added
+    // PASSWORD_STORE_DIR";
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
-    // qDebug() << "Update PASSWORD_STORE_DIR with " + passStore;
+    // dbg()<< "Update
+    // PASSWORD_STORE_DIR with " + passStore;
     env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
                                             QtPassSettings::getPassStore());
   }
+  exec.setEnvironment(env);
 }
 
 /**
- * @brief Pass::resetPasswordStoreDir   probably temporary helper
- */
-void Pass::resetPasswordStoreDir() {
-  // qDebug() << env;
-  QStringList store = env.filter("PASSWORD_STORE_DIR");
-  // put PASSWORD_STORE_DIR in env
-  if (store.isEmpty()) {
-    // qDebug() << "Added PASSWORD_STORE_DIR";
-    env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
-  } else {
-    // qDebug() << "Update PASSWORD_STORE_DIR";
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
-                                            QtPassSettings::getPassStore());
-  }
-}
-
-/**
- * @brief Pass::getRecipientList return list op gpg-id's to encrypt for
+ * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
@@ -319,24 +237,47 @@ QString Pass::getRecipientString(QString for_file, QString separator,
  * @brief Pass::executePass easy wrapper for running pass
  * @param args
  */
-void Pass::executePass(QString args, QString input) {
-    executeWrapper(QtPassSettings::getPassExecutable(), args, input);
+void Pass::executePass(int id, const QStringList &args, QString input,
+                       bool readStdout ,bool readStderr)
+{
+    executeWrapper(id, QtPassSettings::getPassExecutable(), args , input,
+                   readStdout, readStderr);
 }
 
 /**
  * @brief Pass::executeGpg easy wrapper for running gpg commands
  * @param args
  */
-void Pass::executeGpg(QString args, QString input)
+void Pass::executeGpg(int id, const QStringList &args, QString input,
+                      bool readStdout,bool readStderr)
 {
-    executeWrapper(QtPassSettings::getGpgExecutable(), args, input);
+    executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
+                   readStdout, readStderr);
 }
 /**
  * @brief Pass::executeGit easy wrapper for running git commands
  * @param args
  */
-void Pass::executeGit(QString args, QString input) {
-    executeWrapper(QtPassSettings::getGitExecutable(), args, input);
+void Pass::executeGit(int id, const QStringList &args, QString input,
+                      bool readStdout,bool readStderr)
+{
+    executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
+                   readStdout, readStderr);
 }
 
+void ImitatePass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, bool readStdout,
+                                 bool readStderr) {
+  executeWrapper(id, app, args, QString(), readStdout, readStderr);
+}
 
+void ImitatePass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, QString input,
+                                 bool readStdout, bool readStderr) {
+    QString d;
+    for (auto &i : args)
+      d += " " + i;
+    dbg() << app << d;
+    exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
+                 readStderr);
+}

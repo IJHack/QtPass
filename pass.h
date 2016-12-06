@@ -3,6 +3,7 @@
 
 #include "datahelpers.h"
 #include "enums.h"
+#include "executor.h"
 #include <QList>
 #include <QProcess>
 #include <QQueue>
@@ -14,36 +15,32 @@
 #include "enums.h"
 #include "usersdialog.h"
 
-/*!
-    \struct execQueueItem
-    \brief Execution queue items for non-interactive ordered execution.
- */
-struct execQueueItem {
-  /**
-   * @brief app executable path.
-   */
-  QString app;
-  /**
-   * @brief args arguments for executable.
-   */
-  QString args;
-  /**
-   * @brief input stdio input.
-   */
-  QString input;
-};
-
 class Pass : public QObject {
   Q_OBJECT
 
-  QQueue<execQueueItem> execQueue;
   bool wrapperRunning;
   QStringList env;
-
-private :
-  void executeWrapper(QString, QString, QString = QString());
 protected:
-  QProcess process;
+  Executor exec;
+
+  enum PROCESS {
+    GIT_INIT = 0,
+    GIT_ADD,
+    GIT_COMMIT,
+    GIT_RM,
+    GIT_PULL,
+    GIT_PUSH,
+    PASS_SHOW,
+    PASS_INSERT,
+    PASS_REMOVE,
+    PASS_INIT,
+    PASSWD_GENERATE,
+    GPG_GENKEYS,
+    PASS_MOVE,
+    PASS_COPY,
+    GIT_MOVE,
+    GIT_COPY,
+  };
 
 public:
   Pass();
@@ -52,8 +49,10 @@ public:
   virtual ~Pass() {}
   virtual void GitInit() = 0;
   virtual void GitPull() = 0;
+  virtual void GitPull_b() = 0;
   virtual void GitPush() = 0;
-  virtual QProcess::ExitStatus Show(QString file, bool block = false) = 0;
+  virtual void Show(QString file) = 0;
+  virtual int Show_b(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
   virtual void Move(const QString srcDir, const QString dest, const bool force = false) = 0;
@@ -63,31 +62,37 @@ public:
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
-  void waitFor(uint seconds);
-  QProcess::ProcessState state();
-  QByteArray readAllStandardOutput();
-  QByteArray readAllStandardError();
-  //  TODO(bezet): probably not needed in public interface(1 use MainWindow)
-  QProcess::ExitStatus waitForProcess();
-  void resetPasswordStoreDir();
   void updateEnv();
   //  TODO(bezet): those are probably temporarly here
   static QStringList getRecipientList(QString for_file);
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
-  void executeGit(QString args, QString input = QString());
-  void executePass(QString args, QString input = QString());
-  void executeGpg(QString args, QString input = QString());
-private slots:
-  void processFinished(int, QProcess::ExitStatus);
+  void executeGit(int id, const QStringList &args, QString input = QString(),
+                  bool readStdout = true, bool readStderr = true);
+  void executePass(int id, const QStringList &arg, QString input = QString(),
+                  bool readStdout = true,bool readStderr = true);
+  void executeGpg(int id, const QStringList &args, QString input = QString(),
+                  bool readStdout = true,bool readStderr = true);
+
+private:
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      bool readStdout = true, bool readStderr = true);
+
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      QString input, bool readStdout = true,
+                      bool readStderr = true);
+//private slots:
+//  void processFinished(int, QProcess::ExitStatus);
 
 signals:
-  void finished(int exitCode, QProcess::ExitStatus);
+  void finished(int, const QString &output, const QString &errout);
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
   void statusMsg(QString, int);
   void critical(QString, QString);
+
+  void processErrorExit(int exitCode, const QString &err);
 };
 
 #endif // PASS_H

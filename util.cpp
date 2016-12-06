@@ -1,5 +1,5 @@
 #include "util.h"
-#include <QDebug>
+#include "debughelper.h"
 #include <QDir>
 #include <QFileInfo>
 #include <QProcessEnvironment>
@@ -101,7 +101,7 @@ QString Util::findBinaryInPath(QString binary) {
         qfi.reset(new QFileInfo(entry.append(".exe")));
 
 #endif
-      qDebug() << entry;
+      dbg() << entry;
       if (!qfi->isExecutable())
         continue;
 
