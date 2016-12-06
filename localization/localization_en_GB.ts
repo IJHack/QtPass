@@ -366,47 +366,47 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../imitatepass.cpp" line="88"/>
-        <location filename="../imitatepass.cpp" line="287"/>
+        <location filename="../imitatepass.cpp" line="101"/>
+        <location filename="../imitatepass.cpp" line="306"/>
         <source>Can not edit</source>
         <translation>Can not edit</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="89"/>
-        <location filename="../imitatepass.cpp" line="288"/>
+        <location filename="../imitatepass.cpp" line="102"/>
+        <location filename="../imitatepass.cpp" line="307"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Could not read encryption key to use, .gpg-id file missing or invalid.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="163"/>
+        <location filename="../imitatepass.cpp" line="182"/>
         <source>Cannot update</source>
         <translation>Cannot update</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="164"/>
+        <location filename="../imitatepass.cpp" line="183"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Failed to open .gpg-id for writing.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="177"/>
+        <location filename="../imitatepass.cpp" line="196"/>
         <source>Check selected users!</source>
         <translation>Check selected users!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="178"/>
+        <location filename="../imitatepass.cpp" line="197"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="230"/>
+        <location filename="../imitatepass.cpp" line="249"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-encrypting from folder %1</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="234"/>
-        <location filename="../imitatepass.cpp" line="318"/>
+        <location filename="../imitatepass.cpp" line="253"/>
+        <location filename="../imitatepass.cpp" line="337"/>
         <source>Updating password-store</source>
         <translation>Updating password-store</translation>
     </message>
@@ -887,12 +887,12 @@ You will not be able to decrypt any newly added passwords!</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="75"/>
+        <location filename="../pass.cpp" line="78"/>
         <source>No characters chosen</source>
         <translation>No characters chosen</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="76"/>
+        <location filename="../pass.cpp" line="79"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Can&apos;t generate password, there are no characters to choose from set in the configuration!</translation>
     </message>
