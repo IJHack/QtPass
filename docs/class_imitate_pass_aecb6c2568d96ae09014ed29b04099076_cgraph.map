@@ -1,4 +1,5 @@
 <map id="ImitatePass::Show_b" name="ImitatePass::Show_b">
-<area shape="rect" id="node2" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="226,5,404,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="200,55,430,80"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="215,5,415,31"/>
+<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="226,55,404,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="200,104,430,129"/>
 </map>

@@ -2,9 +2,8 @@
 <area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="260,5,461,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="275,55,446,80"/>
 <area shape="rect" id="node4" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="271,104,451,129"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="269,153,452,179"/>
-<area shape="rect" id="node6" href="$class_pass.html#a91ad8142d920144bf7483211619be978" title="Pass::Show_b" alt="" coords="307,203,414,228"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="255,252,466,277"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="247,301,474,327"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="253,351,469,376"/>
+<area shape="rect" id="node5" href="$class_pass.html#a91ad8142d920144bf7483211619be978" title="Pass::Show_b" alt="" coords="307,153,414,179"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="255,203,466,228"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="247,252,474,277"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="253,301,469,327"/>
 </map>

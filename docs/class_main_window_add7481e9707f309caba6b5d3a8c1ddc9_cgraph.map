@@ -1,13 +1,12 @@
 <map id="MainWindow::userDialog" name="MainWindow::userDialog">
-<area shape="rect" id="node2" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="264,29,368,55"/>
-<area shape="rect" id="node5" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="233,79,400,104"/>
-<area shape="rect" id="node6" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="497,117,650,143"/>
-<area shape="rect" id="node8" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="239,180,393,205"/>
-<area shape="rect" id="node11" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="278,229,354,255"/>
-<area shape="rect" id="node12" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="222,279,410,304"/>
-<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="484,5,663,31"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="458,55,689,80"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="737,117,937,143"/>
-<area shape="rect" id="node9" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="515,173,632,199"/>
-<area shape="rect" id="node10" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="508,223,639,248"/>
+<area shape="rect" id="node2" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="254,48,358,73"/>
+<area shape="rect" id="node5" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="222,97,389,123"/>
+<area shape="rect" id="node6" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="476,111,629,136"/>
+<area shape="rect" id="node8" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="229,199,383,224"/>
+<area shape="rect" id="node11" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="268,248,344,273"/>
+<area shape="rect" id="node3" href="$class_executor.html#a306776111c35153e55f932bc7bc44b5d" title="Executor::executeBlocking" alt="" coords="463,5,642,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="437,55,668,80"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="716,111,916,136"/>
+<area shape="rect" id="node9" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="494,172,611,197"/>
+<area shape="rect" id="node10" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="487,221,618,247"/>
 </map>

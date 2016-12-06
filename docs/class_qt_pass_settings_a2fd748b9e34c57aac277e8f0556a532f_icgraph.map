@@ -1,13 +1,13 @@
 <map id="QtPassSettings::isUseGit" name="QtPassSettings::isUseGit">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="509,7,640,32"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove git init wrapper. " alt="" coords="247,58,395,83"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="516,108,633,134"/>
-<area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="231,159,412,184"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="485,236,664,262"/>
-<area shape="rect" id="node9" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="251,260,392,286"/>
-<area shape="rect" id="node10" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="466,286,683,311"/>
-<area shape="rect" id="node12" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="224,362,418,387"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="733,83,909,108"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="731,236,912,262"/>
-<area shape="rect" id="node11" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="749,286,893,311"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="509,5,640,31"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove git init wrapper. " alt="" coords="247,56,395,81"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="516,107,633,132"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="231,157,412,183"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="485,209,664,235"/>
+<area shape="rect" id="node9" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="251,259,392,284"/>
+<area shape="rect" id="node12" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="224,308,418,333"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="733,81,909,107"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="731,209,912,235"/>
+<area shape="rect" id="node10" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="466,259,683,284"/>
+<area shape="rect" id="node11" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="749,259,893,284"/>
 </map>

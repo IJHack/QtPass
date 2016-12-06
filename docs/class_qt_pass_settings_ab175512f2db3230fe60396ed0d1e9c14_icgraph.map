@@ -1,11 +1,10 @@
 <map id="QtPassSettings::isAutoPush" name="QtPassSettings::isAutoPush">
 <area shape="rect" id="node2" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="241,56,423,81"/>
-<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="262,105,402,131"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="471,156,687,181"/>
-<area shape="rect" id="node10" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="248,207,417,232"/>
+<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="262,107,402,132"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="521,5,637,31"/>
 <area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="738,31,914,56"/>
 <area shape="rect" id="node6" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="490,107,668,132"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="471,156,687,181"/>
 <area shape="rect" id="node7" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="735,107,916,132"/>
-<area shape="rect" id="node9" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="754,181,898,207"/>
+<area shape="rect" id="node9" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="754,156,898,181"/>
 </map>

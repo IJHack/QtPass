@@ -54,215 +54,215 @@ var sectionId = 'dynsection-8';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>Executor::starting</title>
-<!-- Node54 -->
-<g id="node1" class="node"><title>Node54</title>
+<!-- Node57 -->
+<g id="node1" class="node"><title>Node57</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-138.5 0,-156.5 93.8125,-156.5 93.8125,-138.5 0,-138.5"/>
 <text text-anchor="middle" x="46.9062" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::starting</text>
 </g>
-<!-- Node55 -->
-<g id="node2" class="node"><title>Node55</title>
+<!-- Node58 -->
+<g id="node2" class="node"><title>Node58</title>
 <g id="a_node2"><a xlink:href="class_executor.html#a19fdadaa749c44b889287879ecf5f315" target="_top" xlink:title="Executor::Executor">
 <polygon fill="none" stroke="black" points="146.492,-175.5 146.492,-193.5 246.975,-193.5 246.975,-175.5 146.492,-175.5"/>
 <text text-anchor="middle" x="196.733" y="-181.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::Executor</text>
 </a>
 </g>
 </g>
-<!-- Node54&#45;&gt;Node55 -->
-<g id="edge1" class="edge"><title>Node54&#45;&gt;Node55</title>
+<!-- Node57&#45;&gt;Node58 -->
+<g id="edge1" class="edge"><title>Node57&#45;&gt;Node58</title>
 <path fill="none" stroke="midnightblue" d="M93.8391,-158.997C115.046,-164.305 139.858,-170.515 159.688,-175.478"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="94.6194,-155.584 84.0688,-156.551 92.9198,-162.375 94.6194,-155.584"/>
 </g>
-<!-- Node56 -->
-<g id="node3" class="node"><title>Node56</title>
+<!-- Node59 -->
+<g id="node3" class="node"><title>Node59</title>
 <g id="a_node3"><a xlink:href="class_executor.html#a306776111c35153e55f932bc7bc44b5d" target="_top" xlink:title="Executor::executeBlocking">
 <polygon fill="none" stroke="black" points="129.812,-138.5 129.812,-156.5 263.654,-156.5 263.654,-138.5 129.812,-138.5"/>
 <text text-anchor="middle" x="196.733" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
-<!-- Node54&#45;&gt;Node56 -->
-<g id="edge2" class="edge"><title>Node54&#45;&gt;Node56</title>
+<!-- Node57&#45;&gt;Node59 -->
+<g id="edge2" class="edge"><title>Node57&#45;&gt;Node59</title>
 <path fill="none" stroke="midnightblue" d="M103.945,-147.5C112.366,-147.5 121.115,-147.5 129.72,-147.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="103.869,-144 93.8694,-147.5 103.869,-151 103.869,-144"/>
 </g>
-<!-- Node72 -->
-<g id="node19" class="node"><title>Node72</title>
+<!-- Node75 -->
+<g id="node19" class="node"><title>Node75</title>
 <g id="a_node19"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass">
 <polygon fill="none" stroke="black" points="163.724,-101.5 163.724,-119.5 229.743,-119.5 229.743,-101.5 163.724,-101.5"/>
 <text text-anchor="middle" x="196.733" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>
 </g>
 </g>
-<!-- Node54&#45;&gt;Node72 -->
-<g id="edge24" class="edge"><title>Node54&#45;&gt;Node72</title>
+<!-- Node57&#45;&gt;Node75 -->
+<g id="edge24" class="edge"><title>Node57&#45;&gt;Node75</title>
 <path fill="none" stroke="midnightblue" d="M93.7931,-136.015C116.38,-130.362 143.065,-123.683 163.466,-118.576"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="92.9198,-132.625 84.0688,-138.449 94.6194,-139.416 92.9198,-132.625"/>
 </g>
-<!-- Node57 -->
-<g id="node4" class="node"><title>Node57</title>
+<!-- Node60 -->
+<g id="node4" class="node"><title>Node60</title>
 <g id="a_node4"><a xlink:href="class_executor.html#aac7deb5945fec87e1c466f89eedbf2c4" target="_top" xlink:title="Executor::executeBlocking">
 <polygon fill="none" stroke="black" points="299.654,-273.5 299.654,-291.5 433.496,-291.5 433.496,-273.5 299.654,-273.5"/>
 <text text-anchor="middle" x="366.575" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node57 -->
-<g id="edge3" class="edge"><title>Node56&#45;&gt;Node57</title>
+<!-- Node59&#45;&gt;Node60 -->
+<g id="edge3" class="edge"><title>Node59&#45;&gt;Node60</title>
 <path fill="none" stroke="midnightblue" d="M258.832,-161.689C260.521,-162.861 262.135,-164.129 263.654,-165.5 296.563,-195.189 267.999,-227.477 299.654,-258.5 306.439,-265.149 315.209,-269.975 324.125,-273.471"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="260.277,-158.485 249.854,-156.586 256.818,-164.57 260.277,-158.485"/>
 </g>
-<!-- Node58 -->
-<g id="node5" class="node"><title>Node58</title>
+<!-- Node61 -->
+<g id="node5" class="node"><title>Node61</title>
 <g id="a_node5"><a xlink:href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" target="_top" xlink:title="ImitatePass::GitPull_b git pull wrapper. ">
 <polygon fill="none" stroke="black" points="309.388,-197.5 309.388,-215.5 423.762,-215.5 423.762,-197.5 309.388,-197.5"/>
 <text text-anchor="middle" x="366.575" y="-203.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node58 -->
-<g id="edge4" class="edge"><title>Node56&#45;&gt;Node58</title>
+<!-- Node59&#45;&gt;Node61 -->
+<g id="edge4" class="edge"><title>Node59&#45;&gt;Node61</title>
 <path fill="none" stroke="midnightblue" d="M245.166,-159.378C251.438,-161.261 257.739,-163.315 263.654,-165.5 280.252,-171.632 283.324,-175.688 299.654,-182.5 312.469,-187.845 326.943,-193.189 339.057,-197.473"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="245.973,-155.968 235.395,-156.566 244.037,-162.695 245.973,-155.968"/>
 </g>
-<!-- Node59 -->
-<g id="node6" class="node"><title>Node59</title>
+<!-- Node62 -->
+<g id="node6" class="node"><title>Node62</title>
 <g id="a_node6"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="MainWindow::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="black" points="473.249,-235.5 473.249,-253.5 609.302,-253.5 609.302,-235.5 473.249,-235.5"/>
 <text text-anchor="middle" x="541.275" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node59 -->
-<g id="edge12" class="edge"><title>Node56&#45;&gt;Node59</title>
+<!-- Node59&#45;&gt;Node62 -->
+<g id="edge12" class="edge"><title>Node59&#45;&gt;Node62</title>
 <path fill="none" stroke="midnightblue" d="M256.299,-160.773C258.874,-162.192 261.343,-163.762 263.654,-165.5 288.206,-183.961 273.513,-208.367 299.654,-224.5 355.125,-258.733 431.987,-258.758 483.787,-253.501"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="257.747,-157.587 247.207,-156.511 254.775,-163.925 257.747,-157.587"/>
 </g>
-<!-- Node62 -->
-<g id="node9" class="node"><title>Node62</title>
+<!-- Node65 -->
+<g id="node9" class="node"><title>Node65</title>
 <g id="a_node9"><a xlink:href="class_imitate_pass.html#aecb6c2568d96ae09014ed29b04099076" target="_top" xlink:title="ImitatePass::Show_b show content of file, blocking version. ">
 <polygon fill="none" stroke="black" points="649.055,-159.5 649.055,-177.5 758.99,-177.5 758.99,-159.5 649.055,-159.5"/>
 <text text-anchor="middle" x="704.022" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Show_b</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node62 -->
-<g id="edge10" class="edge"><title>Node56&#45;&gt;Node62</title>
+<!-- Node59&#45;&gt;Node65 -->
+<g id="edge10" class="edge"><title>Node59&#45;&gt;Node65</title>
 <path fill="none" stroke="midnightblue" d="M273.828,-150.663C376.975,-154.949 558.628,-162.499 648.921,-166.252"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="273.928,-147.164 263.791,-150.245 273.637,-154.158 273.928,-147.164"/>
 </g>
-<!-- Node63 -->
-<g id="node10" class="node"><title>Node63</title>
+<!-- Node66 -->
+<g id="node10" class="node"><title>Node66</title>
 <g id="a_node10"><a xlink:href="class_pass.html#a140443713431e41dc5a7d4989ece82c0" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="black" points="323.834,-116.5 323.834,-134.5 409.316,-134.5 409.316,-116.5 323.834,-116.5"/>
 <text text-anchor="middle" x="366.575" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node63 -->
-<g id="edge13" class="edge"><title>Node56&#45;&gt;Node63</title>
+<!-- Node59&#45;&gt;Node66 -->
+<g id="edge13" class="edge"><title>Node59&#45;&gt;Node66</title>
 <path fill="none" stroke="midnightblue" d="M273.992,-137.504C290.963,-135.28 308.357,-133 323.364,-131.033"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="273.529,-134.035 264.069,-138.805 274.439,-140.976 273.529,-134.035"/>
 </g>
-<!-- Node66 -->
-<g id="node13" class="node"><title>Node66</title>
+<!-- Node69 -->
+<g id="node13" class="node"><title>Node69</title>
 <g id="a_node13"><a xlink:href="class_pass.html#a451b0f52aa0332801252ae28665e29b3" target="_top" xlink:title="Pass::listKeys list users. ">
 <polygon fill="none" stroke="black" points="327.455,-74.5 327.455,-92.5 405.696,-92.5 405.696,-74.5 327.455,-74.5"/>
 <text text-anchor="middle" x="366.575" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::listKeys</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node66 -->
-<g id="edge16" class="edge"><title>Node56&#45;&gt;Node66</title>
+<!-- Node59&#45;&gt;Node69 -->
+<g id="edge16" class="edge"><title>Node59&#45;&gt;Node69</title>
 <path fill="none" stroke="midnightblue" d="M245.394,-135.421C251.629,-133.361 257.859,-131.05 263.654,-128.5 280.817,-120.947 282.706,-114.523 299.654,-106.5 310.939,-101.158 323.814,-96.3917 335.173,-92.6022"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="244.162,-132.138 235.653,-138.451 246.241,-138.822 244.162,-132.138"/>
 </g>
-<!-- Node69 -->
-<g id="node16" class="node"><title>Node69</title>
+<!-- Node72 -->
+<g id="node16" class="node"><title>Node72</title>
 <g id="a_node16"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. ">
 <polygon fill="none" stroke="black" points="314.11,-37.5 314.11,-55.5 419.041,-55.5 419.041,-37.5 314.11,-37.5"/>
 <text text-anchor="middle" x="366.575" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::GitPull_b</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node69 -->
-<g id="edge20" class="edge"><title>Node56&#45;&gt;Node69</title>
+<!-- Node59&#45;&gt;Node72 -->
+<g id="edge20" class="edge"><title>Node59&#45;&gt;Node72</title>
 <path fill="none" stroke="midnightblue" d="M255.238,-134.057C258.208,-132.414 261.039,-130.57 263.654,-128.5 289.245,-108.246 273.922,-84.5734 299.654,-64.5 304.331,-60.8515 309.696,-57.9416 315.301,-55.6208"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="253.551,-130.983 245.995,-138.409 256.533,-137.316 253.551,-130.983"/>
 </g>
-<!-- Node71 -->
-<g id="node18" class="node"><title>Node71</title>
+<!-- Node74 -->
+<g id="node18" class="node"><title>Node74</title>
 <g id="a_node18"><a xlink:href="class_real_pass.html#a429536af5c42a7b4f0c3efc3eed99c25" target="_top" xlink:title="RealPass::Show_b pass show. ">
 <polygon fill="none" stroke="black" points="316.329,-0.5 316.329,-18.5 416.821,-18.5 416.821,-0.5 316.329,-0.5"/>
 <text text-anchor="middle" x="366.575" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::Show_b</text>
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node71 -->
-<g id="edge22" class="edge"><title>Node56&#45;&gt;Node71</title>
+<!-- Node59&#45;&gt;Node74 -->
+<g id="edge22" class="edge"><title>Node59&#45;&gt;Node74</title>
 <path fill="none" stroke="midnightblue" d="M257.399,-133.458C259.618,-131.967 261.718,-130.32 263.654,-128.5 298.376,-95.8595 264.704,-59.8956 299.654,-27.5 304.44,-23.0644 310.212,-19.7039 316.325,-17.1612"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="255.395,-130.567 248.334,-138.466 258.779,-136.694 255.395,-130.567"/>
 </g>
-<!-- Node58&#45;&gt;Node59 -->
-<g id="edge5" class="edge"><title>Node58&#45;&gt;Node59</title>
+<!-- Node61&#45;&gt;Node62 -->
+<g id="edge5" class="edge"><title>Node61&#45;&gt;Node62</title>
 <path fill="none" stroke="midnightblue" d="M418.471,-217.699C444.248,-223.371 475.126,-230.165 499.343,-235.493"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="419.021,-214.236 408.503,-215.505 417.517,-221.073 419.021,-214.236"/>
 </g>
-<!-- Node61 -->
-<g id="node8" class="node"><title>Node61</title>
+<!-- Node64 -->
+<g id="node8" class="node"><title>Node64</title>
 <g id="a_node8"><a xlink:href="class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" target="_top" xlink:title="ImitatePass::~ImitatePass">
 <polygon fill="none" stroke="black" points="794.99,-216.5 794.99,-234.5 926.869,-234.5 926.869,-216.5 794.99,-216.5"/>
 <text text-anchor="middle" x="860.93" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::~ImitatePass</text>
 </a>
 </g>
 </g>
-<!-- Node58&#45;&gt;Node61 -->
-<g id="edge9" class="edge"><title>Node58&#45;&gt;Node61</title>
+<!-- Node61&#45;&gt;Node64 -->
+<g id="edge9" class="edge"><title>Node61&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M434.076,-209.066C528.656,-212.716 700.933,-219.364 794.771,-222.986"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="434.182,-205.568 424.055,-208.68 433.912,-212.563 434.182,-205.568"/>
 </g>
-<!-- Node60 -->
-<g id="node7" class="node"><title>Node60</title>
+<!-- Node63 -->
+<g id="node7" class="node"><title>Node63</title>
 <g id="a_node7"><a xlink:href="class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="black" points="660.454,-273.5 660.454,-291.5 747.591,-291.5 747.591,-273.5 660.454,-273.5"/>
 <text text-anchor="middle" x="704.022" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
 </g>
 </g>
-<!-- Node59&#45;&gt;Node60 -->
-<g id="edge6" class="edge"><title>Node59&#45;&gt;Node60</title>
+<!-- Node62&#45;&gt;Node63 -->
+<g id="edge6" class="edge"><title>Node62&#45;&gt;Node63</title>
 <path fill="none" stroke="midnightblue" d="M590.286,-255.85C614.15,-261.491 642.582,-268.212 664.923,-273.493"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="590.907,-252.4 580.37,-253.505 589.297,-259.212 590.907,-252.4"/>
 </g>
-<!-- Node59&#45;&gt;Node61 -->
-<g id="edge8" class="edge"><title>Node59&#45;&gt;Node61</title>
+<!-- Node62&#45;&gt;Node64 -->
+<g id="edge8" class="edge"><title>Node62&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M619.797,-239.863C673.463,-236.653 744.087,-232.429 794.833,-229.394"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="619.415,-236.38 609.642,-240.471 619.833,-243.367 619.415,-236.38"/>
 </g>
-<!-- Node60&#45;&gt;Node61 -->
-<g id="edge7" class="edge"><title>Node60&#45;&gt;Node61</title>
+<!-- Node63&#45;&gt;Node64 -->
+<g id="edge7" class="edge"><title>Node63&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M739.304,-269.886C768.357,-259.195 809.318,-244.123 835.243,-234.584"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="737.744,-266.73 729.568,-273.468 740.161,-273.3 737.744,-266.73"/>
 </g>
-<!-- Node62&#45;&gt;Node61 -->
-<g id="edge11" class="edge"><title>Node62&#45;&gt;Node61</title>
+<!-- Node65&#45;&gt;Node64 -->
+<g id="edge11" class="edge"><title>Node65&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M739.304,-181.114C768.357,-191.805 809.318,-206.877 835.243,-216.416"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="740.161,-177.7 729.568,-177.532 737.744,-184.27 740.161,-177.7"/>
 </g>
-<!-- Node64 -->
-<g id="node11" class="node"><title>Node64</title>
+<!-- Node67 -->
+<g id="node11" class="node"><title>Node67</title>
 <g id="a_node11"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="black" points="505.346,-74.5 505.346,-92.5 577.205,-92.5 577.205,-74.5 505.346,-74.5"/>
 <text text-anchor="middle" x="541.275" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node63&#45;&gt;Node64 -->
-<g id="edge14" class="edge"><title>Node63&#45;&gt;Node64</title>
+<!-- Node66&#45;&gt;Node67 -->
+<g id="edge14" class="edge"><title>Node66&#45;&gt;Node67</title>
 <path fill="none" stroke="midnightblue" d="M414.395,-114.114C442.967,-107.165 478.903,-98.4256 505.057,-92.065"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="413.513,-110.726 404.624,-116.49 415.168,-117.528 413.513,-110.726"/>
 </g>
-<!-- Node65 -->
-<g id="node12" class="node"><title>Node65</title>
+<!-- Node68 -->
+<g id="node12" class="node"><title>Node68</title>
 <g id="a_node12"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
 <polygon fill="none" stroke="black" points="469.496,-111.5 469.496,-139.5 613.055,-139.5 613.055,-111.5 469.496,-111.5"/>
 <text text-anchor="start" x="477.496" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog::~Password</text>
@@ -270,57 +270,57 @@ var sectionId = 'dynsection-8';
 </a>
 </g>
 </g>
-<!-- Node63&#45;&gt;Node65 -->
-<g id="edge15" class="edge"><title>Node63&#45;&gt;Node65</title>
+<!-- Node66&#45;&gt;Node68 -->
+<g id="edge15" class="edge"><title>Node66&#45;&gt;Node68</title>
 <path fill="none" stroke="midnightblue" d="M419.383,-125.5C435.043,-125.5 452.518,-125.5 469.206,-125.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="419.381,-122 409.381,-125.5 419.381,-129 419.381,-122"/>
 </g>
-<!-- Node66&#45;&gt;Node64 -->
-<g id="edge19" class="edge"><title>Node66&#45;&gt;Node64</title>
+<!-- Node69&#45;&gt;Node67 -->
+<g id="edge19" class="edge"><title>Node69&#45;&gt;Node67</title>
 <path fill="none" stroke="midnightblue" d="M416.021,-83.5C444.405,-83.5 479.604,-83.5 505.285,-83.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="415.903,-80.0001 405.903,-83.5 415.903,-87.0001 415.903,-80.0001"/>
 </g>
-<!-- Node67 -->
-<g id="node14" class="node"><title>Node67</title>
+<!-- Node70 -->
+<g id="node14" class="node"><title>Node70</title>
 <g id="a_node14"><a xlink:href="class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" target="_top" xlink:title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() ">
 <polygon fill="none" stroke="black" points="477.975,-37.5 477.975,-55.5 604.576,-55.5 604.576,-37.5 477.975,-37.5"/>
 <text text-anchor="middle" x="541.275" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::userDialog</text>
 </a>
 </g>
 </g>
-<!-- Node66&#45;&gt;Node67 -->
-<g id="edge17" class="edge"><title>Node66&#45;&gt;Node67</title>
+<!-- Node69&#45;&gt;Node70 -->
+<g id="edge17" class="edge"><title>Node69&#45;&gt;Node70</title>
 <path fill="none" stroke="midnightblue" d="M415.869,-73.1533C441.723,-67.6143 473.266,-60.8563 498.121,-55.5312"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="414.948,-69.7712 405.903,-75.2885 416.414,-76.6159 414.948,-69.7712"/>
 </g>
-<!-- Node68 -->
-<g id="node15" class="node"><title>Node68</title>
+<!-- Node71 -->
+<g id="node15" class="node"><title>Node71</title>
 <g id="a_node15"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="650.168,-37.5 650.168,-55.5 757.877,-55.5 757.877,-37.5 650.168,-37.5"/>
 <text text-anchor="middle" x="704.022" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node67&#45;&gt;Node68 -->
-<g id="edge18" class="edge"><title>Node67&#45;&gt;Node68</title>
+<!-- Node70&#45;&gt;Node71 -->
+<g id="edge18" class="edge"><title>Node70&#45;&gt;Node71</title>
 <path fill="none" stroke="midnightblue" d="M615.117,-46.5C626.854,-46.5 638.806,-46.5 649.962,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="614.885,-43.0001 604.885,-46.5 614.885,-50.0001 614.885,-43.0001"/>
 </g>
-<!-- Node70 -->
-<g id="node17" class="node"><title>Node70</title>
+<!-- Node73 -->
+<g id="node17" class="node"><title>Node73</title>
 <g id="a_node17"><a xlink:href="class_real_pass.html#a8f345a8f31ebc772f889896af3c6f7cb" target="_top" xlink:title="RealPass::~RealPass">
 <polygon fill="none" stroke="black" points="484.779,-0.5 484.779,-18.5 597.771,-18.5 597.771,-0.5 484.779,-0.5"/>
 <text text-anchor="middle" x="541.275" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::~RealPass</text>
 </a>
 </g>
 </g>
-<!-- Node69&#45;&gt;Node70 -->
-<g id="edge21" class="edge"><title>Node69&#45;&gt;Node70</title>
+<!-- Node72&#45;&gt;Node73 -->
+<g id="edge21" class="edge"><title>Node72&#45;&gt;Node73</title>
 <path fill="none" stroke="midnightblue" d="M419.896,-35.2907C444.961,-29.9206 474.58,-23.5749 498.165,-18.5218"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="418.867,-31.9315 409.822,-37.4488 420.334,-38.7761 418.867,-31.9315"/>
 </g>
-<!-- Node71&#45;&gt;Node70 -->
-<g id="edge23" class="edge"><title>Node71&#45;&gt;Node70</title>
+<!-- Node74&#45;&gt;Node73 -->
+<g id="edge23" class="edge"><title>Node74&#45;&gt;Node73</title>
 <path fill="none" stroke="midnightblue" d="M427.209,-9.5C445.858,-9.5 466.35,-9.5 484.707,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="427.064,-6.0001 417.064,-9.5 427.064,-13.0001 427.064,-6.0001"/>
 </g>
