@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="class_deselectable_tree_view.html" target="_top" xlink:title="The DeselectableTreeView class taken from http://stackoverflow.com/questions/2761284/ thanks to Yassi...">
+<g id="a_node2"><a xlink:href="class_deselectable_tree_view.html" target="_top" xlink:title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...">
 <polygon fill="none" stroke="black" points="101.473,-0.5 101.473,-18.5 216.979,-18.5 216.979,-0.5 101.473,-0.5"/>
 <text text-anchor="middle" x="159.226" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">DeselectableTreeView</text>
 </a>
