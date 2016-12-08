@@ -115,7 +115,14 @@ void RealPass::Move(const QString src, const QString dest, const bool force)
         passDest.replace(QRegExp("\\.gpg$"), "");
     }
 
-    executePass(PASS_MOVE, {"mv", force ? "-f" : "", passSrc, passDest});
+    QStringList args;
+    args << "mv";
+    if(force){
+        args << "-f";
+    }
+    args << passSrc;
+    args << passDest;
+    executePass(PASS_MOVE, args);
 }
 
 
@@ -141,6 +148,13 @@ void RealPass::Copy(const QString src, const QString dest, const bool force)
     if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
         passDest.replace(QRegExp("\\.gpg$"), "");
     }
-    executePass(PASS_COPY, {"cp", force ? "-f" : "", passSrc, passDest});
+    QStringList args;
+    args << "cp";
+    if(force){
+        args << "-f";
+    }
+    args << passSrc;
+    args << passDest;
+    executePass(PASS_COPY, args);
 }
 
