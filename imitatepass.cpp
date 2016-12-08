@@ -71,7 +71,7 @@ int ImitatePass::Show_b(QString file) {
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
-  file = QtPassSettings::getPassStore() + file + ".gpg";
+  file = file + ".gpg";
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
     //  TODO(bezet): probably throw here
@@ -316,7 +316,14 @@ void ImitatePass::reencryptPath(QString dir) {
 void ImitatePass::Move(const QString src, const QString dest, const bool force)
 {
     if (QtPassSettings::isUseGit()) {
-      executeGit(GIT_MOVE, {"mv", force ? "-f" : "", src, dest});
+      QStringList args;
+      args << "mv";
+      if(force){
+          args << "-f";
+      }
+      args << src;
+      args << dest;
+      executeGit(GIT_MOVE, args);
 
       QString message=QString("moved from %1 to %2 using QTPass.");
       message= message.arg(src).arg(dest);
@@ -344,7 +351,14 @@ void ImitatePass::Move(const QString src, const QString dest, const bool force)
 void ImitatePass::Copy(const QString src, const QString dest, const bool force)
 {
     if (QtPassSettings::isUseGit()) {
-        executeGit(GIT_COPY, {"cp", force ? "-f" : "", src, dest});
+        QStringList args;
+        args << "cp";
+        if(force){
+            args << "-f";
+        }
+        args << src;
+        args << dest;
+        executeGit(GIT_COPY, args);
 
         QString message=QString("copied from %1 to %2 using QTPass.");
         message= message.arg(src).arg(dest);
