@@ -3,6 +3,10 @@
 
 #include <QString>
 
+/*!
+    \class SettingsConstants
+    \brief Table for the naming of configuration items
+*/
 class SettingsConstants {
 
 public:

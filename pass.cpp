@@ -4,7 +4,9 @@
 #include "util.h"
 #include <QTextCodec>
 
-
+/**
+ * @brief Pass::Pass wrapper for using either pass or the pas imitation
+ */
 Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   connect(&exec, SIGNAL(finished(int, const QString &, const QString &)), this,
           SIGNAL(finished(int, const QString &, const QString &)));

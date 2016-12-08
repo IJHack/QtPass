@@ -16,8 +16,11 @@
 #include "imitatepass.h"
 #include "enums.h"
 
-
-class QtPassSettings{
+/*!
+    \class QtPassSettings
+    \brief Singleton that stores qtpass' settings, saves and loads config
+*/
+class QtPassSettings {
 
 public:
   static QString

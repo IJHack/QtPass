@@ -4,6 +4,10 @@
 #include <QDir>
 #include <QTextCodec>
 
+/**
+ * @brief Executor::Executor executes external applications
+ * @param parent
+ */
 Executor::Executor(QObject *parent) : QObject(parent), running(false) {
   connect(&m_process,
           static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(
@@ -13,6 +17,9 @@ Executor::Executor(QObject *parent) : QObject(parent), running(false) {
   connect(&m_process, &QProcess::started, this, &Executor::starting);
 }
 
+/**
+ * @brief Executor::executeNext consumes executable tasks from the queue
+ */
 void Executor::executeNext() {
   if (!running) {
     if (!m_execQueue.isEmpty()) {
@@ -32,22 +39,59 @@ void Executor::executeNext() {
   }
 }
 
+/**
+ * @brief Executor::execute execute an app
+ * @param id
+ * @param app
+ * @param args
+ * @param readStdout
+ * @param readStderr
+ */
 void Executor::execute(int id, const QString &app, const QStringList &args,
                        bool readStdout, bool readStderr) {
   execute(id, QString(), app, args, QString(), readStdout, readStderr);
 }
 
+/**
+ * @brief Executor::execute executes an app from a workDir
+ * @param id
+ * @param workDir
+ * @param app
+ * @param args
+ * @param readStdout
+ * @param readStderr
+ */
 void Executor::execute(int id, const QString &workDir, const QString &app,
                        const QStringList &args, bool readStdout,
                        bool readStderr) {
   execute(id, workDir, app, args, QString(), readStdout, readStderr);
 }
 
+/**
+ * @brief Executor::execute an app, takes input and presents it as stdin
+ * @param id
+ * @param app
+ * @param args
+ * @param input
+ * @param readStdout
+ * @param readStderr
+ */
 void Executor::execute(int id, const QString &app, const QStringList &args,
                        QString input, bool readStdout, bool readStderr) {
   execute(id, QString(), app, args, input, readStdout, readStderr);
 }
 
+/**
+ * @brief Executor::execute  executes an app from a workDir, takes input and
+ * presents it as stdin
+ * @param id
+ * @param workDir
+ * @param app
+ * @param args
+ * @param input
+ * @param readStdout
+ * @param readStderr
+ */
 void Executor::execute(int id, const QString &workDir, const QString &app,
                        const QStringList &args, QString input, bool readStdout,
                        bool readStderr) {
@@ -65,7 +109,18 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   executeNext();
 }
 
-//  TODO(bezet): it might make sense to throw here, a lot of possible errors
+/**
+ * @brief Executor::executeBlocking blocking version of the executor,
+ * takes input and presents it as stdin
+ * @param app
+ * @param args
+ * @param input
+ * @param process_out
+ * @param process_err
+ * @return
+ *
+ * TODO(bezet): it might make sense to throw here, a lot of possible errors
+ */
 int Executor::executeBlocking(QString app, const QStringList &args,
                               QString input, QString *process_out,
                               QString *process_err) {
@@ -97,15 +152,33 @@ int Executor::executeBlocking(QString app, const QStringList &args,
   }
 }
 
+/**
+ * @brief Executor::executeBlocking blocking version of the executor
+ * @param app
+ * @param args
+ * @param process_out
+ * @param process_err
+ * @return
+ */
 int Executor::executeBlocking(QString app, const QStringList &args,
                               QString *process_out, QString *process_err) {
   return executeBlocking(app, args, QString(), process_out, process_err);
 }
 
+/**
+ * @brief Executor::setEnvironment set environment variables
+ * for executor processes
+ * @param env
+ */
 void Executor::setEnvironment(const QStringList &env) {
   m_process.setEnvironment(env);
 }
 
+/**
+ * @brief Executor::finished called when an executed process finishes
+ * @param exitCode
+ * @param exitStatus
+ */
 void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
   execQueueItem i = m_execQueue.dequeue();
   running = false;

@@ -15,6 +15,10 @@
 #include "enums.h"
 #include "usersdialog.h"
 
+/*!
+    \class Pass
+    \brief Acts as an abstraction for pass or pass imitation
+*/
 class Pass : public QObject {
   Q_OBJECT
 

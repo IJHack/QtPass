@@ -5,6 +5,10 @@
 #include <QProcess>
 #include <QQueue>
 
+/*!
+    \class Executor
+    \brief Executes external commands for handleing password, git and other data
+*/
 class Executor : public QObject {
   Q_OBJECT
 

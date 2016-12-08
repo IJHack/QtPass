@@ -364,47 +364,47 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../imitatepass.cpp" line="74"/>
-        <location filename="../imitatepass.cpp" line="269"/>
+        <location filename="../imitatepass.cpp" line="78"/>
+        <location filename="../imitatepass.cpp" line="279"/>
         <source>Can not edit</source>
         <translation type="unfinished">Kan inte ändra</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="75"/>
-        <location filename="../imitatepass.cpp" line="270"/>
+        <location filename="../imitatepass.cpp" line="79"/>
+        <location filename="../imitatepass.cpp" line="280"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished">Kunde inte läsa krypteringsnyckel, .gpg-id fil saknas eller är ogiltig.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="146"/>
+        <location filename="../imitatepass.cpp" line="156"/>
         <source>Cannot update</source>
         <translation type="unfinished">Kan inte uppdatera</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="147"/>
+        <location filename="../imitatepass.cpp" line="157"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation type="unfinished">Kunde inte skriva till .gpg-id.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="160"/>
+        <location filename="../imitatepass.cpp" line="170"/>
         <source>Check selected users!</source>
         <translation type="unfinished">Kolla valda användare!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="161"/>
+        <location filename="../imitatepass.cpp" line="171"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished">Ingen av de valda nycklarna har en tillgänglig hemlig nyckel.
 Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="212"/>
+        <location filename="../imitatepass.cpp" line="222"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="216"/>
-        <location filename="../imitatepass.cpp" line="300"/>
+        <location filename="../imitatepass.cpp" line="226"/>
+        <location filename="../imitatepass.cpp" line="310"/>
         <source>Updating password-store</source>
         <translation type="unfinished">Uppdaterar lösenordsutrymmet</translation>
     </message>
@@ -834,12 +834,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="104"/>
+        <location filename="../pass.cpp" line="106"/>
         <source>No characters chosen</source>
         <translation type="unfinished">Inga valda tecken</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="105"/>
+        <location filename="../pass.cpp" line="107"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation type="unfinished">Kan inte skapa lösenord. Konfigurationen saknar tecken att välja från!</translation>
     </message>

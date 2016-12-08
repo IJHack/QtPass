@@ -1505,15 +1505,30 @@ void MainWindow::showStatusMessage(QString msg, int timeout) {
   ui->statusBar->showMessage(msg, timeout);
 }
 
+/**
+ * @brief MainWindow::startReencryptPath disable ui elements and treeview
+ */
 void MainWindow::startReencryptPath() {
   enableUiElements(false);
   ui->treeView->setDisabled(true);
 }
 
+/**
+ * @brief MainWindow::endReencryptPath re-enable ui elements
+ */
 void MainWindow::endReencryptPath() { enableUiElements(true); }
 
+/**
+ * @brief MainWindow::critical critical message popup wrapper.
+ * @param title
+ * @param msg
+ */
 void MainWindow::critical(QString title, QString msg) {
   QMessageBox::critical(this, title, msg);
 }
 
+/**
+ * @brief MainWindow::setLastDecrypt set the last decrypted data
+ * @param msg
+ */
 void MainWindow::setLastDecrypt(QString msg) { lastDecrypt = msg; }

@@ -3,6 +3,10 @@
 
 #include "pass.h"
 
+/*!
+    \class RealPass
+    \brief Wrapper for executing pass to handle the password-store
+*/
 class RealPass : public Pass {
 
 public:

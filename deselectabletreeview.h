@@ -7,7 +7,7 @@
 
 /**
  * @brief The DeselectableTreeView class
- * taken from http://stackoverflow.com/questions/2761284/
+ * loosly based on http://stackoverflow.com/questions/2761284/
  * thanks to Yassir Ennazk
  */
 class DeselectableTreeView : public QTreeView {
