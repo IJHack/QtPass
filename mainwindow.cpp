@@ -75,8 +75,8 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   connect(QtPassSettings::getPass(), SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
-  connect(QtPassSettings::getPass(), SIGNAL(finished(int, QProcess::ExitStatus)), this,
-          SLOT(processFinished(int, QProcess::ExitStatus)));
+  connect(QtPassSettings::getPass(), SIGNAL(finished(int, const QString &, const QString &)), this,
+          SLOT(processFinished(int, const QString &, const QString &)));
   connect(QtPassSettings::getPass(), SIGNAL(startingExecuteWrapper()), this,
           SLOT(executeWrapperStarted()));
   connect(QtPassSettings::getPass(), SIGNAL(statusMsg(QString, int)), this,

@@ -158,3 +158,19 @@ QString Util::getDir(const QModelIndex &index, bool forPass, const QFileSystemMo
   filePath += '/';
   return filePath;
 }
+
+void Util::copyDir(const QString src, const QString dest)
+{
+    QDir srcDir(src);
+    if (srcDir.exists() == false){
+        return;
+    }
+    srcDir.mkpath(dest);
+    foreach (QString dir, srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
+        copyDir(src + QDir::separator() + dir, dest + QDir::separator() + dir);
+    }
+
+    foreach (QString file, srcDir.entryList(QDir::Files)) {
+        QFile::copy(src + QDir::separator() + file, dest + QDir::separator() + file);
+    }
+}
