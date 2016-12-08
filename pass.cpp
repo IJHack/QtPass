@@ -35,15 +35,6 @@ void Pass::executeWrapper(int id, const QString &app,
 }
 
 void Pass::init(){
-    connect(&exec, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-            SIGNAL(finished(int, QProcess::ExitStatus)));
-    connect(&exec, SIGNAL(error(QProcess::ProcessError)), this,
-            SIGNAL(error(QProcess::ProcessError)));
-    connect(&exec, SIGNAL(finished(int, QProcess::ExitStatus)), this,
-            SLOT(processFinished(int, QProcess::ExitStatus)));
-
-    env = QProcess::systemEnvironment();
-
   #ifdef __APPLE__
     // If it exists, add the gpgtools to PATH
     if (QFile("/usr/local/MacGPG2/bin").exists())
@@ -265,21 +256,4 @@ void Pass::executeGit(int id, const QStringList &args, QString input,
 {
     executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
                    readStdout, readStderr);
-}
-
-void ImitatePass::executeWrapper(int id, const QString &app,
-                                 const QStringList &args, bool readStdout,
-                                 bool readStderr) {
-  executeWrapper(id, app, args, QString(), readStdout, readStderr);
-}
-
-void ImitatePass::executeWrapper(int id, const QString &app,
-                                 const QStringList &args, QString input,
-                                 bool readStdout, bool readStderr) {
-    QString d;
-    for (auto &i : args)
-      d += " " + i;
-    dbg() << app << d;
-    exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
-                 readStderr);
 }

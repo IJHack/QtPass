@@ -86,8 +86,8 @@ private:
   void executeWrapper(int id, const QString &app, const QStringList &args,
                       QString input, bool readStdout = true,
                       bool readStderr = true);
-//private slots:
-//  void processFinished(int, QProcess::ExitStatus);
+ private slots:
+  void processFinished(int, QProcess::ExitStatus);
 
 signals:
   void finished(int, const QString &output, const QString &errout);
