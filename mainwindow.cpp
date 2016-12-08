@@ -335,7 +335,9 @@ bool MainWindow::checkConfig() {
 
   updateProfileBox();
   QtPassSettings::getPass()->updateEnv();
-
+  clearPanelTimer.setInterval(1000 *
+                                QtPassSettings::getAutoclearPanelSeconds());
+  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
   if (!QtPassSettings::isUseGit() ||
       (QtPassSettings::getGitExecutable().isEmpty() &&
        QtPassSettings::getPassExecutable().isEmpty())) {
