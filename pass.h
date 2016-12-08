@@ -11,10 +11,6 @@
 #include <QDir>
 #include <QDebug>
 
-//  TODO(bezet): extract UserInfo somewhere
-#include "enums.h"
-#include "usersdialog.h"
-
 /*!
     \class Pass
     \brief Acts as an abstraction for pass or pass imitation
