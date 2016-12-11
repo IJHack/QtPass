@@ -1,10 +1,10 @@
 <map id="Pass::getRecipientList" name="Pass::getRecipientList">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="231,5,363,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="207,56,388,81"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="231,5,363,31"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="207,56,388,81"/>
 <area shape="rect" id="node6" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="436,157,605,183"/>
 <area shape="rect" id="node8" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="214,157,381,183"/>
 <area shape="rect" id="node9" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="472,207,568,232"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="653,56,829,81"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="462,107,578,132"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="462,107,578,132"/>
 <area shape="rect" id="node7" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="669,157,813,183"/>
 </map>

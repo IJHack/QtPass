@@ -61,7 +61,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node33 -->
 <g id="node2" class="node"><title>Node33</title>
-<g id="a_node2"><a xlink:href="class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
+<g id="a_node2"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
 <polygon fill="none" stroke="black" points="126.746,-161.5 126.746,-179.5 225.554,-179.5 225.554,-161.5 126.746,-161.5"/>
 <text text-anchor="middle" x="176.15" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Insert</text>
 </a>
@@ -74,7 +74,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node35 -->
 <g id="node4" class="node"><title>Node35</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
+<g id="a_node4"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="black" points="308.387,-123.5 308.387,-141.5 395.525,-141.5 395.525,-123.5 308.387,-123.5"/>
 <text text-anchor="middle" x="351.956" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
@@ -87,7 +87,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node36 -->
 <g id="node5" class="node"><title>Node36</title>
-<g id="a_node5"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="MainWindow::reencryptPath reencrypt all files under the chosen directory. ">
+<g id="a_node5"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="black" points="108.123,-85.5 108.123,-103.5 244.177,-103.5 244.177,-85.5 108.123,-85.5"/>
 <text text-anchor="middle" x="176.15" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>

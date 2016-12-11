@@ -1,12 +1,12 @@
 <map id="QtPassSettings::getGitExecutable" name="QtPassSettings::getGitExecutable">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="ImitatePass::GitInit git init wrapper. " alt="" coords="518,5,651,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" title="ImitatePass::GitPull git init wrapper. " alt="" coords="762,56,900,81"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="276,360,428,385"/>
-<area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="493,309,675,335"/>
-<area shape="rect" id="node7" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="773,259,889,284"/>
-<area shape="rect" id="node8" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper. " alt="" coords="279,208,425,233"/>
-<area shape="rect" id="node9" href="$class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="518,107,650,132"/>
-<area shape="rect" id="node10" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove git init wrapper. " alt="" coords="278,159,426,184"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" title="ImitatePass::GitInit git init wrapper. " alt="" coords="518,5,651,31"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#a844eae0e74552da7a6ed6906b3207f3d" title="ImitatePass::GitPull git init wrapper. " alt="" coords="762,56,900,81"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="276,360,428,385"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="493,309,675,335"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="773,259,889,284"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="279,208,425,233"/>
+<area shape="rect" id="node9" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="518,107,650,132"/>
+<area shape="rect" id="node10" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove git init wrapper. " alt="" coords="278,159,426,184"/>
 <area shape="rect" id="node11" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="495,412,673,437"/>
 <area shape="rect" id="node13" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="281,461,422,487"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="970,183,1145,208"/>

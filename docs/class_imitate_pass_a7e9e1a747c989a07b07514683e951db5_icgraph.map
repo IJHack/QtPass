@@ -1,5 +1,5 @@
 <map id="ImitatePass::lastDecrypt" name="ImitatePass::lastDecrypt">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="MainWindow::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="218,56,400,81"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="218,56,400,81"/>
 <area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="612,56,788,81"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="448,5,564,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="448,5,564,31"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="ImitatePass::GitPull_b" name="ImitatePass::GitPull_b">
+<area shape="rect" id="node2" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="228,5,406,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="206,55,428,80"/>
+</map>

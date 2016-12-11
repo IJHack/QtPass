@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isAddGPGId" name="QtPassSettings::isAddGPGId">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" title="ImitatePass::Init initialize pass repository. " alt="" coords="260,5,376,31"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="260,5,376,31"/>
 <area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="248,55,389,80"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="457,5,633,31"/>
 <area shape="rect" id="node5" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="456,55,634,80"/>

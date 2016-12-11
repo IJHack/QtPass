@@ -61,7 +61,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node28 -->
 <g id="node2" class="node"><title>Node28</title>
-<g id="a_node2"><a xlink:href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" target="_top" xlink:title="ImitatePass::GitInit git init wrapper. ">
+<g id="a_node2"><a xlink:href="class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" target="_top" xlink:title="ImitatePass::GitInit git init wrapper. ">
 <polygon fill="none" stroke="black" points="384.137,-342.5 384.137,-360.5 484.053,-360.5 484.053,-342.5 384.137,-342.5"/>
 <text text-anchor="middle" x="434.095" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitInit</text>
 </a>
@@ -74,7 +74,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node30 -->
 <g id="node4" class="node"><title>Node30</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" target="_top" xlink:title="ImitatePass::GitPull git init wrapper. ">
+<g id="a_node4"><a xlink:href="class_imitate_pass.html#a844eae0e74552da7a6ed6906b3207f3d" target="_top" xlink:title="ImitatePass::GitPull git init wrapper. ">
 <polygon fill="none" stroke="black" points="567.575,-304.5 567.575,-322.5 670.826,-322.5 670.826,-304.5 567.575,-304.5"/>
 <text text-anchor="middle" x="619.2" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull</text>
 </a>
@@ -87,7 +87,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node31 -->
 <g id="node5" class="node"><title>Node31</title>
-<g id="a_node5"><a xlink:href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" target="_top" xlink:title="ImitatePass::GitPull_b git pull wrapper. ">
+<g id="a_node5"><a xlink:href="class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" target="_top" xlink:title="ImitatePass::GitPull_b git pull wrapper. ">
 <polygon fill="none" stroke="black" points="202.635,-76.5 202.635,-94.5 317.009,-94.5 317.009,-76.5 202.635,-76.5"/>
 <text text-anchor="middle" x="259.822" y="-82.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
@@ -100,7 +100,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node32 -->
 <g id="node6" class="node"><title>Node32</title>
-<g id="a_node6"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="MainWindow::reencryptPath reencrypt all files under the chosen directory. ">
+<g id="a_node6"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="black" points="366.068,-114.5 366.068,-132.5 502.122,-132.5 502.122,-114.5 366.068,-114.5"/>
 <text text-anchor="middle" x="434.095" y="-120.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -113,7 +113,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node33 -->
 <g id="node7" class="node"><title>Node33</title>
-<g id="a_node7"><a xlink:href="class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
+<g id="a_node7"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="black" points="575.631,-152.5 575.631,-170.5 662.769,-170.5 662.769,-152.5 575.631,-152.5"/>
 <text text-anchor="middle" x="619.2" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
@@ -126,7 +126,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node34 -->
 <g id="node8" class="node"><title>Node34</title>
-<g id="a_node8"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="ImitatePass::GitPush git init wrapper. ">
+<g id="a_node8"><a xlink:href="class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" target="_top" xlink:title="ImitatePass::GitPush git init wrapper. ">
 <polygon fill="none" stroke="black" points="205.137,-190.5 205.137,-208.5 314.506,-208.5 314.506,-190.5 205.137,-190.5"/>
 <text text-anchor="middle" x="259.822" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
 </a>
@@ -139,7 +139,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node35 -->
 <g id="node9" class="node"><title>Node35</title>
-<g id="a_node9"><a xlink:href="class_imitate_pass.html#a5c1ff75bc5d3a8a470d38851055ff765" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
+<g id="a_node9"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
 <polygon fill="none" stroke="black" points="384.691,-266.5 384.691,-284.5 483.499,-284.5 483.499,-266.5 384.691,-266.5"/>
 <text text-anchor="middle" x="434.095" y="-272.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Insert</text>
 </a>
@@ -152,7 +152,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node36 -->
 <g id="node10" class="node"><title>Node36</title>
-<g id="a_node10"><a xlink:href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" target="_top" xlink:title="ImitatePass::Remove git init wrapper. ">
+<g id="a_node10"><a xlink:href="class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" target="_top" xlink:title="ImitatePass::Remove git init wrapper. ">
 <polygon fill="none" stroke="black" points="204.305,-227.5 204.305,-245.5 315.339,-245.5 315.339,-227.5 204.305,-227.5"/>
 <text text-anchor="middle" x="259.822" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Remove</text>
 </a>

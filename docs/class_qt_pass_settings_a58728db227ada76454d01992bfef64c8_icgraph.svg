@@ -61,7 +61,7 @@ var sectionId = 'dynsection-27';
 </g>
 <!-- Node208 -->
 <g id="node2" class="node"><title>Node208</title>
-<g id="a_node2"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="MainWindow::reencryptPath reencrypt all files under the chosen directory. ">
+<g id="a_node2"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="black" points="175.665,-75.5 175.665,-93.5 311.718,-93.5 311.718,-75.5 175.665,-75.5"/>
 <text text-anchor="middle" x="243.691" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -100,7 +100,7 @@ var sectionId = 'dynsection-27';
 </g>
 <!-- Node209 -->
 <g id="node3" class="node"><title>Node209</title>
-<g id="a_node3"><a xlink:href="class_imitate_pass.html#a9e8c577903247d17c42ad04d346deb6b" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
+<g id="a_node3"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="black" points="389.955,-113.5 389.955,-131.5 477.092,-131.5 477.092,-113.5 389.955,-113.5"/>
 <text text-anchor="middle" x="433.523" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
