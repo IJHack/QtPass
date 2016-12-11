@@ -964,11 +964,11 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
+  pass->Show_b(file);
   if (!isNew && lastDecrypt.isEmpty()) {
     // warn?
     return;
   }
-  pass->Show_b(file);
   PasswordDialog d(pwdConfig, *pass, this);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
