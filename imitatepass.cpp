@@ -1,6 +1,5 @@
 #include "imitatepass.h"
 #include "debughelper.h"
-#include "mainwindow.h"
 #include "qtpasssettings.h"
 
 /**
@@ -239,7 +238,7 @@ bool ImitatePass::removeDir(const QString &dirName) {
 }
 
 /**
- * @brief MainWindow::reencryptPath reencrypt all files under the chosen
+ * @brief ImitatePass::reencryptPath reencrypt all files under the chosen
  * directory
  *
  * This is stil quite experimental..

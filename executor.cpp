@@ -140,9 +140,9 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     QTextCodec *codec = QTextCodec::codecForLocale();
     QString pout = codec->toUnicode(internal.readAllStandardOutput());
     QString perr = codec->toUnicode(internal.readAllStandardError());
-    if (process_out != nullptr)
+    if (process_out != Q_NULLPTR)
       *process_out = pout;
-    if (process_err != nullptr)
+    if (process_err != Q_NULLPTR)
       *process_err = perr;
     emit finished(internal.exitCode(), pout, perr);
     return internal.exitCode();

@@ -34,7 +34,7 @@
  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
-      tray(NULL), pass(nullptr) {
+      tray(NULL), pass(Q_NULLPTR) {
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connect(&rpass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
@@ -346,7 +346,7 @@ bool MainWindow::checkConfig() {
   updateProfileBox();
 
   //    TODO(bezet): make this check unnecessary
-  if (pass == nullptr) {
+  if (pass == Q_NULLPTR) {
     if (QtPassSettings::isUsePass())
       pass = &rpass;
     else
@@ -964,6 +964,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
+  pass->Show_b(file);
   if (!isNew && lastDecrypt.isEmpty()) {
     // warn?
     return;

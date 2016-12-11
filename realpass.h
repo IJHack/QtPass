@@ -17,16 +17,16 @@ private:
 public:
   RealPass();
   virtual ~RealPass() {}
-  virtual void GitInit() override;
-  virtual void GitPull() override;
-  virtual void GitPull_b() override;
-  virtual void GitPush() override;
-  virtual void Show(QString file) override;
-  virtual int Show_b(QString file) override;
+  virtual void GitInit() Q_DECL_OVERRIDE;
+  virtual void GitPull() Q_DECL_OVERRIDE;
+  virtual void GitPull_b() Q_DECL_OVERRIDE;
+  virtual void GitPush() Q_DECL_OVERRIDE;
+  virtual void Show(QString file) Q_DECL_OVERRIDE;
+  virtual int Show_b(QString file) Q_DECL_OVERRIDE;
   virtual void Insert(QString file, QString value,
-                      bool overwrite = false) override;
-  virtual void Remove(QString file, bool isDir = false) override;
-  virtual void Init(QString path, const QList<UserInfo> &users) override;
+                      bool overwrite = false) Q_DECL_OVERRIDE;
+  virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
+  virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
 };
 
 #endif // REALPASS_H
