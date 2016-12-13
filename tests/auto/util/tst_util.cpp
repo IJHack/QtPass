@@ -31,7 +31,7 @@ void tst_util::initTestCase() {}
 void tst_util::cleanupTestCase() {}
 
 void tst_util::normalizeFolderPath() {
-  //    QCOMPARE(Util::normalizeFolderPath("test"), "test/");
+  //  QCOMPARE(Util::normalizeFolderPath("test"), "test/");
 }
 
 QTEST_MAIN(tst_util)
