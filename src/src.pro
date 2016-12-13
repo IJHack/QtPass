@@ -15,7 +15,7 @@ macx {
     TARGET = qtpass
 }
 
-SOURCES   += main.cpp\
+SOURCES   += main.cpp \
              mainwindow.cpp \
              configdialog.cpp \
              storemodel.cpp \

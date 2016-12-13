@@ -1,5 +1,6 @@
 #include "../../../src/util.h"
-#include <QtTest/QtTest>
+#include <QCoreApplication>
+#include <QtTest>
 
 class tst_util : public QObject {
   Q_OBJECT
@@ -31,7 +32,8 @@ void tst_util::initTestCase() {}
 void tst_util::cleanupTestCase() {}
 
 void tst_util::normalizeFolderPath() {
-  //  QCOMPARE(Util::normalizeFolderPath("test"), "test/");
+  QCOMPARE(Util::normalizeFolderPath("test"), QString("test/"));
+  QCOMPARE(Util::normalizeFolderPath("test/"), QString("test/"));
 }
 
 QTEST_MAIN(tst_util)

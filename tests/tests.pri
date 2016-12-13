@@ -6,5 +6,3 @@ QT += testlib widgets
 target.path = $$[QT_INSTALL_TESTS]/qtpass/$$TARGET
 INSTALLS += target
 
-VPATH += ../src
-INCLUDEPATH += ../src
