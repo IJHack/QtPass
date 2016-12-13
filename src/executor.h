@@ -88,7 +88,6 @@ signals:
   /**
    * @brief finished    signal that is emited when process finishes
    *
-   * @param id      identifier given when starting process
    * @param exitCode    return code of the process
    * @param output      stdout produced by the process, if requested when
    * executing

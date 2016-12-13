@@ -89,7 +89,7 @@ int ImitatePass::Show_b(QString file) {
  * @brief ImitatePass::Insert create new file with encrypted content
  *
  * @param file      file to be created
- * @param value     value to be stored in file
+ * @param newValue  value to be stored in file
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
