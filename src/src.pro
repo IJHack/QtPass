@@ -1,4 +1,4 @@
-VERSION    = 1.2.0-pre
+!include(../qtpass.pri) { error("Couldn't find the auto.pri file!") }
 
 TEMPLATE   = app
 QT        += core gui

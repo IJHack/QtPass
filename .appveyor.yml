@@ -6,12 +6,12 @@ build_script:
   - qmake qtpass.pro CONFIG+=static
   - mingw32-make
 #after_build:
-  - cmd: copy ..\README.md release\README.txt
-  - cmd: copy ..\LICENSE release\LICENSE.txt
+  - cmd: copy README.md src/release\README.txt
+  - cmd: copy LICENSE src/release\LICENSE.txt
   - iscc qtpass.iss
 artifacts:
   - path: Output\qtpass-*.exe
-  - path: release\qtpass.exe
+  - path: src/release\qtpass.exe
 deploy:
   provider: GitHub
   auth_token:

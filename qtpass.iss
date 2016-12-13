@@ -73,9 +73,9 @@ Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\iconengines\qsvgicon.dll"; DestDir: "{app}\iconengines\"; Flags: ignoreversion
 
-Source: "release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "release\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
