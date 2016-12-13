@@ -1,4 +1,4 @@
-<map id="configdialog.cpp" name="configdialog.cpp">
+<map id="src/configdialog.cpp" name="src/configdialog.cpp">
 <area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="574,152,678,177"/>
 <area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="739,225,844,251"/>
 <area shape="rect" id="node33" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="471,79,577,104"/>

@@ -6,6 +6,7 @@ var searchData=
   ['characterset',['characterSet',['../structpassword_configuration.html#a5733cc26f0c638c6c7197f00e11a4bf2',1,'passwordConfiguration']]],
   ['charsets_5fcount',['CHARSETS_COUNT',['../structpassword_configuration.html#a5733cc26f0c638c6c7197f00e11a4bf2a80adc259b888b9fadac0a07bd9d69b3d',1,'passwordConfiguration']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],
+  ['cleanup',['cleanup',['../classtst__util.html#a1889cedba30d1d96c60e84effbf7f313',1,'tst_util']]],
   ['clicked',['clicked',['../class_q_push_button_with_clipboard.html#a2b5ddf0356596a7dea7b209bf4a53e0b',1,'QPushButtonWithClipboard']]],
   ['clipboard_5falways',['CLIPBOARD_ALWAYS',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e',1,'Enums']]],
   ['clipboard_5fnever',['CLIPBOARD_NEVER',['../class_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef',1,'Enums']]],

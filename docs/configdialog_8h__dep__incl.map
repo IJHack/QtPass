@@ -1,6 +1,6 @@
-<map id="configdialog.h" name="configdialog.h">
-<area shape="rect" id="node2" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,152,123,177"/>
-<area shape="rect" id="node3" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="154,79,265,104"/>
-<area shape="rect" id="node5" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="297,152,416,177"/>
-<area shape="rect" id="node4" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="147,152,272,177"/>
+<map id="src/configdialog.h" name="src/configdialog.h">
+<area shape="rect" id="node2" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="5,152,145,177"/>
+<area shape="rect" id="node3" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="175,79,308,104"/>
+<area shape="rect" id="node5" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="339,152,480,177"/>
+<area shape="rect" id="node4" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="168,152,315,177"/>
 </map>

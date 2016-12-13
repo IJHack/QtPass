@@ -1,4 +1,4 @@
-<map id="deselectabletreeview.h" name="deselectabletreeview.h">
+<map id="src/deselectabletreeview.h" name="src/deselectabletreeview.h">
 <area shape="rect" id="node4" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="764,79,870,104"/>
 <area shape="rect" id="node5" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="1485,299,1587,324"/>
 <area shape="rect" id="node8" href="$enums_8h.html" title="enums.h" alt="" coords="1389,299,1461,324"/>

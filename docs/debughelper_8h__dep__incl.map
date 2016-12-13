@@ -1,12 +1,12 @@
-<map id="debughelper.h" name="debughelper.h">
-<area shape="rect" id="node2" href="$configdialog_8cpp.html" title="configdialog.cpp" alt="" coords="5,79,123,104"/>
-<area shape="rect" id="node3" href="$executor_8cpp.html" title="executor.cpp" alt="" coords="146,79,243,104"/>
-<area shape="rect" id="node4" href="$imitatepass_8cpp.html" title="imitatepass.cpp" alt="" coords="267,79,381,104"/>
-<area shape="rect" id="node5" href="$keygendialog_8cpp.html" title="keygendialog.cpp" alt="" coords="406,79,531,104"/>
-<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="555,79,674,104"/>
-<area shape="rect" id="node7" href="$pass_8cpp.html" title="pass.cpp" alt="" coords="699,79,774,104"/>
-<area shape="rect" id="node8" href="$passworddialog_8cpp.html" title="passworddialog.cpp" alt="" coords="797,79,936,104"/>
-<area shape="rect" id="node9" href="$singleapplication_8cpp.html" title="singleapplication.cpp" alt="" coords="961,79,1106,104"/>
-<area shape="rect" id="node10" href="$usersdialog_8cpp.html" title="usersdialog.cpp" alt="" coords="1129,79,1244,104"/>
-<area shape="rect" id="node11" href="$util_8cpp.html" title="util.cpp" alt="" coords="1268,79,1332,104"/>
+<map id="src/debughelper.h" name="src/debughelper.h">
+<area shape="rect" id="node2" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="5,79,145,104"/>
+<area shape="rect" id="node3" href="$executor_8cpp.html" title="src/executor.cpp" alt="" coords="169,79,287,104"/>
+<area shape="rect" id="node4" href="$imitatepass_8cpp.html" title="src/imitatepass.cpp" alt="" coords="311,79,447,104"/>
+<area shape="rect" id="node5" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="471,79,618,104"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="642,79,783,104"/>
+<area shape="rect" id="node7" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="807,79,903,104"/>
+<area shape="rect" id="node8" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="927,79,1087,104"/>
+<area shape="rect" id="node9" href="$singleapplication_8cpp.html" title="src/singleapplication.cpp" alt="" coords="1112,79,1278,104"/>
+<area shape="rect" id="node10" href="$usersdialog_8cpp.html" title="src/usersdialog.cpp" alt="" coords="1303,79,1439,104"/>
+<area shape="rect" id="node11" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="1463,79,1548,104"/>
 </map>

@@ -8,8 +8,8 @@
  viewBox="0.00 0.00 184.38 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node20 -->
-<g id="node1" class="node"><title>Node20</title>
+<!-- Node21 -->
+<g id="node1" class="node"><title>Node21</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-55.5 0,-73.5 52.1279,-73.5 52.1279,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="26.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
 </g>
@@ -21,47 +21,47 @@
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node0 -->
-<g id="edge1" class="edge"><title>Node20&#45;&gt;Node0</title>
+<!-- Node21&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node21&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M48.7486,-79.1861C60.2001,-86.6329 74.6417,-95.547 88.1279,-102.5 94.3298,-105.697 101.232,-108.778 107.664,-111.459"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="50.5545,-76.1844 40.2813,-73.5939 46.6968,-82.0255 50.5545,-76.1844"/>
 </g>
-<!-- Node22 -->
-<g id="node3" class="node"><title>Node22</title>
+<!-- Node23 -->
+<g id="node3" class="node"><title>Node23</title>
 <g id="a_node3"><a xlink:href="class_keygen_dialog.html" target="_top" xlink:title="Handles GPG keypair generation. ">
 <polygon fill="none" stroke="black" points="93.123,-74.5 93.123,-92.5 171.389,-92.5 171.389,-74.5 93.123,-74.5"/>
 <text text-anchor="middle" x="132.256" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node22 -->
-<g id="edge2" class="edge"><title>Node20&#45;&gt;Node22</title>
+<!-- Node21&#45;&gt;Node23 -->
+<g id="edge2" class="edge"><title>Node21&#45;&gt;Node23</title>
 <path fill="none" stroke="midnightblue" d="M62.1634,-70.9006C72.0248,-72.6989 82.7988,-74.6636 92.8425,-76.4951"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="62.7516,-67.4502 52.2859,-69.0994 61.4958,-74.3366 62.7516,-67.4502"/>
 </g>
-<!-- Node23 -->
-<g id="node4" class="node"><title>Node23</title>
+<!-- Node24 -->
+<g id="node4" class="node"><title>Node24</title>
 <g id="a_node4"><a xlink:href="class_password_dialog.html" target="_top" xlink:title="PasswordDialog Handles the inserting and editing of passwords. ">
 <polygon fill="none" stroke="black" points="88.1279,-37.5 88.1279,-55.5 176.384,-55.5 176.384,-37.5 88.1279,-37.5"/>
 <text text-anchor="middle" x="132.256" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDialog</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node23 -->
-<g id="edge3" class="edge"><title>Node20&#45;&gt;Node23</title>
+<!-- Node21&#45;&gt;Node24 -->
+<g id="edge3" class="edge"><title>Node21&#45;&gt;Node24</title>
 <path fill="none" stroke="midnightblue" d="M62.3145,-58.4102C70.5547,-56.9866 79.425,-55.4542 87.9696,-53.9781"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="61.5441,-54.9913 52.2859,-60.1427 62.7358,-61.8892 61.5441,-54.9913"/>
 </g>
-<!-- Node24 -->
-<g id="node5" class="node"><title>Node24</title>
+<!-- Node25 -->
+<g id="node5" class="node"><title>Node25</title>
 <g id="a_node5"><a xlink:href="class_users_dialog.html" target="_top" xlink:title="Handles listing and editing of GPG users. ">
 <polygon fill="none" stroke="black" points="97.0244,-0.5 97.0244,-18.5 167.487,-18.5 167.487,-0.5 97.0244,-0.5"/>
 <text text-anchor="middle" x="132.256" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node24 -->
-<g id="edge4" class="edge"><title>Node20&#45;&gt;Node24</title>
+<!-- Node21&#45;&gt;Node25 -->
+<g id="edge4" class="edge"><title>Node21&#45;&gt;Node25</title>
 <path fill="none" stroke="midnightblue" d="M50.1361,-50.0292C61.4152,-43.1802 75.2951,-35.0806 88.1279,-28.5 94.826,-25.0653 102.28,-21.6454 109.081,-18.6733"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="48.04,-47.2092 41.3533,-55.4274 51.7055,-53.1728 48.04,-47.2092"/>
 </g>

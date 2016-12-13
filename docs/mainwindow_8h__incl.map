@@ -1,4 +1,4 @@
-<map id="mainwindow.h" name="mainwindow.h">
+<map id="src/mainwindow.h" name="src/mainwindow.h">
 <area shape="rect" id="node2" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="8,225,110,251"/>
 <area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="520,225,593,251"/>
 <area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="323,79,422,104"/>

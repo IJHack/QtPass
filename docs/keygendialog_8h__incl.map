@@ -1,4 +1,4 @@
-<map id="keygendialog.h" name="keygendialog.h">
+<map id="src/keygendialog.h" name="src/keygendialog.h">
 <area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="689,79,792,104"/>
 <area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="565,152,670,177"/>
 <area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="8,372,110,397"/>

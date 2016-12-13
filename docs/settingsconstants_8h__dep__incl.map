@@ -1,5 +1,5 @@
-<map id="settingsconstants.h" name="settingsconstants.h">
-<area shape="rect" id="node2" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="5,79,125,104"/>
-<area shape="rect" id="node3" href="$qtpasssettings_8cpp.html" title="qtpasssettings.cpp" alt="" coords="148,79,280,104"/>
-<area shape="rect" id="node4" href="$settingsconstants_8cpp.html" title="settingsconstants.cpp" alt="" coords="303,79,453,104"/>
+<map id="src/settingsconstants.h" name="src/settingsconstants.h">
+<area shape="rect" id="node2" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="5,79,146,104"/>
+<area shape="rect" id="node3" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="170,79,323,104"/>
+<area shape="rect" id="node4" href="$settingsconstants_8cpp.html" title="src/settingsconstants.cpp" alt="" coords="347,79,519,104"/>
 </map>
