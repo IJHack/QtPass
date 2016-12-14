@@ -4,14 +4,21 @@
 
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.6...HEAD)
 
+**Implemented enhancements:**
+
+- Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
+- enabled drag and drop support for passwords and passwordfolders [\#245](https://github.com/IJHack/QtPass/pull/245) ([YoshiMan](https://github.com/YoshiMan))
+
 **Fixed bugs:**
 
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 
 **Closed issues:**
 
+- Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
 - Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
+- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 
 **Merged pull requests:**
 

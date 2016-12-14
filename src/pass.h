@@ -8,6 +8,8 @@
 #include <QProcess>
 #include <QQueue>
 #include <QString>
+#include <QDir>
+#include <QDebug>
 
 /*!
     \class Pass
@@ -18,10 +20,8 @@ class Pass : public QObject {
 
   bool wrapperRunning;
   QStringList env;
-
 protected:
   Executor exec;
-  void executeWrapper(QString, QString, QString = QString());
 
   enum PROCESS {
     GIT_INIT = 0,
@@ -36,10 +36,16 @@ protected:
     PASS_INIT,
     PASSWD_GENERATE,
     GPG_GENKEYS,
+    PASS_MOVE,
+    PASS_COPY,
+    GIT_MOVE,
+    GIT_COPY,
   };
 
 public:
   Pass();
+  void init();
+
   virtual ~Pass() {}
   virtual void GitInit() = 0;
   virtual void GitPull() = 0;
@@ -49,6 +55,8 @@ public:
   virtual int Show_b(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
+  virtual void Move(const QString srcDir, const QString dest, const bool force = false) = 0;
+  virtual void Copy(const QString srcDir, const QString dest, const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   virtual QString Generate(int length, const QString &charset);
 
@@ -59,6 +67,21 @@ public:
   static QStringList getRecipientList(QString for_file);
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
+
+  void executeGit(int id, const QStringList &args, QString input = QString(),
+                  bool readStdout = true, bool readStderr = true);
+  void executePass(int id, const QStringList &arg, QString input = QString(),
+                  bool readStdout = true,bool readStderr = true);
+  void executeGpg(int id, const QStringList &args, QString input = QString(),
+                  bool readStdout = true,bool readStderr = true);
+
+private:
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      bool readStdout = true, bool readStderr = true);
+
+  void executeWrapper(int id, const QString &app, const QStringList &args,
+                      QString input, bool readStdout = true,
+                      bool readStderr = true);
 
 signals:
   void finished(int, const QString &output, const QString &errout);

@@ -7,9 +7,9 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QQueue>
+#include <QShortcut>
 #include <QTextCodec>
 #include <QTimer>
-#include <QShortcut>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -34,43 +34,16 @@
  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
-      tray(NULL), pass(Q_NULLPTR) {
-  #ifdef __APPLE__
-    // extra treatment for mac os
-    // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
-    qt_set_sequence_auto_mnemonic(true);
-  #endif
+      tray(NULL) {
+// connect(process.data(), SIGNAL(readyReadStandardOutput()), this,
+// SLOT(readyRead()));
+#ifdef __APPLE__
+  // extra treatment for mac os
+  // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+  qt_set_sequence_auto_mnemonic(true);
+#endif
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
-
-  //    TODO(bezet): this should be reconnected dynamically when pass changes
-  connect(&rpass, SIGNAL(error(QProcess::ProcessError)), this,
-          SLOT(processError(QProcess::ProcessError)));
-  connect(&rpass, SIGNAL(finished(int, const QString &, const QString &)), this,
-          SLOT(processFinished(int, const QString &, const QString &)));
-  connect(&rpass, SIGNAL(startingExecuteWrapper()), this,
-          SLOT(executeWrapperStarted()));
-  connect(&rpass, SIGNAL(statusMsg(QString, int)), this,
-          SLOT(showStatusMessage(QString, int)));
-  connect(&rpass, SIGNAL(critical(QString, QString)), this,
-          SLOT(critical(QString, QString)));
-
-  connect(&ipass, SIGNAL(error(QProcess::ProcessError)), this,
-          SLOT(processError(QProcess::ProcessError)));
-  connect(&ipass, SIGNAL(finished(int, const QString &, const QString &)), this,
-          SLOT(processFinished(int, const QString &, const QString &)));
-  connect(&ipass, SIGNAL(startingExecuteWrapper()), this,
-          SLOT(executeWrapperStarted()));
-  connect(&ipass, SIGNAL(statusMsg(QString, int)), this,
-          SLOT(showStatusMessage(QString, int)));
-  connect(&ipass, SIGNAL(critical(QString, QString)), this,
-          SLOT(critical(QString, QString)));
-  //    only for ipass
-  connect(&ipass, SIGNAL(startReencryptPath()), this,
-          SLOT(startReencryptPath()));
-  connect(&ipass, SIGNAL(endReencryptPath()), this, SLOT(endReencryptPath()));
-  connect(&ipass, SIGNAL(lastDecrypt(QString)), this,
-          SLOT(setLastDecrypt(QString)));
 
   ui->setupUi(this);
   enableUiElements(true);
@@ -108,6 +81,25 @@ MainWindow::MainWindow(QWidget *parent)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
+  connect(QtPassSettings::getPass(), SIGNAL(error(QProcess::ProcessError)),
+          this, SLOT(processError(QProcess::ProcessError)));
+  connect(QtPassSettings::getPass(),
+          SIGNAL(finished(int, const QString &, const QString &)), this,
+          SLOT(processFinished(int, const QString &, const QString &)));
+  connect(QtPassSettings::getPass(), SIGNAL(startingExecuteWrapper()), this,
+          SLOT(executeWrapperStarted()));
+  connect(QtPassSettings::getPass(), SIGNAL(statusMsg(QString, int)), this,
+          SLOT(showStatusMessage(QString, int)));
+  connect(QtPassSettings::getPass(), SIGNAL(critical(QString, QString)), this,
+          SLOT(critical(QString, QString)));
+
+  //    only for ipass
+  connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,
+          SLOT(startReencryptPath()));
+  connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
+          SLOT(endReencryptPath()));
+  connect(QtPassSettings::getImitatePass(), SIGNAL(lastDecrypt(QString)), this,
+          SLOT(setLastDecrypt(QString)));
 }
 
 /**
@@ -352,20 +344,10 @@ bool MainWindow::checkConfig() {
           this, SLOT(showBrowserContextMenu(const QPoint &)));
 
   updateProfileBox();
-
-  //    TODO(bezet): make this check unnecessary
-  if (pass == Q_NULLPTR) {
-    if (QtPassSettings::isUsePass())
-      pass = &rpass;
-    else
-      pass = &ipass;
-  }
-  pass->updateEnv();
-
+  QtPassSettings::getPass()->updateEnv();
   clearPanelTimer.setInterval(1000 *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
-
   if (!QtPassSettings::isUseGit() ||
       (QtPassSettings::getGitExecutable().isEmpty() &&
        QtPassSettings::getPassExecutable().isEmpty())) {
@@ -394,7 +376,6 @@ void MainWindow::config() {
   // Automatically default to pass if it's available
   if (freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
     QtPassSettings::setUsePass(true);
-    pass = &rpass;
   }
 
   d->setPassPath(QtPassSettings::getPassExecutable());
@@ -442,10 +423,6 @@ void MainWindow::config() {
       QtPassSettings::setPassStore(
           Util::normalizeFolderPath(d->getStorePath()));
       QtPassSettings::setUsePass(d->usePass());
-      if (d->usePass())
-        pass = &rpass;
-      else
-        pass = &ipass;
       QtPassSettings::setClipBoardType(d->useClipboard());
       QtPassSettings::setUseAutoclear(d->useAutoclear());
       QtPassSettings::setAutoclearSeconds(d->getAutoclear());
@@ -498,7 +475,7 @@ void MainWindow::config() {
 
       if (freshStart && Util::checkConfig())
         config();
-      pass->updateEnv();
+      QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(1000 *
                                   QtPassSettings::getAutoclearPanelSeconds());
       clearClipboardTimer.setInterval(1000 *
@@ -532,9 +509,9 @@ void MainWindow::config() {
 void MainWindow::on_updateButton_clicked(bool block) {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
   if (block)
-    pass->GitPull_b();
+    QtPassSettings::getPass()->GitPull_b();
   else
-    pass->GitPull();
+    QtPassSettings::getPass()->GitPull();
 }
 
 /**
@@ -544,28 +521,8 @@ void MainWindow::on_pushButton_clicked() {
   if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     currentAction = GIT;
-    pass->GitPush();
+    QtPassSettings::getPass()->GitPush();
   }
-}
-
-/**
- * @brief MainWindow::getDir get selectd folder path
- * @param index
- * @param forPass short or full path
- * @return path
- */
-QString MainWindow::getDir(const QModelIndex &index, bool forPass) {
-  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';
-  if (!index.isValid())
-    return forPass ? "" : abspath;
-  QFileInfo info = model.fileInfo(proxyModel.mapToSource(index));
-  QString filePath =
-      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());
-  if (forPass) {
-    filePath = QDir(abspath).relativeFilePath(filePath);
-  }
-  filePath += '/';
-  return filePath;
 }
 
 /**
@@ -593,14 +550,15 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
-  currentDir = getDir(ui->treeView->currentIndex(), false);
+  currentDir =
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   lastDecrypt = "Could not decrypt";
   clippedText = "";
   QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
     currentAction = GPG;
-    pass->Show(file);
+    QtPassSettings::getPass()->Show(file);
   } else {
     clearPanel(false);
     ui->editButton->setEnabled(false);
@@ -650,7 +608,7 @@ void MainWindow::deselect() {
  */
 void MainWindow::executePassGitInit() {
   dbg() << "Pass git init called";
-  pass->GitInit();
+  QtPassSettings::getPass()->GitInit();
 }
 
 void MainWindow::executeWrapperStarted() {
@@ -972,12 +930,12 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
-  pass->Show_b(file);
+  QtPassSettings::getPass()->Show_b(file);
   if (!isNew && lastDecrypt.isEmpty()) {
     // warn?
     return;
   }
-  PasswordDialog d(pwdConfig, *pass, this);
+  PasswordDialog d(pwdConfig, this);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
   d.setTemplate(QtPassSettings::getPassTemplate());
@@ -997,7 +955,7 @@ void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
     newValue += "\n";
 
   currentAction = EDIT;
-  pass->Insert(file, newValue, overwrite);
+  QtPassSettings::getPass()->Insert(file, newValue, overwrite);
 
   on_pushButton_clicked();
 }
@@ -1024,12 +982,13 @@ void MainWindow::on_addButton_clicked() {
   //    return;
   //  }
   bool ok;
-  QString dir = getDir(ui->treeView->currentIndex(), true);
+  QString dir = Util::getDir(ui->treeView->currentIndex(),
+                             QtPassSettings::isUsePass(), model, proxyModel);
   QString file = QInputDialog::getText(
-      this, tr("New file"),
-      tr("New password file: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() +
-               getDir(ui->treeView->currentIndex(), true)),
+      this, tr("New file"), tr("New password file: \n(Will be placed in %1 )")
+                                .arg(QtPassSettings::getPassStore() +
+                                     Util::getDir(ui->treeView->currentIndex(),
+                                                  true, model, proxyModel)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
@@ -1050,7 +1009,8 @@ void MainWindow::on_deleteButton_clicked() {
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = getDir(ui->treeView->currentIndex(), true);
+    file = Util::getDir(ui->treeView->currentIndex(),
+                        QtPassSettings::isUsePass(), model, proxyModel);
     isDir = true;
   }
 
@@ -1063,10 +1023,10 @@ void MainWindow::on_deleteButton_clicked() {
     return;
 
   currentAction = REMOVE;
-  pass->Remove(file, isDir);
-
-  on_pushButton_clicked();
-
+  QtPassSettings::getPass()->Remove(file, isDir);
+  //  TODO(bezet): hide inside interface?
+  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush())
+    on_pushButton_clicked();
   lastDecrypt = "";
 }
 
@@ -1099,7 +1059,7 @@ void MainWindow::userDialog(QString dir) {
 //  TODO(bezet): temporary wrapper
 QList<UserInfo> MainWindow::listKeys(QString keystring, bool secret) {
   currentAction = GPG_INTERNAL;
-  return pass->listKeys(keystring, secret);
+  return QtPassSettings::getPass()->listKeys(keystring, secret);
 }
 
 /**
@@ -1120,12 +1080,13 @@ void MainWindow::on_usersButton_clicked() {
         it->have_secret = true;
   }
   QList<UserInfo> selected_users;
-  QString dir = currentDir.isEmpty()
-                    ? getDir(ui->treeView->currentIndex(), false)
-                    : currentDir;
+  QString dir =
+      currentDir.isEmpty()
+          ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
+          : currentDir;
   int count = 0;
-  QString recipients =
-      pass->getRecipientString(dir.isEmpty() ? "" : dir, " ", &count);
+  QString recipients = QtPassSettings::getPass()->getRecipientString(
+      dir.isEmpty() ? "" : dir, " ", &count);
   if (!recipients.isEmpty())
     selected_users = listKeys(recipients);
   foreach (const UserInfo &sel, selected_users) {
@@ -1135,7 +1096,8 @@ void MainWindow::on_usersButton_clicked() {
   }
   if (count > selected_users.size()) {
     // Some keys seem missing from keyring, add them separately
-    QStringList recipients = pass->getRecipientList(dir.isEmpty() ? "" : dir);
+    QStringList recipients =
+        QtPassSettings::getPass()->getRecipientList(dir.isEmpty() ? "" : dir);
     foreach (const QString recipient, recipients) {
       if (listKeys(recipient).size() < 1) {
         UserInfo i;
@@ -1154,7 +1116,7 @@ void MainWindow::on_usersButton_clicked() {
   }
   d.setUsers(NULL);
 
-  pass->Init(dir, users);
+  QtPassSettings::getPass()->Init(dir, users);
 
   on_pushButton_clicked();
 }
@@ -1219,7 +1181,7 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
   ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
   currentAction = GPG_INTERNAL;
-  pass->GenerateGPGKeys(batch);
+  QtPassSettings::getPass()->GenerateGPGKeys(batch);
 }
 
 /**
@@ -1262,7 +1224,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
-  pass->updateEnv();
+  QtPassSettings::getPass()->updateEnv();
 
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
@@ -1427,12 +1389,13 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
  */
 void MainWindow::addFolder() {
   bool ok;
-  QString dir = getDir(ui->treeView->currentIndex(), false);
+  QString dir =
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   QString newdir = QInputDialog::getText(
-      this, tr("New file"),
-      tr("New Folder: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() +
-               getDir(ui->treeView->currentIndex(), true)),
+      this, tr("New file"), tr("New Folder: \n(Will be placed in %1 )")
+                                .arg(QtPassSettings::getPassStore() +
+                                     Util::getDir(ui->treeView->currentIndex(),
+                                                  true, model, proxyModel)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
@@ -1449,12 +1412,13 @@ void MainWindow::editPassword() {
   if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
     on_updateButton_clicked(true);
   // TODO(annejan) move to editbutton stuff possibly?
-  currentDir = getDir(ui->treeView->currentIndex(), false);
+  currentDir =
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   lastDecrypt = "Could not decrypt";
   QString file = getFile(ui->treeView->currentIndex(), true);
   if (!file.isEmpty()) {
     currentAction = GPG;
-    if (pass->Show_b(file) == 0)
+    if (QtPassSettings::getPass()->Show_b(file) == 0)
       on_editButton_clicked();
   }
 }

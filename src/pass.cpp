@@ -15,21 +15,40 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+}
 
-#ifdef __APPLE__
-  // If it exists, add the gpgtools to PATH
-  if (QFile("/usr/local/MacGPG2/bin").exists())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
-  // Add missing /usr/local/bin
-  if (env.filter("/usr/local/bin").isEmpty())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
-#endif
+void Pass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, bool readStdout,
+                                 bool readStderr) {
+  executeWrapper(id, app, args, QString(), readStdout, readStderr);
+}
 
-  if (!QtPassSettings::getGpgHome().isEmpty()) {
-    QDir absHome(QtPassSettings::getGpgHome());
-    absHome.makeAbsolute();
-    env << "GNUPGHOME=" + absHome.path();
-  }
+void Pass::executeWrapper(int id, const QString &app,
+                                 const QStringList &args, QString input,
+                                 bool readStdout, bool readStderr) {
+  QString d;
+  for (auto &i : args)
+    d += " " + i;
+  dbg() << app << d;
+  exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
+               readStderr);
+}
+
+void Pass::init(){
+  #ifdef __APPLE__
+    // If it exists, add the gpgtools to PATH
+    if (QFile("/usr/local/MacGPG2/bin").exists())
+      env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
+    // Add missing /usr/local/bin
+    if (env.filter("/usr/local/bin").isEmpty())
+      env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
+  #endif
+
+    if (!QtPassSettings::getGpgHome().isEmpty()) {
+      QDir absHome(QtPassSettings::getGpgHome());
+      absHome.makeAbsolute();
+      env << "GNUPGHOME=" + absHome.path();
+    }
 }
 
 /**
@@ -204,4 +223,36 @@ QString Pass::getRecipientString(QString for_file, QString separator,
   foreach (const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
+}
+
+/**
+ * @brief Pass::executePass easy wrapper for running pass
+ * @param args
+ */
+void Pass::executePass(int id, const QStringList &args, QString input,
+                       bool readStdout ,bool readStderr)
+{
+    executeWrapper(id, QtPassSettings::getPassExecutable(), args , input,
+                   readStdout, readStderr);
+}
+
+/**
+ * @brief Pass::executeGpg easy wrapper for running gpg commands
+ * @param args
+ */
+void Pass::executeGpg(int id, const QStringList &args, QString input,
+                      bool readStdout,bool readStderr)
+{
+    executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
+                   readStdout, readStderr);
+}
+/**
+ * @brief Pass::executeGit easy wrapper for running git commands
+ * @param args
+ */
+void Pass::executeGit(int id, const QStringList &args, QString input,
+                      bool readStdout,bool readStderr)
+{
+    executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
+                   readStdout, readStderr);
 }

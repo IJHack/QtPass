@@ -8,11 +8,6 @@
     \brief Wrapper for executing pass to handle the password-store
 */
 class RealPass : public Pass {
-private:
-  void executePass(PROCESS id, const QStringList &args, QString input,
-                   bool readStdout = true, bool readStderr = false);
-  void executePass(PROCESS id, const QStringList &args, bool readStdout = true,
-                   bool readStderr = false);
 
 public:
   RealPass();
@@ -27,6 +22,13 @@ public:
                       bool overwrite = false) Q_DECL_OVERRIDE;
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
   virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
+
+  // Pass interface
+public:
+  void Move(const QString src, const QString dest,
+            const bool force = false) Q_DECL_OVERRIDE;
+  void Copy(const QString src, const QString dest,
+            const bool force = false) Q_DECL_OVERRIDE;
 };
 
 #endif // REALPASS_H
