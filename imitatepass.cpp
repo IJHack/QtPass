@@ -1,6 +1,7 @@
 #include "imitatepass.h"
 #include "debughelper.h"
 #include "qtpasssettings.h"
+#include <QDirIterator>
 
 /**
  * @brief ImitatePass::ImitatePass for situaions when pass is not available

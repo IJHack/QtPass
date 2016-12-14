@@ -920,7 +920,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
-  pass->Show_b(file);
+  QtPassSettings::getPass()->Show_b(file);
   if (!isNew && lastDecrypt.isEmpty()) {
     // warn?
     return;
