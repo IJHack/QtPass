@@ -3,26 +3,6 @@
 
 RealPass::RealPass() {}
 
-/**
- * @brief RealPass::executePass easy wrapper for running pass
- * https://www.passwordstore.org/
- * @param args
- */
-void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
-                           bool readStdout, bool readStderr) {
-  exec.execute(id, QtPassSettings::getPassExecutable(), args, input, readStdout,
-               readStderr);
-}
-
-/**
- * @brief RealPass::executePass easy wrapper for running pass
- * @param args
- */
-void RealPass::executePass(PROCESS id, const QStringList &args, bool readStdout,
-                           bool readStderr) {
-  exec.execute(id, QtPassSettings::getPassExecutable(), args, QString(),
-               readStdout, readStderr);
-}
 
 /**
  * @brief RealPass::GitInit pass git init wrapper
@@ -57,7 +37,7 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  *          otherwise returns QProcess::NormalExit
  */
 void RealPass::Show(QString file) {
-  executePass(PASS_SHOW, {"show", file}, true);
+  executePass(PASS_SHOW, {"show", file}, "", true);
 }
 
 /**
@@ -111,3 +91,70 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   }
   executePass(PASS_INIT, args);
 }
+void RealPass::Move(const QString src, const QString dest, const bool force)
+{
+    QFileInfo srcFileInfo= QFileInfo(src);
+    QFileInfo destFileInfo= QFileInfo(dest);
+
+    // force mode?
+    // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
+    // and the user didnt want to move force
+    if(force == false && srcFileInfo.isFile() && destFileInfo.isFile()){
+        return;
+    }
+
+    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
+    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
+
+
+    // remove the .gpg because pass will not work
+    if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
+        passSrc.replace(QRegExp("\\.gpg$"), "");
+    }
+    if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
+        passDest.replace(QRegExp("\\.gpg$"), "");
+    }
+
+    QStringList args;
+    args << "mv";
+    if(force){
+        args << "-f";
+    }
+    args << passSrc;
+    args << passDest;
+    executePass(PASS_MOVE, args);
+}
+
+
+void RealPass::Copy(const QString src, const QString dest, const bool force)
+{
+    QFileInfo srcFileInfo= QFileInfo(src);
+    QFileInfo destFileInfo= QFileInfo(dest);
+    // force mode?
+    // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
+    // and the user didnt want to move force
+    if(force == false && srcFileInfo.isFile() && destFileInfo.isFile()){
+        return;
+    }
+
+    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
+    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
+
+
+    // remove the .gpg because pass will not work
+    if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
+        passSrc.replace(QRegExp("\\.gpg$"), "");
+    }
+    if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
+        passDest.replace(QRegExp("\\.gpg$"), "");
+    }
+    QStringList args;
+    args << "cp";
+    if(force){
+        args << "-f";
+    }
+    args << passSrc;
+    args << passDest;
+    executePass(PASS_COPY, args);
+}
+

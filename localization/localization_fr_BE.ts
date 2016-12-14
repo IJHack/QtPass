@@ -366,47 +366,47 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../imitatepass.cpp" line="100"/>
-        <location filename="../imitatepass.cpp" line="305"/>
+        <location filename="../imitatepass.cpp" line="78"/>
+        <location filename="../imitatepass.cpp" line="279"/>
         <source>Can not edit</source>
         <translation>Impossible d&apos;éditer</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="101"/>
-        <location filename="../imitatepass.cpp" line="306"/>
+        <location filename="../imitatepass.cpp" line="79"/>
+        <location filename="../imitatepass.cpp" line="280"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Impossible de lire la clé de chiffrement à utiliser, le fichier .gpg-id est manquant ou corrompu.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="181"/>
+        <location filename="../imitatepass.cpp" line="156"/>
         <source>Cannot update</source>
         <translation>Impossible de mettre à jour</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="182"/>
+        <location filename="../imitatepass.cpp" line="157"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Impossible d&apos;ouvrir .gpg-id en écriture.</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="195"/>
+        <location filename="../imitatepass.cpp" line="170"/>
         <source>Check selected users!</source>
         <translation>Cocher les utilisateurs sélectionnés !</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="196"/>
+        <location filename="../imitatepass.cpp" line="171"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Aucune des clés sélectionnées n&apos;a de clé privée disponible.
 Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajoutés !</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="248"/>
+        <location filename="../imitatepass.cpp" line="222"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-chiffrement depuis le dossier %1</translation>
     </message>
     <message>
-        <location filename="../imitatepass.cpp" line="252"/>
-        <location filename="../imitatepass.cpp" line="336"/>
+        <location filename="../imitatepass.cpp" line="226"/>
+        <location filename="../imitatepass.cpp" line="310"/>
         <source>Updating password-store</source>
         <translation>Mise à jour du magasin de mots de passe</translation>
     </message>
@@ -528,14 +528,14 @@ Expire-Date: 0
     <message>
         <location filename="../mainwindow.ui" line="72"/>
         <location filename="../mainwindow.ui" line="75"/>
-        <location filename="../mainwindow.cpp" line="1386"/>
+        <location filename="../mainwindow.cpp" line="1343"/>
         <source>Edit</source>
         <translation>Editer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <location filename="../mainwindow.ui" line="93"/>
-        <location filename="../mainwindow.cpp" line="1398"/>
+        <location filename="../mainwindow.cpp" line="1355"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
@@ -566,7 +566,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../mainwindow.ui" line="179"/>
-        <location filename="../mainwindow.cpp" line="1380"/>
+        <location filename="../mainwindow.cpp" line="1337"/>
         <source>Users</source>
         <translation>Utilisateurs</translation>
     </message>
@@ -581,12 +581,23 @@ Expire-Date: 0
         <translation>Config</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="332"/>
+        <location filename="../mainwindow.ui" line="342"/>
         <source>Welcome to QtPass</source>
         <translation>Bienvenue sur QtPass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="388"/>
+        <location filename="../mainwindow.ui" line="398"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -595,7 +606,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -632,137 +643,137 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Code source&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="462"/>
+        <location filename="../mainwindow.ui" line="472"/>
         <source>qtpass</source>
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="69"/>
+        <location filename="../mainwindow.cpp" line="42"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bienvenue sur QtPass %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="89"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Add Password</source>
         <translation>Ajouter mot de passe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.cpp" line="63"/>
         <source>Add Folder</source>
         <translation>Ajouter dossier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="161"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Impossible de se connecter au WebDAV :
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="183"/>
+        <location filename="../mainwindow.cpp" line="173"/>
         <source>QtPass WebDAV password</source>
         <translation>Mot de passe WebDAV QtPass</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="184"/>
+        <location filename="../mainwindow.cpp" line="174"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Entrez un mot de passe pour vous connecter au WebDAV :</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="200"/>
+        <location filename="../mainwindow.cpp" line="190"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav s&apos;est terminé de manière improviste
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="204"/>
+        <location filename="../mainwindow.cpp" line="194"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Impossible de démarrer fusedav pour se connecter au WebDAV :
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
-        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>Updating password-store</source>
         <translation>Mise à jour du magasin de mots de passe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="1072"/>
+        <location filename="../mainwindow.cpp" line="573"/>
+        <location filename="../mainwindow.cpp" line="1029"/>
         <source>Can not edit</source>
         <translation>Impossible d&apos;éditer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="618"/>
-        <location filename="../mainwindow.cpp" line="1073"/>
+        <location filename="../mainwindow.cpp" line="574"/>
+        <location filename="../mainwindow.cpp" line="1030"/>
         <source>Selected password file does not exist, not able to edit</source>
         <translation>Le fichier de mots de passe sélectionné n&apos;existe pas, impossible de le modifier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="699"/>
+        <location filename="../mainwindow.cpp" line="655"/>
         <source>Password hidden</source>
         <translation>Mot de passe caché</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="659"/>
         <source>Content hidden</source>
         <translation>Contenu caché</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="743"/>
-        <location filename="../mainwindow.cpp" line="1509"/>
+        <location filename="../mainwindow.cpp" line="699"/>
+        <location filename="../mainwindow.cpp" line="1466"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="800"/>
+        <location filename="../mainwindow.cpp" line="756"/>
         <source>Clipboard cleared</source>
         <translation>Presse-papiers vidé</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="802"/>
+        <location filename="../mainwindow.cpp" line="758"/>
         <source>Clipboard not cleared</source>
         <translation>Presse-papiers non vidé</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="816"/>
+        <location filename="../mainwindow.cpp" line="772"/>
         <source>Password and Content hidden</source>
         <translation>Mot de passe et contenu cachés</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="828"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="875"/>
+        <location filename="../mainwindow.cpp" line="831"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="878"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="837"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="884"/>
+        <location filename="../mainwindow.cpp" line="840"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="843"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Looking for: %1</source>
         <translation>Recherche de : %1</translation>
     </message>
@@ -771,45 +782,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Impossible de lire la clé de chiffrement à utiliser, le fichier .gpg-id est manquant ou corrompu.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1021"/>
-        <location filename="../mainwindow.cpp" line="1424"/>
+        <location filename="../mainwindow.cpp" line="978"/>
+        <location filename="../mainwindow.cpp" line="1381"/>
         <source>New file</source>
         <translation>Nouveau fichier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1022"/>
+        <location filename="../mainwindow.cpp" line="979"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Enregistrement d&apos;un nouveau mot de passe :
 (Sera stocké dans %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1050"/>
+        <location filename="../mainwindow.cpp" line="1007"/>
         <source>Delete password?</source>
         <translation>Supprimer le mot de passe ?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1051"/>
+        <location filename="../mainwindow.cpp" line="1008"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Êtes-vous sûr de vouloir supprimer %1 ?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1050"/>
+        <location filename="../mainwindow.cpp" line="1007"/>
         <source>Delete folder?</source>
         <translation>Supprimer le dossier ?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1104"/>
+        <location filename="../mainwindow.cpp" line="1061"/>
         <source>Can not get key list</source>
         <translation>Impossible de récupérer la liste de clés</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1062"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1136"/>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>Key not found in keyring</source>
         <translation>Clé introuvable dans le trousseau de clés</translation>
     </message>
@@ -832,27 +843,27 @@ You will not be able to decrypt any newly added passwords!</source>
 Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajoutés !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1169"/>
         <source>Generating GPG key pair</source>
         <translation>Génération d&apos;une paire de clés GPG</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1255"/>
+        <location filename="../mainwindow.cpp" line="1212"/>
         <source>Profile changed to %1</source>
         <translation>Profil changé vers %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1378"/>
+        <location filename="../mainwindow.cpp" line="1335"/>
         <source>Add folder</source>
         <translation>Ajouter un dossier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1379"/>
+        <location filename="../mainwindow.cpp" line="1336"/>
         <source>Add password</source>
         <translation>Ajouter un mot de passe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1425"/>
+        <location filename="../mainwindow.cpp" line="1382"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nouveau dossier :
@@ -875,7 +886,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
         <translation type="vanished">Impossible de démarrer le processus,  le précédent est toujours en cours d&apos;exécution !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1475"/>
+        <location filename="../mainwindow.cpp" line="1432"/>
         <source>Copied to clipboard</source>
         <translation>copié dans le presse-papiers</translation>
     </message>
@@ -887,12 +898,12 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../pass.cpp" line="78"/>
+        <location filename="../pass.cpp" line="97"/>
         <source>No characters chosen</source>
         <translation>Pas de caractères choisis</translation>
     </message>
     <message>
-        <location filename="../pass.cpp" line="79"/>
+        <location filename="../pass.cpp" line="98"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Impossible de générer un mot de passe, il n&apos;y a pas de caractères utilisables définis dans la configuration !</translation>
     </message>
@@ -960,6 +971,19 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
         <location filename="../main.cpp" line="78"/>
         <source>LTR</source>
         <translation>GAD</translation>
+    </message>
+</context>
+<context>
+    <name>StoreModel</name>
+    <message>
+        <location filename="../storemodel.cpp" line="242"/>
+        <source>force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../storemodel.cpp" line="242"/>
+        <source>overwrite %1 with %2?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

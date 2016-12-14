@@ -11,9 +11,10 @@
 #include <QSettings>
 #include <QSize>
 #include <QVariant>
-
+#include "pass.h"
+#include "realpass.h"
+#include "imitatepass.h"
 #include "enums.h"
-#include "mainwindow.h"
 
 /*!
     \class QtPassSettings
@@ -183,6 +184,11 @@ public:
   static QHash<QString, QString> getProfiles();
   static void setProfiles(const QHash<QString, QString> &profiles);
 
+  static Pass* getPass();
+  static RealPass* getRealPass();
+  static ImitatePass* getImitatePass();
+
+
 signals:
 
 public slots:
@@ -201,6 +207,11 @@ private:
   static QHash<QString, QSize> sizeSettings;
   static QHash<QString, int> intSettings;
   static QHash<QString, bool> boolSettings;
+
+  static Pass *pass;
+  static RealPass realPass;
+  static ImitatePass imitatePass;
+
 
   // functions
   static QSettings &getSettings();
@@ -232,6 +243,7 @@ private:
   static QVariant getSetting(const QString &key,
                              const QVariant &defaultValue = QVariant());
   static void setSetting(const QString &key, const QVariant &value);
+
 };
 
 #endif // QTPASSSETTINGS_H
