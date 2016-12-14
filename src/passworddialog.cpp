@@ -8,6 +8,8 @@
 
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
+ * @param passConfig configuration constant
+ * @param pass pass or pass replacement wrapper
  * @param parent
  */
 PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,

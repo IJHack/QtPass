@@ -55,7 +55,7 @@ void Pass::init(){
  * @brief Pass::Generate use either pwgen or internal password
  * generator
  * @param length of the desired password
- * @param selection character set to use for generation
+ * @param charset to use for generation
  * @return the password
  */
 //  TODO(bezet): this should definitely throw
@@ -104,8 +104,7 @@ QString Pass::Generate(int length, const QString &charset) {
 
 /**
  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
- * @param batch     GnuPG style configuration string
- * @param keygenWindow
+ * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
   exec.execute(PASSWD_GENERATE, QtPassSettings::getGpgExecutable(),

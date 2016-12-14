@@ -6,8 +6,6 @@
  *  basic constructor
  * @param textToCopy
  *  the text to paste into the clipboard
- * @param text
- *  the text for the label to display
  * @param parent
  *  the parent window
  */
@@ -31,7 +29,7 @@ QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
 /**
  * @brief QPushButtonWithClipboard::setTextToCopy sets text from associated
  * text field
- * @param QString value
+ * @param value QString text to be copied
  */
 void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
   textToCopy = value;
