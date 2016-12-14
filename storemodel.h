@@ -4,6 +4,10 @@
 #include <QFileSystemModel>
 #include <QRegExp>
 #include <QSortFilterProxyModel>
+#include <QStringListModel>
+#include "util.h"
+#include <QDataStream>
+#include <qtpasssettings.h>
 
 /*!
     \class StoreModel
@@ -15,6 +19,7 @@ private:
   QFileSystemModel *fs;
   QString store;
 
+
 public:
   StoreModel();
 
@@ -22,6 +27,25 @@ public:
   bool ShowThis(const QModelIndex) const;
   void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
   QVariant data(const QModelIndex &index, int role) const;
+
+  // QAbstractItemModel interface
+public:
+  Qt::DropActions supportedDropActions() const;
+  Qt::DropActions supportedDragActions() const;
+  Qt::ItemFlags flags(const QModelIndex &index) const;
+  QStringList mimeTypes() const;
+  QMimeData *mimeData(const QModelIndexList &indexes) const;
+  bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
+  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+};
+/*!
+    \struct dragAndDropInfo
+    \brief holds values to share beetween drag and drop on the passwordstorage view
+ */
+struct dragAndDropInfoPasswordStore {
+    bool isDir;
+    bool isFile;
+    QString path;
 };
 
 #endif // STOREMODEL_H_

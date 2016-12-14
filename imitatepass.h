@@ -40,6 +40,13 @@ signals:
   void startReencryptPath();
   void endReencryptPath();
   void lastDecrypt(QString);
+
+  // Pass interface
+public:
+  void Move(const QString src, const QString dest,
+            const bool force = false) Q_DECL_OVERRIDE;
+  void Copy(const QString src, const QString dest,
+            const bool force = false) Q_DECL_OVERRIDE;
 };
 
 #endif // IMITATEPASS_H

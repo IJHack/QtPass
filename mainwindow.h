@@ -129,15 +129,11 @@ private:
   QString currentDir;
   bool startupPhase;
   TrayIcon *tray;
-  Pass *pass;
-  RealPass rpass;
-  ImitatePass ipass;
 
   void updateText();
   void enableUiElements(bool state);
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
-  QString getDir(const QModelIndex &, bool);
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool, bool);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);

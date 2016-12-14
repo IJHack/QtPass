@@ -1,6 +1,8 @@
 #include "passworddialog.h"
 #include "debughelper.h"
 #include "ui_passworddialog.h"
+#include "qtpasssettings.h"
+#include <QDebug>
 #include <QLabel>
 #include <QLineEdit>
 
@@ -9,9 +11,8 @@
  * @param parent
  */
 PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
-                               Pass &pass, QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig),
-      m_pass(pass) {
+                               QWidget *parent)
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig){
   templating = false;
   allFields = false;
   ui->setupUi(this);
@@ -42,7 +43,7 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
-  QString newPass = m_pass.Generate(
+  QString newPass = QtPassSettings::getPass()->Generate(
       ui->spinBox_pwdLength->value(),
       m_passConfig.Characters[(passwordConfiguration::characterSet)
                                   ui->passwordTemplateSwitch->currentIndex()]);
