@@ -9,7 +9,7 @@
 #include <QQueue>
 #include <QTextCodec>
 #include <QTimer>
-
+#include <QShortcut>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -35,6 +35,14 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
       tray(NULL), pass(Q_NULLPTR) {
+  #ifdef __APPLE__
+    // extra treatment for mac os
+    // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+    qt_set_sequence_auto_mnemonic(true);
+  #endif
+  // register shortcut ctrl/cmd + Q to close the main window
+  new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connect(&rpass, SIGNAL(error(QProcess::ProcessError)), this,
           SLOT(processError(QProcess::ProcessError)));
