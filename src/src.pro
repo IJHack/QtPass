@@ -7,6 +7,12 @@ CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+CONFIG(debug, debug|release) {
+    QMAKE_CXXFLAGS += -g -c -Wall -fprofile-arcs -ftest-coverage -O0
+    QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage  -O0
+    SUBDIRS += tests
+}
+
 macx {
     TARGET = QtPass
     QMAKE_MAC_SDK = macosx
