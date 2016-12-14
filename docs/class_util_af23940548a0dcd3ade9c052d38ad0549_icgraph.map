@@ -1,6 +1,0 @@
-<map id="Util::checkConfig" name="Util::checkConfig">
-<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="382,5,560,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="175,55,315,80"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="626,5,808,31"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a284c45f4f794bc0dd28a184a08f83455" title="MainWindow::getGpgExecutable. " alt="" coords="363,55,578,80"/>
-</map>

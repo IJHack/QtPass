@@ -1,5 +1,0 @@
-<map id="MainWindow::generatePassword" name="MainWindow::generatePassword">
-<area shape="rect" id="node2" href="$class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2" title="Util::qSleep because . . windows sleep. " alt="" coords="339,5,429,31"/>
-<area shape="rect" id="node3" href="$class_q_push_button_with_clipboard.html#a6ffc2d84fb3bcf62a2a3a4c4bc238d7f" title="QPushButtonWithClipboard::getTextToCopy returns the text of associated text field. " alt="" coords="292,55,476,93"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a5616dbee2eede4e879bc40fa7778ba7b" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="270,117,498,143"/>
-</map>

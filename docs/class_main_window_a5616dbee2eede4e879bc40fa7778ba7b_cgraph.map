@@ -1,6 +1,0 @@
-<map id="MainWindow::copyTextToClipboard" name="MainWindow::copyTextToClipboard">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="290,5,501,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title="QtPassSettings::getAutoclear\lSeconds" alt="" coords="298,55,493,93"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="282,117,509,143"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="287,167,504,192"/>
-</map>
