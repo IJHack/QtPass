@@ -751,7 +751,7 @@ void MainWindow::processErrorExit(const QString &p_error) {
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
   QString clippedText = clipboard->text();
-  if (clippedText == clippedText) {
+  if (clippedText == this->clippedText) {
     clipboard->clear();
     ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
@@ -920,6 +920,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool overwrite, bool isNew = false) {
+  pass->Show_b(file);
   if (!isNew && lastDecrypt.isEmpty()) {
     // warn?
     return;

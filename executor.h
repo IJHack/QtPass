@@ -74,11 +74,12 @@ public:
                bool readStdout = false, bool readStderr = true);
 
   int executeBlocking(QString app, const QStringList &args,
-                      QString input = QString(), QString *process_out = nullptr,
-                      QString *process_err = nullptr);
+                      QString input = QString(),
+                      QString *process_out = Q_NULLPTR,
+                      QString *process_err = Q_NULLPTR);
 
   int executeBlocking(QString app, const QStringList &args,
-                      QString *process_out, QString *process_err = nullptr);
+                      QString *process_out, QString *process_err = Q_NULLPTR);
 
   void setEnvironment(const QStringList &env);
 private slots:

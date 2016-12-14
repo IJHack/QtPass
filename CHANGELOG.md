@@ -15,6 +15,8 @@
 
 **Merged pull requests:**
 
+- this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
+- executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
 - Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 
