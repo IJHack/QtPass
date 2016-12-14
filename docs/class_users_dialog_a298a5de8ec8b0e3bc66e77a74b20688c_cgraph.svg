@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 258.10 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>UsersDialog::setUsers</title>
-<!-- Node10 -->
-<g id="node1" class="node"><title>Node10</title>
+<!-- Node8 -->
+<g id="node1" class="node"><title>Node8</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 115.473,-36.5 115.473,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="57.7363" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::setUsers</text>
 </g>
-<!-- Node11 -->
-<g id="node2" class="node"><title>Node11</title>
+<!-- Node9 -->
+<g id="node2" class="node"><title>Node9</title>
 <g id="a_node2"><a xlink:href="struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" target="_top" xlink:title="UserInfo::isValid when fullyValid or marginallyValid. ">
 <polygon fill="none" stroke="black" points="156.753,-37.5 156.753,-55.5 244.824,-55.5 244.824,-37.5 156.753,-37.5"/>
 <text text-anchor="middle" x="200.789" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::isValid</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge1" class="edge"><title>Node10&#45;&gt;Node11</title>
+<!-- Node8&#45;&gt;Node9 -->
+<g id="edge1" class="edge"><title>Node8&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M115.701,-35.1733C125.802,-36.5339 136.289,-37.9465 146.29,-39.2936"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="146.121,-42.8025 156.499,-40.6688 147.056,-35.8651 146.121,-42.8025"/>
 </g>
-<!-- Node12 -->
-<g id="node3" class="node"><title>Node12</title>
+<!-- Node10 -->
+<g id="node3" class="node"><title>Node10</title>
 <g id="a_node3"><a xlink:href="struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" target="_top" xlink:title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">
 <polygon fill="none" stroke="black" points="151.473,-0.5 151.473,-18.5 250.104,-18.5 250.104,-0.5 151.473,-0.5"/>
 <text text-anchor="middle" x="200.789" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::fullyValid</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node12 -->
-<g id="edge2" class="edge"><title>Node10&#45;&gt;Node12</title>
+<!-- Node8&#45;&gt;Node10 -->
+<g id="edge2" class="edge"><title>Node8&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M115.701,-20.2306C124.072,-19.1623 132.708,-18.0603 141.113,-16.9877"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="141.741,-20.4361 151.217,-15.6983 140.854,-13.4924 141.741,-20.4361"/>
 </g>

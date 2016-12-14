@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['actionqtpass',['actionQtpass',['../class_ui___main_window.html#a2d622a1edcdbbd42417e410040151baf',1,'Ui_MainWindow']]],
-  ['addbutton',['addButton',['../class_ui___config_dialog.html#a42e935f9c66de3605eced425fd4da9e1',1,'Ui_ConfigDialog::addButton()'],['../class_ui___main_window.html#ac488fea042213a210786ae09b9fdad51',1,'Ui_MainWindow::addButton()']]],
   ['addgpgid',['addGPGId',['../class_settings_constants.html#ae8bb26023402bc1ba2e20c5c50e54ceb',1,'SettingsConstants']]],
   ['alwaysontop',['alwaysOnTop',['../class_settings_constants.html#a7d05bbc50a639edd067e7a1ea7bac296',1,'SettingsConstants']]],
   ['autoclearpanelseconds',['autoclearPanelSeconds',['../class_settings_constants.html#a5ec5ac869534644bd4346e8dea77ffba',1,'SettingsConstants']]],

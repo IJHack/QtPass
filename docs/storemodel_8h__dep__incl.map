@@ -1,21 +1,15 @@
 <map id="src/storemodel.h" name="src/storemodel.h">
-<area shape="rect" id="node2" href="$moc__storemodel_8cpp.html" title="moc_storemodel.cpp" alt="" coords="509,79,654,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="678,79,805,104"/>
-<area shape="rect" id="node16" href="$util_8h.html" title="src/util.h" alt="" coords="1108,79,1179,104"/>
-<area shape="rect" id="node20" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="1204,79,1338,104"/>
-<area shape="rect" id="node4" href="$moc__mainwindow_8cpp.html" title="moc_mainwindow.cpp" alt="" coords="5,159,157,184"/>
-<area shape="rect" id="node5" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="460,159,585,184"/>
-<area shape="rect" id="node7" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="157,312,296,337"/>
-<area shape="rect" id="node11" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="672,312,813,337"/>
-<area shape="rect" id="node12" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="715,159,893,184"/>
-<area shape="rect" id="node15" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="917,159,1014,184"/>
-<area shape="rect" id="node6" href="$moc__configdialog_8cpp.html" title="moc_configdialog.cpp" alt="" coords="231,239,382,264"/>
-<area shape="rect" id="node8" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="456,239,589,264"/>
-<area shape="rect" id="node9" href="$moc__keygendialog_8cpp.html" title="moc_keygendialog.cpp" alt="" coords="320,312,477,337"/>
-<area shape="rect" id="node10" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="501,312,648,337"/>
-<area shape="rect" id="node13" href="$moc__deselectabletreeview_8cpp.html" title="moc_deselectabletreeview.cpp" alt="" coords="861,239,1064,264"/>
-<area shape="rect" id="node14" href="$ui__mainwindow_8h.html" title="ui_mainwindow.h" alt="" coords="714,239,837,264"/>
-<area shape="rect" id="node17" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="1138,159,1235,184"/>
-<area shape="rect" id="node18" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="1259,159,1344,184"/>
-<area shape="rect" id="node19" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="1368,152,1485,191"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="321,79,448,104"/>
+<area shape="rect" id="node10" href="$util_8h.html" title="src/util.h" alt="" coords="801,79,872,104"/>
+<area shape="rect" id="node14" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="896,79,1030,104"/>
+<area shape="rect" id="node3" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="245,159,370,184"/>
+<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="64,312,203,337"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="398,312,539,337"/>
+<area shape="rect" id="node8" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="472,159,649,184"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="5,159,102,184"/>
+<area shape="rect" id="node5" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="228,239,360,264"/>
+<area shape="rect" id="node6" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="227,312,374,337"/>
+<area shape="rect" id="node11" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="674,159,770,184"/>
+<area shape="rect" id="node12" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="794,159,879,184"/>
+<area shape="rect" id="node13" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="903,152,1021,191"/>
 </map>

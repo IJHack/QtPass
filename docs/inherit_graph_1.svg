@@ -8,8 +8,8 @@
  viewBox="0.00 0.00 224.98 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node16 -->
-<g id="node1" class="node"><title>Node16</title>
+<!-- Node6 -->
+<g id="node1" class="node"><title>Node6</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-0.5 0,-18.5 65.4727,-18.5 65.4727,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="32.7363" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QTreeView</text>
 </g>
@@ -21,8 +21,8 @@
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node0 -->
-<g id="edge1" class="edge"><title>Node16&#45;&gt;Node0</title>
+<!-- Node6&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node6&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M76.0664,-9.5C84.1383,-9.5 92.7096,-9.5 101.153,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="75.7956,-6.0001 65.7955,-9.5 75.7955,-13.0001 75.7956,-6.0001"/>
 </g>

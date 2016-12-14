@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['qtpassicon',['QtPassIcon',['../class_ui___main_window.html#a2d9c1317276ef5a1a8a3af314798cd1e',1,'Ui_MainWindow']]]
+  ['validity',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
+  ['version',['version',['../class_settings_constants.html#a3de52d12e7e80ae5b7873fddff1b9f8e',1,'SettingsConstants']]]
 ];
