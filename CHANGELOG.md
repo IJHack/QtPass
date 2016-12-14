@@ -7,6 +7,7 @@
 **Implemented enhancements:**
 
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
+- Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
 - enabled drag and drop support for passwords and passwordfolders [\#245](https://github.com/IJHack/QtPass/pull/245) ([YoshiMan](https://github.com/YoshiMan))
 
 **Fixed bugs:**
