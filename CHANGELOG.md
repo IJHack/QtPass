@@ -1,5 +1,33 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.6...HEAD)
+
+**Implemented enhancements:**
+
+- Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
+- Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
+- enabled drag and drop support for passwords and passwordfolders [\#245](https://github.com/IJHack/QtPass/pull/245) ([YoshiMan](https://github.com/YoshiMan))
+
+**Fixed bugs:**
+
+- Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
+
+**Closed issues:**
+
+- Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
+- Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
+- Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
+- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
+
+**Merged pull requests:**
+
+- this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
+- executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
+- Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
+- Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
+
 ## [v1.1.6](https://github.com/IJHack/qtpass/tree/v1.1.6) (2016-12-02)
 [Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...v1.1.6)
 
