@@ -1,14 +1,12 @@
 <map id="src/util.cpp" name="src/util.cpp">
-<area shape="rect" id="node2" href="$util_8h.html" title="util.h" alt="" coords="161,79,210,104"/>
-<area shape="rect" id="node5" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="286,79,392,104"/>
-<area shape="rect" id="node10" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="837,79,955,104"/>
-<area shape="rect" id="node20" href="$enums_8h.html" title="enums.h" alt="" coords="1054,372,1127,397"/>
-<area shape="rect" id="node21" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1598,152,1703,177"/>
-<area shape="rect" id="node22" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="1150,372,1252,397"/>
-<area shape="rect" id="node24" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1331,225,1431,251"/>
-<area shape="rect" id="node25" href="$pass_8h.html" title="pass.h" alt="" coords="1383,299,1444,324"/>
-<area shape="rect" id="node30" href="$realpass_8h.html" title="realpass.h" alt="" coords="1505,225,1588,251"/>
-<area shape="rect" id="node31" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1827,225,1925,251"/>
-<area shape="rect" id="node35" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="2280,225,2360,251"/>
-<area shape="rect" id="node26" href="$executor_8h.html" title="executor.h" alt="" coords="1327,372,1409,397"/>
+<area shape="rect" id="node2" href="$util_8h.html" title="util.h" alt="" coords="1686,79,1736,104"/>
+<area shape="rect" id="node11" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="643,225,761,251"/>
+<area shape="rect" id="node33" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="1268,372,1373,397"/>
+<area shape="rect" id="node6" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1662,152,1760,177"/>
+<area shape="rect" id="node22" href="$pass_8h.html" title="pass.h" alt="" coords="894,372,955,397"/>
+<area shape="rect" id="node25" href="$enums_8h.html" title="enums.h" alt="" coords="1100,445,1173,471"/>
+<area shape="rect" id="node31" href="$realpass_8h.html" title="realpass.h" alt="" coords="36,299,119,324"/>
+<area shape="rect" id="node32" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="992,299,1092,324"/>
+<area shape="rect" id="node23" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="924,445,1026,471"/>
+<area shape="rect" id="node26" href="$executor_8h.html" title="executor.h" alt="" coords="639,445,722,471"/>
 </map>

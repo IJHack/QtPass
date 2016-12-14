@@ -1,12 +1,22 @@
 <map id="QtPassSettings::getPassExecutable" name="QtPassSettings::getPassExecutable">
-<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="697,152,875,177"/>
-<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="484,203,625,228"/>
-<area shape="rect" id="node7" href="$class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" title="RealPass::RealPass" alt="" coords="288,77,431,103"/>
-<area shape="rect" id="node8" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="290,28,430,53"/>
-<area shape="rect" id="node10" href="$class_real_pass.html#a3db5819493c4650f9410207b6d6b6c56" title="RealPass::Show_b pass show. " alt="" coords="293,127,427,152"/>
-<area shape="rect" id="node11" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="299,176,420,201"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="942,152,1123,177"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="678,203,894,228"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="961,203,1104,228"/>
-<area shape="rect" id="node9" href="$class_real_pass.html#a8f345a8f31ebc772f889896af3c6f7cb" title="RealPass::~RealPass" alt="" coords="479,76,630,101"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="684,611,862,636"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="476,662,617,687"/>
+<area shape="rect" id="node7" href="$class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" title="Pass::executePass easy wrapper for running pass. " alt="" coords="291,312,425,338"/>
+<area shape="rect" id="node19" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="288,27,428,52"/>
+<area shape="rect" id="node20" href="$class_real_pass.html#a3db5819493c4650f9410207b6d6b6c56" title="RealPass::Show_b pass show. " alt="" coords="291,200,425,226"/>
+<area shape="rect" id="node21" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="297,611,419,636"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="929,611,1110,636"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="665,662,881,687"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="948,662,1091,687"/>
+<area shape="rect" id="node8" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="498,263,594,288"/>
+<area shape="rect" id="node9" href="$class_real_pass.html#a4ba4679cb9b658a9c86ddace8c163e19" title="RealPass::GitInit pass git init wrapper. " alt="" coords="486,460,607,486"/>
+<area shape="rect" id="node11" href="$class_real_pass.html#a35b82aa0ba97bc63fa1cfc943017c4ff" title="RealPass::GitPull pass git pull wrapper. " alt="" coords="484,510,609,535"/>
+<area shape="rect" id="node12" href="$class_real_pass.html#a421925bff36bed1ad1ab91e4bddd9f47" title="RealPass::GitPush pass git push wrapper. " alt="" coords="480,66,613,91"/>
+<area shape="rect" id="node13" href="$class_real_pass.html#ae4d0e5e8d0735e6ab4d6f6d64b35e96a" title="RealPass::Show pass show. " alt="" coords="487,115,606,140"/>
+<area shape="rect" id="node14" href="$class_real_pass.html#a52ccc6435168c4e4e8ac409947901794" title="RealPass::Insert pass insert. " alt="" coords="487,164,606,190"/>
+<area shape="rect" id="node15" href="$class_real_pass.html#a729ac9806e1020ac3130a0dc1285ba54" title="RealPass::Remove pass remove wrapper. " alt="" coords="479,214,614,239"/>
+<area shape="rect" id="node16" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository. " alt="" coords="495,312,598,338"/>
+<area shape="rect" id="node17" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move" alt="" coords="487,362,606,387"/>
+<area shape="rect" id="node18" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy" alt="" coords="488,411,605,436"/>
+<area shape="rect" id="node10" href="$class_real_pass.html#a8f345a8f31ebc772f889896af3c6f7cb" title="RealPass::~RealPass" alt="" coords="697,214,848,239"/>
 </map>

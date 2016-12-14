@@ -1,19 +1,16 @@
 var searchData=
 [
-  ['emptyclicked',['emptyClicked',['../class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4',1,'DeselectableTreeView']]],
-  ['enabled',['enabled',['../struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f',1,'UserInfo']]],
-  ['endreencryptpath',['endReencryptPath',['../class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7',1,'ImitatePass']]],
-  ['enums',['Enums',['../class_enums.html',1,'']]],
-  ['enums_2eh',['enums.h',['../enums_8h.html',1,'']]],
-  ['error',['error',['../class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88',1,'Executor::error()'],['../class_pass.html#ad0afad0f75995803c1aa90d936e3db18',1,'Pass::error()']]],
-  ['eventfilter',['eventFilter',['../class_main_window.html#aa0916a59a9d7ee37159ed0a2e0528960',1,'MainWindow']]],
-  ['exec',['exec',['../class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af',1,'Pass']]],
-  ['execute',['execute',['../class_executor.html#a7c4305c0af542f0174492badfdbfbc74',1,'Executor::execute(int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)'],['../class_executor.html#a490166ea519a8047e207da8d67f3c0d2',1,'Executor::execute(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)'],['../class_executor.html#aedd0216127ab9915112df45d9eaaccfe',1,'Executor::execute(int id, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)'],['../class_executor.html#affda40d546db75d35f38db1ec1414bf7',1,'Executor::execute(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)']]],
-  ['executeblocking',['executeBlocking',['../class_executor.html#a65a32a439c0a531e4553cab015061f2f',1,'Executor::executeBlocking(QString app, const QStringList &amp;args, QString input=QString(), QString *process_out=Q_NULLPTR, QString *process_err=Q_NULLPTR)'],['../class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76',1,'Executor::executeBlocking(QString app, const QStringList &amp;args, QString *process_out, QString *process_err=Q_NULLPTR)']]],
-  ['executepassgitinit',['executePassGitInit',['../class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f',1,'MainWindow']]],
-  ['executewrapper',['executeWrapper',['../class_pass.html#a7cb996367cc9308dee8be90af001d4ea',1,'Pass']]],
-  ['executor',['Executor',['../class_executor.html',1,'Executor'],['../class_executor.html#a19fdadaa749c44b889287879ecf5f315',1,'Executor::Executor()']]],
-  ['executor_2ecpp',['executor.cpp',['../executor_8cpp.html',1,'']]],
-  ['executor_2eh',['executor.h',['../executor_8h.html',1,'']]],
-  ['expiry',['expiry',['../struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa',1,'UserInfo']]]
+  ['data',['data',['../structqt__meta__stringdata___config_dialog__t.html#aa7ec71472034ab374a3187a82563a5f3',1,'qt_meta_stringdata_ConfigDialog_t::data()'],['../structqt__meta__stringdata___deselectable_tree_view__t.html#a11390992ddb247a154300feed67eb27c',1,'qt_meta_stringdata_DeselectableTreeView_t::data()'],['../structqt__meta__stringdata___executor__t.html#aec000e82adaf05fbda38fdbde71ab13a',1,'qt_meta_stringdata_Executor_t::data()'],['../structqt__meta__stringdata___imitate_pass__t.html#a57940be9f70130a878e1cb2b7b8ca9e1',1,'qt_meta_stringdata_ImitatePass_t::data()'],['../structqt__meta__stringdata___keygen_dialog__t.html#ab6a3f709548850ec96738dcc436d62a8',1,'qt_meta_stringdata_KeygenDialog_t::data()'],['../structqt__meta__stringdata___main_window__t.html#af4617686c4f4017dfd7215f9194c2f61',1,'qt_meta_stringdata_MainWindow_t::data()'],['../structqt__meta__stringdata___pass__t.html#ada3b1efacdc3bdfe2591952547c91337',1,'qt_meta_stringdata_Pass_t::data()'],['../structqt__meta__stringdata___password_dialog__t.html#ab0271c81c565887b04712cb64853dc93',1,'qt_meta_stringdata_PasswordDialog_t::data()'],['../structqt__meta__stringdata___q_progress_indicator__t.html#a470f946281b43da235d929298764eae7',1,'qt_meta_stringdata_QProgressIndicator_t::data()'],['../structqt__meta__stringdata___q_push_button_with_clipboard__t.html#a653c029375ada00609029b14de90c029',1,'qt_meta_stringdata_QPushButtonWithClipboard_t::data()'],['../structqt__meta__stringdata___single_application__t.html#ad97ce0f8cb49a6ccf725304e5885e470',1,'qt_meta_stringdata_SingleApplication_t::data()'],['../structqt__meta__stringdata___store_model__t.html#a45590fb7aa472be4eacad76fdd05cb89',1,'qt_meta_stringdata_StoreModel_t::data()'],['../structqt__meta__stringdata___tray_icon__t.html#af43776650aa6430a3d50aac034c04aff',1,'qt_meta_stringdata_TrayIcon_t::data()'],['../structqt__meta__stringdata___users_dialog__t.html#a7bad0f8a0278903cd240915b57ce570d',1,'qt_meta_stringdata_UsersDialog_t::data()'],['../class_store_model.html#a4323f844cb78797146381847a80eb1d7',1,'StoreModel::data()']]],
+  ['datahelpers_2eh',['datahelpers.h',['../datahelpers_8h.html',1,'']]],
+  ['dbg',['dbg',['../debughelper_8h.html#a1b089898deebf895757ee5e095615ec7',1,'debughelper.h']]],
+  ['debughelper_2eh',['debughelper.h',['../debughelper_8h.html',1,'']]],
+  ['delay',['delay',['../class_q_progress_indicator.html#a4a11f4c4627b15d0376b509b8d87abb2',1,'QProgressIndicator']]],
+  ['deletebutton',['deleteButton',['../class_ui___config_dialog.html#a955176d28ee2e930e2317ad40ef6040b',1,'Ui_ConfigDialog::deleteButton()'],['../class_ui___main_window.html#a68ff8d990b6c7cd8b5f837c1def5f8d8',1,'Ui_MainWindow::deleteButton()']]],
+  ['deselect',['deselect',['../class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e',1,'MainWindow']]],
+  ['deselectabletreeview',['DeselectableTreeView',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
+  ['deselectabletreeview_2eh',['deselectabletreeview.h',['../deselectabletreeview_8h.html',1,'']]],
+  ['displayedwhenstopped',['displayedWhenStopped',['../class_q_progress_indicator.html#a80f5089148132b3fae4c45aa2d0df343',1,'QProgressIndicator']]],
+  ['draganddropinfo',['dragAndDropInfo',['../structdrag_and_drop_info.html',1,'']]],
+  ['draganddropinfopasswordstore',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata',['dropMimeData',['../class_store_model.html#a5fdd936940601eb0b5da52047f282781',1,'StoreModel']]]
 ];

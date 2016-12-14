@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['templateallfields',['templateAllFields',['../class_settings_constants.html#ae703d41511419b500a03f57b32023a6b',1,'SettingsConstants']]]
+  ['maximized',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]]
 ];

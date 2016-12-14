@@ -8,91 +8,91 @@
  viewBox="0.00 0.00 292.59 259.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 255)">
 <title>Pass::Generate</title>
-<!-- Node49 -->
-<g id="node1" class="node"><title>Node49</title>
+<!-- Node94 -->
+<g id="node1" class="node"><title>Node94</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-121.5 0,-139.5 85.4824,-139.5 85.4824,-121.5 0,-121.5"/>
 <text text-anchor="middle" x="42.7412" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate</text>
 </g>
-<!-- Node50 -->
-<g id="node2" class="node"><title>Node50</title>
+<!-- Node95 -->
+<g id="node2" class="node"><title>Node95</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" target="_top" xlink:title="QtPassSettings::isUsePwgen">
 <polygon fill="none" stroke="black" points="130.005,-232.5 130.005,-250.5 276.064,-250.5 276.064,-232.5 130.005,-232.5"/>
 <text text-anchor="middle" x="203.035" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePwgen</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node50 -->
-<g id="edge1" class="edge"><title>Node49&#45;&gt;Node50</title>
+<!-- Node94&#45;&gt;Node95 -->
+<g id="edge1" class="edge"><title>Node94&#45;&gt;Node95</title>
 <path fill="none" stroke="midnightblue" d="M48.5843,-139.605C59.1269,-158.485 86.0788,-201.931 121.482,-223.5 124.668,-225.441 128.039,-227.173 131.524,-228.719"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="130.379,-232.029 140.968,-232.392 132.916,-225.505 130.379,-232.029"/>
 </g>
-<!-- Node51 -->
-<g id="node3" class="node"><title>Node51</title>
+<!-- Node96 -->
+<g id="node3" class="node"><title>Node96</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" target="_top" xlink:title="QtPassSettings::isLessRandom">
 <polygon fill="none" stroke="black" points="124.725,-195.5 124.725,-213.5 281.345,-213.5 281.345,-195.5 124.725,-195.5"/>
 <text text-anchor="middle" x="203.035" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isLessRandom</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node51 -->
-<g id="edge2" class="edge"><title>Node49&#45;&gt;Node51</title>
+<!-- Node94&#45;&gt;Node96 -->
+<g id="edge2" class="edge"><title>Node94&#45;&gt;Node96</title>
 <path fill="none" stroke="midnightblue" d="M53.4721,-139.55C67.4384,-152.036 94.4723,-174.372 121.482,-186.5 126.548,-188.775 131.926,-190.773 137.405,-192.527"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="136.751,-195.982 147.331,-195.426 138.714,-189.263 136.751,-195.982"/>
 </g>
-<!-- Node52 -->
-<g id="node4" class="node"><title>Node52</title>
+<!-- Node97 -->
+<g id="node4" class="node"><title>Node97</title>
 <g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" target="_top" xlink:title="QtPassSettings::isAvoidCapitals">
 <polygon fill="none" stroke="black" points="123.702,-158.5 123.702,-176.5 282.368,-176.5 282.368,-158.5 123.702,-158.5"/>
 <text text-anchor="middle" x="203.035" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAvoidCapitals</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node52 -->
-<g id="edge3" class="edge"><title>Node49&#45;&gt;Node52</title>
+<!-- Node94&#45;&gt;Node97 -->
+<g id="edge3" class="edge"><title>Node94&#45;&gt;Node97</title>
 <path fill="none" stroke="midnightblue" d="M80.0915,-139.542C93.1318,-142.744 107.954,-146.336 121.482,-149.5 130.906,-151.704 140.964,-153.998 150.666,-156.181"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="150.082,-159.637 160.606,-158.408 151.612,-152.807 150.082,-159.637"/>
 </g>
-<!-- Node53 -->
-<g id="node5" class="node"><title>Node53</title>
+<!-- Node98 -->
+<g id="node5" class="node"><title>Node98</title>
 <g id="a_node5"><a xlink:href="class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" target="_top" xlink:title="QtPassSettings::isAvoidNumbers">
 <polygon fill="none" stroke="black" points="121.482,-121.5 121.482,-139.5 284.587,-139.5 284.587,-121.5 121.482,-121.5"/>
 <text text-anchor="middle" x="203.035" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAvoidNumbers</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node53 -->
-<g id="edge4" class="edge"><title>Node49&#45;&gt;Node53</title>
+<!-- Node94&#45;&gt;Node98 -->
+<g id="edge4" class="edge"><title>Node94&#45;&gt;Node98</title>
 <path fill="none" stroke="midnightblue" d="M85.7454,-130.5C93.7311,-130.5 102.369,-130.5 111.206,-130.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="111.243,-134 121.243,-130.5 111.243,-127 111.243,-134"/>
 </g>
-<!-- Node54 -->
-<g id="node6" class="node"><title>Node54</title>
+<!-- Node99 -->
+<g id="node6" class="node"><title>Node99</title>
 <g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" target="_top" xlink:title="QtPassSettings::isUseSymbols">
 <polygon fill="none" stroke="black" points="126.121,-84.5 126.121,-102.5 279.948,-102.5 279.948,-84.5 126.121,-84.5"/>
 <text text-anchor="middle" x="203.035" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSymbols</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node54 -->
-<g id="edge5" class="edge"><title>Node49&#45;&gt;Node54</title>
+<!-- Node94&#45;&gt;Node99 -->
+<g id="edge5" class="edge"><title>Node94&#45;&gt;Node99</title>
 <path fill="none" stroke="midnightblue" d="M82.4641,-121.449C103.911,-116.436 130.772,-110.157 153.599,-104.821"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="154.497,-108.206 163.437,-102.522 152.903,-101.39 154.497,-108.206"/>
 </g>
-<!-- Node55 -->
-<g id="node7" class="node"><title>Node55</title>
+<!-- Node100 -->
+<g id="node7" class="node"><title>Node100</title>
 <g id="a_node7"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
 <polygon fill="none" stroke="black" points="136.114,-47.5 136.114,-65.5 269.956,-65.5 269.956,-47.5 136.114,-47.5"/>
 <text text-anchor="middle" x="203.035" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node55 -->
-<g id="edge6" class="edge"><title>Node49&#45;&gt;Node55</title>
+<!-- Node94&#45;&gt;Node100 -->
+<g id="edge6" class="edge"><title>Node94&#45;&gt;Node100</title>
 <path fill="none" stroke="midnightblue" d="M54.001,-121.248C68.1593,-108.973 94.9573,-87.4627 121.482,-75.5 127.555,-72.7615 134.069,-70.3917 140.667,-68.3469"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="141.698,-71.6925 150.351,-65.5786 139.774,-64.9621 141.698,-71.6925"/>
 </g>
-<!-- Node56 -->
-<g id="node8" class="node"><title>Node56</title>
+<!-- Node101 -->
+<g id="node8" class="node"><title>Node101</title>
 <g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" target="_top" xlink:title="QtPassSettings::getPwgen\lExecutable">
 <polygon fill="none" stroke="black" points="135.557,-0.5 135.557,-28.5 270.512,-28.5 270.512,-0.5 135.557,-0.5"/>
 <text text-anchor="start" x="143.557" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPwgen</text>
@@ -100,8 +100,8 @@
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node56 -->
-<g id="edge7" class="edge"><title>Node49&#45;&gt;Node56</title>
+<!-- Node94&#45;&gt;Node101 -->
+<g id="edge7" class="edge"><title>Node94&#45;&gt;Node101</title>
 <path fill="none" stroke="midnightblue" d="M48.8989,-121.406C59.8353,-102.948 87.1856,-60.9401 121.482,-38.5 124.755,-36.3591 128.224,-34.4034 131.814,-32.6176"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="133.253,-35.8085 140.942,-28.52 130.386,-29.4224 133.253,-35.8085"/>
 </g>

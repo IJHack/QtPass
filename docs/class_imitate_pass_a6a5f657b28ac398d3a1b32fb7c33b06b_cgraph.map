@@ -1,3 +1,5 @@
 <map id="ImitatePass::GitPush" name="ImitatePass::GitPush">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="199,5,421,31"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="199,5,370,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="224,55,346,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="418,55,640,80"/>
 </map>

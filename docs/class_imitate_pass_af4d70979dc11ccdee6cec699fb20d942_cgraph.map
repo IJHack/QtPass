@@ -1,22 +1,26 @@
 <map id="ImitatePass::~ImitatePass" name="ImitatePass::~ImitatePass">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" title="ImitatePass::GitInit git init wrapper. " alt="" coords="706,661,839,686"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#a844eae0e74552da7a6ed6906b3207f3d" title="ImitatePass::GitPull git init wrapper. " alt="" coords="229,79,367,105"/>
-<area shape="rect" id="node6" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="697,206,849,231"/>
-<area shape="rect" id="node8" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="700,157,846,182"/>
-<area shape="rect" id="node9" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file. " alt="" coords="446,911,578,937"/>
-<area shape="rect" id="node11" href="$class_imitate_pass.html#a073f2a34ba46638b25b4bf9ca7b5f5d5" title="ImitatePass::Show_b show content of file, blocking version. " alt="" coords="439,862,586,887"/>
-<area shape="rect" id="node12" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="446,710,578,735"/>
-<area shape="rect" id="node16" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove git init wrapper. " alt="" coords="438,301,586,326"/>
-<area shape="rect" id="node17" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="240,405,356,430"/>
-<area shape="rect" id="node19" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="422,455,603,481"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="936,182,1158,207"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="947,710,1147,735"/>
-<area shape="rect" id="node7" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="958,459,1136,485"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="658,862,888,887"/>
-<area shape="rect" id="node13" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="696,710,849,735"/>
-<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="670,611,875,637"/>
-<area shape="rect" id="node15" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="687,307,858,333"/>
-<area shape="rect" id="node18" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="415,354,610,379"/>
-<area shape="rect" id="node20" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="683,510,863,535"/>
-<area shape="rect" id="node21" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="679,409,867,434"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" title="ImitatePass::GitInit git init wrapper. " alt="" coords="693,622,827,648"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a844eae0e74552da7a6ed6906b3207f3d" title="ImitatePass::GitPull git init wrapper. " alt="" coords="229,100,367,125"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="684,1180,836,1205"/>
+<area shape="rect" id="node9" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="687,318,833,344"/>
+<area shape="rect" id="node11" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file. " alt="" coords="446,1078,578,1104"/>
+<area shape="rect" id="node14" href="$class_imitate_pass.html#a073f2a34ba46638b25b4bf9ca7b5f5d5" title="ImitatePass::Show_b show content of file, blocking version. " alt="" coords="687,1229,833,1254"/>
+<area shape="rect" id="node15" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="446,876,578,901"/>
+<area shape="rect" id="node18" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove git init wrapper. " alt="" coords="686,470,834,496"/>
+<area shape="rect" id="node19" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="240,622,356,648"/>
+<area shape="rect" id="node21" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="422,774,603,800"/>
+<area shape="rect" id="node24" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title="ImitatePass::Move" alt="" coords="447,269,578,294"/>
+<area shape="rect" id="node25" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title="ImitatePass::Copy" alt="" coords="447,318,577,344"/>
+<area shape="rect" id="node3" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="965,318,1087,344"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="925,977,1126,1002"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="1189,673,1411,698"/>
+<area shape="rect" id="node8" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="936,1180,1115,1205"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="940,470,1111,496"/>
+<area shape="rect" id="node12" href="$class_pass.html#ae9d0e69d33f8ec978821565087a3b879" title="Pass::executeGpg easy wrapper for running gpg commands. " alt="" coords="695,1330,825,1356"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="910,1280,1141,1305"/>
+<area shape="rect" id="node16" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="683,977,837,1002"/>
+<area shape="rect" id="node17" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="658,825,862,850"/>
+<area shape="rect" id="node20" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="415,572,610,597"/>
+<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="670,724,850,749"/>
+<area shape="rect" id="node23" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="666,269,854,294"/>
 </map>

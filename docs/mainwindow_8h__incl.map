@@ -1,10 +1,12 @@
 <map id="src/mainwindow.h" name="src/mainwindow.h">
-<area shape="rect" id="node2" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="8,225,110,251"/>
-<area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="520,225,593,251"/>
-<area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="323,79,422,104"/>
-<area shape="rect" id="node7" href="$pass_8h.html" title="pass.h" alt="" coords="320,152,380,177"/>
-<area shape="rect" id="node13" href="$realpass_8h.html" title="realpass.h" alt="" coords="447,79,530,104"/>
-<area shape="rect" id="node14" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="782,79,880,104"/>
-<area shape="rect" id="node18" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1221,79,1300,104"/>
-<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="286,225,369,251"/>
+<area shape="rect" id="node2" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="43,372,145,397"/>
+<area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="649,372,722,397"/>
+<area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="224,225,324,251"/>
+<area shape="rect" id="node7" href="$pass_8h.html" title="pass.h" alt="" coords="359,299,420,324"/>
+<area shape="rect" id="node15" href="$realpass_8h.html" title="realpass.h" alt="" coords="348,225,431,251"/>
+<area shape="rect" id="node16" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1063,79,1162,104"/>
+<area shape="rect" id="node33" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1859,79,1939,104"/>
+<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="442,372,524,397"/>
+<area shape="rect" id="node21" href="$util_8h.html" title="util.h" alt="" coords="1088,152,1137,177"/>
+<area shape="rect" id="node24" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="844,152,962,177"/>
 </map>

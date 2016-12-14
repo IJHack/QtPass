@@ -1,13 +1,10 @@
 <map id="src/qtpasssettings.cpp" name="src/qtpasssettings.cpp">
-<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="470,79,588,104"/>
-<area shape="rect" id="node38" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1170,79,1305,104"/>
-<area shape="rect" id="node13" href="$enums_8h.html" title="enums.h" alt="" coords="249,372,321,397"/>
-<area shape="rect" id="node14" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="786,152,891,177"/>
-<area shape="rect" id="node15" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="1340,372,1442,397"/>
-<area shape="rect" id="node18" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="957,225,1057,251"/>
-<area shape="rect" id="node19" href="$pass_8h.html" title="pass.h" alt="" coords="1100,299,1161,324"/>
-<area shape="rect" id="node24" href="$realpass_8h.html" title="realpass.h" alt="" coords="1081,225,1164,251"/>
-<area shape="rect" id="node25" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1472,225,1570,251"/>
-<area shape="rect" id="node29" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="603,225,682,251"/>
-<area shape="rect" id="node20" href="$executor_8h.html" title="executor.h" alt="" coords="953,372,1036,397"/>
+<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="501,79,619,104"/>
+<area shape="rect" id="node13" href="$pass_8h.html" title="pass.h" alt="" coords="791,225,852,251"/>
+<area shape="rect" id="node25" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1216,225,1352,251"/>
+<area shape="rect" id="node17" href="$enums_8h.html" title="enums.h" alt="" coords="1117,299,1190,324"/>
+<area shape="rect" id="node23" href="$realpass_8h.html" title="realpass.h" alt="" coords="620,152,703,177"/>
+<area shape="rect" id="node24" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="727,152,827,177"/>
+<area shape="rect" id="node14" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="909,299,1011,324"/>
+<area shape="rect" id="node18" href="$executor_8h.html" title="executor.h" alt="" coords="529,299,612,324"/>
 </map>

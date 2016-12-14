@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['candropmimedata',['canDropMimeData',['../class_store_model.html#a5d3df20a622ae638f26e86cecf55adaa',1,'StoreModel']]],
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],
   ['cleanup',['cleanup',['../classtst__util.html#a1889cedba30d1d96c60e84effbf7f313',1,'tst_util']]],
@@ -8,5 +9,7 @@ var searchData=
   ['color',['color',['../class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65',1,'QProgressIndicator']]],
   ['config',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
   ['configdialog',['ConfigDialog',['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog']]],
+  ['copy',['Copy',['../class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d',1,'ImitatePass::Copy()'],['../class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49',1,'Pass::Copy()'],['../class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2',1,'RealPass::Copy()']]],
+  ['copydir',['copyDir',['../class_util.html#af7cf188a586e7848ac0c2f4ffce927bf',1,'Util']]],
   ['critical',['critical',['../class_pass.html#a4fa78a4366b91a930f6719c3ea57f439',1,'Pass']]]
 ];

@@ -1,12 +1,9 @@
 <map id="src/realpass.cpp" name="src/realpass.cpp">
-<area shape="rect" id="node2" href="$realpass_8h.html" title="realpass.h" alt="" coords="1530,225,1612,251"/>
-<area shape="rect" id="node13" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="778,79,895,104"/>
-<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="1375,299,1436,324"/>
-<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="5,372,107,397"/>
-<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="1540,372,1613,397"/>
-<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="1383,372,1466,397"/>
-<area shape="rect" id="node23" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1175,152,1280,177"/>
-<area shape="rect" id="node24" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1305,225,1405,251"/>
-<area shape="rect" id="node25" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="421,225,519,251"/>
-<area shape="rect" id="node29" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="951,225,1031,251"/>
+<area shape="rect" id="node2" href="$realpass_8h.html" title="realpass.h" alt="" coords="5,152,88,177"/>
+<area shape="rect" id="node15" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="600,79,718,104"/>
+<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="238,225,298,251"/>
+<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="276,299,378,324"/>
+<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="1032,299,1104,324"/>
+<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="169,299,252,324"/>
+<area shape="rect" id="node24" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="162,152,262,177"/>
 </map>

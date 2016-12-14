@@ -1,0 +1,7 @@
+<map id="ImitatePass::Move" name="ImitatePass::Move">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="420,7,591,32"/>
+<area shape="rect" id="node3" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="445,81,567,107"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="184,81,372,107"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="205,32,351,57"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="639,81,862,107"/>
+</map>
