@@ -2,12 +2,20 @@
 
 SOURCES += tst_util.cpp \
            util.cpp \
+           qtpasssettings.cpp \
            settingsconstants.cpp \
-           qtpasssettings.cpp
+           pass.cpp \
+           realpass.cpp \
+           imitatepass.cpp \
+           executor.cpp
 
-HEADERS   += qtpasssettings.h \
+HEADERS   += util.h \
+             qtpasssettings.h \
              settingsconstants.h \
-             util.h
+             pass.h \
+             realpass.h \
+             imitatepass.h \
+             executor.h
 
 VPATH += ../../../src
 INCLUDEPATH += ../../../src
