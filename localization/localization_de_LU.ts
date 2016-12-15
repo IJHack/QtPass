@@ -97,27 +97,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="313"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichensatz für Passwortgenerator auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="317"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Zeichen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="322"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="327"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumerisch</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="332"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigene</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
@@ -370,46 +370,46 @@ email</translation>
         <location filename="../src/imitatepass.cpp" line="78"/>
         <location filename="../src/imitatepass.cpp" line="279"/>
         <source>Can not edit</source>
-        <translation type="unfinished">Ändern nicht möglich</translation>
+        <translation>Ändern nicht möglich</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="79"/>
         <location filename="../src/imitatepass.cpp" line="280"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished">Schlüssel nicht lesbar, .gpg-id Datei fehlt oder ist ungültig.</translation>
+        <translation>Schlüssel nicht lesbar, .gpg-id Datei fehlt oder ist ungültig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="156"/>
         <source>Cannot update</source>
-        <translation type="unfinished">Update nicht möglich</translation>
+        <translation>Update nicht möglich</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="157"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished">Schreibzugrif auf .gpg-id fehlgeschlagen.</translation>
+        <translation>Schreibzugrif auf .gpg-id fehlgeschlagen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="170"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">Ausgewählte Benutzer prüfen!</translation>
+        <translation>Ausgewählte Benutzer prüfen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Der Partnerschlüssel der selektierten Schlüssel fehlt.
+        <translation>Der Partnerschlüssel der selektierten Schlüssel fehlt.
 Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="222"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Neu-Verschlüsselung aus Ordner %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="226"/>
         <location filename="../src/imitatepass.cpp" line="310"/>
         <source>Updating password-store</source>
-        <translation type="unfinished">Password Store aktualisieren</translation>
+        <translation>Passwort Speicher aktualisieren</translation>
     </message>
 </context>
 <context>
@@ -570,7 +570,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen bei QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
@@ -664,7 +664,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="709"/>
         <location filename="../src/mainwindow.cpp" line="1481"/>
         <source>Password</source>
-        <translation type="unfinished">Passwort</translation>
+        <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="768"/>
@@ -803,12 +803,12 @@ Neues Passwort-Datei:
     <message>
         <location filename="../src/pass.cpp" line="97"/>
         <source>No characters chosen</source>
-        <translation type="unfinished">Keine Zeichen ausgewählt</translation>
+        <translation>Keine Zeichen ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="98"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
+        <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
     </message>
 </context>
 <context>
@@ -832,32 +832,32 @@ Neues Passwort-Datei:
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichensatz:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Zeichen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumerisch</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigene</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Länge:</translation>
     </message>
 </context>
 <context>
@@ -886,27 +886,27 @@ Neues Passwort-Datei:
     <message>
         <location filename="../src/trayicon.cpp" line="38"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anzeigen</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="40"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verstecken</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="43"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;inimieren</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;aximieren</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="52"/>
