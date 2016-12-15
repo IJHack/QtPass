@@ -315,6 +315,7 @@ void ImitatePass::reencryptPath(QString dir) {
 
 void ImitatePass::Move(const QString src, const QString dest, const bool force)
 {
+    QFileInfo destFileInfo(dest);
     if (QtPassSettings::isUseGit()) {
       QStringList args;
       args << "mv";
@@ -335,7 +336,6 @@ void ImitatePass::Move(const QString src, const QString dest, const bool force)
     } else {
         QDir qDir;
         QFileInfo srcFileInfo(src);
-        QFileInfo destFileInfo(dest);
         QString destCopy = dest;
         if(srcFileInfo.isFile() && destFileInfo.isDir()){
             destCopy = destFileInfo.absoluteFilePath() + QDir::separator() + srcFileInfo.fileName();
@@ -345,11 +345,18 @@ void ImitatePass::Move(const QString src, const QString dest, const bool force)
         }
         qDir.rename(src, destCopy);
     }
+    // reecrypt all files under the new folder
+    if(destFileInfo.isDir()){
+        reencryptPath(destFileInfo.absoluteFilePath());
+    }else if(destFileInfo.isFile()){
+        reencryptPath(destFileInfo.dir().path());
+    }
 }
 
 
 void ImitatePass::Copy(const QString src, const QString dest, const bool force)
 {
+    QFileInfo destFileInfo(dest);
     if (QtPassSettings::isUseGit()) {
         QStringList args;
         args << "cp";
@@ -373,5 +380,11 @@ void ImitatePass::Copy(const QString src, const QString dest, const bool force)
             qDir.remove(dest);
         }
         QFile::copy(src, dest);
+    }
+    // reecrypt all files under the new folder
+    if(destFileInfo.isDir()){
+        reencryptPath(destFileInfo.absoluteFilePath());
+    }else if(destFileInfo.isFile()){
+        reencryptPath(destFileInfo.dir().path());
     }
 }
