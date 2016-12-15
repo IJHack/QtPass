@@ -41,7 +41,7 @@
 </g>
 <!-- Node18 -->
 <g id="node6" class="node"><title>Node18</title>
-<g id="a_node6"><a xlink:href="classtst__util.html" target="_top" xlink:title="tst_util">
+<g id="a_node6"><a xlink:href="classtst__util.html" target="_top" xlink:title="The tst_util class is our first unit test. ">
 <polygon fill="none" stroke="black" points="93.9604,-0.5 93.9604,-18.5 138.862,-18.5 138.862,-0.5 93.9604,-0.5"/>
 <text text-anchor="middle" x="116.411" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">tst_util</text>
 </a>

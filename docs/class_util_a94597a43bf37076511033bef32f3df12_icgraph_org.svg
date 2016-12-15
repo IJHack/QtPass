@@ -41,7 +41,7 @@
 </g>
 <!-- Node39 -->
 <g id="node8" class="node"><title>Node39</title>
-<g id="a_node8"><a xlink:href="classtst__util.html#a1889cedba30d1d96c60e84effbf7f313" target="_top" xlink:title="tst_util::cleanup">
+<g id="a_node8"><a xlink:href="classtst__util.html#a1889cedba30d1d96c60e84effbf7f313" target="_top" xlink:title="tst_util::cleanup unit test cleanup method ">
 <polygon fill="none" stroke="black" points="181.487,-0.5 181.487,-18.5 266.975,-18.5 266.975,-0.5 181.487,-0.5"/>
 <text text-anchor="middle" x="224.231" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">tst_util::cleanup</text>
 </a>
