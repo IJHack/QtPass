@@ -178,7 +178,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node16 -->
 <g id="node15" class="node"><title>Node16</title>
-<g id="a_node15"><a xlink:href="class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" target="_top" xlink:title="RealPass::Move">
+<g id="a_node15"><a xlink:href="class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" target="_top" xlink:title="RealPass::Move move a file (or folder) ">
 <polygon fill="none" stroke="black" points="157.054,-74.5 157.054,-92.5 245.861,-92.5 245.861,-74.5 157.054,-74.5"/>
 <text text-anchor="middle" x="201.458" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::Move</text>
 </a>
@@ -191,7 +191,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node17 -->
 <g id="node16" class="node"><title>Node17</title>
-<g id="a_node16"><a xlink:href="class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" target="_top" xlink:title="RealPass::Copy">
+<g id="a_node16"><a xlink:href="class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" target="_top" xlink:title="RealPass::Copy copy a file (or folder) ">
 <polygon fill="none" stroke="black" points="157.608,-37.5 157.608,-55.5 245.307,-55.5 245.307,-37.5 157.608,-37.5"/>
 <text text-anchor="middle" x="201.458" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::Copy</text>
 </a>

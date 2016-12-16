@@ -54,79 +54,79 @@ var sectionId = 'dynsection-52';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::setAutoclearPanelSeconds</title>
-<!-- Node457 -->
-<g id="node1" class="node"><title>Node457</title>
+<!-- Node465 -->
+<g id="node1" class="node"><title>Node465</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-14.5 0,-42.5 146.063,-42.5 146.063,-14.5 0,-14.5"/>
 <text text-anchor="start" x="8" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setAutoclear</text>
 <text text-anchor="middle" x="73.0317" y="-20.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>
 </g>
-<!-- Node458 -->
-<g id="node2" class="node"><title>Node458</title>
+<!-- Node466 -->
+<g id="node2" class="node"><title>Node466</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="black" points="337.718,-37.5 337.718,-55.5 471.545,-55.5 471.545,-37.5 337.718,-37.5"/>
 <text text-anchor="middle" x="404.632" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node457&#45;&gt;Node458 -->
-<g id="edge1" class="edge"><title>Node457&#45;&gt;Node458</title>
+<!-- Node465&#45;&gt;Node466 -->
+<g id="edge1" class="edge"><title>Node465&#45;&gt;Node466</title>
 <path fill="none" stroke="midnightblue" d="M156.606,-33.0095C212.567,-36.0656 285.535,-40.0505 337.627,-42.8954"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="156.54,-29.5008 146.364,-32.4502 156.158,-36.4904 156.54,-29.5008"/>
 </g>
-<!-- Node460 -->
-<g id="node4" class="node"><title>Node460</title>
+<!-- Node468 -->
+<g id="node4" class="node"><title>Node468</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="black" points="182.063,-0.5 182.063,-18.5 287.546,-18.5 287.546,-0.5 182.063,-0.5"/>
 <text text-anchor="middle" x="234.805" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node457&#45;&gt;Node460 -->
-<g id="edge3" class="edge"><title>Node457&#45;&gt;Node460</title>
+<!-- Node465&#45;&gt;Node468 -->
+<g id="edge3" class="edge"><title>Node465&#45;&gt;Node468</title>
 <path fill="none" stroke="midnightblue" d="M156.5,-18.693C165.075,-17.6733 173.61,-16.6583 181.71,-15.695"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="155.955,-15.233 146.439,-19.8895 156.782,-22.184 155.955,-15.233"/>
 </g>
-<!-- Node459 -->
-<g id="node3" class="node"><title>Node459</title>
+<!-- Node467 -->
+<g id="node3" class="node"><title>Node467</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="521.718,-37.5 521.718,-55.5 657.757,-55.5 657.757,-37.5 521.718,-37.5"/>
 <text text-anchor="middle" x="589.737" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node458&#45;&gt;Node459 -->
-<g id="edge2" class="edge"><title>Node458&#45;&gt;Node459</title>
+<!-- Node466&#45;&gt;Node467 -->
+<g id="edge2" class="edge"><title>Node466&#45;&gt;Node467</title>
 <path fill="none" stroke="midnightblue" d="M482.112,-46.5C495.188,-46.5 508.685,-46.5 521.498,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="481.737,-43.0001 471.737,-46.5 481.737,-50.0001 481.737,-43.0001"/>
 </g>
-<!-- Node460&#45;&gt;Node458 -->
-<g id="edge4" class="edge"><title>Node460&#45;&gt;Node458</title>
+<!-- Node468&#45;&gt;Node466 -->
+<g id="edge4" class="edge"><title>Node468&#45;&gt;Node466</title>
 <path fill="none" stroke="midnightblue" d="M286.649,-20.7093C311.007,-26.0794 339.79,-32.4251 362.71,-37.4782"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="287.379,-17.2863 276.86,-18.5512 285.872,-24.1222 287.379,-17.2863"/>
 </g>
-<!-- Node461 -->
-<g id="node5" class="node"><title>Node461</title>
+<!-- Node469 -->
+<g id="node5" class="node"><title>Node469</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="black" points="323.546,-0.5 323.546,-18.5 485.718,-18.5 485.718,-0.5 323.546,-0.5"/>
 <text text-anchor="middle" x="404.632" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node460&#45;&gt;Node461 -->
-<g id="edge5" class="edge"><title>Node460&#45;&gt;Node461</title>
+<!-- Node468&#45;&gt;Node469 -->
+<g id="edge5" class="edge"><title>Node468&#45;&gt;Node469</title>
 <path fill="none" stroke="midnightblue" d="M298.223,-9.5C306.45,-9.5 314.973,-9.5 323.445,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="297.986,-6.0001 287.986,-9.5 297.986,-13.0001 297.986,-6.0001"/>
 </g>
-<!-- Node462 -->
-<g id="node6" class="node"><title>Node462</title>
+<!-- Node470 -->
+<g id="node6" class="node"><title>Node470</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="535.883,-0.5 535.883,-18.5 643.592,-18.5 643.592,-0.5 535.883,-0.5"/>
 <text text-anchor="middle" x="589.737" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node461&#45;&gt;Node462 -->
-<g id="edge6" class="edge"><title>Node461&#45;&gt;Node462</title>
+<!-- Node469&#45;&gt;Node470 -->
+<g id="edge6" class="edge"><title>Node469&#45;&gt;Node470</title>
 <path fill="none" stroke="midnightblue" d="M496.236,-9.5C509.726,-9.5 523.244,-9.5 535.617,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="495.945,-6.0001 485.945,-9.5 495.945,-13.0001 495.945,-6.0001"/>
 </g>

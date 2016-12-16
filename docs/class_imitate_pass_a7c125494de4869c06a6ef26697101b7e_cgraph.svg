@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 325.01 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>ImitatePass::GitPull_b</title>
-<!-- Node52 -->
-<g id="node1" class="node"><title>Node52</title>
+<!-- Node62 -->
+<g id="node1" class="node"><title>Node62</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 114.374,-36.5 114.374,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="57.187" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </g>
-<!-- Node53 -->
-<g id="node2" class="node"><title>Node53</title>
+<!-- Node63 -->
+<g id="node2" class="node"><title>Node63</title>
 <g id="a_node2"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
 <polygon fill="none" stroke="black" points="166.771,-37.5 166.771,-55.5 300.612,-55.5 300.612,-37.5 166.771,-37.5"/>
 <text text-anchor="middle" x="233.691" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node53 -->
-<g id="edge1" class="edge"><title>Node52&#45;&gt;Node53</title>
+<!-- Node62&#45;&gt;Node63 -->
+<g id="edge1" class="edge"><title>Node62&#45;&gt;Node63</title>
 <path fill="none" stroke="midnightblue" d="M114.844,-33.6688C128.137,-35.1162 142.516,-36.6817 156.508,-38.2052"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="156.288,-41.7018 166.608,-39.3049 157.046,-34.7429 156.288,-41.7018"/>
 </g>
-<!-- Node54 -->
-<g id="node3" class="node"><title>Node54</title>
+<!-- Node64 -->
+<g id="node3" class="node"><title>Node64</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" target="_top" xlink:title="QtPassSettings::getGitExecutable">
 <polygon fill="none" stroke="black" points="150.374,-0.5 150.374,-18.5 317.009,-18.5 317.009,-0.5 150.374,-0.5"/>
 <text text-anchor="middle" x="233.691" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node54 -->
-<g id="edge2" class="edge"><title>Node52&#45;&gt;Node54</title>
+<!-- Node62&#45;&gt;Node64 -->
+<g id="edge2" class="edge"><title>Node62&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M114.844,-21.6559C122.998,-20.8148 131.561,-19.9316 140.192,-19.0412"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="140.748,-22.5026 150.336,-17.9949 140.029,-15.5395 140.748,-22.5026"/>
 </g>

@@ -16,7 +16,7 @@
 <area shape="rect" id="node14" href="$class_real_pass.html#a52ccc6435168c4e4e8ac409947901794" title="RealPass::Insert pass insert. " alt="" coords="487,164,606,190"/>
 <area shape="rect" id="node15" href="$class_real_pass.html#a729ac9806e1020ac3130a0dc1285ba54" title="RealPass::Remove pass remove wrapper. " alt="" coords="479,214,614,239"/>
 <area shape="rect" id="node16" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository. " alt="" coords="495,312,598,338"/>
-<area shape="rect" id="node17" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move" alt="" coords="487,362,606,387"/>
-<area shape="rect" id="node18" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy" alt="" coords="488,411,605,436"/>
+<area shape="rect" id="node17" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder) " alt="" coords="487,362,606,387"/>
+<area shape="rect" id="node18" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder) " alt="" coords="488,411,605,436"/>
 <area shape="rect" id="node10" href="$class_real_pass.html#a8f345a8f31ebc772f889896af3c6f7cb" title="RealPass::~RealPass" alt="" coords="697,214,848,239"/>
 </map>

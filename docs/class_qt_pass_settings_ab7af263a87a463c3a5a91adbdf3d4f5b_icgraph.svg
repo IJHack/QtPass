@@ -8,35 +8,35 @@
  viewBox="0.00 0.00 498.15 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::getPasswordCharsselection</title>
-<!-- Node171 -->
-<g id="node1" class="node"><title>Node171</title>
+<!-- Node175 -->
+<g id="node1" class="node"><title>Node175</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-28.5 148.285,-28.5 148.285,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassword</text>
 <text text-anchor="middle" x="74.1426" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Charsselection</text>
 </g>
-<!-- Node172 -->
-<g id="node2" class="node"><title>Node172</title>
+<!-- Node176 -->
+<g id="node2" class="node"><title>Node176</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="black" points="184.285,-5.5 184.285,-23.5 318.112,-23.5 318.112,-5.5 184.285,-5.5"/>
 <text text-anchor="middle" x="251.199" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node171&#45;&gt;Node172 -->
-<g id="edge1" class="edge"><title>Node171&#45;&gt;Node172</title>
+<!-- Node175&#45;&gt;Node176 -->
+<g id="edge1" class="edge"><title>Node175&#45;&gt;Node176</title>
 <path fill="none" stroke="midnightblue" d="M158.473,-14.5C167.12,-14.5 175.822,-14.5 184.24,-14.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="158.368,-11.0001 148.368,-14.5 158.368,-18.0001 158.368,-11.0001"/>
 </g>
-<!-- Node173 -->
-<g id="node3" class="node"><title>Node173</title>
+<!-- Node177 -->
+<g id="node3" class="node"><title>Node177</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="354.112,-5.5 354.112,-23.5 490.151,-23.5 490.151,-5.5 354.112,-5.5"/>
 <text text-anchor="middle" x="422.132" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node172&#45;&gt;Node173 -->
-<g id="edge2" class="edge"><title>Node172&#45;&gt;Node173</title>
+<!-- Node176&#45;&gt;Node177 -->
+<g id="edge2" class="edge"><title>Node176&#45;&gt;Node177</title>
 <path fill="none" stroke="midnightblue" d="M328.679,-14.5C337.103,-14.5 345.633,-14.5 353.931,-14.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="328.481,-11.0001 318.481,-14.5 328.481,-18.0001 328.481,-11.0001"/>
 </g>

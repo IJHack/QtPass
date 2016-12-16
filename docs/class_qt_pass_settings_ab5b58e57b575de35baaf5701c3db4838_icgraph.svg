@@ -54,78 +54,78 @@ var sectionId = 'dynsection-34';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::isHideContent</title>
-<!-- Node303 -->
-<g id="node1" class="node"><title>Node303</title>
+<!-- Node309 -->
+<g id="node1" class="node"><title>Node309</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 153.29,-36.5 153.29,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="76.645" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHideContent</text>
 </g>
-<!-- Node304 -->
-<g id="node2" class="node"><title>Node304</title>
+<!-- Node310 -->
+<g id="node2" class="node"><title>Node310</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="black" points="189.29,-37.5 189.29,-55.5 294.772,-55.5 294.772,-37.5 189.29,-37.5"/>
 <text text-anchor="middle" x="242.031" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node303&#45;&gt;Node304 -->
-<g id="edge1" class="edge"><title>Node303&#45;&gt;Node304</title>
+<!-- Node309&#45;&gt;Node310 -->
+<g id="edge1" class="edge"><title>Node309&#45;&gt;Node310</title>
 <path fill="none" stroke="midnightblue" d="M163.74,-37.5118C172.373,-38.5158 180.94,-39.512 189.054,-40.4556"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="163.936,-34.0111 153.598,-36.3325 163.127,-40.9643 163.936,-34.0111"/>
 </g>
-<!-- Node307 -->
-<g id="node5" class="node"><title>Node307</title>
+<!-- Node313 -->
+<g id="node5" class="node"><title>Node313</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="black" points="330.772,-0.5 330.772,-18.5 492.944,-18.5 492.944,-0.5 330.772,-0.5"/>
 <text text-anchor="middle" x="411.858" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node303&#45;&gt;Node307 -->
-<g id="edge6" class="edge"><title>Node303&#45;&gt;Node307</title>
+<!-- Node309&#45;&gt;Node313 -->
+<g id="edge6" class="edge"><title>Node309&#45;&gt;Node313</title>
 <path fill="none" stroke="midnightblue" d="M163.774,-22.8474C215.215,-20.0686 280.128,-16.562 330.51,-13.8404"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="163.47,-19.3586 153.673,-23.393 163.848,-26.3484 163.47,-19.3586"/>
 </g>
-<!-- Node305 -->
-<g id="node3" class="node"><title>Node305</title>
+<!-- Node311 -->
+<g id="node3" class="node"><title>Node311</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="black" points="344.945,-37.5 344.945,-55.5 478.772,-55.5 478.772,-37.5 344.945,-37.5"/>
 <text text-anchor="middle" x="411.858" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node304&#45;&gt;Node305 -->
-<g id="edge2" class="edge"><title>Node304&#45;&gt;Node305</title>
+<!-- Node310&#45;&gt;Node311 -->
+<g id="edge2" class="edge"><title>Node310&#45;&gt;Node311</title>
 <path fill="none" stroke="midnightblue" d="M305.344,-46.5C318.203,-46.5 331.788,-46.5 344.775,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="305.213,-43.0001 295.213,-46.5 305.213,-50.0001 305.213,-43.0001"/>
 </g>
-<!-- Node304&#45;&gt;Node307 -->
-<g id="edge4" class="edge"><title>Node304&#45;&gt;Node307</title>
+<!-- Node310&#45;&gt;Node313 -->
+<g id="edge4" class="edge"><title>Node310&#45;&gt;Node313</title>
 <path fill="none" stroke="midnightblue" d="M293.875,-35.2907C318.233,-29.9206 347.016,-23.5749 369.937,-18.5218"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="293.098,-31.8778 284.086,-37.4488 294.605,-38.7137 293.098,-31.8778"/>
 </g>
-<!-- Node306 -->
-<g id="node4" class="node"><title>Node306</title>
+<!-- Node312 -->
+<g id="node4" class="node"><title>Node312</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="black" points="528.944,-37.5 528.944,-55.5 664.983,-55.5 664.983,-37.5 528.944,-37.5"/>
 <text text-anchor="middle" x="596.964" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node305&#45;&gt;Node306 -->
-<g id="edge3" class="edge"><title>Node305&#45;&gt;Node306</title>
+<!-- Node311&#45;&gt;Node312 -->
+<g id="edge3" class="edge"><title>Node311&#45;&gt;Node312</title>
 <path fill="none" stroke="midnightblue" d="M489.339,-46.5C502.414,-46.5 515.912,-46.5 528.725,-46.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="488.964,-43.0001 478.964,-46.5 488.964,-50.0001 488.964,-43.0001"/>
 </g>
-<!-- Node308 -->
-<g id="node6" class="node"><title>Node308</title>
+<!-- Node314 -->
+<g id="node6" class="node"><title>Node314</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="543.109,-0.5 543.109,-18.5 650.818,-18.5 650.818,-0.5 543.109,-0.5"/>
 <text text-anchor="middle" x="596.964" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node307&#45;&gt;Node308 -->
-<g id="edge5" class="edge"><title>Node307&#45;&gt;Node308</title>
+<!-- Node313&#45;&gt;Node314 -->
+<g id="edge5" class="edge"><title>Node313&#45;&gt;Node314</title>
 <path fill="none" stroke="midnightblue" d="M503.462,-9.5C516.953,-9.5 530.47,-9.5 542.844,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="503.171,-6.0001 493.171,-9.5 503.171,-13.0001 503.171,-6.0001"/>
 </g>

@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 346.70 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Pass::GenerateGPGKeys</title>
-<!-- Node105 -->
-<g id="node1" class="node"><title>Node105</title>
+<!-- Node107 -->
+<g id="node1" class="node"><title>Node107</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-18.5 0,-36.5 129.94,-36.5 129.94,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="64.9702" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::GenerateGPGKeys</text>
 </g>
-<!-- Node106 -->
-<g id="node2" class="node"><title>Node106</title>
+<!-- Node108 -->
+<g id="node2" class="node"><title>Node108</title>
 <g id="a_node2"><a xlink:href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" target="_top" xlink:title="Executor::execute execute an app. ">
 <polygon fill="none" stroke="black" points="204.297,-37.5 204.297,-55.5 300.341,-55.5 300.341,-37.5 204.297,-37.5"/>
 <text text-anchor="middle" x="252.319" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::execute</text>
 </a>
 </g>
 </g>
-<!-- Node105&#45;&gt;Node106 -->
-<g id="edge1" class="edge"><title>Node105&#45;&gt;Node106</title>
+<!-- Node107&#45;&gt;Node108 -->
+<g id="edge1" class="edge"><title>Node107&#45;&gt;Node108</title>
 <path fill="none" stroke="midnightblue" d="M130.016,-34.0653C150.873,-36.2033 173.875,-38.5613 194.191,-40.6438"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="193.93,-44.1353 204.235,-41.6734 194.644,-37.1718 193.93,-44.1353"/>
 </g>
-<!-- Node107 -->
-<g id="node3" class="node"><title>Node107</title>
+<!-- Node109 -->
+<g id="node3" class="node"><title>Node109</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" target="_top" xlink:title="QtPassSettings::getGpgExecutable">
 <polygon fill="none" stroke="black" points="165.94,-0.5 165.94,-18.5 338.698,-18.5 338.698,-0.5 165.94,-0.5"/>
 <text text-anchor="middle" x="252.319" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node105&#45;&gt;Node107 -->
-<g id="edge2" class="edge"><title>Node105&#45;&gt;Node107</title>
+<!-- Node107&#45;&gt;Node109 -->
+<g id="edge2" class="edge"><title>Node107&#45;&gt;Node109</title>
 <path fill="none" stroke="midnightblue" d="M130.016,-21.2802C138.289,-20.4768 146.9,-19.6406 155.546,-18.8009"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="156.08,-22.2656 165.695,-17.8154 155.403,-15.2984 156.08,-22.2656"/>
 </g>
