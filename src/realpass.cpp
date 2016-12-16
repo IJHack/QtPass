@@ -3,7 +3,6 @@
 
 RealPass::RealPass() {}
 
-
 /**
  * @brief RealPass::GitInit pass git init wrapper
  */
@@ -91,70 +90,83 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   }
   executePass(PASS_INIT, args);
 }
-void RealPass::Move(const QString src, const QString dest, const bool force)
-{
-    QFileInfo srcFileInfo= QFileInfo(src);
-    QFileInfo destFileInfo= QFileInfo(dest);
 
-    // force mode?
-    // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
-    // and the user didnt want to move force
-    if(force == false && srcFileInfo.isFile() && destFileInfo.isFile()){
-        return;
-    }
+/**
+ * @brief RealPass::Move move a file (or folder)
+ * @param src source file or folder
+ * @param dest destination file or folder
+ * @param force overwrite
+ */
+void RealPass::Move(const QString src, const QString dest, const bool force) {
+  QFileInfo srcFileInfo = QFileInfo(src);
+  QFileInfo destFileInfo = QFileInfo(dest);
 
-    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
-    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
+  // force mode?
+  // pass uses always the force mode, when call from eg. QT. so we have to check
+  // if this are to files
+  // and the user didnt want to move force
+  if (force == false && srcFileInfo.isFile() && destFileInfo.isFile()) {
+    return;
+  }
 
+  QString passSrc = QDir(QtPassSettings::getPassStore())
+                        .relativeFilePath(QDir(src).absolutePath());
+  QString passDest = QDir(QtPassSettings::getPassStore())
+                         .relativeFilePath(QDir(dest).absolutePath());
 
-    // remove the .gpg because pass will not work
-    if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
-        passSrc.replace(QRegExp("\\.gpg$"), "");
-    }
-    if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
-        passDest.replace(QRegExp("\\.gpg$"), "");
-    }
+  // remove the .gpg because pass will not work
+  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
+    passSrc.replace(QRegExp("\\.gpg$"), "");
+  }
+  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
+    passDest.replace(QRegExp("\\.gpg$"), "");
+  }
 
-    QStringList args;
-    args << "mv";
-    if(force){
-        args << "-f";
-    }
-    args << passSrc;
-    args << passDest;
-    executePass(PASS_MOVE, args);
+  QStringList args;
+  args << "mv";
+  if (force) {
+    args << "-f";
+  }
+  args << passSrc;
+  args << passDest;
+  executePass(PASS_MOVE, args);
 }
 
+/**
+ * @brief RealPass::Copy copy a file (or folder)
+ * @param src source file or folder
+ * @param dest destination file or folder
+ * @param force overwrite
+ */
+void RealPass::Copy(const QString src, const QString dest, const bool force) {
+  QFileInfo srcFileInfo = QFileInfo(src);
+  QFileInfo destFileInfo = QFileInfo(dest);
+  // force mode?
+  // pass uses always the force mode, when call from eg. QT. so we have to check
+  // if this are to files
+  // and the user didnt want to move force
+  if (force == false && srcFileInfo.isFile() && destFileInfo.isFile()) {
+    return;
+  }
 
-void RealPass::Copy(const QString src, const QString dest, const bool force)
-{
-    QFileInfo srcFileInfo= QFileInfo(src);
-    QFileInfo destFileInfo= QFileInfo(dest);
-    // force mode?
-    // pass uses always the force mode, when call from eg. QT. so we have to check if this are to files
-    // and the user didnt want to move force
-    if(force == false && srcFileInfo.isFile() && destFileInfo.isFile()){
-        return;
-    }
+  QString passSrc = QDir(QtPassSettings::getPassStore())
+                        .relativeFilePath(QDir(src).absolutePath());
+  QString passDest = QDir(QtPassSettings::getPassStore())
+                         .relativeFilePath(QDir(dest).absolutePath());
 
-    QString passSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(src).absolutePath());
-    QString passDest= QDir(QtPassSettings::getPassStore()).relativeFilePath(QDir(dest).absolutePath());
-
-
-    // remove the .gpg because pass will not work
-    if(srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg"){
-        passSrc.replace(QRegExp("\\.gpg$"), "");
-    }
-    if(destFileInfo.isFile() && destFileInfo.suffix() == "gpg"){
-        passDest.replace(QRegExp("\\.gpg$"), "");
-    }
-    QStringList args;
-    args << "cp";
-    if(force){
-        args << "-f";
-    }
-    args << passSrc;
-    args << passDest;
-    executePass(PASS_COPY, args);
+  // remove the .gpg because pass will not work
+  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
+    passSrc.replace(QRegExp("\\.gpg$"), "");
+  }
+  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
+    passDest.replace(QRegExp("\\.gpg$"), "");
+  }
+  QStringList args;
+  args << "cp";
+  if (force) {
+    args << "-f";
+  }
+  args << passSrc;
+  args << passDest;
+  executePass(PASS_COPY, args);
 }
-

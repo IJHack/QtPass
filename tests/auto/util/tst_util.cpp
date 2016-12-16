@@ -53,8 +53,8 @@ void tst_util::initTestCase() {}
 void tst_util::cleanupTestCase() {}
 
 /**
- * @brief tst_util::normalizeFolderPath test to check weather
- * Util::normalizeFolderPath makes paths always end with a slash
+ * @brief tst_util::normalizeFolderPath test to check correct working
+ * of Util::normalizeFolderPath the paths should always end with a slash
  */
 void tst_util::normalizeFolderPath() {
   QCOMPARE(Util::normalizeFolderPath("test"), QString("test/"));
