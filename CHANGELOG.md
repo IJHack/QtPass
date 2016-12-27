@@ -12,6 +12,7 @@
 
 **Fixed bugs:**
 
+- Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 
 **Closed issues:**
