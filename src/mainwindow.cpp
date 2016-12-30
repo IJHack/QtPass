@@ -937,13 +937,14 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  */
 void MainWindow::setPassword(QString file, bool isNew) {
   PasswordDialog d(pwdConfig, this);
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, &d, &PasswordDialog::setPass);
+  //    TODO(bezet): add error handling
+  QtPassSettings::getPass()->Show(file);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
   d.setTemplate(QtPassSettings::getPassTemplate());
   d.useTemplate(QtPassSettings::isUseTemplate());
   d.templateAll(QtPassSettings::isTemplateAllFields());
-  d.setPassword(lastDecrypt);
-  currentAction = PWGEN;
   if (!d.exec()) {
     d.setPassword(QString());
     return;
@@ -977,8 +978,7 @@ void MainWindow::on_addButton_clicked() {
   if (!ok || file.isEmpty())
     return;
   file = dir + file;
-  lastDecrypt = "";
-  setPassword(file, false, true);
+  setPassword(file);
 }
 
 /**
