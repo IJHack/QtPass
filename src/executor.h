@@ -94,7 +94,8 @@ signals:
    * @param errout      stderr produced by the process, if requested or if
    * process failed
    */
-  void finished(int exitCode, const QString &output, const QString &errout);
+  void finished(int id, int exitCode, const QString &output,
+                const QString &errout);
   void starting();
   void error(int id, int exitCode, const QString &output,
              const QString &errout);
