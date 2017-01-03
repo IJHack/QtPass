@@ -52,18 +52,6 @@ void ImitatePass::Show(QString file) {
 }
 
 /**
- * @brief ImitatePass::Show_b show content of file, blocking version
- *
- * @returns process exitCode
- */
-int ImitatePass::Show_b(QString file) {
-  file = QtPassSettings::getPassStore() + file + ".gpg";
-  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
-                      "--batch", "--use-agent", file};
-  return exec.executeBlocking(QtPassSettings::getGpgExecutable(), args);
-}
-
-/**
  * @brief ImitatePass::Insert create new file with encrypted content
  *
  * @param file      file to be created

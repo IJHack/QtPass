@@ -194,6 +194,7 @@ void MainWindow::mountWebDav() {
     ui->textBrowser->setTextColor(Qt::red);
     ui->textBrowser->setText(tr("Failed to connect WebDAV:\n") + message +
                              " (0x" + QString::number(r, 16) + ")");
+    ui->textBrowser->setTextColor(Qt::black);
   }
 #else
   fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
@@ -226,6 +227,7 @@ void MainWindow::mountWebDav() {
     ui->textBrowser->setTextColor(Qt::red);
     ui->textBrowser->setText(
         tr("Failed to start fusedav to connect WebDAV:\n") + error);
+    ui->textBrowser->setTextColor(Qt::black);
   }
 #endif
 }
@@ -624,7 +626,6 @@ void MainWindow::executePassGitInit() {
 void MainWindow::executeWrapperStarted() {
   clearTemplateWidgets();
   ui->textBrowser->clear();
-  ui->textBrowser->setTextColor(Qt::black);
   enableUiElements(false);
   clearPanelTimer.stop();
 }
@@ -742,8 +743,8 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
     error.replace(QRegExp("<"), "&lt;");
     error.replace(QRegExp(">"), "&gt;");
     error.replace(QRegExp(" "), "&nbsp;");
-    if (currentAction == GIT) {
-      // https://github.com/IJHack/qtpass/issues/111
+    if (exitCode == 0) {
+      //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
     } else {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
@@ -756,6 +757,7 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
       output = ui->textBrowser->toHtml() + output;
     ui->textBrowser->setHtml(output);
   }
+  enableUiElements(true);
 }
 
 /**
@@ -775,7 +777,7 @@ void MainWindow::clearClipboard() {
 /**
  * @brief MainWindow::clearPanel hide the information from shoulder surfers
  */
-void MainWindow::clearPanel(bool notify = true) {
+void MainWindow::clearPanel(bool notify) {
   while (ui->gridLayout->count() > 0) {
     QLayoutItem *item = ui->gridLayout->takeAt(0);
     delete item->widget();
@@ -788,12 +790,6 @@ void MainWindow::clearPanel(bool notify = true) {
     ui->textBrowser->setHtml("");
   }
 }
-
-/**
- * @brief MainWindow::clearPanel because slots needs the same amout of params
- * 								 as signals
- */
-void MainWindow::clearPanel() { clearPanel(true); }
 
 /**
  * @brief MainWindow::processFinished background process has finished
@@ -859,9 +855,7 @@ void MainWindow::processError(QProcess::ProcessError error) {
   }
   ui->textBrowser->setTextColor(Qt::red);
   ui->textBrowser->setText(errorString);
-  //    TODO(bezet): this probably shall be done in finished handler(I guess
-  //    it finishes even on error)
-  // if (pass->state() == QProcess::NotRunning)
+  ui->textBrowser->setTextColor(Qt::black);
   enableUiElements(true);
 }
 
@@ -936,7 +930,8 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  */
 void MainWindow::setPassword(QString file, bool isNew) {
   PasswordDialog d(pwdConfig, this);
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, &d, &PasswordDialog::setPass);
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
+          &PasswordDialog::setPass);
   //    TODO(bezet): add error handling
   QtPassSettings::getPass()->Show(file);
   d.setFile(file);

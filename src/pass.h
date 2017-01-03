@@ -52,8 +52,6 @@ public:
   virtual void GitPull_b() = 0;
   virtual void GitPush() = 0;
   virtual void Show(QString file) = 0;
-  //    TODO(bezet) is it needed?
-  virtual int Show_b(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
   virtual void Move(const QString srcDir, const QString dest,
@@ -66,8 +64,8 @@ public:
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   void updateEnv();
-  //  TODO(bezet): those are probably temporarly here
   static QStringList getRecipientList(QString for_file);
+  //  TODO(bezet): getRecipientString is useless, refactor
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 

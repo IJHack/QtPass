@@ -40,20 +40,6 @@ void RealPass::Show(QString file) {
 }
 
 /**
- * @brief RealPass::Show_b pass show
- *
- * @param file      file to decrypt
- *
- * @return  if block is set, returns exit status of internal decryption
- * process
- *          otherwise returns QProcess::NormalExit
- */
-int RealPass::Show_b(QString file) {
-  return exec.executeBlocking(QtPassSettings::getPassExecutable(),
-                              {"show", file});
-}
-
-/**
  * @brief RealPass::Insert pass insert
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {

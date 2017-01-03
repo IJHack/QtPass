@@ -178,19 +178,25 @@ void Pass::finished(int id, int exitCode, const QString &out,
   case GIT_ADD:
   case GIT_COMMIT:
   case GIT_RM:
+    emit finishedAny(out, err);
+    break;
+  case GIT_PULL:
+    emit statusMsg(tr("git pull successful"), 2000);
   case GIT_PUSH:
+    emit finishedAny(out, err);
+    break;
+  case PASS_SHOW:
+    emit finishedShow(out);
+    break;
   case PASS_INSERT:
   case PASS_REMOVE:
   case PASS_INIT:
   case GPG_GENKEYS:
+  case PASS_MOVE:
+  case PASS_COPY:
+  case GIT_MOVE:
+  case GIT_COPY:
     emit finishedAny(out, err);
-    break;
-  case GIT_PULL:
-    //  emit finishedGitPull(out);
-    emit statusMsg(tr("git pull successful"), 2000);
-    break;
-  case PASS_SHOW:
-    emit finishedShow(out);
     break;
   default:
     qDebug() << __FILE__ << ":" << __LINE__ << "\t"
