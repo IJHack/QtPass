@@ -9,7 +9,6 @@
  */
 ImitatePass::ImitatePass() {}
 
-
 /**
  * @brief ImitatePass::GitInit git init wrapper
  */
@@ -20,9 +19,7 @@ void ImitatePass::GitInit() {
 /**
  * @brief ImitatePass::GitPull git init wrapper
  */
-void ImitatePass::GitPull() {
-  executeGit(GIT_PULL,{"pull"});
-}
+void ImitatePass::GitPull() { executeGit(GIT_PULL, {"pull"}); }
 
 /**
  * @brief ImitatePass::GitPull_b git pull wrapper
@@ -35,8 +32,8 @@ void ImitatePass::GitPull_b() {
  * @brief ImitatePass::GitPush git init wrapper
  */
 void ImitatePass::GitPush() {
-  if(QtPassSettings::isUseGit()){
-      executeGit(GIT_PUSH, {"push"});
+  if (QtPassSettings::isUseGit()) {
+    executeGit(GIT_PUSH, {"push"});
   }
 }
 
@@ -76,8 +73,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (overwrite)
     args.append("--yes");
   args.append("-");
-  executeGpg(PASS_INSERT, args,
-                 newValue);
+  executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
     //    TODO(bezet) why not?
     if (!overwrite)
@@ -299,78 +295,78 @@ void ImitatePass::reencryptPath(QString dir) {
   emit endReencryptPath();
 }
 
-void ImitatePass::Move(const QString src, const QString dest, const bool force)
-{
-    QFileInfo destFileInfo(dest);
-    if (QtPassSettings::isUseGit()) {
-      QStringList args;
-      args << "mv";
-      if(force){
-          args << "-f";
-      }
-      args << src;
-      args << dest;
-      executeGit(GIT_MOVE, args);
-
-      QString message=QString("moved from %1 to %2 using QTPass.");
-      message= message.arg(src).arg(dest);
-      GitCommit("", message);
-      if(QtPassSettings::isAutoPush()){
-          GitPush();
-      }
-
-    } else {
-        QDir qDir;
-        QFileInfo srcFileInfo(src);
-        QString destCopy = dest;
-        if(srcFileInfo.isFile() && destFileInfo.isDir()){
-            destCopy = destFileInfo.absoluteFilePath() + QDir::separator() + srcFileInfo.fileName();
-        }
-        if(force){
-            qDir.remove(destCopy);
-        }
-        qDir.rename(src, destCopy);
+void ImitatePass::Move(const QString src, const QString dest,
+                       const bool force) {
+  QFileInfo destFileInfo(dest);
+  if (QtPassSettings::isUseGit()) {
+    QStringList args;
+    args << "mv";
+    if (force) {
+      args << "-f";
     }
-    // reecrypt all files under the new folder
-    if(destFileInfo.isDir()){
-        reencryptPath(destFileInfo.absoluteFilePath());
-    }else if(destFileInfo.isFile()){
-        reencryptPath(destFileInfo.dir().path());
+    args << src;
+    args << dest;
+    executeGit(GIT_MOVE, args);
+
+    QString message = QString("moved from %1 to %2 using QTPass.");
+    message = message.arg(src).arg(dest);
+    GitCommit("", message);
+    if (QtPassSettings::isAutoPush()) {
+      GitPush();
     }
+
+  } else {
+    QDir qDir;
+    QFileInfo srcFileInfo(src);
+    QString destCopy = dest;
+    if (srcFileInfo.isFile() && destFileInfo.isDir()) {
+      destCopy = destFileInfo.absoluteFilePath() + QDir::separator() +
+                 srcFileInfo.fileName();
+    }
+    if (force) {
+      qDir.remove(destCopy);
+    }
+    qDir.rename(src, destCopy);
+  }
+  // reecrypt all files under the new folder
+  if (destFileInfo.isDir()) {
+    reencryptPath(destFileInfo.absoluteFilePath());
+  } else if (destFileInfo.isFile()) {
+    reencryptPath(destFileInfo.dir().path());
+  }
 }
 
-
-void ImitatePass::Copy(const QString src, const QString dest, const bool force)
-{
-    QFileInfo destFileInfo(dest);
-    if (QtPassSettings::isUseGit()) {
-        QStringList args;
-        args << "cp";
-        if(force){
-            args << "-f";
-        }
-        args << src;
-        args << dest;
-        executeGit(GIT_COPY, args);
-
-        QString message=QString("copied from %1 to %2 using QTPass.");
-        message= message.arg(src).arg(dest);
-        GitCommit("", message);
-        if(QtPassSettings::isAutoPush()){
-            GitPush();
-        }
-
-    } else {
-        QDir qDir;
-        if(force){
-            qDir.remove(dest);
-        }
-        QFile::copy(src, dest);
+void ImitatePass::Copy(const QString src, const QString dest,
+                       const bool force) {
+  QFileInfo destFileInfo(dest);
+  if (QtPassSettings::isUseGit()) {
+    QStringList args;
+    args << "cp";
+    if (force) {
+      args << "-f";
     }
-    // reecrypt all files under the new folder
-    if(destFileInfo.isDir()){
-        reencryptPath(destFileInfo.absoluteFilePath());
-    }else if(destFileInfo.isFile()){
-        reencryptPath(destFileInfo.dir().path());
+    args << src;
+    args << dest;
+    executeGit(GIT_COPY, args);
+
+    QString message = QString("copied from %1 to %2 using QTPass.");
+    message = message.arg(src).arg(dest);
+    GitCommit("", message);
+    if (QtPassSettings::isAutoPush()) {
+      GitPush();
     }
+
+  } else {
+    QDir qDir;
+    if (force) {
+      qDir.remove(dest);
+    }
+    QFile::copy(src, dest);
+  }
+  // reecrypt all files under the new folder
+  if (destFileInfo.isDir()) {
+    reencryptPath(destFileInfo.absoluteFilePath());
+  } else if (destFileInfo.isFile()) {
+    reencryptPath(destFileInfo.dir().path());
+  }
 }

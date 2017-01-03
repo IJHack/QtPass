@@ -448,7 +448,7 @@ p, li { white-space: pre-wrap; }
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/artwork/icon.ico</pixmap>
+             <pixmap resource="../resources.qrc">:/artwork/icon.ico</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -496,7 +496,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>profileBox</tabstop>
  </tabstops>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
  <slots>
