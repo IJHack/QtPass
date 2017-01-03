@@ -102,7 +102,6 @@ private slots:
   void startReencryptPath();
   void endReencryptPath();
   void critical(QString, QString);
-  void setLastDecrypt(QString);
   void passShowHandler(const QString &);
 
   void processErrorExit(int exitCode, const QString &);
@@ -125,7 +124,6 @@ private:
   QTimer clearPanelTimer;
   QTimer clearClipboardTimer;
   actionType currentAction;
-  QString lastDecrypt;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;

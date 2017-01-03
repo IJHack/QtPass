@@ -39,7 +39,6 @@ public:
 signals:
   void startReencryptPath();
   void endReencryptPath();
-  void lastDecrypt(QString);
 
   // Pass interface
 public:

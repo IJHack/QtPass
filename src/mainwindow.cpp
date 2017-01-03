@@ -644,7 +644,6 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
 
 void MainWindow::passShowHandler(const QString &p_output) {
   QString output = p_output;
-  lastDecrypt = p_output;
   {
     QStringList tokens = p_output.split("\n");
     QString password = tokens.at(0);
@@ -1010,8 +1009,6 @@ void MainWindow::on_deleteButton_clicked() {
   QtPassSettings::getPass()->Remove(file, isDir);
 
   on_pushButton_clicked();
-
-  lastDecrypt = "";
 }
 
 /**

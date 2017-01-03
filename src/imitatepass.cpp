@@ -91,6 +91,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   executeGpg(PASS_INSERT, args,
                  newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
+    //    TODO(bezet) why not?
     if (!overwrite)
       executeGit(GIT_ADD, {"add", file});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
@@ -261,19 +262,16 @@ void ImitatePass::reencryptPath(QString dir) {
       // dbg()<< actualKeys << gpgId << getRecipientList(fileName);
       dbg() << "reencrypt " << fileName << " for " << gpgId;
       QString local_lastDecrypt = "Could not decrypt";
-      emit lastDecrypt(local_lastDecrypt);
       args = QStringList{"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                          "--batch", "--use-agent", fileName};
       exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
                            &local_lastDecrypt);
-      emit lastDecrypt(local_lastDecrypt);
 
       if (!local_lastDecrypt.isEmpty() &&
           local_lastDecrypt != "Could not decrypt") {
         if (local_lastDecrypt.right(1) != "\n")
           local_lastDecrypt += "\n";
 
-        emit lastDecrypt(local_lastDecrypt);
         QStringList recipients = Pass::getRecipientList(fileName);
         if (recipients.isEmpty()) {
           emit critical(tr("Can not edit"),
