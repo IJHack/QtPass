@@ -704,6 +704,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
       // now set the password. If we set it earlier, the layout will be
       // cleared
       addToGridLayout(0, tr("Password"), password);
+      tokens.erase(tokens.begin());
+      output = tokens.join("\n");
     }
     if (QtPassSettings::isUseAutoclearPanel()) {
       clearPanelTimer.start();
