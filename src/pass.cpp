@@ -66,13 +66,13 @@ QString Pass::Generate_b(int length, const QString &charset) {
     QStringList args;
     args.append("-1");
     if (QtPassSettings::isLessRandom())
-      args.append("--secure ");
-    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
-                                                  : "--capitalize ");
-    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals "
-                                                 : "--numerals ");
+      args.append("--secure");
+    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
+                                                  : "--capitalize");
+    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals"
+                                                 : "--numerals");
     if (QtPassSettings::isUseSymbols())
-      args.append("--symbols ");
+      args.append("--symbols");
     args.append(QString::number(length));
     QString p_out;
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
