@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generate',['Generate',['../class_pass.html#a140443713431e41dc5a7d4989ece82c0',1,'Pass']]],
+  ['generate_5fb',['Generate_b',['../class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8',1,'Pass']]],
   ['generategpgkeys',['GenerateGPGKeys',['../class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f',1,'Pass']]],
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['genkey',['genKey',['../class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138',1,'ConfigDialog']]],

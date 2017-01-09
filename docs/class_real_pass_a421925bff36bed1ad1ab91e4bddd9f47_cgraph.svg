@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 457.06 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>RealPass::GitPush</title>
-<!-- Node40 -->
-<g id="node1" class="node"><title>Node40</title>
+<!-- Node39 -->
+<g id="node1" class="node"><title>Node39</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 99.9258,-18.5 99.9258,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="49.9629" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::GitPush</text>
 </g>
-<!-- Node41 -->
-<g id="node2" class="node"><title>Node41</title>
+<!-- Node40 -->
+<g id="node2" class="node"><title>Node40</title>
 <g id="a_node2"><a xlink:href="class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" target="_top" xlink:title="Pass::executePass easy wrapper for running pass. ">
 <polygon fill="none" stroke="black" points="135.926,-0.5 135.926,-18.5 236.97,-18.5 236.97,-0.5 135.926,-0.5"/>
 <text text-anchor="middle" x="186.448" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executePass</text>
 </a>
 </g>
 </g>
-<!-- Node40&#45;&gt;Node41 -->
-<g id="edge1" class="edge"><title>Node40&#45;&gt;Node41</title>
+<!-- Node39&#45;&gt;Node40 -->
+<g id="edge1" class="edge"><title>Node39&#45;&gt;Node40</title>
 <path fill="none" stroke="midnightblue" d="M100.276,-9.5C108.484,-9.5 117.076,-9.5 125.512,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="125.69,-13.0001 135.69,-9.5 125.69,-6.0001 125.69,-13.0001"/>
 </g>
-<!-- Node42 -->
-<g id="node3" class="node"><title>Node42</title>
+<!-- Node41 -->
+<g id="node3" class="node"><title>Node41</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" target="_top" xlink:title="QtPassSettings::getPassExecutable">
 <polygon fill="none" stroke="black" points="272.97,-0.5 272.97,-18.5 449.058,-18.5 449.058,-0.5 272.97,-0.5"/>
 <text text-anchor="middle" x="361.014" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
-<g id="edge2" class="edge"><title>Node41&#45;&gt;Node42</title>
+<!-- Node40&#45;&gt;Node41 -->
+<g id="edge2" class="edge"><title>Node40&#45;&gt;Node41</title>
 <path fill="none" stroke="midnightblue" d="M237.361,-9.5C245.374,-9.5 253.899,-9.5 262.578,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="262.814,-13.0001 272.814,-9.5 262.814,-6.0001 262.814,-13.0001"/>
 </g>

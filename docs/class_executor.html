@@ -94,9 +94,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aa9f6b92d9bb6c30a5964129ca46ef10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#aa9f6b92d9bb6c30a5964129ca46ef10d">finished</a> (int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
-<tr class="memdesc:aa9f6b92d9bb6c30a5964129ca46ef10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">finished signal that is emited when process finishes  <a href="#aa9f6b92d9bb6c30a5964129ca46ef10d">More...</a><br /></td></tr>
-<tr class="separator:aa9f6b92d9bb6c30a5964129ca46ef10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace810a6d93c74dec7188038210c5a731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#ace810a6d93c74dec7188038210c5a731">finished</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="memdesc:ace810a6d93c74dec7188038210c5a731"><td class="mdescLeft">&#160;</td><td class="mdescRight">finished signal that is emited when process finishes  <a href="#ace810a6d93c74dec7188038210c5a731">More...</a><br /></td></tr>
+<tr class="separator:ace810a6d93c74dec7188038210c5a731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfcfc18b0b973791530302eb8179e038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#acfcfc18b0b973791530302eb8179e038">starting</a> ()</td></tr>
 <tr class="separator:acfcfc18b0b973791530302eb8179e038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c450bcba881197a3e10eb1bf59b3a88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88">error</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
@@ -631,7 +631,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="executor_8cpp_source.html#l00163">163</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="executor_8cpp_source.html#l00161">161</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -643,8 +643,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9f6b92d9bb6c30a5964129ca46ef10d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9f6b92d9bb6c30a5964129ca46ef10d">&sect;&nbsp;</a></span>finished</h2>
+<a id="ace810a6d93c74dec7188038210c5a731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace810a6d93c74dec7188038210c5a731">&sect;&nbsp;</a></span>finished</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -655,6 +655,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Executor::finished </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>exitCode</em>, </td>
         </tr>
@@ -719,7 +725,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="executor_8cpp_source.html#l00173">173</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="executor_8cpp_source.html#l00171">171</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -758,7 +764,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_executor_acfcfc18b0b973791530302eb8179e038_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_executor_acfcfc18b0b973791530302eb8179e038_icgraph.svg" width="318" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

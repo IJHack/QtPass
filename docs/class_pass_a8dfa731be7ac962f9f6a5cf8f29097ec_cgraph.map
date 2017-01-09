@@ -4,32 +4,31 @@
 <area shape="rect" id="node4" href="$class_pass.html#a7a109d5c0a7f565398b7238c32bb6328" title="Pass::GitPull_b" alt="" coords="180,104,292,129"/>
 <area shape="rect" id="node5" href="$class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Pass::GitPush" alt="" coords="183,153,289,179"/>
 <area shape="rect" id="node6" href="$class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Pass::Show" alt="" coords="190,203,282,228"/>
-<area shape="rect" id="node7" href="$class_pass.html#a91ad8142d920144bf7483211619be978" title="Pass::Show_b" alt="" coords="182,252,289,277"/>
-<area shape="rect" id="node8" href="$class_pass.html#a86ad2005a6517f9c304a9e156755778c" title="Pass::Insert" alt="" coords="190,301,282,327"/>
-<area shape="rect" id="node9" href="$class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764" title="Pass::Remove" alt="" coords="182,351,290,376"/>
-<area shape="rect" id="node10" href="$class_pass.html#ab9dde6644865bd583dc09a52d17ffb49" title="Pass::Move" alt="" coords="190,400,281,425"/>
-<area shape="rect" id="node11" href="$class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49" title="Pass::Copy" alt="" coords="191,449,281,475"/>
-<area shape="rect" id="node12" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="198,499,274,524"/>
-<area shape="rect" id="node13" href="$class_pass.html#a140443713431e41dc5a7d4989ece82c0" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="179,548,293,573"/>
-<area shape="rect" id="node21" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="149,696,322,721"/>
-<area shape="rect" id="node24" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="184,597,288,623"/>
-<area shape="rect" id="node25" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="175,745,297,771"/>
-<area shape="rect" id="node28" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="411,847,564,872"/>
-<area shape="rect" id="node29" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="152,847,319,872"/>
-<area shape="rect" id="node30" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="175,896,297,921"/>
-<area shape="rect" id="node32" href="$class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" title="Pass::executePass easy wrapper for running pass. " alt="" coords="168,945,303,971"/>
-<area shape="rect" id="node34" href="$class_pass.html#ae9d0e69d33f8ec978821565087a3b879" title="Pass::executeGpg easy wrapper for running gpg commands. " alt="" coords="171,647,301,672"/>
-<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="390,400,585,425"/>
-<area shape="rect" id="node15" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title="QtPassSettings::isLessRandom" alt="" coords="383,449,592,475"/>
-<area shape="rect" id="node16" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="382,499,594,524"/>
-<area shape="rect" id="node17" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="379,548,597,573"/>
-<area shape="rect" id="node18" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="385,288,590,313"/>
-<area shape="rect" id="node19" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="399,597,577,623"/>
-<area shape="rect" id="node20" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="398,337,578,376"/>
-<area shape="rect" id="node22" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="424,696,552,721"/>
-<area shape="rect" id="node23" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="373,647,603,672"/>
-<area shape="rect" id="node26" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="653,797,854,823"/>
-<area shape="rect" id="node27" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="401,797,575,823"/>
-<area shape="rect" id="node31" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="377,896,599,921"/>
-<area shape="rect" id="node33" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="370,945,605,971"/>
+<area shape="rect" id="node7" href="$class_pass.html#a86ad2005a6517f9c304a9e156755778c" title="Pass::Insert" alt="" coords="190,252,282,277"/>
+<area shape="rect" id="node8" href="$class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764" title="Pass::Remove" alt="" coords="182,301,290,327"/>
+<area shape="rect" id="node9" href="$class_pass.html#ab9dde6644865bd583dc09a52d17ffb49" title="Pass::Move" alt="" coords="190,351,281,376"/>
+<area shape="rect" id="node10" href="$class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49" title="Pass::Copy" alt="" coords="191,400,281,425"/>
+<area shape="rect" id="node11" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="198,449,274,475"/>
+<area shape="rect" id="node12" href="$class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="171,499,300,524"/>
+<area shape="rect" id="node20" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="149,647,322,672"/>
+<area shape="rect" id="node23" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="184,548,288,573"/>
+<area shape="rect" id="node24" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="175,696,297,721"/>
+<area shape="rect" id="node27" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="411,797,564,823"/>
+<area shape="rect" id="node28" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="152,745,319,771"/>
+<area shape="rect" id="node29" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="175,847,297,872"/>
+<area shape="rect" id="node31" href="$class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" title="Pass::executePass easy wrapper for running pass. " alt="" coords="168,896,303,921"/>
+<area shape="rect" id="node33" href="$class_pass.html#ae9d0e69d33f8ec978821565087a3b879" title="Pass::executeGpg easy wrapper for running gpg commands. " alt="" coords="171,597,301,623"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="390,351,585,376"/>
+<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title="QtPassSettings::isLessRandom" alt="" coords="383,400,592,425"/>
+<area shape="rect" id="node15" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="382,449,594,475"/>
+<area shape="rect" id="node16" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="379,499,597,524"/>
+<area shape="rect" id="node17" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="385,239,590,264"/>
+<area shape="rect" id="node18" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="399,548,577,573"/>
+<area shape="rect" id="node19" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="398,288,578,327"/>
+<area shape="rect" id="node21" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="424,647,552,672"/>
+<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="373,597,603,623"/>
+<area shape="rect" id="node25" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="653,748,854,773"/>
+<area shape="rect" id="node26" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="401,748,575,773"/>
+<area shape="rect" id="node30" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="377,847,599,872"/>
+<area shape="rect" id="node32" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="370,896,605,921"/>
 </map>

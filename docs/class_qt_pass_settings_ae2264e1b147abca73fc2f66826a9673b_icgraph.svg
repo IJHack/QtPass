@@ -8,22 +8,22 @@
  viewBox="0.00 0.00 323.72 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::getWebDavPassword</title>
-<!-- Node239 -->
-<g id="node1" class="node"><title>Node239</title>
+<!-- Node238 -->
+<g id="node1" class="node"><title>Node238</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-28.5 142.548,-28.5 142.548,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getWebDav</text>
 <text text-anchor="middle" x="71.2739" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Password</text>
 </g>
-<!-- Node240 -->
-<g id="node2" class="node"><title>Node240</title>
+<!-- Node239 -->
+<g id="node2" class="node"><title>Node239</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" target="_top" xlink:title="MainWindow::changeEvent sets focus to the search box. ">
 <polygon fill="none" stroke="black" points="178.548,-5.5 178.548,-23.5 315.725,-23.5 315.725,-5.5 178.548,-5.5"/>
 <text text-anchor="middle" x="247.136" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::changeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node239&#45;&gt;Node240 -->
-<g id="edge1" class="edge"><title>Node239&#45;&gt;Node240</title>
+<!-- Node238&#45;&gt;Node239 -->
+<g id="edge1" class="edge"><title>Node238&#45;&gt;Node239</title>
 <path fill="none" stroke="midnightblue" d="M152.746,-14.5C161.321,-14.5 169.979,-14.5 178.386,-14.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="152.74,-11.0001 142.74,-14.5 152.74,-18.0001 152.74,-11.0001"/>
 </g>

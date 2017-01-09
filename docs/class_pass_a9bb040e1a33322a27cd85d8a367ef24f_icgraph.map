@@ -1,3 +1,8 @@
 <map id="Pass::processErrorExit" name="Pass::processErrorExit">
-<area shape="rect" id="node2" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="210,5,306,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="210,5,392,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="249,55,353,80"/>
+<area shape="rect" id="node7" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="488,105,583,131"/>
+<area shape="rect" id="node4" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="451,7,620,32"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="440,56,631,81"/>
+<area shape="rect" id="node5" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="679,32,823,57"/>
 </map>

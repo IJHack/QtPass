@@ -8,222 +8,222 @@
  viewBox="0.00 0.00 875.10 460.82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 456.818)">
 <title>ImitatePass::Copy</title>
-<!-- Node28 -->
-<g id="node1" class="node"><title>Node28</title>
+<!-- Node27 -->
+<g id="node1" class="node"><title>Node27</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-377.5 0,-395.5 97.1426,-395.5 97.1426,-377.5 0,-377.5"/>
 <text text-anchor="middle" x="48.5713" y="-383.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </g>
-<!-- Node29 -->
-<g id="node2" class="node"><title>Node29</title>
+<!-- Node28 -->
+<g id="node2" class="node"><title>Node28</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
 <polygon fill="none" stroke="black" points="525.08,-377.5 525.08,-395.5 653.34,-395.5 653.34,-377.5 525.08,-377.5"/>
 <text text-anchor="middle" x="589.21" y="-383.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node29 -->
-<g id="edge1" class="edge"><title>Node28&#45;&gt;Node29</title>
+<!-- Node27&#45;&gt;Node28 -->
+<g id="edge1" class="edge"><title>Node27&#45;&gt;Node28</title>
 <path fill="none" stroke="midnightblue" d="M97.3719,-386.5C191.75,-386.5 402.574,-386.5 514.736,-386.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="514.945,-390 524.945,-386.5 514.945,-383 514.945,-390"/>
 </g>
-<!-- Node30 -->
-<g id="node3" class="node"><title>Node30</title>
+<!-- Node29 -->
+<g id="node3" class="node"><title>Node29</title>
 <g id="a_node3"><a xlink:href="class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" target="_top" xlink:title="Pass::executeGit easy wrapper for running git commands. ">
 <polygon fill="none" stroke="black" points="543.415,-415.5 543.415,-433.5 635.005,-433.5 635.005,-415.5 543.415,-415.5"/>
 <text text-anchor="middle" x="589.21" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeGit</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node30 -->
-<g id="edge2" class="edge"><title>Node28&#45;&gt;Node30</title>
+<!-- Node27&#45;&gt;Node29 -->
+<g id="edge2" class="edge"><title>Node27&#45;&gt;Node29</title>
 <path fill="none" stroke="midnightblue" d="M66.6491,-395.613C83.1779,-404.005 109.182,-416.094 133.143,-422.5 281.441,-462.147 324.949,-454.907 477.954,-442.5 496.053,-441.032 515.661,-438.231 533.253,-435.267"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="534.098,-438.673 543.351,-433.512 532.9,-431.776 534.098,-438.673"/>
 </g>
-<!-- Node32 -->
-<g id="node5" class="node"><title>Node32</title>
+<!-- Node31 -->
+<g id="node5" class="node"><title>Node31</title>
 <g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" target="_top" xlink:title="QtPassSettings::isAutoPush">
 <polygon fill="none" stroke="black" points="321.043,-0.5 321.043,-18.5 462.107,-18.5 462.107,-0.5 321.043,-0.5"/>
 <text text-anchor="middle" x="391.575" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPush</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node32 -->
-<g id="edge4" class="edge"><title>Node28&#45;&gt;Node32</title>
+<!-- Node27&#45;&gt;Node31 -->
+<g id="edge4" class="edge"><title>Node27&#45;&gt;Node31</title>
 <path fill="none" stroke="midnightblue" d="M52.2719,-377.24C60.8693,-348.73 89.6201,-260.466 133.143,-198.5 194.038,-111.799 213.212,-86.075 305.196,-33.5 313.818,-28.5718 323.516,-24.6035 333.199,-21.4241"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="334.283,-24.7528 342.837,-18.5014 332.252,-18.054 334.283,-24.7528"/>
 </g>
-<!-- Node33 -->
-<g id="node6" class="node"><title>Node33</title>
+<!-- Node32 -->
+<g id="node6" class="node"><title>Node32</title>
 <g id="a_node6"><a xlink:href="class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" target="_top" xlink:title="ImitatePass::GitPush git init wrapper. ">
 <polygon fill="none" stroke="black" points="336.891,-415.5 336.891,-433.5 446.26,-433.5 446.26,-415.5 336.891,-415.5"/>
 <text text-anchor="middle" x="391.575" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node33 -->
-<g id="edge5" class="edge"><title>Node28&#45;&gt;Node33</title>
+<!-- Node27&#45;&gt;Node32 -->
+<g id="edge5" class="edge"><title>Node27&#45;&gt;Node32</title>
 <path fill="none" stroke="midnightblue" d="M97.2114,-395.098C108.935,-397.044 121.472,-398.981 133.143,-400.5 198.866,-409.057 274.416,-415.727 326.591,-419.841"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="326.463,-423.341 336.705,-420.629 327.007,-416.362 326.463,-423.341"/>
 </g>
-<!-- Node34 -->
-<g id="node7" class="node"><title>Node34</title>
+<!-- Node33 -->
+<g id="node7" class="node"><title>Node33</title>
 <g id="a_node7"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="black" points="133.143,-208.5 133.143,-226.5 269.196,-226.5 269.196,-208.5 133.143,-208.5"/>
 <text text-anchor="middle" x="201.169" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node34 -->
-<g id="edge8" class="edge"><title>Node28&#45;&gt;Node34</title>
+<!-- Node27&#45;&gt;Node33 -->
+<g id="edge8" class="edge"><title>Node27&#45;&gt;Node33</title>
 <path fill="none" stroke="midnightblue" d="M57.6681,-377.414C81.8761,-350.248 153.961,-269.354 185.321,-234.163"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="187.993,-236.425 192.033,-226.631 182.767,-231.768 187.993,-236.425"/>
 </g>
-<!-- Node31 -->
-<g id="node4" class="node"><title>Node31</title>
+<!-- Node30 -->
+<g id="node4" class="node"><title>Node30</title>
 <g id="a_node4"><a xlink:href="class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" target="_top" xlink:title="QtPassSettings::getGitExecutable">
 <polygon fill="none" stroke="black" points="700.466,-151.5 700.466,-169.5 867.101,-169.5 867.101,-151.5 700.466,-151.5"/>
 <text text-anchor="middle" x="783.783" y="-157.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node31 -->
-<g id="edge3" class="edge"><title>Node30&#45;&gt;Node31</title>
+<!-- Node29&#45;&gt;Node30 -->
+<g id="edge3" class="edge"><title>Node29&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M635.187,-418.904C645.64,-415.927 656.134,-411.394 664.466,-404.5 738.189,-343.506 769.428,-225.567 779.172,-179.546"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="782.612,-180.196 781.156,-169.702 775.75,-178.813 782.612,-180.196"/>
 </g>
-<!-- Node33&#45;&gt;Node29 -->
-<g id="edge6" class="edge"><title>Node33&#45;&gt;Node29</title>
+<!-- Node32&#45;&gt;Node28 -->
+<g id="edge6" class="edge"><title>Node32&#45;&gt;Node28</title>
 <path fill="none" stroke="midnightblue" d="M438.938,-415.495C466.733,-410.096 502.278,-403.191 531.709,-397.475"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="532.692,-400.849 541.841,-395.507 531.358,-393.978 532.692,-400.849"/>
 </g>
-<!-- Node33&#45;&gt;Node30 -->
-<g id="edge7" class="edge"><title>Node33&#45;&gt;Node30</title>
+<!-- Node32&#45;&gt;Node29 -->
+<g id="edge7" class="edge"><title>Node32&#45;&gt;Node29</title>
 <path fill="none" stroke="midnightblue" d="M446.292,-424.5C473.273,-424.5 505.917,-424.5 533.09,-424.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="533.214,-428 543.214,-424.5 533.214,-421 533.214,-428"/>
 </g>
-<!-- Node34&#45;&gt;Node29 -->
-<g id="edge18" class="edge"><title>Node34&#45;&gt;Node29</title>
+<!-- Node33&#45;&gt;Node28 -->
+<g id="edge18" class="edge"><title>Node33&#45;&gt;Node28</title>
 <path fill="none" stroke="midnightblue" d="M207.809,-226.757C221.521,-248.404 258.906,-302.462 305.196,-328.5 340.351,-348.275 443.048,-366.096 514.539,-376.613"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="514.449,-380.136 524.848,-378.111 515.456,-373.209 514.449,-380.136"/>
 </g>
-<!-- Node34&#45;&gt;Node31 -->
-<g id="edge19" class="edge"><title>Node34&#45;&gt;Node31</title>
+<!-- Node33&#45;&gt;Node30 -->
+<g id="edge19" class="edge"><title>Node33&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M269.34,-210.906C373.179,-200.712 572.927,-181.102 690.327,-169.577"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="690.768,-173.05 700.378,-168.59 690.084,-166.084 690.768,-173.05"/>
 </g>
-<!-- Node34&#45;&gt;Node32 -->
-<g id="edge21" class="edge"><title>Node34&#45;&gt;Node32</title>
+<!-- Node33&#45;&gt;Node31 -->
+<g id="edge21" class="edge"><title>Node33&#45;&gt;Node31</title>
 <path fill="none" stroke="midnightblue" d="M207.438,-208.35C218.819,-188.557 246.506,-140.259 269.196,-99.5 285.448,-70.3056 279.063,-54.3208 305.196,-33.5 310.909,-28.9486 317.436,-25.2599 324.28,-22.2705"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="325.692,-25.4772 333.761,-18.612 323.172,-18.9465 325.692,-25.4772"/>
 </g>
-<!-- Node34&#45;&gt;Node33 -->
-<g id="edge22" class="edge"><title>Node34&#45;&gt;Node33</title>
+<!-- Node33&#45;&gt;Node32 -->
+<g id="edge22" class="edge"><title>Node33&#45;&gt;Node32</title>
 <path fill="none" stroke="midnightblue" d="M207.303,-226.759C221.004,-250.948 260.446,-317.286 305.196,-362.5 323.632,-381.127 348.126,-398.297 366.15,-409.822"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="364.586,-412.972 374.919,-415.312 368.301,-407.039 364.586,-412.972"/>
 </g>
-<!-- Node35 -->
-<g id="node8" class="node"><title>Node35</title>
+<!-- Node34 -->
+<g id="node8" class="node"><title>Node34</title>
 <g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" target="_top" xlink:title="QtPassSettings::isAutoPull">
 <polygon fill="none" stroke="black" points="324.103,-113.5 324.103,-131.5 459.048,-131.5 459.048,-113.5 324.103,-113.5"/>
 <text text-anchor="middle" x="391.575" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPull</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node35 -->
-<g id="edge9" class="edge"><title>Node34&#45;&gt;Node35</title>
+<!-- Node33&#45;&gt;Node34 -->
+<g id="edge9" class="edge"><title>Node33&#45;&gt;Node34</title>
 <path fill="none" stroke="midnightblue" d="M212.862,-208.327C230.806,-193.366 268.619,-163.663 305.196,-146.5 315.546,-141.644 327.074,-137.586 338.227,-134.271"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="339.216,-137.629 347.892,-131.548 337.318,-130.891 339.216,-137.629"/>
 </g>
-<!-- Node36 -->
-<g id="node9" class="node"><title>Node36</title>
+<!-- Node35 -->
+<g id="node9" class="node"><title>Node35</title>
 <g id="a_node9"><a xlink:href="class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" target="_top" xlink:title="ImitatePass::GitPull_b git pull wrapper. ">
 <polygon fill="none" stroke="black" points="334.388,-76.5 334.388,-94.5 448.762,-94.5 448.762,-76.5 334.388,-76.5"/>
 <text text-anchor="middle" x="391.575" y="-82.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node36 -->
-<g id="edge10" class="edge"><title>Node34&#45;&gt;Node36</title>
+<!-- Node33&#45;&gt;Node35 -->
+<g id="edge10" class="edge"><title>Node33&#45;&gt;Node35</title>
 <path fill="none" stroke="midnightblue" d="M207.552,-208.336C220.975,-186.361 258.251,-130.495 305.196,-103.5 311.108,-100.101 317.58,-97.3404 324.234,-95.0993"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="325.48,-98.3801 334.067,-92.1736 323.484,-91.6708 325.48,-98.3801"/>
 </g>
-<!-- Node37 -->
-<g id="node10" class="node"><title>Node37</title>
+<!-- Node36 -->
+<g id="node10" class="node"><title>Node36</title>
 <g id="a_node10"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
 <polygon fill="none" stroke="black" points="522.289,-47.5 522.289,-65.5 656.131,-65.5 656.131,-47.5 522.289,-47.5"/>
 <text text-anchor="middle" x="589.21" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node37 -->
-<g id="edge15" class="edge"><title>Node34&#45;&gt;Node37</title>
+<!-- Node33&#45;&gt;Node36 -->
+<g id="edge15" class="edge"><title>Node33&#45;&gt;Node36</title>
 <path fill="none" stroke="midnightblue" d="M206.952,-208.388C222.957,-178.28 275.317,-82.9664 305.196,-66.5 378.668,-26.0101 479.927,-35.0523 539.293,-45.586"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="538.69,-49.0339 549.161,-47.4198 539.969,-42.1517 538.69,-49.0339"/>
 </g>
-<!-- Node38 -->
-<g id="node11" class="node"><title>Node38</title>
+<!-- Node37 -->
+<g id="node11" class="node"><title>Node37</title>
 <g id="a_node11"><a xlink:href="class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" target="_top" xlink:title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. ">
 <polygon fill="none" stroke="black" points="334.105,-264.5 334.105,-282.5 449.045,-282.5 449.045,-264.5 334.105,-264.5"/>
 <text text-anchor="middle" x="391.575" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getRecipientList</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node38 -->
-<g id="edge13" class="edge"><title>Node34&#45;&gt;Node38</title>
+<!-- Node33&#45;&gt;Node37 -->
+<g id="edge13" class="edge"><title>Node33&#45;&gt;Node37</title>
 <path fill="none" stroke="midnightblue" d="M224.814,-226.564C245.511,-234.623 277.084,-246.359 305.196,-254.5 314.823,-257.288 325.161,-259.901 335.203,-262.244"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="334.583,-265.693 345.11,-264.494 336.134,-258.866 334.583,-265.693"/>
 </g>
-<!-- Node39 -->
-<g id="node12" class="node"><title>Node39</title>
+<!-- Node38 -->
+<g id="node12" class="node"><title>Node38</title>
 <g id="a_node12"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="black" points="513.954,-227.5 513.954,-245.5 664.466,-245.5 664.466,-227.5 513.954,-227.5"/>
 <text text-anchor="middle" x="589.21" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node39 -->
-<g id="edge20" class="edge"><title>Node34&#45;&gt;Node39</title>
+<!-- Node33&#45;&gt;Node38 -->
+<g id="edge20" class="edge"><title>Node33&#45;&gt;Node38</title>
 <path fill="none" stroke="midnightblue" d="M269.461,-214.304C325.385,-212.414 406.993,-211.43 477.954,-217.5 497.059,-219.134 517.825,-222.333 536.13,-225.647"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="535.548,-229.099 546.02,-227.491 536.831,-222.218 535.548,-229.099"/>
 </g>
-<!-- Node40 -->
-<g id="node13" class="node"><title>Node40</title>
+<!-- Node39 -->
+<g id="node13" class="node"><title>Node39</title>
 <g id="a_node13"><a xlink:href="class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" target="_top" xlink:title="QtPassSettings::getGpgExecutable">
 <polygon fill="none" stroke="black" points="305.196,-301.5 305.196,-319.5 477.954,-319.5 477.954,-301.5 305.196,-301.5"/>
 <text text-anchor="middle" x="391.575" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node40 -->
-<g id="edge16" class="edge"><title>Node34&#45;&gt;Node40</title>
+<!-- Node33&#45;&gt;Node39 -->
+<g id="edge16" class="edge"><title>Node33&#45;&gt;Node39</title>
 <path fill="none" stroke="midnightblue" d="M211.84,-226.558C229.156,-242.264 267.207,-274.493 305.196,-291.5 311.342,-294.251 317.921,-296.62 324.598,-298.655"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="323.838,-302.077 334.411,-301.405 325.726,-295.337 323.838,-302.077"/>
 </g>
-<!-- Node41 -->
-<g id="node14" class="node"><title>Node41</title>
+<!-- Node40 -->
+<g id="node14" class="node"><title>Node40</title>
 <g id="a_node14"><a xlink:href="class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" target="_top" xlink:title="QtPassSettings::isUseWebDav">
 <polygon fill="none" stroke="black" points="314.75,-227.5 314.75,-245.5 468.401,-245.5 468.401,-227.5 314.75,-227.5"/>
 <text text-anchor="middle" x="391.575" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node41 -->
-<g id="edge17" class="edge"><title>Node34&#45;&gt;Node41</title>
+<!-- Node33&#45;&gt;Node40 -->
+<g id="edge17" class="edge"><title>Node33&#45;&gt;Node40</title>
 <path fill="none" stroke="midnightblue" d="M269.39,-224.279C280.752,-225.425 292.685,-226.628 304.449,-227.814"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="304.424,-231.33 314.724,-228.851 305.126,-224.365 304.424,-231.33"/>
 </g>
-<!-- Node36&#45;&gt;Node31 -->
-<g id="edge12" class="edge"><title>Node36&#45;&gt;Node31</title>
+<!-- Node35&#45;&gt;Node30 -->
+<g id="edge12" class="edge"><title>Node35&#45;&gt;Node30</title>
 <path fill="none" stroke="midnightblue" d="M439.643,-94.5468C511.517,-108.361 648.414,-134.674 725.8,-149.548"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="725.371,-153.029 735.852,-151.48 726.693,-146.155 725.371,-153.029"/>
 </g>
-<!-- Node36&#45;&gt;Node37 -->
-<g id="edge11" class="edge"><title>Node36&#45;&gt;Node37</title>
+<!-- Node35&#45;&gt;Node36 -->
+<g id="edge11" class="edge"><title>Node35&#45;&gt;Node36</title>
 <path fill="none" stroke="midnightblue" d="M448.898,-77.1509C470.14,-74.0021 494.586,-70.3783 517.012,-67.054"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="517.776,-70.4791 527.155,-65.5505 516.75,-63.5548 517.776,-70.4791"/>
 </g>
-<!-- Node38&#45;&gt;Node39 -->
-<g id="edge14" class="edge"><title>Node38&#45;&gt;Node39</title>
+<!-- Node37&#45;&gt;Node38 -->
+<g id="edge14" class="edge"><title>Node37&#45;&gt;Node38</title>
 <path fill="none" stroke="midnightblue" d="M440.183,-264.496C467.398,-259.349 501.729,-252.856 530.475,-247.419"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="531.214,-250.842 540.389,-245.544 529.913,-243.964 531.214,-250.842"/>
 </g>

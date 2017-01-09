@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 278.31 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::userDialog</title>
-<!-- Node454 -->
-<g id="node1" class="node"><title>Node454</title>
+<!-- Node457 -->
+<g id="node1" class="node"><title>Node457</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 126.601,-18.5 126.601,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="63.3003" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::userDialog</text>
 </g>
-<!-- Node455 -->
-<g id="node2" class="node"><title>Node455</title>
+<!-- Node458 -->
+<g id="node2" class="node"><title>Node458</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="black" points="162.601,-0.5 162.601,-18.5 270.31,-18.5 270.31,-0.5 162.601,-0.5"/>
 <text text-anchor="middle" x="216.455" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node454&#45;&gt;Node455 -->
-<g id="edge1" class="edge"><title>Node454&#45;&gt;Node455</title>
+<!-- Node457&#45;&gt;Node458 -->
+<g id="edge1" class="edge"><title>Node457&#45;&gt;Node458</title>
 <path fill="none" stroke="midnightblue" d="M136.751,-9.5C145.397,-9.5 154.098,-9.5 162.399,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="136.653,-6.0001 126.653,-9.5 136.653,-13.0001 136.653,-6.0001"/>
 </g>

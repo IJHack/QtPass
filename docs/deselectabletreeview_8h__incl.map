@@ -1,13 +1,13 @@
 <map id="src/deselectabletreeview.h" name="src/deselectabletreeview.h">
 <area shape="rect" id="node4" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="331,79,436,104"/>
 <area shape="rect" id="node5" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="1935,445,2037,471"/>
-<area shape="rect" id="node8" href="$enums_8h.html" title="enums.h" alt="" coords="622,445,695,471"/>
+<area shape="rect" id="node8" href="$enums_8h.html" title="enums.h" alt="" coords="618,445,691,471"/>
 <area shape="rect" id="node9" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="655,299,755,324"/>
 <area shape="rect" id="node10" href="$pass_8h.html" title="pass.h" alt="" coords="891,372,951,397"/>
 <area shape="rect" id="node18" href="$realpass_8h.html" title="realpass.h" alt="" coords="880,299,962,324"/>
 <area shape="rect" id="node19" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="558,152,657,177"/>
 <area shape="rect" id="node36" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1529,152,1609,177"/>
-<area shape="rect" id="node11" href="$executor_8h.html" title="executor.h" alt="" coords="769,445,852,471"/>
+<area shape="rect" id="node11" href="$executor_8h.html" title="executor.h" alt="" coords="765,445,848,471"/>
 <area shape="rect" id="node24" href="$util_8h.html" title="util.h" alt="" coords="472,225,522,251"/>
 <area shape="rect" id="node27" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1154,225,1272,251"/>
 </map>

@@ -1,6 +1,0 @@
-<map id="Pass::Show_b" name="Pass::Show_b">
-<area shape="rect" id="node2" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="160,5,376,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="171,55,365,80"/>
-<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="220,104,316,129"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="424,5,568,31"/>
-</map>

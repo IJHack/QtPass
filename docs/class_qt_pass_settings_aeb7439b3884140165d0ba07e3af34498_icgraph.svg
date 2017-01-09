@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 323.33 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::setSplitterLeft</title>
-<!-- Node641 -->
-<g id="node1" class="node"><title>Node641</title>
+<!-- Node640 -->
+<g id="node1" class="node"><title>Node640</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-18.5 151.62,-18.5 151.62,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="75.8101" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setSplitterLeft</text>
 </g>
-<!-- Node642 -->
-<g id="node2" class="node"><title>Node642</title>
+<!-- Node641 -->
+<g id="node2" class="node"><title>Node641</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit. ">
 <polygon fill="none" stroke="black" points="187.62,-0.5 187.62,-18.5 315.334,-18.5 315.334,-0.5 187.62,-0.5"/>
 <text text-anchor="middle" x="251.477" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::closeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node641&#45;&gt;Node642 -->
-<g id="edge1" class="edge"><title>Node641&#45;&gt;Node642</title>
+<!-- Node640&#45;&gt;Node641 -->
+<g id="edge1" class="edge"><title>Node640&#45;&gt;Node641</title>
 <path fill="none" stroke="midnightblue" d="M161.842,-9.5C170.491,-9.5 179.164,-9.5 187.517,-9.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="161.721,-6.0001 151.721,-9.5 161.721,-13.0001 161.721,-6.0001"/>
 </g>
