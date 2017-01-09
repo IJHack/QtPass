@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
+#include "debughelper.h"
 #include <QDir>
 #include <QMessageBox>
 #ifdef Q_OS_WIN
