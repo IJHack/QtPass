@@ -180,6 +180,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
     break;
   case GIT_PULL:
     emit statusMsg(tr("git pull successful"), 2000);
+    break;
   case GIT_PUSH:
     emit finishedAny(out, err);
     break;
