@@ -1,7 +1,7 @@
 #include "passworddialog.h"
 #include "debughelper.h"
-#include "ui_passworddialog.h"
 #include "qtpasssettings.h"
+#include "ui_passworddialog.h"
 #include <QDebug>
 #include <QLabel>
 #include <QLineEdit>
@@ -9,12 +9,11 @@
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
  * @param passConfig configuration constant
- * @param pass pass or pass replacement wrapper
  * @param parent
  */
 PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
                                QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig){
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
   templating = false;
   allFields = false;
   ui->setupUi(this);
