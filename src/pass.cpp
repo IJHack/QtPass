@@ -6,6 +6,7 @@
 #include <map>
 
 using namespace std;
+using namespace Enums;
 
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
@@ -33,7 +34,6 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
   dbg() << app << args;
-  transactionAdd(id);
   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
                readStderr);
 }
@@ -172,23 +172,43 @@ void Pass::finished(int id, int exitCode, const QString &out,
   //  TODO(bezet): remove !
   dbg() << id << exitCode << out << err;
 
-  static const map<PROCESS, const char *> emitMsg = {
-      {GIT_PULL, QT_TR_NOOP("git pull successful")},
-      {GIT_PUSH, QT_TR_NOOP("git push successful")}};
   PROCESS pid = static_cast<PROCESS>(id);
-  map<PROCESS, const char *>::const_iterator i = emitMsg.find(pid);
-
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
-    return;
-  } else if (i != emitMsg.end()) {
-    emit statusMsg(tr(i->second), 2000);
-    //  don't return here, need to emit finishedAny too
-  } else if (pid == PASS_SHOW) {
-    emit finishedShow(out);
-    return;
+	return;
   }
-  emit finishedAny(out, err);
+  switch (pid) {
+  case GIT_INIT:
+    emit finishedGitInit(out, err);
+    break;
+  case GIT_PULL:
+    emit finishedGitPull(out, err);
+    break;
+  case GIT_PUSH:
+    emit finishedGitPush(out, err);
+    break;
+  case PASS_SHOW:
+    emit finishedShow(out);
+    break;
+  case PASS_INSERT:
+    emit finishedInsert(out, err);
+    break;
+  case PASS_REMOVE:
+    emit finishedRemove(out, err);
+    break;
+  case PASS_INIT:
+    emit finishedInit(out, err);
+    break;
+  case PASS_MOVE:
+    emit finishedMove(out, err);
+    break;
+  case PASS_COPY:
+    emit finishedCopy(out, err);
+    break;
+  default:
+    dbg() << "Unhandled process type" << pid;
+    break;
+  }
 }
 
 /**

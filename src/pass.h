@@ -24,23 +24,7 @@ class Pass : public QObject {
 protected:
   Executor exec;
 
-  enum PROCESS {
-    GIT_INIT = 0,
-    GIT_ADD,
-    GIT_COMMIT,
-    GIT_RM,
-    GIT_PULL,
-    GIT_PUSH,
-    PASS_SHOW,
-    PASS_INSERT,
-    PASS_REMOVE,
-    PASS_INIT,
-    GPG_GENKEYS,
-    PASS_MOVE,
-    PASS_COPY,
-    GIT_MOVE,
-    GIT_COPY,
-  };
+  typedef Enums::PROCESS PROCESS;
 
 public:
   Pass();
@@ -76,6 +60,7 @@ protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       QString input, bool readStdout = true,
                       bool readStderr = true);
+
 private slots:
   void finished(int id, int exitCode, const QString &out, const QString &err);
 
@@ -89,15 +74,14 @@ signals:
 
   void finishedAny(const QString &, const QString &);
   void finishedGitInit(const QString &, const QString &);
-  void finishedGitAdd(const QString &, const QString &);
-  void finishedGitCommit(const QString &, const QString &);
-  void finishedGitRm(const QString &, const QString &);
   void finishedGitPull(const QString &, const QString &);
   void finishedGitPush(const QString &, const QString &);
   void finishedShow(const QString &);
   void finishedInsert(const QString &, const QString &);
   void finishedRemove(const QString &, const QString &);
   void finishedInit(const QString &, const QString &);
+  void finishedMove(const QString &, const QString &);
+  void finishedCopy(const QString &, const QString &);
   void finishedGenerate(const QString &, const QString &);
   void finishedGenerateGPGKeys(const QString &, const QString &);
 };

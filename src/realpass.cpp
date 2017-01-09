@@ -1,6 +1,8 @@
 #include "realpass.h"
 #include "qtpasssettings.h"
 
+using namespace Enums;
+
 RealPass::RealPass() {}
 
 /**

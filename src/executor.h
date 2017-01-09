@@ -82,6 +82,8 @@ public:
                       QString *process_out, QString *process_err = Q_NULLPTR);
 
   void setEnvironment(const QStringList &env);
+
+  int cancelNext();
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:

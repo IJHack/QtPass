@@ -2,6 +2,7 @@
 #define IMITATEPASS_H
 
 #include "pass.h"
+#include <queue>
 
 /*!
     \class ImitatePass
@@ -20,6 +21,8 @@ class ImitatePass : public Pass {
   void executeGpg(PROCESS id, const QStringList &args,
                   QString input = QString(), bool readStdout = true,
                   bool readStderr = true);
+
+protected:
 
 public:
   ImitatePass();

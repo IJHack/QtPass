@@ -7,7 +7,8 @@ SOURCES += tst_util.cpp \
            pass.cpp \
            realpass.cpp \
            imitatepass.cpp \
-           executor.cpp
+           executor.cpp \
+           simpletransaction.cpp
 
 HEADERS   += util.h \
              qtpasssettings.h \
@@ -15,7 +16,8 @@ HEADERS   += util.h \
              pass.h \
              realpass.h \
              imitatepass.h \
-             executor.h
+             executor.h \
+             simpletransaction.h
 
 VPATH += ../../../src
 INCLUDEPATH += ../../../src

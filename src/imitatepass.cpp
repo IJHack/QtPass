@@ -3,6 +3,8 @@
 #include "qtpasssettings.h"
 #include <QDirIterator>
 
+using namespace Enums;
+
 /**
  * @brief ImitatePass::ImitatePass for situaions when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
@@ -389,3 +391,4 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
   executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
                  readStdout, readStderr);
 }
+
