@@ -69,18 +69,11 @@ public:
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
-  void executeGit(int id, const QStringList &args, QString input = QString(),
-                  bool readStdout = true, bool readStderr = true);
-  void executePass(int id, const QStringList &arg, QString input = QString(),
-                   bool readStdout = true, bool readStderr = true);
-  void executeGpg(int id, const QStringList &args, QString input = QString(),
-                  bool readStdout = true, bool readStderr = true);
-
-private:
-  void executeWrapper(int id, const QString &app, const QStringList &args,
+protected:
+  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       bool readStdout = true, bool readStderr = true);
 
-  void executeWrapper(int id, const QString &app, const QStringList &args,
+  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       QString input, bool readStdout = true,
                       bool readStderr = true);
 private slots:

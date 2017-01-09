@@ -12,14 +12,14 @@ class ImitatePass : public Pass {
 
   bool removeDir(const QString &dirName);
 
-  void executeWrapper(int id, const QString &app, const QStringList &args,
-                      bool readStdout = true, bool readStderr = true);
-
-  void executeWrapper(int id, const QString &app, const QStringList &args,
-                      QString input, bool readStdout = true,
-                      bool readStderr = true);
-
   void GitCommit(const QString &file, const QString &msg);
+
+  void executeGit(PROCESS id, const QStringList &args,
+                  QString input = QString(), bool readStdout = true,
+                  bool readStderr = true);
+  void executeGpg(PROCESS id, const QStringList &args,
+                  QString input = QString(), bool readStdout = true,
+                  bool readStderr = true);
 
 public:
   ImitatePass();

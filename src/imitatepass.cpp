@@ -370,3 +370,22 @@ void ImitatePass::Copy(const QString src, const QString dest,
     reencryptPath(destFileInfo.dir().path());
   }
 }
+
+/**
+ * @brief ImitatePass::executeGpg easy wrapper for running gpg commands
+ * @param args
+ */
+void ImitatePass::executeGpg(PROCESS id, const QStringList &args, QString input,
+                             bool readStdout, bool readStderr) {
+  executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
+                 readStdout, readStderr);
+}
+/**
+ * @brief ImitatePass::executeGit easy wrapper for running git commands
+ * @param args
+ */
+void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
+                             bool readStdout, bool readStderr) {
+  executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
+                 readStdout, readStderr);
+}
