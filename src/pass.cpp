@@ -3,6 +3,9 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QTextCodec>
+#include <map>
+
+using namespace std;
 
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
@@ -66,13 +69,13 @@ QString Pass::Generate_b(int length, const QString &charset) {
     QStringList args;
     args.append("-1");
     if (QtPassSettings::isLessRandom())
-      args.append("--secure ");
-    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
-                                                  : "--capitalize ");
-    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals "
-                                                 : "--numerals ");
+      args.append("--secure");
+    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
+                                                  : "--capitalize");
+    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals"
+                                                 : "--numerals");
     if (QtPassSettings::isUseSymbols())
-      args.append("--symbols ");
+      args.append("--symbols");
     args.append(QString::number(length));
     QString p_out;
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
@@ -167,40 +170,24 @@ void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   //  TODO(bezet): remove !
   dbg() << id << exitCode << out << err;
+
+  static const map<PROCESS, const char *> emitMsg = {
+      {GIT_PULL, QT_TR_NOOP("git pull successful")},
+      {GIT_PUSH, QT_TR_NOOP("git push successful")}};
+  PROCESS pid = static_cast<PROCESS>(id);
+  map<PROCESS, const char *>::const_iterator i = emitMsg.find(pid);
+
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
     return;
-  }
-  switch (static_cast<PROCESS>(id)) {
-  case GIT_INIT:
-  case GIT_ADD:
-  case GIT_COMMIT:
-  case GIT_RM:
-    emit finishedAny(out, err);
-    break;
-  case GIT_PULL:
-    emit statusMsg(tr("git pull successful"), 2000);
-    break;
-  case GIT_PUSH:
-    emit finishedAny(out, err);
-    break;
-  case PASS_SHOW:
+  } else if (i != emitMsg.end()) {
+    emit statusMsg(tr(i->second), 2000);
+    //  don't return here, need to emit finishedAny too
+  } else if (pid == PASS_SHOW) {
     emit finishedShow(out);
-    break;
-  case PASS_INSERT:
-  case PASS_REMOVE:
-  case PASS_INIT:
-  case GPG_GENKEYS:
-  case PASS_MOVE:
-  case PASS_COPY:
-  case GIT_MOVE:
-  case GIT_COPY:
-    emit finishedAny(out, err);
-    break;
-  default:
-    qDebug() << __FILE__ << ":" << __LINE__ << "\t"
-             << "Unhandled PROCESS:" << id;
+    return;
   }
+  emit finishedAny(out, err);
 }
 
 /**
