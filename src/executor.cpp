@@ -125,7 +125,6 @@ int Executor::executeBlocking(QString app, const QStringList &args,
                               QString input, QString *process_out,
                               QString *process_err) {
   QProcess internal;
-  emit starting();
   internal.start(app, args);
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
@@ -144,7 +143,6 @@ int Executor::executeBlocking(QString app, const QStringList &args,
       *process_out = pout;
     if (process_err != Q_NULLPTR)
       *process_err = perr;
-    emit finished(internal.exitCode(), pout, perr);
     return internal.exitCode();
   } else {
     //  TODO(bezet): emit error() ?
@@ -192,7 +190,7 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
       if (exitCode != 0)
         dbg() << exitCode << err;
     }
-    emit finished(exitCode, output, err);
+    emit finished(i.id, exitCode, output, err);
   }
   //	else: emit crashed with ID, which may give a chance to recover ?
   executeNext();

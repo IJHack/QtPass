@@ -4,12 +4,12 @@
 #include "datahelpers.h"
 #include "enums.h"
 #include "executor.h"
+#include <QDebug>
+#include <QDir>
 #include <QList>
 #include <QProcess>
 #include <QQueue>
 #include <QString>
-#include <QDir>
-#include <QDebug>
 
 /*!
     \class Pass
@@ -20,6 +20,7 @@ class Pass : public QObject {
 
   bool wrapperRunning;
   QStringList env;
+
 protected:
   Executor exec;
 
@@ -34,7 +35,6 @@ protected:
     PASS_INSERT,
     PASS_REMOVE,
     PASS_INIT,
-    PASSWD_GENERATE,
     GPG_GENKEYS,
     PASS_MOVE,
     PASS_COPY,
@@ -52,28 +52,29 @@ public:
   virtual void GitPull_b() = 0;
   virtual void GitPush() = 0;
   virtual void Show(QString file) = 0;
-  virtual int Show_b(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
-  virtual void Move(const QString srcDir, const QString dest, const bool force = false) = 0;
-  virtual void Copy(const QString srcDir, const QString dest, const bool force = false) = 0;
+  virtual void Move(const QString srcDir, const QString dest,
+                    const bool force = false) = 0;
+  virtual void Copy(const QString srcDir, const QString dest,
+                    const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
-  virtual QString Generate(int length, const QString &charset);
+  virtual QString Generate_b(int length, const QString &charset);
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   void updateEnv();
-  //  TODO(bezet): those are probably temporarly here
   static QStringList getRecipientList(QString for_file);
+  //  TODO(bezet): getRecipientString is useless, refactor
   static QString getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
   void executeGit(int id, const QStringList &args, QString input = QString(),
                   bool readStdout = true, bool readStderr = true);
   void executePass(int id, const QStringList &arg, QString input = QString(),
-                  bool readStdout = true,bool readStderr = true);
+                   bool readStdout = true, bool readStderr = true);
   void executeGpg(int id, const QStringList &args, QString input = QString(),
-                  bool readStdout = true,bool readStderr = true);
+                  bool readStdout = true, bool readStderr = true);
 
 private:
   void executeWrapper(int id, const QString &app, const QStringList &args,
@@ -82,15 +83,30 @@ private:
   void executeWrapper(int id, const QString &app, const QStringList &args,
                       QString input, bool readStdout = true,
                       bool readStderr = true);
+private slots:
+  void finished(int id, int exitCode, const QString &out, const QString &err);
 
 signals:
-  void finished(int, const QString &output, const QString &errout);
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
   void statusMsg(QString, int);
   void critical(QString, QString);
 
   void processErrorExit(int exitCode, const QString &err);
+
+  void finishedAny(const QString &, const QString &);
+  void finishedGitInit(const QString &, const QString &);
+  void finishedGitAdd(const QString &, const QString &);
+  void finishedGitCommit(const QString &, const QString &);
+  void finishedGitRm(const QString &, const QString &);
+  void finishedGitPull(const QString &, const QString &);
+  void finishedGitPush(const QString &, const QString &);
+  void finishedShow(const QString &);
+  void finishedInsert(const QString &, const QString &);
+  void finishedRemove(const QString &, const QString &);
+  void finishedInit(const QString &, const QString &);
+  void finishedGenerate(const QString &, const QString &);
+  void finishedGenerateGPGKeys(const QString &, const QString &);
 };
 
 #endif // PASS_H

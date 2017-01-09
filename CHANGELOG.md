@@ -12,17 +12,22 @@
 
 **Fixed bugs:**
 
+- Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 
 **Closed issues:**
 
+- pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
+- Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
 - Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
 - Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 
 **Merged pull requests:**
 
+- Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
+- \#239 reencrypting after a drag and drop action [\#261](https://github.com/IJHack/QtPass/pull/261) ([YoshiMan](https://github.com/YoshiMan))
 - this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
 - Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))

@@ -403,7 +403,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="222"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Neu-Verschlüsselung aus Ordner %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="226"/>

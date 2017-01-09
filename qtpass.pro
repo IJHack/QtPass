@@ -24,3 +24,6 @@ INSTALLS += target
 DISTFILES += \
     settingsToDelete.txt
 
+RESOURCES += \
+    src/resources.qrc
+

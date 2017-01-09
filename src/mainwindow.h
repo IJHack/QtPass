@@ -77,12 +77,10 @@ private slots:
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
   void on_configButton_clicked();
-  void readyRead(const QString &, const QString &);
-  void processFinished(int, const QString &, const QString &);
+  void processFinished(const QString &, const QString &);
   void processError(QProcess::ProcessError);
   void clearClipboard();
-  void clearPanel(bool notify);
-  void clearPanel();
+  void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
   void on_addButton_clicked();
@@ -94,7 +92,7 @@ private slots:
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void addFolder();
-  void editPassword();
+  void editPassword(const QString &);
   void focusInput();
   void copyTextToClipboard(const QString &text);
 
@@ -103,10 +101,12 @@ private slots:
   void startReencryptPath();
   void endReencryptPath();
   void critical(QString, QString);
-  void setLastDecrypt(QString);
   void passShowHandler(const QString &);
 
-  void processErrorExit(const QString &);
+  void processErrorExit(int exitCode, const QString &);
+
+  void finishedInsert(const QString &, const QString &);
+  void keyGenerationComplete(const QString &p_output, const QString &p_errout);
 
 private:
   QAction *actionAddPassword;
@@ -123,7 +123,6 @@ private:
   QTimer clearPanelTimer;
   QTimer clearClipboardTimer;
   actionType currentAction;
-  QString lastDecrypt;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
@@ -135,8 +134,7 @@ private:
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);
-  void setPassword(QString, bool, bool);
-  QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
+  void setPassword(QString, bool isNew = true);
 
   void mountWebDav();
   void updateProfileBox();

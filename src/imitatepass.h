@@ -29,7 +29,6 @@ public:
   virtual void GitPull_b() Q_DECL_OVERRIDE;
   virtual void GitPush() Q_DECL_OVERRIDE;
   virtual void Show(QString file) Q_DECL_OVERRIDE;
-  virtual int Show_b(QString file) Q_DECL_OVERRIDE;
   virtual void Insert(QString file, QString value,
                       bool overwrite = false) Q_DECL_OVERRIDE;
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
@@ -39,7 +38,6 @@ public:
 signals:
   void startReencryptPath();
   void endReencryptPath();
-  void lastDecrypt(QString);
 
   // Pass interface
 public:

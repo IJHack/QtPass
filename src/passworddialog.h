@@ -52,6 +52,9 @@ public:
   void setPasswordCharTemplate(int t);
   void usePwgen(bool usePwgen);
 
+public slots:
+  void setPass(const QString &output);
+
 private slots:
   void on_checkBoxShow_stateChanged(int arg1);
   void on_createPasswordButton_clicked();
