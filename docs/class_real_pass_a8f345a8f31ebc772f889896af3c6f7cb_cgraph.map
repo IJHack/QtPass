@@ -10,7 +10,7 @@
 <area shape="rect" id="node14" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder) " alt="" coords="215,351,333,376"/>
 <area shape="rect" id="node15" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder) " alt="" coords="215,400,332,425"/>
 <area shape="rect" id="node3" href="$class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" title="Pass::executePass easy wrapper for running pass. " alt="" coords="425,228,560,253"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="641,315,875,340"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="641,327,875,352"/>
 <area shape="rect" id="node7" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="403,451,581,476"/>
 <area shape="rect" id="node13" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="392,349,593,375"/>
 </map>

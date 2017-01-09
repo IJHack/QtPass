@@ -1,7 +1,7 @@
 <map id="MainWindow::executePassGitInit" name="MainWindow::executePassGitInit">
 <area shape="rect" id="node2" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="552,480,721,506"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="827,456,1011,482"/>
-<area shape="rect" id="node6" href="$class_pass.html#a26bec7c69e7c35ccb67f8057db90825e" title="Pass::GitInit" alt="" coords="324,1522,417,1547"/>
+<area shape="rect" id="node6" href="$class_pass.html#a26bec7c69e7c35ccb67f8057db90825e" title="Pass::GitInit" alt="" coords="324,1523,417,1548"/>
 <area shape="rect" id="node7" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="523,59,750,84"/>
 <area shape="rect" id="node8" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="532,108,742,147"/>
 <area shape="rect" id="node9" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="529,171,745,196"/>
@@ -9,21 +9,21 @@
 <area shape="rect" id="node11" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="535,270,739,295"/>
 <area shape="rect" id="node12" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="545,319,729,358"/>
 <area shape="rect" id="node13" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="525,382,748,407"/>
-<area shape="rect" id="node14" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="300,1978,441,2003"/>
+<area shape="rect" id="node14" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="300,1979,441,2004"/>
 <area shape="rect" id="node19" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="819,3815,1019,3840"/>
 <area shape="rect" id="node31" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="539,431,734,456"/>
 <area shape="rect" id="node79" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path. " alt="" coords="595,3888,679,3914"/>
 <area shape="rect" id="node80" href="$class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Pass::Show" alt="" coords="591,3938,683,3963"/>
-<area shape="rect" id="node81" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="PasswordDialog::setPass" alt="" coords="284,2180,457,2206"/>
+<area shape="rect" id="node81" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="PasswordDialog::setPass" alt="" coords="284,2182,457,2207"/>
 <area shape="rect" id="node82" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface. " alt="" coords="536,4039,737,4064"/>
-<area shape="rect" id="node83" href="$class_password_dialog.html#a21d879d779c3a51039b4cbc82bedf282" title="Sets the file (name) in the interface. " alt="" coords="288,2282,453,2307"/>
-<area shape="rect" id="node84" href="$class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4" title="PasswordDialog::usePwgen PasswordDialog::usePwgen don&#39;t use own password generator. " alt="" coords="277,2331,464,2356"/>
-<area shape="rect" id="node85" href="$class_password_dialog.html#a0e1d5305cb76b325312b93533a9751dc" title="Sets content in the template for the interface. " alt="" coords="272,2380,469,2406"/>
-<area shape="rect" id="node86" href="$class_password_dialog.html#a5e75eb4d58a6100822db1fb95c2b2738" title="PasswordDialog::useTemplate basic setter for use in PasswordDialog::useTemplate templating. " alt="" coords="270,2430,471,2455"/>
-<area shape="rect" id="node87" href="$class_password_dialog.html#ac2af2ce4836edf9d5fda52d5ec66af82" title="PasswordDialog::templateAll basic setter for use in PasswordDialog::setPassword templating all tokeni..." alt="" coords="275,2479,466,2504"/>
-<area shape="rect" id="node88" href="$class_password_dialog.html#ac8ca3222fc733429bc041af47411122e" title="Returns the password as set in the password field in the interface. " alt="" coords="270,2528,472,2554"/>
-<area shape="rect" id="node89" href="$class_pass.html#a86ad2005a6517f9c304a9e156755778c" title="Pass::Insert" alt="" coords="325,2578,417,2603"/>
-<area shape="rect" id="node90" href="$class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764" title="Pass::Remove" alt="" coords="317,2627,425,2652"/>
+<area shape="rect" id="node83" href="$class_password_dialog.html#a21d879d779c3a51039b4cbc82bedf282" title="Sets the file (name) in the interface. " alt="" coords="288,2283,453,2308"/>
+<area shape="rect" id="node84" href="$class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4" title="PasswordDialog::usePwgen PasswordDialog::usePwgen don&#39;t use own password generator. " alt="" coords="277,2332,464,2358"/>
+<area shape="rect" id="node85" href="$class_password_dialog.html#a0e1d5305cb76b325312b93533a9751dc" title="Sets content in the template for the interface. " alt="" coords="272,2382,469,2407"/>
+<area shape="rect" id="node86" href="$class_password_dialog.html#a5e75eb4d58a6100822db1fb95c2b2738" title="PasswordDialog::useTemplate basic setter for use in PasswordDialog::useTemplate templating. " alt="" coords="270,2431,471,2456"/>
+<area shape="rect" id="node87" href="$class_password_dialog.html#ac2af2ce4836edf9d5fda52d5ec66af82" title="PasswordDialog::templateAll basic setter for use in PasswordDialog::setPassword templating all tokeni..." alt="" coords="275,2480,466,2506"/>
+<area shape="rect" id="node88" href="$class_password_dialog.html#ac8ca3222fc733429bc041af47411122e" title="Returns the password as set in the password field in the interface. " alt="" coords="270,2530,472,2555"/>
+<area shape="rect" id="node89" href="$class_pass.html#a86ad2005a6517f9c304a9e156755778c" title="Pass::Insert" alt="" coords="325,2579,417,2604"/>
+<area shape="rect" id="node90" href="$class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764" title="Pass::Remove" alt="" coords="317,2628,425,2654"/>
 <area shape="rect" id="node4" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="881,506,957,531"/>
 <area shape="rect" id="node5" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="1085,506,1284,531"/>
 <area shape="rect" id="node15" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="802,1316,1037,1342"/>

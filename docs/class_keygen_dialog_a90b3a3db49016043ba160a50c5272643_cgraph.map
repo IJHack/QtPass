@@ -9,7 +9,7 @@
 <area shape="rect" id="node14" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="718,252,895,277"/>
 <area shape="rect" id="node15" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="707,301,907,327"/>
 <area shape="rect" id="node16" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="745,403,868,428"/>
-<area shape="rect" id="node17" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="969,353,1170,379"/>
+<area shape="rect" id="node17" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="969,352,1170,377"/>
 <area shape="rect" id="node6" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="978,5,1162,31"/>
 <area shape="rect" id="node7" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="1032,55,1107,80"/>
 <area shape="rect" id="node8" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="1233,55,1433,80"/>
