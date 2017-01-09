@@ -648,32 +648,29 @@ void MainWindow::passShowHandler(const QString &p_output) {
   {
     QStringList tokens = p_output.split("\n");
     QString password = tokens.at(0);
+    tokens.erase(tokens.begin());
 
     if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
         !p_output.isEmpty()) {
-      clippedText = tokens[0];
+      clippedText = password;
       if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-        copyTextToClipboard(tokens[0]);
+        copyTextToClipboard(password);
       if (QtPassSettings::isUseAutoclearPanel()) {
         clearPanelTimer.start();
       }
       if (QtPassSettings::isHidePassword() &&
           !QtPassSettings::isUseTemplate()) {
-        tokens[0] = "***" + tr("Password hidden") + "***";
-        output = tokens.join("\n");
+        output = "***" + tr("Password hidden") + "***";
+        output += tokens.join("\n");
       }
       if (QtPassSettings::isHideContent())
         output = "***" + tr("Content hidden") + "***";
     }
 
+    clearTemplateWidgets();
     if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
-      while (ui->gridLayout->count() > 0) {
-        QLayoutItem *item = ui->gridLayout->takeAt(0);
-        delete item->widget();
-        delete item;
-      }
       QStringList remainingTokens;
-      for (int j = 1; j < tokens.length(); ++j) {
+      for (int j = 0; j < tokens.length(); ++j) {
         QString token = tokens.at(j);
         if (token.contains(':')) {
           int colon = token.indexOf(':');
@@ -686,7 +683,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
               remainingTokens.append(token);
               continue; // colon is probably from a url
             }
-            addToGridLayout(j, field, value);
+            addToGridLayout(j + 1, field, value);
           }
         } else {
           remainingTokens.append(token);
@@ -697,15 +694,13 @@ void MainWindow::passShowHandler(const QString &p_output) {
       else
         ui->verticalLayoutPassword->setSpacing(6);
       output = remainingTokens.join("\n");
-    } else {
-      clearTemplateWidgets();
+    } else if (!QtPassSettings::isHideContent()) {
+      output = tokens.join("\n");
     }
     if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
       // now set the password. If we set it earlier, the layout will be
       // cleared
       addToGridLayout(0, tr("Password"), password);
-      tokens.erase(tokens.begin());
-      output = tokens.join("\n");
     }
     if (QtPassSettings::isUseAutoclearPanel()) {
       clearPanelTimer.start();
