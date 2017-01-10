@@ -295,6 +295,7 @@ void ImitatePass::reencryptPath(QString dir) {
   }
   if (QtPassSettings::isAutoPush()) {
     emit statusMsg(tr("Updating password-store"), 2000);
+    //  TODO(bezet): this is non-blocking and shall be done outside
     GitPush();
   }
   emit endReencryptPath();
@@ -317,10 +318,6 @@ void ImitatePass::Move(const QString src, const QString dest,
     QString message = QString("moved from %1 to %2 using QTPass.");
     message = message.arg(src).arg(dest);
     GitCommit("", message);
-    if (QtPassSettings::isAutoPush()) {
-      GitPush();
-    }
-
   } else {
     QDir qDir;
     QFileInfo srcFileInfo(src);
@@ -359,10 +356,6 @@ void ImitatePass::Copy(const QString src, const QString dest,
     QString message = QString("copied from %1 to %2 using QTPass.");
     message = message.arg(src).arg(dest);
     GitCommit("", message);
-    if (QtPassSettings::isAutoPush()) {
-      GitPush();
-    }
-
   } else {
     QDir qDir;
     if (force) {

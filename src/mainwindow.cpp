@@ -541,9 +541,8 @@ void MainWindow::on_updateButton_clicked(bool block) {
  * @brief MainWindow::on_pushButton_clicked do a git push
  */
 void MainWindow::on_pushButton_clicked() {
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
+  if (QtPassSettings::isUseGit()) {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-    currentAction = GIT;
     QtPassSettings::getPass()->GitPush();
   }
 }
@@ -956,8 +955,6 @@ void MainWindow::setPassword(QString file, bool isNew) {
     newValue += "\n";
 
   QtPassSettings::getPass()->Insert(file, newValue, !isNew);
-
-  on_pushButton_clicked();
 }
 
 /**
@@ -966,8 +963,8 @@ void MainWindow::setPassword(QString file, bool isNew) {
  */
 void MainWindow::on_addButton_clicked() {
   bool ok;
-  QString dir = Util::getDir(ui->treeView->currentIndex(),
-                             QtPassSettings::isUsePass(), model, proxyModel);
+  QString dir =
+      Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
   QString file = QInputDialog::getText(
       this, tr("New file"), tr("New password file: \n(Will be placed in %1 )")
                                 .arg(QtPassSettings::getPassStore() +
@@ -993,8 +990,7 @@ void MainWindow::on_deleteButton_clicked() {
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = Util::getDir(ui->treeView->currentIndex(),
-                        QtPassSettings::isUsePass(), model, proxyModel);
+    file = Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
     isDir = true;
   }
 
@@ -1007,8 +1003,6 @@ void MainWindow::on_deleteButton_clicked() {
     return;
 
   QtPassSettings::getPass()->Remove(file, isDir);
-
-  on_pushButton_clicked();
 }
 
 /**
@@ -1085,8 +1079,6 @@ void MainWindow::on_usersButton_clicked() {
   d.setUsers(NULL);
 
   QtPassSettings::getPass()->Init(dir, users);
-
-  on_pushButton_clicked();
 }
 
 /**

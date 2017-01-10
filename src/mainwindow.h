@@ -42,8 +42,6 @@ class MainWindow;
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
-  enum actionType { GPG, GIT, EDIT, REMOVE, GPG_INTERNAL, PWGEN };
-
 public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
@@ -124,7 +122,6 @@ private:
   QString clippedText;
   QTimer clearPanelTimer;
   QTimer clearClipboardTimer;
-  actionType currentAction;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
