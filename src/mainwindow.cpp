@@ -996,9 +996,9 @@ void MainWindow::on_deleteButton_clicked() {
 
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1?")
-              .arg(QDir::separator() +
-                   getFile(ui->treeView->currentIndex(), true)),
+          tr("Are you sure you want to delete %1%2?")
+              .arg(QDir::separator() + file)
+              .arg(isDir ? tr(" and whole content") : ""),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
     return;
 
