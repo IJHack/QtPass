@@ -59,6 +59,7 @@ void ImitatePass::Show(QString file) {
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
+  transactionHelper trans(this, PASS_INSERT);
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
     //  TODO(bezet): probably throw here
@@ -82,8 +83,8 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
       executeGit(GIT_ADD, {"add", file});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
     path.replace(QRegExp("\\.gpg$"), "");
-    QString msg = QString(overwrite ? "Edit" : "\"Add") + " for " + path +
-                  " using QtPass.";
+    QString msg =
+        QString(overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.";
     GitCommit(file, msg);
   }
 }
@@ -99,10 +100,11 @@ void ImitatePass::GitCommit(const QString &file, const QString &msg) {
 }
 
 /**
- * @brief ImitatePass::Remove git init wrapper
+ * @brief ImitatePass::Remove custom implementation of "pass remove"
  */
 void ImitatePass::Remove(QString file, bool isDir) {
   file = QtPassSettings::getPassStore() + file;
+  transactionHelper trans(this, PASS_REMOVE);
   if (!isDir)
     file += ".gpg";
   if (QtPassSettings::isUseGit()) {
@@ -134,6 +136,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   QString gpgIdFile = path + ".gpg-id";
   QFile gpgId(gpgIdFile);
   bool addFile = false;
+  transactionHelper trans(this, PASS_INIT);
   if (QtPassSettings::isAddGPGId(true)) {
     QFileInfo checkFile(gpgIdFile);
     if (!checkFile.exists() || !checkFile.isFile())
@@ -300,6 +303,7 @@ void ImitatePass::reencryptPath(QString dir) {
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
   QFileInfo destFileInfo(dest);
+  transactionHelper trans(this, PASS_MOVE);
   if (QtPassSettings::isUseGit()) {
     QStringList args;
     args << "mv";
@@ -341,6 +345,7 @@ void ImitatePass::Move(const QString src, const QString dest,
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
   QFileInfo destFileInfo(dest);
+  transactionHelper trans(this, PASS_COPY);
   if (QtPassSettings::isUseGit()) {
     QStringList args;
     args << "cp";
@@ -392,3 +397,53 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
                  readStdout, readStderr);
 }
 
+/**
+ * @brief ImitatePass::finished this function is overloaded to ensure
+ *                              identical behaviour to RealPass ie. only PASS_*
+ *                              processes are visible inside Pass::finish, so
+ *                              that interface-wise it all looks the same
+ * @param id
+ * @param exitCode
+ * @param out
+ * @param err
+ */
+void ImitatePass::finished(int id, int exitCode, const QString &out,
+                           const QString &err) {
+  dbg() << "Imitate Pass";
+  static QString transactionOutput;
+  PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
+  transactionOutput.append(out);
+
+  if (exitCode == 0) {
+    if (pid == INVALID)
+      return;
+  } else {
+    while (pid == INVALID) {
+      id = exec.cancelNext();
+      if (id == -1) {
+        //  this is probably irrecoverable and shall not happen
+        dbg() << "No such transaction!";
+        return;
+      }
+      pid = transactionIsOver(static_cast<PROCESS>(id));
+    }
+  }
+  Pass::finished(pid, exitCode, transactionOutput, err);
+  transactionOutput.clear();
+}
+
+/**
+ * @brief executeWrapper    overrided so that every execution is a transaction
+ * @param id
+ * @param app
+ * @param args
+ * @param input
+ * @param readStdout
+ * @param readStderr
+ */
+void ImitatePass::executeWrapper(PROCESS id, const QString &app,
+                                 const QStringList &args, QString input,
+                                 bool readStdout, bool readStderr) {
+  transactionAdd(id);
+  Pass::executeWrapper(id, app, args, input, readStdout, readStderr);
+}

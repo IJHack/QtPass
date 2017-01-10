@@ -2,13 +2,13 @@
 #define IMITATEPASS_H
 
 #include "pass.h"
-#include <queue>
+#include "simpletransaction.h"
 
 /*!
     \class ImitatePass
     \brief Imitates pass features when pass is not enabled or available
 */
-class ImitatePass : public Pass {
+class ImitatePass : public Pass, private simpleTransaction {
   Q_OBJECT
 
   bool removeDir(const QString &dirName);
@@ -22,7 +22,26 @@ class ImitatePass : public Pass {
                   QString input = QString(), bool readStdout = true,
                   bool readStderr = true);
 
+  class transactionHelper {
+    simpleTransaction *m_transaction;
+    PROCESS m_result;
+
+  public:
+    transactionHelper(simpleTransaction *trans, PROCESS result)
+        : m_transaction(trans), m_result(result) {
+      m_transaction->transactionStart();
+    }
+    ~transactionHelper() { m_transaction->transactionEnd(m_result); }
+  };
+
 protected:
+  virtual void finished(int id, int exitCode, const QString &out,
+                        const QString &err);
+
+  virtual void executeWrapper(PROCESS id, const QString &app,
+                              const QStringList &args, QString input,
+                              bool readStdout = true,
+                              bool readStderr = true) Q_DECL_OVERRIDE;
 
 public:
   ImitatePass();

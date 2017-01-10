@@ -57,12 +57,13 @@ protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       bool readStdout = true, bool readStderr = true);
 
-  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
-                      QString input, bool readStdout = true,
-                      bool readStderr = true);
+  virtual void executeWrapper(PROCESS id, const QString &app,
+                              const QStringList &args, QString input,
+                              bool readStdout = true, bool readStderr = true);
 
-private slots:
-  void finished(int id, int exitCode, const QString &out, const QString &err);
+protected slots:
+  virtual void finished(int id, int exitCode, const QString &out,
+                        const QString &err);
 
 signals:
   void error(QProcess::ProcessError);
