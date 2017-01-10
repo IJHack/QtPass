@@ -2,8 +2,8 @@
 #define ENUMS_H
 
 /*!
-    \class Enums
-    \brief Enumerators for configuration items
+    \namespace Enums
+    \brief     Enumerators for configuration and runtime items
 */
 namespace Enums {
 
@@ -29,7 +29,6 @@ enum PROCESS {
   PASS_COPY,
   GIT_MOVE,
   GIT_COPY,
-  //  have to be last!!!
   PROCESS_COUNT,
   INVALID
 };

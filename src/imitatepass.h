@@ -36,7 +36,7 @@ class ImitatePass : public Pass, private simpleTransaction {
 
 protected:
   virtual void finished(int id, int exitCode, const QString &out,
-                        const QString &err);
+                        const QString &err) Q_DECL_OVERRIDE;
 
   virtual void executeWrapper(PROCESS id, const QString &app,
                               const QStringList &args, QString input,
