@@ -44,49 +44,14 @@ MainWindow::MainWindow(QWidget *parent)
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
 
   //    TODO(bezet): this should be reconnected dynamically when pass changes
-  connect(QtPassSettings::getRealPass(), SIGNAL(error(QProcess::ProcessError)),
-          this, SLOT(processError(QProcess::ProcessError)));
-  connect(QtPassSettings::getRealPass(), &Pass::finishedAny, this,
-          &MainWindow::processFinished);
-  connect(QtPassSettings::getRealPass(), SIGNAL(startingExecuteWrapper()), this,
-          SLOT(executeWrapperStarted()));
-  connect(QtPassSettings::getRealPass(), SIGNAL(statusMsg(QString, int)), this,
-          SLOT(showStatusMessage(QString, int)));
-  connect(QtPassSettings::getRealPass(), SIGNAL(critical(QString, QString)),
-          this, SLOT(critical(QString, QString)));
+  connectPassSignalHandlers(QtPassSettings::getRealPass());
+  connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
-  /*  NEW  */
-  connect(QtPassSettings::getRealPass(), &Pass::finishedShow, this,
-          &MainWindow::passShowHandler);
-  connect(QtPassSettings::getRealPass(), &Pass::processErrorExit, this,
-          &MainWindow::processErrorExit);
-  connect(QtPassSettings::getRealPass(), &Pass::finishedGenerateGPGKeys, this,
-          &MainWindow::keyGenerationComplete);
-
-  connect(QtPassSettings::getImitatePass(),
-          SIGNAL(error(QProcess::ProcessError)), this,
-          SLOT(processError(QProcess::ProcessError)));
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedAny, this,
-          &MainWindow::processFinished);
-  connect(QtPassSettings::getImitatePass(), SIGNAL(startingExecuteWrapper()),
-          this, SLOT(executeWrapperStarted()));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(statusMsg(QString, int)),
-          this, SLOT(showStatusMessage(QString, int)));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(critical(QString, QString)),
-          this, SLOT(critical(QString, QString)));
   //    only for ipass
   connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,
           SLOT(startReencryptPath()));
   connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
           SLOT(endReencryptPath()));
-
-  /*    NEW */
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedShow, this,
-          &MainWindow::passShowHandler);
-  connect(QtPassSettings::getImitatePass(), &Pass::processErrorExit, this,
-          &MainWindow::processErrorExit);
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedGenerateGPGKeys,
-          this, &MainWindow::keyGenerationComplete);
 
   ui->setupUi(this);
   enableUiElements(true);
@@ -165,6 +130,38 @@ void MainWindow::changeEvent(QEvent *event) {
       ui->lineEdit->setFocus();
     }
   }
+}
+
+/**
+ * @brief MainWindow::connectPassSignalHandlers this method connects Pass
+ *                                              signals to approprite MainWindow
+ *                                              slots
+ *
+ * @param pass        pointer to pass instance
+ */
+void MainWindow::connectPassSignalHandlers(Pass *pass) {
+
+  //    TODO(bezet): this is never emitted(should be), also naming(see
+  //    critical())
+  connect(pass, &Pass::error, this, &MainWindow::processError);
+  connect(pass, &Pass::startingExecuteWrapper, this,
+          &MainWindow::executeWrapperStarted);
+  connect(pass, &Pass::critical, this, &MainWindow::critical);
+  connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
+  connect(pass, &Pass::processErrorExit, this, &MainWindow::processErrorExit);
+
+  connect(pass, &Pass::finishedGitInit, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
+  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
+  connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
+  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
+
+  connect(pass, &Pass::finishedGenerateGPGKeys, this,
+          &MainWindow::keyGenerationComplete);
 }
 
 /**
@@ -711,9 +708,20 @@ void MainWindow::passShowHandler(const QString &p_output) {
   enableUiElements(true);
 }
 
+void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
+  processFinished(p_out, p_err);
+  doGitPush();
+}
+
+void MainWindow::doGitPush() {
+  if (QtPassSettings::isAutoPush())
+    on_pushButton_clicked();
+}
+
 void MainWindow::finishedInsert(const QString &p_output,
                                 const QString &p_errout) {
   processFinished(p_output, p_errout);
+  doGitPush();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
 

@@ -102,6 +102,8 @@ private slots:
   void endReencryptPath();
   void critical(QString, QString);
   void passShowHandler(const QString &);
+  void passStoreChanged(const QString &, const QString &);
+  void doGitPush();
 
   void processErrorExit(int exitCode, const QString &);
 
@@ -146,6 +148,7 @@ private:
                        const QString &value);
   void DisplayInTextBrowser(QString toShow, QString prefix = QString(),
                             QString postfix = QString());
+  void connectPassSignalHandlers(Pass *pass);
 };
 
 #endif // MAINWINDOW_H_
