@@ -1,10 +1,11 @@
 <map id="src/imitatepass.cpp" name="src/imitatepass.cpp">
-<area shape="rect" id="node2" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="5,152,105,177"/>
-<area shape="rect" id="node15" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="1237,225,1343,251"/>
-<area shape="rect" id="node16" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="732,79,850,104"/>
-<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="832,225,892,251"/>
-<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="684,299,786,324"/>
-<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="1090,299,1162,324"/>
-<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="861,299,943,324"/>
-<area shape="rect" id="node25" href="$realpass_8h.html" title="realpass.h" alt="" coords="130,152,213,177"/>
+<area shape="rect" id="node2" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="163,152,263,177"/>
+<area shape="rect" id="node17" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="5,225,111,251"/>
+<area shape="rect" id="node18" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="629,79,746,104"/>
+<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="659,225,719,251"/>
+<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="135,225,272,251"/>
+<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="518,299,620,324"/>
+<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="313,299,385,324"/>
+<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="822,299,905,324"/>
+<area shape="rect" id="node19" href="$realpass_8h.html" title="realpass.h" alt="" coords="793,152,876,177"/>
 </map>

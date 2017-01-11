@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['cancelnext',['cancelNext',['../class_executor.html#a7e64afb1172167fa430d5175d3176487',1,'Executor']]],
   ['candropmimedata',['canDropMimeData',['../class_store_model.html#a5d3df20a622ae638f26e86cecf55adaa',1,'StoreModel']]],
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],

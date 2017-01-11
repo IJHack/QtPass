@@ -1,10 +1,6 @@
 <map id="ImitatePass::Insert" name="ImitatePass::Insert">
 <area shape="rect" id="node2" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="211,5,364,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="453,31,653,56"/>
-<area shape="rect" id="node4" href="$class_pass.html#ae9d0e69d33f8ec978821565087a3b879" title="Pass::executeGpg easy wrapper for running gpg commands. " alt="" coords="222,107,353,132"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="185,156,390,181"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="202,205,373,231"/>
-<area shape="rect" id="node8" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="226,255,349,280"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="438,107,668,132"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="442,255,664,280"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="438,31,639,56"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="185,107,390,132"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="202,156,373,181"/>
 </map>

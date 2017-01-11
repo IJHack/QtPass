@@ -13,7 +13,7 @@
 <area shape="rect" id="node6" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="978,5,1162,31"/>
 <area shape="rect" id="node7" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="1032,55,1107,80"/>
 <area shape="rect" id="node8" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="1233,55,1433,80"/>
-<area shape="rect" id="node10" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="1006,104,1134,129"/>
+<area shape="rect" id="node10" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="992,104,1148,129"/>
 <area shape="rect" id="node11" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="955,153,1185,179"/>
 <area shape="rect" id="node18" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="983,403,1157,428"/>
 </map>

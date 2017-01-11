@@ -1,4 +1,0 @@
-<map id="ImitatePass::GitPull" name="ImitatePass::GitPull">
-<area shape="rect" id="node2" href="$class_pass.html#a39e65b39104c9e59f55c23745b71a8e9" title="Pass::executeGit easy wrapper for running git commands. " alt="" coords="191,5,313,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="361,5,583,31"/>
-</map>

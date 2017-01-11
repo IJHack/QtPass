@@ -1,16 +1,17 @@
 <map id="src/configdialog.cpp" name="src/configdialog.cpp">
-<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="1988,152,2092,177"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1194,225,1299,251"/>
-<area shape="rect" id="node26" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1764,372,1882,397"/>
-<area shape="rect" id="node48" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="2288,152,2394,177"/>
-<area shape="rect" id="node49" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="2028,79,2140,104"/>
-<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="2178,592,2280,617"/>
-<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="2082,592,2155,617"/>
-<area shape="rect" id="node8" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1083,445,1183,471"/>
-<area shape="rect" id="node9" href="$pass_8h.html" title="pass.h" alt="" coords="987,519,1048,544"/>
-<area shape="rect" id="node17" href="$realpass_8h.html" title="realpass.h" alt="" coords="976,445,1059,471"/>
-<area shape="rect" id="node18" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="563,299,661,324"/>
-<area shape="rect" id="node35" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1207,299,1286,324"/>
-<area shape="rect" id="node10" href="$executor_8h.html" title="executor.h" alt="" coords="675,592,757,617"/>
-<area shape="rect" id="node23" href="$util_8h.html" title="util.h" alt="" coords="297,372,346,397"/>
+<area shape="rect" id="node2" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="1583,152,1686,177"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1275,225,1381,251"/>
+<area shape="rect" id="node28" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1180,372,1298,397"/>
+<area shape="rect" id="node50" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="2048,152,2154,177"/>
+<area shape="rect" id="node51" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="1623,79,1734,104"/>
+<area shape="rect" id="node4" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="718,592,820,617"/>
+<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="1868,592,1940,617"/>
+<area shape="rect" id="node8" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="2034,445,2134,471"/>
+<area shape="rect" id="node9" href="$pass_8h.html" title="pass.h" alt="" coords="1135,519,1196,544"/>
+<area shape="rect" id="node19" href="$realpass_8h.html" title="realpass.h" alt="" coords="1927,445,2009,471"/>
+<area shape="rect" id="node20" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="375,299,473,324"/>
+<area shape="rect" id="node37" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1607,299,1686,324"/>
+<area shape="rect" id="node17" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="2032,519,2168,544"/>
+<area shape="rect" id="node10" href="$executor_8h.html" title="executor.h" alt="" coords="1124,592,1207,617"/>
+<area shape="rect" id="node21" href="$util_8h.html" title="util.h" alt="" coords="43,372,93,397"/>
 </map>

@@ -1,5 +1,3 @@
 <map id="RealPass::Move" name="RealPass::Move">
 <area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="172,5,372,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a0c5efdb4049f435f7a06aae59f14e6a0" title="Pass::executePass easy wrapper for running pass. " alt="" coords="205,55,339,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="420,55,655,80"/>
 </map>

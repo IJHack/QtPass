@@ -1,4 +1,3 @@
 <map id="Pass::Pass" name="Pass::Pass">
-<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="178,5,306,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="141,55,342,80"/>
+<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished. ..." alt="" coords="141,5,246,31"/>
 </map>

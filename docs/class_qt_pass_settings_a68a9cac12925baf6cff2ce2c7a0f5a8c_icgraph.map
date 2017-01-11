@@ -1,11 +1,9 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
 <area shape="rect" id="node2" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="287,5,419,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="528,56,644,81"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="262,107,443,132"/>
-<area shape="rect" id="node8" href="$class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7" title="MainWindow::~MainWindow destroy! " alt="" coords="258,156,447,181"/>
-<area shape="rect" id="node9" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="264,231,442,256"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="725,107,901,132"/>
-<area shape="rect" id="node6" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title="ImitatePass::Move" alt="" coords="521,157,652,183"/>
-<area shape="rect" id="node7" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title="ImitatePass::Copy" alt="" coords="521,207,651,232"/>
-<area shape="rect" id="node10" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="495,256,677,281"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="295,55,411,80"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="262,104,443,129"/>
+<area shape="rect" id="node6" href="$class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7" title="MainWindow::~MainWindow destroy! " alt="" coords="258,153,447,179"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="264,203,442,228"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="498,55,674,80"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="495,203,677,228"/>
 </map>

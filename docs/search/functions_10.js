@@ -77,6 +77,7 @@ var searchData=
   ['showhideparent',['showHideParent',['../class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc',1,'TrayIcon']]],
   ['showmessage',['showMessage',['../class_tray_icon.html#a1299ba958c0c1b2b549ea0f9bcfdffee',1,'TrayIcon']]],
   ['showthis',['ShowThis',['../class_store_model.html#a907e6b71fd0fdcbd074e28938990a8e3',1,'StoreModel']]],
+  ['simpletransaction',['simpleTransaction',['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction']]],
   ['singleapplication',['SingleApplication',['../class_single_application.html#a913b6f1a9f438b67c05b32ac79ce5b72',1,'SingleApplication']]],
   ['sizehint',['sizeHint',['../class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d',1,'QProgressIndicator']]],
   ['startanimation',['startAnimation',['../class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06',1,'QProgressIndicator']]],

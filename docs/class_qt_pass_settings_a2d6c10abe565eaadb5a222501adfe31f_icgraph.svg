@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 336.66 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::getImitatePass</title>
-<!-- Node87 -->
+<!-- Node74 -->
 <g id="node1" class="node">
-<title>Node87</title>
+<title>Node74</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 156.6201,-18.5 156.6201,-.5 0,-.5"/>
 <text text-anchor="middle" x="78.3101" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getImitatePass</text>
 </g>
-<!-- Node88 -->
+<!-- Node75 -->
 <g id="node2" class="node">
-<title>Node88</title>
+<title>Node75</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="192.6201,-.5 192.6201,-18.5 328.6592,-18.5 328.6592,-.5 192.6201,-.5"/>
 <text text-anchor="middle" x="260.6396" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node87&#45;&gt;Node88 -->
+<!-- Node74&#45;&gt;Node75 -->
 <g id="edge1" class="edge">
-<title>Node87&#45;&gt;Node88</title>
+<title>Node74&#45;&gt;Node75</title>
 <path fill="none" stroke="#191970" d="M166.7608,-9.5C175.3659,-9.5 184.0033,-9.5 192.366,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="166.6924,-6.0001 156.6924,-9.5 166.6923,-13.0001 166.6924,-6.0001"/>
 </g>

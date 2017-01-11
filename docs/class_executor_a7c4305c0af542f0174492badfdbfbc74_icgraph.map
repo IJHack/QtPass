@@ -1,9 +1,4 @@
 <map id="Executor::execute" name="Executor::execute">
-<area shape="rect" id="node2" href="$class_executor.html#a490166ea519a8047e207da8d67f3c0d2" title="Executor::execute executes an app from a workDir. " alt="" coords="204,5,332,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="224,55,312,80"/>
-<area shape="rect" id="node4" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="181,104,355,129"/>
-<area shape="rect" id="node5" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="403,79,607,104"/>
-<area shape="rect" id="node8" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="457,128,553,153"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="655,79,805,104"/>
-<area shape="rect" id="node7" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="853,79,1056,104"/>
+<area shape="rect" id="node2" href="$class_executor.html#a490166ea519a8047e207da8d67f3c0d2" title="Executor::execute executes an app from a workDir. " alt="" coords="195,5,323,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title="Pass::executeWrapper" alt="" coords="181,55,337,80"/>
 </map>

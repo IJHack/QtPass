@@ -1,12 +1,13 @@
 <map id="src/pass.cpp" name="src/pass.cpp">
-<area shape="rect" id="node2" href="$pass_8h.html" title="pass.h" alt="" coords="533,372,594,397"/>
-<area shape="rect" id="node14" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="5,372,111,397"/>
-<area shape="rect" id="node15" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="491,225,609,251"/>
-<area shape="rect" id="node26" href="$util_8h.html" title="util.h" alt="" coords="390,79,439,104"/>
-<area shape="rect" id="node3" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="374,445,476,471"/>
-<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="785,445,857,471"/>
-<area shape="rect" id="node7" href="$executor_8h.html" title="executor.h" alt="" coords="678,445,761,471"/>
-<area shape="rect" id="node24" href="$realpass_8h.html" title="realpass.h" alt="" coords="610,299,693,324"/>
-<area shape="rect" id="node25" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="718,299,818,324"/>
-<area shape="rect" id="node29" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="650,152,749,177"/>
+<area shape="rect" id="node2" href="$pass_8h.html" title="pass.h" alt="" coords="1045,372,1106,397"/>
+<area shape="rect" id="node14" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="5,152,111,177"/>
+<area shape="rect" id="node15" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="733,225,850,251"/>
+<area shape="rect" id="node28" href="$util_8h.html" title="util.h" alt="" coords="874,79,923,104"/>
+<area shape="rect" id="node3" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="859,445,961,471"/>
+<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="1193,445,1265,471"/>
+<area shape="rect" id="node7" href="$executor_8h.html" title="executor.h" alt="" coords="1036,445,1118,471"/>
+<area shape="rect" id="node16" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1242,299,1342,324"/>
+<area shape="rect" id="node19" href="$realpass_8h.html" title="realpass.h" alt="" coords="1034,299,1117,324"/>
+<area shape="rect" id="node17" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="1241,372,1377,397"/>
+<area shape="rect" id="node29" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="865,152,963,177"/>
 </map>

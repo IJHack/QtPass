@@ -1,6 +1,0 @@
-<map id="Pass::executeGpg" name="Pass::executeGpg">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file. " alt="" coords="184,5,315,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="184,55,315,80"/>
-<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="202,104,297,129"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="363,31,539,56"/>
-</map>

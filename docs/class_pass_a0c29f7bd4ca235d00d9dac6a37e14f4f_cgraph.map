@@ -1,4 +1,4 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="278,5,406,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="264,5,420,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="227,55,457,80"/>
 </map>

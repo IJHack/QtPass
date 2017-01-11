@@ -1,4 +1,3 @@
 <map id="RealPass::GitPull_b" name="RealPass::GitPull_b">
-<area shape="rect" id="node2" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="221,5,400,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="193,55,428,80"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="193,5,428,31"/>
 </map>
