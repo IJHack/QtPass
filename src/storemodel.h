@@ -1,12 +1,12 @@
 #ifndef STOREMODEL_H_
 #define STOREMODEL_H_
 
+#include "util.h"
+#include <QDataStream>
 #include <QFileSystemModel>
 #include <QRegExp>
 #include <QSortFilterProxyModel>
 #include <QStringListModel>
-#include "util.h"
-#include <QDataStream>
 #include <qtpasssettings.h>
 
 /*!
@@ -18,7 +18,6 @@ class StoreModel : public QSortFilterProxyModel {
 private:
   QFileSystemModel *fs;
   QString store;
-
 
 public:
   StoreModel();
@@ -35,17 +34,20 @@ public:
   Qt::ItemFlags flags(const QModelIndex &index) const;
   QStringList mimeTypes() const;
   QMimeData *mimeData(const QModelIndexList &indexes) const;
-  bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
-  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+  bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row,
+                       int column, const QModelIndex &parent) const;
+  bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row,
+                    int column, const QModelIndex &parent);
 };
 /*!
     \struct dragAndDropInfo
-    \brief holds values to share beetween drag and drop on the passwordstorage view
+    \brief holds values to share beetween drag and drop on the passwordstorage
+   view
  */
 struct dragAndDropInfoPasswordStore {
-    bool isDir;
-    bool isFile;
-    QString path;
+  bool isDir;
+  bool isFile;
+  QString path;
 };
 
 #endif // STOREMODEL_H_

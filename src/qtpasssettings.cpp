@@ -1,8 +1,8 @@
 #include "qtpasssettings.h"
-#include "settingsconstants.h"
 #include "pass.h"
+#include "settingsconstants.h"
 
-QtPassSettings::QtPassSettings(){}
+QtPassSettings::QtPassSettings() {}
 
 bool QtPassSettings::initialized = false;
 
@@ -14,7 +14,7 @@ QHash<QString, QSize> QtPassSettings::sizeSettings;
 QHash<QString, int> QtPassSettings::intSettings;
 QHash<QString, bool> QtPassSettings::boolSettings;
 
-Pass* QtPassSettings::pass;
+Pass *QtPassSettings::pass;
 RealPass QtPassSettings::realPass;
 ImitatePass QtPassSettings::imitatePass;
 
@@ -124,11 +124,11 @@ bool QtPassSettings::isUsePass(const bool &defaultValue) {
 }
 
 void QtPassSettings::setUsePass(const bool &usePass) {
-    if(usePass){
-        QtPassSettings::pass = &QtPassSettings::realPass;
-    }else{
-        QtPassSettings::pass = &QtPassSettings::imitatePass;
-    }
+  if (usePass) {
+    QtPassSettings::pass = &QtPassSettings::realPass;
+  } else {
+    QtPassSettings::pass = &QtPassSettings::imitatePass;
+  }
   setBoolValue(SettingsConstants::usePass, usePass);
 }
 
@@ -609,29 +609,21 @@ QVariant QtPassSettings::getSetting(const QString &key,
 }
 
 void QtPassSettings::setSetting(const QString &key, const QVariant &value) {
-    getSettings().setValue(key, value);
+  getSettings().setValue(key, value);
 }
 
-Pass* QtPassSettings::getPass()
-{
-    if(!pass){
-     if(isUsePass()){
-         QtPassSettings::pass = &QtPassSettings::realPass;
-     }else{
-         QtPassSettings::pass = &QtPassSettings::imitatePass;
-     }
-     pass->init();
+Pass *QtPassSettings::getPass() {
+  if (!pass) {
+    if (isUsePass()) {
+      QtPassSettings::pass = &QtPassSettings::realPass;
+    } else {
+      QtPassSettings::pass = &QtPassSettings::imitatePass;
     }
-    return pass;
+    pass->init();
+  }
+  return pass;
 }
 
-ImitatePass* QtPassSettings::getImitatePass()
-{
-    return &imitatePass;
-}
+ImitatePass *QtPassSettings::getImitatePass() { return &imitatePass; }
 
-RealPass* QtPassSettings::getRealPass()
-{
-    return &realPass;
-}
-
+RealPass *QtPassSettings::getRealPass() { return &realPass; }

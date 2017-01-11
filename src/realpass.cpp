@@ -1,6 +1,8 @@
 #include "realpass.h"
 #include "qtpasssettings.h"
 
+using namespace Enums;
+
 RealPass::RealPass() {}
 
 /**
@@ -155,4 +157,14 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   args << passSrc;
   args << passDest;
   executePass(PASS_COPY, args);
+}
+
+/**
+ * @brief RealPass::executePass easy wrapper for running pass
+ * @param args
+ */
+void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
+                           bool readStdout, bool readStderr) {
+  executeWrapper(id, QtPassSettings::getPassExecutable(), args, input,
+                 readStdout, readStderr);
 }

@@ -37,7 +37,8 @@ SOURCES   += main.cpp \
              pass.cpp \
              realpass.cpp \
              imitatepass.cpp \
-             executor.cpp
+             executor.cpp \
+             simpletransaction.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -58,7 +59,8 @@ HEADERS   += mainwindow.h \
              imitatepass.h \
              datahelpers.h \
              debughelper.h \
-             executor.h
+             executor.h \
+             simpletransaction.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

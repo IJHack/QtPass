@@ -82,21 +82,34 @@ public:
                       QString *process_out, QString *process_err = Q_NULLPTR);
 
   void setEnvironment(const QStringList &env);
+
+  int cancelNext();
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
   /**
    * @brief finished    signal that is emited when process finishes
    *
+   * @param id          id of the process
    * @param exitCode    return code of the process
-   * @param output      stdout produced by the process, if requested when
-   * executing
-   * @param errout      stderr produced by the process, if requested or if
-   * process failed
+   * @param output      stdout produced by the process
+   * @param errout      stderr produced by the process
    */
   void finished(int id, int exitCode, const QString &output,
                 const QString &errout);
+  /**
+   * @brief starting    signal that is emited when process starts
+   */
   void starting();
+  /**
+   * @brief error       signal that is emited when process finishes with an
+   * error
+   *
+   * @param id          id of the process
+   * @param exitCode    return code of the process
+   * @param output      stdout produced by the process
+   * @param errout      stderr produced by the process
+   */
   void error(int id, int exitCode, const QString &output,
              const QString &errout);
 };

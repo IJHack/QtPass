@@ -3,6 +3,10 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QTextCodec>
+#include <map>
+
+using namespace std;
+using namespace Enums;
 
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
@@ -20,17 +24,16 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
 }
 
-void Pass::executeWrapper(int id, const QString &app, const QStringList &args,
-                          bool readStdout, bool readStderr) {
+void Pass::executeWrapper(PROCESS id, const QString &app,
+                          const QStringList &args, bool readStdout,
+                          bool readStderr) {
   executeWrapper(id, app, args, QString(), readStdout, readStderr);
 }
 
-void Pass::executeWrapper(int id, const QString &app, const QStringList &args,
-                          QString input, bool readStdout, bool readStderr) {
-  QString d;
-  for (auto &i : args)
-    d += " " + i;
-  dbg() << app << d;
+void Pass::executeWrapper(PROCESS id, const QString &app,
+                          const QStringList &args, QString input,
+                          bool readStdout, bool readStderr) {
+  dbg() << app << args;
   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
                readStderr);
 }
@@ -66,13 +69,13 @@ QString Pass::Generate_b(int length, const QString &charset) {
     QStringList args;
     args.append("-1");
     if (QtPassSettings::isLessRandom())
-      args.append("--secure ");
-    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize "
-                                                  : "--capitalize ");
-    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals "
-                                                 : "--numerals ");
+      args.append("--secure");
+    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
+                                                  : "--capitalize");
+    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals"
+                                                 : "--numerals");
     if (QtPassSettings::isUseSymbols())
-      args.append("--symbols ");
+      args.append("--symbols");
     args.append(QString::number(length));
     QString p_out;
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
@@ -107,9 +110,10 @@ QString Pass::Generate_b(int length, const QString &charset) {
  * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
-  exec.execute(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
-               {"--gen-key", "--no-tty", "--batch"}, batch);
-  // TODO check status / error messages
+  executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
+                 {"--gen-key", "--no-tty", "--batch"}, batch);
+  // TODO check status / error messages - probably not here, it's just started
+  // here, see finished for details
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
 
@@ -167,39 +171,43 @@ void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   //  TODO(bezet): remove !
   dbg() << id << exitCode << out << err;
+
+  PROCESS pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
     return;
   }
-  switch (static_cast<PROCESS>(id)) {
+  switch (pid) {
   case GIT_INIT:
-  case GIT_ADD:
-  case GIT_COMMIT:
-  case GIT_RM:
-    emit finishedAny(out, err);
+    emit finishedGitInit(out, err);
     break;
   case GIT_PULL:
-    emit statusMsg(tr("git pull successful"), 2000);
+    emit finishedGitPull(out, err);
     break;
   case GIT_PUSH:
-    emit finishedAny(out, err);
+    emit finishedGitPush(out, err);
     break;
   case PASS_SHOW:
     emit finishedShow(out);
     break;
   case PASS_INSERT:
+    emit finishedInsert(out, err);
+    break;
   case PASS_REMOVE:
+    emit finishedRemove(out, err);
+    break;
   case PASS_INIT:
-  case GPG_GENKEYS:
+    emit finishedInit(out, err);
+    break;
   case PASS_MOVE:
+    emit finishedMove(out, err);
+    break;
   case PASS_COPY:
-  case GIT_MOVE:
-  case GIT_COPY:
-    emit finishedAny(out, err);
+    emit finishedCopy(out, err);
     break;
   default:
-    qDebug() << __FILE__ << ":" << __LINE__ << "\t"
-             << "Unhandled PROCESS:" << id;
+    dbg() << "Unhandled process type" << pid;
+    break;
   }
 }
 
@@ -273,33 +281,4 @@ QString Pass::getRecipientString(QString for_file, QString separator,
   foreach (const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
-}
-
-/**
- * @brief Pass::executePass easy wrapper for running pass
- * @param args
- */
-void Pass::executePass(int id, const QStringList &args, QString input,
-                       bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getPassExecutable(), args, input,
-                 readStdout, readStderr);
-}
-
-/**
- * @brief Pass::executeGpg easy wrapper for running gpg commands
- * @param args
- */
-void Pass::executeGpg(int id, const QStringList &args, QString input,
-                      bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
-                 readStdout, readStderr);
-}
-/**
- * @brief Pass::executeGit easy wrapper for running git commands
- * @param args
- */
-void Pass::executeGit(int id, const QStringList &args, QString input,
-                      bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
-                 readStdout, readStderr);
 }

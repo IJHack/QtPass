@@ -173,6 +173,18 @@ void Executor::setEnvironment(const QStringList &env) {
 }
 
 /**
+ * @brief Executor::cancelNext  cancels execution of first process in queue
+ *                              if it's not already running
+ *
+ * @return  id of the cancelled process or -1 on error
+ */
+int Executor::cancelNext() {
+  if (running || m_execQueue.isEmpty())
+    return -1; //  TODO(bezet): definitely throw here
+  return m_execQueue.dequeue().id;
+}
+
+/**
  * @brief Executor::finished called when an executed process finishes
  * @param exitCode
  * @param exitStatus
