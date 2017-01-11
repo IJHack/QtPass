@@ -175,7 +175,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
   PROCESS pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
-	return;
+    return;
   }
   switch (pid) {
   case GIT_INIT:
