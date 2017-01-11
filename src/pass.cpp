@@ -6,6 +6,7 @@
 #include <map>
 
 using namespace std;
+using namespace Enums;
 
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
@@ -23,17 +24,16 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
 }
 
-void Pass::executeWrapper(int id, const QString &app, const QStringList &args,
-                          bool readStdout, bool readStderr) {
+void Pass::executeWrapper(PROCESS id, const QString &app,
+                          const QStringList &args, bool readStdout,
+                          bool readStderr) {
   executeWrapper(id, app, args, QString(), readStdout, readStderr);
 }
 
-void Pass::executeWrapper(int id, const QString &app, const QStringList &args,
-                          QString input, bool readStdout, bool readStderr) {
-  QString d;
-  for (auto &i : args)
-    d += " " + i;
-  dbg() << app << d;
+void Pass::executeWrapper(PROCESS id, const QString &app,
+                          const QStringList &args, QString input,
+                          bool readStdout, bool readStderr) {
+  dbg() << app << args;
   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
                readStderr);
 }
@@ -110,9 +110,10 @@ QString Pass::Generate_b(int length, const QString &charset) {
  * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
-  exec.execute(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
-               {"--gen-key", "--no-tty", "--batch"}, batch);
-  // TODO check status / error messages
+  executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
+                 {"--gen-key", "--no-tty", "--batch"}, batch);
+  // TODO check status / error messages - probably not here, it's just started
+  // here, see finished for details
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
 
@@ -171,23 +172,43 @@ void Pass::finished(int id, int exitCode, const QString &out,
   //  TODO(bezet): remove !
   dbg() << id << exitCode << out << err;
 
-  static const map<PROCESS, const char *> emitMsg = {
-      {GIT_PULL, QT_TR_NOOP("git pull successful")},
-      {GIT_PUSH, QT_TR_NOOP("git push successful")}};
   PROCESS pid = static_cast<PROCESS>(id);
-  map<PROCESS, const char *>::const_iterator i = emitMsg.find(pid);
-
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
-    return;
-  } else if (i != emitMsg.end()) {
-    emit statusMsg(tr(i->second), 2000);
-    //  don't return here, need to emit finishedAny too
-  } else if (pid == PASS_SHOW) {
-    emit finishedShow(out);
-    return;
+	return;
   }
-  emit finishedAny(out, err);
+  switch (pid) {
+  case GIT_INIT:
+    emit finishedGitInit(out, err);
+    break;
+  case GIT_PULL:
+    emit finishedGitPull(out, err);
+    break;
+  case GIT_PUSH:
+    emit finishedGitPush(out, err);
+    break;
+  case PASS_SHOW:
+    emit finishedShow(out);
+    break;
+  case PASS_INSERT:
+    emit finishedInsert(out, err);
+    break;
+  case PASS_REMOVE:
+    emit finishedRemove(out, err);
+    break;
+  case PASS_INIT:
+    emit finishedInit(out, err);
+    break;
+  case PASS_MOVE:
+    emit finishedMove(out, err);
+    break;
+  case PASS_COPY:
+    emit finishedCopy(out, err);
+    break;
+  default:
+    dbg() << "Unhandled process type" << pid;
+    break;
+  }
 }
 
 /**
@@ -260,48 +281,4 @@ QString Pass::getRecipientString(QString for_file, QString separator,
   foreach (const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
-}
-
-/**
- * @brief Pass::executePass easy wrapper for running pass
- *
- * @param id
- * @param args
- * @param input
- * @param readStdout
- * @param readStderr
- */
-void Pass::executePass(int id, const QStringList &args, QString input,
-                       bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getPassExecutable(), args, input,
-                 readStdout, readStderr);
-}
-
-/**
- * @brief Pass::executeGpg easy wrapper for running gpg commands
- *
- * @param id
- * @param args
- * @param input
- * @param readStdout
- * @param readStderr
- */
-void Pass::executeGpg(int id, const QStringList &args, QString input,
-                      bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
-                 readStdout, readStderr);
-}
-/**
- * @brief Pass::executeGit easy wrapper for running git commands
- *
- * @param id
- * @param args
- * @param input
- * @param readStdout
- * @param readStderr
- */
-void Pass::executeGit(int id, const QStringList &args, QString input,
-                      bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
-                 readStdout, readStderr);
 }

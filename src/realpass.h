@@ -9,6 +9,10 @@
 */
 class RealPass : public Pass {
 
+  void executePass(PROCESS id, const QStringList &arg,
+                   QString input = QString(), bool readStdout = true,
+                   bool readStderr = true);
+
 public:
   RealPass();
   virtual ~RealPass() {}

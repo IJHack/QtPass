@@ -44,49 +44,14 @@ MainWindow::MainWindow(QWidget *parent)
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
 
   //    TODO(bezet): this should be reconnected dynamically when pass changes
-  connect(QtPassSettings::getRealPass(), SIGNAL(error(QProcess::ProcessError)),
-          this, SLOT(processError(QProcess::ProcessError)));
-  connect(QtPassSettings::getRealPass(), &Pass::finishedAny, this,
-          &MainWindow::processFinished);
-  connect(QtPassSettings::getRealPass(), SIGNAL(startingExecuteWrapper()), this,
-          SLOT(executeWrapperStarted()));
-  connect(QtPassSettings::getRealPass(), SIGNAL(statusMsg(QString, int)), this,
-          SLOT(showStatusMessage(QString, int)));
-  connect(QtPassSettings::getRealPass(), SIGNAL(critical(QString, QString)),
-          this, SLOT(critical(QString, QString)));
+  connectPassSignalHandlers(QtPassSettings::getRealPass());
+  connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
-  /*  NEW  */
-  connect(QtPassSettings::getRealPass(), &Pass::finishedShow, this,
-          &MainWindow::passShowHandler);
-  connect(QtPassSettings::getRealPass(), &Pass::processErrorExit, this,
-          &MainWindow::processErrorExit);
-  connect(QtPassSettings::getRealPass(), &Pass::finishedGenerateGPGKeys, this,
-          &MainWindow::keyGenerationComplete);
-
-  connect(QtPassSettings::getImitatePass(),
-          SIGNAL(error(QProcess::ProcessError)), this,
-          SLOT(processError(QProcess::ProcessError)));
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedAny, this,
-          &MainWindow::processFinished);
-  connect(QtPassSettings::getImitatePass(), SIGNAL(startingExecuteWrapper()),
-          this, SLOT(executeWrapperStarted()));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(statusMsg(QString, int)),
-          this, SLOT(showStatusMessage(QString, int)));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(critical(QString, QString)),
-          this, SLOT(critical(QString, QString)));
   //    only for ipass
   connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,
           SLOT(startReencryptPath()));
   connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
           SLOT(endReencryptPath()));
-
-  /*    NEW */
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedShow, this,
-          &MainWindow::passShowHandler);
-  connect(QtPassSettings::getImitatePass(), &Pass::processErrorExit, this,
-          &MainWindow::processErrorExit);
-  connect(QtPassSettings::getImitatePass(), &Pass::finishedGenerateGPGKeys,
-          this, &MainWindow::keyGenerationComplete);
 
   ui->setupUi(this);
   enableUiElements(true);
@@ -165,6 +130,38 @@ void MainWindow::changeEvent(QEvent *event) {
       ui->lineEdit->setFocus();
     }
   }
+}
+
+/**
+ * @brief MainWindow::connectPassSignalHandlers this method connects Pass
+ *                                              signals to approprite MainWindow
+ *                                              slots
+ *
+ * @param pass        pointer to pass instance
+ */
+void MainWindow::connectPassSignalHandlers(Pass *pass) {
+
+  //    TODO(bezet): this is never emitted(should be), also naming(see
+  //    critical())
+  connect(pass, &Pass::error, this, &MainWindow::processError);
+  connect(pass, &Pass::startingExecuteWrapper, this,
+          &MainWindow::executeWrapperStarted);
+  connect(pass, &Pass::critical, this, &MainWindow::critical);
+  connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
+  connect(pass, &Pass::processErrorExit, this, &MainWindow::processErrorExit);
+
+  connect(pass, &Pass::finishedGitInit, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
+  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
+  connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
+  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
+  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
+
+  connect(pass, &Pass::finishedGenerateGPGKeys, this,
+          &MainWindow::keyGenerationComplete);
 }
 
 /**
@@ -544,9 +541,8 @@ void MainWindow::on_updateButton_clicked(bool block) {
  * @brief MainWindow::on_pushButton_clicked do a git push
  */
 void MainWindow::on_pushButton_clicked() {
-  if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPush()) {
+  if (QtPassSettings::isUseGit()) {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-    currentAction = GIT;
     QtPassSettings::getPass()->GitPush();
   }
 }
@@ -648,32 +644,29 @@ void MainWindow::passShowHandler(const QString &p_output) {
   {
     QStringList tokens = p_output.split("\n");
     QString password = tokens.at(0);
+    tokens.erase(tokens.begin());
 
     if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
         !p_output.isEmpty()) {
-      clippedText = tokens[0];
+      clippedText = password;
       if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-        copyTextToClipboard(tokens[0]);
+        copyTextToClipboard(password);
       if (QtPassSettings::isUseAutoclearPanel()) {
         clearPanelTimer.start();
       }
       if (QtPassSettings::isHidePassword() &&
           !QtPassSettings::isUseTemplate()) {
-        tokens[0] = "***" + tr("Password hidden") + "***";
-        output = tokens.join("\n");
+        output = "***" + tr("Password hidden") + "***";
+        output += tokens.join("\n");
       }
       if (QtPassSettings::isHideContent())
         output = "***" + tr("Content hidden") + "***";
     }
 
+    clearTemplateWidgets();
     if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
-      while (ui->gridLayout->count() > 0) {
-        QLayoutItem *item = ui->gridLayout->takeAt(0);
-        delete item->widget();
-        delete item;
-      }
       QStringList remainingTokens;
-      for (int j = 1; j < tokens.length(); ++j) {
+      for (int j = 0; j < tokens.length(); ++j) {
         QString token = tokens.at(j);
         if (token.contains(':')) {
           int colon = token.indexOf(':');
@@ -686,7 +679,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
               remainingTokens.append(token);
               continue; // colon is probably from a url
             }
-            addToGridLayout(j, field, value);
+            addToGridLayout(j + 1, field, value);
           }
         } else {
           remainingTokens.append(token);
@@ -697,15 +690,13 @@ void MainWindow::passShowHandler(const QString &p_output) {
       else
         ui->verticalLayoutPassword->setSpacing(6);
       output = remainingTokens.join("\n");
-    } else {
-      clearTemplateWidgets();
+    } else if (!QtPassSettings::isHideContent()) {
+      output = tokens.join("\n");
     }
     if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
       // now set the password. If we set it earlier, the layout will be
       // cleared
       addToGridLayout(0, tr("Password"), password);
-      tokens.erase(tokens.begin());
-      output = tokens.join("\n");
     }
     if (QtPassSettings::isUseAutoclearPanel()) {
       clearPanelTimer.start();
@@ -716,9 +707,20 @@ void MainWindow::passShowHandler(const QString &p_output) {
   enableUiElements(true);
 }
 
+void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
+  processFinished(p_out, p_err);
+  doGitPush();
+}
+
+void MainWindow::doGitPush() {
+  if (QtPassSettings::isAutoPush())
+    on_pushButton_clicked();
+}
+
 void MainWindow::finishedInsert(const QString &p_output,
                                 const QString &p_errout) {
   processFinished(p_output, p_errout);
+  doGitPush();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
 
@@ -953,8 +955,6 @@ void MainWindow::setPassword(QString file, bool isNew) {
     newValue += "\n";
 
   QtPassSettings::getPass()->Insert(file, newValue, !isNew);
-
-  on_pushButton_clicked();
 }
 
 /**
@@ -963,8 +963,8 @@ void MainWindow::setPassword(QString file, bool isNew) {
  */
 void MainWindow::on_addButton_clicked() {
   bool ok;
-  QString dir = Util::getDir(ui->treeView->currentIndex(),
-                             QtPassSettings::isUsePass(), model, proxyModel);
+  QString dir =
+      Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
   QString file = QInputDialog::getText(
       this, tr("New file"), tr("New password file: \n(Will be placed in %1 )")
                                 .arg(QtPassSettings::getPassStore() +
@@ -990,22 +990,19 @@ void MainWindow::on_deleteButton_clicked() {
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = Util::getDir(ui->treeView->currentIndex(),
-                        QtPassSettings::isUsePass(), model, proxyModel);
+    file = Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
     isDir = true;
   }
 
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1?")
-              .arg(QDir::separator() +
-                   getFile(ui->treeView->currentIndex(), true)),
+          tr("Are you sure you want to delete %1%2?")
+              .arg(QDir::separator() + file)
+              .arg(isDir ? tr(" and whole content") : ""),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
     return;
 
   QtPassSettings::getPass()->Remove(file, isDir);
-
-  on_pushButton_clicked();
 }
 
 /**
@@ -1082,8 +1079,6 @@ void MainWindow::on_usersButton_clicked() {
   d.setUsers(NULL);
 
   QtPassSettings::getPass()->Init(dir, users);
-
-  on_pushButton_clicked();
 }
 
 /**
