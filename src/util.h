@@ -22,6 +22,7 @@ public:
                         const QFileSystemModel &model,
                         const StoreModel &storeModel);
   static void copyDir(const QString src, const QString dest);
+  static int rand();
 
 private:
   static void initialiseEnvironment();

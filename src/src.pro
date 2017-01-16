@@ -164,7 +164,7 @@ win32 {
     }
     gcc:QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
     msvc:QMAKE_LFLAGS += /DYNAMICBASE /NXCOMPAT
-    LIBS    += -lmpr
+    LIBS    += -lmpr -lbcrypt
 } else:macx {
     ICON = ../artwork/icon.icns
     QMAKE_INFO_PLIST = ../qtpass.plist
