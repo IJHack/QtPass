@@ -181,7 +181,8 @@ void Util::copyDir(const QString src, const QString dest) {
 int Util::rand() {
 #ifdef Q_OS_WIN
   quint32 ret = 0;
-  BCryptGenRandom(NULL, (PUCHAR)&ret, sizeof(ret), BCRYPT_USE_SYSTEM_PREFERRED_RNG);
+  if (FAILED(BCryptGenRandom(NULL, (PUCHAR)&ret, sizeof(ret), BCRYPT_USE_SYSTEM_PREFERRED_RNG)))
+      return qrand();
   return ret%RAND_MAX;
 #else
   return qrand();
