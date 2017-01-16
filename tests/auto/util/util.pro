@@ -21,3 +21,7 @@ HEADERS   += util.h \
 
 VPATH += ../../../src
 INCLUDEPATH += ../../../src
+
+win32 {
+    LIBS += -lbcrypt
+}
