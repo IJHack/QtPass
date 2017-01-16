@@ -2,19 +2,22 @@
 # Replace the Version number with the current version number (at the time of writing 1.0.5.1) 
 # Check qtpass.pro for the current version. 
 # After that
-#  tar cvfz qtpass-1.0.5.1.tar.gz qtpass-1.0.5.1
-#  rpmbuild -tb qtpass-1.0.5.1.tar.gz
+#  tar cvfz qtpass-1.1.0.tar.gz qtpass-1.1.0
+#  rpmbuild -tb qtpass-1.1.0.tar.gz
 # This should probably be part of a release process.
 
 Name: qtpass		
-Version: 1.0.5.1
-Release: 1%{?dist}
+Version: 1.2.0-pre
+Release: 2%{?dist}
 Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.	
 License: GPLv3
 URL:	https://qtpass.org/	
 Source0: %{name}-%{version}.tar.gz
 
-BuildRequires:	qt5-qtbase-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-linguist
+BuildRequires: desktop-file-utils
+BuildRequires: xdg-utils
 Requires: pass	
 Requires: qt5-qtbase	
 
@@ -36,12 +39,35 @@ make %{?_smp_mflags}
 
 %install
 %make_install
+install -Dm 0644 artwork/icon.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/qtpass-icon.png
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications qtpass.desktop
 
 %files
 %doc
 %{_bindir}/*
+%{_datadir}/applications/qtpass.desktop
+%{_datadir}/icons/hicolor/64x64/apps/qtpass-icon.png
+
+%post
+/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+
+%postun
+if [ $1 -eq 0 ] ; then
+    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
+    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+fi
+
+%posttrans
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Tue Jan 26 2016 Anne Jan Brouwer <qtpass@annejan.com> 1.1.0
+- Updated spec to latest version
+
+* Wed Dec 30 2015 Andrew DeMaria <lostonamountain@gmail.com> 1.0.5.1-2
+- Added desktop/icon resources
+- Added required build deps for a clean build
+
 * Tue Dec 01 2015 serstring=Bram Vandoren <bram.vandoren@ster.kuleuven.be> - 1.0.5-1
 - Initial RPM spec
 

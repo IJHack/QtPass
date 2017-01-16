@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "QtPass"
-#define MyAppVersion "1.0.5.1"
+#define MyAppVersion "1.2.0-pre"
 #define MyAppPublisher "IJhack"
 #define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
@@ -23,7 +23,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=release\LICENSE.txt
+LicenseFile=src\release\LICENSE.txt
 OutputBaseFilename=qtpass-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
@@ -65,18 +65,17 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#QtDir}\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#QtDir}\bin\icudt54.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#QtDir}\bin\icuin54.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#QtDir}\bin\icuuc54.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#QtDir}\bin\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
+Source: "{#QtDir}\plugins\iconengines\qsvgicon.dll"; DestDir: "{app}\iconengines\"; Flags: ignoreversion
 
-Source: "release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "release\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\release\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

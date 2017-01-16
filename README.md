@@ -1,11 +1,11 @@
 QtPass
 ======
 
-[![Build Status](https://travis-ci.org/IJHack/qtpass.svg?branch=master)](https://travis-ci.org/IJHack/qtpass)
+[![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 
-QtPass is a GUI for [pass](http://www.passwordstore.org/),
+QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
 
 Features
@@ -16,18 +16,54 @@ Features
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
+* Easy onboarding
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
 Installation
 ------------
 
-On most systems all you need is:
-`qmake && make && make install`
+### From package
 
-On Mac OS X:
-`qmake && make && macdeployqt QtPass.app`
-Currently seems to only work with MacGPG2
+OpenSUSE & Fedora
+`yum install qtpass`
+`dnf install qtpass`
+
+Debian, Ubuntu and derivates like Mint, Kali & Raspbian
+`apt-get install qtpass`
+
+Arch Linux
+`pacman -S qtpass`
+
+Gentoo
+`emerge -atv qtpass`
+
+FreeBSD
+`pkg install qtpass`
+
+macOS
+`brew cask install qtpass`
+
+Windows
+`choco install qtpass`
+
+### From Source
+
+**Dependencies**
+
+* QtPass requires Qt 5.
+* The Linguist package is required to compile the translations.
+* For use of the fallback icons the SVG library is required.
+
+At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
+
+Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
+On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
+
+On most *nix systems all you need is:
+```
+qmake && make && make install
+```
 
 Security considerations
 -----------------------
@@ -69,13 +105,12 @@ Known issues
 Planned features
 ----------------
 
-* Re-encryption after users-change (optional of course)
 * Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
-* WebDAV (configuration) support
 * Optional table view of decrypted folder contents
 * Opening of (basic auth) urls in default browser?
   Possibly with helper plugin for filling out forms?
+* WebDAV (configuration) support
 * Some other form of remote storage that allows for
   accountability / auditing (web API to retrieve the .gpg files?)
 
@@ -83,7 +118,9 @@ Further reading
 ---------------
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
+[CHANGELOG](CHANGELOG.md)
 
-[Documentation](https://qtpass.org/)
-
+[Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
+[Issue queue](https://github.com/IJHack/qtpass/issues)
+[Chat](https://gitter.im/IJHack/qtpass)
