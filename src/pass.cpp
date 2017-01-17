@@ -91,7 +91,7 @@ QString Pass::Generate_b(int length, const QString &charset) {
   } else {
     if (charset.length() > 0) {
       for (int i = 0; i < length; ++i) {
-        int index = qrand() % charset.length();
+        int index = Util::rand() % charset.length();
         QChar nextChar = charset.at(index);
         passwd.append(nextChar);
       }
