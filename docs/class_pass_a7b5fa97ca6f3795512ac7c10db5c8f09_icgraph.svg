@@ -54,99 +54,99 @@ var sectionId = 'dynsection-33';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>Pass::GitPush</title>
-<!-- Node197 -->
+<!-- Node199 -->
 <g id="node1" class="node">
-<title>Node197</title>
+<title>Node199</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 79.3594,-36.5 79.3594,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="39.6797" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::GitPush</text>
 </g>
-<!-- Node198 -->
+<!-- Node200 -->
 <g id="node2" class="node">
-<title>Node198</title>
+<title>Node200</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="115.3594,-37.5 115.3594,-55.5 220.8418,-55.5 220.8418,-37.5 115.3594,-37.5"/>
 <text text-anchor="middle" x="168.1006" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node197&#45;&gt;Node198 -->
+<!-- Node199&#45;&gt;Node200 -->
 <g id="edge1" class="edge">
-<title>Node197&#45;&gt;Node198</title>
+<title>Node199&#45;&gt;Node200</title>
 <path fill="none" stroke="#191970" d="M89.5631,-34.8803C97.8948,-36.113 106.5655,-37.3958 114.9747,-38.64"/>
 <polygon fill="#191970" stroke="#191970" points="90.0135,-31.4089 79.6089,-33.4076 88.9889,-38.3335 90.0135,-31.4089"/>
 </g>
-<!-- Node203 -->
+<!-- Node205 -->
 <g id="node7" class="node">
-<title>Node203</title>
+<title>Node205</title>
 <g id="a_node7"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="132.1709,-.5 132.1709,-18.5 204.0303,-18.5 204.0303,-.5 132.1709,-.5"/>
 <text text-anchor="middle" x="168.1006" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node197&#45;&gt;Node203 -->
+<!-- Node199&#45;&gt;Node205 -->
 <g id="edge6" class="edge">
-<title>Node197&#45;&gt;Node203</title>
+<title>Node199&#45;&gt;Node205</title>
 <path fill="none" stroke="#191970" d="M89.7005,-20.4889C103.8523,-18.5053 118.972,-16.3861 132.1201,-14.5432"/>
 <polygon fill="#191970" stroke="#191970" points="89.0263,-17.0491 79.6089,-21.9034 89.998,-23.9813 89.0263,-17.0491"/>
 </g>
-<!-- Node199 -->
+<!-- Node201 -->
 <g id="node3" class="node">
-<title>Node199</title>
+<title>Node201</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="271.0142,-55.5 271.0142,-73.5 404.8413,-73.5 404.8413,-55.5 271.0142,-55.5"/>
 <text text-anchor="middle" x="337.9277" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node198&#45;&gt;Node199 -->
+<!-- Node200&#45;&gt;Node201 -->
 <g id="edge2" class="edge">
-<title>Node198&#45;&gt;Node199</title>
+<title>Node200&#45;&gt;Node201</title>
 <path fill="none" stroke="#191970" d="M231.0922,-53.1765C244.0219,-54.5469 257.6796,-55.9945 270.7504,-57.3799"/>
 <polygon fill="#191970" stroke="#191970" points="231.2173,-49.6702 220.904,-52.0966 230.4794,-56.6312 231.2173,-49.6702"/>
 </g>
-<!-- Node201 -->
+<!-- Node203 -->
 <g id="node5" class="node">
-<title>Node201</title>
+<title>Node203</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="#000000" points="256.8418,-18.5 256.8418,-36.5 419.0137,-36.5 419.0137,-18.5 256.8418,-18.5"/>
 <text text-anchor="middle" x="337.9277" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node198&#45;&gt;Node201 -->
+<!-- Node200&#45;&gt;Node203 -->
 <g id="edge4" class="edge">
-<title>Node198&#45;&gt;Node201</title>
+<title>Node200&#45;&gt;Node203</title>
 <path fill="none" stroke="#191970" d="M230.8789,-39.4765C239.525,-38.5092 248.5001,-37.505 257.4106,-36.5081"/>
 <polygon fill="#191970" stroke="#191970" points="230.4529,-36.0022 220.904,-40.5924 231.2312,-42.9588 230.4529,-36.0022"/>
 </g>
-<!-- Node200 -->
+<!-- Node202 -->
 <g id="node4" class="node">
-<title>Node200</title>
+<title>Node202</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="455.0137,-55.5 455.0137,-73.5 591.0527,-73.5 591.0527,-55.5 455.0137,-55.5"/>
 <text text-anchor="middle" x="523.0332" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node199&#45;&gt;Node200 -->
+<!-- Node201&#45;&gt;Node202 -->
 <g id="edge3" class="edge">
-<title>Node199&#45;&gt;Node200</title>
+<title>Node201&#45;&gt;Node202</title>
 <path fill="none" stroke="#191970" d="M415.0373,-64.5C428.276,-64.5 441.9485,-64.5 454.9297,-64.5"/>
 <polygon fill="#191970" stroke="#191970" points="415.0168,-61.0001 405.0168,-64.5 415.0167,-68.0001 415.0168,-61.0001"/>
 </g>
-<!-- Node202 -->
+<!-- Node204 -->
 <g id="node6" class="node">
-<title>Node202</title>
+<title>Node204</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="469.1787,-18.5 469.1787,-36.5 576.8877,-36.5 576.8877,-18.5 469.1787,-18.5"/>
 <text text-anchor="middle" x="523.0332" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node201&#45;&gt;Node202 -->
+<!-- Node203&#45;&gt;Node204 -->
 <g id="edge5" class="edge">
-<title>Node201&#45;&gt;Node202</title>
+<title>Node203&#45;&gt;Node204</title>
 <path fill="none" stroke="#191970" d="M429.4618,-27.5C443.0213,-27.5 456.61,-27.5 469.0635,-27.5"/>
 <polygon fill="#191970" stroke="#191970" points="429.1177,-24.0001 419.1177,-27.5 429.1177,-31.0001 429.1177,-24.0001"/>
 </g>

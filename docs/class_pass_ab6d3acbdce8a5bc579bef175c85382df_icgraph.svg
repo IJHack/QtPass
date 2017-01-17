@@ -8,90 +8,90 @@
  viewBox="0.00 0.00 433.15 102.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 98)">
 <title>Pass::finishedGitPull</title>
-<!-- Node89 -->
+<!-- Node90 -->
 <g id="node1" class="node">
-<title>Node89</title>
+<title>Node90</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-38.5 0,-56.5 107.709,-56.5 107.709,-38.5 0,-38.5"/>
 <text text-anchor="middle" x="53.8545" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::finishedGitPull</text>
 </g>
-<!-- Node90 -->
+<!-- Node91 -->
 <g id="node2" class="node">
-<title>Node90</title>
+<title>Node91</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" target="_top" xlink:title="MainWindow::changeEvent sets focus to the search box. ">
 <polygon fill="none" stroke="#000000" points="143.709,-75.5 143.709,-93.5 280.8857,-93.5 280.8857,-75.5 143.709,-75.5"/>
 <text text-anchor="middle" x="212.2974" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::changeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node89&#45;&gt;Node90 -->
+<!-- Node90&#45;&gt;Node91 -->
 <g id="edge1" class="edge">
-<title>Node89&#45;&gt;Node90</title>
+<title>Node90&#45;&gt;Node91</title>
 <path fill="none" stroke="#191970" d="M102.4698,-58.8528C125.334,-64.1921 152.2174,-70.47 173.6638,-75.4782"/>
 <polygon fill="#191970" stroke="#191970" points="103.1479,-55.417 92.614,-56.5512 101.556,-62.2336 103.1479,-55.417"/>
 </g>
-<!-- Node91 -->
+<!-- Node92 -->
 <g id="node3" class="node">
-<title>Node91</title>
+<title>Node92</title>
 <g id="a_node3"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished. ...">
 <polygon fill="none" stroke="#000000" points="173.1694,-38.5 173.1694,-56.5 251.4253,-56.5 251.4253,-38.5 173.1694,-38.5"/>
 <text text-anchor="middle" x="212.2974" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::finished</text>
 </a>
 </g>
 </g>
-<!-- Node89&#45;&gt;Node91 -->
+<!-- Node90&#45;&gt;Node92 -->
 <g id="edge2" class="edge">
-<title>Node89&#45;&gt;Node91</title>
+<title>Node90&#45;&gt;Node92</title>
 <path fill="none" stroke="#191970" d="M118.1113,-47.5C136.6823,-47.5 156.3919,-47.5 172.9552,-47.5"/>
 <polygon fill="#191970" stroke="#191970" points="117.9384,-44.0001 107.9384,-47.5 117.9384,-51.0001 117.9384,-44.0001"/>
 </g>
-<!-- Node94 -->
+<!-- Node95 -->
 <g id="node6" class="node">
-<title>Node94</title>
+<title>Node95</title>
 <g id="a_node6"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="335.0889,-.5 335.0889,-18.5 406.9482,-18.5 406.9482,-.5 335.0889,-.5"/>
 <text text-anchor="middle" x="371.0186" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node89&#45;&gt;Node94 -->
+<!-- Node90&#45;&gt;Node95 -->
 <g id="edge6" class="edge">
-<title>Node89&#45;&gt;Node94</title>
+<title>Node90&#45;&gt;Node95</title>
 <path fill="none" stroke="#191970" d="M101.3801,-36.2931C114.9878,-33.3998 129.8809,-30.5318 143.709,-28.5 210.9034,-18.627 290.0833,-13.4552 335.0334,-11.1166"/>
 <polygon fill="#191970" stroke="#191970" points="100.2894,-32.9486 91.2638,-38.4972 101.7796,-39.7881 100.2894,-32.9486"/>
 </g>
-<!-- Node92 -->
+<!-- Node93 -->
 <g id="node4" class="node">
-<title>Node92</title>
+<title>Node93</title>
 <g id="a_node4"><a xlink:href="class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" target="_top" xlink:title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...">
 <polygon fill="none" stroke="#000000" points="316.8857,-74.5 316.8857,-92.5 425.1514,-92.5 425.1514,-74.5 316.8857,-74.5"/>
 <text text-anchor="middle" x="371.0186" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::finished</text>
 </a>
 </g>
 </g>
-<!-- Node91&#45;&gt;Node92 -->
+<!-- Node92&#45;&gt;Node93 -->
 <g id="edge3" class="edge">
-<title>Node91&#45;&gt;Node92</title>
+<title>Node92&#45;&gt;Node93</title>
 <path fill="none" stroke="#191970" d="M261.5152,-58.6632C283.8869,-63.7374 310.0123,-69.663 331.133,-74.4534"/>
 <polygon fill="#191970" stroke="#191970" points="262.0583,-55.1976 251.5318,-56.3989 260.5099,-62.0242 262.0583,-55.1976"/>
 </g>
-<!-- Node93 -->
+<!-- Node94 -->
 <g id="node5" class="node">
-<title>Node93</title>
+<title>Node94</title>
 <g id="a_node5"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation. ">
 <polygon fill="none" stroke="#000000" points="338.0088,-37.5 338.0088,-55.5 404.0283,-55.5 404.0283,-37.5 338.0088,-37.5"/>
 <text text-anchor="middle" x="371.0186" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
 </a>
 </g>
 </g>
-<!-- Node91&#45;&gt;Node93 -->
+<!-- Node92&#45;&gt;Node94 -->
 <g id="edge4" class="edge">
-<title>Node91&#45;&gt;Node93</title>
+<title>Node92&#45;&gt;Node94</title>
 <path fill="none" stroke="#191970" d="M261.8269,-47.1879C286.5761,-47.032 315.8554,-46.8475 337.8617,-46.7089"/>
 <polygon fill="#191970" stroke="#191970" points="261.5095,-43.6898 251.5318,-47.2528 261.5537,-50.6896 261.5095,-43.6898"/>
 </g>
-<!-- Node91&#45;&gt;Node94 -->
+<!-- Node92&#45;&gt;Node95 -->
 <g id="edge5" class="edge">
-<title>Node91&#45;&gt;Node94</title>
+<title>Node92&#45;&gt;Node95</title>
 <path fill="none" stroke="#191970" d="M259.9238,-36.0976C284.0289,-30.3265 312.8104,-23.4358 335.0379,-18.1143"/>
 <polygon fill="#191970" stroke="#191970" points="258.8223,-32.7623 249.9121,-38.4945 260.4522,-39.5699 258.8223,-32.7623"/>
 </g>

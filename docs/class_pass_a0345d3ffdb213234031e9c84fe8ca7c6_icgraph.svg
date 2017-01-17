@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 332.06 101.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>Pass::startingExecuteWrapper</title>
-<!-- Node263 -->
+<!-- Node265 -->
 <g id="node1" class="node">
-<title>Node263</title>
+<title>Node265</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-37.5 0,-55.5 150.8828,-55.5 150.8828,-37.5 0,-37.5"/>
 <text text-anchor="middle" x="75.4414" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::startingExecuteWrapper</text>
 </g>
-<!-- Node264 -->
+<!-- Node266 -->
 <g id="node2" class="node">
-<title>Node264</title>
+<title>Node266</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" target="_top" xlink:title="MainWindow::changeEvent sets focus to the search box. ">
 <polygon fill="none" stroke="#000000" points="186.8828,-74.5 186.8828,-92.5 324.0596,-92.5 324.0596,-74.5 186.8828,-74.5"/>
 <text text-anchor="middle" x="255.4712" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::changeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node263&#45;&gt;Node264 -->
+<!-- Node265&#45;&gt;Node266 -->
 <g id="edge1" class="edge">
-<title>Node263&#45;&gt;Node264</title>
+<title>Node265&#45;&gt;Node266</title>
 <path fill="none" stroke="#191970" d="M129.2867,-57.5664C155.5617,-62.9665 186.7686,-69.3801 211.574,-74.4782"/>
 <polygon fill="#191970" stroke="#191970" points="129.9815,-54.1361 119.4816,-55.5512 128.5723,-60.9928 129.9815,-54.1361"/>
 </g>
-<!-- Node265 -->
+<!-- Node267 -->
 <g id="node3" class="node">
-<title>Node265</title>
+<title>Node267</title>
 <g id="a_node3"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation. ">
 <polygon fill="none" stroke="#000000" points="222.4614,-37.5 222.4614,-55.5 288.481,-55.5 288.481,-37.5 222.4614,-37.5"/>
 <text text-anchor="middle" x="255.4712" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
 </a>
 </g>
 </g>
-<!-- Node263&#45;&gt;Node265 -->
+<!-- Node265&#45;&gt;Node267 -->
 <g id="edge2" class="edge">
-<title>Node263&#45;&gt;Node265</title>
+<title>Node265&#45;&gt;Node267</title>
 <path fill="none" stroke="#191970" d="M161.2547,-46.5C182.9157,-46.5 204.9018,-46.5 222.1812,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="161.0078,-43.0001 151.0077,-46.5 161.0077,-50.0001 161.0078,-43.0001"/>
 </g>
-<!-- Node266 -->
+<!-- Node268 -->
 <g id="node4" class="node">
-<title>Node266</title>
+<title>Node268</title>
 <g id="a_node4"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="219.5415,-.5 219.5415,-18.5 291.4009,-18.5 291.4009,-.5 219.5415,-.5"/>
 <text text-anchor="middle" x="255.4712" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node263&#45;&gt;Node266 -->
+<!-- Node265&#45;&gt;Node268 -->
 <g id="edge3" class="edge">
-<title>Node263&#45;&gt;Node266</title>
+<title>Node265&#45;&gt;Node268</title>
 <path fill="none" stroke="#191970" d="M129.4985,-35.3901C158.5962,-29.4099 193.6929,-22.1968 219.4426,-16.9046"/>
 <polygon fill="#191970" stroke="#191970" points="128.5723,-32.0072 119.4816,-37.4488 129.9815,-38.8639 128.5723,-32.0072"/>
 </g>
