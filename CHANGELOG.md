@@ -17,6 +17,8 @@
 
 **Closed issues:**
 
+- Adding new password on Windows does not create git commit [\#277](https://github.com/IJHack/QtPass/issues/277)
+- There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
 - pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
@@ -26,6 +28,7 @@
 
 **Merged pull requests:**
 
+- small band aid fix for password generation on windows [\#276](https://github.com/IJHack/QtPass/pull/276) ([treat1](https://github.com/treat1))
 - Final step in process mgmt refactoring [\#275](https://github.com/IJHack/QtPass/pull/275) ([tezeb](https://github.com/tezeb))
 - Fix pwgen and refactor Pass::finished [\#271](https://github.com/IJHack/QtPass/pull/271) ([tezeb](https://github.com/tezeb))
 - Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
