@@ -32,6 +32,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
   QClipboard *clip = QApplication::clipboard();
   if (!clip->supportsSelection()) {
+    useSelection(false);
     ui->checkBoxSelection->setVisible(false);
   }
 }
