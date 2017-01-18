@@ -12,6 +12,7 @@ const QString SettingsConstants::splitterLeft = "splitterLeft";
 const QString SettingsConstants::splitterRight = "splitterRight";
 const QString SettingsConstants::maximized = "maximized";
 const QString SettingsConstants::usePass = "usePass";
+const QString SettingsConstants::useSelection = "useSelection";
 const QString SettingsConstants::useAutoclear = "useAutoclear";
 const QString SettingsConstants::autoclearSeconds = "autoclearSeconds";
 const QString SettingsConstants::useAutoclearPanel = "useAutoclearPanel";

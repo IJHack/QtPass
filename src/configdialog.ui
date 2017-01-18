@@ -82,6 +82,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QCheckBox" name="checkBoxSelection">
+             <property name="text">
+              <string>Use primary selection</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QCheckBox" name="checkBoxAutoclear">
              <property name="text">
               <string>Autoclear after:</string>

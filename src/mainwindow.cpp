@@ -407,6 +407,7 @@ void MainWindow::config() {
   d->setStorePath(QtPassSettings::getPassStore());
   d->usePass(QtPassSettings::isUsePass());
   d->useClipboard(QtPassSettings::getClipBoardType());
+  d->useSelection(QtPassSettings::isUseSelection());
   d->useAutoclear(QtPassSettings::isUseAutoclear());
   d->setAutoclear(QtPassSettings::getAutoclearSeconds());
   d->useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
@@ -447,6 +448,7 @@ void MainWindow::config() {
           Util::normalizeFolderPath(d->getStorePath()));
       QtPassSettings::setUsePass(d->usePass());
       QtPassSettings::setClipBoardType(d->useClipboard());
+      QtPassSettings::setUseSelection(d->useSelection());
       QtPassSettings::setUseAutoclear(d->useAutoclear());
       QtPassSettings::setAutoclearSeconds(d->getAutoclear());
       QtPassSettings::setUseAutoclearPanel(d->useAutoclearPanel());
@@ -1397,7 +1399,11 @@ void MainWindow::clearTemplateWidgets() {
  */
 void MainWindow::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
-  clip->setText(text);
+  if (!QtPassSettings::isUseSelection()) {
+      clip->setText(text, QClipboard::Clipboard);
+  } else {
+      clip->setText(text, QClipboard::Selection);
+  }
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {

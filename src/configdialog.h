@@ -32,6 +32,7 @@ public:
   void setProfiles(QHash<QString, QString>, QString);
   void usePass(bool usePass);
   void useClipboard(Enums::clipBoardType);
+  void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
   void setAutoclear(int seconds);
   void useAutoclearPanel(bool useAutoclearPanel);
@@ -46,6 +47,7 @@ public:
   QHash<QString, QString> getProfiles();
   bool usePass();
   Enums::clipBoardType useClipboard();
+  bool useSelection();
   bool useAutoclear();
   int getAutoclear();
   bool useAutoclearPanel();
@@ -108,6 +110,7 @@ private slots:
   void on_toolButtonStore_clicked();
   void on_comboBoxClipboard_activated(int);
   void on_passwordCharTemplateSelector_activated(int);
+  void on_checkBoxSelection_clicked();
   void on_checkBoxAutoclear_clicked();
   void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();

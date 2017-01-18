@@ -223,6 +223,7 @@ void ConfigDialog::on_toolButtonStore_clicked() {
  */
 void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   if (index > 0) {
+    ui->checkBoxSelection->setEnabled(true);
     ui->checkBoxAutoclear->setEnabled(true);
     ui->checkBoxHidePassword->setEnabled(true);
     ui->checkBoxHideContent->setEnabled(true);
@@ -234,6 +235,7 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
       ui->labelSeconds->setEnabled(false);
     }
   } else {
+    ui->checkBoxSelection->setEnabled(false);
     ui->checkBoxAutoclear->setEnabled(false);
     ui->spinBoxAutoclearSeconds->setEnabled(false);
     ui->labelSeconds->setEnabled(false);
@@ -262,6 +264,16 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
 void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
   ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
   on_comboBoxClipboard_activated(static_cast<int>(useClipboard));
+}
+
+/**
+ * @brief ConfigDialog::useSelection set the clipboard autoclear use from
+ * MainWindow.
+ * @param useSelection
+ */
+void ConfigDialog::useSelection(bool useSelection) {
+  ui->checkBoxSelection->setChecked(useSelection);
+  on_checkBoxSelection_clicked();
 }
 
 /**
@@ -309,6 +321,20 @@ void ConfigDialog::setAutoclearPanel(int seconds) {
 Enums::clipBoardType ConfigDialog::useClipboard() {
   return static_cast<Enums::clipBoardType>(
       ui->comboBoxClipboard->currentIndex());
+}
+
+/**
+ * @brief ConfigDialog::useSelection return the use of clipboard autoclear.
+ * @return
+ */
+bool ConfigDialog::useSelection() { return ui->checkBoxSelection->isChecked(); }
+
+/**
+ * @brief ConfigDialog::on_checkBoxSelection_clicked checkbox clicked, update
+ * state via ConfigDialog::on_comboBoxClipboard_activated
+ */
+void ConfigDialog::on_checkBoxSelection_clicked() {
+  on_comboBoxClipboard_activated(1);
 }
 
 /**
