@@ -771,9 +771,17 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
-  QString clippedText = clipboard->text();
+  if (!QtPassSettings::isUseSelection()) {
+    QString clippedText = clipboard->text(QClipboard::Clipboard);
+  } else {
+    QString clippedText = clipboard->text(QClipboard::Selection);
+  }
   if (clippedText == this->clippedText) {
-    clipboard->clear();
+    if (!QtPassSettings::isUseSelection()) {
+      clipboard->clear(QClipboard::Clipboard);
+    } else {
+      clipboard->clear(QClipboard::Selection);
+    }
     ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
     ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
@@ -1400,9 +1408,9 @@ void MainWindow::clearTemplateWidgets() {
 void MainWindow::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
   if (!QtPassSettings::isUseSelection()) {
-      clip->setText(text, QClipboard::Clipboard);
+    clip->setText(text, QClipboard::Clipboard);
   } else {
-      clip->setText(text, QClipboard::Selection);
+    clip->setText(text, QClipboard::Selection);
   }
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
