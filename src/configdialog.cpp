@@ -279,8 +279,8 @@ void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
  * @param useSelection
  */
 void ConfigDialog::useSelection(bool useSelection) {
-  ui->lection->setChecked(useSelection);
-  on_lection_clicked();
+  ui->checkBoxSelection->setChecked(useSelection);
+  on_checkBoxSelection_clicked();
 }
 
 /**
