@@ -21,6 +21,7 @@ public:
   const static QString maximized;
   const static QString usePass;
   const static QString useAutoclear;
+  const static QString useSelection;
   const static QString autoclearSeconds;
   const static QString useAutoclearPanel;
   const static QString autoclearPanelSeconds;

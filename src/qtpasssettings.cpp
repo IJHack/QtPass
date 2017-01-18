@@ -144,6 +144,14 @@ void QtPassSettings::setClipBoardType(
               static_cast<int>(clipBoardType));
 }
 
+bool QtPassSettings::isUseSelection(const bool &defaultValue) {
+  return getBoolValue(SettingsConstants::useSelection, defaultValue);
+}
+
+void QtPassSettings::setUseSelection(const bool &useSelection) {
+  setBoolValue(SettingsConstants::useSelection, useSelection);
+}
+
 bool QtPassSettings::isUseAutoclear(const bool &defaultValue) {
   return getBoolValue(SettingsConstants::useAutoclear, defaultValue);
 }
