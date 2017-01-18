@@ -274,13 +274,13 @@ void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
 }
 
 /**
- * @brief ConfigDialog::useSelection set the clipboard autoclear use from
+ * @brief ConfigDialog::useSelection set the clipboard type use from
  * MainWindow.
  * @param useSelection
  */
 void ConfigDialog::useSelection(bool useSelection) {
-  ui->checkBoxSelection->setChecked(useSelection);
-  on_checkBoxSelection_clicked();
+  ui->lection->setChecked(useSelection);
+  on_lection_clicked();
 }
 
 /**
@@ -331,7 +331,7 @@ Enums::clipBoardType ConfigDialog::useClipboard() {
 }
 
 /**
- * @brief ConfigDialog::useSelection return the use of clipboard autoclear.
+ * @brief ConfigDialog::useSelection return the clipboard type.
  * @return
  */
 bool ConfigDialog::useSelection() { return ui->checkBoxSelection->isChecked(); }
