@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 312.81 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::usePwgen</title>
-<!-- Node154 -->
+<!-- Node155 -->
 <g id="node1" class="node">
-<title>Node154</title>
+<title>Node155</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 125.5117,-18.5 125.5117,-.5 0,-.5"/>
 <text text-anchor="middle" x="62.7559" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::usePwgen</text>
 </g>
-<!-- Node155 -->
+<!-- Node156 -->
 <g id="node2" class="node">
-<title>Node155</title>
+<title>Node156</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" target="_top" xlink:title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf...">
 <polygon fill="none" stroke="#000000" points="161.5117,-.5 161.5117,-18.5 304.8115,-18.5 304.8115,-.5 161.5117,-.5"/>
 <text text-anchor="middle" x="233.1616" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::setPwgenPath</text>
 </a>
 </g>
 </g>
-<!-- Node154&#45;&gt;Node155 -->
+<!-- Node155&#45;&gt;Node156 -->
 <g id="edge1" class="edge">
-<title>Node154&#45;&gt;Node155</title>
+<title>Node155&#45;&gt;Node156</title>
 <path fill="none" stroke="#191970" d="M135.8797,-9.5C144.2889,-9.5 152.8583,-9.5 161.2512,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="135.7246,-6.0001 125.7245,-9.5 135.7245,-13.0001 135.7246,-6.0001"/>
 </g>
