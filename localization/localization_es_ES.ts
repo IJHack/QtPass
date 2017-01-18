@@ -311,37 +311,37 @@ email</source>
         <translation>Ocultar contenido</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="541"/>
+        <location filename="../src/configdialog.cpp" line="549"/>
         <source>GnuPG not found</source>
         <translation>No se ha encontrado GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="550"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instala GnuPG en su sistema. &lt;br&gt;Instalar &lt;strong&gt;gpg&lt;/strong&gt; usando su gestor de paquetes favorito&lt;br&gt; o descargarlo de &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>Create password-store?</source>
         <translation>Crear almacen de contraseñas?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>¿Crear almacen de contraseñas en %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="581"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Password store not initialised</source>
         <translation>Almacen de contraseñas no inicializado</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="590"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>La carpeta %1 no es un almacen de contraseñas o no ha sido inicializado.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="502"/>
+        <location filename="../src/configdialog.cpp" line="510"/>
         <source>No profile selected</source>
         <translation>Sin perfil seleccionado</translation>
     </message>
@@ -361,7 +361,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="503"/>
+        <location filename="../src/configdialog.cpp" line="511"/>
         <source>No profile selected to delete</source>
         <translation>Sin perfil seleccionado para borrar</translation>
     </message>

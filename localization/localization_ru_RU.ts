@@ -314,37 +314,37 @@ email</translation>
         <translation>Скрывать содержимое</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="541"/>
+        <location filename="../src/configdialog.cpp" line="549"/>
         <source>GnuPG not found</source>
         <translation>GnuPG не найден</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="550"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Пожалуйста, установите GnuPG. &lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; используя Ваш любимый менеджер пакетов&lt;br&gt; или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;скачайте&lt;/a&gt; с сайта GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>Create password-store?</source>
         <translation>Создать хранилище паролей?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Хотите создать хранилище паролей в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="581"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Password store not initialised</source>
         <translation>Хранилище паролей не инициализировано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="590"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Папка %1 не похожа на хранилище паролей либо ещё не инициализирована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="502"/>
+        <location filename="../src/configdialog.cpp" line="510"/>
         <source>No profile selected</source>
         <translation>Профиль не выбран</translation>
     </message>
@@ -364,7 +364,7 @@ email</translation>
         <translation>Копировать в буфер обмена по требованию</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="503"/>
+        <location filename="../src/configdialog.cpp" line="511"/>
         <source>No profile selected to delete</source>
         <translation>Не выбран ни один профиль для удаления</translation>
     </message>

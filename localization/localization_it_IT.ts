@@ -326,42 +326,42 @@ email</source>
         <translation>Copia negli appunti su richiesta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="502"/>
+        <location filename="../src/configdialog.cpp" line="510"/>
         <source>No profile selected</source>
         <translation>Nessun profilo selezionato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="503"/>
+        <location filename="../src/configdialog.cpp" line="511"/>
         <source>No profile selected to delete</source>
         <translation>Nessun profilo selezionato per la rimozione</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="541"/>
+        <location filename="../src/configdialog.cpp" line="549"/>
         <source>GnuPG not found</source>
         <translation>GnuPG non trovato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="550"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installa GnuPG nel tuo sistema.&lt;br&gt;Installa &lt;strong&gt;gpg&lt;/strong&gt; utilizzando il gestore pacchetti&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;scaricalo&lt;/a&gt; da GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>Create password-store?</source>
         <translation>Creare un archivio password?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Vuoi creare un archivio password in %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="581"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Password store not initialised</source>
         <translation>Archivio password non inizializzato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="590"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata corretamente.</translation>
     </message>

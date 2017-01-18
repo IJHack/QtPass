@@ -328,42 +328,42 @@ email</translation>
         <translation>Na vyžádání zkopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="502"/>
+        <location filename="../src/configdialog.cpp" line="510"/>
         <source>No profile selected</source>
         <translation>Nebyl vybrán profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="503"/>
+        <location filename="../src/configdialog.cpp" line="511"/>
         <source>No profile selected to delete</source>
         <translation>Nebyl vybrán profil ke smazání</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="541"/>
+        <location filename="../src/configdialog.cpp" line="549"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nenalezeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="550"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainstalujte prosím GnuPG na svůj systém.&lt;br&gt;Nainstalujte &lt;strong&gt;gpg&lt;/strong&gt; za použití upřednostňovaného správce balíků&lt;br&gt;nebo ho &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;stáhněte&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>Create password-store?</source>
         <translation>Vytvořit úložiště hesel?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Chcete vytvořit úložiště hesel v %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="581"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Password store not initialised</source>
         <translation>Úložiště hesel není vytvořeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="590"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Adresář %1 nevypadá jako úložiště hesel, nebo ještě nebyl vytvořen.</translation>
     </message>
