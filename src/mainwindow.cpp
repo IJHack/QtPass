@@ -407,6 +407,7 @@ void MainWindow::config() {
   d->setStorePath(QtPassSettings::getPassStore());
   d->usePass(QtPassSettings::isUsePass());
   d->useClipboard(QtPassSettings::getClipBoardType());
+  d->useSelection(QtPassSettings::isUseSelection());
   d->useAutoclear(QtPassSettings::isUseAutoclear());
   d->setAutoclear(QtPassSettings::getAutoclearSeconds());
   d->useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
@@ -447,6 +448,7 @@ void MainWindow::config() {
           Util::normalizeFolderPath(d->getStorePath()));
       QtPassSettings::setUsePass(d->usePass());
       QtPassSettings::setClipBoardType(d->useClipboard());
+      QtPassSettings::setUseSelection(d->useSelection());
       QtPassSettings::setUseAutoclear(d->useAutoclear());
       QtPassSettings::setAutoclearSeconds(d->getAutoclear());
       QtPassSettings::setUseAutoclearPanel(d->useAutoclearPanel());
@@ -769,9 +771,17 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
-  QString clippedText = clipboard->text();
+  if (!QtPassSettings::isUseSelection()) {
+    QString clippedText = clipboard->text(QClipboard::Clipboard);
+  } else {
+    QString clippedText = clipboard->text(QClipboard::Selection);
+  }
   if (clippedText == this->clippedText) {
-    clipboard->clear();
+    if (!QtPassSettings::isUseSelection()) {
+      clipboard->clear(QClipboard::Clipboard);
+    } else {
+      clipboard->clear(QClipboard::Selection);
+    }
     ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
     ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
@@ -1397,7 +1407,11 @@ void MainWindow::clearTemplateWidgets() {
  */
 void MainWindow::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
-  clip->setText(text);
+  if (!QtPassSettings::isUseSelection()) {
+    clip->setText(text, QClipboard::Clipboard);
+  } else {
+    clip->setText(text, QClipboard::Selection);
+  }
   clippedText = text;
   ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
   if (QtPassSettings::isUseAutoclear()) {

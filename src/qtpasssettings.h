@@ -57,6 +57,9 @@ public:
       const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER);
   static void setClipBoardType(const Enums::clipBoardType &clipBoardType);
 
+  static bool isUseSelection(const bool &defaultValue = QVariant().toBool());
+  static void setUseSelection(const bool &useSelection);
+
   static bool isUseAutoclear(const bool &defaultValue = QVariant().toBool());
   static void setUseAutoclear(const bool &useAutoclear);
 

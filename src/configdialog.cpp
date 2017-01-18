@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
+#include <QClipboard>
 #include <QDir>
 #include <QMessageBox>
 #ifdef Q_OS_WIN
@@ -28,6 +29,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
   ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
   ui->comboBoxClipboard->setCurrentIndex(0);
+
+  QClipboard *clip = QApplication::clipboard();
+  if (!clip->supportsSelection()) {
+    useSelection(false);
+    ui->checkBoxSelection->setVisible(false);
+  }
 }
 
 /**
@@ -223,6 +230,7 @@ void ConfigDialog::on_toolButtonStore_clicked() {
  */
 void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   if (index > 0) {
+    ui->checkBoxSelection->setEnabled(true);
     ui->checkBoxAutoclear->setEnabled(true);
     ui->checkBoxHidePassword->setEnabled(true);
     ui->checkBoxHideContent->setEnabled(true);
@@ -234,6 +242,7 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
       ui->labelSeconds->setEnabled(false);
     }
   } else {
+    ui->checkBoxSelection->setEnabled(false);
     ui->checkBoxAutoclear->setEnabled(false);
     ui->spinBoxAutoclearSeconds->setEnabled(false);
     ui->labelSeconds->setEnabled(false);
@@ -262,6 +271,16 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
 void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
   ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
   on_comboBoxClipboard_activated(static_cast<int>(useClipboard));
+}
+
+/**
+ * @brief ConfigDialog::useSelection set the clipboard type use from
+ * MainWindow.
+ * @param useSelection
+ */
+void ConfigDialog::useSelection(bool useSelection) {
+  ui->checkBoxSelection->setChecked(useSelection);
+  on_checkBoxSelection_clicked();
 }
 
 /**
@@ -312,6 +331,20 @@ Enums::clipBoardType ConfigDialog::useClipboard() {
 }
 
 /**
+ * @brief ConfigDialog::useSelection return the clipboard type.
+ * @return
+ */
+bool ConfigDialog::useSelection() { return ui->checkBoxSelection->isChecked(); }
+
+/**
+ * @brief ConfigDialog::on_checkBoxSelection_clicked checkbox clicked, update
+ * state via ConfigDialog::on_comboBoxClipboard_activated
+ */
+void ConfigDialog::on_checkBoxSelection_clicked() {
+  on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
+}
+
+/**
  * @brief ConfigDialog::useAutoclear return the use of clipboard autoclear.
  * @return
  */
@@ -330,7 +363,7 @@ int ConfigDialog::getAutoclear() {
  * state via ConfigDialog::on_comboBoxClipboard_activated
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
-  on_comboBoxClipboard_activated(1);
+  on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
 /**
