@@ -30,6 +30,7 @@ var searchData=
   ['isusegit',['isUseGit',['../class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f',1,'QtPassSettings']]],
   ['isusepass',['isUsePass',['../class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493',1,'QtPassSettings']]],
   ['isusepwgen',['isUsePwgen',['../class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72',1,'QtPassSettings']]],
+  ['isuseselection',['isUseSelection',['../class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2',1,'QtPassSettings']]],
   ['isusesymbols',['isUseSymbols',['../class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3',1,'QtPassSettings']]],
   ['isusetemplate',['isUseTemplate',['../class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283',1,'QtPassSettings']]],
   ['isusetrayicon',['isUseTrayIcon',['../class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0',1,'QtPassSettings']]],

@@ -64,6 +64,7 @@ var searchData=
   ['setusepass',['setUsePass',['../class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2',1,'QtPassSettings']]],
   ['setusepwgen',['setUsePwgen',['../class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334',1,'QtPassSettings']]],
   ['setusers',['setUsers',['../class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c',1,'UsersDialog']]],
+  ['setuseselection',['setUseSelection',['../class_qt_pass_settings.html#af40ab682a88d2fa494bb349d2b6ef591',1,'QtPassSettings']]],
   ['setusesymbols',['setUseSymbols',['../class_qt_pass_settings.html#afa7e2c2f5ce00e8ef854fd608849dc19',1,'QtPassSettings']]],
   ['setusetemplate',['setUseTemplate',['../class_qt_pass_settings.html#a654752cacf06bf5830719934152070c8',1,'QtPassSettings']]],
   ['setusetrayicon',['setUseTrayIcon',['../class_qt_pass_settings.html#a21bde5a8f18623f23e32e7c8c0241c16',1,'QtPassSettings']]],

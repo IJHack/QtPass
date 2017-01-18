@@ -48,96 +48,96 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 686;
 var viewHeight = 64;
-var sectionId = 'dynsection-70';
+var sectionId = 'dynsection-71';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::setPassTemplate</title>
-<!-- Node550 -->
+<!-- Node558 -->
 <g id="node1" class="node">
-<title>Node550</title>
+<title>Node558</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 166.625,-37.5 166.625,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="83.3125" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setPassTemplate</text>
 </g>
-<!-- Node551 -->
+<!-- Node559 -->
 <g id="node2" class="node">
-<title>Node551</title>
+<title>Node559</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="358.2798,-37.5 358.2798,-55.5 492.1069,-55.5 492.1069,-37.5 358.2798,-37.5"/>
 <text text-anchor="middle" x="425.1934" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node550&#45;&gt;Node551 -->
+<!-- Node558&#45;&gt;Node559 -->
 <g id="edge1" class="edge">
-<title>Node550&#45;&gt;Node551</title>
+<title>Node558&#45;&gt;Node559</title>
 <path fill="none" stroke="#191970" d="M177.113,-33.4386C234.48,-36.459 306.5142,-40.2516 358.1593,-42.9707"/>
 <polygon fill="#191970" stroke="#191970" points="177.1162,-29.934 166.946,-32.9033 176.7481,-36.9243 177.1162,-29.934"/>
 </g>
-<!-- Node553 -->
+<!-- Node561 -->
 <g id="node4" class="node">
-<title>Node553</title>
+<title>Node561</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="202.625,-.5 202.625,-18.5 308.1074,-18.5 308.1074,-.5 202.625,-.5"/>
 <text text-anchor="middle" x="255.3662" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node550&#45;&gt;Node553 -->
+<!-- Node558&#45;&gt;Node561 -->
 <g id="edge3" class="edge">
-<title>Node550&#45;&gt;Node553</title>
+<title>Node558&#45;&gt;Node561</title>
 <path fill="none" stroke="#191970" d="M175.1495,-18.3584C184.4372,-17.3327 193.6342,-16.3171 202.3048,-15.3596"/>
 <polygon fill="#191970" stroke="#191970" points="174.6118,-14.8964 165.0564,-19.473 175.3802,-21.8541 174.6118,-14.8964"/>
 </g>
-<!-- Node552 -->
+<!-- Node560 -->
 <g id="node3" class="node">
-<title>Node552</title>
+<title>Node560</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="542.2793,-37.5 542.2793,-55.5 678.3184,-55.5 678.3184,-37.5 542.2793,-37.5"/>
 <text text-anchor="middle" x="610.2988" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node551&#45;&gt;Node552 -->
+<!-- Node559&#45;&gt;Node560 -->
 <g id="edge2" class="edge">
-<title>Node551&#45;&gt;Node552</title>
+<title>Node559&#45;&gt;Node560</title>
 <path fill="none" stroke="#191970" d="M502.3029,-46.5C515.5416,-46.5 529.2141,-46.5 542.1953,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="502.2824,-43.0001 492.2824,-46.5 502.2824,-50.0001 502.2824,-43.0001"/>
 </g>
-<!-- Node553&#45;&gt;Node551 -->
+<!-- Node561&#45;&gt;Node559 -->
 <g id="edge4" class="edge">
-<title>Node553&#45;&gt;Node551</title>
+<title>Node561&#45;&gt;Node559</title>
 <path fill="none" stroke="#191970" d="M306.8162,-20.7093C331.4642,-26.0794 360.5904,-32.4251 383.7839,-37.4782"/>
 <polygon fill="#191970" stroke="#191970" points="307.4265,-17.2603 296.9106,-18.5512 305.9363,-24.0998 307.4265,-17.2603"/>
 </g>
-<!-- Node554 -->
+<!-- Node562 -->
 <g id="node5" class="node">
-<title>Node554</title>
+<title>Node562</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="#000000" points="344.1074,-.5 344.1074,-18.5 506.2793,-18.5 506.2793,-.5 344.1074,-.5"/>
 <text text-anchor="middle" x="425.1934" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node553&#45;&gt;Node554 -->
+<!-- Node561&#45;&gt;Node562 -->
 <g id="edge5" class="edge">
-<title>Node553&#45;&gt;Node554</title>
+<title>Node561&#45;&gt;Node562</title>
 <path fill="none" stroke="#191970" d="M318.2512,-9.5C326.6621,-9.5 335.3828,-9.5 344.051,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="318.1697,-6.0001 308.1697,-9.5 318.1696,-13.0001 318.1697,-6.0001"/>
 </g>
-<!-- Node555 -->
+<!-- Node563 -->
 <g id="node6" class="node">
-<title>Node555</title>
+<title>Node563</title>
 <g id="a_node6"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="556.4443,-.5 556.4443,-18.5 664.1533,-18.5 664.1533,-.5 556.4443,-.5"/>
 <text text-anchor="middle" x="610.2988" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node554&#45;&gt;Node555 -->
+<!-- Node562&#45;&gt;Node563 -->
 <g id="edge6" class="edge">
-<title>Node554&#45;&gt;Node555</title>
+<title>Node562&#45;&gt;Node563</title>
 <path fill="none" stroke="#191970" d="M516.7274,-9.5C530.287,-9.5 543.8757,-9.5 556.3292,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="516.3833,-6.0001 506.3833,-9.5 516.3833,-13.0001 516.3833,-6.0001"/>
 </g>
