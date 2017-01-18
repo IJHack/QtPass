@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
+#include <QClipboard>
 #include <QDir>
 #include <QMessageBox>
 #ifdef Q_OS_WIN
@@ -28,6 +29,11 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
   ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
   ui->comboBoxClipboard->setCurrentIndex(0);
+
+  QClipboard *clip = QApplication::clipboard();
+  if (!clip->supportsSelection()) {
+    ui->checkBoxSelection->setVisible(false);
+  }
 }
 
 /**
@@ -334,7 +340,7 @@ bool ConfigDialog::useSelection() { return ui->checkBoxSelection->isChecked(); }
  * state via ConfigDialog::on_comboBoxClipboard_activated
  */
 void ConfigDialog::on_checkBoxSelection_clicked() {
-  on_comboBoxClipboard_activated(1);
+  on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
 /**
@@ -356,7 +362,7 @@ int ConfigDialog::getAutoclear() {
  * state via ConfigDialog::on_comboBoxClipboard_activated
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
-  on_comboBoxClipboard_activated(1);
+  on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
 /**
