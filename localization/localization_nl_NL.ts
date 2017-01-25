@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik selectie ipv klembord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
@@ -768,12 +768,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Weet je zeker dat je %1 wil verwijderen? {1%2??}</translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen? </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1011"/>
         <source> and whole content</source>
-        <translation type="unfinished"></translation>
+        <translation> en inhoud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1044"/>

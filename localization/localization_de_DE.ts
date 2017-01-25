@@ -715,12 +715,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Sind Sie sicher, dass Sie %1 löschen wollen? {1%2??}</translation>
+        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen? </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1011"/>
         <source> and whole content</source>
-        <translation type="unfinished"></translation>
+        <translation> und einhalt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1416"/>
