@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik selectie ipv klembord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
@@ -328,42 +328,42 @@ email</translation>
         <translation>Wanneer gewenst kopiëren naar klembord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="516"/>
+        <location filename="../src/configdialog.cpp" line="517"/>
         <source>No profile selected</source>
         <translation>Geen profiel geselecteerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="517"/>
+        <location filename="../src/configdialog.cpp" line="518"/>
         <source>No profile selected to delete</source>
         <translation>Geen profiel geselecteerd om te verwijderen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="555"/>
+        <location filename="../src/configdialog.cpp" line="556"/>
         <source>GnuPG not found</source>
         <translation>GnuPG niet gevonden</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="556"/>
+        <location filename="../src/configdialog.cpp" line="557"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="577"/>
         <source>Create password-store?</source>
         <translation>Maak password-store aan?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="577"/>
+        <location filename="../src/configdialog.cpp" line="578"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wil je een password-store maken op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="595"/>
+        <location filename="../src/configdialog.cpp" line="596"/>
         <source>Password store not initialised</source>
         <translation>Password-store niet geïnitialiseerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="597"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
@@ -768,12 +768,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Weet je zeker dat je %1 wil verwijderen? {1%2??}</translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen? </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1011"/>
         <source> and whole content</source>
-        <translation type="unfinished"></translation>
+        <translation> en inhoud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1044"/>
