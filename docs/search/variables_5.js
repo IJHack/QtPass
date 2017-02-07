@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['isdir',['isDir',['../structdrag_and_drop_info_password_store.html#ac3b9e270657587c266b4eca1500a4c0d',1,'dragAndDropInfoPasswordStore']]],
-  ['isfile',['isFile',['../structdrag_and_drop_info_password_store.html#a879e07495ff6c05f797adedcc09e4b3d',1,'dragAndDropInfoPasswordStore']]]
+  ['frame',['frame',['../class_ui___keygen_dialog.html#a3dfacbd59d6622d833a73dcf34e341b6',1,'Ui_KeygenDialog::frame()'],['../class_ui___main_window.html#ad01968740c435709a8b2ec4c08094c67',1,'Ui_MainWindow::frame()']]]
 ];

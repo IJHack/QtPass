@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../storemodel_8cpp.html#a7091d73d65f692346662a0f62dcb245c',1,'storemodel.cpp']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../storemodel_8cpp.html#a2b860ced49c722f84e1cf7a95718f62a',1,'storemodel.cpp']]]
+  ['name',['name',['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo::name()'],['../class_ui___keygen_dialog.html#a9f6d1f9b996d45dc423bbaa2a10dd73e',1,'Ui_KeygenDialog::name()']]],
+  ['normalizefolderpath',['normalizeFolderPath',['../class_util.html#a94597a43bf37076511033bef32f3df12',1,'Util']]]
 ];
