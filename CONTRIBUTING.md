@@ -10,7 +10,7 @@ This document is stil in a very early stage and needs a lot more work.
 
 ## Translations
 
-* Add you language to the `qtpass.pro` file
+* Add you language to the `src/src.pro` file
   under TRANSLATIONS and in the `resources.qrc` file.
 * Next run the command `lupdate qtpass.pro` which will create the localization files.
 * Edit your file with (let's imagine your language is sv_SE (Swedish)
