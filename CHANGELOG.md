@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased](https://github.com/IJHack/qtpass/tree/HEAD)
+## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.6...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...HEAD)
 
 **Implemented enhancements:**
 
@@ -42,8 +42,8 @@
 - Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 
-## [v1.1.6](https://github.com/IJHack/qtpass/tree/v1.1.6) (2016-12-02)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.5...v1.1.6)
+## [v1.1.6](https://github.com/IJHack/QtPass/tree/v1.1.6) (2016-12-02)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)
 
 **Implemented enhancements:**
 
@@ -85,8 +85,8 @@
 - UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
 - creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
 
-## [v1.1.5](https://github.com/IJHack/qtpass/tree/v1.1.5) (2016-10-19)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.4...v1.1.5)
+## [v1.1.5](https://github.com/IJHack/QtPass/tree/v1.1.5) (2016-10-19)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)
 
 **Implemented enhancements:**
 
@@ -116,8 +116,8 @@
 - Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/QtPass/pull/201) ([thotypous](https://github.com/thotypous))
 - Fix spelling error [\#200](https://github.com/IJHack/QtPass/pull/200) ([innir](https://github.com/innir))
 
-## [v1.1.4](https://github.com/IJHack/qtpass/tree/v1.1.4) (2016-09-26)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.3...v1.1.4)
+## [v1.1.4](https://github.com/IJHack/QtPass/tree/v1.1.4) (2016-09-26)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.3...v1.1.4)
 
 **Implemented enhancements:**
 
@@ -146,8 +146,8 @@
 - ArchLinux: moved from AUR to \[community\] [\#196](https://github.com/IJHack/QtPass/pull/196) ([eworm-de](https://github.com/eworm-de))
 - Czech translation [\#195](https://github.com/IJHack/QtPass/pull/195) ([svetlemodry](https://github.com/svetlemodry))
 
-## [v1.1.3](https://github.com/IJHack/qtpass/tree/v1.1.3) (2016-06-10)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.2...v1.1.3)
+## [v1.1.3](https://github.com/IJHack/QtPass/tree/v1.1.3) (2016-06-10)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.2...v1.1.3)
 
 **Fixed bugs:**
 
@@ -159,8 +159,8 @@
 
 - Add a \(small\) manpage [\#174](https://github.com/IJHack/QtPass/issues/174)
 
-## [v1.1.2](https://github.com/IJHack/qtpass/tree/v1.1.2) (2016-06-10)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.1...v1.1.2)
+## [v1.1.2](https://github.com/IJHack/QtPass/tree/v1.1.2) (2016-06-10)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.1...v1.1.2)
 
 **Implemented enhancements:**
 
@@ -181,8 +181,8 @@
 - HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([da2x](https://github.com/da2x))
 - Fix build issues with MSVC2015 on Windows [\#175](https://github.com/IJHack/QtPass/pull/175) ([msvi](https://github.com/msvi))
 
-## [v1.1.1](https://github.com/IJHack/qtpass/tree/v1.1.1) (2016-04-04)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.1.0...v1.1.1)
+## [v1.1.1](https://github.com/IJHack/QtPass/tree/v1.1.1) (2016-04-04)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.0...v1.1.1)
 
 **Implemented enhancements:**
 
@@ -218,8 +218,8 @@
 - configwindow.ui default/start tab set to "settings" [\#154](https://github.com/IJHack/QtPass/pull/154) ([jounathaen](https://github.com/jounathaen))
 - FAQ update concerning button-icons on cinnamon [\#153](https://github.com/IJHack/QtPass/pull/153) ([jounathaen](https://github.com/jounathaen))
 
-## [v1.1.0](https://github.com/IJHack/qtpass/tree/v1.1.0) (2016-01-25)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.6...v1.1.0)
+## [v1.1.0](https://github.com/IJHack/QtPass/tree/v1.1.0) (2016-01-25)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)
 
 **Implemented enhancements:**
 
@@ -237,8 +237,8 @@
 - RPM Spec file updates [\#137](https://github.com/IJHack/QtPass/pull/137) ([muff1nman](https://github.com/muff1nman))
 - swedish translations [\#135](https://github.com/IJHack/QtPass/pull/135) ([ralphtheninja](https://github.com/ralphtheninja))
 
-## [v1.0.6](https://github.com/IJHack/qtpass/tree/v1.0.6) (2016-01-03)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.5...v1.0.6)
+## [v1.0.6](https://github.com/IJHack/QtPass/tree/v1.0.6) (2016-01-03)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.5...v1.0.6)
 
 **Implemented enhancements:**
 
@@ -264,8 +264,8 @@
 - Cleanup and coding standards [\#120](https://github.com/IJHack/QtPass/pull/120) ([annejan](https://github.com/annejan))
 - Modified the clipboard logic to allow for on-demand copy to clipboard. [\#119](https://github.com/IJHack/QtPass/pull/119) ([jonhanks](https://github.com/jonhanks))
 
-## [v1.0.5](https://github.com/IJHack/qtpass/tree/v1.0.5) (2015-11-18)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.4...v1.0.5)
+## [v1.0.5](https://github.com/IJHack/QtPass/tree/v1.0.5) (2015-11-18)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)
 
 **Fixed bugs:**
 
@@ -276,15 +276,15 @@
 
 - Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvarum12](https://github.com/dvarum12))
 
-## [v1.0.4](https://github.com/IJHack/qtpass/tree/v1.0.4) (2015-11-03)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.3...v1.0.4)
+## [v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4) (2015-11-03)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)
 
 **Implemented enhancements:**
 
 - Add support for RightToLeft languages [\#108](https://github.com/IJHack/QtPass/issues/108)
 
-## [v1.0.3](https://github.com/IJHack/qtpass/tree/v1.0.3) (2015-10-25)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.2...v1.0.3)
+## [v1.0.3](https://github.com/IJHack/QtPass/tree/v1.0.3) (2015-10-25)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.2...v1.0.3)
 
 **Implemented enhancements:**
 
@@ -300,8 +300,8 @@
 - Get PREFIX variable from environment [\#104](https://github.com/IJHack/QtPass/pull/104) ([jorti](https://github.com/jorti))
 - spanish translations added [\#103](https://github.com/IJHack/QtPass/pull/103) ([mrpnkt](https://github.com/mrpnkt))
 
-## [v1.0.2](https://github.com/IJHack/qtpass/tree/v1.0.2) (2015-09-24)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.1...v1.0.2)
+## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
 
 **Closed issues:**
 
@@ -312,8 +312,8 @@
 - Some minor improvements on the templating part [\#93](https://github.com/IJHack/QtPass/issues/93)
 - app crashes with variant of "pwgen" app [\#90](https://github.com/IJHack/QtPass/issues/90)
 
-## [v1.0.1](https://github.com/IJHack/qtpass/tree/v1.0.1) (2015-08-09)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v1.0.0...v1.0.1)
+## [v1.0.1](https://github.com/IJHack/QtPass/tree/v1.0.1) (2015-08-09)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.0...v1.0.1)
 
 **Implemented enhancements:**
 
@@ -336,8 +336,8 @@
 - Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
 - \[WIP\] Call 'pass git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
 
-## [v1.0.0](https://github.com/IJHack/qtpass/tree/v1.0.0) (2015-08-01)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.9.2...v1.0.0)
+## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)
 
 **Closed issues:**
 
@@ -348,15 +348,15 @@
 - Updating hungarian localisation [\#76](https://github.com/IJHack/QtPass/pull/76) ([damnlie](https://github.com/damnlie))
 - added DE translations [\#74](https://github.com/IJHack/QtPass/pull/74) ([Friedy](https://github.com/Friedy))
 
-## [v0.9.2](https://github.com/IJHack/qtpass/tree/v0.9.2) (2015-07-30)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.9.1...v0.9.2)
+## [v0.9.2](https://github.com/IJHack/QtPass/tree/v0.9.2) (2015-07-30)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2)
 
 **Closed issues:**
 
 - Show expiration date in key setup [\#70](https://github.com/IJHack/QtPass/issues/70)
 
-## [v0.9.1](https://github.com/IJHack/qtpass/tree/v0.9.1) (2015-07-29)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.9.0...v0.9.1)
+## [v0.9.1](https://github.com/IJHack/QtPass/tree/v0.9.1) (2015-07-29)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.0...v0.9.1)
 
 **Closed issues:**
 
@@ -365,15 +365,15 @@
 - Git intergration [\#57](https://github.com/IJHack/QtPass/issues/57)
 - Weird characters in filenames breaks loading gpg files [\#10](https://github.com/IJHack/QtPass/issues/10)
 
-## [v0.9.0](https://github.com/IJHack/qtpass/tree/v0.9.0) (2015-07-17)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.6...v0.9.0)
+## [v0.9.0](https://github.com/IJHack/QtPass/tree/v0.9.0) (2015-07-17)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.6...v0.9.0)
 
 **Closed issues:**
 
 - Request:  Integrate qtpass with pwgen for generating passwords.  [\#68](https://github.com/IJHack/QtPass/issues/68)
 
-## [v0.8.6](https://github.com/IJHack/qtpass/tree/v0.8.6) (2015-07-17)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.5.1...v0.8.6)
+## [v0.8.6](https://github.com/IJHack/QtPass/tree/v0.8.6) (2015-07-17)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5.1...v0.8.6)
 
 **Closed issues:**
 
@@ -385,11 +385,11 @@
 
 - To make building successfull wi Desktop Qt 5.4.0 MSVC2012 OpenGL 32bit [\#67](https://github.com/IJHack/QtPass/pull/67) ([annejan](https://github.com/annejan))
 
-## [v0.8.5.1](https://github.com/IJHack/qtpass/tree/v0.8.5.1) (2015-07-08)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.5...v0.8.5.1)
+## [v0.8.5.1](https://github.com/IJHack/QtPass/tree/v0.8.5.1) (2015-07-08)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5...v0.8.5.1)
 
-## [v0.8.5](https://github.com/IJHack/qtpass/tree/v0.8.5) (2015-07-08)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.4...v0.8.5)
+## [v0.8.5](https://github.com/IJHack/QtPass/tree/v0.8.5) (2015-07-08)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.4...v0.8.5)
 
 **Closed issues:**
 
@@ -403,8 +403,8 @@
 - Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
 
-## [v0.8.4](https://github.com/IJHack/qtpass/tree/v0.8.4) (2015-06-11)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.3...v0.8.4)
+## [v0.8.4](https://github.com/IJHack/QtPass/tree/v0.8.4) (2015-06-11)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4)
 
 **Closed issues:**
 
@@ -417,15 +417,15 @@
 - Develop [\#52](https://github.com/IJHack/QtPass/pull/52) ([annejan](https://github.com/annejan))
 - Minor thingies [\#51](https://github.com/IJHack/QtPass/pull/51) ([beefcurtains](https://github.com/beefcurtains))
 
-## [v0.8.3](https://github.com/IJHack/qtpass/tree/v0.8.3) (2015-06-09)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.2...v0.8.3)
+## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
 
 **Merged pull requests:**
 
 - Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
 
-## [v0.8.2](https://github.com/IJHack/qtpass/tree/v0.8.2) (2015-05-27)
-[Full Changelog](https://github.com/IJHack/qtpass/compare/v0.8.1...v0.8.2)
+## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
 
 **Closed issues:**
 
@@ -437,7 +437,7 @@
 - Provide more information in user list. [\#47](https://github.com/IJHack/QtPass/pull/47) ([rdoeffinger](https://github.com/rdoeffinger))
 - Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
 
-## [v0.8.1](https://github.com/IJHack/qtpass/tree/v0.8.1) (2015-05-06)
+## [v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1) (2015-05-06)
 **Fixed bugs:**
 
 - Some items not found on first search [\#8](https://github.com/IJHack/QtPass/issues/8)
