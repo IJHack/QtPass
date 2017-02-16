@@ -35,9 +35,13 @@
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>密码显示：</translation>
+        <translation type="vanished">密码显示：</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>

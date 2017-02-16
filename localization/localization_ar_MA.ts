@@ -24,11 +24,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
-        <source>Password Behaviour:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
         <translation type="unfinished"></translation>
@@ -218,6 +213,11 @@ email</source>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Automatically add .gpg-id files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -69,9 +69,8 @@
         <translation>Очищать буфер через:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>Поведение поля информации:</translation>
+        <translation type="vanished">Поведение поля информации:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
@@ -241,6 +240,11 @@ email</translation>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="538"/>

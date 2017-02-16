@@ -69,9 +69,8 @@
         <translation>Zwischenablage löschen nach:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>Passwort Anzeige:</translation>
+        <translation type="vanished">Passwort Anzeige:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
@@ -247,6 +246,11 @@ email</translation>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="538"/>

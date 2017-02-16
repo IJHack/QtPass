@@ -35,9 +35,13 @@
         <translation>Secondes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>Comportement du panel de visualisation des mots de passe :</translation>
+        <translation type="vanished">Comportement du panel de visualisation des mots de passe :</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>

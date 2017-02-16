@@ -20,7 +20,6 @@
 
 **Closed issues:**
 
-- Adding new password on Windows does not create git commit [\#277](https://github.com/IJHack/QtPass/issues/277)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
 - pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)

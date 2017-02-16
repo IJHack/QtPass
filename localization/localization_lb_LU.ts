@@ -36,7 +36,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
-        <source>Password Behaviour:</source>
+        <source>Content panel behaviour:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
