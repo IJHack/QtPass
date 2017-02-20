@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt_PT">
-<defaultcodec>UTF-8</defaultcodec>
+<TS version="2.1" language="pt_PT">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -305,7 +304,7 @@
 url
 email</source>
         <translation></translation>
-    </message>   
+    </message>
     <message>
         <location filename="../src/configdialog.ui" line="934"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
