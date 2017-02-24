@@ -31,6 +31,7 @@
 
 **Merged pull requests:**
 
+- Fixed path of resources.qrc [\#297](https://github.com/IJHack/QtPass/pull/297) ([sideeffect42](https://github.com/sideeffect42))
 - Add pt\_PT translation [\#295](https://github.com/IJHack/QtPass/pull/295) ([keitalbame](https://github.com/keitalbame))
 - Update README.md [\#293](https://github.com/IJHack/QtPass/pull/293) ([joostruis](https://github.com/joostruis))
 - small band aid fix for password generation on windows [\#276](https://github.com/IJHack/QtPass/pull/276) ([treat1](https://github.com/treat1))
