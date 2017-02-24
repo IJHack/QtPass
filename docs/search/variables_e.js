@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['radiobuttonnative',['radioButtonNative',['../class_ui___dialog.html#a4059817191751bb33b36687424543c8f',1,'Ui_Dialog']]],
-  ['radiobuttonpass',['radioButtonPass',['../class_ui___dialog.html#a7efb83532db4f75d00629c7e12173b72',1,'Ui_Dialog']]]
+  ['validity',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
+  ['version',['version',['../class_settings_constants.html#a3de52d12e7e80ae5b7873fddff1b9f8e',1,'SettingsConstants']]]
 ];

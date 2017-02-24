@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['centralwidget',['centralWidget',['../class_ui___main_window.html#a30075506c2116c3ed4ff25e07ae75f81',1,'Ui_MainWindow']]],
-  ['characters',['Characters',['../structpassword_configuration.html#a17af54e5e4aba7a89f8267159d703406',1,'passwordConfiguration']]],
-  ['checkbox',['checkBox',['../class_ui___keygen_dialog.html#abae871fa7bcbca53a5d4f6a5fe2d4b46',1,'Ui_KeygenDialog::checkBox()'],['../class_ui___users_dialog.html#a0da58fdad7b1f70e27a8377fd75c3e1c',1,'Ui_UsersDialog::checkBox()']]],
-  ['checkboxaddgpgid',['checkBoxAddGPGId',['../class_ui___dialog.html#a2b1ebb63042b9db53ba1edb0312ebaf6',1,'Ui_Dialog']]],
-  ['checkboxautoclear',['checkBoxAutoclear',['../class_ui___dialog.html#a0ede5c2affef0614ace9a5317839851d',1,'Ui_Dialog']]],
-  ['checkboxclipboard',['checkBoxClipboard',['../class_ui___dialog.html#a53a6fc6732c5704c977ece1b7d18cfd2',1,'Ui_Dialog']]],
-  ['checkboxhidecontent',['checkBoxHideContent',['../class_ui___dialog.html#a721f728879f948fe4c48c9cfc1296bcf',1,'Ui_Dialog']]],
-  ['checkboxhideonclose',['checkBoxHideOnClose',['../class_ui___dialog.html#a73ac0b1bdd1796374b64daee23277e63',1,'Ui_Dialog']]],
-  ['checkboxhidepassword',['checkBoxHidePassword',['../class_ui___dialog.html#a2b40b958dc80ae7c09d0129c58b3388b',1,'Ui_Dialog']]],
-  ['checkboxshow',['checkBoxShow',['../class_ui___password_dialog.html#a0ff8f942fc99bdf61ad66d9b0cf7d51c',1,'Ui_PasswordDialog']]],
-  ['checkboxstartminimized',['checkBoxStartMinimized',['../class_ui___dialog.html#a6af375314fe21ca169a4cbb3f8231f27',1,'Ui_Dialog']]],
-  ['checkboxusegit',['checkBoxUseGit',['../class_ui___dialog.html#a7bd71f2fe80c754428a450bfde8867d7',1,'Ui_Dialog']]],
-  ['checkboxusepwgen',['checkBoxUsePwgen',['../class_ui___dialog.html#ac9d89631c5e93153b406ad8bbc2a538f',1,'Ui_Dialog']]],
-  ['checkboxusesymbols',['checkBoxUseSymbols',['../class_ui___dialog.html#ab5e91fa792a8bf9bb8d76c986a214327',1,'Ui_Dialog']]],
-  ['checkboxusetrayicon',['checkBoxUseTrayIcon',['../class_ui___dialog.html#a92d6f03d7bd41929b011cbad482706ad',1,'Ui_Dialog']]],
-  ['clearbutton',['clearButton',['../class_ui___main_window.html#a208f30a63346d6c210b85635cee7cb47',1,'Ui_MainWindow::clearButton()'],['../class_ui___users_dialog.html#a73d3680c776def9520f1bd4afe7743c9',1,'Ui_UsersDialog::clearButton()']]],
-  ['clipboardtype',['clipBoardType',['../class_settings_constants.html#a59fa0305ecba68c982f12115713de9d5',1,'SettingsConstants']]],
-  ['configbutton',['configButton',['../class_ui___main_window.html#a09ba17f9e1bed47ce2e0da003b002df7',1,'Ui_MainWindow']]],
-  ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
-  ['createpasswordbutton',['createPasswordButton',['../class_ui___password_dialog.html#ac349f059780855c8a5b28f6a7eddcca7',1,'Ui_PasswordDialog']]]
+  ['enabled',['enabled',['../struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f',1,'UserInfo']]],
+  ['exec',['exec',['../class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af',1,'Pass']]],
+  ['expiry',['expiry',['../struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa',1,'UserInfo']]]
 ];
