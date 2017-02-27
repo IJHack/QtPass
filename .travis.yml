@@ -46,7 +46,7 @@ script:
 - cd tests
 - qmake
 - make
-- ./auto/util/test_util
+- ./auto/util/tst_util
 - cd -
 notifications:
   irc:
