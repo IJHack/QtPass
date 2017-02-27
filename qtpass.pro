@@ -21,9 +21,6 @@ target.path = $$PREFIX/bin/
 
 INSTALLS += target
 
-DISTFILES += \
-    settingsToDelete.txt
-
 RESOURCES += \
     resources.qrc
 
