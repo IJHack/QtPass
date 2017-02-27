@@ -43,7 +43,11 @@ script:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pri | cut -d " " -f 6).dmg; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pri | cut -d " " -f 6); fi
-- cd tests && make && ./auto/util/test_util && cd -
+- cd tests
+- qmake
+- make
+- ./auto/util/test_util
+- cd -
 notifications:
   irc:
     channels:
