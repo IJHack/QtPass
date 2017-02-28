@@ -10,17 +10,5 @@ OTHER_FILES += LICENSE \
                README.md \
                qtpass.1
 
-isEmpty(PREFIX) {
- PREFIX = $$(PREFIX)
-}
-
-isEmpty(PREFIX) {
- PREFIX = /usr/local
-}
-target.path = $$PREFIX/bin/
-
-INSTALLS += target
-
-RESOURCES += \
-    resources.qrc
+RESOURCES += resources.qrc
 

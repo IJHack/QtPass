@@ -172,3 +172,14 @@ win32 {
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
+
+isEmpty(PREFIX) {
+ PREFIX = $$(PREFIX)
+}
+
+isEmpty(PREFIX) {
+ PREFIX = /usr/local
+}
+target.path = $$PREFIX/bin/
+
+INSTALLS += target
