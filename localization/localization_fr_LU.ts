@@ -35,9 +35,13 @@
         <translation>Secondes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>Comportement du panel de visualisation des mots de passe :</translation>
+        <translation type="vanished">Comportement du panel de visualisation des mots de passe :</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -313,57 +317,57 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="28"/>
+        <location filename="../src/configdialog.cpp" line="27"/>
         <source>No Clipboard</source>
         <translation>Ne pas copier vers le presse-papier</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="29"/>
+        <location filename="../src/configdialog.cpp" line="28"/>
         <source>Always copy to clipboard</source>
         <translation>Toujours copier vers le presse-papier</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="30"/>
+        <location filename="../src/configdialog.cpp" line="29"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copier vers le presse-papier sur demande</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="517"/>
+        <location filename="../src/configdialog.cpp" line="516"/>
         <source>No profile selected</source>
         <translation>Pas de profil sélectionné</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="518"/>
+        <location filename="../src/configdialog.cpp" line="517"/>
         <source>No profile selected to delete</source>
         <translation>Pas de profil sélectionné à supprimer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="556"/>
+        <location filename="../src/configdialog.cpp" line="555"/>
         <source>GnuPG not found</source>
         <translation>GnuPG n&apos;as pas été trouvé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="557"/>
+        <location filename="../src/configdialog.cpp" line="556"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Merci d&apos;installer GnuPG sur votre système&lt;br&gt;Installez &lt;strong&gt;gpg&lt;/strong&gt; en utilisant votre gestionnaire de paquet préféré&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;téléchargez&lt;/a&gt; le depuis GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="577"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>Create password-store?</source>
         <translation>Créer le magasin de mots de passe ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="578"/>
+        <location filename="../src/configdialog.cpp" line="577"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="595"/>
         <source>Password store not initialised</source>
         <translation>Magasin de mots de passe pas encore initialisé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="597"/>
+        <location filename="../src/configdialog.cpp" line="596"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;as pas encore été initialisé.</translation>
     </message>
@@ -533,14 +537,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="72"/>
         <location filename="../src/mainwindow.ui" line="75"/>
-        <location filename="../src/mainwindow.cpp" line="1328"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Edit</source>
         <translation>Editer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <location filename="../src/mainwindow.ui" line="93"/>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1341"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
@@ -571,7 +575,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="1322"/>
+        <location filename="../src/mainwindow.cpp" line="1323"/>
         <source>Users</source>
         <translation>Utilisateurs</translation>
     </message>
@@ -684,7 +688,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
-        <location filename="../src/mainwindow.cpp" line="1450"/>
+        <location filename="../src/mainwindow.cpp" line="1452"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
@@ -740,19 +744,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="979"/>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1368"/>
         <source>New file</source>
         <translation>Nouveau fichier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="979"/>
+        <location filename="../src/mainwindow.cpp" line="980"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Enregistrement d&apos;un nouveau mot de passe :
 (Sera stocké dans %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete password?</source>
         <translation>Supprimer le mot de passe ?</translation>
     </message>
@@ -761,64 +765,64 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Êtes-vous sûr de vouloir supprimer %1 ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete folder?</source>
         <translation>Supprimer le dossier ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1009"/>
+        <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation type="unfinished">Êtes-vous sûr de vouloir supprimer %1 ? {1%2??}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source> and whole content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1044"/>
+        <location filename="../src/mainwindow.cpp" line="1045"/>
         <source>Can not get key list</source>
         <translation>Impossible de récupérer la liste de clés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1079"/>
         <source>Key not found in keyring</source>
         <translation>Clé introuvable dans le trousseau de clés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1152"/>
+        <location filename="../src/mainwindow.cpp" line="1153"/>
         <source>Generating GPG key pair</source>
         <translation>Génération d&apos;une paire de clés GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1194"/>
+        <location filename="../src/mainwindow.cpp" line="1195"/>
         <source>Profile changed to %1</source>
         <translation>Profil changé vers %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1320"/>
+        <location filename="../src/mainwindow.cpp" line="1321"/>
         <source>Add folder</source>
         <translation>Ajouter un dossier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1321"/>
+        <location filename="../src/mainwindow.cpp" line="1322"/>
         <source>Add password</source>
         <translation>Ajouter un mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1369"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nouveau dossier :
 (Sera créé dans %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>Copied to clipboard</source>
         <translation>copié dans le presse-papiers</translation>
     </message>

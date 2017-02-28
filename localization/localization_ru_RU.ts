@@ -69,9 +69,8 @@
         <translation>Очищать буфер через:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
         <source>Password Behaviour:</source>
-        <translation>Поведение поля информации:</translation>
+        <translation type="vanished">Поведение поля информации:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
@@ -243,6 +242,11 @@ email</translation>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="143"/>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="538"/>
         <source>Start minimized</source>
         <translation>Запускаться свёрнутым</translation>
@@ -314,57 +318,57 @@ email</translation>
         <translation>Скрывать содержимое</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="556"/>
+        <location filename="../src/configdialog.cpp" line="555"/>
         <source>GnuPG not found</source>
         <translation>GnuPG не найден</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="557"/>
+        <location filename="../src/configdialog.cpp" line="556"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Пожалуйста, установите GnuPG. &lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; используя Ваш любимый менеджер пакетов&lt;br&gt; или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;скачайте&lt;/a&gt; с сайта GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="577"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>Create password-store?</source>
         <translation>Создать хранилище паролей?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="578"/>
+        <location filename="../src/configdialog.cpp" line="577"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Хотите создать хранилище паролей в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="595"/>
         <source>Password store not initialised</source>
         <translation>Хранилище паролей не инициализировано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="597"/>
+        <location filename="../src/configdialog.cpp" line="596"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Папка %1 не похожа на хранилище паролей либо ещё не инициализирована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="517"/>
+        <location filename="../src/configdialog.cpp" line="516"/>
         <source>No profile selected</source>
         <translation>Профиль не выбран</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="28"/>
+        <location filename="../src/configdialog.cpp" line="27"/>
         <source>No Clipboard</source>
         <translation>Не использовать буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="29"/>
+        <location filename="../src/configdialog.cpp" line="28"/>
         <source>Always copy to clipboard</source>
         <translation>Всегда копировать в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="30"/>
+        <location filename="../src/configdialog.cpp" line="29"/>
         <source>On-demand copy to clipboard</source>
         <translation>Копировать в буфер обмена по требованию</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="518"/>
+        <location filename="../src/configdialog.cpp" line="517"/>
         <source>No profile selected to delete</source>
         <translation>Не выбран ни один профиль для удаления</translation>
     </message>
@@ -544,14 +548,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="72"/>
         <location filename="../src/mainwindow.ui" line="75"/>
-        <location filename="../src/mainwindow.cpp" line="1328"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <location filename="../src/mainwindow.ui" line="93"/>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1341"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -572,7 +576,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="1322"/>
+        <location filename="../src/mainwindow.cpp" line="1323"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
@@ -654,7 +658,7 @@ p, li { white-space: pre-wrap; }
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1369"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
@@ -682,7 +686,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
-        <location filename="../src/mainwindow.cpp" line="1450"/>
+        <location filename="../src/mainwindow.cpp" line="1452"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
@@ -737,42 +741,42 @@ p, li { white-space: pre-wrap; }
         <translation>Ищем: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete folder?</source>
         <translation>Удалить папку?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1009"/>
+        <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation type="unfinished">Вы в самом деле хотите удалить %1? {1%2??}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source> and whole content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1152"/>
+        <location filename="../src/mainwindow.cpp" line="1153"/>
         <source>Generating GPG key pair</source>
         <translation>Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1194"/>
+        <location filename="../src/mainwindow.cpp" line="1195"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1320"/>
+        <location filename="../src/mainwindow.cpp" line="1321"/>
         <source>Add folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1321"/>
+        <location filename="../src/mainwindow.cpp" line="1322"/>
         <source>Add password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>Copied to clipboard</source>
         <translation>скопировать в буфер обмена</translation>
     </message>
@@ -781,35 +785,35 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Невозможно изменить содержимое</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="979"/>
+        <location filename="../src/mainwindow.cpp" line="980"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
 (будет создан в %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1044"/>
+        <location filename="../src/mainwindow.cpp" line="1045"/>
         <source>Can not get key list</source>
         <translation>Не удалось получить список ключей</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Не удалось получить список доступных ключей GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1079"/>
         <source>Key not found in keyring</source>
         <translation>Ключ не найден в хранилище ключей GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="979"/>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1368"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>

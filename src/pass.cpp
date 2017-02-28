@@ -225,8 +225,8 @@ void Pass::updateEnv() {
   } else {
     // dbg()<< "Update
     // PASSWORD_STORE_DIR with " + passStore;
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
-                                            QtPassSettings::getPassStore());
+    env.replaceInStrings(
+        store.first(), "PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   }
   exec.setEnvironment(env);
 }

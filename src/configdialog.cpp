@@ -1,6 +1,5 @@
 #include "configdialog.h"
 #include "debughelper.h"
-#include "debughelper.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"

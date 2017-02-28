@@ -38,6 +38,9 @@ Arch Linux
 Gentoo
 `emerge -atv qtpass`
 
+Sabayon
+`equo install qtpass`
+
 FreeBSD
 `pkg install qtpass`
 

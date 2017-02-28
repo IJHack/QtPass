@@ -975,12 +975,13 @@ void MainWindow::on_addButton_clicked() {
   bool ok;
   QString dir =
       Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
-  QString file = QInputDialog::getText(
-      this, tr("New file"), tr("New password file: \n(Will be placed in %1 )")
+  QString file =
+      QInputDialog::getText(this, tr("New file"),
+                            tr("New password file: \n(Will be placed in %1 )")
                                 .arg(QtPassSettings::getPassStore() +
                                      Util::getDir(ui->treeView->currentIndex(),
                                                   true, model, proxyModel)),
-      QLineEdit::Normal, "", &ok);
+                            QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty())
     return;
   file = dir + file;
@@ -1363,12 +1364,13 @@ void MainWindow::addFolder() {
   bool ok;
   QString dir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
-  QString newdir = QInputDialog::getText(
-      this, tr("New file"), tr("New Folder: \n(Will be placed in %1 )")
+  QString newdir =
+      QInputDialog::getText(this, tr("New file"),
+                            tr("New Folder: \n(Will be placed in %1 )")
                                 .arg(QtPassSettings::getPassStore() +
                                      Util::getDir(ui->treeView->currentIndex(),
                                                   true, model, proxyModel)),
-      QLineEdit::Normal, "", &ok);
+                            QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty())
     return;
   newdir.prepend(dir);
