@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name',['name',['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo']]]
+  ['maximized',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singleapplication',['SingleApplication',['../mainwindow_8h.html#a3c3ec6230612f3516ce9c9b17b6a9d66',1,'mainwindow.h']]]
+  ['qt_5fmoc_5fliteral',['QT_MOC_LITERAL',['../moc__executor_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe',1,'QT_MOC_LITERAL():&#160;moc_executor.cpp'],['../moc__imitatepass_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe',1,'QT_MOC_LITERAL():&#160;moc_imitatepass.cpp'],['../moc__pass_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe',1,'QT_MOC_LITERAL():&#160;moc_pass.cpp']]]
 ];
