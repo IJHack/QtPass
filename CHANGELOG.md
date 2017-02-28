@@ -22,6 +22,7 @@
 
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
+- pass is apparently switching out pwgen [\#264](https://github.com/IJHack/QtPass/issues/264)
 - pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
