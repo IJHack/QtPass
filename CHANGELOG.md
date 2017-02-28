@@ -21,6 +21,7 @@
 **Closed issues:**
 
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
+- make install currently broken. [\#289](https://github.com/IJHack/QtPass/issues/289)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
 - pass is apparently switching out pwgen [\#264](https://github.com/IJHack/QtPass/issues/264)
 - pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
