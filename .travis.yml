@@ -47,7 +47,8 @@ script:
 - cd tests
 - qmake
 - make
-- ./auto/util/tst_util
+- if [ "$TRAVIS_OS_NAME" != "osx" ]; then ./auto/util/tst_util; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./auto/util/tst_util.app/Contents/MacOS/tst_util; fi
 - cd -
 notifications:
   irc:
