@@ -5,12 +5,12 @@ var indexSectionsWithContent =
   2: "eu",
   3: "cdefikmpqrstu",
   4: "acdefghiklmnopqrstuw~",
-  5: "acdeghiklmnpstuvw",
+  5: "aceghiklmnpstuvw",
   6: "p",
   7: "cp",
   8: "acgip",
   9: "cd",
-  10: "dqs",
+  10: "ds",
   11: "cfqt"
 };
 

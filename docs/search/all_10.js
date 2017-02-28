@@ -103,7 +103,6 @@ var searchData=
   ['storemodel',['StoreModel',['../class_store_model.html',1,'StoreModel'],['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel::StoreModel()']]],
   ['storemodel_2ecpp',['storemodel.cpp',['../storemodel_8cpp.html',1,'']]],
   ['storemodel_2eh',['storemodel.h',['../storemodel_8h.html',1,'']]],
-  ['stringdata0',['stringdata0',['../structqt__meta__stringdata___executor__t.html#a3bf71668d52a5efe8ea792ab93b5f997',1,'qt_meta_stringdata_Executor_t::stringdata0()'],['../structqt__meta__stringdata___imitate_pass__t.html#aad5636c04b605e947dc7a80228350ee0',1,'qt_meta_stringdata_ImitatePass_t::stringdata0()'],['../structqt__meta__stringdata___pass__t.html#a377ade6f0ddeb5040414dee612b42927',1,'qt_meta_stringdata_Pass_t::stringdata0()']]],
   ['supporteddragactions',['supportedDragActions',['../class_store_model.html#a3d2c74ee8e92cc42a297eef206fb681c',1,'StoreModel']]],
   ['supporteddropactions',['supportedDropActions',['../class_store_model.html#ae8fe3c6b490f66a09fe32c4c1b615ad2',1,'StoreModel']]]
 ];
