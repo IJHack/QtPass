@@ -5,8 +5,8 @@
 #include <QProcessEnvironment>
 #include <QString>
 #ifdef Q_OS_WIN
-#include <bcrypt.h>
 #include <windows.h>
+#include <bcrypt.h>
 #else
 #include <sys/time.h>
 #endif
