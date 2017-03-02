@@ -8,7 +8,6 @@ compiler:
 - gcc
 - clang
 env:
-- QT_BASE=58  
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
@@ -23,6 +22,7 @@ addons:
     build_command: make
     branch_pattern: coverity_scan
 install:
+- export QT_BASE=58      
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew unlink node; brew install node; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
