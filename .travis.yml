@@ -1,8 +1,6 @@
 language: cpp
 dist: trusty
 sudo: true
-env:
-- QT_BASE=58  
 os:
 - linux
 - osx
@@ -10,6 +8,7 @@ compiler:
 - gcc
 - clang
 env:
+- QT_BASE=58  
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
