@@ -1,4 +1,4 @@
-!include(../qtpass.pri) { error("Couldn't find the auto.pri file!") }
+!include(../qtpass.pri) { error("Couldn't find the qtpass.pri file!") }
 
 TEMPLATE   = app
 QT        += core gui
@@ -8,9 +8,8 @@ CONFIG += c++11
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG(debug, debug|release) {
-    QMAKE_CXXFLAGS += -g -c -Wall -coverage -O0
-    QMAKE_LFLAGS += -coverage -O0
-    SUBDIRS += tests
+    QMAKE_CXXFLAGS += -g -c -Wall -O0
+    QMAKE_LFLAGS += -O0
 }
 
 macx {
