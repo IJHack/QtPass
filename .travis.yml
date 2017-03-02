@@ -1,6 +1,9 @@
 language: cpp
 dist: trusty
 sudo: true
+env:
+- QT_BASE=48
+- QT_BASE=58  
 os:
 - linux
 - osx
@@ -11,7 +14,7 @@ env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" && "$QT_BASE" != "48" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt${QT_BASE}-trusty; fi
 addons:
   coverity_scan:
     project:
@@ -24,14 +27,14 @@ addons:
 install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew unlink node; brew install node; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" && "$QT_BASE" != "48" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" && "$QT_BASE" != "48" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt58base qt58tools qt58svg; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" && "$QT_BASE" != "48" ]; then sudo apt-get -qq install qt${QT_BASE}base qt${QT_BASE}tools qt${QT_BASE}svg; fi
 before_script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt58/bin/qt58-env.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" && "$QT_BASE" != "48" ]; then source /opt/qt${QT_BASE}/bin/qt${QT_BASE}-env.sh; fi
 script:
 - qmake -v
 - qmake -Wall qtpass.pro
