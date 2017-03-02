@@ -820,7 +820,8 @@
            </property>
            <property name="icon">
             <iconset theme="list-add">
-             <normaloff>.</normaloff>.</iconset>
+             <normalon>:/icons/document-new.svg</normalon>
+            </iconset>
            </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonFollowStyle</enum>
@@ -834,7 +835,8 @@
            </property>
            <property name="icon">
             <iconset theme="list-remove">
-             <normaloff>.</normaloff>.</iconset>
+             <normalon>:/icons/edit-delete.svg</normalon>
+            </iconset>
            </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonFollowStyle</enum>
