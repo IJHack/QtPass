@@ -218,7 +218,7 @@
         <location filename="../src/configdialog.ui" line="658"/>
         <location filename="../src/configdialog.ui" line="685"/>
         <location filename="../src/configdialog.ui" line="716"/>
-        <location filename="../src/configdialog.ui" line="854"/>
+        <location filename="../src/configdialog.ui" line="856"/>
         <source>...</source>
         <translation>浏览</translation>
     </message>
@@ -268,42 +268,42 @@
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
+        <location filename="../src/configdialog.ui" line="834"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="847"/>
+        <location filename="../src/configdialog.ui" line="849"/>
         <source>Current password-store</source>
         <translation>当前密码库路径</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="867"/>
+        <location filename="../src/configdialog.ui" line="869"/>
         <source>Template</source>
         <translation>模板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="890"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="897"/>
+        <location filename="../src/configdialog.ui" line="899"/>
         <source>Use template</source>
         <translation>使用模板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="904"/>
+        <location filename="../src/configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>只要是密码文件中一个词或几个字加一个英文冒号的格式，都看作模版显示在密码框上，而不仅仅只显示下面列出的项目</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="907"/>
+        <location filename="../src/configdialog.ui" line="909"/>
         <source>Show all fields templated</source>
         <translation>显示所有模板项</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="921"/>
         <source>login
 url
 email</source>
@@ -312,7 +312,7 @@ email</source>
 邮箱</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="934"/>
+        <location filename="../src/configdialog.ui" line="936"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本 </translation>
     </message>
