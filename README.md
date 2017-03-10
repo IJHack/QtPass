@@ -63,7 +63,7 @@ At runtime the only real dependency is `gpg2` but to make the most of it, you'll
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
 On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
 
-On most *nix systems all you need is:
+On most unix systems all you need is:
 ```
 qmake && make && make install
 ```
