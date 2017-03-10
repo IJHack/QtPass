@@ -15,7 +15,6 @@ RESOURCES += resources.qrc
 
 # add Makefile target to generate code coverage
 coverage.target = coverage
-coverage.commands = @echo "Coverage DONE!" $$escape_expand(\\n\\t)
 coverage.commands += cd src/debug && gcov "*.gcda" 1>/dev/null $$escape_expand(\\n\\t)
 coverage.commands += $$escape_expand(\\n)
 
@@ -23,9 +22,8 @@ coverage.depends = check
 
 # add Makefile target to generate code coverage using codecov
 codecov.target = codecov
-codecov.commands = @echo "Starting Codecov!" $$escape_expand(\\n\\t)
-coverage.commands += cd src/ && gcov "*.cpp *.h debug/*.gcda" 1>/dev/null $$escape_expand(\\n\\t)
-codecov.commands += codecov $$escape_expand(\\n\\t)
+codecov.commands += cd src/ && gcov "*.cpp *.h debug/*.gcda" 1>/dev/null $$escape_expand(\\n\\t)
+codecov.commands += codecov -X gcov $$escape_expand(\\n\\t)
 codecov.commands += $$escape_expand(\\n)
 
 codecov.depends = check
