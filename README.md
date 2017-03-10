@@ -11,7 +11,7 @@ the standard unix password manager.
 Features
 --------
 
-* Using pass or git and gpg2 directly
+* Using `pass` or `git` and `gpg2` directly
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
