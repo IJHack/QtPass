@@ -31,12 +31,19 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt58base qt58tools qt58svg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then pip install --user codecov; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov ; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt58/bin/qt58-env.sh; fi
-script:
 - qmake -v
-- qmake CONFIG+=debug -Wall qtpass.pro
+script:
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
+- qmake -Wall qtpass.pro
 - make -j$(nproc)
+- make check TESTARGS="--platform offscreen"
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt src/QtPass.app; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
@@ -44,8 +51,6 @@ script:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pri | cut -d " " -f 6).dmg; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pri | cut -d " " -f 6); fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then make -j$(nproc) check ; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) codecov TESTARGS="--platform offscreen"; fi
 notifications:
   irc:
     channels:

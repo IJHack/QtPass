@@ -12,6 +12,10 @@ CONFIG(debug, debug|release) {
     QMAKE_LFLAGS += -O0
 }
 
+CONFIG(coverage) {
+	QMAKE_CXXFLAGS += --coverage
+}
+
 macx {
     TARGET = QtPass
     QMAKE_MAC_SDK = macosx
