@@ -12,7 +12,7 @@ build_script:
   - cmd: cd tests
   - qmake
   - mingw32-make
-  - cmd: auto\util\release\tst_util.exe
+  - mingw32-make check
 artifacts:
   - path: Output\qtpass-*.exe
   - path: src\release\qtpass.exe
