@@ -9,9 +9,6 @@ build_script:
   - cmd: copy README.md src\release\README.txt
   - cmd: copy LICENSE src\release\LICENSE.txt
   - iscc qtpass.iss
-  - cmd: cd tests
-  - qmake
-  - mingw32-make
   - mingw32-make check
 artifacts:
   - path: Output\qtpass-*.exe
