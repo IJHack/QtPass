@@ -1,5 +1,5 @@
-QT += widgets testlib
+!include(tests.pri) { error("Couldn't find the tests.pri file!") }
+
 CONFIG += no_docs_target
-TEMPLATE = subdirs
 SUBDIRS += auto
 exists(manual): SUBDIRS += manual
