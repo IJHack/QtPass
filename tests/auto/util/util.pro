@@ -1,5 +1,7 @@
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
+message($$QMAKE_LINK_OBJECT_MAX)
+
 SOURCES += tst_util.cpp \
 
 OBJECTS +=      ../../../src/$(OBJECTS_DIR)/util.o \
@@ -27,4 +29,9 @@ INCLUDEPATH += ../../../src
 
 win32 {
     LIBS += -lbcrypt
+	RC_FILE = ../../../windows.rc     
+#	temporary workaround for QTBUG-6453
+	QMAKE_LINK_OBJECT_MAX=24
+#	setting this may also work, but I can't find appropriate value right now
+#	QMAKE_LINK_OBJECT_SCRIPT = 
 }

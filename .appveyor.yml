@@ -5,14 +5,11 @@ install:
 build_script:
   - qmake qtpass.pro CONFIG+=static
   - mingw32-make
+  - mingw32-make check
 #after_build:
   - cmd: copy README.md src\release\README.txt
   - cmd: copy LICENSE src\release\LICENSE.txt
   - iscc qtpass.iss
-  - cmd: cd tests
-  - qmake
-  - mingw32-make
-  - mingw32-make check
 artifacts:
   - path: Output\qtpass-*.exe
   - path: src\release\qtpass.exe
