@@ -20,6 +20,8 @@
 
 **Closed issues:**
 
+- Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
+- Measure unit-test code coverage [\#298](https://github.com/IJHack/QtPass/issues/298)
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
 - make install currently broken. [\#289](https://github.com/IJHack/QtPass/issues/289)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
@@ -33,6 +35,7 @@
 
 **Merged pull requests:**
 
+- Once again, code coverage [\#305](https://github.com/IJHack/QtPass/pull/305) ([tezeb](https://github.com/tezeb))
 - Fixed path of resources.qrc [\#297](https://github.com/IJHack/QtPass/pull/297) ([sideeffect42](https://github.com/sideeffect42))
 - Add pt\_PT translation [\#295](https://github.com/IJHack/QtPass/pull/295) ([keitalbame](https://github.com/keitalbame))
 - Update README.md [\#293](https://github.com/IJHack/QtPass/pull/293) ([joostruis](https://github.com/joostruis))
