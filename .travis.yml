@@ -44,6 +44,8 @@ script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) codecov TESTARGS="--platform offscreen"; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
 - qmake -Wall qtpass.pro
