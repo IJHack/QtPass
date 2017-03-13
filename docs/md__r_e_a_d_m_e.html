@@ -65,7 +65,7 @@ $(function() {
 <div class="title">QtPass </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.org/IJHack/QtPass"></a> <a href="https://ci.appveyor.com/project/annejan/qtpass/branch/master"></a> <a href="https://scan.coverity.com/projects/ijhack-qtpass"></a> <a href="https://coveralls.io/github/IJHack/QtPass"></a></p>
+<div class="textblock"><p><a href="https://travis-ci.org/IJHack/QtPass"></a> <a href="https://ci.appveyor.com/project/annejan/qtpass/branch/master"></a> <a href="https://scan.coverity.com/projects/ijhack-qtpass"></a> <a href="https://coveralls.io/github/IJHack/QtPass"></a> <a href="https://codecov.io/gh/IJhack/QtPass"></a></p>
 <p>QtPass is a GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 <h2>Features </h2>
 <ul>
@@ -96,7 +96,11 @@ $(function() {
 </ul>
 <p>At runtime the only real dependency is <code>gpg2</code> but to make the most of it, you'll need <code>git</code> and <code>pass</code> too.</p>
 <p>Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication. On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.</p>
-<p>On most unix systems all you need is: </p><div class="fragment"><div class="line">qmake &amp;&amp; make &amp;&amp; make install</div></div><!-- fragment --><h2>Security considerations </h2>
+<p>On most unix systems all you need is: </p><div class="fragment"><div class="line">qmake &amp;&amp; make &amp;&amp; make install</div></div><!-- fragment --><h2>Testing </h2>
+<p>This is done with <code>make check</code></p>
+<p>Codecoverage can be done with <code>make lcov</code>, <code>make gcov</code>, <code>make coveralls</code> and/or <code>make codecov</code>.</p>
+<p>Be sure to first run: <code>make distclean &amp;&amp; qmake CONFIG+=coverage qtpass.pro</code></p>
+<h2>Security considerations </h2>
 <p>Using this program will not magically keep your passwords secure against compromised computers even if you use it in combination with a smartcard.</p>
 <p>It does protect future and changed passwords though against anyone with access to your password store only but not your keys. Used with a smartcard it also protects against anyone just monitoring/copying all files/keystrokes on that machine and such an attacker would only gain access to the passwords you actually use. Once you plug in your smartcard and enter your PIN (or due to CVE-2015-3298 even without your PIN) all your passwords available to the machine can be decrypted by it, if there is malicious software targeted specifically against it installed (or at least one that knows how to use a smartcard).</p>
 <p>To get better protection out of use with a smartcard even against a targeted attack I can think of at least two options:</p>
