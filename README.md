@@ -4,6 +4,7 @@ QtPass
 [![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
+[![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -11,7 +12,7 @@ the standard unix password manager.
 Features
 --------
 
-* Using pass or git and gpg2 directly
+* Using `pass` or `git` and `gpg2` directly
 * Configurable shoulder surfing protection options
 * Cross platform: Linux, BSD, OS X and Windows
 * Per-folder user selection for multi recipient encryption
@@ -63,7 +64,7 @@ At runtime the only real dependency is `gpg2` but to make the most of it, you'll
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
 On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
 
-On most *nix systems all you need is:
+On most unix systems all you need is:
 ```
 qmake && make && make install
 ```

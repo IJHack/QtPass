@@ -218,7 +218,7 @@
         <location filename="../src/configdialog.ui" line="658"/>
         <location filename="../src/configdialog.ui" line="685"/>
         <location filename="../src/configdialog.ui" line="716"/>
-        <location filename="../src/configdialog.ui" line="854"/>
+        <location filename="../src/configdialog.ui" line="856"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -268,42 +268,42 @@
         <translation>Ajouter</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
+        <location filename="../src/configdialog.ui" line="834"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="847"/>
+        <location filename="../src/configdialog.ui" line="849"/>
         <source>Current password-store</source>
         <translation>Magasin de mots de passe actuel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="867"/>
+        <location filename="../src/configdialog.ui" line="869"/>
         <source>Template</source>
         <translation>Template</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="890"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="897"/>
+        <location filename="../src/configdialog.ui" line="899"/>
         <source>Use template</source>
         <translation>Utiliser un template</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="904"/>
+        <location filename="../src/configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Montrer toutes les lignes qui commencent par un mot suivi de deux points en tant que champs dans les champs de mots de passe, pas uniquement ceux listés</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="907"/>
+        <location filename="../src/configdialog.ui" line="909"/>
         <source>Show all fields templated</source>
         <translation>Afficher tous les champs avec un template</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="921"/>
         <source>login
 url
 email</source>
@@ -312,7 +312,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="934"/>
+        <location filename="../src/configdialog.ui" line="936"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>

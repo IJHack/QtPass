@@ -28,10 +28,17 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt58base qt58tools qt58svg; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then pip install --user codecov; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov ; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt58/bin/qt58-env.sh; fi
-script:
 - qmake -v
+script:
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
 notifications:

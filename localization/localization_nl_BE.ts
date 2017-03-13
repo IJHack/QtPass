@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik selectie ipv klembord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoudsvlak gedrag:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -218,7 +218,7 @@
         <location filename="../src/configdialog.ui" line="658"/>
         <location filename="../src/configdialog.ui" line="685"/>
         <location filename="../src/configdialog.ui" line="716"/>
-        <location filename="../src/configdialog.ui" line="854"/>
+        <location filename="../src/configdialog.ui" line="856"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -268,42 +268,42 @@
         <translation>Toevoegen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
+        <location filename="../src/configdialog.ui" line="834"/>
         <source>Delete</source>
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="847"/>
+        <location filename="../src/configdialog.ui" line="849"/>
         <source>Current password-store</source>
         <translation>Huidige password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="867"/>
+        <location filename="../src/configdialog.ui" line="869"/>
         <source>Template</source>
         <translation>Template</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="890"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>Templates voegen velden toe aan de wachtwoord aanmaak- bewerk- en toon-schermen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="897"/>
+        <location filename="../src/configdialog.ui" line="899"/>
         <source>Use template</source>
         <translation>Gebruik template</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="904"/>
+        <location filename="../src/configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Geef alle regels die beginnen met een woord, gevolgd door een dubbele punt als velden weer, niet alleen de opgegeven</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="907"/>
+        <location filename="../src/configdialog.ui" line="909"/>
         <source>Show all fields templated</source>
         <translation>Toon alle velden getemplate</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="921"/>
         <source>login
 url
 email</source>
@@ -312,7 +312,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="934"/>
+        <location filename="../src/configdialog.ui" line="936"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versie </translation>
     </message>
@@ -772,12 +772,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Weet je zeker dat je %1 wil verwijderen? {1%2??}</translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1012"/>
         <source> and whole content</source>
-        <translation type="unfinished"></translation>
+        <translation> en inhoud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1045"/>

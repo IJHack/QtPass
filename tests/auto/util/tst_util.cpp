@@ -57,8 +57,8 @@ void tst_util::cleanupTestCase() {}
  * of Util::normalizeFolderPath the paths should always end with a slash
  */
 void tst_util::normalizeFolderPath() {
-  QCOMPARE(Util::normalizeFolderPath("test"), QString("test/"));
-  QCOMPARE(Util::normalizeFolderPath("test/"), QString("test/"));
+  QCOMPARE(Util::normalizeFolderPath("test"), QDir::toNativeSeparators("test/"));
+  QCOMPARE(Util::normalizeFolderPath("test/"), QDir::toNativeSeparators("test/"));
 }
 
 QTEST_MAIN(tst_util)
