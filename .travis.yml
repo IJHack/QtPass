@@ -9,7 +9,7 @@ env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty; fi
+- sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty
 addons:
   coverity_scan:
     project:
@@ -20,25 +20,12 @@ addons:
     build_command: make
     branch_pattern: coverity_scan
 install:
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew unlink node; brew install node; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt58base qt58tools qt58svg; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then pip install --user codecov; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov ; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
+- sudo apt-get -qq update
+- sudo apt-get -qq install qt58base qt58tools qt58svg
 before_script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt58/bin/qt58-env.sh; fi
+- source /opt/qt58/bin/qt58-env.sh
 - qmake -v
 script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
 - qmake -Wall qtpass.pro
 - make -j$(nproc)
 notifications:
@@ -47,14 +34,4 @@ notifications:
     - chat.freenode.net#IJhack
     on_success: change
     on_failure: always
-deploy:
-  provider: releases
-  api_key:
-    secure: O6LAl2R5QIe/mgQwG5/pzbdC8gS58wtGVF2ebTVGgYsCgY0nRjLZ19H7BiQrYjbbXs8yw6cQjA+xbxNiVsIVs+Dx9j/fy2JOBeBTrGijlWLcJPT6/Ab65EjI2T96XvI8/YejRmbgjIdXFfuKtD/V4MM12LrvrvktwJp00G9l1Go=
-  file: "qtpass-$VERSION.dmg"
-  on:
-    repo: IJHack/qtpass
-    tags: true
-    condition: $TRAVIS_OS_NAME = osx && $CC = clang
-  skip_cleanup: true
 
