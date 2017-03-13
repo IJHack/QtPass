@@ -70,6 +70,15 @@ On most unix systems all you need is:
 qmake && make && make install
 ```
 
+Testing
+-------
+
+This is done with `make check`
+
+Codecoverage can be done with `make lcov`, `make gcov`, `make coveralls` and/or `make codecov`.
+
+Be sure to first run: `make distclean && qmake CONFIG+=coverage qtpass.pro`
+
 Security considerations
 -----------------------
 
