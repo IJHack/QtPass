@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/deselectabletreeview.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - deselectabletreeview.h<span style="font-size: 80%;"> (source / <a href="deselectabletreeview.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #ifndef DESELECTABLETREEVIEW_H</a>
+<span class="lineNum">       2 </span>            : #define DESELECTABLETREEVIEW_H
+<span class="lineNum">       3 </span>            : #include &quot;QMouseEvent&quot;
+<span class="lineNum">       4 </span>            : #include &quot;QTreeView&quot;
+<span class="lineNum">       5 </span>            : #include &quot;mainwindow.h&quot;
+<span class="lineNum">       6 </span>            : #include &lt;QTime&gt;
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : /**
+<span class="lineNum">       9 </span>            :  * @brief The DeselectableTreeView class
+<span class="lineNum">      10 </span>            :  * loosly based on http://stackoverflow.com/questions/2761284/
+<span class="lineNum">      11 </span>            :  * thanks to Yassir Ennazk
+<span class="lineNum">      12 </span>            :  */
+<span class="lineNum">      13 </span>            : class DeselectableTreeView : public QTreeView {
+<span class="lineNum">      14 </span>            :   Q_OBJECT
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : public:
+<span class="lineNum">      17 </span>            :   /**
+<span class="lineNum">      18 </span>            :    * @brief DeselectableTreeView standard constructor
+<a name="19"><span class="lineNum">      19 </span>            :    * @param parent</a>
+<span class="lineNum">      20 </span>            :    */
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 :   DeselectableTreeView(QWidget *parent) : QTreeView(parent) {}</span>
+<span class="lineNum">      22 </span>            :   /**
+<a name="23"><span class="lineNum">      23 </span>            :    * @brief ~DeselectableTreeView standard destructor</a>
+<span class="lineNum">      24 </span>            :    */
+<span class="lineNum">      25 </span><span class="lineNoCov">          0 :   virtual ~DeselectableTreeView() {}</span>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span>            : signals:
+<span class="lineNum">      28 </span>            :   /**
+<span class="lineNum">      29 </span>            :    * @brief emptyClicked event
+<span class="lineNum">      30 </span>            :    */
+<span class="lineNum">      31 </span>            :   void emptyClicked();
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span>            : private:
+<span class="lineNum">      34 </span><span class="lineNoCov">          0 :   bool doubleClickHappened = false;</span>
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :   bool clickSelected = false;</span>
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            :   /**
+<span class="lineNum">      38 </span>            :    * @brief mousePressEvent registers if the field was pre-selected
+<a name="39"><span class="lineNum">      39 </span>            :    * @param event</a>
+<span class="lineNum">      40 </span>            :    */
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 :   virtual void mousePressEvent(QMouseEvent *event) {</span>
+<span class="lineNum">      42 </span><span class="lineNoCov">          0 :     clickSelected = selectionModel()-&gt;isSelected(indexAt(event-&gt;pos()));</span>
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 :     QTreeView::mousePressEvent(event);</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            :   /**
+<span class="lineNum">      47 </span>            :    * @brief mouseReleaseEvent now deselects on click on empty space
+<a name="48"><span class="lineNum">      48 </span>            :    * @param event</a>
+<span class="lineNum">      49 </span>            :    */
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :   void mouseReleaseEvent(QMouseEvent *event) {</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :     doubleClickHappened = false;</span>
+<span class="lineNum">      52 </span>            :     // The timer is to distinguish between single and double click
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :     QTime dieTime = QTime::currentTime().addMSecs(200);</span>
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :     while (QTime::currentTime() &lt; dieTime)</span>
+<span class="lineNum">      55 </span><span class="lineNoCov">          0 :       QCoreApplication::processEvents(QEventLoop::AllEvents, 100);</span>
+<span class="lineNum">      56 </span>            :     // could this be done nicer?
+<span class="lineNum">      57 </span><span class="lineNoCov">          0 :     if (!doubleClickHappened &amp;&amp; clickSelected) {</span>
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :       QModelIndex item = indexAt(event-&gt;pos());</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :       bool selected = selectionModel()-&gt;isSelected(indexAt(event-&gt;pos()));</span>
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :       if ((item.row() == -1 &amp;&amp; item.column() == -1) || selected) {</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :         clearSelection();</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :         const QModelIndex index;</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :         selectionModel()-&gt;setCurrentIndex(index, QItemSelectionModel::Select);</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :         emit emptyClicked();</span>
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 :       } else {</span>
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :         QTreeView::mouseReleaseEvent(event);</span>
+<span class="lineNum">      67 </span>            :       }
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 :     } else {</span>
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :       QTreeView::mouseReleaseEvent(event);</span>
+<span class="lineNum">      70 </span>            :     }
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :     clickSelected = false;</span>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            :   /**
+<span class="lineNum">      75 </span>            :    * @brief mouseDoubleClickEvent
+<a name="76"><span class="lineNum">      76 </span>            :    * @param event</a>
+<span class="lineNum">      77 </span>            :    */
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :   void mouseDoubleClickEvent(QMouseEvent *event) {</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :     doubleClickHappened = true;</span>
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 :     QTreeView::mouseDoubleClickEvent(event);</span>
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">      82 </span>            : };
+<span class="lineNum">      83 </span>            : 
+<span class="lineNum">      84 </span>            : #endif // DESELECTABLETREEVIEW_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

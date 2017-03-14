@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/ui_mainwindow.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - ui_mainwindow.h<span style="font-size: 80%;"> (source / <a href="ui_mainwindow.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">253</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">45</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /********************************************************************************</a>
+<span class="lineNum">       2 </span>            : ** Form generated from reading UI file 'mainwindow.ui'
+<span class="lineNum">       3 </span>            : **
+<span class="lineNum">       4 </span>            : ** Created by: Qt User Interface Compiler version 5.8.0
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** WARNING! All changes made in this file will be lost when recompiling UI file!
+<span class="lineNum">       7 </span>            : ********************************************************************************/
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #ifndef UI_MAINWINDOW_H
+<span class="lineNum">      10 </span>            : #define UI_MAINWINDOW_H
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : #include &lt;QtCore/QVariant&gt;
+<span class="lineNum">      13 </span>            : #include &lt;QtWidgets/QAction&gt;
+<span class="lineNum">      14 </span>            : #include &lt;QtWidgets/QApplication&gt;
+<span class="lineNum">      15 </span>            : #include &lt;QtWidgets/QButtonGroup&gt;
+<span class="lineNum">      16 </span>            : #include &lt;QtWidgets/QComboBox&gt;
+<span class="lineNum">      17 </span>            : #include &lt;QtWidgets/QFrame&gt;
+<span class="lineNum">      18 </span>            : #include &lt;QtWidgets/QGridLayout&gt;
+<span class="lineNum">      19 </span>            : #include &lt;QtWidgets/QHBoxLayout&gt;
+<span class="lineNum">      20 </span>            : #include &lt;QtWidgets/QHeaderView&gt;
+<span class="lineNum">      21 </span>            : #include &lt;QtWidgets/QLabel&gt;
+<span class="lineNum">      22 </span>            : #include &lt;QtWidgets/QLineEdit&gt;
+<span class="lineNum">      23 </span>            : #include &lt;QtWidgets/QMainWindow&gt;
+<span class="lineNum">      24 </span>            : #include &lt;QtWidgets/QSpacerItem&gt;
+<span class="lineNum">      25 </span>            : #include &lt;QtWidgets/QSplitter&gt;
+<span class="lineNum">      26 </span>            : #include &lt;QtWidgets/QStatusBar&gt;
+<span class="lineNum">      27 </span>            : #include &lt;QtWidgets/QTextBrowser&gt;
+<span class="lineNum">      28 </span>            : #include &lt;QtWidgets/QToolButton&gt;
+<span class="lineNum">      29 </span>            : #include &lt;QtWidgets/QVBoxLayout&gt;
+<span class="lineNum">      30 </span>            : #include &lt;QtWidgets/QWidget&gt;
+<span class="lineNum">      31 </span>            : #include &lt;deselectabletreeview.h&gt;
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      34 </span>            : 
+<span class="lineNum">      35 </span>            : class Ui_MainWindow
+<span class="lineNum">      36 </span>            : {
+<span class="lineNum">      37 </span>            : public:
+<span class="lineNum">      38 </span>            :     QAction *actionQtpass;
+<span class="lineNum">      39 </span>            :     QWidget *centralWidget;
+<span class="lineNum">      40 </span>            :     QVBoxLayout *verticalLayout_7;
+<span class="lineNum">      41 </span>            :     QFrame *frame;
+<span class="lineNum">      42 </span>            :     QHBoxLayout *horizontalLayout_2;
+<span class="lineNum">      43 </span>            :     QToolButton *addButton;
+<span class="lineNum">      44 </span>            :     QToolButton *editButton;
+<span class="lineNum">      45 </span>            :     QToolButton *deleteButton;
+<span class="lineNum">      46 </span>            :     QSpacerItem *horizontalSpacer;
+<span class="lineNum">      47 </span>            :     QToolButton *pushButton;
+<span class="lineNum">      48 </span>            :     QToolButton *updateButton;
+<span class="lineNum">      49 </span>            :     QSpacerItem *horizontalSpacer_2;
+<span class="lineNum">      50 </span>            :     QToolButton *usersButton;
+<span class="lineNum">      51 </span>            :     QToolButton *configButton;
+<span class="lineNum">      52 </span>            :     QSpacerItem *horizontalSpacer_3;
+<span class="lineNum">      53 </span>            :     QComboBox *profileBox;
+<span class="lineNum">      54 </span>            :     QSplitter *splitter;
+<span class="lineNum">      55 </span>            :     QWidget *layoutWidget;
+<span class="lineNum">      56 </span>            :     QVBoxLayout *verticalLayoutTree;
+<span class="lineNum">      57 </span>            :     QLineEdit *lineEdit;
+<span class="lineNum">      58 </span>            :     DeselectableTreeView *treeView;
+<span class="lineNum">      59 </span>            :     QWidget *verticalLayoutWidget;
+<span class="lineNum">      60 </span>            :     QVBoxLayout *verticalLayoutPassword;
+<span class="lineNum">      61 </span>            :     QLabel *passwordName;
+<span class="lineNum">      62 </span>            :     QSpacerItem *verticalSpacer_2;
+<span class="lineNum">      63 </span>            :     QGridLayout *gridLayout;
+<span class="lineNum">      64 </span>            :     QTextBrowser *textBrowser;
+<span class="lineNum">      65 </span>            :     QHBoxLayout *horizontalLayout_3;
+<span class="lineNum">      66 </span>            :     QSpacerItem *horizontalSpacer_5;
+<span class="lineNum">      67 </span>            :     QLabel *QtPassIcon;
+<a name="68"><span class="lineNum">      68 </span>            :     QStatusBar *statusBar;</a>
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :     void setupUi(QMainWindow *MainWindow)</span>
+<a name="71"><span class="lineNum">      71 </span>            :     {</a>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :         if (MainWindow-&gt;objectName().isEmpty())</span>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :             MainWindow-&gt;setObjectName(QStringLiteral(&quot;MainWindow&quot;));</span>
+<a name="74"><span class="lineNum">      74 </span><span class="lineNoCov">          0 :         MainWindow-&gt;resize(801, 484);</span></a>
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :         actionQtpass = new QAction(MainWindow);</span>
+<a name="76"><span class="lineNum">      76 </span><span class="lineNoCov">          0 :         actionQtpass-&gt;setObjectName(QStringLiteral(&quot;actionQtpass&quot;));</span></a>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :         centralWidget = new QWidget(MainWindow);</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :         centralWidget-&gt;setObjectName(QStringLiteral(&quot;centralWidget&quot;));</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :         verticalLayout_7 = new QVBoxLayout(centralWidget);</span>
+<a name="80"><span class="lineNum">      80 </span><span class="lineNoCov">          0 :         verticalLayout_7-&gt;setSpacing(6);</span></a>
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :         verticalLayout_7-&gt;setContentsMargins(11, 11, 11, 11);</span>
+<a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :         verticalLayout_7-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_7&quot;));</span></a>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :         frame = new QFrame(centralWidget);</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :         frame-&gt;setObjectName(QStringLiteral(&quot;frame&quot;));</span>
+<span class="lineNum">      85 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);</span>
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :         sizePolicy.setHorizontalStretch(0);</span>
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :         sizePolicy.setVerticalStretch(0);</span>
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 :         sizePolicy.setHeightForWidth(frame-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">      89 </span><span class="lineNoCov">          0 :         frame-&gt;setSizePolicy(sizePolicy);</span>
+<span class="lineNum">      90 </span><span class="lineNoCov">          0 :         horizontalLayout_2 = new QHBoxLayout(frame);</span>
+<a name="91"><span class="lineNum">      91 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setSpacing(6);</span></a>
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setContentsMargins(11, 11, 11, 11);</span>
+<span class="lineNum">      93 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_2&quot;));</span>
+<a name="94"><span class="lineNum">      94 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :         addButton = new QToolButton(frame);</span>
+<span class="lineNum">      96 </span><span class="lineNoCov">          0 :         addButton-&gt;setObjectName(QStringLiteral(&quot;addButton&quot;));</span>
+<a name="97"><span class="lineNum">      97 </span><span class="lineNoCov">          0 :         addButton-&gt;setAcceptDrops(false);</span></a>
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 :         QIcon icon;</span>
+<span class="lineNum">      99 </span><span class="lineNoCov">          0 :         QString iconThemeName = QStringLiteral(&quot;document-new&quot;);</span>
+<span class="lineNum">     100 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="101"><span class="lineNum">     101 </span><span class="lineNoCov">          0 :             icon = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     102 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     103 </span><span class="lineNoCov">          0 :             icon.addFile(QStringLiteral(&quot;:/icons/document-new.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     104 </span>            :         }
+<span class="lineNum">     105 </span><span class="lineNoCov">          0 :         addButton-&gt;setIcon(icon);</span>
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 :         addButton-&gt;setPopupMode(QToolButton::MenuButtonPopup);</span>
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 :         addButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     108 </span><span class="lineNoCov">          0 :         addButton-&gt;setAutoRaise(false);</span>
+<span class="lineNum">     109 </span><span class="lineNoCov">          0 :         addButton-&gt;setArrowType(Qt::NoArrow);</span>
+<span class="lineNum">     110 </span>            : 
+<span class="lineNum">     111 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(addButton);</span>
+<a name="112"><span class="lineNum">     112 </span>            : </a>
+<span class="lineNum">     113 </span><span class="lineNoCov">          0 :         editButton = new QToolButton(frame);</span>
+<a name="114"><span class="lineNum">     114 </span><span class="lineNoCov">          0 :         editButton-&gt;setObjectName(QStringLiteral(&quot;editButton&quot;));</span></a>
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 :         QIcon icon1;</span>
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;document-properties&quot;);</span>
+<span class="lineNum">     117 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="118"><span class="lineNum">     118 </span><span class="lineNoCov">          0 :             icon1 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     120 </span><span class="lineNoCov">          0 :             icon1.addFile(QStringLiteral(&quot;:/icons/document-properties.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     121 </span>            :         }
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 :         editButton-&gt;setIcon(icon1);</span>
+<span class="lineNum">     123 </span><span class="lineNoCov">          0 :         editButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     124 </span>            : 
+<span class="lineNum">     125 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(editButton);</span>
+<a name="126"><span class="lineNum">     126 </span>            : </a>
+<span class="lineNum">     127 </span><span class="lineNoCov">          0 :         deleteButton = new QToolButton(frame);</span>
+<a name="128"><span class="lineNum">     128 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setObjectName(QStringLiteral(&quot;deleteButton&quot;));</span></a>
+<span class="lineNum">     129 </span><span class="lineNoCov">          0 :         QIcon icon2;</span>
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;edit-delete&quot;);</span>
+<span class="lineNum">     131 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="132"><span class="lineNum">     132 </span><span class="lineNoCov">          0 :             icon2 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     134 </span><span class="lineNoCov">          0 :             icon2.addFile(QStringLiteral(&quot;:/icons/edit-delete.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     135 </span>            :         }
+<span class="lineNum">     136 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setIcon(icon2);</span>
+<span class="lineNum">     137 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     138 </span>            : 
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(deleteButton);</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 :         horizontalSpacer = new QSpacerItem(24, 24, QSizePolicy::Maximum, QSizePolicy::Minimum);</span>
+<span class="lineNum">     142 </span>            : 
+<span class="lineNum">     143 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addItem(horizontalSpacer);</span>
+<a name="144"><span class="lineNum">     144 </span>            : </a>
+<span class="lineNum">     145 </span><span class="lineNoCov">          0 :         pushButton = new QToolButton(frame);</span>
+<a name="146"><span class="lineNum">     146 </span><span class="lineNoCov">          0 :         pushButton-&gt;setObjectName(QStringLiteral(&quot;pushButton&quot;));</span></a>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :         QIcon icon3;</span>
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;go-top&quot;);</span>
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="150"><span class="lineNum">     150 </span><span class="lineNoCov">          0 :             icon3 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     151 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :             icon3.addFile(QStringLiteral(&quot;:/icons/go-top.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     153 </span>            :         }
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 :         pushButton-&gt;setIcon(icon3);</span>
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :         pushButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     156 </span>            : 
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(pushButton);</span>
+<a name="158"><span class="lineNum">     158 </span>            : </a>
+<span class="lineNum">     159 </span><span class="lineNoCov">          0 :         updateButton = new QToolButton(frame);</span>
+<a name="160"><span class="lineNum">     160 </span><span class="lineNoCov">          0 :         updateButton-&gt;setObjectName(QStringLiteral(&quot;updateButton&quot;));</span></a>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :         QIcon icon4;</span>
+<span class="lineNum">     162 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;go-bottom&quot;);</span>
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :             icon4 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     166 </span><span class="lineNoCov">          0 :             icon4.addFile(QStringLiteral(&quot;:/icons/go-bottom.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     167 </span>            :         }
+<span class="lineNum">     168 </span><span class="lineNoCov">          0 :         updateButton-&gt;setIcon(icon4);</span>
+<span class="lineNum">     169 </span><span class="lineNoCov">          0 :         updateButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     170 </span>            : 
+<span class="lineNum">     171 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(updateButton);</span>
+<span class="lineNum">     172 </span>            : 
+<span class="lineNum">     173 </span><span class="lineNoCov">          0 :         horizontalSpacer_2 = new QSpacerItem(24, 24, QSizePolicy::Maximum, QSizePolicy::Minimum);</span>
+<span class="lineNum">     174 </span>            : 
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addItem(horizontalSpacer_2);</span>
+<a name="176"><span class="lineNum">     176 </span>            : </a>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :         usersButton = new QToolButton(frame);</span>
+<a name="178"><span class="lineNum">     178 </span><span class="lineNoCov">          0 :         usersButton-&gt;setObjectName(QStringLiteral(&quot;usersButton&quot;));</span></a>
+<span class="lineNum">     179 </span><span class="lineNoCov">          0 :         QIcon icon5;</span>
+<span class="lineNum">     180 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;x-office-address-book&quot;);</span>
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="182"><span class="lineNum">     182 </span><span class="lineNoCov">          0 :             icon5 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     183 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     184 </span><span class="lineNoCov">          0 :             icon5.addFile(QStringLiteral(&quot;:/icons/x-office-address-book.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     185 </span>            :         }
+<span class="lineNum">     186 </span><span class="lineNoCov">          0 :         usersButton-&gt;setIcon(icon5);</span>
+<span class="lineNum">     187 </span><span class="lineNoCov">          0 :         usersButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     188 </span>            : 
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(usersButton);</span>
+<a name="190"><span class="lineNum">     190 </span>            : </a>
+<span class="lineNum">     191 </span><span class="lineNoCov">          0 :         configButton = new QToolButton(frame);</span>
+<a name="192"><span class="lineNum">     192 </span><span class="lineNoCov">          0 :         configButton-&gt;setObjectName(QStringLiteral(&quot;configButton&quot;));</span></a>
+<span class="lineNum">     193 </span><span class="lineNoCov">          0 :         QIcon icon6;</span>
+<span class="lineNum">     194 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;applications-system&quot;);</span>
+<span class="lineNum">     195 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="196"><span class="lineNum">     196 </span><span class="lineNoCov">          0 :             icon6 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     197 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     198 </span><span class="lineNoCov">          0 :             icon6.addFile(QStringLiteral(&quot;:/icons/applications-system.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     199 </span>            :         }
+<span class="lineNum">     200 </span><span class="lineNoCov">          0 :         configButton-&gt;setIcon(icon6);</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :         configButton-&gt;setToolButtonStyle(Qt::ToolButtonTextBesideIcon);</span>
+<span class="lineNum">     202 </span>            : 
+<span class="lineNum">     203 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(configButton);</span>
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span><span class="lineNoCov">          0 :         horizontalSpacer_3 = new QSpacerItem(24, 24, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     206 </span>            : 
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addItem(horizontalSpacer_3);</span>
+<a name="208"><span class="lineNum">     208 </span>            : </a>
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :         profileBox = new QComboBox(frame);</span>
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 :         profileBox-&gt;setObjectName(QStringLiteral(&quot;profileBox&quot;));</span>
+<span class="lineNum">     211 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);</span>
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 :         sizePolicy1.setHorizontalStretch(0);</span>
+<span class="lineNum">     213 </span><span class="lineNoCov">          0 :         sizePolicy1.setVerticalStretch(0);</span>
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(profileBox-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     215 </span><span class="lineNoCov">          0 :         profileBox-&gt;setSizePolicy(sizePolicy1);</span>
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :         profileBox-&gt;setMinimumSize(QSize(100, 26));</span>
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :         profileBox-&gt;setMaximumSize(QSize(100000, 16777215));</span>
+<span class="lineNum">     218 </span>            : 
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(profileBox);</span>
+<span class="lineNum">     220 </span>            : 
+<span class="lineNum">     221 </span>            : 
+<span class="lineNum">     222 </span><span class="lineNoCov">          0 :         verticalLayout_7-&gt;addWidget(frame);</span>
+<a name="223"><span class="lineNum">     223 </span>            : </a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineNoCov">          0 :         splitter = new QSplitter(centralWidget);</span></a>
+<span class="lineNum">     225 </span><span class="lineNoCov">          0 :         splitter-&gt;setObjectName(QStringLiteral(&quot;splitter&quot;));</span>
+<span class="lineNum">     226 </span><span class="lineNoCov">          0 :         splitter-&gt;setStyleSheet(QStringLiteral(&quot;&quot;));</span>
+<a name="227"><span class="lineNum">     227 </span><span class="lineNoCov">          0 :         splitter-&gt;setOrientation(Qt::Horizontal);</span></a>
+<span class="lineNum">     228 </span><span class="lineNoCov">          0 :         layoutWidget = new QWidget(splitter);</span>
+<span class="lineNum">     229 </span><span class="lineNoCov">          0 :         layoutWidget-&gt;setObjectName(QStringLiteral(&quot;layoutWidget&quot;));</span>
+<span class="lineNum">     230 </span><span class="lineNoCov">          0 :         verticalLayoutTree = new QVBoxLayout(layoutWidget);</span>
+<a name="231"><span class="lineNum">     231 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;setSpacing(6);</span></a>
+<span class="lineNum">     232 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;setContentsMargins(11, 11, 11, 11);</span>
+<span class="lineNum">     233 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;setObjectName(QStringLiteral(&quot;verticalLayoutTree&quot;));</span>
+<a name="234"><span class="lineNum">     234 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;setContentsMargins(0, 5, 0, 0);</span></a>
+<span class="lineNum">     235 </span><span class="lineNoCov">          0 :         lineEdit = new QLineEdit(layoutWidget);</span>
+<span class="lineNum">     236 </span><span class="lineNoCov">          0 :         lineEdit-&gt;setObjectName(QStringLiteral(&quot;lineEdit&quot;));</span>
+<span class="lineNum">     237 </span><span class="lineNoCov">          0 :         lineEdit-&gt;setMinimumSize(QSize(0, 26));</span>
+<span class="lineNum">     238 </span>            : 
+<span class="lineNum">     239 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;addWidget(lineEdit);</span>
+<a name="240"><span class="lineNum">     240 </span>            : </a>
+<span class="lineNum">     241 </span><span class="lineNoCov">          0 :         treeView = new DeselectableTreeView(layoutWidget);</span>
+<span class="lineNum">     242 </span><span class="lineNoCov">          0 :         treeView-&gt;setObjectName(QStringLiteral(&quot;treeView&quot;));</span>
+<span class="lineNum">     243 </span><span class="lineNoCov">          0 :         treeView-&gt;setAcceptDrops(true);</span>
+<span class="lineNum">     244 </span><span class="lineNoCov">          0 :         treeView-&gt;setDragEnabled(true);</span>
+<span class="lineNum">     245 </span><span class="lineNoCov">          0 :         treeView-&gt;setDragDropMode(QAbstractItemView::InternalMove);</span>
+<span class="lineNum">     246 </span>            : 
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 :         verticalLayoutTree-&gt;addWidget(treeView);</span>
+<span class="lineNum">     248 </span>            : 
+<a name="249"><span class="lineNum">     249 </span><span class="lineNoCov">          0 :         splitter-&gt;addWidget(layoutWidget);</span></a>
+<span class="lineNum">     250 </span><span class="lineNoCov">          0 :         verticalLayoutWidget = new QWidget(splitter);</span>
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :         verticalLayoutWidget-&gt;setObjectName(QStringLiteral(&quot;verticalLayoutWidget&quot;));</span>
+<span class="lineNum">     252 </span><span class="lineNoCov">          0 :         verticalLayoutPassword = new QVBoxLayout(verticalLayoutWidget);</span>
+<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;setSpacing(0);</span></a>
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;setContentsMargins(11, 11, 11, 11);</span>
+<span class="lineNum">     255 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;setObjectName(QStringLiteral(&quot;verticalLayoutPassword&quot;));</span>
+<a name="256"><span class="lineNum">     256 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;setContentsMargins(0, 7, 0, 0);</span></a>
+<span class="lineNum">     257 </span><span class="lineNoCov">          0 :         passwordName = new QLabel(verticalLayoutWidget);</span>
+<span class="lineNum">     258 </span><span class="lineNoCov">          0 :         passwordName-&gt;setObjectName(QStringLiteral(&quot;passwordName&quot;));</span>
+<span class="lineNum">     259 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);</span>
+<span class="lineNum">     260 </span><span class="lineNoCov">          0 :         sizePolicy2.setHorizontalStretch(0);</span>
+<span class="lineNum">     261 </span><span class="lineNoCov">          0 :         sizePolicy2.setVerticalStretch(0);</span>
+<span class="lineNum">     262 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(passwordName-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     263 </span><span class="lineNoCov">          0 :         passwordName-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     264 </span><span class="lineNoCov">          0 :         passwordName-&gt;setMinimumSize(QSize(0, 20));</span>
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 :         passwordName-&gt;setMaximumSize(QSize(10000000, 30));</span>
+<span class="lineNum">     266 </span><span class="lineNoCov">          0 :         QFont font;</span>
+<span class="lineNum">     267 </span><span class="lineNoCov">          0 :         font.setPointSize(14);</span>
+<span class="lineNum">     268 </span><span class="lineNoCov">          0 :         font.setBold(false);</span>
+<span class="lineNum">     269 </span><span class="lineNoCov">          0 :         font.setItalic(false);</span>
+<span class="lineNum">     270 </span><span class="lineNoCov">          0 :         font.setUnderline(false);</span>
+<span class="lineNum">     271 </span><span class="lineNoCov">          0 :         font.setWeight(50);</span>
+<span class="lineNum">     272 </span><span class="lineNoCov">          0 :         font.setKerning(true);</span>
+<span class="lineNum">     273 </span><span class="lineNoCov">          0 :         passwordName-&gt;setFont(font);</span>
+<span class="lineNum">     274 </span><span class="lineNoCov">          0 :         passwordName-&gt;setFrameShape(QFrame::NoFrame);</span>
+<span class="lineNum">     275 </span><span class="lineNoCov">          0 :         passwordName-&gt;setFrameShadow(QFrame::Plain);</span>
+<span class="lineNum">     276 </span><span class="lineNoCov">          0 :         passwordName-&gt;setScaledContents(false);</span>
+<span class="lineNum">     277 </span>            : 
+<span class="lineNum">     278 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;addWidget(passwordName);</span>
+<span class="lineNum">     279 </span>            : 
+<span class="lineNum">     280 </span><span class="lineNoCov">          0 :         verticalSpacer_2 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);</span>
+<span class="lineNum">     281 </span>            : 
+<span class="lineNum">     282 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;addItem(verticalSpacer_2);</span>
+<span class="lineNum">     283 </span>            : 
+<a name="284"><span class="lineNum">     284 </span><span class="lineNoCov">          0 :         gridLayout = new QGridLayout();</span></a>
+<span class="lineNum">     285 </span><span class="lineNoCov">          0 :         gridLayout-&gt;setSpacing(6);</span>
+<span class="lineNum">     286 </span><span class="lineNoCov">          0 :         gridLayout-&gt;setObjectName(QStringLiteral(&quot;gridLayout&quot;));</span>
+<span class="lineNum">     287 </span>            : 
+<span class="lineNum">     288 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;addLayout(gridLayout);</span>
+<a name="289"><span class="lineNum">     289 </span>            : </a>
+<span class="lineNum">     290 </span><span class="lineNoCov">          0 :         textBrowser = new QTextBrowser(verticalLayoutWidget);</span>
+<span class="lineNum">     291 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setObjectName(QStringLiteral(&quot;textBrowser&quot;));</span>
+<span class="lineNum">     292 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Expanding);</span>
+<span class="lineNum">     293 </span><span class="lineNoCov">          0 :         sizePolicy3.setHorizontalStretch(0);</span>
+<span class="lineNum">     294 </span><span class="lineNoCov">          0 :         sizePolicy3.setVerticalStretch(0);</span>
+<span class="lineNum">     295 </span><span class="lineNoCov">          0 :         sizePolicy3.setHeightForWidth(textBrowser-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     296 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setSizePolicy(sizePolicy3);</span>
+<a name="297"><span class="lineNum">     297 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setMinimumSize(QSize(0, 20));</span></a>
+<span class="lineNum">     298 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setAutoFillBackground(false);</span>
+<span class="lineNum">     299 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setStyleSheet(QStringLiteral(&quot;background: transparent&quot;));</span>
+<span class="lineNum">     300 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setFrameShape(QFrame::NoFrame);</span>
+<span class="lineNum">     301 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setFrameShadow(QFrame::Plain);</span>
+<span class="lineNum">     302 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setLineWidth(0);</span>
+<span class="lineNum">     303 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setAcceptRichText(true);</span>
+<span class="lineNum">     304 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">     305 </span>            : 
+<span class="lineNum">     306 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;addWidget(textBrowser);</span>
+<span class="lineNum">     307 </span>            : 
+<a name="308"><span class="lineNum">     308 </span><span class="lineNoCov">          0 :         horizontalLayout_3 = new QHBoxLayout();</span></a>
+<span class="lineNum">     309 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;setSpacing(6);</span>
+<span class="lineNum">     310 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_3&quot;));</span>
+<span class="lineNum">     311 </span><span class="lineNoCov">          0 :         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     312 </span>            : 
+<span class="lineNum">     313 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;addItem(horizontalSpacer_5);</span>
+<a name="314"><span class="lineNum">     314 </span>            : </a>
+<span class="lineNum">     315 </span><span class="lineNoCov">          0 :         QtPassIcon = new QLabel(verticalLayoutWidget);</span>
+<span class="lineNum">     316 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setObjectName(QStringLiteral(&quot;QtPassIcon&quot;));</span>
+<span class="lineNum">     317 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);</span>
+<span class="lineNum">     318 </span><span class="lineNoCov">          0 :         sizePolicy4.setHorizontalStretch(0);</span>
+<span class="lineNum">     319 </span><span class="lineNoCov">          0 :         sizePolicy4.setVerticalStretch(0);</span>
+<span class="lineNum">     320 </span><span class="lineNoCov">          0 :         sizePolicy4.setHeightForWidth(QtPassIcon-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     321 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setSizePolicy(sizePolicy4);</span>
+<span class="lineNum">     322 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setMaximumSize(QSize(40, 40));</span>
+<span class="lineNum">     323 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setLayoutDirection(Qt::RightToLeft);</span>
+<span class="lineNum">     324 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setPixmap(QPixmap(QString::fromUtf8(&quot;:/artwork/icon.ico&quot;)));</span>
+<span class="lineNum">     325 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setScaledContents(true);</span>
+<span class="lineNum">     326 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);</span>
+<span class="lineNum">     327 </span>            : 
+<span class="lineNum">     328 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;addWidget(QtPassIcon);</span>
+<span class="lineNum">     329 </span>            : 
+<span class="lineNum">     330 </span>            : 
+<span class="lineNum">     331 </span><span class="lineNoCov">          0 :         verticalLayoutPassword-&gt;addLayout(horizontalLayout_3);</span>
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span><span class="lineNoCov">          0 :         splitter-&gt;addWidget(verticalLayoutWidget);</span>
+<span class="lineNum">     334 </span>            : 
+<span class="lineNum">     335 </span><span class="lineNoCov">          0 :         verticalLayout_7-&gt;addWidget(splitter);</span>
+<span class="lineNum">     336 </span>            : 
+<a name="337"><span class="lineNum">     337 </span><span class="lineNoCov">          0 :         MainWindow-&gt;setCentralWidget(centralWidget);</span></a>
+<span class="lineNum">     338 </span><span class="lineNoCov">          0 :         statusBar = new QStatusBar(MainWindow);</span>
+<span class="lineNum">     339 </span><span class="lineNoCov">          0 :         statusBar-&gt;setObjectName(QStringLiteral(&quot;statusBar&quot;));</span>
+<span class="lineNum">     340 </span><span class="lineNoCov">          0 :         MainWindow-&gt;setStatusBar(statusBar);</span>
+<span class="lineNum">     341 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(textBrowser, addButton);</span>
+<span class="lineNum">     342 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(addButton, editButton);</span>
+<span class="lineNum">     343 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(editButton, deleteButton);</span>
+<span class="lineNum">     344 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(deleteButton, pushButton);</span>
+<span class="lineNum">     345 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(pushButton, updateButton);</span>
+<span class="lineNum">     346 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(updateButton, usersButton);</span>
+<span class="lineNum">     347 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(usersButton, configButton);</span>
+<span class="lineNum">     348 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(configButton, profileBox);</span>
+<span class="lineNum">     349 </span>            : 
+<span class="lineNum">     350 </span><span class="lineNoCov">          0 :         retranslateUi(MainWindow);</span>
+<span class="lineNum">     351 </span>            : 
+<span class="lineNum">     352 </span><span class="lineNoCov">          0 :         QMetaObject::connectSlotsByName(MainWindow);</span>
+<a name="353"><span class="lineNum">     353 </span><span class="lineNoCov">          0 :     } // setupUi</span></a>
+<span class="lineNum">     354 </span>            : 
+<span class="lineNum">     355 </span><span class="lineNoCov">          0 :     void retranslateUi(QMainWindow *MainWindow)</span>
+<span class="lineNum">     356 </span>            :     {
+<span class="lineNum">     357 </span><span class="lineNoCov">          0 :         MainWindow-&gt;setWindowTitle(QApplication::translate(&quot;MainWindow&quot;, &quot;QtPass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     358 </span><span class="lineNoCov">          0 :         actionQtpass-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;qtpass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     359 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     360 </span><span class="lineNoCov">          0 :         addButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;Add&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     361 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     362 </span><span class="lineNoCov">          0 :         addButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Add&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     363 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     364 </span><span class="lineNoCov">          0 :         editButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;Edit&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     365 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     366 </span><span class="lineNoCov">          0 :         editButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Edit&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     367 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     368 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;Delete&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     369 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     370 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Delete&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     371 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     372 </span><span class="lineNoCov">          0 :         pushButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;git push&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     373 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     374 </span><span class="lineNoCov">          0 :         pushButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Push&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     375 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     376 </span><span class="lineNoCov">          0 :         updateButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;git pull&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     377 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     378 </span><span class="lineNoCov">          0 :         updateButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Update&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     379 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     380 </span><span class="lineNoCov">          0 :         usersButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;Manage who can read password in folder&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     381 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     382 </span><span class="lineNoCov">          0 :         usersButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Users&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     383 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     384 </span><span class="lineNoCov">          0 :         configButton-&gt;setToolTip(QApplication::translate(&quot;MainWindow&quot;, &quot;Configuration&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     385 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     386 </span><span class="lineNoCov">          0 :         configButton-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Config&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     387 </span><span class="lineNoCov">          0 :         lineEdit-&gt;setText(QString());</span>
+<span class="lineNum">     388 </span><span class="lineNoCov">          0 :         lineEdit-&gt;setPlaceholderText(QApplication::translate(&quot;MainWindow&quot;, &quot;Search Password&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     389 </span><span class="lineNoCov">          0 :         passwordName-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Welcome to QtPass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     390 </span><span class="lineNoCov">          0 :         textBrowser-&gt;setHtml(QApplication::translate(&quot;MainWindow&quot;, &quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD HTML 4.0//EN\&quot; \&quot;http://www.w3.org/TR/REC-html40/strict.dtd\&quot;&gt;\n&quot;</span>
+<span class="lineNum">     391 </span>            : &quot;&lt;html&gt;&lt;head&gt;&lt;meta name=\&quot;qrichtext\&quot; content=\&quot;1\&quot; /&gt;&lt;style type=\&quot;text/css\&quot;&gt;\n&quot;
+<span class="lineNum">     392 </span>            : &quot;p, li { white-space: pre-wrap; }\n&quot;
+<span class="lineNum">     393 </span>            : &quot;&lt;/style&gt;&lt;/head&gt;&lt;body style=\&quot; font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;\&quot;&gt;\n&quot;
+<span class="lineNum">     394 </span>            : &quot;&lt;p style=\&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&quot;&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; font-weight:600; color:#333333;\&quot;&gt;QtPass&lt;/span&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; color:#333333;\&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=\&quot;https://www.passwordstore.org/\&quot;&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;\&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=\&quot; font-family:'H&quot;
+<span class="lineNum">     395 </span>            :                         &quot;elvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; color:#333333;\&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;\n&quot;
+<span class="lineNum">     396 </span>            : &quot;&lt;p style=\&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&quot;&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; color:#333333;\&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=\&quot;https://github.com/IJHack/qtpass/issues\&quot;&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; text-decoration: underline; color:#4183c4;\&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; color:#333333;\&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;\n&quot;
+<span class="lineNum">     397 </span>            : &quot;&lt;p style=\&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&quot;&gt;&lt;a href=\&quot;https://qtpass.org/\&quot;&gt;&lt;span style=\&quot; font-family:'Helvetica Neue,Helvetica&quot;
+<span class="lineNum">     398 </span>            :                         &quot;,Segoe UI,Arial,freesans,sans-serif'; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;\&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;\n&quot;
+<span class="lineNum">     399 </span>            : &quot;&lt;p style=\&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&quot;&gt;&lt;a href=\&quot;https://github.com/IJHack/qtpass\&quot;&gt;&lt;span style=\&quot; font-family:'Noto Sans'; font-size:12pt; text-decoration: underline; color:#4183c4;\&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;, Q_NULLPTR));
+<span class="lineNum">     400 </span><span class="lineNoCov">          0 :         QtPassIcon-&gt;setText(QString());</span>
+<span class="lineNum">     401 </span><span class="lineNoCov">          0 :     } // retranslateUi</span>
+<span class="lineNum">     402 </span>            : 
+<span class="lineNum">     403 </span>            : };
+<span class="lineNum">     404 </span>            : 
+<span class="lineNum">     405 </span>            : namespace Ui {
+<span class="lineNum">     406 </span>            :     class MainWindow: public Ui_MainWindow {};
+<span class="lineNum">     407 </span>            : } // namespace Ui
+<span class="lineNum">     408 </span>            : 
+<span class="lineNum">     409 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     410 </span>            : 
+<span class="lineNum">     411 </span>            : #endif // UI_MAINWINDOW_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

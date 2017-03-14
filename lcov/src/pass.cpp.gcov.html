@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/pass.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - pass.cpp<span style="font-size: 80%;"> (source / <a href="pass.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">155</td>
+            <td class="headerCovTableEntryLo">2.6 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntryLo">9.1 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;pass.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;debughelper.h&quot;
+<span class="lineNum">       3 </span>            : #include &quot;qtpasssettings.h&quot;
+<span class="lineNum">       4 </span>            : #include &quot;util.h&quot;
+<span class="lineNum">       5 </span>            : #include &lt;QTextCodec&gt;
+<span class="lineNum">       6 </span>            : #include &lt;map&gt;
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : using namespace std;
+<span class="lineNum">       9 </span>            : using namespace Enums;
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : /**
+<a name="12"><span class="lineNum">      12 </span>            :  * @brief Pass::Pass wrapper for using either pass or the pass imitation</a>
+<span class="lineNum">      13 </span>            :  */
+<span class="lineNum">      14 </span><span class="lineCov">         12 : Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">          8 :   connect(&amp;exec,</span>
+<span class="lineNum">      16 </span>            :           static_cast&lt;void (Executor::*)(int, int, const QString &amp;,
+<span class="lineNum">      17 </span>            :                                          const QString &amp;)&gt;(&amp;Executor::finished),
+<span class="lineNum">      18 </span>            :           this, &amp;Pass::finished);
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span>            :   // TODO(bezet): stop using process
+<span class="lineNum">      21 </span>            :   // connect(&amp;process, SIGNAL(error(QProcess::ProcessError)), this,
+<span class="lineNum">      22 </span>            :   //        SIGNAL(error(QProcess::ProcessError)));
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span><span class="lineCov">          8 :   connect(&amp;exec, &amp;Executor::starting, this, &amp;Pass::startingExecuteWrapper);</span>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          4 : }</span></a>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 : void Pass::executeWrapper(PROCESS id, const QString &amp;app,</span>
+<span class="lineNum">      28 </span>            :                           const QStringList &amp;args, bool readStdout,
+<span class="lineNum">      29 </span>            :                           bool readStderr) {
+<span class="lineNum">      30 </span><span class="lineNoCov">          0 :   executeWrapper(id, app, args, QString(), readStdout, readStderr);</span>
+<a name="31"><span class="lineNum">      31 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 : void Pass::executeWrapper(PROCESS id, const QString &amp;app,</span>
+<span class="lineNum">      34 </span>            :                           const QStringList &amp;args, QString input,
+<span class="lineNum">      35 </span>            :                           bool readStdout, bool readStderr) {
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; app &lt;&lt; args;</span>
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 :   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,</span>
+<span class="lineNum">      38 </span><span class="lineNoCov">          0 :                readStderr);</span>
+<a name="39"><span class="lineNum">      39 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 : void Pass::init() {</span>
+<span class="lineNum">      42 </span>            : #ifdef __APPLE__
+<span class="lineNum">      43 </span>            :   // If it exists, add the gpgtools to PATH
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   if (QFile(&quot;/usr/local/MacGPG2/bin&quot;).exists())</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :     env.replaceInStrings(&quot;PATH=&quot;, &quot;PATH=/usr/local/MacGPG2/bin:&quot;);</span>
+<span class="lineNum">      46 </span>            :   // Add missing /usr/local/bin
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :   if (env.filter(&quot;/usr/local/bin&quot;).isEmpty())</span>
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 :     env.replaceInStrings(&quot;PATH=&quot;, &quot;PATH=/usr/local/bin:&quot;);</span>
+<span class="lineNum">      49 </span>            : #endif
+<span class="lineNum">      50 </span>            : 
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :   if (!QtPassSettings::getGpgHome().isEmpty()) {</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :     QDir absHome(QtPassSettings::getGpgHome());</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :     absHome.makeAbsolute();</span>
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :     env &lt;&lt; &quot;GNUPGHOME=&quot; + absHome.path();</span>
+<span class="lineNum">      55 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">      56 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span>            : /**
+<span class="lineNum">      59 </span>            :  * @brief Pass::Generate use either pwgen or internal password
+<span class="lineNum">      60 </span>            :  * generator
+<span class="lineNum">      61 </span>            :  * @param length of the desired password
+<span class="lineNum">      62 </span>            :  * @param charset to use for generation
+<a name="63"><span class="lineNum">      63 </span>            :  * @return the password</a>
+<span class="lineNum">      64 </span>            :  */
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 : QString Pass::Generate_b(int length, const QString &amp;charset) {</span>
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :   QString passwd;</span>
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isUsePwgen()) {</span>
+<span class="lineNum">      68 </span>            :     // --secure goes first as it overrides --no-* otherwise
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :     QStringList args;</span>
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :     args.append(&quot;-1&quot;);</span>
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isLessRandom())</span>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :       args.append(&quot;--secure&quot;);</span>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :     args.append(QtPassSettings::isAvoidCapitals() ? &quot;--no-capitalize&quot;</span>
+<span class="lineNum">      74 </span>            :                                                   : &quot;--capitalize&quot;);
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :     args.append(QtPassSettings::isAvoidNumbers() ? &quot;--no-numerals&quot;</span>
+<span class="lineNum">      76 </span>            :                                                  : &quot;--numerals&quot;);
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isUseSymbols())</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :       args.append(&quot;--symbols&quot;);</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :     args.append(QString::number(length));</span>
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 :     QString p_out;</span>
+<span class="lineNum">      81 </span>            :     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
+<span class="lineNum">      82 </span><span class="lineNoCov">          0 :     if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,</span>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :                              &amp;passwd) == 0)</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :       passwd.remove(QRegExp(&quot;[\\n\\r]&quot;));</span>
+<span class="lineNum">      85 </span>            :     else {
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :       passwd.clear();</span>
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :       qDebug() &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;\t&quot;</span>
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 :                &lt;&lt; &quot;pwgen fail&quot;;</span>
+<span class="lineNum">      89 </span>            :       //    TODO(bezet): emit critical ?
+<span class="lineNum">      90 </span>            :     }
+<span class="lineNum">      91 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 :     if (charset.length() &gt; 0) {</span>
+<span class="lineNum">      93 </span><span class="lineNoCov">          0 :       for (int i = 0; i &lt; length; ++i) {</span>
+<span class="lineNum">      94 </span><span class="lineNoCov">          0 :         int index = Util::rand() % charset.length();</span>
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :         QChar nextChar = charset.at(index);</span>
+<span class="lineNum">      96 </span><span class="lineNoCov">          0 :         passwd.append(nextChar);</span>
+<span class="lineNum">      97 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 :     } else {</span>
+<span class="lineNum">      99 </span><span class="lineNoCov">          0 :       emit critical(</span>
+<span class="lineNum">     100 </span><span class="lineNoCov">          0 :           tr(&quot;No characters chosen&quot;),</span>
+<span class="lineNum">     101 </span><span class="lineNoCov">          0 :           tr(&quot;Can't generate password, there are no characters to choose from &quot;</span>
+<span class="lineNum">     102 </span>            :              &quot;set in the configuration!&quot;));
+<span class="lineNum">     103 </span>            :     }
+<span class="lineNum">     104 </span>            :   }
+<span class="lineNum">     105 </span>            :   return passwd;
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     107 </span>            : 
+<span class="lineNum">     108 </span>            : /**
+<span class="lineNum">     109 </span>            :  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
+<a name="110"><span class="lineNum">     110 </span>            :  * @param batch GnuPG style configuration string</a>
+<span class="lineNum">     111 </span>            :  */
+<span class="lineNum">     112 </span><span class="lineNoCov">          0 : void Pass::GenerateGPGKeys(QString batch) {</span>
+<span class="lineNum">     113 </span><span class="lineNoCov">          0 :   executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),</span>
+<span class="lineNum">     114 </span><span class="lineNoCov">          0 :                  {&quot;--gen-key&quot;, &quot;--no-tty&quot;, &quot;--batch&quot;}, batch);</span>
+<span class="lineNum">     115 </span>            :   // TODO check status / error messages - probably not here, it's just started
+<span class="lineNum">     116 </span>            :   // here, see finished for details
+<span class="lineNum">     117 </span>            :   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
+<span class="lineNum">     118 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     119 </span>            : 
+<span class="lineNum">     120 </span>            : /**
+<span class="lineNum">     121 </span>            :  * @brief Pass::listKeys list users
+<span class="lineNum">     122 </span>            :  * @param keystring
+<span class="lineNum">     123 </span>            :  * @param secret list private keys
+<a name="124"><span class="lineNum">     124 </span>            :  * @return QList&lt;UserInfo&gt; users</a>
+<span class="lineNum">     125 </span>            :  */
+<span class="lineNum">     126 </span><span class="lineNoCov">          0 : QList&lt;UserInfo&gt; Pass::listKeys(QString keystring, bool secret) {</span>
+<span class="lineNum">     127 </span><span class="lineNoCov">          0 :   QList&lt;UserInfo&gt; users;</span>
+<span class="lineNum">     128 </span><span class="lineNoCov">          0 :   QStringList args = {&quot;--no-tty&quot;, &quot;--with-colons&quot;};</span>
+<span class="lineNum">     129 </span><span class="lineNoCov">          0 :   args.append(secret ? &quot;--list-secret-keys&quot; : &quot;--list-keys&quot;);</span>
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 :   if (!keystring.isEmpty())</span>
+<span class="lineNum">     131 </span><span class="lineNoCov">          0 :     args.append(keystring);</span>
+<span class="lineNum">     132 </span><span class="lineNoCov">          0 :   QString p_out;</span>
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 :   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &amp;p_out) !=</span>
+<span class="lineNum">     134 </span>            :       0)
+<span class="lineNum">     135 </span><span class="lineNoCov">          0 :     return users;</span>
+<span class="lineNum">     136 </span><span class="lineNoCov">          0 :   QStringList keys = p_out.split(QRegExp(&quot;[\r\n]&quot;), QString::SkipEmptyParts);</span>
+<span class="lineNum">     137 </span><span class="lineNoCov">          0 :   UserInfo current_user;</span>
+<span class="lineNum">     138 </span><span class="lineNoCov">          0 :   foreach (QString key, keys) {</span>
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 :     QStringList props = key.split(':');</span>
+<span class="lineNum">     140 </span><span class="lineNoCov">          0 :     if (props.size() &lt; 10)</span>
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 :       continue;</span>
+<span class="lineNum">     142 </span><span class="lineNoCov">          0 :     if (props[0] == (secret ? &quot;sec&quot; : &quot;pub&quot;)) {</span>
+<span class="lineNum">     143 </span><span class="lineNoCov">          0 :       if (!current_user.key_id.isEmpty())</span>
+<span class="lineNum">     144 </span><span class="lineNoCov">          0 :         users.append(current_user);</span>
+<span class="lineNum">     145 </span><span class="lineNoCov">          0 :       current_user = UserInfo();</span>
+<span class="lineNum">     146 </span><span class="lineNoCov">          0 :       current_user.key_id = props[4];</span>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :       current_user.name = props[9].toUtf8();</span>
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :       current_user.validity = props[1][0].toLatin1();</span>
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :       current_user.created.setTime_t(props[5].toUInt());</span>
+<span class="lineNum">     150 </span><span class="lineNoCov">          0 :       current_user.expiry.setTime_t(props[6].toUInt());</span>
+<span class="lineNum">     151 </span><span class="lineNoCov">          0 :     } else if (current_user.name.isEmpty() &amp;&amp; props[0] == &quot;uid&quot;) {</span>
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :       current_user.name = props[9];</span>
+<span class="lineNum">     153 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :   if (!current_user.key_id.isEmpty())</span>
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :     users.append(current_user);</span>
+<span class="lineNum">     157 </span>            :   return users;
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     159 </span>            : 
+<span class="lineNum">     160 </span>            : /**
+<span class="lineNum">     161 </span>            :  * @brief Pass::processFinished reemits specific signal based on what process
+<span class="lineNum">     162 </span>            :  * has finished
+<span class="lineNum">     163 </span>            :  * @param id    id of Pass process that was scheduled and finished
+<span class="lineNum">     164 </span>            :  * @param exitCode  return code of a process
+<span class="lineNum">     165 </span>            :  * @param out   output generated by process(if capturing was requested, empty
+<span class="lineNum">     166 </span>            :  *              otherwise)
+<span class="lineNum">     167 </span>            :  * @param err   error output generated by process(if capturing was requested,
+<a name="168"><span class="lineNum">     168 </span>            :  *              or error occured)</a>
+<span class="lineNum">     169 </span>            :  */
+<span class="lineNum">     170 </span><span class="lineNoCov">          0 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span>
+<span class="lineNum">     171 </span>            :                     const QString &amp;err) {
+<span class="lineNum">     172 </span>            :   //  TODO(bezet): remove !
+<span class="lineNum">     173 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; id &lt;&lt; exitCode &lt;&lt; out &lt;&lt; err;</span>
+<span class="lineNum">     174 </span>            : 
+<span class="lineNum">     175 </span>            :   PROCESS pid = static_cast&lt;PROCESS&gt;(id);
+<span class="lineNum">     176 </span><span class="lineNoCov">          0 :   if (exitCode != 0) {</span>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :     emit processErrorExit(exitCode, err);</span>
+<span class="lineNum">     178 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     179 </span>            :   }
+<span class="lineNum">     180 </span><span class="lineNoCov">          0 :   switch (pid) {</span>
+<span class="lineNum">     181 </span>            :   case GIT_INIT:
+<span class="lineNum">     182 </span><span class="lineNoCov">          0 :     emit finishedGitInit(out, err);</span>
+<span class="lineNum">     183 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     184 </span>            :   case GIT_PULL:
+<span class="lineNum">     185 </span><span class="lineNoCov">          0 :     emit finishedGitPull(out, err);</span>
+<span class="lineNum">     186 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     187 </span>            :   case GIT_PUSH:
+<span class="lineNum">     188 </span><span class="lineNoCov">          0 :     emit finishedGitPush(out, err);</span>
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     190 </span>            :   case PASS_SHOW:
+<span class="lineNum">     191 </span><span class="lineNoCov">          0 :     emit finishedShow(out);</span>
+<span class="lineNum">     192 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     193 </span>            :   case PASS_INSERT:
+<span class="lineNum">     194 </span><span class="lineNoCov">          0 :     emit finishedInsert(out, err);</span>
+<span class="lineNum">     195 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     196 </span>            :   case PASS_REMOVE:
+<span class="lineNum">     197 </span><span class="lineNoCov">          0 :     emit finishedRemove(out, err);</span>
+<span class="lineNum">     198 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     199 </span>            :   case PASS_INIT:
+<span class="lineNum">     200 </span><span class="lineNoCov">          0 :     emit finishedInit(out, err);</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     202 </span>            :   case PASS_MOVE:
+<span class="lineNum">     203 </span><span class="lineNoCov">          0 :     emit finishedMove(out, err);</span>
+<span class="lineNum">     204 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     205 </span>            :   case PASS_COPY:
+<span class="lineNum">     206 </span><span class="lineNoCov">          0 :     emit finishedCopy(out, err);</span>
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     208 </span>            :   default:
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;Unhandled process type&quot; &lt;&lt; pid;</span>
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     211 </span>            :   }
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     213 </span>            : 
+<span class="lineNum">     214 </span>            : /**
+<span class="lineNum">     215 </span>            :  * @brief Pass::updateEnv update the execution environment (used when
+<a name="216"><span class="lineNum">     216 </span>            :  * switching profiles)</a>
+<span class="lineNum">     217 </span>            :  */
+<span class="lineNum">     218 </span><span class="lineNoCov">          0 : void Pass::updateEnv() {</span>
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :   QStringList store = env.filter(&quot;PASSWORD_STORE_DIR&quot;);</span>
+<span class="lineNum">     220 </span>            :   // put PASSWORD_STORE_DIR in env
+<span class="lineNum">     221 </span><span class="lineNoCov">          0 :   if (store.isEmpty()) {</span>
+<span class="lineNum">     222 </span>            :     // dbg()&lt;&lt; &quot;Added
+<span class="lineNum">     223 </span>            :     // PASSWORD_STORE_DIR&quot;;
+<span class="lineNum">     224 </span><span class="lineNoCov">          0 :     env.append(&quot;PASSWORD_STORE_DIR=&quot; + QtPassSettings::getPassStore());</span>
+<span class="lineNum">     225 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     226 </span>            :     // dbg()&lt;&lt; &quot;Update
+<span class="lineNum">     227 </span>            :     // PASSWORD_STORE_DIR with &quot; + passStore;
+<span class="lineNum">     228 </span><span class="lineNoCov">          0 :     env.replaceInStrings(</span>
+<span class="lineNum">     229 </span><span class="lineNoCov">          0 :         store.first(), &quot;PASSWORD_STORE_DIR=&quot; + QtPassSettings::getPassStore());</span>
+<span class="lineNum">     230 </span>            :   }
+<span class="lineNum">     231 </span><span class="lineNoCov">          0 :   exec.setEnvironment(env);</span>
+<span class="lineNum">     232 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     233 </span>            : 
+<span class="lineNum">     234 </span>            : /**
+<span class="lineNum">     235 </span>            :  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
+<span class="lineNum">     236 </span>            :  * @param for_file which file (folder) would you like recepients for
+<a name="237"><span class="lineNum">     237 </span>            :  * @return recepients gpg-id contents</a>
+<span class="lineNum">     238 </span>            :  */
+<span class="lineNum">     239 </span><span class="lineNoCov">          0 : QStringList Pass::getRecipientList(QString for_file) {</span>
+<span class="lineNum">     240 </span><span class="lineNoCov">          0 :   QDir gpgIdPath(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())</span>
+<span class="lineNum">     241 </span><span class="lineNoCov">          0 :                                ? for_file</span>
+<span class="lineNum">     242 </span><span class="lineNoCov">          0 :                                : QtPassSettings::getPassStore() + for_file)</span>
+<span class="lineNum">     243 </span>            :                      .absoluteDir());
+<span class="lineNum">     244 </span>            :   bool found = false;
+<span class="lineNum">     245 </span><span class="lineNoCov">          0 :   while (gpgIdPath.exists() &amp;&amp;</span>
+<span class="lineNum">     246 </span><span class="lineNoCov">          0 :          gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {</span>
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 :     if (QFile(gpgIdPath.absoluteFilePath(&quot;.gpg-id&quot;)).exists()) {</span>
+<span class="lineNum">     248 </span>            :       found = true;
+<span class="lineNum">     249 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     250 </span>            :     }
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :     if (!gpgIdPath.cdUp())</span>
+<span class="lineNum">     252 </span>            :       break;
+<span class="lineNum">     253 </span>            :   }
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :   QFile gpgId(found ? gpgIdPath.absoluteFilePath(&quot;.gpg-id&quot;)</span>
+<span class="lineNum">     255 </span><span class="lineNoCov">          0 :                     : QtPassSettings::getPassStore() + &quot;.gpg-id&quot;);</span>
+<span class="lineNum">     256 </span><span class="lineNoCov">          0 :   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))</span>
+<span class="lineNum">     257 </span><span class="lineNoCov">          0 :     return QStringList();</span>
+<span class="lineNum">     258 </span><span class="lineNoCov">          0 :   QStringList recipients;</span>
+<span class="lineNum">     259 </span><span class="lineNoCov">          0 :   while (!gpgId.atEnd()) {</span>
+<span class="lineNum">     260 </span><span class="lineNoCov">          0 :     QString recipient(gpgId.readLine());</span>
+<span class="lineNum">     261 </span><span class="lineNoCov">          0 :     recipient = recipient.trimmed();</span>
+<span class="lineNum">     262 </span><span class="lineNoCov">          0 :     if (!recipient.isEmpty())</span>
+<span class="lineNum">     263 </span><span class="lineNoCov">          0 :       recipients += recipient;</span>
+<span class="lineNum">     264 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 :   return recipients;</span>
+<span class="lineNum">     266 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     267 </span>            : 
+<span class="lineNum">     268 </span>            : /**
+<span class="lineNum">     269 </span>            :  * @brief Pass::getRecipientString formated string for use with GPG
+<span class="lineNum">     270 </span>            :  * @param for_file which file (folder) would you like recepients for
+<span class="lineNum">     271 </span>            :  * @param separator formating separator eg: &quot; -r &quot;
+<span class="lineNum">     272 </span>            :  * @param count
+<a name="273"><span class="lineNum">     273 </span>            :  * @return recepient string</a>
+<span class="lineNum">     274 </span>            :  */
+<span class="lineNum">     275 </span><span class="lineNoCov">          0 : QString Pass::getRecipientString(QString for_file, QString separator,</span>
+<span class="lineNum">     276 </span>            :                                  int *count) {
+<span class="lineNum">     277 </span><span class="lineNoCov">          0 :   QString recipients_str;</span>
+<span class="lineNum">     278 </span><span class="lineNoCov">          0 :   QStringList recipients_list = Pass::getRecipientList(for_file);</span>
+<span class="lineNum">     279 </span><span class="lineNoCov">          0 :   if (count)</span>
+<span class="lineNum">     280 </span><span class="lineNoCov">          0 :     *count = recipients_list.size();</span>
+<span class="lineNum">     281 </span><span class="lineNoCov">          0 :   foreach (const QString recipient, recipients_list)</span>
+<span class="lineNum">     282 </span><span class="lineNoCov">          0 :     recipients_str += separator + '&quot;' + recipient + '&quot;';</span>
+<span class="lineNum">     283 </span>            :   return recipients_str;
+<span class="lineNum">     284 </span><span class="lineNoCov">          0 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

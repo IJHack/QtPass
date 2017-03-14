@@ -1,0 +1,933 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/ui_configdialog.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - ui_configdialog.h<span style="font-size: 80%;"> (source / <a href="ui_configdialog.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">494</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">105</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /********************************************************************************</a>
+<span class="lineNum">       2 </span>            : ** Form generated from reading UI file 'configdialog.ui'
+<span class="lineNum">       3 </span>            : **
+<span class="lineNum">       4 </span>            : ** Created by: Qt User Interface Compiler version 5.8.0
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** WARNING! All changes made in this file will be lost when recompiling UI file!
+<span class="lineNum">       7 </span>            : ********************************************************************************/
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #ifndef UI_CONFIGDIALOG_H
+<span class="lineNum">      10 </span>            : #define UI_CONFIGDIALOG_H
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : #include &lt;QtCore/QLocale&gt;
+<span class="lineNum">      13 </span>            : #include &lt;QtCore/QVariant&gt;
+<span class="lineNum">      14 </span>            : #include &lt;QtWidgets/QAction&gt;
+<span class="lineNum">      15 </span>            : #include &lt;QtWidgets/QApplication&gt;
+<span class="lineNum">      16 </span>            : #include &lt;QtWidgets/QButtonGroup&gt;
+<span class="lineNum">      17 </span>            : #include &lt;QtWidgets/QCheckBox&gt;
+<span class="lineNum">      18 </span>            : #include &lt;QtWidgets/QComboBox&gt;
+<span class="lineNum">      19 </span>            : #include &lt;QtWidgets/QDialog&gt;
+<span class="lineNum">      20 </span>            : #include &lt;QtWidgets/QDialogButtonBox&gt;
+<span class="lineNum">      21 </span>            : #include &lt;QtWidgets/QFormLayout&gt;
+<span class="lineNum">      22 </span>            : #include &lt;QtWidgets/QGridLayout&gt;
+<span class="lineNum">      23 </span>            : #include &lt;QtWidgets/QGroupBox&gt;
+<span class="lineNum">      24 </span>            : #include &lt;QtWidgets/QHBoxLayout&gt;
+<span class="lineNum">      25 </span>            : #include &lt;QtWidgets/QHeaderView&gt;
+<span class="lineNum">      26 </span>            : #include &lt;QtWidgets/QLabel&gt;
+<span class="lineNum">      27 </span>            : #include &lt;QtWidgets/QLineEdit&gt;
+<span class="lineNum">      28 </span>            : #include &lt;QtWidgets/QPlainTextEdit&gt;
+<span class="lineNum">      29 </span>            : #include &lt;QtWidgets/QRadioButton&gt;
+<span class="lineNum">      30 </span>            : #include &lt;QtWidgets/QSpacerItem&gt;
+<span class="lineNum">      31 </span>            : #include &lt;QtWidgets/QSpinBox&gt;
+<span class="lineNum">      32 </span>            : #include &lt;QtWidgets/QTabWidget&gt;
+<span class="lineNum">      33 </span>            : #include &lt;QtWidgets/QTableWidget&gt;
+<span class="lineNum">      34 </span>            : #include &lt;QtWidgets/QToolButton&gt;
+<span class="lineNum">      35 </span>            : #include &lt;QtWidgets/QVBoxLayout&gt;
+<span class="lineNum">      36 </span>            : #include &lt;QtWidgets/QWidget&gt;
+<span class="lineNum">      37 </span>            : 
+<span class="lineNum">      38 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      39 </span>            : 
+<span class="lineNum">      40 </span>            : class Ui_ConfigDialog
+<span class="lineNum">      41 </span>            : {
+<span class="lineNum">      42 </span>            : public:
+<span class="lineNum">      43 </span>            :     QVBoxLayout *verticalLayout_2;
+<span class="lineNum">      44 </span>            :     QTabWidget *tabWidget;
+<span class="lineNum">      45 </span>            :     QWidget *Tab_Settings;
+<span class="lineNum">      46 </span>            :     QVBoxLayout *verticalLayout_5;
+<span class="lineNum">      47 </span>            :     QVBoxLayout *Layout_Clipboard;
+<span class="lineNum">      48 </span>            :     QLabel *label_8;
+<span class="lineNum">      49 </span>            :     QHBoxLayout *horizontalLayout;
+<span class="lineNum">      50 </span>            :     QComboBox *comboBoxClipboard;
+<span class="lineNum">      51 </span>            :     QCheckBox *checkBoxSelection;
+<span class="lineNum">      52 </span>            :     QCheckBox *checkBoxAutoclear;
+<span class="lineNum">      53 </span>            :     QSpinBox *spinBoxAutoclearSeconds;
+<span class="lineNum">      54 </span>            :     QLabel *labelSeconds;
+<span class="lineNum">      55 </span>            :     QSpacerItem *horizontalSpacer_4;
+<span class="lineNum">      56 </span>            :     QVBoxLayout *Layout_PasswordBehaviour;
+<span class="lineNum">      57 </span>            :     QLabel *label_6;
+<span class="lineNum">      58 </span>            :     QHBoxLayout *horizontalLayout_6;
+<span class="lineNum">      59 </span>            :     QCheckBox *checkBoxHideContent;
+<span class="lineNum">      60 </span>            :     QCheckBox *checkBoxHidePassword;
+<span class="lineNum">      61 </span>            :     QHBoxLayout *horizontalLayout_7;
+<span class="lineNum">      62 </span>            :     QCheckBox *checkBoxAutoclearPanel;
+<span class="lineNum">      63 </span>            :     QSpinBox *spinBoxAutoclearPanelSeconds;
+<span class="lineNum">      64 </span>            :     QLabel *labelPanelSeconds;
+<span class="lineNum">      65 </span>            :     QSpacerItem *horizontalSpacer_5;
+<span class="lineNum">      66 </span>            :     QVBoxLayout *Layout_PasswordGeneration;
+<span class="lineNum">      67 </span>            :     QLabel *label_4;
+<span class="lineNum">      68 </span>            :     QFormLayout *formLayout_2;
+<span class="lineNum">      69 </span>            :     QLabel *label_7;
+<span class="lineNum">      70 </span>            :     QHBoxLayout *horizontalLayout_13;
+<span class="lineNum">      71 </span>            :     QSpinBox *spinBoxPasswordLength;
+<span class="lineNum">      72 </span>            :     QLabel *labelLength;
+<span class="lineNum">      73 </span>            :     QSpacerItem *horizontalSpacer_2;
+<span class="lineNum">      74 </span>            :     QLabel *labelPasswordChars;
+<span class="lineNum">      75 </span>            :     QHBoxLayout *horizontalLayout_10;
+<span class="lineNum">      76 </span>            :     QComboBox *passwordCharTemplateSelector;
+<span class="lineNum">      77 </span>            :     QSpacerItem *horizontalSpacer_3;
+<span class="lineNum">      78 </span>            :     QLineEdit *lineEditPasswordChars;
+<span class="lineNum">      79 </span>            :     QFormLayout *formLayout;
+<span class="lineNum">      80 </span>            :     QCheckBox *checkBoxUsePwgen;
+<span class="lineNum">      81 </span>            :     QCheckBox *checkBoxAvoidCapitals;
+<span class="lineNum">      82 </span>            :     QCheckBox *checkBoxUseSymbols;
+<span class="lineNum">      83 </span>            :     QCheckBox *checkBoxLessRandom;
+<span class="lineNum">      84 </span>            :     QCheckBox *checkBoxAvoidNumbers;
+<span class="lineNum">      85 </span>            :     QVBoxLayout *Layout_Git;
+<span class="lineNum">      86 </span>            :     QLabel *label_3;
+<span class="lineNum">      87 </span>            :     QHBoxLayout *horizontalLayout_9;
+<span class="lineNum">      88 </span>            :     QCheckBox *checkBoxUseGit;
+<span class="lineNum">      89 </span>            :     QHBoxLayout *horizontalLayout_12;
+<span class="lineNum">      90 </span>            :     QCheckBox *checkBoxAddGPGId;
+<span class="lineNum">      91 </span>            :     QCheckBox *checkBoxAutoPush;
+<span class="lineNum">      92 </span>            :     QCheckBox *checkBoxAutoPull;
+<span class="lineNum">      93 </span>            :     QSpacerItem *horizontalSpacer_7;
+<span class="lineNum">      94 </span>            :     QVBoxLayout *Layout_System;
+<span class="lineNum">      95 </span>            :     QLabel *label_5;
+<span class="lineNum">      96 </span>            :     QHBoxLayout *horizontalLayout_11;
+<span class="lineNum">      97 </span>            :     QCheckBox *checkBoxUseTrayIcon;
+<span class="lineNum">      98 </span>            :     QCheckBox *checkBoxStartMinimized;
+<span class="lineNum">      99 </span>            :     QCheckBox *checkBoxHideOnClose;
+<span class="lineNum">     100 </span>            :     QCheckBox *checkBoxAlwaysOnTop;
+<span class="lineNum">     101 </span>            :     QSpacerItem *horizontalSpacer_6;
+<span class="lineNum">     102 </span>            :     QWidget *Tab_Programs;
+<span class="lineNum">     103 </span>            :     QVBoxLayout *verticalLayout;
+<span class="lineNum">     104 </span>            :     QLabel *label_9;
+<span class="lineNum">     105 </span>            :     QHBoxLayout *horizontalLayout_5;
+<span class="lineNum">     106 </span>            :     QRadioButton *radioButtonNative;
+<span class="lineNum">     107 </span>            :     QRadioButton *radioButtonPass;
+<span class="lineNum">     108 </span>            :     QWidget *widget;
+<span class="lineNum">     109 </span>            :     QHBoxLayout *horizontalLayout_2;
+<span class="lineNum">     110 </span>            :     QGroupBox *groupBoxNative;
+<span class="lineNum">     111 </span>            :     QGridLayout *gridLayout;
+<span class="lineNum">     112 </span>            :     QLabel *labelGitPath;
+<span class="lineNum">     113 </span>            :     QLineEdit *gpgPath;
+<span class="lineNum">     114 </span>            :     QToolButton *toolButtonGpg;
+<span class="lineNum">     115 </span>            :     QToolButton *toolButtonGit;
+<span class="lineNum">     116 </span>            :     QLabel *labelGpgPath;
+<span class="lineNum">     117 </span>            :     QLineEdit *gitPath;
+<span class="lineNum">     118 </span>            :     QLineEdit *pwgenPath;
+<span class="lineNum">     119 </span>            :     QLabel *labelPwgenPath;
+<span class="lineNum">     120 </span>            :     QToolButton *toolButtonPwgen;
+<span class="lineNum">     121 </span>            :     QGroupBox *groupBoxPass;
+<span class="lineNum">     122 </span>            :     QVBoxLayout *verticalLayout_4;
+<span class="lineNum">     123 </span>            :     QHBoxLayout *horizontalLayout_4;
+<span class="lineNum">     124 </span>            :     QLabel *labelPassPath;
+<span class="lineNum">     125 </span>            :     QLineEdit *passPath;
+<span class="lineNum">     126 </span>            :     QToolButton *toolButtonPass;
+<span class="lineNum">     127 </span>            :     QLabel *zx2c4;
+<span class="lineNum">     128 </span>            :     QSpacerItem *verticalSpacer;
+<span class="lineNum">     129 </span>            :     QWidget *Tab_Profiles;
+<span class="lineNum">     130 </span>            :     QVBoxLayout *verticalLayout_3;
+<span class="lineNum">     131 </span>            :     QTableWidget *profileTable;
+<span class="lineNum">     132 </span>            :     QGridLayout *gridLayout_11;
+<span class="lineNum">     133 </span>            :     QToolButton *addButton;
+<span class="lineNum">     134 </span>            :     QToolButton *deleteButton;
+<span class="lineNum">     135 </span>            :     QLabel *labelStorePath;
+<span class="lineNum">     136 </span>            :     QToolButton *toolButtonStore;
+<span class="lineNum">     137 </span>            :     QLineEdit *storePath;
+<span class="lineNum">     138 </span>            :     QWidget *Tab_Template;
+<span class="lineNum">     139 </span>            :     QVBoxLayout *verticalLayout_6;
+<span class="lineNum">     140 </span>            :     QLabel *label_2;
+<span class="lineNum">     141 </span>            :     QHBoxLayout *horizontalLayout_8;
+<span class="lineNum">     142 </span>            :     QCheckBox *checkBoxUseTemplate;
+<span class="lineNum">     143 </span>            :     QCheckBox *checkBoxTemplateAllFields;
+<span class="lineNum">     144 </span>            :     QPlainTextEdit *plainTextEditTemplate;
+<span class="lineNum">     145 </span>            :     QHBoxLayout *horizontalLayout_3;
+<span class="lineNum">     146 </span>            :     QLabel *label;
+<span class="lineNum">     147 </span>            :     QSpacerItem *horizontalSpacer;
+<a name="148"><span class="lineNum">     148 </span>            :     QDialogButtonBox *buttonBox;</a>
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span><span class="lineNoCov">          0 :     void setupUi(QDialog *ConfigDialog)</span>
+<a name="151"><span class="lineNum">     151 </span>            :     {</a>
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :         if (ConfigDialog-&gt;objectName().isEmpty())</span>
+<span class="lineNum">     153 </span><span class="lineNoCov">          0 :             ConfigDialog-&gt;setObjectName(QStringLiteral(&quot;ConfigDialog&quot;));</span>
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 :         ConfigDialog-&gt;resize(618, 609);</span>
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);</span>
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :         sizePolicy.setHorizontalStretch(0);</span>
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :         sizePolicy.setVerticalStretch(0);</span>
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :         sizePolicy.setHeightForWidth(ConfigDialog-&gt;sizePolicy().hasHeightForWidth());</span>
+<a name="159"><span class="lineNum">     159 </span><span class="lineNoCov">          0 :         ConfigDialog-&gt;setSizePolicy(sizePolicy);</span></a>
+<span class="lineNum">     160 </span><span class="lineNoCov">          0 :         verticalLayout_2 = new QVBoxLayout(ConfigDialog);</span>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_2&quot;));</span>
+<a name="162"><span class="lineNum">     162 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :         tabWidget = new QTabWidget(ConfigDialog);</span>
+<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setObjectName(QStringLiteral(&quot;tabWidget&quot;));</span></a>
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 :         Tab_Settings = new QWidget();</span>
+<a name="166"><span class="lineNum">     166 </span><span class="lineNoCov">          0 :         Tab_Settings-&gt;setObjectName(QStringLiteral(&quot;Tab_Settings&quot;));</span></a>
+<span class="lineNum">     167 </span><span class="lineNoCov">          0 :         verticalLayout_5 = new QVBoxLayout(Tab_Settings);</span>
+<span class="lineNum">     168 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_5&quot;));</span>
+<a name="169"><span class="lineNum">     169 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
+<span class="lineNum">     170 </span><span class="lineNoCov">          0 :         Layout_Clipboard = new QVBoxLayout();</span>
+<a name="171"><span class="lineNum">     171 </span><span class="lineNoCov">          0 :         Layout_Clipboard-&gt;setObjectName(QStringLiteral(&quot;Layout_Clipboard&quot;));</span></a>
+<span class="lineNum">     172 </span><span class="lineNoCov">          0 :         label_8 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     173 </span><span class="lineNoCov">          0 :         label_8-&gt;setObjectName(QStringLiteral(&quot;label_8&quot;));</span>
+<span class="lineNum">     174 </span><span class="lineNoCov">          0 :         QFont font;</span>
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :         font.setBold(true);</span>
+<span class="lineNum">     176 </span><span class="lineNoCov">          0 :         font.setWeight(75);</span>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :         label_8-&gt;setFont(font);</span>
+<span class="lineNum">     178 </span>            : 
+<span class="lineNum">     179 </span><span class="lineNoCov">          0 :         Layout_Clipboard-&gt;addWidget(label_8);</span>
+<a name="180"><span class="lineNum">     180 </span>            : </a>
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 :         horizontalLayout = new QHBoxLayout();</span>
+<a name="182"><span class="lineNum">     182 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout&quot;));</span></a>
+<span class="lineNum">     183 </span><span class="lineNoCov">          0 :         comboBoxClipboard = new QComboBox(Tab_Settings);</span>
+<span class="lineNum">     184 </span><span class="lineNoCov">          0 :         comboBoxClipboard-&gt;setObjectName(QStringLiteral(&quot;comboBoxClipboard&quot;));</span>
+<span class="lineNum">     185 </span><span class="lineNoCov">          0 :         comboBoxClipboard-&gt;setMinimumSize(QSize(140, 0));</span>
+<span class="lineNum">     186 </span>            : 
+<span class="lineNum">     187 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addWidget(comboBoxClipboard);</span>
+<a name="188"><span class="lineNum">     188 </span>            : </a>
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :         checkBoxSelection = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     190 </span><span class="lineNoCov">          0 :         checkBoxSelection-&gt;setObjectName(QStringLiteral(&quot;checkBoxSelection&quot;));</span>
+<span class="lineNum">     191 </span>            : 
+<span class="lineNum">     192 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addWidget(checkBoxSelection);</span>
+<a name="193"><span class="lineNum">     193 </span>            : </a>
+<span class="lineNum">     194 </span><span class="lineNoCov">          0 :         checkBoxAutoclear = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     195 </span><span class="lineNoCov">          0 :         checkBoxAutoclear-&gt;setObjectName(QStringLiteral(&quot;checkBoxAutoclear&quot;));</span>
+<span class="lineNum">     196 </span>            : 
+<span class="lineNum">     197 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addWidget(checkBoxAutoclear);</span>
+<a name="198"><span class="lineNum">     198 </span>            : </a>
+<span class="lineNum">     199 </span><span class="lineNoCov">          0 :         spinBoxAutoclearSeconds = new QSpinBox(Tab_Settings);</span>
+<span class="lineNum">     200 </span><span class="lineNoCov">          0 :         spinBoxAutoclearSeconds-&gt;setObjectName(QStringLiteral(&quot;spinBoxAutoclearSeconds&quot;));</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :         spinBoxAutoclearSeconds-&gt;setMinimum(5);</span>
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 :         spinBoxAutoclearSeconds-&gt;setValue(10);</span>
+<span class="lineNum">     203 </span>            : 
+<span class="lineNum">     204 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addWidget(spinBoxAutoclearSeconds);</span>
+<a name="205"><span class="lineNum">     205 </span>            : </a>
+<span class="lineNum">     206 </span><span class="lineNoCov">          0 :         labelSeconds = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :         labelSeconds-&gt;setObjectName(QStringLiteral(&quot;labelSeconds&quot;));</span>
+<span class="lineNum">     208 </span>            : 
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addWidget(labelSeconds);</span>
+<span class="lineNum">     210 </span>            : 
+<span class="lineNum">     211 </span><span class="lineNoCov">          0 :         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     212 </span>            : 
+<span class="lineNum">     213 </span><span class="lineNoCov">          0 :         horizontalLayout-&gt;addItem(horizontalSpacer_4);</span>
+<span class="lineNum">     214 </span>            : 
+<span class="lineNum">     215 </span>            : 
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :         Layout_Clipboard-&gt;addLayout(horizontalLayout);</span>
+<span class="lineNum">     217 </span>            : 
+<span class="lineNum">     218 </span>            : 
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;addLayout(Layout_Clipboard);</span>
+<a name="220"><span class="lineNum">     220 </span>            : </a>
+<span class="lineNum">     221 </span><span class="lineNoCov">          0 :         Layout_PasswordBehaviour = new QVBoxLayout();</span>
+<a name="222"><span class="lineNum">     222 </span><span class="lineNoCov">          0 :         Layout_PasswordBehaviour-&gt;setObjectName(QStringLiteral(&quot;Layout_PasswordBehaviour&quot;));</span></a>
+<span class="lineNum">     223 </span><span class="lineNoCov">          0 :         label_6 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     224 </span><span class="lineNoCov">          0 :         label_6-&gt;setObjectName(QStringLiteral(&quot;label_6&quot;));</span>
+<span class="lineNum">     225 </span><span class="lineNoCov">          0 :         label_6-&gt;setFont(font);</span>
+<span class="lineNum">     226 </span>            : 
+<span class="lineNum">     227 </span><span class="lineNoCov">          0 :         Layout_PasswordBehaviour-&gt;addWidget(label_6);</span>
+<a name="228"><span class="lineNum">     228 </span>            : </a>
+<span class="lineNum">     229 </span><span class="lineNoCov">          0 :         horizontalLayout_6 = new QHBoxLayout();</span>
+<span class="lineNum">     230 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_6&quot;));</span>
+<a name="231"><span class="lineNum">     231 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;setContentsMargins(-1, 0, -1, -1);</span></a>
+<span class="lineNum">     232 </span><span class="lineNoCov">          0 :         checkBoxHideContent = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     233 </span><span class="lineNoCov">          0 :         checkBoxHideContent-&gt;setObjectName(QStringLiteral(&quot;checkBoxHideContent&quot;));</span>
+<span class="lineNum">     234 </span>            : 
+<span class="lineNum">     235 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;addWidget(checkBoxHideContent);</span>
+<a name="236"><span class="lineNum">     236 </span>            : </a>
+<span class="lineNum">     237 </span><span class="lineNoCov">          0 :         checkBoxHidePassword = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     238 </span><span class="lineNoCov">          0 :         checkBoxHidePassword-&gt;setObjectName(QStringLiteral(&quot;checkBoxHidePassword&quot;));</span>
+<span class="lineNum">     239 </span>            : 
+<span class="lineNum">     240 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;addWidget(checkBoxHidePassword);</span>
+<a name="241"><span class="lineNum">     241 </span>            : </a>
+<span class="lineNum">     242 </span><span class="lineNoCov">          0 :         horizontalLayout_7 = new QHBoxLayout();</span>
+<a name="243"><span class="lineNum">     243 </span><span class="lineNoCov">          0 :         horizontalLayout_7-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_7&quot;));</span></a>
+<span class="lineNum">     244 </span><span class="lineNoCov">          0 :         checkBoxAutoclearPanel = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     245 </span><span class="lineNoCov">          0 :         checkBoxAutoclearPanel-&gt;setObjectName(QStringLiteral(&quot;checkBoxAutoclearPanel&quot;));</span>
+<span class="lineNum">     246 </span>            : 
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 :         horizontalLayout_7-&gt;addWidget(checkBoxAutoclearPanel);</span>
+<a name="248"><span class="lineNum">     248 </span>            : </a>
+<span class="lineNum">     249 </span><span class="lineNoCov">          0 :         spinBoxAutoclearPanelSeconds = new QSpinBox(Tab_Settings);</span>
+<span class="lineNum">     250 </span><span class="lineNoCov">          0 :         spinBoxAutoclearPanelSeconds-&gt;setObjectName(QStringLiteral(&quot;spinBoxAutoclearPanelSeconds&quot;));</span>
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :         spinBoxAutoclearPanelSeconds-&gt;setMinimum(5);</span>
+<span class="lineNum">     252 </span><span class="lineNoCov">          0 :         spinBoxAutoclearPanelSeconds-&gt;setValue(10);</span>
+<span class="lineNum">     253 </span>            : 
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :         horizontalLayout_7-&gt;addWidget(spinBoxAutoclearPanelSeconds);</span>
+<a name="255"><span class="lineNum">     255 </span>            : </a>
+<span class="lineNum">     256 </span><span class="lineNoCov">          0 :         labelPanelSeconds = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     257 </span><span class="lineNoCov">          0 :         labelPanelSeconds-&gt;setObjectName(QStringLiteral(&quot;labelPanelSeconds&quot;));</span>
+<span class="lineNum">     258 </span><span class="lineNoCov">          0 :         labelPanelSeconds-&gt;setMinimumSize(QSize(55, 0));</span>
+<span class="lineNum">     259 </span>            : 
+<span class="lineNum">     260 </span><span class="lineNoCov">          0 :         horizontalLayout_7-&gt;addWidget(labelPanelSeconds);</span>
+<span class="lineNum">     261 </span>            : 
+<span class="lineNum">     262 </span>            : 
+<span class="lineNum">     263 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;addLayout(horizontalLayout_7);</span>
+<span class="lineNum">     264 </span>            : 
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 :         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     266 </span>            : 
+<span class="lineNum">     267 </span><span class="lineNoCov">          0 :         horizontalLayout_6-&gt;addItem(horizontalSpacer_5);</span>
+<span class="lineNum">     268 </span>            : 
+<span class="lineNum">     269 </span>            : 
+<span class="lineNum">     270 </span><span class="lineNoCov">          0 :         Layout_PasswordBehaviour-&gt;addLayout(horizontalLayout_6);</span>
+<span class="lineNum">     271 </span>            : 
+<span class="lineNum">     272 </span>            : 
+<span class="lineNum">     273 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;addLayout(Layout_PasswordBehaviour);</span>
+<a name="274"><span class="lineNum">     274 </span>            : </a>
+<span class="lineNum">     275 </span><span class="lineNoCov">          0 :         Layout_PasswordGeneration = new QVBoxLayout();</span>
+<a name="276"><span class="lineNum">     276 </span><span class="lineNoCov">          0 :         Layout_PasswordGeneration-&gt;setObjectName(QStringLiteral(&quot;Layout_PasswordGeneration&quot;));</span></a>
+<span class="lineNum">     277 </span><span class="lineNoCov">          0 :         label_4 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     278 </span><span class="lineNoCov">          0 :         label_4-&gt;setObjectName(QStringLiteral(&quot;label_4&quot;));</span>
+<span class="lineNum">     279 </span><span class="lineNoCov">          0 :         label_4-&gt;setFont(font);</span>
+<span class="lineNum">     280 </span>            : 
+<span class="lineNum">     281 </span><span class="lineNoCov">          0 :         Layout_PasswordGeneration-&gt;addWidget(label_4);</span>
+<a name="282"><span class="lineNum">     282 </span>            : </a>
+<span class="lineNum">     283 </span><span class="lineNoCov">          0 :         formLayout_2 = new QFormLayout();</span>
+<span class="lineNum">     284 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setObjectName(QStringLiteral(&quot;formLayout_2&quot;));</span>
+<a name="285"><span class="lineNum">     285 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setContentsMargins(-1, 0, -1, -1);</span></a>
+<span class="lineNum">     286 </span><span class="lineNoCov">          0 :         label_7 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     287 </span><span class="lineNoCov">          0 :         label_7-&gt;setObjectName(QStringLiteral(&quot;label_7&quot;));</span>
+<span class="lineNum">     288 </span>            : 
+<span class="lineNum">     289 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setWidget(0, QFormLayout::LabelRole, label_7);</span>
+<a name="290"><span class="lineNum">     290 </span>            : </a>
+<span class="lineNum">     291 </span><span class="lineNoCov">          0 :         horizontalLayout_13 = new QHBoxLayout();</span>
+<a name="292"><span class="lineNum">     292 </span><span class="lineNoCov">          0 :         horizontalLayout_13-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_13&quot;));</span></a>
+<span class="lineNum">     293 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength = new QSpinBox(Tab_Settings);</span>
+<span class="lineNum">     294 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setObjectName(QStringLiteral(&quot;spinBoxPasswordLength&quot;));</span>
+<span class="lineNum">     295 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setEnabled(true);</span>
+<span class="lineNum">     296 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setMinimumSize(QSize(50, 0));</span>
+<span class="lineNum">     297 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setMinimum(8);</span>
+<span class="lineNum">     298 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setMaximum(255);</span>
+<span class="lineNum">     299 </span><span class="lineNoCov">          0 :         spinBoxPasswordLength-&gt;setValue(16);</span>
+<span class="lineNum">     300 </span>            : 
+<span class="lineNum">     301 </span><span class="lineNoCov">          0 :         horizontalLayout_13-&gt;addWidget(spinBoxPasswordLength);</span>
+<a name="302"><span class="lineNum">     302 </span>            : </a>
+<span class="lineNum">     303 </span><span class="lineNoCov">          0 :         labelLength = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     304 </span><span class="lineNoCov">          0 :         labelLength-&gt;setObjectName(QStringLiteral(&quot;labelLength&quot;));</span>
+<span class="lineNum">     305 </span><span class="lineNoCov">          0 :         labelLength-&gt;setEnabled(true);</span>
+<span class="lineNum">     306 </span>            : 
+<span class="lineNum">     307 </span><span class="lineNoCov">          0 :         horizontalLayout_13-&gt;addWidget(labelLength);</span>
+<span class="lineNum">     308 </span>            : 
+<span class="lineNum">     309 </span><span class="lineNoCov">          0 :         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     310 </span>            : 
+<span class="lineNum">     311 </span><span class="lineNoCov">          0 :         horizontalLayout_13-&gt;addItem(horizontalSpacer_2);</span>
+<span class="lineNum">     312 </span>            : 
+<span class="lineNum">     313 </span>            : 
+<span class="lineNum">     314 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setLayout(0, QFormLayout::FieldRole, horizontalLayout_13);</span>
+<a name="315"><span class="lineNum">     315 </span>            : </a>
+<span class="lineNum">     316 </span><span class="lineNoCov">          0 :         labelPasswordChars = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     317 </span><span class="lineNoCov">          0 :         labelPasswordChars-&gt;setObjectName(QStringLiteral(&quot;labelPasswordChars&quot;));</span>
+<span class="lineNum">     318 </span><span class="lineNoCov">          0 :         labelPasswordChars-&gt;setEnabled(true);</span>
+<span class="lineNum">     319 </span>            : 
+<span class="lineNum">     320 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setWidget(1, QFormLayout::LabelRole, labelPasswordChars);</span>
+<a name="321"><span class="lineNum">     321 </span>            : </a>
+<span class="lineNum">     322 </span><span class="lineNoCov">          0 :         horizontalLayout_10 = new QHBoxLayout();</span>
+<span class="lineNum">     323 </span><span class="lineNoCov">          0 :         horizontalLayout_10-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_10&quot;));</span>
+<a name="324"><span class="lineNum">     324 </span><span class="lineNoCov">          0 :         horizontalLayout_10-&gt;setContentsMargins(-1, 0, -1, -1);</span></a>
+<span class="lineNum">     325 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector = new QComboBox(Tab_Settings);</span>
+<span class="lineNum">     326 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector-&gt;setObjectName(QStringLiteral(&quot;passwordCharTemplateSelector&quot;));</span>
+<span class="lineNum">     327 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);</span>
+<span class="lineNum">     328 </span><span class="lineNoCov">          0 :         sizePolicy1.setHorizontalStretch(0);</span>
+<span class="lineNum">     329 </span><span class="lineNoCov">          0 :         sizePolicy1.setVerticalStretch(0);</span>
+<span class="lineNum">     330 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(passwordCharTemplateSelector-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     331 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector-&gt;setSizePolicy(sizePolicy1);</span>
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span><span class="lineNoCov">          0 :         horizontalLayout_10-&gt;addWidget(passwordCharTemplateSelector);</span>
+<span class="lineNum">     334 </span>            : 
+<span class="lineNum">     335 </span><span class="lineNoCov">          0 :         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     336 </span>            : 
+<span class="lineNum">     337 </span><span class="lineNoCov">          0 :         horizontalLayout_10-&gt;addItem(horizontalSpacer_3);</span>
+<span class="lineNum">     338 </span>            : 
+<span class="lineNum">     339 </span>            : 
+<span class="lineNum">     340 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setLayout(1, QFormLayout::FieldRole, horizontalLayout_10);</span>
+<a name="341"><span class="lineNum">     341 </span>            : </a>
+<span class="lineNum">     342 </span><span class="lineNoCov">          0 :         lineEditPasswordChars = new QLineEdit(Tab_Settings);</span>
+<span class="lineNum">     343 </span><span class="lineNoCov">          0 :         lineEditPasswordChars-&gt;setObjectName(QStringLiteral(&quot;lineEditPasswordChars&quot;));</span>
+<span class="lineNum">     344 </span><span class="lineNoCov">          0 :         lineEditPasswordChars-&gt;setEnabled(true);</span>
+<span class="lineNum">     345 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);</span>
+<span class="lineNum">     346 </span><span class="lineNoCov">          0 :         sizePolicy2.setHorizontalStretch(0);</span>
+<span class="lineNum">     347 </span><span class="lineNoCov">          0 :         sizePolicy2.setVerticalStretch(0);</span>
+<span class="lineNum">     348 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(lineEditPasswordChars-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     349 </span><span class="lineNoCov">          0 :         lineEditPasswordChars-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     350 </span><span class="lineNoCov">          0 :         lineEditPasswordChars-&gt;setMaximumSize(QSize(600, 16777215));</span>
+<span class="lineNum">     351 </span>            : 
+<span class="lineNum">     352 </span><span class="lineNoCov">          0 :         formLayout_2-&gt;setWidget(2, QFormLayout::FieldRole, lineEditPasswordChars);</span>
+<span class="lineNum">     353 </span>            : 
+<span class="lineNum">     354 </span>            : 
+<span class="lineNum">     355 </span><span class="lineNoCov">          0 :         Layout_PasswordGeneration-&gt;addLayout(formLayout_2);</span>
+<a name="356"><span class="lineNum">     356 </span>            : </a>
+<span class="lineNum">     357 </span><span class="lineNoCov">          0 :         formLayout = new QFormLayout();</span>
+<span class="lineNum">     358 </span><span class="lineNoCov">          0 :         formLayout-&gt;setObjectName(QStringLiteral(&quot;formLayout&quot;));</span>
+<a name="359"><span class="lineNum">     359 </span><span class="lineNoCov">          0 :         formLayout-&gt;setContentsMargins(-1, 0, -1, -1);</span></a>
+<span class="lineNum">     360 </span><span class="lineNoCov">          0 :         checkBoxUsePwgen = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     361 </span><span class="lineNoCov">          0 :         checkBoxUsePwgen-&gt;setObjectName(QStringLiteral(&quot;checkBoxUsePwgen&quot;));</span>
+<span class="lineNum">     362 </span><span class="lineNoCov">          0 :         checkBoxUsePwgen-&gt;setEnabled(true);</span>
+<span class="lineNum">     363 </span>            : 
+<span class="lineNum">     364 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(0, QFormLayout::LabelRole, checkBoxUsePwgen);</span>
+<a name="365"><span class="lineNum">     365 </span>            : </a>
+<span class="lineNum">     366 </span><span class="lineNoCov">          0 :         checkBoxAvoidCapitals = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     367 </span><span class="lineNoCov">          0 :         checkBoxAvoidCapitals-&gt;setObjectName(QStringLiteral(&quot;checkBoxAvoidCapitals&quot;));</span>
+<span class="lineNum">     368 </span>            : 
+<span class="lineNum">     369 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(0, QFormLayout::FieldRole, checkBoxAvoidCapitals);</span>
+<a name="370"><span class="lineNum">     370 </span>            : </a>
+<span class="lineNum">     371 </span><span class="lineNoCov">          0 :         checkBoxUseSymbols = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     372 </span><span class="lineNoCov">          0 :         checkBoxUseSymbols-&gt;setObjectName(QStringLiteral(&quot;checkBoxUseSymbols&quot;));</span>
+<span class="lineNum">     373 </span><span class="lineNoCov">          0 :         checkBoxUseSymbols-&gt;setEnabled(true);</span>
+<span class="lineNum">     374 </span>            : 
+<span class="lineNum">     375 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(3, QFormLayout::FieldRole, checkBoxUseSymbols);</span>
+<a name="376"><span class="lineNum">     376 </span>            : </a>
+<span class="lineNum">     377 </span><span class="lineNoCov">          0 :         checkBoxLessRandom = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     378 </span><span class="lineNoCov">          0 :         checkBoxLessRandom-&gt;setObjectName(QStringLiteral(&quot;checkBoxLessRandom&quot;));</span>
+<span class="lineNum">     379 </span>            : 
+<span class="lineNum">     380 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(2, QFormLayout::FieldRole, checkBoxLessRandom);</span>
+<a name="381"><span class="lineNum">     381 </span>            : </a>
+<span class="lineNum">     382 </span><span class="lineNoCov">          0 :         checkBoxAvoidNumbers = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     383 </span><span class="lineNoCov">          0 :         checkBoxAvoidNumbers-&gt;setObjectName(QStringLiteral(&quot;checkBoxAvoidNumbers&quot;));</span>
+<span class="lineNum">     384 </span>            : 
+<span class="lineNum">     385 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(1, QFormLayout::FieldRole, checkBoxAvoidNumbers);</span>
+<span class="lineNum">     386 </span>            : 
+<span class="lineNum">     387 </span>            : 
+<span class="lineNum">     388 </span><span class="lineNoCov">          0 :         Layout_PasswordGeneration-&gt;addLayout(formLayout);</span>
+<span class="lineNum">     389 </span>            : 
+<span class="lineNum">     390 </span>            : 
+<span class="lineNum">     391 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;addLayout(Layout_PasswordGeneration);</span>
+<a name="392"><span class="lineNum">     392 </span>            : </a>
+<span class="lineNum">     393 </span><span class="lineNoCov">          0 :         Layout_Git = new QVBoxLayout();</span>
+<a name="394"><span class="lineNum">     394 </span><span class="lineNoCov">          0 :         Layout_Git-&gt;setObjectName(QStringLiteral(&quot;Layout_Git&quot;));</span></a>
+<span class="lineNum">     395 </span><span class="lineNoCov">          0 :         label_3 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     396 </span><span class="lineNoCov">          0 :         label_3-&gt;setObjectName(QStringLiteral(&quot;label_3&quot;));</span>
+<span class="lineNum">     397 </span><span class="lineNoCov">          0 :         label_3-&gt;setFont(font);</span>
+<span class="lineNum">     398 </span>            : 
+<span class="lineNum">     399 </span><span class="lineNoCov">          0 :         Layout_Git-&gt;addWidget(label_3);</span>
+<a name="400"><span class="lineNum">     400 </span>            : </a>
+<span class="lineNum">     401 </span><span class="lineNoCov">          0 :         horizontalLayout_9 = new QHBoxLayout();</span>
+<a name="402"><span class="lineNum">     402 </span><span class="lineNoCov">          0 :         horizontalLayout_9-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_9&quot;));</span></a>
+<span class="lineNum">     403 </span><span class="lineNoCov">          0 :         checkBoxUseGit = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     404 </span><span class="lineNoCov">          0 :         checkBoxUseGit-&gt;setObjectName(QStringLiteral(&quot;checkBoxUseGit&quot;));</span>
+<span class="lineNum">     405 </span><span class="lineNoCov">          0 :         checkBoxUseGit-&gt;setEnabled(true);</span>
+<span class="lineNum">     406 </span>            : 
+<span class="lineNum">     407 </span><span class="lineNoCov">          0 :         horizontalLayout_9-&gt;addWidget(checkBoxUseGit);</span>
+<span class="lineNum">     408 </span>            : 
+<span class="lineNum">     409 </span>            : 
+<span class="lineNum">     410 </span><span class="lineNoCov">          0 :         Layout_Git-&gt;addLayout(horizontalLayout_9);</span>
+<a name="411"><span class="lineNum">     411 </span>            : </a>
+<span class="lineNum">     412 </span><span class="lineNoCov">          0 :         horizontalLayout_12 = new QHBoxLayout();</span>
+<span class="lineNum">     413 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_12&quot;));</span>
+<a name="414"><span class="lineNum">     414 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;setContentsMargins(-1, -1, -1, 0);</span></a>
+<span class="lineNum">     415 </span><span class="lineNoCov">          0 :         checkBoxAddGPGId = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     416 </span><span class="lineNoCov">          0 :         checkBoxAddGPGId-&gt;setObjectName(QStringLiteral(&quot;checkBoxAddGPGId&quot;));</span>
+<span class="lineNum">     417 </span>            : 
+<span class="lineNum">     418 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;addWidget(checkBoxAddGPGId);</span>
+<a name="419"><span class="lineNum">     419 </span>            : </a>
+<span class="lineNum">     420 </span><span class="lineNoCov">          0 :         checkBoxAutoPush = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     421 </span><span class="lineNoCov">          0 :         checkBoxAutoPush-&gt;setObjectName(QStringLiteral(&quot;checkBoxAutoPush&quot;));</span>
+<span class="lineNum">     422 </span>            : 
+<span class="lineNum">     423 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;addWidget(checkBoxAutoPush);</span>
+<a name="424"><span class="lineNum">     424 </span>            : </a>
+<span class="lineNum">     425 </span><span class="lineNoCov">          0 :         checkBoxAutoPull = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     426 </span><span class="lineNoCov">          0 :         checkBoxAutoPull-&gt;setObjectName(QStringLiteral(&quot;checkBoxAutoPull&quot;));</span>
+<span class="lineNum">     427 </span>            : 
+<span class="lineNum">     428 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;addWidget(checkBoxAutoPull);</span>
+<span class="lineNum">     429 </span>            : 
+<span class="lineNum">     430 </span><span class="lineNoCov">          0 :         horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     431 </span>            : 
+<span class="lineNum">     432 </span><span class="lineNoCov">          0 :         horizontalLayout_12-&gt;addItem(horizontalSpacer_7);</span>
+<span class="lineNum">     433 </span>            : 
+<span class="lineNum">     434 </span>            : 
+<span class="lineNum">     435 </span><span class="lineNoCov">          0 :         Layout_Git-&gt;addLayout(horizontalLayout_12);</span>
+<span class="lineNum">     436 </span>            : 
+<span class="lineNum">     437 </span>            : 
+<span class="lineNum">     438 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;addLayout(Layout_Git);</span>
+<a name="439"><span class="lineNum">     439 </span>            : </a>
+<span class="lineNum">     440 </span><span class="lineNoCov">          0 :         Layout_System = new QVBoxLayout();</span>
+<span class="lineNum">     441 </span><span class="lineNoCov">          0 :         Layout_System-&gt;setObjectName(QStringLiteral(&quot;Layout_System&quot;));</span>
+<a name="442"><span class="lineNum">     442 </span><span class="lineNoCov">          0 :         Layout_System-&gt;setContentsMargins(-1, 0, -1, -1);</span></a>
+<span class="lineNum">     443 </span><span class="lineNoCov">          0 :         label_5 = new QLabel(Tab_Settings);</span>
+<span class="lineNum">     444 </span><span class="lineNoCov">          0 :         label_5-&gt;setObjectName(QStringLiteral(&quot;label_5&quot;));</span>
+<span class="lineNum">     445 </span><span class="lineNoCov">          0 :         label_5-&gt;setFont(font);</span>
+<span class="lineNum">     446 </span>            : 
+<span class="lineNum">     447 </span><span class="lineNoCov">          0 :         Layout_System-&gt;addWidget(label_5);</span>
+<a name="448"><span class="lineNum">     448 </span>            : </a>
+<span class="lineNum">     449 </span><span class="lineNoCov">          0 :         horizontalLayout_11 = new QHBoxLayout();</span>
+<span class="lineNum">     450 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_11&quot;));</span>
+<a name="451"><span class="lineNum">     451 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;setContentsMargins(-1, -1, -1, 0);</span></a>
+<span class="lineNum">     452 </span><span class="lineNoCov">          0 :         checkBoxUseTrayIcon = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     453 </span><span class="lineNoCov">          0 :         checkBoxUseTrayIcon-&gt;setObjectName(QStringLiteral(&quot;checkBoxUseTrayIcon&quot;));</span>
+<span class="lineNum">     454 </span>            : 
+<span class="lineNum">     455 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;addWidget(checkBoxUseTrayIcon);</span>
+<a name="456"><span class="lineNum">     456 </span>            : </a>
+<span class="lineNum">     457 </span><span class="lineNoCov">          0 :         checkBoxStartMinimized = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     458 </span><span class="lineNoCov">          0 :         checkBoxStartMinimized-&gt;setObjectName(QStringLiteral(&quot;checkBoxStartMinimized&quot;));</span>
+<span class="lineNum">     459 </span>            : 
+<span class="lineNum">     460 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;addWidget(checkBoxStartMinimized);</span>
+<a name="461"><span class="lineNum">     461 </span>            : </a>
+<span class="lineNum">     462 </span><span class="lineNoCov">          0 :         checkBoxHideOnClose = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     463 </span><span class="lineNoCov">          0 :         checkBoxHideOnClose-&gt;setObjectName(QStringLiteral(&quot;checkBoxHideOnClose&quot;));</span>
+<span class="lineNum">     464 </span>            : 
+<span class="lineNum">     465 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;addWidget(checkBoxHideOnClose);</span>
+<a name="466"><span class="lineNum">     466 </span>            : </a>
+<span class="lineNum">     467 </span><span class="lineNoCov">          0 :         checkBoxAlwaysOnTop = new QCheckBox(Tab_Settings);</span>
+<span class="lineNum">     468 </span><span class="lineNoCov">          0 :         checkBoxAlwaysOnTop-&gt;setObjectName(QStringLiteral(&quot;checkBoxAlwaysOnTop&quot;));</span>
+<span class="lineNum">     469 </span>            : 
+<span class="lineNum">     470 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;addWidget(checkBoxAlwaysOnTop);</span>
+<span class="lineNum">     471 </span>            : 
+<span class="lineNum">     472 </span><span class="lineNoCov">          0 :         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     473 </span>            : 
+<span class="lineNum">     474 </span><span class="lineNoCov">          0 :         horizontalLayout_11-&gt;addItem(horizontalSpacer_6);</span>
+<span class="lineNum">     475 </span>            : 
+<span class="lineNum">     476 </span>            : 
+<span class="lineNum">     477 </span><span class="lineNoCov">          0 :         Layout_System-&gt;addLayout(horizontalLayout_11);</span>
+<span class="lineNum">     478 </span>            : 
+<span class="lineNum">     479 </span>            : 
+<span class="lineNum">     480 </span><span class="lineNoCov">          0 :         verticalLayout_5-&gt;addLayout(Layout_System);</span>
+<span class="lineNum">     481 </span>            : 
+<a name="482"><span class="lineNum">     482 </span><span class="lineNoCov">          0 :         tabWidget-&gt;addTab(Tab_Settings, QString());</span></a>
+<span class="lineNum">     483 </span><span class="lineNoCov">          0 :         Tab_Programs = new QWidget();</span>
+<a name="484"><span class="lineNum">     484 </span><span class="lineNoCov">          0 :         Tab_Programs-&gt;setObjectName(QStringLiteral(&quot;Tab_Programs&quot;));</span></a>
+<span class="lineNum">     485 </span><span class="lineNoCov">          0 :         verticalLayout = new QVBoxLayout(Tab_Programs);</span>
+<span class="lineNum">     486 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setObjectName(QStringLiteral(&quot;verticalLayout&quot;));</span>
+<a name="487"><span class="lineNum">     487 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
+<span class="lineNum">     488 </span><span class="lineNoCov">          0 :         label_9 = new QLabel(Tab_Programs);</span>
+<span class="lineNum">     489 </span><span class="lineNoCov">          0 :         label_9-&gt;setObjectName(QStringLiteral(&quot;label_9&quot;));</span>
+<span class="lineNum">     490 </span>            : 
+<span class="lineNum">     491 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(label_9);</span>
+<a name="492"><span class="lineNum">     492 </span>            : </a>
+<span class="lineNum">     493 </span><span class="lineNoCov">          0 :         horizontalLayout_5 = new QHBoxLayout();</span>
+<a name="494"><span class="lineNum">     494 </span><span class="lineNoCov">          0 :         horizontalLayout_5-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_5&quot;));</span></a>
+<span class="lineNum">     495 </span><span class="lineNoCov">          0 :         radioButtonNative = new QRadioButton(Tab_Programs);</span>
+<span class="lineNum">     496 </span><span class="lineNoCov">          0 :         radioButtonNative-&gt;setObjectName(QStringLiteral(&quot;radioButtonNative&quot;));</span>
+<span class="lineNum">     497 </span>            : 
+<span class="lineNum">     498 </span><span class="lineNoCov">          0 :         horizontalLayout_5-&gt;addWidget(radioButtonNative);</span>
+<a name="499"><span class="lineNum">     499 </span>            : </a>
+<span class="lineNum">     500 </span><span class="lineNoCov">          0 :         radioButtonPass = new QRadioButton(Tab_Programs);</span>
+<span class="lineNum">     501 </span><span class="lineNoCov">          0 :         radioButtonPass-&gt;setObjectName(QStringLiteral(&quot;radioButtonPass&quot;));</span>
+<span class="lineNum">     502 </span>            : 
+<span class="lineNum">     503 </span><span class="lineNoCov">          0 :         horizontalLayout_5-&gt;addWidget(radioButtonPass);</span>
+<span class="lineNum">     504 </span>            : 
+<span class="lineNum">     505 </span>            : 
+<span class="lineNum">     506 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addLayout(horizontalLayout_5);</span>
+<a name="507"><span class="lineNum">     507 </span>            : </a>
+<span class="lineNum">     508 </span><span class="lineNoCov">          0 :         widget = new QWidget(Tab_Programs);</span>
+<a name="509"><span class="lineNum">     509 </span><span class="lineNoCov">          0 :         widget-&gt;setObjectName(QStringLiteral(&quot;widget&quot;));</span></a>
+<span class="lineNum">     510 </span><span class="lineNoCov">          0 :         horizontalLayout_2 = new QHBoxLayout(widget);</span>
+<span class="lineNum">     511 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_2&quot;));</span>
+<a name="512"><span class="lineNum">     512 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
+<span class="lineNum">     513 </span><span class="lineNoCov">          0 :         groupBoxNative = new QGroupBox(widget);</span>
+<a name="514"><span class="lineNum">     514 </span><span class="lineNoCov">          0 :         groupBoxNative-&gt;setObjectName(QStringLiteral(&quot;groupBoxNative&quot;));</span></a>
+<span class="lineNum">     515 </span><span class="lineNoCov">          0 :         gridLayout = new QGridLayout(groupBoxNative);</span>
+<a name="516"><span class="lineNum">     516 </span><span class="lineNoCov">          0 :         gridLayout-&gt;setObjectName(QStringLiteral(&quot;gridLayout&quot;));</span></a>
+<span class="lineNum">     517 </span><span class="lineNoCov">          0 :         labelGitPath = new QLabel(groupBoxNative);</span>
+<span class="lineNum">     518 </span><span class="lineNoCov">          0 :         labelGitPath-&gt;setObjectName(QStringLiteral(&quot;labelGitPath&quot;));</span>
+<span class="lineNum">     519 </span>            : 
+<span class="lineNum">     520 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelGitPath, 1, 0, 1, 1);</span>
+<a name="521"><span class="lineNum">     521 </span>            : </a>
+<span class="lineNum">     522 </span><span class="lineNoCov">          0 :         gpgPath = new QLineEdit(groupBoxNative);</span>
+<span class="lineNum">     523 </span><span class="lineNoCov">          0 :         gpgPath-&gt;setObjectName(QStringLiteral(&quot;gpgPath&quot;));</span>
+<span class="lineNum">     524 </span>            : 
+<span class="lineNum">     525 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(gpgPath, 0, 1, 1, 1);</span>
+<a name="526"><span class="lineNum">     526 </span>            : </a>
+<span class="lineNum">     527 </span><span class="lineNoCov">          0 :         toolButtonGpg = new QToolButton(groupBoxNative);</span>
+<span class="lineNum">     528 </span><span class="lineNoCov">          0 :         toolButtonGpg-&gt;setObjectName(QStringLiteral(&quot;toolButtonGpg&quot;));</span>
+<span class="lineNum">     529 </span>            : 
+<span class="lineNum">     530 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(toolButtonGpg, 0, 2, 1, 1);</span>
+<a name="531"><span class="lineNum">     531 </span>            : </a>
+<span class="lineNum">     532 </span><span class="lineNoCov">          0 :         toolButtonGit = new QToolButton(groupBoxNative);</span>
+<span class="lineNum">     533 </span><span class="lineNoCov">          0 :         toolButtonGit-&gt;setObjectName(QStringLiteral(&quot;toolButtonGit&quot;));</span>
+<span class="lineNum">     534 </span>            : 
+<span class="lineNum">     535 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(toolButtonGit, 1, 2, 1, 1);</span>
+<a name="536"><span class="lineNum">     536 </span>            : </a>
+<span class="lineNum">     537 </span><span class="lineNoCov">          0 :         labelGpgPath = new QLabel(groupBoxNative);</span>
+<span class="lineNum">     538 </span><span class="lineNoCov">          0 :         labelGpgPath-&gt;setObjectName(QStringLiteral(&quot;labelGpgPath&quot;));</span>
+<span class="lineNum">     539 </span>            : 
+<span class="lineNum">     540 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelGpgPath, 0, 0, 1, 1);</span>
+<a name="541"><span class="lineNum">     541 </span>            : </a>
+<span class="lineNum">     542 </span><span class="lineNoCov">          0 :         gitPath = new QLineEdit(groupBoxNative);</span>
+<span class="lineNum">     543 </span><span class="lineNoCov">          0 :         gitPath-&gt;setObjectName(QStringLiteral(&quot;gitPath&quot;));</span>
+<span class="lineNum">     544 </span>            : 
+<span class="lineNum">     545 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(gitPath, 1, 1, 1, 1);</span>
+<a name="546"><span class="lineNum">     546 </span>            : </a>
+<span class="lineNum">     547 </span><span class="lineNoCov">          0 :         pwgenPath = new QLineEdit(groupBoxNative);</span>
+<span class="lineNum">     548 </span><span class="lineNoCov">          0 :         pwgenPath-&gt;setObjectName(QStringLiteral(&quot;pwgenPath&quot;));</span>
+<span class="lineNum">     549 </span>            : 
+<span class="lineNum">     550 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(pwgenPath, 2, 1, 1, 1);</span>
+<a name="551"><span class="lineNum">     551 </span>            : </a>
+<span class="lineNum">     552 </span><span class="lineNoCov">          0 :         labelPwgenPath = new QLabel(groupBoxNative);</span>
+<span class="lineNum">     553 </span><span class="lineNoCov">          0 :         labelPwgenPath-&gt;setObjectName(QStringLiteral(&quot;labelPwgenPath&quot;));</span>
+<span class="lineNum">     554 </span>            : 
+<span class="lineNum">     555 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelPwgenPath, 2, 0, 1, 1);</span>
+<a name="556"><span class="lineNum">     556 </span>            : </a>
+<span class="lineNum">     557 </span><span class="lineNoCov">          0 :         toolButtonPwgen = new QToolButton(groupBoxNative);</span>
+<span class="lineNum">     558 </span><span class="lineNoCov">          0 :         toolButtonPwgen-&gt;setObjectName(QStringLiteral(&quot;toolButtonPwgen&quot;));</span>
+<span class="lineNum">     559 </span>            : 
+<span class="lineNum">     560 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(toolButtonPwgen, 2, 2, 1, 1);</span>
+<span class="lineNum">     561 </span>            : 
+<span class="lineNum">     562 </span>            : 
+<span class="lineNum">     563 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(groupBoxNative);</span>
+<a name="564"><span class="lineNum">     564 </span>            : </a>
+<span class="lineNum">     565 </span><span class="lineNoCov">          0 :         groupBoxPass = new QGroupBox(widget);</span>
+<a name="566"><span class="lineNum">     566 </span><span class="lineNoCov">          0 :         groupBoxPass-&gt;setObjectName(QStringLiteral(&quot;groupBoxPass&quot;));</span></a>
+<span class="lineNum">     567 </span><span class="lineNoCov">          0 :         verticalLayout_4 = new QVBoxLayout(groupBoxPass);</span>
+<a name="568"><span class="lineNum">     568 </span><span class="lineNoCov">          0 :         verticalLayout_4-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_4&quot;));</span></a>
+<span class="lineNum">     569 </span><span class="lineNoCov">          0 :         horizontalLayout_4 = new QHBoxLayout();</span>
+<span class="lineNum">     570 </span><span class="lineNoCov">          0 :         horizontalLayout_4-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_4&quot;));</span>
+<a name="571"><span class="lineNum">     571 </span><span class="lineNoCov">          0 :         horizontalLayout_4-&gt;setSizeConstraint(QLayout::SetMinimumSize);</span></a>
+<span class="lineNum">     572 </span><span class="lineNoCov">          0 :         labelPassPath = new QLabel(groupBoxPass);</span>
+<span class="lineNum">     573 </span><span class="lineNoCov">          0 :         labelPassPath-&gt;setObjectName(QStringLiteral(&quot;labelPassPath&quot;));</span>
+<span class="lineNum">     574 </span>            : 
+<span class="lineNum">     575 </span><span class="lineNoCov">          0 :         horizontalLayout_4-&gt;addWidget(labelPassPath);</span>
+<a name="576"><span class="lineNum">     576 </span>            : </a>
+<span class="lineNum">     577 </span><span class="lineNoCov">          0 :         passPath = new QLineEdit(groupBoxPass);</span>
+<span class="lineNum">     578 </span><span class="lineNoCov">          0 :         passPath-&gt;setObjectName(QStringLiteral(&quot;passPath&quot;));</span>
+<span class="lineNum">     579 </span>            : 
+<span class="lineNum">     580 </span><span class="lineNoCov">          0 :         horizontalLayout_4-&gt;addWidget(passPath);</span>
+<a name="581"><span class="lineNum">     581 </span>            : </a>
+<span class="lineNum">     582 </span><span class="lineNoCov">          0 :         toolButtonPass = new QToolButton(groupBoxPass);</span>
+<span class="lineNum">     583 </span><span class="lineNoCov">          0 :         toolButtonPass-&gt;setObjectName(QStringLiteral(&quot;toolButtonPass&quot;));</span>
+<span class="lineNum">     584 </span>            : 
+<span class="lineNum">     585 </span><span class="lineNoCov">          0 :         horizontalLayout_4-&gt;addWidget(toolButtonPass);</span>
+<span class="lineNum">     586 </span>            : 
+<span class="lineNum">     587 </span>            : 
+<span class="lineNum">     588 </span><span class="lineNoCov">          0 :         verticalLayout_4-&gt;addLayout(horizontalLayout_4);</span>
+<a name="589"><span class="lineNum">     589 </span>            : </a>
+<span class="lineNum">     590 </span><span class="lineNoCov">          0 :         zx2c4 = new QLabel(groupBoxPass);</span>
+<span class="lineNum">     591 </span><span class="lineNoCov">          0 :         zx2c4-&gt;setObjectName(QStringLiteral(&quot;zx2c4&quot;));</span>
+<span class="lineNum">     592 </span><span class="lineNoCov">          0 :         zx2c4-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">     593 </span>            : 
+<span class="lineNum">     594 </span><span class="lineNoCov">          0 :         verticalLayout_4-&gt;addWidget(zx2c4);</span>
+<span class="lineNum">     595 </span>            : 
+<span class="lineNum">     596 </span>            : 
+<span class="lineNum">     597 </span><span class="lineNoCov">          0 :         horizontalLayout_2-&gt;addWidget(groupBoxPass);</span>
+<span class="lineNum">     598 </span>            : 
+<span class="lineNum">     599 </span>            : 
+<span class="lineNum">     600 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(widget);</span>
+<span class="lineNum">     601 </span>            : 
+<span class="lineNum">     602 </span><span class="lineNoCov">          0 :         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);</span>
+<span class="lineNum">     603 </span>            : 
+<span class="lineNum">     604 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addItem(verticalSpacer);</span>
+<span class="lineNum">     605 </span>            : 
+<a name="606"><span class="lineNum">     606 </span><span class="lineNoCov">          0 :         tabWidget-&gt;addTab(Tab_Programs, QString());</span></a>
+<span class="lineNum">     607 </span><span class="lineNoCov">          0 :         Tab_Profiles = new QWidget();</span>
+<a name="608"><span class="lineNum">     608 </span><span class="lineNoCov">          0 :         Tab_Profiles-&gt;setObjectName(QStringLiteral(&quot;Tab_Profiles&quot;));</span></a>
+<span class="lineNum">     609 </span><span class="lineNoCov">          0 :         verticalLayout_3 = new QVBoxLayout(Tab_Profiles);</span>
+<span class="lineNum">     610 </span><span class="lineNoCov">          0 :         verticalLayout_3-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_3&quot;));</span>
+<span class="lineNum">     611 </span><span class="lineNoCov">          0 :         verticalLayout_3-&gt;setContentsMargins(6, 6, 6, 6);</span>
+<span class="lineNum">     612 </span><span class="lineNoCov">          0 :         profileTable = new QTableWidget(Tab_Profiles);</span>
+<span class="lineNum">     613 </span><span class="lineNoCov">          0 :         if (profileTable-&gt;columnCount() &lt; 2)</span>
+<span class="lineNum">     614 </span><span class="lineNoCov">          0 :             profileTable-&gt;setColumnCount(2);</span>
+<span class="lineNum">     615 </span><span class="lineNoCov">          0 :         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();</span>
+<span class="lineNum">     616 </span><span class="lineNoCov">          0 :         profileTable-&gt;setHorizontalHeaderItem(0, __qtablewidgetitem);</span>
+<a name="617"><span class="lineNum">     617 </span><span class="lineNoCov">          0 :         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();</span></a>
+<span class="lineNum">     618 </span><span class="lineNoCov">          0 :         profileTable-&gt;setHorizontalHeaderItem(1, __qtablewidgetitem1);</span>
+<span class="lineNum">     619 </span><span class="lineNoCov">          0 :         profileTable-&gt;setObjectName(QStringLiteral(&quot;profileTable&quot;));</span>
+<span class="lineNum">     620 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy3(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);</span>
+<span class="lineNum">     621 </span><span class="lineNoCov">          0 :         sizePolicy3.setHorizontalStretch(0);</span>
+<span class="lineNum">     622 </span><span class="lineNoCov">          0 :         sizePolicy3.setVerticalStretch(0);</span>
+<span class="lineNum">     623 </span><span class="lineNoCov">          0 :         sizePolicy3.setHeightForWidth(profileTable-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     624 </span><span class="lineNoCov">          0 :         profileTable-&gt;setSizePolicy(sizePolicy3);</span>
+<span class="lineNum">     625 </span><span class="lineNoCov">          0 :         profileTable-&gt;setFrameShape(QFrame::NoFrame);</span>
+<span class="lineNum">     626 </span><span class="lineNoCov">          0 :         profileTable-&gt;setFrameShadow(QFrame::Plain);</span>
+<span class="lineNum">     627 </span><span class="lineNoCov">          0 :         profileTable-&gt;setLineWidth(0);</span>
+<span class="lineNum">     628 </span><span class="lineNoCov">          0 :         profileTable-&gt;setEditTriggers(QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked);</span>
+<span class="lineNum">     629 </span><span class="lineNoCov">          0 :         profileTable-&gt;setAlternatingRowColors(true);</span>
+<span class="lineNum">     630 </span><span class="lineNoCov">          0 :         profileTable-&gt;setSelectionMode(QAbstractItemView::SingleSelection);</span>
+<span class="lineNum">     631 </span><span class="lineNoCov">          0 :         profileTable-&gt;setSelectionBehavior(QAbstractItemView::SelectRows);</span>
+<span class="lineNum">     632 </span><span class="lineNoCov">          0 :         profileTable-&gt;setSortingEnabled(true);</span>
+<span class="lineNum">     633 </span>            : 
+<span class="lineNum">     634 </span><span class="lineNoCov">          0 :         verticalLayout_3-&gt;addWidget(profileTable);</span>
+<a name="635"><span class="lineNum">     635 </span>            : </a>
+<span class="lineNum">     636 </span><span class="lineNoCov">          0 :         gridLayout_11 = new QGridLayout();</span>
+<a name="637"><span class="lineNum">     637 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;setObjectName(QStringLiteral(&quot;gridLayout_11&quot;));</span></a>
+<span class="lineNum">     638 </span><span class="lineNoCov">          0 :         addButton = new QToolButton(Tab_Profiles);</span>
+<a name="639"><span class="lineNum">     639 </span><span class="lineNoCov">          0 :         addButton-&gt;setObjectName(QStringLiteral(&quot;addButton&quot;));</span></a>
+<span class="lineNum">     640 </span><span class="lineNoCov">          0 :         QIcon icon;</span>
+<span class="lineNum">     641 </span><span class="lineNoCov">          0 :         QString iconThemeName = QStringLiteral(&quot;list-add&quot;);</span>
+<span class="lineNum">     642 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="643"><span class="lineNum">     643 </span><span class="lineNoCov">          0 :             icon = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     644 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     645 </span><span class="lineNoCov">          0 :             icon.addFile(QStringLiteral(&quot;:/icons/document-new.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     646 </span>            :         }
+<span class="lineNum">     647 </span><span class="lineNoCov">          0 :         addButton-&gt;setIcon(icon);</span>
+<span class="lineNum">     648 </span><span class="lineNoCov">          0 :         addButton-&gt;setToolButtonStyle(Qt::ToolButtonFollowStyle);</span>
+<span class="lineNum">     649 </span>            : 
+<span class="lineNum">     650 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;addWidget(addButton, 0, 0, 1, 1);</span>
+<a name="651"><span class="lineNum">     651 </span>            : </a>
+<span class="lineNum">     652 </span><span class="lineNoCov">          0 :         deleteButton = new QToolButton(Tab_Profiles);</span>
+<a name="653"><span class="lineNum">     653 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setObjectName(QStringLiteral(&quot;deleteButton&quot;));</span></a>
+<span class="lineNum">     654 </span><span class="lineNoCov">          0 :         QIcon icon1;</span>
+<span class="lineNum">     655 </span><span class="lineNoCov">          0 :         iconThemeName = QStringLiteral(&quot;list-remove&quot;);</span>
+<span class="lineNum">     656 </span><span class="lineNoCov">          0 :         if (QIcon::hasThemeIcon(iconThemeName)) {</span>
+<a name="657"><span class="lineNum">     657 </span><span class="lineNoCov">          0 :             icon1 = QIcon::fromTheme(iconThemeName);</span></a>
+<span class="lineNum">     658 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     659 </span><span class="lineNoCov">          0 :             icon1.addFile(QStringLiteral(&quot;:/icons/edit-delete.svg&quot;), QSize(), QIcon::Normal, QIcon::On);</span>
+<span class="lineNum">     660 </span>            :         }
+<span class="lineNum">     661 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setIcon(icon1);</span>
+<span class="lineNum">     662 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setToolButtonStyle(Qt::ToolButtonFollowStyle);</span>
+<span class="lineNum">     663 </span>            : 
+<span class="lineNum">     664 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;addWidget(deleteButton, 0, 1, 1, 1);</span>
+<a name="665"><span class="lineNum">     665 </span>            : </a>
+<span class="lineNum">     666 </span><span class="lineNoCov">          0 :         labelStorePath = new QLabel(Tab_Profiles);</span>
+<span class="lineNum">     667 </span><span class="lineNoCov">          0 :         labelStorePath-&gt;setObjectName(QStringLiteral(&quot;labelStorePath&quot;));</span>
+<span class="lineNum">     668 </span>            : 
+<span class="lineNum">     669 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;addWidget(labelStorePath, 0, 2, 1, 1);</span>
+<a name="670"><span class="lineNum">     670 </span>            : </a>
+<span class="lineNum">     671 </span><span class="lineNoCov">          0 :         toolButtonStore = new QToolButton(Tab_Profiles);</span>
+<span class="lineNum">     672 </span><span class="lineNoCov">          0 :         toolButtonStore-&gt;setObjectName(QStringLiteral(&quot;toolButtonStore&quot;));</span>
+<span class="lineNum">     673 </span>            : 
+<span class="lineNum">     674 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;addWidget(toolButtonStore, 0, 4, 1, 1);</span>
+<a name="675"><span class="lineNum">     675 </span>            : </a>
+<span class="lineNum">     676 </span><span class="lineNoCov">          0 :         storePath = new QLineEdit(Tab_Profiles);</span>
+<span class="lineNum">     677 </span><span class="lineNoCov">          0 :         storePath-&gt;setObjectName(QStringLiteral(&quot;storePath&quot;));</span>
+<span class="lineNum">     678 </span>            : 
+<span class="lineNum">     679 </span><span class="lineNoCov">          0 :         gridLayout_11-&gt;addWidget(storePath, 0, 3, 1, 1);</span>
+<span class="lineNum">     680 </span>            : 
+<span class="lineNum">     681 </span>            : 
+<span class="lineNum">     682 </span><span class="lineNoCov">          0 :         verticalLayout_3-&gt;addLayout(gridLayout_11);</span>
+<span class="lineNum">     683 </span>            : 
+<a name="684"><span class="lineNum">     684 </span><span class="lineNoCov">          0 :         tabWidget-&gt;addTab(Tab_Profiles, QString());</span></a>
+<span class="lineNum">     685 </span><span class="lineNoCov">          0 :         Tab_Template = new QWidget();</span>
+<a name="686"><span class="lineNum">     686 </span><span class="lineNoCov">          0 :         Tab_Template-&gt;setObjectName(QStringLiteral(&quot;Tab_Template&quot;));</span></a>
+<span class="lineNum">     687 </span><span class="lineNoCov">          0 :         verticalLayout_6 = new QVBoxLayout(Tab_Template);</span>
+<span class="lineNum">     688 </span><span class="lineNoCov">          0 :         verticalLayout_6-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_6&quot;));</span>
+<a name="689"><span class="lineNum">     689 </span><span class="lineNoCov">          0 :         verticalLayout_6-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
+<span class="lineNum">     690 </span><span class="lineNoCov">          0 :         label_2 = new QLabel(Tab_Template);</span>
+<span class="lineNum">     691 </span><span class="lineNoCov">          0 :         label_2-&gt;setObjectName(QStringLiteral(&quot;label_2&quot;));</span>
+<span class="lineNum">     692 </span><span class="lineNoCov">          0 :         label_2-&gt;setLocale(QLocale(QLocale::German, QLocale::Germany));</span>
+<span class="lineNum">     693 </span>            : 
+<span class="lineNum">     694 </span><span class="lineNoCov">          0 :         verticalLayout_6-&gt;addWidget(label_2);</span>
+<a name="695"><span class="lineNum">     695 </span>            : </a>
+<span class="lineNum">     696 </span><span class="lineNoCov">          0 :         horizontalLayout_8 = new QHBoxLayout();</span>
+<a name="697"><span class="lineNum">     697 </span><span class="lineNoCov">          0 :         horizontalLayout_8-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_8&quot;));</span></a>
+<span class="lineNum">     698 </span><span class="lineNoCov">          0 :         checkBoxUseTemplate = new QCheckBox(Tab_Template);</span>
+<span class="lineNum">     699 </span><span class="lineNoCov">          0 :         checkBoxUseTemplate-&gt;setObjectName(QStringLiteral(&quot;checkBoxUseTemplate&quot;));</span>
+<span class="lineNum">     700 </span>            : 
+<span class="lineNum">     701 </span><span class="lineNoCov">          0 :         horizontalLayout_8-&gt;addWidget(checkBoxUseTemplate);</span>
+<a name="702"><span class="lineNum">     702 </span>            : </a>
+<span class="lineNum">     703 </span><span class="lineNoCov">          0 :         checkBoxTemplateAllFields = new QCheckBox(Tab_Template);</span>
+<span class="lineNum">     704 </span><span class="lineNoCov">          0 :         checkBoxTemplateAllFields-&gt;setObjectName(QStringLiteral(&quot;checkBoxTemplateAllFields&quot;));</span>
+<span class="lineNum">     705 </span>            : 
+<span class="lineNum">     706 </span><span class="lineNoCov">          0 :         horizontalLayout_8-&gt;addWidget(checkBoxTemplateAllFields);</span>
+<span class="lineNum">     707 </span>            : 
+<span class="lineNum">     708 </span>            : 
+<span class="lineNum">     709 </span><span class="lineNoCov">          0 :         verticalLayout_6-&gt;addLayout(horizontalLayout_8);</span>
+<a name="710"><span class="lineNum">     710 </span>            : </a>
+<span class="lineNum">     711 </span><span class="lineNoCov">          0 :         plainTextEditTemplate = new QPlainTextEdit(Tab_Template);</span>
+<span class="lineNum">     712 </span><span class="lineNoCov">          0 :         plainTextEditTemplate-&gt;setObjectName(QStringLiteral(&quot;plainTextEditTemplate&quot;));</span>
+<span class="lineNum">     713 </span><span class="lineNoCov">          0 :         plainTextEditTemplate-&gt;setFrameShadow(QFrame::Plain);</span>
+<span class="lineNum">     714 </span>            : 
+<span class="lineNum">     715 </span><span class="lineNoCov">          0 :         verticalLayout_6-&gt;addWidget(plainTextEditTemplate);</span>
+<span class="lineNum">     716 </span>            : 
+<span class="lineNum">     717 </span><span class="lineNoCov">          0 :         tabWidget-&gt;addTab(Tab_Template, QString());</span>
+<span class="lineNum">     718 </span>            : 
+<span class="lineNum">     719 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addWidget(tabWidget);</span>
+<a name="720"><span class="lineNum">     720 </span>            : </a>
+<span class="lineNum">     721 </span><span class="lineNoCov">          0 :         horizontalLayout_3 = new QHBoxLayout();</span>
+<a name="722"><span class="lineNum">     722 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_3&quot;));</span></a>
+<span class="lineNum">     723 </span><span class="lineNoCov">          0 :         label = new QLabel(ConfigDialog);</span>
+<span class="lineNum">     724 </span><span class="lineNoCov">          0 :         label-&gt;setObjectName(QStringLiteral(&quot;label&quot;));</span>
+<span class="lineNum">     725 </span><span class="lineNoCov">          0 :         label-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">     726 </span>            : 
+<span class="lineNum">     727 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;addWidget(label);</span>
+<span class="lineNum">     728 </span>            : 
+<span class="lineNum">     729 </span><span class="lineNoCov">          0 :         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);</span>
+<span class="lineNum">     730 </span>            : 
+<span class="lineNum">     731 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;addItem(horizontalSpacer);</span>
+<a name="732"><span class="lineNum">     732 </span>            : </a>
+<span class="lineNum">     733 </span><span class="lineNoCov">          0 :         buttonBox = new QDialogButtonBox(ConfigDialog);</span>
+<span class="lineNum">     734 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setObjectName(QStringLiteral(&quot;buttonBox&quot;));</span>
+<span class="lineNum">     735 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setOrientation(Qt::Horizontal);</span>
+<span class="lineNum">     736 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);</span>
+<span class="lineNum">     737 </span>            : 
+<span class="lineNum">     738 </span><span class="lineNoCov">          0 :         horizontalLayout_3-&gt;addWidget(buttonBox);</span>
+<span class="lineNum">     739 </span>            : 
+<span class="lineNum">     740 </span>            : 
+<span class="lineNum">     741 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addLayout(horizontalLayout_3);</span>
+<span class="lineNum">     742 </span>            : 
+<span class="lineNum">     743 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(tabWidget, radioButtonNative);</span>
+<span class="lineNum">     744 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(radioButtonNative, radioButtonPass);</span>
+<span class="lineNum">     745 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(radioButtonPass, gpgPath);</span>
+<span class="lineNum">     746 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(gpgPath, toolButtonGpg);</span>
+<span class="lineNum">     747 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(toolButtonGpg, gitPath);</span>
+<span class="lineNum">     748 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(gitPath, toolButtonGit);</span>
+<span class="lineNum">     749 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(toolButtonGit, pwgenPath);</span>
+<span class="lineNum">     750 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(pwgenPath, toolButtonPwgen);</span>
+<span class="lineNum">     751 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(toolButtonPwgen, passPath);</span>
+<span class="lineNum">     752 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(passPath, toolButtonPass);</span>
+<span class="lineNum">     753 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(toolButtonPass, profileTable);</span>
+<span class="lineNum">     754 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(profileTable, addButton);</span>
+<span class="lineNum">     755 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(addButton, deleteButton);</span>
+<span class="lineNum">     756 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(deleteButton, storePath);</span>
+<span class="lineNum">     757 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(storePath, toolButtonStore);</span>
+<span class="lineNum">     758 </span>            : 
+<span class="lineNum">     759 </span><span class="lineNoCov">          0 :         retranslateUi(ConfigDialog);</span>
+<span class="lineNum">     760 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(rejected()), ConfigDialog, SLOT(reject()));</span>
+<span class="lineNum">     761 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(accepted()), ConfigDialog, SLOT(accept()));</span>
+<span class="lineNum">     762 </span>            : 
+<span class="lineNum">     763 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setCurrentIndex(0);</span>
+<span class="lineNum">     764 </span>            : 
+<span class="lineNum">     765 </span>            : 
+<span class="lineNum">     766 </span><span class="lineNoCov">          0 :         QMetaObject::connectSlotsByName(ConfigDialog);</span>
+<a name="767"><span class="lineNum">     767 </span><span class="lineNoCov">          0 :     } // setupUi</span></a>
+<span class="lineNum">     768 </span>            : 
+<span class="lineNum">     769 </span><span class="lineNoCov">          0 :     void retranslateUi(QDialog *ConfigDialog)</span>
+<span class="lineNum">     770 </span>            :     {
+<span class="lineNum">     771 </span><span class="lineNoCov">          0 :         ConfigDialog-&gt;setWindowTitle(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Configuration&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     772 </span><span class="lineNoCov">          0 :         label_8-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Clipboard behaviour:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     773 </span><span class="lineNoCov">          0 :         checkBoxSelection-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use primary selection&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     774 </span><span class="lineNoCov">          0 :         checkBoxAutoclear-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Autoclear after:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     775 </span><span class="lineNoCov">          0 :         labelSeconds-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Seconds&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     776 </span><span class="lineNoCov">          0 :         label_6-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Content panel behaviour:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     777 </span><span class="lineNoCov">          0 :         checkBoxHideContent-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Hide content&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     778 </span><span class="lineNoCov">          0 :         checkBoxHidePassword-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Hide password&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     779 </span><span class="lineNoCov">          0 :         checkBoxAutoclearPanel-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Autoclear panel after:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     780 </span><span class="lineNoCov">          0 :         labelPanelSeconds-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Seconds&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     781 </span><span class="lineNoCov">          0 :         label_4-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Password Generation:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     782 </span><span class="lineNoCov">          0 :         label_7-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Password Length:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     783 </span><span class="lineNoCov">          0 :         labelLength-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Characters&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     784 </span><span class="lineNoCov">          0 :         labelPasswordChars-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use characters:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     785 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector-&gt;clear();</span>
+<span class="lineNum">     786 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector-&gt;insertItems(0, QStringList()</span>
+<span class="lineNum">     787 </span><span class="lineNoCov">          0 :          &lt;&lt; QApplication::translate(&quot;ConfigDialog&quot;, &quot;All Characters&quot;, Q_NULLPTR)</span>
+<span class="lineNum">     788 </span><span class="lineNoCov">          0 :          &lt;&lt; QApplication::translate(&quot;ConfigDialog&quot;, &quot;Alphabetical&quot;, Q_NULLPTR)</span>
+<span class="lineNum">     789 </span><span class="lineNoCov">          0 :          &lt;&lt; QApplication::translate(&quot;ConfigDialog&quot;, &quot;Alphanumerical&quot;, Q_NULLPTR)</span>
+<span class="lineNum">     790 </span><span class="lineNoCov">          0 :          &lt;&lt; QApplication::translate(&quot;ConfigDialog&quot;, &quot;Custom&quot;, Q_NULLPTR)</span>
+<span class="lineNum">     791 </span>            :         );
+<span class="lineNum">     792 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     793 </span><span class="lineNoCov">          0 :         passwordCharTemplateSelector-&gt;setToolTip(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Select character set for password generation&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     794 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     795 </span><span class="lineNoCov">          0 :         lineEditPasswordChars-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     796 </span><span class="lineNoCov">          0 :         checkBoxUsePwgen-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use pwgen&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     797 </span><span class="lineNoCov">          0 :         checkBoxAvoidCapitals-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Exclude capital letters&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     798 </span><span class="lineNoCov">          0 :         checkBoxUseSymbols-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Include special symbols &quot;, Q_NULLPTR));</span>
+<span class="lineNum">     799 </span><span class="lineNoCov">          0 :         checkBoxLessRandom-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Generate easy to memorize but less secure passwords&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     800 </span><span class="lineNoCov">          0 :         checkBoxAvoidNumbers-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Exclude numbers&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     801 </span><span class="lineNoCov">          0 :         label_3-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Git:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     802 </span><span class="lineNoCov">          0 :         checkBoxUseGit-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use git&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     803 </span><span class="lineNoCov">          0 :         checkBoxAddGPGId-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Automatically add .gpg-id files&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     804 </span><span class="lineNoCov">          0 :         checkBoxAutoPush-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Automatically push&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     805 </span><span class="lineNoCov">          0 :         checkBoxAutoPull-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Automatically pull&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     806 </span><span class="lineNoCov">          0 :         label_5-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;System:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     807 </span><span class="lineNoCov">          0 :         checkBoxUseTrayIcon-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use TrayIcon&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     808 </span><span class="lineNoCov">          0 :         checkBoxStartMinimized-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Start minimized&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     809 </span><span class="lineNoCov">          0 :         checkBoxHideOnClose-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Hide on close&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     810 </span><span class="lineNoCov">          0 :         checkBoxAlwaysOnTop-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Always on top&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     811 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(Tab_Settings), QApplication::translate(&quot;ConfigDialog&quot;, &quot;Settings&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     812 </span><span class="lineNoCov">          0 :         label_9-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Select password storage program:&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     813 </span><span class="lineNoCov">          0 :         radioButtonNative-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Nati&amp;ve git/gpg&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     814 </span><span class="lineNoCov">          0 :         radioButtonPass-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;&amp;Use pass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     815 </span><span class="lineNoCov">          0 :         groupBoxNative-&gt;setTitle(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Native&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     816 </span><span class="lineNoCov">          0 :         labelGitPath-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;git&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     817 </span><span class="lineNoCov">          0 :         toolButtonGpg-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;...&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     818 </span><span class="lineNoCov">          0 :         toolButtonGit-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;...&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     819 </span><span class="lineNoCov">          0 :         labelGpgPath-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;gpg&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     820 </span><span class="lineNoCov">          0 :         labelPwgenPath-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;pwgen&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     821 </span><span class="lineNoCov">          0 :         toolButtonPwgen-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;...&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     822 </span><span class="lineNoCov">          0 :         groupBoxPass-&gt;setTitle(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Pass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     823 </span><span class="lineNoCov">          0 :         labelPassPath-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;pass&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     824 </span><span class="lineNoCov">          0 :         toolButtonPass-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;...&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     825 </span><span class="lineNoCov">          0 :         zx2c4-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=\&quot;https://www.passwordstore.org/\&quot;&gt;&lt;span style=\&quot; text-decoration: underline; color:#0000ff;\&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     826 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(Tab_Programs), QApplication::translate(&quot;ConfigDialog&quot;, &quot;Programs&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     827 </span><span class="lineNoCov">          0 :         QTableWidgetItem *___qtablewidgetitem = profileTable-&gt;horizontalHeaderItem(0);</span>
+<span class="lineNum">     828 </span><span class="lineNoCov">          0 :         ___qtablewidgetitem-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Name&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     829 </span><span class="lineNoCov">          0 :         QTableWidgetItem *___qtablewidgetitem1 = profileTable-&gt;horizontalHeaderItem(1);</span>
+<span class="lineNum">     830 </span><span class="lineNoCov">          0 :         ___qtablewidgetitem1-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Path&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     831 </span><span class="lineNoCov">          0 :         addButton-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Add&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     832 </span><span class="lineNoCov">          0 :         deleteButton-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Delete&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     833 </span><span class="lineNoCov">          0 :         labelStorePath-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Current password-store&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     834 </span><span class="lineNoCov">          0 :         toolButtonStore-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;...&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     835 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(Tab_Profiles), QApplication::translate(&quot;ConfigDialog&quot;, &quot;Profiles&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     836 </span><span class="lineNoCov">          0 :         label_2-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Templates add extra fields in the password generation dialouge and in the password view.&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     837 </span><span class="lineNoCov">          0 :         checkBoxUseTemplate-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Use template&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     838 </span>            : #ifndef QT_NO_TOOLTIP
+<span class="lineNum">     839 </span><span class="lineNoCov">          0 :         checkBoxTemplateAllFields-&gt;setToolTip(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     840 </span>            : #endif // QT_NO_TOOLTIP
+<span class="lineNum">     841 </span><span class="lineNoCov">          0 :         checkBoxTemplateAllFields-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;Show all fields templated&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     842 </span><span class="lineNoCov">          0 :         plainTextEditTemplate-&gt;setPlainText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;login\n&quot;</span>
+<span class="lineNum">     843 </span>            : &quot;url\n&quot;
+<span class="lineNum">     844 </span>            : &quot;email&quot;, Q_NULLPTR));
+<span class="lineNum">     845 </span><span class="lineNoCov">          0 :         tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(Tab_Template), QApplication::translate(&quot;ConfigDialog&quot;, &quot;Template&quot;, Q_NULLPTR));</span>
+<span class="lineNum">     846 </span><span class="lineNoCov">          0 :         label-&gt;setText(QApplication::translate(&quot;ConfigDialog&quot;, &quot;&lt;a href=\&quot;https://QtPass.org/\&quot;&gt;QtPass&lt;/a&gt; version &quot;, Q_NULLPTR));</span>
+<span class="lineNum">     847 </span><span class="lineNoCov">          0 :     } // retranslateUi</span>
+<span class="lineNum">     848 </span>            : 
+<span class="lineNum">     849 </span>            : };
+<span class="lineNum">     850 </span>            : 
+<span class="lineNum">     851 </span>            : namespace Ui {
+<span class="lineNum">     852 </span>            :     class ConfigDialog: public Ui_ConfigDialog {};
+<span class="lineNum">     853 </span>            : } // namespace Ui
+<span class="lineNum">     854 </span>            : 
+<span class="lineNum">     855 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     856 </span>            : 
+<span class="lineNum">     857 </span>            : #endif // UI_CONFIGDIALOG_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

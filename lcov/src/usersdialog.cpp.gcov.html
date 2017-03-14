@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/usersdialog.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - usersdialog.cpp<span style="font-size: 80%;"> (source / <a href="usersdialog.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">82</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;usersdialog.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;debughelper.h&quot;
+<span class="lineNum">       3 </span>            : #include &quot;ui_usersdialog.h&quot;
+<span class="lineNum">       4 </span>            : #include &lt;QRegExp&gt;
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : /**
+<span class="lineNum">       7 </span>            :  * @brief UsersDialog::UsersDialog basic constructor
+<a name="8"><span class="lineNum">       8 </span>            :  * @param parent</a>
+<span class="lineNum">       9 </span>            :  */
+<span class="lineNum">      10 </span><span class="lineNoCov">          0 : UsersDialog::UsersDialog(QWidget *parent)</span>
+<span class="lineNum">      11 </span><span class="lineNoCov">          0 :     : QDialog(parent), ui(new Ui::UsersDialog) {</span>
+<span class="lineNum">      12 </span><span class="lineNoCov">          0 :   ui-&gt;setupUi(this);</span>
+<span class="lineNum">      13 </span><span class="lineNoCov">          0 :   connect(ui-&gt;buttonBox, SIGNAL(accepted()), this, SLOT(accept()));</span>
+<span class="lineNum">      14 </span><span class="lineNoCov">          0 :   connect(ui-&gt;buttonBox, SIGNAL(rejected()), this, SLOT(reject()));</span>
+<span class="lineNum">      15 </span><span class="lineNoCov">          0 :   connect(ui-&gt;listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this,</span>
+<span class="lineNum">      16 </span>            :           SLOT(itemChange(QListWidgetItem *)));
+<span class="lineNum">      17 </span><span class="lineNoCov">          0 :   userList = NULL;</span>
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : #if QT_VERSION &gt;= 0x050200
+<span class="lineNum">      20 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;setClearButtonEnabled(true);</span>
+<span class="lineNum">      21 </span>            : #endif
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span>            : /**
+<a name="25"><span class="lineNum">      25 </span>            :  * @brief UsersDialog::~UsersDialog basic destructor.</a>
+<span class="lineNum">      26 </span>            :  */
+<a name="27"><span class="lineNum">      27 </span><span class="lineNoCov">          0 : UsersDialog::~UsersDialog() { delete ui; }</span></a>
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 : Q_DECLARE_METATYPE(UserInfo *)</span>
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span>            : /**
+<span class="lineNum">      32 </span>            :  * @brief UsersDialog::itemChange update the item information.
+<a name="33"><span class="lineNum">      33 </span>            :  * @param item</a>
+<span class="lineNum">      34 </span>            :  */
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 : void UsersDialog::itemChange(QListWidgetItem *item) {</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :   if (!item)</span>
+<span class="lineNum">      37 </span>            :     return;
+<span class="lineNum">      38 </span><span class="lineNoCov">          0 :   UserInfo *info = item-&gt;data(Qt::UserRole).value&lt;UserInfo *&gt;();</span>
+<span class="lineNum">      39 </span><span class="lineNoCov">          0 :   if (!info)</span>
+<span class="lineNum">      40 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 :   info-&gt;enabled = item-&gt;checkState() == Qt::Checked;</span>
+<span class="lineNum">      42 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      43 </span>            : 
+<span class="lineNum">      44 </span>            : /**
+<span class="lineNum">      45 </span>            :  * @brief UsersDialog::setUsers update all the users.
+<a name="46"><span class="lineNum">      46 </span>            :  * @param users</a>
+<span class="lineNum">      47 </span>            :  */
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 : void UsersDialog::setUsers(QList&lt;UserInfo&gt; *users) {</span>
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :   userList = users;</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :   populateList(&quot;&quot;);</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            : /**
+<span class="lineNum">      54 </span>            :  * @brief UsersDialog::populateList update the view based on filter options
+<span class="lineNum">      55 </span>            :  * (such as searching).
+<a name="56"><span class="lineNum">      56 </span>            :  * @param filter</a>
+<span class="lineNum">      57 </span>            :  */
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 : void UsersDialog::populateList(const QString &amp;filter) {</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :   QRegExp nameFilter(&quot;*&quot; + filter + &quot;*&quot;);</span>
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :   nameFilter.setPatternSyntax(QRegExp::Wildcard);</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :   nameFilter.setCaseSensitivity(Qt::CaseInsensitive);</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :   ui-&gt;listWidget-&gt;clear();</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :   if (userList) {</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :     for (QList&lt;UserInfo&gt;::iterator it = userList-&gt;begin();</span>
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 :          it != userList-&gt;end(); ++it) {</span>
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :       UserInfo &amp;user(*it);</span>
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {</span>
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 :         if (!user.isValid() &amp;&amp; !ui-&gt;checkBox-&gt;isChecked())</span>
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :           continue;</span>
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :         if (user.expiry.toTime_t() &gt; 0 &amp;&amp;</span>
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :             user.expiry.daysTo(QDateTime::currentDateTime()) &gt; 0 &amp;&amp;</span>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :             !ui-&gt;checkBox-&gt;isChecked())</span>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :           continue;</span>
+<span class="lineNum">      74 </span><span class="lineNoCov">          0 :         QString userText = user.name + &quot;\n&quot; + user.key_id;</span>
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :         if (user.created.toTime_t() &gt; 0) {</span>
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 :           userText += &quot; &quot; + tr(&quot;created&quot;) + &quot; &quot; +</span>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :                       user.created.toString(Qt::SystemLocaleShortDate);</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :         }</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :         if (user.expiry.toTime_t() &gt; 0)</span>
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 :           userText += &quot; &quot; + tr(&quot;expires&quot;) + &quot; &quot; +</span>
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :                       user.expiry.toString(Qt::SystemLocaleShortDate);</span>
+<span class="lineNum">      82 </span><span class="lineNoCov">          0 :         QListWidgetItem *item = new QListWidgetItem(userText, ui-&gt;listWidget);</span>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :         item-&gt;setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :         item-&gt;setData(Qt::UserRole, QVariant::fromValue(&amp;user));</span>
+<span class="lineNum">      85 </span><span class="lineNoCov">          0 :         if (user.have_secret) {</span>
+<span class="lineNum">      86 </span>            :           // item-&gt;setForeground(QColor(32, 74, 135));
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :           item-&gt;setForeground(Qt::blue);</span>
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 :           QFont font;</span>
+<span class="lineNum">      89 </span><span class="lineNoCov">          0 :           font.setFamily(font.defaultFamily());</span>
+<span class="lineNum">      90 </span><span class="lineNoCov">          0 :           font.setBold(true);</span>
+<span class="lineNum">      91 </span><span class="lineNoCov">          0 :           item-&gt;setFont(font);</span>
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 :         } else if (!user.isValid()) {</span>
+<span class="lineNum">      93 </span><span class="lineNoCov">          0 :           item-&gt;setBackground(QColor(164, 0, 0));</span>
+<span class="lineNum">      94 </span><span class="lineNoCov">          0 :           item-&gt;setForeground(Qt::white);</span>
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :         } else if (user.expiry.toTime_t() &gt; 0 &amp;&amp;</span>
+<span class="lineNum">      96 </span><span class="lineNoCov">          0 :                    user.expiry.daysTo(QDateTime::currentDateTime()) &gt; 0) {</span>
+<span class="lineNum">      97 </span><span class="lineNoCov">          0 :           item-&gt;setForeground(QColor(164, 0, 0));</span>
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 :         } else if (!user.fullyValid()) {</span>
+<span class="lineNum">      99 </span><span class="lineNoCov">          0 :           item-&gt;setBackground(QColor(164, 80, 0));</span>
+<span class="lineNum">     100 </span><span class="lineNoCov">          0 :           item-&gt;setForeground(Qt::white);</span>
+<span class="lineNum">     101 </span><span class="lineNoCov">          0 :         }</span>
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span><span class="lineNoCov">          0 :         ui-&gt;listWidget-&gt;addItem(item);</span>
+<span class="lineNum">     104 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">     105 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span>            : /**
+<span class="lineNum">     110 </span>            :  * @brief UsersDialog::on_lineEdit_textChanged typing in the searchbox.
+<a name="111"><span class="lineNum">     111 </span>            :  * @param filter</a>
+<span class="lineNum">     112 </span>            :  */
+<span class="lineNum">     113 </span><span class="lineNoCov">          0 : void UsersDialog::on_lineEdit_textChanged(const QString &amp;filter) {</span>
+<span class="lineNum">     114 </span><span class="lineNoCov">          0 :   populateList(filter);</span>
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     116 </span>            : 
+<span class="lineNum">     117 </span>            : /**
+<span class="lineNum">     118 </span>            :  * @brief UsersDialog::closeEvent might have to store size and location if that
+<span class="lineNum">     119 </span>            :  * is wanted.
+<a name="120"><span class="lineNum">     120 </span>            :  * @param event</a>
+<span class="lineNum">     121 </span>            :  */
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 : void UsersDialog::closeEvent(QCloseEvent *event) {</span>
+<span class="lineNum">     123 </span>            :   // TODO(annejan) save window size or somethign
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 :   event-&gt;accept();</span>
+<span class="lineNum">     125 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     126 </span>            : 
+<span class="lineNum">     127 </span>            : /**
+<a name="128"><span class="lineNum">     128 </span>            :  * @brief UsersDialog::on_checkBox_clicked filtering.</a>
+<span class="lineNum">     129 </span>            :  */
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 : void UsersDialog::on_checkBox_clicked() { populateList(ui-&gt;lineEdit-&gt;text()); }</span>
+<span class="lineNum">     131 </span>            : 
+<span class="lineNum">     132 </span>            : /**
+<span class="lineNum">     133 </span>            :  * @brief UsersDialog::keyPressEvent clear the lineEdit when escape is pressed.
+<span class="lineNum">     134 </span>            :  * No action for Enter currently.
+<a name="135"><span class="lineNum">     135 </span>            :  * @param event</a>
+<span class="lineNum">     136 </span>            :  */
+<span class="lineNum">     137 </span><span class="lineNoCov">          0 : void UsersDialog::keyPressEvent(QKeyEvent *event) {</span>
+<span class="lineNum">     138 </span><span class="lineNoCov">          0 :   switch (event-&gt;key()) {</span>
+<span class="lineNum">     139 </span>            :   case Qt::Key_Escape:
+<span class="lineNum">     140 </span><span class="lineNoCov">          0 :     ui-&gt;lineEdit-&gt;clear();</span>
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     142 </span>            :   default:
+<span class="lineNum">     143 </span>            :     break;
+<span class="lineNum">     144 </span>            :   }
+<span class="lineNum">     145 </span><span class="lineNoCov">          0 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

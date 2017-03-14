@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/util.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - util.cpp<span style="font-size: 80%;"> (source / <a href="util.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">86</td>
+            <td class="headerCovTableEntryLo">4.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryLo">20.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;util.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;debughelper.h&quot;
+<span class="lineNum">       3 </span>            : #include &lt;QDir&gt;
+<span class="lineNum">       4 </span>            : #include &lt;QFileInfo&gt;
+<span class="lineNum">       5 </span>            : #include &lt;QProcessEnvironment&gt;
+<span class="lineNum">       6 </span>            : #include &lt;QString&gt;
+<span class="lineNum">       7 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">       8 </span>            : #include &lt;windows.h&gt;
+<span class="lineNum">       9 </span>            : #include &lt;bcrypt.h&gt;
+<span class="lineNum">      10 </span>            : #else
+<span class="lineNum">      11 </span>            : #include &lt;sys/time.h&gt;
+<a name="12"><span class="lineNum">      12 </span>            : #endif</a>
+<span class="lineNum">      13 </span>            : #include &quot;qtpasssettings.h&quot;
+<span class="lineNum">      14 </span><span class="lineCov">          4 : QProcessEnvironment Util::_env;</span>
+<span class="lineNum">      15 </span>            : bool Util::_envInitialised;
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span>            : /**
+<span class="lineNum">      18 </span>            :  * @brief Util::initialiseEnvironment set the correct PATH for use with gpg, git
+<a name="19"><span class="lineNum">      19 </span>            :  * etc.</a>
+<span class="lineNum">      20 </span>            :  */
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 : void Util::initialiseEnvironment() {</span>
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 :   if (!_envInitialised) {</span>
+<span class="lineNum">      23 </span><span class="lineNoCov">          0 :     _env = QProcessEnvironment::systemEnvironment();</span>
+<span class="lineNum">      24 </span>            : #ifdef __APPLE__
+<span class="lineNum">      25 </span>            :     // TODO(annejan) checks here
+<span class="lineNum">      26 </span><span class="lineNoCov">          0 :     QString path = _env.value(&quot;PATH&quot;);</span>
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :     if (!path.contains(&quot;/usr/local/MacGPG2/bin&quot;) &amp;&amp;</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 :         QFile(&quot;/usr/local/MacGPG2/bin&quot;).exists())</span>
+<span class="lineNum">      30 </span><span class="lineNoCov">          0 :       path += &quot;:/usr/local/MacGPG2/bin&quot;;</span>
+<span class="lineNum">      31 </span><span class="lineNoCov">          0 :     if (!path.contains(&quot;/usr/local/bin&quot;))</span>
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :       path += &quot;:/usr/local/bin&quot;;</span>
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 :     _env.insert(&quot;PATH&quot;, path);</span>
+<span class="lineNum">      34 </span>            : #endif
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :     _envInitialised = true;</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : /**
+<span class="lineNum">      40 </span>            :  * @brief Util::findPasswordStore look for common .password-store folder
+<span class="lineNum">      41 </span>            :  * location.
+<a name="42"><span class="lineNum">      42 </span>            :  * @return</a>
+<span class="lineNum">      43 </span>            :  */
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 : QString Util::findPasswordStore() {</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :   QString path;</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :   initialiseEnvironment();</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :   if (_env.contains(&quot;PASSWORD_STORE_DIR&quot;)) {</span>
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 :     path = _env.value(&quot;PASSWORD_STORE_DIR&quot;);</span>
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">      50 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">      51 </span>            :     path = QDir::homePath() + QDir::separator() + &quot;password-store&quot; +
+<span class="lineNum">      52 </span>            :            QDir::separator();
+<span class="lineNum">      53 </span>            : #else
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :     path = QDir::homePath() + QDir::separator() + &quot;.password-store&quot; +</span>
+<span class="lineNum">      55 </span><span class="lineNoCov">          0 :            QDir::separator();</span>
+<span class="lineNum">      56 </span>            : #endif
+<span class="lineNum">      57 </span>            :   }
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :   return Util::normalizeFolderPath(path);</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      60 </span>            : 
+<span class="lineNum">      61 </span>            : /**
+<span class="lineNum">      62 </span>            :  * @brief Util::normalizeFolderPath let's always end folders with a
+<span class="lineNum">      63 </span>            :  * QDir::separator()
+<span class="lineNum">      64 </span>            :  * @param path
+<a name="65"><span class="lineNum">      65 </span>            :  * @return</a>
+<span class="lineNum">      66 </span>            :  */
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 : QString Util::normalizeFolderPath(QString path) {</span>
+<span class="lineNum">      68 </span><span class="lineCov">         20 :   if (!path.endsWith(&quot;/&quot;) &amp;&amp; !path.endsWith(QDir::separator()))</span>
+<span class="lineNum">      69 </span><span class="lineCov">          2 :     path += QDir::separator();</span>
+<span class="lineNum">      70 </span><span class="lineCov">          4 :   return QDir::toNativeSeparators(path);</span>
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span>            : /**
+<span class="lineNum">      74 </span>            :  * @brief Util::findBinaryInPath search for executables.
+<span class="lineNum">      75 </span>            :  * @param binary
+<a name="76"><span class="lineNum">      76 </span>            :  * @return</a>
+<span class="lineNum">      77 </span>            :  */
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 : QString Util::findBinaryInPath(QString binary) {</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :   initialiseEnvironment();</span>
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :   QString ret = &quot;&quot;;</span>
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :   binary.prepend(QDir::separator());</span>
+<span class="lineNum">      84 </span>            : 
+<span class="lineNum">      85 </span><span class="lineNoCov">          0 :   if (_env.contains(&quot;PATH&quot;)) {</span>
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :     QString path = _env.value(&quot;PATH&quot;);</span>
+<span class="lineNum">      87 </span>            : 
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 :     QStringList entries;</span>
+<span class="lineNum">      89 </span>            : #ifndef Q_OS_WIN
+<span class="lineNum">      90 </span><span class="lineNoCov">          0 :     entries = path.split(':');</span>
+<span class="lineNum">      91 </span><span class="lineNoCov">          0 :     if (entries.length() &lt; 2) {</span>
+<span class="lineNum">      92 </span>            : #endif
+<span class="lineNum">      93 </span><span class="lineNoCov">          0 :       entries = path.split(';');</span>
+<span class="lineNum">      94 </span>            : #ifndef Q_OS_WIN
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">      96 </span>            : #endif
+<span class="lineNum">      97 </span>            : 
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 :     foreach (QString entry, entries) {</span>
+<span class="lineNum">      99 </span><span class="lineNoCov">          0 :       QScopedPointer&lt;QFileInfo&gt; qfi(new QFileInfo(entry.append(binary)));</span>
+<span class="lineNum">     100 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     101 </span>            :       if (!qfi-&gt;exists())
+<span class="lineNum">     102 </span>            :         qfi.reset(new QFileInfo(entry.append(&quot;.exe&quot;)));
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span>            : #endif
+<span class="lineNum">     105 </span><span class="lineNoCov">          0 :       dbg() &lt;&lt; entry;</span>
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 :       if (!qfi-&gt;isExecutable())</span>
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 :         continue;</span>
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span><span class="lineNoCov">          0 :       ret = qfi-&gt;absoluteFilePath();</span>
+<span class="lineNum">     110 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     111 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     112 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            :   return ret;
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     116 </span>            : 
+<span class="lineNum">     117 </span>            : /**
+<span class="lineNum">     118 </span>            :  * @brief Util::checkConfig do we have prequisite settings?
+<a name="119"><span class="lineNum">     119 </span>            :  * @return</a>
+<span class="lineNum">     120 </span>            :  */
+<span class="lineNum">     121 </span><span class="lineNoCov">          0 : bool Util::checkConfig() {</span>
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 :   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(&quot;.gpg-id&quot;))</span>
+<span class="lineNum">     123 </span><span class="lineNoCov">          0 :               .exists() ||</span>
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 :          (!QFile(QtPassSettings::getPassExecutable()).exists() &amp;&amp;</span>
+<span class="lineNum">     125 </span><span class="lineNoCov">          0 :           !QFile(QtPassSettings::getGpgExecutable()).exists());</span>
+<span class="lineNum">     126 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     127 </span>            : 
+<span class="lineNum">     128 </span>            : /**
+<span class="lineNum">     129 </span>            :  * @brief Util::qSleep because . . windows sleep.
+<a name="130"><span class="lineNum">     130 </span>            :  * @param ms</a>
+<span class="lineNum">     131 </span>            :  */
+<span class="lineNum">     132 </span><span class="lineNoCov">          0 : void Util::qSleep(int ms) {</span>
+<span class="lineNum">     133 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     134 </span>            :   Sleep(uint(ms));
+<span class="lineNum">     135 </span>            : #else
+<span class="lineNum">     136 </span><span class="lineNoCov">          0 :   struct timespec ts = {ms / 1000, (ms % 1000) * 1000 * 1000};</span>
+<span class="lineNum">     137 </span><span class="lineNoCov">          0 :   nanosleep(&amp;ts, NULL);</span>
+<span class="lineNum">     138 </span>            : #endif
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span>            : /**
+<span class="lineNum">     142 </span>            :  * @brief Util::getDir get selectd folder path
+<span class="lineNum">     143 </span>            :  * @param index
+<span class="lineNum">     144 </span>            :  * @param forPass short or full path
+<span class="lineNum">     145 </span>            :  * @param model the filesystem model to operate on
+<span class="lineNum">     146 </span>            :  * @param storeModel our storemodel to operate on
+<a name="147"><span class="lineNum">     147 </span>            :  * @return path</a>
+<span class="lineNum">     148 </span>            :  */
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 : QString Util::getDir(const QModelIndex &amp;index, bool forPass,</span>
+<span class="lineNum">     150 </span>            :                      const QFileSystemModel &amp;model,
+<span class="lineNum">     151 </span>            :                      const StoreModel &amp;storeModel) {
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :   QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';</span>
+<span class="lineNum">     153 </span><span class="lineNoCov">          0 :   if (!index.isValid())</span>
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 :     return forPass ? &quot;&quot; : abspath;</span>
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :   QFileInfo info = model.fileInfo(storeModel.mapToSource(index));</span>
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :   QString filePath =</span>
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :       (info.isFile() ? info.absolutePath() : info.absoluteFilePath());</span>
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :   if (forPass) {</span>
+<span class="lineNum">     159 </span><span class="lineNoCov">          0 :     filePath = QDir(abspath).relativeFilePath(filePath);</span>
+<span class="lineNum">     160 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :   filePath += '/';</span>
+<span class="lineNum">     162 </span><span class="lineNoCov">          0 :   return filePath;</span>
+<a name="163"><span class="lineNum">     163 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     164 </span>            : 
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 : void Util::copyDir(const QString src, const QString dest) {</span>
+<span class="lineNum">     166 </span><span class="lineNoCov">          0 :   QDir srcDir(src);</span>
+<span class="lineNum">     167 </span><span class="lineNoCov">          0 :   if (srcDir.exists() == false) {</span>
+<span class="lineNum">     168 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     169 </span>            :   }
+<span class="lineNum">     170 </span><span class="lineNoCov">          0 :   srcDir.mkpath(dest);</span>
+<span class="lineNum">     171 </span><span class="lineNoCov">          0 :   foreach (QString dir, srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {</span>
+<span class="lineNum">     172 </span><span class="lineNoCov">          0 :     copyDir(src + QDir::separator() + dir, dest + QDir::separator() + dir);</span>
+<span class="lineNum">     173 </span>            :   }
+<span class="lineNum">     174 </span>            : 
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :   foreach (QString file, srcDir.entryList(QDir::Files)) {</span>
+<span class="lineNum">     176 </span><span class="lineNoCov">          0 :     QFile::copy(src + QDir::separator() + file,</span>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :                 dest + QDir::separator() + file);</span>
+<span class="lineNum">     178 </span>            :   }
+<a name="179"><span class="lineNum">     179 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     180 </span>            : 
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 : int Util::rand() {</span>
+<span class="lineNum">     182 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     183 </span>            :   quint32 ret = 0;
+<span class="lineNum">     184 </span>            :   if (FAILED(BCryptGenRandom(NULL, (PUCHAR)&amp;ret, sizeof(ret),
+<span class="lineNum">     185 </span>            :                              BCRYPT_USE_SYSTEM_PREFERRED_RNG)))
+<span class="lineNum">     186 </span>            :     return qrand();
+<span class="lineNum">     187 </span>            :   return ret % RAND_MAX;
+<span class="lineNum">     188 </span>            : #else
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :   return qrand();</span>
+<span class="lineNum">     190 </span>            : #endif
+<span class="lineNum">     191 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

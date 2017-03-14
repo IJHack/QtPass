@@ -1,0 +1,1593 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/mainwindow.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - mainwindow.cpp<span style="font-size: 80%;"> (source / <a href="mainwindow.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">942</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">67</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;mainwindow.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;debughelper.h&quot;
+<span class="lineNum">       3 </span>            : #include &lt;QClipboard&gt;
+<span class="lineNum">       4 </span>            : #include &lt;QCloseEvent&gt;
+<span class="lineNum">       5 </span>            : #include &lt;QFileInfo&gt;
+<span class="lineNum">       6 </span>            : #include &lt;QInputDialog&gt;
+<span class="lineNum">       7 </span>            : #include &lt;QLabel&gt;
+<span class="lineNum">       8 </span>            : #include &lt;QMessageBox&gt;
+<span class="lineNum">       9 </span>            : #include &lt;QQueue&gt;
+<span class="lineNum">      10 </span>            : #include &lt;QShortcut&gt;
+<span class="lineNum">      11 </span>            : #include &lt;QTextCodec&gt;
+<span class="lineNum">      12 </span>            : #include &lt;QTimer&gt;
+<span class="lineNum">      13 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">      14 </span>            : #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
+<span class="lineNum">      15 </span>            : #define WIN32_EXTRA_LEAN
+<span class="lineNum">      16 </span>            : #include &lt;windows.h&gt;
+<span class="lineNum">      17 </span>            : #include &lt;winnetwk.h&gt;
+<span class="lineNum">      18 </span>            : #undef DELETE
+<span class="lineNum">      19 </span>            : #endif
+<span class="lineNum">      20 </span>            : #include &quot;configdialog.h&quot;
+<span class="lineNum">      21 </span>            : #include &quot;keygendialog.h&quot;
+<span class="lineNum">      22 </span>            : #include &quot;passworddialog.h&quot;
+<span class="lineNum">      23 </span>            : #include &quot;qpushbuttonwithclipboard.h&quot;
+<span class="lineNum">      24 </span>            : #include &quot;qtpasssettings.h&quot;
+<span class="lineNum">      25 </span>            : #include &quot;settingsconstants.h&quot;
+<span class="lineNum">      26 </span>            : #include &quot;ui_mainwindow.h&quot;
+<span class="lineNum">      27 </span>            : #include &quot;usersdialog.h&quot;
+<span class="lineNum">      28 </span>            : #include &quot;util.h&quot;
+<span class="lineNum">      29 </span>            : 
+<span class="lineNum">      30 </span>            : /**
+<span class="lineNum">      31 </span>            :  * @brief MainWindow::MainWindow handles all of the main functionality and also
+<span class="lineNum">      32 </span>            :  * the main window.
+<a name="33"><span class="lineNum">      33 </span>            :  * @param parent</a>
+<span class="lineNum">      34 </span>            :  */
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 : MainWindow::MainWindow(QWidget *parent)</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),</span>
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 :       tray(NULL) {</span>
+<span class="lineNum">      38 </span>            : #ifdef __APPLE__
+<span class="lineNum">      39 </span>            :   // extra treatment for mac os
+<span class="lineNum">      40 </span>            :   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 :   qt_set_sequence_auto_mnemonic(true);</span>
+<span class="lineNum">      42 </span>            : #endif
+<span class="lineNum">      43 </span>            :   // register shortcut ctrl/cmd + Q to close the main window
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));</span>
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            :   //    TODO(bezet): this should be reconnected dynamically when pass changes
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :   connectPassSignalHandlers(QtPassSettings::getRealPass());</span>
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 :   connectPassSignalHandlers(QtPassSettings::getImitatePass());</span>
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span>            :   //    only for ipass
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :   connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,</span>
+<span class="lineNum">      52 </span>            :           SLOT(startReencryptPath()));
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :   connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,</span>
+<span class="lineNum">      54 </span>            :           SLOT(endReencryptPath()));
+<span class="lineNum">      55 </span>            : 
+<span class="lineNum">      56 </span><span class="lineNoCov">          0 :   ui-&gt;setupUi(this);</span>
+<span class="lineNum">      57 </span><span class="lineNoCov">          0 :   enableUiElements(true);</span>
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Welcome to QtPass %1&quot;).arg(VERSION), 2000);</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :   freshStart = true;</span>
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :   startupPhase = true;</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :   clearPanelTimer.setSingleShot(true);</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :   connect(&amp;clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :   clearClipboardTimer.setSingleShot(true);</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :   connect(&amp;clearClipboardTimer, SIGNAL(timeout()), this,</span>
+<span class="lineNum">      65 </span>            :           SLOT(clearClipboard()));
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :   pwdConfig.selected = passwordConfiguration::ALLCHARS;</span>
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :   if (!checkConfig()) {</span>
+<span class="lineNum">      68 </span>            :     // no working config
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :     QApplication::quit();</span>
+<span class="lineNum">      70 </span>            :   }
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :   clippedText = &quot;&quot;;</span>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :   QtPass = NULL;</span>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :   QTimer::singleShot(10, this, SLOT(focusInput()));</span>
+<span class="lineNum">      74 </span>            : 
+<span class="lineNum">      75 </span>            :   // Add a Actions to the Add-Button
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 :   QIcon addFileIcon = QIcon::fromTheme(&quot;file_new&quot;);</span>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :   QIcon addFolderIcon = QIcon::fromTheme(&quot;folder_new&quot;);</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :   actionAddPassword = new QAction(addFileIcon, tr(&quot;Add Password&quot;), this);</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :   actionAddFolder = new QAction(addFolderIcon, tr(&quot;Add Folder&quot;), this);</span>
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :   ui-&gt;addButton-&gt;addAction(actionAddPassword);</span>
+<span class="lineNum">      82 </span><span class="lineNoCov">          0 :   ui-&gt;addButton-&gt;addAction(actionAddFolder);</span>
+<span class="lineNum">      83 </span>            : 
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :   connect(actionAddPassword, SIGNAL(triggered()), this,</span>
+<span class="lineNum">      85 </span>            :           SLOT(on_addButton_clicked()));
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :   connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));</span>
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :   qsrand(static_cast&lt;uint&gt;(QTime::currentTime().msec()));</span>
+<span class="lineNum">      88 </span>            : 
+<span class="lineNum">      89 </span>            : #if QT_VERSION &gt;= QT_VERSION_CHECK(5, 2, 0)
+<span class="lineNum">      90 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;setClearButtonEnabled(true);</span>
+<span class="lineNum">      91 </span>            : #endif
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span>            : /**
+<span class="lineNum">      95 </span>            :  * @brief MainWindow::focusInput selects any text (if applicable) in the search
+<span class="lineNum">      96 </span>            :  * box and sets focus to it. Allows for easy searching, called at application
+<span class="lineNum">      97 </span>            :  * start and when receiving empty message in MainWindow::messageAvailable when
+<a name="98"><span class="lineNum">      98 </span>            :  * compiled with SINGLE_APP=1 (default).</a>
+<span class="lineNum">      99 </span>            :  */
+<span class="lineNum">     100 </span><span class="lineNoCov">          0 : void MainWindow::focusInput() {</span>
+<span class="lineNum">     101 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;selectAll();</span>
+<span class="lineNum">     102 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;setFocus();</span>
+<span class="lineNum">     103 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     104 </span>            : 
+<span class="lineNum">     105 </span>            : /**
+<a name="106"><span class="lineNum">     106 </span>            :  * @brief MainWindow::~MainWindow destroy!</a>
+<span class="lineNum">     107 </span>            :  */
+<span class="lineNum">     108 </span><span class="lineNoCov">          0 : MainWindow::~MainWindow() {</span>
+<span class="lineNum">     109 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     110 </span>            :   if (QtPassSettings::isUseWebDav())
+<span class="lineNum">     111 </span>            :     WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
+<span class="lineNum">     112 </span>            :                            0, 1);
+<span class="lineNum">     113 </span>            : #else
+<span class="lineNum">     114 </span><span class="lineNoCov">          0 :   if (fusedav.state() == QProcess::Running) {</span>
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 :     fusedav.terminate();</span>
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :     fusedav.waitForFinished(2000);</span>
+<span class="lineNum">     117 </span>            :   }
+<span class="lineNum">     118 </span>            : #endif
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     120 </span>            : 
+<span class="lineNum">     121 </span>            : /**
+<span class="lineNum">     122 </span>            :  * @brief MainWindow::changeEvent sets focus to the search box
+<a name="123"><span class="lineNum">     123 </span>            :  * @param event</a>
+<span class="lineNum">     124 </span>            :  */
+<span class="lineNum">     125 </span><span class="lineNoCov">          0 : void MainWindow::changeEvent(QEvent *event) {</span>
+<span class="lineNum">     126 </span><span class="lineNoCov">          0 :   QWidget::changeEvent(event);</span>
+<span class="lineNum">     127 </span><span class="lineNoCov">          0 :   if (event-&gt;type() == QEvent::ActivationChange) {</span>
+<span class="lineNum">     128 </span><span class="lineNoCov">          0 :     if (this-&gt;isActiveWindow()) {</span>
+<span class="lineNum">     129 </span><span class="lineNoCov">          0 :       ui-&gt;lineEdit-&gt;selectAll();</span>
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 :       ui-&gt;lineEdit-&gt;setFocus();</span>
+<span class="lineNum">     131 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     132 </span>            :   }
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span>            : /**
+<span class="lineNum">     136 </span>            :  * @brief MainWindow::connectPassSignalHandlers this method connects Pass
+<span class="lineNum">     137 </span>            :  *                                              signals to approprite MainWindow
+<span class="lineNum">     138 </span>            :  *                                              slots
+<span class="lineNum">     139 </span>            :  *
+<a name="140"><span class="lineNum">     140 </span>            :  * @param pass        pointer to pass instance</a>
+<span class="lineNum">     141 </span>            :  */
+<span class="lineNum">     142 </span><span class="lineNoCov">          0 : void MainWindow::connectPassSignalHandlers(Pass *pass) {</span>
+<span class="lineNum">     143 </span>            : 
+<span class="lineNum">     144 </span>            :   //    TODO(bezet): this is never emitted(should be), also naming(see
+<span class="lineNum">     145 </span>            :   //    critical())
+<span class="lineNum">     146 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::error, this, &amp;MainWindow::processError);</span>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::startingExecuteWrapper, this,</span>
+<span class="lineNum">     148 </span>            :           &amp;MainWindow::executeWrapperStarted);
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::critical, this, &amp;MainWindow::critical);</span>
+<span class="lineNum">     150 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::statusMsg, this, &amp;MainWindow::showStatusMessage);</span>
+<span class="lineNum">     151 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::processErrorExit, this, &amp;MainWindow::processErrorExit);</span>
+<span class="lineNum">     152 </span>            : 
+<span class="lineNum">     153 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedGitInit, this, &amp;MainWindow::passStoreChanged);</span>
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedGitPull, this, &amp;MainWindow::processFinished);</span>
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedGitPush, this, &amp;MainWindow::processFinished);</span>
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedShow, this, &amp;MainWindow::passShowHandler);</span>
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedInsert, this, &amp;MainWindow::finishedInsert);</span>
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedRemove, this, &amp;MainWindow::passStoreChanged);</span>
+<span class="lineNum">     159 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedInit, this, &amp;MainWindow::passStoreChanged);</span>
+<span class="lineNum">     160 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedMove, this, &amp;MainWindow::passStoreChanged);</span>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedCopy, this, &amp;MainWindow::passStoreChanged);</span>
+<span class="lineNum">     162 </span>            : 
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :   connect(pass, &amp;Pass::finishedGenerateGPGKeys, this,</span>
+<span class="lineNum">     164 </span>            :           &amp;MainWindow::keyGenerationComplete);
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     166 </span>            : 
+<span class="lineNum">     167 </span>            : /**
+<a name="168"><span class="lineNum">     168 </span>            :  * @brief MainWindow::mountWebDav is some scary voodoo magic</a>
+<span class="lineNum">     169 </span>            :  */
+<span class="lineNum">     170 </span><span class="lineNoCov">          0 : void MainWindow::mountWebDav() {</span>
+<span class="lineNum">     171 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     172 </span>            :   char dst[20] = {0};
+<span class="lineNum">     173 </span>            :   NETRESOURCEA netres;
+<span class="lineNum">     174 </span>            :   memset(&amp;netres, 0, sizeof(netres));
+<span class="lineNum">     175 </span>            :   netres.dwType = RESOURCETYPE_DISK;
+<span class="lineNum">     176 </span>            :   netres.lpLocalName = 0;
+<span class="lineNum">     177 </span>            :   netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
+<span class="lineNum">     178 </span>            :   DWORD size = sizeof(dst);
+<span class="lineNum">     179 </span>            :   DWORD r = WNetUseConnectionA(
+<span class="lineNum">     180 </span>            :       reinterpret_cast&lt;HWND&gt;(effectiveWinId()), &amp;netres,
+<span class="lineNum">     181 </span>            :       QtPassSettings::getWebDavPassword().toUtf8().constData(),
+<span class="lineNum">     182 </span>            :       QtPassSettings::getWebDavUser().toUtf8().constData(),
+<span class="lineNum">     183 </span>            :       CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &amp;size,
+<span class="lineNum">     184 </span>            :       0);
+<span class="lineNum">     185 </span>            :   if (r == NO_ERROR) {
+<span class="lineNum">     186 </span>            :     QtPassSettings::setPassStore(dst);
+<span class="lineNum">     187 </span>            :   } else {
+<span class="lineNum">     188 </span>            :     char message[256] = {0};
+<span class="lineNum">     189 </span>            :     FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
+<span class="lineNum">     190 </span>            :                    sizeof(message), 0);
+<span class="lineNum">     191 </span>            :     ui-&gt;textBrowser-&gt;setTextColor(Qt::red);
+<span class="lineNum">     192 </span>            :     ui-&gt;textBrowser-&gt;setText(tr(&quot;Failed to connect WebDAV:\n&quot;) + message +
+<span class="lineNum">     193 </span>            :                              &quot; (0x&quot; + QString::number(r, 16) + &quot;)&quot;);
+<span class="lineNum">     194 </span>            :     ui-&gt;textBrowser-&gt;setTextColor(Qt::black);
+<span class="lineNum">     195 </span>            :   }
+<span class="lineNum">     196 </span>            : #else
+<span class="lineNum">     197 </span><span class="lineNoCov">          0 :   fusedav.start(&quot;fusedav -o nonempty -u \&quot;&quot; + QtPassSettings::getWebDavUser() +</span>
+<span class="lineNum">     198 </span><span class="lineNoCov">          0 :                 &quot;\&quot; &quot; + QtPassSettings::getWebDavUrl() + &quot; \&quot;&quot; +</span>
+<span class="lineNum">     199 </span><span class="lineNoCov">          0 :                 QtPassSettings::getPassStore() + '&quot;');</span>
+<span class="lineNum">     200 </span><span class="lineNoCov">          0 :   fusedav.waitForStarted();</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :   if (fusedav.state() == QProcess::Running) {</span>
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 :     QString pwd = QtPassSettings::getWebDavPassword();</span>
+<span class="lineNum">     203 </span><span class="lineNoCov">          0 :     bool ok = true;</span>
+<span class="lineNum">     204 </span><span class="lineNoCov">          0 :     if (pwd.isEmpty()) {</span>
+<span class="lineNum">     205 </span><span class="lineNoCov">          0 :       pwd = QInputDialog::getText(this, tr(&quot;QtPass WebDAV password&quot;),</span>
+<span class="lineNum">     206 </span><span class="lineNoCov">          0 :                                   tr(&quot;Enter password to connect to WebDAV:&quot;),</span>
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :                                   QLineEdit::Password, &quot;&quot;, &amp;ok);</span>
+<span class="lineNum">     208 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :     if (ok &amp;&amp; !pwd.isEmpty()) {</span>
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 :       fusedav.write(pwd.toUtf8() + '\n');</span>
+<span class="lineNum">     211 </span><span class="lineNoCov">          0 :       fusedav.closeWriteChannel();</span>
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 :       fusedav.waitForFinished(2000);</span>
+<span class="lineNum">     213 </span>            :     } else {
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 :       fusedav.terminate();</span>
+<span class="lineNum">     215 </span>            :     }
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :   QString error = fusedav.readAllStandardError();</span>
+<span class="lineNum">     218 </span><span class="lineNoCov">          0 :   int prompt = error.indexOf(&quot;Password:&quot;);</span>
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :   if (prompt &gt;= 0)</span>
+<span class="lineNum">     220 </span><span class="lineNoCov">          0 :     error.remove(0, prompt + 10);</span>
+<span class="lineNum">     221 </span><span class="lineNoCov">          0 :   if (fusedav.state() != QProcess::Running)</span>
+<span class="lineNum">     222 </span><span class="lineNoCov">          0 :     error = tr(&quot;fusedav exited unexpectedly\n&quot;) + error;</span>
+<span class="lineNum">     223 </span><span class="lineNoCov">          0 :   if (error.size() &gt; 0) {</span>
+<span class="lineNum">     224 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span>
+<span class="lineNum">     225 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setText(</span>
+<span class="lineNum">     226 </span><span class="lineNoCov">          0 :         tr(&quot;Failed to start fusedav to connect WebDAV:\n&quot;) + error);</span>
+<span class="lineNum">     227 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setTextColor(Qt::black);</span>
+<span class="lineNum">     228 </span>            :   }
+<span class="lineNum">     229 </span>            : #endif
+<span class="lineNum">     230 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     231 </span>            : 
+<span class="lineNum">     232 </span>            : /**
+<span class="lineNum">     233 </span>            :  * @brief MainWindow::checkConfig make sure we are ready to go as soon as
+<a name="234"><span class="lineNum">     234 </span>            :  * possible</a>
+<span class="lineNum">     235 </span>            :  */
+<span class="lineNum">     236 </span><span class="lineNoCov">          0 : bool MainWindow::checkConfig() {</span>
+<span class="lineNum">     237 </span><span class="lineNoCov">          0 :   QString version = QtPassSettings::getVersion();</span>
+<span class="lineNum">     238 </span>            : 
+<span class="lineNum">     239 </span><span class="lineNoCov">          0 :   if (freshStart) {</span>
+<span class="lineNum">     240 </span><span class="lineNoCov">          0 :     QByteArray geometry = QtPassSettings::getGeometry(saveGeometry());</span>
+<span class="lineNum">     241 </span><span class="lineNoCov">          0 :     restoreGeometry(geometry);</span>
+<span class="lineNum">     242 </span><span class="lineNoCov">          0 :     QByteArray savestate = QtPassSettings::getSavestate(saveState());</span>
+<span class="lineNum">     243 </span><span class="lineNoCov">          0 :     restoreState(savestate);</span>
+<span class="lineNum">     244 </span><span class="lineNoCov">          0 :     QPoint position = QtPassSettings::getPos(pos());</span>
+<span class="lineNum">     245 </span><span class="lineNoCov">          0 :     move(position);</span>
+<span class="lineNum">     246 </span><span class="lineNoCov">          0 :     QSize newSize = QtPassSettings::getSize(size());</span>
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 :     resize(newSize);</span>
+<span class="lineNum">     248 </span><span class="lineNoCov">          0 :     QList&lt;int&gt; splitter = ui-&gt;splitter-&gt;sizes();</span>
+<span class="lineNum">     249 </span><span class="lineNoCov">          0 :     int left = QtPassSettings::getSplitterLeft(splitter[0]);</span>
+<span class="lineNum">     250 </span><span class="lineNoCov">          0 :     int right = QtPassSettings::getSplitterRight(splitter[1]);</span>
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :     if (left &gt; 0 || right &gt; 0) {</span>
+<span class="lineNum">     252 </span><span class="lineNoCov">          0 :       splitter[0] = left;</span>
+<span class="lineNum">     253 </span><span class="lineNoCov">          0 :       splitter[1] = right;</span>
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :       ui-&gt;splitter-&gt;setSizes(splitter);</span>
+<span class="lineNum">     255 </span>            :     }
+<span class="lineNum">     256 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isMaximized(isMaximized())) {</span>
+<span class="lineNum">     257 </span><span class="lineNoCov">          0 :       showMaximized();</span>
+<span class="lineNum">     258 </span>            :     }
+<span class="lineNum">     259 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     260 </span>            : 
+<span class="lineNum">     261 </span><span class="lineNoCov">          0 :   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());</span>
+<span class="lineNum">     262 </span><span class="lineNoCov">          0 :   QtPassSettings::setPassStore(passStore);</span>
+<span class="lineNum">     263 </span>            : 
+<span class="lineNum">     264 </span><span class="lineNoCov">          0 :   QString passExecutable =</span>
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 :       QtPassSettings::getPassExecutable(Util::findBinaryInPath(&quot;pass&quot;));</span>
+<span class="lineNum">     266 </span><span class="lineNoCov">          0 :   QtPassSettings::setPassExecutable(passExecutable);</span>
+<span class="lineNum">     267 </span>            : 
+<span class="lineNum">     268 </span><span class="lineNoCov">          0 :   QString gitExecutable =</span>
+<span class="lineNum">     269 </span><span class="lineNoCov">          0 :       QtPassSettings::getGitExecutable(Util::findBinaryInPath(&quot;git&quot;));</span>
+<span class="lineNum">     270 </span><span class="lineNoCov">          0 :   QtPassSettings::setGitExecutable(gitExecutable);</span>
+<span class="lineNum">     271 </span>            : 
+<span class="lineNum">     272 </span><span class="lineNoCov">          0 :   QString gpgExecutable =</span>
+<span class="lineNum">     273 </span><span class="lineNoCov">          0 :       QtPassSettings::getGpgExecutable(Util::findBinaryInPath(&quot;gpg2&quot;));</span>
+<span class="lineNum">     274 </span><span class="lineNoCov">          0 :   QtPassSettings::setGpgExecutable(gpgExecutable);</span>
+<span class="lineNum">     275 </span>            : 
+<span class="lineNum">     276 </span><span class="lineNoCov">          0 :   QString pwgenExecutable =</span>
+<span class="lineNum">     277 </span><span class="lineNoCov">          0 :       QtPassSettings::getPwgenExecutable(Util::findBinaryInPath(&quot;pwgen&quot;));</span>
+<span class="lineNum">     278 </span><span class="lineNoCov">          0 :   QtPassSettings::setPwgenExecutable(pwgenExecutable);</span>
+<span class="lineNum">     279 </span>            : 
+<span class="lineNum">     280 </span><span class="lineNoCov">          0 :   pwdConfig.length = QtPassSettings::getPasswordLength();</span>
+<span class="lineNum">     281 </span><span class="lineNoCov">          0 :   pwdConfig.selected = static_cast&lt;passwordConfiguration::characterSet&gt;(</span>
+<span class="lineNum">     282 </span><span class="lineNoCov">          0 :       QtPassSettings::getPasswordCharsselection());</span>
+<span class="lineNum">     283 </span><span class="lineNoCov">          0 :   pwdConfig.Characters[passwordConfiguration::CUSTOM] =</span>
+<span class="lineNum">     284 </span><span class="lineNoCov">          0 :       QtPassSettings::getPasswordChars();</span>
+<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     286 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isAlwaysOnTop()) {</span>
+<span class="lineNum">     287 </span><span class="lineNoCov">          0 :     Qt::WindowFlags flags = windowFlags();</span>
+<span class="lineNum">     288 </span><span class="lineNoCov">          0 :     this-&gt;setWindowFlags(flags | Qt::WindowStaysOnTopHint);</span>
+<span class="lineNum">     289 </span><span class="lineNoCov">          0 :     this-&gt;show();</span>
+<span class="lineNum">     290 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     291 </span>            : 
+<span class="lineNum">     292 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isUseTrayIcon() &amp;&amp; tray == NULL) {</span>
+<span class="lineNum">     293 </span><span class="lineNoCov">          0 :     initTrayIcon();</span>
+<span class="lineNum">     294 </span><span class="lineNoCov">          0 :     if (freshStart &amp;&amp; QtPassSettings::isStartMinimized()) {</span>
+<span class="lineNum">     295 </span>            :       // since we are still in constructor, can't directly hide
+<span class="lineNum">     296 </span><span class="lineNoCov">          0 :       QTimer::singleShot(10, this, SLOT(hide()));</span>
+<span class="lineNum">     297 </span>            :     }
+<span class="lineNum">     298 </span><span class="lineNoCov">          0 :   } else if (!QtPassSettings::isUseTrayIcon() &amp;&amp; tray != NULL) {</span>
+<span class="lineNum">     299 </span><span class="lineNoCov">          0 :     destroyTrayIcon();</span>
+<span class="lineNum">     300 </span>            :   }
+<span class="lineNum">     301 </span>            : 
+<span class="lineNum">     302 </span>            :   // dbg()&lt;&lt; version;
+<span class="lineNum">     303 </span>            : 
+<span class="lineNum">     304 </span>            :   // Config updates
+<span class="lineNum">     305 </span><span class="lineNoCov">          0 :   if (version.isEmpty()) {</span>
+<span class="lineNum">     306 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;assuming fresh install&quot;;</span>
+<span class="lineNum">     307 </span><span class="lineNoCov">          0 :     if (QtPassSettings::getAutoclearSeconds() &lt; 5)</span>
+<span class="lineNum">     308 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoclearSeconds(10);</span>
+<span class="lineNum">     309 </span><span class="lineNoCov">          0 :     if (QtPassSettings::getAutoclearPanelSeconds() &lt; 5)</span>
+<span class="lineNum">     310 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoclearPanelSeconds(10);</span>
+<span class="lineNum">     311 </span><span class="lineNoCov">          0 :     if (!QtPassSettings::getPwgenExecutable().isEmpty())</span>
+<span class="lineNum">     312 </span><span class="lineNoCov">          0 :       QtPassSettings::setUsePwgen(true);</span>
+<span class="lineNum">     313 </span>            :     else
+<span class="lineNum">     314 </span><span class="lineNoCov">          0 :       QtPassSettings::setUsePwgen(false);</span>
+<span class="lineNum">     315 </span><span class="lineNoCov">          0 :     QtPassSettings::setPassTemplate(&quot;login\nurl&quot;);</span>
+<span class="lineNum">     316 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     317 </span>            :     // QStringList ver = version.split(&quot;.&quot;);
+<span class="lineNum">     318 </span>            :     // dbg()&lt;&lt; ver;
+<span class="lineNum">     319 </span>            :     // if (ver[0] == &quot;0&quot; &amp;&amp; ver[1] == &quot;8&quot;) {
+<span class="lineNum">     320 </span>            :     //// upgrade to 0.9
+<span class="lineNum">     321 </span>            :     // }
+<span class="lineNum">     322 </span><span class="lineNoCov">          0 :     if (QtPassSettings::getPassTemplate().isEmpty())</span>
+<span class="lineNum">     323 </span><span class="lineNoCov">          0 :       QtPassSettings::setPassTemplate(&quot;login\nurl&quot;);</span>
+<span class="lineNum">     324 </span>            :   }
+<span class="lineNum">     325 </span>            : 
+<span class="lineNum">     326 </span><span class="lineNoCov">          0 :   QtPassSettings::setVersion(VERSION);</span>
+<span class="lineNum">     327 </span>            : 
+<span class="lineNum">     328 </span><span class="lineNoCov">          0 :   if (Util::checkConfig()) {</span>
+<span class="lineNum">     329 </span><span class="lineNoCov">          0 :     config();</span>
+<span class="lineNum">     330 </span><span class="lineNoCov">          0 :     if (freshStart &amp;&amp; Util::checkConfig())</span>
+<span class="lineNum">     331 </span><span class="lineNoCov">          0 :       return false;</span>
+<span class="lineNum">     332 </span>            :   }
+<span class="lineNum">     333 </span>            : 
+<span class="lineNum">     334 </span><span class="lineNoCov">          0 :   freshStart = false;</span>
+<span class="lineNum">     335 </span>            : 
+<span class="lineNum">     336 </span>            :   // TODO(annejan): this needs to be before we try to access the store,
+<span class="lineNum">     337 </span>            :   // but it would be better to do it after the Window is shown,
+<span class="lineNum">     338 </span>            :   // as the long delay it can cause is irritating otherwise.
+<span class="lineNum">     339 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isUseWebDav())</span>
+<span class="lineNum">     340 </span><span class="lineNoCov">          0 :     mountWebDav();</span>
+<span class="lineNum">     341 </span>            : 
+<span class="lineNum">     342 </span><span class="lineNoCov">          0 :   model.setNameFilters(QStringList() &lt;&lt; &quot;*.gpg&quot;);</span>
+<span class="lineNum">     343 </span><span class="lineNoCov">          0 :   model.setNameFilterDisables(false);</span>
+<span class="lineNum">     344 </span>            : 
+<span class="lineNum">     345 </span><span class="lineNoCov">          0 :   proxyModel.setSourceModel(&amp;model);</span>
+<span class="lineNum">     346 </span><span class="lineNoCov">          0 :   proxyModel.setModelAndStore(&amp;model, QtPassSettings::getPassStore());</span>
+<span class="lineNum">     347 </span><span class="lineNoCov">          0 :   selectionModel.reset(new QItemSelectionModel(&amp;proxyModel));</span>
+<span class="lineNum">     348 </span><span class="lineNoCov">          0 :   model.fetchMore(model.setRootPath(QtPassSettings::getPassStore()));</span>
+<span class="lineNum">     349 </span><span class="lineNoCov">          0 :   model.sort(0, Qt::AscendingOrder);</span>
+<span class="lineNum">     350 </span>            : 
+<span class="lineNum">     351 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setModel(&amp;proxyModel);</span>
+<span class="lineNum">     352 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</span>
+<span class="lineNum">     353 </span><span class="lineNoCov">          0 :       model.setRootPath(QtPassSettings::getPassStore())));</span>
+<span class="lineNum">     354 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setColumnHidden(1, true);</span>
+<span class="lineNum">     355 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setColumnHidden(2, true);</span>
+<span class="lineNum">     356 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setColumnHidden(3, true);</span>
+<span class="lineNum">     357 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setHeaderHidden(true);</span>
+<span class="lineNum">     358 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setIndentation(15);</span>
+<span class="lineNum">     359 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span>
+<span class="lineNum">     360 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span>
+<span class="lineNum">     361 </span><span class="lineNoCov">          0 :   connect(ui-&gt;treeView, SIGNAL(customContextMenuRequested(const QPoint &amp;)),</span>
+<span class="lineNum">     362 </span><span class="lineNoCov">          0 :           this, SLOT(showContextMenu(const QPoint &amp;)));</span>
+<span class="lineNum">     363 </span><span class="lineNoCov">          0 :   connect(ui-&gt;treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));</span>
+<span class="lineNum">     364 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">     365 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span>
+<span class="lineNum">     366 </span><span class="lineNoCov">          0 :   connect(ui-&gt;textBrowser, SIGNAL(customContextMenuRequested(const QPoint &amp;)),</span>
+<span class="lineNum">     367 </span>            :           this, SLOT(showBrowserContextMenu(const QPoint &amp;)));
+<span class="lineNum">     368 </span>            : 
+<span class="lineNum">     369 </span><span class="lineNoCov">          0 :   updateProfileBox();</span>
+<span class="lineNum">     370 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;updateEnv();</span>
+<span class="lineNum">     371 </span><span class="lineNoCov">          0 :   clearPanelTimer.setInterval(1000 *</span>
+<span class="lineNum">     372 </span><span class="lineNoCov">          0 :                               QtPassSettings::getAutoclearPanelSeconds());</span>
+<span class="lineNum">     373 </span><span class="lineNoCov">          0 :   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());</span>
+<span class="lineNum">     374 </span><span class="lineNoCov">          0 :   if (!QtPassSettings::isUseGit() ||</span>
+<span class="lineNum">     375 </span><span class="lineNoCov">          0 :       (QtPassSettings::getGitExecutable().isEmpty() &amp;&amp;</span>
+<span class="lineNum">     376 </span><span class="lineNoCov">          0 :        QtPassSettings::getPassExecutable().isEmpty())) {</span>
+<span class="lineNum">     377 </span><span class="lineNoCov">          0 :     ui-&gt;pushButton-&gt;hide();</span>
+<span class="lineNum">     378 </span><span class="lineNoCov">          0 :     ui-&gt;updateButton-&gt;hide();</span>
+<span class="lineNum">     379 </span><span class="lineNoCov">          0 :     ui-&gt;horizontalSpacer-&gt;changeSize(0, 20, QSizePolicy::Maximum,</span>
+<span class="lineNum">     380 </span>            :                                      QSizePolicy::Minimum);
+<span class="lineNum">     381 </span>            :   } else {
+<span class="lineNum">     382 </span><span class="lineNoCov">          0 :     ui-&gt;pushButton-&gt;show();</span>
+<span class="lineNum">     383 </span><span class="lineNoCov">          0 :     ui-&gt;updateButton-&gt;show();</span>
+<span class="lineNum">     384 </span><span class="lineNoCov">          0 :     ui-&gt;horizontalSpacer-&gt;changeSize(24, 24, QSizePolicy::Minimum,</span>
+<span class="lineNum">     385 </span>            :                                      QSizePolicy::Minimum);
+<span class="lineNum">     386 </span>            :   }
+<span class="lineNum">     387 </span>            : 
+<span class="lineNum">     388 </span><span class="lineNoCov">          0 :   startupPhase = false;</span>
+<span class="lineNum">     389 </span><span class="lineNoCov">          0 :   return true;</span>
+<span class="lineNum">     390 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     391 </span>            : 
+<span class="lineNum">     392 </span>            : /**
+<span class="lineNum">     393 </span>            :  * @brief MainWindow::config pops up the configuration screen and handles all
+<a name="394"><span class="lineNum">     394 </span>            :  * inter-window communication</a>
+<span class="lineNum">     395 </span>            :  */
+<span class="lineNum">     396 </span><span class="lineNoCov">          0 : void MainWindow::config() {</span>
+<span class="lineNum">     397 </span><span class="lineNoCov">          0 :   QScopedPointer&lt;ConfigDialog&gt; d(new ConfigDialog(this));</span>
+<span class="lineNum">     398 </span><span class="lineNoCov">          0 :   d-&gt;setModal(true);</span>
+<span class="lineNum">     399 </span>            :   // Automatically default to pass if it's available
+<span class="lineNum">     400 </span><span class="lineNoCov">          0 :   if (freshStart &amp;&amp; QFile(QtPassSettings::getPassExecutable()).exists()) {</span>
+<span class="lineNum">     401 </span><span class="lineNoCov">          0 :     QtPassSettings::setUsePass(true);</span>
+<span class="lineNum">     402 </span>            :   }
+<span class="lineNum">     403 </span>            : 
+<span class="lineNum">     404 </span><span class="lineNoCov">          0 :   d-&gt;setPassPath(QtPassSettings::getPassExecutable());</span>
+<span class="lineNum">     405 </span><span class="lineNoCov">          0 :   d-&gt;setGitPath(QtPassSettings::getGitExecutable());</span>
+<span class="lineNum">     406 </span><span class="lineNoCov">          0 :   d-&gt;setGpgPath(QtPassSettings::getGpgExecutable());</span>
+<span class="lineNum">     407 </span><span class="lineNoCov">          0 :   d-&gt;setStorePath(QtPassSettings::getPassStore());</span>
+<span class="lineNum">     408 </span><span class="lineNoCov">          0 :   d-&gt;usePass(QtPassSettings::isUsePass());</span>
+<span class="lineNum">     409 </span><span class="lineNoCov">          0 :   d-&gt;useClipboard(QtPassSettings::getClipBoardType());</span>
+<span class="lineNum">     410 </span><span class="lineNoCov">          0 :   d-&gt;useSelection(QtPassSettings::isUseSelection());</span>
+<span class="lineNum">     411 </span><span class="lineNoCov">          0 :   d-&gt;useAutoclear(QtPassSettings::isUseAutoclear());</span>
+<span class="lineNum">     412 </span><span class="lineNoCov">          0 :   d-&gt;setAutoclear(QtPassSettings::getAutoclearSeconds());</span>
+<span class="lineNum">     413 </span><span class="lineNoCov">          0 :   d-&gt;useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());</span>
+<span class="lineNum">     414 </span><span class="lineNoCov">          0 :   d-&gt;setAutoclearPanel(QtPassSettings::getAutoclearPanelSeconds());</span>
+<span class="lineNum">     415 </span><span class="lineNoCov">          0 :   d-&gt;hidePassword(QtPassSettings::isHidePassword());</span>
+<span class="lineNum">     416 </span><span class="lineNoCov">          0 :   d-&gt;hideContent(QtPassSettings::isHideContent());</span>
+<span class="lineNum">     417 </span><span class="lineNoCov">          0 :   d-&gt;addGPGId(QtPassSettings::isAddGPGId(true));</span>
+<span class="lineNum">     418 </span><span class="lineNoCov">          0 :   d-&gt;useTrayIcon(QtPassSettings::isUseTrayIcon());</span>
+<span class="lineNum">     419 </span><span class="lineNoCov">          0 :   d-&gt;hideOnClose(QtPassSettings::isHideOnClose());</span>
+<span class="lineNum">     420 </span><span class="lineNoCov">          0 :   d-&gt;startMinimized(QtPassSettings::isStartMinimized());</span>
+<span class="lineNum">     421 </span><span class="lineNoCov">          0 :   d-&gt;setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());</span>
+<span class="lineNum">     422 </span><span class="lineNoCov">          0 :   d-&gt;useGit(QtPassSettings::isUseGit());</span>
+<span class="lineNum">     423 </span><span class="lineNoCov">          0 :   d-&gt;setPwgenPath(QtPassSettings::getPwgenExecutable());</span>
+<span class="lineNum">     424 </span><span class="lineNoCov">          0 :   d-&gt;usePwgen(QtPassSettings::isUsePwgen());</span>
+<span class="lineNum">     425 </span><span class="lineNoCov">          0 :   d-&gt;avoidCapitals(QtPassSettings::isAvoidCapitals());</span>
+<span class="lineNum">     426 </span><span class="lineNoCov">          0 :   d-&gt;avoidNumbers(QtPassSettings::isAvoidNumbers());</span>
+<span class="lineNum">     427 </span><span class="lineNoCov">          0 :   d-&gt;lessRandom(QtPassSettings::isLessRandom());</span>
+<span class="lineNum">     428 </span><span class="lineNoCov">          0 :   d-&gt;useSymbols(QtPassSettings::isUseSymbols());</span>
+<span class="lineNum">     429 </span><span class="lineNoCov">          0 :   d-&gt;setPasswordLength(pwdConfig.length);</span>
+<span class="lineNum">     430 </span><span class="lineNoCov">          0 :   d-&gt;setPwdTemplateSelector(pwdConfig.selected);</span>
+<span class="lineNum">     431 </span><span class="lineNoCov">          0 :   if (pwdConfig.selected != passwordConfiguration::CUSTOM)</span>
+<span class="lineNum">     432 </span><span class="lineNoCov">          0 :     d-&gt;setLineEditEnabled(false);</span>
+<span class="lineNum">     433 </span><span class="lineNoCov">          0 :   d-&gt;setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);</span>
+<span class="lineNum">     434 </span><span class="lineNoCov">          0 :   d-&gt;useTemplate(QtPassSettings::isUseTemplate());</span>
+<span class="lineNum">     435 </span><span class="lineNoCov">          0 :   d-&gt;setTemplate(QtPassSettings::getPassTemplate());</span>
+<span class="lineNum">     436 </span><span class="lineNoCov">          0 :   d-&gt;templateAllFields(QtPassSettings::isTemplateAllFields());</span>
+<span class="lineNum">     437 </span><span class="lineNoCov">          0 :   d-&gt;autoPull(QtPassSettings::isAutoPull());</span>
+<span class="lineNum">     438 </span><span class="lineNoCov">          0 :   d-&gt;autoPush(QtPassSettings::isAutoPush());</span>
+<span class="lineNum">     439 </span><span class="lineNoCov">          0 :   d-&gt;alwaysOnTop(QtPassSettings::isAlwaysOnTop());</span>
+<span class="lineNum">     440 </span><span class="lineNoCov">          0 :   if (startupPhase)</span>
+<span class="lineNum">     441 </span><span class="lineNoCov">          0 :     d-&gt;wizard(); // does shit</span>
+<span class="lineNum">     442 </span><span class="lineNoCov">          0 :   if (d-&gt;exec()) {</span>
+<span class="lineNum">     443 </span><span class="lineNoCov">          0 :     if (d-&gt;result() == QDialog::Accepted) {</span>
+<span class="lineNum">     444 </span><span class="lineNoCov">          0 :       QtPassSettings::setPassExecutable(d-&gt;getPassPath());</span>
+<span class="lineNum">     445 </span><span class="lineNoCov">          0 :       QtPassSettings::setGitExecutable(d-&gt;getGitPath());</span>
+<span class="lineNum">     446 </span><span class="lineNoCov">          0 :       QtPassSettings::setGpgExecutable(d-&gt;getGpgPath());</span>
+<span class="lineNum">     447 </span><span class="lineNoCov">          0 :       QtPassSettings::setPassStore(</span>
+<span class="lineNum">     448 </span><span class="lineNoCov">          0 :           Util::normalizeFolderPath(d-&gt;getStorePath()));</span>
+<span class="lineNum">     449 </span><span class="lineNoCov">          0 :       QtPassSettings::setUsePass(d-&gt;usePass());</span>
+<span class="lineNum">     450 </span><span class="lineNoCov">          0 :       QtPassSettings::setClipBoardType(d-&gt;useClipboard());</span>
+<span class="lineNum">     451 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseSelection(d-&gt;useSelection());</span>
+<span class="lineNum">     452 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseAutoclear(d-&gt;useAutoclear());</span>
+<span class="lineNum">     453 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoclearSeconds(d-&gt;getAutoclear());</span>
+<span class="lineNum">     454 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseAutoclearPanel(d-&gt;useAutoclearPanel());</span>
+<span class="lineNum">     455 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoclearPanelSeconds(d-&gt;getAutoclearPanel());</span>
+<span class="lineNum">     456 </span><span class="lineNoCov">          0 :       QtPassSettings::setHidePassword(d-&gt;hidePassword());</span>
+<span class="lineNum">     457 </span><span class="lineNoCov">          0 :       QtPassSettings::setHideContent(d-&gt;hideContent());</span>
+<span class="lineNum">     458 </span><span class="lineNoCov">          0 :       QtPassSettings::setAddGPGId(d-&gt;addGPGId());</span>
+<span class="lineNum">     459 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseTrayIcon(d-&gt;useTrayIcon());</span>
+<span class="lineNum">     460 </span><span class="lineNoCov">          0 :       QtPassSettings::setHideOnClose(d-&gt;hideOnClose());</span>
+<span class="lineNum">     461 </span><span class="lineNoCov">          0 :       QtPassSettings::setStartMinimized(d-&gt;startMinimized());</span>
+<span class="lineNum">     462 </span><span class="lineNoCov">          0 :       QtPassSettings::setProfiles(d-&gt;getProfiles());</span>
+<span class="lineNum">     463 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseGit(d-&gt;useGit());</span>
+<span class="lineNum">     464 </span><span class="lineNoCov">          0 :       QtPassSettings::setPwgenExecutable(d-&gt;getPwgenPath());</span>
+<span class="lineNum">     465 </span><span class="lineNoCov">          0 :       QtPassSettings::setUsePwgen(d-&gt;usePwgen());</span>
+<span class="lineNum">     466 </span><span class="lineNoCov">          0 :       QtPassSettings::setAvoidCapitals(d-&gt;avoidCapitals());</span>
+<span class="lineNum">     467 </span><span class="lineNoCov">          0 :       QtPassSettings::setAvoidNumbers(d-&gt;avoidNumbers());</span>
+<span class="lineNum">     468 </span><span class="lineNoCov">          0 :       QtPassSettings::setLessRandom(d-&gt;lessRandom());</span>
+<span class="lineNum">     469 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseSymbols(d-&gt;useSymbols());</span>
+<span class="lineNum">     470 </span><span class="lineNoCov">          0 :       pwdConfig.length = d-&gt;getPasswordLength();</span>
+<span class="lineNum">     471 </span><span class="lineNoCov">          0 :       pwdConfig.selected = static_cast&lt;passwordConfiguration::characterSet&gt;(</span>
+<span class="lineNum">     472 </span><span class="lineNoCov">          0 :           d-&gt;getPwdTemplateSelector());</span>
+<span class="lineNum">     473 </span><span class="lineNoCov">          0 :       pwdConfig.Characters[passwordConfiguration::CUSTOM] =</span>
+<span class="lineNum">     474 </span><span class="lineNoCov">          0 :           d-&gt;getPasswordChars();</span>
+<span class="lineNum">     475 </span><span class="lineNoCov">          0 :       QtPassSettings::setUseTemplate(d-&gt;useTemplate());</span>
+<span class="lineNum">     476 </span><span class="lineNoCov">          0 :       QtPassSettings::setPassTemplate(d-&gt;getTemplate());</span>
+<span class="lineNum">     477 </span><span class="lineNoCov">          0 :       QtPassSettings::setTemplateAllFields(d-&gt;templateAllFields());</span>
+<span class="lineNum">     478 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoPush(d-&gt;autoPush());</span>
+<span class="lineNum">     479 </span><span class="lineNoCov">          0 :       QtPassSettings::setAutoPull(d-&gt;autoPull());</span>
+<span class="lineNum">     480 </span><span class="lineNoCov">          0 :       QtPassSettings::setAlwaysOnTop(d-&gt;alwaysOnTop());</span>
+<span class="lineNum">     481 </span>            : 
+<span class="lineNum">     482 </span><span class="lineNoCov">          0 :       QtPassSettings::setVersion(VERSION);</span>
+<span class="lineNum">     483 </span><span class="lineNoCov">          0 :       QtPassSettings::setPasswordLength(pwdConfig.length);</span>
+<span class="lineNum">     484 </span><span class="lineNoCov">          0 :       QtPassSettings::setPasswordCharsselection(pwdConfig.selected);</span>
+<span class="lineNum">     485 </span><span class="lineNoCov">          0 :       QtPassSettings::setPasswordChars(</span>
+<span class="lineNum">     486 </span>            :           pwdConfig.Characters[passwordConfiguration::CUSTOM]);
+<span class="lineNum">     487 </span>            : 
+<span class="lineNum">     488 </span><span class="lineNoCov">          0 :       if (QtPassSettings::isAlwaysOnTop()) {</span>
+<span class="lineNum">     489 </span><span class="lineNoCov">          0 :         Qt::WindowFlags flags = windowFlags();</span>
+<span class="lineNum">     490 </span><span class="lineNoCov">          0 :         this-&gt;setWindowFlags(flags | Qt::WindowStaysOnTopHint);</span>
+<span class="lineNum">     491 </span><span class="lineNoCov">          0 :         this-&gt;show();</span>
+<span class="lineNum">     492 </span><span class="lineNoCov">          0 :       } else {</span>
+<span class="lineNum">     493 </span><span class="lineNoCov">          0 :         this-&gt;setWindowFlags(Qt::Window);</span>
+<span class="lineNum">     494 </span><span class="lineNoCov">          0 :         this-&gt;show();</span>
+<span class="lineNum">     495 </span>            :       }
+<span class="lineNum">     496 </span>            : 
+<span class="lineNum">     497 </span><span class="lineNoCov">          0 :       updateProfileBox();</span>
+<span class="lineNum">     498 </span><span class="lineNoCov">          0 :       ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</span>
+<span class="lineNum">     499 </span><span class="lineNoCov">          0 :           model.setRootPath(QtPassSettings::getPassStore())));</span>
+<span class="lineNum">     500 </span>            : 
+<span class="lineNum">     501 </span><span class="lineNoCov">          0 :       if (freshStart &amp;&amp; Util::checkConfig())</span>
+<span class="lineNum">     502 </span><span class="lineNoCov">          0 :         config();</span>
+<span class="lineNum">     503 </span><span class="lineNoCov">          0 :       QtPassSettings::getPass()-&gt;updateEnv();</span>
+<span class="lineNum">     504 </span><span class="lineNoCov">          0 :       clearPanelTimer.setInterval(1000 *</span>
+<span class="lineNum">     505 </span><span class="lineNoCov">          0 :                                   QtPassSettings::getAutoclearPanelSeconds());</span>
+<span class="lineNum">     506 </span><span class="lineNoCov">          0 :       clearClipboardTimer.setInterval(1000 *</span>
+<span class="lineNum">     507 </span><span class="lineNoCov">          0 :                                       QtPassSettings::getAutoclearSeconds());</span>
+<span class="lineNum">     508 </span>            : 
+<span class="lineNum">     509 </span><span class="lineNoCov">          0 :       if (!QtPassSettings::isUseGit() ||</span>
+<span class="lineNum">     510 </span><span class="lineNoCov">          0 :           (QtPassSettings::getGitExecutable().isEmpty() &amp;&amp;</span>
+<span class="lineNum">     511 </span><span class="lineNoCov">          0 :            QtPassSettings::getPassExecutable().isEmpty())) {</span>
+<span class="lineNum">     512 </span><span class="lineNoCov">          0 :         ui-&gt;pushButton-&gt;hide();</span>
+<span class="lineNum">     513 </span><span class="lineNoCov">          0 :         ui-&gt;updateButton-&gt;hide();</span>
+<span class="lineNum">     514 </span><span class="lineNoCov">          0 :         ui-&gt;horizontalSpacer-&gt;changeSize(0, 20, QSizePolicy::Maximum,</span>
+<span class="lineNum">     515 </span>            :                                          QSizePolicy::Minimum);
+<span class="lineNum">     516 </span>            :       } else {
+<span class="lineNum">     517 </span><span class="lineNoCov">          0 :         ui-&gt;pushButton-&gt;show();</span>
+<span class="lineNum">     518 </span><span class="lineNoCov">          0 :         ui-&gt;updateButton-&gt;show();</span>
+<span class="lineNum">     519 </span><span class="lineNoCov">          0 :         ui-&gt;horizontalSpacer-&gt;changeSize(24, 24, QSizePolicy::Minimum,</span>
+<span class="lineNum">     520 </span>            :                                          QSizePolicy::Minimum);
+<span class="lineNum">     521 </span>            :       }
+<span class="lineNum">     522 </span><span class="lineNoCov">          0 :       if (QtPassSettings::isUseTrayIcon() &amp;&amp; tray == NULL)</span>
+<span class="lineNum">     523 </span><span class="lineNoCov">          0 :         initTrayIcon();</span>
+<span class="lineNum">     524 </span><span class="lineNoCov">          0 :       else if (!QtPassSettings::isUseTrayIcon() &amp;&amp; tray != NULL)</span>
+<span class="lineNum">     525 </span><span class="lineNoCov">          0 :         destroyTrayIcon();</span>
+<span class="lineNum">     526 </span>            :     }
+<span class="lineNum">     527 </span><span class="lineNoCov">          0 :     freshStart = false;</span>
+<span class="lineNum">     528 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     529 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     530 </span>            : 
+<span class="lineNum">     531 </span>            : /**
+<a name="532"><span class="lineNum">     532 </span>            :  * @brief MainWindow::on_updateButton_clicked do a git pull</a>
+<span class="lineNum">     533 </span>            :  */
+<span class="lineNum">     534 </span><span class="lineNoCov">          0 : void MainWindow::on_updateButton_clicked(bool block) {</span>
+<span class="lineNum">     535 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Updating password-store&quot;), 2000);</span>
+<span class="lineNum">     536 </span><span class="lineNoCov">          0 :   if (block)</span>
+<span class="lineNum">     537 </span><span class="lineNoCov">          0 :     QtPassSettings::getPass()-&gt;GitPull_b();</span>
+<span class="lineNum">     538 </span>            :   else
+<span class="lineNum">     539 </span><span class="lineNoCov">          0 :     QtPassSettings::getPass()-&gt;GitPull();</span>
+<span class="lineNum">     540 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     541 </span>            : 
+<span class="lineNum">     542 </span>            : /**
+<a name="543"><span class="lineNum">     543 </span>            :  * @brief MainWindow::on_pushButton_clicked do a git push</a>
+<span class="lineNum">     544 </span>            :  */
+<span class="lineNum">     545 </span><span class="lineNoCov">          0 : void MainWindow::on_pushButton_clicked() {</span>
+<span class="lineNum">     546 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isUseGit()) {</span>
+<span class="lineNum">     547 </span><span class="lineNoCov">          0 :     ui-&gt;statusBar-&gt;showMessage(tr(&quot;Updating password-store&quot;), 2000);</span>
+<span class="lineNum">     548 </span><span class="lineNoCov">          0 :     QtPassSettings::getPass()-&gt;GitPush();</span>
+<span class="lineNum">     549 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     550 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     551 </span>            : 
+<span class="lineNum">     552 </span>            : /**
+<span class="lineNum">     553 </span>            :  * @brief MainWindow::getFile get the selected file path
+<span class="lineNum">     554 </span>            :  * @param index
+<span class="lineNum">     555 </span>            :  * @param forPass returns relative path without '.gpg' extension
+<span class="lineNum">     556 </span>            :  * @return path
+<a name="557"><span class="lineNum">     557 </span>            :  * @return</a>
+<span class="lineNum">     558 </span>            :  */
+<span class="lineNum">     559 </span><span class="lineNoCov">          0 : QString MainWindow::getFile(const QModelIndex &amp;index, bool forPass) {</span>
+<span class="lineNum">     560 </span><span class="lineNoCov">          0 :   if (!index.isValid() ||</span>
+<span class="lineNum">     561 </span><span class="lineNoCov">          0 :       !model.fileInfo(proxyModel.mapToSource(index)).isFile())</span>
+<span class="lineNum">     562 </span><span class="lineNoCov">          0 :     return QString();</span>
+<span class="lineNum">     563 </span><span class="lineNoCov">          0 :   QString filePath = model.filePath(proxyModel.mapToSource(index));</span>
+<span class="lineNum">     564 </span><span class="lineNoCov">          0 :   if (forPass) {</span>
+<span class="lineNum">     565 </span><span class="lineNoCov">          0 :     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);</span>
+<span class="lineNum">     566 </span><span class="lineNoCov">          0 :     filePath.replace(QRegExp(&quot;\\.gpg$&quot;), &quot;&quot;);</span>
+<span class="lineNum">     567 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     568 </span><span class="lineNoCov">          0 :   return filePath;</span>
+<span class="lineNum">     569 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     570 </span>            : 
+<span class="lineNum">     571 </span>            : /**
+<span class="lineNum">     572 </span>            :  * @brief MainWindow::on_treeView_clicked read the selected password file
+<a name="573"><span class="lineNum">     573 </span>            :  * @param index</a>
+<span class="lineNum">     574 </span>            :  */
+<span class="lineNum">     575 </span><span class="lineNoCov">          0 : void MainWindow::on_treeView_clicked(const QModelIndex &amp;index) {</span>
+<span class="lineNum">     576 </span><span class="lineNoCov">          0 :   bool cleared = ui-&gt;treeView-&gt;currentIndex().flags() == Qt::NoItemFlags;</span>
+<span class="lineNum">     577 </span><span class="lineNoCov">          0 :   currentDir =</span>
+<span class="lineNum">     578 </span><span class="lineNoCov">          0 :       Util::getDir(ui-&gt;treeView-&gt;currentIndex(), false, model, proxyModel);</span>
+<span class="lineNum">     579 </span>            :   //    TODO(bezet): &quot;Could not decrypt&quot;;
+<span class="lineNum">     580 </span><span class="lineNoCov">          0 :   clippedText = &quot;&quot;;</span>
+<span class="lineNum">     581 </span><span class="lineNoCov">          0 :   QString file = getFile(index, true);</span>
+<span class="lineNum">     582 </span><span class="lineNoCov">          0 :   ui-&gt;passwordName-&gt;setText(getFile(index, true));</span>
+<span class="lineNum">     583 </span><span class="lineNoCov">          0 :   if (!file.isEmpty() &amp;&amp; !cleared) {</span>
+<span class="lineNum">     584 </span><span class="lineNoCov">          0 :     QtPassSettings::getPass()-&gt;Show(file);</span>
+<span class="lineNum">     585 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     586 </span><span class="lineNoCov">          0 :     clearPanel(false);</span>
+<span class="lineNum">     587 </span><span class="lineNoCov">          0 :     ui-&gt;editButton-&gt;setEnabled(false);</span>
+<span class="lineNum">     588 </span><span class="lineNoCov">          0 :     ui-&gt;deleteButton-&gt;setEnabled(true);</span>
+<span class="lineNum">     589 </span>            :   }
+<span class="lineNum">     590 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     591 </span>            : 
+<span class="lineNum">     592 </span>            : /**
+<span class="lineNum">     593 </span>            :  * @brief MainWindow::on_treeView_doubleClicked when doubleclicked on
+<span class="lineNum">     594 </span>            :  * TreeViewItem, open the edit Window
+<a name="595"><span class="lineNum">     595 </span>            :  * @param index</a>
+<span class="lineNum">     596 </span>            :  */
+<span class="lineNum">     597 </span><span class="lineNoCov">          0 : void MainWindow::on_treeView_doubleClicked(const QModelIndex &amp;index) {</span>
+<span class="lineNum">     598 </span><span class="lineNoCov">          0 :   QFileInfo fileOrFolder =</span>
+<span class="lineNum">     599 </span><span class="lineNoCov">          0 :       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class="lineNum">     600 </span>            : 
+<span class="lineNum">     601 </span><span class="lineNoCov">          0 :   if (fileOrFolder.isFile()) {</span>
+<span class="lineNum">     602 </span><span class="lineNoCov">          0 :     editPassword(getFile(index, true));</span>
+<span class="lineNum">     603 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     604 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     605 </span>            : 
+<span class="lineNum">     606 </span>            : /**
+<a name="607"><span class="lineNum">     607 </span>            :  * @brief MainWindow::deselect clear the selection, password and copy buffer</a>
+<span class="lineNum">     608 </span>            :  */
+<span class="lineNum">     609 </span><span class="lineNoCov">          0 : void MainWindow::deselect() {</span>
+<span class="lineNum">     610 </span><span class="lineNoCov">          0 :   currentDir = &quot;/&quot;;</span>
+<span class="lineNum">     611 </span><span class="lineNoCov">          0 :   clearClipboard();</span>
+<span class="lineNum">     612 </span><span class="lineNoCov">          0 :   ui-&gt;passwordName-&gt;setText(&quot;&quot;);</span>
+<span class="lineNum">     613 </span><span class="lineNoCov">          0 :   clearPanel(false);</span>
+<span class="lineNum">     614 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     615 </span>            : 
+<span class="lineNum">     616 </span>            : /**
+<a name="617"><span class="lineNum">     617 </span>            :  * @brief MainWindow::executePassGitInit git init wrapper</a>
+<span class="lineNum">     618 </span>            :  */
+<span class="lineNum">     619 </span><span class="lineNoCov">          0 : void MainWindow::executePassGitInit() {</span>
+<span class="lineNum">     620 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;Pass git init called&quot;;</span>
+<span class="lineNum">     621 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;GitInit();</span>
+<a name="622"><span class="lineNum">     622 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     623 </span>            : 
+<span class="lineNum">     624 </span><span class="lineNoCov">          0 : void MainWindow::executeWrapperStarted() {</span>
+<span class="lineNum">     625 </span><span class="lineNoCov">          0 :   clearTemplateWidgets();</span>
+<span class="lineNum">     626 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;clear();</span>
+<span class="lineNum">     627 </span><span class="lineNoCov">          0 :   enableUiElements(false);</span>
+<span class="lineNum">     628 </span><span class="lineNoCov">          0 :   clearPanelTimer.stop();</span>
+<a name="629"><span class="lineNum">     629 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     630 </span>            : 
+<span class="lineNum">     631 </span><span class="lineNoCov">          0 : void MainWindow::keyGenerationComplete(const QString &amp;p_output,</span>
+<span class="lineNum">     632 </span>            :                                        const QString &amp;p_errout) {
+<span class="lineNum">     633 </span>            :   // qDebug() &lt;&lt; p_output;
+<span class="lineNum">     634 </span>            :   // qDebug() &lt;&lt; p_errout;
+<span class="lineNum">     635 </span><span class="lineNoCov">          0 :   if (0 != keygen) {</span>
+<span class="lineNum">     636 </span><span class="lineNoCov">          0 :     qDebug() &lt;&lt; &quot;Keygen Done&quot;;</span>
+<span class="lineNum">     637 </span><span class="lineNoCov">          0 :     keygen-&gt;close();</span>
+<span class="lineNum">     638 </span><span class="lineNoCov">          0 :     keygen = 0;</span>
+<span class="lineNum">     639 </span>            :     // TODO(annejan) some sanity checking ?
+<span class="lineNum">     640 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     641 </span><span class="lineNoCov">          0 :   processFinished(p_output, p_errout);</span>
+<a name="642"><span class="lineNum">     642 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     643 </span>            : 
+<span class="lineNum">     644 </span><span class="lineNoCov">          0 : void MainWindow::passShowHandler(const QString &amp;p_output) {</span>
+<span class="lineNum">     645 </span><span class="lineNoCov">          0 :   QString output = p_output;</span>
+<span class="lineNum">     646 </span>            :   {
+<span class="lineNum">     647 </span><span class="lineNoCov">          0 :     QStringList tokens = p_output.split(&quot;\n&quot;);</span>
+<span class="lineNum">     648 </span><span class="lineNoCov">          0 :     QString password = tokens.at(0);</span>
+<span class="lineNum">     649 </span><span class="lineNoCov">          0 :     tokens.erase(tokens.begin());</span>
+<span class="lineNum">     650 </span>            : 
+<span class="lineNum">     651 </span><span class="lineNoCov">          0 :     if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &amp;&amp;</span>
+<span class="lineNum">     652 </span><span class="lineNoCov">          0 :         !p_output.isEmpty()) {</span>
+<span class="lineNum">     653 </span><span class="lineNoCov">          0 :       clippedText = password;</span>
+<span class="lineNum">     654 </span><span class="lineNoCov">          0 :       if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)</span>
+<span class="lineNum">     655 </span><span class="lineNoCov">          0 :         copyTextToClipboard(password);</span>
+<span class="lineNum">     656 </span><span class="lineNoCov">          0 :       if (QtPassSettings::isUseAutoclearPanel()) {</span>
+<span class="lineNum">     657 </span><span class="lineNoCov">          0 :         clearPanelTimer.start();</span>
+<span class="lineNum">     658 </span>            :       }
+<span class="lineNum">     659 </span><span class="lineNoCov">          0 :       if (QtPassSettings::isHidePassword() &amp;&amp;</span>
+<span class="lineNum">     660 </span><span class="lineNoCov">          0 :           !QtPassSettings::isUseTemplate()) {</span>
+<span class="lineNum">     661 </span><span class="lineNoCov">          0 :         output = &quot;***&quot; + tr(&quot;Password hidden&quot;) + &quot;***&quot;;</span>
+<span class="lineNum">     662 </span><span class="lineNoCov">          0 :         output += tokens.join(&quot;\n&quot;);</span>
+<span class="lineNum">     663 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">     664 </span><span class="lineNoCov">          0 :       if (QtPassSettings::isHideContent())</span>
+<span class="lineNum">     665 </span><span class="lineNoCov">          0 :         output = &quot;***&quot; + tr(&quot;Content hidden&quot;) + &quot;***&quot;;</span>
+<span class="lineNum">     666 </span>            :     }
+<span class="lineNum">     667 </span>            : 
+<span class="lineNum">     668 </span><span class="lineNoCov">          0 :     clearTemplateWidgets();</span>
+<span class="lineNum">     669 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isUseTemplate() &amp;&amp; !QtPassSettings::isHideContent()) {</span>
+<span class="lineNum">     670 </span><span class="lineNoCov">          0 :       QStringList remainingTokens;</span>
+<span class="lineNum">     671 </span><span class="lineNoCov">          0 :       for (int j = 0; j &lt; tokens.length(); ++j) {</span>
+<span class="lineNum">     672 </span><span class="lineNoCov">          0 :         QString token = tokens.at(j);</span>
+<span class="lineNum">     673 </span><span class="lineNoCov">          0 :         if (token.contains(':')) {</span>
+<span class="lineNum">     674 </span><span class="lineNoCov">          0 :           int colon = token.indexOf(':');</span>
+<span class="lineNum">     675 </span><span class="lineNoCov">          0 :           QString field = token.left(colon);</span>
+<span class="lineNum">     676 </span><span class="lineNoCov">          0 :           if (QtPassSettings::isTemplateAllFields() ||</span>
+<span class="lineNum">     677 </span><span class="lineNoCov">          0 :               QtPassSettings::getPassTemplate().contains(field)) {</span>
+<span class="lineNum">     678 </span><span class="lineNoCov">          0 :             QString value = token.right(token.length() - colon - 1);</span>
+<span class="lineNum">     679 </span><span class="lineNoCov">          0 :             if (!QtPassSettings::getPassTemplate().contains(field) &amp;&amp;</span>
+<span class="lineNum">     680 </span><span class="lineNoCov">          0 :                 value.startsWith(&quot;//&quot;)) {</span>
+<span class="lineNum">     681 </span><span class="lineNoCov">          0 :               remainingTokens.append(token);</span>
+<span class="lineNum">     682 </span><span class="lineNoCov">          0 :               continue; // colon is probably from a url</span>
+<span class="lineNum">     683 </span>            :             }
+<span class="lineNum">     684 </span><span class="lineNoCov">          0 :             addToGridLayout(j + 1, field, value);</span>
+<span class="lineNum">     685 </span><span class="lineNoCov">          0 :           }</span>
+<span class="lineNum">     686 </span><span class="lineNoCov">          0 :         } else {</span>
+<span class="lineNum">     687 </span><span class="lineNoCov">          0 :           remainingTokens.append(token);</span>
+<span class="lineNum">     688 </span>            :         }
+<span class="lineNum">     689 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">     690 </span><span class="lineNoCov">          0 :       if (ui-&gt;gridLayout-&gt;count() == 0)</span>
+<span class="lineNum">     691 </span><span class="lineNoCov">          0 :         ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</span>
+<span class="lineNum">     692 </span>            :       else
+<span class="lineNum">     693 </span><span class="lineNoCov">          0 :         ui-&gt;verticalLayoutPassword-&gt;setSpacing(6);</span>
+<span class="lineNum">     694 </span><span class="lineNoCov">          0 :       output = remainingTokens.join(&quot;\n&quot;);</span>
+<span class="lineNum">     695 </span><span class="lineNoCov">          0 :     } else if (!QtPassSettings::isHideContent()) {</span>
+<span class="lineNum">     696 </span><span class="lineNoCov">          0 :       output = tokens.join(&quot;\n&quot;);</span>
+<span class="lineNum">     697 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     698 </span><span class="lineNoCov">          0 :     if (!QtPassSettings::isHideContent() &amp;&amp; !password.isEmpty()) {</span>
+<span class="lineNum">     699 </span>            :       // now set the password. If we set it earlier, the layout will be
+<span class="lineNum">     700 </span>            :       // cleared
+<span class="lineNum">     701 </span><span class="lineNoCov">          0 :       addToGridLayout(0, tr(&quot;Password&quot;), password);</span>
+<span class="lineNum">     702 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     703 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isUseAutoclearPanel()) {</span>
+<span class="lineNum">     704 </span><span class="lineNoCov">          0 :       clearPanelTimer.start();</span>
+<span class="lineNum">     705 </span>            :     }
+<span class="lineNum">     706 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     707 </span>            : 
+<span class="lineNum">     708 </span><span class="lineNoCov">          0 :   DisplayInTextBrowser(output);</span>
+<span class="lineNum">     709 </span><span class="lineNoCov">          0 :   enableUiElements(true);</span>
+<a name="710"><span class="lineNum">     710 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     711 </span>            : 
+<span class="lineNum">     712 </span><span class="lineNoCov">          0 : void MainWindow::passStoreChanged(const QString &amp;p_out, const QString &amp;p_err) {</span>
+<span class="lineNum">     713 </span><span class="lineNoCov">          0 :   processFinished(p_out, p_err);</span>
+<span class="lineNum">     714 </span><span class="lineNoCov">          0 :   doGitPush();</span>
+<a name="715"><span class="lineNum">     715 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     716 </span>            : 
+<span class="lineNum">     717 </span><span class="lineNoCov">          0 : void MainWindow::doGitPush() {</span>
+<span class="lineNum">     718 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isAutoPush())</span>
+<span class="lineNum">     719 </span><span class="lineNoCov">          0 :     on_pushButton_clicked();</span>
+<a name="720"><span class="lineNum">     720 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     721 </span>            : 
+<span class="lineNum">     722 </span><span class="lineNoCov">          0 : void MainWindow::finishedInsert(const QString &amp;p_output,</span>
+<span class="lineNum">     723 </span>            :                                 const QString &amp;p_errout) {
+<span class="lineNum">     724 </span><span class="lineNoCov">          0 :   processFinished(p_output, p_errout);</span>
+<span class="lineNum">     725 </span><span class="lineNoCov">          0 :   doGitPush();</span>
+<span class="lineNum">     726 </span><span class="lineNoCov">          0 :   on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<a name="727"><span class="lineNum">     727 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     728 </span>            : 
+<span class="lineNum">     729 </span><span class="lineNoCov">          0 : void MainWindow::DisplayInTextBrowser(QString output, QString prefix,</span>
+<span class="lineNum">     730 </span>            :                                       QString postfix) {
+<span class="lineNum">     731 </span>            : 
+<span class="lineNum">     732 </span><span class="lineNoCov">          0 :   output.replace(QRegExp(&quot;&lt;&quot;), &quot;&amp;lt;&quot;);</span>
+<span class="lineNum">     733 </span><span class="lineNoCov">          0 :   output.replace(QRegExp(&quot;&gt;&quot;), &quot;&amp;gt;&quot;);</span>
+<span class="lineNum">     734 </span><span class="lineNoCov">          0 :   output.replace(QRegExp(&quot; &quot;), &quot;&amp;nbsp;&quot;);</span>
+<span class="lineNum">     735 </span>            : 
+<span class="lineNum">     736 </span><span class="lineNoCov">          0 :   output.replace(QRegExp(&quot;((?:https?|ftp|ssh)://\\S+)&quot;),</span>
+<span class="lineNum">     737 </span><span class="lineNoCov">          0 :                  &quot;&lt;a href=\&quot;\\1\&quot;&gt;\\1&lt;/a&gt;&quot;);</span>
+<span class="lineNum">     738 </span><span class="lineNoCov">          0 :   output.replace(QRegExp(&quot;\n&quot;), &quot;&lt;br /&gt;&quot;);</span>
+<span class="lineNum">     739 </span><span class="lineNoCov">          0 :   output = prefix + output + postfix;</span>
+<span class="lineNum">     740 </span><span class="lineNoCov">          0 :   if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty())</span>
+<span class="lineNum">     741 </span><span class="lineNoCov">          0 :     output = ui-&gt;textBrowser-&gt;toHtml() + output;</span>
+<span class="lineNum">     742 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setHtml(output);</span>
+<a name="743"><span class="lineNum">     743 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     744 </span>            : 
+<span class="lineNum">     745 </span><span class="lineNoCov">          0 : void MainWindow::processErrorExit(int exitCode, const QString &amp;p_error) {</span>
+<span class="lineNum">     746 </span><span class="lineNoCov">          0 :   if (!p_error.isEmpty()) {</span>
+<span class="lineNum">     747 </span><span class="lineNoCov">          0 :     QString output;</span>
+<span class="lineNum">     748 </span><span class="lineNoCov">          0 :     QString error = p_error;</span>
+<span class="lineNum">     749 </span><span class="lineNoCov">          0 :     error.replace(QRegExp(&quot;&lt;&quot;), &quot;&amp;lt;&quot;);</span>
+<span class="lineNum">     750 </span><span class="lineNoCov">          0 :     error.replace(QRegExp(&quot;&gt;&quot;), &quot;&amp;gt;&quot;);</span>
+<span class="lineNum">     751 </span><span class="lineNoCov">          0 :     error.replace(QRegExp(&quot; &quot;), &quot;&amp;nbsp;&quot;);</span>
+<span class="lineNum">     752 </span><span class="lineNoCov">          0 :     if (exitCode == 0) {</span>
+<span class="lineNum">     753 </span>            :       //  https://github.com/IJHack/qtpass/issues/111
+<span class="lineNum">     754 </span><span class="lineNoCov">          0 :       output = &quot;&lt;span style=\&quot;color: darkgray;\&quot;&gt;&quot; + error + &quot;&lt;/span&gt;&lt;br /&gt;&quot;;</span>
+<span class="lineNum">     755 </span><span class="lineNoCov">          0 :     } else {</span>
+<span class="lineNum">     756 </span><span class="lineNoCov">          0 :       output = &quot;&lt;span style=\&quot;color: red;\&quot;&gt;&quot; + error + &quot;&lt;/span&gt;&lt;br /&gt;&quot;;</span>
+<span class="lineNum">     757 </span>            :     }
+<span class="lineNum">     758 </span>            : 
+<span class="lineNum">     759 </span><span class="lineNoCov">          0 :     output.replace(QRegExp(&quot;((?:https?|ftp|ssh)://\\S+)&quot;),</span>
+<span class="lineNum">     760 </span><span class="lineNoCov">          0 :                    &quot;&lt;a href=\&quot;\\1\&quot;&gt;\\1&lt;/a&gt;&quot;);</span>
+<span class="lineNum">     761 </span><span class="lineNoCov">          0 :     output.replace(QRegExp(&quot;\n&quot;), &quot;&lt;br /&gt;&quot;);</span>
+<span class="lineNum">     762 </span><span class="lineNoCov">          0 :     if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty())</span>
+<span class="lineNum">     763 </span><span class="lineNoCov">          0 :       output = ui-&gt;textBrowser-&gt;toHtml() + output;</span>
+<span class="lineNum">     764 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setHtml(output);</span>
+<span class="lineNum">     765 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     766 </span><span class="lineNoCov">          0 :   enableUiElements(true);</span>
+<span class="lineNum">     767 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     768 </span>            : 
+<span class="lineNum">     769 </span>            : /**
+<a name="770"><span class="lineNum">     770 </span>            :  * @brief MainWindow::clearClipboard remove clipboard contents.</a>
+<span class="lineNum">     771 </span>            :  */
+<span class="lineNum">     772 </span><span class="lineNoCov">          0 : void MainWindow::clearClipboard() {</span>
+<span class="lineNum">     773 </span><span class="lineNoCov">          0 :   QClipboard *clipboard = QApplication::clipboard();</span>
+<span class="lineNum">     774 </span><span class="lineNoCov">          0 :   if (!QtPassSettings::isUseSelection()) {</span>
+<span class="lineNum">     775 </span><span class="lineNoCov">          0 :     QString clippedText = clipboard-&gt;text(QClipboard::Clipboard);</span>
+<span class="lineNum">     776 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     777 </span><span class="lineNoCov">          0 :     QString clippedText = clipboard-&gt;text(QClipboard::Selection);</span>
+<span class="lineNum">     778 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     779 </span><span class="lineNoCov">          0 :   if (clippedText == this-&gt;clippedText) {</span>
+<span class="lineNum">     780 </span><span class="lineNoCov">          0 :     if (!QtPassSettings::isUseSelection()) {</span>
+<span class="lineNum">     781 </span><span class="lineNoCov">          0 :       clipboard-&gt;clear(QClipboard::Clipboard);</span>
+<span class="lineNum">     782 </span><span class="lineNoCov">          0 :     } else {</span>
+<span class="lineNum">     783 </span><span class="lineNoCov">          0 :       clipboard-&gt;clear(QClipboard::Selection);</span>
+<span class="lineNum">     784 </span>            :     }
+<span class="lineNum">     785 </span><span class="lineNoCov">          0 :     ui-&gt;statusBar-&gt;showMessage(tr(&quot;Clipboard cleared&quot;), 2000);</span>
+<span class="lineNum">     786 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     787 </span><span class="lineNoCov">          0 :     ui-&gt;statusBar-&gt;showMessage(tr(&quot;Clipboard not cleared&quot;), 2000);</span>
+<span class="lineNum">     788 </span>            :   }
+<span class="lineNum">     789 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     790 </span>            : 
+<span class="lineNum">     791 </span>            : /**
+<a name="792"><span class="lineNum">     792 </span>            :  * @brief MainWindow::clearPanel hide the information from shoulder surfers</a>
+<span class="lineNum">     793 </span>            :  */
+<span class="lineNum">     794 </span><span class="lineNoCov">          0 : void MainWindow::clearPanel(bool notify) {</span>
+<span class="lineNum">     795 </span><span class="lineNoCov">          0 :   while (ui-&gt;gridLayout-&gt;count() &gt; 0) {</span>
+<span class="lineNum">     796 </span><span class="lineNoCov">          0 :     QLayoutItem *item = ui-&gt;gridLayout-&gt;takeAt(0);</span>
+<span class="lineNum">     797 </span><span class="lineNoCov">          0 :     delete item-&gt;widget();</span>
+<span class="lineNum">     798 </span><span class="lineNoCov">          0 :     delete item;</span>
+<span class="lineNum">     799 </span>            :   }
+<span class="lineNum">     800 </span><span class="lineNoCov">          0 :   if (notify) {</span>
+<span class="lineNum">     801 </span><span class="lineNoCov">          0 :     QString output = &quot;***&quot; + tr(&quot;Password and Content hidden&quot;) + &quot;***&quot;;</span>
+<span class="lineNum">     802 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setHtml(output);</span>
+<span class="lineNum">     803 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     804 </span><span class="lineNoCov">          0 :     ui-&gt;textBrowser-&gt;setHtml(&quot;&quot;);</span>
+<span class="lineNum">     805 </span>            :   }
+<span class="lineNum">     806 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     807 </span>            : 
+<span class="lineNum">     808 </span>            : /**
+<span class="lineNum">     809 </span>            :  * @brief MainWindow::processFinished background process has finished
+<span class="lineNum">     810 </span>            :  * @param exitCode
+<span class="lineNum">     811 </span>            :  * @param exitStatus
+<span class="lineNum">     812 </span>            :  * @param output    stdout from a process
+<a name="813"><span class="lineNum">     813 </span>            :  * @param errout    stderr from a process</a>
+<span class="lineNum">     814 </span>            :  */
+<span class="lineNum">     815 </span><span class="lineNoCov">          0 : void MainWindow::processFinished(const QString &amp;p_output,</span>
+<span class="lineNum">     816 </span>            :                                  const QString &amp;p_errout) {
+<span class="lineNum">     817 </span><span class="lineNoCov">          0 :   DisplayInTextBrowser(p_output);</span>
+<span class="lineNum">     818 </span>            :   //    Sometimes there is error output even with 0 exit code, which is
+<span class="lineNum">     819 </span>            :   //    assumed in this function
+<span class="lineNum">     820 </span><span class="lineNoCov">          0 :   processErrorExit(0, p_errout);</span>
+<span class="lineNum">     821 </span><span class="lineNoCov">          0 :   enableUiElements(true);</span>
+<span class="lineNum">     822 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     823 </span>            : 
+<span class="lineNum">     824 </span>            : /**
+<span class="lineNum">     825 </span>            :  * @brief MainWindow::enableUiElements enable or disable the relevant UI
+<span class="lineNum">     826 </span>            :  * elements
+<a name="827"><span class="lineNum">     827 </span>            :  * @param state</a>
+<span class="lineNum">     828 </span>            :  */
+<span class="lineNum">     829 </span><span class="lineNoCov">          0 : void MainWindow::enableUiElements(bool state) {</span>
+<span class="lineNum">     830 </span><span class="lineNoCov">          0 :   ui-&gt;updateButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     831 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setEnabled(state);</span>
+<span class="lineNum">     832 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;setEnabled(state);</span>
+<span class="lineNum">     833 </span><span class="lineNoCov">          0 :   ui-&gt;lineEdit-&gt;installEventFilter(this);</span>
+<span class="lineNum">     834 </span><span class="lineNoCov">          0 :   ui-&gt;addButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     835 </span><span class="lineNoCov">          0 :   ui-&gt;usersButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     836 </span><span class="lineNoCov">          0 :   ui-&gt;configButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     837 </span>            :   // is a file selected?
+<span class="lineNum">     838 </span><span class="lineNoCov">          0 :   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid();</span>
+<span class="lineNum">     839 </span><span class="lineNoCov">          0 :   ui-&gt;deleteButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     840 </span><span class="lineNoCov">          0 :   ui-&gt;editButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     841 </span><span class="lineNoCov">          0 :   ui-&gt;pushButton-&gt;setEnabled(state);</span>
+<span class="lineNum">     842 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     843 </span>            : 
+<span class="lineNum">     844 </span>            : /**
+<span class="lineNum">     845 </span>            :  * @brief MainWindow::processError something went wrong
+<a name="846"><span class="lineNum">     846 </span>            :  * @param error</a>
+<span class="lineNum">     847 </span>            :  */
+<span class="lineNum">     848 </span><span class="lineNoCov">          0 : void MainWindow::processError(QProcess::ProcessError error) {</span>
+<span class="lineNum">     849 </span><span class="lineNoCov">          0 :   QString errorString;</span>
+<span class="lineNum">     850 </span><span class="lineNoCov">          0 :   switch (error) {</span>
+<span class="lineNum">     851 </span>            :   case QProcess::FailedToStart:
+<span class="lineNum">     852 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::FailedToStart&quot;);</span>
+<span class="lineNum">     853 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     854 </span>            :   case QProcess::Crashed:
+<span class="lineNum">     855 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::Crashed&quot;);</span>
+<span class="lineNum">     856 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     857 </span>            :   case QProcess::Timedout:
+<span class="lineNum">     858 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::Timedout&quot;);</span>
+<span class="lineNum">     859 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     860 </span>            :   case QProcess::ReadError:
+<span class="lineNum">     861 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::ReadError&quot;);</span>
+<span class="lineNum">     862 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     863 </span>            :   case QProcess::WriteError:
+<span class="lineNum">     864 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::WriteError&quot;);</span>
+<span class="lineNum">     865 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     866 </span>            :   case QProcess::UnknownError:
+<span class="lineNum">     867 </span><span class="lineNoCov">          0 :     errorString = tr(&quot;QProcess::UnknownError&quot;);</span>
+<span class="lineNum">     868 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">     869 </span>            :   }
+<span class="lineNum">     870 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span>
+<span class="lineNum">     871 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setText(errorString);</span>
+<span class="lineNum">     872 </span><span class="lineNoCov">          0 :   ui-&gt;textBrowser-&gt;setTextColor(Qt::black);</span>
+<span class="lineNum">     873 </span><span class="lineNoCov">          0 :   enableUiElements(true);</span>
+<span class="lineNum">     874 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     875 </span>            : 
+<span class="lineNum">     876 </span>            : /**
+<a name="877"><span class="lineNum">     877 </span>            :  * @brief MainWindow::on_configButton_clicked run Mainwindow::config</a>
+<span class="lineNum">     878 </span>            :  */
+<span class="lineNum">     879 </span><span class="lineNoCov">          0 : void MainWindow::on_configButton_clicked() { config(); }</span>
+<span class="lineNum">     880 </span>            : 
+<span class="lineNum">     881 </span>            : /**
+<span class="lineNum">     882 </span>            :  * @brief Executes when the string in the search box changes, collapses the
+<span class="lineNum">     883 </span>            :  * TreeView
+<a name="884"><span class="lineNum">     884 </span>            :  * @param arg1</a>
+<span class="lineNum">     885 </span>            :  */
+<span class="lineNum">     886 </span><span class="lineNoCov">          0 : void MainWindow::on_lineEdit_textChanged(const QString &amp;arg1) {</span>
+<span class="lineNum">     887 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;expandAll();</span>
+<span class="lineNum">     888 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Looking for: %1&quot;).arg(arg1), 1000);</span>
+<span class="lineNum">     889 </span><span class="lineNoCov">          0 :   QString query = arg1;</span>
+<span class="lineNum">     890 </span><span class="lineNoCov">          0 :   query.replace(QRegExp(&quot; &quot;), &quot;.*&quot;);</span>
+<span class="lineNum">     891 </span><span class="lineNoCov">          0 :   QRegExp regExp(query, Qt::CaseInsensitive);</span>
+<span class="lineNum">     892 </span><span class="lineNoCov">          0 :   proxyModel.setFilterRegExp(regExp);</span>
+<span class="lineNum">     893 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</span>
+<span class="lineNum">     894 </span><span class="lineNoCov">          0 :       model.setRootPath(QtPassSettings::getPassStore())));</span>
+<span class="lineNum">     895 </span><span class="lineNoCov">          0 :   selectFirstFile();</span>
+<span class="lineNum">     896 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     897 </span>            : 
+<span class="lineNum">     898 </span>            : /**
+<span class="lineNum">     899 </span>            :  * @brief MainWindow::on_lineEdit_returnPressed get searching
+<span class="lineNum">     900 </span>            :  *
+<a name="901"><span class="lineNum">     901 </span>            :  * Select the first possible file in the tree</a>
+<span class="lineNum">     902 </span>            :  */
+<span class="lineNum">     903 </span><span class="lineNoCov">          0 : void MainWindow::on_lineEdit_returnPressed() {</span>
+<span class="lineNum">     904 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;on_lineEdit_returnPressed&quot;;</span>
+<span class="lineNum">     905 </span><span class="lineNoCov">          0 :   selectFirstFile();</span>
+<span class="lineNum">     906 </span><span class="lineNoCov">          0 :   on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<span class="lineNum">     907 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     908 </span>            : 
+<span class="lineNum">     909 </span>            : /**
+<span class="lineNum">     910 </span>            :  * @brief MainWindow::selectFirstFile select the first possible file in the
+<a name="911"><span class="lineNum">     911 </span>            :  * tree</a>
+<span class="lineNum">     912 </span>            :  */
+<span class="lineNum">     913 </span><span class="lineNoCov">          0 : void MainWindow::selectFirstFile() {</span>
+<span class="lineNum">     914 </span><span class="lineNoCov">          0 :   QModelIndex index = proxyModel.mapFromSource(</span>
+<span class="lineNum">     915 </span><span class="lineNoCov">          0 :       model.setRootPath(QtPassSettings::getPassStore()));</span>
+<span class="lineNum">     916 </span><span class="lineNoCov">          0 :   index = firstFile(index);</span>
+<span class="lineNum">     917 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span>
+<span class="lineNum">     918 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     919 </span>            : 
+<span class="lineNum">     920 </span>            : /**
+<span class="lineNum">     921 </span>            :  * @brief MainWindow::firstFile return location of first possible file
+<span class="lineNum">     922 </span>            :  * @param parentIndex
+<a name="923"><span class="lineNum">     923 </span>            :  * @return QModelIndex</a>
+<span class="lineNum">     924 </span>            :  */
+<span class="lineNum">     925 </span><span class="lineNoCov">          0 : QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {</span>
+<span class="lineNum">     926 </span><span class="lineNoCov">          0 :   QModelIndex index = parentIndex;</span>
+<span class="lineNum">     927 </span><span class="lineNoCov">          0 :   int numRows = proxyModel.rowCount(parentIndex);</span>
+<span class="lineNum">     928 </span><span class="lineNoCov">          0 :   for (int row = 0; row &lt; numRows; ++row) {</span>
+<span class="lineNum">     929 </span><span class="lineNoCov">          0 :     index = proxyModel.index(row, 0, parentIndex);</span>
+<span class="lineNum">     930 </span><span class="lineNoCov">          0 :     if (model.fileInfo(proxyModel.mapToSource(index)).isFile())</span>
+<span class="lineNum">     931 </span><span class="lineNoCov">          0 :       return index;</span>
+<span class="lineNum">     932 </span><span class="lineNoCov">          0 :     if (proxyModel.hasChildren(index))</span>
+<span class="lineNum">     933 </span><span class="lineNoCov">          0 :       return firstFile(index);</span>
+<span class="lineNum">     934 </span>            :   }
+<span class="lineNum">     935 </span><span class="lineNoCov">          0 :   return index;</span>
+<span class="lineNum">     936 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     937 </span>            : 
+<span class="lineNum">     938 </span>            : /**
+<span class="lineNum">     939 </span>            :  * @brief MainWindow::setPassword open passworddialog and save file (if not
+<span class="lineNum">     940 </span>            :  * canceled)
+<span class="lineNum">     941 </span>            :  * @param file which pgp file
+<span class="lineNum">     942 </span>            :  * @param overwrite update file (not insert)
+<a name="943"><span class="lineNum">     943 </span>            :  * @param isNew insert (not update)</a>
+<span class="lineNum">     944 </span>            :  */
+<span class="lineNum">     945 </span><span class="lineNoCov">          0 : void MainWindow::setPassword(QString file, bool isNew) {</span>
+<span class="lineNum">     946 </span><span class="lineNoCov">          0 :   PasswordDialog d(pwdConfig, this);</span>
+<span class="lineNum">     947 </span><span class="lineNoCov">          0 :   connect(QtPassSettings::getPass(), &amp;Pass::finishedShow, &amp;d,</span>
+<span class="lineNum">     948 </span>            :           &amp;PasswordDialog::setPass);
+<span class="lineNum">     949 </span>            :   //    TODO(bezet): add error handling
+<span class="lineNum">     950 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;Show(file);</span>
+<span class="lineNum">     951 </span><span class="lineNoCov">          0 :   d.setFile(file);</span>
+<span class="lineNum">     952 </span><span class="lineNoCov">          0 :   d.usePwgen(QtPassSettings::isUsePwgen());</span>
+<span class="lineNum">     953 </span><span class="lineNoCov">          0 :   d.setTemplate(QtPassSettings::getPassTemplate());</span>
+<span class="lineNum">     954 </span><span class="lineNoCov">          0 :   d.useTemplate(QtPassSettings::isUseTemplate());</span>
+<span class="lineNum">     955 </span><span class="lineNoCov">          0 :   d.templateAll(QtPassSettings::isTemplateAllFields());</span>
+<span class="lineNum">     956 </span><span class="lineNoCov">          0 :   if (!d.exec()) {</span>
+<span class="lineNum">     957 </span><span class="lineNoCov">          0 :     d.setPassword(QString());</span>
+<span class="lineNum">     958 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     959 </span>            :   }
+<span class="lineNum">     960 </span><span class="lineNoCov">          0 :   QString newValue = d.getPassword();</span>
+<span class="lineNum">     961 </span><span class="lineNoCov">          0 :   if (newValue.isEmpty())</span>
+<span class="lineNum">     962 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     963 </span>            : 
+<span class="lineNum">     964 </span><span class="lineNoCov">          0 :   if (newValue.right(1) != &quot;\n&quot;)</span>
+<span class="lineNum">     965 </span><span class="lineNoCov">          0 :     newValue += &quot;\n&quot;;</span>
+<span class="lineNum">     966 </span>            : 
+<span class="lineNum">     967 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;Insert(file, newValue, !isNew);</span>
+<span class="lineNum">     968 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     969 </span>            : 
+<span class="lineNum">     970 </span>            : /**
+<span class="lineNum">     971 </span>            :  * @brief MainWindow::on_addButton_clicked add a new password by showing a
+<a name="972"><span class="lineNum">     972 </span>            :  * number of dialogs.</a>
+<span class="lineNum">     973 </span>            :  */
+<span class="lineNum">     974 </span><span class="lineNoCov">          0 : void MainWindow::on_addButton_clicked() {</span>
+<span class="lineNum">     975 </span><span class="lineNoCov">          0 :   bool ok;</span>
+<span class="lineNum">     976 </span><span class="lineNoCov">          0 :   QString dir =</span>
+<span class="lineNum">     977 </span><span class="lineNoCov">          0 :       Util::getDir(ui-&gt;treeView-&gt;currentIndex(), true, model, proxyModel);</span>
+<span class="lineNum">     978 </span><span class="lineNoCov">          0 :   QString file =</span>
+<span class="lineNum">     979 </span><span class="lineNoCov">          0 :       QInputDialog::getText(this, tr(&quot;New file&quot;),</span>
+<span class="lineNum">     980 </span><span class="lineNoCov">          0 :                             tr(&quot;New password file: \n(Will be placed in %1 )&quot;)</span>
+<span class="lineNum">     981 </span><span class="lineNoCov">          0 :                                 .arg(QtPassSettings::getPassStore() +</span>
+<span class="lineNum">     982 </span><span class="lineNoCov">          0 :                                      Util::getDir(ui-&gt;treeView-&gt;currentIndex(),</span>
+<span class="lineNum">     983 </span>            :                                                   true, model, proxyModel)),
+<span class="lineNum">     984 </span><span class="lineNoCov">          0 :                             QLineEdit::Normal, &quot;&quot;, &amp;ok);</span>
+<span class="lineNum">     985 </span><span class="lineNoCov">          0 :   if (!ok || file.isEmpty())</span>
+<span class="lineNum">     986 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     987 </span><span class="lineNoCov">          0 :   file = dir + file;</span>
+<span class="lineNum">     988 </span><span class="lineNoCov">          0 :   setPassword(file);</span>
+<span class="lineNum">     989 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     990 </span>            : 
+<span class="lineNum">     991 </span>            : /**
+<span class="lineNum">     992 </span>            :  * @brief MainWindow::on_deleteButton_clicked remove password, if you are
+<a name="993"><span class="lineNum">     993 </span>            :  * sure.</a>
+<span class="lineNum">     994 </span>            :  */
+<span class="lineNum">     995 </span><span class="lineNoCov">          0 : void MainWindow::on_deleteButton_clicked() {</span>
+<span class="lineNum">     996 </span><span class="lineNoCov">          0 :   QFileInfo fileOrFolder =</span>
+<span class="lineNum">     997 </span><span class="lineNoCov">          0 :       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class="lineNum">     998 </span><span class="lineNoCov">          0 :   QString file = &quot;&quot;;</span>
+<span class="lineNum">     999 </span>            :   bool isDir = false;
+<span class="lineNum">    1000 </span>            : 
+<span class="lineNum">    1001 </span><span class="lineNoCov">          0 :   if (fileOrFolder.isFile()) {</span>
+<span class="lineNum">    1002 </span><span class="lineNoCov">          0 :     file = getFile(ui-&gt;treeView-&gt;currentIndex(), true);</span>
+<span class="lineNum">    1003 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1004 </span><span class="lineNoCov">          0 :     file = Util::getDir(ui-&gt;treeView-&gt;currentIndex(), true, model, proxyModel);</span>
+<span class="lineNum">    1005 </span>            :     isDir = true;
+<span class="lineNum">    1006 </span>            :   }
+<span class="lineNum">    1007 </span>            : 
+<span class="lineNum">    1008 </span><span class="lineNoCov">          0 :   if (QMessageBox::question(</span>
+<span class="lineNum">    1009 </span><span class="lineNoCov">          0 :           this, isDir ? tr(&quot;Delete folder?&quot;) : tr(&quot;Delete password?&quot;),</span>
+<span class="lineNum">    1010 </span><span class="lineNoCov">          0 :           tr(&quot;Are you sure you want to delete %1%2?&quot;)</span>
+<span class="lineNum">    1011 </span><span class="lineNoCov">          0 :               .arg(QDir::separator() + file)</span>
+<span class="lineNum">    1012 </span><span class="lineNoCov">          0 :               .arg(isDir ? tr(&quot; and whole content&quot;) : &quot;&quot;),</span>
+<span class="lineNum">    1013 </span><span class="lineNoCov">          0 :           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)</span>
+<span class="lineNum">    1014 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1015 </span>            : 
+<span class="lineNum">    1016 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;Remove(file, isDir);</span>
+<span class="lineNum">    1017 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1018 </span>            : 
+<span class="lineNum">    1019 </span>            : /**
+<a name="1020"><span class="lineNum">    1020 </span>            :  * @brief MainWindow::on_editButton_clicked try and edit (selected) password.</a>
+<span class="lineNum">    1021 </span>            :  */
+<span class="lineNum">    1022 </span><span class="lineNoCov">          0 : void MainWindow::on_editButton_clicked() {</span>
+<span class="lineNum">    1023 </span><span class="lineNoCov">          0 :   QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), true);</span>
+<span class="lineNum">    1024 </span><span class="lineNoCov">          0 :   editPassword(file);</span>
+<span class="lineNum">    1025 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1026 </span>            : 
+<span class="lineNum">    1027 </span>            : /**
+<span class="lineNum">    1028 </span>            :  * @brief MainWindow::userDialog see MainWindow::on_usersButton_clicked()
+<a name="1029"><span class="lineNum">    1029 </span>            :  * @param dir folder to edit users for.</a>
+<span class="lineNum">    1030 </span>            :  */
+<span class="lineNum">    1031 </span><span class="lineNoCov">          0 : void MainWindow::userDialog(QString dir) {</span>
+<span class="lineNum">    1032 </span><span class="lineNoCov">          0 :   if (!dir.isEmpty())</span>
+<span class="lineNum">    1033 </span><span class="lineNoCov">          0 :     currentDir = dir;</span>
+<span class="lineNum">    1034 </span><span class="lineNoCov">          0 :   on_usersButton_clicked();</span>
+<span class="lineNum">    1035 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1036 </span>            : 
+<span class="lineNum">    1037 </span>            : /**
+<span class="lineNum">    1038 </span>            :  * @brief MainWindow::on_usersButton_clicked edit users for the current
+<span class="lineNum">    1039 </span>            :  * folder,
+<a name="1040"><span class="lineNum">    1040 </span>            :  * gets lists and opens UserDialog.</a>
+<span class="lineNum">    1041 </span>            :  */
+<span class="lineNum">    1042 </span><span class="lineNoCov">          0 : void MainWindow::on_usersButton_clicked() {</span>
+<span class="lineNum">    1043 </span><span class="lineNoCov">          0 :   QList&lt;UserInfo&gt; users = QtPassSettings::getPass()-&gt;listKeys();</span>
+<span class="lineNum">    1044 </span><span class="lineNoCov">          0 :   if (users.size() == 0) {</span>
+<span class="lineNum">    1045 </span><span class="lineNoCov">          0 :     QMessageBox::critical(this, tr(&quot;Can not get key list&quot;),</span>
+<span class="lineNum">    1046 </span><span class="lineNoCov">          0 :                           tr(&quot;Unable to get list of available gpg keys&quot;));</span>
+<span class="lineNum">    1047 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1048 </span>            :   }
+<span class="lineNum">    1049 </span><span class="lineNoCov">          0 :   QList&lt;UserInfo&gt; secret_keys = QtPassSettings::getPass()-&gt;listKeys(&quot;&quot;, true);</span>
+<span class="lineNum">    1050 </span><span class="lineNoCov">          0 :   foreach (const UserInfo &amp;sec, secret_keys) {</span>
+<span class="lineNum">    1051 </span><span class="lineNoCov">          0 :     for (QList&lt;UserInfo&gt;::iterator it = users.begin(); it != users.end(); ++it)</span>
+<span class="lineNum">    1052 </span><span class="lineNoCov">          0 :       if (sec.key_id == it-&gt;key_id)</span>
+<span class="lineNum">    1053 </span><span class="lineNoCov">          0 :         it-&gt;have_secret = true;</span>
+<span class="lineNum">    1054 </span>            :   }
+<span class="lineNum">    1055 </span><span class="lineNoCov">          0 :   QList&lt;UserInfo&gt; selected_users;</span>
+<span class="lineNum">    1056 </span><span class="lineNoCov">          0 :   QString dir =</span>
+<span class="lineNum">    1057 </span><span class="lineNoCov">          0 :       currentDir.isEmpty()</span>
+<span class="lineNum">    1058 </span><span class="lineNoCov">          0 :           ? Util::getDir(ui-&gt;treeView-&gt;currentIndex(), false, model, proxyModel)</span>
+<span class="lineNum">    1059 </span><span class="lineNoCov">          0 :           : currentDir;</span>
+<span class="lineNum">    1060 </span><span class="lineNoCov">          0 :   int count = 0;</span>
+<span class="lineNum">    1061 </span><span class="lineNoCov">          0 :   QString recipients = QtPassSettings::getPass()-&gt;getRecipientString(</span>
+<span class="lineNum">    1062 </span><span class="lineNoCov">          0 :       dir.isEmpty() ? &quot;&quot; : dir, &quot; &quot;, &amp;count);</span>
+<span class="lineNum">    1063 </span><span class="lineNoCov">          0 :   if (!recipients.isEmpty())</span>
+<span class="lineNum">    1064 </span><span class="lineNoCov">          0 :     selected_users = QtPassSettings::getPass()-&gt;listKeys(recipients);</span>
+<span class="lineNum">    1065 </span><span class="lineNoCov">          0 :   foreach (const UserInfo &amp;sel, selected_users) {</span>
+<span class="lineNum">    1066 </span><span class="lineNoCov">          0 :     for (QList&lt;UserInfo&gt;::iterator it = users.begin(); it != users.end(); ++it)</span>
+<span class="lineNum">    1067 </span><span class="lineNoCov">          0 :       if (sel.key_id == it-&gt;key_id)</span>
+<span class="lineNum">    1068 </span><span class="lineNoCov">          0 :         it-&gt;enabled = true;</span>
+<span class="lineNum">    1069 </span>            :   }
+<span class="lineNum">    1070 </span><span class="lineNoCov">          0 :   if (count &gt; selected_users.size()) {</span>
+<span class="lineNum">    1071 </span>            :     // Some keys seem missing from keyring, add them separately
+<span class="lineNum">    1072 </span><span class="lineNoCov">          0 :     QStringList recipients =</span>
+<span class="lineNum">    1073 </span><span class="lineNoCov">          0 :         QtPassSettings::getPass()-&gt;getRecipientList(dir.isEmpty() ? &quot;&quot; : dir);</span>
+<span class="lineNum">    1074 </span><span class="lineNoCov">          0 :     foreach (const QString recipient, recipients) {</span>
+<span class="lineNum">    1075 </span><span class="lineNoCov">          0 :       if (QtPassSettings::getPass()-&gt;listKeys(recipient).size() &lt; 1) {</span>
+<span class="lineNum">    1076 </span><span class="lineNoCov">          0 :         UserInfo i;</span>
+<span class="lineNum">    1077 </span><span class="lineNoCov">          0 :         i.enabled = true;</span>
+<span class="lineNum">    1078 </span><span class="lineNoCov">          0 :         i.key_id = recipient;</span>
+<span class="lineNum">    1079 </span><span class="lineNoCov">          0 :         i.name = &quot; ?? &quot; + tr(&quot;Key not found in keyring&quot;);</span>
+<span class="lineNum">    1080 </span><span class="lineNoCov">          0 :         users.append(i);</span>
+<span class="lineNum">    1081 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">    1082 </span>            :     }
+<span class="lineNum">    1083 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1084 </span><span class="lineNoCov">          0 :   UsersDialog d(this);</span>
+<span class="lineNum">    1085 </span><span class="lineNoCov">          0 :   d.setUsers(&amp;users);</span>
+<span class="lineNum">    1086 </span><span class="lineNoCov">          0 :   if (!d.exec()) {</span>
+<span class="lineNum">    1087 </span><span class="lineNoCov">          0 :     d.setUsers(NULL);</span>
+<span class="lineNum">    1088 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1089 </span>            :   }
+<span class="lineNum">    1090 </span><span class="lineNoCov">          0 :   d.setUsers(NULL);</span>
+<span class="lineNum">    1091 </span>            : 
+<span class="lineNum">    1092 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;Init(dir, users);</span>
+<span class="lineNum">    1093 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1094 </span>            : 
+<span class="lineNum">    1095 </span>            : /**
+<span class="lineNum">    1096 </span>            :  * @brief MainWindow::setApp make sure we know what/who/where we are
+<a name="1097"><span class="lineNum">    1097 </span>            :  * @param app</a>
+<span class="lineNum">    1098 </span>            :  */
+<span class="lineNum">    1099 </span><span class="lineNoCov">          0 : void MainWindow::setApp(SingleApplication *app) {</span>
+<span class="lineNum">    1100 </span>            : #if SINGLE_APP
+<span class="lineNum">    1101 </span><span class="lineNoCov">          0 :   connect(app, SIGNAL(messageAvailable(QString)), this,</span>
+<span class="lineNum">    1102 </span>            :           SLOT(messageAvailable(QString)));
+<span class="lineNum">    1103 </span>            : #endif
+<span class="lineNum">    1104 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1105 </span>            : 
+<span class="lineNum">    1106 </span>            : /**
+<span class="lineNum">    1107 </span>            :  * @brief MainWindow::messageAvailable we have some text/message/search to do.
+<a name="1108"><span class="lineNum">    1108 </span>            :  * @param message</a>
+<span class="lineNum">    1109 </span>            :  */
+<span class="lineNum">    1110 </span><span class="lineNoCov">          0 : void MainWindow::messageAvailable(QString message) {</span>
+<span class="lineNum">    1111 </span><span class="lineNoCov">          0 :   if (message.isEmpty()) {</span>
+<span class="lineNum">    1112 </span><span class="lineNoCov">          0 :     focusInput();</span>
+<span class="lineNum">    1113 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1114 </span><span class="lineNoCov">          0 :     ui-&gt;treeView-&gt;expandAll();</span>
+<span class="lineNum">    1115 </span><span class="lineNoCov">          0 :     ui-&gt;lineEdit-&gt;setText(message);</span>
+<span class="lineNum">    1116 </span><span class="lineNoCov">          0 :     on_lineEdit_returnPressed();</span>
+<span class="lineNum">    1117 </span>            :   }
+<span class="lineNum">    1118 </span><span class="lineNoCov">          0 :   show();</span>
+<span class="lineNum">    1119 </span><span class="lineNoCov">          0 :   raise();</span>
+<span class="lineNum">    1120 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1121 </span>            : 
+<span class="lineNum">    1122 </span>            : /**
+<span class="lineNum">    1123 </span>            :  * @brief MainWindow::setText do a search from an external source
+<span class="lineNum">    1124 </span>            :  * (eg: commandline)
+<a name="1125"><span class="lineNum">    1125 </span>            :  * @param text</a>
+<span class="lineNum">    1126 </span>            :  */
+<span class="lineNum">    1127 </span><span class="lineNoCov">          0 : void MainWindow::setText(QString text) { ui-&gt;lineEdit-&gt;setText(text); }</span>
+<span class="lineNum">    1128 </span>            : 
+<span class="lineNum">    1129 </span>            : /**
+<span class="lineNum">    1130 </span>            :  * @brief MainWindow::getSecretKeys get list of secret/private keys
+<a name="1131"><span class="lineNum">    1131 </span>            :  * @return QStringList keys</a>
+<span class="lineNum">    1132 </span>            :  */
+<span class="lineNum">    1133 </span><span class="lineNoCov">          0 : QStringList MainWindow::getSecretKeys() {</span>
+<span class="lineNum">    1134 </span><span class="lineNoCov">          0 :   QList&lt;UserInfo&gt; keys = QtPassSettings::getPass()-&gt;listKeys(&quot;&quot;, true);</span>
+<span class="lineNum">    1135 </span><span class="lineNoCov">          0 :   QStringList names;</span>
+<span class="lineNum">    1136 </span>            : 
+<span class="lineNum">    1137 </span><span class="lineNoCov">          0 :   if (keys.size() == 0)</span>
+<span class="lineNum">    1138 </span><span class="lineNoCov">          0 :     return names;</span>
+<span class="lineNum">    1139 </span>            : 
+<span class="lineNum">    1140 </span><span class="lineNoCov">          0 :   foreach (const UserInfo &amp;sec, keys)</span>
+<span class="lineNum">    1141 </span><span class="lineNoCov">          0 :     names &lt;&lt; sec.name;</span>
+<span class="lineNum">    1142 </span>            : 
+<span class="lineNum">    1143 </span><span class="lineNoCov">          0 :   return names;</span>
+<span class="lineNum">    1144 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1145 </span>            : 
+<span class="lineNum">    1146 </span>            : /**
+<span class="lineNum">    1147 </span>            :  * @brief MainWindow::generateKeyPair internal gpg keypair generator . .
+<span class="lineNum">    1148 </span>            :  * @param batch
+<a name="1149"><span class="lineNum">    1149 </span>            :  * @param keygenWindow</a>
+<span class="lineNum">    1150 </span>            :  */
+<span class="lineNum">    1151 </span><span class="lineNoCov">          0 : void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {</span>
+<span class="lineNum">    1152 </span><span class="lineNoCov">          0 :   keygen = keygenWindow;</span>
+<span class="lineNum">    1153 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Generating GPG key pair&quot;), 60000);</span>
+<span class="lineNum">    1154 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;GenerateGPGKeys(batch);</span>
+<span class="lineNum">    1155 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1156 </span>            : 
+<span class="lineNum">    1157 </span>            : /**
+<span class="lineNum">    1158 </span>            :  * @brief MainWindow::updateProfileBox update the list of profiles, optionally
+<a name="1159"><span class="lineNum">    1159 </span>            :  * select a more appropriate one to view too</a>
+<span class="lineNum">    1160 </span>            :  */
+<span class="lineNum">    1161 </span><span class="lineNoCov">          0 : void MainWindow::updateProfileBox() {</span>
+<span class="lineNum">    1162 </span>            :   // dbg()&lt;&lt; profiles.size();
+<span class="lineNum">    1163 </span><span class="lineNoCov">          0 :   if (QtPassSettings::getProfiles().isEmpty()) {</span>
+<span class="lineNum">    1164 </span><span class="lineNoCov">          0 :     ui-&gt;profileBox-&gt;hide();</span>
+<span class="lineNum">    1165 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1166 </span><span class="lineNoCov">          0 :     ui-&gt;profileBox-&gt;show();</span>
+<span class="lineNum">    1167 </span><span class="lineNoCov">          0 :     if (QtPassSettings::getProfiles().size() &lt; 2)</span>
+<span class="lineNum">    1168 </span><span class="lineNoCov">          0 :       ui-&gt;profileBox-&gt;setEnabled(false);</span>
+<span class="lineNum">    1169 </span>            :     else
+<span class="lineNum">    1170 </span><span class="lineNoCov">          0 :       ui-&gt;profileBox-&gt;setEnabled(true);</span>
+<span class="lineNum">    1171 </span><span class="lineNoCov">          0 :     ui-&gt;profileBox-&gt;clear();</span>
+<span class="lineNum">    1172 </span><span class="lineNoCov">          0 :     QHashIterator&lt;QString, QString&gt; i(QtPassSettings::getProfiles());</span>
+<span class="lineNum">    1173 </span><span class="lineNoCov">          0 :     while (i.hasNext()) {</span>
+<span class="lineNum">    1174 </span><span class="lineNoCov">          0 :       i.next();</span>
+<span class="lineNum">    1175 </span><span class="lineNoCov">          0 :       if (!i.key().isEmpty())</span>
+<span class="lineNum">    1176 </span><span class="lineNoCov">          0 :         ui-&gt;profileBox-&gt;addItem(i.key());</span>
+<span class="lineNum">    1177 </span>            :     }
+<span class="lineNum">    1178 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1179 </span><span class="lineNoCov">          0 :   int index = ui-&gt;profileBox-&gt;findText(QtPassSettings::getProfile());</span>
+<span class="lineNum">    1180 </span><span class="lineNoCov">          0 :   if (index != -1) // -1 for not found</span>
+<span class="lineNum">    1181 </span><span class="lineNoCov">          0 :     ui-&gt;profileBox-&gt;setCurrentIndex(index);</span>
+<span class="lineNum">    1182 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1183 </span>            : 
+<span class="lineNum">    1184 </span>            : /**
+<span class="lineNum">    1185 </span>            :  * @brief MainWindow::on_profileBox_currentIndexChanged make sure we show the
+<span class="lineNum">    1186 </span>            :  * correct &quot;profile&quot;
+<a name="1187"><span class="lineNum">    1187 </span>            :  * @param name</a>
+<span class="lineNum">    1188 </span>            :  */
+<span class="lineNum">    1189 </span><span class="lineNoCov">          0 : void MainWindow::on_profileBox_currentIndexChanged(QString name) {</span>
+<span class="lineNum">    1190 </span><span class="lineNoCov">          0 :   if (startupPhase || name == QtPassSettings::getProfile())</span>
+<span class="lineNum">    1191 </span>            :     return;
+<span class="lineNum">    1192 </span><span class="lineNoCov">          0 :   QtPassSettings::setProfile(name);</span>
+<span class="lineNum">    1193 </span>            : 
+<span class="lineNum">    1194 </span><span class="lineNoCov">          0 :   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);</span>
+<span class="lineNum">    1195 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Profile changed to %1&quot;).arg(name), 2000);</span>
+<span class="lineNum">    1196 </span>            : 
+<span class="lineNum">    1197 </span><span class="lineNoCov">          0 :   QtPassSettings::getPass()-&gt;updateEnv();</span>
+<span class="lineNum">    1198 </span>            : 
+<span class="lineNum">    1199 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</span>
+<span class="lineNum">    1200 </span><span class="lineNoCov">          0 :       model.setRootPath(QtPassSettings::getPassStore())));</span>
+<span class="lineNum">    1201 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1202 </span>            : 
+<span class="lineNum">    1203 </span>            : /**
+<span class="lineNum">    1204 </span>            :  * @brief MainWindow::initTrayIcon show a nice tray icon on systems that
+<span class="lineNum">    1205 </span>            :  * support
+<a name="1206"><span class="lineNum">    1206 </span>            :  * it</a>
+<span class="lineNum">    1207 </span>            :  */
+<span class="lineNum">    1208 </span><span class="lineNoCov">          0 : void MainWindow::initTrayIcon() {</span>
+<span class="lineNum">    1209 </span><span class="lineNoCov">          0 :   if (tray != NULL) {</span>
+<span class="lineNum">    1210 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;Creating tray icon again?&quot;;</span>
+<span class="lineNum">    1211 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1212 </span>            :   }
+<span class="lineNum">    1213 </span><span class="lineNoCov">          0 :   if (QSystemTrayIcon::isSystemTrayAvailable() == true) {</span>
+<span class="lineNum">    1214 </span>            :     // Setup tray icon
+<span class="lineNum">    1215 </span><span class="lineNoCov">          0 :     this-&gt;tray = new TrayIcon(this);</span>
+<span class="lineNum">    1216 </span><span class="lineNoCov">          0 :     if (tray == NULL)</span>
+<span class="lineNum">    1217 </span><span class="lineNoCov">          0 :       dbg() &lt;&lt; &quot;Allocating tray icon failed.&quot;;</span>
+<span class="lineNum">    1218 </span>            :   } else {
+<span class="lineNum">    1219 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;No tray icon for this OS possibly also not show options?&quot;;</span>
+<span class="lineNum">    1220 </span>            :   }
+<span class="lineNum">    1221 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1222 </span>            : 
+<span class="lineNum">    1223 </span>            : /**
+<a name="1224"><span class="lineNum">    1224 </span>            :  * @brief MainWindow::destroyTrayIcon remove that pesky tray icon</a>
+<span class="lineNum">    1225 </span>            :  */
+<span class="lineNum">    1226 </span><span class="lineNoCov">          0 : void MainWindow::destroyTrayIcon() {</span>
+<span class="lineNum">    1227 </span><span class="lineNoCov">          0 :   if (tray == NULL) {</span>
+<span class="lineNum">    1228 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;Destroy non existing tray icon?&quot;;</span>
+<span class="lineNum">    1229 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1230 </span>            :   }
+<span class="lineNum">    1231 </span><span class="lineNoCov">          0 :   delete this-&gt;tray;</span>
+<span class="lineNum">    1232 </span><span class="lineNoCov">          0 :   tray = NULL;</span>
+<span class="lineNum">    1233 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1234 </span>            : 
+<span class="lineNum">    1235 </span>            : /**
+<span class="lineNum">    1236 </span>            :  * @brief MainWindow::closeEvent hide or quit
+<a name="1237"><span class="lineNum">    1237 </span>            :  * @param event</a>
+<span class="lineNum">    1238 </span>            :  */
+<span class="lineNum">    1239 </span><span class="lineNoCov">          0 : void MainWindow::closeEvent(QCloseEvent *event) {</span>
+<span class="lineNum">    1240 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isHideOnClose()) {</span>
+<span class="lineNum">    1241 </span><span class="lineNoCov">          0 :     this-&gt;hide();</span>
+<span class="lineNum">    1242 </span><span class="lineNoCov">          0 :     event-&gt;ignore();</span>
+<span class="lineNum">    1243 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1244 </span><span class="lineNoCov">          0 :     clearClipboard();</span>
+<span class="lineNum">    1245 </span><span class="lineNoCov">          0 :     QtPassSettings::setGeometry(saveGeometry());</span>
+<span class="lineNum">    1246 </span><span class="lineNoCov">          0 :     QtPassSettings::setSavestate(saveState());</span>
+<span class="lineNum">    1247 </span><span class="lineNoCov">          0 :     QtPassSettings::setMaximized(isMaximized());</span>
+<span class="lineNum">    1248 </span><span class="lineNoCov">          0 :     if (!isMaximized()) {</span>
+<span class="lineNum">    1249 </span><span class="lineNoCov">          0 :       QtPassSettings::setPos(pos());</span>
+<span class="lineNum">    1250 </span><span class="lineNoCov">          0 :       QtPassSettings::setSize(size());</span>
+<span class="lineNum">    1251 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">    1252 </span><span class="lineNoCov">          0 :     QtPassSettings::setSplitterLeft(ui-&gt;splitter-&gt;sizes()[0]);</span>
+<span class="lineNum">    1253 </span><span class="lineNoCov">          0 :     QtPassSettings::setSplitterRight(ui-&gt;splitter-&gt;sizes()[1]);</span>
+<span class="lineNum">    1254 </span><span class="lineNoCov">          0 :     event-&gt;accept();</span>
+<span class="lineNum">    1255 </span>            :   }
+<span class="lineNum">    1256 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1257 </span>            : 
+<span class="lineNum">    1258 </span>            : /**
+<span class="lineNum">    1259 </span>            :  * @brief MainWindow::eventFilter filter out some events and focus the
+<span class="lineNum">    1260 </span>            :  * treeview
+<span class="lineNum">    1261 </span>            :  * @param obj
+<span class="lineNum">    1262 </span>            :  * @param event
+<a name="1263"><span class="lineNum">    1263 </span>            :  * @return</a>
+<span class="lineNum">    1264 </span>            :  */
+<span class="lineNum">    1265 </span><span class="lineNoCov">          0 : bool MainWindow::eventFilter(QObject *obj, QEvent *event) {</span>
+<span class="lineNum">    1266 </span><span class="lineNoCov">          0 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span>
+<span class="lineNum">    1267 </span><span class="lineNoCov">          0 :     QKeyEvent *key = static_cast&lt;QKeyEvent *&gt;(event);</span>
+<span class="lineNum">    1268 </span><span class="lineNoCov">          0 :     if (key-&gt;key() == Qt::Key_Down) {</span>
+<span class="lineNum">    1269 </span><span class="lineNoCov">          0 :       ui-&gt;treeView-&gt;setFocus();</span>
+<span class="lineNum">    1270 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">    1271 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1272 </span><span class="lineNoCov">          0 :   return QObject::eventFilter(obj, event);</span>
+<span class="lineNum">    1273 </span>            : }
+<span class="lineNum">    1274 </span>            : 
+<span class="lineNum">    1275 </span>            : /**
+<span class="lineNum">    1276 </span>            :  * @brief MainWindow::keyPressEvent did anyone press return, enter or escape?
+<a name="1277"><span class="lineNum">    1277 </span>            :  * @param event</a>
+<span class="lineNum">    1278 </span>            :  */
+<span class="lineNum">    1279 </span><span class="lineNoCov">          0 : void MainWindow::keyPressEvent(QKeyEvent *event) {</span>
+<span class="lineNum">    1280 </span><span class="lineNoCov">          0 :   switch (event-&gt;key()) {</span>
+<span class="lineNum">    1281 </span>            :   case Qt::Key_Delete:
+<span class="lineNum">    1282 </span><span class="lineNoCov">          0 :     on_deleteButton_clicked();</span>
+<span class="lineNum">    1283 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">    1284 </span>            :   case Qt::Key_Return:
+<span class="lineNum">    1285 </span>            :   case Qt::Key_Enter:
+<span class="lineNum">    1286 </span><span class="lineNoCov">          0 :     on_treeView_clicked(ui-&gt;treeView-&gt;currentIndex());</span>
+<span class="lineNum">    1287 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">    1288 </span>            :   case Qt::Key_Escape:
+<span class="lineNum">    1289 </span><span class="lineNoCov">          0 :     ui-&gt;lineEdit-&gt;clear();</span>
+<span class="lineNum">    1290 </span><span class="lineNoCov">          0 :     break;</span>
+<span class="lineNum">    1291 </span>            :   default:
+<span class="lineNum">    1292 </span>            :     break;
+<span class="lineNum">    1293 </span>            :   }
+<span class="lineNum">    1294 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1295 </span>            : 
+<span class="lineNum">    1296 </span>            : /**
+<span class="lineNum">    1297 </span>            :  * @brief MainWindow::showContextMenu show us the (file or folder) context
+<span class="lineNum">    1298 </span>            :  * menu
+<a name="1299"><span class="lineNum">    1299 </span>            :  * @param pos</a>
+<span class="lineNum">    1300 </span>            :  */
+<span class="lineNum">    1301 </span><span class="lineNoCov">          0 : void MainWindow::showContextMenu(const QPoint &amp;pos) {</span>
+<span class="lineNum">    1302 </span><span class="lineNoCov">          0 :   QModelIndex index = ui-&gt;treeView-&gt;indexAt(pos);</span>
+<span class="lineNum">    1303 </span>            :   bool selected = true;
+<span class="lineNum">    1304 </span><span class="lineNoCov">          0 :   if (!index.isValid()) {</span>
+<span class="lineNum">    1305 </span><span class="lineNoCov">          0 :     ui-&gt;treeView-&gt;clearSelection();</span>
+<span class="lineNum">    1306 </span><span class="lineNoCov">          0 :     ui-&gt;deleteButton-&gt;setEnabled(false);</span>
+<span class="lineNum">    1307 </span><span class="lineNoCov">          0 :     ui-&gt;editButton-&gt;setEnabled(false);</span>
+<span class="lineNum">    1308 </span><span class="lineNoCov">          0 :     currentDir = &quot;&quot;;</span>
+<span class="lineNum">    1309 </span>            :     selected = false;
+<span class="lineNum">    1310 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1311 </span>            : 
+<span class="lineNum">    1312 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span>
+<span class="lineNum">    1313 </span>            : 
+<span class="lineNum">    1314 </span><span class="lineNoCov">          0 :   QPoint globalPos = ui-&gt;treeView-&gt;viewport()-&gt;mapToGlobal(pos);</span>
+<span class="lineNum">    1315 </span>            : 
+<span class="lineNum">    1316 </span><span class="lineNoCov">          0 :   QFileInfo fileOrFolder =</span>
+<span class="lineNum">    1317 </span><span class="lineNoCov">          0 :       model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</span>
+<span class="lineNum">    1318 </span>            : 
+<span class="lineNum">    1319 </span><span class="lineNoCov">          0 :   QMenu contextMenu;</span>
+<span class="lineNum">    1320 </span><span class="lineNoCov">          0 :   if (!selected || fileOrFolder.isDir()) {</span>
+<span class="lineNum">    1321 </span><span class="lineNoCov">          0 :     QAction *addFolder = contextMenu.addAction(tr(&quot;Add folder&quot;));</span>
+<span class="lineNum">    1322 </span><span class="lineNoCov">          0 :     QAction *addPassword = contextMenu.addAction(tr(&quot;Add password&quot;));</span>
+<span class="lineNum">    1323 </span><span class="lineNoCov">          0 :     QAction *users = contextMenu.addAction(tr(&quot;Users&quot;));</span>
+<span class="lineNum">    1324 </span><span class="lineNoCov">          0 :     connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));</span>
+<span class="lineNum">    1325 </span><span class="lineNoCov">          0 :     connect(addPassword, SIGNAL(triggered()), this,</span>
+<span class="lineNum">    1326 </span>            :             SLOT(on_addButton_clicked()));
+<span class="lineNum">    1327 </span><span class="lineNoCov">          0 :     connect(users, SIGNAL(triggered()), this, SLOT(on_usersButton_clicked()));</span>
+<span class="lineNum">    1328 </span><span class="lineNoCov">          0 :   } else if (fileOrFolder.isFile()) {</span>
+<span class="lineNum">    1329 </span><span class="lineNoCov">          0 :     QAction *edit = contextMenu.addAction(tr(&quot;Edit&quot;));</span>
+<span class="lineNum">    1330 </span><span class="lineNoCov">          0 :     connect(edit, SIGNAL(triggered()), this, SLOT(on_editButton_clicked()));</span>
+<span class="lineNum">    1331 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1332 </span><span class="lineNoCov">          0 :   if (selected) {</span>
+<span class="lineNum">    1333 </span>            :     // if (useClipboard != CLIPBOARD_NEVER) {
+<span class="lineNum">    1334 </span>            :     // contextMenu.addSeparator();
+<span class="lineNum">    1335 </span>            :     // QAction* copyItem = contextMenu.addAction(tr(&quot;Copy Password&quot;));
+<span class="lineNum">    1336 </span>            :     // if (getClippedPassword().length() == 0) copyItem-&gt;setEnabled(false);
+<span class="lineNum">    1337 </span>            :     // connect(copyItem, SIGNAL(triggered()), this,
+<span class="lineNum">    1338 </span>            :     // SLOT(copyPasswordToClipboard()));
+<span class="lineNum">    1339 </span>            :     // }
+<span class="lineNum">    1340 </span><span class="lineNoCov">          0 :     contextMenu.addSeparator();</span>
+<span class="lineNum">    1341 </span><span class="lineNoCov">          0 :     QAction *deleteItem = contextMenu.addAction(tr(&quot;Delete&quot;));</span>
+<span class="lineNum">    1342 </span><span class="lineNoCov">          0 :     connect(deleteItem, SIGNAL(triggered()), this,</span>
+<span class="lineNum">    1343 </span>            :             SLOT(on_deleteButton_clicked()));
+<span class="lineNum">    1344 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1345 </span><span class="lineNoCov">          0 :   contextMenu.exec(globalPos);</span>
+<span class="lineNum">    1346 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1347 </span>            : 
+<span class="lineNum">    1348 </span>            : /**
+<span class="lineNum">    1349 </span>            :  * @brief MainWindow::showBrowserContextMenu show us the context menu in
+<span class="lineNum">    1350 </span>            :  * password window
+<a name="1351"><span class="lineNum">    1351 </span>            :  * @param pos</a>
+<span class="lineNum">    1352 </span>            :  */
+<span class="lineNum">    1353 </span><span class="lineNoCov">          0 : void MainWindow::showBrowserContextMenu(const QPoint &amp;pos) {</span>
+<span class="lineNum">    1354 </span><span class="lineNoCov">          0 :   QMenu *contextMenu = ui-&gt;textBrowser-&gt;createStandardContextMenu(pos);</span>
+<span class="lineNum">    1355 </span><span class="lineNoCov">          0 :   QPoint globalPos = ui-&gt;textBrowser-&gt;viewport()-&gt;mapToGlobal(pos);</span>
+<span class="lineNum">    1356 </span>            : 
+<span class="lineNum">    1357 </span><span class="lineNoCov">          0 :   contextMenu-&gt;exec(globalPos);</span>
+<span class="lineNum">    1358 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1359 </span>            : 
+<span class="lineNum">    1360 </span>            : /**
+<a name="1361"><span class="lineNum">    1361 </span>            :  * @brief MainWindow::addFolder add a new folder to store passwords in</a>
+<span class="lineNum">    1362 </span>            :  */
+<span class="lineNum">    1363 </span><span class="lineNoCov">          0 : void MainWindow::addFolder() {</span>
+<span class="lineNum">    1364 </span><span class="lineNoCov">          0 :   bool ok;</span>
+<span class="lineNum">    1365 </span><span class="lineNoCov">          0 :   QString dir =</span>
+<span class="lineNum">    1366 </span><span class="lineNoCov">          0 :       Util::getDir(ui-&gt;treeView-&gt;currentIndex(), false, model, proxyModel);</span>
+<span class="lineNum">    1367 </span><span class="lineNoCov">          0 :   QString newdir =</span>
+<span class="lineNum">    1368 </span><span class="lineNoCov">          0 :       QInputDialog::getText(this, tr(&quot;New file&quot;),</span>
+<span class="lineNum">    1369 </span><span class="lineNoCov">          0 :                             tr(&quot;New Folder: \n(Will be placed in %1 )&quot;)</span>
+<span class="lineNum">    1370 </span><span class="lineNoCov">          0 :                                 .arg(QtPassSettings::getPassStore() +</span>
+<span class="lineNum">    1371 </span><span class="lineNoCov">          0 :                                      Util::getDir(ui-&gt;treeView-&gt;currentIndex(),</span>
+<span class="lineNum">    1372 </span>            :                                                   true, model, proxyModel)),
+<span class="lineNum">    1373 </span><span class="lineNoCov">          0 :                             QLineEdit::Normal, &quot;&quot;, &amp;ok);</span>
+<span class="lineNum">    1374 </span><span class="lineNoCov">          0 :   if (!ok || newdir.isEmpty())</span>
+<span class="lineNum">    1375 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">    1376 </span><span class="lineNoCov">          0 :   newdir.prepend(dir);</span>
+<span class="lineNum">    1377 </span>            :   // dbg()&lt;&lt; newdir;
+<span class="lineNum">    1378 </span><span class="lineNoCov">          0 :   QDir().mkdir(newdir);</span>
+<span class="lineNum">    1379 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1380 </span>            : 
+<span class="lineNum">    1381 </span>            : /**
+<span class="lineNum">    1382 </span>            :  * @brief MainWindow::editPassword read password and open edit window via
+<a name="1383"><span class="lineNum">    1383 </span>            :  * MainWindow::on_editButton_clicked()</a>
+<span class="lineNum">    1384 </span>            :  */
+<span class="lineNum">    1385 </span><span class="lineNoCov">          0 : void MainWindow::editPassword(const QString &amp;file) {</span>
+<span class="lineNum">    1386 </span><span class="lineNoCov">          0 :   if (!file.isEmpty()) {</span>
+<span class="lineNum">    1387 </span><span class="lineNoCov">          0 :     if (QtPassSettings::isUseGit() &amp;&amp; QtPassSettings::isAutoPull())</span>
+<span class="lineNum">    1388 </span><span class="lineNoCov">          0 :       on_updateButton_clicked(true);</span>
+<span class="lineNum">    1389 </span><span class="lineNoCov">          0 :     setPassword(file, false);</span>
+<span class="lineNum">    1390 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1391 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1392 </span>            : 
+<span class="lineNum">    1393 </span>            : /**
+<span class="lineNum">    1394 </span>            :  * @brief MainWindow::clearTemplateWidgets empty the template widget fields in
+<a name="1395"><span class="lineNum">    1395 </span>            :  * the UI</a>
+<span class="lineNum">    1396 </span>            :  */
+<span class="lineNum">    1397 </span><span class="lineNoCov">          0 : void MainWindow::clearTemplateWidgets() {</span>
+<span class="lineNum">    1398 </span><span class="lineNoCov">          0 :   while (ui-&gt;gridLayout-&gt;count() &gt; 0) {</span>
+<span class="lineNum">    1399 </span><span class="lineNoCov">          0 :     QLayoutItem *item = ui-&gt;gridLayout-&gt;takeAt(0);</span>
+<span class="lineNum">    1400 </span><span class="lineNoCov">          0 :     delete item-&gt;widget();</span>
+<span class="lineNum">    1401 </span><span class="lineNoCov">          0 :     delete item;</span>
+<span class="lineNum">    1402 </span>            :   }
+<span class="lineNum">    1403 </span><span class="lineNoCov">          0 :   ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</span>
+<span class="lineNum">    1404 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1405 </span>            : 
+<span class="lineNum">    1406 </span>            : /**
+<span class="lineNum">    1407 </span>            :  * @brief MainWindow::copyTextToClipboard copies text to your clipboard
+<a name="1408"><span class="lineNum">    1408 </span>            :  * @param text</a>
+<span class="lineNum">    1409 </span>            :  */
+<span class="lineNum">    1410 </span><span class="lineNoCov">          0 : void MainWindow::copyTextToClipboard(const QString &amp;text) {</span>
+<span class="lineNum">    1411 </span><span class="lineNoCov">          0 :   QClipboard *clip = QApplication::clipboard();</span>
+<span class="lineNum">    1412 </span><span class="lineNoCov">          0 :   if (!QtPassSettings::isUseSelection()) {</span>
+<span class="lineNum">    1413 </span><span class="lineNoCov">          0 :     clip-&gt;setText(text, QClipboard::Clipboard);</span>
+<span class="lineNum">    1414 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1415 </span><span class="lineNoCov">          0 :     clip-&gt;setText(text, QClipboard::Selection);</span>
+<span class="lineNum">    1416 </span>            :   }
+<span class="lineNum">    1417 </span><span class="lineNoCov">          0 :   clippedText = text;</span>
+<span class="lineNum">    1418 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Copied to clipboard&quot;), 2000);</span>
+<span class="lineNum">    1419 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isUseAutoclear()) {</span>
+<span class="lineNum">    1420 </span><span class="lineNoCov">          0 :     clearClipboardTimer.start();</span>
+<span class="lineNum">    1421 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1422 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1423 </span>            : 
+<span class="lineNum">    1424 </span>            : /**
+<span class="lineNum">    1425 </span>            :  * @brief MainWindow::addToGridLayout add a field to the template grid
+<span class="lineNum">    1426 </span>            :  * @param position
+<span class="lineNum">    1427 </span>            :  * @param field
+<a name="1428"><span class="lineNum">    1428 </span>            :  * @param value</a>
+<span class="lineNum">    1429 </span>            :  */
+<span class="lineNum">    1430 </span><span class="lineNoCov">          0 : void MainWindow::addToGridLayout(int position, const QString &amp;field,</span>
+<span class="lineNum">    1431 </span>            :                                  const QString &amp;value) {
+<span class="lineNum">    1432 </span><span class="lineNoCov">          0 :   QString trimmedField = field.trimmed();</span>
+<span class="lineNum">    1433 </span><span class="lineNoCov">          0 :   QString trimmedValue = value.trimmed();</span>
+<span class="lineNum">    1434 </span>            : 
+<span class="lineNum">    1435 </span>            :   // Combine the Copy button and the line edit in one widget
+<span class="lineNum">    1436 </span><span class="lineNoCov">          0 :   QFrame *frame = new QFrame();</span>
+<span class="lineNum">    1437 </span><span class="lineNoCov">          0 :   QLayout *ly = new QHBoxLayout();</span>
+<span class="lineNum">    1438 </span><span class="lineNoCov">          0 :   ly-&gt;setContentsMargins(5, 2, 2, 2);</span>
+<span class="lineNum">    1439 </span><span class="lineNoCov">          0 :   frame-&gt;setLayout(ly);</span>
+<span class="lineNum">    1440 </span><span class="lineNoCov">          0 :   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {</span>
+<span class="lineNum">    1441 </span>            :     QPushButtonWithClipboard *fieldLabel =
+<span class="lineNum">    1442 </span><span class="lineNoCov">          0 :         new QPushButtonWithClipboard(trimmedValue, this);</span>
+<span class="lineNum">    1443 </span><span class="lineNoCov">          0 :     connect(fieldLabel, SIGNAL(clicked(QString)), this,</span>
+<span class="lineNum">    1444 </span>            :             SLOT(copyTextToClipboard(QString)));
+<span class="lineNum">    1445 </span>            : 
+<span class="lineNum">    1446 </span><span class="lineNoCov">          0 :     fieldLabel-&gt;setStyleSheet(&quot;border-style: none ; background: transparent;&quot;);</span>
+<span class="lineNum">    1447 </span>            :     // fieldLabel-&gt;setContentsMargins(0,5,5,0);
+<span class="lineNum">    1448 </span><span class="lineNoCov">          0 :     frame-&gt;layout()-&gt;addWidget(fieldLabel);</span>
+<span class="lineNum">    1449 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1450 </span>            : 
+<span class="lineNum">    1451 </span>            :   // set the echo mode to password, if the field is &quot;password&quot;
+<span class="lineNum">    1452 </span><span class="lineNoCov">          0 :   if (QtPassSettings::isHidePassword() &amp;&amp; trimmedField == tr(&quot;Password&quot;)) {</span>
+<span class="lineNum">    1453 </span><span class="lineNoCov">          0 :     QLineEdit *line = new QLineEdit();</span>
+<span class="lineNum">    1454 </span><span class="lineNoCov">          0 :     line-&gt;setObjectName(trimmedField);</span>
+<span class="lineNum">    1455 </span><span class="lineNoCov">          0 :     line-&gt;setText(trimmedValue);</span>
+<span class="lineNum">    1456 </span><span class="lineNoCov">          0 :     line-&gt;setReadOnly(true);</span>
+<span class="lineNum">    1457 </span><span class="lineNoCov">          0 :     line-&gt;setStyleSheet(&quot;border-style: none ; background: transparent;&quot;);</span>
+<span class="lineNum">    1458 </span><span class="lineNoCov">          0 :     line-&gt;setContentsMargins(0, 0, 0, 0);</span>
+<span class="lineNum">    1459 </span><span class="lineNoCov">          0 :     line-&gt;setEchoMode(QLineEdit::Password);</span>
+<span class="lineNum">    1460 </span><span class="lineNoCov">          0 :     frame-&gt;layout()-&gt;addWidget(line);</span>
+<span class="lineNum">    1461 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">    1462 </span><span class="lineNoCov">          0 :     QTextBrowser *line = new QTextBrowser();</span>
+<span class="lineNum">    1463 </span><span class="lineNoCov">          0 :     line-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">    1464 </span><span class="lineNoCov">          0 :     line-&gt;setOpenLinks(true);</span>
+<span class="lineNum">    1465 </span><span class="lineNoCov">          0 :     line-&gt;setMaximumHeight(26);</span>
+<span class="lineNum">    1466 </span><span class="lineNoCov">          0 :     line-&gt;setMinimumHeight(26);</span>
+<span class="lineNum">    1467 </span><span class="lineNoCov">          0 :     line-&gt;setSizePolicy(</span>
+<span class="lineNum">    1468 </span><span class="lineNoCov">          0 :         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));</span>
+<span class="lineNum">    1469 </span><span class="lineNoCov">          0 :     line-&gt;setObjectName(trimmedField);</span>
+<span class="lineNum">    1470 </span><span class="lineNoCov">          0 :     trimmedValue.replace(QRegExp(&quot;((?:https?|ftp|ssh)://\\S+)&quot;),</span>
+<span class="lineNum">    1471 </span><span class="lineNoCov">          0 :                          &quot;&lt;a href=\&quot;\\1\&quot;&gt;\\1&lt;/a&gt;&quot;);</span>
+<span class="lineNum">    1472 </span><span class="lineNoCov">          0 :     line-&gt;setText(trimmedValue);</span>
+<span class="lineNum">    1473 </span><span class="lineNoCov">          0 :     line-&gt;setReadOnly(true);</span>
+<span class="lineNum">    1474 </span><span class="lineNoCov">          0 :     line-&gt;setStyleSheet(&quot;border-style: none ; background: transparent;&quot;);</span>
+<span class="lineNum">    1475 </span><span class="lineNoCov">          0 :     line-&gt;setContentsMargins(0, 0, 0, 0);</span>
+<span class="lineNum">    1476 </span><span class="lineNoCov">          0 :     frame-&gt;layout()-&gt;addWidget(line);</span>
+<span class="lineNum">    1477 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">    1478 </span>            : 
+<span class="lineNum">    1479 </span><span class="lineNoCov">          0 :   frame-&gt;setStyleSheet(</span>
+<span class="lineNum">    1480 </span><span class="lineNoCov">          0 :       &quot;.QFrame{border: 1px solid lightgrey; border-radius: 5px;}&quot;);</span>
+<span class="lineNum">    1481 </span>            : 
+<span class="lineNum">    1482 </span>            :   // set into the layout
+<span class="lineNum">    1483 </span><span class="lineNoCov">          0 :   ui-&gt;gridLayout-&gt;addWidget(new QLabel(trimmedField), position, 0);</span>
+<span class="lineNum">    1484 </span><span class="lineNoCov">          0 :   ui-&gt;gridLayout-&gt;addWidget(frame, position, 1);</span>
+<span class="lineNum">    1485 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1486 </span>            : 
+<span class="lineNum">    1487 </span>            : /**
+<span class="lineNum">    1488 </span>            :   * @brief Displays message in status bar
+<span class="lineNum">    1489 </span>            :   *
+<span class="lineNum">    1490 </span>            :   * @param msg     text to be displayed
+<a name="1491"><span class="lineNum">    1491 </span>            :   * @param timeout time for which msg shall be visible</a>
+<span class="lineNum">    1492 </span>            :   */
+<span class="lineNum">    1493 </span><span class="lineNoCov">          0 : void MainWindow::showStatusMessage(QString msg, int timeout) {</span>
+<span class="lineNum">    1494 </span><span class="lineNoCov">          0 :   ui-&gt;statusBar-&gt;showMessage(msg, timeout);</span>
+<span class="lineNum">    1495 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1496 </span>            : 
+<span class="lineNum">    1497 </span>            : /**
+<a name="1498"><span class="lineNum">    1498 </span>            :  * @brief MainWindow::startReencryptPath disable ui elements and treeview</a>
+<span class="lineNum">    1499 </span>            :  */
+<span class="lineNum">    1500 </span><span class="lineNoCov">          0 : void MainWindow::startReencryptPath() {</span>
+<span class="lineNum">    1501 </span><span class="lineNoCov">          0 :   enableUiElements(false);</span>
+<span class="lineNum">    1502 </span><span class="lineNoCov">          0 :   ui-&gt;treeView-&gt;setDisabled(true);</span>
+<span class="lineNum">    1503 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1504 </span>            : 
+<span class="lineNum">    1505 </span>            : /**
+<a name="1506"><span class="lineNum">    1506 </span>            :  * @brief MainWindow::endReencryptPath re-enable ui elements</a>
+<span class="lineNum">    1507 </span>            :  */
+<span class="lineNum">    1508 </span><span class="lineNoCov">          0 : void MainWindow::endReencryptPath() { enableUiElements(true); }</span>
+<span class="lineNum">    1509 </span>            : 
+<span class="lineNum">    1510 </span>            : /**
+<span class="lineNum">    1511 </span>            :  * @brief MainWindow::critical critical message popup wrapper.
+<span class="lineNum">    1512 </span>            :  * @param title
+<a name="1513"><span class="lineNum">    1513 </span>            :  * @param msg</a>
+<span class="lineNum">    1514 </span>            :  */
+<span class="lineNum">    1515 </span><span class="lineNoCov">          0 : void MainWindow::critical(QString title, QString msg) {</span>
+<span class="lineNum">    1516 </span><span class="lineNoCov">          0 :   QMessageBox::critical(this, title, msg);</span>
+<span class="lineNum">    1517 </span><span class="lineNoCov">          0 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

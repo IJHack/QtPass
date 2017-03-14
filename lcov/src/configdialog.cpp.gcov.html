@@ -1,0 +1,1126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/configdialog.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - configdialog.cpp<span style="font-size: 80%;"> (source / <a href="configdialog.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">429</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">101</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;configdialog.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &quot;debughelper.h&quot;
+<span class="lineNum">       3 </span>            : #include &quot;keygendialog.h&quot;
+<span class="lineNum">       4 </span>            : #include &quot;mainwindow.h&quot;
+<span class="lineNum">       5 </span>            : #include &quot;qtpasssettings.h&quot;
+<span class="lineNum">       6 </span>            : #include &quot;ui_configdialog.h&quot;
+<span class="lineNum">       7 </span>            : #include &lt;QClipboard&gt;
+<span class="lineNum">       8 </span>            : #include &lt;QDir&gt;
+<span class="lineNum">       9 </span>            : #include &lt;QMessageBox&gt;
+<span class="lineNum">      10 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">      11 </span>            : #include &lt;windows.h&gt;
+<span class="lineNum">      12 </span>            : #endif
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span>            : /**
+<span class="lineNum">      15 </span>            :  * @brief ConfigDialog::ConfigDialog this sets up the configuration screen.
+<a name="16"><span class="lineNum">      16 </span>            :  * @param parent</a>
+<span class="lineNum">      17 </span>            :  */
+<span class="lineNum">      18 </span><span class="lineNoCov">          0 : ConfigDialog::ConfigDialog(MainWindow *parent)</span>
+<span class="lineNum">      19 </span><span class="lineNoCov">          0 :     : QDialog(parent), ui(new Ui::ConfigDialog) {</span>
+<span class="lineNum">      20 </span><span class="lineNoCov">          0 :   mainWindow = parent;</span>
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 :   ui-&gt;setupUi(this);</span>
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;verticalHeader()-&gt;hide();</span>
+<span class="lineNum">      23 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;horizontalHeader()-&gt;setStretchLastSection(true);</span>
+<span class="lineNum">      24 </span><span class="lineNoCov">          0 :   ui-&gt;label-&gt;setText(ui-&gt;label-&gt;text() + VERSION);</span>
+<span class="lineNum">      25 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;clear();</span>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;No Clipboard&quot;));</span>
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;Always copy to clipboard&quot;));</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;On-demand copy to clipboard&quot;));</span>
+<span class="lineNum">      30 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(0);</span>
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :   QClipboard *clip = QApplication::clipboard();</span>
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 :   if (!clip-&gt;supportsSelection()) {</span>
+<span class="lineNum">      34 </span><span class="lineNoCov">          0 :     useSelection(false);</span>
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxSelection-&gt;setVisible(false);</span>
+<span class="lineNum">      36 </span>            :   }
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : /**
+<span class="lineNum">      40 </span>            :  * @brief ConfigDialog::~ConfigDialog config destructor, makes sure the
+<a name="41"><span class="lineNum">      41 </span>            :  * mainWindow knows about git, gpg and pass executables.</a>
+<span class="lineNum">      42 </span>            :  */
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 : ConfigDialog::~ConfigDialog() {</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   QtPassSettings::setGitExecutable(ui-&gt;gitPath-&gt;text());</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :   QtPassSettings::setGpgExecutable(ui-&gt;gpgPath-&gt;text());</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :   QtPassSettings::setPassExecutable(ui-&gt;passPath-&gt;text());</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            : /**
+<span class="lineNum">      50 </span>            :  * @brief ConfigDialog::setPassPath set the pass executable path.
+<a name="51"><span class="lineNum">      51 </span>            :  * @param path</a>
+<span class="lineNum">      52 </span>            :  */
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 : void ConfigDialog::setPassPath(QString path) { ui-&gt;passPath-&gt;setText(path); }</span>
+<span class="lineNum">      54 </span>            : 
+<span class="lineNum">      55 </span>            : /**
+<span class="lineNum">      56 </span>            :  * @brief ConfigDialog::setGitPath set the git executable path.
+<span class="lineNum">      57 </span>            :  * Make sure the checkBoxUseGit is updated.
+<a name="58"><span class="lineNum">      58 </span>            :  * @param path</a>
+<span class="lineNum">      59 </span>            :  */
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 : void ConfigDialog::setGitPath(QString path) {</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :   ui-&gt;gitPath-&gt;setText(path);</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :   if (path.isEmpty()) {</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :     useGit(false);</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUseGit-&gt;setEnabled(false);</span>
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUseGit-&gt;setEnabled(true);</span>
+<span class="lineNum">      67 </span>            :   }
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span>            : /**
+<span class="lineNum">      71 </span>            :  * @brief ConfigDialog::setGpgPath set the gpg executable path.
+<a name="72"><span class="lineNum">      72 </span>            :  * @param path</a>
+<span class="lineNum">      73 </span>            :  */
+<span class="lineNum">      74 </span><span class="lineNoCov">          0 : void ConfigDialog::setGpgPath(QString path) { ui-&gt;gpgPath-&gt;setText(path); }</span>
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span>            : /**
+<span class="lineNum">      77 </span>            :  * @brief ConfigDialog::setStorePath set the .password-store folder path.
+<a name="78"><span class="lineNum">      78 </span>            :  * @param path</a>
+<span class="lineNum">      79 </span>            :  */
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 : void ConfigDialog::setStorePath(QString path) { ui-&gt;storePath-&gt;setText(path); }</span>
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span>            : /**
+<span class="lineNum">      83 </span>            :  * @brief ConfigDialog::getPassPath return path to pass.
+<a name="84"><span class="lineNum">      84 </span>            :  * @return</a>
+<span class="lineNum">      85 </span>            :  */
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 : QString ConfigDialog::getPassPath() { return ui-&gt;passPath-&gt;text(); }</span>
+<span class="lineNum">      87 </span>            : 
+<span class="lineNum">      88 </span>            : /**
+<span class="lineNum">      89 </span>            :  * @brief ConfigDialog::getGitPath return path to git.
+<a name="90"><span class="lineNum">      90 </span>            :  * @return</a>
+<span class="lineNum">      91 </span>            :  */
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 : QString ConfigDialog::getGitPath() { return ui-&gt;gitPath-&gt;text(); }</span>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span>            : /**
+<span class="lineNum">      95 </span>            :  * @brief ConfigDialog::getGpgPath return path to gpg.
+<a name="96"><span class="lineNum">      96 </span>            :  * @return</a>
+<span class="lineNum">      97 </span>            :  */
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 : QString ConfigDialog::getGpgPath() { return ui-&gt;gpgPath-&gt;text(); }</span>
+<span class="lineNum">      99 </span>            : 
+<span class="lineNum">     100 </span>            : /**
+<span class="lineNum">     101 </span>            :  * @brief ConfigDialog::getStorePath return path to .password-store.
+<a name="102"><span class="lineNum">     102 </span>            :  * @return</a>
+<span class="lineNum">     103 </span>            :  */
+<span class="lineNum">     104 </span><span class="lineNoCov">          0 : QString ConfigDialog::getStorePath() { return ui-&gt;storePath-&gt;text(); }</span>
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : /**
+<span class="lineNum">     107 </span>            :  * @brief ConfigDialog::usePass return wether or not we want to use pass (or
+<span class="lineNum">     108 </span>            :  * native gpg+git etc).
+<a name="109"><span class="lineNum">     109 </span>            :  * @return</a>
+<span class="lineNum">     110 </span>            :  */
+<span class="lineNum">     111 </span><span class="lineNoCov">          0 : bool ConfigDialog::usePass() { return ui-&gt;radioButtonPass-&gt;isChecked(); }</span>
+<span class="lineNum">     112 </span>            : 
+<span class="lineNum">     113 </span>            : /**
+<span class="lineNum">     114 </span>            :  * @brief ConfigDialog::usePass set wether or not we want to use pass.
+<span class="lineNum">     115 </span>            :  * Update radio buttons accordingly.
+<a name="116"><span class="lineNum">     116 </span>            :  * @param usePass</a>
+<span class="lineNum">     117 </span>            :  */
+<span class="lineNum">     118 </span><span class="lineNoCov">          0 : void ConfigDialog::usePass(bool usePass) {</span>
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 :   if (usePass) {</span>
+<span class="lineNum">     120 </span><span class="lineNoCov">          0 :     ui-&gt;radioButtonNative-&gt;setChecked(false);</span>
+<span class="lineNum">     121 </span><span class="lineNoCov">          0 :     ui-&gt;radioButtonPass-&gt;setChecked(true);</span>
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     123 </span><span class="lineNoCov">          0 :     ui-&gt;radioButtonNative-&gt;setChecked(true);</span>
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 :     ui-&gt;radioButtonPass-&gt;setChecked(false);</span>
+<span class="lineNum">     125 </span>            :   }
+<span class="lineNum">     126 </span><span class="lineNoCov">          0 :   setGroupBoxState();</span>
+<span class="lineNum">     127 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span>            : /**
+<span class="lineNum">     130 </span>            :  * @brief ConfigDialog::on_radioButtonNative_clicked wrapper for
+<a name="131"><span class="lineNum">     131 </span>            :  * ConfigDialog::setGroupBoxState()</a>
+<span class="lineNum">     132 </span>            :  */
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 : void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }</span>
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span>            : /**
+<span class="lineNum">     136 </span>            :  * @brief ConfigDialog::on_radioButtonPass_clicked wrapper for
+<a name="137"><span class="lineNum">     137 </span>            :  * ConfigDialog::setGroupBoxState()</a>
+<span class="lineNum">     138 </span>            :  */
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 : void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span>            : /**
+<a name="142"><span class="lineNum">     142 </span>            :  * @brief ConfigDialog::setGroupBoxState update checkboxes.</a>
+<span class="lineNum">     143 </span>            :  */
+<span class="lineNum">     144 </span><span class="lineNoCov">          0 : void ConfigDialog::setGroupBoxState() {</span>
+<span class="lineNum">     145 </span><span class="lineNoCov">          0 :   if (ui-&gt;radioButtonPass-&gt;isChecked()) {</span>
+<span class="lineNum">     146 </span><span class="lineNoCov">          0 :     ui-&gt;groupBoxNative-&gt;setEnabled(false);</span>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :     ui-&gt;groupBoxPass-&gt;setEnabled(true);</span>
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :     ui-&gt;groupBoxNative-&gt;setEnabled(true);</span>
+<span class="lineNum">     150 </span><span class="lineNoCov">          0 :     ui-&gt;groupBoxPass-&gt;setEnabled(false);</span>
+<span class="lineNum">     151 </span>            :   }
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     153 </span>            : 
+<span class="lineNum">     154 </span>            : /**
+<span class="lineNum">     155 </span>            :  * @brief ConfigDialog::selectExecutable pop-up to choose an executable.
+<a name="156"><span class="lineNum">     156 </span>            :  * @return</a>
+<span class="lineNum">     157 </span>            :  */
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 : QString ConfigDialog::selectExecutable() {</span>
+<span class="lineNum">     159 </span><span class="lineNoCov">          0 :   QFileDialog dialog(this);</span>
+<span class="lineNum">     160 </span><span class="lineNoCov">          0 :   dialog.setFileMode(QFileDialog::ExistingFile);</span>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :   dialog.setOption(QFileDialog::ReadOnly);</span>
+<span class="lineNum">     162 </span><span class="lineNoCov">          0 :   if (dialog.exec())</span>
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :     return dialog.selectedFiles().first();</span>
+<span class="lineNum">     164 </span>            :   else
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 :     return &quot;&quot;;</span>
+<span class="lineNum">     166 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     167 </span>            : 
+<span class="lineNum">     168 </span>            : /**
+<span class="lineNum">     169 </span>            :  * @brief ConfigDialog::selectFolder pop-up to choose a folder.
+<a name="170"><span class="lineNum">     170 </span>            :  * @return</a>
+<span class="lineNum">     171 </span>            :  */
+<span class="lineNum">     172 </span><span class="lineNoCov">          0 : QString ConfigDialog::selectFolder() {</span>
+<span class="lineNum">     173 </span><span class="lineNoCov">          0 :   QFileDialog dialog(this);</span>
+<span class="lineNum">     174 </span><span class="lineNoCov">          0 :   dialog.setFileMode(QFileDialog::Directory);</span>
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :   dialog.setFilter(QDir::NoFilter);</span>
+<span class="lineNum">     176 </span><span class="lineNoCov">          0 :   dialog.setOption(QFileDialog::ShowDirsOnly);</span>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :   if (dialog.exec())</span>
+<span class="lineNum">     178 </span><span class="lineNoCov">          0 :     return dialog.selectedFiles().first();</span>
+<span class="lineNum">     179 </span>            :   else
+<span class="lineNum">     180 </span><span class="lineNoCov">          0 :     return &quot;&quot;;</span>
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     182 </span>            : 
+<span class="lineNum">     183 </span>            : /**
+<span class="lineNum">     184 </span>            :  * @brief ConfigDialog::on_toolButtonGit_clicked get git application.
+<a name="185"><span class="lineNum">     185 </span>            :  * Enable checkboxes if found.</a>
+<span class="lineNum">     186 </span>            :  */
+<span class="lineNum">     187 </span><span class="lineNoCov">          0 : void ConfigDialog::on_toolButtonGit_clicked() {</span>
+<span class="lineNum">     188 </span><span class="lineNoCov">          0 :   QString git = selectExecutable();</span>
+<span class="lineNum">     189 </span><span class="lineNoCov">          0 :   if (!git.isEmpty()) {</span>
+<span class="lineNum">     190 </span><span class="lineNoCov">          0 :     ui-&gt;gitPath-&gt;setText(git);</span>
+<span class="lineNum">     191 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUseGit-&gt;setEnabled(true);</span>
+<span class="lineNum">     192 </span>            :   } else {
+<span class="lineNum">     193 </span><span class="lineNoCov">          0 :     useGit(false);</span>
+<span class="lineNum">     194 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUseGit-&gt;setEnabled(false);</span>
+<span class="lineNum">     195 </span>            :   }
+<span class="lineNum">     196 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     197 </span>            : 
+<span class="lineNum">     198 </span>            : /**
+<a name="199"><span class="lineNum">     199 </span>            :  * @brief ConfigDialog::on_toolButtonGpg_clicked get gpg application.</a>
+<span class="lineNum">     200 </span>            :  */
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 : void ConfigDialog::on_toolButtonGpg_clicked() {</span>
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 :   QString gpg = selectExecutable();</span>
+<span class="lineNum">     203 </span><span class="lineNoCov">          0 :   if (!gpg.isEmpty())</span>
+<span class="lineNum">     204 </span><span class="lineNoCov">          0 :     ui-&gt;gpgPath-&gt;setText(gpg);</span>
+<span class="lineNum">     205 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     206 </span>            : 
+<span class="lineNum">     207 </span>            : /**
+<a name="208"><span class="lineNum">     208 </span>            :  * @brief ConfigDialog::on_toolButtonPass_clicked get pass application.</a>
+<span class="lineNum">     209 </span>            :  */
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 : void ConfigDialog::on_toolButtonPass_clicked() {</span>
+<span class="lineNum">     211 </span><span class="lineNoCov">          0 :   QString pass = selectExecutable();</span>
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 :   if (!pass.isEmpty())</span>
+<span class="lineNum">     213 </span><span class="lineNoCov">          0 :     ui-&gt;passPath-&gt;setText(pass);</span>
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     215 </span>            : 
+<span class="lineNum">     216 </span>            : /**
+<span class="lineNum">     217 </span>            :  * @brief ConfigDialog::on_toolButtonStore_clicked get .password-store
+<a name="218"><span class="lineNum">     218 </span>            :  * location.s</a>
+<span class="lineNum">     219 </span>            :  */
+<span class="lineNum">     220 </span><span class="lineNoCov">          0 : void ConfigDialog::on_toolButtonStore_clicked() {</span>
+<span class="lineNum">     221 </span><span class="lineNoCov">          0 :   QString store = selectFolder();</span>
+<span class="lineNum">     222 </span><span class="lineNoCov">          0 :   if (!store.isEmpty()) // TODO(annejan) call check</span>
+<span class="lineNum">     223 </span><span class="lineNoCov">          0 :     ui-&gt;storePath-&gt;setText(store);</span>
+<span class="lineNum">     224 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     225 </span>            : 
+<span class="lineNum">     226 </span>            : /**
+<span class="lineNum">     227 </span>            :  * @brief ConfigDialog::on_comboBoxClipboard_activated show and hide options.
+<a name="228"><span class="lineNum">     228 </span>            :  * @param index of selectbox (0 = no clipboard).</a>
+<span class="lineNum">     229 </span>            :  */
+<span class="lineNum">     230 </span><span class="lineNoCov">          0 : void ConfigDialog::on_comboBoxClipboard_activated(int index) {</span>
+<span class="lineNum">     231 </span><span class="lineNoCov">          0 :   if (index &gt; 0) {</span>
+<span class="lineNum">     232 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxSelection-&gt;setEnabled(true);</span>
+<span class="lineNum">     233 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxAutoclear-&gt;setEnabled(true);</span>
+<span class="lineNum">     234 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHidePassword-&gt;setEnabled(true);</span>
+<span class="lineNum">     235 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHideContent-&gt;setEnabled(true);</span>
+<span class="lineNum">     236 </span><span class="lineNoCov">          0 :     if (ui-&gt;checkBoxAutoclear-&gt;isChecked()) {</span>
+<span class="lineNum">     237 </span><span class="lineNoCov">          0 :       ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(true);</span>
+<span class="lineNum">     238 </span><span class="lineNoCov">          0 :       ui-&gt;labelSeconds-&gt;setEnabled(true);</span>
+<span class="lineNum">     239 </span><span class="lineNoCov">          0 :     } else {</span>
+<span class="lineNum">     240 </span><span class="lineNoCov">          0 :       ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     241 </span><span class="lineNoCov">          0 :       ui-&gt;labelSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     242 </span>            :     }
+<span class="lineNum">     243 </span>            :   } else {
+<span class="lineNum">     244 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxSelection-&gt;setEnabled(false);</span>
+<span class="lineNum">     245 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxAutoclear-&gt;setEnabled(false);</span>
+<span class="lineNum">     246 </span><span class="lineNoCov">          0 :     ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 :     ui-&gt;labelSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     248 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHidePassword-&gt;setEnabled(false);</span>
+<span class="lineNum">     249 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHideContent-&gt;setEnabled(false);</span>
+<span class="lineNum">     250 </span>            :   }
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     252 </span>            : 
+<span class="lineNum">     253 </span>            : /**
+<span class="lineNum">     254 </span>            :  * @brief ConfigDialog::on_checkBoxAutoclearPanel_clicked enable and disable
+<a name="255"><span class="lineNum">     255 </span>            :  * options based on autoclear use.</a>
+<span class="lineNum">     256 </span>            :  */
+<span class="lineNum">     257 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {</span>
+<span class="lineNum">     258 </span><span class="lineNoCov">          0 :   if (ui-&gt;checkBoxAutoclearPanel-&gt;isChecked()) {</span>
+<span class="lineNum">     259 </span><span class="lineNoCov">          0 :     ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setEnabled(true);</span>
+<span class="lineNum">     260 </span><span class="lineNoCov">          0 :     ui-&gt;labelPanelSeconds-&gt;setEnabled(true);</span>
+<span class="lineNum">     261 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     262 </span><span class="lineNoCov">          0 :     ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     263 </span><span class="lineNoCov">          0 :     ui-&gt;labelPanelSeconds-&gt;setEnabled(false);</span>
+<span class="lineNum">     264 </span>            :   }
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     266 </span>            : 
+<span class="lineNum">     267 </span>            : /**
+<a name="268"><span class="lineNum">     268 </span>            :  * @brief ConfigDialog::useClipboard set the clipboard use from MainWindow.</a>
+<span class="lineNum">     269 </span>            :  */
+<span class="lineNum">     270 </span><span class="lineNoCov">          0 : void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {</span>
+<span class="lineNum">     271 </span><span class="lineNoCov">          0 :   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(static_cast&lt;int&gt;(useClipboard));</span>
+<span class="lineNum">     272 </span><span class="lineNoCov">          0 :   on_comboBoxClipboard_activated(static_cast&lt;int&gt;(useClipboard));</span>
+<span class="lineNum">     273 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     274 </span>            : 
+<span class="lineNum">     275 </span>            : /**
+<span class="lineNum">     276 </span>            :  * @brief ConfigDialog::useSelection set the clipboard type use from
+<span class="lineNum">     277 </span>            :  * MainWindow.
+<a name="278"><span class="lineNum">     278 </span>            :  * @param useSelection</a>
+<span class="lineNum">     279 </span>            :  */
+<span class="lineNum">     280 </span><span class="lineNoCov">          0 : void ConfigDialog::useSelection(bool useSelection) {</span>
+<span class="lineNum">     281 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxSelection-&gt;setChecked(useSelection);</span>
+<span class="lineNum">     282 </span><span class="lineNoCov">          0 :   on_checkBoxSelection_clicked();</span>
+<span class="lineNum">     283 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     284 </span>            : 
+<span class="lineNum">     285 </span>            : /**
+<span class="lineNum">     286 </span>            :  * @brief ConfigDialog::useAutoclear set the clipboard autoclear use from
+<span class="lineNum">     287 </span>            :  * MainWindow.
+<a name="288"><span class="lineNum">     288 </span>            :  * @param useAutoclear</a>
+<span class="lineNum">     289 </span>            :  */
+<span class="lineNum">     290 </span><span class="lineNoCov">          0 : void ConfigDialog::useAutoclear(bool useAutoclear) {</span>
+<span class="lineNum">     291 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoclear-&gt;setChecked(useAutoclear);</span>
+<span class="lineNum">     292 </span><span class="lineNoCov">          0 :   on_checkBoxAutoclear_clicked();</span>
+<span class="lineNum">     293 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     294 </span>            : 
+<span class="lineNum">     295 </span>            : /**
+<span class="lineNum">     296 </span>            :  * @brief ConfigDialog::setAutoclear set the clipboard autoclear timout from
+<span class="lineNum">     297 </span>            :  * MainWindow.
+<a name="298"><span class="lineNum">     298 </span>            :  * @param seconds</a>
+<span class="lineNum">     299 </span>            :  */
+<span class="lineNum">     300 </span><span class="lineNoCov">          0 : void ConfigDialog::setAutoclear(int seconds) {</span>
+<span class="lineNum">     301 </span><span class="lineNoCov">          0 :   ui-&gt;spinBoxAutoclearSeconds-&gt;setValue(seconds);</span>
+<span class="lineNum">     302 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     303 </span>            : 
+<span class="lineNum">     304 </span>            : /**
+<span class="lineNum">     305 </span>            :  * @brief ConfigDialog::useAutoclearPanel set the panel autoclear use from
+<span class="lineNum">     306 </span>            :  * MainWindow.
+<a name="307"><span class="lineNum">     307 </span>            :  * @param useAutoclearPanel</a>
+<span class="lineNum">     308 </span>            :  */
+<span class="lineNum">     309 </span><span class="lineNoCov">          0 : void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {</span>
+<span class="lineNum">     310 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoclearPanel-&gt;setChecked(useAutoclearPanel);</span>
+<span class="lineNum">     311 </span><span class="lineNoCov">          0 :   on_checkBoxAutoclearPanel_clicked();</span>
+<span class="lineNum">     312 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     313 </span>            : 
+<span class="lineNum">     314 </span>            : /**
+<span class="lineNum">     315 </span>            :  * @brief ConfigDialog::setAutoclearPanel set the panel autoclear timout from
+<span class="lineNum">     316 </span>            :  * MainWindow.
+<a name="317"><span class="lineNum">     317 </span>            :  * @param seconds</a>
+<span class="lineNum">     318 </span>            :  */
+<span class="lineNum">     319 </span><span class="lineNoCov">          0 : void ConfigDialog::setAutoclearPanel(int seconds) {</span>
+<span class="lineNum">     320 </span><span class="lineNoCov">          0 :   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setValue(seconds);</span>
+<span class="lineNum">     321 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     322 </span>            : 
+<span class="lineNum">     323 </span>            : /**
+<span class="lineNum">     324 </span>            :  * @brief ConfigDialog::useClipboard set the use of clipboard from MainWindow.
+<a name="325"><span class="lineNum">     325 </span>            :  * @return</a>
+<span class="lineNum">     326 </span>            :  */
+<span class="lineNum">     327 </span><span class="lineNoCov">          0 : Enums::clipBoardType ConfigDialog::useClipboard() {</span>
+<span class="lineNum">     328 </span><span class="lineNoCov">          0 :   return static_cast&lt;Enums::clipBoardType&gt;(</span>
+<span class="lineNum">     329 </span><span class="lineNoCov">          0 :       ui-&gt;comboBoxClipboard-&gt;currentIndex());</span>
+<span class="lineNum">     330 </span>            : }
+<span class="lineNum">     331 </span>            : 
+<span class="lineNum">     332 </span>            : /**
+<span class="lineNum">     333 </span>            :  * @brief ConfigDialog::useSelection return the clipboard type.
+<a name="334"><span class="lineNum">     334 </span>            :  * @return</a>
+<span class="lineNum">     335 </span>            :  */
+<span class="lineNum">     336 </span><span class="lineNoCov">          0 : bool ConfigDialog::useSelection() { return ui-&gt;checkBoxSelection-&gt;isChecked(); }</span>
+<span class="lineNum">     337 </span>            : 
+<span class="lineNum">     338 </span>            : /**
+<span class="lineNum">     339 </span>            :  * @brief ConfigDialog::on_checkBoxSelection_clicked checkbox clicked, update
+<a name="340"><span class="lineNum">     340 </span>            :  * state via ConfigDialog::on_comboBoxClipboard_activated</a>
+<span class="lineNum">     341 </span>            :  */
+<span class="lineNum">     342 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxSelection_clicked() {</span>
+<span class="lineNum">     343 </span><span class="lineNoCov">          0 :   on_comboBoxClipboard_activated(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span>
+<span class="lineNum">     344 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     345 </span>            : 
+<span class="lineNum">     346 </span>            : /**
+<span class="lineNum">     347 </span>            :  * @brief ConfigDialog::useAutoclear return the use of clipboard autoclear.
+<a name="348"><span class="lineNum">     348 </span>            :  * @return</a>
+<span class="lineNum">     349 </span>            :  */
+<span class="lineNum">     350 </span><span class="lineNoCov">          0 : bool ConfigDialog::useAutoclear() { return ui-&gt;checkBoxAutoclear-&gt;isChecked(); }</span>
+<span class="lineNum">     351 </span>            : 
+<span class="lineNum">     352 </span>            : /**
+<span class="lineNum">     353 </span>            :  * @brief ConfigDialog::getAutoclear return the clipboard autoclear timout.
+<a name="354"><span class="lineNum">     354 </span>            :  * @return</a>
+<span class="lineNum">     355 </span>            :  */
+<span class="lineNum">     356 </span><span class="lineNoCov">          0 : int ConfigDialog::getAutoclear() {</span>
+<span class="lineNum">     357 </span><span class="lineNoCov">          0 :   return ui-&gt;spinBoxAutoclearSeconds-&gt;value();</span>
+<span class="lineNum">     358 </span>            : }
+<span class="lineNum">     359 </span>            : 
+<span class="lineNum">     360 </span>            : /**
+<span class="lineNum">     361 </span>            :  * @brief ConfigDialog::on_checkBoxAutoclear_clicked checkbox clicked, update
+<a name="362"><span class="lineNum">     362 </span>            :  * state via ConfigDialog::on_comboBoxClipboard_activated</a>
+<span class="lineNum">     363 </span>            :  */
+<span class="lineNum">     364 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxAutoclear_clicked() {</span>
+<span class="lineNum">     365 </span><span class="lineNoCov">          0 :   on_comboBoxClipboard_activated(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span>
+<span class="lineNum">     366 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     367 </span>            : 
+<span class="lineNum">     368 </span>            : /**
+<span class="lineNum">     369 </span>            :  * @brief ConfigDialog::useAutoclearPanel return panel autoclear usage.
+<a name="370"><span class="lineNum">     370 </span>            :  * @return</a>
+<span class="lineNum">     371 </span>            :  */
+<span class="lineNum">     372 </span><span class="lineNoCov">          0 : bool ConfigDialog::useAutoclearPanel() {</span>
+<span class="lineNum">     373 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxAutoclearPanel-&gt;isChecked();</span>
+<span class="lineNum">     374 </span>            : }
+<span class="lineNum">     375 </span>            : 
+<span class="lineNum">     376 </span>            : /**
+<span class="lineNum">     377 </span>            :  * @brief ConfigDialog::getAutoclearPanel return panel autoclear timeout.
+<a name="378"><span class="lineNum">     378 </span>            :  * @return</a>
+<span class="lineNum">     379 </span>            :  */
+<span class="lineNum">     380 </span><span class="lineNoCov">          0 : int ConfigDialog::getAutoclearPanel() {</span>
+<span class="lineNum">     381 </span><span class="lineNoCov">          0 :   return ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value();</span>
+<span class="lineNum">     382 </span>            : }
+<span class="lineNum">     383 </span>            : 
+<span class="lineNum">     384 </span>            : /**
+<span class="lineNum">     385 </span>            :  * @brief ConfigDialog::hidePassword return preference for hiding passwords from
+<span class="lineNum">     386 </span>            :  * shoulder-surfers.
+<a name="387"><span class="lineNum">     387 </span>            :  * @return</a>
+<span class="lineNum">     388 </span>            :  */
+<span class="lineNum">     389 </span><span class="lineNoCov">          0 : bool ConfigDialog::hidePassword() {</span>
+<span class="lineNum">     390 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxHidePassword-&gt;isChecked();</span>
+<span class="lineNum">     391 </span>            : }
+<span class="lineNum">     392 </span>            : 
+<span class="lineNum">     393 </span>            : /**
+<span class="lineNum">     394 </span>            :  * @brief ConfigDialog::hideContent return preference for hiding all information
+<span class="lineNum">     395 </span>            :  * from shoulder-surfers.
+<a name="396"><span class="lineNum">     396 </span>            :  * @return</a>
+<span class="lineNum">     397 </span>            :  */
+<span class="lineNum">     398 </span><span class="lineNoCov">          0 : bool ConfigDialog::hideContent() {</span>
+<span class="lineNum">     399 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxHideContent-&gt;isChecked();</span>
+<span class="lineNum">     400 </span>            : }
+<span class="lineNum">     401 </span>            : 
+<span class="lineNum">     402 </span>            : /**
+<span class="lineNum">     403 </span>            :  * @brief ConfigDialog::hidePassword set preference for hiding passwords from
+<span class="lineNum">     404 </span>            :  * shoulder-surfers.
+<a name="405"><span class="lineNum">     405 </span>            :  * @param hidePassword</a>
+<span class="lineNum">     406 </span>            :  */
+<span class="lineNum">     407 </span><span class="lineNoCov">          0 : void ConfigDialog::hidePassword(bool hidePassword) {</span>
+<span class="lineNum">     408 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxHidePassword-&gt;setChecked(hidePassword);</span>
+<span class="lineNum">     409 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     410 </span>            : 
+<span class="lineNum">     411 </span>            : /**
+<span class="lineNum">     412 </span>            :  * @brief ConfigDialog::hideContent set preference for hiding all content from
+<span class="lineNum">     413 </span>            :  * shoulder-surfers.
+<a name="414"><span class="lineNum">     414 </span>            :  * @param hideContent</a>
+<span class="lineNum">     415 </span>            :  */
+<span class="lineNum">     416 </span><span class="lineNoCov">          0 : void ConfigDialog::hideContent(bool hideContent) {</span>
+<span class="lineNum">     417 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxHideContent-&gt;setChecked(hideContent);</span>
+<span class="lineNum">     418 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     419 </span>            : 
+<span class="lineNum">     420 </span>            : /**
+<span class="lineNum">     421 </span>            :  * @brief ConfigDialog::addGPGId return preference for always adding gpg-id
+<span class="lineNum">     422 </span>            :  * changes to git.
+<a name="423"><span class="lineNum">     423 </span>            :  * @return</a>
+<span class="lineNum">     424 </span>            :  */
+<span class="lineNum">     425 </span><span class="lineNoCov">          0 : bool ConfigDialog::addGPGId() { return ui-&gt;checkBoxAddGPGId-&gt;isChecked(); }</span>
+<span class="lineNum">     426 </span>            : 
+<span class="lineNum">     427 </span>            : /**
+<span class="lineNum">     428 </span>            :  * @brief ConfigDialog::addGPGId set preference for always adding gpg-id changes
+<span class="lineNum">     429 </span>            :  * to git.
+<a name="430"><span class="lineNum">     430 </span>            :  * @param addGPGId</a>
+<span class="lineNum">     431 </span>            :  */
+<span class="lineNum">     432 </span><span class="lineNoCov">          0 : void ConfigDialog::addGPGId(bool addGPGId) {</span>
+<span class="lineNum">     433 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAddGPGId-&gt;setChecked(addGPGId);</span>
+<span class="lineNum">     434 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     435 </span>            : 
+<span class="lineNum">     436 </span>            : /**
+<span class="lineNum">     437 </span>            :  * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a gpg
+<span class="lineNum">     438 </span>            :  * key pair.
+<span class="lineNum">     439 </span>            :  * @todo refactor the process to not be entangled so much.
+<span class="lineNum">     440 </span>            :  * @param batch
+<a name="441"><span class="lineNum">     441 </span>            :  * @param dialog</a>
+<span class="lineNum">     442 </span>            :  */
+<span class="lineNum">     443 </span><span class="lineNoCov">          0 : void ConfigDialog::genKey(QString batch, QDialog *dialog) {</span>
+<span class="lineNum">     444 </span><span class="lineNoCov">          0 :   mainWindow-&gt;generateKeyPair(batch, dialog);</span>
+<span class="lineNum">     445 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     446 </span>            : 
+<span class="lineNum">     447 </span>            : /**
+<span class="lineNum">     448 </span>            :  * @brief ConfigDialog::setProfiles set the profiles and chosen profile from
+<span class="lineNum">     449 </span>            :  * MainWindow.
+<span class="lineNum">     450 </span>            :  * @param profiles
+<a name="451"><span class="lineNum">     451 </span>            :  * @param profile</a>
+<span class="lineNum">     452 </span>            :  */
+<span class="lineNum">     453 </span><span class="lineNoCov">          0 : void ConfigDialog::setProfiles(QHash&lt;QString, QString&gt; profiles,</span>
+<span class="lineNum">     454 </span>            :                                QString profile) {
+<span class="lineNum">     455 </span>            :   // dbg()&lt;&lt; profiles;
+<span class="lineNum">     456 </span><span class="lineNoCov">          0 :   if (profiles.contains(&quot;&quot;)) {</span>
+<span class="lineNum">     457 </span><span class="lineNoCov">          0 :     profiles.remove(&quot;&quot;);</span>
+<span class="lineNum">     458 </span>            :     // remove weird &quot;&quot; key value pairs
+<span class="lineNum">     459 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     460 </span>            : 
+<span class="lineNum">     461 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;setRowCount(profiles.count());</span>
+<span class="lineNum">     462 </span><span class="lineNoCov">          0 :   QHashIterator&lt;QString, QString&gt; i(profiles);</span>
+<span class="lineNum">     463 </span>            :   int n = 0;
+<span class="lineNum">     464 </span><span class="lineNoCov">          0 :   while (i.hasNext()) {</span>
+<span class="lineNum">     465 </span><span class="lineNoCov">          0 :     i.next();</span>
+<span class="lineNum">     466 </span><span class="lineNoCov">          0 :     if (!i.value().isEmpty() &amp;&amp; !i.key().isEmpty()) {</span>
+<span class="lineNum">     467 </span><span class="lineNoCov">          0 :       ui-&gt;profileTable-&gt;setItem(n, 0, new QTableWidgetItem(i.key()));</span>
+<span class="lineNum">     468 </span><span class="lineNoCov">          0 :       ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(i.value()));</span>
+<span class="lineNum">     469 </span>            :       // dbg()&lt;&lt; &quot;naam:&quot; + i.key();
+<span class="lineNum">     470 </span><span class="lineNoCov">          0 :       if (i.key() == profile)</span>
+<span class="lineNum">     471 </span><span class="lineNoCov">          0 :         ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class="lineNum">     472 </span>            :     }
+<span class="lineNum">     473 </span><span class="lineNoCov">          0 :     ++n;</span>
+<span class="lineNum">     474 </span>            :   }
+<span class="lineNum">     475 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     476 </span>            : 
+<span class="lineNum">     477 </span>            : /**
+<span class="lineNum">     478 </span>            :  * @brief ConfigDialog::getProfiles return profile list.
+<a name="479"><span class="lineNum">     479 </span>            :  * @return</a>
+<span class="lineNum">     480 </span>            :  */
+<span class="lineNum">     481 </span><span class="lineNoCov">          0 : QHash&lt;QString, QString&gt; ConfigDialog::getProfiles() {</span>
+<span class="lineNum">     482 </span><span class="lineNoCov">          0 :   QHash&lt;QString, QString&gt; profiles;</span>
+<span class="lineNum">     483 </span>            :   // Check?
+<span class="lineNum">     484 </span><span class="lineNoCov">          0 :   for (int i = 0; i &lt; ui-&gt;profileTable-&gt;rowCount(); ++i) {</span>
+<span class="lineNum">     485 </span><span class="lineNoCov">          0 :     QTableWidgetItem *pathItem = ui-&gt;profileTable-&gt;item(i, 1);</span>
+<span class="lineNum">     486 </span><span class="lineNoCov">          0 :     if (0 != pathItem) {</span>
+<span class="lineNum">     487 </span><span class="lineNoCov">          0 :       QTableWidgetItem *item = ui-&gt;profileTable-&gt;item(i, 0);</span>
+<span class="lineNum">     488 </span><span class="lineNoCov">          0 :       if (item == 0) {</span>
+<span class="lineNum">     489 </span><span class="lineNoCov">          0 :         dbg() &lt;&lt; &quot;empty name, should fix in frontend&quot;;</span>
+<span class="lineNum">     490 </span><span class="lineNoCov">          0 :         continue;</span>
+<span class="lineNum">     491 </span>            :       }
+<span class="lineNum">     492 </span><span class="lineNoCov">          0 :       profiles.insert(item-&gt;text(), pathItem-&gt;text());</span>
+<span class="lineNum">     493 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     494 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     495 </span>            :   return profiles;
+<span class="lineNum">     496 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     497 </span>            : 
+<span class="lineNum">     498 </span>            : /**
+<a name="499"><span class="lineNum">     499 </span>            :  * @brief ConfigDialog::on_addButton_clicked add a profile row.</a>
+<span class="lineNum">     500 </span>            :  */
+<span class="lineNum">     501 </span><span class="lineNoCov">          0 : void ConfigDialog::on_addButton_clicked() {</span>
+<span class="lineNum">     502 </span><span class="lineNoCov">          0 :   int n = ui-&gt;profileTable-&gt;rowCount();</span>
+<span class="lineNum">     503 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;insertRow(n);</span>
+<span class="lineNum">     504 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;setItem(n, 1, new QTableWidgetItem(ui-&gt;storePath-&gt;text()));</span>
+<span class="lineNum">     505 </span><span class="lineNoCov">          0 :   ui-&gt;profileTable-&gt;selectRow(n);</span>
+<span class="lineNum">     506 </span><span class="lineNoCov">          0 :   ui-&gt;deleteButton-&gt;setEnabled(true);</span>
+<span class="lineNum">     507 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     508 </span>            : 
+<span class="lineNum">     509 </span>            : /**
+<a name="510"><span class="lineNum">     510 </span>            :  * @brief ConfigDialog::on_deleteButton_clicked remove a profile row.</a>
+<span class="lineNum">     511 </span>            :  */
+<span class="lineNum">     512 </span><span class="lineNoCov">          0 : void ConfigDialog::on_deleteButton_clicked() {</span>
+<span class="lineNum">     513 </span><span class="lineNoCov">          0 :   QSet&lt;int&gt; selectedRows; // we use a set to prevent doubles</span>
+<span class="lineNum">     514 </span><span class="lineNoCov">          0 :   QList&lt;QTableWidgetItem *&gt; itemList = ui-&gt;profileTable-&gt;selectedItems();</span>
+<span class="lineNum">     515 </span><span class="lineNoCov">          0 :   if (itemList.count() == 0) {</span>
+<span class="lineNum">     516 </span><span class="lineNoCov">          0 :     QMessageBox::warning(this, tr(&quot;No profile selected&quot;),</span>
+<span class="lineNum">     517 </span><span class="lineNoCov">          0 :                          tr(&quot;No profile selected to delete&quot;));</span>
+<span class="lineNum">     518 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     519 </span>            :   }
+<span class="lineNum">     520 </span>            :   QTableWidgetItem *item;
+<span class="lineNum">     521 </span><span class="lineNoCov">          0 :   foreach (item, itemList)</span>
+<span class="lineNum">     522 </span><span class="lineNoCov">          0 :     selectedRows.insert(item-&gt;row());</span>
+<span class="lineNum">     523 </span>            :   // get a list, and sort it big to small
+<span class="lineNum">     524 </span><span class="lineNoCov">          0 :   QList&lt;int&gt; rows = selectedRows.toList();</span>
+<span class="lineNum">     525 </span><span class="lineNoCov">          0 :   qSort(rows.begin(), rows.end());</span>
+<span class="lineNum">     526 </span>            :   // now actually do the removing:
+<span class="lineNum">     527 </span><span class="lineNoCov">          0 :   foreach (int row, rows)</span>
+<span class="lineNum">     528 </span><span class="lineNoCov">          0 :     ui-&gt;profileTable-&gt;removeRow(row);</span>
+<span class="lineNum">     529 </span><span class="lineNoCov">          0 :   if (ui-&gt;profileTable-&gt;rowCount() &lt; 1)</span>
+<span class="lineNum">     530 </span><span class="lineNoCov">          0 :     ui-&gt;deleteButton-&gt;setEnabled(false);</span>
+<span class="lineNum">     531 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     532 </span>            : 
+<span class="lineNum">     533 </span>            : /**
+<span class="lineNum">     534 </span>            :  * @brief ConfigDialog::criticalMessage weapper for showing critical messages in
+<span class="lineNum">     535 </span>            :  * a popup.
+<span class="lineNum">     536 </span>            :  * @param title
+<a name="537"><span class="lineNum">     537 </span>            :  * @param text</a>
+<span class="lineNum">     538 </span>            :  */
+<span class="lineNum">     539 </span><span class="lineNoCov">          0 : void ConfigDialog::criticalMessage(const QString &amp;title, const QString &amp;text) {</span>
+<span class="lineNum">     540 </span><span class="lineNoCov">          0 :   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);</span>
+<span class="lineNum">     541 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     542 </span>            : 
+<span class="lineNum">     543 </span>            : /**
+<span class="lineNum">     544 </span>            :  * @brief ConfigDialog::wizard first-time use wizard.
+<a name="545"><span class="lineNum">     545 </span>            :  * @todo make this thing more reliable.</a>
+<span class="lineNum">     546 </span>            :  */
+<span class="lineNum">     547 </span><span class="lineNoCov">          0 : void ConfigDialog::wizard() {</span>
+<span class="lineNum">     548 </span>            :   // mainWindow-&gt;checkConfig();
+<span class="lineNum">     549 </span>            :   bool clean = false;
+<span class="lineNum">     550 </span>            : 
+<span class="lineNum">     551 </span><span class="lineNoCov">          0 :   QString gpg = ui-&gt;gpgPath-&gt;text();</span>
+<span class="lineNum">     552 </span>            :   // QString gpg = mainWindow-&gt;getGpgExecutable();
+<span class="lineNum">     553 </span><span class="lineNoCov">          0 :   if (!QFile(gpg).exists()) {</span>
+<span class="lineNum">     554 </span><span class="lineNoCov">          0 :     criticalMessage(</span>
+<span class="lineNum">     555 </span><span class="lineNoCov">          0 :         tr(&quot;GnuPG not found&quot;),</span>
+<span class="lineNum">     556 </span><span class="lineNoCov">          0 :         tr(&quot;Please install GnuPG on your system.&lt;br&gt;Install &quot;</span>
+<span class="lineNum">     557 </span>            :            &quot;&lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a &quot;
+<span class="lineNum">     558 </span>            :            &quot;href=\&quot;https://www.gnupg.org/download/#sec-1-2\&quot;&gt;download&lt;/a&gt; it &quot;
+<span class="lineNum">     559 </span>            :            &quot;from GnuPG.org&quot;));
+<span class="lineNum">     560 </span>            :     clean = true;
+<span class="lineNum">     561 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     562 </span>            : 
+<span class="lineNum">     563 </span><span class="lineNoCov">          0 :   QStringList names = mainWindow-&gt;getSecretKeys();</span>
+<span class="lineNum">     564 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; names;</span>
+<span class="lineNum">     565 </span><span class="lineNoCov">          0 :   if (QFile(gpg).exists() &amp;&amp; names.empty()) {</span>
+<span class="lineNum">     566 </span><span class="lineNoCov">          0 :     KeygenDialog d(this);</span>
+<span class="lineNum">     567 </span><span class="lineNoCov">          0 :     if (!d.exec())</span>
+<span class="lineNum">     568 </span><span class="lineNoCov">          0 :       return;</span>
+<span class="lineNum">     569 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     570 </span>            : 
+<span class="lineNum">     571 </span><span class="lineNoCov">          0 :   QString passStore = ui-&gt;storePath-&gt;text();</span>
+<span class="lineNum">     572 </span>            : 
+<span class="lineNum">     573 </span><span class="lineNoCov">          0 :   if (!QFile(passStore).exists()) {</span>
+<span class="lineNum">     574 </span>            :     // TODO(annejan) pass version?
+<span class="lineNum">     575 </span><span class="lineNoCov">          0 :     if (QMessageBox::question(</span>
+<span class="lineNum">     576 </span><span class="lineNoCov">          0 :             this, tr(&quot;Create password-store?&quot;),</span>
+<span class="lineNum">     577 </span><span class="lineNoCov">          0 :             tr(&quot;Would you like to create a password-store at %1?&quot;)</span>
+<span class="lineNum">     578 </span>            :                 .arg(passStore),
+<span class="lineNum">     579 </span><span class="lineNoCov">          0 :             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {</span>
+<span class="lineNum">     580 </span><span class="lineNoCov">          0 :       QDir().mkdir(passStore);</span>
+<span class="lineNum">     581 </span>            : #ifdef Q_OS_WIN
+<span class="lineNum">     582 </span>            :       SetFileAttributes(passStore.toStdWString().c_str(),
+<span class="lineNum">     583 </span>            :                         FILE_ATTRIBUTE_HIDDEN);
+<span class="lineNum">     584 </span>            : #endif
+<span class="lineNum">     585 </span><span class="lineNoCov">          0 :       if (useGit())</span>
+<span class="lineNum">     586 </span><span class="lineNoCov">          0 :         mainWindow-&gt;executePassGitInit();</span>
+<span class="lineNum">     587 </span><span class="lineNoCov">          0 :       mainWindow-&gt;userDialog(passStore);</span>
+<span class="lineNum">     588 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     589 </span>            :   }
+<span class="lineNum">     590 </span>            : 
+<span class="lineNum">     591 </span><span class="lineNoCov">          0 :   if (!QFile(QDir(passStore).filePath(&quot;.gpg-id&quot;)).exists()) {</span>
+<span class="lineNum">     592 </span><span class="lineNoCov">          0 :     dbg() &lt;&lt; &quot;.gpg-id file does not exist&quot;;</span>
+<span class="lineNum">     593 </span>            : 
+<span class="lineNum">     594 </span><span class="lineNoCov">          0 :     if (!clean) {</span>
+<span class="lineNum">     595 </span><span class="lineNoCov">          0 :       criticalMessage(tr(&quot;Password store not initialised&quot;),</span>
+<span class="lineNum">     596 </span><span class="lineNoCov">          0 :                       tr(&quot;The folder %1 doesn't seem to be a password store or &quot;</span>
+<span class="lineNum">     597 </span>            :                          &quot;is not yet initialised.&quot;)
+<span class="lineNum">     598 </span>            :                           .arg(passStore));
+<span class="lineNum">     599 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     600 </span><span class="lineNoCov">          0 :     while (!QFile(passStore).exists()) {</span>
+<span class="lineNum">     601 </span><span class="lineNoCov">          0 :       on_toolButtonStore_clicked();</span>
+<span class="lineNum">     602 </span>            :       // allow user to cancel
+<span class="lineNum">     603 </span><span class="lineNoCov">          0 :       if (passStore == ui-&gt;storePath-&gt;text())</span>
+<span class="lineNum">     604 </span><span class="lineNoCov">          0 :         return;</span>
+<span class="lineNum">     605 </span><span class="lineNoCov">          0 :       passStore = ui-&gt;storePath-&gt;text();</span>
+<span class="lineNum">     606 </span>            :     }
+<span class="lineNum">     607 </span><span class="lineNoCov">          0 :     if (!QFile(passStore + &quot;.gpg-id&quot;).exists()) {</span>
+<span class="lineNum">     608 </span><span class="lineNoCov">          0 :       dbg() &lt;&lt; &quot;.gpg-id file still does not exist :/&quot;;</span>
+<span class="lineNum">     609 </span>            :       // appears not to be store
+<span class="lineNum">     610 </span>            :       // init yes / no ?
+<span class="lineNum">     611 </span><span class="lineNoCov">          0 :       mainWindow-&gt;userDialog(passStore);</span>
+<span class="lineNum">     612 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     613 </span>            :   }
+<span class="lineNum">     614 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     615 </span>            : 
+<span class="lineNum">     616 </span>            : /**
+<span class="lineNum">     617 </span>            :  * @brief ConfigDialog::useTrayIcon return preference for using a (system) tray
+<span class="lineNum">     618 </span>            :  * icon.
+<a name="619"><span class="lineNum">     619 </span>            :  * @return</a>
+<span class="lineNum">     620 </span>            :  */
+<span class="lineNum">     621 </span><span class="lineNoCov">          0 : bool ConfigDialog::useTrayIcon() {</span>
+<span class="lineNum">     622 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxUseTrayIcon-&gt;isChecked();</span>
+<span class="lineNum">     623 </span>            : }
+<span class="lineNum">     624 </span>            : 
+<span class="lineNum">     625 </span>            : /**
+<span class="lineNum">     626 </span>            :  * @brief ConfigDialog::hideOnClose return preference for hiding instead of
+<span class="lineNum">     627 </span>            :  * closing (quitting) application.
+<a name="628"><span class="lineNum">     628 </span>            :  * @return</a>
+<span class="lineNum">     629 </span>            :  */
+<span class="lineNum">     630 </span><span class="lineNoCov">          0 : bool ConfigDialog::hideOnClose() {</span>
+<span class="lineNum">     631 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxHideOnClose-&gt;isEnabled() &amp;&amp;</span>
+<span class="lineNum">     632 </span><span class="lineNoCov">          0 :          ui-&gt;checkBoxHideOnClose-&gt;isChecked();</span>
+<span class="lineNum">     633 </span>            : }
+<span class="lineNum">     634 </span>            : 
+<span class="lineNum">     635 </span>            : /**
+<span class="lineNum">     636 </span>            :  * @brief ConfigDialog::useTrayIcon set preference for using trayicon.
+<span class="lineNum">     637 </span>            :  * Enable or disable related checkboxes accordingly.
+<a name="638"><span class="lineNum">     638 </span>            :  * @param useSystray</a>
+<span class="lineNum">     639 </span>            :  */
+<span class="lineNum">     640 </span><span class="lineNoCov">          0 : void ConfigDialog::useTrayIcon(bool useSystray) {</span>
+<span class="lineNum">     641 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUseTrayIcon-&gt;setChecked(useSystray);</span>
+<span class="lineNum">     642 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxHideOnClose-&gt;setEnabled(useSystray);</span>
+<span class="lineNum">     643 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxStartMinimized-&gt;setEnabled(useSystray);</span>
+<span class="lineNum">     644 </span><span class="lineNoCov">          0 :   if (!useSystray) {</span>
+<span class="lineNum">     645 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHideOnClose-&gt;setChecked(false);</span>
+<span class="lineNum">     646 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxStartMinimized-&gt;setChecked(false);</span>
+<span class="lineNum">     647 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     648 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     649 </span>            : 
+<span class="lineNum">     650 </span>            : /**
+<span class="lineNum">     651 </span>            :  * @brief ConfigDialog::hideOnClose set preference for hiding instead of closing
+<span class="lineNum">     652 </span>            :  * (quitting) application.
+<a name="653"><span class="lineNum">     653 </span>            :  * @param hideOnClose</a>
+<span class="lineNum">     654 </span>            :  */
+<span class="lineNum">     655 </span><span class="lineNoCov">          0 : void ConfigDialog::hideOnClose(bool hideOnClose) {</span>
+<span class="lineNum">     656 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxHideOnClose-&gt;setChecked(hideOnClose);</span>
+<span class="lineNum">     657 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     658 </span>            : 
+<span class="lineNum">     659 </span>            : /**
+<span class="lineNum">     660 </span>            :  * @brief ConfigDialog::on_checkBoxUseTrayIcon_clicked enable and disable
+<a name="661"><span class="lineNum">     661 </span>            :  * related checkboxes.</a>
+<span class="lineNum">     662 </span>            :  */
+<span class="lineNum">     663 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {</span>
+<span class="lineNum">     664 </span><span class="lineNoCov">          0 :   if (ui-&gt;checkBoxUseTrayIcon-&gt;isChecked()) {</span>
+<span class="lineNum">     665 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(true);</span>
+<span class="lineNum">     666 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(true);</span>
+<span class="lineNum">     667 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     668 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(false);</span>
+<span class="lineNum">     669 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(false);</span>
+<span class="lineNum">     670 </span>            :   }
+<span class="lineNum">     671 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     672 </span>            : 
+<span class="lineNum">     673 </span>            : /**
+<span class="lineNum">     674 </span>            :  * @brief ConfigDialog::closeEvent close this window.
+<a name="675"><span class="lineNum">     675 </span>            :  * @param event</a>
+<span class="lineNum">     676 </span>            :  */
+<span class="lineNum">     677 </span><span class="lineNoCov">          0 : void ConfigDialog::closeEvent(QCloseEvent *event) {</span>
+<span class="lineNum">     678 </span>            :   // TODO(annejan) save window size or something?
+<span class="lineNum">     679 </span><span class="lineNoCov">          0 :   event-&gt;accept();</span>
+<span class="lineNum">     680 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     681 </span>            : 
+<span class="lineNum">     682 </span>            : /**
+<span class="lineNum">     683 </span>            :  * @brief ConfigDialog::useGit set preference for using git.
+<a name="684"><span class="lineNum">     684 </span>            :  * @param useGit</a>
+<span class="lineNum">     685 </span>            :  */
+<span class="lineNum">     686 </span><span class="lineNoCov">          0 : void ConfigDialog::useGit(bool useGit) {</span>
+<span class="lineNum">     687 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUseGit-&gt;setChecked(useGit);</span>
+<span class="lineNum">     688 </span><span class="lineNoCov">          0 :   on_checkBoxUseGit_clicked();</span>
+<span class="lineNum">     689 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     690 </span>            : 
+<span class="lineNum">     691 </span>            : /**
+<span class="lineNum">     692 </span>            :  * @brief ConfigDialog::useGit retrun preference for using git.
+<a name="693"><span class="lineNum">     693 </span>            :  * @return</a>
+<span class="lineNum">     694 </span>            :  */
+<span class="lineNum">     695 </span><span class="lineNoCov">          0 : bool ConfigDialog::useGit() { return ui-&gt;checkBoxUseGit-&gt;isChecked(); }</span>
+<span class="lineNum">     696 </span>            : 
+<span class="lineNum">     697 </span>            : /**
+<span class="lineNum">     698 </span>            :  * @brief ConfigDialog::on_checkBoxUseGit_clicked enable or disable related
+<a name="699"><span class="lineNum">     699 </span>            :  * checkboxes.</a>
+<span class="lineNum">     700 </span>            :  */
+<span class="lineNum">     701 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxUseGit_clicked() {</span>
+<span class="lineNum">     702 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAddGPGId-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class="lineNum">     703 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoPull-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class="lineNum">     704 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoPush-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span>
+<span class="lineNum">     705 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     706 </span>            : 
+<span class="lineNum">     707 </span>            : /**
+<span class="lineNum">     708 </span>            :  * @brief ConfigDialog::on_toolButtonPwgen_clicked enable or disable related
+<a name="709"><span class="lineNum">     709 </span>            :  * options in the interface.</a>
+<span class="lineNum">     710 </span>            :  */
+<span class="lineNum">     711 </span><span class="lineNoCov">          0 : void ConfigDialog::on_toolButtonPwgen_clicked() {</span>
+<span class="lineNum">     712 </span><span class="lineNoCov">          0 :   QString pwgen = selectExecutable();</span>
+<span class="lineNum">     713 </span><span class="lineNoCov">          0 :   if (!pwgen.isEmpty()) {</span>
+<span class="lineNum">     714 </span><span class="lineNoCov">          0 :     ui-&gt;pwgenPath-&gt;setText(pwgen);</span>
+<span class="lineNum">     715 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(true);</span>
+<span class="lineNum">     716 </span>            :   } else {
+<span class="lineNum">     717 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span>
+<span class="lineNum">     718 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span>
+<span class="lineNum">     719 </span>            :   }
+<span class="lineNum">     720 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     721 </span>            : 
+<span class="lineNum">     722 </span>            : /**
+<span class="lineNum">     723 </span>            :  * @brief ConfigDialog::getPwgenPath return pwgen executable path.
+<a name="724"><span class="lineNum">     724 </span>            :  * @return</a>
+<span class="lineNum">     725 </span>            :  */
+<span class="lineNum">     726 </span><span class="lineNoCov">          0 : QString ConfigDialog::getPwgenPath() { return ui-&gt;pwgenPath-&gt;text(); }</span>
+<span class="lineNum">     727 </span>            : 
+<span class="lineNum">     728 </span>            : /**
+<span class="lineNum">     729 </span>            :  * @brief ConfigDialog::setPwgenPath set pwgen executable path.
+<span class="lineNum">     730 </span>            :  * Enable or disable related options in the interface.
+<a name="731"><span class="lineNum">     731 </span>            :  * @param pwgen</a>
+<span class="lineNum">     732 </span>            :  */
+<span class="lineNum">     733 </span><span class="lineNoCov">          0 : void ConfigDialog::setPwgenPath(QString pwgen) {</span>
+<span class="lineNum">     734 </span><span class="lineNoCov">          0 :   ui-&gt;pwgenPath-&gt;setText(pwgen);</span>
+<span class="lineNum">     735 </span><span class="lineNoCov">          0 :   if (pwgen.isEmpty()) {</span>
+<span class="lineNum">     736 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span>
+<span class="lineNum">     737 </span><span class="lineNoCov">          0 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span>
+<span class="lineNum">     738 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     739 </span><span class="lineNoCov">          0 :   on_checkBoxUsePwgen_clicked();</span>
+<span class="lineNum">     740 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     741 </span>            : 
+<span class="lineNum">     742 </span>            : /**
+<span class="lineNum">     743 </span>            :  * @brief ConfigDialog::on_checkBoxUsPwgen_clicked enable or disable related
+<a name="744"><span class="lineNum">     744 </span>            :  * options in the interface.</a>
+<span class="lineNum">     745 </span>            :  */
+<span class="lineNum">     746 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxUsePwgen_clicked() {</span>
+<span class="lineNum">     747 </span><span class="lineNoCov">          0 :   bool usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span>
+<span class="lineNum">     748 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(usePwgen);</span>
+<span class="lineNum">     749 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(usePwgen);</span>
+<span class="lineNum">     750 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxLessRandom-&gt;setEnabled(usePwgen);</span>
+<span class="lineNum">     751 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUseSymbols-&gt;setEnabled(usePwgen);</span>
+<span class="lineNum">     752 </span><span class="lineNoCov">          0 :   ui-&gt;lineEditPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class="lineNum">     753 </span><span class="lineNoCov">          0 :   ui-&gt;labelPasswordChars-&gt;setEnabled(!usePwgen);</span>
+<span class="lineNum">     754 </span><span class="lineNoCov">          0 :   ui-&gt;passwordCharTemplateSelector-&gt;setEnabled(!usePwgen);</span>
+<span class="lineNum">     755 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     756 </span>            : 
+<span class="lineNum">     757 </span>            : /**
+<span class="lineNum">     758 </span>            :  * @brief ConfigDialog::usePwgen set preference for using pwgen (can be
+<span class="lineNum">     759 </span>            :  * overruled buy empty pwgenPath).
+<span class="lineNum">     760 </span>            :  * enable or disable related options in the interface via
+<span class="lineNum">     761 </span>            :  * ConfigDialog::on_checkBoxUsePwgen_clicked
+<a name="762"><span class="lineNum">     762 </span>            :  * @param usePwgen</a>
+<span class="lineNum">     763 </span>            :  */
+<span class="lineNum">     764 </span><span class="lineNoCov">          0 : void ConfigDialog::usePwgen(bool usePwgen) {</span>
+<span class="lineNum">     765 </span><span class="lineNoCov">          0 :   if (ui-&gt;pwgenPath-&gt;text().isEmpty())</span>
+<span class="lineNum">     766 </span><span class="lineNoCov">          0 :     usePwgen = false;</span>
+<span class="lineNum">     767 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUsePwgen-&gt;setChecked(usePwgen);</span>
+<span class="lineNum">     768 </span><span class="lineNoCov">          0 :   on_checkBoxUsePwgen_clicked();</span>
+<span class="lineNum">     769 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     770 </span>            : 
+<span class="lineNum">     771 </span>            : /**
+<span class="lineNum">     772 </span>            :  * @brief ConfigDialog::avoidCapitals set preference for avoiding uppercase
+<span class="lineNum">     773 </span>            :  * letters using pwgen.
+<a name="774"><span class="lineNum">     774 </span>            :  * @param avoidCapitals</a>
+<span class="lineNum">     775 </span>            :  */
+<span class="lineNum">     776 </span><span class="lineNoCov">          0 : void ConfigDialog::avoidCapitals(bool avoidCapitals) {</span>
+<span class="lineNum">     777 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAvoidCapitals-&gt;setChecked(avoidCapitals);</span>
+<span class="lineNum">     778 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     779 </span>            : 
+<span class="lineNum">     780 </span>            : /**
+<span class="lineNum">     781 </span>            :  * @brief ConfigDialog::avoidNumbers set preference for using numbers in pwgen
+<span class="lineNum">     782 </span>            :  * generated password.
+<a name="783"><span class="lineNum">     783 </span>            :  * @param avoidNumbers</a>
+<span class="lineNum">     784 </span>            :  */
+<span class="lineNum">     785 </span><span class="lineNoCov">          0 : void ConfigDialog::avoidNumbers(bool avoidNumbers) {</span>
+<span class="lineNum">     786 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAvoidNumbers-&gt;setChecked(avoidNumbers);</span>
+<span class="lineNum">     787 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     788 </span>            : 
+<span class="lineNum">     789 </span>            : /**
+<span class="lineNum">     790 </span>            :  * @brief ConfigDialog::lessRandom set preference for using less random
+<span class="lineNum">     791 </span>            :  * passwords.
+<a name="792"><span class="lineNum">     792 </span>            :  * @param lessRandom</a>
+<span class="lineNum">     793 </span>            :  */
+<span class="lineNum">     794 </span><span class="lineNoCov">          0 : void ConfigDialog::lessRandom(bool lessRandom) {</span>
+<span class="lineNum">     795 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxLessRandom-&gt;setChecked(lessRandom);</span>
+<span class="lineNum">     796 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     797 </span>            : 
+<span class="lineNum">     798 </span>            : /**
+<span class="lineNum">     799 </span>            :  * @brief ConfigDialog::useSymbols set preference for using special characters
+<span class="lineNum">     800 </span>            :  * in pwgen.
+<a name="801"><span class="lineNum">     801 </span>            :  * @param useSymbols</a>
+<span class="lineNum">     802 </span>            :  */
+<span class="lineNum">     803 </span><span class="lineNoCov">          0 : void ConfigDialog::useSymbols(bool useSymbols) {</span>
+<span class="lineNum">     804 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUseSymbols-&gt;setChecked(useSymbols);</span>
+<span class="lineNum">     805 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     806 </span>            : 
+<span class="lineNum">     807 </span>            : /**
+<span class="lineNum">     808 </span>            :  * @brief ConfigDialog::setPasswordLength set the length of desired (generated)
+<span class="lineNum">     809 </span>            :  * passwords.
+<a name="810"><span class="lineNum">     810 </span>            :  * @param pwLen</a>
+<span class="lineNum">     811 </span>            :  */
+<span class="lineNum">     812 </span><span class="lineNoCov">          0 : void ConfigDialog::setPasswordLength(int pwLen) {</span>
+<span class="lineNum">     813 </span><span class="lineNoCov">          0 :   ui-&gt;spinBoxPasswordLength-&gt;setValue(pwLen);</span>
+<span class="lineNum">     814 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     815 </span>            : 
+<span class="lineNum">     816 </span>            : /**
+<span class="lineNum">     817 </span>            :  * @brief ConfigDialog::setPasswordChars use these charcters to generate
+<span class="lineNum">     818 </span>            :  * password (non-pwgen option).
+<a name="819"><span class="lineNum">     819 </span>            :  * @param pwChars</a>
+<span class="lineNum">     820 </span>            :  */
+<span class="lineNum">     821 </span><span class="lineNoCov">          0 : void ConfigDialog::setPasswordChars(QString pwChars) {</span>
+<span class="lineNum">     822 </span><span class="lineNoCov">          0 :   ui-&gt;lineEditPasswordChars-&gt;setText(pwChars);</span>
+<span class="lineNum">     823 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     824 </span>            : 
+<span class="lineNum">     825 </span>            : /**
+<span class="lineNum">     826 </span>            :  * @brief ConfigDialog::usePwgen return preference for using pwgen.
+<a name="827"><span class="lineNum">     827 </span>            :  * @return</a>
+<span class="lineNum">     828 </span>            :  */
+<span class="lineNum">     829 </span><span class="lineNoCov">          0 : bool ConfigDialog::usePwgen() { return ui-&gt;checkBoxUsePwgen-&gt;isChecked(); }</span>
+<span class="lineNum">     830 </span>            : 
+<span class="lineNum">     831 </span>            : /**
+<span class="lineNum">     832 </span>            :  * @brief ConfigDialog::avoidCapitals return preference for avoiding uppercase
+<span class="lineNum">     833 </span>            :  * letters using pwgen.
+<a name="834"><span class="lineNum">     834 </span>            :  * @return</a>
+<span class="lineNum">     835 </span>            :  */
+<span class="lineNum">     836 </span><span class="lineNoCov">          0 : bool ConfigDialog::avoidCapitals() {</span>
+<span class="lineNum">     837 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxAvoidCapitals-&gt;isChecked();</span>
+<span class="lineNum">     838 </span>            : }
+<span class="lineNum">     839 </span>            : 
+<span class="lineNum">     840 </span>            : /**
+<span class="lineNum">     841 </span>            :  * @brief ConfigDialog::avoidNumbers return preference for using numbers in
+<span class="lineNum">     842 </span>            :  * generated password using pwgen.
+<a name="843"><span class="lineNum">     843 </span>            :  * @return</a>
+<span class="lineNum">     844 </span>            :  */
+<span class="lineNum">     845 </span><span class="lineNoCov">          0 : bool ConfigDialog::avoidNumbers() {</span>
+<span class="lineNum">     846 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxAvoidNumbers-&gt;isChecked();</span>
+<span class="lineNum">     847 </span>            : }
+<span class="lineNum">     848 </span>            : 
+<span class="lineNum">     849 </span>            : /**
+<span class="lineNum">     850 </span>            :  * @brief ConfigDialog::lessRandom return preference for using less random
+<span class="lineNum">     851 </span>            :  * passwords in pwgen.
+<a name="852"><span class="lineNum">     852 </span>            :  * @return</a>
+<span class="lineNum">     853 </span>            :  */
+<span class="lineNum">     854 </span><span class="lineNoCov">          0 : bool ConfigDialog::lessRandom() { return ui-&gt;checkBoxLessRandom-&gt;isChecked(); }</span>
+<span class="lineNum">     855 </span>            : 
+<span class="lineNum">     856 </span>            : /**
+<span class="lineNum">     857 </span>            :  * @brief ConfigDialog::useSymbols return preference for using special
+<span class="lineNum">     858 </span>            :  * characters with pwgen.
+<a name="859"><span class="lineNum">     859 </span>            :  * @return</a>
+<span class="lineNum">     860 </span>            :  */
+<span class="lineNum">     861 </span><span class="lineNoCov">          0 : bool ConfigDialog::useSymbols() { return ui-&gt;checkBoxUseSymbols-&gt;isChecked(); }</span>
+<span class="lineNum">     862 </span>            : 
+<span class="lineNum">     863 </span>            : /**
+<span class="lineNum">     864 </span>            :  * @brief ConfigDialog::getPasswordLength return desired length for generated
+<span class="lineNum">     865 </span>            :  * passwords.
+<a name="866"><span class="lineNum">     866 </span>            :  * @return</a>
+<span class="lineNum">     867 </span>            :  */
+<span class="lineNum">     868 </span><span class="lineNoCov">          0 : int ConfigDialog::getPasswordLength() {</span>
+<span class="lineNum">     869 </span><span class="lineNoCov">          0 :   return ui-&gt;spinBoxPasswordLength-&gt;value();</span>
+<span class="lineNum">     870 </span>            : }
+<span class="lineNum">     871 </span>            : 
+<span class="lineNum">     872 </span>            : /**
+<span class="lineNum">     873 </span>            :  * @brief ConfigDialog::getPasswordChars return characters to use in password
+<span class="lineNum">     874 </span>            :  * generation (non-pwgen).
+<a name="875"><span class="lineNum">     875 </span>            :  * @return</a>
+<span class="lineNum">     876 </span>            :  */
+<span class="lineNum">     877 </span><span class="lineNoCov">          0 : QString ConfigDialog::getPasswordChars() {</span>
+<span class="lineNum">     878 </span><span class="lineNoCov">          0 :   return ui-&gt;lineEditPasswordChars-&gt;text();</span>
+<span class="lineNum">     879 </span>            : }
+<span class="lineNum">     880 </span>            : 
+<span class="lineNum">     881 </span>            : /**
+<span class="lineNum">     882 </span>            :  * @brief ConfigDialog::setPwdTemplateSelector sets the current index of the
+<span class="lineNum">     883 </span>            :  * password characters template combobox
+<a name="884"><span class="lineNum">     884 </span>            :  * @return</a>
+<span class="lineNum">     885 </span>            :  */
+<span class="lineNum">     886 </span><span class="lineNoCov">          0 : void ConfigDialog::setPwdTemplateSelector(int selection) {</span>
+<span class="lineNum">     887 </span><span class="lineNoCov">          0 :   ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(selection);</span>
+<span class="lineNum">     888 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     889 </span>            : 
+<span class="lineNum">     890 </span>            : /**
+<span class="lineNum">     891 </span>            :  * @brief ConfigDialog::getPwdTemplateSelector returns the selection of the
+<span class="lineNum">     892 </span>            :  * password characters template combobox
+<a name="893"><span class="lineNum">     893 </span>            :  * @return</a>
+<span class="lineNum">     894 </span>            :  */
+<span class="lineNum">     895 </span><span class="lineNoCov">          0 : int ConfigDialog::getPwdTemplateSelector() {</span>
+<span class="lineNum">     896 </span><span class="lineNoCov">          0 :   return ui-&gt;passwordCharTemplateSelector-&gt;currentIndex();</span>
+<span class="lineNum">     897 </span>            : }
+<span class="lineNum">     898 </span>            : 
+<span class="lineNum">     899 </span>            : /**
+<span class="lineNum">     900 </span>            :  * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the
+<span class="lineNum">     901 </span>            :  * passwordChar Template
+<span class="lineNum">     902 </span>            :  * combo box to the desired entry
+<a name="903"><span class="lineNum">     903 </span>            :  * @param entry of</a>
+<span class="lineNum">     904 </span>            :  */
+<span class="lineNum">     905 </span><span class="lineNoCov">          0 : void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {</span>
+<span class="lineNum">     906 </span><span class="lineNoCov">          0 :   ui-&gt;lineEditPasswordChars-&gt;setText(mainWindow-&gt;pwdConfig.Characters[index]);</span>
+<span class="lineNum">     907 </span><span class="lineNoCov">          0 :   if (index == 3) {</span>
+<span class="lineNum">     908 </span><span class="lineNoCov">          0 :     ui-&gt;lineEditPasswordChars-&gt;setEnabled(true);</span>
+<span class="lineNum">     909 </span><span class="lineNoCov">          0 :   } else {</span>
+<span class="lineNum">     910 </span><span class="lineNoCov">          0 :     ui-&gt;lineEditPasswordChars-&gt;setEnabled(false);</span>
+<span class="lineNum">     911 </span>            :   }
+<span class="lineNum">     912 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     913 </span>            : 
+<span class="lineNum">     914 </span>            : /**
+<span class="lineNum">     915 </span>            :  * @brief ConfigDialog::setLineEditEnabled enabling/disabling the textbox with
+<span class="lineNum">     916 </span>            :  * the
+<span class="lineNum">     917 </span>            :  * password characters
+<a name="918"><span class="lineNum">     918 </span>            :  * @param b enable/disable</a>
+<span class="lineNum">     919 </span>            :  */
+<span class="lineNum">     920 </span><span class="lineNoCov">          0 : void ConfigDialog::setLineEditEnabled(bool b) {</span>
+<span class="lineNum">     921 </span><span class="lineNoCov">          0 :   ui-&gt;lineEditPasswordChars-&gt;setEnabled(b);</span>
+<span class="lineNum">     922 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     923 </span>            : 
+<span class="lineNum">     924 </span>            : /**
+<span class="lineNum">     925 </span>            :  * @brief ConfigDialog::startMinimized return preference for starting
+<span class="lineNum">     926 </span>            :  * application minimized (tray icon).
+<a name="927"><span class="lineNum">     927 </span>            :  * @return</a>
+<span class="lineNum">     928 </span>            :  */
+<span class="lineNum">     929 </span><span class="lineNoCov">          0 : bool ConfigDialog::startMinimized() {</span>
+<span class="lineNum">     930 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxStartMinimized-&gt;isChecked();</span>
+<span class="lineNum">     931 </span>            : }
+<span class="lineNum">     932 </span>            : 
+<span class="lineNum">     933 </span>            : /**
+<span class="lineNum">     934 </span>            :  * @brief ConfigDialog::startMinimized set preference for starting application
+<span class="lineNum">     935 </span>            :  * minimized (tray icon).
+<a name="936"><span class="lineNum">     936 </span>            :  * @param startMinimized</a>
+<span class="lineNum">     937 </span>            :  */
+<span class="lineNum">     938 </span><span class="lineNoCov">          0 : void ConfigDialog::startMinimized(bool startMinimized) {</span>
+<span class="lineNum">     939 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxStartMinimized-&gt;setChecked(startMinimized);</span>
+<span class="lineNum">     940 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     941 </span>            : 
+<span class="lineNum">     942 </span>            : /**
+<span class="lineNum">     943 </span>            :  * @brief ConfigDialog::on_checkBoxUseTemplate_clicked enable or disable the
+<a name="944"><span class="lineNum">     944 </span>            :  * template field and options.</a>
+<span class="lineNum">     945 </span>            :  */
+<span class="lineNum">     946 </span><span class="lineNoCov">          0 : void ConfigDialog::on_checkBoxUseTemplate_clicked() {</span>
+<span class="lineNum">     947 </span><span class="lineNoCov">          0 :   ui-&gt;plainTextEditTemplate-&gt;setEnabled(ui-&gt;checkBoxUseTemplate-&gt;isChecked());</span>
+<span class="lineNum">     948 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxTemplateAllFields-&gt;setEnabled(</span>
+<span class="lineNum">     949 </span><span class="lineNoCov">          0 :       ui-&gt;checkBoxUseTemplate-&gt;isChecked());</span>
+<span class="lineNum">     950 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     951 </span>            : 
+<span class="lineNum">     952 </span>            : /**
+<span class="lineNum">     953 </span>            :  * @brief ConfigDialog::useTemplate set preference for using templates.
+<a name="954"><span class="lineNum">     954 </span>            :  * @param useTemplate</a>
+<span class="lineNum">     955 </span>            :  */
+<span class="lineNum">     956 </span><span class="lineNoCov">          0 : void ConfigDialog::useTemplate(bool useTemplate) {</span>
+<span class="lineNum">     957 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxUseTemplate-&gt;setChecked(useTemplate);</span>
+<span class="lineNum">     958 </span><span class="lineNoCov">          0 :   on_checkBoxUseTemplate_clicked();</span>
+<span class="lineNum">     959 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     960 </span>            : 
+<span class="lineNum">     961 </span>            : /**
+<span class="lineNum">     962 </span>            :  * @brief ConfigDialog::useTemplate return preference for using templates.
+<a name="963"><span class="lineNum">     963 </span>            :  * @return</a>
+<span class="lineNum">     964 </span>            :  */
+<span class="lineNum">     965 </span><span class="lineNoCov">          0 : bool ConfigDialog::useTemplate() {</span>
+<span class="lineNum">     966 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxUseTemplate-&gt;isChecked();</span>
+<span class="lineNum">     967 </span>            : }
+<span class="lineNum">     968 </span>            : 
+<span class="lineNum">     969 </span>            : /**
+<span class="lineNum">     970 </span>            :  * @brief ConfigDialog::setTemplate set the desired template.
+<a name="971"><span class="lineNum">     971 </span>            :  * @param passTemplate</a>
+<span class="lineNum">     972 </span>            :  */
+<span class="lineNum">     973 </span><span class="lineNoCov">          0 : void ConfigDialog::setTemplate(QString passTemplate) {</span>
+<span class="lineNum">     974 </span><span class="lineNoCov">          0 :   ui-&gt;plainTextEditTemplate-&gt;setPlainText(passTemplate);</span>
+<span class="lineNum">     975 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     976 </span>            : 
+<span class="lineNum">     977 </span>            : /**
+<span class="lineNum">     978 </span>            :  * @brief ConfigDialog::getTemplate return the desired template.
+<a name="979"><span class="lineNum">     979 </span>            :  * @return</a>
+<span class="lineNum">     980 </span>            :  */
+<span class="lineNum">     981 </span><span class="lineNoCov">          0 : QString ConfigDialog::getTemplate() {</span>
+<span class="lineNum">     982 </span><span class="lineNoCov">          0 :   return ui-&gt;plainTextEditTemplate-&gt;toPlainText();</span>
+<span class="lineNum">     983 </span>            : }
+<span class="lineNum">     984 </span>            : 
+<span class="lineNum">     985 </span>            : /**
+<span class="lineNum">     986 </span>            :  * @brief ConfigDialog::autoPull set preference for automatically pulling from
+<span class="lineNum">     987 </span>            :  * git
+<a name="988"><span class="lineNum">     988 </span>            :  * @param autoPull</a>
+<span class="lineNum">     989 </span>            :  */
+<span class="lineNum">     990 </span><span class="lineNoCov">          0 : void ConfigDialog::autoPull(bool autoPull) {</span>
+<span class="lineNum">     991 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoPull-&gt;setChecked(autoPull);</span>
+<span class="lineNum">     992 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     993 </span>            : 
+<span class="lineNum">     994 </span>            : /**
+<span class="lineNum">     995 </span>            :  * @brief ConfigDialog::autoPush set preference for automatically pushing to git
+<a name="996"><span class="lineNum">     996 </span>            :  * @param autoPush</a>
+<span class="lineNum">     997 </span>            :  */
+<span class="lineNum">     998 </span><span class="lineNoCov">          0 : void ConfigDialog::autoPush(bool autoPush) {</span>
+<span class="lineNum">     999 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAutoPush-&gt;setChecked(autoPush);</span>
+<span class="lineNum">    1000 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1001 </span>            : 
+<span class="lineNum">    1002 </span>            : /**
+<span class="lineNum">    1003 </span>            :  * @brief ConfigDialog::autoPull return preference for automatically pulling
+<span class="lineNum">    1004 </span>            :  * from git
+<a name="1005"><span class="lineNum">    1005 </span>            :  * @return</a>
+<span class="lineNum">    1006 </span>            :  */
+<span class="lineNum">    1007 </span><span class="lineNoCov">          0 : bool ConfigDialog::autoPull() { return ui-&gt;checkBoxAutoPull-&gt;isChecked(); }</span>
+<span class="lineNum">    1008 </span>            : 
+<span class="lineNum">    1009 </span>            : /**
+<span class="lineNum">    1010 </span>            :  * @brief ConfigDialog::autoPush return preference for automatically pushing to
+<span class="lineNum">    1011 </span>            :  * git
+<a name="1012"><span class="lineNum">    1012 </span>            :  * @return</a>
+<span class="lineNum">    1013 </span>            :  */
+<span class="lineNum">    1014 </span><span class="lineNoCov">          0 : bool ConfigDialog::autoPush() { return ui-&gt;checkBoxAutoPush-&gt;isChecked(); }</span>
+<span class="lineNum">    1015 </span>            : 
+<span class="lineNum">    1016 </span>            : /**
+<span class="lineNum">    1017 </span>            :  * @brief ConfigDialog::templateAllFields return preference for templating all
+<span class="lineNum">    1018 </span>            :  * tokenisable fields
+<a name="1019"><span class="lineNum">    1019 </span>            :  * @return</a>
+<span class="lineNum">    1020 </span>            :  */
+<span class="lineNum">    1021 </span><span class="lineNoCov">          0 : bool ConfigDialog::templateAllFields() {</span>
+<span class="lineNum">    1022 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxTemplateAllFields-&gt;isChecked();</span>
+<span class="lineNum">    1023 </span>            : }
+<span class="lineNum">    1024 </span>            : 
+<span class="lineNum">    1025 </span>            : /**
+<span class="lineNum">    1026 </span>            :  * @brief ConfigDialog::templateAllFields set preference for templating all
+<span class="lineNum">    1027 </span>            :  * tokenisable fields
+<a name="1028"><span class="lineNum">    1028 </span>            :  * @param templateAll</a>
+<span class="lineNum">    1029 </span>            :  */
+<span class="lineNum">    1030 </span><span class="lineNoCov">          0 : void ConfigDialog::templateAllFields(bool templateAll) {</span>
+<span class="lineNum">    1031 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxTemplateAllFields-&gt;setChecked(templateAll);</span>
+<span class="lineNum">    1032 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1033 </span>            : 
+<span class="lineNum">    1034 </span>            : /**
+<span class="lineNum">    1035 </span>            :  * @brief ConfigDialog::alwaysOnTop set preference for running application on
+<span class="lineNum">    1036 </span>            :  * top of others
+<a name="1037"><span class="lineNum">    1037 </span>            :  * @param alwaysOnTop</a>
+<span class="lineNum">    1038 </span>            :  */
+<span class="lineNum">    1039 </span><span class="lineNoCov">          0 : void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {</span>
+<span class="lineNum">    1040 </span><span class="lineNoCov">          0 :   ui-&gt;checkBoxAlwaysOnTop-&gt;setChecked(alwaysOnTop);</span>
+<span class="lineNum">    1041 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">    1042 </span>            : 
+<span class="lineNum">    1043 </span>            : /**
+<span class="lineNum">    1044 </span>            :  * @brief ConfigDialog::alwaysOnTop return preference for running application on
+<span class="lineNum">    1045 </span>            :  * top of others.
+<a name="1046"><span class="lineNum">    1046 </span>            :  * @return</a>
+<span class="lineNum">    1047 </span>            :  */
+<span class="lineNum">    1048 </span><span class="lineNoCov">          0 : bool ConfigDialog::alwaysOnTop() {</span>
+<span class="lineNum">    1049 </span><span class="lineNoCov">          0 :   return ui-&gt;checkBoxAlwaysOnTop-&gt;isChecked();</span>
+<span class="lineNum">    1050 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

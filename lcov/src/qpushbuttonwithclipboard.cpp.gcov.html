@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/qpushbuttonwithclipboard.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - qpushbuttonwithclipboard.cpp<span style="font-size: 80%;"> (source / <a href="qpushbuttonwithclipboard.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;qpushbuttonwithclipboard.h&quot;</a>
+<span class="lineNum">       2 </span>            : #include &lt;QTimer&gt;
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : /**
+<span class="lineNum">       5 </span>            :  * @brief QPushButtonWithClipboard::QPushButtonWithClipboard
+<span class="lineNum">       6 </span>            :  *  basic constructor
+<span class="lineNum">       7 </span>            :  * @param textToCopy
+<span class="lineNum">       8 </span>            :  *  the text to paste into the clipboard
+<span class="lineNum">       9 </span>            :  * @param parent
+<a name="10"><span class="lineNum">      10 </span>            :  *  the parent window</a>
+<span class="lineNum">      11 </span>            :  */
+<span class="lineNum">      12 </span><span class="lineNoCov">          0 : QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &amp;textToCopy,</span>
+<span class="lineNum">      13 </span>            :                                                    QWidget *parent)
+<span class="lineNum">      14 </span><span class="lineNoCov">          0 :     : QPushButton(parent), textToCopy(textToCopy),</span>
+<span class="lineNum">      15 </span><span class="lineNoCov">          0 :       iconEdit(QIcon::fromTheme(&quot;edit-copy&quot;, QIcon(&quot;:/icons/edit-copy.svg&quot;))),</span>
+<span class="lineNum">      16 </span><span class="lineNoCov">          0 :       iconEditPushed(</span>
+<span class="lineNum">      17 </span><span class="lineNoCov">          0 :           QIcon::fromTheme(&quot;document-new&quot;, QIcon(&quot;:/icons/document-new.svg&quot;))) {</span>
+<span class="lineNum">      18 </span><span class="lineNoCov">          0 :   setIcon(iconEdit);</span>
+<span class="lineNum">      19 </span><span class="lineNoCov">          0 :   connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));</span>
+<span class="lineNum">      20 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      21 </span>            : 
+<span class="lineNum">      22 </span>            : /**
+<span class="lineNum">      23 </span>            :  * @brief QPushButtonWithClipboard::getTextToCopy returns the text of
+<span class="lineNum">      24 </span>            :  * associated text field
+<a name="25"><span class="lineNum">      25 </span>            :  * @return QString textToCopy</a>
+<span class="lineNum">      26 </span>            :  */
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 : QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }</span>
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            : /**
+<span class="lineNum">      30 </span>            :  * @brief QPushButtonWithClipboard::setTextToCopy sets text from associated
+<span class="lineNum">      31 </span>            :  * text field
+<a name="32"><span class="lineNum">      32 </span>            :  * @param value QString text to be copied</a>
+<span class="lineNum">      33 </span>            :  */
+<span class="lineNum">      34 </span><span class="lineNoCov">          0 : void QPushButtonWithClipboard::setTextToCopy(const QString &amp;value) {</span>
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :   textToCopy = value;</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      37 </span>            : 
+<span class="lineNum">      38 </span>            : /**
+<span class="lineNum">      39 </span>            :  * @brief QPushButtonWithClipboard::buttonClicked handles clicked event by
+<a name="40"><span class="lineNum">      40 </span>            :  * emitting clicked(QString) with string provided to constructor</a>
+<span class="lineNum">      41 </span>            :  */
+<span class="lineNum">      42 </span><span class="lineNoCov">          0 : void QPushButtonWithClipboard::buttonClicked(bool) {</span>
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 :   setIcon(iconEditPushed);</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   QTimer::singleShot(500, this, SLOT(changeIconDefault()));</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :   emit clicked(textToCopy);</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span>            : /**
+<span class="lineNum">      49 </span>            :  * @brief QPushButtonWithClipboard::changeIconDefault change the icon back to
+<a name="50"><span class="lineNum">      50 </span>            :  * the default copy icon</a>
+<span class="lineNum">      51 </span>            :  */
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 : void QPushButtonWithClipboard::changeIconDefault() { this-&gt;setIcon(iconEdit); }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
