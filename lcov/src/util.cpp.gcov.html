@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td class="headerValue">2017-03-20 15:52:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -73,7 +73,7 @@
 <span class="lineNum">      11 </span>            : #include &lt;sys/time.h&gt;
 <a name="12"><span class="lineNum">      12 </span>            : #endif</a>
 <span class="lineNum">      13 </span>            : #include &quot;qtpasssettings.h&quot;
-<span class="lineNum">      14 </span><span class="lineCov">          4 : QProcessEnvironment Util::_env;</span>
+<span class="lineNum">      14 </span><span class="lineCov">          2 : QProcessEnvironment Util::_env;</span>
 <span class="lineNum">      15 </span>            : bool Util::_envInitialised;
 <span class="lineNum">      16 </span>            : 
 <span class="lineNum">      17 </span>            : /**
@@ -127,9 +127,9 @@
 <a name="65"><span class="lineNum">      65 </span>            :  * @return</a>
 <span class="lineNum">      66 </span>            :  */
 <span class="lineNum">      67 </span><span class="lineNoCov">          0 : QString Util::normalizeFolderPath(QString path) {</span>
-<span class="lineNum">      68 </span><span class="lineCov">         20 :   if (!path.endsWith(&quot;/&quot;) &amp;&amp; !path.endsWith(QDir::separator()))</span>
-<span class="lineNum">      69 </span><span class="lineCov">          2 :     path += QDir::separator();</span>
-<span class="lineNum">      70 </span><span class="lineCov">          4 :   return QDir::toNativeSeparators(path);</span>
+<span class="lineNum">      68 </span><span class="lineCov">         10 :   if (!path.endsWith(&quot;/&quot;) &amp;&amp; !path.endsWith(QDir::separator()))</span>
+<span class="lineNum">      69 </span><span class="lineCov">          1 :     path += QDir::separator();</span>
+<span class="lineNum">      70 </span><span class="lineCov">          2 :   return QDir::toNativeSeparators(path);</span>
 <span class="lineNum">      71 </span><span class="lineNoCov">          0 : }</span>
 <span class="lineNum">      72 </span>            : 
 <span class="lineNum">      73 </span>            : /**

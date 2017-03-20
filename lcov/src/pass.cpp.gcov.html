@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td class="headerValue">2017-03-20 15:52:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -73,8 +73,8 @@
 <span class="lineNum">      11 </span>            : /**
 <a name="12"><span class="lineNum">      12 </span>            :  * @brief Pass::Pass wrapper for using either pass or the pass imitation</a>
 <span class="lineNum">      13 </span>            :  */
-<span class="lineNum">      14 </span><span class="lineCov">         12 : Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {</span>
-<span class="lineNum">      15 </span><span class="lineCov">          8 :   connect(&amp;exec,</span>
+<span class="lineNum">      14 </span><span class="lineCov">          6 : Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">          4 :   connect(&amp;exec,</span>
 <span class="lineNum">      16 </span>            :           static_cast&lt;void (Executor::*)(int, int, const QString &amp;,
 <span class="lineNum">      17 </span>            :                                          const QString &amp;)&gt;(&amp;Executor::finished),
 <span class="lineNum">      18 </span>            :           this, &amp;Pass::finished);
@@ -83,8 +83,8 @@
 <span class="lineNum">      21 </span>            :   // connect(&amp;process, SIGNAL(error(QProcess::ProcessError)), this,
 <span class="lineNum">      22 </span>            :   //        SIGNAL(error(QProcess::ProcessError)));
 <span class="lineNum">      23 </span>            : 
-<span class="lineNum">      24 </span><span class="lineCov">          8 :   connect(&amp;exec, &amp;Executor::starting, this, &amp;Pass::startingExecuteWrapper);</span>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          4 : }</span></a>
+<span class="lineNum">      24 </span><span class="lineCov">          4 :   connect(&amp;exec, &amp;Executor::starting, this, &amp;Pass::startingExecuteWrapper);</span>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          2 : }</span></a>
 <span class="lineNum">      26 </span>            : 
 <span class="lineNum">      27 </span><span class="lineNoCov">          0 : void Pass::executeWrapper(PROCESS id, const QString &amp;app,</span>
 <span class="lineNum">      28 </span>            :                           const QStringList &amp;args, bool readStdout,

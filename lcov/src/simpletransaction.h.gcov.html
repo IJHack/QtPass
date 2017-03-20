@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-14 11:46:08</td>
+            <td class="headerValue">2017-03-20 15:52:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -66,15 +66,15 @@
 <span class="lineNum">       4 </span>            : #include &quot;enums.h&quot;
 <a name="5"><span class="lineNum">       5 </span>            : #include &lt;queue&gt;</a>
 <span class="lineNum">       6 </span>            : 
-<span class="lineNum">       7 </span><span class="lineCov">          4 : class simpleTransaction {</span>
+<span class="lineNum">       7 </span><span class="lineCov">          2 : class simpleTransaction {</span>
 <span class="lineNum">       8 </span>            : 
 <span class="lineNum">       9 </span>            :   int transactionDepth;
 <span class="lineNum">      10 </span>            :   Enums::PROCESS lastInTransaction;
 <span class="lineNum">      11 </span>            :   std::queue&lt;std::pair&lt;Enums::PROCESS, Enums::PROCESS&gt;&gt; transactionQueue;
 <a name="12"><span class="lineNum">      12 </span>            : </a>
 <span class="lineNum">      13 </span>            : public:
-<span class="lineNum">      14 </span><span class="lineCov">          2 :   simpleTransaction()</span>
-<span class="lineNum">      15 </span><span class="lineCov">          6 :       : transactionDepth(0), lastInTransaction(Enums::INVALID) {}</span>
+<span class="lineNum">      14 </span><span class="lineCov">          1 :   simpleTransaction()</span>
+<span class="lineNum">      15 </span><span class="lineCov">          3 :       : transactionDepth(0), lastInTransaction(Enums::INVALID) {}</span>
 <span class="lineNum">      16 </span>            :   /**
 <span class="lineNum">      17 </span>            :    * @brief transactionStart this function is used to mark start of the sequence
 <span class="lineNum">      18 </span>            :    *                         of processes that shall be treated as one
