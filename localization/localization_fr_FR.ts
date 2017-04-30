@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TS []>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>ConfigDialog</name>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation>Gestion du presse-papier :</translation>
+        <translation>Gestion du presse-papier :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished">Utiliser la sélection principale</translation>
+        <translation>Utiliser la sélection principale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation>Vider automatiquement après :</translation>
+        <translation>Vider automatiquement après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
@@ -36,12 +36,12 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation type="vanished">Comportement du panneau de visualisation des mots de passe :</translation>
+        <translation type="vanished">Comportement du panneau de visualisation des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">Comportement du panneau de contenu :</translation>
+        <translation>Comportement du panneau de contenu :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -56,17 +56,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation>Cacher le contenu après :</translation>
+        <translation>Cacher le contenu après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation>Génération des mots de passe :</translation>
+        <translation>Génération des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation>Longueur du mot de passe :</translation>
+        <translation>Longueur du mot de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
@@ -76,32 +76,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation>Utiliser les caractères suivants :</translation>
+        <translation>Utiliser les caractères suivants :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished">Choisissez les caractères à utiliser pour la génération de mots de passe</translation>
+        <translation>Choisissez les caractères à utiliser pour la génération de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished">Tous</translation>
+        <translation>Tous</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">Alphabétiques</translation>
+        <translation>Alphabétiques</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">Alphanumériques</translation>
+        <translation>Alphanumériques</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished">Personnalisé</translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation>Git :</translation>
+        <translation>Git :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>System:</source>
-        <translation>Système :</translation>
+        <translation>Système :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="531"/>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Select password storage program:</source>
-        <translation>Sélectionner le programme de stockage des mots de passe :</translation>
+        <translation>Sélectionner le programme de stockage des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="604"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Afficher comme champs toutes les lignes qui commencent par un mot suivi de deux points, dans les champs de mots de passe ; pas uniquement ceux qui sont listés</translation>
+        <translation>Afficher comme champs toutes les lignes qui commencent par un mot suivi de deux points, dans les champs de mots de passe ; pas uniquement ceux qui sont listés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="909"/>
@@ -354,12 +354,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="576"/>
         <source>Create password-store?</source>
-        <translation>Créer le magasin de mots de passe ?</translation>
+        <translation>Créer le magasin de mots de passe ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="577"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
+        <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="595"/>
@@ -399,14 +399,14 @@ email</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="160"/>
         <source>Check selected users!</source>
-        <translation>Cocher les utilisateurs sélectionnés !</translation>
+        <translation>Cocher les utilisateurs sélectionnés !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="161"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Aucune des clés sélectionnées ne dispose d&apos;une clé secrète.
-Vous ne pourrez pas décrypter les mots de passe nouvellement ajoutés !</translation>
+Vous ne pourrez pas décrypter les mots de passe nouvellement ajoutés !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
@@ -498,27 +498,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nom invalide</translation>
+        <translation>Nom invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">Le nom doit faire au moins 5 caractères</translation>
+        <translation>Le nom doit faire au moins 5 caractères</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished">Courrier électronique invalide</translation>
+        <translation>Courrier électronique invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">L&apos;adresse de courrier électronique que vous avez saisie n&apos;est pas valide.</translation>
+        <translation>L&apos;adresse de courrier électronique que vous avez saisie n&apos;est pas valide.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br />We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">Cette opération peut prendre quelques minutes.&lt;br />Nous devons générer beaucoup d&apos;octets aléatoires. C&apos;est une bonne idée d&apos;effectuer une autre opération pendant la génération des nombres premiers (comme taper sur le clavier ou bouger la souris ou utiliser les disques durs) ; cela augmente les chance que le générateur de nombres aléatoires récolte assez d&apos;entropie.</translation>
+        <translation>Cette opération peut prendre quelques minutes.&lt;br />Nous devons générer beaucoup d&apos;octets aléatoires. C&apos;est une bonne idée d&apos;effectuer une autre opération pendant la génération des nombres premiers (comme taper sur le clavier ou bouger la souris ou utiliser les disques durs) ; cela augmente les chance que le générateur de nombres aléatoires récolte assez d&apos;entropie.</translation>
     </message>
 </context>
 <context>
@@ -604,7 +604,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;>&lt;br />Please report any &lt;/span>&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;>&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;>issues&lt;/span>&lt;/a>&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;> you might have with this software.&lt;/span>&lt;/p>
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;a href=&quot;https://qtpass.org/&quot;>&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;>Documentation&lt;/span>&lt;/a>&lt;/p>
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;>&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;>SourceCode&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>
 &lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;>
@@ -653,7 +653,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="206"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Entrez un mot de passe pour vous connecter au WebDAV :</translation>
+        <translation>Entrez un mot de passe pour vous connecter au WebDAV :</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="222"/>
@@ -666,7 +666,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="226"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Impossible de démarrer fusedav pour se connecter au WebDAV :
+        <translation>Impossible de démarrer fusedav pour se connecter au WebDAV :
 </translation>
     </message>
     <message>
@@ -747,7 +747,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Looking for: %1</source>
-        <translation>Recherche de : %1</translation>
+        <translation>Recherche de : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="979"/>
@@ -759,32 +759,32 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="980"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Enregistrement d&apos;un nouveau mot de passe :
+        <translation>Enregistrement d&apos;un nouveau mot de passe :
 (Placé dans %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete password?</source>
-        <translation>Supprimer le mot de passe ?</translation>
+        <translation>Supprimer le mot de passe ?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Êtes-vous sûr de vouloir supprimer %1 ?</translation>
+        <translation type="vanished">Êtes-vous sûr de vouloir supprimer %1 ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Delete folder?</source>
-        <translation>Supprimer le dossier ?</translation>
+        <translation>Supprimer le dossier ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Êtes-vous certain de vouloir supprimer %1%2</translation>
+        <translation>Êtes-vous certain de vouloir supprimer %1%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1012"/>
         <source> and whole content</source>
-        <translation type="unfinished"> et tout son contenu ?</translation>
+        <translation> et tout son contenu ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1045"/>
@@ -809,7 +809,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1195"/>
         <source>Profile changed to %1</source>
-        <translation>Profil sélectionné : %1</translation>
+        <translation>Profil sélectionné : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1321"/>
@@ -825,7 +825,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1369"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nouveau dossier :
+        <translation>Nouveau dossier :
 (Placé dans %1)</translation>
     </message>
     <message>
@@ -844,7 +844,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="101"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Impossible de générer un mot de passe : aucun caractère défini dans la configuration !</translation>
+        <translation>Impossible de générer un mot de passe : aucun caractère défini dans la configuration !</translation>
     </message>
 </context>
 <context>
@@ -868,32 +868,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished">Ensemble de caractères :</translation>
+        <translation>Ensemble de caractères :</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished">Tous</translation>
+        <translation>Tous</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">Alphabétiques</translation>
+        <translation>Alphabétiques</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">Alphanumériques</translation>
+        <translation>Alphanumériques</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished">Personnalisé</translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished">Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
 </context>
 <context>
@@ -909,12 +909,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/storemodel.cpp" line="240"/>
         <source>force overwrite?</source>
-        <translation type="unfinished">forcer le remplacement ?</translation>
+        <translation>forcer le remplacement ?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="241"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">remplacer %1 par %2 ?</translation>
+        <translation>remplacer %1 par %2 ?</translation>
     </message>
 </context>
 <context>
@@ -922,27 +922,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="38"/>
         <source>&amp;Show</source>
-        <translation type="unfinished">&amp;Afficher</translation>
+        <translation>&amp;Afficher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="40"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">&amp;Cacher</translation>
+        <translation>&amp;Cacher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="43"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">&amp;Minimiser</translation>
+        <translation>&amp;Minimiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">Ma&amp;ximiser</translation>
+        <translation>Ma&amp;ximiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished">&amp;Restorer</translation>
+        <translation>&amp;Restorer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="52"/>
@@ -964,7 +964,7 @@ Note: Existing files will not be modified and retain the old permissions until y
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez quels utilisateurs devraient pouvoir décrypter les mots de passe placés dans ce dossier.
-Remarque : les fichiers existants ne seront pas modifiés et garderont leurs permissions précédentes jusqu&apos;à ce que vous les éditiez.
+Remarque : les fichiers existants ne seront pas modifiés et garderont leurs permissions précédentes jusqu&apos;à ce que vous les éditiez.
 Les entrées bleus disposent d&apos;une clé secrète, choisissez l&apos;une de celles-ci pour pouvoir décoder.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour décoder.</translation>
     </message>
@@ -990,3 +990,4 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
     </message>
 </context>
 </TS>
+
