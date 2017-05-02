@@ -16,17 +16,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation>Gestion du presse-papiers :</translation>
+        <translation>Gestion du presse-papier :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser la sélection principale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation>Supprimer après :</translation>
+        <translation>Vider automatiquement après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
@@ -36,12 +36,12 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation type="vanished">Comportement du panel de visualisation des mots de passe :</translation>
+        <translation type="vanished">Comportement du panneau de visualisation des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comportement du panneau de contenu :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -81,27 +81,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez les caractères à utiliser pour la génération de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabétiques</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumériques</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Utiliser des symbôles spéciaux</translation>
+        <translation>Utiliser des symboles spéciaux </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="552"/>
         <source>Always on top</source>
-        <translation>Toujours au dessus</translation>
+        <translation>Toujours visible</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="577"/>
@@ -280,27 +280,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="869"/>
         <source>Template</source>
-        <translation>Template</translation>
+        <translation>Modèle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="890"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
-        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation</translation>
+        <translation>Les modèles ajoutent des champs supplémentaires dans la boîte de dialogue de génération des mots de passe et dans le panneau de visualisation</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="899"/>
         <source>Use template</source>
-        <translation>Utiliser un template</translation>
+        <translation>Utiliser un modèle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="906"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Montrer toutes les lignes qui commencent par un mot suivi de deux points en tant que champs dans les champs de mots de passe, pas uniquement ceux listés</translation>
+        <translation>Afficher comme champs toutes les lignes qui commencent par un mot suivi de deux points, dans les champs de mots de passe ; pas uniquement ceux qui sont listés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="909"/>
         <source>Show all fields templated</source>
-        <translation>Afficher tous les champs avec un template</translation>
+        <translation>Afficher tous les champs avec un Modèle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -314,7 +314,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="936"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
+        <translation>version de &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="27"/>
@@ -329,17 +329,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="29"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Copier vers le presse-papier sur demande</translation>
+        <translation>Copier vers le presse-papier à la demande</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="516"/>
         <source>No profile selected</source>
-        <translation>Pas de profil sélectionné</translation>
+        <translation>Aucun profil sélectionné</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="517"/>
         <source>No profile selected to delete</source>
-        <translation>Pas de profil sélectionné à supprimer</translation>
+        <translation>Aucun profil sélectionné pour la suppression</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="555"/>
@@ -364,7 +364,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="595"/>
         <source>Password store not initialised</source>
-        <translation>Magasin de mots de passe pas encore initialisé</translation>
+        <translation>Magasin de mots de passe non initialisé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="596"/>
@@ -405,8 +405,8 @@ email</translation>
         <location filename="../src/imitatepass.cpp" line="161"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Aucune des clés sélectionnées n&apos;a de clé privée disponible.
-Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajoutés !</translation>
+        <translation>Aucune des clés sélectionnées ne dispose d&apos;une clé secrète.
+Vous ne pourrez pas décrypter les mots de passe nouvellement ajoutés !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
@@ -450,7 +450,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Il n&apos;y a pas de limite de taille sur une phrase de passe, et cette dernière doit être choisie méticuleusement. D&apos;un point de vue sécurité, la phrase de passe qui permet de déverrouiller votre clé privée GnuPG est le point faible du système (comme tous les autres systèmes à base de clés asymétriques), car c&apos;est la dernière protection qu&apos;il reste si quelqu&apos;un met la main sur votre clé privée.&lt;br/&gt;Idéalement, la phrase de passe ne devrait pas utiliser de mots provenant du dictionnaire, et devrait contenir des majuscules, minuscules, et des caractères non alpha-numériques.&lt;br/&gt;Une bonne phrase de passe est cruciale à l&apos;utilisation en toute sécurité de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La phrase de passe n&apos;a pas de limite de longueur. Celle-ci devrait être choisie soigneusement. De point de vue de la sécurité, la phrase de passe servant à déverrouiller la clé secrète représente l&apos;un des plus importants points faibles de GnuPG (tout comme pour les autres systèmes de chiffrement à clé publique), puisqu&apos;il s&apos;agit de la seule protection dont vous disposez si quelqu&apos;un s&apos;empare de votre clé privée. &lt;br/&gt;Idéalement, la phrase de passe ne devrait pas utiliser des mots du dictionnaire et devrait comporter des lettres majuscules et minuscules, ainsi que des caractères non alphabétiques.&lt;br/&gt;Une bonne phase de passe est indispensable à la sécurité de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="138"/>
@@ -493,32 +493,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="184"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Pour les options avancées, veuillez consulter le &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuel GnuPG&lt;/a&gt;</translation>
+        <translation>Pour les options avancées, veuillez consulter le &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuel de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="133"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="134"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom doit faire au moins 5 caractères</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="144"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Courrier électronique invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="145"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;adresse de courrier électronique que vous avez saisie n&apos;est pas valide.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="160"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette opération peut prendre quelques minutes.&lt;br /&gt;Nous devons générer beaucoup d&apos;octets aléatoires. C&apos;est une bonne idée d&apos;effectuer une autre opération pendant la génération des nombres premiers (comme taper sur le clavier ou bouger la souris ou utiliser les disques durs) ; cela augmente les chance que le générateur de nombres aléatoires récolte assez d&apos;entropie.</translation>
     </message>
 </context>
 <context>
@@ -587,12 +587,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <source>Config</source>
-        <translation>Config</translation>
+        <translation>Config.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Welcome to QtPass</source>
-        <translation>Bienvenue sur QtPass</translation>
+        <translation>Bienvenu dans QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
@@ -604,7 +604,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; est une interface graphique pour &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, le gestionnaire canonique unix pour mots de passe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Veuillez signaler toute &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;difficulté&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; que vous pourriez rencontrer en utilisant ce logiciel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Code source&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="278"/>
@@ -652,7 +659,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="222"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav s&apos;est terminé de manière improviste
+        <translation>fusedav a quitté inopinément
 </translation>
     </message>
     <message>
@@ -753,7 +760,7 @@ p, li { white-space: pre-wrap; }
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Enregistrement d&apos;un nouveau mot de passe :
-(Sera stocké dans %1)</translation>
+(Placé dans %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1009"/>
@@ -772,12 +779,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Êtes-vous sûr de vouloir supprimer %1 ? {1%2??}</translation>
+        <translation>Êtes-vous certain de vouloir supprimer %1%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1012"/>
         <source> and whole content</source>
-        <translation type="unfinished"></translation>
+        <translation> et tout son contenu ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1045"/>
@@ -802,7 +809,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1195"/>
         <source>Profile changed to %1</source>
-        <translation>Profil changé vers %1</translation>
+        <translation>Profil sélectionné : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1321"/>
@@ -819,7 +826,7 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nouveau dossier :
-(Sera créé dans %1)</translation>
+(Placé dans %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1418"/>
@@ -832,12 +839,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="100"/>
         <source>No characters chosen</source>
-        <translation>Pas de caractères choisis</translation>
+        <translation>Aucun caractère sélectionné</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="101"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Impossible de générer un mot de passe, il n&apos;y a pas de caractères utilisables définis dans la configuration !</translation>
+        <translation>Impossible de générer un mot de passe : aucun caractère défini dans la configuration !</translation>
     </message>
 </context>
 <context>
@@ -861,32 +868,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensemble de caractères :</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabétiques</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumériques</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur :</translation>
     </message>
 </context>
 <context>
@@ -902,12 +909,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/storemodel.cpp" line="240"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>forcer le remplacement ?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="241"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>remplacer %1 par %2 ?</translation>
     </message>
 </context>
 <context>
@@ -915,27 +922,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="38"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Afficher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="40"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cacher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="43"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="46"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma&amp;ximiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="49"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restorer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="52"/>
@@ -956,10 +963,10 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Cochez les utilisateurs que vous autorisez à déchiffrer les MDP de ce dossier.
-Remarque : Les fichiers existants ne seront pas modifiés et garderont les anciennes permissions jusqu’à ce que vous les éditiez.
-Les entrées en bleu correspondent à vos propres clés, sélectionnez au moins l&apos;une d&apos;elles pour être vous-même capable de déchiffrer les MDP.
-Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG, vous ne pourrez pas chiffrer vers celles-ci.</translation>
+        <translation>Sélectionnez quels utilisateurs devraient pouvoir décrypter les mots de passe placés dans ce dossier.
+Remarque : les fichiers existants ne seront pas modifiés et garderont leurs permissions précédentes jusqu&apos;à ce que vous les éditiez.
+Les entrées bleus disposent d&apos;une clé secrète, choisissez l&apos;une de celles-ci pour pouvoir décoder.
+Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour décoder.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>

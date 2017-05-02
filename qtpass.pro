@@ -32,7 +32,7 @@ lcov_initial.commands += $$escape_expand(\\n)
 lcov_initial.depends += sub-src
 
 lcov_prepare.target = lcov_prepare
-lcov_prepare.commands += lcov -q -c -b ./src -d ./src/$$OBJECTS_DIR/ -o $${LCOV_OUTPUT_DIR}/.lcov.run1 $$escape_expand(\\n\\t)
+lcov_prepare.commands += lcov -q -c -b ./src -d ./src/$$OBJECTS_DIR -o $${LCOV_OUTPUT_DIR}/.lcov.run1 $$escape_expand(\\n\\t)
 lcov_prepare.commands += lcov -q -e $${LCOV_OUTPUT_DIR}/.lcov.base1 -o $${LCOV_OUTPUT_DIR}/.lcov.base $$PWD/src/* $$escape_expand(\\n\\t)
 lcov_prepare.commands += lcov -q -e $${LCOV_OUTPUT_DIR}/.lcov.run1 -o $${LCOV_OUTPUT_DIR}/.lcov.run $$PWD/src/* $$escape_expand(\\n\\t)
 lcov_prepare.commands += lcov -q -a $${LCOV_OUTPUT_DIR}/.lcov.base -a $${LCOV_OUTPUT_DIR}/.lcov.run -o $${LCOV_OUTPUT_DIR}/.lcov.total $$escape_expand(\\n\\t)

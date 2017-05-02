@@ -35,6 +35,7 @@
 
 **Merged pull requests:**
 
+- Finished French translation \(and proof-read the already translated strings\). [\#311](https://github.com/IJHack/QtPass/pull/311) ([Marcool04](https://github.com/Marcool04))
 - Once again, code coverage [\#305](https://github.com/IJHack/QtPass/pull/305) ([tezeb](https://github.com/tezeb))
 - Fixed path of resources.qrc [\#297](https://github.com/IJHack/QtPass/pull/297) ([sideeffect42](https://github.com/sideeffect42))
 - Add pt\_PT translation [\#295](https://github.com/IJHack/QtPass/pull/295) ([keitalbame](https://github.com/keitalbame))

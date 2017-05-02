@@ -5,6 +5,7 @@ QtPass
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
+[![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -68,6 +69,15 @@ On most unix systems all you need is:
 ```
 qmake && make && make install
 ```
+
+Testing
+-------
+
+This is done with `make check`
+
+Codecoverage can be done with `make lcov`, `make gcov`, `make coveralls` and/or `make codecov`.
+
+Be sure to first run: `make distclean && qmake CONFIG+=coverage qtpass.pro`
 
 Security considerations
 -----------------------
