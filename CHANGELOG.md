@@ -20,6 +20,8 @@
 
 **Closed issues:**
 
+- "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
+- QtPass hangs when trying to decrypt entry [\#313](https://github.com/IJHack/QtPass/issues/313)
 - Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
 - Measure unit-test code coverage [\#298](https://github.com/IJHack/QtPass/issues/298)
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
@@ -35,6 +37,7 @@
 
 **Merged pull requests:**
 
+- Ignore cmdline arguments if -session is used. [\#321](https://github.com/IJHack/QtPass/pull/321) ([Achimh3011](https://github.com/Achimh3011))
 - Finished French translation \(and proof-read the already translated strings\). [\#311](https://github.com/IJHack/QtPass/pull/311) ([Marcool04](https://github.com/Marcool04))
 - Once again, code coverage [\#305](https://github.com/IJHack/QtPass/pull/305) ([tezeb](https://github.com/tezeb))
 - Fixed path of resources.qrc [\#297](https://github.com/IJHack/QtPass/pull/297) ([sideeffect42](https://github.com/sideeffect42))
