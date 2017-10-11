@@ -733,7 +733,7 @@ void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
   output.replace(QRegExp(">"), "&gt;");
   output.replace(QRegExp(" "), "&nbsp;");
 
-  output.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
+  output.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
                  "<a href=\"\\1\">\\1</a>");
   output.replace(QRegExp("\n"), "<br />");
   output = prefix + output + postfix;
@@ -756,7 +756,7 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
     }
 
-    output.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
+    output.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
                    "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
     if (!ui->textBrowser->toPlainText().isEmpty())
@@ -1467,7 +1467,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
-    trimmedValue.replace(QRegExp("((?:https?|ftp|ssh)://\\S+)"),
+    trimmedValue.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
                          "<a href=\"\\1\">\\1</a>");
     line->setText(trimmedValue);
     line->setReadOnly(true);
