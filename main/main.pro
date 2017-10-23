@@ -4,7 +4,7 @@ TEMPLATE   = app
 QT        += core gui
 
 CONFIG += c++11
-LIBS += -L../src/ -lqtpass
+LIBS = -L"$$OUT_PWD/../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 INCLUDEPATH += ../src
 
 macx {

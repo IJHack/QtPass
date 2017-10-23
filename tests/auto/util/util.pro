@@ -4,7 +4,7 @@ message($$QMAKE_LINK_OBJECT_MAX)
 
 SOURCES += tst_util.cpp \
 
-LIBS += -L../../../src -lqtpass
+LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 
 HEADERS   += util.h \
              qtpasssettings.h \
@@ -21,7 +21,6 @@ VPATH += ../../../src
 INCLUDEPATH += ../../../src
 
 win32 {
-    LIBS += -lbcrypt
 	RC_FILE = ../../../windows.rc     
 #	temporary workaround for QTBUG-6453
 	QMAKE_LINK_OBJECT_MAX=24
