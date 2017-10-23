@@ -1,7 +1,9 @@
 !include(qtpass.pri) { error("Couldn't find the qtpass.pri file!") }
 
-SUBDIRS += src tests
+TEMPLATE = subdirs
+SUBDIRS += src tests main
 tests.depends = src
+main.depends = tests
 
 OTHER_FILES += LICENSE \
                README.md \
@@ -55,3 +57,31 @@ CONFIG(coverage) {
     QMAKE_CLEAN += src/$$OBJECTS_DIR/*.gc?? src/*.gcov
 	QMAKE_DISTCLEAN += -r src/$$OBJECTS_DIR/lcov/
 }
+
+TRANSLATIONS    +=  localization/localization_nl_NL.ts \
+                    localization/localization_de_DE.ts \
+                    localization/localization_es_ES.ts \
+                    localization/localization_gl_ES.ts \
+                    localization/localization_hu_HU.ts \
+                    localization/localization_sv_SE.ts \
+                    localization/localization_pl_PL.ts \
+                    localization/localization_ru_RU.ts \
+                    localization/localization_he_IL.ts \
+                    localization/localization_zh_CN.ts \
+                    localization/localization_ar_MA.ts \
+                    localization/localization_fr_FR.ts \
+                    localization/localization_fr_BE.ts \
+                    localization/localization_nl_BE.ts \
+                    localization/localization_fr_LU.ts \
+                    localization/localization_de_LU.ts \
+                    localization/localization_lb_LU.ts \
+                    localization/localization_en_GB.ts \
+                    localization/localization_en_US.ts \
+                    localization/localization_el_GR.ts \
+                    localization/localization_cs_CZ.ts \
+                    localization/localization_it_IT.ts \
+                    localization/localization_pt_PT.ts
+
+system($$QMAKE_LUPDATE $$_PRO_FILE_)
+system($$QMAKE_LRELEASE $$_PRO_FILE_)
+

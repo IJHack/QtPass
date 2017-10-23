@@ -4,14 +4,7 @@ message($$QMAKE_LINK_OBJECT_MAX)
 
 SOURCES += tst_util.cpp \
 
-OBJECTS +=      ../../../src/$(OBJECTS_DIR)/util.o \
-                ../../../src/$(OBJECTS_DIR)/qtpasssettings.o \
-                ../../../src/$(OBJECTS_DIR)/settingsconstants.o \
-                ../../../src/$(OBJECTS_DIR)/pass.o \
-                ../../../src/$(OBJECTS_DIR)/realpass.o \
-                ../../../src/$(OBJECTS_DIR)/imitatepass.o \
-                ../../../src/$(OBJECTS_DIR)/executor.o \
-                ../../../src/$(OBJECTS_DIR)/simpletransaction.o
+LIBS += -L../../../src -lqtpass
 
 HEADERS   += util.h \
              qtpasssettings.h \
