@@ -891,7 +891,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="78"/>
+        <location filename="../main/main.cpp" line="78"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
