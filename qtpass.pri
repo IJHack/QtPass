@@ -64,7 +64,7 @@ isEmpty(QMAKE_LUPDATE) {
 }
 
 win32 {
-    RC_FILE = windows.rc
+    RC_FILE = $$(PWD)/windows.rc
     static {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }
