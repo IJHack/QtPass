@@ -4,4 +4,4 @@ sed 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' < 
 sed 's/\[\!.*//' < README.changelog > README.clean
 pandoc --standalone --from=markdown_github --to=rtf --output=README.rtf README.clean FAQ.md CONTRIBUTING.md CHANGELOG.md 
 doxygen
-qmake CONFIG+=release && make && macdeployqt src/QtPass.app && appdmg appdmg.json src/QtPass.dmg
+qmake CONFIG+=release && make && macdeployqt src/QtPass.app && appdmg appdmg.json main/QtPass.dmg
