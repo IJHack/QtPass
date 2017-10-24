@@ -20,6 +20,7 @@
 
 **Closed issues:**
 
+- Missing icons since split to static lib [\#325](https://github.com/IJHack/QtPass/issues/325)
 - "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
 - QtPass hangs when trying to decrypt entry [\#313](https://github.com/IJHack/QtPass/issues/313)
 - Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
