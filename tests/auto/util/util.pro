@@ -4,14 +4,7 @@ message($$QMAKE_LINK_OBJECT_MAX)
 
 SOURCES += tst_util.cpp \
 
-OBJECTS +=      ../../../src/$(OBJECTS_DIR)/util.o \
-                ../../../src/$(OBJECTS_DIR)/qtpasssettings.o \
-                ../../../src/$(OBJECTS_DIR)/settingsconstants.o \
-                ../../../src/$(OBJECTS_DIR)/pass.o \
-                ../../../src/$(OBJECTS_DIR)/realpass.o \
-                ../../../src/$(OBJECTS_DIR)/imitatepass.o \
-                ../../../src/$(OBJECTS_DIR)/executor.o \
-                ../../../src/$(OBJECTS_DIR)/simpletransaction.o
+LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 
 HEADERS   += util.h \
              qtpasssettings.h \
@@ -28,7 +21,6 @@ VPATH += ../../../src
 INCLUDEPATH += ../../../src
 
 win32 {
-    LIBS += -lbcrypt
 	RC_FILE = ../../../windows.rc     
 #	temporary workaround for QTBUG-6453
 	QMAKE_LINK_OBJECT_MAX=24
