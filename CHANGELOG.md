@@ -37,6 +37,7 @@
 
 **Merged pull requests:**
 
+- Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
 - Ignore cmdline arguments if -session is used. [\#321](https://github.com/IJHack/QtPass/pull/321) ([Achimh3011](https://github.com/Achimh3011))
