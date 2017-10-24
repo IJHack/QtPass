@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     text += argv[i];
   }
 
-  if (text.indexOf("-psn_") == 0) {
+  if ((text.indexOf("-psn_") == 0) || (text.indexOf("-session") == 0)) {
     text.clear();
   }
 
