@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
 - Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
@@ -23,7 +24,9 @@
 - Missing icons since split to static lib [\#325](https://github.com/IJHack/QtPass/issues/325)
 - "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
 - QtPass hangs when trying to decrypt entry [\#313](https://github.com/IJHack/QtPass/issues/313)
+- Unable to locate package \(Linux Mint 17.3\) [\#310](https://github.com/IJHack/QtPass/issues/310)
 - Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
+- Pass 1.7 testing [\#299](https://github.com/IJHack/QtPass/issues/299)
 - Measure unit-test code coverage [\#298](https://github.com/IJHack/QtPass/issues/298)
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
 - make install currently broken. [\#289](https://github.com/IJHack/QtPass/issues/289)
