@@ -59,8 +59,6 @@ updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 PRE_TARGETDEPS += compiler_updateqm_make_all
 
-RESOURCES   += ../resources.qrc
-
 !nosingleapp {
     SOURCES += singleapplication.cpp
     HEADERS += singleapplication.h

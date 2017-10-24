@@ -15,6 +15,8 @@ macx {
 
 SOURCES   += main.cpp
 
+RESOURCES   += ../resources.qrc
+
 isEmpty(PREFIX) {
  PREFIX = $$(PREFIX)
 }
