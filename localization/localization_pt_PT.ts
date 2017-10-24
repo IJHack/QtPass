@@ -884,32 +884,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="38"/>
+        <location filename="../src/trayicon.cpp" line="39"/>
         <source>&amp;Show</source>
         <translation>Mostrar</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="40"/>
+        <location filename="../src/trayicon.cpp" line="41"/>
         <source>&amp;Hide</source>
         <translation>Ocultar</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="43"/>
+        <location filename="../src/trayicon.cpp" line="44"/>
         <source>Mi&amp;nimize</source>
         <translation>Minimizar</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="46"/>
+        <location filename="../src/trayicon.cpp" line="47"/>
         <source>Ma&amp;ximize</source>
         <translation>Maximizar</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="49"/>
+        <location filename="../src/trayicon.cpp" line="50"/>
         <source>&amp;Restore</source>
         <translation>Restaurar</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="52"/>
+        <location filename="../src/trayicon.cpp" line="53"/>
         <source>&amp;Quit</source>
         <translation>Sair</translation>
     </message>

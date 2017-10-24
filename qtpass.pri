@@ -64,7 +64,7 @@ isEmpty(QMAKE_LUPDATE) {
 }
 
 win32 {
-    RC_FILE = ../windows.rc
+    RC_FILE = windows.rc
     static {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }
@@ -73,7 +73,7 @@ win32 {
     LIBS    += -lmpr -lbcrypt
 } else:macx {
     ICON = ../artwork/icon.icns
-    QMAKE_INFO_PLIST = ../qtpass.plist
+    QMAKE_INFO_PLIST = $$(PWD)/qtpass.plist
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
