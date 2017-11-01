@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "QtPass"
-#define MyAppVersion "1.2.0-pre"
+#define MyAppVersion "1.2.0"
 #define MyAppPublisher "IJhack"
 #define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
