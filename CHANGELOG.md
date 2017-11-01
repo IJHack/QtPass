@@ -18,6 +18,7 @@
 
 - Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
+- SingleApplication implementation buggy [\#26](https://github.com/IJHack/QtPass/issues/26)
 
 **Closed issues:**
 
@@ -26,12 +27,15 @@
 - QtPass hangs when trying to decrypt entry [\#313](https://github.com/IJHack/QtPass/issues/313)
 - Unable to locate package \(Linux Mint 17.3\) [\#310](https://github.com/IJHack/QtPass/issues/310)
 - Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
+- Add to Linux brew [\#301](https://github.com/IJHack/QtPass/issues/301)
 - Pass 1.7 testing [\#299](https://github.com/IJHack/QtPass/issues/299)
 - Measure unit-test code coverage [\#298](https://github.com/IJHack/QtPass/issues/298)
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
 - make install currently broken. [\#289](https://github.com/IJHack/QtPass/issues/289)
+- Unable to locate package \(Raspbian\)  [\#287](https://github.com/IJHack/QtPass/issues/287)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
 - pass is apparently switching out pwgen [\#264](https://github.com/IJHack/QtPass/issues/264)
+- Bugs since refactoring [\#262](https://github.com/IJHack/QtPass/issues/262)
 - pass working fine but qtprocess failure with qtpass [\#260](https://github.com/IJHack/QtPass/issues/260)
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)

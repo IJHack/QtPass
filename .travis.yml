@@ -11,7 +11,7 @@ env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
 addons:
   coverity_scan:
@@ -30,7 +30,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt58base qt58tools qt58svg; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt59base qt59tools qt59svg; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo apt-get -qq install g++-6 gcc-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90; fi
@@ -38,7 +38,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt58/bin/qt58-env.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt59/bin/qt59-env.sh; fi
 - qmake -v
 script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
