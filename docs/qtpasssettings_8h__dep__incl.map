@@ -1,20 +1,20 @@
 <map id="src/qtpasssettings.h" name="src/qtpasssettings.h">
-<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="389,79,509,104"/>
-<area shape="rect" id="node5" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="949,385,1088,411"/>
-<area shape="rect" id="node8" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="614,385,754,411"/>
+<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="439,79,559,104"/>
+<area shape="rect" id="node6" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="960,385,1099,411"/>
+<area shape="rect" id="node9" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="624,385,765,411"/>
 <area shape="rect" id="node12" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="5,232,102,257"/>
-<area shape="rect" id="node13" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="318,232,403,257"/>
-<area shape="rect" id="node16" href="$imitatepass_8cpp.html" title="src/imitatepass.cpp" alt="" coords="951,79,1086,104"/>
-<area shape="rect" id="node17" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="1110,79,1271,104"/>
-<area shape="rect" id="node18" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="1295,79,1449,104"/>
-<area shape="rect" id="node19" href="$realpass_8cpp.html" title="src/realpass.cpp" alt="" coords="1473,79,1591,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="618,152,745,177"/>
-<area shape="rect" id="node11" href="$util_8h.html" title="src/util.h" alt="" coords="250,152,321,177"/>
-<area shape="rect" id="node15" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="382,152,516,177"/>
-<area shape="rect" id="node4" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="851,232,976,257"/>
-<area shape="rect" id="node9" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="598,232,776,257"/>
-<area shape="rect" id="node10" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="477,232,574,257"/>
-<area shape="rect" id="node6" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="792,312,925,337"/>
-<area shape="rect" id="node7" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="779,385,925,411"/>
-<area shape="rect" id="node14" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="125,225,243,264"/>
+<area shape="rect" id="node13" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="126,232,211,257"/>
+<area shape="rect" id="node16" href="$imitatepass_8cpp.html" title="src/imitatepass.cpp" alt="" coords="1074,79,1209,104"/>
+<area shape="rect" id="node17" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="1233,79,1394,104"/>
+<area shape="rect" id="node18" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="1418,79,1571,104"/>
+<area shape="rect" id="node19" href="$realpass_8cpp.html" title="src/realpass.cpp" alt="" coords="1596,79,1714,104"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="617,152,743,177"/>
+<area shape="rect" id="node11" href="$util_8h.html" title="src/util.h" alt="" coords="287,152,358,177"/>
+<area shape="rect" id="node15" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="432,152,566,177"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="679,232,787,257"/>
+<area shape="rect" id="node5" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="811,232,936,257"/>
+<area shape="rect" id="node10" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="478,232,656,257"/>
+<area shape="rect" id="node7" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="803,312,936,337"/>
+<area shape="rect" id="node8" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="789,385,936,411"/>
+<area shape="rect" id="node14" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="285,225,403,264"/>
 </map>

@@ -69,6 +69,7 @@ $(function() {
 <p><a href="https://github.com/IJHack/QtPass/compare/v1.1.6...HEAD">Full Changelog</a></p>
 <p><b>Implemented enhancements:</b></p>
 <ul>
+<li>Icon tray from system icon theme <a href="https://github.com/IJHack/QtPass/issues/318">#318</a></li>
 <li>Copy button for each custom field <a href="https://github.com/IJHack/QtPass/issues/291">#291</a></li>
 <li>Feature Request: Use primary selection instead of clipboard <a href="https://github.com/IJHack/QtPass/issues/280">#280</a></li>
 <li>Add primary selection as clipboard option <a href="https://github.com/IJHack/QtPass/pull/281">#281</a> (<a href="https://github.com/annejan">annejan</a>)</li>
@@ -80,15 +81,24 @@ $(function() {
 <ul>
 <li>Do not hide passwords and no generator <a href="https://github.com/IJHack/QtPass/issues/267">#267</a></li>
 <li>Weird behavior when turning on git support (auto push/pull) with non-clean git dir <a href="https://github.com/IJHack/QtPass/issues/128">#128</a></li>
+<li><a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration. ">SingleApplication</a> implementation buggy <a href="https://github.com/IJHack/QtPass/issues/26">#26</a></li>
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
+<li>Missing icons since split to static lib <a href="https://github.com/IJHack/QtPass/issues/325">#325</a></li>
+<li>"-session XXX" upon session restore taken as search string <a href="https://github.com/IJHack/QtPass/issues/320">#320</a></li>
+<li>QtPass hangs when trying to decrypt entry <a href="https://github.com/IJHack/QtPass/issues/313">#313</a></li>
+<li>Unable to locate package (Linux Mint 17.3) <a href="https://github.com/IJHack/QtPass/issues/310">#310</a></li>
 <li>Git commit signing <a href="https://github.com/IJHack/QtPass/issues/303">#303</a></li>
+<li>Add to Linux brew <a href="https://github.com/IJHack/QtPass/issues/301">#301</a></li>
+<li><a class="el" href="class_pass.html" title="Acts as an abstraction for pass or pass imitation. ">Pass</a> 1.7 testing <a href="https://github.com/IJHack/QtPass/issues/299">#299</a></li>
 <li>Measure unit-test code coverage <a href="https://github.com/IJHack/QtPass/issues/298">#298</a></li>
 <li>Config dialog: Propose "Password behaviour" label change <a href="https://github.com/IJHack/QtPass/issues/294">#294</a></li>
 <li>make install currently broken. <a href="https://github.com/IJHack/QtPass/issues/289">#289</a></li>
+<li>Unable to locate package (Raspbian) <a href="https://github.com/IJHack/QtPass/issues/287">#287</a></li>
 <li>There is no <code>git cp</code> <a href="https://github.com/IJHack/QtPass/issues/272">#272</a></li>
 <li>pass is apparently switching out pwgen <a href="https://github.com/IJHack/QtPass/issues/264">#264</a></li>
+<li>Bugs since refactoring <a href="https://github.com/IJHack/QtPass/issues/262">#262</a></li>
 <li>pass working fine but qtprocess failure with qtpass <a href="https://github.com/IJHack/QtPass/issues/260">#260</a></li>
 <li>Feature: CTRL/CMD + Q closes the mainwindow <a href="https://github.com/IJHack/QtPass/issues/258">#258</a></li>
 <li>Refactoring: removal of lastDecrypt <a href="https://github.com/IJHack/QtPass/issues/256">#256</a></li>
@@ -98,6 +108,10 @@ $(function() {
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
+<li>Extract static library and separate main function <a href="https://github.com/IJHack/QtPass/pull/324">#324</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
+<li>galego actualizado <a href="https://github.com/IJHack/QtPass/pull/323">#323</a> (<a href="https://github.com/xmgz">xmgz</a>)</li>
+<li>Add sftp, ftps, webdav and webdavs as supported links <a href="https://github.com/IJHack/QtPass/pull/322">#322</a> (<a href="https://github.com/cgonzalez">cgonzalez</a>)</li>
+<li>Ignore cmdline arguments if -session is used. <a href="https://github.com/IJHack/QtPass/pull/321">#321</a> (<a href="https://github.com/Achimh3011">Achimh3011</a>)</li>
 <li>Finished French translation (and proof-read the already translated strings). <a href="https://github.com/IJHack/QtPass/pull/311">#311</a> (<a href="https://github.com/Marcool04">Marcool04</a>)</li>
 <li>Once again, code coverage <a href="https://github.com/IJHack/QtPass/pull/305">#305</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
 <li>Fixed path of resources.qrc <a href="https://github.com/IJHack/QtPass/pull/297">#297</a> (<a href="https://github.com/sideeffect42">sideeffect42</a>)</li>
