@@ -42,6 +42,7 @@
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
 - Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
 - Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
+- Clean up ConfigDialog [\#235](https://github.com/IJHack/QtPass/issues/235)
 
 **Merged pull requests:**
 
