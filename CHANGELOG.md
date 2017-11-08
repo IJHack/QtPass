@@ -22,8 +22,10 @@
 
 **Closed issues:**
 
+- Tab order is wrong in password dialog [\#331](https://github.com/IJHack/QtPass/issues/331)
 - Missing icons since split to static lib [\#325](https://github.com/IJHack/QtPass/issues/325)
 - "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
+- Instructions to install it on OSX maybe outdated [\#315](https://github.com/IJHack/QtPass/issues/315)
 - QtPass hangs when trying to decrypt entry [\#313](https://github.com/IJHack/QtPass/issues/313)
 - Unable to locate package \(Linux Mint 17.3\) [\#310](https://github.com/IJHack/QtPass/issues/310)
 - Git commit signing [\#303](https://github.com/IJHack/QtPass/issues/303)
