@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "QtPass"
-#define MyAppVersion "1.2.0-pre"
+#define MyAppVersion "1.2.0"
 #define MyAppPublisher "IJhack"
 #define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
@@ -73,7 +73,7 @@ Source: "{#QtDir}\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms\"; Flags: ignoreversion
 Source: "{#QtDir}\plugins\iconengines\qsvgicon.dll"; DestDir: "{app}\iconengines\"; Flags: ignoreversion
 
-Source: "src\release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "main\release\qtpass.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "src\release\README.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "src\release\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 

@@ -1,4 +1,4 @@
-VERSION    = 1.2.0-pre
+VERSION    = 1.2.0
 
 CONFIG(coverage) {
 	QMAKE_LFLAGS += --coverage
@@ -73,7 +73,7 @@ win32 {
     LIBS    += -lmpr -lbcrypt
 } else:macx {
     ICON = ../artwork/icon.icns
-    QMAKE_INFO_PLIST = ../qtpass.plist
+    QMAKE_INFO_PLIST = $$(PWD)/qtpass.plist
 } else:bsd {
     LIBS += -L/usr/local/lib
 }

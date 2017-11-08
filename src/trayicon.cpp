@@ -11,7 +11,8 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
   createActions();
   createTrayIcon();
 
-  sysTrayIcon->setIcon(QIcon(":/artwork/icon.png"));
+  sysTrayIcon->setIcon(
+      QIcon::fromTheme("qtpass-tray", QIcon(":/artwork/icon.png")));
 
   sysTrayIcon->show();
 
