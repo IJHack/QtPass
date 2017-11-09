@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
-
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...HEAD)
+## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
 
 **Implemented enhancements:**
 
