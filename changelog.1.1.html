@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>QtPass 1.1 Changelog</title>
+    <meta name="description" content="Latest changes to QtPass">
+    <meta name="keywords" content="qtpass, pass, gpg, git, password, store, manager, security">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="QtPass GUI for pass, the standard UNIX password manager">
+    <meta property="og:site_name" content="QtPass">
+    <meta property="og:url" content="https://qtpass.org/">
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
+    <meta property="og:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
+    <meta property="og:type" content="product">
+    <meta name="twitter:card" content="product">
+    <meta name="twitter:site" content="@annejanbrouwer">
+    <meta name="twitter:title" content="QtPass GUI for pass, the standard UNIX password manager">
+    <meta name="twitter:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
+    <meta name="twitter:url" content="https://qtpass.org/">
+    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png">
+    <meta name="twitter:image:src" content="https://qtpass.org/images/icon.svg">
+    <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "QtPass",
+  "url" : "https://qtpass.org/",
+  "author" : {
+    "@type" : "Organization",
+    "name" : "IJHack"
+  },
+  "downloadUrl" : "https://github.com/IJHack/qtpass/releases",
+  "operatingSystem" : "Linux, BSD, OS X and Windows",
+  "requirements" : "pass or git and gpg2",
+  "screenshot" : "https://qtpass.org/images/qtpass.png",
+  "softwareVersion" : "1.1",
+  "applicationCategory" : "Security, Utility",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "EUR"
+  },
+  "aggregateRating" : {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "8"
+  }
+}
+</script>
+</head>
+<body>
+<div class="background"></div>
+<div class="wrapper">
+    <header>
+        <h1>QtPass <small>1.1</small></h1>
+        <p><a title="QtPass GUI for pass, the standard UNIX password manager" href="https://qtpass.org/">QtPass</a> is a multi-platform GUI for <a title="pass, the standard unix password manager" href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
+
+        <p class="view">
+            <a title="QtPass project" href="https://github.com/IJHack/qtpass">View the Project on GitHub <small>IJHack/qtpass</small></a>
+        </p>
+
+        <ul>
+            <li><a title="QtPass releases" href="https://github.com/IJHack/qtpass/releases">Download <strong>Releases</strong></a></li>
+            <li><a title="QtPass Windows" href="/downloads#Windows">Installer .exe <strong>Windows</strong></a></li>
+            <li><a title="QtPass macOS" href="/downloads#macOS">Get a .dmg <strong>macOS</strong></a></li>
+        </ul>
+
+        <div class="screenshots">
+            <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+            <img id="config" class="hidden" src="images/config.png" alt="QtPass Configuration" />
+        </div>
+
+    </header>
+    <section>
+
+	<h2><a id=v1.1.6" class="anchor" href="#v1.1.6" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.6 Cherry picking bugfixes and enhancements</h2>
+
+	<p>This is a release to fix some bugs and add some convenience in 1.1 before the upcoming 1.2 release . .</p>
+
+	<p>There is a problem with the build-in fallback password generator, it's use is discouraged.<br>
+	Current fixed version is less bad but still not cryptographically safe and sound!<br>
+	For more information please take a look at  <a href="https://github.com/IJHack/QtPass/issues/238">#238 PRNG seeding is done totally wrong</a></p>
+
+	<ul>
+		<li>Short fullname would hang QtPass keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a>
+		</li>
+		<li>keygendialog email and name validition (issue 202) <a href="https://github.com/IJHack/QtPass/pull/203">#203</a> (<a href="https://github.com/dakk">dakk</a>)</li>
+		<li>Better seeder for qrand() as noted in <a href="https://github.com/IJHack/QtPass/issues/238">#238</a>
+		</li>
+		<li>Lookup validity field to check if keys are valid <a href="https://github.com/IJHack/QtPass/pull/201">#201</a> (<a href="https://github.com/thotypous">thotypous</a>)</li>
+		<li>View box no longer trimming whitespace <a href="https://github.com/IJHack/QtPass/issues/210">#210</a>
+		</li>
+		<li>QtPass starts by searching for -psn_0_12345 on macOS <a href="https://github.com/IJHack/QtPass/issues/213">#213</a>
+		</li>
+		<li>Allow ssh links <a href="https://github.com/IJHack/QtPass/pull/211">#211</a> (<a href="https://github.com/cgonzalez">cgonzalez</a>)</li>
+		<li>Increase maximum password length to 255 <a href="https://github.com/IJHack/QtPass/pull/209">#209</a> (<a href="https://github.com/vladimiroff">vladimiroff</a>)</li>
+		<li>Updated German Translation <a href="https://github.com/IJHack/QtPass/pull/206">#206</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
+		<li>Better seeder for qrand() as noted in <a href="https://github.com/IJHack/QtPass/issues/238">#238</a>
+		</li>
+		<li>Italian translation <a href="https://github.com/IJHack/QtPass/pull/204">#204</a> (<a href="https://github.com/dakk">dakk</a>)</li>
+		<li>Translated for Simplified Chinese.  <a href="https://github.com/IJHack/QtPass/issues/208">#208</a>
+		</li>
+	</ul>
+
+	<h2><a id=v1.1.5" class="anchor" href="#v1.1.5" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.5 The more the merrier</h2>
+
+	<ul>
+		<li>Allow ssh:// links <a href="https://github.com/IJHack/QtPass/pull/211" class="issue-link js-issue-link" data-id="183957960" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Allow ssh links">#211</a> by <a href="https://github.com/cgonzalez" class="user-mention">@cgonzalez</a>
+		</li>
+		<li>View box no longer trims whitespace <a href="https://github.com/IJHack/QtPass/issues/210" class="issue-link js-issue-link" data-id="183713082" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="view box is trimming whitespace">#210</a>
+		</li>
+		<li>Increase maximum password length to 255 <a href="https://github.com/IJHack/QtPass/pull/209" class="issue-link js-issue-link" data-id="183403205" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Increase maximum password length to 255">#209</a> by <a href="https://github.com/vladimiroff" class="user-mention">@vladimiroff</a>
+		</li>
+		<li>Full translation to Simplified Chinese <a href="https://github.com/IJHack/QtPass/issues/208" class="issue-link js-issue-link" data-id="182422022" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="I translated for Simplified Chinese. ">#208</a> by <a href="https://github.com/maomihz" class="user-mention">@maomihz</a>
+		</li>
+		<li>Password generation options and templates <a href="https://github.com/IJHack/QtPass/pull/207" class="issue-link js-issue-link" data-id="182370194" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Password templates">#207</a> <a href="https://github.com/IJHack/QtPass/issues/98" class="issue-link js-issue-link" data-id="106055197" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="More options for password generation">#98</a> by <a href="https://github.com/jounathaen" class="user-mention">@jounathaen</a> </li>
+		<li>Updated German Translation <a href="https://github.com/IJHack/QtPass/pull/206" class="issue-link js-issue-link" data-id="182303298" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Updated German Translation">#206</a>
+		</li>
+		<li>Italian translation <a href="https://github.com/IJHack/QtPass/pull/204" class="issue-link js-issue-link" data-id="180640023" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Italian translation">#204</a>
+		</li>
+		<li>KeygenDialog email and name validation <a href="https://github.com/IJHack/QtPass/issues/202" class="issue-link js-issue-link" data-id="180269911" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Short fullname hangs QtPass keypair generation process for infinite time">#202</a> <a href="https://github.com/IJHack/QtPass/pull/203" class="issue-link js-issue-link" data-id="180625663" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="keygendialog email and name validition (issue 202)">#203</a> by <a href="https://github.com/dakk" class="user-mention">@dakk</a>
+		</li>
+		<li>Lookup validity field to check if keys are valid <a href="https://github.com/IJHack/QtPass/pull/201" class="issue-link js-issue-link" data-id="179569268" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Lookup validity field to check if keys are valid">#201</a> by <a href="https://github.com/thotypous" class="user-mention">@thotypous</a> </li>
+		<li>Fixed a spelling error <a href="https://github.com/IJHack/QtPass/pull/200" class="issue-link js-issue-link" data-id="179544029" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Fix spelling error">#200</a> by <a href="https://github.com/innir" class="user-mention">@innir</a>
+		</li>
+		<li>Windows build with Qt 5.7 (almost half the size now)</li>
+	</ul>
+
+	<h2><a id=v1.1.4" class="anchor" href="#v1.1.4" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.4 It's been a while</h2>
+
+	<ul>
+	    <li>PREFIX is now really a prefix <a href="https://github.com/IJHack/qtpass/issues/185" class="issue-link js-issue-link" data-id="161478938" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="PREFIX is now really a prefix">#185</a> </li>
+	    <li>Encoding issues <a href="https://github.com/IJHack/qtpass/issues/192" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/192" data-id="168505679" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#192</a>, <a href="https://github.com/IJHack/qtpass/issues/131" class="issue-link js-issue-link" data-id="124544398" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="Bug: Special characters in Template">#131</a>, <a href="https://github.com/IJHack/qtpass/issues/101" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/101" data-id="107906809" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#101</a> and <a href="https://github.com/IJHack/qtpass/issues/91" class="issue-link js-issue-link" data-id="103536677" data-error-text="Failed to load issue title" data-permission-text="Issue title is private" title="saved password '§' turns to 'Â§' when copied to clipboard or shown when editing">#91</a> fixed in <a href="https://github.com/IJHack/qtpass/pull/198" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/198" data-id="179031352" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#198</a> and <a href="https://github.com/IJHack/qtpass/pull/199" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/199" data-id="179318442" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#199</a> by <a href="https://github.com/asalamon74" class="user-mention">@asalamon74</a>
+	    </li>
+	    <li>Re-assign permissions when adding users <a href="https://github.com/IJHack/qtpass/issues/161" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/161" data-id="132920489" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#161</a>
+	    </li>
+	    <li>French translations by <a href="https://github.com/the-glu" class="user-mention">@the-glu</a> via <a href="https://www.transifex.com/ijhack/qtpass/">https://www.transifex.com/ijhack/qtpass/</a>
+	    </li>
+	    <li>Completed Dutch and German translations</li>
+	</ul>
+	
+        <h2><a id=v1.1.3" class="anchor" href="#v1.1.3" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.3 Some more bug-squashing</h2>
+
+        <ul>
+            <li>Clipboard now cleared when quitting or killing application <a href="https://github.com/IJHack/qtpass/issues/171" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/171" data-id="142401254" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#171</a> </li>
+            <li>Wait till processes done on edit <a href="https://github.com/IJHack/qtpass/issues/177" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/177" data-id="154844598" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#177</a>
+            </li>
+            <li>Hide content now works when using templates <a href="https://github.com/IJHack/qtpass/issues/160" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/160" data-id="131517639" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#160</a> </li>
+            <li>Added warning started work on <a href="https://github.com/IJHack/qtpass/issues/161" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/161" data-id="132920489" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#161</a> <a href="https://github.com/IJHack/qtpass/issues/150" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/150" data-id="128817253" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#150</a>
+            </li>
+        </ul>
+
+        <p>Accidentally forgot to push the version updates before tagging last time, so a quick update was in order I think.</p>
+
+        <h2><a id=v1.1.2" class="anchor" href="#v1.1.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.2 Squashing bugs</h2>
+
+        <ul>
+            <li>Fix build issues with MSVC2015 on Windows <a href="https://github.com/IJHack/qtpass/pull/175" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/175" data-id="152769559" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#175</a>
+            </li>
+            <li>Deletion of empty folders when using git fixed <a href="https://github.com/IJHack/qtpass/issues/181" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/181" data-id="157499224" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#181</a> </li>
+            <li>Trimming of values in templates <a href="https://github.com/IJHack/qtpass/issues/182" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/182" data-id="157527859" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#182</a>
+            </li>
+            <li>Updated translations, completed Dutch and German</li>
+        </ul>
+
+        <p>Signed <a href="https://github.com/blog/2144-gpg-signature-verification">https://github.com/blog/2144-gpg-signature-verification</a> as explained <a href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work</a></p>
+
+        <h2><a id=v1.1.1" class="anchor" href="#v1.1.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.1 Spring cleanup</h2>
+
+        <ul>
+            <li>Same name for file and folder <a href="https://github.com/IJHack/qtpass/issues/159" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/159" data-id="131393765" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#159</a> (fixed up-stream)</li>
+            <li>Use --secure for pwgen and more configurable options <a href="https://github.com/IJHack/qtpass/pull/168" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/168" data-id="138837641" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#168</a>
+            </li>
+            <li>Some UI tweaks <a href="https://github.com/IJHack/qtpass/pull/158" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/158" data-id="130845645" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#158</a>
+            </li>
+            <li>Some translation updates <a href="https://github.com/IJHack/qtpass/pull/162" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/162" data-id="133641420" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#162</a> </li>
+            <li>Remove Debian packaging <a href="https://github.com/IJHack/qtpass/pull/166" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/166" data-id="136352083" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#166</a>
+            </li>
+            <li>Clear text input: use system icon instead of x <a href="https://github.com/IJHack/qtpass/issues/84" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/84" data-id="98855824" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#84</a>
+            </li>
+            <li>Bind a key to the clear action <a href="https://github.com/IJHack/qtpass/issues/142" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/142" data-id="127474947" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#142</a>
+            </li>
+            <li>Flat icon <a href="https://github.com/IJHack/qtpass/commit/bd742d6f1c122d91cfa1083a6577227b8e34ecfe" class="commit-link"><tt>bd742d6</tt></a> for more modern look</li>
+            <li>Minor cleanup and FAQ changes</li>
+        </ul>
+
+        <h2><a id=v1.1.0" class="anchor" href="#v1.1.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.1.0 Fresh, fixed and clean</h2>
+
+        <p>Might require <code>libqt5svg</code> or similar as dependency for fallback icons.</p>
+
+        <ul>
+            <li>Fixed <code>qrand</code> initialisation (used to generate predictable passwords) <a href="https://github.com/IJHack/qtpass/pull/129" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/129" data-id="124467368" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#129</a> </li>
+            <li>System Icons on Buttons <a href="https://github.com/IJHack/qtpass/pull/124" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/124" data-id="122779235" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#124</a>
+            </li>
+            <li>Doubleclick on treeView <a href="https://github.com/IJHack/qtpass/pull/124" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/124" data-id="122779235" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#124</a>
+            </li>
+            <li>Updated config layout <a href="https://github.com/IJHack/qtpass/pull/124" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/124" data-id="122779235" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#124</a> </li>
+            <li>Good (fallback) icons <a href="https://github.com/IJHack/qtpass/issues/143" class="issue-link js-issue-link" data-url="https://github.com/IJHack/qtpass/issues/143" data-id="127763912" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#143</a>
+            </li>
+            <li>Translation fixes and additions</li>
+        </ul>
+
+        <h2><a id=v1.0" class="anchor" href="#v1.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other releases</h2>
+
+        <ul>
+            <li><a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html">Current Change Log</a></li>
+            <li><a title="Changes in 1.0" href="/changelog.old">Changelog of 1.0 releases</a></li>
+            <li><a title="Changes in beta"  href="/changelog.beta">Changelog of beta releases</a></li>
+        </ul>
+
+        <p>
+            <br />
+            <a title="Install on Linux or FreeBSD" href="/downloads#linux-bsd"><img class="compatible" src="images/linux.png" alt="Linux Compatible" /></a>
+            <a title="Install on Windows" href="/downloads#Windows"><img class="compatible" src="images/win10.png" alt="Windows 10 Compatible" /></a>
+            <a title="Install on macOS" href="/downloads#macOS"><img class="compatible" src="images/macos.png" alt="OS X Compatible" /></a>
+            <a title="Install on FreeBSD" href="/downloads#FreeBSD"><img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible" /></a>
+        </p>
+    </section>
+    <footer>
+        <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
+        <p>Doxygen autogenerated <a title="Latest documentation" href="/docs/">documentation</a></p>
+        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <a title="Travis CI" href="https://travis-ci.org/IJHack/QtPass"><img src="https://api.travis-ci.org/IJHack/QtPass.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/IJHack/QtPass.svg?branch=master"></a>
+        <a title="AppVeyor CI" href="https://ci.appveyor.com/project/annejan/qtpass"><img src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true" alt="AppVeyor Build Status"/></a>
+        <a title="Coverity static analysis" href="https://scan.coverity.com/projects/ijhack-qtpass"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/5266/badge.svg"/></a>
+    </footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://qtpass.org"
+}
+</script>
+<script src="javascripts/scale.fix.js"></script>
+<script src="javascripts/main.js"></script>
+</body>
+</html>
