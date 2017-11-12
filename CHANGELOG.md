@@ -1,5 +1,15 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...HEAD)
+
+**Closed issues:**
+
+- signed release files [\#332](https://github.com/IJHack/QtPass/issues/332)
+- 2017 [\#330](https://github.com/IJHack/QtPass/issues/330)
+- When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard [\#232](https://github.com/IJHack/QtPass/issues/232)
+
 ## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
 
