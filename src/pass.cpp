@@ -169,8 +169,6 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
  */
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
-  //  TODO(bezet): remove !
-  dbg() << id << exitCode << out << err;
 
   PROCESS pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
