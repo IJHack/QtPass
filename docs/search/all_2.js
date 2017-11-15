@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../class_store_model.html#a4323f844cb78797146381847a80eb1d7',1,'StoreModel']]],
+  ['data',['data',['../class_store_model.html#a4323f844cb78797146381847a80eb1d7',1,'StoreModel::data()'],['../namespaceavatars.html#a0a81bd4c76ecd528e089244593738f3a',1,'avatars.data()']]],
   ['datahelpers_2eh',['datahelpers.h',['../datahelpers_8h.html',1,'']]],
   ['dbg',['dbg',['../debughelper_8h.html#a1b089898deebf895757ee5e095615ec7',1,'debughelper.h']]],
   ['debughelper_2eh',['debughelper.h',['../debughelper_8h.html',1,'']]],

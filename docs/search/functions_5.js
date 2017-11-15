@@ -4,6 +4,7 @@ var searchData=
   ['generategpgkeys',['GenerateGPGKeys',['../class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f',1,'Pass']]],
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['genkey',['genKey',['../class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138',1,'ConfigDialog']]],
+  ['get_5fdata',['get_data',['../namespaceavatars.html#a15475ebb0a787160e0b4f9a315d91f08',1,'avatars']]],
   ['getautoclear',['getAutoclear',['../class_config_dialog.html#a0eceb941d1af175e430fa9a7ab1704d6',1,'ConfigDialog']]],
   ['getautoclearpanel',['getAutoclearPanel',['../class_config_dialog.html#a34c7f3f64e7db894517dc6fe7c15abea',1,'ConfigDialog']]],
   ['getautoclearpanelseconds',['getAutoclearPanelSeconds',['../class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01',1,'QtPassSettings']]],
