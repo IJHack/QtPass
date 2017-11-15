@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Version 1.2.0 leaks passwords [\#334](https://github.com/IJHack/QtPass/issues/334)
 - signed release files [\#332](https://github.com/IJHack/QtPass/issues/332)
 - 2017 [\#330](https://github.com/IJHack/QtPass/issues/330)
 - When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard [\#232](https://github.com/IJHack/QtPass/issues/232)
