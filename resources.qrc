@@ -5,6 +5,7 @@
         <file>artwork/icon.png</file>
         <file>artwork/icon.svg</file>
         <file>localization/localization_ar_MA.qm</file>
+        <file>localization/localization_ca.qm</file>
         <file>localization/localization_de_DE.qm</file>
         <file>localization/localization_es_ES.qm</file>
         <file>localization/localization_gl_ES.qm</file>

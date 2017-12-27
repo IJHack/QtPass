@@ -59,6 +59,7 @@ CONFIG(coverage) {
 }
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
+                    localization/localization_ca.ts \
                     localization/localization_de_DE.ts \
                     localization/localization_es_ES.ts \
                     localization/localization_gl_ES.ts \
