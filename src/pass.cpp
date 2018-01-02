@@ -62,7 +62,7 @@ void Pass::init() {
  * @param charset to use for generation
  * @return the password
  */
-QString Pass::Generate_b(int length, const QString &charset) {
+QString Pass::Generate_b(unsigned int length, const QString &charset) {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     // --secure goes first as it overrides --no-* otherwise
@@ -90,11 +90,7 @@ QString Pass::Generate_b(int length, const QString &charset) {
     }
   } else {
     if (charset.length() > 0) {
-      for (int i = 0; i < length; ++i) {
-        int index = Util::rand() % charset.length();
-        QChar nextChar = charset.at(index);
-        passwd.append(nextChar);
-      }
+      passwd = Util::generateRandomPassword(charset, length);
     } else {
       emit critical(
           tr("No characters chosen"),
@@ -223,8 +219,8 @@ void Pass::updateEnv() {
   } else {
     // dbg()<< "Update
     // PASSWORD_STORE_DIR with " + passStore;
-    env.replaceInStrings(
-        store.first(), "PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
+    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
+                                            QtPassSettings::getPassStore());
   }
   exec.setEnvironment(env);
 }

@@ -22,8 +22,8 @@ public:
                         const QFileSystemModel &model,
                         const StoreModel &storeModel);
   static void copyDir(const QString src, const QString dest);
-  static int rand();
-
+  static QString generateRandomPassword(const QString &charset,
+                                        unsigned int length);
 private:
   static void initialiseEnvironment();
   static QProcessEnvironment _env;

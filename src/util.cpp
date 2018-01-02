@@ -5,8 +5,8 @@
 #include <QProcessEnvironment>
 #include <QString>
 #ifdef Q_OS_WIN
-#include <windows.h>
 #include <bcrypt.h>
+#include <windows.h>
 #else
 #include <sys/time.h>
 #endif
@@ -178,14 +178,30 @@ void Util::copyDir(const QString src, const QString dest) {
   }
 }
 
-int Util::rand() {
-#ifdef Q_OS_WIN
-  quint32 ret = 0;
-  if (FAILED(BCryptGenRandom(NULL, (PUCHAR)&ret, sizeof(ret),
-                             BCRYPT_USE_SYSTEM_PREFERRED_RNG)))
-    return qrand();
-  return ret % RAND_MAX;
-#else
-  return qrand();
-#endif
+/* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. */
+
+#include <QRandomGenerator>
+#include <QString>
+
+quint32 boundedRandom(quint32 bound) {
+  if (bound < 2)
+    return 0;
+
+  quint32 randval;
+  const quint32 max_mod_bound = (1 + ~bound) % bound;
+
+  do
+    randval = QRandomGenerator::system()->generate();
+  while (randval < max_mod_bound);
+
+  return randval % bound;
+}
+
+static QString generateRandomPassword(const QString &charset,
+                                      unsigned int length) {
+  QString out;
+  for (unsigned int i = 0; i < length; ++i)
+    out.append(charset.at(static_cast<int>(
+        boundedRandom(static_cast<unsigned int>(charset.length())))));
+  return out;
 }

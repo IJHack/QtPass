@@ -43,7 +43,7 @@ public:
   virtual void Copy(const QString srcDir, const QString dest,
                     const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
-  virtual QString Generate_b(int length, const QString &charset);
+  virtual QString Generate_b(unsigned int length, const QString &charset);
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
