@@ -287,6 +287,7 @@ quint32 Pass::boundedRandom(quint32 bound) {
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+  static int fd = -1;
   if (fd == -1) {
     assert((fd = open("/dev/urandom", O_RDONLY)) >= 0);
   }
