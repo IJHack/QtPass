@@ -2,8 +2,6 @@
 #include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
-#include <QTextCodec>
-#include <map>
 
 using namespace std;
 using namespace Enums;
@@ -90,7 +88,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     }
   } else {
     if (charset.length() > 0) {
-      passwd = Util::generateRandomPassword(charset, length);
+      passwd = generateRandomPassword(charset, length);
     } else {
       emit critical(
           tr("No characters chosen"),
@@ -275,4 +273,29 @@ QString Pass::getRecipientString(QString for_file, QString separator,
   foreach (const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
+}
+
+/* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+ */
+
+quint32 Pass::boundedRandom(quint32 bound) {
+  if (bound < 2)
+    return 0;
+
+  quint32 randval;
+  const quint32 max_mod_bound = (1 + ~bound) % bound;
+
+  do
+    randval = QRandomGenerator::system()->generate();
+  while (randval < max_mod_bound);
+
+  return randval % bound;
+}
+
+QString Pass::generateRandomPassword(const QString &charset,
+                                     unsigned int length) {
+  QString out;
+  for (unsigned int i = 0; i < length; ++i)
+    out.append(charset.at(boundedRandom(charset.length())));
+  return out;
 }

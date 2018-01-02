@@ -9,7 +9,10 @@
 #include <QList>
 #include <QProcess>
 #include <QQueue>
+#include <QRandomGenerator>
 #include <QString>
+#include <QTextCodec>
+#include <map>
 
 /*!
     \class Pass
@@ -56,6 +59,8 @@ public:
 protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       bool readStdout = true, bool readStderr = true);
+  QString generateRandomPassword(const QString &charset, unsigned int length);
+  quint32 boundedRandom(quint32 bound);
 
   virtual void executeWrapper(PROCESS id, const QString &app,
                               const QStringList &args, QString input,
