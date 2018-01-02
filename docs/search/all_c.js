@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../storemodel_8cpp.html#a7091d73d65f692346662a0f62dcb245c',1,'storemodel.cpp']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../storemodel_8cpp.html#a2b860ced49c722f84e1cf7a95718f62a',1,'storemodel.cpp']]],
-  ['output_5fdir',['output_dir',['../namespaceavatars.html#a6c11ae3a2af8396caf6a462b4226ab8f',1,'avatars']]],
-  ['output_5ffile',['output_file',['../namespaceavatars.html#a158418928db9d99791791ea080c10c00',1,'avatars']]]
+  ['name',['name',['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo::name()'],['../namespaceavatars.html#abeea1cdfa58165bd2ee49f19a2d5a289',1,'avatars.name()']]],
+  ['normalizefolderpath',['normalizeFolderPath',['../class_util.html#a94597a43bf37076511033bef32f3df12',1,'Util']]]
 ];

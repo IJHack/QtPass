@@ -1,6 +1,6 @@
 <map id="QtPassSettings::isAvoidCapitals" name="QtPassSettings::isAvoidCapitals">
 <area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="265,55,406,80"/>
-<area shape="rect" id="node7" href="$class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="271,104,400,129"/>
+<area shape="rect" id="node7" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="271,104,400,129"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="472,5,651,31"/>
 <area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="454,55,670,80"/>
 <area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="718,5,899,31"/>

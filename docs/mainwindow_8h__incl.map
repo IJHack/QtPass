@@ -1,13 +1,13 @@
 <map id="src/mainwindow.h" name="src/mainwindow.h">
 <area shape="rect" id="node2" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="140,372,242,397"/>
 <area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="265,372,338,397"/>
-<area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="153,225,253,251"/>
-<area shape="rect" id="node7" href="$pass_8h.html" title="pass.h" alt="" coords="418,299,478,324"/>
-<area shape="rect" id="node17" href="$realpass_8h.html" title="realpass.h" alt="" coords="377,225,460,251"/>
-<area shape="rect" id="node18" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1187,79,1285,104"/>
-<area shape="rect" id="node35" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1972,79,2052,104"/>
-<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="144,299,280,324"/>
-<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="636,372,719,397"/>
-<area shape="rect" id="node19" href="$util_8h.html" title="util.h" alt="" coords="1111,152,1161,177"/>
-<area shape="rect" id="node26" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="849,152,967,177"/>
+<area shape="rect" id="node6" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="181,225,281,251"/>
+<area shape="rect" id="node7" href="$pass_8h.html" title="pass.h" alt="" coords="580,299,641,324"/>
+<area shape="rect" id="node21" href="$realpass_8h.html" title="realpass.h" alt="" coords="405,225,488,251"/>
+<area shape="rect" id="node22" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1215,79,1313,104"/>
+<area shape="rect" id="node39" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="2000,79,2080,104"/>
+<area shape="rect" id="node19" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="93,299,229,324"/>
+<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="1080,372,1163,397"/>
+<area shape="rect" id="node23" href="$util_8h.html" title="util.h" alt="" coords="1139,152,1189,177"/>
+<area shape="rect" id="node30" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="877,152,995,177"/>
 </map>

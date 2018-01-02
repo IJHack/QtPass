@@ -8,66 +8,66 @@
  viewBox="0.00 0.00 432.86 112.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 108)">
 <title>Pass::critical</title>
-<!-- Node39 -->
+<!-- Node46 -->
 <g id="node1" class="node">
-<title>Node39</title>
+<title>Node46</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-47.5 0,-65.5 72.123,-65.5 72.123,-47.5 0,-47.5"/>
 <text text-anchor="middle" x="36.0615" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::critical</text>
 </g>
-<!-- Node40 -->
+<!-- Node47 -->
 <g id="node2" class="node">
-<title>Node40</title>
+<title>Node47</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" target="_top" xlink:title="MainWindow::changeEvent sets focus to the search box. ">
 <polygon fill="none" stroke="#000000" points="108.123,-85.5 108.123,-103.5 245.2998,-103.5 245.2998,-85.5 108.123,-85.5"/>
 <text text-anchor="middle" x="176.7114" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::changeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node40 -->
+<!-- Node46&#45;&gt;Node47 -->
 <g id="edge1" class="edge">
-<title>Node39&#45;&gt;Node40</title>
+<title>Node46&#45;&gt;Node47</title>
 <path fill="none" stroke="#191970" d="M79.1555,-68.1429C99.7202,-73.699 123.9591,-80.2477 143.1312,-85.4275"/>
 <polygon fill="#191970" stroke="#191970" points="79.9604,-64.7349 69.3936,-65.5055 78.1346,-71.4926 79.9604,-64.7349"/>
 </g>
-<!-- Node41 -->
+<!-- Node48 -->
 <g id="node3" class="node">
-<title>Node41</title>
-<g id="a_node3"><a xlink:href="class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
+<title>Node48</title>
+<g id="a_node3"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="#000000" points="128.4087,-9.5 128.4087,-27.5 225.0142,-27.5 225.0142,-9.5 128.4087,-9.5"/>
 <text text-anchor="middle" x="176.7114" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node41 -->
+<!-- Node46&#45;&gt;Node48 -->
 <g id="edge2" class="edge">
-<title>Node39&#45;&gt;Node41</title>
+<title>Node46&#45;&gt;Node48</title>
 <path fill="none" stroke="#191970" d="M79.1555,-44.8571C99.7202,-39.301 123.9591,-32.7523 143.1312,-27.5725"/>
 <polygon fill="#191970" stroke="#191970" points="78.1346,-41.5074 69.3936,-47.4945 79.9604,-48.2651 78.1346,-41.5074"/>
 </g>
-<!-- Node42 -->
+<!-- Node49 -->
 <g id="node4" class="node">
-<title>Node42</title>
+<title>Node49</title>
 <g id="a_node4"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="317.1494,-47.5 317.1494,-65.5 389.0088,-65.5 389.0088,-47.5 317.1494,-47.5"/>
 <text text-anchor="middle" x="353.0791" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node42 -->
+<!-- Node46&#45;&gt;Node49 -->
 <g id="edge5" class="edge">
-<title>Node39&#45;&gt;Node42</title>
+<title>Node46&#45;&gt;Node49</title>
 <path fill="none" stroke="#191970" d="M82.5972,-56.5C146.3474,-56.5 259.4813,-56.5 317.1373,-56.5"/>
 <polygon fill="#191970" stroke="#191970" points="82.4275,-53.0001 72.4275,-56.5 82.4274,-60.0001 82.4275,-53.0001"/>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
+<!-- Node48&#45;&gt;Node49 -->
 <g id="edge3" class="edge">
-<title>Node41&#45;&gt;Node42</title>
+<title>Node48&#45;&gt;Node49</title>
 <path fill="none" stroke="#191970" d="M228.2918,-29.6135C256.7517,-35.7454 291.3957,-43.2098 316.9529,-48.7163"/>
 <polygon fill="#191970" stroke="#191970" points="229.021,-26.1903 218.5081,-27.5055 227.5466,-33.0333 229.021,-26.1903"/>
 </g>
-<!-- Node43 -->
+<!-- Node50 -->
 <g id="node5" class="node">
-<title>Node43</title>
+<title>Node50</title>
 <g id="a_node5"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="PasswordDialog::~PasswordDialog basic destructor. ">
 <polygon fill="none" stroke="#000000" points="281.2998,-.5 281.2998,-28.5 424.8584,-28.5 424.8584,-.5 281.2998,-.5"/>
 <text text-anchor="start" x="289.2998" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::~Password</text>
@@ -75,9 +75,9 @@
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node43 -->
+<!-- Node48&#45;&gt;Node50 -->
 <g id="edge4" class="edge">
-<title>Node41&#45;&gt;Node43</title>
+<title>Node48&#45;&gt;Node50</title>
 <path fill="none" stroke="#191970" d="M235.7321,-17.1614C250.2868,-16.8313 266.0359,-16.4741 281.128,-16.1318"/>
 <polygon fill="#191970" stroke="#191970" points="235.2896,-13.6705 225.3715,-17.3964 235.4484,-20.6687 235.2896,-13.6705"/>
 </g>

@@ -1,6 +1,6 @@
 <map id="Pass::critical" name="Pass::critical">
 <area shape="rect" id="node2" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="149,5,332,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="177,107,305,132"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="177,107,305,132"/>
 <area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="428,56,524,81"/>
 <area shape="rect" id="node5" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="380,105,572,144"/>
 </map>

@@ -32,7 +32,7 @@
 <!-- Node262 -->
 <g id="node7" class="node">
 <title>Node262</title>
-<g id="a_node7"><a xlink:href="class_pass.html#aa1d433a7da80eeb6f25c3a45ac6adfc8" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
+<g id="a_node7"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="#000000" points="199.1045,-47.5 199.1045,-65.5 295.71,-65.5 295.71,-47.5 199.1045,-47.5"/>
 <text text-anchor="middle" x="247.4072" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>

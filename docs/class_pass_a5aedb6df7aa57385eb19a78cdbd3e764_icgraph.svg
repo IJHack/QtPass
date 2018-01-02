@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 430.91 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Pass::Remove</title>
-<!-- Node252 -->
+<!-- Node266 -->
 <g id="node1" class="node">
-<title>Node252</title>
+<title>Node266</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 81.0244,-36.5 81.0244,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="40.5122" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Remove</text>
 </g>
-<!-- Node253 -->
+<!-- Node267 -->
 <g id="node2" class="node">
-<title>Node253</title>
+<title>Node267</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" target="_top" xlink:title="MainWindow::executePassGitInit git init wrapper. ">
 <polygon fill="none" stroke="#000000" points="117.0244,-37.5 117.0244,-55.5 279.1963,-55.5 279.1963,-37.5 117.0244,-37.5"/>
 <text text-anchor="middle" x="198.1104" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::executePassGitInit</text>
 </a>
 </g>
 </g>
-<!-- Node252&#45;&gt;Node253 -->
+<!-- Node266&#45;&gt;Node267 -->
 <g id="edge1" class="edge">
-<title>Node252&#45;&gt;Node253</title>
+<title>Node266&#45;&gt;Node267</title>
 <path fill="none" stroke="#191970" d="M91.12,-33.6013C101.4204,-34.8431 112.4611,-36.1741 123.3965,-37.4925"/>
 <polygon fill="#191970" stroke="#191970" points="91.4447,-30.1152 81.0976,-32.393 90.6068,-37.0648 91.4447,-30.1152"/>
 </g>
-<!-- Node255 -->
+<!-- Node269 -->
 <g id="node4" class="node">
-<title>Node255</title>
+<title>Node269</title>
 <g id="a_node4"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="162.1807,-.5 162.1807,-18.5 234.04,-18.5 234.04,-.5 162.1807,-.5"/>
 <text text-anchor="middle" x="198.1104" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node252&#45;&gt;Node255 -->
+<!-- Node266&#45;&gt;Node269 -->
 <g id="edge3" class="edge">
-<title>Node252&#45;&gt;Node255</title>
+<title>Node266&#45;&gt;Node269</title>
 <path fill="none" stroke="#191970" d="M91.0679,-21.7258C114.1468,-19.0899 140.9508,-16.0284 161.9634,-13.6285"/>
 <polygon fill="#191970" stroke="#191970" points="90.6359,-18.2523 81.0976,-22.8646 91.4303,-25.2071 90.6359,-18.2523"/>
 </g>
-<!-- Node254 -->
+<!-- Node268 -->
 <g id="node3" class="node">
-<title>Node254</title>
+<title>Node268</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="315.1963,-37.5 315.1963,-55.5 422.9053,-55.5 422.9053,-37.5 315.1963,-37.5"/>
 <text text-anchor="middle" x="369.0508" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node253&#45;&gt;Node254 -->
+<!-- Node267&#45;&gt;Node268 -->
 <g id="edge2" class="edge">
-<title>Node253&#45;&gt;Node254</title>
+<title>Node267&#45;&gt;Node268</title>
 <path fill="none" stroke="#191970" d="M289.5064,-46.5C298.1656,-46.5 306.7433,-46.5 314.8816,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="289.3253,-43.0001 279.3253,-46.5 289.3253,-50.0001 289.3253,-43.0001"/>
 </g>

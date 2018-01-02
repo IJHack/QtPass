@@ -1,11 +1,11 @@
 <map id="src/qtpasssettings.cpp" name="src/qtpasssettings.cpp">
-<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="512,79,630,104"/>
-<area shape="rect" id="node5" href="$pass_8h.html" title="pass.h" alt="" coords="857,225,917,251"/>
-<area shape="rect" id="node27" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1235,79,1371,104"/>
-<area shape="rect" id="node3" href="$enums_8h.html" title="enums.h" alt="" coords="1108,299,1181,324"/>
-<area shape="rect" id="node4" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="1061,152,1161,177"/>
-<area shape="rect" id="node18" href="$realpass_8h.html" title="realpass.h" alt="" coords="867,152,950,177"/>
-<area shape="rect" id="node16" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="1075,225,1211,251"/>
-<area shape="rect" id="node6" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="836,299,938,324"/>
-<area shape="rect" id="node9" href="$executor_8h.html" title="executor.h" alt="" coords="628,299,711,324"/>
+<area shape="rect" id="node2" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="745,79,863,104"/>
+<area shape="rect" id="node5" href="$pass_8h.html" title="pass.h" alt="" coords="735,225,795,251"/>
+<area shape="rect" id="node31" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="284,79,419,104"/>
+<area shape="rect" id="node3" href="$enums_8h.html" title="enums.h" alt="" coords="122,299,195,324"/>
+<area shape="rect" id="node4" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="107,152,207,177"/>
+<area shape="rect" id="node22" href="$realpass_8h.html" title="realpass.h" alt="" coords="281,152,364,177"/>
+<area shape="rect" id="node20" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="70,225,207,251"/>
+<area shape="rect" id="node6" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="714,299,816,324"/>
+<area shape="rect" id="node9" href="$executor_8h.html" title="executor.h" alt="" coords="941,299,1024,324"/>
 </map>
