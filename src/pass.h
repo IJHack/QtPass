@@ -17,6 +17,7 @@
 #endif
 #include <QString>
 #include <QTextCodec>
+#include <cassert>
 #include <map>
 
 /*!
