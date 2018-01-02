@@ -6,10 +6,16 @@
 
 **Closed issues:**
 
+- Question: is it possible to mass import passes? [\#339](https://github.com/IJHack/QtPass/issues/339)
 - Version 1.2.0 leaks passwords [\#334](https://github.com/IJHack/QtPass/issues/334)
 - signed release files [\#332](https://github.com/IJHack/QtPass/issues/332)
 - 2017 [\#330](https://github.com/IJHack/QtPass/issues/330)
 - When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard [\#232](https://github.com/IJHack/QtPass/issues/232)
+
+**Merged pull requests:**
+
+- Insecure password generation [\#342](https://github.com/IJHack/QtPass/pull/342) ([annejan](https://github.com/annejan))
+- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 
 ## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)

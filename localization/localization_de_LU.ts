@@ -815,12 +815,12 @@ Neues Passwort-Datei:
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="96"/>
+        <location filename="../src/pass.cpp" line="94"/>
         <source>No characters chosen</source>
         <translation>Keine Zeichen ausgewählt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="97"/>
+        <location filename="../src/pass.cpp" line="95"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
     </message>
