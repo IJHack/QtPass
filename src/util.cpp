@@ -5,8 +5,8 @@
 #include <QProcessEnvironment>
 #include <QString>
 #ifdef Q_OS_WIN
-#include <windows.h>
 #include <bcrypt.h>
+#include <windows.h>
 #else
 #include <sys/time.h>
 #endif
@@ -176,16 +176,4 @@ void Util::copyDir(const QString src, const QString dest) {
     QFile::copy(src + QDir::separator() + file,
                 dest + QDir::separator() + file);
   }
-}
-
-int Util::rand() {
-#ifdef Q_OS_WIN
-  quint32 ret = 0;
-  if (FAILED(BCryptGenRandom(NULL, (PUCHAR)&ret, sizeof(ret),
-                             BCRYPT_USE_SYSTEM_PREFERRED_RNG)))
-    return qrand();
-  return ret % RAND_MAX;
-#else
-  return qrand();
-#endif
 }

@@ -9,7 +9,16 @@
 #include <QList>
 #include <QProcess>
 #include <QQueue>
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+#include <QRandomGenerator>
+#else
+#include <fcntl.h>
+#include <unistd.h>
+#endif
 #include <QString>
+#include <QTextCodec>
+#include <cassert>
+#include <map>
 
 /*!
     \class Pass
@@ -43,7 +52,7 @@ public:
   virtual void Copy(const QString srcDir, const QString dest,
                     const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
-  virtual QString Generate_b(int length, const QString &charset);
+  virtual QString Generate_b(unsigned int length, const QString &charset);
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
@@ -56,6 +65,8 @@ public:
 protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       bool readStdout = true, bool readStderr = true);
+  QString generateRandomPassword(const QString &charset, unsigned int length);
+  quint32 boundedRandom(quint32 bound);
 
   virtual void executeWrapper(PROCESS id, const QString &app,
                               const QStringList &args, QString input,
