@@ -279,15 +279,26 @@ QString Pass::getRecipientString(QString for_file, QString separator,
  */
 
 quint32 Pass::boundedRandom(quint32 bound) {
-  if (bound < 2)
+  if (bound < 2) {
     return 0;
+  }
 
   quint32 randval;
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
-  do
+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+  if (fd == -1) {
+    assert((fd = open("/dev/urandom", O_RDONLY)) >= 0);
+  }
+#endif
+
+  do {
+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));
+#else
     randval = QRandomGenerator::system()->generate();
-  while (randval < max_mod_bound);
+#endif
+  } while (randval < max_mod_bound);
 
   return randval % bound;
 }
@@ -295,7 +306,9 @@ quint32 Pass::boundedRandom(quint32 bound) {
 QString Pass::generateRandomPassword(const QString &charset,
                                      unsigned int length) {
   QString out;
-  for (unsigned int i = 0; i < length; ++i)
-    out.append(charset.at(boundedRandom(charset.length())));
+  for (unsigned int i = 0; i < length; ++i) {
+    out.append(charset.at(static_cast<int>(
+        boundedRandom(static_cast<quint32>(charset.length())))));
+  }
   return out;
 }
