@@ -5,7 +5,6 @@
 #include <QProcessEnvironment>
 #include <QString>
 #ifdef Q_OS_WIN
-#include <bcrypt.h>
 #include <windows.h>
 #else
 #include <sys/time.h>
