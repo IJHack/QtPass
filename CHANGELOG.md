@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...HEAD)
+
+**Fixed bugs:**
+
+- Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
+
+## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
 
 **Closed issues:**
 
