@@ -1,12 +1,3 @@
 <map id="QProgressIndicator::setColor" name="QProgressIndicator::setColor">
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,256,326,295"/>
-<area shape="rect" id="node3" href="$class_q_progress_indicator.html#a9c40197f0b508b4ff76439e1a3fc9d8d" title="QProgressIndicator::sizeHint default minimum size. " alt="" coords="400,5,537,44"/>
-<area shape="rect" id="node4" href="$class_q_progress_indicator.html#adf5a0a0297ca8a78e601085d2283d183" title="QProgressIndicator::heightForWidth square ratio. " alt="" coords="400,68,537,107"/>
-<area shape="rect" id="node5" href="$class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation. " alt="" coords="400,131,537,169"/>
-<area shape="rect" id="node6" href="$class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation. " alt="" coords="400,193,537,232"/>
-<area shape="rect" id="node7" href="$class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps. " alt="" coords="399,256,538,295"/>
-<area shape="rect" id="node8" href="$class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating. " alt="" coords="374,319,563,357"/>
-<area shape="rect" id="node9" href="$class_q_progress_indicator.html#a121c7de89fecff682c45d2adee60310d" title="QProgressIndicator::timerEvent do the actual animation. " alt="" coords="400,381,537,420"/>
-<area shape="rect" id="node10" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="400,444,537,483"/>
-<area shape="rect" id="node11" href="$class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" title="Returns a Boolean value indicating whether the component is currently animated. " alt="" coords="611,444,748,483"/>
+<area shape="rect" id="node2" href="$class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,5,326,44"/>
 </map>

@@ -1,8 +1,6 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
 <area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction " alt="" coords="209,5,405,31"/>
 <area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="221,55,394,80"/>
-<area shape="rect" id="node7" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="508,104,603,129"/>
 <area shape="rect" id="node4" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="453,55,658,80"/>
 <area shape="rect" id="node5" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="706,55,856,80"/>
-<area shape="rect" id="node6" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="904,55,1107,80"/>
 </map>

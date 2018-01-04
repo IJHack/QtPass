@@ -76,7 +76,7 @@
 <div class="background"></div>
 <div class="wrapper">
     <header>
-        <h1>QtPass <small>1.2.0</small></h1>
+        <h1>QtPass <small>1.2.1</small></h1>
         <p>QtPass is a multi-platform GUI for <a title="pass, the standard unix password manager" href="http://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 
         <p class="view">
@@ -100,15 +100,20 @@
         <h2><a id="insecure-generation" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Insecure Password Generation</h2>
 
         <p>
-            The current way of generating passwords is insecure. All passwords that have been generated with QtPass in the past must be regenerated and changed.
+            All passwords generated with QtPass' built-in password generator prior to 1.2.1 are possibly predictable and enumerable by hackers.<br>
+            The generator used libc's random(), seeded with srand(msecs), where msecs is not the
+            msecs since 1970 (not that that'd be secure anyway), but rather the
+            msecs since the last second. This means there are only 1000 different
+            sequences of generated passwords.
         </p>
 
         <p>
-            Read more about this <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">issue</a> on <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">Github</a>.
+            Read more about this <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">issue</a> on <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">Github</a>.<br>
+            Please note that this is an issue with the QtPass GUI and not in pass or the greater password-store ecosystem.
         </p>
 
         <p>
-            We advice to change any password you may have generated with the QtPass default (non pwgen) generator for a more secure one generated in some other way.
+            We advice to change any password you may have generated with the QtPass' password generator.
 	</p>
 
 	<p>

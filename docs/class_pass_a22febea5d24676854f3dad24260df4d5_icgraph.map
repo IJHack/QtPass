@@ -1,7 +1,5 @@
 <map id="Pass::finishedCopy" name="Pass::finishedCopy">
-<area shape="rect" id="node2" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="189,5,372,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished. ..." alt="" coords="228,55,332,80"/>
-<area shape="rect" id="node6" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="444,105,540,131"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie..." alt="" coords="420,7,564,32"/>
-<area shape="rect" id="node5" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="448,56,536,81"/>
+<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished. ..." alt="" coords="189,31,293,56"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie..." alt="" coords="341,5,485,31"/>
+<area shape="rect" id="node4" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="369,55,457,80"/>
 </map>

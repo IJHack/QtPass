@@ -1,5 +1,0 @@
-<map id="UserInfo::isValid" name="UserInfo::isValid">
-<area shape="rect" id="node2" href="$class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c" title="UsersDialog::setUsers update all the users. " alt="" coords="171,5,325,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="373,5,542,31"/>
-<area shape="rect" id="node4" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="590,5,733,31"/>
-</map>

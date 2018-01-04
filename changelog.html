@@ -97,7 +97,22 @@
     </header>
     <section>
 
-	    <h2><a id=v1.2.0" class="anchor" href="#v1.2.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.0 Has it been a year?</h2>
+        <h2><a id=v1.2.1" class="anchor" href="#v1.2.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.1 Bug fixes</h2>
+
+        <h3>The way QtPass prior to 1.2.1 generates passwords is insecure.</h3>
+
+        <p>All passwords generated with QtPass's built-in password generator are possibly predictable and enumerable by hackers. The generator used libc's random(), seeded with srand(msecs), where msecs is not the msecs since 1970 (not that that'd be secure anyway), but rather the msecs since the last second.<br>
+            This means there are only 1000 different sequences of generated passwords.</p>
+        <p>All passwords that have been generated with QtPass prior to 1.2.1 should be regenerated and changed.</p>
+
+        <ul>
+            <li>Insecure password generation <a href="https://github.com/IJHack/QtPass/issues/338">#338</a>  <a href="https://github.com/IJHack/QtPass/pull/342">#342</a></li>
+            <li>Version 1.2.0 leaks passwords <a href="https://github.com/IJHack/QtPass/issues/334">#334</a></li>
+            <li>When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard <a href="https://github.com/IJHack/QtPass/issues/232">#232</a></li>
+            <li>Add Catalan translation <a href="https://github.com/IJHack/QtPass/pull/336">#336</a> (<a href="https://github.com/rbuj">rbuj</a>)</li>
+        </ul>
+
+        <h2><a id=v1.2.0" class="anchor" href="#v1.2.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.0 Has it been a year?</h2>
 
         <p>After almost a year of anticipation, finally a new QtPass release.<br>
             It's been a hectic year for <a href="https://github.com/annejan">me</a> in particular with the <a href="https://wiki.sha2017.org/w/Projects:Badge/Documentation#Software">SHA2017 Badge</a> related <a href="https://hackaday.com/2017/08/14/hands-on-with-the-shacamp-2017-badge/">madness</a> and other projects. I am however planning on improving QtPass a lot more frequently the coming year.<br>

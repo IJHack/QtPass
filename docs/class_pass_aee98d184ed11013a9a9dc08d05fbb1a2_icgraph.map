@@ -1,5 +1,0 @@
-<map id="Pass::Init" name="Pass::Init">
-<area shape="rect" id="node2" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="130,5,298,31"/>
-<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="166,55,262,80"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="346,5,490,31"/>
-</map>

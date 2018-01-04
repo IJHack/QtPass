@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 471.48 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::getPos</title>
-<!-- Node155 -->
+<!-- Node115 -->
 <g id="node1" class="node">
-<title>Node155</title>
+<title>Node115</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 121.6104,-18.5 121.6104,-.5 0,-.5"/>
 <text text-anchor="middle" x="60.8052" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPos</text>
 </g>
-<!-- Node156 -->
+<!-- Node116 -->
 <g id="node2" class="node">
-<title>Node156</title>
+<title>Node116</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="157.6104,-.5 157.6104,-18.5 291.4375,-18.5 291.4375,-.5 157.6104,-.5"/>
 <text text-anchor="middle" x="224.5239" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node155&#45;&gt;Node156 -->
+<!-- Node115&#45;&gt;Node116 -->
 <g id="edge1" class="edge">
-<title>Node155&#45;&gt;Node156</title>
+<title>Node115&#45;&gt;Node116</title>
 <path fill="none" stroke="#191970" d="M131.9859,-9.5C140.446,-9.5 149.0609,-9.5 157.4609,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="131.768,-6.0001 121.768,-9.5 131.768,-13.0001 131.768,-6.0001"/>
 </g>
-<!-- Node157 -->
+<!-- Node117 -->
 <g id="node3" class="node">
-<title>Node157</title>
+<title>Node117</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="327.4375,-.5 327.4375,-18.5 463.4766,-18.5 463.4766,-.5 327.4375,-.5"/>
 <text text-anchor="middle" x="395.457" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node156&#45;&gt;Node157 -->
+<!-- Node116&#45;&gt;Node117 -->
 <g id="edge2" class="edge">
-<title>Node156&#45;&gt;Node157</title>
+<title>Node116&#45;&gt;Node117</title>
 <path fill="none" stroke="#191970" d="M301.8276,-9.5C310.2823,-9.5 318.8444,-9.5 327.1791,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="301.5906,-6.0001 291.5906,-9.5 301.5906,-13.0001 301.5906,-6.0001"/>
 </g>

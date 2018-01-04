@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 281.63 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ImitatePass::GitPush</title>
-<!-- Node50 -->
+<!-- Node23 -->
 <g id="node1" class="node">
-<title>Node50</title>
+<title>Node23</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 109.3691,-18.5 109.3691,-.5 0,-.5"/>
 <text text-anchor="middle" x="54.6846" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::GitPush</text>
 </g>
-<!-- Node51 -->
+<!-- Node24 -->
 <g id="node2" class="node">
-<title>Node51</title>
+<title>Node24</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
 <polygon fill="none" stroke="#000000" points="145.3691,-.5 145.3691,-18.5 273.6299,-18.5 273.6299,-.5 145.3691,-.5"/>
 <text text-anchor="middle" x="209.4995" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
 </g>
 </g>
-<!-- Node50&#45;&gt;Node51 -->
+<!-- Node23&#45;&gt;Node24 -->
 <g id="edge1" class="edge">
-<title>Node50&#45;&gt;Node51</title>
+<title>Node23&#45;&gt;Node24</title>
 <path fill="none" stroke="#191970" d="M109.7024,-9.5C117.9481,-9.5 126.5646,-9.5 135.1314,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="135.1401,-13.0001 145.14,-9.5 135.14,-6.0001 135.1401,-13.0001"/>
 </g>

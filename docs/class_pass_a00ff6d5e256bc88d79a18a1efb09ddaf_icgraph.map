@@ -1,5 +1,3 @@
 <map id="Pass::generateRandomPassword" name="Pass::generateRandomPassword">
-<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="273,56,402,81"/>
-<area shape="rect" id="node3" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="498,5,594,31"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="PasswordDialog::~PasswordDialog basic destructor. " alt="" coords="450,55,642,93"/>
+<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="273,5,402,31"/>
 </map>

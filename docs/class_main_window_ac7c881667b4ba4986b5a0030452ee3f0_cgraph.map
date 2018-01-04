@@ -1,7 +1,0 @@
-<map id="MainWindow::changeEvent" name="MainWindow::changeEvent">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c" title="QtPassSettings::getWebDavUrl" alt="" coords="242,5,449,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ae2264e1b147abca73fc2f66826a9673b" title="QtPassSettings::getWebDav\lPassword" alt="" coords="250,55,440,93"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b" title="QtPassSettings::getWebDavUser" alt="" coords="236,117,454,143"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="245,167,445,192"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="245,216,446,241"/>
-</map>

@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 248.29 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>QProgressIndicator::color</title>
-<!-- Node17 -->
+<!-- Node5 -->
 <g id="node1" class="node">
-<title>Node17</title>
+<title>Node5</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-23.5 0,-51.5 102.1475,-51.5 102.1475,-23.5 0,-23.5"/>
 <text text-anchor="start" x="8" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
 <text text-anchor="middle" x="51.0737" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::color</text>
 </g>
-<!-- Node18 -->
+<!-- Node6 -->
 <g id="node2" class="node">
-<title>Node18</title>
+<title>Node6</title>
 <g id="a_node2"><a xlink:href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" target="_top" xlink:title="Sets the color of the components to the given color. ">
 <polygon fill="none" stroke="#000000" points="138.1475,-47.5 138.1475,-75.5 240.2949,-75.5 240.2949,-47.5 138.1475,-47.5"/>
 <text text-anchor="start" x="146.1475" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
@@ -25,15 +25,15 @@
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
+<!-- Node5&#45;&gt;Node6 -->
 <g id="edge1" class="edge">
-<title>Node17&#45;&gt;Node18</title>
-<path fill="none" stroke="#191970" d="M112.4693,-41.4533C123.4235,-43.2498 134.6385,-45.3205 144.994,-47.4707"/>
-<polygon fill="#191970" stroke="#191970" points="112.9374,-37.984 102.5147,-39.8861 111.8487,-44.8988 112.9374,-37.984"/>
+<title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="#191970" d="M112.6351,-48.1949C121.0204,-49.6517 129.5552,-51.1344 137.7372,-52.5558"/>
+<polygon fill="#191970" stroke="#191970" points="112.9663,-44.7001 102.5147,-46.4367 111.7681,-51.5968 112.9663,-44.7001"/>
 </g>
-<!-- Node19 -->
+<!-- Node7 -->
 <g id="node3" class="node">
-<title>Node19</title>
+<title>Node7</title>
 <g id="a_node3"><a xlink:href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" target="_top" xlink:title="QProgressIndicator::paintEvent draw the spinner. ">
 <polygon fill="none" stroke="#000000" points="138.1475,-.5 138.1475,-28.5 240.2949,-28.5 240.2949,-.5 138.1475,-.5"/>
 <text text-anchor="start" x="146.1475" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
@@ -41,23 +41,11 @@
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node19 -->
-<g id="edge3" class="edge">
-<title>Node17&#45;&gt;Node19</title>
-<path fill="none" stroke="#191970" d="M107.045,-21.5405C117.1793,-19.6826 127.7042,-17.9599 137.7035,-16.5248"/>
-<polygon fill="#191970" stroke="#191970" points="106.2442,-18.13 97.0748,-23.4378 107.5529,-25.0066 106.2442,-18.13"/>
-</g>
-<!-- Node18&#45;&gt;Node17 -->
+<!-- Node5&#45;&gt;Node7 -->
 <g id="edge2" class="edge">
-<title>Node18&#45;&gt;Node17</title>
-<path fill="none" stroke="#191970" d="M127.8423,-57.5494C116.8346,-55.7444 105.5629,-53.6624 95.1643,-51.5009"/>
-<polygon fill="#191970" stroke="#191970" points="127.422,-61.0263 137.8446,-59.1236 128.5104,-54.1114 127.422,-61.0263"/>
-</g>
-<!-- Node19&#45;&gt;Node17 -->
-<g id="edge4" class="edge">
-<title>Node19&#45;&gt;Node17</title>
-<path fill="none" stroke="#191970" d="M133.2165,-30.4656C123.0665,-32.3259 112.5258,-34.0505 102.5147,-35.4862"/>
-<polygon fill="#191970" stroke="#191970" points="134.0325,-33.8732 143.2021,-28.5657 132.7241,-26.9966 134.0325,-33.8732"/>
+<title>Node5&#45;&gt;Node7</title>
+<path fill="none" stroke="#191970" d="M112.6351,-27.2507C121.0204,-25.8547 129.5552,-24.4337 137.7372,-23.0715"/>
+<polygon fill="#191970" stroke="#191970" points="111.8041,-23.8408 102.5147,-28.9356 112.9538,-30.7458 111.8041,-23.8408"/>
 </g>
 </g>
 </svg>

@@ -8,9 +8,9 @@
  viewBox="0.00 0.00 184.38 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node22 -->
+<!-- Node23 -->
 <g id="node1" class="node">
-<title>Node22</title>
+<title>Node23</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-55.5 0,-73.5 52.1279,-73.5 52.1279,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="26.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
 </g>
@@ -23,54 +23,54 @@
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node0 -->
+<!-- Node23&#45;&gt;Node0 -->
 <g id="edge1" class="edge">
-<title>Node22&#45;&gt;Node0</title>
+<title>Node23&#45;&gt;Node0</title>
 <path fill="none" stroke="#191970" d="M48.1102,-79.2048C59.7508,-86.6567 74.4286,-95.5697 88.1279,-102.5 94.4773,-105.7121 101.5407,-108.7974 108.1218,-111.4787"/>
 <polygon fill="#191970" stroke="#191970" points="49.7939,-76.1248 39.5024,-73.6076 45.9779,-81.9932 49.7939,-76.1248"/>
 </g>
-<!-- Node24 -->
+<!-- Node25 -->
 <g id="node3" class="node">
-<title>Node24</title>
+<title>Node25</title>
 <g id="a_node3"><a xlink:href="class_keygen_dialog.html" target="_top" xlink:title="Handles GPG keypair generation. ">
 <polygon fill="none" stroke="#000000" points="93.123,-74.5 93.123,-92.5 171.3887,-92.5 171.3887,-74.5 93.123,-74.5"/>
 <text text-anchor="middle" x="132.2559" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node24 -->
+<!-- Node23&#45;&gt;Node25 -->
 <g id="edge2" class="edge">
-<title>Node22&#45;&gt;Node24</title>
+<title>Node23&#45;&gt;Node25</title>
 <path fill="none" stroke="#191970" d="M62.2662,-70.9774C72.1859,-72.7522 82.9838,-74.6842 93.0627,-76.4875"/>
 <polygon fill="#191970" stroke="#191970" points="62.7738,-67.5127 52.3137,-69.1966 61.5409,-74.4032 62.7738,-67.5127"/>
 </g>
-<!-- Node25 -->
+<!-- Node26 -->
 <g id="node4" class="node">
-<title>Node25</title>
+<title>Node26</title>
 <g id="a_node4"><a xlink:href="class_password_dialog.html" target="_top" xlink:title="PasswordDialog Handles the inserting and editing of passwords. ">
 <polygon fill="none" stroke="#000000" points="88.1279,-37.5 88.1279,-55.5 176.3838,-55.5 176.3838,-37.5 88.1279,-37.5"/>
 <text text-anchor="middle" x="132.2559" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node25 -->
+<!-- Node23&#45;&gt;Node26 -->
 <g id="edge3" class="edge">
-<title>Node22&#45;&gt;Node25</title>
+<title>Node23&#45;&gt;Node26</title>
 <path fill="none" stroke="#191970" d="M62.4041,-58.3402C70.6807,-56.9373 79.5626,-55.4317 88.1243,-53.9805"/>
 <polygon fill="#191970" stroke="#191970" points="61.5881,-54.9285 52.3137,-60.0506 62.758,-61.8301 61.5881,-54.9285"/>
 </g>
-<!-- Node26 -->
+<!-- Node27 -->
 <g id="node5" class="node">
-<title>Node26</title>
+<title>Node27</title>
 <g id="a_node5"><a xlink:href="class_users_dialog.html" target="_top" xlink:title="Handles listing and editing of GPG users. ">
 <polygon fill="none" stroke="#000000" points="97.0244,-.5 97.0244,-18.5 167.4873,-18.5 167.4873,-.5 97.0244,-.5"/>
 <text text-anchor="middle" x="132.2559" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node26 -->
+<!-- Node23&#45;&gt;Node27 -->
 <g id="edge4" class="edge">
-<title>Node22&#45;&gt;Node26</title>
+<title>Node23&#45;&gt;Node27</title>
 <path fill="none" stroke="#191970" d="M49.1732,-50.2163C60.6985,-43.3201 74.9573,-35.1257 88.1279,-28.5 94.9831,-25.0514 102.6103,-21.6276 109.5692,-18.6562"/>
 <polygon fill="#191970" stroke="#191970" points="47.3305,-47.2404 40.5891,-55.4138 50.9561,-53.2283 47.3305,-47.2404"/>
 </g>

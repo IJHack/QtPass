@@ -1,5 +1,0 @@
-<map id="QProgressIndicator::stopAnimation" name="QProgressIndicator::stopAnimation">
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="190,37,326,76"/>
-<area shape="rect" id="node3" href="$class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="374,5,510,44"/>
-<area shape="rect" id="node4" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="374,68,510,107"/>
-</map>
