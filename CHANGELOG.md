@@ -8,6 +8,11 @@
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
 
+**Merged pull requests:**
+
+- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
+- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
+
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
 
