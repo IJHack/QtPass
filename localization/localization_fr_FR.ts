@@ -406,7 +406,7 @@ email</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Aucune des clés sélectionnées ne dispose d&apos;une clé secrète.
-Vous ne pourrez pas décrypter les mots de passe nouvellement ajoutés !</translation>
+Vous ne pourrez pas déchiffrer les mots de passe nouvellement ajoutés !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
@@ -757,7 +757,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="980"/>
-        <source>New password file: 
+        <source>New password file:
 (Will be placed in %1 )</source>
         <translation>Enregistrement d&apos;un nouveau mot de passe :
 (Placé dans %1)</translation>
@@ -823,7 +823,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1369"/>
-        <source>New Folder: 
+        <source>New Folder:
 (Will be placed in %1 )</source>
         <translation>Nouveau dossier :
 (Placé dans %1)</translation>
@@ -963,7 +963,7 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Sélectionnez quels utilisateurs devraient pouvoir décrypter les mots de passe placés dans ce dossier.
+        <translation>Sélectionnez quels utilisateurs devraient pouvoir déchiffrer les mots de passe placés dans ce dossier.
 Remarque : les fichiers existants ne seront pas modifiés et garderont leurs permissions précédentes jusqu&apos;à ce que vous les éditiez.
 Les entrées bleus disposent d&apos;une clé secrète, choisissez l&apos;une de celles-ci pour pouvoir décoder.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour décoder.</translation>
