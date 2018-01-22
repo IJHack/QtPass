@@ -2,8 +2,8 @@
 
 TEMPLATE = subdirs
 SUBDIRS += src tests main
-tests.depends = src
-main.depends = tests
+main.depends = src
+tests.depends = main
 
 OTHER_FILES += LICENSE \
                README.md \

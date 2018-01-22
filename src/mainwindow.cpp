@@ -733,8 +733,9 @@ void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
   output.replace(QRegExp(">"), "&gt;");
   output.replace(QRegExp(" "), "&nbsp;");
 
-  output.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-                 "<a href=\"\\1\">\\1</a>");
+  output.replace(
+      QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+      "<a href=\"\\1\">\\1</a>");
   output.replace(QRegExp("\n"), "<br />");
   output = prefix + output + postfix;
   if (!ui->textBrowser->toPlainText().isEmpty())
@@ -756,8 +757,9 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
     }
 
-    output.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-                   "<a href=\"\\1\">\\1</a>");
+    output.replace(
+        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        "<a href=\"\\1\">\\1</a>");
     output.replace(QRegExp("\n"), "<br />");
     if (!ui->textBrowser->toPlainText().isEmpty())
       output = ui->textBrowser->toHtml() + output;
@@ -1467,8 +1469,9 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
-    trimmedValue.replace(QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-                         "<a href=\"\\1\">\\1</a>");
+    trimmedValue.replace(
+        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        "<a href=\"\\1\">\\1</a>");
     line->setText(trimmedValue);
     line->setReadOnly(true);
     line->setStyleSheet("border-style: none ; background: transparent;");
@@ -1485,11 +1488,11 @@ void MainWindow::addToGridLayout(int position, const QString &field,
 }
 
 /**
-  * @brief Displays message in status bar
-  *
-  * @param msg     text to be displayed
-  * @param timeout time for which msg shall be visible
-  */
+ * @brief Displays message in status bar
+ *
+ * @param msg     text to be displayed
+ * @param timeout time for which msg shall be visible
+ */
 void MainWindow::showStatusMessage(QString msg, int timeout) {
   ui->statusBar->showMessage(msg, timeout);
 }

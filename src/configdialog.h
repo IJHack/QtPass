@@ -11,7 +11,7 @@ namespace Ui {
 struct UserInfo;
 
 class ConfigDialog;
-}
+} // namespace Ui
 
 /*!
     \class ConfigDialog

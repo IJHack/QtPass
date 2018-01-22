@@ -12,8 +12,9 @@ Executor::Executor(QObject *parent) : QObject(parent), running(false) {
   connect(&m_process,
           static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(
               &QProcess::finished),
-          this, static_cast<void (Executor::*)(int, QProcess::ExitStatus)>(
-                    &Executor::finished));
+          this,
+          static_cast<void (Executor::*)(int, QProcess::ExitStatus)>(
+              &Executor::finished));
   connect(&m_process, &QProcess::started, this, &Executor::starting);
 }
 
