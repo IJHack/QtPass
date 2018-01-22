@@ -2,8 +2,8 @@
 
 TEMPLATE = subdirs
 SUBDIRS += src tests main
-tests.depends = src
-main.depends = tests
+main.depends = src
+tests.depends = main
 
 OTHER_FILES += LICENSE \
                README.md \
@@ -59,6 +59,7 @@ CONFIG(coverage) {
 }
 
 TRANSLATIONS    +=  localization/localization_nl_NL.ts \
+                    localization/localization_ca.ts \
                     localization/localization_de_DE.ts \
                     localization/localization_es_ES.ts \
                     localization/localization_gl_ES.ts \

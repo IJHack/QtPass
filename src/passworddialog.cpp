@@ -45,7 +45,7 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   QString newPass = QtPassSettings::getPass()->Generate_b(
-      ui->spinBox_pwdLength->value(),
+      static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[(passwordConfiguration::characterSet)
                                   ui->passwordTemplateSwitch->currentIndex()]);
   if (newPass.length() > 0)

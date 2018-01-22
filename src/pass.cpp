@@ -2,8 +2,6 @@
 #include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
-#include <QTextCodec>
-#include <map>
 
 using namespace std;
 using namespace Enums;
@@ -62,7 +60,7 @@ void Pass::init() {
  * @param charset to use for generation
  * @return the password
  */
-QString Pass::Generate_b(int length, const QString &charset) {
+QString Pass::Generate_b(unsigned int length, const QString &charset) {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     // --secure goes first as it overrides --no-* otherwise
@@ -90,11 +88,7 @@ QString Pass::Generate_b(int length, const QString &charset) {
     }
   } else {
     if (charset.length() > 0) {
-      for (int i = 0; i < length; ++i) {
-        int index = Util::rand() % charset.length();
-        QChar nextChar = charset.at(index);
-        passwd.append(nextChar);
-      }
+      passwd = generateRandomPassword(charset, length);
     } else {
       emit critical(
           tr("No characters chosen"),
@@ -169,8 +163,6 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
  */
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
-  //  TODO(bezet): remove !
-  dbg() << id << exitCode << out << err;
 
   PROCESS pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
@@ -225,8 +217,8 @@ void Pass::updateEnv() {
   } else {
     // dbg()<< "Update
     // PASSWORD_STORE_DIR with " + passStore;
-    env.replaceInStrings(
-        store.first(), "PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
+    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
+                                            QtPassSettings::getPassStore());
   }
   exec.setEnvironment(env);
 }
@@ -281,4 +273,43 @@ QString Pass::getRecipientString(QString for_file, QString separator,
   foreach (const QString recipient, recipients_list)
     recipients_str += separator + '"' + recipient + '"';
   return recipients_str;
+}
+
+/* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+ */
+
+quint32 Pass::boundedRandom(quint32 bound) {
+  if (bound < 2) {
+    return 0;
+  }
+
+  quint32 randval;
+  const quint32 max_mod_bound = (1 + ~bound) % bound;
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+  static int fd = -1;
+  if (fd == -1) {
+    assert((fd = open("/dev/urandom", O_RDONLY)) >= 0);
+  }
+#endif
+
+  do {
+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));
+#else
+    randval = QRandomGenerator::system()->generate();
+#endif
+  } while (randval < max_mod_bound);
+
+  return randval % bound;
+}
+
+QString Pass::generateRandomPassword(const QString &charset,
+                                     unsigned int length) {
+  QString out;
+  for (unsigned int i = 0; i < length; ++i) {
+    out.append(charset.at(static_cast<int>(
+        boundedRandom(static_cast<quint32>(charset.length())))));
+  }
+  return out;
 }

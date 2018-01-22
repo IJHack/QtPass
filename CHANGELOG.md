@@ -2,7 +2,41 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...HEAD)
+
+**Fixed bugs:**
+
+- Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
+
+**Closed issues:**
+
+- Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
+
+**Merged pull requests:**
+
+- Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
+- New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
+- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
+- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
+
+## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
+
+**Closed issues:**
+
+- Question: is it possible to mass import passes? [\#339](https://github.com/IJHack/QtPass/issues/339)
+- Version 1.2.0 leaks passwords [\#334](https://github.com/IJHack/QtPass/issues/334)
+- signed release files [\#332](https://github.com/IJHack/QtPass/issues/332)
+- 2017 [\#330](https://github.com/IJHack/QtPass/issues/330)
+- When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard [\#232](https://github.com/IJHack/QtPass/issues/232)
+
+**Merged pull requests:**
+
+- Insecure password generation [\#342](https://github.com/IJHack/QtPass/pull/342) ([annejan](https://github.com/annejan))
+- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
+
+## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
 
 **Implemented enhancements:**
 
