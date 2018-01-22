@@ -8,6 +8,10 @@
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
 
+**Closed issues:**
+
+- Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
+
 **Merged pull requests:**
 
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
