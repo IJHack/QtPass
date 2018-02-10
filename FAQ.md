@@ -120,6 +120,16 @@ and 5.5 has to be adapted for the Qt version you downloaded.
 * It's all on github, clone, change and send a pull request.
 * Open an issue and point out defects or better yet propose changes.
 
+### QtPass is not in my native language
+
+* Unfortunately, QtPass might not support your native language, or the translations might be incomplete. Check if newer versions of QtPass support it.
+* If translations are available but aren't working, try to set the language manually (see below) or open an issue.
+
+### How do I set the language manually?
+
+QtPass uses the system language. Changing it depends on your system:
+* on Linux: ```LANGUAGE=fr qtpass``` will run QtPass in French.
+
 ## How can I help improve QtPass?
 
 ### I would like to donate!
