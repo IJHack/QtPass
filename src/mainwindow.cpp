@@ -775,21 +775,21 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
-  if (!QtPassSettings::isUseSelection()) {
-    QString clippedText = clipboard->text(QClipboard::Clipboard);
-  } else {
-    QString clippedText = clipboard->text(QClipboard::Selection);
+  bool cleared = false;
+  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
   }
-  if (clippedText == this->clippedText) {
-    if (!QtPassSettings::isUseSelection()) {
-      clipboard->clear(QClipboard::Clipboard);
-    } else {
-      clipboard->clear(QClipboard::Selection);
-    }
+  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
+  }
+  if (cleared) {
     ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
     ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
   }
+  this->clippedText.clear();
 }
 
 /**
