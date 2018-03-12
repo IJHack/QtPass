@@ -682,6 +682,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
               continue; // colon is probably from a url
             }
             addToGridLayout(j + 1, field, value);
+          } else {
+            remainingTokens.append(token);
           }
         } else {
           remainingTokens.append(token);
