@@ -537,14 +537,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="72"/>
         <location filename="../src/mainwindow.ui" line="75"/>
-        <location filename="../src/mainwindow.cpp" line="1309"/>
+        <location filename="../src/mainwindow.cpp" line="1311"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <location filename="../src/mainwindow.ui" line="93"/>
-        <location filename="../src/mainwindow.cpp" line="1321"/>
+        <location filename="../src/mainwindow.cpp" line="1323"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -575,7 +575,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="1303"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
         <source>Users</source>
         <translation>Usuaris</translation>
     </message>
@@ -624,54 +624,54 @@ p, li { white-space: pre-wrap; }
         <translation>qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="58"/>
+        <location filename="../src/mainwindow.cpp" line="60"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvingut a QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="78"/>
+        <location filename="../src/mainwindow.cpp" line="80"/>
         <source>Add Password</source>
         <translation>Afegeix una contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="79"/>
+        <location filename="../src/mainwindow.cpp" line="81"/>
         <source>Add Folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="192"/>
+        <location filename="../src/mainwindow.cpp" line="194"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Ha fallat la connexió a WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="205"/>
+        <location filename="../src/mainwindow.cpp" line="207"/>
         <source>QtPass WebDAV password</source>
         <translation>Contrasenya de WebDAV de QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
+        <location filename="../src/mainwindow.cpp" line="208"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Introduïu la contrasenya per connectar a WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="222"/>
+        <location filename="../src/mainwindow.cpp" line="224"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav ha sortit inesperadament
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="226"/>
+        <location filename="../src/mainwindow.cpp" line="228"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Ha fallat l&apos;inici de fusedav per connectar a WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="511"/>
-        <location filename="../src/mainwindow.cpp" line="523"/>
+        <location filename="../src/mainwindow.cpp" line="513"/>
+        <location filename="../src/mainwindow.cpp" line="525"/>
         <source>Updating password-store</source>
         <translation>Actualització del magatzem de contrasenyes</translation>
     </message>
@@ -684,86 +684,86 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">No existeix el fitxer de contrasenyes seleccionat, no es pot editar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="637"/>
+        <location filename="../src/mainwindow.cpp" line="639"/>
         <source>Password hidden</source>
         <translation>S&apos;ha ocultat la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="641"/>
+        <location filename="../src/mainwindow.cpp" line="643"/>
         <source>Content hidden</source>
         <translation>S&apos;ha ocultat la contingut</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="679"/>
-        <location filename="../src/mainwindow.cpp" line="1432"/>
+        <location filename="../src/mainwindow.cpp" line="681"/>
+        <location filename="../src/mainwindow.cpp" line="1451"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="764"/>
+        <location filename="../src/mainwindow.cpp" line="766"/>
         <source>Clipboard cleared</source>
         <translation>S&apos;ha netejat el porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="766"/>
+        <location filename="../src/mainwindow.cpp" line="768"/>
         <source>Clipboard not cleared</source>
         <translation>No s&apos;ha netejat el porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
         <source>Password and Content hidden</source>
         <translation>S&apos;ha ocultat el porta-retalls i la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="832"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="835"/>
+        <location filename="../src/mainwindow.cpp" line="837"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="838"/>
+        <location filename="../src/mainwindow.cpp" line="840"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="841"/>
+        <location filename="../src/mainwindow.cpp" line="843"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="844"/>
+        <location filename="../src/mainwindow.cpp" line="846"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="849"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="868"/>
+        <location filename="../src/mainwindow.cpp" line="870"/>
         <source>Looking for: %1</source>
         <translation>Cerca de: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="959"/>
-        <location filename="../src/mainwindow.cpp" line="1348"/>
+        <location filename="../src/mainwindow.cpp" line="961"/>
+        <location filename="../src/mainwindow.cpp" line="1350"/>
         <source>New file</source>
         <translation>Fitxer nou</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="960"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Fitxer de contrasenyes nou: 
 (s&apos;ubicarà a %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="989"/>
+        <location filename="../src/mainwindow.cpp" line="991"/>
         <source>Delete password?</source>
         <translation>Suprimir la contrasenya?</translation>
     </message>
@@ -772,64 +772,64 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Esteu segur que voleu suprimir %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="989"/>
+        <location filename="../src/mainwindow.cpp" line="991"/>
         <source>Delete folder?</source>
         <translation>Suprimir la carpeta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="990"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Esteu segur que voleu suprimir %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="994"/>
         <source> and whole content</source>
         <translation> i tot el contingut</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Can not get key list</source>
         <translation>No es pot obtenir la llista de claus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>No es pot obtenir la llista de claus gpg disponibles</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1059"/>
+        <location filename="../src/mainwindow.cpp" line="1061"/>
         <source>Key not found in keyring</source>
         <translation>No s&apos;ha trobat la clau a l&apos;anell de claus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1133"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source>Generating GPG key pair</source>
         <translation>Generació del parell de claus GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1177"/>
         <source>Profile changed to %1</source>
         <translation>S&apos;ha canviat el perfil a %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1301"/>
+        <location filename="../src/mainwindow.cpp" line="1303"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1302"/>
+        <location filename="../src/mainwindow.cpp" line="1304"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1349"/>
+        <location filename="../src/mainwindow.cpp" line="1351"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Carpeta nova: 
 (s&apos;ubicarà a %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1398"/>
+        <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Copied to clipboard</source>
         <translation>S&apos;ha copiat al porta-retalls</translation>
     </message>

@@ -93,6 +93,8 @@ private slots:
   void editPassword(const QString &);
   void focusInput();
   void copyTextToClipboard(const QString &text);
+  void copyPasswordFromTreeview();
+  void passwordFromFileToClipboard(const QString &text);
 
   void executeWrapperStarted();
   void showStatusMessage(QString msg, int timeout);

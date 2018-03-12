@@ -42,6 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+  // register shortcut ctrl/cmd + C to copy the currently selected password
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, SLOT(copyPasswordFromTreeview()));
 
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -1399,6 +1401,23 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   if (QtPassSettings::isUseAutoclear()) {
     clearClipboardTimer.start();
   }
+}
+
+void MainWindow::copyPasswordFromTreeview() {
+    QFileInfo fileOrFolder =
+        model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+
+    if (fileOrFolder.isFile()) {
+      QString file = getFile(ui->treeView->currentIndex(), true);
+      connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+              &MainWindow::passwordFromFileToClipboard);
+      QtPassSettings::getPass()->Show(file);
+    }
+}
+
+void MainWindow::passwordFromFileToClipboard(const QString &text){
+    QStringList tokens = text.split('\n');
+    copyTextToClipboard(tokens[0]);
 }
 
 /**
