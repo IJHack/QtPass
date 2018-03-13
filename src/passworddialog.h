@@ -38,15 +38,15 @@ public:
 
   /*! Sets content in the template for the interface.
       \param rawFields is the template as a QString
+      \param useTemplate whether the template is used
    */
-  void setTemplate(QString);
+  void setTemplate(QString rawFields, bool useTemplate);
 
   /*! Sets the file (name) in the interface.
       \param file name as a QString
    */
   void setFile(QString);
 
-  void useTemplate(bool useTemplate);
   void templateAll(bool templateAll);
   void setLength(int l);
   void setPasswordCharTemplate(int t);

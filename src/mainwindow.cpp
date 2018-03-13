@@ -932,8 +932,8 @@ void MainWindow::setPassword(QString file, bool isNew) {
   QtPassSettings::getPass()->Show(file);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
-  d.setTemplate(QtPassSettings::getPassTemplate());
-  d.useTemplate(QtPassSettings::isUseTemplate());
+  d.setTemplate(QtPassSettings::getPassTemplate(),
+                QtPassSettings::isUseTemplate());
   d.templateAll(QtPassSettings::isTemplateAllFields());
   if (!d.exec()) {
     d.setPassword(QString());

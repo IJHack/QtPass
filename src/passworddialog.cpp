@@ -127,17 +127,20 @@ QString PasswordDialog::getPassword() {
  * @brief PasswordDialog::setTemplate set the template and create the fields.
  * @param rawFields
  */
-void PasswordDialog::setTemplate(QString rawFields) {
+void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
   fields = rawFields.split('\n');
-  QWidget *previous = ui->checkBoxShow;
-  foreach (QString field, fields) {
-    if (field.isEmpty())
-      continue;
-    QLineEdit *line = new QLineEdit();
-    line->setObjectName(field);
-    ui->formLayout->addRow(new QLabel(field), line);
-    setTabOrder(previous, line);
-    previous = line;
+  templating = useTemplate;
+  if (templating) {
+    QWidget *previous = ui->checkBoxShow;
+    foreach (QString field, fields) {
+      if (field.isEmpty())
+        continue;
+      QLineEdit *line = new QLineEdit();
+      line->setObjectName(field);
+      ui->formLayout->addRow(new QLabel(field), line);
+      setTabOrder(previous, line);
+      previous = line;
+    }
   }
 }
 
@@ -155,13 +158,6 @@ void PasswordDialog::setFile(QString file) {
  * @param templateAll
  */
 void PasswordDialog::templateAll(bool templateAll) { allFields = templateAll; }
-
-/**
- * @brief PasswordDialog::useTemplate basic setter for use in
- * PasswordDialog::useTemplate templating.
- * @param useTemplate
- */
-void PasswordDialog::useTemplate(bool useTemplate) { templating = useTemplate; }
 
 /**
  * @brief PasswordDialog::setLength
