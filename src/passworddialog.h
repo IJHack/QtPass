@@ -10,6 +10,8 @@ namespace Ui {
 class PasswordDialog;
 }
 
+class QLineEdit;
+
 /*!
     \class PasswordDialog
     \brief PasswordDialog Handles the inserting and editing of passwords.
@@ -62,10 +64,11 @@ private slots:
 private:
   Ui::PasswordDialog *ui;
   const passwordConfiguration &m_passConfig;
-  QString passTemplate;
   QStringList fields;
   bool templating;
   bool allFields;
+  QList<QLineEdit *> templateLines;
+  QList<QLineEdit *> otherLines;
 };
 
 #endif // PASSWORDDIALOG_H_
