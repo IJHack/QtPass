@@ -264,10 +264,6 @@ QString QtPassSettings::getGpgHome(const QString &defaultValue) {
   return getStringValue(SettingsConstants::gpgHome, defaultValue);
 }
 
-void QtPassSettings::setGpgHome(const QString &gpgHome) {
-  setStringValue(SettingsConstants::gpgHome, gpgHome);
-}
-
 bool QtPassSettings::isUseWebDav(const bool &defaultValue) {
   return getBoolValue(SettingsConstants::useWebDav, defaultValue);
 }
