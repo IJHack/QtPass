@@ -371,19 +371,7 @@ bool MainWindow::checkConfig() {
   clearPanelTimer.setInterval(1000 *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
-  if (!QtPassSettings::isUseGit() ||
-      (QtPassSettings::getGitExecutable().isEmpty() &&
-       QtPassSettings::getPassExecutable().isEmpty())) {
-    ui->pushButton->hide();
-    ui->updateButton->hide();
-    ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
-                                     QSizePolicy::Minimum);
-  } else {
-    ui->pushButton->show();
-    ui->updateButton->show();
-    ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
-                                     QSizePolicy::Minimum);
-  }
+  updateGitButtonVisibility();
 
   startupPhase = false;
   return true;
@@ -506,19 +494,7 @@ void MainWindow::config() {
       clearClipboardTimer.setInterval(1000 *
                                       QtPassSettings::getAutoclearSeconds());
 
-      if (!QtPassSettings::isUseGit() ||
-          (QtPassSettings::getGitExecutable().isEmpty() &&
-           QtPassSettings::getPassExecutable().isEmpty())) {
-        ui->pushButton->hide();
-        ui->updateButton->hide();
-        ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
-                                         QSizePolicy::Minimum);
-      } else {
-        ui->pushButton->show();
-        ui->updateButton->show();
-        ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
-                                         QSizePolicy::Minimum);
-      }
+      updateGitButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == NULL)
         initTrayIcon();
       else if (!QtPassSettings::isUseTrayIcon() && tray != NULL)
@@ -1519,4 +1495,26 @@ void MainWindow::endReencryptPath() { enableUiElements(true); }
  */
 void MainWindow::critical(QString title, QString msg) {
   QMessageBox::critical(this, title, msg);
+}
+
+void MainWindow::updateGitButtonVisibility() {
+  if (!QtPassSettings::isUseGit() ||
+      (QtPassSettings::getGitExecutable().isEmpty() &&
+       QtPassSettings::getPassExecutable().isEmpty())) {
+    hideGitButtons();
+  } else {
+    showGitButtons();
+  }
+}
+
+void MainWindow::hideGitButtons() {
+  ui->pushButton->hide();
+  ui->updateButton->hide();
+  ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
+}
+
+void MainWindow::showGitButtons() {
+  ui->pushButton->show();
+  ui->updateButton->show();
+  ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
 }

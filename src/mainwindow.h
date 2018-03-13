@@ -146,6 +146,10 @@ private:
   void DisplayInTextBrowser(QString toShow, QString prefix = QString(),
                             QString postfix = QString());
   void connectPassSignalHandlers(Pass *pass);
+
+  void updateGitButtonVisibility();
+  void hideGitButtons();
+  void showGitButtons();
 };
 
 #endif // MAINWINDOW_H_
