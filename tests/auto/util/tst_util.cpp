@@ -1,6 +1,8 @@
 #include "../../../src/util.h"
+#include "../../../src/filecontent.h"
 #include <QCoreApplication>
 #include <QtTest>
+#include <QList>
 
 /**
  * @brief The tst_util class is our first unit test
@@ -20,7 +22,12 @@ private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
   void normalizeFolderPath();
+  void fileContent();
 };
+
+bool operator==(const NamedValue &a, const NamedValue &b) {
+  return a.name == b.name && a.value == b.value;
+}
 
 /**
  * @brief tst_util::tst_util basic constructor
@@ -61,6 +68,37 @@ void tst_util::normalizeFolderPath() {
            QDir::toNativeSeparators("test/"));
   QCOMPARE(Util::normalizeFolderPath("test/"),
            QDir::toNativeSeparators("test/"));
+}
+
+void tst_util::fileContent() {
+  NamedValue key = {"key", "val"};
+  NamedValue key2 = {"key2", "val2"};
+  QString password = "password";
+
+  FileContent fc = FileContent::parse("password\n", {}, false);
+  QCOMPARE(fc.getPassword(), password);
+  QCOMPARE(fc.getNamedValues(), {});
+  QCOMPARE(fc.getRemainingData(), QString());
+
+  fc = FileContent::parse("password", {}, false);
+  QCOMPARE(fc.getPassword(), password);
+  QCOMPARE(fc.getNamedValues(), {});
+  QCOMPARE(fc.getRemainingData(), QString());
+
+  fc = FileContent::parse("password\nfoobar\n", {}, false);
+  QCOMPARE(fc.getPassword(), password);
+  QCOMPARE(fc.getNamedValues(), {});
+  QCOMPARE(fc.getRemainingData(), QString("foobar\n"));
+
+  fc = FileContent::parse("password\nkey: val\nkey2: val2", {"key2"}, false);
+  QCOMPARE(fc.getPassword(), password);
+  QCOMPARE(fc.getNamedValues(), {key2});
+  QCOMPARE(fc.getRemainingData(), QString("key: val"));
+
+  fc = FileContent::parse("password\nkey: val\nkey2: val2", {"key2"}, true);
+  QCOMPARE(fc.getPassword(), password);
+  QCOMPARE(fc.getNamedValues(), NamedValues({key, key2}));
+  QCOMPARE(fc.getRemainingData(), QString());
 }
 
 QTEST_MAIN(tst_util)

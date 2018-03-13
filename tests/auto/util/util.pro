@@ -7,13 +7,7 @@ SOURCES += tst_util.cpp \
 LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 
 HEADERS   += util.h \
-             qtpasssettings.h \
-             settingsconstants.h \
-             pass.h \
-             realpass.h \
-             imitatepass.h \
-             executor.h \
-             simpletransaction.h
+             filecontent.h
 
 OBJ_PATH += ../../../src/$(OBJECTS_DIR)
 
