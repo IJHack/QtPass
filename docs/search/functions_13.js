@@ -12,6 +12,6 @@ var searchData=
   ['usersdialog',['UsersDialog',['../class_users_dialog.html#a927bd252b8ae90c9b55fa9aeaaa00d2e',1,'UsersDialog']]],
   ['useselection',['useSelection',['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection(bool useSelection)'],['../class_config_dialog.html#a985cc173c95e8d2f6d71287affe1a050',1,'ConfigDialog::useSelection()']]],
   ['usesymbols',['useSymbols',['../class_config_dialog.html#ac72bb46076a73bdff726dbdc2b8f1651',1,'ConfigDialog::useSymbols(bool useSymbols)'],['../class_config_dialog.html#a5e342374edafe7aeaa50325117306dfd',1,'ConfigDialog::useSymbols()']]],
-  ['usetemplate',['useTemplate',['../class_config_dialog.html#a434412b09a1dcfa6f09fee08e7851951',1,'ConfigDialog::useTemplate()'],['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog::useTemplate(bool useTemplate)'],['../class_password_dialog.html#a5e75eb4d58a6100822db1fb95c2b2738',1,'PasswordDialog::useTemplate()']]],
+  ['usetemplate',['useTemplate',['../class_config_dialog.html#a434412b09a1dcfa6f09fee08e7851951',1,'ConfigDialog::useTemplate()'],['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog::useTemplate(bool useTemplate)']]],
   ['usetrayicon',['useTrayIcon',['../class_config_dialog.html#ab054035df3c2ac6bca69280437a277db',1,'ConfigDialog::useTrayIcon()'],['../class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c',1,'ConfigDialog::useTrayIcon(bool useTrayIdon)']]]
 ];

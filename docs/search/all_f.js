@@ -12,7 +12,6 @@ var searchData=
   ['qpushbuttonwithclipboard_2eh',['qpushbuttonwithclipboard.h',['../qpushbuttonwithclipboard_8h.html',1,'']]],
   ['qrc_5fresources_2ecpp',['qrc_resources.cpp',['../qrc__resources_8cpp.html',1,'']]],
   ['qregisterresourcedata',['qRegisterResourceData',['../qrc__resources_8cpp.html#a2ce5a6cde5b318dc75442940471e05f7',1,'qrc_resources.cpp']]],
-  ['qsleep',['qSleep',['../class_util.html#af3ccbdc1fddaa203dec1b5906e3e1df2',1,'Util']]],
   ['qt_5frcc_5fmangle_5fnamespace',['QT_RCC_MANGLE_NAMESPACE',['../qrc__resources_8cpp.html#a590f80ddb226779f6f432d80438ea190',1,'qrc_resources.cpp']]],
   ['qt_5frcc_5fprepend_5fnamespace',['QT_RCC_PREPEND_NAMESPACE',['../qrc__resources_8cpp.html#afbfc3bb3cd2fa03dd0a3fc36563480d6',1,'qrc_resources.cpp']]],
   ['qtpasssettings',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]],
