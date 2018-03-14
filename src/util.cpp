@@ -125,19 +125,6 @@ bool Util::checkConfig() {
 }
 
 /**
- * @brief Util::qSleep because . . windows sleep.
- * @param ms
- */
-void Util::qSleep(int ms) {
-#ifdef Q_OS_WIN
-  Sleep(uint(ms));
-#else
-  struct timespec ts = {ms / 1000, (ms % 1000) * 1000 * 1000};
-  nanosleep(&ts, NULL);
-#endif
-}
-
-/**
  * @brief Util::getDir get selectd folder path
  * @param index
  * @param forPass short or full path

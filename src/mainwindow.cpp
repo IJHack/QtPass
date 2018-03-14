@@ -42,6 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+  // register shortcut ctrl/cmd + C to copy the currently selected password
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, SLOT(copyPasswordFromTreeview()));
 
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -371,19 +373,7 @@ bool MainWindow::checkConfig() {
   clearPanelTimer.setInterval(1000 *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
-  if (!QtPassSettings::isUseGit() ||
-      (QtPassSettings::getGitExecutable().isEmpty() &&
-       QtPassSettings::getPassExecutable().isEmpty())) {
-    ui->pushButton->hide();
-    ui->updateButton->hide();
-    ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
-                                     QSizePolicy::Minimum);
-  } else {
-    ui->pushButton->show();
-    ui->updateButton->show();
-    ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
-                                     QSizePolicy::Minimum);
-  }
+  updateGitButtonVisibility();
 
   startupPhase = false;
   return true;
@@ -506,19 +496,7 @@ void MainWindow::config() {
       clearClipboardTimer.setInterval(1000 *
                                       QtPassSettings::getAutoclearSeconds());
 
-      if (!QtPassSettings::isUseGit() ||
-          (QtPassSettings::getGitExecutable().isEmpty() &&
-           QtPassSettings::getPassExecutable().isEmpty())) {
-        ui->pushButton->hide();
-        ui->updateButton->hide();
-        ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
-                                         QSizePolicy::Minimum);
-      } else {
-        ui->pushButton->show();
-        ui->updateButton->show();
-        ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
-                                         QSizePolicy::Minimum);
-      }
+      updateGitButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == NULL)
         initTrayIcon();
       else if (!QtPassSettings::isUseTrayIcon() && tray != NULL)
@@ -775,21 +753,21 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
  */
 void MainWindow::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
-  if (!QtPassSettings::isUseSelection()) {
-    QString clippedText = clipboard->text(QClipboard::Clipboard);
-  } else {
-    QString clippedText = clipboard->text(QClipboard::Selection);
+  bool cleared = false;
+  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
   }
-  if (clippedText == this->clippedText) {
-    if (!QtPassSettings::isUseSelection()) {
-      clipboard->clear(QClipboard::Clipboard);
-    } else {
-      clipboard->clear(QClipboard::Selection);
-    }
+  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
+  }
+  if (cleared) {
     ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
   } else {
     ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
   }
+  this->clippedText.clear();
 }
 
 /**
@@ -954,8 +932,8 @@ void MainWindow::setPassword(QString file, bool isNew) {
   QtPassSettings::getPass()->Show(file);
   d.setFile(file);
   d.usePwgen(QtPassSettings::isUsePwgen());
-  d.setTemplate(QtPassSettings::getPassTemplate());
-  d.useTemplate(QtPassSettings::isUseTemplate());
+  d.setTemplate(QtPassSettings::getPassTemplate(),
+                QtPassSettings::isUseTemplate());
   d.templateAll(QtPassSettings::isTemplateAllFields());
   if (!d.exec()) {
     d.setPassword(QString());
@@ -1425,6 +1403,23 @@ void MainWindow::copyTextToClipboard(const QString &text) {
   }
 }
 
+void MainWindow::copyPasswordFromTreeview() {
+    QFileInfo fileOrFolder =
+        model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+
+    if (fileOrFolder.isFile()) {
+      QString file = getFile(ui->treeView->currentIndex(), true);
+      connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+              &MainWindow::passwordFromFileToClipboard);
+      QtPassSettings::getPass()->Show(file);
+    }
+}
+
+void MainWindow::passwordFromFileToClipboard(const QString &text){
+    QStringList tokens = text.split('\n');
+    copyTextToClipboard(tokens[0]);
+}
+
 /**
  * @brief MainWindow::addToGridLayout add a field to the template grid
  * @param position
@@ -1519,4 +1514,26 @@ void MainWindow::endReencryptPath() { enableUiElements(true); }
  */
 void MainWindow::critical(QString title, QString msg) {
   QMessageBox::critical(this, title, msg);
+}
+
+void MainWindow::updateGitButtonVisibility() {
+  if (!QtPassSettings::isUseGit() ||
+      (QtPassSettings::getGitExecutable().isEmpty() &&
+       QtPassSettings::getPassExecutable().isEmpty())) {
+    hideGitButtons();
+  } else {
+    showGitButtons();
+  }
+}
+
+void MainWindow::hideGitButtons() {
+  ui->pushButton->hide();
+  ui->updateButton->hide();
+  ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
+}
+
+void MainWindow::showGitButtons() {
+  ui->pushButton->show();
+  ui->updateButton->show();
+  ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
 }

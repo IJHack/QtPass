@@ -105,7 +105,6 @@ public:
 
   static QString
   getGpgHome(const QString &defaultValue = QVariant().toString());
-  static void setGpgHome(const QString &gpgHome);
 
   static bool isUseWebDav(const bool &defaultValue = QVariant().toBool());
   static void setUseWebDav(const bool &useWebDav);

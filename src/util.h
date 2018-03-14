@@ -17,7 +17,6 @@ public:
   static QString findPasswordStore();
   static QString normalizeFolderPath(QString path);
   static bool checkConfig();
-  static void qSleep(int ms);
   static QString getDir(const QModelIndex &index, bool forPass,
                         const QFileSystemModel &model,
                         const StoreModel &storeModel);
