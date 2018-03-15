@@ -26,6 +26,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include "filecontent.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -620,69 +621,46 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
 }
 
 void MainWindow::passShowHandler(const QString &p_output) {
+  QStringList templ = QtPassSettings::isUseTemplate() ? QtPassSettings::getPassTemplate().split("\n") : QStringList();
+  bool allFields = QtPassSettings::isUseTemplate() && QtPassSettings::isTemplateAllFields();
+  FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
-  {
-    QStringList tokens = p_output.split("\n");
-    QString password = tokens.at(0);
-    tokens.erase(tokens.begin());
+  QString password = fileContent.getPassword();
 
-    if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-        !p_output.isEmpty()) {
-      clippedText = password;
-      if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-        copyTextToClipboard(password);
-      if (QtPassSettings::isUseAutoclearPanel()) {
-        clearPanelTimer.start();
-      }
-      if (QtPassSettings::isHidePassword() &&
-          !QtPassSettings::isUseTemplate()) {
-        output = "***" + tr("Password hidden") + "***";
-        output += tokens.join("\n");
-      }
-      if (QtPassSettings::isHideContent())
-        output = "***" + tr("Content hidden") + "***";
-    }
+  // handle clipboard
+  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
+      !p_output.isEmpty()) {
+    clippedText = password;
+    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
+      copyTextToClipboard(password);
+  }
 
-    clearTemplateWidgets();
-    if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
-      QStringList remainingTokens;
-      for (int j = 0; j < tokens.length(); ++j) {
-        QString token = tokens.at(j);
-        if (token.contains(':')) {
-          int colon = token.indexOf(':');
-          QString field = token.left(colon);
-          if (QtPassSettings::isTemplateAllFields() ||
-              QtPassSettings::getPassTemplate().contains(field)) {
-            QString value = token.right(token.length() - colon - 1);
-            if (!QtPassSettings::getPassTemplate().contains(field) &&
-                value.startsWith("//")) {
-              remainingTokens.append(token);
-              continue; // colon is probably from a url
-            }
-            addToGridLayout(j + 1, field, value);
-          } else {
-            remainingTokens.append(token);
-          }
-        } else {
-          remainingTokens.append(token);
-        }
-      }
-      if (ui->gridLayout->count() == 0)
-        ui->verticalLayoutPassword->setSpacing(0);
-      else
-        ui->verticalLayoutPassword->setSpacing(6);
-      output = remainingTokens.join("\n");
-    } else if (!QtPassSettings::isHideContent()) {
-      output = tokens.join("\n");
-    }
-    if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
-      // now set the password. If we set it earlier, the layout will be
-      // cleared
+  // first clear the current view:
+  clearTemplateWidgets();
+
+  // show what is needed:
+  if (QtPassSettings::isHideContent()) {
+    output = "***" + tr("Content hidden") + "***";
+  } else {
+    if (!password.isEmpty()) {
+      // set the password, it is hidden if needed in addToGridLayout
       addToGridLayout(0, tr("Password"), password);
     }
-    if (QtPassSettings::isUseAutoclearPanel()) {
-      clearPanelTimer.start();
+
+    NamedValues namedValues = fileContent.getNamedValues();
+    for (int j = 0; j < namedValues.length(); ++j) {
+      NamedValue nv = namedValues.at(j);
+      addToGridLayout(j + 1, nv.name, nv.value);
     }
+    if (ui->gridLayout->count() == 0)
+      ui->verticalLayoutPassword->setSpacing(0);
+    else
+      ui->verticalLayoutPassword->setSpacing(6);
+    output = fileContent.getRemainingData();
+  }
+
+  if (QtPassSettings::isUseAutoclearPanel()) {
+    clearPanelTimer.start();
   }
 
   DisplayInTextBrowser(output);
