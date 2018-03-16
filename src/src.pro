@@ -42,11 +42,12 @@ HEADERS   += mainwindow.h \
              pass.h \
              realpass.h \
              imitatepass.h \
-             datahelpers.h \
              debughelper.h \
              executor.h \
              simpletransaction.h \
-             filecontent.h
+             filecontent.h \
+             passwordconfiguration.h \
+             userinfo.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

@@ -1,7 +1,8 @@
 #ifndef MAINWINDOW_H_
 #define MAINWINDOW_H_
 
-#include "datahelpers.h"
+#include "passwordconfiguration.h"
+#include "userinfo.h"
 #include "enums.h"
 #include "imitatepass.h"
 #include "pass.h"
@@ -54,12 +55,6 @@ public:
   void config();
   void executePassGitInit();
 
-  /**
-   * @brief MainWindow::pwdConfig instance of passwordConfiguration.
-   * @sa MainWindow::passwordConfiguration
-   */
-  passwordConfiguration pwdConfig;
-
 protected:
   void closeEvent(QCloseEvent *event);
   void keyPressEvent(QKeyEvent *event);
@@ -111,15 +106,10 @@ private slots:
   void keyGenerationComplete(const QString &p_output, const QString &p_errout);
 
 private:
-  QAction *actionAddPassword;
-  QAction *actionAddFolder;
-
-  QApplication *QtPass;
   QScopedPointer<Ui::MainWindow> ui;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QTreeView *treeView;
   QProcess fusedav;
   QString clippedText;
   QTimer clearPanelTimer;
@@ -130,8 +120,10 @@ private:
   bool startupPhase;
   TrayIcon *tray;
 
+  void initAddButton();
   void updateText();
   void enableUiElements(bool state);
+  void restoreWindow();
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);

@@ -1,4 +1,5 @@
 #include "passworddialog.h"
+#include "passwordconfiguration.h"
 #include "debughelper.h"
 #include "qtpasssettings.h"
 #include "filecontent.h"
@@ -12,7 +13,7 @@
  * @param passConfig configuration constant
  * @param parent
  */
-PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
+PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
                                QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
   templating = false;
@@ -47,7 +48,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   QString newPass = QtPassSettings::getPass()->Generate_b(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
-      m_passConfig.Characters[static_cast<passwordConfiguration::characterSet>(
+      m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
                                   ui->passwordTemplateSwitch->currentIndex())]);
   if (newPass.length() > 0)
     ui->lineEditPassword->setText(newPass);

@@ -6,7 +6,8 @@ SOURCES += tst_ui.cpp
 
 LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 
-HEADERS   += passworddialog.h
+HEADERS   += passworddialog.h \
+             passwordconfiguration.h
 
 OBJ_PATH += ../../../src/$(OBJECTS_DIR)
 
