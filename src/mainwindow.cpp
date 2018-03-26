@@ -26,6 +26,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include "filecontent.h"
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -65,27 +66,15 @@ MainWindow::MainWindow(QWidget *parent)
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
           SLOT(clearClipboard()));
-  pwdConfig.selected = passwordConfiguration::ALLCHARS;
   if (!checkConfig()) {
     // no working config
     QApplication::quit();
   }
   clippedText = "";
-  QtPass = NULL;
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
-  // Add a Actions to the Add-Button
-  QIcon addFileIcon = QIcon::fromTheme("file_new");
-  QIcon addFolderIcon = QIcon::fromTheme("folder_new");
-  actionAddPassword = new QAction(addFileIcon, tr("Add Password"), this);
-  actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"), this);
+  initAddButton();
 
-  ui->addButton->addAction(actionAddPassword);
-  ui->addButton->addAction(actionAddFolder);
-
-  connect(actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(on_addButton_clicked()));
-  connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
@@ -239,51 +228,13 @@ bool MainWindow::checkConfig() {
   QString version = QtPassSettings::getVersion();
 
   if (freshStart) {
-    QByteArray geometry = QtPassSettings::getGeometry(saveGeometry());
-    restoreGeometry(geometry);
-    QByteArray savestate = QtPassSettings::getSavestate(saveState());
-    restoreState(savestate);
-    QPoint position = QtPassSettings::getPos(pos());
-    move(position);
-    QSize newSize = QtPassSettings::getSize(size());
-    resize(newSize);
-    QList<int> splitter = ui->splitter->sizes();
-    int left = QtPassSettings::getSplitterLeft(splitter[0]);
-    int right = QtPassSettings::getSplitterRight(splitter[1]);
-    if (left > 0 || right > 0) {
-      splitter[0] = left;
-      splitter[1] = right;
-      ui->splitter->setSizes(splitter);
-    }
-    if (QtPassSettings::isMaximized(isMaximized())) {
-      showMaximized();
-    }
+    restoreWindow();
   }
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
-  QString passExecutable =
-      QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
-  QtPassSettings::setPassExecutable(passExecutable);
-
-  QString gitExecutable =
-      QtPassSettings::getGitExecutable(Util::findBinaryInPath("git"));
-  QtPassSettings::setGitExecutable(gitExecutable);
-
-  QString gpgExecutable =
-      QtPassSettings::getGpgExecutable(Util::findBinaryInPath("gpg2"));
-  QtPassSettings::setGpgExecutable(gpgExecutable);
-
-  QString pwgenExecutable =
-      QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
-  QtPassSettings::setPwgenExecutable(pwgenExecutable);
-
-  pwdConfig.length = QtPassSettings::getPasswordLength();
-  pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
-      QtPassSettings::getPasswordCharsselection());
-  pwdConfig.Characters[passwordConfiguration::CUSTOM] =
-      QtPassSettings::getPasswordChars();
+  QtPassSettings::initExecutables();
 
   if (QtPassSettings::isAlwaysOnTop()) {
     Qt::WindowFlags flags = windowFlags();
@@ -416,11 +367,7 @@ void MainWindow::config() {
   d->avoidNumbers(QtPassSettings::isAvoidNumbers());
   d->lessRandom(QtPassSettings::isLessRandom());
   d->useSymbols(QtPassSettings::isUseSymbols());
-  d->setPasswordLength(pwdConfig.length);
-  d->setPwdTemplateSelector(pwdConfig.selected);
-  if (pwdConfig.selected != passwordConfiguration::CUSTOM)
-    d->setLineEditEnabled(false);
-  d->setPasswordChars(pwdConfig.Characters[pwdConfig.selected]);
+  d->setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
   d->useTemplate(QtPassSettings::isUseTemplate());
   d->setTemplate(QtPassSettings::getPassTemplate());
   d->templateAllFields(QtPassSettings::isTemplateAllFields());
@@ -457,11 +404,7 @@ void MainWindow::config() {
       QtPassSettings::setAvoidNumbers(d->avoidNumbers());
       QtPassSettings::setLessRandom(d->lessRandom());
       QtPassSettings::setUseSymbols(d->useSymbols());
-      pwdConfig.length = d->getPasswordLength();
-      pwdConfig.selected = static_cast<passwordConfiguration::characterSet>(
-          d->getPwdTemplateSelector());
-      pwdConfig.Characters[passwordConfiguration::CUSTOM] =
-          d->getPasswordChars();
+      QtPassSettings::setPasswordConfiguration(d->getPasswordConfiguration());
       QtPassSettings::setUseTemplate(d->useTemplate());
       QtPassSettings::setPassTemplate(d->getTemplate());
       QtPassSettings::setTemplateAllFields(d->templateAllFields());
@@ -470,10 +413,6 @@ void MainWindow::config() {
       QtPassSettings::setAlwaysOnTop(d->alwaysOnTop());
 
       QtPassSettings::setVersion(VERSION);
-      QtPassSettings::setPasswordLength(pwdConfig.length);
-      QtPassSettings::setPasswordCharsselection(pwdConfig.selected);
-      QtPassSettings::setPasswordChars(
-          pwdConfig.Characters[passwordConfiguration::CUSTOM]);
 
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
@@ -619,70 +558,62 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
   processFinished(p_output, p_errout);
 }
 
+void MainWindow::initAddButton() {
+  // Add a Actions to the Add-Button
+  QIcon addFileIcon = QIcon::fromTheme("file_new");
+  QIcon addFolderIcon = QIcon::fromTheme("folder_new");
+  QAction *actionAddPassword = new QAction(addFileIcon, tr("Add Password"), this);
+  QAction *actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"), this);
+
+  ui->addButton->addAction(actionAddPassword);
+  ui->addButton->addAction(actionAddFolder);
+
+  connect(actionAddPassword, SIGNAL(triggered()), this,
+          SLOT(on_addButton_clicked()));
+  connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+}
+
 void MainWindow::passShowHandler(const QString &p_output) {
+  QStringList templ = QtPassSettings::isUseTemplate() ? QtPassSettings::getPassTemplate().split("\n") : QStringList();
+  bool allFields = QtPassSettings::isUseTemplate() && QtPassSettings::isTemplateAllFields();
+  FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
-  {
-    QStringList tokens = p_output.split("\n");
-    QString password = tokens.at(0);
-    tokens.erase(tokens.begin());
+  QString password = fileContent.getPassword();
 
-    if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-        !p_output.isEmpty()) {
-      clippedText = password;
-      if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-        copyTextToClipboard(password);
-      if (QtPassSettings::isUseAutoclearPanel()) {
-        clearPanelTimer.start();
-      }
-      if (QtPassSettings::isHidePassword() &&
-          !QtPassSettings::isUseTemplate()) {
-        output = "***" + tr("Password hidden") + "***";
-        output += tokens.join("\n");
-      }
-      if (QtPassSettings::isHideContent())
-        output = "***" + tr("Content hidden") + "***";
-    }
+  // handle clipboard
+  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
+      !p_output.isEmpty()) {
+    clippedText = password;
+    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
+      copyTextToClipboard(password);
+  }
 
-    clearTemplateWidgets();
-    if (QtPassSettings::isUseTemplate() && !QtPassSettings::isHideContent()) {
-      QStringList remainingTokens;
-      for (int j = 0; j < tokens.length(); ++j) {
-        QString token = tokens.at(j);
-        if (token.contains(':')) {
-          int colon = token.indexOf(':');
-          QString field = token.left(colon);
-          if (QtPassSettings::isTemplateAllFields() ||
-              QtPassSettings::getPassTemplate().contains(field)) {
-            QString value = token.right(token.length() - colon - 1);
-            if (!QtPassSettings::getPassTemplate().contains(field) &&
-                value.startsWith("//")) {
-              remainingTokens.append(token);
-              continue; // colon is probably from a url
-            }
-            addToGridLayout(j + 1, field, value);
-          } else {
-            remainingTokens.append(token);
-          }
-        } else {
-          remainingTokens.append(token);
-        }
-      }
-      if (ui->gridLayout->count() == 0)
-        ui->verticalLayoutPassword->setSpacing(0);
-      else
-        ui->verticalLayoutPassword->setSpacing(6);
-      output = remainingTokens.join("\n");
-    } else if (!QtPassSettings::isHideContent()) {
-      output = tokens.join("\n");
-    }
-    if (!QtPassSettings::isHideContent() && !password.isEmpty()) {
-      // now set the password. If we set it earlier, the layout will be
-      // cleared
+  // first clear the current view:
+  clearTemplateWidgets();
+
+  // show what is needed:
+  if (QtPassSettings::isHideContent()) {
+    output = "***" + tr("Content hidden") + "***";
+  } else {
+    if (!password.isEmpty()) {
+      // set the password, it is hidden if needed in addToGridLayout
       addToGridLayout(0, tr("Password"), password);
     }
-    if (QtPassSettings::isUseAutoclearPanel()) {
-      clearPanelTimer.start();
+
+    NamedValues namedValues = fileContent.getNamedValues();
+    for (int j = 0; j < namedValues.length(); ++j) {
+      NamedValue nv = namedValues.at(j);
+      addToGridLayout(j + 1, nv.name, nv.value);
     }
+    if (ui->gridLayout->count() == 0)
+      ui->verticalLayoutPassword->setSpacing(0);
+    else
+      ui->verticalLayoutPassword->setSpacing(6);
+    output = fileContent.getRemainingData();
+  }
+
+  if (QtPassSettings::isUseAutoclearPanel()) {
+    clearPanelTimer.start();
   }
 
   DisplayInTextBrowser(output);
@@ -823,6 +754,28 @@ void MainWindow::enableUiElements(bool state) {
   ui->pushButton->setEnabled(state);
 }
 
+void MainWindow::restoreWindow() {
+  QByteArray geometry = QtPassSettings::getGeometry(saveGeometry());
+  restoreGeometry(geometry);
+  QByteArray savestate = QtPassSettings::getSavestate(saveState());
+  restoreState(savestate);
+  QPoint position = QtPassSettings::getPos(pos());
+  move(position);
+  QSize newSize = QtPassSettings::getSize(size());
+  resize(newSize);
+  QList<int> splitter = ui->splitter->sizes();
+  int left = QtPassSettings::getSplitterLeft(splitter[0]);
+  int right = QtPassSettings::getSplitterRight(splitter[1]);
+  if (left > 0 || right > 0) {
+    splitter[0] = left;
+    splitter[1] = right;
+    ui->splitter->setSizes(splitter);
+  }
+  if (QtPassSettings::isMaximized(isMaximized())) {
+    showMaximized();
+  }
+}
+
 /**
  * @brief MainWindow::processError something went wrong
  * @param error
@@ -925,7 +878,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool isNew) {
-  PasswordDialog d(pwdConfig, this);
+  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), this);
   connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
           &PasswordDialog::setPass);
   //    TODO(bezet): add error handling

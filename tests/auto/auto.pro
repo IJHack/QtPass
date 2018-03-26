@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS += util
+SUBDIRS += util ui

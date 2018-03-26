@@ -1,7 +1,7 @@
 #ifndef USERSDIALOG_H_
 #define USERSDIALOG_H_
 
-#include "datahelpers.h"
+#include "userinfo.h"
 #include <QCloseEvent>
 #include <QDateTime>
 #include <QDialog>

@@ -1,6 +1,8 @@
 #include "passworddialog.h"
+#include "passwordconfiguration.h"
 #include "debughelper.h"
 #include "qtpasssettings.h"
+#include "filecontent.h"
 #include "ui_passworddialog.h"
 #include <QDebug>
 #include <QLabel>
@@ -11,7 +13,7 @@
  * @param passConfig configuration constant
  * @param parent
  */
-PasswordDialog::PasswordDialog(const passwordConfiguration &passConfig,
+PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
                                QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
   templating = false;
@@ -46,8 +48,8 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   QString newPass = QtPassSettings::getPass()->Generate_b(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
-      m_passConfig.Characters[(passwordConfiguration::characterSet)
-                                  ui->passwordTemplateSwitch->currentIndex()]);
+      m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
+                                  ui->passwordTemplateSwitch->currentIndex())]);
   if (newPass.length() > 0)
     ui->lineEditPassword->setText(newPass);
   ui->widget->setEnabled(true);
@@ -58,48 +60,29 @@ void PasswordDialog::on_createPasswordButton_clicked() {
  * @param password
  */
 void PasswordDialog::setPassword(QString password) {
-  QStringList tokens = password.split("\n");
-  ui->lineEditPassword->setText(tokens[0]);
-  tokens.pop_front();
-  if (templating) {
-    QWidget *previous = ui->checkBoxShow;
-    for (int i = 0; i < ui->formLayout->rowCount(); ++i) {
-      QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
-      if (item == NULL)
-        continue;
-      QWidget *widget = item->widget();
-      for (int j = 0; j < tokens.length(); ++j) {
-        QString token = tokens.at(j);
-        if (token.startsWith(widget->objectName() + ':')) {
-          tokens.removeAt(j);
-          QString value = token.remove(0, widget->objectName().length() + 1);
-          reinterpret_cast<QLineEdit *>(widget)->setText(value.trimmed());
-        }
-      }
-      previous = widget;
-    }
-    if (allFields) {
-      for (int j = 0; j < tokens.length(); ++j) {
-        QString token = tokens.at(j);
-        if (token.contains(':')) {
-          int colon = token.indexOf(':');
-          QString field = token.left(colon);
-          QString value = token.right(token.length() - colon - 1);
-          if (!passTemplate.contains(field) && value.startsWith("//"))
-            continue; // colon is probably from a url
-          QLineEdit *line = new QLineEdit();
-          line->setObjectName(field.trimmed());
-          line->setText(value.trimmed());
-          ui->formLayout->addRow(new QLabel(field), line);
-          setTabOrder(previous, line);
-          previous = line;
-          tokens.removeAt(j);
-          --j; // tokens.length() also got shortened by the remove..
-        }
-      }
-    }
+  FileContent fileContent = FileContent::parse(password, templating ? fields : QStringList(), allFields);
+  ui->lineEditPassword->setText(fileContent.getPassword());
+
+  QWidget *previous = ui->checkBoxShow;
+  // first set templated values
+  NamedValues namedValues = fileContent.getNamedValues();
+  for (QLineEdit *line : templateLines) {
+    line->setText(namedValues.takeValue(line->objectName()));
+    previous = line;
   }
-  ui->plainTextEdit->insertPlainText(tokens.join("\n"));
+  // show remaining values (if there are)
+  otherLines.clear();
+  for (const NamedValue &nv : namedValues) {
+    QLineEdit *line = new QLineEdit();
+    line->setObjectName(nv.name);
+    line->setText(nv.value);
+    ui->formLayout->addRow(new QLabel(nv.name), line);
+    setTabOrder(previous, line);
+    otherLines.append(line);
+    previous = line;
+  }
+
+  ui->plainTextEdit->insertPlainText(fileContent.getRemainingData());
 }
 
 /**
@@ -109,15 +92,13 @@ void PasswordDialog::setPassword(QString password) {
  */
 QString PasswordDialog::getPassword() {
   QString passFile = ui->lineEditPassword->text() + "\n";
-  for (int i = 0; i < ui->formLayout->rowCount(); ++i) {
-    QLayoutItem *item = ui->formLayout->itemAt(i, QFormLayout::FieldRole);
-    if (item == NULL)
-      continue;
-    QWidget *widget = item->widget();
-    QString text = reinterpret_cast<QLineEdit *>(widget)->text();
+  QList<QLineEdit *> allLines(templateLines);
+  allLines.append(otherLines);
+  for (QLineEdit *line : allLines) {
+    QString text = line->text();
     if (text.isEmpty())
       continue;
-    passFile += widget->objectName() + ": " + text + "\n";
+    passFile += line->objectName() + ": " + text + "\n";
   }
   passFile += ui->plainTextEdit->toPlainText();
   return passFile;
@@ -130,6 +111,8 @@ QString PasswordDialog::getPassword() {
 void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
   fields = rawFields.split('\n');
   templating = useTemplate;
+  templateLines.clear();
+
   if (templating) {
     QWidget *previous = ui->checkBoxShow;
     foreach (QString field, fields) {
@@ -139,6 +122,7 @@ void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
       line->setObjectName(field);
       ui->formLayout->addRow(new QLabel(field), line);
       setTabOrder(previous, line);
+      templateLines.append(line);
       previous = line;
     }
   }

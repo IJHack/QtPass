@@ -804,22 +804,22 @@ void ConfigDialog::useSymbols(bool useSymbols) {
   ui->checkBoxUseSymbols->setChecked(useSymbols);
 }
 
-/**
- * @brief ConfigDialog::setPasswordLength set the length of desired (generated)
- * passwords.
- * @param pwLen
- */
-void ConfigDialog::setPasswordLength(int pwLen) {
-  ui->spinBoxPasswordLength->setValue(pwLen);
+void ConfigDialog::setPasswordConfiguration(const PasswordConfiguration &config) {
+  ui->spinBoxPasswordLength->setValue(config.length);
+  ui->passwordCharTemplateSelector->setCurrentIndex(config.selected);
+  if (config.selected != PasswordConfiguration::CUSTOM)
+    ui->lineEditPasswordChars->setEnabled(false);
+  ui->lineEditPasswordChars->setText(config.Characters[config.selected]);
 }
 
-/**
- * @brief ConfigDialog::setPasswordChars use these charcters to generate
- * password (non-pwgen option).
- * @param pwChars
- */
-void ConfigDialog::setPasswordChars(QString pwChars) {
-  ui->lineEditPasswordChars->setText(pwChars);
+PasswordConfiguration ConfigDialog::getPasswordConfiguration() {
+  PasswordConfiguration config;
+  config.length = ui->spinBoxPasswordLength->value();
+  config.selected = static_cast<PasswordConfiguration::characterSet>(
+        ui->passwordCharTemplateSelector->currentIndex());
+  config.Characters[PasswordConfiguration::CUSTOM] =
+      ui->lineEditPasswordChars->text();
+  return config;
 }
 
 /**
@@ -861,64 +861,19 @@ bool ConfigDialog::lessRandom() { return ui->checkBoxLessRandom->isChecked(); }
 bool ConfigDialog::useSymbols() { return ui->checkBoxUseSymbols->isChecked(); }
 
 /**
- * @brief ConfigDialog::getPasswordLength return desired length for generated
- * passwords.
- * @return
- */
-int ConfigDialog::getPasswordLength() {
-  return ui->spinBoxPasswordLength->value();
-}
-
-/**
- * @brief ConfigDialog::getPasswordChars return characters to use in password
- * generation (non-pwgen).
- * @return
- */
-QString ConfigDialog::getPasswordChars() {
-  return ui->lineEditPasswordChars->text();
-}
-
-/**
- * @brief ConfigDialog::setPwdTemplateSelector sets the current index of the
- * password characters template combobox
- * @return
- */
-void ConfigDialog::setPwdTemplateSelector(int selection) {
-  ui->passwordCharTemplateSelector->setCurrentIndex(selection);
-}
-
-/**
- * @brief ConfigDialog::getPwdTemplateSelector returns the selection of the
- * password characters template combobox
- * @return
- */
-int ConfigDialog::getPwdTemplateSelector() {
-  return ui->passwordCharTemplateSelector->currentIndex();
-}
-
-/**
  * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the
  * passwordChar Template
  * combo box to the desired entry
  * @param entry of
  */
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
-  ui->lineEditPasswordChars->setText(mainWindow->pwdConfig.Characters[index]);
+  ui->lineEditPasswordChars->setText(
+        QtPassSettings::getPasswordConfiguration().Characters[index]);
   if (index == 3) {
     ui->lineEditPasswordChars->setEnabled(true);
   } else {
     ui->lineEditPasswordChars->setEnabled(false);
   }
-}
-
-/**
- * @brief ConfigDialog::setLineEditEnabled enabling/disabling the textbox with
- * the
- * password characters
- * @param b enable/disable
- */
-void ConfigDialog::setLineEditEnabled(bool b) {
-  ui->lineEditPasswordChars->setEnabled(b);
 }
 
 /**
