@@ -1,7 +1,7 @@
 <map id="src/imitatepass.h" name="src/imitatepass.h">
 <area shape="rect" id="node2" href="$pass_8h.html" title="pass.h" alt="" coords="618,79,678,104"/>
-<area shape="rect" id="node18" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="1094,79,1231,104"/>
-<area shape="rect" id="node3" href="$datahelpers_8h.html" title="datahelpers.h" alt="" coords="950,152,1052,177"/>
-<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="1126,152,1199,177"/>
+<area shape="rect" id="node18" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="1073,79,1209,104"/>
+<area shape="rect" id="node3" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="951,152,1031,177"/>
+<area shape="rect" id="node6" href="$enums_8h.html" title="enums.h" alt="" coords="1105,152,1178,177"/>
 <area shape="rect" id="node7" href="$executor_8h.html" title="executor.h" alt="" coords="103,152,185,177"/>
 </map>

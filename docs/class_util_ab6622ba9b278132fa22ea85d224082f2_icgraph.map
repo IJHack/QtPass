@@ -1,4 +1,5 @@
 <map id="Util::findBinaryInPath" name="Util::findBinaryInPath">
-<area shape="rect" id="node2" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="199,5,378,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="426,5,607,31"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="199,5,409,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="457,5,636,31"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="684,5,865,31"/>
 </map>

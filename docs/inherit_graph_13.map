@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_user_info.html" title="Stores key info lines including validity, creation date and more. " alt="" coords="5,5,77,31"/>
+<area shape="rect" id="node2" href="$class_executor.html" title="Executes external commands for handleing password, git and other data. " alt="" coords="151,5,225,31"/>
+<area shape="rect" id="node3" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation. " alt="" coords="163,55,214,80"/>
+<area shape="rect" id="node6" href="$classtst__ui.html" title="The tst_ui class is our first unit test. " alt="" coords="161,104,215,129"/>
+<area shape="rect" id="node7" href="$classtst__util.html" title="The tst_util class is our first unit test. " alt="" coords="158,153,218,179"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available. " alt="" coords="301,153,392,179"/>
+<area shape="rect" id="node5" href="$class_real_pass.html" title="Wrapper for executing pass to handle the password&#45;store. " alt="" coords="307,55,385,80"/>
+<area shape="rect" id="node8" href="$classsimple_transaction.html" title="simpleTransaction" alt="" coords="124,203,253,228"/>
 </map>

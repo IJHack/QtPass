@@ -11,6 +11,7 @@ var searchData=
   ['usepwgen',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants::usePwgen()'],['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen(bool usePwgen)'],['../class_config_dialog.html#a3408bd2a139e8eb3aff3d72ebc2b79f4',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
   ['userdialog',['userDialog',['../class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9',1,'MainWindow']]],
   ['userinfo',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
+  ['userinfo_2eh',['userinfo.h',['../userinfo_8h.html',1,'']]],
   ['usersdialog',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a927bd252b8ae90c9b55fa9aeaaa00d2e',1,'UsersDialog::UsersDialog()']]],
   ['usersdialog_2ecpp',['usersdialog.cpp',['../usersdialog_8cpp.html',1,'']]],
   ['usersdialog_2eh',['usersdialog.h',['../usersdialog_8h.html',1,'']]],

@@ -1,0 +1,11 @@
+<map id="QtPassSettings::initExecutables" name="QtPassSettings::initExecutables">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="264,5,498,31"/>
+<area shape="rect" id="node3" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath search for executables. " alt="" coords="308,55,454,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="QtPassSettings::setPassExecutable" alt="" coords="264,104,498,129"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="270,153,492,179"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" title="QtPassSettings::setGitExecutable" alt="" coords="270,203,492,228"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="266,252,496,277"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title="QtPassSettings::setGpgExecutable" alt="" coords="266,301,496,327"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="291,351,471,389"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title="QtPassSettings::setPwgen\lExecutable" alt="" coords="291,413,471,452"/>
+</map>

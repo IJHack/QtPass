@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['userinfo',['UserInfo',['../struct_user_info.html',1,'']]],
-  ['usersdialog',['UsersDialog',['../class_users_dialog.html',1,'']]],
-  ['util',['Util',['../class_util.html',1,'']]]
+  ['settingsconstants',['SettingsConstants',['../class_settings_constants.html',1,'']]],
+  ['simpletransaction',['simpleTransaction',['../classsimple_transaction.html',1,'']]],
+  ['singleapplication',['SingleApplication',['../class_single_application.html',1,'']]],
+  ['storemodel',['StoreModel',['../class_store_model.html',1,'']]]
 ];

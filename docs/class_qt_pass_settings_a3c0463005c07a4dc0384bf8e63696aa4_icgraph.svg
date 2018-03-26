@@ -48,66 +48,66 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 659;
 var viewHeight = 46;
-var sectionId = 'dynsection-12';
+var sectionId = 'dynsection-11';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPassTemplate</title>
-<!-- Node98 -->
+<!-- Node99 -->
 <g id="node1" class="node">
-<title>Node98</title>
+<title>Node99</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 167.1865,-37.5 167.1865,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="83.5933" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassTemplate</text>
 </g>
-<!-- Node99 -->
+<!-- Node100 -->
 <g id="node2" class="node">
-<title>Node99</title>
+<title>Node100</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="344.6689,-19.5 344.6689,-37.5 478.4961,-37.5 478.4961,-19.5 344.6689,-19.5"/>
 <text text-anchor="middle" x="411.5825" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node98&#45;&gt;Node99 -->
+<!-- Node99&#45;&gt;Node100 -->
 <g id="edge1" class="edge">
-<title>Node98&#45;&gt;Node99</title>
+<title>Node99&#45;&gt;Node100</title>
 <path fill="none" stroke="#191970" d="M177.3736,-28.5C230.7839,-28.5 296.4434,-28.5 344.6374,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="177.2075,-25.0001 167.2074,-28.5 177.2074,-32.0001 177.2075,-25.0001"/>
 </g>
-<!-- Node101 -->
+<!-- Node102 -->
 <g id="node4" class="node">
-<title>Node101</title>
+<title>Node102</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="203.1865,-.5 203.1865,-18.5 308.6689,-18.5 308.6689,-.5 203.1865,-.5"/>
 <text text-anchor="middle" x="255.9277" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node98&#45;&gt;Node101 -->
+<!-- Node99&#45;&gt;Node102 -->
 <g id="edge3" class="edge">
-<title>Node98&#45;&gt;Node101</title>
+<title>Node99&#45;&gt;Node102</title>
 <path fill="none" stroke="#191970" d="M175.5801,-18.3584C184.883,-17.3327 194.095,-16.3171 202.7797,-15.3596"/>
 <polygon fill="#191970" stroke="#191970" points="175.0267,-14.8981 165.4705,-19.473 175.7939,-21.8559 175.0267,-14.8981"/>
 </g>
-<!-- Node100 -->
+<!-- Node101 -->
 <g id="node3" class="node">
-<title>Node100</title>
+<title>Node101</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="514.4961,-19.5 514.4961,-37.5 650.5352,-37.5 650.5352,-19.5 514.4961,-19.5"/>
 <text text-anchor="middle" x="582.5156" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node99&#45;&gt;Node100 -->
+<!-- Node100&#45;&gt;Node101 -->
 <g id="edge2" class="edge">
-<title>Node99&#45;&gt;Node100</title>
+<title>Node100&#45;&gt;Node101</title>
 <path fill="none" stroke="#191970" d="M488.8862,-28.5C497.3409,-28.5 505.903,-28.5 514.2377,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="488.6492,-25.0001 478.6492,-28.5 488.6492,-32.0001 488.6492,-25.0001"/>
 </g>
-<!-- Node101&#45;&gt;Node99 -->
+<!-- Node102&#45;&gt;Node100 -->
 <g id="edge4" class="edge">
-<title>Node101&#45;&gt;Node99</title>
+<title>Node102&#45;&gt;Node100</title>
 <path fill="none" stroke="#191970" d="M319.1603,-17.2185C327.559,-18.2437 336.1929,-19.2976 344.6516,-20.3301"/>
 <polygon fill="#191970" stroke="#191970" points="319.4104,-13.7231 309.0599,-15.9856 318.5621,-20.6715 319.4104,-13.7231"/>
 </g>

@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 319.48 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::useClipboard</title>
-<!-- Node153 -->
+<!-- Node143 -->
 <g id="node1" class="node">
-<title>Node153</title>
+<title>Node143</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 137.7383,-18.5 137.7383,-.5 0,-.5"/>
 <text text-anchor="middle" x="68.8691" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useClipboard</text>
 </g>
-<!-- Node154 -->
+<!-- Node144 -->
 <g id="node2" class="node">
-<title>Node154</title>
+<title>Node144</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#ab0b9db31a313260c6774cb1233300429" target="_top" xlink:title="ConfigDialog::useClipboard set the use of clipboard from MainWindow. ">
 <polygon fill="none" stroke="#000000" points="173.7383,-.5 173.7383,-18.5 311.4766,-18.5 311.4766,-.5 173.7383,-.5"/>
 <text text-anchor="middle" x="242.6074" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useClipboard</text>
 </a>
 </g>
 </g>
-<!-- Node153&#45;&gt;Node154 -->
+<!-- Node143&#45;&gt;Node144 -->
 <g id="edge1" class="edge">
-<title>Node153&#45;&gt;Node154</title>
+<title>Node143&#45;&gt;Node144</title>
 <path fill="none" stroke="#191970" d="M138.0343,-9.5C146.3765,-9.5 154.9461,-9.5 163.4175,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="163.6803,-13.0001 173.6802,-9.5 163.6802,-6.0001 163.6803,-13.0001"/>
 </g>

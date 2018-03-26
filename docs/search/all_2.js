@@ -4,9 +4,9 @@ var searchData=
   ['candropmimedata',['canDropMimeData',['../class_store_model.html#a5d3df20a622ae638f26e86cecf55adaa',1,'StoreModel']]],
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
-  ['characters',['Characters',['../structpassword_configuration.html#a17af54e5e4aba7a89f8267159d703406',1,'passwordConfiguration']]],
-  ['characterset',['characterSet',['../structpassword_configuration.html#a5733cc26f0c638c6c7197f00e11a4bf2',1,'passwordConfiguration']]],
-  ['charsets_5fcount',['CHARSETS_COUNT',['../structpassword_configuration.html#a5733cc26f0c638c6c7197f00e11a4bf2a80adc259b888b9fadac0a07bd9d69b3d',1,'passwordConfiguration']]],
+  ['characters',['Characters',['../struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0',1,'PasswordConfiguration']]],
+  ['characterset',['characterSet',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173',1,'PasswordConfiguration']]],
+  ['charsets_5fcount',['CHARSETS_COUNT',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173aa2455d2938f04bb57d15204bd06c2bfc',1,'PasswordConfiguration']]],
   ['checkconfig',['checkConfig',['../class_main_window.html#a23d2783cb61a373c4b0127970264290a',1,'MainWindow::checkConfig()'],['../class_util.html#a00c91095ca10b233e45eb643ff6097a4',1,'Util::checkConfig()']]],
   ['cleanup',['cleanup',['../classtst__util.html#a1889cedba30d1d96c60e84effbf7f313',1,'tst_util']]],
   ['clicked',['clicked',['../class_q_push_button_with_clipboard.html#a2b5ddf0356596a7dea7b209bf4a53e0b',1,'QPushButtonWithClipboard']]],
@@ -25,7 +25,7 @@ var searchData=
   ['copydir',['copyDir',['../class_util.html#af7cf188a586e7848ac0c2f4ffce927bf',1,'Util']]],
   ['created',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
   ['critical',['critical',['../class_pass.html#a4fa78a4366b91a930f6719c3ea57f439',1,'Pass']]],
-  ['custom',['CUSTOM',['../structpassword_configuration.html#a5733cc26f0c638c6c7197f00e11a4bf2a1f97682259af9b9c349c82fd56938076',1,'passwordConfiguration']]],
+  ['custom',['CUSTOM',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a',1,'PasswordConfiguration']]],
   ['change_20log',['Change Log',['../md__c_h_a_n_g_e_l_o_g.html',1,'']]],
   ['contributing',['Contributing',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html',1,'']]]
 ];

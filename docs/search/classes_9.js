@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['settingsconstants',['SettingsConstants',['../class_settings_constants.html',1,'']]],
-  ['simpletransaction',['simpleTransaction',['../classsimple_transaction.html',1,'']]],
-  ['singleapplication',['SingleApplication',['../class_single_application.html',1,'']]],
-  ['storemodel',['StoreModel',['../class_store_model.html',1,'']]]
+  ['qprogressindicator',['QProgressIndicator',['../class_q_progress_indicator.html',1,'']]],
+  ['qpushbuttonwithclipboard',['QPushButtonWithClipboard',['../class_q_push_button_with_clipboard.html',1,'']]],
+  ['qtpasssettings',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]]
 ];

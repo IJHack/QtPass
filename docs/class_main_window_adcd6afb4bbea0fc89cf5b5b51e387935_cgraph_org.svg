@@ -8,114 +8,114 @@
  viewBox="0.00 0.00 721.94 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
 <title>MainWindow::generateKeyPair</title>
-<!-- Node298 -->
+<!-- Node277 -->
 <g id="node1" class="node">
-<title>Node298</title>
+<title>Node277</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-55.5 0,-73.5 153.29,-73.5 153.29,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="76.645" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
 </g>
-<!-- Node299 -->
+<!-- Node278 -->
 <g id="node2" class="node">
-<title>Node299</title>
+<title>Node278</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title="QtPassSettings::getPass">
 <polygon fill="none" stroke="#000000" points="190.9551,-74.5 190.9551,-92.5 317.5654,-92.5 317.5654,-74.5 190.9551,-74.5"/>
 <text text-anchor="middle" x="254.2603" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPass</text>
 </a>
 </g>
 </g>
-<!-- Node298&#45;&gt;Node299 -->
+<!-- Node277&#45;&gt;Node278 -->
 <g id="edge1" class="edge">
-<title>Node298&#45;&gt;Node299</title>
+<title>Node277&#45;&gt;Node278</title>
 <path fill="none" stroke="#191970" d="M153.5166,-72.7232C162.5764,-73.6923 171.805,-74.6795 180.816,-75.6435"/>
 <polygon fill="#191970" stroke="#191970" points="180.561,-79.1361 190.8766,-76.7197 181.3056,-72.1758 180.561,-79.1361"/>
 </g>
-<!-- Node303 -->
+<!-- Node282 -->
 <g id="node6" class="node">
-<title>Node303</title>
+<title>Node282</title>
 <g id="a_node6"><a xlink:href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" target="_top" xlink:title="Pass::GenerateGPGKeys internal gpg keypair generator . . ">
 <polygon fill="none" stroke="#000000" points="189.29,-37.5 189.29,-55.5 319.2305,-55.5 319.2305,-37.5 189.29,-37.5"/>
 <text text-anchor="middle" x="254.2603" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::GenerateGPGKeys</text>
 </a>
 </g>
 </g>
-<!-- Node298&#45;&gt;Node303 -->
+<!-- Node277&#45;&gt;Node282 -->
 <g id="edge5" class="edge">
-<title>Node298&#45;&gt;Node303</title>
+<title>Node277&#45;&gt;Node282</title>
 <path fill="none" stroke="#191970" d="M153.5166,-56.7096C161.9817,-55.8518 170.5941,-54.979 179.0386,-54.1232"/>
 <polygon fill="#191970" stroke="#191970" points="179.6386,-57.5804 189.2347,-53.0899 178.9327,-50.616 179.6386,-57.5804"/>
 </g>
-<!-- Node300 -->
+<!-- Node279 -->
 <g id="node3" class="node">
-<title>Node300</title>
+<title>Node279</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title="QtPassSettings::isUsePass">
 <polygon fill="none" stroke="#000000" points="372.7524,-111.5 372.7524,-129.5 510.4663,-129.5 510.4663,-111.5 372.7524,-111.5"/>
 <text text-anchor="middle" x="441.6094" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePass</text>
 </a>
 </g>
 </g>
-<!-- Node299&#45;&gt;Node300 -->
+<!-- Node278&#45;&gt;Node279 -->
 <g id="edge2" class="edge">
-<title>Node299&#45;&gt;Node300</title>
+<title>Node278&#45;&gt;Node279</title>
 <path fill="none" stroke="#191970" d="M300.091,-92.5512C326.0443,-97.6768 358.6952,-104.1251 386.0933,-109.536"/>
 <polygon fill="#191970" stroke="#191970" points="385.4388,-112.9743 395.9275,-111.4782 386.7951,-106.1069 385.4388,-112.9743"/>
 </g>
-<!-- Node301 -->
+<!-- Node280 -->
 <g id="node4" class="node">
-<title>Node301</title>
+<title>Node280</title>
 <g id="a_node4"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title="Pass::init">
 <polygon fill="none" stroke="#000000" points="413.3237,-74.5 413.3237,-92.5 469.895,-92.5 469.895,-74.5 413.3237,-74.5"/>
 <text text-anchor="middle" x="441.6094" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </a>
 </g>
 </g>
-<!-- Node299&#45;&gt;Node301 -->
+<!-- Node278&#45;&gt;Node280 -->
 <g id="edge3" class="edge">
-<title>Node299&#45;&gt;Node301</title>
+<title>Node278&#45;&gt;Node280</title>
 <path fill="none" stroke="#191970" d="M317.6881,-83.5C345.9254,-83.5 378.2703,-83.5 402.8331,-83.5"/>
 <polygon fill="#191970" stroke="#191970" points="402.849,-87.0001 412.849,-83.5 402.8489,-80.0001 402.849,-87.0001"/>
 </g>
-<!-- Node302 -->
+<!-- Node281 -->
 <g id="node5" class="node">
-<title>Node302</title>
+<title>Node281</title>
 <g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
 <polygon fill="none" stroke="#000000" points="563.9883,-74.5 563.9883,-92.5 713.9434,-92.5 713.9434,-74.5 563.9883,-74.5"/>
 <text text-anchor="middle" x="638.9658" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>
 </g>
 </g>
-<!-- Node301&#45;&gt;Node302 -->
+<!-- Node280&#45;&gt;Node281 -->
 <g id="edge4" class="edge">
-<title>Node301&#45;&gt;Node302</title>
+<title>Node280&#45;&gt;Node281</title>
 <path fill="none" stroke="#191970" d="M470.3067,-83.5C492.302,-83.5 523.8544,-83.5 553.7314,-83.5"/>
 <polygon fill="#191970" stroke="#191970" points="553.7831,-87.0001 563.7831,-83.5 553.7831,-80.0001 553.7831,-87.0001"/>
 </g>
-<!-- Node304 -->
+<!-- Node283 -->
 <g id="node7" class="node">
-<title>Node304</title>
+<title>Node283</title>
 <g id="a_node7"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Pass::executeWrapper">
 <polygon fill="none" stroke="#000000" points="383.1187,-37.5 383.1187,-55.5 500.1001,-55.5 500.1001,-37.5 383.1187,-37.5"/>
 <text text-anchor="middle" x="441.6094" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::executeWrapper</text>
 </a>
 </g>
 </g>
-<!-- Node303&#45;&gt;Node304 -->
+<!-- Node282&#45;&gt;Node283 -->
 <g id="edge6" class="edge">
-<title>Node303&#45;&gt;Node304</title>
+<title>Node282&#45;&gt;Node283</title>
 <path fill="none" stroke="#191970" d="M319.2601,-46.5C336.576,-46.5 355.3386,-46.5 372.8488,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="372.9934,-50.0001 382.9934,-46.5 372.9933,-43.0001 372.9934,-50.0001"/>
 </g>
-<!-- Node305 -->
+<!-- Node284 -->
 <g id="node8" class="node">
-<title>Node305</title>
+<title>Node284</title>
 <g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" target="_top" xlink:title="QtPassSettings::getGpgExecutable">
 <polygon fill="none" stroke="#000000" points="355.2305,-.5 355.2305,-18.5 527.9883,-18.5 527.9883,-.5 355.2305,-.5"/>
 <text text-anchor="middle" x="441.6094" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node303&#45;&gt;Node305 -->
+<!-- Node282&#45;&gt;Node284 -->
 <g id="edge7" class="edge">
-<title>Node303&#45;&gt;Node305</title>
+<title>Node282&#45;&gt;Node284</title>
 <path fill="none" stroke="#191970" d="M300.091,-37.4488C326.0443,-32.3232 358.6952,-25.8749 386.0933,-20.464"/>
 <polygon fill="#191970" stroke="#191970" points="386.7951,-23.8931 395.9275,-18.5218 385.4388,-17.0257 386.7951,-23.8931"/>
 </g>

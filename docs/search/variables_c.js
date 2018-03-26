@@ -10,6 +10,5 @@ var searchData=
   ['pos',['pos',['../class_settings_constants.html#a80121ec23fe903e42cb557a1725bc0f6',1,'SettingsConstants']]],
   ['profile',['profile',['../class_settings_constants.html#a8ed5c3840acb4b3ec4f80010bfc95752',1,'SettingsConstants']]],
   ['projectpath',['projectpath',['../namespaceavatars.html#a45ad14f1c34594512525f51440a46b8b',1,'avatars']]],
-  ['pwdconfig',['pwdConfig',['../class_main_window.html#abbe9404cb144c5dc99ae240a7e22b90f',1,'MainWindow']]],
   ['pwgenexecutable',['pwgenExecutable',['../class_settings_constants.html#a2e5906837f972ba26da95b17a299a3ba',1,'SettingsConstants']]]
 ];
