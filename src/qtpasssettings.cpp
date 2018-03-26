@@ -1,6 +1,7 @@
 #include "qtpasssettings.h"
 #include "pass.h"
 #include "settingsconstants.h"
+#include "util.h"
 
 QtPassSettings::QtPassSettings() {}
 
@@ -228,6 +229,24 @@ void QtPassSettings::setPassStore(const QString &passStore) {
   setStringValue(SettingsConstants::passStore, passStore);
 }
 
+void QtPassSettings::initExecutables() {
+  QString passExecutable =
+      QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
+  QtPassSettings::setPassExecutable(passExecutable);
+
+  QString gitExecutable =
+      QtPassSettings::getGitExecutable(Util::findBinaryInPath("git"));
+  QtPassSettings::setGitExecutable(gitExecutable);
+
+  QString gpgExecutable =
+      QtPassSettings::getGpgExecutable(Util::findBinaryInPath("gpg2"));
+  QtPassSettings::setGpgExecutable(gpgExecutable);
+
+  QString pwgenExecutable =
+      QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
+  QtPassSettings::setPwgenExecutable(pwgenExecutable);
+}
+
 QString QtPassSettings::getPassExecutable(const QString &defaultValue) {
   return getStringValue(SettingsConstants::passExecutable, defaultValue);
 }
@@ -262,10 +281,6 @@ void QtPassSettings::setPwgenExecutable(const QString &pwgenExecutable) {
 
 QString QtPassSettings::getGpgHome(const QString &defaultValue) {
   return getStringValue(SettingsConstants::gpgHome, defaultValue);
-}
-
-void QtPassSettings::setGpgHome(const QString &gpgHome) {
-  setStringValue(SettingsConstants::gpgHome, gpgHome);
 }
 
 bool QtPassSettings::isUseWebDav(const bool &defaultValue) {
@@ -356,26 +371,31 @@ void QtPassSettings::setUseSymbols(const bool &useSymbols) {
   setBoolValue(SettingsConstants::useSymbols, useSymbols);
 }
 
-int QtPassSettings::getPasswordLength(const int &defaultValue) {
-  return getIntValue(SettingsConstants::passwordLength, defaultValue);
+PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
+  PasswordConfiguration config;
+  config.length = getIntValue(SettingsConstants::passwordLength, 0);
+  config.selected = static_cast<PasswordConfiguration::characterSet>(
+        getIntValue(SettingsConstants::passwordCharsselection, 0));
+  config.Characters[PasswordConfiguration::CUSTOM] =
+      getStringValue(SettingsConstants::passwordChars, QString());
+  return config;
+}
+
+void QtPassSettings::setPasswordConfiguration(const PasswordConfiguration &config) {
+  setIntValue(SettingsConstants::passwordLength, config.length);
+  setIntValue(SettingsConstants::passwordCharsselection, config.selected);
+  setStringValue(SettingsConstants::passwordChars,
+                 config.Characters[PasswordConfiguration::CUSTOM]);
 }
 
 void QtPassSettings::setPasswordLength(const int &passwordLength) {
   setIntValue(SettingsConstants::passwordLength, passwordLength);
 }
 
-int QtPassSettings::getPasswordCharsselection(const int &defaultValue) {
-  return getIntValue(SettingsConstants::passwordCharsselection, defaultValue);
-}
-
 void QtPassSettings::setPasswordCharsselection(
     const int &passwordCharsselection) {
   setIntValue(SettingsConstants::passwordCharsselection,
               passwordCharsselection);
-}
-
-QString QtPassSettings::getPasswordChars(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::passwordChars, defaultValue);
 }
 
 void QtPassSettings::setPasswordChars(const QString &passwordChars) {

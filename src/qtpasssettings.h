@@ -4,6 +4,7 @@
 #include "enums.h"
 #include "imitatepass.h"
 #include "pass.h"
+#include "passwordconfiguration.h"
 #include "realpass.h"
 #include <QByteArray>
 #include <QCoreApplication>
@@ -87,6 +88,8 @@ public:
   getPassStore(const QString &defaultValue = QVariant().toString());
   static void setPassStore(const QString &passStore);
 
+  static void initExecutables();
+
   static QString
   getPassExecutable(const QString &defaultValue = QVariant().toString());
   static void setPassExecutable(const QString &passExecutable);
@@ -105,7 +108,6 @@ public:
 
   static QString
   getGpgHome(const QString &defaultValue = QVariant().toString());
-  static void setGpgHome(const QString &gpgHome);
 
   static bool isUseWebDav(const bool &defaultValue = QVariant().toBool());
   static void setUseWebDav(const bool &useWebDav);
@@ -144,15 +146,10 @@ public:
   static bool isUseSymbols(const bool &defaultValue = QVariant().toBool());
   static void setUseSymbols(const bool &useSymbols);
 
-  static int getPasswordLength(const int &defaultValue = QVariant().toInt());
+  static PasswordConfiguration getPasswordConfiguration();
+  static void setPasswordConfiguration(const PasswordConfiguration &config);
   static void setPasswordLength(const int &passwordLength);
-
-  static int
-  getPasswordCharsselection(const int &defaultValue = QVariant().toInt());
   static void setPasswordCharsselection(const int &passwordCharsselection);
-
-  static QString
-  getPasswordChars(const QString &defaultValue = QVariant().toString());
   static void setPasswordChars(const QString &passwordChars);
 
   static bool isUseTrayIcon(const bool &defaultValue = QVariant().toBool());

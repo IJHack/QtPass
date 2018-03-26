@@ -7,13 +7,19 @@
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
+- Fix & make clearClipboard more robust [\#359](https://github.com/IJHack/QtPass/pull/359) ([lukedirtwalker](https://github.com/lukedirtwalker))
 
 **Closed issues:**
 
+- How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
+- QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 
 **Merged pull requests:**
 
+- Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
+- Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
+- Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
 - New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))

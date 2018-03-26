@@ -5,41 +5,6 @@
 #include <QString>
 
 /*!
-    \struct passwordConfiguration
-    \brief  holds the Password configuration settings
- */
-struct passwordConfiguration {
-  /**
-   * @brief passwordConfiguration::selected character set.
-   */
-  enum characterSet {
-    ALLCHARS = 0,
-    ALPHABETICAL,
-    ALPHANUMERIC,
-    CUSTOM,
-    CHARSETS_COUNT //  have to be last, for easier initialization of arrays
-  } selected;
-  /**
-   * @brief passwordConfiguration::length of password.
-   */
-  int length;
-  /**
-   * @brief passwordConfiguration::Characters the different character sets.
-   */
-  QString Characters[CHARSETS_COUNT];
-  passwordConfiguration() : selected(ALLCHARS), length(16) {
-    Characters[ALLCHARS] =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
-        "*()_-+={}[]|:;<>,.?"; /*AllChars*/
-    Characters[ALPHABETICAL] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
-                               "vwxyz"; /*Only Alphabetical*/
-    Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
-                               "vwxyz1234567890"; /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = Characters[ALLCHARS]; //  this may be redefined by user
-  }
-};
-
-/*!
     \struct UserInfo
     \brief Stores key info lines including validity, creation date and more.
  */
