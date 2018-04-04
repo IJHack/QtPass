@@ -940,11 +940,27 @@ void MainWindow::on_deleteButton_clicked() {
     isDir = true;
   }
 
+  QString dirMessage = tr(" and the whole content?");
+  if (isDir) {
+    QDirIterator it(model.rootPath() + "/" + file,
+                    QDirIterator::Subdirectories);
+    bool okDir = true;
+    while (it.hasNext() && okDir) {
+      it.next();
+      if (QFileInfo(it.filePath()).isFile()) {
+        if (QFileInfo(it.filePath()).suffix() != "gpg") {
+          okDir = false;
+          dirMessage = tr(" and the whole content? <br><strong>Attention: there are unexpected files in the given folder, check them before continue.</strong>");
+        }
+      }
+    }
+  }
+
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1%2?")
+          tr("Are you sure you want to delete %1%2")
               .arg(QDir::separator() + file)
-              .arg(isDir ? tr(" and whole content") : ""),
+              .arg(isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
     return;
 

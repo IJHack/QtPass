@@ -537,14 +537,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="72"/>
         <location filename="../src/mainwindow.ui" line="75"/>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="90"/>
         <location filename="../src/mainwindow.ui" line="93"/>
-        <location filename="../src/mainwindow.cpp" line="1276"/>
+        <location filename="../src/mainwindow.cpp" line="1292"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
@@ -575,7 +575,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="1258"/>
+        <location filename="../src/mainwindow.cpp" line="1274"/>
         <source>Users</source>
         <translation>Users</translation>
     </message>
@@ -687,7 +687,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="600"/>
-        <location filename="../src/mainwindow.cpp" line="1404"/>
+        <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
@@ -743,7 +743,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="914"/>
-        <location filename="../src/mainwindow.cpp" line="1303"/>
+        <location filename="../src/mainwindow.cpp" line="1319"/>
         <source>New file</source>
         <translation>New file</translation>
     </message>
@@ -755,7 +755,22 @@ p, li { white-space: pre-wrap; }
 (Will be placed in %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="944"/>
+        <location filename="../src/mainwindow.cpp" line="943"/>
+        <source> and the whole content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="953"/>
+        <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="961"/>
+        <source>Are you sure you want to delete %1%2</source>
+        <translation type="unfinished">Are you sure you want to delete %1%2? {1%2?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Delete password?</source>
         <translation>Delete password?</translation>
     </message>
@@ -764,64 +779,62 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="944"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Delete folder?</source>
         <translation>Delete folder?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Are you sure you want to delete %1%2?</translation>
+        <translation type="vanished">Are you sure you want to delete %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
         <source> and whole content</source>
-        <translation> and whole content</translation>
+        <translation type="vanished"> and whole content</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="980"/>
+        <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Can not get key list</source>
         <translation>Can not get key list</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="981"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1014"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>Key not found in keyring</source>
         <translation>Key not found in keyring</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1088"/>
+        <location filename="../src/mainwindow.cpp" line="1104"/>
         <source>Generating GPG key pair</source>
         <translation>Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1130"/>
+        <location filename="../src/mainwindow.cpp" line="1146"/>
         <source>Profile changed to %1</source>
         <translation>Profile changed to %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Add folder</source>
         <translation>Add folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1257"/>
+        <location filename="../src/mainwindow.cpp" line="1273"/>
         <source>Add password</source>
         <translation>Add password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1304"/>
+        <location filename="../src/mainwindow.cpp" line="1320"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>New Folder: 
 (Will be placed in %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1353"/>
+        <location filename="../src/mainwindow.cpp" line="1369"/>
         <source>Copied to clipboard</source>
         <translation>Copied to clipboard</translation>
     </message>
