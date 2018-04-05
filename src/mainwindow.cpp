@@ -2,6 +2,7 @@
 #include "debughelper.h"
 #include <QClipboard>
 #include <QCloseEvent>
+#include <QDesktopServices>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
@@ -1269,9 +1270,11 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 
   QMenu contextMenu;
   if (!selected || fileOrFolder.isDir()) {
+    QAction *openFolder = contextMenu.addAction(tr("Open folder with file manager"));
     QAction *addFolder = contextMenu.addAction(tr("Add folder"));
     QAction *addPassword = contextMenu.addAction(tr("Add password"));
     QAction *users = contextMenu.addAction(tr("Users"));
+    connect(openFolder, SIGNAL(triggered()), this, SLOT(openFolder()));
     connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
     connect(addPassword, SIGNAL(triggered()), this,
             SLOT(on_addButton_clicked()));
@@ -1306,6 +1309,17 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
+}
+
+/**
+ * @brief MainWindow::openFolder open the folder in the default file manager
+ */
+void MainWindow::openFolder() {
+  QString dir =
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+
+  QString path = QDir::toNativeSeparators(dir);
+  QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
 /**
