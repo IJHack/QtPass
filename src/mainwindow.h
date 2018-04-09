@@ -84,6 +84,7 @@ private slots:
   void on_profileBox_currentIndexChanged(QString);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
+  void openFolder();
   void addFolder();
   void editPassword(const QString &);
   void focusInput();
