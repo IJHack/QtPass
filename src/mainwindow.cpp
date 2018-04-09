@@ -2,6 +2,7 @@
 #include "debughelper.h"
 #include <QClipboard>
 #include <QCloseEvent>
+#include <QDesktopServices>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
@@ -940,11 +941,27 @@ void MainWindow::on_deleteButton_clicked() {
     isDir = true;
   }
 
+  QString dirMessage = tr(" and the whole content?");
+  if (isDir) {
+    QDirIterator it(model.rootPath() + "/" + file,
+                    QDirIterator::Subdirectories);
+    bool okDir = true;
+    while (it.hasNext() && okDir) {
+      it.next();
+      if (QFileInfo(it.filePath()).isFile()) {
+        if (QFileInfo(it.filePath()).suffix() != "gpg") {
+          okDir = false;
+          dirMessage = tr(" and the whole content? <br><strong>Attention: there are unexpected files in the given folder, check them before continue.</strong>");
+        }
+      }
+    }
+  }
+
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1%2?")
+          tr("Are you sure you want to delete %1%2")
               .arg(QDir::separator() + file)
-              .arg(isDir ? tr(" and whole content") : ""),
+              .arg(isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
     return;
 
@@ -1253,9 +1270,11 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 
   QMenu contextMenu;
   if (!selected || fileOrFolder.isDir()) {
+    QAction *openFolder = contextMenu.addAction(tr("Open folder with file manager"));
     QAction *addFolder = contextMenu.addAction(tr("Add folder"));
     QAction *addPassword = contextMenu.addAction(tr("Add password"));
     QAction *users = contextMenu.addAction(tr("Users"));
+    connect(openFolder, SIGNAL(triggered()), this, SLOT(openFolder()));
     connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
     connect(addPassword, SIGNAL(triggered()), this,
             SLOT(on_addButton_clicked()));
@@ -1290,6 +1309,17 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
+}
+
+/**
+ * @brief MainWindow::openFolder open the folder in the default file manager
+ */
+void MainWindow::openFolder() {
+  QString dir =
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+
+  QString path = QDir::toNativeSeparators(dir);
+  QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
 /**

@@ -6,6 +6,7 @@ QtPass
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
 [![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
+[![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.

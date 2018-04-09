@@ -7,6 +7,8 @@
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
+- Clipboard clearing timer is not reset when new passwords are copied to the clipboard [\#309](https://github.com/IJHack/QtPass/issues/309)
+- Removal of files outside of password-store [\#300](https://github.com/IJHack/QtPass/issues/300)
 - Fix & make clearClipboard more robust [\#359](https://github.com/IJHack/QtPass/pull/359) ([lukedirtwalker](https://github.com/lukedirtwalker))
 
 **Closed issues:**
@@ -17,6 +19,9 @@
 
 **Merged pull requests:**
 
+- fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+- Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+- Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
 - Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
