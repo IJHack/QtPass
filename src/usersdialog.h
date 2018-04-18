@@ -2,16 +2,15 @@
 #define USERSDIALOG_H_
 
 #include "userinfo.h"
-#include <QCloseEvent>
-#include <QDateTime>
+
 #include <QDialog>
 #include <QList>
-#include <QStandardItemModel>
 
 namespace Ui {
 class UsersDialog;
 }
 
+class QCloseEvent;
 class QListWidgetItem;
 
 /*!

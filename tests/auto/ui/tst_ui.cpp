@@ -14,11 +14,13 @@ private Q_SLOTS:
 };
 
 /**
- * @brief tst_ui::contentRemainsSame test that content set with PasswordDialog::setPassword
- * is repeated when calling PasswordDialog::getPassword.
+ * @brief tst_ui::contentRemainsSame test that content set with
+ * PasswordDialog::setPassword is repeated when calling
+ * PasswordDialog::getPassword.
  */
 void tst_ui::contentRemainsSame() {
-  QScopedPointer<PasswordDialog> d(new PasswordDialog(PasswordConfiguration{}, NULL));
+  QScopedPointer<PasswordDialog> d(
+      new PasswordDialog(PasswordConfiguration{}, NULL));
   d->setTemplate("", false);
   QString input = "pw\n";
   d->setPass(input);

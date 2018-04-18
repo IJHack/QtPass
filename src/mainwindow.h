@@ -1,23 +1,16 @@
 #ifndef MAINWINDOW_H_
 #define MAINWINDOW_H_
 
-#include "passwordconfiguration.h"
-#include "userinfo.h"
-#include "enums.h"
-#include "imitatepass.h"
-#include "pass.h"
-#include "realpass.h"
 #include "storemodel.h"
-#include "trayicon.h"
+
 #include <QFileSystemModel>
+#include <QItemSelectionModel>
 #include <QMainWindow>
 #include <QProcess>
-#include <QQueue>
 #include <QTimer>
-#include <QTreeView>
 
 #if SINGLE_APP
-#include "singleapplication.h"
+class SingleApplication;
 #else
 #define SingleApplication QApplication
 #endif
@@ -40,6 +33,8 @@ class MainWindow;
 
     This class could really do with an overhaul.
  */
+class Pass;
+class TrayIcon;
 class MainWindow : public QMainWindow {
   Q_OBJECT
 

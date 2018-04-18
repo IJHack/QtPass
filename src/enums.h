@@ -32,6 +32,7 @@ enum PROCESS {
   PROCESS_COUNT,
   INVALID
 };
+
 } // namespace Enums
 
 #endif // ENUMS_H

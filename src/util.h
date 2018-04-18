@@ -7,6 +7,7 @@
 #include <QString>
 
 class StoreModel;
+
 /*!
     \class Util
     \brief Some static utilities to be used elsewhere.

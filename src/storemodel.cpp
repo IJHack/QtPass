@@ -1,8 +1,9 @@
 #include "storemodel.h"
+#include "qtpasssettings.h"
+
 #include <QDebug>
 #include <QMessageBox>
 #include <QMimeData>
-#include <QStringListModel>
 
 QDataStream &
 operator<<(QDataStream &out,
@@ -160,7 +161,9 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
 bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  int row, int column,
                                  const QModelIndex &parent) const {
+#ifdef QT_DEBUG
   qDebug() << action << row;
+#endif
 
   QModelIndex useIndex =
       this->index(parent.row(), parent.column(), parent.parent());

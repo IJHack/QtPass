@@ -1,10 +1,6 @@
 #ifndef TRAYICON_H_
 #define TRAYICON_H_
 
-#include <QAction>
-#include <QApplication>
-#include <QMainWindow>
-#include <QMenu>
 #include <QSystemTrayIcon>
 #include <QWidget>
 
@@ -12,6 +8,9 @@
     \class TrayIcon
     \brief Handles the systemtray icon and menu.
  */
+class QAction;
+class QMainWindow;
+class QMenu;
 class TrayIcon : public QWidget {
   Q_OBJECT
 

@@ -6,11 +6,12 @@
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
+#include <QMenu>
 #include <QMessageBox>
 #include <QQueue>
 #include <QShortcut>
+#include <QSystemTrayIcon>
 #include <QTextCodec>
-#include <QTimer>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -19,15 +20,20 @@
 #undef DELETE
 #endif
 #include "configdialog.h"
+#include "filecontent.h"
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonwithclipboard.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
+#include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
-#include "filecontent.h"
+
+#if SINGLE_APP
+#include "singleapplication.h"
+#endif
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -45,7 +51,8 @@ MainWindow::MainWindow(QWidget *parent)
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
-  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, SLOT(copyPasswordFromTreeview()));
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
+                SLOT(copyPasswordFromTreeview()));
 
   //    TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -563,7 +570,8 @@ void MainWindow::initAddButton() {
   // Add a Actions to the Add-Button
   QIcon addFileIcon = QIcon::fromTheme("file_new");
   QIcon addFolderIcon = QIcon::fromTheme("folder_new");
-  QAction *actionAddPassword = new QAction(addFileIcon, tr("Add Password"), this);
+  QAction *actionAddPassword =
+      new QAction(addFileIcon, tr("Add Password"), this);
   QAction *actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"), this);
 
   ui->addButton->addAction(actionAddPassword);
@@ -575,8 +583,11 @@ void MainWindow::initAddButton() {
 }
 
 void MainWindow::passShowHandler(const QString &p_output) {
-  QStringList templ = QtPassSettings::isUseTemplate() ? QtPassSettings::getPassTemplate().split("\n") : QStringList();
-  bool allFields = QtPassSettings::isUseTemplate() && QtPassSettings::isTemplateAllFields();
+  QStringList templ = QtPassSettings::isUseTemplate()
+                          ? QtPassSettings::getPassTemplate().split("\n")
+                          : QStringList();
+  bool allFields =
+      QtPassSettings::isUseTemplate() && QtPassSettings::isTemplateAllFields();
   FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
   QString password = fileContent.getPassword();
@@ -951,7 +962,9 @@ void MainWindow::on_deleteButton_clicked() {
       if (QFileInfo(it.filePath()).isFile()) {
         if (QFileInfo(it.filePath()).suffix() != "gpg") {
           okDir = false;
-          dirMessage = tr(" and the whole content? <br><strong>Attention: there are unexpected files in the given folder, check them before continue.</strong>");
+          dirMessage = tr(" and the whole content? <br><strong>Attention: "
+                          "there are unexpected files in the given folder, "
+                          "check them before continue.</strong>");
         }
       }
     }
@@ -1270,7 +1283,8 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 
   QMenu contextMenu;
   if (!selected || fileOrFolder.isDir()) {
-    QAction *openFolder = contextMenu.addAction(tr("Open folder with file manager"));
+    QAction *openFolder =
+        contextMenu.addAction(tr("Open folder with file manager"));
     QAction *addFolder = contextMenu.addAction(tr("Add folder"));
     QAction *addPassword = contextMenu.addAction(tr("Add password"));
     QAction *users = contextMenu.addAction(tr("Users"));
@@ -1387,20 +1401,20 @@ void MainWindow::copyTextToClipboard(const QString &text) {
 }
 
 void MainWindow::copyPasswordFromTreeview() {
-    QFileInfo fileOrFolder =
-        model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileOrFolder =
+      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
 
-    if (fileOrFolder.isFile()) {
-      QString file = getFile(ui->treeView->currentIndex(), true);
-      connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-              &MainWindow::passwordFromFileToClipboard);
-      QtPassSettings::getPass()->Show(file);
-    }
+  if (fileOrFolder.isFile()) {
+    QString file = getFile(ui->treeView->currentIndex(), true);
+    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+            &MainWindow::passwordFromFileToClipboard);
+    QtPassSettings::getPass()->Show(file);
+  }
 }
 
-void MainWindow::passwordFromFileToClipboard(const QString &text){
-    QStringList tokens = text.split('\n');
-    copyTextToClipboard(tokens[0]);
+void MainWindow::passwordFromFileToClipboard(const QString &text) {
+  QStringList tokens = text.split('\n');
+  copyTextToClipboard(tokens[0]);
 }
 
 /**
@@ -1512,11 +1526,13 @@ void MainWindow::updateGitButtonVisibility() {
 void MainWindow::hideGitButtons() {
   ui->pushButton->hide();
   ui->updateButton->hide();
-  ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
+  ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
+                                   QSizePolicy::Minimum);
 }
 
 void MainWindow::showGitButtons() {
   ui->pushButton->show();
   ui->updateButton->show();
-  ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum, QSizePolicy::Minimum);
+  ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
+                                   QSizePolicy::Minimum);
 }

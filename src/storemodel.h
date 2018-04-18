@@ -2,17 +2,13 @@
 #define STOREMODEL_H_
 
 #include "util.h"
-#include <QDataStream>
-#include <QFileSystemModel>
-#include <QRegExp>
 #include <QSortFilterProxyModel>
-#include <QStringListModel>
-#include <qtpasssettings.h>
 
 /*!
     \class StoreModel
     \brief The QSortFilterProxyModel for handling filesystem searches.
  */
+class QFileSystemModel;
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
 private:
