@@ -1,11 +1,4 @@
 <map id="src/trayicon.h" name="src/trayicon.h">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="243,79,369,104"/>
-<area shape="rect" id="node10" href="$trayicon_8cpp.html" title="src/trayicon.cpp" alt="" coords="393,79,507,104"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="5,152,113,177"/>
-<area shape="rect" id="node4" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="243,152,369,177"/>
-<area shape="rect" id="node5" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="70,299,209,324"/>
-<area shape="rect" id="node8" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="404,299,544,324"/>
-<area shape="rect" id="node9" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="498,152,676,177"/>
-<area shape="rect" id="node6" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="240,225,372,251"/>
-<area shape="rect" id="node7" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="233,299,379,324"/>
+<area shape="rect" id="node2" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="5,79,146,104"/>
+<area shape="rect" id="node3" href="$trayicon_8cpp.html" title="src/trayicon.cpp" alt="" coords="170,79,285,104"/>
 </map>

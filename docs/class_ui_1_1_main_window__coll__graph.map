@@ -1,0 +1,4 @@
+<map id="Ui::MainWindow" name="Ui::MainWindow">
+<area shape="rect" id="node2" href="$class_ui___main_window.html" title="Ui_MainWindow" alt="" coords="24,167,141,192"/>
+<area shape="rect" id="node3" href="$class_deselectable_tree_view.html" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ..." alt="" coords="5,80,159,105"/>
+</map>

@@ -1,23 +1,14 @@
 <map id="src/simpletransaction.h" name="src/simpletransaction.h">
-<area shape="rect" id="node2" href="$imitatepass_8h.html" title="src/imitatepass.h" alt="" coords="939,79,1061,104"/>
-<area shape="rect" id="node22" href="$simpletransaction_8cpp.html" title="src/simpletransaction.cpp" alt="" coords="1085,79,1257,104"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="251,299,378,324"/>
-<area shape="rect" id="node11" href="$qtpasssettings_8h.html" title="src/qtpasssettings.h" alt="" coords="930,152,1070,177"/>
-<area shape="rect" id="node19" href="$imitatepass_8cpp.html" title="src/imitatepass.cpp" alt="" coords="1348,225,1484,251"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="94,379,202,404"/>
-<area shape="rect" id="node5" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="428,379,553,404"/>
-<area shape="rect" id="node6" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="88,532,227,557"/>
-<area shape="rect" id="node9" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="522,532,662,557"/>
-<area shape="rect" id="node10" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="226,379,404,404"/>
-<area shape="rect" id="node7" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="360,459,493,484"/>
-<area shape="rect" id="node8" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="351,532,497,557"/>
-<area shape="rect" id="node12" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="675,225,795,251"/>
-<area shape="rect" id="node14" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="820,379,916,404"/>
-<area shape="rect" id="node15" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="941,379,1094,404"/>
-<area shape="rect" id="node16" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="1164,379,1249,404"/>
-<area shape="rect" id="node20" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="920,225,1080,251"/>
-<area shape="rect" id="node21" href="$realpass_8cpp.html" title="src/realpass.cpp" alt="" coords="1105,225,1223,251"/>
-<area shape="rect" id="node13" href="$util_8h.html" title="src/util.h" alt="" coords="723,299,794,324"/>
-<area shape="rect" id="node18" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="565,299,699,324"/>
-<area shape="rect" id="node17" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="628,372,746,411"/>
+<area shape="rect" id="node2" href="$imitatepass_8h.html" title="src/imitatepass.h" alt="" coords="323,79,444,104"/>
+<area shape="rect" id="node13" href="$simpletransaction_8cpp.html" title="src/simpletransaction.cpp" alt="" coords="469,79,640,104"/>
+<area shape="rect" id="node3" href="$qtpasssettings_8h.html" title="src/qtpasssettings.h" alt="" coords="547,152,687,177"/>
+<area shape="rect" id="node5" href="$imitatepass_8cpp.html" title="src/imitatepass.cpp" alt="" coords="5,225,141,251"/>
+<area shape="rect" id="node4" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="165,225,304,251"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="328,225,469,251"/>
+<area shape="rect" id="node7" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="493,225,589,251"/>
+<area shape="rect" id="node8" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="613,225,773,251"/>
+<area shape="rect" id="node9" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="798,225,951,251"/>
+<area shape="rect" id="node10" href="$realpass_8cpp.html" title="src/realpass.cpp" alt="" coords="975,225,1094,251"/>
+<area shape="rect" id="node11" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="1118,225,1252,251"/>
+<area shape="rect" id="node12" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="1276,225,1361,251"/>
 </map>

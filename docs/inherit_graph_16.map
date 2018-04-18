@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_user_info.html" title="Stores key info lines including validity, creation date and more. " alt="" coords="5,5,77,31"/>
+<area shape="rect" id="node1" href="$class_ui___config_dialog.html" title="Ui_ConfigDialog" alt="" coords="5,5,123,31"/>
+<area shape="rect" id="node2" href="$class_ui_1_1_config_dialog.html" title="Ui::ConfigDialog" alt="" coords="171,5,289,31"/>
 </map>

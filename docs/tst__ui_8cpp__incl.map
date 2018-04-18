@@ -1,8 +1,4 @@
 <map id="tests/auto/ui/tst_ui.cpp" name="tests/auto/ui/tst_ui.cpp">
-<area shape="rect" id="node2" href="$passworddialog_8h.html" title="../../../src/passworddialog.h" alt="" coords="264,79,444,104"/>
-<area shape="rect" id="node21" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="5,152,171,177"/>
-<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="501,152,561,177"/>
-<area shape="rect" id="node4" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="192,225,272,251"/>
-<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="96,225,169,251"/>
-<area shape="rect" id="node8" href="$executor_8h.html" title="executor.h" alt="" coords="347,225,430,251"/>
+<area shape="rect" id="node2" href="$passworddialog_8h.html" title="../../../src/passworddialog.h" alt="" coords="5,79,185,104"/>
+<area shape="rect" id="node4" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="210,79,376,104"/>
 </map>

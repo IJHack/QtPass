@@ -56,6 +56,7 @@ var searchData=
   ['settemplateallfields',['setTemplateAllFields',['../class_qt_pass_settings.html#af867f1e7648ae1a4926578d9ec3cdfae',1,'QtPassSettings']]],
   ['settext',['setText',['../class_main_window.html#affba132ed066e5094fd6aabc8debaa01',1,'MainWindow']]],
   ['settexttocopy',['setTextToCopy',['../class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8',1,'QPushButtonWithClipboard']]],
+  ['setupui',['setupUi',['../class_ui___config_dialog.html#a3b38bb7b9733099bde7fdee708b64fd8',1,'Ui_ConfigDialog::setupUi()'],['../class_ui___keygen_dialog.html#af50d001f9114e26281aab102ae536a7c',1,'Ui_KeygenDialog::setupUi()'],['../class_ui___main_window.html#acf4a0872c4c77d8f43a2ec66ed849b58',1,'Ui_MainWindow::setupUi()'],['../class_ui___password_dialog.html#a0ef1436c168416abd4cf37dfc6cbd91e',1,'Ui_PasswordDialog::setupUi()'],['../class_ui___users_dialog.html#a5e7129704fb2b44e7dc39c843188270f',1,'Ui_UsersDialog::setupUi()']]],
   ['setuseautoclear',['setUseAutoclear',['../class_qt_pass_settings.html#a8deb96dd37776cb2e864f8799bc17820',1,'QtPassSettings']]],
   ['setuseautoclearpanel',['setUseAutoclearPanel',['../class_qt_pass_settings.html#ac3afbfb8dca45e6569eea291e47fb1d8',1,'QtPassSettings']]],
   ['setusegit',['setUseGit',['../class_qt_pass_settings.html#afc9621d9abe43370e41e01bc9f9cb51f',1,'QtPassSettings']]],

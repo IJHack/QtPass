@@ -1,16 +1,12 @@
 <map id="src/util.h" name="src/util.h">
-<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="542,85,662,111"/>
-<area shape="rect" id="node9" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="339,385,480,411"/>
-<area shape="rect" id="node12" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="816,85,912,111"/>
-<area shape="rect" id="node13" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="937,85,1090,111"/>
-<area shape="rect" id="node14" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="1114,85,1199,111"/>
-<area shape="rect" id="node15" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="1223,79,1340,117"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="457,165,584,191"/>
-<area shape="rect" id="node11" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="299,165,433,191"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="633,239,741,264"/>
-<area shape="rect" id="node5" href="$configdialog_8h.html" title="src/configdialog.h" alt="" coords="203,239,328,264"/>
-<area shape="rect" id="node6" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="5,385,145,411"/>
-<area shape="rect" id="node10" href="$deselectabletreeview_8h.html" title="src/deselectabletreeview.h" alt="" coords="431,239,609,264"/>
-<area shape="rect" id="node7" href="$keygendialog_8h.html" title="src/keygendialog.h" alt="" coords="173,312,305,337"/>
-<area shape="rect" id="node8" href="$keygendialog_8cpp.html" title="src/keygendialog.cpp" alt="" coords="168,385,315,411"/>
+<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="282,85,402,111"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="348,239,488,264"/>
+<area shape="rect" id="node8" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="479,85,575,111"/>
+<area shape="rect" id="node9" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="600,85,753,111"/>
+<area shape="rect" id="node10" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="777,85,862,111"/>
+<area shape="rect" id="node11" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="886,79,1004,117"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="120,165,247,191"/>
+<area shape="rect" id="node7" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="271,165,405,191"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="5,239,113,264"/>
+<area shape="rect" id="node5" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="138,239,277,264"/>
 </map>

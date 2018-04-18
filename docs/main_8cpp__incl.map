@@ -1,15 +1,5 @@
 <map id="main/main.cpp" name="main/main.cpp">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="1189,79,1294,104"/>
-<area shape="rect" id="node3" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="1960,299,2126,324"/>
-<area shape="rect" id="node5" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="1636,445,1716,471"/>
-<area shape="rect" id="node7" href="$enums_8h.html" title="enums.h" alt="" coords="188,445,260,471"/>
-<area shape="rect" id="node8" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="342,299,442,324"/>
-<area shape="rect" id="node9" href="$pass_8h.html" title="pass.h" alt="" coords="680,372,741,397"/>
-<area shape="rect" id="node23" href="$realpass_8h.html" title="realpass.h" alt="" coords="467,299,549,324"/>
-<area shape="rect" id="node24" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1055,152,1153,177"/>
-<area shape="rect" id="node41" href="$trayicon_8h.html" title="trayicon.h" alt="" coords="1580,152,1660,177"/>
-<area shape="rect" id="node21" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="93,372,229,397"/>
-<area shape="rect" id="node10" href="$executor_8h.html" title="executor.h" alt="" coords="908,445,991,471"/>
-<area shape="rect" id="node25" href="$util_8h.html" title="util.h" alt="" coords="1187,225,1237,251"/>
-<area shape="rect" id="node32" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="1045,225,1163,251"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="565,79,670,104"/>
+<area shape="rect" id="node3" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="201,152,300,177"/>
+<area shape="rect" id="node4" href="$util_8h.html" title="util.h" alt="" coords="162,225,211,251"/>
 </map>

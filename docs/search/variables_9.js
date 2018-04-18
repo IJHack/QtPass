@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maximized',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]]
+  ['key_5fid',['key_id',['../struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6',1,'UserInfo']]]
 ];
