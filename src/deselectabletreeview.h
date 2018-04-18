@@ -3,8 +3,8 @@
 
 #include <QCoreApplication>
 #include <QMouseEvent>
-#include <QTreeView>
 #include <QTime>
+#include <QTreeView>
 
 /**
  * @brief The DeselectableTreeView class

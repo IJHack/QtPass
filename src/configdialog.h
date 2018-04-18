@@ -7,9 +7,9 @@
 #include <QDialog>
 
 namespace Ui {
-    struct UserInfo;
+struct UserInfo;
 
-    class ConfigDialog;
+class ConfigDialog;
 } // namespace Ui
 
 /*!

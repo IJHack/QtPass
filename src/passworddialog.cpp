@@ -1,8 +1,8 @@
 #include "passworddialog.h"
-#include "passwordconfiguration.h"
 #include "debughelper.h"
-#include "qtpasssettings.h"
 #include "filecontent.h"
+#include "passwordconfiguration.h"
+#include "qtpasssettings.h"
 #include "ui_passworddialog.h"
 
 #include <QLabel>
@@ -49,7 +49,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   QString newPass = QtPassSettings::getPass()->Generate_b(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
-                                  ui->passwordTemplateSwitch->currentIndex())]);
+          ui->passwordTemplateSwitch->currentIndex())]);
   if (newPass.length() > 0)
     ui->lineEditPassword->setText(newPass);
   ui->widget->setEnabled(true);
@@ -60,7 +60,8 @@ void PasswordDialog::on_createPasswordButton_clicked() {
  * @param password
  */
 void PasswordDialog::setPassword(QString password) {
-  FileContent fileContent = FileContent::parse(password, templating ? fields : QStringList(), allFields);
+  FileContent fileContent = FileContent::parse(
+      password, templating ? fields : QStringList(), allFields);
   ui->lineEditPassword->setText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;

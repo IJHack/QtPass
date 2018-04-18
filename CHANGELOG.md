@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...HEAD)
 
+**Implemented enhancements:**
+
+- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
@@ -19,6 +23,7 @@
 
 **Merged pull requests:**
 
+- Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))

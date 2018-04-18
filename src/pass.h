@@ -1,9 +1,9 @@
 #ifndef PASS_H
 #define PASS_H
 
-#include "userinfo.h"
 #include "enums.h"
 #include "executor.h"
+#include "userinfo.h"
 
 #include <QProcess>
 #include <QQueue>

@@ -1,5 +1,5 @@
-#include "configdialog.h"
 #include "keygendialog.h"
+#include "configdialog.h"
 #include "debughelper.h"
 #include "qprogressindicator.h"
 #include "ui_keygendialog.h"
