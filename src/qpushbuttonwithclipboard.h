@@ -2,7 +2,6 @@
 #define QPUSHBUTTONWITHCLIPBOARD_H_
 
 #include <QPushButton>
-//#include <QWidget>
 
 /*!
     \class QPushButtonWithClipboard

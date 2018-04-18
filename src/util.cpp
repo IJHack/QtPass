@@ -2,8 +2,6 @@
 #include "debughelper.h"
 #include <QDir>
 #include <QFileInfo>
-//#include <QProcessEnvironment>
-//#include <QString>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else

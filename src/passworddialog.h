@@ -1,7 +1,6 @@
 #ifndef PASSWORDDIALOG_H_
 #define PASSWORDDIALOG_H_
 
-//#include "pass.h"
 #include <QDialog>
 
 namespace Ui {
