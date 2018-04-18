@@ -3,15 +3,11 @@
 
 #include "enums.h"
 #include "imitatepass.h"
-#include "pass.h"
 #include "passwordconfiguration.h"
 #include "realpass.h"
+
 #include <QByteArray>
-#include <QCoreApplication>
-#include <QDir>
-#include <QFile>
 #include <QHash>
-#include <QObject>
 #include <QPoint>
 #include <QSettings>
 #include <QSize>

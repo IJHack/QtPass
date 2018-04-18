@@ -1,4 +1,8 @@
 #include "trayicon.h"
+#include <QAction>
+#include <QApplication>
+#include <QMainWindow>
+#include <QMenu>
 
 /**
  * @brief TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on

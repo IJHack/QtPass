@@ -1,8 +1,11 @@
 #ifndef DESELECTABLETREEVIEW_H
 #define DESELECTABLETREEVIEW_H
-#include "QMouseEvent"
-#include "QTreeView"
-#include "mainwindow.h"
+
+//#include "mainwindow.h"
+
+#include <QCoreApplication>
+#include <QMouseEvent>
+#include <QTreeView>
 #include <QTime>
 
 /**

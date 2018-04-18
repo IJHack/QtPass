@@ -1,4 +1,8 @@
 #include "mainwindow.h"
+#if SINGLE_APP
+#include "singleapplication.h"
+#endif
+
 #include <QApplication>
 #include <QTranslator>
 
@@ -72,8 +76,7 @@ int main(int argc, char *argv[]) {
   // locale = "nl_NL";
   // locale = "he_IL";
   // locale = "ar_MA";
-  translator.load(QString(":localization/localization_") + locale +
-                  QString(".qm"));
+  translator.load(QString(":localization/localization_%1.qm").arg(locale));
   app.installTranslator(&translator);
   app.setLayoutDirection(QObject::tr("LTR") == "RTL" ? Qt::RightToLeft
                                                      : Qt::LeftToRight);

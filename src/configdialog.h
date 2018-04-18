@@ -1,16 +1,15 @@
 #ifndef CONFIGDIALOG_H_
 #define CONFIGDIALOG_H_
 
-#include "mainwindow.h"
-#include <QCloseEvent>
+#include "enums.h"
+#include "passwordconfiguration.h"
+
 #include <QDialog>
-#include <QFileDialog>
-#include <QTableWidgetItem>
 
 namespace Ui {
-struct UserInfo;
+    struct UserInfo;
 
-class ConfigDialog;
+    class ConfigDialog;
 } // namespace Ui
 
 /*!
@@ -19,6 +18,8 @@ class ConfigDialog;
 
     This class should also take the handling from the MainWindow class.
 */
+class MainWindow;
+class QCloseEvent;
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
