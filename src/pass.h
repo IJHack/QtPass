@@ -4,21 +4,19 @@
 #include "userinfo.h"
 #include "enums.h"
 #include "executor.h"
-#include <QDebug>
-#include <QDir>
-#include <QList>
+
 #include <QProcess>
 #include <QQueue>
+#include <QString>
+#include <cassert>
+#include <map>
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
 #include <QRandomGenerator>
 #else
 #include <fcntl.h>
 #include <unistd.h>
 #endif
-#include <QString>
-#include <QTextCodec>
-#include <cassert>
-#include <map>
 
 /*!
     \class Pass

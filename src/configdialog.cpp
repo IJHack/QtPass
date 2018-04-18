@@ -6,6 +6,7 @@
 #include "ui_configdialog.h"
 #include <QClipboard>
 #include <QDir>
+#include <QFileDialog>
 #include <QMessageBox>
 #ifdef Q_OS_WIN
 #include <windows.h>

@@ -7,10 +7,11 @@
 #include <QInputDialog>
 #include <QLabel>
 #include <QMessageBox>
+#include <QMenu>
 #include <QQueue>
 #include <QShortcut>
+#include <QSystemTrayIcon>
 #include <QTextCodec>
-#include <QTimer>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -28,6 +29,11 @@
 #include "usersdialog.h"
 #include "util.h"
 #include "filecontent.h"
+#include "trayicon.h"
+
+#if SINGLE_APP
+#include "singleapplication.h"
+#endif
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also

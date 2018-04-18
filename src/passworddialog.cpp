@@ -4,7 +4,7 @@
 #include "qtpasssettings.h"
 #include "filecontent.h"
 #include "ui_passworddialog.h"
-#include <QDebug>
+
 #include <QLabel>
 #include <QLineEdit>
 

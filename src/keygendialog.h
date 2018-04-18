@@ -1,18 +1,18 @@
 #ifndef KEYGENDIALOG_H_
 #define KEYGENDIALOG_H_
 
-#include "configdialog.h"
-#include <QCloseEvent>
 #include <QDialog>
 
 namespace Ui {
-class KeygenDialog;
+    class KeygenDialog;
 }
 
 /*!
     \class KeygenDialog
     \brief Handles GPG keypair generation.
  */
+class ConfigDialog;
+class QCloseEvent;
 class KeygenDialog : public QDialog {
   Q_OBJECT
 

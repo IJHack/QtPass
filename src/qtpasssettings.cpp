@@ -3,6 +3,8 @@
 #include "settingsconstants.h"
 #include "util.h"
 
+#include <QCoreApplication>
+
 QtPassSettings::QtPassSettings() {}
 
 bool QtPassSettings::initialized = false;

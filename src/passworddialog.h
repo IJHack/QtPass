@@ -1,9 +1,8 @@
 #ifndef PASSWORDDIALOG_H_
 #define PASSWORDDIALOG_H_
 
-#include "pass.h"
+//#include "pass.h"
 #include <QDialog>
-#include <QWidget>
 
 namespace Ui {
 class PasswordDialog;
@@ -11,6 +10,7 @@ class PasswordDialog;
 
 struct PasswordConfiguration;
 class QLineEdit;
+class QWidget;
 
 /*!
     \class PasswordDialog

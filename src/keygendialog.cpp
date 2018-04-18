@@ -1,3 +1,4 @@
+#include "configdialog.h"
 #include "keygendialog.h"
 #include "debughelper.h"
 #include "qprogressindicator.h"
