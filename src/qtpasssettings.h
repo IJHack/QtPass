@@ -17,7 +17,7 @@
     \class QtPassSettings
     \brief Singleton that stores qtpass' settings, saves and loads config
 */
-class QtPassSettings {
+class QtPassSettings : public QSettings {
 
 public:
   static QString
@@ -184,17 +184,19 @@ public:
   static RealPass *getRealPass();
   static ImitatePass *getImitatePass();
 
-signals:
-
-public slots:
-
 private:
   // constructor
   explicit QtPassSettings();
+  QtPassSettings(const QString &organization, const QSettings::Format format) : QSettings(organization, format) {}
+  QtPassSettings(const QString &organization, const QString &application) : QSettings(organization, application) {}
 
   static bool initialized;
-  // member
-  static QScopedPointer<QSettings> settings;
+  static QtPassSettings *_instance;
+
+  static QtPassSettings *getSettings();
+
+  /* REMOVE */
+  //static QScopedPointer<QSettings> settings;
 
   static QHash<QString, QString> stringSettings;
   static QHash<QString, QByteArray> byteArraySettings;
@@ -202,13 +204,14 @@ private:
   static QHash<QString, QSize> sizeSettings;
   static QHash<QString, int> intSettings;
   static QHash<QString, bool> boolSettings;
+  /* END REMOVE */
 
   static Pass *pass;
   static RealPass realPass;
   static ImitatePass imitatePass;
 
+  /* WHY DEFINE THIS FUNCTIONS?*/
   // functions
-  static QSettings &getSettings();
 
   static QString getStringValue(const QString &key,
                                 const QString &defaultValue);
@@ -234,9 +237,9 @@ private:
   static void beginMainwindowGroup();
   static void beginProfilesGroup();
 
-  static QVariant getSetting(const QString &key,
-                             const QVariant &defaultValue = QVariant());
   static void setSetting(const QString &key, const QVariant &value);
+
+  /* END: WHY DEFINE THIS FUNCTIONS?*/
 };
 
 #endif // QTPASSSETTINGS_H
