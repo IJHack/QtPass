@@ -805,7 +805,8 @@ void ConfigDialog::useSymbols(bool useSymbols) {
   ui->checkBoxUseSymbols->setChecked(useSymbols);
 }
 
-void ConfigDialog::setPasswordConfiguration(const PasswordConfiguration &config) {
+void ConfigDialog::setPasswordConfiguration(
+    const PasswordConfiguration &config) {
   ui->spinBoxPasswordLength->setValue(config.length);
   ui->passwordCharTemplateSelector->setCurrentIndex(config.selected);
   if (config.selected != PasswordConfiguration::CUSTOM)
@@ -817,7 +818,7 @@ PasswordConfiguration ConfigDialog::getPasswordConfiguration() {
   PasswordConfiguration config;
   config.length = ui->spinBoxPasswordLength->value();
   config.selected = static_cast<PasswordConfiguration::characterSet>(
-        ui->passwordCharTemplateSelector->currentIndex());
+      ui->passwordCharTemplateSelector->currentIndex());
   config.Characters[PasswordConfiguration::CUSTOM] =
       ui->lineEditPasswordChars->text();
   return config;
@@ -869,7 +870,7 @@ bool ConfigDialog::useSymbols() { return ui->checkBoxUseSymbols->isChecked(); }
  */
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   ui->lineEditPasswordChars->setText(
-        QtPassSettings::getPasswordConfiguration().Characters[index]);
+      QtPassSettings::getPasswordConfiguration().Characters[index]);
   if (index == 3) {
     ui->lineEditPasswordChars->setEnabled(true);
   } else {

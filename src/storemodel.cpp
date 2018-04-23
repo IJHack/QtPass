@@ -1,5 +1,5 @@
-#include "qtpasssettings.h"
 #include "storemodel.h"
+#include "qtpasssettings.h"
 
 #include <QDebug>
 #include <QMessageBox>

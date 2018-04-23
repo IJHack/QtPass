@@ -4,7 +4,7 @@
 #include <QDialog>
 
 namespace Ui {
-    class KeygenDialog;
+class KeygenDialog;
 }
 
 /*!

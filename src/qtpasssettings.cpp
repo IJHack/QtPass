@@ -377,13 +377,14 @@ PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
   PasswordConfiguration config;
   config.length = getIntValue(SettingsConstants::passwordLength, 0);
   config.selected = static_cast<PasswordConfiguration::characterSet>(
-        getIntValue(SettingsConstants::passwordCharsselection, 0));
+      getIntValue(SettingsConstants::passwordCharsselection, 0));
   config.Characters[PasswordConfiguration::CUSTOM] =
       getStringValue(SettingsConstants::passwordChars, QString());
   return config;
 }
 
-void QtPassSettings::setPasswordConfiguration(const PasswordConfiguration &config) {
+void QtPassSettings::setPasswordConfiguration(
+    const PasswordConfiguration &config) {
   setIntValue(SettingsConstants::passwordLength, config.length);
   setIntValue(SettingsConstants::passwordCharsselection, config.selected);
   setStringValue(SettingsConstants::passwordChars,
