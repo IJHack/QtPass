@@ -67,6 +67,13 @@ MainWindow::MainWindow(QWidget *parent)
   ui->setupUi(this);
   enableUiElements(true);
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
+
+  QPixmap logo = QPixmap::fromImage(QImage(":/artwork/icon.svg"))
+                     .scaledToHeight(statusBar()->height());
+  QLabel *logoApp = new QLabel(statusBar());
+  logoApp->setPixmap(logo);
+  statusBar()->addPermanentWidget(logoApp);
+
   freshStart = true;
   startupPhase = true;
   clearPanelTimer.setSingleShot(true);
