@@ -304,14 +304,14 @@ bool MainWindow::checkConfig() {
   model.setNameFilterDisables(false);
 
   proxyModel.setSourceModel(&model);
-  proxyModel.setModelAndStore(&model, QtPassSettings::getPassStore());
+  proxyModel.setModelAndStore(&model, passStore);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(QtPassSettings::getPassStore()));
+  model.fetchMore(model.setRootPath(passStore));
   model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
-      model.setRootPath(QtPassSettings::getPassStore())));
+      model.setRootPath(passStore)));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
@@ -883,35 +883,16 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
 }
 
 /**
- * @brief MainWindow::setPassword open passworddialog and save file (if not
- * canceled)
+ * @brief MainWindow::setPassword open passworddialog
  * @param file which pgp file
- * @param overwrite update file (not insert)
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool isNew) {
-  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), this);
+  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), file, isNew, this);
   connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
           &PasswordDialog::setPass);
-  //    TODO(bezet): add error handling
-  QtPassSettings::getPass()->Show(file);
-  d.setFile(file);
-  d.usePwgen(QtPassSettings::isUsePwgen());
-  d.setTemplate(QtPassSettings::getPassTemplate(),
-                QtPassSettings::isUseTemplate());
-  d.templateAll(QtPassSettings::isTemplateAllFields());
-  if (!d.exec()) {
-    d.setPassword(QString());
-    return;
-  }
-  QString newValue = d.getPassword();
-  if (newValue.isEmpty())
-    return;
 
-  if (newValue.right(1) != "\n")
-    newValue += "\n";
-
-  QtPassSettings::getPass()->Insert(file, newValue, !isNew);
+  d.exec();
 }
 
 /**
@@ -1124,17 +1105,15 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  // dbg()<< profiles.size();
-  if (QtPassSettings::getProfiles().isEmpty()) {
+  QHash<QString, QString> profiles = QtPassSettings::getProfiles();
+
+  if (profiles.isEmpty()) {
     ui->profileBox->hide();
   } else {
     ui->profileBox->show();
-    if (QtPassSettings::getProfiles().size() < 2)
-      ui->profileBox->setEnabled(false);
-    else
-      ui->profileBox->setEnabled(true);
+    ui->profileBox->setEnabled(profiles.size() > 1);
     ui->profileBox->clear();
-    QHashIterator<QString, QString> i(QtPassSettings::getProfiles());
+    QHashIterator<QString, QString> i(profiles);
     while (i.hasNext()) {
       i.next();
       if (!i.key().isEmpty())
