@@ -317,8 +317,8 @@ bool MainWindow::checkConfig() {
   model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(proxyModel.mapFromSource(
-      model.setRootPath(passStore)));
+  ui->treeView->setRootIndex(
+      proxyModel.mapFromSource(model.setRootPath(passStore)));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
@@ -895,7 +895,8 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool isNew) {
-  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), file, isNew, this);
+  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), file, isNew,
+                   this);
   connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
           &PasswordDialog::setPass);
 
