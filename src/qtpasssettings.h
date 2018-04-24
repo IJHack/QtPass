@@ -13,7 +13,6 @@
 #include <QSettings>
 #include <QSize>
 #include <QVariant>
-#include <QDebug>
 
 /*!
     \class QtPassSettings
