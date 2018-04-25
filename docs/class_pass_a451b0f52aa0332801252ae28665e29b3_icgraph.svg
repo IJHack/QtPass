@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 409.78 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Pass::listKeys</title>
-<!-- Node143 -->
+<!-- Node148 -->
 <g id="node1" class="node">
-<title>Node143</title>
+<title>Node148</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 78.2412,-18.5 78.2412,-.5 0,-.5"/>
 <text text-anchor="middle" x="39.1206" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::listKeys</text>
 </g>
-<!-- Node144 -->
+<!-- Node149 -->
 <g id="node2" class="node">
-<title>Node144</title>
+<title>Node149</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a38957de181a576efc28befeb7c47abec" target="_top" xlink:title="MainWindow::getSecretKeys get list of secret/private keys. ">
 <polygon fill="none" stroke="#000000" points="114.2412,-.5 114.2412,-18.5 258.0732,-18.5 258.0732,-.5 114.2412,-.5"/>
 <text text-anchor="middle" x="186.1572" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::getSecretKeys</text>
 </a>
 </g>
 </g>
-<!-- Node143&#45;&gt;Node144 -->
+<!-- Node148&#45;&gt;Node149 -->
 <g id="edge1" class="edge">
-<title>Node143&#45;&gt;Node144</title>
+<title>Node148&#45;&gt;Node149</title>
 <path fill="none" stroke="#191970" d="M88.6062,-9.5C96.7821,-9.5 105.4035,-9.5 114.0002,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="88.5238,-6.0001 78.5237,-9.5 88.5237,-13.0001 88.5238,-6.0001"/>
 </g>
-<!-- Node145 -->
+<!-- Node150 -->
 <g id="node3" class="node">
-<title>Node145</title>
+<title>Node150</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="294.0732,-.5 294.0732,-18.5 401.7822,-18.5 401.7822,-.5 294.0732,-.5"/>
 <text text-anchor="middle" x="347.9277" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node144&#45;&gt;Node145 -->
+<!-- Node149&#45;&gt;Node150 -->
 <g id="edge2" class="edge">
-<title>Node144&#45;&gt;Node145</title>
+<title>Node149&#45;&gt;Node150</title>
 <path fill="none" stroke="#191970" d="M268.6409,-9.5C277.2681,-9.5 285.8711,-9.5 294.057,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="268.5257,-6.0001 258.5257,-9.5 268.5256,-13.0001 268.5257,-6.0001"/>
 </g>

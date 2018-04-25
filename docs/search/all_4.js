@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['editbutton',['editButton',['../class_ui___main_window.html#ae54c46fbbdc5de4d35808b51427bfa9f',1,'Ui_MainWindow']]],
-  ['email',['email',['../class_ui___keygen_dialog.html#aaa3b78517dfdf8ed9df1fa05b8dd744f',1,'Ui_KeygenDialog::email()'],['../namespaceavatars.html#a590d86956c0b81eb9d7cf381e80e0af2',1,'avatars.email()']]],
+  ['email',['email',['../namespaceavatars.html#a590d86956c0b81eb9d7cf381e80e0af2',1,'avatars']]],
   ['emptyclicked',['emptyClicked',['../class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4',1,'DeselectableTreeView']]],
   ['enabled',['enabled',['../struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f',1,'UserInfo']]],
   ['endreencryptpath',['endReencryptPath',['../class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7',1,'ImitatePass']]],

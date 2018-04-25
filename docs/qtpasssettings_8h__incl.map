@@ -1,10 +1,11 @@
 <map id="src/qtpasssettings.h" name="src/qtpasssettings.h">
-<area shape="rect" id="node2" href="$enums_8h.html" title="enums.h" alt="" coords="693,225,766,251"/>
-<area shape="rect" id="node3" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="656,79,756,104"/>
-<area shape="rect" id="node17" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="816,152,982,177"/>
-<area shape="rect" id="node18" href="$realpass_8h.html" title="realpass.h" alt="" coords="494,79,576,104"/>
-<area shape="rect" id="node4" href="$pass_8h.html" title="pass.h" alt="" coords="485,152,545,177"/>
-<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="656,152,793,177"/>
-<area shape="rect" id="node5" href="$executor_8h.html" title="executor.h" alt="" coords="222,225,304,251"/>
-<area shape="rect" id="node9" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="379,225,459,251"/>
+<area shape="rect" id="node2" href="$enums_8h.html" title="enums.h" alt="" coords="813,225,886,251"/>
+<area shape="rect" id="node3" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="648,79,748,104"/>
+<area shape="rect" id="node17" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="5,152,171,177"/>
+<area shape="rect" id="node18" href="$realpass_8h.html" title="realpass.h" alt="" coords="491,79,574,104"/>
+<area shape="rect" id="node19" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="246,152,381,177"/>
+<area shape="rect" id="node4" href="$pass_8h.html" title="pass.h" alt="" coords="507,152,568,177"/>
+<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="781,152,918,177"/>
+<area shape="rect" id="node5" href="$executor_8h.html" title="executor.h" alt="" coords="496,225,579,251"/>
+<area shape="rect" id="node9" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="176,225,256,251"/>
 </map>

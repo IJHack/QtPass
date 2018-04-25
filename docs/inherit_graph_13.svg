@@ -8,69 +8,69 @@
  viewBox="0.00 0.00 297.70 175.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 171)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node26 -->
+<!-- Node17 -->
 <g id="node1" class="node">
-<title>Node26</title>
+<title>Node17</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-92.5 0,-110.5 52.6797,-110.5 52.6797,-92.5 0,-92.5"/>
 <text text-anchor="middle" x="26.3398" y="-98.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QObject</text>
 </g>
-<!-- Node27 -->
+<!-- Node18 -->
 <g id="node2" class="node">
-<title>Node27</title>
+<title>Node18</title>
 <g id="a_node2"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data. ">
 <polygon fill="none" stroke="#000000" points="109.3364,-148.5 109.3364,-166.5 164.7993,-166.5 164.7993,-148.5 109.3364,-148.5"/>
 <text text-anchor="middle" x="137.0679" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node27 -->
+<!-- Node17&#45;&gt;Node18 -->
 <g id="edge1" class="edge">
-<title>Node26&#45;&gt;Node27</title>
+<title>Node17&#45;&gt;Node18</title>
 <path fill="none" stroke="#191970" d="M48.4039,-116.3756C60.0748,-123.8735 74.8227,-132.7759 88.6797,-139.5 95.4534,-142.7869 102.9916,-145.8548 110.0633,-148.4934"/>
 <polygon fill="#191970" stroke="#191970" points="50.0638,-113.279 39.7796,-110.7321 46.2308,-119.1364 50.0638,-113.279"/>
 </g>
-<!-- Node28 -->
+<!-- Node19 -->
 <g id="node3" class="node">
-<title>Node28</title>
+<title>Node19</title>
 <g id="a_node3"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
 <polygon fill="none" stroke="#000000" points="117.9521,-111.5 117.9521,-129.5 156.1836,-129.5 156.1836,-111.5 117.9521,-111.5"/>
 <text text-anchor="middle" x="137.0679" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node28 -->
+<!-- Node17&#45;&gt;Node19 -->
 <g id="edge2" class="edge">
-<title>Node26&#45;&gt;Node28</title>
+<title>Node17&#45;&gt;Node19</title>
 <path fill="none" stroke="#191970" d="M62.9219,-107.7772C81.2118,-110.9156 102.6042,-114.5863 117.6974,-117.1762"/>
 <polygon fill="#191970" stroke="#191970" points="63.3099,-104.2927 52.862,-106.051 62.126,-111.1918 63.3099,-104.2927"/>
 </g>
-<!-- Node30 -->
+<!-- Node21 -->
 <g id="node6" class="node">
-<title>Node30</title>
+<title>Node21</title>
 <g id="a_node6"><a xlink:href="classtst__ui.html" target="_top" xlink:title="The tst_ui class is our first unit test. ">
 <polygon fill="none" stroke="#000000" points="117.1172,-74.5 117.1172,-92.5 157.0186,-92.5 157.0186,-74.5 117.1172,-74.5"/>
 <text text-anchor="middle" x="137.0679" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_ui</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node30 -->
+<!-- Node17&#45;&gt;Node21 -->
 <g id="edge5" class="edge">
-<title>Node26&#45;&gt;Node30</title>
+<title>Node17&#45;&gt;Node21</title>
 <path fill="none" stroke="#191970" d="M62.7878,-95.575C80.8282,-92.6423 101.9145,-89.2146 117.0018,-86.7619"/>
 <polygon fill="#191970" stroke="#191970" points="62.1708,-92.1293 52.862,-97.1886 63.294,-99.0386 62.1708,-92.1293"/>
 </g>
-<!-- Node31 -->
+<!-- Node22 -->
 <g id="node7" class="node">
-<title>Node31</title>
+<title>Node22</title>
 <g id="a_node7"><a xlink:href="classtst__util.html" target="_top" xlink:title="The tst_util class is our first unit test. ">
 <polygon fill="none" stroke="#000000" points="114.6172,-37.5 114.6172,-55.5 159.5186,-55.5 159.5186,-37.5 114.6172,-37.5"/>
 <text text-anchor="middle" x="137.0679" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_util</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node31 -->
+<!-- Node17&#45;&gt;Node22 -->
 <g id="edge6" class="edge">
-<title>Node26&#45;&gt;Node31</title>
+<title>Node17&#45;&gt;Node22</title>
 <path fill="none" stroke="#191970" d="M49.2365,-87.1764C60.8324,-80.2079 75.2642,-71.9627 88.6797,-65.5 96.9732,-61.5048 106.3395,-57.6769 114.6072,-54.5173"/>
 <polygon fill="#191970" stroke="#191970" points="47.3331,-84.2376 40.6183,-92.4329 50.9782,-90.2138 47.3331,-84.2376"/>
 </g>
@@ -83,24 +83,24 @@
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node1 -->
+<!-- Node19&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
-<title>Node28&#45;&gt;Node1</title>
+<title>Node19&#45;&gt;Node1</title>
 <path fill="none" stroke="#191970" d="M166.3696,-111.3059C172.8327,-108.8144 179.5179,-105.8608 185.4561,-102.5 209.3192,-88.9943 233.5135,-67.5902 246.3045,-55.5315"/>
 <polygon fill="#191970" stroke="#191970" points="164.7671,-108.1623 156.5358,-114.8329 167.1303,-114.7514 164.7671,-108.1623"/>
 </g>
-<!-- Node29 -->
+<!-- Node20 -->
 <g id="node5" class="node">
-<title>Node29</title>
+<title>Node20</title>
 <g id="a_node5"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store. ">
 <polygon fill="none" stroke="#000000" points="226.1777,-111.5 226.1777,-129.5 284.9756,-129.5 284.9756,-111.5 226.1777,-111.5"/>
 <text text-anchor="middle" x="255.5767" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass</text>
 </a>
 </g>
 </g>
-<!-- Node28&#45;&gt;Node29 -->
+<!-- Node19&#45;&gt;Node20 -->
 <g id="edge4" class="edge">
-<title>Node28&#45;&gt;Node29</title>
+<title>Node19&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M166.4111,-120.5C184.5911,-120.5 207.863,-120.5 226.0729,-120.5"/>
 <polygon fill="#191970" stroke="#191970" points="166.3721,-117.0001 156.3721,-120.5 166.3721,-124.0001 166.3721,-117.0001"/>
 </g>

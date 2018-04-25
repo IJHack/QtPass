@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 277.22 101.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>ConfigDialog::useGit</title>
-<!-- Node153 -->
+<!-- Node155 -->
 <g id="node1" class="node">
-<title>Node153</title>
+<title>Node155</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-37.5 0,-55.5 107.7139,-55.5 107.7139,-37.5 0,-37.5"/>
 <text text-anchor="middle" x="53.8569" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useGit</text>
 </g>
-<!-- Node154 -->
+<!-- Node156 -->
 <g id="node2" class="node">
-<title>Node154</title>
+<title>Node156</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a5246b29bdf5ec2db15e3326d634a560c" target="_top" xlink:title="ConfigDialog::setGitPath set the git executable path. Make sure the checkBoxUseGit is updated...">
 <polygon fill="none" stroke="#000000" points="143.7139,-74.5 143.7139,-92.5 269.2158,-92.5 269.2158,-74.5 143.7139,-74.5"/>
 <text text-anchor="middle" x="206.4648" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::setGitPath</text>
 </a>
 </g>
 </g>
-<!-- Node153&#45;&gt;Node154 -->
+<!-- Node155&#45;&gt;Node156 -->
 <g id="edge1" class="edge">
-<title>Node153&#45;&gt;Node154</title>
+<title>Node155&#45;&gt;Node156</title>
 <path fill="none" stroke="#191970" d="M100.9783,-57.9247C122.9362,-63.2484 148.6901,-69.4924 169.254,-74.4782"/>
 <polygon fill="#191970" stroke="#191970" points="101.7322,-54.5061 91.189,-55.5512 100.0828,-61.309 101.7322,-54.5061"/>
 </g>
-<!-- Node155 -->
+<!-- Node157 -->
 <g id="node3" class="node">
-<title>Node155</title>
+<title>Node157</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="152.6104,-37.5 152.6104,-55.5 260.3193,-55.5 260.3193,-37.5 152.6104,-37.5"/>
 <text text-anchor="middle" x="206.4648" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node153&#45;&gt;Node155 -->
+<!-- Node155&#45;&gt;Node157 -->
 <g id="edge2" class="edge">
-<title>Node153&#45;&gt;Node155</title>
+<title>Node155&#45;&gt;Node157</title>
 <path fill="none" stroke="#191970" d="M118.3697,-46.5C129.7038,-46.5 141.3936,-46.5 152.406,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="118.0905,-43.0001 108.0905,-46.5 118.0904,-50.0001 118.0905,-43.0001"/>
 </g>
-<!-- Node156 -->
+<!-- Node158 -->
 <g id="node4" class="node">
-<title>Node156</title>
+<title>Node158</title>
 <g id="a_node4"><a xlink:href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" target="_top" xlink:title="ConfigDialog::useGit set preference for using git. ">
 <polygon fill="none" stroke="#000000" points="152.6079,-.5 152.6079,-18.5 260.3218,-18.5 260.3218,-.5 152.6079,-.5"/>
 <text text-anchor="middle" x="206.4648" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useGit</text>
 </a>
 </g>
 </g>
-<!-- Node153&#45;&gt;Node156 -->
+<!-- Node155&#45;&gt;Node158 -->
 <g id="edge3" class="edge">
-<title>Node153&#45;&gt;Node156</title>
+<title>Node155&#45;&gt;Node158</title>
 <path fill="none" stroke="#191970" d="M100.9783,-35.0753C122.9362,-29.7516 148.6901,-23.5076 169.254,-18.5218"/>
 <polygon fill="#191970" stroke="#191970" points="100.0828,-31.691 91.189,-37.4488 101.7322,-38.4939 100.0828,-31.691"/>
 </g>

@@ -19,6 +19,7 @@ var searchData=
   ['getgpghome',['getGpgHome',['../class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da',1,'QtPassSettings']]],
   ['getgpgpath',['getGpgPath',['../class_config_dialog.html#ae2b145dcccc7489dfde667cd241b969e',1,'ConfigDialog']]],
   ['getimitatepass',['getImitatePass',['../class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f',1,'QtPassSettings']]],
+  ['getinstance',['getInstance',['../class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934',1,'QtPassSettings']]],
   ['getnamedvalues',['getNamedValues',['../class_file_content.html#ab1a615b719c41f631821e06009c530a2',1,'FileContent']]],
   ['getpass',['getPass',['../class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64',1,'QtPassSettings']]],
   ['getpassexecutable',['getPassExecutable',['../class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a',1,'QtPassSettings']]],

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['formlayout',['formLayout',['../class_ui___config_dialog.html#aaac64e19b3088c5db168bc6a0ea06c08',1,'Ui_ConfigDialog::formLayout()'],['../class_ui___password_dialog.html#aca9e6f55e581c0431a5c07c575a28af8',1,'Ui_PasswordDialog::formLayout()']]],
-  ['formlayout_5f2',['formLayout_2',['../class_ui___config_dialog.html#abf370e7048f4f5afafe590b3f123e14d',1,'Ui_ConfigDialog']]],
-  ['frame',['frame',['../class_ui___keygen_dialog.html#a3dfacbd59d6622d833a73dcf34e341b6',1,'Ui_KeygenDialog::frame()'],['../class_ui___main_window.html#ad01968740c435709a8b2ec4c08094c67',1,'Ui_MainWindow::frame()']]]
+  ['have_5fsecret',['have_secret',['../struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99',1,'UserInfo']]],
+  ['hidecontent',['hideContent',['../class_settings_constants.html#aba878a33c6a53c647107125cec65eeab',1,'SettingsConstants']]],
+  ['hideonclose',['hideOnClose',['../class_settings_constants.html#a79f1956996b05f80fe154913392841c5',1,'SettingsConstants']]],
+  ['hidepassword',['hidePassword',['../class_settings_constants.html#afbc1b506d8be09e7544800e766d1d646',1,'SettingsConstants']]]
 ];

@@ -48,66 +48,66 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 655;
 var viewHeight = 46;
-var sectionId = 'dynsection-30';
+var sectionId = 'dynsection-65';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::isStartMinimized</title>
-<!-- Node221 -->
+<!-- Node378 -->
 <g id="node1" class="node">
-<title>Node221</title>
+<title>Node378</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 163.8271,-37.5 163.8271,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="81.9136" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isStartMinimized</text>
 </g>
-<!-- Node222 -->
+<!-- Node379 -->
 <g id="node2" class="node">
-<title>Node222</title>
+<title>Node379</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="341.3096,-19.5 341.3096,-37.5 475.1367,-37.5 475.1367,-19.5 341.3096,-19.5"/>
 <text text-anchor="middle" x="408.2231" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node221&#45;&gt;Node222 -->
+<!-- Node378&#45;&gt;Node379 -->
 <g id="edge1" class="edge">
-<title>Node221&#45;&gt;Node222</title>
+<title>Node378&#45;&gt;Node379</title>
 <path fill="none" stroke="#191970" d="M173.9508,-28.5C227.1238,-28.5 292.8268,-28.5 341.1076,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="173.8341,-25.0001 163.8341,-28.5 173.834,-32.0001 173.8341,-25.0001"/>
 </g>
-<!-- Node224 -->
+<!-- Node381 -->
 <g id="node4" class="node">
-<title>Node224</title>
+<title>Node381</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="199.8271,-.5 199.8271,-18.5 305.3096,-18.5 305.3096,-.5 199.8271,-.5"/>
 <text text-anchor="middle" x="252.5684" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node221&#45;&gt;Node224 -->
+<!-- Node378&#45;&gt;Node381 -->
 <g id="edge3" class="edge">
-<title>Node221&#45;&gt;Node224</title>
+<title>Node378&#45;&gt;Node381</title>
 <path fill="none" stroke="#191970" d="M173.3872,-18.3157C182.357,-17.317 191.2358,-16.3285 199.6242,-15.3946"/>
 <polygon fill="#191970" stroke="#191970" points="172.7938,-14.8601 163.2425,-19.4452 173.5685,-21.8171 172.7938,-14.8601"/>
 </g>
-<!-- Node223 -->
+<!-- Node380 -->
 <g id="node3" class="node">
-<title>Node223</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node380</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="511.1367,-19.5 511.1367,-37.5 647.1758,-37.5 647.1758,-19.5 511.1367,-19.5"/>
 <text text-anchor="middle" x="579.1563" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node222&#45;&gt;Node223 -->
+<!-- Node379&#45;&gt;Node380 -->
 <g id="edge2" class="edge">
-<title>Node222&#45;&gt;Node223</title>
+<title>Node379&#45;&gt;Node380</title>
 <path fill="none" stroke="#191970" d="M485.5268,-28.5C493.9815,-28.5 502.5437,-28.5 510.8784,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="485.2899,-25.0001 475.2898,-28.5 485.2898,-32.0001 485.2899,-25.0001"/>
 </g>
-<!-- Node224&#45;&gt;Node222 -->
+<!-- Node381&#45;&gt;Node379 -->
 <g id="edge4" class="edge">
-<title>Node224&#45;&gt;Node222</title>
+<title>Node381&#45;&gt;Node379</title>
 <path fill="none" stroke="#191970" d="M315.8009,-17.2185C324.1996,-18.2437 332.8335,-19.2976 341.2923,-20.3301"/>
 <polygon fill="#191970" stroke="#191970" points="316.051,-13.7231 305.7006,-15.9856 315.2028,-20.6715 316.051,-13.7231"/>
 </g>

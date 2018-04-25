@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 309.49 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::hideContent</title>
-<!-- Node80 -->
+<!-- Node82 -->
 <g id="node1" class="node">
-<title>Node80</title>
+<title>Node82</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 132.7432,-18.5 132.7432,-.5 0,-.5"/>
 <text text-anchor="middle" x="66.3716" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::hideContent</text>
 </g>
-<!-- Node81 -->
+<!-- Node83 -->
 <g id="node2" class="node">
-<title>Node81</title>
+<title>Node83</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a8e03dfbbf623d726f8cfddf813d8e230" target="_top" xlink:title="ConfigDialog::hideContent set preference for hiding all content from shoulder&#45;surfers. ">
 <polygon fill="none" stroke="#000000" points="168.7432,-.5 168.7432,-18.5 301.4863,-18.5 301.4863,-.5 168.7432,-.5"/>
 <text text-anchor="middle" x="235.1147" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::hideContent</text>
 </a>
 </g>
 </g>
-<!-- Node80&#45;&gt;Node81 -->
+<!-- Node82&#45;&gt;Node83 -->
 <g id="edge1" class="edge">
-<title>Node80&#45;&gt;Node81</title>
+<title>Node82&#45;&gt;Node83</title>
 <path fill="none" stroke="#191970" d="M143.305,-9.5C151.7611,-9.5 160.3175,-9.5 168.6312,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="143.0634,-6.0001 133.0633,-9.5 143.0633,-13.0001 143.0634,-6.0001"/>
 </g>

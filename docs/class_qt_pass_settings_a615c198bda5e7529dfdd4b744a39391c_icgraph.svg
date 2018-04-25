@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 306.65 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::setSplitterRight</title>
-<!-- Node438 -->
+<!-- Node640 -->
 <g id="node1" class="node">
-<title>Node438</title>
+<title>Node640</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 134.9404,-28.5 134.9404,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setSplitter</text>
 <text text-anchor="middle" x="67.4702" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Right</text>
 </g>
-<!-- Node439 -->
+<!-- Node641 -->
 <g id="node2" class="node">
-<title>Node439</title>
+<title>Node641</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit. ">
 <polygon fill="none" stroke="#000000" points="170.9404,-5.5 170.9404,-23.5 298.6543,-23.5 298.6543,-5.5 170.9404,-5.5"/>
 <text text-anchor="middle" x="234.7974" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::closeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node438&#45;&gt;Node439 -->
+<!-- Node640&#45;&gt;Node641 -->
 <g id="edge1" class="edge">
-<title>Node438&#45;&gt;Node439</title>
+<title>Node640&#45;&gt;Node641</title>
 <path fill="none" stroke="#191970" d="M145.0784,-14.5C153.6764,-14.5 162.3603,-14.5 170.764,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="145.0463,-11.0001 135.0463,-14.5 145.0462,-18.0001 145.0463,-11.0001"/>
 </g>

@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 310.56 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::useSymbols</title>
-<!-- Node176 -->
+<!-- Node178 -->
 <g id="node1" class="node">
-<title>Node176</title>
+<title>Node178</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 133.2803,-18.5 133.2803,-.5 0,-.5"/>
 <text text-anchor="middle" x="66.6401" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useSymbols</text>
 </g>
-<!-- Node177 -->
+<!-- Node179 -->
 <g id="node2" class="node">
-<title>Node177</title>
+<title>Node179</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a5e342374edafe7aeaa50325117306dfd" target="_top" xlink:title="ConfigDialog::useSymbols return preference for using special characters with pwgen. ">
 <polygon fill="none" stroke="#000000" points="169.2803,-.5 169.2803,-18.5 302.5605,-18.5 302.5605,-.5 169.2803,-.5"/>
 <text text-anchor="middle" x="235.9204" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useSymbols</text>
 </a>
 </g>
 </g>
-<!-- Node176&#45;&gt;Node177 -->
+<!-- Node178&#45;&gt;Node179 -->
 <g id="edge1" class="edge">
-<title>Node176&#45;&gt;Node177</title>
+<title>Node178&#45;&gt;Node179</title>
 <path fill="none" stroke="#191970" d="M133.5442,-9.5C141.8883,-9.5 150.4732,-9.5 158.9545,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="159.2252,-13.0001 169.2252,-9.5 159.2252,-6.0001 159.2252,-13.0001"/>
 </g>

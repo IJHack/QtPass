@@ -1,9 +1,8 @@
 <map id="src/keygendialog.cpp" name="src/keygendialog.cpp">
-<area shape="rect" id="node2" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="11,79,122,104"/>
-<area shape="rect" id="node4" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="199,79,303,104"/>
-<area shape="rect" id="node8" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="367,79,473,104"/>
-<area shape="rect" id="node10" href="$qprogressindicator_8h.html" title="qprogressindicator.h" alt="" coords="497,79,639,104"/>
-<area shape="rect" id="node13" href="$ui__keygendialog_8h.html" title="ui_keygendialog.h" alt="" coords="1725,79,1854,104"/>
-<area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="99,152,171,177"/>
-<area shape="rect" id="node6" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="194,152,360,177"/>
+<area shape="rect" id="node2" href="$keygendialog_8h.html" title="keygendialog.h" alt="" coords="5,79,116,104"/>
+<area shape="rect" id="node4" href="$configdialog_8h.html" title="configdialog.h" alt="" coords="170,79,274,104"/>
+<area shape="rect" id="node8" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="315,79,420,104"/>
+<area shape="rect" id="node10" href="$qprogressindicator_8h.html" title="qprogressindicator.h" alt="" coords="445,79,586,104"/>
+<area shape="rect" id="node5" href="$enums_8h.html" title="enums.h" alt="" coords="103,152,176,177"/>
+<area shape="rect" id="node6" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="199,152,365,177"/>
 </map>

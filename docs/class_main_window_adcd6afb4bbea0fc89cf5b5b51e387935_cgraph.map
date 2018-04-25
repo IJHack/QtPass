@@ -1,9 +1,10 @@
 <map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
 <area shape="rect" id="node2" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="260,55,429,80"/>
-<area shape="rect" id="node6" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="258,104,431,129"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="502,5,686,31"/>
-<area shape="rect" id="node4" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="556,55,632,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="757,55,957,80"/>
-<area shape="rect" id="node7" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="516,104,672,129"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="479,153,709,179"/>
+<area shape="rect" id="node7" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="258,104,431,129"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="706,5,890,31"/>
+<area shape="rect" id="node5" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="519,55,595,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="961,55,1151,80"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="698,55,898,80"/>
+<area shape="rect" id="node8" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="479,104,635,129"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="683,129,913,155"/>
 </map>

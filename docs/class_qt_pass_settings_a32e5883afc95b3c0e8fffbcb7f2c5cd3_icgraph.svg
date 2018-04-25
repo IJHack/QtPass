@@ -48,67 +48,67 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 621;
 var viewHeight = 51;
-var sectionId = 'dynsection-21';
+var sectionId = 'dynsection-46';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::isAlwaysOnTop</title>
-<!-- Node168 -->
+<!-- Node315 -->
 <g id="node1" class="node">
-<title>Node168</title>
+<title>Node315</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-14.5 0,-42.5 129.374,-42.5 129.374,-14.5 0,-14.5"/>
 <text text-anchor="start" x="8" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAlways</text>
 <text text-anchor="middle" x="64.687" y="-20.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">OnTop</text>
 </g>
-<!-- Node169 -->
+<!-- Node316 -->
 <g id="node2" class="node">
-<title>Node169</title>
+<title>Node316</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="306.8564,-19.5 306.8564,-37.5 440.6836,-37.5 440.6836,-19.5 306.8564,-19.5"/>
 <text text-anchor="middle" x="373.77" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node168&#45;&gt;Node169 -->
+<!-- Node315&#45;&gt;Node316 -->
 <g id="edge1" class="edge">
-<title>Node168&#45;&gt;Node169</title>
+<title>Node315&#45;&gt;Node316</title>
 <path fill="none" stroke="#191970" d="M139.774,-28.5C190.719,-28.5 257.4876,-28.5 306.6582,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="139.481,-25.0001 129.4809,-28.5 139.4809,-32.0001 139.481,-25.0001"/>
 </g>
-<!-- Node171 -->
+<!-- Node318 -->
 <g id="node4" class="node">
-<title>Node171</title>
+<title>Node318</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="165.374,-.5 165.374,-18.5 270.8564,-18.5 270.8564,-.5 165.374,-.5"/>
 <text text-anchor="middle" x="218.1152" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node168&#45;&gt;Node171 -->
+<!-- Node315&#45;&gt;Node318 -->
 <g id="edge3" class="edge">
-<title>Node168&#45;&gt;Node171</title>
+<title>Node315&#45;&gt;Node318</title>
 <path fill="none" stroke="#191970" d="M139.7411,-19.2056C148.2806,-18.1481 156.8476,-17.0872 165.0185,-16.0753"/>
 <polygon fill="#191970" stroke="#191970" points="139.2484,-15.7398 129.7544,-20.4423 140.1088,-22.6867 139.2484,-15.7398"/>
 </g>
-<!-- Node170 -->
+<!-- Node317 -->
 <g id="node3" class="node">
-<title>Node170</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node317</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="476.6836,-19.5 476.6836,-37.5 612.7227,-37.5 612.7227,-19.5 476.6836,-19.5"/>
 <text text-anchor="middle" x="544.7031" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node169&#45;&gt;Node170 -->
+<!-- Node316&#45;&gt;Node317 -->
 <g id="edge2" class="edge">
-<title>Node169&#45;&gt;Node170</title>
+<title>Node316&#45;&gt;Node317</title>
 <path fill="none" stroke="#191970" d="M451.0737,-28.5C459.5284,-28.5 468.0905,-28.5 476.4252,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="450.8367,-25.0001 440.8367,-28.5 450.8367,-32.0001 450.8367,-25.0001"/>
 </g>
-<!-- Node171&#45;&gt;Node169 -->
+<!-- Node318&#45;&gt;Node316 -->
 <g id="edge4" class="edge">
-<title>Node171&#45;&gt;Node169</title>
+<title>Node318&#45;&gt;Node316</title>
 <path fill="none" stroke="#191970" d="M281.3478,-17.2185C289.7465,-18.2437 298.3804,-19.2976 306.8391,-20.3301"/>
 <polygon fill="#191970" stroke="#191970" points="281.5979,-13.7231 271.2474,-15.9856 280.7496,-20.6715 281.5979,-13.7231"/>
 </g>

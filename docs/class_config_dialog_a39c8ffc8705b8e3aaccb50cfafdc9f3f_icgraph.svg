@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 317.25 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::hideOnClose</title>
-<!-- Node83 -->
+<!-- Node85 -->
 <g id="node1" class="node">
-<title>Node83</title>
+<title>Node85</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 136.625,-18.5 136.625,-.5 0,-.5"/>
 <text text-anchor="middle" x="68.3125" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::hideOnClose</text>
 </g>
-<!-- Node84 -->
+<!-- Node86 -->
 <g id="node2" class="node">
-<title>Node84</title>
+<title>Node86</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#ac0f327b3934ae2068305de24c5b47ce9" target="_top" xlink:title="ConfigDialog::hideOnClose set preference for hiding instead of closing (quitting) application...">
 <polygon fill="none" stroke="#000000" points="172.625,-.5 172.625,-18.5 309.25,-18.5 309.25,-.5 172.625,-.5"/>
 <text text-anchor="middle" x="240.9375" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::hideOnClose</text>
 </a>
 </g>
 </g>
-<!-- Node83&#45;&gt;Node84 -->
+<!-- Node85&#45;&gt;Node86 -->
 <g id="edge1" class="edge">
-<title>Node83&#45;&gt;Node84</title>
+<title>Node85&#45;&gt;Node86</title>
 <path fill="none" stroke="#191970" d="M147.2352,-9.5C155.6542,-9.5 164.1676,-9.5 172.452,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="147.0345,-6.0001 137.0345,-9.5 147.0344,-13.0001 147.0345,-6.0001"/>
 </g>

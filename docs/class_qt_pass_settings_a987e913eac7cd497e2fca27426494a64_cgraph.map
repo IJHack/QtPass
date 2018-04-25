@@ -1,5 +1,6 @@
 <map id="QtPassSettings::getPass" name="QtPassSettings::getPass">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="222,5,406,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="276,55,352,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="454,55,654,80"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="354,5,537,31"/>
+<area shape="rect" id="node4" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="222,55,298,80"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="594,31,783,56"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="346,55,546,80"/>
 </map>

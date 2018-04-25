@@ -48,61 +48,61 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 640;
 var viewHeight = 37;
-var sectionId = 'dynsection-12';
+var sectionId = 'dynsection-24';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPasswordConfiguration</title>
-<!-- Node104 -->
+<!-- Node237 -->
 <g id="node1" class="node">
-<title>Node104</title>
+<title>Node237</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 148.2852,-28.5 148.2852,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassword</text>
 <text text-anchor="middle" x="74.1426" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Configuration</text>
 </g>
-<!-- Node105 -->
+<!-- Node238 -->
 <g id="node2" class="node">
-<title>Node105</title>
+<title>Node238</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="184.2852,-5.5 184.2852,-23.5 289.7676,-23.5 289.7676,-5.5 184.2852,-5.5"/>
 <text text-anchor="middle" x="237.0264" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node104&#45;&gt;Node105 -->
+<!-- Node237&#45;&gt;Node238 -->
 <g id="edge1" class="edge">
-<title>Node104&#45;&gt;Node105</title>
+<title>Node237&#45;&gt;Node238</title>
 <path fill="none" stroke="#191970" d="M158.6553,-14.5C167.3638,-14.5 176.0254,-14.5 184.2411,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="158.4347,-11.0001 148.4347,-14.5 158.4347,-18.0001 158.4347,-11.0001"/>
 </g>
-<!-- Node106 -->
+<!-- Node239 -->
 <g id="node3" class="node">
-<title>Node106</title>
+<title>Node239</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="325.7676,-5.5 325.7676,-23.5 459.5947,-23.5 459.5947,-5.5 325.7676,-5.5"/>
 <text text-anchor="middle" x="392.6812" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node105&#45;&gt;Node106 -->
+<!-- Node238&#45;&gt;Node239 -->
 <g id="edge2" class="edge">
-<title>Node105&#45;&gt;Node106</title>
+<title>Node238&#45;&gt;Node239</title>
 <path fill="none" stroke="#191970" d="M300.2589,-14.5C308.6576,-14.5 317.2916,-14.5 325.7503,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="300.1586,-11.0001 290.1586,-14.5 300.1585,-18.0001 300.1586,-11.0001"/>
 </g>
-<!-- Node107 -->
+<!-- Node240 -->
 <g id="node4" class="node">
-<title>Node107</title>
-<g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node240</title>
+<g id="a_node4"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="495.5947,-5.5 495.5947,-23.5 631.6338,-23.5 631.6338,-5.5 495.5947,-5.5"/>
 <text text-anchor="middle" x="563.6143" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node106&#45;&gt;Node107 -->
+<!-- Node239&#45;&gt;Node240 -->
 <g id="edge3" class="edge">
-<title>Node106&#45;&gt;Node107</title>
+<title>Node239&#45;&gt;Node240</title>
 <path fill="none" stroke="#191970" d="M469.9848,-14.5C478.4395,-14.5 487.0017,-14.5 495.3364,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="469.7479,-11.0001 459.7478,-14.5 469.7478,-18.0001 469.7479,-11.0001"/>
 </g>

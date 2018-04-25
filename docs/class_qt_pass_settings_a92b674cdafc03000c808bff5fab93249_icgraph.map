@@ -6,7 +6,7 @@
 <area shape="rect" id="node12" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="513,155,723,180"/>
 <area shape="rect" id="node13" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="314,256,435,281"/>
 <area shape="rect" id="node4" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="771,205,950,231"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="998,205,1179,231"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="998,205,1179,231"/>
 <area shape="rect" id="node7" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="516,55,720,80"/>
 <area shape="rect" id="node8" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="785,55,936,80"/>
 <area shape="rect" id="node10" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="522,104,714,129"/>

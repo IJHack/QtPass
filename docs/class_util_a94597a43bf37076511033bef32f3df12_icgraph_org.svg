@@ -8,75 +8,75 @@
  viewBox="0.00 0.00 634.06 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Util::normalizeFolderPath</title>
-<!-- Node24 -->
+<!-- Node25 -->
 <g id="node1" class="node">
-<title>Node24</title>
+<title>Node25</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 128.2656,-36.5 128.2656,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="64.1328" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::normalizeFolderPath</text>
 </g>
-<!-- Node25 -->
+<!-- Node26 -->
 <g id="node2" class="node">
-<title>Node25</title>
+<title>Node26</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="171.4897,-37.5 171.4897,-55.5 276.9722,-55.5 276.9722,-37.5 171.4897,-37.5"/>
 <text text-anchor="middle" x="224.231" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node25 -->
+<!-- Node25&#45;&gt;Node26 -->
 <g id="edge1" class="edge">
-<title>Node24&#45;&gt;Node25</title>
+<title>Node25&#45;&gt;Node26</title>
 <path fill="none" stroke="#191970" d="M138.4505,-36.3198C149.5443,-37.6364 160.7858,-38.9705 171.3166,-40.2203"/>
 <polygon fill="#191970" stroke="#191970" points="138.6712,-32.8215 128.3284,-35.1185 137.8462,-39.7727 138.6712,-32.8215"/>
 </g>
-<!-- Node28 -->
+<!-- Node29 -->
 <g id="node5" class="node">
-<title>Node28</title>
+<title>Node29</title>
 <g id="a_node5"><a xlink:href="class_util.html#a29e0dadf2cb491511307b841e4a23943" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location. ">
 <polygon fill="none" stroke="#000000" points="164.2656,-.5 164.2656,-18.5 284.1963,-18.5 284.1963,-.5 164.2656,-.5"/>
 <text text-anchor="middle" x="224.231" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::findPasswordStore</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node28 -->
+<!-- Node25&#45;&gt;Node29 -->
 <g id="edge4" class="edge">
-<title>Node24&#45;&gt;Node28</title>
+<title>Node25&#45;&gt;Node29</title>
 <path fill="none" stroke="#191970" d="M138.4008,-19.15C147.037,-18.179 155.7634,-17.1979 164.1751,-16.2521"/>
 <polygon fill="#191970" stroke="#191970" points="137.8747,-15.687 128.3284,-20.2824 138.6568,-22.6432 137.8747,-15.687"/>
 </g>
-<!-- Node26 -->
+<!-- Node27 -->
 <g id="node3" class="node">
-<title>Node26</title>
+<title>Node27</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="320.1963,-18.5 320.1963,-36.5 454.0234,-36.5 454.0234,-18.5 320.1963,-18.5"/>
 <text text-anchor="middle" x="387.1099" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node25&#45;&gt;Node26 -->
+<!-- Node26&#45;&gt;Node27 -->
 <g id="edge2" class="edge">
-<title>Node25&#45;&gt;Node26</title>
+<title>Node26&#45;&gt;Node27</title>
 <path fill="none" stroke="#191970" d="M287.2239,-39.1518C297.9406,-37.9017 309.107,-36.5991 319.9268,-35.337"/>
 <polygon fill="#191970" stroke="#191970" points="286.6402,-35.6961 277.1131,-40.3312 287.4513,-42.6489 286.6402,-35.6961"/>
 </g>
-<!-- Node27 -->
+<!-- Node28 -->
 <g id="node4" class="node">
-<title>Node27</title>
-<g id="a_node4"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node28</title>
+<g id="a_node4"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="490.0234,-18.5 490.0234,-36.5 626.0625,-36.5 626.0625,-18.5 490.0234,-18.5"/>
 <text text-anchor="middle" x="558.043" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node27 -->
+<!-- Node27&#45;&gt;Node28 -->
 <g id="edge3" class="edge">
-<title>Node26&#45;&gt;Node27</title>
+<title>Node27&#45;&gt;Node28</title>
 <path fill="none" stroke="#191970" d="M464.4135,-27.5C472.8682,-27.5 481.4304,-27.5 489.7651,-27.5"/>
 <polygon fill="#191970" stroke="#191970" points="464.1766,-24.0001 454.1766,-27.5 464.1765,-31.0001 464.1766,-24.0001"/>
 </g>
-<!-- Node28&#45;&gt;Node26 -->
+<!-- Node29&#45;&gt;Node27 -->
 <g id="edge5" class="edge">
-<title>Node28&#45;&gt;Node26</title>
+<title>Node29&#45;&gt;Node27</title>
 <path fill="none" stroke="#191970" d="M294.6073,-17.2774C303.0466,-18.21 311.6474,-19.1605 320.0381,-20.0878"/>
 <polygon fill="#191970" stroke="#191970" points="294.7423,-13.7711 284.4183,-16.1514 293.9733,-20.7287 294.7423,-13.7711"/>
 </g>

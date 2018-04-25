@@ -8,60 +8,60 @@
  viewBox="0.00 0.00 641.30 46.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 42)">
 <title>QtPassSettings::setPassStore</title>
-<!-- Node392 -->
+<!-- Node583 -->
 <g id="node1" class="node">
-<title>Node392</title>
+<title>Node583</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 149.9502,-37.5 149.9502,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="74.9751" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setPassStore</text>
 </g>
-<!-- Node393 -->
+<!-- Node584 -->
 <g id="node2" class="node">
-<title>Node393</title>
+<title>Node584</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="327.4326,-19.5 327.4326,-37.5 461.2598,-37.5 461.2598,-19.5 327.4326,-19.5"/>
 <text text-anchor="middle" x="394.3462" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node392&#45;&gt;Node393 -->
+<!-- Node583&#45;&gt;Node584 -->
 <g id="edge1" class="edge">
-<title>Node392&#45;&gt;Node393</title>
+<title>Node583&#45;&gt;Node584</title>
 <path fill="none" stroke="#191970" d="M160.5192,-28.5C212.7834,-28.5 278.6669,-28.5 327.1697,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="160.2572,-25.0001 150.2572,-28.5 160.2571,-32.0001 160.2572,-25.0001"/>
 </g>
-<!-- Node395 -->
+<!-- Node586 -->
 <g id="node4" class="node">
-<title>Node395</title>
+<title>Node586</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="185.9502,-.5 185.9502,-18.5 291.4326,-18.5 291.4326,-.5 185.9502,-.5"/>
 <text text-anchor="middle" x="238.6914" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node392&#45;&gt;Node395 -->
+<!-- Node583&#45;&gt;Node586 -->
 <g id="edge3" class="edge">
-<title>Node392&#45;&gt;Node395</title>
+<title>Node583&#45;&gt;Node586</title>
 <path fill="none" stroke="#191970" d="M160.219,-18.6071C168.8175,-17.6092 177.3661,-16.6171 185.4844,-15.6749"/>
 <polygon fill="#191970" stroke="#191970" points="159.6548,-15.149 150.125,-19.7785 160.4619,-22.1023 159.6548,-15.149"/>
 </g>
-<!-- Node394 -->
+<!-- Node585 -->
 <g id="node3" class="node">
-<title>Node394</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node585</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="497.2598,-19.5 497.2598,-37.5 633.2988,-37.5 633.2988,-19.5 497.2598,-19.5"/>
 <text text-anchor="middle" x="565.2793" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node394 -->
+<!-- Node584&#45;&gt;Node585 -->
 <g id="edge2" class="edge">
-<title>Node393&#45;&gt;Node394</title>
+<title>Node584&#45;&gt;Node585</title>
 <path fill="none" stroke="#191970" d="M471.6499,-28.5C480.1045,-28.5 488.6667,-28.5 497.0014,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="471.4129,-25.0001 461.4129,-28.5 471.4128,-32.0001 471.4129,-25.0001"/>
 </g>
-<!-- Node395&#45;&gt;Node393 -->
+<!-- Node586&#45;&gt;Node584 -->
 <g id="edge4" class="edge">
-<title>Node395&#45;&gt;Node393</title>
+<title>Node586&#45;&gt;Node584</title>
 <path fill="none" stroke="#191970" d="M301.924,-17.2185C310.3227,-18.2437 318.9566,-19.2976 327.4153,-20.3301"/>
 <polygon fill="#191970" stroke="#191970" points="302.174,-13.7231 291.8236,-15.9856 301.3258,-20.6715 302.174,-13.7231"/>
 </g>

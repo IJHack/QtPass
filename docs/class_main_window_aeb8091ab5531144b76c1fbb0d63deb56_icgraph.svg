@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 455.35 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>MainWindow::config</title>
-<!-- Node260 -->
+<!-- Node265 -->
 <g id="node1" class="node">
-<title>Node260</title>
+<title>Node265</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 105.4824,-18.5 105.4824,-.5 0,-.5"/>
 <text text-anchor="middle" x="52.7412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </g>
-<!-- Node261 -->
+<!-- Node266 -->
 <g id="node2" class="node">
-<title>Node261</title>
+<title>Node266</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="141.4824,-.5 141.4824,-18.5 275.3096,-18.5 275.3096,-.5 141.4824,-.5"/>
 <text text-anchor="middle" x="208.396" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node260&#45;&gt;Node261 -->
+<!-- Node265&#45;&gt;Node266 -->
 <g id="edge1" class="edge">
-<title>Node260&#45;&gt;Node261</title>
+<title>Node265&#45;&gt;Node266</title>
 <path fill="none" stroke="#191970" d="M115.9738,-9.5C124.3725,-9.5 133.0064,-9.5 141.4651,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="115.8734,-6.0001 105.8734,-9.5 115.8734,-13.0001 115.8734,-6.0001"/>
 </g>
-<!-- Node262 -->
+<!-- Node267 -->
 <g id="node3" class="node">
-<title>Node262</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<title>Node267</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="311.3096,-.5 311.3096,-18.5 447.3486,-18.5 447.3486,-.5 311.3096,-.5"/>
 <text text-anchor="middle" x="379.3291" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node261&#45;&gt;Node262 -->
+<!-- Node266&#45;&gt;Node267 -->
 <g id="edge2" class="edge">
-<title>Node261&#45;&gt;Node262</title>
+<title>Node266&#45;&gt;Node267</title>
 <path fill="none" stroke="#191970" d="M285.6997,-9.5C294.1543,-9.5 302.7165,-9.5 311.0512,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="285.4627,-6.0001 275.4627,-9.5 285.4627,-13.0001 285.4627,-6.0001"/>
 </g>
