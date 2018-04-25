@@ -100,7 +100,7 @@ void PasswordDialog::on_accepted() {
 }
 
 /**
- * @brief PasswordDialog::on_accepted handle Cancel click for QDialog
+ * @brief PasswordDialog::on_rejected handle Cancel click for QDialog
  */
 void PasswordDialog::on_rejected() { setPassword(QString()); }
 
