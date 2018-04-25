@@ -3,14 +3,23 @@
 SettingsConstants::SettingsConstants() {}
 
 const QString SettingsConstants::version = "version";
+
 const QString SettingsConstants::groupMainwindow = "mainwindow";
-const QString SettingsConstants::geometry = "geometry";
-const QString SettingsConstants::savestate = "savestate";
-const QString SettingsConstants::pos = "pos";
-const QString SettingsConstants::size = "size";
-const QString SettingsConstants::splitterLeft = "splitterLeft";
-const QString SettingsConstants::splitterRight = "splitterRight";
-const QString SettingsConstants::maximized = "maximized";
+const QString SettingsConstants::geometry =
+    SettingsConstants::groupMainwindow + "/geometry";
+const QString SettingsConstants::savestate =
+    SettingsConstants::groupMainwindow + "/savestate";
+const QString SettingsConstants::pos =
+    SettingsConstants::groupMainwindow + "/pos";
+const QString SettingsConstants::size =
+    SettingsConstants::groupMainwindow + "/size";
+const QString SettingsConstants::splitterLeft =
+    SettingsConstants::groupMainwindow + "/splitterLeft";
+const QString SettingsConstants::splitterRight =
+    SettingsConstants::groupMainwindow + "/splitterRight";
+const QString SettingsConstants::maximized =
+    SettingsConstants::groupMainwindow + "/maximized";
+
 const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useSelection = "useSelection";
 const QString SettingsConstants::useAutoclear = "useAutoclear";
