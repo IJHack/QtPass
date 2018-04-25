@@ -17,3 +17,4 @@ qrc_*.cpp
 ui_*.h
 localization/*.qm
 build/
+.idea
