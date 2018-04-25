@@ -1,234 +1,284 @@
 #include "qtpasssettings.h"
 #include "pass.h"
-#include "settingsconstants.h"
+
 #include "util.h"
 
 #include <QCoreApplication>
 
-QtPassSettings::QtPassSettings() {}
-
 bool QtPassSettings::initialized = false;
-
-QScopedPointer<QSettings> QtPassSettings::settings;
-QHash<QString, QString> QtPassSettings::stringSettings;
-QHash<QString, QByteArray> QtPassSettings::byteArraySettings;
-QHash<QString, QPoint> QtPassSettings::pointSettings;
-QHash<QString, QSize> QtPassSettings::sizeSettings;
-QHash<QString, int> QtPassSettings::intSettings;
-QHash<QString, bool> QtPassSettings::boolSettings;
 
 Pass *QtPassSettings::pass;
 RealPass QtPassSettings::realPass;
 ImitatePass QtPassSettings::imitatePass;
 
-QString QtPassSettings::getVersion(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::version, defaultValue);
+QtPassSettings *QtPassSettings::m_instance = nullptr;
+QtPassSettings *QtPassSettings::getInstance() {
+  if (!QtPassSettings::initialized) {
+    QString portable_ini = QCoreApplication::applicationDirPath() +
+                           QDir::separator() + "qtpass.ini";
+    if (QFile(portable_ini).exists()) {
+      m_instance = new QtPassSettings(portable_ini, QSettings::IniFormat);
+    } else {
+      m_instance = new QtPassSettings("IJHack", "QtPass");
+    }
+
+    initialized = true;
+  }
+
+  return m_instance;
 }
 
+PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
+  PasswordConfiguration config;
+
+  config.length =
+      m_instance->value(SettingsConstants::passwordLength, 0).toInt();
+  config.selected = static_cast<PasswordConfiguration::characterSet>(
+      m_instance->value(SettingsConstants::passwordCharsselection, 0).toInt());
+  config.Characters[PasswordConfiguration::CUSTOM] =
+      m_instance->value(SettingsConstants::passwordChars, QString()).toString();
+
+  return config;
+}
+
+void QtPassSettings::setPasswordConfiguration(
+    const PasswordConfiguration &config) {
+  m_instance->setValue(SettingsConstants::passwordLength, config.length);
+  m_instance->setValue(SettingsConstants::passwordCharsselection,
+                       config.selected);
+  m_instance->setValue(SettingsConstants::passwordChars,
+                       config.Characters[PasswordConfiguration::CUSTOM]);
+}
+
+QHash<QString, QString> QtPassSettings::getProfiles() {
+  m_instance->beginGroup(SettingsConstants::profile);
+
+  QStringList childrenKeys = m_instance->childKeys();
+  QHash<QString, QString> profiles;
+  foreach (QString key, childrenKeys) {
+    profiles.insert(key, m_instance->value(key).toString());
+  }
+
+  m_instance->endGroup();
+
+  return profiles;
+}
+
+void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
+  m_instance->remove(SettingsConstants::groupProfiles);
+  m_instance->beginGroup(SettingsConstants::profile);
+
+  QHash<QString, QString>::const_iterator i = profiles.begin();
+  for (; i != profiles.end(); ++i) {
+    m_instance->setValue(i.key(), i.value());
+  }
+
+  m_instance->endGroup();
+}
+
+Pass *QtPassSettings::getPass() {
+  if (!pass) {
+    if (isUsePass()) {
+      QtPassSettings::pass = &QtPassSettings::realPass;
+    } else {
+      QtPassSettings::pass = &QtPassSettings::imitatePass;
+    }
+    pass->init();
+  }
+  return pass;
+}
+
+QString QtPassSettings::getVersion(const QString &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::version, defaultValue)
+      .toString();
+}
 void QtPassSettings::setVersion(const QString &version) {
-  setStringValue(SettingsConstants::version, version);
+  getInstance()->setValue(SettingsConstants::version, version);
 }
 
 QByteArray QtPassSettings::getGeometry(const QByteArray &defaultValue) {
-  beginMainwindowGroup();
-  QByteArray returnValue =
-      getByteArrayValue(SettingsConstants::geometry, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()
+      ->value(SettingsConstants::geometry, defaultValue)
+      .toByteArray();
 }
-
 void QtPassSettings::setGeometry(const QByteArray &geometry) {
-  beginMainwindowGroup();
-  setByteArrayValue(SettingsConstants::geometry, geometry);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::geometry, geometry);
 }
 
 QByteArray QtPassSettings::getSavestate(const QByteArray &defaultValue) {
-  beginMainwindowGroup();
-  QByteArray returnValue =
-      getByteArrayValue(SettingsConstants::savestate, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()
+      ->value(SettingsConstants::savestate, defaultValue)
+      .toByteArray();
 }
-
 void QtPassSettings::setSavestate(const QByteArray &saveState) {
-  beginMainwindowGroup();
-  setByteArrayValue(SettingsConstants::savestate, saveState);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::savestate, saveState);
 }
 
 QPoint QtPassSettings::getPos(const QPoint &defaultValue) {
-  beginMainwindowGroup();
-  QPoint returnValue = getPointValue(SettingsConstants::pos, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()->value(SettingsConstants::pos, defaultValue).toPoint();
 }
-
 void QtPassSettings::setPos(const QPoint &pos) {
-  beginMainwindowGroup();
-  setPointValue(SettingsConstants::pos, pos);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::pos, pos);
 }
 
 QSize QtPassSettings::getSize(const QSize &defaultValue) {
-  beginMainwindowGroup();
-  QSize returnValue = getSizeValue(SettingsConstants::size, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()->value(SettingsConstants::size, defaultValue).toSize();
 }
-
 void QtPassSettings::setSize(const QSize &size) {
-  beginMainwindowGroup();
-  setSizeValue(SettingsConstants::size, size);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::size, size);
 }
 
 int QtPassSettings::getSplitterLeft(const int &defaultValue) {
-  beginMainwindowGroup();
-  int returnValue = getIntValue(SettingsConstants::splitterLeft, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()
+      ->value(SettingsConstants::splitterLeft, defaultValue)
+      .toInt();
 }
-
 void QtPassSettings::setSplitterLeft(const int &splitterLeft) {
-  beginMainwindowGroup();
-  setIntValue(SettingsConstants::splitterLeft, splitterLeft);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::splitterLeft, splitterLeft);
 }
 
 int QtPassSettings::getSplitterRight(const int &defaultValue) {
-  beginMainwindowGroup();
-  int returnValue = getIntValue(SettingsConstants::splitterRight, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()
+      ->value(SettingsConstants::splitterRight, defaultValue)
+      .toInt();
 }
-
 void QtPassSettings::setSplitterRight(const int &splitterRight) {
-  beginMainwindowGroup();
-  setIntValue(SettingsConstants::splitterRight, splitterRight);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::splitterRight, splitterRight);
 }
 
 bool QtPassSettings::isMaximized(const bool &defaultValue) {
-  beginMainwindowGroup();
-  bool returnValue = getBoolValue(SettingsConstants::maximized, defaultValue);
-  endSettingsGroup();
-  return returnValue;
+  return getInstance()
+      ->value(SettingsConstants::maximized, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setMaximized(const bool &maximized) {
-  beginMainwindowGroup();
-  setBoolValue(SettingsConstants::maximized, maximized);
-  endSettingsGroup();
+  getInstance()->setValue(SettingsConstants::maximized, maximized);
 }
 
 bool QtPassSettings::isUsePass(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::usePass, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::usePass, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUsePass(const bool &usePass) {
   if (usePass) {
     QtPassSettings::pass = &QtPassSettings::realPass;
   } else {
     QtPassSettings::pass = &QtPassSettings::imitatePass;
   }
-  setBoolValue(SettingsConstants::usePass, usePass);
+  getInstance()->setValue(SettingsConstants::usePass, usePass);
 }
 
 Enums::clipBoardType
 QtPassSettings::getClipBoardType(const Enums::clipBoardType &defaultvalue) {
-  return static_cast<Enums::clipBoardType>(getIntValue(
-      SettingsConstants::clipBoardType, static_cast<int>(defaultvalue)));
+  return static_cast<Enums::clipBoardType>(
+      getInstance()
+          ->value(SettingsConstants::clipBoardType,
+                  static_cast<int>(defaultvalue))
+          .toInt());
 }
-
 void QtPassSettings::setClipBoardType(
     const Enums::clipBoardType &clipBoardType) {
-  setIntValue(SettingsConstants::clipBoardType,
-              static_cast<int>(clipBoardType));
+  getInstance()->setValue(SettingsConstants::clipBoardType,
+                          static_cast<int>(clipBoardType));
 }
 
 bool QtPassSettings::isUseSelection(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useSelection, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useSelection, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseSelection(const bool &useSelection) {
-  setBoolValue(SettingsConstants::useSelection, useSelection);
+  getInstance()->setValue(SettingsConstants::useSelection, useSelection);
 }
 
 bool QtPassSettings::isUseAutoclear(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useAutoclear, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useAutoclear, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseAutoclear(const bool &useAutoclear) {
-  setBoolValue(SettingsConstants::useAutoclear, useAutoclear);
+  getInstance()->setValue(SettingsConstants::useAutoclear, useAutoclear);
 }
 
 int QtPassSettings::getAutoclearSeconds(const int &defaultValue) {
-  return getIntValue(SettingsConstants::autoclearSeconds, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::autoclearSeconds, defaultValue)
+      .toInt();
 }
-
 void QtPassSettings::setAutoclearSeconds(const int &autoClearSeconds) {
-  setIntValue(SettingsConstants::autoclearSeconds, autoClearSeconds);
+  getInstance()->setValue(SettingsConstants::autoclearSeconds,
+                          autoClearSeconds);
 }
 
 bool QtPassSettings::isUseAutoclearPanel(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useAutoclearPanel, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useAutoclearPanel, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseAutoclearPanel(const bool &useAutoclearPanel) {
-  setBoolValue(SettingsConstants::useAutoclearPanel, useAutoclearPanel);
+  getInstance()->setValue(SettingsConstants::useAutoclearPanel,
+                          useAutoclearPanel);
 }
 
 int QtPassSettings::getAutoclearPanelSeconds(const int &defaultValue) {
-  return getIntValue(SettingsConstants::autoclearPanelSeconds, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::autoclearPanelSeconds, defaultValue)
+      .toInt();
 }
-
 void QtPassSettings::setAutoclearPanelSeconds(
     const int &autoClearPanelSeconds) {
-  setIntValue(SettingsConstants::autoclearPanelSeconds, autoClearPanelSeconds);
+  getInstance()->setValue(SettingsConstants::autoclearPanelSeconds,
+                          autoClearPanelSeconds);
 }
 
 bool QtPassSettings::isHidePassword(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::hidePassword, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::hidePassword, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setHidePassword(const bool &hidePassword) {
-  setBoolValue(SettingsConstants::hidePassword, hidePassword);
+  getInstance()->setValue(SettingsConstants::hidePassword, hidePassword);
 }
 
 bool QtPassSettings::isHideContent(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::hideContent, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::hideContent, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setHideContent(const bool &hideContent) {
-  setBoolValue(SettingsConstants::hideContent, hideContent);
+  getInstance()->setValue(SettingsConstants::hideContent, hideContent);
 }
 
 bool QtPassSettings::isAddGPGId(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::addGPGId, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::addGPGId, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAddGPGId(const bool &addGPGId) {
-  setBoolValue(SettingsConstants::addGPGId, addGPGId);
+  getInstance()->setValue(SettingsConstants::addGPGId, addGPGId);
 }
 
 QString QtPassSettings::getPassStore(const QString &defaultValue) {
   QString returnValue =
-      getStringValue(SettingsConstants::passStore, defaultValue);
+      m_instance->value(SettingsConstants::passStore, defaultValue).toString();
+
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
   if (!QDir(returnValue).exists()) {
     QDir().mkdir(returnValue);
   }
+
   // ensure path ends in /
   if (!returnValue.endsWith("/")) {
     returnValue += "/";
   }
+
   return returnValue;
 }
-
 void QtPassSettings::setPassStore(const QString &passStore) {
-  setStringValue(SettingsConstants::passStore, passStore);
+  getInstance()->setValue(SettingsConstants::passStore, passStore);
 }
 
 void QtPassSettings::initExecutables() {
@@ -248,413 +298,238 @@ void QtPassSettings::initExecutables() {
       QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
   QtPassSettings::setPwgenExecutable(pwgenExecutable);
 }
-
 QString QtPassSettings::getPassExecutable(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::passExecutable, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::passExecutable, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setPassExecutable(const QString &passExecutable) {
-  setStringValue(SettingsConstants::passExecutable, passExecutable);
+  getInstance()->setValue(SettingsConstants::passExecutable, passExecutable);
 }
 
 QString QtPassSettings::getGitExecutable(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::gitExecutable, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::gitExecutable, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setGitExecutable(const QString &gitExecutable) {
-  setStringValue(SettingsConstants::gitExecutable, gitExecutable);
+  getInstance()->setValue(SettingsConstants::gitExecutable, gitExecutable);
 }
 
 QString QtPassSettings::getGpgExecutable(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::gpgExecutable, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::gpgExecutable, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setGpgExecutable(const QString &gpgExecutable) {
-  setStringValue(SettingsConstants::gpgExecutable, gpgExecutable);
+  getInstance()->setValue(SettingsConstants::gpgExecutable, gpgExecutable);
 }
 
 QString QtPassSettings::getPwgenExecutable(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::pwgenExecutable, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::pwgenExecutable, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setPwgenExecutable(const QString &pwgenExecutable) {
-  setStringValue(SettingsConstants::pwgenExecutable, pwgenExecutable);
+  getInstance()->setValue(SettingsConstants::pwgenExecutable, pwgenExecutable);
 }
 
 QString QtPassSettings::getGpgHome(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::gpgHome, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::gpgHome, defaultValue)
+      .toString();
 }
 
 bool QtPassSettings::isUseWebDav(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useWebDav, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useWebDav, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseWebDav(const bool &useWebDav) {
-  setBoolValue(SettingsConstants::useWebDav, useWebDav);
+  getInstance()->setValue(SettingsConstants::useWebDav, useWebDav);
 }
 
 QString QtPassSettings::getWebDavUrl(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::webDavUrl, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::webDavUrl, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setWebDavUrl(const QString &webDavUrl) {
-  setStringValue(SettingsConstants::webDavUrl, webDavUrl);
+  getInstance()->setValue(SettingsConstants::webDavUrl, webDavUrl);
 }
 
 QString QtPassSettings::getWebDavUser(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::webDavUser, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::webDavUser, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setWebDavUser(const QString &webDavUser) {
-  setStringValue(SettingsConstants::webDavUser, webDavUser);
+  getInstance()->setValue(SettingsConstants::webDavUser, webDavUser);
 }
 
 QString QtPassSettings::getWebDavPassword(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::webDavPassword, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::webDavPassword, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setWebDavPassword(const QString &webDavPassword) {
-  setStringValue(SettingsConstants::webDavPassword, webDavPassword);
+  getInstance()->setValue(SettingsConstants::webDavPassword, webDavPassword);
 }
 
 QString QtPassSettings::getProfile(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::profile, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::profile, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setProfile(const QString &profile) {
-  setStringValue(SettingsConstants::profile, profile);
+  getInstance()->setValue(SettingsConstants::profile, profile);
 }
 
 bool QtPassSettings::isUseGit(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useGit, defaultValue);
+  return getInstance()->value(SettingsConstants::useGit, defaultValue).toBool();
 }
-
 void QtPassSettings::setUseGit(const bool &useGit) {
-  setBoolValue(SettingsConstants::useGit, useGit);
+  getInstance()->setValue(SettingsConstants::useGit, useGit);
 }
 
 bool QtPassSettings::isUsePwgen(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::usePwgen, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::usePwgen, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUsePwgen(const bool &usePwgen) {
-  setBoolValue(SettingsConstants::usePwgen, usePwgen);
+  getInstance()->setValue(SettingsConstants::usePwgen, usePwgen);
 }
 
 bool QtPassSettings::isAvoidCapitals(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::avoidCapitals, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::avoidCapitals, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAvoidCapitals(const bool &avoidCapitals) {
-  setBoolValue(SettingsConstants::avoidCapitals, avoidCapitals);
+  getInstance()->setValue(SettingsConstants::avoidCapitals, avoidCapitals);
 }
 
 bool QtPassSettings::isAvoidNumbers(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::avoidNumbers, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::avoidNumbers, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAvoidNumbers(const bool &avoidNumbers) {
-  setBoolValue(SettingsConstants::avoidNumbers, avoidNumbers);
+  getInstance()->setValue(SettingsConstants::avoidNumbers, avoidNumbers);
 }
 
 bool QtPassSettings::isLessRandom(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::lessRandom, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::lessRandom, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setLessRandom(const bool &lessRandom) {
-  setBoolValue(SettingsConstants::lessRandom, lessRandom);
+  getInstance()->setValue(SettingsConstants::lessRandom, lessRandom);
 }
 
 bool QtPassSettings::isUseSymbols(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useSymbols, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useSymbols, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseSymbols(const bool &useSymbols) {
-  setBoolValue(SettingsConstants::useSymbols, useSymbols);
-}
-
-PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
-  PasswordConfiguration config;
-  config.length = getIntValue(SettingsConstants::passwordLength, 0);
-  config.selected = static_cast<PasswordConfiguration::characterSet>(
-      getIntValue(SettingsConstants::passwordCharsselection, 0));
-  config.Characters[PasswordConfiguration::CUSTOM] =
-      getStringValue(SettingsConstants::passwordChars, QString());
-  return config;
-}
-
-void QtPassSettings::setPasswordConfiguration(
-    const PasswordConfiguration &config) {
-  setIntValue(SettingsConstants::passwordLength, config.length);
-  setIntValue(SettingsConstants::passwordCharsselection, config.selected);
-  setStringValue(SettingsConstants::passwordChars,
-                 config.Characters[PasswordConfiguration::CUSTOM]);
+  getInstance()->setValue(SettingsConstants::useSymbols, useSymbols);
 }
 
 void QtPassSettings::setPasswordLength(const int &passwordLength) {
-  setIntValue(SettingsConstants::passwordLength, passwordLength);
+  getInstance()->setValue(SettingsConstants::passwordLength, passwordLength);
 }
-
 void QtPassSettings::setPasswordCharsselection(
     const int &passwordCharsselection) {
-  setIntValue(SettingsConstants::passwordCharsselection,
-              passwordCharsselection);
+  getInstance()->setValue(SettingsConstants::passwordCharsselection,
+                          passwordCharsselection);
 }
-
 void QtPassSettings::setPasswordChars(const QString &passwordChars) {
-  setStringValue(SettingsConstants::passwordChars, passwordChars);
+  getInstance()->setValue(SettingsConstants::passwordChars, passwordChars);
 }
 
 bool QtPassSettings::isUseTrayIcon(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useTrayIcon, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useTrayIcon, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseTrayIcon(const bool &useTrayIcon) {
-  setBoolValue(SettingsConstants::useTrayIcon, useTrayIcon);
+  getInstance()->setValue(SettingsConstants::useTrayIcon, useTrayIcon);
 }
 
 bool QtPassSettings::isHideOnClose(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::hideOnClose, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::hideOnClose, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setHideOnClose(const bool &hideOnClose) {
-  setBoolValue(SettingsConstants::hideOnClose, hideOnClose);
+  getInstance()->setValue(SettingsConstants::hideOnClose, hideOnClose);
 }
 
 bool QtPassSettings::isStartMinimized(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::startMinimized, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::startMinimized, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setStartMinimized(const bool &startMinimized) {
-  setBoolValue(SettingsConstants::startMinimized, startMinimized);
+  getInstance()->setValue(SettingsConstants::startMinimized, startMinimized);
 }
 
 bool QtPassSettings::isAlwaysOnTop(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::alwaysOnTop, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::alwaysOnTop, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAlwaysOnTop(const bool &alwaysOnTop) {
-  setBoolValue(SettingsConstants::alwaysOnTop, alwaysOnTop);
+  getInstance()->setValue(SettingsConstants::alwaysOnTop, alwaysOnTop);
 }
 
 bool QtPassSettings::isAutoPull(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::autoPull, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::autoPull, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAutoPull(const bool &autoPull) {
-  setBoolValue(SettingsConstants::autoPull, autoPull);
+  getInstance()->setValue(SettingsConstants::autoPull, autoPull);
 }
 
 bool QtPassSettings::isAutoPush(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::autoPush, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::autoPush, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setAutoPush(const bool &autoPush) {
-  setBoolValue(SettingsConstants::autoPush, autoPush);
+  getInstance()->setValue(SettingsConstants::autoPush, autoPush);
 }
 
 QString QtPassSettings::getPassTemplate(const QString &defaultValue) {
-  return getStringValue(SettingsConstants::passTemplate, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::passTemplate, defaultValue)
+      .toString();
 }
-
 void QtPassSettings::setPassTemplate(const QString &passTemplate) {
-  setStringValue(SettingsConstants::passTemplate, passTemplate);
+  getInstance()->setValue(SettingsConstants::passTemplate, passTemplate);
 }
 
 bool QtPassSettings::isUseTemplate(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::useTemplate, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::useTemplate, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setUseTemplate(const bool &useTemplate) {
-  setBoolValue(SettingsConstants::useTemplate, useTemplate);
+  getInstance()->setValue(SettingsConstants::useTemplate, useTemplate);
 }
 
 bool QtPassSettings::isTemplateAllFields(const bool &defaultValue) {
-  return getBoolValue(SettingsConstants::templateAllFields, defaultValue);
+  return getInstance()
+      ->value(SettingsConstants::templateAllFields, defaultValue)
+      .toBool();
 }
-
 void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
-  setBoolValue(SettingsConstants::templateAllFields, templateAllFields);
+  getInstance()->setValue(SettingsConstants::templateAllFields,
+                          templateAllFields);
 }
-
-QStringList QtPassSettings::getChildKeysFromCurrentGroup() {
-  return getSettings().childKeys();
-}
-
-QHash<QString, QString> QtPassSettings::getProfiles() {
-  beginProfilesGroup();
-  QStringList childrenKeys = getChildKeysFromCurrentGroup();
-  QHash<QString, QString> profiles;
-  foreach (QString key, childrenKeys) {
-    profiles.insert(key, getSetting(key).toString());
-  }
-  endSettingsGroup();
-  return profiles;
-}
-
-void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
-  getSettings().remove(SettingsConstants::groupProfiles);
-  beginProfilesGroup();
-  QHash<QString, QString>::const_iterator i = profiles.begin();
-  for (; i != profiles.end(); ++i) {
-    setSetting(i.key(), i.value());
-  }
-  endSettingsGroup();
-}
-
-QSettings &QtPassSettings::getSettings() {
-  if (!QtPassSettings::initialized) {
-    QString portable_ini = QCoreApplication::applicationDirPath() +
-                           QDir::separator() + "qtpass.ini";
-    if (QFile(portable_ini).exists()) {
-      settings.reset(new QSettings(portable_ini, QSettings::IniFormat));
-    } else {
-      settings.reset(new QSettings("IJHack", "QtPass"));
-    }
-  }
-  initialized = true;
-  return *settings;
-}
-
-QString QtPassSettings::getStringValue(const QString &key,
-                                       const QString &defaultValue) {
-  QString stringValue;
-  if (stringSettings.contains(key)) {
-    stringValue = stringSettings.take(key);
-  } else {
-    stringValue = getSettings().value(key, defaultValue).toString();
-    stringSettings.insert(key, stringValue);
-  }
-  return stringValue;
-}
-
-int QtPassSettings::getIntValue(const QString &key, const int &defaultValue) {
-  int intValue;
-  if (intSettings.contains(key)) {
-    intValue = intSettings.take(key);
-  } else {
-    intValue = getSettings().value(key, defaultValue).toInt();
-    intSettings.insert(key, intValue);
-  }
-  return intValue;
-}
-
-bool QtPassSettings::getBoolValue(const QString &key,
-                                  const bool &defaultValue) {
-  bool boolValue;
-  if (boolSettings.contains(key)) {
-    boolValue = boolSettings.take(key);
-  } else {
-    boolValue = getSettings().value(key, defaultValue).toBool();
-    boolSettings.insert(key, boolValue);
-  }
-  return boolValue;
-}
-
-QByteArray QtPassSettings::getByteArrayValue(const QString &key,
-                                             const QByteArray &defaultValue) {
-  QByteArray byteArrayValue;
-  if (byteArraySettings.contains(key)) {
-    byteArrayValue = byteArraySettings.take(key);
-  } else {
-    byteArrayValue = getSettings().value(key, defaultValue).toByteArray();
-    byteArraySettings.insert(key, byteArrayValue);
-  }
-  return byteArrayValue;
-}
-
-QPoint QtPassSettings::getPointValue(const QString &key,
-                                     const QPoint &defaultValue) {
-  QPoint pointValue;
-  if (pointSettings.contains(key)) {
-    pointValue = pointSettings.take(key);
-  } else {
-    pointValue = getSettings().value(key, defaultValue).toPoint();
-    pointSettings.insert(key, pointValue);
-  }
-  return pointValue;
-}
-
-QSize QtPassSettings::getSizeValue(const QString &key,
-                                   const QSize &defaultValue) {
-  QSize sizeValue;
-  if (sizeSettings.contains(key)) {
-    sizeValue = sizeSettings.take(key);
-  } else {
-    sizeValue = getSettings().value(key, defaultValue).toSize();
-    sizeSettings.insert(key, sizeValue);
-  }
-  return sizeValue;
-}
-
-void QtPassSettings::setStringValue(const QString &key,
-                                    const QString &stringValue) {
-  stringSettings.insert(key, stringValue);
-  getSettings().setValue(key, stringValue);
-}
-
-void QtPassSettings::setIntValue(const QString &key, const int &intValue) {
-  intSettings.insert(key, intValue);
-  getSettings().setValue(key, intValue);
-}
-
-void QtPassSettings::setBoolValue(const QString &key, const bool &boolValue) {
-  boolSettings.insert(key, boolValue);
-  getSettings().setValue(key, boolValue);
-}
-
-void QtPassSettings::setByteArrayValue(const QString &key,
-                                       const QByteArray &byteArrayValue) {
-  byteArraySettings.insert(key, byteArrayValue);
-  getSettings().setValue(key, byteArrayValue);
-}
-
-void QtPassSettings::setPointValue(const QString &key,
-                                   const QPoint &pointValue) {
-  pointSettings.insert(key, pointValue);
-  getSettings().setValue(key, pointValue);
-}
-
-void QtPassSettings::setSizeValue(const QString &key, const QSize &sizeValue) {
-  sizeSettings.insert(key, sizeValue);
-  getSettings().setValue(key, sizeValue);
-}
-
-void QtPassSettings::beginSettingsGroup(const QString &groupName) {
-  getSettings().beginGroup(groupName);
-}
-
-void QtPassSettings::endSettingsGroup() { getSettings().endGroup(); }
-
-void QtPassSettings::beginMainwindowGroup() {
-  getSettings().beginGroup(SettingsConstants::groupMainwindow);
-}
-
-void QtPassSettings::beginProfilesGroup() {
-  getSettings().beginGroup(SettingsConstants::groupProfiles);
-}
-
-QVariant QtPassSettings::getSetting(const QString &key,
-                                    const QVariant &defaultValue) {
-  return getSettings().value(key, defaultValue);
-}
-
-void QtPassSettings::setSetting(const QString &key, const QVariant &value) {
-  getSettings().setValue(key, value);
-}
-
-Pass *QtPassSettings::getPass() {
-  if (!pass) {
-    if (isUsePass()) {
-      QtPassSettings::pass = &QtPassSettings::realPass;
-    } else {
-      QtPassSettings::pass = &QtPassSettings::imitatePass;
-    }
-    pass->init();
-  }
-  return pass;
-}
-
-ImitatePass *QtPassSettings::getImitatePass() { return &imitatePass; }
 
 RealPass *QtPassSettings::getRealPass() { return &realPass; }
+ImitatePass *QtPassSettings::getImitatePass() { return &imitatePass; }

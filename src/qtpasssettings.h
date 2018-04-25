@@ -5,6 +5,7 @@
 #include "imitatepass.h"
 #include "passwordconfiguration.h"
 #include "realpass.h"
+#include "settingsconstants.h"
 
 #include <QByteArray>
 #include <QHash>
@@ -17,9 +18,27 @@
     \class QtPassSettings
     \brief Singleton that stores qtpass' settings, saves and loads config
 */
-class QtPassSettings {
+class QtPassSettings : public QSettings {
+private:
+  explicit QtPassSettings();
+
+  QtPassSettings(const QString &organization, const QSettings::Format format)
+      : QSettings(organization, format) {}
+  QtPassSettings(const QString &organization, const QString &application)
+      : QSettings(organization, application) {}
+
+  virtual ~QtPassSettings() {}
+
+  static bool initialized;
+  static QtPassSettings *m_instance;
+
+  static Pass *pass;
+  static RealPass realPass;
+  static ImitatePass imitatePass;
 
 public:
+  static QtPassSettings *getInstance();
+
   static QString
   getVersion(const QString &defaultValue = QVariant().toString());
   static void setVersion(const QString &version);
@@ -85,7 +104,6 @@ public:
   static void setPassStore(const QString &passStore);
 
   static void initExecutables();
-
   static QString
   getPassExecutable(const QString &defaultValue = QVariant().toString());
   static void setPassExecutable(const QString &passExecutable);
@@ -183,60 +201,6 @@ public:
   static Pass *getPass();
   static RealPass *getRealPass();
   static ImitatePass *getImitatePass();
-
-signals:
-
-public slots:
-
-private:
-  // constructor
-  explicit QtPassSettings();
-
-  static bool initialized;
-  // member
-  static QScopedPointer<QSettings> settings;
-
-  static QHash<QString, QString> stringSettings;
-  static QHash<QString, QByteArray> byteArraySettings;
-  static QHash<QString, QPoint> pointSettings;
-  static QHash<QString, QSize> sizeSettings;
-  static QHash<QString, int> intSettings;
-  static QHash<QString, bool> boolSettings;
-
-  static Pass *pass;
-  static RealPass realPass;
-  static ImitatePass imitatePass;
-
-  // functions
-  static QSettings &getSettings();
-
-  static QString getStringValue(const QString &key,
-                                const QString &defaultValue);
-  static int getIntValue(const QString &key, const int &defaultValue);
-  static bool getBoolValue(const QString &key, const bool &defaultValue);
-  static QByteArray getByteArrayValue(const QString &key,
-                                      const QByteArray &defaultValue);
-  static QPoint getPointValue(const QString &key, const QPoint &defaultValue);
-  static QSize getSizeValue(const QString &key, const QSize &defaultValue);
-
-  static void setStringValue(const QString &key, const QString &stringValue);
-  static void setIntValue(const QString &key, const int &intValue);
-  static void setBoolValue(const QString &key, const bool &boolValue);
-  static void setByteArrayValue(const QString &key,
-                                const QByteArray &byteArrayValue);
-  static void setPointValue(const QString &key, const QPoint &pointValue);
-  static void setSizeValue(const QString &key, const QSize &sizeValue);
-
-  static QStringList getChildKeysFromCurrentGroup();
-  static void beginSettingsGroup(const QString &groupName);
-  static void endSettingsGroup();
-
-  static void beginMainwindowGroup();
-  static void beginProfilesGroup();
-
-  static QVariant getSetting(const QString &key,
-                             const QVariant &defaultValue = QVariant());
-  static void setSetting(const QString &key, const QVariant &value);
 };
 
 #endif // QTPASSSETTINGS_H

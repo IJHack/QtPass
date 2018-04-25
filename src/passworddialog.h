@@ -23,6 +23,10 @@ class PasswordDialog : public QDialog {
 public:
   explicit PasswordDialog(const PasswordConfiguration &passConfig,
                           QWidget *parent = 0);
+  PasswordDialog(const PasswordConfiguration &passConfig,
+                          const QString &file,
+                          const bool &isNew,
+                          QWidget *parent = 0);
   ~PasswordDialog();
 
   /*! Sets content in the password field in the interface.
@@ -43,11 +47,6 @@ public:
    */
   void setTemplate(QString rawFields, bool useTemplate);
 
-  /*! Sets the file (name) in the interface.
-      \param file name as a QString
-   */
-  void setFile(QString);
-
   void templateAll(bool templateAll);
   void setLength(int l);
   void setPasswordCharTemplate(int t);
@@ -59,13 +58,17 @@ public slots:
 private slots:
   void on_checkBoxShow_stateChanged(int arg1);
   void on_createPasswordButton_clicked();
+  void on_accepted();
+  void on_rejected();
 
 private:
   Ui::PasswordDialog *ui;
   const PasswordConfiguration &m_passConfig;
-  QStringList fields;
-  bool templating;
-  bool allFields;
+  QStringList m_fields;
+  QString m_file;
+  bool m_templating;
+  bool m_allFields;
+  bool m_isNew;
   QList<QLineEdit *> templateLines;
   QList<QLineEdit *> otherLines;
 };
