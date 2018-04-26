@@ -34,9 +34,13 @@ PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
   config.length =
       getInstance()->value(SettingsConstants::passwordLength, 0).toInt();
   config.selected = static_cast<PasswordConfiguration::characterSet>(
-      getInstance()->value(SettingsConstants::passwordCharsselection, 0).toInt());
+      getInstance()
+          ->value(SettingsConstants::passwordCharsselection, 0)
+          .toInt());
   config.Characters[PasswordConfiguration::CUSTOM] =
-      getInstance()->value(SettingsConstants::passwordChars, QString()).toString();
+      getInstance()
+          ->value(SettingsConstants::passwordChars, QString())
+          .toString();
 
   return config;
 }
@@ -45,9 +49,9 @@ void QtPassSettings::setPasswordConfiguration(
     const PasswordConfiguration &config) {
   getInstance()->setValue(SettingsConstants::passwordLength, config.length);
   getInstance()->setValue(SettingsConstants::passwordCharsselection,
-                       config.selected);
+                          config.selected);
   getInstance()->setValue(SettingsConstants::passwordChars,
-                       config.Characters[PasswordConfiguration::CUSTOM]);
+                          config.Characters[PasswordConfiguration::CUSTOM]);
 }
 
 QHash<QString, QString> QtPassSettings::getProfiles() {
@@ -129,23 +133,23 @@ void QtPassSettings::setSize(const QSize &size) {
   getInstance()->setValue(SettingsConstants::size, size);
 }
 
-int QtPassSettings::getSplitterLeft(const int &defaultValue) {
-  return getInstance()
-      ->value(SettingsConstants::splitterLeft, defaultValue)
-      .toInt();
-}
-void QtPassSettings::setSplitterLeft(const int &splitterLeft) {
-  getInstance()->setValue(SettingsConstants::splitterLeft, splitterLeft);
-}
+// int QtPassSettings::getSplitterLeft(const int &defaultValue) {
+//  return getInstance()
+//      ->value(SettingsConstants::splitterLeft, defaultValue)
+//      .toInt();
+//}
+// void QtPassSettings::setSplitterLeft(const int &splitterLeft) {
+//  getInstance()->setValue(SettingsConstants::splitterLeft, splitterLeft);
+//}
 
-int QtPassSettings::getSplitterRight(const int &defaultValue) {
-  return getInstance()
-      ->value(SettingsConstants::splitterRight, defaultValue)
-      .toInt();
-}
-void QtPassSettings::setSplitterRight(const int &splitterRight) {
-  getInstance()->setValue(SettingsConstants::splitterRight, splitterRight);
-}
+// int QtPassSettings::getSplitterRight(const int &defaultValue) {
+//  return getInstance()
+//      ->value(SettingsConstants::splitterRight, defaultValue)
+//      .toInt();
+//}
+// void QtPassSettings::setSplitterRight(const int &splitterRight) {
+//  getInstance()->setValue(SettingsConstants::splitterRight, splitterRight);
+//}
 
 bool QtPassSettings::isMaximized(const bool &defaultValue) {
   return getInstance()
@@ -261,8 +265,9 @@ void QtPassSettings::setAddGPGId(const bool &addGPGId) {
 }
 
 QString QtPassSettings::getPassStore(const QString &defaultValue) {
-  QString returnValue =
-      getInstance()->value(SettingsConstants::passStore, defaultValue).toString();
+  QString returnValue = getInstance()
+                            ->value(SettingsConstants::passStore, defaultValue)
+                            .toString();
 
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.

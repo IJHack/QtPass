@@ -13,13 +13,15 @@
  * @param passConfig configuration constant
  * @param parent
  */
-PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig, QWidget *parent) : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
-    m_templating = false;
-    m_allFields = false;
+PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
+                               QWidget *parent)
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
+  m_templating = false;
+  m_allFields = false;
 
-    ui->setupUi(this);
-    setLength(m_passConfig.length);
-    setPasswordCharTemplate(m_passConfig.selected);
+  ui->setupUi(this);
+  setLength(m_passConfig.length);
+  setPasswordCharTemplate(m_passConfig.selected);
 }
 
 /**
@@ -29,28 +31,27 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig, QWidget 
  * @param isNew
  * @param parent
  */
-PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
-                               const QString &file,
-                               const bool &isNew,
+PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
                                QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig), m_file(file), m_isNew(isNew) {
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_file(file),
+      m_isNew(isNew) {
 
-    QtPassSettings::getPass()->Show(m_file);
+  QtPassSettings::getPass()->Show(m_file);
 
-    setWindowTitle(this->windowTitle() + " " + m_file);
-    usePwgen(QtPassSettings::isUsePwgen());
-    setTemplate(QtPassSettings::getPassTemplate(),
-                  QtPassSettings::isUseTemplate());
-    templateAll(QtPassSettings::isTemplateAllFields());
+  ui->setupUi(this);
 
-    ui->setupUi(this);
-    setLength(m_passConfig.length);
-    setPasswordCharTemplate(m_passConfig.selected);
+  setWindowTitle(this->windowTitle() + " " + m_file);
+  m_passConfig = QtPassSettings::getPasswordConfiguration();
+  usePwgen(QtPassSettings::isUsePwgen());
+  setTemplate(QtPassSettings::getPassTemplate(),
+              QtPassSettings::isUseTemplate());
+  templateAll(QtPassSettings::isTemplateAllFields());
 
-    connect(this, &PasswordDialog::accepted,
-            this, &PasswordDialog::on_accepted);
-    connect(this, &PasswordDialog::rejected,
-            this, &PasswordDialog::on_rejected);
+  setLength(m_passConfig.length);
+  setPasswordCharTemplate(m_passConfig.selected);
+
+  connect(this, &PasswordDialog::accepted, this, &PasswordDialog::on_accepted);
+  connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
 }
 
 /**
@@ -89,14 +90,14 @@ void PasswordDialog::on_createPasswordButton_clicked() {
  * @brief PasswordDialog::on_accepted handle Ok click for QDialog
  */
 void PasswordDialog::on_accepted() {
-    QString newValue = getPassword();
-    if (newValue.isEmpty())
-      return;
+  QString newValue = getPassword();
+  if (newValue.isEmpty())
+    return;
 
-    if (newValue.right(1) != "\n")
-      newValue += "\n";
+  if (newValue.right(1) != "\n")
+    newValue += "\n";
 
-    QtPassSettings::getPass()->Insert(m_file, newValue, !m_isNew);
+  QtPassSettings::getPass()->Insert(m_file, newValue, !m_isNew);
 }
 
 /**
@@ -183,7 +184,9 @@ void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
  * PasswordDialog::setPassword templating all tokenisable lines.
  * @param templateAll
  */
-void PasswordDialog::templateAll(bool templateAll) { m_allFields = templateAll; }
+void PasswordDialog::templateAll(bool templateAll) {
+  m_allFields = templateAll;
+}
 
 /**
  * @brief PasswordDialog::setLength

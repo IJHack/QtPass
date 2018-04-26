@@ -65,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
           SLOT(endReencryptPath()));
 
   ui->setupUi(this);
+
   enableUiElements(true);
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
 
@@ -88,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
   clippedText = "";
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
-  initAddButton();
+  initToolBarButtons();
 
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
@@ -461,9 +462,9 @@ void MainWindow::config() {
 }
 
 /**
- * @brief MainWindow::on_updateButton_clicked do a git pull
+ * @brief MainWindow::onUpdate do a git pull
  */
-void MainWindow::on_updateButton_clicked(bool block) {
+void MainWindow::onUpdate(bool block) {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
   if (block)
     QtPassSettings::getPass()->GitPull_b();
@@ -472,9 +473,9 @@ void MainWindow::on_updateButton_clicked(bool block) {
 }
 
 /**
- * @brief MainWindow::on_pushButton_clicked do a git push
+ * @brief MainWindow::onPush do a git push
  */
-void MainWindow::on_pushButton_clicked() {
+void MainWindow::onPush() {
   if (QtPassSettings::isUseGit()) {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     QtPassSettings::getPass()->GitPush();
@@ -516,8 +517,8 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
     QtPassSettings::getPass()->Show(file);
   } else {
     clearPanel(false);
-    ui->editButton->setEnabled(false);
-    ui->deleteButton->setEnabled(true);
+    ui->actionEdit->setEnabled(false);
+    ui->actionDelete->setEnabled(true);
   }
 }
 
@@ -573,20 +574,16 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
   processFinished(p_output, p_errout);
 }
 
-void MainWindow::initAddButton() {
-  // Add a Actions to the Add-Button
-  QIcon addFileIcon = QIcon::fromTheme("file_new");
-  QIcon addFolderIcon = QIcon::fromTheme("folder_new");
-  QAction *actionAddPassword =
-      new QAction(addFileIcon, tr("Add Password"), this);
-  QAction *actionAddFolder = new QAction(addFolderIcon, tr("Add Folder"), this);
-
-  ui->addButton->addAction(actionAddPassword);
-  ui->addButton->addAction(actionAddFolder);
-
-  connect(actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(on_addButton_clicked()));
-  connect(actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+void MainWindow::initToolBarButtons() {
+  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
+          SLOT(addPassword()));
+  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
+  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
+  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
+  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
+  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
+  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
 }
 
 void MainWindow::passShowHandler(const QString &p_output) {
@@ -646,7 +643,7 @@ void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
 
 void MainWindow::doGitPush() {
   if (QtPassSettings::isAutoPush())
-    on_pushButton_clicked();
+    onPush();
 }
 
 void MainWindow::finishedInsert(const QString &p_output,
@@ -759,18 +756,18 @@ void MainWindow::processFinished(const QString &p_output,
  * @param state
  */
 void MainWindow::enableUiElements(bool state) {
-  ui->updateButton->setEnabled(state);
   ui->treeView->setEnabled(state);
   ui->lineEdit->setEnabled(state);
   ui->lineEdit->installEventFilter(this);
-  ui->addButton->setEnabled(state);
-  ui->usersButton->setEnabled(state);
-  ui->configButton->setEnabled(state);
+  ui->actionAddPassword->setEnabled(state);
+  ui->actionAddFolder->setEnabled(state);
+  ui->actionUsers->setEnabled(state);
+  ui->actionConfig->setEnabled(state);
   // is a file selected?
   state &= ui->treeView->currentIndex().isValid();
-  ui->deleteButton->setEnabled(state);
-  ui->editButton->setEnabled(state);
-  ui->pushButton->setEnabled(state);
+  ui->actionDelete->setEnabled(state);
+  ui->actionEdit->setEnabled(state);
+  updateGitButtonVisibility();
 }
 
 void MainWindow::restoreWindow() {
@@ -782,14 +779,14 @@ void MainWindow::restoreWindow() {
   move(position);
   QSize newSize = QtPassSettings::getSize(size());
   resize(newSize);
-  QList<int> splitter = ui->splitter->sizes();
-  int left = QtPassSettings::getSplitterLeft(splitter[0]);
-  int right = QtPassSettings::getSplitterRight(splitter[1]);
-  if (left > 0 || right > 0) {
-    splitter[0] = left;
-    splitter[1] = right;
-    ui->splitter->setSizes(splitter);
-  }
+  //  QList<int> splitter = ui->splitter->sizes();
+  //  int left = QtPassSettings::getSplitterLeft(splitter[0]);
+  //  int right = QtPassSettings::getSplitterRight(splitter[1]);
+  //  if (left > 0 || right > 0) {
+  //    splitter[0] = left;
+  //    splitter[1] = right;
+  //    ui->splitter->setSizes(splitter);
+  //  }
   if (QtPassSettings::isMaximized(isMaximized())) {
     showMaximized();
   }
@@ -830,7 +827,7 @@ void MainWindow::processError(QProcess::ProcessError error) {
 /**
  * @brief MainWindow::on_configButton_clicked run Mainwindow::config
  */
-void MainWindow::on_configButton_clicked() { config(); }
+void MainWindow::onConfig() { config(); }
 
 /**
  * @brief Executes when the string in the search box changes, collapses the
@@ -895,8 +892,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(QString file, bool isNew) {
-  PasswordDialog d(QtPassSettings::getPasswordConfiguration(), file, isNew,
-                   this);
+  PasswordDialog d(file, isNew, this);
   connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
           &PasswordDialog::setPass);
 
@@ -904,10 +900,10 @@ void MainWindow::setPassword(QString file, bool isNew) {
 }
 
 /**
- * @brief MainWindow::on_addButton_clicked add a new password by showing a
+ * @brief MainWindow::addPassword add a new password by showing a
  * number of dialogs.
  */
-void MainWindow::on_addButton_clicked() {
+void MainWindow::addPassword() {
   bool ok;
   QString dir =
       Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
@@ -925,10 +921,10 @@ void MainWindow::on_addButton_clicked() {
 }
 
 /**
- * @brief MainWindow::on_deleteButton_clicked remove password, if you are
+ * @brief MainWindow::onDelete remove password, if you are
  * sure.
  */
-void MainWindow::on_deleteButton_clicked() {
+void MainWindow::onDelete() {
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
   QString file = "";
@@ -971,29 +967,29 @@ void MainWindow::on_deleteButton_clicked() {
 }
 
 /**
- * @brief MainWindow::on_editButton_clicked try and edit (selected) password.
+ * @brief MainWindow::onEdit try and edit (selected) password.
  */
-void MainWindow::on_editButton_clicked() {
+void MainWindow::onEdit() {
   QString file = getFile(ui->treeView->currentIndex(), true);
   editPassword(file);
 }
 
 /**
- * @brief MainWindow::userDialog see MainWindow::on_usersButton_clicked()
+ * @brief MainWindow::userDialog see MainWindow::onUsers()
  * @param dir folder to edit users for.
  */
 void MainWindow::userDialog(QString dir) {
   if (!dir.isEmpty())
     currentDir = dir;
-  on_usersButton_clicked();
+  onUsers();
 }
 
 /**
- * @brief MainWindow::on_usersButton_clicked edit users for the current
+ * @brief MainWindow::onUsers edit users for the current
  * folder,
  * gets lists and opens UserDialog.
  */
-void MainWindow::on_usersButton_clicked() {
+void MainWindow::onUsers() {
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
   if (users.size() == 0) {
     QMessageBox::critical(this, tr("Can not get key list"),
@@ -1201,8 +1197,8 @@ void MainWindow::closeEvent(QCloseEvent *event) {
       QtPassSettings::setPos(pos());
       QtPassSettings::setSize(size());
     }
-    QtPassSettings::setSplitterLeft(ui->splitter->sizes()[0]);
-    QtPassSettings::setSplitterRight(ui->splitter->sizes()[1]);
+    //    QtPassSettings::setSplitterLeft(ui->splitter->sizes()[0]);
+    //    QtPassSettings::setSplitterRight(ui->splitter->sizes()[1]);
     event->accept();
   }
 }
@@ -1231,7 +1227,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
 void MainWindow::keyPressEvent(QKeyEvent *event) {
   switch (event->key()) {
   case Qt::Key_Delete:
-    on_deleteButton_clicked();
+    onDelete();
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
@@ -1255,8 +1251,8 @@ void MainWindow::showContextMenu(const QPoint &pos) {
   bool selected = true;
   if (!index.isValid()) {
     ui->treeView->clearSelection();
-    ui->deleteButton->setEnabled(false);
-    ui->editButton->setEnabled(false);
+    ui->actionDelete->setEnabled(false);
+    ui->actionEdit->setEnabled(false);
     currentDir = "";
     selected = false;
   }
@@ -1277,12 +1273,11 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     QAction *users = contextMenu.addAction(tr("Users"));
     connect(openFolder, SIGNAL(triggered()), this, SLOT(openFolder()));
     connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-    connect(addPassword, SIGNAL(triggered()), this,
-            SLOT(on_addButton_clicked()));
-    connect(users, SIGNAL(triggered()), this, SLOT(on_usersButton_clicked()));
+    connect(addPassword, SIGNAL(triggered()), this, SLOT(addPassword()));
+    connect(users, SIGNAL(triggered()), this, SLOT(onUsers()));
   } else if (fileOrFolder.isFile()) {
     QAction *edit = contextMenu.addAction(tr("Edit"));
-    connect(edit, SIGNAL(triggered()), this, SLOT(on_editButton_clicked()));
+    connect(edit, SIGNAL(triggered()), this, SLOT(onEdit()));
   }
   if (selected) {
     // if (useClipboard != CLIPBOARD_NEVER) {
@@ -1294,8 +1289,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     // }
     contextMenu.addSeparator();
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
-    connect(deleteItem, SIGNAL(triggered()), this,
-            SLOT(on_deleteButton_clicked()));
+    connect(deleteItem, SIGNAL(triggered()), this, SLOT(onDelete()));
   }
   contextMenu.exec(globalPos);
 }
@@ -1346,12 +1340,12 @@ void MainWindow::addFolder() {
 
 /**
  * @brief MainWindow::editPassword read password and open edit window via
- * MainWindow::on_editButton_clicked()
+ * MainWindow::onEdit()
  */
 void MainWindow::editPassword(const QString &file) {
   if (!file.isEmpty()) {
     if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
-      on_updateButton_clicked(true);
+      onUpdate(true);
     setPassword(file, false);
   }
 }
@@ -1504,22 +1498,14 @@ void MainWindow::updateGitButtonVisibility() {
   if (!QtPassSettings::isUseGit() ||
       (QtPassSettings::getGitExecutable().isEmpty() &&
        QtPassSettings::getPassExecutable().isEmpty())) {
-    hideGitButtons();
+    enableGitButtons(false);
   } else {
-    showGitButtons();
+    enableGitButtons(true);
   }
 }
 
-void MainWindow::hideGitButtons() {
-  ui->pushButton->hide();
-  ui->updateButton->hide();
-  ui->horizontalSpacer->changeSize(0, 20, QSizePolicy::Maximum,
-                                   QSizePolicy::Minimum);
-}
-
-void MainWindow::showGitButtons() {
-  ui->pushButton->show();
-  ui->updateButton->show();
-  ui->horizontalSpacer->changeSize(24, 24, QSizePolicy::Minimum,
-                                   QSizePolicy::Minimum);
+void MainWindow::enableGitButtons(const bool &state) {
+  // Following GNOME guidelines is preferable disable buttons instead of hide
+  ui->actionPush->setEnabled(state);
+  ui->actionUpdate->setEnabled(state);
 }
