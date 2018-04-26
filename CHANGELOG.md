@@ -17,8 +17,10 @@
 
 **Closed issues:**
 
+- Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
 - How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
+- No password entry prompt [\#343](https://github.com/IJHack/QtPass/issues/343)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 
 **Merged pull requests:**
