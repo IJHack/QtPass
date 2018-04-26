@@ -530,73 +530,81 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="145"/>
+        <location filename="../src/mainwindow.ui" line="315"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="372"/>
         <source>Update</source>
         <translation>Обновить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="127"/>
+        <location filename="../src/mainwindow.ui" line="360"/>
         <source>Push</source>
         <translation>Поместить в репозиторий</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="45"/>
-        <location filename="../src/mainwindow.ui" line="48"/>
         <source>Add</source>
-        <translation>Добавить</translation>
+        <translation type="vanished">Добавить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="72"/>
-        <location filename="../src/mainwindow.ui" line="75"/>
-        <location filename="../src/mainwindow.cpp" line="1286"/>
+        <location filename="../src/mainwindow.ui" line="336"/>
+        <location filename="../src/mainwindow.ui" line="339"/>
+        <location filename="../src/mainwindow.cpp" line="1281"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="90"/>
-        <location filename="../src/mainwindow.ui" line="93"/>
-        <location filename="../src/mainwindow.cpp" line="1298"/>
+        <location filename="../src/mainwindow.ui" line="348"/>
+        <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/mainwindow.cpp" line="1293"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="124"/>
+        <location filename="../src/mainwindow.ui" line="363"/>
         <source>git push</source>
         <translation>git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="142"/>
+        <location filename="../src/mainwindow.ui" line="375"/>
         <source>git pull</source>
         <translation>git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="176"/>
+        <location filename="../src/mainwindow.ui" line="387"/>
         <source>Manage who can read password in folder</source>
         <translation>Выбрать, кто может просматривать пароли в хранилище</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="1279"/>
+        <location filename="../src/mainwindow.ui" line="384"/>
+        <location filename="../src/mainwindow.cpp" line="1275"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="194"/>
+        <location filename="../src/mainwindow.ui" line="399"/>
         <source>Configuration</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="197"/>
+        <location filename="../src/mainwindow.ui" line="396"/>
         <source>Config</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="342"/>
+        <location filename="../src/mainwindow.ui" line="51"/>
+        <source>Select profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="161"/>
         <source>Welcome to QtPass</source>
         <translation>QtPass приветствует Вас</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="426"/>
+        <location filename="../src/mainwindow.ui" line="245"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -608,62 +616,61 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="278"/>
+        <location filename="../src/mainwindow.ui" line="91"/>
         <source>Search Password</source>
         <translation>Найти пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
         <source>qtpass</source>
-        <translation>qtpass</translation>
+        <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="69"/>
+        <location filename="../src/mainwindow.cpp" line="70"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 приветствует Вас</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="198"/>
+        <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Не удалось подключить WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="211"/>
+        <location filename="../src/mainwindow.cpp" line="212"/>
         <source>QtPass WebDAV password</source>
         <translation>Пароль QtPass для WebDAV</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="212"/>
+        <location filename="../src/mainwindow.cpp" line="213"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Введите пароль для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="228"/>
+        <location filename="../src/mainwindow.cpp" line="229"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav непредвиденно завершился
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="232"/>
+        <location filename="../src/mainwindow.cpp" line="233"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Не удалось запустить fusedav для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="467"/>
-        <location filename="../src/mainwindow.cpp" line="479"/>
+        <location filename="../src/mainwindow.cpp" line="468"/>
+        <location filename="../src/mainwindow.cpp" line="480"/>
         <source>Updating password-store</source>
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1276"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1331"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
@@ -674,88 +681,86 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Пароль скрыт</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="581"/>
         <source>Add Password</source>
-        <translation>Добавить пароль</translation>
+        <translation type="vanished">Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="582"/>
         <source>Add Folder</source>
-        <translation>Добавить папку</translation>
+        <translation type="vanished">Добавить папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="615"/>
+        <location filename="../src/mainwindow.cpp" line="612"/>
         <source>Content hidden</source>
         <translation>Содержимое скрыто</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="619"/>
-        <location filename="../src/mainwindow.cpp" line="1437"/>
+        <location filename="../src/mainwindow.cpp" line="616"/>
+        <location filename="../src/mainwindow.cpp" line="1431"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="716"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
         <source>Clipboard cleared</source>
         <translation>Буфер обмена очищен</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="718"/>
+        <location filename="../src/mainwindow.cpp" line="715"/>
         <source>Clipboard not cleared</source>
         <translation>Буфер обмена не очищен</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="733"/>
+        <location filename="../src/mainwindow.cpp" line="730"/>
         <source>Password and Content hidden</source>
         <translation>Пароль и содержимое скрыто</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProsess::Не удалось запустить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="809"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
         <source>QProcess::Crashed</source>
         <translation>QProsess::Аварийное завершение</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
+        <location filename="../src/mainwindow.cpp" line="809"/>
         <source>QProcess::Timedout</source>
         <translation>QProsess::Превышено время ожидания</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="815"/>
+        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>QProcess::ReadError</source>
         <translation>QProsess::Ошибка чтения</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="818"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
         <source>QProcess::WriteError</source>
         <translation>QProsess::Ошибка записи</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="821"/>
+        <location filename="../src/mainwindow.cpp" line="818"/>
         <source>QProcess::UnknownError</source>
         <translation>QProsess::Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="842"/>
+        <location filename="../src/mainwindow.cpp" line="839"/>
         <source>Looking for: %1</source>
         <translation>Ищем: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="946"/>
+        <location filename="../src/mainwindow.cpp" line="942"/>
         <source> and the whole content?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="952"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="961"/>
         <source>Delete folder?</source>
         <translation>Удалить папку?</translation>
     </message>
@@ -764,27 +769,31 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Вы в самом деле хотите удалить %1? {1%2??}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1109"/>
+        <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Generating GPG key pair</source>
         <translation>Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1149"/>
+        <location filename="../src/mainwindow.cpp" line="1145"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1277"/>
+        <location filename="../src/mainwindow.ui" line="324"/>
+        <location filename="../src/mainwindow.ui" line="327"/>
+        <location filename="../src/mainwindow.cpp" line="1273"/>
         <source>Add folder</source>
         <translation>Добавить папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1278"/>
+        <location filename="../src/mainwindow.ui" line="309"/>
+        <location filename="../src/mainwindow.ui" line="312"/>
+        <location filename="../src/mainwindow.cpp" line="1274"/>
         <source>Add password</source>
         <translation>Добавить пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1386"/>
+        <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Copied to clipboard</source>
         <translation>скопировать в буфер обмена</translation>
     </message>
@@ -793,40 +802,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Невозможно изменить содержимое</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="914"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
 (будет создан в %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="966"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Are you sure you want to delete %1%2</source>
         <translation type="unfinished">Вы в самом деле хотите удалить %1? {1%2?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1001"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Can not get key list</source>
         <translation>Не удалось получить список ключей</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1002"/>
+        <location filename="../src/mainwindow.cpp" line="998"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Не удалось получить список доступных ключей GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>Key not found in keyring</source>
         <translation>Ключ не найден в хранилище ключей GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="917"/>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="913"/>
+        <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="961"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>

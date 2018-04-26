@@ -57,12 +57,6 @@ public:
   static QSize getSize(const QSize &defaultValue = QVariant().toSize());
   static void setSize(const QSize &size);
 
-  static int getSplitterLeft(const int &defaultValue = QVariant().toInt());
-  static void setSplitterLeft(const int &splitterLeft);
-
-  static int getSplitterRight(const int &defaultValue = QVariant().toInt());
-  static void setSplitterRight(const int &splitterRight);
-
   static bool isMaximized(const bool &defaultValue = QVariant().toBool());
   static void setMaximized(const bool &maximized);
 

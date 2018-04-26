@@ -32,21 +32,22 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
  * @param isNew
  * @param parent
  */
-PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
-                               const QString &file, const bool &isNew,
+PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
                                QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig),
-      m_file(file), m_isNew(isNew) {
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_file(file),
+      m_isNew(isNew) {
 
   QtPassSettings::getPass()->Show(m_file);
 
+  ui->setupUi(this);
+
   setWindowTitle(this->windowTitle() + " " + m_file);
+  m_passConfig = QtPassSettings::getPasswordConfiguration();
   usePwgen(QtPassSettings::isUsePwgen());
   setTemplate(QtPassSettings::getPassTemplate(),
               QtPassSettings::isUseTemplate());
   templateAll(QtPassSettings::isTemplateAllFields());
 
-  ui->setupUi(this);
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
@@ -101,7 +102,7 @@ void PasswordDialog::on_accepted() {
 }
 
 /**
- * @brief PasswordDialog::on_accepted handle Cancel click for QDialog
+ * @brief PasswordDialog::on_rejected handle Cancel click for QDialog
  */
 void PasswordDialog::on_rejected() { setPassword(QString()); }
 
