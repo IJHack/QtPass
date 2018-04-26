@@ -133,24 +133,6 @@ void QtPassSettings::setSize(const QSize &size) {
   getInstance()->setValue(SettingsConstants::size, size);
 }
 
-// int QtPassSettings::getSplitterLeft(const int &defaultValue) {
-//  return getInstance()
-//      ->value(SettingsConstants::splitterLeft, defaultValue)
-//      .toInt();
-//}
-// void QtPassSettings::setSplitterLeft(const int &splitterLeft) {
-//  getInstance()->setValue(SettingsConstants::splitterLeft, splitterLeft);
-//}
-
-// int QtPassSettings::getSplitterRight(const int &defaultValue) {
-//  return getInstance()
-//      ->value(SettingsConstants::splitterRight, defaultValue)
-//      .toInt();
-//}
-// void QtPassSettings::setSplitterRight(const int &splitterRight) {
-//  getInstance()->setValue(SettingsConstants::splitterRight, splitterRight);
-//}
-
 bool QtPassSettings::isMaximized(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::maximized, defaultValue)
