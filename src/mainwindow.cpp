@@ -900,7 +900,9 @@ void MainWindow::setPassword(QString file, bool isNew) {
   connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
           &PasswordDialog::setPass);
 
-  d.exec();
+  if (!d.exec()) {
+    this->ui->treeView->setFocus();
+  }
 }
 
 /**
