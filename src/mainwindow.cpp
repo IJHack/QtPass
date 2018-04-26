@@ -41,13 +41,21 @@
  * @param parent
  */
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
-      tray(NULL) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
+      clippedText(QString()), freshStart(true), keygen(NULL),
+      startupPhase(true), tray(NULL) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
+  ui->setupUi(this);
+
+  if (!checkConfig()) {
+    // no working config so this should quit without config anything
+    QApplication::quit();
+  }
+
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
@@ -64,9 +72,45 @@ MainWindow::MainWindow(QWidget *parent)
   connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
           SLOT(endReencryptPath()));
 
-  ui->setupUi(this);
+  clearPanelTimer.setSingleShot(true);
+  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+  clearClipboardTimer.setSingleShot(true);
+  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
+          SLOT(clearClipboard()));
+
+  initToolBarButtons();
+  initStatusBar();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
+  ui->lineEdit->setClearButtonEnabled(true);
+#endif
 
   enableUiElements(true);
+
+  qsrand(static_cast<uint>(QTime::currentTime().msec()));
+
+  QTimer::singleShot(10, this, SLOT(focusInput()));
+}
+
+/**
+ * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
+ */
+void MainWindow::initToolBarButtons() {
+  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
+          SLOT(addPassword()));
+  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
+  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
+  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
+  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
+  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
+  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
+}
+
+/**
+ * @brief MainWindow::initStatusBar init statusBar with default message and logo
+ */
+void MainWindow::initStatusBar() {
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
 
   QPixmap logo = QPixmap::fromImage(QImage(":/artwork/icon.svg"))
@@ -74,28 +118,6 @@ MainWindow::MainWindow(QWidget *parent)
   QLabel *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
-
-  freshStart = true;
-  startupPhase = true;
-  clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
-  clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
-          SLOT(clearClipboard()));
-  if (!checkConfig()) {
-    // no working config
-    QApplication::quit();
-  }
-  clippedText = "";
-  QTimer::singleShot(10, this, SLOT(focusInput()));
-
-  initToolBarButtons();
-
-  qsrand(static_cast<uint>(QTime::currentTime().msec()));
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-  ui->lineEdit->setClearButtonEnabled(true);
-#endif
 }
 
 /**
@@ -133,8 +155,7 @@ void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
   if (event->type() == QEvent::ActivationChange) {
     if (this->isActiveWindow()) {
-      ui->lineEdit->selectAll();
-      ui->lineEdit->setFocus();
+      focusInput();
     }
   }
 }
@@ -243,9 +264,9 @@ void MainWindow::mountWebDav() {
 bool MainWindow::checkConfig() {
   QString version = QtPassSettings::getVersion();
 
-  if (freshStart) {
-    restoreWindow();
-  }
+  // if (freshStart) {
+  restoreWindow();
+  //}
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
@@ -327,6 +348,7 @@ bool MainWindow::checkConfig() {
   ui->treeView->setIndentation(15);
   ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
   connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
           this, SLOT(showContextMenu(const QPoint &)));
   connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
@@ -574,18 +596,6 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
   processFinished(p_output, p_errout);
 }
 
-void MainWindow::initToolBarButtons() {
-  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(addPassword()));
-  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
-  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
-  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
-  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
-  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
-  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
-}
-
 void MainWindow::passShowHandler(const QString &p_output) {
   QStringList templ = QtPassSettings::isUseTemplate()
                           ? QtPassSettings::getPassTemplate().split("\n")
@@ -779,14 +789,6 @@ void MainWindow::restoreWindow() {
   move(position);
   QSize newSize = QtPassSettings::getSize(size());
   resize(newSize);
-  //  QList<int> splitter = ui->splitter->sizes();
-  //  int left = QtPassSettings::getSplitterLeft(splitter[0]);
-  //  int right = QtPassSettings::getSplitterRight(splitter[1]);
-  //  if (left > 0 || right > 0) {
-  //    splitter[0] = left;
-  //    splitter[1] = right;
-  //    ui->splitter->setSizes(splitter);
-  //  }
   if (QtPassSettings::isMaximized(isMaximized())) {
     showMaximized();
   }

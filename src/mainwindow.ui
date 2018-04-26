@@ -50,6 +50,9 @@
             <property name="text">
              <string>Select profile</string>
             </property>
+            <property name="buddy">
+             <cstring>profileBox</cstring>
+            </property>
            </widget>
           </item>
           <item>
@@ -84,6 +87,9 @@
             <height>26</height>
            </size>
           </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -95,7 +101,7 @@
         <item>
          <widget class="DeselectableTreeView" name="treeView">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -103,12 +109,18 @@
           <property name="acceptDrops">
            <bool>true</bool>
           </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
           <property name="dragEnabled">
            <bool>true</bool>
           </property>
           <property name="dragDropMode">
            <enum>QAbstractItemView::InternalMove</enum>
           </property>
+          <attribute name="headerStretchLastSection">
+           <bool>false</bool>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -412,7 +424,10 @@ p, li { white-space: pre-wrap; }
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>treeView</tabstop>
   <tabstop>textBrowser</tabstop>
+  <tabstop>profileBox</tabstop>
  </tabstops>
  <resources/>
  <connections/>
