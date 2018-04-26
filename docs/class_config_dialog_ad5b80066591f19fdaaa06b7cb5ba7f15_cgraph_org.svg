@@ -62,7 +62,7 @@
 <!-- Node207 -->
 <g id="node14" class="node">
 <title>Node207</title>
-<g id="a_node14"><a xlink:href="class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" target="_top" xlink:title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() ">
+<g id="a_node14"><a xlink:href="class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" target="_top" xlink:title="MainWindow::userDialog see MainWindow::onUsers() ">
 <polygon fill="none" stroke="#000000" points="161.4946,-.5 161.4946,-18.5 288.0952,-18.5 288.0952,-.5 161.4946,-.5"/>
 <text text-anchor="middle" x="224.7949" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::userDialog</text>
 </a>

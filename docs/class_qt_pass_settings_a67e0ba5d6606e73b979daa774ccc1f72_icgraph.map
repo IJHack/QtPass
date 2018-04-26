@@ -1,7 +1,7 @@
 <map id="QtPassSettings::isUsePwgen" name="QtPassSettings::isUsePwgen">
 <area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="270,5,410,31"/>
 <area shape="rect" id="node5" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="275,55,404,80"/>
-<area shape="rect" id="node6" href="$class_password_dialog.html#a4ac917a0437b66ce66d0510ac53855fa" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="248,104,432,143"/>
+<area shape="rect" id="node6" href="$class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="248,104,432,143"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="480,5,658,31"/>
 <area shape="rect" id="node4" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="706,5,888,31"/>
 </map>

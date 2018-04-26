@@ -1,120 +1,131 @@
 <map id="QtPassSettings::getInstance" name="QtPassSettings::getInstance">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a060312f3b359d39beb86c176ab6fb0e0" title="QtPassSettings::getVersion" alt="" coords="1079,78,1263,103"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" title="QtPassSettings::setVersion" alt="" coords="812,123,995,149"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" title="QtPassSettings::getGeometry" alt="" coords="253,4298,451,4323"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title="QtPassSettings::setGeometry" alt="" coords="254,4249,450,4274"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" title="QtPassSettings::getSavestate" alt="" coords="253,4347,451,4373"/>
-<area shape="rect" id="node11" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title="QtPassSettings::setSavestate" alt="" coords="253,3939,451,3965"/>
-<area shape="rect" id="node12" href="$class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" title="QtPassSettings::getPos" alt="" coords="271,4397,433,4422"/>
-<area shape="rect" id="node13" href="$class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0" title="QtPassSettings::setPos" alt="" coords="271,3989,433,4014"/>
-<area shape="rect" id="node14" href="$class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" title="QtPassSettings::getSize" alt="" coords="269,4446,435,4471"/>
-<area shape="rect" id="node15" href="$class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6" title="QtPassSettings::setSize" alt="" coords="270,4038,434,4063"/>
-<area shape="rect" id="node16" href="$class_qt_pass_settings.html#a0e598f76e92e4ccb9858f79cf7fbc0c4" title="QtPassSettings::getSplitterLeft" alt="" coords="251,4495,453,4521"/>
-<area shape="rect" id="node17" href="$class_qt_pass_settings.html#aeb7439b3884140165d0ba07e3af34498" title="QtPassSettings::setSplitterLeft" alt="" coords="251,4087,453,4113"/>
-<area shape="rect" id="node18" href="$class_qt_pass_settings.html#ab6921402e74bd6d1b6fb02ec34e540c3" title="QtPassSettings::getSplitter\lRight" alt="" coords="262,4545,442,4583"/>
-<area shape="rect" id="node19" href="$class_qt_pass_settings.html#a615c198bda5e7529dfdd4b744a39391c" title="QtPassSettings::setSplitter\lRight" alt="" coords="262,4137,442,4175"/>
-<area shape="rect" id="node20" href="$class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" title="QtPassSettings::isMaximized" alt="" coords="255,4607,449,4633"/>
-<area shape="rect" id="node21" href="$class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c" title="QtPassSettings::setMaximized" alt="" coords="251,4199,453,4225"/>
-<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="535,3489,718,3514"/>
-<area shape="rect" id="node31" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="QtPassSettings::setUsePass" alt="" coords="531,771,722,797"/>
-<area shape="rect" id="node32" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="513,821,740,846"/>
-<area shape="rect" id="node33" href="$class_qt_pass_settings.html#a9db69e940cdb3e3043c8232d22234996" title="QtPassSettings::setClipBoardType" alt="" coords="514,871,739,897"/>
-<area shape="rect" id="node34" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="522,922,731,947"/>
-<area shape="rect" id="node35" href="$class_qt_pass_settings.html#af40ab682a88d2fa494bb349d2b6ef591" title="QtPassSettings::setUseSelection" alt="" coords="518,1101,735,1126"/>
-<area shape="rect" id="node36" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="521,1382,732,1407"/>
-<area shape="rect" id="node37" href="$class_qt_pass_settings.html#a8deb96dd37776cb2e864f8799bc17820" title="QtPassSettings::setUseAutoclear" alt="" coords="517,1781,736,1806"/>
-<area shape="rect" id="node38" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title="QtPassSettings::getAutoclear\lSeconds" alt="" coords="806,222,1001,261"/>
-<area shape="rect" id="node39" href="$class_qt_pass_settings.html#ac5fa2696d8fe671f7a1c8b401c87441c" title="QtPassSettings::setAutoclear\lSeconds" alt="" coords="806,285,1001,323"/>
-<area shape="rect" id="node40" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="521,2082,732,2121"/>
-<area shape="rect" id="node41" href="$class_qt_pass_settings.html#ac3afbfb8dca45e6569eea291e47fb1d8" title="QtPassSettings::setUseAutoclear\lPanel" alt="" coords="517,2375,736,2414"/>
-<area shape="rect" id="node42" href="$class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" title="QtPassSettings::getAutoclear\lPanelSeconds" alt="" coords="806,347,1001,386"/>
-<area shape="rect" id="node43" href="$class_qt_pass_settings.html#a0a5bcdb628ca6614d5c26c5c24a0a54f" title="QtPassSettings::setAutoclear\lPanelSeconds" alt="" coords="806,410,1001,449"/>
-<area shape="rect" id="node44" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="518,2542,735,2567"/>
-<area shape="rect" id="node45" href="$class_qt_pass_settings.html#a0fdaeac9234b197815c6d370df40f738" title="QtPassSettings::setHidePassword" alt="" coords="514,2591,739,2617"/>
-<area shape="rect" id="node46" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="801,2642,1006,2667"/>
-<area shape="rect" id="node47" href="$class_qt_pass_settings.html#aebed15b7a02c5b8fd36b6eb8941109b0" title="QtPassSettings::setHideContent" alt="" coords="520,2693,733,2718"/>
-<area shape="rect" id="node48" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="529,1431,724,1457"/>
-<area shape="rect" id="node50" href="$class_qt_pass_settings.html#aa70084beefe80e320c69ad69975869bd" title="QtPassSettings::setAddGPGId" alt="" coords="802,2743,1005,2769"/>
-<area shape="rect" id="node51" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="803,473,1003,498"/>
-<area shape="rect" id="node52" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="509,3387,744,3413"/>
-<area shape="rect" id="node56" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="QtPassSettings::setPassExecutable" alt="" coords="509,2326,744,2351"/>
-<area shape="rect" id="node58" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="515,1729,738,1754"/>
-<area shape="rect" id="node61" href="$class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" title="QtPassSettings::setGitExecutable" alt="" coords="516,2227,737,2253"/>
-<area shape="rect" id="node62" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="511,3538,742,3563"/>
-<area shape="rect" id="node65" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title="QtPassSettings::setGpgExecutable" alt="" coords="512,2277,741,2302"/>
-<area shape="rect" id="node66" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="537,2958,716,2997"/>
-<area shape="rect" id="node68" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title="QtPassSettings::setPwgen\lExecutable" alt="" coords="537,2895,716,2934"/>
-<area shape="rect" id="node69" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="252,3890,452,3915"/>
-<area shape="rect" id="node71" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="524,1579,729,1605"/>
-<area shape="rect" id="node74" href="$class_qt_pass_settings.html#a07d5d044077bd606bc56161d256e9324" title="QtPassSettings::setUseWebDav" alt="" coords="246,4657,459,4682"/>
-<area shape="rect" id="node75" href="$class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c" title="QtPassSettings::getWebDavUrl" alt="" coords="248,4706,456,4731"/>
-<area shape="rect" id="node76" href="$class_qt_pass_settings.html#aa1891a4fd4ed7018c6f221ac6d44b418" title="QtPassSettings::setWebDavUrl" alt="" coords="249,4755,455,4781"/>
-<area shape="rect" id="node77" href="$class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b" title="QtPassSettings::getWebDavUser" alt="" coords="243,4805,461,4830"/>
-<area shape="rect" id="node78" href="$class_qt_pass_settings.html#a949425524d8b789565d0c1eaa8a6ca30" title="QtPassSettings::setWebDavUser" alt="" coords="243,4854,461,4879"/>
-<area shape="rect" id="node79" href="$class_qt_pass_settings.html#ae2264e1b147abca73fc2f66826a9673b" title="QtPassSettings::getWebDav\lPassword" alt="" coords="257,4903,447,4942"/>
-<area shape="rect" id="node80" href="$class_qt_pass_settings.html#a22796f29e69f9882b1581e94db805d8a" title="QtPassSettings::setWebDav\lPassword" alt="" coords="257,4966,447,5005"/>
-<area shape="rect" id="node81" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="538,3021,715,3046"/>
-<area shape="rect" id="node82" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="264,5029,440,5054"/>
-<area shape="rect" id="node83" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="541,1530,712,1555"/>
-<area shape="rect" id="node88" href="$class_qt_pass_settings.html#afc9621d9abe43370e41e01bc9f9cb51f" title="QtPassSettings::setUseGit" alt="" coords="814,3098,993,3123"/>
-<area shape="rect" id="node89" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="529,3286,724,3311"/>
-<area shape="rect" id="node90" href="$class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" title="QtPassSettings::setUsePwgen" alt="" coords="802,3931,1005,3957"/>
-<area shape="rect" id="node91" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="521,2145,732,2170"/>
-<area shape="rect" id="node92" href="$class_qt_pass_settings.html#a9bf8f951e2c85c9d2c42506d905279be" title="QtPassSettings::setAvoid\lCapitals" alt="" coords="541,3122,712,3161"/>
-<area shape="rect" id="node93" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="518,1481,735,1506"/>
-<area shape="rect" id="node94" href="$class_qt_pass_settings.html#acf54d69c152094b545fbd4dc748872d4" title="QtPassSettings::setAvoid\lNumbers" alt="" coords="818,3250,989,3289"/>
-<area shape="rect" id="node95" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title="QtPassSettings::isLessRandom" alt="" coords="522,1882,731,1907"/>
-<area shape="rect" id="node96" href="$class_qt_pass_settings.html#ae2bb9346c54f975132be281f8ba64175" title="QtPassSettings::setLessRandom" alt="" coords="518,3237,735,3262"/>
-<area shape="rect" id="node97" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="524,2033,729,2058"/>
-<area shape="rect" id="node98" href="$class_qt_pass_settings.html#afa7e2c2f5ce00e8ef854fd608849dc19" title="QtPassSettings::setUseSymbols" alt="" coords="797,522,1010,547"/>
-<area shape="rect" id="node99" href="$class_qt_pass_settings.html#a371fc64dc2b1f14cd3e8cb21cae1635e" title="QtPassSettings::setPassword\lLength" alt="" coords="254,5078,450,5117"/>
-<area shape="rect" id="node100" href="$class_qt_pass_settings.html#a574c4935298bf38e6c634add9ba747d6" title="QtPassSettings::setPassword\lCharsselection" alt="" coords="254,5141,450,5179"/>
-<area shape="rect" id="node101" href="$class_qt_pass_settings.html#a438558288d25adc0eaeb10e1d9e6001c" title="QtPassSettings::setPassword\lChars" alt="" coords="254,5203,450,5242"/>
-<area shape="rect" id="node102" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="801,3981,1006,4006"/>
-<area shape="rect" id="node103" href="$class_qt_pass_settings.html#a21bde5a8f18623f23e32e7c8c0241c16" title="QtPassSettings::setUseTrayIcon" alt="" coords="245,745,459,770"/>
-<area shape="rect" id="node104" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title="QtPassSettings::isHideOn\lClose" alt="" coords="264,3471,440,3510"/>
-<area shape="rect" id="node105" href="$class_qt_pass_settings.html#a30bf1d3b1b68e5f8bafaa0aa7550994d" title="QtPassSettings::setHideOn\lClose" alt="" coords="260,797,444,835"/>
-<area shape="rect" id="node106" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title="QtPassSettings::isStartMinimized" alt="" coords="794,4030,1013,4055"/>
-<area shape="rect" id="node107" href="$class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671" title="QtPassSettings::setStart\lMinimized" alt="" coords="269,1969,435,2007"/>
-<area shape="rect" id="node108" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title="QtPassSettings::isAlways\lOnTop" alt="" coords="817,4079,990,4118"/>
-<area shape="rect" id="node109" href="$class_qt_pass_settings.html#a90501b44c9281579f49e0a56f9ca8cef" title="QtPassSettings::setAlways\lOnTop" alt="" coords="262,2481,442,2519"/>
-<area shape="rect" id="node110" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="537,1283,716,1309"/>
-<area shape="rect" id="node111" href="$class_qt_pass_settings.html#a6f82e230c69ee762342da5c9f548a405" title="QtPassSettings::setAutoPull" alt="" coords="258,2799,446,2825"/>
-<area shape="rect" id="node112" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="532,1333,721,1358"/>
-<area shape="rect" id="node113" href="$class_qt_pass_settings.html#ad41efa6a9c7cd545e8a2cc66a7b87d8b" title="QtPassSettings::setAutoPush" alt="" coords="254,2850,450,2875"/>
-<area shape="rect" id="node114" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="792,3882,1015,3907"/>
-<area shape="rect" id="node115" href="$class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" title="QtPassSettings::setPassTemplate" alt="" coords="792,173,1014,198"/>
-<area shape="rect" id="node116" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="799,3833,1007,3858"/>
-<area shape="rect" id="node117" href="$class_qt_pass_settings.html#a654752cacf06bf5830719934152070c8" title="QtPassSettings::setUseTemplate" alt="" coords="244,2431,460,2457"/>
-<area shape="rect" id="node118" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="811,3718,996,3757"/>
-<area shape="rect" id="node119" href="$class_qt_pass_settings.html#af867f1e7648ae1a4926578d9ec3cdfae" title="QtPassSettings::setTemplate\lAllFields" alt="" coords="256,1837,448,1875"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="1327,2338,1505,2363"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1553,2338,1735,2363"/>
-<area shape="rect" id="node6" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="1101,2338,1241,2363"/>
-<area shape="rect" id="node9" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="541,4063,712,4089"/>
-<area shape="rect" id="node23" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="819,4142,988,4167"/>
-<area shape="rect" id="node24" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="1063,4142,1279,4167"/>
-<area shape="rect" id="node26" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="1075,4191,1267,4217"/>
-<area shape="rect" id="node27" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="1069,4241,1273,4266"/>
-<area shape="rect" id="node29" href="$class_password_dialog.html#a4ac917a0437b66ce66d0510ac53855fa" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="1079,3723,1263,3762"/>
-<area shape="rect" id="node30" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="1079,4041,1263,4066"/>
-<area shape="rect" id="node25" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="1344,4166,1488,4191"/>
-<area shape="rect" id="node28" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="1341,4241,1491,4266"/>
-<area shape="rect" id="node49" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="845,1530,961,1555"/>
-<area shape="rect" id="node53" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="798,2895,1009,2921"/>
-<area shape="rect" id="node54" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="833,3567,973,3593"/>
-<area shape="rect" id="node55" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="843,3669,964,3694"/>
-<area shape="rect" id="node57" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="809,2287,998,2313"/>
-<area shape="rect" id="node59" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="827,1730,980,1755"/>
-<area shape="rect" id="node60" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="813,1481,994,1506"/>
-<area shape="rect" id="node63" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="817,4241,990,4266"/>
-<area shape="rect" id="node64" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="851,4191,956,4217"/>
-<area shape="rect" id="node67" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="839,2034,968,2059"/>
-<area shape="rect" id="node70" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="589,3959,664,3985"/>
-<area shape="rect" id="node72" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="837,1579,969,1605"/>
-<area shape="rect" id="node73" href="$class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7" title="MainWindow::~MainWindow destroy! " alt="" coords="809,1629,998,1654"/>
-<area shape="rect" id="node84" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="830,1330,976,1355"/>
-<area shape="rect" id="node85" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;. " alt="" coords="829,1379,977,1405"/>
-<area shape="rect" id="node86" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title="ImitatePass::Move" alt="" coords="838,1231,969,1257"/>
-<area shape="rect" id="node87" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title="ImitatePass::Copy" alt="" coords="839,1281,968,1306"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a9da7174babd2f5cc433505f0fec82efc" title="QtPassSettings::getPassword\lConfiguration" alt="" coords="810,1541,1008,1580"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2e9664870c74f1c2d3b0ed8122a95221" title="QtPassSettings::setPassword\lConfiguration" alt="" coords="528,2152,725,2191"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="535,2215,718,2240"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#ac39032cc58d64c81f8b85f8b5d39247f" title="QtPassSettings::setProfiles" alt="" coords="535,2264,718,2289"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a060312f3b359d39beb86c176ab6fb0e0" title="QtPassSettings::getVersion" alt="" coords="535,679,718,704"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" title="QtPassSettings::setVersion" alt="" coords="817,744,1000,769"/>
+<area shape="rect" id="node12" href="$class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" title="QtPassSettings::getGeometry" alt="" coords="253,4177,451,4203"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title="QtPassSettings::setGeometry" alt="" coords="254,3931,450,3956"/>
+<area shape="rect" id="node15" href="$class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" title="QtPassSettings::getSavestate" alt="" coords="253,4227,451,4252"/>
+<area shape="rect" id="node16" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title="QtPassSettings::setSavestate" alt="" coords="253,3980,451,4005"/>
+<area shape="rect" id="node17" href="$class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" title="QtPassSettings::getPos" alt="" coords="271,4276,433,4301"/>
+<area shape="rect" id="node18" href="$class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0" title="QtPassSettings::setPos" alt="" coords="271,4029,433,4055"/>
+<area shape="rect" id="node19" href="$class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" title="QtPassSettings::getSize" alt="" coords="269,4325,435,4351"/>
+<area shape="rect" id="node20" href="$class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6" title="QtPassSettings::setSize" alt="" coords="270,4079,434,4104"/>
+<area shape="rect" id="node21" href="$class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" title="QtPassSettings::isMaximized" alt="" coords="255,4375,449,4400"/>
+<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c" title="QtPassSettings::setMaximized" alt="" coords="251,4128,453,4153"/>
+<area shape="rect" id="node23" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="535,1337,718,1363"/>
+<area shape="rect" id="node31" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="QtPassSettings::setUsePass" alt="" coords="531,2313,722,2339"/>
+<area shape="rect" id="node32" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="513,2363,740,2388"/>
+<area shape="rect" id="node33" href="$class_qt_pass_settings.html#a9db69e940cdb3e3043c8232d22234996" title="QtPassSettings::setClipBoardType" alt="" coords="514,2412,739,2437"/>
+<area shape="rect" id="node34" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="522,2461,731,2487"/>
+<area shape="rect" id="node35" href="$class_qt_pass_settings.html#af40ab682a88d2fa494bb349d2b6ef591" title="QtPassSettings::setUseSelection" alt="" coords="518,2511,735,2536"/>
+<area shape="rect" id="node36" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="521,2560,732,2585"/>
+<area shape="rect" id="node37" href="$class_qt_pass_settings.html#a8deb96dd37776cb2e864f8799bc17820" title="QtPassSettings::setUseAutoclear" alt="" coords="517,2609,736,2635"/>
+<area shape="rect" id="node38" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title="QtPassSettings::getAutoclear\lSeconds" alt="" coords="811,843,1007,881"/>
+<area shape="rect" id="node39" href="$class_qt_pass_settings.html#ac5fa2696d8fe671f7a1c8b401c87441c" title="QtPassSettings::setAutoclear\lSeconds" alt="" coords="812,1152,1006,1191"/>
+<area shape="rect" id="node40" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="521,2659,732,2697"/>
+<area shape="rect" id="node41" href="$class_qt_pass_settings.html#ac3afbfb8dca45e6569eea291e47fb1d8" title="QtPassSettings::setUseAutoclear\lPanel" alt="" coords="517,2721,736,2760"/>
+<area shape="rect" id="node42" href="$class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" title="QtPassSettings::getAutoclear\lPanelSeconds" alt="" coords="811,1215,1007,1253"/>
+<area shape="rect" id="node43" href="$class_qt_pass_settings.html#a0a5bcdb628ca6614d5c26c5c24a0a54f" title="QtPassSettings::setAutoclear\lPanelSeconds" alt="" coords="812,1653,1006,1692"/>
+<area shape="rect" id="node44" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="518,2784,735,2809"/>
+<area shape="rect" id="node45" href="$class_qt_pass_settings.html#a0fdaeac9234b197815c6d370df40f738" title="QtPassSettings::setHidePassword" alt="" coords="514,2833,739,2859"/>
+<area shape="rect" id="node46" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="524,2883,729,2908"/>
+<area shape="rect" id="node47" href="$class_qt_pass_settings.html#aebed15b7a02c5b8fd36b6eb8941109b0" title="QtPassSettings::setHideContent" alt="" coords="520,2932,733,2957"/>
+<area shape="rect" id="node48" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="812,4336,1006,4361"/>
+<area shape="rect" id="node50" href="$class_qt_pass_settings.html#aa70084beefe80e320c69ad69975869bd" title="QtPassSettings::setAddGPGId" alt="" coords="525,2981,728,3007"/>
+<area shape="rect" id="node51" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="526,3463,727,3488"/>
+<area shape="rect" id="node67" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="809,1604,1009,1629"/>
+<area shape="rect" id="node68" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="509,1793,744,1819"/>
+<area shape="rect" id="node71" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="QtPassSettings::setPassExecutable" alt="" coords="792,255,1026,280"/>
+<area shape="rect" id="node73" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="798,4185,1020,4211"/>
+<area shape="rect" id="node75" href="$class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" title="QtPassSettings::setGitExecutable" alt="" coords="798,304,1020,329"/>
+<area shape="rect" id="node76" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="511,476,742,501"/>
+<area shape="rect" id="node79" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title="QtPassSettings::setGpgExecutable" alt="" coords="794,153,1024,179"/>
+<area shape="rect" id="node80" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="819,405,999,444"/>
+<area shape="rect" id="node82" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title="QtPassSettings::setPwgen\lExecutable" alt="" coords="819,520,999,559"/>
+<area shape="rect" id="node83" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="252,205,452,231"/>
+<area shape="rect" id="node85" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="806,4385,1011,4411"/>
+<area shape="rect" id="node86" href="$class_qt_pass_settings.html#a07d5d044077bd606bc56161d256e9324" title="QtPassSettings::setUseWebDav" alt="" coords="246,4424,459,4449"/>
+<area shape="rect" id="node87" href="$class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c" title="QtPassSettings::getWebDavUrl" alt="" coords="248,4473,456,4499"/>
+<area shape="rect" id="node88" href="$class_qt_pass_settings.html#aa1891a4fd4ed7018c6f221ac6d44b418" title="QtPassSettings::setWebDavUrl" alt="" coords="249,4523,455,4548"/>
+<area shape="rect" id="node89" href="$class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b" title="QtPassSettings::getWebDavUser" alt="" coords="243,4572,461,4597"/>
+<area shape="rect" id="node90" href="$class_qt_pass_settings.html#a949425524d8b789565d0c1eaa8a6ca30" title="QtPassSettings::setWebDavUser" alt="" coords="243,4621,461,4647"/>
+<area shape="rect" id="node91" href="$class_qt_pass_settings.html#ae2264e1b147abca73fc2f66826a9673b" title="QtPassSettings::getWebDav\lPassword" alt="" coords="257,4671,447,4709"/>
+<area shape="rect" id="node92" href="$class_qt_pass_settings.html#a22796f29e69f9882b1581e94db805d8a" title="QtPassSettings::setWebDav\lPassword" alt="" coords="257,4733,447,4772"/>
+<area shape="rect" id="node93" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="538,3235,715,3260"/>
+<area shape="rect" id="node94" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="264,4796,440,4821"/>
+<area shape="rect" id="node95" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="823,4536,994,4561"/>
+<area shape="rect" id="node99" href="$class_qt_pass_settings.html#afc9621d9abe43370e41e01bc9f9cb51f" title="QtPassSettings::setUseGit" alt="" coords="537,3284,716,3309"/>
+<area shape="rect" id="node100" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="812,1103,1006,1128"/>
+<area shape="rect" id="node101" href="$class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" title="QtPassSettings::setUsePwgen" alt="" coords="807,4235,1010,4260"/>
+<area shape="rect" id="node102" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="803,955,1015,980"/>
+<area shape="rect" id="node103" href="$class_qt_pass_settings.html#a9bf8f951e2c85c9d2c42506d905279be" title="QtPassSettings::setAvoid\lCapitals" alt="" coords="541,3333,712,3372"/>
+<area shape="rect" id="node104" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="800,1053,1018,1079"/>
+<area shape="rect" id="node105" href="$class_qt_pass_settings.html#acf54d69c152094b545fbd4dc748872d4" title="QtPassSettings::setAvoid\lNumbers" alt="" coords="541,3512,712,3551"/>
+<area shape="rect" id="node106" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title="QtPassSettings::isLessRandom" alt="" coords="805,1004,1013,1029"/>
+<area shape="rect" id="node107" href="$class_qt_pass_settings.html#ae2bb9346c54f975132be281f8ba64175" title="QtPassSettings::setLessRandom" alt="" coords="518,1847,735,1872"/>
+<area shape="rect" id="node108" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="806,905,1011,931"/>
+<area shape="rect" id="node109" href="$class_qt_pass_settings.html#afa7e2c2f5ce00e8ef854fd608849dc19" title="QtPassSettings::setUseSymbols" alt="" coords="520,1897,733,1923"/>
+<area shape="rect" id="node110" href="$class_qt_pass_settings.html#a371fc64dc2b1f14cd3e8cb21cae1635e" title="QtPassSettings::setPassword\lLength" alt="" coords="254,4845,450,4884"/>
+<area shape="rect" id="node111" href="$class_qt_pass_settings.html#a574c4935298bf38e6c634add9ba747d6" title="QtPassSettings::setPassword\lCharsselection" alt="" coords="254,4908,450,4947"/>
+<area shape="rect" id="node112" href="$class_qt_pass_settings.html#a438558288d25adc0eaeb10e1d9e6001c" title="QtPassSettings::setPassword\lChars" alt="" coords="254,4971,450,5009"/>
+<area shape="rect" id="node113" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="806,583,1012,608"/>
+<area shape="rect" id="node114" href="$class_qt_pass_settings.html#a21bde5a8f18623f23e32e7c8c0241c16" title="QtPassSettings::setUseTrayIcon" alt="" coords="520,1948,733,1973"/>
+<area shape="rect" id="node115" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title="QtPassSettings::isHideOn\lClose" alt="" coords="264,3563,440,3601"/>
+<area shape="rect" id="node116" href="$class_qt_pass_settings.html#a30bf1d3b1b68e5f8bafaa0aa7550994d" title="QtPassSettings::setHideOn\lClose" alt="" coords="260,3020,444,3059"/>
+<area shape="rect" id="node117" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title="QtPassSettings::isStartMinimized" alt="" coords="800,632,1018,657"/>
+<area shape="rect" id="node118" href="$class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671" title="QtPassSettings::setStart\lMinimized" alt="" coords="269,3083,435,3121"/>
+<area shape="rect" id="node119" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title="QtPassSettings::isAlways\lOnTop" alt="" coords="823,681,995,720"/>
+<area shape="rect" id="node120" href="$class_qt_pass_settings.html#a90501b44c9281579f49e0a56f9ca8cef" title="QtPassSettings::setAlways\lOnTop" alt="" coords="262,3145,442,3184"/>
+<area shape="rect" id="node121" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="819,4087,999,4112"/>
+<area shape="rect" id="node122" href="$class_qt_pass_settings.html#a6f82e230c69ee762342da5c9f548a405" title="QtPassSettings::setAutoPull" alt="" coords="258,3208,446,3233"/>
+<area shape="rect" id="node123" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="815,4136,1003,4161"/>
+<area shape="rect" id="node124" href="$class_qt_pass_settings.html#ad41efa6a9c7cd545e8a2cc66a7b87d8b" title="QtPassSettings::setAutoPush" alt="" coords="254,1996,450,2021"/>
+<area shape="rect" id="node125" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="797,1277,1020,1303"/>
+<area shape="rect" id="node126" href="$class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" title="QtPassSettings::setPassTemplate" alt="" coords="798,793,1020,819"/>
+<area shape="rect" id="node127" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="805,1389,1013,1415"/>
+<area shape="rect" id="node128" href="$class_qt_pass_settings.html#a654752cacf06bf5830719934152070c8" title="QtPassSettings::setUseTemplate" alt="" coords="244,2045,460,2071"/>
+<area shape="rect" id="node129" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="817,1327,1001,1365"/>
+<area shape="rect" id="node130" href="$class_qt_pass_settings.html#af867f1e7648ae1a4926578d9ec3cdfae" title="QtPassSettings::setTemplate\lAllFields" alt="" coords="256,2095,448,2133"/>
+<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="1112,2095,1252,2120"/>
+<area shape="rect" id="node6" href="$class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="1090,1323,1274,1361"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="1338,1159,1517,1184"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1565,1159,1746,1184"/>
+<area shape="rect" id="node14" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="541,4005,712,4031"/>
+<area shape="rect" id="node24" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="825,104,993,129"/>
+<area shape="rect" id="node25" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="1074,104,1290,129"/>
+<area shape="rect" id="node27" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="1086,55,1278,80"/>
+<area shape="rect" id="node28" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="1080,5,1284,31"/>
+<area shape="rect" id="node30" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="1090,153,1274,179"/>
+<area shape="rect" id="node26" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="1356,79,1499,104"/>
+<area shape="rect" id="node29" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="1352,5,1503,31"/>
+<area shape="rect" id="node49" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="1124,4335,1240,4360"/>
+<area shape="rect" id="node52" href="$class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" title="ImitatePass::GitInit git init wrapper. " alt="" coords="842,3488,976,3513"/>
+<area shape="rect" id="node53" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file. " alt="" coords="843,3537,975,3563"/>
+<area shape="rect" id="node54" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="1116,4485,1248,4511"/>
+<area shape="rect" id="node55" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;. " alt="" coords="1108,4683,1256,4708"/>
+<area shape="rect" id="node56" href="$class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="1091,4135,1273,4160"/>
+<area shape="rect" id="node57" href="$class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7" title="MainWindow::~MainWindow destroy! " alt="" coords="1087,4285,1277,4311"/>
+<area shape="rect" id="node58" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title="Pass::executeWrapper" alt="" coords="831,3587,987,3612"/>
+<area shape="rect" id="node59" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="848,3833,970,3859"/>
+<area shape="rect" id="node60" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="832,4435,986,4460"/>
+<area shape="rect" id="node62" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository. " alt="" coords="857,3636,961,3661"/>
+<area shape="rect" id="node63" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder) " alt="" coords="850,3685,968,3711"/>
+<area shape="rect" id="node64" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder) " alt="" coords="850,3735,967,3760"/>
+<area shape="rect" id="node65" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="848,1716,970,1741"/>
+<area shape="rect" id="node66" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path. " alt="" coords="867,3784,951,3809"/>
+<area shape="rect" id="node61" href="$class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="1098,4436,1266,4461"/>
+<area shape="rect" id="node69" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="1077,355,1287,380"/>
+<area shape="rect" id="node70" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="839,1765,979,1791"/>
+<area shape="rect" id="node72" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="1087,255,1277,280"/>
+<area shape="rect" id="node74" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="1106,4184,1258,4209"/>
+<area shape="rect" id="node77" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="822,5,996,31"/>
+<area shape="rect" id="node78" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="857,55,961,80"/>
+<area shape="rect" id="node81" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="1118,980,1246,1005"/>
+<area shape="rect" id="node84" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="589,172,664,197"/>
+<area shape="rect" id="node96" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="1109,4633,1255,4659"/>
+<area shape="rect" id="node97" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title="ImitatePass::Move" alt="" coords="1117,4535,1248,4560"/>
+<area shape="rect" id="node98" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title="ImitatePass::Copy" alt="" coords="1117,4584,1247,4609"/>
 </map>

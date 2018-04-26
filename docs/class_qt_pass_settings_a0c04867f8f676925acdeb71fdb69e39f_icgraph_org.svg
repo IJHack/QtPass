@@ -8,90 +8,90 @@
  viewBox="0.00 0.00 719.13 101.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>QtPassSettings::setPassExecutable</title>
-<!-- Node575 -->
+<!-- Node584 -->
 <g id="node1" class="node">
-<title>Node575</title>
+<title>Node584</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-37.5 0,-55.5 175.5264,-55.5 175.5264,-37.5 0,-37.5"/>
 <text text-anchor="middle" x="87.7632" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setPassExecutable</text>
 </g>
-<!-- Node576 -->
+<!-- Node585 -->
 <g id="node2" class="node">
-<title>Node576</title>
+<title>Node585</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git...">
 <polygon fill="none" stroke="#000000" points="219.4414,-74.5 219.4414,-92.5 361.3496,-92.5 361.3496,-74.5 219.4414,-74.5"/>
 <text text-anchor="middle" x="290.3955" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::~ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node575&#45;&gt;Node576 -->
+<!-- Node584&#45;&gt;Node585 -->
 <g id="edge1" class="edge">
-<title>Node575&#45;&gt;Node576</title>
+<title>Node584&#45;&gt;Node585</title>
 <path fill="none" stroke="#191970" d="M146.9408,-57.3056C176.7634,-62.7511 212.5132,-69.2789 240.864,-74.4557"/>
 <polygon fill="#191970" stroke="#191970" points="147.5396,-53.8572 137.0735,-55.5039 146.2821,-60.7433 147.5396,-53.8572"/>
 </g>
-<!-- Node577 -->
+<!-- Node586 -->
 <g id="node3" class="node">
-<title>Node577</title>
+<title>Node586</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="237.6543,-37.5 237.6543,-55.5 343.1367,-55.5 343.1367,-37.5 237.6543,-37.5"/>
 <text text-anchor="middle" x="290.3955" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node575&#45;&gt;Node577 -->
+<!-- Node584&#45;&gt;Node586 -->
 <g id="edge2" class="edge">
-<title>Node575&#45;&gt;Node577</title>
+<title>Node584&#45;&gt;Node586</title>
 <path fill="none" stroke="#191970" d="M186.1592,-46.5C203.8784,-46.5 221.7168,-46.5 237.5041,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="185.7567,-43.0001 175.7566,-46.5 185.7566,-50.0001 185.7567,-43.0001"/>
 </g>
-<!-- Node580 -->
+<!-- Node589 -->
 <g id="node6" class="node">
-<title>Node580</title>
+<title>Node589</title>
 <g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
 <polygon fill="none" stroke="#000000" points="211.5264,-.5 211.5264,-18.5 369.2646,-18.5 369.2646,-.5 211.5264,-.5"/>
 <text text-anchor="middle" x="290.3955" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
 </a>
 </g>
 </g>
-<!-- Node575&#45;&gt;Node580 -->
+<!-- Node584&#45;&gt;Node589 -->
 <g id="edge5" class="edge">
-<title>Node575&#45;&gt;Node580</title>
+<title>Node584&#45;&gt;Node589</title>
 <path fill="none" stroke="#191970" d="M146.9408,-35.6944C176.7634,-30.2489 212.5132,-23.7211 240.864,-18.5443"/>
 <polygon fill="#191970" stroke="#191970" points="146.2821,-32.2567 137.0735,-37.4961 147.5396,-39.1428 146.2821,-32.2567"/>
 </g>
-<!-- Node578 -->
+<!-- Node587 -->
 <g id="node4" class="node">
-<title>Node578</title>
+<title>Node587</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="405.2646,-18.5 405.2646,-36.5 539.0918,-36.5 539.0918,-18.5 405.2646,-18.5"/>
 <text text-anchor="middle" x="472.1782" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node577&#45;&gt;Node578 -->
+<!-- Node586&#45;&gt;Node587 -->
 <g id="edge3" class="edge">
-<title>Node577&#45;&gt;Node578</title>
+<title>Node586&#45;&gt;Node587</title>
 <path fill="none" stroke="#191970" d="M353.6281,-39.8909C370.2738,-38.1511 388.2875,-36.2683 405.1265,-34.5083"/>
 <polygon fill="#191970" stroke="#191970" points="353.0452,-36.4327 343.4633,-40.9533 353.773,-43.3947 353.0452,-36.4327"/>
 </g>
-<!-- Node579 -->
+<!-- Node588 -->
 <g id="node5" class="node">
-<title>Node579</title>
+<title>Node588</title>
 <g id="a_node5"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="575.0918,-18.5 575.0918,-36.5 711.1309,-36.5 711.1309,-18.5 575.0918,-18.5"/>
 <text text-anchor="middle" x="643.1113" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node578&#45;&gt;Node579 -->
+<!-- Node587&#45;&gt;Node588 -->
 <g id="edge4" class="edge">
-<title>Node578&#45;&gt;Node579</title>
+<title>Node587&#45;&gt;Node588</title>
 <path fill="none" stroke="#191970" d="M549.4819,-27.5C557.9366,-27.5 566.4987,-27.5 574.8334,-27.5"/>
 <polygon fill="#191970" stroke="#191970" points="549.2449,-24.0001 539.2449,-27.5 549.2449,-31.0001 549.2449,-24.0001"/>
 </g>
-<!-- Node580&#45;&gt;Node578 -->
+<!-- Node589&#45;&gt;Node587 -->
 <g id="edge6" class="edge">
-<title>Node580&#45;&gt;Node578</title>
+<title>Node589&#45;&gt;Node587</title>
 <path fill="none" stroke="#191970" d="M379.4885,-18.3219C388.1625,-19.1808 396.8584,-20.0419 405.26,-20.8738"/>
 <polygon fill="#191970" stroke="#191970" points="379.6312,-14.819 369.335,-17.3165 378.9414,-21.785 379.6312,-14.819"/>
 </g>

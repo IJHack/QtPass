@@ -4,7 +4,7 @@
 <area shape="rect" id="node5" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="222,91,438,116"/>
 <area shape="rect" id="node7" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="234,140,426,165"/>
 <area shape="rect" id="node8" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="228,189,432,215"/>
-<area shape="rect" id="node10" href="$class_password_dialog.html#a4ac917a0437b66ce66d0510ac53855fa" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="238,239,422,277"/>
+<area shape="rect" id="node10" href="$class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="238,239,422,277"/>
 <area shape="rect" id="node11" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="238,301,422,327"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="713,29,894,55"/>
 <area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="504,103,647,128"/>

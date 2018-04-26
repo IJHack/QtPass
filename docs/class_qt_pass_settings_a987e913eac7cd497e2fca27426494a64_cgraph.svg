@@ -54,75 +54,75 @@ var sectionId = 'dynsection-17';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPass</title>
-<!-- Node184 -->
+<!-- Node195 -->
 <g id="node1" class="node">
-<title>Node184</title>
+<title>Node195</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 126.6104,-37.5 126.6104,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="63.3052" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPass</text>
 </g>
-<!-- Node185 -->
+<!-- Node196 -->
 <g id="node2" class="node">
-<title>Node185</title>
+<title>Node196</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title="QtPassSettings::isUsePass">
 <polygon fill="none" stroke="#000000" points="261.3022,-37.5 261.3022,-55.5 399.0161,-55.5 399.0161,-37.5 261.3022,-37.5"/>
 <text text-anchor="middle" x="330.1592" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePass</text>
 </a>
 </g>
 </g>
-<!-- Node184&#45;&gt;Node185 -->
+<!-- Node195&#45;&gt;Node196 -->
 <g id="edge1" class="edge">
-<title>Node184&#45;&gt;Node185</title>
+<title>Node195&#45;&gt;Node196</title>
 <path fill="none" stroke="#191970" d="M126.8843,-32.7886C164.0399,-35.2948 211.2593,-38.4799 250.8341,-41.1493"/>
 <polygon fill="#191970" stroke="#191970" points="250.7705,-44.6529 260.9834,-41.8339 251.2417,-37.6688 250.7705,-44.6529"/>
 </g>
-<!-- Node187 -->
+<!-- Node198 -->
 <g id="node4" class="node">
-<title>Node187</title>
+<title>Node198</title>
 <g id="a_node4"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title="Pass::init">
 <polygon fill="none" stroke="#000000" points="162.6104,-.5 162.6104,-18.5 219.1816,-18.5 219.1816,-.5 162.6104,-.5"/>
 <text text-anchor="middle" x="190.896" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </a>
 </g>
 </g>
-<!-- Node184&#45;&gt;Node187 -->
+<!-- Node195&#45;&gt;Node198 -->
 <g id="edge3" class="edge">
-<title>Node184&#45;&gt;Node187</title>
+<title>Node195&#45;&gt;Node198</title>
 <path fill="none" stroke="#191970" d="M124.1111,-19.4452C133.7067,-18.0163 143.3927,-16.5739 152.2981,-15.2478"/>
 <polygon fill="#191970" stroke="#191970" points="152.9662,-18.6869 162.3416,-13.7521 151.9351,-11.7633 152.9662,-18.6869"/>
 </g>
-<!-- Node186 -->
+<!-- Node197 -->
 <g id="node3" class="node">
-<title>Node186</title>
+<title>Node197</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="441.1367,-18.5 441.1367,-36.5 583.3184,-36.5 583.3184,-18.5 441.1367,-18.5"/>
 <text text-anchor="middle" x="512.2275" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node185&#45;&gt;Node186 -->
+<!-- Node196&#45;&gt;Node197 -->
 <g id="edge2" class="edge">
-<title>Node185&#45;&gt;Node186</title>
+<title>Node196&#45;&gt;Node197</title>
 <path fill="none" stroke="#191970" d="M399.251,-39.2898C409.6188,-38.2079 420.3904,-37.0838 430.9831,-35.9784"/>
 <polygon fill="#191970" stroke="#191970" points="431.4825,-39.4454 441.0652,-34.9263 430.7559,-32.4832 431.4825,-39.4454"/>
 </g>
-<!-- Node188 -->
+<!-- Node199 -->
 <g id="node5" class="node">
-<title>Node188</title>
+<title>Node199</title>
 <g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
 <polygon fill="none" stroke="#000000" points="255.1816,-.5 255.1816,-18.5 405.1367,-18.5 405.1367,-.5 255.1816,-.5"/>
 <text text-anchor="middle" x="330.1592" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>
 </g>
 </g>
-<!-- Node187&#45;&gt;Node188 -->
+<!-- Node198&#45;&gt;Node199 -->
 <g id="edge4" class="edge">
-<title>Node187&#45;&gt;Node188</title>
+<title>Node198&#45;&gt;Node199</title>
 <path fill="none" stroke="#191970" d="M219.414,-9.5C227.128,-9.5 235.8908,-9.5 245.0287,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="245.0597,-13.0001 255.0597,-9.5 245.0597,-6.0001 245.0597,-13.0001"/>
 </g>
-<!-- Node188&#45;&gt;Node186 -->
+<!-- Node199&#45;&gt;Node197 -->
 <g id="edge5" class="edge">
-<title>Node188&#45;&gt;Node186</title>
+<title>Node199&#45;&gt;Node197</title>
 <path fill="none" stroke="#191970" d="M405.2645,-16.9252C413.7835,-17.7674 422.4946,-18.6286 431.0867,-19.4781"/>
 <polygon fill="#191970" stroke="#191970" points="430.8039,-22.9671 441.0998,-20.468 431.4927,-16.0011 430.8039,-22.9671"/>
 </g>

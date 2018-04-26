@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 321.67 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::setAlwaysOnTop</title>
-<!-- Node477 -->
+<!-- Node486 -->
 <g id="node1" class="node">
-<title>Node477</title>
+<title>Node486</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 135.4922,-28.5 135.4922,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setAlways</text>
 <text text-anchor="middle" x="67.7461" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">OnTop</text>
 </g>
-<!-- Node478 -->
+<!-- Node487 -->
 <g id="node2" class="node">
-<title>Node478</title>
+<title>Node487</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="171.4922,-5.5 171.4922,-23.5 313.6738,-23.5 313.6738,-5.5 171.4922,-5.5"/>
 <text text-anchor="middle" x="242.583" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node477&#45;&gt;Node478 -->
+<!-- Node486&#45;&gt;Node487 -->
 <g id="edge1" class="edge">
-<title>Node477&#45;&gt;Node478</title>
+<title>Node486&#45;&gt;Node487</title>
 <path fill="none" stroke="#191970" d="M135.5929,-14.5C144.0097,-14.5 152.6818,-14.5 161.2747,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="161.3057,-18.0001 171.3057,-14.5 161.3056,-11.0001 161.3057,-18.0001"/>
 </g>

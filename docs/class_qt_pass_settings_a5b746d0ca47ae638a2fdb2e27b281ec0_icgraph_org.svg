@@ -8,60 +8,60 @@
  viewBox="0.00 0.00 645.37 46.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 42)">
 <title>QtPassSettings::isUseTrayIcon</title>
-<!-- Node458 -->
+<!-- Node467 -->
 <g id="node1" class="node">
-<title>Node458</title>
+<title>Node467</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 154.0176,-37.5 154.0176,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="77.0088" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseTrayIcon</text>
 </g>
-<!-- Node459 -->
+<!-- Node468 -->
 <g id="node2" class="node">
-<title>Node459</title>
+<title>Node468</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="331.5,-19.5 331.5,-37.5 465.3271,-37.5 465.3271,-19.5 331.5,-19.5"/>
 <text text-anchor="middle" x="398.4136" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node458&#45;&gt;Node459 -->
+<!-- Node467&#45;&gt;Node468 -->
 <g id="edge1" class="edge">
-<title>Node458&#45;&gt;Node459</title>
+<title>Node467&#45;&gt;Node468</title>
 <path fill="none" stroke="#191970" d="M164.4033,-28.5C217.0326,-28.5 283.0126,-28.5 331.4851,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="164.4023,-25.0001 154.4023,-28.5 164.4022,-32.0001 164.4023,-25.0001"/>
 </g>
-<!-- Node461 -->
+<!-- Node470 -->
 <g id="node4" class="node">
-<title>Node461</title>
+<title>Node470</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="190.0176,-.5 190.0176,-18.5 295.5,-18.5 295.5,-.5 190.0176,-.5"/>
 <text text-anchor="middle" x="242.7588" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node458&#45;&gt;Node461 -->
+<!-- Node467&#45;&gt;Node470 -->
 <g id="edge3" class="edge">
-<title>Node458&#45;&gt;Node461</title>
+<title>Node467&#45;&gt;Node470</title>
 <path fill="none" stroke="#191970" d="M164.2062,-18.5045C172.8431,-17.5145 181.4172,-16.5316 189.552,-15.5991"/>
 <polygon fill="#191970" stroke="#191970" points="163.5972,-15.0513 154.0609,-19.6675 164.3945,-22.0058 163.5972,-15.0513"/>
 </g>
-<!-- Node460 -->
+<!-- Node469 -->
 <g id="node3" class="node">
-<title>Node460</title>
+<title>Node469</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="501.3271,-19.5 501.3271,-37.5 637.3662,-37.5 637.3662,-19.5 501.3271,-19.5"/>
 <text text-anchor="middle" x="569.3467" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node459&#45;&gt;Node460 -->
+<!-- Node468&#45;&gt;Node469 -->
 <g id="edge2" class="edge">
-<title>Node459&#45;&gt;Node460</title>
+<title>Node468&#45;&gt;Node469</title>
 <path fill="none" stroke="#191970" d="M475.7172,-28.5C484.1719,-28.5 492.7341,-28.5 501.0688,-28.5"/>
 <polygon fill="#191970" stroke="#191970" points="475.4803,-25.0001 465.4803,-28.5 475.4802,-32.0001 475.4803,-25.0001"/>
 </g>
-<!-- Node461&#45;&gt;Node459 -->
+<!-- Node470&#45;&gt;Node468 -->
 <g id="edge4" class="edge">
-<title>Node461&#45;&gt;Node459</title>
+<title>Node470&#45;&gt;Node468</title>
 <path fill="none" stroke="#191970" d="M305.9913,-17.2185C314.3901,-18.2437 323.024,-19.2976 331.4827,-20.3301"/>
 <polygon fill="#191970" stroke="#191970" points="306.2414,-13.7231 295.891,-15.9856 305.3932,-20.6715 306.2414,-13.7231"/>
 </g>

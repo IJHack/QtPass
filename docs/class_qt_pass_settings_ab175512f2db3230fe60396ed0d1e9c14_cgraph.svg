@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 327.25 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::isAutoPush</title>
-<!-- Node326 -->
+<!-- Node335 -->
 <g id="node1" class="node">
-<title>Node326</title>
+<title>Node335</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 141.0635,-18.5 141.0635,-.5 0,-.5"/>
 <text text-anchor="middle" x="70.5317" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAutoPush</text>
 </g>
-<!-- Node327 -->
+<!-- Node336 -->
 <g id="node2" class="node">
-<title>Node327</title>
+<title>Node336</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="177.0635,-.5 177.0635,-18.5 319.2451,-18.5 319.2451,-.5 177.0635,-.5"/>
 <text text-anchor="middle" x="248.1543" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node326&#45;&gt;Node327 -->
+<!-- Node335&#45;&gt;Node336 -->
 <g id="edge1" class="edge">
-<title>Node326&#45;&gt;Node327</title>
+<title>Node335&#45;&gt;Node336</title>
 <path fill="none" stroke="#191970" d="M141.2432,-9.5C149.5655,-9.5 158.1093,-9.5 166.5651,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="166.8151,-13.0001 176.815,-9.5 166.815,-6.0001 166.8151,-13.0001"/>
 </g>

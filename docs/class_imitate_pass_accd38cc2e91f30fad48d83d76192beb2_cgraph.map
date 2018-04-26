@@ -1,7 +1,7 @@
 <map id="ImitatePass::Insert" name="ImitatePass::Insert">
-<area shape="rect" id="node2" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="211,5,364,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="438,31,639,56"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="185,107,390,132"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="202,156,373,181"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="443,131,633,156"/>
+<area shape="rect" id="node2" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for. " alt="" coords="194,5,347,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="406,56,607,81"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="404,107,609,132"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="185,157,356,183"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="657,107,847,132"/>
 </map>

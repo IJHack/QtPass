@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="209,57,401,83"/>
 <area shape="rect" id="node11" href="$class_config_dialog.html#a796f48c56e5e436065f41f55b5fd7509" title="ConfigDialog::useGit retrun preference for using git. " alt="" coords="233,107,377,132"/>
 <area shape="rect" id="node12" href="$class_main_window.html#a4680b2cbcfd388683a98303f29c0f84f" title="MainWindow::executePassGitInit git init wrapper. " alt="" coords="197,156,413,181"/>
-<area shape="rect" id="node14" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::on_usersButton_clicked() " alt="" coords="221,205,389,231"/>
+<area shape="rect" id="node14" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers() " alt="" coords="221,205,389,231"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="461,107,630,132"/>
 <area shape="rect" id="node8" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="493,56,598,81"/>
 <area shape="rect" id="node4" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="928,107,1111,132"/>

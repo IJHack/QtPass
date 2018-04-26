@@ -1,4 +1,5 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
 <area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. " alt="" coords="246,5,374,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="209,55,410,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="458,55,648,80"/>
 </map>

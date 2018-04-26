@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 503.19 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ImitatePass::GitPull_b</title>
-<!-- Node21 -->
+<!-- Node22 -->
 <g id="node1" class="node">
-<title>Node21</title>
+<title>Node22</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 114.374,-18.5 114.374,-.5 0,-.5"/>
 <text text-anchor="middle" x="57.187" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::GitPull_b</text>
 </g>
-<!-- Node22 -->
+<!-- Node23 -->
 <g id="node2" class="node">
-<title>Node22</title>
+<title>Node23</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" target="_top" xlink:title="QtPassSettings::getGitExecutable">
 <polygon fill="none" stroke="#000000" points="150.374,-.5 150.374,-18.5 317.0088,-18.5 317.0088,-.5 150.374,-.5"/>
 <text text-anchor="middle" x="233.6914" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGitExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node21&#45;&gt;Node22 -->
+<!-- Node22&#45;&gt;Node23 -->
 <g id="edge1" class="edge">
-<title>Node21&#45;&gt;Node22</title>
+<title>Node22&#45;&gt;Node23</title>
 <path fill="none" stroke="#191970" d="M114.4929,-9.5C122.6684,-9.5 131.2497,-9.5 139.9021,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="140.0721,-13.0001 150.0721,-9.5 140.072,-6.0001 140.0721,-13.0001"/>
 </g>
-<!-- Node23 -->
+<!-- Node24 -->
 <g id="node3" class="node">
-<title>Node23</title>
+<title>Node24</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="353.0088,-.5 353.0088,-18.5 495.1904,-18.5 495.1904,-.5 353.0088,-.5"/>
 <text text-anchor="middle" x="424.0996" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node23 -->
+<!-- Node23&#45;&gt;Node24 -->
 <g id="edge2" class="edge">
-<title>Node22&#45;&gt;Node23</title>
+<title>Node23&#45;&gt;Node24</title>
 <path fill="none" stroke="#191970" d="M317.2072,-9.5C325.6608,-9.5 334.2392,-9.5 342.6704,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="342.8633,-13.0001 352.8633,-9.5 342.8633,-6.0001 342.8633,-13.0001"/>
 </g>

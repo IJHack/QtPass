@@ -49,8 +49,6 @@ var searchData=
   ['setpwgenpath',['setPwgenPath',['../class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa',1,'ConfigDialog']]],
   ['setsavestate',['setSavestate',['../class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95',1,'QtPassSettings']]],
   ['setsize',['setSize',['../class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6',1,'QtPassSettings']]],
-  ['setsplitterleft',['setSplitterLeft',['../class_qt_pass_settings.html#aeb7439b3884140165d0ba07e3af34498',1,'QtPassSettings']]],
-  ['setsplitterright',['setSplitterRight',['../class_qt_pass_settings.html#a615c198bda5e7529dfdd4b744a39391c',1,'QtPassSettings']]],
   ['setstartminimized',['setStartMinimized',['../class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671',1,'QtPassSettings']]],
   ['setstorepath',['setStorePath',['../class_config_dialog.html#a0f64db40ec749d2bc58b80ae37498e98',1,'ConfigDialog']]],
   ['settemplate',['setTemplate',['../class_config_dialog.html#aa517dc183f48df5366760a0be0588267',1,'ConfigDialog::setTemplate()'],['../class_password_dialog.html#a522f673d65885edea46e3c514bb95f45',1,'PasswordDialog::setTemplate()']]],
