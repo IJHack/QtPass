@@ -18,6 +18,7 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
     : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
   m_templating = false;
   m_allFields = false;
+  m_isNew = false;
 
   ui->setupUi(this);
   setLength(m_passConfig.length);

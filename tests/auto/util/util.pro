@@ -1,7 +1,5 @@
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
-message($$QMAKE_LINK_OBJECT_MAX)
-
 SOURCES += tst_util.cpp \
 
 LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS

@@ -66,3 +66,5 @@ PRE_TARGETDEPS += compiler_updateqm_make_all
     SOURCES += singleapplication.cpp
     HEADERS += singleapplication.h
 }
+
+RESOURCES   += ../resources.qrc
