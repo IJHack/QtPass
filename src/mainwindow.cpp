@@ -380,78 +380,10 @@ void MainWindow::config() {
     QtPassSettings::setUsePass(true);
   }
 
-  d->setPassPath(QtPassSettings::getPassExecutable());
-  d->setGitPath(QtPassSettings::getGitExecutable());
-  d->setGpgPath(QtPassSettings::getGpgExecutable());
-  d->setStorePath(QtPassSettings::getPassStore());
-  d->usePass(QtPassSettings::isUsePass());
-  d->useClipboard(QtPassSettings::getClipBoardType());
-  d->useSelection(QtPassSettings::isUseSelection());
-  d->useAutoclear(QtPassSettings::isUseAutoclear());
-  d->setAutoclear(QtPassSettings::getAutoclearSeconds());
-  d->useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
-  d->setAutoclearPanel(QtPassSettings::getAutoclearPanelSeconds());
-  d->hidePassword(QtPassSettings::isHidePassword());
-  d->hideContent(QtPassSettings::isHideContent());
-  d->addGPGId(QtPassSettings::isAddGPGId(true));
-  d->useTrayIcon(QtPassSettings::isUseTrayIcon());
-  d->hideOnClose(QtPassSettings::isHideOnClose());
-  d->startMinimized(QtPassSettings::isStartMinimized());
-  d->setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
-  d->useGit(QtPassSettings::isUseGit());
-  d->setPwgenPath(QtPassSettings::getPwgenExecutable());
-  d->usePwgen(QtPassSettings::isUsePwgen());
-  d->avoidCapitals(QtPassSettings::isAvoidCapitals());
-  d->avoidNumbers(QtPassSettings::isAvoidNumbers());
-  d->lessRandom(QtPassSettings::isLessRandom());
-  d->useSymbols(QtPassSettings::isUseSymbols());
-  d->setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
-  d->useTemplate(QtPassSettings::isUseTemplate());
-  d->setTemplate(QtPassSettings::getPassTemplate());
-  d->templateAllFields(QtPassSettings::isTemplateAllFields());
-  d->autoPull(QtPassSettings::isAutoPull());
-  d->autoPush(QtPassSettings::isAutoPush());
-  d->alwaysOnTop(QtPassSettings::isAlwaysOnTop());
   if (startupPhase)
     d->wizard(); // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
-      QtPassSettings::setPassExecutable(d->getPassPath());
-      QtPassSettings::setGitExecutable(d->getGitPath());
-      QtPassSettings::setGpgExecutable(d->getGpgPath());
-      QtPassSettings::setPassStore(
-          Util::normalizeFolderPath(d->getStorePath()));
-      QtPassSettings::setUsePass(d->usePass());
-      QtPassSettings::setClipBoardType(d->useClipboard());
-      QtPassSettings::setUseSelection(d->useSelection());
-      QtPassSettings::setUseAutoclear(d->useAutoclear());
-      QtPassSettings::setAutoclearSeconds(d->getAutoclear());
-      QtPassSettings::setUseAutoclearPanel(d->useAutoclearPanel());
-      QtPassSettings::setAutoclearPanelSeconds(d->getAutoclearPanel());
-      QtPassSettings::setHidePassword(d->hidePassword());
-      QtPassSettings::setHideContent(d->hideContent());
-      QtPassSettings::setAddGPGId(d->addGPGId());
-      QtPassSettings::setUseTrayIcon(d->useTrayIcon());
-      QtPassSettings::setHideOnClose(d->hideOnClose());
-      QtPassSettings::setStartMinimized(d->startMinimized());
-      QtPassSettings::setProfiles(d->getProfiles());
-      QtPassSettings::setUseGit(d->useGit());
-      QtPassSettings::setPwgenExecutable(d->getPwgenPath());
-      QtPassSettings::setUsePwgen(d->usePwgen());
-      QtPassSettings::setAvoidCapitals(d->avoidCapitals());
-      QtPassSettings::setAvoidNumbers(d->avoidNumbers());
-      QtPassSettings::setLessRandom(d->lessRandom());
-      QtPassSettings::setUseSymbols(d->useSymbols());
-      QtPassSettings::setPasswordConfiguration(d->getPasswordConfiguration());
-      QtPassSettings::setUseTemplate(d->useTemplate());
-      QtPassSettings::setPassTemplate(d->getTemplate());
-      QtPassSettings::setTemplateAllFields(d->templateAllFields());
-      QtPassSettings::setAutoPush(d->autoPush());
-      QtPassSettings::setAutoPull(d->autoPull());
-      QtPassSettings::setAlwaysOnTop(d->alwaysOnTop());
-
-      QtPassSettings::setVersion(VERSION);
-
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
         this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);

@@ -20,6 +20,45 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     : QDialog(parent), ui(new Ui::ConfigDialog) {
   mainWindow = parent;
   ui->setupUi(this);
+
+  ui->passPath->setText(QtPassSettings::getPassExecutable());
+  setGitPath(QtPassSettings::getGitExecutable());
+  ui->gpgPath->setText(QtPassSettings::getGpgExecutable());
+  ui->storePath->setText(QtPassSettings::getPassStore());
+
+  ui->spinBoxAutoclearSeconds->setValue(QtPassSettings::getAutoclearSeconds());
+  ui->spinBoxAutoclearPanelSeconds->setValue(
+      QtPassSettings::getAutoclearPanelSeconds());
+  ui->checkBoxHidePassword->setChecked(QtPassSettings::isHidePassword());
+  ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
+  ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
+  ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
+  ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
+  ui->checkBoxAvoidCapitals->setChecked(QtPassSettings::isAvoidCapitals());
+  ui->checkBoxAvoidNumbers->setChecked(QtPassSettings::isAvoidNumbers());
+  ui->checkBoxLessRandom->setChecked(QtPassSettings::isLessRandom());
+  ui->checkBoxUseSymbols->setChecked(QtPassSettings::isUseSymbols());
+  ui->plainTextEditTemplate->setPlainText(QtPassSettings::getPassTemplate());
+  ui->checkBoxTemplateAllFields->setChecked(
+      QtPassSettings::isTemplateAllFields());
+  ui->checkBoxAutoPull->setChecked(QtPassSettings::isAutoPull());
+  ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
+  ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
+
+  setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
+  setPwgenPath(QtPassSettings::getPwgenExecutable());
+  setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
+
+  usePass(QtPassSettings::isUsePass());
+  useClipboard(QtPassSettings::getClipBoardType());
+  useSelection(QtPassSettings::isUseSelection());
+  useAutoclear(QtPassSettings::isUseAutoclear());
+  useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
+  useTrayIcon(QtPassSettings::isUseTrayIcon());
+  useGit(QtPassSettings::isUseGit());
+  usePwgen(QtPassSettings::isUsePwgen());
+  useTemplate(QtPassSettings::isUseTemplate());
+
   ui->profileTable->verticalHeader()->hide();
   ui->profileTable->horizontalHeader()->setStretchLastSection(true);
   ui->label->setText(ui->label->text() + VERSION);
@@ -35,6 +74,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(false);
     ui->checkBoxSelection->setVisible(false);
   }
+
+  connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
 
 /**
@@ -46,12 +87,6 @@ ConfigDialog::~ConfigDialog() {
   QtPassSettings::setGpgExecutable(ui->gpgPath->text());
   QtPassSettings::setPassExecutable(ui->passPath->text());
 }
-
-/**
- * @brief ConfigDialog::setPassPath set the pass executable path.
- * @param path
- */
-void ConfigDialog::setPassPath(QString path) { ui->passPath->setText(path); }
 
 /**
  * @brief ConfigDialog::setGitPath set the git executable path.
@@ -69,49 +104,6 @@ void ConfigDialog::setGitPath(QString path) {
 }
 
 /**
- * @brief ConfigDialog::setGpgPath set the gpg executable path.
- * @param path
- */
-void ConfigDialog::setGpgPath(QString path) { ui->gpgPath->setText(path); }
-
-/**
- * @brief ConfigDialog::setStorePath set the .password-store folder path.
- * @param path
- */
-void ConfigDialog::setStorePath(QString path) { ui->storePath->setText(path); }
-
-/**
- * @brief ConfigDialog::getPassPath return path to pass.
- * @return
- */
-QString ConfigDialog::getPassPath() { return ui->passPath->text(); }
-
-/**
- * @brief ConfigDialog::getGitPath return path to git.
- * @return
- */
-QString ConfigDialog::getGitPath() { return ui->gitPath->text(); }
-
-/**
- * @brief ConfigDialog::getGpgPath return path to gpg.
- * @return
- */
-QString ConfigDialog::getGpgPath() { return ui->gpgPath->text(); }
-
-/**
- * @brief ConfigDialog::getStorePath return path to .password-store.
- * @return
- */
-QString ConfigDialog::getStorePath() { return ui->storePath->text(); }
-
-/**
- * @brief ConfigDialog::usePass return wether or not we want to use pass (or
- * native gpg+git etc).
- * @return
- */
-bool ConfigDialog::usePass() { return ui->radioButtonPass->isChecked(); }
-
-/**
  * @brief ConfigDialog::usePass set wether or not we want to use pass.
  * Update radio buttons accordingly.
  * @param usePass
@@ -125,6 +117,47 @@ void ConfigDialog::usePass(bool usePass) {
     ui->radioButtonPass->setChecked(false);
   }
   setGroupBoxState();
+}
+
+void ConfigDialog::on_accepted() {
+  QtPassSettings::setPassExecutable(ui->passPath->text());
+  QtPassSettings::setGitExecutable(ui->gitPath->text());
+  QtPassSettings::setGpgExecutable(ui->gpgPath->text());
+  QtPassSettings::setPassStore(
+      Util::normalizeFolderPath(ui->storePath->text()));
+  QtPassSettings::setUsePass(ui->radioButtonPass->isChecked());
+  QtPassSettings::setClipBoardType(
+      static_cast<Enums::clipBoardType>(ui->comboBoxClipboard->currentIndex()));
+  QtPassSettings::setUseSelection(ui->checkBoxSelection->isChecked());
+  QtPassSettings::setUseAutoclear(ui->checkBoxAutoclear->isChecked());
+  QtPassSettings::setAutoclearSeconds(ui->spinBoxAutoclearSeconds->value());
+  QtPassSettings::setUseAutoclearPanel(ui->checkBoxAutoclearPanel->isChecked());
+  QtPassSettings::setAutoclearPanelSeconds(
+      ui->spinBoxAutoclearPanelSeconds->value());
+  QtPassSettings::setHidePassword(ui->checkBoxHidePassword->isChecked());
+  QtPassSettings::setHideContent(ui->checkBoxHideContent->isChecked());
+  QtPassSettings::setAddGPGId(ui->checkBoxAddGPGId->isChecked());
+  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isChecked());
+  QtPassSettings::setHideOnClose(hideOnClose());
+  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isChecked());
+  QtPassSettings::setProfiles(getProfiles());
+  QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
+  QtPassSettings::setPwgenExecutable(ui->pwgenPath->text());
+  QtPassSettings::setUsePwgen(ui->checkBoxUsePwgen->isChecked());
+  QtPassSettings::setAvoidCapitals(ui->checkBoxAvoidCapitals->isChecked());
+  QtPassSettings::setAvoidNumbers(ui->checkBoxAvoidNumbers->isChecked());
+  QtPassSettings::setLessRandom(ui->checkBoxLessRandom->isChecked());
+  QtPassSettings::setUseSymbols(ui->checkBoxUseSymbols->isChecked());
+  QtPassSettings::setPasswordConfiguration(getPasswordConfiguration());
+  QtPassSettings::setUseTemplate(ui->checkBoxUseTemplate->isChecked());
+  QtPassSettings::setPassTemplate(ui->plainTextEditTemplate->toPlainText());
+  QtPassSettings::setTemplateAllFields(
+      ui->checkBoxTemplateAllFields->isChecked());
+  QtPassSettings::setAutoPush(ui->checkBoxAutoPush->isChecked());
+  QtPassSettings::setAutoPull(ui->checkBoxAutoPull->isChecked());
+  QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
+
+  QtPassSettings::setVersion(VERSION);
 }
 
 /**
@@ -294,15 +327,6 @@ void ConfigDialog::useAutoclear(bool useAutoclear) {
 }
 
 /**
- * @brief ConfigDialog::setAutoclear set the clipboard autoclear timout from
- * MainWindow.
- * @param seconds
- */
-void ConfigDialog::setAutoclear(int seconds) {
-  ui->spinBoxAutoclearSeconds->setValue(seconds);
-}
-
-/**
  * @brief ConfigDialog::useAutoclearPanel set the panel autoclear use from
  * MainWindow.
  * @param useAutoclearPanel
@@ -313,30 +337,6 @@ void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {
 }
 
 /**
- * @brief ConfigDialog::setAutoclearPanel set the panel autoclear timout from
- * MainWindow.
- * @param seconds
- */
-void ConfigDialog::setAutoclearPanel(int seconds) {
-  ui->spinBoxAutoclearPanelSeconds->setValue(seconds);
-}
-
-/**
- * @brief ConfigDialog::useClipboard set the use of clipboard from MainWindow.
- * @return
- */
-Enums::clipBoardType ConfigDialog::useClipboard() {
-  return static_cast<Enums::clipBoardType>(
-      ui->comboBoxClipboard->currentIndex());
-}
-
-/**
- * @brief ConfigDialog::useSelection return the clipboard type.
- * @return
- */
-bool ConfigDialog::useSelection() { return ui->checkBoxSelection->isChecked(); }
-
-/**
  * @brief ConfigDialog::on_checkBoxSelection_clicked checkbox clicked, update
  * state via ConfigDialog::on_comboBoxClipboard_activated
  */
@@ -345,93 +345,11 @@ void ConfigDialog::on_checkBoxSelection_clicked() {
 }
 
 /**
- * @brief ConfigDialog::useAutoclear return the use of clipboard autoclear.
- * @return
- */
-bool ConfigDialog::useAutoclear() { return ui->checkBoxAutoclear->isChecked(); }
-
-/**
- * @brief ConfigDialog::getAutoclear return the clipboard autoclear timout.
- * @return
- */
-int ConfigDialog::getAutoclear() {
-  return ui->spinBoxAutoclearSeconds->value();
-}
-
-/**
  * @brief ConfigDialog::on_checkBoxAutoclear_clicked checkbox clicked, update
  * state via ConfigDialog::on_comboBoxClipboard_activated
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
   on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
-}
-
-/**
- * @brief ConfigDialog::useAutoclearPanel return panel autoclear usage.
- * @return
- */
-bool ConfigDialog::useAutoclearPanel() {
-  return ui->checkBoxAutoclearPanel->isChecked();
-}
-
-/**
- * @brief ConfigDialog::getAutoclearPanel return panel autoclear timeout.
- * @return
- */
-int ConfigDialog::getAutoclearPanel() {
-  return ui->spinBoxAutoclearPanelSeconds->value();
-}
-
-/**
- * @brief ConfigDialog::hidePassword return preference for hiding passwords from
- * shoulder-surfers.
- * @return
- */
-bool ConfigDialog::hidePassword() {
-  return ui->checkBoxHidePassword->isChecked();
-}
-
-/**
- * @brief ConfigDialog::hideContent return preference for hiding all information
- * from shoulder-surfers.
- * @return
- */
-bool ConfigDialog::hideContent() {
-  return ui->checkBoxHideContent->isChecked();
-}
-
-/**
- * @brief ConfigDialog::hidePassword set preference for hiding passwords from
- * shoulder-surfers.
- * @param hidePassword
- */
-void ConfigDialog::hidePassword(bool hidePassword) {
-  ui->checkBoxHidePassword->setChecked(hidePassword);
-}
-
-/**
- * @brief ConfigDialog::hideContent set preference for hiding all content from
- * shoulder-surfers.
- * @param hideContent
- */
-void ConfigDialog::hideContent(bool hideContent) {
-  ui->checkBoxHideContent->setChecked(hideContent);
-}
-
-/**
- * @brief ConfigDialog::addGPGId return preference for always adding gpg-id
- * changes to git.
- * @return
- */
-bool ConfigDialog::addGPGId() { return ui->checkBoxAddGPGId->isChecked(); }
-
-/**
- * @brief ConfigDialog::addGPGId set preference for always adding gpg-id changes
- * to git.
- * @param addGPGId
- */
-void ConfigDialog::addGPGId(bool addGPGId) {
-  ui->checkBoxAddGPGId->setChecked(addGPGId);
 }
 
 /**
@@ -583,7 +501,7 @@ void ConfigDialog::wizard() {
       SetFileAttributes(passStore.toStdWString().c_str(),
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
-      if (useGit())
+      if (ui->checkBoxUseGit->isChecked())
         mainWindow->executePassGitInit();
       mainWindow->userDialog(passStore);
     }
@@ -615,15 +533,6 @@ void ConfigDialog::wizard() {
 }
 
 /**
- * @brief ConfigDialog::useTrayIcon return preference for using a (system) tray
- * icon.
- * @return
- */
-bool ConfigDialog::useTrayIcon() {
-  return ui->checkBoxUseTrayIcon->isChecked();
-}
-
-/**
  * @brief ConfigDialog::hideOnClose return preference for hiding instead of
  * closing (quitting) application.
  * @return
@@ -646,15 +555,6 @@ void ConfigDialog::useTrayIcon(bool useSystray) {
     ui->checkBoxHideOnClose->setChecked(false);
     ui->checkBoxStartMinimized->setChecked(false);
   }
-}
-
-/**
- * @brief ConfigDialog::hideOnClose set preference for hiding instead of closing
- * (quitting) application.
- * @param hideOnClose
- */
-void ConfigDialog::hideOnClose(bool hideOnClose) {
-  ui->checkBoxHideOnClose->setChecked(hideOnClose);
 }
 
 /**
@@ -690,12 +590,6 @@ void ConfigDialog::useGit(bool useGit) {
 }
 
 /**
- * @brief ConfigDialog::useGit retrun preference for using git.
- * @return
- */
-bool ConfigDialog::useGit() { return ui->checkBoxUseGit->isChecked(); }
-
-/**
  * @brief ConfigDialog::on_checkBoxUseGit_clicked enable or disable related
  * checkboxes.
  */
@@ -719,12 +613,6 @@ void ConfigDialog::on_toolButtonPwgen_clicked() {
     ui->checkBoxUsePwgen->setChecked(false);
   }
 }
-
-/**
- * @brief ConfigDialog::getPwgenPath return pwgen executable path.
- * @return
- */
-QString ConfigDialog::getPwgenPath() { return ui->pwgenPath->text(); }
 
 /**
  * @brief ConfigDialog::setPwgenPath set pwgen executable path.
@@ -769,42 +657,6 @@ void ConfigDialog::usePwgen(bool usePwgen) {
   on_checkBoxUsePwgen_clicked();
 }
 
-/**
- * @brief ConfigDialog::avoidCapitals set preference for avoiding uppercase
- * letters using pwgen.
- * @param avoidCapitals
- */
-void ConfigDialog::avoidCapitals(bool avoidCapitals) {
-  ui->checkBoxAvoidCapitals->setChecked(avoidCapitals);
-}
-
-/**
- * @brief ConfigDialog::avoidNumbers set preference for using numbers in pwgen
- * generated password.
- * @param avoidNumbers
- */
-void ConfigDialog::avoidNumbers(bool avoidNumbers) {
-  ui->checkBoxAvoidNumbers->setChecked(avoidNumbers);
-}
-
-/**
- * @brief ConfigDialog::lessRandom set preference for using less random
- * passwords.
- * @param lessRandom
- */
-void ConfigDialog::lessRandom(bool lessRandom) {
-  ui->checkBoxLessRandom->setChecked(lessRandom);
-}
-
-/**
- * @brief ConfigDialog::useSymbols set preference for using special characters
- * in pwgen.
- * @param useSymbols
- */
-void ConfigDialog::useSymbols(bool useSymbols) {
-  ui->checkBoxUseSymbols->setChecked(useSymbols);
-}
-
 void ConfigDialog::setPasswordConfiguration(
     const PasswordConfiguration &config) {
   ui->spinBoxPasswordLength->setValue(config.length);
@@ -825,44 +677,6 @@ PasswordConfiguration ConfigDialog::getPasswordConfiguration() {
 }
 
 /**
- * @brief ConfigDialog::usePwgen return preference for using pwgen.
- * @return
- */
-bool ConfigDialog::usePwgen() { return ui->checkBoxUsePwgen->isChecked(); }
-
-/**
- * @brief ConfigDialog::avoidCapitals return preference for avoiding uppercase
- * letters using pwgen.
- * @return
- */
-bool ConfigDialog::avoidCapitals() {
-  return ui->checkBoxAvoidCapitals->isChecked();
-}
-
-/**
- * @brief ConfigDialog::avoidNumbers return preference for using numbers in
- * generated password using pwgen.
- * @return
- */
-bool ConfigDialog::avoidNumbers() {
-  return ui->checkBoxAvoidNumbers->isChecked();
-}
-
-/**
- * @brief ConfigDialog::lessRandom return preference for using less random
- * passwords in pwgen.
- * @return
- */
-bool ConfigDialog::lessRandom() { return ui->checkBoxLessRandom->isChecked(); }
-
-/**
- * @brief ConfigDialog::useSymbols return preference for using special
- * characters with pwgen.
- * @return
- */
-bool ConfigDialog::useSymbols() { return ui->checkBoxUseSymbols->isChecked(); }
-
-/**
  * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the
  * passwordChar Template
  * combo box to the desired entry
@@ -876,24 +690,6 @@ void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   } else {
     ui->lineEditPasswordChars->setEnabled(false);
   }
-}
-
-/**
- * @brief ConfigDialog::startMinimized return preference for starting
- * application minimized (tray icon).
- * @return
- */
-bool ConfigDialog::startMinimized() {
-  return ui->checkBoxStartMinimized->isChecked();
-}
-
-/**
- * @brief ConfigDialog::startMinimized set preference for starting application
- * minimized (tray icon).
- * @param startMinimized
- */
-void ConfigDialog::startMinimized(bool startMinimized) {
-  ui->checkBoxStartMinimized->setChecked(startMinimized);
 }
 
 /**
@@ -913,95 +709,4 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
 void ConfigDialog::useTemplate(bool useTemplate) {
   ui->checkBoxUseTemplate->setChecked(useTemplate);
   on_checkBoxUseTemplate_clicked();
-}
-
-/**
- * @brief ConfigDialog::useTemplate return preference for using templates.
- * @return
- */
-bool ConfigDialog::useTemplate() {
-  return ui->checkBoxUseTemplate->isChecked();
-}
-
-/**
- * @brief ConfigDialog::setTemplate set the desired template.
- * @param passTemplate
- */
-void ConfigDialog::setTemplate(QString passTemplate) {
-  ui->plainTextEditTemplate->setPlainText(passTemplate);
-}
-
-/**
- * @brief ConfigDialog::getTemplate return the desired template.
- * @return
- */
-QString ConfigDialog::getTemplate() {
-  return ui->plainTextEditTemplate->toPlainText();
-}
-
-/**
- * @brief ConfigDialog::autoPull set preference for automatically pulling from
- * git
- * @param autoPull
- */
-void ConfigDialog::autoPull(bool autoPull) {
-  ui->checkBoxAutoPull->setChecked(autoPull);
-}
-
-/**
- * @brief ConfigDialog::autoPush set preference for automatically pushing to git
- * @param autoPush
- */
-void ConfigDialog::autoPush(bool autoPush) {
-  ui->checkBoxAutoPush->setChecked(autoPush);
-}
-
-/**
- * @brief ConfigDialog::autoPull return preference for automatically pulling
- * from git
- * @return
- */
-bool ConfigDialog::autoPull() { return ui->checkBoxAutoPull->isChecked(); }
-
-/**
- * @brief ConfigDialog::autoPush return preference for automatically pushing to
- * git
- * @return
- */
-bool ConfigDialog::autoPush() { return ui->checkBoxAutoPush->isChecked(); }
-
-/**
- * @brief ConfigDialog::templateAllFields return preference for templating all
- * tokenisable fields
- * @return
- */
-bool ConfigDialog::templateAllFields() {
-  return ui->checkBoxTemplateAllFields->isChecked();
-}
-
-/**
- * @brief ConfigDialog::templateAllFields set preference for templating all
- * tokenisable fields
- * @param templateAll
- */
-void ConfigDialog::templateAllFields(bool templateAll) {
-  ui->checkBoxTemplateAllFields->setChecked(templateAll);
-}
-
-/**
- * @brief ConfigDialog::alwaysOnTop set preference for running application on
- * top of others
- * @param alwaysOnTop
- */
-void ConfigDialog::alwaysOnTop(bool alwaysOnTop) {
-  ui->checkBoxAlwaysOnTop->setChecked(alwaysOnTop);
-}
-
-/**
- * @brief ConfigDialog::alwaysOnTop return preference for running application on
- * top of others.
- * @return
- */
-bool ConfigDialog::alwaysOnTop() {
-  return ui->checkBoxAlwaysOnTop->isChecked();
 }
