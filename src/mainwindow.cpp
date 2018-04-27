@@ -1116,9 +1116,9 @@ void MainWindow::updateProfileBox() {
   QHash<QString, QString> profiles = QtPassSettings::getProfiles();
 
   if (profiles.isEmpty()) {
-    ui->profileBox->hide();
+    ui->profileWidget->hide();
   } else {
-    ui->profileBox->show();
+    ui->profileWidget->show();
     ui->profileBox->setEnabled(profiles.size() > 1);
     ui->profileBox->clear();
     QHashIterator<QString, QString> i(profiles);
