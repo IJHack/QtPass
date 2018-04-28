@@ -41,13 +41,21 @@
  * @param parent
  */
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this), keygen(NULL),
-      tray(NULL) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
+      clippedText(QString()), freshStart(true), keygen(NULL),
+      startupPhase(true), tray(NULL) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
+  ui->setupUi(this);
+
+  if (!checkConfig()) {
+    // no working config so this should quit without config anything
+    QApplication::quit();
+  }
+
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
@@ -64,9 +72,45 @@ MainWindow::MainWindow(QWidget *parent)
   connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
           SLOT(endReencryptPath()));
 
-  ui->setupUi(this);
+  clearPanelTimer.setSingleShot(true);
+  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+  clearClipboardTimer.setSingleShot(true);
+  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
+          SLOT(clearClipboard()));
+
+  initToolBarButtons();
+  initStatusBar();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
+  ui->lineEdit->setClearButtonEnabled(true);
+#endif
 
   enableUiElements(true);
+
+  qsrand(static_cast<uint>(QTime::currentTime().msec()));
+
+  QTimer::singleShot(10, this, SLOT(focusInput()));
+}
+
+/**
+ * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
+ */
+void MainWindow::initToolBarButtons() {
+  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
+          SLOT(addPassword()));
+  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
+  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
+  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
+  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
+  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
+  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
+  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
+}
+
+/**
+ * @brief MainWindow::initStatusBar init statusBar with default message and logo
+ */
+void MainWindow::initStatusBar() {
   ui->statusBar->showMessage(tr("Welcome to QtPass %1").arg(VERSION), 2000);
 
   QPixmap logo = QPixmap::fromImage(QImage(":/artwork/icon.svg"))
@@ -74,28 +118,6 @@ MainWindow::MainWindow(QWidget *parent)
   QLabel *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
-
-  freshStart = true;
-  startupPhase = true;
-  clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
-  clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
-          SLOT(clearClipboard()));
-  if (!checkConfig()) {
-    // no working config
-    QApplication::quit();
-  }
-  clippedText = "";
-  QTimer::singleShot(10, this, SLOT(focusInput()));
-
-  initToolBarButtons();
-
-  qsrand(static_cast<uint>(QTime::currentTime().msec()));
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-  ui->lineEdit->setClearButtonEnabled(true);
-#endif
 }
 
 /**
@@ -133,8 +155,7 @@ void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
   if (event->type() == QEvent::ActivationChange) {
     if (this->isActiveWindow()) {
-      ui->lineEdit->selectAll();
-      ui->lineEdit->setFocus();
+      focusInput();
     }
   }
 }
@@ -243,9 +264,9 @@ void MainWindow::mountWebDav() {
 bool MainWindow::checkConfig() {
   QString version = QtPassSettings::getVersion();
 
-  if (freshStart) {
-    restoreWindow();
-  }
+  // if (freshStart) {
+  restoreWindow();
+  //}
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
@@ -327,6 +348,7 @@ bool MainWindow::checkConfig() {
   ui->treeView->setIndentation(15);
   ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
   connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
           this, SLOT(showContextMenu(const QPoint &)));
   connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
@@ -358,78 +380,10 @@ void MainWindow::config() {
     QtPassSettings::setUsePass(true);
   }
 
-  d->setPassPath(QtPassSettings::getPassExecutable());
-  d->setGitPath(QtPassSettings::getGitExecutable());
-  d->setGpgPath(QtPassSettings::getGpgExecutable());
-  d->setStorePath(QtPassSettings::getPassStore());
-  d->usePass(QtPassSettings::isUsePass());
-  d->useClipboard(QtPassSettings::getClipBoardType());
-  d->useSelection(QtPassSettings::isUseSelection());
-  d->useAutoclear(QtPassSettings::isUseAutoclear());
-  d->setAutoclear(QtPassSettings::getAutoclearSeconds());
-  d->useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
-  d->setAutoclearPanel(QtPassSettings::getAutoclearPanelSeconds());
-  d->hidePassword(QtPassSettings::isHidePassword());
-  d->hideContent(QtPassSettings::isHideContent());
-  d->addGPGId(QtPassSettings::isAddGPGId(true));
-  d->useTrayIcon(QtPassSettings::isUseTrayIcon());
-  d->hideOnClose(QtPassSettings::isHideOnClose());
-  d->startMinimized(QtPassSettings::isStartMinimized());
-  d->setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
-  d->useGit(QtPassSettings::isUseGit());
-  d->setPwgenPath(QtPassSettings::getPwgenExecutable());
-  d->usePwgen(QtPassSettings::isUsePwgen());
-  d->avoidCapitals(QtPassSettings::isAvoidCapitals());
-  d->avoidNumbers(QtPassSettings::isAvoidNumbers());
-  d->lessRandom(QtPassSettings::isLessRandom());
-  d->useSymbols(QtPassSettings::isUseSymbols());
-  d->setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
-  d->useTemplate(QtPassSettings::isUseTemplate());
-  d->setTemplate(QtPassSettings::getPassTemplate());
-  d->templateAllFields(QtPassSettings::isTemplateAllFields());
-  d->autoPull(QtPassSettings::isAutoPull());
-  d->autoPush(QtPassSettings::isAutoPush());
-  d->alwaysOnTop(QtPassSettings::isAlwaysOnTop());
   if (startupPhase)
     d->wizard(); // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
-      QtPassSettings::setPassExecutable(d->getPassPath());
-      QtPassSettings::setGitExecutable(d->getGitPath());
-      QtPassSettings::setGpgExecutable(d->getGpgPath());
-      QtPassSettings::setPassStore(
-          Util::normalizeFolderPath(d->getStorePath()));
-      QtPassSettings::setUsePass(d->usePass());
-      QtPassSettings::setClipBoardType(d->useClipboard());
-      QtPassSettings::setUseSelection(d->useSelection());
-      QtPassSettings::setUseAutoclear(d->useAutoclear());
-      QtPassSettings::setAutoclearSeconds(d->getAutoclear());
-      QtPassSettings::setUseAutoclearPanel(d->useAutoclearPanel());
-      QtPassSettings::setAutoclearPanelSeconds(d->getAutoclearPanel());
-      QtPassSettings::setHidePassword(d->hidePassword());
-      QtPassSettings::setHideContent(d->hideContent());
-      QtPassSettings::setAddGPGId(d->addGPGId());
-      QtPassSettings::setUseTrayIcon(d->useTrayIcon());
-      QtPassSettings::setHideOnClose(d->hideOnClose());
-      QtPassSettings::setStartMinimized(d->startMinimized());
-      QtPassSettings::setProfiles(d->getProfiles());
-      QtPassSettings::setUseGit(d->useGit());
-      QtPassSettings::setPwgenExecutable(d->getPwgenPath());
-      QtPassSettings::setUsePwgen(d->usePwgen());
-      QtPassSettings::setAvoidCapitals(d->avoidCapitals());
-      QtPassSettings::setAvoidNumbers(d->avoidNumbers());
-      QtPassSettings::setLessRandom(d->lessRandom());
-      QtPassSettings::setUseSymbols(d->useSymbols());
-      QtPassSettings::setPasswordConfiguration(d->getPasswordConfiguration());
-      QtPassSettings::setUseTemplate(d->useTemplate());
-      QtPassSettings::setPassTemplate(d->getTemplate());
-      QtPassSettings::setTemplateAllFields(d->templateAllFields());
-      QtPassSettings::setAutoPush(d->autoPush());
-      QtPassSettings::setAutoPull(d->autoPull());
-      QtPassSettings::setAlwaysOnTop(d->alwaysOnTop());
-
-      QtPassSettings::setVersion(VERSION);
-
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
         this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
@@ -572,18 +526,6 @@ void MainWindow::keyGenerationComplete(const QString &p_output,
     // TODO(annejan) some sanity checking ?
   }
   processFinished(p_output, p_errout);
-}
-
-void MainWindow::initToolBarButtons() {
-  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(addPassword()));
-  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
-  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
-  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
-  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
-  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
-  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
 }
 
 void MainWindow::passShowHandler(const QString &p_output) {
@@ -779,14 +721,6 @@ void MainWindow::restoreWindow() {
   move(position);
   QSize newSize = QtPassSettings::getSize(size());
   resize(newSize);
-  //  QList<int> splitter = ui->splitter->sizes();
-  //  int left = QtPassSettings::getSplitterLeft(splitter[0]);
-  //  int right = QtPassSettings::getSplitterRight(splitter[1]);
-  //  if (left > 0 || right > 0) {
-  //    splitter[0] = left;
-  //    splitter[1] = right;
-  //    ui->splitter->setSizes(splitter);
-  //  }
   if (QtPassSettings::isMaximized(isMaximized())) {
     showMaximized();
   }
@@ -1114,9 +1048,9 @@ void MainWindow::updateProfileBox() {
   QHash<QString, QString> profiles = QtPassSettings::getProfiles();
 
   if (profiles.isEmpty()) {
-    ui->profileBox->hide();
+    ui->profileWidget->hide();
   } else {
-    ui->profileBox->show();
+    ui->profileWidget->show();
     ui->profileBox->setEnabled(profiles.size() > 1);
     ui->profileBox->clear();
     QHashIterator<QString, QString> i(profiles);

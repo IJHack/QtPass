@@ -60,27 +60,27 @@ public slots:
   void deselect();
 
 private slots:
-  void onUpdate(bool block = false);
+  void addPassword();
+  void addFolder();
+  void onEdit();
+  void onDelete();
   void onPush();
+  void onUpdate(bool block = false);
+  void onUsers();
+  void onConfig();
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
-  void onConfig();
   void processFinished(const QString &, const QString &);
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void onDelete();
-  void onEdit();
-  void onUsers();
   void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
-  void addPassword();
-  void addFolder();
   void editPassword(const QString &);
   void focusInput();
   void copyTextToClipboard(const QString &text);
@@ -117,6 +117,8 @@ private:
   TrayIcon *tray;
 
   void initToolBarButtons();
+  void initStatusBar();
+
   void updateText();
   void enableUiElements(bool state);
   void restoreWindow();
