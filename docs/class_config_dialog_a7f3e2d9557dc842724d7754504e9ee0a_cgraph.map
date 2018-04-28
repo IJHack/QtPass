@@ -1,3 +1,0 @@
-<map id="ConfigDialog::usePass" name="ConfigDialog::usePass">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a393523460c9f09d76ee01d184e3699ad" title="ConfigDialog::usePass return wether or not we want to use pass (or native gpg+git etc)..." alt="" coords="210,5,366,31"/>
-</map>

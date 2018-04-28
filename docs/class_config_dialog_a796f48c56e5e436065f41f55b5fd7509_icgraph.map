@@ -1,5 +1,0 @@
-<map id="ConfigDialog::useGit" name="ConfigDialog::useGit">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a5246b29bdf5ec2db15e3326d634a560c" title="ConfigDialog::setGitPath set the git executable path. Make sure the checkBoxUseGit is updated..." alt="" coords="197,5,364,31"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="209,55,352,80"/>
-<area shape="rect" id="node4" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git. " alt="" coords="209,104,352,129"/>
-</map>
