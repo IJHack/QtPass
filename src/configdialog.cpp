@@ -95,11 +95,9 @@ ConfigDialog::~ConfigDialog() {
  */
 void ConfigDialog::setGitPath(QString path) {
   ui->gitPath->setText(path);
+  ui->checkBoxUseGit->setEnabled(!path.isEmpty());
   if (path.isEmpty()) {
     useGit(false);
-    ui->checkBoxUseGit->setEnabled(false);
-  } else {
-    ui->checkBoxUseGit->setEnabled(true);
   }
 }
 
@@ -109,13 +107,8 @@ void ConfigDialog::setGitPath(QString path) {
  * @param usePass
  */
 void ConfigDialog::usePass(bool usePass) {
-  if (usePass) {
-    ui->radioButtonNative->setChecked(false);
-    ui->radioButtonPass->setChecked(true);
-  } else {
-    ui->radioButtonNative->setChecked(true);
-    ui->radioButtonPass->setChecked(false);
-  }
+  ui->radioButtonNative->setChecked(!usePass);
+  ui->radioButtonPass->setChecked(usePass);
   setGroupBoxState();
 }
 
@@ -176,13 +169,9 @@ void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
  * @brief ConfigDialog::setGroupBoxState update checkboxes.
  */
 void ConfigDialog::setGroupBoxState() {
-  if (ui->radioButtonPass->isChecked()) {
-    ui->groupBoxNative->setEnabled(false);
-    ui->groupBoxPass->setEnabled(true);
-  } else {
-    ui->groupBoxNative->setEnabled(true);
-    ui->groupBoxPass->setEnabled(false);
-  }
+  bool state = ui->radioButtonPass->isChecked();
+  ui->groupBoxNative->setEnabled(!state);
+  ui->groupBoxPass->setEnabled(state);
 }
 
 /**
@@ -196,7 +185,7 @@ QString ConfigDialog::selectExecutable() {
   if (dialog.exec())
     return dialog.selectedFiles().first();
   else
-    return "";
+    return QString();
 }
 
 /**
@@ -211,7 +200,7 @@ QString ConfigDialog::selectFolder() {
   if (dialog.exec())
     return dialog.selectedFiles().first();
   else
-    return "";
+    return QString();
 }
 
 /**
@@ -220,13 +209,14 @@ QString ConfigDialog::selectFolder() {
  */
 void ConfigDialog::on_toolButtonGit_clicked() {
   QString git = selectExecutable();
-  if (!git.isEmpty()) {
+  bool state = !git.isEmpty();
+  if (state) {
     ui->gitPath->setText(git);
-    ui->checkBoxUseGit->setEnabled(true);
   } else {
     useGit(false);
-    ui->checkBoxUseGit->setEnabled(false);
   }
+
+  ui->checkBoxUseGit->setEnabled(state);
 }
 
 /**
@@ -262,25 +252,18 @@ void ConfigDialog::on_toolButtonStore_clicked() {
  * @param index of selectbox (0 = no clipboard).
  */
 void ConfigDialog::on_comboBoxClipboard_activated(int index) {
-  if (index > 0) {
-    ui->checkBoxSelection->setEnabled(true);
-    ui->checkBoxAutoclear->setEnabled(true);
-    ui->checkBoxHidePassword->setEnabled(true);
-    ui->checkBoxHideContent->setEnabled(true);
-    if (ui->checkBoxAutoclear->isChecked()) {
-      ui->spinBoxAutoclearSeconds->setEnabled(true);
-      ui->labelSeconds->setEnabled(true);
-    } else {
-      ui->spinBoxAutoclearSeconds->setEnabled(false);
-      ui->labelSeconds->setEnabled(false);
-    }
+  bool state = index > 0;
+
+  ui->checkBoxSelection->setEnabled(state);
+  ui->checkBoxAutoclear->setEnabled(state);
+  ui->checkBoxHidePassword->setEnabled(state);
+  ui->checkBoxHideContent->setEnabled(state);
+  if (state) {
+    ui->spinBoxAutoclearSeconds->setEnabled(ui->checkBoxAutoclear->isChecked());
+    ui->labelSeconds->setEnabled(ui->checkBoxAutoclear->isChecked());
   } else {
-    ui->checkBoxSelection->setEnabled(false);
-    ui->checkBoxAutoclear->setEnabled(false);
     ui->spinBoxAutoclearSeconds->setEnabled(false);
     ui->labelSeconds->setEnabled(false);
-    ui->checkBoxHidePassword->setEnabled(false);
-    ui->checkBoxHideContent->setEnabled(false);
   }
 }
 
@@ -289,13 +272,9 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
  * options based on autoclear use.
  */
 void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
-  if (ui->checkBoxAutoclearPanel->isChecked()) {
-    ui->spinBoxAutoclearPanelSeconds->setEnabled(true);
-    ui->labelPanelSeconds->setEnabled(true);
-  } else {
-    ui->spinBoxAutoclearPanelSeconds->setEnabled(false);
-    ui->labelPanelSeconds->setEnabled(false);
-  }
+  bool state = ui->checkBoxAutoclearPanel->isChecked();
+  ui->spinBoxAutoclearPanelSeconds->setEnabled(state);
+  ui->labelPanelSeconds->setEnabled(state);
 }
 
 /**
@@ -562,13 +541,9 @@ void ConfigDialog::useTrayIcon(bool useSystray) {
  * related checkboxes.
  */
 void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
-  if (ui->checkBoxUseTrayIcon->isChecked()) {
-    ui->checkBoxHideOnClose->setEnabled(true);
-    ui->checkBoxStartMinimized->setEnabled(true);
-  } else {
-    ui->checkBoxStartMinimized->setEnabled(false);
-    ui->checkBoxHideOnClose->setEnabled(false);
-  }
+  bool state = ui->checkBoxUseTrayIcon->isChecked();
+  ui->checkBoxHideOnClose->setEnabled(state);
+  ui->checkBoxStartMinimized->setEnabled(state);
 }
 
 /**

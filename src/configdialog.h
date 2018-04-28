@@ -27,9 +27,6 @@ public:
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog();
 
-  void setGitPath(QString);
-  void setProfiles(QHash<QString, QString>, QString);
-  void usePass(bool usePass);
   void useClipboard(Enums::clipBoardType);
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
@@ -72,12 +69,18 @@ private slots:
 
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
+
+  void setGitPath(QString);
+  void setProfiles(QHash<QString, QString>, QString);
+  void usePass(bool usePass);
+
   void setGroupBoxState();
   QString selectExecutable();
   QString selectFolder();
   // QMessageBox::critical with hack to avoid crashes with
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
+
   MainWindow *mainWindow;
 };
 
