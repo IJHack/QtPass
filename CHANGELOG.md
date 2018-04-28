@@ -13,16 +13,23 @@
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
 - Clipboard clearing timer is not reset when new passwords are copied to the clipboard [\#309](https://github.com/IJHack/QtPass/issues/309)
 - Removal of files outside of password-store [\#300](https://github.com/IJHack/QtPass/issues/300)
+- Some fixes and refactoring. [\#376](https://github.com/IJHack/QtPass/pull/376) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Fix & make clearClipboard more robust [\#359](https://github.com/IJHack/QtPass/pull/359) ([lukedirtwalker](https://github.com/lukedirtwalker))
 
 **Closed issues:**
 
+- Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
 - How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
+- "copy" icon has disappeared in v1.2.1 [\#344](https://github.com/IJHack/QtPass/issues/344)
+- No password entry prompt [\#343](https://github.com/IJHack/QtPass/issues/343)
+- Can't install on OS X Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
+- No icon on MacOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 
 **Merged pull requests:**
 
+- Sorry for last error :\) [\#370](https://github.com/IJHack/QtPass/pull/370) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Optimizations :\) [\#367](https://github.com/IJHack/QtPass/pull/367) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))

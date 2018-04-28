@@ -60,27 +60,27 @@ public slots:
   void deselect();
 
 private slots:
-  void on_updateButton_clicked(bool block = false);
-  void on_pushButton_clicked();
+  void addPassword();
+  void addFolder();
+  void onEdit();
+  void onDelete();
+  void onPush();
+  void onUpdate(bool block = false);
+  void onUsers();
+  void onConfig();
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
-  void on_configButton_clicked();
   void processFinished(const QString &, const QString &);
   void processError(QProcess::ProcessError);
   void clearClipboard();
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void on_addButton_clicked();
-  void on_deleteButton_clicked();
-  void on_editButton_clicked();
-  void on_usersButton_clicked();
   void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
-  void addFolder();
   void editPassword(const QString &);
   void focusInput();
   void copyTextToClipboard(const QString &text);
@@ -116,7 +116,9 @@ private:
   bool startupPhase;
   TrayIcon *tray;
 
-  void initAddButton();
+  void initToolBarButtons();
+  void initStatusBar();
+
   void updateText();
   void enableUiElements(bool state);
   void restoreWindow();
@@ -138,8 +140,7 @@ private:
   void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();
-  void hideGitButtons();
-  void showGitButtons();
+  void enableGitButtons(const bool &);
 };
 
 #endif // MAINWINDOW_H_

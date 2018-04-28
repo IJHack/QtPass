@@ -26,77 +26,28 @@ class ConfigDialog : public QDialog {
 public:
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog();
-  void setPassPath(QString);
-  void setGitPath(QString);
-  void setGpgPath(QString);
-  void setStorePath(QString);
-  void setProfiles(QHash<QString, QString>, QString);
-  void usePass(bool usePass);
+
   void useClipboard(Enums::clipBoardType);
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
-  void setAutoclear(int seconds);
   void useAutoclearPanel(bool useAutoclearPanel);
-  void setAutoclearPanel(int seconds);
-  void hidePassword(bool hidePassword);
-  void hideContent(bool hideContent);
-  void addGPGId(bool addGPGId);
-  QString getPassPath();
-  QString getGitPath();
-  QString getGpgPath();
-  QString getStorePath();
   QHash<QString, QString> getProfiles();
-  bool usePass();
-  Enums::clipBoardType useClipboard();
-  bool useSelection();
-  bool useAutoclear();
-  int getAutoclear();
-  bool useAutoclearPanel();
-  int getAutoclearPanel();
-  bool hidePassword();
-  bool hideContent();
-  bool addGPGId();
   void wizard();
   void genKey(QString, QDialog *);
-  bool useTrayIcon();
   bool hideOnClose();
-  bool startMinimized();
   void useTrayIcon(bool useTrayIdon);
-  void hideOnClose(bool hideOnClose);
-  void startMinimized(bool startMinimized);
   void useGit(bool useGit);
-  bool useGit();
-  QString getPwgenPath();
   void setPwgenPath(QString);
   void usePwgen(bool usePwgen);
-  void avoidCapitals(bool avoidCapitals);
-  void avoidNumbers(bool avoidNumbers);
-  void lessRandom(bool lessRandom);
-  void useSymbols(bool useSymbols);
   void setPasswordConfiguration(const PasswordConfiguration &config);
   PasswordConfiguration getPasswordConfiguration();
-  bool usePwgen();
-  bool avoidCapitals();
-  bool avoidNumbers();
-  bool lessRandom();
-  bool useSymbols();
-  bool useTemplate();
   void useTemplate(bool useTemplate);
-  QString getTemplate();
-  void setTemplate(QString);
-  void templateAllFields(bool templateAllFields);
-  bool templateAllFields();
-  bool autoPull();
-  void autoPull(bool autoPull);
-  bool autoPush();
-  void autoPush(bool autoPush);
-  bool alwaysOnTop();
-  void alwaysOnTop(bool alwaysOnTop);
 
 protected:
   void closeEvent(QCloseEvent *event);
 
 private slots:
+  void on_accepted();
   void on_radioButtonNative_clicked();
   void on_radioButtonPass_clicked();
   void on_toolButtonGit_clicked();
@@ -118,12 +69,18 @@ private slots:
 
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
+
+  void setGitPath(QString);
+  void setProfiles(QHash<QString, QString>, QString);
+  void usePass(bool usePass);
+
   void setGroupBoxState();
   QString selectExecutable();
   QString selectFolder();
   // QMessageBox::critical with hack to avoid crashes with
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
+
   MainWindow *mainWindow;
 };
 

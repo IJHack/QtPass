@@ -32,48 +32,52 @@ PasswordConfiguration QtPassSettings::getPasswordConfiguration() {
   PasswordConfiguration config;
 
   config.length =
-      m_instance->value(SettingsConstants::passwordLength, 0).toInt();
+      getInstance()->value(SettingsConstants::passwordLength, 0).toInt();
   config.selected = static_cast<PasswordConfiguration::characterSet>(
-      m_instance->value(SettingsConstants::passwordCharsselection, 0).toInt());
+      getInstance()
+          ->value(SettingsConstants::passwordCharsselection, 0)
+          .toInt());
   config.Characters[PasswordConfiguration::CUSTOM] =
-      m_instance->value(SettingsConstants::passwordChars, QString()).toString();
+      getInstance()
+          ->value(SettingsConstants::passwordChars, QString())
+          .toString();
 
   return config;
 }
 
 void QtPassSettings::setPasswordConfiguration(
     const PasswordConfiguration &config) {
-  m_instance->setValue(SettingsConstants::passwordLength, config.length);
-  m_instance->setValue(SettingsConstants::passwordCharsselection,
-                       config.selected);
-  m_instance->setValue(SettingsConstants::passwordChars,
-                       config.Characters[PasswordConfiguration::CUSTOM]);
+  getInstance()->setValue(SettingsConstants::passwordLength, config.length);
+  getInstance()->setValue(SettingsConstants::passwordCharsselection,
+                          config.selected);
+  getInstance()->setValue(SettingsConstants::passwordChars,
+                          config.Characters[PasswordConfiguration::CUSTOM]);
 }
 
 QHash<QString, QString> QtPassSettings::getProfiles() {
-  m_instance->beginGroup(SettingsConstants::profile);
+  getInstance()->beginGroup(SettingsConstants::profile);
 
-  QStringList childrenKeys = m_instance->childKeys();
+  QStringList childrenKeys = getInstance()->childKeys();
   QHash<QString, QString> profiles;
   foreach (QString key, childrenKeys) {
-    profiles.insert(key, m_instance->value(key).toString());
+    profiles.insert(key, getInstance()->value(key).toString());
   }
 
-  m_instance->endGroup();
+  getInstance()->endGroup();
 
   return profiles;
 }
 
 void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
-  m_instance->remove(SettingsConstants::groupProfiles);
-  m_instance->beginGroup(SettingsConstants::profile);
+  getInstance()->remove(SettingsConstants::groupProfiles);
+  getInstance()->beginGroup(SettingsConstants::profile);
 
   QHash<QString, QString>::const_iterator i = profiles.begin();
   for (; i != profiles.end(); ++i) {
-    m_instance->setValue(i.key(), i.value());
+    getInstance()->setValue(i.key(), i.value());
   }
 
-  m_instance->endGroup();
+  getInstance()->endGroup();
 }
 
 Pass *QtPassSettings::getPass() {
@@ -127,24 +131,6 @@ QSize QtPassSettings::getSize(const QSize &defaultValue) {
 }
 void QtPassSettings::setSize(const QSize &size) {
   getInstance()->setValue(SettingsConstants::size, size);
-}
-
-int QtPassSettings::getSplitterLeft(const int &defaultValue) {
-  return getInstance()
-      ->value(SettingsConstants::splitterLeft, defaultValue)
-      .toInt();
-}
-void QtPassSettings::setSplitterLeft(const int &splitterLeft) {
-  getInstance()->setValue(SettingsConstants::splitterLeft, splitterLeft);
-}
-
-int QtPassSettings::getSplitterRight(const int &defaultValue) {
-  return getInstance()
-      ->value(SettingsConstants::splitterRight, defaultValue)
-      .toInt();
-}
-void QtPassSettings::setSplitterRight(const int &splitterRight) {
-  getInstance()->setValue(SettingsConstants::splitterRight, splitterRight);
 }
 
 bool QtPassSettings::isMaximized(const bool &defaultValue) {
@@ -261,8 +247,9 @@ void QtPassSettings::setAddGPGId(const bool &addGPGId) {
 }
 
 QString QtPassSettings::getPassStore(const QString &defaultValue) {
-  QString returnValue =
-      m_instance->value(SettingsConstants::passStore, defaultValue).toString();
+  QString returnValue = getInstance()
+                            ->value(SettingsConstants::passStore, defaultValue)
+                            .toString();
 
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.

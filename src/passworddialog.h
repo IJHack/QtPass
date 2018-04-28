@@ -2,12 +2,12 @@
 #define PASSWORDDIALOG_H_
 
 #include <QDialog>
+#include "passwordconfiguration.h"
 
 namespace Ui {
 class PasswordDialog;
 }
 
-struct PasswordConfiguration;
 class QLineEdit;
 class QWidget;
 
@@ -23,10 +23,7 @@ class PasswordDialog : public QDialog {
 public:
   explicit PasswordDialog(const PasswordConfiguration &passConfig,
                           QWidget *parent = 0);
-  PasswordDialog(const PasswordConfiguration &passConfig,
-                          const QString &file,
-                          const bool &isNew,
-                          QWidget *parent = 0);
+  PasswordDialog(const QString &file, const bool &isNew, QWidget *parent = 0);
   ~PasswordDialog();
 
   /*! Sets content in the password field in the interface.
@@ -63,7 +60,7 @@ private slots:
 
 private:
   Ui::PasswordDialog *ui;
-  const PasswordConfiguration &m_passConfig;
+  PasswordConfiguration m_passConfig;
   QStringList m_fields;
   QString m_file;
   bool m_templating;
