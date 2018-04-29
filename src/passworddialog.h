@@ -1,8 +1,8 @@
 #ifndef PASSWORDDIALOG_H_
 #define PASSWORDDIALOG_H_
 
-#include <QDialog>
 #include "passwordconfiguration.h"
+#include <QDialog>
 
 namespace Ui {
 class PasswordDialog;
