@@ -29,7 +29,7 @@ void KeygenDialog::on_passphrase1_textChanged(const QString &arg1) {
   bool state = ui->passphrase1->text() == ui->passphrase2->text();
   if (state) {
     replace("Passphrase", arg1);
-    no_protection(arg.isEmpty());
+    no_protection(arg1.isEmpty());
   }
 
   ui->buttonBox->setEnabled(state);

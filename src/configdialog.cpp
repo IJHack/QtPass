@@ -44,13 +44,13 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxAutoPull->setChecked(QtPassSettings::isAutoPull());
   ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
   ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
+  ui->comboBoxClipboard->setCurrentIndex(QtPassSettings::getClipBoardTypeRaw());
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
   setPwgenPath(QtPassSettings::getPwgenExecutable());
   setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
 
   usePass(QtPassSettings::isUsePass());
-  useClipboard(QtPassSettings::getClipBoardType());
   useSelection(QtPassSettings::isUseSelection());
   useAutoclear(QtPassSettings::isUseAutoclear());
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
@@ -58,6 +58,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useGit(QtPassSettings::isUseGit());
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
+
+  on_comboBoxClipboard_activated(QtPassSettings::getClipBoardTypeRaw());
 
   ui->profileTable->verticalHeader()->hide();
   ui->profileTable->horizontalHeader()->setStretchLastSection(true);
@@ -275,14 +277,6 @@ void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
   bool state = ui->checkBoxAutoclearPanel->isChecked();
   ui->spinBoxAutoclearPanelSeconds->setEnabled(state);
   ui->labelPanelSeconds->setEnabled(state);
-}
-
-/**
- * @brief ConfigDialog::useClipboard set the clipboard use from MainWindow.
- */
-void ConfigDialog::useClipboard(Enums::clipBoardType useClipboard) {
-  ui->comboBoxClipboard->setCurrentIndex(static_cast<int>(useClipboard));
-  on_comboBoxClipboard_activated(static_cast<int>(useClipboard));
 }
 
 /**
