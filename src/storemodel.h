@@ -11,6 +11,7 @@
 class QFileSystemModel;
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
+
 private:
   QFileSystemModel *fs;
   QString store;
