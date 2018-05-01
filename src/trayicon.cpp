@@ -1,4 +1,5 @@
 #include "trayicon.h"
+#include "debughelper.h"
 #include <QAction>
 #include <QApplication>
 #include <QMainWindow>
@@ -10,19 +11,27 @@
  * @param parent
  */
 TrayIcon::TrayIcon(QMainWindow *parent) {
-  parentwin = parent;
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    parentwin = parent;
 
-  createActions();
-  createTrayIcon();
+    createActions();
+    createTrayIcon();
 
-  sysTrayIcon->setIcon(
-      QIcon::fromTheme("qtpass-tray", QIcon(":/artwork/icon.png")));
+    sysTrayIcon->setIcon(
+        QIcon::fromTheme("qtpass-tray", QIcon(":/artwork/icon.png")));
 
-  sysTrayIcon->show();
+    sysTrayIcon->show();
 
-  QObject::connect(sysTrayIcon,
-                   SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
-                   SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    QObject::connect(sysTrayIcon,
+                     SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
+                     SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+
+    isAllocated = true;
+  } else {
+    dbg() << "No tray icon for this OS possibly also not show options?";
+
+    isAllocated = false;
+  }
 }
 
 /**
@@ -35,6 +44,11 @@ void TrayIcon::setVisible(bool visible) {
   else
     parentwin->hide();
 }
+
+/**
+ * @brief TrayIcon::getIsAllocated return if TrayIcon is allocated
+ */
+bool TrayIcon::getIsAllocated() { return isAllocated; }
 
 /**
  * @brief TrayIcon::createActions setup the signals.
