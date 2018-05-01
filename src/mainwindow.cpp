@@ -10,7 +10,6 @@
 #include <QMessageBox>
 #include <QQueue>
 #include <QShortcut>
-#include <QSystemTrayIcon>
 #include <QTextCodec>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
