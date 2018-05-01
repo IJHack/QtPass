@@ -26,16 +26,13 @@ KeygenDialog::~KeygenDialog() { delete ui; }
  * @param arg1
  */
 void KeygenDialog::on_passphrase1_textChanged(const QString &arg1) {
-  if (ui->passphrase1->text() == ui->passphrase2->text()) {
-    ui->buttonBox->setEnabled(true);
+  bool state = ui->passphrase1->text() == ui->passphrase2->text();
+  if (state) {
     replace("Passphrase", arg1);
-    if (arg1 == "")
-      no_protection(true);
-    else
-      no_protection(false);
-  } else {
-    ui->buttonBox->setEnabled(false);
+    no_protection(arg.isEmpty());
   }
+
+  ui->buttonBox->setEnabled(state);
 }
 
 /**
@@ -52,13 +49,8 @@ void KeygenDialog::on_passphrase2_textChanged(const QString &arg1) {
  * @param arg1
  */
 void KeygenDialog::on_checkBox_stateChanged(int arg1) {
-  if (arg1) {
-    ui->plainTextEdit->setReadOnly(false);
-    ui->plainTextEdit->setEnabled(true);
-  } else {
-    ui->plainTextEdit->setReadOnly(true);
-    ui->plainTextEdit->setEnabled(false);
-  }
+  ui->plainTextEdit->setReadOnly(!arg1);
+  ui->plainTextEdit->setEnabled(arg1);
 }
 
 /**

@@ -51,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   ui->setupUi(this);
 
+  // i think this should be moved out of MainWindow (in main.cpp as example)
   if (!checkConfig()) {
     // no working config so this should quit without config anything
     QApplication::quit();
