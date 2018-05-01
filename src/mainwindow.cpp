@@ -168,7 +168,6 @@ void MainWindow::changeEvent(QEvent *event) {
  * @param pass        pointer to pass instance
  */
 void MainWindow::connectPassSignalHandlers(Pass *pass) {
-
   //    TODO(bezet): this is never emitted(should be), also naming(see
   //    critical())
   connect(pass, &Pass::error, this, &MainWindow::processError);
@@ -597,7 +596,6 @@ void MainWindow::finishedInsert(const QString &p_output,
 
 void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
                                       QString postfix) {
-
   output.replace(QRegExp("<"), "&lt;");
   output.replace(QRegExp(">"), "&gt;");
   output.replace(QRegExp(" "), "&nbsp;");

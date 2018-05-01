@@ -51,7 +51,8 @@ PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
-  connect(QtPassSettings::getPass(), &Pass::processErrorExit, this, &PasswordDialog::close);
+  connect(QtPassSettings::getPass(), &Pass::processErrorExit, this,
+          &PasswordDialog::close);
   connect(this, &PasswordDialog::accepted, this, &PasswordDialog::on_accepted);
   connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
 }
