@@ -18,7 +18,9 @@
 
 **Closed issues:**
 
+- Running qtPass remotelly not prompting for the GPG key passphrasse  [\#374](https://github.com/IJHack/QtPass/issues/374)
 - Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
+- Chocolatey package outdated [\#366](https://github.com/IJHack/QtPass/issues/366)
 - How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
 - "copy" icon has disappeared in v1.2.1 [\#344](https://github.com/IJHack/QtPass/issues/344)
@@ -29,6 +31,7 @@
 
 **Merged pull requests:**
 
+- Small refactoring. [\#378](https://github.com/IJHack/QtPass/pull/378) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Sorry for last error :\) [\#370](https://github.com/IJHack/QtPass/pull/370) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Optimizations :\) [\#367](https://github.com/IJHack/QtPass/pull/367) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))

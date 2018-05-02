@@ -11,9 +11,9 @@
  * @param parent
  */
 TrayIcon::TrayIcon(QMainWindow *parent) {
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
-    parentwin = parent;
+  parentwin = parent;
 
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
     createActions();
     createTrayIcon();
 
@@ -31,6 +31,15 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
     dbg() << "No tray icon for this OS possibly also not show options?";
 
     isAllocated = false;
+
+    showAction = nullptr;
+    hideAction = nullptr;
+    minimizeAction = nullptr;
+    maximizeAction = nullptr;
+    restoreAction = nullptr;
+    quitAction = nullptr;
+    sysTrayIcon = nullptr;
+    trayIconMenu = nullptr;
   }
 }
 
