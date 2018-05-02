@@ -27,7 +27,6 @@ public:
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog();
 
-  void useClipboard(Enums::clipBoardType);
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
   void useAutoclearPanel(bool useAutoclearPanel);

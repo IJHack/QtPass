@@ -1,6 +1,6 @@
 platform: linux | osx
 build:
-- qmake 
+- qmake
 - make
 analyzers:
  - cpplint: true

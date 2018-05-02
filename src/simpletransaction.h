@@ -5,7 +5,6 @@
 #include <queue>
 
 class simpleTransaction {
-
   int transactionDepth;
   Enums::PROCESS lastInTransaction;
   std::queue<std::pair<Enums::PROCESS, Enums::PROCESS>> transactionQueue;

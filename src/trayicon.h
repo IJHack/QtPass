@@ -18,6 +18,7 @@ public:
   explicit TrayIcon(QMainWindow *parent);
   void showMessage(QString title, QString msg, int time);
   void setVisible(bool visible);
+  bool getIsAllocated();
 
 signals:
 
@@ -39,6 +40,8 @@ private:
   QSystemTrayIcon *sysTrayIcon;
   QMenu *trayIconMenu;
   QMainWindow *parentwin;
+
+  bool isAllocated;
 };
 
 #endif // TRAYICON_H_

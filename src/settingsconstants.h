@@ -8,7 +8,6 @@
     \brief Table for the naming of configuration items
 */
 class SettingsConstants {
-
 public:
   const static QString version;
   const static QString groupMainwindow;

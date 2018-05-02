@@ -63,6 +63,8 @@ public:
   static bool isUsePass(const bool &defaultValue = QVariant().toBool());
   static void setUsePass(const bool &usePass);
 
+  static int getClipBoardTypeRaw(
+      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER);
   static Enums::clipBoardType getClipBoardType(
       const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER);
   static void setClipBoardType(const Enums::clipBoardType &clipBoardType);
