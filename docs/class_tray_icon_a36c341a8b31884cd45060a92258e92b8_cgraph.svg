@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 297.04 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>TrayIcon::iconActivated</title>
-<!-- Node5 -->
+<!-- Node7 -->
 <g id="node1" class="node">
-<title>Node5</title>
+<title>Node7</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 119.5693,-36.5 119.5693,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="59.7847" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::iconActivated</text>
 </g>
-<!-- Node6 -->
+<!-- Node8 -->
 <g id="node2" class="node">
-<title>Node6</title>
+<title>Node8</title>
 <g id="a_node2"><a xlink:href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" target="_top" xlink:title="TrayIcon::showHideParent toggle app visibility. ">
 <polygon fill="none" stroke="#000000" points="155.5693,-37.5 155.5693,-55.5 289.0352,-55.5 289.0352,-37.5 155.5693,-37.5"/>
 <text text-anchor="middle" x="222.3022" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::showHideParent</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
+<!-- Node7&#45;&gt;Node8 -->
 <g id="edge1" class="edge">
-<title>Node5&#45;&gt;Node6</title>
+<title>Node7&#45;&gt;Node8</title>
 <path fill="none" stroke="#191970" d="M119.8385,-34.5209C128.1571,-35.4935 136.7946,-36.5033 145.3677,-37.5055"/>
 <polygon fill="#191970" stroke="#191970" points="145.0404,-40.991 155.3792,-38.676 145.8533,-34.0384 145.0404,-40.991"/>
 </g>
-<!-- Node7 -->
+<!-- Node9 -->
 <g id="node3" class="node">
-<title>Node7</title>
+<title>Node9</title>
 <g id="a_node3"><a xlink:href="class_tray_icon.html#a1299ba958c0c1b2b549ea0f9bcfdffee" target="_top" xlink:title="TrayIcon::showMessage show a systray message for notification. ">
 <polygon fill="none" stroke="#000000" points="160.2959,-.5 160.2959,-18.5 284.3086,-18.5 284.3086,-.5 160.2959,-.5"/>
 <text text-anchor="middle" x="222.3022" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::showMessage</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node7 -->
+<!-- Node7&#45;&gt;Node9 -->
 <g id="edge2" class="edge">
-<title>Node5&#45;&gt;Node7</title>
+<title>Node7&#45;&gt;Node9</title>
 <path fill="none" stroke="#191970" d="M119.8385,-20.8486C129.6717,-19.7595 139.9503,-18.6211 150.0416,-17.5034"/>
 <polygon fill="#191970" stroke="#191970" points="150.493,-20.9749 160.0469,-16.3952 149.7223,-14.0174 150.493,-20.9749"/>
 </g>

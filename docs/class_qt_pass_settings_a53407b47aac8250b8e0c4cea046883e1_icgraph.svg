@@ -48,97 +48,97 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 679;
 var viewHeight = 140;
-var sectionId = 'dynsection-33';
+var sectionId = 'dynsection-34';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPwgenExecutable</title>
-<!-- Node270 -->
+<!-- Node276 -->
 <g id="node1" class="node">
-<title>Node270</title>
+<title>Node276</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-51.5 0,-79.5 134.9551,-79.5 134.9551,-51.5 0,-51.5"/>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPwgen</text>
 <text text-anchor="middle" x="67.4775" y="-57.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executable</text>
 </g>
-<!-- Node271 -->
+<!-- Node277 -->
 <g id="node2" class="node">
-<title>Node271</title>
+<title>Node277</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="181.79,-113.5 181.79,-131.5 317.8584,-131.5 317.8584,-113.5 181.79,-113.5"/>
 <text text-anchor="middle" x="249.8242" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node270&#45;&gt;Node271 -->
+<!-- Node276&#45;&gt;Node277 -->
 <g id="edge1" class="edge">
-<title>Node270&#45;&gt;Node271</title>
+<title>Node276&#45;&gt;Node277</title>
 <path fill="none" stroke="#191970" d="M120.779,-82.6479C136.8873,-87.7898 154.6304,-93.4134 170.9551,-98.5 187.0792,-103.5241 205.0957,-109.0158 219.8343,-113.4765"/>
 <polygon fill="#191970" stroke="#191970" points="121.5788,-79.2291 110.9879,-79.5176 119.4471,-85.8966 121.5788,-79.2291"/>
 </g>
-<!-- Node272 -->
+<!-- Node278 -->
 <g id="node3" class="node">
-<title>Node272</title>
+<title>Node278</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a23d2783cb61a373c4b0127970264290a" target="_top" xlink:title="MainWindow::checkConfig make sure we are ready to go as soon as possible. ">
 <polygon fill="none" stroke="#000000" points="364.6934,-37.5 364.6934,-55.5 498.5205,-55.5 498.5205,-37.5 364.6934,-37.5"/>
 <text text-anchor="middle" x="431.6069" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node270&#45;&gt;Node272 -->
+<!-- Node276&#45;&gt;Node278 -->
 <g id="edge2" class="edge">
-<title>Node270&#45;&gt;Node272</title>
+<title>Node276&#45;&gt;Node278</title>
 <path fill="none" stroke="#191970" d="M145.1735,-69.2001C197.2142,-70.7698 267.1966,-71.1292 328.6934,-65.5 349.8625,-63.5622 373.178,-59.427 392.2563,-55.5078"/>
 <polygon fill="#191970" stroke="#191970" points="145.1204,-65.6966 135.0124,-68.8714 144.894,-72.6929 145.1204,-65.6966"/>
 </g>
-<!-- Node274 -->
+<!-- Node280 -->
 <g id="node5" class="node">
-<title>Node274</title>
+<title>Node280</title>
 <g id="a_node5"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="#000000" points="201.5215,-37.5 201.5215,-55.5 298.127,-55.5 298.127,-37.5 201.5215,-37.5"/>
 <text text-anchor="middle" x="249.8242" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>
 </g>
 </g>
-<!-- Node270&#45;&gt;Node274 -->
+<!-- Node276&#45;&gt;Node280 -->
 <g id="edge4" class="edge">
-<title>Node270&#45;&gt;Node274</title>
+<title>Node276&#45;&gt;Node280</title>
 <path fill="none" stroke="#191970" d="M145.2863,-57.3926C164.3259,-55.4087 184.1603,-53.342 201.3706,-51.5487"/>
 <polygon fill="#191970" stroke="#191970" points="144.701,-53.9345 135.1176,-58.4521 145.4265,-60.8968 144.701,-53.9345"/>
 </g>
-<!-- Node275 -->
+<!-- Node281 -->
 <g id="node6" class="node">
-<title>Node275</title>
+<title>Node281</title>
 <g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
 <polygon fill="none" stroke="#000000" points="170.9551,-.5 170.9551,-18.5 328.6934,-18.5 328.6934,-.5 170.9551,-.5"/>
 <text text-anchor="middle" x="249.8242" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
 </a>
 </g>
 </g>
-<!-- Node270&#45;&gt;Node275 -->
+<!-- Node276&#45;&gt;Node281 -->
 <g id="edge5" class="edge">
-<title>Node270&#45;&gt;Node275</title>
+<title>Node276&#45;&gt;Node281</title>
 <path fill="none" stroke="#191970" d="M113.6003,-47.8155C131.385,-41.3117 151.9811,-34.16 170.9551,-28.5 183.102,-24.8765 196.456,-21.4525 208.6671,-18.5355"/>
 <polygon fill="#191970" stroke="#191970" points="112.2046,-44.5998 104.0372,-51.3484 114.6305,-51.166 112.2046,-44.5998"/>
 </g>
-<!-- Node273 -->
+<!-- Node279 -->
 <g id="node4" class="node">
-<title>Node273</title>
+<title>Node279</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="534.5205,-37.5 534.5205,-55.5 670.5596,-55.5 670.5596,-37.5 534.5205,-37.5"/>
 <text text-anchor="middle" x="602.54" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node272&#45;&gt;Node273 -->
+<!-- Node278&#45;&gt;Node279 -->
 <g id="edge3" class="edge">
-<title>Node272&#45;&gt;Node273</title>
+<title>Node278&#45;&gt;Node279</title>
 <path fill="none" stroke="#191970" d="M508.9106,-46.5C517.3653,-46.5 525.9275,-46.5 534.2621,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="508.6737,-43.0001 498.6736,-46.5 508.6736,-50.0001 508.6737,-43.0001"/>
 </g>
-<!-- Node275&#45;&gt;Node272 -->
+<!-- Node281&#45;&gt;Node278 -->
 <g id="edge6" class="edge">
-<title>Node275&#45;&gt;Node272</title>
+<title>Node281&#45;&gt;Node278</title>
 <path fill="none" stroke="#191970" d="M304.1938,-20.5664C330.7247,-25.9665 362.2354,-32.3801 387.2823,-37.4782"/>
 <polygon fill="#191970" stroke="#191970" points="304.7905,-17.1161 294.2933,-18.5512 303.3943,-23.9755 304.7905,-17.1161"/>
 </g>

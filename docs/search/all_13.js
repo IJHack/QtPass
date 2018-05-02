@@ -5,7 +5,7 @@ var searchData=
   ['url',['url',['../namespaceavatars.html#aac8cce90950a6ba880d509eb4304b9a9',1,'avatars']]],
   ['useautoclear',['useAutoclear',['../class_settings_constants.html#a4444d3b784dfd5156d5fdd0d16fb4cd7',1,'SettingsConstants::useAutoclear()'],['../class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91',1,'ConfigDialog::useAutoclear()']]],
   ['useautoclearpanel',['useAutoclearPanel',['../class_settings_constants.html#a634d47e31c1ce7eabea4435d16637c46',1,'SettingsConstants::useAutoclearPanel()'],['../class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0',1,'ConfigDialog::useAutoclearPanel()']]],
-  ['useclipboard',['useClipboard',['../class_settings_constants.html#a0c3a88eed6013961790144cc002e20cc',1,'SettingsConstants::useClipboard()'],['../class_config_dialog.html#a7bd0fa1eaee412aabe42149d010768c8',1,'ConfigDialog::useClipboard()']]],
+  ['useclipboard',['useClipboard',['../class_settings_constants.html#a0c3a88eed6013961790144cc002e20cc',1,'SettingsConstants']]],
   ['usegit',['useGit',['../class_settings_constants.html#a80c25fbbfd8513ea7548c31dc72bcf85',1,'SettingsConstants::useGit()'],['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog::useGit()']]],
   ['usepass',['usePass',['../class_settings_constants.html#a77796de4c6b0edfd2aaaf10b84d04322',1,'SettingsConstants']]],
   ['usepwgen',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants::usePwgen()'],['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],

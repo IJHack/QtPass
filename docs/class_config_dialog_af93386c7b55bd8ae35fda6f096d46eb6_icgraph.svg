@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 316.14 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::useSelection</title>
-<!-- Node93 -->
+<!-- Node89 -->
 <g id="node1" class="node">
-<title>Node93</title>
+<title>Node89</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 136.0732,-18.5 136.0732,-.5 0,-.5"/>
 <text text-anchor="middle" x="68.0366" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useSelection</text>
 </g>
-<!-- Node94 -->
+<!-- Node90 -->
 <g id="node2" class="node">
-<title>Node94</title>
+<title>Node90</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="172.0732,-.5 172.0732,-18.5 308.1416,-18.5 308.1416,-.5 172.0732,-.5"/>
 <text text-anchor="middle" x="240.1074" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node93&#45;&gt;Node94 -->
+<!-- Node89&#45;&gt;Node90 -->
 <g id="edge1" class="edge">
-<title>Node93&#45;&gt;Node94</title>
+<title>Node89&#45;&gt;Node90</title>
 <path fill="none" stroke="#191970" d="M146.7059,-9.5C155.0979,-9.5 163.584,-9.5 171.8418,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="146.538,-6.0001 136.538,-9.5 146.5379,-13.0001 146.538,-6.0001"/>
 </g>

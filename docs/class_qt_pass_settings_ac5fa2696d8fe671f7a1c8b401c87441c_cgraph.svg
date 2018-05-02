@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 332.25 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::setAutoclearSeconds</title>
-<!-- Node458 -->
+<!-- Node464 -->
 <g id="node1" class="node">
-<title>Node458</title>
+<title>Node464</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 146.0635,-28.5 146.0635,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setAutoclear</text>
 <text text-anchor="middle" x="73.0317" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Seconds</text>
 </g>
-<!-- Node459 -->
+<!-- Node465 -->
 <g id="node2" class="node">
-<title>Node459</title>
+<title>Node465</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="182.0635,-5.5 182.0635,-23.5 324.2451,-23.5 324.2451,-5.5 182.0635,-5.5"/>
 <text text-anchor="middle" x="253.1543" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node458&#45;&gt;Node459 -->
+<!-- Node464&#45;&gt;Node465 -->
 <g id="edge1" class="edge">
-<title>Node458&#45;&gt;Node459</title>
+<title>Node464&#45;&gt;Node465</title>
 <path fill="none" stroke="#191970" d="M146.2945,-14.5C154.673,-14.5 163.2526,-14.5 171.7293,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="171.9975,-18.0001 181.9974,-14.5 171.9974,-11.0001 171.9975,-18.0001"/>
 </g>
