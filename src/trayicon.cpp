@@ -31,6 +31,15 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
     dbg() << "No tray icon for this OS possibly also not show options?";
 
     isAllocated = false;
+
+    showAction = nullptr;
+    hideAction = nullptr;
+    minimizeAction = nullptr;
+    maximizeAction = nullptr;
+    restoreAction = nullptr;
+    quitAction = nullptr;
+    sysTrayIcon = nullptr;
+    trayIconMenu = nullptr;
   }
 }
 

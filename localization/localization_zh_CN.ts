@@ -934,32 +934,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="57"/>
+        <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Show</source>
         <translation>显示 (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="59"/>
+        <location filename="../src/trayicon.cpp" line="68"/>
         <source>&amp;Hide</source>
         <translation>隐藏 (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="62"/>
+        <location filename="../src/trayicon.cpp" line="71"/>
         <source>Mi&amp;nimize</source>
         <translation>最小化 (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="65"/>
+        <location filename="../src/trayicon.cpp" line="74"/>
         <source>Ma&amp;ximize</source>
         <translation>最大化 (&amp;X)</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="68"/>
+        <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Restore</source>
         <translation>恢复 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="71"/>
+        <location filename="../src/trayicon.cpp" line="80"/>
         <source>&amp;Quit</source>
         <translation>退出 (&amp;Q)</translation>
     </message>
