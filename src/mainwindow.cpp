@@ -10,7 +10,6 @@
 #include <QMessageBox>
 #include <QQueue>
 #include <QShortcut>
-#include <QSystemTrayIcon>
 #include <QTextCodec>
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
@@ -51,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   ui->setupUi(this);
 
+  // i think this should be moved out of MainWindow (in main.cpp as example)
   if (!checkConfig()) {
     // no working config so this should quit without config anything
     QApplication::quit();
@@ -284,9 +284,9 @@ bool MainWindow::checkConfig() {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
-  } else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
     destroyTrayIcon();
-  }
+  }*/
 
   // dbg()<< version;
 
@@ -386,11 +386,10 @@ void MainWindow::config() {
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
         this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-        this->show();
       } else {
         this->setWindowFlags(Qt::Window);
-        this->show();
       }
+      this->show();
 
       updateProfileBox();
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
@@ -407,8 +406,9 @@ void MainWindow::config() {
       updateGitButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == NULL)
         initTrayIcon();
-      else if (!QtPassSettings::isUseTrayIcon() && tray != NULL)
+      else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
         destroyTrayIcon();
+      }
     }
     freshStart = false;
   }
@@ -1088,17 +1088,14 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
  * it
  */
 void MainWindow::initTrayIcon() {
-  if (tray != NULL) {
-    dbg() << "Creating tray icon again?";
-    return;
-  }
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
-    // Setup tray icon
-    this->tray = new TrayIcon(this);
-    if (tray == NULL)
-      dbg() << "Allocating tray icon failed.";
-  } else {
-    dbg() << "No tray icon for this OS possibly also not show options?";
+  this->tray = new TrayIcon(this);
+  // Setup tray icon
+
+  if (tray == NULL)
+    dbg() << "Allocating tray icon failed.";
+
+  if (!tray->getIsAllocated()) {
+    destroyTrayIcon();
   }
 }
 
@@ -1106,10 +1103,6 @@ void MainWindow::initTrayIcon() {
  * @brief MainWindow::destroyTrayIcon remove that pesky tray icon
  */
 void MainWindow::destroyTrayIcon() {
-  if (tray == NULL) {
-    dbg() << "Destroy non existing tray icon?";
-    return;
-  }
   delete this->tray;
   tray = NULL;
 }
