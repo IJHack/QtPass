@@ -935,32 +935,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="57"/>
+        <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Show</source>
         <translation>Z&amp;obrazit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="59"/>
+        <location filename="../src/trayicon.cpp" line="68"/>
         <source>&amp;Hide</source>
         <translation>&amp;Skrýt</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="62"/>
+        <location filename="../src/trayicon.cpp" line="71"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="65"/>
+        <location filename="../src/trayicon.cpp" line="74"/>
         <source>Ma&amp;ximize</source>
         <translation>Ma&amp;ximalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="68"/>
+        <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Restore</source>
         <translation>Obno&amp;vit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="71"/>
+        <location filename="../src/trayicon.cpp" line="80"/>
         <source>&amp;Quit</source>
         <translation>Ukonči&amp;t</translation>
     </message>
