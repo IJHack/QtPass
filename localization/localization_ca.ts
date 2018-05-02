@@ -317,57 +317,57 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="67"/>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>No Clipboard</source>
         <translation>Sense porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
+        <location filename="../src/configdialog.cpp" line="70"/>
         <source>Always copy to clipboard</source>
         <translation>Copia sempre al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="71"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copia sota demanda al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="414"/>
+        <location filename="../src/configdialog.cpp" line="408"/>
         <source>No profile selected</source>
         <translation>Cap perfil seleccionat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="415"/>
+        <location filename="../src/configdialog.cpp" line="409"/>
         <source>No profile selected to delete</source>
         <translation>No s&apos;ha seleccionat cap perfil per suprimir</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="453"/>
+        <location filename="../src/configdialog.cpp" line="447"/>
         <source>GnuPG not found</source>
         <translation>No s&apos;ha trobat GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="454"/>
+        <location filename="../src/configdialog.cpp" line="448"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instal·leu GnuPG al vostre sistema.&lt;br&gt;Instal·leu &lt;strong&gt;gpg&lt;/strong&gt; mitjançant el vostre gestor de paquets preferit&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;baixeu-ho&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="474"/>
+        <location filename="../src/configdialog.cpp" line="468"/>
         <source>Create password-store?</source>
         <translation>Voleu crear un magatzem de claus?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="475"/>
+        <location filename="../src/configdialog.cpp" line="469"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Voleu crear un magatzem de claus a %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="493"/>
+        <location filename="../src/configdialog.cpp" line="487"/>
         <source>Password store not initialised</source>
         <translation>El magatzem de claus no està inicialitzat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="494"/>
+        <location filename="../src/configdialog.cpp" line="488"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>La carpeta %1 no sembla ser un magatzem de claus o encara no ha estat inicialitzat.</translation>
     </message>
@@ -433,32 +433,32 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <translation>Genera un nou parell de claus</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="84"/>
+        <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
         <translation>Correu electrònic</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="108"/>
+        <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="128"/>
+        <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hi ha cap límit sobre la llargada d&apos;una contrasenya, i s&apos;ha de seleccionar acuradament. Des de la perspectiva de la seguretat, la contrasenya per desbloquejar la clau privada és un dels punts més febles de GnuPG (i altres sistemes de xifratge de clau pública), ja que és l&apos;única protecció que teniu si una altra persona obté la vostra clau privada. &lt;br/&gt;El més ideal seria que per a la contrasenya no s&apos;utilitzessin les paraules d&apos;un diccionari i s&apos;utilitzés una mescla de caràcters alfabètics i no alfabètics.&lt;br/&gt;Una bona contrasenya és crucial per a l&apos;ús segur de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="138"/>
+        <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="157"/>
+        <location filename="../src/keygendialog.ui" line="238"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -491,32 +491,32 @@ Expire-Date: 0
 %echo fet</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="184"/>
+        <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Per obtenir opcions d&apos;experts consulteu el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="134"/>
+        <location filename="../src/keygendialog.cpp" line="126"/>
         <source>Invalid name</source>
         <translation>El nom no és vàlid</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="135"/>
+        <location filename="../src/keygendialog.cpp" line="127"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>El nom ha de tenir almenys 5 caràcters de longitud.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="145"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid email</source>
         <translation>El correu electrònic no és vàlid</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="146"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>L&apos;adreça de correu electrònic que heu escrit no és una adreça electrònica vàlida.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="161"/>
+        <location filename="../src/keygendialog.cpp" line="153"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Aquesta operació pot trigar uns quants minuts.&lt;br /&gt;S&apos;han de generar molts bytes aleatoris. Una bona idea és realitzar alguna altra acció (teclegeu el teclat, moveu el ratolí, utilitzeu els discs) durant la generació de nombres primers; això dóna al generador de nombres aleatoris una millor oportunitat per obtenir prou entropia.</translation>
     </message>
@@ -533,77 +533,77 @@ Expire-Date: 0
         <translation type="vanished">Afegeix</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="349"/>
-        <location filename="../src/mainwindow.ui" line="352"/>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.ui" line="362"/>
+        <location filename="../src/mainwindow.ui" line="365"/>
+        <location filename="../src/mainwindow.cpp" line="1206"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="361"/>
-        <location filename="../src/mainwindow.ui" line="364"/>
-        <location filename="../src/mainwindow.cpp" line="1225"/>
+        <location filename="../src/mainwindow.ui" line="374"/>
+        <location filename="../src/mainwindow.ui" line="377"/>
+        <location filename="../src/mainwindow.cpp" line="1218"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="376"/>
+        <location filename="../src/mainwindow.ui" line="389"/>
         <source>git push</source>
         <translation>git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="373"/>
+        <location filename="../src/mainwindow.ui" line="386"/>
         <source>Push</source>
         <translation>Puja</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="52"/>
+        <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="329"/>
+        <location filename="../src/mainwindow.ui" line="341"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="388"/>
+        <location filename="../src/mainwindow.ui" line="401"/>
         <source>git pull</source>
         <translation>git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/mainwindow.ui" line="398"/>
         <source>Update</source>
         <translation>Actualitza</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="400"/>
+        <location filename="../src/mainwindow.ui" line="413"/>
         <source>Manage who can read password in folder</source>
         <translation>Gestioneu qui pot llegir la contrasenya a la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="397"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.ui" line="410"/>
+        <location filename="../src/mainwindow.cpp" line="1200"/>
         <source>Users</source>
         <translation>Usuaris</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="412"/>
+        <location filename="../src/mainwindow.ui" line="425"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="409"/>
+        <location filename="../src/mainwindow.ui" line="422"/>
         <source>Config</source>
         <translation>Configura</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="175"/>
+        <location filename="../src/mainwindow.ui" line="187"/>
         <source>Welcome to QtPass</source>
         <translation>Benvingut a QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="259"/>
+        <location filename="../src/mainwindow.ui" line="271"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -622,7 +622,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Codi font&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="99"/>
+        <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
         <translation>Cerca la contrasenya</translation>
     </message>
@@ -699,7 +699,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="557"/>
-        <location filename="../src/mainwindow.cpp" line="1363"/>
+        <location filename="../src/mainwindow.cpp" line="1356"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
@@ -755,7 +755,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="845"/>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1255"/>
         <source>New file</source>
         <translation>Fitxer nou</translation>
     </message>
@@ -829,33 +829,33 @@ p, li { white-space: pre-wrap; }
         <translation>S&apos;ha canviat el perfil a %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1204"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="338"/>
-        <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow.ui" line="350"/>
+        <location filename="../src/mainwindow.ui" line="353"/>
+        <location filename="../src/mainwindow.cpp" line="1198"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="323"/>
-        <location filename="../src/mainwindow.ui" line="326"/>
-        <location filename="../src/mainwindow.cpp" line="1206"/>
+        <location filename="../src/mainwindow.ui" line="335"/>
+        <location filename="../src/mainwindow.ui" line="338"/>
+        <location filename="../src/mainwindow.cpp" line="1199"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Carpeta nova: 
 (s&apos;ubicarà a %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
         <source>Copied to clipboard</source>
         <translation>S&apos;ha copiat al porta-retalls</translation>
     </message>
@@ -946,32 +946,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="43"/>
+        <location filename="../src/trayicon.cpp" line="57"/>
         <source>&amp;Show</source>
         <translation>Mo&amp;stra</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="45"/>
+        <location filename="../src/trayicon.cpp" line="59"/>
         <source>&amp;Hide</source>
         <translation>&amp;Oculta</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="48"/>
+        <location filename="../src/trayicon.cpp" line="62"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimitza</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="51"/>
+        <location filename="../src/trayicon.cpp" line="65"/>
         <source>Ma&amp;ximize</source>
         <translation>Ma&amp;ximitza</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="54"/>
+        <location filename="../src/trayicon.cpp" line="68"/>
         <source>&amp;Restore</source>
         <translation>&amp;Restaura</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="57"/>
+        <location filename="../src/trayicon.cpp" line="71"/>
         <source>&amp;Quit</source>
         <translation>&amp;Surt</translation>
     </message>
