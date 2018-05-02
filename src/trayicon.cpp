@@ -11,9 +11,9 @@
  * @param parent
  */
 TrayIcon::TrayIcon(QMainWindow *parent) {
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
-    parentwin = parent;
+  parentwin = parent;
 
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
     createActions();
     createTrayIcon();
 
