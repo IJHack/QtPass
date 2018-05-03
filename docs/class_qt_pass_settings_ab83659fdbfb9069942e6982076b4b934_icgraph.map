@@ -18,7 +18,7 @@
 <area shape="rect" id="node23" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="268,364,452,389"/>
 <area shape="rect" id="node32" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="QtPassSettings::setUsePass" alt="" coords="816,1551,1007,1576"/>
 <area shape="rect" id="node33" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="261,55,459,93"/>
-<area shape="rect" id="node35" href="$class_qt_pass_settings.html#a9db69e940cdb3e3043c8232d22234996" title="QtPassSettings::setClipBoardType" alt="" coords="247,3227,473,3252"/>
+<area shape="rect" id="node35" href="$class_qt_pass_settings.html#ad63f4a9bb2341681c9364b0eb2c0735d" title="QtPassSettings::setClipBoardType" alt="" coords="247,3227,473,3252"/>
 <area shape="rect" id="node36" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="256,835,465,860"/>
 <area shape="rect" id="node37" href="$class_qt_pass_settings.html#af40ab682a88d2fa494bb349d2b6ef591" title="QtPassSettings::setUseSelection" alt="" coords="252,3276,469,3301"/>
 <area shape="rect" id="node38" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="255,884,465,909"/>
@@ -92,7 +92,7 @@
 <area shape="rect" id="node3" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="548,588,730,613"/>
 <area shape="rect" id="node4" href="$class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="1087,375,1270,413"/>
 <area shape="rect" id="node9" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="1335,1373,1513,1399"/>
-<area shape="rect" id="node10" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1561,1373,1743,1399"/>
+<area shape="rect" id="node10" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1561,1373,1743,1399"/>
 <area shape="rect" id="node14" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="554,3359,724,3384"/>
 <area shape="rect" id="node24" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="827,284,996,309"/>
 <area shape="rect" id="node25" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="1108,1373,1249,1399"/>

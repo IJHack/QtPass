@@ -153,7 +153,7 @@
 <!-- Node58 -->
 <g id="node5" class="node">
 <title>Node58</title>
-<g id="a_node5"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<g id="a_node5"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="809.1357,-204.5 809.1357,-222.5 945.1748,-222.5 945.1748,-204.5 809.1357,-204.5"/>
 <text text-anchor="middle" x="877.1553" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>

@@ -1,6 +1,4 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$class_single_application.html#a226f6a08af235dd032f07bac926cce85" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server..." alt="" coords="112,5,243,44"/>
-<area shape="rect" id="node3" href="$class_single_application.html#aa239b90b18119ba78a63e62d8da3738f" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc..." alt="" coords="112,68,243,107"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a43281fd920d5365b596c04f870a972c6" title="MainWindow::setApp make sure we know what/who/where we are. " alt="" coords="104,131,251,156"/>
-<area shape="rect" id="node5" href="$class_main_window.html#affba132ed066e5094fd6aabc8debaa01" title="MainWindow::setText do a search from an external source (eg: commandline) " alt="" coords="104,180,251,205"/>
+<area shape="rect" id="node2" href="$class_single_application.html#a226f6a08af235dd032f07bac926cce85" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server..." alt="" coords="104,5,235,44"/>
+<area shape="rect" id="node3" href="$class_single_application.html#aa239b90b18119ba78a63e62d8da3738f" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc..." alt="" coords="104,68,235,107"/>
 </map>

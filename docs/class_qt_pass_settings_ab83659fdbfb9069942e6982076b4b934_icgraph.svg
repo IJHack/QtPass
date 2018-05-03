@@ -351,7 +351,7 @@ var sectionId = 'dynsection-17';
 <!-- Node105 -->
 <g id="node35" class="node">
 <title>Node105</title>
-<g id="a_node35"><a xlink:href="class_qt_pass_settings.html#a9db69e940cdb3e3043c8232d22234996" target="_top" xlink:title="QtPassSettings::setClipBoardType">
+<g id="a_node35"><a xlink:href="class_qt_pass_settings.html#ad63f4a9bb2341681c9364b0eb2c0735d" target="_top" xlink:title="QtPassSettings::setClipBoardType">
 <polygon fill="none" stroke="#000000" points="181.519,-1230.5 181.519,-1248.5 350.9321,-1248.5 350.9321,-1230.5 181.519,-1230.5"/>
 <text text-anchor="middle" x="266.2256" y="-1236.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setClipBoardType</text>
 </a>
@@ -1490,7 +1490,7 @@ var sectionId = 'dynsection-17';
 <!-- Node80 -->
 <g id="node10" class="node">
 <title>Node80</title>
-<g id="a_node10"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
+<g id="a_node10"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="1166.8682,-2620.5 1166.8682,-2638.5 1302.9072,-2638.5 1302.9072,-2620.5 1166.8682,-2620.5"/>
 <text text-anchor="middle" x="1234.8877" y="-2626.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
