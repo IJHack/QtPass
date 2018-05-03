@@ -30,16 +30,12 @@
 #include "usersdialog.h"
 #include "util.h"
 
-#if SINGLE_APP
-#include "singleapplication.h"
-#endif
-
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
  * the main window.
  * @param parent
  */
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
       clippedText(QString()), freshStart(true), keygen(NULL),
       startupPhase(true), tray(NULL) {
@@ -90,6 +86,8 @@ MainWindow::MainWindow(QWidget *parent)
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
   QTimer::singleShot(10, this, SLOT(focusInput()));
+
+  ui->lineEdit->setText(searchText);
 }
 
 /**
@@ -977,17 +975,6 @@ void MainWindow::onUsers() {
 }
 
 /**
- * @brief MainWindow::setApp make sure we know what/who/where we are
- * @param app
- */
-void MainWindow::setApp(SingleApplication *app) {
-#if SINGLE_APP
-  connect(app, SIGNAL(messageAvailable(QString)), this,
-          SLOT(messageAvailable(QString)));
-#endif
-}
-
-/**
  * @brief MainWindow::messageAvailable we have some text/message/search to do.
  * @param message
  */
@@ -1002,13 +989,6 @@ void MainWindow::messageAvailable(QString message) {
   show();
   raise();
 }
-
-/**
- * @brief MainWindow::setText do a search from an external source
- * (eg: commandline)
- * @param text
- */
-void MainWindow::setText(QString text) { ui->lineEdit->setText(text); }
 
 /**
  * @brief MainWindow::getSecretKeys get list of secret/private keys
