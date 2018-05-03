@@ -40,6 +40,7 @@
  */
 int main(int argc, char *argv[]) {
   qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+  QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QString text = "";
   for (int i = 1; i < argc; ++i) {
     if (i > 1)
@@ -80,14 +81,17 @@ int main(int argc, char *argv[]) {
   app.installTranslator(&translator);
   app.setLayoutDirection(QObject::tr("LTR") == "RTL" ? Qt::RightToLeft
                                                      : Qt::LeftToRight);
-  MainWindow w;
-
-  QObject::connect(&app, SIGNAL(aboutToQuit()), &w, SLOT(clearClipboard()));
+  MainWindow w(text);
 
   app.setActiveWindow(&w);
   app.setWindowIcon(QIcon(":artwork/icon.png"));
-  w.setApp(&app);
-  w.setText(text);
+
+  QObject::connect(&app, SIGNAL(aboutToQuit()), &w, SLOT(clearClipboard()));
+#if SINGLE_APP
+  QObject::connect(&app, SIGNAL(messageAvailable(QString)), &w,
+                   SLOT(messageAvailable(QString)));
+#endif
+
   w.show();
 
   return app.exec();

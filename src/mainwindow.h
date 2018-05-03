@@ -39,11 +39,10 @@ class MainWindow : public QMainWindow {
   Q_OBJECT
 
 public:
-  explicit MainWindow(QWidget *parent = nullptr);
+  explicit MainWindow(const QString &searchText = QString(),
+                      QWidget *parent = nullptr);
   ~MainWindow();
   bool checkConfig();
-  void setApp(SingleApplication *app);
-  void setText(QString);
   QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");

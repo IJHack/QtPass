@@ -44,22 +44,18 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxAutoPull->setChecked(QtPassSettings::isAutoPull());
   ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
   ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
-  ui->comboBoxClipboard->setCurrentIndex(QtPassSettings::getClipBoardTypeRaw());
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
   setPwgenPath(QtPassSettings::getPwgenExecutable());
   setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
 
   usePass(QtPassSettings::isUsePass());
-  useSelection(QtPassSettings::isUseSelection());
   useAutoclear(QtPassSettings::isUseAutoclear());
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
   useTrayIcon(QtPassSettings::isUseTrayIcon());
   useGit(QtPassSettings::isUseGit());
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
-
-  on_comboBoxClipboard_activated(QtPassSettings::getClipBoardTypeRaw());
 
   ui->profileTable->verticalHeader()->hide();
   ui->profileTable->horizontalHeader()->setStretchLastSection(true);
@@ -69,12 +65,17 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->comboBoxClipboard->addItem(tr("No Clipboard"));
   ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
   ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
-  ui->comboBoxClipboard->setCurrentIndex(0);
+
+  int currentIndex = QtPassSettings::getClipBoardTypeRaw();
+  ui->comboBoxClipboard->setCurrentIndex(currentIndex);
+  on_comboBoxClipboard_activated(currentIndex);
 
   QClipboard *clip = QApplication::clipboard();
   if (!clip->supportsSelection()) {
     useSelection(false);
     ui->checkBoxSelection->setVisible(false);
+  } else {
+    useSelection(QtPassSettings::isUseSelection());
   }
 
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
@@ -121,8 +122,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setPassStore(
       Util::normalizeFolderPath(ui->storePath->text()));
   QtPassSettings::setUsePass(ui->radioButtonPass->isChecked());
-  QtPassSettings::setClipBoardType(
-      static_cast<Enums::clipBoardType>(ui->comboBoxClipboard->currentIndex()));
+  QtPassSettings::setClipBoardType(ui->comboBoxClipboard->currentIndex());
   QtPassSettings::setUseSelection(ui->checkBoxSelection->isChecked());
   QtPassSettings::setUseAutoclear(ui->checkBoxAutoclear->isChecked());
   QtPassSettings::setAutoclearSeconds(ui->spinBoxAutoclearSeconds->value());
