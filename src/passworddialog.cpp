@@ -37,7 +37,8 @@ PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
     : QDialog(parent), ui(new Ui::PasswordDialog), m_file(file),
       m_isNew(isNew) {
 
-  QtPassSettings::getPass()->Show(m_file);
+  if (!isNew)
+    QtPassSettings::getPass()->Show(m_file);
 
   ui->setupUi(this);
 
