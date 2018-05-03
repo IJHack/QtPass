@@ -559,12 +559,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer profiel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="401"/>
@@ -762,17 +762,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="872"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> en gehele inhoud?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="882"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> en de gehele inhoud? &lt;br&gt;&lt;strong&gt;Let op: ter zijn onverwachte bestanden gevonden, controleer deze voor verwijden.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="892"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation type="unfinished">Weet je zeker dat je %1%2 wil verwijderen? {1%2?}</translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="891"/>
@@ -824,7 +824,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1177"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Open map met bestands beheer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="350"/>
