@@ -18,6 +18,7 @@
 
 **Closed issues:**
 
+- Tiny bit of regression [\#379](https://github.com/IJHack/QtPass/issues/379)
 - Running qtPass remotelly not prompting for the GPG key passphrasse  [\#374](https://github.com/IJHack/QtPass/issues/374)
 - Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
 - Chocolatey package outdated [\#366](https://github.com/IJHack/QtPass/issues/366)
