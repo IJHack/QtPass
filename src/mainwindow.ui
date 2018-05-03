@@ -327,10 +327,6 @@ p, li { white-space: pre-wrap; }
    <addaction name="actionConfig"/>
   </widget>
   <action name="actionAddPassword">
-   <property name="icon">
-    <iconset theme="document-new">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Add password</string>
    </property>
@@ -342,10 +338,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionAddFolder">
-   <property name="icon">
-    <iconset theme="folder-new">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Add folder</string>
    </property>
@@ -354,10 +346,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionEdit">
-   <property name="icon">
-    <iconset theme="document-properties">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Edit</string>
    </property>
@@ -366,10 +354,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionDelete">
-   <property name="icon">
-    <iconset theme="edit-delete">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Delete</string>
    </property>
@@ -378,10 +362,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionPush">
-   <property name="icon">
-    <iconset theme="go-up">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Push</string>
    </property>
@@ -390,10 +370,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionUpdate">
-   <property name="icon">
-    <iconset theme="go-down">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Update</string>
    </property>
@@ -402,10 +378,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionUsers">
-   <property name="icon">
-    <iconset theme="x-office-address-book">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Users</string>
    </property>
@@ -414,10 +386,6 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionConfig">
-   <property name="icon">
-    <iconset theme="applications-system">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
    <property name="text">
     <string>Config</string>
    </property>

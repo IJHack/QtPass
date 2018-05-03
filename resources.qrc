@@ -33,5 +33,6 @@
         <file alias="applications-system.svg">icons/applications-system.svg</file>
         <file alias="edit-copy.svg">icons/edit-copy.svg</file>
         <file alias="edit-clear.svg">icons/edit-clear.svg</file>
+        <file alias="folder-new">icons/folder-new.svg</file>
     </qresource>
 </RCC>
