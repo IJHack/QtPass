@@ -163,6 +163,9 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  const QModelIndex &parent) const {
 #ifdef QT_DEBUG
   qDebug() << action << row;
+#else
+  Q_UNUSED(action)
+  Q_UNUSED(row)
 #endif
 
   QModelIndex useIndex =
