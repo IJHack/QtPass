@@ -346,17 +346,17 @@ email</source>
         <translation>Ingen profil vald</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="65"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="66"/>
         <source>Always copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="71"/>
+        <location filename="../src/configdialog.cpp" line="67"/>
         <source>On-demand copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
