@@ -18,6 +18,7 @@
 
 **Closed issues:**
 
+- Cannot add a new password [\#380](https://github.com/IJHack/QtPass/issues/380)
 - Tiny bit of regression [\#379](https://github.com/IJHack/QtPass/issues/379)
 - Running qtPass remotelly not prompting for the GPG key passphrasse  [\#374](https://github.com/IJHack/QtPass/issues/374)
 - Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
@@ -32,6 +33,7 @@
 
 **Merged pull requests:**
 
+- fix \#380 [\#381](https://github.com/IJHack/QtPass/pull/381) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Small refactoring. [\#378](https://github.com/IJHack/QtPass/pull/378) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Sorry for last error :\) [\#370](https://github.com/IJHack/QtPass/pull/370) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Optimizations :\) [\#367](https://github.com/IJHack/QtPass/pull/367) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
