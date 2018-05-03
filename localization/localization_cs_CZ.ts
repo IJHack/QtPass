@@ -317,57 +317,57 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verze </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="67"/>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>No Clipboard</source>
         <translation>Bez schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
+        <location filename="../src/configdialog.cpp" line="70"/>
         <source>Always copy to clipboard</source>
         <translation>Vždy zkopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="71"/>
         <source>On-demand copy to clipboard</source>
         <translation>Na vyžádání zkopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="414"/>
+        <location filename="../src/configdialog.cpp" line="408"/>
         <source>No profile selected</source>
         <translation>Nebyl vybrán profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="415"/>
+        <location filename="../src/configdialog.cpp" line="409"/>
         <source>No profile selected to delete</source>
         <translation>Nebyl vybrán profil ke smazání</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="453"/>
+        <location filename="../src/configdialog.cpp" line="447"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nenalezeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="454"/>
+        <location filename="../src/configdialog.cpp" line="448"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainstalujte prosím GnuPG na svůj systém.&lt;br&gt;Nainstalujte &lt;strong&gt;gpg&lt;/strong&gt; za použití upřednostňovaného správce balíků&lt;br&gt;nebo ho &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;stáhněte&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="474"/>
+        <location filename="../src/configdialog.cpp" line="468"/>
         <source>Create password-store?</source>
         <translation>Vytvořit úložiště hesel?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="475"/>
+        <location filename="../src/configdialog.cpp" line="469"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Chcete vytvořit úložiště hesel v %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="493"/>
+        <location filename="../src/configdialog.cpp" line="487"/>
         <source>Password store not initialised</source>
         <translation>Úložiště hesel není vytvořeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="494"/>
+        <location filename="../src/configdialog.cpp" line="488"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Adresář %1 nevypadá jako úložiště hesel, nebo ještě nebyl vytvořen.</translation>
     </message>
@@ -433,32 +433,32 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
         <translation>Generovat nový pár klíčů</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="84"/>
+        <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
         <translation>Bezpečnostní heslo</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="108"/>
+        <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="128"/>
+        <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Délka bezpečnostního hesla není nijak omezena a mělo by být zvoleno s rozvahou. Z bezpečnostního pohledu je heslo odemykající privátní klíč jedním z nejslabších bodů v GnuPG (a jiných šifrovacích systémů na stejném principu) jelikož je toto jedinou ochranou v případě, že se další osoba zmocní privátního klíče. &lt;br/&gt;Ideálně by bezpečnostní heslo nemělo obsahovat slovníková hesla a naopak mělo používat mix velkých a malých znaků abecedy i další speciální znaky.&lt;br/&gt;Dobré heslo je zásadní pro bezpečné používání GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="138"/>
+        <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="157"/>
+        <location filename="../src/keygendialog.ui" line="238"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -491,32 +491,32 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="184"/>
+        <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Možnosti expertního nastavení můžete nalézt v &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuálu&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="134"/>
+        <location filename="../src/keygendialog.cpp" line="126"/>
         <source>Invalid name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="135"/>
+        <location filename="../src/keygendialog.cpp" line="127"/>
         <source>Name must be at least 5 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="145"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="146"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="161"/>
+        <location filename="../src/keygendialog.cpp" line="153"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Tato operace může zabrat několik minut.&lt;br /&gt;Je třeba vygenerovat množství náhodných dat. Pro urychlení můžete pomoci (psaním na klávesnici, pohybováním myší, zapisováním na disk) s jejich generováním; toto pomůže generátoru náhodných čísel zvýšit šanci na získání dostatečné entropie.</translation>
     </message>
@@ -533,31 +533,31 @@ Expire-Date: 0
         <translation type="vanished">Přidat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="349"/>
-        <location filename="../src/mainwindow.ui" line="352"/>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.ui" line="362"/>
+        <location filename="../src/mainwindow.ui" line="365"/>
+        <location filename="../src/mainwindow.cpp" line="1206"/>
         <source>Edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="361"/>
-        <location filename="../src/mainwindow.ui" line="364"/>
-        <location filename="../src/mainwindow.cpp" line="1225"/>
+        <location filename="../src/mainwindow.ui" line="374"/>
+        <location filename="../src/mainwindow.ui" line="377"/>
+        <location filename="../src/mainwindow.cpp" line="1218"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="376"/>
+        <location filename="../src/mainwindow.ui" line="389"/>
         <source>git push</source>
         <translation>git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="373"/>
+        <location filename="../src/mainwindow.ui" line="386"/>
         <source>Push</source>
         <translation>Odeslat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="259"/>
+        <location filename="../src/mainwindow.ui" line="271"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -569,53 +569,53 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="329"/>
+        <location filename="../src/mainwindow.ui" line="341"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="388"/>
+        <location filename="../src/mainwindow.ui" line="401"/>
         <source>git pull</source>
         <translation>git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/mainwindow.ui" line="398"/>
         <source>Update</source>
         <translation>Stáhnout</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="400"/>
+        <location filename="../src/mainwindow.ui" line="413"/>
         <source>Manage who can read password in folder</source>
         <translation>Správa oprávnění číst data v adresáři</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="397"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.ui" line="410"/>
+        <location filename="../src/mainwindow.cpp" line="1200"/>
         <source>Users</source>
         <translation>Uživatelé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="412"/>
+        <location filename="../src/mainwindow.ui" line="425"/>
         <source>Configuration</source>
         <translation>Konfigurace</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="409"/>
+        <location filename="../src/mainwindow.ui" line="422"/>
         <source>Config</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="52"/>
+        <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="99"/>
+        <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
         <translation>Hledat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="175"/>
+        <location filename="../src/mainwindow.ui" line="187"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished"></translation>
     </message>
@@ -692,7 +692,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="557"/>
-        <location filename="../src/mainwindow.cpp" line="1363"/>
+        <location filename="../src/mainwindow.cpp" line="1356"/>
         <source>Password</source>
         <translation type="unfinished">Heslo</translation>
     </message>
@@ -748,7 +748,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="845"/>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1255"/>
         <source>New file</source>
         <translation>Nový soubor</translation>
     </message>
@@ -818,33 +818,33 @@ p, li { white-space: pre-wrap; }
         <translation>Profil změněn na %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1204"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="338"/>
-        <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow.ui" line="350"/>
+        <location filename="../src/mainwindow.ui" line="353"/>
+        <location filename="../src/mainwindow.cpp" line="1198"/>
         <source>Add folder</source>
         <translation>Přidat adresář</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="323"/>
-        <location filename="../src/mainwindow.ui" line="326"/>
-        <location filename="../src/mainwindow.cpp" line="1206"/>
+        <location filename="../src/mainwindow.ui" line="335"/>
+        <location filename="../src/mainwindow.ui" line="338"/>
+        <location filename="../src/mainwindow.cpp" line="1199"/>
         <source>Add password</source>
         <translation>Přidat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nový adresář: 
 (Bude umístěn do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
         <source>Copied to clipboard</source>
         <translation>zkopírovat do schránky</translation>
     </message>
@@ -935,32 +935,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="43"/>
+        <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Show</source>
         <translation>Z&amp;obrazit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="45"/>
+        <location filename="../src/trayicon.cpp" line="68"/>
         <source>&amp;Hide</source>
         <translation>&amp;Skrýt</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="48"/>
+        <location filename="../src/trayicon.cpp" line="71"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="51"/>
+        <location filename="../src/trayicon.cpp" line="74"/>
         <source>Ma&amp;ximize</source>
         <translation>Ma&amp;ximalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="54"/>
+        <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Restore</source>
         <translation>Obno&amp;vit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="57"/>
+        <location filename="../src/trayicon.cpp" line="80"/>
         <source>&amp;Quit</source>
         <translation>Ukonči&amp;t</translation>
     </message>
