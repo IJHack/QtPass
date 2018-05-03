@@ -317,17 +317,17 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="65"/>
         <source>No Clipboard</source>
         <translation>No Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="66"/>
         <source>Always copy to clipboard</source>
         <translation>Always copy to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="71"/>
+        <location filename="../src/configdialog.cpp" line="67"/>
         <source>On-demand copy to clipboard</source>
         <translation>On-demand copy to clipboard</translation>
     </message>
@@ -918,7 +918,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="82"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>

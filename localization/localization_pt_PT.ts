@@ -311,17 +311,17 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="65"/>
         <source>No Clipboard</source>
         <translation>Não usar clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="66"/>
         <source>Always copy to clipboard</source>
         <translation>Copiar sempre para o clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="71"/>
+        <location filename="../src/configdialog.cpp" line="67"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copiar para o clipboard quando solicitado</translation>
     </message>
@@ -889,7 +889,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="82"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
