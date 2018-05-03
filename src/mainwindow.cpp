@@ -103,6 +103,23 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
   connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
   connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
+
+  ui->actionAddPassword->setIcon(
+      QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
+  ui->actionAddFolder->setIcon(
+      QIcon::fromTheme("folder-new", QIcon(":/icons/folder-new.svg")));
+  ui->actionEdit->setIcon(QIcon::fromTheme(
+      "document-properties", QIcon(":/icons/document-properties.svg")));
+  ui->actionDelete->setIcon(
+      QIcon::fromTheme("edit-delete", QIcon(":/icons/edit-delete.svg")));
+  ui->actionPush->setIcon(
+      QIcon::fromTheme("go-up", QIcon(":/icons/go-top.svg")));
+  ui->actionUpdate->setIcon(
+      QIcon::fromTheme("go-down", QIcon(":/icons/go-bottom.svg")));
+  ui->actionUsers->setIcon(QIcon::fromTheme(
+      "x-office-address-book", QIcon(":/icons/x-office-address-book.svg")));
+  ui->actionConfig->setIcon(QIcon::fromTheme(
+      "applications-system", QIcon(":/icons/applications-system.svg")));
 }
 
 /**
