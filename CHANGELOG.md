@@ -18,6 +18,7 @@
 
 **Closed issues:**
 
+- Multiple question marks while trying to delete password [\#385](https://github.com/IJHack/QtPass/issues/385)
 - No button icons and text in "menu bar" [\#383](https://github.com/IJHack/QtPass/issues/383)
 - Cannot add a new password [\#380](https://github.com/IJHack/QtPass/issues/380)
 - Tiny bit of regression [\#379](https://github.com/IJHack/QtPass/issues/379)
@@ -36,6 +37,7 @@
 
 **Merged pull requests:**
 
+- 2 simple fixes [\#386](https://github.com/IJHack/QtPass/pull/386) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Should fix \#383 [\#384](https://github.com/IJHack/QtPass/pull/384) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Move connect action to main.cpp.  Default search text as parameter of… [\#382](https://github.com/IJHack/QtPass/pull/382) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix \#380 [\#381](https://github.com/IJHack/QtPass/pull/381) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
