@@ -345,6 +345,7 @@ bool MainWindow::checkConfig() {
 
   model.setNameFilters(QStringList() << "*.gpg");
   model.setNameFilterDisables(false);
+  model.setFilter(QDir::NoDotAndDotDot);
 
   proxyModel.setSourceModel(&model);
   proxyModel.setModelAndStore(&model, passStore);
