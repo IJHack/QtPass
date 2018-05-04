@@ -664,7 +664,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="909"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation type="unfinished">Vill du verkligen ta bort %1? {1%2?}</translation>
+        <translation type="unfinished">Vill du verkligen ta bort %%21?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1253"/>
