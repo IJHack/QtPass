@@ -44,6 +44,11 @@ void RealPass::Show(QString file) {
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
 
+void RealPass::OTPShow(QString file) {
+  executePass(PASS_OTP_SHOW, {"otp", "-c", file}, "", true);
+}
+
+
 /**
  * @brief RealPass::Insert pass insert
  */

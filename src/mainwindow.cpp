@@ -104,6 +104,9 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
   connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
 
+  //if (check if pass otp is installed)
+    connect(ui->actionOTP, SIGNAL(triggered()), this, SLOT(onOTP()));
+
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
   ui->actionAddFolder->setIcon(
@@ -916,6 +919,15 @@ void MainWindow::onDelete() {
 }
 
 /**
+ * @brief MainWindow::onOTP try and generate (selected) OTP code.
+ */
+void MainWindow::onOTP() {
+  QString file = getFile(ui->treeView->currentIndex(), true);
+  generateOTP(file);
+  QTextStream(stdout) << "OTP" << endl;
+}
+
+/**
  * @brief MainWindow::onEdit try and edit (selected) password.
  */
 void MainWindow::onEdit() {
@@ -1271,6 +1283,18 @@ void MainWindow::editPassword(const QString &file) {
     if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
       onUpdate(true);
     setPassword(file, false);
+  }
+}
+
+/**
+ * @brief Mainwindow::generateOTP read OTP url and generate an OTP code
+ * via pass otp, then copies the code to the clipboard.
+ */
+void MainWindow::generateOTP(const QString &file) {
+  if (!file.isEmpty()) {
+    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
+      onUpdate(true);
+    QtPassSettings::getPass()->OTPShow(file);
   }
 }
 

@@ -20,6 +20,7 @@ public:
   virtual void GitPull_b() Q_DECL_OVERRIDE;
   virtual void GitPush() Q_DECL_OVERRIDE;
   virtual void Show(QString file) Q_DECL_OVERRIDE;
+  virtual void OTPShow(QString file) Q_DECL_OVERRIDE;
   virtual void Insert(QString file, QString value,
                       bool overwrite = false) Q_DECL_OVERRIDE;
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;

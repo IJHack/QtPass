@@ -63,6 +63,7 @@ private slots:
   void addFolder();
   void onEdit();
   void onDelete();
+  void onOTP();
   void onPush();
   void onUpdate(bool block = false);
   void onUsers();
@@ -81,6 +82,7 @@ private slots:
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
   void editPassword(const QString &);
+  void generateOTP(const QString &);
   void focusInput();
   void copyTextToClipboard(const QString &text);
   void copyPasswordFromTreeview();

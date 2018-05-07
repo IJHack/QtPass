@@ -50,6 +50,10 @@ void ImitatePass::Show(QString file) {
   executeGpg(PASS_SHOW, args);
 }
 
+void ImitatePass::OTPShow(QString file) {
+  
+}
+
 /**
  * @brief ImitatePass::Insert create new file with encrypted content
  *
