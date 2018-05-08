@@ -199,7 +199,7 @@ void MainWindow::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
-  //connect(pass, &Pass::finishedOtpShow, this, &MainWindow::passOtpHandler);
+  connect(pass, &Pass::finishedOtpShow, this, &MainWindow::passOtpHandler);
   connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
   connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
   connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
@@ -595,6 +595,10 @@ void MainWindow::passShowHandler(const QString &p_output) {
   }
 
   DisplayInTextBrowser(output);
+  enableUiElements(true);
+}
+
+void MainWindow::passOtpHandler(const QString &p_output) {
   enableUiElements(true);
 }
 
