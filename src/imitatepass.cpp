@@ -49,11 +49,9 @@ void ImitatePass::Show(QString file) {
                       "--batch", "--use-agent", file};
   executeGpg(PASS_SHOW, args);
 }
+void ImitatePass::OtpGenerate(QString file) {
 
-void ImitatePass::OtpShow(QString file) {
-  
 }
-
 /**
  * @brief ImitatePass::Insert create new file with encrypted content
  *

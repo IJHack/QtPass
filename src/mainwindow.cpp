@@ -103,9 +103,7 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
   connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
   connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
-
-  //if (check if pass otp is installed)
-    connect(ui->actionOtp, SIGNAL(triggered()), this, SLOT(onOtp()));
+  connect(ui->actionOtp, SIGNAL(triggered()), this, SLOT(onOtp()));
 
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
@@ -199,7 +197,7 @@ void MainWindow::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
-  connect(pass, &Pass::finishedOtpShow, this, &MainWindow::passOtpHandler);
+  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
   connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
   connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
   connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
@@ -599,6 +597,13 @@ void MainWindow::passShowHandler(const QString &p_output) {
 }
 
 void MainWindow::passOtpHandler(const QString &p_output) {
+  if (!p_output.isEmpty()) {
+      addToGridLayout(ui->gridLayout->count()+1, tr("OTP Code"), p_output);
+      copyTextToClipboard(p_output);
+  }
+  if (QtPassSettings::isUseAutoclearPanel()) {
+    clearPanelTimer.start();
+  }
   enableUiElements(true);
 }
 
@@ -931,7 +936,10 @@ void MainWindow::onDelete() {
  */
 void MainWindow::onOtp() {
   QString file = getFile(ui->treeView->currentIndex(), true);
-  generateOtp(file);
+  if (!file.isEmpty()) {
+    if (QtPassSettings::isUseOtp())
+      QtPassSettings::getPass()->OtpGenerate(file);
+  }
 }
 
 /**
@@ -1294,17 +1302,6 @@ void MainWindow::editPassword(const QString &file) {
 }
 
 /**
- * @brief Mainwindow::generateOTP read OTP url and generate an OTP code
- * via pass otp, then copies the code to the clipboard.
- */
-void MainWindow::generateOtp(const QString &file) {
-  if (!file.isEmpty()) {
-    if (QtPassSettings::isUseOtp())
-      QtPassSettings::getPass()->OtpShow(file);
-  }
-}
-
-/**
  * @brief MainWindow::clearTemplateWidgets empty the template widget fields in
  * the UI
  */
@@ -1459,7 +1456,10 @@ void MainWindow::updateGitButtonVisibility() {
 }
 
 void MainWindow::updateOtpButtonVisibility() {
-  if(!QtPassSettings::isUseOtp())
+  #if defined(Q_OS_WIN ) || defined(__APPLE__)
+    ui->actionOtp->setVisible(false);
+  #endif
+  if (!QtPassSettings::isUseOtp())
     ui->actionOtp->setEnabled(false);
   else
     ui->actionOtp->setEnabled(true);
