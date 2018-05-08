@@ -319,7 +319,7 @@ p, li { white-space: pre-wrap; }
    <addaction name="separator"/>
    <addaction name="actionEdit"/>
    <addaction name="actionDelete"/>
-   <addaction name="actionOTP"/>
+   <addaction name="actionOtp"/>
    <addaction name="separator"/>
    <addaction name="actionPush"/>
    <addaction name="actionUpdate"/>
@@ -362,7 +362,7 @@ p, li { white-space: pre-wrap; }
     <string>Delete</string>
    </property>
   </action>
-  <action name="actionOTP">
+  <action name="actionOtp">
    <property name="text">
     <string>OTP</string>
    </property>

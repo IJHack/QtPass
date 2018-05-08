@@ -50,7 +50,7 @@ void ImitatePass::Show(QString file) {
   executeGpg(PASS_SHOW, args);
 }
 
-void ImitatePass::OTPShow(QString file) {
+void ImitatePass::OtpShow(QString file) {
   
 }
 

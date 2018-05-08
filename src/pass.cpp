@@ -181,6 +181,8 @@ void Pass::finished(int id, int exitCode, const QString &out,
   case PASS_SHOW:
     emit finishedShow(out);
     break;
+  case PASS_OTP_SHOW:
+    emit finishedOtpShow(out);
   case PASS_INSERT:
     emit finishedInsert(out, err);
     break;
