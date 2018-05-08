@@ -141,6 +141,9 @@ public:
   static bool isUseGit(const bool &defaultValue = QVariant().toBool());
   static void setUseGit(const bool &useGit);
 
+  static bool isUseOtp(const bool &defaultValue = QVariant().toBool());
+  static void setUseOtp(const bool &useOtp);
+
   static bool isUsePwgen(const bool &defaultValue = QVariant().toBool());
   static void setUsePwgen(const bool &usePwgen);
 

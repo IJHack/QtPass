@@ -367,7 +367,7 @@ p, li { white-space: pre-wrap; }
     <string>OTP</string>
    </property>
    <property name="toolTip">
-    <string>Generate OTP</string>
+    <string>Generate OTP and copy to clipboard</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>

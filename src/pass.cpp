@@ -183,6 +183,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
     break;
   case PASS_OTP_SHOW:
     emit finishedOtpShow(out);
+    break;
   case PASS_INSERT:
     emit finishedInsert(out, err);
     break;

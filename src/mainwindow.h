@@ -141,6 +141,7 @@ private:
   void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();
+  void updateOtpButtonVisibility();
   void enableGitButtons(const bool &);
 };
 

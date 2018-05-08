@@ -54,6 +54,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
   useTrayIcon(QtPassSettings::isUseTrayIcon());
   useGit(QtPassSettings::isUseGit());
+  useOtp(QtPassSettings::isUseOtp());
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
 
@@ -137,6 +138,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isChecked());
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
+  QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
   QtPassSettings::setPwgenExecutable(ui->pwgenPath->text());
   QtPassSettings::setUsePwgen(ui->checkBoxUsePwgen->isChecked());
   QtPassSettings::setAvoidCapitals(ui->checkBoxAvoidCapitals->isChecked());
@@ -556,6 +558,10 @@ void ConfigDialog::closeEvent(QCloseEvent *event) {
 void ConfigDialog::useGit(bool useGit) {
   ui->checkBoxUseGit->setChecked(useGit);
   on_checkBoxUseGit_clicked();
+}
+
+void ConfigDialog::useOtp(bool useOtp) {
+  ui->checkBoxUseOtp->setChecked(useOtp);
 }
 
 /**

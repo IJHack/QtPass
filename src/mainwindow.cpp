@@ -199,6 +199,7 @@ void MainWindow::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+  //connect(pass, &Pass::finishedOtpShow, this, &MainWindow::passOtpHandler);
   connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
   connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
   connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
@@ -380,6 +381,7 @@ bool MainWindow::checkConfig() {
                               QtPassSettings::getAutoclearPanelSeconds());
   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
   updateGitButtonVisibility();
+  updateOtpButtonVisibility();
 
   startupPhase = false;
   return true;
@@ -422,6 +424,7 @@ void MainWindow::config() {
                                       QtPassSettings::getAutoclearSeconds());
 
       updateGitButtonVisibility();
+      updateOtpButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == NULL)
         initTrayIcon();
       else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
@@ -726,6 +729,7 @@ void MainWindow::enableUiElements(bool state) {
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
   updateGitButtonVisibility();
+  updateOtpButtonVisibility();
 }
 
 void MainWindow::restoreWindow() {
@@ -1291,9 +1295,8 @@ void MainWindow::editPassword(const QString &file) {
  */
 void MainWindow::generateOtp(const QString &file) {
   if (!file.isEmpty()) {
-    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
-      onUpdate(true);
-    QtPassSettings::getPass()->OtpShow(file);
+    if (QtPassSettings::isUseOtp())
+      QtPassSettings::getPass()->OtpShow(file);
   }
 }
 
@@ -1449,6 +1452,13 @@ void MainWindow::updateGitButtonVisibility() {
   } else {
     enableGitButtons(true);
   }
+}
+
+void MainWindow::updateOtpButtonVisibility() {
+  if(!QtPassSettings::isUseOtp())
+    ui->actionOtp->setEnabled(false);
+  else
+    ui->actionOtp->setEnabled(true);
 }
 
 void MainWindow::enableGitButtons(const bool &state) {
