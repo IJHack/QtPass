@@ -48,10 +48,12 @@ void ImitatePass::Show(QString file) {
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                       "--batch", "--use-agent", file};
   executeGpg(PASS_SHOW, args);
+
 }
 void ImitatePass::OtpGenerate(QString file) {
 
 }
+
 /**
  * @brief ImitatePass::Insert create new file with encrypted content
  *
