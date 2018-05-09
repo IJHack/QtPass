@@ -27,3 +27,21 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
+
+Redirect 301 /features /#features
+Redirect 301 /installation /#installation
+Redirect 301 /linux /#linux
+Redirect 301 /windows /#windows
+Redirect 301 /osx /#osx
+Redirect 301 /macos /#osx
+Redirect 301 /dependencies /#dependencies
+Redirect 301 /security-considerations /#security-considerations
+Redirect 301 /planned-features /#planned-features
+Redirect 301 /known-issues /#known-issues
+Redirect 301 /faq /#faq
+Redirect 301 /cant-save-a-password /#cant-save-a-password
+Redirect 301 /i-have-an-issue-with-gnome-keyring /#i-have-an-issue-with-gnome-keyring
+Redirect 301 /can-i-import-from-keepass-lastpass-or-x /#can-i-import-from-keepass-lastpass-or-x
+Redirect 301 /current-FAQ /#current-FAQ
+Redirect 301 /where-can-i-ask-for-help /#where-can-i-ask-for-help
+Redirect 301 /changelogs /#changelogs
