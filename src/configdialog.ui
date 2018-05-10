@@ -518,7 +518,7 @@
           </widget>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
            <item>
             <widget class="QCheckBox" name="checkBoxUseOtp">
              <property name="enabled">

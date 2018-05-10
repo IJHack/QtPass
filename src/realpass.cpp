@@ -49,7 +49,7 @@ void RealPass::Show(QString file) {
  * @param file      file containig OTP uri
  */
 void RealPass::OtpGenerate(QString file) {
-  executePass(PASS_OTP_SHOW, {"otp", file}, "", true);
+  executePass(PASS_OTP_GENERATE, {"otp", file}, "", true);
 }
 
 
