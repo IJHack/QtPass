@@ -51,7 +51,8 @@ void ImitatePass::Show(QString file) {
 
 }
 void ImitatePass::OtpGenerate(QString file) {
-
+  file = QtPassSettings::getPassStore() + file + ".gpg";
+  //get password and generate otp
 }
 
 /**
