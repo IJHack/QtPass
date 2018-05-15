@@ -23,7 +23,7 @@ signals:
 
 private slots:
   void changeIconDefault();
-  void buttonClicked(bool);
+  void buttonClicked(QString);
 
 private:
   QString textToCopy;

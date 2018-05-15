@@ -22,9 +22,8 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
 
     sysTrayIcon->show();
 
-    QObject::connect(sysTrayIcon,
-                     SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
-                     SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    QObject::connect(sysTrayIcon, &QSystemTrayIcon::activated, this,
+                     &TrayIcon::iconActivated);
 
     isAllocated = true;
   } else {
@@ -64,21 +63,21 @@ bool TrayIcon::getIsAllocated() { return isAllocated; }
  */
 void TrayIcon::createActions() {
   showAction = new QAction(tr("&Show"), this);
-  connect(showAction, SIGNAL(triggered()), parentwin, SLOT(show()));
+  connect(showAction, &QAction::triggered, parentwin, &QWidget::show);
   hideAction = new QAction(tr("&Hide"), this);
-  connect(hideAction, SIGNAL(triggered()), parentwin, SLOT(hide()));
+  connect(hideAction, &QAction::triggered, parentwin, &QWidget::hide);
 
   minimizeAction = new QAction(tr("Mi&nimize"), this);
-  connect(minimizeAction, SIGNAL(triggered()), parentwin,
-          SLOT(showMinimized()));
+  connect(minimizeAction, &QAction::triggered, parentwin,
+          &QWidget::showMinimized);
   maximizeAction = new QAction(tr("Ma&ximize"), this);
-  connect(maximizeAction, SIGNAL(triggered()), parentwin,
-          SLOT(showMaximized()));
+  connect(maximizeAction, &QAction::triggered, parentwin,
+          &QWidget::showMaximized);
   restoreAction = new QAction(tr("&Restore"), this);
-  connect(restoreAction, SIGNAL(triggered()), parentwin, SLOT(showNormal()));
+  connect(restoreAction, &QAction::triggered, parentwin, &QWidget::showNormal);
 
   quitAction = new QAction(tr("&Quit"), this);
-  connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+  connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 }
 
 /**

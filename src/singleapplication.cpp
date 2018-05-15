@@ -25,8 +25,8 @@ SingleApplication::SingleApplication(int &argc, char *argv[],
     // create local server and listen to incomming messages from other
     // instances.
     localServer.reset(new QLocalServer(this));
-    connect(localServer.data(), SIGNAL(newConnection()), this,
-            SLOT(receiveMessage()));
+    connect(localServer.data(), &QLocalServer::newConnection, this,
+            &SingleApplication::receiveMessage);
     localServer->listen(_uniqueKey);
   }
 }

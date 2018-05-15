@@ -10,10 +10,10 @@
 UsersDialog::UsersDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog) {
   ui->setupUi(this);
-  connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-  connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-  connect(ui->listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this,
-          SLOT(itemChange(QListWidgetItem *)));
+  connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+  connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+  connect(ui->listWidget, &QListWidget::itemChanged, this,
+          &UsersDialog::itemChange);
   userList = NULL;
 
 #if QT_VERSION >= 0x050200

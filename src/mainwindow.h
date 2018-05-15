@@ -57,6 +57,8 @@ protected:
 
 public slots:
   void deselect();
+  void clearClipboard();
+  void messageAvailable(QString message);
 
 private slots:
   void addPassword();
@@ -71,11 +73,9 @@ private slots:
   void on_treeView_doubleClicked(const QModelIndex &index);
   void processFinished(const QString &, const QString &);
   void processError(QProcess::ProcessError);
-  void clearClipboard();
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
@@ -85,7 +85,6 @@ private slots:
   void copyTextToClipboard(const QString &text);
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
-
   void executeWrapperStarted();
   void showStatusMessage(QString msg, int timeout);
   void startReencryptPath();

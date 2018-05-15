@@ -63,10 +63,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
   //    only for ipass
-  connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,
-          SLOT(startReencryptPath()));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
-          SLOT(endReencryptPath()));
+  connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
+          this, &MainWindow::startReencryptPath);
+  connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
+          this, &MainWindow::endReencryptPath);
 
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
@@ -94,15 +94,16 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
  * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
  */
 void MainWindow::initToolBarButtons() {
-  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(addPassword()));
-  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
-  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
-  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
-  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
-  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
-  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
+  connect(ui->actionAddPassword, &QAction::triggered, this,
+          &MainWindow::addPassword);
+  connect(ui->actionAddFolder, &QAction::triggered, this,
+          &MainWindow::addFolder);
+  connect(ui->actionEdit, &QAction::triggered, this, &MainWindow::onEdit);
+  connect(ui->actionDelete, &QAction::triggered, this, &MainWindow::onDelete);
+  connect(ui->actionPush, &QAction::triggered, this, &MainWindow::onPush);
+  connect(ui->actionUpdate, &QAction::triggered, this, &MainWindow::onUpdate);
+  connect(ui->actionUsers, &QAction::triggered, this, &MainWindow::onUsers);
+  connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
 
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
@@ -345,7 +346,12 @@ bool MainWindow::checkConfig() {
 
   model.setNameFilters(QStringList() << "*.gpg");
   model.setNameFilterDisables(false);
-  model.setFilter(QDir::NoDotAndDotDot);
+  /*
+   * I added this to solve Windows bug but now on GNU/Linux the main folder,
+   * if hidden, disappear
+   *
+   * model.setFilter(QDir::NoDot);
+   */
 
   proxyModel.setSourceModel(&model);
   proxyModel.setModelAndStore(&model, passStore);
@@ -364,13 +370,14 @@ bool MainWindow::checkConfig() {
   ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
   ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
-          this, SLOT(showContextMenu(const QPoint &)));
-  connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
+  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showContextMenu);
+  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
+          &MainWindow::deselect);
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint &)),
-          this, SLOT(showBrowserContextMenu(const QPoint &)));
+  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showBrowserContextMenu);
 
   updateProfileBox();
   QtPassSettings::getPass()->updateEnv();
@@ -1196,13 +1203,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     QAction *addFolder = contextMenu.addAction(tr("Add folder"));
     QAction *addPassword = contextMenu.addAction(tr("Add password"));
     QAction *users = contextMenu.addAction(tr("Users"));
-    connect(openFolder, SIGNAL(triggered()), this, SLOT(openFolder()));
-    connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-    connect(addPassword, SIGNAL(triggered()), this, SLOT(addPassword()));
-    connect(users, SIGNAL(triggered()), this, SLOT(onUsers()));
+    connect(openFolder, &QAction::triggered, this, &MainWindow::openFolder);
+    connect(addFolder, &QAction::triggered, this, &MainWindow::addFolder);
+    connect(addPassword, &QAction::triggered, this, &MainWindow::addPassword);
+    connect(users, &QAction::triggered, this, &MainWindow::onUsers);
   } else if (fileOrFolder.isFile()) {
     QAction *edit = contextMenu.addAction(tr("Edit"));
-    connect(edit, SIGNAL(triggered()), this, SLOT(onEdit()));
+    connect(edit, &QAction::triggered, this, &MainWindow::onEdit);
   }
   if (selected) {
     // if (useClipboard != CLIPBOARD_NEVER) {
@@ -1214,7 +1221,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     // }
     contextMenu.addSeparator();
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
-    connect(deleteItem, SIGNAL(triggered()), this, SLOT(onDelete()));
+    connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
   }
   contextMenu.exec(globalPos);
 }
@@ -1342,8 +1349,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked(QString)), this,
-            SLOT(copyTextToClipboard(QString)));
+    connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
+            &MainWindow::copyTextToClipboard);
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);
