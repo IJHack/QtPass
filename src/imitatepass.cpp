@@ -53,9 +53,7 @@ void ImitatePass::Show(QString file) {
 /**
  * @brief ImitatePass::OtpGenerate generates an otp code
  */
-void ImitatePass::OtpGenerate(QString file) {
-  
-}
+void ImitatePass::OtpGenerate(QString file) {}
 
 /**
  * @brief ImitatePass::Insert create new file with encrypted content

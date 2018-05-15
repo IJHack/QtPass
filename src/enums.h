@@ -32,7 +32,6 @@ enum PROCESS {
   PROCESS_COUNT,
   INVALID,
   PASS_OTP_GENERATE,
-
 };
 
 } // namespace Enums
