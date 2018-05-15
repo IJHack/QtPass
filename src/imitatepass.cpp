@@ -42,7 +42,6 @@ void ImitatePass::GitPush() {
 /**
  * @brief ImitatePass::Show shows content of file
  */
-
 void ImitatePass::Show(QString file) {
   file = QtPassSettings::getPassStore() + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
@@ -50,9 +49,12 @@ void ImitatePass::Show(QString file) {
   executeGpg(PASS_SHOW, args);
 
 }
+
+/**
+ * @brief ImitatePass::OtpGenerate generates an otp code
+ */
 void ImitatePass::OtpGenerate(QString file) {
-  file = QtPassSettings::getPassStore() + file + ".gpg";
-  //get password and generate otp
+  
 }
 
 /**
