@@ -34,6 +34,7 @@ class MainWindow;
     This class could really do with an overhaul.
  */
 class Pass;
+class QtPass;
 class TrayIcon;
 class MainWindow : public QMainWindow {
   Q_OBJECT
@@ -49,11 +50,18 @@ public:
   void config();
   void executePassGitInit();
 
+  void setTextTextBrowser(const QString &text);
+  void setUiElementsEnabled(bool state);
+  void flashText(const QString &text, const bool isError);
+
 protected:
   void closeEvent(QCloseEvent *event);
   void keyPressEvent(QKeyEvent *event);
   void changeEvent(QEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
+
+signals:
+  void uiEnabled(bool state);
 
 public slots:
   void deselect();
@@ -100,6 +108,7 @@ private slots:
   void keyGenerationComplete(const QString &p_output, const QString &p_errout);
 
 private:
+  QtPass *m_qtPass;
   QScopedPointer<Ui::MainWindow> ui;
   QFileSystemModel model;
   StoreModel proxyModel;
@@ -118,7 +127,6 @@ private:
   void initStatusBar();
 
   void updateText();
-  void enableUiElements(bool state);
   void restoreWindow();
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);

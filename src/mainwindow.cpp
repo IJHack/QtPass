@@ -23,6 +23,7 @@
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
 #include "trayicon.h"
@@ -45,6 +46,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   qt_set_sequence_auto_mnemonic(true);
 #endif
   ui->setupUi(this);
+
+  m_qtPass = new QtPass();
+  m_qtPass->setMainWindow(this);
 
   // i think this should be moved out of MainWindow (in main.cpp as example)
   if (!checkConfig()) {
@@ -81,7 +85,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
 
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
 
@@ -176,6 +180,17 @@ void MainWindow::changeEvent(QEvent *event) {
   }
 }
 
+void MainWindow::setTextTextBrowser(const QString &text) {
+  ui->textBrowser->setText(text);
+}
+
+void MainWindow::flashText(const QString &text, const bool isError) {
+    if (isError) ui->textBrowser->setTextColor(Qt::red);
+
+    ui->textBrowser->setText(text);
+    ui->textBrowser->setTextColor(Qt::black);
+}
+
 /**
  * @brief MainWindow::connectPassSignalHandlers this method connects Pass
  *                                              signals to approprite MainWindow
@@ -186,7 +201,7 @@ void MainWindow::changeEvent(QEvent *event) {
 void MainWindow::connectPassSignalHandlers(Pass *pass) {
   //    TODO(bezet): this is never emitted(should be), also naming(see
   //    critical())
-  connect(pass, &Pass::error, this, &MainWindow::processError);
+  // connect(pass, &Pass::error, this, &MainWindow::processError);
   connect(pass, &Pass::startingExecuteWrapper, this,
           &MainWindow::executeWrapperStarted);
   connect(pass, &Pass::critical, this, &MainWindow::critical);
@@ -533,7 +548,7 @@ void MainWindow::executePassGitInit() {
 void MainWindow::executeWrapperStarted() {
   clearTemplateWidgets();
   ui->textBrowser->clear();
-  enableUiElements(false);
+  setUiElementsEnabled(false);
   clearPanelTimer.stop();
 }
 
@@ -597,7 +612,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   }
 
   DisplayInTextBrowser(output);
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 }
 
 void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
@@ -655,7 +670,7 @@ void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
       output = ui->textBrowser->toHtml() + output;
     ui->textBrowser->setHtml(output);
   }
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 }
 
 /**
@@ -710,15 +725,15 @@ void MainWindow::processFinished(const QString &p_output,
   //    Sometimes there is error output even with 0 exit code, which is
   //    assumed in this function
   processErrorExit(0, p_errout);
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 }
 
 /**
- * @brief MainWindow::enableUiElements enable or disable the relevant UI
+ * @brief MainWindow::setUiElementsEnabled enable or disable the relevant UI
  * elements
  * @param state
  */
-void MainWindow::enableUiElements(bool state) {
+void MainWindow::setUiElementsEnabled(bool state) {
   ui->treeView->setEnabled(state);
   ui->lineEdit->setEnabled(state);
   ui->lineEdit->installEventFilter(this);
@@ -776,7 +791,7 @@ void MainWindow::processError(QProcess::ProcessError error) {
   ui->textBrowser->setTextColor(Qt::red);
   ui->textBrowser->setText(errorString);
   ui->textBrowser->setTextColor(Qt::black);
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 }
 
 /**
@@ -1408,14 +1423,14 @@ void MainWindow::showStatusMessage(QString msg, int timeout) {
  * @brief MainWindow::startReencryptPath disable ui elements and treeview
  */
 void MainWindow::startReencryptPath() {
-  enableUiElements(false);
+  setUiElementsEnabled(false);
   ui->treeView->setDisabled(true);
 }
 
 /**
  * @brief MainWindow::endReencryptPath re-enable ui elements
  */
-void MainWindow::endReencryptPath() { enableUiElements(true); }
+void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
 
 /**
  * @brief MainWindow::critical critical message popup wrapper.
