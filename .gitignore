@@ -18,3 +18,4 @@ ui_*.h
 localization/*.qm
 build/
 .idea
+.vscode

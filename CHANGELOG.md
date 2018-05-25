@@ -6,8 +6,17 @@
 
 **Closed issues:**
 
+- Consider repology badges [\#396](https://github.com/IJHack/QtPass/issues/396)
+- Unable to create new password [\#391](https://github.com/IJHack/QtPass/issues/391)
 - Duplicate prefix in installation of tests directory in v1.2.2. [\#389](https://github.com/IJHack/QtPass/issues/389)
+- Compilation error on FreeBSD member access into incomplete type [\#388](https://github.com/IJHack/QtPass/issues/388)
 - No icons on macOS [\#377](https://github.com/IJHack/QtPass/issues/377)
+
+**Merged pull requests:**
+
+- Add support for OTP code generation on Linux as requested in \#327 [\#394](https://github.com/IJHack/QtPass/pull/394) ([Noettore](https://github.com/Noettore))
+- Revert scroll bar changes [\#393](https://github.com/IJHack/QtPass/pull/393) ([destanyol](https://github.com/destanyol))
+- Fix High Dpi Support. Works now under Windows and KDE/Plasma. [\#392](https://github.com/IJHack/QtPass/pull/392) ([hgraeber](https://github.com/hgraeber))
 
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)

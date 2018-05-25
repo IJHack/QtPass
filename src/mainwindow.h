@@ -63,6 +63,7 @@ private slots:
   void addFolder();
   void onEdit();
   void onDelete();
+  void onOtp();
   void onPush();
   void onUpdate(bool block = false);
   void onUsers();
@@ -92,6 +93,7 @@ private slots:
   void endReencryptPath();
   void critical(QString, QString);
   void passShowHandler(const QString &);
+  void passOtpHandler(const QString &);
   void passStoreChanged(const QString &, const QString &);
   void doGitPush();
 
@@ -139,6 +141,7 @@ private:
   void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();
+  void updateOtpButtonVisibility();
   void enableGitButtons(const bool &);
 };
 

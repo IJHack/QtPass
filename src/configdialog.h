@@ -36,6 +36,7 @@ public:
   bool hideOnClose();
   void useTrayIcon(bool useTrayIdon);
   void useGit(bool useGit);
+  void useOtp(bool useOtp);
   void setPwgenPath(QString);
   void usePwgen(bool usePwgen);
   void setPasswordConfiguration(const PasswordConfiguration &config);
