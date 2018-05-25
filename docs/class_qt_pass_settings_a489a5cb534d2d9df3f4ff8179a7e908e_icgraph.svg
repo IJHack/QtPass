@@ -8,40 +8,40 @@
  viewBox="0.00 0.00 311.67 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::isHideOnClose</title>
-<!-- Node357 -->
+<!-- Node359 -->
 <g id="node1" class="node">
-<title>Node357</title>
+<title>Node359</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-13.5 0,-41.5 131.6055,-41.5 131.6055,-13.5 0,-13.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isHideOn</text>
 <text text-anchor="middle" x="65.8027" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Close</text>
 </g>
-<!-- Node358 -->
+<!-- Node360 -->
 <g id="node2" class="node">
-<title>Node358</title>
+<title>Node360</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="167.6055,-37.5 167.6055,-55.5 303.6738,-55.5 303.6738,-37.5 167.6055,-37.5"/>
 <text text-anchor="middle" x="235.6396" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node357&#45;&gt;Node358 -->
+<!-- Node359&#45;&gt;Node360 -->
 <g id="edge1" class="edge">
-<title>Node357&#45;&gt;Node358</title>
+<title>Node359&#45;&gt;Node360</title>
 <path fill="none" stroke="#191970" d="M142.1502,-36.0411C150.5753,-36.9837 159.114,-37.9389 167.4302,-38.8693"/>
 <polygon fill="#191970" stroke="#191970" points="142.2796,-32.5339 131.9524,-34.9003 141.5013,-39.4905 142.2796,-32.5339"/>
 </g>
-<!-- Node359 -->
+<!-- Node361 -->
 <g id="node3" class="node">
-<title>Node359</title>
+<title>Node361</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit. ">
 <polygon fill="none" stroke="#000000" points="171.7827,-.5 171.7827,-18.5 299.4966,-18.5 299.4966,-.5 171.7827,-.5"/>
 <text text-anchor="middle" x="235.6396" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::closeEvent</text>
 </a>
 </g>
 </g>
-<!-- Node357&#45;&gt;Node359 -->
+<!-- Node359&#45;&gt;Node361 -->
 <g id="edge2" class="edge">
-<title>Node357&#45;&gt;Node359</title>
+<title>Node359&#45;&gt;Node361</title>
 <path fill="none" stroke="#191970" d="M142.1391,-19.4096C151.9898,-18.3655 161.9962,-17.305 171.6207,-16.285"/>
 <polygon fill="#191970" stroke="#191970" points="141.5278,-15.9547 131.9524,-20.4892 142.2656,-22.9157 141.5278,-15.9547"/>
 </g>

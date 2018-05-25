@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 323.37 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::setPwgenPath</title>
-<!-- Node74 -->
+<!-- Node76 -->
 <g id="node1" class="node">
-<title>Node74</title>
+<title>Node76</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 143.2998,-18.5 143.2998,-.5 0,-.5"/>
 <text text-anchor="middle" x="71.6499" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::setPwgenPath</text>
 </g>
-<!-- Node75 -->
+<!-- Node77 -->
 <g id="node2" class="node">
-<title>Node75</title>
+<title>Node77</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="179.2998,-.5 179.2998,-18.5 315.3682,-18.5 315.3682,-.5 179.2998,-.5"/>
 <text text-anchor="middle" x="247.334" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node75 -->
+<!-- Node76&#45;&gt;Node77 -->
 <g id="edge1" class="edge">
-<title>Node74&#45;&gt;Node75</title>
+<title>Node76&#45;&gt;Node77</title>
 <path fill="none" stroke="#191970" d="M153.4439,-9.5C162.081,-9.5 170.7965,-9.5 179.2543,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="153.3608,-6.0001 143.3607,-9.5 153.3607,-13.0001 153.3608,-6.0001"/>
 </g>

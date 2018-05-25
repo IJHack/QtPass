@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 316.13 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>ConfigDialog::setPasswordConfiguration</title>
-<!-- Node71 -->
+<!-- Node73 -->
 <g id="node1" class="node">
-<title>Node71</title>
+<title>Node73</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 136.0586,-28.5 136.0586,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::setPassword</text>
 <text text-anchor="middle" x="68.0293" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Configuration</text>
 </g>
-<!-- Node72 -->
+<!-- Node74 -->
 <g id="node2" class="node">
-<title>Node72</title>
+<title>Node74</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="172.0586,-5.5 172.0586,-23.5 308.127,-23.5 308.127,-5.5 172.0586,-5.5"/>
 <text text-anchor="middle" x="240.0928" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node71&#45;&gt;Node72 -->
+<!-- Node73&#45;&gt;Node74 -->
 <g id="edge1" class="edge">
-<title>Node71&#45;&gt;Node72</title>
+<title>Node73&#45;&gt;Node74</title>
 <path fill="none" stroke="#191970" d="M146.6953,-14.5C155.0869,-14.5 163.5726,-14.5 171.83,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="146.5278,-11.0001 136.5277,-14.5 146.5277,-18.0001 146.5278,-11.0001"/>
 </g>

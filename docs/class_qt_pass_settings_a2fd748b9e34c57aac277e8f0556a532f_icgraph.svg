@@ -8,129 +8,129 @@
  viewBox="0.00 0.00 308.33 286.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 282)">
 <title>QtPassSettings::isUseGit</title>
-<!-- Node393 -->
+<!-- Node395 -->
 <g id="node1" class="node">
-<title>Node393</title>
+<title>Node395</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-129.5 0,-147.5 128.2607,-147.5 128.2607,-129.5 0,-129.5"/>
 <text text-anchor="middle" x="64.1304" y="-135.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </g>
-<!-- Node394 -->
+<!-- Node396 -->
 <g id="node2" class="node">
-<title>Node394</title>
+<title>Node396</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="164.2607,-259.5 164.2607,-277.5 300.3291,-277.5 300.3291,-259.5 164.2607,-259.5"/>
 <text text-anchor="middle" x="232.2949" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node394 -->
+<!-- Node395&#45;&gt;Node396 -->
 <g id="edge1" class="edge">
-<title>Node393&#45;&gt;Node394</title>
+<title>Node395&#45;&gt;Node396</title>
 <path fill="none" stroke="#191970" d="M75.0224,-156.1307C91.3192,-181.0044 124.432,-226.0824 164.2607,-250.5 170.198,-254.1399 176.8642,-257.0513 183.6403,-259.3781"/>
 <polygon fill="#191970" stroke="#191970" points="77.9528,-154.2165 69.6209,-147.6721 72.0531,-157.984 77.9528,-154.2165"/>
 </g>
-<!-- Node395 -->
+<!-- Node397 -->
 <g id="node3" class="node">
-<title>Node395</title>
+<title>Node397</title>
 <g id="a_node3"><a xlink:href="class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" target="_top" xlink:title="ImitatePass::GitPush git init wrapper. ">
 <polygon fill="none" stroke="#000000" points="177.6104,-222.5 177.6104,-240.5 286.9795,-240.5 286.9795,-222.5 177.6104,-222.5"/>
 <text text-anchor="middle" x="232.2949" y="-228.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::GitPush</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node395 -->
+<!-- Node395&#45;&gt;Node397 -->
 <g id="edge2" class="edge">
-<title>Node393&#45;&gt;Node395</title>
+<title>Node395&#45;&gt;Node397</title>
 <path fill="none" stroke="#191970" d="M80.989,-154.387C99.8735,-171.3612 132.0742,-197.9219 164.2607,-213.5 171.7391,-217.1195 180.0448,-220.0861 188.2107,-222.4914"/>
 <polygon fill="#191970" stroke="#191970" points="83.2613,-151.722 73.5233,-147.5479 78.5328,-156.8836 83.2613,-151.722"/>
 </g>
-<!-- Node396 -->
+<!-- Node398 -->
 <g id="node4" class="node">
-<title>Node396</title>
+<title>Node398</title>
 <g id="a_node4"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
 <polygon fill="none" stroke="#000000" points="182.8911,-185.5 182.8911,-203.5 281.6987,-203.5 281.6987,-185.5 182.8911,-185.5"/>
 <text text-anchor="middle" x="232.2949" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Insert</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node396 -->
+<!-- Node395&#45;&gt;Node398 -->
 <g id="edge3" class="edge">
-<title>Node393&#45;&gt;Node396</title>
+<title>Node395&#45;&gt;Node398</title>
 <path fill="none" stroke="#191970" d="M95.5164,-151.3743C115.1021,-159.1669 140.938,-169.0116 164.2607,-176.5 174.2651,-179.7122 185.2257,-182.7975 195.3711,-185.4788"/>
 <polygon fill="#191970" stroke="#191970" points="96.7509,-148.0984 86.1668,-147.6216 94.1435,-154.5947 96.7509,-148.0984"/>
 </g>
-<!-- Node397 -->
+<!-- Node399 -->
 <g id="node5" class="node">
-<title>Node397</title>
+<title>Node399</title>
 <g id="a_node5"><a xlink:href="class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" target="_top" xlink:title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;. ">
 <polygon fill="none" stroke="#000000" points="176.7778,-148.5 176.7778,-166.5 287.812,-166.5 287.812,-148.5 176.7778,-148.5"/>
 <text text-anchor="middle" x="232.2949" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Remove</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node397 -->
+<!-- Node395&#45;&gt;Node399 -->
 <g id="edge4" class="edge">
-<title>Node393&#45;&gt;Node397</title>
+<title>Node395&#45;&gt;Node399</title>
 <path fill="none" stroke="#191970" d="M138.7972,-146.9362C151.5359,-148.3755 164.5667,-149.8478 176.6999,-151.2186"/>
 <polygon fill="#191970" stroke="#191970" points="138.996,-143.4365 128.6662,-145.7916 138.21,-150.3922 138.996,-143.4365"/>
 </g>
-<!-- Node398 -->
+<!-- Node400 -->
 <g id="node6" class="node">
-<title>Node398</title>
+<title>Node400</title>
 <g id="a_node6"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="#000000" points="188.7261,-111.5 188.7261,-129.5 275.8638,-129.5 275.8638,-111.5 188.7261,-111.5"/>
 <text text-anchor="middle" x="232.2949" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Init</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node398 -->
+<!-- Node395&#45;&gt;Node400 -->
 <g id="edge5" class="edge">
-<title>Node393&#45;&gt;Node398</title>
+<title>Node395&#45;&gt;Node400</title>
 <path fill="none" stroke="#191970" d="M138.618,-130.527C155.6612,-128.7027 173.2373,-126.8214 188.4959,-125.1882"/>
 <polygon fill="#191970" stroke="#191970" points="138.2369,-127.0477 128.6662,-131.5922 138.982,-134.0079 138.2369,-127.0477"/>
 </g>
-<!-- Node399 -->
+<!-- Node401 -->
 <g id="node7" class="node">
-<title>Node399</title>
+<title>Node401</title>
 <g id="a_node7"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="#000000" points="164.2681,-74.5 164.2681,-92.5 300.3218,-92.5 300.3218,-74.5 164.2681,-74.5"/>
 <text text-anchor="middle" x="232.2949" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::reencryptPath</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node399 -->
+<!-- Node395&#45;&gt;Node401 -->
 <g id="edge6" class="edge">
-<title>Node393&#45;&gt;Node399</title>
+<title>Node395&#45;&gt;Node401</title>
 <path fill="none" stroke="#191970" d="M97.4207,-125.8438C116.8044,-118.6475 141.7799,-109.6699 164.2607,-102.5 175.1265,-99.0345 187.0763,-95.5794 197.8885,-92.5846"/>
 <polygon fill="#191970" stroke="#191970" points="95.9787,-122.6462 87.8368,-129.4256 98.4293,-129.2032 95.9787,-122.6462"/>
 </g>
-<!-- Node400 -->
+<!-- Node402 -->
 <g id="node8" class="node">
-<title>Node400</title>
+<title>Node402</title>
 <g id="a_node8"><a xlink:href="class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" target="_top" xlink:title="ImitatePass::Move">
 <polygon fill="none" stroke="#000000" points="183.1694,-37.5 183.1694,-55.5 281.4204,-55.5 281.4204,-37.5 183.1694,-37.5"/>
 <text text-anchor="middle" x="232.2949" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Move</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node400 -->
+<!-- Node395&#45;&gt;Node402 -->
 <g id="edge7" class="edge">
-<title>Node393&#45;&gt;Node400</title>
+<title>Node395&#45;&gt;Node402</title>
 <path fill="none" stroke="#191970" d="M81.7154,-122.6188C100.7793,-106.1704 132.7232,-80.7789 164.2607,-65.5 172.5381,-61.4899 181.8049,-58.1987 190.7708,-55.5493"/>
 <polygon fill="#191970" stroke="#191970" points="79.3446,-120.0427 74.1412,-129.2717 83.9642,-125.302 79.3446,-120.0427"/>
 </g>
-<!-- Node401 -->
+<!-- Node403 -->
 <g id="node9" class="node">
-<title>Node401</title>
+<title>Node403</title>
 <g id="a_node9"><a xlink:href="class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" target="_top" xlink:title="ImitatePass::Copy">
 <polygon fill="none" stroke="#000000" points="183.7236,-.5 183.7236,-18.5 280.8662,-18.5 280.8662,-.5 183.7236,-.5"/>
 <text text-anchor="middle" x="232.2949" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Copy</text>
 </a>
 </g>
 </g>
-<!-- Node393&#45;&gt;Node401 -->
+<!-- Node395&#45;&gt;Node403 -->
 <g id="edge8" class="edge">
-<title>Node393&#45;&gt;Node401</title>
+<title>Node395&#45;&gt;Node403</title>
 <path fill="none" stroke="#191970" d="M75.6093,-120.5754C92.2121,-96.1049 125.2505,-52.5428 164.2607,-28.5 170.9423,-24.382 178.5352,-21.1356 186.1662,-18.5822"/>
 <polygon fill="#191970" stroke="#191970" points="72.4885,-118.9493 69.8909,-129.2208 78.3269,-122.8111 72.4885,-118.9493"/>
 </g>

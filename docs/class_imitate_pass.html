@@ -123,6 +123,8 @@ Signals</h2></td></tr>
 <tr class="separator:ab892bcacdbe3081f677e456a3a8ac328 inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24cdfb567ab68940f2a823704e2ab1ba inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">finishedShow</a> (const QString &amp;)</td></tr>
 <tr class="separator:a24cdfb567ab68940f2a823704e2ab1ba inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca44f13c68a03c1e91fbbfee37388ed inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed">finishedOtpGenerate</a> (const QString &amp;)</td></tr>
+<tr class="separator:a8ca44f13c68a03c1e91fbbfee37388ed inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d8c179a7875dd2983de2aabff0a8cb inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb">finishedInsert</a> (const QString &amp;, const QString &amp;)</td></tr>
 <tr class="separator:a71d8c179a7875dd2983de2aabff0a8cb inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263cc9ceb5269427237ea43267667197 inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a263cc9ceb5269427237ea43267667197">finishedRemove</a> (const QString &amp;, const QString &amp;)</td></tr>
@@ -160,6 +162,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a365ec3f3d9c27efcc4f79d5f8cc1ca49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49">Show</a> (QString file) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:a365ec3f3d9c27efcc4f79d5f8cc1ca49"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file. ">ImitatePass::Show</a> shows content of file.  <a href="#a365ec3f3d9c27efcc4f79d5f8cc1ca49">More...</a><br /></td></tr>
 <tr class="separator:a365ec3f3d9c27efcc4f79d5f8cc1ca49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0807e4bbd5007b6e77a7dbb62b07a7d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#a0807e4bbd5007b6e77a7dbb62b07a7d8">OtpGenerate</a> (QString file) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a0807e4bbd5007b6e77a7dbb62b07a7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#a0807e4bbd5007b6e77a7dbb62b07a7d8" title="ImitatePass::OtpGenerate generates an otp code. ">ImitatePass::OtpGenerate</a> generates an otp code.  <a href="#a0807e4bbd5007b6e77a7dbb62b07a7d8">More...</a><br /></td></tr>
+<tr class="separator:a0807e4bbd5007b6e77a7dbb62b07a7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accd38cc2e91f30fad48d83d76192beb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2">Insert</a> (QString file, QString value, bool overwrite=false) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:accd38cc2e91f30fad48d83d76192beb2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. ">ImitatePass::Insert</a> create new file with encrypted content.  <a href="#accd38cc2e91f30fad48d83d76192beb2">More...</a><br /></td></tr>
 <tr class="separator:accd38cc2e91f30fad48d83d76192beb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -326,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00342">342</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00347">347</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -436,7 +441,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00437">437</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00442">442</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -507,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00403">403</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00408">408</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -712,7 +717,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00135">135</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00140">140</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -776,7 +781,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00060">60</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00065">65</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -830,7 +835,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#ab9dde6644865bd583dc09a52d17ffb49">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00304">304</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00309">309</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -839,6 +844,38 @@ Additional Inherited Members</h2></td></tr>
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_imitate_pass_abd150b37240a340cbec88d888e0a7fe6_cgraph.svg" width="599" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="a0807e4bbd5007b6e77a7dbb62b07a7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0807e4bbd5007b6e77a7dbb62b07a7d8">&#9670;&nbsp;</a></span>OtpGenerate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImitatePass::OtpGenerate </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_imitate_pass.html#a0807e4bbd5007b6e77a7dbb62b07a7d8" title="ImitatePass::OtpGenerate generates an otp code. ">ImitatePass::OtpGenerate</a> generates an otp code. </p>
+
+<p>Implements <a class="el" href="class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19">Pass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00056">56</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -866,7 +903,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00211">211</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00216">216</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -916,7 +953,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00105">105</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00110">110</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -956,7 +993,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00046">46</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00045">45</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">

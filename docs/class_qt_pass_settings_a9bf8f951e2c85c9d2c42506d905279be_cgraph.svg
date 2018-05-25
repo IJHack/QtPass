@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 314.84 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::setAvoidCapitals</title>
-<!-- Node475 -->
+<!-- Node481 -->
 <g id="node1" class="node">
-<title>Node475</title>
+<title>Node481</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 128.6563,-28.5 128.6563,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setAvoid</text>
 <text text-anchor="middle" x="64.3281" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Capitals</text>
 </g>
-<!-- Node476 -->
+<!-- Node482 -->
 <g id="node2" class="node">
-<title>Node476</title>
+<title>Node482</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="164.6563,-5.5 164.6563,-23.5 306.8379,-23.5 306.8379,-5.5 164.6563,-5.5"/>
 <text text-anchor="middle" x="235.7471" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node475&#45;&gt;Node476 -->
+<!-- Node481&#45;&gt;Node482 -->
 <g id="edge1" class="edge">
-<title>Node475&#45;&gt;Node476</title>
+<title>Node481&#45;&gt;Node482</title>
 <path fill="none" stroke="#191970" d="M129.1343,-14.5C137.3576,-14.5 145.8543,-14.5 154.2958,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="154.5431,-18.0001 164.5431,-14.5 154.5431,-11.0001 154.5431,-18.0001"/>
 </g>

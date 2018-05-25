@@ -24,6 +24,7 @@ var searchData=
   ['isuseautoclear',['isUseAutoclear',['../class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae',1,'QtPassSettings']]],
   ['isuseautoclearpanel',['isUseAutoclearPanel',['../class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28',1,'QtPassSettings']]],
   ['isusegit',['isUseGit',['../class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f',1,'QtPassSettings']]],
+  ['isuseotp',['isUseOtp',['../class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2',1,'QtPassSettings']]],
   ['isusepass',['isUsePass',['../class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493',1,'QtPassSettings']]],
   ['isusepwgen',['isUsePwgen',['../class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72',1,'QtPassSettings']]],
   ['isuseselection',['isUseSelection',['../class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2',1,'QtPassSettings']]],

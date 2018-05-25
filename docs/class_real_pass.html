@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae4d0e5e8d0735e6ab4d6f6d64b35e96a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_pass.html#ae4d0e5e8d0735e6ab4d6f6d64b35e96a">Show</a> (QString file) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:ae4d0e5e8d0735e6ab4d6f6d64b35e96a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_real_pass.html#ae4d0e5e8d0735e6ab4d6f6d64b35e96a" title="RealPass::Show pass show. ">RealPass::Show</a> pass show.  <a href="#ae4d0e5e8d0735e6ab4d6f6d64b35e96a">More...</a><br /></td></tr>
 <tr class="separator:ae4d0e5e8d0735e6ab4d6f6d64b35e96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26cacccec341ede63dcaad970fb00e67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_pass.html#a26cacccec341ede63dcaad970fb00e67">OtpGenerate</a> (QString file) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a26cacccec341ede63dcaad970fb00e67"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_real_pass.html#a26cacccec341ede63dcaad970fb00e67" title="RealPass::OtpGenerate pass otp. ">RealPass::OtpGenerate</a> pass otp.  <a href="#a26cacccec341ede63dcaad970fb00e67">More...</a><br /></td></tr>
+<tr class="separator:a26cacccec341ede63dcaad970fb00e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ccc6435168c4e4e8ac409947901794"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_pass.html#a52ccc6435168c4e4e8ac409947901794">Insert</a> (QString file, QString value, bool overwrite=false) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:a52ccc6435168c4e4e8ac409947901794"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_real_pass.html#a52ccc6435168c4e4e8ac409947901794" title="RealPass::Insert pass insert. ">RealPass::Insert</a> pass insert.  <a href="#a52ccc6435168c4e4e8ac409947901794">More...</a><br /></td></tr>
 <tr class="separator:a52ccc6435168c4e4e8ac409947901794"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +176,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ab892bcacdbe3081f677e456a3a8ac328 inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24cdfb567ab68940f2a823704e2ab1ba inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">finishedShow</a> (const QString &amp;)</td></tr>
 <tr class="separator:a24cdfb567ab68940f2a823704e2ab1ba inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca44f13c68a03c1e91fbbfee37388ed inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed">finishedOtpGenerate</a> (const QString &amp;)</td></tr>
+<tr class="separator:a8ca44f13c68a03c1e91fbbfee37388ed inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d8c179a7875dd2983de2aabff0a8cb inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb">finishedInsert</a> (const QString &amp;, const QString &amp;)</td></tr>
 <tr class="separator:a71d8c179a7875dd2983de2aabff0a8cb inherit signals_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263cc9ceb5269427237ea43267667197 inherit signals_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a263cc9ceb5269427237ea43267667197">finishedRemove</a> (const QString &amp;, const QString &amp;)</td></tr>
@@ -318,7 +323,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00132">132</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00141">141</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -507,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00071">71</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00080">80</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -563,7 +568,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00050">50</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00059">59</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 
 </div>
 </div>
@@ -619,7 +624,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#ab9dde6644865bd583dc09a52d17ffb49">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00091">91</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00100">100</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -628,6 +633,44 @@ Additional Inherited Members</h2></td></tr>
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_real_pass_acf73b18b7978ac27bf09c894bcaa613a_cgraph.svg" width="616" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="a26cacccec341ede63dcaad970fb00e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26cacccec341ede63dcaad970fb00e67">&#9670;&nbsp;</a></span>OtpGenerate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RealPass::OtpGenerate </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_real_pass.html#a26cacccec341ede63dcaad970fb00e67" title="RealPass::OtpGenerate pass otp. ">RealPass::OtpGenerate</a> pass otp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>file containig OTP uri </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19">Pass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00051">51</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 
 </div>
 </div>
@@ -669,7 +712,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00061">61</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00070">70</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 
 </div>
 </div>

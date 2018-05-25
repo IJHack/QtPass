@@ -48,6 +48,7 @@ var searchData=
   ['setuseautoclear',['setUseAutoclear',['../class_qt_pass_settings.html#a8deb96dd37776cb2e864f8799bc17820',1,'QtPassSettings']]],
   ['setuseautoclearpanel',['setUseAutoclearPanel',['../class_qt_pass_settings.html#ac3afbfb8dca45e6569eea291e47fb1d8',1,'QtPassSettings']]],
   ['setusegit',['setUseGit',['../class_qt_pass_settings.html#afc9621d9abe43370e41e01bc9f9cb51f',1,'QtPassSettings']]],
+  ['setuseotp',['setUseOtp',['../class_qt_pass_settings.html#a45626883c75241e6b30979176a910913',1,'QtPassSettings']]],
   ['setusepass',['setUsePass',['../class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2',1,'QtPassSettings']]],
   ['setusepwgen',['setUsePwgen',['../class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334',1,'QtPassSettings']]],
   ['setusers',['setUsers',['../class_users_dialog.html#a298a5de8ec8b0e3bc66e77a74b20688c',1,'UsersDialog']]],

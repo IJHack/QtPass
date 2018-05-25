@@ -5,6 +5,7 @@ var searchData=
   ['useautoclearpanel',['useAutoclearPanel',['../class_settings_constants.html#a634d47e31c1ce7eabea4435d16637c46',1,'SettingsConstants']]],
   ['useclipboard',['useClipboard',['../class_settings_constants.html#a0c3a88eed6013961790144cc002e20cc',1,'SettingsConstants']]],
   ['usegit',['useGit',['../class_settings_constants.html#a80c25fbbfd8513ea7548c31dc72bcf85',1,'SettingsConstants']]],
+  ['useotp',['useOtp',['../class_settings_constants.html#aaa144f0572561c7c4000154457963dc4',1,'SettingsConstants']]],
   ['usepass',['usePass',['../class_settings_constants.html#a77796de4c6b0edfd2aaaf10b84d04322',1,'SettingsConstants']]],
   ['usepwgen',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants']]],
   ['useselection',['useSelection',['../class_settings_constants.html#a0d0ae02026d7f4d75430d36987a3da3f',1,'SettingsConstants']]],

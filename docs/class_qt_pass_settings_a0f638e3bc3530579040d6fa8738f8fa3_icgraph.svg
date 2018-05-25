@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 333.90 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::isUseSymbols</title>
-<!-- Node429 -->
+<!-- Node435 -->
 <g id="node1" class="node">
-<title>Node429</title>
+<title>Node435</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 153.8271,-36.5 153.8271,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="76.9136" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseSymbols</text>
 </g>
-<!-- Node430 -->
+<!-- Node436 -->
 <g id="node2" class="node">
-<title>Node430</title>
+<title>Node436</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="189.8271,-37.5 189.8271,-55.5 325.8955,-55.5 325.8955,-37.5 189.8271,-37.5"/>
 <text text-anchor="middle" x="257.8613" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node429&#45;&gt;Node430 -->
+<!-- Node435&#45;&gt;Node436 -->
 <g id="edge1" class="edge">
-<title>Node429&#45;&gt;Node430</title>
+<title>Node435&#45;&gt;Node436</title>
 <path fill="none" stroke="#191970" d="M164.0348,-36.648C172.6884,-37.5566 181.3829,-38.4696 189.8012,-39.3535"/>
 <polygon fill="#191970" stroke="#191970" points="164.2249,-33.1488 153.9141,-35.5853 163.4939,-40.1105 164.2249,-33.1488"/>
 </g>
-<!-- Node431 -->
+<!-- Node437 -->
 <g id="node3" class="node">
-<title>Node431</title>
+<title>Node437</title>
 <g id="a_node3"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="#000000" points="209.5586,-.5 209.5586,-18.5 306.1641,-18.5 306.1641,-.5 209.5586,-.5"/>
 <text text-anchor="middle" x="257.8613" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>
 </g>
 </g>
-<!-- Node429&#45;&gt;Node431 -->
+<!-- Node435&#45;&gt;Node437 -->
 <g id="edge2" class="edge">
-<title>Node429&#45;&gt;Node431</title>
+<title>Node435&#45;&gt;Node437</title>
 <path fill="none" stroke="#191970" d="M164.135,-18.8235C179.7466,-17.2706 195.4875,-15.7047 209.4951,-14.3113"/>
 <polygon fill="#191970" stroke="#191970" points="163.5185,-15.3675 153.9141,-19.8403 164.2115,-22.3331 163.5185,-15.3675"/>
 </g>

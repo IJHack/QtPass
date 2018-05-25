@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 471.51 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ImitatePass::Show</title>
-<!-- Node64 -->
+<!-- Node66 -->
 <g id="node1" class="node">
-<title>Node64</title>
+<title>Node66</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 98.8125,-18.5 98.8125,-.5 0,-.5"/>
 <text text-anchor="middle" x="49.4063" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Show</text>
 </g>
-<!-- Node65 -->
+<!-- Node67 -->
 <g id="node2" class="node">
-<title>Node65</title>
+<title>Node67</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="#000000" points="134.8125,-.5 134.8125,-18.5 285.3242,-18.5 285.3242,-.5 134.8125,-.5"/>
 <text text-anchor="middle" x="210.0684" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node64&#45;&gt;Node65 -->
+<!-- Node66&#45;&gt;Node67 -->
 <g id="edge1" class="edge">
-<title>Node64&#45;&gt;Node65</title>
+<title>Node66&#45;&gt;Node67</title>
 <path fill="none" stroke="#191970" d="M98.9211,-9.5C107.0722,-9.5 115.7222,-9.5 124.4557,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="124.7218,-13.0001 134.7217,-9.5 124.7217,-6.0001 124.7218,-13.0001"/>
 </g>
-<!-- Node66 -->
+<!-- Node68 -->
 <g id="node3" class="node">
-<title>Node66</title>
+<title>Node68</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="321.3242,-.5 321.3242,-18.5 463.5059,-18.5 463.5059,-.5 321.3242,-.5"/>
 <text text-anchor="middle" x="392.415" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node65&#45;&gt;Node66 -->
+<!-- Node67&#45;&gt;Node68 -->
 <g id="edge2" class="edge">
-<title>Node65&#45;&gt;Node66</title>
+<title>Node67&#45;&gt;Node68</title>
 <path fill="none" stroke="#191970" d="M285.552,-9.5C293.9107,-9.5 302.4509,-9.5 310.8799,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="311.0867,-13.0001 321.0867,-9.5 311.0867,-6.0001 311.0867,-13.0001"/>
 </g>
