@@ -380,6 +380,14 @@ void QtPassSettings::setUseGit(const bool &useGit) {
   getInstance()->setValue(SettingsConstants::useGit, useGit);
 }
 
+bool QtPassSettings::isUseOtp(const bool &defaultValue) {
+  return getInstance()->value(SettingsConstants::useOtp, defaultValue).toBool();
+}
+
+void QtPassSettings::setUseOtp(const bool &useOtp) {
+  getInstance()->setValue(SettingsConstants::useOtp, useOtp);
+}
+
 bool QtPassSettings::isUsePwgen(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::usePwgen, defaultValue)

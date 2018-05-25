@@ -45,6 +45,15 @@ void RealPass::Show(QString file) {
 }
 
 /**
+ * @brief RealPass::OtpGenerate pass otp
+ * @param file      file containig OTP uri
+ */
+void RealPass::OtpGenerate(QString file) {
+  executePass(PASS_OTP_GENERATE, {"otp", file}, "", true);
+}
+
+
+/**
  * @brief RealPass::Insert pass insert
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {

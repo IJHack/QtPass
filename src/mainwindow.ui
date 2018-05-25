@@ -291,6 +291,7 @@ p, li { white-space: pre-wrap; }
    <addaction name="separator"/>
    <addaction name="actionEdit"/>
    <addaction name="actionDelete"/>
+   <addaction name="actionOtp"/>
    <addaction name="separator"/>
    <addaction name="actionPush"/>
    <addaction name="actionUpdate"/>
@@ -331,6 +332,17 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="toolTip">
     <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionOtp">
+   <property name="text">
+    <string>OTP</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate OTP and copy to clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
   <action name="actionPush">

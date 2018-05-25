@@ -43,6 +43,7 @@ public:
   virtual void GitPull_b() = 0;
   virtual void GitPush() = 0;
   virtual void Show(QString file) = 0;
+  virtual void OtpGenerate(QString file) = 0;
   virtual void Insert(QString file, QString value, bool force) = 0;
   virtual void Remove(QString file, bool isDir) = 0;
   virtual void Move(const QString srcDir, const QString dest,
@@ -87,6 +88,7 @@ signals:
   void finishedGitPull(const QString &, const QString &);
   void finishedGitPush(const QString &, const QString &);
   void finishedShow(const QString &);
+  void finishedOtpGenerate(const QString &);
   void finishedInsert(const QString &, const QString &);
   void finishedRemove(const QString &, const QString &);
   void finishedInit(const QString &, const QString &);

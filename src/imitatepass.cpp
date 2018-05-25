@@ -42,13 +42,18 @@ void ImitatePass::GitPush() {
 /**
  * @brief ImitatePass::Show shows content of file
  */
-
 void ImitatePass::Show(QString file) {
   file = QtPassSettings::getPassStore() + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                       "--batch", "--use-agent", file};
   executeGpg(PASS_SHOW, args);
+
 }
+
+/**
+ * @brief ImitatePass::OtpGenerate generates an otp code
+ */
+void ImitatePass::OtpGenerate(QString file) {}
 
 /**
  * @brief ImitatePass::Insert create new file with encrypted content

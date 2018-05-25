@@ -30,7 +30,8 @@ enum PROCESS {
   GIT_MOVE,
   GIT_COPY,
   PROCESS_COUNT,
-  INVALID
+  INVALID,
+  PASS_OTP_GENERATE,
 };
 
 } // namespace Enums
