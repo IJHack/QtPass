@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Consider repology badges [\#396](https://github.com/IJHack/QtPass/issues/396)
 - Unable to create new password [\#391](https://github.com/IJHack/QtPass/issues/391)
 - Duplicate prefix in installation of tests directory in v1.2.2. [\#389](https://github.com/IJHack/QtPass/issues/389)
 - Compilation error on FreeBSD member access into incomplete type [\#388](https://github.com/IJHack/QtPass/issues/388)
