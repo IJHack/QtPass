@@ -13,6 +13,7 @@
 
 **Merged pull requests:**
 
+- Add support for OTP code generation on Linux as requested in \#327 [\#394](https://github.com/IJHack/QtPass/pull/394) ([Noettore](https://github.com/Noettore))
 - Revert scroll bar changes [\#393](https://github.com/IJHack/QtPass/pull/393) ([destanyol](https://github.com/destanyol))
 - Fix High Dpi Support. Works now under Windows and KDE/Plasma. [\#392](https://github.com/IJHack/QtPass/pull/392) ([hgraeber](https://github.com/hgraeber))
 
