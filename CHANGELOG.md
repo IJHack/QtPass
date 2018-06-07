@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...HEAD)
+
+**Closed issues:**
+
+- Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
+
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
 
