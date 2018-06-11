@@ -141,12 +141,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweiterungen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="528"/>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwenden Sie die Pass-OTP-Erweiterung</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="967"/>
@@ -255,12 +255,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwenden Sie die primäre Auswahl</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhalten des Inhaltsbereichs:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="569"/>
@@ -485,7 +485,7 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
@@ -547,7 +547,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="353"/>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="350"/>
@@ -569,27 +569,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="310"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="339"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiere OTP und kopiere in die Zwischenablage</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="345"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="361"/>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="358"/>
@@ -620,7 +620,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie das Profil aus</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="187"/>
@@ -650,12 +650,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1221"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen Sie den Ordner mit dem Dateimanager</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1280"/>
@@ -718,7 +718,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="601"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP-Code</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="685"/>
@@ -836,12 +836,12 @@ Neues Passwort-Datei:
     <message>
         <location filename="../src/mainwindow.cpp" line="905"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> und der ganze Inhalt?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="915"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> und der gesamte Inhalt? &lt;br&gt;&lt;strong&gt;Achtung: Im angegebenen Ordner befinden sich Dateien, überprüfen Sie diese, bevor Sie fortfahren.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="971"/>
@@ -944,12 +944,12 @@ Neues Passwort-Datei:
     <message>
         <location filename="../src/storemodel.cpp" line="246"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Überschreiben erzwingen?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="247"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>Überschreiben %1 mit %2?</translation>
     </message>
 </context>
 <context>

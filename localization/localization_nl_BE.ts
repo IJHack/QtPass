@@ -161,12 +161,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitbreidingen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="528"/>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik pass OTP uitbreiding</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
@@ -579,17 +579,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="339"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer OTP en kopieer naar klembord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="345"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="361"/>
@@ -724,7 +724,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="601"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP Code</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="683"/>
@@ -802,7 +802,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Weet je zeker dat je %1%2 wil verwijderen?</translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="924"/>
