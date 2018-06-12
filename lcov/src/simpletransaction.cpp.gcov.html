@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">23</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -68,12 +68,12 @@
 <a name="6"><span class="lineNum">       6 </span>            : using namespace Enums;</a>
 <span class="lineNum">       7 </span>            : 
 <span class="lineNum">       8 </span><span class="lineNoCov">          0 : void simpleTransaction::transactionStart() {</span>
-<span class="lineNum">       9 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;START&quot; &lt;&lt; transactionDepth;</span>
+<span class="lineNum">       9 </span>            :   dbg() &lt;&lt; &quot;START&quot; &lt;&lt; transactionDepth;
 <span class="lineNum">      10 </span><span class="lineNoCov">          0 :   transactionDepth++;</span>
 <a name="11"><span class="lineNum">      11 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">      12 </span>            : 
 <span class="lineNum">      13 </span><span class="lineNoCov">          0 : void simpleTransaction::transactionAdd(PROCESS id) {</span>
-<span class="lineNum">      14 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;ADD&quot; &lt;&lt; transactionDepth &lt;&lt; id;</span>
+<span class="lineNum">      14 </span>            :   dbg() &lt;&lt; &quot;ADD&quot; &lt;&lt; transactionDepth &lt;&lt; id;
 <span class="lineNum">      15 </span><span class="lineNoCov">          0 :   if (transactionDepth &gt; 0) {</span>
 <span class="lineNum">      16 </span><span class="lineNoCov">          0 :     lastInTransaction = id;</span>
 <span class="lineNum">      17 </span><span class="lineNoCov">          0 :   } else {</span>
@@ -82,7 +82,7 @@
 <a name="20"><span class="lineNum">      20 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">      21 </span>            : 
 <span class="lineNum">      22 </span><span class="lineNoCov">          0 : void simpleTransaction::transactionEnd(PROCESS pid) {</span>
-<span class="lineNum">      23 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;END&quot; &lt;&lt; transactionDepth;</span>
+<span class="lineNum">      23 </span>            :   dbg() &lt;&lt; &quot;END&quot; &lt;&lt; transactionDepth;
 <span class="lineNum">      24 </span><span class="lineNoCov">          0 :   if (transactionDepth &gt; 0) {</span>
 <span class="lineNum">      25 </span><span class="lineNoCov">          0 :     transactionDepth--;</span>
 <span class="lineNum">      26 </span><span class="lineNoCov">          0 :     if (transactionDepth == 0 &amp;&amp; lastInTransaction != INVALID) {</span>
@@ -93,7 +93,7 @@
 <a name="31"><span class="lineNum">      31 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">      32 </span>            : 
 <span class="lineNum">      33 </span><span class="lineNoCov">          0 : PROCESS simpleTransaction::transactionIsOver(PROCESS id) {</span>
-<span class="lineNum">      34 </span><span class="lineNoCov">          0 :   dbg() &lt;&lt; &quot;OVER&quot; &lt;&lt; transactionDepth &lt;&lt; id;</span>
+<span class="lineNum">      34 </span>            :   dbg() &lt;&lt; &quot;OVER&quot; &lt;&lt; transactionDepth &lt;&lt; id;
 <span class="lineNum">      35 </span><span class="lineNoCov">          0 :   if (!transactionQueue.empty() &amp;&amp; id == transactionQueue.front().first) {</span>
 <span class="lineNum">      36 </span><span class="lineNoCov">          0 :     PROCESS ret = transactionQueue.front().second;</span>
 <span class="lineNum">      37 </span><span class="lineNoCov">          0 :     transactionQueue.pop();</span>

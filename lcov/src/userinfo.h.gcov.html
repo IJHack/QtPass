@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/userinfo.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - userinfo.h<span style="font-size: 80%;"> (source / <a href="userinfo.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #ifndef DATAHELPERS_H</a>
+<span class="lineNum">       2 </span>            : #define DATAHELPERS_H
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : #include &lt;QDateTime&gt;
+<span class="lineNum">       5 </span>            : #include &lt;QString&gt;
+<span class="lineNum">       6 </span>            : 
+<span class="lineNum">       7 </span>            : /*!
+<span class="lineNum">       8 </span>            :     \struct UserInfo
+<a name="9"><span class="lineNum">       9 </span>            :     \brief Stores key info lines including validity, creation date and more.</a>
+<a name="10"><span class="lineNum">      10 </span>            :  */</a>
+<span class="lineNum">      11 </span><span class="lineNoCov">          0 : struct UserInfo {</span>
+<span class="lineNum">      12 </span><span class="lineNoCov">          0 :   UserInfo() : validity('-'), have_secret(false), enabled(false) {}</span>
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span>            :   /**
+<span class="lineNum">      15 </span>            :    * @brief UserInfo::fullyValid when validity is f or u.
+<a name="16"><span class="lineNum">      16 </span>            :    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>
+<span class="lineNum">      17 </span>            :    */
+<span class="lineNum">      18 </span><span class="lineNoCov">          0 :   bool fullyValid() { return validity == 'f' || validity == 'u'; }</span>
+<span class="lineNum">      19 </span>            :   /**
+<span class="lineNum">      20 </span>            :    * @brief UserInfo::marginallyValid when validity is m.
+<a name="21"><span class="lineNum">      21 </span>            :    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>
+<span class="lineNum">      22 </span>            :    */
+<span class="lineNum">      23 </span><span class="lineNoCov">          0 :   bool marginallyValid() { return validity == 'm'; }</span>
+<span class="lineNum">      24 </span>            :   /**
+<a name="25"><span class="lineNum">      25 </span>            :    * @brief UserInfo::isValid when fullyValid or marginallyValid.</a>
+<span class="lineNum">      26 </span>            :    */
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 :   bool isValid() { return fullyValid() || marginallyValid(); }</span>
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            :   /**
+<span class="lineNum">      30 </span>            :    * @brief UserInfo::name full name
+<span class="lineNum">      31 </span>            :    */
+<span class="lineNum">      32 </span>            :   QString name;
+<span class="lineNum">      33 </span>            :   /**
+<span class="lineNum">      34 </span>            :    * @brief UserInfo::key_id hexadecimal representation
+<span class="lineNum">      35 </span>            :    */
+<span class="lineNum">      36 </span>            :   QString key_id;
+<span class="lineNum">      37 </span>            :   /**
+<span class="lineNum">      38 </span>            :    * @brief UserInfo::validity GnuPG representation of validity
+<span class="lineNum">      39 </span>            :    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
+<span class="lineNum">      40 </span>            :    */
+<span class="lineNum">      41 </span>            :   char validity;
+<span class="lineNum">      42 </span>            :   /**
+<span class="lineNum">      43 </span>            :    * @brief UserInfo::have_secret secret key is available
+<span class="lineNum">      44 </span>            :    * (can decrypt with this key)
+<span class="lineNum">      45 </span>            :    */
+<span class="lineNum">      46 </span>            :   bool have_secret;
+<span class="lineNum">      47 </span>            :   /**
+<span class="lineNum">      48 </span>            :    * @brief UserInfo::enabled
+<span class="lineNum">      49 </span>            :    */
+<span class="lineNum">      50 </span>            :   bool enabled;
+<span class="lineNum">      51 </span>            :   /**
+<span class="lineNum">      52 </span>            :    * @brief UserInfo::expiry date/time key expires
+<span class="lineNum">      53 </span>            :    */
+<span class="lineNum">      54 </span>            :   QDateTime expiry;
+<span class="lineNum">      55 </span>            :   /**
+<span class="lineNum">      56 </span>            :    * @brief UserInfo::created date/time key was created
+<span class="lineNum">      57 </span>            :    */
+<span class="lineNum">      58 </span>            :   QDateTime created;
+<span class="lineNum">      59 </span>            : };
+<span class="lineNum">      60 </span>            : 
+<span class="lineNum">      61 </span>            : #endif // DATAHELPERS_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

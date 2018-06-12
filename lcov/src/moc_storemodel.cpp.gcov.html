@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -63,7 +63,7 @@
 <a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
 <span class="lineNum">       2 </span>            : ** Meta object code from reading C++ file 'storemodel.h'
 <span class="lineNum">       3 </span>            : **
-<span class="lineNum">       4 </span>            : ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.8.0)
+<span class="lineNum">       4 </span>            : ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.0)
 <span class="lineNum">       5 </span>            : **
 <span class="lineNum">       6 </span>            : ** WARNING! All changes made in this file will be lost!
 <span class="lineNum">       7 </span>            : *****************************************************************************/
@@ -74,7 +74,7 @@
 <span class="lineNum">      12 </span>            : #if !defined(Q_MOC_OUTPUT_REVISION)
 <span class="lineNum">      13 </span>            : #error &quot;The header file 'storemodel.h' doesn't include &lt;QObject&gt;.&quot;
 <span class="lineNum">      14 </span>            : #elif Q_MOC_OUTPUT_REVISION != 67
-<span class="lineNum">      15 </span>            : #error &quot;This file was generated using the moc from 5.8.0. It&quot;
+<span class="lineNum">      15 </span>            : #error &quot;This file was generated using the moc from 5.11.0. It&quot;
 <span class="lineNum">      16 </span>            : #error &quot;cannot be used with the include files from this version of Qt.&quot;
 <span class="lineNum">      17 </span>            : #error &quot;(The moc has changed too much.)&quot;
 <span class="lineNum">      18 </span>            : #endif
@@ -124,9 +124,9 @@
 <span class="lineNum">      62 </span>            :     Q_UNUSED(_a);
 <span class="lineNum">      63 </span><span class="lineNoCov">          0 : }</span>
 <span class="lineNum">      64 </span>            : 
-<span class="lineNum">      65 </span>            : const QMetaObject StoreModel::staticMetaObject = {
+<span class="lineNum">      65 </span>            : QT_INIT_METAOBJECT const QMetaObject StoreModel::staticMetaObject = {
 <span class="lineNum">      66 </span>            :     { &amp;QSortFilterProxyModel::staticMetaObject, qt_meta_stringdata_StoreModel.data,
-<span class="lineNum">      67 </span>            :       qt_meta_data_StoreModel,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+<span class="lineNum">      67 </span>            :       qt_meta_data_StoreModel,  qt_static_metacall, nullptr, nullptr}
 <span class="lineNum">      68 </span>            : };
 <a name="69"><span class="lineNum">      69 </span>            : </a>
 <span class="lineNum">      70 </span>            : 
@@ -137,21 +137,19 @@
 <span class="lineNum">      75 </span>            : 
 <span class="lineNum">      76 </span><span class="lineNoCov">          0 : void *StoreModel::qt_metacast(const char *_clname)</span>
 <span class="lineNum">      77 </span>            : {
-<span class="lineNum">      78 </span><span class="lineNoCov">          0 :     if (!_clname) return Q_NULLPTR;</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :     if (!_clname) return nullptr;</span>
 <span class="lineNum">      79 </span><span class="lineNoCov">          0 :     if (!strcmp(_clname, qt_meta_stringdata_StoreModel.stringdata0))</span>
-<span class="lineNum">      80 </span><span class="lineNoCov">          0 :         return static_cast&lt;void*&gt;(const_cast&lt; StoreModel*&gt;(this));</span>
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 :         return static_cast&lt;void*&gt;(this);</span>
 <span class="lineNum">      81 </span><span class="lineNoCov">          0 :     return QSortFilterProxyModel::qt_metacast(_clname);</span>
 <a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">      83 </span>            : 
 <span class="lineNum">      84 </span><span class="lineNoCov">          0 : int StoreModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)</span>
 <span class="lineNum">      85 </span>            : {
 <span class="lineNum">      86 </span><span class="lineNoCov">          0 :     _id = QSortFilterProxyModel::qt_metacall(_c, _id, _a);</span>
-<span class="lineNum">      87 </span>            :     if (_id &lt; 0)
-<span class="lineNum">      88 </span>            :         return _id;
-<span class="lineNum">      89 </span>            :     return _id;
-<span class="lineNum">      90 </span><span class="lineNoCov">          0 : }</span>
-<span class="lineNum">      91 </span>            : QT_WARNING_POP
-<span class="lineNum">      92 </span>            : QT_END_MOC_NAMESPACE
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :     return _id;</span>
+<span class="lineNum">      88 </span>            : }
+<span class="lineNum">      89 </span>            : QT_WARNING_POP
+<span class="lineNum">      90 </span>            : QT_END_MOC_NAMESPACE
 </pre>
       </td>
     </tr>

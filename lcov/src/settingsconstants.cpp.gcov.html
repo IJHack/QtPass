@@ -31,17 +31,17 @@
             <td class="headerValue">.lcov.total</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">52</td>
             <td class="headerCovTableEntry">53</td>
-            <td class="headerCovTableEntryHi">98.1 %</td>
+            <td class="headerCovTableEntry">61</td>
+            <td class="headerCovTableEntryMed">86.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">50</td>
-            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntry">53</td>
             <td class="headerCovTableEntryHi">96.2 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
@@ -63,59 +63,69 @@
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;settingsconstants.h&quot;</a>
 <span class="lineNum">       2 </span>            : 
 <a name="3"><span class="lineNum">       3 </span><span class="lineNoCov">          0 : SettingsConstants::SettingsConstants() {}</span></a>
-<a name="4"><span class="lineNum">       4 </span>            : </a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">          2 : const QString SettingsConstants::version = &quot;version&quot;;</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineCov">          2 : const QString SettingsConstants::groupMainwindow = &quot;mainwindow&quot;;</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          2 : const QString SettingsConstants::geometry = &quot;geometry&quot;;</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          2 : const QString SettingsConstants::savestate = &quot;savestate&quot;;</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          2 : const QString SettingsConstants::pos = &quot;pos&quot;;</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          2 : const QString SettingsConstants::size = &quot;size&quot;;</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          2 : const QString SettingsConstants::splitterLeft = &quot;splitterLeft&quot;;</span></a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          2 : const QString SettingsConstants::splitterRight = &quot;splitterRight&quot;;</span></a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">          2 : const QString SettingsConstants::maximized = &quot;maximized&quot;;</span></a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">          2 : const QString SettingsConstants::usePass = &quot;usePass&quot;;</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          2 : const QString SettingsConstants::useSelection = &quot;useSelection&quot;;</span></a>
-<a name="16"><span class="lineNum">      16 </span><span class="lineCov">          2 : const QString SettingsConstants::useAutoclear = &quot;useAutoclear&quot;;</span></a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">          2 : const QString SettingsConstants::autoclearSeconds = &quot;autoclearSeconds&quot;;</span></a>
-<span class="lineNum">      18 </span><span class="lineCov">          2 : const QString SettingsConstants::useAutoclearPanel = &quot;useAutoclearPanel&quot;;</span>
-<a name="19"><span class="lineNum">      19 </span><span class="lineCov">          1 : const QString SettingsConstants::autoclearPanelSeconds =</span></a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          3 :     &quot;autoclearPanelSeconds&quot;;</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          2 : const QString SettingsConstants::hidePassword = &quot;hidePassword&quot;;</span></a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          2 : const QString SettingsConstants::hideContent = &quot;hideContent&quot;;</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          2 : const QString SettingsConstants::addGPGId = &quot;addGPGId&quot;;</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          2 : const QString SettingsConstants::passStore = &quot;passStore&quot;;</span></a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          2 : const QString SettingsConstants::passExecutable = &quot;passExecutable&quot;;</span></a>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          2 : const QString SettingsConstants::gitExecutable = &quot;gitExecutable&quot;;</span></a>
-<a name="27"><span class="lineNum">      27 </span><span class="lineCov">          2 : const QString SettingsConstants::gpgExecutable = &quot;gpgExecutable&quot;;</span></a>
-<a name="28"><span class="lineNum">      28 </span><span class="lineCov">          2 : const QString SettingsConstants::pwgenExecutable = &quot;pwgenExecutable&quot;;</span></a>
-<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          2 : const QString SettingsConstants::gpgHome = &quot;gpgHome&quot;;</span></a>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">          2 : const QString SettingsConstants::useWebDav = &quot;useWebDav&quot;;</span></a>
-<a name="31"><span class="lineNum">      31 </span><span class="lineCov">          2 : const QString SettingsConstants::webDavUrl = &quot;webDavUrl&quot;;</span></a>
-<a name="32"><span class="lineNum">      32 </span><span class="lineCov">          2 : const QString SettingsConstants::webDavUser = &quot;webDavUser&quot;;</span></a>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">          2 : const QString SettingsConstants::webDavPassword = &quot;webDavPassword&quot;;</span></a>
-<a name="34"><span class="lineNum">      34 </span><span class="lineCov">          2 : const QString SettingsConstants::profile = &quot;profile&quot;;</span></a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          2 : const QString SettingsConstants::groupProfiles = &quot;profiles&quot;;</span></a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">          2 : const QString SettingsConstants::useGit = &quot;useGit&quot;;</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          2 : const QString SettingsConstants::useClipboard = &quot;useClipboard&quot;;</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">          2 : const QString SettingsConstants::usePwgen = &quot;usePwgen&quot;;</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          2 : const QString SettingsConstants::avoidCapitals = &quot;avoidCapitals&quot;;</span></a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          2 : const QString SettingsConstants::avoidNumbers = &quot;avoidNumbers&quot;;</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">          2 : const QString SettingsConstants::lessRandom = &quot;lessRandom&quot;;</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          2 : const QString SettingsConstants::useSymbols = &quot;useSymbols&quot;;</span></a>
-<span class="lineNum">      43 </span><span class="lineCov">          2 : const QString SettingsConstants::passwordLength = &quot;passwordLength&quot;;</span>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">          1 : const QString SettingsConstants::passwordCharsselection =</span></a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">          3 :     &quot;passwordCharsselection&quot;;</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          2 : const QString SettingsConstants::passwordChars = &quot;passwordChars&quot;;</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          2 : const QString SettingsConstants::useTrayIcon = &quot;useTrayIcon&quot;;</span></a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">          2 : const QString SettingsConstants::hideOnClose = &quot;hideOnClose&quot;;</span></a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          2 : const QString SettingsConstants::startMinimized = &quot;startMinimized&quot;;</span></a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          2 : const QString SettingsConstants::alwaysOnTop = &quot;alwaysOnTop&quot;;</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          2 : const QString SettingsConstants::autoPull = &quot;autoPull&quot;;</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          2 : const QString SettingsConstants::autoPush = &quot;autoPush&quot;;</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">          2 : const QString SettingsConstants::passTemplate = &quot;passTemplate&quot;;</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          2 : const QString SettingsConstants::useTemplate = &quot;useTemplate&quot;;</span></a>
-<span class="lineNum">      55 </span><span class="lineCov">          2 : const QString SettingsConstants::templateAllFields = &quot;templateAllFields&quot;;</span>
-<span class="lineNum">      56 </span><span class="lineCov">          2 : const QString SettingsConstants::clipBoardType = &quot;clipBoardType&quot;;</span>
+<span class="lineNum">       4 </span>            : 
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">          4 : const QString SettingsConstants::version = &quot;version&quot;;</span></a>
+<a name="6"><span class="lineNum">       6 </span>            : </a>
+<span class="lineNum">       7 </span><span class="lineCov">          4 : const QString SettingsConstants::groupMainwindow = &quot;mainwindow&quot;;</span>
+<a name="8"><span class="lineNum">       8 </span><span class="lineNoCov">          0 : const QString SettingsConstants::geometry =</span></a>
+<span class="lineNum">       9 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/geometry&quot;;</span>
+<a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 : const QString SettingsConstants::savestate =</span></a>
+<span class="lineNum">      11 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/savestate&quot;;</span>
+<a name="12"><span class="lineNum">      12 </span><span class="lineNoCov">          0 : const QString SettingsConstants::pos =</span></a>
+<span class="lineNum">      13 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/pos&quot;;</span>
+<a name="14"><span class="lineNum">      14 </span><span class="lineNoCov">          0 : const QString SettingsConstants::size =</span></a>
+<span class="lineNum">      15 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/size&quot;;</span>
+<a name="16"><span class="lineNum">      16 </span><span class="lineNoCov">          0 : const QString SettingsConstants::splitterLeft =</span></a>
+<span class="lineNum">      17 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/splitterLeft&quot;;</span>
+<a name="18"><span class="lineNum">      18 </span><span class="lineNoCov">          0 : const QString SettingsConstants::splitterRight =</span></a>
+<span class="lineNum">      19 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/splitterRight&quot;;</span>
+<span class="lineNum">      20 </span><span class="lineNoCov">          0 : const QString SettingsConstants::maximized =</span>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          4 :     SettingsConstants::groupMainwindow + &quot;/maximized&quot;;</span></a>
+<a name="22"><span class="lineNum">      22 </span>            : </a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          4 : const QString SettingsConstants::usePass = &quot;usePass&quot;;</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          4 : const QString SettingsConstants::useSelection = &quot;useSelection&quot;;</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          4 : const QString SettingsConstants::useAutoclear = &quot;useAutoclear&quot;;</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          4 : const QString SettingsConstants::autoclearSeconds = &quot;autoclearSeconds&quot;;</span></a>
+<span class="lineNum">      27 </span><span class="lineCov">          4 : const QString SettingsConstants::useAutoclearPanel = &quot;useAutoclearPanel&quot;;</span>
+<a name="28"><span class="lineNum">      28 </span><span class="lineCov">          2 : const QString SettingsConstants::autoclearPanelSeconds =</span></a>
+<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          6 :     &quot;autoclearPanelSeconds&quot;;</span></a>
+<a name="30"><span class="lineNum">      30 </span><span class="lineCov">          4 : const QString SettingsConstants::hidePassword = &quot;hidePassword&quot;;</span></a>
+<a name="31"><span class="lineNum">      31 </span><span class="lineCov">          4 : const QString SettingsConstants::hideContent = &quot;hideContent&quot;;</span></a>
+<a name="32"><span class="lineNum">      32 </span><span class="lineCov">          4 : const QString SettingsConstants::addGPGId = &quot;addGPGId&quot;;</span></a>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">          4 : const QString SettingsConstants::passStore = &quot;passStore&quot;;</span></a>
+<a name="34"><span class="lineNum">      34 </span><span class="lineCov">          4 : const QString SettingsConstants::passExecutable = &quot;passExecutable&quot;;</span></a>
+<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          4 : const QString SettingsConstants::gitExecutable = &quot;gitExecutable&quot;;</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">          4 : const QString SettingsConstants::gpgExecutable = &quot;gpgExecutable&quot;;</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          4 : const QString SettingsConstants::pwgenExecutable = &quot;pwgenExecutable&quot;;</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">          4 : const QString SettingsConstants::gpgHome = &quot;gpgHome&quot;;</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          4 : const QString SettingsConstants::useWebDav = &quot;useWebDav&quot;;</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          4 : const QString SettingsConstants::webDavUrl = &quot;webDavUrl&quot;;</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">          4 : const QString SettingsConstants::webDavUser = &quot;webDavUser&quot;;</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          4 : const QString SettingsConstants::webDavPassword = &quot;webDavPassword&quot;;</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          4 : const QString SettingsConstants::profile = &quot;profile&quot;;</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">          4 : const QString SettingsConstants::groupProfiles = &quot;profiles&quot;;</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">          4 : const QString SettingsConstants::useGit = &quot;useGit&quot;;</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          4 : const QString SettingsConstants::useOtp = &quot;useOtp&quot;;</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          4 : const QString SettingsConstants::useClipboard = &quot;useClipboard&quot;;</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">          4 : const QString SettingsConstants::usePwgen = &quot;usePwgen&quot;;</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          4 : const QString SettingsConstants::avoidCapitals = &quot;avoidCapitals&quot;;</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          4 : const QString SettingsConstants::avoidNumbers = &quot;avoidNumbers&quot;;</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          4 : const QString SettingsConstants::lessRandom = &quot;lessRandom&quot;;</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          4 : const QString SettingsConstants::useSymbols = &quot;useSymbols&quot;;</span></a>
+<span class="lineNum">      53 </span><span class="lineCov">          4 : const QString SettingsConstants::passwordLength = &quot;passwordLength&quot;;</span>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          2 : const QString SettingsConstants::passwordCharsselection =</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">          6 :     &quot;passwordCharsselection&quot;;</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          4 : const QString SettingsConstants::passwordChars = &quot;passwordChars&quot;;</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          4 : const QString SettingsConstants::useTrayIcon = &quot;useTrayIcon&quot;;</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          4 : const QString SettingsConstants::hideOnClose = &quot;hideOnClose&quot;;</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          4 : const QString SettingsConstants::startMinimized = &quot;startMinimized&quot;;</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">          4 : const QString SettingsConstants::alwaysOnTop = &quot;alwaysOnTop&quot;;</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          4 : const QString SettingsConstants::autoPull = &quot;autoPull&quot;;</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          4 : const QString SettingsConstants::autoPush = &quot;autoPush&quot;;</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          4 : const QString SettingsConstants::passTemplate = &quot;passTemplate&quot;;</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          4 : const QString SettingsConstants::useTemplate = &quot;useTemplate&quot;;</span></a>
+<span class="lineNum">      65 </span><span class="lineCov">          4 : const QString SettingsConstants::templateAllFields = &quot;templateAllFields&quot;;</span>
+<span class="lineNum">      66 </span><span class="lineCov">          4 : const QString SettingsConstants::clipBoardType = &quot;clipBoardType&quot;;</span>
 </pre>
       </td>
     </tr>

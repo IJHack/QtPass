@@ -32,16 +32,16 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">100</td>
+            <td class="headerCovTableEntry">137</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">22</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
@@ -63,7 +63,7 @@
 <a name="1"><span class="lineNum">       1 </span>            : /********************************************************************************</a>
 <span class="lineNum">       2 </span>            : ** Form generated from reading UI file 'keygendialog.ui'
 <span class="lineNum">       3 </span>            : **
-<span class="lineNum">       4 </span>            : ** Created by: Qt User Interface Compiler version 5.8.0
+<span class="lineNum">       4 </span>            : ** Created by: Qt User Interface Compiler version 5.11.0
 <span class="lineNum">       5 </span>            : **
 <span class="lineNum">       6 </span>            : ** WARNING! All changes made in this file will be lost when recompiling UI file!
 <span class="lineNum">       7 </span>            : ********************************************************************************/
@@ -72,204 +72,241 @@
 <span class="lineNum">      10 </span>            : #define UI_KEYGENDIALOG_H
 <span class="lineNum">      11 </span>            : 
 <span class="lineNum">      12 </span>            : #include &lt;QtCore/QVariant&gt;
-<span class="lineNum">      13 </span>            : #include &lt;QtWidgets/QAction&gt;
-<span class="lineNum">      14 </span>            : #include &lt;QtWidgets/QApplication&gt;
-<span class="lineNum">      15 </span>            : #include &lt;QtWidgets/QButtonGroup&gt;
-<span class="lineNum">      16 </span>            : #include &lt;QtWidgets/QCheckBox&gt;
-<span class="lineNum">      17 </span>            : #include &lt;QtWidgets/QDialog&gt;
-<span class="lineNum">      18 </span>            : #include &lt;QtWidgets/QDialogButtonBox&gt;
-<span class="lineNum">      19 </span>            : #include &lt;QtWidgets/QFrame&gt;
-<span class="lineNum">      20 </span>            : #include &lt;QtWidgets/QGridLayout&gt;
-<span class="lineNum">      21 </span>            : #include &lt;QtWidgets/QHeaderView&gt;
-<span class="lineNum">      22 </span>            : #include &lt;QtWidgets/QLabel&gt;
-<span class="lineNum">      23 </span>            : #include &lt;QtWidgets/QLineEdit&gt;
-<span class="lineNum">      24 </span>            : #include &lt;QtWidgets/QPlainTextEdit&gt;
-<span class="lineNum">      25 </span>            : #include &lt;QtWidgets/QVBoxLayout&gt;
-<span class="lineNum">      26 </span>            : #include &lt;QtWidgets/QWidget&gt;
-<span class="lineNum">      27 </span>            : 
-<span class="lineNum">      28 </span>            : QT_BEGIN_NAMESPACE
-<span class="lineNum">      29 </span>            : 
-<span class="lineNum">      30 </span>            : class Ui_KeygenDialog
-<span class="lineNum">      31 </span>            : {
-<span class="lineNum">      32 </span>            : public:
-<span class="lineNum">      33 </span>            :     QVBoxLayout *verticalLayout_2;
-<span class="lineNum">      34 </span>            :     QLabel *label;
-<span class="lineNum">      35 </span>            :     QFrame *frame;
-<span class="lineNum">      36 </span>            :     QVBoxLayout *verticalLayout;
-<span class="lineNum">      37 </span>            :     QWidget *widget;
-<span class="lineNum">      38 </span>            :     QGridLayout *gridLayout;
-<span class="lineNum">      39 </span>            :     QLabel *labelPassphrase;
-<span class="lineNum">      40 </span>            :     QLabel *labelEmail;
-<span class="lineNum">      41 </span>            :     QLineEdit *passphrase2;
-<span class="lineNum">      42 </span>            :     QLineEdit *email;
-<span class="lineNum">      43 </span>            :     QLabel *labelName;
-<span class="lineNum">      44 </span>            :     QLineEdit *passphrase1;
-<span class="lineNum">      45 </span>            :     QLineEdit *name;
-<span class="lineNum">      46 </span>            :     QLabel *labelPassphraseInfo;
-<span class="lineNum">      47 </span>            :     QCheckBox *checkBox;
-<span class="lineNum">      48 </span>            :     QPlainTextEdit *plainTextEdit;
-<span class="lineNum">      49 </span>            :     QLabel *labelExpertInfo;
-<a name="50"><span class="lineNum">      50 </span>            :     QDialogButtonBox *buttonBox;</a>
-<span class="lineNum">      51 </span>            : 
-<span class="lineNum">      52 </span><span class="lineNoCov">          0 :     void setupUi(QDialog *KeygenDialog)</span>
-<a name="53"><span class="lineNum">      53 </span>            :     {</a>
-<span class="lineNum">      54 </span><span class="lineNoCov">          0 :         if (KeygenDialog-&gt;objectName().isEmpty())</span>
-<span class="lineNum">      55 </span><span class="lineNoCov">          0 :             KeygenDialog-&gt;setObjectName(QStringLiteral(&quot;KeygenDialog&quot;));</span>
-<a name="56"><span class="lineNum">      56 </span><span class="lineNoCov">          0 :         KeygenDialog-&gt;resize(606, 480);</span></a>
-<span class="lineNum">      57 </span><span class="lineNoCov">          0 :         verticalLayout_2 = new QVBoxLayout(KeygenDialog);</span>
-<span class="lineNum">      58 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_2&quot;));</span>
-<a name="59"><span class="lineNum">      59 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
-<span class="lineNum">      60 </span><span class="lineNoCov">          0 :         label = new QLabel(KeygenDialog);</span>
-<span class="lineNum">      61 </span><span class="lineNoCov">          0 :         label-&gt;setObjectName(QStringLiteral(&quot;label&quot;));</span>
-<span class="lineNum">      62 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);</span>
-<span class="lineNum">      63 </span><span class="lineNoCov">          0 :         sizePolicy.setHorizontalStretch(0);</span>
-<span class="lineNum">      64 </span><span class="lineNoCov">          0 :         sizePolicy.setVerticalStretch(0);</span>
-<span class="lineNum">      65 </span><span class="lineNoCov">          0 :         sizePolicy.setHeightForWidth(label-&gt;sizePolicy().hasHeightForWidth());</span>
-<span class="lineNum">      66 </span><span class="lineNoCov">          0 :         label-&gt;setSizePolicy(sizePolicy);</span>
-<span class="lineNum">      67 </span><span class="lineNoCov">          0 :         label-&gt;setWordWrap(true);</span>
-<span class="lineNum">      68 </span>            : 
-<span class="lineNum">      69 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addWidget(label);</span>
-<a name="70"><span class="lineNum">      70 </span>            : </a>
-<span class="lineNum">      71 </span><span class="lineNoCov">          0 :         frame = new QFrame(KeygenDialog);</span>
-<span class="lineNum">      72 </span><span class="lineNoCov">          0 :         frame-&gt;setObjectName(QStringLiteral(&quot;frame&quot;));</span>
-<span class="lineNum">      73 </span><span class="lineNoCov">          0 :         frame-&gt;setFrameShape(QFrame::NoFrame);</span>
-<a name="74"><span class="lineNum">      74 </span><span class="lineNoCov">          0 :         frame-&gt;setFrameShadow(QFrame::Plain);</span></a>
-<span class="lineNum">      75 </span><span class="lineNoCov">          0 :         verticalLayout = new QVBoxLayout(frame);</span>
-<span class="lineNum">      76 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setObjectName(QStringLiteral(&quot;verticalLayout&quot;));</span>
-<a name="77"><span class="lineNum">      77 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
-<span class="lineNum">      78 </span><span class="lineNoCov">          0 :         widget = new QWidget(frame);</span>
-<a name="79"><span class="lineNum">      79 </span><span class="lineNoCov">          0 :         widget-&gt;setObjectName(QStringLiteral(&quot;widget&quot;));</span></a>
-<span class="lineNum">      80 </span><span class="lineNoCov">          0 :         gridLayout = new QGridLayout(widget);</span>
-<span class="lineNum">      81 </span><span class="lineNoCov">          0 :         gridLayout-&gt;setObjectName(QStringLiteral(&quot;gridLayout&quot;));</span>
-<a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :         gridLayout-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
-<span class="lineNum">      83 </span><span class="lineNoCov">          0 :         labelPassphrase = new QLabel(widget);</span>
-<span class="lineNum">      84 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setObjectName(QStringLiteral(&quot;labelPassphrase&quot;));</span>
-<span class="lineNum">      85 </span>            : 
-<span class="lineNum">      86 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelPassphrase, 1, 0, 1, 2);</span>
-<a name="87"><span class="lineNum">      87 </span>            : </a>
-<span class="lineNum">      88 </span><span class="lineNoCov">          0 :         labelEmail = new QLabel(widget);</span>
-<span class="lineNum">      89 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setObjectName(QStringLiteral(&quot;labelEmail&quot;));</span>
-<span class="lineNum">      90 </span>            : 
-<span class="lineNum">      91 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelEmail, 0, 0, 1, 1);</span>
-<a name="92"><span class="lineNum">      92 </span>            : </a>
-<span class="lineNum">      93 </span><span class="lineNoCov">          0 :         passphrase2 = new QLineEdit(widget);</span>
-<span class="lineNum">      94 </span><span class="lineNoCov">          0 :         passphrase2-&gt;setObjectName(QStringLiteral(&quot;passphrase2&quot;));</span>
-<span class="lineNum">      95 </span><span class="lineNoCov">          0 :         passphrase2-&gt;setEchoMode(QLineEdit::Password);</span>
-<span class="lineNum">      96 </span>            : 
-<span class="lineNum">      97 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(passphrase2, 2, 2, 1, 3);</span>
-<a name="98"><span class="lineNum">      98 </span>            : </a>
-<span class="lineNum">      99 </span><span class="lineNoCov">          0 :         email = new QLineEdit(widget);</span>
-<span class="lineNum">     100 </span><span class="lineNoCov">          0 :         email-&gt;setObjectName(QStringLiteral(&quot;email&quot;));</span>
-<span class="lineNum">     101 </span>            : 
-<span class="lineNum">     102 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(email, 0, 1, 1, 2);</span>
-<a name="103"><span class="lineNum">     103 </span>            : </a>
-<span class="lineNum">     104 </span><span class="lineNoCov">          0 :         labelName = new QLabel(widget);</span>
-<span class="lineNum">     105 </span><span class="lineNoCov">          0 :         labelName-&gt;setObjectName(QStringLiteral(&quot;labelName&quot;));</span>
-<span class="lineNum">     106 </span>            : 
-<span class="lineNum">     107 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(labelName, 0, 3, 1, 1);</span>
-<a name="108"><span class="lineNum">     108 </span>            : </a>
-<span class="lineNum">     109 </span><span class="lineNoCov">          0 :         passphrase1 = new QLineEdit(widget);</span>
-<span class="lineNum">     110 </span><span class="lineNoCov">          0 :         passphrase1-&gt;setObjectName(QStringLiteral(&quot;passphrase1&quot;));</span>
-<span class="lineNum">     111 </span><span class="lineNoCov">          0 :         passphrase1-&gt;setEchoMode(QLineEdit::Password);</span>
-<span class="lineNum">     112 </span>            : 
-<span class="lineNum">     113 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(passphrase1, 1, 2, 1, 3);</span>
-<a name="114"><span class="lineNum">     114 </span>            : </a>
-<span class="lineNum">     115 </span><span class="lineNoCov">          0 :         name = new QLineEdit(widget);</span>
-<span class="lineNum">     116 </span><span class="lineNoCov">          0 :         name-&gt;setObjectName(QStringLiteral(&quot;name&quot;));</span>
-<span class="lineNum">     117 </span>            : 
-<span class="lineNum">     118 </span><span class="lineNoCov">          0 :         gridLayout-&gt;addWidget(name, 0, 4, 1, 1);</span>
-<span class="lineNum">     119 </span>            : 
-<span class="lineNum">     120 </span>            : 
-<span class="lineNum">     121 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(widget);</span>
-<a name="122"><span class="lineNum">     122 </span>            : </a>
-<span class="lineNum">     123 </span><span class="lineNoCov">          0 :         labelPassphraseInfo = new QLabel(frame);</span>
-<span class="lineNum">     124 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setObjectName(QStringLiteral(&quot;labelPassphraseInfo&quot;));</span>
-<span class="lineNum">     125 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setWordWrap(true);</span>
-<span class="lineNum">     126 </span>            : 
-<span class="lineNum">     127 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(labelPassphraseInfo);</span>
-<a name="128"><span class="lineNum">     128 </span>            : </a>
-<span class="lineNum">     129 </span><span class="lineNoCov">          0 :         checkBox = new QCheckBox(frame);</span>
-<span class="lineNum">     130 </span><span class="lineNoCov">          0 :         checkBox-&gt;setObjectName(QStringLiteral(&quot;checkBox&quot;));</span>
-<span class="lineNum">     131 </span>            : 
-<span class="lineNum">     132 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(checkBox);</span>
-<a name="133"><span class="lineNum">     133 </span>            : </a>
-<span class="lineNum">     134 </span><span class="lineNoCov">          0 :         plainTextEdit = new QPlainTextEdit(frame);</span>
-<span class="lineNum">     135 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setObjectName(QStringLiteral(&quot;plainTextEdit&quot;));</span>
-<span class="lineNum">     136 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setEnabled(false);</span>
-<span class="lineNum">     137 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setFrameShape(QFrame::StyledPanel);</span>
-<span class="lineNum">     138 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setFrameShadow(QFrame::Plain);</span>
-<span class="lineNum">     139 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setReadOnly(true);</span>
-<span class="lineNum">     140 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setTextInteractionFlags(Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);</span>
-<span class="lineNum">     141 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setBackgroundVisible(false);</span>
-<span class="lineNum">     142 </span>            : 
-<span class="lineNum">     143 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(plainTextEdit);</span>
-<a name="144"><span class="lineNum">     144 </span>            : </a>
-<span class="lineNum">     145 </span><span class="lineNoCov">          0 :         labelExpertInfo = new QLabel(frame);</span>
-<span class="lineNum">     146 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setObjectName(QStringLiteral(&quot;labelExpertInfo&quot;));</span>
-<span class="lineNum">     147 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setOpenExternalLinks(true);</span>
-<span class="lineNum">     148 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse);</span>
-<span class="lineNum">     149 </span>            : 
-<span class="lineNum">     150 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(labelExpertInfo);</span>
-<a name="151"><span class="lineNum">     151 </span>            : </a>
-<span class="lineNum">     152 </span><span class="lineNoCov">          0 :         buttonBox = new QDialogButtonBox(frame);</span>
-<span class="lineNum">     153 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setObjectName(QStringLiteral(&quot;buttonBox&quot;));</span>
-<span class="lineNum">     154 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setOrientation(Qt::Horizontal);</span>
-<span class="lineNum">     155 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);</span>
+<span class="lineNum">      13 </span>            : #include &lt;QtWidgets/QApplication&gt;
+<span class="lineNum">      14 </span>            : #include &lt;QtWidgets/QCheckBox&gt;
+<span class="lineNum">      15 </span>            : #include &lt;QtWidgets/QDialog&gt;
+<span class="lineNum">      16 </span>            : #include &lt;QtWidgets/QDialogButtonBox&gt;
+<span class="lineNum">      17 </span>            : #include &lt;QtWidgets/QFormLayout&gt;
+<span class="lineNum">      18 </span>            : #include &lt;QtWidgets/QFrame&gt;
+<span class="lineNum">      19 </span>            : #include &lt;QtWidgets/QLabel&gt;
+<span class="lineNum">      20 </span>            : #include &lt;QtWidgets/QLineEdit&gt;
+<span class="lineNum">      21 </span>            : #include &lt;QtWidgets/QPlainTextEdit&gt;
+<span class="lineNum">      22 </span>            : #include &lt;QtWidgets/QVBoxLayout&gt;
+<span class="lineNum">      23 </span>            : #include &lt;QtWidgets/QWidget&gt;
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span>            : class Ui_KeygenDialog
+<span class="lineNum">      28 </span>            : {
+<span class="lineNum">      29 </span>            : public:
+<span class="lineNum">      30 </span>            :     QVBoxLayout *verticalLayout_2;
+<span class="lineNum">      31 </span>            :     QLabel *label;
+<span class="lineNum">      32 </span>            :     QFrame *frame;
+<span class="lineNum">      33 </span>            :     QVBoxLayout *verticalLayout;
+<span class="lineNum">      34 </span>            :     QWidget *widget;
+<span class="lineNum">      35 </span>            :     QFormLayout *formLayout;
+<span class="lineNum">      36 </span>            :     QLabel *labelEmail;
+<span class="lineNum">      37 </span>            :     QLineEdit *email;
+<span class="lineNum">      38 </span>            :     QLabel *labelName;
+<span class="lineNum">      39 </span>            :     QLineEdit *name;
+<span class="lineNum">      40 </span>            :     QLabel *labelPassphrase;
+<span class="lineNum">      41 </span>            :     QLineEdit *passphrase1;
+<span class="lineNum">      42 </span>            :     QLineEdit *passphrase2;
+<span class="lineNum">      43 </span>            :     QLabel *labelPassphraseInfo;
+<span class="lineNum">      44 </span>            :     QFrame *line;
+<span class="lineNum">      45 </span>            :     QCheckBox *checkBox;
+<span class="lineNum">      46 </span>            :     QPlainTextEdit *plainTextEdit;
+<span class="lineNum">      47 </span>            :     QLabel *labelExpertInfo;
+<a name="48"><span class="lineNum">      48 </span>            :     QDialogButtonBox *buttonBox;</a>
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :     void setupUi(QDialog *KeygenDialog)</span>
+<a name="51"><span class="lineNum">      51 </span>            :     {</a>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :         if (KeygenDialog-&gt;objectName().isEmpty())</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :             KeygenDialog-&gt;setObjectName(QStringLiteral(&quot;KeygenDialog&quot;));</span>
+<a name="54"><span class="lineNum">      54 </span><span class="lineNoCov">          0 :         KeygenDialog-&gt;resize(606, 480);</span></a>
+<span class="lineNum">      55 </span><span class="lineNoCov">          0 :         verticalLayout_2 = new QVBoxLayout(KeygenDialog);</span>
+<span class="lineNum">      56 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_2&quot;));</span>
+<a name="57"><span class="lineNum">      57 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;setContentsMargins(6, 6, 6, 6);</span></a>
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :         label = new QLabel(KeygenDialog);</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :         label-&gt;setObjectName(QStringLiteral(&quot;label&quot;));</span>
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :         sizePolicy.setHorizontalStretch(0);</span>
+<span class="lineNum">      62 </span><span class="lineNoCov">          0 :         sizePolicy.setVerticalStretch(0);</span>
+<span class="lineNum">      63 </span><span class="lineNoCov">          0 :         sizePolicy.setHeightForWidth(label-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">      64 </span><span class="lineNoCov">          0 :         label-&gt;setSizePolicy(sizePolicy);</span>
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 :         label-&gt;setWordWrap(true);</span>
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addWidget(label);</span>
+<a name="68"><span class="lineNum">      68 </span>            : </a>
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :         frame = new QFrame(KeygenDialog);</span>
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :         frame-&gt;setObjectName(QStringLiteral(&quot;frame&quot;));</span>
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :         frame-&gt;setFrameShape(QFrame::NoFrame);</span>
+<a name="72"><span class="lineNum">      72 </span><span class="lineNoCov">          0 :         frame-&gt;setFrameShadow(QFrame::Plain);</span></a>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :         verticalLayout = new QVBoxLayout(frame);</span>
+<span class="lineNum">      74 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setObjectName(QStringLiteral(&quot;verticalLayout&quot;));</span>
+<a name="75"><span class="lineNum">      75 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 :         widget = new QWidget(frame);</span>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :         widget-&gt;setObjectName(QStringLiteral(&quot;widget&quot;));</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);</span>
+<span class="lineNum">      79 </span><span class="lineNoCov">          0 :         sizePolicy1.setHorizontalStretch(0);</span>
+<span class="lineNum">      80 </span><span class="lineNoCov">          0 :         sizePolicy1.setVerticalStretch(0);</span>
+<span class="lineNum">      81 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(widget-&gt;sizePolicy().hasHeightForWidth());</span>
+<a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :         widget-&gt;setSizePolicy(sizePolicy1);</span></a>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :         formLayout = new QFormLayout(widget);</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :         formLayout-&gt;setObjectName(QStringLiteral(&quot;formLayout&quot;));</span>
+<a name="85"><span class="lineNum">      85 </span><span class="lineNoCov">          0 :         formLayout-&gt;setContentsMargins(0, 0, 0, 0);</span></a>
+<span class="lineNum">      86 </span><span class="lineNoCov">          0 :         labelEmail = new QLabel(widget);</span>
+<span class="lineNum">      87 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setObjectName(QStringLiteral(&quot;labelEmail&quot;));</span>
+<span class="lineNum">      88 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(labelEmail-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">      89 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setSizePolicy(sizePolicy1);</span>
+<span class="lineNum">      90 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setLayoutDirection(Qt::LeftToRight);</span>
+<span class="lineNum">      91 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);</span>
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(0, QFormLayout::LabelRole, labelEmail);</span>
+<a name="94"><span class="lineNum">      94 </span>            : </a>
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :         email = new QLineEdit(widget);</span>
+<span class="lineNum">      96 </span><span class="lineNoCov">          0 :         email-&gt;setObjectName(QStringLiteral(&quot;email&quot;));</span>
+<span class="lineNum">      97 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);</span>
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 :         sizePolicy2.setHorizontalStretch(0);</span>
+<span class="lineNum">      99 </span><span class="lineNoCov">          0 :         sizePolicy2.setVerticalStretch(0);</span>
+<span class="lineNum">     100 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(email-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     101 </span><span class="lineNoCov">          0 :         email-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(0, QFormLayout::FieldRole, email);</span>
+<a name="104"><span class="lineNum">     104 </span>            : </a>
+<span class="lineNum">     105 </span><span class="lineNoCov">          0 :         labelName = new QLabel(widget);</span>
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 :         labelName-&gt;setObjectName(QStringLiteral(&quot;labelName&quot;));</span>
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(labelName-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     108 </span><span class="lineNoCov">          0 :         labelName-&gt;setSizePolicy(sizePolicy1);</span>
+<span class="lineNum">     109 </span><span class="lineNoCov">          0 :         labelName-&gt;setLayoutDirection(Qt::LeftToRight);</span>
+<span class="lineNum">     110 </span><span class="lineNoCov">          0 :         labelName-&gt;setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);</span>
+<span class="lineNum">     111 </span>            : 
+<span class="lineNum">     112 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(1, QFormLayout::LabelRole, labelName);</span>
+<a name="113"><span class="lineNum">     113 </span>            : </a>
+<span class="lineNum">     114 </span><span class="lineNoCov">          0 :         name = new QLineEdit(widget);</span>
+<span class="lineNum">     115 </span><span class="lineNoCov">          0 :         name-&gt;setObjectName(QStringLiteral(&quot;name&quot;));</span>
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(name-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     117 </span><span class="lineNoCov">          0 :         name-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     118 </span>            : 
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(1, QFormLayout::FieldRole, name);</span>
+<a name="120"><span class="lineNum">     120 </span>            : </a>
+<span class="lineNum">     121 </span><span class="lineNoCov">          0 :         labelPassphrase = new QLabel(widget);</span>
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setObjectName(QStringLiteral(&quot;labelPassphrase&quot;));</span>
+<span class="lineNum">     123 </span><span class="lineNoCov">          0 :         sizePolicy1.setHeightForWidth(labelPassphrase-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setSizePolicy(sizePolicy1);</span>
+<span class="lineNum">     125 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setLayoutDirection(Qt::LeftToRight);</span>
+<span class="lineNum">     126 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);</span>
+<span class="lineNum">     127 </span>            : 
+<span class="lineNum">     128 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(2, QFormLayout::LabelRole, labelPassphrase);</span>
+<a name="129"><span class="lineNum">     129 </span>            : </a>
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 :         passphrase1 = new QLineEdit(widget);</span>
+<span class="lineNum">     131 </span><span class="lineNoCov">          0 :         passphrase1-&gt;setObjectName(QStringLiteral(&quot;passphrase1&quot;));</span>
+<span class="lineNum">     132 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(passphrase1-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 :         passphrase1-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     134 </span><span class="lineNoCov">          0 :         passphrase1-&gt;setEchoMode(QLineEdit::Password);</span>
+<span class="lineNum">     135 </span>            : 
+<span class="lineNum">     136 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(2, QFormLayout::FieldRole, passphrase1);</span>
+<a name="137"><span class="lineNum">     137 </span>            : </a>
+<span class="lineNum">     138 </span><span class="lineNoCov">          0 :         passphrase2 = new QLineEdit(widget);</span>
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 :         passphrase2-&gt;setObjectName(QStringLiteral(&quot;passphrase2&quot;));</span>
+<span class="lineNum">     140 </span><span class="lineNoCov">          0 :         sizePolicy2.setHeightForWidth(passphrase2-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 :         passphrase2-&gt;setSizePolicy(sizePolicy2);</span>
+<span class="lineNum">     142 </span><span class="lineNoCov">          0 :         passphrase2-&gt;setEchoMode(QLineEdit::Password);</span>
+<span class="lineNum">     143 </span>            : 
+<span class="lineNum">     144 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(3, QFormLayout::FieldRole, passphrase2);</span>
+<a name="145"><span class="lineNum">     145 </span>            : </a>
+<span class="lineNum">     146 </span><span class="lineNoCov">          0 :         labelPassphraseInfo = new QLabel(widget);</span>
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setObjectName(QStringLiteral(&quot;labelPassphraseInfo&quot;));</span>
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Minimum);</span>
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :         sizePolicy3.setHorizontalStretch(0);</span>
+<span class="lineNum">     150 </span><span class="lineNoCov">          0 :         sizePolicy3.setVerticalStretch(0);</span>
+<span class="lineNum">     151 </span><span class="lineNoCov">          0 :         sizePolicy3.setHeightForWidth(labelPassphraseInfo-&gt;sizePolicy().hasHeightForWidth());</span>
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setSizePolicy(sizePolicy3);</span>
+<span class="lineNum">     153 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setWordWrap(true);</span>
+<span class="lineNum">     154 </span>            : 
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :         formLayout-&gt;setWidget(4, QFormLayout::FieldRole, labelPassphraseInfo);</span>
 <span class="lineNum">     156 </span>            : 
-<span class="lineNum">     157 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(buttonBox);</span>
-<span class="lineNum">     158 </span>            : 
-<span class="lineNum">     159 </span>            : 
-<span class="lineNum">     160 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addWidget(frame);</span>
-<span class="lineNum">     161 </span>            : 
-<span class="lineNum">     162 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(email, name);</span>
-<span class="lineNum">     163 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(name, passphrase1);</span>
-<span class="lineNum">     164 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(passphrase1, passphrase2);</span>
-<span class="lineNum">     165 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(passphrase2, checkBox);</span>
-<span class="lineNum">     166 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(checkBox, plainTextEdit);</span>
-<span class="lineNum">     167 </span>            : 
-<span class="lineNum">     168 </span><span class="lineNoCov">          0 :         retranslateUi(KeygenDialog);</span>
-<span class="lineNum">     169 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(accepted()), KeygenDialog, SLOT(accept()));</span>
-<span class="lineNum">     170 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(rejected()), KeygenDialog, SLOT(reject()));</span>
-<span class="lineNum">     171 </span>            : 
-<span class="lineNum">     172 </span><span class="lineNoCov">          0 :         QMetaObject::connectSlotsByName(KeygenDialog);</span>
-<a name="173"><span class="lineNum">     173 </span><span class="lineNoCov">          0 :     } // setupUi</span></a>
-<span class="lineNum">     174 </span>            : 
-<span class="lineNum">     175 </span><span class="lineNoCov">          0 :     void retranslateUi(QDialog *KeygenDialog)</span>
-<span class="lineNum">     176 </span>            :     {
-<span class="lineNum">     177 </span><span class="lineNoCov">          0 :         KeygenDialog-&gt;setWindowTitle(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Generate GnuPG keypair&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     178 </span><span class="lineNoCov">          0 :         label-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Generate a new key pair&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     179 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Passphrase&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     180 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Email&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     181 </span><span class="lineNoCov">          0 :         labelName-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Name&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     182 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     183 </span><span class="lineNoCov">          0 :         checkBox-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Expert&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     184 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setPlainText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;#           QtPass GPG key generator\n&quot;</span>
-<span class="lineNum">     185 </span>            : &quot;#\n&quot;
-<span class="lineNum">     186 </span>            : &quot;#      first test version please comment\n&quot;
-<span class="lineNum">     187 </span>            : &quot;#\n&quot;
-<span class="lineNum">     188 </span>            : &quot;%echo Generating a default key\n&quot;
-<span class="lineNum">     189 </span>            : &quot;Key-Type: default\n&quot;
-<span class="lineNum">     190 </span>            : &quot;Subkey-Type: default\n&quot;
-<span class="lineNum">     191 </span>            : &quot;Name-Real:\n&quot;
-<span class="lineNum">     192 </span>            : &quot;Name-Comment: QtPass\n&quot;
-<span class="lineNum">     193 </span>            : &quot;Name-Email:\n&quot;
-<span class="lineNum">     194 </span>            : &quot;Expire-Date: 0\n&quot;
-<span class="lineNum">     195 </span>            : &quot;%no-protection\n&quot;
-<span class="lineNum">     196 </span>            : &quot;# Do a commit here, so that we can later print \&quot;done\&quot; :-)\n&quot;
-<span class="lineNum">     197 </span>            : &quot;%commit\n&quot;
-<span class="lineNum">     198 </span>            : &quot;%echo done&quot;, Q_NULLPTR));
-<span class="lineNum">     199 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;For expert options check out the &lt;a href=\&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html\&quot;&gt;GnuPG manual&lt;/a&gt;&quot;, Q_NULLPTR));</span>
-<span class="lineNum">     200 </span><span class="lineNoCov">          0 :     } // retranslateUi</span>
-<span class="lineNum">     201 </span>            : 
-<span class="lineNum">     202 </span>            : };
-<span class="lineNum">     203 </span>            : 
-<span class="lineNum">     204 </span>            : namespace Ui {
-<span class="lineNum">     205 </span>            :     class KeygenDialog: public Ui_KeygenDialog {};
-<span class="lineNum">     206 </span>            : } // namespace Ui
-<span class="lineNum">     207 </span>            : 
-<span class="lineNum">     208 </span>            : QT_END_NAMESPACE
-<span class="lineNum">     209 </span>            : 
-<span class="lineNum">     210 </span>            : #endif // UI_KEYGENDIALOG_H
+<span class="lineNum">     157 </span>            : 
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(widget);</span>
+<a name="159"><span class="lineNum">     159 </span>            : </a>
+<span class="lineNum">     160 </span><span class="lineNoCov">          0 :         line = new QFrame(frame);</span>
+<span class="lineNum">     161 </span><span class="lineNoCov">          0 :         line-&gt;setObjectName(QStringLiteral(&quot;line&quot;));</span>
+<span class="lineNum">     162 </span><span class="lineNoCov">          0 :         line-&gt;setFrameShape(QFrame::HLine);</span>
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :         line-&gt;setFrameShadow(QFrame::Sunken);</span>
+<span class="lineNum">     164 </span>            : 
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(line);</span>
+<a name="166"><span class="lineNum">     166 </span>            : </a>
+<span class="lineNum">     167 </span><span class="lineNoCov">          0 :         checkBox = new QCheckBox(frame);</span>
+<span class="lineNum">     168 </span><span class="lineNoCov">          0 :         checkBox-&gt;setObjectName(QStringLiteral(&quot;checkBox&quot;));</span>
+<span class="lineNum">     169 </span>            : 
+<span class="lineNum">     170 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(checkBox);</span>
+<a name="171"><span class="lineNum">     171 </span>            : </a>
+<span class="lineNum">     172 </span><span class="lineNoCov">          0 :         plainTextEdit = new QPlainTextEdit(frame);</span>
+<span class="lineNum">     173 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setObjectName(QStringLiteral(&quot;plainTextEdit&quot;));</span>
+<span class="lineNum">     174 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setEnabled(false);</span>
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setFrameShape(QFrame::StyledPanel);</span>
+<span class="lineNum">     176 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setFrameShadow(QFrame::Plain);</span>
+<span class="lineNum">     177 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setReadOnly(true);</span>
+<span class="lineNum">     178 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setTextInteractionFlags(Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);</span>
+<span class="lineNum">     179 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setBackgroundVisible(false);</span>
+<span class="lineNum">     180 </span>            : 
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(plainTextEdit);</span>
+<a name="182"><span class="lineNum">     182 </span>            : </a>
+<span class="lineNum">     183 </span><span class="lineNoCov">          0 :         labelExpertInfo = new QLabel(frame);</span>
+<span class="lineNum">     184 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setObjectName(QStringLiteral(&quot;labelExpertInfo&quot;));</span>
+<span class="lineNum">     185 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setOpenExternalLinks(true);</span>
+<span class="lineNum">     186 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setTextInteractionFlags(Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse);</span>
+<span class="lineNum">     187 </span>            : 
+<span class="lineNum">     188 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(labelExpertInfo);</span>
+<a name="189"><span class="lineNum">     189 </span>            : </a>
+<span class="lineNum">     190 </span><span class="lineNoCov">          0 :         buttonBox = new QDialogButtonBox(frame);</span>
+<span class="lineNum">     191 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setObjectName(QStringLiteral(&quot;buttonBox&quot;));</span>
+<span class="lineNum">     192 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setOrientation(Qt::Horizontal);</span>
+<span class="lineNum">     193 </span><span class="lineNoCov">          0 :         buttonBox-&gt;setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);</span>
+<span class="lineNum">     194 </span>            : 
+<span class="lineNum">     195 </span><span class="lineNoCov">          0 :         verticalLayout-&gt;addWidget(buttonBox);</span>
+<span class="lineNum">     196 </span>            : 
+<span class="lineNum">     197 </span>            : 
+<span class="lineNum">     198 </span><span class="lineNoCov">          0 :         verticalLayout_2-&gt;addWidget(frame);</span>
+<span class="lineNum">     199 </span>            : 
+<span class="lineNum">     200 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(email, passphrase1);</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(passphrase1, passphrase2);</span>
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(passphrase2, checkBox);</span>
+<span class="lineNum">     203 </span><span class="lineNoCov">          0 :         QWidget::setTabOrder(checkBox, plainTextEdit);</span>
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span><span class="lineNoCov">          0 :         retranslateUi(KeygenDialog);</span>
+<span class="lineNum">     206 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(accepted()), KeygenDialog, SLOT(accept()));</span>
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :         QObject::connect(buttonBox, SIGNAL(rejected()), KeygenDialog, SLOT(reject()));</span>
+<span class="lineNum">     208 </span>            : 
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :         QMetaObject::connectSlotsByName(KeygenDialog);</span>
+<a name="210"><span class="lineNum">     210 </span><span class="lineNoCov">          0 :     } // setupUi</span></a>
+<span class="lineNum">     211 </span>            : 
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 :     void retranslateUi(QDialog *KeygenDialog)</span>
+<span class="lineNum">     213 </span>            :     {
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 :         KeygenDialog-&gt;setWindowTitle(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Generate GnuPG keypair&quot;, nullptr));</span>
+<span class="lineNum">     215 </span><span class="lineNoCov">          0 :         label-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Generate a new key pair&quot;, nullptr));</span>
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :         labelEmail-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Email&quot;, nullptr));</span>
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :         labelName-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Name&quot;, nullptr));</span>
+<span class="lineNum">     218 </span><span class="lineNoCov">          0 :         labelPassphrase-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Passphrase&quot;, nullptr));</span>
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :         labelPassphraseInfo-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;, nullptr));</span>
+<span class="lineNum">     220 </span><span class="lineNoCov">          0 :         checkBox-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;Expert&quot;, nullptr));</span>
+<span class="lineNum">     221 </span><span class="lineNoCov">          0 :         plainTextEdit-&gt;setPlainText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;#           QtPass GPG key generator\n&quot;</span>
+<span class="lineNum">     222 </span>            : &quot;#\n&quot;
+<span class="lineNum">     223 </span>            : &quot;#      first test version please comment\n&quot;
+<span class="lineNum">     224 </span>            : &quot;#\n&quot;
+<span class="lineNum">     225 </span>            : &quot;%echo Generating a default key\n&quot;
+<span class="lineNum">     226 </span>            : &quot;Key-Type: default\n&quot;
+<span class="lineNum">     227 </span>            : &quot;Subkey-Type: default\n&quot;
+<span class="lineNum">     228 </span>            : &quot;Name-Real:\n&quot;
+<span class="lineNum">     229 </span>            : &quot;Name-Comment: QtPass\n&quot;
+<span class="lineNum">     230 </span>            : &quot;Name-Email:\n&quot;
+<span class="lineNum">     231 </span>            : &quot;Expire-Date: 0\n&quot;
+<span class="lineNum">     232 </span>            : &quot;%no-protection\n&quot;
+<span class="lineNum">     233 </span>            : &quot;# Do a commit here, so that we can later print \&quot;done\&quot; :-)\n&quot;
+<span class="lineNum">     234 </span>            : &quot;%commit\n&quot;
+<span class="lineNum">     235 </span>            : &quot;%echo done&quot;, nullptr));
+<span class="lineNum">     236 </span><span class="lineNoCov">          0 :         labelExpertInfo-&gt;setText(QApplication::translate(&quot;KeygenDialog&quot;, &quot;For expert options check out the &lt;a href=\&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html\&quot;&gt;GnuPG manual&lt;/a&gt;&quot;, nullptr));</span>
+<span class="lineNum">     237 </span><span class="lineNoCov">          0 :     } // retranslateUi</span>
+<span class="lineNum">     238 </span>            : 
+<span class="lineNum">     239 </span>            : };
+<span class="lineNum">     240 </span>            : 
+<span class="lineNum">     241 </span>            : namespace Ui {
+<span class="lineNum">     242 </span>            :     class KeygenDialog: public Ui_KeygenDialog {};
+<span class="lineNum">     243 </span>            : } // namespace Ui
+<span class="lineNum">     244 </span>            : 
+<span class="lineNum">     245 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     246 </span>            : 
+<span class="lineNum">     247 </span>            : #endif // UI_KEYGENDIALOG_H
 </pre>
       </td>
     </tr>

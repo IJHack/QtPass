@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -70,19 +70,19 @@
 <span class="lineNum">       8 </span>            :     \brief Wrapper for executing pass to handle the password-store
 <span class="lineNum">       9 </span>            : */
 <span class="lineNum">      10 </span>            : class RealPass : public Pass {
-<span class="lineNum">      11 </span>            : 
-<span class="lineNum">      12 </span>            :   void executePass(PROCESS id, const QStringList &amp;arg,
-<span class="lineNum">      13 </span>            :                    QString input = QString(), bool readStdout = true,
-<span class="lineNum">      14 </span>            :                    bool readStderr = true);
-<span class="lineNum">      15 </span>            : 
-<a name="16"><span class="lineNum">      16 </span>            : public:</a>
-<span class="lineNum">      17 </span>            :   RealPass();
-<span class="lineNum">      18 </span><span class="lineCov">          4 :   virtual ~RealPass() {}</span>
-<span class="lineNum">      19 </span>            :   virtual void GitInit() Q_DECL_OVERRIDE;
-<span class="lineNum">      20 </span>            :   virtual void GitPull() Q_DECL_OVERRIDE;
-<span class="lineNum">      21 </span>            :   virtual void GitPull_b() Q_DECL_OVERRIDE;
-<span class="lineNum">      22 </span>            :   virtual void GitPush() Q_DECL_OVERRIDE;
-<span class="lineNum">      23 </span>            :   virtual void Show(QString file) Q_DECL_OVERRIDE;
+<span class="lineNum">      11 </span>            :   void executePass(PROCESS id, const QStringList &amp;arg,
+<span class="lineNum">      12 </span>            :                    QString input = QString(), bool readStdout = true,
+<span class="lineNum">      13 </span>            :                    bool readStderr = true);
+<span class="lineNum">      14 </span>            : 
+<a name="15"><span class="lineNum">      15 </span>            : public:</a>
+<span class="lineNum">      16 </span>            :   RealPass();
+<span class="lineNum">      17 </span><span class="lineCov">          8 :   virtual ~RealPass() {}</span>
+<span class="lineNum">      18 </span>            :   virtual void GitInit() Q_DECL_OVERRIDE;
+<span class="lineNum">      19 </span>            :   virtual void GitPull() Q_DECL_OVERRIDE;
+<span class="lineNum">      20 </span>            :   virtual void GitPull_b() Q_DECL_OVERRIDE;
+<span class="lineNum">      21 </span>            :   virtual void GitPush() Q_DECL_OVERRIDE;
+<span class="lineNum">      22 </span>            :   virtual void Show(QString file) Q_DECL_OVERRIDE;
+<span class="lineNum">      23 </span>            :   virtual void OtpGenerate(QString file) Q_DECL_OVERRIDE;
 <span class="lineNum">      24 </span>            :   virtual void Insert(QString file, QString value,
 <span class="lineNum">      25 </span>            :                       bool overwrite = false) Q_DECL_OVERRIDE;
 <span class="lineNum">      26 </span>            :   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;

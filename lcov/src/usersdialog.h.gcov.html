@@ -32,16 +32,16 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">1</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-03-20 15:52:48</td>
+            <td class="headerValue">2018-06-12 11:27:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">1</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
@@ -63,49 +63,48 @@
 <a name="1"><span class="lineNum">       1 </span>            : #ifndef USERSDIALOG_H_</a>
 <span class="lineNum">       2 </span>            : #define USERSDIALOG_H_
 <span class="lineNum">       3 </span>            : 
-<span class="lineNum">       4 </span>            : #include &quot;datahelpers.h&quot;
-<span class="lineNum">       5 </span>            : #include &lt;QCloseEvent&gt;
-<span class="lineNum">       6 </span>            : #include &lt;QDateTime&gt;
-<span class="lineNum">       7 </span>            : #include &lt;QDialog&gt;
-<span class="lineNum">       8 </span>            : #include &lt;QList&gt;
-<span class="lineNum">       9 </span>            : #include &lt;QStandardItemModel&gt;
-<span class="lineNum">      10 </span>            : 
-<span class="lineNum">      11 </span>            : namespace Ui {
-<span class="lineNum">      12 </span>            : class UsersDialog;
-<span class="lineNum">      13 </span>            : }
-<span class="lineNum">      14 </span>            : 
-<span class="lineNum">      15 </span>            : class QListWidgetItem;
-<span class="lineNum">      16 </span>            : 
-<span class="lineNum">      17 </span>            : /*!
-<span class="lineNum">      18 </span>            :     \class UsersDialog
-<span class="lineNum">      19 </span>            :     \brief Handles listing and editing of GPG users.
-<span class="lineNum">      20 </span>            : 
-<span class="lineNum">      21 </span>            :     Selection of whom to encrypt to.
-<a name="22"><span class="lineNum">      22 </span>            :  */</a>
-<span class="lineNum">      23 </span>            : class UsersDialog : public QDialog {
-<span class="lineNum">      24 </span><span class="lineNoCov">          0 :   Q_OBJECT</span>
-<span class="lineNum">      25 </span>            : 
-<a name="26"><span class="lineNum">      26 </span>            : public:</a>
-<span class="lineNum">      27 </span>            :   explicit UsersDialog(QWidget *parent = 0);
-<span class="lineNum">      28 </span><span class="lineNoCov">          0 :   ~UsersDialog();</span>
-<span class="lineNum">      29 </span>            :   void setUsers(QList&lt;UserInfo&gt; *);
-<span class="lineNum">      30 </span>            : 
-<span class="lineNum">      31 </span>            : protected:
-<span class="lineNum">      32 </span>            :   void closeEvent(QCloseEvent *event);
-<span class="lineNum">      33 </span>            :   void keyPressEvent(QKeyEvent *event);
-<span class="lineNum">      34 </span>            : 
-<span class="lineNum">      35 </span>            : private slots:
-<span class="lineNum">      36 </span>            :   void itemChange(QListWidgetItem *item);
-<span class="lineNum">      37 </span>            :   void on_lineEdit_textChanged(const QString &amp;filter);
-<span class="lineNum">      38 </span>            :   void on_checkBox_clicked();
-<span class="lineNum">      39 </span>            : 
-<span class="lineNum">      40 </span>            : private:
-<span class="lineNum">      41 </span>            :   Ui::UsersDialog *ui;
-<span class="lineNum">      42 </span>            :   QList&lt;UserInfo&gt; *userList;
-<span class="lineNum">      43 </span>            :   void populateList(const QString &amp;filter);
-<span class="lineNum">      44 </span>            : };
-<span class="lineNum">      45 </span>            : 
-<span class="lineNum">      46 </span>            : #endif // USERSDIALOG_H_
+<span class="lineNum">       4 </span>            : #include &quot;userinfo.h&quot;
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : #include &lt;QDialog&gt;
+<span class="lineNum">       7 </span>            : #include &lt;QList&gt;
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : namespace Ui {
+<span class="lineNum">      10 </span>            : class UsersDialog;
+<span class="lineNum">      11 </span>            : }
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span>            : class QCloseEvent;
+<span class="lineNum">      14 </span>            : class QListWidgetItem;
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : /*!
+<span class="lineNum">      17 </span>            :     \class UsersDialog
+<span class="lineNum">      18 </span>            :     \brief Handles listing and editing of GPG users.
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span>            :     Selection of whom to encrypt to.
+<a name="21"><span class="lineNum">      21 </span>            :  */</a>
+<span class="lineNum">      22 </span>            : class UsersDialog : public QDialog {
+<span class="lineNum">      23 </span><span class="lineNoCov">          0 :   Q_OBJECT</span>
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            : public:
+<span class="lineNum">      26 </span>            :   explicit UsersDialog(QWidget *parent = 0);
+<span class="lineNum">      27 </span>            :   ~UsersDialog();
+<span class="lineNum">      28 </span>            :   void setUsers(QList&lt;UserInfo&gt; *);
+<span class="lineNum">      29 </span>            : 
+<span class="lineNum">      30 </span>            : protected:
+<span class="lineNum">      31 </span>            :   void closeEvent(QCloseEvent *event);
+<span class="lineNum">      32 </span>            :   void keyPressEvent(QKeyEvent *event);
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : private slots:
+<span class="lineNum">      35 </span>            :   void itemChange(QListWidgetItem *item);
+<span class="lineNum">      36 </span>            :   void on_lineEdit_textChanged(const QString &amp;filter);
+<span class="lineNum">      37 </span>            :   void on_checkBox_clicked();
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : private:
+<span class="lineNum">      40 </span>            :   Ui::UsersDialog *ui;
+<span class="lineNum">      41 </span>            :   QList&lt;UserInfo&gt; *userList;
+<span class="lineNum">      42 </span>            :   void populateList(const QString &amp;filter);
+<span class="lineNum">      43 </span>            : };
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span>            : #endif // USERSDIALOG_H_
 </pre>
       </td>
     </tr>
