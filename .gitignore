@@ -29,3 +29,10 @@ tests/auto/util/moc_predefs.h
 tests/auto/util/target_wrapper.sh
 tests/auto/util/tst_util.app/
 tests/auto/util/tst_util.moc
+**/*.gc*
+README.c*
+README.faq
+README.rtf
+html/**
+rtf/**
+latex/**
