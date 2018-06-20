@@ -161,12 +161,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Extensions:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="528"/>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Use pass otp extension</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
@@ -593,17 +593,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="339"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Generate OTP and copy to clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="345"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="361"/>
@@ -731,7 +731,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="601"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP Code</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="683"/>
@@ -955,7 +955,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="83"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1035,12 +1035,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Show unusable keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>created</source>
         <translation>created</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="80"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>expires</source>
         <translation>expires</translation>
     </message>
