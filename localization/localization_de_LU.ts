@@ -929,7 +929,7 @@ Neues Passwort-Datei:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="83"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1009,12 +1009,12 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation>unbrauchbare Schlüssel anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>created</source>
         <translation>erstellt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="80"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>expires</source>
         <translation>gültig bis</translation>
     </message>

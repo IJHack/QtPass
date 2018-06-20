@@ -955,7 +955,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="83"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1035,12 +1035,12 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation>Mostra les claus inutilitzables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="80"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>expires</source>
         <translation>venç</translation>
     </message>

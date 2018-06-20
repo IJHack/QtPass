@@ -970,7 +970,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="83"/>
         <source>LTR</source>
         <translation></translation>
     </message>
@@ -1050,12 +1050,12 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
         <translation>Mostra chiavi non utilizzabili</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>created</source>
         <translation>creato</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="80"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>expires</source>
         <translation>scade</translation>
     </message>

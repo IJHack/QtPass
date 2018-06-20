@@ -943,7 +943,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="81"/>
+        <location filename="../main/main.cpp" line="83"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1023,12 +1023,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Показать непригодные ключи</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>created</source>
         <translation>создан</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="80"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>expires</source>
         <translation>истекает</translation>
     </message>
