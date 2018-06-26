@@ -17,6 +17,7 @@
 **Closed issues:**
 
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
+- We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 
