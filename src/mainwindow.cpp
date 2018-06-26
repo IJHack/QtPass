@@ -598,8 +598,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
 
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
-      addToGridLayout(ui->gridLayout->count()+1, tr("OTP Code"), p_output);
-      copyTextToClipboard(p_output);
+    addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
+    copyTextToClipboard(p_output);
   }
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
@@ -1456,9 +1456,9 @@ void MainWindow::updateGitButtonVisibility() {
 }
 
 void MainWindow::updateOtpButtonVisibility() {
-  #if defined(Q_OS_WIN ) || defined(__APPLE__)
-    ui->actionOtp->setVisible(false);
-  #endif
+#if defined(Q_OS_WIN) || defined(__APPLE__)
+  ui->actionOtp->setVisible(false);
+#endif
   if (!QtPassSettings::isUseOtp())
     ui->actionOtp->setEnabled(false);
   else

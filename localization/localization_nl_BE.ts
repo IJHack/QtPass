@@ -385,47 +385,47 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="71"/>
-        <location filename="../src/imitatepass.cpp" line="271"/>
+        <location filename="../src/imitatepass.cpp" line="73"/>
+        <location filename="../src/imitatepass.cpp" line="273"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="72"/>
-        <location filename="../src/imitatepass.cpp" line="272"/>
+        <location filename="../src/imitatepass.cpp" line="74"/>
+        <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="151"/>
+        <location filename="../src/imitatepass.cpp" line="153"/>
         <source>Cannot update</source>
         <translation>Kan niet updaten</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="152"/>
+        <location filename="../src/imitatepass.cpp" line="154"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Kon .gpg-id bestand niet openen om te schrijven.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Check selected users!</source>
         <translation>Kontroleer geselecteerde gebruikers!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="166"/>
+        <location filename="../src/imitatepass.cpp" line="168"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
 Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="219"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Her-encrypten vanaf map %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="221"/>
-        <location filename="../src/imitatepass.cpp" line="302"/>
+        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="304"/>
         <source>Updating password-store</source>
         <translation>Vernieuwen password-store</translation>
     </message>

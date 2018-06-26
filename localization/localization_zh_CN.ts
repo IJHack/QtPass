@@ -385,46 +385,46 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="71"/>
-        <location filename="../src/imitatepass.cpp" line="271"/>
+        <location filename="../src/imitatepass.cpp" line="73"/>
+        <location filename="../src/imitatepass.cpp" line="273"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="72"/>
-        <location filename="../src/imitatepass.cpp" line="272"/>
+        <location filename="../src/imitatepass.cpp" line="74"/>
+        <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="151"/>
+        <location filename="../src/imitatepass.cpp" line="153"/>
         <source>Cannot update</source>
         <translation>无法更新</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="152"/>
+        <location filename="../src/imitatepass.cpp" line="154"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>.gpg-id 无法写入</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Check selected users!</source>
         <translation>请核对所选用户！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="166"/>
+        <location filename="../src/imitatepass.cpp" line="168"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>警告：所选用户都没有私钥，任何新添加的密码将无法解密！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="219"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="221"/>
-        <location filename="../src/imitatepass.cpp" line="302"/>
+        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="304"/>
         <source>Updating password-store</source>
         <translation>正在更新密码库...</translation>
     </message>

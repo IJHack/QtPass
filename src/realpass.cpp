@@ -52,7 +52,6 @@ void RealPass::OtpGenerate(QString file) {
   executePass(PASS_OTP_GENERATE, {"otp", file}, "", true);
 }
 
-
 /**
  * @brief RealPass::Insert pass insert
  */

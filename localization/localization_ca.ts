@@ -385,47 +385,47 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="71"/>
-        <location filename="../src/imitatepass.cpp" line="271"/>
+        <location filename="../src/imitatepass.cpp" line="73"/>
+        <location filename="../src/imitatepass.cpp" line="273"/>
         <source>Can not edit</source>
         <translation>No es pot editar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="72"/>
-        <location filename="../src/imitatepass.cpp" line="272"/>
+        <location filename="../src/imitatepass.cpp" line="74"/>
+        <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>No s&apos;ha pogut llegir el fitxer que s&apos;ha d&apos;utilitzar per al xifratge, falta el fitxer .gpg-id o bé no és vàlid.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="151"/>
+        <location filename="../src/imitatepass.cpp" line="153"/>
         <source>Cannot update</source>
         <translation>No es pot actualitzar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="152"/>
+        <location filename="../src/imitatepass.cpp" line="154"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Ha fallat l&apos;obriment de .gpg-id per a l&apos;escriptura.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Check selected users!</source>
         <translation>Comproveu els usuaris seleccionats!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="166"/>
+        <location filename="../src/imitatepass.cpp" line="168"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Cap de les tecles seleccionades té una clau secreta disponible.
 Probablement no podreu desxifrar les contrasenyes afegides recentment!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="219"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-xifratge des de la carpeta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="221"/>
-        <location filename="../src/imitatepass.cpp" line="302"/>
+        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="304"/>
         <source>Updating password-store</source>
         <translation>Actualització del magatzem de contrasenyes</translation>
     </message>
