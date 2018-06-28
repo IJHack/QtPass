@@ -33,7 +33,8 @@
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
  * the main window.
- * @param parent
+ * @param searchText for searching from cli
+ * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),

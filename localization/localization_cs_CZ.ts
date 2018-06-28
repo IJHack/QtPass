@@ -545,14 +545,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="323"/>
         <location filename="../src/mainwindow.ui" line="326"/>
-        <location filename="../src/mainwindow.cpp" line="1230"/>
+        <location filename="../src/mainwindow.cpp" line="1231"/>
         <source>Edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="331"/>
         <location filename="../src/mainwindow.ui" line="334"/>
-        <location filename="../src/mainwindow.cpp" line="1242"/>
+        <location filename="../src/mainwindow.cpp" line="1243"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
@@ -565,18 +565,6 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="350"/>
         <source>Push</source>
         <translation>Odeslat</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="243"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="310"/>
@@ -609,13 +597,25 @@ p, li { white-space: pre-wrap; }
         <translation>Stáhnout</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="243"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="369"/>
         <source>Manage who can read password in folder</source>
         <translation>Správa oprávnění číst data v adresáři</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="366"/>
-        <location filename="../src/mainwindow.cpp" line="1224"/>
+        <location filename="../src/mainwindow.cpp" line="1225"/>
         <source>Users</source>
         <translation>Uživatelé</translation>
     </message>
@@ -649,7 +649,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="130"/>
+        <location filename="../src/mainwindow.cpp" line="131"/>
         <source>Welcome to QtPass %1</source>
         <translation>Vítejte v QtPass %1</translation>
     </message>
@@ -662,39 +662,39 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Přidat adresář</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="236"/>
+        <location filename="../src/mainwindow.cpp" line="237"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Selhalo připojení k WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="249"/>
+        <location filename="../src/mainwindow.cpp" line="250"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="250"/>
+        <location filename="../src/mainwindow.cpp" line="251"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Vložte heslo pro připojení k WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="266"/>
+        <location filename="../src/mainwindow.cpp" line="267"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav neočekávaně skončil
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="270"/>
+        <location filename="../src/mainwindow.cpp" line="271"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Selhalo spuštění fusedav pro připojení k WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="440"/>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="441"/>
+        <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Updating password-store</source>
         <translation>Aktualizace úložiště hesel</translation>
     </message>
@@ -711,101 +711,101 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Skryté heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="572"/>
+        <location filename="../src/mainwindow.cpp" line="573"/>
         <source>Content hidden</source>
         <translation>Skrytý obsah</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="576"/>
-        <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/mainwindow.cpp" line="577"/>
+        <location filename="../src/mainwindow.cpp" line="1381"/>
         <source>Password</source>
         <translation type="unfinished">Heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="601"/>
+        <location filename="../src/mainwindow.cpp" line="602"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="683"/>
+        <location filename="../src/mainwindow.cpp" line="684"/>
         <source>Clipboard cleared</source>
         <translation>Schránka vymazána</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="685"/>
+        <location filename="../src/mainwindow.cpp" line="686"/>
         <source>Clipboard not cleared</source>
         <translation>Schránka nevymazána</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Password and Content hidden</source>
         <translation>Skryté heslo i obsah</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="766"/>
+        <location filename="../src/mainwindow.cpp" line="767"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="769"/>
+        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow.cpp" line="773"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="775"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="778"/>
+        <location filename="../src/mainwindow.cpp" line="779"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>Looking for: %1</source>
         <translation>Vyhledávání: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="876"/>
-        <location filename="../src/mainwindow.cpp" line="1279"/>
+        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>New file</source>
         <translation>Nový soubor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nový soubor s heslem: 
 (Bude uložen do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="905"/>
+        <location filename="../src/mainwindow.cpp" line="906"/>
         <source> and the whole content?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="915"/>
+        <location filename="../src/mainwindow.cpp" line="916"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="925"/>
+        <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Are you sure you want to delete %1%2</source>
         <translation>Opravdu chcete smazat %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="924"/>
+        <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Delete password?</source>
         <translation>Smazat heslo?</translation>
     </message>
@@ -814,7 +814,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Opravdu chcete smazat %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="924"/>
+        <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Delete folder?</source>
         <translation>Smazat adresář?</translation>
     </message>
@@ -823,58 +823,58 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Opravdu chcete smazat %1? {1%2??}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="971"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Can not get key list</source>
         <translation>Nelze získat seznam klíčů</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="973"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Nelze získat seznam dostupných gpg klíčů</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1005"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>Key not found in keyring</source>
         <translation>Klíč nebyl v klíčence nalezen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1061"/>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Generating GPG key pair</source>
         <translation>Generování páru GPG klíčů</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1102"/>
         <source>Profile changed to %1</source>
         <translation>Profil změněn na %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1222"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="315"/>
         <location filename="../src/mainwindow.ui" line="318"/>
-        <location filename="../src/mainwindow.cpp" line="1222"/>
+        <location filename="../src/mainwindow.cpp" line="1223"/>
         <source>Add folder</source>
         <translation>Přidat adresář</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="304"/>
         <location filename="../src/mainwindow.ui" line="307"/>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
+        <location filename="../src/mainwindow.cpp" line="1224"/>
         <source>Add password</source>
         <translation>Přidat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1280"/>
+        <location filename="../src/mainwindow.cpp" line="1281"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nový adresář: 
 (Bude umístěn do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1329"/>
+        <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Copied to clipboard</source>
         <translation>zkopírovat do schránky</translation>
     </message>
