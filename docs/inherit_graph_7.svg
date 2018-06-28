@@ -17,7 +17,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="class_named_values.html" target="_top" xlink:title="The NamedValues class is mostly a list of but also has a method to take a specific NamedValue pair ou...">
+<g id="a_node2"><a xlink:href="class_named_values.html" target="_top" xlink:title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">
 <polygon fill="none" stroke="#000000" points="75.3398,-.5 75.3398,-18.5 153.415,-18.5 153.415,-.5 75.3398,-.5"/>
 <text text-anchor="middle" x="114.3774" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">NamedValues</text>
 </a>
