@@ -68,6 +68,10 @@ public slots:
   void clearClipboard();
   void messageAvailable(QString message);
 
+  void executeWrapperStarted();
+  void critical(QString, QString);
+  void showStatusMessage(QString msg, int timeout);
+
 private slots:
   void addPassword();
   void addFolder();
@@ -93,11 +97,8 @@ private slots:
   void copyTextToClipboard(const QString &text);
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
-  void executeWrapperStarted();
-  void showStatusMessage(QString msg, int timeout);
   void startReencryptPath();
   void endReencryptPath();
-  void critical(QString, QString);
   void passShowHandler(const QString &);
   void passOtpHandler(const QString &);
   void passStoreChanged(const QString &, const QString &);
