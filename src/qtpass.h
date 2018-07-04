@@ -2,11 +2,13 @@
 #define QTPASS_H
 
 #include <QObject>
+#include <QProcess>
 
 class MainWindow;
 class Pass;
 class QtPass : public QObject {
   Q_OBJECT
+
 public:
   QtPass();
 
@@ -23,5 +25,7 @@ public slots:
 
 private slots:
   void processError(QProcess::ProcessError);
+
+};
 
 #endif // QTPASS_H

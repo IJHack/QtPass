@@ -5,7 +5,6 @@
 #include <QProcess>
 
 QtPass::QtPass() {
-    m_mainWindow = mainWindow;
     // This should connect Pass to MainWindow
 
     connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -13,7 +12,7 @@ QtPass::QtPass() {
 }
 
 void QtPass::connectPassSignalHandlers(Pass *pass) {
-    connect(pass, &Pass::error, m_mainWindow, &MainWindow::processError);
+    connect(pass, &Pass::error, this, &QtPass::processError);
 //    connect(pass, &Pass::startingExecuteWrapper, this,
 //            &MainWindow::executeWrapperStarted);
 //    connect(pass, &Pass::critical, this, &MainWindow::critical);
@@ -61,6 +60,6 @@ void QtPass::processError(QProcess::ProcessError error) {
     break;
   }
 
-  m_mainWindow->flashText(text, true);
+  m_mainWindow->flashText(errorString, true);
   m_mainWindow->setUiElementsEnabled(true);
 }

@@ -80,7 +80,6 @@ private slots:
   void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
   void processFinished(const QString &, const QString &);
-  void processError(QProcess::ProcessError);
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();

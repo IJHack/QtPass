@@ -762,37 +762,37 @@ void MainWindow::restoreWindow() {
   }
 }
 
-/**
- * @brief MainWindow::processError something went wrong
- * @param error
- */
-void MainWindow::processError(QProcess::ProcessError error) {
-  QString errorString;
-  switch (error) {
-  case QProcess::FailedToStart:
-    errorString = tr("QProcess::FailedToStart");
-    break;
-  case QProcess::Crashed:
-    errorString = tr("QProcess::Crashed");
-    break;
-  case QProcess::Timedout:
-    errorString = tr("QProcess::Timedout");
-    break;
-  case QProcess::ReadError:
-    errorString = tr("QProcess::ReadError");
-    break;
-  case QProcess::WriteError:
-    errorString = tr("QProcess::WriteError");
-    break;
-  case QProcess::UnknownError:
-    errorString = tr("QProcess::UnknownError");
-    break;
-  }
-  ui->textBrowser->setTextColor(Qt::red);
-  ui->textBrowser->setText(errorString);
-  ui->textBrowser->setTextColor(Qt::black);
-  setUiElementsEnabled(true);
-}
+///**
+// * @brief MainWindow::processError something went wrong
+// * @param error
+// */
+//void MainWindow::processError(QProcess::ProcessError error) {
+//  QString errorString;
+//  switch (error) {
+//  case QProcess::FailedToStart:
+//    errorString = tr("QProcess::FailedToStart");
+//    break;
+//  case QProcess::Crashed:
+//    errorString = tr("QProcess::Crashed");
+//    break;
+//  case QProcess::Timedout:
+//    errorString = tr("QProcess::Timedout");
+//    break;
+//  case QProcess::ReadError:
+//    errorString = tr("QProcess::ReadError");
+//    break;
+//  case QProcess::WriteError:
+//    errorString = tr("QProcess::WriteError");
+//    break;
+//  case QProcess::UnknownError:
+//    errorString = tr("QProcess::UnknownError");
+//    break;
+//  }
+//  ui->textBrowser->setTextColor(Qt::red);
+//  ui->textBrowser->setText(errorString);
+//  ui->textBrowser->setTextColor(Qt::black);
+//  setUiElementsEnabled(true);
+//}
 
 /**
  * @brief MainWindow::on_configButton_clicked run Mainwindow::config
