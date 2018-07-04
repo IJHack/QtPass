@@ -3,6 +3,7 @@
 
 #include <QList>
 #include <QString>
+#include <QStringList>
 
 struct NamedValue {
   QString name;
@@ -10,7 +11,7 @@ struct NamedValue {
 };
 
 /**
- * @brief The NamedValues class is mostly a list of \link NamedValue
+ * @brief The NamedValues class is mostly a list of NamedValue
  * but also has a method to take a specific NamedValue pair out of the list.
  */
 class NamedValues : public QList<NamedValue> {

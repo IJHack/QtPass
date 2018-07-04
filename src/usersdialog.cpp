@@ -1,7 +1,9 @@
 #include "usersdialog.h"
 #include "debughelper.h"
 #include "ui_usersdialog.h"
+#include <QCloseEvent>
 #include <QRegExp>
+#include <QWidget>
 
 /**
  * @brief UsersDialog::UsersDialog basic constructor

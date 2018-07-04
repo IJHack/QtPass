@@ -1,12 +1,14 @@
 QtPass
 ======
 
+[![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
 [![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
+[![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -53,11 +55,13 @@ macOS
 Windows
 `choco install qtpass`
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
+
 ### From Source
 
 **Dependencies**
 
-* QtPass requires Qt 5.
+* QtPass requires Qt 5.2 or later
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 

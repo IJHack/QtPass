@@ -34,7 +34,8 @@
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
  * the main window.
- * @param parent
+ * @param searchText for searching from cli
+ * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
@@ -108,6 +109,7 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionUpdate, &QAction::triggered, this, &MainWindow::onUpdate);
   connect(ui->actionUsers, &QAction::triggered, this, &MainWindow::onUsers);
   connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
+  connect(ui->actionOtp, &QAction::triggered, this, &MainWindow::onOtp);
 
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
@@ -212,6 +214,7 @@ void MainWindow::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
   connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
   connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
   connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
   connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
@@ -400,6 +403,7 @@ bool MainWindow::checkConfig() {
                               QtPassSettings::getAutoclearPanelSeconds());
   clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
   updateGitButtonVisibility();
+  updateOtpButtonVisibility();
 
   startupPhase = false;
   return true;
@@ -442,6 +446,7 @@ void MainWindow::config() {
                                       QtPassSettings::getAutoclearSeconds());
 
       updateGitButtonVisibility();
+      updateOtpButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == NULL)
         initTrayIcon();
       else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
@@ -615,6 +620,17 @@ void MainWindow::passShowHandler(const QString &p_output) {
   setUiElementsEnabled(true);
 }
 
+void MainWindow::passOtpHandler(const QString &p_output) {
+  if (!p_output.isEmpty()) {
+    addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
+    copyTextToClipboard(p_output);
+  }
+  if (QtPassSettings::isUseAutoclearPanel()) {
+    clearPanelTimer.start();
+  }
+  enableUiElements(true);
+}
+
 void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
   processFinished(p_out, p_err);
   doGitPush();
@@ -746,6 +762,7 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
   updateGitButtonVisibility();
+  updateOtpButtonVisibility();
 }
 
 void MainWindow::restoreWindow() {
@@ -936,6 +953,17 @@ void MainWindow::onDelete() {
     return;
 
   QtPassSettings::getPass()->Remove(file, isDir);
+}
+
+/**
+ * @brief MainWindow::onOTP try and generate (selected) OTP code.
+ */
+void MainWindow::onOtp() {
+  QString file = getFile(ui->treeView->currentIndex(), true);
+  if (!file.isEmpty()) {
+    if (QtPassSettings::isUseOtp())
+      QtPassSettings::getPass()->OtpGenerate(file);
+  }
 }
 
 /**
@@ -1449,6 +1477,16 @@ void MainWindow::updateGitButtonVisibility() {
   } else {
     enableGitButtons(true);
   }
+}
+
+void MainWindow::updateOtpButtonVisibility() {
+#if defined(Q_OS_WIN) || defined(__APPLE__)
+  ui->actionOtp->setVisible(false);
+#endif
+  if (!QtPassSettings::isUseOtp())
+    ui->actionOtp->setEnabled(false);
+  else
+    ui->actionOtp->setEnabled(true);
 }
 
 void MainWindow::enableGitButtons(const bool &state) {

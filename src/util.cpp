@@ -99,7 +99,6 @@ QString Util::findBinaryInPath(QString binary) {
         qfi.reset(new QFileInfo(entry.append(".exe")));
 
 #endif
-      dbg() << entry;
       if (!qfi->isExecutable())
         continue;
 
