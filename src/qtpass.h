@@ -25,7 +25,19 @@ public slots:
 
 private slots:
   void processError(QProcess::ProcessError);
+  void processErrorExit(int exitCode, const QString &);
+  void processFinished(const QString &, const QString &);
 
+  void passStoreChanged(const QString &, const QString &);
+  void passShowHandlerFinished(QString output);
+
+  void finishedInsert(const QString &, const QString &);
+  void onKeyGenerationComplete(const QString &p_output,
+                               const QString &p_errout);
+
+  void doGitPush();
+  void showInTextBrowser(QString toShow, QString prefix = QString(),
+                         QString postfix = QString());
 };
 
 #endif // QTPASS_H

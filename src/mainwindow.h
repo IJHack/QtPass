@@ -3,6 +3,7 @@
 
 #include "storemodel.h"
 
+#include <QDialog>
 #include <QFileSystemModel>
 #include <QItemSelectionModel>
 #include <QMainWindow>
@@ -52,7 +53,16 @@ public:
 
   void setTextTextBrowser(const QString &text);
   void setUiElementsEnabled(bool state);
-  void flashText(const QString &text, const bool isError);
+  void flashText(const QString &text, const bool isError,
+                 const bool isHtml = false);
+
+  const QModelIndex getCurrentTreeViewIndex();
+
+  QDialog *getKeygenDialog() { return this->keygen; }
+  void cleanKeygenDialog() {
+    this->keygen->close();
+    this->keygen = 0;
+  }
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -62,6 +72,7 @@ protected:
 
 signals:
   void uiEnabled(bool state);
+  void passShowHandlerFinished(QString output);
 
 public slots:
   void deselect();
@@ -71,6 +82,11 @@ public slots:
   void executeWrapperStarted();
   void critical(QString, QString);
   void showStatusMessage(QString msg, int timeout);
+  void passShowHandler(const QString &);
+  void passOtpHandler(const QString &);
+
+  void onPush();
+  void on_treeView_clicked(const QModelIndex &index);
 
 private slots:
   void addPassword();
@@ -78,13 +94,10 @@ private slots:
   void onEdit();
   void onDelete();
   void onOtp();
-  void onPush();
   void onUpdate(bool block = false);
   void onUsers();
   void onConfig();
-  void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
-  void processFinished(const QString &, const QString &);
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
@@ -99,15 +112,6 @@ private slots:
   void passwordFromFileToClipboard(const QString &text);
   void startReencryptPath();
   void endReencryptPath();
-  void passShowHandler(const QString &);
-  void passOtpHandler(const QString &);
-  void passStoreChanged(const QString &, const QString &);
-  void doGitPush();
-
-  void processErrorExit(int exitCode, const QString &);
-
-  void finishedInsert(const QString &, const QString &);
-  void keyGenerationComplete(const QString &p_output, const QString &p_errout);
 
 private:
   QtPass *m_qtPass;
@@ -143,8 +147,6 @@ private:
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
-  void DisplayInTextBrowser(QString toShow, QString prefix = QString(),
-                            QString postfix = QString());
   void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();

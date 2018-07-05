@@ -182,15 +182,28 @@ void MainWindow::changeEvent(QEvent *event) {
   }
 }
 
+const QModelIndex MainWindow::getCurrentTreeViewIndex() {
+  return ui->treeView->currentIndex();
+}
+
 void MainWindow::setTextTextBrowser(const QString &text) {
   ui->textBrowser->setText(text);
 }
 
-void MainWindow::flashText(const QString &text, const bool isError) {
-    if (isError) ui->textBrowser->setTextColor(Qt::red);
+void MainWindow::flashText(const QString &text, const bool isError,
+                           const bool isHtml) {
+  if (isError)
+    ui->textBrowser->setTextColor(Qt::red);
 
+  if (isHtml) {
+    QString _text = text;
+    if (!ui->textBrowser->toPlainText().isEmpty())
+      _text = ui->textBrowser->toHtml() + _text;
+    ui->textBrowser->setHtml(_text);
+  } else {
     ui->textBrowser->setText(text);
     ui->textBrowser->setTextColor(Qt::black);
+  }
 }
 
 /**
@@ -204,25 +217,26 @@ void MainWindow::connectPassSignalHandlers(Pass *pass) {
   //    TODO(bezet): this is never emitted(should be), also naming(see
   //    critical())
   // connect(pass, &Pass::error, this, &MainWindow::processError);
-  connect(pass, &Pass::startingExecuteWrapper, this,
-          &MainWindow::executeWrapperStarted);
-  connect(pass, &Pass::critical, this, &MainWindow::critical);
-  connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
-  connect(pass, &Pass::processErrorExit, this, &MainWindow::processErrorExit);
+  //  connect(pass, &Pass::startingExecuteWrapper, this,
+  //          &MainWindow::executeWrapperStarted);
+  // connect(pass, &Pass::critical, this, &MainWindow::critical);
+  // connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
+  // connect(pass, &Pass::processErrorExit, this,
+  // &MainWindow::processErrorExit); connect(pass, &Pass::finishedGitInit, this,
+  // &MainWindow::passStoreChanged);
 
-  connect(pass, &Pass::finishedGitInit, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
-  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
-  connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
-  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
-  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
-  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
+  //  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
+  //  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
+  //connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+//  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
+  //  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
+  //  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
+  //  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
+  //  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
+  //  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
 
-  connect(pass, &Pass::finishedGenerateGPGKeys, this,
-          &MainWindow::keyGenerationComplete);
+  //  connect(pass, &Pass::finishedGenerateGPGKeys, this,
+  //          &MainWindow::onKeyGenerationComplete);
 }
 
 /**
@@ -557,18 +571,19 @@ void MainWindow::executeWrapperStarted() {
   clearPanelTimer.stop();
 }
 
-void MainWindow::keyGenerationComplete(const QString &p_output,
-                                       const QString &p_errout) {
-  // qDebug() << p_output;
-  // qDebug() << p_errout;
-  if (0 != keygen) {
-    qDebug() << "Keygen Done";
-    keygen->close();
-    keygen = 0;
-    // TODO(annejan) some sanity checking ?
-  }
-  processFinished(p_output, p_errout);
-}
+// void MainWindow::onKeyGenerationComplete(const QString &p_output,
+//                                         const QString &p_errout) {
+//  // qDebug() << p_output;
+//  // qDebug() << p_errout;
+//  if (0 != keygen) {
+//    qDebug() << "Keygen Done";
+//    keygen->close();
+//    keygen = 0;
+//    // TODO(annejan) some sanity checking ?
+//  }
+
+//  // processFinished(p_output, p_errout);
+//}
 
 void MainWindow::passShowHandler(const QString &p_output) {
   QStringList templ = QtPassSettings::isUseTemplate()
@@ -616,7 +631,6 @@ void MainWindow::passShowHandler(const QString &p_output) {
     clearPanelTimer.start();
   }
 
-  DisplayInTextBrowser(output);
   setUiElementsEnabled(true);
 }
 
@@ -628,66 +642,51 @@ void MainWindow::passOtpHandler(const QString &p_output) {
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
   }
-  enableUiElements(true);
-}
-
-void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
-  processFinished(p_out, p_err);
-  doGitPush();
-}
-
-void MainWindow::doGitPush() {
-  if (QtPassSettings::isAutoPush())
-    onPush();
-}
-
-void MainWindow::finishedInsert(const QString &p_output,
-                                const QString &p_errout) {
-  processFinished(p_output, p_errout);
-  doGitPush();
-  on_treeView_clicked(ui->treeView->currentIndex());
-}
-
-void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
-                                      QString postfix) {
-  output.replace(QRegExp("<"), "&lt;");
-  output.replace(QRegExp(">"), "&gt;");
-  output.replace(QRegExp(" "), "&nbsp;");
-
-  output.replace(
-      QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-      "<a href=\"\\1\">\\1</a>");
-  output.replace(QRegExp("\n"), "<br />");
-  output = prefix + output + postfix;
-  if (!ui->textBrowser->toPlainText().isEmpty())
-    output = ui->textBrowser->toHtml() + output;
-  ui->textBrowser->setHtml(output);
-}
-
-void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
-  if (!p_error.isEmpty()) {
-    QString output;
-    QString error = p_error;
-    error.replace(QRegExp("<"), "&lt;");
-    error.replace(QRegExp(">"), "&gt;");
-    error.replace(QRegExp(" "), "&nbsp;");
-    if (exitCode == 0) {
-      //  https://github.com/IJHack/qtpass/issues/111
-      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
-    } else {
-      output = "<span style=\"color: red;\">" + error + "</span><br />";
-    }
-
-    output.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
-    output.replace(QRegExp("\n"), "<br />");
-    if (!ui->textBrowser->toPlainText().isEmpty())
-      output = ui->textBrowser->toHtml() + output;
-    ui->textBrowser->setHtml(output);
-  }
   setUiElementsEnabled(true);
 }
+
+// void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err)
+// {
+//  processFinished(p_out, p_err);
+//  doGitPush();
+//}
+
+// void MainWindow::doGitPush() {
+//  if (QtPassSettings::isAutoPush())
+//    onPush();
+//}
+
+// void MainWindow::finishedInsert(const QString &p_output,
+//                                const QString &p_errout) {
+//  processFinished(p_output, p_errout);
+//  doGitPush();
+//  on_treeView_clicked(ui->treeView->currentIndex());
+//}
+
+// void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
+//  if (!p_error.isEmpty()) {
+//    QString output;
+//    QString error = p_error;
+//    error.replace(QRegExp("<"), "&lt;");
+//    error.replace(QRegExp(">"), "&gt;");
+//    error.replace(QRegExp(" "), "&nbsp;");
+//    if (exitCode == 0) {
+//      //  https://github.com/IJHack/qtpass/issues/111
+//      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
+//    } else {
+//      output = "<span style=\"color: red;\">" + error + "</span><br />";
+//    }
+
+//    output.replace(
+//        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+//        "<a href=\"\\1\">\\1</a>");
+//    output.replace(QRegExp("\n"), "<br />");
+//    if (!ui->textBrowser->toPlainText().isEmpty())
+//      output = ui->textBrowser->toHtml() + output;
+//    ui->textBrowser->setHtml(output);
+//  }
+//  setUiElementsEnabled(true);
+//}
 
 /**
  * @brief MainWindow::clearClipboard remove clipboard contents.
@@ -735,14 +734,14 @@ void MainWindow::clearPanel(bool notify) {
  * @param output    stdout from a process
  * @param errout    stderr from a process
  */
-void MainWindow::processFinished(const QString &p_output,
-                                 const QString &p_errout) {
-  DisplayInTextBrowser(p_output);
-  //    Sometimes there is error output even with 0 exit code, which is
-  //    assumed in this function
-  processErrorExit(0, p_errout);
-  setUiElementsEnabled(true);
-}
+// void MainWindow::processFinished(const QString &p_output,
+//                                 const QString &p_errout) {
+//  DisplayInTextBrowser(p_output);
+//  //    Sometimes there is error output even with 0 exit code, which is
+//  //    assumed in this function
+//  processErrorExit(0, p_errout);
+//  setUiElementsEnabled(true);
+//}
 
 /**
  * @brief MainWindow::setUiElementsEnabled enable or disable the relevant UI
@@ -783,7 +782,7 @@ void MainWindow::restoreWindow() {
 // * @brief MainWindow::processError something went wrong
 // * @param error
 // */
-//void MainWindow::processError(QProcess::ProcessError error) {
+// void MainWindow::processError(QProcess::ProcessError error) {
 //  QString errorString;
 //  switch (error) {
 //  case QProcess::FailedToStart:
