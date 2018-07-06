@@ -87,8 +87,6 @@ int main(int argc, char *argv[]) {
   app.setActiveWindow(&w);
   app.setWindowIcon(QIcon(":artwork/icon.png"));
 
-  QObject::connect(&app, &QApplication::aboutToQuit, &w,
-                   &MainWindow::clearClipboard);
 #if SINGLE_APP
   QObject::connect(&app, &SingleApplication::messageAvailable, &w,
                    &MainWindow::messageAvailable);

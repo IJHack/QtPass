@@ -34,7 +34,6 @@ class MainWindow;
 
     This class could really do with an overhaul.
  */
-class Pass;
 class QtPass;
 class TrayIcon;
 class MainWindow : public QMainWindow {
@@ -76,17 +75,19 @@ signals:
 
 public slots:
   void deselect();
-  void clearClipboard();
   void messageAvailable(QString message);
 
   void executeWrapperStarted();
   void critical(QString, QString);
-  void showStatusMessage(QString msg, int timeout);
+  void showStatusMessage(QString msg, int timeout = 2000);
   void passShowHandler(const QString &);
   void passOtpHandler(const QString &);
 
   void onPush();
   void on_treeView_clicked(const QModelIndex &index);
+
+  void startReencryptPath();
+  void endReencryptPath();
 
 private slots:
   void addPassword();
@@ -107,11 +108,8 @@ private slots:
   void openFolder();
   void editPassword(const QString &);
   void focusInput();
-  void copyTextToClipboard(const QString &text);
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
-  void startReencryptPath();
-  void endReencryptPath();
 
 private:
   QtPass *m_qtPass;
@@ -120,9 +118,7 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QProcess fusedav;
-  QString clippedText;
   QTimer clearPanelTimer;
-  QTimer clearClipboardTimer;
   bool freshStart;
   QDialog *keygen;
   QString currentDir;
@@ -147,7 +143,6 @@ private:
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
-  void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();

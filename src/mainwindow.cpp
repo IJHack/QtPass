@@ -39,8 +39,7 @@
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
-      clippedText(QString()), freshStart(true), keygen(NULL),
-      startupPhase(true), tray(NULL) {
+      freshStart(true), keygen(NULL), startupPhase(true), tray(NULL) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
@@ -63,21 +62,8 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
                 SLOT(copyPasswordFromTreeview()));
 
-  //    TODO(bezet): this should be reconnected dynamically when pass changes
-  connectPassSignalHandlers(QtPassSettings::getRealPass());
-  connectPassSignalHandlers(QtPassSettings::getImitatePass());
-
-  //    only for ipass
-  connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
-          this, &MainWindow::startReencryptPath);
-  connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
-          this, &MainWindow::endReencryptPath);
-
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
-  clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
-          SLOT(clearClipboard()));
 
   initToolBarButtons();
   initStatusBar();
@@ -176,7 +162,7 @@ MainWindow::~MainWindow() {
 void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
   if (event->type() == QEvent::ActivationChange) {
-    if (this->isActiveWindow()) {
+    if (isActiveWindow()) {
       focusInput();
     }
   }
@@ -204,39 +190,6 @@ void MainWindow::flashText(const QString &text, const bool isError,
     ui->textBrowser->setText(text);
     ui->textBrowser->setTextColor(Qt::black);
   }
-}
-
-/**
- * @brief MainWindow::connectPassSignalHandlers this method connects Pass
- *                                              signals to approprite MainWindow
- *                                              slots
- *
- * @param pass        pointer to pass instance
- */
-void MainWindow::connectPassSignalHandlers(Pass *pass) {
-  //    TODO(bezet): this is never emitted(should be), also naming(see
-  //    critical())
-  // connect(pass, &Pass::error, this, &MainWindow::processError);
-  //  connect(pass, &Pass::startingExecuteWrapper, this,
-  //          &MainWindow::executeWrapperStarted);
-  // connect(pass, &Pass::critical, this, &MainWindow::critical);
-  // connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
-  // connect(pass, &Pass::processErrorExit, this,
-  // &MainWindow::processErrorExit); connect(pass, &Pass::finishedGitInit, this,
-  // &MainWindow::passStoreChanged);
-
-  //  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
-  //  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
-  //connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
-//  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
-  //  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
-  //  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
-  //  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
-  //  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
-  //  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
-
-  //  connect(pass, &Pass::finishedGenerateGPGKeys, this,
-  //          &MainWindow::onKeyGenerationComplete);
 }
 
 /**
@@ -415,7 +368,7 @@ bool MainWindow::checkConfig() {
   QtPassSettings::getPass()->updateEnv();
   clearPanelTimer.setInterval(1000 *
                               QtPassSettings::getAutoclearPanelSeconds());
-  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
+  m_qtPass->setClipboardTimer();
   updateGitButtonVisibility();
   updateOtpButtonVisibility();
 
@@ -456,8 +409,7 @@ void MainWindow::config() {
       QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(1000 *
                                   QtPassSettings::getAutoclearPanelSeconds());
-      clearClipboardTimer.setInterval(1000 *
-                                      QtPassSettings::getAutoclearSeconds());
+      m_qtPass->setClipboardTimer();
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
@@ -520,7 +472,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   //    TODO(bezet): "Could not decrypt";
-  clippedText = "";
+  m_qtPass->clearClippedText();
   QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
@@ -551,7 +503,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  */
 void MainWindow::deselect() {
   currentDir = "/";
-  clearClipboard();
+  m_qtPass->clearClipboard();
   ui->passwordName->setText("");
   clearPanel(false);
 }
@@ -595,13 +547,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
   QString output = p_output;
   QString password = fileContent.getPassword();
 
-  // handle clipboard
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-      !p_output.isEmpty()) {
-    clippedText = password;
-    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-      copyTextToClipboard(password);
-  }
+  // set clipped text
+  m_qtPass->setClippedText(password, p_output);
 
   // first clear the current view:
   clearTemplateWidgets();
@@ -637,77 +584,12 @@ void MainWindow::passShowHandler(const QString &p_output) {
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
     addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
-    copyTextToClipboard(p_output);
+    m_qtPass->copyTextToClipboard(p_output);
   }
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
   }
   setUiElementsEnabled(true);
-}
-
-// void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err)
-// {
-//  processFinished(p_out, p_err);
-//  doGitPush();
-//}
-
-// void MainWindow::doGitPush() {
-//  if (QtPassSettings::isAutoPush())
-//    onPush();
-//}
-
-// void MainWindow::finishedInsert(const QString &p_output,
-//                                const QString &p_errout) {
-//  processFinished(p_output, p_errout);
-//  doGitPush();
-//  on_treeView_clicked(ui->treeView->currentIndex());
-//}
-
-// void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
-//  if (!p_error.isEmpty()) {
-//    QString output;
-//    QString error = p_error;
-//    error.replace(QRegExp("<"), "&lt;");
-//    error.replace(QRegExp(">"), "&gt;");
-//    error.replace(QRegExp(" "), "&nbsp;");
-//    if (exitCode == 0) {
-//      //  https://github.com/IJHack/qtpass/issues/111
-//      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
-//    } else {
-//      output = "<span style=\"color: red;\">" + error + "</span><br />";
-//    }
-
-//    output.replace(
-//        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-//        "<a href=\"\\1\">\\1</a>");
-//    output.replace(QRegExp("\n"), "<br />");
-//    if (!ui->textBrowser->toPlainText().isEmpty())
-//      output = ui->textBrowser->toHtml() + output;
-//    ui->textBrowser->setHtml(output);
-//  }
-//  setUiElementsEnabled(true);
-//}
-
-/**
- * @brief MainWindow::clearClipboard remove clipboard contents.
- */
-void MainWindow::clearClipboard() {
-  QClipboard *clipboard = QApplication::clipboard();
-  bool cleared = false;
-  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  if (cleared) {
-    ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
-  } else {
-    ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
-  }
-  this->clippedText.clear();
 }
 
 /**
@@ -726,22 +608,6 @@ void MainWindow::clearPanel(bool notify) {
     ui->textBrowser->setHtml("");
   }
 }
-
-/**
- * @brief MainWindow::processFinished background process has finished
- * @param exitCode
- * @param exitStatus
- * @param output    stdout from a process
- * @param errout    stderr from a process
- */
-// void MainWindow::processFinished(const QString &p_output,
-//                                 const QString &p_errout) {
-//  DisplayInTextBrowser(p_output);
-//  //    Sometimes there is error output even with 0 exit code, which is
-//  //    assumed in this function
-//  processErrorExit(0, p_errout);
-//  setUiElementsEnabled(true);
-//}
 
 /**
  * @brief MainWindow::setUiElementsEnabled enable or disable the relevant UI
@@ -777,38 +643,6 @@ void MainWindow::restoreWindow() {
     showMaximized();
   }
 }
-
-///**
-// * @brief MainWindow::processError something went wrong
-// * @param error
-// */
-// void MainWindow::processError(QProcess::ProcessError error) {
-//  QString errorString;
-//  switch (error) {
-//  case QProcess::FailedToStart:
-//    errorString = tr("QProcess::FailedToStart");
-//    break;
-//  case QProcess::Crashed:
-//    errorString = tr("QProcess::Crashed");
-//    break;
-//  case QProcess::Timedout:
-//    errorString = tr("QProcess::Timedout");
-//    break;
-//  case QProcess::ReadError:
-//    errorString = tr("QProcess::ReadError");
-//    break;
-//  case QProcess::WriteError:
-//    errorString = tr("QProcess::WriteError");
-//    break;
-//  case QProcess::UnknownError:
-//    errorString = tr("QProcess::UnknownError");
-//    break;
-//  }
-//  ui->textBrowser->setTextColor(Qt::red);
-//  ui->textBrowser->setText(errorString);
-//  ui->textBrowser->setTextColor(Qt::black);
-//  setUiElementsEnabled(true);
-//}
 
 /**
  * @brief MainWindow::on_configButton_clicked run Mainwindow::config
@@ -883,7 +717,7 @@ void MainWindow::setPassword(QString file, bool isNew) {
           &PasswordDialog::setPass);
 
   if (!d.exec()) {
-    this->ui->treeView->setFocus();
+    ui->treeView->setFocus();
   }
 }
 
@@ -1163,7 +997,8 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     this->hide();
     event->ignore();
   } else {
-    clearClipboard();
+    m_qtPass->clearClipboard();
+
     QtPassSettings::setGeometry(saveGeometry());
     QtPassSettings::setSavestate(saveState());
     QtPassSettings::setMaximized(isMaximized());
@@ -1337,24 +1172,6 @@ void MainWindow::clearTemplateWidgets() {
   ui->verticalLayoutPassword->setSpacing(0);
 }
 
-/**
- * @brief MainWindow::copyTextToClipboard copies text to your clipboard
- * @param text
- */
-void MainWindow::copyTextToClipboard(const QString &text) {
-  QClipboard *clip = QApplication::clipboard();
-  if (!QtPassSettings::isUseSelection()) {
-    clip->setText(text, QClipboard::Clipboard);
-  } else {
-    clip->setText(text, QClipboard::Selection);
-  }
-  clippedText = text;
-  ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
-  if (QtPassSettings::isUseAutoclear()) {
-    clearClipboardTimer.start();
-  }
-}
-
 void MainWindow::copyPasswordFromTreeview() {
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
@@ -1369,7 +1186,7 @@ void MainWindow::copyPasswordFromTreeview() {
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
   QStringList tokens = text.split('\n');
-  copyTextToClipboard(tokens[0]);
+  m_qtPass->copyTextToClipboard(tokens[0]);
 }
 
 /**
@@ -1391,8 +1208,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     QPushButtonWithClipboard *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
-            &MainWindow::copyTextToClipboard);
+    connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
+            &QtPass::copyTextToClipboard);
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);

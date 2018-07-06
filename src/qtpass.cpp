@@ -2,23 +2,47 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 
+#ifdef QT_DEBUG
 #include <QDebug>
+#endif
+#include <QApplication>
+#include <QClipboard>
 #include <QProcess>
 
-QtPass::QtPass() {
-  // This should connect Pass to MainWindow
+QtPass::QtPass() : clippedText(QString()) {
+  // All business logic connected to MainWindow :)
 
+  clearClipboardTimer.setSingleShot(true);
+  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
+          SLOT(clearClipboard()));
+
+  QObject::connect(qApp, &QApplication::aboutToQuit, this,
+                   &QtPass::clearClipboard);
+}
+
+void QtPass::setMainWindow(MainWindow *mW) {
+  m_mainWindow = mW;
+
+  //  TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
+
+  // only for ipass
+  connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
+          m_mainWindow, &MainWindow::startReencryptPath);
+  connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
+          m_mainWindow, &MainWindow::endReencryptPath);
 }
 
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
+  connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);
-  connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
+  connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
+          &QtPass::passShowHandlerFinished);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
   connect(pass, &Pass::finishedOtpGenerate, m_mainWindow,
@@ -31,12 +55,8 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedMove, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedCopy, this, &QtPass::passStoreChanged);
-
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
-
-  connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
-          &QtPass::passShowHandlerFinished);
 }
 
 /**
@@ -122,22 +142,18 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
   m_mainWindow->on_treeView_clicked(m_mainWindow->getCurrentTreeViewIndex());
 }
 
-void QtPass::doGitPush() {
-  if (QtPassSettings::isAutoPush())
-    m_mainWindow->onPush();
-}
-
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
-  // qDebug() << p_output;
-  // qDebug() << p_errout;
   if (0 != m_mainWindow->getKeygenDialog()) {
+#ifdef QT_DEBUG
     qDebug() << "Keygen Done";
+#endif
+
     m_mainWindow->cleanKeygenDialog();
     // TODO(annejan) some sanity checking ?
   }
 
-  this->processFinished(p_output, p_errout);
+  processFinished(p_output, p_errout);
 }
 
 void QtPass::passShowHandlerFinished(QString output) {
@@ -157,4 +173,65 @@ void QtPass::showInTextBrowser(QString output, QString prefix,
   output = prefix + output + postfix;
 
   m_mainWindow->flashText(output, false, true);
+}
+
+void QtPass::doGitPush() {
+  if (QtPassSettings::isAutoPush())
+    m_mainWindow->onPush();
+}
+
+void QtPass::setClippedText(const QString &password, const QString &p_output) {
+  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
+      !p_output.isEmpty()) {
+    clippedText = password;
+    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
+      copyTextToClipboard(password);
+  }
+}
+void QtPass::clearClippedText() { clippedText = ""; }
+
+void QtPass::setClipboardTimer() {
+  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
+}
+
+/**
+ * @brief MainWindow::clearClipboard remove clipboard contents.
+ */
+void QtPass::clearClipboard() {
+  QClipboard *clipboard = QApplication::clipboard();
+  bool cleared = false;
+  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
+  }
+  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
+    clipboard->clear(QClipboard::Clipboard);
+    cleared = true;
+  }
+  if (cleared) {
+    m_mainWindow->showStatusMessage(tr("Clipboard cleared"));
+  } else {
+    m_mainWindow->showStatusMessage(tr("Clipboard not cleared"));
+  }
+
+  clippedText.clear();
+}
+
+/**
+ * @brief MainWindow::copyTextToClipboard copies text to your clipboard
+ * @param text
+ */
+void QtPass::copyTextToClipboard(const QString &text) {
+  QClipboard *clip = QApplication::clipboard();
+  if (!QtPassSettings::isUseSelection()) {
+    clip->setText(text, QClipboard::Clipboard);
+  } else {
+    clip->setText(text, QClipboard::Selection);
+  }
+
+  clippedText = text;
+  m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
+  if (QtPassSettings::isUseAutoclear()) {
+    clearClipboardTimer.start();
+  }
 }
