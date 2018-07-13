@@ -54,11 +54,12 @@ public:
   virtual QString Generate_b(unsigned int length, const QString &charset);
 
   void GenerateGPGKeys(QString batch);
+  QList<UserInfo> listKeys(QStringList keystring, bool secret = false);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   void updateEnv();
   static QStringList getRecipientList(QString for_file);
   //  TODO(bezet): getRecipientString is useless, refactor
-  static QString getRecipientString(QString for_file, QString separator = " ",
+  static QStringList getRecipientString(QString for_file, QString separator = " ",
                                     int *count = NULL);
 
 protected:
