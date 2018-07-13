@@ -113,42 +113,56 @@ void Pass::GenerateGPGKeys(QString batch) {
 
 /**
  * @brief Pass::listKeys list users
+ * @param keystrings
+ * @param secret list private keys
+ * @return QList<UserInfo> users
+ */
+QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
+    QList<UserInfo> users;
+    QStringList args = {"--no-tty", "--with-colons"};
+    args.append(secret ? "--list-secret-keys" : "--list-keys");
+
+    foreach (QString keystring, keystrings) {
+        if(!keystring.isEmpty()) {
+        args.append(keystring);
+        }
+    }
+    QString p_out;
+    if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
+        0)
+      return users;
+    QStringList keys = p_out.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+    UserInfo current_user;
+    foreach (QString key, keys) {
+      QStringList props = key.split(':');
+      if (props.size() < 10)
+        continue;
+      if (props[0] == (secret ? "sec" : "pub")) {
+          if (!current_user.key_id.isEmpty())
+            users.append(current_user);
+        current_user = UserInfo();
+        current_user.key_id = props[4];
+        current_user.name = props[9].toUtf8();
+        current_user.validity = props[1][0].toLatin1();
+        current_user.created.setTime_t(props[5].toUInt());
+        current_user.expiry.setTime_t(props[6].toUInt());
+      } else if (current_user.name.isEmpty() && props[0] == "uid") {
+        current_user.name = props[9];
+      }
+    }
+    if (!current_user.key_id.isEmpty())
+      users.append(current_user);
+    return users;
+}
+
+/**
+ * @brief Pass::listKeys list users
  * @param keystring
  * @param secret list private keys
  * @return QList<UserInfo> users
  */
 QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
-  QList<UserInfo> users;
-  QStringList args = {"--no-tty", "--with-colons"};
-  args.append(secret ? "--list-secret-keys" : "--list-keys");
-  if (!keystring.isEmpty())
-    args.append(keystring);
-  QString p_out;
-  if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
-      0)
-    return users;
-  QStringList keys = p_out.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
-  UserInfo current_user;
-  foreach (QString key, keys) {
-    QStringList props = key.split(':');
-    if (props.size() < 10)
-      continue;
-    if (props[0] == (secret ? "sec" : "pub")) {
-      if (!current_user.key_id.isEmpty())
-        users.append(current_user);
-      current_user = UserInfo();
-      current_user.key_id = props[4];
-      current_user.name = props[9].toUtf8();
-      current_user.validity = props[1][0].toLatin1();
-      current_user.created.setTime_t(props[5].toUInt());
-      current_user.expiry.setTime_t(props[6].toUInt());
-    } else if (current_user.name.isEmpty() && props[0] == "uid") {
-      current_user.name = props[9];
-    }
-  }
-  if (!current_user.key_id.isEmpty())
-    users.append(current_user);
-  return users;
+  return listKeys(QStringList(keystring), secret);
 }
 
 /**
@@ -266,15 +280,9 @@ QStringList Pass::getRecipientList(QString for_file) {
  * @param count
  * @return recepient string
  */
-QString Pass::getRecipientString(QString for_file, QString separator,
+QStringList Pass::getRecipientString(QString for_file, QString separator,
                                  int *count) {
-  QString recipients_str;
-  QStringList recipients_list = Pass::getRecipientList(for_file);
-  if (count)
-    *count = recipients_list.size();
-  foreach (const QString recipient, recipients_list)
-    recipients_str += separator + '"' + recipient + '"';
-  return recipients_str;
+  return Pass::getRecipientList(for_file);
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.

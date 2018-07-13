@@ -985,7 +985,7 @@ void MainWindow::onUsers() {
           ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
           : currentDir;
   int count = 0;
-  QString recipients = QtPassSettings::getPass()->getRecipientString(
+  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
       dir.isEmpty() ? "" : dir, " ", &count);
   if (!recipients.isEmpty())
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
@@ -1007,7 +1007,7 @@ void MainWindow::onUsers() {
         users.append(i);
       }
     }
-  }
+ }
   UsersDialog d(this);
   d.setUsers(&users);
   if (!d.exec()) {
