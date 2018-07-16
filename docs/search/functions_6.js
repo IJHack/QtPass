@@ -31,7 +31,7 @@ var searchData=
   ['getpwgenexecutable',['getPwgenExecutable',['../class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1',1,'QtPassSettings']]],
   ['getrealpass',['getRealPass',['../class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a',1,'QtPassSettings']]],
   ['getrecipientlist',['getRecipientList',['../class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e',1,'Pass']]],
-  ['getrecipientstring',['getRecipientString',['../class_pass.html#a8168f4bd51005ae3750c1a9f70eb23cf',1,'Pass']]],
+  ['getrecipientstring',['getRecipientString',['../class_pass.html#a4566c370e65b22d5cdc132f72b393808',1,'Pass']]],
   ['getremainingdata',['getRemainingData',['../class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a',1,'FileContent']]],
   ['getsavestate',['getSavestate',['../class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2',1,'QtPassSettings']]],
   ['getsecretkeys',['getSecretKeys',['../class_main_window.html#a38957de181a576efc28befeb7c47abec',1,'MainWindow']]],
