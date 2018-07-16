@@ -59,8 +59,9 @@ public:
   void updateEnv();
   static QStringList getRecipientList(QString for_file);
   //  TODO(bezet): getRecipientString is useless, refactor
-  static QStringList getRecipientString(QString for_file, QString separator = " ",
-                                    int *count = NULL);
+  static QStringList getRecipientString(QString for_file,
+                                        QString separator = " ",
+                                        int *count = NULL);
 
 protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,

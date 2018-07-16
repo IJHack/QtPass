@@ -1007,7 +1007,7 @@ void MainWindow::onUsers() {
         users.append(i);
       }
     }
- }
+  }
   UsersDialog d(this);
   d.setUsers(&users);
   if (!d.exec()) {
