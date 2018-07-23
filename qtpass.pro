@@ -83,6 +83,6 @@ TRANSLATIONS    +=  localization/localization_nl_NL.ts \
                     localization/localization_it_IT.ts \
                     localization/localization_pt_PT.ts
 
-system($$QMAKE_LUPDATE $$_PRO_FILE_)
+system($$QMAKE_LUPDATE -locations relative -no-ui-lines $$_PRO_FILE_)
 system($$QMAKE_LRELEASE $$_PRO_FILE_)
 

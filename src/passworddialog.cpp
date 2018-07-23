@@ -27,10 +27,9 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
 
 /**
  * @brief PasswordDialog::PasswordDialog complete constructor.
- * @param passConfig configuration constant
  * @param file
  * @param isNew
- * @param parent
+ * @param parent pointer
  */
 PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
                                QWidget *parent)

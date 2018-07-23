@@ -33,7 +33,8 @@
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
  * the main window.
- * @param parent
+ * @param searchText for searching from cli
+ * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
@@ -598,8 +599,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
 
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
-      addToGridLayout(ui->gridLayout->count()+1, tr("OTP Code"), p_output);
-      copyTextToClipboard(p_output);
+    addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
+    copyTextToClipboard(p_output);
   }
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
@@ -984,7 +985,7 @@ void MainWindow::onUsers() {
           ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
           : currentDir;
   int count = 0;
-  QString recipients = QtPassSettings::getPass()->getRecipientString(
+  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
       dir.isEmpty() ? "" : dir, " ", &count);
   if (!recipients.isEmpty())
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
@@ -1456,9 +1457,9 @@ void MainWindow::updateGitButtonVisibility() {
 }
 
 void MainWindow::updateOtpButtonVisibility() {
-  #if defined(Q_OS_WIN ) || defined(__APPLE__)
-    ui->actionOtp->setVisible(false);
-  #endif
+#if defined(Q_OS_WIN) || defined(__APPLE__)
+  ui->actionOtp->setVisible(false);
+#endif
   if (!QtPassSettings::isUseOtp())
     ui->actionOtp->setEnabled(false);
   else

@@ -113,16 +113,20 @@ void Pass::GenerateGPGKeys(QString batch) {
 
 /**
  * @brief Pass::listKeys list users
- * @param keystring
+ * @param keystrings
  * @param secret list private keys
  * @return QList<UserInfo> users
  */
-QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
+QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QList<UserInfo> users;
   QStringList args = {"--no-tty", "--with-colons"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
-  if (!keystring.isEmpty())
-    args.append(keystring);
+
+  foreach (QString keystring, keystrings) {
+    if (!keystring.isEmpty()) {
+      args.append(keystring);
+    }
+  }
   QString p_out;
   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
       0)
@@ -149,6 +153,16 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
   if (!current_user.key_id.isEmpty())
     users.append(current_user);
   return users;
+}
+
+/**
+ * @brief Pass::listKeys list users
+ * @param keystring
+ * @param secret list private keys
+ * @return QList<UserInfo> users
+ */
+QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
+  return listKeys(QStringList(keystring), secret);
 }
 
 /**
@@ -266,15 +280,9 @@ QStringList Pass::getRecipientList(QString for_file) {
  * @param count
  * @return recepient string
  */
-QString Pass::getRecipientString(QString for_file, QString separator,
-                                 int *count) {
-  QString recipients_str;
-  QStringList recipients_list = Pass::getRecipientList(for_file);
-  if (count)
-    *count = recipients_list.size();
-  foreach (const QString recipient, recipients_list)
-    recipients_str += separator + '"' + recipient + '"';
-  return recipients_str;
+QStringList Pass::getRecipientString(QString for_file, QString separator,
+                                     int *count) {
+  return Pass::getRecipientList(for_file);
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.

@@ -47,13 +47,15 @@ void ImitatePass::Show(QString file) {
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                       "--batch", "--use-agent", file};
   executeGpg(PASS_SHOW, args);
-
 }
 
 /**
  * @brief ImitatePass::OtpGenerate generates an otp code
  */
-void ImitatePass::OtpGenerate(QString file) {}
+void ImitatePass::OtpGenerate(QString file) {
+  dbg() << "No OTP generation code for fake pass yet, attempting for file: " +
+               file;
+}
 
 /**
  * @brief ImitatePass::Insert create new file with encrypted content

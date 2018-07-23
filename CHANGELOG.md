@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Localization makes commits absolutely unreadable [\#405](https://github.com/IJHack/QtPass/issues/405)
 - Add otp \(two factor authentication\) support [\#327](https://github.com/IJHack/QtPass/issues/327)
 
 **Fixed bugs:**
@@ -20,6 +21,10 @@
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
+
+**Merged pull requests:**
+
+- \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
