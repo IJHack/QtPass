@@ -406,7 +406,7 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == 0) {
 #ifdef QT_DEBUG
-  dbg() << "empty name, should fix in frontend";
+        dbg() << "empty name, should fix in frontend";
 #endif
         continue;
       }
@@ -515,7 +515,7 @@ void ConfigDialog::wizard() {
 
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
 #ifdef QT_DEBUG
-  dbg() << ".gpg-id file does not exist";
+    dbg() << ".gpg-id file does not exist";
 #endif
     if (!clean) {
       criticalMessage(tr("Password store not initialised"),
@@ -532,7 +532,7 @@ void ConfigDialog::wizard() {
     }
     if (!QFile(passStore + ".gpg-id").exists()) {
 #ifdef QT_DEBUG
-  dbg() << ".gpg-id file still does not exist :/";
+      dbg() << ".gpg-id file still does not exist :/";
 #endif
       // appears not to be store
       // init yes / no ?

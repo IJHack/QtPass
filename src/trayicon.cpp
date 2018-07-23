@@ -31,7 +31,7 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
     isAllocated = true;
   } else {
 #ifdef QT_DEBUG
-  dbg() << "No tray icon for this OS possibly also not show options?";
+    dbg() << "No tray icon for this OS possibly also not show options?";
 #endif
 
     isAllocated = false;

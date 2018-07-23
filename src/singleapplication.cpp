@@ -23,7 +23,7 @@ SingleApplication::SingleApplication(int &argc, char *argv[],
     // create shared memory.
     if (!sharedMemory.create(1)) {
 #ifdef QT_DEBUG
-  dbg() << "Unable to create single instance.";
+      dbg() << "Unable to create single instance.";
 #endif
       return;
     }
@@ -46,7 +46,7 @@ void SingleApplication::receiveMessage() {
   QLocalSocket *localSocket = localServer->nextPendingConnection();
   if (!localSocket->waitForReadyRead(timeout)) {
 #ifdef QT_DEBUG
-  dbg() << localSocket->errorString().toLatin1();
+    dbg() << localSocket->errorString().toLatin1();
 #endif
     return;
   }
@@ -77,14 +77,14 @@ bool SingleApplication::sendMessage(const QString &message) {
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!localSocket.waitForConnected(timeout)) {
 #ifdef QT_DEBUG
-  dbg() << localSocket.errorString().toLatin1();
+    dbg() << localSocket.errorString().toLatin1();
 #endif
     return false;
   }
   localSocket.write(message.toUtf8());
   if (!localSocket.waitForBytesWritten(timeout)) {
 #ifdef QT_DEBUG
-  dbg() << localSocket.errorString().toLatin1();
+    dbg() << localSocket.errorString().toLatin1();
 #endif
     return false;
   }

@@ -304,7 +304,7 @@ bool MainWindow::checkConfig() {
   // Config updates
   if (version.isEmpty()) {
 #ifdef QT_DEBUG
-  dbg() << "assuming fresh install";
+    dbg() << "assuming fresh install";
 #endif
 
     if (QtPassSettings::getAutoclearSeconds() < 5)
@@ -949,7 +949,7 @@ void MainWindow::initTrayIcon() {
 
   if (tray == NULL) {
 #ifdef QT_DEBUG
-  dbg() << "Allocating tray icon failed.";
+    dbg() << "Allocating tray icon failed.";
 #endif
   }
 

@@ -37,9 +37,9 @@ void Executor::executeNext() {
         QByteArray data = i.input.toUtf8();
         if (m_process.write(data) != data.length()) {
 #ifdef QT_DEBUG
-  dbg() << "Not all data written to process:" << i.id << " " << i.app;
+          dbg() << "Not all data written to process:" << i.id << " " << i.app;
 #endif
-          }
+        }
       }
       m_process.closeWriteChannel();
     }
@@ -107,7 +107,7 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   // also hiding legitimate errors from the gpg commands.
   if (app.isEmpty()) {
 #ifdef QT_DEBUG
-  dbg() << "Trying to execute nothing...";
+    dbg() << "Trying to execute nothing...";
 #endif
     return;
   }
@@ -140,7 +140,7 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     internal.waitForStarted(-1);
     if (internal.write(data) != data.length()) {
 #ifdef QT_DEBUG
-  dbg() << "Not all input written:" << app;
+      dbg() << "Not all input written:" << app;
 #endif
     }
     internal.closeWriteChannel();
@@ -212,7 +212,7 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
       err = codec->toUnicode(m_process.readAllStandardError());
       if (exitCode != 0) {
 #ifdef QT_DEBUG
-  dbg() << exitCode << err;
+        dbg() << exitCode << err;
 #endif
       }
     }

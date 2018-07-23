@@ -262,7 +262,7 @@ void ImitatePass::reencryptPath(QString dir) {
     if (actualKeys != gpgId) {
       // dbg()<< actualKeys << gpgId << getRecipientList(fileName);
 #ifdef QT_DEBUG
-  dbg() << "reencrypt " << fileName << " for " << gpgId;
+      dbg() << "reencrypt " << fileName << " for " << gpgId;
 #endif
       QString local_lastDecrypt = "Could not decrypt";
       args = QStringList{"-d",      "--quiet",     "--yes", "--no-encrypt-to",
@@ -304,7 +304,7 @@ void ImitatePass::reencryptPath(QString dir) {
 
       } else {
 #ifdef QT_DEBUG
-  dbg() << "Decrypt error on re-encrypt";
+        dbg() << "Decrypt error on re-encrypt";
 #endif
       }
     }
@@ -434,7 +434,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
       if (id == -1) {
         //  this is probably irrecoverable and shall not happen
 #ifdef QT_DEBUG
-  dbg() << "No such transaction!";
+        dbg() << "No such transaction!";
 #endif
         return;
       }
