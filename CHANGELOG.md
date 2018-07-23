@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Localization makes commits absolutely unreadable [\#405](https://github.com/IJHack/QtPass/issues/405)
 - Add otp \(two factor authentication\) support [\#327](https://github.com/IJHack/QtPass/issues/327)
 
 **Fixed bugs:**
