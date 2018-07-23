@@ -3,7 +3,6 @@
 
 #include "storemodel.h"
 
-#include <QDialog>
 #include <QFileSystemModel>
 #include <QItemSelectionModel>
 #include <QMainWindow>
@@ -34,6 +33,7 @@ class MainWindow;
 
     This class could really do with an overhaul.
  */
+class QDialog;
 class QtPass;
 class TrayIcon;
 class MainWindow : public QMainWindow {
@@ -44,11 +44,9 @@ public:
                       QWidget *parent = nullptr);
   ~MainWindow();
   bool checkConfig();
-  QStringList getSecretKeys();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
   void config();
-  void executePassGitInit();
 
   void setTextTextBrowser(const QString &text);
   void setUiElementsEnabled(bool state);
@@ -58,10 +56,7 @@ public:
   const QModelIndex getCurrentTreeViewIndex();
 
   QDialog *getKeygenDialog() { return this->keygen; }
-  void cleanKeygenDialog() {
-    this->keygen->close();
-    this->keygen = 0;
-  }
+  void cleanKeygenDialog();
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -72,13 +67,16 @@ protected:
 signals:
   void uiEnabled(bool state);
   void passShowHandlerFinished(QString output);
+  void passGitInitNeeded();
+  void generateGPGKeyPair(QString batch);
 
 public slots:
   void deselect();
+
   void messageAvailable(QString message);
+  void critical(QString, QString);
 
   void executeWrapperStarted();
-  void critical(QString, QString);
   void showStatusMessage(QString msg, int timeout = 2000);
   void passShowHandler(const QString &);
   void passOtpHandler(const QString &);

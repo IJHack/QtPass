@@ -70,6 +70,8 @@ private slots:
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
 
+  QStringList getSecretKeys();
+
   void setGitPath(QString);
   void setProfiles(QHash<QString, QString>, QString);
   void usePass(bool usePass);

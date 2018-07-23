@@ -1,5 +1,4 @@
 #include "configdialog.h"
-#include "debughelper.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
@@ -10,6 +9,10 @@
 #include <QMessageBox>
 #ifdef Q_OS_WIN
 #include <windows.h>
+#endif
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
 #endif
 
 /**
@@ -173,6 +176,23 @@ void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }
  * ConfigDialog::setGroupBoxState()
  */
 void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
+
+/**
+ * @brief ConfigDialog::getSecretKeys get list of secret/private keys
+ * @return QStringList keys
+ */
+QStringList ConfigDialog::getSecretKeys() {
+  QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
+  QStringList names;
+
+  if (keys.size() == 0)
+    return names;
+
+  foreach (const UserInfo &sec, keys)
+    names << sec.name;
+
+  return names;
+}
 
 /**
  * @brief ConfigDialog::setGroupBoxState update checkboxes.
@@ -385,7 +405,9 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
     if (0 != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == 0) {
-        dbg() << "empty name, should fix in frontend";
+#ifdef QT_DEBUG
+  dbg() << "empty name, should fix in frontend";
+#endif
         continue;
       }
       profiles.insert(item->text(), pathItem->text());
@@ -459,8 +481,12 @@ void ConfigDialog::wizard() {
     clean = true;
   }
 
-  QStringList names = mainWindow->getSecretKeys();
+  QStringList names = getSecretKeys();
+
+#ifdef QT_DEBUG
   dbg() << names;
+#endif
+
   if (QFile(gpg).exists() && names.empty()) {
     KeygenDialog d(this);
     if (!d.exec())
@@ -482,14 +508,15 @@ void ConfigDialog::wizard() {
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
       if (ui->checkBoxUseGit->isChecked())
-        mainWindow->executePassGitInit();
+        emit mainWindow->passGitInitNeeded();
       mainWindow->userDialog(passStore);
     }
   }
 
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
-    dbg() << ".gpg-id file does not exist";
-
+#ifdef QT_DEBUG
+  dbg() << ".gpg-id file does not exist";
+#endif
     if (!clean) {
       criticalMessage(tr("Password store not initialised"),
                       tr("The folder %1 doesn't seem to be a password store or "
@@ -504,7 +531,9 @@ void ConfigDialog::wizard() {
       passStore = ui->storePath->text();
     }
     if (!QFile(passStore + ".gpg-id").exists()) {
-      dbg() << ".gpg-id file still does not exist :/";
+#ifdef QT_DEBUG
+  dbg() << ".gpg-id file still does not exist :/";
+#endif
       // appears not to be store
       // init yes / no ?
       mainWindow->userDialog(passStore);

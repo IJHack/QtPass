@@ -1,8 +1,13 @@
 #include "mainwindow.h"
+
+#ifdef QT_DEBUG
 #include "debughelper.h"
+#endif
+
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QDesktopServices>
+#include <QDialog>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
@@ -172,6 +177,11 @@ const QModelIndex MainWindow::getCurrentTreeViewIndex() {
   return ui->treeView->currentIndex();
 }
 
+void MainWindow::cleanKeygenDialog() {
+  this->keygen->close();
+  this->keygen = 0;
+}
+
 void MainWindow::setTextTextBrowser(const QString &text) {
   ui->textBrowser->setText(text);
 }
@@ -293,7 +303,10 @@ bool MainWindow::checkConfig() {
 
   // Config updates
   if (version.isEmpty()) {
-    dbg() << "assuming fresh install";
+#ifdef QT_DEBUG
+  dbg() << "assuming fresh install";
+#endif
+
     if (QtPassSettings::getAutoclearSeconds() < 5)
       QtPassSettings::setAutoclearSeconds(10);
     if (QtPassSettings::getAutoclearPanelSeconds() < 5)
@@ -508,34 +521,12 @@ void MainWindow::deselect() {
   clearPanel(false);
 }
 
-/**
- * @brief MainWindow::executePassGitInit git init wrapper
- */
-void MainWindow::executePassGitInit() {
-  dbg() << "Pass git init called";
-  QtPassSettings::getPass()->GitInit();
-}
-
 void MainWindow::executeWrapperStarted() {
   clearTemplateWidgets();
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
 }
-
-// void MainWindow::onKeyGenerationComplete(const QString &p_output,
-//                                         const QString &p_errout) {
-//  // qDebug() << p_output;
-//  // qDebug() << p_errout;
-//  if (0 != keygen) {
-//    qDebug() << "Keygen Done";
-//    keygen->close();
-//    keygen = 0;
-//    // TODO(annejan) some sanity checking ?
-//  }
-
-//  // processFinished(p_output, p_errout);
-//}
 
 void MainWindow::passShowHandler(const QString &p_output) {
   QStringList templ = QtPassSettings::isUseTemplate()
@@ -672,7 +663,9 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
+#ifdef QT_DEBUG
   dbg() << "on_lineEdit_returnPressed";
+#endif
   selectFirstFile();
   on_treeView_clicked(ui->treeView->currentIndex());
 }
@@ -892,31 +885,13 @@ void MainWindow::messageAvailable(QString message) {
 }
 
 /**
- * @brief MainWindow::getSecretKeys get list of secret/private keys
- * @return QStringList keys
- */
-QStringList MainWindow::getSecretKeys() {
-  QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
-  QStringList names;
-
-  if (keys.size() == 0)
-    return names;
-
-  foreach (const UserInfo &sec, keys)
-    names << sec.name;
-
-  return names;
-}
-
-/**
  * @brief MainWindow::generateKeyPair internal gpg keypair generator . .
  * @param batch
  * @param keygenWindow
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
-  ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
-  QtPassSettings::getPass()->GenerateGPGKeys(batch);
+  emit generateGPGKeyPair(batch);
 }
 
 /**
@@ -972,8 +947,11 @@ void MainWindow::initTrayIcon() {
   this->tray = new TrayIcon(this);
   // Setup tray icon
 
-  if (tray == NULL)
-    dbg() << "Allocating tray icon failed.";
+  if (tray == NULL) {
+#ifdef QT_DEBUG
+  dbg() << "Allocating tray icon failed.";
+#endif
+  }
 
   if (!tray->getIsAllocated()) {
     destroyTrayIcon();

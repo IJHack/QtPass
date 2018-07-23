@@ -1,13 +1,12 @@
 #include "qtpass.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
-
-#ifdef QT_DEBUG
-#include <QDebug>
-#endif
 #include <QApplication>
 #include <QClipboard>
-#include <QProcess>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 QtPass::QtPass() : clippedText(QString()) {
   // All business logic connected to MainWindow :)
@@ -32,11 +31,25 @@ void QtPass::setMainWindow(MainWindow *mW) {
           m_mainWindow, &MainWindow::startReencryptPath);
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
+
+  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() {
+#ifdef QT_DEBUG
+    dbg() << "Pass git init called";
+#endif
+    QtPassSettings::getPass()->GitInit();
+  });
+
+  connect(
+      m_mainWindow, &MainWindow::generateGPGKeyPair, [=](const QString &batch) {
+        QtPassSettings::getPass()->GenerateGPGKeys(batch);
+        m_mainWindow->showStatusMessage(tr("Generating GPG key pair"), 60000);
+      });
 }
 
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
+
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);
@@ -47,6 +60,7 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
           &MainWindow::passShowHandler);
   connect(pass, &Pass::finishedOtpGenerate, m_mainWindow,
           &MainWindow::passOtpHandler);
+
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &QtPass::processFinished);

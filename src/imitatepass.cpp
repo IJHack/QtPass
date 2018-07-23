@@ -1,7 +1,10 @@
 #include "imitatepass.h"
-#include "debughelper.h"
 #include "qtpasssettings.h"
 #include <QDirIterator>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 using namespace Enums;
 
@@ -53,8 +56,10 @@ void ImitatePass::Show(QString file) {
  * @brief ImitatePass::OtpGenerate generates an otp code
  */
 void ImitatePass::OtpGenerate(QString file) {
+#ifdef QT_DEBUG
   dbg() << "No OTP generation code for fake pass yet, attempting for file: " +
                file;
+#endif
 }
 
 /**
@@ -256,7 +261,9 @@ void ImitatePass::reencryptPath(QString dir) {
     actualKeys.sort();
     if (actualKeys != gpgId) {
       // dbg()<< actualKeys << gpgId << getRecipientList(fileName);
-      dbg() << "reencrypt " << fileName << " for " << gpgId;
+#ifdef QT_DEBUG
+  dbg() << "reencrypt " << fileName << " for " << gpgId;
+#endif
       QString local_lastDecrypt = "Could not decrypt";
       args = QStringList{"-d",      "--quiet",     "--yes", "--no-encrypt-to",
                          "--batch", "--use-agent", fileName};
@@ -296,7 +303,9 @@ void ImitatePass::reencryptPath(QString dir) {
         }
 
       } else {
-        dbg() << "Decrypt error on re-encrypt";
+#ifdef QT_DEBUG
+  dbg() << "Decrypt error on re-encrypt";
+#endif
       }
     }
   }
@@ -409,7 +418,9 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
  */
 void ImitatePass::finished(int id, int exitCode, const QString &out,
                            const QString &err) {
+#ifdef QT_DEBUG
   dbg() << "Imitate Pass";
+#endif
   static QString transactionOutput;
   PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
   transactionOutput.append(out);
@@ -422,7 +433,9 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
       id = exec.cancelNext();
       if (id == -1) {
         //  this is probably irrecoverable and shall not happen
-        dbg() << "No such transaction!";
+#ifdef QT_DEBUG
+  dbg() << "No such transaction!";
+#endif
         return;
       }
       pid = transactionIsOver(static_cast<PROCESS>(id));

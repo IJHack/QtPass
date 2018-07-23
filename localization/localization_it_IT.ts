@@ -162,12 +162,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensioni:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="528"/>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa l&apos;estensione Pass OTP</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
@@ -328,57 +328,57 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versione </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="71"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>No Clipboard</source>
         <translation>Non copiare negli appunti</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="72"/>
+        <location filename="../src/configdialog.cpp" line="75"/>
         <source>Always copy to clipboard</source>
         <translation>Copia sempre negli appunti</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="73"/>
+        <location filename="../src/configdialog.cpp" line="76"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copia negli appunti su richiesta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="415"/>
+        <location filename="../src/configdialog.cpp" line="437"/>
         <source>No profile selected</source>
         <translation>Nessun profilo selezionato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="416"/>
+        <location filename="../src/configdialog.cpp" line="438"/>
         <source>No profile selected to delete</source>
         <translation>Nessun profilo selezionato per la rimozione</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="454"/>
+        <location filename="../src/configdialog.cpp" line="476"/>
         <source>GnuPG not found</source>
         <translation>GnuPG non trovato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="455"/>
+        <location filename="../src/configdialog.cpp" line="477"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installa GnuPG nel tuo sistema.&lt;br&gt;Installa &lt;strong&gt;gpg&lt;/strong&gt; utilizzando il gestore pacchetti&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;scaricalo&lt;/a&gt; da GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="475"/>
+        <location filename="../src/configdialog.cpp" line="501"/>
         <source>Create password-store?</source>
         <translation>Creare un archivio password?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="476"/>
+        <location filename="../src/configdialog.cpp" line="502"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Vuoi creare un archivio password in %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="494"/>
+        <location filename="../src/configdialog.cpp" line="521"/>
         <source>Password store not initialised</source>
         <translation>Archivio password non inizializzato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="495"/>
+        <location filename="../src/configdialog.cpp" line="522"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata corretamente.</translation>
     </message>
@@ -386,47 +386,47 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="73"/>
-        <location filename="../src/imitatepass.cpp" line="273"/>
+        <location filename="../src/imitatepass.cpp" line="78"/>
+        <location filename="../src/imitatepass.cpp" line="280"/>
         <source>Can not edit</source>
         <translation>Impossibile modificare</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="74"/>
-        <location filename="../src/imitatepass.cpp" line="274"/>
+        <location filename="../src/imitatepass.cpp" line="79"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Impossibile leggere la chiave di criptazione da utilizzare, il file .gpg-id è mancante o non valido.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="153"/>
+        <location filename="../src/imitatepass.cpp" line="158"/>
         <source>Cannot update</source>
         <translation>Impossibile aggiornare</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="154"/>
+        <location filename="../src/imitatepass.cpp" line="159"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Impossibile aprire .gpg-id in scrittura.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="167"/>
+        <location filename="../src/imitatepass.cpp" line="172"/>
         <source>Check selected users!</source>
         <translation>Controlla gli utenti selezionati!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="168"/>
+        <location filename="../src/imitatepass.cpp" line="173"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nessuna delle chiavi selezionate ha una chiave privata disponibile.
 Non sarai in grado di decifrare nessuna delle nuove password create!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="219"/>
+        <location filename="../src/imitatepass.cpp" line="224"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Esegui nuovamente la cifratura dalla cartella %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="223"/>
-        <location filename="../src/imitatepass.cpp" line="304"/>
+        <location filename="../src/imitatepass.cpp" line="228"/>
+        <location filename="../src/imitatepass.cpp" line="313"/>
         <source>Updating password-store</source>
         <translation>Aggiornando password-store</translation>
     </message>
@@ -546,31 +546,31 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="323"/>
         <location filename="../src/mainwindow.ui" line="326"/>
-        <location filename="../src/mainwindow.cpp" line="1253"/>
+        <location filename="../src/mainwindow.cpp" line="1066"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="331"/>
         <location filename="../src/mainwindow.ui" line="334"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>Delete</source>
         <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="339"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="342"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Genera OTP e copia negli appunti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="345"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="353"/>
@@ -607,7 +607,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; è una GUI per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Si prega di segnalare qualsiasi &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;problema&lt;/span&gt;&lt;/a&gt; riscontrato con il software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentazione&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Codice sorgente&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="369"/>
@@ -616,7 +623,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="366"/>
-        <location filename="../src/mainwindow.cpp" line="1247"/>
+        <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Users</source>
         <translation>Utenti</translation>
     </message>
@@ -682,7 +689,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cerca Password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="136"/>
+        <location filename="../src/mainwindow.cpp" line="127"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvenuto in QtPass %1</translation>
     </message>
@@ -695,39 +702,39 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Aggiungi Cartella</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="267"/>
+        <location filename="../src/mainwindow.cpp" line="230"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Impossibile connettersi a WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="280"/>
+        <location filename="../src/mainwindow.cpp" line="243"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="281"/>
+        <location filename="../src/mainwindow.cpp" line="244"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Inserisci la password per connetersi a WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="297"/>
+        <location filename="../src/mainwindow.cpp" line="260"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav si è chiuso in modo anomalo
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="301"/>
+        <location filename="../src/mainwindow.cpp" line="264"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Impossibile connettere fusedav a WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="478"/>
-        <location filename="../src/mainwindow.cpp" line="490"/>
+        <location filename="../src/mainwindow.cpp" line="443"/>
+        <location filename="../src/mainwindow.cpp" line="455"/>
         <source>Updating password-store</source>
         <translation>Aggiornando password-store</translation>
     </message>
@@ -744,33 +751,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password nascosta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="611"/>
+        <location filename="../src/mainwindow.cpp" line="549"/>
         <source>Content hidden</source>
         <translation>Contenuto nascosto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="615"/>
-        <location filename="../src/mainwindow.cpp" line="1403"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="1198"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="639"/>
+        <location filename="../src/mainwindow.cpp" line="577"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Codice OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Clipboard cleared</source>
-        <translation>Appunti svuotati</translation>
+        <translation type="vanished">Appunti svuotati</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="708"/>
         <source>Clipboard not cleared</source>
-        <translation>Appunti non svuotati</translation>
+        <translation type="vanished">Appunti non svuotati</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="723"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
         <source>Password and Content hidden</source>
         <translation>Password e Contenuto nascosti</translation>
     </message>
@@ -799,40 +804,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="825"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>Looking for: %1</source>
         <translation>Cercando: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="899"/>
-        <location filename="../src/mainwindow.cpp" line="1302"/>
+        <location filename="../src/mainwindow.cpp" line="726"/>
+        <location filename="../src/mainwindow.cpp" line="1115"/>
         <source>New file</source>
         <translation>Nuovo file</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuovo file password:
 (Verrà posizionato in %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="928"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
         <source> and the whole content?</source>
         <translation> e l&apos;intero contenuto?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="938"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> e l&apos;intero contenuto? &lt;br&gt;&lt;strong&gt;Attenzione: ci sono file inattesi nella cartella selezionata, controlla prima di continuare.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="948"/>
+        <location filename="../src/mainwindow.cpp" line="775"/>
         <source>Are you sure you want to delete %1%2</source>
         <translation>Sei sicuro di voler eliminare %1%2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="774"/>
         <source>Delete password?</source>
         <translation>Eliminare password?</translation>
     </message>
@@ -841,7 +846,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Sei sicuro di voler eliminare %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="774"/>
         <source>Delete folder?</source>
         <translation>Eliminare cartella?</translation>
     </message>
@@ -854,71 +859,69 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished"> e l&apos;intero contenuto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="821"/>
         <source>Can not get key list</source>
         <translation>Impossibile ottenere la lista delle chiavi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="995"/>
+        <location filename="../src/mainwindow.cpp" line="822"/>
         <source>Unable to get list of available gpg keys</source>
         <translation>Impossibile ottenere la lista delle chiavi gpg disponibili</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1028"/>
+        <location filename="../src/mainwindow.cpp" line="855"/>
         <source>Key not found in keyring</source>
         <translation>Chiave non trovata nel portachiavi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1084"/>
         <source>Generating GPG key pair</source>
-        <translation>Generando una coppia di chiavi GPG</translation>
+        <translation type="vanished">Generando una coppia di chiavi GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Profile changed to %1</source>
         <translation>Profilo cambiato in %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1244"/>
+        <location filename="../src/mainwindow.cpp" line="1057"/>
         <source>Open folder with file manager</source>
         <translation>Apri la cartella con il gestore file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="315"/>
         <location filename="../src/mainwindow.ui" line="318"/>
-        <location filename="../src/mainwindow.cpp" line="1245"/>
+        <location filename="../src/mainwindow.cpp" line="1058"/>
         <source>Add folder</source>
         <translation>Aggiungi cartella</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="304"/>
         <location filename="../src/mainwindow.ui" line="307"/>
-        <location filename="../src/mainwindow.cpp" line="1246"/>
+        <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Add password</source>
         <translation>Aggiungi password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1303"/>
+        <location filename="../src/mainwindow.cpp" line="1116"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nuova cartella:
 (Verrà posizionata in %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1352"/>
         <source>Copied to clipboard</source>
-        <translation>copiato negli appunti</translation>
+        <translation type="vanished">copiato negli appunti</translation>
     </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="94"/>
+        <location filename="../src/pass.cpp" line="99"/>
         <source>No characters chosen</source>
         <translation>Nessun carattere selezionato</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="95"/>
+        <location filename="../src/pass.cpp" line="100"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Impossibile generare una password, non ci sono caratteri dai quali scegliere. Cotrolla nella finestra di configurazione!</translation>
     </message>
@@ -983,34 +986,54 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="50"/>
+        <location filename="../src/qtpass.cpp" line="45"/>
+        <source>Generating GPG key pair</source>
+        <translation>Generando una coppia di chiavi GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="84"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="53"/>
+        <location filename="../src/qtpass.cpp" line="87"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="56"/>
+        <location filename="../src/qtpass.cpp" line="90"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="59"/>
+        <location filename="../src/qtpass.cpp" line="93"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="62"/>
+        <location filename="../src/qtpass.cpp" line="96"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="65"/>
+        <location filename="../src/qtpass.cpp" line="99"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="226"/>
+        <source>Clipboard cleared</source>
+        <translation>Appunti svuotati</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="228"/>
+        <source>Clipboard not cleared</source>
+        <translation>Appunti non svuotati</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="247"/>
+        <source>Copied to clipboard</source>
+        <translation>Copiato negli appunti</translation>
     </message>
 </context>
 <context>
@@ -1029,32 +1052,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="65"/>
+        <location filename="../src/trayicon.cpp" line="70"/>
         <source>&amp;Show</source>
         <translation>Mo&amp;stra</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="67"/>
+        <location filename="../src/trayicon.cpp" line="72"/>
         <source>&amp;Hide</source>
         <translation>&amp;Nascondi</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="70"/>
+        <location filename="../src/trayicon.cpp" line="75"/>
         <source>Mi&amp;nimize</source>
         <translation>&amp;Minimizza</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="73"/>
+        <location filename="../src/trayicon.cpp" line="78"/>
         <source>Ma&amp;ximize</source>
         <translation>Massimiz&amp;za</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="76"/>
+        <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Restore</source>
         <translation>&amp;Ripristina</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="79"/>
+        <location filename="../src/trayicon.cpp" line="84"/>
         <source>&amp;Quit</source>
         <translation>&amp;Esci</translation>
     </message>

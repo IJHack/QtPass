@@ -1,9 +1,12 @@
 #include "trayicon.h"
-#include "debughelper.h"
 #include <QAction>
 #include <QApplication>
 #include <QMainWindow>
 #include <QMenu>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 /**
  * @brief TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on
@@ -27,7 +30,9 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
 
     isAllocated = true;
   } else {
-    dbg() << "No tray icon for this OS possibly also not show options?";
+#ifdef QT_DEBUG
+  dbg() << "No tray icon for this OS possibly also not show options?";
+#endif
 
     isAllocated = false;
 
