@@ -87,8 +87,10 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
       passwd.remove(QRegExp("[\\n\\r]"));
     else {
       passwd.clear();
+#ifdef QT_DEBUG
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
                << "pwgen fail";
+#endif
       //    TODO(bezet): emit critical ?
     }
   } else {
@@ -289,6 +291,8 @@ QStringList Pass::getRecipientList(QString for_file) {
  */
 QStringList Pass::getRecipientString(QString for_file, QString separator,
                                      int *count) {
+  Q_UNUSED(separator)
+  Q_UNUSED(count)
   return Pass::getRecipientList(for_file);
 }
 

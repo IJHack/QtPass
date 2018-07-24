@@ -4,13 +4,22 @@
 #include <QApplication>
 #include <QClipboard>
 
+#ifndef Q_OS_WIN
+#include <QInputDialog>
+#include <QLineEdit>
+#endif
+
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
 
-QtPass::QtPass() : clippedText(QString()) {
-  // All business logic connected to MainWindow :)
+QtPass::QtPass() : clippedText(QString()), freshStart(true) {
+  if (!setup()) {
+    // no working config so this should quit without config anything
+    QApplication::quit();
+  }
 
+  setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
           SLOT(clearClipboard()));
@@ -19,8 +28,84 @@ QtPass::QtPass() : clippedText(QString()) {
                    &QtPass::clearClipboard);
 }
 
+/**
+ * @brief QtPass::~QtPass destroy!
+ */
+QtPass::~QtPass() {
+#ifdef Q_OS_WIN
+  if (QtPassSettings::isUseWebDav())
+    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
+                           0, 1);
+#else
+  if (fusedav.state() == QProcess::Running) {
+    fusedav.terminate();
+    fusedav.waitForFinished(2000);
+  }
+#endif
+}
+
+/**
+ * @brief QtPass::setup make sure we are ready to go as soon as
+ * possible
+ */
+bool QtPass::setup() {
+  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
+  QtPassSettings::setPassStore(passStore);
+
+  QtPassSettings::initExecutables();
+
+  QString version = QtPassSettings::getVersion();
+  // dbg()<< version;
+
+  // Config updates
+  if (version.isEmpty()) {
+#ifdef QT_DEBUG
+    dbg() << "assuming fresh install";
+#endif
+
+    if (QtPassSettings::getAutoclearSeconds() < 5)
+      QtPassSettings::setAutoclearSeconds(10);
+    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
+      QtPassSettings::setAutoclearPanelSeconds(10);
+    if (!QtPassSettings::getPwgenExecutable().isEmpty())
+      QtPassSettings::setUsePwgen(true);
+    else
+      QtPassSettings::setUsePwgen(false);
+    QtPassSettings::setPassTemplate("login\nurl");
+  } else {
+    // QStringList ver = version.split(".");
+    // dbg()<< ver;
+    // if (ver[0] == "0" && ver[1] == "8") {
+    //// upgrade to 0.9
+    // }
+    if (QtPassSettings::getPassTemplate().isEmpty())
+      QtPassSettings::setPassTemplate("login\nurl");
+  }
+
+  QtPassSettings::setVersion(VERSION);
+
+  if (Util::checkConfig()) {
+    m_mainWindow->config();
+    if (freshStart && Util::checkConfig())
+      return false;
+  }
+
+  // TODO(annejan): this needs to be before we try to access the store,
+  // but it would be better to do it after the Window is shown,
+  // as the long delay it can cause is irritating otherwise.
+  if (QtPassSettings::isUseWebDav())
+    mountWebDav();
+
+  freshStart = false;
+  // startupPhase = false;
+  return true;
+}
+
 void QtPass::setMainWindow(MainWindow *mW) {
   m_mainWindow = mW;
+  m_mainWindow->restoreWindow();
+
+  fusedav.setParent(m_mainWindow);
 
   //  TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -71,6 +156,68 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedCopy, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
+}
+
+/**
+ * @brief QtPass::mountWebDav is some scary voodoo magic
+ */
+void QtPass::mountWebDav() {
+#ifdef Q_OS_WIN
+  char dst[20] = {0};
+  NETRESOURCEA netres;
+  memset(&netres, 0, sizeof(netres));
+  netres.dwType = RESOURCETYPE_DISK;
+  netres.lpLocalName = 0;
+  netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
+  DWORD size = sizeof(dst);
+  DWORD r = WNetUseConnectionA(
+      reinterpret_cast<HWND>(effectiveWinId()), &netres,
+      QtPassSettings::getWebDavPassword().toUtf8().constData(),
+      QtPassSettings::getWebDavUser().toUtf8().constData(),
+      CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
+      0);
+  if (r == NO_ERROR) {
+    QtPassSettings::setPassStore(dst);
+  } else {
+    char message[256] = {0};
+    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
+                   sizeof(message), 0);
+    m_mainWindow->flashText(tr("Failed to connect WebDAV:\n") + message +
+                                " (0x" + QString::number(r, 16) + ")",
+                            true);
+  }
+#else
+  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
+                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
+                QtPassSettings::getPassStore() + '"');
+  fusedav.waitForStarted();
+  if (fusedav.state() == QProcess::Running) {
+    QString pwd = QtPassSettings::getWebDavPassword();
+    bool ok = true;
+    if (pwd.isEmpty()) {
+      pwd = QInputDialog::getText(m_mainWindow, tr("QtPass WebDAV password"),
+                                  tr("Enter password to connect to WebDAV:"),
+                                  QLineEdit::Password, "", &ok);
+    }
+    if (ok && !pwd.isEmpty()) {
+      fusedav.write(pwd.toUtf8() + '\n');
+      fusedav.closeWriteChannel();
+      fusedav.waitForFinished(2000);
+    } else {
+      fusedav.terminate();
+    }
+  }
+  QString error = fusedav.readAllStandardError();
+  int prompt = error.indexOf("Password:");
+  if (prompt >= 0)
+    error.remove(0, prompt + 10);
+  if (fusedav.state() != QProcess::Running)
+    error = tr("fusedav exited unexpectedly\n") + error;
+  if (error.size() > 0) {
+    m_mainWindow->flashText(
+        tr("Failed to start fusedav to connect WebDAV:\n") + error, true);
+  }
+#endif
 }
 
 /**

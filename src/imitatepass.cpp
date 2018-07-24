@@ -59,6 +59,8 @@ void ImitatePass::OtpGenerate(QString file) {
 #ifdef QT_DEBUG
   dbg() << "No OTP generation code for fake pass yet, attempting for file: " +
                file;
+#else
+  Q_UNUSED(file)
 #endif
 }
 

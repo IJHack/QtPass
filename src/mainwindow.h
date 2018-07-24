@@ -43,7 +43,8 @@ public:
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
   ~MainWindow();
-  bool checkConfig();
+
+  void restoreWindow();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
   void config();
@@ -115,19 +116,17 @@ private:
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QProcess fusedav;
   QTimer clearPanelTimer;
-  bool freshStart;
+  //bool freshStart;
   QDialog *keygen;
   QString currentDir;
-  bool startupPhase;
+  //bool startupPhase;
   TrayIcon *tray;
 
   void initToolBarButtons();
   void initStatusBar();
 
   void updateText();
-  void restoreWindow();
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);
