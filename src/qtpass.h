@@ -26,6 +26,8 @@ private:
 
   void connectPassSignalHandlers(Pass *pass);
 
+  bool setup();
+
 signals:
 
 public slots:

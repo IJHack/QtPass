@@ -55,12 +55,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_qtPass = new QtPass();
   m_qtPass->setMainWindow(this);
 
-  // i think this should be moved out of MainWindow (in main.cpp as example)
-  if (!checkConfig()) {
-    // no working config so this should quit without config anything
-    QApplication::quit();
-  }
-
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
@@ -265,128 +259,6 @@ void MainWindow::mountWebDav() {
     ui->textBrowser->setTextColor(Qt::black);
   }
 #endif
-}
-
-/**
- * @brief MainWindow::checkConfig make sure we are ready to go as soon as
- * possible
- */
-bool MainWindow::checkConfig() {
-  QString version = QtPassSettings::getVersion();
-
-  // if (freshStart) {
-  restoreWindow();
-  //}
-
-  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
-  QtPassSettings::setPassStore(passStore);
-
-  QtPassSettings::initExecutables();
-
-  if (QtPassSettings::isAlwaysOnTop()) {
-    Qt::WindowFlags flags = windowFlags();
-    this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-    this->show();
-  }
-
-  if (QtPassSettings::isUseTrayIcon() && tray == NULL) {
-    initTrayIcon();
-    if (freshStart && QtPassSettings::isStartMinimized()) {
-      // since we are still in constructor, can't directly hide
-      QTimer::singleShot(10, this, SLOT(hide()));
-    }
-  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
-    destroyTrayIcon();
-  }*/
-
-  // dbg()<< version;
-
-  // Config updates
-  if (version.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "assuming fresh install";
-#endif
-
-    if (QtPassSettings::getAutoclearSeconds() < 5)
-      QtPassSettings::setAutoclearSeconds(10);
-    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
-      QtPassSettings::setAutoclearPanelSeconds(10);
-    if (!QtPassSettings::getPwgenExecutable().isEmpty())
-      QtPassSettings::setUsePwgen(true);
-    else
-      QtPassSettings::setUsePwgen(false);
-    QtPassSettings::setPassTemplate("login\nurl");
-  } else {
-    // QStringList ver = version.split(".");
-    // dbg()<< ver;
-    // if (ver[0] == "0" && ver[1] == "8") {
-    //// upgrade to 0.9
-    // }
-    if (QtPassSettings::getPassTemplate().isEmpty())
-      QtPassSettings::setPassTemplate("login\nurl");
-  }
-
-  QtPassSettings::setVersion(VERSION);
-
-  if (Util::checkConfig()) {
-    config();
-    if (freshStart && Util::checkConfig())
-      return false;
-  }
-
-  freshStart = false;
-
-  // TODO(annejan): this needs to be before we try to access the store,
-  // but it would be better to do it after the Window is shown,
-  // as the long delay it can cause is irritating otherwise.
-  if (QtPassSettings::isUseWebDav())
-    mountWebDav();
-
-  model.setNameFilters(QStringList() << "*.gpg");
-  model.setNameFilterDisables(false);
-  /*
-   * I added this to solve Windows bug but now on GNU/Linux the main folder,
-   * if hidden, disappear
-   *
-   * model.setFilter(QDir::NoDot);
-   */
-
-  proxyModel.setSourceModel(&model);
-  proxyModel.setModelAndStore(&model, passStore);
-  selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(passStore));
-  model.sort(0, Qt::AscendingOrder);
-
-  ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
-  ui->treeView->setColumnHidden(1, true);
-  ui->treeView->setColumnHidden(2, true);
-  ui->treeView->setColumnHidden(3, true);
-  ui->treeView->setHeaderHidden(true);
-  ui->treeView->setIndentation(15);
-  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
-          &MainWindow::showContextMenu);
-  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
-          &MainWindow::deselect);
-  ui->textBrowser->setOpenExternalLinks(true);
-  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
-          &MainWindow::showBrowserContextMenu);
-
-  updateProfileBox();
-  QtPassSettings::getPass()->updateEnv();
-  clearPanelTimer.setInterval(1000 *
-                              QtPassSettings::getAutoclearPanelSeconds());
-  m_qtPass->setClipboardTimer();
-  updateGitButtonVisibility();
-  updateOtpButtonVisibility();
-
-  startupPhase = false;
-  return true;
 }
 
 /**
@@ -633,6 +505,22 @@ void MainWindow::restoreWindow() {
   if (QtPassSettings::isMaximized(isMaximized())) {
     showMaximized();
   }
+
+  if (QtPassSettings::isAlwaysOnTop()) {
+    Qt::WindowFlags flags = windowFlags();
+    setWindowFlags(flags | Qt::WindowStaysOnTopHint);
+    show();
+  }
+
+  if (QtPassSettings::isUseTrayIcon() && tray == NULL) {
+    initTrayIcon();
+    if (freshStart && QtPassSettings::isStartMinimized()) {
+      // since we are still in constructor, can't directly hide
+      QTimer::singleShot(10, this, SLOT(hide()));
+    }
+  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+    destroyTrayIcon();
+  }*/
 }
 
 /**

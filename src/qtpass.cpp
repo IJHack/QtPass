@@ -9,7 +9,10 @@
 #endif
 
 QtPass::QtPass() : clippedText(QString()) {
-  // All business logic connected to MainWindow :)
+  if (!setup()) {
+    // no working config so this should quit without config anything
+    QApplication::quit();
+  }
 
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
@@ -19,8 +22,110 @@ QtPass::QtPass() : clippedText(QString()) {
                    &QtPass::clearClipboard);
 }
 
+/**
+ * @brief QtPass::setup make sure we are ready to go as soon as
+ * possible
+ */
+bool QtPass::setup() {
+  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
+  QtPassSettings::setPassStore(passStore);
+
+  QtPassSettings::initExecutables();
+
+  QString version = QtPassSettings::getVersion();
+  // dbg()<< version;
+
+  // Config updates
+  if (version.isEmpty()) {
+#ifdef QT_DEBUG
+    dbg() << "assuming fresh install";
+#endif
+
+    if (QtPassSettings::getAutoclearSeconds() < 5)
+      QtPassSettings::setAutoclearSeconds(10);
+    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
+      QtPassSettings::setAutoclearPanelSeconds(10);
+    if (!QtPassSettings::getPwgenExecutable().isEmpty())
+      QtPassSettings::setUsePwgen(true);
+    else
+      QtPassSettings::setUsePwgen(false);
+    QtPassSettings::setPassTemplate("login\nurl");
+  } else {
+    // QStringList ver = version.split(".");
+    // dbg()<< ver;
+    // if (ver[0] == "0" && ver[1] == "8") {
+    //// upgrade to 0.9
+    // }
+    if (QtPassSettings::getPassTemplate().isEmpty())
+      QtPassSettings::setPassTemplate("login\nurl");
+  }
+
+  QtPassSettings::setVersion(VERSION);
+
+  if (Util::checkConfig()) {
+    m_mainWindow->config();
+    if (freshStart && Util::checkConfig())
+      return false;
+  }
+
+  freshStart = false;
+
+  // TODO(annejan): this needs to be before we try to access the store,
+  // but it would be better to do it after the Window is shown,
+  // as the long delay it can cause is irritating otherwise.
+  if (QtPassSettings::isUseWebDav())
+    mountWebDav();
+
+  model.setNameFilters(QStringList() << "*.gpg");
+  model.setNameFilterDisables(false);
+  /*
+   * I added this to solve Windows bug but now on GNU/Linux the main folder,
+   * if hidden, disappear
+   *
+   * model.setFilter(QDir::NoDot);
+   */
+
+  proxyModel.setSourceModel(&model);
+  proxyModel.setModelAndStore(&model, passStore);
+  selectionModel.reset(new QItemSelectionModel(&proxyModel));
+  model.fetchMore(model.setRootPath(passStore));
+  model.sort(0, Qt::AscendingOrder);
+
+  ui->treeView->setModel(&proxyModel);
+  ui->treeView->setRootIndex(
+      proxyModel.mapFromSource(model.setRootPath(passStore)));
+  ui->treeView->setColumnHidden(1, true);
+  ui->treeView->setColumnHidden(2, true);
+  ui->treeView->setColumnHidden(3, true);
+  ui->treeView->setHeaderHidden(true);
+  ui->treeView->setIndentation(15);
+  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showContextMenu);
+  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
+          &MainWindow::deselect);
+  ui->textBrowser->setOpenExternalLinks(true);
+  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showBrowserContextMenu);
+
+  updateProfileBox();
+  QtPassSettings::getPass()->updateEnv();
+  clearPanelTimer.setInterval(1000 *
+                              QtPassSettings::getAutoclearPanelSeconds());
+  m_qtPass->setClipboardTimer();
+  updateGitButtonVisibility();
+  updateOtpButtonVisibility();
+
+  startupPhase = false;
+  return true;
+}
+
 void QtPass::setMainWindow(MainWindow *mW) {
   m_mainWindow = mW;
+  m_mainWindow->restoreWindow();
 
   //  TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
