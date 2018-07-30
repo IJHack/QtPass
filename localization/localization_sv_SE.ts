@@ -374,7 +374,7 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+78"/>
+        <location filename="../src/imitatepass.cpp" line="+80"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation type="unfinished">Kan inte ändra</translation>
@@ -520,7 +520,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1066"/>
+        <location filename="../src/mainwindow.cpp" line="+889"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
@@ -623,7 +623,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-617"/>
+        <location filename="../src/mainwindow.cpp" line="-633"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
@@ -638,7 +638,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet rensat</translation>
     </message>
     <message>
-        <location line="+150"/>
+        <location line="+166"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -665,45 +665,40 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-886"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Kunde inte ansluta till WebDAV:</translation>
+        <translation type="vanished">Kunde inte ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV lösenord</translation>
+        <translation type="vanished">QtPass WebDAV lösenord</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Mata in WebDAV lösenord:</translation>
+        <translation type="vanished">Mata in WebDAV lösenord:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav avslutades oväntat</translation>
+        <translation type="vanished">fusedav avslutades oväntat</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
+        <translation type="vanished">Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
     </message>
     <message>
         <source>Password hidden</source>
         <translation type="vanished">Gömt lösenord</translation>
     </message>
     <message>
-        <location line="+285"/>
+        <location line="-583"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+645"/>
+        <location line="+661"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -712,7 +707,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-602"/>
+        <location line="-618"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -726,7 +721,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui"/>
-        <location filename="../src/mainwindow.cpp" line="+462"/>
+        <location filename="../src/mainwindow.cpp" line="+478"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
@@ -742,12 +737,12 @@ p, li { white-space: pre-wrap; }
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-932"/>
+        <location filename="../src/mainwindow.cpp" line="-761"/>
         <source>Welcome to QtPass %1</source>
         <translation>Välkommen till QtPass %1</translation>
     </message>
     <message>
-        <location line="+523"/>
+        <location line="+352"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>
@@ -807,7 +802,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+99"/>
+        <location filename="../src/pass.cpp" line="+101"/>
         <source>No characters chosen</source>
         <translation type="unfinished">Inga valda tecken</translation>
     </message>
@@ -876,12 +871,40 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+45"/>
+        <location filename="../src/qtpass.cpp" line="+151"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+56"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished">Kunde inte ansluta till WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished">QtPass WebDAV lösenord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished">Mata in WebDAV lösenord:</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished">fusedav avslutades oväntat</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished">Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>QProcess::FailedToStart</source>
         <translation type="unfinished"></translation>
     </message>

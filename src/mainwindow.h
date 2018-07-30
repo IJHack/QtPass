@@ -116,12 +116,11 @@ private:
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QProcess fusedav;
   QTimer clearPanelTimer;
-  bool freshStart;
+  //bool freshStart;
   QDialog *keygen;
   QString currentDir;
-  bool startupPhase;
+  //bool startupPhase;
   TrayIcon *tray;
 
   void initToolBarButtons();

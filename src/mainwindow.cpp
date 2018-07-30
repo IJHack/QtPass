@@ -43,16 +43,15 @@
  * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
-      freshStart(true), keygen(NULL), startupPhase(true), tray(NULL) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), keygen(NULL), tray(NULL) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
-  ui->setupUi(this);
-
   m_qtPass = new QtPass();
+
+  ui->setupUi(this);
   m_qtPass->setMainWindow(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
@@ -61,6 +60,50 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
                 SLOT(copyPasswordFromTreeview()));
 
+  model.setNameFilters(QStringList() << "*.gpg");
+  model.setNameFilterDisables(false);
+
+  /*
+   * I added this to solve Windows bug but now on GNU/Linux the main folder,
+   * if hidden, disappear
+   *
+   * model.setFilter(QDir::NoDot);
+   */
+
+  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
+
+  proxyModel.setSourceModel(&model);
+  proxyModel.setModelAndStore(&model, passStore);
+  selectionModel.reset(new QItemSelectionModel(&proxyModel));
+  model.fetchMore(model.setRootPath(passStore));
+  model.sort(0, Qt::AscendingOrder);
+
+  ui->treeView->setModel(&proxyModel);
+  ui->treeView->setRootIndex(
+      proxyModel.mapFromSource(model.setRootPath(passStore)));
+  ui->treeView->setColumnHidden(1, true);
+  ui->treeView->setColumnHidden(2, true);
+  ui->treeView->setColumnHidden(3, true);
+  ui->treeView->setHeaderHidden(true);
+  ui->treeView->setIndentation(15);
+  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showContextMenu);
+  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
+          &MainWindow::deselect);
+
+  ui->textBrowser->setOpenExternalLinks(true);
+  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showBrowserContextMenu);
+
+  updateProfileBox();
+
+  QtPassSettings::getPass()->updateEnv();
+  clearPanelTimer.setInterval(1000 *
+                              QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
 
@@ -74,10 +117,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   setUiElementsEnabled(true);
 
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
-
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
+}
+
+MainWindow::~MainWindow() {
+  delete m_qtPass;
 }
 
 /**
@@ -139,22 +185,6 @@ void MainWindow::focusInput() {
 }
 
 /**
- * @brief MainWindow::~MainWindow destroy!
- */
-MainWindow::~MainWindow() {
-#ifdef Q_OS_WIN
-  if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
-                           0, 1);
-#else
-  if (fusedav.state() == QProcess::Running) {
-    fusedav.terminate();
-    fusedav.waitForFinished(2000);
-  }
-#endif
-}
-
-/**
  * @brief MainWindow::changeEvent sets focus to the search box
  * @param event
  */
@@ -197,71 +227,6 @@ void MainWindow::flashText(const QString &text, const bool isError,
 }
 
 /**
- * @brief MainWindow::mountWebDav is some scary voodoo magic
- */
-void MainWindow::mountWebDav() {
-#ifdef Q_OS_WIN
-  char dst[20] = {0};
-  NETRESOURCEA netres;
-  memset(&netres, 0, sizeof(netres));
-  netres.dwType = RESOURCETYPE_DISK;
-  netres.lpLocalName = 0;
-  netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
-  DWORD size = sizeof(dst);
-  DWORD r = WNetUseConnectionA(
-      reinterpret_cast<HWND>(effectiveWinId()), &netres,
-      QtPassSettings::getWebDavPassword().toUtf8().constData(),
-      QtPassSettings::getWebDavUser().toUtf8().constData(),
-      CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
-      0);
-  if (r == NO_ERROR) {
-    QtPassSettings::setPassStore(dst);
-  } else {
-    char message[256] = {0};
-    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
-                   sizeof(message), 0);
-    ui->textBrowser->setTextColor(Qt::red);
-    ui->textBrowser->setText(tr("Failed to connect WebDAV:\n") + message +
-                             " (0x" + QString::number(r, 16) + ")");
-    ui->textBrowser->setTextColor(Qt::black);
-  }
-#else
-  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
-                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
-                QtPassSettings::getPassStore() + '"');
-  fusedav.waitForStarted();
-  if (fusedav.state() == QProcess::Running) {
-    QString pwd = QtPassSettings::getWebDavPassword();
-    bool ok = true;
-    if (pwd.isEmpty()) {
-      pwd = QInputDialog::getText(this, tr("QtPass WebDAV password"),
-                                  tr("Enter password to connect to WebDAV:"),
-                                  QLineEdit::Password, "", &ok);
-    }
-    if (ok && !pwd.isEmpty()) {
-      fusedav.write(pwd.toUtf8() + '\n');
-      fusedav.closeWriteChannel();
-      fusedav.waitForFinished(2000);
-    } else {
-      fusedav.terminate();
-    }
-  }
-  QString error = fusedav.readAllStandardError();
-  int prompt = error.indexOf("Password:");
-  if (prompt >= 0)
-    error.remove(0, prompt + 10);
-  if (fusedav.state() != QProcess::Running)
-    error = tr("fusedav exited unexpectedly\n") + error;
-  if (error.size() > 0) {
-    ui->textBrowser->setTextColor(Qt::red);
-    ui->textBrowser->setText(
-        tr("Failed to start fusedav to connect WebDAV:\n") + error);
-    ui->textBrowser->setTextColor(Qt::black);
-  }
-#endif
-}
-
-/**
  * @brief MainWindow::config pops up the configuration screen and handles all
  * inter-window communication
  */
@@ -269,11 +234,12 @@ void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
   // Automatically default to pass if it's available
-  if (freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
+  if (m_qtPass->isFreshStart() &&
+      QFile(QtPassSettings::getPassExecutable()).exists()) {
     QtPassSettings::setUsePass(true);
   }
 
-  if (startupPhase)
+  if (m_qtPass->isFreshStart())
     d->wizard(); // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
@@ -289,7 +255,7 @@ void MainWindow::config() {
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
           model.setRootPath(QtPassSettings::getPassStore())));
 
-      if (freshStart && Util::checkConfig())
+      if (m_qtPass->isFreshStart() && Util::checkConfig())
         config();
       QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(1000 *
@@ -304,7 +270,8 @@ void MainWindow::config() {
         destroyTrayIcon();
       }
     }
-    freshStart = false;
+
+    m_qtPass->setFreshStart(false);
   }
 }
 
@@ -514,7 +481,7 @@ void MainWindow::restoreWindow() {
 
   if (QtPassSettings::isUseTrayIcon() && tray == NULL) {
     initTrayIcon();
-    if (freshStart && QtPassSettings::isStartMinimized()) {
+    if (m_qtPass->isFreshStart() && QtPassSettings::isStartMinimized()) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
@@ -813,7 +780,7 @@ void MainWindow::updateProfileBox() {
  * @param name
  */
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
-  if (startupPhase || name == QtPassSettings::getProfile())
+  if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
   QtPassSettings::setProfile(name);
 

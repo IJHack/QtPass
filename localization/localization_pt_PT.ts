@@ -374,7 +374,7 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+78"/>
+        <location filename="../src/imitatepass.cpp" line="+80"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Não pode ser editado</translation>
@@ -519,7 +519,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1066"/>
+        <location filename="../src/mainwindow.cpp" line="+889"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -640,7 +640,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-933"/>
+        <location filename="../src/mainwindow.cpp" line="-762"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bem-vindo ao QtPass %1</translation>
     </message>
@@ -653,35 +653,30 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Adicionar pasta</translation>
     </message>
     <message>
-        <location line="+103"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>A ligação a WebDAV falhou:</translation>
+        <translation type="vanished">A ligação a WebDAV falhou:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>Password do QtPass WebDAV</translation>
+        <translation type="vanished">Password do QtPass WebDAV</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Introduza a password para a ligação a WebDAV:</translation>
+        <translation type="vanished">Introduza a password para a ligação a WebDAV:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav fechou inesperadamente</translation>
+        <translation type="vanished">fusedav fechou inesperadamente</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
+        <translation type="vanished">A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
     </message>
     <message>
-        <location line="+179"/>
+        <location line="+129"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>A atualizar a password-store</translation>
@@ -697,12 +692,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+645"/>
+        <location line="+661"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-621"/>
+        <location line="-637"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -744,7 +739,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+70"/>
         <source>Looking for: %1</source>
         <translation>À procura de: %1</translation>
     </message>
@@ -849,7 +844,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+99"/>
+        <location filename="../src/pass.cpp" line="+101"/>
         <source>No characters chosen</source>
         <translation>Nenhum caracter escolhido</translation>
     </message>
@@ -918,12 +913,40 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+45"/>
+        <location filename="../src/qtpass.cpp" line="+151"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Gerar par de chaves GPG</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+56"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished">A ligação a WebDAV falhou:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished">Password do QtPass WebDAV</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished">Introduza a password para a ligação a WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished">fusedav fechou inesperadamente</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished">A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>QProcess::FailedToStart</source>
         <translation type="unfinished">QProcess::FailedToStart</translation>
     </message>

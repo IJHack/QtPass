@@ -12,21 +12,27 @@ class QtPass : public QObject {
 
 public:
   QtPass();
+  ~QtPass();
 
   void setMainWindow(MainWindow *mW);
   void setClippedText(const QString &, const QString &p_output = QString());
   void clearClippedText();
   void setClipboardTimer();
+  bool isFreshStart() { return this->freshStart; }
+  void setFreshStart(const bool &fs) { this->freshStart = fs; }
 
 private:
   MainWindow *m_mainWindow;
 
+  QProcess fusedav;
+
   QTimer clearClipboardTimer;
   QString clippedText;
-
-  void connectPassSignalHandlers(Pass *pass);
+  bool freshStart;
 
   bool setup();
+  void connectPassSignalHandlers(Pass *pass);
+  void mountWebDav();
 
 signals:
 

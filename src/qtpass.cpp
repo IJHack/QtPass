@@ -4,22 +4,44 @@
 #include <QApplication>
 #include <QClipboard>
 
+#ifndef Q_OS_WIN
+#include <QInputDialog>
+#include <QLineEdit>
+#endif
+
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
 
-QtPass::QtPass() : clippedText(QString()) {
+QtPass::QtPass() : clippedText(QString()), freshStart(true) {
   if (!setup()) {
     // no working config so this should quit without config anything
     QApplication::quit();
   }
 
+  setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
           SLOT(clearClipboard()));
 
   QObject::connect(qApp, &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
+}
+
+/**
+ * @brief QtPass::~QtPass destroy!
+ */
+QtPass::~QtPass() {
+#ifdef Q_OS_WIN
+  if (QtPassSettings::isUseWebDav())
+    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
+                           0, 1);
+#else
+  if (fusedav.state() == QProcess::Running) {
+    fusedav.terminate();
+    fusedav.waitForFinished(2000);
+  }
+#endif
 }
 
 /**
@@ -68,64 +90,22 @@ bool QtPass::setup() {
       return false;
   }
 
-  freshStart = false;
-
   // TODO(annejan): this needs to be before we try to access the store,
   // but it would be better to do it after the Window is shown,
   // as the long delay it can cause is irritating otherwise.
   if (QtPassSettings::isUseWebDav())
     mountWebDav();
 
-  model.setNameFilters(QStringList() << "*.gpg");
-  model.setNameFilterDisables(false);
-  /*
-   * I added this to solve Windows bug but now on GNU/Linux the main folder,
-   * if hidden, disappear
-   *
-   * model.setFilter(QDir::NoDot);
-   */
-
-  proxyModel.setSourceModel(&model);
-  proxyModel.setModelAndStore(&model, passStore);
-  selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(passStore));
-  model.sort(0, Qt::AscendingOrder);
-
-  ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
-  ui->treeView->setColumnHidden(1, true);
-  ui->treeView->setColumnHidden(2, true);
-  ui->treeView->setColumnHidden(3, true);
-  ui->treeView->setHeaderHidden(true);
-  ui->treeView->setIndentation(15);
-  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
-          &MainWindow::showContextMenu);
-  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
-          &MainWindow::deselect);
-  ui->textBrowser->setOpenExternalLinks(true);
-  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
-          &MainWindow::showBrowserContextMenu);
-
-  updateProfileBox();
-  QtPassSettings::getPass()->updateEnv();
-  clearPanelTimer.setInterval(1000 *
-                              QtPassSettings::getAutoclearPanelSeconds());
-  m_qtPass->setClipboardTimer();
-  updateGitButtonVisibility();
-  updateOtpButtonVisibility();
-
-  startupPhase = false;
+  freshStart = false;
+  // startupPhase = false;
   return true;
 }
 
 void QtPass::setMainWindow(MainWindow *mW) {
   m_mainWindow = mW;
   m_mainWindow->restoreWindow();
+
+  fusedav.setParent(m_mainWindow);
 
   //  TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
@@ -176,6 +156,68 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedCopy, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
+}
+
+/**
+ * @brief QtPass::mountWebDav is some scary voodoo magic
+ */
+void QtPass::mountWebDav() {
+#ifdef Q_OS_WIN
+  char dst[20] = {0};
+  NETRESOURCEA netres;
+  memset(&netres, 0, sizeof(netres));
+  netres.dwType = RESOURCETYPE_DISK;
+  netres.lpLocalName = 0;
+  netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
+  DWORD size = sizeof(dst);
+  DWORD r = WNetUseConnectionA(
+      reinterpret_cast<HWND>(effectiveWinId()), &netres,
+      QtPassSettings::getWebDavPassword().toUtf8().constData(),
+      QtPassSettings::getWebDavUser().toUtf8().constData(),
+      CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
+      0);
+  if (r == NO_ERROR) {
+    QtPassSettings::setPassStore(dst);
+  } else {
+    char message[256] = {0};
+    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
+                   sizeof(message), 0);
+    m_mainWindow->flashText(tr("Failed to connect WebDAV:\n") + message +
+                                " (0x" + QString::number(r, 16) + ")",
+                            true);
+  }
+#else
+  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
+                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
+                QtPassSettings::getPassStore() + '"');
+  fusedav.waitForStarted();
+  if (fusedav.state() == QProcess::Running) {
+    QString pwd = QtPassSettings::getWebDavPassword();
+    bool ok = true;
+    if (pwd.isEmpty()) {
+      pwd = QInputDialog::getText(m_mainWindow, tr("QtPass WebDAV password"),
+                                  tr("Enter password to connect to WebDAV:"),
+                                  QLineEdit::Password, "", &ok);
+    }
+    if (ok && !pwd.isEmpty()) {
+      fusedav.write(pwd.toUtf8() + '\n');
+      fusedav.closeWriteChannel();
+      fusedav.waitForFinished(2000);
+    } else {
+      fusedav.terminate();
+    }
+  }
+  QString error = fusedav.readAllStandardError();
+  int prompt = error.indexOf("Password:");
+  if (prompt >= 0)
+    error.remove(0, prompt + 10);
+  if (fusedav.state() != QProcess::Running)
+    error = tr("fusedav exited unexpectedly\n") + error;
+  if (error.size() > 0) {
+    m_mainWindow->flashText(
+        tr("Failed to start fusedav to connect WebDAV:\n") + error, true);
+  }
+#endif
 }
 
 /**
