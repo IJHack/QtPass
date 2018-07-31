@@ -787,8 +787,12 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 
   QtPassSettings::getPass()->updateEnv();
 
+  ui->treeView->selectionModel()->clear();
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
+
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
 }
 
 /**
