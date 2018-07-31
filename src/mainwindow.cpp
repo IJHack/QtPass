@@ -122,9 +122,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->lineEdit->setText(searchText);
 }
 
-MainWindow::~MainWindow() {
-  delete m_qtPass;
-}
+MainWindow::~MainWindow() { delete m_qtPass; }
 
 /**
  * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
