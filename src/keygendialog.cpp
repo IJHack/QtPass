@@ -1,9 +1,12 @@
 #include "keygendialog.h"
 #include "configdialog.h"
-#include "debughelper.h"
 #include "qprogressindicator.h"
 #include "ui_keygendialog.h"
 #include <QMessageBox>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 /**
  * @brief KeygenDialog::KeygenDialog basic constructor.

@@ -1,10 +1,13 @@
 #include "usersdialog.h"
-#include "debughelper.h"
 #include "ui_usersdialog.h"
 #include <QCloseEvent>
+#include <QKeyEvent>
 #include <QRegExp>
 #include <QWidget>
 
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 /**
  * @brief UsersDialog::UsersDialog basic constructor
  * @param parent
@@ -122,7 +125,7 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan) save window size or somethign
+  // TODO(annejan) save window size or something
   event->accept();
 }
 

@@ -11,6 +11,7 @@ class UsersDialog;
 }
 
 class QCloseEvent;
+class QKeyEvent;
 class QListWidgetItem;
 
 /*!
