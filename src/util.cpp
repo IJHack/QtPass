@@ -1,5 +1,4 @@
 #include "util.h"
-#include "debughelper.h"
 #include <QDir>
 #include <QFileInfo>
 #ifdef Q_OS_WIN
@@ -8,6 +7,11 @@
 #include <sys/time.h>
 #endif
 #include "qtpasssettings.h"
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
+
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised;
 

@@ -4,25 +4,6 @@
 #include "debughelper.h"
 #endif
 
-#include <QClipboard>
-#include <QCloseEvent>
-#include <QDesktopServices>
-#include <QDialog>
-#include <QFileInfo>
-#include <QInputDialog>
-#include <QLabel>
-#include <QMenu>
-#include <QMessageBox>
-#include <QQueue>
-#include <QShortcut>
-#include <QTextCodec>
-#ifdef Q_OS_WIN
-#define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
-#define WIN32_EXTRA_LEAN
-#include <windows.h>
-#include <winnetwk.h>
-#undef DELETE
-#endif
 #include "configdialog.h"
 #include "filecontent.h"
 #include "keygendialog.h"
@@ -35,6 +16,18 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include <QClipboard>
+#include <QCloseEvent>
+#include <QDesktopServices>
+#include <QDialog>
+#include <QFileInfo>
+#include <QInputDialog>
+#include <QLabel>
+#include <QMenu>
+#include <QMessageBox>
+#include <QQueue>
+#include <QShortcut>
+#include <QTextCodec>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also

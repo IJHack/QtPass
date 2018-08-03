@@ -4,32 +4,33 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/configdialog.ui"/>
+        <location filename="../src/configdialog.ui" line="+20"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location/>
+        <location line="+22"/>
         <source>Settings</source>
         <translation>Paràmetres</translation>
     </message>
     <message>
-        <location/>
+        <location line="+26"/>
         <source>Clipboard behaviour:</source>
         <translation>Comportament del porta-retalls:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+19"/>
         <source>Use primary selection</source>
         <translation>Utilitza la selecció primària</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Autoclear after:</source>
         <translation>Neteja automàticament després de:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+17"/>
+        <location line="+83"/>
         <source>Seconds</source>
         <translation>segons</translation>
     </message>
@@ -38,277 +39,281 @@
         <translation type="vanished">Comportament de la contrasenya:</translation>
     </message>
     <message>
-        <location/>
+        <location line="-51"/>
         <source>Content panel behaviour:</source>
         <translation>Comportament del plafó del contingut:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>Hide content</source>
         <translation>Oculta el contingut</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Hide password</source>
         <translation>Oculta la contrasenya</translation>
     </message>
     <message>
-        <location/>
+        <location line="+9"/>
         <source>Autoclear panel after:</source>
         <translation>Neteja automàticament el plafó després de:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+57"/>
         <source>Password Generation:</source>
         <translation>Generació de contrasenyes:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>Password Length:</source>
         <translation>Longitud de la contrasenya:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+34"/>
         <source>Characters</source>
         <translation>caràcters</translation>
     </message>
     <message>
-        <location/>
+        <location line="+28"/>
         <source>Use characters:</source>
         <translation>Utilitza els caràcters:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+18"/>
         <source>Select character set for password generation</source>
         <translation>Seleccioneu el conjunt de caràcters per a la generació de la contrasenya</translation>
     </message>
     <message>
-        <location/>
+        <location line="+4"/>
         <source>All Characters</source>
         <translation>Tots els caràcters</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Alphabetical</source>
         <translation>Alfabètic</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèric</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
-        <location/>
+        <location line="+38"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcçdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location/>
+        <location line="+17"/>
         <source>Use pwgen</source>
         <translation>Utilitza pwgen</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Exclude capital letters</source>
         <translation>Exclou les lletres en majúscula</translation>
     </message>
     <message>
-        <location/>
+        <location line="+10"/>
         <source>Include special symbols </source>
         <translation>Inclou els símbols especials</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Genera contrasenyes fàcils de recordar però menys segures</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Exclude numbers</source>
         <translation>Exclou els nombres</translation>
     </message>
     <message>
-        <location/>
+        <location line="+19"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>Use git</source>
         <translation>Utilitza git</translation>
     </message>
     <message>
-        <location/>
+        <location line="+14"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Afegeix automàticament els fitxers .gpg-id</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Automatically push</source>
         <translation>Pujada automàtica</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Automatically pull</source>
         <translation>Baixada automàtica</translation>
     </message>
     <message>
-        <location/>
+        <location line="+32"/>
         <source>Extensions:</source>
         <translation>Extensions:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>Use pass otp extension</source>
         <translation>Utilitza l&apos;extensió pass otp</translation>
     </message>
     <message>
-        <location/>
+        <location line="+22"/>
         <source>System:</source>
         <translation>Sistema:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>Use TrayIcon</source>
         <translation>Utilitza la safata del sistema</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Start minimized</source>
         <translation>Comença minimitzat</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Hide on close</source>
         <translation>Oculta amb el tancament</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Always on top</source>
         <translation>Sempre al capdamunt</translation>
     </message>
     <message>
-        <location/>
+        <location line="+25"/>
         <source>Programs</source>
         <translation>Programes</translation>
     </message>
     <message>
-        <location/>
+        <location line="+18"/>
         <source>Select password storage program:</source>
         <translation>Seleccioneu el programa d&apos;emmagatzematge de contrasenyes:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+9"/>
         <source>Nati&amp;ve git/gpg</source>
         <translation>Nati&amp;u git/gpg</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilitza pass</translation>
     </message>
     <message>
-        <location/>
+        <location line="+24"/>
         <source>Native</source>
         <translation>Natiu</translation>
     </message>
     <message>
-        <location/>
+        <location line="+6"/>
         <source>git</source>
         <translation>git</translation>
     </message>
     <message>
-        <location/>
+        <location line="+10"/>
+        <location line="+7"/>
+        <location line="+27"/>
+        <location line="+31"/>
+        <location line="+140"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location/>
+        <location line="-191"/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location/>
+        <location line="+13"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location/>
+        <location line="+17"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location/>
+        <location line="+11"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location/>
+        <location line="+19"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
+        <location line="+30"/>
         <source>Profiles</source>
         <translation>Perfils</translation>
     </message>
     <message>
-        <location/>
+        <location line="+49"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Path</source>
         <translation>Camí</translation>
     </message>
     <message>
-        <location/>
+        <location line="+10"/>
         <source>Add</source>
         <translation>Afegeix</translation>
     </message>
     <message>
-        <location/>
+        <location line="+15"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
     <message>
-        <location/>
+        <location line="+15"/>
         <source>Current password-store</source>
         <translation>Magatzem de contrasenyes actual</translation>
     </message>
     <message>
-        <location/>
+        <location line="+20"/>
         <source>Template</source>
         <translation>Plantilla</translation>
     </message>
     <message>
-        <location/>
+        <location line="+21"/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>Les plantilles afegeixen camps extres al diàleg de generació de contrasenyes i a la visualització de la contrasenya.</translation>
     </message>
     <message>
-        <location/>
+        <location line="+9"/>
         <source>Use template</source>
         <translation>Utilitza la plantilla</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Mostra totes les línies que comencen amb una paraula seguida de dos punts com a camps als camps de la contrasenya, no només les que figuren a la llista</translation>
     </message>
     <message>
-        <location/>
+        <location line="+3"/>
         <source>Show all fields templated</source>
         <translation>Mostra tota la plantilla de camps</translation>
     </message>
     <message>
-        <location/>
+        <location line="+12"/>
         <source>login
 url
 email</source>
@@ -317,7 +322,7 @@ url
 email</translation>
     </message>
     <message>
-        <location/>
+        <location line="+15"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
@@ -428,42 +433,42 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
 <context>
     <name>KeygenDialog</name>
     <message>
-        <location filename="../src/keygendialog.ui"/>
+        <location filename="../src/keygendialog.ui" line="+14"/>
         <source>Generate GnuPG keypair</source>
         <translation>Generació del parell de claus GnuPG</translation>
     </message>
     <message>
-        <location/>
+        <location line="+24"/>
         <source>Generate a new key pair</source>
         <translation>Genera un nou parell de claus</translation>
     </message>
     <message>
-        <location/>
+        <location line="+119"/>
         <source>Passphrase</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location/>
+        <location line="-58"/>
         <source>Email</source>
         <translation>Correu electrònic</translation>
     </message>
     <message>
-        <location/>
+        <location line="+29"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location/>
+        <location line="+71"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hi ha cap límit sobre la llargada d&apos;una contrasenya, i s&apos;ha de seleccionar acuradament. Des de la perspectiva de la seguretat, la contrasenya per desbloquejar la clau privada és un dels punts més febles de GnuPG (i altres sistemes de xifratge de clau pública), ja que és l&apos;única protecció que teniu si una altra persona obté la vostra clau privada. &lt;br/&gt;El més ideal seria que per a la contrasenya no s&apos;utilitzessin les paraules d&apos;un diccionari i s&apos;utilitzés una mescla de caràcters alfabètics i no alfabètics.&lt;br/&gt;Una bona contrasenya és crucial per a l&apos;ús segur de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
+        <location line="+20"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location/>
+        <location line="+19"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -496,12 +501,12 @@ Expire-Date: 0
 %echo fet</translation>
     </message>
     <message>
-        <location/>
+        <location line="+27"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Per obtenir opcions d&apos;experts consulteu el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+126"/>
+        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
         <translation>El nom no és vàlid</translation>
     </message>
@@ -529,7 +534,7 @@ Expire-Date: 0
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.ui"/>
+        <location filename="../src/mainwindow.ui" line="+14"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -538,24 +543,26 @@ Expire-Date: 0
         <translation type="vanished">Afegeix</translation>
     </message>
     <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="+919"/>
+        <location line="+309"/>
+        <location line="+3"/>
+        <location filename="../src/mainwindow.cpp" line="+923"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
+        <location line="+3"/>
         <location filename="../src/mainwindow.cpp" line="+12"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
     <message>
-        <location/>
+        <location line="+19"/>
         <source>git push</source>
         <translation>git push</translation>
     </message>
     <message>
-        <location/>
+        <location line="-3"/>
         <source>Push</source>
         <translation>Puja</translation>
     </message>
@@ -578,48 +585,48 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Codi font&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
+        <location line="-40"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location/>
+        <location line="+29"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location/>
+        <location line="+3"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Genera l&apos;OTP i copia&apos;l al porta-retalls</translation>
     </message>
     <message>
-        <location/>
+        <location line="+3"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location/>
+        <location line="+16"/>
         <source>git pull</source>
         <translation>git pull</translation>
     </message>
     <message>
-        <location/>
+        <location line="-3"/>
         <source>Update</source>
         <translation>Actualitza</translation>
     </message>
     <message>
-        <location/>
+        <location line="+11"/>
         <source>Manage who can read password in folder</source>
         <translation>Gestioneu qui pot llegir la contrasenya a la carpeta</translation>
     </message>
     <message>
-        <location/>
+        <location line="-3"/>
         <location filename="../src/mainwindow.cpp" line="-18"/>
         <source>Users</source>
         <translation>Usuaris</translation>
     </message>
     <message>
-        <location/>
+        <location line="-123"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -631,27 +638,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location/>
+        <location line="+134"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location/>
+        <location line="-3"/>
         <source>Config</source>
         <translation>Configura</translation>
     </message>
     <message>
-        <location/>
+        <location line="-310"/>
         <source>Select profile</source>
         <translation>Selecciona un perfil</translation>
     </message>
     <message>
-        <location/>
+        <location line="+123"/>
         <source>Welcome to QtPass</source>
         <translation>Benvingut a QtPass</translation>
     </message>
     <message>
-        <location/>
+        <location line="-76"/>
         <source>Search Password</source>
         <translation>Cerca la contrasenya</translation>
     </message>
@@ -660,7 +667,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-748"/>
+        <location filename="../src/mainwindow.cpp" line="-752"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvingut a QtPass %1</translation>
     </message>
@@ -723,12 +730,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+661"/>
+        <location line="+665"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location line="-637"/>
+        <location line="-641"/>
         <source>OTP Code</source>
         <translation>Codi OTP</translation>
     </message>
@@ -776,12 +783,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+76"/>
-        <location line="+389"/>
+        <location line="+393"/>
         <source>New file</source>
         <translation>Fitxer nou</translation>
     </message>
     <message>
-        <location line="-388"/>
+        <location line="-392"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Fitxer de contrasenyes nou: 
@@ -849,18 +856,20 @@ p, li { white-space: pre-wrap; }
         <translation>S&apos;ha canviat el perfil a %1</translation>
     </message>
     <message>
-        <location line="+124"/>
+        <location line="+128"/>
         <source>Open folder with file manager</source>
         <translation>Obre la carpeta amb el gestor de fitxers</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui"/>
+        <location filename="../src/mainwindow.ui" line="+204"/>
+        <location line="+3"/>
         <location filename="../src/mainwindow.cpp" line="+1"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location/>
+        <location line="-14"/>
+        <location line="+3"/>
         <location filename="../src/mainwindow.cpp" line="+1"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
@@ -893,47 +902,48 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../src/passworddialog.ui"/>
+        <location filename="../src/passworddialog.ui" line="+14"/>
+        <location line="+47"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location/>
+        <location line="+10"/>
         <source>Generate</source>
         <translation>Genera</translation>
     </message>
     <message>
-        <location/>
+        <location line="+11"/>
         <source>Show password</source>
         <translation>Mostra la contrasenya</translation>
     </message>
     <message>
-        <location/>
+        <location line="+20"/>
         <source>Character Set:</source>
         <translation>Conjunt de caràcters:</translation>
     </message>
     <message>
-        <location/>
+        <location line="+8"/>
         <source>All Characters</source>
         <translation>Tots els caràcters</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Alphabetical</source>
         <translation>Alfabètics</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèrics</translation>
     </message>
     <message>
-        <location/>
+        <location line="+5"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
-        <location/>
+        <location line="+14"/>
         <source>Length:</source>
         <translation>Longitud:</translation>
     </message>
@@ -1079,12 +1089,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>UsersDialog</name>
     <message>
-        <location filename="../src/usersdialog.ui"/>
+        <location filename="../src/usersdialog.ui" line="+20"/>
         <source>Read access users</source>
         <translation>Usuaris d&apos;accés de lectura</translation>
     </message>
     <message>
-        <location/>
+        <location line="+21"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1095,17 +1105,17 @@ Les entrades blaves tenen disponible una clau secreta, seleccioneu una d&apos;aq
 Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
     </message>
     <message>
-        <location/>
+        <location line="+24"/>
         <source>Search Users</source>
         <translation>Cerca usuaris</translation>
     </message>
     <message>
-        <location/>
+        <location line="+7"/>
         <source>Show unusable keys</source>
         <translation>Mostra les claus inutilitzables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+78"/>
+        <location filename="../src/usersdialog.cpp" line="+81"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
