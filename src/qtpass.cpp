@@ -177,7 +177,7 @@ void QtPass::mountWebDav() {
   netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
   DWORD size = sizeof(dst);
   DWORD r = WNetUseConnectionA(
-      reinterpret_cast<HWND>(effectiveWinId()), &netres,
+      reinterpret_cast<HWND>(m_mainWindow->effectiveWinId()), &netres,
       QtPassSettings::getWebDavPassword().toUtf8().constData(),
       QtPassSettings::getWebDavUser().toUtf8().constData(),
       CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,

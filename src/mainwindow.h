@@ -117,10 +117,10 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer;
-  //bool freshStart;
+  // bool freshStart;
   QDialog *keygen;
   QString currentDir;
-  //bool startupPhase;
+  // bool startupPhase;
   TrayIcon *tray;
 
   void initToolBarButtons();
@@ -132,7 +132,6 @@ private:
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool isNew = true);
 
-  void mountWebDav();
   void updateProfileBox();
   void initTrayIcon();
   void destroyTrayIcon();
