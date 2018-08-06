@@ -7,6 +7,12 @@
 #ifndef Q_OS_WIN
 #include <QInputDialog>
 #include <QLineEdit>
+#else
+#define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
+#define WIN32_EXTRA_LEAN
+#include <windows.h>
+#include <winnetwk.h>
+#undef DELETE
 #endif
 
 #ifdef QT_DEBUG
