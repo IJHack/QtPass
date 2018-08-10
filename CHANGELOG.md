@@ -24,6 +24,7 @@
 
 **Merged pull requests:**
 
+- pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
 - \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)

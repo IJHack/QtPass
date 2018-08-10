@@ -71,7 +71,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     // --secure goes first as it overrides --no-* otherwise
     QStringList args;
     args.append("-1");
-    if (QtPassSettings::isLessRandom())
+    if (!QtPassSettings::isLessRandom())
       args.append("--secure");
     args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
                                                   : "--capitalize");
