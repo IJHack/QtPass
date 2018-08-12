@@ -1,5 +1,6 @@
 #include "passworddialog.h"
 #include "filecontent.h"
+#include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
@@ -26,6 +27,9 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
   ui->setupUi(this);
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
+
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+          &PasswordDialog::setPass);
 }
 
 /**

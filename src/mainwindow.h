@@ -117,10 +117,8 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer;
-  // bool freshStart;
   QDialog *keygen;
   QString currentDir;
-  // bool startupPhase;
   TrayIcon *tray;
 
   void initToolBarButtons();

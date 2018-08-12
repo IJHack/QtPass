@@ -4,33 +4,32 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/configdialog.ui" line="+20"/>
+        <location filename="../src/configdialog.ui"/>
         <source>Configuration</source>
         <translation>Konfigurace</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location/>
         <source>Clipboard behaviour:</source>
         <translation>Chování schránky:</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location/>
         <source>Use primary selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Autoclear after:</source>
         <translation>Vymazat po:</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <location line="+83"/>
+        <location/>
         <source>Seconds</source>
         <translation>sekundách</translation>
     </message>
@@ -39,281 +38,277 @@
         <translation type="vanished">Chování hesla:</translation>
     </message>
     <message>
-        <location line="-51"/>
+        <location/>
         <source>Content panel behaviour:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>Hide content</source>
         <translation>Skrýt obsah</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Hide password</source>
         <translation>Skrýt heslo</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location/>
         <source>Autoclear panel after:</source>
         <translation>Vymazat panel po:</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location/>
         <source>Password Generation:</source>
         <translation>Generování hesel:</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>Password Length:</source>
         <translation>Délka hesla:</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location/>
         <source>Characters</source>
         <translation>znaků</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location/>
         <source>Use characters:</source>
         <translation>Použít znaky:</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location/>
         <source>Select character set for password generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location/>
         <source>Use pwgen</source>
         <translation>Použít pwgen</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Exclude capital letters</source>
         <translation>Nepoužívat VELKÁ písmena</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location/>
         <source>Include special symbols </source>
         <translation>Používat speciální znaky</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generovat zapamatovatelná méně bezpečná hesla</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Exclude numbers</source>
         <translation>Nepoužívat čísla</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>Use git</source>
         <translation>Použít git</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location/>
         <source>Automatically add .gpg-id files</source>
         <translation>Automaticky přidat .gpg-id soubory</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Automatically push</source>
         <translation>Automaticky odesílat</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Automatically pull</source>
         <translation>Automaticky stahovat</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location/>
         <source>Extensions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>Use pass otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location/>
         <source>System:</source>
         <translation>Systém:</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>Use TrayIcon</source>
         <translation>Zobrazit ikonu</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Start minimized</source>
         <translation>Spustit skryté</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Hide on close</source>
         <translation>Zavřením skrýt</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Always on top</source>
         <translation>Vždy navrchu</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location/>
         <source>Programs</source>
         <translation>Programy</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location/>
         <source>Select password storage program:</source>
         <translation>Vybrat program správce hesel:</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location/>
         <source>Nati&amp;ve git/gpg</source>
         <translation>&amp;Výchozí git/gpg</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>&amp;Use pass</source>
         <translation>Po&amp;užít pass</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location/>
         <source>Native</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location/>
         <source>git</source>
         <translation>git</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location line="+7"/>
-        <location line="+27"/>
-        <location line="+31"/>
-        <location line="+140"/>
+        <location/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location/>
         <source>Profiles</source>
         <translation>Profily</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location/>
         <source>Current password-store</source>
         <translation>Aktuální úložiště hesel</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location/>
         <source>Template</source>
         <translation>Šablona</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
         <translation>Šablony přidávají další pole v dialogu generování hesla a v náhledu hesla.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location/>
         <source>Use template</source>
         <translation>Použít šablonu</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Zobrazit všechny řádky začínající slovem následovaným středníkem jako pole v polích hesla, nejen vypsaná</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location/>
         <source>Show all fields templated</source>
         <translation>Zobrazit všechna pole v šabloně</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location/>
         <source>login
 url
 email</source>
@@ -322,7 +317,7 @@ url
 email</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verze </translation>
     </message>
@@ -433,42 +428,42 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
 <context>
     <name>KeygenDialog</name>
     <message>
-        <location filename="../src/keygendialog.ui" line="+14"/>
+        <location filename="../src/keygendialog.ui"/>
         <source>Generate GnuPG keypair</source>
         <translation>Generovat GnuPG klíče</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location/>
         <source>Generate a new key pair</source>
         <translation>Generovat nový pár klíčů</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location/>
         <source>Passphrase</source>
         <translation>Bezpečnostní heslo</translation>
     </message>
     <message>
-        <location line="-58"/>
+        <location/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Délka bezpečnostního hesla není nijak omezena a mělo by být zvoleno s rozvahou. Z bezpečnostního pohledu je heslo odemykající privátní klíč jedním z nejslabších bodů v GnuPG (a jiných šifrovacích systémů na stejném principu) jelikož je toto jedinou ochranou v případě, že se další osoba zmocní privátního klíče. &lt;br/&gt;Ideálně by bezpečnostní heslo nemělo obsahovat slovníková hesla a naopak mělo používat mix velkých a malých znaků abecedy i další speciální znaky.&lt;br/&gt;Dobré heslo je zásadní pro bezpečné používání GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -501,7 +496,7 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Možnosti expertního nastavení můžete nalézt v &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuálu&lt;/a&gt;</translation>
     </message>
@@ -534,7 +529,7 @@ Expire-Date: 0
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.ui" line="+14"/>
+        <location filename="../src/mainwindow.ui"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -543,31 +538,29 @@ Expire-Date: 0
         <translation type="vanished">Přidat</translation>
     </message>
     <message>
-        <location line="+309"/>
-        <location line="+3"/>
-        <location filename="../src/mainwindow.cpp" line="+923"/>
+        <location/>
+        <location filename="../src/mainwindow.cpp" line="+910"/>
         <source>Edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location line="+3"/>
+        <location/>
         <location filename="../src/mainwindow.cpp" line="+12"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location/>
         <source>git push</source>
         <translation>git push</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <location/>
         <source>Push</source>
         <translation>Odeslat</translation>
     </message>
     <message>
-        <location line="-107"/>
+        <location/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -579,68 +572,68 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location/>
         <source>OTP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location/>
         <source>Generate OTP and copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location/>
         <source>Ctrl+G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location/>
         <source>git pull</source>
         <translation>git pull</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <location/>
         <source>Update</source>
         <translation>Stáhnout</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location/>
         <source>Manage who can read password in folder</source>
         <translation>Správa oprávnění číst data v adresáři</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <location/>
         <location filename="../src/mainwindow.cpp" line="-18"/>
         <source>Users</source>
         <translation>Uživatelé</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location/>
         <source>Configuration</source>
         <translation>Konfigurace</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <location/>
         <source>Config</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location line="-310"/>
+        <location/>
         <source>Select profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location/>
         <source>Search Password</source>
         <translation>Hledat heslo</translation>
     </message>
     <message>
-        <location line="+76"/>
+        <location/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,7 +642,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-752"/>
+        <location filename="../src/mainwindow.cpp" line="-748"/>
         <source>Welcome to QtPass %1</source>
         <translation>Vítejte v QtPass %1</translation>
     </message>
@@ -712,12 +705,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+665"/>
+        <location line="+661"/>
         <source>Password</source>
         <translation type="unfinished">Heslo</translation>
     </message>
     <message>
-        <location line="-641"/>
+        <location line="-637"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -764,13 +757,13 @@ p, li { white-space: pre-wrap; }
         <translation>Vyhledávání: %1</translation>
     </message>
     <message>
-        <location line="+76"/>
-        <location line="+393"/>
+        <location line="+74"/>
+        <location line="+391"/>
         <source>New file</source>
         <translation>Nový soubor</translation>
     </message>
     <message>
-        <location line="-392"/>
+        <location line="-390"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nový soubor s heslem: 
@@ -834,20 +827,18 @@ p, li { white-space: pre-wrap; }
         <translation>Profil změněn na %1</translation>
     </message>
     <message>
-        <location line="+128"/>
+        <location line="+126"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="+128"/>
-        <location line="+3"/>
+        <location filename="../src/mainwindow.ui"/>
         <location filename="../src/mainwindow.cpp" line="+1"/>
         <source>Add folder</source>
         <translation>Přidat adresář</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <location line="+3"/>
+        <location/>
         <location filename="../src/mainwindow.cpp" line="+1"/>
         <source>Add password</source>
         <translation>Přidat heslo</translation>
@@ -880,48 +871,47 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../src/passworddialog.ui" line="+14"/>
-        <location line="+47"/>
+        <location filename="../src/passworddialog.ui"/>
         <source>Password</source>
         <translation>Heslo</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location/>
         <source>Generate</source>
         <translation>Generovat</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location/>
         <source>Show password</source>
         <translation>Zobrazit heslo</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location/>
         <source>Character Set:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location/>
         <source>Length:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -937,7 +927,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+130"/>
+        <location filename="../src/qtpass.cpp" line="+136"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generování páru GPG klíčů</translation>
     </message>
@@ -1067,12 +1057,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>UsersDialog</name>
     <message>
-        <location filename="../src/usersdialog.ui" line="+20"/>
+        <location filename="../src/usersdialog.ui"/>
         <source>Read access users</source>
         <translation>Uživatelé s právy číst</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1083,12 +1073,12 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
 Červeně označené záznamy nejsou platné, nebude pro ně možné šifrovat.</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location/>
         <source>Search Users</source>
         <translation>Hledat uživatele</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location/>
         <source>Show unusable keys</source>
         <translation>Zobrazit nepoužitelné klíče</translation>
     </message>

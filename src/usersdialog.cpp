@@ -19,7 +19,7 @@ UsersDialog::UsersDialog(QWidget *parent)
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
-  userList = NULL;
+  userList = nullptr;
 
 #if QT_VERSION >= 0x050200
   ui->lineEdit->setClearButtonEnabled(true);

@@ -13,7 +13,10 @@
  * it (currently) only Quits.
  * @param parent
  */
-TrayIcon::TrayIcon(QMainWindow *parent) {
+TrayIcon::TrayIcon(QMainWindow *parent)
+    : showAction(nullptr), hideAction(nullptr), minimizeAction(nullptr),
+      maximizeAction(nullptr), restoreAction(nullptr), quitAction(nullptr),
+      sysTrayIcon(nullptr), trayIconMenu(nullptr), isAllocated(false) {
   parentwin = parent;
 
   if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
@@ -29,22 +32,12 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
                      &TrayIcon::iconActivated);
 
     isAllocated = true;
-  } else {
-#ifdef QT_DEBUG
-    dbg() << "No tray icon for this OS possibly also not show options?";
-#endif
-
-    isAllocated = false;
-
-    showAction = nullptr;
-    hideAction = nullptr;
-    minimizeAction = nullptr;
-    maximizeAction = nullptr;
-    restoreAction = nullptr;
-    quitAction = nullptr;
-    sysTrayIcon = nullptr;
-    trayIconMenu = nullptr;
   }
+#ifdef QT_DEBUG
+  else {
+    dbg() << "No tray icon for this OS possibly also not show options?";
+  }
+#endif
 }
 
 /**

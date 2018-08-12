@@ -33,7 +33,6 @@ public:
   QHash<QString, QString> getProfiles();
   void wizard();
   void genKey(QString, QDialog *);
-  bool hideOnClose();
   void useTrayIcon(bool useTrayIdon);
   void useGit(bool useGit);
   void useOtp(bool useOtp);

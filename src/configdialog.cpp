@@ -7,6 +7,7 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QSystemTrayIcon>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
@@ -35,8 +36,16 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxHidePassword->setChecked(QtPassSettings::isHidePassword());
   ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
   ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
-  ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
-  ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
+
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
+    ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
+  } else {
+    ui->checkBoxUseTrayIcon->setEnabled(false);
+    ui->checkBoxHideOnClose->setEnabled(false);
+    ui->checkBoxStartMinimized->setEnabled(false);
+  }
+
   ui->checkBoxAvoidCapitals->setChecked(QtPassSettings::isAvoidCapitals());
   ui->checkBoxAvoidNumbers->setChecked(QtPassSettings::isAvoidNumbers());
   ui->checkBoxLessRandom->setChecked(QtPassSettings::isLessRandom());
@@ -141,9 +150,12 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setHidePassword(ui->checkBoxHidePassword->isChecked());
   QtPassSettings::setHideContent(ui->checkBoxHideContent->isChecked());
   QtPassSettings::setAddGPGId(ui->checkBoxAddGPGId->isChecked());
-  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isChecked());
-  QtPassSettings::setHideOnClose(hideOnClose());
-  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isChecked());
+  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isEnabled() &&
+                                 ui->checkBoxUseTrayIcon->isChecked());
+  QtPassSettings::setHideOnClose(ui->checkBoxHideOnClose->isEnabled() &&
+                                 ui->checkBoxHideOnClose->isChecked());
+  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isEnabled() &&
+                                    ui->checkBoxStartMinimized->isChecked());
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
@@ -402,9 +414,9 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
   // Check?
   for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
     QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
-    if (0 != pathItem) {
+    if (nullptr != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
-      if (item == 0) {
+      if (item == nullptr) {
 #ifdef QT_DEBUG
         dbg() << "empty name, should fix in frontend";
 #endif
@@ -542,27 +554,20 @@ void ConfigDialog::wizard() {
 }
 
 /**
- * @brief ConfigDialog::hideOnClose return preference for hiding instead of
- * closing (quitting) application.
- * @return
- */
-bool ConfigDialog::hideOnClose() {
-  return ui->checkBoxHideOnClose->isEnabled() &&
-         ui->checkBoxHideOnClose->isChecked();
-}
-
-/**
  * @brief ConfigDialog::useTrayIcon set preference for using trayicon.
  * Enable or disable related checkboxes accordingly.
  * @param useSystray
  */
 void ConfigDialog::useTrayIcon(bool useSystray) {
-  ui->checkBoxUseTrayIcon->setChecked(useSystray);
-  ui->checkBoxHideOnClose->setEnabled(useSystray);
-  ui->checkBoxStartMinimized->setEnabled(useSystray);
-  if (!useSystray) {
-    ui->checkBoxHideOnClose->setChecked(false);
-    ui->checkBoxStartMinimized->setChecked(false);
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    ui->checkBoxUseTrayIcon->setChecked(useSystray);
+    ui->checkBoxHideOnClose->setEnabled(useSystray);
+    ui->checkBoxStartMinimized->setEnabled(useSystray);
+
+    if (!useSystray) {
+      ui->checkBoxHideOnClose->setChecked(false);
+      ui->checkBoxStartMinimized->setChecked(false);
+    }
   }
 }
 

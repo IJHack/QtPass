@@ -16,7 +16,6 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
-#include <QClipboard>
 #include <QCloseEvent>
 #include <QDesktopServices>
 #include <QDialog>
@@ -25,9 +24,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QMessageBox>
-#include <QQueue>
 #include <QShortcut>
-#include <QTextCodec>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -36,7 +33,8 @@
  * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), keygen(NULL), tray(NULL) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), keygen(nullptr),
+      tray(nullptr) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
@@ -194,7 +192,7 @@ const QModelIndex MainWindow::getCurrentTreeViewIndex() {
 
 void MainWindow::cleanKeygenDialog() {
   this->keygen->close();
-  this->keygen = 0;
+  this->keygen = nullptr;
 }
 
 void MainWindow::setTextTextBrowser(const QString &text) {
@@ -255,9 +253,9 @@ void MainWindow::config() {
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
-      if (QtPassSettings::isUseTrayIcon() && tray == NULL)
+      if (QtPassSettings::isUseTrayIcon() && tray == nullptr)
         initTrayIcon();
-      else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+      else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
         destroyTrayIcon();
       }
     }
@@ -470,7 +468,7 @@ void MainWindow::restoreWindow() {
     show();
   }
 
-  if (QtPassSettings::isUseTrayIcon() && tray == NULL) {
+  if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
     initTrayIcon();
     if (m_qtPass->isFreshStart() && QtPassSettings::isStartMinimized()) {
       // since we are still in constructor, can't directly hide
@@ -552,8 +550,6 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  */
 void MainWindow::setPassword(QString file, bool isNew) {
   PasswordDialog d(file, isNew, this);
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
-          &PasswordDialog::setPass);
 
   if (!d.exec()) {
     ui->treeView->setFocus();
@@ -706,10 +702,10 @@ void MainWindow::onUsers() {
   UsersDialog d(this);
   d.setUsers(&users);
   if (!d.exec()) {
-    d.setUsers(NULL);
+    d.setUsers(nullptr);
     return;
   }
-  d.setUsers(NULL);
+  d.setUsers(nullptr);
 
   QtPassSettings::getPass()->Init(dir, users);
 }
@@ -797,7 +793,7 @@ void MainWindow::initTrayIcon() {
   this->tray = new TrayIcon(this);
   // Setup tray icon
 
-  if (tray == NULL) {
+  if (tray == nullptr) {
 #ifdef QT_DEBUG
     dbg() << "Allocating tray icon failed.";
 #endif
@@ -813,7 +809,7 @@ void MainWindow::initTrayIcon() {
  */
 void MainWindow::destroyTrayIcon() {
   delete this->tray;
-  tray = NULL;
+  tray = nullptr;
 }
 
 /**
@@ -834,8 +830,6 @@ void MainWindow::closeEvent(QCloseEvent *event) {
       QtPassSettings::setPos(pos());
       QtPassSettings::setSize(size());
     }
-    //    QtPassSettings::setSplitterLeft(ui->splitter->sizes()[0]);
-    //    QtPassSettings::setSplitterRight(ui->splitter->sizes()[1]);
     event->accept();
   }
 }

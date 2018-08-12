@@ -311,7 +311,7 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
 
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
-  if (0 != m_mainWindow->getKeygenDialog()) {
+  if (nullptr != m_mainWindow->getKeygenDialog()) {
 #ifdef QT_DEBUG
     qDebug() << "Keygen Done";
 #endif
