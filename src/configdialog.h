@@ -82,6 +82,8 @@ private:
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
 
+  bool isPassOtpAvailable();
+
   MainWindow *mainWindow;
 };
 

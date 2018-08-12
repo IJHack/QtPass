@@ -62,6 +62,10 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->label_10->hide();
 #endif
 
+  if (!isPassOtpAvailable()) {
+    ui->checkBoxUseOtp->setEnabled(false);
+  }
+
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
   setPwgenPath(QtPassSettings::getPwgenExecutable());
   setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
@@ -71,7 +75,9 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
   useTrayIcon(QtPassSettings::isUseTrayIcon());
   useGit(QtPassSettings::isUseGit());
+
   useOtp(QtPassSettings::isUseOtp());
+
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
 
@@ -471,6 +477,18 @@ void ConfigDialog::on_deleteButton_clicked() {
  */
 void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
+}
+
+bool ConfigDialog::isPassOtpAvailable() {
+#ifdef Q_OS_WIN
+  return false
+#elif defined(__APPLE__)
+  return false
+#else
+  QFileInfo file("/usr/lib/password-store/extensions/otp.bash");
+
+  return file.exists();
+#endif
 }
 
 /**
