@@ -481,9 +481,9 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
 
 bool ConfigDialog::isPassOtpAvailable() {
 #ifdef Q_OS_WIN
-  return false
+  return false;
 #elif defined(__APPLE__)
-  return false
+  return false;
 #else
   QFileInfo file("/usr/lib/password-store/extensions/otp.bash");
 
