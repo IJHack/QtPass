@@ -323,7 +323,7 @@ email</translation>
         <translation>Inhalt ausblenden</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+476"/>
+        <location filename="../src/configdialog.cpp" line="+506"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nicht gefunden</translation>
     </message>
@@ -353,12 +353,12 @@ email</translation>
         <translation>Ordner %1 ist kein Passwort Speicher oder wurde noch nicht initialisiert.</translation>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-97"/>
         <source>No profile selected</source>
         <translation>Kein Profil ausgewählt</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-366"/>
         <source>No Clipboard</source>
         <translation>Keine Zwischenablage</translation>
     </message>
@@ -373,7 +373,7 @@ email</translation>
         <translation>Bei Bedarf in Zwischenablage kopieren</translation>
     </message>
     <message>
-        <location line="+362"/>
+        <location line="+365"/>
         <source>No profile selected to delete</source>
         <translation>Kein Profil zum Löschen ausgewählt</translation>
     </message>
@@ -527,7 +527,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>Ändern</translation>
     </message>
@@ -1011,7 +1011,7 @@ Neues Passwort-Datei:
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>&amp;Anzeigen</translation>
     </message>

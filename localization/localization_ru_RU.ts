@@ -323,7 +323,7 @@ email</translation>
         <translation>Скрывать содержимое</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+476"/>
+        <location filename="../src/configdialog.cpp" line="+506"/>
         <source>GnuPG not found</source>
         <translation>GnuPG не найден</translation>
     </message>
@@ -353,12 +353,12 @@ email</translation>
         <translation>Папка %1 не похожа на хранилище паролей либо ещё не инициализирована.</translation>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-97"/>
         <source>No profile selected</source>
         <translation>Профиль не выбран</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-366"/>
         <source>No Clipboard</source>
         <translation>Не использовать буфер обмена</translation>
     </message>
@@ -373,7 +373,7 @@ email</translation>
         <translation>Копировать в буфер обмена по требованию</translation>
     </message>
     <message>
-        <location line="+362"/>
+        <location line="+365"/>
         <source>No profile selected to delete</source>
         <translation>Не выбран ни один профиль для удаления</translation>
     </message>
@@ -567,7 +567,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
@@ -1021,7 +1021,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation type="unfinished"></translation>
     </message>

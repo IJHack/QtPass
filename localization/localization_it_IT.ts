@@ -323,7 +323,7 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versione </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+74"/>
+        <location filename="../src/configdialog.cpp" line="+89"/>
         <source>No Clipboard</source>
         <translation>Non copiare negli appunti</translation>
     </message>
@@ -338,7 +338,7 @@ email</translation>
         <translation>Copia negli appunti su richiesta</translation>
     </message>
     <message>
-        <location line="+361"/>
+        <location line="+364"/>
         <source>No profile selected</source>
         <translation>Nessun profilo selezionato</translation>
     </message>
@@ -348,7 +348,7 @@ email</translation>
         <translation>Nessun profilo selezionato per la rimozione</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+50"/>
         <source>GnuPG not found</source>
         <translation>GnuPG non trovato</translation>
     </message>
@@ -540,7 +540,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
@@ -1068,7 +1068,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>Mo&amp;stra</translation>
     </message>

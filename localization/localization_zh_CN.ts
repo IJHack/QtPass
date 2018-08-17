@@ -322,7 +322,7 @@ email</source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本 </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+74"/>
+        <location filename="../src/configdialog.cpp" line="+89"/>
         <source>No Clipboard</source>
         <translation>不使用剪贴板</translation>
     </message>
@@ -337,7 +337,7 @@ email</source>
         <translation>手动复制到剪贴板</translation>
     </message>
     <message>
-        <location line="+361"/>
+        <location line="+364"/>
         <source>No profile selected</source>
         <translation>未选择用户</translation>
     </message>
@@ -347,7 +347,7 @@ email</source>
         <translation>未选择用户，无法删除</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+50"/>
         <source>GnuPG not found</source>
         <translation>无法找到 GnuPG</translation>
     </message>
@@ -538,7 +538,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -1023,7 +1023,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>显示 (&amp;S)</translation>
     </message>

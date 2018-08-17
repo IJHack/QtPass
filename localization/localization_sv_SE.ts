@@ -316,7 +316,7 @@ email</source>
         <translation>Dölj innehåll</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+476"/>
+        <location filename="../src/configdialog.cpp" line="+506"/>
         <source>GnuPG not found</source>
         <translation>Kan inte hitta GnuPG</translation>
     </message>
@@ -346,12 +346,12 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-97"/>
         <source>No profile selected</source>
         <translation>Ingen profil vald</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-366"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -366,7 +366,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+362"/>
+        <location line="+365"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil vald att tas bort</translation>
     </message>
@@ -520,7 +520,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
@@ -965,7 +965,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation type="unfinished"></translation>
     </message>

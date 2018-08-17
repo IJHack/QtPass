@@ -322,7 +322,7 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+74"/>
+        <location filename="../src/configdialog.cpp" line="+89"/>
         <source>No Clipboard</source>
         <translation>Sense porta-retalls</translation>
     </message>
@@ -337,7 +337,7 @@ email</translation>
         <translation>Copia sota demanda al porta-retalls</translation>
     </message>
     <message>
-        <location line="+361"/>
+        <location line="+364"/>
         <source>No profile selected</source>
         <translation>Cap perfil seleccionat</translation>
     </message>
@@ -347,7 +347,7 @@ email</translation>
         <translation>No s&apos;ha seleccionat cap perfil per suprimir</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+50"/>
         <source>GnuPG not found</source>
         <translation>No s&apos;ha trobat GnuPG</translation>
     </message>
@@ -539,7 +539,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+910"/>
+        <location filename="../src/mainwindow.cpp" line="+911"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
@@ -1046,7 +1046,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>Mo&amp;stra</translation>
     </message>

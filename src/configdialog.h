@@ -20,6 +20,7 @@ class ConfigDialog;
 */
 class MainWindow;
 class QCloseEvent;
+class QTableWidgetItem;
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
@@ -65,6 +66,7 @@ private slots:
   void on_checkBoxUseGit_clicked();
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
+  void onProfileTableItemChanged(QTableWidgetItem *item);
 
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
@@ -83,6 +85,7 @@ private:
   void criticalMessage(const QString &title, const QString &text);
 
   bool isPassOtpAvailable();
+  void validate(const QTableWidgetItem *item = nullptr);
 
   MainWindow *mainWindow;
 };

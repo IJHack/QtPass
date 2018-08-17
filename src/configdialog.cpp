@@ -7,7 +7,9 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QSystemTrayIcon>
+#include <QTableWidgetItem>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
@@ -102,6 +104,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(QtPassSettings::isUseSelection());
   }
 
+  connect(ui->profileTable, &QTableWidget::itemChanged, this,
+          &ConfigDialog::onProfileTableItemChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
 
@@ -137,6 +141,32 @@ void ConfigDialog::usePass(bool usePass) {
   ui->radioButtonNative->setChecked(!usePass);
   ui->radioButtonPass->setChecked(usePass);
   setGroupBoxState();
+}
+
+void ConfigDialog::validate(const QTableWidgetItem *item) {
+  bool status = true;
+
+  if (item == nullptr) {
+    for (int i = 0; i < ui->profileTable->rowCount(); i++) {
+      for (int j = 0; j < ui->profileTable->columnCount(); j++) {
+        QTableWidgetItem *_item = ui->profileTable->item(i, j);
+
+        if (_item->text().isEmpty()) {
+          status = false;
+          break;
+        }
+      }
+
+      if (!status)
+        break;
+    }
+  } else {
+    if (item->text().isEmpty()) {
+      status = false;
+    }
+  }
+
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
 
 void ConfigDialog::on_accepted() {
@@ -371,8 +401,8 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
 }
 
 /**
- * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a gpg
- * key pair.
+ * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a
+ * gpg key pair.
  * @todo refactor the process to not be entangled so much.
  * @param batch
  * @param dialog
@@ -423,9 +453,6 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
     if (nullptr != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == nullptr) {
-#ifdef QT_DEBUG
-        dbg() << "empty name, should fix in frontend";
-#endif
         continue;
       }
       profiles.insert(item->text(), pathItem->text());
@@ -443,6 +470,8 @@ void ConfigDialog::on_addButton_clicked() {
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
   ui->profileTable->selectRow(n);
   ui->deleteButton->setEnabled(true);
+
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 }
 
 /**
@@ -467,11 +496,13 @@ void ConfigDialog::on_deleteButton_clicked() {
     ui->profileTable->removeRow(row);
   if (ui->profileTable->rowCount() < 1)
     ui->deleteButton->setEnabled(false);
+
+  validate();
 }
 
 /**
- * @brief ConfigDialog::criticalMessage weapper for showing critical messages in
- * a popup.
+ * @brief ConfigDialog::criticalMessage weapper for showing critical messages
+ * in a popup.
  * @param title
  * @param text
  */
@@ -505,7 +536,8 @@ void ConfigDialog::wizard() {
     criticalMessage(
         tr("GnuPG not found"),
         tr("Please install GnuPG on your system.<br>Install "
-           "<strong>gpg</strong> using your favorite package manager<br>or <a "
+           "<strong>gpg</strong> using your favorite package manager<br>or "
+           "<a "
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
            "from GnuPG.org"));
     clean = true;
@@ -736,6 +768,10 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
   ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
   ui->checkBoxTemplateAllFields->setEnabled(
       ui->checkBoxUseTemplate->isChecked());
+}
+
+void ConfigDialog::onProfileTableItemChanged(QTableWidgetItem *item) {
+  validate(item);
 }
 
 /**

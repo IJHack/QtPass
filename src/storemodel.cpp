@@ -27,7 +27,7 @@ operator>>(QDataStream &in,
  * SubClass of QSortFilterProxyModel via
  * http://www.qtcentre.org/threads/46471-QTreeView-Filter
  */
-StoreModel::StoreModel() { fs = NULL; }
+StoreModel::StoreModel() { fs = nullptr; }
 
 /**
  * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for
@@ -50,7 +50,7 @@ bool StoreModel::filterAcceptsRow(int sourceRow,
  */
 bool StoreModel::ShowThis(const QModelIndex index) const {
   bool retVal = false;
-  if (fs == NULL)
+  if (fs == nullptr)
     return retVal;
   // Gives you the info for number of childs with a parent
   if (sourceModel()->rowCount(index) > 0) {
@@ -243,7 +243,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     } else if (destFileinfo.isFile()) {
       // dropped file onto a file
       int answer = QMessageBox::question(
-          0, tr("force overwrite?"),
+          nullptr, tr("force overwrite?"),
           tr("overwrite %1 with %2?").arg(cleanedDest).arg(cleanedSrc),
           QMessageBox::Yes | QMessageBox::No);
       bool force = answer == QMessageBox::Yes;

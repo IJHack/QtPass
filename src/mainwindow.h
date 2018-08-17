@@ -109,6 +109,7 @@ private slots:
   void focusInput();
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
+  void onTimeoutSearch();
 
 private:
   QtPass *m_qtPass;
@@ -116,7 +117,7 @@ private:
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QTimer clearPanelTimer;
+  QTimer clearPanelTimer, searchTimer;
   QDialog *keygen;
   QString currentDir;
   TrayIcon *tray;

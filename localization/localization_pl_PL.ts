@@ -316,7 +316,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+74"/>
+        <location filename="../src/configdialog.cpp" line="+89"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -331,7 +331,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+361"/>
+        <location line="+364"/>
         <source>No profile selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -341,7 +341,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+50"/>
         <source>GnuPG not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -508,7 +508,7 @@ Expire-Date: 0
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="+156"/>
+        <location filename="../src/mainwindow.cpp" line="+157"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -900,7 +900,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+70"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation type="unfinished"></translation>
     </message>

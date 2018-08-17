@@ -25,6 +25,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QShortcut>
+#include <QTimer>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -40,9 +41,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
-  m_qtPass = new QtPass();
-
   ui->setupUi(this);
+
+  m_qtPass = new QtPass();
   m_qtPass->setMainWindow(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
@@ -65,9 +66,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   proxyModel.setSourceModel(&model);
   proxyModel.setModelAndStore(&model, passStore);
+  proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
   model.fetchMore(model.setRootPath(passStore));
-  model.sort(0, Qt::AscendingOrder);
+  // model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(
@@ -97,6 +99,11 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
                               QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+
+  searchTimer.setInterval(350);
+  searchTimer.setSingleShot(true);
+
+  connect(&searchTimer, &QTimer::timeout, this, &MainWindow::onTimeoutSearch);
 
   initToolBarButtons();
   initStatusBar();
@@ -490,9 +497,19 @@ void MainWindow::onConfig() { config(); }
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
-  ui->treeView->expandAll();
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
-  QString query = arg1;
+
+  searchTimer.start();
+}
+
+/**
+ * @brief MainWindow::onTimeoutSearch Fired when search is finished or too much
+ * time from two keypresses is elapsed
+ */
+void MainWindow::onTimeoutSearch() {
+  ui->treeView->expandAll();
+
+  QString query = ui->lineEdit->text();
   query.replace(QRegExp(" "), ".*");
   QRegExp regExp(query, Qt::CaseInsensitive);
   proxyModel.setFilterRegExp(regExp);
@@ -510,8 +527,10 @@ void MainWindow::on_lineEdit_returnPressed() {
 #ifdef QT_DEBUG
   dbg() << "on_lineEdit_returnPressed";
 #endif
-  selectFirstFile();
-  on_treeView_clicked(ui->treeView->currentIndex());
+  if (ui->treeView->selectionModel()->hasSelection()) {
+    selectFirstFile();
+    on_treeView_clicked(ui->treeView->currentIndex());
+  }
 }
 
 /**

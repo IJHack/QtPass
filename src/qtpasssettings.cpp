@@ -69,7 +69,7 @@ QHash<QString, QString> QtPassSettings::getProfiles() {
 }
 
 void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
-  getInstance()->remove(SettingsConstants::groupProfiles);
+  getInstance()->remove(SettingsConstants::profile);
   getInstance()->beginGroup(SettingsConstants::profile);
 
   QHash<QString, QString>::const_iterator i = profiles.begin();
