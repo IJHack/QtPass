@@ -66,7 +66,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   proxyModel.setSourceModel(&model);
   proxyModel.setModelAndStore(&model, passStore);
-  proxyModel.sort(0, Qt::AscendingOrder);
+  // proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
   model.fetchMore(model.setRootPath(passStore));
   // model.sort(0, Qt::AscendingOrder);
@@ -82,6 +82,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
   ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
   ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+  ui->treeView->sortByColumn(0, Qt::AscendingOrder);
   connect(ui->treeView, &QWidget::customContextMenuRequested, this,
           &MainWindow::showContextMenu);
   connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
@@ -498,6 +499,7 @@ void MainWindow::onConfig() { config(); }
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
+  ui->treeView->expandAll();
 
   searchTimer.start();
 }
@@ -507,15 +509,19 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * time from two keypresses is elapsed
  */
 void MainWindow::onTimeoutSearch() {
-  ui->treeView->expandAll();
-
   QString query = ui->lineEdit->text();
+
+  if (query.isEmpty())
+    ui->treeView->collapseAll();
+
   query.replace(QRegExp(" "), ".*");
   QRegExp regExp(query, Qt::CaseInsensitive);
   proxyModel.setFilterRegExp(regExp);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
-  selectFirstFile();
+
+  if (proxyModel.rowCount() > 0 && !query.isEmpty())
+    selectFirstFile();
 }
 
 /**
@@ -525,9 +531,10 @@ void MainWindow::onTimeoutSearch() {
  */
 void MainWindow::on_lineEdit_returnPressed() {
 #ifdef QT_DEBUG
-  dbg() << "on_lineEdit_returnPressed";
+  dbg() << "on_lineEdit_returnPressed" << proxyModel.rowCount();
 #endif
-  if (ui->treeView->selectionModel()->hasSelection()) {
+
+  if (proxyModel.rowCount() > 0) {
     selectFirstFile();
     on_treeView_clicked(ui->treeView->currentIndex());
   }
@@ -881,7 +888,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
-    on_treeView_clicked(ui->treeView->currentIndex());
+    if (proxyModel.rowCount() > 0)
+      on_treeView_clicked(ui->treeView->currentIndex());
     break;
   case Qt::Key_Escape:
     ui->lineEdit->clear();

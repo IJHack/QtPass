@@ -85,7 +85,7 @@ private:
   void criticalMessage(const QString &title, const QString &text);
 
   bool isPassOtpAvailable();
-  void validate(const QTableWidgetItem *item = nullptr);
+  void validate(QTableWidgetItem *item = nullptr);
 
   MainWindow *mainWindow;
 };

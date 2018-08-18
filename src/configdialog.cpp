@@ -44,6 +44,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
   } else {
     ui->checkBoxUseTrayIcon->setEnabled(false);
+    ui->checkBoxUseTrayIcon->setToolTip(tr("System tray is not available"));
     ui->checkBoxHideOnClose->setEnabled(false);
     ui->checkBoxStartMinimized->setEnabled(false);
   }
@@ -66,6 +67,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
   if (!isPassOtpAvailable()) {
     ui->checkBoxUseOtp->setEnabled(false);
+    ui->checkBoxUseOtp->setToolTip(
+        tr("Pass OTP extension needs to be installed"));
   }
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
@@ -143,7 +146,7 @@ void ConfigDialog::usePass(bool usePass) {
   setGroupBoxState();
 }
 
-void ConfigDialog::validate(const QTableWidgetItem *item) {
+void ConfigDialog::validate(QTableWidgetItem *item) {
   bool status = true;
 
   if (item == nullptr) {
@@ -152,6 +155,7 @@ void ConfigDialog::validate(const QTableWidgetItem *item) {
         QTableWidgetItem *_item = ui->profileTable->item(i, j);
 
         if (_item->text().isEmpty()) {
+          _item->setBackgroundColor(Qt::red);
           status = false;
           break;
         }
@@ -162,6 +166,7 @@ void ConfigDialog::validate(const QTableWidgetItem *item) {
     }
   } else {
     if (item->text().isEmpty()) {
+      item->setBackgroundColor(Qt::red);
       status = false;
     }
   }
@@ -467,11 +472,12 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
 void ConfigDialog::on_addButton_clicked() {
   int n = ui->profileTable->rowCount();
   ui->profileTable->insertRow(n);
+  ui->profileTable->setItem(n, 0, new QTableWidgetItem());
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
   ui->profileTable->selectRow(n);
   ui->deleteButton->setEnabled(true);
 
-  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+  validate();
 }
 
 /**
