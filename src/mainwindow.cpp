@@ -520,8 +520,12 @@ void MainWindow::onTimeoutSearch() {
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
 
-  if (proxyModel.rowCount() > 0 && !query.isEmpty())
+  if (proxyModel.rowCount() > 0 && !query.isEmpty()) {
     selectFirstFile();
+  } else {
+    ui->actionEdit->setEnabled(false);
+    ui->actionDelete->setEnabled(false);
+  }
 }
 
 /**
