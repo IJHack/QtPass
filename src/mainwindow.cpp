@@ -124,6 +124,30 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 MainWindow::~MainWindow() { delete m_qtPass; }
 
 /**
+ * @brief MainWindow::focusInput selects any text (if applicable) in the search
+ * box and sets focus to it. Allows for easy searching, called at application
+ * start and when receiving empty message in MainWindow::messageAvailable when
+ * compiled with SINGLE_APP=1 (default).
+ */
+void MainWindow::focusInput() {
+  ui->lineEdit->selectAll();
+  ui->lineEdit->setFocus();
+}
+
+/**
+ * @brief MainWindow::changeEvent sets focus to the search box
+ * @param event
+ */
+void MainWindow::changeEvent(QEvent *event) {
+  QWidget::changeEvent(event);
+  if (event->type() == QEvent::ActivationChange) {
+    if (isActiveWindow()) {
+      focusInput();
+    }
+  }
+}
+
+/**
  * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
  */
 void MainWindow::initToolBarButtons() {
@@ -168,30 +192,6 @@ void MainWindow::initStatusBar() {
   QLabel *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
-}
-
-/**
- * @brief MainWindow::focusInput selects any text (if applicable) in the search
- * box and sets focus to it. Allows for easy searching, called at application
- * start and when receiving empty message in MainWindow::messageAvailable when
- * compiled with SINGLE_APP=1 (default).
- */
-void MainWindow::focusInput() {
-  ui->lineEdit->selectAll();
-  ui->lineEdit->setFocus();
-}
-
-/**
- * @brief MainWindow::changeEvent sets focus to the search box
- * @param event
- */
-void MainWindow::changeEvent(QEvent *event) {
-  QWidget::changeEvent(event);
-  if (event->type() == QEvent::ActivationChange) {
-    if (isActiveWindow()) {
-      focusInput();
-    }
-  }
 }
 
 const QModelIndex MainWindow::getCurrentTreeViewIndex() {
@@ -688,56 +688,13 @@ void MainWindow::userDialog(QString dir) {
  * gets lists and opens UserDialog.
  */
 void MainWindow::onUsers() {
-  QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
-  if (users.size() == 0) {
-    QMessageBox::critical(this, tr("Can not get key list"),
-                          tr("Unable to get list of available gpg keys"));
-    return;
-  }
-  QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
-  foreach (const UserInfo &sec, secret_keys) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sec.key_id == it->key_id)
-        it->have_secret = true;
-  }
-  QList<UserInfo> selected_users;
   QString dir =
       currentDir.isEmpty()
           ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
           : currentDir;
-  int count = 0;
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      dir.isEmpty() ? "" : dir, " ", &count);
-  if (!recipients.isEmpty())
-    selected_users = QtPassSettings::getPass()->listKeys(recipients);
-  foreach (const UserInfo &sel, selected_users) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sel.key_id == it->key_id)
-        it->enabled = true;
-  }
-  if (count > selected_users.size()) {
-    // Some keys seem missing from keyring, add them separately
-    QStringList recipients =
-        QtPassSettings::getPass()->getRecipientList(dir.isEmpty() ? "" : dir);
-    foreach (const QString recipient, recipients) {
-      if (QtPassSettings::getPass()->listKeys(recipient).size() < 1) {
-        UserInfo i;
-        i.enabled = true;
-        i.key_id = recipient;
-        i.name = " ?? " + tr("Key not found in keyring");
-        users.append(i);
-      }
-    }
-  }
-  UsersDialog d(this);
-  d.setUsers(&users);
-  if (!d.exec()) {
-    d.setUsers(nullptr);
-    return;
-  }
-  d.setUsers(nullptr);
 
-  QtPassSettings::getPass()->Init(dir, users);
+  UsersDialog d(dir, this);
+  d.exec();
 }
 
 /**
@@ -1129,15 +1086,6 @@ void MainWindow::startReencryptPath() {
  */
 void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
 
-/**
- * @brief MainWindow::critical critical message popup wrapper.
- * @param title
- * @param msg
- */
-void MainWindow::critical(QString title, QString msg) {
-  QMessageBox::critical(this, title, msg);
-}
-
 void MainWindow::updateGitButtonVisibility() {
   if (!QtPassSettings::isUseGit() ||
       (QtPassSettings::getGitExecutable().isEmpty() &&
@@ -1162,4 +1110,13 @@ void MainWindow::enableGitButtons(const bool &state) {
   // Following GNOME guidelines is preferable disable buttons instead of hide
   ui->actionPush->setEnabled(state);
   ui->actionUpdate->setEnabled(state);
+}
+
+/**
+ * @brief MainWindow::critical critical message popup wrapper.
+ * @param title
+ * @param msg
+ */
+void MainWindow::critical(QString title, QString msg) {
+  QMessageBox::critical(this, title, msg);
 }

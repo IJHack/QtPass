@@ -1,7 +1,9 @@
 #include "usersdialog.h"
+#include "qtpasssettings.h"
 #include "ui_usersdialog.h"
 #include <QCloseEvent>
 #include <QKeyEvent>
+#include <QMessageBox>
 #include <QRegExp>
 #include <QWidget>
 
@@ -12,14 +14,61 @@
  * @brief UsersDialog::UsersDialog basic constructor
  * @param parent
  */
-UsersDialog::UsersDialog(QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog) {
+UsersDialog::UsersDialog(QString dir, QWidget *parent)
+    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(dir) {
+
   ui->setupUi(this);
-  connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+
+  QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
+  if (users.isEmpty()) {
+    QMessageBox::critical(parent, tr("Can not get key list"),
+                          tr("Unable to get list of available gpg keys"));
+    return;
+  }
+
+  QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
+  foreach (const UserInfo &sec, secret_keys) {
+    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
+      if (sec.key_id == it->key_id)
+        it->have_secret = true;
+  }
+
+  QList<UserInfo> selected_users;
+  int count = 0;
+
+  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
+      m_dir.isEmpty() ? "" : m_dir, " ", &count);
+  if (!recipients.isEmpty())
+    selected_users = QtPassSettings::getPass()->listKeys(recipients);
+  foreach (const UserInfo &sel, selected_users) {
+    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
+      if (sel.key_id == it->key_id)
+        it->enabled = true;
+  }
+
+  if (count > selected_users.size()) {
+    // Some keys seem missing from keyring, add them separately
+    QStringList recipients = QtPassSettings::getPass()->getRecipientList(
+        m_dir.isEmpty() ? "" : m_dir);
+    foreach (const QString recipient, recipients) {
+      if (QtPassSettings::getPass()->listKeys(recipient).size() < 1) {
+        UserInfo i;
+        i.enabled = true;
+        i.key_id = recipient;
+        i.name = " ?? " + tr("Key not found in keyring");
+        users.append(i);
+      }
+    }
+  }
+
+  m_userList = users;
+  populateList();
+
+  connect(ui->buttonBox, &QDialogButtonBox::accepted, this,
+          &UsersDialog::accept);
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
-  userList = nullptr;
 
 #if QT_VERSION >= 0x050200
   ui->lineEdit->setClearButtonEnabled(true);
@@ -32,6 +81,37 @@ UsersDialog::UsersDialog(QWidget *parent)
 UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
+
+void UsersDialog::accept() {
+  QtPassSettings::getPass()->Init(m_dir, m_userList);
+
+  QDialog::accept();
+}
+
+/**
+ * @brief UsersDialog::closeEvent might have to store size and location if that
+ * is wanted.
+ * @param event
+ */
+void UsersDialog::closeEvent(QCloseEvent *event) {
+  // TODO(annejan) save window size or something
+  event->accept();
+}
+
+/**
+ * @brief UsersDialog::keyPressEvent clear the lineEdit when escape is pressed.
+ * No action for Enter currently.
+ * @param event
+ */
+void UsersDialog::keyPressEvent(QKeyEvent *event) {
+  switch (event->key()) {
+  case Qt::Key_Escape:
+    ui->lineEdit->clear();
+    break;
+  default:
+    break;
+  }
+}
 
 /**
  * @brief UsersDialog::itemChange update the item information.
@@ -47,15 +127,6 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
 }
 
 /**
- * @brief UsersDialog::setUsers update all the users.
- * @param users
- */
-void UsersDialog::setUsers(QList<UserInfo> *users) {
-  userList = users;
-  populateList("");
-}
-
-/**
  * @brief UsersDialog::populateList update the view based on filter options
  * (such as searching).
  * @param filter
@@ -65,9 +136,9 @@ void UsersDialog::populateList(const QString &filter) {
   nameFilter.setPatternSyntax(QRegExp::Wildcard);
   nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
   ui->listWidget->clear();
-  if (userList) {
-    for (QList<UserInfo>::iterator it = userList->begin();
-         it != userList->end(); ++it) {
+  if (!m_userList.isEmpty()) {
+    for (QList<UserInfo>::iterator it = m_userList.begin();
+         it != m_userList.end(); ++it) {
       UserInfo &user(*it);
       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
         if (!user.isValid() && !ui->checkBox->isChecked())
@@ -120,31 +191,6 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 }
 
 /**
- * @brief UsersDialog::closeEvent might have to store size and location if that
- * is wanted.
- * @param event
- */
-void UsersDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan) save window size or something
-  event->accept();
-}
-
-/**
  * @brief UsersDialog::on_checkBox_clicked filtering.
  */
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
-
-/**
- * @brief UsersDialog::keyPressEvent clear the lineEdit when escape is pressed.
- * No action for Enter currently.
- * @param event
- */
-void UsersDialog::keyPressEvent(QKeyEvent *event) {
-  switch (event->key()) {
-  case Qt::Key_Escape:
-    ui->lineEdit->clear();
-    break;
-  default:
-    break;
-  }
-}

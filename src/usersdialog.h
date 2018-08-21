@@ -24,9 +24,11 @@ class UsersDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit UsersDialog(QWidget *parent = 0);
+  explicit UsersDialog(QString dir, QWidget *parent = nullptr);
   ~UsersDialog();
-  void setUsers(QList<UserInfo> *);
+
+public slots:
+  void accept();
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -39,8 +41,10 @@ private slots:
 
 private:
   Ui::UsersDialog *ui;
-  QList<UserInfo> *userList;
-  void populateList(const QString &filter);
+  QList<UserInfo> m_userList;
+  QString m_dir;
+
+  void populateList(const QString &filter = QString());
 };
 
 #endif // USERSDIALOG_H_
