@@ -8,8 +8,12 @@
 bool QtPassSettings::initialized = false;
 
 Pass *QtPassSettings::pass;
-RealPass QtPassSettings::realPass;
-ImitatePass QtPassSettings::imitatePass;
+// Go via pointer to avoid dynamic initialization,
+// due to "random" initialization order realtive to other
+// globals, especially around QObject emtadata dynamic initialization
+// can lead to crashes depending on compiler, linker etc.
+QScopedPointer<RealPass> QtPassSettings::realPass;
+QScopedPointer<ImitatePass> QtPassSettings::imitatePass;
 
 QtPassSettings *QtPassSettings::m_instance = nullptr;
 QtPassSettings *QtPassSettings::getInstance() {
@@ -83,9 +87,9 @@ void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
 Pass *QtPassSettings::getPass() {
   if (!pass) {
     if (isUsePass()) {
-      QtPassSettings::pass = &QtPassSettings::realPass;
+      QtPassSettings::pass = getRealPass();
     } else {
-      QtPassSettings::pass = &QtPassSettings::imitatePass;
+      QtPassSettings::pass = getImitatePass();
     }
     pass->init();
   }
@@ -149,9 +153,9 @@ bool QtPassSettings::isUsePass(const bool &defaultValue) {
 }
 void QtPassSettings::setUsePass(const bool &usePass) {
   if (usePass) {
-    QtPassSettings::pass = &QtPassSettings::realPass;
+    QtPassSettings::pass = getRealPass();
   } else {
-    QtPassSettings::pass = &QtPassSettings::imitatePass;
+    QtPassSettings::pass = getImitatePass();
   }
   getInstance()->setValue(SettingsConstants::usePass, usePass);
 }
@@ -527,5 +531,5 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
                           templateAllFields);
 }
 
-RealPass *QtPassSettings::getRealPass() { return &realPass; }
-ImitatePass *QtPassSettings::getImitatePass() { return &imitatePass; }
+RealPass *QtPassSettings::getRealPass() { if (realPass.isNull()) realPass.reset(new RealPass()); return realPass.data(); }
+ImitatePass *QtPassSettings::getImitatePass() { if (imitatePass.isNull()) imitatePass.reset(new ImitatePass()); return imitatePass.data(); }
