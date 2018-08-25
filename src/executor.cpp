@@ -198,7 +198,7 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
     QTextCodec *codec = QTextCodec::codecForLocale();
     if (i.readStdout)
       output = codec->toUnicode(m_process.readAllStandardOutput());
-    if (i.readStderr or exitCode != 0) {
+    if (i.readStderr || exitCode != 0) {
       err = codec->toUnicode(m_process.readAllStandardError());
       if (exitCode != 0)
         dbg() << exitCode << err;
