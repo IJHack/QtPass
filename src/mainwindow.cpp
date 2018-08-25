@@ -411,8 +411,12 @@ void MainWindow::config() {
       this->show();
 
       updateProfileBox();
-      ui->treeView->setRootIndex(proxyModel.mapFromSource(
-          model.setRootPath(QtPassSettings::getPassStore())));
+      // For freshStart, proxyModel is not yet configured
+      // and maniplating it will assert
+      if (!freshStart) {
+          ui->treeView->setRootIndex(proxyModel.mapFromSource(
+              model.setRootPath(QtPassSettings::getPassStore())));
+      }
 
       if (freshStart && Util::checkConfig())
         config();
