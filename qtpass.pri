@@ -6,7 +6,7 @@ CONFIG(coverage) {
 }
 
 CONFIG(debug, debug|release) {
-    QMAKE_CXXFLAGS += -g -c -Wall -O0
+    !msvc:QMAKE_CXXFLAGS += -g -c -Wall -O0
     QMAKE_LFLAGS += -O0
 }
 
