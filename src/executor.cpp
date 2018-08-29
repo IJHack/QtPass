@@ -31,7 +31,14 @@ void Executor::executeNext() {
       running = true;
       if (!i.workingDir.isEmpty())
         m_process.setWorkingDirectory(i.workingDir);
-      m_process.start(i.app, i.args);
+      if (i.app.startsWith("wsl "))
+      {
+          QStringList tmp = i.args;
+          QString app = i.app;
+          tmp.prepend(app.remove(0, 4));
+          m_process.start("wsl", tmp);
+      } else
+          m_process.start(i.app, i.args);
       if (!i.input.isEmpty()) {
         m_process.waitForStarted(-1);
         QByteArray data = i.input.toUtf8();
@@ -111,8 +118,9 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
 #endif
     return;
   }
-  QString appPath =
-      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
+  QString appPath = app;
+  if (!appPath.startsWith("wsl "))
+      appPath = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
   m_execQueue.push_back(
       {id, appPath, args, input, readStdout, readStderr, workDir});
   executeNext();
@@ -134,7 +142,13 @@ int Executor::executeBlocking(QString app, const QStringList &args,
                               QString input, QString *process_out,
                               QString *process_err) {
   QProcess internal;
-  internal.start(app, args);
+  if (app.startsWith("wsl "))
+  {
+      QStringList tmp = args;
+      tmp.prepend(app.remove(0, 4));
+      internal.start("wsl", tmp);
+  } else
+      internal.start(app, args);
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
     internal.waitForStarted(-1);
