@@ -136,7 +136,7 @@ bool Util::checkConfig() {
 QString Util::getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
                      const StoreModel &storeModel) {
-  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';
+  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
   if (!index.isValid())
     return forPass ? "" : abspath;
   QFileInfo info = model.fileInfo(storeModel.mapToSource(index));
@@ -145,7 +145,7 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   if (forPass) {
     filePath = QDir(abspath).relativeFilePath(filePath);
   }
-  filePath += '/';
+  filePath += QDir::separator();
   return filePath;
 }
 

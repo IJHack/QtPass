@@ -263,8 +263,8 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
   }
 
   // ensure path ends in /
-  if (!returnValue.endsWith("/")) {
-    returnValue += "/";
+  if (!returnValue.endsWith("/") && !returnValue.endsWith(QDir::separator())) {
+    returnValue += QDir::separator();
   }
 
   return returnValue;

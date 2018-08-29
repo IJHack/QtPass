@@ -351,9 +351,11 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
 void MainWindow::deselect() {
-  currentDir = "/";
+  currentDir = "";
   m_qtPass->clearClipboard();
   ui->passwordName->setText("");
+  ui->actionDelete->setEnabled(false);
+  ui->actionEdit->setEnabled(false);
   clearPanel(false);
 }
 
@@ -626,7 +628,7 @@ void MainWindow::onDelete() {
 
   QString dirMessage = tr(" and the whole content?");
   if (isDir) {
-    QDirIterator it(model.rootPath() + "/" + file,
+    QDirIterator it(model.rootPath() + QDir::separator() + file,
                     QDirIterator::Subdirectories);
     bool okDir = true;
     while (it.hasNext() && okDir) {
