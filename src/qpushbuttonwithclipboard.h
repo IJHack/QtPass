@@ -13,7 +13,7 @@ class QPushButtonWithClipboard : public QPushButton {
 
 public:
   explicit QPushButtonWithClipboard(const QString &textToCopy = "",
-                                    QWidget *parent = 0);
+                                    QWidget *parent = nullptr);
 
   QString getTextToCopy() const;
   void setTextToCopy(const QString &value);
@@ -23,7 +23,7 @@ signals:
 
 private slots:
   void changeIconDefault();
-  void buttonClicked(QString);
+  void buttonClicked(bool);
 
 private:
   QString textToCopy;
