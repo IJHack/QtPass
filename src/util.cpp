@@ -110,6 +110,17 @@ QString Util::findBinaryInPath(QString binary) {
       break;
     }
   }
+#ifdef Q_OS_WIN
+  if (ret.isEmpty())
+  {
+      binary.remove(0, 1);
+      binary.prepend("wsl ");
+      QString out, err;
+      if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
+          !out.isEmpty() && err.isEmpty())
+          ret = binary;
+  }
+#endif
 
   return ret;
 }
