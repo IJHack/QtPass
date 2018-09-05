@@ -107,6 +107,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(QtPassSettings::isUseSelection());
   }
 
+  if (Util::checkConfig()) {
+    // Show Programs tab, which is likely
+    // what the user needs to fix now.
+    ui->tabWidget->setCurrentIndex(1);
+  }
+
   connect(ui->profileTable, &QTableWidget::itemChanged, this,
           &ConfigDialog::onProfileTableItemChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
