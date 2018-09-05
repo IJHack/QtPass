@@ -224,6 +224,20 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setVersion(VERSION);
 }
 
+void ConfigDialog::on_autodetectButton_clicked()
+{
+    QString pass = Util::findBinaryInPath("pass");
+    if (!pass.isEmpty()) ui->passPath->setText(pass);
+    usePass(!pass.isEmpty());
+    QString gpg = Util::findBinaryInPath("gpg2");
+    if (gpg.isEmpty()) gpg = Util::findBinaryInPath("gpg");
+    if (!gpg.isEmpty()) ui->gpgPath->setText(gpg);
+    QString git = Util::findBinaryInPath("git");
+    if (!git.isEmpty()) ui->gitPath->setText(git);
+    QString pwgen = Util::findBinaryInPath("pwgen");
+    if (!pwgen.isEmpty()) ui->pwgenPath->setText(pwgen);
+}
+
 /**
  * @brief ConfigDialog::on_radioButtonNative_clicked wrapper for
  * ConfigDialog::setGroupBoxState()
