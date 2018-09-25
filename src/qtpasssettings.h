@@ -33,8 +33,8 @@ private:
   static QtPassSettings *m_instance;
 
   static Pass *pass;
-  static RealPass realPass;
-  static ImitatePass imitatePass;
+  static QScopedPointer<RealPass> realPass;
+  static QScopedPointer<ImitatePass> imitatePass;
 
 public:
   static QtPassSettings *getInstance();
