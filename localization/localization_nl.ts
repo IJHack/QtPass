@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="nl">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -16,12 +16,12 @@
     <message>
         <location/>
         <source>Clipboard behaviour:</source>
-        <translation>Klembord gedrag:</translation>
+        <translation>Klembordgedrag:</translation>
     </message>
     <message>
         <location/>
         <source>Use primary selection</source>
-        <translation>Gebruik selectie ipv klembord</translation>
+        <translation>Gebruik primary selection</translation>
     </message>
     <message>
         <location/>
@@ -31,12 +31,12 @@
     <message>
         <location/>
         <source>Seconds</source>
-        <translation>Secondes</translation>
+        <translation>Seconden</translation>
     </message>
     <message>
         <location/>
         <source>Content panel behaviour:</source>
-        <translation>Inhoudsvlak gedrag:</translation>
+        <translation>Inhoudsvlakgedrag:</translation>
     </message>
     <message>
         <location/>
@@ -61,7 +61,7 @@
     <message>
         <location/>
         <source>Password Length:</source>
-        <translation>Wachtwoord lengte:</translation>
+        <translation>Lengte Wachtwoord:</translation>
     </message>
     <message>
         <location/>
@@ -76,7 +76,7 @@
     <message>
         <location/>
         <source>Select character set for password generation</source>
-        <translation>Kies tekenset voor wachtwoord generatie</translation>
+        <translation>Kies tekenset voor genereren wachtwoord</translation>
     </message>
     <message>
         <location/>
@@ -86,12 +86,12 @@
     <message>
         <location/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation>Alfabetisch</translation>
     </message>
     <message>
         <location/>
         <source>Alphanumerical</source>
-        <translation>Alphanumeriek</translation>
+        <translation>Alfanumeriek</translation>
     </message>
     <message>
         <location/>
@@ -141,7 +141,7 @@
     <message>
         <location/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Voeg .gpg-id bestanden automatisch toe</translation>
+        <translation>Voeg automatisch .gpg-id bestanden toe</translation>
     </message>
     <message>
         <location/>
@@ -161,7 +161,7 @@
     <message>
         <location/>
         <source>Use pass otp extension</source>
-        <translation>Gebruik pass OTP uitbreiding</translation>
+        <translation>Gebruik pass OTP-uitbreiding</translation>
     </message>
     <message>
         <location/>
@@ -171,17 +171,17 @@
     <message>
         <location/>
         <source>Use TrayIcon</source>
-        <translation>Systeem tray</translation>
+        <translation>Gebruik Systeemvakicoon</translation>
     </message>
     <message>
         <location/>
         <source>Start minimized</source>
-        <translation>Start in de tray</translation>
+        <translation>Start geminimaliseerd</translation>
     </message>
     <message>
         <location/>
         <source>Hide on close</source>
-        <translation>Verbergen in plaats van sluiten</translation>
+        <translation>Verbergen bij sluiten</translation>
     </message>
     <message>
         <location/>
@@ -196,7 +196,7 @@
     <message>
         <location/>
         <source>Select password storage program:</source>
-        <translation>Selecteer wachtwoord opslag programma&apos;s:</translation>
+        <translation>Kies programma voor wachtwoordopslag:</translation>
     </message>
     <message>
         <location/>
@@ -211,7 +211,7 @@
     <message>
         <location/>
         <source>Native</source>
-        <translation>Systeem eigen</translation>
+        <translation>Systeemeigen</translation>
     </message>
     <message>
         <location/>
@@ -286,7 +286,7 @@
     <message>
         <location/>
         <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
-        <translation>Templates voegen velden toe aan de wachtwoord aanmaak- bewerk- en toon-schermen.</translation>
+        <translation>Templates voegen velden toe aan de wachtwoordaanmaak- en -afbeeldingsschermen.</translation>
     </message>
     <message>
         <location/>
@@ -296,12 +296,12 @@
     <message>
         <location/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Geef alle regels die beginnen met een woord, gevolgd door een dubbele punt als velden weer, niet alleen de opgegeven</translation>
+        <translation>Geef niet enkel de opgegeven, maar alle regels die beginnen met een woord gevolgd door een dubbele punt als velden weer</translation>
     </message>
     <message>
         <location/>
         <source>Show all fields templated</source>
-        <translation>Toon alle velden getemplate</translation>
+        <translation>Toon alle velden als template</translation>
     </message>
     <message>
         <location/>
@@ -330,17 +330,17 @@ email</translation>
     <message>
         <location line="+1"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Wanneer gewenst kopiëren naar klembord</translation>
+        <translation>Op verzoek kopiëren naar klembord</translation>
     </message>
     <message>
         <location line="+342"/>
         <source>No profile selected</source>
-        <translation>Geen profiel geselecteerd</translation>
+        <translation>Geen profiel gekozen</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>No profile selected to delete</source>
-        <translation>Geen profiel geselecteerd om te verwijderen</translation>
+        <translation>Geen profiel gekozen om te verwijderen</translation>
     </message>
     <message>
         <location line="+38"/>
@@ -350,7 +350,7 @@ email</translation>
     <message>
         <location line="+1"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
+        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete pakketbeheerder&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; het op GnuPG.org</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -370,7 +370,7 @@ email</translation>
     <message>
         <location line="+1"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
+        <translation>De map %1 lijkt geen password-store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
 </context>
 <context>
@@ -385,7 +385,7 @@ email</translation>
         <location line="-199"/>
         <location line="+200"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
+        <translation>Kon publieke sleutel niet lezen, .gpg-id bestand is ongeldig of ontbreekt.</translation>
     </message>
     <message>
         <location line="-121"/>
@@ -395,24 +395,24 @@ email</translation>
     <message>
         <location line="+1"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Kon .gpg-id bestand niet openen om te schrijven.</translation>
+        <translation>Kon .gpg-id-bestand niet openen om te schrijven.</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Check selected users!</source>
-        <translation>Kontroleer geselecteerde gebruikers!</translation>
+        <translation>Controleer gekozen gebruikers!</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
-Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
+        <translation>Voor geen enkele van de gekozen sleutels is er een geheime sleutel beschikbaar.
+Je zal nieuw toegevoegde wachtwoorden niet kunnen ontsleutelen!</translation>
     </message>
     <message>
         <location line="+51"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Her-encrypten vanaf map %1</translation>
+        <translation>Herversleutelen vanaf map %1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -426,7 +426,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Genereer GnuPG sleutelpaar</translation>
+        <translation>Genereer GnuPG-sleutelpaar</translation>
     </message>
     <message>
         <location/>
@@ -441,7 +441,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location/>
@@ -451,7 +451,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Er is geen limiet aan de lengte van een wachtwoord, en het moet zorgvuldig worden gekozen. Vanuit het perspectief van de veiligheid, de passphrase om de privé-sleutel te ontsluiten is een van de zwakste punten in GnuPG private (en andere public-key encryptie systemen ook) want het is de enige bescherming die u hebben als een ander individu krijgt uw sleutel. &lt;br/&gt; Idealiter zou de passphrase niet woorden uit een woordenboek en Mocht meng het geval van alfabetische tekens alsmede het gebruik van niet-alfabetische tekens. &lt;br/&gt; Een goed wachtwoord is cruciaal voor het veilig gebruik van GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Er is geen beperking op de lengte van een wachtwoord, en het moet zorgvuldig worden gekozen. Vanuit het perspectief van de veiligheid is de wachtwoordzin om de privé-sleutel te ontsluiten een van de zwakste schakels in GnuPG (en ook in andere public-key versleutelingssystemen) want het is de enige bescherming die u heeft als iemand anders uw privé-sleutel in handen krijgt. &lt;br/&gt; Idealiter bevat de wachtwoordzin geen woorden uit een woordenboek, wordt er een mengeling van hoofd- en kleine letters gebruikt alsmede niet-alfabetische tekens. &lt;br/&gt; Een goede wachtwoordzin is cruciaal voor het veilig gebruik van GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location/>
@@ -494,7 +494,7 @@ Expire-Date: 0
     <message>
         <location/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Voor expert instellingen lees de &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
+        <translation>Voor expert-opties, lees de &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-handleiding&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="+126"/>
@@ -509,17 +509,17 @@ Expire-Date: 0
     <message>
         <location line="+10"/>
         <source>Invalid email</source>
-        <translation>Ongeldig emailadres</translation>
+        <translation>Ongeldig e-mail-adres</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Het emailadres dat u heeft ingevoerd is voldoet niet aan de email standaard.</translation>
+        <translation>Het e-mail-adres dat u heeft ingevoerd, is geen geldig e-mail-adres.</translation>
     </message>
     <message>
         <location line="+15"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
+        <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de schijven) tijdens de priemgetalgeneratie; dit geeft de toevalsgetalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
 </context>
 <context>
@@ -554,7 +554,7 @@ Expire-Date: 0
     <message>
         <location/>
         <source>Select profile</source>
-        <translation>Selecteer profiel</translation>
+        <translation>Kies profiel</translation>
     </message>
     <message>
         <location/>
@@ -638,13 +638,13 @@ p, li { white-space: pre-wrap; }
         <location line="+106"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Verbinding mislukt met WebDAV:
+        <translation>WebDAV-verbinding mislukt:
 </translation>
     </message>
     <message>
         <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV wachtwoord</translation>
+        <translation>QtPass WebDAV-wachtwoord</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -655,13 +655,13 @@ p, li { white-space: pre-wrap; }
         <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav is stuk, hield er zomaar mee op</translation>
+        <translation>fusedav is onverwacht afgesloten</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kon fusedav niet verbinden met WebDAV:
+        <translation>Kon fusedav niet starten om te verbinden met WebDAV:
 </translation>
     </message>
     <message>
@@ -694,7 +694,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
+        <translation>Klembord niet leeg gemaakt</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -719,7 +719,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation>Lees fout met proces</translation>
+        <translation>Leesfout met proces</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -729,7 +729,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation>Er ging iets raars mis met proces</translation>
+        <translation>Onbekende procesfout</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -746,8 +746,8 @@ p, li { white-space: pre-wrap; }
         <location line="-402"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Nieuw wachtwoord bestand: 
-(Wordt geplaatst in %1 )</translation>
+        <translation>Nieuw wachtwoordbestand:
+(Wordt in %1 geplaatst )</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -757,7 +757,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+10"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> en de gehele inhoud? &lt;br&gt;&lt;strong&gt;Let op: ter zijn onverwachte bestanden gevonden, controleer deze voor verwijden.&lt;/strong&gt;</translation>
+        <translation> en de gehele inhoud? &lt;br&gt;&lt;strong&gt;Let op: er zijn onverwachte bestanden in de opgegeven map, controleer deze vooraleer verder te gaan.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -777,12 +777,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+47"/>
         <source>Can not get key list</source>
-        <translation>Kan sleutel lijst niet verkrijgen</translation>
+        <translation>Kan lijst sleutels niet verkrijgen</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
+        <translation>Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -792,7 +792,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+56"/>
         <source>Generating GPG key pair</source>
-        <translation>Nieuw GPG sleutelpaar genereren</translation>
+        <translation>Nieuw GPG-sleutelpaar genereren</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -802,7 +802,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+120"/>
         <source>Open folder with file manager</source>
-        <translation>Open map met bestands beheer</translation>
+        <translation>Open map met bestandsbeheer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui"/>
@@ -821,12 +821,12 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nieuwe map: 
-(Wordt geplaatst in %1 )</translation>
+(Wordt in %1 geplaatst )</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>Copied to clipboard</source>
-        <translation>gekopieerd naar het klembord</translation>
+        <translation>Gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
@@ -839,7 +839,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
+        <translation>Kan wachtwoord niet genereren, er zijn geen karakters om uit te kiezen gedefinieerd in de configuratie!</translation>
     </message>
 </context>
 <context>
@@ -872,12 +872,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation>Alfabetisch</translation>
     </message>
     <message>
         <location/>
         <source>Alphanumerical</source>
-        <translation>Alphanumeriek</translation>
+        <translation>Alfanumeriek</translation>
     </message>
     <message>
         <location/>
@@ -957,10 +957,10 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selecteer welke gebruikers moeten in staat zijn om wachtwoorden opgeslagen in deze map te decoderen.
-Opmerking: Bestaande bestanden zullen niet worden gewijzigd en behouden van de oude permissies totdat je ze bewerkt.
-Blauwe inzendingen hebben een geheime sleutel beschikbaar is, selecteert u één van deze te kunnen ontcijferen.
-Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor deze gebruikers.</translation>
+        <translation>Kies welke gebruikers in staat moeten zijn om wachtwoorden opgeslagen in deze map te ontsleutelen.
+Opmerking: Bestaande bestanden zullen niet worden gewijzigd en behouden van de oude toegangsrechten totdat je ze bewerkt.
+Blauwe entries hebben een geheime sleutel beschikbaar, selecteert u één van deze on te kunnen ontsleutelen.
+Rode entries zijn ongeldig, je zult niet in staat zijn om te versleutelen voor deze gebruikers.</translation>
     </message>
     <message>
         <location/>
