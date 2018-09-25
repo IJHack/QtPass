@@ -68,7 +68,7 @@ Windows
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
-On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
+On Mac OS X this currently seems to only work with MacGPG2 from gpgtools or pinentry-mac from homebrew.
 
 On most unix systems all you need is:
 ```
