@@ -34,6 +34,10 @@
         <translation>Seconden</translation>
     </message>
     <message>
+        <source>Password Behaviour:</source>
+        <translation type="vanished">Wachtwoord gedrag:</translation>
+    </message>
+    <message>
         <location/>
         <source>Content panel behaviour:</source>
         <translation>Inhoudsvlakgedrag:</translation>
@@ -318,7 +322,17 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versie </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+71"/>
+        <location filename="../src/configdialog.cpp" line="+47"/>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>No Clipboard</source>
         <translation>Geen klembord</translation>
     </message>
@@ -333,7 +347,7 @@ email</translation>
         <translation>Op verzoek kopiëren naar klembord</translation>
     </message>
     <message>
-        <location line="+342"/>
+        <location line="+394"/>
         <source>No profile selected</source>
         <translation>Geen profiel gekozen</translation>
     </message>
@@ -343,7 +357,7 @@ email</translation>
         <translation>Geen profiel gekozen om te verwijderen</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+52"/>
         <source>GnuPG not found</source>
         <translation>GnuPG niet gevonden</translation>
     </message>
@@ -353,7 +367,7 @@ email</translation>
         <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete pakketbeheerder&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; het op GnuPG.org</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+25"/>
         <source>Create password-store?</source>
         <translation>Maak password-store aan?</translation>
     </message>
@@ -363,7 +377,7 @@ email</translation>
         <translation>Wil je een password-store maken op %1?</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Password store not initialised</source>
         <translation>Password-store niet geïnitialiseerd</translation>
     </message>
@@ -376,19 +390,19 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+73"/>
-        <location line="+200"/>
+        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location line="+202"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
     <message>
-        <location line="-199"/>
-        <location line="+200"/>
+        <location line="-201"/>
+        <location line="+202"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kon publieke sleutel niet lezen, .gpg-id bestand is ongeldig of ontbreekt.</translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-123"/>
         <source>Cannot update</source>
         <translation>Kan niet updaten</translation>
     </message>
@@ -416,7 +430,7 @@ Je zal nieuw toegevoegde wachtwoorden niet kunnen ontsleutelen!</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+81"/>
+        <location line="+85"/>
         <source>Updating password-store</source>
         <translation>Vernieuwen password-store</translation>
     </message>
@@ -497,7 +511,7 @@ Expire-Date: 0
         <translation>Voor expert-opties, lees de &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-handleiding&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+126"/>
+        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
         <translation>Ongeldige naam</translation>
     </message>
@@ -530,8 +544,12 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <source>Add</source>
+        <translation type="vanished">Toevoegen</translation>
+    </message>
+    <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1231"/>
+        <location filename="../src/mainwindow.cpp" line="+902"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
@@ -555,6 +573,17 @@ Expire-Date: 0
         <location/>
         <source>Select profile</source>
         <translation>Kies profiel</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is een GUI voor &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standaard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Rapporteer alstublieft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; die u mogelijk ondervind met deze software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentatie&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location/>
@@ -625,125 +654,148 @@ p, li { white-space: pre-wrap; }
         <translation>Welkom bij QtPass</translation>
     </message>
     <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is een GUI voor &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, de standaard unix wachtwoord beheerder.&lt;/span&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br/&gt;Meldt gaarne alle &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;problemen&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; die je eventueel ondervindt.&lt;/span&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentatie&lt;/span&gt;&lt;/a&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Broncode&lt;/span&gt;&lt;/a&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;
+</translation>
+    </message>
+    <message>
         <location/>
         <source>Search Password</source>
         <translation>Zoek wachtwoord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-1094"/>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="-708"/>
         <source>Welcome to QtPass %1</source>
         <translation>Welkom bij QtPass %1</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <source>Add Password</source>
+        <translation type="vanished">Voeg wachtwoord toe</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation type="vanished">Voeg map toe</translation>
+    </message>
+    <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>WebDAV-verbinding mislukt:
+        <translation type="vanished">WebDAV-verbinding mislukt:
 </translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV-wachtwoord</translation>
+        <translation type="vanished">QtPass WebDAV-wachtwoord</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Voer wachtwoord in om te verbinden met WebDAV:</translation>
+        <translation type="vanished">Voer wachtwoord in om te verbinden met WebDAV:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav is onverwacht afgesloten</translation>
+        <translation type="vanished">fusedav is onverwacht afgesloten</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kon fusedav niet starten om te verbinden met WebDAV:
+        <translation type="vanished">Kon fusedav niet starten om te verbinden met WebDAV:
 </translation>
     </message>
     <message>
-        <location line="+170"/>
+        <location line="+95"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Vernieuwen password-store</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <source>Can not edit</source>
+        <translation type="vanished">Kan niet bewerken</translation>
+    </message>
+    <message>
+        <source>Selected password file does not exist, not able to edit</source>
+        <translation type="vanished">Geselecteerde wachtwoord bestand bestaat niet, kan niet bewerken</translation>
+    </message>
+    <message>
+        <source>Password hidden</source>
+        <translation type="vanished">Wachtwoord verborgen</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Content hidden</source>
         <translation>Inhoud verborgen</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+804"/>
+        <location line="+641"/>
         <source>Password</source>
         <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location line="-779"/>
+        <location line="-617"/>
         <source>OTP Code</source>
         <translation>OTP Code</translation>
     </message>
     <message>
-        <location line="+82"/>
         <source>Clipboard cleared</source>
-        <translation>Klembord gewist</translation>
+        <translation type="vanished">Klembord gewist</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation>Klembord niet leeg gemaakt</translation>
+        <translation type="vanished">Klembord niet leeg gemaakt</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Password and Content hidden</source>
         <translation>Wachtwoord en inhoud verborgen</translation>
     </message>
     <message>
-        <location line="+66"/>
         <source>QProcess::FailedToStart</source>
-        <translation>Proces kon niet worden gestart</translation>
+        <translation type="vanished">Proces kon niet worden gestart</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Crashed</source>
-        <translation>Proces is gecrashed</translation>
+        <translation type="vanished">Proces is gecrashed</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Timedout</source>
-        <translation>Proces duurde te lang</translation>
+        <translation type="vanished">Proces duurde te lang</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation>Leesfout met proces</translation>
+        <translation type="vanished">Leesfout met proces</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::WriteError</source>
-        <translation>Kan niet schrijven naar proces</translation>
+        <translation type="vanished">Kan niet schrijven naar proces</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation>Onbekende procesfout</translation>
+        <translation type="vanished">Onbekende procesfout</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+69"/>
         <source>Looking for: %1</source>
         <translation>Op zoek naar: %1</translation>
     </message>
     <message>
-        <location line="+74"/>
-        <location line="+403"/>
+        <location line="+97"/>
+        <location line="+349"/>
         <source>New file</source>
         <translation>Nieuw bestand</translation>
     </message>
     <message>
-        <location line="-402"/>
+        <location line="-348"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nieuw wachtwoordbestand:
@@ -770,37 +822,45 @@ p, li { white-space: pre-wrap; }
         <translation>Verwijder wachtwoord?</translation>
     </message>
     <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="vanished">Weet je zeker dat je %1 wil verwijderen?</translation>
+    </message>
+    <message>
         <location line="+0"/>
         <source>Delete folder?</source>
         <translation>Verwijder map?</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation type="vanished">Weet je zeker dat je %1%2 wil verwijderen?</translation>
+    </message>
+    <message>
+        <source> and whole content</source>
+        <translation type="vanished"> en inhoud</translation>
+    </message>
+    <message>
         <source>Can not get key list</source>
-        <translation>Kan lijst sleutels niet verkrijgen</translation>
+        <translation type="vanished">Kan lijst sleutels niet verkrijgen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
+        <translation type="vanished">Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
     </message>
     <message>
-        <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation>Sleutel niet gevonden in keyring</translation>
+        <translation type="vanished">Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
-        <location line="+56"/>
         <source>Generating GPG key pair</source>
-        <translation>Nieuw GPG-sleutelpaar genereren</translation>
+        <translation type="vanished">Nieuw GPG-sleutelpaar genereren</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+116"/>
         <source>Profile changed to %1</source>
         <translation>Profiel veranderd naar %1</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+127"/>
         <source>Open folder with file manager</source>
         <translation>Open map met bestandsbeheer</translation>
     </message>
@@ -824,15 +884,14 @@ p, li { white-space: pre-wrap; }
 (Wordt in %1 geplaatst )</translation>
     </message>
     <message>
-        <location line="+49"/>
         <source>Copied to clipboard</source>
-        <translation>Gekopieerd naar het klembord</translation>
+        <translation type="vanished">Gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+94"/>
+        <location filename="../src/pass.cpp" line="+101"/>
         <source>No characters chosen</source>
         <translation>Geen karakters gekozen</translation>
     </message>
@@ -899,6 +958,89 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>QtPass</name>
+    <message>
+        <location filename="../src/qtpass.cpp" line="+136"/>
+        <source>Generating GPG key pair</source>
+        <translation type="unfinished">Nieuw GPG sleutelpaar genereren</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished">Verbinding mislukt met WebDAV:
+</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished">QtPass WebDAV wachtwoord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished">Voer wachtwoord in om te verbinden met WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished">fusedav is stuk, hield er zomaar mee op</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished">Kon fusedav niet verbinden met WebDAV:
+</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QProcess::FailedToStart</source>
+        <translation type="unfinished">Proces kon niet worden gestart</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Crashed</source>
+        <translation type="unfinished">Proces is gecrashed</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Timedout</source>
+        <translation type="unfinished">Proces duurde te lang</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::ReadError</source>
+        <translation type="unfinished">Lees fout met proces</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::WriteError</source>
+        <translation type="unfinished">Kan niet schrijven naar proces</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::UnknownError</source>
+        <translation type="unfinished">Er ging iets raars mis met proces</translation>
+    </message>
+    <message>
+        <location line="+127"/>
+        <source>Clipboard cleared</source>
+        <translation type="unfinished">Klembord gewist</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Clipboard not cleared</source>
+        <translation type="unfinished">Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished">gekopieerd naar het klembord</translation>
+    </message>
+</context>
+<context>
     <name>StoreModel</name>
     <message>
         <location filename="../src/storemodel.cpp" line="+246"/>
@@ -914,7 +1056,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+66"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>&amp;Tonen</translation>
     </message>
@@ -973,7 +1115,22 @@ Rode entries zijn ongeldig, je zult niet in staat zijn om te versleutelen voor d
         <translation>Toon onbruikbare sleutels</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+78"/>
+        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <source>Can not get key list</source>
+        <translation type="unfinished">Kan lijst sleutels niet verkrijgen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="unfinished">Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Key not found in keyring</source>
+        <translation type="unfinished">Sleutel niet gevonden in keyring</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>created</source>
         <translation>aangemaakt</translation>
     </message>

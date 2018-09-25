@@ -1,5 +1,4 @@
 #include "configdialog.h"
-#include "debughelper.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
@@ -8,8 +7,15 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QPushButton>
+#include <QSystemTrayIcon>
+#include <QTableWidgetItem>
 #ifdef Q_OS_WIN
 #include <windows.h>
+#endif
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
 #endif
 
 /**
@@ -32,8 +38,17 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxHidePassword->setChecked(QtPassSettings::isHidePassword());
   ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
   ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
-  ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
-  ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
+
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
+    ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
+  } else {
+    ui->checkBoxUseTrayIcon->setEnabled(false);
+    ui->checkBoxUseTrayIcon->setToolTip(tr("System tray is not available"));
+    ui->checkBoxHideOnClose->setEnabled(false);
+    ui->checkBoxStartMinimized->setEnabled(false);
+  }
+
   ui->checkBoxAvoidCapitals->setChecked(QtPassSettings::isAvoidCapitals());
   ui->checkBoxAvoidNumbers->setChecked(QtPassSettings::isAvoidNumbers());
   ui->checkBoxLessRandom->setChecked(QtPassSettings::isLessRandom());
@@ -50,6 +65,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->label_10->hide();
 #endif
 
+  if (!isPassOtpAvailable()) {
+    ui->checkBoxUseOtp->setEnabled(false);
+    ui->checkBoxUseOtp->setToolTip(
+        tr("Pass OTP extension needs to be installed"));
+  }
+
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
   setPwgenPath(QtPassSettings::getPwgenExecutable());
   setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
@@ -59,7 +80,9 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
   useTrayIcon(QtPassSettings::isUseTrayIcon());
   useGit(QtPassSettings::isUseGit());
+
   useOtp(QtPassSettings::isUseOtp());
+
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
 
@@ -84,6 +107,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(QtPassSettings::isUseSelection());
   }
 
+  connect(ui->profileTable, &QTableWidget::itemChanged, this,
+          &ConfigDialog::onProfileTableItemChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
 
@@ -121,6 +146,34 @@ void ConfigDialog::usePass(bool usePass) {
   setGroupBoxState();
 }
 
+void ConfigDialog::validate(QTableWidgetItem *item) {
+  bool status = true;
+
+  if (item == nullptr) {
+    for (int i = 0; i < ui->profileTable->rowCount(); i++) {
+      for (int j = 0; j < ui->profileTable->columnCount(); j++) {
+        QTableWidgetItem *_item = ui->profileTable->item(i, j);
+
+        if (_item->text().isEmpty()) {
+          _item->setBackgroundColor(Qt::red);
+          status = false;
+          break;
+        }
+      }
+
+      if (!status)
+        break;
+    }
+  } else {
+    if (item->text().isEmpty()) {
+      item->setBackgroundColor(Qt::red);
+      status = false;
+    }
+  }
+
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
+}
+
 void ConfigDialog::on_accepted() {
   QtPassSettings::setPassExecutable(ui->passPath->text());
   QtPassSettings::setGitExecutable(ui->gitPath->text());
@@ -138,9 +191,12 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setHidePassword(ui->checkBoxHidePassword->isChecked());
   QtPassSettings::setHideContent(ui->checkBoxHideContent->isChecked());
   QtPassSettings::setAddGPGId(ui->checkBoxAddGPGId->isChecked());
-  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isChecked());
-  QtPassSettings::setHideOnClose(hideOnClose());
-  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isChecked());
+  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isEnabled() &&
+                                 ui->checkBoxUseTrayIcon->isChecked());
+  QtPassSettings::setHideOnClose(ui->checkBoxHideOnClose->isEnabled() &&
+                                 ui->checkBoxHideOnClose->isChecked());
+  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isEnabled() &&
+                                    ui->checkBoxStartMinimized->isChecked());
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
@@ -173,6 +229,23 @@ void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }
  * ConfigDialog::setGroupBoxState()
  */
 void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
+
+/**
+ * @brief ConfigDialog::getSecretKeys get list of secret/private keys
+ * @return QStringList keys
+ */
+QStringList ConfigDialog::getSecretKeys() {
+  QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
+  QStringList names;
+
+  if (keys.size() == 0)
+    return names;
+
+  foreach (const UserInfo &sec, keys)
+    names << sec.name;
+
+  return names;
+}
 
 /**
  * @brief ConfigDialog::setGroupBoxState update checkboxes.
@@ -333,8 +406,8 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
 }
 
 /**
- * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a gpg
- * key pair.
+ * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a
+ * gpg key pair.
  * @todo refactor the process to not be entangled so much.
  * @param batch
  * @param dialog
@@ -382,10 +455,9 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
   // Check?
   for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
     QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
-    if (0 != pathItem) {
+    if (nullptr != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
-      if (item == 0) {
-        dbg() << "empty name, should fix in frontend";
+      if (item == nullptr) {
         continue;
       }
       profiles.insert(item->text(), pathItem->text());
@@ -400,9 +472,12 @@ QHash<QString, QString> ConfigDialog::getProfiles() {
 void ConfigDialog::on_addButton_clicked() {
   int n = ui->profileTable->rowCount();
   ui->profileTable->insertRow(n);
+  ui->profileTable->setItem(n, 0, new QTableWidgetItem());
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
   ui->profileTable->selectRow(n);
   ui->deleteButton->setEnabled(true);
+
+  validate();
 }
 
 /**
@@ -427,16 +502,30 @@ void ConfigDialog::on_deleteButton_clicked() {
     ui->profileTable->removeRow(row);
   if (ui->profileTable->rowCount() < 1)
     ui->deleteButton->setEnabled(false);
+
+  validate();
 }
 
 /**
- * @brief ConfigDialog::criticalMessage weapper for showing critical messages in
- * a popup.
+ * @brief ConfigDialog::criticalMessage weapper for showing critical messages
+ * in a popup.
  * @param title
  * @param text
  */
 void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
+}
+
+bool ConfigDialog::isPassOtpAvailable() {
+#ifdef Q_OS_WIN
+  return false;
+#elif defined(__APPLE__)
+  return false;
+#else
+  QFileInfo file("/usr/lib/password-store/extensions/otp.bash");
+
+  return file.exists();
+#endif
 }
 
 /**
@@ -453,14 +542,19 @@ void ConfigDialog::wizard() {
     criticalMessage(
         tr("GnuPG not found"),
         tr("Please install GnuPG on your system.<br>Install "
-           "<strong>gpg</strong> using your favorite package manager<br>or <a "
+           "<strong>gpg</strong> using your favorite package manager<br>or "
+           "<a "
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
            "from GnuPG.org"));
     clean = true;
   }
 
-  QStringList names = mainWindow->getSecretKeys();
+  QStringList names = getSecretKeys();
+
+#ifdef QT_DEBUG
   dbg() << names;
+#endif
+
   if (QFile(gpg).exists() && names.empty()) {
     KeygenDialog d(this);
     if (!d.exec())
@@ -482,14 +576,15 @@ void ConfigDialog::wizard() {
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
       if (ui->checkBoxUseGit->isChecked())
-        mainWindow->executePassGitInit();
+        emit mainWindow->passGitInitNeeded();
       mainWindow->userDialog(passStore);
     }
   }
 
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
+#ifdef QT_DEBUG
     dbg() << ".gpg-id file does not exist";
-
+#endif
     if (!clean) {
       criticalMessage(tr("Password store not initialised"),
                       tr("The folder %1 doesn't seem to be a password store or "
@@ -504,7 +599,9 @@ void ConfigDialog::wizard() {
       passStore = ui->storePath->text();
     }
     if (!QFile(passStore + ".gpg-id").exists()) {
+#ifdef QT_DEBUG
       dbg() << ".gpg-id file still does not exist :/";
+#endif
       // appears not to be store
       // init yes / no ?
       mainWindow->userDialog(passStore);
@@ -513,27 +610,20 @@ void ConfigDialog::wizard() {
 }
 
 /**
- * @brief ConfigDialog::hideOnClose return preference for hiding instead of
- * closing (quitting) application.
- * @return
- */
-bool ConfigDialog::hideOnClose() {
-  return ui->checkBoxHideOnClose->isEnabled() &&
-         ui->checkBoxHideOnClose->isChecked();
-}
-
-/**
  * @brief ConfigDialog::useTrayIcon set preference for using trayicon.
  * Enable or disable related checkboxes accordingly.
  * @param useSystray
  */
 void ConfigDialog::useTrayIcon(bool useSystray) {
-  ui->checkBoxUseTrayIcon->setChecked(useSystray);
-  ui->checkBoxHideOnClose->setEnabled(useSystray);
-  ui->checkBoxStartMinimized->setEnabled(useSystray);
-  if (!useSystray) {
-    ui->checkBoxHideOnClose->setChecked(false);
-    ui->checkBoxStartMinimized->setChecked(false);
+  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+    ui->checkBoxUseTrayIcon->setChecked(useSystray);
+    ui->checkBoxHideOnClose->setEnabled(useSystray);
+    ui->checkBoxStartMinimized->setEnabled(useSystray);
+
+    if (!useSystray) {
+      ui->checkBoxHideOnClose->setChecked(false);
+      ui->checkBoxStartMinimized->setChecked(false);
+    }
   }
 }
 
@@ -684,6 +774,10 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
   ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
   ui->checkBoxTemplateAllFields->setEnabled(
       ui->checkBoxUseTemplate->isChecked());
+}
+
+void ConfigDialog::onProfileTableItemChanged(QTableWidgetItem *item) {
+  validate(item);
 }
 
 /**

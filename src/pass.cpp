@@ -1,7 +1,10 @@
 #include "pass.h"
-#include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 using namespace std;
 using namespace Enums;
@@ -31,7 +34,9 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
 void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
+#ifdef QT_DEBUG
   dbg() << app << args;
+#endif
   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
                readStderr);
 }
@@ -82,8 +87,10 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
       passwd.remove(QRegExp("[\\n\\r]"));
     else {
       passwd.clear();
+#ifdef QT_DEBUG
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
                << "pwgen fail";
+#endif
       //    TODO(bezet): emit critical ?
     }
   } else {
@@ -214,7 +221,9 @@ void Pass::finished(int id, int exitCode, const QString &out,
     emit finishedCopy(out, err);
     break;
   default:
+#ifdef QT_DEBUG
     dbg() << "Unhandled process type" << pid;
+#endif
     break;
   }
 }
@@ -282,6 +291,8 @@ QStringList Pass::getRecipientList(QString for_file) {
  */
 QStringList Pass::getRecipientString(QString for_file, QString separator,
                                      int *count) {
+  Q_UNUSED(separator)
+  Q_UNUSED(count)
   return Pass::getRecipientList(for_file);
 }
 

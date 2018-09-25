@@ -1,8 +1,11 @@
 #include "executor.h"
-#include "debughelper.h"
 #include <QCoreApplication>
 #include <QDir>
 #include <QTextCodec>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 /**
  * @brief Executor::Executor executes external applications
@@ -32,8 +35,11 @@ void Executor::executeNext() {
       if (!i.input.isEmpty()) {
         m_process.waitForStarted(-1);
         QByteArray data = i.input.toUtf8();
-        if (m_process.write(data) != data.length())
+        if (m_process.write(data) != data.length()) {
+#ifdef QT_DEBUG
           dbg() << "Not all data written to process:" << i.id << " " << i.app;
+#endif
+        }
       }
       m_process.closeWriteChannel();
     }
@@ -100,7 +106,9 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   // This will result in bogus "QProcess::FailedToStart" messages,
   // also hiding legitimate errors from the gpg commands.
   if (app.isEmpty()) {
+#ifdef QT_DEBUG
     dbg() << "Trying to execute nothing...";
+#endif
     return;
   }
   QString appPath =
@@ -131,7 +139,9 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     QByteArray data = input.toUtf8();
     internal.waitForStarted(-1);
     if (internal.write(data) != data.length()) {
+#ifdef QT_DEBUG
       dbg() << "Not all input written:" << app;
+#endif
     }
     internal.closeWriteChannel();
   }
@@ -200,8 +210,11 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
       output = codec->toUnicode(m_process.readAllStandardOutput());
     if (i.readStderr || exitCode != 0) {
       err = codec->toUnicode(m_process.readAllStandardError());
-      if (exitCode != 0)
+      if (exitCode != 0) {
+#ifdef QT_DEBUG
         dbg() << exitCode << err;
+#endif
+      }
     }
     emit finished(i.id, exitCode, output, err);
   }

@@ -33,7 +33,8 @@ class MainWindow;
 
     This class could really do with an overhaul.
  */
-class Pass;
+class QDialog;
+class QtPass;
 class TrayIcon;
 class MainWindow : public QMainWindow {
   Q_OBJECT
@@ -42,12 +43,21 @@ public:
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
   ~MainWindow();
-  bool checkConfig();
-  QStringList getSecretKeys();
+
+  void restoreWindow();
   void generateKeyPair(QString, QDialog *);
   void userDialog(QString = "");
   void config();
-  void executePassGitInit();
+
+  void setTextTextBrowser(const QString &text);
+  void setUiElementsEnabled(bool state);
+  void flashText(const QString &text, const bool isError,
+                 const bool isHtml = false);
+
+  const QModelIndex getCurrentTreeViewIndex();
+
+  QDialog *getKeygenDialog() { return this->keygen; }
+  void cleanKeygenDialog();
 
 protected:
   void closeEvent(QCloseEvent *event);
@@ -55,8 +65,28 @@ protected:
   void changeEvent(QEvent *event);
   bool eventFilter(QObject *obj, QEvent *event);
 
+signals:
+  void uiEnabled(bool state);
+  void passShowHandlerFinished(QString output);
+  void passGitInitNeeded();
+  void generateGPGKeyPair(QString batch);
+
 public slots:
   void deselect();
+
+  void messageAvailable(QString message);
+  void critical(QString, QString);
+
+  void executeWrapperStarted();
+  void showStatusMessage(QString msg, int timeout = 2000);
+  void passShowHandler(const QString &);
+  void passOtpHandler(const QString &);
+
+  void onPush();
+  void on_treeView_clicked(const QModelIndex &index);
+
+  void startReencryptPath();
+  void endReencryptPath();
 
 private slots:
   void addPassword();
@@ -64,71 +94,43 @@ private slots:
   void onEdit();
   void onDelete();
   void onOtp();
-  void onPush();
   void onUpdate(bool block = false);
   void onUsers();
   void onConfig();
-  void on_treeView_clicked(const QModelIndex &index);
   void on_treeView_doubleClicked(const QModelIndex &index);
-  void processFinished(const QString &, const QString &);
-  void processError(QProcess::ProcessError);
-  void clearClipboard();
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void messageAvailable(QString message);
   void on_profileBox_currentIndexChanged(QString);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
   void editPassword(const QString &);
   void focusInput();
-  void copyTextToClipboard(const QString &text);
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
-
-  void executeWrapperStarted();
-  void showStatusMessage(QString msg, int timeout);
-  void startReencryptPath();
-  void endReencryptPath();
-  void critical(QString, QString);
-  void passShowHandler(const QString &);
-  void passOtpHandler(const QString &);
-  void passStoreChanged(const QString &, const QString &);
-  void doGitPush();
-
-  void processErrorExit(int exitCode, const QString &);
-
-  void finishedInsert(const QString &, const QString &);
-  void keyGenerationComplete(const QString &p_output, const QString &p_errout);
+  void onTimeoutSearch();
 
 private:
+  QtPass *m_qtPass;
   QScopedPointer<Ui::MainWindow> ui;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
-  QProcess fusedav;
-  QString clippedText;
-  QTimer clearPanelTimer;
-  QTimer clearClipboardTimer;
-  bool freshStart;
+  QTimer clearPanelTimer, searchTimer;
   QDialog *keygen;
   QString currentDir;
-  bool startupPhase;
   TrayIcon *tray;
 
   void initToolBarButtons();
   void initStatusBar();
 
   void updateText();
-  void enableUiElements(bool state);
-  void restoreWindow();
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);
   void setPassword(QString, bool isNew = true);
 
-  void mountWebDav();
   void updateProfileBox();
   void initTrayIcon();
   void destroyTrayIcon();
@@ -136,9 +138,6 @@ private:
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
-  void DisplayInTextBrowser(QString toShow, QString prefix = QString(),
-                            QString postfix = QString());
-  void connectPassSignalHandlers(Pass *pass);
 
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();

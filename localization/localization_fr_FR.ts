@@ -34,6 +34,10 @@
         <translation>Secondes</translation>
     </message>
     <message>
+        <source>Password Behaviour:</source>
+        <translation type="vanished">Comportement du panneau de visualisation des mots de passe :</translation>
+    </message>
+    <message>
         <location/>
         <source>Content panel behaviour:</source>
         <translation>Comportement du panneau de contenu :</translation>
@@ -318,7 +322,17 @@ email</translation>
         <translation>version de &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+71"/>
+        <location filename="../src/configdialog.cpp" line="+47"/>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>No Clipboard</source>
         <translation>Ne pas copier vers le presse-papier</translation>
     </message>
@@ -333,7 +347,7 @@ email</translation>
         <translation>Copier vers le presse-papier à la demande</translation>
     </message>
     <message>
-        <location line="+342"/>
+        <location line="+394"/>
         <source>No profile selected</source>
         <translation>Aucun profil sélectionné</translation>
     </message>
@@ -343,7 +357,7 @@ email</translation>
         <translation>Aucun profil sélectionné pour la suppression</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+52"/>
         <source>GnuPG not found</source>
         <translation>GnuPG n&apos;as pas été trouvé</translation>
     </message>
@@ -353,7 +367,7 @@ email</translation>
         <translation>Merci d&apos;installer GnuPG sur votre système&lt;br&gt;Installez &lt;strong&gt;gpg&lt;/strong&gt; en utilisant votre gestionnaire de paquet préféré&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;téléchargez&lt;/a&gt; le depuis GnuPG.org</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+25"/>
         <source>Create password-store?</source>
         <translation>Créer le magasin de mots de passe ?</translation>
     </message>
@@ -363,7 +377,7 @@ email</translation>
         <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Password store not initialised</source>
         <translation>Magasin de mots de passe non initialisé</translation>
     </message>
@@ -376,19 +390,19 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+73"/>
-        <location line="+200"/>
+        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location line="+202"/>
         <source>Can not edit</source>
         <translation>Impossible d&apos;éditer</translation>
     </message>
     <message>
-        <location line="-199"/>
-        <location line="+200"/>
+        <location line="-201"/>
+        <location line="+202"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Impossible de lire la clé de chiffrement à utiliser, le fichier .gpg-id est manquant ou corrompu.</translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-123"/>
         <source>Cannot update</source>
         <translation>Impossible de mettre à jour</translation>
     </message>
@@ -416,7 +430,7 @@ Vous ne pourrez pas déchiffrer les mots de passe nouvellement ajoutés !</trans
     </message>
     <message>
         <location line="+4"/>
-        <location line="+81"/>
+        <location line="+85"/>
         <source>Updating password-store</source>
         <translation>Mise à jour du magasin de mots de passe</translation>
     </message>
@@ -497,7 +511,7 @@ Expire-Date: 0
         <translation>Pour les options avancées, veuillez consulter le &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuel de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+126"/>
+        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
         <translation>Nom invalide</translation>
     </message>
@@ -530,8 +544,12 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <source>Add</source>
+        <translation type="vanished">Ajouter</translation>
+    </message>
+    <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1231"/>
+        <location filename="../src/mainwindow.cpp" line="+902"/>
         <source>Edit</source>
         <translation>Editer</translation>
     </message>
@@ -625,126 +643,155 @@ p, li { white-space: pre-wrap; }
         <translation>Bienvenu dans QtPass</translation>
     </message>
     <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; est une interface graphique pour &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, le gestionnaire canonique unix pour mots de passe.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Veuillez signaler toute &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;difficulté&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; que vous pourriez rencontrer en utilisant ce logiciel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Code source&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <location/>
         <source>Search Password</source>
         <translation>Chercher un mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-1094"/>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="-708"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bienvenue sur QtPass %1</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <source>Add Password</source>
+        <translation type="vanished">Ajouter mot de passe</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation type="vanished">Ajouter dossier</translation>
+    </message>
+    <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Impossible de se connecter au WebDAV :
+        <translation type="vanished">Impossible de se connecter au WebDAV :
 </translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>Mot de passe WebDAV QtPass</translation>
+        <translation type="vanished">Mot de passe WebDAV QtPass</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Entrez un mot de passe pour vous connecter au WebDAV :</translation>
+        <translation type="vanished">Entrez un mot de passe pour vous connecter au WebDAV :</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav a quitté inopinément
+        <translation type="vanished">fusedav a quitté inopinément
 </translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Impossible de démarrer fusedav pour se connecter au WebDAV :
+        <translation type="vanished">Impossible de démarrer fusedav pour se connecter au WebDAV :
 </translation>
     </message>
     <message>
-        <location line="+170"/>
+        <location line="+95"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Mise à jour du magasin de mots de passe</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <source>Can not edit</source>
+        <translation type="vanished">Impossible d&apos;éditer</translation>
+    </message>
+    <message>
+        <source>Selected password file does not exist, not able to edit</source>
+        <translation type="vanished">Le fichier de mots de passe sélectionné n&apos;existe pas, impossible de le modifier</translation>
+    </message>
+    <message>
+        <source>Password hidden</source>
+        <translation type="vanished">Mot de passe caché</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Content hidden</source>
         <translation>Contenu caché</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+804"/>
+        <location line="+641"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location line="-779"/>
+        <location line="-617"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+82"/>
         <source>Clipboard cleared</source>
-        <translation>Presse-papiers vidé</translation>
+        <translation type="vanished">Presse-papiers vidé</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation>Presse-papiers non vidé</translation>
+        <translation type="vanished">Presse-papiers non vidé</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Password and Content hidden</source>
         <translation>Mot de passe et contenu cachés</translation>
     </message>
     <message>
-        <location line="+66"/>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+69"/>
         <source>Looking for: %1</source>
         <translation>Recherche de : %1</translation>
     </message>
     <message>
-        <location line="+74"/>
-        <location line="+403"/>
+        <location line="+97"/>
+        <location line="+349"/>
         <source>New file</source>
         <translation>Nouveau fichier</translation>
     </message>
     <message>
-        <location line="-402"/>
+        <location line="-348"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -765,15 +812,25 @@ p, li { white-space: pre-wrap; }
         <translation>Êtes-vous certain de vouloir supprimer %1%2?</translation>
     </message>
     <message>
-        <location line="+355"/>
+        <location line="+301"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-356"/>
+        <source>New password file:
+(Will be placed in %1 )</source>
+        <translation type="vanished">Enregistrement d&apos;un nouveau mot de passe :
+(Placé dans %1)</translation>
+    </message>
+    <message>
+        <location line="-302"/>
         <source>Delete password?</source>
         <translation>Supprimer le mot de passe ?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="vanished">Êtes-vous sûr de vouloir supprimer %1 ?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -781,32 +838,36 @@ p, li { white-space: pre-wrap; }
         <translation>Supprimer le dossier ?</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation type="vanished">Êtes-vous certain de vouloir supprimer %1%2</translation>
+    </message>
+    <message>
+        <source> and whole content</source>
+        <translation type="vanished"> et tout son contenu ?</translation>
+    </message>
+    <message>
         <source>Can not get key list</source>
-        <translation>Impossible de récupérer la liste de clés</translation>
+        <translation type="vanished">Impossible de récupérer la liste de clés</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
+        <translation type="vanished">Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
     </message>
     <message>
-        <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation>Clé introuvable dans le trousseau de clés</translation>
+        <translation type="vanished">Clé introuvable dans le trousseau de clés</translation>
     </message>
     <message>
-        <location line="+56"/>
         <source>Generating GPG key pair</source>
-        <translation>Génération d&apos;une paire de clés GPG</translation>
+        <translation type="vanished">Génération d&apos;une paire de clés GPG</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+116"/>
         <source>Profile changed to %1</source>
         <translation>Profil sélectionné : %1</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+127"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -823,15 +884,20 @@ p, li { white-space: pre-wrap; }
         <translation>Ajouter un mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="+106"/>
+        <source>New Folder:
+(Will be placed in %1 )</source>
+        <translation type="vanished">Nouveau dossier :
+(Placé dans %1)</translation>
+    </message>
+    <message>
         <source>Copied to clipboard</source>
-        <translation>copié dans le presse-papiers</translation>
+        <translation type="vanished">copié dans le presse-papiers</translation>
     </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+94"/>
+        <location filename="../src/pass.cpp" line="+101"/>
         <source>No characters chosen</source>
         <translation>Aucun caractère sélectionné</translation>
     </message>
@@ -898,6 +964,90 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>QtPass</name>
+    <message>
+        <location filename="../src/qtpass.cpp" line="+136"/>
+        <source>Generating GPG key pair</source>
+        <translation type="unfinished">Génération d&apos;une paire de clés GPG</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished">Impossible de se connecter au WebDAV :
+</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished">Mot de passe WebDAV QtPass</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished">Entrez un mot de passe pour vous connecter au WebDAV :</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished">fusedav a quitté inopinément
+</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished">Impossible de démarrer fusedav pour se connecter au WebDAV :
+</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QProcess::FailedToStart</source>
+        <translation type="unfinished">QProcess::FailedToStart</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Crashed</source>
+        <translation type="unfinished">QProcess::Crashed</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Timedout</source>
+        <translation type="unfinished">QProcess::Timedout</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::ReadError</source>
+        <translation type="unfinished">QProcess::ReadError</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::WriteError</source>
+        <translation type="unfinished">QProcess::WriteError</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::UnknownError</source>
+        <translation type="unfinished">QProcess::UnknownError</translation>
+    </message>
+    <message>
+        <location line="+127"/>
+        <source>Clipboard cleared</source>
+        <translation type="unfinished">Presse-papiers vidé</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Clipboard not cleared</source>
+        <translation type="unfinished">Presse-papiers non vidé</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished">copié dans le presse-papiers</translation>
+    </message>
+</context>
+<context>
     <name>StoreModel</name>
     <message>
         <location filename="../src/storemodel.cpp" line="+246"/>
@@ -913,7 +1063,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+66"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation>&amp;Afficher</translation>
     </message>
@@ -972,7 +1122,22 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
         <translation>Afficher les clés inutilisables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+78"/>
+        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <source>Can not get key list</source>
+        <translation type="unfinished">Impossible de récupérer la liste de clés</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="unfinished">Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Key not found in keyring</source>
+        <translation type="unfinished">Clé introuvable dans le trousseau de clés</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>created</source>
         <translation>créé</translation>
     </message>

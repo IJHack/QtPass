@@ -316,7 +316,17 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+71"/>
+        <location filename="../src/configdialog.cpp" line="+47"/>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -331,7 +341,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+342"/>
+        <location line="+394"/>
         <source>No profile selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -341,7 +351,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+52"/>
         <source>GnuPG not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -351,7 +361,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+25"/>
         <source>Create password-store?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -361,7 +371,7 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Password store not initialised</source>
         <translation type="unfinished"></translation>
     </message>
@@ -374,19 +384,19 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+73"/>
-        <location line="+200"/>
+        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location line="+202"/>
         <source>Can not edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-199"/>
-        <location line="+200"/>
+        <location line="-201"/>
+        <location line="+202"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-123"/>
         <source>Cannot update</source>
         <translation type="unfinished"></translation>
     </message>
@@ -413,7 +423,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+81"/>
+        <location line="+85"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>
     </message>
@@ -480,7 +490,7 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+126"/>
+        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -526,7 +536,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1231"/>
+        <location filename="../src/mainwindow.cpp" line="+902"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -613,118 +623,50 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-1094"/>
+        <location filename="../src/mainwindow.cpp" line="-708"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+106"/>
-        <source>Failed to connect WebDAV:
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>fusedav exited unexpectedly
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Failed to start fusedav to connect WebDAV:
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+170"/>
+        <location line="+95"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+94"/>
         <source>Content hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+804"/>
+        <location line="+641"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-779"/>
+        <location line="-617"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+82"/>
-        <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Password and Content hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+66"/>
-        <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
+        <location line="+69"/>
         <source>Looking for: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+74"/>
-        <location line="+403"/>
+        <location line="+97"/>
+        <location line="+349"/>
         <source>New file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-402"/>
+        <location line="-348"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -755,32 +697,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+46"/>
-        <source>Can not get key list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+56"/>
-        <source>Generating GPG key pair</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
+        <location line="+115"/>
         <source>Profile changed to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+127"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -802,16 +724,11 @@ p, li { white-space: pre-wrap; }
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location line="+49"/>
-        <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+94"/>
+        <location filename="../src/pass.cpp" line="+101"/>
         <source>No characters chosen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -878,6 +795,87 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>QtPass</name>
+    <message>
+        <location filename="../src/qtpass.cpp" line="+136"/>
+        <source>Generating GPG key pair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QProcess::FailedToStart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Crashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Timedout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::ReadError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::WriteError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::UnknownError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+127"/>
+        <source>Clipboard cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Clipboard not cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StoreModel</name>
     <message>
         <location filename="../src/storemodel.cpp" line="+246"/>
@@ -893,7 +891,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+66"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation type="unfinished"></translation>
     </message>
@@ -949,7 +947,22 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+78"/>
+        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <source>Can not get key list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Key not found in keyring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>created</source>
         <translation type="unfinished"></translation>
     </message>

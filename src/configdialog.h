@@ -20,6 +20,7 @@ class ConfigDialog;
 */
 class MainWindow;
 class QCloseEvent;
+class QTableWidgetItem;
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
@@ -33,7 +34,6 @@ public:
   QHash<QString, QString> getProfiles();
   void wizard();
   void genKey(QString, QDialog *);
-  bool hideOnClose();
   void useTrayIcon(bool useTrayIdon);
   void useGit(bool useGit);
   void useOtp(bool useOtp);
@@ -66,9 +66,12 @@ private slots:
   void on_checkBoxUseGit_clicked();
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
+  void onProfileTableItemChanged(QTableWidgetItem *item);
 
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
+
+  QStringList getSecretKeys();
 
   void setGitPath(QString);
   void setProfiles(QHash<QString, QString>, QString);
@@ -80,6 +83,9 @@ private:
   // QMessageBox::critical with hack to avoid crashes with
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
+
+  bool isPassOtpAvailable();
+  void validate(QTableWidgetItem *item = nullptr);
 
   MainWindow *mainWindow;
 };

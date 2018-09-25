@@ -17,13 +17,17 @@
 
 **Closed issues:**
 
+- Compilation error in \(K\)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
+- We should select a C++ std too [\#372](https://github.com/IJHack/QtPass/issues/372)
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 
 **Merged pull requests:**
 
+- Dutch \(nl\) translation improvements [\#418](https://github.com/IJHack/QtPass/pull/418) ([equaeghe](https://github.com/equaeghe))
+- Bugfixes [\#413](https://github.com/IJHack/QtPass/pull/413) ([rdoeffinger](https://github.com/rdoeffinger))
 - pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
 - \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
 
