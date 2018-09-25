@@ -83,13 +83,21 @@ $(function() {
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
+<li>Compilation error in (K)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 <a href="https://github.com/IJHack/QtPass/issues/408">#408</a></li>
 <li>Version information string/s <a href="https://github.com/IJHack/QtPass/issues/398">#398</a></li>
+<li>We should select a C++ std too <a href="https://github.com/IJHack/QtPass/issues/372">#372</a></li>
 <li>We should select a minimum Qt version <a href="https://github.com/IJHack/QtPass/issues/371">#371</a></li>
+<li>Problem with GNUpg not found on MacOS <a href="https://github.com/IJHack/QtPass/issues/362">#362</a></li>
 <li>Compiling for Linux Mint 18 Ubuntu 16 <a href="https://github.com/IJHack/QtPass/issues/357">#357</a></li>
 <li>[OS X] Password input dialog suddenly stopped popping up <a href="https://github.com/IJHack/QtPass/issues/191">#191</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
+<li>Tested working on Mac Os HS with pinentry-mac <a href="https://github.com/IJHack/QtPass/pull/419">#419</a> (<a href="https://github.com/riccardocossu">riccardocossu</a>)</li>
+<li>Dutch (nl) translation improvements <a href="https://github.com/IJHack/QtPass/pull/418">#418</a> (<a href="https://github.com/equaeghe">equaeghe</a>)</li>
+<li>Bugfixes <a href="https://github.com/IJHack/QtPass/pull/413">#413</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
+<li>pwgen: fix inverted "Generate ... less secure passwords" checkbox <a href="https://github.com/IJHack/QtPass/pull/409">#409</a> (<a href="https://github.com/ahippo">ahippo</a>)</li>
+<li>Continuing refactoring <a href="https://github.com/IJHack/QtPass/pull/407">#407</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
 <li>#390 make box cheched when opening a folder users panel <a href="https://github.com/IJHack/QtPass/pull/403">#403</a> (<a href="https://github.com/kenji21">kenji21</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.2.3">v1.2.3</a> (2018-06-04)</h2>
@@ -139,7 +147,7 @@ $(function() {
 <li>Can't install on OS X Sierra <a href="https://github.com/IJHack/QtPass/issues/337">#337</a></li>
 <li>No icon on MacOS <a href="https://github.com/IJHack/QtPass/issues/333">#333</a></li>
 <li>Font and spacing used for URL links on right in main window absurdly large <a href="https://github.com/IJHack/QtPass/issues/329">#329</a></li>
-<li>QtPass don't display all lines with templates <a href="https://github.com/IJHack/QtPass/issues/273">#273</a></li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> don't display all lines with templates <a href="https://github.com/IJHack/QtPass/issues/273">#273</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
@@ -201,7 +209,7 @@ $(function() {
 <li>Missing icons since split to static lib <a href="https://github.com/IJHack/QtPass/issues/325">#325</a></li>
 <li>"-session XXX" upon session restore taken as search string <a href="https://github.com/IJHack/QtPass/issues/320">#320</a></li>
 <li>Instructions to install it on OSX maybe outdated <a href="https://github.com/IJHack/QtPass/issues/315">#315</a></li>
-<li>QtPass hangs when trying to decrypt entry <a href="https://github.com/IJHack/QtPass/issues/313">#313</a></li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> hangs when trying to decrypt entry <a href="https://github.com/IJHack/QtPass/issues/313">#313</a></li>
 <li>Unable to locate package (Linux Mint 17.3) <a href="https://github.com/IJHack/QtPass/issues/310">#310</a></li>
 <li>Git commit signing <a href="https://github.com/IJHack/QtPass/issues/303">#303</a></li>
 <li>Add to Linux brew <a href="https://github.com/IJHack/QtPass/issues/301">#301</a></li>
@@ -250,7 +258,7 @@ $(function() {
 <li>Clickable url's + open in default browser <a href="https://github.com/IJHack/QtPass/issues/226">#226</a></li>
 <li>Deselecting password re-opens the file <a href="https://github.com/IJHack/QtPass/issues/221">#221</a></li>
 <li>Copy password button should include tooltip to say why, when disabled <a href="https://github.com/IJHack/QtPass/issues/214">#214</a></li>
-<li>QtPass starts by searching for -psn_0_12345 on macOS <a href="https://github.com/IJHack/QtPass/issues/213">#213</a></li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> starts by searching for -psn_0_12345 on macOS <a href="https://github.com/IJHack/QtPass/issues/213">#213</a></li>
 <li>Copy after timeout <a href="https://github.com/IJHack/QtPass/issues/189">#189</a></li>
 <li>Feature Request: Copy template fields with button <a href="https://github.com/IJHack/QtPass/issues/133">#133</a></li>
 <li>Cannot create top level folder <a href="https://github.com/IJHack/QtPass/issues/127">#127</a></li>
@@ -266,7 +274,7 @@ $(function() {
 <li>Hangs forever on Generate GnuPG keypair <a href="https://github.com/IJHack/QtPass/issues/215">#215</a></li>
 <li>Copy after timeout <a href="https://github.com/IJHack/QtPass/issues/189">#189</a></li>
 <li>recent change to <a class="el" href="passworddialog_8cpp.html">passworddialog.cpp</a> <a href="https://github.com/IJHack/QtPass/issues/188">#188</a></li>
-<li>Re-opening entry in QtPass on Windows does not put login or url values back in the right place <a href="https://github.com/IJHack/QtPass/issues/183">#183</a></li>
+<li>Re-opening entry in <a class="el" href="class_qt_pass.html">QtPass</a> on Windows does not put login or url values back in the right place <a href="https://github.com/IJHack/QtPass/issues/183">#183</a></li>
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
@@ -289,19 +297,19 @@ $(function() {
 <p><b>Implemented enhancements:</b></p>
 <ul>
 <li>I translated for Simplified Chinese. <a href="https://github.com/IJHack/QtPass/issues/208">#208</a></li>
-<li>Short fullname hangs QtPass keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a></li>
+<li>Short fullname hangs <a class="el" href="class_qt_pass.html">QtPass</a> keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a></li>
 <li>More options for password generation <a href="https://github.com/IJHack/QtPass/issues/98">#98</a></li>
 <li>Git hangs on windows <a href="https://github.com/IJHack/QtPass/issues/71">#71</a></li>
 </ul>
 <p><b>Fixed bugs:</b></p>
 <ul>
 <li>view box is trimming whitespace <a href="https://github.com/IJHack/QtPass/issues/210">#210</a></li>
-<li>Short fullname hangs QtPass keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a></li>
+<li>Short fullname hangs <a class="el" href="class_qt_pass.html">QtPass</a> keypair generation process for infinite time <a href="https://github.com/IJHack/QtPass/issues/202">#202</a></li>
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
 <li>PREFIX is now really a prefix <a href="https://github.com/IJHack/QtPass/issues/185">#185</a></li>
-<li>QtPass, git and windows <a href="https://github.com/IJHack/QtPass/issues/173">#173</a></li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a>, git and windows <a href="https://github.com/IJHack/QtPass/issues/173">#173</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
@@ -508,7 +516,7 @@ $(function() {
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
-<li>When QtPass starts, focus search input box <a href="https://github.com/IJHack/QtPass/issues/89">#89</a></li>
+<li>When <a class="el" href="class_qt_pass.html">QtPass</a> starts, focus search input box <a href="https://github.com/IJHack/QtPass/issues/89">#89</a></li>
 <li>Clear the password display after some time <a href="https://github.com/IJHack/QtPass/issues/86">#86</a></li>
 <li>Auto push/pull <a href="https://github.com/IJHack/QtPass/issues/83">#83</a></li>
 <li>qtpass doesn't commit deletes to git <a href="https://github.com/IJHack/QtPass/issues/81">#81</a></li>
@@ -587,7 +595,7 @@ $(function() {
 <p><a href="https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4">Full Changelog</a></p>
 <p><b>Closed issues:</b></p>
 <ul>
-<li>QtPass does not detect GPG installation <a href="https://github.com/IJHack/QtPass/issues/50">#50</a></li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> does not detect GPG installation <a href="https://github.com/IJHack/QtPass/issues/50">#50</a></li>
 <li>Cannot create new folders <a href="https://github.com/IJHack/QtPass/issues/48">#48</a></li>
 <li>Better error handling when no pass or gpg found initially <a href="https://github.com/IJHack/QtPass/issues/13">#13</a></li>
 </ul>

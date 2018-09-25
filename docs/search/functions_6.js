@@ -1,6 +1,7 @@
 var searchData=
 [
   ['generate_5fb',['Generate_b',['../class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e',1,'Pass']]],
+  ['generategpgkeypair',['generateGPGKeyPair',['../class_main_window.html#a7359d38511b88441e433e6d2bb11ef55',1,'MainWindow']]],
   ['generategpgkeys',['GenerateGPGKeys',['../class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f',1,'Pass']]],
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['generaterandompassword',['generateRandomPassword',['../class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf',1,'Pass']]],
@@ -10,6 +11,7 @@ var searchData=
   ['getautoclearseconds',['getAutoclearSeconds',['../class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe',1,'QtPassSettings']]],
   ['getclipboardtype',['getClipBoardType',['../class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc',1,'QtPassSettings']]],
   ['getclipboardtyperaw',['getClipBoardTypeRaw',['../class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021',1,'QtPassSettings']]],
+  ['getcurrenttreeviewindex',['getCurrentTreeViewIndex',['../class_main_window.html#aae6a2c96a362682d7f445731b1faf58d',1,'MainWindow']]],
   ['getdir',['getDir',['../class_util.html#a5c6a579524d37c6830feb672595f2a1d',1,'Util']]],
   ['getgeometry',['getGeometry',['../class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154',1,'QtPassSettings']]],
   ['getgitexecutable',['getGitExecutable',['../class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6',1,'QtPassSettings']]],
@@ -18,6 +20,7 @@ var searchData=
   ['getimitatepass',['getImitatePass',['../class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f',1,'QtPassSettings']]],
   ['getinstance',['getInstance',['../class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934',1,'QtPassSettings']]],
   ['getisallocated',['getIsAllocated',['../class_tray_icon.html#a801f0a9d01764cd53c2d192784a453b4',1,'TrayIcon']]],
+  ['getkeygendialog',['getKeygenDialog',['../class_main_window.html#a361e76d7fee9be9f6ec1133660379be1',1,'MainWindow']]],
   ['getnamedvalues',['getNamedValues',['../class_file_content.html#ab1a615b719c41f631821e06009c530a2',1,'FileContent']]],
   ['getpass',['getPass',['../class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64',1,'QtPassSettings']]],
   ['getpassexecutable',['getPassExecutable',['../class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a',1,'QtPassSettings']]],
@@ -34,7 +37,6 @@ var searchData=
   ['getrecipientstring',['getRecipientString',['../class_pass.html#a4566c370e65b22d5cdc132f72b393808',1,'Pass']]],
   ['getremainingdata',['getRemainingData',['../class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a',1,'FileContent']]],
   ['getsavestate',['getSavestate',['../class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2',1,'QtPassSettings']]],
-  ['getsecretkeys',['getSecretKeys',['../class_main_window.html#a38957de181a576efc28befeb7c47abec',1,'MainWindow']]],
   ['getsize',['getSize',['../class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0',1,'QtPassSettings']]],
   ['gettexttocopy',['getTextToCopy',['../class_q_push_button_with_clipboard.html#a6ffc2d84fb3bcf62a2a3a4c4bc238d7f',1,'QPushButtonWithClipboard']]],
   ['getversion',['getVersion',['../class_qt_pass_settings.html#a060312f3b359d39beb86c176ab6fb0e0',1,'QtPassSettings']]],

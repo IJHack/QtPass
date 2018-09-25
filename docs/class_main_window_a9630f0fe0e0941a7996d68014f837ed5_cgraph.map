@@ -1,0 +1,12 @@
+<map id="MainWindow::restoreWindow" name="MainWindow::restoreWindow">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" title="QtPassSettings::getGeometry" alt="" coords="258,5,455,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" title="QtPassSettings::getSavestate" alt="" coords="257,55,456,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" title="QtPassSettings::getPos" alt="" coords="275,104,438,129"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" title="QtPassSettings::getSize" alt="" coords="274,153,439,179"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" title="QtPassSettings::isMaximized" alt="" coords="260,203,454,228"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title="QtPassSettings::isAlways\lOnTop" alt="" coords="270,252,443,291"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="254,315,459,340"/>
+<area shape="rect" id="node10" href="$class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" title="QtPass::isFreshStart" alt="" coords="284,364,429,389"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title="QtPassSettings::isStartMinimized" alt="" coords="247,413,466,439"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="514,179,703,204"/>
+</map>

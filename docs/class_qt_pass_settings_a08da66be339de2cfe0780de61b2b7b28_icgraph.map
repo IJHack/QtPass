@@ -1,3 +1,5 @@
 <map id="QtPassSettings::isUseAutoclearPanel" name="QtPassSettings::isUseAutoclearPanel">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="264,12,445,37"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="280,5,461,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="264,55,477,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="270,104,471,129"/>
 </map>

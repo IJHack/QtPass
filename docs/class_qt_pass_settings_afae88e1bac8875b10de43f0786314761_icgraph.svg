@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 342.24 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::isHidePassword</title>
-<!-- Node366 -->
+<!-- Node403 -->
 <g id="node1" class="node">
-<title>Node366</title>
+<title>Node403</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 162.1719,-18.5 162.1719,-.5 0,-.5"/>
 <text text-anchor="middle" x="81.0859" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isHidePassword</text>
 </g>
-<!-- Node367 -->
+<!-- Node404 -->
 <g id="node2" class="node">
-<title>Node367</title>
+<title>Node404</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="198.1719,-.5 198.1719,-18.5 334.2402,-18.5 334.2402,-.5 198.1719,-.5"/>
 <text text-anchor="middle" x="266.2061" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node366&#45;&gt;Node367 -->
+<!-- Node403&#45;&gt;Node404 -->
 <g id="edge1" class="edge">
-<title>Node366&#45;&gt;Node367</title>
+<title>Node403&#45;&gt;Node404</title>
 <path fill="none" stroke="#191970" d="M172.4072,-9.5C181.0531,-9.5 189.7135,-9.5 198.0864,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="172.2824,-6.0001 162.2823,-9.5 172.2823,-13.0001 172.2824,-6.0001"/>
 </g>

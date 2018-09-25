@@ -1,8 +1,0 @@
-<map id="MainWindow::executePassGitInit" name="MainWindow::executePassGitInit">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="270,29,438,55"/>
-<area shape="rect" id="node7" href="$class_pass.html#a26bec7c69e7c35ccb67f8057db90825e" title="Pass::GitInit" alt="" coords="307,79,401,104"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="618,5,802,31"/>
-<area shape="rect" id="node5" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="486,55,562,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="858,31,1047,56"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="610,55,810,80"/>
-</map>

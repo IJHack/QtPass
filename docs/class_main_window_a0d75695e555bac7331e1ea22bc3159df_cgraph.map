@@ -1,0 +1,20 @@
+<map id="MainWindow::passShowHandler" name="MainWindow::passShowHandler">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="531,5,739,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="524,56,747,81"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="543,105,727,144"/>
+<area shape="rect" id="node6" href="$class_file_content.html#abef563f253a931af308232c66e032153" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="305,157,435,183"/>
+<area shape="rect" id="node7" href="$class_file_content.html#aab89c859cfde0d9d1ed8de89e07ca231" title="FileContent::getPassword" alt="" coords="283,207,457,232"/>
+<area shape="rect" id="node8" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="290,256,450,281"/>
+<area shape="rect" id="node15" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="808,368,1013,393"/>
+<area shape="rect" id="node16" href="$class_file_content.html#ab1a615b719c41f631821e06009c530a2" title="FileContent::getNamedValues" alt="" coords="271,357,469,383"/>
+<area shape="rect" id="node17" href="$class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a" title="FileContent::getRemainingData" alt="" coords="267,407,474,432"/>
+<area shape="rect" id="node18" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="530,440,740,479"/>
+<area shape="rect" id="node19" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. " alt="" coords="275,508,466,547"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="1073,192,1262,217"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="522,187,749,212"/>
+<area shape="rect" id="node11" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="537,256,733,281"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="812,157,1010,196"/>
+<area shape="rect" id="node12" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="806,220,1015,245"/>
+<area shape="rect" id="node13" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar. " alt="" coords="797,269,1025,295"/>
+<area shape="rect" id="node14" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="805,319,1016,344"/>
+</map>

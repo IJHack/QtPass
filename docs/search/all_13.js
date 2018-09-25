@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ui',['Ui',['../namespace_ui.html',1,'']]],
+  ['uienabled',['uiEnabled',['../class_main_window.html#a4db6aa348e7cafae5cc63539fbdfd18b',1,'MainWindow']]],
   ['updateenv',['updateEnv',['../class_pass.html#ac679a086b289cdb9245906948ba0458a',1,'Pass']]],
   ['url',['url',['../namespaceavatars.html#aac8cce90950a6ba880d509eb4304b9a9',1,'avatars']]],
   ['useautoclear',['useAutoclear',['../class_settings_constants.html#a4444d3b784dfd5156d5fdd0d16fb4cd7',1,'SettingsConstants::useAutoclear()'],['../class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91',1,'ConfigDialog::useAutoclear()']]],
@@ -13,7 +14,7 @@ var searchData=
   ['userdialog',['userDialog',['../class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9',1,'MainWindow']]],
   ['userinfo',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
   ['userinfo_2eh',['userinfo.h',['../userinfo_8h.html',1,'']]],
-  ['usersdialog',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a927bd252b8ae90c9b55fa9aeaaa00d2e',1,'UsersDialog::UsersDialog()']]],
+  ['usersdialog',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07',1,'UsersDialog::UsersDialog()']]],
   ['usersdialog_2ecpp',['usersdialog.cpp',['../usersdialog_8cpp.html',1,'']]],
   ['usersdialog_2eh',['usersdialog.h',['../usersdialog_8h.html',1,'']]],
   ['useselection',['useSelection',['../class_settings_constants.html#a0d0ae02026d7f4d75430d36987a3da3f',1,'SettingsConstants::useSelection()'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],

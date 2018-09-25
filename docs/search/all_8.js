@@ -18,6 +18,7 @@ var searchData=
   ['isdir',['isDir',['../structdrag_and_drop_info_password_store.html#ac3b9e270657587c266b4eca1500a4c0d',1,'dragAndDropInfoPasswordStore']]],
   ['isdisplayedwhenstopped',['isDisplayedWhenStopped',['../class_q_progress_indicator.html#a46ab1d0b77a96eea451e27c43e020286',1,'QProgressIndicator']]],
   ['isfile',['isFile',['../structdrag_and_drop_info_password_store.html#a879e07495ff6c05f797adedcc09e4b3d',1,'dragAndDropInfoPasswordStore']]],
+  ['isfreshstart',['isFreshStart',['../class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71',1,'QtPass']]],
   ['ishidecontent',['isHideContent',['../class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838',1,'QtPassSettings']]],
   ['ishideonclose',['isHideOnClose',['../class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e',1,'QtPassSettings']]],
   ['ishidepassword',['isHidePassword',['../class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761',1,'QtPassSettings']]],

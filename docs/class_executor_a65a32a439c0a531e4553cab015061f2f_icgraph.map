@@ -2,7 +2,6 @@
 <area shape="rect" id="node2" href="$class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76" title="Executor::executeBlocking blocking version of the executor. " alt="" coords="232,5,410,31"/>
 <area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="257,55,385,80"/>
 <area shape="rect" id="node4" href="$class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users. " alt="" coords="269,104,373,129"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a38957de181a576efc28befeb7c47abec" title="MainWindow::getSecretKeys get list of secret/private keys. " alt="" coords="458,79,650,104"/>
-<area shape="rect" id="node7" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="502,128,606,153"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="698,79,842,104"/>
+<area shape="rect" id="node5" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="493,79,597,104"/>
+<area shape="rect" id="node6" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="458,128,632,153"/>
 </map>

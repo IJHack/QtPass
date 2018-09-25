@@ -1,4 +1,6 @@
 <map id="QtPassSettings::getClipBoardTypeRaw" name="QtPassSettings::getClipBoardTypeRaw">
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="274,5,455,31"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="251,55,478,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="526,55,686,80"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="734,55,947,80"/>
 </map>

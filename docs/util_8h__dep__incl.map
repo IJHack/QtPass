@@ -1,12 +1,13 @@
 <map id="src/util.h" name="src/util.h">
-<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="282,85,402,111"/>
-<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="348,239,488,264"/>
-<area shape="rect" id="node8" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="479,85,575,111"/>
-<area shape="rect" id="node9" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="600,85,753,111"/>
-<area shape="rect" id="node10" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="777,85,862,111"/>
-<area shape="rect" id="node11" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="886,79,1004,117"/>
-<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="120,165,247,191"/>
-<area shape="rect" id="node7" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="271,165,405,191"/>
+<area shape="rect" id="node2" href="$storemodel_8h.html" title="src/storemodel.h" alt="" coords="342,85,462,111"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="432,239,572,264"/>
+<area shape="rect" id="node9" href="$pass_8cpp.html" title="src/pass.cpp" alt="" coords="539,85,635,111"/>
+<area shape="rect" id="node10" href="$qtpasssettings_8cpp.html" title="src/qtpasssettings.cpp" alt="" coords="660,85,813,111"/>
+<area shape="rect" id="node11" href="$util_8cpp.html" title="src/util.cpp" alt="" coords="837,85,922,111"/>
+<area shape="rect" id="node12" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="946,79,1064,117"/>
+<area shape="rect" id="node3" href="$mainwindow_8h.html" title="src/mainwindow.h" alt="" coords="180,165,307,191"/>
+<area shape="rect" id="node8" href="$storemodel_8cpp.html" title="src/storemodel.cpp" alt="" coords="331,165,465,191"/>
 <area shape="rect" id="node4" href="$main_8cpp.html" title="main/main.cpp" alt="" coords="5,239,113,264"/>
 <area shape="rect" id="node5" href="$configdialog_8cpp.html" title="src/configdialog.cpp" alt="" coords="138,239,277,264"/>
+<area shape="rect" id="node7" href="$qtpass_8cpp.html" title="src/qtpass.cpp" alt="" coords="300,239,408,264"/>
 </map>

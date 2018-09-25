@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 448.69 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ImitatePass::Move</title>
-<!-- Node44 -->
+<!-- Node46 -->
 <g id="node1" class="node">
-<title>Node44</title>
+<title>Node46</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 98.251,-18.5 98.251,-.5 0,-.5"/>
 <text text-anchor="middle" x="49.1255" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Move</text>
 </g>
-<!-- Node45 -->
+<!-- Node47 -->
 <g id="node2" class="node">
-<title>Node45</title>
+<title>Node47</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
 <polygon fill="none" stroke="#000000" points="134.251,-.5 134.251,-18.5 262.5117,-18.5 262.5117,-.5 134.251,-.5"/>
 <text text-anchor="middle" x="198.3813" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
 </g>
 </g>
-<!-- Node44&#45;&gt;Node45 -->
+<!-- Node46&#45;&gt;Node47 -->
 <g id="edge1" class="edge">
-<title>Node44&#45;&gt;Node45</title>
+<title>Node46&#45;&gt;Node47</title>
 <path fill="none" stroke="#191970" d="M98.4111,-9.5C106.6502,-9.5 115.357,-9.5 124.0582,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="124.2418,-13.0001 134.2418,-9.5 124.2417,-6.0001 124.2418,-13.0001"/>
 </g>
-<!-- Node46 -->
+<!-- Node48 -->
 <g id="node3" class="node">
-<title>Node46</title>
+<title>Node48</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="298.5117,-.5 298.5117,-18.5 440.6934,-18.5 440.6934,-.5 298.5117,-.5"/>
 <text text-anchor="middle" x="369.6025" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node45&#45;&gt;Node46 -->
+<!-- Node47&#45;&gt;Node48 -->
 <g id="edge2" class="edge">
-<title>Node45&#45;&gt;Node46</title>
+<title>Node47&#45;&gt;Node48</title>
 <path fill="none" stroke="#191970" d="M262.6249,-9.5C271.014,-9.5 279.6955,-9.5 288.3183,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="288.3927,-13.0001 298.3927,-9.5 288.3926,-6.0001 288.3927,-13.0001"/>
 </g>

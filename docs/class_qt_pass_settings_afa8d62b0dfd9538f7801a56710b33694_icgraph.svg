@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 326.13 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::isAddGPGId</title>
-<!-- Node325 -->
+<!-- Node360 -->
 <g id="node1" class="node">
-<title>Node325</title>
+<title>Node360</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 146.0586,-36.5 146.0586,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="73.0293" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAddGPGId</text>
 </g>
-<!-- Node326 -->
+<!-- Node361 -->
 <g id="node2" class="node">
-<title>Node326</title>
+<title>Node361</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="182.0586,-37.5 182.0586,-55.5 318.127,-55.5 318.127,-37.5 182.0586,-37.5"/>
 <text text-anchor="middle" x="250.0928" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node325&#45;&gt;Node326 -->
+<!-- Node360&#45;&gt;Node361 -->
 <g id="edge1" class="edge">
-<title>Node325&#45;&gt;Node326</title>
+<title>Node360&#45;&gt;Node361</title>
 <path fill="none" stroke="#191970" d="M156.1888,-36.4235C164.8525,-37.3532 173.585,-38.2902 182.0528,-39.1989"/>
 <polygon fill="#191970" stroke="#191970" points="156.3864,-32.9247 146.0701,-35.3377 155.6395,-39.8848 156.3864,-32.9247"/>
 </g>
-<!-- Node327 -->
+<!-- Node362 -->
 <g id="node3" class="node">
-<title>Node327</title>
+<title>Node362</title>
 <g id="a_node3"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="#000000" points="206.5239,-.5 206.5239,-18.5 293.6616,-18.5 293.6616,-.5 206.5239,-.5"/>
 <text text-anchor="middle" x="250.0928" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Init</text>
 </a>
 </g>
 </g>
-<!-- Node325&#45;&gt;Node327 -->
+<!-- Node360&#45;&gt;Node362 -->
 <g id="edge2" class="edge">
-<title>Node325&#45;&gt;Node327</title>
+<title>Node360&#45;&gt;Node362</title>
 <path fill="none" stroke="#191970" d="M156.2227,-19.0427C173.5541,-17.2808 191.1594,-15.4911 206.3687,-13.9449"/>
 <polygon fill="#191970" stroke="#191970" points="155.6648,-15.5813 146.0701,-20.0748 156.3728,-22.5454 155.6648,-15.5813"/>
 </g>

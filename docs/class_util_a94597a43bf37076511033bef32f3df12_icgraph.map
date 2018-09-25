@@ -1,5 +1,4 @@
 <map id="Util::normalizeFolderPath" name="Util::normalizeFolderPath">
 <area shape="rect" id="node2" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore look for common .password&#45;store folder location. " alt="" coords="224,5,384,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a23d2783cb61a373c4b0127970264290a" title="MainWindow::checkConfig make sure we are ready to go as soon as possible. " alt="" coords="432,5,611,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="659,5,840,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="432,5,614,31"/>
 </map>

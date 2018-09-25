@@ -13,6 +13,7 @@ var searchData=
   ['isavoidcapitals',['isAvoidCapitals',['../class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a',1,'QtPassSettings']]],
   ['isavoidnumbers',['isAvoidNumbers',['../class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341',1,'QtPassSettings']]],
   ['isdisplayedwhenstopped',['isDisplayedWhenStopped',['../class_q_progress_indicator.html#a46ab1d0b77a96eea451e27c43e020286',1,'QProgressIndicator']]],
+  ['isfreshstart',['isFreshStart',['../class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71',1,'QtPass']]],
   ['ishidecontent',['isHideContent',['../class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838',1,'QtPassSettings']]],
   ['ishideonclose',['isHideOnClose',['../class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e',1,'QtPassSettings']]],
   ['ishidepassword',['isHidePassword',['../class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761',1,'QtPassSettings']]],

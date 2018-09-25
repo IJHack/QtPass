@@ -1,13 +1,12 @@
 <map id="src/imitatepass.cpp" name="src/imitatepass.cpp">
-<area shape="rect" id="node2" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="100,152,200,177"/>
-<area shape="rect" id="node17" href="$debughelper_8h.html" title="debughelper.h" alt="" coords="93,79,199,104"/>
-<area shape="rect" id="node19" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="474,79,592,104"/>
-<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="644,225,704,251"/>
-<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="82,225,218,251"/>
-<area shape="rect" id="node4" href="$enums_8h.html" title="enums.h" alt="" coords="187,299,260,324"/>
-<area shape="rect" id="node5" href="$executor_8h.html" title="executor.h" alt="" coords="571,299,654,324"/>
-<area shape="rect" id="node9" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="729,299,809,324"/>
-<area shape="rect" id="node20" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="753,225,918,251"/>
-<area shape="rect" id="node21" href="$realpass_8h.html" title="realpass.h" alt="" coords="643,152,726,177"/>
-<area shape="rect" id="node22" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="954,225,1090,251"/>
+<area shape="rect" id="node2" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="561,152,661,177"/>
+<area shape="rect" id="node17" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="890,79,1007,104"/>
+<area shape="rect" id="node3" href="$pass_8h.html" title="pass.h" alt="" coords="446,225,507,251"/>
+<area shape="rect" id="node15" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="632,225,769,251"/>
+<area shape="rect" id="node4" href="$enums_8h.html" title="enums.h" alt="" coords="770,299,842,324"/>
+<area shape="rect" id="node5" href="$executor_8h.html" title="executor.h" alt="" coords="82,299,165,324"/>
+<area shape="rect" id="node9" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="290,299,370,324"/>
+<area shape="rect" id="node18" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="843,225,1009,251"/>
+<area shape="rect" id="node19" href="$realpass_8h.html" title="realpass.h" alt="" coords="686,152,769,177"/>
+<area shape="rect" id="node20" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1033,225,1168,251"/>
 </map>

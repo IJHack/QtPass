@@ -8,60 +8,60 @@
  viewBox="0.00 0.00 483.73 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>ImitatePass::Remove</title>
-<!-- Node61 -->
+<!-- Node63 -->
 <g id="node1" class="node">
-<title>Node61</title>
+<title>Node63</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 111.0342,-36.5 111.0342,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="55.5171" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Remove</text>
 </g>
-<!-- Node62 -->
+<!-- Node64 -->
 <g id="node2" class="node">
-<title>Node62</title>
+<title>Node64</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="#000000" points="147.0342,-37.5 147.0342,-55.5 297.5459,-55.5 297.5459,-37.5 147.0342,-37.5"/>
 <text text-anchor="middle" x="222.29" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node61&#45;&gt;Node62 -->
+<!-- Node63&#45;&gt;Node64 -->
 <g id="edge1" class="edge">
-<title>Node61&#45;&gt;Node62</title>
+<title>Node63&#45;&gt;Node64</title>
 <path fill="none" stroke="#191970" d="M111.0501,-33.8267C119.2908,-34.7656 127.9415,-35.7511 136.6252,-36.7404"/>
 <polygon fill="#191970" stroke="#191970" points="136.4797,-40.2464 146.8116,-37.9009 137.2721,-33.2914 136.4797,-40.2464"/>
 </g>
-<!-- Node64 -->
+<!-- Node66 -->
 <g id="node4" class="node">
-<title>Node64</title>
+<title>Node66</title>
 <g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
 <polygon fill="none" stroke="#000000" points="158.1597,-.5 158.1597,-18.5 286.4204,-18.5 286.4204,-.5 158.1597,-.5"/>
 <text text-anchor="middle" x="222.29" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
 </g>
 </g>
-<!-- Node61&#45;&gt;Node64 -->
+<!-- Node63&#45;&gt;Node66 -->
 <g id="edge3" class="edge">
-<title>Node61&#45;&gt;Node64</title>
+<title>Node63&#45;&gt;Node66</title>
 <path fill="none" stroke="#191970" d="M111.0501,-21.5063C122.8204,-20.2359 135.4272,-18.8752 147.7717,-17.5428"/>
 <polygon fill="#191970" stroke="#191970" points="148.4888,-20.9859 158.0554,-16.4329 147.7375,-14.0263 148.4888,-20.9859"/>
 </g>
-<!-- Node63 -->
+<!-- Node65 -->
 <g id="node3" class="node">
-<title>Node63</title>
+<title>Node65</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="333.5459,-18.5 333.5459,-36.5 475.7275,-36.5 475.7275,-18.5 333.5459,-18.5"/>
 <text text-anchor="middle" x="404.6367" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node62&#45;&gt;Node63 -->
+<!-- Node64&#45;&gt;Node65 -->
 <g id="edge2" class="edge">
-<title>Node62&#45;&gt;Node63</title>
+<title>Node64&#45;&gt;Node65</title>
 <path fill="none" stroke="#191970" d="M297.7737,-38.6348C306.1324,-37.7639 314.6726,-36.874 323.1016,-35.9957"/>
 <polygon fill="#191970" stroke="#191970" points="323.725,-39.4498 333.3084,-34.9322 322.9995,-32.4875 323.725,-39.4498"/>
 </g>
-<!-- Node64&#45;&gt;Node63 -->
+<!-- Node66&#45;&gt;Node65 -->
 <g id="edge4" class="edge">
-<title>Node64&#45;&gt;Node63</title>
+<title>Node66&#45;&gt;Node65</title>
 <path fill="none" stroke="#191970" d="M286.5787,-15.8461C298.4344,-17.0164 310.9563,-18.2525 323.2388,-19.465"/>
 <polygon fill="#191970" stroke="#191970" points="323.1844,-22.9765 333.4799,-20.4759 323.8721,-16.0104 323.1844,-22.9765"/>
 </g>

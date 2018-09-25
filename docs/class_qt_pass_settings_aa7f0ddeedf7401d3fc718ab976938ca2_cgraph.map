@@ -1,3 +1,5 @@
 <map id="QtPassSettings::setUsePass" name="QtPassSettings::setUsePass">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="245,5,435,31"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="251,5,448,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="245,55,454,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="255,104,444,129"/>
 </map>

@@ -65,11 +65,11 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">QtPass </div>  </div>
+<div class="title"><a class="el" href="class_qt_pass.html">QtPass</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://repology.org/metapackage/qtpass"></a> <a href="https://travis-ci.org/IJHack/QtPass"></a> <a href="https://ci.appveyor.com/project/annejan/qtpass/branch/master"></a> <a href="https://scan.coverity.com/projects/ijhack-qtpass"></a> <a href="https://coveralls.io/github/IJHack/QtPass"></a> <a href="https://codecov.io/gh/IJhack/QtPass"></a> <a href="https://www.codefactor.io/repository/github/ijhack/qtpass"></a> <a href="https://repology.org/metapackage/qtpass"></a></p>
-<p>QtPass is a GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> is a GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
 <h2>Features </h2>
 <ul>
 <li>Using <code>pass</code> or <code>git</code> and <code>gpg2</code> directly</li>
@@ -94,12 +94,12 @@ $(function() {
 <h3>From Source</h3>
 <p><b>Dependencies</b></p>
 <ul>
-<li>QtPass requires Qt 5.2 or later</li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> requires Qt 5.2 or later</li>
 <li>The Linguist package is required to compile the translations.</li>
 <li>For use of the fallback icons the SVG library is required.</li>
 </ul>
 <p>At runtime the only real dependency is <code>gpg2</code> but to make the most of it, you'll need <code>git</code> and <code>pass</code> too.</p>
-<p>Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication. On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.</p>
+<p>Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication. On Mac OS X this currently seems to only work with MacGPG2 from gpgtools or pinentry-mac from homebrew.</p>
 <p>On most unix systems all you need is: </p><div class="fragment"><div class="line">qmake &amp;&amp; make &amp;&amp; make install</div></div><!-- fragment --><h2>Testing </h2>
 <p>This is done with <code>make check</code></p>
 <p>Codecoverage can be done with <code>make lcov</code>, <code>make gcov</code>, <code>make coveralls</code> and/or <code>make codecov</code>.</p>

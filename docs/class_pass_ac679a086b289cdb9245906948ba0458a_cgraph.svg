@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 464.30 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Pass::updateEnv</title>
-<!-- Node187 -->
+<!-- Node194 -->
 <g id="node1" class="node">
-<title>Node187</title>
+<title>Node194</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 91.6055,-36.5 91.6055,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="45.8027" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::updateEnv</text>
 </g>
-<!-- Node188 -->
+<!-- Node195 -->
 <g id="node2" class="node">
-<title>Node188</title>
+<title>Node195</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="#000000" points="127.6055,-37.5 127.6055,-55.5 278.1172,-55.5 278.1172,-37.5 127.6055,-37.5"/>
 <text text-anchor="middle" x="202.8613" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node187&#45;&gt;Node188 -->
+<!-- Node194&#45;&gt;Node195 -->
 <g id="edge1" class="edge">
-<title>Node187&#45;&gt;Node188</title>
+<title>Node194&#45;&gt;Node195</title>
 <path fill="none" stroke="#191970" d="M91.6528,-33.0467C100.0973,-34.0682 109.1555,-35.164 118.3235,-36.2731"/>
 <polygon fill="#191970" stroke="#191970" points="117.9431,-39.7525 128.2911,-37.4789 118.7838,-32.8032 117.9431,-39.7525"/>
 </g>
-<!-- Node190 -->
+<!-- Node197 -->
 <g id="node4" class="node">
-<title>Node190</title>
+<title>Node197</title>
 <g id="a_node4"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment set environment variables for executor processes. ">
 <polygon fill="none" stroke="#000000" points="137.6128,-.5 137.6128,-18.5 268.1099,-18.5 268.1099,-.5 137.6128,-.5"/>
 <text text-anchor="middle" x="202.8613" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::setEnvironment</text>
 </a>
 </g>
 </g>
-<!-- Node187&#45;&gt;Node190 -->
+<!-- Node194&#45;&gt;Node197 -->
 <g id="edge3" class="edge">
-<title>Node187&#45;&gt;Node190</title>
+<title>Node194&#45;&gt;Node197</title>
 <path fill="none" stroke="#191970" d="M91.6528,-22.2453C102.8292,-20.9644 115.0804,-19.5603 127.2387,-18.1669"/>
 <polygon fill="#191970" stroke="#191970" points="127.8676,-21.6178 137.4041,-17.0019 127.0705,-14.6633 127.8676,-21.6178"/>
 </g>
-<!-- Node189 -->
+<!-- Node196 -->
 <g id="node3" class="node">
-<title>Node189</title>
+<title>Node196</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="314.1172,-37.5 314.1172,-55.5 456.2988,-55.5 456.2988,-37.5 314.1172,-37.5"/>
 <text text-anchor="middle" x="385.208" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node188&#45;&gt;Node189 -->
+<!-- Node195&#45;&gt;Node196 -->
 <g id="edge2" class="edge">
-<title>Node188&#45;&gt;Node189</title>
+<title>Node195&#45;&gt;Node196</title>
 <path fill="none" stroke="#191970" d="M278.345,-46.5C286.7037,-46.5 295.2439,-46.5 303.6729,-46.5"/>
 <polygon fill="#191970" stroke="#191970" points="303.8797,-50.0001 313.8797,-46.5 303.8796,-43.0001 303.8797,-50.0001"/>
 </g>
