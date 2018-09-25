@@ -21,14 +21,17 @@
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
 - We should select a C++ std too [\#372](https://github.com/IJHack/QtPass/issues/372)
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
+- Problem with GNUpg not found on MacOS [\#362](https://github.com/IJHack/QtPass/issues/362)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 
 **Merged pull requests:**
 
+- Tested working on Mac Os HS with pinentry-mac [\#419](https://github.com/IJHack/QtPass/pull/419) ([riccardocossu](https://github.com/riccardocossu))
 - Dutch \(nl\) translation improvements [\#418](https://github.com/IJHack/QtPass/pull/418) ([equaeghe](https://github.com/equaeghe))
 - Bugfixes [\#413](https://github.com/IJHack/QtPass/pull/413) ([rdoeffinger](https://github.com/rdoeffinger))
 - pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
+- Continuing refactoring [\#407](https://github.com/IJHack/QtPass/pull/407) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)

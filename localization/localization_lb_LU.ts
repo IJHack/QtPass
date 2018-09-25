@@ -536,7 +536,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+902"/>
+        <location filename="../src/mainwindow.cpp" line="+898"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,12 +623,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-708"/>
+        <location filename="../src/mainwindow.cpp" line="-704"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+91"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>

@@ -523,7 +523,7 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+91"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>

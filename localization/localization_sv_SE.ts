@@ -530,7 +530,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+902"/>
+        <location filename="../src/mainwindow.cpp" line="+898"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
@@ -747,12 +747,12 @@ p, li { white-space: pre-wrap; }
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-707"/>
+        <location filename="../src/mainwindow.cpp" line="-703"/>
         <source>Welcome to QtPass %1</source>
         <translation>Välkommen till QtPass %1</translation>
     </message>
     <message>
-        <location line="+317"/>
+        <location line="+313"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>

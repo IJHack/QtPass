@@ -603,7 +603,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+902"/>
+        <location filename="../src/mainwindow.cpp" line="+898"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -744,12 +744,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Contrasinal copiado ao portapapeis</translation>
     </message>
     <message>
-        <location line="-107"/>
+        <location line="-103"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+201"/>
+        <location line="+197"/>
         <source>Content hidden</source>
         <translation>Contido oculto</translation>
     </message>

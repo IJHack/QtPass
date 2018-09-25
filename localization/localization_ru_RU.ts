@@ -577,7 +577,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+902"/>
+        <location filename="../src/mainwindow.cpp" line="+898"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
@@ -653,7 +653,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-708"/>
+        <location filename="../src/mainwindow.cpp" line="-704"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 приветствует Вас</translation>
     </message>
@@ -682,7 +682,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Не удалось запустить fusedav для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+91"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Обновление password-store</translation>
