@@ -9,6 +9,7 @@
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qpushbuttonasqrcode.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
@@ -1025,6 +1026,14 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     // fieldLabel->setContentsMargins(0,5,5,0);
     frame->layout()->addWidget(fieldLabel);
   }
+
+  QPushButtonAsQRCode *qrbutton =
+      new QPushButtonAsQRCode(trimmedValue, this);
+  connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
+          &QtPass::showTextAsQRCode);
+  qrbutton->setStyleSheet("border-style: none ; background: transparent;");
+
+  frame->layout()->addWidget(qrbutton);
 
   // set the echo mode to password, if the field is "password"
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
