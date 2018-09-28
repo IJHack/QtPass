@@ -41,6 +41,7 @@ public:
   const static QString groupProfiles;
   const static QString useGit;
   const static QString useOtp;
+  const static QString useQrencode;
   const static QString useClipboard;
   const static QString usePwgen;
   const static QString avoidCapitals;

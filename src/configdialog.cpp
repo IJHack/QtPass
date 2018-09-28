@@ -62,6 +62,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
 #if defined(Q_OS_WIN) || defined(__APPLE__)
   ui->checkBoxUseOtp->hide();
+  ui->checkBoxUseQrencode->hide();
   ui->label_10->hide();
 #endif
 
@@ -69,6 +70,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     ui->checkBoxUseOtp->setEnabled(false);
     ui->checkBoxUseOtp->setToolTip(
         tr("Pass OTP extension needs to be installed"));
+  }
+
+  if (!isQrencodeAvailable()) {
+    ui->checkBoxUseQrencode->setEnabled(false);
+    ui->checkBoxUseQrencode->setToolTip(
+        tr("qrencode needs to be installed"));
   }
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
@@ -82,6 +89,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useGit(QtPassSettings::isUseGit());
 
   useOtp(QtPassSettings::isUseOtp());
+  useQrencode(QtPassSettings::isUseQrencode());
 
   usePwgen(QtPassSettings::isUsePwgen());
   useTemplate(QtPassSettings::isUseTemplate());
@@ -200,6 +208,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
+  QtPassSettings::setUseQrencode(ui->checkBoxUseQrencode->isChecked());
   QtPassSettings::setPwgenExecutable(ui->pwgenPath->text());
   QtPassSettings::setUsePwgen(ui->checkBoxUsePwgen->isChecked());
   QtPassSettings::setAvoidCapitals(ui->checkBoxAvoidCapitals->isChecked());
@@ -516,6 +525,19 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
+bool ConfigDialog::isQrencodeAvailable() {
+#ifdef Q_OS_WIN
+  return false;
+#elif defined(__APPLE__)
+  return false;
+#else
+  QProcess which;
+  which.start("which", QStringList() << "qrencode");
+  which.waitForFinished();
+  return which.exitCode() == 0;
+#endif
+}
+
 bool ConfigDialog::isPassOtpAvailable() {
 #ifdef Q_OS_WIN
   return false;
@@ -661,6 +683,14 @@ void ConfigDialog::useGit(bool useGit) {
  */
 void ConfigDialog::useOtp(bool useOtp) {
   ui->checkBoxUseOtp->setChecked(useOtp);
+}
+
+/**
+ * @brief ConfigDialog::useOtp set preference for using otp plugin.
+ * @param useOtp
+ */
+void ConfigDialog::useQrencode(bool useQrencode) {
+  ui->checkBoxUseQrencode->setChecked(useQrencode);
 }
 
 /**

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>609</height>
+    <width>659</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -516,6 +516,17 @@
             <string>Extensions:</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QCheckBox" name="checkBoxUseQrencode">
+             <property name="text">
+              <string>Use qrencode</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_14">

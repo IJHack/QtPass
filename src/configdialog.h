@@ -37,6 +37,7 @@ public:
   void useTrayIcon(bool useTrayIdon);
   void useGit(bool useGit);
   void useOtp(bool useOtp);
+  void useQrencode(bool useQrencode);
   void setPwgenPath(QString);
   void usePwgen(bool usePwgen);
   void setPasswordConfiguration(const PasswordConfiguration &config);
@@ -85,6 +86,7 @@ private:
   void criticalMessage(const QString &title, const QString &text);
 
   bool isPassOtpAvailable();
+  bool isQrencodeAvailable();
   void validate(QTableWidgetItem *item = nullptr);
 
   MainWindow *mainWindow;
