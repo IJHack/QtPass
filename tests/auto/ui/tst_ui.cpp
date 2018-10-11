@@ -20,40 +20,40 @@ private Q_SLOTS:
  */
 void tst_ui::contentRemainsSame() {
   QScopedPointer<PasswordDialog> d(
-      new PasswordDialog(PasswordConfiguration{}, NULL));
+      new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("", false);
   QString input = "pw\n";
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   input = "pw\nname: value\n";
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("name", false);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("name", true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("", false);
   d->templateAll(true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("", true);
   d->templateAll(true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 
-  d.reset(new PasswordDialog(PasswordConfiguration{}, NULL));
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("name", true);
   d->templateAll(true);
   d->setPass(input);

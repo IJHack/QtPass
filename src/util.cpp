@@ -149,9 +149,9 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
-void Util::copyDir(const QString src, const QString dest) {
+void Util::copyDir(const QString &src, const QString &dest) {
   QDir srcDir(src);
-  if (srcDir.exists() == false) {
+  if (!srcDir.exists()) {
     return;
   }
   srcDir.mkpath(dest);

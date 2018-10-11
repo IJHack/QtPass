@@ -23,6 +23,7 @@ QtPass::QtPass() : clippedText(QString()), freshStart(true) {
   if (!setup()) {
     // no working config so this should quit without config anything
     QApplication::quit();
+    {}
   }
 
   setClipboardTimer();
@@ -273,7 +274,7 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
 
     output.replace(
         QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
+        R"(<a href="\1">\1</a>)");
     output.replace(QRegExp("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
@@ -335,7 +336,7 @@ void QtPass::showInTextBrowser(QString output, QString prefix,
 
   output.replace(
       QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-      "<a href=\"\\1\">\\1</a>");
+      R"(<a href="\1">\1</a>)");
   output.replace(QRegExp("\n"), "<br />");
   output = prefix + output + postfix;
 

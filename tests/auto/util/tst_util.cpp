@@ -12,7 +12,7 @@ class tst_util : public QObject {
 
 public:
   tst_util();
-  ~tst_util();
+  ~tst_util() override;
 
 public Q_SLOTS:
   void init();
@@ -32,12 +32,12 @@ bool operator==(const NamedValue &a, const NamedValue &b) {
 /**
  * @brief tst_util::tst_util basic constructor
  */
-tst_util::tst_util() {}
+tst_util::tst_util() = default;
 
 /**
  * @brief tst_util::~tst_util basic destructor
  */
-tst_util::~tst_util() {}
+tst_util::~tst_util() = default;
 
 /**
  * @brief tst_util::init unit test init method

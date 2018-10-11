@@ -155,10 +155,9 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     if (process_err != Q_NULLPTR)
       *process_err = perr;
     return internal.exitCode();
-  } else {
-    //  TODO(bezet): emit error() ?
-    return -1; //    QProcess error code + qDebug error?
   }
+  //  TODO(bezet): emit error() ?
+  return -1; //    QProcess error code + qDebug error?
 }
 
 /**
