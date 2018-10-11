@@ -23,25 +23,23 @@
 <area shape="rect" id="node24" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="264,1108,441,1133"/>
 <area shape="rect" id="node25" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="257,1157,448,1183"/>
 <area shape="rect" id="node26" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="262,1207,442,1245"/>
-<area shape="rect" id="node27" href="$class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b" title="ConfigDialog::setPassword\lConfiguration" alt="" coords="261,1269,443,1308"/>
-<area shape="rect" id="node28" href="$class_qt_pass_settings.html#a9da7174babd2f5cc433505f0fec82efc" title="QtPassSettings::getPassword\lConfiguration" alt="" coords="253,1332,451,1371"/>
-<area shape="rect" id="node29" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="260,1395,444,1420"/>
-<area shape="rect" id="node30" href="$class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow. " alt="" coords="261,1444,444,1469"/>
-<area shape="rect" id="node31" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="247,1493,457,1519"/>
-<area shape="rect" id="node32" href="$class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow. " alt="" coords="261,1543,444,1581"/>
-<area shape="rect" id="node33" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="247,1605,457,1644"/>
-<area shape="rect" id="node34" href="$class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="263,1668,441,1693"/>
-<area shape="rect" id="node35" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="249,1717,455,1743"/>
-<area shape="rect" id="node36" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git. " alt="" coords="280,1767,424,1792"/>
-<area shape="rect" id="node37" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="267,1816,438,1841"/>
-<area shape="rect" id="node38" href="$class_config_dialog.html#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin. " alt="" coords="278,1865,426,1891"/>
-<area shape="rect" id="node39" href="$class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2" title="QtPassSettings::isUseOtp" alt="" coords="264,1915,440,1940"/>
-<area shape="rect" id="node40" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)..." alt="" coords="268,1964,436,1989"/>
-<area shape="rect" id="node41" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="255,2013,450,2039"/>
-<area shape="rect" id="node42" href="$class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates. " alt="" coords="262,2063,442,2088"/>
-<area shape="rect" id="node43" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="248,2112,456,2137"/>
-<area shape="rect" id="node44" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="253,2161,451,2200"/>
-<area shape="rect" id="node45" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow. " alt="" coords="261,2224,443,2249"/>
-<area shape="rect" id="node46" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="248,2273,457,2299"/>
+<area shape="rect" id="node27" href="$class_qt_pass_settings.html#a9da7174babd2f5cc433505f0fec82efc" title="QtPassSettings::getPassword\lConfiguration" alt="" coords="253,1269,451,1308"/>
+<area shape="rect" id="node28" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="260,1332,444,1357"/>
+<area shape="rect" id="node29" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="247,1381,457,1407"/>
+<area shape="rect" id="node30" href="$class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow. " alt="" coords="261,1431,444,1469"/>
+<area shape="rect" id="node31" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="247,1493,457,1532"/>
+<area shape="rect" id="node32" href="$class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="263,1556,441,1581"/>
+<area shape="rect" id="node33" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="249,1605,455,1631"/>
+<area shape="rect" id="node34" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git. " alt="" coords="280,1655,424,1680"/>
+<area shape="rect" id="node35" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="267,1704,438,1729"/>
+<area shape="rect" id="node36" href="$class_config_dialog.html#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin. " alt="" coords="278,1753,426,1779"/>
+<area shape="rect" id="node37" href="$class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2" title="QtPassSettings::isUseOtp" alt="" coords="264,1803,440,1828"/>
+<area shape="rect" id="node38" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)..." alt="" coords="268,1852,436,1877"/>
+<area shape="rect" id="node39" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="255,1901,450,1927"/>
+<area shape="rect" id="node40" href="$class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates. " alt="" coords="262,1951,442,1976"/>
+<area shape="rect" id="node41" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="248,2000,456,2025"/>
+<area shape="rect" id="node42" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="253,2049,451,2088"/>
+<area shape="rect" id="node43" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow. " alt="" coords="261,2112,443,2137"/>
+<area shape="rect" id="node44" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="248,2161,457,2187"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="518,869,707,895"/>
 </map>

@@ -92,7 +92,7 @@
 <!-- Node96 -->
 <g id="node8" class="node">
 <title>Node96</title>
-<g id="a_node8"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
+<g id="a_node8"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking">
 <polygon fill="none" stroke="#000000" points="148.1694,-84.5 148.1694,-102.5 282.0112,-102.5 282.0112,-84.5 148.1694,-84.5"/>
 <text text-anchor="middle" x="215.0903" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::executeBlocking</text>
 </a>

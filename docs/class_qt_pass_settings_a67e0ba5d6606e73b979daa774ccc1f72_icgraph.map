@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isUsePwgen" name="QtPassSettings::isUsePwgen">
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="249,5,431,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="275,55,404,80"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::const Generat&amp;e use eithconst er pwge&amp;n or internal password generator. " alt="" coords="275,55,404,80"/>
 <area shape="rect" id="node4" href="$class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="248,104,432,143"/>
 </map>

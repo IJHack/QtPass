@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 320.58 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::setPwgenExecutable</title>
-<!-- Node604 -->
+<!-- Node602 -->
 <g id="node1" class="node">
-<title>Node604</title>
+<title>Node602</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 134.3936,-28.5 134.3936,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setPwgen</text>
 <text text-anchor="middle" x="67.1968" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executable</text>
 </g>
-<!-- Node605 -->
+<!-- Node603 -->
 <g id="node2" class="node">
-<title>Node605</title>
+<title>Node603</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="170.3936,-5.5 170.3936,-23.5 312.5752,-23.5 312.5752,-5.5 170.3936,-5.5"/>
 <text text-anchor="middle" x="241.4844" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node604&#45;&gt;Node605 -->
+<!-- Node602&#45;&gt;Node603 -->
 <g id="edge1" class="edge">
-<title>Node604&#45;&gt;Node605</title>
+<title>Node602&#45;&gt;Node603</title>
 <path fill="none" stroke="#191970" d="M134.5809,-14.5C142.9805,-14.5 151.6386,-14.5 160.2204,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="160.2395,-18.0001 170.2394,-14.5 160.2394,-11.0001 160.2395,-18.0001"/>
 </g>

@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 438.14 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Executor::setEnvironment</title>
-<!-- Node31 -->
+<!-- Node30 -->
 <g id="node1" class="node">
-<title>Node31</title>
+<title>Node30</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 130.4971,-36.5 130.4971,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="65.2485" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::setEnvironment</text>
 </g>
-<!-- Node32 -->
+<!-- Node31 -->
 <g id="node2" class="node">
-<title>Node32</title>
+<title>Node31</title>
 <g id="a_node2"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Pass::updateEnv update the execution environment (used when switching profiles) ">
 <polygon fill="none" stroke="#000000" points="166.4971,-18.5 166.4971,-36.5 258.1025,-36.5 258.1025,-18.5 166.4971,-18.5"/>
 <text text-anchor="middle" x="212.2998" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::updateEnv</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node32 -->
+<!-- Node30&#45;&gt;Node31 -->
 <g id="edge1" class="edge">
-<title>Node31&#45;&gt;Node32</title>
+<title>Node30&#45;&gt;Node31</title>
 <path fill="none" stroke="#191970" d="M140.7409,-27.5C149.3865,-27.5 157.9959,-27.5 166.0903,-27.5"/>
 <polygon fill="#191970" stroke="#191970" points="140.6038,-24.0001 130.6037,-27.5 140.6037,-31.0001 140.6038,-24.0001"/>
 </g>
-<!-- Node33 -->
+<!-- Node32 -->
 <g id="node3" class="node">
-<title>Node33</title>
+<title>Node32</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="294.1025,-37.5 294.1025,-55.5 430.1416,-55.5 430.1416,-37.5 294.1025,-37.5"/>
 <text text-anchor="middle" x="362.1221" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node32&#45;&gt;Node33 -->
+<!-- Node31&#45;&gt;Node32 -->
 <g id="edge2" class="edge">
-<title>Node32&#45;&gt;Node33</title>
+<title>Node31&#45;&gt;Node32</title>
 <path fill="none" stroke="#191970" d="M268.4669,-34.6229C276.8195,-35.6822 285.5042,-36.7836 294.0684,-37.8696"/>
 <polygon fill="#191970" stroke="#191970" points="268.8348,-31.1416 258.4739,-33.3557 267.9541,-38.086 268.8348,-31.1416"/>
 </g>
-<!-- Node34 -->
+<!-- Node33 -->
 <g id="node4" class="node">
-<title>Node34</title>
+<title>Node33</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="309.3809,-.5 309.3809,-18.5 414.8633,-18.5 414.8633,-.5 309.3809,-.5"/>
 <text text-anchor="middle" x="362.1221" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node32&#45;&gt;Node34 -->
+<!-- Node31&#45;&gt;Node33 -->
 <g id="edge3" class="edge">
-<title>Node32&#45;&gt;Node34</title>
+<title>Node31&#45;&gt;Node33</title>
 <path fill="none" stroke="#191970" d="M268.4985,-20.7482C281.8641,-19.1424 296.0789,-17.4346 309.288,-15.8476"/>
 <polygon fill="#191970" stroke="#191970" points="267.985,-17.2846 258.4739,-21.9525 268.8201,-24.2346 267.985,-17.2846"/>
 </g>

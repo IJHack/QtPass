@@ -1,4 +1,4 @@
 <map id="QtPassSettings::isAvoidCapitals" name="QtPassSettings::isAvoidCapitals">
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="265,5,446,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="291,55,420,80"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::const Generat&amp;e use eithconst er pwge&amp;n or internal password generator. " alt="" coords="291,55,420,80"/>
 </map>
