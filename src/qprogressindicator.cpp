@@ -60,7 +60,7 @@ void QProgressIndicator::setColor(const QColor &color) {
  * @brief QProgressIndicator::sizeHint default minimum size.
  * @return QSize(20, 20)
  */
-QSize QProgressIndicator::sizeHint() const { return QSize(20, 20); }
+QSize QProgressIndicator::sizeHint() const { return {20, 20}; }
 
 /**
  * @brief QProgressIndicator::heightForWidth square ratio.
@@ -90,8 +90,8 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
   QPainter p(this);
   p.setRenderHint(QPainter::Antialiasing);
 
-  int outerRadius = int((width - 1) * 0.5);
-  int innerRadius = int((width - 1) * 0.5 * 0.38);
+  auto outerRadius = int((width - 1) * 0.5);
+  auto innerRadius = int((width - 1) * 0.5 * 0.38);
 
   int capsuleHeight = outerRadius - innerRadius;
   int capsuleWidth =

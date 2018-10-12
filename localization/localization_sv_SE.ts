@@ -870,7 +870,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation></translation>
     </message>
@@ -878,7 +878,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Skapar GPG nyckelpar</translation>
     </message>
@@ -1047,7 +1047,7 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation type="unfinished">Kunde inte hitta nyckel i nyckelring</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>skapad</translation>
     </message>

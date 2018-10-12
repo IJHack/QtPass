@@ -6,7 +6,7 @@
 
 using namespace Enums;
 
-RealPass::RealPass() {}
+RealPass::RealPass() = default;
 
 /**
  * @brief RealPass::GitInit pass git init wrapper

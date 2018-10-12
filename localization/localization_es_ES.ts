@@ -893,7 +893,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation></translation>
     </message>
@@ -901,7 +901,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generar par de claves GPG</translation>
     </message>
@@ -1069,7 +1069,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <translation type="unfinished">La llave no se encuentra en el llavero</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>creado</translation>
     </message>

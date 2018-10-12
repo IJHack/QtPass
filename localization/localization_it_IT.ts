@@ -970,7 +970,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation></translation>
     </message>
@@ -978,7 +978,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation>Generando una coppia di chiavi GPG</translation>
     </message>
@@ -1149,7 +1149,7 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
         <translation type="unfinished">Chiave non trovata nel portachiavi</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>creato</translation>
     </message>

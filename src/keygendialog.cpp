@@ -132,7 +132,7 @@ void KeygenDialog::done(int r) {
     }
 
     // check email
-    QRegExp mailre("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+    QRegExp mailre(R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)");
     mailre.setCaseSensitivity(Qt::CaseInsensitive);
     mailre.setPatternSyntax(QRegExp::RegExp);
     if (!mailre.exactMatch(ui->email->text())) {
@@ -147,7 +147,7 @@ void KeygenDialog::done(int r) {
     ui->checkBox->setEnabled(false);
     ui->plainTextEdit->setEnabled(false);
 
-    QProgressIndicator *pi = new QProgressIndicator();
+    auto *pi = new QProgressIndicator();
     pi->startAnimation();
     pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 

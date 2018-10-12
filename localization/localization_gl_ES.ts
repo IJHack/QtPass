@@ -932,7 +932,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation type="unfinished"></translation>
     </message>
@@ -940,7 +940,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1105,7 +1105,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation type="unfinished"></translation>
     </message>

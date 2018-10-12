@@ -12,7 +12,7 @@ using namespace Enums;
  * @brief ImitatePass::ImitatePass for situaions when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
  */
-ImitatePass::ImitatePass() {}
+ImitatePass::ImitatePass() = default;
 
 /**
  * @brief ImitatePass::GitInit git init wrapper

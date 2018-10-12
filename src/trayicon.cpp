@@ -19,7 +19,7 @@ TrayIcon::TrayIcon(QMainWindow *parent)
       sysTrayIcon(nullptr), trayIconMenu(nullptr), isAllocated(false) {
   parentwin = parent;
 
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
     createActions();
     createTrayIcon();
 
@@ -45,7 +45,7 @@ TrayIcon::TrayIcon(QMainWindow *parent)
  * @param visible
  */
 void TrayIcon::setVisible(bool visible) {
-  if (visible == true)
+  if (visible)
     parentwin->show();
   else
     parentwin->hide();
@@ -99,7 +99,7 @@ void TrayIcon::createTrayIcon() {
  * @brief TrayIcon::showHideParent toggle app visibility.
  */
 void TrayIcon::showHideParent() {
-  if (parentwin->isVisible() == true)
+  if (parentwin->isVisible())
     parentwin->hide();
   else
     parentwin->show();

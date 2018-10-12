@@ -926,7 +926,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -934,7 +934,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generování páru GPG klíčů</translation>
     </message>
@@ -1105,7 +1105,7 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
         <translation type="unfinished">Klíč nebyl v klíčence nalezen</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>vytvořen</translation>
     </message>

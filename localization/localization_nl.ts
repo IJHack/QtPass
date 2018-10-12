@@ -952,7 +952,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -960,7 +960,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Nieuw GPG sleutelpaar genereren</translation>
     </message>
@@ -1130,7 +1130,7 @@ Rode entries zijn ongeldig, je zult niet in staat zijn om te versleutelen voor d
         <translation type="unfinished">Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>aangemaakt</translation>
     </message>

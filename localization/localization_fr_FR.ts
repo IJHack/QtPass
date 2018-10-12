@@ -958,7 +958,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>GAD</translation>
     </message>
@@ -966,7 +966,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+137"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Génération d&apos;une paire de clés GPG</translation>
     </message>
@@ -1137,7 +1137,7 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
         <translation type="unfinished">Clé introuvable dans le trousseau de clés</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>créé</translation>
     </message>

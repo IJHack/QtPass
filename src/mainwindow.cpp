@@ -830,7 +830,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
  */
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
-    QKeyEvent *key = static_cast<QKeyEvent *>(event);
+    auto *key = dynamic_cast<QKeyEvent *>(event);
     if (key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
@@ -1016,7 +1016,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   ly->setContentsMargins(5, 2, 2, 2);
   frame->setLayout(ly);
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
-    QPushButtonWithClipboard *fieldLabel =
+    auto *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
@@ -1028,7 +1028,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
 
   // set the echo mode to password, if the field is "password"
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
-    QLineEdit *line = new QLineEdit();
+    auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
     line->setReadOnly(true);
@@ -1037,7 +1037,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setEchoMode(QLineEdit::Password);
     frame->layout()->addWidget(line);
   } else {
-    QTextBrowser *line = new QTextBrowser();
+    auto *line = new QTextBrowser();
     line->setOpenExternalLinks(true);
     line->setOpenLinks(true);
     line->setMaximumHeight(26);
@@ -1047,7 +1047,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setObjectName(trimmedField);
     trimmedValue.replace(
         QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
+        R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);
     line->setStyleSheet("border-style: none ; background: transparent;");

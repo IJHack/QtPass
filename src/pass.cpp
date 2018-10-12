@@ -184,7 +184,7 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
  */
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
-  PROCESS pid = static_cast<PROCESS>(id);
+  auto pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
     return;

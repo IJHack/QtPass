@@ -1,6 +1,6 @@
 #include "settingsconstants.h"
 
-SettingsConstants::SettingsConstants() {}
+SettingsConstants::SettingsConstants() = default;
 
 const QString SettingsConstants::version = "version";
 
