@@ -391,7 +391,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Impossibile modificare</translation>
@@ -1134,7 +1134,7 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
         <translation>Mostra chiavi non utilizzabili</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Impossibile ottenere la lista delle chiavi</translation>
     </message>

@@ -391,7 +391,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Ändern nicht möglich</translation>
@@ -1077,7 +1077,7 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation>unbrauchbare Schlüssel anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Schlüssel-Liste nicht gefunden</translation>
     </message>

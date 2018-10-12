@@ -7,6 +7,7 @@
 #ifndef Q_OS_WIN
 #include <QInputDialog>
 #include <QLineEdit>
+#include <utility>
 #else
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -325,7 +326,7 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 }
 
 void QtPass::passShowHandlerFinished(QString output) {
-  showInTextBrowser(output);
+  showInTextBrowser(std::move(output));
 }
 
 void QtPass::showInTextBrowser(QString output, QString prefix,

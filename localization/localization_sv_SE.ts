@@ -384,7 +384,7 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation type="unfinished">Kan inte ändra</translation>
@@ -1032,7 +1032,7 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation>Visa oanvändbara nycklar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Kan inte hämta nyckellista</translation>
     </message>

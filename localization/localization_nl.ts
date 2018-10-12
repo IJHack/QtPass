@@ -390,7 +390,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
@@ -1115,7 +1115,7 @@ Rode entries zijn ongeldig, je zult niet in staat zijn om te versleutelen voor d
         <translation>Toon onbruikbare sleutels</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Kan lijst sleutels niet verkrijgen</translation>
     </message>

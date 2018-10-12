@@ -391,7 +391,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Невозможно изменить содержимое</translation>
@@ -1087,7 +1087,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Показать непригодные ключи</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Не удалось получить список ключей</translation>
     </message>

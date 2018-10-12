@@ -128,6 +128,6 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
  * @param msg
  * @param time
  */
-void TrayIcon::showMessage(QString title, QString msg, int time) {
+void TrayIcon::showMessage(const QString &title, const QString &msg, int time) {
   sysTrayIcon->showMessage(title, msg, QSystemTrayIcon::Information, time);
 }

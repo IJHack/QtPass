@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QMimeData>
+#include <utility>
 
 QDataStream &
 operator<<(QDataStream &out,
@@ -80,7 +81,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
                                   QString passStore) {
   fs = sourceModel;
-  store = passStore;
+  store = std::move(passStore);
 }
 
 /**
@@ -175,8 +176,7 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
-  if (data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore") ==
-      false)
+  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore"))
     return false;
 
   if (column > 0) {

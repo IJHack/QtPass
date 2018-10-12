@@ -384,7 +384,7 @@ email</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Não pode ser editado</translation>
@@ -1073,7 +1073,7 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <translation>Mostrar chaves não utilizáveis</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Não é possível obter a lista de chaves</translation>
     </message>

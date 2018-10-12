@@ -390,7 +390,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>Impossible d&apos;éditer</translation>
@@ -1122,7 +1122,7 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
         <translation>Afficher les clés inutilisables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Impossible de récupérer la liste de clés</translation>
     </message>

@@ -1,6 +1,6 @@
 #include "singleapplication.h"
 #include <QLocalSocket>
-
+#include <utility>
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
@@ -13,8 +13,8 @@
  * @param uniqueKey
  */
 SingleApplication::SingleApplication(int &argc, char *argv[],
-                                     const QString uniqueKey)
-    : QApplication(argc, argv), _uniqueKey(uniqueKey) {
+                                     const QString &uniqueKey)
+    : QApplication(argc, argv), _uniqueKey(std::move(uniqueKey)) {
   sharedMemory.setKey(_uniqueKey);
   if (sharedMemory.attach()) {
     _isRunning = true;

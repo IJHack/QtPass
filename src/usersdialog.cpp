@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QRegExp>
 #include <QWidget>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -15,7 +16,7 @@
  * @param parent
  */
 UsersDialog::UsersDialog(QString dir, QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(dir) {
+    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(std::move(dir)) {
 
   ui->setupUi(this);
 
@@ -28,7 +29,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
   foreach (const UserInfo &sec, secret_keys) {
-    for (auto & user : users)
+    for (auto &user : users)
       if (sec.key_id == user.key_id)
         user.have_secret = true;
   }
@@ -41,7 +42,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   if (!recipients.isEmpty())
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
   foreach (const UserInfo &sel, selected_users) {
-    for (auto & user : users)
+    for (auto &user : users)
       if (sel.key_id == user.key_id)
         user.enabled = true;
   }
@@ -137,7 +138,7 @@ void UsersDialog::populateList(const QString &filter) {
   nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
   ui->listWidget->clear();
   if (!m_userList.isEmpty()) {
-    for (auto & user : m_userList) {
+    for (auto &user : m_userList) {
       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
         if (!user.isValid() && !ui->checkBox->isChecked())
           continue;

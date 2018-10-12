@@ -390,7 +390,7 @@ email</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+80"/>
+        <location filename="../src/imitatepass.cpp" line="+81"/>
         <location line="+202"/>
         <source>Can not edit</source>
         <translation>No es pot editar</translation>
@@ -1112,7 +1112,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation>Mostra les claus inutilitzables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">No es pot obtenir la llista de claus</translation>
     </message>

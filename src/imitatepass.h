@@ -57,7 +57,7 @@ public:
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
   virtual void Init(QString path, const QList<UserInfo> &list) Q_DECL_OVERRIDE;
 
-  void reencryptPath(QString dir);
+  void reencryptPath(const QString &dir);
 signals:
   void startReencryptPath();
   void endReencryptPath();

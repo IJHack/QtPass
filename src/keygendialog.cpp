@@ -80,7 +80,7 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
  * @param key
  * @param value
  */
-void KeygenDialog::replace(QString key, QString value) {
+void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
   QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
