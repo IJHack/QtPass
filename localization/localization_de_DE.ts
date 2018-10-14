@@ -708,12 +708,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+640"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-616"/>
         <source>OTP Code</source>
         <translation>OTP-Code</translation>
     </message>
@@ -924,7 +924,7 @@ Neues Passwort-Datei:
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+137"/>
+        <location filename="../src/qtpass.cpp" line="+138"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">GPG Schlüssel-Paar wird generiert</translation>
     </message>
@@ -1005,7 +1005,7 @@ Neues Passwort-Datei:
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation>Überschreiben erzwingen?</translation>
     </message>

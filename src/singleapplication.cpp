@@ -12,8 +12,7 @@
  * @param argv
  * @param uniqueKey
  */
-SingleApplication::SingleApplication(int &argc, char *argv[],
-                                     const QString &uniqueKey)
+SingleApplication::SingleApplication(int &argc, char *argv[], QString uniqueKey)
     : QApplication(argc, argv), _uniqueKey(std::move(uniqueKey)) {
   sharedMemory.setKey(_uniqueKey);
   if (sharedMemory.attach()) {

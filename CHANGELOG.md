@@ -421,7 +421,7 @@
 
 **Merged pull requests:**
 
-- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvarum12](https://github.com/dvarum12))
+- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvaerum](https://github.com/dvaerum))
 
 ## [v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4) (2015-11-03)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)

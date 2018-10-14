@@ -708,7 +708,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+640"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -717,7 +717,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-598"/>
+        <location line="-597"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -878,7 +878,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+137"/>
+        <location filename="../src/qtpass.cpp" line="+138"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Skapar GPG nyckelpar</translation>
     </message>
@@ -959,7 +959,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation type="unfinished"></translation>
     </message>

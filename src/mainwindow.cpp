@@ -1016,8 +1016,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   ly->setContentsMargins(5, 2, 2, 2);
   frame->setLayout(ly);
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
-    auto *fieldLabel =
-        new QPushButtonWithClipboard(trimmedValue, this);
+    auto *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
 

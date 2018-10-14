@@ -126,9 +126,8 @@ Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
 
   if (index.isValid()) {
     return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
-  } 
-    return Qt::ItemIsDropEnabled | defaultFlags;
-  
+  }
+  return Qt::ItemIsDropEnabled | defaultFlags;
 }
 
 QStringList StoreModel::mimeTypes() const {

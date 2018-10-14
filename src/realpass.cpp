@@ -177,6 +177,6 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
  */
 void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
                            bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getPassExecutable(), args, std::move(input),
-                 readStdout, readStderr);
+  executeWrapper(id, QtPassSettings::getPassExecutable(), args,
+                 std::move(input), readStdout, readStderr);
 }
