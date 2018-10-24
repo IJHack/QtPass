@@ -8,69 +8,69 @@
  viewBox="0.00 0.00 333.71 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 134)">
 <title>QtPassSettings::isUseWebDav</title>
-<!-- Node507 -->
+<!-- Node509 -->
 <g id="node1" class="node">
-<title>Node507</title>
+<title>Node509</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-55.5 0,-73.5 153.6514,-73.5 153.6514,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="76.8257" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseWebDav</text>
 </g>
-<!-- Node508 -->
+<!-- Node510 -->
 <g id="node2" class="node">
-<title>Node508</title>
+<title>Node510</title>
 <g id="a_node2"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
 <polygon fill="none" stroke="#000000" points="208.2744,-111.5 208.2744,-129.5 307.082,-129.5 307.082,-111.5 208.2744,-111.5"/>
 <text text-anchor="middle" x="257.6782" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Insert</text>
 </a>
 </g>
 </g>
-<!-- Node507&#45;&gt;Node508 -->
+<!-- Node509&#45;&gt;Node510 -->
 <g id="edge1" class="edge">
-<title>Node507&#45;&gt;Node508</title>
+<title>Node509&#45;&gt;Node510</title>
 <path fill="none" stroke="#191970" d="M111.8619,-76.9669C134.0406,-84.6927 163.3869,-94.6117 189.6514,-102.5 199.9477,-105.5924 211.2036,-108.6858 221.5427,-111.414"/>
 <polygon fill="#191970" stroke="#191970" points="112.8077,-73.5898 102.2129,-73.5868 110.4934,-80.1961 112.8077,-73.5898"/>
 </g>
-<!-- Node509 -->
+<!-- Node511 -->
 <g id="node3" class="node">
-<title>Node509</title>
+<title>Node511</title>
 <g id="a_node3"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
 <polygon fill="none" stroke="#000000" points="214.1094,-74.5 214.1094,-92.5 301.2471,-92.5 301.2471,-74.5 214.1094,-74.5"/>
 <text text-anchor="middle" x="257.6782" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Init</text>
 </a>
 </g>
 </g>
-<!-- Node507&#45;&gt;Node509 -->
+<!-- Node509&#45;&gt;Node511 -->
 <g id="edge2" class="edge">
-<title>Node507&#45;&gt;Node509</title>
+<title>Node509&#45;&gt;Node511</title>
 <path fill="none" stroke="#191970" d="M163.9693,-73.6551C181.33,-75.479 198.8522,-77.3199 213.9718,-78.9083"/>
 <polygon fill="#191970" stroke="#191970" points="164.0967,-70.1493 153.7857,-72.5853 163.3652,-77.111 164.0967,-70.1493"/>
 </g>
-<!-- Node510 -->
+<!-- Node512 -->
 <g id="node4" class="node">
-<title>Node510</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
+<title>Node512</title>
+<g id="a_node4"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">
 <polygon fill="none" stroke="#000000" points="189.6514,-37.5 189.6514,-55.5 325.7051,-55.5 325.7051,-37.5 189.6514,-37.5"/>
 <text text-anchor="middle" x="257.6782" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::reencryptPath</text>
 </a>
 </g>
 </g>
-<!-- Node507&#45;&gt;Node510 -->
+<!-- Node509&#45;&gt;Node512 -->
 <g id="edge3" class="edge">
-<title>Node507&#45;&gt;Node510</title>
+<title>Node509&#45;&gt;Node512</title>
 <path fill="none" stroke="#191970" d="M163.8192,-55.8417C172.3982,-54.9878 181.0185,-54.1298 189.3706,-53.2986"/>
 <polygon fill="#191970" stroke="#191970" points="163.3898,-52.367 153.7857,-56.8403 164.0832,-59.3326 163.3898,-52.367"/>
 </g>
-<!-- Node511 -->
+<!-- Node513 -->
 <g id="node5" class="node">
-<title>Node511</title>
+<title>Node513</title>
 <g id="a_node5"><a xlink:href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" target="_top" xlink:title="QtPass::~QtPass destroy! ">
 <polygon fill="none" stroke="#000000" points="211.1919,-.5 211.1919,-18.5 304.1646,-18.5 304.1646,-.5 211.1919,-.5"/>
 <text text-anchor="middle" x="257.6782" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::~QtPass</text>
 </a>
 </g>
 </g>
-<!-- Node507&#45;&gt;Node511 -->
+<!-- Node509&#45;&gt;Node513 -->
 <g id="edge4" class="edge">
-<title>Node507&#45;&gt;Node511</title>
+<title>Node509&#45;&gt;Node513</title>
 <path fill="none" stroke="#191970" d="M113.7079,-52.3572C135.6968,-45.2115 164.1986,-36.1124 189.6514,-28.5 200.9295,-25.1269 213.3153,-21.6118 224.392,-18.5355"/>
 <polygon fill="#191970" stroke="#191970" points="112.5201,-49.0631 104.0976,-55.4906 114.69,-55.7183 112.5201,-49.0631"/>
 </g>

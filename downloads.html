@@ -159,6 +159,8 @@
 
         Via <a href="https://caskroom.io">Homebrew Cask</a> <pre><code>brew cask install qtpass</code></pre>
 
+        <p>QtPass works best with pass and pinentry-mac installed. <pre><code>brew install pass pinentry-mac</code></pre></p>
+
         <h3><a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
         <ul>
             <li>QtPass requires Qt5.</li>
@@ -176,8 +178,6 @@
 brew link --overwrite --force qt5
 xcode-select --install
 qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
-
-        <p>Currently seems to only work with MacGPG2</p>
 
         <h3><a id="changelogs" class="anchor" href="#changelogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Read up on recent changes</h3>
 

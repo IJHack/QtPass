@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 293.31 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::setUsePass</title>
-<!-- Node636 -->
+<!-- Node638 -->
 <g id="node1" class="node">
-<title>Node636</title>
+<title>Node638</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 143.832,-18.5 143.832,-.5 0,-.5"/>
 <text text-anchor="middle" x="71.916" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setUsePass</text>
 </g>
-<!-- Node637 -->
+<!-- Node639 -->
 <g id="node2" class="node">
-<title>Node637</title>
+<title>Node639</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="179.832,-.5 179.832,-18.5 285.3145,-18.5 285.3145,-.5 179.832,-.5"/>
 <text text-anchor="middle" x="232.5732" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node636&#45;&gt;Node637 -->
+<!-- Node638&#45;&gt;Node639 -->
 <g id="edge1" class="edge">
-<title>Node636&#45;&gt;Node637</title>
+<title>Node638&#45;&gt;Node639</title>
 <path fill="none" stroke="#191970" d="M154.2659,-9.5C162.8016,-9.5 171.3068,-9.5 179.3957,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="154.2549,-6.0001 144.2549,-9.5 154.2549,-13.0001 154.2549,-6.0001"/>
 </g>

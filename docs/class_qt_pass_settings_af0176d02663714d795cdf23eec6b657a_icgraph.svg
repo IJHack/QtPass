@@ -54,90 +54,90 @@ var sectionId = 'dynsection-23';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPassExecutable</title>
-<!-- Node245 -->
+<!-- Node247 -->
 <g id="node1" class="node">
-<title>Node245</title>
+<title>Node247</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-74.5 0,-92.5 176.0879,-92.5 176.0879,-74.5 0,-74.5"/>
 <text text-anchor="middle" x="88.0439" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassExecutable</text>
 </g>
-<!-- Node246 -->
+<!-- Node248 -->
 <g id="node2" class="node">
-<title>Node246</title>
+<title>Node248</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="222.9229,-150.5 222.9229,-168.5 358.9912,-168.5 358.9912,-150.5 222.9229,-150.5"/>
 <text text-anchor="middle" x="290.957" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node246 -->
+<!-- Node247&#45;&gt;Node248 -->
 <g id="edge1" class="edge">
-<title>Node245&#45;&gt;Node246</title>
+<title>Node247&#45;&gt;Node248</title>
 <path fill="none" stroke="#191970" d="M117.2474,-96.7328C142.1766,-107.7888 179.1219,-123.6092 212.0879,-135.5 227.1669,-140.939 244.1479,-146.2126 258.4803,-150.4245"/>
 <polygon fill="#191970" stroke="#191970" points="118.5507,-93.4818 107.9925,-92.6022 115.6977,-99.874 118.5507,-93.4818"/>
 </g>
-<!-- Node247 -->
+<!-- Node249 -->
 <g id="node3" class="node">
-<title>Node247</title>
+<title>Node249</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
 <polygon fill="none" stroke="#000000" points="405.8262,-56.5 405.8262,-74.5 511.3086,-74.5 511.3086,-56.5 405.8262,-56.5"/>
 <text text-anchor="middle" x="458.5674" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node247 -->
+<!-- Node247&#45;&gt;Node249 -->
 <g id="edge2" class="edge">
-<title>Node245&#45;&gt;Node247</title>
+<title>Node247&#45;&gt;Node249</title>
 <path fill="none" stroke="#191970" d="M137.3216,-94.5991C193.972,-105.5713 289.4875,-118.5776 369.8262,-102.5 396.3414,-97.1937 424.8349,-83.7865 442.1848,-74.656"/>
 <polygon fill="#191970" stroke="#191970" points="137.7,-91.1057 127.2085,-92.5815 136.3304,-97.9704 137.7,-91.1057"/>
 </g>
-<!-- Node248 -->
+<!-- Node250 -->
 <g id="node4" class="node">
-<title>Node248</title>
+<title>Node250</title>
 <g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
 <polygon fill="none" stroke="#000000" points="212.0879,-74.5 212.0879,-92.5 369.8262,-92.5 369.8262,-74.5 212.0879,-74.5"/>
 <text text-anchor="middle" x="290.957" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node248 -->
+<!-- Node247&#45;&gt;Node250 -->
 <g id="edge3" class="edge">
-<title>Node245&#45;&gt;Node248</title>
+<title>Node247&#45;&gt;Node250</title>
 <path fill="none" stroke="#191970" d="M186.2203,-83.5C194.8156,-83.5 203.4424,-83.5 211.8535,-83.5"/>
 <polygon fill="#191970" stroke="#191970" points="186.1593,-80.0001 176.1593,-83.5 186.1593,-87.0001 186.1593,-80.0001"/>
 </g>
-<!-- Node249 -->
+<!-- Node251 -->
 <g id="node5" class="node">
-<title>Node249</title>
+<title>Node251</title>
 <g id="a_node5"><a xlink:href="class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" target="_top" xlink:title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. ">
 <polygon fill="none" stroke="#000000" points="238.4917,-37.5 238.4917,-55.5 343.4224,-55.5 343.4224,-37.5 238.4917,-37.5"/>
 <text text-anchor="middle" x="290.957" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass::GitPull_b</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node249 -->
+<!-- Node247&#45;&gt;Node251 -->
 <g id="edge4" class="edge">
-<title>Node245&#45;&gt;Node249</title>
+<title>Node247&#45;&gt;Node251</title>
 <path fill="none" stroke="#191970" d="M147.3035,-72.6944C177.1675,-67.2489 212.9668,-60.7211 241.3569,-55.5443"/>
 <polygon fill="#191970" stroke="#191970" points="146.6325,-69.2589 137.4226,-74.4961 147.8883,-76.1454 146.6325,-69.2589"/>
 </g>
-<!-- Node250 -->
+<!-- Node252 -->
 <g id="node6" class="node">
-<title>Node250</title>
+<title>Node252</title>
 <g id="a_node6"><a xlink:href="class_util.html#a00c91095ca10b233e45eb643ff6097a4" target="_top" xlink:title="Util::checkConfig do we have prequisite settings? ">
 <polygon fill="none" stroke="#000000" points="245.4424,-.5 245.4424,-18.5 336.4717,-18.5 336.4717,-.5 245.4424,-.5"/>
 <text text-anchor="middle" x="290.957" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::checkConfig</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node250 -->
+<!-- Node247&#45;&gt;Node252 -->
 <g id="edge5" class="edge">
-<title>Node245&#45;&gt;Node250</title>
+<title>Node247&#45;&gt;Node252</title>
 <path fill="none" stroke="#191970" d="M114.8286,-69.9274C139.5782,-57.7977 177.6206,-40.1856 212.0879,-28.5 223.2923,-24.7013 235.6353,-21.3499 247.1634,-18.5612"/>
 <polygon fill="#191970" stroke="#191970" points="113.1224,-66.8666 105.7146,-74.4413 116.2292,-73.1394 113.1224,-66.8666"/>
 </g>
-<!-- Node250&#45;&gt;Node247 -->
+<!-- Node252&#45;&gt;Node249 -->
 <g id="edge6" class="edge">
-<title>Node250&#45;&gt;Node247</title>
+<title>Node252&#45;&gt;Node249</title>
 <path fill="none" stroke="#191970" d="M343.6834,-20.9726C352.4802,-23.237 361.4607,-25.7675 369.8262,-28.5 394.2613,-36.4815 421.4114,-48.2497 439.1674,-56.3604"/>
 <polygon fill="#191970" stroke="#191970" points="344.4213,-17.5496 333.8722,-18.5326 342.7318,-24.3426 344.4213,-17.5496"/>
 </g>

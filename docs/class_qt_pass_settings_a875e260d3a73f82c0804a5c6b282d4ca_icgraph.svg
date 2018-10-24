@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 373.93 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::setGpgExecutable</title>
-<!-- Node550 -->
+<!-- Node552 -->
 <g id="node1" class="node">
-<title>Node550</title>
+<title>Node552</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 172.1963,-36.5 172.1963,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="86.0981" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setGpgExecutable</text>
 </g>
-<!-- Node551 -->
+<!-- Node553 -->
 <g id="node2" class="node">
-<title>Node551</title>
+<title>Node553</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git...">
 <polygon fill="none" stroke="#000000" points="216.1113,-37.5 216.1113,-55.5 358.0195,-55.5 358.0195,-37.5 216.1113,-37.5"/>
 <text text-anchor="middle" x="287.0654" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::~ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node550&#45;&gt;Node551 -->
+<!-- Node552&#45;&gt;Node553 -->
 <g id="edge1" class="edge">
-<title>Node550&#45;&gt;Node551</title>
+<title>Node552&#45;&gt;Node553</title>
 <path fill="none" stroke="#191970" d="M182.1701,-36.5829C193.5532,-37.6591 205.012,-38.7424 215.9606,-39.7776"/>
 <polygon fill="#191970" stroke="#191970" points="182.486,-33.0973 172.2009,-35.6404 181.8271,-40.0662 182.486,-33.0973"/>
 </g>
-<!-- Node552 -->
+<!-- Node554 -->
 <g id="node3" class="node">
-<title>Node552</title>
+<title>Node554</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
 <polygon fill="none" stroke="#000000" points="208.1963,-.5 208.1963,-18.5 365.9346,-18.5 365.9346,-.5 208.1963,-.5"/>
 <text text-anchor="middle" x="287.0654" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
 </a>
 </g>
 </g>
-<!-- Node550&#45;&gt;Node552 -->
+<!-- Node552&#45;&gt;Node554 -->
 <g id="edge2" class="edge">
-<title>Node550&#45;&gt;Node552</title>
+<title>Node552&#45;&gt;Node554</title>
 <path fill="none" stroke="#191970" d="M182.3186,-18.8818C190.9671,-18.1072 199.6577,-17.3288 208.1336,-16.5697"/>
 <polygon fill="#191970" stroke="#191970" points="181.8488,-15.4098 172.2009,-19.788 182.4733,-22.3819 181.8488,-15.4098"/>
 </g>

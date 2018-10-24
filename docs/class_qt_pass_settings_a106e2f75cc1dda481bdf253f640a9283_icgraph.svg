@@ -8,45 +8,45 @@
  viewBox="0.00 0.00 360.01 111.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 107)">
 <title>QtPassSettings::isUseTemplate</title>
-<!-- Node493 -->
+<!-- Node495 -->
 <g id="node1" class="node">
-<title>Node493</title>
+<title>Node495</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-47.5 0,-65.5 156.0586,-65.5 156.0586,-47.5 0,-47.5"/>
 <text text-anchor="middle" x="78.0293" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseTemplate</text>
 </g>
-<!-- Node494 -->
+<!-- Node496 -->
 <g id="node2" class="node">
-<title>Node494</title>
+<title>Node496</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="204.002,-84.5 204.002,-102.5 340.0703,-102.5 340.0703,-84.5 204.002,-84.5"/>
 <text text-anchor="middle" x="272.0361" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node493&#45;&gt;Node494 -->
+<!-- Node495&#45;&gt;Node496 -->
 <g id="edge1" class="edge">
-<title>Node493&#45;&gt;Node494</title>
+<title>Node495&#45;&gt;Node496</title>
 <path fill="none" stroke="#191970" d="M135.6811,-67.4951C164.0735,-72.9099 197.8819,-79.3577 224.7309,-84.4782"/>
 <polygon fill="#191970" stroke="#191970" points="135.9674,-63.9866 125.4887,-65.5512 134.656,-70.8627 135.9674,-63.9866"/>
 </g>
-<!-- Node495 -->
+<!-- Node497 -->
 <g id="node3" class="node">
-<title>Node495</title>
+<title>Node497</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title="MainWindow::passShowHandler">
 <polygon fill="none" stroke="#000000" points="192.0586,-47.5 192.0586,-65.5 352.0137,-65.5 352.0137,-47.5 192.0586,-47.5"/>
 <text text-anchor="middle" x="272.0361" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 </a>
 </g>
 </g>
-<!-- Node493&#45;&gt;Node495 -->
+<!-- Node495&#45;&gt;Node497 -->
 <g id="edge2" class="edge">
-<title>Node493&#45;&gt;Node495</title>
+<title>Node495&#45;&gt;Node497</title>
 <path fill="none" stroke="#191970" d="M166.1266,-56.5C174.7179,-56.5 183.4031,-56.5 191.9097,-56.5"/>
 <polygon fill="#191970" stroke="#191970" points="166.1007,-53.0001 156.1007,-56.5 166.1007,-60.0001 166.1007,-53.0001"/>
 </g>
-<!-- Node496 -->
+<!-- Node498 -->
 <g id="node4" class="node">
-<title>Node496</title>
+<title>Node498</title>
 <g id="a_node4"><a xlink:href="class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" target="_top" xlink:title="PasswordDialog::PasswordDialog complete constructor. ">
 <polygon fill="none" stroke="#000000" points="203.1768,-.5 203.1768,-28.5 340.8955,-28.5 340.8955,-.5 203.1768,-.5"/>
 <text text-anchor="start" x="211.1768" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
@@ -54,9 +54,9 @@
 </a>
 </g>
 </g>
-<!-- Node493&#45;&gt;Node496 -->
+<!-- Node495&#45;&gt;Node498 -->
 <g id="edge3" class="edge">
-<title>Node493&#45;&gt;Node496</title>
+<title>Node495&#45;&gt;Node498</title>
 <path fill="none" stroke="#191970" d="M129.5464,-45.3472C153.3717,-40.1893 181.9293,-34.007 207.2018,-28.5358"/>
 <polygon fill="#191970" stroke="#191970" points="128.6816,-41.9533 119.6486,-47.4899 130.1628,-48.7948 128.6816,-41.9533"/>
 </g>

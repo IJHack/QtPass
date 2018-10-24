@@ -174,9 +174,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4ee26f024636eb1b0989b1c1e67d5c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0">Init</a> (QString path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;list) Q_DECL_OVERRIDE</td></tr>
 <tr class="memdesc:ab4ee26f024636eb1b0989b1c1e67d5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. ">ImitatePass::Init</a> initialize pass repository.  <a href="#ab4ee26f024636eb1b0989b1c1e67d5c0">More...</a><br /></td></tr>
 <tr class="separator:ab4ee26f024636eb1b0989b1c1e67d5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8670f6326e3dfe0018a0737fba27da2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f">reencryptPath</a> (QString dir)</td></tr>
-<tr class="memdesc:a8670f6326e3dfe0018a0737fba27da2f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">ImitatePass::reencryptPath</a> reencrypt all files under the chosen directory.  <a href="#a8670f6326e3dfe0018a0737fba27da2f">More...</a><br /></td></tr>
-<tr class="separator:a8670f6326e3dfe0018a0737fba27da2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af331446d163c31f1fca714646c0f6244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">reencryptPath</a> (const QString &amp;dir)</td></tr>
+<tr class="memdesc:af331446d163c31f1fca714646c0f6244"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">ImitatePass::reencryptPath</a> reencrypt all files under the chosen directory.  <a href="#af331446d163c31f1fca714646c0f6244">More...</a><br /></td></tr>
+<tr class="separator:af331446d163c31f1fca714646c0f6244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd150b37240a340cbec88d888e0a7fe6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6">Move</a> (const QString src, const QString dest, const bool force=false) Q_DECL_OVERRIDE</td></tr>
 <tr class="separator:abd150b37240a340cbec88d888e0a7fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6db1849662fe03e61f9410fce080890d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d">Copy</a> (const QString src, const QString dest, const bool force=false) Q_DECL_OVERRIDE</td></tr>
@@ -190,7 +190,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8dfa731be7ac962f9f6a5cf8f29097ec inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec">~Pass</a> ()</td></tr>
 <tr class="separator:a8dfa731be7ac962f9f6a5cf8f29097ec inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9837e79dfc147d8710563a4a8a04bf3e inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e">Generate_b</a> (unsigned int length, const QString &amp;charset)</td></tr>
-<tr class="memdesc:a9837e79dfc147d8710563a4a8a04bf3e inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass::const Generat&amp;e use eithconst er pwge&amp;n or internal password generator.  <a href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e">More...</a><br /></td></tr>
+<tr class="memdesc:a9837e79dfc147d8710563a4a8a04bf3e inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass::Generate use either pwgen or internal password generator.  <a href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e">More...</a><br /></td></tr>
 <tr class="separator:a9837e79dfc147d8710563a4a8a04bf3e inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c29f7bd4ca235d00d9dac6a37e14f4f inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a> (QString batch)</td></tr>
 <tr class="memdesc:a0c29f7bd4ca235d00d9dac6a37e14f4f inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . ">Pass::GenerateGPGKeys</a> internal gpg keypair generator . .  <a href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f">More...</a><br /></td></tr>
@@ -198,8 +198,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1ded1699f4e47d871296a96eca5a3ea inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea">listKeys</a> (QStringList keystring, bool secret=false)</td></tr>
 <tr class="memdesc:ad1ded1699f4e47d871296a96eca5a3ea inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users. ">Pass::listKeys</a> list users.  <a href="class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea">More...</a><br /></td></tr>
 <tr class="separator:ad1ded1699f4e47d871296a96eca5a3ea inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a54f2de2701769d3e130b300a8a4b49 inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4a54f2de2701769d3e130b300a8a4b49">listKeys</a> (QString keystring=&quot;&quot;, bool secret=false)</td></tr>
-<tr class="separator:a4a54f2de2701769d3e130b300a8a4b49 inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451b0f52aa0332801252ae28665e29b3 inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a451b0f52aa0332801252ae28665e29b3">listKeys</a> (QString keystring=&quot;&quot;, bool secret=false)</td></tr>
+<tr class="memdesc:a451b0f52aa0332801252ae28665e29b3 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users. ">Pass::listKeys</a> list users.  <a href="class_pass.html#a451b0f52aa0332801252ae28665e29b3">More...</a><br /></td></tr>
+<tr class="separator:a451b0f52aa0332801252ae28665e29b3 inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac679a086b289cdb9245906948ba0458a inherit pub_methods_class_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a">updateEnv</a> ()</td></tr>
 <tr class="memdesc:ac679a086b289cdb9245906948ba0458a inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) ">Pass::updateEnv</a> update the execution environment (used when switching profiles)  <a href="class_pass.html#ac679a086b289cdb9245906948ba0458a">More...</a><br /></td></tr>
 <tr class="separator:ac679a086b289cdb9245906948ba0458a inherit pub_methods_class_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -895,8 +896,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8670f6326e3dfe0018a0737fba27da2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8670f6326e3dfe0018a0737fba27da2f">&#9670;&nbsp;</a></span>reencryptPath()</h2>
+<a id="af331446d163c31f1fca714646c0f6244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af331446d163c31f1fca714646c0f6244">&#9670;&nbsp;</a></span>reencryptPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -904,14 +905,14 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void ImitatePass::reencryptPath </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_imitate_pass.html#a8670f6326e3dfe0018a0737fba27da2f" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">ImitatePass::reencryptPath</a> reencrypt all files under the chosen directory. </p>
+<p><a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. ">ImitatePass::reencryptPath</a> reencrypt all files under the chosen directory. </p>
 <p>This is stil quite experimental.. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td></td></tr>
@@ -925,7 +926,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_imitate_pass_a8670f6326e3dfe0018a0737fba27da2f_cgraph.svg" width="100%" height="581"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_imitate_pass_af331446d163c31f1fca714646c0f6244_cgraph.svg" width="100%" height="581"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 

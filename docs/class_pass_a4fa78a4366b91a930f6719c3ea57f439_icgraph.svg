@@ -17,7 +17,7 @@
 <!-- Node14 -->
 <g id="node2" class="node">
 <title>Node14</title>
-<g id="a_node2"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::const Generat&amp;e use eithconst er pwge&amp;n or internal password generator. ">
+<g id="a_node2"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
 <polygon fill="none" stroke="#000000" points="108.123,-.5 108.123,-18.5 204.7285,-18.5 204.7285,-.5 108.123,-.5"/>
 <text text-anchor="middle" x="156.4258" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>

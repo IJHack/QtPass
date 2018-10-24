@@ -1,5 +1,6 @@
 <map id="src/filecontent.h" name="src/filecontent.h">
-<area shape="rect" id="node2" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="5,85,146,111"/>
-<area shape="rect" id="node3" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="170,85,331,111"/>
-<area shape="rect" id="node4" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="354,79,472,117"/>
+<area shape="rect" id="node2" href="$filecontent_8cpp.html" title="src/filecontent.cpp" alt="" coords="5,85,134,111"/>
+<area shape="rect" id="node3" href="$mainwindow_8cpp.html" title="src/mainwindow.cpp" alt="" coords="158,85,299,111"/>
+<area shape="rect" id="node4" href="$passworddialog_8cpp.html" title="src/passworddialog.cpp" alt="" coords="323,85,483,111"/>
+<area shape="rect" id="node5" href="$tst__util_8cpp.html" title="tests/auto/util/tst\l_util.cpp" alt="" coords="507,79,625,117"/>
 </map>
