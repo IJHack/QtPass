@@ -25,6 +25,7 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 LicenseFile=src\release\LICENSE.txt
 OutputBaseFilename=qtpass-{#MyAppVersion}
+PrivilegesRequired=lowest
 Compression=lzma
 SolidCompression=yes
 ShowLanguageDialog=no
