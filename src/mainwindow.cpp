@@ -351,7 +351,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
 void MainWindow::deselect() {
-  currentDir = "/";
+  currentDir = "";
   m_qtPass->clearClipboard();
   ui->passwordName->setText("");
   clearPanel(false);
