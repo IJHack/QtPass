@@ -537,7 +537,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+898"/>
+        <location filename="../src/mainwindow.cpp" line="+901"/>
         <source>Edit</source>
         <translation>Ändern</translation>
     </message>
@@ -640,7 +640,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-613"/>
+        <location filename="../src/mainwindow.cpp" line="-616"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Passwort Speicher aktualisieren</translation>
@@ -650,7 +650,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Zwischenablage gelöscht</translation>
     </message>
     <message>
-        <location line="+356"/>
+        <location line="+359"/>
         <source>Are you sure you want to delete %1%2</source>
         <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen</translation>
     </message>
@@ -775,12 +775,12 @@ p, li { white-space: pre-wrap; }
         <translation>Passwort hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-703"/>
+        <location filename="../src/mainwindow.cpp" line="-706"/>
         <source>Welcome to QtPass %1</source>
         <translation>Willkommen bei QtPass %1</translation>
     </message>
     <message>
-        <location line="+313"/>
+        <location line="+316"/>
         <source>Looking for: %1</source>
         <translation>Suche nach: %1</translation>
     </message>

@@ -536,7 +536,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+898"/>
+        <location filename="../src/mainwindow.cpp" line="+901"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -627,7 +627,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-613"/>
+        <location filename="../src/mainwindow.cpp" line="-616"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Jelszó-tároló frissítése</translation>
@@ -637,17 +637,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Vágólap tiszta</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Content hidden</source>
         <translation>Oldal elrejtve</translation>
     </message>
     <message>
-        <location line="-197"/>
+        <location line="-200"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+201"/>
+        <location line="+204"/>
         <location line="+641"/>
         <source>Password</source>
         <translation type="unfinished"></translation>

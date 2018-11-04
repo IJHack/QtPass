@@ -548,7 +548,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+898"/>
+        <location filename="../src/mainwindow.cpp" line="+901"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -651,7 +651,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-704"/>
+        <location filename="../src/mainwindow.cpp" line="-707"/>
         <source>Welcome to QtPass %1</source>
         <translation>欢迎使用 QtPass %1</translation>
     </message>
@@ -708,7 +708,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">密码已隐藏</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Content hidden</source>
         <translation>内容已隐藏</translation>
     </message>

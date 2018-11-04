@@ -529,7 +529,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+898"/>
+        <location filename="../src/mainwindow.cpp" line="+901"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -632,7 +632,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-613"/>
+        <location filename="../src/mainwindow.cpp" line="-616"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Actualizando password-store</translation>
@@ -642,7 +642,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Portapapeles vacío</translation>
     </message>
     <message>
-        <location line="+308"/>
+        <location line="+311"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -770,12 +770,12 @@ p, li { white-space: pre-wrap; }
         <translation>Añadir contraseña</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-703"/>
+        <location filename="../src/mainwindow.cpp" line="-706"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bienvenido a QtPass %1</translation>
     </message>
     <message>
-        <location line="+313"/>
+        <location line="+316"/>
         <source>Looking for: %1</source>
         <translation>Buscando %1</translation>
     </message>

@@ -529,7 +529,7 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Content hidden</source>
         <translation type="unfinished"></translation>
     </message>

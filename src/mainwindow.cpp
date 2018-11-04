@@ -353,6 +353,9 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
 void MainWindow::deselect() {
   currentDir = "";
   m_qtPass->clearClipboard();
+  ui->treeView->clearSelection();
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
   clearPanel(false);
 }
