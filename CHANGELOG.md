@@ -17,6 +17,8 @@
 
 **Closed issues:**
 
+- How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
+- LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
 - Compilation error in \(K\)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
@@ -24,10 +26,12 @@
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
 - Problem with GNUpg not found on MacOS [\#362](https://github.com/IJHack/QtPass/issues/362)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
+- make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 
 **Merged pull requests:**
 
+- Update to prevent the installer requesting admin [\#424](https://github.com/IJHack/QtPass/pull/424) ([hughwilliams94](https://github.com/hughwilliams94))
 - Tested working on Mac Os HS with pinentry-mac [\#419](https://github.com/IJHack/QtPass/pull/419) ([riccardocossu](https://github.com/riccardocossu))
 - Dutch \(nl\) translation improvements [\#418](https://github.com/IJHack/QtPass/pull/418) ([equaeghe](https://github.com/equaeghe))
 - Bugfixes [\#413](https://github.com/IJHack/QtPass/pull/413) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -421,7 +425,7 @@
 
 **Merged pull requests:**
 
-- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvarum12](https://github.com/dvarum12))
+- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvaerum](https://github.com/dvaerum))
 
 ## [v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4) (2015-11-03)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)
