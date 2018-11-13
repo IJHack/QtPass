@@ -17,6 +17,8 @@
 
 **Closed issues:**
 
+- How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
+- LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
 - Compilation error in \(K\)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
