@@ -119,6 +119,26 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
 }
 
 /**
+ * @brief decodes the input into a string assuming UTF-8 encoding.
+ * If this fails (which is likely if it is not actually UTF-8)
+ * it will then fall back to Qt's decoding function, which
+ * will try based on BOM and if that fails fall back to local encoding.
+ *
+ * @param in input data
+ * @return Input bytes decoded to string
+ */
+static QString decodeAssumingUtf8(QByteArray in)
+{
+    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    QTextCodec::ConverterState state;
+    QString out = codec->toUnicode(in.constData(), in.size(), &state);
+    if (!state.invalidChars)
+        return out;
+    codec = QTextCodec::codecForUtfText(in);
+    return codec->toUnicode(in);
+}
+
+/**
  * @brief Executor::executeBlocking blocking version of the executor,
  * takes input and presents it as stdin
  * @param app
@@ -147,9 +167,8 @@ int Executor::executeBlocking(QString app, const QStringList &args,
   }
   internal.waitForFinished(-1);
   if (internal.exitStatus() == QProcess::NormalExit) {
-    QTextCodec *codec = QTextCodec::codecForLocale();
-    QString pout = codec->toUnicode(internal.readAllStandardOutput());
-    QString perr = codec->toUnicode(internal.readAllStandardError());
+    QString pout = decodeAssumingUtf8(internal.readAllStandardOutput());
+    QString perr = decodeAssumingUtf8(internal.readAllStandardError());
     if (process_out != Q_NULLPTR)
       *process_out = pout;
     if (process_err != Q_NULLPTR)
@@ -205,11 +224,10 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
   running = false;
   if (exitStatus == QProcess::NormalExit) {
     QString output, err;
-    QTextCodec *codec = QTextCodec::codecForLocale();
     if (i.readStdout)
-      output = codec->toUnicode(m_process.readAllStandardOutput());
+      output = decodeAssumingUtf8(m_process.readAllStandardOutput());
     if (i.readStderr || exitCode != 0) {
-      err = codec->toUnicode(m_process.readAllStandardError());
+      err = decodeAssumingUtf8(m_process.readAllStandardError());
       if (exitCode != 0) {
 #ifdef QT_DEBUG
         dbg() << exitCode << err;
