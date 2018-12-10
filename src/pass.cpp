@@ -23,6 +23,7 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+  env.append("WSLENV=PASSWORD_STORE_DIR/p");
 }
 
 void Pass::executeWrapper(PROCESS id, const QString &app,
@@ -233,7 +234,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR");
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
     // dbg()<< "Added

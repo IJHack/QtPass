@@ -538,7 +538,7 @@ void ConfigDialog::wizard() {
 
   QString gpg = ui->gpgPath->text();
   // QString gpg = mainWindow->getGpgExecutable();
-  if (!QFile(gpg).exists()) {
+  if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
         tr("GnuPG not found"),
         tr("Please install GnuPG on your system.<br>Install "
@@ -555,7 +555,7 @@ void ConfigDialog::wizard() {
   dbg() << names;
 #endif
 
-  if (QFile(gpg).exists() && names.empty()) {
+  if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
     KeygenDialog d(this);
     if (!d.exec())
       return;

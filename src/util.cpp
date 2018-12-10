@@ -110,6 +110,17 @@ QString Util::findBinaryInPath(QString binary) {
       break;
     }
   }
+#ifdef Q_OS_WIN
+  if (ret.isEmpty())
+  {
+      binary.remove(0, 1);
+      binary.prepend("wsl ");
+      QString out, err;
+      if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
+          !out.isEmpty() && err.isEmpty())
+          ret = binary;
+  }
+#endif
 
   return ret;
 }
@@ -121,7 +132,9 @@ QString Util::findBinaryInPath(QString binary) {
 bool Util::checkConfig() {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
-         (!QFile(QtPassSettings::getPassExecutable()).exists() &&
+         (!QtPassSettings::getPassExecutable().startsWith("wsl ") &&
+          !QFile(QtPassSettings::getPassExecutable()).exists() &&
+          !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
           !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
