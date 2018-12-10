@@ -549,7 +549,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+898"/>
+        <location filename="../src/mainwindow.cpp" line="+901"/>
         <source>Edit</source>
         <translation>Editer</translation>
     </message>
@@ -652,7 +652,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-704"/>
+        <location filename="../src/mainwindow.cpp" line="-707"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bienvenue sur QtPass %1</translation>
     </message>
@@ -709,7 +709,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Mot de passe caché</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Content hidden</source>
         <translation>Contenu caché</translation>
     </message>
