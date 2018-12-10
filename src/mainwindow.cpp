@@ -357,6 +357,8 @@ void MainWindow::deselect() {
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
+  ui->actionDelete->setEnabled(false);
+  ui->actionEdit->setEnabled(false);
   clearPanel(false);
 }
 
@@ -629,7 +631,7 @@ void MainWindow::onDelete() {
 
   QString dirMessage = tr(" and the whole content?");
   if (isDir) {
-    QDirIterator it(model.rootPath() + "/" + file,
+    QDirIterator it(model.rootPath() + QDir::separator() + file,
                     QDirIterator::Subdirectories);
     bool okDir = true;
     while (it.hasNext() && okDir) {
