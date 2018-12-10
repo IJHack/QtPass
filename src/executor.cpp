@@ -31,14 +31,13 @@ void Executor::executeNext() {
       running = true;
       if (!i.workingDir.isEmpty())
         m_process.setWorkingDirectory(i.workingDir);
-      if (i.app.startsWith("wsl "))
-      {
-          QStringList tmp = i.args;
-          QString app = i.app;
-          tmp.prepend(app.remove(0, 4));
-          m_process.start("wsl", tmp);
+      if (i.app.startsWith("wsl ")) {
+        QStringList tmp = i.args;
+        QString app = i.app;
+        tmp.prepend(app.remove(0, 4));
+        m_process.start("wsl", tmp);
       } else
-          m_process.start(i.app, i.args);
+        m_process.start(i.app, i.args);
       if (!i.input.isEmpty()) {
         m_process.waitForStarted(-1);
         QByteArray data = i.input.toUtf8();
@@ -120,7 +119,8 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   }
   QString appPath = app;
   if (!appPath.startsWith("wsl "))
-      appPath = QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
+    appPath =
+        QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
   m_execQueue.push_back(
       {id, appPath, args, input, readStdout, readStderr, workDir});
   executeNext();
@@ -135,15 +135,14 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
  * @param in input data
  * @return Input bytes decoded to string
  */
-static QString decodeAssumingUtf8(QByteArray in)
-{
-    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
-    QTextCodec::ConverterState state;
-    QString out = codec->toUnicode(in.constData(), in.size(), &state);
-    if (!state.invalidChars)
-        return out;
-    codec = QTextCodec::codecForUtfText(in);
-    return codec->toUnicode(in);
+static QString decodeAssumingUtf8(QByteArray in) {
+  QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+  QTextCodec::ConverterState state;
+  QString out = codec->toUnicode(in.constData(), in.size(), &state);
+  if (!state.invalidChars)
+    return out;
+  codec = QTextCodec::codecForUtfText(in);
+  return codec->toUnicode(in);
 }
 
 /**
@@ -162,13 +161,12 @@ int Executor::executeBlocking(QString app, const QStringList &args,
                               QString input, QString *process_out,
                               QString *process_err) {
   QProcess internal;
-  if (app.startsWith("wsl "))
-  {
-      QStringList tmp = args;
-      tmp.prepend(app.remove(0, 4));
-      internal.start("wsl", tmp);
+  if (app.startsWith("wsl ")) {
+    QStringList tmp = args;
+    tmp.prepend(app.remove(0, 4));
+    internal.start("wsl", tmp);
   } else
-      internal.start(app, args);
+    internal.start(app, args);
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
     internal.waitForStarted(-1);

@@ -111,14 +111,13 @@ QString Util::findBinaryInPath(QString binary) {
     }
   }
 #ifdef Q_OS_WIN
-  if (ret.isEmpty())
-  {
-      binary.remove(0, 1);
-      binary.prepend("wsl ");
-      QString out, err;
-      if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
-          !out.isEmpty() && err.isEmpty())
-          ret = binary;
+  if (ret.isEmpty()) {
+    binary.remove(0, 1);
+    binary.prepend("wsl ");
+    QString out, err;
+    if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
+        !out.isEmpty() && err.isEmpty())
+      ret = binary;
   }
 #endif
 
@@ -149,7 +148,8 @@ bool Util::checkConfig() {
 QString Util::getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
                      const StoreModel &storeModel) {
-  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
+  QString abspath =
+      QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
   if (!index.isValid())
     return forPass ? "" : abspath;
   QFileInfo info = model.fileInfo(storeModel.mapToSource(index));

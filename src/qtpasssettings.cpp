@@ -534,5 +534,13 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
                           templateAllFields);
 }
 
-RealPass *QtPassSettings::getRealPass() { if (realPass.isNull()) realPass.reset(new RealPass()); return realPass.data(); }
-ImitatePass *QtPassSettings::getImitatePass() { if (imitatePass.isNull()) imitatePass.reset(new ImitatePass()); return imitatePass.data(); }
+RealPass *QtPassSettings::getRealPass() {
+  if (realPass.isNull())
+    realPass.reset(new RealPass());
+  return realPass.data();
+}
+ImitatePass *QtPassSettings::getImitatePass() {
+  if (imitatePass.isNull())
+    imitatePass.reset(new ImitatePass());
+  return imitatePass.data();
+}

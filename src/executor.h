@@ -79,7 +79,8 @@ public:
                              QString *process_err = Q_NULLPTR);
 
   static int executeBlocking(QString app, const QStringList &args,
-                             QString *process_out, QString *process_err = Q_NULLPTR);
+                             QString *process_out,
+                             QString *process_err = Q_NULLPTR);
 
   void setEnvironment(const QStringList &env);
 

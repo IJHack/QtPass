@@ -14,18 +14,18 @@ using namespace Enums;
  */
 ImitatePass::ImitatePass() {}
 
-static QString pgit(const QString &path)
-{
-    if (!QtPassSettings::getGitExecutable().startsWith("wsl ")) return path;
-    QString res = "$(wslpath " + path + ")";
-    return res.replace('\\', '/');
+static QString pgit(const QString &path) {
+  if (!QtPassSettings::getGitExecutable().startsWith("wsl "))
+    return path;
+  QString res = "$(wslpath " + path + ")";
+  return res.replace('\\', '/');
 }
 
-static QString pgpg(const QString &path)
-{
-    if (!QtPassSettings::getGpgExecutable().startsWith("wsl ")) return path;
-    QString res = "$(wslpath " + path + ")";
-    return res.replace('\\', '/');
+static QString pgpg(const QString &path) {
+  if (!QtPassSettings::getGpgExecutable().startsWith("wsl "))
+    return path;
+  QString res = "$(wslpath " + path + ")";
+  return res.replace('\\', '/');
 }
 
 /**
@@ -61,7 +61,7 @@ void ImitatePass::GitPush() {
  */
 void ImitatePass::Show(QString file) {
   file = QtPassSettings::getPassStore() + file + ".gpg";
-  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+  QStringList args = {"-d",      "--quiet",     "--yes",   "--no-encrypt-to",
                       "--batch", "--use-agent", pgpg(file)};
   executeGpg(PASS_SHOW, args);
 }
@@ -281,8 +281,9 @@ void ImitatePass::reencryptPath(QString dir) {
       dbg() << "reencrypt " << fileName << " for " << gpgId;
 #endif
       QString local_lastDecrypt = "Could not decrypt";
-      args = QStringList{"-d",      "--quiet",     "--yes", "--no-encrypt-to",
-                         "--batch", "--use-agent", pgpg(fileName)};
+      args = QStringList{
+          "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
+          "--batch", "--use-agent", pgpg(fileName)};
       exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
                            &local_lastDecrypt);
 
@@ -298,7 +299,8 @@ void ImitatePass::reencryptPath(QString dir) {
                            "file missing or invalid."));
           return;
         }
-        args = QStringList{"--yes", "--batch", "-eq", "--output", pgpg(fileName)};
+        args =
+            QStringList{"--yes", "--batch", "-eq", "--output", pgpg(fileName)};
         for (auto &i : recipients) {
           args.append("-r");
           args.append(i);
