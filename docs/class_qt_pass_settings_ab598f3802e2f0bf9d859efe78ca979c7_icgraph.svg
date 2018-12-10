@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 317.79 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::getProfiles</title>
-<!-- Node300 -->
+<!-- Node295 -->
 <g id="node1" class="node">
-<title>Node300</title>
+<title>Node295</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 137.7236,-18.5 137.7236,-.5 0,-.5"/>
 <text text-anchor="middle" x="68.8618" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getProfiles</text>
 </g>
-<!-- Node301 -->
+<!-- Node296 -->
 <g id="node2" class="node">
-<title>Node301</title>
+<title>Node296</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="173.7236,-.5 173.7236,-18.5 309.792,-18.5 309.792,-.5 173.7236,-.5"/>
 <text text-anchor="middle" x="241.7578" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node300&#45;&gt;Node301 -->
+<!-- Node295&#45;&gt;Node296 -->
 <g id="edge1" class="edge">
-<title>Node300&#45;&gt;Node301</title>
+<title>Node295&#45;&gt;Node296</title>
 <path fill="none" stroke="#191970" d="M148.378,-9.5C156.7846,-9.5 165.2792,-9.5 173.5411,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="148.189,-6.0001 138.189,-9.5 148.189,-13.0001 148.189,-6.0001"/>
 </g>

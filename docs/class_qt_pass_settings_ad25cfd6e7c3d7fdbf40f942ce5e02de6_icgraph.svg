@@ -54,54 +54,54 @@ var sectionId = 'dynsection-31';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getPos</title>
-<!-- Node290 -->
+<!-- Node285 -->
 <g id="node1" class="node">
-<title>Node290</title>
+<title>Node285</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 121.6104,-18.5 121.6104,-.5 0,-.5"/>
 <text text-anchor="middle" x="60.8052" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPos</text>
 </g>
-<!-- Node291 -->
+<!-- Node286 -->
 <g id="node2" class="node">
-<title>Node291</title>
+<title>Node286</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title="MainWindow::restoreWindow">
 <polygon fill="none" stroke="#000000" points="157.6104,-.5 157.6104,-18.5 303.0977,-18.5 303.0977,-.5 157.6104,-.5"/>
 <text text-anchor="middle" x="230.354" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
 </a>
 </g>
 </g>
-<!-- Node290&#45;&gt;Node291 -->
+<!-- Node285&#45;&gt;Node286 -->
 <g id="edge1" class="edge">
-<title>Node290&#45;&gt;Node291</title>
+<title>Node285&#45;&gt;Node286</title>
 <path fill="none" stroke="#191970" d="M132.1035,-9.5C140.4647,-9.5 149.0055,-9.5 157.3891,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="132.0162,-6.0001 122.0162,-9.5 132.0162,-13.0001 132.0162,-6.0001"/>
 </g>
-<!-- Node292 -->
+<!-- Node287 -->
 <g id="node3" class="node">
-<title>Node292</title>
+<title>Node287</title>
 <g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
 <polygon fill="none" stroke="#000000" points="339.0977,-.5 339.0977,-18.5 464.0234,-18.5 464.0234,-.5 339.0977,-.5"/>
 <text text-anchor="middle" x="401.5605" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node291&#45;&gt;Node292 -->
+<!-- Node286&#45;&gt;Node287 -->
 <g id="edge2" class="edge">
-<title>Node291&#45;&gt;Node292</title>
+<title>Node286&#45;&gt;Node287</title>
 <path fill="none" stroke="#191970" d="M313.483,-9.5C322.0537,-9.5 330.6576,-9.5 338.9504,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="313.4576,-6.0001 303.4576,-9.5 313.4576,-13.0001 313.4576,-6.0001"/>
 </g>
-<!-- Node293 -->
+<!-- Node288 -->
 <g id="node4" class="node">
-<title>Node293</title>
+<title>Node288</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="500.0234,-.5 500.0234,-18.5 636.0625,-18.5 636.0625,-.5 500.0234,-.5"/>
 <text text-anchor="middle" x="568.043" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node292&#45;&gt;Node293 -->
+<!-- Node287&#45;&gt;Node288 -->
 <g id="edge3" class="edge">
-<title>Node292&#45;&gt;Node293</title>
+<title>Node287&#45;&gt;Node288</title>
 <path fill="none" stroke="#191970" d="M474.0297,-9.5C482.6315,-9.5 491.3894,-9.5 499.9276,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="474.0261,-6.0001 464.0261,-9.5 474.0261,-13.0001 474.0261,-6.0001"/>
 </g>

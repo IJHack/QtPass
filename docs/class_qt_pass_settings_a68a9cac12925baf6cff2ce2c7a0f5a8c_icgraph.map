@@ -1,6 +1,4 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="283,5,415,31"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="291,55,407,80"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="258,104,440,129"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="287,153,411,179"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="262,5,378,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="258,55,382,80"/>
 </map>

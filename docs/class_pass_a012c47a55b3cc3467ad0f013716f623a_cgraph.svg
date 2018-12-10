@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 428.71 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Pass::init</title>
-<!-- Node137 -->
+<!-- Node136 -->
 <g id="node1" class="node">
-<title>Node137</title>
+<title>Node136</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 56.5713,-18.5 56.5713,-.5 0,-.5"/>
 <text text-anchor="middle" x="28.2856" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </g>
-<!-- Node138 -->
+<!-- Node137 -->
 <g id="node2" class="node">
-<title>Node138</title>
+<title>Node137</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
 <polygon fill="none" stroke="#000000" points="92.5713,-.5 92.5713,-18.5 242.5264,-18.5 242.5264,-.5 92.5713,-.5"/>
 <text text-anchor="middle" x="167.5488" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>
 </g>
 </g>
-<!-- Node137&#45;&gt;Node138 -->
+<!-- Node136&#45;&gt;Node137 -->
 <g id="edge1" class="edge">
-<title>Node137&#45;&gt;Node138</title>
+<title>Node136&#45;&gt;Node137</title>
 <path fill="none" stroke="#191970" d="M56.8037,-9.5C64.5176,-9.5 73.2804,-9.5 82.4184,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="82.4494,-13.0001 92.4493,-9.5 82.4493,-6.0001 82.4494,-13.0001"/>
 </g>
-<!-- Node139 -->
+<!-- Node138 -->
 <g id="node3" class="node">
-<title>Node139</title>
+<title>Node138</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="278.5264,-.5 278.5264,-18.5 420.708,-18.5 420.708,-.5 278.5264,-.5"/>
 <text text-anchor="middle" x="349.6172" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node138&#45;&gt;Node139 -->
+<!-- Node137&#45;&gt;Node138 -->
 <g id="edge2" class="edge">
-<title>Node138&#45;&gt;Node139</title>
+<title>Node137&#45;&gt;Node138</title>
 <path fill="none" stroke="#191970" d="M242.6542,-9.5C251.1732,-9.5 259.8842,-9.5 268.4763,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="268.4895,-13.0001 278.4895,-9.5 268.4894,-6.0001 268.4895,-13.0001"/>
 </g>

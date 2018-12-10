@@ -18,7 +18,7 @@
 <!-- Node13 -->
 <g id="node2" class="node">
 <title>Node13</title>
-<g id="a_node2"><a xlink:href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" target="_top" xlink:title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">
+<g id="a_node2"><a xlink:href="class_single_application.html#a913b6f1a9f438b67c05b32ac79ce5b72" target="_top" xlink:title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">
 <polygon fill="none" stroke="#000000" points="134.2754,-.5 134.2754,-28.5 232.5508,-28.5 232.5508,-.5 134.2754,-.5"/>
 <text text-anchor="start" x="142.2754" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
 <text text-anchor="middle" x="183.4131" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication</text>

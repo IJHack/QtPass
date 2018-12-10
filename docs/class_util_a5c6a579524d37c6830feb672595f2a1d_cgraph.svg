@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 435.37 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Util::getDir</title>
-<!-- Node16 -->
+<!-- Node18 -->
 <g id="node1" class="node">
-<title>Node16</title>
+<title>Node18</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 62.6748,-18.5 62.6748,-.5 0,-.5"/>
 <text text-anchor="middle" x="31.3374" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::getDir</text>
 </g>
-<!-- Node17 -->
+<!-- Node19 -->
 <g id="node2" class="node">
-<title>Node17</title>
+<title>Node19</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
 <polygon fill="none" stroke="#000000" points="98.6748,-.5 98.6748,-18.5 249.1865,-18.5 249.1865,-.5 98.6748,-.5"/>
 <text text-anchor="middle" x="173.9307" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node17 -->
+<!-- Node18&#45;&gt;Node19 -->
 <g id="edge1" class="edge">
-<title>Node16&#45;&gt;Node17</title>
+<title>Node18&#45;&gt;Node19</title>
 <path fill="none" stroke="#191970" d="M62.9835,-9.5C70.7333,-9.5 79.3995,-9.5 88.3803,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="88.6216,-13.0001 98.6216,-9.5 88.6215,-6.0001 88.6216,-13.0001"/>
 </g>
-<!-- Node18 -->
+<!-- Node20 -->
 <g id="node3" class="node">
-<title>Node18</title>
+<title>Node20</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="285.1865,-.5 285.1865,-18.5 427.3682,-18.5 427.3682,-.5 285.1865,-.5"/>
 <text text-anchor="middle" x="356.2773" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
+<!-- Node19&#45;&gt;Node20 -->
 <g id="edge2" class="edge">
-<title>Node17&#45;&gt;Node18</title>
+<title>Node19&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M249.4143,-9.5C257.7731,-9.5 266.3132,-9.5 274.7422,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="274.949,-13.0001 284.949,-9.5 274.949,-6.0001 274.949,-13.0001"/>
 </g>

@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 292.20 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>Util::findPasswordStore</title>
-<!-- Node12 -->
+<!-- Node14 -->
 <g id="node1" class="node">
-<title>Node12</title>
+<title>Node14</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 119.9307,-18.5 119.9307,-.5 0,-.5"/>
 <text text-anchor="middle" x="59.9653" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::findPasswordStore</text>
 </g>
-<!-- Node13 -->
+<!-- Node15 -->
 <g id="node2" class="node">
-<title>Node13</title>
+<title>Node15</title>
 <g id="a_node2"><a xlink:href="class_util.html#a94597a43bf37076511033bef32f3df12" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() ">
 <polygon fill="none" stroke="#000000" points="155.9307,-.5 155.9307,-18.5 284.1963,-18.5 284.1963,-.5 155.9307,-.5"/>
 <text text-anchor="middle" x="220.0635" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::normalizeFolderPath</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node13 -->
+<!-- Node14&#45;&gt;Node15 -->
 <g id="edge1" class="edge">
-<title>Node12&#45;&gt;Node13</title>
+<title>Node14&#45;&gt;Node15</title>
 <path fill="none" stroke="#191970" d="M120.0355,-9.5C128.4535,-9.5 137.1864,-9.5 145.8285,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="145.9075,-13.0001 155.9075,-9.5 145.9075,-6.0001 145.9075,-13.0001"/>
 </g>

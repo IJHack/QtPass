@@ -68,6 +68,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_executor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Executor Class Reference</div>  </div>
@@ -124,18 +125,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:affda40d546db75d35f38db1ec1414bf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#affda40d546db75d35f38db1ec1414bf7">execute</a> (int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td></tr>
 <tr class="memdesc:affda40d546db75d35f38db1ec1414bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app. ">Executor::execute</a> executes an app from a workDir, takes input and presents it as stdin.  <a href="#affda40d546db75d35f38db1ec1414bf7">More...</a><br /></td></tr>
 <tr class="separator:affda40d546db75d35f38db1ec1414bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a32a439c0a531e4553cab015061f2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f">executeBlocking</a> (QString app, const QStringList &amp;args, QString input=QString(), QString *process_out=Q_NULLPTR, QString *process_err=Q_NULLPTR)</td></tr>
-<tr class="memdesc:a65a32a439c0a531e4553cab015061f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor, takes input and presents it as stdin.  <a href="#a65a32a439c0a531e4553cab015061f2f">More...</a><br /></td></tr>
-<tr class="separator:a65a32a439c0a531e4553cab015061f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76">executeBlocking</a> (QString app, const QStringList &amp;args, QString *process_out, QString *process_err=Q_NULLPTR)</td></tr>
-<tr class="memdesc:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor.  <a href="#a916ceeecbe46e63d9dbfe6840c3c3b76">More...</a><br /></td></tr>
-<tr class="separator:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">setEnvironment</a> (const QStringList &amp;env)</td></tr>
 <tr class="memdesc:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. ">Executor::setEnvironment</a> set environment variables for executor processes.  <a href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f">More...</a><br /></td></tr>
 <tr class="separator:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e64afb1172167fa430d5175d3176487"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a7e64afb1172167fa430d5175d3176487">cancelNext</a> ()</td></tr>
 <tr class="memdesc:a7e64afb1172167fa430d5175d3176487"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a7e64afb1172167fa430d5175d3176487" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running...">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running.  <a href="#a7e64afb1172167fa430d5175d3176487">More...</a><br /></td></tr>
 <tr class="separator:a7e64afb1172167fa430d5175d3176487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a65a32a439c0a531e4553cab015061f2f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f">executeBlocking</a> (QString app, const QStringList &amp;args, QString input=QString(), QString *process_out=Q_NULLPTR, QString *process_err=Q_NULLPTR)</td></tr>
+<tr class="memdesc:a65a32a439c0a531e4553cab015061f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor, takes input and presents it as stdin.  <a href="#a65a32a439c0a531e4553cab015061f2f">More...</a><br /></td></tr>
+<tr class="separator:a65a32a439c0a531e4553cab015061f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76">executeBlocking</a> (QString app, const QStringList &amp;args, QString *process_out, QString *process_err=Q_NULLPTR)</td></tr>
+<tr class="memdesc:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor.  <a href="#a916ceeecbe46e63d9dbfe6840c3c3b76">More...</a><br /></td></tr>
+<tr class="separator:a916ceeecbe46e63d9dbfe6840c3c3b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Executes external commands for handleing password, git and other data. </p>
@@ -197,7 +201,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="class_executor.html#a7e64afb1172167fa430d5175d3176487" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running...">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running. </p>
 <dl class="section return"><dt>Returns</dt><dd>id of the cancelled process or -1 on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00191">191</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00223">223</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +320,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00057">57</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00063">63</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -391,7 +395,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00071">71</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00077">77</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -466,7 +470,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00086">86</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00092">92</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -548,7 +552,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00102">102</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00108">108</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 
 </div>
 </div>
@@ -557,6 +561,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Executor::executeBlocking </td>
@@ -594,6 +601,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor, takes input and presents it as stdin. </p>
@@ -610,13 +622,13 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <p>TODO(bezet): it might make sense to throw here, a lot of possible errors </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00133">133</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00160">160</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_executor_a65a32a439c0a531e4553cab015061f2f_icgraph.svg" width="638" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_executor_a65a32a439c0a531e4553cab015061f2f_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -627,6 +639,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Executor::executeBlocking </td>
@@ -658,6 +673,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">Executor::executeBlocking</a> blocking version of the executor. </p>
@@ -672,7 +692,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00171">171</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00203">203</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -767,7 +787,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00181">181</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00213">213</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">

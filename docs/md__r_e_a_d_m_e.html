@@ -99,7 +99,7 @@ $(function() {
 <li>For use of the fallback icons the SVG library is required.</li>
 </ul>
 <p>At runtime the only real dependency is <code>gpg2</code> but to make the most of it, you'll need <code>git</code> and <code>pass</code> too.</p>
-<p>Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication. On Mac OS X this currently seems to only work best with <code>pinentry-mac</code> from homebrew, although gpgtools works too.</p>
+<p>Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication. On Mac OS X this currently seems to only work with MacGPG2 from gpgtools or pinentry-mac from homebrew.</p>
 <p>On most unix systems all you need is: </p><div class="fragment"><div class="line">qmake &amp;&amp; make &amp;&amp; make install</div></div><!-- fragment --><h2>Testing </h2>
 <p>This is done with <code>make check</code></p>
 <p>Codecoverage can be done with <code>make lcov</code>, <code>make gcov</code>, <code>make coveralls</code> and/or <code>make codecov</code>.</p>
