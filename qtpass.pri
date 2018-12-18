@@ -29,6 +29,7 @@ CODECFORTR      = UTF-8
 macx {
     QMAKE_MAC_SDK = macosx
     QT += svg
+    CONFIG += app_bundle
 }
 
 isEmpty(QMAKE_LRELEASE) {
