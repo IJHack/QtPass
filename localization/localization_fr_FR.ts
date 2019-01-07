@@ -289,7 +289,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation>Les modèles ajoutent des champs supplémentaires dans la boîte de dialogue de génération des mots de passe et dans le panneau de visualisation</translation>
     </message>
     <message>

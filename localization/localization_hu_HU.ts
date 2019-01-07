@@ -260,7 +260,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
