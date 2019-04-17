@@ -3,6 +3,8 @@
 #include "qtpasssettings.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QPixmap>
+#include <QLabel>
 
 #ifndef Q_OS_WIN
 #include <QInputDialog>
@@ -402,5 +404,31 @@ void QtPass::copyTextToClipboard(const QString &text) {
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
   if (QtPassSettings::isUseAutoclear()) {
     clearClipboardTimer.start();
+  }
+}
+
+/**
+ * @brief displays the text as qrcode
+ * @param text
+ */
+void QtPass::showTextAsQRCode(const QString &text) {
+  QProcess qrencode;
+  qrencode.start("/usr/bin/qrencode", QStringList() << "-o-" << "-tPNG");
+  qrencode.write(text.toUtf8());
+  qrencode.closeWriteChannel();
+  qrencode.waitForFinished();
+  QByteArray output(qrencode.readAllStandardOutput());
+
+  if (qrencode.exitStatus() || qrencode.exitCode()) {
+    QString error(qrencode.readAllStandardError());
+    m_mainWindow->showStatusMessage(error);
+  } else {
+    QPixmap image;
+    image.loadFromData(output, "PNG");
+
+    QLabel *label = new QLabel();
+    label->setPixmap(image);
+    label->setScaledContents(true);
+    label->show();
   }
 }

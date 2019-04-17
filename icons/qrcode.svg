@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="qrcode.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="1370"
+     id="namedview8"
+     showgrid="true"
+     inkscape:zoom="27.812867"
+     inkscape:cx="10.794985"
+     inkscape:cy="11.184682"
+     inkscape:window-x="3200"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6">
+    <inkscape:grid
+       type="xygrid"
+       id="grid14" />
+  </sodipodi:namedview>
+  <title
+     id="title2">Clear</title>
+  <path
+     style="fill:#000000;stroke-width:3.1622777"
+     d="M 1 1 L 1 11 L 11 11 L 11 1 L 1 1 z M 3 3 L 9 3 L 9 9 L 3 9 L 3 3 z "
+     id="rect24-3" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7"
+     width="2"
+     height="2"
+     x="5"
+     y="5" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#000000;stroke-width:3.1622777"
+     d="M 13,1 V 11 H 23 V 1 Z m 2,2 h 6 v 6 h -6 z"
+     id="rect24-3-5" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3"
+     width="2"
+     height="2"
+     x="17"
+     y="5" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#000000;stroke-width:3.1622777"
+     d="M 1,13 V 23 H 11 V 13 Z m 2,2 h 6 v 6 H 3 Z"
+     id="rect24-3-5-5" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-6"
+     width="2"
+     height="2"
+     x="5"
+     y="17" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-2"
+     width="2"
+     height="2"
+     x="13"
+     y="13" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-9"
+     width="2"
+     height="2"
+     x="21"
+     y="21" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-1"
+     width="4"
+     height="2"
+     x="17"
+     y="13" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-1-2"
+     width="4"
+     height="2"
+     x="19"
+     y="15" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-1-2-7"
+     width="8"
+     height="2"
+     x="13"
+     y="19" />
+  <rect
+     style="fill:#000000;stroke-width:3.1622777"
+     id="rect24-3-6-7-3-1-2-0"
+     width="2"
+     height="4"
+     x="15"
+     y="15" />
+</svg>

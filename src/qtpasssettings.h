@@ -144,6 +144,9 @@ public:
   static bool isUseOtp(const bool &defaultValue = QVariant().toBool());
   static void setUseOtp(const bool &useOtp);
 
+  static bool isUseQrencode(const bool &defaultValue = QVariant().toBool());
+  static void setUseQrencode(const bool &useQrencode);
+
   static bool isUsePwgen(const bool &defaultValue = QVariant().toBool());
   static void setUsePwgen(const bool &usePwgen);
 
