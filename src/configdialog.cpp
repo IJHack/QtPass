@@ -584,7 +584,7 @@ void ConfigDialog::wizard() {
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
            "from GnuPG.org")
 #endif
-	);
+    );
     clean = true;
   }
 

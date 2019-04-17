@@ -131,11 +131,11 @@ QString Util::findBinaryInPath(QString binary) {
 bool Util::checkConfig() {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
-         (QtPassSettings::isUsePass() ?
-          !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
-          !QFile(QtPassSettings::getPassExecutable()).exists() :
-          !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
-          !QFile(QtPassSettings::getGpgExecutable()).exists());
+         (QtPassSettings::isUsePass()
+              ? !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
+                    !QFile(QtPassSettings::getPassExecutable()).exists()
+              : !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
+                    !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
 /**
