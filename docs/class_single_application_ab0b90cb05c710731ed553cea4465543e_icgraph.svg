@@ -11,14 +11,17 @@
 <!-- Node7 -->
 <g id="node1" class="node">
 <title>Node7</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-21.5 0,-49.5 98.2754,-49.5 98.2754,-21.5 0,-21.5"/>
-<text text-anchor="start" x="8" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
-<text text-anchor="middle" x="49.1377" y="-27.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">messageAvailable</text>
+<g id="a_node1"><a xlink:title="messageAvailable notification from commandline">
+<polygon fill="#bfbfbf" stroke="#000000" points="268.5508,-21.5 268.5508,-49.5 366.8262,-49.5 366.8262,-21.5 268.5508,-21.5"/>
+<text text-anchor="start" x="276.5508" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
+<text text-anchor="middle" x="317.6885" y="-27.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">messageAvailable</text>
+</a>
+</g>
 </g>
 <!-- Node8 -->
 <g id="node2" class="node">
 <title>Node8</title>
-<g id="a_node2"><a xlink:href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" target="_top" xlink:title="main ">
+<g id="a_node2"><a xlink:href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" target="_top" xlink:title="main">
 <polygon fill="none" stroke="#000000" points="164.5757,-47.5 164.5757,-65.5 202.2505,-65.5 202.2505,-47.5 164.5757,-47.5"/>
 <text text-anchor="middle" x="183.4131" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main</text>
 </a>
@@ -27,13 +30,13 @@
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge1" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="#191970" d="M108.4576,-44.7773C128.582,-47.9247 149.6564,-51.2206 164.3151,-53.5132"/>
-<polygon fill="#191970" stroke="#191970" points="108.7952,-41.2877 98.3744,-43.2004 107.7135,-48.2036 108.7952,-41.2877"/>
+<path fill="none" stroke="#191970" d="M258.3685,-44.7773C238.2441,-47.9247 217.1698,-51.2206 202.5111,-53.5132"/>
+<polygon fill="#191970" stroke="#191970" points="259.1127,-48.2036 268.4517,-43.2004 258.031,-41.2877 259.1127,-48.2036"/>
 </g>
 <!-- Node9 -->
 <g id="node3" class="node">
 <title>Node9</title>
-<g id="a_node3"><a xlink:href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" target="_top" xlink:title="SingleApplication::receiveMessage we have received (a command line) message. ">
+<g id="a_node3"><a xlink:href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" target="_top" xlink:title="SingleApplication::receiveMessage we have received (a command line) message.">
 <polygon fill="none" stroke="#000000" points="134.2754,-.5 134.2754,-28.5 232.5508,-28.5 232.5508,-.5 134.2754,-.5"/>
 <text text-anchor="start" x="142.2754" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
 <text text-anchor="middle" x="183.4131" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">receiveMessage</text>
@@ -43,24 +46,24 @@
 <!-- Node7&#45;&gt;Node9 -->
 <g id="edge2" class="edge">
 <title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="#191970" d="M108.3765,-26.2353C116.9953,-24.8874 125.7902,-23.5119 134.1823,-22.1995"/>
-<polygon fill="#191970" stroke="#191970" points="107.7135,-22.7964 98.3744,-27.7996 108.7952,-29.7123 107.7135,-22.7964"/>
+<path fill="none" stroke="#191970" d="M258.4496,-26.2353C249.8309,-24.8874 241.036,-23.5119 232.6439,-22.1995"/>
+<polygon fill="#191970" stroke="#191970" points="258.031,-29.7123 268.4517,-27.7996 259.1127,-22.7964 258.031,-29.7123"/>
 </g>
 <!-- Node10 -->
 <g id="node4" class="node">
 <title>Node10</title>
-<g id="a_node4"><a xlink:href="class_single_application.html#a913b6f1a9f438b67c05b32ac79ce5b72" target="_top" xlink:title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">
-<polygon fill="none" stroke="#000000" points="268.5508,-.5 268.5508,-28.5 366.8262,-28.5 366.8262,-.5 268.5508,-.5"/>
-<text text-anchor="start" x="276.5508" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
-<text text-anchor="middle" x="317.6885" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication</text>
+<g id="a_node4"><a xlink:href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" target="_top" xlink:title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 98.2754,-28.5 98.2754,-.5 0,-.5"/>
+<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
+<text text-anchor="middle" x="49.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge3" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="#191970" d="M242.6519,-14.5C251.2707,-14.5 260.0655,-14.5 268.4577,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="242.6499,-11.0001 232.6498,-14.5 242.6498,-18.0001 242.6499,-11.0001"/>
+<path fill="none" stroke="#191970" d="M124.1742,-14.5C115.5555,-14.5 106.7606,-14.5 98.3685,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="124.1764,-18.0001 134.1763,-14.5 124.1763,-11.0001 124.1764,-18.0001"/>
 </g>
 </g>
 </svg>

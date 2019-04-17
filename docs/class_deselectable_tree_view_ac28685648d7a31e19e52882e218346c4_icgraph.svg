@@ -11,24 +11,27 @@
 <!-- Node5 -->
 <g id="node1" class="node">
 <title>Node5</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 115.5068,-28.5 115.5068,-.5 0,-.5"/>
-<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DeselectableTreeView</text>
-<text text-anchor="middle" x="57.7534" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::emptyClicked</text>
+<g id="a_node1"><a xlink:title="emptyClicked event">
+<polygon fill="#bfbfbf" stroke="#000000" points="172.0391,-.5 172.0391,-28.5 287.5459,-28.5 287.5459,-.5 172.0391,-.5"/>
+<text text-anchor="start" x="180.0391" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">DeselectableTreeView</text>
+<text text-anchor="middle" x="229.7925" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::emptyClicked</text>
+</a>
+</g>
 </g>
 <!-- Node6 -->
 <g id="node2" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="#000000" points="151.5068,-5.5 151.5068,-23.5 287.5459,-23.5 287.5459,-5.5 151.5068,-5.5"/>
-<text text-anchor="middle" x="219.5264" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+<g id="a_node2"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window.">
+<polygon fill="none" stroke="#000000" points="0,-5.5 0,-23.5 136.0391,-23.5 136.0391,-5.5 0,-5.5"/>
+<text text-anchor="middle" x="68.0195" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge1" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#191970" d="M125.9101,-14.5C134.3791,-14.5 143.0391,-14.5 151.5061,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="125.7003,-11.0001 115.7002,-14.5 125.7002,-18.0001 125.7003,-11.0001"/>
+<path fill="none" stroke="#191970" d="M161.6358,-14.5C153.1668,-14.5 144.5068,-14.5 136.0398,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="161.8457,-18.0001 171.8457,-14.5 161.8456,-11.0001 161.8457,-18.0001"/>
 </g>
 </g>
 </svg>

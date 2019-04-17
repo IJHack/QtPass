@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="34.3721,-110.5 34.3721,-128.5 130.9678,-128.5 130.9678,-110.5 34.3721,-110.5"/>
 <text text-anchor="middle" x="82.6699" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/filecontent.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="filecontent_8h.html" target="_top" xlink:title="filecontent.h">
+<g id="a_node2"><a xlink:href="filecontent_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="47.707,-55.5 47.707,-73.5 117.6328,-73.5 117.6328,-55.5 47.707,-55.5"/>
 <text text-anchor="middle" x="82.6699" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">filecontent.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 39.3398,-18.5 39.3398,-.5 0,-.5"/>
 <text text-anchor="middle" x="19.6699" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QList</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
@@ -44,8 +50,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="57.7192,-.5 57.7192,-18.5 107.6206,-18.5 107.6206,-.5 57.7192,-.5"/>
 <text text-anchor="middle" x="82.6699" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
@@ -56,8 +65,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="125.9385,-.5 125.9385,-18.5 191.4014,-18.5 191.4014,-.5 125.9385,-.5"/>
 <text text-anchor="middle" x="158.6699" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QStringList</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge4" class="edge">

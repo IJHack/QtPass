@@ -11,14 +11,20 @@
 <!-- Node2 -->
 <g id="node1" class="node">
 <title>Node2</title>
+<g id="a_node1"><a xlink:title="Stylish widget to allow copying of password and account details.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 138.2852,-18.5 138.2852,-.5 0,-.5"/>
 <text text-anchor="middle" x="69.1426" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButtonWithClipboard</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="31.4014,-55.5 31.4014,-73.5 106.8838,-73.5 106.8838,-55.5 31.4014,-55.5"/>
 <text text-anchor="middle" x="69.1426" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButton</text>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge1" class="edge">

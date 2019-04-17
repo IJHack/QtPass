@@ -1,3 +1,4 @@
 <map id="MainWindow::endReencryptPath" name="MainWindow::endReencryptPath">
-<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. " alt="" coords="269,5,460,44"/>
+<area shape="rect" id="node1" title="MainWindow::endReencryptPath re&#45;enable ui elements." alt="" coords="5,12,221,37"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="269,5,460,44"/>
 </map>

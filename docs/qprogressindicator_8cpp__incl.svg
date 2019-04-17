@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="40.4731,-110.5 40.4731,-128.5 173.2017,-128.5 173.2017,-110.5 40.4731,-110.5"/>
 <text text-anchor="middle" x="106.8374" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qprogressindicator.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="qprogressindicator_8h.html" target="_top" xlink:title="qprogressindicator.h">
+<g id="a_node2"><a xlink:href="qprogressindicator_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="4.8081,-55.5 4.8081,-73.5 110.8667,-73.5 110.8667,-55.5 4.8081,-55.5"/>
 <text text-anchor="middle" x="57.8374" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">qprogressindicator.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="129.106,-55.5 129.106,-73.5 184.5688,-73.5 184.5688,-55.5 129.106,-55.5"/>
 <text text-anchor="middle" x="156.8374" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPainter</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
@@ -44,8 +50,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 47.6748,-18.5 47.6748,-.5 0,-.5"/>
 <text text-anchor="middle" x="23.8374" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QColor</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
@@ -56,8 +65,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="65.3867,-.5 65.3867,-18.5 120.2881,-18.5 120.2881,-.5 65.3867,-.5"/>
 <text text-anchor="middle" x="92.8374" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge3" class="edge">

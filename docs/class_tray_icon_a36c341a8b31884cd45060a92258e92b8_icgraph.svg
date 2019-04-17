@@ -11,23 +11,26 @@
 <!-- Node10 -->
 <g id="node1" class="node">
 <title>Node10</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 119.5693,-18.5 119.5693,-.5 0,-.5"/>
-<text text-anchor="middle" x="59.7847" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::iconActivated</text>
+<g id="a_node1"><a xlink:title="TrayIcon::iconActivated you clicked on the trayicon.">
+<polygon fill="#bfbfbf" stroke="#000000" points="134.627,-.5 134.627,-18.5 254.1963,-18.5 254.1963,-.5 134.627,-.5"/>
+<text text-anchor="middle" x="194.4116" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::iconActivated</text>
+</a>
+</g>
 </g>
 <!-- Node11 -->
 <g id="node2" class="node">
 <title>Node11</title>
-<g id="a_node2"><a xlink:href="class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" target="_top" xlink:title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits...">
-<polygon fill="none" stroke="#000000" points="155.5693,-.5 155.5693,-18.5 254.1963,-18.5 254.1963,-.5 155.5693,-.5"/>
-<text text-anchor="middle" x="204.8828" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::TrayIcon</text>
+<g id="a_node2"><a xlink:href="class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" target="_top" xlink:title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 98.627,-18.5 98.627,-.5 0,-.5"/>
+<text text-anchor="middle" x="49.3135" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::TrayIcon</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge1" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="#191970" d="M129.7326,-9.5C138.375,-9.5 147.0666,-9.5 155.3161,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="129.6394,-6.0001 119.6394,-9.5 129.6393,-13.0001 129.6394,-6.0001"/>
+<path fill="none" stroke="#191970" d="M124.4637,-9.5C115.8213,-9.5 107.1297,-9.5 98.8802,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="124.557,-13.0001 134.5569,-9.5 124.5569,-6.0001 124.557,-13.0001"/>
 </g>
 </g>
 </svg>

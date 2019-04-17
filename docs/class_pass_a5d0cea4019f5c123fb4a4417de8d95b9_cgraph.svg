@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 66.0195,-18.5 66.0195,-.5 0,-.5"/>
 <text text-anchor="middle" x="33.0098" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished. ...">
+<g id="a_node2"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished.">
 <polygon fill="none" stroke="#000000" points="102.0195,-.5 102.0195,-18.5 180.2754,-18.5 180.2754,-.5 102.0195,-.5"/>
 <text text-anchor="middle" x="141.1475" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::finished</text>
 </a>

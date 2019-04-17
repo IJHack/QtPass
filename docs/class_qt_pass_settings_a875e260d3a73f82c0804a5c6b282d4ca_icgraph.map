@@ -1,4 +1,5 @@
 <map id="QtPassSettings::setGpgExecutable" name="QtPassSettings::setGpgExecutable">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="293,5,483,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="283,55,493,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="264,31,493,56"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,..." alt="" coords="16,5,205,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="5,55,216,80"/>
 </map>

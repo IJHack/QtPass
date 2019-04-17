@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="The ConfigDialog handles the configuration interface.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 73.2559,-18.5 73.2559,-.5 0,-.5"/>
 <text text-anchor="middle" x="36.6279" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="10.564,-55.5 10.564,-73.5 62.6919,-73.5 62.6919,-55.5 10.564,-55.5"/>
 <text text-anchor="middle" x="36.6279" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge">

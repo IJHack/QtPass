@@ -8,41 +8,44 @@
  viewBox="0.00 0.00 271.10 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>Util::checkConfig</title>
-<!-- Node5 -->
-<g id="node1" class="node">
-<title>Node5</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 91.0293,-36.5 91.0293,-18.5 0,-18.5"/>
-<text text-anchor="middle" x="45.5146" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::checkConfig</text>
-</g>
 <!-- Node6 -->
-<g id="node2" class="node">
+<g id="node1" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
-<polygon fill="none" stroke="#000000" points="127.0293,-37.5 127.0293,-55.5 263.0977,-55.5 263.0977,-37.5 127.0293,-37.5"/>
-<text text-anchor="middle" x="195.0635" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
+<g id="a_node1"><a xlink:title="Util::checkConfig do we have prequisite settings?">
+<polygon fill="#bfbfbf" stroke="#000000" points="172.0684,-18.5 172.0684,-36.5 263.0977,-36.5 263.0977,-18.5 172.0684,-18.5"/>
+<text text-anchor="middle" x="217.583" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::checkConfig</text>
 </a>
 </g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge1" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#191970" d="M101.1853,-34.5729C109.5378,-35.6341 118.2311,-36.7385 126.8092,-37.8284"/>
-<polygon fill="#191970" stroke="#191970" points="101.5582,-31.0922 91.1968,-33.3039 100.6759,-38.0364 101.5582,-31.0922"/>
 </g>
 <!-- Node7 -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>Node7</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
-<polygon fill="none" stroke="#000000" points="142.3223,-.5 142.3223,-18.5 247.8047,-18.5 247.8047,-.5 142.3223,-.5"/>
-<text text-anchor="middle" x="195.0635" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
+<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen.">
+<polygon fill="none" stroke="#000000" points="0,-37.5 0,-55.5 136.0684,-55.5 136.0684,-37.5 0,-37.5"/>
+<text text-anchor="middle" x="68.0342" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node7 -->
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge1" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="#191970" d="M161.9123,-34.5729C153.5599,-35.6341 144.8665,-36.7385 136.2885,-37.8284"/>
+<polygon fill="#191970" stroke="#191970" points="162.4217,-38.0364 171.9008,-33.3039 161.5394,-31.0922 162.4217,-38.0364"/>
+</g>
+<!-- Node8 -->
+<g id="node3" class="node">
+<title>Node8</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication.">
+<polygon fill="none" stroke="#000000" points="15.293,-.5 15.293,-18.5 120.7754,-18.5 120.7754,-.5 15.293,-.5"/>
+<text text-anchor="middle" x="68.0342" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node8 -->
 <g id="edge2" class="edge">
-<title>Node5&#45;&gt;Node7</title>
-<path fill="none" stroke="#191970" d="M101.2168,-20.7956C114.5825,-19.1869 128.8193,-17.4733 142.0586,-15.8798"/>
-<polygon fill="#191970" stroke="#191970" points="100.7069,-17.3316 91.1968,-22.0016 101.5435,-24.2814 100.7069,-17.3316"/>
+<title>Node6&#45;&gt;Node8</title>
+<path fill="none" stroke="#191970" d="M161.8808,-20.7956C148.5152,-19.1869 134.2784,-17.4733 121.0391,-15.8798"/>
+<polygon fill="#191970" stroke="#191970" points="161.5542,-24.2814 171.9008,-22.0016 162.3908,-17.3316 161.5542,-24.2814"/>
 </g>
 </g>
 </svg>

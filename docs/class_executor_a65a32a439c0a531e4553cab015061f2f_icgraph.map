@@ -1,9 +1,10 @@
 <map id="Executor::executeBlocking" name="Executor::executeBlocking">
-<area shape="rect" id="node2" href="$class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76" title="Executor::executeBlocking blocking version of the executor. " alt="" coords="232,5,410,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="257,55,385,80"/>
-<area shape="rect" id="node4" href="$class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users. " alt="" coords="269,104,373,129"/>
-<area shape="rect" id="node7" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath search for executables. " alt="" coords="248,153,394,179"/>
-<area shape="rect" id="node5" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="511,55,616,80"/>
-<area shape="rect" id="node6" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="476,104,650,129"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="458,153,669,179"/>
+<area shape="rect" id="node1" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="490,80,669,105"/>
+<area shape="rect" id="node2" href="$class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76" title="Executor::executeBlocking blocking version of the executor." alt="" coords="264,5,442,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="288,55,417,80"/>
+<area shape="rect" id="node4" href="$class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users." alt="" coords="301,104,405,129"/>
+<area shape="rect" id="node7" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath search for executables." alt="" coords="280,153,426,179"/>
+<area shape="rect" id="node5" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="58,55,163,80"/>
+<area shape="rect" id="node6" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="24,104,197,129"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="5,153,216,179"/>
 </map>

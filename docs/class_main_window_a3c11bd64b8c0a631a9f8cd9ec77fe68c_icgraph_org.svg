@@ -11,164 +11,182 @@
 <!-- Node213 -->
 <g id="node1" class="node">
 <title>Node213</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-111.5 0,-129.5 171.0684,-129.5 171.0684,-111.5 0,-111.5"/>
-<text text-anchor="middle" x="85.5342" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::showStatusMessage</text>
+<g id="a_node1"><a xlink:title="Displays message in status bar.">
+<polygon fill="#bfbfbf" stroke="#000000" points="566.1855,-55.5 566.1855,-73.5 737.2539,-73.5 737.2539,-55.5 566.1855,-55.5"/>
+<text text-anchor="middle" x="651.7197" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::showStatusMessage</text>
+</a>
+</g>
 </g>
 <!-- Node214 -->
 <g id="node2" class="node">
 <title>Node214</title>
-<g id="a_node2"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
-<polygon fill="none" stroke="#000000" points="218.1914,-167.5 218.1914,-185.5 343.1172,-185.5 343.1172,-167.5 218.1914,-167.5"/>
-<text text-anchor="middle" x="280.6543" y="-173.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
+<g id="a_node2"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="394.1367,-166.5 394.1367,-184.5 519.0625,-184.5 519.0625,-166.5 394.1367,-166.5"/>
+<text text-anchor="middle" x="456.5996" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node213&#45;&gt;Node214 -->
 <g id="edge1" class="edge">
 <title>Node213&#45;&gt;Node214</title>
-<path fill="none" stroke="#191970" d="M127.1774,-132.4517C163.723,-142.9404 216.0728,-157.9649 249.2075,-167.4747"/>
-<polygon fill="#191970" stroke="#191970" points="127.8954,-129.0165 117.3179,-129.622 125.9643,-135.7449 127.8954,-129.0165"/>
+<path fill="none" stroke="#191970" d="M627.0061,-78.5591C586.3532,-101.6857 506.4954,-147.1153 472.5141,-166.4466"/>
+<polygon fill="#191970" stroke="#191970" points="628.7909,-81.5705 635.7522,-73.5836 625.3296,-75.4861 628.7909,-81.5705"/>
 </g>
 <!-- Node216 -->
 <g id="node4" class="node">
 <title>Node216</title>
-<g id="a_node4"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents. ">
-<polygon fill="none" stroke="#000000" points="221.2432,-111.5 221.2432,-129.5 340.0654,-129.5 340.0654,-111.5 221.2432,-111.5"/>
-<text text-anchor="middle" x="280.6543" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClipboard</text>
+<g id="a_node4"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents.">
+<polygon fill="none" stroke="#000000" points="397.1885,-92.5 397.1885,-110.5 516.0107,-110.5 516.0107,-92.5 397.1885,-92.5"/>
+<text text-anchor="middle" x="456.5996" y="-98.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClipboard</text>
 </a>
 </g>
 </g>
 <!-- Node213&#45;&gt;Node216 -->
 <g id="edge3" class="edge">
 <title>Node213&#45;&gt;Node216</title>
-<path fill="none" stroke="#191970" d="M181.4551,-120.5C195.008,-120.5 208.6031,-120.5 221.1937,-120.5"/>
-<polygon fill="#191970" stroke="#191970" points="181.1167,-117.0001 171.1167,-120.5 181.1167,-124.0001 181.1167,-117.0001"/>
+<path fill="none" stroke="#191970" d="M594.3611,-75.3767C565.7198,-80.8079 531.4759,-87.3015 504.2948,-92.4557"/>
+<polygon fill="#191970" stroke="#191970" points="595.0647,-78.8058 604.2375,-73.5039 593.7605,-71.9283 595.0647,-78.8058"/>
 </g>
 <!-- Node220 -->
 <g id="node8" class="node">
 <title>Node220</title>
-<g id="a_node8"><a xlink:href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95" target="_top" xlink:title="MainWindow::copyTextToClipboard copies text to your clipboard. ">
-<polygon fill="none" stroke="#000000" points="207.0684,-37.5 207.0684,-55.5 354.2402,-55.5 354.2402,-37.5 207.0684,-37.5"/>
-<text text-anchor="middle" x="280.6543" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::copyTextToClipboard</text>
+<g id="a_node8"><a xlink:href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95" target="_top" xlink:title="MainWindow::copyTextToClipboard copies text to your clipboard.">
+<polygon fill="none" stroke="#000000" points="383.0137,-37.5 383.0137,-55.5 530.1855,-55.5 530.1855,-37.5 383.0137,-37.5"/>
+<text text-anchor="middle" x="456.5996" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::copyTextToClipboard</text>
 </a>
 </g>
 </g>
 <!-- Node213&#45;&gt;Node220 -->
 <g id="edge8" class="edge">
 <title>Node213&#45;&gt;Node220</title>
-<path fill="none" stroke="#191970" d="M118.8646,-107.8593C158.1015,-92.9786 222.2843,-68.637 256.8385,-55.5322"/>
-<polygon fill="#191970" stroke="#191970" points="117.5687,-104.6074 109.4597,-111.4261 120.051,-111.1526 117.5687,-104.6074"/>
+<path fill="none" stroke="#191970" d="M555.9872,-55.6686C547.3194,-54.869 538.6324,-54.0676 530.2,-53.2897"/>
+<polygon fill="#191970" stroke="#191970" points="555.8579,-59.1714 566.1372,-56.6049 556.501,-52.201 555.8579,-59.1714"/>
+</g>
+<!-- Node224 -->
+<g id="node12" class="node">
+<title>Node224</title>
+<g id="a_node12"><a xlink:href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef" target="_top" xlink:title="displays the text as qrcode">
+<polygon fill="none" stroke="#000000" points="383.2969,-.5 383.2969,-18.5 529.9023,-18.5 529.9023,-.5 383.2969,-.5"/>
+<text text-anchor="middle" x="456.5996" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::showTextAsQRCode</text>
+</a>
+</g>
+</g>
+<!-- Node213&#45;&gt;Node224 -->
+<g id="edge12" class="edge">
+<title>Node213&#45;&gt;Node224</title>
+<path fill="none" stroke="#191970" d="M613.6299,-52.3088C589.7565,-44.816 558.2887,-35.2087 530.1855,-27.5 518.8972,-24.4036 506.5639,-21.2846 495.2765,-18.533"/>
+<polygon fill="#191970" stroke="#191970" points="612.7747,-55.709 623.3644,-55.3789 614.8802,-49.0331 612.7747,-55.709"/>
 </g>
 <!-- Node215 -->
 <g id="node3" class="node">
 <title>Node215</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="#000000" points="589.2568,-167.5 589.2568,-185.5 725.2959,-185.5 725.2959,-167.5 589.2568,-167.5"/>
-<text text-anchor="middle" x="657.2764" y="-173.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+<g id="a_node3"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window.">
+<polygon fill="none" stroke="#000000" points="11.958,-167.5 11.958,-185.5 147.9971,-185.5 147.9971,-167.5 11.958,-167.5"/>
+<text text-anchor="middle" x="79.9775" y="-173.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node214&#45;&gt;Node215 -->
 <g id="edge2" class="edge">
 <title>Node214&#45;&gt;Node215</title>
-<path fill="none" stroke="#191970" d="M353.4889,-176.5C421.5971,-176.5 522.532,-176.5 589.093,-176.5"/>
-<polygon fill="#191970" stroke="#191970" points="353.2686,-173.0001 343.2685,-176.5 353.2685,-180.0001 353.2686,-173.0001"/>
+<path fill="none" stroke="#191970" d="M383.801,-176.2573C371.5217,-176.3584 358.9049,-176.4457 347.0137,-176.5 279.3281,-176.8088 201.9912,-176.7654 148.0267,-176.6711"/>
+<polygon fill="#191970" stroke="#191970" points="384.0433,-179.7554 394.0129,-176.1696 383.9831,-172.7557 384.0433,-179.7554"/>
 </g>
 <!-- Node217 -->
 <g id="node5" class="node">
 <title>Node217</title>
-<g id="a_node5"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
-<polygon fill="none" stroke="#000000" points="407.7476,-148.5 407.7476,-166.5 523.7915,-166.5 523.7915,-148.5 407.7476,-148.5"/>
-<text text-anchor="middle" x="465.7695" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::deselect</text>
+<g id="a_node5"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer.">
+<polygon fill="none" stroke="#000000" points="213.4624,-148.5 213.4624,-166.5 329.5063,-166.5 329.5063,-148.5 213.4624,-148.5"/>
+<text text-anchor="middle" x="271.4844" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::deselect</text>
 </a>
 </g>
 </g>
 <!-- Node216&#45;&gt;Node217 -->
 <g id="edge4" class="edge">
 <title>Node216&#45;&gt;Node217</title>
-<path fill="none" stroke="#191970" d="M336.0206,-131.5664C363.0378,-136.9665 395.1262,-143.3801 420.6323,-148.4782"/>
-<polygon fill="#191970" stroke="#191970" points="336.4306,-128.0792 325.9386,-129.5512 335.0586,-134.9434 336.4306,-128.0792"/>
+<path fill="none" stroke="#191970" d="M422.7944,-114.2022C401.2745,-122.0437 372.7131,-132.0022 347.0137,-139.5 336.0143,-142.7091 323.9925,-145.7715 312.8398,-148.4309"/>
+<polygon fill="#191970" stroke="#191970" points="424.2706,-117.3887 432.4497,-110.6542 421.8561,-110.8183 424.2706,-117.3887"/>
 </g>
 <!-- Node218 -->
 <g id="node6" class="node">
 <title>Node218</title>
-<g id="a_node6"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit. ">
-<polygon fill="none" stroke="#000000" points="401.9126,-111.5 401.9126,-129.5 529.6265,-129.5 529.6265,-111.5 401.9126,-111.5"/>
-<text text-anchor="middle" x="465.7695" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::closeEvent</text>
+<g id="a_node6"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
+<polygon fill="none" stroke="#000000" points="207.6274,-111.5 207.6274,-129.5 335.3413,-129.5 335.3413,-111.5 207.6274,-111.5"/>
+<text text-anchor="middle" x="271.4844" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::closeEvent</text>
 </a>
 </g>
 </g>
 <!-- Node216&#45;&gt;Node218 -->
 <g id="edge6" class="edge">
 <title>Node216&#45;&gt;Node218</title>
-<path fill="none" stroke="#191970" d="M350.5622,-120.5C367.388,-120.5 385.2778,-120.5 401.8163,-120.5"/>
-<polygon fill="#191970" stroke="#191970" points="350.2449,-117.0001 340.2449,-120.5 350.2448,-124.0001 350.2449,-117.0001"/>
+<path fill="none" stroke="#191970" d="M386.6917,-108.6753C369.8659,-110.4022 351.9761,-112.2384 335.4376,-113.9359"/>
+<polygon fill="#191970" stroke="#191970" points="387.4187,-112.1191 397.009,-107.6163 386.7039,-105.1557 387.4187,-112.1191"/>
 </g>
 <!-- Node219 -->
 <g id="node7" class="node">
 <title>Node219</title>
-<g id="a_node7"><a xlink:href="class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" target="_top" xlink:title="QtPass::QtPass">
-<polygon fill="none" stroke="#000000" points="422.2031,-74.5 422.2031,-92.5 509.3359,-92.5 509.3359,-74.5 422.2031,-74.5"/>
-<text text-anchor="middle" x="465.7695" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::QtPass</text>
+<g id="a_node7"><a xlink:href="class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="227.918,-74.5 227.918,-92.5 315.0508,-92.5 315.0508,-74.5 227.918,-74.5"/>
+<text text-anchor="middle" x="271.4844" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::QtPass</text>
 </a>
 </g>
 </g>
 <!-- Node216&#45;&gt;Node219 -->
 <g id="edge7" class="edge">
 <title>Node216&#45;&gt;Node219</title>
-<path fill="none" stroke="#191970" d="M335.8123,-109.4753C363.3254,-103.9761 396.1389,-97.4175 421.9099,-92.2665"/>
-<polygon fill="#191970" stroke="#191970" points="335.0586,-106.0566 325.9386,-111.4488 336.4306,-112.9208 335.0586,-106.0566"/>
+<path fill="none" stroke="#191970" d="M386.8453,-94.7173C362.768,-92.3761 336.4952,-89.8214 315.1124,-87.7422"/>
+<polygon fill="#191970" stroke="#191970" points="386.7172,-98.2213 397.009,-95.7056 387.3947,-91.2541 386.7172,-98.2213"/>
 </g>
 <!-- Node217&#45;&gt;Node215 -->
 <g id="edge5" class="edge">
 <title>Node217&#45;&gt;Node215</title>
-<path fill="none" stroke="#191970" d="M534.0868,-164.278C552.0056,-166.0558 571.3244,-167.9724 589.229,-169.7488"/>
-<polygon fill="#191970" stroke="#191970" points="534.3046,-160.7825 524.0079,-163.278 533.6135,-167.7483 534.3046,-160.7825"/>
+<path fill="none" stroke="#191970" d="M203.1671,-164.278C185.2483,-166.0558 165.9295,-167.9724 148.0249,-169.7488"/>
+<polygon fill="#191970" stroke="#191970" points="203.6404,-167.7483 213.246,-163.278 202.9493,-160.7825 203.6404,-167.7483"/>
 </g>
 <!-- Node221 -->
 <g id="node9" class="node">
 <title>Node221</title>
-<g id="a_node9"><a xlink:href="class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" target="_top" xlink:title="MainWindow::passOtpHandler">
-<polygon fill="none" stroke="#000000" points="390.2402,-37.5 390.2402,-55.5 541.2988,-55.5 541.2988,-37.5 390.2402,-37.5"/>
-<text text-anchor="middle" x="465.7695" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passOtpHandler</text>
+<g id="a_node9"><a xlink:href="class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="195.9551,-37.5 195.9551,-55.5 347.0137,-55.5 347.0137,-37.5 195.9551,-37.5"/>
+<text text-anchor="middle" x="271.4844" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passOtpHandler</text>
 </a>
 </g>
 </g>
 <!-- Node220&#45;&gt;Node221 -->
 <g id="edge9" class="edge">
 <title>Node220&#45;&gt;Node221</title>
-<path fill="none" stroke="#191970" d="M364.3853,-46.5C372.9906,-46.5 381.6985,-46.5 390.208,-46.5"/>
-<polygon fill="#191970" stroke="#191970" points="364.3487,-43.0001 354.3486,-46.5 364.3486,-50.0001 364.3487,-43.0001"/>
+<path fill="none" stroke="#191970" d="M372.8686,-46.5C364.2633,-46.5 355.5554,-46.5 347.0459,-46.5"/>
+<polygon fill="#191970" stroke="#191970" points="372.9053,-50.0001 382.9053,-46.5 372.9052,-43.0001 372.9053,-50.0001"/>
 </g>
 <!-- Node222 -->
 <g id="node10" class="node">
 <title>Node222</title>
-<g id="a_node10"><a xlink:href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" target="_top" xlink:title="QtPass::setClippedText">
-<polygon fill="none" stroke="#000000" points="405.8018,-.5 405.8018,-18.5 525.7373,-18.5 525.7373,-.5 405.8018,-.5"/>
-<text text-anchor="middle" x="465.7695" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setClippedText</text>
+<g id="a_node10"><a xlink:href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="211.5166,-.5 211.5166,-18.5 331.4521,-18.5 331.4521,-.5 211.5166,-.5"/>
+<text text-anchor="middle" x="271.4844" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setClippedText</text>
 </a>
 </g>
 </g>
 <!-- Node220&#45;&gt;Node222 -->
 <g id="edge10" class="edge">
 <title>Node220&#45;&gt;Node222</title>
-<path fill="none" stroke="#191970" d="M336.0206,-35.4336C363.0378,-30.0335 395.1262,-23.6199 420.6323,-18.5218"/>
-<polygon fill="#191970" stroke="#191970" points="335.0586,-32.0566 325.9386,-37.4488 336.4306,-38.9208 335.0586,-32.0566"/>
+<path fill="none" stroke="#191970" d="M401.2333,-35.4336C374.2161,-30.0335 342.1277,-23.6199 316.6216,-18.5218"/>
+<polygon fill="#191970" stroke="#191970" points="400.8233,-38.9208 411.3153,-37.4488 402.1953,-32.0566 400.8233,-38.9208"/>
 </g>
 <!-- Node223 -->
 <g id="node11" class="node">
 <title>Node223</title>
-<g id="a_node11"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title="MainWindow::passShowHandler">
-<polygon fill="none" stroke="#000000" points="577.2988,-.5 577.2988,-18.5 737.2539,-18.5 737.2539,-.5 577.2988,-.5"/>
-<text text-anchor="middle" x="657.2764" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
+<g id="a_node11"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 159.9551,-18.5 159.9551,-.5 0,-.5"/>
+<text text-anchor="middle" x="79.9775" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 </a>
 </g>
 </g>
 <!-- Node222&#45;&gt;Node223 -->
 <g id="edge11" class="edge">
 <title>Node222&#45;&gt;Node223</title>
-<path fill="none" stroke="#191970" d="M535.9095,-9.5C549.2885,-9.5 563.3875,-9.5 577.0529,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="535.8381,-6.0001 525.8381,-9.5 535.838,-13.0001 535.8381,-6.0001"/>
+<path fill="none" stroke="#191970" d="M201.3444,-9.5C187.9654,-9.5 173.8664,-9.5 160.201,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="201.4159,-13.0001 211.4159,-9.5 201.4158,-6.0001 201.4159,-13.0001"/>
 </g>
 </g>
 </svg>

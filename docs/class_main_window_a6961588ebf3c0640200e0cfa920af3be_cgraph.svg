@@ -57,13 +57,16 @@ var sectionId = 'dynsection-16';
 <!-- Node140 -->
 <g id="node1" class="node">
 <title>Node140</title>
+<g id="a_node1"><a xlink:title="MainWindow::onPush do a git push.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-74.5 0,-92.5 112.7139,-92.5 112.7139,-74.5 0,-74.5"/>
 <text text-anchor="middle" x="56.3569" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::onPush</text>
+</a>
+</g>
 </g>
 <!-- Node141 -->
 <g id="node2" class="node">
 <title>Node141</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="514.7915,-149.5 514.7915,-167.5 643.0522,-167.5 643.0522,-149.5 514.7915,-149.5"/>
 <text text-anchor="middle" x="578.9219" y="-155.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
@@ -78,7 +81,7 @@ var sectionId = 'dynsection-16';
 <!-- Node143 -->
 <g id="node4" class="node">
 <title>Node143</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title="QtPassSettings::getPass">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="148.7139,-74.5 148.7139,-92.5 275.3242,-92.5 275.3242,-74.5 148.7139,-74.5"/>
 <text text-anchor="middle" x="212.019" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPass</text>
 </a>
@@ -93,7 +96,7 @@ var sectionId = 'dynsection-16';
 <!-- Node149 -->
 <g id="node10" class="node">
 <title>Node149</title>
-<g id="a_node10"><a xlink:href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" target="_top" xlink:title="Pass::GitPush">
+<g id="a_node10"><a xlink:href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="172.3394,-37.5 172.3394,-55.5 251.6987,-55.5 251.6987,-37.5 172.3394,-37.5"/>
 <text text-anchor="middle" x="212.019" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::GitPush</text>
 </a>
@@ -108,7 +111,7 @@ var sectionId = 'dynsection-16';
 <!-- Node142 -->
 <g id="node3" class="node">
 <title>Node142</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="689.8994,-112.5 689.8994,-130.5 832.0811,-130.5 832.0811,-112.5 689.8994,-112.5"/>
 <text text-anchor="middle" x="760.9902" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
@@ -123,7 +126,7 @@ var sectionId = 'dynsection-16';
 <!-- Node144 -->
 <g id="node5" class="node">
 <title>Node144</title>
-<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title="QtPassSettings::isUsePass">
+<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="510.0649,-112.5 510.0649,-130.5 647.7788,-130.5 647.7788,-112.5 510.0649,-112.5"/>
 <text text-anchor="middle" x="578.9219" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePass</text>
 </a>
@@ -138,7 +141,7 @@ var sectionId = 'dynsection-16';
 <!-- Node145 -->
 <g id="node6" class="node">
 <title>Node145</title>
-<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title="QtPassSettings::getRealPass">
+<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="316.0459,-74.5 316.0459,-92.5 463.2227,-92.5 463.2227,-74.5 316.0459,-74.5"/>
 <text text-anchor="middle" x="389.6343" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getRealPass</text>
 </a>
@@ -153,7 +156,7 @@ var sectionId = 'dynsection-16';
 <!-- Node146 -->
 <g id="node7" class="node">
 <title>Node146</title>
-<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title="QtPassSettings::getImitatePass">
+<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="311.3242,-37.5 311.3242,-55.5 467.9443,-55.5 467.9443,-37.5 311.3242,-37.5"/>
 <text text-anchor="middle" x="389.6343" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getImitatePass</text>
 </a>
@@ -168,7 +171,7 @@ var sectionId = 'dynsection-16';
 <!-- Node147 -->
 <g id="node8" class="node">
 <title>Node147</title>
-<g id="a_node8"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title="Pass::init">
+<g id="a_node8"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="361.3486,-.5 361.3486,-18.5 417.9199,-18.5 417.9199,-.5 361.3486,-.5"/>
 <text text-anchor="middle" x="389.6343" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </a>
@@ -189,7 +192,7 @@ var sectionId = 'dynsection-16';
 <!-- Node148 -->
 <g id="node9" class="node">
 <title>Node148</title>
-<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
+<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="503.9443,-38.5 503.9443,-56.5 653.8994,-56.5 653.8994,-38.5 503.9443,-38.5"/>
 <text text-anchor="middle" x="578.9219" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>

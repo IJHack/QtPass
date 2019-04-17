@@ -11,23 +11,26 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 156.0586,-18.5 156.0586,-.5 0,-.5"/>
-<text text-anchor="middle" x="78.0293" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::canDropMimeData</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="174.2754,-.5 174.2754,-18.5 330.334,-18.5 330.334,-.5 174.2754,-.5"/>
+<text text-anchor="middle" x="252.3047" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::canDropMimeData</text>
+</a>
+</g>
 </g>
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="class_store_model.html#a5fdd936940601eb0b5da52047f282781" target="_top" xlink:title="StoreModel::dropMimeData">
-<polygon fill="none" stroke="#000000" points="192.0586,-.5 192.0586,-18.5 330.334,-18.5 330.334,-.5 192.0586,-.5"/>
-<text text-anchor="middle" x="261.1963" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::dropMimeData</text>
+<g id="a_node2"><a xlink:href="class_store_model.html#a5fdd936940601eb0b5da52047f282781" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 138.2754,-18.5 138.2754,-.5 0,-.5"/>
+<text text-anchor="middle" x="69.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::dropMimeData</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge1" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="#191970" d="M166.3034,-9.5C174.9067,-9.5 183.5491,-9.5 191.9263,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="166.2399,-6.0001 156.2399,-9.5 166.2399,-13.0001 166.2399,-6.0001"/>
+<path fill="none" stroke="#191970" d="M164.0306,-9.5C155.4272,-9.5 146.7849,-9.5 138.4077,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="164.0941,-13.0001 174.0941,-9.5 164.0941,-6.0001 164.0941,-13.0001"/>
 </g>
 </g>
 </svg>

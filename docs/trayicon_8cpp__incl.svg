@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="203.8145,-110.5 203.8145,-128.5 289.8389,-128.5 289.8389,-110.5 203.8145,-110.5"/>
 <text text-anchor="middle" x="246.8267" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/trayicon.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="trayicon_8h.html" target="_top" xlink:title="trayicon.h">
+<g id="a_node2"><a xlink:href="trayicon_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="64.1494,-55.5 64.1494,-73.5 123.5039,-73.5 123.5039,-55.5 64.1494,-55.5"/>
 <text text-anchor="middle" x="93.8267" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">trayicon.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="141.041,-55.5 141.041,-73.5 192.6123,-73.5 192.6123,-55.5 141.041,-55.5"/>
 <text text-anchor="middle" x="166.8267" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QAction</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
@@ -44,8 +50,11 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="210.4771,-55.5 210.4771,-73.5 283.1763,-73.5 283.1763,-55.5 210.4771,-55.5"/>
 <text text-anchor="middle" x="246.8267" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QApplication</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
@@ -56,8 +65,11 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="301.3169,-55.5 301.3169,-73.5 382.3364,-73.5 382.3364,-55.5 301.3169,-55.5"/>
 <text text-anchor="middle" x="341.8267" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QMainWindow</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
@@ -68,8 +80,11 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
+<g id="a_node8"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="400.4302,-55.5 400.4302,-73.5 449.2231,-73.5 449.2231,-55.5 400.4302,-55.5"/>
 <text text-anchor="middle" x="424.8267" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QMenu</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
@@ -80,8 +95,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 95.6533,-18.5 95.6533,-.5 0,-.5"/>
 <text text-anchor="middle" x="47.8267" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QSystemTrayIcon</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
@@ -92,8 +110,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="113.376,-.5 113.376,-18.5 168.2773,-18.5 168.2773,-.5 113.376,-.5"/>
 <text text-anchor="middle" x="140.8267" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge3" class="edge">

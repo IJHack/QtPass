@@ -11,13 +11,16 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="5.2808,-55.5 5.2808,-73.5 119.6694,-73.5 119.6694,-55.5 5.2808,-55.5"/>
 <text text-anchor="middle" x="62.4751" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/singleapplication.h</text>
+</a>
+</g>
 </g>
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="singleapplication_8cpp.html" target="_top" xlink:title="src/singleapplication.cpp">
+<g id="a_node2"><a xlink:href="singleapplication_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 124.9502,-18.5 124.9502,-.5 0,-.5"/>
 <text text-anchor="middle" x="62.4751" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/singleapplication.cpp</text>
 </a>

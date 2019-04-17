@@ -11,14 +11,17 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 98.2754,-28.5 98.2754,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
 <text text-anchor="middle" x="49.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" target="_top" xlink:title="SingleApplication::receiveMessage we have received (a command line) message. ">
+<g id="a_node2"><a xlink:href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" target="_top" xlink:title="SingleApplication::receiveMessage we have received (a command line) message.">
 <polygon fill="none" stroke="#000000" points="134.2754,-.5 134.2754,-28.5 232.5508,-28.5 232.5508,-.5 134.2754,-.5"/>
 <text text-anchor="start" x="142.2754" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SingleApplication::</text>
 <text text-anchor="middle" x="183.4131" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">receiveMessage</text>

@@ -11,23 +11,26 @@
 <!-- Node13 -->
 <g id="node1" class="node">
 <title>Node13</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 72.123,-18.5 72.123,-.5 0,-.5"/>
-<text text-anchor="middle" x="36.0615" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::critical</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="132.6055,-.5 132.6055,-18.5 204.7285,-18.5 204.7285,-.5 132.6055,-.5"/>
+<text text-anchor="middle" x="168.667" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::critical</text>
+</a>
+</g>
 </g>
 <!-- Node14 -->
 <g id="node2" class="node">
 <title>Node14</title>
-<g id="a_node2"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
-<polygon fill="none" stroke="#000000" points="108.123,-.5 108.123,-18.5 204.7285,-18.5 204.7285,-.5 108.123,-.5"/>
-<text text-anchor="middle" x="156.4258" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
+<g id="a_node2"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 96.6055,-18.5 96.6055,-.5 0,-.5"/>
+<text text-anchor="middle" x="48.3027" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
 </a>
 </g>
 </g>
 <!-- Node13&#45;&gt;Node14 -->
 <g id="edge1" class="edge">
 <title>Node13&#45;&gt;Node14</title>
-<path fill="none" stroke="#191970" d="M82.1901,-9.5C90.5974,-9.5 99.3923,-9.5 107.8674,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="82.1748,-6.0001 72.1748,-9.5 82.1747,-13.0001 82.1748,-6.0001"/>
+<path fill="none" stroke="#191970" d="M122.5384,-9.5C114.1311,-9.5 105.3362,-9.5 96.8611,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="122.5538,-13.0001 132.5537,-9.5 122.5537,-6.0001 122.5538,-13.0001"/>
 </g>
 </g>
 </svg>

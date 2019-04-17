@@ -11,13 +11,16 @@
 <!-- Node89 -->
 <g id="node1" class="node">
 <title>Node89</title>
+<g id="a_node1"><a xlink:title="Pass::Generate use either pwgen or internal password generator.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-139.5 0,-157.5 96.6055,-157.5 96.6055,-139.5 0,-139.5"/>
 <text text-anchor="middle" x="48.3027" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
+</a>
+</g>
 </g>
 <!-- Node90 -->
 <g id="node2" class="node">
 <title>Node90</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" target="_top" xlink:title="QtPassSettings::isUsePwgen">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="142.061,-269.5 142.061,-287.5 288.1196,-287.5 288.1196,-269.5 142.061,-269.5"/>
 <text text-anchor="middle" x="215.0903" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePwgen</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node92 -->
 <g id="node4" class="node">
 <title>Node92</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" target="_top" xlink:title="QtPassSettings::isLessRandom">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="136.7803,-232.5 136.7803,-250.5 293.4004,-250.5 293.4004,-232.5 136.7803,-232.5"/>
 <text text-anchor="middle" x="215.0903" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isLessRandom</text>
 </a>
@@ -47,7 +50,7 @@
 <!-- Node93 -->
 <g id="node5" class="node">
 <title>Node93</title>
-<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" target="_top" xlink:title="QtPassSettings::isAvoidCapitals">
+<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="135.7573,-195.5 135.7573,-213.5 294.4233,-213.5 294.4233,-195.5 135.7573,-195.5"/>
 <text text-anchor="middle" x="215.0903" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAvoidCapitals</text>
 </a>
@@ -62,7 +65,7 @@
 <!-- Node94 -->
 <g id="node6" class="node">
 <title>Node94</title>
-<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" target="_top" xlink:title="QtPassSettings::isAvoidNumbers">
+<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="133.5381,-158.5 133.5381,-176.5 296.6426,-176.5 296.6426,-158.5 133.5381,-158.5"/>
 <text text-anchor="middle" x="215.0903" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAvoidNumbers</text>
 </a>
@@ -77,7 +80,7 @@
 <!-- Node95 -->
 <g id="node7" class="node">
 <title>Node95</title>
-<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" target="_top" xlink:title="QtPassSettings::isUseSymbols">
+<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="138.1768,-121.5 138.1768,-139.5 292.0039,-139.5 292.0039,-121.5 138.1768,-121.5"/>
 <text text-anchor="middle" x="215.0903" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseSymbols</text>
 </a>
@@ -92,7 +95,7 @@
 <!-- Node96 -->
 <g id="node8" class="node">
 <title>Node96</title>
-<g id="a_node8"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
+<g id="a_node8"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">
 <polygon fill="none" stroke="#000000" points="148.1694,-84.5 148.1694,-102.5 282.0112,-102.5 282.0112,-84.5 148.1694,-84.5"/>
 <text text-anchor="middle" x="215.0903" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::executeBlocking</text>
 </a>
@@ -107,7 +110,7 @@
 <!-- Node97 -->
 <g id="node9" class="node">
 <title>Node97</title>
-<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" target="_top" xlink:title="QtPassSettings::getPwgen\lExecutable">
+<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="147.6128,-37.5 147.6128,-65.5 282.5679,-65.5 282.5679,-37.5 147.6128,-37.5"/>
 <text text-anchor="start" x="155.6128" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPwgen</text>
 <text text-anchor="middle" x="215.0903" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executable</text>
@@ -123,7 +126,7 @@
 <!-- Node98 -->
 <g id="node10" class="node">
 <title>Node98</title>
-<g id="a_node10"><a xlink:href="class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf" target="_top" xlink:title="Pass::generateRandomPassword">
+<g id="a_node10"><a xlink:href="class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="132.6055,-.5 132.6055,-18.5 297.5752,-18.5 297.5752,-.5 132.6055,-.5"/>
 <text text-anchor="middle" x="215.0903" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::generateRandomPassword</text>
 </a>
@@ -138,7 +141,7 @@
 <!-- Node91 -->
 <g id="node3" class="node">
 <title>Node91</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="333.5752,-176.5 333.5752,-194.5 475.7568,-194.5 475.7568,-176.5 333.5752,-176.5"/>
 <text text-anchor="middle" x="404.666" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
@@ -183,7 +186,7 @@
 <!-- Node99 -->
 <g id="node11" class="node">
 <title>Node99</title>
-<g id="a_node11"><a xlink:href="class_pass.html#ab030c9e35cbb89d05e5c6e266addbbff" target="_top" xlink:title="Pass::boundedRandom">
+<g id="a_node11"><a xlink:href="class_pass.html#ab030c9e35cbb89d05e5c6e266addbbff" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="344.4077,-.5 344.4077,-18.5 464.9243,-18.5 464.9243,-.5 344.4077,-.5"/>
 <text text-anchor="middle" x="404.666" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::boundedRandom</text>
 </a>

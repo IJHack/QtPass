@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="131.2759,-110.5 131.2759,-128.5 221.1919,-128.5 221.1919,-110.5 131.2759,-110.5"/>
 <text text-anchor="middle" x="176.2339" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/storemodel.h</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="util_8h.html" target="_top" xlink:title="util.h">
+<g id="a_node2"><a xlink:href="util_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="157.6724,-55.5 157.6724,-73.5 194.7954,-73.5 194.7954,-55.5 157.6724,-55.5"/>
 <text text-anchor="middle" x="176.2339" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">util.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="212.665,-55.5 212.665,-73.5 329.8027,-73.5 329.8027,-55.5 212.665,-55.5"/>
 <text text-anchor="middle" x="271.2339" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QSortFilterProxyModel</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node5 -->
 <g id="edge6" class="edge">
@@ -50,8 +56,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 100.4678,-18.5 100.4678,-.5 0,-.5"/>
 <text text-anchor="middle" x="50.2339" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QFileSystemModel</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge3" class="edge">
@@ -62,8 +71,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="118.2144,-.5 118.2144,-18.5 234.2534,-18.5 234.2534,-.5 118.2144,-.5"/>
 <text text-anchor="middle" x="176.2339" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProcessEnvironment</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge4" class="edge">
@@ -74,8 +86,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="252.2832,-.5 252.2832,-18.5 302.1846,-18.5 302.1846,-.5 252.2832,-.5"/>
 <text text-anchor="middle" x="277.2339" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge5" class="edge">

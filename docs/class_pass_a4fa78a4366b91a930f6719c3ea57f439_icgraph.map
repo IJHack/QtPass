@@ -1,3 +1,4 @@
 <map id="Pass::critical" name="Pass::critical">
-<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="149,5,278,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="182,5,278,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="5,5,134,31"/>
 </map>

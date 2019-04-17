@@ -8,26 +8,29 @@
  viewBox="0.00 0.00 315.58 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>ConfigDialog::useTemplate</title>
-<!-- Node88 -->
+<!-- Node93 -->
 <g id="node1" class="node">
-<title>Node88</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 135.5117,-18.5 135.5117,-.5 0,-.5"/>
-<text text-anchor="middle" x="67.7559" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useTemplate</text>
-</g>
-<!-- Node89 -->
-<g id="node2" class="node">
-<title>Node89</title>
-<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
-<polygon fill="none" stroke="#000000" points="171.5117,-.5 171.5117,-18.5 307.5801,-18.5 307.5801,-.5 171.5117,-.5"/>
-<text text-anchor="middle" x="239.5459" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
+<title>Node93</title>
+<g id="a_node1"><a xlink:title="ConfigDialog::useTemplate set preference for using templates.">
+<polygon fill="#bfbfbf" stroke="#000000" points="172.0684,-.5 172.0684,-18.5 307.5801,-18.5 307.5801,-.5 172.0684,-.5"/>
+<text text-anchor="middle" x="239.8242" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::useTemplate</text>
 </a>
 </g>
 </g>
-<!-- Node88&#45;&gt;Node89 -->
+<!-- Node94 -->
+<g id="node2" class="node">
+<title>Node94</title>
+<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 136.0684,-18.5 136.0684,-.5 0,-.5"/>
+<text text-anchor="middle" x="68.0342" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
+</a>
+</g>
+</g>
+<!-- Node93&#45;&gt;Node94 -->
 <g id="edge1" class="edge">
-<title>Node88&#45;&gt;Node89</title>
-<path fill="none" stroke="#191970" d="M145.9131,-9.5C154.3849,-9.5 162.958,-9.5 171.2991,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="145.6519,-6.0001 135.6518,-9.5 145.6518,-13.0001 145.6519,-6.0001"/>
+<title>Node93&#45;&gt;Node94</title>
+<path fill="none" stroke="#191970" d="M161.667,-9.5C153.1952,-9.5 144.6221,-9.5 136.281,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="161.9283,-13.0001 171.9282,-9.5 161.9282,-6.0001 161.9283,-13.0001"/>
 </g>
 </g>
 </svg>

@@ -11,13 +11,16 @@
 <!-- Node11 -->
 <g id="node1" class="node">
 <title>Node11</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 117.1377,-18.5 117.1377,-.5 0,-.5"/>
 <text text-anchor="middle" x="58.5688" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QSortFilterProxyModel</text>
+</a>
+</g>
 </g>
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="class_store_model.html" target="_top" xlink:title="The QSortFilterProxyModel for handling filesystem searches. ">
+<g id="a_node2"><a xlink:href="class_store_model.html" target="_top" xlink:title="The QSortFilterProxyModel for handling filesystem searches.">
 <polygon fill="none" stroke="#000000" points="153.1377,-.5 153.1377,-18.5 220.2754,-18.5 220.2754,-.5 153.1377,-.5"/>
 <text text-anchor="middle" x="186.7065" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel</text>
 </a>

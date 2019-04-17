@@ -8,121 +8,124 @@
  viewBox="0.00 0.00 297.70 212.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 208)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node17 -->
+<!-- Node18 -->
 <g id="node1" class="node">
-<title>Node17</title>
+<title>Node18</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-111.5 0,-129.5 52.6797,-129.5 52.6797,-111.5 0,-111.5"/>
 <text text-anchor="middle" x="26.3398" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QObject</text>
+</a>
 </g>
-<!-- Node18 -->
+</g>
+<!-- Node19 -->
 <g id="node2" class="node">
-<title>Node18</title>
-<g id="a_node2"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data. ">
+<title>Node19</title>
+<g id="a_node2"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data.">
 <polygon fill="none" stroke="#000000" points="109.3364,-185.5 109.3364,-203.5 164.7993,-203.5 164.7993,-185.5 109.3364,-185.5"/>
 <text text-anchor="middle" x="137.0679" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
+<!-- Node18&#45;&gt;Node19 -->
 <g id="edge1" class="edge">
-<title>Node17&#45;&gt;Node18</title>
+<title>Node18&#45;&gt;Node19</title>
 <path fill="none" stroke="#191970" d="M41.3101,-136.9556C53.1791,-149.2085 70.7075,-165.6289 88.6797,-176.5 94.9685,-180.304 102.1931,-183.5178 109.1089,-186.1293"/>
 <polygon fill="#191970" stroke="#191970" points="43.7868,-134.4804 34.3799,-129.6057 38.6937,-139.2826 43.7868,-134.4804"/>
 </g>
-<!-- Node19 -->
+<!-- Node20 -->
 <g id="node3" class="node">
-<title>Node19</title>
-<g id="a_node3"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
+<title>Node20</title>
+<g id="a_node3"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation.">
 <polygon fill="none" stroke="#000000" points="117.9521,-148.5 117.9521,-166.5 156.1836,-166.5 156.1836,-148.5 117.9521,-148.5"/>
 <text text-anchor="middle" x="137.0679" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node19 -->
+<!-- Node18&#45;&gt;Node20 -->
 <g id="edge2" class="edge">
-<title>Node17&#45;&gt;Node19</title>
+<title>Node18&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M62.4123,-132.5537C80.8133,-138.7024 102.4638,-145.937 117.6974,-151.0273"/>
 <polygon fill="#191970" stroke="#191970" points="63.4557,-129.2122 52.862,-129.3624 61.2372,-135.8513 63.4557,-129.2122"/>
 </g>
-<!-- Node21 -->
+<!-- Node22 -->
 <g id="node6" class="node">
-<title>Node21</title>
-<g id="a_node6"><a xlink:href="class_qt_pass.html" target="_top" xlink:title="QtPass">
+<title>Node22</title>
+<g id="a_node6"><a xlink:href="class_qt_pass.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="112.6738,-111.5 112.6738,-129.5 161.4619,-129.5 161.4619,-111.5 112.6738,-111.5"/>
 <text text-anchor="middle" x="137.0679" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node21 -->
+<!-- Node18&#45;&gt;Node22 -->
 <g id="edge5" class="edge">
-<title>Node17&#45;&gt;Node21</title>
+<title>Node18&#45;&gt;Node22</title>
 <path fill="none" stroke="#191970" d="M63.1445,-120.5C79.4281,-120.5 98.134,-120.5 112.6546,-120.5"/>
 <polygon fill="#191970" stroke="#191970" points="62.862,-117.0001 52.862,-120.5 62.8619,-124.0001 62.862,-117.0001"/>
 </g>
-<!-- Node22 -->
+<!-- Node23 -->
 <g id="node7" class="node">
-<title>Node22</title>
-<g id="a_node7"><a xlink:href="classtst__ui.html" target="_top" xlink:title="The tst_ui class is our first unit test. ">
+<title>Node23</title>
+<g id="a_node7"><a xlink:href="classtst__ui.html" target="_top" xlink:title="The tst_ui class is our first unit test.">
 <polygon fill="none" stroke="#000000" points="117.1172,-74.5 117.1172,-92.5 157.0186,-92.5 157.0186,-74.5 117.1172,-74.5"/>
 <text text-anchor="middle" x="137.0679" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_ui</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node22 -->
+<!-- Node18&#45;&gt;Node23 -->
 <g id="edge6" class="edge">
-<title>Node17&#45;&gt;Node22</title>
+<title>Node18&#45;&gt;Node23</title>
 <path fill="none" stroke="#191970" d="M62.5362,-108.4049C80.632,-102.3582 101.8443,-95.27 117.0018,-90.2051"/>
 <polygon fill="#191970" stroke="#191970" points="61.2372,-105.1487 52.862,-111.6376 63.4557,-111.7878 61.2372,-105.1487"/>
 </g>
-<!-- Node23 -->
+<!-- Node24 -->
 <g id="node8" class="node">
-<title>Node23</title>
-<g id="a_node8"><a xlink:href="classtst__util.html" target="_top" xlink:title="The tst_util class is our first unit test. ">
+<title>Node24</title>
+<g id="a_node8"><a xlink:href="classtst__util.html" target="_top" xlink:title="The tst_util class is our first unit test.">
 <polygon fill="none" stroke="#000000" points="114.6172,-37.5 114.6172,-55.5 159.5186,-55.5 159.5186,-37.5 114.6172,-37.5"/>
 <text text-anchor="middle" x="137.0679" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_util</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node23 -->
+<!-- Node18&#45;&gt;Node24 -->
 <g id="edge7" class="edge">
-<title>Node17&#45;&gt;Node23</title>
+<title>Node18&#45;&gt;Node24</title>
 <path fill="none" stroke="#191970" d="M41.8282,-104.036C53.7453,-92.1034 71.1013,-76.2422 88.6797,-65.5 96.5347,-60.6998 105.812,-56.7084 114.1312,-53.6434"/>
 <polygon fill="#191970" stroke="#191970" points="39.3044,-101.6109 34.8348,-111.2168 44.3192,-106.4948 39.3044,-101.6109"/>
 </g>
 <!-- Node1 -->
 <g id="node4" class="node">
 <title>Node1</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available. ">
+<g id="a_node4"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available.">
 <polygon fill="none" stroke="#000000" points="221.4561,-56.5 221.4561,-74.5 289.6973,-74.5 289.6973,-56.5 221.4561,-56.5"/>
 <text text-anchor="middle" x="255.5767" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass</text>
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node1 -->
+<!-- Node20&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
-<title>Node19&#45;&gt;Node1</title>
+<title>Node20&#45;&gt;Node1</title>
 <path fill="none" stroke="#191970" d="M165.9341,-149.2128C172.6316,-146.6375 179.5286,-143.4194 185.4561,-139.5 213.2112,-121.1478 238.0175,-89.8417 249.2375,-74.5052"/>
 <polygon fill="#191970" stroke="#191970" points="164.6931,-145.9388 156.4005,-152.5329 166.9953,-152.5494 164.6931,-145.9388"/>
 </g>
-<!-- Node20 -->
+<!-- Node21 -->
 <g id="node5" class="node">
-<title>Node20</title>
-<g id="a_node5"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store. ">
+<title>Node21</title>
+<g id="a_node5"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store.">
 <polygon fill="none" stroke="#000000" points="226.1777,-148.5 226.1777,-166.5 284.9756,-166.5 284.9756,-148.5 226.1777,-148.5"/>
 <text text-anchor="middle" x="255.5767" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass</text>
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node20 -->
+<!-- Node20&#45;&gt;Node21 -->
 <g id="edge4" class="edge">
-<title>Node19&#45;&gt;Node20</title>
+<title>Node20&#45;&gt;Node21</title>
 <path fill="none" stroke="#191970" d="M166.4111,-157.5C184.5911,-157.5 207.863,-157.5 226.0729,-157.5"/>
 <polygon fill="#191970" stroke="#191970" points="166.3721,-154.0001 156.3721,-157.5 166.3721,-161.0001 166.3721,-154.0001"/>
 </g>
 <!-- Node0 -->
 <g id="node9" class="node">
 <title>Node0</title>
-<g id="a_node9"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title="simpleTransaction">
+<g id="a_node9"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="88.6797,-.5 88.6797,-18.5 185.4561,-18.5 185.4561,-.5 88.6797,-.5"/>
 <text text-anchor="middle" x="137.0679" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">simpleTransaction</text>
 </a>

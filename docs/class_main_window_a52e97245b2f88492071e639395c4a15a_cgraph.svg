@@ -57,13 +57,16 @@ var sectionId = 'dynsection-2';
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-246.5 0,-264.5 136.0391,-264.5 136.0391,-246.5 0,-246.5"/>
 <text text-anchor="middle" x="68.0195" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
+<g id="a_node2"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="187.0586,-246.5 187.0586,-264.5 311.9844,-264.5 311.9844,-246.5 187.0586,-246.5"/>
 <text text-anchor="middle" x="249.5215" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
@@ -78,7 +81,7 @@ var sectionId = 'dynsection-2';
 <!-- Node16 -->
 <g id="node17" class="node">
 <title>Node16</title>
-<g id="a_node17"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. ">
+<g id="a_node17"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">
 <polygon fill="none" stroke="#000000" points="578.1436,-338.5 578.1436,-366.5 721.4092,-366.5 721.4092,-338.5 578.1436,-338.5"/>
 <text text-anchor="start" x="586.1436" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::setUiElements</text>
 <text text-anchor="middle" x="649.7764" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Enabled</text>
@@ -94,7 +97,7 @@ var sectionId = 'dynsection-2';
 <!-- Node18 -->
 <g id="node19" class="node">
 <title>Node18</title>
-<g id="a_node19"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title="QtPassSettings::getPass">
+<g id="a_node19"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="381.8955,-113.5 381.8955,-131.5 508.5059,-131.5 508.5059,-113.5 381.8955,-113.5"/>
 <text text-anchor="middle" x="445.2007" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPass</text>
 </a>
@@ -109,7 +112,7 @@ var sectionId = 'dynsection-2';
 <!-- Node27 -->
 <g id="node28" class="node">
 <title>Node27</title>
-<g id="a_node28"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
+<g id="a_node28"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="369.9448,-490.5 369.9448,-508.5 520.4565,-508.5 520.4565,-490.5 369.9448,-490.5"/>
 <text text-anchor="middle" x="445.2007" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
@@ -124,7 +127,7 @@ var sectionId = 'dynsection-2';
 <!-- Node28 -->
 <g id="node29" class="node">
 <title>Node28</title>
-<g id="a_node29"><a xlink:href="class_util.html#a29e0dadf2cb491511307b841e4a23943" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location. ">
+<g id="a_node29"><a xlink:href="class_util.html#a29e0dadf2cb491511307b841e4a23943" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location.">
 <polygon fill="none" stroke="#000000" points="189.5562,-104.5 189.5562,-122.5 309.4868,-122.5 309.4868,-104.5 189.5562,-104.5"/>
 <text text-anchor="middle" x="249.5215" y="-110.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::findPasswordStore</text>
 </a>
@@ -139,7 +142,7 @@ var sectionId = 'dynsection-2';
 <!-- Node30 -->
 <g id="node31" class="node">
 <title>Node30</title>
-<g id="a_node31"><a xlink:href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f" target="_top" xlink:title="StoreModel::setModelAndStore update the source model and store. ">
+<g id="a_node31"><a xlink:href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f" target="_top" xlink:title="StoreModel::setModelAndStore update the source model and store.">
 <polygon fill="none" stroke="#000000" points="172.0391,-209.5 172.0391,-227.5 327.0039,-227.5 327.0039,-209.5 172.0391,-209.5"/>
 <text text-anchor="middle" x="249.5215" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::setModelAndStore</text>
 </a>
@@ -154,7 +157,7 @@ var sectionId = 'dynsection-2';
 <!-- Node31 -->
 <g id="node32" class="node">
 <title>Node31</title>
-<g id="a_node32"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer. ">
+<g id="a_node32"><a xlink:href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" target="_top" xlink:title="MainWindow::deselect clear the selection, password and copy buffer.">
 <polygon fill="none" stroke="#000000" points="191.4995,-29.5 191.4995,-47.5 307.5435,-47.5 307.5435,-29.5 191.4995,-29.5"/>
 <text text-anchor="middle" x="249.5215" y="-35.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::deselect</text>
 </a>
@@ -169,7 +172,7 @@ var sectionId = 'dynsection-2';
 <!-- Node33 -->
 <g id="node34" class="node">
 <title>Node33</title>
-<g id="a_node34"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Pass::updateEnv update the execution environment (used when switching profiles) ">
+<g id="a_node34"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Pass::updateEnv update the execution environment (used when switching profiles)">
 <polygon fill="none" stroke="#000000" points="203.7188,-452.5 203.7188,-470.5 295.3242,-470.5 295.3242,-452.5 203.7188,-452.5"/>
 <text text-anchor="middle" x="249.5215" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::updateEnv</text>
 </a>
@@ -184,7 +187,7 @@ var sectionId = 'dynsection-2';
 <!-- Node35 -->
 <g id="node36" class="node">
 <title>Node35</title>
-<g id="a_node36"><a xlink:href="class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" target="_top" xlink:title="QtPassSettings::getAutoclear\lPanelSeconds">
+<g id="a_node36"><a xlink:href="class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="176.209,-528.5 176.209,-556.5 322.834,-556.5 322.834,-528.5 176.209,-528.5"/>
 <text text-anchor="start" x="184.209" y="-544.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="249.5215" y="-534.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PanelSeconds</text>
@@ -200,7 +203,7 @@ var sectionId = 'dynsection-2';
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title="MainWindow::restoreWindow">
+<g id="a_node3"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="577.0327,-227.5 577.0327,-245.5 722.52,-245.5 722.52,-227.5 577.0327,-227.5"/>
 <text text-anchor="middle" x="649.7764" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
 </a>
@@ -215,7 +218,7 @@ var sectionId = 'dynsection-2';
 <!-- Node13 -->
 <g id="node14" class="node">
 <title>Node13</title>
-<g id="a_node14"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title="QtPassSettings::getRealPass">
+<g id="a_node14"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="576.188,-170.5 576.188,-188.5 723.3647,-188.5 723.3647,-170.5 576.188,-170.5"/>
 <text text-anchor="middle" x="649.7764" y="-176.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getRealPass</text>
 </a>
@@ -230,7 +233,7 @@ var sectionId = 'dynsection-2';
 <!-- Node14 -->
 <g id="node15" class="node">
 <title>Node14</title>
-<g id="a_node15"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title="QtPassSettings::getImitatePass">
+<g id="a_node15"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="571.4663,-123.5 571.4663,-141.5 728.0864,-141.5 728.0864,-123.5 571.4663,-123.5"/>
 <text text-anchor="middle" x="649.7764" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getImitatePass</text>
 </a>
@@ -245,7 +248,7 @@ var sectionId = 'dynsection-2';
 <!-- Node15 -->
 <g id="node16" class="node">
 <title>Node15</title>
-<g id="a_node16"><a xlink:href="class_main_window.html#a02ec9927bda826675653c0af916c8f33" target="_top" xlink:title="MainWindow::startReencryptPath disable ui elements and treeview. ">
+<g id="a_node16"><a xlink:href="class_main_window.html#a02ec9927bda826675653c0af916c8f33" target="_top" xlink:title="MainWindow::startReencryptPath disable ui elements and treeview.">
 <polygon fill="none" stroke="#000000" points="363.0039,-339.5 363.0039,-357.5 527.3975,-357.5 527.3975,-339.5 363.0039,-339.5"/>
 <text text-anchor="middle" x="445.2007" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::startReencryptPath</text>
 </a>
@@ -260,7 +263,7 @@ var sectionId = 'dynsection-2';
 <!-- Node17 -->
 <g id="node18" class="node">
 <title>Node17</title>
-<g id="a_node18"><a xlink:href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" target="_top" xlink:title="MainWindow::endReencryptPath re&#45;enable ui elements. ">
+<g id="a_node18"><a xlink:href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" target="_top" xlink:title="MainWindow::endReencryptPath re&#45;enable ui elements.">
 <polygon fill="none" stroke="#000000" points="364.3857,-302.5 364.3857,-320.5 526.0156,-320.5 526.0156,-302.5 364.3857,-302.5"/>
 <text text-anchor="middle" x="445.2007" y="-308.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::endReencryptPath</text>
 </a>
@@ -281,7 +284,7 @@ var sectionId = 'dynsection-2';
 <!-- Node22 -->
 <g id="node23" class="node">
 <title>Node22</title>
-<g id="a_node23"><a xlink:href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e" target="_top" xlink:title="Pass::GitInit">
+<g id="a_node23"><a xlink:href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="410.2476,-376.5 410.2476,-394.5 480.1538,-394.5 480.1538,-376.5 410.2476,-376.5"/>
 <text text-anchor="middle" x="445.2007" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::GitInit</text>
 </a>
@@ -296,7 +299,7 @@ var sectionId = 'dynsection-2';
 <!-- Node23 -->
 <g id="node24" class="node">
 <title>Node23</title>
-<g id="a_node24"><a xlink:href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" target="_top" xlink:title="Pass::GenerateGPGKeys internal gpg keypair generator . . ">
+<g id="a_node24"><a xlink:href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" target="_top" xlink:title="Pass::GenerateGPGKeys internal gpg keypair generator . .">
 <polygon fill="none" stroke="#000000" points="380.2305,-265.5 380.2305,-283.5 510.1709,-283.5 510.1709,-265.5 380.2305,-265.5"/>
 <text text-anchor="middle" x="445.2007" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::GenerateGPGKeys</text>
 </a>
@@ -311,7 +314,7 @@ var sectionId = 'dynsection-2';
 <!-- Node26 -->
 <g id="node27" class="node">
 <title>Node26</title>
-<g id="a_node27"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar. ">
+<g id="a_node27"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar.">
 <polygon fill="none" stroke="#000000" points="564.2422,-11.5 564.2422,-29.5 735.3105,-29.5 735.3105,-11.5 564.2422,-11.5"/>
 <text text-anchor="middle" x="649.7764" y="-17.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::showStatusMessage</text>
 </a>
@@ -326,7 +329,7 @@ var sectionId = 'dynsection-2';
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" target="_top" xlink:title="QtPassSettings::getGeometry">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="779.9287,-184.5 779.9287,-202.5 928.209,-202.5 928.209,-184.5 779.9287,-184.5"/>
 <text text-anchor="middle" x="854.0688" y="-190.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGeometry</text>
 </a>
@@ -341,7 +344,7 @@ var sectionId = 'dynsection-2';
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
-<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" target="_top" xlink:title="QtPassSettings::getSavestate">
+<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="779.6431,-147.5 779.6431,-165.5 928.4946,-165.5 928.4946,-147.5 779.6431,-147.5"/>
 <text text-anchor="middle" x="854.0688" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getSavestate</text>
 </a>
@@ -356,7 +359,7 @@ var sectionId = 'dynsection-2';
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
-<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" target="_top" xlink:title="QtPassSettings::getPos">
+<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="793.2637,-110.5 793.2637,-128.5 914.874,-128.5 914.874,-110.5 793.2637,-110.5"/>
 <text text-anchor="middle" x="854.0688" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPos</text>
 </a>
@@ -371,7 +374,7 @@ var sectionId = 'dynsection-2';
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
-<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" target="_top" xlink:title="QtPassSettings::getSize">
+<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="792.1528,-379.5 792.1528,-397.5 915.9849,-397.5 915.9849,-379.5 792.1528,-379.5"/>
 <text text-anchor="middle" x="854.0688" y="-385.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getSize</text>
 </a>
@@ -386,7 +389,7 @@ var sectionId = 'dynsection-2';
 <!-- Node8 -->
 <g id="node9" class="node">
 <title>Node8</title>
-<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" target="_top" xlink:title="QtPassSettings::isMaximized">
+<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="781.3252,-342.5 781.3252,-360.5 926.8125,-360.5 926.8125,-342.5 781.3252,-342.5"/>
 <text text-anchor="middle" x="854.0688" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isMaximized</text>
 </a>
@@ -401,7 +404,7 @@ var sectionId = 'dynsection-2';
 <!-- Node9 -->
 <g id="node10" class="node">
 <title>Node9</title>
-<g id="a_node10"><a xlink:href="class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" target="_top" xlink:title="QtPassSettings::isAlways\lOnTop">
+<g id="a_node10"><a xlink:href="class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="789.3818,-295.5 789.3818,-323.5 918.7559,-323.5 918.7559,-295.5 789.3818,-295.5"/>
 <text text-anchor="start" x="797.3818" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAlways</text>
 <text text-anchor="middle" x="854.0688" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">OnTop</text>
@@ -417,7 +420,7 @@ var sectionId = 'dynsection-2';
 <!-- Node10 -->
 <g id="node11" class="node">
 <title>Node10</title>
-<g id="a_node11"><a xlink:href="class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" target="_top" xlink:title="QtPassSettings::isUseTrayIcon">
+<g id="a_node11"><a xlink:href="class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="777.0601,-258.5 777.0601,-276.5 931.0776,-276.5 931.0776,-258.5 777.0601,-258.5"/>
 <text text-anchor="middle" x="854.0688" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseTrayIcon</text>
 </a>
@@ -432,7 +435,7 @@ var sectionId = 'dynsection-2';
 <!-- Node11 -->
 <g id="node12" class="node">
 <title>Node11</title>
-<g id="a_node12"><a xlink:href="class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" target="_top" xlink:title="QtPass::isFreshStart">
+<g id="a_node12"><a xlink:href="class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="799.9458,-416.5 799.9458,-434.5 908.1919,-434.5 908.1919,-416.5 799.9458,-416.5"/>
 <text text-anchor="middle" x="854.0688" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::isFreshStart</text>
 </a>
@@ -447,7 +450,7 @@ var sectionId = 'dynsection-2';
 <!-- Node12 -->
 <g id="node13" class="node">
 <title>Node12</title>
-<g id="a_node13"><a xlink:href="class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" target="_top" xlink:title="QtPassSettings::isStartMinimized">
+<g id="a_node13"><a xlink:href="class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="772.1553,-221.5 772.1553,-239.5 935.9824,-239.5 935.9824,-221.5 772.1553,-221.5"/>
 <text text-anchor="middle" x="854.0688" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isStartMinimized</text>
 </a>
@@ -462,7 +465,7 @@ var sectionId = 'dynsection-2';
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="971.9824,-258.5 971.9824,-276.5 1114.1641,-276.5 1114.1641,-258.5 971.9824,-258.5"/>
 <text text-anchor="middle" x="1043.0732" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
@@ -543,7 +546,7 @@ var sectionId = 'dynsection-2';
 <!-- Node19 -->
 <g id="node20" class="node">
 <title>Node19</title>
-<g id="a_node20"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title="QtPassSettings::isUsePass">
+<g id="a_node20"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="580.9194,-49.5 580.9194,-67.5 718.6333,-67.5 718.6333,-49.5 580.9194,-49.5"/>
 <text text-anchor="middle" x="649.7764" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePass</text>
 </a>
@@ -558,7 +561,7 @@ var sectionId = 'dynsection-2';
 <!-- Node20 -->
 <g id="node21" class="node">
 <title>Node20</title>
-<g id="a_node21"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title="Pass::init">
+<g id="a_node21"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="621.4907,-86.5 621.4907,-104.5 678.062,-104.5 678.062,-86.5 621.4907,-86.5"/>
 <text text-anchor="middle" x="649.7764" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </a>
@@ -579,7 +582,7 @@ var sectionId = 'dynsection-2';
 <!-- Node21 -->
 <g id="node22" class="node">
 <title>Node21</title>
-<g id="a_node22"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
+<g id="a_node22"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="779.0913,-73.5 779.0913,-91.5 929.0464,-91.5 929.0464,-73.5 779.0913,-73.5"/>
 <text text-anchor="middle" x="854.0688" y="-79.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>
@@ -600,7 +603,7 @@ var sectionId = 'dynsection-2';
 <!-- Node24 -->
 <g id="node25" class="node">
 <title>Node24</title>
-<g id="a_node25"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Pass::executeWrapper">
+<g id="a_node25"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="591.2856,-264.5 591.2856,-282.5 708.2671,-282.5 708.2671,-264.5 591.2856,-264.5"/>
 <text text-anchor="middle" x="649.7764" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::executeWrapper</text>
 </a>
@@ -615,7 +618,7 @@ var sectionId = 'dynsection-2';
 <!-- Node25 -->
 <g id="node26" class="node">
 <title>Node25</title>
-<g id="a_node26"><a xlink:href="class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" target="_top" xlink:title="QtPassSettings::getGpgExecutable">
+<g id="a_node26"><a xlink:href="class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="563.3975,-301.5 563.3975,-319.5 736.1553,-319.5 736.1553,-301.5 563.3975,-301.5"/>
 <text text-anchor="middle" x="649.7764" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -642,7 +645,7 @@ var sectionId = 'dynsection-2';
 <!-- Node29 -->
 <g id="node30" class="node">
 <title>Node29</title>
-<g id="a_node30"><a xlink:href="class_util.html#a94597a43bf37076511033bef32f3df12" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() ">
+<g id="a_node30"><a xlink:href="class_util.html#a94597a43bf37076511033bef32f3df12" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()">
 <polygon fill="none" stroke="#000000" points="381.0679,-37.5 381.0679,-55.5 509.3335,-55.5 509.3335,-37.5 381.0679,-37.5"/>
 <text text-anchor="middle" x="445.2007" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::normalizeFolderPath</text>
 </a>
@@ -657,7 +660,7 @@ var sectionId = 'dynsection-2';
 <!-- Node32 -->
 <g id="node33" class="node">
 <title>Node32</title>
-<g id="a_node33"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents. ">
+<g id="a_node33"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents.">
 <polygon fill="none" stroke="#000000" points="385.7896,-.5 385.7896,-18.5 504.6118,-18.5 504.6118,-.5 385.7896,-.5"/>
 <text text-anchor="middle" x="445.2007" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClipboard</text>
 </a>
@@ -684,7 +687,7 @@ var sectionId = 'dynsection-2';
 <!-- Node34 -->
 <g id="node35" class="node">
 <title>Node34</title>
-<g id="a_node35"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment set environment variables for executor processes. ">
+<g id="a_node35"><a xlink:href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" target="_top" xlink:title="Executor::setEnvironment set environment variables for executor processes.">
 <polygon fill="none" stroke="#000000" points="379.9521,-452.5 379.9521,-470.5 510.4492,-470.5 510.4492,-452.5 379.9521,-452.5"/>
 <text text-anchor="middle" x="445.2007" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::setEnvironment</text>
 </a>

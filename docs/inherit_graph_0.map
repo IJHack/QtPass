@@ -1,6 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_config_dialog.html" title="The ConfigDialog handles the configuration interface. " alt="" coords="133,5,231,31"/>
-<area shape="rect" id="node3" href="$class_keygen_dialog.html" title="Handles GPG keypair generation. " alt="" coords="129,55,234,80"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html" title="PasswordDialog Handles the inserting and editing of passwords. " alt="" coords="123,104,241,129"/>
-<area shape="rect" id="node5" href="$class_users_dialog.html" title="Handles listing and editing of GPG users. " alt="" coords="135,153,229,179"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,75,105"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html" title="The ConfigDialog handles the configuration interface." alt="" coords="133,5,231,31"/>
+<area shape="rect" id="node3" href="$class_keygen_dialog.html" title="Handles GPG keypair generation." alt="" coords="129,55,234,80"/>
+<area shape="rect" id="node4" href="$class_password_dialog.html" title="PasswordDialog Handles the inserting and editing of passwords." alt="" coords="123,104,241,129"/>
+<area shape="rect" id="node5" href="$class_users_dialog.html" title="Handles listing and editing of GPG users." alt="" coords="135,153,229,179"/>
 </map>

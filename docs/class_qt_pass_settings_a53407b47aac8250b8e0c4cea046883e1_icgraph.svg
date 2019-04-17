@@ -8,57 +8,60 @@
  viewBox="0.00 0.00 336.69 101.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 97)">
 <title>QtPassSettings::getPwgenExecutable</title>
-<!-- Node299 -->
-<g id="node1" class="node">
-<title>Node299</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-32.5 0,-60.5 134.9551,-60.5 134.9551,-32.5 0,-32.5"/>
-<text text-anchor="start" x="8" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPwgen</text>
-<text text-anchor="middle" x="67.4775" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executable</text>
-</g>
-<!-- Node300 -->
-<g id="node2" class="node">
-<title>Node300</title>
-<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
-<polygon fill="none" stroke="#000000" points="181.79,-74.5 181.79,-92.5 317.8584,-92.5 317.8584,-74.5 181.79,-74.5"/>
-<text text-anchor="middle" x="249.8242" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
-</a>
-</g>
-</g>
-<!-- Node299&#45;&gt;Node300 -->
-<g id="edge1" class="edge">
-<title>Node299&#45;&gt;Node300</title>
-<path fill="none" stroke="#191970" d="M145.108,-62.252C165.6508,-66.4204 187.1317,-70.7791 205.2532,-74.4561"/>
-<polygon fill="#191970" stroke="#191970" points="145.6139,-58.7834 135.1176,-60.2249 144.2218,-65.6436 145.6139,-58.7834"/>
-</g>
 <!-- Node301 -->
-<g id="node3" class="node">
+<g id="node1" class="node">
 <title>Node301</title>
-<g id="a_node3"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator. ">
-<polygon fill="none" stroke="#000000" points="201.5215,-37.5 201.5215,-55.5 298.127,-55.5 298.127,-37.5 201.5215,-37.5"/>
-<text text-anchor="middle" x="249.8242" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="193.7383,-32.5 193.7383,-60.5 328.6934,-60.5 328.6934,-32.5 193.7383,-32.5"/>
+<text text-anchor="start" x="201.7383" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPwgen</text>
+<text text-anchor="middle" x="261.2158" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executable</text>
 </a>
 </g>
-</g>
-<!-- Node299&#45;&gt;Node301 -->
-<g id="edge2" class="edge">
-<title>Node299&#45;&gt;Node301</title>
-<path fill="none" stroke="#191970" d="M145.2863,-46.5C164.3259,-46.5 184.1603,-46.5 201.3706,-46.5"/>
-<polygon fill="#191970" stroke="#191970" points="145.1176,-43.0001 135.1176,-46.5 145.1175,-50.0001 145.1176,-43.0001"/>
 </g>
 <!-- Node302 -->
-<g id="node4" class="node">
+<g id="node2" class="node">
 <title>Node302</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
-<polygon fill="none" stroke="#000000" points="170.9551,-.5 170.9551,-18.5 328.6934,-18.5 328.6934,-.5 170.9551,-.5"/>
-<text text-anchor="middle" x="249.8242" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
+<g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen.">
+<polygon fill="none" stroke="#000000" points="10.835,-74.5 10.835,-92.5 146.9033,-92.5 146.9033,-74.5 10.835,-74.5"/>
+<text text-anchor="middle" x="78.8691" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node299&#45;&gt;Node302 -->
+<!-- Node301&#45;&gt;Node302 -->
+<g id="edge1" class="edge">
+<title>Node301&#45;&gt;Node302</title>
+<path fill="none" stroke="#191970" d="M183.5853,-62.252C163.0426,-66.4204 141.5617,-70.7791 123.4402,-74.4561"/>
+<polygon fill="#191970" stroke="#191970" points="184.4715,-65.6436 193.5758,-60.2249 183.0795,-58.7834 184.4715,-65.6436"/>
+</g>
+<!-- Node303 -->
+<g id="node3" class="node">
+<title>Node303</title>
+<g id="a_node3"><a xlink:href="class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator.">
+<polygon fill="none" stroke="#000000" points="30.5664,-37.5 30.5664,-55.5 127.1719,-55.5 127.1719,-37.5 30.5664,-37.5"/>
+<text text-anchor="middle" x="78.8691" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Generate_b</text>
+</a>
+</g>
+</g>
+<!-- Node301&#45;&gt;Node303 -->
+<g id="edge2" class="edge">
+<title>Node301&#45;&gt;Node303</title>
+<path fill="none" stroke="#191970" d="M183.4071,-46.5C164.3675,-46.5 144.5331,-46.5 127.3227,-46.5"/>
+<polygon fill="#191970" stroke="#191970" points="183.5758,-50.0001 193.5758,-46.5 183.5757,-43.0001 183.5758,-50.0001"/>
+</g>
+<!-- Node304 -->
+<g id="node4" class="node">
+<title>Node304</title>
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 157.7383,-18.5 157.7383,-.5 0,-.5"/>
+<text text-anchor="middle" x="78.8691" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
+</a>
+</g>
+</g>
+<!-- Node301&#45;&gt;Node304 -->
 <g id="edge3" class="edge">
-<title>Node299&#45;&gt;Node302</title>
-<path fill="none" stroke="#191970" d="M145.108,-30.748C165.6508,-26.5796 187.1317,-22.2209 205.2532,-18.5439"/>
-<polygon fill="#191970" stroke="#191970" points="144.2218,-27.3564 135.1176,-32.7751 145.6139,-34.2166 144.2218,-27.3564"/>
+<title>Node301&#45;&gt;Node304</title>
+<path fill="none" stroke="#191970" d="M183.5853,-30.748C163.0426,-26.5796 141.5617,-22.2209 123.4402,-18.5439"/>
+<polygon fill="#191970" stroke="#191970" points="183.0795,-34.2166 193.5758,-32.7751 184.4715,-27.3564 183.0795,-34.2166"/>
 </g>
 </g>
 </svg>

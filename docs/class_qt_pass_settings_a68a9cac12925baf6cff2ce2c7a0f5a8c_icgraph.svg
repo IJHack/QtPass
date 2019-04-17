@@ -8,41 +8,44 @@
  viewBox="0.00 0.00 290.62 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::isUseWebDav</title>
-<!-- Node502 -->
+<!-- Node509 -->
 <g id="node1" class="node">
-<title>Node502</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 153.6514,-36.5 153.6514,-18.5 0,-18.5"/>
-<text text-anchor="middle" x="76.8257" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseWebDav</text>
+<title>Node509</title>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="128.9727,-18.5 128.9727,-36.5 282.624,-36.5 282.624,-18.5 128.9727,-18.5"/>
+<text text-anchor="middle" x="205.7983" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseWebDav</text>
+</a>
 </g>
-<!-- Node503 -->
+</g>
+<!-- Node510 -->
 <g id="node2" class="node">
-<title>Node503</title>
-<g id="a_node2"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository. ">
-<polygon fill="none" stroke="#000000" points="192.5688,-37.5 192.5688,-55.5 279.7065,-55.5 279.7065,-37.5 192.5688,-37.5"/>
-<text text-anchor="middle" x="236.1377" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Init</text>
+<title>Node510</title>
+<g id="a_node2"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
+<polygon fill="none" stroke="#000000" points="2.9175,-37.5 2.9175,-55.5 90.0552,-55.5 90.0552,-37.5 2.9175,-37.5"/>
+<text text-anchor="middle" x="46.4863" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Init</text>
 </a>
 </g>
 </g>
-<!-- Node502&#45;&gt;Node503 -->
+<!-- Node509&#45;&gt;Node510 -->
 <g id="edge1" class="edge">
-<title>Node502&#45;&gt;Node503</title>
-<path fill="none" stroke="#191970" d="M162.9695,-37.7738C173.1673,-38.99 183.2224,-40.1892 192.4601,-41.2909"/>
-<polygon fill="#191970" stroke="#191970" points="163.0932,-34.2638 152.749,-36.5548 162.2641,-41.2145 163.0932,-34.2638"/>
+<title>Node509&#45;&gt;Node510</title>
+<path fill="none" stroke="#191970" d="M119.6546,-37.7738C109.4567,-38.99 99.4017,-40.1892 90.1639,-41.2909"/>
+<polygon fill="#191970" stroke="#191970" points="120.3599,-41.2145 129.875,-36.5548 119.5308,-34.2638 120.3599,-41.2145"/>
 </g>
-<!-- Node504 -->
+<!-- Node511 -->
 <g id="node3" class="node">
-<title>Node504</title>
-<g id="a_node3"><a xlink:href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" target="_top" xlink:title="QtPass::~QtPass destroy! ">
-<polygon fill="none" stroke="#000000" points="189.6514,-.5 189.6514,-18.5 282.624,-18.5 282.624,-.5 189.6514,-.5"/>
-<text text-anchor="middle" x="236.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::~QtPass</text>
+<title>Node511</title>
+<g id="a_node3"><a xlink:href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" target="_top" xlink:title="QtPass::~QtPass destroy!">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 92.9727,-18.5 92.9727,-.5 0,-.5"/>
+<text text-anchor="middle" x="46.4863" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::~QtPass</text>
 </a>
 </g>
 </g>
-<!-- Node502&#45;&gt;Node504 -->
+<!-- Node509&#45;&gt;Node511 -->
 <g id="edge2" class="edge">
-<title>Node502&#45;&gt;Node504</title>
-<path fill="none" stroke="#191970" d="M163.7296,-17.6811C172.6046,-16.6783 181.3586,-15.6893 189.546,-14.7642"/>
-<polygon fill="#191970" stroke="#191970" points="163.2256,-14.2157 153.6818,-18.8163 164.0116,-21.1714 163.2256,-14.2157"/>
+<title>Node509&#45;&gt;Node511</title>
+<path fill="none" stroke="#191970" d="M118.8944,-17.6811C110.0194,-16.6783 101.2654,-15.6893 93.078,-14.7642"/>
+<polygon fill="#191970" stroke="#191970" points="118.6125,-21.1714 128.9422,-18.8163 119.3984,-14.2157 118.6125,-21.1714"/>
 </g>
 </g>
 </svg>

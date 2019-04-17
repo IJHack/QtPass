@@ -11,13 +11,16 @@
 <!-- Node112 -->
 <g id="node1" class="node">
 <title>Node112</title>
+<g id="a_node1"><a xlink:title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 114.9404,-18.5 114.9404,-.5 0,-.5"/>
 <text text-anchor="middle" x="57.4702" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::getRecipientList</text>
+</a>
+</g>
 </g>
 <!-- Node113 -->
 <g id="node2" class="node">
 <title>Node113</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="150.9404,-.5 150.9404,-18.5 301.4521,-18.5 301.4521,-.5 150.9404,-.5"/>
 <text text-anchor="middle" x="226.1963" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node114 -->
 <g id="node3" class="node">
 <title>Node114</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="337.4521,-.5 337.4521,-18.5 479.6338,-18.5 479.6338,-.5 337.4521,-.5"/>
 <text text-anchor="middle" x="408.543" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

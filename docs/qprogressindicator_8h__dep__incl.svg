@@ -11,13 +11,16 @@
 <!-- Node3 -->
 <g id="node1" class="node">
 <title>Node3</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="62.8892,-55.5 62.8892,-73.5 185.0562,-73.5 185.0562,-55.5 62.8892,-55.5"/>
 <text text-anchor="middle" x="123.9727" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qprogressindicator.h</text>
+</a>
+</g>
 </g>
 <!-- Node4 -->
 <g id="node2" class="node">
 <title>Node4</title>
-<g id="a_node2"><a xlink:href="keygendialog_8cpp.html" target="_top" xlink:title="src/keygendialog.cpp">
+<g id="a_node2"><a xlink:href="keygendialog_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 109.9453,-18.5 109.9453,-.5 0,-.5"/>
 <text text-anchor="middle" x="54.9727" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/keygendialog.cpp</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node5 -->
 <g id="node3" class="node">
 <title>Node5</title>
-<g id="a_node3"><a xlink:href="qprogressindicator_8cpp.html" target="_top" xlink:title="src/qprogressindicator.cpp">
+<g id="a_node3"><a xlink:href="qprogressindicator_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="127.6084,-.5 127.6084,-18.5 260.3369,-18.5 260.3369,-.5 127.6084,-.5"/>
 <text text-anchor="middle" x="193.9727" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qprogressindicator.cpp</text>
 </a>

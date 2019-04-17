@@ -1,6 +1,7 @@
 <map id="FileContent::getNamedValues" name="FileContent::getNamedValues">
-<area shape="rect" id="node2" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="252,5,465,31"/>
-<area shape="rect" id="node3" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface. " alt="" coords="257,55,459,80"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="PasswordDialog::setPass" alt="" coords="513,55,685,80"/>
-<area shape="rect" id="node5" href="$class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" title="PasswordDialog::PasswordDialog basic constructor. " alt="" coords="733,48,917,87"/>
+<area shape="rect" id="node1" title=" " alt="" coords="719,31,917,56"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="457,5,671,31"/>
+<area shape="rect" id="node3" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface." alt="" coords="463,55,665,80"/>
+<area shape="rect" id="node4" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title=" " alt="" coords="237,55,409,80"/>
+<area shape="rect" id="node5" href="$class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="5,48,189,87"/>
 </map>

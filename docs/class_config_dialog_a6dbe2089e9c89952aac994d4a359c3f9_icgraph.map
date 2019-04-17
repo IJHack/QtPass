@@ -1,0 +1,4 @@
+<map id="ConfigDialog::useQrencode" name="ConfigDialog::useQrencode">
+<area shape="rect" id="node1" title="ConfigDialog::useOtp set preference for using otp plugin." alt="" coords="235,5,420,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
+</map>

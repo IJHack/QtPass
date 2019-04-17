@@ -11,13 +11,16 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
+<g id="a_node1"><a xlink:title="Imitates pass features when pass is not enabled or available.">
 <polygon fill="#bfbfbf" stroke="#000000" points="39.2192,-.5 39.2192,-18.5 107.4604,-18.5 107.4604,-.5 39.2192,-.5"/>
 <text text-anchor="middle" x="73.3398" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass</text>
+</a>
+</g>
 </g>
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
+<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation.">
 <polygon fill="none" stroke="#000000" points="11.2241,-56.5 11.2241,-74.5 49.4556,-74.5 49.4556,-56.5 11.2241,-56.5"/>
 <text text-anchor="middle" x="30.3398" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-177.5 0,-195.5 52.6797,-195.5 52.6797,-177.5 0,-177.5"/>
 <text text-anchor="middle" x="26.3398" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QObject</text>
+</a>
+</g>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge2" class="edge">
@@ -44,7 +50,7 @@
 <!-- Node7 -->
 <g id="node4" class="node">
 <title>Node7</title>
-<g id="a_node4"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data. ">
+<g id="a_node4"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data.">
 <polygon fill="none" stroke="#000000" points="42.6084,-121.5 42.6084,-139.5 98.0713,-139.5 98.0713,-121.5 42.6084,-121.5"/>
 <text text-anchor="middle" x="70.3398" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor</text>
 </a>
@@ -66,7 +72,7 @@
 <!-- Node8 -->
 <g id="node5" class="node">
 <title>Node8</title>
-<g id="a_node5"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title="simpleTransaction">
+<g id="a_node5"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="67.9517,-56.5 67.9517,-74.5 164.728,-74.5 164.728,-56.5 67.9517,-56.5"/>
 <text text-anchor="middle" x="116.3398" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">simpleTransaction</text>
 </a>

@@ -1,12 +1,14 @@
 <map id="MainWindow::showStatusMessage" name="MainWindow::showStatusMessage">
-<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="296,5,463,31"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents. " alt="" coords="300,80,459,105"/>
-<area shape="rect" id="node8" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="281,179,478,204"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="791,5,972,31"/>
-<area shape="rect" id="node5" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="549,31,704,56"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="541,80,712,105"/>
-<area shape="rect" id="node7" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="568,129,684,155"/>
-<area shape="rect" id="node9" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="526,179,727,204"/>
-<area shape="rect" id="node10" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="546,228,706,253"/>
-<area shape="rect" id="node11" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="775,228,988,253"/>
+<area shape="rect" id="node1" title="Displays message in status bar." alt="" coords="760,155,988,180"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="531,7,697,32"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="535,105,693,131"/>
+<area shape="rect" id="node8" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="516,179,712,204"/>
+<area shape="rect" id="node12" href="$class_qt_pass.html#aef5aaf0605c7681967995ede486590ef" title="displays the text as qrcode" alt="" coords="516,228,712,253"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="21,5,203,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="290,31,445,56"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="282,80,452,105"/>
+<area shape="rect" id="node7" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title=" " alt="" coords="309,129,425,155"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="267,179,468,204"/>
+<area shape="rect" id="node10" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="287,228,447,253"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,228,219,253"/>
 </map>

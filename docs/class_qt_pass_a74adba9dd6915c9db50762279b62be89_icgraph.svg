@@ -11,23 +11,26 @@
 <!-- Node52 -->
 <g id="node1" class="node">
 <title>Node52</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 119.9355,-18.5 119.9355,-.5 0,-.5"/>
-<text text-anchor="middle" x="59.9678" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setClippedText</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="195.9551,-.5 195.9551,-18.5 315.8906,-18.5 315.8906,-.5 195.9551,-.5"/>
+<text text-anchor="middle" x="255.9229" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setClippedText</text>
+</a>
+</g>
 </g>
 <!-- Node53 -->
 <g id="node2" class="node">
 <title>Node53</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title="MainWindow::passShowHandler">
-<polygon fill="none" stroke="#000000" points="155.9355,-.5 155.9355,-18.5 315.8906,-18.5 315.8906,-.5 155.9355,-.5"/>
-<text text-anchor="middle" x="235.9131" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
+<g id="a_node2"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 159.9551,-18.5 159.9551,-.5 0,-.5"/>
+<text text-anchor="middle" x="79.9775" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 </a>
 </g>
 </g>
 <!-- Node52&#45;&gt;Node53 -->
 <g id="edge1" class="edge">
 <title>Node52&#45;&gt;Node53</title>
-<path fill="none" stroke="#191970" d="M130.1976,-9.5C138.6472,-9.5 147.3246,-9.5 155.9003,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="130.0261,-6.0001 120.0261,-9.5 130.026,-13.0001 130.0261,-6.0001"/>
+<path fill="none" stroke="#191970" d="M185.6931,-9.5C177.2435,-9.5 168.566,-9.5 159.9903,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="185.8646,-13.0001 195.8646,-9.5 185.8645,-6.0001 185.8646,-13.0001"/>
 </g>
 </g>
 </svg>

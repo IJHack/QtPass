@@ -11,13 +11,16 @@
 <!-- Node26 -->
 <g id="node1" class="node">
 <title>Node26</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 148.2803,-18.5 148.2803,-.5 0,-.5"/>
 <text text-anchor="middle" x="74.1401" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGeometry</text>
+</a>
+</g>
 </g>
 <!-- Node27 -->
 <g id="node2" class="node">
 <title>Node27</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="184.2803,-.5 184.2803,-18.5 326.4619,-18.5 326.4619,-.5 184.2803,-.5"/>
 <text text-anchor="middle" x="255.3711" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

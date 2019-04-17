@@ -11,68 +11,71 @@
 <!-- Node97 -->
 <g id="node1" class="node">
 <title>Node97</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 175.5166,-36.5 175.5166,-18.5 0,-18.5"/>
-<text text-anchor="middle" x="87.7583" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateGPGKeyPair</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="361.3291,-18.5 361.3291,-36.5 536.8457,-36.5 536.8457,-18.5 361.3291,-18.5"/>
+<text text-anchor="middle" x="449.0874" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateGPGKeyPair</text>
+</a>
+</g>
 </g>
 <!-- Node98 -->
 <g id="node2" class="node">
 <title>Node98</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" target="_top" xlink:title="MainWindow::generateKeyPair internal gpg keypair generator . . ">
-<polygon fill="none" stroke="#000000" points="211.5166,-37.5 211.5166,-55.5 364.8066,-55.5 364.8066,-37.5 211.5166,-37.5"/>
-<text text-anchor="middle" x="288.1616" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
+<g id="a_node2"><a xlink:href="class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" target="_top" xlink:title="MainWindow::generateKeyPair internal gpg keypair generator . .">
+<polygon fill="none" stroke="#000000" points="172.0391,-37.5 172.0391,-55.5 325.3291,-55.5 325.3291,-37.5 172.0391,-37.5"/>
+<text text-anchor="middle" x="248.6841" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
 </a>
 </g>
 </g>
 <!-- Node97&#45;&gt;Node98 -->
 <g id="edge1" class="edge">
 <title>Node97&#45;&gt;Node98</title>
-<path fill="none" stroke="#191970" d="M185.7256,-36.7882C194.3232,-37.6033 202.9427,-38.4205 211.3308,-39.2158"/>
-<polygon fill="#191970" stroke="#191970" points="185.9439,-33.2932 175.6581,-35.8337 185.2831,-40.262 185.9439,-33.2932"/>
+<path fill="none" stroke="#191970" d="M351.1201,-36.7882C342.5225,-37.6033 333.903,-38.4205 325.5149,-39.2158"/>
+<polygon fill="#191970" stroke="#191970" points="351.5626,-40.262 361.1876,-35.8337 350.9018,-33.2932 351.5626,-40.262"/>
 </g>
 <!-- Node100 -->
 <g id="node4" class="node">
 <title>Node100</title>
-<g id="a_node4"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
-<polygon fill="none" stroke="#000000" points="225.6987,-.5 225.6987,-18.5 350.6245,-18.5 350.6245,-.5 225.6987,-.5"/>
-<text text-anchor="middle" x="288.1616" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
+<g id="a_node4"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="186.2212,-.5 186.2212,-18.5 311.147,-18.5 311.147,-.5 186.2212,-.5"/>
+<text text-anchor="middle" x="248.6841" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node97&#45;&gt;Node100 -->
 <g id="edge3" class="edge">
 <title>Node97&#45;&gt;Node100</title>
-<path fill="none" stroke="#191970" d="M185.9539,-18.6802C199.4512,-17.4679 212.9971,-16.2512 225.6114,-15.1182"/>
-<polygon fill="#191970" stroke="#191970" points="185.3049,-15.2243 175.6581,-19.6049 185.9312,-22.1962 185.3049,-15.2243"/>
+<path fill="none" stroke="#191970" d="M350.8918,-18.6802C337.3945,-17.4679 323.8486,-16.2512 311.2343,-15.1182"/>
+<polygon fill="#191970" stroke="#191970" points="350.9145,-22.1962 361.1876,-19.6049 351.5408,-15.2243 350.9145,-22.1962"/>
 </g>
 <!-- Node99 -->
 <g id="node3" class="node">
 <title>Node99</title>
-<g id="a_node3"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. ">
-<polygon fill="none" stroke="#000000" points="412.4619,-37.5 412.4619,-55.5 525.1904,-55.5 525.1904,-37.5 412.4619,-37.5"/>
-<text text-anchor="middle" x="468.8262" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::genKey</text>
+<g id="a_node3"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair.">
+<polygon fill="none" stroke="#000000" points="11.6553,-37.5 11.6553,-55.5 124.3838,-55.5 124.3838,-37.5 11.6553,-37.5"/>
+<text text-anchor="middle" x="68.0195" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::genKey</text>
 </a>
 </g>
 </g>
 <!-- Node98&#45;&gt;Node99 -->
 <g id="edge2" class="edge">
 <title>Node98&#45;&gt;Node99</title>
-<path fill="none" stroke="#191970" d="M375.1261,-46.5C387.7475,-46.5 400.4567,-46.5 412.2663,-46.5"/>
-<polygon fill="#191970" stroke="#191970" points="375.0417,-43.0001 365.0416,-46.5 375.0416,-50.0001 375.0417,-43.0001"/>
+<path fill="none" stroke="#191970" d="M161.7196,-46.5C149.0982,-46.5 136.389,-46.5 124.5794,-46.5"/>
+<polygon fill="#191970" stroke="#191970" points="161.8041,-50.0001 171.8041,-46.5 161.804,-43.0001 161.8041,-50.0001"/>
 </g>
 <!-- Node101 -->
 <g id="node5" class="node">
 <title>Node101</title>
-<g id="a_node5"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="#000000" points="400.8066,-.5 400.8066,-18.5 536.8457,-18.5 536.8457,-.5 400.8066,-.5"/>
-<text text-anchor="middle" x="468.8262" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+<g id="a_node5"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 136.0391,-18.5 136.0391,-.5 0,-.5"/>
+<text text-anchor="middle" x="68.0195" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node100&#45;&gt;Node101 -->
 <g id="edge4" class="edge">
 <title>Node100&#45;&gt;Node101</title>
-<path fill="none" stroke="#191970" d="M361.1834,-9.5C374.2392,-9.5 387.7962,-9.5 400.7077,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="360.8423,-6.0001 350.8423,-9.5 360.8423,-13.0001 360.8423,-6.0001"/>
+<path fill="none" stroke="#191970" d="M175.6623,-9.5C162.6065,-9.5 149.0495,-9.5 136.138,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="176.0035,-13.0001 186.0034,-9.5 176.0034,-6.0001 176.0035,-13.0001"/>
 </g>
 </g>
 </svg>

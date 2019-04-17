@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="structdrag_and_drop_info.html" target="_top" xlink:title="holds values to share beetween drag and drop on the passwordstorage view ">
+<g id="a_node1"><a xlink:href="structdrag_and_drop_info.html" target="_top" xlink:title="holds values to share beetween drag and drop on the passwordstorage view">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 92.1621,-18.5 92.1621,-.5 0,-.5"/>
 <text text-anchor="middle" x="46.0811" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">dragAndDropInfo</text>
 </a>

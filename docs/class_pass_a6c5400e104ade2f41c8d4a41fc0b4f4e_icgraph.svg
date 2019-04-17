@@ -11,59 +11,62 @@
 <!-- Node115 -->
 <g id="node1" class="node">
 <title>Node115</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-37.5 114.9404,-37.5 114.9404,-19.5 0,-19.5"/>
-<text text-anchor="middle" x="57.4702" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::getRecipientList</text>
+<g id="a_node1"><a xlink:title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for.">
+<polygon fill="#bfbfbf" stroke="#000000" points="327.9844,-19.5 327.9844,-37.5 442.9248,-37.5 442.9248,-19.5 327.9844,-19.5"/>
+<text text-anchor="middle" x="385.4546" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::getRecipientList</text>
+</a>
+</g>
 </g>
 <!-- Node116 -->
 <g id="node2" class="node">
 <title>Node116</title>
-<g id="a_node2"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content. ">
-<polygon fill="none" stroke="#000000" points="164.2876,-56.5 164.2876,-74.5 263.0952,-74.5 263.0952,-56.5 164.2876,-56.5"/>
-<text text-anchor="middle" x="213.6914" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Insert</text>
+<g id="a_node2"><a xlink:href="class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content.">
+<polygon fill="none" stroke="#000000" points="179.8296,-56.5 179.8296,-74.5 278.6372,-74.5 278.6372,-56.5 179.8296,-56.5"/>
+<text text-anchor="middle" x="229.2334" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Insert</text>
 </a>
 </g>
 </g>
 <!-- Node115&#45;&gt;Node116 -->
 <g id="edge1" class="edge">
 <title>Node115&#45;&gt;Node116</title>
-<path fill="none" stroke="#191970" d="M105.7073,-39.9247C128.185,-45.2484 154.5487,-51.4924 175.5995,-56.4782"/>
-<polygon fill="#191970" stroke="#191970" points="106.2237,-36.4502 95.6862,-37.5512 104.6104,-43.2618 106.2237,-36.4502"/>
+<path fill="none" stroke="#191970" d="M337.2175,-39.9247C314.7398,-45.2484 288.3761,-51.4924 267.3253,-56.4782"/>
+<polygon fill="#191970" stroke="#191970" points="338.3144,-43.2618 347.2386,-37.5512 336.7011,-36.4502 338.3144,-43.2618"/>
 </g>
 <!-- Node117 -->
 <g id="node3" class="node">
 <title>Node117</title>
-<g id="a_node3"><a xlink:href="class_pass.html#a4566c370e65b22d5cdc132f72b393808" target="_top" xlink:title="Pass::getRecipientString formated string for use with GPG. ">
-<polygon fill="none" stroke="#000000" points="150.9404,-19.5 150.9404,-37.5 276.4424,-37.5 276.4424,-19.5 150.9404,-19.5"/>
-<text text-anchor="middle" x="213.6914" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::getRecipientString</text>
+<g id="a_node3"><a xlink:href="class_pass.html#a4566c370e65b22d5cdc132f72b393808" target="_top" xlink:title="Pass::getRecipientString formated string for use with GPG.">
+<polygon fill="none" stroke="#000000" points="166.4824,-19.5 166.4824,-37.5 291.9844,-37.5 291.9844,-19.5 166.4824,-19.5"/>
+<text text-anchor="middle" x="229.2334" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::getRecipientString</text>
 </a>
 </g>
 </g>
 <!-- Node115&#45;&gt;Node117 -->
 <g id="edge2" class="edge">
 <title>Node115&#45;&gt;Node117</title>
-<path fill="none" stroke="#191970" d="M125.3557,-28.5C133.7712,-28.5 142.3479,-28.5 150.6858,-28.5"/>
-<polygon fill="#191970" stroke="#191970" points="125.1974,-25.0001 115.1974,-28.5 125.1973,-32.0001 125.1974,-25.0001"/>
+<path fill="none" stroke="#191970" d="M317.5691,-28.5C309.1536,-28.5 300.5769,-28.5 292.239,-28.5"/>
+<polygon fill="#191970" stroke="#191970" points="317.7275,-32.0001 327.7274,-28.5 317.7274,-25.0001 317.7275,-32.0001"/>
 </g>
 <!-- Node118 -->
 <g id="node4" class="node">
 <title>Node118</title>
-<g id="a_node4"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor. ">
-<polygon fill="none" stroke="#000000" points="312.4424,-.5 312.4424,-18.5 442.9248,-18.5 442.9248,-.5 312.4424,-.5"/>
-<text text-anchor="middle" x="377.6836" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::UsersDialog</text>
+<g id="a_node4"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 130.4824,-18.5 130.4824,-.5 0,-.5"/>
+<text text-anchor="middle" x="65.2412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::UsersDialog</text>
 </a>
 </g>
 </g>
 <!-- Node115&#45;&gt;Node118 -->
 <g id="edge4" class="edge">
 <title>Node115&#45;&gt;Node118</title>
-<path fill="none" stroke="#191970" d="M106.0611,-17.3689C120.4315,-14.5591 136.2495,-11.9344 150.9404,-10.5 205.0077,-5.2211 266.6727,-5.3429 312.0327,-6.5768"/>
-<polygon fill="#191970" stroke="#191970" points="104.994,-14.014 95.89,-19.4332 106.3864,-20.8741 104.994,-14.014"/>
+<path fill="none" stroke="#191970" d="M336.8637,-17.3689C322.4934,-14.5591 306.6753,-11.9344 291.9844,-10.5 237.9171,-5.2211 176.2521,-5.3429 130.8921,-6.5768"/>
+<polygon fill="#191970" stroke="#191970" points="336.5384,-20.8741 347.0348,-19.4332 337.9308,-14.014 336.5384,-20.8741"/>
 </g>
 <!-- Node117&#45;&gt;Node118 -->
 <g id="edge3" class="edge">
 <title>Node117&#45;&gt;Node118</title>
-<path fill="none" stroke="#191970" d="M286.5639,-20.0571C295.1009,-19.068 303.7716,-18.0634 312.1994,-17.0869"/>
-<polygon fill="#191970" stroke="#191970" points="286.1568,-16.5807 276.6261,-21.2084 286.9625,-23.5342 286.1568,-16.5807"/>
+<path fill="none" stroke="#191970" d="M156.3609,-20.0571C147.8239,-19.068 139.1533,-18.0634 130.7254,-17.0869"/>
+<polygon fill="#191970" stroke="#191970" points="155.9623,-23.5342 166.2987,-21.2084 156.768,-16.5807 155.9623,-23.5342"/>
 </g>
 </g>
 </svg>

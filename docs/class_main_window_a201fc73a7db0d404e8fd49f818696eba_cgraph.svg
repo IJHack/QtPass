@@ -11,13 +11,16 @@
 <!-- Node84 -->
 <g id="node1" class="node">
 <title>Node84</title>
+<g id="a_node1"><a xlink:title="MainWindow::endReencryptPath re&#45;enable ui elements.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-5.5 0,-23.5 161.6299,-23.5 161.6299,-5.5 0,-5.5"/>
 <text text-anchor="middle" x="80.8149" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::endReencryptPath</text>
+</a>
+</g>
 </g>
 <!-- Node85 -->
 <g id="node2" class="node">
 <title>Node85</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. ">
+<g id="a_node2"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">
 <polygon fill="none" stroke="#000000" points="197.6299,-.5 197.6299,-28.5 340.8955,-28.5 340.8955,-.5 197.6299,-.5"/>
 <text text-anchor="start" x="205.6299" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::setUiElements</text>
 <text text-anchor="middle" x="269.2627" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Enabled</text>

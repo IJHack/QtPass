@@ -1,14 +1,33 @@
 <map id="src/pass.cpp" name="src/pass.cpp">
-<area shape="rect" id="node2" href="$pass_8h.html" title="pass.h" alt="" coords="293,225,353,251"/>
-<area shape="rect" id="node14" href="$qtpasssettings_8h.html" title="qtpasssettings.h" alt="" coords="511,79,629,104"/>
-<area shape="rect" id="node27" href="$util_8h.html" title="util.h" alt="" coords="1258,79,1308,104"/>
-<area shape="rect" id="node3" href="$enums_8h.html" title="enums.h" alt="" coords="662,299,734,324"/>
-<area shape="rect" id="node4" href="$executor_8h.html" title="executor.h" alt="" coords="350,299,433,324"/>
-<area shape="rect" id="node8" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="507,299,587,324"/>
-<area shape="rect" id="node15" href="$imitatepass_8h.html" title="imitatepass.h" alt="" coords="771,152,870,177"/>
-<area shape="rect" id="node18" href="$passwordconfiguration_8h.html" title="passwordconfiguration.h" alt="" coords="834,225,999,251"/>
-<area shape="rect" id="node19" href="$realpass_8h.html" title="realpass.h" alt="" coords="43,152,126,177"/>
-<area shape="rect" id="node20" href="$settingsconstants_8h.html" title="settingsconstants.h" alt="" coords="1023,225,1159,251"/>
-<area shape="rect" id="node16" href="$simpletransaction_8h.html" title="simpletransaction.h" alt="" coords="674,225,810,251"/>
-<area shape="rect" id="node28" href="$storemodel_8h.html" title="storemodel.h" alt="" coords="1234,152,1332,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="522,5,618,31"/>
+<area shape="rect" id="node2" href="$pass_8h.html" title=" " alt="" coords="293,225,353,251"/>
+<area shape="rect" id="node14" href="$qtpasssettings_8h.html" title=" " alt="" coords="511,79,629,104"/>
+<area shape="rect" id="node27" href="$util_8h.html" title=" " alt="" coords="1258,79,1308,104"/>
+<area shape="rect" id="node3" href="$enums_8h.html" title=" " alt="" coords="662,299,734,324"/>
+<area shape="rect" id="node4" href="$executor_8h.html" title=" " alt="" coords="350,299,433,324"/>
+<area shape="rect" id="node6" title=" " alt="" coords="414,372,494,397"/>
+<area shape="rect" id="node7" title=" " alt="" coords="95,372,167,397"/>
+<area shape="rect" id="node8" href="$userinfo_8h.html" title=" " alt="" coords="507,299,587,324"/>
+<area shape="rect" id="node10" title=" " alt="" coords="883,372,950,397"/>
+<area shape="rect" id="node11" title=" " alt="" coords="24,299,89,324"/>
+<area shape="rect" id="node12" title=" " alt="" coords="113,299,160,324"/>
+<area shape="rect" id="node13" title=" " alt="" coords="184,299,326,324"/>
+<area shape="rect" id="node5" title=" " alt="" coords="320,372,390,397"/>
+<area shape="rect" id="node9" title=" " alt="" coords="517,372,606,397"/>
+<area shape="rect" id="node15" href="$imitatepass_8h.html" title=" " alt="" coords="771,152,870,177"/>
+<area shape="rect" id="node18" href="$passwordconfiguration_8h.html" title=" " alt="" coords="834,225,999,251"/>
+<area shape="rect" id="node19" href="$realpass_8h.html" title=" " alt="" coords="43,152,126,177"/>
+<area shape="rect" id="node20" href="$settingsconstants_8h.html" title=" " alt="" coords="1023,225,1159,251"/>
+<area shape="rect" id="node21" title=" " alt="" coords="150,152,240,177"/>
+<area shape="rect" id="node22" title=" " alt="" coords="264,152,327,177"/>
+<area shape="rect" id="node23" title=" " alt="" coords="351,152,413,177"/>
+<area shape="rect" id="node24" title=" " alt="" coords="437,152,516,177"/>
+<area shape="rect" id="node25" title=" " alt="" coords="541,152,599,177"/>
+<area shape="rect" id="node26" title=" " alt="" coords="673,152,746,177"/>
+<area shape="rect" id="node16" href="$simpletransaction_8h.html" title=" " alt="" coords="674,225,810,251"/>
+<area shape="rect" id="node17" title=" " alt="" coords="758,299,816,324"/>
+<area shape="rect" id="node28" href="$storemodel_8h.html" title=" " alt="" coords="1234,152,1332,177"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1356,152,1490,177"/>
+<area shape="rect" id="node31" title=" " alt="" coords="1514,152,1668,177"/>
+<area shape="rect" id="node29" title=" " alt="" coords="1234,225,1391,251"/>
 </map>

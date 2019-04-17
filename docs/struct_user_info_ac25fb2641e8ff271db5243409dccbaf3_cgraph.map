@@ -1,4 +1,5 @@
 <map id="UserInfo::isValid" name="UserInfo::isValid">
-<area shape="rect" id="node2" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="189,5,321,31"/>
-<area shape="rect" id="node3" href="$struct_user_info.html#a7d651f28a61ede830811b5fbea5f3bb2" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. " alt="" coords="171,55,339,80"/>
+<area shape="rect" id="node1" title="UserInfo::isValid when fullyValid or marginallyValid." alt="" coords="5,31,123,56"/>
+<area shape="rect" id="node2" href="$struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb...." alt="" coords="189,5,321,31"/>
+<area shape="rect" id="node3" href="$struct_user_info.html#a7d651f28a61ede830811b5fbea5f3bb2" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb...." alt="" coords="171,55,339,80"/>
 </map>

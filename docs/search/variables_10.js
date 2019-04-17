@@ -8,6 +8,7 @@ var searchData=
   ['useotp',['useOtp',['../class_settings_constants.html#aaa144f0572561c7c4000154457963dc4',1,'SettingsConstants']]],
   ['usepass',['usePass',['../class_settings_constants.html#a77796de4c6b0edfd2aaaf10b84d04322',1,'SettingsConstants']]],
   ['usepwgen',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants']]],
+  ['useqrencode',['useQrencode',['../class_settings_constants.html#aed8ee30c56dcffd9c5b7405ea5a3a265',1,'SettingsConstants']]],
   ['useselection',['useSelection',['../class_settings_constants.html#a0d0ae02026d7f4d75430d36987a3da3f',1,'SettingsConstants']]],
   ['usesymbols',['useSymbols',['../class_settings_constants.html#ae23ec21e4f84063d29277dcaf71f6f53',1,'SettingsConstants']]],
   ['usetemplate',['useTemplate',['../class_settings_constants.html#af2aeddac9d26672fdd039fe65a5ef91f',1,'SettingsConstants']]],

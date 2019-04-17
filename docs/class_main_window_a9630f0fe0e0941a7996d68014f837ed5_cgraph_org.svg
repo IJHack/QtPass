@@ -11,13 +11,16 @@
 <!-- Node187 -->
 <g id="node1" class="node">
 <title>Node187</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-158.5 0,-176.5 145.4873,-176.5 145.4873,-158.5 0,-158.5"/>
 <text text-anchor="middle" x="72.7437" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
+</a>
+</g>
 </g>
 <!-- Node188 -->
 <g id="node2" class="node">
 <title>Node188</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" target="_top" xlink:title="QtPassSettings::getGeometry">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="189.2607,-306.5 189.2607,-324.5 337.541,-324.5 337.541,-306.5 189.2607,-306.5"/>
 <text text-anchor="middle" x="263.4009" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGeometry</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node190 -->
 <g id="node4" class="node">
 <title>Node190</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" target="_top" xlink:title="QtPassSettings::getSavestate">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="188.9751,-269.5 188.9751,-287.5 337.8267,-287.5 337.8267,-269.5 188.9751,-269.5"/>
 <text text-anchor="middle" x="263.4009" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getSavestate</text>
 </a>
@@ -47,7 +50,7 @@
 <!-- Node191 -->
 <g id="node5" class="node">
 <title>Node191</title>
-<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" target="_top" xlink:title="QtPassSettings::getPos">
+<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="202.5957,-232.5 202.5957,-250.5 324.2061,-250.5 324.2061,-232.5 202.5957,-232.5"/>
 <text text-anchor="middle" x="263.4009" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPos</text>
 </a>
@@ -62,7 +65,7 @@
 <!-- Node192 -->
 <g id="node6" class="node">
 <title>Node192</title>
-<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" target="_top" xlink:title="QtPassSettings::getSize">
+<g id="a_node6"><a xlink:href="class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="201.4849,-195.5 201.4849,-213.5 325.3169,-213.5 325.3169,-195.5 201.4849,-195.5"/>
 <text text-anchor="middle" x="263.4009" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getSize</text>
 </a>
@@ -77,7 +80,7 @@
 <!-- Node193 -->
 <g id="node7" class="node">
 <title>Node193</title>
-<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" target="_top" xlink:title="QtPassSettings::isMaximized">
+<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="190.6572,-158.5 190.6572,-176.5 336.1445,-176.5 336.1445,-158.5 190.6572,-158.5"/>
 <text text-anchor="middle" x="263.4009" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isMaximized</text>
 </a>
@@ -92,7 +95,7 @@
 <!-- Node194 -->
 <g id="node8" class="node">
 <title>Node194</title>
-<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" target="_top" xlink:title="QtPassSettings::isAlways\lOnTop">
+<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="198.7139,-111.5 198.7139,-139.5 328.0879,-139.5 328.0879,-111.5 198.7139,-111.5"/>
 <text text-anchor="start" x="206.7139" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isAlways</text>
 <text text-anchor="middle" x="263.4009" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">OnTop</text>
@@ -108,7 +111,7 @@
 <!-- Node195 -->
 <g id="node9" class="node">
 <title>Node195</title>
-<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" target="_top" xlink:title="QtPassSettings::isUseTrayIcon">
+<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="186.3921,-74.5 186.3921,-92.5 340.4097,-92.5 340.4097,-74.5 186.3921,-74.5"/>
 <text text-anchor="middle" x="263.4009" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseTrayIcon</text>
 </a>
@@ -123,7 +126,7 @@
 <!-- Node196 -->
 <g id="node10" class="node">
 <title>Node196</title>
-<g id="a_node10"><a xlink:href="class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" target="_top" xlink:title="QtPass::isFreshStart">
+<g id="a_node10"><a xlink:href="class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="209.2778,-37.5 209.2778,-55.5 317.5239,-55.5 317.5239,-37.5 209.2778,-37.5"/>
 <text text-anchor="middle" x="263.4009" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::isFreshStart</text>
 </a>
@@ -138,7 +141,7 @@
 <!-- Node197 -->
 <g id="node11" class="node">
 <title>Node197</title>
-<g id="a_node11"><a xlink:href="class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" target="_top" xlink:title="QtPassSettings::isStartMinimized">
+<g id="a_node11"><a xlink:href="class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="181.4873,-.5 181.4873,-18.5 345.3145,-18.5 345.3145,-.5 181.4873,-.5"/>
 <text text-anchor="middle" x="263.4009" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isStartMinimized</text>
 </a>
@@ -153,7 +156,7 @@
 <!-- Node189 -->
 <g id="node3" class="node">
 <title>Node189</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="381.3145,-176.5 381.3145,-194.5 523.4961,-194.5 523.4961,-176.5 381.3145,-176.5"/>
 <text text-anchor="middle" x="452.4053" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

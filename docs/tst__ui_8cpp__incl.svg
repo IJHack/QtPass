@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="232.4482,-165.5 232.4482,-183.5 347.9502,-183.5 347.9502,-165.5 232.4482,-165.5"/>
 <text text-anchor="middle" x="290.1992" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tests/auto/ui/tst_ui.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="passworddialog_8h.html" target="_top" xlink:title="../../../src/passworddialog.h">
+<g id="a_node2"><a xlink:href="passworddialog_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="89.729,-110.5 89.729,-128.5 224.6694,-128.5 224.6694,-110.5 89.729,-110.5"/>
 <text text-anchor="middle" x="157.1992" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">../../../src/passworddialog.h</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="passwordconfiguration_8h.html" target="_top" xlink:title="passwordconfiguration.h">
+<g id="a_node3"><a xlink:href="passwordconfiguration_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-55.5 0,-73.5 124.3984,-73.5 124.3984,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="62.1992" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">passwordconfiguration.h</text>
 </a>
@@ -47,8 +50,11 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="243.0122,-110.5 243.0122,-128.5 337.3862,-128.5 337.3862,-110.5 243.0122,-110.5"/>
 <text text-anchor="middle" x="290.1992" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QCoreApplication</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node5 -->
 <g id="edge6" class="edge">
@@ -59,8 +65,11 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="355.751,-110.5 355.751,-128.5 400.6475,-128.5 400.6475,-110.5 355.751,-110.5"/>
 <text text-anchor="middle" x="378.1992" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtTest</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
@@ -71,8 +80,11 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
+<g id="a_node8"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="418.4136,-110.5 418.4136,-128.5 479.9849,-128.5 479.9849,-110.5 418.4136,-110.5"/>
 <text text-anchor="middle" x="449.1992" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_ui.moc</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node7 -->
 <g id="edge8" class="edge">
@@ -89,8 +101,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="142.1353,-55.5 142.1353,-73.5 194.2632,-73.5 194.2632,-55.5 142.1353,-55.5"/>
 <text text-anchor="middle" x="168.1992" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
@@ -101,8 +116,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="37.2485,-.5 37.2485,-18.5 87.1499,-18.5 87.1499,-.5 37.2485,-.5"/>
 <text text-anchor="middle" x="62.1992" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge3" class="edge">

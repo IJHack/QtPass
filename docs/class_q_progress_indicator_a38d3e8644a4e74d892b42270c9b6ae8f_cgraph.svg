@@ -11,14 +11,17 @@
 <!-- Node15 -->
 <g id="node1" class="node">
 <title>Node15</title>
+<g id="a_node1"><a xlink:title="QProgressIndicator::paintEvent draw the spinner.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-23.5 0,-51.5 102.1475,-51.5 102.1475,-23.5 0,-23.5"/>
 <text text-anchor="start" x="8" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
 <text text-anchor="middle" x="51.0737" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::paintEvent</text>
+</a>
+</g>
 </g>
 <!-- Node16 -->
 <g id="node2" class="node">
 <title>Node16</title>
-<g id="a_node2"><a xlink:href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" target="_top" xlink:title="Returns a Boolean value indicating whether the component is currently animated. ">
+<g id="a_node2"><a xlink:href="class_q_progress_indicator.html#aa145f555e2d7c48ecdd1517a7addf080" target="_top" xlink:title="Returns a Boolean value indicating whether the component is currently animated.">
 <polygon fill="none" stroke="#000000" points="138.1475,-47.5 138.1475,-75.5 240.2949,-75.5 240.2949,-47.5 138.1475,-47.5"/>
 <text text-anchor="start" x="146.1475" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
 <text text-anchor="middle" x="189.2212" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::isAnimated</text>
@@ -34,7 +37,7 @@
 <!-- Node17 -->
 <g id="node3" class="node">
 <title>Node17</title>
-<g id="a_node3"><a xlink:href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" target="_top" xlink:title="Returns the color of the component. ">
+<g id="a_node3"><a xlink:href="class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" target="_top" xlink:title="Returns the color of the component.">
 <polygon fill="none" stroke="#000000" points="138.1475,-.5 138.1475,-28.5 240.2949,-28.5 240.2949,-.5 138.1475,-.5"/>
 <text text-anchor="start" x="146.1475" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
 <text text-anchor="middle" x="189.2212" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::color</text>

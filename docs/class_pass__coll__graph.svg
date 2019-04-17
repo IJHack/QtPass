@@ -11,14 +11,20 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
+<g id="a_node1"><a xlink:title="Acts as an abstraction for pass or pass imitation.">
 <polygon fill="#bfbfbf" stroke="#000000" points="11.2241,-.5 11.2241,-18.5 49.4556,-18.5 49.4556,-.5 11.2241,-.5"/>
 <text text-anchor="middle" x="30.3398" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass</text>
+</a>
+</g>
 </g>
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-121.5 0,-139.5 52.6797,-139.5 52.6797,-121.5 0,-121.5"/>
 <text text-anchor="middle" x="26.3398" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QObject</text>
+</a>
+</g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge1" class="edge">
@@ -29,7 +35,7 @@
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
-<g id="a_node3"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data. ">
+<g id="a_node3"><a xlink:href="class_executor.html" target="_top" xlink:title="Executes external commands for handleing password, git and other data.">
 <polygon fill="none" stroke="#000000" points="42.6084,-65.5 42.6084,-83.5 98.0713,-83.5 98.0713,-65.5 42.6084,-65.5"/>
 <text text-anchor="middle" x="70.3398" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor</text>
 </a>

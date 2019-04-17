@@ -11,13 +11,16 @@
 <!-- Node12 -->
 <g id="node1" class="node">
 <title>Node12</title>
+<g id="a_node1"><a xlink:title="RealPass::GitInit pass git pull wrapper which blocks until process finishes.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 104.9307,-18.5 104.9307,-.5 0,-.5"/>
 <text text-anchor="middle" x="52.4653" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass::GitPull_b</text>
+</a>
+</g>
 </g>
 <!-- Node13 -->
 <g id="node2" class="node">
 <title>Node13</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" target="_top" xlink:title="QtPassSettings::getPassExecutable">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="140.9307,-.5 140.9307,-18.5 317.0186,-18.5 317.0186,-.5 140.9307,-.5"/>
 <text text-anchor="middle" x="228.9746" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassExecutable</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node14 -->
 <g id="node3" class="node">
 <title>Node14</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="353.0186,-.5 353.0186,-18.5 495.2002,-18.5 495.2002,-.5 353.0186,-.5"/>
 <text text-anchor="middle" x="424.1094" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

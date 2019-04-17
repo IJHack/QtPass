@@ -11,38 +11,41 @@
 <!-- Node38 -->
 <g id="node1" class="node">
 <title>Node38</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 93.8125,-36.5 93.8125,-18.5 0,-18.5"/>
-<text text-anchor="middle" x="46.9063" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::starting</text>
+<g id="a_node1"><a xlink:title="starting signal that is emited when process starts">
+<polygon fill="#bfbfbf" stroke="#000000" points="136.4824,-18.5 136.4824,-36.5 230.2949,-36.5 230.2949,-18.5 136.4824,-18.5"/>
+<text text-anchor="middle" x="183.3887" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::starting</text>
+</a>
+</g>
 </g>
 <!-- Node39 -->
 <g id="node2" class="node">
 <title>Node39</title>
-<g id="a_node2"><a xlink:href="class_executor.html#a19fdadaa749c44b889287879ecf5f315" target="_top" xlink:title="Executor::Executor executes external applications. ">
-<polygon fill="none" stroke="#000000" points="129.8125,-37.5 129.8125,-55.5 230.2949,-55.5 230.2949,-37.5 129.8125,-37.5"/>
-<text text-anchor="middle" x="180.0537" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::Executor</text>
+<g id="a_node2"><a xlink:href="class_executor.html#a19fdadaa749c44b889287879ecf5f315" target="_top" xlink:title="Executor::Executor executes external applications.">
+<polygon fill="none" stroke="#000000" points="0,-37.5 0,-55.5 100.4824,-55.5 100.4824,-37.5 0,-37.5"/>
+<text text-anchor="middle" x="50.2412" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::Executor</text>
 </a>
 </g>
 </g>
 <!-- Node38&#45;&gt;Node39 -->
 <g id="edge1" class="edge">
 <title>Node38&#45;&gt;Node39</title>
-<path fill="none" stroke="#191970" d="M104.0264,-35.651C112.4854,-36.8581 121.1523,-38.0948 129.4657,-39.2811"/>
-<polygon fill="#191970" stroke="#191970" points="104.2432,-32.1466 93.8491,-34.1987 103.2543,-39.0764 104.2432,-32.1466"/>
+<path fill="none" stroke="#191970" d="M126.2685,-35.651C117.8095,-36.8581 109.1426,-38.0948 100.8292,-39.2811"/>
+<polygon fill="#191970" stroke="#191970" points="127.0406,-39.0764 136.4459,-34.1987 126.0517,-32.1466 127.0406,-39.0764"/>
 </g>
 <!-- Node40 -->
 <g id="node3" class="node">
 <title>Node40</title>
-<g id="a_node3"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation. ">
-<polygon fill="none" stroke="#000000" points="147.0439,-.5 147.0439,-18.5 213.0635,-18.5 213.0635,-.5 147.0439,-.5"/>
-<text text-anchor="middle" x="180.0537" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
+<g id="a_node3"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
+<polygon fill="none" stroke="#000000" points="17.2314,-.5 17.2314,-18.5 83.251,-18.5 83.251,-.5 17.2314,-.5"/>
+<text text-anchor="middle" x="50.2412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
 </a>
 </g>
 </g>
 <!-- Node38&#45;&gt;Node40 -->
 <g id="edge2" class="edge">
 <title>Node38&#45;&gt;Node40</title>
-<path fill="none" stroke="#191970" d="M103.8779,-19.7981C118.5632,-17.8128 133.8851,-15.7415 146.9042,-13.9814"/>
-<polygon fill="#191970" stroke="#191970" points="103.29,-16.3456 93.8491,-21.1539 104.2278,-23.2825 103.29,-16.3456"/>
+<path fill="none" stroke="#191970" d="M126.417,-19.7981C111.7317,-17.8128 96.4098,-15.7415 83.3907,-13.9814"/>
+<polygon fill="#191970" stroke="#191970" points="126.0671,-23.2825 136.4459,-21.1539 127.0049,-16.3456 126.0671,-23.2825"/>
 </g>
 </g>
 </svg>

@@ -1,4 +1,5 @@
 <map id="QtPass::setClipboardTimer" name="QtPass::setClipboardTimer">
-<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="234,5,375,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="246,55,363,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="194,31,375,56"/>
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="5,5,146,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title=" " alt="" coords="18,55,134,80"/>
 </map>

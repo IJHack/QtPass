@@ -11,23 +11,26 @@
 <!-- Node10 -->
 <g id="node1" class="node">
 <title>Node10</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 126.4199,-18.5 126.4199,-.5 0,-.5"/>
-<text text-anchor="middle" x="63.21" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::marginallyValid</text>
+<g id="a_node1"><a xlink:title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb....">
+<polygon fill="#bfbfbf" stroke="#000000" points="124.0703,-.5 124.0703,-18.5 250.4902,-18.5 250.4902,-.5 124.0703,-.5"/>
+<text text-anchor="middle" x="187.2803" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::marginallyValid</text>
+</a>
+</g>
 </g>
 <!-- Node11 -->
 <g id="node2" class="node">
 <title>Node11</title>
-<g id="a_node2"><a xlink:href="struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" target="_top" xlink:title="UserInfo::isValid when fullyValid or marginallyValid. ">
-<polygon fill="none" stroke="#000000" points="162.4199,-.5 162.4199,-18.5 250.4902,-18.5 250.4902,-.5 162.4199,-.5"/>
-<text text-anchor="middle" x="206.4551" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::isValid</text>
+<g id="a_node2"><a xlink:href="struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" target="_top" xlink:title="UserInfo::isValid when fullyValid or marginallyValid.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 88.0703,-18.5 88.0703,-.5 0,-.5"/>
+<text text-anchor="middle" x="44.0352" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::isValid</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge1" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="#191970" d="M136.6192,-9.5C145.2888,-9.5 153.9234,-9.5 162.0146,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="136.4564,-6.0001 126.4563,-9.5 136.4563,-13.0001 136.4564,-6.0001"/>
+<path fill="none" stroke="#191970" d="M113.871,-9.5C105.2015,-9.5 96.5669,-9.5 88.4757,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="114.0339,-13.0001 124.0339,-9.5 114.0339,-6.0001 114.0339,-13.0001"/>
 </g>
 </g>
 </svg>

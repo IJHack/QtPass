@@ -11,23 +11,26 @@
 <!-- Node55 -->
 <g id="node1" class="node">
 <title>Node55</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 114.3643,-18.5 114.3643,-.5 0,-.5"/>
-<text text-anchor="middle" x="57.1821" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setFreshStart</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="141.4824,-.5 141.4824,-18.5 255.8467,-18.5 255.8467,-.5 141.4824,-.5"/>
+<text text-anchor="middle" x="198.6646" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setFreshStart</text>
+</a>
+</g>
 </g>
 <!-- Node56 -->
 <g id="node2" class="node">
 <title>Node56</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. ">
-<polygon fill="none" stroke="#000000" points="150.3643,-.5 150.3643,-18.5 255.8467,-18.5 255.8467,-.5 150.3643,-.5"/>
-<text text-anchor="middle" x="203.1055" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
+<g id="a_node2"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 105.4824,-18.5 105.4824,-.5 0,-.5"/>
+<text text-anchor="middle" x="52.7412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::config</text>
 </a>
 </g>
 </g>
 <!-- Node55&#45;&gt;Node56 -->
 <g id="edge1" class="edge">
 <title>Node55&#45;&gt;Node56</title>
-<path fill="none" stroke="#191970" d="M124.5144,-9.5C133.1663,-9.5 141.9244,-9.5 150.2981,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="124.4361,-6.0001 114.4361,-9.5 124.436,-13.0001 124.4361,-6.0001"/>
+<path fill="none" stroke="#191970" d="M131.3322,-9.5C122.6804,-9.5 113.9223,-9.5 105.5486,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="131.4106,-13.0001 141.4106,-9.5 131.4106,-6.0001 131.4106,-13.0001"/>
 </g>
 </g>
 </svg>

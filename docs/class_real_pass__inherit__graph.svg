@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="Wrapper for executing pass to handle the password&#45;store.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 58.7979,-18.5 58.7979,-.5 0,-.5"/>
 <text text-anchor="middle" x="29.3989" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation. ">
+<g id="a_node2"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation.">
 <polygon fill="none" stroke="#000000" points="10.2832,-55.5 10.2832,-73.5 48.5146,-73.5 48.5146,-55.5 10.2832,-55.5"/>
 <text text-anchor="middle" x="29.3989" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="3.0591,-110.5 3.0591,-128.5 55.7388,-128.5 55.7388,-110.5 3.0591,-110.5"/>
 <text text-anchor="middle" x="29.3989" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QObject</text>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge2" class="edge">

@@ -11,13 +11,16 @@
 <!-- Node11 -->
 <g id="node1" class="node">
 <title>Node11</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="165.0518,-55.5 165.0518,-73.5 259.9775,-73.5 259.9775,-55.5 165.0518,-55.5"/>
 <text text-anchor="middle" x="212.5146" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.h</text>
+</a>
+</g>
 </g>
 <!-- Node12 -->
 <g id="node2" class="node">
 <title>Node12</title>
-<g id="a_node2"><a xlink:href="main_8cpp.html" target="_top" xlink:title="main/main.cpp">
+<g id="a_node2"><a xlink:href="main_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 81.0293,-18.5 81.0293,-.5 0,-.5"/>
 <text text-anchor="middle" x="40.5146" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main/main.cpp</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node13 -->
 <g id="node3" class="node">
 <title>Node13</title>
-<g id="a_node3"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title="src/configdialog.cpp">
+<g id="a_node3"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="99.3228,-.5 99.3228,-18.5 203.7065,-18.5 203.7065,-.5 99.3228,-.5"/>
 <text text-anchor="middle" x="151.5146" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/configdialog.cpp</text>
 </a>
@@ -47,7 +50,7 @@
 <!-- Node14 -->
 <g id="node4" class="node">
 <title>Node14</title>
-<g id="a_node4"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
+<g id="a_node4"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="221.771,-.5 221.771,-18.5 327.2583,-18.5 327.2583,-.5 221.771,-.5"/>
 <text text-anchor="middle" x="274.5146" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
@@ -62,7 +65,7 @@
 <!-- Node15 -->
 <g id="node5" class="node">
 <title>Node15</title>
-<g id="a_node5"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title="src/qtpass.cpp">
+<g id="a_node5"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="345.2783,-.5 345.2783,-18.5 425.751,-18.5 425.751,-.5 345.2783,-.5"/>
 <text text-anchor="middle" x="385.5146" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qtpass.cpp</text>
 </a>

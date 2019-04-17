@@ -11,13 +11,16 @@
 <!-- Node12 -->
 <g id="node1" class="node">
 <title>Node12</title>
+<g id="a_node1"><a xlink:title="MainWindow::clearClipboard remove clipboard contents.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 118.8223,-18.5 118.8223,-.5 0,-.5"/>
 <text text-anchor="middle" x="59.4111" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClipboard</text>
+</a>
+</g>
 </g>
 <!-- Node13 -->
 <g id="node2" class="node">
 <title>Node13</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar. ">
+<g id="a_node2"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar.">
 <polygon fill="none" stroke="#000000" points="154.8223,-.5 154.8223,-18.5 325.8906,-18.5 325.8906,-.5 154.8223,-.5"/>
 <text text-anchor="middle" x="240.3564" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::showStatusMessage</text>
 </a>

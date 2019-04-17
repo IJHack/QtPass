@@ -11,23 +11,26 @@
 <!-- Node171 -->
 <g id="node1" class="node">
 <title>Node171</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 68.2412,-18.5 68.2412,-.5 0,-.5"/>
-<text text-anchor="middle" x="34.1206" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Move</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="174.2754,-.5 174.2754,-18.5 242.5166,-18.5 242.5166,-.5 174.2754,-.5"/>
+<text text-anchor="middle" x="208.396" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Move</text>
+</a>
+</g>
 </g>
 <!-- Node172 -->
 <g id="node2" class="node">
 <title>Node172</title>
-<g id="a_node2"><a xlink:href="class_store_model.html#a5fdd936940601eb0b5da52047f282781" target="_top" xlink:title="StoreModel::dropMimeData">
-<polygon fill="none" stroke="#000000" points="104.2412,-.5 104.2412,-18.5 242.5166,-18.5 242.5166,-.5 104.2412,-.5"/>
-<text text-anchor="middle" x="173.3789" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::dropMimeData</text>
+<g id="a_node2"><a xlink:href="class_store_model.html#a5fdd936940601eb0b5da52047f282781" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 138.2754,-18.5 138.2754,-.5 0,-.5"/>
+<text text-anchor="middle" x="69.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::dropMimeData</text>
 </a>
 </g>
 </g>
 <!-- Node171&#45;&gt;Node172 -->
 <g id="edge1" class="edge">
 <title>Node171&#45;&gt;Node172</title>
-<path fill="none" stroke="#191970" d="M78.7923,-9.5C86.8461,-9.5 95.4134,-9.5 103.9761,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="78.544,-6.0001 68.544,-9.5 78.544,-13.0001 78.544,-6.0001"/>
+<path fill="none" stroke="#191970" d="M163.7243,-9.5C155.6705,-9.5 147.1032,-9.5 138.5405,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="163.9726,-13.0001 173.9726,-9.5 163.9726,-6.0001 163.9726,-13.0001"/>
 </g>
 </g>
 </svg>

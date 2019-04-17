@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="Singleton that stores qtpass&#39; settings, saves and loads config.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 84.9209,-18.5 84.9209,-.5 0,-.5"/>
 <text text-anchor="middle" x="42.4604" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="12.5049,-55.5 12.5049,-73.5 72.416,-73.5 72.416,-55.5 12.5049,-55.5"/>
 <text text-anchor="middle" x="42.4604" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QSettings</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge">

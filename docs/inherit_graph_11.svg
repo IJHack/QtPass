@@ -11,13 +11,16 @@
 <!-- Node13 -->
 <g id="node1" class="node">
 <title>Node13</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 59.9111,-18.5 59.9111,-.5 0,-.5"/>
 <text text-anchor="middle" x="29.9556" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QSettings</text>
+</a>
+</g>
 </g>
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html" target="_top" xlink:title="Singleton that stores qtpass&#39; settings, saves and loads config. ">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html" target="_top" xlink:title="Singleton that stores qtpass&#39; settings, saves and loads config.">
 <polygon fill="none" stroke="#000000" points="95.9111,-.5 95.9111,-18.5 180.832,-18.5 180.832,-.5 95.9111,-.5"/>
 <text text-anchor="middle" x="138.3716" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings</text>
 </a>

@@ -11,13 +11,16 @@
 <!-- Node2 -->
 <g id="node1" class="node">
 <title>Node2</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="51.813,-55.5 51.813,-73.5 205.6743,-73.5 205.6743,-55.5 51.813,-55.5"/>
 <text text-anchor="middle" x="128.7437" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qpushbuttonwithclipboard.h</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
-<g id="a_node2"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
+<g id="a_node2"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 105.4873,-18.5 105.4873,-.5 0,-.5"/>
 <text text-anchor="middle" x="52.7437" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node4 -->
 <g id="node3" class="node">
 <title>Node4</title>
-<g id="a_node3"><a xlink:href="qpushbuttonwithclipboard_8cpp.html" target="_top" xlink:title="src/qpushbuttonwithclipboard.cpp">
+<g id="a_node3"><a xlink:href="qpushbuttonwithclipboard_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="123.5322,-.5 123.5322,-18.5 287.9551,-18.5 287.9551,-.5 123.5322,-.5"/>
 <text text-anchor="middle" x="205.7437" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qpushbuttonwithclipboard.cpp</text>
 </a>

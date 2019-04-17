@@ -1,6 +1,7 @@
 <map id="QtPass::clearClipboard" name="QtPass::clearClipboard">
-<area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="220,5,374,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="212,55,382,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="239,104,355,129"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="430,5,611,31"/>
+<area shape="rect" id="node1" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="453,55,611,80"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="242,5,397,31"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="235,55,405,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title=" " alt="" coords="262,104,378,129"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,187,31"/>
 </map>

@@ -11,25 +11,28 @@
 <!-- Node3 -->
 <g id="node1" class="node">
 <title>Node3</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 138.2852,-28.5 138.2852,-.5 0,-.5"/>
-<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButtonWithClipboard</text>
-<text text-anchor="middle" x="69.1426" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::clicked</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="179.8418,-.5 179.8418,-28.5 318.127,-28.5 318.127,-.5 179.8418,-.5"/>
+<text text-anchor="start" x="187.8418" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButtonWithClipboard</text>
+<text text-anchor="middle" x="248.9844" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::clicked</text>
+</a>
+</g>
 </g>
 <!-- Node4 -->
 <g id="node2" class="node">
 <title>Node4</title>
-<g id="a_node2"><a xlink:href="class_q_push_button_with_clipboard.html#a942ae28fda3c95f39a01a912ba8733e7" target="_top" xlink:title="QPushButtonWithClipboard::QPushButtonWithClipboard basic constructor. ">
-<polygon fill="none" stroke="#000000" points="174.2852,-.5 174.2852,-28.5 318.127,-28.5 318.127,-.5 174.2852,-.5"/>
-<text text-anchor="start" x="182.2852" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButtonWithClipboard</text>
-<text text-anchor="middle" x="246.2061" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::QPushButtonWithClipboard</text>
+<g id="a_node2"><a xlink:href="class_q_push_button_with_clipboard.html#a942ae28fda3c95f39a01a912ba8733e7" target="_top" xlink:title="QPushButtonWithClipboard::QPushButtonWithClipboard basic constructor.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 143.8418,-28.5 143.8418,-.5 0,-.5"/>
+<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButtonWithClipboard</text>
+<text text-anchor="middle" x="71.9209" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::QPushButtonWithClipboard</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge1" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="#191970" d="M148.6363,-14.5C157.1235,-14.5 165.7226,-14.5 174.1172,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="148.3607,-11.0001 138.3607,-14.5 148.3606,-18.0001 148.3607,-11.0001"/>
+<path fill="none" stroke="#191970" d="M169.4906,-14.5C161.0035,-14.5 152.4044,-14.5 144.0097,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="169.7663,-18.0001 179.7663,-14.5 169.7662,-11.0001 169.7663,-18.0001"/>
 </g>
 </g>
 </svg>

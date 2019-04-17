@@ -11,13 +11,16 @@
 <!-- Node7 -->
 <g id="node1" class="node">
 <title>Node7</title>
+<g id="a_node1"><a xlink:title="TrayIcon::iconActivated you clicked on the trayicon.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 119.5693,-36.5 119.5693,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="59.7847" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::iconActivated</text>
+</a>
+</g>
 </g>
 <!-- Node8 -->
 <g id="node2" class="node">
 <title>Node8</title>
-<g id="a_node2"><a xlink:href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" target="_top" xlink:title="TrayIcon::showHideParent toggle app visibility. ">
+<g id="a_node2"><a xlink:href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" target="_top" xlink:title="TrayIcon::showHideParent toggle app visibility.">
 <polygon fill="none" stroke="#000000" points="155.5693,-37.5 155.5693,-55.5 289.0352,-55.5 289.0352,-37.5 155.5693,-37.5"/>
 <text text-anchor="middle" x="222.3022" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::showHideParent</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node9 -->
 <g id="node3" class="node">
 <title>Node9</title>
-<g id="a_node3"><a xlink:href="class_tray_icon.html#a1299ba958c0c1b2b549ea0f9bcfdffee" target="_top" xlink:title="TrayIcon::showMessage show a systray message for notification. ">
+<g id="a_node3"><a xlink:href="class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a" target="_top" xlink:title="TrayIcon::showMessage show a systray message for notification.">
 <polygon fill="none" stroke="#000000" points="160.2959,-.5 160.2959,-18.5 284.3086,-18.5 284.3086,-.5 160.2959,-.5"/>
 <text text-anchor="middle" x="222.3022" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon::showMessage</text>
 </a>

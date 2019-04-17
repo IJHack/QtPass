@@ -11,54 +11,57 @@
 <!-- Node5 -->
 <g id="node1" class="node">
 <title>Node5</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-5.5 0,-23.5 127.3721,-23.5 127.3721,-5.5 0,-5.5"/>
-<text text-anchor="middle" x="63.686" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">NamedValues::takeValue</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="526.1611,-5.5 526.1611,-23.5 653.5332,-23.5 653.5332,-5.5 526.1611,-5.5"/>
+<text text-anchor="middle" x="589.8472" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">NamedValues::takeValue</text>
+</a>
+</g>
 </g>
 <!-- Node6 -->
 <g id="node2" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" target="_top" xlink:title="Sets content in the password field in the interface. ">
-<polygon fill="none" stroke="#000000" points="163.3721,-5.5 163.3721,-23.5 314.4307,-23.5 314.4307,-5.5 163.3721,-5.5"/>
-<text text-anchor="middle" x="238.9014" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPassword</text>
+<g id="a_node2"><a xlink:href="class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" target="_top" xlink:title="Sets content in the password field in the interface.">
+<polygon fill="none" stroke="#000000" points="339.1025,-5.5 339.1025,-23.5 490.1611,-23.5 490.1611,-5.5 339.1025,-5.5"/>
+<text text-anchor="middle" x="414.6318" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPassword</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge1" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#191970" d="M137.6665,-14.5C146.1406,-14.5 154.789,-14.5 163.2842,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="137.4385,-11.0001 127.4384,-14.5 137.4384,-18.0001 137.4385,-11.0001"/>
+<path fill="none" stroke="#191970" d="M515.8667,-14.5C507.3926,-14.5 498.7442,-14.5 490.249,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="516.0948,-18.0001 526.0948,-14.5 516.0947,-11.0001 516.0948,-18.0001"/>
 </g>
 <!-- Node7 -->
 <g id="node3" class="node">
 <title>Node7</title>
-<g id="a_node3"><a xlink:href="class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" target="_top" xlink:title="PasswordDialog::setPass">
-<polygon fill="none" stroke="#000000" points="350.4307,-5.5 350.4307,-23.5 479.8145,-23.5 479.8145,-5.5 350.4307,-5.5"/>
-<text text-anchor="middle" x="415.1226" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPass</text>
+<g id="a_node3"><a xlink:href="class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="173.7188,-5.5 173.7188,-23.5 303.1025,-23.5 303.1025,-5.5 173.7188,-5.5"/>
+<text text-anchor="middle" x="238.4106" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPass</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
 <g id="edge2" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="#191970" d="M324.7064,-14.5C333.2944,-14.5 341.9117,-14.5 350.2316,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="324.6577,-11.0001 314.6577,-14.5 324.6577,-18.0001 324.6577,-11.0001"/>
+<path fill="none" stroke="#191970" d="M328.8268,-14.5C320.2388,-14.5 311.6215,-14.5 303.3016,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="328.8755,-18.0001 338.8755,-14.5 328.8755,-11.0001 328.8755,-18.0001"/>
 </g>
 <!-- Node8 -->
 <g id="node4" class="node">
 <title>Node8</title>
-<g id="a_node4"><a xlink:href="class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" target="_top" xlink:title="PasswordDialog::PasswordDialog basic constructor. ">
-<polygon fill="none" stroke="#000000" points="515.8145,-.5 515.8145,-28.5 653.5332,-28.5 653.5332,-.5 515.8145,-.5"/>
-<text text-anchor="start" x="523.8145" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
-<text text-anchor="middle" x="584.6738" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Dialog</text>
+<g id="a_node4"><a xlink:href="class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" target="_top" xlink:title="PasswordDialog::PasswordDialog basic constructor.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 137.7188,-28.5 137.7188,-.5 0,-.5"/>
+<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
+<text text-anchor="middle" x="68.8594" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Dialog</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge3" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="#191970" d="M490.3404,-14.5C498.7312,-14.5 507.2486,-14.5 515.558,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="490.1906,-11.0001 480.1906,-14.5 490.1906,-18.0001 490.1906,-11.0001"/>
+<path fill="none" stroke="#191970" d="M163.1928,-14.5C154.802,-14.5 146.2846,-14.5 137.9752,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="163.3426,-18.0001 173.3426,-14.5 163.3426,-11.0001 163.3426,-18.0001"/>
 </g>
 </g>
 </svg>

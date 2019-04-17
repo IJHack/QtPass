@@ -11,13 +11,16 @@
 <!-- Node109 -->
 <g id="node1" class="node">
 <title>Node109</title>
+<g id="a_node1"><a xlink:title="MainWindow::keyPressEvent did anyone press return, enter or escape?">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-92.5 0,-110.5 145.4922,-110.5 145.4922,-92.5 0,-92.5"/>
 <text text-anchor="middle" x="72.7461" y="-98.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::keyPressEvent</text>
+</a>
+</g>
 </g>
 <!-- Node110 -->
 <g id="node2" class="node">
 <title>Node110</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464" target="_top" xlink:title="MainWindow::on_treeView_clicked read the selected password file. ">
+<g id="a_node2"><a xlink:href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464" target="_top" xlink:title="MainWindow::on_treeView_clicked read the selected password file.">
 <polygon fill="none" stroke="#000000" points="181.4922,-87.5 181.4922,-115.5 315.7051,-115.5 315.7051,-87.5 181.4922,-87.5"/>
 <text text-anchor="start" x="189.4922" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::on_treeView</text>
 <text text-anchor="middle" x="248.5986" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">_clicked</text>
@@ -33,7 +36,7 @@
 <!-- Node111 -->
 <g id="node3" class="node">
 <title>Node111</title>
-<g id="a_node3"><a xlink:href="class_util.html#a5c6a579524d37c6830feb672595f2a1d" target="_top" xlink:title="Util::getDir get selectd folder path. ">
+<g id="a_node3"><a xlink:href="class_util.html#a5c6a579524d37c6830feb672595f2a1d" target="_top" xlink:title="Util::getDir get selectd folder path.">
 <polygon fill="none" stroke="#000000" points="384.5029,-149.5 384.5029,-167.5 447.1777,-167.5 447.1777,-149.5 384.5029,-149.5"/>
 <text text-anchor="middle" x="415.8403" y="-155.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Util::getDir</text>
 </a>
@@ -48,7 +51,7 @@
 <!-- Node114 -->
 <g id="node6" class="node">
 <title>Node114</title>
-<g id="a_node6"><a xlink:href="class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" target="_top" xlink:title="QtPass::clearClippedText">
+<g id="a_node6"><a xlink:href="class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="351.7051,-111.5 351.7051,-129.5 479.9756,-129.5 479.9756,-111.5 351.7051,-111.5"/>
 <text text-anchor="middle" x="415.8403" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClippedText</text>
 </a>
@@ -63,7 +66,7 @@
 <!-- Node115 -->
 <g id="node7" class="node">
 <title>Node115</title>
-<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title="QtPassSettings::getPass">
+<g id="a_node7"><a xlink:href="class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="352.5352,-74.5 352.5352,-92.5 479.1455,-92.5 479.1455,-74.5 352.5352,-74.5"/>
 <text text-anchor="middle" x="415.8403" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPass</text>
 </a>
@@ -78,7 +81,7 @@
 <!-- Node121 -->
 <g id="node13" class="node">
 <title>Node121</title>
-<g id="a_node13"><a xlink:href="class_pass.html#a6520ffa669cd7934091934b24593d99c" target="_top" xlink:title="Pass::Show">
+<g id="a_node13"><a xlink:href="class_pass.html#a6520ffa669cd7934091934b24593d99c" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="381.439,-37.5 381.439,-55.5 450.2417,-55.5 450.2417,-37.5 381.439,-37.5"/>
 <text text-anchor="middle" x="415.8403" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Show</text>
 </a>
@@ -93,7 +96,7 @@
 <!-- Node112 -->
 <g id="node4" class="node">
 <title>Node112</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="708.5957,-149.5 708.5957,-167.5 859.1074,-167.5 859.1074,-149.5 708.5957,-149.5"/>
 <text text-anchor="middle" x="783.8516" y="-155.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
@@ -108,7 +111,7 @@
 <!-- Node113 -->
 <g id="node5" class="node">
 <title>Node113</title>
-<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node5"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="895.1074,-112.5 895.1074,-130.5 1037.2891,-130.5 1037.2891,-112.5 895.1074,-112.5"/>
 <text text-anchor="middle" x="966.1982" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
@@ -123,7 +126,7 @@
 <!-- Node116 -->
 <g id="node8" class="node">
 <title>Node116</title>
-<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title="QtPassSettings::isUsePass">
+<g id="a_node8"><a xlink:href="class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="714.9946,-112.5 714.9946,-130.5 852.7085,-130.5 852.7085,-112.5 714.9946,-112.5"/>
 <text text-anchor="middle" x="783.8516" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUsePass</text>
 </a>
@@ -138,7 +141,7 @@
 <!-- Node117 -->
 <g id="node9" class="node">
 <title>Node117</title>
-<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title="QtPassSettings::getRealPass">
+<g id="a_node9"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="520.6973,-74.5 520.6973,-92.5 667.874,-92.5 667.874,-74.5 520.6973,-74.5"/>
 <text text-anchor="middle" x="594.2856" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getRealPass</text>
 </a>
@@ -153,7 +156,7 @@
 <!-- Node118 -->
 <g id="node10" class="node">
 <title>Node118</title>
-<g id="a_node10"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title="QtPassSettings::getImitatePass">
+<g id="a_node10"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="515.9756,-37.5 515.9756,-55.5 672.5957,-55.5 672.5957,-37.5 515.9756,-37.5"/>
 <text text-anchor="middle" x="594.2856" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getImitatePass</text>
 </a>
@@ -168,7 +171,7 @@
 <!-- Node119 -->
 <g id="node11" class="node">
 <title>Node119</title>
-<g id="a_node11"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title="Pass::init">
+<g id="a_node11"><a xlink:href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="566,-.5 566,-18.5 622.5713,-18.5 622.5713,-.5 566,-.5"/>
 <text text-anchor="middle" x="594.2856" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::init</text>
 </a>
@@ -189,7 +192,7 @@
 <!-- Node120 -->
 <g id="node12" class="node">
 <title>Node120</title>
-<g id="a_node12"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title="QtPassSettings::getGpgHome">
+<g id="a_node12"><a xlink:href="class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="708.874,-38.5 708.874,-56.5 858.8291,-56.5 858.8291,-38.5 708.874,-38.5"/>
 <text text-anchor="middle" x="783.8516" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getGpgHome</text>
 </a>

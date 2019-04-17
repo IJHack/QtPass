@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="Handles listing and editing of GPG users.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 70.4629,-18.5 70.4629,-.5 0,-.5"/>
 <text text-anchor="middle" x="35.2314" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="9.1675,-55.5 9.1675,-73.5 61.2954,-73.5 61.2954,-55.5 9.1675,-55.5"/>
 <text text-anchor="middle" x="35.2314" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge">

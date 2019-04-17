@@ -57,13 +57,16 @@ var sectionId = 'dynsection-10';
 <!-- Node38 -->
 <g id="node1" class="node">
 <title>Node38</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-5.5 0,-23.5 135.6729,-23.5 135.6729,-5.5 0,-5.5"/>
 <text text-anchor="middle" x="67.8364" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setClipboardTimer</text>
+</a>
+</g>
 </g>
 <!-- Node39 -->
 <g id="node2" class="node">
 <title>Node39</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" target="_top" xlink:title="QtPassSettings::getAutoclear\lSeconds">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="171.6729,-.5 171.6729,-28.5 318.2979,-28.5 318.2979,-.5 171.6729,-.5"/>
 <text text-anchor="start" x="179.6729" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="244.9854" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Seconds</text>
@@ -79,7 +82,7 @@ var sectionId = 'dynsection-10';
 <!-- Node40 -->
 <g id="node3" class="node">
 <title>Node40</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="354.2979,-5.5 354.2979,-23.5 496.4795,-23.5 496.4795,-5.5 354.2979,-5.5"/>
 <text text-anchor="middle" x="425.3887" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

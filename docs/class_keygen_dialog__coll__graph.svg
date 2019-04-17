@@ -11,14 +11,20 @@
 <!-- Node2 -->
 <g id="node1" class="node">
 <title>Node2</title>
+<g id="a_node1"><a xlink:title="Handles GPG keypair generation.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 78.2656,-18.5 78.2656,-.5 0,-.5"/>
 <text text-anchor="middle" x="39.1328" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">KeygenDialog</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="13.0688,-55.5 13.0688,-73.5 65.1968,-73.5 65.1968,-55.5 13.0688,-55.5"/>
 <text text-anchor="middle" x="39.1328" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge1" class="edge">

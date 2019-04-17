@@ -8,25 +8,28 @@
  viewBox="0.00 0.00 328.73 37.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 33)">
 <title>QtPassSettings::getWebDavPassword</title>
-<!-- Node332 -->
+<!-- Node334 -->
 <g id="node1" class="node">
-<title>Node332</title>
+<title>Node334</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 142.5479,-28.5 142.5479,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getWebDav</text>
 <text text-anchor="middle" x="71.2739" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Password</text>
+</a>
 </g>
-<!-- Node333 -->
+</g>
+<!-- Node335 -->
 <g id="node2" class="node">
-<title>Node333</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<title>Node335</title>
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="178.5479,-5.5 178.5479,-23.5 320.7295,-23.5 320.7295,-5.5 178.5479,-5.5"/>
 <text text-anchor="middle" x="249.6387" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node332&#45;&gt;Node333 -->
+<!-- Node334&#45;&gt;Node335 -->
 <g id="edge1" class="edge">
-<title>Node332&#45;&gt;Node333</title>
+<title>Node334&#45;&gt;Node335</title>
 <path fill="none" stroke="#191970" d="M142.794,-14.5C151.1313,-14.5 159.6831,-14.5 168.142,-14.5"/>
 <polygon fill="#191970" stroke="#191970" points="168.3933,-18.0001 178.3933,-14.5 168.3932,-11.0001 168.3933,-18.0001"/>
 </g>

@@ -1,6 +1,7 @@
 <map id="QtPassSettings::getAutoclearSeconds" name="QtPassSettings::getAutoclearSeconds">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="249,5,430,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="QtPass::setClipboardTimer" alt="" coords="249,55,430,80"/>
-<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="478,29,619,55"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="490,79,607,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="423,24,619,63"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="194,5,375,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="194,55,375,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="5,29,146,55"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title=" " alt="" coords="18,79,134,104"/>
 </map>

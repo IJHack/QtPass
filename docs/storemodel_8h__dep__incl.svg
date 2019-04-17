@@ -57,13 +57,16 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node1" class="node">
 <title>Node6</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="490.5566,-120.5 490.5566,-138.5 580.4727,-138.5 580.4727,-120.5 490.5566,-120.5"/>
 <text text-anchor="middle" x="535.5146" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/storemodel.h</text>
+</a>
+</g>
 </g>
 <!-- Node7 -->
 <g id="node2" class="node">
 <title>Node7</title>
-<g id="a_node2"><a xlink:href="mainwindow_8h.html" target="_top" xlink:title="src/mainwindow.h">
+<g id="a_node2"><a xlink:href="mainwindow_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="214.0518,-65.5 214.0518,-83.5 308.9775,-83.5 308.9775,-65.5 214.0518,-65.5"/>
 <text text-anchor="middle" x="261.5146" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.h</text>
 </a>
@@ -78,7 +81,7 @@ var sectionId = 'dynsection-1';
 <!-- Node12 -->
 <g id="node7" class="node">
 <title>Node12</title>
-<g id="a_node7"><a xlink:href="util_8h.html" target="_top" xlink:title="src/util.h">
+<g id="a_node7"><a xlink:href="util_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="508.8989,-65.5 508.8989,-83.5 562.1304,-83.5 562.1304,-65.5 508.8989,-65.5"/>
 <text text-anchor="middle" x="535.5146" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/util.h</text>
 </a>
@@ -93,7 +96,7 @@ var sectionId = 'dynsection-1';
 <!-- Node17 -->
 <g id="node12" class="node">
 <title>Node17</title>
-<g id="a_node12"><a xlink:href="storemodel_8cpp.html" target="_top" xlink:title="src/storemodel.cpp">
+<g id="a_node12"><a xlink:href="storemodel_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="580.2759,-65.5 580.2759,-83.5 680.7534,-83.5 680.7534,-65.5 580.2759,-65.5"/>
 <text text-anchor="middle" x="630.5146" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/storemodel.cpp</text>
 </a>
@@ -108,7 +111,7 @@ var sectionId = 'dynsection-1';
 <!-- Node8 -->
 <g id="node3" class="node">
 <title>Node8</title>
-<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" xlink:title="main/main.cpp">
+<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-5.5 0,-23.5 81.0293,-23.5 81.0293,-5.5 0,-5.5"/>
 <text text-anchor="middle" x="40.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main/main.cpp</text>
 </a>
@@ -123,7 +126,7 @@ var sectionId = 'dynsection-1';
 <!-- Node9 -->
 <g id="node4" class="node">
 <title>Node9</title>
-<g id="a_node4"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title="src/configdialog.cpp">
+<g id="a_node4"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="99.3228,-5.5 99.3228,-23.5 203.7065,-23.5 203.7065,-5.5 99.3228,-5.5"/>
 <text text-anchor="middle" x="151.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/configdialog.cpp</text>
 </a>
@@ -138,7 +141,7 @@ var sectionId = 'dynsection-1';
 <!-- Node10 -->
 <g id="node5" class="node">
 <title>Node10</title>
-<g id="a_node5"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
+<g id="a_node5"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="319.771,-5.5 319.771,-23.5 425.2583,-23.5 425.2583,-5.5 319.771,-5.5"/>
 <text text-anchor="middle" x="372.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
@@ -153,7 +156,7 @@ var sectionId = 'dynsection-1';
 <!-- Node11 -->
 <g id="node6" class="node">
 <title>Node11</title>
-<g id="a_node6"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title="src/qtpass.cpp">
+<g id="a_node6"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="221.2783,-5.5 221.2783,-23.5 301.751,-23.5 301.751,-5.5 221.2783,-5.5"/>
 <text text-anchor="middle" x="261.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qtpass.cpp</text>
 </a>
@@ -180,7 +183,7 @@ var sectionId = 'dynsection-1';
 <!-- Node13 -->
 <g id="node8" class="node">
 <title>Node13</title>
-<g id="a_node8"><a xlink:href="pass_8cpp.html" target="_top" xlink:title="src/pass.cpp">
+<g id="a_node8"><a xlink:href="pass_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="443.4482,-5.5 443.4482,-23.5 515.5811,-23.5 515.5811,-5.5 443.4482,-5.5"/>
 <text text-anchor="middle" x="479.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/pass.cpp</text>
 </a>
@@ -195,7 +198,7 @@ var sectionId = 'dynsection-1';
 <!-- Node14 -->
 <g id="node9" class="node">
 <title>Node14</title>
-<g id="a_node9"><a xlink:href="qtpasssettings_8cpp.html" target="_top" xlink:title="src/qtpasssettings.cpp">
+<g id="a_node9"><a xlink:href="qtpasssettings_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="534.0469,-5.5 534.0469,-23.5 648.9824,-23.5 648.9824,-5.5 534.0469,-5.5"/>
 <text text-anchor="middle" x="591.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qtpasssettings.cpp</text>
 </a>
@@ -210,7 +213,7 @@ var sectionId = 'dynsection-1';
 <!-- Node15 -->
 <g id="node10" class="node">
 <title>Node15</title>
-<g id="a_node10"><a xlink:href="util_8cpp.html" target="_top" xlink:title="src/util.cpp">
+<g id="a_node10"><a xlink:href="util_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="666.6182,-5.5 666.6182,-23.5 730.4111,-23.5 730.4111,-5.5 666.6182,-5.5"/>
 <text text-anchor="middle" x="698.5146" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/util.cpp</text>
 </a>
@@ -225,7 +228,7 @@ var sectionId = 'dynsection-1';
 <!-- Node16 -->
 <g id="node11" class="node">
 <title>Node16</title>
-<g id="a_node11"><a xlink:href="tst__util_8cpp.html" target="_top" xlink:title="tests/auto/util/tst\l_util.cpp">
+<g id="a_node11"><a xlink:href="tst__util_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="748.3867,-.5 748.3867,-28.5 836.6426,-28.5 836.6426,-.5 748.3867,-.5"/>
 <text text-anchor="start" x="756.3867" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tests/auto/util/tst</text>
 <text text-anchor="middle" x="792.5146" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">_util.cpp</text>

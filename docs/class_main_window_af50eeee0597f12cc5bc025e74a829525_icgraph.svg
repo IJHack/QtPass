@@ -11,23 +11,26 @@
 <!-- Node124 -->
 <g id="node1" class="node">
 <title>Node124</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 159.7793,-18.5 159.7793,-.5 0,-.5"/>
-<text text-anchor="middle" x="79.8896" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::messageAvailable</text>
+<g id="a_node1"><a xlink:title="MainWindow::messageAvailable we have some text/message/search to do.">
+<polygon fill="#bfbfbf" stroke="#000000" points="73.6748,-.5 73.6748,-18.5 233.4541,-18.5 233.4541,-.5 73.6748,-.5"/>
+<text text-anchor="middle" x="153.5645" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::messageAvailable</text>
+</a>
+</g>
 </g>
 <!-- Node125 -->
 <g id="node2" class="node">
 <title>Node125</title>
-<g id="a_node2"><a xlink:href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" target="_top" xlink:title="main ">
-<polygon fill="none" stroke="#000000" points="195.7793,-.5 195.7793,-18.5 233.4541,-18.5 233.4541,-.5 195.7793,-.5"/>
-<text text-anchor="middle" x="214.6167" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main</text>
+<g id="a_node2"><a xlink:href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" target="_top" xlink:title="main">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 37.6748,-18.5 37.6748,-.5 0,-.5"/>
+<text text-anchor="middle" x="18.8374" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main</text>
 </a>
 </g>
 </g>
 <!-- Node124&#45;&gt;Node125 -->
 <g id="edge1" class="edge">
 <title>Node124&#45;&gt;Node125</title>
-<path fill="none" stroke="#191970" d="M169.9862,-9.5C179.5399,-9.5 188.4025,-9.5 195.6705,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="169.8181,-6.0001 159.8181,-9.5 169.818,-13.0001 169.8181,-6.0001"/>
+<path fill="none" stroke="#191970" d="M63.4679,-9.5C53.9142,-9.5 45.0517,-9.5 37.7836,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="63.6361,-13.0001 73.6361,-9.5 63.636,-6.0001 63.6361,-13.0001"/>
 </g>
 </g>
 </svg>

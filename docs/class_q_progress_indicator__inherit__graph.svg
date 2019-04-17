@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 102.1475,-18.5 102.1475,-.5 0,-.5"/>
 <text text-anchor="middle" x="51.0737" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="23.623,-55.5 23.623,-73.5 78.5244,-73.5 78.5244,-55.5 23.623,-55.5"/>
 <text text-anchor="middle" x="51.0737" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge">

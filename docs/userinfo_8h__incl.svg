@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="33.3662,-55.5 33.3662,-73.5 109.3906,-73.5 109.3906,-55.5 33.3662,-55.5"/>
 <text text-anchor="middle" x="71.3784" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/userinfo.h</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 66.7568,-18.5 66.7568,-.5 0,-.5"/>
 <text text-anchor="middle" x="33.3784" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDateTime</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
@@ -29,8 +35,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="84.4277,-.5 84.4277,-18.5 134.3291,-18.5 134.3291,-.5 84.4277,-.5"/>
 <text text-anchor="middle" x="109.3784" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
 <g id="edge2" class="edge">

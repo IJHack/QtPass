@@ -1,3 +1,4 @@
 <map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
-<area shape="rect" id="node2" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers() " alt="" coords="197,5,366,31"/>
+<area shape="rect" id="node1" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,5,149,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers()" alt="" coords="197,5,366,31"/>
 </map>

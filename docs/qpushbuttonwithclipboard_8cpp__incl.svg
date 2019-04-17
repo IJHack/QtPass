@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="41.665,-110.5 41.665,-128.5 206.0879,-128.5 206.0879,-110.5 41.665,-110.5"/>
 <text text-anchor="middle" x="123.8765" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qpushbuttonwithclipboard.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="qpushbuttonwithclipboard_8h.html" target="_top" xlink:title="qpushbuttonwithclipboard.h">
+<g id="a_node2"><a xlink:href="qpushbuttonwithclipboard_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="0,-55.5 0,-73.5 137.7529,-73.5 137.7529,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="68.8765" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">qpushbuttonwithclipboard.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="155.3945,-55.5 155.3945,-73.5 204.3584,-73.5 204.3584,-55.5 155.3945,-55.5"/>
 <text text-anchor="middle" x="179.8765" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTimer</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
@@ -44,8 +50,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="31.1353,-.5 31.1353,-18.5 106.6177,-18.5 106.6177,-.5 31.1353,-.5"/>
 <text text-anchor="middle" x="68.8765" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QPushButton</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">

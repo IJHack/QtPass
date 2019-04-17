@@ -11,14 +11,17 @@
 <!-- Node91 -->
 <g id="node1" class="node">
 <title>Node91</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 151.9912,-28.5 151.9912,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::executeWrapper</text>
 <text text-anchor="middle" x="75.9956" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Started</text>
+</a>
+</g>
 </g>
 <!-- Node92 -->
 <g id="node2" class="node">
 <title>Node92</title>
-<g id="a_node2"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. ">
+<g id="a_node2"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">
 <polygon fill="none" stroke="#000000" points="187.9912,-.5 187.9912,-28.5 331.2568,-28.5 331.2568,-.5 187.9912,-.5"/>
 <text text-anchor="start" x="195.9912" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::setUiElements</text>
 <text text-anchor="middle" x="259.624" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Enabled</text>

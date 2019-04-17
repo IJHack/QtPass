@@ -11,23 +11,26 @@
 <!-- Node36 -->
 <g id="node1" class="node">
 <title>Node36</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 116.6006,-18.5 116.6006,-.5 0,-.5"/>
-<text text-anchor="middle" x="58.3003" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::ShowThis</text>
+<g id="a_node1"><a xlink:title="StoreModel::ShowThis should a row be shown, based on our search criteria.">
+<polygon fill="#bfbfbf" stroke="#000000" points="183.1621,-.5 183.1621,-18.5 299.7627,-18.5 299.7627,-.5 183.1621,-.5"/>
+<text text-anchor="middle" x="241.4624" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::ShowThis</text>
+</a>
+</g>
 </g>
 <!-- Node37 -->
 <g id="node2" class="node">
 <title>Node37</title>
-<g id="a_node2"><a xlink:href="class_store_model.html#a2ec37506053f93f36e5aecf11b78b5ef" target="_top" xlink:title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method...">
-<polygon fill="none" stroke="#000000" points="152.6006,-.5 152.6006,-18.5 299.7627,-18.5 299.7627,-.5 152.6006,-.5"/>
-<text text-anchor="middle" x="226.1816" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::filterAcceptsRow</text>
+<g id="a_node2"><a xlink:href="class_store_model.html#a2ec37506053f93f36e5aecf11b78b5ef" target="_top" xlink:title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 147.1621,-18.5 147.1621,-.5 0,-.5"/>
+<text text-anchor="middle" x="73.5811" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::filterAcceptsRow</text>
 </a>
 </g>
 </g>
 <!-- Node36&#45;&gt;Node37 -->
 <g id="edge1" class="edge">
 <title>Node36&#45;&gt;Node37</title>
-<path fill="none" stroke="#191970" d="M127.0881,-9.5C135.448,-9.5 144.0153,-9.5 152.4434,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="127.0171,-6.0001 117.017,-9.5 127.017,-13.0001 127.0171,-6.0001"/>
+<path fill="none" stroke="#191970" d="M172.6746,-9.5C164.3147,-9.5 155.7474,-9.5 147.3193,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="172.7457,-13.0001 182.7457,-9.5 172.7456,-6.0001 172.7457,-13.0001"/>
 </g>
 </g>
 </svg>

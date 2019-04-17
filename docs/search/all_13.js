@@ -11,6 +11,7 @@ var searchData=
   ['useotp',['useOtp',['../class_settings_constants.html#aaa144f0572561c7c4000154457963dc4',1,'SettingsConstants::useOtp()'],['../class_config_dialog.html#a2a395844557989cf343503e80b075ba0',1,'ConfigDialog::useOtp()']]],
   ['usepass',['usePass',['../class_settings_constants.html#a77796de4c6b0edfd2aaaf10b84d04322',1,'SettingsConstants']]],
   ['usepwgen',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants::usePwgen()'],['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
+  ['useqrencode',['useQrencode',['../class_settings_constants.html#aed8ee30c56dcffd9c5b7405ea5a3a265',1,'SettingsConstants::useQrencode()'],['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog::useQrencode()']]],
   ['userdialog',['userDialog',['../class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9',1,'MainWindow']]],
   ['userinfo',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
   ['userinfo_2eh',['userinfo.h',['../userinfo_8h.html',1,'']]],

@@ -7,6 +7,7 @@ var searchData=
   ['usegit',['useGit',['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog']]],
   ['useotp',['useOtp',['../class_config_dialog.html#a2a395844557989cf343503e80b075ba0',1,'ConfigDialog']]],
   ['usepwgen',['usePwgen',['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
+  ['useqrencode',['useQrencode',['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog']]],
   ['userdialog',['userDialog',['../class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9',1,'MainWindow']]],
   ['userinfo',['UserInfo',['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo']]],
   ['usersdialog',['UsersDialog',['../class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07',1,'UsersDialog']]],

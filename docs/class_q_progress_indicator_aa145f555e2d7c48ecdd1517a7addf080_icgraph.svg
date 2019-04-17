@@ -11,25 +11,28 @@
 <!-- Node11 -->
 <g id="node1" class="node">
 <title>Node11</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 102.1475,-28.5 102.1475,-.5 0,-.5"/>
-<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
-<text text-anchor="middle" x="51.0737" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::isAnimated</text>
+<g id="a_node1"><a xlink:title="Returns a Boolean value indicating whether the component is currently animated.">
+<polygon fill="#bfbfbf" stroke="#000000" points="138.1475,-.5 138.1475,-28.5 240.2949,-28.5 240.2949,-.5 138.1475,-.5"/>
+<text text-anchor="start" x="146.1475" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
+<text text-anchor="middle" x="189.2212" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::isAnimated</text>
+</a>
+</g>
 </g>
 <!-- Node12 -->
 <g id="node2" class="node">
 <title>Node12</title>
-<g id="a_node2"><a xlink:href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" target="_top" xlink:title="QProgressIndicator::paintEvent draw the spinner. ">
-<polygon fill="none" stroke="#000000" points="138.1475,-.5 138.1475,-28.5 240.2949,-28.5 240.2949,-.5 138.1475,-.5"/>
-<text text-anchor="start" x="146.1475" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
-<text text-anchor="middle" x="189.2212" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::paintEvent</text>
+<g id="a_node2"><a xlink:href="class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" target="_top" xlink:title="QProgressIndicator::paintEvent draw the spinner.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 102.1475,-28.5 102.1475,-.5 0,-.5"/>
+<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QProgressIndicator</text>
+<text text-anchor="middle" x="51.0737" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::paintEvent</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
 <g id="edge1" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="#191970" d="M112.6351,-14.5C121.0204,-14.5 129.5552,-14.5 137.7372,-14.5"/>
-<polygon fill="#191970" stroke="#191970" points="112.5148,-11.0001 102.5147,-14.5 112.5147,-18.0001 112.5148,-11.0001"/>
+<path fill="none" stroke="#191970" d="M127.6598,-14.5C119.2745,-14.5 110.7397,-14.5 102.5577,-14.5"/>
+<polygon fill="#191970" stroke="#191970" points="127.7802,-18.0001 137.7802,-14.5 127.7801,-11.0001 127.7802,-18.0001"/>
 </g>
 </g>
 </svg>

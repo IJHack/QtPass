@@ -1,3 +1,4 @@
 <map id="ConfigDialog::useAutoclear" name="ConfigDialog::useAutoclear">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="236,5,418,31"/>
+<area shape="rect" id="node1" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow." alt="" coords="235,5,418,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
 </map>

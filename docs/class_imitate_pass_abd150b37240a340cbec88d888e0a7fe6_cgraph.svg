@@ -11,13 +11,16 @@
 <!-- Node42 -->
 <g id="node1" class="node">
 <title>Node42</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 98.251,-18.5 98.251,-.5 0,-.5"/>
 <text text-anchor="middle" x="49.1255" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Move</text>
+</a>
+</g>
 </g>
 <!-- Node43 -->
 <g id="node2" class="node">
 <title>Node43</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="134.251,-.5 134.251,-18.5 262.5117,-18.5 262.5117,-.5 134.251,-.5"/>
 <text text-anchor="middle" x="198.3813" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node44 -->
 <g id="node3" class="node">
 <title>Node44</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="298.5117,-.5 298.5117,-18.5 440.6934,-18.5 440.6934,-.5 298.5117,-.5"/>
 <text text-anchor="middle" x="369.6025" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

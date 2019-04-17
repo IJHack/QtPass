@@ -11,14 +11,17 @@
 <!-- Node6 -->
 <g id="node1" class="node">
 <title>Node6</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-28.5 146.625,-28.5 146.625,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="73.3125" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Seconds</text>
+</a>
+</g>
 </g>
 <!-- Node7 -->
 <g id="node2" class="node">
 <title>Node7</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="182.625,-5.5 182.625,-23.5 324.8066,-23.5 324.8066,-5.5 182.625,-5.5"/>
 <text text-anchor="middle" x="253.7158" y="-11.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

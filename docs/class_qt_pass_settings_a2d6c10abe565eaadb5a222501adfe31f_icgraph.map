@@ -1,14 +1,15 @@
 <map id="QtPassSettings::getImitatePass" name="QtPassSettings::getImitatePass">
-<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="511,432,677,457"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="274,225,442,251"/>
-<area shape="rect" id="node13" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="QtPassSettings::setUsePass" alt="" coords="262,91,454,116"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="741,407,922,432"/>
-<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="524,5,664,31"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push. " alt="" coords="519,55,669,80"/>
-<area shape="rect" id="node7" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file. " alt="" coords="505,104,684,143"/>
-<area shape="rect" id="node9" href="$class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" title="PasswordDialog::PasswordDialog basic constructor. " alt="" coords="502,219,686,257"/>
-<area shape="rect" id="node10" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="502,281,686,307"/>
-<area shape="rect" id="node11" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="744,249,918,275"/>
-<area shape="rect" id="node12" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title="UsersDialog::accept" alt="" coords="524,331,664,356"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="734,111,928,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="719,225,928,251"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="256,432,423,457"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="491,225,660,251"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title=" " alt="" coords="480,91,671,116"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="12,407,193,432"/>
+<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="269,5,410,31"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="264,55,415,80"/>
+<area shape="rect" id="node7" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="250,104,429,143"/>
+<area shape="rect" id="node9" href="$class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,219,431,257"/>
+<area shape="rect" id="node10" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title=" " alt="" coords="247,281,432,307"/>
+<area shape="rect" id="node11" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="15,249,189,275"/>
+<area shape="rect" id="node12" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title=" " alt="" coords="269,331,410,356"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,111,199,136"/>
 </map>

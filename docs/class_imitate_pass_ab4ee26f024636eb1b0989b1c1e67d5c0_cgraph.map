@@ -1,7 +1,8 @@
 <map id="ImitatePass::Init" name="ImitatePass::Init">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="183,5,378,31"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title="QtPassSettings::isUseWebDav" alt="" coords="178,55,383,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="195,104,366,129"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="170,153,392,179"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="440,80,629,105"/>
+<area shape="rect" id="node1" title="ImitatePass::Init initialize pass repository." alt="" coords="5,80,122,105"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title=" " alt="" coords="183,5,378,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a68a9cac12925baf6cff2ce2c7a0f5a8c" title=" " alt="" coords="178,55,383,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title=" " alt="" coords="195,104,366,129"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title=" " alt="" coords="170,153,392,179"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="440,80,629,105"/>
 </map>

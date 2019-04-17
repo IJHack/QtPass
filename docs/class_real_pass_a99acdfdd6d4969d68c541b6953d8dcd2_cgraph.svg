@@ -11,13 +11,16 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
+<g id="a_node1"><a xlink:title="RealPass::Copy copy a file (or folder)">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 87.6992,-18.5 87.6992,-.5 0,-.5"/>
 <text text-anchor="middle" x="43.8496" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RealPass::Copy</text>
+</a>
+</g>
 </g>
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="123.6992,-.5 123.6992,-18.5 274.2109,-18.5 274.2109,-.5 123.6992,-.5"/>
 <text text-anchor="middle" x="198.9551" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="310.2109,-.5 310.2109,-18.5 452.3926,-18.5 452.3926,-.5 310.2109,-.5"/>
 <text text-anchor="middle" x="381.3018" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">
 <polygon fill="#bfbfbf" stroke="#000000" points="3.8892,-.5 3.8892,-18.5 77.1304,-18.5 77.1304,-.5 3.8892,-.5"/>
 <text text-anchor="middle" x="40.5098" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-55.5 0,-73.5 81.0195,-73.5 81.0195,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="40.5098" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QMainWindow</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge">

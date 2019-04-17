@@ -11,14 +11,20 @@
 <!-- Node2 -->
 <g id="node1" class="node">
 <title>Node2</title>
+<g id="a_node1"><a xlink:title="Handles the systemtray icon and menu.">
 <polygon fill="#bfbfbf" stroke="#000000" points=".1831,-.5 .1831,-18.5 54.7183,-18.5 54.7183,-.5 .1831,-.5"/>
 <text text-anchor="middle" x="27.4507" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-55.5 0,-73.5 54.9014,-73.5 54.9014,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="27.4507" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge1" class="edge">

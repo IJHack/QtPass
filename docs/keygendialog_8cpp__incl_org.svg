@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="243.0913,-165.5 243.0913,-183.5 353.0366,-183.5 353.0366,-165.5 243.0913,-165.5"/>
 <text text-anchor="middle" x="298.064" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/keygendialog.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="keygendialog_8h.html" target="_top" xlink:title="keygendialog.h">
+<g id="a_node2"><a xlink:href="keygendialog_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="21.4263,-110.5 21.4263,-128.5 104.7017,-128.5 104.7017,-110.5 21.4263,-110.5"/>
 <text text-anchor="middle" x="63.064" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">keygendialog.h</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="configdialog_8h.html" target="_top" xlink:title="configdialog.h">
+<g id="a_node4"><a xlink:href="configdialog_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="140.207,-110.5 140.207,-128.5 217.9209,-128.5 217.9209,-110.5 140.207,-110.5"/>
 <text text-anchor="middle" x="179.064" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">configdialog.h</text>
 </a>
@@ -47,7 +50,7 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
-<g id="a_node8"><a xlink:href="qprogressindicator_8h.html" target="_top" xlink:title="qprogressindicator.h">
+<g id="a_node8"><a xlink:href="qprogressindicator_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="245.0347,-110.5 245.0347,-128.5 351.0933,-128.5 351.0933,-110.5 245.0347,-110.5"/>
 <text text-anchor="middle" x="298.064" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">qprogressindicator.h</text>
 </a>
@@ -62,8 +65,11 @@
 <!-- Node10 -->
 <g id="node11" class="node">
 <title>Node10</title>
+<g id="a_node11"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="368.7539,-110.5 368.7539,-128.5 465.374,-128.5 465.374,-110.5 368.7539,-110.5"/>
 <text text-anchor="middle" x="417.064" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ui_keygendialog.h</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node10 -->
 <g id="edge11" class="edge">
@@ -74,8 +80,11 @@
 <!-- Node11 -->
 <g id="node12" class="node">
 <title>Node11</title>
+<g id="a_node12"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="483.271,-110.5 483.271,-128.5 564.8569,-128.5 564.8569,-110.5 483.271,-110.5"/>
 <text text-anchor="middle" x="524.064" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QMessageBox</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node11 -->
 <g id="edge12" class="edge">
@@ -86,8 +95,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-55.5 0,-73.5 52.1279,-73.5 52.1279,-55.5 0,-55.5"/>
 <text text-anchor="middle" x="26.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDialog</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
@@ -104,7 +116,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="enums_8h.html" target="_top" xlink:title="enums.h">
+<g id="a_node5"><a xlink:href="enums_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="69.8867,-55.5 69.8867,-73.5 124.2412,-73.5 124.2412,-55.5 69.8867,-55.5"/>
 <text text-anchor="middle" x="97.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">enums.h</text>
 </a>
@@ -119,7 +131,7 @@
 <!-- Node5 -->
 <g id="node6" class="node">
 <title>Node5</title>
-<g id="a_node6"><a xlink:href="passwordconfiguration_8h.html" target="_top" xlink:title="passwordconfiguration.h">
+<g id="a_node6"><a xlink:href="passwordconfiguration_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="141.8647,-55.5 141.8647,-73.5 266.2632,-73.5 266.2632,-55.5 141.8647,-55.5"/>
 <text text-anchor="middle" x="204.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">passwordconfiguration.h</text>
 </a>
@@ -134,8 +146,11 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="179.1133,-.5 179.1133,-18.5 229.0146,-18.5 229.0146,-.5 179.1133,-.5"/>
 <text text-anchor="middle" x="204.064" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
@@ -146,8 +161,11 @@
 <!-- Node8 -->
 <g id="node9" class="node">
 <title>Node8</title>
+<g id="a_node9"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="284.2266,-55.5 284.2266,-73.5 331.9014,-73.5 331.9014,-55.5 284.2266,-55.5"/>
 <text text-anchor="middle" x="308.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QColor</text>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge9" class="edge">
@@ -158,8 +176,11 @@
 <!-- Node9 -->
 <g id="node10" class="node">
 <title>Node9</title>
+<g id="a_node10"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="349.6133,-55.5 349.6133,-73.5 404.5146,-73.5 404.5146,-55.5 349.6133,-55.5"/>
 <text text-anchor="middle" x="377.064" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node9 -->
 <g id="edge10" class="edge">

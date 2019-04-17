@@ -8,41 +8,44 @@
  viewBox="0.00 0.00 367.81 64.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 60)">
 <title>QtPassSettings::setGitExecutable</title>
-<!-- Node538 -->
+<!-- Node545 -->
 <g id="node1" class="node">
-<title>Node538</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 166.0732,-36.5 166.0732,-18.5 0,-18.5"/>
-<text text-anchor="middle" x="83.0366" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setGitExecutable</text>
+<title>Node545</title>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="193.7383,-18.5 193.7383,-36.5 359.8115,-36.5 359.8115,-18.5 193.7383,-18.5"/>
+<text text-anchor="middle" x="276.7749" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setGitExecutable</text>
+</a>
 </g>
-<!-- Node539 -->
+</g>
+<!-- Node546 -->
 <g id="node2" class="node">
-<title>Node539</title>
-<g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git...">
-<polygon fill="none" stroke="#000000" points="209.9883,-37.5 209.9883,-55.5 351.8965,-55.5 351.8965,-37.5 209.9883,-37.5"/>
-<text text-anchor="middle" x="280.9424" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::~ConfigDialog</text>
+<title>Node546</title>
+<g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">
+<polygon fill="none" stroke="#000000" points="7.915,-37.5 7.915,-55.5 149.8232,-55.5 149.8232,-37.5 7.915,-37.5"/>
+<text text-anchor="middle" x="78.8691" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::~ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node538&#45;&gt;Node539 -->
+<!-- Node545&#45;&gt;Node546 -->
 <g id="edge1" class="edge">
-<title>Node538&#45;&gt;Node539</title>
-<path fill="none" stroke="#191970" d="M176.3561,-36.4592C187.5647,-37.5353 198.87,-38.6206 209.6943,-39.6598"/>
-<polygon fill="#191970" stroke="#191970" points="176.395,-32.9469 166.1063,-35.4751 175.726,-39.9149 176.395,-32.9469"/>
+<title>Node545&#45;&gt;Node546</title>
+<path fill="none" stroke="#191970" d="M183.4554,-36.4592C172.2468,-37.5353 160.9415,-38.6206 150.1172,-39.6598"/>
+<polygon fill="#191970" stroke="#191970" points="184.0855,-39.9149 193.7052,-35.4751 183.4165,-32.9469 184.0855,-39.9149"/>
 </g>
-<!-- Node540 -->
+<!-- Node547 -->
 <g id="node3" class="node">
-<title>Node540</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="QtPassSettings::initExecutables">
-<polygon fill="none" stroke="#000000" points="202.0732,-.5 202.0732,-18.5 359.8115,-18.5 359.8115,-.5 202.0732,-.5"/>
-<text text-anchor="middle" x="280.9424" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
+<title>Node547</title>
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 157.7383,-18.5 157.7383,-.5 0,-.5"/>
+<text text-anchor="middle" x="78.8691" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::initExecutables</text>
 </a>
 </g>
 </g>
-<!-- Node538&#45;&gt;Node540 -->
+<!-- Node545&#45;&gt;Node547 -->
 <g id="edge2" class="edge">
-<title>Node538&#45;&gt;Node540</title>
-<path fill="none" stroke="#191970" d="M176.1608,-19.0301C184.7621,-18.2478 193.4224,-17.4601 201.8805,-16.6909"/>
-<polygon fill="#191970" stroke="#191970" points="175.7481,-15.5531 166.1063,-19.9446 176.3822,-22.5244 175.7481,-15.5531"/>
+<title>Node545&#45;&gt;Node547</title>
+<path fill="none" stroke="#191970" d="M183.6507,-19.0301C175.0494,-18.2478 166.3891,-17.4601 157.9311,-16.6909"/>
+<polygon fill="#191970" stroke="#191970" points="183.4293,-22.5244 193.7052,-19.9446 184.0634,-15.5531 183.4293,-22.5244"/>
 </g>
 </g>
 </svg>

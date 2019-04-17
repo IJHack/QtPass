@@ -11,8 +11,11 @@
 <!-- Node6 -->
 <g id="node1" class="node">
 <title>Node6</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-18.5 0,-36.5 54.9014,-36.5 54.9014,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="27.4507" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QWidget</text>
+</a>
+</g>
 </g>
 <!-- Node0 -->
 <g id="node2" class="node">
@@ -32,7 +35,7 @@
 <!-- Node8 -->
 <g id="node3" class="node">
 <title>Node8</title>
-<g id="a_node3"><a xlink:href="class_tray_icon.html" target="_top" xlink:title="Handles the systemtray icon and menu. ">
+<g id="a_node3"><a xlink:href="class_tray_icon.html" target="_top" xlink:title="Handles the systemtray icon and menu.">
 <polygon fill="none" stroke="#000000" points="114.7075,-.5 114.7075,-18.5 169.2427,-18.5 169.2427,-.5 114.7075,-.5"/>
 <text text-anchor="middle" x="141.9751" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">TrayIcon</text>
 </a>

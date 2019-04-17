@@ -11,69 +11,72 @@
 <!-- Node176 -->
 <g id="node1" class="node">
 <title>Node176</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-26.5 0,-44.5 117.6943,-44.5 117.6943,-26.5 0,-26.5"/>
-<text text-anchor="middle" x="58.8472" y="-32.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::processErrorExit</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="317.9844,-26.5 317.9844,-44.5 435.6787,-44.5 435.6787,-26.5 317.9844,-26.5"/>
+<text text-anchor="middle" x="376.8315" y="-32.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::processErrorExit</text>
+</a>
+</g>
 </g>
 <!-- Node177 -->
 <g id="node2" class="node">
 <title>Node177</title>
-<g id="a_node2"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished. ...">
-<polygon fill="none" stroke="#000000" points="183.4258,-47.5 183.4258,-65.5 261.6816,-65.5 261.6816,-47.5 183.4258,-47.5"/>
-<text text-anchor="middle" x="222.5537" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::finished</text>
+<g id="a_node2"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished.">
+<polygon fill="none" stroke="#000000" points="173.9971,-47.5 173.9971,-65.5 252.2529,-65.5 252.2529,-47.5 173.9971,-47.5"/>
+<text text-anchor="middle" x="213.125" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::finished</text>
 </a>
 </g>
 </g>
 <!-- Node176&#45;&gt;Node177 -->
 <g id="edge1" class="edge">
 <title>Node176&#45;&gt;Node177</title>
-<path fill="none" stroke="#191970" d="M127.9637,-44.3662C146.7468,-46.7756 166.4473,-49.3028 182.9771,-51.4232"/>
-<polygon fill="#191970" stroke="#191970" points="128.3131,-40.8824 117.949,-43.0815 127.4224,-47.8255 128.3131,-40.8824"/>
+<path fill="none" stroke="#191970" d="M307.715,-44.3662C288.9319,-46.7756 269.2315,-49.3028 252.7016,-51.4232"/>
+<polygon fill="#191970" stroke="#191970" points="308.2564,-47.8255 317.7297,-43.0815 307.3656,-40.8824 308.2564,-47.8255"/>
 </g>
 <!-- Node180 -->
 <g id="node5" class="node">
 <title>Node180</title>
-<g id="a_node5"><a xlink:href="class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" target="_top" xlink:title="PasswordDialog::PasswordDialog complete constructor. ">
-<polygon fill="none" stroke="#000000" points="153.6943,-.5 153.6943,-28.5 291.4131,-28.5 291.4131,-.5 153.6943,-.5"/>
-<text text-anchor="start" x="161.6943" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
-<text text-anchor="middle" x="222.5537" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Dialog</text>
+<g id="a_node5"><a xlink:href="class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2" target="_top" xlink:title="PasswordDialog::PasswordDialog complete constructor.">
+<polygon fill="none" stroke="#000000" points="144.2656,-.5 144.2656,-28.5 281.9844,-28.5 281.9844,-.5 144.2656,-.5"/>
+<text text-anchor="start" x="152.2656" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
+<text text-anchor="middle" x="213.125" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Dialog</text>
 </a>
 </g>
 </g>
 <!-- Node176&#45;&gt;Node180 -->
 <g id="edge4" class="edge">
 <title>Node176&#45;&gt;Node180</title>
-<path fill="none" stroke="#191970" d="M128.0957,-26.6169C136.5085,-25.5377 145.1032,-24.4352 153.5129,-23.3564"/>
-<polygon fill="#191970" stroke="#191970" points="127.4224,-23.1745 117.949,-27.9185 128.3131,-30.1176 127.4224,-23.1745"/>
+<path fill="none" stroke="#191970" d="M307.583,-26.6169C299.1702,-25.5377 290.5755,-24.4352 282.1658,-23.3564"/>
+<polygon fill="#191970" stroke="#191970" points="307.3656,-30.1176 317.7297,-27.9185 308.2564,-23.1745 307.3656,-30.1176"/>
 </g>
 <!-- Node178 -->
 <g id="node3" class="node">
 <title>Node178</title>
-<g id="a_node3"><a xlink:href="class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" target="_top" xlink:title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...">
-<polygon fill="none" stroke="#000000" points="327.4131,-65.5 327.4131,-83.5 435.6787,-83.5 435.6787,-65.5 327.4131,-65.5"/>
-<text text-anchor="middle" x="381.5459" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::finished</text>
+<g id="a_node3"><a xlink:href="class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" target="_top" xlink:title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie....">
+<polygon fill="none" stroke="#000000" points="0,-65.5 0,-83.5 108.2656,-83.5 108.2656,-65.5 0,-65.5"/>
+<text text-anchor="middle" x="54.1328" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::finished</text>
 </a>
 </g>
 </g>
 <!-- Node177&#45;&gt;Node178 -->
 <g id="edge2" class="edge">
 <title>Node177&#45;&gt;Node178</title>
-<path fill="none" stroke="#191970" d="M271.9175,-62.0886C289.5158,-64.081 309.4264,-66.3351 327.4046,-68.3705"/>
-<polygon fill="#191970" stroke="#191970" points="272.1854,-58.5967 261.8552,-60.9494 271.3979,-65.5523 272.1854,-58.5967"/>
+<path fill="none" stroke="#191970" d="M163.7612,-62.0886C146.1629,-64.081 126.2523,-66.3351 108.2741,-68.3705"/>
+<polygon fill="#191970" stroke="#191970" points="164.2808,-65.5523 173.8236,-60.9494 163.4933,-58.5967 164.2808,-65.5523"/>
 </g>
 <!-- Node179 -->
 <g id="node4" class="node">
 <title>Node179</title>
-<g id="a_node4"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation. ">
-<polygon fill="none" stroke="#000000" points="348.5361,-28.5 348.5361,-46.5 414.5557,-46.5 414.5557,-28.5 348.5361,-28.5"/>
-<text text-anchor="middle" x="381.5459" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
+<g id="a_node4"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
+<polygon fill="none" stroke="#000000" points="21.123,-28.5 21.123,-46.5 87.1426,-46.5 87.1426,-28.5 21.123,-28.5"/>
+<text text-anchor="middle" x="54.1328" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Pass</text>
 </a>
 </g>
 </g>
 <!-- Node177&#45;&gt;Node179 -->
 <g id="edge3" class="edge">
 <title>Node177&#45;&gt;Node179</title>
-<path fill="none" stroke="#191970" d="M271.836,-50.6106C296.6973,-47.6396 326.1901,-44.1152 348.3324,-41.4691"/>
-<polygon fill="#191970" stroke="#191970" points="271.3692,-47.1414 261.8552,-51.8034 272.1998,-54.092 271.3692,-47.1414"/>
+<path fill="none" stroke="#191970" d="M163.8427,-50.6106C138.9814,-47.6396 109.4886,-44.1152 87.3463,-41.4691"/>
+<polygon fill="#191970" stroke="#191970" points="163.4789,-54.092 173.8236,-51.8034 164.3095,-47.1414 163.4789,-54.092"/>
 </g>
 </g>
 </svg>

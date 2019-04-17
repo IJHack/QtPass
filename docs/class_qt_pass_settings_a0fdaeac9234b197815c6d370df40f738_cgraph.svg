@@ -8,24 +8,27 @@
  viewBox="0.00 0.00 354.47 27.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 23)">
 <title>QtPassSettings::setHidePassword</title>
-<!-- Node552 -->
+<!-- Node559 -->
 <g id="node1" class="node">
-<title>Node552</title>
+<title>Node559</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 168.29,-18.5 168.29,-.5 0,-.5"/>
 <text text-anchor="middle" x="84.145" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setHidePassword</text>
+</a>
 </g>
-<!-- Node553 -->
+</g>
+<!-- Node560 -->
 <g id="node2" class="node">
-<title>Node553</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<title>Node560</title>
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="204.29,-.5 204.29,-18.5 346.4717,-18.5 346.4717,-.5 204.29,-.5"/>
 <text text-anchor="middle" x="275.3809" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node552&#45;&gt;Node553 -->
+<!-- Node559&#45;&gt;Node560 -->
 <g id="edge1" class="edge">
-<title>Node552&#45;&gt;Node553</title>
+<title>Node559&#45;&gt;Node560</title>
 <path fill="none" stroke="#191970" d="M168.3021,-9.5C176.7799,-9.5 185.3795,-9.5 193.8293,-9.5"/>
 <polygon fill="#191970" stroke="#191970" points="194.0437,-13.0001 204.0437,-9.5 194.0437,-6.0001 194.0437,-13.0001"/>
 </g>

@@ -11,13 +11,16 @@
 <!-- Node79 -->
 <g id="node1" class="node">
 <title>Node79</title>
+<g id="a_node1"><a xlink:title="MainWindow::deselect clear the selection, password and copy buffer.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 116.0439,-18.5 116.0439,-.5 0,-.5"/>
 <text text-anchor="middle" x="58.022" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::deselect</text>
+</a>
+</g>
 </g>
 <!-- Node80 -->
 <g id="node2" class="node">
 <title>Node80</title>
-<g id="a_node2"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents. ">
+<g id="a_node2"><a xlink:href="class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" target="_top" xlink:title="MainWindow::clearClipboard remove clipboard contents.">
 <polygon fill="none" stroke="#000000" points="152.0439,-.5 152.0439,-18.5 270.8662,-18.5 270.8662,-.5 152.0439,-.5"/>
 <text text-anchor="middle" x="211.4551" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::clearClipboard</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node81 -->
 <g id="node3" class="node">
 <title>Node81</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar. ">
+<g id="a_node3"><a xlink:href="class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" target="_top" xlink:title="Displays message in status bar.">
 <polygon fill="none" stroke="#000000" points="306.8662,-.5 306.8662,-18.5 477.9346,-18.5 477.9346,-.5 306.8662,-.5"/>
 <text text-anchor="middle" x="392.4004" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::showStatusMessage</text>
 </a>

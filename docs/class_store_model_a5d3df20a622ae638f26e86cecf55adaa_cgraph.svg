@@ -11,13 +11,16 @@
 <!-- Node2 -->
 <g id="node1" class="node">
 <title>Node2</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 156.0586,-18.5 156.0586,-.5 0,-.5"/>
 <text text-anchor="middle" x="78.0293" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::canDropMimeData</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
-<g id="a_node2"><a xlink:href="class_store_model.html#a4323f844cb78797146381847a80eb1d7" target="_top" xlink:title="StoreModel::data don&#39;t show the .gpg at the end of a file. ">
+<g id="a_node2"><a xlink:href="class_store_model.html#a4323f844cb78797146381847a80eb1d7" target="_top" xlink:title="StoreModel::data don&#39;t show the .gpg at the end of a file.">
 <polygon fill="none" stroke="#000000" points="192.0586,-.5 192.0586,-18.5 284.2158,-18.5 284.2158,-.5 192.0586,-.5"/>
 <text text-anchor="middle" x="238.1372" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::data</text>
 </a>

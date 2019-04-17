@@ -11,13 +11,16 @@
 <!-- Node52 -->
 <g id="node1" class="node">
 <title>Node52</title>
+<g id="a_node1"><a xlink:title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 111.0342,-36.5 111.0342,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="55.5171" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ImitatePass::Remove</text>
+</a>
+</g>
 </g>
 <!-- Node53 -->
 <g id="node2" class="node">
 <title>Node53</title>
-<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title="QtPassSettings::getPassStore">
+<g id="a_node2"><a xlink:href="class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="147.0342,-37.5 147.0342,-55.5 297.5459,-55.5 297.5459,-37.5 147.0342,-37.5"/>
 <text text-anchor="middle" x="222.29" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getPassStore</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node55 -->
 <g id="node4" class="node">
 <title>Node55</title>
-<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title="QtPassSettings::isUseGit">
+<g id="a_node4"><a xlink:href="class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="158.1597,-.5 158.1597,-18.5 286.4204,-18.5 286.4204,-.5 158.1597,-.5"/>
 <text text-anchor="middle" x="222.29" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isUseGit</text>
 </a>
@@ -47,7 +50,7 @@
 <!-- Node54 -->
 <g id="node3" class="node">
 <title>Node54</title>
-<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
+<g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="333.5459,-18.5 333.5459,-36.5 475.7275,-36.5 475.7275,-18.5 333.5459,-18.5"/>
 <text text-anchor="middle" x="404.6367" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>

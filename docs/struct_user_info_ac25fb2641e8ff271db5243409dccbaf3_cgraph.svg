@@ -11,13 +11,16 @@
 <!-- Node5 -->
 <g id="node1" class="node">
 <title>Node5</title>
+<g id="a_node1"><a xlink:title="UserInfo::isValid when fullyValid or marginallyValid.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-18.5 0,-36.5 88.0703,-36.5 88.0703,-18.5 0,-18.5"/>
 <text text-anchor="middle" x="44.0352" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::isValid</text>
+</a>
+</g>
 </g>
 <!-- Node6 -->
 <g id="node2" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" target="_top" xlink:title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">
+<g id="a_node2"><a xlink:href="struct_user_info.html#a872a0a62c92c6601c1378fd3b893f984" target="_top" xlink:title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb....">
 <polygon fill="none" stroke="#000000" points="137.9644,-37.5 137.9644,-55.5 236.5962,-55.5 236.5962,-37.5 137.9644,-37.5"/>
 <text text-anchor="middle" x="187.2803" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::fullyValid</text>
 </a>
@@ -32,7 +35,7 @@
 <!-- Node7 -->
 <g id="node3" class="node">
 <title>Node7</title>
-<g id="a_node3"><a xlink:href="struct_user_info.html#a7d651f28a61ede830811b5fbea5f3bb2" target="_top" xlink:title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS. ">
+<g id="a_node3"><a xlink:href="struct_user_info.html#a7d651f28a61ede830811b5fbea5f3bb2" target="_top" xlink:title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb....">
 <polygon fill="none" stroke="#000000" points="124.0703,-.5 124.0703,-18.5 250.4902,-18.5 250.4902,-.5 124.0703,-.5"/>
 <text text-anchor="middle" x="187.2803" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UserInfo::marginallyValid</text>
 </a>

@@ -11,8 +11,11 @@
 <!-- Node9 -->
 <g id="node1" class="node">
 <title>Node9</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 65.4727,-18.5 65.4727,-.5 0,-.5"/>
 <text text-anchor="middle" x="32.7363" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTreeView</text>
+</a>
+</g>
 </g>
 <!-- Node0 -->
 <g id="node2" class="node">

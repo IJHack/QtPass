@@ -11,23 +11,26 @@
 <!-- Node28 -->
 <g id="node1" class="node">
 <title>Node28</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 105.4824,-18.5 105.4824,-.5 0,-.5"/>
-<text text-anchor="middle" x="52.7412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::accept</text>
+<g id="a_node1"><a xlink:title=" ">
+<polygon fill="#bfbfbf" stroke="#000000" points="166.4824,-.5 166.4824,-18.5 271.9648,-18.5 271.9648,-.5 166.4824,-.5"/>
+<text text-anchor="middle" x="219.2236" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::accept</text>
+</a>
+</g>
 </g>
 <!-- Node29 -->
 <g id="node2" class="node">
 <title>Node29</title>
-<g id="a_node2"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor. ">
-<polygon fill="none" stroke="#000000" points="141.4824,-.5 141.4824,-18.5 271.9648,-18.5 271.9648,-.5 141.4824,-.5"/>
-<text text-anchor="middle" x="206.7236" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::UsersDialog</text>
+<g id="a_node2"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor.">
+<polygon fill="none" stroke="#000000" points="0,-.5 0,-18.5 130.4824,-18.5 130.4824,-.5 0,-.5"/>
+<text text-anchor="middle" x="65.2412" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">UsersDialog::UsersDialog</text>
 </a>
 </g>
 </g>
 <!-- Node28&#45;&gt;Node29 -->
 <g id="edge1" class="edge">
 <title>Node28&#45;&gt;Node29</title>
-<path fill="none" stroke="#191970" d="M115.8616,-9.5C124.2812,-9.5 132.9298,-9.5 141.3863,-9.5"/>
-<polygon fill="#191970" stroke="#191970" points="115.7333,-6.0001 105.7332,-9.5 115.7332,-13.0001 115.7333,-6.0001"/>
+<path fill="none" stroke="#191970" d="M156.1033,-9.5C147.6836,-9.5 139.035,-9.5 130.5785,-9.5"/>
+<polygon fill="#191970" stroke="#191970" points="156.2317,-13.0001 166.2316,-9.5 156.2316,-6.0001 156.2317,-13.0001"/>
 </g>
 </g>
 </svg>

@@ -11,13 +11,16 @@
 <!-- Node27 -->
 <g id="node1" class="node">
 <title>Node27</title>
+<g id="a_node1"><a xlink:title="Executor::executeBlocking blocking version of the executor.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-18.5 133.8418,-18.5 133.8418,-.5 0,-.5"/>
 <text text-anchor="middle" x="66.9209" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::executeBlocking</text>
+</a>
+</g>
 </g>
 <!-- Node28 -->
 <g id="node2" class="node">
 <title>Node28</title>
-<g id="a_node2"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin...">
+<g id="a_node2"><a xlink:href="class_executor.html#a65a32a439c0a531e4553cab015061f2f" target="_top" xlink:title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">
 <polygon fill="none" stroke="#000000" points="169.8418,-.5 169.8418,-18.5 303.6836,-18.5 303.6836,-.5 169.8418,-.5"/>
 <text text-anchor="middle" x="236.7627" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Executor::executeBlocking</text>
 </a>

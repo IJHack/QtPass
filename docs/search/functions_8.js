@@ -28,6 +28,7 @@ var searchData=
   ['isuseotp',['isUseOtp',['../class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2',1,'QtPassSettings']]],
   ['isusepass',['isUsePass',['../class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493',1,'QtPassSettings']]],
   ['isusepwgen',['isUsePwgen',['../class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72',1,'QtPassSettings']]],
+  ['isuseqrencode',['isUseQrencode',['../class_qt_pass_settings.html#aaffd9393d60a4a10b1f8da9350d44bd4',1,'QtPassSettings']]],
   ['isuseselection',['isUseSelection',['../class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2',1,'QtPassSettings']]],
   ['isusesymbols',['isUseSymbols',['../class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3',1,'QtPassSettings']]],
   ['isusetemplate',['isUseTemplate',['../class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283',1,'QtPassSettings']]],

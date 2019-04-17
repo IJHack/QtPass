@@ -11,14 +11,20 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="125.542,-55.5 125.542,-73.5 258.832,-73.5 258.832,-55.5 125.542,-55.5"/>
 <text text-anchor="middle" x="192.187" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/deselectabletreeview.h</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="0,-.5 0,-18.5 94.374,-18.5 94.374,-.5 0,-.5"/>
 <text text-anchor="middle" x="47.187" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QCoreApplication</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
@@ -29,8 +35,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="112.5049,-.5 112.5049,-18.5 191.8691,-18.5 191.8691,-.5 112.5049,-.5"/>
 <text text-anchor="middle" x="152.187" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QMouseEvent</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
@@ -41,8 +50,11 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="209.3701,-.5 209.3701,-18.5 255.0039,-18.5 255.0039,-.5 209.3701,-.5"/>
 <text text-anchor="middle" x="232.187" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTime</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
@@ -53,8 +65,11 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="273.4507,-.5 273.4507,-18.5 338.9233,-18.5 338.9233,-.5 273.4507,-.5"/>
 <text text-anchor="middle" x="306.187" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTreeView</text>
+</a>
+</g>
 </g>
 <!-- Node0&#45;&gt;Node4 -->
 <g id="edge4" class="edge">

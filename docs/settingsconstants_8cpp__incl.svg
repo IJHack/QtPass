@@ -11,13 +11,16 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-110.5 0,-128.5 128.2754,-128.5 128.2754,-110.5 0,-110.5"/>
 <text text-anchor="middle" x="64.1377" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/settingsconstants.cpp</text>
+</a>
+</g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="settingsconstants_8h.html" target="_top" xlink:title="settingsconstants.h">
+<g id="a_node2"><a xlink:href="settingsconstants_8h.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="13.335,-55.5 13.335,-73.5 114.9404,-73.5 114.9404,-55.5 13.335,-55.5"/>
 <text text-anchor="middle" x="64.1377" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">settingsconstants.h</text>
 </a>
@@ -32,8 +35,11 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="none" stroke="#bfbfbf" points="39.187,-.5 39.187,-18.5 89.0884,-18.5 89.0884,-.5 39.187,-.5"/>
 <text text-anchor="middle" x="64.1377" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QString</text>
+</a>
+</g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">

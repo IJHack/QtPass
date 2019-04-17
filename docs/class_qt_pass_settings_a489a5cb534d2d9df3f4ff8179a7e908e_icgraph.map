@@ -1,4 +1,5 @@
 <map id="QtPassSettings::isHideOnClose" name="QtPassSettings::isHideOnClose">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="229,5,410,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="234,55,405,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,24,410,63"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="11,55,181,80"/>
 </map>
