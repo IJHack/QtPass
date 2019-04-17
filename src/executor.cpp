@@ -31,7 +31,13 @@ void Executor::executeNext() {
       running = true;
       if (!i.workingDir.isEmpty())
         m_process.setWorkingDirectory(i.workingDir);
-      m_process.start(i.app, i.args);
+      if (i.app.startsWith("wsl ")) {
+        QStringList tmp = i.args;
+        QString app = i.app;
+        tmp.prepend(app.remove(0, 4));
+        m_process.start("wsl", tmp);
+      } else
+        m_process.start(i.app, i.args);
       if (!i.input.isEmpty()) {
         m_process.waitForStarted(-1);
         QByteArray data = i.input.toUtf8();
@@ -111,11 +117,32 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
 #endif
     return;
   }
-  QString appPath =
-      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
+  QString appPath = app;
+  if (!appPath.startsWith("wsl "))
+    appPath =
+        QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
   m_execQueue.push_back(
       {id, appPath, args, input, readStdout, readStderr, workDir});
   executeNext();
+}
+
+/**
+ * @brief decodes the input into a string assuming UTF-8 encoding.
+ * If this fails (which is likely if it is not actually UTF-8)
+ * it will then fall back to Qt's decoding function, which
+ * will try based on BOM and if that fails fall back to local encoding.
+ *
+ * @param in input data
+ * @return Input bytes decoded to string
+ */
+static QString decodeAssumingUtf8(QByteArray in) {
+  QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+  QTextCodec::ConverterState state;
+  QString out = codec->toUnicode(in.constData(), in.size(), &state);
+  if (!state.invalidChars)
+    return out;
+  codec = QTextCodec::codecForUtfText(in);
+  return codec->toUnicode(in);
 }
 
 /**
@@ -134,7 +161,12 @@ int Executor::executeBlocking(QString app, const QStringList &args,
                               QString input, QString *process_out,
                               QString *process_err) {
   QProcess internal;
-  internal.start(app, args);
+  if (app.startsWith("wsl ")) {
+    QStringList tmp = args;
+    tmp.prepend(app.remove(0, 4));
+    internal.start("wsl", tmp);
+  } else
+    internal.start(app, args);
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
     internal.waitForStarted(-1);
@@ -147,9 +179,8 @@ int Executor::executeBlocking(QString app, const QStringList &args,
   }
   internal.waitForFinished(-1);
   if (internal.exitStatus() == QProcess::NormalExit) {
-    QTextCodec *codec = QTextCodec::codecForLocale();
-    QString pout = codec->toUnicode(internal.readAllStandardOutput());
-    QString perr = codec->toUnicode(internal.readAllStandardError());
+    QString pout = decodeAssumingUtf8(internal.readAllStandardOutput());
+    QString perr = decodeAssumingUtf8(internal.readAllStandardError());
     if (process_out != Q_NULLPTR)
       *process_out = pout;
     if (process_err != Q_NULLPTR)
@@ -204,11 +235,10 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
   running = false;
   if (exitStatus == QProcess::NormalExit) {
     QString output, err;
-    QTextCodec *codec = QTextCodec::codecForLocale();
     if (i.readStdout)
-      output = codec->toUnicode(m_process.readAllStandardOutput());
+      output = decodeAssumingUtf8(m_process.readAllStandardOutput());
     if (i.readStderr || exitCode != 0) {
-      err = codec->toUnicode(m_process.readAllStandardError());
+      err = decodeAssumingUtf8(m_process.readAllStandardError());
       if (exitCode != 0) {
 #ifdef QT_DEBUG
         dbg() << exitCode << err;

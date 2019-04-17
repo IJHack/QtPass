@@ -256,6 +256,9 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
                             ->value(SettingsConstants::passStore, defaultValue)
                             .toString();
 
+  // Normalize the path string
+  returnValue = QDir(returnValue).absolutePath();
+
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
   if (!QDir(returnValue).exists()) {
@@ -263,8 +266,8 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
   }
 
   // ensure path ends in /
-  if (!returnValue.endsWith("/")) {
-    returnValue += "/";
+  if (!returnValue.endsWith("/") && !returnValue.endsWith(QDir::separator())) {
+    returnValue += QDir::separator();
   }
 
   return returnValue;

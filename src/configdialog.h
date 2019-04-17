@@ -48,6 +48,7 @@ protected:
 
 private slots:
   void on_accepted();
+  void on_autodetectButton_clicked();
   void on_radioButtonNative_clicked();
   void on_radioButtonPass_clicked();
   void on_toolButtonGit_clicked();

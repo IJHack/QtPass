@@ -110,6 +110,16 @@ QString Util::findBinaryInPath(QString binary) {
       break;
     }
   }
+#ifdef Q_OS_WIN
+  if (ret.isEmpty()) {
+    binary.remove(0, 1);
+    binary.prepend("wsl ");
+    QString out, err;
+    if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
+        !out.isEmpty() && err.isEmpty())
+      ret = binary;
+  }
+#endif
 
   return ret;
 }
@@ -121,7 +131,10 @@ QString Util::findBinaryInPath(QString binary) {
 bool Util::checkConfig() {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
-         (!QFile(QtPassSettings::getPassExecutable()).exists() &&
+         (QtPassSettings::isUsePass() ?
+          !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
+          !QFile(QtPassSettings::getPassExecutable()).exists() :
+          !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
           !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
@@ -136,7 +149,8 @@ bool Util::checkConfig() {
 QString Util::getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
                      const StoreModel &storeModel) {
-  QString abspath = QDir(QtPassSettings::getPassStore()).absolutePath() + '/';
+  QString abspath =
+      QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
   if (!index.isValid())
     return forPass ? "" : abspath;
   QFileInfo info = model.fileInfo(storeModel.mapToSource(index));
@@ -145,7 +159,7 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   if (forPass) {
     filePath = QDir(abspath).relativeFilePath(filePath);
   }
-  filePath += '/';
+  filePath += QDir::separator();
   return filePath;
 }
 

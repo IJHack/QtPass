@@ -107,6 +107,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(QtPassSettings::isUseSelection());
   }
 
+  if (Util::checkConfig()) {
+    // Show Programs tab, which is likely
+    // what the user needs to fix now.
+    ui->tabWidget->setCurrentIndex(1);
+  }
+
   connect(ui->profileTable, &QTableWidget::itemChanged, this,
           &ConfigDialog::onProfileTableItemChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
@@ -216,6 +222,24 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
   QtPassSettings::setVersion(VERSION);
+}
+
+void ConfigDialog::on_autodetectButton_clicked() {
+  QString pass = Util::findBinaryInPath("pass");
+  if (!pass.isEmpty())
+    ui->passPath->setText(pass);
+  usePass(!pass.isEmpty());
+  QString gpg = Util::findBinaryInPath("gpg2");
+  if (gpg.isEmpty())
+    gpg = Util::findBinaryInPath("gpg");
+  if (!gpg.isEmpty())
+    ui->gpgPath->setText(gpg);
+  QString git = Util::findBinaryInPath("git");
+  if (!git.isEmpty())
+    ui->gitPath->setText(git);
+  QString pwgen = Util::findBinaryInPath("pwgen");
+  if (!pwgen.isEmpty())
+    ui->pwgenPath->setText(pwgen);
 }
 
 /**
@@ -538,14 +562,29 @@ void ConfigDialog::wizard() {
 
   QString gpg = ui->gpgPath->text();
   // QString gpg = mainWindow->getGpgExecutable();
-  if (!QFile(gpg).exists()) {
+  if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
         tr("GnuPG not found"),
+#ifdef Q_OS_WIN
+#ifdef WINSTORE
+        tr("Please install GnuPG on your system.<br>Install "
+           "<strong>Ubuntu</strong> from the Microsoft Store to get it.<br>"
+           "If you already did so, make sure you started it once and<br>"
+           "click \"Autodetect\" in the next dialog.")
+#else
+        tr("Please install GnuPG on your system.<br>Install "
+           "<strong>Ubuntu</strong> from the Microsoft Store<br>or <a "
+           "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
+           "from GnuPG.org")
+#endif
+#else
         tr("Please install GnuPG on your system.<br>Install "
            "<strong>gpg</strong> using your favorite package manager<br>or "
            "<a "
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
-           "from GnuPG.org"));
+           "from GnuPG.org")
+#endif
+	);
     clean = true;
   }
 
@@ -555,7 +594,7 @@ void ConfigDialog::wizard() {
   dbg() << names;
 #endif
 
-  if (QFile(gpg).exists() && names.empty()) {
+  if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
     KeygenDialog d(this);
     if (!d.exec())
       return;

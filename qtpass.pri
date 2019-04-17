@@ -29,6 +29,7 @@ CODECFORTR      = UTF-8
 macx {
     QMAKE_MAC_SDK = macosx
     QT += svg
+    CONFIG += app_bundle
 }
 
 isEmpty(QMAKE_LRELEASE) {
@@ -62,6 +63,8 @@ isEmpty(QMAKE_LUPDATE) {
         !exists($$QMAKE_LUPDATE) { QMAKE_LUPDATE = lupdate }
     }
 }
+
+winstore: DEFINES += "WINSTORE=1"
 
 win32 {
     RC_FILE = ../windows.rc

@@ -23,6 +23,7 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+  env.append("WSLENV=PASSWORD_STORE_DIR/p");
 }
 
 void Pass::executeWrapper(PROCESS id, const QString &app,
@@ -126,7 +127,7 @@ void Pass::GenerateGPGKeys(QString batch) {
  */
 QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QList<UserInfo> users;
-  QStringList args = {"--no-tty", "--with-colons"};
+  QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
   foreach (QString keystring, keystrings) {
@@ -155,6 +156,8 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
       current_user.expiry.setTime_t(props[6].toUInt());
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
       current_user.name = props[9];
+    } else if ((props[0] == "fpr") && props[9].endsWith(current_user.key_id)) {
+      current_user.key_id = props[9];
     }
   }
   if (!current_user.key_id.isEmpty())
@@ -233,7 +236,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR");
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
     // dbg()<< "Added
