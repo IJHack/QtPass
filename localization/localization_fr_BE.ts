@@ -289,7 +289,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation</translation>
     </message>
     <message>

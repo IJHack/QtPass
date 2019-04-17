@@ -289,7 +289,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）</translation>
     </message>
     <message>

@@ -294,7 +294,7 @@ email</translation>
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation>Ein Template macht weitere Felder bei der Passwort Generierung und Anzeige verfügbar.</translation>
     </message>
     <message>

@@ -942,7 +942,7 @@
           <locale language="German" country="Germany"/>
          </property>
          <property name="text">
-          <string>Templates add extra fields in the password generation dialouge and in the password view.</string>
+          <string>Templates add extra fields in the password generation dialogue and in the password view.</string>
          </property>
         </widget>
        </item>

@@ -289,7 +289,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation>Les plantilles afegeixen camps extres al diàleg de generació de contrasenyes i a la visualització de la contrasenya.</translation>
     </message>
     <message>
