@@ -396,7 +396,9 @@ void QtPassSettings::setUseOtp(const bool &useOtp) {
 }
 
 bool QtPassSettings::isUseQrencode(const bool &defaultValue) {
-  return getInstance()->value(SettingsConstants::useQrencode, defaultValue).toBool();
+  return getInstance()
+      ->value(SettingsConstants::useQrencode, defaultValue)
+      .toBool();
 }
 
 void QtPassSettings::setUseQrencode(const bool &useQrencode) {

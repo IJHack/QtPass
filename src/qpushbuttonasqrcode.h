@@ -13,7 +13,7 @@ class QPushButtonAsQRCode : public QPushButton {
 
 public:
   explicit QPushButtonAsQRCode(const QString &textToCopy = "",
-                                    QWidget *parent = nullptr);
+                               QWidget *parent = nullptr);
 
   QString getTextToCopy() const;
   void setTextToCopy(const QString &value);

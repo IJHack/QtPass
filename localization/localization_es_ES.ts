@@ -316,7 +316,7 @@ email</source>
         <translation>Ocultar contenido</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+567"/>
+        <location filename="../src/configdialog.cpp" line="+588"/>
         <source>GnuPG not found</source>
         <translation>No se ha encontrado GnuPG</translation>
     </message>
@@ -356,22 +356,27 @@ email</source>
         <translation>La carpeta %1 no es un almacen de contraseñas o no ha sido inicializado.</translation>
     </message>
     <message>
-        <location line="-115"/>
+        <location line="-128"/>
         <source>No profile selected</source>
         <translation>Sin perfil seleccionado</translation>
     </message>
     <message>
-        <location line="-467"/>
+        <location line="-475"/>
         <source>System tray is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -386,13 +391,18 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+419"/>
+        <location line="+420"/>
         <source>No profile selected to delete</source>
         <translation>Sin perfil seleccionado para borrar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui"/>
         <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -544,7 +554,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -711,12 +721,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+640"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Contraseña</translation>
     </message>
     <message>
-        <location line="-616"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -916,7 +926,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+138"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generar par de claves GPG</translation>
     </message>

@@ -74,8 +74,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
   if (!isQrencodeAvailable()) {
     ui->checkBoxUseQrencode->setEnabled(false);
-    ui->checkBoxUseQrencode->setToolTip(
-        tr("qrencode needs to be installed"));
+    ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());

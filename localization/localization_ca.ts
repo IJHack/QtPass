@@ -327,12 +327,17 @@ email</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>Sense porta-retalls</translation>
     </message>
@@ -347,7 +352,7 @@ email</translation>
         <translation>Copia sota demanda al porta-retalls</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+419"/>
         <source>No profile selected</source>
         <translation>Cap perfil seleccionat</translation>
     </message>
@@ -357,7 +362,7 @@ email</translation>
         <translation>No s&apos;ha seleccionat cap perfil per suprimir</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+65"/>
         <source>GnuPG not found</source>
         <translation>No s&apos;ha trobat GnuPG</translation>
     </message>
@@ -399,6 +404,11 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui"/>
         <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -564,7 +574,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
@@ -748,12 +758,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+640"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location line="-616"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation>Codi OTP</translation>
     </message>
@@ -971,7 +981,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+138"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generació del parell de claus GPG</translation>
     </message>

@@ -8,8 +8,8 @@
 #include "filecontent.h"
 #include "keygendialog.h"
 #include "passworddialog.h"
-#include "qpushbuttonwithclipboard.h"
 #include "qpushbuttonasqrcode.h"
+#include "qpushbuttonwithclipboard.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
@@ -1032,8 +1032,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   }
 
   if (QtPassSettings::isUseQrencode()) {
-    QPushButtonAsQRCode *qrbutton =
-        new QPushButtonAsQRCode(trimmedValue, this);
+    QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
     qrbutton->setStyleSheet("border-style: none ; background: transparent;");
