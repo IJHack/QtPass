@@ -395,6 +395,14 @@ void QtPassSettings::setUseOtp(const bool &useOtp) {
   getInstance()->setValue(SettingsConstants::useOtp, useOtp);
 }
 
+bool QtPassSettings::isUseQrencode(const bool &defaultValue) {
+  return getInstance()->value(SettingsConstants::useQrencode, defaultValue).toBool();
+}
+
+void QtPassSettings::setUseQrencode(const bool &useQrencode) {
+  getInstance()->setValue(SettingsConstants::useQrencode, useQrencode);
+}
+
 bool QtPassSettings::isUsePwgen(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::usePwgen, defaultValue)

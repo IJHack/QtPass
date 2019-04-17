@@ -39,6 +39,7 @@ signals:
 public slots:
   void clearClipboard();
   void copyTextToClipboard(const QString &text);
+  void showTextAsQRCode(const QString &text);
 
 private slots:
   void processError(QProcess::ProcessError);
