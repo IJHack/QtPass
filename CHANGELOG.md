@@ -40,6 +40,7 @@
 - Fixes and improvments for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for using WSL binaries on Windows [\#431](https://github.com/IJHack/QtPass/pull/431) ([rdoeffinger](https://github.com/rdoeffinger))
 - Bugfixes and Windows compatibility improvements [\#430](https://github.com/IJHack/QtPass/pull/430) ([mrsch](https://github.com/mrsch))
+- Semi-automatic code cleanup [\#425](https://github.com/IJHack/QtPass/pull/425) ([annejan](https://github.com/annejan))
 - Update to prevent the installer requesting admin [\#424](https://github.com/IJHack/QtPass/pull/424) ([hughwilliams94](https://github.com/hughwilliams94))
 - Display passwords as QR codes [\#421](https://github.com/IJHack/QtPass/pull/421) ([frawi](https://github.com/frawi))
 - Tested working on Mac Os HS with pinentry-mac [\#419](https://github.com/IJHack/QtPass/pull/419) ([riccardocossu](https://github.com/riccardocossu))
