@@ -327,12 +327,17 @@ email</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>Sense porta-retalls</translation>
     </message>
@@ -347,7 +352,7 @@ email</translation>
         <translation>Copia sota demanda al porta-retalls</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+419"/>
         <source>No profile selected</source>
         <translation>Cap perfil seleccionat</translation>
     </message>
@@ -357,7 +362,7 @@ email</translation>
         <translation>No s&apos;ha seleccionat cap perfil per suprimir</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+65"/>
         <source>GnuPG not found</source>
         <translation>No s&apos;ha trobat GnuPG</translation>
     </message>
@@ -401,11 +406,16 @@ email</translation>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+94"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
         <location line="+203"/>
         <source>Can not edit</source>
         <translation>No es pot editar</translation>
@@ -564,7 +574,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
@@ -748,12 +758,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation>Codi OTP</translation>
     </message>
@@ -963,7 +973,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -971,7 +981,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generació del parell de claus GPG</translation>
     </message>
@@ -1055,7 +1065,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation>voleu forçar la sobreescriptura?</translation>
     </message>
@@ -1127,7 +1137,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation>Mostra les claus inutilitzables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">No es pot obtenir la llista de claus</translation>
     </message>
@@ -1142,7 +1152,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation type="unfinished">No s&apos;ha trobat la clau a l&apos;anell de claus</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>creada</translation>
     </message>

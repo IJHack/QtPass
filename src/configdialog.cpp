@@ -39,7 +39,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
   ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
 
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
     ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
   } else {
@@ -74,8 +74,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
   if (!isQrencodeAvailable()) {
     ui->checkBoxUseQrencode->setEnabled(false);
-    ui->checkBoxUseQrencode->setToolTip(
-        tr("qrencode needs to be installed"));
+    ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
 
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
@@ -271,7 +270,7 @@ QStringList ConfigDialog::getSecretKeys() {
   QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
   QStringList names;
 
-  if (keys.size() == 0)
+  if (keys.empty())
     return names;
 
   foreach (const UserInfo &sec, keys)
@@ -299,8 +298,8 @@ QString ConfigDialog::selectExecutable() {
   dialog.setOption(QFileDialog::ReadOnly);
   if (dialog.exec())
     return dialog.selectedFiles().first();
-  else
-    return QString();
+
+  return QString();
 }
 
 /**
@@ -314,8 +313,8 @@ QString ConfigDialog::selectFolder() {
   dialog.setOption(QFileDialog::ShowDirsOnly);
   if (dialog.exec())
     return dialog.selectedFiles().first();
-  else
-    return QString();
+
+  return QString();
 }
 
 /**
@@ -606,7 +605,7 @@ void ConfigDialog::wizard() {
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
            "from GnuPG.org")
 #endif
-	);
+    );
     clean = true;
   }
 
@@ -676,7 +675,7 @@ void ConfigDialog::wizard() {
  * @param useSystray
  */
 void ConfigDialog::useTrayIcon(bool useSystray) {
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxUseTrayIcon->setChecked(useSystray);
     ui->checkBoxHideOnClose->setEnabled(useSystray);
     ui->checkBoxStartMinimized->setEnabled(useSystray);

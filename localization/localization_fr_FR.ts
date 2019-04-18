@@ -327,12 +327,17 @@ email</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>Ne pas copier vers le presse-papier</translation>
     </message>
@@ -347,7 +352,7 @@ email</translation>
         <translation>Copier vers le presse-papier à la demande</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+419"/>
         <source>No profile selected</source>
         <translation>Aucun profil sélectionné</translation>
     </message>
@@ -357,7 +362,7 @@ email</translation>
         <translation>Aucun profil sélectionné pour la suppression</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+65"/>
         <source>GnuPG not found</source>
         <translation>GnuPG n&apos;as pas été trouvé</translation>
     </message>
@@ -401,11 +406,16 @@ email</translation>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+94"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
         <location line="+203"/>
         <source>Can not edit</source>
         <translation>Impossible d&apos;éditer</translation>
@@ -564,7 +574,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Editer</translation>
     </message>
@@ -748,12 +758,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -973,7 +983,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>GAD</translation>
     </message>
@@ -981,7 +991,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Génération d&apos;une paire de clés GPG</translation>
     </message>
@@ -1065,7 +1075,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation>forcer le remplacement ?</translation>
     </message>
@@ -1137,7 +1147,7 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
         <translation>Afficher les clés inutilisables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Impossible de récupérer la liste de clés</translation>
     </message>
@@ -1152,7 +1162,7 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas vous en servir pour
         <translation type="unfinished">Clé introuvable dans le trousseau de clés</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>créé</translation>
     </message>

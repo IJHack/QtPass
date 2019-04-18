@@ -131,11 +131,11 @@ QString Util::findBinaryInPath(QString binary) {
 bool Util::checkConfig() {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
-         (QtPassSettings::isUsePass() ?
-          !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
-          !QFile(QtPassSettings::getPassExecutable()).exists() :
-          !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
-          !QFile(QtPassSettings::getGpgExecutable()).exists());
+         (QtPassSettings::isUsePass()
+              ? !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
+                    !QFile(QtPassSettings::getPassExecutable()).exists()
+              : !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
+                    !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
 /**
@@ -163,9 +163,9 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
-void Util::copyDir(const QString src, const QString dest) {
+void Util::copyDir(const QString &src, const QString &dest) {
   QDir srcDir(src);
-  if (srcDir.exists() == false) {
+  if (!srcDir.exists()) {
     return;
   }
   srcDir.mkpath(dest);

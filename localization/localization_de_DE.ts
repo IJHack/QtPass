@@ -323,7 +323,7 @@ email</translation>
         <translation>Inhalt ausblenden</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+567"/>
+        <location filename="../src/configdialog.cpp" line="+588"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nicht gefunden</translation>
     </message>
@@ -363,22 +363,27 @@ email</translation>
         <translation>Ordner %1 ist kein Passwort Speicher oder wurde noch nicht initialisiert.</translation>
     </message>
     <message>
-        <location line="-115"/>
+        <location line="-128"/>
         <source>No profile selected</source>
         <translation>Kein Profil ausgewählt</translation>
     </message>
     <message>
-        <location line="-467"/>
+        <location line="-475"/>
         <source>System tray is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>Keine Zwischenablage</translation>
     </message>
@@ -393,7 +398,7 @@ email</translation>
         <translation>Bei Bedarf in Zwischenablage kopieren</translation>
     </message>
     <message>
-        <location line="+419"/>
+        <location line="+420"/>
         <source>No profile selected to delete</source>
         <translation>Kein Profil zum Löschen ausgewählt</translation>
     </message>
@@ -402,11 +407,16 @@ email</translation>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+94"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
         <location line="+203"/>
         <source>Can not edit</source>
         <translation>Ändern nicht möglich</translation>
@@ -552,7 +562,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Ändern</translation>
     </message>
@@ -723,12 +733,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation>OTP-Code</translation>
     </message>
@@ -931,7 +941,7 @@ Neues Passwort-Datei:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -939,7 +949,7 @@ Neues Passwort-Datei:
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">GPG Schlüssel-Paar wird generiert</translation>
     </message>
@@ -1020,7 +1030,7 @@ Neues Passwort-Datei:
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation>Überschreiben erzwingen?</translation>
     </message>
@@ -1092,7 +1102,7 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation>unbrauchbare Schlüssel anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Schlüssel-Liste nicht gefunden</translation>
     </message>
@@ -1107,7 +1117,7 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation type="unfinished">Schlüssel nicht in Keyring gefunden</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>erstellt</translation>
     </message>

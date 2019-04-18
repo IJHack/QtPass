@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QMimeData>
+#include <utility>
 
 QDataStream &
 operator<<(QDataStream &out,
@@ -80,7 +81,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
                                   QString passStore) {
   fs = sourceModel;
-  store = passStore;
+  store = std::move(passStore);
 }
 
 /**
@@ -125,9 +126,8 @@ Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
 
   if (index.isValid()) {
     return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
-  } else {
-    return Qt::ItemIsDropEnabled | defaultFlags;
   }
+  return Qt::ItemIsDropEnabled | defaultFlags;
 }
 
 QStringList StoreModel::mimeTypes() const {
@@ -152,7 +152,7 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
     stream << info;
   }
 
-  QMimeData *mimeData = new QMimeData();
+  auto *mimeData = new QMimeData();
   mimeData->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore",
                     encodedData);
   return mimeData;
@@ -175,8 +175,7 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
-  if (data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore") ==
-      false)
+  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore"))
     return false;
 
   if (column > 0) {
@@ -218,14 +217,14 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   QFileInfo destFileinfo = fs->fileInfo(mapToSource(destIndex));
   QFileInfo srcFileInfo = QFileInfo(info.path);
   QDir qdir;
-  QString cleanedSrc = qdir.cleanPath(srcFileInfo.absoluteFilePath());
-  QString cleanedDest = qdir.cleanPath(destFileinfo.absoluteFilePath());
+  QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
+  QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
   if (info.isDir) {
     QDir srcDir = QDir(info.path);
     // dropped dir onto dir
     if (destFileinfo.isDir()) {
       QDir destDir = QDir(cleanedDest).filePath(srcFileInfo.fileName());
-      QString cleanedDestDir = qdir.cleanPath(destDir.absolutePath());
+      QString cleanedDestDir = QDir::cleanPath(destDir.absolutePath());
       if (action == Qt::MoveAction) {
         QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir);
       } else if (action == Qt::CopyAction) {

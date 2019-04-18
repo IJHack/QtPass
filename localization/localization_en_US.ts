@@ -327,12 +327,17 @@ email</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>No Clipboard</translation>
     </message>
@@ -347,7 +352,7 @@ email</translation>
         <translation>On-demand copy to clipboard</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+419"/>
         <source>No profile selected</source>
         <translation>No profile selected</translation>
     </message>
@@ -357,7 +362,7 @@ email</translation>
         <translation>No profile selected to delete</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+65"/>
         <source>GnuPG not found</source>
         <translation>GnuPG not found</translation>
     </message>
@@ -401,11 +406,16 @@ email</translation>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+94"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
         <location line="+203"/>
         <source>Can not edit</source>
         <translation>Can not edit</translation>
@@ -564,7 +574,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
@@ -759,12 +769,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation>OTP Code</translation>
     </message>
@@ -974,7 +984,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -982,7 +992,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">Generating GPG key pair</translation>
     </message>
@@ -1066,7 +1076,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation>force overwrite?</translation>
     </message>
@@ -1138,7 +1148,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Show unusable keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">Can not get key list</translation>
     </message>
@@ -1153,7 +1163,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="unfinished">Key not found in keyring</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>created</translation>
     </message>

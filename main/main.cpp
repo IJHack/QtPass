@@ -79,13 +79,13 @@ int main(int argc, char *argv[]) {
   // locale = "he_IL";
   // locale = "ar_MA";
   translator.load(QString(":localization/localization_%1.qm").arg(locale));
-  app.installTranslator(&translator);
-  app.setLayoutDirection(QObject::tr("LTR") == "RTL" ? Qt::RightToLeft
-                                                     : Qt::LeftToRight);
+  SingleApplication::installTranslator(&translator);
+  SingleApplication::setLayoutDirection(
+      QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
   MainWindow w(text);
 
-  app.setActiveWindow(&w);
-  app.setWindowIcon(QIcon(":artwork/icon.png"));
+  SingleApplication::setActiveWindow(&w);
+  SingleApplication::setWindowIcon(QIcon(":artwork/icon.png"));
 
 #if SINGLE_APP
   QObject::connect(&app, &SingleApplication::messageAvailable, &w,
@@ -94,5 +94,5 @@ int main(int argc, char *argv[]) {
 
   w.show();
 
-  return app.exec();
+  return SingleApplication::exec();
 }

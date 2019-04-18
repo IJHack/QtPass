@@ -43,6 +43,8 @@ fi
 * On some esotheric systems it might be necessary to create a symbolic
   link `/usr/bin/pinentry` to your pinentry application of choice
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
+* On MacOs `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from homebrew.  
+
 
 ### I have an other issue with gpg
 

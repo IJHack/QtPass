@@ -1,6 +1,7 @@
 #include "imitatepass.h"
 #include "qtpasssettings.h"
 #include <QDirIterator>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -12,7 +13,7 @@ using namespace Enums;
  * @brief ImitatePass::ImitatePass for situaions when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
  */
-ImitatePass::ImitatePass() {}
+ImitatePass::ImitatePass() = default;
 
 static QString pgit(const QString &path) {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl "))
@@ -236,7 +237,7 @@ bool ImitatePass::removeDir(const QString &dirName) {
  * This is stil quite experimental..
  * @param dir
  */
-void ImitatePass::reencryptPath(QString dir) {
+void ImitatePass::reencryptPath(const QString &dir) {
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
   if (QtPassSettings::isAutoPull()) {
@@ -411,7 +412,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
  */
 void ImitatePass::executeGpg(PROCESS id, const QStringList &args, QString input,
                              bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGpgExecutable(), args, input,
+  executeWrapper(id, QtPassSettings::getGpgExecutable(), args, std::move(input),
                  readStdout, readStderr);
 }
 /**
@@ -420,7 +421,7 @@ void ImitatePass::executeGpg(PROCESS id, const QStringList &args, QString input,
  */
 void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
                              bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getGitExecutable(), args, input,
+  executeWrapper(id, QtPassSettings::getGitExecutable(), args, std::move(input),
                  readStdout, readStderr);
 }
 

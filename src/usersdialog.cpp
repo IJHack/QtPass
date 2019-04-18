@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QRegExp>
 #include <QWidget>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -15,7 +16,7 @@
  * @param parent
  */
 UsersDialog::UsersDialog(QString dir, QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(dir) {
+    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(std::move(dir)) {
 
   ui->setupUi(this);
 
@@ -28,9 +29,9 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
   foreach (const UserInfo &sec, secret_keys) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sec.key_id == it->key_id)
-        it->have_secret = true;
+    for (auto &user : users)
+      if (sec.key_id == user.key_id)
+        user.have_secret = true;
   }
 
   QList<UserInfo> selected_users;
@@ -41,9 +42,9 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   if (!recipients.isEmpty())
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
   foreach (const UserInfo &sel, selected_users) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sel.key_id == it->key_id)
-        it->enabled = true;
+    for (auto &user : users)
+      if (sel.key_id == user.key_id)
+        user.enabled = true;
   }
 
   if (count > selected_users.size()) {
@@ -51,7 +52,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     QStringList recipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
     foreach (const QString recipient, recipients) {
-      if (QtPassSettings::getPass()->listKeys(recipient).size() < 1) {
+      if (QtPassSettings::getPass()->listKeys(recipient).empty()) {
         UserInfo i;
         i.enabled = true;
         i.key_id = recipient;
@@ -120,7 +121,7 @@ void UsersDialog::keyPressEvent(QKeyEvent *event) {
 void UsersDialog::itemChange(QListWidgetItem *item) {
   if (!item)
     return;
-  UserInfo *info = item->data(Qt::UserRole).value<UserInfo *>();
+  auto *info = item->data(Qt::UserRole).value<UserInfo *>();
   if (!info)
     return;
   info->enabled = item->checkState() == Qt::Checked;
@@ -137,9 +138,7 @@ void UsersDialog::populateList(const QString &filter) {
   nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
   ui->listWidget->clear();
   if (!m_userList.isEmpty()) {
-    for (QList<UserInfo>::iterator it = m_userList.begin();
-         it != m_userList.end(); ++it) {
-      UserInfo &user(*it);
+    for (auto &user : m_userList) {
       if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
         if (!user.isValid() && !ui->checkBox->isChecked())
           continue;
@@ -155,7 +154,7 @@ void UsersDialog::populateList(const QString &filter) {
         if (user.expiry.toTime_t() > 0)
           userText += " " + tr("expires") + " " +
                       user.expiry.toString(Qt::SystemLocaleShortDate);
-        QListWidgetItem *item = new QListWidgetItem(userText, ui->listWidget);
+        auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));
         if (user.have_secret) {

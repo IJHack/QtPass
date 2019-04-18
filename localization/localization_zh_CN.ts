@@ -327,12 +327,17 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation>不使用剪贴板</translation>
     </message>
@@ -347,7 +352,7 @@ email</source>
         <translation>手动复制到剪贴板</translation>
     </message>
     <message>
-        <location line="+418"/>
+        <location line="+419"/>
         <source>No profile selected</source>
         <translation>未选择用户</translation>
     </message>
@@ -357,7 +362,7 @@ email</source>
         <translation>未选择用户，无法删除</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+65"/>
         <source>GnuPG not found</source>
         <translation>无法找到 GnuPG</translation>
     </message>
@@ -401,11 +406,16 @@ email</source>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+94"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
         <location line="+203"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
@@ -563,7 +573,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+903"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -729,12 +739,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+641"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location line="-617"/>
+        <location line="-625"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -940,7 +950,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation>从左到右</translation>
     </message>
@@ -948,7 +958,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+136"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished">正在生成 GPG 密钥对</translation>
     </message>
@@ -1032,7 +1042,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1104,7 +1114,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>显示不可用密钥</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+24"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
         <translation type="unfinished">无法获取密钥列表</translation>
     </message>
@@ -1119,7 +1129,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="unfinished">所选密钥未找到</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+92"/>
         <source>created</source>
         <translation>创建于</translation>
     </message>

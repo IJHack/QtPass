@@ -14,7 +14,7 @@
 class SingleApplication : public QApplication {
   Q_OBJECT
 public:
-  SingleApplication(int &argc, char *argv[], const QString uniqueKey);
+  SingleApplication(int &argc, char *argv[], QString uniqueKey);
   bool isRunning();
   bool sendMessage(const QString &message);
 

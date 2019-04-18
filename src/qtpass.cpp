@@ -3,12 +3,13 @@
 #include "qtpasssettings.h"
 #include <QApplication>
 #include <QClipboard>
-#include <QPixmap>
 #include <QLabel>
+#include <QPixmap>
 
 #ifndef Q_OS_WIN
 #include <QInputDialog>
 #include <QLineEdit>
+#include <utility>
 #else
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
 #define WIN32_EXTRA_LEAN
@@ -25,6 +26,7 @@ QtPass::QtPass() : clippedText(QString()), freshStart(true) {
   if (!setup()) {
     // no working config so this should quit without config anything
     QApplication::quit();
+    {}
   }
 
   setClipboardTimer();
@@ -275,7 +277,7 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
 
     output.replace(
         QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
+        R"(<a href="\1">\1</a>)");
     output.replace(QRegExp("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
@@ -326,7 +328,7 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 }
 
 void QtPass::passShowHandlerFinished(QString output) {
-  showInTextBrowser(output);
+  showInTextBrowser(std::move(output));
 }
 
 void QtPass::showInTextBrowser(QString output, QString prefix,
@@ -337,7 +339,7 @@ void QtPass::showInTextBrowser(QString output, QString prefix,
 
   output.replace(
       QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-      "<a href=\"\\1\">\\1</a>");
+      R"(<a href="\1">\1</a>)");
   output.replace(QRegExp("\n"), "<br />");
   output = prefix + output + postfix;
 
@@ -411,7 +413,8 @@ void QtPass::copyTextToClipboard(const QString &text) {
  */
 void QtPass::showTextAsQRCode(const QString &text) {
   QProcess qrencode;
-  qrencode.start("/usr/bin/qrencode", QStringList() << "-o-" << "-tPNG");
+  qrencode.start("/usr/bin/qrencode", QStringList() << "-o-"
+                                                    << "-tPNG");
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();
