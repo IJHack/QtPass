@@ -561,7 +561,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -648,7 +648,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-709"/>
+        <location filename="../src/mainwindow.cpp" line="-711"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -665,12 +665,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-625"/>
+        <location line="-627"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -686,12 +686,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-350"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -722,7 +722,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>Profile changed to %1</source>
         <translation type="unfinished"></translation>
     </message>

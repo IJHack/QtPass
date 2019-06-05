@@ -561,7 +561,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation>Ändern</translation>
     </message>
@@ -664,7 +664,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-618"/>
+        <location filename="../src/mainwindow.cpp" line="-620"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Password Store aktualisieren</translation>
@@ -679,7 +679,7 @@ p, li { white-space: pre-wrap; }
         <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen?</translation>
     </message>
     <message>
-        <location line="+242"/>
+        <location line="+244"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -726,18 +726,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Passwort ausgeblendet</translation>
     </message>
     <message>
-        <location line="-563"/>
+        <location line="-565"/>
         <source>Content hidden</source>
         <translation>Inhalt ausgeblendet</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location line="-625"/>
+        <location line="-627"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -784,7 +784,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui"/>
-        <location filename="../src/mainwindow.cpp" line="+458"/>
+        <location filename="../src/mainwindow.cpp" line="+460"/>
         <source>Add folder</source>
         <translation>Ordner hinzufügen</translation>
     </message>
@@ -795,7 +795,7 @@ p, li { white-space: pre-wrap; }
         <translation>Passwort hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-708"/>
+        <location filename="../src/mainwindow.cpp" line="-710"/>
         <source>Welcome to QtPass %1</source>
         <translation>Wilkommen bei QtPass %1</translation>
     </message>
@@ -810,12 +810,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation>Neue Datei</translation>
     </message>
     <message>
-        <location line="-301"/>
+        <location line="-303"/>
         <source>Delete password?</source>
         <translation>Passwort löschen?</translation>
     </message>
@@ -867,7 +867,7 @@ Neues Passwort-Datei:
         <translation type="vanished">GPG Schlüssel-Paar wird generiert</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+127"/>
         <source>Profile changed to %1</source>
         <translation>Profil geändert zu %1</translation>
     </message>

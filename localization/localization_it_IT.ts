@@ -575,7 +575,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
@@ -717,7 +717,7 @@ p, li { white-space: pre-wrap; }
         <translation>Cerca Password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-709"/>
+        <location filename="../src/mainwindow.cpp" line="-711"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvenuto in QtPass %1</translation>
     </message>
@@ -780,12 +780,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-625"/>
+        <location line="-627"/>
         <source>OTP Code</source>
         <translation>Codice OTP</translation>
     </message>
@@ -833,12 +833,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation>Nuovo file</translation>
     </message>
     <message>
-        <location line="-348"/>
+        <location line="-350"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuovo file password:
@@ -898,7 +898,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generando una coppia di chiavi GPG</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+118"/>
         <source>Profile changed to %1</source>
         <translation>Profilo cambiato in %1</translation>
     </message>
