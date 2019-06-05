@@ -119,7 +119,6 @@ Known issues
 * Filtering (searching) breaks the tree/model sometimes
 * Starting without a correctly set password-store folder
   gives weird results in the tree view
-* On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN
 
 Planned features
 ----------------
