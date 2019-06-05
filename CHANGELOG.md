@@ -17,6 +17,7 @@
 
 **Closed issues:**
 
+- Can not add new passwords for some reason [\#454](https://github.com/IJHack/QtPass/issues/454)
 - How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
 - LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
