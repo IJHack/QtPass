@@ -23,7 +23,7 @@ var searchData=
   ['passwordcharsselection',['passwordCharsselection',['../class_settings_constants.html#ae74cc0d8de6094157c45a2a1e6d9de94',1,'SettingsConstants']]],
   ['passwordconfiguration',['PasswordConfiguration',['../struct_password_configuration.html',1,'PasswordConfiguration'],['../struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561',1,'PasswordConfiguration::PasswordConfiguration()']]],
   ['passwordconfiguration_2eh',['passwordconfiguration.h',['../passwordconfiguration_8h.html',1,'']]],
-  ['passworddialog',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6',1,'PasswordDialog::PasswordDialog(const PasswordConfiguration &amp;passConfig, QWidget *parent=0)'],['../class_password_dialog.html#ae306b9347e41c71d5099eb9fe76e35e2',1,'PasswordDialog::PasswordDialog(const QString &amp;file, const bool &amp;isNew, QWidget *parent=0)']]],
+  ['passworddialog',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#a859a78e62204698556204b9e20932010',1,'PasswordDialog::PasswordDialog(const PasswordConfiguration &amp;passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154',1,'PasswordDialog::PasswordDialog(const QString &amp;file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['passworddialog_2ecpp',['passworddialog.cpp',['../passworddialog_8cpp.html',1,'']]],
   ['passworddialog_2eh',['passworddialog.h',['../passworddialog_8h.html',1,'']]],
   ['passwordlength',['passwordLength',['../class_settings_constants.html#aca3257fc3c7273a84f7778a9a423578a',1,'SettingsConstants']]],

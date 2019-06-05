@@ -5,7 +5,7 @@
 <area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="269,55,410,80"/>
 <area shape="rect" id="node5" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="264,104,415,129"/>
 <area shape="rect" id="node6" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="250,268,429,307"/>
-<area shape="rect" id="node8" href="$class_password_dialog.html#affc061c81f0fddf0671e25282460a6e6" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,205,431,244"/>
+<area shape="rect" id="node8" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,205,431,244"/>
 <area shape="rect" id="node9" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="256,5,423,31"/>
 <area shape="rect" id="node10" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title=" " alt="" coords="247,331,432,356"/>
 <area shape="rect" id="node11" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="15,405,189,431"/>
