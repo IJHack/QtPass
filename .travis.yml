@@ -8,8 +8,6 @@ compiler:
 - gcc
 - clang
 env:
-  - TRAVIS_NODE_VERSION="10"
-env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
@@ -30,6 +28,8 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm install 12; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm use 12; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt510base qt510tools qt510svg; fi
