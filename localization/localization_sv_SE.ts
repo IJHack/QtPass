@@ -275,7 +275,7 @@
     </message>
     <message>
         <location/>
-        <source>Templates add extra fields in the password generation dialouge and in the password view.</source>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -316,17 +316,27 @@ email</source>
         <translation>Dölj innehåll</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+454"/>
+        <location filename="../src/configdialog.cpp" line="+588"/>
         <source>GnuPG not found</source>
         <translation>Kan inte hitta GnuPG</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Var vänlig installera GnuPG på ditt system.&lt;br&gt;Installera &lt;strong&gt;gpg&lt;/strong&gt; med din pakethanterare&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ladda ner&lt;/a&gt; från GnuPG.org</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>Create password-store?</source>
         <translation>Skapa utrymme för lösenord?</translation>
     </message>
@@ -336,7 +346,7 @@ email</source>
         <translation>Vill du skapa ett lösenordsutrymme på %1?</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Password store not initialised</source>
         <translation>Lösenordsutrymme ej initliaserat</translation>
     </message>
@@ -346,12 +356,27 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-80"/>
+        <location line="-128"/>
         <source>No profile selected</source>
         <translation>Ingen profil vald</translation>
     </message>
     <message>
-        <location line="-344"/>
+        <location line="-475"/>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>No Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -366,27 +391,37 @@ email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+343"/>
+        <location line="+420"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil vald att tas bort</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui"/>
+        <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location/>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+73"/>
-        <location line="+200"/>
+        <location filename="../src/imitatepass.cpp" line="+95"/>
+        <location line="+203"/>
         <source>Can not edit</source>
         <translation type="unfinished">Kan inte ändra</translation>
     </message>
     <message>
-        <location line="-199"/>
-        <location line="+200"/>
+        <location line="-202"/>
+        <location line="+203"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished">Kunde inte läsa krypteringsnyckel, .gpg-id fil saknas eller är ogiltig.</translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-124"/>
         <source>Cannot update</source>
         <translation type="unfinished">Kan inte uppdatera</translation>
     </message>
@@ -414,7 +449,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     </message>
     <message>
         <location line="+4"/>
-        <location line="+81"/>
+        <location line="+87"/>
         <source>Updating password-store</source>
         <translation type="unfinished">Uppdaterar lösenordsutrymmet</translation>
     </message>
@@ -482,7 +517,7 @@ Expire-Date: 0
         <translation>För avancerade inställningar se manualen för &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG&lt;/a&gt; </translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+126"/>
+        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -515,8 +550,12 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Add</source>
+        <translation type="vanished">Lägg till</translation>
+    </message>
+    <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+1231"/>
+        <location filename="../src/mainwindow.cpp" line="+904"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
@@ -615,53 +654,26 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-784"/>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="-618"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
     </message>
     <message>
-        <location line="+149"/>
+        <location line="+127"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+82"/>
         <source>Clipboard cleared</source>
-        <translation>Urklippet rensat</translation>
+        <translation type="vanished">Urklippet rensat</translation>
     </message>
     <message>
-        <location line="+83"/>
-        <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+96"/>
+        <location line="+186"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -682,68 +694,69 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Vill du verkligen ta bort %%21?</translation>
     </message>
     <message>
-        <location line="+355"/>
+        <location line="+301"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1044"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Kunde inte ansluta till WebDAV:</translation>
+        <translation type="vanished">Kunde inte ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV lösenord</translation>
+        <translation type="vanished">QtPass WebDAV lösenord</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Mata in WebDAV lösenord:</translation>
+        <translation type="vanished">Mata in WebDAV lösenord:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav avslutades oväntat</translation>
+        <translation type="vanished">fusedav avslutades oväntat</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
+        <translation type="vanished">Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
     </message>
     <message>
-        <location line="+302"/>
+        <source>Password hidden</source>
+        <translation type="vanished">Gömt lösenord</translation>
+    </message>
+    <message>
+        <location line="-563"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+804"/>
+        <location line="+649"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
     <message>
-        <location line="-695"/>
         <source>Clipboard not cleared</source>
-        <translation>Urklippet ej rensat</translation>
+        <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="-606"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
     <message>
-        <location line="+629"/>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation type="obsolete">Vill du verkligen ta bort %1? {1%2??}</translation>
+    </message>
+    <message>
         <source>Copied to clipboard</source>
-        <translation>kopieras till Urklipp</translation>
+        <translation type="vanished">kopieras till Urklipp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui"/>
-        <location filename="../src/mainwindow.cpp" line="-107"/>
+        <location filename="../src/mainwindow.cpp" line="+458"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
@@ -759,25 +772,33 @@ p, li { white-space: pre-wrap; }
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-1093"/>
+        <location filename="../src/mainwindow.cpp" line="-708"/>
         <source>Welcome to QtPass %1</source>
         <translation>Välkommen till QtPass %1</translation>
     </message>
     <message>
-        <location line="+672"/>
+        <location line="+318"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>
     <message>
-        <location line="+74"/>
-        <location line="+403"/>
+        <source>Can not edit</source>
+        <translation type="vanished">Kan inte ändra</translation>
+    </message>
+    <message>
+        <location line="+97"/>
+        <location line="+349"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location line="-355"/>
+        <location line="-301"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="vanished">Vill du verkligen ta bort %1?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -785,27 +806,27 @@ p, li { white-space: pre-wrap; }
         <translation>Ta bort mapp?</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <source>Selected password file does not exist, not able to edit</source>
+        <translation type="vanished">Kan inte ändra då vald lösenordsfil inte finns</translation>
+    </message>
+    <message>
         <source>Can not get key list</source>
-        <translation>Kan inte hämta nyckellista</translation>
+        <translation type="vanished">Kan inte hämta nyckellista</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Kunde inte hämta gpgnycklar</translation>
+        <translation type="vanished">Kunde inte hämta gpgnycklar</translation>
     </message>
     <message>
-        <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation>Kunde inte hitta nyckel i nyckelring</translation>
+        <translation type="vanished">Kunde inte hitta nyckel i nyckelring</translation>
     </message>
     <message>
-        <location line="+56"/>
         <source>Generating GPG key pair</source>
-        <translation>Skapar GPG nyckelpar</translation>
+        <translation type="vanished">Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+116"/>
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>
@@ -813,7 +834,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+94"/>
+        <location filename="../src/pass.cpp" line="+102"/>
         <source>No characters chosen</source>
         <translation type="unfinished">Inga valda tecken</translation>
     </message>
@@ -874,15 +895,96 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+83"/>
+        <location filename="../main/main.cpp" line="+84"/>
         <source>LTR</source>
         <translation></translation>
     </message>
 </context>
 <context>
+    <name>QtPass</name>
+    <message>
+        <location filename="../src/qtpass.cpp" line="+140"/>
+        <source>Generating GPG key pair</source>
+        <translation type="unfinished">Skapar GPG nyckelpar</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation type="unfinished">Kunde inte ansluta till WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QtPass WebDAV password</source>
+        <translation type="unfinished">QtPass WebDAV lösenord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation type="unfinished">Mata in WebDAV lösenord:</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation type="unfinished">fusedav avslutades oväntat</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation type="unfinished">Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>QProcess::FailedToStart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Crashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::Timedout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::ReadError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::WriteError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>QProcess::UnknownError</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+127"/>
+        <source>Clipboard cleared</source>
+        <translation type="unfinished">Urklippet rensat</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Clipboard not cleared</source>
+        <translation type="unfinished">Urklippet ej rensat</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished">kopieras till Urklipp</translation>
+    </message>
+</context>
+<context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
+        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -895,7 +997,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+66"/>
+        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
         <translation type="unfinished"></translation>
     </message>
@@ -955,7 +1057,22 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation>Visa oanvändbara nycklar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+78"/>
+        <location filename="../src/usersdialog.cpp" line="+25"/>
+        <source>Can not get key list</source>
+        <translation type="unfinished">Kan inte hämta nyckellista</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="unfinished">Kunde inte hämta gpgnycklar</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Key not found in keyring</source>
+        <translation type="unfinished">Kunde inte hitta nyckel i nyckelring</translation>
+    </message>
+    <message>
+        <location line="+92"/>
         <source>created</source>
         <translation>skapad</translation>
     </message>

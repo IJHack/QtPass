@@ -1,19 +1,25 @@
 #include "trayicon.h"
-#include "debughelper.h"
 #include <QAction>
 #include <QApplication>
 #include <QMainWindow>
 #include <QMenu>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 /**
  * @brief TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on
  * it (currently) only Quits.
  * @param parent
  */
-TrayIcon::TrayIcon(QMainWindow *parent) {
+TrayIcon::TrayIcon(QMainWindow *parent)
+    : showAction(nullptr), hideAction(nullptr), minimizeAction(nullptr),
+      maximizeAction(nullptr), restoreAction(nullptr), quitAction(nullptr),
+      sysTrayIcon(nullptr), trayIconMenu(nullptr), isAllocated(false) {
   parentwin = parent;
 
-  if (QSystemTrayIcon::isSystemTrayAvailable() == true) {
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
     createActions();
     createTrayIcon();
 
@@ -22,25 +28,16 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
 
     sysTrayIcon->show();
 
-    QObject::connect(sysTrayIcon,
-                     SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this,
-                     SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    QObject::connect(sysTrayIcon, &QSystemTrayIcon::activated, this,
+                     &TrayIcon::iconActivated);
 
     isAllocated = true;
-  } else {
-    dbg() << "No tray icon for this OS possibly also not show options?";
-
-    isAllocated = false;
-
-    showAction = nullptr;
-    hideAction = nullptr;
-    minimizeAction = nullptr;
-    maximizeAction = nullptr;
-    restoreAction = nullptr;
-    quitAction = nullptr;
-    sysTrayIcon = nullptr;
-    trayIconMenu = nullptr;
   }
+#ifdef QT_DEBUG
+  else {
+    dbg() << "No tray icon for this OS possibly also not show options?";
+  }
+#endif
 }
 
 /**
@@ -48,7 +45,7 @@ TrayIcon::TrayIcon(QMainWindow *parent) {
  * @param visible
  */
 void TrayIcon::setVisible(bool visible) {
-  if (visible == true)
+  if (visible)
     parentwin->show();
   else
     parentwin->hide();
@@ -64,21 +61,21 @@ bool TrayIcon::getIsAllocated() { return isAllocated; }
  */
 void TrayIcon::createActions() {
   showAction = new QAction(tr("&Show"), this);
-  connect(showAction, SIGNAL(triggered()), parentwin, SLOT(show()));
+  connect(showAction, &QAction::triggered, parentwin, &QWidget::show);
   hideAction = new QAction(tr("&Hide"), this);
-  connect(hideAction, SIGNAL(triggered()), parentwin, SLOT(hide()));
+  connect(hideAction, &QAction::triggered, parentwin, &QWidget::hide);
 
   minimizeAction = new QAction(tr("Mi&nimize"), this);
-  connect(minimizeAction, SIGNAL(triggered()), parentwin,
-          SLOT(showMinimized()));
+  connect(minimizeAction, &QAction::triggered, parentwin,
+          &QWidget::showMinimized);
   maximizeAction = new QAction(tr("Ma&ximize"), this);
-  connect(maximizeAction, SIGNAL(triggered()), parentwin,
-          SLOT(showMaximized()));
+  connect(maximizeAction, &QAction::triggered, parentwin,
+          &QWidget::showMaximized);
   restoreAction = new QAction(tr("&Restore"), this);
-  connect(restoreAction, SIGNAL(triggered()), parentwin, SLOT(showNormal()));
+  connect(restoreAction, &QAction::triggered, parentwin, &QWidget::showNormal);
 
   quitAction = new QAction(tr("&Quit"), this);
-  connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+  connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 }
 
 /**
@@ -102,7 +99,7 @@ void TrayIcon::createTrayIcon() {
  * @brief TrayIcon::showHideParent toggle app visibility.
  */
 void TrayIcon::showHideParent() {
-  if (parentwin->isVisible() == true)
+  if (parentwin->isVisible())
     parentwin->hide();
   else
     parentwin->show();
@@ -121,7 +118,8 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   case QSystemTrayIcon::MiddleClick:
     showMessage("test", "test msg", 1000);
     break;
-  default: {};
+  default: {
+  };
   }
 }
 
@@ -131,6 +129,6 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
  * @param msg
  * @param time
  */
-void TrayIcon::showMessage(QString title, QString msg, int time) {
+void TrayIcon::showMessage(const QString &title, const QString &msg, int time) {
   sysTrayIcon->showMessage(title, msg, QSystemTrayIcon::Information, time);
 }

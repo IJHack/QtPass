@@ -68,7 +68,7 @@ Windows
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
-On Mac OS X this currently seems to only work with MacGPG2 from gpgtools.
+On Mac OS X this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
 
 On most unix systems all you need is:
 ```
@@ -119,7 +119,6 @@ Known issues
 * Filtering (searching) breaks the tree/model sometimes
 * Starting without a correctly set password-store folder
   gives weird results in the tree view
-* On Mac OS X only the gpgtools MacGPG2 version works with passphrase or PIN
 
 Planned features
 ----------------

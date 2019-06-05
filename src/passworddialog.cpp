@@ -1,12 +1,16 @@
 #include "passworddialog.h"
-#include "debughelper.h"
 #include "filecontent.h"
+#include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
 
 #include <QLabel>
 #include <QLineEdit>
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
@@ -23,6 +27,9 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
   ui->setupUi(this);
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
+
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+          &PasswordDialog::setPass);
 }
 
 /**
@@ -58,7 +65,7 @@ PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
 }
 
 /**
- * @brief PasswordDialog::~PasswordDialog basic destructor.
+ * @brief Pass{}{}wordDialog::~PasswordDialog basic destructor.
  */
 PasswordDialog::~PasswordDialog() { delete ui; }
 
@@ -127,7 +134,7 @@ void PasswordDialog::setPassword(QString password) {
   // show remaining values (if there are)
   otherLines.clear();
   for (const NamedValue &nv : namedValues) {
-    QLineEdit *line = new QLineEdit();
+    auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);
     ui->formLayout->addRow(new QLabel(nv.name), line);
@@ -172,7 +179,7 @@ void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
     foreach (QString field, m_fields) {
       if (field.isEmpty())
         continue;
-      QLineEdit *line = new QLineEdit();
+      auto *line = new QLineEdit();
       line->setObjectName(field);
       ui->formLayout->addRow(new QLabel(field), line);
       setTabOrder(previous, line);

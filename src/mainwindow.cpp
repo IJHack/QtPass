@@ -1,34 +1,32 @@
 #include "mainwindow.h"
+
+#ifdef QT_DEBUG
 #include "debughelper.h"
-#include <QClipboard>
-#include <QCloseEvent>
-#include <QDesktopServices>
-#include <QFileInfo>
-#include <QInputDialog>
-#include <QLabel>
-#include <QMenu>
-#include <QMessageBox>
-#include <QQueue>
-#include <QShortcut>
-#include <QTextCodec>
-#ifdef Q_OS_WIN
-#define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
-#define WIN32_EXTRA_LEAN
-#include <windows.h>
-#include <winnetwk.h>
-#undef DELETE
 #endif
+
 #include "configdialog.h"
 #include "filecontent.h"
 #include "keygendialog.h"
 #include "passworddialog.h"
+#include "qpushbuttonasqrcode.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
 #include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include <QCloseEvent>
+#include <QDesktopServices>
+#include <QDialog>
+#include <QFileInfo>
+#include <QInputDialog>
+#include <QLabel>
+#include <QMenu>
+#include <QMessageBox>
+#include <QShortcut>
+#include <QTimer>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -37,9 +35,8 @@
  * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), fusedav(this),
-      clippedText(QString()), freshStart(true), keygen(NULL),
-      startupPhase(true), tray(NULL) {
+    : QMainWindow(parent), ui(new Ui::MainWindow), keygen(nullptr),
+      tray(nullptr) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
@@ -47,11 +44,8 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 #endif
   ui->setupUi(this);
 
-  // i think this should be moved out of MainWindow (in main.cpp as example)
-  if (!checkConfig()) {
-    // no working config so this should quit without config anything
-    QApplication::quit();
-  }
+  m_qtPass = new QtPass();
+  m_qtPass->setMainWindow(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
@@ -59,21 +53,59 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
                 SLOT(copyPasswordFromTreeview()));
 
-  //    TODO(bezet): this should be reconnected dynamically when pass changes
-  connectPassSignalHandlers(QtPassSettings::getRealPass());
-  connectPassSignalHandlers(QtPassSettings::getImitatePass());
+  model.setNameFilters(QStringList() << "*.gpg");
+  model.setNameFilterDisables(false);
 
-  //    only for ipass
-  connect(QtPassSettings::getImitatePass(), SIGNAL(startReencryptPath()), this,
-          SLOT(startReencryptPath()));
-  connect(QtPassSettings::getImitatePass(), SIGNAL(endReencryptPath()), this,
-          SLOT(endReencryptPath()));
+  /*
+   * I added this to solve Windows bug but now on GNU/Linux the main folder,
+   * if hidden, disappear
+   *
+   * model.setFilter(QDir::NoDot);
+   */
 
+  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
+
+  proxyModel.setSourceModel(&model);
+  proxyModel.setModelAndStore(&model, passStore);
+  // proxyModel.sort(0, Qt::AscendingOrder);
+  selectionModel.reset(new QItemSelectionModel(&proxyModel));
+  model.fetchMore(model.setRootPath(passStore));
+  // model.sort(0, Qt::AscendingOrder);
+
+  ui->treeView->setModel(&proxyModel);
+  ui->treeView->setRootIndex(
+      proxyModel.mapFromSource(model.setRootPath(passStore)));
+  ui->treeView->setColumnHidden(1, true);
+  ui->treeView->setColumnHidden(2, true);
+  ui->treeView->setColumnHidden(3, true);
+  ui->treeView->setHeaderHidden(true);
+  ui->treeView->setIndentation(15);
+  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+  ui->treeView->sortByColumn(0, Qt::AscendingOrder);
+  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showContextMenu);
+  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
+          &MainWindow::deselect);
+
+  ui->textBrowser->setOpenExternalLinks(true);
+  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showBrowserContextMenu);
+
+  updateProfileBox();
+
+  QtPassSettings::getPass()->updateEnv();
+  clearPanelTimer.setInterval(1000 *
+                              QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
-  clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
-          SLOT(clearClipboard()));
+
+  searchTimer.setInterval(350);
+  searchTimer.setSingleShot(true);
+
+  connect(&searchTimer, &QTimer::timeout, this, &MainWindow::onTimeoutSearch);
 
   initToolBarButtons();
   initStatusBar();
@@ -82,29 +114,55 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->lineEdit->setClearButtonEnabled(true);
 #endif
 
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 
   qsrand(static_cast<uint>(QTime::currentTime().msec()));
-
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
+}
+
+MainWindow::~MainWindow() { delete m_qtPass; }
+
+/**
+ * @brief MainWindow::focusInput selects any text (if applicable) in the search
+ * box and sets focus to it. Allows for easy searching, called at application
+ * start and when receiving empty message in MainWindow::messageAvailable when
+ * compiled with SINGLE_APP=1 (default).
+ */
+void MainWindow::focusInput() {
+  ui->lineEdit->selectAll();
+  ui->lineEdit->setFocus();
+}
+
+/**
+ * @brief MainWindow::changeEvent sets focus to the search box
+ * @param event
+ */
+void MainWindow::changeEvent(QEvent *event) {
+  QWidget::changeEvent(event);
+  if (event->type() == QEvent::ActivationChange) {
+    if (isActiveWindow()) {
+      focusInput();
+    }
+  }
 }
 
 /**
  * @brief MainWindow::initToolBarButtons init main ToolBar and connect actions
  */
 void MainWindow::initToolBarButtons() {
-  connect(ui->actionAddPassword, SIGNAL(triggered()), this,
-          SLOT(addPassword()));
-  connect(ui->actionAddFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-  connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(onEdit()));
-  connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(onDelete()));
-  connect(ui->actionPush, SIGNAL(triggered()), this, SLOT(onPush()));
-  connect(ui->actionUpdate, SIGNAL(triggered()), this, SLOT(onUpdate()));
-  connect(ui->actionUsers, SIGNAL(triggered()), this, SLOT(onUsers()));
-  connect(ui->actionConfig, SIGNAL(triggered()), this, SLOT(onConfig()));
-  connect(ui->actionOtp, SIGNAL(triggered()), this, SLOT(onOtp()));
+  connect(ui->actionAddPassword, &QAction::triggered, this,
+          &MainWindow::addPassword);
+  connect(ui->actionAddFolder, &QAction::triggered, this,
+          &MainWindow::addFolder);
+  connect(ui->actionEdit, &QAction::triggered, this, &MainWindow::onEdit);
+  connect(ui->actionDelete, &QAction::triggered, this, &MainWindow::onDelete);
+  connect(ui->actionPush, &QAction::triggered, this, &MainWindow::onPush);
+  connect(ui->actionUpdate, &QAction::triggered, this, &MainWindow::onUpdate);
+  connect(ui->actionUsers, &QAction::triggered, this, &MainWindow::onUsers);
+  connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
+  connect(ui->actionOtp, &QAction::triggered, this, &MainWindow::onOtp);
 
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
@@ -137,253 +195,33 @@ void MainWindow::initStatusBar() {
   statusBar()->addPermanentWidget(logoApp);
 }
 
-/**
- * @brief MainWindow::focusInput selects any text (if applicable) in the search
- * box and sets focus to it. Allows for easy searching, called at application
- * start and when receiving empty message in MainWindow::messageAvailable when
- * compiled with SINGLE_APP=1 (default).
- */
-void MainWindow::focusInput() {
-  ui->lineEdit->selectAll();
-  ui->lineEdit->setFocus();
+const QModelIndex MainWindow::getCurrentTreeViewIndex() {
+  return ui->treeView->currentIndex();
 }
 
-/**
- * @brief MainWindow::~MainWindow destroy!
- */
-MainWindow::~MainWindow() {
-#ifdef Q_OS_WIN
-  if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
-                           0, 1);
-#else
-  if (fusedav.state() == QProcess::Running) {
-    fusedav.terminate();
-    fusedav.waitForFinished(2000);
-  }
-#endif
+void MainWindow::cleanKeygenDialog() {
+  this->keygen->close();
+  this->keygen = nullptr;
 }
 
-/**
- * @brief MainWindow::changeEvent sets focus to the search box
- * @param event
- */
-void MainWindow::changeEvent(QEvent *event) {
-  QWidget::changeEvent(event);
-  if (event->type() == QEvent::ActivationChange) {
-    if (this->isActiveWindow()) {
-      focusInput();
-    }
-  }
+void MainWindow::setTextTextBrowser(const QString &text) {
+  ui->textBrowser->setText(text);
 }
 
-/**
- * @brief MainWindow::connectPassSignalHandlers this method connects Pass
- *                                              signals to approprite MainWindow
- *                                              slots
- *
- * @param pass        pointer to pass instance
- */
-void MainWindow::connectPassSignalHandlers(Pass *pass) {
-  //    TODO(bezet): this is never emitted(should be), also naming(see
-  //    critical())
-  connect(pass, &Pass::error, this, &MainWindow::processError);
-  connect(pass, &Pass::startingExecuteWrapper, this,
-          &MainWindow::executeWrapperStarted);
-  connect(pass, &Pass::critical, this, &MainWindow::critical);
-  connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
-  connect(pass, &Pass::processErrorExit, this, &MainWindow::processErrorExit);
-
-  connect(pass, &Pass::finishedGitInit, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedGitPull, this, &MainWindow::processFinished);
-  connect(pass, &Pass::finishedGitPush, this, &MainWindow::processFinished);
-  connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
-  connect(pass, &Pass::finishedOtpGenerate, this, &MainWindow::passOtpHandler);
-  connect(pass, &Pass::finishedInsert, this, &MainWindow::finishedInsert);
-  connect(pass, &Pass::finishedRemove, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedInit, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedMove, this, &MainWindow::passStoreChanged);
-  connect(pass, &Pass::finishedCopy, this, &MainWindow::passStoreChanged);
-
-  connect(pass, &Pass::finishedGenerateGPGKeys, this,
-          &MainWindow::keyGenerationComplete);
-}
-
-/**
- * @brief MainWindow::mountWebDav is some scary voodoo magic
- */
-void MainWindow::mountWebDav() {
-#ifdef Q_OS_WIN
-  char dst[20] = {0};
-  NETRESOURCEA netres;
-  memset(&netres, 0, sizeof(netres));
-  netres.dwType = RESOURCETYPE_DISK;
-  netres.lpLocalName = 0;
-  netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
-  DWORD size = sizeof(dst);
-  DWORD r = WNetUseConnectionA(
-      reinterpret_cast<HWND>(effectiveWinId()), &netres,
-      QtPassSettings::getWebDavPassword().toUtf8().constData(),
-      QtPassSettings::getWebDavUser().toUtf8().constData(),
-      CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
-      0);
-  if (r == NO_ERROR) {
-    QtPassSettings::setPassStore(dst);
-  } else {
-    char message[256] = {0};
-    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
-                   sizeof(message), 0);
+void MainWindow::flashText(const QString &text, const bool isError,
+                           const bool isHtml) {
+  if (isError)
     ui->textBrowser->setTextColor(Qt::red);
-    ui->textBrowser->setText(tr("Failed to connect WebDAV:\n") + message +
-                             " (0x" + QString::number(r, 16) + ")");
+
+  if (isHtml) {
+    QString _text = text;
+    if (!ui->textBrowser->toPlainText().isEmpty())
+      _text = ui->textBrowser->toHtml() + _text;
+    ui->textBrowser->setHtml(_text);
+  } else {
+    ui->textBrowser->setText(text);
     ui->textBrowser->setTextColor(Qt::black);
   }
-#else
-  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
-                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
-                QtPassSettings::getPassStore() + '"');
-  fusedav.waitForStarted();
-  if (fusedav.state() == QProcess::Running) {
-    QString pwd = QtPassSettings::getWebDavPassword();
-    bool ok = true;
-    if (pwd.isEmpty()) {
-      pwd = QInputDialog::getText(this, tr("QtPass WebDAV password"),
-                                  tr("Enter password to connect to WebDAV:"),
-                                  QLineEdit::Password, "", &ok);
-    }
-    if (ok && !pwd.isEmpty()) {
-      fusedav.write(pwd.toUtf8() + '\n');
-      fusedav.closeWriteChannel();
-      fusedav.waitForFinished(2000);
-    } else {
-      fusedav.terminate();
-    }
-  }
-  QString error = fusedav.readAllStandardError();
-  int prompt = error.indexOf("Password:");
-  if (prompt >= 0)
-    error.remove(0, prompt + 10);
-  if (fusedav.state() != QProcess::Running)
-    error = tr("fusedav exited unexpectedly\n") + error;
-  if (error.size() > 0) {
-    ui->textBrowser->setTextColor(Qt::red);
-    ui->textBrowser->setText(
-        tr("Failed to start fusedav to connect WebDAV:\n") + error);
-    ui->textBrowser->setTextColor(Qt::black);
-  }
-#endif
-}
-
-/**
- * @brief MainWindow::checkConfig make sure we are ready to go as soon as
- * possible
- */
-bool MainWindow::checkConfig() {
-  QString version = QtPassSettings::getVersion();
-
-  // if (freshStart) {
-  restoreWindow();
-  //}
-
-  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
-  QtPassSettings::setPassStore(passStore);
-
-  QtPassSettings::initExecutables();
-
-  if (QtPassSettings::isAlwaysOnTop()) {
-    Qt::WindowFlags flags = windowFlags();
-    this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-    this->show();
-  }
-
-  if (QtPassSettings::isUseTrayIcon() && tray == NULL) {
-    initTrayIcon();
-    if (freshStart && QtPassSettings::isStartMinimized()) {
-      // since we are still in constructor, can't directly hide
-      QTimer::singleShot(10, this, SLOT(hide()));
-    }
-  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
-    destroyTrayIcon();
-  }*/
-
-  // dbg()<< version;
-
-  // Config updates
-  if (version.isEmpty()) {
-    dbg() << "assuming fresh install";
-    if (QtPassSettings::getAutoclearSeconds() < 5)
-      QtPassSettings::setAutoclearSeconds(10);
-    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
-      QtPassSettings::setAutoclearPanelSeconds(10);
-    if (!QtPassSettings::getPwgenExecutable().isEmpty())
-      QtPassSettings::setUsePwgen(true);
-    else
-      QtPassSettings::setUsePwgen(false);
-    QtPassSettings::setPassTemplate("login\nurl");
-  } else {
-    // QStringList ver = version.split(".");
-    // dbg()<< ver;
-    // if (ver[0] == "0" && ver[1] == "8") {
-    //// upgrade to 0.9
-    // }
-    if (QtPassSettings::getPassTemplate().isEmpty())
-      QtPassSettings::setPassTemplate("login\nurl");
-  }
-
-  QtPassSettings::setVersion(VERSION);
-
-  if (Util::checkConfig()) {
-    config();
-    if (freshStart && Util::checkConfig())
-      return false;
-  }
-
-  freshStart = false;
-
-  // TODO(annejan): this needs to be before we try to access the store,
-  // but it would be better to do it after the Window is shown,
-  // as the long delay it can cause is irritating otherwise.
-  if (QtPassSettings::isUseWebDav())
-    mountWebDav();
-
-  model.setNameFilters(QStringList() << "*.gpg");
-  model.setNameFilterDisables(false);
-
-  proxyModel.setSourceModel(&model);
-  proxyModel.setModelAndStore(&model, passStore);
-  selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(passStore));
-  model.sort(0, Qt::AscendingOrder);
-
-  ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
-  ui->treeView->setColumnHidden(1, true);
-  ui->treeView->setColumnHidden(2, true);
-  ui->treeView->setColumnHidden(3, true);
-  ui->treeView->setHeaderHidden(true);
-  ui->treeView->setIndentation(15);
-  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  connect(ui->treeView, SIGNAL(customContextMenuRequested(const QPoint &)),
-          this, SLOT(showContextMenu(const QPoint &)));
-  connect(ui->treeView, SIGNAL(emptyClicked()), this, SLOT(deselect()));
-  ui->textBrowser->setOpenExternalLinks(true);
-  ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(ui->textBrowser, SIGNAL(customContextMenuRequested(const QPoint &)),
-          this, SLOT(showBrowserContextMenu(const QPoint &)));
-
-  updateProfileBox();
-  QtPassSettings::getPass()->updateEnv();
-  clearPanelTimer.setInterval(1000 *
-                              QtPassSettings::getAutoclearPanelSeconds());
-  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
-  updateGitButtonVisibility();
-  updateOtpButtonVisibility();
-
-  startupPhase = false;
-  return true;
 }
 
 /**
@@ -394,11 +232,12 @@ void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
   // Automatically default to pass if it's available
-  if (freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
+  if (m_qtPass->isFreshStart() &&
+      QFile(QtPassSettings::getPassExecutable()).exists()) {
     QtPassSettings::setUsePass(true);
   }
 
-  if (startupPhase)
+  if (m_qtPass->isFreshStart())
     d->wizard(); // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
@@ -414,23 +253,23 @@ void MainWindow::config() {
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
           model.setRootPath(QtPassSettings::getPassStore())));
 
-      if (freshStart && Util::checkConfig())
+      if (m_qtPass->isFreshStart() && Util::checkConfig())
         config();
       QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(1000 *
                                   QtPassSettings::getAutoclearPanelSeconds());
-      clearClipboardTimer.setInterval(1000 *
-                                      QtPassSettings::getAutoclearSeconds());
+      m_qtPass->setClipboardTimer();
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
-      if (QtPassSettings::isUseTrayIcon() && tray == NULL)
+      if (QtPassSettings::isUseTrayIcon() && tray == nullptr)
         initTrayIcon();
-      else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+      else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
         destroyTrayIcon();
       }
     }
-    freshStart = false;
+
+    m_qtPass->setFreshStart(false);
   }
 }
 
@@ -483,7 +322,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   //    TODO(bezet): "Could not decrypt";
-  clippedText = "";
+  m_qtPass->clearClippedText();
   QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
   if (!file.isEmpty() && !cleared) {
@@ -513,38 +352,22 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
 void MainWindow::deselect() {
-  currentDir = "/";
-  clearClipboard();
+  currentDir = "";
+  m_qtPass->clearClipboard();
+  ui->treeView->clearSelection();
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
+  ui->actionDelete->setEnabled(false);
+  ui->actionEdit->setEnabled(false);
   clearPanel(false);
-}
-
-/**
- * @brief MainWindow::executePassGitInit git init wrapper
- */
-void MainWindow::executePassGitInit() {
-  dbg() << "Pass git init called";
-  QtPassSettings::getPass()->GitInit();
 }
 
 void MainWindow::executeWrapperStarted() {
   clearTemplateWidgets();
   ui->textBrowser->clear();
-  enableUiElements(false);
+  setUiElementsEnabled(false);
   clearPanelTimer.stop();
-}
-
-void MainWindow::keyGenerationComplete(const QString &p_output,
-                                       const QString &p_errout) {
-  // qDebug() << p_output;
-  // qDebug() << p_errout;
-  if (0 != keygen) {
-    qDebug() << "Keygen Done";
-    keygen->close();
-    keygen = 0;
-    // TODO(annejan) some sanity checking ?
-  }
-  processFinished(p_output, p_errout);
 }
 
 void MainWindow::passShowHandler(const QString &p_output) {
@@ -557,13 +380,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
   QString output = p_output;
   QString password = fileContent.getPassword();
 
-  // handle clipboard
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-      !p_output.isEmpty()) {
-    clippedText = password;
-    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
-      copyTextToClipboard(password);
-  }
+  // set clipped text
+  m_qtPass->setClippedText(password, p_output);
 
   // first clear the current view:
   clearTemplateWidgets();
@@ -593,99 +411,18 @@ void MainWindow::passShowHandler(const QString &p_output) {
     clearPanelTimer.start();
   }
 
-  DisplayInTextBrowser(output);
-  enableUiElements(true);
+  setUiElementsEnabled(true);
 }
 
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
     addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
-    copyTextToClipboard(p_output);
+    m_qtPass->copyTextToClipboard(p_output);
   }
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
   }
-  enableUiElements(true);
-}
-
-void MainWindow::passStoreChanged(const QString &p_out, const QString &p_err) {
-  processFinished(p_out, p_err);
-  doGitPush();
-}
-
-void MainWindow::doGitPush() {
-  if (QtPassSettings::isAutoPush())
-    onPush();
-}
-
-void MainWindow::finishedInsert(const QString &p_output,
-                                const QString &p_errout) {
-  processFinished(p_output, p_errout);
-  doGitPush();
-  on_treeView_clicked(ui->treeView->currentIndex());
-}
-
-void MainWindow::DisplayInTextBrowser(QString output, QString prefix,
-                                      QString postfix) {
-  output.replace(QRegExp("<"), "&lt;");
-  output.replace(QRegExp(">"), "&gt;");
-  output.replace(QRegExp(" "), "&nbsp;");
-
-  output.replace(
-      QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-      "<a href=\"\\1\">\\1</a>");
-  output.replace(QRegExp("\n"), "<br />");
-  output = prefix + output + postfix;
-  if (!ui->textBrowser->toPlainText().isEmpty())
-    output = ui->textBrowser->toHtml() + output;
-  ui->textBrowser->setHtml(output);
-}
-
-void MainWindow::processErrorExit(int exitCode, const QString &p_error) {
-  if (!p_error.isEmpty()) {
-    QString output;
-    QString error = p_error;
-    error.replace(QRegExp("<"), "&lt;");
-    error.replace(QRegExp(">"), "&gt;");
-    error.replace(QRegExp(" "), "&nbsp;");
-    if (exitCode == 0) {
-      //  https://github.com/IJHack/qtpass/issues/111
-      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
-    } else {
-      output = "<span style=\"color: red;\">" + error + "</span><br />";
-    }
-
-    output.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
-    output.replace(QRegExp("\n"), "<br />");
-    if (!ui->textBrowser->toPlainText().isEmpty())
-      output = ui->textBrowser->toHtml() + output;
-    ui->textBrowser->setHtml(output);
-  }
-  enableUiElements(true);
-}
-
-/**
- * @brief MainWindow::clearClipboard remove clipboard contents.
- */
-void MainWindow::clearClipboard() {
-  QClipboard *clipboard = QApplication::clipboard();
-  bool cleared = false;
-  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  if (cleared) {
-    ui->statusBar->showMessage(tr("Clipboard cleared"), 2000);
-  } else {
-    ui->statusBar->showMessage(tr("Clipboard not cleared"), 2000);
-  }
-  this->clippedText.clear();
+  setUiElementsEnabled(true);
 }
 
 /**
@@ -706,27 +443,11 @@ void MainWindow::clearPanel(bool notify) {
 }
 
 /**
- * @brief MainWindow::processFinished background process has finished
- * @param exitCode
- * @param exitStatus
- * @param output    stdout from a process
- * @param errout    stderr from a process
- */
-void MainWindow::processFinished(const QString &p_output,
-                                 const QString &p_errout) {
-  DisplayInTextBrowser(p_output);
-  //    Sometimes there is error output even with 0 exit code, which is
-  //    assumed in this function
-  processErrorExit(0, p_errout);
-  enableUiElements(true);
-}
-
-/**
- * @brief MainWindow::enableUiElements enable or disable the relevant UI
+ * @brief MainWindow::setUiElementsEnabled enable or disable the relevant UI
  * elements
  * @param state
  */
-void MainWindow::enableUiElements(bool state) {
+void MainWindow::setUiElementsEnabled(bool state) {
   ui->treeView->setEnabled(state);
   ui->lineEdit->setEnabled(state);
   ui->lineEdit->installEventFilter(this);
@@ -754,38 +475,22 @@ void MainWindow::restoreWindow() {
   if (QtPassSettings::isMaximized(isMaximized())) {
     showMaximized();
   }
-}
 
-/**
- * @brief MainWindow::processError something went wrong
- * @param error
- */
-void MainWindow::processError(QProcess::ProcessError error) {
-  QString errorString;
-  switch (error) {
-  case QProcess::FailedToStart:
-    errorString = tr("QProcess::FailedToStart");
-    break;
-  case QProcess::Crashed:
-    errorString = tr("QProcess::Crashed");
-    break;
-  case QProcess::Timedout:
-    errorString = tr("QProcess::Timedout");
-    break;
-  case QProcess::ReadError:
-    errorString = tr("QProcess::ReadError");
-    break;
-  case QProcess::WriteError:
-    errorString = tr("QProcess::WriteError");
-    break;
-  case QProcess::UnknownError:
-    errorString = tr("QProcess::UnknownError");
-    break;
+  if (QtPassSettings::isAlwaysOnTop()) {
+    Qt::WindowFlags flags = windowFlags();
+    setWindowFlags(flags | Qt::WindowStaysOnTopHint);
+    show();
   }
-  ui->textBrowser->setTextColor(Qt::red);
-  ui->textBrowser->setText(errorString);
-  ui->textBrowser->setTextColor(Qt::black);
-  enableUiElements(true);
+
+  if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
+    initTrayIcon();
+    if (m_qtPass->isFreshStart() && QtPassSettings::isStartMinimized()) {
+      // since we are still in constructor, can't directly hide
+      QTimer::singleShot(10, this, SLOT(hide()));
+    }
+  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+    destroyTrayIcon();
+  }*/
 }
 
 /**
@@ -799,15 +504,34 @@ void MainWindow::onConfig() { config(); }
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
-  ui->treeView->expandAll();
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
-  QString query = arg1;
+  ui->treeView->expandAll();
+
+  searchTimer.start();
+}
+
+/**
+ * @brief MainWindow::onTimeoutSearch Fired when search is finished or too much
+ * time from two keypresses is elapsed
+ */
+void MainWindow::onTimeoutSearch() {
+  QString query = ui->lineEdit->text();
+
+  if (query.isEmpty())
+    ui->treeView->collapseAll();
+
   query.replace(QRegExp(" "), ".*");
   QRegExp regExp(query, Qt::CaseInsensitive);
   proxyModel.setFilterRegExp(regExp);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
-  selectFirstFile();
+
+  if (proxyModel.rowCount() > 0 && !query.isEmpty()) {
+    selectFirstFile();
+  } else {
+    ui->actionEdit->setEnabled(false);
+    ui->actionDelete->setEnabled(false);
+  }
 }
 
 /**
@@ -816,9 +540,14 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
-  dbg() << "on_lineEdit_returnPressed";
-  selectFirstFile();
-  on_treeView_clicked(ui->treeView->currentIndex());
+#ifdef QT_DEBUG
+  dbg() << "on_lineEdit_returnPressed" << proxyModel.rowCount();
+#endif
+
+  if (proxyModel.rowCount() > 0) {
+    selectFirstFile();
+    on_treeView_clicked(ui->treeView->currentIndex());
+  }
 }
 
 /**
@@ -857,11 +586,9 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  */
 void MainWindow::setPassword(QString file, bool isNew) {
   PasswordDialog d(file, isNew, this);
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, &d,
-          &PasswordDialog::setPass);
 
   if (!d.exec()) {
-    this->ui->treeView->setFocus();
+    ui->treeView->setFocus();
   }
 }
 
@@ -905,7 +632,7 @@ void MainWindow::onDelete() {
 
   QString dirMessage = tr(" and the whole content?");
   if (isDir) {
-    QDirIterator it(model.rootPath() + "/" + file,
+    QDirIterator it(model.rootPath() + QDir::separator() + file,
                     QDirIterator::Subdirectories);
     bool okDir = true;
     while (it.hasNext() && okDir) {
@@ -967,56 +694,13 @@ void MainWindow::userDialog(QString dir) {
  * gets lists and opens UserDialog.
  */
 void MainWindow::onUsers() {
-  QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
-  if (users.size() == 0) {
-    QMessageBox::critical(this, tr("Can not get key list"),
-                          tr("Unable to get list of available gpg keys"));
-    return;
-  }
-  QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
-  foreach (const UserInfo &sec, secret_keys) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sec.key_id == it->key_id)
-        it->have_secret = true;
-  }
-  QList<UserInfo> selected_users;
   QString dir =
       currentDir.isEmpty()
           ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
           : currentDir;
-  int count = 0;
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      dir.isEmpty() ? "" : dir, " ", &count);
-  if (!recipients.isEmpty())
-    selected_users = QtPassSettings::getPass()->listKeys(recipients);
-  foreach (const UserInfo &sel, selected_users) {
-    for (QList<UserInfo>::iterator it = users.begin(); it != users.end(); ++it)
-      if (sel.key_id == it->key_id)
-        it->enabled = true;
-  }
-  if (count > selected_users.size()) {
-    // Some keys seem missing from keyring, add them separately
-    QStringList recipients =
-        QtPassSettings::getPass()->getRecipientList(dir.isEmpty() ? "" : dir);
-    foreach (const QString recipient, recipients) {
-      if (QtPassSettings::getPass()->listKeys(recipient).size() < 1) {
-        UserInfo i;
-        i.enabled = true;
-        i.key_id = recipient;
-        i.name = " ?? " + tr("Key not found in keyring");
-        users.append(i);
-      }
-    }
-  }
-  UsersDialog d(this);
-  d.setUsers(&users);
-  if (!d.exec()) {
-    d.setUsers(NULL);
-    return;
-  }
-  d.setUsers(NULL);
 
-  QtPassSettings::getPass()->Init(dir, users);
+  UsersDialog d(dir, this);
+  d.exec();
 }
 
 /**
@@ -1036,31 +720,13 @@ void MainWindow::messageAvailable(QString message) {
 }
 
 /**
- * @brief MainWindow::getSecretKeys get list of secret/private keys
- * @return QStringList keys
- */
-QStringList MainWindow::getSecretKeys() {
-  QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
-  QStringList names;
-
-  if (keys.size() == 0)
-    return names;
-
-  foreach (const UserInfo &sec, keys)
-    names << sec.name;
-
-  return names;
-}
-
-/**
  * @brief MainWindow::generateKeyPair internal gpg keypair generator . .
  * @param batch
  * @param keygenWindow
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
-  ui->statusBar->showMessage(tr("Generating GPG key pair"), 60000);
-  QtPassSettings::getPass()->GenerateGPGKeys(batch);
+  emit generateGPGKeyPair(batch);
 }
 
 /**
@@ -1094,7 +760,7 @@ void MainWindow::updateProfileBox() {
  * @param name
  */
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
-  if (startupPhase || name == QtPassSettings::getProfile())
+  if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
   QtPassSettings::setProfile(name);
 
@@ -1103,8 +769,12 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 
   QtPassSettings::getPass()->updateEnv();
 
+  ui->treeView->selectionModel()->clear();
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
+
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
 }
 
 /**
@@ -1116,8 +786,11 @@ void MainWindow::initTrayIcon() {
   this->tray = new TrayIcon(this);
   // Setup tray icon
 
-  if (tray == NULL)
+  if (tray == nullptr) {
+#ifdef QT_DEBUG
     dbg() << "Allocating tray icon failed.";
+#endif
+  }
 
   if (!tray->getIsAllocated()) {
     destroyTrayIcon();
@@ -1129,7 +802,7 @@ void MainWindow::initTrayIcon() {
  */
 void MainWindow::destroyTrayIcon() {
   delete this->tray;
-  tray = NULL;
+  tray = nullptr;
 }
 
 /**
@@ -1141,7 +814,8 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     this->hide();
     event->ignore();
   } else {
-    clearClipboard();
+    m_qtPass->clearClipboard();
+
     QtPassSettings::setGeometry(saveGeometry());
     QtPassSettings::setSavestate(saveState());
     QtPassSettings::setMaximized(isMaximized());
@@ -1149,8 +823,6 @@ void MainWindow::closeEvent(QCloseEvent *event) {
       QtPassSettings::setPos(pos());
       QtPassSettings::setSize(size());
     }
-    //    QtPassSettings::setSplitterLeft(ui->splitter->sizes()[0]);
-    //    QtPassSettings::setSplitterRight(ui->splitter->sizes()[1]);
     event->accept();
   }
 }
@@ -1164,7 +836,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
  */
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
-    QKeyEvent *key = static_cast<QKeyEvent *>(event);
+    auto *key = dynamic_cast<QKeyEvent *>(event);
     if (key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
@@ -1183,7 +855,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
-    on_treeView_clicked(ui->treeView->currentIndex());
+    if (proxyModel.rowCount() > 0)
+      on_treeView_clicked(ui->treeView->currentIndex());
     break;
   case Qt::Key_Escape:
     ui->lineEdit->clear();
@@ -1223,13 +896,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     QAction *addFolder = contextMenu.addAction(tr("Add folder"));
     QAction *addPassword = contextMenu.addAction(tr("Add password"));
     QAction *users = contextMenu.addAction(tr("Users"));
-    connect(openFolder, SIGNAL(triggered()), this, SLOT(openFolder()));
-    connect(addFolder, SIGNAL(triggered()), this, SLOT(addFolder()));
-    connect(addPassword, SIGNAL(triggered()), this, SLOT(addPassword()));
-    connect(users, SIGNAL(triggered()), this, SLOT(onUsers()));
+    connect(openFolder, &QAction::triggered, this, &MainWindow::openFolder);
+    connect(addFolder, &QAction::triggered, this, &MainWindow::addFolder);
+    connect(addPassword, &QAction::triggered, this, &MainWindow::addPassword);
+    connect(users, &QAction::triggered, this, &MainWindow::onUsers);
   } else if (fileOrFolder.isFile()) {
     QAction *edit = contextMenu.addAction(tr("Edit"));
-    connect(edit, SIGNAL(triggered()), this, SLOT(onEdit()));
+    connect(edit, &QAction::triggered, this, &MainWindow::onEdit);
   }
   if (selected) {
     // if (useClipboard != CLIPBOARD_NEVER) {
@@ -1241,7 +914,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     // }
     contextMenu.addSeparator();
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
-    connect(deleteItem, SIGNAL(triggered()), this, SLOT(onDelete()));
+    connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
   }
   contextMenu.exec(globalPos);
 }
@@ -1315,24 +988,6 @@ void MainWindow::clearTemplateWidgets() {
   ui->verticalLayoutPassword->setSpacing(0);
 }
 
-/**
- * @brief MainWindow::copyTextToClipboard copies text to your clipboard
- * @param text
- */
-void MainWindow::copyTextToClipboard(const QString &text) {
-  QClipboard *clip = QApplication::clipboard();
-  if (!QtPassSettings::isUseSelection()) {
-    clip->setText(text, QClipboard::Clipboard);
-  } else {
-    clip->setText(text, QClipboard::Selection);
-  }
-  clippedText = text;
-  ui->statusBar->showMessage(tr("Copied to clipboard"), 2000);
-  if (QtPassSettings::isUseAutoclear()) {
-    clearClipboardTimer.start();
-  }
-}
-
 void MainWindow::copyPasswordFromTreeview() {
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
@@ -1347,7 +1002,7 @@ void MainWindow::copyPasswordFromTreeview() {
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
   QStringList tokens = text.split('\n');
-  copyTextToClipboard(tokens[0]);
+  m_qtPass->copyTextToClipboard(tokens[0]);
 }
 
 /**
@@ -1367,19 +1022,27 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   ly->setContentsMargins(5, 2, 2, 2);
   frame->setLayout(ly);
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
-    QPushButtonWithClipboard *fieldLabel =
-        new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, SIGNAL(clicked(QString)), this,
-            SLOT(copyTextToClipboard(QString)));
+    auto *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
+    connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
+            &QtPass::copyTextToClipboard);
 
     fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
     // fieldLabel->setContentsMargins(0,5,5,0);
     frame->layout()->addWidget(fieldLabel);
   }
 
+  if (QtPassSettings::isUseQrencode()) {
+    QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
+    connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
+            &QtPass::showTextAsQRCode);
+    qrbutton->setStyleSheet("border-style: none ; background: transparent;");
+
+    frame->layout()->addWidget(qrbutton);
+  }
+
   // set the echo mode to password, if the field is "password"
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
-    QLineEdit *line = new QLineEdit();
+    auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
     line->setReadOnly(true);
@@ -1388,7 +1051,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setEchoMode(QLineEdit::Password);
     frame->layout()->addWidget(line);
   } else {
-    QTextBrowser *line = new QTextBrowser();
+    auto *line = new QTextBrowser();
     line->setOpenExternalLinks(true);
     line->setOpenLinks(true);
     line->setMaximumHeight(26);
@@ -1398,7 +1061,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setObjectName(trimmedField);
     trimmedValue.replace(
         QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        "<a href=\"\\1\">\\1</a>");
+        R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);
     line->setStyleSheet("border-style: none ; background: transparent;");
@@ -1428,23 +1091,14 @@ void MainWindow::showStatusMessage(QString msg, int timeout) {
  * @brief MainWindow::startReencryptPath disable ui elements and treeview
  */
 void MainWindow::startReencryptPath() {
-  enableUiElements(false);
+  setUiElementsEnabled(false);
   ui->treeView->setDisabled(true);
 }
 
 /**
  * @brief MainWindow::endReencryptPath re-enable ui elements
  */
-void MainWindow::endReencryptPath() { enableUiElements(true); }
-
-/**
- * @brief MainWindow::critical critical message popup wrapper.
- * @param title
- * @param msg
- */
-void MainWindow::critical(QString title, QString msg) {
-  QMessageBox::critical(this, title, msg);
-}
+void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
 
 void MainWindow::updateGitButtonVisibility() {
   if (!QtPassSettings::isUseGit() ||
@@ -1470,4 +1124,13 @@ void MainWindow::enableGitButtons(const bool &state) {
   // Following GNOME guidelines is preferable disable buttons instead of hide
   ui->actionPush->setEnabled(state);
   ui->actionUpdate->setEnabled(state);
+}
+
+/**
+ * @brief MainWindow::critical critical message popup wrapper.
+ * @param title
+ * @param msg
+ */
+void MainWindow::critical(QString title, QString msg) {
+  QMessageBox::critical(this, title, msg);
 }

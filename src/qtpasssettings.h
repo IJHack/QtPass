@@ -33,8 +33,8 @@ private:
   static QtPassSettings *m_instance;
 
   static Pass *pass;
-  static RealPass realPass;
-  static ImitatePass imitatePass;
+  static QScopedPointer<RealPass> realPass;
+  static QScopedPointer<ImitatePass> imitatePass;
 
 public:
   static QtPassSettings *getInstance();
@@ -143,6 +143,9 @@ public:
 
   static bool isUseOtp(const bool &defaultValue = QVariant().toBool());
   static void setUseOtp(const bool &useOtp);
+
+  static bool isUseQrencode(const bool &defaultValue = QVariant().toBool());
+  static void setUseQrencode(const bool &useQrencode);
 
   static bool isUsePwgen(const bool &defaultValue = QVariant().toBool());
   static void setUsePwgen(const bool &usePwgen);

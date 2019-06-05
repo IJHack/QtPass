@@ -17,6 +17,7 @@ SOURCES   += mainwindow.cpp \
              passworddialog.cpp \
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
+             qpushbuttonasqrcode.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
              pass.cpp \
@@ -24,7 +25,8 @@ SOURCES   += mainwindow.cpp \
              imitatepass.cpp \
              executor.cpp \
              simpletransaction.cpp \
-             filecontent.cpp
+             filecontent.cpp \
+    qtpass.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -37,6 +39,7 @@ HEADERS   += mainwindow.h \
              qprogressindicator.h \
              deselectabletreeview.h \
              qpushbuttonwithclipboard.h \
+             qpushbuttonasqrcode.h \
              qtpasssettings.h \
              enums.h \
              settingsconstants.h \
@@ -48,7 +51,8 @@ HEADERS   += mainwindow.h \
              simpletransaction.h \
              filecontent.h \
              passwordconfiguration.h \
-             userinfo.h
+             userinfo.h \
+    qtpass.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

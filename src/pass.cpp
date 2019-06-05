@@ -1,7 +1,10 @@
 #include "pass.h"
-#include "debughelper.h"
 #include "qtpasssettings.h"
 #include "util.h"
+
+#ifdef QT_DEBUG
+#include "debughelper.h"
+#endif
 
 using namespace std;
 using namespace Enums;
@@ -20,6 +23,7 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+  env.append("WSLENV=PASSWORD_STORE_DIR/p");
 }
 
 void Pass::executeWrapper(PROCESS id, const QString &app,
@@ -31,7 +35,9 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
 void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
+#ifdef QT_DEBUG
   dbg() << app << args;
+#endif
   exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
                readStderr);
 }
@@ -66,7 +72,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     // --secure goes first as it overrides --no-* otherwise
     QStringList args;
     args.append("-1");
-    if (QtPassSettings::isLessRandom())
+    if (!QtPassSettings::isLessRandom())
       args.append("--secure");
     args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
                                                   : "--capitalize");
@@ -82,8 +88,10 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
       passwd.remove(QRegExp("[\\n\\r]"));
     else {
       passwd.clear();
+#ifdef QT_DEBUG
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
                << "pwgen fail";
+#endif
       //    TODO(bezet): emit critical ?
     }
   } else {
@@ -119,7 +127,7 @@ void Pass::GenerateGPGKeys(QString batch) {
  */
 QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QList<UserInfo> users;
-  QStringList args = {"--no-tty", "--with-colons"};
+  QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
   foreach (QString keystring, keystrings) {
@@ -148,6 +156,8 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
       current_user.expiry.setTime_t(props[6].toUInt());
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
       current_user.name = props[9];
+    } else if ((props[0] == "fpr") && props[9].endsWith(current_user.key_id)) {
+      current_user.key_id = props[9];
     }
   }
   if (!current_user.key_id.isEmpty())
@@ -177,7 +187,7 @@ QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
  */
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
-  PROCESS pid = static_cast<PROCESS>(id);
+  auto pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
     emit processErrorExit(exitCode, err);
     return;
@@ -214,7 +224,9 @@ void Pass::finished(int id, int exitCode, const QString &out,
     emit finishedCopy(out, err);
     break;
   default:
+#ifdef QT_DEBUG
     dbg() << "Unhandled process type" << pid;
+#endif
     break;
   }
 }
@@ -224,7 +236,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR");
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   // put PASSWORD_STORE_DIR in env
   if (store.isEmpty()) {
     // dbg()<< "Added
@@ -282,6 +294,8 @@ QStringList Pass::getRecipientList(QString for_file) {
  */
 QStringList Pass::getRecipientString(QString for_file, QString separator,
                                      int *count) {
+  Q_UNUSED(separator)
+  Q_UNUSED(count)
   return Pass::getRecipientList(for_file);
 }
 

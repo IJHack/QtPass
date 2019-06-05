@@ -8,8 +8,12 @@
 bool QtPassSettings::initialized = false;
 
 Pass *QtPassSettings::pass;
-RealPass QtPassSettings::realPass;
-ImitatePass QtPassSettings::imitatePass;
+// Go via pointer to avoid dynamic initialization,
+// due to "random" initialization order realtive to other
+// globals, especially around QObject emtadata dynamic initialization
+// can lead to crashes depending on compiler, linker etc.
+QScopedPointer<RealPass> QtPassSettings::realPass;
+QScopedPointer<ImitatePass> QtPassSettings::imitatePass;
 
 QtPassSettings *QtPassSettings::m_instance = nullptr;
 QtPassSettings *QtPassSettings::getInstance() {
@@ -69,7 +73,7 @@ QHash<QString, QString> QtPassSettings::getProfiles() {
 }
 
 void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
-  getInstance()->remove(SettingsConstants::groupProfiles);
+  getInstance()->remove(SettingsConstants::profile);
   getInstance()->beginGroup(SettingsConstants::profile);
 
   QHash<QString, QString>::const_iterator i = profiles.begin();
@@ -83,9 +87,9 @@ void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
 Pass *QtPassSettings::getPass() {
   if (!pass) {
     if (isUsePass()) {
-      QtPassSettings::pass = &QtPassSettings::realPass;
+      QtPassSettings::pass = getRealPass();
     } else {
-      QtPassSettings::pass = &QtPassSettings::imitatePass;
+      QtPassSettings::pass = getImitatePass();
     }
     pass->init();
   }
@@ -149,9 +153,9 @@ bool QtPassSettings::isUsePass(const bool &defaultValue) {
 }
 void QtPassSettings::setUsePass(const bool &usePass) {
   if (usePass) {
-    QtPassSettings::pass = &QtPassSettings::realPass;
+    QtPassSettings::pass = getRealPass();
   } else {
-    QtPassSettings::pass = &QtPassSettings::imitatePass;
+    QtPassSettings::pass = getImitatePass();
   }
   getInstance()->setValue(SettingsConstants::usePass, usePass);
 }
@@ -252,6 +256,9 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
                             ->value(SettingsConstants::passStore, defaultValue)
                             .toString();
 
+  // Normalize the path string
+  returnValue = QDir(returnValue).absolutePath();
+
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
   if (!QDir(returnValue).exists()) {
@@ -259,8 +266,8 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
   }
 
   // ensure path ends in /
-  if (!returnValue.endsWith("/")) {
-    returnValue += "/";
+  if (!returnValue.endsWith("/") && !returnValue.endsWith(QDir::separator())) {
+    returnValue += QDir::separator();
   }
 
   return returnValue;
@@ -386,6 +393,16 @@ bool QtPassSettings::isUseOtp(const bool &defaultValue) {
 
 void QtPassSettings::setUseOtp(const bool &useOtp) {
   getInstance()->setValue(SettingsConstants::useOtp, useOtp);
+}
+
+bool QtPassSettings::isUseQrencode(const bool &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::useQrencode, defaultValue)
+      .toBool();
+}
+
+void QtPassSettings::setUseQrencode(const bool &useQrencode) {
+  getInstance()->setValue(SettingsConstants::useQrencode, useQrencode);
 }
 
 bool QtPassSettings::isUsePwgen(const bool &defaultValue) {
@@ -527,5 +544,13 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
                           templateAllFields);
 }
 
-RealPass *QtPassSettings::getRealPass() { return &realPass; }
-ImitatePass *QtPassSettings::getImitatePass() { return &imitatePass; }
+RealPass *QtPassSettings::getRealPass() {
+  if (realPass.isNull())
+    realPass.reset(new RealPass());
+  return realPass.data();
+}
+ImitatePass *QtPassSettings::getImitatePass() {
+  if (imitatePass.isNull())
+    imitatePass.reset(new ImitatePass());
+  return imitatePass.data();
+}

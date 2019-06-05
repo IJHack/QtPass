@@ -32,7 +32,7 @@ private slots:
 
 private:
   Ui::KeygenDialog *ui;
-  void replace(QString, QString);
+  void replace(const QString &, const QString &);
   void done(int r);
   void no_protection(bool enable);
   ConfigDialog *dialog;

@@ -16,7 +16,7 @@ class TrayIcon : public QWidget {
 
 public:
   explicit TrayIcon(QMainWindow *parent);
-  void showMessage(QString title, QString msg, int time);
+  void showMessage(const QString &title, const QString &msg, int time);
   void setVisible(bool visible);
   bool getIsAllocated();
 

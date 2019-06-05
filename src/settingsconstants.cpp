@@ -1,6 +1,6 @@
 #include "settingsconstants.h"
 
-SettingsConstants::SettingsConstants() {}
+SettingsConstants::SettingsConstants() = default;
 
 const QString SettingsConstants::version = "version";
 
@@ -44,6 +44,7 @@ const QString SettingsConstants::profile = "profile";
 const QString SettingsConstants::groupProfiles = "profiles";
 const QString SettingsConstants::useGit = "useGit";
 const QString SettingsConstants::useOtp = "useOtp";
+const QString SettingsConstants::useQrencode = "useQrencode";
 const QString SettingsConstants::useClipboard = "useClipboard";
 const QString SettingsConstants::usePwgen = "usePwgen";
 const QString SettingsConstants::avoidCapitals = "avoidCapitals";

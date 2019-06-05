@@ -3,10 +3,11 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <utility>
 
 using namespace Enums;
 
-RealPass::RealPass() {}
+RealPass::RealPass() = default;
 
 /**
  * @brief RealPass::GitInit pass git init wrapper
@@ -104,7 +105,7 @@ void RealPass::Move(const QString src, const QString dest, const bool force) {
   // pass uses always the force mode, when call from eg. QT. so we have to check
   // if this are to files
   // and the user didnt want to move force
-  if (force == false && srcFileInfo.isFile() && destFileInfo.isFile()) {
+  if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
     return;
   }
 
@@ -144,7 +145,7 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   // pass uses always the force mode, when call from eg. QT. so we have to check
   // if this are to files
   // and the user didnt want to move force
-  if (force == false && srcFileInfo.isFile() && destFileInfo.isFile()) {
+  if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
     return;
   }
 
@@ -176,6 +177,6 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
  */
 void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
                            bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getPassExecutable(), args, input,
-                 readStdout, readStderr);
+  executeWrapper(id, QtPassSettings::getPassExecutable(), args,
+                 std::move(input), readStdout, readStderr);
 }

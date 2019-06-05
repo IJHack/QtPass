@@ -10,7 +10,7 @@
         <file>localization/localization_es_ES.qm</file>
         <file>localization/localization_gl_ES.qm</file>
         <file>localization/localization_hu_HU.qm</file>
-        <file>localization/localization_nl_NL.qm</file>
+        <file>localization/localization_nl.qm</file>
         <file>localization/localization_sv_SE.qm</file>
         <file>localization/localization_pl_PL.qm</file>
         <file>localization/localization_ru_RU.qm</file>
@@ -33,6 +33,7 @@
         <file alias="applications-system.svg">icons/applications-system.svg</file>
         <file alias="edit-copy.svg">icons/edit-copy.svg</file>
         <file alias="edit-clear.svg">icons/edit-clear.svg</file>
+        <file alias="qrcode.svg">icons/qrcode.svg</file>
         <file alias="folder-new.svg">icons/folder-new.svg</file>
     </qresource>
 </RCC>
