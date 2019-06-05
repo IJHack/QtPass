@@ -4,7 +4,6 @@ sudo: true
 os:
 - linux
 - osx
-  env: TRAVIS_NODE_VERSION="10"
 compiler:
 - gcc
 - clang
