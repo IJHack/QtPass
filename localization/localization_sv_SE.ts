@@ -555,7 +555,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
@@ -658,7 +658,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-618"/>
+        <location filename="../src/mainwindow.cpp" line="-620"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
@@ -694,7 +694,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Vill du verkligen ta bort %%21?</translation>
     </message>
     <message>
-        <location line="+301"/>
+        <location line="+303"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -727,13 +727,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Gömt lösenord</translation>
     </message>
     <message>
-        <location line="-563"/>
+        <location line="-565"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -742,7 +742,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-606"/>
+        <location line="-608"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -756,7 +756,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui"/>
-        <location filename="../src/mainwindow.cpp" line="+458"/>
+        <location filename="../src/mainwindow.cpp" line="+460"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
@@ -772,7 +772,7 @@ p, li { white-space: pre-wrap; }
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-708"/>
+        <location filename="../src/mainwindow.cpp" line="-710"/>
         <source>Welcome to QtPass %1</source>
         <translation>Välkommen till QtPass %1</translation>
     </message>
@@ -787,12 +787,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location line="-301"/>
+        <location line="-303"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>
@@ -826,7 +826,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+118"/>
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>

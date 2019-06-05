@@ -602,7 +602,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
@@ -678,7 +678,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-709"/>
+        <location filename="../src/mainwindow.cpp" line="-711"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 приветствует Вас</translation>
     </message>
@@ -713,7 +713,7 @@ p, li { white-space: pre-wrap; }
         <translation>Обновление password-store</translation>
     </message>
     <message>
-        <location line="+603"/>
+        <location line="+605"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -737,18 +737,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Добавить папку</translation>
     </message>
     <message>
-        <location line="-563"/>
+        <location line="-565"/>
         <source>Content hidden</source>
         <translation>Содержимое скрыто</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location line="-625"/>
+        <location line="-627"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -818,7 +818,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+118"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
@@ -843,7 +843,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Невозможно изменить содержимое</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-292"/>
+        <location filename="../src/mainwindow.cpp" line="-294"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
@@ -868,12 +868,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-49"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location line="-301"/>
+        <location line="-303"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>

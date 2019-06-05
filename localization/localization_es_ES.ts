@@ -554,7 +554,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+904"/>
+        <location filename="../src/mainwindow.cpp" line="+906"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -657,7 +657,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-618"/>
+        <location filename="../src/mainwindow.cpp" line="-620"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation>Actualizando password-store</translation>
@@ -721,12 +721,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+649"/>
+        <location line="+651"/>
         <source>Password</source>
         <translation>Contraseña</translation>
     </message>
     <message>
-        <location line="-625"/>
+        <location line="-627"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -764,7 +764,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::Error desconocido</translation>
     </message>
     <message>
-        <location line="+516"/>
+        <location line="+518"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -795,7 +795,7 @@ p, li { white-space: pre-wrap; }
         <translation>Añadir contraseña</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-708"/>
+        <location filename="../src/mainwindow.cpp" line="-710"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bienvenido a QtPass %1</translation>
     </message>
@@ -810,12 +810,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+349"/>
+        <location line="+351"/>
         <source>New file</source>
         <translation>Nuevo fichero</translation>
     </message>
     <message>
-        <location line="-301"/>
+        <location line="-303"/>
         <source>Delete password?</source>
         <translation>Borrar contraseña?</translation>
     </message>
@@ -849,7 +849,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generar par de claves GPG</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+118"/>
         <source>Profile changed to %1</source>
         <translation>Perfil cambiado a %1</translation>
     </message>

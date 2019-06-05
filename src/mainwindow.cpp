@@ -700,7 +700,9 @@ void MainWindow::onUsers() {
           : currentDir;
 
   UsersDialog d(dir, this);
-  d.exec();
+  if (!d.exec()) {
+    ui->treeView->setFocus();
+  }
 }
 
 /**
@@ -837,7 +839,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
-    if (key->key() == Qt::Key_Down) {
+    if (key != NULL && key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
   }
