@@ -25,14 +25,14 @@ addons:
 install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew unlink node; brew install node; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5 coreutils; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm install 12; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm use 12; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt512base qt512tools qt512svg; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt512base qt512tools qt512svgi libgl1-mesa-dev; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo apt-get -qq install g++-6 gcc-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90; fi
