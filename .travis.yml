@@ -53,6 +53,7 @@ script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) codecov TESTARGS="--platform offscreen"; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
 - qmake -Wall qtpass.pro
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then lrelease localization/localization_*; fi
 - make -j$(nproc)
 - make check TESTARGS="--platform offscreen"
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt main/QtPass.app; fi
