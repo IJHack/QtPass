@@ -119,7 +119,6 @@
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
 - Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
-- New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
@@ -186,6 +185,7 @@
 
 **Merged pull requests:**
 
+- New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -355,6 +355,7 @@
 - Installation dependencies [\#140](https://github.com/IJHack/QtPass/issues/140)
 - All text input fields need example text & edit dialogue changes [\#85](https://github.com/IJHack/QtPass/issues/85)
 - OSX: Qt-window closed only reappears when 'active' and using tray incon [\#77](https://github.com/IJHack/QtPass/issues/77)
+- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
@@ -407,7 +408,6 @@
 
 - Feature: Always on top [\#118](https://github.com/IJHack/QtPass/issues/118)
 - Option to show minimized instance [\#99](https://github.com/IJHack/QtPass/issues/99)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
