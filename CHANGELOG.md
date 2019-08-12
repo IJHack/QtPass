@@ -119,6 +119,7 @@
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
 - Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
+- New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
@@ -185,7 +186,6 @@
 
 **Merged pull requests:**
 
-- New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -355,13 +355,11 @@
 - Installation dependencies [\#140](https://github.com/IJHack/QtPass/issues/140)
 - All text input fields need example text & edit dialogue changes [\#85](https://github.com/IJHack/QtPass/issues/85)
 - OSX: Qt-window closed only reappears when 'active' and using tray incon [\#77](https://github.com/IJHack/QtPass/issues/77)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
 - Program does not run in WIndows 10 [\#123](https://github.com/IJHack/QtPass/issues/123)
 - Spelling bug: German translation of push and pull [\#110](https://github.com/IJHack/QtPass/issues/110)
-- gpg: decryption failed: No secret key [\#92](https://github.com/IJHack/QtPass/issues/92)
 
 **Closed issues:**
 
@@ -408,6 +406,7 @@
 
 - Feature: Always on top [\#118](https://github.com/IJHack/QtPass/issues/118)
 - Option to show minimized instance [\#99](https://github.com/IJHack/QtPass/issues/99)
+- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
@@ -482,6 +481,10 @@
 
 - Users setup - key colours could be improved  [\#82](https://github.com/IJHack/QtPass/issues/82)
 
+**Fixed bugs:**
+
+- gpg: decryption failed: No secret key [\#92](https://github.com/IJHack/QtPass/issues/92)
+
 **Closed issues:**
 
 - When QtPass starts, focus search input box [\#89](https://github.com/IJHack/QtPass/issues/89)
@@ -498,6 +501,7 @@
 - Issue 86 clear panel [\#87](https://github.com/IJHack/QtPass/pull/87) ([karlgrz](https://github.com/karlgrz))
 - Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
 - \[WIP\] Call 'pass git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
+- Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)
@@ -629,7 +633,6 @@
 - Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add nosingleapp config. [\#27](https://github.com/IJHack/QtPass/pull/27) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add Makefile with commands to make a binary release zip file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
-- Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for editing .gpg-id via GUI with public keyring list. [\#23](https://github.com/IJHack/QtPass/pull/23) ([rdoeffinger](https://github.com/rdoeffinger))
 - More proper support for subdirectories. [\#22](https://github.com/IJHack/QtPass/pull/22) ([rdoeffinger](https://github.com/rdoeffinger))
 - Russian translation \(+typo fixed\) [\#20](https://github.com/IJHack/QtPass/pull/20) ([mexus](https://github.com/mexus))
