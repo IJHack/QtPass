@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>QtPass 1.3 Changelog</title>
+    <title>QtPass 1.2 Changelog</title>
     <meta name="description" content="Latest changes to QtPass">
     <meta name="keywords" content="qtpass, pass, gpg, git, password, store, manager, security">
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -98,37 +98,67 @@
     </header>
     <section>
 
-	    <h2><a id=v1.3.0" class="anchor" href="#v1.3.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.3.0 Has it been a year?</h2>
+	    <h2><a id=v1.2.3" class="anchor" href="#v1.2.3" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.3 Baby steps</h2>
 
+	    <ul>
+		    <li>Add support for OTP code generation on Linux as requested in <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="269054230" data-permission-text="Issue title is private" data-url="https://github.com/IJHack/QtPass/issues/327" href="https://github.com/IJHack/QtPass/issues/327">#327</a> <a href="https://github.com/IJHack/QtPass/pull/394">#394</a> (<a href="https://github.com/Noettore">Noettore</a>)</li>
+		    <li>Revert scroll bar changes <a href="https://github.com/IJHack/QtPass/pull/393">#393</a> (<a href="https://github.com/destanyol">destanyol</a>)</li>
+		    <li>Fix High Dpi Support. Works now under Windows and KDE/Plasma. <a href="https://github.com/IJHack/QtPass/pull/392">#392</a> (<a href="https://github.com/hgraeber">hgraeber</a>)</li>
+		    <li>Duplicate prefix in installation of tests directory in v1.2.2. <a href="https://github.com/IJHack/QtPass/issues/389">#389</a></li>
+		    <li>Compilation error on FreeBSD member access into incomplete type <a href="https://github.com/IJHack/QtPass/issues/388">#388</a></li>
+		    <li>No icons on macOS <a href="https://github.com/IJHack/QtPass/issues/377">#377</a></li>
+	    </ul>
 
-            <p>After more than a year of stagnation, I thought it wise to first just push out a release of the <code>master</code> branch most active users have been on for a while now . .</p>
-            <p>With this out of the way expect a 1.3.1 release soon with the most pressing still open issues addressed.</p>
-            <p>Some of the many changes, please resort to the <a href="https://github.com/IJHack/QtPass/blob/master/CHANGELOG.md">CHANGELOG</a> for a more complete listing.</p>
-            <ul>
-                <li>Add otp (two factor authentication) support <a href="https://github.com/IJHack/QtPass/issues/327" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/327/hovercard">#327</a></li>
-                <li>Use key fingerprint as ID instead of “long” ID. <a href="https://github.com/IJHack/QtPass/pull/452" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/452/hovercard">#452</a> (<a href="https://github.com/Natureshadow">Natureshadow</a>)</li>
-                <li>Typo: dialouge to dialogue. <a href="https://github.com/IJHack/QtPass/pull/444" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/444/hovercard">#444</a> (<a href="https://github.com/georgjaehnig">georgjaehnig</a>)</li>
-                <li>Scripts and logic specific to Windows Store releases <a href="https://github.com/IJHack/QtPass/pull/439" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/439/hovercard">#439</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>For config check, check that the selected binary is available. <a href="https://github.com/IJHack/QtPass/pull/438" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/438/hovercard">#438</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>Fix character encoding issues for non-UTF-8 locales. <a href="https://github.com/IJHack/QtPass/pull/435" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/435/hovercard">#435</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>Fixes and improvments for config dialog <a href="https://github.com/IJHack/QtPass/pull/432" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/432/hovercard">#432</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>Support for using WSL binaries on Windows <a href="https://github.com/IJHack/QtPass/pull/431" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/431/hovercard">#431</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>Bugfixes and Windows compatibility improvements <a href="https://github.com/IJHack/QtPass/pull/430" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/430/hovercard">#430</a> (<a href="https://github.com/mrsch">mrsch</a>)</li>
-                <li>Semi-automatic code cleanup <a href="https://github.com/IJHack/QtPass/pull/425" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/425/hovercard">#425</a> (<a href="https://github.com/annejan">annejan</a>)</li>
-                <li>Update to prevent the installer requesting admin <a href="https://github.com/IJHack/QtPass/pull/424" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/424/hovercard">#424</a> (<a href="https://github.com/hughwilliams94">hughwilliams94</a>)</li>
-                <li>Display passwords as QR codes <a href="https://github.com/IJHack/QtPass/pull/421" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/421/hovercard">#421</a> (<a href="https://github.com/frawi">frawi</a>)</li>
-                <li>Tested working on Mac Os HS with pinentry-mac <a href="https://github.com/IJHack/QtPass/pull/419" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/419/hovercard">#419</a> (<a href="https://github.com/riccardocossu">riccardocossu</a>)</li>
-                <li>Bugfixes <a href="https://github.com/IJHack/QtPass/pull/413" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/413/hovercard">#413</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
-                <li>pwgen: fix inverted "Generate ... less secure passwords" checkbox <a href="https://github.com/IJHack/QtPass/pull/409" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/409/hovercard">#409</a> (<a href="https://github.com/ahippo">ahippo</a>)</li>
-                <li>Continuing refactoring <a href="https://github.com/IJHack/QtPass/pull/407" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/407/hovercard">#407</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
-                <li><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="321426969" data-permission-text="Issue title is private" data-url="https://github.com/IJHack/QtPass/issues/390" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/390/hovercard" href="https://github.com/IJHack/QtPass/issues/390">#390</a> make box cheched when opening a folder users panel <a href="https://github.com/IJHack/QtPass/pull/403" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/403/hovercard">#403</a> (<a href="https://github.com/kenji21">kenji21</a>)</li>
-                <li>Windows sigsev issues <a href="https://github.com/IJHack/QtPass/issues/326" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/326/hovercard">#326</a></li>
-                <li>Access to the / (root) directory form within the application window on MacOS <a href="https://github.com/IJHack/QtPass/issues/302" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/302/hovercard">#302</a></li>
-                <li>Context menu on transparent fields is transparent too . .  <a href="https://github.com/IJHack/QtPass/issues/227" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/227/hovercard">#227</a></li>
-                <li>Various issues with Info.plist file on macOS <a href="https://github.com/IJHack/QtPass/issues/457" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/457/hovercard">#457</a></li>
-                <li>Problem with GNUpg not found on MacOS <a href="https://github.com/IJHack/QtPass/issues/362" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/362/hovercard">#362</a></li>
-                <li>Unable to see main application window (applicationn runs minimized to tray only) <a href="https://github.com/IJHack/QtPass/issues/286" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/286/hovercard">#286</a></li>
-            </ul>
+	    <h2><a id=v1.2.2" class="anchor" href="#v1.2.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.2 Spring cleaning</h2>
+
+	    <ul>
+		    <li>Clipboard clearing timer is not reset when new passwords are copied to the clipboard <a href="https://github.com/IJHack/QtPass/issues/309">#309</a></li>
+		    <li>Removal of files outside of password-store <a href="https://github.com/IJHack/QtPass/issues/300">#300</a> <a href="https://github.com/IJHack/QtPass/pull/363">#363</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
+		    <li>Lots of fixes and refactoring.  <a href="https://github.com/IJHack/QtPass/pull/364">#364</a> <a href="https://github.com/IJHack/QtPass/pull/376">#376</a> <a href="https://github.com/IJHack/QtPass/pull/378">#378</a> <a href="https://github.com/IJHack/QtPass/pull/381">#381</a> <a href="https://github.com/IJHack/QtPass/pull/382">#382</a> <a href="https://github.com/IJHack/QtPass/pull/384">#384</a> <a href="https://github.com/IJHack/QtPass/pull/386">#386</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
+		    <li>Fix &amp; make clearClipboard more robust <a href="https://github.com/IJHack/QtPass/pull/359">#359</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
+		    <li>Multiple question marks while trying to delete password <a href="https://github.com/IJHack/QtPass/issues/385">#385</a></li>
+		    <li>No button icons and text in "menu bar" <a href="https://github.com/IJHack/QtPass/issues/383">#383</a></li>
+		    <li>Entire program is huge on High DPI screen on Linux <a href="https://github.com/IJHack/QtPass/issues/369">#369</a></li>
+		    <li>Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass <a href="https://github.com/IJHack/QtPass/issues/350">#350</a></li>
+		    <li>No password entry prompt <a href="https://github.com/IJHack/QtPass/issues/343">#343</a></li>
+		    <li>Can't install on OS X Sierra <a href="https://github.com/IJHack/QtPass/issues/337">#337</a></li>
+		    <li>No icon on MacOS <a href="https://github.com/IJHack/QtPass/issues/333">#333</a></li>
+		    <li>Font and spacing used for URL links on right in main window absurdly large <a href="https://github.com/IJHack/QtPass/issues/329">#329</a></li>
+		    <li>QtPass don't display all lines with templates <a href="https://github.com/IJHack/QtPass/issues/273">#273</a> <a href="https://github.com/IJHack/QtPass/pull/358">#358</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
+		    <li>Update CONTRIBUTING.md <a href="https://github.com/IJHack/QtPass/pull/354">#354</a> and add two entries in FAQ about the language <a href="https://github.com/IJHack/QtPass/pull/353">#353</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
+		    <li>Fix nested template argument list compile error <a href="https://github.com/IJHack/QtPass/pull/346">#346</a> (<a href="https://github.com/martinburchell">martinburchell</a>)</li>
+		    <li>Honor PREFIX during tests install <a href="https://github.com/IJHack/QtPass/pull/345">#345</a> (<a href="https://github.com/SpiderX">SpiderX</a>)</li>
+	    </ul>
+
+	    <h2><a id=v1.2.1" class="anchor" href="#v1.2.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.1 Bug fixes</h2>
+
+	    <h3>The way QtPass prior to 1.2.1 generates passwords is insecure.</h3>
+
+	    <p>All passwords generated with QtPass's built-in password generator are possibly predictable and enumerable by hackers. The generator used libc's random(), seeded with srand(msecs), where msecs is not the msecs since 1970 (not that that'd be secure anyway), but rather the msecs since the last second.<br>
+	    This means there are only 1000 different sequences of generated passwords.</p>
+	    <p>All passwords that have been generated with QtPass prior to 1.2.1 should be regenerated and changed.</p>
+
+	    <ul>
+		    <li>Insecure password generation <a href="https://github.com/IJHack/QtPass/issues/338">#338</a>  <a href="https://github.com/IJHack/QtPass/pull/342">#342</a></li>
+		    <li>Version 1.2.0 leaks passwords <a href="https://github.com/IJHack/QtPass/issues/334">#334</a></li>
+		    <li>When importing settings from 1.1.5 or older clipboard settings revert to No Clipboard <a href="https://github.com/IJHack/QtPass/issues/232">#232</a></li>
+		    <li>Add Catalan translation <a href="https://github.com/IJHack/QtPass/pull/336">#336</a> (<a href="https://github.com/rbuj">rbuj</a>)</li>
+	    </ul>
+
+	    <h2><a id=v1.2.0" class="anchor" href="#v1.2.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.2.0 Has it been a year?</h2>
+
+	    <p>After almost a year of anticipation, finally a new QtPass release.<br>
+	    It's been a hectic year for <a href="https://github.com/annejan">me</a> in particular with the <a href="https://wiki.sha2017.org/w/Projects:Badge/Documentation#Software">SHA2017 Badge</a> related <a href="https://hackaday.com/2017/08/14/hands-on-with-the-shacamp-2017-badge/">madness</a> and other projects. I am however planning on improving QtPass a lot more frequently the coming year.<br>
+            But it's also been a hectic year for <a href="https://qtpass.org">QtPass</a>.</p>
+        <p>Some highlights from the <a href="https://github.com/IJHack/QtPass/blob/master/CHANGELOG.md">changes</a>.</p>
+        <ul>
+            <li>Many UX improvements <a href="https://github.com/IJHack/QtPass/pull/245">#245</a> <a href="https://github.com/IJHack/QtPass/pull/259">#259</a> <a href="https://github.com/IJHack/QtPass/pull/261">#261</a> <a href="https://github.com/IJHack/QtPass/pull/254">#254</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
+            <li>Improved process management <a href="https://github.com/IJHack/QtPass/pull/249">#249</a> <a href="https://github.com/IJHack/QtPass/pull/270">#270</a> <a href="https://github.com/IJHack/QtPass/pull/271">#271</a> <a href="https://github.com/IJHack/QtPass/pull/275">#275</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
+            <li>Extraction of library and main function <a href="https://github.com/IJHack/QtPass/pull/324">#324</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
+            <li>Feature/unit testing framework <a href="https://github.com/IJHack/QtPass/pull/257">#257</a> and many more (<a href="https://github.com/annejan">annejan</a>)</li>
+            <li>Windows PRNG issues fixed <a href="https://github.com/IJHack/QtPass/pull/276">#276</a> (<a href="https://github.com/treat1">treat1</a>)</li>
+            <li>Added sftp, ftps, webdav and webdavs as supported links <a href="https://github.com/IJHack/QtPass/pull/322">#322</a> (<a href="https://github.com/cgonzalez">cgonzalez</a>)</li>
+        </ul>
 
         <h2><a id=v1.0" class="anchor" href="#v1.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other releases</h2>
 
