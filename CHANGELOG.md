@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
-
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...HEAD)
+## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
 
 **Implemented enhancements:**
 
@@ -212,7 +211,6 @@
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
 - Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
-- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 
 ## [v1.1.6](https://github.com/IJHack/QtPass/tree/v1.1.6) (2016-12-02)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)
@@ -281,6 +279,7 @@
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
+- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
