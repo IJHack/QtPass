@@ -8,16 +8,21 @@
 
 - Localization makes commits absolutely unreadable [\#405](https://github.com/IJHack/QtPass/issues/405)
 - Add otp \(two factor authentication\) support [\#327](https://github.com/IJHack/QtPass/issues/327)
+- Open specific entry from command-line parameter [\#32](https://github.com/IJHack/QtPass/issues/32)
 
 **Fixed bugs:**
 
 - Windows sigsev issues [\#326](https://github.com/IJHack/QtPass/issues/326)
 - Access to the / \(root\) directory form within the application window on MacOS [\#302](https://github.com/IJHack/QtPass/issues/302)
 - PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
+- Context menu on transparent fields is transparent too . .  [\#227](https://github.com/IJHack/QtPass/issues/227)
 
 **Closed issues:**
 
+- various issues with Info.plist file on macOS [\#457](https://github.com/IJHack/QtPass/issues/457)
 - Can not add new passwords for some reason [\#454](https://github.com/IJHack/QtPass/issues/454)
+- Bundle ID is literally `$\(PRODUCT\_BUNDLE\_IDENTIFIER\)` [\#448](https://github.com/IJHack/QtPass/issues/448)
+- GnuPG not found on Linux Mint [\#433](https://github.com/IJHack/QtPass/issues/433)
 - How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
 - LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
@@ -29,7 +34,10 @@
 - Problem with GNUpg not found on MacOS [\#362](https://github.com/IJHack/QtPass/issues/362)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
+- Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
+- Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
+- MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
 **Merged pull requests:**
 
@@ -204,6 +212,7 @@
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
 - Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
+- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 
 ## [v1.1.6](https://github.com/IJHack/QtPass/tree/v1.1.6) (2016-12-02)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)
@@ -272,7 +281,6 @@
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
-- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
@@ -355,7 +363,6 @@
 - Installation dependencies [\#140](https://github.com/IJHack/QtPass/issues/140)
 - All text input fields need example text & edit dialogue changes [\#85](https://github.com/IJHack/QtPass/issues/85)
 - OSX: Qt-window closed only reappears when 'active' and using tray incon [\#77](https://github.com/IJHack/QtPass/issues/77)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
@@ -408,6 +415,7 @@
 
 - Feature: Always on top [\#118](https://github.com/IJHack/QtPass/issues/118)
 - Option to show minimized instance [\#99](https://github.com/IJHack/QtPass/issues/99)
+- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
