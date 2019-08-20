@@ -65,22 +65,27 @@ $(function() {
 <div class="title">Change Log </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a href="https://github.com/IJHack/QtPass/tree/HEAD">Unreleased</a></h2>
-<p><a href="https://github.com/IJHack/QtPass/compare/v1.2.3...HEAD">Full Changelog</a></p>
+<div class="textblock"><h2><a href="https://github.com/IJHack/QtPass/tree/v1.3.0">v1.3.0</a> (2019-08-20)</h2>
+<p><a href="https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0">Full Changelog</a></p>
 <p><b>Implemented enhancements:</b></p>
 <ul>
 <li>Localization makes commits absolutely unreadable <a href="https://github.com/IJHack/QtPass/issues/405">#405</a></li>
 <li>Add otp (two factor authentication) support <a href="https://github.com/IJHack/QtPass/issues/327">#327</a></li>
+<li>Open specific entry from command-line parameter <a href="https://github.com/IJHack/QtPass/issues/32">#32</a></li>
 </ul>
 <p><b>Fixed bugs:</b></p>
 <ul>
 <li>Windows sigsev issues <a href="https://github.com/IJHack/QtPass/issues/326">#326</a></li>
 <li>Access to the / (root) directory form within the application window on MacOS <a href="https://github.com/IJHack/QtPass/issues/302">#302</a></li>
 <li>PRNG seeding is done totally wrong <a href="https://github.com/IJHack/QtPass/issues/238">#238</a></li>
+<li>Context menu on transparent fields is transparent too . . <a href="https://github.com/IJHack/QtPass/issues/227">#227</a></li>
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
+<li>various issues with Info.plist file on macOS <a href="https://github.com/IJHack/QtPass/issues/457">#457</a></li>
 <li>Can not add new passwords for some reason <a href="https://github.com/IJHack/QtPass/issues/454">#454</a></li>
+<li>Bundle ID is literally <code>$\(PRODUCT\_BUNDLE\_IDENTIFIER\)</code> <a href="https://github.com/IJHack/QtPass/issues/448">#448</a></li>
+<li>GnuPG not found on Linux Mint <a href="https://github.com/IJHack/QtPass/issues/433">#433</a></li>
 <li>How to clean up the app <a href="https://github.com/IJHack/QtPass/issues/429">#429</a></li>
 <li>LAN sync request <a href="https://github.com/IJHack/QtPass/issues/427">#427</a></li>
 <li>Profiles can not be removed <a href="https://github.com/IJHack/QtPass/issues/415">#415</a></li>
@@ -92,7 +97,10 @@ $(function() {
 <li>Problem with GNUpg not found on MacOS <a href="https://github.com/IJHack/QtPass/issues/362">#362</a></li>
 <li>Compiling for Linux Mint 18 Ubuntu 16 <a href="https://github.com/IJHack/QtPass/issues/357">#357</a></li>
 <li>make qtpass portable in windows <a href="https://github.com/IJHack/QtPass/issues/356">#356</a></li>
+<li>Unable to see main application window (applicationn runs minimized to tray only) <a href="https://github.com/IJHack/QtPass/issues/286">#286</a></li>
+<li>Startup variables and parameters <a href="https://github.com/IJHack/QtPass/issues/212">#212</a></li>
 <li>[OS X] Password input dialog suddenly stopped popping up <a href="https://github.com/IJHack/QtPass/issues/191">#191</a></li>
+<li><a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more...">MainWindow</a> is a giant monolithic mess <a href="https://github.com/IJHack/QtPass/issues/107">#107</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
@@ -408,7 +416,6 @@ $(function() {
 <li>Installation dependencies <a href="https://github.com/IJHack/QtPass/issues/140">#140</a></li>
 <li>All text input fields need example text &amp; edit dialogue changes <a href="https://github.com/IJHack/QtPass/issues/85">#85</a></li>
 <li>OSX: Qt-window closed only reappears when 'active' and using tray incon <a href="https://github.com/IJHack/QtPass/issues/77">#77</a></li>
-<li>System Icons on Buttons and Doubleclick on treeView <a href="https://github.com/IJHack/QtPass/pull/124">#124</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
 </ul>
 <p><b>Fixed bugs:</b></p>
 <ul>
@@ -459,6 +466,7 @@ $(function() {
 <ul>
 <li>Feature: Always on top <a href="https://github.com/IJHack/QtPass/issues/118">#118</a></li>
 <li>Option to show minimized instance <a href="https://github.com/IJHack/QtPass/issues/99">#99</a></li>
+<li>System Icons on Buttons and Doubleclick on treeView <a href="https://github.com/IJHack/QtPass/pull/124">#124</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
 </ul>
 <p><b>Fixed bugs:</b></p>
 <ul>
