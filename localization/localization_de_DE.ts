@@ -151,12 +151,12 @@
     <message>
         <location/>
         <source>Select password storage program:</source>
-        <translation>Zu verwendenden Passwortspeicher wählen:</translation>
+        <translation type="unfinished">Zu verwendende Programme auswählen:</translation>
     </message>
     <message>
         <location/>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Einh&amp;eimische git/gpg</translation>
+        <translation type="unfinished">Selbst installieres &amp;git/gpg</translation>
     </message>
     <message>
         <location/>

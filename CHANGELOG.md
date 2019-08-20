@@ -35,7 +35,6 @@
 - make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
 - Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
-- \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 - MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
 **Merged pull requests:**
@@ -43,7 +42,6 @@
 - Use key fingerprint as ID instead of “long” ID. [\#452](https://github.com/IJHack/QtPass/pull/452) ([Natureshadow](https://github.com/Natureshadow))
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
-- For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fix character encoding issues for non-UTF-8 locales. [\#435](https://github.com/IJHack/QtPass/pull/435) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fixes and improvments for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for using WSL binaries on Windows [\#431](https://github.com/IJHack/QtPass/pull/431) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -111,6 +109,7 @@
 
 **Merged pull requests:**
 
+- For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
 - 2 simple fixes [\#386](https://github.com/IJHack/QtPass/pull/386) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Should fix \#383 [\#384](https://github.com/IJHack/QtPass/pull/384) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Move connect action to main.cpp.  Default search text as parameter of… [\#382](https://github.com/IJHack/QtPass/pull/382) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
@@ -244,6 +243,7 @@
 - Click does not stick [\#233](https://github.com/IJHack/QtPass/issues/233)
 - Doubleclick on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
 - Windows - Enable GPG SSH Authentication [\#225](https://github.com/IJHack/QtPass/issues/225)
+- \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
 
 **Merged pull requests:**
