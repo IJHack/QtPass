@@ -324,17 +324,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="+47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+25"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+5"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode moet geïnstalleerd worden</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -404,12 +404,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch detecteren</translation>
     </message>
     <message>
         <location/>
         <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik qrencode</translation>
     </message>
 </context>
 <context>
@@ -987,82 +987,83 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Nieuw GPG sleutelpaar genereren</translation>
+        <translation>Nieuw GPG sleutelpaar genereren</translation>
     </message>
     <message>
         <location line="+55"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Verbinding mislukt met WebDAV:
+        <translation>Verbinding mislukt met WebDAV:
 </translation>
     </message>
     <message>
         <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV wachtwoord</translation>
+        <translation>QtPass WebDAV wachtwoord</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Voer wachtwoord in om te verbinden met WebDAV:</translation>
+        <translation>Voer wachtwoord in om te verbinden met WebDAV:</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav is stuk, hield er zomaar mee op</translation>
+        <translation>fusedav is onverwacht afgesloten
+</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Kon fusedav niet verbinden met WebDAV:
+        <translation>Kon fusedav niet verbinden met WebDAV:
 </translation>
     </message>
     <message>
         <location line="+13"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">Proces kon niet worden gestart</translation>
+        <translation>Proces kon niet worden gestart</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">Proces is gecrashed</translation>
+        <translation>Proces is gecrashed</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">Proces duurde te lang</translation>
+        <translation>Proces duurde te lang</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">Lees fout met proces</translation>
+        <translation>Lees fout met proces</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">Kan niet schrijven naar proces</translation>
+        <translation>Kan niet schrijven naar proces</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">Er ging iets raars mis met proces</translation>
+        <translation>Er ging iets raars mis met proces</translation>
     </message>
     <message>
         <location line="+127"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Klembord gewist</translation>
+        <translation>Klembord gewist</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
+        <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">gekopieerd naar het klembord</translation>
+        <translation>gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
@@ -1142,17 +1143,17 @@ Rode entries zijn ongeldig, je zult niet in staat zijn om te versleutelen voor d
     <message>
         <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
-        <translation type="unfinished">Kan lijst sleutels niet verkrijgen</translation>
+        <translation>Kan lijst sleutels niet verkrijgen</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation type="unfinished">Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
+        <translation>Kan lijst van beschikbare gpg-sleutels niet opvragen</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Sleutel niet gevonden in keyring</translation>
+        <translation>Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
         <location line="+92"/>
