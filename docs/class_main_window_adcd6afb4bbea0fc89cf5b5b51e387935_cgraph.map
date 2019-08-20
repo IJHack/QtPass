@@ -1,0 +1,18 @@
+<map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="741,24,925,51"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="744,87,921,113"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#abde146783b0ca34ec5793092f27a1f71" title="QtPass::isFreshStart" alt="" coords="267,112,413,139"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270" title="QtPassSettings::setProfile" alt="" coords="744,163,921,189"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="732,213,933,240"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="255,315,425,341"/>
+<area shape="rect" id="node14" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles) " alt="" coords="279,453,401,480"/>
+<area shape="rect" id="node15" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="478,467,679,493"/>
+<area shape="rect" id="node17" href="$class_tray_icon.html#a801f0a9d01764cd53c2d192784a453b4" title="TrayIcon::getIsAllocated return if TrayIcon is allocated. " alt="" coords="258,504,422,531"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="981,213,1172,240"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="739,264,926,291"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="480,315,677,341"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="473,365,684,392"/>
+<area shape="rect" id="node12" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="540,416,617,443"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="733,340,932,367"/>
+<area shape="rect" id="node16" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes. " alt="" coords="492,517,665,544"/>
+</map>

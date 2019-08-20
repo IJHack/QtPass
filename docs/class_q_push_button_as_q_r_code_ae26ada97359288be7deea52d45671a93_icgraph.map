@@ -1,4 +1,5 @@
 <map id="QPushButtonAsQRCode::clicked" name="QPushButtonAsQRCode::clicked">
-<area shape="rect" id="node1" title=" " alt="" coords="229,5,397,44"/>
-<area shape="rect" id="node2" href="$class_q_push_button_as_q_r_code.html#a007bb3af7eabfb6bd2dd255e05756d73" title="QPushButtonAsQRCode::QPushButtonAsQRCode basic constructor." alt="" coords="5,5,181,44"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="220,5,415,32"/>
+<area shape="rect" id="node3" href="$class_q_push_button_as_q_r_code.html#a007bb3af7eabfb6bd2dd255e05756d73" title="QPushButtonAsQRCode::QPushButtonAsQRCode basic constructor. " alt="" coords="230,57,405,98"/>
+<area shape="rect" id="node4" href="$class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40" title="QPushButtonAsQRCode::setTextToCopy sets text from associated text field. " alt="" coords="234,122,401,163"/>
 </map>

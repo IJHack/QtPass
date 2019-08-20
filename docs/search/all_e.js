@@ -33,6 +33,5 @@ var searchData=
   ['process_5fcount',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],
   ['processerrorexit',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
   ['profile',['profile',['../class_settings_constants.html#a8ed5c3840acb4b3ec4f80010bfc95752',1,'SettingsConstants']]],
-  ['projectpath',['projectpath',['../namespaceavatars.html#a45ad14f1c34594512525f51440a46b8b',1,'avatars']]],
   ['pwgenexecutable',['pwgenExecutable',['../class_settings_constants.html#a2e5906837f972ba26da95b17a299a3ba',1,'SettingsConstants']]]
 ];

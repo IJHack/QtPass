@@ -6,7 +6,6 @@ var searchData=
   ['generatekeypair',['generateKeyPair',['../class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935',1,'MainWindow']]],
   ['generaterandompassword',['generateRandomPassword',['../class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf',1,'Pass']]],
   ['genkey',['genKey',['../class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138',1,'ConfigDialog']]],
-  ['get_5fdata',['get_data',['../namespaceavatars.html#a15475ebb0a787160e0b4f9a315d91f08',1,'avatars']]],
   ['getautoclearpanelseconds',['getAutoclearPanelSeconds',['../class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01',1,'QtPassSettings']]],
   ['getautoclearseconds',['getAutoclearSeconds',['../class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe',1,'QtPassSettings']]],
   ['getclipboardtype',['getClipBoardType',['../class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc',1,'QtPassSettings']]],

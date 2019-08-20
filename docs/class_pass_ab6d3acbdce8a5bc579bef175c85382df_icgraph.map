@@ -1,6 +1,8 @@
 <map id="Pass::finishedGitPull" name="Pass::finishedGitPull">
-<area shape="rect" id="node1" title=" " alt="" coords="350,31,494,56"/>
-<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="198,31,302,56"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,150,31"/>
-<area shape="rect" id="node4" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,55,122,80"/>
+<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished. ..." alt="" coords="228,56,333,83"/>
+<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="453,107,551,133"/>
+<area shape="rect" id="node6" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="197,157,364,184"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie..." alt="" coords="429,5,575,32"/>
+<area shape="rect" id="node4" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="457,56,547,83"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="412,157,592,184"/>
 </map>

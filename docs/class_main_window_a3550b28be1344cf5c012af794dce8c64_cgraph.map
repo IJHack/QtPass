@@ -1,4 +1,3 @@
 <map id="MainWindow::executeWrapperStarted" name="MainWindow::executeWrapperStarted">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,208,44"/>
-<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="256,5,447,44"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. " alt="" coords="253,5,444,47"/>
 </map>

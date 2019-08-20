@@ -1,12 +1,12 @@
 <map id="MainWindow::onPush" name="MainWindow::onPush">
-<area shape="rect" id="node1" title="MainWindow::onPush do a git push." alt="" coords="5,105,156,131"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title=" " alt="" coords="692,5,863,31"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="204,105,372,131"/>
-<area shape="rect" id="node10" href="$class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title=" " alt="" coords="235,155,341,180"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="925,55,1115,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="685,55,869,80"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title=" " alt="" coords="427,105,623,131"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title=" " alt="" coords="420,155,629,180"/>
-<area shape="rect" id="node8" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title=" " alt="" coords="487,204,563,229"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title=" " alt="" coords="677,153,877,179"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="723,5,897,32"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="218,119,389,145"/>
+<area shape="rect" id="node10" href="$class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Pass::GitPush" alt="" coords="250,169,357,196"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="203,232,404,259"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="957,119,1148,145"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="717,68,903,95"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="459,93,656,120"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="452,144,663,171"/>
+<area shape="rect" id="node8" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="519,195,596,221"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="711,144,909,171"/>
 </map>

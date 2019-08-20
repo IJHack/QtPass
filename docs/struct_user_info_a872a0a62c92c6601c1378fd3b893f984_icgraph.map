@@ -1,4 +1,3 @@
 <map id="UserInfo::fullyValid" name="UserInfo::fullyValid">
-<area shape="rect" id="node1" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb...." alt="" coords="171,5,302,31"/>
-<area shape="rect" id="node2" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid." alt="" coords="5,5,123,31"/>
+<area shape="rect" id="node2" href="$struct_user_info.html#ac25fb2641e8ff271db5243409dccbaf3" title="UserInfo::isValid when fullyValid or marginallyValid. " alt="" coords="187,5,305,32"/>
 </map>

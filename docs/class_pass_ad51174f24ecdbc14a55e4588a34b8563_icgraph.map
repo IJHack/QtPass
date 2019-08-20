@@ -1,5 +1,5 @@
 <map id="Pass::finished" name="Pass::finished">
-<area shape="rect" id="node1" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="198,31,302,56"/>
-<area shape="rect" id="node2" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,150,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,55,122,80"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie..." alt="" coords="159,5,304,32"/>
+<area shape="rect" id="node3" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="186,56,277,83"/>
+<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="182,107,281,133"/>
 </map>

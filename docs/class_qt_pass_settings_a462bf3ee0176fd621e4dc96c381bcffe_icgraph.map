@@ -1,7 +1,10 @@
 <map id="QtPassSettings::getAutoclearSeconds" name="QtPassSettings::getAutoclearSeconds">
-<area shape="rect" id="node1" title=" " alt="" coords="423,24,619,63"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="194,5,375,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="194,55,375,80"/>
-<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="5,29,146,55"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title=" " alt="" coords="18,79,134,104"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="248,5,428,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="697,56,823,83"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="QtPass::setClipboardTimer" alt="" coords="248,107,428,133"/>
+<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="476,107,616,133"/>
+<area shape="rect" id="node9" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="487,157,605,184"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="664,107,856,133"/>
+<area shape="rect" id="node7" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="904,107,1071,133"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1119,107,1299,133"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="Pass::listKeys" name="Pass::listKeys">
-<area shape="rect" id="node1" title="Pass::listKeys list users." alt="" coords="227,31,332,56"/>
-<area shape="rect" id="node2" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="40,5,144,31"/>
-<area shape="rect" id="node3" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,55,179,80"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="160,5,348,32"/>
+<area shape="rect" id="node3" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="201,56,307,83"/>
+<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="205,107,303,133"/>
+<area shape="rect" id="node5" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="167,157,341,184"/>
 </map>

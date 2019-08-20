@@ -1,7 +1,11 @@
 <map id="QtPassSettings::getGitExecutable" name="QtPassSettings::getGitExecutable">
-<area shape="rect" id="node1" title=" " alt="" coords="264,80,486,105"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="20,5,201,31"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="34,55,187,80"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository." alt="" coords="52,104,169,129"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="5,153,216,179"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="293,5,473,32"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper. " alt="" coords="306,56,459,83"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="323,107,442,133"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="276,157,489,184"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="277,208,488,235"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="537,81,716,108"/>
+<area shape="rect" id="node7" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="543,157,710,184"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="764,157,944,184"/>
+<area shape="rect" id="node10" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="563,208,690,235"/>
 </map>

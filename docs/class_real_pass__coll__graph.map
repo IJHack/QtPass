@@ -1,6 +1,4 @@
 <map id="RealPass" name="RealPass">
-<area shape="rect" id="node1" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="7,241,85,267"/>
-<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="20,167,71,192"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,76,31"/>
-<area shape="rect" id="node4" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="62,80,136,105"/>
+<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation. " alt="" coords="20,171,72,197"/>
+<area shape="rect" id="node4" href="$class_executor.html" title="Executes external commands for handleing password, git and other data. " alt="" coords="62,81,137,108"/>
 </map>

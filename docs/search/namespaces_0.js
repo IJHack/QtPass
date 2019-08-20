@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['avatars',['avatars',['../namespaceavatars.html',1,'']]]
+  ['enums',['Enums',['../namespace_enums.html',1,'']]]
 ];

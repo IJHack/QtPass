@@ -1,7 +1,7 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
-<area shape="rect" id="node1" title=" " alt="" coords="693,31,849,56"/>
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="449,5,645,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="461,55,634,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="235,55,401,80"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction " alt="" coords="208,5,403,32"/>
+<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="219,107,391,133"/>
+<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="485,56,583,83"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="451,107,617,133"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="665,107,845,133"/>
 </map>

@@ -1,4 +1,6 @@
 <map id="QProgressIndicator::isAnimated" name="QProgressIndicator::isAnimated">
-<area shape="rect" id="node1" title="Returns a Boolean value indicating whether the component is currently animated." alt="" coords="190,5,326,44"/>
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner." alt="" coords="5,5,142,44"/>
+<area shape="rect" id="node2" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner. " alt="" coords="188,5,323,47"/>
+<area shape="rect" id="node5" href="$class_q_progress_indicator.html#a9ec91d7e35b27320f6499ad81b238634" title="Returns the delay between animation steps. " alt="" coords="188,71,323,112"/>
+<area shape="rect" id="node3" href="$class_q_progress_indicator.html#afdc92dfc35132dadcce9fd45adc51c65" title="Returns the color of the component. " alt="" coords="371,5,505,47"/>
+<area shape="rect" id="node4" href="$class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color. " alt="" coords="553,5,688,47"/>
 </map>

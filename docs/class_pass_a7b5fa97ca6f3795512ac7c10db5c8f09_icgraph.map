@@ -1,4 +1,7 @@
 <map id="Pass::GitPush" name="Pass::GitPush">
-<area shape="rect" id="node1" title=" " alt="" coords="204,5,309,31"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push. " alt="" coords="160,31,309,57"/>
+<area shape="rect" id="node6" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="185,81,284,108"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="357,5,539,32"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="365,56,531,83"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="587,56,767,83"/>
 </map>

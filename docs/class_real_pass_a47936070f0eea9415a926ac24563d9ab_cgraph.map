@@ -1,5 +1,4 @@
 <map id="RealPass::Init" name="RealPass::Init">
-<area shape="rect" id="node1" title="RealPass::Init initialize pass repository." alt="" coords="5,5,109,31"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="157,5,358,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="406,5,595,31"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="159,5,360,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="408,5,599,32"/>
 </map>

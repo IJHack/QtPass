@@ -1,4 +1,3 @@
 <map id="Util::findPasswordStore" name="Util::findPasswordStore">
-<area shape="rect" id="node1" title="Util::findPasswordStore look for common .password&#45;store folder location." alt="" coords="5,5,165,31"/>
-<area shape="rect" id="node2" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()" alt="" coords="213,5,384,31"/>
+<area shape="rect" id="node2" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() " alt="" coords="213,5,383,32"/>
 </map>

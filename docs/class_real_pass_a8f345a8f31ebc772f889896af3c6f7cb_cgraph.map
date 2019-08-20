@@ -1,0 +1,16 @@
+<map id="RealPass::~RealPass" name="RealPass::~RealPass">
+<area shape="rect" id="node2" href="$class_real_pass.html#a4ba4679cb9b658a9c86ddace8c163e19" title="RealPass::GitInit pass git init wrapper. " alt="" coords="225,5,347,32"/>
+<area shape="rect" id="node3" href="$class_real_pass.html#a35b82aa0ba97bc63fa1cfc943017c4ff" title="RealPass::GitPull pass git pull wrapper. " alt="" coords="223,56,349,83"/>
+<area shape="rect" id="node4" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes. " alt="" coords="216,107,356,133"/>
+<area shape="rect" id="node7" href="$class_real_pass.html#a421925bff36bed1ad1ab91e4bddd9f47" title="RealPass::GitPush pass git push wrapper. " alt="" coords="219,157,353,184"/>
+<area shape="rect" id="node8" href="$class_real_pass.html#ae4d0e5e8d0735e6ab4d6f6d64b35e96a" title="RealPass::Show pass show. " alt="" coords="226,208,346,235"/>
+<area shape="rect" id="node9" href="$class_real_pass.html#a26cacccec341ede63dcaad970fb00e67" title="RealPass::OtpGenerate pass otp. " alt="" coords="205,259,367,285"/>
+<area shape="rect" id="node10" href="$class_real_pass.html#a52ccc6435168c4e4e8ac409947901794" title="RealPass::Insert pass insert. " alt="" coords="226,309,346,336"/>
+<area shape="rect" id="node11" href="$class_real_pass.html#a729ac9806e1020ac3130a0dc1285ba54" title="RealPass::Remove pass remove wrapper. " alt="" coords="218,360,354,387"/>
+<area shape="rect" id="node12" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository. " alt="" coords="233,461,339,488"/>
+<area shape="rect" id="node14" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder) " alt="" coords="227,512,345,539"/>
+<area shape="rect" id="node15" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder) " alt="" coords="227,411,345,437"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="415,411,649,437"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="697,436,888,463"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="431,461,633,488"/>
+</map>

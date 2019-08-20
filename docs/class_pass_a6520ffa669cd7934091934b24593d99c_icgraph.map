@@ -1,6 +1,9 @@
 <map id="Pass::Show" name="Pass::Show">
-<area shape="rect" id="node1" title=" " alt="" coords="479,44,571,69"/>
-<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="250,5,429,44"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="247,68,431,107"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,12,199,37"/>
+<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file. " alt="" coords="149,46,327,87"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="377,108,572,135"/>
+<area shape="rect" id="node7" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="189,163,287,189"/>
+<area shape="rect" id="node8" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor. " alt="" coords="147,214,329,255"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="379,5,571,32"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="620,31,787,57"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="835,31,1015,57"/>
 </map>

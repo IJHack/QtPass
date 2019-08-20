@@ -1,8 +1,7 @@
 <map id="QtPass::QtPass" name="QtPass::QtPass">
-<area shape="rect" id="node1" title=" " alt="" coords="5,41,122,67"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="170,15,350,40"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="181,65,339,91"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title=" " alt="" coords="415,5,610,44"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="674,12,864,37"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="398,68,626,93"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="QtPass::setClipboardTimer" alt="" coords="172,15,352,42"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents. " alt="" coords="183,67,341,94"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title="QtPassSettings::getAutoclear\lSeconds" alt="" coords="416,5,611,47"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="675,13,865,39"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar. " alt="" coords="400,71,627,98"/>
 </map>

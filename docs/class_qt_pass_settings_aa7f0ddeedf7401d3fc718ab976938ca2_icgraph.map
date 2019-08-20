@@ -1,4 +1,8 @@
 <map id="QtPassSettings::setUsePass" name="QtPassSettings::setUsePass">
-<area shape="rect" id="node1" title=" " alt="" coords="194,5,386,31"/>
-<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="5,5,146,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="248,5,436,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="272,56,412,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="484,31,676,57"/>
+<area shape="rect" id="node7" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="517,81,643,108"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="724,31,891,57"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="939,31,1119,57"/>
 </map>

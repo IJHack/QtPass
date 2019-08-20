@@ -1,7 +1,7 @@
 <map id="MainWindow::generateGPGKeyPair" name="MainWindow::generateGPGKeyPair">
-<area shape="rect" id="node1" title=" " alt="" coords="487,31,721,56"/>
-<area shape="rect" id="node2" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . ." alt="" coords="235,5,439,31"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="254,55,420,80"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair." alt="" coords="21,5,171,31"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node2" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="284,5,485,32"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="301,56,468,83"/>
+<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="549,5,698,32"/>
+<area shape="rect" id="node4" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="761,5,961,32"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="533,56,713,83"/>
 </map>

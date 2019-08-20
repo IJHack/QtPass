@@ -1,8 +1,3 @@
 <map id="src/usersdialog.h" name="src/usersdialog.h">
-<area shape="rect" id="node1" title=" " alt="" coords="138,5,260,31"/>
-<area shape="rect" id="node2" href="$userinfo_8h.html" title=" " alt="" coords="61,79,140,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="164,79,234,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="258,79,311,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,94,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="118,152,184,177"/>
+<area shape="rect" id="node2" href="$userinfo_8h.html" title="userinfo.h" alt="" coords="61,80,140,107"/>
 </map>

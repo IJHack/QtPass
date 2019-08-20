@@ -1,13 +1,16 @@
 <map id="QtPassSettings::getGpgExecutable" name="QtPassSettings::getGpgExecutable">
-<area shape="rect" id="node1" title=" " alt="" coords="722,105,953,131"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="235,155,416,180"/>
-<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="483,5,656,31"/>
-<area shape="rect" id="node6" href="$class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users." alt="" coords="517,55,621,80"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="464,156,674,181"/>
-<area shape="rect" id="node10" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="509,205,630,231"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="242,5,409,31"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,187,31"/>
-<area shape="rect" id="node7" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="273,55,378,80"/>
-<area shape="rect" id="node8" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="238,104,412,129"/>
-<area shape="rect" id="node11" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="255,205,396,231"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="545,360,725,387"/>
+<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="302,208,474,235"/>
+<area shape="rect" id="node7" href="$class_pass.html#ad1ded1699f4e47d871296a96eca5a3ea" title="Pass::listKeys list users. " alt="" coords="335,107,441,133"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="283,411,493,437"/>
+<area shape="rect" id="node13" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="327,309,449,336"/>
+<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="586,157,685,184"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="1017,233,1184,260"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1232,233,1412,260"/>
+<area shape="rect" id="node8" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="541,107,729,133"/>
+<area shape="rect" id="node9" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users. " alt="" coords="582,5,689,32"/>
+<area shape="rect" id="node10" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="548,56,723,83"/>
+<area shape="rect" id="node12" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="810,309,937,336"/>
+<area shape="rect" id="node14" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="565,259,705,285"/>
+<area shape="rect" id="node15" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="777,259,969,285"/>
 </map>

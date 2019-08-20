@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['imitatepass_2ecpp',['imitatepass.cpp',['../imitatepass_8cpp.html',1,'']]],
-  ['imitatepass_2eh',['imitatepass.h',['../imitatepass_8h.html',1,'']]]
+  ['keygendialog_2ecpp',['keygendialog.cpp',['../keygendialog_8cpp.html',1,'']]],
+  ['keygendialog_2eh',['keygendialog.h',['../keygendialog_8h.html',1,'']]]
 ];

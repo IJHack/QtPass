@@ -1,15 +1,22 @@
 <map id="QtPassSettings::getRealPass" name="QtPassSettings::getRealPass">
-<area shape="rect" id="node1" title=" " alt="" coords="719,225,916,251"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title=" " alt="" coords="256,432,423,457"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="491,225,660,251"/>
-<area shape="rect" id="node13" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title=" " alt="" coords="480,91,671,116"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="12,407,193,432"/>
-<area shape="rect" id="node5" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="269,5,410,31"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="264,55,415,80"/>
-<area shape="rect" id="node7" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="250,104,429,143"/>
-<area shape="rect" id="node9" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,219,431,257"/>
-<area shape="rect" id="node10" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title=" " alt="" coords="247,281,432,307"/>
-<area shape="rect" id="node11" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="15,249,189,275"/>
-<area shape="rect" id="node12" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title=" " alt="" coords="269,331,410,356"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,111,199,136"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="1002,417,1169,443"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="263,409,433,435"/>
+<area shape="rect" id="node21" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="QtPassSettings::setUsePass" alt="" coords="251,122,445,149"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1233,635,1413,662"/>
+<area shape="rect" id="node5" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="500,147,688,174"/>
+<area shape="rect" id="node6" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="524,97,664,123"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="744,315,936,342"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push. " alt="" coords="519,518,669,545"/>
+<area shape="rect" id="node11" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file. " alt="" coords="505,401,683,443"/>
+<area shape="rect" id="node12" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="743,417,937,443"/>
+<area shape="rect" id="node13" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="493,751,695,778"/>
+<area shape="rect" id="node16" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor. " alt="" coords="503,620,685,661"/>
+<area shape="rect" id="node17" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="Pass{}{}wordDialog::~PasswordDialog basic destructor. " alt="" coords="499,685,689,727"/>
+<area shape="rect" id="node18" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="503,249,685,275"/>
+<area shape="rect" id="node19" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="753,231,927,258"/>
+<area shape="rect" id="node20" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title="UsersDialog::accept" alt="" coords="523,299,665,326"/>
+<area shape="rect" id="node8" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="777,97,903,123"/>
+<area shape="rect" id="node10" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="749,518,931,545"/>
+<area shape="rect" id="node14" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="765,751,915,778"/>
+<area shape="rect" id="node15" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="985,751,1185,778"/>
 </map>

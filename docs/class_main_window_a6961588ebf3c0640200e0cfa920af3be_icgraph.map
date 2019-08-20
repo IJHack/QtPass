@@ -1,0 +1,5 @@
+<map id="MainWindow::onPush" name="MainWindow::onPush">
+<area shape="rect" id="node2" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="203,5,384,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="210,56,377,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="432,56,612,83"/>
+</map>
