@@ -92,6 +92,10 @@ int main(int argc, char *argv[]) {
                    &MainWindow::messageAvailable);
 #endif
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
+  QGuiApplication::setDesktopFileName("qtpass.desktop");
+#endif
+
   w.show();
 
   return SingleApplication::exec();
