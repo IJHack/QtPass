@@ -727,12 +727,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+702"/>
+        <location line="+700"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-678"/>
+        <location line="-676"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>

@@ -5,7 +5,7 @@ QT        += core gui
 TARGET 	   = qtpass
 
 CONFIG += c++11 staticlib
-#CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 SOURCES   += mainwindow.cpp \
              configdialog.cpp \

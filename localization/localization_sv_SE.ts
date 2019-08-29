@@ -759,7 +759,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+702"/>
+        <location line="+700"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -768,7 +768,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-659"/>
+        <location line="-657"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>

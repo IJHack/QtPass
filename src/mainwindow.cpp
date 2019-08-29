@@ -1007,7 +1007,7 @@ void MainWindow::editPassword(const QString &file) {
 }
 
 /**
- * @brief MainWindow::renamePassword rename or move an existing password
+ * @brief MainWindow::renamePassword rename an existing password
  */
 void MainWindow::renamePassword() {
   bool ok;
@@ -1021,11 +1021,9 @@ void MainWindow::renamePassword() {
                             &ok);
   if (!ok || newName.isEmpty())
     return;
-  qDebug() << fileName;
-  qDebug() << newName;
   QString newFile = file;
   newFile.replace(file.lastIndexOf(fileName), fileName.length(), newName);
-  qDebug() << newFile;
+  newFile.replace(QRegExp("\\.gpg$"), "");
   QtPassSettings::getPass()->Move(file, newFile);
 }
 
