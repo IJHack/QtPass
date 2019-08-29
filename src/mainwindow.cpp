@@ -27,7 +27,6 @@
 #include <QMessageBox>
 #include <QShortcut>
 #include <QTimer>
-#include<QDebug>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
