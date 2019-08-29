@@ -575,13 +575,13 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+906"/>
+        <location filename="../src/mainwindow.cpp" line="+907"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+12"/>
+        <location filename="../src/mainwindow.cpp" line="+19"/>
         <source>Delete</source>
         <translation>Elimina</translation>
     </message>
@@ -651,7 +651,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="-18"/>
+        <location filename="../src/mainwindow.cpp" line="-25"/>
         <source>Users</source>
         <translation>Utenti</translation>
     </message>
@@ -780,12 +780,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+651"/>
+        <location line="+702"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-627"/>
+        <location line="-678"/>
         <source>OTP Code</source>
         <translation>Codice OTP</translation>
     </message>
@@ -833,12 +833,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+351"/>
+        <location line="+358"/>
         <source>New file</source>
         <translation>Nuovo file</translation>
     </message>
     <message>
-        <location line="-350"/>
+        <location line="-357"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuovo file password:
@@ -860,7 +860,33 @@ p, li { white-space: pre-wrap; }
         <translation>Sei sicuro di voler eliminare %1%2</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="+266"/>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
+        <location line="+33"/>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-32"/>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-365"/>
         <source>Delete password?</source>
         <translation>Eliminare password?</translation>
     </message>
@@ -920,7 +946,7 @@ p, li { white-space: pre-wrap; }
         <translation>Aggiungi password</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="+57"/>
+        <location filename="../src/mainwindow.cpp" line="+64"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nuova cartella:

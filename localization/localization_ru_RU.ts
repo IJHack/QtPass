@@ -602,13 +602,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+906"/>
+        <location filename="../src/mainwindow.cpp" line="+907"/>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+12"/>
+        <location filename="../src/mainwindow.cpp" line="+19"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -644,7 +644,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="-18"/>
+        <location filename="../src/mainwindow.cpp" line="-25"/>
         <source>Users</source>
         <translation>Пользователи</translation>
     </message>
@@ -718,7 +718,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+66"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Новая папка:
@@ -737,18 +737,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Добавить папку</translation>
     </message>
     <message>
-        <location line="-565"/>
+        <location line="-572"/>
         <source>Content hidden</source>
         <translation>Содержимое скрыто</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+651"/>
+        <location line="+702"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location line="-627"/>
+        <location line="-678"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -810,6 +810,32 @@ p, li { white-space: pre-wrap; }
         <translation>Удалить папку?</translation>
     </message>
     <message>
+        <location line="+267"/>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
+        <location line="+33"/>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-32"/>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Are you sure you want to delete %1%2?</source>
         <translation type="obsolete">Вы в самом деле хотите удалить %1? {1%2??}</translation>
     </message>
@@ -818,7 +844,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Генерирую ключевую пару GPG</translation>
     </message>
     <message>
-        <location line="+118"/>
+        <location line="-247"/>
         <source>Profile changed to %1</source>
         <translation>Профиль изменён на %1</translation>
     </message>
@@ -868,12 +894,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-49"/>
-        <location line="+351"/>
+        <location line="+358"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location line="-303"/>
+        <location line="-310"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>
