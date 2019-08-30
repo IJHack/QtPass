@@ -750,6 +750,7 @@ void MainWindow::updateProfileBox() {
       if (!i.key().isEmpty())
         ui->profileBox->addItem(i.key());
     }
+    ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
   if (index != -1) // -1 for not found
