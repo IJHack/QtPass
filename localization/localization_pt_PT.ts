@@ -554,7 +554,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+906"/>
+        <location filename="../src/mainwindow.cpp" line="+907"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -675,7 +675,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-711"/>
+        <location filename="../src/mainwindow.cpp" line="-712"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bem-vindo ao QtPass %1</translation>
     </message>
@@ -727,12 +727,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+651"/>
+        <location line="+652"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location line="-627"/>
+        <location line="-628"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -780,12 +780,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+351"/>
+        <location line="+352"/>
         <source>New file</source>
         <translation>Novo ficheiro</translation>
     </message>
     <message>
-        <location line="-350"/>
+        <location line="-351"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Novo ficheiro de password:
@@ -841,7 +841,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Gerar par de chaves GPG</translation>
     </message>
     <message>
-        <location line="+118"/>
+        <location line="+119"/>
         <source>Profile changed to %1</source>
         <translation>Perfil mudou para %1</translation>
     </message>
