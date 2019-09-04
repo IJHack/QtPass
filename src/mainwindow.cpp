@@ -916,6 +916,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     // SLOT(copyPasswordToClipboard()));
     // }
     contextMenu.addSeparator();
+    if (fileOrFolder.isDir()) {
+      QAction *renameFolder = contextMenu.addAction(tr("Rename folder"));
+      connect(renameFolder, &QAction::triggered, this, &MainWindow::renameFolder);
+    } else if (fileOrFolder.isFile()) {
+      QAction *renamePassword = contextMenu.addAction(tr("Rename password"));
+      connect(renamePassword, &QAction::triggered, this, &MainWindow::renamePassword);
+    }
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
   }
@@ -967,6 +974,27 @@ void MainWindow::addFolder() {
 }
 
 /**
+ * @brief MainWindow::renameFolder rename an existing folder
+ */
+void MainWindow::renameFolder() {
+  bool ok;
+  QString srcDir = QDir::cleanPath(Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+  QString srcDirName = QDir(srcDir).dirName();
+  QString newName =
+      QInputDialog::getText(this, tr("Rename file"),
+                            tr("Rename Folder To: "),
+                            QLineEdit::Normal,
+                            srcDirName,
+                            &ok);
+  if (!ok || newName.isEmpty())
+    return;
+  QString destDir = srcDir;
+  destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
+  QtPassSettings::getPass()->Move(srcDir, destDir);
+}
+
+
+/**
  * @brief MainWindow::editPassword read password and open edit window via
  * MainWindow::onEdit()
  */
@@ -976,6 +1004,27 @@ void MainWindow::editPassword(const QString &file) {
       onUpdate(true);
     setPassword(file, false);
   }
+}
+
+/**
+ * @brief MainWindow::renamePassword rename an existing password
+ */
+void MainWindow::renamePassword() {
+  bool ok;
+  QString file = getFile(ui->treeView->currentIndex(), false);
+  QString fileName = QFileInfo(file).baseName();
+  QString newName =
+      QInputDialog::getText(this, tr("Rename file"),
+                            tr("Rename File To: "),
+                            QLineEdit::Normal,
+                            fileName,
+                            &ok);
+  if (!ok || newName.isEmpty())
+    return;
+  QString newFile = file;
+  newFile.replace(file.lastIndexOf(fileName), fileName.length(), newName);
+  newFile.replace(QRegExp("\\.gpg$"), "");
+  QtPassSettings::getPass()->Move(file, newFile);
 }
 
 /**

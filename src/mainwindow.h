@@ -105,7 +105,9 @@ private slots:
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
+  void renameFolder();
   void editPassword(const QString &);
+  void renamePassword();
   void focusInput();
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);
