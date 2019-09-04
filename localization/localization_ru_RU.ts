@@ -737,18 +737,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Добавить папку</translation>
     </message>
     <message>
-        <location line="-572"/>
+        <location line="-573"/>
         <source>Content hidden</source>
         <translation>Содержимое скрыто</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+700"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location line="-676"/>
+        <location line="-677"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -810,7 +810,7 @@ p, li { white-space: pre-wrap; }
         <translation>Удалить папку?</translation>
     </message>
     <message>
-        <location line="+267"/>
+        <location line="+268"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -894,12 +894,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-49"/>
-        <location line="+358"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation>Новый файл</translation>
     </message>
     <message>
-        <location line="-310"/>
+        <location line="-311"/>
         <source>Delete password?</source>
         <translation>Удалить пароль?</translation>
     </message>

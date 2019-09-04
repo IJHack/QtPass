@@ -694,7 +694,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Vill du verkligen ta bort %%21?</translation>
     </message>
     <message>
-        <location line="+266"/>
+        <location line="+267"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -753,13 +753,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Gömt lösenord</translation>
     </message>
     <message>
-        <location line="-626"/>
+        <location line="-627"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+700"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -768,7 +768,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-657"/>
+        <location line="-658"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -813,12 +813,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+358"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location line="-310"/>
+        <location line="-311"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>

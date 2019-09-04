@@ -740,12 +740,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+700"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location line="-676"/>
+        <location line="-677"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -793,12 +793,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+358"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation>Nouveau fichier</translation>
     </message>
     <message>
-        <location line="-357"/>
+        <location line="-358"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Enregistrement d&apos;un nouveau mot de passe :
@@ -820,7 +820,7 @@ p, li { white-space: pre-wrap; }
         <translation>Êtes-vous sûr de vouloir supprimer %1%2?</translation>
     </message>
     <message>
-        <location line="+266"/>
+        <location line="+267"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -846,7 +846,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-365"/>
+        <location line="-366"/>
         <source>Delete password?</source>
         <translation>Supprimer le mot de passe ?</translation>
     </message>

@@ -739,12 +739,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+700"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location line="-676"/>
+        <location line="-677"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -792,12 +792,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+358"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location line="-357"/>
+        <location line="-358"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>新建密码：
@@ -819,7 +819,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">确定删除 %1%2?</translation>
     </message>
     <message>
-        <location line="+266"/>
+        <location line="+267"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -845,7 +845,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-365"/>
+        <location line="-366"/>
         <source>Delete password?</source>
         <translation>删除密码？</translation>
     </message>

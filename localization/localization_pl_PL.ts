@@ -543,7 +543,7 @@ Expire-Date: 0
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="+190"/>
+        <location filename="../src/mainwindow.cpp" line="+189"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -560,12 +560,12 @@ Expire-Date: 0
     </message>
     <message>
         <location line="+4"/>
-        <location line="+700"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-676"/>
+        <location line="-677"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -581,12 +581,12 @@ Expire-Date: 0
     </message>
     <message>
         <location line="+97"/>
-        <location line="+358"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-357"/>
+        <location line="-358"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
