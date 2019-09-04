@@ -561,7 +561,7 @@ Expire-Date: 0
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+12"/>
+        <location filename="../src/mainwindow.cpp" line="+19"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -624,7 +624,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="-18"/>
+        <location filename="../src/mainwindow.cpp" line="-25"/>
         <source>Users</source>
         <translation>Användare</translation>
     </message>
@@ -694,9 +694,35 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Vill du verkligen ta bort %%21?</translation>
     </message>
     <message>
-        <location line="+304"/>
+        <location line="+267"/>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+41"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <location line="+33"/>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-32"/>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Rename File To: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -727,13 +753,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Gömt lösenord</translation>
     </message>
     <message>
-        <location line="-566"/>
+        <location line="-627"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+652"/>
+        <location line="+701"/>
         <source>Password</source>
         <translation type="unfinished">Lösenord</translation>
     </message>
@@ -742,7 +768,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location line="-609"/>
+        <location line="-658"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -787,12 +813,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+352"/>
+        <location line="+359"/>
         <source>New file</source>
         <translation>Ny fil</translation>
     </message>
     <message>
-        <location line="-304"/>
+        <location line="-311"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>

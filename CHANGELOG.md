@@ -1,5 +1,18 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.0...HEAD)
+
+**Closed issues:**
+
+- Bundle ID is literally `$\(PRODUCT\_BUNDLE\_IDENTIFIER\)` [\#448](https://github.com/IJHack/QtPass/issues/448)
+
+**Merged pull requests:**
+
+- Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
+- Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
+
 ## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
 
@@ -18,9 +31,7 @@
 
 **Closed issues:**
 
-- various issues with Info.plist file on macOS [\#457](https://github.com/IJHack/QtPass/issues/457)
 - Can not add new passwords for some reason [\#454](https://github.com/IJHack/QtPass/issues/454)
-- Bundle ID is literally `$\(PRODUCT\_BUNDLE\_IDENTIFIER\)` [\#448](https://github.com/IJHack/QtPass/issues/448)
 - GnuPG not found on Linux Mint [\#433](https://github.com/IJHack/QtPass/issues/433)
 - How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
 - LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
@@ -32,9 +43,9 @@
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
 - Problem with GNUpg not found on MacOS [\#362](https://github.com/IJHack/QtPass/issues/362)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
-- make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
 - Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
+- \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 - MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
 **Merged pull requests:**
@@ -42,6 +53,7 @@
 - Use key fingerprint as ID instead of “long” ID. [\#452](https://github.com/IJHack/QtPass/pull/452) ([Natureshadow](https://github.com/Natureshadow))
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
+- For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fix character encoding issues for non-UTF-8 locales. [\#435](https://github.com/IJHack/QtPass/pull/435) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fixes and improvments for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for using WSL binaries on Windows [\#431](https://github.com/IJHack/QtPass/pull/431) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -90,6 +102,7 @@
 
 **Closed issues:**
 
+- various issues with Info.plist file on macOS [\#457](https://github.com/IJHack/QtPass/issues/457)
 - Multiple question marks while trying to delete password [\#385](https://github.com/IJHack/QtPass/issues/385)
 - No button icons and text in "menu bar" [\#383](https://github.com/IJHack/QtPass/issues/383)
 - Cannot add a new password [\#380](https://github.com/IJHack/QtPass/issues/380)
@@ -109,7 +122,6 @@
 
 **Merged pull requests:**
 
-- For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
 - 2 simple fixes [\#386](https://github.com/IJHack/QtPass/pull/386) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Should fix \#383 [\#384](https://github.com/IJHack/QtPass/pull/384) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Move connect action to main.cpp.  Default search text as parameter of… [\#382](https://github.com/IJHack/QtPass/pull/382) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
@@ -166,6 +178,7 @@
 
 **Closed issues:**
 
+- make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - Tab order is wrong in password dialog [\#331](https://github.com/IJHack/QtPass/issues/331)
 - Missing icons since split to static lib [\#325](https://github.com/IJHack/QtPass/issues/325)
 - "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
@@ -243,7 +256,6 @@
 - Click does not stick [\#233](https://github.com/IJHack/QtPass/issues/233)
 - Doubleclick on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
 - Windows - Enable GPG SSH Authentication [\#225](https://github.com/IJHack/QtPass/issues/225)
-- \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 - We need autotype . .  [\#65](https://github.com/IJHack/QtPass/issues/65)
 
 **Merged pull requests:**
@@ -414,7 +426,6 @@
 
 - Feature: Always on top [\#118](https://github.com/IJHack/QtPass/issues/118)
 - Option to show minimized instance [\#99](https://github.com/IJHack/QtPass/issues/99)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
@@ -488,6 +499,7 @@
 **Implemented enhancements:**
 
 - Users setup - key colours could be improved  [\#82](https://github.com/IJHack/QtPass/issues/82)
+- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Closed issues:**
 
