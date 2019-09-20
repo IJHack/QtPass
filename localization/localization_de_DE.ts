@@ -4,725 +4,479 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/configdialog.ui" line="+20"/>
         <source>Configuration</source>
-        <translation>Einstellungen</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
-        <location line="+687"/>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
-        <location line="-24"/>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
-        <location line="+54"/>
         <source>Pass</source>
-        <translation>pass</translation>
+        <translation type="vanished">pass</translation>
     </message>
     <message>
-        <location line="-44"/>
-        <location line="+7"/>
-        <location line="+27"/>
-        <location line="+31"/>
-        <location line="+164"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location line="-245"/>
         <source>Native</source>
-        <translation>Nativ</translation>
+        <translation type="vanished">Nativ</translation>
     </message>
     <message>
-        <location line="-24"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;pass verwenden</translation>
+        <translation type="vanished">&amp;pass verwenden</translation>
     </message>
     <message>
-        <location line="-183"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>.gpg-id Dateien automatisch hinzufügen</translation>
+        <translation type="vanished">.gpg-id Dateien automatisch hinzufügen</translation>
     </message>
     <message>
-        <location line="-359"/>
-        <location line="+83"/>
         <source>Seconds</source>
-        <translation>Sekunden</translation>
+        <translation type="vanished">Sekunden</translation>
     </message>
     <message>
-        <location line="-126"/>
         <source>Clipboard behaviour:</source>
-        <translation>Verhalten der Zwischenablage:</translation>
+        <translation type="vanished">Verhalten der Zwischenablage:</translation>
     </message>
     <message>
-        <location line="+26"/>
         <source>Autoclear after:</source>
-        <translation>Zwischenablage löschen nach:</translation>
+        <translation type="vanished">Zwischenablage löschen nach:</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
         <translation type="vanished">Passwort Anzeige:</translation>
     </message>
     <message>
-        <location line="+68"/>
         <source>Hide password</source>
-        <translation>Passwort ausblenden</translation>
+        <translation type="vanished">Passwort ausblenden</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Autoclear panel after:</source>
-        <translation>Anzeigezeit:</translation>
+        <translation type="vanished">Anzeigezeit:</translation>
     </message>
     <message>
-        <location line="+57"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Passwort Generierung:</translation>
+        <translation type="vanished">Passwort Generierung:</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Password Length:</source>
-        <translation>Passwort Länge:</translation>
+        <translation type="vanished">Passwort Länge:</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>Use characters:</source>
-        <translation>Verfügbare Zeichen:</translation>
+        <translation type="vanished">Verfügbare Zeichen:</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>Select character set for password generation</source>
-        <translation>Zeichensatz für Passwortgenerator auswählen</translation>
+        <translation type="vanished">Zeichensatz für Passwortgenerator auswählen</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>All Characters</source>
-        <translation>Alle Zeichen</translation>
+        <translation type="vanished">Alle Zeichen</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation type="vanished">Alphabetisch</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Alphanumerical</source>
-        <translation>Alphanumerisch</translation>
+        <translation type="vanished">Alphanumerisch</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Custom</source>
-        <translation>Eigene</translation>
+        <translation type="vanished">Eigene</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>Exclude capital letters</source>
-        <translation>Großbuchstaben Ausschließen</translation>
+        <translation type="vanished">Großbuchstaben Ausschließen</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generiere einfach zu merkende, aber unsichere Passwörter</translation>
+        <translation type="vanished">Generiere einfach zu merkende, aber unsichere Passwörter</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Exclude numbers</source>
-        <translation>Zahlen ausschließen</translation>
+        <translation type="vanished">Zahlen ausschließen</translation>
     </message>
     <message>
-        <location line="+19"/>
         <source>Git:</source>
-        <translation>Git:</translation>
+        <translation type="vanished">Git:</translation>
     </message>
     <message>
-        <location line="+72"/>
         <source>Extensions:</source>
-        <translation>Erweiterungen:</translation>
+        <translation type="vanished">Erweiterungen:</translation>
     </message>
     <message>
-        <location line="+23"/>
         <source>Use pass otp extension</source>
-        <translation>Verwenden Sie die Pass-OTP-Erweiterung</translation>
+        <translation type="vanished">Verwenden Sie die Pass-OTP-Erweiterung</translation>
     </message>
     <message>
-        <location line="+22"/>
         <source>System:</source>
-        <translation>System:</translation>
+        <translation type="vanished">System:</translation>
     </message>
     <message>
-        <location line="+76"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished">Zu verwendende Programme auswählen:</translation>
+        <translation type="obsolete">Zu verwendende Programme auswählen:</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished">Selbst installieres &amp;git/gpg</translation>
+        <translation type="obsolete">Selbst installieres &amp;git/gpg</translation>
     </message>
     <message>
-        <location line="+102"/>
         <source>pass</source>
-        <translation>pass</translation>
+        <translation type="vanished">pass</translation>
     </message>
     <message>
-        <location line="+19"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+235"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; Version </translation>
+        <translation type="vanished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; Version </translation>
     </message>
     <message>
-        <location line="-408"/>
         <source>Always on top</source>
-        <translation>Immer im Vordergrund</translation>
+        <translation type="vanished">Immer im Vordergrund</translation>
     </message>
     <message>
-        <location line="+393"/>
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
     <message>
-        <location line="-368"/>
         <source>Programs</source>
-        <translation>Programme</translation>
+        <translation type="vanished">Programme</translation>
     </message>
     <message>
-        <location line="+101"/>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location line="-678"/>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
-        <location line="+232"/>
         <source>Characters</source>
-        <translation>Zeichen</translation>
+        <translation type="vanished">Zeichen</translation>
     </message>
     <message>
-        <location line="+120"/>
         <source>Use pwgen</source>
-        <translation>pwgen verwenden</translation>
+        <translation type="vanished">pwgen verwenden</translation>
     </message>
     <message>
-        <location line="+179"/>
         <source>Use TrayIcon</source>
-        <translation>Im System Tray anzeigen</translation>
+        <translation type="vanished">Im System Tray anzeigen</translation>
     </message>
     <message>
-        <location line="+14"/>
         <source>Hide on close</source>
-        <translation>Nur minimieren nicht beenden</translation>
+        <translation type="vanished">Nur minimieren nicht beenden</translation>
     </message>
     <message>
-        <location line="-110"/>
         <source>Automatically push</source>
-        <translation>Automatisches &quot;Push&quot;</translation>
+        <translation type="vanished">Automatisches &quot;Push&quot;</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Automatically pull</source>
-        <translation>Automatisches &quot;Pull&quot;</translation>
+        <translation type="vanished">Automatisches &quot;Pull&quot;</translation>
     </message>
     <message>
-        <location line="-28"/>
         <source>Use git</source>
-        <translation>Git verwenden</translation>
+        <translation type="vanished">Git verwenden</translation>
     </message>
     <message>
-        <location line="-45"/>
         <source>Include special symbols </source>
-        <translation>Sonderzeichen zulassen</translation>
+        <translation type="vanished">Sonderzeichen zulassen</translation>
     </message>
     <message>
-        <location line="-34"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation type="vanished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location line="-290"/>
         <source>Use primary selection</source>
-        <translation>Verwenden Sie die primäre Auswahl</translation>
+        <translation type="vanished">Verwenden Sie die primäre Auswahl</translation>
     </message>
     <message>
-        <location line="+56"/>
         <source>Content panel behaviour:</source>
-        <translation>Verhalten des Inhaltsbereichs:</translation>
+        <translation type="vanished">Verhalten des Inhaltsbereichs:</translation>
     </message>
     <message>
-        <location line="+437"/>
         <source>Start minimized</source>
-        <translation>Minimiert starten</translation>
+        <translation type="vanished">Minimiert starten</translation>
     </message>
     <message>
-        <location line="+241"/>
         <source>Profiles</source>
-        <translation>Profile</translation>
+        <translation type="vanished">Profile</translation>
     </message>
     <message>
-        <location line="+49"/>
         <source>Name</source>
-        <translation>Name</translation>
+        <translation type="vanished">Name</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Path</source>
-        <translation>Pfad</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Add</source>
-        <translation>Hinzufügen</translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <source>Current password-store</source>
-        <translation>aktueller Passwort Speicher</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Template</source>
-        <translation>Templates</translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Ein Template macht weitere Felder bei der Passwort Generierung und Anzeige verfügbar.</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Use template</source>
-        <translation>Templates verwenden</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Alle Zeilen, die mit einem Wort gefolgt von einem Doppelpunkt anfangen, als Template Element behandeln</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show all fields templated</source>
-        <translation>Alle Felder als Template benutzen</translation>
-    </message>
-    <message>
-        <location line="-75"/>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <location line="-745"/>
-        <source>Hide content</source>
-        <translation>Inhalt ausblenden</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="+588"/>
-        <source>GnuPG not found</source>
-        <translation>GnuPG nicht gefunden</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>GnuPG ist nicht installiert. &lt;br&gt;Installiere &lt;strong&gt;gpg&lt;/strong&gt; mit deinem favoriten Paket Manager&lt;br&gt;oder von GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Create password-store?</source>
-        <translation>Passwort Speicher erstellen?</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Would you like to create a password-store at %1?</source>
-        <translation>Soll ein Passwort Speicher in %1 erstellt werden?</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>Password store not initialised</source>
-        <translation>Passwort Speicher nicht initialisiert</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Ordner %1 ist kein Passwort Speicher oder wurde noch nicht initialisiert.</translation>
-    </message>
-    <message>
-        <location line="-128"/>
-        <source>No profile selected</source>
-        <translation>Kein Profil ausgewählt</translation>
-    </message>
-    <message>
-        <location line="-475"/>
-        <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>No Clipboard</source>
-        <translation>Keine Zwischenablage</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Always copy to clipboard</source>
-        <translation>Immer in Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>On-demand copy to clipboard</source>
-        <translation>Bei Bedarf in Zwischenablage kopieren</translation>
-    </message>
-    <message>
-        <location line="+420"/>
-        <source>No profile selected to delete</source>
-        <translation>Kein Profil zum Löschen ausgewählt</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="+643"/>
-        <source>Autodetect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-273"/>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImitatePass</name>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="+95"/>
-        <location line="+203"/>
-        <source>Can not edit</source>
-        <translation>Ändern nicht möglich</translation>
-    </message>
-    <message>
-        <location line="-202"/>
-        <location line="+203"/>
-        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Schlüssel nicht lesbar, .gpg-id Datei fehlt oder ist ungültig.</translation>
-    </message>
-    <message>
-        <location line="-124"/>
-        <source>Cannot update</source>
-        <translation>Update nicht möglich</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Failed to open .gpg-id for writing.</source>
-        <translation>Schreibzugrif auf .gpg-id fehlgeschlagen.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Check selected users!</source>
-        <translation>Ausgewählte Benutzer prüfen!</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>None of the selected keys have a secret key available.
-You will not be able to decrypt any newly added passwords!</source>
-        <translation>Der Partnerschlüssel der selektierten Schlüssel fehlt.
-Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!</translation>
-    </message>
-    <message>
-        <location line="+51"/>
-        <source>Re-encrypting from folder %1</source>
-        <translation>Neu-Verschlüsselung aus Ordner %1</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <location line="+87"/>
-        <source>Updating password-store</source>
-        <translation>Passwort Speicher aktualisieren</translation>
-    </message>
-</context>
-<context>
-    <name>KeygenDialog</name>
-    <message>
-        <location filename="../src/keygendialog.ui" line="+14"/>
-        <source>Generate GnuPG keypair</source>
-        <translation>GnuPG Schlüssel-Paar generieren</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>Generate a new key pair</source>
-        <translation>Neues Schlüssel-Paar generieren</translation>
-    </message>
-    <message>
-        <location line="+119"/>
-        <source>Passphrase</source>
-        <translation>Passphrase</translation>
-    </message>
-    <message>
-        <location line="-58"/>
-        <source>Email</source>
-        <translation>E-Mail</translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Name</source>
-        <translation>Name</translation>
-    </message>
-    <message>
-        <location line="+71"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head /&gt;&lt;body&gt;&lt;p&gt;Es gibt keine Begrenzung für die Länge einer Passphrase und sie sollte sorgfältig ausgewählt werden. Aus der Sicht der Sicherheit, ist die Passphrase zum Entsperren des privaten Schlüssels einer der schwächsten Punkte in GnuPG (und anderen Public-Key-Verschlüsselungssystemen), da es der einzige Schutz, den Sie haben, wenn eine andere Person Ihren privaten Schlüssel bekommt. &lt;br/&gt; Idealerweise sollte die Passphrase nicht Wörter aus einem Wörterbuch sondern aus Klein- und Großbuchstaben sowie aus nicht-alphabetischen Zeichen bestehen. &lt;br/&gt; Eine gute Passphrase ist entscheidend für die sichere Nutzung von GnuPG. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Expert</source>
-        <translation>Experte</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: default
-Subkey-Type: default
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Einstellungen für Fortgeschrittene zu finden unter &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/keygendialog.cpp" line="+129"/>
-        <source>Invalid name</source>
-        <translation>Ungültiger Name</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Name must be at least 5 characters long.</source>
-        <translation>Name muss mindestens 5 Zeichen lang sein.</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Invalid email</source>
-        <translation>Ungültige E-Mail</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The email address you typed is not a valid email address.</source>
-        <translation>Die eingegebene E-Mail-Adresse ist keine gültige E-Mail-Adresse.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translatorcomment>Google translate FTW</translatorcomment>
-        <translation>Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir müssen eine Menge von zufälligen Bytes zu erzeugen. Es ist eine gute Idee während der Prim-Generierung eine andere Aktion (auf der Tastatur tippen, die Maus bewegen, Festplatten benutzen) auszuführen; Dies gibt dem Zufallszahlengenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../src/mainwindow.ui" line="+14"/>
-        <source>QtPass</source>
-        <translation>QtPass</translation>
+        <translation type="vanished">Pfad</translation>
     </message>
     <message>
         <source>Add</source>
         <translation type="vanished">Hinzufügen</translation>
     </message>
     <message>
-        <location line="+315"/>
-        <location line="+3"/>
-        <location filename="../src/mainwindow.cpp" line="+907"/>
-        <source>Edit</source>
-        <translation>Ändern</translation>
+        <source>Current password-store</source>
+        <translation type="vanished">aktueller Passwort Speicher</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location line="+3"/>
-        <location filename="../src/mainwindow.cpp" line="+19"/>
+        <source>Template</source>
+        <translation type="vanished">Templates</translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
+        <translation type="vanished">Ein Template macht weitere Felder bei der Passwort Generierung und Anzeige verfügbar.</translation>
+    </message>
+    <message>
+        <source>Use template</source>
+        <translation type="vanished">Templates verwenden</translation>
+    </message>
+    <message>
+        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
+        <translation type="vanished">Alle Zeilen, die mit einem Wort gefolgt von einem Doppelpunkt anfangen, als Template Element behandeln</translation>
+    </message>
+    <message>
+        <source>Show all fields templated</source>
+        <translation type="vanished">Alle Felder als Template benutzen</translation>
+    </message>
+    <message>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation type="vanished">Löschen</translation>
     </message>
     <message>
-        <location line="+19"/>
-        <source>git push</source>
-        <translation></translation>
+        <source>Hide content</source>
+        <translation type="vanished">Inhalt ausblenden</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <source>GnuPG not found</source>
+        <translation type="vanished">GnuPG nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="vanished">GnuPG ist nicht installiert. &lt;br&gt;Installiere &lt;strong&gt;gpg&lt;/strong&gt; mit deinem favoriten Paket Manager&lt;br&gt;oder von GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Create password-store?</source>
+        <translation type="vanished">Passwort Speicher erstellen?</translation>
+    </message>
+    <message>
+        <source>Would you like to create a password-store at %1?</source>
+        <translation type="vanished">Soll ein Passwort Speicher in %1 erstellt werden?</translation>
+    </message>
+    <message>
+        <source>Password store not initialised</source>
+        <translation type="vanished">Passwort Speicher nicht initialisiert</translation>
+    </message>
+    <message>
+        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
+        <translation type="vanished">Ordner %1 ist kein Passwort Speicher oder wurde noch nicht initialisiert.</translation>
+    </message>
+    <message>
+        <source>No profile selected</source>
+        <translation type="vanished">Kein Profil ausgewählt</translation>
+    </message>
+    <message>
+        <source>No Clipboard</source>
+        <translation type="vanished">Keine Zwischenablage</translation>
+    </message>
+    <message>
+        <source>Always copy to clipboard</source>
+        <translation type="vanished">Immer in Zwischenablage kopieren</translation>
+    </message>
+    <message>
+        <source>On-demand copy to clipboard</source>
+        <translation type="vanished">Bei Bedarf in Zwischenablage kopieren</translation>
+    </message>
+    <message>
+        <source>No profile selected to delete</source>
+        <translation type="vanished">Kein Profil zum Löschen ausgewählt</translation>
+    </message>
+</context>
+<context>
+    <name>ImitatePass</name>
+    <message>
+        <source>Can not edit</source>
+        <translation type="vanished">Ändern nicht möglich</translation>
+    </message>
+    <message>
+        <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
+        <translation type="vanished">Schlüssel nicht lesbar, .gpg-id Datei fehlt oder ist ungültig.</translation>
+    </message>
+    <message>
+        <source>Cannot update</source>
+        <translation type="vanished">Update nicht möglich</translation>
+    </message>
+    <message>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation type="vanished">Schreibzugrif auf .gpg-id fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Check selected users!</source>
+        <translation type="vanished">Ausgewählte Benutzer prüfen!</translation>
+    </message>
+    <message>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation type="vanished">Der Partnerschlüssel der selektierten Schlüssel fehlt.
+Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!</translation>
+    </message>
+    <message>
+        <source>Re-encrypting from folder %1</source>
+        <translation type="vanished">Neu-Verschlüsselung aus Ordner %1</translation>
+    </message>
+    <message>
+        <source>Updating password-store</source>
+        <translation type="vanished">Passwort Speicher aktualisieren</translation>
+    </message>
+</context>
+<context>
+    <name>KeygenDialog</name>
+    <message>
+        <source>Generate GnuPG keypair</source>
+        <translation type="vanished">GnuPG Schlüssel-Paar generieren</translation>
+    </message>
+    <message>
+        <source>Generate a new key pair</source>
+        <translation type="vanished">Neues Schlüssel-Paar generieren</translation>
+    </message>
+    <message>
+        <source>Passphrase</source>
+        <translation type="vanished">Passphrase</translation>
+    </message>
+    <message>
+        <source>Email</source>
+        <translation type="vanished">E-Mail</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="vanished">Name</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head /&gt;&lt;body&gt;&lt;p&gt;Es gibt keine Begrenzung für die Länge einer Passphrase und sie sollte sorgfältig ausgewählt werden. Aus der Sicht der Sicherheit, ist die Passphrase zum Entsperren des privaten Schlüssels einer der schwächsten Punkte in GnuPG (und anderen Public-Key-Verschlüsselungssystemen), da es der einzige Schutz, den Sie haben, wenn eine andere Person Ihren privaten Schlüssel bekommt. &lt;br/&gt; Idealerweise sollte die Passphrase nicht Wörter aus einem Wörterbuch sondern aus Klein- und Großbuchstaben sowie aus nicht-alphabetischen Zeichen bestehen. &lt;br/&gt; Eine gute Passphrase ist entscheidend für die sichere Nutzung von GnuPG. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation type="vanished">Experte</translation>
+    </message>
+    <message>
+        <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
+        <translation type="vanished">Einstellungen für Fortgeschrittene zu finden unter &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Invalid name</source>
+        <translation type="vanished">Ungültiger Name</translation>
+    </message>
+    <message>
+        <source>Name must be at least 5 characters long.</source>
+        <translation type="vanished">Name muss mindestens 5 Zeichen lang sein.</translation>
+    </message>
+    <message>
+        <source>Invalid email</source>
+        <translation type="vanished">Ungültige E-Mail</translation>
+    </message>
+    <message>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="vanished">Die eingegebene E-Mail-Adresse ist keine gültige E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
+        <translatorcomment>Google translate FTW</translatorcomment>
+        <translation type="vanished">Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir müssen eine Menge von zufälligen Bytes zu erzeugen. Es ist eine gute Idee während der Prim-Generierung eine andere Aktion (auf der Tastatur tippen, die Maus bewegen, Festplatten benutzen) auszuführen; Dies gibt dem Zufallszahlengenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>QtPass</source>
+        <translation type="vanished">QtPass</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="vanished">Hinzufügen</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="vanished">Ändern</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="vanished">Löschen</translation>
+    </message>
+    <message>
         <source>Push</source>
-        <translation>Hochladen (push)</translation>
+        <translation type="vanished">Hochladen (push)</translation>
     </message>
     <message>
-        <location line="-107"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+67"/>
-        <source>Ctrl+N</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>OTP</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+3"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Generiere OTP und kopiere in die Zwischenablage</translation>
+        <translation type="vanished">Generiere OTP und kopiere in die Zwischenablage</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Ctrl+G</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>git pull</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="-3"/>
         <source>Update</source>
-        <translation>Aktualisieren</translation>
+        <translation type="vanished">Aktualisieren</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Manage who can read password in folder</source>
-        <translation>Verwalten wer Passwörter im Ordner lesen kann</translation>
+        <translation type="vanished">Verwalten wer Passwörter im Ordner lesen kann</translation>
     </message>
     <message>
-        <location line="-3"/>
-        <location filename="../src/mainwindow.cpp" line="-25"/>
         <source>Users</source>
-        <translation>Benutzer</translation>
+        <translation type="vanished">Benutzer</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Configuration</source>
-        <translation>Einstellungen</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
-        <location line="-3"/>
         <source>Config</source>
-        <translation>Einstellungen</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
-        <location line="-316"/>
         <source>Select profile</source>
-        <translation>Wählen Sie das Profil aus</translation>
+        <translation type="vanished">Wählen Sie das Profil aus</translation>
     </message>
     <message>
-        <location line="+129"/>
         <source>Welcome to QtPass</source>
-        <translation>Willkommen bei QtPass</translation>
+        <translation type="vanished">Willkommen bei QtPass</translation>
     </message>
     <message>
-        <location line="-82"/>
         <source>Search Password</source>
-        <translation>Passwort suchen</translation>
+        <translation type="vanished">Passwort suchen</translation>
     </message>
     <message>
         <source>qtpass</source>
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-621"/>
-        <location line="+12"/>
         <source>Updating password-store</source>
-        <translation>Passwort Speicher aktualisieren</translation>
+        <translation type="vanished">Passwort Speicher aktualisieren</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
         <translation type="vanished">Zwischenablage gelöscht</translation>
     </message>
     <message>
-        <location line="+361"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen</translation>
+        <translation type="vanished">Sind Sie sicher, dass Sie %1%2 löschen wollen</translation>
     </message>
     <message>
-        <location line="+245"/>
         <source>Open folder with file manager</source>
-        <translation>Öffnen Sie den Ordner mit dem Dateimanager</translation>
+        <translation type="vanished">Öffnen Sie den Ordner mit dem Dateimanager</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>Rename folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Rename password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+41"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Neuer Ordner:
+        <translation type="vanished">Neuer Ordner:
 (Wird in %1 platziert werden)</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <location line="+33"/>
-        <source>Rename file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-32"/>
-        <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -760,29 +514,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Passwort ausgeblendet</translation>
     </message>
     <message>
-        <location line="-627"/>
         <source>Content hidden</source>
-        <translation>Inhalt ausgeblendet</translation>
+        <translation type="vanished">Inhalt ausgeblendet</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+701"/>
         <source>Password</source>
-        <translation>Passwort</translation>
+        <translation type="vanished">Passwort</translation>
     </message>
     <message>
-        <location line="-677"/>
         <source>OTP Code</source>
-        <translation>OTP-Code</translation>
+        <translation type="vanished">OTP-Code</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
         <translation type="vanished">Zwischenablage nicht geleert</translation>
     </message>
     <message>
-        <location line="+19"/>
         <source>Password and Content hidden</source>
-        <translation>Password und Inhalt ausgeblendet</translation>
+        <translation type="vanished">Password und Inhalt ausgeblendet</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -821,74 +570,59 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">in Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="+210"/>
-        <location line="+3"/>
-        <location filename="../src/mainwindow.cpp" line="+461"/>
         <source>Add folder</source>
-        <translation>Ordner hinzufügen</translation>
+        <translation type="vanished">Ordner hinzufügen</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <location line="+3"/>
-        <location filename="../src/mainwindow.cpp" line="+1"/>
         <source>Add password</source>
-        <translation>Passwort hinzufügen</translation>
+        <translation type="vanished">Passwort hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-711"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Willkommen bei QtPass %1</translation>
+        <translation type="vanished">Willkommen bei QtPass %1</translation>
     </message>
     <message>
-        <location line="+318"/>
         <source>Looking for: %1</source>
-        <translation>Suche nach: %1</translation>
+        <translation type="vanished">Suche nach: %1</translation>
     </message>
     <message>
         <source>Can not edit</source>
         <translation type="vanished">Ändern nicht möglich</translation>
     </message>
     <message>
-        <location line="+97"/>
-        <location line="+359"/>
         <source>New file</source>
-        <translation>Neue Datei</translation>
+        <translation type="vanished">Neue Datei</translation>
     </message>
     <message>
-        <location line="-311"/>
         <source>Delete password?</source>
-        <translation>Passwort löschen?</translation>
+        <translation type="vanished">Passwort löschen?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
         <translation type="vanished">Sind Sie sicher, dass Sie %1 löschen wollen?</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Delete folder?</source>
-        <translation>Ordner löschen?</translation>
+        <translation type="vanished">Ordner löschen?</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
         <translation type="vanished">Gewählte Passwort-Datei existiert nicht, Änderung nicht möglich</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>
+        <translation type="vanished">
 Neues Passwort-Datei:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
-        <location line="+28"/>
         <source> and the whole content?</source>
-        <translation> und der ganze Inhalt?</translation>
+        <translation type="vanished"> und der ganze Inhalt?</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> und der gesamte Inhalt? &lt;br&gt;&lt;strong&gt;Achtung: Im angegebenen Ordner befinden sich Dateien, überprüfen Sie diese, bevor Sie fortfahren.&lt;/strong&gt;</translation>
+        <translation type="vanished"> und der gesamte Inhalt? &lt;br&gt;&lt;strong&gt;Achtung: Im angegebenen Ordner befinden sich Dateien, überprüfen Sie diese, bevor Sie fortfahren.&lt;/strong&gt;</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -907,71 +641,58 @@ Neues Passwort-Datei:
         <translation type="vanished">GPG Schlüssel-Paar wird generiert</translation>
     </message>
     <message>
-        <location line="+128"/>
         <source>Profile changed to %1</source>
-        <translation>Profil geändert zu %1</translation>
+        <translation type="vanished">Profil geändert zu %1</translation>
     </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+102"/>
         <source>No characters chosen</source>
-        <translation>Keine Zeichen ausgewählt</translation>
+        <translation type="vanished">Keine Zeichen ausgewählt</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
+        <translation type="vanished">Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
     </message>
 </context>
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../src/passworddialog.ui" line="+14"/>
-        <location line="+47"/>
         <source>Password</source>
-        <translation>Passwort</translation>
+        <translation type="vanished">Passwort</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>Generate</source>
-        <translation>Generieren</translation>
+        <translation type="vanished">Generieren</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Show password</source>
-        <translation>Passwort anzeigen</translation>
+        <translation type="vanished">Passwort anzeigen</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Character Set:</source>
-        <translation>Zeichensatz:</translation>
+        <translation type="vanished">Zeichensatz:</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>All Characters</source>
-        <translation>Alle Zeichen</translation>
+        <translation type="vanished">Alle Zeichen</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation type="vanished">Alphabetisch</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Alphanumerical</source>
-        <translation>Alphanumerisch</translation>
+        <translation type="vanished">Alphanumerisch</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Custom</source>
-        <translation>Eigene</translation>
+        <translation type="vanished">Eigene</translation>
     </message>
     <message>
-        <location line="+14"/>
         <source>Length:</source>
-        <translation>Länge:</translation>
+        <translation type="vanished">Länge:</translation>
     </message>
 </context>
 <context>
@@ -985,182 +706,150 @@ Neues Passwort-Datei:
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">GPG Schlüssel-Paar wird generiert</translation>
+        <translation type="obsolete">GPG Schlüssel-Paar wird generiert</translation>
     </message>
     <message>
-        <location line="+55"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Verbindung zu WebDAV fehlgeschlagen:</translation>
+        <translation type="obsolete">Verbindung zu WebDAV fehlgeschlagen:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV Passwort</translation>
+        <translation type="obsolete">QtPass WebDAV Passwort</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Passwort für WebDAV eingeben:</translation>
+        <translation type="obsolete">Passwort für WebDAV eingeben:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">Unerwarteter Abbruch durch fusedav</translation>
+        <translation type="obsolete">Unerwarteter Abbruch durch fusedav</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
+        <translation type="obsolete">fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation type="obsolete">QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation type="obsolete">QProcess::Crashed</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation type="obsolete">QProcess::Timedout</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation type="obsolete">QProcess::ReadError</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation type="obsolete">QProcess::WriteError</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation type="obsolete">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location line="+127"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Zwischenablage gelöscht</translation>
+        <translation type="obsolete">Zwischenablage gelöscht</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Zwischenablage nicht geleert</translation>
+        <translation type="obsolete">Zwischenablage nicht geleert</translation>
     </message>
     <message>
-        <location line="+19"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">in Zwischenablage kopiert</translation>
+        <translation type="obsolete">in Zwischenablage kopiert</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+245"/>
         <source>force overwrite?</source>
-        <translation>Überschreiben erzwingen?</translation>
+        <translation type="vanished">Überschreiben erzwingen?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>overwrite %1 with %2?</source>
-        <translation>Überschreiben %1 mit %2?</translation>
+        <translation type="vanished">Überschreiben %1 mit %2?</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
-        <translation>&amp;Anzeigen</translation>
+        <translation type="vanished">&amp;Anzeigen</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Verstecken</translation>
+        <translation type="vanished">&amp;Verstecken</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Mi&amp;nimize</source>
-        <translation>M&amp;inimieren</translation>
+        <translation type="vanished">M&amp;inimieren</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Ma&amp;ximize</source>
-        <translation>M&amp;aximieren</translation>
+        <translation type="vanished">M&amp;aximieren</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Wiederherstellen</translation>
+        <translation type="vanished">&amp;Wiederherstellen</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Schließen</translation>
+        <translation type="vanished">&amp;Schließen</translation>
     </message>
 </context>
 <context>
     <name>UsersDialog</name>
     <message>
-        <location filename="../src/usersdialog.ui" line="+20"/>
         <source>Read access users</source>
-        <translation>Benutzer mit Lese-Zugrif</translation>
+        <translation type="vanished">Benutzer mit Lese-Zugrif</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Hier die Benutzer eintragen denen Entschlüsselungszugriff für Passwörter in diesem Ordner gewährt werden soll.
+        <translation type="vanished">Hier die Benutzer eintragen denen Entschlüsselungszugriff für Passwörter in diesem Ordner gewährt werden soll.
 Hinweis: Nachträglich hinzugefügte Nutzer müssen durch erneutes editieren des Passwort Speichers aktualisiert werden.
 Die blauen Einträgen verfügen über einen gültigen Schlüssel. Zum entschlüsseln auswählen.
 Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht wählbar.</translation>
     </message>
     <message>
-        <location line="+24"/>
         <source>Search Users</source>
-        <translation>Benutzer suchen</translation>
+        <translation type="vanished">Benutzer suchen</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Show unusable keys</source>
-        <translation>unbrauchbare Schlüssel anzeigen</translation>
+        <translation type="vanished">unbrauchbare Schlüssel anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
-        <translation type="unfinished">Schlüssel-Liste nicht gefunden</translation>
+        <translation type="obsolete">Schlüssel-Liste nicht gefunden</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation type="unfinished">gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
+        <translation type="obsolete">gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
     </message>
     <message>
-        <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Schlüssel nicht in Keyring gefunden</translation>
+        <translation type="obsolete">Schlüssel nicht in Keyring gefunden</translation>
     </message>
     <message>
-        <location line="+92"/>
         <source>created</source>
-        <translation>erstellt</translation>
+        <translation type="vanished">erstellt</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>expires</source>
-        <translation>gültig bis</translation>
+        <translation type="vanished">gültig bis</translation>
     </message>
 </context>
 </TS>
