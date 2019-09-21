@@ -256,3 +256,19 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   }
   return true;
 }
+
+bool StoreModel::lessThan(const QModelIndex &source_left,
+                          const QModelIndex &source_right) const {
+/* matches logic in QFileSystemModelSorter::compareNodes() */
+#ifndef Q_OS_MAC
+  if (fs && (source_left.column() == 0 || source_left.column() == 1)) {
+    bool leftD = fs->isDir(source_left);
+    bool rightD = fs->isDir(source_right);
+
+    if (leftD ^ rightD)
+      return leftD;
+  }
+#endif
+
+  return QSortFilterProxyModel::lessThan(source_left, source_right);
+}

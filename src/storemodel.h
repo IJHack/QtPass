@@ -23,6 +23,8 @@ public:
   bool ShowThis(const QModelIndex) const;
   void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
   QVariant data(const QModelIndex &index, int role) const;
+  bool lessThan(const QModelIndex &source_left,
+                const QModelIndex &source_right) const override;
 
   // QAbstractItemModel interface
 public:
