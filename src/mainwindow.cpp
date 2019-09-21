@@ -69,9 +69,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   model.fetchMore(rootDir);
 
   proxyModel.setModelAndStore(&model, passStore);
-  // proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  // model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(
