@@ -80,6 +80,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
  */
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
                                   QString passStore) {
+  setSourceModel(sourceModel);
   fs = sourceModel;
   store = std::move(passStore);
 }

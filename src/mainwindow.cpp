@@ -65,7 +65,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
 
-  proxyModel.setSourceModel(&model);
   proxyModel.setModelAndStore(&model, passStore);
   // proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
