@@ -65,16 +65,15 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
 
-  proxyModel.setSourceModel(&model);
+  QModelIndex rootDir = model.setRootPath(passStore);
+  model.fetchMore(rootDir);
+
   proxyModel.setModelAndStore(&model, passStore);
-  // proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(passStore));
-  // model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
+      proxyModel.mapFromSource(rootDir));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
