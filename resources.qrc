@@ -10,7 +10,8 @@
         <file>localization/localization_es_ES.qm</file>
         <file>localization/localization_gl_ES.qm</file>
         <file>localization/localization_hu_HU.qm</file>
-        <file>localization/localization_nl.qm</file>
+        <file>localization/localization_nl_BE.qm</file>
+        <file>localization/localization_nl_NL.qm</file>
         <file>localization/localization_sv_SE.qm</file>
         <file>localization/localization_pl_PL.qm</file>
         <file>localization/localization_ru_RU.qm</file>
