@@ -9,12 +9,21 @@
 - Renaming password [\#463](https://github.com/IJHack/QtPass/issues/463)
 - \[Feature Request\] Edit main title field [\#446](https://github.com/IJHack/QtPass/issues/446)
 
+**Fixed bugs:**
+
+- build: dependency issue [\#467](https://github.com/IJHack/QtPass/issues/467)
+- is running but no gui [\#451](https://github.com/IJHack/QtPass/issues/451)
+- Invalid font color with Breeze Dark theme [\#340](https://github.com/IJHack/QtPass/issues/340)
+
 **Closed issues:**
 
+- Additional lines \(notes\) are not shown [\#474](https://github.com/IJHack/QtPass/issues/474)
 - Bundle ID is literally `$\(PRODUCT\_BUNDLE\_IDENTIFIER\)` [\#448](https://github.com/IJHack/QtPass/issues/448)
 
 **Merged pull requests:**
 
+- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
+- Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
 - Add support for passwords and directories renaming as requested in \#463 [\#469](https://github.com/IJHack/QtPass/pull/469) ([Noettore](https://github.com/Noettore))
