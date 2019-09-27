@@ -203,10 +203,6 @@ void MainWindow::cleanKeygenDialog() {
   this->keygen = nullptr;
 }
 
-void MainWindow::setTextTextBrowser(const QString &text) {
-  ui->textBrowser->setText(text);
-}
-
 void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError)
