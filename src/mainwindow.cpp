@@ -399,7 +399,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
       ui->verticalLayoutPassword->setSpacing(0);
     else
       ui->verticalLayoutPassword->setSpacing(6);
-    output = fileContent.getRemainingData();
+
+    output = fileContent.getRemainingDataForDisplay();
   }
 
   if (QtPassSettings::isUseAutoclearPanel()) {

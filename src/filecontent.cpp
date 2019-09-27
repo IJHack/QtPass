@@ -1,11 +1,15 @@
 #include "filecontent.h"
 
+static bool isLineHidden(const QString &line) {
+	return line.startsWith("otpauth://", Qt::CaseInsensitive);
+}
+
 FileContent FileContent::parse(const QString &fileContent,
                                const QStringList &templateFields,
                                bool allFields) {
   QStringList lines = fileContent.split("\n");
   QString password = lines.takeFirst();
-  QStringList remainingData;
+  QStringList remainingData, remainingDataDisplay;
   NamedValues namedValues;
   for (const QString &line : lines) {
     if (line.contains(":")) {
@@ -20,9 +24,13 @@ FileContent FileContent::parse(const QString &fileContent,
         continue;
       }
     }
+
     remainingData.append(line);
+    if (!isLineHidden(line))
+      remainingDataDisplay.append(line);
   }
-  return FileContent(password, namedValues, remainingData.join("\n"));
+  return FileContent(password, namedValues, remainingData.join("\n"),
+                     remainingDataDisplay.join("\n"));
 }
 
 QString FileContent::getPassword() const { return this->password; }
@@ -31,11 +39,16 @@ NamedValues FileContent::getNamedValues() const { return this->namedValues; }
 
 QString FileContent::getRemainingData() const { return this->remainingData; }
 
+QString FileContent::getRemainingDataForDisplay() const {
+  return this->remainingDataDisplay;
+}
+
 FileContent::FileContent(const QString &password,
                          const NamedValues &namedValues,
-                         const QString &remainingData)
+                         const QString &remainingData,
+                         const QString &remainingDataDisplay)
     : password(password), namedValues(namedValues),
-      remainingData(remainingData) {}
+      remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {}
 
 NamedValues::NamedValues() : QList() {}
 
