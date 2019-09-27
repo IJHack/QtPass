@@ -406,6 +406,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
     clearPanelTimer.start();
   }
 
+  emit passShowHandlerFinished(output);
   setUiElementsEnabled(true);
 }
 
