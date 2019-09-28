@@ -58,8 +58,7 @@ CONFIG(coverage) {
 	QMAKE_DISTCLEAN += -r src/$$OBJECTS_DIR/lcov/
 }
 
-TRANSLATIONS    +=  localization/localization_nl.ts \
-                    localization/localization_ca.ts \
+TRANSLATIONS    +=  localization/localization_ca.ts \
                     localization/localization_de_DE.ts \
                     localization/localization_es_ES.ts \
                     localization/localization_gl_ES.ts \
