@@ -196,9 +196,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       !QtPassSettings::getGitExecutable().isEmpty()) {
     if (addFile)
       executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
-    QString path = gpgIdFile;
-    path.replace(QRegExp("\\.gpg$"), "");
-    GitCommit(gpgIdFile, "Added " + path + " using QtPass.");
+    QString commitPath = gpgIdFile;
+    commitPath.replace(QRegExp("\\.gpg$"), "");
+    GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
   }
   reencryptPath(path);
 }
