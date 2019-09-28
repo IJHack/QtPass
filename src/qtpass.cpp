@@ -121,6 +121,9 @@ void QtPass::setMainWindow(MainWindow *mW) {
   connectPassSignalHandlers(QtPassSettings::getRealPass());
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
+  connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
+          &QtPass::passShowHandlerFinished);
+
   // only for ipass
   connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
           m_mainWindow, &MainWindow::startReencryptPath);
@@ -144,13 +147,10 @@ void QtPass::setMainWindow(MainWindow *mW) {
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
-
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
-  connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
-          &QtPass::passShowHandlerFinished);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
   connect(pass, &Pass::finishedOtpGenerate, m_mainWindow,
