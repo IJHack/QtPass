@@ -5,6 +5,8 @@ QT        += core gui
 
 CONFIG += c++11
 LIBS = -L"$$OUT_PWD/../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
+clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../src/$(OBJECTS_DIR)/libqtpass.a"
+
 INCLUDEPATH += ../src
 
 macx {
