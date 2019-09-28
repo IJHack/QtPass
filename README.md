@@ -9,6 +9,8 @@ QtPass
 [![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 [![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/context:cpp)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/alerts/)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
