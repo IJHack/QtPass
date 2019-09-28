@@ -28,8 +28,8 @@ public:
    * @brief parse parses the given fileContent in a FileContent object.
    * The password is accessible through getPassword.
    * The named value pairs (name: value) are parsed and depeding on the
-   * templateFields and allFields parameters accessible through getNamedValues
-   * or getRemainingData.
+   * templateFields and allFields parameters accessible through getNamedValues,
+   * getRemainingData or getRemainingDataForDisplay.
    *
    * @param fileContent the file content to parse.
    *
@@ -61,13 +61,19 @@ public:
    */
   QString getRemainingData() const;
 
+  /**
+   * @like getRemainingData but without data that should not be displayed
+   * (like a TOTP secret).
+   */
+  QString getRemainingDataForDisplay() const;
+
 private:
   FileContent(const QString &password, const NamedValues &namedValues,
-              const QString &remainingData);
+              const QString &remainingData, const QString &remainingDataDisplay);
 
   QString password;
   NamedValues namedValues;
-  QString remainingData;
+  QString remainingData, remainingDataDisplay;
 };
 
 #endif // FILECONTENT_H

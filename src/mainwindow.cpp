@@ -203,10 +203,6 @@ void MainWindow::cleanKeygenDialog() {
   this->keygen = nullptr;
 }
 
-void MainWindow::setTextTextBrowser(const QString &text) {
-  ui->textBrowser->setText(text);
-}
-
 void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError)
@@ -403,13 +399,15 @@ void MainWindow::passShowHandler(const QString &p_output) {
       ui->verticalLayoutPassword->setSpacing(0);
     else
       ui->verticalLayoutPassword->setSpacing(6);
-    output = fileContent.getRemainingData();
+
+    output = fileContent.getRemainingDataForDisplay();
   }
 
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
   }
 
+  emit passShowHandlerFinished(output);
   setUiElementsEnabled(true);
 }
 
