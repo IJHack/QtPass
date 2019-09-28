@@ -576,7 +576,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+899"/>
+        <location filename="../src/mainwindow.cpp" line="+897"/>
         <source>Add password</source>
         <translation type="unfinished"></translation>
     </message>
@@ -660,12 +660,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-712"/>
+        <location filename="../src/mainwindow.cpp" line="-710"/>
         <source>Welcome to QtPass %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+87"/>
         <location line="+12"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>
@@ -677,7 +677,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+701"/>
+        <location line="+703"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
@@ -840,12 +840,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+140"/>
+        <location filename="../src/qtpass.cpp" line="+143"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+52"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation type="unfinished"></translation>

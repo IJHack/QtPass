@@ -22,6 +22,8 @@
 
 **Merged pull requests:**
 
+- Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
+- Main window entry details improvements [\#477](https://github.com/IJHack/QtPass/pull/477) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
 - Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
@@ -465,10 +467,15 @@
 ## [v1.0.5](https://github.com/IJHack/QtPass/tree/v1.0.5) (2015-11-18)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)
 
+**Implemented enhancements:**
+
+- Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
+
 **Fixed bugs:**
 
 - using pwgen adds carriage-return [\#115](https://github.com/IJHack/QtPass/issues/115)
 - Enhancement: color code git results [\#111](https://github.com/IJHack/QtPass/issues/111)
+- Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
 
 **Merged pull requests:**
 
@@ -487,11 +494,6 @@
 **Implemented enhancements:**
 
 - Get PREFIX variable from environment [\#106](https://github.com/IJHack/QtPass/issues/106)
-- Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
-
-**Fixed bugs:**
-
-- Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
 
 **Merged pull requests:**
 
@@ -597,7 +599,6 @@
 
 **Merged pull requests:**
 
-- Many deadlocks and other nasty bug fixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
 - Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
 
@@ -657,6 +658,7 @@
 
 **Merged pull requests:**
 
+- Many deadlocks and other nasty bug fixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
 - SingleApplication per user and leading newline removed from output [\#44](https://github.com/IJHack/QtPass/pull/44) ([annejan](https://github.com/annejan))
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
