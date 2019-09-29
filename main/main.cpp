@@ -4,6 +4,7 @@
 #endif
 
 #include <QApplication>
+#include <QDir>
 #include <QTranslator>
 
 /*! \mainpage QtPass
@@ -66,6 +67,8 @@ int main(int argc, char *argv[]) {
 #else
   QApplication app(argc, argv);
 #endif
+
+  Q_INIT_RESOURCE(resources);
 
   QCoreApplication::setOrganizationName("IJHack");
   QCoreApplication::setOrganizationDomain("ijhack.org");
