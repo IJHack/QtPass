@@ -9,8 +9,6 @@ OTHER_FILES += LICENSE \
                README.md \
                qtpass.1
 
-RESOURCES += resources.qrc
-
 # add Makefile target to generate code coverage using gcov
 gcov.target = gcov
 gcov.commands += cd src/$$OBJECTS_DIR && gcov "*.gcda" 1>/dev/null $$escape_expand(\\n\\t)
