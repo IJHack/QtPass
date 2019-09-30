@@ -42,6 +42,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt512/bin/qt512-env.sh; fi
+- "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
 - qmake -v
 script:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
@@ -63,6 +64,8 @@ script:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pri | cut -d " " -f 6).dmg; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pri | cut -d " " -f 6); fi
+- fossa init
+- fossa init
 notifications:
   irc:
     channels:
