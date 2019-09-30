@@ -11,7 +11,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+84"/>
+        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation type="unfinished"></translation>
     </message>

@@ -697,7 +697,7 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+84"/>
+        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation>从左到右</translation>
     </message>
