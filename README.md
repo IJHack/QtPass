@@ -11,6 +11,7 @@ QtPass
 [![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/context:cpp)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/alerts/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_shield)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -144,3 +145,7 @@ Further reading
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)
 [Chat](https://gitter.im/IJHack/qtpass)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_large)
