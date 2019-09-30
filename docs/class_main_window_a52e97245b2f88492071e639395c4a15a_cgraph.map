@@ -19,9 +19,9 @@
 <area shape="rect" id="node53" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . . " alt="" coords="507,1339,679,1365"/>
 <area shape="rect" id="node55" href="$class_main_window.html#a719bb646e99f620ff076f089f84b0e76" title="MainWindow::critical critical message popup wrapper. " alt="" coords="522,1389,665,1416"/>
 <area shape="rect" id="node56" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title="MainWindow::executeWrapper\lStarted" alt="" coords="760,2001,960,2042"/>
-<area shape="rect" id="node57" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="755,2361,965,2388"/>
+<area shape="rect" id="node57" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="755,2373,965,2400"/>
 <area shape="rect" id="node70" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="761,2117,959,2144"/>
-<area shape="rect" id="node71" href="$class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c" title="QtPassSettings::getWebDavUrl" alt="" coords="756,2539,964,2565"/>
+<area shape="rect" id="node71" href="$class_qt_pass_settings.html#a1af7b2ff5092b5a64d28f2c1604f122c" title="QtPassSettings::getWebDavUrl" alt="" coords="756,2551,964,2577"/>
 <area shape="rect" id="node72" href="$class_qt_pass_settings.html#ae2264e1b147abca73fc2f66826a9673b" title="QtPassSettings::getWebDav\lPassword" alt="" coords="498,2270,689,2311"/>
 <area shape="rect" id="node73" href="$class_qt_pass_settings.html#a5b871dee9354c1da1f4747bf0f267f9b" title="QtPassSettings::getWebDavUser" alt="" coords="484,296,703,323"/>
 <area shape="rect" id="node74" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="QtPassSettings::setPassStore" alt="" coords="493,347,694,373"/>
@@ -69,17 +69,17 @@
 <area shape="rect" id="node50" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="1036,1173,1209,1200"/>
 <area shape="rect" id="node51" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="1561,1828,1783,1855"/>
 <area shape="rect" id="node54" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="783,1696,937,1723"/>
-<area shape="rect" id="node58" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="1567,2420,1777,2447"/>
-<area shape="rect" id="node59" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="1560,2503,1784,2529"/>
-<area shape="rect" id="node60" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="1579,2617,1765,2658"/>
-<area shape="rect" id="node61" href="$class_file_content.html#abef563f253a931af308232c66e032153" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="1058,2387,1187,2413"/>
+<area shape="rect" id="node58" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="1567,2429,1777,2456"/>
+<area shape="rect" id="node59" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="1560,2513,1784,2540"/>
+<area shape="rect" id="node60" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="1579,2631,1765,2673"/>
+<area shape="rect" id="node61" href="$class_file_content.html#abef563f253a931af308232c66e032153" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="1058,2403,1187,2429"/>
 <area shape="rect" id="node62" href="$class_file_content.html#aab89c859cfde0d9d1ed8de89e07ca231" title="FileContent::getPassword" alt="" coords="1036,2235,1209,2261"/>
-<area shape="rect" id="node63" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="1041,2437,1204,2464"/>
-<area shape="rect" id="node66" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="1291,2377,1496,2404"/>
+<area shape="rect" id="node63" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="1041,2453,1204,2480"/>
+<area shape="rect" id="node66" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="1291,2387,1496,2413"/>
 <area shape="rect" id="node67" href="$class_file_content.html#ab1a615b719c41f631821e06009c530a2" title="FileContent::getNamedValues" alt="" coords="1024,2285,1221,2312"/>
-<area shape="rect" id="node68" href="$class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a" title="FileContent::getRemainingData" alt="" coords="1020,2336,1225,2363"/>
+<area shape="rect" id="node68" href="$class_file_content.html#aa6b84eeab1281d6a938e9efb2054d2b0" title="FileContent::getRemaining\lDataForDisplay" alt="" coords="1034,2337,1211,2378"/>
 <area shape="rect" id="node69" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="1017,2169,1228,2210"/>
-<area shape="rect" id="node64" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="1280,2239,1507,2265"/>
+<area shape="rect" id="node64" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="1280,2243,1507,2269"/>
 <area shape="rect" id="node65" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="1573,2161,1771,2202"/>
 <area shape="rect" id="node81" href="$class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Pass::GitPush" alt="" coords="1069,397,1176,424"/>
 <area shape="rect" id="node83" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() " alt="" coords="509,2336,678,2363"/>

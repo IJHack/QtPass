@@ -54,69 +54,69 @@ var sectionId = 'dynsection-48';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>Pass::Remove</title>
-<!-- Node308 -->
+<!-- Node309 -->
 <g id="node1" class="node">
-<title>Node308</title>
+<title>Node309</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 82,-38.5 82,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="41" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::Remove</text>
 </g>
-<!-- Node309 -->
+<!-- Node310 -->
 <g id="node2" class="node">
-<title>Node309</title>
+<title>Node310</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title="MainWindow::restoreWindow">
 <polygon fill="none" stroke="#000000" points="118,-38.5 118,-57.5 262,-57.5 262,-38.5 118,-38.5"/>
 <text text-anchor="middle" x="190" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
 </a>
 </g>
 </g>
-<!-- Node308&#45;&gt;Node309 -->
+<!-- Node309&#45;&gt;Node310 -->
 <g id="edge1" class="edge">
-<title>Node308&#45;&gt;Node309</title>
+<title>Node309&#45;&gt;Node310</title>
 <path fill="none" stroke="#191970" d="M92.3013,-35.5418C100.5533,-36.5941 109.2272,-37.7001 117.8588,-38.8008"/>
 <polygon fill="#191970" stroke="#191970" points="92.4718,-32.0353 82.1093,-34.2421 91.5863,-38.979 92.4718,-32.0353"/>
 </g>
-<!-- Node312 -->
+<!-- Node313 -->
 <g id="node5" class="node">
-<title>Node312</title>
+<title>Node313</title>
 <g id="a_node5"><a xlink:href="class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" target="_top" xlink:title="Pass::~Pass">
 <polygon fill="none" stroke="#000000" points="153,-.5 153,-19.5 227,-19.5 227,-.5 153,-.5"/>
 <text text-anchor="middle" x="190" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pass::~Pass</text>
 </a>
 </g>
 </g>
-<!-- Node308&#45;&gt;Node312 -->
+<!-- Node309&#45;&gt;Node313 -->
 <g id="edge4" class="edge">
-<title>Node308&#45;&gt;Node312</title>
+<title>Node309&#45;&gt;Node313</title>
 <path fill="none" stroke="#191970" d="M92.2203,-22.4685C112.0469,-19.9403 134.319,-17.1003 152.5933,-14.77"/>
 <polygon fill="#191970" stroke="#191970" points="91.5863,-19.021 82.1093,-23.7579 92.4718,-25.9647 91.5863,-19.021"/>
 </g>
-<!-- Node310 -->
+<!-- Node311 -->
 <g id="node3" class="node">
-<title>Node310</title>
+<title>Node311</title>
 <g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
 <polygon fill="none" stroke="#000000" points="298,-38.5 298,-57.5 423,-57.5 423,-38.5 298,-38.5"/>
 <text text-anchor="middle" x="360.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node309&#45;&gt;Node310 -->
+<!-- Node310&#45;&gt;Node311 -->
 <g id="edge2" class="edge">
-<title>Node309&#45;&gt;Node310</title>
+<title>Node310&#45;&gt;Node311</title>
 <path fill="none" stroke="#191970" d="M272.3223,-48C280.8867,-48 289.4906,-48 297.7876,-48"/>
 <polygon fill="#191970" stroke="#191970" points="272.3074,-44.5001 262.3073,-48 272.3073,-51.5001 272.3074,-44.5001"/>
 </g>
-<!-- Node311 -->
+<!-- Node312 -->
 <g id="node4" class="node">
-<title>Node311</title>
+<title>Node312</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="459,-38.5 459,-57.5 594,-57.5 594,-38.5 459,-38.5"/>
 <text text-anchor="middle" x="526.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node310&#45;&gt;Node311 -->
+<!-- Node311&#45;&gt;Node312 -->
 <g id="edge3" class="edge">
-<title>Node310&#45;&gt;Node311</title>
+<title>Node311&#45;&gt;Node312</title>
 <path fill="none" stroke="#191970" d="M433.4873,-48C441.951,-48 450.5556,-48 458.9422,-48"/>
 <polygon fill="#191970" stroke="#191970" points="433.2575,-44.5001 423.2575,-48 433.2574,-51.5001 433.2575,-44.5001"/>
 </g>

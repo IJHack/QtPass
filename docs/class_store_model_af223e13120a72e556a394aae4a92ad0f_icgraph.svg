@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 331.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>StoreModel::setModelAndStore</title>
-<!-- Node29 -->
+<!-- Node31 -->
 <g id="node1" class="node">
-<title>Node29</title>
+<title>Node31</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 152,-19.5 152,-.5 0,-.5"/>
 <text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">StoreModel::setModelAndStore</text>
 </g>
-<!-- Node30 -->
+<!-- Node32 -->
 <g id="node2" class="node">
-<title>Node30</title>
+<title>Node32</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="188,-.5 188,-19.5 323,-19.5 323,-.5 188,-.5"/>
 <text text-anchor="middle" x="255.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node30 -->
+<!-- Node31&#45;&gt;Node32 -->
 <g id="edge1" class="edge">
-<title>Node29&#45;&gt;Node30</title>
+<title>Node31&#45;&gt;Node32</title>
 <path fill="none" stroke="#191970" d="M162.1793,-10C170.7781,-10 179.4207,-10 187.7906,-10"/>
 <polygon fill="#191970" stroke="#191970" points="162.1242,-6.5001 152.1242,-10 162.1241,-13.5001 162.1242,-6.5001"/>
 </g>

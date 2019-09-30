@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../class_store_model.html#a4323f844cb78797146381847a80eb1d7',1,'StoreModel']]],
+  ['data',['data',['../class_store_model.html#ae1cc4a6bda22ddf67e59f01642dd2ed3',1,'StoreModel']]],
   ['dbg',['dbg',['../debughelper_8h.html#a1b089898deebf895757ee5e095615ec7',1,'debughelper.h']]],
   ['debughelper_2eh',['debughelper.h',['../debughelper_8h.html',1,'']]],
   ['delay',['delay',['../class_q_progress_indicator.html#a4a11f4c4627b15d0376b509b8d87abb2',1,'QProgressIndicator']]],
@@ -10,5 +10,5 @@ var searchData=
   ['displayedwhenstopped',['displayedWhenStopped',['../class_q_progress_indicator.html#a80f5089148132b3fae4c45aa2d0df343',1,'QProgressIndicator']]],
   ['draganddropinfo',['dragAndDropInfo',['../structdrag_and_drop_info.html',1,'']]],
   ['draganddropinfopasswordstore',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata',['dropMimeData',['../class_store_model.html#a5fdd936940601eb0b5da52047f282781',1,'StoreModel']]]
+  ['dropmimedata',['dropMimeData',['../class_store_model.html#a17f8db58298e985732d92a2e0e76b821',1,'StoreModel']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cancelnext',['cancelNext',['../class_executor.html#a7e64afb1172167fa430d5175d3176487',1,'Executor']]],
-  ['candropmimedata',['canDropMimeData',['../class_store_model.html#a5d3df20a622ae638f26e86cecf55adaa',1,'StoreModel']]],
+  ['candropmimedata',['canDropMimeData',['../class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85',1,'StoreModel']]],
   ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow']]],
   ['changelog_2emd',['CHANGELOG.md',['../_c_h_a_n_g_e_l_o_g_8md.html',1,'']]],
   ['characters',['Characters',['../struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0',1,'PasswordConfiguration']]],

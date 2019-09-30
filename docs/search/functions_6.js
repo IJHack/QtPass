@@ -35,6 +35,7 @@ var searchData=
   ['getrecipientlist',['getRecipientList',['../class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e',1,'Pass']]],
   ['getrecipientstring',['getRecipientString',['../class_pass.html#a4566c370e65b22d5cdc132f72b393808',1,'Pass']]],
   ['getremainingdata',['getRemainingData',['../class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a',1,'FileContent']]],
+  ['getremainingdatafordisplay',['getRemainingDataForDisplay',['../class_file_content.html#aa6b84eeab1281d6a938e9efb2054d2b0',1,'FileContent']]],
   ['getsavestate',['getSavestate',['../class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2',1,'QtPassSettings']]],
   ['getsize',['getSize',['../class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0',1,'QtPassSettings']]],
   ['gettexttocopy',['getTextToCopy',['../class_q_push_button_as_q_r_code.html#a8be0515c25295c6dc45299150fb205a4',1,'QPushButtonAsQRCode::getTextToCopy()'],['../class_q_push_button_with_clipboard.html#a6ffc2d84fb3bcf62a2a3a4c4bc238d7f',1,'QPushButtonWithClipboard::getTextToCopy()']]],

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 707;
+var viewWidth = 737;
 var viewHeight = 252;
 var sectionId = 'dynsection-0';
 </script>
@@ -57,8 +57,8 @@ var sectionId = 'dynsection-0';
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="510.5,-224.5 510.5,-243.5 590.5,-243.5 590.5,-224.5 510.5,-224.5"/>
-<text text-anchor="middle" x="550.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main/main.cpp</text>
+<polygon fill="#bfbfbf" stroke="#000000" points="546.5,-224.5 546.5,-243.5 626.5,-243.5 626.5,-224.5 546.5,-224.5"/>
+<text text-anchor="middle" x="586.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main/main.cpp</text>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
@@ -72,8 +72,8 @@ var sectionId = 'dynsection-0';
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<path fill="none" stroke="#191970" d="M534.1264,-224.2455C519.5692,-215.5731 498.069,-202.7645 481.3848,-192.825"/>
-<polygon fill="#191970" stroke="#191970" points="483.0683,-189.7539 472.6859,-187.6427 479.4856,-195.7676 483.0683,-189.7539"/>
+<path fill="none" stroke="#191970" d="M564.1522,-224.3733C543.0967,-215.3032 511.3505,-201.6279 487.7825,-191.4755"/>
+<polygon fill="#191970" stroke="#191970" points="489.125,-188.243 478.5562,-187.5011 486.3556,-194.6719 489.125,-188.243"/>
 </g>
 <!-- Node12 -->
 <g id="node13" class="node">
@@ -84,20 +84,32 @@ var sectionId = 'dynsection-0';
 <!-- Node0&#45;&gt;Node12 -->
 <g id="edge14" class="edge">
 <title>Node0&#45;&gt;Node12</title>
-<path fill="none" stroke="#191970" d="M550.5,-224.2455C550.5,-216.9382 550.5,-206.6944 550.5,-197.7046"/>
-<polygon fill="#191970" stroke="#191970" points="554.0001,-197.6426 550.5,-187.6427 547.0001,-197.6427 554.0001,-197.6426"/>
+<path fill="none" stroke="#191970" d="M580.2293,-224.2455C575.2736,-216.5367 568.217,-205.5598 562.2224,-196.2348"/>
+<polygon fill="#191970" stroke="#191970" points="565.0506,-194.1618 556.6989,-187.6427 559.1624,-197.9471 565.0506,-194.1618"/>
 </g>
 <!-- Node13 -->
 <g id="node14" class="node">
 <title>Node13</title>
-<polygon fill="none" stroke="#bfbfbf" points="604.5,-168.5 604.5,-187.5 672.5,-187.5 672.5,-168.5 604.5,-168.5"/>
-<text text-anchor="middle" x="638.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTranslator</text>
+<polygon fill="none" stroke="#bfbfbf" points="605,-168.5 605,-187.5 642,-187.5 642,-168.5 605,-168.5"/>
+<text text-anchor="middle" x="623.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QDir</text>
 </g>
 <!-- Node0&#45;&gt;Node13 -->
 <g id="edge15" class="edge">
 <title>Node0&#45;&gt;Node13</title>
-<path fill="none" stroke="#191970" d="M565.8284,-224.2455C579.3303,-215.6534 599.2122,-203.0014 614.7686,-193.1018"/>
-<polygon fill="#191970" stroke="#191970" points="616.7897,-195.9643 623.3472,-187.6427 613.0315,-190.0587 616.7897,-195.9643"/>
+<path fill="none" stroke="#191970" d="M592.9449,-224.2455C598.0382,-216.5367 605.2908,-205.5598 611.452,-196.2348"/>
+<polygon fill="#191970" stroke="#191970" points="614.5365,-197.9155 617.1289,-187.6427 608.6962,-194.0566 614.5365,-197.9155"/>
+</g>
+<!-- Node14 -->
+<g id="node15" class="node">
+<title>Node14</title>
+<polygon fill="none" stroke="#bfbfbf" points="660.5,-168.5 660.5,-187.5 728.5,-187.5 728.5,-168.5 660.5,-168.5"/>
+<text text-anchor="middle" x="694.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QTranslator</text>
+</g>
+<!-- Node0&#45;&gt;Node14 -->
+<g id="edge16" class="edge">
+<title>Node0&#45;&gt;Node14</title>
+<path fill="none" stroke="#191970" d="M605.3122,-224.2455C622.3473,-215.4125 647.6575,-202.2887 666.9681,-192.2758"/>
+<polygon fill="#191970" stroke="#191970" points="668.637,-195.353 675.9034,-187.6427 665.4147,-189.1388 668.637,-195.353"/>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node">

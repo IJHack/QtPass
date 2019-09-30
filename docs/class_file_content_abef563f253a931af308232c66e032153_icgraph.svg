@@ -48,96 +48,96 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 651;
 var viewHeight = 122;
-var sectionId = 'dynsection-3';
+var sectionId = 'dynsection-4';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>FileContent::parse</title>
-<!-- Node31 -->
+<!-- Node33 -->
 <g id="node1" class="node">
-<title>Node31</title>
+<title>Node33</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-50 0,-69 97,-69 97,-50 0,-50"/>
 <text text-anchor="middle" x="48.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">FileContent::parse</text>
 </g>
-<!-- Node32 -->
+<!-- Node34 -->
 <g id="node2" class="node">
-<title>Node32</title>
+<title>Node34</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title="MainWindow::passShowHandler">
 <polygon fill="none" stroke="#000000" points="133,-91 133,-110 291,-110 291,-91 133,-91"/>
 <text text-anchor="middle" x="212" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node32 -->
+<!-- Node33&#45;&gt;Node34 -->
 <g id="edge1" class="edge">
-<title>Node31&#45;&gt;Node32</title>
+<title>Node33&#45;&gt;Node34</title>
 <path fill="none" stroke="#191970" d="M96.3305,-71.4942C121.073,-77.6987 150.8545,-85.1669 174.0016,-90.9714"/>
 <polygon fill="#191970" stroke="#191970" points="96.9722,-68.0468 86.4211,-69.0093 95.2695,-74.8366 96.9722,-68.0468"/>
 </g>
-<!-- Node35 -->
+<!-- Node37 -->
 <g id="node5" class="node">
-<title>Node35</title>
+<title>Node37</title>
 <g id="a_node5"><a xlink:href="class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" target="_top" xlink:title="Sets content in the password field in the interface. ">
 <polygon fill="none" stroke="#000000" points="136.5,-50 136.5,-69 287.5,-69 287.5,-50 136.5,-50"/>
 <text text-anchor="middle" x="212" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPassword</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node35 -->
+<!-- Node33&#45;&gt;Node37 -->
 <g id="edge4" class="edge">
-<title>Node31&#45;&gt;Node35</title>
+<title>Node33&#45;&gt;Node37</title>
 <path fill="none" stroke="#191970" d="M107.1687,-59.5C116.6229,-59.5 126.5258,-59.5 136.3121,-59.5"/>
 <polygon fill="#191970" stroke="#191970" points="107.1128,-56.0001 97.1127,-59.5 107.1127,-63.0001 107.1128,-56.0001"/>
 </g>
-<!-- Node39 -->
+<!-- Node41 -->
 <g id="node9" class="node">
-<title>Node39</title>
+<title>Node41</title>
 <g id="a_node9"><a xlink:href="classtst__util.html#a1889cedba30d1d96c60e84effbf7f313" target="_top" xlink:title="tst_util::cleanup unit test cleanup method ">
 <polygon fill="none" stroke="#000000" points="169,-12 169,-31 255,-31 255,-12 169,-12"/>
 <text text-anchor="middle" x="212" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tst_util::cleanup</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node39 -->
+<!-- Node33&#45;&gt;Node41 -->
 <g id="edge8" class="edge">
-<title>Node31&#45;&gt;Node39</title>
+<title>Node33&#45;&gt;Node41</title>
 <path fill="none" stroke="#191970" d="M99.6844,-47.6039C122.6661,-42.2626 149.4125,-36.0463 171.0387,-31.0201"/>
 <polygon fill="#191970" stroke="#191970" points="98.706,-44.238 89.758,-49.911 100.2907,-51.0562 98.706,-44.238"/>
 </g>
-<!-- Node33 -->
+<!-- Node35 -->
 <g id="node3" class="node">
-<title>Node33</title>
+<title>Node35</title>
 <g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
 <polygon fill="none" stroke="#000000" points="336,-94 336,-113 461,-113 461,-94 336,-94"/>
 <text text-anchor="middle" x="398.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node32&#45;&gt;Node33 -->
+<!-- Node34&#45;&gt;Node35 -->
 <g id="edge2" class="edge">
-<title>Node32&#45;&gt;Node33</title>
+<title>Node34&#45;&gt;Node35</title>
 <path fill="none" stroke="#191970" d="M301.3404,-101.9371C313.0467,-102.1254 324.8353,-102.315 335.9666,-102.4941"/>
 <polygon fill="#191970" stroke="#191970" points="301.1478,-98.4337 291.0928,-101.7723 301.0352,-105.4328 301.1478,-98.4337"/>
 </g>
-<!-- Node34 -->
+<!-- Node36 -->
 <g id="node4" class="node">
-<title>Node34</title>
+<title>Node36</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="507,-94 507,-113 642,-113 642,-94 507,-94"/>
 <text text-anchor="middle" x="574.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node33&#45;&gt;Node34 -->
+<!-- Node35&#45;&gt;Node36 -->
 <g id="edge3" class="edge">
-<title>Node33&#45;&gt;Node34</title>
+<title>Node35&#45;&gt;Node36</title>
 <path fill="none" stroke="#191970" d="M471.2602,-103.5C483.0173,-103.5 495.1487,-103.5 506.7803,-103.5"/>
 <polygon fill="#191970" stroke="#191970" points="471.0466,-100.0001 461.0466,-103.5 471.0465,-107.0001 471.0466,-100.0001"/>
 </g>
-<!-- Node36 -->
+<!-- Node38 -->
 <g id="node6" class="node">
-<title>Node36</title>
+<title>Node38</title>
 <g id="a_node6"><a xlink:href="class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" target="_top" xlink:title="Pass{}{}wordDialog::~PasswordDialog basic destructor. ">
 <polygon fill="none" stroke="#000000" points="327,-44.5 327,-74.5 470,-74.5 470,-44.5 327,-44.5"/>
 <text text-anchor="start" x="335" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::~Password</text>
@@ -145,30 +145,30 @@ var sectionId = 'dynsection-3';
 </a>
 </g>
 </g>
-<!-- Node35&#45;&gt;Node36 -->
+<!-- Node37&#45;&gt;Node38 -->
 <g id="edge5" class="edge">
-<title>Node35&#45;&gt;Node36</title>
+<title>Node37&#45;&gt;Node38</title>
 <path fill="none" stroke="#191970" d="M297.6598,-59.5C307.3805,-59.5 317.2118,-59.5 326.7277,-59.5"/>
 <polygon fill="#191970" stroke="#191970" points="297.5879,-56.0001 287.5878,-59.5 297.5878,-63.0001 297.5879,-56.0001"/>
 </g>
-<!-- Node37 -->
+<!-- Node39 -->
 <g id="node7" class="node">
-<title>Node37</title>
+<title>Node39</title>
 <g id="a_node7"><a xlink:href="class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" target="_top" xlink:title="PasswordDialog::setPass">
 <polygon fill="none" stroke="#000000" points="333.5,-6 333.5,-25 463.5,-25 463.5,-6 333.5,-6"/>
 <text text-anchor="middle" x="398.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::setPass</text>
 </a>
 </g>
 </g>
-<!-- Node35&#45;&gt;Node37 -->
+<!-- Node37&#45;&gt;Node39 -->
 <g id="edge6" class="edge">
-<title>Node35&#45;&gt;Node37</title>
+<title>Node37&#45;&gt;Node39</title>
 <path fill="none" stroke="#191970" d="M262.3399,-47.6236C292.3824,-40.5358 330.024,-31.6552 358.1113,-25.0287"/>
 <polygon fill="#191970" stroke="#191970" points="261.3968,-44.2499 252.4677,-49.9527 263.0042,-51.0629 261.3968,-44.2499"/>
 </g>
-<!-- Node38 -->
+<!-- Node40 -->
 <g id="node8" class="node">
-<title>Node38</title>
+<title>Node40</title>
 <g id="a_node8"><a xlink:href="class_password_dialog.html#a859a78e62204698556204b9e20932010" target="_top" xlink:title="PasswordDialog::PasswordDialog basic constructor. ">
 <polygon fill="none" stroke="#000000" points="506,-.5 506,-30.5 643,-30.5 643,-.5 506,-.5"/>
 <text text-anchor="start" x="514" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PasswordDialog::Password</text>
@@ -176,9 +176,9 @@ var sectionId = 'dynsection-3';
 </a>
 </g>
 </g>
-<!-- Node37&#45;&gt;Node38 -->
+<!-- Node39&#45;&gt;Node40 -->
 <g id="edge7" class="edge">
-<title>Node37&#45;&gt;Node38</title>
+<title>Node39&#45;&gt;Node40</title>
 <path fill="none" stroke="#191970" d="M473.6889,-15.5C484.3833,-15.5 495.3355,-15.5 505.8957,-15.5"/>
 <polygon fill="#191970" stroke="#191970" points="473.5359,-12.0001 463.5359,-15.5 473.5358,-19.0001 473.5359,-12.0001"/>
 </g>

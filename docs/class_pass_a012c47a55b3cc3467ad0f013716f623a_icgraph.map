@@ -11,7 +11,7 @@
 <area shape="rect" id="node13" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="349,427,551,453"/>
 <area shape="rect" id="node16" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor. " alt="" coords="359,478,541,519"/>
 <area shape="rect" id="node17" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="Pass{}{}wordDialog::~PasswordDialog basic destructor. " alt="" coords="355,543,545,585"/>
-<area shape="rect" id="node18" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="359,609,541,636"/>
+<area shape="rect" id="node18" href="$class_store_model.html#a17f8db58298e985732d92a2e0e76b821" title="StoreModel::dropMimeData" alt="" coords="359,609,541,636"/>
 <area shape="rect" id="node19" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="609,685,783,712"/>
 <area shape="rect" id="node20" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title="UsersDialog::accept" alt="" coords="379,711,521,737"/>
 <area shape="rect" id="node8" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="633,109,759,136"/>

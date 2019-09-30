@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">QtPass
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.3.1</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -80,11 +80,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab1a615b719c41f631821e06009c530a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f1cc35e14725e8f3f95dddf3afcc29a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a">getRemainingData</a> () const</td></tr>
 <tr class="separator:a2f1cc35e14725e8f3f95dddf3afcc29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b84eeab1281d6a938e9efb2054d2b0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#aa6b84eeab1281d6a938e9efb2054d2b0">getRemainingDataForDisplay</a> () const</td></tr>
+<tr class="separator:aa6b84eeab1281d6a938e9efb2054d2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abef563f253a931af308232c66e032153"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_file_content.html">FileContent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#abef563f253a931af308232c66e032153">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields)</td></tr>
-<tr class="memdesc:abef563f253a931af308232c66e032153"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues or getRemainingData.  <a href="#abef563f253a931af308232c66e032153">More...</a><br /></td></tr>
+<tr class="memdesc:abef563f253a931af308232c66e032153"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <a href="#abef563f253a931af308232c66e032153">More...</a><br /></td></tr>
 <tr class="separator:abef563f253a931af308232c66e032153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -107,7 +109,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearence, with template values first. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00030">30</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00038">38</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -135,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the password from the parsed file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00028">28</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00036">36</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -163,13 +165,41 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00032">32</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00040">40</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_file_content_a2f1cc35e14725e8f3f95dddf3afcc29a_icgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_file_content_a2f1cc35e14725e8f3f95dddf3afcc29a_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa6b84eeab1281d6a938e9efb2054d2b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b84eeab1281d6a938e9efb2054d2b0">&#9670;&nbsp;</a></span>getRemainingDataForDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString FileContent::getRemainingDataForDisplay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>getRemainingData but without data that should not be displayed (like a TOTP secret). </p>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00042">42</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_file_content_aa6b84eeab1281d6a938e9efb2054d2b0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -215,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues or getRemainingData. </p>
+<p>parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileContent</td><td>the file content to parse.</td></tr>
@@ -226,12 +256,12 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00003">3</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00007">7</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_file_content_abef563f253a931af308232c66e032153_icgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>

@@ -1,5 +1,5 @@
 <map id="StoreModel::dropMimeData" name="StoreModel::dropMimeData">
-<area shape="rect" id="node2" href="$class_store_model.html#a5d3df20a622ae638f26e86cecf55adaa" title="StoreModel::canDropMimeData" alt="" coords="235,10,440,37"/>
+<area shape="rect" id="node2" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData" alt="" coords="235,10,440,37"/>
 <area shape="rect" id="node3" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="252,61,423,87"/>
 <area shape="rect" id="node10" href="$class_pass.html#ab9dde6644865bd583dc09a52d17ffb49" title="Pass::Move" alt="" coords="291,111,383,138"/>
 <area shape="rect" id="node11" href="$class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49" title="Pass::Copy" alt="" coords="292,162,383,189"/>

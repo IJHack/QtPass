@@ -1,4 +1,5 @@
 <map id="Pass::Move" name="Pass::Move">
-<area shape="rect" id="node2" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="187,5,285,32"/>
-<area shape="rect" id="node3" href="$class_store_model.html#a5fdd936940601eb0b5da52047f282781" title="StoreModel::dropMimeData" alt="" coords="145,56,327,83"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="145,5,340,32"/>
+<area shape="rect" id="node3" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="193,56,292,83"/>
+<area shape="rect" id="node4" href="$class_store_model.html#a17f8db58298e985732d92a2e0e76b821" title="StoreModel::dropMimeData" alt="" coords="152,107,333,133"/>
 </map>

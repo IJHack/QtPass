@@ -48,7 +48,6 @@ var searchData=
   ['setstartminimized',['setStartMinimized',['../class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671',1,'QtPassSettings']]],
   ['settemplate',['setTemplate',['../class_password_dialog.html#a522f673d65885edea46e3c514bb95f45',1,'PasswordDialog']]],
   ['settemplateallfields',['setTemplateAllFields',['../class_qt_pass_settings.html#af867f1e7648ae1a4926578d9ec3cdfae',1,'QtPassSettings']]],
-  ['settexttextbrowser',['setTextTextBrowser',['../class_main_window.html#a4f64df3da3e7baf5bc99aaf99a1b57eb',1,'MainWindow']]],
   ['settexttocopy',['setTextToCopy',['../class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40',1,'QPushButtonAsQRCode::setTextToCopy()'],['../class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8',1,'QPushButtonWithClipboard::setTextToCopy()']]],
   ['setuielementsenabled',['setUiElementsEnabled',['../class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3',1,'MainWindow']]],
   ['setuseautoclear',['setUseAutoclear',['../class_qt_pass_settings.html#a8deb96dd37776cb2e864f8799bc17820',1,'QtPassSettings']]],
@@ -84,6 +83,6 @@ var searchData=
   ['statusmsg',['statusMsg',['../class_pass.html#a4321094d765f8badf733b6d112c74050',1,'Pass']]],
   ['stopanimation',['stopAnimation',['../class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95',1,'QProgressIndicator']]],
   ['storemodel',['StoreModel',['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel']]],
-  ['supporteddragactions',['supportedDragActions',['../class_store_model.html#a3d2c74ee8e92cc42a297eef206fb681c',1,'StoreModel']]],
-  ['supporteddropactions',['supportedDropActions',['../class_store_model.html#ae8fe3c6b490f66a09fe32c4c1b615ad2',1,'StoreModel']]]
+  ['supporteddragactions',['supportedDragActions',['../class_store_model.html#a213054366711acfb590db1be18cb471b',1,'StoreModel']]],
+  ['supporteddropactions',['supportedDropActions',['../class_store_model.html#a0f23cb0c4c15d3f2ec82f995c58dc69e',1,'StoreModel']]]
 ];

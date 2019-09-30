@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 500.00 66.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>MainWindow::passGitInitNeeded</title>
-<!-- Node277 -->
+<!-- Node278 -->
 <g id="node1" class="node">
-<title>Node277</title>
+<title>Node278</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 160,-38.5 160,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="80" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passGitInitNeeded</text>
 </g>
-<!-- Node278 -->
+<!-- Node279 -->
 <g id="node2" class="node">
-<title>Node278</title>
+<title>Node279</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" target="_top" xlink:title="ConfigDialog::wizard first&#45;time use wizard. ">
 <polygon fill="none" stroke="#000000" points="205,-38.5 205,-57.5 312,-57.5 312,-38.5 205,-38.5"/>
 <text text-anchor="middle" x="258.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::wizard</text>
 </a>
 </g>
 </g>
-<!-- Node277&#45;&gt;Node278 -->
+<!-- Node278&#45;&gt;Node279 -->
 <g id="edge1" class="edge">
-<title>Node277&#45;&gt;Node278</title>
+<title>Node278&#45;&gt;Node279</title>
 <path fill="none" stroke="#191970" d="M170.12,-38.5926C182.05,-39.8625 193.9593,-41.1301 204.9951,-42.3048"/>
 <polygon fill="#191970" stroke="#191970" points="170.427,-35.1056 160.1126,-37.5274 169.686,-42.0663 170.427,-35.1056"/>
 </g>
-<!-- Node279 -->
+<!-- Node280 -->
 <g id="node3" class="node">
-<title>Node279</title>
+<title>Node280</title>
 <g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
 <polygon fill="none" stroke="#000000" points="196,-.5 196,-19.5 321,-19.5 321,-.5 196,-.5"/>
 <text text-anchor="middle" x="258.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node277&#45;&gt;Node279 -->
+<!-- Node278&#45;&gt;Node280 -->
 <g id="edge2" class="edge">
-<title>Node277&#45;&gt;Node279</title>
+<title>Node278&#45;&gt;Node280</title>
 <path fill="none" stroke="#191970" d="M170.2335,-19.3953C178.8667,-18.4764 187.4875,-17.5587 195.773,-16.6768"/>
 <polygon fill="#191970" stroke="#191970" points="169.686,-15.9337 160.1126,-20.4726 170.427,-22.8944 169.686,-15.9337"/>
 </g>
-<!-- Node280 -->
+<!-- Node281 -->
 <g id="node4" class="node">
-<title>Node280</title>
+<title>Node281</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
 <polygon fill="none" stroke="#000000" points="357,-.5 357,-19.5 492,-19.5 492,-.5 357,-.5"/>
 <text text-anchor="middle" x="424.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node279&#45;&gt;Node280 -->
+<!-- Node280&#45;&gt;Node281 -->
 <g id="edge3" class="edge">
-<title>Node279&#45;&gt;Node280</title>
+<title>Node280&#45;&gt;Node281</title>
 <path fill="none" stroke="#191970" d="M331.4873,-10C339.951,-10 348.5556,-10 356.9422,-10"/>
 <polygon fill="#191970" stroke="#191970" points="331.2575,-6.5001 321.2575,-10 331.2574,-13.5001 331.2575,-6.5001"/>
 </g>
