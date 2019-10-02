@@ -118,6 +118,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
+
+  if (!m_qtPass->init())
+    // no working config so this should just quit
+    QApplication::quit();
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }

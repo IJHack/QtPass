@@ -14,6 +14,7 @@ public:
   QtPass(MainWindow *mainWindow);
   ~QtPass();
 
+  bool init();
   void setClippedText(const QString &, const QString &p_output = QString());
   void clearClippedText();
   void setClipboardTimer();
@@ -30,7 +31,6 @@ private:
   bool freshStart;
 
   void setMainWindow();
-  bool setup();
   void connectPassSignalHandlers(Pass *pass);
   void mountWebDav();
 

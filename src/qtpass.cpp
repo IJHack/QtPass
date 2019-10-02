@@ -25,12 +25,6 @@
 QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow),
                                          clippedText(QString()),
                                          freshStart(true) {
-  if (!setup()) {
-    // no working config so this should quit without config anything
-    QApplication::quit();
-    {}
-  }
-
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
@@ -59,10 +53,10 @@ QtPass::~QtPass() {
 }
 
 /**
- * @brief QtPass::setup make sure we are ready to go as soon as
+ * @brief QtPass::init make sure we are ready to go as soon as
  * possible
  */
-bool QtPass::setup() {
+bool QtPass::init() {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
