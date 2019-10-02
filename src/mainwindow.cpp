@@ -44,8 +44,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 #endif
   ui->setupUi(this);
 
-  m_qtPass = new QtPass();
-  m_qtPass->setMainWindow(this);
+  m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));

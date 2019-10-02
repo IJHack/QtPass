@@ -11,10 +11,9 @@ class QtPass : public QObject {
   Q_OBJECT
 
 public:
-  QtPass();
+  QtPass(MainWindow *mainWindow);
   ~QtPass();
 
-  void setMainWindow(MainWindow *mW);
   void setClippedText(const QString &, const QString &p_output = QString());
   void clearClippedText();
   void setClipboardTimer();
@@ -30,6 +29,7 @@ private:
   QString clippedText;
   bool freshStart;
 
+  void setMainWindow();
   bool setup();
   void connectPassSignalHandlers(Pass *pass);
   void mountWebDav();

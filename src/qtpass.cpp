@@ -22,7 +22,9 @@
 #include "debughelper.h"
 #endif
 
-QtPass::QtPass() : clippedText(QString()), freshStart(true) {
+QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow),
+                                         clippedText(QString()),
+                                         freshStart(true) {
   if (!setup()) {
     // no working config so this should quit without config anything
     QApplication::quit();
@@ -36,6 +38,8 @@ QtPass::QtPass() : clippedText(QString()), freshStart(true) {
 
   QObject::connect(qApp, &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
+
+  setMainWindow();
 }
 
 /**
@@ -111,8 +115,7 @@ bool QtPass::setup() {
   return true;
 }
 
-void QtPass::setMainWindow(MainWindow *mW) {
-  m_mainWindow = mW;
+void QtPass::setMainWindow(void) {
   m_mainWindow->restoreWindow();
 
   fusedav.setParent(m_mainWindow);
