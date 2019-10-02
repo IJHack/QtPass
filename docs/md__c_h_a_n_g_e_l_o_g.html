@@ -66,7 +66,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2><a href="https://github.com/IJHack/QtPass/tree/HEAD">Unreleased</a></h2>
-<p><a href="https://github.com/IJHack/QtPass/compare/v1.3.0...HEAD">Full Changelog</a></p>
+<p><a href="https://github.com/IJHack/QtPass/compare/v1.3.1...HEAD">Full Changelog</a></p>
+<p><b>Fixed bugs:</b></p>
+<ul>
+<li>App is completely broken <a href="https://github.com/IJHack/QtPass/issues/423">#423</a></li>
+</ul>
+<p><b>Closed issues:</b></p>
+<ul>
+<li>Editor doesn't wait for PGP key to decrypt <a href="https://github.com/IJHack/QtPass/issues/470">#470</a></li>
+<li>v1.3.0 Data Not Showing <a href="https://github.com/IJHack/QtPass/issues/465">#465</a></li>
+<li>Hangs on MacOS after Security Update 2019-003 10.12.6 <a href="https://github.com/IJHack/QtPass/issues/461">#461</a></li>
+</ul>
+<h2><a href="https://github.com/IJHack/QtPass/tree/v1.3.1">v1.3.1</a> (2019-10-01)</h2>
+<p><a href="https://github.com/IJHack/QtPass/compare/v1.3.0...v1.3.1">Full Changelog</a></p>
 <p><b>Implemented enhancements:</b></p>
 <ul>
 <li>Renaming password <a href="https://github.com/IJHack/QtPass/issues/463">#463</a></li>
@@ -167,6 +179,7 @@ $(function() {
 <li>Add support for OTP code generation on Linux as requested in #327 <a href="https://github.com/IJHack/QtPass/pull/394">#394</a> (<a href="https://github.com/Noettore">Noettore</a>)</li>
 <li>Revert scroll bar changes <a href="https://github.com/IJHack/QtPass/pull/393">#393</a> (<a href="https://github.com/destanyol">destanyol</a>)</li>
 <li>Fix High Dpi Support. Works now under Windows and KDE/Plasma. <a href="https://github.com/IJHack/QtPass/pull/392">#392</a> (<a href="https://github.com/hgraeber">hgraeber</a>)</li>
+<li>Refactoring <a href="https://github.com/IJHack/QtPass/pull/360">#360</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.2.2">v1.2.2</a> (2018-05-07)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2">Full Changelog</a></p>
@@ -213,7 +226,6 @@ $(function() {
 <li>Removed comment out #includes <a href="https://github.com/IJHack/QtPass/pull/365">#365</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
 <li>fix for #300 <a href="https://github.com/IJHack/QtPass/pull/363">#363</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
 <li>Translated all missing content to Italian, created Release of transla… <a href="https://github.com/IJHack/QtPass/pull/361">#361</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
-<li>Refactoring <a href="https://github.com/IJHack/QtPass/pull/360">#360</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
 <li>Display all fields when using template setting, fixes #273 <a href="https://github.com/IJHack/QtPass/pull/358">#358</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
 <li>Update <a class="el" href="_c_o_n_t_r_i_b_u_t_i_n_g_8md.html">CONTRIBUTING.md</a> <a href="https://github.com/IJHack/QtPass/pull/354">#354</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
 <li>Add two entries in FAQ about the language <a href="https://github.com/IJHack/QtPass/pull/353">#353</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
@@ -301,6 +313,7 @@ $(function() {
 <li>executeing pass show before editpassword dialog shows up <a href="https://github.com/IJHack/QtPass/pull/254">#254</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 <li>Minor fix for file names and git push <a href="https://github.com/IJHack/QtPass/pull/251">#251</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
 <li>Process management refactoring part 2 <a href="https://github.com/IJHack/QtPass/pull/249">#249</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
+<li>creating password store directory, if it doesnot exists, de_DE translation fixes and removed obsolete translations <a href="https://github.com/IJHack/QtPass/pull/216">#216</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.1.6">v1.1.6</a> (2016-12-02)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6">Full Changelog</a></p>
@@ -342,7 +355,6 @@ $(function() {
 <li>refactoring, new <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores qtpass&#39; settings, saves and loads config. ">QtPassSettings</a> class, all settings should be read and written here <a href="https://github.com/IJHack/QtPass/pull/224">#224</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 <li>Moved  's copy buttons inside the line Edit <a href="https://github.com/IJHack/QtPass/pull/222">#222</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
 <li>UI Improvements <a href="https://github.com/IJHack/QtPass/pull/220">#220</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
-<li>creating password store directory, if it doesnot exists, de_DE translation fixes and removed obsolete translations <a href="https://github.com/IJHack/QtPass/pull/216">#216</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.1.5">v1.1.5</a> (2016-10-19)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5">Full Changelog</a></p>
@@ -394,7 +406,6 @@ $(function() {
 <ul>
 <li>Signed releases <a href="https://github.com/IJHack/QtPass/issues/186">#186</a></li>
 <li>Why it's not listed in wikipedia.org/wiki/List_of_password_managers ? <a href="https://github.com/IJHack/QtPass/issues/164">#164</a></li>
-<li>"gpg-agent: command get\_passphrase failed: No such file or directory" <a href="https://github.com/IJHack/QtPass/issues/156">#156</a></li>
 <li>Bitdefender blocks installation and quarantines the .exe and .ink <a href="https://github.com/IJHack/QtPass/issues/138">#138</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
@@ -429,6 +440,7 @@ $(function() {
 <p><b>Closed issues:</b></p>
 <ul>
 <li>gpg: decryption failed: No secret key <a href="https://github.com/IJHack/QtPass/issues/179">#179</a></li>
+<li>"gpg-agent: command get\_passphrase failed: No such file or directory" <a href="https://github.com/IJHack/QtPass/issues/156">#156</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
@@ -548,6 +560,7 @@ $(function() {
 <ul>
 <li>Get PREFIX variable from environment <a href="https://github.com/IJHack/QtPass/pull/104">#104</a> (<a href="https://github.com/jorti">jorti</a>)</li>
 <li>spanish translations added <a href="https://github.com/IJHack/QtPass/pull/103">#103</a> (<a href="https://github.com/mrpnkt">mrpnkt</a>)</li>
+<li>User filtering and many fixes <a href="https://github.com/IJHack/QtPass/pull/42">#42</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.0.2">v1.0.2</a> (2015-09-24)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2">Full Changelog</a></p>
@@ -582,7 +595,6 @@ $(function() {
 <li>Issue 86 clear panel <a href="https://github.com/IJHack/QtPass/pull/87">#87</a> (<a href="https://github.com/karlgrz">karlgrz</a>)</li>
 <li>Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu <a href="https://github.com/IJHack/QtPass/pull/80">#80</a> (<a href="https://github.com/karlgrz">karlgrz</a>)</li>
 <li>[WIP] Call 'pass git init' on creation of password-store when useGit <a href="https://github.com/IJHack/QtPass/pull/78">#78</a> (<a href="https://github.com/dennisdegreef">dennisdegreef</a>)</li>
-<li>Support for editing .gpg-id via GUI with public keyring list. <a href="https://github.com/IJHack/QtPass/pull/23">#23</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v1.0.0">v1.0.0</a> (2015-08-01)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0">Full Changelog</a></p>
@@ -623,6 +635,10 @@ $(function() {
 <li>Copy password by Ctrl+C <a href="https://github.com/IJHack/QtPass/issues/60">#60</a></li>
 <li>Remember window size and vertical pane width <a href="https://github.com/IJHack/QtPass/issues/59">#59</a></li>
 <li>Multiline Editing <a href="https://github.com/IJHack/QtPass/issues/34">#34</a></li>
+</ul>
+<p><b>Merged pull requests:</b></p>
+<ul>
+<li>To make building successfull wi Desktop Qt 5.4.0 MSVC2012 OpenGL 32bit <a href="https://github.com/IJHack/QtPass/pull/67">#67</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 </ul>
 <h2><a href="https://github.com/IJHack/QtPass/tree/v0.8.5.1">v0.8.5.1</a> (2015-07-08)</h2>
 <p><a href="https://github.com/IJHack/QtPass/compare/v0.8.5...v0.8.5.1">Full Changelog</a></p>
@@ -693,15 +709,14 @@ $(function() {
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
-<li>To make building successfull wi Desktop Qt 5.4.0 MSVC2012 OpenGL 32bit <a href="https://github.com/IJHack/QtPass/pull/67">#67</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 <li><a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration. ">SingleApplication</a> per user and leading newline removed from output <a href="https://github.com/IJHack/QtPass/pull/44">#44</a> (<a href="https://github.com/annejan">annejan</a>)</li>
-<li>User filtering and many fixes <a href="https://github.com/IJHack/QtPass/pull/42">#42</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 <li>Re-enable Windows WebDAV support. <a href="https://github.com/IJHack/QtPass/pull/37">#37</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>User robustness <a href="https://github.com/IJHack/QtPass/pull/33">#33</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>Add WebDAV support. <a href="https://github.com/IJHack/QtPass/pull/29">#29</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>Add nosingleapp config. <a href="https://github.com/IJHack/QtPass/pull/27">#27</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>Add Makefile with commands to make a binary release zip file. <a href="https://github.com/IJHack/QtPass/pull/25">#25</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>Start process only after we finished disabling UI elements etc. <a href="https://github.com/IJHack/QtPass/pull/24">#24</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
+<li>Support for editing .gpg-id via GUI with public keyring list. <a href="https://github.com/IJHack/QtPass/pull/23">#23</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>More proper support for subdirectories. <a href="https://github.com/IJHack/QtPass/pull/22">#22</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>
 <li>Russian translation (+typo fixed) <a href="https://github.com/IJHack/QtPass/pull/20">#20</a> (<a href="https://github.com/mexus">mexus</a>)</li>
 <li>Windows-related fixes. <a href="https://github.com/IJHack/QtPass/pull/17">#17</a> (<a href="https://github.com/rdoeffinger">rdoeffinger</a>)</li>

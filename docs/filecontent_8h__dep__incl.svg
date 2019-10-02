@@ -17,7 +17,7 @@
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="filecontent_8cpp.html" target="_top" xlink:title="src/filecontent.cpp">
+<g id="a_node2"><a xlink:href="$filecontent_8cpp.html" xlink:title="src/filecontent.cpp">
 <polygon fill="none" stroke="#000000" points="0,-6 0,-25 97,-25 97,-6 0,-6"/>
 <text text-anchor="middle" x="48.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/filecontent.cpp</text>
 </a>
@@ -32,7 +32,7 @@
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
-<g id="a_node3"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
+<g id="a_node3"><a xlink:href="$mainwindow_8cpp.html" xlink:title="src/mainwindow.cpp">
 <polygon fill="none" stroke="#000000" points="115.5,-6 115.5,-25 221.5,-25 221.5,-6 115.5,-6"/>
 <text text-anchor="middle" x="168.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
@@ -47,7 +47,7 @@
 <!-- Node7 -->
 <g id="node4" class="node">
 <title>Node7</title>
-<g id="a_node4"><a xlink:href="passworddialog_8cpp.html" target="_top" xlink:title="src/passworddialog.cpp">
+<g id="a_node4"><a xlink:href="$passworddialog_8cpp.html" xlink:title="src/passworddialog.cpp">
 <polygon fill="none" stroke="#000000" points="240,-6 240,-25 359,-25 359,-6 240,-6"/>
 <text text-anchor="middle" x="299.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/passworddialog.cpp</text>
 </a>
@@ -62,7 +62,7 @@
 <!-- Node8 -->
 <g id="node5" class="node">
 <title>Node8</title>
-<g id="a_node5"><a xlink:href="tst__util_8cpp.html" target="_top" xlink:title="tests/auto/util/tst\l_util.cpp">
+<g id="a_node5"><a xlink:href="$tst__util_8cpp.html" xlink:title="tests/auto/util/tst\l_util.cpp">
 <polygon fill="none" stroke="#000000" points="377.5,-.5 377.5,-30.5 467.5,-30.5 467.5,-.5 377.5,-.5"/>
 <text text-anchor="start" x="385.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">tests/auto/util/tst</text>
 <text text-anchor="middle" x="422.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">_util.cpp</text>

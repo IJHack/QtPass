@@ -17,7 +17,7 @@
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
-<g id="a_node2"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title="src/configdialog.cpp">
+<g id="a_node2"><a xlink:href="$configdialog_8cpp.html" xlink:title="src/configdialog.cpp">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-19.5 104,-19.5 104,-.5 0,-.5"/>
 <text text-anchor="middle" x="52" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/configdialog.cpp</text>
 </a>
@@ -32,7 +32,7 @@
 <!-- Node4 -->
 <g id="node3" class="node">
 <title>Node4</title>
-<g id="a_node3"><a xlink:href="keygendialog_8cpp.html" target="_top" xlink:title="src/keygendialog.cpp">
+<g id="a_node3"><a xlink:href="$keygendialog_8cpp.html" xlink:title="src/keygendialog.cpp">
 <polygon fill="none" stroke="#000000" points="122.5,-.5 122.5,-19.5 231.5,-19.5 231.5,-.5 122.5,-.5"/>
 <text text-anchor="middle" x="177" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/keygendialog.cpp</text>
 </a>
@@ -47,7 +47,7 @@
 <!-- Node5 -->
 <g id="node4" class="node">
 <title>Node5</title>
-<g id="a_node4"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
+<g id="a_node4"><a xlink:href="$mainwindow_8cpp.html" xlink:title="src/mainwindow.cpp">
 <polygon fill="none" stroke="#000000" points="250,-.5 250,-19.5 356,-19.5 356,-.5 250,-.5"/>
 <text text-anchor="middle" x="303" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
