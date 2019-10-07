@@ -44,8 +44,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 #endif
   ui->setupUi(this);
 
-  m_qtPass = new QtPass();
-  m_qtPass->setMainWindow(this);
+  m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
@@ -119,6 +118,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
+
+  if (!m_qtPass->init())
+    // no working config so this should just quit
+    QApplication::quit();
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }

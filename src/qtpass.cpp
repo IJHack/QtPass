@@ -22,13 +22,9 @@
 #include "debughelper.h"
 #endif
 
-QtPass::QtPass() : clippedText(QString()), freshStart(true) {
-  if (!setup()) {
-    // no working config so this should quit without config anything
-    QApplication::quit();
-    {}
-  }
-
+QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow),
+                                         clippedText(QString()),
+                                         freshStart(true) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,
@@ -36,6 +32,8 @@ QtPass::QtPass() : clippedText(QString()), freshStart(true) {
 
   QObject::connect(qApp, &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
+
+  setMainWindow();
 }
 
 /**
@@ -55,10 +53,10 @@ QtPass::~QtPass() {
 }
 
 /**
- * @brief QtPass::setup make sure we are ready to go as soon as
+ * @brief QtPass::init make sure we are ready to go as soon as
  * possible
  */
-bool QtPass::setup() {
+bool QtPass::init() {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
@@ -111,8 +109,7 @@ bool QtPass::setup() {
   return true;
 }
 
-void QtPass::setMainWindow(MainWindow *mW) {
-  m_mainWindow = mW;
+void QtPass::setMainWindow(void) {
   m_mainWindow->restoreWindow();
 
   fusedav.setParent(m_mainWindow);
