@@ -484,13 +484,13 @@ void MainWindow::restoreWindow() {
 
   if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
     initTrayIcon();
-    if (m_qtPass->isFreshStart() && QtPassSettings::isStartMinimized()) {
+    if (QtPassSettings::isStartMinimized()) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
-  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+  } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
     destroyTrayIcon();
-  }*/
+  }
 }
 
 /**
