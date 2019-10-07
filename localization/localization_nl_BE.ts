@@ -576,7 +576,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+897"/>
+        <location filename="../src/mainwindow.cpp" line="+900"/>
         <source>Add password</source>
         <translation type="unfinished"></translation>
     </message>
@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+143"/>
+        <location filename="../src/qtpass.cpp" line="+140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished"></translation>
     </message>
