@@ -4,6 +4,7 @@
 #endif
 
 #include <QApplication>
+#include <QDir>
 #include <QTranslator>
 
 /*! \mainpage QtPass
@@ -67,6 +68,8 @@ int main(int argc, char *argv[]) {
   QApplication app(argc, argv);
 #endif
 
+  Q_INIT_RESOURCE(resources);
+
   QCoreApplication::setOrganizationName("IJHack");
   QCoreApplication::setOrganizationDomain("ijhack.org");
   QCoreApplication::setApplicationName("QtPass");
@@ -90,6 +93,10 @@ int main(int argc, char *argv[]) {
 #if SINGLE_APP
   QObject::connect(&app, &SingleApplication::messageAvailable, &w,
                    &MainWindow::messageAvailable);
+#endif
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
+  QGuiApplication::setDesktopFileName("qtpass.desktop");
 #endif
 
   w.show();

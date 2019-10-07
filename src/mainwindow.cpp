@@ -44,8 +44,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 #endif
   ui->setupUi(this);
 
-  m_qtPass = new QtPass();
-  m_qtPass->setMainWindow(this);
+  m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
   new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
@@ -65,16 +64,15 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
 
-  proxyModel.setSourceModel(&model);
+  QModelIndex rootDir = model.setRootPath(passStore);
+  model.fetchMore(rootDir);
+
   proxyModel.setModelAndStore(&model, passStore);
-  // proxyModel.sort(0, Qt::AscendingOrder);
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
-  model.fetchMore(model.setRootPath(passStore));
-  // model.sort(0, Qt::AscendingOrder);
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
+      proxyModel.mapFromSource(rootDir));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
@@ -120,6 +118,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
+
+  if (!m_qtPass->init())
+    // no working config so this should just quit
+    QApplication::quit();
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }
@@ -202,10 +204,6 @@ const QModelIndex MainWindow::getCurrentTreeViewIndex() {
 void MainWindow::cleanKeygenDialog() {
   this->keygen->close();
   this->keygen = nullptr;
-}
-
-void MainWindow::setTextTextBrowser(const QString &text) {
-  ui->textBrowser->setText(text);
 }
 
 void MainWindow::flashText(const QString &text, const bool isError,
@@ -404,13 +402,15 @@ void MainWindow::passShowHandler(const QString &p_output) {
       ui->verticalLayoutPassword->setSpacing(0);
     else
       ui->verticalLayoutPassword->setSpacing(6);
-    output = fileContent.getRemainingData();
+
+    output = fileContent.getRemainingDataForDisplay();
   }
 
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
   }
 
+  emit passShowHandlerFinished(output);
   setUiElementsEnabled(true);
 }
 
@@ -750,6 +750,7 @@ void MainWindow::updateProfileBox() {
       if (!i.key().isEmpty())
         ui->profileBox->addItem(i.key());
     }
+    ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
   if (index != -1) // -1 for not found
@@ -915,6 +916,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     // SLOT(copyPasswordToClipboard()));
     // }
     contextMenu.addSeparator();
+    if (fileOrFolder.isDir()) {
+      QAction *renameFolder = contextMenu.addAction(tr("Rename folder"));
+      connect(renameFolder, &QAction::triggered, this, &MainWindow::renameFolder);
+    } else if (fileOrFolder.isFile()) {
+      QAction *renamePassword = contextMenu.addAction(tr("Rename password"));
+      connect(renamePassword, &QAction::triggered, this, &MainWindow::renamePassword);
+    }
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
   }
@@ -966,6 +974,27 @@ void MainWindow::addFolder() {
 }
 
 /**
+ * @brief MainWindow::renameFolder rename an existing folder
+ */
+void MainWindow::renameFolder() {
+  bool ok;
+  QString srcDir = QDir::cleanPath(Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+  QString srcDirName = QDir(srcDir).dirName();
+  QString newName =
+      QInputDialog::getText(this, tr("Rename file"),
+                            tr("Rename Folder To: "),
+                            QLineEdit::Normal,
+                            srcDirName,
+                            &ok);
+  if (!ok || newName.isEmpty())
+    return;
+  QString destDir = srcDir;
+  destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
+  QtPassSettings::getPass()->Move(srcDir, destDir);
+}
+
+
+/**
  * @brief MainWindow::editPassword read password and open edit window via
  * MainWindow::onEdit()
  */
@@ -975,6 +1004,27 @@ void MainWindow::editPassword(const QString &file) {
       onUpdate(true);
     setPassword(file, false);
   }
+}
+
+/**
+ * @brief MainWindow::renamePassword rename an existing password
+ */
+void MainWindow::renamePassword() {
+  bool ok;
+  QString file = getFile(ui->treeView->currentIndex(), false);
+  QString fileName = QFileInfo(file).baseName();
+  QString newName =
+      QInputDialog::getText(this, tr("Rename file"),
+                            tr("Rename File To: "),
+                            QLineEdit::Normal,
+                            fileName,
+                            &ok);
+  if (!ok || newName.isEmpty())
+    return;
+  QString newFile = file;
+  newFile.replace(file.lastIndexOf(fileName), fileName.length(), newName);
+  newFile.replace(QRegExp("\\.gpg$"), "");
+  QtPassSettings::getPass()->Move(file, newFile);
 }
 
 /**

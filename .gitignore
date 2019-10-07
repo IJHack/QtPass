@@ -23,10 +23,12 @@ src/libqtpass.a
 src/moc_predefs.h
 tests/auto/ui/moc_predefs.h
 tests/auto/ui/target_wrapper.sh
+tests/auto/ui/tst_ui
 tests/auto/ui/tst_ui.app/
 tests/auto/ui/tst_ui.moc
 tests/auto/util/moc_predefs.h
 tests/auto/util/target_wrapper.sh
+tests/auto/util/tst_util
 tests/auto/util/tst_util.app/
 tests/auto/util/tst_util.moc
 **/*.gc*

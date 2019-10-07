@@ -49,7 +49,6 @@ public:
   void userDialog(QString = "");
   void config();
 
-  void setTextTextBrowser(const QString &text);
   void setUiElementsEnabled(bool state);
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
@@ -66,7 +65,6 @@ protected:
   bool eventFilter(QObject *obj, QEvent *event);
 
 signals:
-  void uiEnabled(bool state);
   void passShowHandlerFinished(QString output);
   void passGitInitNeeded();
   void generateGPGKeyPair(QString batch);
@@ -105,7 +103,9 @@ private slots:
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
+  void renameFolder();
   void editPassword(const QString &);
+  void renamePassword();
   void focusInput();
   void copyPasswordFromTreeview();
   void passwordFromFileToClipboard(const QString &text);

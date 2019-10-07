@@ -11,17 +11,17 @@
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>org.qtpass</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.3</string>
+	<string>1.3.1</string>
 	<key>CFBundleSignature</key>
 	<string>@TYPEINFO@</string>
 	<key>NOTE</key>
 	<string>QtPass is a multi-platform GUI for pass</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2014-2018 IJhack
+	<string>Copyright © 2014-2019 IJhack
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>

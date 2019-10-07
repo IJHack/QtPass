@@ -168,7 +168,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
         QTableWidgetItem *_item = ui->profileTable->item(i, j);
 
         if (_item->text().isEmpty()) {
-          _item->setBackgroundColor(Qt::red);
+          _item->setBackground(Qt::red);
           status = false;
           break;
         }
@@ -179,7 +179,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
     }
   } else {
     if (item->text().isEmpty()) {
-      item->setBackgroundColor(Qt::red);
+      item->setBackground(Qt::red);
       status = false;
     }
   }
@@ -528,7 +528,7 @@ void ConfigDialog::on_deleteButton_clicked() {
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.toList();
-  qSort(rows.begin(), rows.end());
+  std::sort(rows.begin(), rows.end());
   // now actually do the removing:
   foreach (int row, rows)
     ui->profileTable->removeRow(row);

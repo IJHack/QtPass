@@ -19,22 +19,24 @@ private:
 public:
   StoreModel();
 
-  bool filterAcceptsRow(int, const QModelIndex &) const;
+  bool filterAcceptsRow(int, const QModelIndex &) const override;
   bool ShowThis(const QModelIndex) const;
   void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
-  QVariant data(const QModelIndex &index, int role) const;
+  QVariant data(const QModelIndex &index, int role) const override;
+  bool lessThan(const QModelIndex &source_left,
+                const QModelIndex &source_right) const override;
 
   // QAbstractItemModel interface
 public:
-  Qt::DropActions supportedDropActions() const;
-  Qt::DropActions supportedDragActions() const;
-  Qt::ItemFlags flags(const QModelIndex &index) const;
-  QStringList mimeTypes() const;
-  QMimeData *mimeData(const QModelIndexList &indexes) const;
+  Qt::DropActions supportedDropActions() const override;
+  Qt::DropActions supportedDragActions() const override;
+  Qt::ItemFlags flags(const QModelIndex &index) const override;
+  QStringList mimeTypes() const override;
+  QMimeData *mimeData(const QModelIndexList &indexes) const override;
   bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row,
-                       int column, const QModelIndex &parent) const;
+                       int column, const QModelIndex &parent) const override;
   bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row,
-                    int column, const QModelIndex &parent);
+                    int column, const QModelIndex &parent) override;
 };
 /*!
     \struct dragAndDropInfo
