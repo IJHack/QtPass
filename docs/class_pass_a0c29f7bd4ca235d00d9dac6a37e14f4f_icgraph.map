@@ -1,5 +1,5 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="node2" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="259,5,358,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="225,56,392,83"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="440,56,620,83"/>
+<area shape="rect" id="node2" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="225,5,324,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="229,56,320,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="372,56,552,83"/>
 </map>

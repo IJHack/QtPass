@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 357.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>QtPassSettings::setClipBoardType</title>
-<!-- Node714 -->
+<!-- Node706 -->
 <g id="node1" class="node">
-<title>Node714</title>
+<title>Node706</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 170,-19.5 170,-.5 0,-.5"/>
 <text text-anchor="middle" x="85" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setClipBoardType</text>
 </g>
-<!-- Node715 -->
+<!-- Node707 -->
 <g id="node2" class="node">
-<title>Node715</title>
+<title>Node707</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="206,-.5 206,-19.5 349,-19.5 349,-.5 206,-.5"/>
 <text text-anchor="middle" x="277.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node714&#45;&gt;Node715 -->
+<!-- Node706&#45;&gt;Node707 -->
 <g id="edge1" class="edge">
-<title>Node714&#45;&gt;Node715</title>
+<title>Node706&#45;&gt;Node707</title>
 <path fill="none" stroke="#191970" d="M170.274,-10C178.7106,-10 187.2612,-10 195.6619,-10"/>
 <polygon fill="#191970" stroke="#191970" points="195.8169,-13.5001 205.8169,-10 195.8169,-6.5001 195.8169,-13.5001"/>
 </g>

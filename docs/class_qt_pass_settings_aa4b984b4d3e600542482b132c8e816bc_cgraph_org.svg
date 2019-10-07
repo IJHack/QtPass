@@ -8,15 +8,15 @@
  viewBox="0.00 0.00 541.00 39.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 35)">
 <title>QtPassSettings::getClipBoardType</title>
-<!-- Node20 -->
+<!-- Node18 -->
 <g id="node1" class="node">
-<title>Node20</title>
+<title>Node18</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-6 0,-25 170,-25 170,-6 0,-6"/>
 <text text-anchor="middle" x="85" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getClipBoardType</text>
 </g>
-<!-- Node21 -->
+<!-- Node19 -->
 <g id="node2" class="node">
-<title>Node21</title>
+<title>Node19</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" target="_top" xlink:title="QtPassSettings::getClipBoard\lTypeRaw">
 <polygon fill="none" stroke="#000000" points="206,-.5 206,-30.5 354,-30.5 354,-.5 206,-.5"/>
 <text text-anchor="start" x="214" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getClipBoard</text>
@@ -24,24 +24,24 @@
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node21 -->
+<!-- Node18&#45;&gt;Node19 -->
 <g id="edge1" class="edge">
-<title>Node20&#45;&gt;Node21</title>
+<title>Node18&#45;&gt;Node19</title>
 <path fill="none" stroke="#191970" d="M170.2462,-15.5C178.6978,-15.5 187.2743,-15.5 195.7162,-15.5"/>
 <polygon fill="#191970" stroke="#191970" points="195.9291,-19.0001 205.9291,-15.5 195.9291,-12.0001 195.9291,-19.0001"/>
 </g>
-<!-- Node22 -->
+<!-- Node20 -->
 <g id="node3" class="node">
-<title>Node22</title>
+<title>Node20</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="390,-6 390,-25 533,-25 533,-6 390,-6"/>
 <text text-anchor="middle" x="461.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node21&#45;&gt;Node22 -->
+<!-- Node19&#45;&gt;Node20 -->
 <g id="edge2" class="edge">
-<title>Node21&#45;&gt;Node22</title>
+<title>Node19&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M354.0848,-15.5C362.6095,-15.5 371.3375,-15.5 379.9536,-15.5"/>
 <polygon fill="#191970" stroke="#191970" points="379.998,-19.0001 389.9979,-15.5 379.9979,-12.0001 379.998,-19.0001"/>
 </g>

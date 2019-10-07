@@ -17,7 +17,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="$qprogressindicator_8h.html" xlink:title="qprogressindicator.h">
+<g id="a_node2"><a xlink:href="qprogressindicator_8h.html" target="_top" xlink:title="qprogressindicator.h">
 <polygon fill="none" stroke="#000000" points="5.5,-56.5 5.5,-75.5 109.5,-75.5 109.5,-56.5 5.5,-56.5"/>
 <text text-anchor="middle" x="57.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">qprogressindicator.h</text>
 </a>

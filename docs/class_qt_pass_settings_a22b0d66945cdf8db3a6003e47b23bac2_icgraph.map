@@ -2,6 +2,6 @@
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="247,5,427,32"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="241,56,433,83"/>
 <area shape="rect" id="node6" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="231,107,444,133"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="492,81,659,108"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="707,81,887,108"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="492,81,583,108"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="631,81,811,108"/>
 </map>

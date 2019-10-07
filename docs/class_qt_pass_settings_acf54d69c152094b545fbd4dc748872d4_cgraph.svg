@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 317.00 39.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 35)">
 <title>QtPassSettings::setAvoidNumbers</title>
-<!-- Node710 -->
+<!-- Node702 -->
 <g id="node1" class="node">
-<title>Node710</title>
+<title>Node702</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-30.5 130,-30.5 130,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setAvoid</text>
 <text text-anchor="middle" x="65" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Numbers</text>
 </g>
-<!-- Node711 -->
+<!-- Node703 -->
 <g id="node2" class="node">
-<title>Node711</title>
+<title>Node703</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="166,-6 166,-25 309,-25 309,-6 166,-6"/>
 <text text-anchor="middle" x="237.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node710&#45;&gt;Node711 -->
+<!-- Node702&#45;&gt;Node703 -->
 <g id="edge1" class="edge">
-<title>Node710&#45;&gt;Node711</title>
+<title>Node702&#45;&gt;Node703</title>
 <path fill="none" stroke="#191970" d="M130.2149,-15.5C138.581,-15.5 147.2283,-15.5 155.8151,-15.5"/>
 <polygon fill="#191970" stroke="#191970" points="155.847,-19.0001 165.847,-15.5 155.8469,-12.0001 155.847,-19.0001"/>
 </g>

@@ -27,7 +27,6 @@ var searchData=
   ['sethidepassword',['setHidePassword',['../class_qt_pass_settings.html#a0fdaeac9234b197815c6d370df40f738',1,'QtPassSettings']]],
   ['setlength',['setLength',['../class_password_dialog.html#ac865a161a2be2d4837761a1305a71db9',1,'PasswordDialog']]],
   ['setlessrandom',['setLessRandom',['../class_qt_pass_settings.html#ae2bb9346c54f975132be281f8ba64175',1,'QtPassSettings']]],
-  ['setmainwindow',['setMainWindow',['../class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371',1,'QtPass']]],
   ['setmaximized',['setMaximized',['../class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c',1,'QtPassSettings']]],
   ['setmodelandstore',['setModelAndStore',['../class_store_model.html#af223e13120a72e556a394aae4a92ad0f',1,'StoreModel']]],
   ['setpass',['setPass',['../class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8',1,'PasswordDialog']]],

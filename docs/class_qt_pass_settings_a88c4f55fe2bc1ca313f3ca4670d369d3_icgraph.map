@@ -1,6 +1,6 @@
 <map id="QtPassSettings::isStartMinimized" name="QtPassSettings::isStartMinimized">
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="278,5,458,32"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="272,56,464,83"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="512,56,679,83"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="727,56,907,83"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="512,56,603,83"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="651,56,831,83"/>
 </map>

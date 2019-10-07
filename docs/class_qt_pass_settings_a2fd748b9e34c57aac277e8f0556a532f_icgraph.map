@@ -10,6 +10,6 @@
 <area shape="rect" id="node14" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="227,411,440,437"/>
 <area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="489,157,668,184"/>
 <area shape="rect" id="node10" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="488,309,669,336"/>
-<area shape="rect" id="node11" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="495,385,662,412"/>
+<area shape="rect" id="node11" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="533,385,624,412"/>
 <area shape="rect" id="node12" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="717,385,897,412"/>
 </map>

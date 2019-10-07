@@ -17,7 +17,7 @@
 <!-- Node12 -->
 <g id="node2" class="node">
 <title>Node12</title>
-<g id="a_node2"><a xlink:href="$main_8cpp.html" xlink:title="main/main.cpp">
+<g id="a_node2"><a xlink:href="main_8cpp.html" target="_top" xlink:title="main/main.cpp">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-19.5 80,-19.5 80,-.5 0,-.5"/>
 <text text-anchor="middle" x="40" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">main/main.cpp</text>
 </a>
@@ -32,7 +32,7 @@
 <!-- Node13 -->
 <g id="node3" class="node">
 <title>Node13</title>
-<g id="a_node3"><a xlink:href="$configdialog_8cpp.html" xlink:title="src/configdialog.cpp">
+<g id="a_node3"><a xlink:href="configdialog_8cpp.html" target="_top" xlink:title="src/configdialog.cpp">
 <polygon fill="none" stroke="#000000" points="98,-.5 98,-19.5 202,-19.5 202,-.5 98,-.5"/>
 <text text-anchor="middle" x="150" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/configdialog.cpp</text>
 </a>
@@ -47,7 +47,7 @@
 <!-- Node14 -->
 <g id="node4" class="node">
 <title>Node14</title>
-<g id="a_node4"><a xlink:href="$mainwindow_8cpp.html" xlink:title="src/mainwindow.cpp">
+<g id="a_node4"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="src/mainwindow.cpp">
 <polygon fill="none" stroke="#000000" points="220,-.5 220,-19.5 326,-19.5 326,-.5 220,-.5"/>
 <text text-anchor="middle" x="273" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/mainwindow.cpp</text>
 </a>
@@ -62,7 +62,7 @@
 <!-- Node15 -->
 <g id="node5" class="node">
 <title>Node15</title>
-<g id="a_node5"><a xlink:href="$qtpass_8cpp.html" xlink:title="src/qtpass.cpp">
+<g id="a_node5"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title="src/qtpass.cpp">
 <polygon fill="none" stroke="#000000" points="344.5,-.5 344.5,-19.5 425.5,-19.5 425.5,-.5 344.5,-.5"/>
 <text text-anchor="middle" x="385" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">src/qtpass.cpp</text>
 </a>

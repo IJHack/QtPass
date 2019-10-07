@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 493.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>MainWindow::generateKeyPair</title>
-<!-- Node205 -->
+<!-- Node219 -->
 <g id="node1" class="node">
-<title>Node205</title>
+<title>Node219</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 151,-19.5 151,-.5 0,-.5"/>
 <text text-anchor="middle" x="75.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
 </g>
-<!-- Node206 -->
+<!-- Node220 -->
 <g id="node2" class="node">
-<title>Node206</title>
+<title>Node220</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. ">
 <polygon fill="none" stroke="#000000" points="187,-.5 187,-19.5 299,-19.5 299,-.5 187,-.5"/>
 <text text-anchor="middle" x="243" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::genKey</text>
 </a>
 </g>
 </g>
-<!-- Node205&#45;&gt;Node206 -->
+<!-- Node219&#45;&gt;Node220 -->
 <g id="edge1" class="edge">
-<title>Node205&#45;&gt;Node206</title>
+<title>Node219&#45;&gt;Node220</title>
 <path fill="none" stroke="#191970" d="M161.5165,-10C170.1329,-10 178.7174,-10 186.9047,-10"/>
 <polygon fill="#191970" stroke="#191970" points="161.4087,-6.5001 151.4087,-10 161.4086,-13.5001 161.4087,-6.5001"/>
 </g>
-<!-- Node207 -->
+<!-- Node221 -->
 <g id="node3" class="node">
-<title>Node207</title>
+<title>Node221</title>
 <g id="a_node3"><a xlink:href="class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" target="_top" xlink:title="KeygenDialog::~KeygenDialog even more basic destructor. ">
 <polygon fill="none" stroke="#000000" points="335,-.5 335,-19.5 485,-19.5 485,-.5 335,-.5"/>
 <text text-anchor="middle" x="410" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">KeygenDialog::~KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node206&#45;&gt;Node207 -->
+<!-- Node220&#45;&gt;Node221 -->
 <g id="edge2" class="edge">
-<title>Node206&#45;&gt;Node207</title>
+<title>Node220&#45;&gt;Node221</title>
 <path fill="none" stroke="#191970" d="M309.1861,-10C317.5966,-10 326.2521,-10 334.7909,-10"/>
 <polygon fill="#191970" stroke="#191970" points="309.0732,-6.5001 299.0732,-10 309.0731,-13.5001 309.0732,-6.5001"/>
 </g>

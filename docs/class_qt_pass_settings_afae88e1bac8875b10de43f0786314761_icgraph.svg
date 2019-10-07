@@ -8,39 +8,39 @@
  viewBox="0.00 0.00 353.00 66.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>QtPassSettings::isHidePassword</title>
-<!-- Node520 -->
+<!-- Node512 -->
 <g id="node1" class="node">
-<title>Node520</title>
+<title>Node512</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 163,-38.5 163,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="81.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::isHidePassword</text>
 </g>
-<!-- Node521 -->
+<!-- Node513 -->
 <g id="node2" class="node">
-<title>Node521</title>
+<title>Node513</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="204.5,-38.5 204.5,-57.5 339.5,-57.5 339.5,-38.5 204.5,-38.5"/>
 <text text-anchor="middle" x="272" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node520&#45;&gt;Node521 -->
+<!-- Node512&#45;&gt;Node513 -->
 <g id="edge1" class="edge">
-<title>Node520&#45;&gt;Node521</title>
+<title>Node512&#45;&gt;Node513</title>
 <path fill="none" stroke="#191970" d="M173.1481,-38.1408C183.6455,-39.1877 194.2014,-40.2406 204.3046,-41.2482"/>
 <polygon fill="#191970" stroke="#191970" points="173.4162,-34.6502 163.1182,-37.1404 172.7214,-41.6157 173.4162,-34.6502"/>
 </g>
-<!-- Node522 -->
+<!-- Node514 -->
 <g id="node3" class="node">
-<title>Node522</title>
+<title>Node514</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" target="_top" xlink:title="MainWindow::keyPressEvent did anyone press return, enter or escape? ">
 <polygon fill="none" stroke="#000000" points="199,-.5 199,-19.5 345,-19.5 345,-.5 199,-.5"/>
 <text text-anchor="middle" x="272" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::keyPressEvent</text>
 </a>
 </g>
 </g>
-<!-- Node520&#45;&gt;Node522 -->
+<!-- Node512&#45;&gt;Node514 -->
 <g id="edge2" class="edge">
-<title>Node520&#45;&gt;Node522</title>
+<title>Node512&#45;&gt;Node514</title>
 <path fill="none" stroke="#191970" d="M173.2245,-19.8516C181.8633,-18.99 190.5408,-18.1245 198.9723,-17.2836"/>
 <polygon fill="#191970" stroke="#191970" points="172.7214,-16.3843 163.1182,-20.8596 173.4162,-23.3498 172.7214,-16.3843"/>
 </g>

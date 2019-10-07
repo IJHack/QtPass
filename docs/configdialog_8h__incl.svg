@@ -17,7 +17,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="$enums_8h.html" xlink:title="enums.h">
+<g id="a_node2"><a xlink:href="enums_8h.html" target="_top" xlink:title="enums.h">
 <polygon fill="none" stroke="#000000" points="0,-56.5 0,-75.5 54,-75.5 54,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="27" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">enums.h</text>
 </a>
@@ -32,7 +32,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="$passwordconfiguration_8h.html" xlink:title="passwordconfiguration.h">
+<g id="a_node3"><a xlink:href="passwordconfiguration_8h.html" target="_top" xlink:title="passwordconfiguration.h">
 <polygon fill="none" stroke="#000000" points="72,-56.5 72,-75.5 194,-75.5 194,-56.5 72,-56.5"/>
 <text text-anchor="middle" x="133" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">passwordconfiguration.h</text>
 </a>

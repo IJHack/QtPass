@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 327.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>QtPassSettings::setAutoPull</title>
-<!-- Node700 -->
+<!-- Node692 -->
 <g id="node1" class="node">
-<title>Node700</title>
+<title>Node692</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 142,-19.5 142,-.5 0,-.5"/>
 <text text-anchor="middle" x="71" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setAutoPull</text>
 </g>
-<!-- Node701 -->
+<!-- Node693 -->
 <g id="node2" class="node">
-<title>Node701</title>
+<title>Node693</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git...">
 <polygon fill="none" stroke="#000000" points="178,-.5 178,-19.5 319,-19.5 319,-.5 178,-.5"/>
 <text text-anchor="middle" x="248.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::~ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node700&#45;&gt;Node701 -->
+<!-- Node692&#45;&gt;Node693 -->
 <g id="edge1" class="edge">
-<title>Node700&#45;&gt;Node701</title>
+<title>Node692&#45;&gt;Node693</title>
 <path fill="none" stroke="#191970" d="M152.184,-10C160.7653,-10 169.4417,-10 177.8891,-10"/>
 <polygon fill="#191970" stroke="#191970" points="152.1733,-6.5001 142.1733,-10 152.1733,-13.5001 152.1733,-6.5001"/>
 </g>

@@ -8,25 +8,25 @@
  viewBox="0.00 0.00 325.00 39.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 35)">
 <title>QtPassSettings::setHideOnClose</title>
-<!-- Node738 -->
+<!-- Node732 -->
 <g id="node1" class="node">
-<title>Node738</title>
+<title>Node732</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-30.5 138,-30.5 138,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setHideOn</text>
 <text text-anchor="middle" x="69" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Close</text>
 </g>
-<!-- Node739 -->
+<!-- Node733 -->
 <g id="node2" class="node">
-<title>Node739</title>
+<title>Node733</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="174,-6 174,-25 317,-25 317,-6 174,-6"/>
 <text text-anchor="middle" x="245.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node738&#45;&gt;Node739 -->
+<!-- Node732&#45;&gt;Node733 -->
 <g id="edge1" class="edge">
-<title>Node738&#45;&gt;Node739</title>
+<title>Node732&#45;&gt;Node733</title>
 <path fill="none" stroke="#191970" d="M138.2509,-15.5C146.5588,-15.5 155.1025,-15.5 163.5683,-15.5"/>
 <polygon fill="#191970" stroke="#191970" points="163.835,-19.0001 173.8349,-15.5 163.8349,-12.0001 163.835,-19.0001"/>
 </g>

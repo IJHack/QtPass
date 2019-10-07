@@ -1,4 +1,4 @@
 <map id="MainWindow::startReencryptPath" name="MainWindow::startReencryptPath">
-<area shape="rect" id="node2" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="272,5,439,32"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="487,5,667,32"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="272,5,363,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="411,5,591,32"/>
 </map>

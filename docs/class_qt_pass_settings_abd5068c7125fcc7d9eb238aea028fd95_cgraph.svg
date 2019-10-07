@@ -8,24 +8,24 @@
  viewBox="0.00 0.00 336.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>QtPassSettings::setSavestate</title>
-<!-- Node808 -->
+<!-- Node804 -->
 <g id="node1" class="node">
-<title>Node808</title>
+<title>Node804</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 149,-19.5 149,-.5 0,-.5"/>
 <text text-anchor="middle" x="74.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setSavestate</text>
 </g>
-<!-- Node809 -->
+<!-- Node805 -->
 <g id="node2" class="node">
-<title>Node809</title>
+<title>Node805</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="185,-.5 185,-19.5 328,-19.5 328,-.5 185,-.5"/>
 <text text-anchor="middle" x="256.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node808&#45;&gt;Node809 -->
+<!-- Node804&#45;&gt;Node805 -->
 <g id="edge1" class="edge">
-<title>Node808&#45;&gt;Node809</title>
+<title>Node804&#45;&gt;Node805</title>
 <path fill="none" stroke="#191970" d="M149.0515,-10C157.4264,-10 165.9936,-10 174.4565,-10"/>
 <polygon fill="#191970" stroke="#191970" points="174.7076,-13.5001 184.7076,-10 174.7076,-6.5001 174.7076,-13.5001"/>
 </g>

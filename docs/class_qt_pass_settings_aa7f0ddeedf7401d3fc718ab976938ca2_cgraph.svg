@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 348.00 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>QtPassSettings::setUsePass</title>
-<!-- Node840 -->
+<!-- Node836 -->
 <g id="node1" class="node">
-<title>Node840</title>
+<title>Node836</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-38.5 0,-57.5 146,-57.5 146,-38.5 0,-38.5"/>
 <text text-anchor="middle" x="73" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setUsePass</text>
 </g>
-<!-- Node841 -->
+<!-- Node837 -->
 <g id="node2" class="node">
-<title>Node841</title>
+<title>Node837</title>
 <g id="a_node2"><a xlink:href="class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" target="_top" xlink:title="QtPassSettings::getRealPass">
 <polygon fill="none" stroke="#000000" points="187,-76.5 187,-95.5 335,-95.5 335,-76.5 187,-76.5"/>
 <text text-anchor="middle" x="261" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getRealPass</text>
 </a>
 </g>
 </g>
-<!-- Node840&#45;&gt;Node841 -->
+<!-- Node836&#45;&gt;Node837 -->
 <g id="edge1" class="edge">
-<title>Node840&#45;&gt;Node841</title>
+<title>Node836&#45;&gt;Node837</title>
 <path fill="none" stroke="#191970" d="M120.4403,-57.589C145.8077,-62.7165 177.2274,-69.0672 203.9232,-74.4632"/>
 <polygon fill="#191970" stroke="#191970" points="203.4056,-77.9293 213.9008,-76.4799 204.7925,-71.068 203.4056,-77.9293"/>
 </g>
-<!-- Node842 -->
+<!-- Node838 -->
 <g id="node3" class="node">
-<title>Node842</title>
+<title>Node838</title>
 <g id="a_node3"><a xlink:href="class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" target="_top" xlink:title="QtPassSettings::getImitatePass">
 <polygon fill="none" stroke="#000000" points="182,-38.5 182,-57.5 340,-57.5 340,-38.5 182,-38.5"/>
 <text text-anchor="middle" x="261" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getImitatePass</text>
 </a>
 </g>
 </g>
-<!-- Node840&#45;&gt;Node842 -->
+<!-- Node836&#45;&gt;Node838 -->
 <g id="edge2" class="edge">
-<title>Node840&#45;&gt;Node842</title>
+<title>Node836&#45;&gt;Node838</title>
 <path fill="none" stroke="#191970" d="M146.224,-48C154.5067,-48 163.0159,-48 171.4766,-48"/>
 <polygon fill="#191970" stroke="#191970" points="171.7543,-51.5001 181.7543,-48 171.7542,-44.5001 171.7543,-51.5001"/>
 </g>
-<!-- Node843 -->
+<!-- Node839 -->
 <g id="node4" class="node">
-<title>Node843</title>
+<title>Node839</title>
 <g id="a_node4"><a xlink:href="class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" target="_top" xlink:title="QtPassSettings::getInstance">
 <polygon fill="none" stroke="#000000" points="189.5,-.5 189.5,-19.5 332.5,-19.5 332.5,-.5 189.5,-.5"/>
 <text text-anchor="middle" x="261" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
-<!-- Node840&#45;&gt;Node843 -->
+<!-- Node836&#45;&gt;Node839 -->
 <g id="edge3" class="edge">
-<title>Node840&#45;&gt;Node843</title>
+<title>Node836&#45;&gt;Node839</title>
 <path fill="none" stroke="#191970" d="M120.4403,-38.411C145.8077,-33.2835 177.2274,-26.9328 203.9232,-21.5368"/>
 <polygon fill="#191970" stroke="#191970" points="204.7925,-24.932 213.9008,-19.5201 203.4056,-18.0707 204.7925,-24.932"/>
 </g>

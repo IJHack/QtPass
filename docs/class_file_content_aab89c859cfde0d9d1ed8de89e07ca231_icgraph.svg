@@ -108,16 +108,16 @@ var sectionId = 'dynsection-1';
 <!-- Node13 -->
 <g id="node3" class="node">
 <title>Node13</title>
-<g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
-<polygon fill="none" stroke="#000000" points="369,-94 369,-113 494,-113 494,-94 369,-94"/>
-<text text-anchor="middle" x="431.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
+<g id="a_node3"><a xlink:href="class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" target="_top" xlink:title="QtPass::init make sure we are ready to go as soon as possible. ">
+<polygon fill="none" stroke="#000000" points="397.5,-94 397.5,-113 465.5,-113 465.5,-94 397.5,-94"/>
+<text text-anchor="middle" x="431.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::init</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
 <g id="edge2" class="edge">
 <title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="#191970" d="M334.3404,-101.9371C346.0467,-102.1254 357.8353,-102.315 368.9666,-102.4941"/>
+<path fill="none" stroke="#191970" d="M334.3568,-101.9374C356.7829,-102.2981 379.5098,-102.6637 397.3371,-102.9505"/>
 <polygon fill="#191970" stroke="#191970" points="334.1478,-98.4337 324.0928,-101.7723 334.0352,-105.4328 334.1478,-98.4337"/>
 </g>
 <!-- Node14 -->
@@ -132,8 +132,8 @@ var sectionId = 'dynsection-1';
 <!-- Node13&#45;&gt;Node14 -->
 <g id="edge3" class="edge">
 <title>Node13&#45;&gt;Node14</title>
-<path fill="none" stroke="#191970" d="M504.2602,-103.5C516.0173,-103.5 528.1487,-103.5 539.7803,-103.5"/>
-<polygon fill="#191970" stroke="#191970" points="504.0466,-100.0001 494.0466,-103.5 504.0465,-107.0001 504.0466,-100.0001"/>
+<path fill="none" stroke="#191970" d="M475.8813,-103.5C495.2163,-103.5 518.3117,-103.5 539.7193,-103.5"/>
+<polygon fill="#191970" stroke="#191970" points="475.8524,-100.0001 465.8524,-103.5 475.8523,-107.0001 475.8524,-100.0001"/>
 </g>
 <!-- Node16 -->
 <g id="node6" class="node">

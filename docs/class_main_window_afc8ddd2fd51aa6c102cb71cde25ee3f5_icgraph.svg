@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 692;
+var viewWidth = 635;
 var viewHeight = 53;
 var sectionId = 'dynsection-32';
 </script>
@@ -54,63 +54,63 @@ var sectionId = 'dynsection-32';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>MainWindow::passShowHandlerFinished</title>
-<!-- Node316 -->
+<!-- Node330 -->
 <g id="node1" class="node">
-<title>Node316</title>
+<title>Node330</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-30.5 158,-30.5 158,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 <text text-anchor="middle" x="79" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Finished</text>
 </g>
-<!-- Node317 -->
+<!-- Node331 -->
 <g id="node2" class="node">
-<title>Node317</title>
+<title>Node331</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" target="_top" xlink:title="MainWindow::passShowHandler">
 <polygon fill="none" stroke="#000000" points="194,-25 194,-44 352,-44 352,-25 194,-25"/>
 <text text-anchor="middle" x="273" y="-32" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::passShowHandler</text>
 </a>
 </g>
 </g>
-<!-- Node316&#45;&gt;Node317 -->
+<!-- Node330&#45;&gt;Node331 -->
 <g id="edge1" class="edge">
-<title>Node316&#45;&gt;Node317</title>
+<title>Node330&#45;&gt;Node331</title>
 <path fill="none" stroke="#191970" d="M168.1574,-24.2319C176.6963,-25.0682 185.3167,-25.9125 193.7517,-26.7386"/>
 <polygon fill="#191970" stroke="#191970" points="168.4806,-20.7469 158.187,-23.2554 167.7982,-27.7136 168.4806,-20.7469"/>
 </g>
-<!-- Node318 -->
+<!-- Node332 -->
 <g id="node3" class="node">
-<title>Node318</title>
-<g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
-<polygon fill="none" stroke="#000000" points="388,-6 388,-25 513,-25 513,-6 388,-6"/>
-<text text-anchor="middle" x="450.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
+<title>Node332</title>
+<g id="a_node3"><a xlink:href="class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" target="_top" xlink:title="QtPass::init make sure we are ready to go as soon as possible. ">
+<polygon fill="none" stroke="#000000" points="388,-6 388,-25 456,-25 456,-6 388,-6"/>
+<text text-anchor="middle" x="422" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::init</text>
 </a>
 </g>
 </g>
-<!-- Node316&#45;&gt;Node318 -->
+<!-- Node330&#45;&gt;Node332 -->
 <g id="edge4" class="edge">
-<title>Node316&#45;&gt;Node318</title>
-<path fill="none" stroke="#191970" d="M168.4938,-15.5C236.3359,-15.5 327.8492,-15.5 387.9772,-15.5"/>
-<polygon fill="#191970" stroke="#191970" points="168.2404,-12.0001 158.2404,-15.5 168.2404,-19.0001 168.2404,-12.0001"/>
+<title>Node330&#45;&gt;Node332</title>
+<path fill="none" stroke="#191970" d="M168.5315,-15.5C240.3778,-15.5 337.3187,-15.5 387.9658,-15.5"/>
+<polygon fill="#191970" stroke="#191970" points="168.1218,-12.0001 158.1218,-15.5 168.1218,-19.0001 168.1218,-12.0001"/>
 </g>
-<!-- Node317&#45;&gt;Node318 -->
+<!-- Node331&#45;&gt;Node332 -->
 <g id="edge2" class="edge">
-<title>Node317&#45;&gt;Node318</title>
-<path fill="none" stroke="#191970" d="M362.2448,-24.947C370.8614,-24.0247 379.4717,-23.103 387.7509,-22.2168"/>
-<polygon fill="#191970" stroke="#191970" points="361.717,-21.4834 352.1464,-26.028 362.4621,-28.4437 361.717,-21.4834"/>
+<title>Node331&#45;&gt;Node332</title>
+<path fill="none" stroke="#191970" d="M358.0147,-23.6592C368.4652,-22.3266 378.6339,-21.0299 387.6761,-19.8769"/>
+<polygon fill="#191970" stroke="#191970" points="357.4134,-20.2074 347.9365,-24.9443 358.299,-27.1512 357.4134,-20.2074"/>
 </g>
-<!-- Node319 -->
+<!-- Node333 -->
 <g id="node4" class="node">
-<title>Node319</title>
+<title>Node333</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="#000000" points="549,-6 549,-25 684,-25 684,-6 549,-6"/>
-<text text-anchor="middle" x="616.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+<polygon fill="none" stroke="#000000" points="492,-6 492,-25 627,-25 627,-6 492,-6"/>
+<text text-anchor="middle" x="559.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
-<!-- Node318&#45;&gt;Node319 -->
+<!-- Node332&#45;&gt;Node333 -->
 <g id="edge3" class="edge">
-<title>Node318&#45;&gt;Node319</title>
-<path fill="none" stroke="#191970" d="M523.4873,-15.5C531.951,-15.5 540.5556,-15.5 548.9422,-15.5"/>
-<polygon fill="#191970" stroke="#191970" points="523.2575,-12.0001 513.2575,-15.5 523.2574,-19.0001 523.2575,-12.0001"/>
+<title>Node332&#45;&gt;Node333</title>
+<path fill="none" stroke="#191970" d="M466.6126,-15.5C474.6815,-15.5 483.2586,-15.5 491.8137,-15.5"/>
+<polygon fill="#191970" stroke="#191970" points="466.3424,-12.0001 456.3424,-15.5 466.3423,-19.0001 466.3424,-12.0001"/>
 </g>
 </g>
 </svg>

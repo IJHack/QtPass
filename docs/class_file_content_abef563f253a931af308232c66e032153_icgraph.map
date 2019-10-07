@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="183,9,393,36"/>
 <area shape="rect" id="node5" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface. " alt="" coords="187,64,389,91"/>
 <area shape="rect" id="node9" href="$classtst__util.html#a1889cedba30d1d96c60e84effbf7f313" title="tst_util::cleanup unit test cleanup method " alt="" coords="231,115,345,141"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="453,5,620,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="491,5,582,32"/>
 <area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="681,5,861,32"/>
 <area shape="rect" id="node6" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="Pass{}{}wordDialog::~PasswordDialog basic destructor. " alt="" coords="441,57,632,98"/>
 <area shape="rect" id="node7" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="PasswordDialog::setPass" alt="" coords="450,123,623,149"/>

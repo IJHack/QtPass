@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 667;
+var viewWidth = 610;
 var viewHeight = 39;
 var sectionId = 'dynsection-3';
 </script>
@@ -79,32 +79,32 @@ var sectionId = 'dynsection-3';
 <!-- Node30 -->
 <g id="node3" class="node">
 <title>Node30</title>
-<g id="a_node3"><a xlink:href="class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" target="_top" xlink:title="QtPass::setMainWindow">
-<polygon fill="none" stroke="#000000" points="363,-6 363,-25 488,-25 488,-6 363,-6"/>
-<text text-anchor="middle" x="425.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::setMainWindow</text>
+<g id="a_node3"><a xlink:href="class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" target="_top" xlink:title="QtPass::init make sure we are ready to go as soon as possible. ">
+<polygon fill="none" stroke="#000000" points="363,-6 363,-25 431,-25 431,-6 363,-6"/>
+<text text-anchor="middle" x="397" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::init</text>
 </a>
 </g>
 </g>
 <!-- Node29&#45;&gt;Node30 -->
 <g id="edge2" class="edge">
 <title>Node29&#45;&gt;Node30</title>
-<path fill="none" stroke="#191970" d="M337.2448,-15.5C345.8614,-15.5 354.4717,-15.5 362.7509,-15.5"/>
-<polygon fill="#191970" stroke="#191970" points="337.1464,-12.0001 327.1464,-15.5 337.1464,-19.0001 337.1464,-12.0001"/>
+<path fill="none" stroke="#191970" d="M337.4911,-15.5C346.4313,-15.5 355.071,-15.5 362.866,-15.5"/>
+<polygon fill="#191970" stroke="#191970" points="337.2988,-12.0001 327.2988,-15.5 337.2988,-19.0001 337.2988,-12.0001"/>
 </g>
 <!-- Node31 -->
 <g id="node4" class="node">
 <title>Node31</title>
 <g id="a_node4"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window. ">
-<polygon fill="none" stroke="#000000" points="524,-6 524,-25 659,-25 659,-6 524,-6"/>
-<text text-anchor="middle" x="591.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
+<polygon fill="none" stroke="#000000" points="467,-6 467,-25 602,-25 602,-6 467,-6"/>
+<text text-anchor="middle" x="534.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
 <!-- Node30&#45;&gt;Node31 -->
 <g id="edge3" class="edge">
 <title>Node30&#45;&gt;Node31</title>
-<path fill="none" stroke="#191970" d="M498.4873,-15.5C506.951,-15.5 515.5556,-15.5 523.9422,-15.5"/>
-<polygon fill="#191970" stroke="#191970" points="498.2575,-12.0001 488.2575,-15.5 498.2574,-19.0001 498.2575,-12.0001"/>
+<path fill="none" stroke="#191970" d="M441.6126,-15.5C449.6815,-15.5 458.2586,-15.5 466.8137,-15.5"/>
+<polygon fill="#191970" stroke="#191970" points="441.3424,-12.0001 431.3424,-15.5 441.3423,-19.0001 441.3424,-12.0001"/>
 </g>
 </g>
 </svg>

@@ -54,69 +54,69 @@ var sectionId = 'dynsection-33';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::getProfile</title>
-<!-- Node376 -->
+<!-- Node367 -->
 <g id="node1" class="node">
-<title>Node376</title>
+<title>Node367</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 133,-38.5 133,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="66.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::getProfile</text>
 </g>
-<!-- Node377 -->
+<!-- Node368 -->
 <g id="node2" class="node">
-<title>Node377</title>
+<title>Node368</title>
 <g id="a_node2"><a xlink:href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" target="_top" xlink:title="ConfigDialog::ConfigDialog this sets up the configuration screen. ">
 <polygon fill="none" stroke="#000000" points="177,-38.5 177,-57.5 312,-57.5 312,-38.5 177,-38.5"/>
 <text text-anchor="middle" x="244.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::ConfigDialog</text>
 </a>
 </g>
 </g>
-<!-- Node376&#45;&gt;Node377 -->
+<!-- Node367&#45;&gt;Node368 -->
 <g id="edge1" class="edge">
-<title>Node376&#45;&gt;Node377</title>
+<title>Node367&#45;&gt;Node368</title>
 <path fill="none" stroke="#191970" d="M143.2172,-37.1889C154.4095,-38.3836 165.866,-39.6065 176.8603,-40.78"/>
 <polygon fill="#191970" stroke="#191970" points="143.3488,-33.6832 133.0338,-36.1019 142.6058,-40.6436 143.3488,-33.6832"/>
 </g>
-<!-- Node378 -->
+<!-- Node369 -->
 <g id="node3" class="node">
-<title>Node378</title>
+<title>Node369</title>
 <g id="a_node3"><a xlink:href="class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" target="_top" xlink:title="MainWindow::generateKeyPair internal gpg keypair generator . . ">
 <polygon fill="none" stroke="#000000" points="169,-.5 169,-19.5 320,-19.5 320,-.5 169,-.5"/>
 <text text-anchor="middle" x="244.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
 </a>
 </g>
 </g>
-<!-- Node376&#45;&gt;Node378 -->
+<!-- Node367&#45;&gt;Node369 -->
 <g id="edge2" class="edge">
-<title>Node376&#45;&gt;Node378</title>
+<title>Node367&#45;&gt;Node369</title>
 <path fill="none" stroke="#191970" d="M143.2551,-20.807C151.7131,-19.9042 160.3216,-18.9853 168.767,-18.0839"/>
 <polygon fill="#191970" stroke="#191970" points="142.6058,-17.3564 133.0338,-21.8981 143.3488,-24.3168 142.6058,-17.3564"/>
 </g>
-<!-- Node379 -->
+<!-- Node370 -->
 <g id="node4" class="node">
-<title>Node379</title>
+<title>Node370</title>
 <g id="a_node4"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. ">
 <polygon fill="none" stroke="#000000" points="356,-.5 356,-19.5 468,-19.5 468,-.5 356,-.5"/>
 <text text-anchor="middle" x="412" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::genKey</text>
 </a>
 </g>
 </g>
-<!-- Node378&#45;&gt;Node379 -->
+<!-- Node369&#45;&gt;Node370 -->
 <g id="edge3" class="edge">
-<title>Node378&#45;&gt;Node379</title>
+<title>Node369&#45;&gt;Node370</title>
 <path fill="none" stroke="#191970" d="M330.5165,-10C339.1329,-10 347.7174,-10 355.9047,-10"/>
 <polygon fill="#191970" stroke="#191970" points="330.4087,-6.5001 320.4087,-10 330.4086,-13.5001 330.4087,-6.5001"/>
 </g>
-<!-- Node380 -->
+<!-- Node371 -->
 <g id="node5" class="node">
-<title>Node380</title>
+<title>Node371</title>
 <g id="a_node5"><a xlink:href="class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" target="_top" xlink:title="KeygenDialog::~KeygenDialog even more basic destructor. ">
 <polygon fill="none" stroke="#000000" points="504,-.5 504,-19.5 654,-19.5 654,-.5 504,-.5"/>
 <text text-anchor="middle" x="579" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">KeygenDialog::~KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node379&#45;&gt;Node380 -->
+<!-- Node370&#45;&gt;Node371 -->
 <g id="edge4" class="edge">
-<title>Node379&#45;&gt;Node380</title>
+<title>Node370&#45;&gt;Node371</title>
 <path fill="none" stroke="#191970" d="M478.1861,-10C486.5966,-10 495.2521,-10 503.7909,-10"/>
 <polygon fill="#191970" stroke="#191970" points="478.0732,-6.5001 468.0732,-10 478.0731,-13.5001 478.0732,-6.5001"/>
 </g>

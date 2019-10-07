@@ -1,5 +1,5 @@
 <map id="QtPassSettings::getSize" name="QtPassSettings::getSize">
 <area shape="rect" id="node2" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="220,5,412,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="460,5,627,32"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="675,5,855,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="460,5,551,32"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="599,5,779,32"/>
 </map>

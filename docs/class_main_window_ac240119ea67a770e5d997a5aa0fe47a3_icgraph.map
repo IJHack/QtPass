@@ -1,9 +1,9 @@
 <map id="MainWindow::setUiElementsEnabled" name="MainWindow::setUiElementsEnabled">
-<area shape="rect" id="node2" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="725,83,905,110"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title="MainWindow::executeWrapper\lStarted" alt="" coords="253,51,453,92"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="511,167,677,194"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="248,167,459,194"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="254,218,453,245"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview. " alt="" coords="244,269,463,295"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="247,319,460,346"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="649,78,829,105"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title="MainWindow::executeWrapper\lStarted" alt="" coords="253,45,453,87"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="511,162,601,189"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="248,162,459,189"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="254,213,453,239"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview. " alt="" coords="244,263,463,290"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="247,314,460,341"/>
 </map>

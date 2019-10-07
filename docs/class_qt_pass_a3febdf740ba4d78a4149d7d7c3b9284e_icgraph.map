@@ -1,11 +1,10 @@
 <map id="QtPass::clearClipboard" name="QtPass::clearClipboard">
 <area shape="rect" id="node2" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer. " alt="" coords="429,5,584,32"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="211,53,381,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#aacd3b92bcbbb5166780336d9dd00ab95" title="QtPass::QtPass" alt="" coords="237,104,355,131"/>
-<area shape="rect" id="node6" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title="QtPass::setFreshStart" alt="" coords="219,155,373,181"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1087,39,1267,65"/>
-<area shape="rect" id="node7" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="437,129,577,156"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="632,67,824,93"/>
-<area shape="rect" id="node10" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy! " alt="" coords="665,129,791,156"/>
-<area shape="rect" id="node9" href="$class_qt_pass.html#abd1d1e8d6b80b8307a305d80a6c34371" title="QtPass::setMainWindow" alt="" coords="872,64,1039,91"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit. " alt="" coords="211,49,381,76"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title="QtPass::QtPass" alt="" coords="237,100,355,127"/>
+<area shape="rect" id="node6" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title="QtPass::setFreshStart" alt="" coords="219,151,373,177"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1011,49,1191,76"/>
+<area shape="rect" id="node7" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="437,125,577,152"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="632,75,824,101"/>
+<area shape="rect" id="node9" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="872,75,963,101"/>
 </map>

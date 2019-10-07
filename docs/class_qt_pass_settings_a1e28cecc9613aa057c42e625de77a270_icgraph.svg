@@ -54,54 +54,54 @@ var sectionId = 'dynsection-151';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>QtPassSettings::setProfile</title>
-<!-- Node794 -->
+<!-- Node789 -->
 <g id="node1" class="node">
-<title>Node794</title>
+<title>Node789</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 133,-19.5 133,-.5 0,-.5"/>
 <text text-anchor="middle" x="66.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPassSettings::setProfile</text>
 </g>
-<!-- Node795 -->
+<!-- Node790 -->
 <g id="node2" class="node">
-<title>Node795</title>
+<title>Node790</title>
 <g id="a_node2"><a xlink:href="class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" target="_top" xlink:title="MainWindow::generateKeyPair internal gpg keypair generator . . ">
 <polygon fill="none" stroke="#000000" points="169,-.5 169,-19.5 320,-19.5 320,-.5 169,-.5"/>
 <text text-anchor="middle" x="244.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::generateKeyPair</text>
 </a>
 </g>
 </g>
-<!-- Node794&#45;&gt;Node795 -->
+<!-- Node789&#45;&gt;Node790 -->
 <g id="edge1" class="edge">
-<title>Node794&#45;&gt;Node795</title>
+<title>Node789&#45;&gt;Node790</title>
 <path fill="none" stroke="#191970" d="M143.2551,-10C151.7131,-10 160.3216,-10 168.767,-10"/>
 <polygon fill="#191970" stroke="#191970" points="143.0338,-6.5001 133.0338,-10 143.0337,-13.5001 143.0338,-6.5001"/>
 </g>
-<!-- Node796 -->
+<!-- Node791 -->
 <g id="node3" class="node">
-<title>Node796</title>
+<title>Node791</title>
 <g id="a_node3"><a xlink:href="class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" target="_top" xlink:title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. ">
 <polygon fill="none" stroke="#000000" points="356,-.5 356,-19.5 468,-19.5 468,-.5 356,-.5"/>
 <text text-anchor="middle" x="412" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ConfigDialog::genKey</text>
 </a>
 </g>
 </g>
-<!-- Node795&#45;&gt;Node796 -->
+<!-- Node790&#45;&gt;Node791 -->
 <g id="edge2" class="edge">
-<title>Node795&#45;&gt;Node796</title>
+<title>Node790&#45;&gt;Node791</title>
 <path fill="none" stroke="#191970" d="M330.5165,-10C339.1329,-10 347.7174,-10 355.9047,-10"/>
 <polygon fill="#191970" stroke="#191970" points="330.4087,-6.5001 320.4087,-10 330.4086,-13.5001 330.4087,-6.5001"/>
 </g>
-<!-- Node797 -->
+<!-- Node792 -->
 <g id="node4" class="node">
-<title>Node797</title>
+<title>Node792</title>
 <g id="a_node4"><a xlink:href="class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" target="_top" xlink:title="KeygenDialog::~KeygenDialog even more basic destructor. ">
 <polygon fill="none" stroke="#000000" points="504,-.5 504,-19.5 654,-19.5 654,-.5 504,-.5"/>
 <text text-anchor="middle" x="579" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">KeygenDialog::~KeygenDialog</text>
 </a>
 </g>
 </g>
-<!-- Node796&#45;&gt;Node797 -->
+<!-- Node791&#45;&gt;Node792 -->
 <g id="edge3" class="edge">
-<title>Node796&#45;&gt;Node797</title>
+<title>Node791&#45;&gt;Node792</title>
 <path fill="none" stroke="#191970" d="M478.1861,-10C486.5966,-10 495.2521,-10 503.7909,-10"/>
 <polygon fill="#191970" stroke="#191970" points="478.0732,-6.5001 468.0732,-10 478.0731,-13.5001 478.0732,-6.5001"/>
 </g>
