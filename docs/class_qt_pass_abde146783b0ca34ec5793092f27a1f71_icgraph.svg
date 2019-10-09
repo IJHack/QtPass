@@ -57,8 +57,8 @@ var sectionId = 'dynsection-11';
 <!-- Node145 -->
 <g id="node1" class="node">
 <title>Node145</title>
-<polygon fill="#bfbfbf" stroke="#000000" points="0,-38.5 0,-57.5 109,-57.5 109,-38.5 0,-38.5"/>
-<text text-anchor="middle" x="54.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::isFreshStart</text>
+<polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 109,-38.5 109,-19.5 0,-19.5"/>
+<text text-anchor="middle" x="54.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QtPass::isFreshStart</text>
 </g>
 <!-- Node146 -->
 <g id="node2" class="node">
@@ -72,23 +72,8 @@ var sectionId = 'dynsection-11';
 <!-- Node145&#45;&gt;Node146 -->
 <g id="edge1" class="edge">
 <title>Node145&#45;&gt;Node146</title>
-<path fill="none" stroke="#191970" d="M119.6835,-48C135.7066,-48 152.6593,-48 167.9979,-48"/>
-<polygon fill="#191970" stroke="#191970" points="119.3147,-44.5001 109.3147,-48 119.3146,-51.5001 119.3147,-44.5001"/>
-</g>
-<!-- Node147 -->
-<g id="node3" class="node">
-<title>Node147</title>
-<g id="a_node3"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title="MainWindow::restoreWindow">
-<polygon fill="none" stroke="#000000" points="332,-76.5 332,-95.5 476,-95.5 476,-76.5 332,-76.5"/>
-<text text-anchor="middle" x="404" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
-</a>
-</g>
-</g>
-<!-- Node145&#45;&gt;Node147 -->
-<g id="edge6" class="edge">
-<title>Node145&#45;&gt;Node147</title>
-<path fill="none" stroke="#191970" d="M104.2342,-59.688C117.4244,-62.4452 131.6986,-65.1244 145,-67 207.8371,-75.8605 279.8698,-80.7213 331.9918,-83.3022"/>
-<polygon fill="#191970" stroke="#191970" points="104.9046,-56.2522 94.3929,-57.5763 103.436,-63.0965 104.9046,-56.2522"/>
+<path fill="none" stroke="#191970" d="M119.6835,-36.4608C135.7066,-38.2947 152.6593,-40.2351 167.9979,-41.9907"/>
+<polygon fill="#191970" stroke="#191970" points="119.6478,-32.9339 109.3147,-35.274 118.8518,-39.8885 119.6478,-32.9339"/>
 </g>
 <!-- Node150 -->
 <g id="node6" class="node">
@@ -100,10 +85,19 @@ var sectionId = 'dynsection-11';
 </g>
 </g>
 <!-- Node145&#45;&gt;Node150 -->
-<g id="edge7" class="edge">
+<g id="edge6" class="edge">
 <title>Node145&#45;&gt;Node150</title>
-<path fill="none" stroke="#191970" d="M106.1534,-36.1757C129.5564,-30.8184 156.8571,-24.5689 178.9124,-19.5201"/>
-<polygon fill="#191970" stroke="#191970" points="105.3556,-32.7677 96.3888,-38.411 106.9177,-39.5912 105.3556,-32.7677"/>
+<path fill="none" stroke="#191970" d="M119.3175,-21.5811C127.642,-20.6283 136.2232,-19.6461 144.7033,-18.6755"/>
+<polygon fill="#191970" stroke="#191970" points="118.8518,-18.1115 109.3147,-22.726 119.6478,-25.0661 118.8518,-18.1115"/>
+</g>
+<!-- Node147 -->
+<g id="node3" class="node">
+<title>Node147</title>
+<g id="a_node3"><a xlink:href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" target="_top" xlink:title="MainWindow::restoreWindow">
+<polygon fill="none" stroke="#000000" points="332,-76.5 332,-95.5 476,-95.5 476,-76.5 332,-76.5"/>
+<text text-anchor="middle" x="404" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MainWindow::restoreWindow</text>
+</a>
+</g>
 </g>
 <!-- Node146&#45;&gt;Node147 -->
 <g id="edge2" class="edge">
@@ -157,7 +151,7 @@ var sectionId = 'dynsection-11';
 </g>
 </g>
 <!-- Node150&#45;&gt;Node151 -->
-<g id="edge8" class="edge">
+<g id="edge7" class="edge">
 <title>Node150&#45;&gt;Node151</title>
 <path fill="none" stroke="#191970" d="M306.3897,-10C320.4602,-10 334.7152,-10 347.8239,-10"/>
 <polygon fill="#191970" stroke="#191970" points="306.1959,-6.5001 296.1959,-10 306.1959,-13.5001 306.1959,-6.5001"/>
@@ -172,7 +166,7 @@ var sectionId = 'dynsection-11';
 </g>
 </g>
 <!-- Node151&#45;&gt;Node152 -->
-<g id="edge9" class="edge">
+<g id="edge8" class="edge">
 <title>Node151&#45;&gt;Node152</title>
 <path fill="none" stroke="#191970" d="M470.5135,-10C483.9667,-10 498.2004,-10 511.9243,-10"/>
 <polygon fill="#191970" stroke="#191970" points="470.3993,-6.5001 460.3993,-10 470.3992,-13.5001 470.3993,-6.5001"/>
