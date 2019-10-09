@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
-
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...HEAD)
+## [v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2) (2019-10-09)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
 
 **Fixed bugs:**
 
@@ -134,11 +133,6 @@
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
 
-**Implemented enhancements:**
-
-- Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
-- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
-
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
@@ -165,7 +159,6 @@
 - No icon on MacOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - Font and spacing used for URL links on right in main window absurdly large [\#329](https://github.com/IJHack/QtPass/issues/329)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
-- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 
 **Merged pull requests:**
 
@@ -179,11 +172,13 @@
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+- Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
 - Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
 - New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
+- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
@@ -210,6 +205,7 @@
 - Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
+- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
 - Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
@@ -244,12 +240,11 @@
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
 - Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
+- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 - Clean up ConfigDialog [\#235](https://github.com/IJHack/QtPass/issues/235)
 
 **Merged pull requests:**
 
-- Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
-- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -274,6 +269,7 @@
 
 **Implemented enhancements:**
 
+- Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
