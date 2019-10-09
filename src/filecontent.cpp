@@ -1,7 +1,7 @@
 #include "filecontent.h"
 
 static bool isLineHidden(const QString &line) {
-	return line.startsWith("otpauth://", Qt::CaseInsensitive);
+  return line.startsWith("otpauth://", Qt::CaseInsensitive);
 }
 
 FileContent FileContent::parse(const QString &fileContent,
@@ -48,7 +48,8 @@ FileContent::FileContent(const QString &password,
                          const QString &remainingData,
                          const QString &remainingDataDisplay)
     : password(password), namedValues(namedValues),
-      remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {}
+      remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {
+}
 
 NamedValues::NamedValues() : QList() {}
 

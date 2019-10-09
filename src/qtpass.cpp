@@ -22,9 +22,8 @@
 #include "debughelper.h"
 #endif
 
-QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow),
-                                         clippedText(QString()),
-                                         freshStart(true) {
+QtPass::QtPass(MainWindow *mainWindow)
+    : m_mainWindow(mainWindow), clippedText(QString()), freshStart(true) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, SIGNAL(timeout()), this,

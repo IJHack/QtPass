@@ -6,14 +6,20 @@
 
 **Fixed bugs:**
 
+- QtPass could not run on Windows7 thin [\#485](https://github.com/IJHack/QtPass/issues/485)
+- Segfault on application startup \(macos\) [\#481](https://github.com/IJHack/QtPass/issues/481)
 - Application crashes on empty password store [\#466](https://github.com/IJHack/QtPass/issues/466)
 - App is completely broken [\#423](https://github.com/IJHack/QtPass/issues/423)
 
 **Closed issues:**
 
+- Edit window on Gnome has no padding around [\#484](https://github.com/IJHack/QtPass/issues/484)
+- Buttons width on RHEL 8 [\#483](https://github.com/IJHack/QtPass/issues/483)
+- `Start minimized' no longer works [\#471](https://github.com/IJHack/QtPass/issues/471)
 - Editor doesn't wait for PGP key to decrypt [\#470](https://github.com/IJHack/QtPass/issues/470)
 - v1.3.0 Data Not Showing [\#465](https://github.com/IJHack/QtPass/issues/465)
 - Hangs on MacOS after Security Update 2019-003 10.12.6 [\#461](https://github.com/IJHack/QtPass/issues/461)
+- No public key [\#308](https://github.com/IJHack/QtPass/issues/308)
 
 **Merged pull requests:**
 
@@ -94,6 +100,7 @@
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
 - For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
+- Fix character encoding issues for non-UTF-8 locales. [\#435](https://github.com/IJHack/QtPass/pull/435) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fixes and improvments for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for using WSL binaries on Windows [\#431](https://github.com/IJHack/QtPass/pull/431) ([rdoeffinger](https://github.com/rdoeffinger))
 - Bugfixes and Windows compatibility improvements [\#430](https://github.com/IJHack/QtPass/pull/430) ([mrsch](https://github.com/mrsch))
@@ -129,6 +136,7 @@
 
 **Implemented enhancements:**
 
+- Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
 - Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 
 **Fixed bugs:**
@@ -157,6 +165,7 @@
 - No icon on MacOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - Font and spacing used for URL links on right in main window absurdly large [\#329](https://github.com/IJHack/QtPass/issues/329)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
+- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 
 **Merged pull requests:**
 
@@ -170,13 +179,11 @@
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
-- Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
 - Add two entries in FAQ about the language [\#353](https://github.com/IJHack/QtPass/pull/353) ([5bentz](https://github.com/5bentz))
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
 - New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
-- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
@@ -237,11 +244,12 @@
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
 - Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
-- Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 - Clean up ConfigDialog [\#235](https://github.com/IJHack/QtPass/issues/235)
 
 **Merged pull requests:**
 
+- Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
+- Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -266,7 +274,6 @@
 
 **Implemented enhancements:**
 
-- Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
@@ -436,7 +443,6 @@
 - Two UI Tweaks [\#158](https://github.com/IJHack/QtPass/pull/158) ([lftl](https://github.com/lftl))
 - configwindow.ui default/start tab set to "settings" [\#154](https://github.com/IJHack/QtPass/pull/154) ([jounathaen](https://github.com/jounathaen))
 - FAQ update concerning button-icons on cinnamon [\#153](https://github.com/IJHack/QtPass/pull/153) ([jounathaen](https://github.com/jounathaen))
-- improved the German translation [\#134](https://github.com/IJHack/QtPass/pull/134) ([retokromer](https://github.com/retokromer))
 
 ## [v1.1.0](https://github.com/IJHack/QtPass/tree/v1.1.0) (2016-01-25)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)
@@ -476,6 +482,7 @@
 
 **Merged pull requests:**
 
+- improved the German translation [\#134](https://github.com/IJHack/QtPass/pull/134) ([retokromer](https://github.com/retokromer))
 - qrand always generating the same sequence of passwords [\#129](https://github.com/IJHack/QtPass/pull/129) ([treat1](https://github.com/treat1))
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
 - added one translation [\#125](https://github.com/IJHack/QtPass/pull/125) ([retokromer](https://github.com/retokromer))
