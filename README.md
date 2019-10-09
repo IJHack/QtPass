@@ -154,8 +154,8 @@ Further reading
 
 View official GNU site <http://www.gnu.org/licenses/gpl.html>.
 
-[![OSI](http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png)](http://opensource.org/licenses/mit-license.php)
+[![OSI](http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png)](https://opensource.org/licenses/GPL-3.0)
 
-[View the Open Source Initiative site.](http://opensource.org/licenses/mit-license.php)
+[View the Open Source Initiative site.](https://opensource.org/licenses/GPL-3.0)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_large)

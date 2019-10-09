@@ -71,8 +71,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
 
   ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(rootDir));
+  ui->treeView->setRootIndex(proxyModel.mapFromSource(rootDir));
   ui->treeView->setColumnHidden(1, true);
   ui->treeView->setColumnHidden(2, true);
   ui->treeView->setColumnHidden(3, true);
@@ -484,13 +483,13 @@ void MainWindow::restoreWindow() {
 
   if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
     initTrayIcon();
-    if (m_qtPass->isFreshStart() && QtPassSettings::isStartMinimized()) {
+    if (QtPassSettings::isStartMinimized()) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
-  } /*else if (!QtPassSettings::isUseTrayIcon() && tray != NULL) {
+  } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
     destroyTrayIcon();
-  }*/
+  }
 }
 
 /**
@@ -918,10 +917,12 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     contextMenu.addSeparator();
     if (fileOrFolder.isDir()) {
       QAction *renameFolder = contextMenu.addAction(tr("Rename folder"));
-      connect(renameFolder, &QAction::triggered, this, &MainWindow::renameFolder);
+      connect(renameFolder, &QAction::triggered, this,
+              &MainWindow::renameFolder);
     } else if (fileOrFolder.isFile()) {
       QAction *renamePassword = contextMenu.addAction(tr("Rename password"));
-      connect(renamePassword, &QAction::triggered, this, &MainWindow::renamePassword);
+      connect(renamePassword, &QAction::triggered, this,
+              &MainWindow::renamePassword);
     }
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
@@ -978,21 +979,18 @@ void MainWindow::addFolder() {
  */
 void MainWindow::renameFolder() {
   bool ok;
-  QString srcDir = QDir::cleanPath(Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+  QString srcDir = QDir::cleanPath(
+      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
   QString srcDirName = QDir(srcDir).dirName();
   QString newName =
-      QInputDialog::getText(this, tr("Rename file"),
-                            tr("Rename Folder To: "),
-                            QLineEdit::Normal,
-                            srcDirName,
-                            &ok);
+      QInputDialog::getText(this, tr("Rename file"), tr("Rename Folder To: "),
+                            QLineEdit::Normal, srcDirName, &ok);
   if (!ok || newName.isEmpty())
     return;
   QString destDir = srcDir;
   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
   QtPassSettings::getPass()->Move(srcDir, destDir);
 }
-
 
 /**
  * @brief MainWindow::editPassword read password and open edit window via
@@ -1014,11 +1012,8 @@ void MainWindow::renamePassword() {
   QString file = getFile(ui->treeView->currentIndex(), false);
   QString fileName = QFileInfo(file).baseName();
   QString newName =
-      QInputDialog::getText(this, tr("Rename file"),
-                            tr("Rename File To: "),
-                            QLineEdit::Normal,
-                            fileName,
-                            &ok);
+      QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
+                            QLineEdit::Normal, fileName, &ok);
   if (!ok || newName.isEmpty())
     return;
   QString newFile = file;

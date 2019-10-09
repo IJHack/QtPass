@@ -69,7 +69,8 @@ public:
 
 private:
   FileContent(const QString &password, const NamedValues &namedValues,
-              const QString &remainingData, const QString &remainingDataDisplay);
+              const QString &remainingData,
+              const QString &remainingDataDisplay);
 
   QString password;
   NamedValues namedValues;

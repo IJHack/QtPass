@@ -576,7 +576,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+897"/>
+        <location filename="../src/mainwindow.cpp" line="+899"/>
         <source>Add password</source>
         <translation type="unfinished"></translation>
     </message>
@@ -599,7 +599,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="+19"/>
+        <location filename="../src/mainwindow.cpp" line="+21"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -640,7 +640,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location/>
-        <location filename="../src/mainwindow.cpp" line="-25"/>
+        <location filename="../src/mainwindow.cpp" line="-27"/>
         <source>Users</source>
         <translation type="unfinished"></translation>
     </message>
@@ -677,12 +677,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <location line="+703"/>
+        <location line="+699"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-677"/>
+        <location line="-673"/>
         <source>OTP Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -698,12 +698,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+97"/>
-        <location line="+359"/>
+        <location line="+361"/>
         <source>New file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-358"/>
+        <location line="-360"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
@@ -749,29 +749,29 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Rename password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="+42"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+20"/>
-        <location line="+33"/>
+        <location line="+21"/>
+        <location line="+29"/>
         <source>Rename file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-32"/>
+        <location line="-29"/>
         <source>Rename Folder To: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+29"/>
         <source>Rename File To: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+143"/>
+        <location filename="../src/qtpass.cpp" line="+139"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished"></translation>
     </message>
