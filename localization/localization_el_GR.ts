@@ -5,7 +5,7 @@
     <name>MainWindow</name>
     <message>
         <source>Copied to clipboard</source>
-        <translation type="obsolete">copied to clipboard</translation>
+        <translation>copied to clipboard</translation>
     </message>
 </context>
 <context>
@@ -20,7 +20,7 @@
     <name>QtPass</name>
     <message>
         <source>Copied to clipboard</source>
-        <translation type="obsolete">copied to clipboard</translation>
+        <translation>copied to clipboard</translation>
     </message>
 </context>
 </TS>

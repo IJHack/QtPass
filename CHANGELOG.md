@@ -133,6 +133,10 @@
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
 
+**Implemented enhancements:**
+
+- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
@@ -205,7 +209,6 @@
 - Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
-- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
 - Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))

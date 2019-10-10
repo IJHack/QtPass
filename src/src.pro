@@ -77,7 +77,7 @@ HEADERS   += mainwindow.h \
              filecontent.h \
              passwordconfiguration.h \
              userinfo.h \
-    qtpass.h
+             qtpass.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

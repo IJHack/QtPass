@@ -3,7 +3,6 @@
 SettingsConstants::SettingsConstants() = default;
 
 const QString SettingsConstants::version = "version";
-
 const QString SettingsConstants::groupMainwindow = "mainwindow";
 const QString SettingsConstants::geometry =
     SettingsConstants::groupMainwindow + "/geometry";
@@ -19,7 +18,6 @@ const QString SettingsConstants::splitterRight =
     SettingsConstants::groupMainwindow + "/splitterRight";
 const QString SettingsConstants::maximized =
     SettingsConstants::groupMainwindow + "/maximized";
-
 const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useSelection = "useSelection";
 const QString SettingsConstants::useAutoclear = "useAutoclear";

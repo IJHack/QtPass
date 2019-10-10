@@ -119,7 +119,7 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
     showMessage("test", "test msg", 1000);
     break;
   default: {
-  };
+  }
   }
 }
 

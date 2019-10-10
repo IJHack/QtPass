@@ -23,7 +23,6 @@ void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
 #ifdef __APPLE__
-    // TODO(annejan) checks here
     QString path = _env.value("PATH");
 
     if (!path.contains("/usr/local/MacGPG2/bin") &&
@@ -163,6 +162,11 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
+/**
+ * @brief Util::copyDir
+ * @param src
+ * @param dest
+ */
 void Util::copyDir(const QString &src, const QString &dest) {
   QDir srcDir(src);
   if (!srcDir.exists()) {

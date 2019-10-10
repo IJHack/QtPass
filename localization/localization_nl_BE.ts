@@ -1,497 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_BE">
+<TS version="2.1" language="nl_NL">
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../src/configdialog.ui"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuratie</translation>
     </message>
     <message>
-        <location/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
-        <location/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Klembord gedrag:</translation>
     </message>
     <message>
-        <location/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik selectie ipv klembord</translation>
     </message>
     <message>
-        <location/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wissen na:</translation>
     </message>
     <message>
-        <location/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Secondes</translation>
     </message>
     <message>
-        <location/>
+        <source>Password Behaviour:</source>
+        <translation>Wachtwoord gedrag:</translation>
+    </message>
+    <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoudsvlak gedrag:</translation>
     </message>
     <message>
-        <location/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Verberg inhoud</translation>
     </message>
     <message>
-        <location/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Verberg wachtwoord</translation>
     </message>
     <message>
-        <location/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legen na:</translation>
     </message>
     <message>
-        <location/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord generator:</translation>
     </message>
     <message>
-        <location/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord lengte:</translation>
     </message>
     <message>
-        <location/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakters</translation>
     </message>
     <message>
-        <location/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik karakters:</translation>
     </message>
     <message>
-        <location/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies tekenset voor wachtwoord generatie</translation>
     </message>
     <message>
-        <location/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle tekens</translation>
     </message>
     <message>
-        <location/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
-        <location/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumeriek</translation>
     </message>
     <message>
-        <location/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigen tekenset</translation>
     </message>
     <message>
-        <location/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik pwgen</translation>
     </message>
     <message>
-        <location/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik hoofdletters</translation>
     </message>
     <message>
-        <location/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Speciale karakters</translation>
     </message>
     <message>
-        <location/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer makkelijk te onthouden maar minder veilige wachtwoorden</translation>
     </message>
     <message>
-        <location/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluit nummers uit</translation>
     </message>
     <message>
-        <location/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
-        <location/>
         <source>Use git</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik git</translation>
     </message>
     <message>
-        <location/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg .gpg-id bestanden automatisch toe</translation>
     </message>
     <message>
-        <location/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch pushen</translation>
     </message>
     <message>
-        <location/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch pullen</translation>
     </message>
     <message>
-        <location/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitbreidingen:</translation>
     </message>
     <message>
-        <location/>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik pass OTP uitbreiding</translation>
     </message>
     <message>
-        <location/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeem:</translation>
     </message>
     <message>
-        <location/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeem tray</translation>
     </message>
     <message>
-        <location/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Start in de tray</translation>
     </message>
     <message>
-        <location/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbergen in plaats van sluiten</translation>
     </message>
     <message>
-        <location/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Altijd boven</translation>
     </message>
     <message>
-        <location/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programma&apos;s</translation>
     </message>
     <message>
-        <location/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer wachtwoord opslag programma&apos;s:</translation>
     </message>
     <message>
-        <location/>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Systeemeigen git/gpg</translation>
     </message>
     <message>
-        <location/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Gebruik pass</translation>
     </message>
     <message>
-        <location/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeem eigen</translation>
     </message>
     <message>
-        <location/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation>git</translation>
     </message>
     <message>
-        <location/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
-        <location/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg</translation>
     </message>
     <message>
-        <location/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>pwgen</translation>
     </message>
     <message>
-        <location/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
-        <location/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
-        <location/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
-        <source>Autodetect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profielen</translation>
     </message>
     <message>
-        <location/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
-        <location/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad</translation>
     </message>
     <message>
-        <location/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen</translation>
     </message>
     <message>
-        <location/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
-        <location/>
         <source>Current password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige password-store</translation>
     </message>
     <message>
-        <location/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Template</translation>
     </message>
     <message>
-        <location/>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Templates voegen velden toe aan de wachtwoord aanmaak- bewerk- en toon-schermen.</translation>
     </message>
     <message>
-        <location/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik template</translation>
     </message>
     <message>
-        <location/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef alle regels die beginnen met een woord, gevolgd door een dubbele punt als velden weer, niet alleen de opgegeven</translation>
     </message>
     <message>
-        <location/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon alle velden getemplate</translation>
     </message>
     <message>
-        <location/>
         <source>login
 url
 email</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+url
+email</translation>
     </message>
     <message>
-        <location/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versie </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="+47"/>
-        <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+24"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen klembord</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Altijd naar klembord kopiëren</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Wanneer gewenst kopiëren naar klembord</translation>
     </message>
     <message>
-        <location line="+419"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen profiel geselecteerd</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen profiel geselecteerd om te verwijderen</translation>
     </message>
     <message>
-        <location line="+65"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>GnuPG niet gevonden</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
     </message>
     <message>
-        <location line="+27"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak password-store aan?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wil je een password-store maken op %1?</translation>
     </message>
     <message>
-        <location line="+19"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>Password-store niet geïnitialiseerd</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="+95"/>
-        <location line="+203"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet bewerken</translation>
     </message>
     <message>
-        <location line="-202"/>
-        <location line="+203"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
-        <location line="-124"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet updaten</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon .gpg-id bestand niet openen om te schrijven.</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontroleer geselecteerde gebruikers!</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
+Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
-        <location line="+51"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Her-encrypten vanaf map %1</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+87"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Vernieuwen password-store</translation>
     </message>
 </context>
 <context>
     <name>KeygenDialog</name>
     <message>
-        <location filename="../src/keygendialog.ui"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer GnuPG sleutelpaar</translation>
     </message>
     <message>
-        <location/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer een nieuw sleutelpaar</translation>
     </message>
     <message>
-        <location/>
-        <source>Email</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location/>
+        <source>Email</source>
+        <translation>Email</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Er is geen limiet aan de lengte van een wachtwoord, en het moet zorgvuldig worden gekozen. Vanuit het perspectief van de veiligheid, de passphrase om de privé-sleutel te ontsluiten is een van de zwakste punten in GnuPG private (en andere public-key encryptie systemen ook) want het is de enige bescherming die u hebben als een ander individu krijgt uw sleutel. &lt;br/&gt; Idealiter zou de passphrase niet woorden uit een woordenboek en Mocht meng het geval van alfabetische tekens alsmede het gebruik van niet-alfabetische tekens. &lt;br/&gt; Een goed wachtwoord is cruciaal voor het veilig gebruik van GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Expert</translation>
     </message>
     <message>
-        <location/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -507,512 +387,552 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation># QtPass GPG key generator
+#
+# first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
-        <location/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor expert instellingen lees de &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="+129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige naam</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam dient minstens 5 karakters lang te zijn.</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldig emailadres</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het emailadres dat u heeft ingevoerd is voldoet niet aan de email standaard.</translation>
     </message>
     <message>
-        <location line="+15"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.ui"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
-        <location/>
-        <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <source>Add</source>
+        <translation>Toevoegen</translation>
     </message>
     <message>
-        <location/>
-        <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
     </message>
     <message>
-        <location/>
-        <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
     </message>
     <message>
-        <location/>
+        <source>git push</source>
+        <translation>git push</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Uploaden</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is a GUI for &lt;/span&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, the standard unix password manager.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; font-weight:600; color:#333333;&quot;&gt;QtPass&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; is een GUI voor &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;, de standaard unix wachtwoord beheerder.&lt;/span&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br/&gt;Meldt gaarne alle &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;problemen&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; die je eventueel ondervindt.&lt;/span&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;a href=&quot;http://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentatie&lt;/span&gt;&lt;/a&gt; &lt;/p&gt; &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Broncode&lt;/span&gt;&lt;/a&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;
+</translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <source>OTP</source>
+        <translation>OTP</translation>
+    </message>
+    <message>
+        <source>Generate OTP and copy to clipboard</source>
+        <translation>Genereer OTP en kopieer naar klembord</translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation>Ctrl+G</translation>
+    </message>
+    <message>
+        <source>git pull</source>
+        <translation>git pull</translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <translation>Vernieuwen</translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is een GUI voor &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standaard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Rapporteer alstublieft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; die u mogelijk ondervind met deze software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentatie&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="+899"/>
-        <source>Add password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="-1"/>
-        <source>Add folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="+8"/>
-        <source>Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="+21"/>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>OTP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Push</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>git push</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>Update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <source>git pull</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
-        <location filename="../src/mainwindow.cpp" line="-27"/>
-        <source>Users</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Beheer wie de wachtwoordmap kan lezen</translation>
     </message>
     <message>
-        <location/>
-        <source>Config</source>
-        <translation type="unfinished"></translation>
+        <source>Users</source>
+        <translation>Gebruikers</translation>
     </message>
     <message>
-        <location/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is een GUI voor &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standaard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Rapporteer alstublieft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; die u mogelijk ondervind met deze software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentatie&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuratie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="-710"/>
+        <source>Config</source>
+        <translation>Configuratie</translation>
+    </message>
+    <message>
+        <source>Select profile</source>
+        <translation>Selecteer profiel</translation>
+    </message>
+    <message>
+        <source>Welcome to QtPass</source>
+        <translation>Welkom bij QtPass</translation>
+    </message>
+    <message>
+        <source>Search Password</source>
+        <translation>Zoek wachtwoord</translation>
+    </message>
+    <message>
+        <source>qtpass</source>
+        <translation>qtpass</translation>
+    </message>
+    <message>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkom bij QtPass %1</translation>
     </message>
     <message>
-        <location line="+87"/>
-        <location line="+12"/>
+        <source>Add Password</source>
+        <translation>Voeg wachtwoord toe</translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation>Voeg map toe</translation>
+    </message>
+    <message>
+        <source>Failed to connect WebDAV:
+</source>
+        <translation>Verbinding mislukt met WebDAV:
+</translation>
+    </message>
+    <message>
+        <source>QtPass WebDAV password</source>
+        <translation>QtPass WebDAV wachtwoord</translation>
+    </message>
+    <message>
+        <source>Enter password to connect to WebDAV:</source>
+        <translation>Voer wachtwoord in om te verbinden met WebDAV:</translation>
+    </message>
+    <message>
+        <source>fusedav exited unexpectedly
+</source>
+        <translation>fusedav is stuk, hield er zomaar mee op</translation>
+    </message>
+    <message>
+        <source>Failed to start fusedav to connect WebDAV:
+</source>
+        <translation>Kon fusedav niet verbinden met WebDAV:
+</translation>
+    </message>
+    <message>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Vernieuwen password-store</translation>
     </message>
     <message>
-        <location line="+99"/>
+        <source>Can not edit</source>
+        <translation>Kan niet bewerken</translation>
+    </message>
+    <message>
+        <source>Selected password file does not exist, not able to edit</source>
+        <translation>Geselecteerde wachtwoord bestand bestaat niet, kan niet bewerken</translation>
+    </message>
+    <message>
+        <source>Password hidden</source>
+        <translation>Wachtwoord verborgen</translation>
+    </message>
+    <message>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoud verborgen</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+699"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location line="-673"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP Code</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <source>Clipboard cleared</source>
+        <translation>Klembord gewist</translation>
+    </message>
+    <message>
+        <source>Clipboard not cleared</source>
+        <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
+    </message>
+    <message>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord en inhoud verborgen</translation>
     </message>
     <message>
-        <location line="+69"/>
+        <source>QProcess::FailedToStart</source>
+        <translation>Proces kon niet worden gestart</translation>
+    </message>
+    <message>
+        <source>QProcess::Crashed</source>
+        <translation>Proces is gecrashed</translation>
+    </message>
+    <message>
+        <source>QProcess::Timedout</source>
+        <translation>Proces duurde te lang</translation>
+    </message>
+    <message>
+        <source>QProcess::ReadError</source>
+        <translation>Lees fout met proces</translation>
+    </message>
+    <message>
+        <source>QProcess::WriteError</source>
+        <translation>Kan niet schrijven naar proces</translation>
+    </message>
+    <message>
+        <source>QProcess::UnknownError</source>
+        <translation>Er ging iets raars mis met proces</translation>
+    </message>
+    <message>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Op zoek naar: %1</translation>
     </message>
     <message>
-        <location line="+97"/>
-        <location line="+361"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw bestand</translation>
     </message>
     <message>
-        <location line="-360"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw wachtwoord bestand: 
+(Wordt geplaatst in %1 )</translation>
     </message>
     <message>
-        <location line="+28"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> en gehele inhoud?</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> en de gehele inhoud? &lt;br&gt;&lt;strong&gt;Let op: ter zijn onverwachte bestanden gevonden, controleer deze voor verwijden.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Delete password?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Are you sure you want to delete %1%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen</translation>
     </message>
     <message>
-        <location line="+118"/>
+        <source>Delete password?</source>
+        <translation>Verwijder wachtwoord?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation>Weet je zeker dat je %1 wil verwijderen?</translation>
+    </message>
+    <message>
+        <source>Delete folder?</source>
+        <translation>Verwijder map?</translation>
+    </message>
+    <message>
+        <source>Can not get key list</source>
+        <translation>Kan sleutel lijst niet verkrijgen</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
+    </message>
+    <message>
+        <source>Key not found in keyring</source>
+        <translation>Sleutel niet gevonden in keyring</translation>
+    </message>
+    <message>
+        <source>Generating GPG key pair</source>
+        <translation>Nieuw GPG sleutelpaar genereren</translation>
+    </message>
+    <message>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiel veranderd naar %1</translation>
     </message>
     <message>
-        <location line="+127"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Open map met bestands beheer</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <source>Add folder</source>
+        <translation>Voeg map toe</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <source>Add password</source>
+        <translation>Voeg wachtwoord toe</translation>
     </message>
     <message>
-        <location line="+42"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe map: 
+(Wordt geplaatst in %1 )</translation>
     </message>
     <message>
-        <location line="+21"/>
-        <location line="+29"/>
-        <source>Rename file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-29"/>
-        <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <source>Copied to clipboard</source>
+        <translation>gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="+102"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen karakters gekozen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
     </message>
 </context>
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../src/passworddialog.ui"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereren</translation>
     </message>
     <message>
-        <location/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon wachtwoord</translation>
     </message>
     <message>
-        <location/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakterset:</translation>
     </message>
     <message>
-        <location/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle karakters</translation>
     </message>
     <message>
-        <location/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetisch</translation>
     </message>
     <message>
-        <location/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumeriek</translation>
     </message>
     <message>
-        <location/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigen tekenset</translation>
     </message>
     <message>
-        <location/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengte:</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../main/main.cpp" line="+87"/>
+        <source>LTR</source>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="+139"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw GPG sleutelpaar genereren</translation>
     </message>
     <message>
-        <location line="+52"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinding mislukt met WebDAV:
+</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass WebDAV wachtwoord</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer wachtwoord in om te verbinden met WebDAV:</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation>fusedav is stuk, hield er zomaar mee op</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Kon fusedav niet verbinden met WebDAV:
+</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation>Proces kon niet worden gestart</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>Proces is gecrashed</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation>Proces duurde te lang</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation>Lees fout met proces</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet schrijven naar proces</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation>Er ging iets raars mis met proces</translation>
     </message>
     <message>
-        <location line="+127"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Klembord gewist</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
     </message>
     <message>
-        <location line="+19"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>gekopieerd naar het klembord</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="+246"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>overschrijven afdwingen?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>overschrijven van %1 met %2?</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="+63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tonen</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verbergen</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;inimaliseren</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>M&amp;aximaliseren</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Herstellen</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
 </context>
 <context>
     <name>UsersDialog</name>
     <message>
-        <location filename="../src/usersdialog.ui"/>
         <source>Read access users</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruikers met leestoegang</translation>
     </message>
     <message>
-        <location/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke gebruikers moeten in staat zijn om wachtwoorden opgeslagen in deze map te decoderen.
+Opmerking: Bestaande bestanden zullen niet worden gewijzigd en behouden van de oude permissies totdat je ze bewerkt.
+Blauwe inzendingen hebben een geheime sleutel beschikbaar is, selecteert u één van deze te kunnen ontcijferen.
+Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor deze gebruikers.</translation>
     </message>
     <message>
-        <location/>
         <source>Search Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoek gebruikers</translation>
     </message>
     <message>
-        <location/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon onbruikbare sleutels</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="+25"/>
         <source>Can not get key list</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan sleutel lijst niet verkrijgen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to get list of available gpg keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
     </message>
     <message>
-        <location line="+33"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation>Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
-        <location line="+92"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>aangemaakt</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>vervalt</translation>
     </message>
 </context>
 </TS>

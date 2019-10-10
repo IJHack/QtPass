@@ -5,7 +5,7 @@
     <name>MainWindow</name>
     <message>
         <source>Copied to clipboard</source>
-        <translation type="vanished">skopiowany do schowka</translation>
+        <translation>skopiowany do schowka</translation>
     </message>
 </context>
 <context>
@@ -20,7 +20,7 @@
     <name>QtPass</name>
     <message>
         <source>Copied to clipboard</source>
-        <translation type="obsolete">skopiowany do schowka</translation>
+        <translation>skopiowany do schowka</translation>
     </message>
 </context>
 </TS>

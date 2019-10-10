@@ -114,6 +114,7 @@ QVariant StoreModel::data(const QModelIndex &index, int role) const {
 Qt::DropActions StoreModel::supportedDropActions() const {
   return Qt::CopyAction | Qt::MoveAction;
 }
+
 /**
  * @brief StoreModel::supportedDragActions enable drag.
  * @return
@@ -122,6 +123,11 @@ Qt::DropActions StoreModel::supportedDragActions() const {
   return Qt::CopyAction | Qt::MoveAction;
 }
 
+/**
+ * @brief StoreModel::flags
+ * @param index
+ * @return
+ */
 Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);
 
@@ -131,12 +137,21 @@ Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
   return Qt::ItemIsDropEnabled | defaultFlags;
 }
 
+/**
+ * @brief StoreModel::mimeTypes
+ * @return
+ */
 QStringList StoreModel::mimeTypes() const {
   QStringList types;
   types << "application/vnd+qtpass.dragAndDropInfoPasswordStore";
   return types;
 }
 
+/**
+ * @brief StoreModel::mimeData
+ * @param indexes
+ * @return
+ */
 QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
   dragAndDropInfoPasswordStore info;
 
@@ -159,6 +174,15 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
   return mimeData;
 }
 
+/**
+ * @brief StoreModel::canDropMimeData
+ * @param data
+ * @param action
+ * @param row
+ * @param column
+ * @param parent
+ * @return
+ */
 bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  int row, int column,
                                  const QModelIndex &parent) const {
@@ -199,6 +223,15 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   return false;
 }
 
+/**
+ * @brief StoreModel::dropMimeData
+ * @param data
+ * @param action
+ * @param row
+ * @param column
+ * @param parent
+ * @return
+ */
 bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
                               int row, int column, const QModelIndex &parent) {
   if (!canDropMimeData(data, action, row, column, parent))
@@ -257,6 +290,12 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   return true;
 }
 
+/**
+ * @brief StoreModel::lessThan
+ * @param source_left
+ * @param source_right
+ * @return
+ */
 bool StoreModel::lessThan(const QModelIndex &source_left,
                           const QModelIndex &source_right) const {
 /* matches logic in QFileSystemModelSorter::compareNodes() */

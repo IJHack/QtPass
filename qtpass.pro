@@ -57,6 +57,8 @@ CONFIG(coverage) {
 }
 
 TRANSLATIONS    +=  localization/localization_ca.ts \
+                    localization/localization_nl_NL.ts \
+                    localization/localization_nl_BE.ts \
                     localization/localization_de_DE.ts \
                     localization/localization_es_ES.ts \
                     localization/localization_gl_ES.ts \
@@ -80,5 +82,3 @@ TRANSLATIONS    +=  localization/localization_ca.ts \
                     localization/localization_pt_PT.ts
 
 system($$QMAKE_LUPDATE -locations relative -no-ui-lines $$_PRO_FILE_)
-system($$QMAKE_LRELEASE $$_PRO_FILE_)
-

@@ -83,6 +83,9 @@ UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
 
+/**
+ * @brief UsersDialog::accept
+ */
 void UsersDialog::accept() {
   QtPassSettings::getPass()->Init(m_dir, m_userList);
 

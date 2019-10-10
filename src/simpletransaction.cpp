@@ -8,6 +8,9 @@
 using std::pair;
 using namespace Enums;
 
+/**
+ * @brief simpleTransaction::transactionStart
+ */
 void simpleTransaction::transactionStart() {
 #ifdef QT_DEBUG
   dbg() << "START" << transactionDepth;
@@ -15,6 +18,10 @@ void simpleTransaction::transactionStart() {
   transactionDepth++;
 }
 
+/**
+ * @brief simpleTransaction::transactionAdd
+ * @param id
+ */
 void simpleTransaction::transactionAdd(PROCESS id) {
 #ifdef QT_DEBUG
   dbg() << "ADD" << transactionDepth << id;
@@ -26,6 +33,10 @@ void simpleTransaction::transactionAdd(PROCESS id) {
   }
 }
 
+/**
+ * @brief simpleTransaction::transactionEnd
+ * @param pid
+ */
 void simpleTransaction::transactionEnd(PROCESS pid) {
 #ifdef QT_DEBUG
   dbg() << "END" << transactionDepth;
@@ -39,6 +50,11 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
   }
 }
 
+/**
+ * @brief simpleTransaction::transactionIsOver
+ * @param id
+ * @return
+ */
 PROCESS simpleTransaction::transactionIsOver(PROCESS id) {
 #ifdef QT_DEBUG
   dbg() << "OVER" << transactionDepth << id;
