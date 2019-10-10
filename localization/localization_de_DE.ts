@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation>Passwort Anzeige:</translation>
+        <translation type="vanished">Passwort Anzeige:</translation>
     </message>
     <message>
         <source>Hide password</source>
@@ -300,6 +300,38 @@ email</translation>
         <source>No profile selected to delete</source>
         <translation>Kein Profil zum Löschen ausgewählt</translation>
     </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
@@ -393,6 +425,24 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <translatorcomment>Google translate FTW</translatorcomment>
         <translation>Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir müssen eine Menge von zufälligen Bytes zu erzeugen. Es ist eine gute Idee während der Prim-Generierung eine andere Aktion (auf der Tastatur tippen, die Maus bewegen, Festplatten benutzen) auszuführen; Dies gibt dem Zufallszahlengenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
     </message>
+    <message>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -402,7 +452,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Add</source>
-        <translation>Hinzufügen</translation>
+        <translation type="vanished">Hinzufügen</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -454,7 +504,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>qtpass</source>
-        <translation>qtpass</translation>
+        <translation type="vanished">qtpass</translation>
     </message>
     <message>
         <source>Updating password-store</source>
@@ -462,7 +512,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Clipboard cleared</source>
-        <translation>Zwischenablage gelöscht</translation>
+        <translation type="vanished">Zwischenablage gelöscht</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1%2</source>
@@ -481,37 +531,37 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Verbindung zu WebDAV fehlgeschlagen:</translation>
+        <translation type="vanished">Verbindung zu WebDAV fehlgeschlagen:</translation>
     </message>
     <message>
         <source>Add Password</source>
-        <translation>Passwort Hinzufügen</translation>
+        <translation type="vanished">Passwort Hinzufügen</translation>
     </message>
     <message>
         <source>Add Folder</source>
-        <translation>Ordner Hinzufügen</translation>
+        <translation type="vanished">Ordner Hinzufügen</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV Passwort</translation>
+        <translation type="vanished">QtPass WebDAV Passwort</translation>
     </message>
     <message>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Passwort für WebDAV eingeben:</translation>
+        <translation type="vanished">Passwort für WebDAV eingeben:</translation>
     </message>
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Unerwarteter Abbruch durch fusedav</translation>
+        <translation type="vanished">Unerwarteter Abbruch durch fusedav</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
+        <translation type="vanished">fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
     </message>
     <message>
         <source>Password hidden</source>
-        <translation>Passwort ausgeblendet</translation>
+        <translation type="vanished">Passwort ausgeblendet</translation>
     </message>
     <message>
         <source>Content hidden</source>
@@ -527,7 +577,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Clipboard not cleared</source>
-        <translation>Zwischenablage nicht geleert</translation>
+        <translation type="vanished">Zwischenablage nicht geleert</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -535,39 +585,39 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen? </translation>
+        <translation type="vanished">Sind Sie sicher, dass Sie %1%2 löschen wollen? </translation>
     </message>
     <message>
         <source> and whole content</source>
-        <translation> und einhalt</translation>
+        <translation type="vanished"> und einhalt</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
-        <translation>in Zwischenablage kopiert</translation>
+        <translation type="vanished">in Zwischenablage kopiert</translation>
     </message>
     <message>
         <source>Add folder</source>
@@ -587,7 +637,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Can not edit</source>
-        <translation>Ändern nicht möglich</translation>
+        <translation type="vanished">Ändern nicht möglich</translation>
     </message>
     <message>
         <source>New file</source>
@@ -599,7 +649,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Sind Sie sicher, dass Sie %1 löschen wollen?</translation>
+        <translation type="vanished">Sind Sie sicher, dass Sie %1 löschen wollen?</translation>
     </message>
     <message>
         <source>Delete folder?</source>
@@ -607,7 +657,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
-        <translation>Gewählte Passwort-Datei existiert nicht, Änderung nicht möglich</translation>
+        <translation type="vanished">Gewählte Passwort-Datei existiert nicht, Änderung nicht möglich</translation>
     </message>
     <message>
         <source>New password file: 
@@ -626,23 +676,74 @@ Neues Passwort-Datei:
     </message>
     <message>
         <source>Can not get key list</source>
-        <translation>Schlüssel-Liste nicht gefunden</translation>
+        <translation type="vanished">Schlüssel-Liste nicht gefunden</translation>
     </message>
     <message>
         <source>Unable to get list of available gpg keys</source>
-        <translation>gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
+        <translation type="vanished">gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
     </message>
     <message>
         <source>Key not found in keyring</source>
-        <translation>Schlüssel nicht in Keyring gefunden</translation>
+        <translation type="vanished">Schlüssel nicht in Keyring gefunden</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation>GPG Schlüssel-Paar wird generiert</translation>
+        <translation type="vanished">GPG Schlüssel-Paar wird generiert</translation>
     </message>
     <message>
         <source>Profile changed to %1</source>
         <translation>Profil geändert zu %1</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>git pull</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -698,7 +799,6 @@ Neues Passwort-Datei:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>

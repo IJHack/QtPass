@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation>Chování hesla:</translation>
+        <translation type="vanished">Chování hesla:</translation>
     </message>
     <message>
         <source>Hide content</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -266,6 +266,74 @@ email</translation>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Adresář %1 nevypadá jako úložiště hesel, nebo ještě nebyl vytvořen.</translation>
+    </message>
+    <message>
+        <source>Use primary selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select character set for password generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphabetical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphanumerical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use pass otp extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -375,6 +443,22 @@ Expire-Date: 0
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Tato operace může zabrat několik minut.&lt;br /&gt;Je třeba vygenerovat množství náhodných dat. Pro urychlení můžete pomoci (psaním na klávesnici, pohybováním myší, zapisováním na disk) s jejich generováním; toto pomůže generátoru náhodných čísel zvýšit šanci na získání dostatečné entropie.</translation>
     </message>
+    <message>
+        <source>Invalid name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name must be at least 5 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The email address you typed is not a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -384,7 +468,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add</source>
-        <translation>Přidat</translation>
+        <translation type="vanished">Přidat</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -432,7 +516,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>qtpass</source>
-        <translation>qtpass</translation>
+        <translation type="vanished">qtpass</translation>
     </message>
     <message>
         <source>Welcome to QtPass %1</source>
@@ -440,36 +524,36 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add Password</source>
-        <translation>Přidat heslo</translation>
+        <translation type="vanished">Přidat heslo</translation>
     </message>
     <message>
         <source>Add Folder</source>
-        <translation>Přidat adresář</translation>
+        <translation type="vanished">Přidat adresář</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Selhalo připojení k WebDAV:
+        <translation type="vanished">Selhalo připojení k WebDAV:
 </translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV heslo</translation>
+        <translation type="vanished">QtPass WebDAV heslo</translation>
     </message>
     <message>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Vložte heslo pro připojení k WebDAV:</translation>
+        <translation type="vanished">Vložte heslo pro připojení k WebDAV:</translation>
     </message>
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav neočekávaně skončil
+        <translation type="vanished">fusedav neočekávaně skončil
 </translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Selhalo spuštění fusedav pro připojení k WebDAV:
+        <translation type="vanished">Selhalo spuštění fusedav pro připojení k WebDAV:
 </translation>
     </message>
     <message>
@@ -478,15 +562,15 @@ Expire-Date: 0
     </message>
     <message>
         <source>Can not edit</source>
-        <translation>Nelze upravovat</translation>
+        <translation type="vanished">Nelze upravovat</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
-        <translation>Vybraný soubor s heslem neexistuje, nelze upravovat</translation>
+        <translation type="vanished">Vybraný soubor s heslem neexistuje, nelze upravovat</translation>
     </message>
     <message>
         <source>Password hidden</source>
-        <translation>Skryté heslo</translation>
+        <translation type="vanished">Skryté heslo</translation>
     </message>
     <message>
         <source>Content hidden</source>
@@ -498,11 +582,11 @@ Expire-Date: 0
     </message>
     <message>
         <source>Clipboard cleared</source>
-        <translation>Schránka vymazána</translation>
+        <translation type="vanished">Schránka vymazána</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
-        <translation>Schránka nevymazána</translation>
+        <translation type="vanished">Schránka nevymazána</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -510,27 +594,27 @@ Expire-Date: 0
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
         <source>Looking for: %1</source>
@@ -556,7 +640,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Opravdu chcete smazat %1?</translation>
+        <translation type="vanished">Opravdu chcete smazat %1?</translation>
     </message>
     <message>
         <source>Delete folder?</source>
@@ -564,23 +648,23 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Opravdu chcete smazat %1? {1%2??}</translation>
+        <translation type="vanished">Opravdu chcete smazat %1? {1%2??}</translation>
     </message>
     <message>
         <source>Can not get key list</source>
-        <translation>Nelze získat seznam klíčů</translation>
+        <translation type="vanished">Nelze získat seznam klíčů</translation>
     </message>
     <message>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Nelze získat seznam dostupných gpg klíčů</translation>
+        <translation type="vanished">Nelze získat seznam dostupných gpg klíčů</translation>
     </message>
     <message>
         <source>Key not found in keyring</source>
-        <translation>Klíč nebyl v klíčence nalezen</translation>
+        <translation type="vanished">Klíč nebyl v klíčence nalezen</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation>Generování páru GPG klíčů</translation>
+        <translation type="vanished">Generování páru GPG klíčů</translation>
     </message>
     <message>
         <source>Profile changed to %1</source>
@@ -602,7 +686,78 @@ Expire-Date: 0
     </message>
     <message>
         <source>Copied to clipboard</source>
-        <translation>zkopírovat do schránky</translation>
+        <translation type="vanished">zkopírovat do schránky</translation>
+    </message>
+    <message>
+        <source>Select profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to QtPass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate OTP and copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open folder with file manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -630,11 +785,34 @@ Expire-Date: 0
         <source>Show password</source>
         <translation>Zobrazit heslo</translation>
     </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphabetical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphanumerical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -706,6 +884,17 @@ Expire-Date: 0
     <message>
         <source>Copied to clipboard</source>
         <translation>zkopírovat do schránky</translation>
+    </message>
+</context>
+<context>
+    <name>StoreModel</name>
+    <message>
+        <source>force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>overwrite %1 with %2?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

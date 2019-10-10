@@ -271,6 +271,60 @@
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>A pasta %1 não é uma password-store ou a mesma ainda não foi inicializada.</translation>
     </message>
+    <message>
+        <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use pass otp extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>login
+url
+email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ImitatePass</name>
@@ -363,12 +417,30 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Esta operação pode demorar alguns minutos.&lt;br /&gt;É necessário gerar muitos bytes aleatórios. É aconselhado efetuar outras açőes (escrever no teclado, utilizar o rato, escrever ou ler dos discos) durante a criaçao da semente utilizada na encriptação; esta operação permite que o gerador de números aleatórios, gere entropia suficiente.</translation>
     </message>
+    <message>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Add</source>
-        <translation>Adicionar</translation>
+        <translation type="vanished">Adicionar</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -427,7 +499,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt;&lt;br /&gt;Please report any &lt;/span&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; color:#333333;&quot;&gt; you might have with this software.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:13pt; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -438,7 +510,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>qtpass</source>
-        <translation>qtpass</translation>
+        <translation type="vanished">qtpass</translation>
     </message>
     <message>
         <source>Welcome to QtPass %1</source>
@@ -446,34 +518,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add Password</source>
-        <translation>Adicionar Password</translation>
+        <translation type="vanished">Adicionar Password</translation>
     </message>
     <message>
         <source>Add Folder</source>
-        <translation>Adicionar pasta</translation>
+        <translation type="vanished">Adicionar pasta</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>A ligação a WebDAV falhou:</translation>
+        <translation type="vanished">A ligação a WebDAV falhou:</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
-        <translation>Password do QtPass WebDAV</translation>
+        <translation type="vanished">Password do QtPass WebDAV</translation>
     </message>
     <message>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Introduza a password para a ligação a WebDAV:</translation>
+        <translation type="vanished">Introduza a password para a ligação a WebDAV:</translation>
     </message>
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav fechou inesperadamente</translation>
+        <translation type="vanished">fusedav fechou inesperadamente</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
+        <translation type="vanished">A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
     </message>
     <message>
         <source>Updating password-store</source>
@@ -481,7 +553,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Password hidden</source>
-        <translation>Password ocultada</translation>
+        <translation type="vanished">Password ocultada</translation>
     </message>
     <message>
         <source>Content hidden</source>
@@ -493,11 +565,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clipboard cleared</source>
-        <translation>Clipboard limpo</translation>
+        <translation type="vanished">Clipboard limpo</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
-        <translation>Clipboard não limpo</translation>
+        <translation type="vanished">Clipboard não limpo</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -505,27 +577,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
         <source>Looking for: %1</source>
@@ -555,27 +627,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>De certeza que deseja remover %1%2?</translation>
+        <translation type="vanished">De certeza que deseja remover %1%2?</translation>
     </message>
     <message>
         <source> and whole content</source>
-        <translation>e todo o seu conteúdo</translation>
+        <translation type="vanished">e todo o seu conteúdo</translation>
     </message>
     <message>
         <source>Can not get key list</source>
-        <translation>Não é possível obter a lista de chaves</translation>
+        <translation type="vanished">Não é possível obter a lista de chaves</translation>
     </message>
     <message>
         <source>Unable to get list of available gpg keys</source>
-        <translation>Não é possível obter a lista de chaves gpg disponíveis</translation>
+        <translation type="vanished">Não é possível obter a lista de chaves gpg disponíveis</translation>
     </message>
     <message>
         <source>Key not found in keyring</source>
-        <translation>Chave não disponível no keyring</translation>
+        <translation type="vanished">Chave não disponível no keyring</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation>Gerar par de chaves GPG</translation>
+        <translation type="vanished">Gerar par de chaves GPG</translation>
     </message>
     <message>
         <source>Profile changed to %1</source>
@@ -596,7 +668,78 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Copied to clipboard</source>
-        <translation>Copiado para o Clipboard</translation>
+        <translation type="vanished">Copiado para o Clipboard</translation>
+    </message>
+    <message>
+        <source>QtPass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate OTP and copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open folder with file manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -652,7 +795,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>

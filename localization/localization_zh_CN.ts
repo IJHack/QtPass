@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation>密码显示：</translation>
+        <translation type="vanished">密码显示：</translation>
     </message>
     <message>
         <source>Hide content</source>
@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -286,6 +286,54 @@ email</source>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>文件夹 %1 不是一个密码库或未初始化</translation>
+    </message>
+    <message>
+        <source>Use primary selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content panel behaviour:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use pass otp extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autodetect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System tray is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>qrencode needs to be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -419,7 +467,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add</source>
-        <translation>新建</translation>
+        <translation type="vanished">新建</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -471,7 +519,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>qtpass</source>
-        <translation>qtpass</translation>
+        <translation type="vanished">qtpass</translation>
     </message>
     <message>
         <source>Welcome to QtPass %1</source>
@@ -479,36 +527,36 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add Password</source>
-        <translation>新密码</translation>
+        <translation type="vanished">新密码</translation>
     </message>
     <message>
         <source>Add Folder</source>
-        <translation>新文件夹</translation>
+        <translation type="vanished">新文件夹</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>无法连接 WebDAV：
+        <translation type="vanished">无法连接 WebDAV：
 </translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV 密码</translation>
+        <translation type="vanished">QtPass WebDAV 密码</translation>
     </message>
     <message>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>输入 WebDAV 密码以连接：</translation>
+        <translation type="vanished">输入 WebDAV 密码以连接：</translation>
     </message>
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav 意外退出
+        <translation type="vanished">fusedav 意外退出
 </translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>无法连接 WebDAV，fusedav无法启动：
+        <translation type="vanished">无法连接 WebDAV，fusedav无法启动：
 </translation>
     </message>
     <message>
@@ -517,15 +565,15 @@ Expire-Date: 0
     </message>
     <message>
         <source>Can not edit</source>
-        <translation>无法编辑</translation>
+        <translation type="vanished">无法编辑</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
-        <translation>选定的密码文件不存在，不可编辑</translation>
+        <translation type="vanished">选定的密码文件不存在，不可编辑</translation>
     </message>
     <message>
         <source>Password hidden</source>
-        <translation>密码已隐藏</translation>
+        <translation type="vanished">密码已隐藏</translation>
     </message>
     <message>
         <source>Content hidden</source>
@@ -537,11 +585,11 @@ Expire-Date: 0
     </message>
     <message>
         <source>Clipboard cleared</source>
-        <translation>剪贴板已清除</translation>
+        <translation type="vanished">剪贴板已清除</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
-        <translation>剪贴板未清除</translation>
+        <translation type="vanished">剪贴板未清除</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -549,27 +597,27 @@ Expire-Date: 0
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
-        <translation>系统错误：启动失败 QProcess::FailedToStart</translation>
+        <translation type="vanished">系统错误：启动失败 QProcess::FailedToStart</translation>
     </message>
     <message>
         <source>QProcess::Crashed</source>
-        <translation>系统错误：程序崩溃 QProcess::Crashed</translation>
+        <translation type="vanished">系统错误：程序崩溃 QProcess::Crashed</translation>
     </message>
     <message>
         <source>QProcess::Timedout</source>
-        <translation>系统错误：响应超时 QProcess::Timedout</translation>
+        <translation type="vanished">系统错误：响应超时 QProcess::Timedout</translation>
     </message>
     <message>
         <source>QProcess::ReadError</source>
-        <translation>系统错误：读取错误 QProcess::ReadError</translation>
+        <translation type="vanished">系统错误：读取错误 QProcess::ReadError</translation>
     </message>
     <message>
         <source>QProcess::WriteError</source>
-        <translation>系统错误：写入错误 QProcess::WriteError</translation>
+        <translation type="vanished">系统错误：写入错误 QProcess::WriteError</translation>
     </message>
     <message>
         <source>QProcess::UnknownError</source>
-        <translation>系统错误：未知错误 QProcess::UnknownError</translation>
+        <translation type="vanished">系统错误：未知错误 QProcess::UnknownError</translation>
     </message>
     <message>
         <source>Looking for: %1</source>
@@ -595,7 +643,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>确定删除 %1 ？</translation>
+        <translation type="vanished">确定删除 %1 ？</translation>
     </message>
     <message>
         <source>Delete folder?</source>
@@ -603,23 +651,23 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>确定删除 %1%2 ？</translation>
+        <translation type="vanished">确定删除 %1%2 ？</translation>
     </message>
     <message>
         <source>Can not get key list</source>
-        <translation>无法获取密钥列表</translation>
+        <translation type="vanished">无法获取密钥列表</translation>
     </message>
     <message>
         <source>Unable to get list of available gpg keys</source>
-        <translation>无法获取可用的 GPG 密钥列表</translation>
+        <translation type="vanished">无法获取可用的 GPG 密钥列表</translation>
     </message>
     <message>
         <source>Key not found in keyring</source>
-        <translation>所选密钥未找到</translation>
+        <translation type="vanished">所选密钥未找到</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation>正在生成 GPG 密钥对</translation>
+        <translation type="vanished">正在生成 GPG 密钥对</translation>
     </message>
     <message>
         <source>Profile changed to %1</source>
@@ -641,7 +689,74 @@ Expire-Date: 0
     </message>
     <message>
         <source>Copied to clipboard</source>
-        <translation>复制到剪贴板</translation>
+        <translation type="vanished">复制到剪贴板</translation>
+    </message>
+    <message>
+        <source>Select profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;, the standard unix password manager.&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;issues&lt;/span&gt;&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate OTP and copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open folder with file manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename File To: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -697,7 +812,6 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="+87"/>
         <source>LTR</source>
         <translation>从左到右</translation>
     </message>
@@ -769,6 +883,17 @@ Expire-Date: 0
     <message>
         <source>Copied to clipboard</source>
         <translation>复制到剪贴板</translation>
+    </message>
+</context>
+<context>
+    <name>StoreModel</name>
+    <message>
+        <source>force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>overwrite %1 with %2?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

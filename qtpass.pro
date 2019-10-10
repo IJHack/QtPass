@@ -81,4 +81,4 @@ TRANSLATIONS    +=  localization/localization_ca.ts \
                     localization/localization_it_IT.ts \
                     localization/localization_pt_PT.ts
 
-system($$QMAKE_LUPDATE -locations relative -no-ui-lines $$_PRO_FILE_)
+system($$QMAKE_LUPDATE -locations none -no-ui-lines ./src ./main -ts localization/*.ts)
