@@ -1,0 +1,1 @@
+lupdate -locations absolute ./src ./main -ts localization/*.ts

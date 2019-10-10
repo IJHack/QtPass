@@ -30,6 +30,7 @@ TRANSLATIONS    +=  ../localization/localization_nl_NL.ts \
                     ../localization/localization_el_GR.ts \
                     ../localization/localization_cs_CZ.ts \
                     ../localization/localization_it_IT.ts \
+                    ../localization/localization_sq_AL.ts \
                     ../localization/localization_pt_PT.ts
 
 SOURCES   += mainwindow.cpp \
@@ -51,7 +52,7 @@ SOURCES   += mainwindow.cpp \
              executor.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
-    qtpass.cpp
+   	     qtpass.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \

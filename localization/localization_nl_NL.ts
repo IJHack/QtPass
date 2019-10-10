@@ -312,10 +312,6 @@ email</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Autodetect</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>System tray is not available</source>
         <translation>Systeembalk niet beschikbaar</translation>
     </message>
@@ -326,6 +322,10 @@ email</translation>
     <message>
         <source>qrencode needs to be installed</source>
         <translation>qrencode dient geïnstalleerd te zijn</translation>
+    </message>
+    <message>
+        <source>Autodetect</source>
+        <translation>Automatisch detecteren</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
@@ -770,23 +770,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Map hernoemen</translation>
     </message>
     <message>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord hernoemen</translation>
     </message>
     <message>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand hernoemen</translation>
     </message>
     <message>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Verander naam van map naar: </translation>
     </message>
     <message>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Verander bestand naar: </translation>
     </message>
 </context>
 <context>

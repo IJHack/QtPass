@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation>Inkludera specialtecken</translation>
+        <translation>Inkludera specialtecken </translation>
     </message>
     <message>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
@@ -485,7 +485,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Vill du verkligen ta bort %%21?</translation>
+        <translation>Vill du verkligen ta bort %1%2</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -754,7 +754,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -766,7 +766,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Kunde inte ansluta till WebDAV:</translation>
+        <translation>Kunde inte ansluta till WebDAV:
+</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
@@ -779,12 +780,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav avslutades oväntat</translation>
+        <translation>fusedav avslutades oväntat
+</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kunde inte starta fusedav för att ansluta till WebDAV:</translation>
+        <translation>Kunde inte starta fusedav för att ansluta till WebDAV:
+</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -800,27 +803,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
