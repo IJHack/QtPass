@@ -1,6 +1,0 @@
-<map id="simpleTransaction::simpleTransaction" name="simpleTransaction::simpleTransaction">
-<area shape="rect" id="node2" href="$classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat..." alt="" coords="189,5,325,47"/>
-<area shape="rect" id="node3" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(), this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it&#39;s value is treated as transaction result). " alt="" coords="189,71,325,112"/>
-<area shape="rect" id="node4" href="$classsimple_transaction.html#a76e9280b4cc192ff420520fefa557c63" title="transactionEnd marks end of transaction " alt="" coords="189,136,325,177"/>
-<area shape="rect" id="node5" href="$classsimple_transaction.html#aba2a723cf95814a1c673af1a17bccf79" title="transactionIsOver checks wheather currently finished process is last in current transaction ..." alt="" coords="189,201,325,243"/>
-</map>

@@ -1,11 +1,6 @@
 <map id="QtPass::copyTextToClipboard" name="QtPass::copyTextToClipboard">
-<area shape="rect" id="node2" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title="MainWindow::passOtpHandler" alt="" coords="753,5,952,32"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="252,51,447,77"/>
-<area shape="rect" id="node6" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="268,101,431,128"/>
-<area shape="rect" id="node8" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title="QtPass::setFreshStart" alt="" coords="273,152,426,179"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="1000,88,1091,115"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1139,88,1319,115"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="495,76,705,103"/>
-<area shape="rect" id="node9" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="530,152,670,179"/>
-<area shape="rect" id="node10" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="757,164,949,191"/>
+<area shape="rect" id="node1" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="516,31,712,56"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="267,5,468,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="287,55,447,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,219,80"/>
 </map>

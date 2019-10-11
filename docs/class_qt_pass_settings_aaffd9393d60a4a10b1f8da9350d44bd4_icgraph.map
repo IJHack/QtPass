@@ -1,4 +1,4 @@
 <map id="QtPassSettings::isUseQrencode" name="QtPassSettings::isUseQrencode">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="273,5,453,32"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="265,56,460,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,5,447,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
 </map>

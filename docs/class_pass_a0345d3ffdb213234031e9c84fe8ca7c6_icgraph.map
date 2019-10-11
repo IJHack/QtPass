@@ -1,6 +1,4 @@
 <map id="Pass::startingExecuteWrapper" name="Pass::startingExecuteWrapper">
-<area shape="rect" id="node2" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation. " alt="" coords="257,5,348,32"/>
-<area shape="rect" id="node3" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="253,56,352,83"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="257,107,348,133"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="400,107,580,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="141,5,343,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="5,5,93,31"/>
 </map>

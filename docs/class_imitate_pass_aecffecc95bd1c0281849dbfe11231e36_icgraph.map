@@ -1,5 +1,0 @@
-<map id="ImitatePass::startReencryptPath" name="ImitatePass::startReencryptPath">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="267,5,445,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="311,56,401,83"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="493,56,673,83"/>
-</map>

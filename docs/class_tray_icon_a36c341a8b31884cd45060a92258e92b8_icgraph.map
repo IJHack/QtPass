@@ -1,3 +1,4 @@
 <map id="TrayIcon::iconActivated" name="TrayIcon::iconActivated">
-<area shape="rect" id="node2" href="$class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits..." alt="" coords="213,5,345,32"/>
+<area shape="rect" id="node1" title="TrayIcon::iconActivated you clicked on the trayicon." alt="" coords="185,5,344,31"/>
+<area shape="rect" id="node2" href="$class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits." alt="" coords="5,5,137,31"/>
 </map>

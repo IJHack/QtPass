@@ -1,7 +1,0 @@
-<map id="tst_util::cleanup" name="tst_util::cleanup">
-<area shape="rect" id="node2" href="$class_util.html#a94597a43bf37076511033bef32f3df12" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator() " alt="" coords="186,5,355,32"/>
-<area shape="rect" id="node3" href="$class_file_content.html#abef563f253a931af308232c66e032153" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="206,56,335,83"/>
-<area shape="rect" id="node4" href="$class_file_content.html#aab89c859cfde0d9d1ed8de89e07ca231" title="FileContent::getPassword" alt="" coords="184,107,357,133"/>
-<area shape="rect" id="node5" href="$class_file_content.html#ab1a615b719c41f631821e06009c530a2" title="FileContent::getNamedValues" alt="" coords="172,157,369,184"/>
-<area shape="rect" id="node6" href="$class_file_content.html#a2f1cc35e14725e8f3f95dddf3afcc29a" title="FileContent::getRemainingData" alt="" coords="168,208,373,235"/>
-</map>

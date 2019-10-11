@@ -1,4 +1,6 @@
 <map id="ImitatePass" name="ImitatePass">
-<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation. " alt="" coords="15,80,67,107"/>
-<area shape="rect" id="node4" href="$classsimple_transaction.html" title="simpleTransaction" alt="" coords="91,80,219,107"/>
+<area shape="rect" id="node1" title="Imitates pass features when pass is not enabled or available." alt="" coords="52,152,143,177"/>
+<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="15,79,66,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,76,31"/>
+<area shape="rect" id="node4" href="$classsimple_transaction.html" title=" " alt="" coords="91,79,220,104"/>
 </map>

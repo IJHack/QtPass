@@ -1,7 +1,4 @@
 <map id="Pass::critical" name="Pass::critical">
-<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="152,63,279,89"/>
-<area shape="rect" id="node3" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="373,5,471,32"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="170,117,261,144"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="Pass{}{}wordDialog::~PasswordDialog basic destructor. " alt="" coords="327,57,517,98"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="332,123,512,149"/>
+<area shape="rect" id="node1" title=" " alt="" coords="182,5,278,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="5,5,134,31"/>
 </map>

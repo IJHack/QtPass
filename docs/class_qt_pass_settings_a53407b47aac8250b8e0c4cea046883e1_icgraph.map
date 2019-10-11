@@ -1,9 +1,8 @@
 <map id="QtPassSettings::getPwgenExecutable" name="QtPassSettings::getPwgenExecutable">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="249,5,429,32"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator. " alt="" coords="275,56,402,83"/>
-<area shape="rect" id="node6" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="542,136,633,163"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="QtPassSettings::initExecutables" alt="" coords="233,157,444,184"/>
-<area shape="rect" id="node4" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="538,8,637,35"/>
-<area shape="rect" id="node5" href="$class_password_dialog.html#aa123158c0085b910ecf3bfdc9dae9e97" title="Pass{}{}wordDialog::~PasswordDialog basic destructor. " alt="" coords="492,59,683,101"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="731,136,911,163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="631,73,810,112"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="387,5,568,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="413,55,542,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,131,324,156"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="372,156,583,181"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,131,187,156"/>
 </map>

@@ -1,6 +1,4 @@
 <map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
-<area shape="rect" id="node2" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers() " alt="" coords="196,5,363,32"/>
-<area shape="rect" id="node3" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path. " alt="" coords="411,5,496,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="544,5,745,32"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="793,5,984,32"/>
+<area shape="rect" id="node1" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,5,149,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers()" alt="" coords="197,5,366,31"/>
 </map>

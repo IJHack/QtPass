@@ -1,9 +1,0 @@
-<map id="QtPass::setFreshStart" name="QtPass::setFreshStart">
-<area shape="rect" id="node2" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents. " alt="" coords="227,5,385,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="207,107,405,133"/>
-<area shape="rect" id="node8" href="$class_qt_pass.html#aef5aaf0605c7681967995ede486590ef" title="displays the text as qrcode " alt="" coords="207,56,405,83"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar. " alt="" coords="453,56,680,83"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="461,107,672,133"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="461,157,672,184"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="728,132,919,159"/>
-</map>

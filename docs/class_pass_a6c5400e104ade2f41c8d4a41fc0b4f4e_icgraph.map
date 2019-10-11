@@ -1,7 +1,6 @@
 <map id="Pass::getRecipientList" name="Pass::getRecipientList">
-<area shape="rect" id="node2" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content. " alt="" coords="225,5,358,32"/>
-<area shape="rect" id="node4" href="$class_pass.html#a4566c370e65b22d5cdc132f72b393808" title="Pass::getRecipientString formated string for use with GPG. " alt="" coords="208,107,375,133"/>
-<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="463,68,561,95"/>
-<area shape="rect" id="node6" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="425,144,599,171"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="423,5,601,32"/>
+<area shape="rect" id="node1" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="443,56,596,81"/>
+<area shape="rect" id="node2" href="$class_pass.html#a4566c370e65b22d5cdc132f72b393808" title="Pass::getRecipientString formated string for use with GPG." alt="" coords="227,5,395,31"/>
+<area shape="rect" id="node3" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,31,179,56"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#accd38cc2e91f30fad48d83d76192beb2" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="245,107,377,132"/>
 </map>

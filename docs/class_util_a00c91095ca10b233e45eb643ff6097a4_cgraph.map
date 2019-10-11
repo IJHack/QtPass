@@ -1,7 +1,8 @@
 <map id="Util::checkConfig" name="Util::checkConfig">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="193,5,394,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="200,56,387,83"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="176,107,411,133"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="179,157,408,184"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="459,81,649,108"/>
+<area shape="rect" id="node1" title="Util::checkConfig do we have prequisite settings?" alt="" coords="5,80,127,105"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title=" " alt="" coords="177,5,407,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title=" " alt="" coords="175,55,409,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="192,104,392,129"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="200,153,384,179"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="457,80,647,105"/>
 </map>

@@ -1,8 +1,4 @@
 <map id="MainWindow::endReencryptPath" name="MainWindow::endReencryptPath">
-<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. " alt="" coords="289,5,479,47"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="297,71,471,98"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="273,122,495,149"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="267,173,501,199"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2" title="QtPassSettings::isUseOtp" alt="" coords="295,223,473,250"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="549,147,740,174"/>
+<area shape="rect" id="node1" title="MainWindow::endReencryptPath re&#45;enable ui elements." alt="" coords="5,12,221,37"/>
+<area shape="rect" id="node2" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="269,5,460,44"/>
 </map>

@@ -1,6 +1,0 @@
-<map id="Pass::OtpGenerate" name="Pass::OtpGenerate">
-<area shape="rect" id="node2" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="188,5,380,32"/>
-<area shape="rect" id="node5" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="235,56,333,83"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="428,5,519,32"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="567,5,747,32"/>
-</map>

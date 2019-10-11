@@ -1,10 +1,11 @@
 <map id="UsersDialog::accept" name="UsersDialog::accept">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="195,56,365,83"/>
-<area shape="rect" id="node9" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Pass::Init" alt="" coords="241,107,319,133"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="678,5,865,32"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="420,31,617,57"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="413,81,624,108"/>
-<area shape="rect" id="node7" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="480,132,557,159"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="919,56,1109,83"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="672,81,871,108"/>
+<area shape="rect" id="node1" title="UsersDialog::accept." alt="" coords="5,105,146,131"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="194,80,363,105"/>
+<area shape="rect" id="node9" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title=" " alt="" coords="240,129,316,155"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title=" " alt="" coords="411,5,620,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title=" " alt="" coords="417,55,613,80"/>
+<area shape="rect" id="node5" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title=" " alt="" coords="477,104,553,129"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="676,155,859,180"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title=" " alt="" coords="668,105,868,131"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="916,131,1105,156"/>
 </map>

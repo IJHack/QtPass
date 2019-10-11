@@ -1,9 +1,7 @@
 <map id="QtPassSettings::getClipBoardTypeRaw" name="QtPassSettings::getClipBoardTypeRaw">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="274,5,454,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title="QtPassSettings::getClipBoardType" alt="" coords="251,56,477,83"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="525,31,720,57"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="QtPass::setClippedText" alt="" coords="541,81,704,108"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title="MainWindow::passShowHandler" alt="" coords="768,81,979,108"/>
-<area shape="rect" id="node7" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="1027,81,1117,108"/>
-<area shape="rect" id="node8" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1165,81,1345,108"/>
+<area shape="rect" id="node1" title=" " alt="" coords="749,24,947,63"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="497,5,679,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title=" " alt="" coords="475,55,701,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="267,55,427,80"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,219,80"/>
 </map>

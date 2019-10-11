@@ -1,8 +1,5 @@
 <map id="QtPassSettings::setPassStore" name="QtPassSettings::setPassStore">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git..." alt="" coords="261,5,449,32"/>
-<area shape="rect" id="node3" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . . " alt="" coords="255,56,456,83"/>
-<area shape="rect" id="node6" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="310,107,401,133"/>
-<area shape="rect" id="node4" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair. " alt="" coords="519,56,669,83"/>
-<area shape="rect" id="node5" href="$class_keygen_dialog.html#a90b3a3db49016043ba160a50c5272643" title="KeygenDialog::~KeygenDialog even more basic destructor. " alt="" coords="732,56,932,83"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="504,107,684,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="372,5,572,31"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,5,324,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,187,31"/>
 </map>

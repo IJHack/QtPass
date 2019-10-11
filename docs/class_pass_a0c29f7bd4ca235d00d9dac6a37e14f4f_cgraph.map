@@ -1,5 +1,6 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="node2" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Pass::executeWrapper" alt="" coords="263,5,417,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="225,56,455,83"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="503,56,693,83"/>
+<area shape="rect" id="node1" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="5,31,179,56"/>
+<area shape="rect" id="node2" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="264,5,420,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title=" " alt="" coords="227,55,457,80"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="505,55,695,80"/>
 </map>

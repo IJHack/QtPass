@@ -1,9 +1,9 @@
 <map id="QtPassSettings::getAutoclearSeconds" name="QtPassSettings::getAutoclearSeconds">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="248,5,428,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="904,107,995,133"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="QtPass::setClipboardTimer" alt="" coords="248,107,428,133"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="1043,107,1223,133"/>
-<area shape="rect" id="node6" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication. " alt="" coords="476,107,616,133"/>
-<area shape="rect" id="node8" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title="QtPass::QtPass" alt="" coords="487,157,605,184"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="664,157,856,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="790,49,986,88"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="561,5,742,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,81,324,107"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="561,107,742,132"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,81,187,107"/>
+<area shape="rect" id="node6" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="372,107,513,132"/>
+<area shape="rect" id="node7" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title=" " alt="" coords="384,156,501,181"/>
 </map>

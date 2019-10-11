@@ -1,4 +1,5 @@
 <map id="TrayIcon::showHideParent" name="TrayIcon::showHideParent">
-<area shape="rect" id="node2" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon. " alt="" coords="231,5,391,32"/>
-<area shape="rect" id="node3" href="$class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits..." alt="" coords="439,5,571,32"/>
+<area shape="rect" id="node1" title="TrayIcon::showHideParent toggle app visibility." alt="" coords="392,5,570,31"/>
+<area shape="rect" id="node2" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon." alt="" coords="185,5,344,31"/>
+<area shape="rect" id="node3" href="$class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits." alt="" coords="5,5,137,31"/>
 </map>

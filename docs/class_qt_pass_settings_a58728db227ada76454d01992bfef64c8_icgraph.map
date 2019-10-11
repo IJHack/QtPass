@@ -1,6 +1,5 @@
 <map id="QtPassSettings::isAutoPull" name="QtPassSettings::isAutoPull">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="242,5,422,32"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory. " alt="" coords="241,56,423,83"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="235,107,429,133"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="477,56,656,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,31,415,56"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="5,55,187,80"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="ConfigDialog::usePwgen" name="ConfigDialog::usePwgen">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="459,5,639,32"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="220,31,411,57"/>
+<area shape="rect" id="node1" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)...." alt="" coords="235,5,402,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
 </map>

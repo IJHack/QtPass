@@ -1,3 +1,4 @@
 <map id="SingleApplication::isRunning" name="SingleApplication::isRunning">
-<area shape="rect" id="node2" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main " alt="" coords="184,13,235,39"/>
+<area shape="rect" id="node1" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server..." alt="" coords="104,5,235,44"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="5,12,56,37"/>
 </map>

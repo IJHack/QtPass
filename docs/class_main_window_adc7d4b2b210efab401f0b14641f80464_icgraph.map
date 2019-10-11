@@ -1,6 +1,4 @@
 <map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
-<area shape="rect" id="node2" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="232,5,424,32"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="473,31,564,57"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="231,107,425,133"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="612,31,792,57"/>
+<area shape="rect" id="node1" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="247,5,426,44"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,12,199,37"/>
 </map>

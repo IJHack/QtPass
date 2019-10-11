@@ -1,13 +1,14 @@
 <map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
-<area shape="rect" id="node2" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path. " alt="" coords="274,5,359,32"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title="QtPass::clearClippedText" alt="" coords="231,56,403,83"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="231,107,402,133"/>
-<area shape="rect" id="node12" href="$class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Pass::Show" alt="" coords="270,157,363,184"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="709,5,911,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="959,56,1149,83"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="717,56,903,83"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="457,107,655,133"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="451,157,661,184"/>
-<area shape="rect" id="node10" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="517,208,595,235"/>
-<area shape="rect" id="node11" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="711,157,909,184"/>
+<area shape="rect" id="node1" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="5,73,184,112"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title=" " alt="" coords="232,5,403,31"/>
+<area shape="rect" id="node3" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path." alt="" coords="276,55,360,80"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="233,104,402,129"/>
+<area shape="rect" id="node12" href="$class_pass.html#a6520ffa669cd7934091934b24593d99c" title=" " alt="" coords="272,153,364,179"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="708,55,909,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="957,153,1146,179"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title=" " alt="" coords="451,55,660,80"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title=" " alt="" coords="458,104,654,129"/>
+<area shape="rect" id="node9" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title=" " alt="" coords="518,153,593,179"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="717,203,900,228"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title=" " alt="" coords="709,153,908,179"/>
 </map>

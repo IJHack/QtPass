@@ -1,50 +1,51 @@
 <map id="ConfigDialog::ConfigDialog" name="ConfigDialog::ConfigDialog">
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title="QtPassSettings::getPassExecutable" alt="" coords="493,238,728,264"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title="QtPassSettings::getGitExecutable" alt="" coords="499,186,722,212"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title="QtPassSettings::getGpgExecutable" alt="" coords="496,288,725,315"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title="QtPassSettings::getPassStore" alt="" coords="510,339,711,366"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title="QtPassSettings::getAutoclear\lSeconds" alt="" coords="513,441,708,482"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" title="QtPassSettings::getAutoclear\lPanelSeconds" alt="" coords="513,506,708,548"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title="QtPassSettings::isHidePassword" alt="" coords="502,572,719,599"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title="QtPassSettings::isHideContent" alt="" coords="508,623,713,650"/>
-<area shape="rect" id="node11" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title="QtPassSettings::isAddGPGId" alt="" coords="513,674,708,700"/>
-<area shape="rect" id="node12" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title="QtPassSettings::isHideOn\lClose" alt="" coords="523,725,699,766"/>
-<area shape="rect" id="node13" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title="QtPassSettings::isStartMinimized" alt="" coords="501,791,720,818"/>
-<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title="QtPassSettings::isAvoidCapitals" alt="" coords="504,842,717,868"/>
-<area shape="rect" id="node15" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title="QtPassSettings::isAvoidNumbers" alt="" coords="501,892,720,919"/>
-<area shape="rect" id="node16" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title="QtPassSettings::isLessRandom" alt="" coords="506,943,715,970"/>
-<area shape="rect" id="node17" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title="QtPassSettings::isUseSymbols" alt="" coords="507,994,714,1020"/>
-<area shape="rect" id="node18" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title="QtPassSettings::getPassTemplate" alt="" coords="499,1044,723,1071"/>
-<area shape="rect" id="node19" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title="QtPassSettings::isTemplate\lAllFields" alt="" coords="517,1096,704,1137"/>
-<area shape="rect" id="node20" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title="QtPassSettings::isAutoPull" alt="" coords="520,1162,701,1188"/>
-<area shape="rect" id="node21" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title="QtPassSettings::isAutoPush" alt="" coords="516,1212,705,1239"/>
-<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title="QtPassSettings::isAlways\lOnTop" alt="" coords="523,1264,698,1305"/>
-<area shape="rect" id="node23" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title="QtPassSettings::getProfiles" alt="" coords="519,1330,703,1356"/>
-<area shape="rect" id="node24" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title="QtPassSettings::getProfile" alt="" coords="522,1380,699,1407"/>
-<area shape="rect" id="node25" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="244,1902,435,1928"/>
-<area shape="rect" id="node26" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)..." alt="" coords="527,1927,694,1954"/>
-<area shape="rect" id="node27" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title="QtPassSettings::getPwgen\lExecutable" alt="" coords="249,1400,429,1441"/>
-<area shape="rect" id="node28" href="$class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b" title="ConfigDialog::setPassword\lConfiguration" alt="" coords="249,2004,430,2045"/>
-<area shape="rect" id="node29" href="$class_qt_pass_settings.html#a9da7174babd2f5cc433505f0fec82efc" title="QtPassSettings::getPassword\lConfiguration" alt="" coords="240,1465,439,1506"/>
-<area shape="rect" id="node30" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="517,390,704,416"/>
-<area shape="rect" id="node31" href="$class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow. " alt="" coords="249,2070,430,2096"/>
-<area shape="rect" id="node32" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="234,1531,445,1558"/>
-<area shape="rect" id="node33" href="$class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow. " alt="" coords="249,2121,430,2162"/>
-<area shape="rect" id="node34" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="234,1582,445,1624"/>
-<area shape="rect" id="node35" href="$class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="251,2187,428,2214"/>
-<area shape="rect" id="node36" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title="QtPassSettings::isUseTrayIcon" alt="" coords="236,1648,443,1675"/>
-<area shape="rect" id="node37" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git. " alt="" coords="268,2238,411,2264"/>
-<area shape="rect" id="node38" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title="QtPassSettings::isUseGit" alt="" coords="253,1699,426,1726"/>
-<area shape="rect" id="node39" href="$class_config_dialog.html#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin. " alt="" coords="266,2288,413,2315"/>
-<area shape="rect" id="node40" href="$class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2" title="QtPassSettings::isUseOtp" alt="" coords="251,1750,428,1776"/>
-<area shape="rect" id="node41" href="$class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9" title="ConfigDialog::useOtp set preference for using otp plugin. " alt="" coords="248,2339,431,2366"/>
-<area shape="rect" id="node42" href="$class_qt_pass_settings.html#aaffd9393d60a4a10b1f8da9350d44bd4" title="QtPassSettings::isUseQrencode" alt="" coords="233,1800,445,1827"/>
-<area shape="rect" id="node43" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title="QtPassSettings::isUsePwgen" alt="" coords="241,1851,437,1878"/>
-<area shape="rect" id="node44" href="$class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates. " alt="" coords="249,2390,429,2416"/>
-<area shape="rect" id="node45" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title="QtPassSettings::isUseTemplate" alt="" coords="234,15,445,42"/>
-<area shape="rect" id="node46" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title="QtPassSettings::getClipBoard\lTypeRaw" alt="" coords="241,66,438,108"/>
-<area shape="rect" id="node47" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow. " alt="" coords="249,2440,429,2467"/>
-<area shape="rect" id="node48" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="234,132,445,159"/>
-<area shape="rect" id="node49" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings? " alt="" coords="278,335,401,362"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="776,943,967,970"/>
+<area shape="rect" id="node1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,1182,187,1207"/>
+<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="280,118,402,143"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title=" " alt="" coords="498,20,728,46"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title=" " alt="" coords="495,70,730,95"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="512,119,713,144"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="521,168,704,194"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a1ec1f028e8473ecd7fe61e238eb38a01" title=" " alt="" coords="515,218,710,256"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a462bf3ee0176fd621e4dc96c381bcffe" title=" " alt="" coords="515,280,710,319"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#ab122639d09aca2dc270b73d5908dd021" title=" " alt="" coords="514,343,712,382"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#af1577fc288ddb6077df5a2fb2f8913b6" title=" " alt="" coords="502,406,724,431"/>
+<area shape="rect" id="node12" href="$class_qt_pass_settings.html#a3c0463005c07a4dc0384bf8e63696aa4" title=" " alt="" coords="501,455,724,480"/>
+<area shape="rect" id="node13" href="$class_qt_pass_settings.html#a9da7174babd2f5cc433505f0fec82efc" title=" " alt="" coords="514,504,712,543"/>
+<area shape="rect" id="node14" href="$class_qt_pass_settings.html#a480521dcd37fa646b4ce7ac7e2227ecd" title=" " alt="" coords="524,567,701,592"/>
+<area shape="rect" id="node15" href="$class_qt_pass_settings.html#ab598f3802e2f0bf9d859efe78ca979c7" title=" " alt="" coords="521,616,704,642"/>
+<area shape="rect" id="node16" href="$class_qt_pass_settings.html#a53407b47aac8250b8e0c4cea046883e1" title=" " alt="" coords="523,666,703,704"/>
+<area shape="rect" id="node17" href="$class_qt_pass_settings.html#afa8d62b0dfd9538f7801a56710b33694" title=" " alt="" coords="515,728,710,754"/>
+<area shape="rect" id="node18" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title=" " alt="" coords="526,778,699,816"/>
+<area shape="rect" id="node19" href="$class_qt_pass_settings.html#a58728db227ada76454d01992bfef64c8" title=" " alt="" coords="523,840,703,866"/>
+<area shape="rect" id="node20" href="$class_qt_pass_settings.html#ab175512f2db3230fe60396ed0d1e9c14" title=" " alt="" coords="519,890,707,915"/>
+<area shape="rect" id="node21" href="$class_qt_pass_settings.html#a6a6632898878713e659edf0c27b6e50a" title=" " alt="" coords="507,939,718,964"/>
+<area shape="rect" id="node22" href="$class_qt_pass_settings.html#a4fda53ae05c53b62b216f304be336341" title=" " alt="" coords="504,988,721,1014"/>
+<area shape="rect" id="node23" href="$class_qt_pass_settings.html#ab5b58e57b575de35baaf5701c3db4838" title=" " alt="" coords="510,1038,715,1063"/>
+<area shape="rect" id="node24" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title=" " alt="" coords="525,1087,700,1126"/>
+<area shape="rect" id="node25" href="$class_qt_pass_settings.html#afae88e1bac8875b10de43f0786314761" title=" " alt="" coords="505,1150,721,1175"/>
+<area shape="rect" id="node26" href="$class_qt_pass_settings.html#a269b2828b270d84731e04e80cd7075c0" title=" " alt="" coords="508,1199,717,1224"/>
+<area shape="rect" id="node27" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title=" " alt="" coords="503,1248,722,1274"/>
+<area shape="rect" id="node28" href="$class_qt_pass_settings.html#a1e65645c63846fcf2d51897e76e6d0c0" title=" " alt="" coords="249,1283,433,1322"/>
+<area shape="rect" id="node29" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title=" " alt="" coords="236,1346,446,1371"/>
+<area shape="rect" id="node30" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title=" " alt="" coords="236,1395,446,1434"/>
+<area shape="rect" id="node31" href="$class_qt_pass_settings.html#a2fd748b9e34c57aac277e8f0556a532f" title=" " alt="" coords="256,1458,427,1483"/>
+<area shape="rect" id="node32" href="$class_qt_pass_settings.html#a22b0d66945cdf8db3a6003e47b23bac2" title=" " alt="" coords="253,1507,429,1532"/>
+<area shape="rect" id="node33" href="$class_qt_pass_settings.html#a67e0ba5d6606e73b979daa774ccc1f72" title=" " alt="" coords="244,1556,438,1582"/>
+<area shape="rect" id="node34" href="$class_qt_pass_settings.html#aaffd9393d60a4a10b1f8da9350d44bd4" title=" " alt="" coords="235,1606,447,1631"/>
+<area shape="rect" id="node35" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title=" " alt="" coords="237,1655,445,1680"/>
+<area shape="rect" id="node36" href="$class_qt_pass_settings.html#a0f638e3bc3530579040d6fa8738f8fa3" title=" " alt="" coords="238,1704,444,1730"/>
+<area shape="rect" id="node37" href="$class_qt_pass_settings.html#a106e2f75cc1dda481bdf253f640a9283" title=" " alt="" coords="237,1754,445,1779"/>
+<area shape="rect" id="node38" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title=" " alt="" coords="238,1803,444,1828"/>
+<area shape="rect" id="node39" href="$class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b" title=" " alt="" coords="250,1852,432,1891"/>
+<area shape="rect" id="node40" href="$class_config_dialog.html#ada30e87a17be897a8fc59c53efeee7fa" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="245,1915,437,1940"/>
+<area shape="rect" id="node41" href="$class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow." alt="" coords="250,1964,432,1990"/>
+<area shape="rect" id="node42" href="$class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow." alt="" coords="250,2014,432,2052"/>
+<area shape="rect" id="node43" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git." alt="" coords="269,2076,413,2102"/>
+<area shape="rect" id="node44" href="$class_config_dialog.html#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin." alt="" coords="267,2126,415,2151"/>
+<area shape="rect" id="node45" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)...." alt="" coords="257,2175,425,2200"/>
+<area shape="rect" id="node46" href="$class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9" title="ConfigDialog::useOtp set preference for using otp plugin." alt="" coords="248,2224,434,2250"/>
+<area shape="rect" id="node47" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow." alt="" coords="250,2274,432,2299"/>
+<area shape="rect" id="node48" href="$class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates." alt="" coords="251,2323,431,2348"/>
+<area shape="rect" id="node49" href="$class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="252,2372,430,2398"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="778,939,968,964"/>
 </map>

@@ -1,12 +1,14 @@
 <map id="StoreModel::dropMimeData" name="StoreModel::dropMimeData">
-<area shape="rect" id="node2" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData" alt="" coords="235,10,440,37"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title="QtPassSettings::getPass" alt="" coords="252,61,423,87"/>
-<area shape="rect" id="node10" href="$class_pass.html#ab9dde6644865bd583dc09a52d17ffb49" title="Pass::Move" alt="" coords="291,111,383,138"/>
-<area shape="rect" id="node11" href="$class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49" title="Pass::Copy" alt="" coords="292,162,383,189"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title="QtPassSettings::isUsePass" alt="" coords="753,10,939,37"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title="QtPassSettings::getRealPass" alt="" coords="495,35,692,62"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title="QtPassSettings::getImitatePass" alt="" coords="488,86,699,113"/>
-<area shape="rect" id="node8" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title="Pass::init" alt="" coords="555,137,632,163"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="993,61,1184,87"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title="QtPassSettings::getGpgHome" alt="" coords="747,86,945,113"/>
+<area shape="rect" id="node1" title="StoreModel::dropMimeData." alt="" coords="5,107,190,132"/>
+<area shape="rect" id="node2" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData." alt="" coords="238,5,446,31"/>
+<area shape="rect" id="node3" href="$class_store_model.html#ae1cc4a6bda22ddf67e59f01642dd2ed3" title="StoreModel::data don&#39;t show the .gpg at the end of a file." alt="" coords="537,7,660,32"/>
+<area shape="rect" id="node4" href="$class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49" title=" " alt="" coords="297,107,386,132"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a987e913eac7cd497e2fca27426494a64" title=" " alt="" coords="257,156,426,181"/>
+<area shape="rect" id="node12" href="$class_pass.html#ab9dde6644865bd583dc09a52d17ffb49" title=" " alt="" coords="296,205,387,231"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#a2d6c10abe565eaadb5a222501adfe31f" title=" " alt="" coords="494,81,703,107"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#aaaeff5fa2e3a6b1f815b9a8247339b3a" title=" " alt="" coords="500,131,696,156"/>
+<area shape="rect" id="node8" href="$class_pass.html#a012c47a55b3cc3467ad0f013716f623a" title=" " alt="" coords="560,180,636,205"/>
+<area shape="rect" id="node11" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="759,231,942,256"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#ae3f04477e57019e329ed9944806ec1da" title=" " alt="" coords="751,181,951,207"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="999,207,1188,232"/>
 </map>

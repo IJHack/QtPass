@@ -1,9 +1,5 @@
 <map id="Util::getDir" name="Util::getDir">
-<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file. " alt="" coords="139,49,316,90"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="MainWindow::restoreWindow" alt="" coords="365,5,557,32"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="364,111,559,137"/>
-<area shape="rect" id="node7" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers() " alt="" coords="144,165,311,192"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="607,31,697,57"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="745,31,925,57"/>
-<area shape="rect" id="node8" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard. " alt="" coords="390,165,533,192"/>
+<area shape="rect" id="node1" title="Util::getDir get selectd folder path." alt="" coords="474,12,558,37"/>
+<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="247,5,426,44"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,12,199,37"/>
 </map>

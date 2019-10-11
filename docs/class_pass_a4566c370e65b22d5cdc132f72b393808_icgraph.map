@@ -1,4 +1,4 @@
 <map id="Pass::getRecipientString" name="Pass::getRecipientString">
-<area shape="rect" id="node2" href="$class_pass.html#a8dfa731be7ac962f9f6a5cf8f29097ec" title="Pass::~Pass" alt="" coords="258,5,357,32"/>
-<area shape="rect" id="node3" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor. " alt="" coords="220,56,395,83"/>
+<area shape="rect" id="node1" title="Pass::getRecipientString formated string for use with GPG." alt="" coords="227,5,395,31"/>
+<area shape="rect" id="node2" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,5,179,31"/>
 </map>

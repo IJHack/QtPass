@@ -1,9 +1,10 @@
 <map id="MainWindow::passOtpHandler" name="MainWindow::passOtpHandler">
-<area shape="rect" id="node2" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard. " alt="" coords="258,67,457,93"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title="QtPassSettings::isUseAutoclear\lPanel" alt="" coords="252,139,463,181"/>
-<area shape="rect" id="node8" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements. " alt="" coords="262,205,453,246"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title="QtPassSettings::isUseSelection" alt="" coords="519,5,729,32"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar. " alt="" coords="511,56,737,83"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title="QtPassSettings::isUseAutoclear" alt="" coords="519,107,729,133"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title="QtPassSettings::getInstance" alt="" coords="785,107,976,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,144,207,169"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="262,67,458,92"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a08da66be339de2cfe0780de61b2b7b28" title=" " alt="" coords="255,137,465,176"/>
+<area shape="rect" id="node8" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="264,200,455,239"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ae105a118fa69c7c5bdf506355d20ffae" title=" " alt="" coords="522,5,732,31"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#afc90db0b809b9759a66f3a667184a7f2" title=" " alt="" coords="523,55,732,80"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="513,104,741,129"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="789,55,979,80"/>
 </map>

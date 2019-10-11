@@ -1,3 +1,4 @@
 <map id="Util::findBinaryInPath" name="Util::findBinaryInPath">
-<area shape="rect" id="node2" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin..." alt="" coords="200,5,379,32"/>
+<area shape="rect" id="node1" title="Util::findBinaryInPath search for executables." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="node2" href="$class_executor.html#a65a32a439c0a531e4553cab015061f2f" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="199,5,378,31"/>
 </map>

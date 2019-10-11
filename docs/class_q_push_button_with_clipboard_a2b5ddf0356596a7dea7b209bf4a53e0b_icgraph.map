@@ -1,5 +1,4 @@
 <map id="QPushButtonWithClipboard::clicked" name="QPushButtonWithClipboard::clicked">
-<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="236,5,431,32"/>
-<area shape="rect" id="node3" href="$class_q_push_button_with_clipboard.html#a942ae28fda3c95f39a01a912ba8733e7" title="QPushButtonWithClipboard::QPushButtonWithClipboard basic constructor. " alt="" coords="238,57,429,98"/>
-<area shape="rect" id="node4" href="$class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8" title="QPushButtonWithClipboard::setTextToCopy sets text from associated text field. " alt="" coords="242,122,425,163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="245,5,430,44"/>
+<area shape="rect" id="node2" href="$class_q_push_button_with_clipboard.html#a942ae28fda3c95f39a01a912ba8733e7" title="QPushButtonWithClipboard::QPushButtonWithClipboard basic constructor." alt="" coords="5,5,197,44"/>
 </map>

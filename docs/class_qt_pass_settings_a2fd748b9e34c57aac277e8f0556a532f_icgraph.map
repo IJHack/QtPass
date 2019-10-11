@@ -1,15 +1,10 @@
 <map id="QtPassSettings::isUseGit" name="QtPassSettings::isUseGit">
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen. " alt="" coords="243,5,423,32"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper. " alt="" coords="260,56,407,83"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;. " alt="" coords="259,107,408,133"/>
-<area shape="rect" id="node6" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository. " alt="" coords="274,157,393,184"/>
-<area shape="rect" id="node7" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title="ImitatePass::Move" alt="" coords="267,208,399,235"/>
-<area shape="rect" id="node8" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title="ImitatePass::Copy" alt="" coords="268,259,399,285"/>
-<area shape="rect" id="node9" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push. " alt="" coords="259,309,408,336"/>
-<area shape="rect" id="node13" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape? " alt="" coords="236,360,431,387"/>
-<area shape="rect" id="node14" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements. " alt="" coords="227,411,440,437"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#af4d70979dc11ccdee6cec699fb20d942" title="ImitatePass::~ImitatePass" alt="" coords="489,157,668,184"/>
-<area shape="rect" id="node10" href="$class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0" title="MainWindow::changeEvent sets focus to the search box. " alt="" coords="488,309,669,336"/>
-<area shape="rect" id="node11" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible. " alt="" coords="533,385,624,412"/>
-<area shape="rect" id="node12" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window. " alt="" coords="717,385,897,412"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,153,406,179"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="31,55,161,80"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper." alt="" coords="23,104,169,129"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository." alt="" coords="38,153,154,179"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title=" " alt="" coords="31,203,162,228"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="21,252,171,277"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="22,301,170,327"/>
 </map>

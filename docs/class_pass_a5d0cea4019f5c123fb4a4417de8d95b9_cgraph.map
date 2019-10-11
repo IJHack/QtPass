@@ -1,3 +1,4 @@
 <map id="Pass::Pass" name="Pass::Pass">
-<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished. ..." alt="" coords="144,5,249,32"/>
+<area shape="rect" id="node1" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="5,5,93,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="141,5,246,31"/>
 </map>
