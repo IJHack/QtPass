@@ -260,7 +260,6 @@
 - small band aid fix for password generation on windows [\#276](https://github.com/IJHack/QtPass/pull/276) ([treat1](https://github.com/treat1))
 - Final step in process mgmt refactoring [\#275](https://github.com/IJHack/QtPass/pull/275) ([tezeb](https://github.com/tezeb))
 - Fix pwgen and refactor Pass::finished [\#271](https://github.com/IJHack/QtPass/pull/271) ([tezeb](https://github.com/tezeb))
-- Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
 - \#239 reencrypting after a drag and drop action [\#261](https://github.com/IJHack/QtPass/pull/261) ([YoshiMan](https://github.com/YoshiMan))
 - this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
@@ -276,7 +275,6 @@
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
-- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
@@ -303,6 +301,7 @@
 
 **Merged pull requests:**
 
+- Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
@@ -389,6 +388,7 @@
 
 **Implemented enhancements:**
 
+- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 - qtpass on windows, space in front of URL and Username [\#182](https://github.com/IJHack/QtPass/issues/182)
 
 **Fixed bugs:**

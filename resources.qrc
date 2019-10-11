@@ -23,6 +23,7 @@
         <file>localization/localization_en_US.qm</file>
         <file>localization/localization_pt_PT.qm</file>
         <file>localization/localization_it_IT.qm</file>
+        <file>localization/localization_sq_AL.qm</file>
     </qresource>
     <qresource prefix="/icons">
         <file alias="document-new.svg">icons/document-new.svg</file>
