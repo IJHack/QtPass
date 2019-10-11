@@ -33,7 +33,9 @@
     <meta property="og:title" content="QtPass GUI for pass, the standard UNIX password manager">
     <meta property="og:site_name" content="QtPass">
     <meta property="og:url" content="https://qtpass.org/">
-    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
+    <meta property="og:image" content="https://qtpass.org/images/og.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
     <meta property="og:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="product">
@@ -41,7 +43,7 @@
     <meta name="twitter:title" content="QtPass GUI for pass, the standard UNIX password manager">
     <meta name="twitter:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
     <meta name="twitter:url" content="https://qtpass.org/">
-    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png">
+    <meta name="twitter:image" content="https://qtpass.org/images/og.png">
     <meta name="twitter:image:src" content="https://qtpass.org/images/icon.svg">
     <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
 <script type="application/ld+json">
@@ -98,7 +100,23 @@
     </header>
     <section>
 
-        <h2><a id="insecure-generation" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Insecure Password Generation prior to 1.2.1</h2>
+        <h2><a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>GUI for pass, the standard UNIX password manager</h2>
+
+        <p>
+            QtPass is part of the <a href="https://www.passwordstore.org">pass</a> ecosystem. This means you are not stuck with QtPass, you can use the same password store with <a href="https://www.passwordstore.org/#other">many clients</a>.
+        </p>
+
+        <p>
+            Password management should be simple and follow Unix philosophy. With <code>pass</code>, each password lives inside of a <code>gpg</code> encrypted file whose filename is the title of the website or resource that requires the password.
+            These encrypted files may be organized into meaningful folder hierarchies, copied from computer to computer, and, in general, manipulated using standard command line file management utilities.
+        </p>
+
+        <p>
+            Contrary to many Free, Libre and OpenSource password managers, pass and by extension QtPass are not bound to one user or device. Since we are based on GnuPG we have multi-key, multi recipient encryption out of the box.
+            The use of external encryption devices like OpenPGP or x509/CMS based smartcards or USB tokens and per-folder ACL makes it easy to grant or take away privileges from users.
+        </p>
+
+        <h2><a id="insecure-generation" class="anchor" href="#insecure-generation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Insecure Password Generation prior to 1.2.1</h2>
 
         <p>
             All passwords generated with QtPass' built-in password generator prior to 1.2.1 are possibly predictable and enumerable by hackers.<br>
@@ -114,13 +132,8 @@
         </p>
 
         <p>
-            We advice to <a href="/downloads">update to 1.2.1</a> as soon as possible and change any password you may have generated with the QtPass' password generator.
-	</p>
-
-	<p>
-	    The current master branch has a proposed fix.<br>
-            As soon as a new release is available, we'll update the information on this page.
-        </p>
+            We advice to <a href="/downloads">update to 1.2.1 or alter</a> as soon as possible and change any password you may have generated with the QtPass' password generator.
+    	</p>
 
         <h2><a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
@@ -198,7 +211,6 @@ brew link --overwrite --force qt5
 xcode-select --install
 qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
 
-        <p>Currently seems to only work with MacGPG2</p>
         <h2><a id="security-considerations" class="anchor" href="#security-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Security considerations</h2>
 
         <p>Using this program will not magically keep your passwords secure against

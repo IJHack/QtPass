@@ -27,7 +27,7 @@ header ul a strong{font-size:14px;display:block;color:#222;}
 section{width:500px;float:right;padding-bottom:180px;}
 small{font-size:11px;}
 hr{border:0;background:#e5e5e5;height:1px;margin:0 0 20px;}
-footer{width:inherit;float:left;position:fixed;bottom:50px;}
+footer{float:left;position:fixed;bottom:50px;}
 .compatible{width:auto;height:120px;margin-right:10px;}
 @media print, screen and (max-width:960px){div.wrapper{width:auto;margin:0;}
 header, section, footer{float:none;position:static;width:auto;}
