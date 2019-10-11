@@ -87,7 +87,7 @@ More information: http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes
 ### Where can I ask for help?
 
 * Create an [issue](https://github.com/IJHack/qtpass/) issues on github.
-* Send an email to [help@qtpass.org](help@qtpass.org)
+* Send an email to [help@qtpass.org](mailto:help@qtpass.org)
 
 ### Can I import from KeePass, LastPass or X?
 
