@@ -441,7 +441,7 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -754,7 +754,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt! </translation>
+        <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt!</translation>
     </message>
 </context>
 <context>
@@ -812,7 +812,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Verbindung zu WebDAV fehlgeschlagen:</translation>
+        <translation>Verbindung zu WebDAV fehlgeschlagen:
+</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
@@ -825,12 +826,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Unerwarteter Abbruch durch fusedav</translation>
+        <translation>Unerwarteter Abbruch durch fusedav
+</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:</translation>
+        <translation>fusedav konnte nicht gestartet werden, WebDav Verbindung fehlgeschlagen:
+</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>

@@ -484,7 +484,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Está seguro que quiere borrar %1%2?</translation>
+        <translation>Está seguro que quiere borrar %1%2</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -777,7 +777,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -789,7 +789,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>No se pudo conectar WebDAV:</translation>
+        <translation>No se pudo conectar WebDAV:
+</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
@@ -802,12 +803,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav se ha cerrado inesperadamente</translation>
+        <translation>fusedav se ha cerrado inesperadamente
+</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Error al iniciar fusedav para conectar WebDAV:</translation>
+        <translation>Error al iniciar fusedav para conectar WebDAV:
+</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>

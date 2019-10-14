@@ -810,7 +810,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation>GAD</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

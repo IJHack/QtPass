@@ -12,6 +12,7 @@ QtPass
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/context:cpp)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/alerts/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_shield)
+[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -59,7 +60,7 @@ Windows
 `choco install qtpass`
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
-
+[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 ### From Source
 
 **Dependencies**
@@ -157,5 +158,3 @@ View official GNU site <http://www.gnu.org/licenses/gpl.html>.
 [![OSI](http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png)](https://opensource.org/licenses/GPL-3.0)
 
 [View the Open Source Initiative site.](https://opensource.org/licenses/GPL-3.0)
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_large)

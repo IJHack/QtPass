@@ -869,7 +869,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

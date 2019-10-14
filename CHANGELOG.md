@@ -89,6 +89,7 @@
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
+- Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
 - MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
@@ -339,7 +340,6 @@
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
 - Lookup validity field to check if keys are valid [\#201](https://github.com/IJHack/QtPass/pull/201) ([thotypous](https://github.com/thotypous))
 - Fix spelling error [\#200](https://github.com/IJHack/QtPass/pull/200) ([innir](https://github.com/innir))
-- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([da2x](https://github.com/da2x))
 
 ## [v1.1.4](https://github.com/IJHack/QtPass/tree/v1.1.4) (2016-09-26)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.3...v1.1.4)
@@ -397,13 +397,13 @@
 
 **Closed issues:**
 
-- Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
 - gpg: decryption failed: No secret key [\#179](https://github.com/IJHack/QtPass/issues/179)
 - "gpg-agent: command get\_passphrase failed: No such file or directory" [\#156](https://github.com/IJHack/QtPass/issues/156)
 
 **Merged pull requests:**
 
 - add Appdata file and update desktop file [\#178](https://github.com/IJHack/QtPass/pull/178) ([daveol](https://github.com/daveol))
+- HTTPS everywhere [\#176](https://github.com/IJHack/QtPass/pull/176) ([da2x](https://github.com/da2x))
 - Fix build issues with MSVC2015 on Windows [\#175](https://github.com/IJHack/QtPass/pull/175) ([msvi](https://github.com/msvi))
 
 ## [v1.1.1](https://github.com/IJHack/QtPass/tree/v1.1.1) (2016-04-04)

@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Autoclear after:</source>
-        <translation>清除剪贴板</translation>
+        <translation>清除剪贴板:</translation>
     </message>
     <message>
         <source>Seconds</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation>包含特殊符号</translation>
+        <translation>包含特殊符号 </translation>
     </message>
     <message>
         <source>Generate easy to memorize but less secure passwords</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）</translation>
+        <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -285,7 +285,7 @@ email</source>
     </message>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>文件夹 %1 不是一个密码库或未初始化</translation>
+        <translation>文件夹 %1 不是一个密码库或未初始化.</translation>
     </message>
     <message>
         <source>Use primary selection</source>
@@ -344,7 +344,7 @@ email</source>
     </message>
     <message>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>无法读取加密密钥，.gpg-id 文件丢失或无效</translation>
+        <translation>无法读取加密密钥，.gpg-id 文件丢失或无效.</translation>
     </message>
     <message>
         <source>Cannot update</source>
@@ -352,7 +352,7 @@ email</source>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>.gpg-id 无法写入</translation>
+        <translation>.gpg-id 无法写入.</translation>
     </message>
     <message>
         <source>Check selected users!</source>
@@ -369,7 +369,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <source>Updating password-store</source>
-        <translation>正在更新密码库...</translation>
+        <translation>正在更新密码库</translation>
     </message>
 </context>
 <context>
@@ -813,7 +813,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation>从左到右</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

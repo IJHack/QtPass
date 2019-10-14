@@ -821,7 +821,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Не удалось подключить WebDAV:</translation>
+        <translation>Не удалось подключить WebDAV:
+</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
@@ -840,7 +841,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Не удалось запустить fusedav для подключения к WebDAV:</translation>
+        <translation>Не удалось запустить fusedav для подключения к WebDAV:
+</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>

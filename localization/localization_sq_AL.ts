@@ -673,7 +673,8 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Kjo është për të mbajtur ndërfaqen nga e majta në të djathtë.</translatorcomment>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

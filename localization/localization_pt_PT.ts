@@ -789,7 +789,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Cumprimento</translation>
+        <translation>Cumprimento:</translation>
     </message>
 </context>
 <context>
@@ -808,7 +808,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>A ligação a WebDAV falhou:</translation>
+        <translation>A ligação a WebDAV falhou:
+</translation>
     </message>
     <message>
         <source>QtPass WebDAV password</source>
@@ -821,12 +822,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav fechou inesperadamente</translation>
+        <translation>fusedav fechou inesperadamente
+</translation>
     </message>
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
+        <translation>A inicialização do fusedav, para ligar a WebDAV falhou:
+</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -880,27 +883,27 @@ p, li { white-space: pre-wrap; }
     <name>TrayIcon</name>
     <message>
         <source>&amp;Show</source>
-        <translation>Mostrar</translation>
+        <translation>&amp;Mostrar</translation>
     </message>
     <message>
         <source>&amp;Hide</source>
-        <translation>Ocultar</translation>
+        <translation>&amp;Ocultar</translation>
     </message>
     <message>
         <source>Mi&amp;nimize</source>
-        <translation>Minimizar</translation>
+        <translation>Mi&amp;nimizar</translation>
     </message>
     <message>
         <source>Ma&amp;ximize</source>
-        <translation>Maximizar</translation>
+        <translation>Ma&amp;ximizar</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation>Restaurar</translation>
+        <translation>&amp;Restaurar</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>Sair</translation>
+        <translation>S&amp;air</translation>
     </message>
 </context>
 <context>
