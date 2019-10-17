@@ -41,7 +41,9 @@ void Util::initialiseEnvironment() {
       path += ";C:\\Program Files\\GnuPG\bin";
     _env.insert("PATH", path);
 #endif
+#ifdef QT_DEBUG
     dbg() << _env.value("PATH");
+#endif
     _envInitialised = true;
   }
 }
