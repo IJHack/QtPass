@@ -190,7 +190,7 @@ email</translation>
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation>Sonderzeichen zulassen</translation>
+        <translation>Sonderzeichen zulassen </translation>
     </message>
     <message>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
@@ -662,8 +662,7 @@ Expire-Date: 0
     <message>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>
-Neues Passwort-Datei:
+        <translation>Neues Passwort-Datei:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
