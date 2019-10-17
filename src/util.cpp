@@ -24,7 +24,6 @@ void Util::initialiseEnvironment() {
     _env = QProcessEnvironment::systemEnvironment();
 #ifdef __APPLE__
     QString path = _env.value("PATH");
-
     if (!path.contains("/usr/local/MacGPG2/bin") &&
         QFile("/usr/local/MacGPG2/bin").exists())
       path += ":/usr/local/MacGPG2/bin";
@@ -32,6 +31,17 @@ void Util::initialiseEnvironment() {
       path += ":/usr/local/bin";
     _env.insert("PATH", path);
 #endif
+#ifdef Q_OS_WIN
+    QString path = _env.value("PATH");
+    if (!path.contains("C:\\Program Files\\WinGPG\\x86") &&
+        QFile("C:\\Program Files\\WinGPG\\x86").exists())
+      path += ";C:\\Program Files\\WinGPG\\x86";
+    if (!path.contains("C:\\Program Files\\GnuPG\\bin") &&
+        QFile("C:\\Program Files\\GnuPG\\bin").exists())
+      path += ";C:\\Program Files\\GnuPG\bin";
+    _env.insert("PATH", path);
+#endif
+    dbg() << _env.value("PATH");
     _envInitialised = true;
   }
 }

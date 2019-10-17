@@ -578,11 +578,11 @@ bool ConfigDialog::isPassOtpAvailable() {
  * @todo make this thing more reliable.
  */
 void ConfigDialog::wizard() {
-  // mainWindow->checkConfig();
+  Util::checkConfig();
+  on_autodetectButton_clicked();
   bool clean = false;
 
   QString gpg = ui->gpgPath->text();
-  // QString gpg = mainWindow->getGpgExecutable();
   if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
         tr("GnuPG not found"),
