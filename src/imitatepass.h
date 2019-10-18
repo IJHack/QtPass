@@ -52,10 +52,10 @@ public:
   virtual void GitPush() Q_DECL_OVERRIDE;
   virtual void Show(QString file) Q_DECL_OVERRIDE;
   virtual void OtpGenerate(QString file) Q_DECL_OVERRIDE;
-  virtual void Insert(QString file, QString value,
+  virtual void Insert(QString file, QString newValue,
                       bool overwrite = false) Q_DECL_OVERRIDE;
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
-  virtual void Init(QString path, const QList<UserInfo> &list) Q_DECL_OVERRIDE;
+  virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
 
   void reencryptPath(const QString &dir);
 signals:

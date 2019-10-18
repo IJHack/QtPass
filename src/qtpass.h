@@ -54,7 +54,7 @@ private slots:
   void onKeyGenerationComplete(const QString &p_output,
                                const QString &p_errout);
 
-  void showInTextBrowser(QString toShow, QString prefix = QString(),
+  void showInTextBrowser(QString output, QString prefix = QString(),
                          QString postfix = QString());
 };
 
