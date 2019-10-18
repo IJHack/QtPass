@@ -527,7 +527,7 @@ void ConfigDialog::on_deleteButton_clicked() {
   foreach (item, itemList)
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
-  QList<int> rows = selectedRows.toList();
+  QList<int> rows = selectedRows.values();
   std::sort(rows.begin(), rows.end());
   // now actually do the removing:
   foreach (int row, rows)
