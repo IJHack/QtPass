@@ -7,6 +7,7 @@
 **Fixed bugs:**
 
 - Will not run on Windows 10 1903 b18362.418 [\#486](https://github.com/IJHack/QtPass/issues/486)
+- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 
 **Closed issues:**
 
