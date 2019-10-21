@@ -516,8 +516,10 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
 void MainWindow::onTimeoutSearch() {
   QString query = ui->lineEdit->text();
 
-  if (query.isEmpty())
+  if (query.isEmpty()) {
     ui->treeView->collapseAll();
+    deselect();
+  }
 
   query.replace(QRegExp(" "), ".*");
   QRegExp regExp(query, Qt::CaseInsensitive);
