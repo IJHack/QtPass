@@ -7,16 +7,21 @@
 **Fixed bugs:**
 
 - Will not run on Windows 10 1903 b18362.418 [\#486](https://github.com/IJHack/QtPass/issues/486)
-- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 
 **Closed issues:**
 
 - How to let QtPass use the real "pass" on windows [\#458](https://github.com/IJHack/QtPass/issues/458)
 - Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
+- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
 - UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
+
+**Merged pull requests:**
+
+- Don't use a deprecated method [\#491](https://github.com/IJHack/QtPass/pull/491) ([amarsman](https://github.com/amarsman))
+- Issue \#402: 'deselect\(\)' on clearing filter  [\#490](https://github.com/IJHack/QtPass/pull/490) ([petr-nehez](https://github.com/petr-nehez))
 
 ## [v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2) (2019-10-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
@@ -70,6 +75,7 @@
 - Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
+- Add support for passwords and directories renaming as requested in \#463 [\#469](https://github.com/IJHack/QtPass/pull/469) ([Noettore](https://github.com/Noettore))
 - Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
 
 ## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
@@ -111,7 +117,6 @@
 
 **Merged pull requests:**
 
-- Add support for passwords and directories renaming as requested in \#463 [\#469](https://github.com/IJHack/QtPass/pull/469) ([Noettore](https://github.com/Noettore))
 - Use key fingerprint as ID instead of “long” ID. [\#452](https://github.com/IJHack/QtPass/pull/452) ([Natureshadow](https://github.com/Natureshadow))
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
