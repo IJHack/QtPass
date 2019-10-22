@@ -12,7 +12,6 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v1
     - name: Install Linux packages
-      if: matrix.platform == 'ubuntu-latest'
       run: sudo apt update && sudo apt install -y --no-install-recommends libgl1-mesa-dev
     - name: qmake
       run: qmake
