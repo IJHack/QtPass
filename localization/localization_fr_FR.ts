@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Utiliser pwgen</translation>
+        <translation type="vanished">Utiliser pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Utiliser git</translation>
+        <translation type="vanished">Utiliser git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -133,10 +133,6 @@
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -169,7 +165,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Utiliser Git/GPG en &amp;natif</translation>
+        <translation type="vanished">Utiliser Git/GPG en &amp;natif</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -181,19 +177,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -229,7 +225,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Magasin de mots de passe actuel</translation>
+        <translation type="vanished">Magasin de mots de passe actuel</translation>
     </message>
     <message>
         <source>Template</source>
@@ -237,7 +233,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Les modèles ajoutent des champs supplémentaires dans la boîte de dialogue de génération des mots de passe et dans le panneau de visualisation</translation>
+        <translation type="vanished">Les modèles ajoutent des champs supplémentaires dans la boîte de dialogue de génération des mots de passe et dans le panneau de visualisation</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -255,7 +251,7 @@
         <source>login
 url
 email</source>
-        <translation>identifiant
+        <translation type="vanished">identifiant
 url
 email</translation>
     </message>
@@ -306,10 +302,6 @@ email</translation>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;as pas encore été initialisé.</translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -717,8 +709,8 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Êtes-vous certain de vouloir supprimer %1%2?</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Êtes-vous sûr de vouloir supprimer %1%2?</translation>
     </message>
     <message>
         <source>Delete password?</source>

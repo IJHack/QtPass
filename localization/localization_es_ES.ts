@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>…</translation>
+        <translation type="vanished">…</translation>
     </message>
     <message>
         <source>Native</source>
@@ -53,7 +53,7 @@
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Usar pwgen</translation>
+        <translation type="vanished">Usar pwgen</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Usar git</translation>
+        <translation type="vanished">Usar git</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -105,7 +105,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Almacen actual de contraseñas</translation>
+        <translation type="vanished">Almacen actual de contraseñas</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -232,14 +232,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>System:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,10 +241,6 @@
     </message>
     <message>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nati&amp;ve git/gpg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -272,10 +260,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use template</source>
         <translation type="unfinished"></translation>
     </message>
@@ -285,12 +269,6 @@
     </message>
     <message>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>login
-url
-email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -533,8 +511,8 @@ Expire-Date: 0
         <translation type="vanished">Portapapeles vacío</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Está seguro que quiere borrar %1%2</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Está seguro que quiere borrar %1%2?</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -602,10 +580,6 @@ Expire-Date: 0
     <message>
         <source>QProcess::UnknownError</source>
         <translation type="vanished">QProcess::Error desconocido</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Está seguro que quiere borrar %1? {1%2??}</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>

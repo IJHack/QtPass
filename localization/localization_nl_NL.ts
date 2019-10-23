@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Gebruik pwgen</translation>
+        <translation type="vanished">Gebruik pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Gebruik git</translation>
+        <translation type="vanished">Gebruik git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation>Gebruik pass OTP uitbreiding</translation>
+        <translation type="vanished">Gebruik pass OTP uitbreiding</translation>
     </message>
     <message>
         <source>System:</source>
@@ -169,7 +169,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>&amp;Systeemeigen git/gpg</translation>
+        <translation type="vanished">&amp;Systeemeigen git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -181,19 +181,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Huidige password-store</translation>
+        <translation type="vanished">Huidige password-store</translation>
     </message>
     <message>
         <source>Template</source>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Templates voegen velden toe aan de wachtwoord aanmaak- bewerk- en toon-schermen.</translation>
+        <translation type="vanished">Templates voegen velden toe aan de wachtwoord aanmaak- bewerk- en toon-schermen.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -255,7 +255,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -309,7 +309,7 @@ email</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation>Gebruik qrencode</translation>
+        <translation type="vanished">Gebruik qrencode</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -750,8 +750,8 @@ p, li { white-space: pre-wrap; }
         <translation> en de gehele inhoud? &lt;br&gt;&lt;strong&gt;Let op: ter zijn onverwachte bestanden gevonden, controleer deze voor verwijden.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Weet je zeker dat je %1%2 wil verwijderen</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Weet je zeker dat je %1%2 wil verwijderen?</translation>
     </message>
     <message>
         <source>Delete password?</source>

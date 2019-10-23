@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Native</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>&amp;Напрямую git/gpg</translation>
+        <translation type="vanished">&amp;Напрямую git/gpg</translation>
     </message>
     <message>
         <source>pass</source>
@@ -119,7 +119,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -129,7 +129,7 @@ email</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -141,7 +141,7 @@ email</translation>
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Использовать pwgen</translation>
+        <translation type="vanished">Использовать pwgen</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
@@ -161,7 +161,7 @@ email</translation>
     </message>
     <message>
         <source>Use git</source>
-        <translation>Использовать git</translation>
+        <translation type="vanished">Использовать git</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -193,7 +193,7 @@ email</translation>
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Текущее хранилище паролей</translation>
+        <translation type="vanished">Текущее хранилище паролей</translation>
     </message>
     <message>
         <source>Template</source>
@@ -201,7 +201,7 @@ email</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Шаблоны добавляют доп. поля в диалог генерации паролей и в поле отображения информации.</translation>
+        <translation type="vanished">Шаблоны добавляют доп. поля в диалог генерации паролей и в поле отображения информации.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -298,14 +298,6 @@ email</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -673,7 +665,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Вы в самом деле хотите удалить %1? {1%2??}</translation>
+        <translation>Вы в самом деле хотите удалить %1%2?</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
@@ -704,10 +696,6 @@ Expire-Date: 0
 (Will be placed in %1 )</source>
         <translation>Новый файл для пароля:
 (будет создан в %1 )</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Вы в самом деле хотите удалить %1%2?</translation>
     </message>
     <message>
         <source>Can not get key list</source>

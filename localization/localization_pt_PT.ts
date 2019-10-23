@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Usar pwgen</translation>
+        <translation type="vanished">Usar pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Usar git</translation>
+        <translation type="vanished">Usar git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -153,7 +153,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Nativo git/gpg</translation>
+        <translation type="vanished">Nativo git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -165,19 +165,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -209,7 +209,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Password-store atual</translation>
+        <translation type="vanished">Password-store atual</translation>
     </message>
     <message>
         <source>Template</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Templates adicionam campos extra no diálogo de criaçao e vista de passwords</translation>
+        <translation type="vanished">Templates adicionam campos extra no diálogo de criaçao e vista de passwords</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -284,25 +284,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>login
-url
-email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -664,7 +650,7 @@ p, li { white-space: pre-wrap; }
 (Vai ser colocado em %1 )</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
+        <source>Are you sure you want to delete %1%2?</source>
         <translation>De certeza que deseja remover %1%2?</translation>
     </message>
     <message>
@@ -674,10 +660,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Delete password?</source>
         <translation>Remover password?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">De certeza que deseja remover %1%2?</translation>
     </message>
     <message>
         <source> and whole content</source>

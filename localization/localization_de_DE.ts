@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Native</source>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation>Verwenden Sie die Pass-OTP-Erweiterung</translation>
+        <translation type="vanished">Verwenden Sie die Pass-OTP-Erweiterung</translation>
     </message>
     <message>
         <source>System:</source>
@@ -126,7 +126,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Selbst installieres &amp;git/gpg</translation>
+        <translation type="vanished">Selbst installieres &amp;git/gpg</translation>
     </message>
     <message>
         <source>pass</source>
@@ -148,7 +148,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -158,7 +158,7 @@ email</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -170,7 +170,7 @@ email</translation>
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>pwgen verwenden</translation>
+        <translation type="vanished">pwgen verwenden</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
@@ -190,7 +190,7 @@ email</translation>
     </message>
     <message>
         <source>Use git</source>
-        <translation>Git verwenden</translation>
+        <translation type="vanished">Git verwenden</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -230,7 +230,7 @@ email</translation>
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>aktueller Passwort Speicher</translation>
+        <translation type="vanished">aktueller Passwort Speicher</translation>
     </message>
     <message>
         <source>Template</source>
@@ -238,7 +238,7 @@ email</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Ein Template macht weitere Felder bei der Passwort Generierung und Anzeige verfügbar.</translation>
+        <translation type="vanished">Ein Template macht weitere Felder bei der Passwort Generierung und Anzeige verfügbar.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -306,7 +306,7 @@ email</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation>Qrencode verwenden</translation>
+        <translation type="vanished">Qrencode verwenden</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -565,8 +565,8 @@ Expire-Date: 0
         <translation type="vanished">Zwischenablage gelöscht</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen?</translation>
     </message>
     <message>
         <source>Open folder with file manager</source>
@@ -656,10 +656,6 @@ Expire-Date: 0
     <message>
         <source>QProcess::UnknownError</source>
         <translation type="vanished">QProcess::UnknownError</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Sind Sie sicher, dass Sie %1%2 löschen wollen? </translation>
     </message>
     <message>
         <source> and whole content</source>

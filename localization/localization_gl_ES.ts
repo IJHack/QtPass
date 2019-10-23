@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -100,10 +100,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Exclude capital letters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -124,10 +120,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use git</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Automatically add .gpg-id files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -141,14 +133,6 @@
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -180,23 +164,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>git</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>gpg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pwgen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -232,15 +200,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Current password-store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -253,12 +213,6 @@
     </message>
     <message>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>login
-url
-email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -764,7 +718,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
+        <source>Are you sure you want to delete %1%2?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

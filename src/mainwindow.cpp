@@ -651,7 +651,7 @@ void MainWindow::onDelete() {
 
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1%2")
+          tr("Are you sure you want to delete %1%2?")
               .arg(QDir::separator() + file)
               .arg(isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)

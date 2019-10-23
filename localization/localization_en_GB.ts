@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Use pwgen</translation>
+        <translation type="vanished">Use pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Use git</translation>
+        <translation type="vanished">Use git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation>Use pass otp extension</translation>
+        <translation type="vanished">Use pass otp extension</translation>
     </message>
     <message>
         <source>System:</source>
@@ -169,7 +169,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Nati&amp;ve git/gpg</translation>
+        <translation type="vanished">Nati&amp;ve git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -181,19 +181,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Current password-store</translation>
+        <translation type="vanished">Current password-store</translation>
     </message>
     <message>
         <source>Template</source>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Templates add extra fields in the password generation dialogue and in the password view.</translation>
+        <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -255,7 +255,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -306,10 +306,6 @@ email</translation>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -757,8 +753,8 @@ p, li { white-space: pre-wrap; }
         <translation> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Are you sure you want to delete %1%2</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Are you sure you want to delete %1%2?</translation>
     </message>
     <message>
         <source>Delete password?</source>
@@ -771,10 +767,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Delete folder?</source>
         <translation>Delete folder?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Are you sure you want to delete %1%2?</translation>
     </message>
     <message>
         <source> and whole content</source>

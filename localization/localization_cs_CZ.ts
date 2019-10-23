@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Použít pwgen</translation>
+        <translation type="vanished">Použít pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Použít git</translation>
+        <translation type="vanished">Použít git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>&amp;Výchozí git/gpg</translation>
+        <translation type="vanished">&amp;Výchozí git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -145,19 +145,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -193,7 +193,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Aktuální úložiště hesel</translation>
+        <translation type="vanished">Aktuální úložiště hesel</translation>
     </message>
     <message>
         <source>Template</source>
@@ -201,7 +201,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Šablony přidávají další pole v dialogu generování hesla a v náhledu hesla.</translation>
+        <translation type="vanished">Šablony přidávají další pole v dialogu generování hesla a v náhledu hesla.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -219,7 +219,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -301,14 +301,6 @@ email</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -681,7 +673,7 @@ Expire-Date: 0
 (Bude uložen do %1 )</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
+        <source>Are you sure you want to delete %1%2?</source>
         <translation>Opravdu chcete smazat %1%2?</translation>
     </message>
     <message>
@@ -695,10 +687,6 @@ Expire-Date: 0
     <message>
         <source>Delete folder?</source>
         <translation>Smazat adresář?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Opravdu chcete smazat %1? {1%2??}</translation>
     </message>
     <message>
         <source>Can not get key list</source>

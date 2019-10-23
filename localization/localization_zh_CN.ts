@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>使用 pwgen</translation>
+        <translation type="vanished">使用 pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>使用 git</translation>
+        <translation type="vanished">使用 git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -153,7 +153,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>使用原生 git/gpg（推荐） (&amp;V)</translation>
+        <translation type="vanished">使用原生 git/gpg（推荐） (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -165,19 +165,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>浏览</translation>
+        <translation type="vanished">浏览</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -213,7 +213,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>当前密码库路径</translation>
+        <translation type="vanished">当前密码库路径</translation>
     </message>
     <message>
         <source>Template</source>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）.</translation>
+        <translation type="vanished">模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -239,7 +239,7 @@
         <source>login
 url
 email</source>
-        <translation>用户名
+        <translation type="vanished">用户名
 网址
 邮箱</translation>
     </message>
@@ -305,11 +305,11 @@ email</source>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation>使用qrencode</translation>
+        <translation type="vanished">使用qrencode</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation>使用pass otp扩展</translation>
+        <translation type="vanished">使用pass otp扩展</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -684,8 +684,8 @@ Expire-Date: 0
 （将被放在 %1 )</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>确定删除 %1%2</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>确定删除 %1%2?</translation>
     </message>
     <message>
         <source>Delete password?</source>
@@ -698,10 +698,6 @@ Expire-Date: 0
     <message>
         <source>Delete folder?</source>
         <translation>删除文件夹？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">确定删除 %1%2 ？</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -771,7 +767,7 @@ Expire-Date: 0
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"> 和整个内容？&lt;br&gt;&lt;strong&gt;注意：给定文件夹中有意外文件，请在继续之前检查它们 &lt;/strong&gt;。</translation>
+        <translation> 和整个内容？&lt;br&gt;&lt;strong&gt;注意：给定文件夹中有意外文件，请在继续之前检查它们 &lt;/strong&gt;</translation>
     </message>
     <message>
         <source>Open folder with file manager</source>

@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Native</source>
@@ -53,7 +53,7 @@
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Använd pwgen</translation>
+        <translation type="vanished">Använd pwgen</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Använd git</translation>
+        <translation type="vanished">Använd git</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -117,7 +117,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Nuvarande lösenordsutrymme</translation>
+        <translation type="vanished">Nuvarande lösenordsutrymme</translation>
     </message>
     <message>
         <source>Template</source>
@@ -244,14 +244,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>System:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -264,10 +256,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -276,17 +264,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>login
-url
-email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -534,8 +512,8 @@ Expire-Date: 0
         <translation type="vanished">Urklippet rensat</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Vill du verkligen ta bort %1%2</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Vill du verkligen ta bort %1%2?</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -579,10 +557,6 @@ Expire-Date: 0
     <message>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Vill du verkligen ta bort %1? {1%2??}</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>

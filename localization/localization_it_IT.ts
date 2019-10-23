@@ -94,7 +94,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation>Usa pwgen</translation>
+        <translation type="vanished">Usa pwgen</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation>Usa git</translation>
+        <translation type="vanished">Usa git</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
@@ -138,7 +138,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation>Usa estensione pass OTP</translation>
+        <translation type="vanished">Usa estensione pass OTP</translation>
     </message>
     <message>
         <source>System:</source>
@@ -170,7 +170,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation>Git/gpg nati&amp;vi</translation>
+        <translation type="vanished">Git/gpg nati&amp;vi</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
@@ -182,19 +182,19 @@
     </message>
     <message>
         <source>git</source>
-        <translation>git</translation>
+        <translation type="vanished">git</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation>gpg</translation>
+        <translation type="vanished">gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation>pwgen</translation>
+        <translation type="vanished">pwgen</translation>
     </message>
     <message>
         <source>Pass</source>
@@ -230,7 +230,7 @@
     </message>
     <message>
         <source>Current password-store</source>
-        <translation>Archivio password corrente</translation>
+        <translation type="vanished">Archivio password corrente</translation>
     </message>
     <message>
         <source>Template</source>
@@ -238,7 +238,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>I modelli aggiungono campi extra nella generazione e nella visualizzazione password.</translation>
+        <translation type="vanished">I modelli aggiungono campi extra nella generazione e nella visualizzazione password.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -256,7 +256,7 @@
         <source>login
 url
 email</source>
-        <translation>login
+        <translation type="vanished">login
 url
 email</translation>
     </message>
@@ -315,10 +315,6 @@ email</translation>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata corretamente.</translation>
-    </message>
-    <message>
-        <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -768,8 +764,8 @@ p, li { white-space: pre-wrap; }
         <translation> e l&apos;intero contenuto? &lt;br&gt;&lt;strong&gt;Attenzione: ci sono file inattesi nella cartella selezionata, controlla prima di continuare.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete %1%2</source>
-        <translation>Sei sicuro di voler eliminare %1%2</translation>
+        <source>Are you sure you want to delete %1%2?</source>
+        <translation>Sei sicuro di voler eliminare %1%2?</translation>
     </message>
     <message>
         <source>Delete password?</source>
@@ -782,10 +778,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Delete folder?</source>
         <translation>Eliminare cartella?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete %1%2?</source>
-        <translation type="vanished">Sei sicuro di voler eliminare %1%2?</translation>
     </message>
     <message>
         <source> and whole content</source>
