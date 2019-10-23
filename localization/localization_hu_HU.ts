@@ -237,23 +237,23 @@
     </message>
     <message>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablon</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>A sablonok további mezőket adnak hozzá a jelszó előállítási párbeszédpanelhez és a jelszó nézethez.</translation>
     </message>
     <message>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablonhasználat</translation>
     </message>
     <message>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden sor megjelenítése ami egy szóval kezdődik, amit egy kettőspont követ jelszómezőben, nem csak a felsoroltakban</translation>
     </message>
     <message>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Az összes mező megjelenítése</translation>
     </message>
     <message>
         <source>login
