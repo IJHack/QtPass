@@ -5,43 +5,43 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות</translation>
     </message>
     <message>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>התנהגות הלוח:</translation>
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>השתמש בבחירה הראשית</translation>
     </message>
     <message>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>אוטומטי לאחר:</translation>
     </message>
     <message>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>שניות</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>התנהגות לוח התוכן:</translation>
     </message>
     <message>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>הסתר תוכן</translation>
     </message>
     <message>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>הסתר ססמא</translation>
     </message>
     <message>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>פאנל אוטומטי לאחר:</translation>
     </message>
     <message>
         <source>Password Generation:</source>
