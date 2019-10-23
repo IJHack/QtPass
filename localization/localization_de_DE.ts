@@ -134,7 +134,7 @@
     </message>
     <message>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktueller Pfad</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
@@ -338,49 +338,51 @@ email</translation>
     </message>
     <message>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen verwenden</translation>
     </message>
     <message>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git verwenden</translation>
     </message>
     <message>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>QRencode verwenden</translation>
     </message>
     <message>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Der pass-otp Erweiterung verwenden</translation>
     </message>
     <message>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Selbst installieres Git/GPG</translation>
     </message>
     <message>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorlagen fügen zusätzliche Felder im Dialog zur Kennwortgenerierung und in der Kennwortansicht hinzu.</translation>
     </message>
     <message>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>

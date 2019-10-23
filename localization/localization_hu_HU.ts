@@ -41,19 +41,19 @@
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Elsődleges kijelölés használata</translation>
     </message>
     <message>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus törlés:</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>A tartalompanel viselkedése:</translation>
     </message>
     <message>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus törlés panel után:</translation>
     </message>
     <message>
         <source>Password Generation:</source>
@@ -105,127 +105,171 @@
     </message>
     <message>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Nagybetűk kizárása</translation>
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Speciális szimbólumok </translation>
     </message>
     <message>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Könnyen megjegyezhető, de kevésbé biztonságos jelszavak létrehozása</translation>
     </message>
     <message>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Számok kizárása</translation>
     </message>
     <message>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
+    </message>
+    <message>
+        <source>Use git</source>
+        <translation>Git használata</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>A. GPG-ID fájlok automatikus hozzáadása</translation>
     </message>
     <message>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikusan leküldés</translation>
     </message>
     <message>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus lekérés</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiterjesztések:</translation>
+    </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation>Qrencode használata</translation>
+    </message>
+    <message>
+        <source>Use pass otp extension</source>
+        <translation>Használja a pass OTP kiterjesztést</translation>
     </message>
     <message>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rendszer:</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>TrayIcon használata</translation>
     </message>
     <message>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Kezdés minimalizálva</translation>
     </message>
     <message>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Elrejtés bezárásakor</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindig felül</translation>
     </message>
     <message>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programok</translation>
     </message>
     <message>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszótároló program kiválasztása:</translation>
+    </message>
+    <message>
+        <source>Nati&amp;ve git/gpg</source>
+        <translation>Native git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;pass használata</translation>
+    </message>
+    <message>
+        <source>git</source>
+        <translation>git</translation>
+    </message>
+    <message>
+        <source>gpg</source>
+        <translation>gpg</translation>
+    </message>
+    <message>
+        <source>pwgen</source>
+        <translation>pwgen</translation>
     </message>
     <message>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus felismerés</translation>
     </message>
     <message>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilok</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>név</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Elérési út</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hozzáadása</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Töröl</translation>
+    </message>
+    <message>
+        <source>Current password-store</source>
+        <translation>Jelenlegi jelszótároló</translation>
     </message>
     <message>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablon</translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
+        <translation>A sablonok további mezőket adnak hozzá a jelszó előállítási párbeszédpanelhez és a jelszó nézethez.</translation>
     </message>
     <message>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablonhasználat</translation>
     </message>
     <message>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden sor megjelenítése ami egy szóval kezdődik, amit egy kettőspont követ jelszómezőben, nem csak a felsoroltakban</translation>
     </message>
     <message>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Az összes mező megjelenítése</translation>
+    </message>
+    <message>
+        <source>login
+url
+email</source>
+        <translation>belépés
+url
+e-mail</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>A tálca nem érhető el</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>

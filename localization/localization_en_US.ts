@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Current path</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -337,49 +337,51 @@ email</translation>
     </message>
     <message>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Use PWGen</translation>
     </message>
     <message>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Use Git</translation>
     </message>
     <message>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Use QRencode</translation>
     </message>
     <message>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Use pass-otp extension</translation>
     </message>
     <message>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Nati&amp;ve Git/GPG</translation>
     </message>
     <message>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Templates add extra fields in the password generation dialogue, and in the password view.</translation>
     </message>
     <message>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
