@@ -159,7 +159,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Chemin actuel</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -364,7 +364,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation>Extensions&#x202f;:</translation>
+        <translation>Extensions :</translation>
     </message>
     <message>
         <source>Use qrencode</source>
@@ -377,7 +377,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https&#x202f;://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration&#x202f;: underline&#x202f;;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https ://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration : underline ;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -412,32 +412,32 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser l&apos;extension pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Git/GPG Nati&amp;ve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -446,29 +446,31 @@ email</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -578,14 +580,14 @@ Expire-Date: 0
 # first test version please comment
 #
 %echo Generating a default key
-Key-Type&#x202f;: default
-Subkey-Type&#x202f;: default
-Name-Real&#x202f;:
-Name-Comment&#x202f;: QtPass
-Name-Email&#x202f;:
-Expire-Date&#x202f;: 0
+Key-Type : default
+Subkey-Type : default
+Name-Real :
+Name-Comment : QtPass
+Name-Email :
+Expire-Date : 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot;&#x202f;:-)
+# Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</translation>
     </message>
@@ -826,7 +828,7 @@ Expire-Date&#x202f;: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer %1%2?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer %1%2 ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
@@ -921,7 +923,7 @@ Expire-Date&#x202f;: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="634"/>
         <source> and the whole content?</source>
-        <translation> et tout le contenu&#x202f;?</translation>
+        <translation> et tout le contenu ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="644"/>
@@ -1005,7 +1007,7 @@ Expire-Date&#x202f;: 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation>Ensemble de caractères&#x202f;:</translation>
+        <translation>Ensemble de caractères :</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
@@ -1130,7 +1132,7 @@ Expire-Date&#x202f;: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation>forcer écraser&#x202f;?</translation>
+        <translation>forcer écraser ?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
