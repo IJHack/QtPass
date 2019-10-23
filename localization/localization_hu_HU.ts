@@ -61,43 +61,43 @@
     </message>
     <message>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó hosszúság:</translation>
     </message>
     <message>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakterek</translation>
     </message>
     <message>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakterek használata:</translation>
     </message>
     <message>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a karakterkészletet a jelszó generálásához</translation>
     </message>
     <message>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes karakter</translation>
     </message>
     <message>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Betűrendes</translation>
     </message>
     <message>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerikus</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>pwgen használata</translation>
     </message>
     <message>
         <source>Exclude capital letters</source>
