@@ -137,103 +137,103 @@
     </message>
     <message>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus lekérés</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiterjesztések:</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Qrencode használata</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Használja a pass OTP kiterjesztést</translation>
     </message>
     <message>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rendszer:</translation>
     </message>
     <message>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>TrayIcon használata</translation>
     </message>
     <message>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Kezdés minimalizálva</translation>
     </message>
     <message>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Elrejtés bezárásakor</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindig felül</translation>
     </message>
     <message>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programok</translation>
     </message>
     <message>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszótároló program kiválasztása:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>Native git/gpg</translation>
     </message>
     <message>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;pass használata</translation>
     </message>
     <message>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation>git</translation>
     </message>
     <message>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus felismerés</translation>
     </message>
     <message>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilok</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>név</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Elérési út</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hozzáadása</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Töröl</translation>
     </message>
     <message>
         <source>Current password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelenlegi jelszótároló</translation>
     </message>
     <message>
         <source>Template</source>
