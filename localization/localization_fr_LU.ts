@@ -297,7 +297,7 @@ email</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation>Extensions&#x202f;:</translation>
+        <translation>Extensions :</translation>
     </message>
     <message>
         <source>Use qrencode</source>
@@ -309,7 +309,7 @@ email</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https&#x202f;://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration&#x202f;: underline&#x202f;;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https ://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration : underline ;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
@@ -424,14 +424,14 @@ Expire-Date: 0
 # first test version please comment
 #
 %echo Generating a default key
-Key-Type&#x202f;: default
-Subkey-Type&#x202f;: default
-Name-Real&#x202f;:
-Name-Comment&#x202f;: QtPass
-Name-Email&#x202f;:
-Expire-Date&#x202f;: 0
+Key-Type : default
+Subkey-Type : default
+Name-Real :
+Name-Comment : QtPass
+Name-Email :
+Expire-Date : 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot;&#x202f;:-)
+# Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</translation>
     </message>
@@ -718,7 +718,7 @@ Expire-Date&#x202f;: 0
     </message>
     <message>
         <source> and the whole content?</source>
-        <translation> et tout le contenu&#x202f;?</translation>
+        <translation> et tout le contenu ?</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
@@ -786,7 +786,7 @@ Expire-Date&#x202f;: 0
     </message>
     <message>
         <source>Character Set:</source>
-        <translation>Ensemble de caractères&#x202f;:</translation>
+        <translation>Ensemble de caractères :</translation>
     </message>
     <message>
         <source>All Characters</source>
@@ -889,7 +889,7 @@ Expire-Date&#x202f;: 0
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation>forcer écraser&#x202f;?</translation>
+        <translation>forcer écraser ?</translation>
     </message>
     <message>
         <source>overwrite %1 with %2?</source>
