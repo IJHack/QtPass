@@ -33,11 +33,11 @@
     </message>
     <message>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjul innhold</translation>
     </message>
     <message>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjul passord</translation>
     </message>
     <message>
         <source>Autoclear panel after:</source>
