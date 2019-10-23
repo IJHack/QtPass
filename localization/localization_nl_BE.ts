@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidig pad</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -341,19 +341,19 @@ email</translation>
     </message>
     <message>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik PWGen</translation>
     </message>
     <message>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik Git</translation>
     </message>
     <message>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik QRencode</translation>
     </message>
     <message>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik de pass-otp extensie</translation>
     </message>
     <message>
         <source>Nati&amp;ve Git/GPG</source>
