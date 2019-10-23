@@ -190,7 +190,7 @@ email</translation>
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation>Sonderzeichen zulassen</translation>
+        <translation>Sonderzeichen zulassen </translation>
     </message>
     <message>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
@@ -302,35 +302,35 @@ email</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Qrencode verwenden</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch erkennen</translation>
     </message>
     <message>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>System-tray ist nicht verfügbar</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass OTP-Erweiterung muss installiert werden</translation>
     </message>
     <message>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode muss installiert werden</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte installieren Sie GnuPG auf Ihrem System. &lt;br&gt;Installieren Sie &lt;strong&gt;Ubuntu&lt;/strong&gt; aus dem Microsoft Store, um es zu erhalten. &lt;br&gt;Wenn Sie dies bereits getan haben, stellen Sie sicher, dass Sie es einmal gestartet haben&lt;br&gt;, und klicken Sie im nächsten Dialog auf &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte installieren Sie GnuPG auf Ihrem System. &lt;br&gt;Installieren Sie &lt;strong&gt;Ubuntu&lt;/strong&gt; aus dem Microsoft Store&lt;br&gt;oder &quot;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; es von GnuPG.org</translation>
     </message>
 </context>
 <context>
@@ -662,8 +662,7 @@ Expire-Date: 0
     <message>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>
-Neues Passwort-Datei:
+        <translation>Neues Passwort-Datei:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
@@ -696,50 +695,53 @@ Neues Passwort-Datei:
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+N</translation>
     </message>
     <message>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+G</translation>
     </message>
     <message>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation>git push</translation>
     </message>
     <message>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>git pull</translation>
     </message>
     <message>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner umbenennen</translation>
     </message>
     <message>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Kennwort umbenennen</translation>
     </message>
     <message>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei umbenennen</translation>
     </message>
     <message>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner umbenennen in: </translation>
     </message>
     <message>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Datei umbenennen in: </translation>
     </message>
     <message>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass ist eine GUI für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard Unix Passwortmanager.&lt;/p&gt;
+&lt;p&gt;Bitte melden Sie alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;Probleme&lt;/a&gt;, die Sie mit dieser Software haben könnten.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Quellcode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

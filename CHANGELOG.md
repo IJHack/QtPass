@@ -12,10 +12,8 @@
 
 - How to let QtPass use the real "pass" on windows [\#458](https://github.com/IJHack/QtPass/issues/458)
 - Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
-- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
-- UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
 
 **Merged pull requests:**
@@ -169,6 +167,7 @@
 
 **Closed issues:**
 
+- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Multiple question marks while trying to delete password [\#385](https://github.com/IJHack/QtPass/issues/385)
 - No button icons and text in "menu bar" [\#383](https://github.com/IJHack/QtPass/issues/383)
 - Cannot add a new password [\#380](https://github.com/IJHack/QtPass/issues/380)
@@ -177,6 +176,7 @@
 - Entire program is huge on High DPI screen on Linux [\#369](https://github.com/IJHack/QtPass/issues/369)
 - Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
 - Chocolatey package outdated [\#366](https://github.com/IJHack/QtPass/issues/366)
+- UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
 - How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
 - "copy" icon has disappeared in v1.2.1 [\#344](https://github.com/IJHack/QtPass/issues/344)
@@ -683,6 +683,7 @@
 
 - Provide more information in user list. [\#47](https://github.com/IJHack/QtPass/pull/47) ([rdoeffinger](https://github.com/rdoeffinger))
 - Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
+- Support for editing .gpg-id via GUI with public keyring list. [\#23](https://github.com/IJHack/QtPass/pull/23) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1) (2015-05-06)
 **Fixed bugs:**
@@ -714,7 +715,6 @@
 - Add nosingleapp config. [\#27](https://github.com/IJHack/QtPass/pull/27) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add Makefile with commands to make a binary release zip file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
 - Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))
-- Support for editing .gpg-id via GUI with public keyring list. [\#23](https://github.com/IJHack/QtPass/pull/23) ([rdoeffinger](https://github.com/rdoeffinger))
 - More proper support for subdirectories. [\#22](https://github.com/IJHack/QtPass/pull/22) ([rdoeffinger](https://github.com/rdoeffinger))
 - Russian translation \(+typo fixed\) [\#20](https://github.com/IJHack/QtPass/pull/20) ([mexus](https://github.com/mexus))
 - Windows-related fixes. [\#17](https://github.com/IJHack/QtPass/pull/17) ([rdoeffinger](https://github.com/rdoeffinger))

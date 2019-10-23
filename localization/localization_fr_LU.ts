@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation>Utiliser des symbôles spéciaux</translation>
+        <translation>Utiliser des symbôles spéciaux </translation>
     </message>
     <message>
         <source>Generate easy to memorize but less secure passwords</source>
@@ -197,7 +197,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation</translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation.</translation>
     </message>
     <message>
         <source>Use template</source>
@@ -269,71 +269,71 @@ email</translation>
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser la sélection principale</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comportement du panneau de contenu :</translation>
     </message>
     <message>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez l&apos;ensemble de caractères pour la génération de mots de passe</translation>
     </message>
     <message>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les caractères</translation>
     </message>
     <message>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetic</translation>
     </message>
     <message>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumérique</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Extensions&#x202f;:</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser qrencode</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez pass otp extension</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https&#x202f;://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration&#x202f;: underline&#x202f;;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Détection automatique</translation>
     </message>
     <message>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Le plateau système n&apos;est pas disponible</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;extension pass OTP doit être installée</translation>
     </message>
     <message>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode doit être installé</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store pour l&apos;obtenir. &lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir commencé une fois et&lt;br&gt;cliquez sur &quot;Autodetect&quot; dans le dialogue suivant.</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store&lt;br&gt;ou &apos;a href&apos;&quot;https://www.gnupg.org/download/#sec-1-2&quot; &apos;download&lt;/a&gt; il from GnuPG.org</translation>
     </message>
 </context>
 <context>
@@ -424,14 +424,14 @@ Expire-Date: 0
 # first test version please comment
 #
 %echo Generating a default key
-Key-Type: default
-Subkey-Type: default
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
+Key-Type&#x202f;: default
+Subkey-Type&#x202f;: default
+Name-Real&#x202f;:
+Name-Comment&#x202f;: QtPass
+Name-Email&#x202f;:
+Expire-Date&#x202f;: 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
+# Do a commit here, so that we can later print &quot;done&quot;&#x202f;:-)
 %commit
 %echo done</translation>
     </message>
@@ -441,23 +441,23 @@ Expire-Date: 0
     </message>
     <message>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom invalide</translation>
     </message>
     <message>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom doit comporter au moins 5 caractères.</translation>
     </message>
     <message>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Courriel invalide</translation>
     </message>
     <message>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;adresse e-mail que vous avez saisie n&apos;est pas une adresse e-mail valide.</translation>
     </message>
     <message>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette opération peut prendre quelques minutes. &lt;br /&gt;Nous avons besoin de générer beaucoup d&apos;octets aléatoires. C&apos;est une bonne idée d&apos;effectuer d&apos;autres actions (taper sur le clavier, déplacer la souris, utiliser les disques) pendant la génération prime ; cela donne au générateur de nombres aléatoires une meilleure chance de gagner suffisamment d&apos;entropie.</translation>
     </message>
 </context>
 <context>
@@ -636,7 +636,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>Êtes-vous sûr de vouloir supprimer %1%2?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer %1%2</translation>
     </message>
     <message>
         <source>Delete password?</source>
@@ -694,66 +694,69 @@ Expire-Date: 0
     </message>
     <message>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionner un profil</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Générer OTP et copier au presse-papiers</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Code OTP</translation>
     </message>
     <message>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> et tout le contenu&#x202f;?</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> et tout le contenu ? &lt;br&gt;&lt;strong&gt;Attention : il y a des fichiers inattendus dans le dossier donné, vérifiez-les avant de continuer.&lt;/strong&gt;</translation>
     </message>
     <message>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le dossier avec le gestionnaire de fichiers</translation>
     </message>
     <message>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le mot de passe</translation>
     </message>
     <message>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le fichier</translation>
     </message>
     <message>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le dossier en : </translation>
     </message>
     <message>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le fichier en : </translation>
     </message>
     <message>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard unix.&lt;/p&gt;.
+&lt;p&gt;S&apos;il vous plaît rapporter tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problèmes &lt;/a&gt; que vous pourriez avoir avec ce logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&gt;Documentation
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;CodeSource&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -783,27 +786,27 @@ Expire-Date: 0
     </message>
     <message>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensemble de caractères&#x202f;:</translation>
     </message>
     <message>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les caractères</translation>
     </message>
     <message>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabétique</translation>
     </message>
     <message>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumérique</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur :</translation>
     </message>
 </context>
 <context>
@@ -886,11 +889,11 @@ Expire-Date: 0
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>forcer écraser&#x202f;?</translation>
     </message>
     <message>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>remplacer %1 par %2 ?</translation>
     </message>
 </context>
 <context>
@@ -901,23 +904,23 @@ Expire-Date: 0
     </message>
     <message>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Spectacle</translation>
     </message>
     <message>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cacher</translation>
     </message>
     <message>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi&amp;nimiser</translation>
     </message>
     <message>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma&amp;ximiser</translation>
     </message>
     <message>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restoration</translation>
     </message>
 </context>
 <context>
