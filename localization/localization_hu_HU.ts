@@ -33,11 +33,11 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vágólap viselkedése:</translation>
     </message>
     <message>
         <source>Use primary selection</source>
