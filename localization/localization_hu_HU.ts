@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó generáló:</translation>
     </message>
     <message>
         <source>Password Length:</source>
