@@ -259,15 +259,17 @@
         <source>login
 url
 email</source>
-        <translation type="unfinished"></translation>
+        <translation>belépés
+url
+e-mail</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>A tálca nem érhető el</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
