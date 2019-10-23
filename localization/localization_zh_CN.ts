@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>当前路径</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -412,32 +412,32 @@ email</source>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>使用pass-otp扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>本地Git/GPG（&amp;V）</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -446,29 +446,31 @@ email</source>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>模板在“密码生成”对话框和“密码”视图中添加额外字段。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -548,7 +550,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;密码的长度没有限制，但应慎重考虑。从安全的角度来看，用口令解锁密钥是GnuPG（包括其他公钥加密系统）的弱点。假如别人获取了你的私钥，口令是对其唯一的保护。&lt;br/&gt;密码不应该是英文单词或简单数字组合，而应该混合字母和特殊符号。&lt;br/&gt;使用 GnuPG 的过程中，选择一个安全的口令是极其重要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密码的长度没有限制，应该仔细选择。从安全性的角度来看，解锁私钥的密码是 GnuPG（以及其他公钥加密系统）中最薄弱的一点，因为如果其他人获得您的私钥，它是您唯一的保护。&lt;br/&gt;理想情况下，密码短语不应使用字典中的单词，而应混合字母字符大小写以及使用非字母字符 &lt;br/&gt;。良好的密码对于安全使用 GnuPG.&lt;/p&gt;&lt;/body&gt;至关重要&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
