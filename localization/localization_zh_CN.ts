@@ -289,51 +289,51 @@ email</source>
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>使用主选择</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>内容面板行为：</translation>
     </message>
     <message>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>扩展：</translation>
     </message>
     <message>
         <source>Use qrencode</source>
-        <translation type="unfinished"></translation>
+        <translation>使用qrencode</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>使用pass otp扩展</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>自动检测</translation>
     </message>
     <message>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>系统托盘不可用</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>需要安装pass OTP扩展</translation>
     </message>
     <message>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>需要安装qrencode</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>请在您的系统上安装GnuPG。&lt;br&gt;从Microsoft Store安装&lt;strong&gt; Ubuntu &lt;/ strong&gt;即可获取。&lt;br&gt;如果您已经这样做，请确保已启动它一次，并&lt;br&gt;单击“自动检测”在下一个对话框中。</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>请在您的系统上安装GnuPG。&lt;br&gt;从Microsoft Store &lt;br&gt;安装&lt;strong&gt; Ubuntu &lt;/ strong&gt;或&lt;a href =“ https://www.gnupg.org/download/#sec-1-2 “&gt;从GnuPG.org下载&lt;/a&gt;它</translation>
     </message>
 </context>
 <context>
@@ -396,7 +396,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;HTML&gt; &lt;HEAD/&gt; &lt;BODY&gt; &lt;P&gt;密码的长度没有限制，但应慎重考虑。从安全的角度来看，用口令解锁密钥是GnuPG（包括其他公钥加密系统）的弱点。假如别人获取了你的私钥，口令是对其唯一的保护。&lt;BR/&gt;密码不应该是英文单词或简单数字组合，而应该混合字母和特殊符号。&lt;BR/&gt;使用 GnuPG 的过程中，选择一个安全的口令是极其重要的。&lt;/P&gt; &lt;/BODY&gt; &lt;/HTML&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;密码的长度没有限制，但应慎重考虑。从安全的角度来看，用口令解锁密钥是GnuPG（包括其他公钥加密系统）的弱点。假如别人获取了你的私钥，口令是对其唯一的保护。&lt;br/&gt;密码不应该是英文单词或简单数字组合，而应该混合字母和特殊符号。&lt;br/&gt;使用 GnuPG 的过程中，选择一个安全的口令是极其重要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -561,7 +561,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Updating password-store</source>
-        <translation>正在更新密码库...</translation>
+        <translation>正在更新密码库</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -635,7 +635,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Are you sure you want to delete %1%2</source>
-        <translation>确定删除 %1%2?</translation>
+        <translation>确定删除 %1%2</translation>
     </message>
     <message>
         <source>Delete password?</source>
@@ -693,66 +693,69 @@ Expire-Date: 0
     </message>
     <message>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>选择配置文件</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>生成OTP并复制到剪贴板</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP码</translation>
     </message>
     <message>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> 和全部内容？</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> 和整个内容？&lt;br&gt;&lt;strong&gt;注意：给定文件夹中有意外文件，请在继续之前检查它们 &lt;/strong&gt;。</translation>
     </message>
     <message>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>使用文件管理器打开文件夹</translation>
     </message>
     <message>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>重命名文件夹</translation>
     </message>
     <message>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>重命名密码</translation>
     </message>
     <message>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>重命名文件</translation>
     </message>
     <message>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>重命名文件夹为： </translation>
     </message>
     <message>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>将文件重命名为： </translation>
     </message>
     <message>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; QtPass是用于&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;（标准的Unix密码管理器）的GUI。&lt;/p&gt;
+&lt;p&gt;请报告此软件可能包含的所有&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;问题&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt;文档&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;源代码&lt;/a&gt; &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -885,11 +888,11 @@ Expire-Date: 0
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>强制覆盖？</translation>
     </message>
     <message>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>用%2覆盖%1？</translation>
     </message>
 </context>
 <context>
