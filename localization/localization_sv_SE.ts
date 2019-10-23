@@ -5,7 +5,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configuration</source>
-        <translation>Inställningar</translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <source>gpg</source>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <source>Characters</source>
