@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
@@ -82,42 +82,42 @@
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle tegn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Egendefinert</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Nåværende sti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Utelat store bokstaver</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inkluder spesialsymboler </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -132,57 +132,57 @@
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til filer av typen .gpg-id automatisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Dytt automatisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Hent inn automatisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Utvidelser:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>System:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bruk TrayIcon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Start minimert</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skjul ved lukking</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Alltid øverst</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmer</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
@@ -222,37 +222,37 @@
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Mal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk mal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
@@ -287,12 +287,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen utklippstavle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Alltid kopier til utklippstavle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
@@ -302,7 +302,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen profil valgt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="588"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Fant ikke GnuPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
@@ -352,22 +352,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk pass-otp-utvidelse</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -386,17 +386,17 @@
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
@@ -417,7 +417,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="95"/>
         <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke redigere</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
@@ -473,12 +473,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">E-post</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
@@ -522,17 +522,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig navn</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn må være mer enn 5 tegn.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig e-post</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
@@ -550,12 +550,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg profil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
@@ -565,7 +565,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Velkommen til QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -580,38 +580,38 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til passord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til mappe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -621,12 +621,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation></translation>
+        <translation>Dytt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
@@ -636,7 +636,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdater</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
@@ -647,7 +647,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukere</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
@@ -667,7 +667,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="190"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Velkommen til QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="277"/>
@@ -678,34 +678,34 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="388"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="392"/>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP-kode</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="437"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Passord og innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="506"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ser etter: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="605"/>
         <location filename="../src/mainwindow.cpp" line="966"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="606"/>
@@ -726,12 +726,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett mappe?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett passord?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
@@ -741,7 +741,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="772"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil endret til %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
@@ -751,7 +751,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Gi mappe nytt navn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -800,7 +800,7 @@ Expire-Date: 0
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passord</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
@@ -810,7 +810,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis passord</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
@@ -820,27 +820,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle tegn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerisk</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Egendefinert</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengde:</translation>
     </message>
 </context>
 <context>
@@ -848,7 +848,7 @@ Expire-Date: 0
     <message>
         <location filename="../main/main.cpp" line="87"/>
         <source>LTR</source>
-        <translation></translation>
+        <translation type="unfinished">VTH</translation>
     </message>
 </context>
 <context>
@@ -929,7 +929,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="400"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiert til utklippstavle</translation>
     </message>
 </context>
 <context>
@@ -950,32 +950,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vis</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Skjul</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi&amp;nimer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks&amp;imer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Gjenopprett</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Avslutt</translation>
     </message>
 </context>
 <context>
@@ -1001,12 +1001,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis ubrukelige nøkler</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke hente nøkkelliste</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
@@ -1021,12 +1021,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>opprettet</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>utløper</translation>
     </message>
 </context>
 </TS>
