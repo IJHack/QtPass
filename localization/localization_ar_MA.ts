@@ -5,51 +5,51 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>إعدادات</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>الإعدادات</translation>
     </message>
     <message>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>سلوك الحافظة:</translation>
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدام الاختيار الأساسي</translation>
     </message>
     <message>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>اوتولير بعد:</translation>
     </message>
     <message>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>ثواني</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>سلوك لوحة المحتوى:</translation>
     </message>
     <message>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>إخفاء المحتوى</translation>
     </message>
     <message>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>اخفاء كلمة المرور</translation>
     </message>
     <message>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>لوحه اوتوكلير بعد:</translation>
     </message>
     <message>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء كلمه المرور:</translation>
     </message>
     <message>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>طول كلمة المرور:</translation>
     </message>
     <message>
         <source>Characters</source>
