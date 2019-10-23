@@ -32,6 +32,7 @@ TRANSLATIONS    +=  ../localization/localization_nl_NL.ts \
                     ../localization/localization_it_IT.ts \
                     ../localization/localization_sq_AL.ts \
                     ../localization/localization_pt_PT.ts \
+                    ../localization/localization_tr_TR.ts \
                     ../localization/localization_nb_NO.ts
 
 SOURCES   += mainwindow.cpp \
