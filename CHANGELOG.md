@@ -333,7 +333,6 @@
 - Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
 - UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
 - creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
-- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 
 ## [v1.1.5](https://github.com/IJHack/QtPass/tree/v1.1.5) (2016-10-19)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)
@@ -359,6 +358,7 @@
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
+- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
@@ -462,6 +462,7 @@
 - Use --secure for pwgen and add more configurable options [\#168](https://github.com/IJHack/QtPass/pull/168) ([ahippo](https://github.com/ahippo))
 - Remove Debian packaging [\#166](https://github.com/IJHack/QtPass/pull/166) ([innir](https://github.com/innir))
 - Add caskroom URL [\#163](https://github.com/IJHack/QtPass/pull/163) ([graingert](https://github.com/graingert))
+- update gl\_Es [\#162](https://github.com/IJHack/QtPass/pull/162) ([xmgz](https://github.com/xmgz))
 - Two UI Tweaks [\#158](https://github.com/IJHack/QtPass/pull/158) ([lftl](https://github.com/lftl))
 - configwindow.ui default/start tab set to "settings" [\#154](https://github.com/IJHack/QtPass/pull/154) ([jounathaen](https://github.com/jounathaen))
 - FAQ update concerning button-icons on cinnamon [\#153](https://github.com/IJHack/QtPass/pull/153) ([jounathaen](https://github.com/jounathaen))
@@ -504,7 +505,6 @@
 
 **Merged pull requests:**
 
-- update gl\_Es [\#162](https://github.com/IJHack/QtPass/pull/162) ([xmgz](https://github.com/xmgz))
 - improved the German translation [\#134](https://github.com/IJHack/QtPass/pull/134) ([retokromer](https://github.com/retokromer))
 - qrand always generating the same sequence of passwords [\#129](https://github.com/IJHack/QtPass/pull/129) ([treat1](https://github.com/treat1))
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
