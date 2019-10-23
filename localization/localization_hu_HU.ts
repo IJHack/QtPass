@@ -96,6 +96,10 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <source>Current path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Use pwgen</source>
         <translation>pwgen használata</translation>
     </message>
@@ -323,6 +327,52 @@ email</source>
     </message>
     <message>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use PWGen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use QRencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use pass-otp extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nati&amp;ve Git/GPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PWGen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>login
+URL
+e-mail</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -682,19 +732,19 @@ Expire-Date: 0
     </message>
     <message>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Összes karakter</translation>
     </message>
     <message>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Betűrendes</translation>
     </message>
     <message>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alfanumerikus</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyedi</translation>
     </message>
     <message>
         <source>Length:</source>

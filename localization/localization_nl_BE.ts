@@ -88,6 +88,10 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <source>Current path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Use pwgen</source>
         <translation>Gebruik pwgen</translation>
     </message>
@@ -334,6 +338,52 @@ email</translation>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op uw systeem. &lt;br&gt; Installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; vanuit de Microsoft Store &lt;br&gt; of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; download &lt;/a&gt; van GnuPG.org</translation>
+    </message>
+    <message>
+        <source>Use PWGen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use QRencode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use pass-otp extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nati&amp;ve Git/GPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PWGen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>login
+URL
+e-mail</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

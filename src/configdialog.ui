@@ -912,7 +912,7 @@
          <item row="0" column="2">
           <widget class="QLabel" name="labelStorePath">
            <property name="text">
-            <string>Current password manager</string>
+            <string>Current path</string>
            </property>
           </widget>
          </item>
