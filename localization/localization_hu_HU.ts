@@ -41,19 +41,19 @@
     </message>
     <message>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Elsődleges kijelölés használata</translation>
     </message>
     <message>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus törlés:</translation>
     </message>
     <message>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>A tartalompanel viselkedése:</translation>
     </message>
     <message>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus törlés panel után:</translation>
     </message>
     <message>
         <source>Password Generation:</source>
@@ -105,35 +105,35 @@
     </message>
     <message>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Nagybetűk kizárása</translation>
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Speciális szimbólumok </translation>
     </message>
     <message>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Könnyen megjegyezhető, de kevésbé biztonságos jelszavak létrehozása</translation>
     </message>
     <message>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Számok kizárása</translation>
     </message>
     <message>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <source>Use git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git használata</translation>
     </message>
     <message>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>A. GPG-ID fájlok automatikus hozzáadása</translation>
     </message>
     <message>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikusan leküldés</translation>
     </message>
     <message>
         <source>Automatically pull</source>
