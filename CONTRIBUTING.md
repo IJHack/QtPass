@@ -22,7 +22,7 @@ This document is still in a very early stage and needs a lot more work.
 
 * Add you language to the `qtpass.pro` file
   under TRANSLATIONS and in the `resources.qrc` file.
-* Next run the command `./translate` which will create and update the localization files.
+* Next run the command `qmake` which will create and update the localization files.
 * Edit your file with (let's imagine your language is sv_SE (Swedish)
   `linguist localization/localization_sv_SE.ts`
 

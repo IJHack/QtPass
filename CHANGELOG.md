@@ -241,6 +241,7 @@
 **Fixed bugs:**
 
 - Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
+- Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 - SingleApplication implementation buggy [\#26](https://github.com/IJHack/QtPass/issues/26)
 
 **Closed issues:**
@@ -332,6 +333,7 @@
 - Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
 - UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
 - creating password store directory, if it doesnot exists, de\_DE translation fixes and removed obsolete translations [\#216](https://github.com/IJHack/QtPass/pull/216) ([YoshiMan](https://github.com/YoshiMan))
+- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 
 ## [v1.1.5](https://github.com/IJHack/QtPass/tree/v1.1.5) (2016-10-19)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)
@@ -357,7 +359,6 @@
 
 - Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
-- Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
 - Italian translation [\#204](https://github.com/IJHack/QtPass/pull/204) ([dakk](https://github.com/dakk))
 - keygendialog email and name validition \(issue 202\) [\#203](https://github.com/IJHack/QtPass/pull/203) ([dakk](https://github.com/dakk))
@@ -385,7 +386,6 @@
 
 - Signed releases [\#186](https://github.com/IJHack/QtPass/issues/186)
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/QtPass/issues/164)
-- Same name for file and folder [\#159](https://github.com/IJHack/QtPass/issues/159)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/QtPass/issues/138)
 
 **Merged pull requests:**
@@ -451,6 +451,7 @@
 **Closed issues:**
 
 - Remove outdated Debian packaging [\#165](https://github.com/IJHack/QtPass/issues/165)
+- Same name for file and folder [\#159](https://github.com/IJHack/QtPass/issues/159)
 - Icons don't work on nixos [\#157](https://github.com/IJHack/QtPass/issues/157)
 - gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 
@@ -461,9 +462,9 @@
 - Use --secure for pwgen and add more configurable options [\#168](https://github.com/IJHack/QtPass/pull/168) ([ahippo](https://github.com/ahippo))
 - Remove Debian packaging [\#166](https://github.com/IJHack/QtPass/pull/166) ([innir](https://github.com/innir))
 - Add caskroom URL [\#163](https://github.com/IJHack/QtPass/pull/163) ([graingert](https://github.com/graingert))
-- update gl\_Es [\#162](https://github.com/IJHack/QtPass/pull/162) ([xmgz](https://github.com/xmgz))
 - Two UI Tweaks [\#158](https://github.com/IJHack/QtPass/pull/158) ([lftl](https://github.com/lftl))
 - configwindow.ui default/start tab set to "settings" [\#154](https://github.com/IJHack/QtPass/pull/154) ([jounathaen](https://github.com/jounathaen))
+- FAQ update concerning button-icons on cinnamon [\#153](https://github.com/IJHack/QtPass/pull/153) ([jounathaen](https://github.com/jounathaen))
 
 ## [v1.1.0](https://github.com/IJHack/QtPass/tree/v1.1.0) (2016-01-25)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)
@@ -503,7 +504,7 @@
 
 **Merged pull requests:**
 
-- FAQ update concerning button-icons on cinnamon [\#153](https://github.com/IJHack/QtPass/pull/153) ([jounathaen](https://github.com/jounathaen))
+- update gl\_Es [\#162](https://github.com/IJHack/QtPass/pull/162) ([xmgz](https://github.com/xmgz))
 - improved the German translation [\#134](https://github.com/IJHack/QtPass/pull/134) ([retokromer](https://github.com/retokromer))
 - qrand always generating the same sequence of passwords [\#129](https://github.com/IJHack/QtPass/pull/129) ([treat1](https://github.com/treat1))
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
@@ -551,10 +552,6 @@
 ## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
 
-**Fixed bugs:**
-
-- Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
-
 **Closed issues:**
 
 - Generate password: Floating point exception \(core dumped\) [\#102](https://github.com/IJHack/QtPass/issues/102)
@@ -585,6 +582,7 @@
 **Merged pull requests:**
 
 - Issue 86 clear panel [\#87](https://github.com/IJHack/QtPass/pull/87) ([karlgrz](https://github.com/karlgrz))
+- Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
 - \[WIP\] Call 'pass git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
 
 ## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
@@ -710,7 +708,6 @@
 
 **Merged pull requests:**
 
-- Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
 - SingleApplication per user and leading newline removed from output [\#44](https://github.com/IJHack/QtPass/pull/44) ([annejan](https://github.com/annejan))
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
