@@ -134,7 +134,7 @@
     </message>
     <message>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktueller Pfad</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
@@ -338,19 +338,19 @@ email</translation>
     </message>
     <message>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen verwenden</translation>
     </message>
     <message>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git verwenden</translation>
     </message>
     <message>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>QRencode verwenden</translation>
     </message>
     <message>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Der pass-otp Erweiterung verwenden</translation>
     </message>
     <message>
         <source>Nati&amp;ve Git/GPG</source>
