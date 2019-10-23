@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Exclude capital letters</source>
-        <translation>Gebruik hoofdletters</translation>
+        <translation>Hoofdletters uitsluiten</translation>
     </message>
     <message>
         <source>Include special symbols </source>
