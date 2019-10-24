@@ -329,42 +329,42 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A Pass OTP kiterjesztést telepíteni kell</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A qrencode-t telepíteni kell</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs vágólap</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindig másolja a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Igény szerinti másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs kiválasztott profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs kijelölve törölhető profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="588"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>A GnuPG nem található</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
