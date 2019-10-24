@@ -364,7 +364,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation>Extensions :</translation>
+        <translation>Extensions:</translation>
     </message>
     <message>
         <source>Use qrencode</source>
@@ -377,7 +377,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https ://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration : underline ;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -580,14 +580,14 @@ Expire-Date: 0
 # first test version please comment
 #
 %echo Generating a default key
-Key-Type : default
-Subkey-Type : default
-Name-Real :
-Name-Comment : QtPass
-Name-Email :
-Expire-Date : 0
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
+# Do a commit here, so that we can later print &quot;done&quot;:-)
 %commit
 %echo done</translation>
     </message>
@@ -828,7 +828,7 @@ Expire-Date : 0
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer %1%2 ?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
@@ -923,7 +923,7 @@ Expire-Date : 0
     <message>
         <location filename="../src/mainwindow.cpp" line="634"/>
         <source> and the whole content?</source>
-        <translation> et tout le contenu ?</translation>
+        <translation> et tout le contenu?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="644"/>
@@ -1007,7 +1007,7 @@ Expire-Date : 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation>Ensemble de caractères :</translation>
+        <translation>Ensemble de caractères:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
@@ -1132,7 +1132,7 @@ Expire-Date : 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation>forcer écraser ?</translation>
+        <translation>forcer écraser?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
