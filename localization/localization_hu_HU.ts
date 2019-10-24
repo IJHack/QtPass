@@ -379,22 +379,22 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="602"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepítse a GnuPG-t a rendszerre. &lt;br&gt; telepítése &lt;strong&gt; GPG &lt;/strong&gt; segítségével kedvenc Package Manager &lt;br&gt; vagy &lt; a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot; &gt; Letöltés &lt;/a&gt; ez-ból GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="629"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó-készlet létrehozása?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="630"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Szeretne jelszótárolót létrehozni a (z) %1 helyen?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="649"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>A jelszótároló nem inicializálódott</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="650"/>
@@ -475,39 +475,40 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="95"/>
         <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem lehet szerkeszteni</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem sikerült beolvasni a használandó titkosítási kulcsot, a. GPG-ID fájl hiányzik vagy érvénytelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem frissíthető</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem sikerült megnyitni. GPG-ID íráshoz.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott felhasználók ellenőrzése!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>A kiválasztott kulcsok egyikében sincs titkos kulcs.
+Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Új titkosítás a (z)% 1 mappából</translation>
     </message>
 </context>
 <context>
@@ -515,27 +516,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>GnuPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Új kulcspár létrehozása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished">név</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
@@ -545,7 +546,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Profi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -564,7 +565,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation># QtPass GPG kulcsgenerátor
+#
+# első tesztverzió, kérjük, kommentáld
+#
+% echo Alapértelmezett kulcs generálása
+Key-Type: alapértelmezett
+Alkulcs típusa: alapértelmezett
+Név-Real:
+Név-megjegyzés: QtPass
+Név-E-mail:
+Lejárat-dátum: 0
+% No-védelem
+# Tegyen kötelezettséget itt, hogy később kinyomtassuk a &quot;kész&quot; -t :-)
+%elkövetni
+% visszhang kész</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
@@ -574,27 +589,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>A névnek legalább 5 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen emailcím</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>A beírt e-mail cím nem érvényes e-mail cím.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ez a művelet néhány percet vehet igénybe. &lt;br /&gt; Sok véletlen bájtot kell generálnunk. Jó ötlet, ha az első generálés során végezzünk más műveleteket is (írja be a billentyűzetet, mozgassa az egeret, használja a lemezeket); ez nagyobb esélyt ad a véletlenszám-generátor számára, hogy nagyobb legyen az entrópia.</translation>
     </message>
 </context>
 <context>
@@ -669,86 +684,86 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a profilt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó keresése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Üdvözöljük a QtPass-ban</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszóhozzáadás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>CTRL + N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Szerkesztése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Delete</source>
-        <translation type="unfinished">Töröl</translation>
+        <translation>Töröl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP generálása és másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>CTRL + G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>Feltöltés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation>git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Felhasználók</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
