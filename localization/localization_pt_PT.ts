@@ -102,7 +102,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho atual</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -303,7 +303,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation>Nenhum perfil selecionado para ser apagado</translation>
+        <translation>Nenhum perfil selecionado para eliminar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="588"/>
@@ -313,12 +313,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="602"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Por favor, instale GnuPG no seu sistema. &lt;br&gt;Instale &lt;strong&gt;gpg&lt;/strong&gt; utilizando o seu gestore de pacotes favorito&lt;br&gt; ou fazendo o download de &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation>Por favor, instale GnuPG no seu sistema. &lt;br&gt;Instale &lt;strong&gt;gpg&lt;/strong&gt; utilizando o seu gestor de pacotes favorito&lt;br&gt; ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;transfira-o&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="629"/>
         <source>Create password-store?</source>
-        <translation>Criar password-store</translation>
+        <translation>Criar password-store?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="630"/>
@@ -338,32 +338,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Extensões:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto Detetar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>Versão do &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandeja do sistema não está disponível</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
@@ -373,7 +373,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>o qrencode deve estar instalado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
@@ -388,17 +388,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
@@ -413,7 +413,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -422,17 +422,17 @@
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
@@ -444,7 +444,9 @@
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>iniciar sessão
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -505,7 +507,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation>Gerar par de chaves GnuPG</translation>
+        <translation>Gerar um par de chaves GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
@@ -515,7 +517,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
@@ -530,12 +532,12 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation>Experiente</translation>
+        <translation>Avançadas</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Para opçőes avançadas, consulte o &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual do GnuPG&lt;/a&gt;</translation>
+        <translation>Para opções avançadas, consulte o &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual do GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -545,17 +547,17 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>O nome deve ter pelo menos 5 caracteres</translation>
+        <translation>O nome deve ter pelo menos 5 carateres.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation>Email inválido</translation>
+        <translation>E-mail inválido</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>O endereço de email que introduziu não é válido</translation>
+        <translation>O endereço de e-mail que digitou não é um endereço de e-mail válido.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
