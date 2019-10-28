@@ -67,122 +67,122 @@
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>תווים</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>השתמש בתווים:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר ערכת תווים ליצירת סיסמאות</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>כל התווים</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>אלפביתי</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>אלפנומריים</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>מותאם</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>הנתיב הנוכחי</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>אי-כלילת אותיות רישיות</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>כלול סמלים מיוחדים </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>צור קל לשנן אך סיסמאות פחות מאובטחות</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>אל תכלול מספרים</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף באופן אוטומטי קבצי gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>דחף אוטומטית</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>משוך אוטומטית</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>הרחבות:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>מערכת:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>השתמש בסמל מגש המערכת</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>התחל במזעור</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>הסתתר מקרוב</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>תמיד למעלה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>תוכניות</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
