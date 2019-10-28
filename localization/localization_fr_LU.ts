@@ -364,7 +364,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation>Extensions:</translation>
+        <translation>Extensions :</translation>
     </message>
     <message>
         <source>Use qrencode</source>
