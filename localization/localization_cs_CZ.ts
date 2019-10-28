@@ -1189,14 +1189,22 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
         <translation>Zobrazit nepoužitelné klíče</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Nelze získat seznam klíčů</translation>
+        <translation type="vanished">Nelze získat seznam klíčů</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">Nelze získat seznam dostupných gpg klíčů</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>Nelze získat seznam dostupných gpg klíčů</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

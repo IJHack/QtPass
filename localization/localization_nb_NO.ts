@@ -1004,13 +1004,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Vis ubrukelige nøkler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Kan ikke hente nøkkelliste</translation>
+        <translation type="vanished">Kan ikke hente nøkkelliste</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
+        <source>Could not fetch list of available GPG keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

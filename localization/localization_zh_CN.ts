@@ -1201,14 +1201,22 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>显示不可用密钥</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>无法获取密钥列表</translation>
+        <translation type="vanished">无法获取密钥列表</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">无法获取可用的 GPG 密钥列表</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>无法获取可用的 GPG 密钥列表</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

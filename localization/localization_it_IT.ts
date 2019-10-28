@@ -1248,14 +1248,22 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
         <translation>Mostra chiavi non utilizzabili</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Impossibile ottenere la lista delle chiavi</translation>
+        <translation type="vanished">Impossibile ottenere la lista delle chiavi</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">Impossibile ottenere la lista delle chiavi gpg disponibili</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>Impossibile ottenere la lista delle chiavi gpg disponibili</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

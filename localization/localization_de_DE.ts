@@ -1187,14 +1187,22 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation>unbrauchbare Schlüssel anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Schlüssel-Liste nicht gefunden</translation>
+        <translation type="vanished">Schlüssel-Liste nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>gpg Schlüssel-Liste konnte nicht gefunden werden</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

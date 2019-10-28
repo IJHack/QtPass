@@ -1253,14 +1253,22 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <translation>Toon onbruikbare sleutels</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Kan sleutel lijst niet verkrijgen</translation>
+        <translation type="vanished">Kan sleutel lijst niet verkrijgen</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

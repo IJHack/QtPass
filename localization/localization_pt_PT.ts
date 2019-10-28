@@ -1167,14 +1167,22 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <translation>Mostrar chaves não utilizáveis</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Não é possível obter a lista de chaves</translation>
+        <translation type="vanished">Não é possível obter a lista de chaves</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">Não é possível obter a lista de chaves gpg disponíveis</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>Não é possível obter a lista de chaves gpg disponíveis</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

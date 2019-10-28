@@ -1133,14 +1133,22 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <translation>Mostrar claves no usables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>No se puede obtener lista de claves</translation>
+        <translation type="vanished">No se puede obtener lista de claves</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">No se puede obtener lista de llaves gpg disponibles</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>No se puede obtener lista de llaves gpg disponibles</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

@@ -1202,14 +1202,22 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
         <translation>Afficher les clés inutilisables</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Can not get key list</source>
-        <translation>Impossible de récupérer la liste de clés</translation>
+        <translation type="vanished">Impossible de récupérer la liste de clés</translation>
+    </message>
+    <message>
+        <source>Unable to get list of available gpg keys</source>
+        <translation type="vanished">Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="25"/>
+        <source>Keylist missing</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
-        <translation>Impossible d&apos;obtenir la liste des clés GPG disponibles</translation>
+        <source>Could not fetch list of available GPG keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>

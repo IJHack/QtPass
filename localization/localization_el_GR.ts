@@ -1009,12 +1009,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
-        <source>Can not get key list</source>
+        <source>Keylist missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
-        <source>Unable to get list of available gpg keys</source>
+        <source>Could not fetch list of available GPG keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
