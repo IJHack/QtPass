@@ -1192,12 +1192,12 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Schlüsselliste fehlt</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Liste der verfügbaren GPG-Schlüssel konnte nicht abgerufen werden</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
