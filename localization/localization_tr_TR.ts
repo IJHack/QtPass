@@ -662,7 +662,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation type="unfinished">Yapılandırma</translation>
+        <translation>Yapılandırma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="190"/>
