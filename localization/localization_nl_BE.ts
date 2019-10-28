@@ -1263,12 +1263,12 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Sleutellijst ontbreekt</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon geen lijst met beschikbare GPG-sleutels ophalen</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
