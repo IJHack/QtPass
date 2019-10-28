@@ -304,7 +304,6 @@
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
-- Feature: moving items \(reordering folders\) [\#116](https://github.com/IJHack/QtPass/issues/116)
 - Password dialog decoupling from MW [\#242](https://github.com/IJHack/QtPass/pull/242) ([tezeb](https://github.com/tezeb))
 - Refactoring of qpushbuttonwithclipboard and timers [\#241](https://github.com/IJHack/QtPass/pull/241) ([tezeb](https://github.com/tezeb))
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
@@ -551,6 +550,10 @@
 
 ## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
+
+**Implemented enhancements:**
+
+- Feature: moving items \(reordering folders\) [\#116](https://github.com/IJHack/QtPass/issues/116)
 
 **Closed issues:**
 

@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Utiliser des symbôles spéciaux</translation>
+        <translation>Utiliser des symbôles spéciaux </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Chemin actuel</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
-        <translation type="vanished">Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation</translation>
+        <translation type="vanished">Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -329,107 +329,115 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser la sélection principale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Comportement du panneau de contenu :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez l&apos;ensemble de caractères pour la génération de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les caractères</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabetic</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumérique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Extensions:</translation>
+    </message>
+    <message>
+        <source>Use qrencode</source>
+        <translation type="vanished">Utiliser qrencode</translation>
+    </message>
+    <message>
+        <source>Use pass otp extension</source>
+        <translation type="vanished">Utilisez pass otp extension</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Détection automatique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Le plateau système n&apos;est pas disponible</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;extension pass OTP doit être installée</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode doit être installé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store pour l&apos;obtenir. &lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir commencé une fois et&lt;br&gt;cliquez sur &quot;Autodetect&quot; dans le dialogue suivant.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="596"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store&lt;br&gt;ou &apos;a href&apos;&quot;https://www.gnupg.org/download/#sec-1-2&quot; &apos;download&lt;/a&gt; il from GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser l&apos;extension pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Git/GPG Nati&amp;ve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -438,29 +446,31 @@ email</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -577,7 +587,7 @@ Name-Comment: QtPass
 Name-Email:
 Expire-Date: 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
+# Do a commit here, so that we can later print &quot;done&quot;:-)
 %commit
 %echo done</translation>
     </message>
@@ -589,27 +599,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom doit comporter au moins 5 caractères.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Courriel invalide</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;adresse e-mail que vous avez saisie n&apos;est pas une adresse e-mail valide.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette opération peut prendre quelques minutes. &lt;br /&gt;Nous avons besoin de générer beaucoup d&apos;octets aléatoires. C&apos;est une bonne idée d&apos;effectuer d&apos;autres actions (taper sur le clavier, déplacer la souris, utiliser les disques) pendant la génération prime ; cela donne au générateur de nombres aléatoires une meilleure chance de gagner suffisamment d&apos;entropie.</translation>
     </message>
 </context>
 <context>
@@ -883,73 +893,73 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionner un profil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Générer OTP et copier au presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Code OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="634"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> et tout le contenu?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="644"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> et tout le contenu ? &lt;br&gt;&lt;strong&gt;Attention : il y a des fichiers inattendus dans le dossier donné, vérifiez-les avant de continuer.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le dossier avec le gestionnaire de fichiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le fichier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le dossier en : </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le fichier en : </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -957,7 +967,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard unix.&lt;/p&gt;.
+&lt;p&gt;S&apos;il vous plaît rapporter tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problèmes &lt;/a&gt; que vous pourriez avoir avec ce logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&gt;Documentation
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;CodeSource&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -994,32 +1007,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensemble de caractères:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les caractères</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphabétique</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alphanumérique</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur :</translation>
     </message>
 </context>
 <context>
@@ -1119,12 +1132,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>forcer écraser?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>remplacer %1 par %2 ?</translation>
     </message>
 </context>
 <context>
@@ -1137,27 +1150,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Spectacle</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cacher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi&amp;nimiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma&amp;ximiser</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restoration</translation>
     </message>
 </context>
 <context>
