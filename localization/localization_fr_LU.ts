@@ -364,7 +364,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation>Extensions&#x202f;:</translation>
+        <translation>Extensions :</translation>
     </message>
     <message>
         <source>Use qrencode</source>
@@ -1212,12 +1212,12 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste de clés manquante</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de récupérer la liste des clés GPG disponibles</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
