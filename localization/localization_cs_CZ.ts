@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Používat speciální znaky</translation>
+        <translation>Používat speciální znaky </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuální cesta</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -329,107 +329,107 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte primární výběr</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chování panelu obsahu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte znakovou sadu pro generování hesla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Abecední</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerické</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšíření:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Systémová přihrádka není k dispozici</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Je třeba nainstalovat rozšíření OTP pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>je třeba nainstalovat nástroj qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainstalujte si prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte si z obchodu Microsoft Store &lt;strong&gt; Ubuntu &lt;/strong&gt;. Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili a &lt;br&gt; klikněte na „Automaticky“ v dalším dialogu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="596"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainstalujte prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte &lt;strong&gt; Ubuntu &lt;/strong&gt; z Microsoft Store &lt;br&gt; nebo &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; stáhněte si ji &lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte rozšíření pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Nati&amp;vní Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -438,29 +438,31 @@ email</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šablony přidávají další pole v dialogu pro generování hesla a v zobrazení hesla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -594,22 +596,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatné jméno</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jméno musí být nejméně pět znaků dlouhé.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatný e-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mailová adresa, kterou jste zadali, není platná e-mailová adresa.</translation>
     </message>
 </context>
 <context>
@@ -878,78 +880,78 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat profil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Vítejte v QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Generovat OTP a kopírovat do schránky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Kód OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="634"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> a celý obsah?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="644"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> a celý obsah? &lt;br&gt; &lt;strong&gt; Pozor: v dané složce jsou neočekávané soubory. Než budete pokračovat, zkontrolujte je. &lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít složku pomocí Správce souborů</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat složku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat heslo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat soubor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat složku na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenovat soubor na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -957,7 +959,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass je uživatelské rozhraní pro &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardní správce unixových hesel.&lt;/p&gt;
+&lt;p&gt;Nahlaste prosím všechny &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémy&lt;/a&gt;, které byste mohli mít s tímto softwarem.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentace&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Zdrojový kód&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -994,32 +999,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení znaků:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Abecední</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerické</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Délka:</translation>
     </message>
 </context>
 <context>
@@ -1119,12 +1124,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vynutit přepsání?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>přepsat %1 pomocí %2?</translation>
     </message>
 </context>
 <context>
@@ -1199,12 +1204,12 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí seznam klíčů</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze načíst seznam dostupných klíčů GPG</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
