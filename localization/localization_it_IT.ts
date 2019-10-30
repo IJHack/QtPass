@@ -112,7 +112,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso attuale</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -384,57 +384,57 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Rileva automaticamente</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode deve essere installato</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si prega di installare GnuPG sul vostro sistema. &lt;br&gt;Installa &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store per ottenerlo. &lt;br&gt;Se l&apos;hai già fatto, assicurati di averlo avviato una volta e&lt;br&gt; fai clic su &quot;Rileva automaticamente&quot; nella finestra di dialogo successiva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="596"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Installare GnuPG sul proprio sistema.&lt;br&gt;Installare &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;scaricare&lt;/a&gt; da GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa estensione pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Git/GPG nati&amp;va</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -443,29 +443,31 @@ email</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>I modelli aggiungono campi aggiuntivi nella finestra di dialogo per la generazione della password e nella vista della password.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -987,28 +989,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina cartella</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina cartella in: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina file in: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -1016,7 +1018,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; QtPass è una GUI per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;, il gestore password unix standard. &lt;/p&gt;
+&lt;p&gt; Segnala eventuali &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problemi &lt;/a&gt; che potresti avere con questo software. &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Documentazione &lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Codice sorgente &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1258,12 +1263,12 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Elenco chiavi mancante</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile recuperare l&apos;elenco delle chiavi GPG disponibili</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
