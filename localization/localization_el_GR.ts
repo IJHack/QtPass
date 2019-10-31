@@ -6,368 +6,368 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαμόρφωση</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Συμπεριφορά Προχείρου:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήση κύριας επιλογής</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματη μετά από:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Δευτερόλεπτα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Συμπεριφορά πίνακα περιεχομένου:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη περιεχομένου</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη κωδικού</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματη μετά πίνακα από:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργία κωδικού πρόσβασης:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήκος κωδικού πρόσβασης:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήση χαρακτήρων:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή συνόλου χαρακτήρων για τη δημιουργία κωδικού πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλοι οι χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλφαβητική</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αλφαριθμητικό</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Τρέχουσα διαδρομή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξαίρεση κεφαλαίων γραμμάτων</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
+        <translation>Συμπεριλάβετε ειδικά σύμβολα </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργήστε εύκολα απομνημόνευση αλλά λιγότερο ασφαλείς κωδικούς πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξαίρεση αριθμών</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματη προσθήκη αρχείων .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματα push</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματα pull</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεκτάσεις:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε το εικονίδιο Τρέης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Έναρξη ελαχιστοποιημένου</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη σε κοντινή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Πάντα στην κορυφή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Προγράμματα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πρόγραμμα αποθήκευσης κωδικού πρόσβασης:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήση &amp;pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Ντόπιος</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματη ανίχνευση</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαδρομή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρότυπο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε πρότυπο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση όλων των γραμμών που ξεκινούν με μια λέξη που ακολουθείται από άνω και κάτω τελεία ως πεδία σε πεδία κωδικού πρόσβασης, όχι μόνο στα αναφερόμενα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση όλων των πεδίων με πρότυπο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; έκδοση </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κασέτα συστήματος δεν είναι διαθέσιμη</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρέπει να εγκατασταθεί επέκταση OTP pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Το qrencode πρέπει να εγκατασταθεί</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Χωρίς πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Πάντα αντιγραφή στο Πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Αντίγραφο κατ &apos; απαίτηση στο Πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν έχει επιλεγεί προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν έχει επιλεγεί προφίλ για διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="588"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Το GnuPG δεν βρέθηκε</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="591"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλούμε εγκαταστήστε το GnuPG στο σύστημά σας. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; από το Microsoft Store για να το πάρετε. &lt;br&gt; αν το έχετε ήδη κάνει, βεβαιωθείτε ότι το ξεκινήσατε μια φορά και &lt;br&gt; κάντε κλικ στο κουμπί &quot;Αυτόματη ανίχνευση&quot; στο επόμενο παράθυρο διαλόγου.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="596"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκαταστήστε το &lt;strong&gt;Ubuntu&lt;/strong&gt; από το Microsoft Store&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="602"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκατάσταση &lt;strong&gt;gpg&lt;/strong&gt; χρησιμοποιώντας το αγαπημένο σας package manager&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="629"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργία καταστήματος κωδικών πρόσβασης;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="630"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέλετε να δημιουργήσετε ένα χώρο αποθήκευσης κωδικών πρόσβασης στο %1;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="649"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>Η αποθήκευση του κωδικού πρόσβασης δεν έχει αρχικοποιηθεί</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="650"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο φάκελος %1 δεν φαίνεται να είναι χώρος αποθήκευσης κωδικών πρόσβασης ή δεν έχει προετοιμαστεί ακόμα.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε το Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιήστε επέκταση pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -386,29 +386,31 @@
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα πρότυπα προσθέτουν επιπλέον πεδία στον διάλογο δημιουργίας κωδικού πρόσβασης και στην προβολή κωδικού πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -417,45 +419,46 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="95"/>
         <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατή η επεξεργασία</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν ήταν δυνατή η ανάγνωση του κλειδιού κρυπτογράφησης για τη χρήση του αρχείου .gpg-id που λείπει ή είναι άκυρο.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατή η ενημέρωση</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία ανοίγματος του .gpg-id για εγγραφή.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελέγξτε τους επιλεγμένους χρήστες!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανένα από τα επιλεγμένα κλειδιά δεν έχει διαθέσιμο μυστικό κλειδί.
+Δεν θα είναι σε θέση να αποκρυπτογραφήσει τυχόν πρόσφατα προστεθεί κωδικοί πρόσβασης!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Επανακρυπτογράφηση από το φάκελο %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <location filename="../src/imitatepass.cpp" line="332"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
     </message>
 </context>
 <context>
@@ -463,37 +466,37 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργία ζεύγους πλήκτρων GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργία νέου ζεύγους κλειδιών</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Ηλεκτρονικού ταχυδρομείου</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωδική φράση</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; δεν υπάρχει όριο στο μήκος μιας συνθηματικής φράσης και θα πρέπει να επιλεγεί προσεκτικά. Από την άποψη της ασφάλειας, η συνθηματική φράση για το ξεκλείδωμα του ιδιωτικού κλειδιού είναι ένα από τα πιο αδύναμα σημεία στο GnuPG (και άλλα συστήματα κρυπτογράφησης δημόσιου κλειδιού επίσης), δεδομένου ότι είναι η μόνη προστασία που έχετε αν ένα άλλο άτομο πάρει το ιδιωτικό σας κλειδί. &lt;br/&gt; ιδανικά, η συνθηματική φράση δεν πρέπει να χρησιμοποιεί λέξεις από ένα λεξικό και θα πρέπει να αναμιγνύει την περίπτωση των αλφαβητικών χαρακτήρων, καθώς και να χρησιμοποιεί μη αλφαβητικούς χαρακτήρες. &lt;br/&gt; Μια καλή συνθηματική φράση είναι κρίσιμη για την ασφαλή χρήση του GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Ειδικός</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -512,37 +515,51 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Για επιλογές εμπειρογνωμόνων δείτε το &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; εγχειρίδιο του GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη έγκυρο όνομα</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα πρέπει να έχει μήκος τουλάχιστον 5 χαρακτήρων.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη έγκυρο μήνυμα ηλεκτρονικού ταχυδρομείου</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η διεύθυνση ηλεκτρονικού ταχυδρομείου που πληκτρολογήσατε δεν είναι έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτή η λειτουργία μπορεί να διαρκέσει μερικά λεπτά. &lt;br /&gt; Πρέπει να δημιουργήσουμε πολλά τυχαία byte. Είναι καλή ιδέα να εκτελέσετε κάποια άλλη ενέργεια (πληκτρολογήστε το πληκτρολόγιο, μετακινήστε το ποντίκι, χρησιμοποιήστε τους δίσκους) κατά τη διάρκεια της πρώτης γενιάς. αυτό δίνει στην γεννήτρια τυχαίων αριθμών καλύτερη πιθανότητα να αποκτήσει αρκετή εντροπία.</translation>
     </message>
 </context>
 <context>
@@ -554,195 +571,196 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή προφίλ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση κωδικού πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Καλώς ορίσατε στο QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη κωδικού πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθέστε φάκελο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργήστε το OTP και αντιγράψτε στο πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>Push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation>git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενημέρωση</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήστες</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαχειριστείτε ποιος μπορεί να διαβάσει τον κωδικό πρόσβασης σε ένα φάκελο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμισης παραμέτρων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="190"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Καλώς ορίσατε στο QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="277"/>
         <location filename="../src/mainwindow.cpp" line="289"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="388"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Το περιεχόμενο είναι κρυφό</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="392"/>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωδικός Πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP Κώδικα</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="437"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="506"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ψάχνετε για: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="605"/>
         <location filename="../src/mainwindow.cpp" line="966"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέο αρχείο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="606"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέο αρχείο κωδικού πρόσβασης: 
+(Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="634"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> και το σύνολο του περιεχομένου;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="644"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> και το σύνολο του περιεχομένου; &lt;br&gt; &lt;strong&gt; Προσοχή: υπάρχουν μη αναμενόμενα αρχεία στον συγκεκριμένο φάκελο, ελέγξτε τα πριν συνεχίσετε. &lt;/ strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή φακέλου;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή κωδικού πρόσβασης;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1%2;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="772"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Το προφίλ άλλαξε σε %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα φακέλου με τη διαχείριση αρχείων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="921"/>
