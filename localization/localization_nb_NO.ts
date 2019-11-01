@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Utklippstavleoppførsel:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt;-versjon </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
@@ -483,7 +483,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Passord</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
@@ -493,7 +493,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ekspert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
