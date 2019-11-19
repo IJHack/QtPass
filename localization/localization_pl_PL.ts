@@ -6,38 +6,38 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguracja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachowanie schowka:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj wyboru podstawowego</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatyczne czyszczenie po:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekundy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachowanie panelu zawartości:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -47,42 +47,42 @@
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj hasło</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel automatycznego czyszczenia po:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Generowanie hasła:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość hasła:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Postacie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj postacie:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz zestaw znaków do generowania hasła</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie postacie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
