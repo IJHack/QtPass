@@ -1183,18 +1183,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Cochez les utilisateurs que vous autorisez à déchiffrer les MDP de ce dossier.
+        <translation type="vanished">Cochez les utilisateurs que vous autorisez à déchiffrer les MDP de ce dossier.
 Remarque : Les fichiers existants ne seront pas modifiés et garderont les anciennes permissions jusqu’à ce que vous les éditiez.
 Les entrées en bleu correspondent à vos propres clés, sélectionnez au moins l&apos;une d&apos;elles pour être vous-même capable de déchiffrer les MDP.
 Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG, vous ne pourrez pas chiffrer vers celles-ci.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Chercher des utilisateurs</translation>
+        <translation type="vanished">Chercher des utilisateurs</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

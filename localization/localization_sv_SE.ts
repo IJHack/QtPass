@@ -1117,10 +1117,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Välj vilka användare som ska kunna avkryptera lösenord som sparas i den här mappen.
+        <translation type="vanished">Välj vilka användare som ska kunna avkryptera lösenord som sparas i den här mappen.
 Observera att redan existerande filer inte kommer att ändras och behåller sina rättigheter
 tills du ändrar dem.
 Blå betyder att en privat nyckel finns. Välj någon av dessa för att kunna avkryptera.
@@ -1165,9 +1177,8 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation>utgår</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Sök användare</translation>
+        <translation type="vanished">Sök användare</translation>
     </message>
 </context>
 </TS>

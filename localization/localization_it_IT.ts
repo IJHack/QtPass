@@ -1234,18 +1234,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Seleziona quali utenti saranno in grado di decifrare le password archiviate in questa cartella.
+        <translation type="vanished">Seleziona quali utenti saranno in grado di decifrare le password archiviate in questa cartella.
 Nota: I file esistenti non saranno modificati e manterranno i vecchi permessi sino a quando non li modificherai.
 Le righe blu hanno una chiave segreta disponibile, selezionane una per utilizzarla per decifrare.
 Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Cerca Utenti</translation>
+        <translation type="vanished">Cerca Utenti</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

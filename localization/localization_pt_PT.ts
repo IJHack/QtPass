@@ -1165,18 +1165,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selecione quais os utilizadores que devem ter permissões para desencriptar as passwords armazenadas nesta pasta.
+        <translation type="vanished">Selecione quais os utilizadores que devem ter permissões para desencriptar as passwords armazenadas nesta pasta.
 Nota: Os ficheiros existentes não vão ser alterados e vão manter as permissőes antigas até que os mesmos sejam editados.
 Os elementos a azul têm uma chave secreta disponível. Selecione um deles para que seja possível desencriptar.
 Os elementos a vermelho não são válidos. Não será possível desencriptar utilizando os mesmos.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Procurar utilizadores</translation>
+        <translation type="vanished">Procurar utilizadores</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

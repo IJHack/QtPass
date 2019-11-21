@@ -1119,10 +1119,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Seleccione los usuarios que deben ser capaces de descifrar las contraseñas almacenadas en esta carpeta.
+        <translation type="vanished">Seleccione los usuarios que deben ser capaces de descifrar las contraseñas almacenadas en esta carpeta.
 Nota: Los archivos existentes no se modificarán y los viejos permisos se mantienen hasta que se editen.
 Entradas azules tienen una clave secreta disponible, seleccione uno de estos para poder descifrar.
 Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</translation>
@@ -1164,11 +1176,6 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
         <translation>caduca</translation>
-    </message>
-    <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
-        <source>Search Users</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

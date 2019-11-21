@@ -1234,18 +1234,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selecteer welke gebruikers moeten in staat zijn om wachtwoorden opgeslagen in deze map te decoderen.
+        <translation type="vanished">Selecteer welke gebruikers moeten in staat zijn om wachtwoorden opgeslagen in deze map te decoderen.
 Opmerking: Bestaande bestanden zullen niet worden gewijzigd en behouden van de oude permissies totdat je ze bewerkt.
 Blauwe inzendingen hebben een geheime sleutel beschikbaar is, selecteert u één van deze te kunnen ontcijferen.
 Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor deze gebruikers.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Zoek gebruikers</translation>
+        <translation type="vanished">Zoek gebruikers</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

@@ -1170,18 +1170,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Выберите, какие пользователи должны иметь возможность расшифровывать пароли, сохранённые в данном хранилище.
+        <translation type="vanished">Выберите, какие пользователи должны иметь возможность расшифровывать пароли, сохранённые в данном хранилище.
 Замечание: существующие файлы не будут изменены и сохранят старые права доступа до тех пор, пока вы не поменяете содержимое.
 Синие пользователи -- секретный ключ доступен -- выберите одну из них, чтобы расшифровывать пароли.
 Красные пользователи -- нерабочие -- вы не сможете зашифровывать для них.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Поиск по пользователям</translation>
+        <translation type="vanished">Поиск по пользователям</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

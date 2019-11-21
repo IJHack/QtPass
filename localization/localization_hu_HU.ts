@@ -1091,14 +1091,14 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified and retain the old permissions until you edit them.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
-        <source>Search Users</source>
+        <source>Search for users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

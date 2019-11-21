@@ -1182,18 +1182,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>选择哪些用户能够解密保存在密码库中的密码。
+        <translation type="vanished">选择哪些用户能够解密保存在密码库中的密码。
 注：现有的文件不会被修改，并保留现有的权限，直到您对其进行编辑。
 蓝色表示有私钥和公钥可用，可以用来加密。
 红色表示没有私钥，不可以用来加密。</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>搜索用户</translation>
+        <translation type="vanished">搜索用户</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

@@ -1163,18 +1163,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Hier die Benutzer eintragen denen Entschlüsselungszugriff für Passwörter in diesem Ordner gewährt werden soll.
+        <translation type="vanished">Hier die Benutzer eintragen denen Entschlüsselungszugriff für Passwörter in diesem Ordner gewährt werden soll.
 Hinweis: nachträglich hinzugefügte Nutzer müssen durch erneutes editieren des Password-Stores aktualisiert werden.
 Die blauen Einträgen verfügen über einen gültigen Schlüssel, zum entschlüsseln auswählen.
 Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht wählbar.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Benutzer suchen</translation>
+        <translation type="vanished">Benutzer suchen</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

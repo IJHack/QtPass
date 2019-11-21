@@ -822,7 +822,7 @@ Expire-Date: 0
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κωδικός Πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
@@ -842,22 +842,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όλοι οι χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αλφαβητική</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αλφαριθμητικό</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσαρμοσμένο</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
@@ -1010,14 +1010,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified and retain the old permissions until you edit them.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
-        <source>Search Users</source>
+        <source>Search for users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

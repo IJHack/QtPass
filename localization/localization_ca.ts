@@ -1223,18 +1223,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Seleccioneu quins usuaris podran desxifrar les contrasenyes emmagatzemades en aquesta carpeta.
+        <translation type="vanished">Seleccioneu quins usuaris podran desxifrar les contrasenyes emmagatzemades en aquesta carpeta.
 Nota: no es modificaran els fitxers existents i conservaran els permisos anteriors fins que els editeu.
 Les entrades blaves tenen disponible una clau secreta, seleccioneu una d&apos;aquestes per desxifrar.
 Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Cerca usuaris</translation>
+        <translation type="vanished">Cerca usuaris</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

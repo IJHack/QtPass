@@ -1013,18 +1013,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Wielt déi Benotzer sollen dës Passwierder, déi an dësem Dossier gespäichert sinn, solle dekodéieren.
+        <translation type="vanished">Wielt déi Benotzer sollen dës Passwierder, déi an dësem Dossier gespäichert sinn, solle dekodéieren.
 Notiz: existéierend Dateie ginn net geännert a behalen déi al Permissiounen, bis Dir se editéiert.
 Blo Entreeën hunn e geheime Schlëssel verfügbar, wielt een vun dësen fir se z&apos;ënnerscheeden.
 Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Sich Benotzer</translation>
+        <translation type="vanished">Sich Benotzer</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>

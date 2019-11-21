@@ -1024,18 +1024,29 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="65"/>
+        <source>Search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+        <translation type="vanished">Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
 Shënim: Skedarët ekzistues nuk do të modifikohen dhe mbajnë lejet e vjetra deri sa t&apos;i përpunoni ato.
 Hyrjet blu kanë në dispozicion një çelës sekret, zgjidhni njërën nga këto që të mund të deshifroni.
 Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apos;i kodoni këto.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search Users</source>
-        <translation>Kërkoni përdoruesit</translation>
+        <translation type="vanished">Kërkoni përdoruesit</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
