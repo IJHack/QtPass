@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation>Comportamento do Clipboard:</translation>
+        <translation>Comportamento da área de transferência:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation>Ocultar password</translation>
+        <translation>Ocultar palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
@@ -57,37 +57,37 @@
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation>Criação password:</translation>
+        <translation>Geração da palavra-passe:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation>Cumprimento password:</translation>
+        <translation>Cumprimento da palavra-passe:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation>Caracteres</translation>
+        <translation>Carateres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation>Utilizar caracteres:</translation>
+        <translation>Utilizar carateres:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation>Selecionar o tipo de caracteres para a criação de password</translation>
+        <translation>Selecionar o tipo de carateres para a geração da palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation>Todos os caracteres</translation>
+        <translation>Todos os Carateres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation>Alfabético</translation>
+        <translation>Alfabética</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Gerir passwords fáceis de memorizar mas menos seguras</translation>
+        <translation>Gerar palavras-passe fáceis de memorizar mas menos seguras</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Usar TrayIcon</translation>
+        <translation>Utilizar Ícone da Bandeja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation>Sempre visível</translation>
+        <translation>Sempre no topo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
         <source>&amp;Use pass</source>
-        <translation>Usar pass</translation>
+        <translation>Utilizar pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
@@ -259,7 +259,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation>Template</translation>
+        <translation>Modelo</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -268,7 +268,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation>Usar template</translation>
+        <translation>Utilizar modelo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
@@ -283,17 +283,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation>Não usar clipboard</translation>
+        <translation>Não utilizar área de transferência</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation>Copiar sempre para o clipboard</translation>
+        <translation>Copiar sempre para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Copiar para o clipboard quando solicitado</translation>
+        <translation>Copiar para a área de transferência quando solicitado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
@@ -512,7 +512,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
-        <translation type="unfinished">Frase de acesso</translation>
+        <translation>Frase de acesso</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
@@ -1168,12 +1168,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione quais os utilizadores que deverão poder desencriptar as palavras-passe guardadas nesta pasta.
+Nota: os ficheiros existentes não serão modificados, e manterão as permissões antigas até que as edite.
+As entradas a azul têm uma chave secreta disponível, selecione uma delas para poder desencriptar.
+As entradas a vermelho não são válidas, não irá poder encriptar para estas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurar por utilizadores</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
