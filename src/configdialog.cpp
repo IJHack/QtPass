@@ -567,9 +567,7 @@ bool ConfigDialog::isPassOtpAvailable() {
 #elif defined(__APPLE__)
   return false;
 #else
-  QFileInfo file("/usr/lib/password-store/extensions/otp.bash");
-
-  return file.exists();
+  return true;
 #endif
 }
 
