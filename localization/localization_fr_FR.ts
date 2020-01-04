@@ -1038,7 +1038,7 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="87"/>
+        <location filename="../main/main.cpp" line="88"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
