@@ -1241,12 +1241,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke gebruikers wachtwoorden moeten kunnen decoderen die in deze map zijn opgeslagen.
+Opmerking: bestaande bestanden worden niet gewijzigd en behouden de oude machtigingen totdat u ze bewerkt.
+Blauwe items hebben een geheime sleutel beschikbaar, selecteer een van deze om te kunnen decoderen.
+Rode vermeldingen zijn niet geldig, u kunt deze niet coderen.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoek gebruikers</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
