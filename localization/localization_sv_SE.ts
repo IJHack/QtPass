@@ -274,7 +274,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Inkludera speciella symboler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -1124,12 +1124,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj vilka användare som ska kunna dekryptera lösenord lagrade i den här mappen.
+Obs: Befintliga filer kommer inte att ändras och behålla de gamla behörigheterna förrän du redigerar dem.
+Blå poster har en hemlig nyckel tillgänglig, välj en av dessa för att kunna dekryptera.
+Röda poster är inte giltiga, du kommer inte att kunna kryptera till dessa.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök efter användare</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
