@@ -10,6 +10,7 @@
 
 **Closed issues:**
 
+- Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
 - password visiblity can't be fully hidden  [\#496](https://github.com/IJHack/QtPass/issues/496)
 - Translations need updating and checking [\#488](https://github.com/IJHack/QtPass/issues/488)
 - Front-End doesn't work well with HiDPI screen [\#464](https://github.com/IJHack/QtPass/issues/464)
@@ -22,6 +23,9 @@
 
 **Merged pull requests:**
 
+- Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
+- Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
+- Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
 - Spelling: Search for users, , [\#495](https://github.com/IJHack/QtPass/pull/495) ([comradekingu](https://github.com/comradekingu))
 - Spelling: Keylist missing, Could not fetch, GPG [\#493](https://github.com/IJHack/QtPass/pull/493) ([comradekingu](https://github.com/comradekingu))
 - Spelling: Git, GPG, PWGen, etc. [\#492](https://github.com/IJHack/QtPass/pull/492) ([comradekingu](https://github.com/comradekingu))
@@ -139,6 +143,7 @@
 - pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
 - Continuing refactoring [\#407](https://github.com/IJHack/QtPass/pull/407) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
+- Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
@@ -202,7 +207,6 @@
 - Optimizations :\) [\#367](https://github.com/IJHack/QtPass/pull/367) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
-- Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
@@ -226,7 +230,6 @@
 **Merged pull requests:**
 
 - Insecure password generation [\#342](https://github.com/IJHack/QtPass/pull/342) ([annejan](https://github.com/annejan))
-- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 
 ## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
@@ -275,6 +278,7 @@
 
 **Merged pull requests:**
 
+- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -511,7 +515,6 @@
 - qrand always generating the same sequence of passwords [\#129](https://github.com/IJHack/QtPass/pull/129) ([treat1](https://github.com/treat1))
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
 - added one translation [\#125](https://github.com/IJHack/QtPass/pull/125) ([retokromer](https://github.com/retokromer))
-- initial attempt to create a RPM spec file [\#121](https://github.com/IJHack/QtPass/pull/121) ([bram-ivs](https://github.com/bram-ivs))
 - Cleanup and coding standards [\#120](https://github.com/IJHack/QtPass/pull/120) ([annejan](https://github.com/annejan))
 - Modified the clipboard logic to allow for on-demand copy to clipboard. [\#119](https://github.com/IJHack/QtPass/pull/119) ([jonhanks](https://github.com/jonhanks))
 
@@ -650,6 +653,7 @@
 
 **Merged pull requests:**
 
+- initial attempt to create a RPM spec file [\#121](https://github.com/IJHack/QtPass/pull/121) ([bram-ivs](https://github.com/bram-ivs))
 - Many deadlocks and other nasty bug fixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
 - Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -667,7 +671,6 @@
 
 - Develop [\#52](https://github.com/IJHack/QtPass/pull/52) ([annejan](https://github.com/annejan))
 - Minor thingies [\#51](https://github.com/IJHack/QtPass/pull/51) ([beefcurtains](https://github.com/beefcurtains))
-- Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
@@ -687,6 +690,7 @@
 **Merged pull requests:**
 
 - Provide more information in user list. [\#47](https://github.com/IJHack/QtPass/pull/47) ([rdoeffinger](https://github.com/rdoeffinger))
+- Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1) (2015-05-06)
 **Fixed bugs:**

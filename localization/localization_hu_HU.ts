@@ -362,42 +362,42 @@ e-mail</translation>
         <translation>Nincs kijelölve törölhető profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="588"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>GnuPG not found</source>
         <translation>A GnuPG nem található</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="591"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="594"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="602"/>
+        <location filename="../src/configdialog.cpp" line="600"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Telepítse a GnuPG-t a rendszerre. &lt;br&gt; telepítése &lt;strong&gt; GPG &lt;/strong&gt; segítségével kedvenc Package Manager &lt;br&gt; vagy &lt; a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot; &gt; Letöltés &lt;/a&gt; ez-ból GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="629"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Create password-store?</source>
         <translation>Jelszó-készlet létrehozása?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="630"/>
+        <location filename="../src/configdialog.cpp" line="628"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Szeretne jelszótárolót létrehozni a (z) %1 helyen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="649"/>
+        <location filename="../src/configdialog.cpp" line="647"/>
         <source>Password store not initialised</source>
         <translation>A jelszótároló nem inicializálódott</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="650"/>
+        <location filename="../src/configdialog.cpp" line="648"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -310,42 +310,42 @@
         <translation>Δεν έχει επιλεγεί προφίλ για διαγραφή</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="588"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>GnuPG not found</source>
         <translation>Το GnuPG δεν βρέθηκε</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="591"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Παρακαλούμε εγκαταστήστε το GnuPG στο σύστημά σας. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; από το Microsoft Store για να το πάρετε. &lt;br&gt; αν το έχετε ήδη κάνει, βεβαιωθείτε ότι το ξεκινήσατε μια φορά και &lt;br&gt; κάντε κλικ στο κουμπί &quot;Αυτόματη ανίχνευση&quot; στο επόμενο παράθυρο διαλόγου.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="594"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκαταστήστε το &lt;strong&gt;Ubuntu&lt;/strong&gt; από το Microsoft Store&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="602"/>
+        <location filename="../src/configdialog.cpp" line="600"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκατάσταση &lt;strong&gt;gpg&lt;/strong&gt; χρησιμοποιώντας το αγαπημένο σας package manager&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="629"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Create password-store?</source>
         <translation>Δημιουργία καταστήματος κωδικών πρόσβασης;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="630"/>
+        <location filename="../src/configdialog.cpp" line="628"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Θέλετε να δημιουργήσετε ένα χώρο αποθήκευσης κωδικών πρόσβασης στο %1;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="649"/>
+        <location filename="../src/configdialog.cpp" line="647"/>
         <source>Password store not initialised</source>
         <translation>Η αποθήκευση του κωδικού πρόσβασης δεν έχει αρχικοποιηθεί</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="650"/>
+        <location filename="../src/configdialog.cpp" line="648"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Ο φάκελος %1 δεν φαίνεται να είναι χώρος αποθήκευσης κωδικών πρόσβασης ή δεν έχει προετοιμαστεί ακόμα.</translation>
     </message>

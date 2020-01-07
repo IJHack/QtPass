@@ -297,32 +297,32 @@ email</translation>
         <translation>Pas de profil sélectionné à supprimer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="588"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>GnuPG not found</source>
         <translation>GnuPG n&apos;as pas été trouvé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="602"/>
+        <location filename="../src/configdialog.cpp" line="600"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Merci d&apos;installer GnuPG sur votre système&lt;br&gt;Installez &lt;strong&gt;gpg&lt;/strong&gt; en utilisant votre gestionnaire de paquet préféré&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;téléchargez&lt;/a&gt; le depuis GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="629"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Create password-store?</source>
         <translation>Créer le magasin de mots de passe ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="630"/>
+        <location filename="../src/configdialog.cpp" line="628"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="649"/>
+        <location filename="../src/configdialog.cpp" line="647"/>
         <source>Password store not initialised</source>
         <translation>Magasin de mots de passe pas encore initialisé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="650"/>
+        <location filename="../src/configdialog.cpp" line="648"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;as pas encore été initialisé.</translation>
     </message>
@@ -400,12 +400,12 @@ email</translation>
         <translation>qrencode doit être installé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="591"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store pour l&apos;obtenir. &lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir commencé une fois et&lt;br&gt;cliquez sur &quot;Autodetect&quot; dans le dialogue suivant.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="594"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store&lt;br&gt;ou &apos;a href&apos;&quot;https://www.gnupg.org/download/#sec-1-2&quot; &apos;download&lt;/a&gt; il from GnuPG.org</translation>
     </message>
@@ -1187,7 +1187,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passes stockés dans ce répertoire.
-Note : les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
+Note&#x202f;: les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une parmi elles pour pouvoir déchiffrer les mots de passe.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas les utiliser pour le chiffrement.</translation>
     </message>
