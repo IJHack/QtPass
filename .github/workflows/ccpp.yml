@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Qt
-      uses: jurplel/install-qt-action@v1
+      uses: jurplel/install-qt-action@v2
     - name: Install Linux packages
       run: sudo apt update && sudo apt install -y --no-install-recommends libgl1-mesa-dev
     - name: qmake
