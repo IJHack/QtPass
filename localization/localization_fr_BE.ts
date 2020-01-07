@@ -416,7 +416,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Inclure des symboles spéciaux</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
@@ -1190,12 +1190,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez les utilisateurs qui doivent pouvoir décrypter les mots de passe stockés dans ce dossier.
+Remarque : les fichiers existants ne seront pas modifiés et conserveront les anciennes autorisations jusqu&apos;à ce que vous les modifiiez.
+Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir la décrypter.
+Les entrées rouges ne sont pas valides, vous ne pourrez pas les chiffrer.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche d&apos;utilisateurs</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
