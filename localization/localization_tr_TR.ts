@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel sembolleri dahil et</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
