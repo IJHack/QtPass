@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Include special symbols</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
