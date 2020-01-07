@@ -1227,12 +1227,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Search for users</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
