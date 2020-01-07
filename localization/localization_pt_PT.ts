@@ -100,6 +100,11 @@
         <translation>Personalizado</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Caminho atual</translation>
@@ -114,9 +119,8 @@
         <translation>Excluir letras maiúsculas</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Incluir símbolos especiais </translation>
+        <translation type="vanished">Incluir símbolos especiais </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

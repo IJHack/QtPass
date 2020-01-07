@@ -105,6 +105,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Pathi aktual</translation>
@@ -115,9 +120,8 @@
         <translation>Përjashtoni shkronjat e mëdha</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Përfshini simbole të veçanta </translation>
+        <translation type="vanished">Përfshini simbole të veçanta </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

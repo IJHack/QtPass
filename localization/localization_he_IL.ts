@@ -105,6 +105,11 @@
         <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>הנתיב הנוכחי</translation>
@@ -115,9 +120,8 @@
         <translation>אי-כלילת אותיות רישיות</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>כלול סמלים מיוחדים </translation>
+        <translation type="vanished">כלול סמלים מיוחדים </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

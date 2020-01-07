@@ -115,9 +115,13 @@
         <translation>Büyük harfleri hariç tut</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Özel sembolleri dahil et </translation>
+        <translation type="vanished">Özel sembolleri dahil et </translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

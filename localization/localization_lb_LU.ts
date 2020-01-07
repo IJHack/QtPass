@@ -105,6 +105,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Aktuelle Wee</translation>
@@ -115,9 +120,8 @@
         <translation>Kapitalbréiwer	Ausgeschloss</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Fëllt speziell Symboler un </translation>
+        <translation type="vanished">Fëllt speziell Symboler un </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

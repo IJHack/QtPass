@@ -83,9 +83,8 @@
         <translation>Nepoužívat VELKÁ písmena</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Používat speciální znaky </translation>
+        <translation type="vanished">Používat speciální znaky </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -405,6 +404,11 @@ email</translation>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
         <translation>Použijte PWGen</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>

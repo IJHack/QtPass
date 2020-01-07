@@ -105,6 +105,11 @@
         <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Τρέχουσα διαδρομή</translation>
@@ -115,9 +120,8 @@
         <translation>Εξαίρεση κεφαλαίων γραμμάτων</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Συμπεριλάβετε ειδικά σύμβολα </translation>
+        <translation type="vanished">Συμπεριλάβετε ειδικά σύμβολα </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

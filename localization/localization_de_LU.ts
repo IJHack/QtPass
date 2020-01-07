@@ -117,6 +117,11 @@
         <translation>Großbuchstaben Ausschließen</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generiere einfach zu merken, aber weniger sichere Passwörter</translation>
@@ -221,9 +226,8 @@ email</translation>
         <translation type="vanished">Git verwenden</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Sonderzeichen zulassen </translation>
+        <translation type="vanished">Sonderzeichen zulassen </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>

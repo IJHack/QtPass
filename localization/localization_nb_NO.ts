@@ -105,6 +105,11 @@
         <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Nåværende sti</translation>
@@ -115,9 +120,8 @@
         <translation>Utelat store bokstaver</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation type="unfinished">Inkluder spesialsymboler </translation>
+        <translation type="obsolete">Inkluder spesialsymboler </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

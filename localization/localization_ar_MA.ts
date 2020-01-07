@@ -105,6 +105,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>المسار الحالي</translation>
@@ -113,11 +118,6 @@
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
         <translation>استبعاد الأحرف الكبيرة</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="411"/>
-        <source>Include special symbols </source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

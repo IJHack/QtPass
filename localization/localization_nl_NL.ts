@@ -109,6 +109,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Huidige pad</translation>
@@ -123,9 +128,8 @@
         <translation>Hoofdletters uitsluiten</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Speciale karakters toevoegen </translation>
+        <translation type="vanished">Speciale karakters toevoegen </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

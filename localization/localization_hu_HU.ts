@@ -119,6 +119,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation type="unfinished"></translation>
@@ -133,9 +138,8 @@
         <translation>Nagybetűk kizárása</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Speciális szimbólumok </translation>
+        <translation type="vanished">Speciális szimbólumok </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

@@ -99,6 +99,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>当前路径</translation>
@@ -113,9 +118,8 @@
         <translation>不包含大写字母</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>包含特殊符号 </translation>
+        <translation type="vanished">包含特殊符号 </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

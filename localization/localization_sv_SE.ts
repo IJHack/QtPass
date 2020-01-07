@@ -104,9 +104,8 @@
         <translation type="vanished">Använd git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Inkludera specialtecken </translation>
+        <translation type="vanished">Inkludera specialtecken </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
@@ -271,6 +270,11 @@
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
         <translation>Uteslut stora bokstäver</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

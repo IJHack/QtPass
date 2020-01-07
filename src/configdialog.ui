@@ -408,7 +408,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Include special symbols </string>
+              <string>Include special symbols</string>
              </property>
             </widget>
            </item>

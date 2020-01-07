@@ -109,6 +109,11 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
         <translation>Current path</translation>
@@ -123,9 +128,8 @@
         <translation>Exclude capital letters</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Include special symbols </translation>
+        <translation type="vanished">Include special symbols </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>

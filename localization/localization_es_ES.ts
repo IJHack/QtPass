@@ -94,9 +94,8 @@
         <translation type="vanished">Usar git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Incluir símbolos especiales</translation>
+        <translation type="vanished">Incluir símbolos especiales</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
@@ -250,6 +249,11 @@
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

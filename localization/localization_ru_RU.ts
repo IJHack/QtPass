@@ -91,6 +91,11 @@
         <translation>Не использовать заглавные буквы</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Легко запоминающиеся менее случайные пароли</translation>
@@ -195,9 +200,8 @@ email</translation>
         <translation type="vanished">Использовать git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Включить спец. символы</translation>
+        <translation type="vanished">Включить спец. символы</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>

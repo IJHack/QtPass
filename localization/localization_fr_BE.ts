@@ -83,9 +83,8 @@
         <translation>Exclure les majuscules</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols </source>
-        <translation>Utiliser des symbôles spéciaux </translation>
+        <translation type="vanished">Utiliser des symbôles spéciaux </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -413,6 +412,11 @@ email</translation>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
         <translation>Utiliser PWGen</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="411"/>
+        <source>Include special symbols</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
