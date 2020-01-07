@@ -112,7 +112,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Includi simboli speciali</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
@@ -1241,12 +1241,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona gli utenti che dovrebbero essere in grado di decrittografare le password archiviate in questa cartella.
+Nota: i file esistenti non verranno modificati e manterranno le vecchie autorizzazioni fino a quando non le modifichi.
+Le voci blu hanno una chiave segreta disponibile, selezionane una per poter decrittografare.
+Le voci rosse non sono valide, non potrai crittografarle.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca utenti</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
