@@ -416,7 +416,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Inclure des symboles spéciaux</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
@@ -1191,7 +1191,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passes stockés dans ce répertoire.
-Note&#x202f;: les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
+Note : les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une parmi elles pour pouvoir déchiffrer les mots de passe.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas les utiliser pour le chiffrement.</translation>
     </message>
