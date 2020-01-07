@@ -1,0 +1,6 @@
+<map id="ImitatePass::Insert" name="ImitatePass::Insert">
+<area shape="rect" id="node1" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="185,5,338,31"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="386,5,587,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="635,5,825,31"/>
+</map>

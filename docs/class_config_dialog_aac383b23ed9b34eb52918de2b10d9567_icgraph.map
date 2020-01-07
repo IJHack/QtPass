@@ -1,0 +1,4 @@
+<map id="ConfigDialog::useTrayIcon" name="ConfigDialog::useTrayIcon">
+<area shape="rect" id="node1" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="235,5,413,31"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
+</map>

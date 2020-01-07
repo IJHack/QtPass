@@ -721,7 +721,7 @@
 <!-- Node49 -->
 <g id="node49" class="node">
 <title>Node49</title>
-<g id="a_node49"><a xlink:href="class_config_dialog.html#a3c415e0545cbb89ce3026c5b32f1a37c" target="_top" xlink:title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...">
+<g id="a_node49"><a xlink:href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567" target="_top" xlink:title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...">
 <polygon fill="none" stroke="black" points="185.03,-0.5 185.03,-18.5 318.5,-18.5 318.5,-0.5 185.03,-0.5"/>
 <text text-anchor="middle" x="251.77" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::useTrayIcon</text>
 </a>

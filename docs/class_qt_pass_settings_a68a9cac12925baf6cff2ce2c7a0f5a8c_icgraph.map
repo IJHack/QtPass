@@ -1,7 +1,7 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
 <area shape="rect" id="node1" title=" " alt="" coords="407,55,612,80"/>
 <area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="252,5,341,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository." alt="" coords="239,55,355,80"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="239,55,355,80"/>
 <area shape="rect" id="node5" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="235,104,359,129"/>
 <area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,187,31"/>
 </map>

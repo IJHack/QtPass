@@ -35,7 +35,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_node4"><a xlink:href="class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
 <polygon fill="none" stroke="black" points="174.96,-37.5 174.96,-55.5 262.09,-55.5 262.09,-37.5 174.96,-37.5"/>
 <text text-anchor="middle" x="218.53" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

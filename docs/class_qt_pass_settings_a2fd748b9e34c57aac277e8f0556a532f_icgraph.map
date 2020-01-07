@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,187,31"/>
 <area shape="rect" id="node3" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="31,55,161,80"/>
 <area shape="rect" id="node4" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper." alt="" coords="23,104,169,129"/>
-<area shape="rect" id="node5" href="$class_imitate_pass.html#ab4ee26f024636eb1b0989b1c1e67d5c0" title="ImitatePass::Init initialize pass repository." alt="" coords="38,153,154,179"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="38,153,154,179"/>
 <area shape="rect" id="node6" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title=" " alt="" coords="31,203,162,228"/>
 <area shape="rect" id="node7" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="21,252,171,277"/>
 <area shape="rect" id="node8" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="22,301,170,327"/>
