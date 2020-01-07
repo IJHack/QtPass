@@ -7,33 +7,36 @@ TARGET 	   = qtpass
 CONFIG += c++11 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
-TRANSLATIONS    +=  ../localization/localization_nl_NL.ts \
-                    ../localization/localization_ca.ts \
+TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
+                    ../localization/localization_ca.ts    \
+                    ../localization/localization_cs_CZ.ts \
                     ../localization/localization_de_DE.ts \
-                    ../localization/localization_es_ES.ts \
-                    ../localization/localization_gl_ES.ts \
-                    ../localization/localization_hu_HU.ts \
-                    ../localization/localization_sv_SE.ts \
-                    ../localization/localization_pl_PL.ts \
-                    ../localization/localization_ru_RU.ts \
-                    ../localization/localization_he_IL.ts \
-                    ../localization/localization_zh_CN.ts \
-                    ../localization/localization_ar_MA.ts \
-                    ../localization/localization_fr_FR.ts \
-                    ../localization/localization_fr_BE.ts \
-                    ../localization/localization_nl_BE.ts \
-                    ../localization/localization_fr_LU.ts \
                     ../localization/localization_de_LU.ts \
-                    ../localization/localization_lb_LU.ts \
+                    ../localization/localization_el_GR.ts \
                     ../localization/localization_en_GB.ts \
                     ../localization/localization_en_US.ts \
-                    ../localization/localization_el_GR.ts \
-                    ../localization/localization_cs_CZ.ts \
+                    ../localization/localization_es_ES.ts \
+                    ../localization/localization_fr_BE.ts \
+                    ../localization/localization_fr_FR.ts \
+                    ../localization/localization_fr_LU.ts \
+                    ../localization/localization_gl_ES.ts \
+                    ../localization/localization_he_IL.ts \
+                    ../localization/localization_hu_HU.ts \
                     ../localization/localization_it_IT.ts \
-                    ../localization/localization_sq_AL.ts \
+                    ../localization/localization_lb_LU.ts \
+                    ../localization/localization_nb_NO.ts \
+                    ../localization/localization_nl_BE.ts \
+                    ../localization/localization_nl_NL.ts \
+                    ../localization/localization_pl_PL.ts \
                     ../localization/localization_pt_PT.ts \
+                    ../localization/localization_ru_RU.ts \
+                    ../localization/localization_sq_AL.ts \
+                    ../localization/localization_sv_SE.ts \
                     ../localization/localization_tr_TR.ts \
-                    ../localization/localization_nb_NO.ts
+                    ../localization/localization_zh_CN.ts \
+
+CONFIG += lrelease embed_translations
+QM_FILES_RESOURCE_PREFIX=/localization
 
 SOURCES   += mainwindow.cpp \
              configdialog.cpp \
@@ -87,12 +90,6 @@ FORMS     += mainwindow.ui \
              usersdialog.ui \
              keygendialog.ui \
              passworddialog.ui
-
-updateqm.input = TRANSLATIONS
-updateqm.output = ../localization/${QMAKE_FILE_BASE}.qm
-updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm ../localization/${QMAKE_FILE_BASE}.qm
-updateqm.CONFIG += no_link target_predeps
-QMAKE_EXTRA_COMPILERS += updateqm
 
 !nosingleapp {
     SOURCES += singleapplication.cpp
