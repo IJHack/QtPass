@@ -1175,12 +1175,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie aus, welche Benutzer die in diesem Ordner gespeicherten Passwörter entschlüsseln können sollen.
+Hinweis: Vorhandene Dateien werden nicht geändert und behalten die alten Berechtigungen bei, bis Sie sie bearbeiten.
+Blaue Einträge haben einen geheimen Schlüssel zur Verfügung, wählen Sie einen aus, um ihn zu entschlüsseln.
+Rote Einträge sind ungültig, Sie können diese nicht verschlüsseln.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche nach Benutzern</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
