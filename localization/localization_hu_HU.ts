@@ -442,17 +442,17 @@ e-mail</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
@@ -783,7 +783,7 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.cpp" line="392"/>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
@@ -804,7 +804,7 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.cpp" line="605"/>
         <location filename="../src/mainwindow.cpp" line="966"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Új fájl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="606"/>
