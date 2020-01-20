@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Inclou símbols especials</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
@@ -1230,12 +1230,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seleccioneu quins usuaris han de ser capaços de desxifrar les contrasenyes emmagatzemades en aquesta carpeta.
+Nota: els fitxers existents no es modificaran i conserveu els permisos antics fins que no els editeu.
+Les entrades blaves tenen una clau secreta disponible, seleccioneu-ne una per poder desxifrar-les.
+Les entrades en vermell no són vàlides, no podreu xifrar-les.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca d’usuaris</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
