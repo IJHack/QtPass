@@ -551,7 +551,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Dužina zaporke nema ograničenja i treba je pažljivo odabrati. Iz perspektive sigurnosti, lozinka za otključavanje privatnog ključa jedna je od najslabijih točaka u GnuPG-u (i ostalim sustavima šifriranja javnih ključeva) jer je to jedina zaštita koju imate ako drugi pojedinac dobije vaš privatni ključ. &lt;br/&gt; U idealnom slučaju, zaporka ne bi trebala upotrebljavati riječi iz rječnika, a treba miješati velika slova abecede kao i nefabecedne znakove. &lt;br/&gt; Dobra lozinka ključna je za sigurnu upotrebu GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -619,7 +619,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ova operacija može potrajati nekoliko minuta. &lt;br /&gt; Moramo generirati puno slučajnih bajtova. Dobro je provesti neku drugu radnju (utipkajte tipkovnicu, pomičite miša, koristite diskove) tijekom premijere generacije; ovo daje veću mogućnost generatora slučajnih brojeva da steknu dovoljno entropije.</translation>
     </message>
 </context>
 <context>
@@ -1128,32 +1128,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="237"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="243"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="249"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="252"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
@@ -1230,7 +1230,10 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Odaberite koji bi korisnici trebali moći dešifrirati zaporke spremljene u ovoj mapi.
+Napomena: Postojeće datoteke neće se mijenjati i zadržavaju stara dopuštenja sve dok ih ne uredite.
+Plavi unosi imaju na raspolaganju tajni ključ, odaberite jedan od njih kako biste ih mogli dešifrirati.
+Crveni unosi nisu valjani, nećete ih moći šifrirati.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
