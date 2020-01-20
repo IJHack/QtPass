@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>包括特殊符号</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
@@ -472,7 +472,7 @@ email</source>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">login
+        <translation>login
 URL
 e-mail</translation>
     </message>
@@ -1189,12 +1189,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">选择哪些用户应该能够解密此文件夹中存储的密码。
+注意：现有文件将不会被修改，并保留旧的权限，直到您对其进行编辑。
+蓝色条目具有可用的秘密密钥，请选择其中一项以进行解密。
+红色条目无效，您将无法对其进行加密。</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索用户</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
