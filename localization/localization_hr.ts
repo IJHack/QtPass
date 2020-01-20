@@ -1277,17 +1277,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Ključ nije pronađen u privjesku ključeva</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>stvoren</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>isteći će</translation>
     </message>
 </context>
 </TS>
