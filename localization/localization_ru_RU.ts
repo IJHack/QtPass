@@ -93,7 +93,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить специальные символы</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -461,7 +461,7 @@ email</translation>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">login
+        <translation>login
 URL
 e-mail</translation>
     </message>
@@ -1177,12 +1177,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберите, какие пользователи должны иметь возможность расшифровывать пароли, хранящиеся в этой папке.
+Примечание. Существующие файлы не будут изменены и сохранят старые разрешения до тех пор, пока вы их не отредактируете.
+Синие записи имеют секретный ключ, выберите один из них, чтобы иметь возможность расшифровать.
+Красные записи недействительны, вы не сможете зашифровать их.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск пользователей</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
