@@ -15,7 +15,6 @@
 - Translations need updating and checking [\#488](https://github.com/IJHack/QtPass/issues/488)
 - Front-End doesn't work well with HiDPI screen [\#464](https://github.com/IJHack/QtPass/issues/464)
 - How to let QtPass use the real "pass" on windows [\#458](https://github.com/IJHack/QtPass/issues/458)
-- Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
 - Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
@@ -110,6 +109,7 @@
 - GnuPG not found on Linux Mint [\#433](https://github.com/IJHack/QtPass/issues/433)
 - How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
 - LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
+- Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
 - Compilation error in \(K\)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
 - Prevent from removing whole password-store directory and hidden directories and files [\#400](https://github.com/IJHack/QtPass/issues/400)
@@ -143,7 +143,6 @@
 - pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
 - Continuing refactoring [\#407](https://github.com/IJHack/QtPass/pull/407) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - \#390 make box cheched when opening a folder users panel [\#403](https://github.com/IJHack/QtPass/pull/403) ([kenji21](https://github.com/kenji21))
-- Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
@@ -207,6 +206,7 @@
 - Optimizations :\) [\#367](https://github.com/IJHack/QtPass/pull/367) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Removed comment out \#includes [\#365](https://github.com/IJHack/QtPass/pull/365) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - fix for \#300 [\#363](https://github.com/IJHack/QtPass/pull/363) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+- Translated all missing content to Italian, created Release of transla… [\#361](https://github.com/IJHack/QtPass/pull/361) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Refactoring [\#360](https://github.com/IJHack/QtPass/pull/360) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Display all fields when using template setting, fixes \#273 [\#358](https://github.com/IJHack/QtPass/pull/358) ([lukedirtwalker](https://github.com/lukedirtwalker))
 - Update CONTRIBUTING.md [\#354](https://github.com/IJHack/QtPass/pull/354) ([5bentz](https://github.com/5bentz))
@@ -230,6 +230,7 @@
 **Merged pull requests:**
 
 - Insecure password generation [\#342](https://github.com/IJHack/QtPass/pull/342) ([annejan](https://github.com/annejan))
+- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 
 ## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
@@ -278,7 +279,6 @@
 
 **Merged pull requests:**
 
-- Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -515,6 +515,7 @@
 - qrand always generating the same sequence of passwords [\#129](https://github.com/IJHack/QtPass/pull/129) ([treat1](https://github.com/treat1))
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
 - added one translation [\#125](https://github.com/IJHack/QtPass/pull/125) ([retokromer](https://github.com/retokromer))
+- initial attempt to create a RPM spec file [\#121](https://github.com/IJHack/QtPass/pull/121) ([bram-ivs](https://github.com/bram-ivs))
 - Cleanup and coding standards [\#120](https://github.com/IJHack/QtPass/pull/120) ([annejan](https://github.com/annejan))
 - Modified the clipboard logic to allow for on-demand copy to clipboard. [\#119](https://github.com/IJHack/QtPass/pull/119) ([jonhanks](https://github.com/jonhanks))
 
@@ -525,10 +526,6 @@
 
 - using pwgen adds carriage-return [\#115](https://github.com/IJHack/QtPass/issues/115)
 - Enhancement: color code git results [\#111](https://github.com/IJHack/QtPass/issues/111)
-
-**Merged pull requests:**
-
-- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvaerum](https://github.com/dvaerum))
 
 ## [v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4) (2015-11-03)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)
@@ -653,7 +650,6 @@
 
 **Merged pull requests:**
 
-- initial attempt to create a RPM spec file [\#121](https://github.com/IJHack/QtPass/pull/121) ([bram-ivs](https://github.com/bram-ivs))
 - Many deadlocks and other nasty bug fixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
 - Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -677,6 +673,7 @@
 
 **Merged pull requests:**
 
+- Fix bug that prints "Unknown error" to the terminal [\#113](https://github.com/IJHack/QtPass/pull/113) ([dvaerum](https://github.com/dvaerum))
 - Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)

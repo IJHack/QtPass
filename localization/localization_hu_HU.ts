@@ -907,7 +907,7 @@ Lejárat-dátum: 0
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
