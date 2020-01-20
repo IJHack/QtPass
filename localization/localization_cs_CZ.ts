@@ -408,7 +408,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Používat speciální znaky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
@@ -1182,12 +1182,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vyberte, kteří uživatelé mají být schopni dešifrovat hesla uložená v této složce.
+Poznámka: Stávající soubory nebudou změněny a stará oprávnění zůstanou zachována, dokud je neupravíte.
+Modré záznamy mají k dispozici tajný klíč. Vyberte jeden z nich, který chcete dešifrovat.
+Červené položky nejsou platné, nebudete je moci zašifrovat.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledejte uživatele</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
