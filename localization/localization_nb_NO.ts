@@ -432,7 +432,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan ikke oppdatere</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
@@ -1000,7 +1000,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Søk etter brukere</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
@@ -1014,17 +1014,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Nøkkelliste mangler</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke hente liste over tilgjengelige GPG-nøkler</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation>Nøkkel ikke funnet i nøkkelring</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>
