@@ -13,6 +13,7 @@ QtPass
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/alerts/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_shield)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
+[![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
