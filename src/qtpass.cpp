@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QVBoxLayout>
+#include <QDialog>
 
 #ifndef Q_OS_WIN
 #include <QInputDialog>
