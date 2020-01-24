@@ -1,21 +1,27 @@
-name: C/C++ CI
-
+name: QMake
 on: [push, pull_request]
-
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-    
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+         os: [ubuntu-latest, macos-latest, windows-latest]
+         include: 
+          - os: ubuntu-latest
+            make: make
+          - os: macos-latest
+            make: make
+          - os: windows-latest
+            make: nmake
     steps:
     - uses: actions/checkout@v1
+    - uses: ilammy/msvc-dev-cmd@v1
     - name: Install Qt
       uses: jurplel/install-qt-action@v2
-    - name: Install Linux packages
-      run: sudo apt update && sudo apt install -y --no-install-recommends libgl1-mesa-dev
     - name: qmake
       run: qmake
     - name: make
-      run: make
+      run: ${{matrix.make}}
     - name: make check
-      run: make check TESTARGS="--platform offscreen"
+      run: ${{matrix.make}} check TESTARGS="--platform offscreen"
