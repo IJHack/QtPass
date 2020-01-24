@@ -555,6 +555,8 @@ bool ConfigDialog::isQrencodeAvailable() {
   QProcess which;
   which.start("which", QStringList() << "qrencode");
   which.waitForFinished();
+  QtPassSettings::setQrencodeExecutable(
+      which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;
 #endif
 }

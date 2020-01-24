@@ -5,33 +5,27 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="829"/>
         <source>Configuration</source>
         <translation>Axustes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
-        <location filename="../src/ui_configdialog.h" line="833"/>
-        <location filename="../src/ui_configdialog.h" line="838"/>
         <source>Seconds</source>
         <translation>Segundos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
-        <location filename="../src/ui_configdialog.h" line="835"/>
         <source>Hide content</source>
         <translation>Ocultar contido</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
-        <location filename="../src/ui_configdialog.h" line="836"/>
         <source>Hide password</source>
         <translation>Ocultar contrasinal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
-        <location filename="../src/ui_configdialog.h" line="874"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
@@ -41,289 +35,241 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
-        <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
-        <location filename="../src/ui_configdialog.h" line="870"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
-        <location filename="../src/ui_configdialog.h" line="830"/>
         <source>Clipboard behaviour:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
-        <location filename="../src/ui_configdialog.h" line="831"/>
         <source>Use primary selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
-        <location filename="../src/ui_configdialog.h" line="832"/>
         <source>Autoclear after:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
-        <location filename="../src/ui_configdialog.h" line="834"/>
         <source>Content panel behaviour:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
-        <location filename="../src/ui_configdialog.h" line="837"/>
         <source>Autoclear panel after:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
-        <location filename="../src/ui_configdialog.h" line="839"/>
         <source>Password Generation:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
-        <location filename="../src/ui_configdialog.h" line="840"/>
         <source>Password Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
-        <location filename="../src/ui_configdialog.h" line="841"/>
         <source>Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
-        <location filename="../src/ui_configdialog.h" line="842"/>
         <source>Use characters:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
-        <location filename="../src/ui_configdialog.h" line="849"/>
         <source>Select character set for password generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
-        <location filename="../src/ui_configdialog.h" line="843"/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
-        <location filename="../src/ui_configdialog.h" line="844"/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
-        <location filename="../src/ui_configdialog.h" line="845"/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
-        <location filename="../src/ui_configdialog.h" line="846"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
-        <location filename="../src/ui_configdialog.h" line="851"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
-        <location filename="../src/ui_configdialog.h" line="854"/>
         <source>Include special symbols</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
-        <location filename="../src/ui_configdialog.h" line="893"/>
         <source>Current path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
-        <location filename="../src/ui_configdialog.h" line="853"/>
         <source>Exclude capital letters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
-        <location filename="../src/ui_configdialog.h" line="855"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
-        <location filename="../src/ui_configdialog.h" line="856"/>
         <source>Exclude numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
-        <location filename="../src/ui_configdialog.h" line="857"/>
         <source>Git:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
-        <location filename="../src/ui_configdialog.h" line="859"/>
         <source>Automatically add .gpg-id files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
-        <location filename="../src/ui_configdialog.h" line="860"/>
         <source>Automatically push</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
-        <location filename="../src/ui_configdialog.h" line="861"/>
         <source>Automatically pull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
-        <location filename="../src/ui_configdialog.h" line="862"/>
         <source>Extensions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
-        <location filename="../src/ui_configdialog.h" line="865"/>
         <source>System:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
-        <location filename="../src/ui_configdialog.h" line="866"/>
         <source>Use TrayIcon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
-        <location filename="../src/ui_configdialog.h" line="867"/>
         <source>Start minimized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
-        <location filename="../src/ui_configdialog.h" line="868"/>
         <source>Hide on close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
-        <location filename="../src/ui_configdialog.h" line="869"/>
         <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
-        <location filename="../src/ui_configdialog.h" line="886"/>
         <source>Programs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
-        <location filename="../src/ui_configdialog.h" line="871"/>
         <source>Select password storage program:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
-        <location filename="../src/ui_configdialog.h" line="873"/>
         <source>&amp;Use pass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
-        <location filename="../src/ui_configdialog.h" line="882"/>
         <source>pass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
-        <location filename="../src/ui_configdialog.h" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
-        <location filename="../src/ui_configdialog.h" line="885"/>
         <source>Autodetect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
-        <location filename="../src/ui_configdialog.h" line="895"/>
         <source>Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
-        <location filename="../src/ui_configdialog.h" line="888"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
-        <location filename="../src/ui_configdialog.h" line="890"/>
         <source>Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
-        <location filename="../src/ui_configdialog.h" line="891"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
-        <location filename="../src/ui_configdialog.h" line="892"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
-        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
-        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Use template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
-        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
-        <location filename="../src/ui_configdialog.h" line="901"/>
         <source>Show all fields templated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
-        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation type="unfinished"></translation>
     </message>
@@ -368,78 +314,72 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="584"/>
         <source>GnuPG not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="585"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="590"/>
+        <location filename="../src/configdialog.cpp" line="592"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="596"/>
+        <location filename="../src/configdialog.cpp" line="598"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="623"/>
+        <location filename="../src/configdialog.cpp" line="625"/>
         <source>Create password-store?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="624"/>
+        <location filename="../src/configdialog.cpp" line="626"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="643"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>Password store not initialised</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="644"/>
+        <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
-        <location filename="../src/ui_configdialog.h" line="852"/>
         <source>Use PWGen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
-        <location filename="../src/ui_configdialog.h" line="858"/>
         <source>Use Git</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
-        <location filename="../src/ui_configdialog.h" line="863"/>
         <source>Use QRencode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
-        <location filename="../src/ui_configdialog.h" line="864"/>
         <source>Use pass-otp extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
-        <location filename="../src/ui_configdialog.h" line="872"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
-        <location filename="../src/ui_configdialog.h" line="875"/>
         <source>Git</source>
         <translation type="unfinished"></translation>
     </message>
@@ -449,35 +389,26 @@
         <location filename="../src/configdialog.ui" line="727"/>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
-        <location filename="../src/ui_configdialog.h" line="876"/>
-        <location filename="../src/ui_configdialog.h" line="877"/>
-        <location filename="../src/ui_configdialog.h" line="880"/>
-        <location filename="../src/ui_configdialog.h" line="883"/>
-        <location filename="../src/ui_configdialog.h" line="894"/>
         <source>…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
-        <location filename="../src/ui_configdialog.h" line="878"/>
         <source>GPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
-        <location filename="../src/ui_configdialog.h" line="879"/>
         <source>PWGen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
-        <location filename="../src/ui_configdialog.h" line="896"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
-        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>login
 URL
 e-mail</source>
@@ -602,49 +533,41 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="214"/>
         <source>Generate GnuPG keypair</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
-        <location filename="../src/ui_keygendialog.h" line="215"/>
         <source>Generate a new key pair</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
-        <location filename="../src/ui_keygendialog.h" line="216"/>
         <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
-        <location filename="../src/ui_keygendialog.h" line="217"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
-        <location filename="../src/ui_keygendialog.h" line="218"/>
         <source>Passphrase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
-        <location filename="../src/ui_keygendialog.h" line="219"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
-        <location filename="../src/ui_keygendialog.h" line="220"/>
         <source>Expert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
-        <location filename="../src/ui_keygendialog.h" line="221"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -664,7 +587,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -698,25 +620,21 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="267"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
-        <location filename="../src/ui_mainwindow.h" line="298"/>
         <source>Update</source>
         <translation>Actualizar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/ui_mainwindow.h" line="308"/>
         <source>Configuration</source>
         <translation>Axustes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
-        <location filename="../src/ui_mainwindow.h" line="306"/>
         <source>Config</source>
         <translation>Axustes</translation>
     </message>
@@ -809,19 +727,16 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
-        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Select profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
-        <location filename="../src/ui_mainwindow.h" line="312"/>
         <source>Search Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
-        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished"></translation>
     </message>
@@ -829,14 +744,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
-        <location filename="../src/ui_mainwindow.h" line="268"/>
-        <location filename="../src/ui_mainwindow.h" line="270"/>
         <source>Add password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
-        <location filename="../src/ui_mainwindow.h" line="273"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
@@ -844,8 +756,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="900"/>
-        <location filename="../src/ui_mainwindow.h" line="275"/>
-        <location filename="../src/ui_mainwindow.h" line="277"/>
         <source>Add folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -853,8 +763,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="908"/>
-        <location filename="../src/ui_mainwindow.h" line="279"/>
-        <location filename="../src/ui_mainwindow.h" line="281"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -862,57 +770,47 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="929"/>
-        <location filename="../src/ui_mainwindow.h" line="283"/>
-        <location filename="../src/ui_mainwindow.h" line="285"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/ui_mainwindow.h" line="287"/>
         <source>OTP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
-        <location filename="../src/ui_mainwindow.h" line="289"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
-        <location filename="../src/ui_mainwindow.h" line="292"/>
         <source>Ctrl+G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
-        <location filename="../src/ui_mainwindow.h" line="294"/>
         <source>Push</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
-        <location filename="../src/ui_mainwindow.h" line="296"/>
         <source>git push</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
-        <location filename="../src/ui_mainwindow.h" line="300"/>
         <source>git pull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="902"/>
-        <location filename="../src/ui_mainwindow.h" line="302"/>
         <source>Users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
-        <location filename="../src/ui_mainwindow.h" line="304"/>
         <source>Manage who can read password in folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1023,7 +921,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
-        <location filename="../src/ui_mainwindow.h" line="314"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1049,56 +946,46 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
-        <location filename="../src/ui_passworddialog.h" line="169"/>
-        <location filename="../src/ui_passworddialog.h" line="171"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
-        <location filename="../src/ui_passworddialog.h" line="172"/>
         <source>Generate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
-        <location filename="../src/ui_passworddialog.h" line="173"/>
         <source>Show password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
-        <location filename="../src/ui_passworddialog.h" line="174"/>
         <source>Character Set:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
-        <location filename="../src/ui_passworddialog.h" line="175"/>
         <source>All Characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
-        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Alphabetical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Alphanumerical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
-        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
-        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>Length:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1114,80 +1001,80 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="237"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::Fallou o inicio</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="240"/>
+        <location filename="../src/qtpass.cpp" line="241"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Fallou</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="243"/>
+        <location filename="../src/qtpass.cpp" line="244"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Caducou</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::Erro de lectura</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="250"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::Erro de escritura</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="252"/>
+        <location filename="../src/qtpass.cpp" line="253"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::Erro descoñecido</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="379"/>
+        <location filename="../src/qtpass.cpp" line="380"/>
         <source>Clipboard cleared</source>
         <translation>Portapapeis baleiro</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="139"/>
+        <location filename="../src/qtpass.cpp" line="140"/>
         <source>Generating GPG key pair</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="191"/>
+        <location filename="../src/qtpass.cpp" line="192"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="204"/>
+        <location filename="../src/qtpass.cpp" line="205"/>
         <source>QtPass WebDAV password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="205"/>
+        <location filename="../src/qtpass.cpp" line="206"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="221"/>
+        <location filename="../src/qtpass.cpp" line="222"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="224"/>
+        <location filename="../src/qtpass.cpp" line="225"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="381"/>
+        <location filename="../src/qtpass.cpp" line="382"/>
         <source>Clipboard not cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="400"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1242,13 +1129,11 @@ p, li { white-space: pre-wrap; }
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="97"/>
         <source>Read access users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
-        <location filename="../src/ui_usersdialog.h" line="98"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1257,13 +1142,11 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
-        <location filename="../src/ui_usersdialog.h" line="102"/>
         <source>Search for users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
-        <location filename="../src/ui_usersdialog.h" line="103"/>
         <source>Show unusable keys</source>
         <translation type="unfinished"></translation>
     </message>

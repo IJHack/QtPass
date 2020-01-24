@@ -5,6 +5,7 @@
 #include <QClipboard>
 #include <QLabel>
 #include <QPixmap>
+#include <QVBoxLayout>
 
 #ifndef Q_OS_WIN
 #include <QInputDialog>
@@ -409,8 +410,9 @@ void QtPass::copyTextToClipboard(const QString &text) {
  */
 void QtPass::showTextAsQRCode(const QString &text) {
   QProcess qrencode;
-  qrencode.start("/usr/bin/qrencode", QStringList() << "-o-"
-                                                    << "-tPNG");
+  qrencode.start(QtPassSettings::getQrencodeExecutable("/usr/bin/qrencode"),
+                 QStringList() << "-o-"
+                               << "-tPNG");
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();
@@ -423,9 +425,15 @@ void QtPass::showTextAsQRCode(const QString &text) {
     QPixmap image;
     image.loadFromData(output, "PNG");
 
-    QLabel *label = new QLabel();
-    label->setPixmap(image);
-    label->setScaledContents(true);
-    label->show();
+    QDialog *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
+    QVBoxLayout *layout = new QVBoxLayout;
+    QLabel *popupLabel = new QLabel();
+    layout->addWidget(popupLabel);
+    popupLabel->setPixmap(image);
+    popupLabel->setScaledContents(true);
+    popupLabel->show();
+    popup->setLayout(layout);
+    popup->move(QCursor::pos());
+    popup->exec();
   }
 }
