@@ -1,4 +1,4 @@
-const cacheName = 'qtpass::v1::static';
+const cacheName = 'qtpass::v1.3.2::static';
 
 self.addEventListener('install', e => {
   e.waitUntil(

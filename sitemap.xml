@@ -1,843 +1,857 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://qtpass.org/</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/downloads</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/changelog</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/md__r_e_a_d_m_e.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_main_window.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/md__f_a_q.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/md__c_h_a_n_g_e_l_o_g.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/changelog.1.1</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/changelog.old</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/changelog.beta</loc>
-    <lastmod>2018-10-24T09:29:09+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_qt_pass.html</loc>
-    <lastmod>2018-10-24T09:27:27+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_main_window-members.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/mainwindow_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/graph_legend.html</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/mainwindow_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/main_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/_c_o_n_t_r_i_b_u_t_i_n_g_8md.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_single_application.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_pass.html</loc>
-    <lastmod>2018-10-24T09:27:24+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_config_dialog.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/_r_e_a_d_m_e_8md.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passworddialog_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_qt_pass_settings.html</loc>
-    <lastmod>2018-10-24T09:27:28+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_qt_pass-members.html</loc>
-    <lastmod>2018-10-24T09:27:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpass_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpass_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/dir_68267d1309a1af8e8297ef4c3efbcdba.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/mainwindow_8h.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/storemodel_8h.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/namespace_ui.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_tray_icon.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_store_model.html</loc>
-    <lastmod>2018-10-24T09:27:35+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/configdialog_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/storemodel_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/trayicon_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/singleapplication_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/mainwindow_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/debughelper_8h.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/configdialog_8h.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/filecontent_8h.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/keygendialog_8h.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passworddialog_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpass_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpasssettings_8h.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/settingsconstants_8h.html</loc>
-    <lastmod>2018-10-24T09:27:45+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/trayicon_8h.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/usersdialog_8h.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/util_8h.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_util.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_deselectable_tree_view.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_file_content.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_named_values.html</loc>
-    <lastmod>2018-10-24T09:27:24+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_named_value.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_password_dialog.html</loc>
-    <lastmod>2018-10-24T09:27:26+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_users_dialog.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/namespaceavatars.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/namespace_enums.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_q_push_button_with_clipboard.html</loc>
-    <lastmod>2018-10-24T09:27:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/filecontent_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpasssettings_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/debughelper_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/filecontent_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/storemodel_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passworddialog_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/avatars_8py_source.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/usersdialog_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/enums_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/pass_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/util_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/trayicon_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/dir_5c982d53a68cdbcd421152b4020263a9.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/main_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/_c_o_n_t_r_i_b_u_t_i_n_g_8md_source.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_single_application-members.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/singleapplication_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_pass-members.html</loc>
-    <lastmod>2018-10-24T09:27:24+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/pass_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_user_info.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_executor.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_imitate_pass.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_real_pass.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_config_dialog-members.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_password_configuration.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/configdialog_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/todo.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/_r_e_a_d_m_e_8md_source.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passwordconfiguration_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpasssettings_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passworddialog_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_qt_pass_settings-members.html</loc>
-    <lastmod>2018-10-24T09:27:28+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpass_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/configdialog_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/deselectabletreeview_8h.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/deselectabletreeview_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/enums_8h.html</loc>
-    <lastmod>2018-10-24T09:27:37+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/executor_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/executor_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/executor_8h.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/executor_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/filecontent_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:38+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/imitatepass_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/imitatepass_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/imitatepass_8h.html</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/imitatepass_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:39+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/keygendialog_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/keygendialog_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/keygendialog_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/pass_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:40+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/pass_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/passwordconfiguration_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qprogressindicator_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qprogressindicator_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qprogressindicator_8h.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qprogressindicator_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/qtpasssettings_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:41+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/realpass_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/realpass_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/realpass_8h.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/realpass_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:42+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/settingsconstants_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:45+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/settingsconstants_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:45+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/settingsconstants_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:45+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/simpletransaction_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:45+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/simpletransaction_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/simpletransaction_8h.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/simpletransaction_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/singleapplication_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/singleapplication_8h.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/storemodel_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/trayicon_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/userinfo_8h.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/userinfo_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/usersdialog_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/usersdialog_8cpp_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/util_8cpp.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/util_8h_source.html</loc>
-    <lastmod>2018-10-24T09:27:47+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/structdrag_and_drop_info_password_store.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_tray_icon-members.html</loc>
-    <lastmod>2018-10-24T09:27:35+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_store_model-members.html</loc>
-    <lastmod>2018-10-24T09:27:35+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_keygen_dialog.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_settings_constants.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_util-members.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_deselectable_tree_view-members.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_file_content-members.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_named_values-members.html</loc>
-    <lastmod>2018-10-24T09:27:24+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_named_value-members.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_password_dialog-members.html</loc>
-    <lastmod>2018-10-24T09:27:26+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_users_dialog-members.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_q_push_button_with_clipboard-members.html</loc>
-    <lastmod>2018-10-24T09:27:27+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/avatars_8py.html</loc>
-    <lastmod>2018-10-24T09:27:20+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_user_info-members.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_executor-members.html</loc>
-    <lastmod>2018-10-24T09:27:21+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_imitate_pass-members.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_real_pass-members.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/struct_password_configuration-members.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/classsimple_transaction.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.33</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_q_progress_indicator.html</loc>
-    <lastmod>2018-10-24T09:27:26+00:00</lastmod>
-    <priority>0.33</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/structdrag_and_drop_info_password_store-members.html</loc>
-    <lastmod>2018-10-24T09:27:46+00:00</lastmod>
-    <priority>0.33</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_keygen_dialog-members.html</loc>
-    <lastmod>2018-10-24T09:27:22+00:00</lastmod>
-    <priority>0.33</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_settings_constants-members.html</loc>
-    <lastmod>2018-10-24T09:27:34+00:00</lastmod>
-    <priority>0.33</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/classsimple_transaction-members.html</loc>
-    <lastmod>2018-10-24T09:27:36+00:00</lastmod>
-    <priority>0.26</priority>
-  </url>
-  <url>
-    <loc>https://qtpass.org/docs/class_q_progress_indicator-members.html</loc>
-    <lastmod>2018-10-24T09:27:26+00:00</lastmod>
-    <priority>0.26</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://qtpass.org/</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/downloads</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/md__r_e_a_d_m_e.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_main_window.html</loc>
+  <lastmod>2020-01-29T09:54:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/md__f_a_q.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/md__c_h_a_n_g_e_l_o_g.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.1.2</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.1.1</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.old</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.beta</loc>
+  <lastmod>2020-01-29T09:58:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_qt_pass.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_main_window-members.html</loc>
+  <lastmod>2020-01-29T09:54:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/mainwindow_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/graph_legend.html</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/mainwindow_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_password_dialog.html</loc>
+  <lastmod>2020-01-29T09:54:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/main_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/_c_o_n_t_r_i_b_u_t_i_n_g_8md.html</loc>
+  <lastmod>2020-01-29T09:54:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_single_application.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_pass.html</loc>
+  <lastmod>2020-01-29T09:54:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_config_dialog.html</loc>
+  <lastmod>2020-01-29T09:54:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/_r_e_a_d_m_e_8md.html</loc>
+  <lastmod>2020-01-29T09:54:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passworddialog_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_qt_pass_settings.html</loc>
+  <lastmod>2020-01-29T09:54:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_qt_pass-members.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpass_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpass_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/dir_68267d1309a1af8e8297ef4c3efbcdba.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/mainwindow_8h.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/storemodel_8h.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/namespace_ui.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_tray_icon.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_store_model.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/singleapplication_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/trayicon_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/storemodel_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/configdialog_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/mainwindow_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/debughelper_8h.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/configdialog_8h.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/filecontent_8h.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/keygendialog_8h.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passworddialog_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonasqrcode_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpass_8h.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpasssettings_8h.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/settingsconstants_8h.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/trayicon_8h.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/usersdialog_8h.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/util_8h.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_util.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_deselectable_tree_view.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_file_content.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_named_values.html</loc>
+  <lastmod>2020-01-29T09:54:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_named_value.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_users_dialog.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/namespace_enums.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_push_button_with_clipboard.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_push_button_as_q_r_code.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpasssettings_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/usersdialog_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonasqrcode_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/filecontent_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/filecontent_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/trayicon_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/pass_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/storemodel_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passworddialog_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/util_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/enums_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/debughelper_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_password_dialog-members.html</loc>
+  <lastmod>2020-01-29T09:54:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_password_configuration.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passworddialog_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/dir_5c982d53a68cdbcd421152b4020263a9.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/main_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_single_application-members.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/singleapplication_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_pass-members.html</loc>
+  <lastmod>2020-01-29T09:54:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/pass_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_user_info.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_executor.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_imitate_pass.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_real_pass.html</loc>
+  <lastmod>2020-01-29T09:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_config_dialog-members.html</loc>
+  <lastmod>2020-01-29T09:54:44+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/configdialog_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/todo.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passwordconfiguration_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpasssettings_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_qt_pass_settings-members.html</loc>
+  <lastmod>2020-01-29T09:54:51+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpass_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/configdialog_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/deselectabletreeview_8h.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/deselectabletreeview_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/enums_8h.html</loc>
+  <lastmod>2020-01-29T09:55:01+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/executor_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/executor_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/executor_8h.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/executor_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/filecontent_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:02+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/imitatepass_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/imitatepass_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/imitatepass_8h.html</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/imitatepass_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:03+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/keygendialog_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/keygendialog_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/keygendialog_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/pass_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:04+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/pass_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/passwordconfiguration_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qprogressindicator_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qprogressindicator_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qprogressindicator_8h.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qprogressindicator_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonasqrcode_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonasqrcode_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qpushbuttonwithclipboard_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:05+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/qtpasssettings_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/realpass_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/realpass_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/realpass_8h.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/realpass_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/settingsconstants_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/settingsconstants_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/settingsconstants_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/simpletransaction_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/simpletransaction_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/simpletransaction_8h.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/simpletransaction_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/singleapplication_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/singleapplication_8h.html</loc>
+  <lastmod>2020-01-29T09:55:09+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/storemodel_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/trayicon_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/userinfo_8h.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/userinfo_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/usersdialog_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/usersdialog_8cpp_source.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/util_8cpp.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/util_8h_source.html</loc>
+  <lastmod>2020-01-29T09:55:11+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/structdrag_and_drop_info_password_store.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_tray_icon-members.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_store_model-members.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_keygen_dialog.html</loc>
+  <lastmod>2020-01-29T09:54:46+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_settings_constants.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_util-members.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_deselectable_tree_view-members.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_file_content-members.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_named_values-members.html</loc>
+  <lastmod>2020-01-29T09:54:47+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_named_value-members.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_users_dialog-members.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_push_button_with_clipboard-members.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_push_button_as_q_r_code-members.html</loc>
+  <lastmod>2020-01-29T09:54:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_password_configuration-members.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/struct_user_info-members.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_executor-members.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_imitate_pass-members.html</loc>
+  <lastmod>2020-01-29T09:54:45+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_real_pass-members.html</loc>
+  <lastmod>2020-01-29T09:54:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/classsimple_transaction.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_progress_indicator.html</loc>
+  <lastmod>2020-01-29T09:54:49+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/structdrag_and_drop_info_password_store-members.html</loc>
+  <lastmod>2020-01-29T09:55:10+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_keygen_dialog-members.html</loc>
+  <lastmod>2020-01-29T09:54:46+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_settings_constants-members.html</loc>
+  <lastmod>2020-01-29T09:54:59+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/classsimple_transaction-members.html</loc>
+  <lastmod>2020-01-29T09:55:00+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/docs/class_q_progress_indicator-members.html</loc>
+  <lastmod>2020-01-29T09:54:49+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
 </urlset>
