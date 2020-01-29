@@ -1,5 +1,10 @@
 {
- "name": "App",
+ "name": "QtPass GUI for pass, the standard UNIX password manager",
+ "short_name": "QtPass",
+ "start_url": "/index.html",
+ "display": "standalone",
+ "background_color": "#39c",
+ "theme_color": "#fff",
  "icons": [
   {
    "src": "\/images\/android-icon-36x36.png",
@@ -34,6 +39,12 @@
   {
    "src": "\/images\/android-icon-192x192.png",
    "sizes": "192x192",
+   "type": "image\/png",
+   "density": "4.0"
+  },
+  {
+   "src": "\/images\/logo.png",
+   "sizes": "1024x1024",
    "type": "image\/png",
    "density": "4.0"
   }
