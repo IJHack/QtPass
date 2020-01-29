@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maximized_858',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]]
+  ['maximized_863',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]]
 ];
