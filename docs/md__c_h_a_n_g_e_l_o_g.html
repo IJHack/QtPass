@@ -80,6 +80,7 @@ $(function() {
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
+<li>Consider mentioning export abilities in migration docs, if any are present <a href="https://github.com/IJHack/QtPass/issues/505">#505</a></li>
 <li>Enable out-of-source (shadow) builds. <a href="https://github.com/IJHack/QtPass/issues/501">#501</a></li>
 <li>password visiblity can't be fully hidden <a href="https://github.com/IJHack/QtPass/issues/496">#496</a></li>
 <li>Translations need updating and checking <a href="https://github.com/IJHack/QtPass/issues/488">#488</a></li>
@@ -276,7 +277,9 @@ $(function() {
 <li>Translated all missing content to Italian, created Release of transla… <a href="https://github.com/IJHack/QtPass/pull/361">#361</a> (<a href="https://github.com/FiloSpaTeam">FiloSpaTeam</a>)</li>
 <li>Refactoring <a href="https://github.com/IJHack/QtPass/pull/360">#360</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
 <li>Display all fields when using template setting, fixes #273 <a href="https://github.com/IJHack/QtPass/pull/358">#358</a> (<a href="https://github.com/lukedirtwalker">lukedirtwalker</a>)</li>
+<li>Update <a class="el" href="_c_o_n_t_r_i_b_u_t_i_n_g_8md.html">CONTRIBUTING.md</a> <a href="https://github.com/IJHack/QtPass/pull/354">#354</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
 <li>Add two entries in FAQ about the language <a href="https://github.com/IJHack/QtPass/pull/353">#353</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
+<li>Fix typo in french translation <a href="https://github.com/IJHack/QtPass/pull/349">#349</a> (<a href="https://github.com/babolivier">babolivier</a>)</li>
 <li>New scroll bar on large files <a href="https://github.com/IJHack/QtPass/pull/347">#347</a> (<a href="https://github.com/destanyol">destanyol</a>)</li>
 <li>Fix nested template argument list compile error <a href="https://github.com/IJHack/QtPass/pull/346">#346</a> (<a href="https://github.com/martinburchell">martinburchell</a>)</li>
 <li>Honor PREFIX during tests install <a href="https://github.com/IJHack/QtPass/pull/345">#345</a> (<a href="https://github.com/SpiderX">SpiderX</a>)</li>
@@ -293,8 +296,6 @@ $(function() {
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
-<li>Update <a class="el" href="_c_o_n_t_r_i_b_u_t_i_n_g_8md.html">CONTRIBUTING.md</a> <a href="https://github.com/IJHack/QtPass/pull/354">#354</a> (<a href="https://github.com/5bentz">5bentz</a>)</li>
-<li>Fix typo in french translation <a href="https://github.com/IJHack/QtPass/pull/349">#349</a> (<a href="https://github.com/babolivier">babolivier</a>)</li>
 <li>Insecure password generation <a href="https://github.com/IJHack/QtPass/pull/342">#342</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 <li>Add Catalan translation <a href="https://github.com/IJHack/QtPass/pull/336">#336</a> (<a href="https://github.com/rbuj">rbuj</a>)</li>
 </ul>
@@ -339,7 +340,6 @@ $(function() {
 <li>Refactoring: removal of lastDecrypt <a href="https://github.com/IJHack/QtPass/issues/256">#256</a></li>
 <li><a class="el" href="class_pass.html" title="Acts as an abstraction for pass or pass imitation.">Pass</a> environment not set-up correctly <a href="https://github.com/IJHack/QtPass/issues/250">#250</a></li>
 <li>Make fails - std c++11 not set <a href="https://github.com/IJHack/QtPass/issues/244">#244</a></li>
-<li>Double-clicking might open previous entry instead of one double-clicked on <a href="https://github.com/IJHack/QtPass/issues/243">#243</a></li>
 <li>Clean up <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> <a href="https://github.com/IJHack/QtPass/issues/235">#235</a></li>
 </ul>
 <p><b>Merged pull requests:</b></p>
@@ -356,6 +356,7 @@ $(function() {
 <li>small band aid fix for password generation on windows <a href="https://github.com/IJHack/QtPass/pull/276">#276</a> (<a href="https://github.com/treat1">treat1</a>)</li>
 <li>Final step in process mgmt refactoring <a href="https://github.com/IJHack/QtPass/pull/275">#275</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
 <li>Fix pwgen and refactor <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished.">Pass::finished</a> <a href="https://github.com/IJHack/QtPass/pull/271">#271</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
+<li>Process specific signals for process management <a href="https://github.com/IJHack/QtPass/pull/270">#270</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
 <li>#239 reencrypting after a drag and drop action <a href="https://github.com/IJHack/QtPass/pull/261">#261</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 <li>this if evaluetes ervery time to true <a href="https://github.com/IJHack/QtPass/pull/255">#255</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
 <li>executeing pass show before editpassword dialog shows up <a href="https://github.com/IJHack/QtPass/pull/254">#254</a> (<a href="https://github.com/YoshiMan">YoshiMan</a>)</li>
@@ -390,6 +391,7 @@ $(function() {
 </ul>
 <p><b>Closed issues:</b></p>
 <ul>
+<li>Double-clicking might open previous entry instead of one double-clicked on <a href="https://github.com/IJHack/QtPass/issues/243">#243</a></li>
 <li>Click does not stick <a href="https://github.com/IJHack/QtPass/issues/233">#233</a></li>
 <li>Doubleclick on Treeview does not open the edit dialouge <a href="https://github.com/IJHack/QtPass/issues/228">#228</a></li>
 <li>Windows - Enable GPG SSH Authentication <a href="https://github.com/IJHack/QtPass/issues/225">#225</a></li>
@@ -425,7 +427,6 @@ $(function() {
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
-<li>Process specific signals for process management <a href="https://github.com/IJHack/QtPass/pull/270">#270</a> (<a href="https://github.com/tezeb">tezeb</a>)</li>
 <li>Allow ssh links <a href="https://github.com/IJHack/QtPass/pull/211">#211</a> (<a href="https://github.com/cgonzalez">cgonzalez</a>)</li>
 <li>Increase maximum password length to 255 <a href="https://github.com/IJHack/QtPass/pull/209">#209</a> (<a href="https://github.com/vladimiroff">vladimiroff</a>)</li>
 <li>Password templates <a href="https://github.com/IJHack/QtPass/pull/207">#207</a> (<a href="https://github.com/jounathaen">jounathaen</a>)</li>
@@ -652,7 +653,6 @@ $(function() {
 <p><b>Merged pull requests:</b></p>
 <ul>
 <li>Updating hungarian localisation <a href="https://github.com/IJHack/QtPass/pull/76">#76</a> (<a href="https://github.com/damnlie">damnlie</a>)</li>
-<li>added DE translations <a href="https://github.com/IJHack/QtPass/pull/74">#74</a> (<a href="https://github.com/Friedy">Friedy</a>)</li>
 </ul>
 <h1><a href="https://github.com/IJHack/QtPass/tree/v0.9.2">v0.9.2</a> (2015-07-30)</h1>
 <p><a href="https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2">Full Changelog</a></p>
@@ -713,6 +713,7 @@ $(function() {
 </ul>
 <p><b>Merged pull requests:</b></p>
 <ul>
+<li>added DE translations <a href="https://github.com/IJHack/QtPass/pull/74">#74</a> (<a href="https://github.com/Friedy">Friedy</a>)</li>
 <li>Develop <a href="https://github.com/IJHack/QtPass/pull/52">#52</a> (<a href="https://github.com/annejan">annejan</a>)</li>
 <li>Minor thingies <a href="https://github.com/IJHack/QtPass/pull/51">#51</a> (<a href="https://github.com/beefcurtains">beefcurtains</a>)</li>
 </ul>
