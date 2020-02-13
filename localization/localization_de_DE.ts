@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation>Passwort ausblenden</translation>
+        <translation>Kennwort ausblenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
@@ -74,12 +74,12 @@
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Passwort Generierung:</translation>
+        <translation>Kennwortgenerierung:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation>Passwort Länge:</translation>
+        <translation>Kennwortlänge:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation>Zeichensatz für Passwortgenerator auswählen</translation>
+        <translation>Zeichensatz für Kennwortgenerator auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generiere einfach zu merkende, aber unsichere Passwörter</translation>
+        <translation>Generiere einfach zu merkende, aber unsichere Kennwörter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
@@ -329,22 +329,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="625"/>
         <source>Create password-store?</source>
-        <translation>Passwort Speicher erstellen?</translation>
+        <translation>Kennwortspeicher erstellen?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="626"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Soll ein Passwort Speicher in %1 erstellt werden?</translation>
+        <translation>Soll ein Kennwortspeicher in %1 erstellt werden?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
         <source>Password store not initialised</source>
-        <translation>Passwort Speicher nicht initialisiert</translation>
+        <translation>Kennwortspeicher nicht initialisiert</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Ordner %1 ist kein Passwort Speicher oder wurde noch nicht initialisiert.</translation>
+        <translation>Ordner %1 ist kein Kennwortspeicher oder wurde noch nicht initialisiert.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
@@ -508,7 +508,7 @@ e-mail</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Der Partnerschlüssel der selektierten Schlüssel fehlt.
-Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!</translation>
+Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
@@ -519,7 +519,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <location filename="../src/imitatepass.cpp" line="245"/>
         <location filename="../src/imitatepass.cpp" line="332"/>
         <source>Updating password-store</source>
-        <translation>Passwort Speicher aktualisieren</translation>
+        <translation>Kennwortspeicher wird aktualisiert</translation>
     </message>
 </context>
 <context>
@@ -588,7 +588,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translatorcomment>Google translate FTW</translatorcomment>
-        <translation>Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir müssen eine Menge von zufälligen Bytes zu erzeugen. Es ist eine gute Idee während der Prim-Generierung eine andere Aktion (auf der Tastatur tippen, die Maus bewegen, Festplatten benutzen) auszuführen; Dies gibt dem Zufallszahlengenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
+        <translation>Dieser Vorgang kann einige Minuten dauern.&lt;br /&gt;Wir müssen eine Menge zufälliger Bytes erzeugen. Es ist hilfreich, während der Primzahlerzeugung andere Aktionen durchzuführen (auf der Tastatur tippen, die Maus bewegen, die Festplatten verwenden); dies gibt dem Zufallszahlengenerator eine bessere Chance, genügend Entropie zu entwicklen.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -626,7 +626,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Edit</source>
-        <translation>Ändern</translation>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
@@ -653,7 +653,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation>Verwalten wer Passwörter im Ordner lesen kann</translation>
+        <translation>Bestimmen wer Kennwörter im Ordner lesen kann</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
@@ -674,7 +674,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation>Wählen Sie das Profil aus</translation>
+        <translation>Profil auswählen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
@@ -684,7 +684,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation>Passwort suchen</translation>
+        <translation>Kennwort suchen</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -694,7 +694,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="277"/>
         <location filename="../src/mainwindow.cpp" line="289"/>
         <source>Updating password-store</source>
-        <translation>Passwort Speicher aktualisieren</translation>
+        <translation>Kennwortspeicher aktualisieren</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -703,7 +703,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Sind Sie sicher, dass Sie %1%2 löschen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie %1%2 löschen möchten?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
@@ -761,7 +761,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="392"/>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Password</source>
-        <translation>Passwort</translation>
+        <translation>Kennwort</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="418"/>
@@ -775,7 +775,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="437"/>
         <source>Password and Content hidden</source>
-        <translation>Password und Inhalt ausgeblendet</translation>
+        <translation>Kennwort und Inhalt ausgeblendet</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -821,7 +821,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
         <source>Add password</source>
-        <translation>Passwort hinzufügen</translation>
+        <translation>Kennwort hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="190"/>
@@ -846,7 +846,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="653"/>
         <source>Delete password?</source>
-        <translation>Passwort löschen?</translation>
+        <translation>Kennwort löschen?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -865,7 +865,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="606"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Neues Passwort-Datei:
+        <translation>Neue Kennwortdatei:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
@@ -956,7 +956,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass ist eine GUI für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard Unix Passwortmanager.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass ist eine GUI für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard Unix Kennwortmanager.&lt;/p&gt;
 &lt;p&gt;Bitte melden Sie alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;Probleme&lt;/a&gt;, die Sie mit dieser Software haben könnten.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Quellcode&lt;/a&gt;&lt;/p&gt;</translation>
@@ -972,7 +972,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/pass.cpp" line="103"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Passwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt!</translation>
+        <translation>Kennwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt!</translation>
     </message>
 </context>
 <context>
@@ -981,7 +981,7 @@ Expire-Date: 0
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
         <source>Password</source>
-        <translation>Passwort</translation>
+        <translation>Kennwort</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
@@ -991,7 +991,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>Show password</source>
-        <translation>Passwort anzeigen</translation>
+        <translation>Kennwort anzeigen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
@@ -1049,12 +1049,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="206"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV Passwort</translation>
+        <translation>Kennwort für QtPass-WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="207"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Passwort für WebDAV eingeben:</translation>
+        <translation>Kennwort für WebDAV eingeben:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
@@ -1175,7 +1175,7 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Wählen Sie aus, welche Benutzer die in diesem Ordner gespeicherten Passwörter entschlüsseln können sollen.
+        <translation>Wählen Sie aus, welche Benutzer die in diesem Ordner gespeicherten Kennwörter entschlüsseln können sollen.
 Hinweis: Vorhandene Dateien werden nicht geändert und behalten die alten Berechtigungen bei, bis Sie sie bearbeiten.
 Blaue Einträge haben einen geheimen Schlüssel zur Verfügung, wählen Sie einen aus, um ihn zu entschlüsseln.
 Rote Einträge sind ungültig, Sie können diese nicht verschlüsseln.</translation>
