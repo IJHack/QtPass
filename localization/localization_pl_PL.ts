@@ -87,12 +87,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfabetycznie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfanumerycznie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Uwzględnij symbole specjalne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
