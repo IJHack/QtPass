@@ -17,5 +17,7 @@
         <file alias="edit-clear.svg">icons/edit-clear.svg</file>
         <file alias="qrcode.svg">icons/qrcode.svg</file>
         <file alias="folder-new.svg">icons/folder-new.svg</file>
+        <file alias="view.svg">icons/view.svg</file>
+        <file alias="hide.svg">icons/hide.svg</file>
     </qresource>
 </RCC>

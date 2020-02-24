@@ -663,6 +663,8 @@ void ConfigDialog::wizard() {
       mainWindow->userDialog(passStore);
     }
   }
+
+  ui->checkBoxHidePassword->setCheckState(Qt::Checked);
 }
 
 /**

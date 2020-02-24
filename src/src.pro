@@ -50,6 +50,7 @@ SOURCES   += mainwindow.cpp \
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qpushbuttonasqrcode.cpp \
+             qpushbuttonshowpassword.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
              pass.cpp \
@@ -72,6 +73,7 @@ HEADERS   += mainwindow.h \
              deselectabletreeview.h \
              qpushbuttonwithclipboard.h \
              qpushbuttonasqrcode.h \
+             qpushbuttonshowpassword.h \
              qtpasssettings.h \
              enums.h \
              settingsconstants.h \

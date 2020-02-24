@@ -10,6 +10,7 @@
 #include "passworddialog.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qpushbuttonshowpassword.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
@@ -1069,14 +1070,14 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QFrame *frame = new QFrame();
   QLayout *ly = new QHBoxLayout();
   ly->setContentsMargins(5, 2, 2, 2);
+  ly->setSpacing(0);
   frame->setLayout(ly);
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
 
-    fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
-    // fieldLabel->setContentsMargins(0,5,5,0);
+    fieldLabel->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(fieldLabel);
   }
 
@@ -1084,13 +1085,13 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
-    qrbutton->setStyleSheet("border-style: none ; background: transparent;");
-
+    qrbutton->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(qrbutton);
   }
 
   // set the echo mode to password, if the field is "password"
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
+
     auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
@@ -1098,6 +1099,10 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setStyleSheet("border-style: none ; background: transparent;");
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
+    QPushButtonShowPassword *showButton = new QPushButtonShowPassword(line, this);
+    showButton->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
+    showButton->setContentsMargins(0,0,0,0);
+    frame->layout()->addWidget(showButton);
     frame->layout()->addWidget(line);
   } else {
     auto *line = new QTextBrowser();
