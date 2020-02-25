@@ -743,7 +743,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1095"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>

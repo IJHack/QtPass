@@ -9,8 +9,8 @@
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonasqrcode.h"
-#include "qpushbuttonwithclipboard.h"
 #include "qpushbuttonshowpassword.h"
+#include "qpushbuttonwithclipboard.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
@@ -1077,7 +1077,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
 
-    fieldLabel->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
+    fieldLabel->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(fieldLabel);
   }
 
@@ -1085,7 +1086,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
-    qrbutton->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
+    qrbutton->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(qrbutton);
   }
 
@@ -1099,9 +1101,11 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setStyleSheet("border-style: none ; background: transparent;");
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
-    QPushButtonShowPassword *showButton = new QPushButtonShowPassword(line, this);
-    showButton->setStyleSheet("border-style: none ; background: transparent; padding: 0; margin: 0;");
-    showButton->setContentsMargins(0,0,0,0);
+    QPushButtonShowPassword *showButton =
+        new QPushButtonShowPassword(line, this);
+    showButton->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
+    showButton->setContentsMargins(0, 0, 0, 0);
     frame->layout()->addWidget(showButton);
     frame->layout()->addWidget(line);
   } else {

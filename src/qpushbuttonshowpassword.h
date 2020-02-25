@@ -1,8 +1,8 @@
 #ifndef QPUSHBUTTONSHOWPASSWORD_H_
 #define QPUSHBUTTONSHOWPASSWORD_H_
 
-#include <QPushButton>
 #include <QLineEdit>
+#include <QPushButton>
 
 /*!
     \class QPushButtonAsQRCode

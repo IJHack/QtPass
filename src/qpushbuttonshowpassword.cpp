@@ -9,11 +9,11 @@
  * @param parent
  *  the parent window
  */
-QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit* line, QWidget *parent)
+QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
+                                                 QWidget *parent)
     : QPushButton(parent),
       iconEdit(QIcon::fromTheme("show", QIcon(":/icons/view.svg"))),
-      iconEditPushed(
-          QIcon::fromTheme("hide-new", QIcon(":/icons/hide.svg"))) {
+      iconEditPushed(QIcon::fromTheme("hide-new", QIcon(":/icons/hide.svg"))) {
   setIcon(iconEdit);
   connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
   this->line = line;
