@@ -244,7 +244,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar todas las líneas que comienzan con una palabra seguida de dos puntos como campos en los campos de contraseña, no sólo los listados</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
@@ -359,17 +359,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin Portapapeles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar siempre al portapapeles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia bajo demanda al portapapeles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
@@ -552,7 +552,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG generador de claves
+# 
+#           primera versión de prueba por favor comente
+# 
+% echo Generando una clave por defecto
+Tipo-Clave: default
+Tipo-Subclave: default
+Nombre-Real:
+Nombre-Comentario: QtPass
+Nombre-Correo:
+Fecha-Caducidad: 0
+%sin-protección
+# Haga una confirmación aquí, para que luego podamos imprimir &quot;listo&quot; :-)
+%confirmar
+%echo listo</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -811,7 +825,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -826,22 +840,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>Push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation type="unfinished"></translation>
+        <translation>git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
@@ -857,7 +871,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="607"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo archivo de contraseñas:
+(Se colocará en %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="635"/>
@@ -1078,12 +1093,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>forzar sobrescribir?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
