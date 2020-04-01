@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished">Configuratioun</translation>
+        <translation>Configuratioun</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Astellungen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Fëllt speziell Symboler un</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
@@ -495,7 +495,7 @@ Dir kënnt fäheg sinn nei nei Passwierder ze dekryptere!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Et gëtt keng Limitatioun fir d&apos;Längt vun enger Passphrase, an et sollt virsiichteg gewielt ginn. Aus der Siicht vun der Sécherheet ass de Passphrase fir de privaten Schlëssel z&apos;entwéckelen ee vun de schwaachste Punkten am GnuPG (an aner ëffentlech-Schlëssel Verschlësselungssystemer och) well et ass deen eenzege Schutz deen Dir hutt wann eng aner Persoun Äre private Schlëssel kritt. &lt;br/&gt; Ideal sollt de Passphrase keng Wierder aus engem Wierderbuch benotzen a soll de Fall vun alphabetesche Charaktere vermëschen an och net-alphabetesch Zeechen benotzen. &lt;br/&gt; Eng gutt Passphrase ass entscheedend fir déi sécher Benotzung vu GnuPG. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Et gëtt keng Limitatioun fir d&apos;Längt vun enger Passphrase, an et sollt virsiichteg gewielt ginn. Aus der Siicht vun der Sécherheet ass de Passphrase fir de privaten Schlëssel z&apos;entwéckelen ee vun de schwaachste Punkten am GnuPG (an aner ëffentlech-Schlëssel Verschlësselungssystemer och) well et ass deen eenzege Schutz deen Dir hutt wann eng aner Persoun Äre private Schlëssel kritt. &lt;br/&gt; Ideal sollt de Passphrase keng Wierder aus engem Wierderbuch benotzen a soll de Fall vun alphabetesche Charaktere vermëschen an och net-alphabetesch Zeechen benotzen. &lt;br/&gt; Eng gutt Passphrase ass entscheedend fir déi sécher Benotzung vu GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -538,7 +538,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">Fir Expertoptiounen kuckt d&apos;&lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Handbuch vun GnuPG &lt;/a&gt;</translation>
+        <translation>Fir Expertoptiounen kuckt d&apos;&lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Handbuch vun GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -899,7 +899,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="207"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Gitt d&apos;Passwuert fir un de WebDAV ze connectéieren</translation>
+        <translation>Gitt d&apos;Passwuert fir un de WebDAV ze connectéieren:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
@@ -918,32 +918,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="239"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="242"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="248"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="251"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="254"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
@@ -1020,12 +1020,15 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt déi Benotzer sollen dës Passwierder, déi an dësem Dossier gespäichert sinn, solle dekodéieren.
+Notiz: existéierend Dateie ginn net geännert a behalen déi al Permissiounen, bis Dir se editéiert.
+Blo Entreeën hunn e geheime Schlëssel verfügbar, wielt een vun dësen fir se z&apos;ënnerscheeden.
+Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Sich no Benotzer</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
