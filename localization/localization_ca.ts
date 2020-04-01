@@ -1230,7 +1230,7 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Seleccioneu quins usuaris han de ser capaços de desxifrar les contrasenyes emmagatzemades en aquesta carpeta.
+        <translation>Seleccioneu quins usuaris han de ser capaços de desxifrar les contrasenyes emmagatzemades en aquesta carpeta.
 Nota: els fitxers existents no es modificaran i conserveu els permisos antics fins que no els editeu.
 Les entrades blaves tenen una clau secreta disponible, seleccioneu-ne una per poder desxifrar-les.
 Les entrades en vermell no són vàlides, no podreu xifrar-les.</translation>
