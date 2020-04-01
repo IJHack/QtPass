@@ -461,9 +461,9 @@ email</translation>
         <source>login
 URL
 e-mail</source>
-        <translation>login
-URL
-e-mail</translation>
+        <translation>логин
+адрес
+е-почта</translation>
     </message>
 </context>
 <context>
