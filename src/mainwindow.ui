@@ -352,7 +352,7 @@
     <string>Push</string>
    </property>
    <property name="toolTip">
-    <string>git push</string>
+    <string>Git push</string>
    </property>
   </action>
   <action name="actionUpdate">
@@ -360,7 +360,7 @@
     <string>Update</string>
    </property>
    <property name="toolTip">
-    <string>git pull</string>
+    <string>Git pull</string>
    </property>
   </action>
   <action name="actionUsers">
