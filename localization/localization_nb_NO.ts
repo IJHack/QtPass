@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Passordslengde:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
@@ -715,7 +715,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="607"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ny passordsfil:
+(Vil bli plassert i %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="635"/>
@@ -772,7 +773,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="989"/>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Gi fil nytt navn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="989"/>
@@ -876,7 +877,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="207"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn passord for tilkobling til WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
@@ -923,12 +924,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Utklippstavle tømt</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="383"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Utklippstavle ikke tømt</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="402"/>
@@ -941,12 +942,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>tving overskriving?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>overskriv %1 med %2?</translation>
     </message>
 </context>
 <context>
