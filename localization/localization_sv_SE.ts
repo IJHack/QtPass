@@ -1070,7 +1070,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation>tvinga skriv  över?</translation>
+        <translation type="unfinished">tvinga skriv över?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
