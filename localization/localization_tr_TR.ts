@@ -334,7 +334,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versiyonu </translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; sürümü </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
@@ -523,7 +523,7 @@ Expire-Date: 0
 #
 #      ilk test sürümü, lütfen yorumlayın
 #
-%echo Varsayılan bir anahtar oluşturuluyor
+%echo Öntanımlı bir anahtar oluşturuluyor
 Key-Type: default
 Subkey-Type: default
 Name-Real:
