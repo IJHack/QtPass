@@ -623,9 +623,8 @@ Expire-Date: 0
         <translation>Remover</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation>git push</translation>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
@@ -633,9 +632,8 @@ Expire-Date: 0
         <translation>Git Push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation>git pull</translation>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -652,6 +650,16 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Users</source>
         <translation>Utilizadores</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="355"/>
+        <source>Git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="363"/>
+        <source>Git pull</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>

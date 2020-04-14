@@ -624,9 +624,19 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="355"/>
+        <source>Git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="360"/>
         <source>Update</source>
         <translation>Actualizar</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="363"/>
+        <source>Git pull</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -791,16 +801,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
-        <source>git push</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
-        <source>git pull</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

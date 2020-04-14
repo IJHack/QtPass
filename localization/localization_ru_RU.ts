@@ -623,6 +623,11 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="355"/>
+        <source>Git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="360"/>
         <source>Update</source>
         <translation>Обновить</translation>
@@ -651,14 +656,12 @@ Expire-Date: 0
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation>git push</translation>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation>git pull</translation>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
@@ -670,6 +673,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Users</source>
         <translation>Пользователи</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="363"/>
+        <source>Git pull</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>

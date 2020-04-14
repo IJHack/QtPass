@@ -652,9 +652,8 @@ Expire-Date: 0
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation>git push</translation>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
@@ -662,9 +661,8 @@ Expire-Date: 0
         <translation>Pousser</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
         <source>git pull</source>
-        <translation>git pull</translation>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -681,6 +679,16 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Users</source>
         <translation>Utilisateurs</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="355"/>
+        <source>Git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="363"/>
+        <source>Git pull</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1191,7 +1199,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passes stockés dans ce répertoire.
-Note : les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
+Note&#x202f;: les fichiers existant ne seront pas modifiés et conserveront leurs permissions antérieure tant que vous ne les modifierez pas.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une parmi elles pour pouvoir déchiffrer les mots de passe.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas les utiliser pour le chiffrement.</translation>
     </message>

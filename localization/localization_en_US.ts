@@ -648,9 +648,8 @@ Expire-Date: 0
         <translation>Delete</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
         <source>git push</source>
-        <translation>git push</translation>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
@@ -696,9 +695,18 @@ p, li { white-space: pre-wrap; }
         <translation>Ctrl+G</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="355"/>
+        <source>Git push</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="363"/>
+        <source>Git pull</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>git pull</source>
-        <translation>git pull</translation>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
