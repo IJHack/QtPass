@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdag automatisk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Systemkurv ikke tilgjengelig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen profil valgt for sletting</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="584"/>
@@ -453,7 +453,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Re-krypterer fra mappen %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
@@ -472,7 +472,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generer nytt nøkkelpar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
@@ -541,7 +541,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
@@ -661,7 +661,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppsett</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -721,7 +721,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="635"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> og hele innholdet?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
@@ -741,7 +741,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="773"/>
@@ -751,7 +751,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne med filbehandleren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="922"/>
@@ -810,7 +810,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Generer</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
@@ -820,7 +820,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegnsett:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
@@ -861,7 +861,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Genererer GPG-nøkkelpar</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
@@ -872,7 +872,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="206"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass WebDAV-passord</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="207"/>
