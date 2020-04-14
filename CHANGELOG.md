@@ -24,6 +24,7 @@
 - Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
 - Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
+- QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
 - No prompt for passphrase for git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
 
@@ -190,9 +191,7 @@
 - No button icons and text in "menu bar" [\#383](https://github.com/IJHack/QtPass/issues/383)
 - Cannot add a new password [\#380](https://github.com/IJHack/QtPass/issues/380)
 - Tiny bit of regression [\#379](https://github.com/IJHack/QtPass/issues/379)
-- QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
 - Running qtPass remotelly not prompting for the GPG key passphrasse  [\#374](https://github.com/IJHack/QtPass/issues/374)
-- Entire program is huge on High DPI screen on Linux [\#369](https://github.com/IJHack/QtPass/issues/369)
 - Two new issues since latest refactoring  [\#368](https://github.com/IJHack/QtPass/issues/368)
 - Chocolatey package outdated [\#366](https://github.com/IJHack/QtPass/issues/366)
 - How do I change the language ? [\#352](https://github.com/IJHack/QtPass/issues/352)
@@ -223,7 +222,6 @@
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
 - New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
-- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
@@ -238,6 +236,7 @@
 
 **Merged pull requests:**
 
+- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 - Insecure password generation [\#342](https://github.com/IJHack/QtPass/pull/342) ([annejan](https://github.com/annejan))
 - Add Catalan translation [\#336](https://github.com/IJHack/QtPass/pull/336) ([rbuj](https://github.com/rbuj))
 
@@ -262,6 +261,7 @@
 
 **Closed issues:**
 
+- Entire program is huge on High DPI screen on Linux [\#369](https://github.com/IJHack/QtPass/issues/369)
 - Tab order is wrong in password dialog [\#331](https://github.com/IJHack/QtPass/issues/331)
 - Missing icons since split to static lib [\#325](https://github.com/IJHack/QtPass/issues/325)
 - "-session XXX" upon session restore taken as search string [\#320](https://github.com/IJHack/QtPass/issues/320)
@@ -300,6 +300,7 @@
 - small band aid fix for password generation on windows [\#276](https://github.com/IJHack/QtPass/pull/276) ([treat1](https://github.com/treat1))
 - Final step in process mgmt refactoring [\#275](https://github.com/IJHack/QtPass/pull/275) ([tezeb](https://github.com/tezeb))
 - Fix pwgen and refactor Pass::finished [\#271](https://github.com/IJHack/QtPass/pull/271) ([tezeb](https://github.com/tezeb))
+- Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
 - \#239 reencrypting after a drag and drop action [\#261](https://github.com/IJHack/QtPass/pull/261) ([YoshiMan](https://github.com/YoshiMan))
 - this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
@@ -313,7 +314,6 @@
 
 - Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
-- Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
@@ -342,7 +342,6 @@
 
 **Merged pull requests:**
 
-- Process specific signals for process management [\#270](https://github.com/IJHack/QtPass/pull/270) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
@@ -355,6 +354,7 @@
 
 **Implemented enhancements:**
 
+- Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 - More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
@@ -508,7 +508,6 @@
 
 - Feature: Always on top [\#118](https://github.com/IJHack/QtPass/issues/118)
 - Option to show minimized instance [\#99](https://github.com/IJHack/QtPass/issues/99)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Fixed bugs:**
 
@@ -525,8 +524,8 @@
 - some improvements [\#126](https://github.com/IJHack/QtPass/pull/126) ([retokromer](https://github.com/retokromer))
 - added one translation [\#125](https://github.com/IJHack/QtPass/pull/125) ([retokromer](https://github.com/retokromer))
 - initial attempt to create a RPM spec file [\#121](https://github.com/IJHack/QtPass/pull/121) ([bram-ivs](https://github.com/bram-ivs))
+- Cleanup and coding standards [\#120](https://github.com/IJHack/QtPass/pull/120) ([annejan](https://github.com/annejan))
 - Modified the clipboard logic to allow for on-demand copy to clipboard. [\#119](https://github.com/IJHack/QtPass/pull/119) ([jonhanks](https://github.com/jonhanks))
-- Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v1.0.5](https://github.com/IJHack/QtPass/tree/v1.0.5) (2015-11-18)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)
@@ -596,7 +595,6 @@
 
 **Merged pull requests:**
 
-- Cleanup and coding standards [\#120](https://github.com/IJHack/QtPass/pull/120) ([annejan](https://github.com/annejan))
 - Issue 86 clear panel [\#87](https://github.com/IJHack/QtPass/pull/87) ([karlgrz](https://github.com/karlgrz))
 - Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
 - \[WIP\] Call 'pass git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
@@ -671,6 +669,10 @@
 ## [v0.8.4](https://github.com/IJHack/QtPass/tree/v0.8.4) (2015-06-11)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4)
 
+**Implemented enhancements:**
+
+- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
+
 **Closed issues:**
 
 - QtPass does not detect GPG installation [\#50](https://github.com/IJHack/QtPass/issues/50)
@@ -684,6 +686,10 @@
 
 ## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
+
+**Merged pull requests:**
+
+- Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
