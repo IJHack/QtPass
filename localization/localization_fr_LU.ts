@@ -683,12 +683,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation type="unfinished"></translation>
+        <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1199,7 +1199,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui doivent pouvoir décrypter les mots de passe stockés dans ce dossier.
-Remarque&#x202f;: les fichiers existants ne seront pas modifiés et conserveront les anciennes autorisations jusqu&apos;à ce que vous les modifiiez.
+Remarque : les fichiers existants ne seront pas modifiés et conserveront les anciennes autorisations jusqu&apos;à ce que vous les modifiiez.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir la décrypter.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas les chiffrer.</translation>
     </message>
