@@ -986,7 +986,7 @@ Expire-Date: 0
     <message>
         <location filename="../main/main.cpp" line="88"/>
         <source>LTR</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
