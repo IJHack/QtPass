@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Mostrar todas las líneas que comienzan con una palabra seguida de dos puntos como campos en los campos de contraseña, no sólo los listados</translation>
+        <translation>Mostrar todos los renglones que comienzan por una palabra seguida de dos puntos como campos en campos de contraseña, no solo los enumerados</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
@@ -359,12 +359,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation>Sin Portapapeles</translation>
+        <translation>Sin portapapeles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation>Copiar siempre al portapapeles</translation>
+        <translation>Copiar siempre en portapapeles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
@@ -552,21 +552,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation>#           QtPass GPG generador de claves
-# 
-#           primera versión de prueba por favor comente
-# 
-% echo Generando una clave por defecto
-Tipo-Clave: default
-Tipo-Subclave: default
-Nombre-Real:
-Nombre-Comentario: QtPass
-Nombre-Correo:
-Fecha-Caducidad: 0
-%sin-protección
-# Haga una confirmación aquí, para que luego podamos imprimir &quot;listo&quot; :-)
-%confirmar
-%echo listo</translation>
+        <translation>#           Generador de claves GPG de QtPass
+#
+#      primera versión en pruebas; envíe comentarios
+#
+%echo Generando una clave predeterminada
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Realizar una consigna aquí, de modo tal que podamos mostrar después «hecho» :-)
+%commit
+%echo hecho</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -622,7 +622,7 @@ Fecha-Caducidad: 0
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation>Git push</translation>
+        <translation>Envío hacia Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -632,7 +632,7 @@ Fecha-Caducidad: 0
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation>Git pull</translation>
+        <translation>Incorporación desde Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
@@ -855,7 +855,7 @@ Fecha-Caducidad: 0
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
         <source>Push</source>
-        <translation>Push</translation>
+        <translation>Envío</translation>
     </message>
     <message>
         <source>git push</source>
@@ -1083,17 +1083,17 @@ Fecha-Caducidad: 0
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard cleared</source>
-        <translation>Portapapeles vacío</translation>
+        <translation>Se vació el portapapeles</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="383"/>
         <source>Clipboard not cleared</source>
-        <translation>Portapapeles no vaciado</translation>
+        <translation>No se vació el portapapeles</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="402"/>
         <source>Copied to clipboard</source>
-        <translation>copiado en el portapapeles</translation>
+        <translation>Copiado en el portapapeles</translation>
     </message>
 </context>
 <context>
@@ -1101,12 +1101,12 @@ Fecha-Caducidad: 0
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation>forzar sobrescribir?</translation>
+        <translation>¿Quiere forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation>sobrescribir %1 con %2?</translation>
+        <translation>¿Quiere sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
