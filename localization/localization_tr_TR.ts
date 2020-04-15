@@ -339,7 +339,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation>Sistem tepsisi mevcut değil</translation>
+        <translation>Sistem tepsisi kullanılamıyor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
@@ -596,7 +596,7 @@ Expire-Date: 0
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;QtPass, &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standart unix parola yöneticisi için bir GUI&apos;dir.&lt;/p&gt;
 &lt;p&gt;Lütfen bu programla yaşayabileceğiniz &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;sorunları&lt;/a&gt; bildirin.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokümantasyon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Belgelendirme&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kaynak Kodu&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
@@ -1030,7 +1030,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Hangi kullanıcıların bu klasörde saklanan parolaların şifresini çözebileceğini seçin.
 Not: Mevcut dosyalar değiştirilmeyecek ve siz onları düzenleyene kadar eski izinleri koruyacaktır.
-Mavi girdilerin gizli bir anahtarı mevcuttur, şifresini çözebilmek için bunlardan birini seçin.
+Mavi girdilerin kullanılabilir gizli bir anahtarı vardır, şifresini çözebilmek için bunlardan birini seçin.
 Kırmızı girdiler geçerli değildir, bunları şifreleyemezsiniz.</translation>
     </message>
     <message>
