@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation>Autodetect</translation>
+        <translation>Canfod awtomatig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
@@ -590,10 +590,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol unix. &lt;/p&gt;
+        <translation>&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol unix. &lt;/p&gt;
 &lt;p&gt; Rhowch wybod am unrhyw faterion &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; &lt;/a&gt; a allai fod gennych gyda&apos;r feddalwedd hon. &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dogfennaeth &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; SourceCode &lt;/a&gt; &lt;/p&gt;</translation>
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
@@ -605,7 +605,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
@@ -641,7 +641,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
