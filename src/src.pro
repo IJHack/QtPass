@@ -8,7 +8,7 @@ CONFIG += c++11 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
-                    ../localization/localization_ca.ts    \
+                    ../localization/localization_ca_ES.ts    \
                     ../localization/localization_cs_CZ.ts \
                     ../localization/localization_de_DE.ts \
                     ../localization/localization_de_LU.ts \
@@ -34,8 +34,10 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_sv_SE.ts \
                     ../localization/localization_tr_TR.ts \
                     ../localization/localization_zh_CN.ts \
-                    ../localization/localization_cy.ts \
-                    ../localization/localization_hr.ts
+                    ../localization/localization_cy_GB.ts \
+                    ../localization/localization_hr_HR.ts \
+                    ../localization/localization_af_ZA.ts \
+                    ../localization/localization_fi_FI.ts
 
 CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization

@@ -14,6 +14,7 @@
 
 **Closed issues:**
 
+- Copying not possible on Ubuntu 20.04 [\#521](https://github.com/IJHack/QtPass/issues/521)
 - Default password visibility [\#511](https://github.com/IJHack/QtPass/issues/511)
 - Consider mentioning export abilities in migration docs, if any are present [\#505](https://github.com/IJHack/QtPass/issues/505)
 - Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
@@ -249,7 +250,6 @@
 - Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
-- Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
 - Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
 - enabled drag and drop support for passwords and passwordfolders [\#245](https://github.com/IJHack/QtPass/pull/245) ([YoshiMan](https://github.com/YoshiMan))
@@ -321,6 +321,7 @@
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
 - Feature: moving items \(reordering folders\) [\#116](https://github.com/IJHack/QtPass/issues/116)
+- Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Password dialog decoupling from MW [\#242](https://github.com/IJHack/QtPass/pull/242) ([tezeb](https://github.com/tezeb))
 - Refactoring of qpushbuttonwithclipboard and timers [\#241](https://github.com/IJHack/QtPass/pull/241) ([tezeb](https://github.com/tezeb))
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
