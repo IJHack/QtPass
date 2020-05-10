@@ -42,7 +42,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation>Ukryj zawartość</translation>
+        <translation>Schowaj zawartość</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
