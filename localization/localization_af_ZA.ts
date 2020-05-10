@@ -342,7 +342,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation>Geen profiel geselekteer om te skrap nie</translation>
+        <translation>Geen profiel geselekteer om te verwyder nie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="584"/>
@@ -372,7 +372,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Dit lyk nie asof die gids %1 &apos;n wagwoordberging is nie, of dat dit nog nie geïnitialiseer is nie.</translation>
+        <translation>Dit lyk nie asof die gids %1 &apos;n wagwoordberging is nie, of dat dit nog nie geïnisialiseer is nie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
