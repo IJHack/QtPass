@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>Native</source>
-        <translation>Systeem eigen</translation>
+        <translation>Systeemeigen</translation>
     </message>
     <message>
         <source>git</source>
