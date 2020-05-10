@@ -224,7 +224,6 @@
 - Fix typo in french translation [\#349](https://github.com/IJHack/QtPass/pull/349) ([babolivier](https://github.com/babolivier))
 - New scroll bar on large files [\#347](https://github.com/IJHack/QtPass/pull/347) ([destanyol](https://github.com/destanyol))
 - Fix nested template argument list compile error [\#346](https://github.com/IJHack/QtPass/pull/346) ([martinburchell](https://github.com/martinburchell))
-- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
@@ -250,6 +249,7 @@
 - Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
+- Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
 - Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
 - enabled drag and drop support for passwords and passwordfolders [\#245](https://github.com/IJHack/QtPass/pull/245) ([YoshiMan](https://github.com/YoshiMan))
@@ -282,12 +282,12 @@
 - Feature: CTRL/CMD + Q closes the mainwindow [\#258](https://github.com/IJHack/QtPass/issues/258)
 - Refactoring: removal of lastDecrypt [\#256](https://github.com/IJHack/QtPass/issues/256)
 - Pass environment not set-up correctly [\#250](https://github.com/IJHack/QtPass/issues/250)
-- Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
 - Double-clicking might open previous entry instead of one double-clicked on [\#243](https://github.com/IJHack/QtPass/issues/243)
 - Clean up ConfigDialog [\#235](https://github.com/IJHack/QtPass/issues/235)
 
 **Merged pull requests:**
 
+- Honor PREFIX during tests install [\#345](https://github.com/IJHack/QtPass/pull/345) ([SpiderX](https://github.com/SpiderX))
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
 - Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
@@ -321,7 +321,6 @@
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
 - Feature: moving items \(reordering folders\) [\#116](https://github.com/IJHack/QtPass/issues/116)
-- Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Password dialog decoupling from MW [\#242](https://github.com/IJHack/QtPass/pull/242) ([tezeb](https://github.com/tezeb))
 - Refactoring of qpushbuttonwithclipboard and timers [\#241](https://github.com/IJHack/QtPass/pull/241) ([tezeb](https://github.com/tezeb))
 - added a copy button for each line to paste the content into the clipboard, "pass init -- path=" command with right path-parameter, lupdate qtpass.pro [\#218](https://github.com/IJHack/QtPass/pull/218) ([YoshiMan](https://github.com/YoshiMan))
@@ -368,6 +367,7 @@
 
 **Closed issues:**
 
+- Make fails - std c++11 not set [\#244](https://github.com/IJHack/QtPass/issues/244)
 - PREFIX is now really a prefix [\#185](https://github.com/IJHack/QtPass/issues/185)
 - QtPass, git and windows [\#173](https://github.com/IJHack/QtPass/issues/173)
 

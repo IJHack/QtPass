@@ -478,7 +478,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nazwa</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
@@ -602,7 +602,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Usuń</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -839,7 +839,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Niestandardowe</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
