@@ -376,7 +376,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>I&amp;nnfødt Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
