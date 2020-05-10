@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">Bruk TrayIcon</translation>
+        <translation>Bruk systemmagasin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
