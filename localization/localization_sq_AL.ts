@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Përdorni TrayIcon</translation>
+        <translation>Përdorni ikonë e trayit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
