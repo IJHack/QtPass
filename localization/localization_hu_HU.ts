@@ -196,7 +196,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>TrayIcon használata</translation>
+        <translation>Használja a Rendszertálca ikont</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
