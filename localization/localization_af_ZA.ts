@@ -387,7 +387,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation>Stelsellaai is nie beskikbaar nie</translation>
+        <translation>Stelselvak is nie beskikbaar nie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
