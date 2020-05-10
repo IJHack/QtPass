@@ -162,97 +162,97 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj ikony w zasobniku systemowym</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Start zminimalizowany</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj na zamknięciu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze na wierzchu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz program do przechowywania haseł:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Użyj przepustki</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Natywny</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatycznie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profile</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Szablon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj szablonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
