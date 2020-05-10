@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation>Automatisk klarering etter:</translation>
+        <translation>Automatisk tømming etter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation>Atferd i innholdspanelet:</translation>
+        <translation>Innholdspaneladferd:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation>Automatisk panelet klarering etter:</translation>
+        <translation>Automatisk paneltømming etter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
