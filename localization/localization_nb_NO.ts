@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished">Skjul ved lukking</translation>
+        <translation>Skjul ved lukking</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
@@ -191,32 +191,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg passordlagringsprogram:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bruk pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Innfødt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Path</source>
-        <translation type="unfinished">Sti</translation>
+        <translation>Sti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis alle linjer som begynner med et ord etterfulgt av et kolon som felt i passordfelt, ikke bare de oppførte</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis alle felt malt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
@@ -276,17 +276,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Systemkurv ikke tilgjengelig</translation>
+        <translation>Systemstatusfeltet er ikke tilgjengelig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass OTP utvidelsen må installeres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode må installeres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>On-demand kopi til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
@@ -321,37 +321,37 @@
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store for å få det. &lt;br&gt;Hvis du allerede har gjort det, må du kontrollere at du startet den én gang, og&lt;br&gt;klikk på &quot;Autodetect&quot; i neste dialogboks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="592"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; det fra GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;gpg&lt;/strong&gt; ved hjelp av din favoritt pakke manager&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; det fra GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="625"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprette passord-butikk?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="626"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil du opprette et passordlager på %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>Passordlageret er ikke initialisert</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen %1 ser ikke ut til å være et passordlager eller er ennå ikke initialisert.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
@@ -405,14 +405,16 @@
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maler legger til ekstra felt i dialogboksen for generering av passord, og i passordvisningen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-post</translation>
     </message>
 </context>
 <context>
@@ -427,28 +429,29 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke lese krypteringsnøkkelen som skal brukes, .gpg-id filen mangler eller er ugyldig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>Cannot update</source>
-        <translation type="unfinished">Kan ikke oppdatere</translation>
+        <translation>Kan ikke oppdatere</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke åpne .gpg-id for skriving.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekk valgte brukere!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen av de valgte nøklene har en hemmelig nøkkel tilgjengelig.
+Du vil ikke kunne dekryptere noen nylig lagt passord!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
@@ -459,7 +462,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <location filename="../src/imitatepass.cpp" line="332"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdatere passord-butikk</translation>
     </message>
 </context>
 <context>
@@ -467,7 +470,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generere GnuPG nøkkelpar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
@@ -477,7 +480,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation type="unfinished">E-post</translation>
+        <translation>E-post</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
@@ -492,12 +495,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Det er ingen grense for lengden på en passordfrase, og det bør velges nøye. Fra sikkerhetsperspektivet er passordfrasen for å låse opp den private nøkkelen et av de svakeste punktene i GnuPG (og andre krypteringssystemer for offentlig nøkkel også) siden det er den eneste beskyttelsen du har hvis en annen person får din private nøkkel. &lt;br/&gt;Ideelt sett bør ikke passordfrasen bruke ord fra en ordbok og bør blande etuiet med alfabetiske tegn samt bruke ikke-alfabetiske tegn.&lt;br/&gt; En god passordfrase er avgjørende for sikker bruk av GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished">Ekspert</translation>
+        <translation>Ekspert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -516,12 +519,26 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG nøkkel generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -536,17 +553,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid email</source>
-        <translation type="unfinished">Ugyldig e-post</translation>
+        <translation>Ugyldig e-post</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
+        <translation>Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre noen annen handling (type på tastaturet, flytte musen, bruke diskene) under prime generasjon; dette gir tilfeldigtall generator en bedre sjanse til å få nok entropi.</translation>
     </message>
 </context>
 <context>
@@ -564,7 +581,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Søk etter passord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
@@ -577,7 +594,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass er en GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standard unix passord manager.&lt;/p&gt;
+&lt;p&gt;Rapporter eventuelle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemer&lt;/a&gt; du kan ha med denne programvaren.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentasjon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kaynak kodu&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
@@ -620,7 +640,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Generer OTP og kopier til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
@@ -635,12 +655,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation type="unfinished"></translation>
+        <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -656,7 +676,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Behandle hvem som kan lese passord i mappen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
@@ -666,7 +686,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation type="unfinished">Oppsett</translation>
+        <translation>Oppsett</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="191"/>
@@ -677,12 +697,12 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="278"/>
         <location filename="../src/mainwindow.cpp" line="290"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdatere passord-butikk</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Content hidden</source>
-        <translation type="unfinished">Innhold skjult</translation>
+        <translation>Innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="393"/>
@@ -693,12 +713,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="419"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP-kode</translation>
+        <translation>OTP-kode</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="438"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished">Passord og innhold skjult</translation>
+        <translation>Passord og innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="507"/>
@@ -715,7 +735,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="607"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Ny passordsfil:
+        <translation>Ny passordsfil:
 (Vil bli plassert i %1)</translation>
     </message>
     <message>
@@ -726,7 +746,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> og hele innholdet? &lt;br&gt;&lt;strong&gt;Oppmerksomhet: det er uventede filer i den angitte mappen, sjekk dem før du fortsetter.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
@@ -761,13 +781,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Gi nytt navn til passord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="968"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny mappe: 
+(Vil bli plassert i %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="989"/>
@@ -778,12 +799,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="989"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Gi nytt navn til mappe til: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Gi nytt navn til fil til: </translation>
     </message>
 </context>
 <context>
@@ -791,12 +812,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/pass.cpp" line="102"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen tegn valgt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="103"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke generere passord, det er ingen tegn å velge mellom satt i konfigurasjonen!</translation>
     </message>
 </context>
 <context>
@@ -867,7 +888,8 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="193"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke koble WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="206"/>
@@ -883,43 +905,45 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation>fusedav avsluttet uventet
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="226"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke starte fusedav for å koble WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="239"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="242"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="248"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="251"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="254"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
@@ -988,7 +1012,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished"></translation>
+        <translation>Lese tilgangsbrukere</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
@@ -996,7 +1020,10 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg hvilke brukere som skal kunne dekryptere passord som er lagret i denne mappen.
+Merk: Eksisterende filer vil ikke bli endret, og beholde de gamle tillatelsene til du redigerer dem.
+Blå oppføringer har en hemmelig nøkkel tilgjengelig, velg en av disse for å kunne dekryptere.
+Røde oppføringer er ikke gyldige, du vil ikke kunne kryptere til disse.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
