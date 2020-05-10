@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>الاحرف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدام الأحرف:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
