@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk primærvalg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk klarering etter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atferd i innholdspanelet:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
@@ -52,12 +52,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk panelet klarering etter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Generering av passord:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk tegn:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg tegnsett for generering av passord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Inkluder spesialsymboler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
@@ -126,12 +126,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Generer lett å huske, men mindre sikre passord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekskluder tall</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
