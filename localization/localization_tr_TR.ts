@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>TrayIcon kullan</translation>
+        <translation>Sistem Tepsisini Kullan simgesi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
