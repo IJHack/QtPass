@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Benotzt TrayIcon</translation>
+        <translation>Benotzt System Schacht Ikon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
