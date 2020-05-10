@@ -183,7 +183,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Usa la TrayIcon</translation>
+        <translation>Usa la icona sulla barra delle applicazioni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
