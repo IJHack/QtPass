@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation>Ustawienia</translation>
+        <translation>Opcje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
