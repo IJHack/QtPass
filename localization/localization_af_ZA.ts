@@ -182,7 +182,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Gebruik TrayIcon</translation>
+        <translation>Gebruik stelselvak</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
