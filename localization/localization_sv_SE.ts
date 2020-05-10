@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Använd TrayIcon</translation>
+        <translation>Använd systemfältikonen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
