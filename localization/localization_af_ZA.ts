@@ -551,7 +551,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Daar is geen beperking op die lengte van &apos;n wagwoordfrase nie, en dit moet noukeurig gekies word. Vanuit die veiligheidsoogpunt is die wagwoordfrase om die private sleutel te ontsluit een van die swakste punte in GnuPG (en ander publieke sleutel-koderingstelsels), aangesien dit die enigste beskerming is wat u het as &apos;n ander individu u privaat sleutel kry. &lt;br/&gt; Ideaal gesproke moet die wagwoordfrase nie woorde uit &apos;n woordeboek gebruik nie, en dit moet die geval van alfabetiese karakters en nie-alfabetiese karakters vermeng. &lt;br/&gt; &apos;n Goeie wagwoordfrase is baie belangrik vir die veilige gebruik van GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Daar is geen beperking op die lengte van &apos;n wagwoordfrase nie, en dit moet noukeurig gekies word. Vanuit die veiligheidsoogpunt is die wagwoordfrase om die privaat sleutel te ontsluit een van die swakste punte in GnuPG (en ander publieke sleutel-koderingstelsels), aangesien dit die enigste beskerming is wat u het as &apos;n ander individu u privaat sleutel kry. &lt;br/&gt; Ideaal gesproke moet die wagwoordfrase nie woorde uit &apos;n woordeboek gebruik nie, en dit moet die geval van alfabetiese karakters en nie-alfabetiese karakters vermeng. &lt;br/&gt; &apos;n Goeie wagwoordfrase is baie belangrik vir die veilige gebruik van GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -577,7 +577,7 @@ Expire-Date: 0
 %echo done</source>
         <translation>#           QtPass GPG Sleutel Generator
 #
-#      erste toets weergawe asseblief kommentaar
+#      eerste toets weergawe lewer kommentaar asseblief
 #
 %echo Generating a default key
 Key-Type: default
@@ -604,7 +604,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="130"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Die naam moet minstens 5 karakters lank wees.</translation>
+        <translation>Die naam moet minstens vyf karakters lank wees.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
@@ -638,14 +638,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="909"/>
         <source>Edit</source>
-        <translation>Verander</translation>
+        <translation>Wysig</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Delete</source>
-        <translation>Skrap</translation>
+        <translation>Verwyder</translation>
     </message>
     <message>
         <source>git push</source>
@@ -911,17 +911,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> en die hele inhoud? &lt;br&gt; &lt;strong&gt; Aandag: daar is onverwagte lêers in die gegewe vouer. Gaan dit na voordat u verder gaan. &lt;/strong&gt;</translation>
+        <translation> en die hele inhoud? &lt;br&gt; &lt;strong&gt; Aandag: daar is onverwagte lêers in die gegewe lêergids. Gaan dit na voordat u verder gaan. &lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Is jy seker jy wil %1%2 skrap?</translation>
+        <translation>Is jy seker jy wil %1%2 verwyder?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Delete password?</source>
-        <translation>Skrap wagwoord?</translation>
+        <translation>Verwyder wagwoord?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -930,7 +930,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Delete folder?</source>
-        <translation>Skrap vouer?</translation>
+        <translation>Verwyder lêergids?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -960,14 +960,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Open folder with file manager</source>
-        <translation>Open vouer met Lêerbestuurder</translation>
+        <translation>Open lêergids met Lêerbestuurder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="901"/>
         <source>Add folder</source>
-        <translation>Voeg vouer by</translation>
+        <translation>Voeg lêergids by</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
@@ -980,7 +980,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="968"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nuwe vouer: 
+        <translation>Nuwe lêergids: 
 (Sal in %1 geplaas word)</translation>
     </message>
     <message>
@@ -990,7 +990,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="922"/>
         <source>Rename folder</source>
-        <translation>Hernoem vouer</translation>
+        <translation>Hernoem lêergids</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="926"/>
@@ -1006,7 +1006,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="989"/>
         <source>Rename Folder To: </source>
-        <translation>Hernoem vouer na: </translation>
+        <translation>Hernoem lêergids na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
