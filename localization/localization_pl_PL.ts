@@ -42,7 +42,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj zawartość</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Niestandardowe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Obecna ścieżka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
