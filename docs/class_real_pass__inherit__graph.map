@@ -1,5 +1,5 @@
 <map id="RealPass" name="RealPass">
-<area shape="rect" id="node1" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="5,152,84,177"/>
-<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="19,79,70,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="9,5,80,31"/>
+<area shape="rect" id="node1" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="5,155,84,181"/>
+<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="19,80,71,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="9,5,80,32"/>
 </map>

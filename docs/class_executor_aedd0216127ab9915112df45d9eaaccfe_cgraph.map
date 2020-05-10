@@ -1,4 +1,4 @@
 <map id="Executor::execute" name="Executor::execute">
-<area shape="rect" id="node1" title="Executor::execute an app, takes input and presents it as stdin." alt="" coords="5,5,133,31"/>
-<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app." alt="" coords="181,5,309,31"/>
+<area shape="rect" id="node1" title="Executor::execute an app, takes input and presents it as stdin." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app." alt="" coords="181,5,309,32"/>
 </map>

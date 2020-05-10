@@ -1,7 +1,7 @@
 <map id="QtPassSettings::getClipBoardTypeRaw" name="QtPassSettings::getClipBoardTypeRaw">
-<area shape="rect" id="node1" title=" " alt="" coords="749,24,947,63"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="497,5,679,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title=" " alt="" coords="475,55,701,80"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="267,55,427,80"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,219,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="747,23,944,65"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="496,5,676,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#aa4b984b4d3e600542482b132c8e816bc" title=" " alt="" coords="473,56,699,83"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="264,56,425,83"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,56,216,83"/>
 </map>

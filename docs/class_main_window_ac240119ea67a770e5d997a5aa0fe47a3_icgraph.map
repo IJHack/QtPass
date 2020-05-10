@@ -1,9 +1,9 @@
 <map id="MainWindow::setUiElementsEnabled" name="MainWindow::setUiElementsEnabled">
-<area shape="rect" id="node1" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="273,136,464,175"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements." alt="" coords="7,5,223,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title=" " alt="" coords="14,55,216,93"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="24,117,206,143"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="14,167,216,192"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="8,216,222,241"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview." alt="" coords="5,265,225,291"/>
+<area shape="rect" id="node1" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="272,141,463,182"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements." alt="" coords="8,5,221,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title=" " alt="" coords="15,57,214,98"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="25,123,205,149"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="15,173,214,200"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="9,224,220,251"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview." alt="" coords="5,275,224,301"/>
 </map>

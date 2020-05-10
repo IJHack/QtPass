@@ -1,8 +1,8 @@
 <map id="QtPassSettings::getPassTemplate" name="QtPassSettings::getPassTemplate">
-<area shape="rect" id="node1" title=" " alt="" coords="496,80,719,105"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,432,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="297,55,386,80"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="235,104,448,129"/>
-<area shape="rect" id="node6" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="250,153,433,192"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="492,81,715,108"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="249,5,429,32"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="293,56,384,83"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="233,107,444,133"/>
+<area shape="rect" id="node6" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="247,158,430,199"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,56,185,83"/>
 </map>

@@ -1,10 +1,10 @@
 <map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
-<area shape="rect" id="node1" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,105,149,131"/>
-<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="221,80,342,105"/>
-<area shape="rect" id="node8" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers()" alt="" coords="197,129,366,155"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title=" " alt="" coords="416,5,646,31"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title=" " alt="" coords="414,55,649,80"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="431,104,631,129"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="439,153,623,179"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="697,80,886,105"/>
+<area shape="rect" id="node1" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,107,148,133"/>
+<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="218,81,341,108"/>
+<area shape="rect" id="node8" href="$class_main_window.html#add7481e9707f309caba6b5d3a8c1ddc9" title="MainWindow::userDialog see MainWindow::onUsers()" alt="" coords="196,132,363,159"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#a92b674cdafc03000c808bff5fab93249" title=" " alt="" coords="413,5,643,32"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#af0176d02663714d795cdf23eec6b657a" title=" " alt="" coords="411,56,645,83"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="427,107,629,133"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a30ef36260f73f9f18d338f2b18a1f493" title=" " alt="" coords="435,157,621,184"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="693,81,884,108"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="StoreModel::data" name="StoreModel::data">
-<area shape="rect" id="node1" title="StoreModel::data don&#39;t show the .gpg at the end of a file." alt="" coords="494,31,617,56"/>
-<area shape="rect" id="node2" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData." alt="" coords="238,5,446,31"/>
-<area shape="rect" id="node3" href="$class_store_model.html#a17f8db58298e985732d92a2e0e76b821" title="StoreModel::dropMimeData." alt="" coords="5,31,190,56"/>
+<area shape="rect" id="node1" title="StoreModel::data don&#39;t show the .gpg at the end of a file." alt="" coords="488,31,609,57"/>
+<area shape="rect" id="node2" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData." alt="" coords="235,5,440,32"/>
+<area shape="rect" id="node3" href="$class_store_model.html#a17f8db58298e985732d92a2e0e76b821" title="StoreModel::dropMimeData." alt="" coords="5,31,187,57"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="QtPass::clearClipboard" name="QtPass::clearClipboard">
-<area shape="rect" id="node1" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="5,5,164,31"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="212,5,440,31"/>
+<area shape="rect" id="node1" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="211,5,437,32"/>
 </map>

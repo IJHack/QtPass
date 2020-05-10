@@ -1,12 +1,12 @@
 <map id="Executor::executeBlocking" name="Executor::executeBlocking">
-<area shape="rect" id="node1" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="857,80,1035,105"/>
-<area shape="rect" id="node2" href="$class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76" title="Executor::executeBlocking blocking version of the executor." alt="" coords="631,5,809,31"/>
-<area shape="rect" id="node3" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath search for executables." alt="" coords="647,55,793,80"/>
-<area shape="rect" id="node7" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="655,104,784,129"/>
-<area shape="rect" id="node8" href="$class_pass.html#ac0a8e833a71fd2a1ad79cf1158fb0cc2" title="Pass::listKeys list users." alt="" coords="668,153,772,179"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="372,55,583,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,55,324,80"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,187,80"/>
-<area shape="rect" id="node9" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="425,128,530,153"/>
-<area shape="rect" id="node10" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="390,177,564,203"/>
+<area shape="rect" id="node1" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="857,81,1036,108"/>
+<area shape="rect" id="node2" href="$class_executor.html#a916ceeecbe46e63d9dbfe6840c3c3b76" title="Executor::executeBlocking blocking version of the executor." alt="" coords="631,5,809,32"/>
+<area shape="rect" id="node3" href="$class_util.html#ab6622ba9b278132fa22ea85d224082f2" title="Util::findBinaryInPath search for executables." alt="" coords="647,56,793,83"/>
+<area shape="rect" id="node7" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="657,107,783,133"/>
+<area shape="rect" id="node8" href="$class_pass.html#ac0a8e833a71fd2a1ad79cf1158fb0cc2" title="Pass::listKeys list users." alt="" coords="667,157,773,184"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="372,56,583,83"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="233,56,324,83"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,56,185,83"/>
+<area shape="rect" id="node9" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="424,132,531,159"/>
+<area shape="rect" id="node10" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="390,183,565,209"/>
 </map>

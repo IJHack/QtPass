@@ -1,4 +1,4 @@
 <map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
-<area shape="rect" id="node1" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="247,5,426,44"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,12,199,37"/>
+<area shape="rect" id="node1" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="248,5,425,47"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,13,200,39"/>
 </map>

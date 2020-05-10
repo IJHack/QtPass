@@ -1,6 +1,6 @@
 <map id="Util::normalizeFolderPath" name="Util::normalizeFolderPath">
-<area shape="rect" id="node1" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()" alt="" coords="580,31,751,56"/>
-<area shape="rect" id="node2" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore look for common .password&#45;store folder location." alt="" coords="372,31,532,56"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,5,324,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,31,187,56"/>
+<area shape="rect" id="node1" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()" alt="" coords="580,31,749,57"/>
+<area shape="rect" id="node2" href="$class_util.html#a29e0dadf2cb491511307b841e4a23943" title="Util::findPasswordStore look for common .password&#45;store folder location." alt="" coords="372,31,532,57"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="233,5,324,32"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,31,185,57"/>
 </map>

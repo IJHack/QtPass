@@ -1,6 +1,6 @@
 <map id="TrayIcon::TrayIcon" name="TrayIcon::TrayIcon">
-<area shape="rect" id="node1" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits." alt="" coords="5,31,137,56"/>
-<area shape="rect" id="node2" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon." alt="" coords="185,31,344,56"/>
-<area shape="rect" id="node3" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent toggle app visibility." alt="" coords="392,5,570,31"/>
-<area shape="rect" id="node4" href="$class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a" title="TrayIcon::showMessage show a systray message for notification." alt="" coords="399,55,564,80"/>
+<area shape="rect" id="node1" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits." alt="" coords="5,31,137,57"/>
+<area shape="rect" id="node2" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon." alt="" coords="185,31,345,57"/>
+<area shape="rect" id="node3" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent toggle app visibility." alt="" coords="393,5,571,32"/>
+<area shape="rect" id="node4" href="$class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a" title="TrayIcon::showMessage show a systray message for notification." alt="" coords="399,56,565,83"/>
 </map>

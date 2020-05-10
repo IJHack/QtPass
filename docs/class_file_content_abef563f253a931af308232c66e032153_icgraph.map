@@ -1,7 +1,7 @@
 <map id="FileContent::parse" name="FileContent::parse">
-<area shape="rect" id="node1" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="719,31,849,56"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="457,5,671,31"/>
-<area shape="rect" id="node3" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface." alt="" coords="463,55,665,80"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title=" " alt="" coords="237,55,409,80"/>
-<area shape="rect" id="node5" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="5,48,189,87"/>
+<area shape="rect" id="node1" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="716,31,845,57"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="457,5,668,32"/>
+<area shape="rect" id="node3" href="$class_password_dialog.html#a89b320eb34026b488c5c685ee6b16623" title="Sets content in the password field in the interface." alt="" coords="462,56,663,83"/>
+<area shape="rect" id="node4" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title=" " alt="" coords="236,56,409,83"/>
+<area shape="rect" id="node5" href="$class_password_dialog.html#a859a78e62204698556204b9e20932010" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="5,49,188,90"/>
 </map>

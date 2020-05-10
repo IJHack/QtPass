@@ -1,4 +1,4 @@
 <map id="SingleApplication::receiveMessage" name="SingleApplication::receiveMessage">
-<area shape="rect" id="node1" title="SingleApplication::receiveMessage we have received (a command line) message." alt="" coords="184,5,315,44"/>
-<area shape="rect" id="node2" href="$class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c..." alt="" coords="5,5,136,44"/>
+<area shape="rect" id="node1" title="SingleApplication::receiveMessage we have received (a command line) message." alt="" coords="184,5,315,47"/>
+<area shape="rect" id="node2" href="$class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c..." alt="" coords="5,5,136,47"/>
 </map>

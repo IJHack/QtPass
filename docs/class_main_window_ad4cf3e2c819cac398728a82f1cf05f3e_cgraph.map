@@ -1,5 +1,5 @@
 <map id="MainWindow::deselect" name="MainWindow::deselect">
-<area shape="rect" id="node1" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="5,5,160,31"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="208,5,366,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="414,5,643,31"/>
+<area shape="rect" id="node1" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="208,5,365,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="413,5,640,32"/>
 </map>

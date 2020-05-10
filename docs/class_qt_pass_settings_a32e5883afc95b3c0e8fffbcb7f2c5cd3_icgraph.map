@@ -1,8 +1,8 @@
 <map id="QtPassSettings::isAlwaysOnTop" name="QtPassSettings::isAlwaysOnTop">
-<area shape="rect" id="node1" title=" " alt="" coords="614,48,787,87"/>
-<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="399,5,540,31"/>
-<area shape="rect" id="node5" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="379,55,560,80"/>
-<area shape="rect" id="node6" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="372,104,566,129"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="235,5,324,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="612,49,787,90"/>
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="398,5,538,32"/>
+<area shape="rect" id="node5" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="378,56,558,83"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="372,107,564,133"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="233,5,324,32"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,185,32"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="main" alt="" coords="5,68,56,93"/>
-<area shape="rect" id="node2" href="$class_single_application.html#a226f6a08af235dd032f07bac926cce85" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server..." alt="" coords="145,5,276,44"/>
-<area shape="rect" id="node3" href="$class_main_window.html#af50eeee0597f12cc5bc025e74a829525" title="MainWindow::messageAvailable we have some text/message/search to do." alt="" coords="104,68,317,93"/>
-<area shape="rect" id="node4" href="$class_single_application.html#aa239b90b18119ba78a63e62d8da3738f" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc..." alt="" coords="145,117,276,156"/>
+<area shape="rect" id="node1" title="main" alt="" coords="5,71,56,98"/>
+<area shape="rect" id="node2" href="$class_single_application.html#a226f6a08af235dd032f07bac926cce85" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server..." alt="" coords="144,5,275,47"/>
+<area shape="rect" id="node3" href="$class_main_window.html#af50eeee0597f12cc5bc025e74a829525" title="MainWindow::messageAvailable we have some text/message/search to do." alt="" coords="104,71,315,98"/>
+<area shape="rect" id="node4" href="$class_single_application.html#aa239b90b18119ba78a63e62d8da3738f" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc..." alt="" coords="144,123,275,164"/>
 </map>
