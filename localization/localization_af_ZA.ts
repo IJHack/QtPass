@@ -1020,7 +1020,7 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt; QtPass is &apos;n GUI vir &lt;a href=&quot;https://www.passwordstore.org/&quot; &gt; Pass &lt;/a&gt;, die standaard Unix wagwoord Bestuurder. &lt;/p&gt;
-&lt;p&gt; rapporteer asseblief enige &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot; &gt; kwessies &lt;/a&gt; jy dalk met hierdie sagteware. &lt;/p&gt;
+&lt;p&gt; rapporteer asseblief enige &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot; &gt; kwessies &lt;/a&gt; die jy dalk met hierdie sagteware kan hê . &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentasie &lt;/a&gt; &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Bronkode &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
@@ -1123,14 +1123,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav het onverwags uitgegaan
+        <translation>fusedav het onverwags afgesluit
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="226"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kon nie fusedav begin om WebDAV te verbind:
+        <translation>Kon nie fusedav uitvoer nie om WebDAV te verbind:
 </translation>
     </message>
     <message>
@@ -1166,12 +1166,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard cleared</source>
-        <translation>Knipbord skoongemaak</translation>
+        <translation>Knipbord leeggemaak</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="383"/>
         <source>Clipboard not cleared</source>
-        <translation>Knipbord is nie skoongemaak nie</translation>
+        <translation>Knipbord is nie leeggemaak nie</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="402"/>
@@ -1207,12 +1207,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation>Mi&amp;nimaliseren</translation>
+        <translation>Mi&amp;nimaliseer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ma&amp;ximaliseren</translation>
+        <translation>Ma&amp;ximaliseer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
@@ -1283,7 +1283,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Kon nie lys van beskikbare GPG-sleutels haal nie</translation>
+        <translation>Kon nie lys van beskikbare GPG-sleutels ophaal nie</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
