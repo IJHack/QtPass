@@ -102,7 +102,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅabcdefghijklmnopqrstuvwxyzæøå0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="625"/>
         <source>Create password-store?</source>
-        <translation>Opprette passord-butikk?</translation>
+        <translation>Opprett passordlager?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="626"/>
@@ -346,12 +346,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
         <source>Password store not initialised</source>
-        <translation>Passordlageret er ikke initialisert</translation>
+        <translation>Passordlageret er ikke i gang</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Mappen %1 ser ikke ut til å være et passordlager eller er ennå ikke initialisert.</translation>
+        <translation>Mappen %1 ser ikke ut til å være et passordlager, eller er ennå ikke i gang.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
@@ -412,8 +412,8 @@
         <source>login
 URL
 e-mail</source>
-        <translation>login
-URL
+        <translation>innlogging
+nettadresse
 e-post</translation>
     </message>
 </context>
@@ -451,7 +451,7 @@ e-post</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ingen av de valgte nøklene har en hemmelig nøkkel tilgjengelig.
-Du vil ikke kunne dekryptere noen nylig lagt passord!</translation>
+Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
@@ -462,7 +462,7 @@ Du vil ikke kunne dekryptere noen nylig lagt passord!</translation>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <location filename="../src/imitatepass.cpp" line="332"/>
         <source>Updating password-store</source>
-        <translation>Oppdatere passord-butikk</translation>
+        <translation>Oppdater passordslager</translation>
     </message>
 </context>
 <context>
@@ -470,7 +470,7 @@ Du vil ikke kunne dekryptere noen nylig lagt passord!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Generere GnuPG nøkkelpar</translation>
+        <translation>Generer GnuPG-nøkkelpar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
@@ -495,7 +495,7 @@ Du vil ikke kunne dekryptere noen nylig lagt passord!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Det er ingen grense for lengden på en passordfrase, og det bør velges nøye. Fra sikkerhetsperspektivet er passordfrasen for å låse opp den private nøkkelen et av de svakeste punktene i GnuPG (og andre krypteringssystemer for offentlig nøkkel også) siden det er den eneste beskyttelsen du har hvis en annen person får din private nøkkel. &lt;br/&gt;Ideelt sett bør ikke passordfrasen bruke ord fra en ordbok og bør blande etuiet med alfabetiske tegn samt bruke ikke-alfabetiske tegn.&lt;br/&gt; En god passordfrase er avgjørende for sikker bruk av GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Det er ingen grense for lengden på en passordfrase, og den bør velges med omhu. Fra et sikkerhetsperspektiv er passordfrasen for å låse opp den private nøkkelen et av de svakeste punktene i GnuPG (og andre krypteringssystemer som gjør bruk av offentlige nøkler også) siden det er den eneste beskyttelsen du har hvis en annen person får tak i din private nøkkel. &lt;br/&gt;Ideelt sett bør ikke passordfrasen bruke ord fra en ordbok, og bør bruke små og store alfabetiske tegn, samt bruke ikke-alfabetiske tegn.&lt;br/&gt; En god passordfrase er avgjørende for sikker bruk av GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -519,26 +519,26 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation>#           QtPass GPG nøkkel generator
+        <translation>#           QtPass GPG-nøkkelgenerator
 #
-#      first test version please comment
+#      første testversjon, kommentarer tas varmt imot
 #
-%echo Generating a default key
-Key-Type: default
-Subkey-Type: default
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
+%echo Genererer en forvalgsnøkkel
+Nøkkeltype: forvalg
+Undernøkkeltype: forvalg
+Ekte navn:
+Navnekommentar: QtPass
+Navn, e-post:
+Utløpsdato: 0
 %no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
+# Ikke send inn her, slik at &quot;ferdig&quot; kan printes senere :-)
 %commit
 %echo done</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</translation>
+        <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-manualen&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="129"/>
@@ -563,7 +563,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="156"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre noen annen handling (type på tastaturet, flytte musen, bruke diskene) under prime generasjon; dette gir tilfeldigtall generator en bedre sjanse til å få nok entropi.</translation>
+        <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre en annen handling (skriv på tastaturet, flytt musen, bruk diskene) under primtallsgenerering; dette gir generatoren for tilfeldige tall en bedre sjanse til å erverve seg nok entropi.</translation>
     </message>
 </context>
 <context>
@@ -594,10 +594,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass er en GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standard unix passord manager.&lt;/p&gt;
-&lt;p&gt;Rapporter eventuelle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemer&lt;/a&gt; du kan ha med denne programvaren.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass er et grafisk grensesnitt for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den forvalgte unix-passordsbehandleren.&lt;/p&gt;
+&lt;p&gt;Rapporter eventuelle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemer&lt;/a&gt; du måtte ha med denne programvaren.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentasjon&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kaynak kodu&lt;/a&gt;&lt;/p&gt;</translation>
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kildekode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
@@ -640,7 +640,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Generer OTP og kopier til utklippstavlen</translation>
+        <translation>Generer engangspassord og kopier til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
@@ -676,7 +676,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation>Behandle hvem som kan lese passord i mappen</translation>
+        <translation>Håndter hvem som kan lese passord i mappen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
@@ -697,7 +697,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="278"/>
         <location filename="../src/mainwindow.cpp" line="290"/>
         <source>Updating password-store</source>
-        <translation>Oppdatere passord-butikk</translation>
+        <translation>Oppdater passordslager</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="389"/>
@@ -713,7 +713,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="419"/>
         <source>OTP Code</source>
-        <translation>OTP-kode</translation>
+        <translation type="unfinished">Engangspassordskode</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="438"/>
@@ -746,7 +746,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> og hele innholdet? &lt;br&gt;&lt;strong&gt;Oppmerksomhet: det er uventede filer i den angitte mappen, sjekk dem før du fortsetter.&lt;/strong&gt;</translation>
+        <translation> og hele innholdet? &lt;br&gt;&lt;strong&gt;Merk: Det er uventede filer i den angitte mappen, sjekk dem før du fortsetter.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
@@ -799,12 +799,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="989"/>
         <source>Rename Folder To: </source>
-        <translation>Gi nytt navn til mappe til: </translation>
+        <translation>Endre navn på mappe til: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>Rename File To: </source>
-        <translation>Gi nytt navn til fil til: </translation>
+        <translation>Endre filnavn til: </translation>
     </message>
 </context>
 <context>
@@ -817,7 +817,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/pass.cpp" line="103"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Kan ikke generere passord, det er ingen tegn å velge mellom satt i konfigurasjonen!</translation>
+        <translation>Kan ikke generere passord, det er ingen tegn å velge mellom angitt i oppsettet.</translation>
     </message>
 </context>
 <context>
@@ -888,7 +888,7 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="193"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Kan ikke koble WebDAV:
+        <translation>Klarte ikke å koble til WebDAV:
 </translation>
     </message>
     <message>
@@ -912,7 +912,7 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="226"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Kan ikke starte fusedav for å koble WebDAV:
+        <translation>Kan ikke starte fusedav for å koble til WebDAV:
 </translation>
     </message>
     <message>
@@ -1012,7 +1012,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Lese tilgangsbrukere</translation>
+        <translation>Brukere med lesetilgang</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
@@ -1021,8 +1021,8 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Velg hvilke brukere som skal kunne dekryptere passord som er lagret i denne mappen.
-Merk: Eksisterende filer vil ikke bli endret, og beholde de gamle tillatelsene til du redigerer dem.
-Blå oppføringer har en hemmelig nøkkel tilgjengelig, velg en av disse for å kunne dekryptere.
+Merk: Eksisterende filer vil ikke bli endret, og beholder de gamle tillatelsene til du redigerer dem.
+Blå oppføringer har en hemmelig nøkkel tilgjengelig, velg én av disse for å kunne dekryptere.
 Røde oppføringer er ikke gyldige, du vil ikke kunne kryptere til disse.</translation>
     </message>
     <message>
