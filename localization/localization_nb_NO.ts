@@ -126,12 +126,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generer lett å huske, men mindre sikre passord</translation>
+        <translation>Generer passord som er lett å huske, men mindre sikre</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
         <source>Exclude numbers</source>
-        <translation>Ekskluder tall</translation>
+        <translation>Utelukk tall</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation>Velg passordlagringsprogram:</translation>
+        <translation>Velg passordslagringsprogram:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>Native</source>
-        <translation>Innfødt</translation>
+        <translation type="unfinished">Lokal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
         <source>Show all fields templated</source>
-        <translation>Vis alle felt malt</translation>
+        <translation type="unfinished">Vis alle felter malvist</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
         <source>System tray is not available</source>
-        <translation>Systemstatusfeltet er ikke tilgjengelig</translation>
+        <translation>Systemkurv er ikke tilgjengelig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="72"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP utvidelsen må installeres</translation>
+        <translation>OTP-utvidelsen for Pass må installeres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation>On-demand kopi til utklippstavlen</translation>
+        <translation>Kopier til utklippstavlen ved behov</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
@@ -321,12 +321,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store for å få det. &lt;br&gt;Hvis du allerede har gjort det, må du kontrollere at du startet den én gang, og&lt;br&gt;klikk på &quot;Autodetect&quot; i neste dialogboks.</translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store for å få det. &lt;br&gt;Hvis du allerede har gjort det, må du kontrollere at du startet den én gang, og&lt;br&gt;klikk på &quot;Oppdag autoamtisk&quot; i neste dialogboks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="592"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; det fra GnuPG.org</translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;last det ned&lt;/a&gt; fra GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
