@@ -195,9 +195,13 @@ void QtPass::mountWebDav() {
                             true);
   }
 #else
-  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
-                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
-                QtPassSettings::getPassStore() + '"');
+  fusedav.start("fusedav", QStringList()
+                               << "-o"
+                               << "nonempty"
+                               << "-u"
+                               << "\"" + QtPassSettings::getWebDavUser() + "\""
+                               << QtPassSettings::getWebDavUrl()
+                               << "\"" + QtPassSettings::getPassStore() + "\"");
   fusedav.waitForStarted();
   if (fusedav.state() == QProcess::Running) {
     QString pwd = QtPassSettings::getWebDavPassword();

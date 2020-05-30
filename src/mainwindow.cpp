@@ -114,7 +114,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  qsrand(static_cast<uint>(QTime::currentTime().msec()));
+  QRandomGenerator(static_cast<uint>(QTime::currentTime().msec()));
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);

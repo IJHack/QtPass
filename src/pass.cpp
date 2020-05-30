@@ -139,7 +139,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
       0)
     return users;
-  QStringList keys = p_out.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+  QStringList keys = p_out.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
   UserInfo current_user;
   foreach (QString key, keys) {
     QStringList props = key.split(':');
