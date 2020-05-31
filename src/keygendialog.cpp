@@ -83,7 +83,11 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList lines = expert.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+#else
+  QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+#endif
   foreach (QString line, lines) {
     line.replace(QRegExp(key + ":.*"), key + ": " + value);
     if (key == "Passphrase")
@@ -101,7 +105,11 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList lines = expert.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+#else
+  QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+#endif
   foreach (QString line, lines) {
     bool remove = false;
     if (!enable) {

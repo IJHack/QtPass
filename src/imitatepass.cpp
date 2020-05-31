@@ -263,7 +263,11 @@ void ImitatePass::reencryptPath(const QString &dir) {
     exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys, &err);
     QStringList actualKeys;
     keys += err;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
     QStringList key = keys.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+#else
+    QStringList key = keys.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+#endif
     QListIterator<QString> itr(key);
     while (itr.hasNext()) {
       QString current = itr.next();
