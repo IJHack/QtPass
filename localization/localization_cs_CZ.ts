@@ -473,13 +473,13 @@ e-mail</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="298"/>
+        <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
         <translation>Nelze upravovat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="299"/>
+        <location filename="../src/imitatepass.cpp" line="303"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nelze načíst šifrovací klíč, .gpg-id soubor chybí nebo je neplatný.</translation>
     </message>
@@ -512,7 +512,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
-        <location filename="../src/imitatepass.cpp" line="332"/>
+        <location filename="../src/imitatepass.cpp" line="336"/>
         <source>Updating password-store</source>
         <translation>Aktualizace úložiště hesel</translation>
     </message>
@@ -593,27 +593,27 @@ Expire-Date: 0
         <translation>Možnosti expertního nastavení můžete nalézt v &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuálu&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Tato operace může zabrat několik minut.&lt;br /&gt;Je třeba vygenerovat množství náhodných dat. Pro urychlení můžete pomoci (psaním na klávesnici, pohybováním myší, zapisováním na disk) s jejich generováním; toto pomůže generátoru náhodných čísel zvýšit šanci na získání dostatečné entropie.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="129"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid name</source>
         <translation>Neplatné jméno</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="130"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Jméno musí být nejméně pět znaků dlouhé.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="140"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
         <translation>Neplatný e-mail</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="141"/>
+        <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>E-mailová adresa, kterou jste zadali, není platná e-mailová adresa.</translation>
     </message>

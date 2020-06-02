@@ -477,13 +477,13 @@ e-mail</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="298"/>
+        <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
         <translation>Nije moguće mijenjati</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="299"/>
+        <location filename="../src/imitatepass.cpp" line="303"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nije moguće pročitati ključ šifriranja koji se treba koristiti, .gpg-id datoteka nedostaje ili nije ispravna.</translation>
     </message>
@@ -516,7 +516,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
-        <location filename="../src/imitatepass.cpp" line="332"/>
+        <location filename="../src/imitatepass.cpp" line="336"/>
         <source>Updating password-store</source>
         <translation>Aktualiziranje spremišta za lozinke</translation>
     </message>
@@ -597,27 +597,27 @@ Expire-Date: 0
         <translation>Za napredne opcije pročitaj &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;priručnik za GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="129"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid name</source>
         <translation>Neispravno ime</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="130"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Ime mora sadržati barem pet znakova.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="140"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
         <translation>Neipsravna e-mail adresa</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="141"/>
+        <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Upisana e-mail adresa nije ispravne e-mail adresa.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ova operacija može potrajati nekoliko minuta. &lt;br /&gt; Moramo generirati puno slučajnih bajtova. Dobro je provesti neku drugu radnju (utipkajte tipkovnicu, pomičite miša, koristite diskove) tijekom premijere generacije; ovo daje veću mogućnost generatora slučajnih brojeva da steknu dovoljno entropije.</translation>
     </message>

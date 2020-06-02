@@ -421,13 +421,13 @@ e-post</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="298"/>
+        <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
         <translation>Kan ikke redigere</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="299"/>
+        <location filename="../src/imitatepass.cpp" line="303"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kan ikke lese krypteringsnøkkelen som skal brukes, .gpg-id filen mangler eller er ugyldig.</translation>
     </message>
@@ -460,7 +460,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
-        <location filename="../src/imitatepass.cpp" line="332"/>
+        <location filename="../src/imitatepass.cpp" line="336"/>
         <source>Updating password-store</source>
         <translation>Oppdater passordslager</translation>
     </message>
@@ -541,27 +541,27 @@ Utløpsdato: 0
         <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-manualen&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="129"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid name</source>
         <translation>Ugyldig navn</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="130"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Navn må være mer enn 5 tegn.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="140"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
         <translation>Ugyldig e-post</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="141"/>
+        <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre en annen handling (skriv på tastaturet, flytt musen, bruk diskene) under primtallsgenerering; dette gir generatoren for tilfeldige tall en bedre sjanse til å erverve seg nok entropi.</translation>
     </message>

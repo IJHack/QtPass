@@ -421,13 +421,13 @@ e-mail</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="298"/>
+        <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
         <translation>Δεν είναι δυνατή η επεξεργασία</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="299"/>
+        <location filename="../src/imitatepass.cpp" line="303"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Δεν ήταν δυνατή η ανάγνωση του κλειδιού κρυπτογράφησης για τη χρήση του αρχείου .gpg-id που λείπει ή είναι άκυρο.</translation>
     </message>
@@ -460,7 +460,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
-        <location filename="../src/imitatepass.cpp" line="332"/>
+        <location filename="../src/imitatepass.cpp" line="336"/>
         <source>Updating password-store</source>
         <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
     </message>
@@ -541,27 +541,27 @@ Expire-Date: 0
         <translation>Για επιλογές εμπειρογνωμόνων δείτε το &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; εγχειρίδιο του GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="129"/>
+        <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid name</source>
         <translation>Μη έγκυρο όνομα</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="130"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Το όνομα πρέπει να έχει μήκος τουλάχιστον 5 χαρακτήρων.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="140"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
         <translation>Μη έγκυρο μήνυμα ηλεκτρονικού ταχυδρομείου</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="141"/>
+        <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Η διεύθυνση ηλεκτρονικού ταχυδρομείου που πληκτρολογήσατε δεν είναι έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Αυτή η λειτουργία μπορεί να διαρκέσει μερικά λεπτά. &lt;br /&gt; Πρέπει να δημιουργήσουμε πολλά τυχαία byte. Είναι καλή ιδέα να εκτελέσετε κάποια άλλη ενέργεια (πληκτρολογήστε το πληκτρολόγιο, μετακινήστε το ποντίκι, χρησιμοποιήστε τους δίσκους) κατά τη διάρκεια της πρώτης γενιάς. αυτό δίνει στην γεννήτρια τυχαίων αριθμών καλύτερη πιθανότητα να αποκτήσει αρκετή εντροπία.</translation>
     </message>

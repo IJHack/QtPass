@@ -27,13 +27,13 @@
 - Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
+- UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
 - No prompt for passphrase for git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
 
 **Merged pull requests:**
 
 - Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
-- Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
 - Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
@@ -88,6 +88,7 @@
 
 **Merged pull requests:**
 
+- Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
 - Add license scan report and status [\#480](https://github.com/IJHack/QtPass/pull/480) ([fossabot](https://github.com/fossabot))
 - Build system related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
@@ -112,7 +113,6 @@
 
 - Windows sigsev issues [\#326](https://github.com/IJHack/QtPass/issues/326)
 - Access to the / \(root\) directory form within the application window on MacOS [\#302](https://github.com/IJHack/QtPass/issues/302)
-- PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
 - Context menu on transparent fields is transparent too . .  [\#227](https://github.com/IJHack/QtPass/issues/227)
 
 **Closed issues:**
@@ -260,6 +260,7 @@
 **Fixed bugs:**
 
 - Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
+- PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 - SingleApplication implementation buggy [\#26](https://github.com/IJHack/QtPass/issues/26)
 
@@ -690,6 +691,7 @@
 **Merged pull requests:**
 
 - Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
+- Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
@@ -730,7 +732,6 @@
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
 - User robustness [\#33](https://github.com/IJHack/QtPass/pull/33) ([rdoeffinger](https://github.com/rdoeffinger))
-- Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add nosingleapp config. [\#27](https://github.com/IJHack/QtPass/pull/27) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add Makefile with commands to make a binary release zip file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
 - Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))
