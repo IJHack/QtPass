@@ -767,6 +767,9 @@ void MainWindow::updateProfileBox() {
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
+
+  ui->lineEdit->clear();
+
   QtPassSettings::setProfile(name);
 
   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
