@@ -390,7 +390,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   } else {
     if (!password.isEmpty()) {
       // set the password, it is hidden if needed in addToGridLayout
-      addToGridLayout(0, tr("Password"), password);
+      addToGridLayout(0, tr("Password"), "<tt>" + password + "</tt>");
     }
 
     NamedValues namedValues = fileContent.getNamedValues();
