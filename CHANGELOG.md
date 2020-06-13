@@ -15,7 +15,9 @@
 **Closed issues:**
 
 - Icons are blurry when fractional scaling is enabled [\#525](https://github.com/IJHack/QtPass/issues/525)
+- \[Request\] clear search password when change profile [\#524](https://github.com/IJHack/QtPass/issues/524)
 - Copying not possible on Ubuntu 20.04 [\#521](https://github.com/IJHack/QtPass/issues/521)
+- Display passwords in mono space font [\#514](https://github.com/IJHack/QtPass/issues/514)
 - Default password visibility [\#511](https://github.com/IJHack/QtPass/issues/511)
 - Consider mentioning export abilities in migration docs, if any are present [\#505](https://github.com/IJHack/QtPass/issues/505)
 - Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
@@ -33,7 +35,11 @@
 
 **Merged pull requests:**
 
+- Clear search on profile change [\#529](https://github.com/IJHack/QtPass/pull/529) ([cmol](https://github.com/cmol))
+- \#514 Show password with a monospace font [\#528](https://github.com/IJHack/QtPass/pull/528) ([cmol](https://github.com/cmol))
+- Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
 - Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
+- Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
 - Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
@@ -88,7 +94,6 @@
 
 **Merged pull requests:**
 
-- Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
 - Add license scan report and status [\#480](https://github.com/IJHack/QtPass/pull/480) ([fossabot](https://github.com/fossabot))
 - Build system related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
@@ -98,7 +103,6 @@
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
 - Add support for passwords and directories renaming as requested in \#463 [\#469](https://github.com/IJHack/QtPass/pull/469) ([Noettore](https://github.com/Noettore))
-- Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
 
 ## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
@@ -113,6 +117,7 @@
 
 - Windows sigsev issues [\#326](https://github.com/IJHack/QtPass/issues/326)
 - Access to the / \(root\) directory form within the application window on MacOS [\#302](https://github.com/IJHack/QtPass/issues/302)
+- PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
 - Context menu on transparent fields is transparent too . .  [\#227](https://github.com/IJHack/QtPass/issues/227)
 
 **Closed issues:**
@@ -138,6 +143,7 @@
 
 **Merged pull requests:**
 
+- Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
 - Use key fingerprint as ID instead of “long” ID. [\#452](https://github.com/IJHack/QtPass/pull/452) ([Natureshadow](https://github.com/Natureshadow))
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
@@ -260,7 +266,6 @@
 **Fixed bugs:**
 
 - Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
-- PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
 - Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 - SingleApplication implementation buggy [\#26](https://github.com/IJHack/QtPass/issues/26)
 
@@ -691,7 +696,6 @@
 **Merged pull requests:**
 
 - Bugfixes [\#49](https://github.com/IJHack/QtPass/pull/49) ([rdoeffinger](https://github.com/rdoeffinger))
-- Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
@@ -732,6 +736,7 @@
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
 - User robustness [\#33](https://github.com/IJHack/QtPass/pull/33) ([rdoeffinger](https://github.com/rdoeffinger))
+- Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add nosingleapp config. [\#27](https://github.com/IJHack/QtPass/pull/27) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add Makefile with commands to make a binary release zip file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
 - Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))

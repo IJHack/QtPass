@@ -600,7 +600,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
-        <location filename="../src/mainwindow.cpp" line="902"/>
+        <location filename="../src/mainwindow.cpp" line="905"/>
         <source>Add password</source>
         <translation>Shtoni fjalëkalimin</translation>
     </message>
@@ -612,21 +612,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
-        <location filename="../src/mainwindow.cpp" line="901"/>
+        <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Add folder</source>
         <translation>Shto folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
-        <location filename="../src/mainwindow.cpp" line="909"/>
+        <location filename="../src/mainwindow.cpp" line="912"/>
         <source>Edit</source>
         <translation>Modifiko</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
-        <location filename="../src/mainwindow.cpp" line="930"/>
+        <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Delete</source>
         <translation>Fshij</translation>
     </message>
@@ -675,7 +675,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
-        <location filename="../src/mainwindow.cpp" line="903"/>
+        <location filename="../src/mainwindow.cpp" line="906"/>
         <source>Users</source>
         <translation>Përdoruesit</translation>
     </message>
@@ -712,7 +712,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1095"/>
+        <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>Password</source>
         <translation>Fjalëkalim</translation>
     </message>
@@ -733,7 +733,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="606"/>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="970"/>
         <source>New file</source>
         <translation>Dosje e re</translation>
     </message>
@@ -771,45 +771,45 @@ Expire-Date: 0
         <translation>Jeni i sigurt që dëshironi të fshini %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="773"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
         <source>Profile changed to %1</source>
         <translation>Profili ndryshoi në  %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Open folder with file manager</source>
         <translation>Hap dosjen me menaxherin e skedarëve</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Rename folder</source>
         <translation>Riemërtoni dosjen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="926"/>
+        <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Rename password</source>
         <translation>Riemërtoni fjalëkalimin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="968"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Dosje e re:
 (Do të vendoset brenda %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="989"/>
-        <location filename="../src/mainwindow.cpp" line="1018"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename file</source>
         <translation>Riemërtoni skedarin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="989"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Rename Folder To: </source>
         <translation>Riemërtoni Dosjen ne: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1018"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename File To: </source>
         <translation>Riemërtoni Skedarin ne : </translation>
     </message>
