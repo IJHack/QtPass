@@ -37,6 +37,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_cy_GB.ts \
                     ../localization/localization_hr_HR.ts \
                     ../localization/localization_af_ZA.ts \
+                    ../localization/localization_bg_BG.ts \
                     ../localization/localization_fi_FI.ts
 
 CONFIG += lrelease embed_translations

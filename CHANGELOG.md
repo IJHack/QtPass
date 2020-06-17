@@ -18,6 +18,7 @@
 - \[Request\] clear search password when change profile [\#524](https://github.com/IJHack/QtPass/issues/524)
 - Copying not possible on Ubuntu 20.04 [\#521](https://github.com/IJHack/QtPass/issues/521)
 - Display passwords in mono space font [\#514](https://github.com/IJHack/QtPass/issues/514)
+- QtPass 1.3.2 for Ubuntu 19.10 \(eoan\) [\#512](https://github.com/IJHack/QtPass/issues/512)
 - Default password visibility [\#511](https://github.com/IJHack/QtPass/issues/511)
 - Consider mentioning export abilities in migration docs, if any are present [\#505](https://github.com/IJHack/QtPass/issues/505)
 - Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
@@ -35,6 +36,7 @@
 
 **Merged pull requests:**
 
+- Translations update from Weblate [\#530](https://github.com/IJHack/QtPass/pull/530) ([weblate](https://github.com/weblate))
 - Clear search on profile change [\#529](https://github.com/IJHack/QtPass/pull/529) ([cmol](https://github.com/cmol))
 - \#514 Show password with a monospace font [\#528](https://github.com/IJHack/QtPass/pull/528) ([cmol](https://github.com/cmol))
 - Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
@@ -42,7 +44,6 @@
 - Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
 - Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
-- Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
 - Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
 - Spelling: Search for users, , [\#495](https://github.com/IJHack/QtPass/pull/495) ([comradekingu](https://github.com/comradekingu))
 - Spelling: Keylist missing, Could not fetch, GPG [\#493](https://github.com/IJHack/QtPass/pull/493) ([comradekingu](https://github.com/comradekingu))
@@ -103,6 +104,7 @@
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
 - Add support for passwords and directories renaming as requested in \#463 [\#469](https://github.com/IJHack/QtPass/pull/469) ([Noettore](https://github.com/Noettore))
+- Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
 
 ## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
@@ -143,7 +145,6 @@
 
 **Merged pull requests:**
 
-- Fix missing app ID and icon on Wayland. [\#468](https://github.com/IJHack/QtPass/pull/468) ([lightbulbjim](https://github.com/lightbulbjim))
 - Use key fingerprint as ID instead of “long” ID. [\#452](https://github.com/IJHack/QtPass/pull/452) ([Natureshadow](https://github.com/Natureshadow))
 - Typo: dialouge to dialogue. [\#444](https://github.com/IJHack/QtPass/pull/444) ([georgjaehnig](https://github.com/georgjaehnig))
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
