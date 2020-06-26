@@ -125,7 +125,10 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
  * @param msg
  */
 void ImitatePass::GitCommit(const QString &file, const QString &msg) {
-  executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
+  if (file.isEmpty())
+      executeGit(GIT_COMMIT, {"commit", "-m", msg});
+  else
+      executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
 }
 
 /**
@@ -342,8 +345,52 @@ void ImitatePass::reencryptPath(const QString &dir) {
 
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
-  QFileInfo destFileInfo(dest);
   transactionHelper trans(this, PASS_MOVE);
+  QFileInfo srcFileInfo(src);
+  QFileInfo destFileInfo(dest);
+  QString destFile;
+
+  if (srcFileInfo.isFile()) {
+    if (destFileInfo.isFile()) {
+      if (!force) {
+#ifdef QT_DEBUG
+        dbg() << "Destination file already exists";
+#endif
+        return;
+      }
+    } else if (destFileInfo.isDir()) {
+      destFile = QDir(dest).filePath(srcFileInfo.baseName());
+    } else {
+      destFile = dest;
+    }
+
+    if (!destFile.endsWith(".gpg"))
+      destFile.append(".gpg");
+
+  } else if (srcFileInfo.isDir()) {
+    if (destFileInfo.isDir()) {
+      destFile = QDir(dest).filePath(srcFileInfo.baseName());
+    } else if (destFileInfo.isFile()) {
+#ifdef QT_DEBUG
+      dbg() << "Destination is a file";
+#endif
+      return;
+    } else {
+      destFile = dest;
+    }
+
+  } else {
+#ifdef QT_DEBUG
+    dbg() << "Source file does not exist";
+#endif
+    return;
+  }
+
+#ifdef QT_DEBUG
+  dbg() << "Move Source: " << src;
+  dbg() << "Move Destination: " << destFile;
+#endif
+
   if (QtPassSettings::isUseGit()) {
     QStringList args;
     args << "mv";
@@ -351,30 +398,22 @@ void ImitatePass::Move(const QString src, const QString dest,
       args << "-f";
     }
     args << pgit(src);
-    args << pgit(dest);
+    args << pgit(destFile);
     executeGit(GIT_MOVE, args);
 
-    QString message = QString("moved from %1 to %2 using QTPass.");
-    message = message.arg(src).arg(dest);
+    QString relSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(src);
+    relSrc.replace(QRegExp("\\.gpg$"), "");
+    QString relDest = QDir(QtPassSettings::getPassStore()).relativeFilePath(destFile);
+    relDest.replace(QRegExp("\\.gpg$"), "");
+    QString message = QString("Moved for %1 to %2 using QtPass.");
+    message = message.arg(relSrc).arg(relDest);
     GitCommit("", message);
   } else {
     QDir qDir;
-    QFileInfo srcFileInfo(src);
-    QString destCopy = dest;
-    if (srcFileInfo.isFile() && destFileInfo.isDir()) {
-      destCopy = destFileInfo.absoluteFilePath() + QDir::separator() +
-                 srcFileInfo.fileName();
-    }
     if (force) {
-      qDir.remove(destCopy);
+      qDir.remove(destFile);
     }
-    qDir.rename(src, destCopy);
-  }
-  // reecrypt all files under the new folder
-  if (destFileInfo.isDir()) {
-    reencryptPath(destFileInfo.absoluteFilePath());
-  } else if (destFileInfo.isFile()) {
-    reencryptPath(destFileInfo.dir().path());
+    qDir.rename(src, destFile);
   }
 }
 
