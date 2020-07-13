@@ -408,7 +408,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="592"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Bitte installieren Sie GnuPG auf Ihrem System. &lt;br&gt;Installieren Sie &lt;strong&gt;Ubuntu&lt;/strong&gt; aus dem Microsoft Store&lt;br&gt;oder &quot;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt; es von GnuPG.org</translation>
+        <translation>Bitte installieren Sie GnuPG auf Ihrem System. &lt;br&gt;Installieren Sie &lt;strong&gt;Ubuntu&lt;/strong&gt; aus dem Microsoft Store&lt;br&gt;oder &quot;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt; es von GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
