@@ -542,7 +542,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
@@ -610,12 +610,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
-        <translation>Email non valida</translation>
+        <translation>E-mail non valida</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>L&apos;indirizzo email che hai inserito non è valido.</translation>
+        <translation>L&apos;indirizzo e-mail che hai inserito non è valido.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="164"/>
