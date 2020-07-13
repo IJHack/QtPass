@@ -514,7 +514,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Mejl</translation>
+        <translation>E-post</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
