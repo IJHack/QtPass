@@ -545,7 +545,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
@@ -613,12 +613,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
-        <translation>Ongeldig emailadres</translation>
+        <translation>Ongeldig e-mailadres</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Het emailadres dat u heeft ingevoerd is voldoet niet aan de email standaard.</translation>
+        <translation>Het e-mailadres dat u heeft ingevoerd is voldoet niet aan de e-mail standaard.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="164"/>
