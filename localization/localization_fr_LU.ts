@@ -483,7 +483,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="95"/>
         <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
-        <translation>Impossible d&apos;éditer</translation>
+        <translation>Impossible de modifier</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
@@ -545,7 +545,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>Courriel</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
@@ -618,7 +618,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>L&apos;adresse e-mail que vous avez saisie n&apos;est pas une adresse e-mail valide.</translation>
+        <translation>L&apos;adresse courriel que vous avez saisie n&apos;est pas une adresse courriel valide.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="164"/>
@@ -642,7 +642,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="912"/>
         <source>Edit</source>
-        <translation>Editer</translation>
+        <translation>Modifier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
@@ -1199,7 +1199,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui doivent pouvoir décrypter les mots de passe stockés dans ce dossier.
-Remarque: les fichiers existants ne seront pas modifiés et conserveront les anciennes autorisations jusqu&apos;à ce que vous les modifiiez.
+Remarque : les fichiers existants ne seront pas modifiés et conserveront les anciennes autorisations jusqu&apos;à ce que vous les modifiiez.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir la décrypter.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas les chiffrer.</translation>
     </message>
