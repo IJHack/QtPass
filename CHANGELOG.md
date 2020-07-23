@@ -36,6 +36,7 @@
 
 **Merged pull requests:**
 
+- Translations update from Weblate [\#535](https://github.com/IJHack/QtPass/pull/535) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#531](https://github.com/IJHack/QtPass/pull/531) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#530](https://github.com/IJHack/QtPass/pull/530) ([weblate](https://github.com/weblate))
 - Clear search on profile change [\#529](https://github.com/IJHack/QtPass/pull/529) ([cmol](https://github.com/cmol))
@@ -46,6 +47,7 @@
 - Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
+- Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
 - Spelling: Search for users, , [\#495](https://github.com/IJHack/QtPass/pull/495) ([comradekingu](https://github.com/comradekingu))
 - Spelling: Keylist missing, Could not fetch, GPG [\#493](https://github.com/IJHack/QtPass/pull/493) ([comradekingu](https://github.com/comradekingu))
 - Spelling: Git, GPG, PWGen, etc. [\#492](https://github.com/IJHack/QtPass/pull/492) ([comradekingu](https://github.com/comradekingu))
@@ -74,7 +76,6 @@
 
 **Merged pull requests:**
 
-- Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
 - Don't call QtPass::setup\(\) from QtPass class constructor \(should fix \#466\) [\#482](https://github.com/IJHack/QtPass/pull/482) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 
 ## [v1.3.1](https://github.com/IJHack/QtPass/tree/v1.3.1) (2019-10-01)
@@ -143,6 +144,7 @@
 - Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
 - Startup variables and parameters [\#212](https://github.com/IJHack/QtPass/issues/212)
 - \[OS X\] Password input dialog suddenly stopped popping up [\#191](https://github.com/IJHack/QtPass/issues/191)
+- MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
 **Merged pull requests:**
 
@@ -414,7 +416,6 @@
 - Signed releases [\#186](https://github.com/IJHack/QtPass/issues/186)
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/QtPass/issues/164)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/QtPass/issues/138)
-- MainWindow is a giant monolithic mess  [\#107](https://github.com/IJHack/QtPass/issues/107)
 
 **Merged pull requests:**
 
@@ -512,7 +513,6 @@
 - Futurator redesign proper [\#141](https://github.com/IJHack/QtPass/pull/141) ([annejan](https://github.com/annejan))
 - RPM Spec file updates [\#137](https://github.com/IJHack/QtPass/pull/137) ([muff1nman](https://github.com/muff1nman))
 - swedish translations [\#135](https://github.com/IJHack/QtPass/pull/135) ([ralphtheninja](https://github.com/ralphtheninja))
-- spanish translations added [\#103](https://github.com/IJHack/QtPass/pull/103) ([mrpnkt](https://github.com/mrpnkt))
 
 ## [v1.0.6](https://github.com/IJHack/QtPass/tree/v1.0.6) (2016-01-03)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.5...v1.0.6)
@@ -575,6 +575,7 @@
 **Merged pull requests:**
 
 - Get PREFIX variable from environment [\#104](https://github.com/IJHack/QtPass/pull/104) ([jorti](https://github.com/jorti))
+- spanish translations added [\#103](https://github.com/IJHack/QtPass/pull/103) ([mrpnkt](https://github.com/mrpnkt))
 
 ## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
@@ -691,6 +692,7 @@
 **Merged pull requests:**
 
 - Develop [\#52](https://github.com/IJHack/QtPass/pull/52) ([annejan](https://github.com/annejan))
+- Minor thingies [\#51](https://github.com/IJHack/QtPass/pull/51) ([beefcurtains](https://github.com/beefcurtains))
 
 ## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
@@ -734,7 +736,6 @@
 
 **Merged pull requests:**
 
-- Minor thingies [\#51](https://github.com/IJHack/QtPass/pull/51) ([beefcurtains](https://github.com/beefcurtains))
 - SingleApplication per user and leading newline removed from output [\#44](https://github.com/IJHack/QtPass/pull/44) ([annejan](https://github.com/annejan))
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
