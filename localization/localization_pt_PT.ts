@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation>Nenhum perfil selecionado para eliminar</translation>
+        <translation>Nenhum perfil selecionado para apagar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="584"/>
@@ -382,7 +382,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Por favor, instale GnuPG em seu sistema. &lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store para obtê-lo.&lt;br&gt;Se você já fez isso, certifique-se de começá-lo uma vez e&lt;br&gt;clique &quot;Autodetect&quot; no próximo diálogo.</translation>
+        <translation>Por favor, instale GnuPG em seu sistema. &lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store para obtê-lo.&lt;br&gt;Se já o fez, certifique-se de começá-lo uma vez e&lt;br&gt;clique &quot;Autodetect&quot; no próximo diálogo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="592"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Os modelos adicionam campos extras no diálogo de geração de senha e na exibição de senha.</translation>
+        <translation>Os modelos adicionam campos extras no diálogo de geração de palavra-passe e na exibição de palavra-passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
@@ -813,7 +813,7 @@ p, li { white-space: pre-wrap; }
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Novo ficheiro de password:
-(Vai ser colocado em %1 )</translation>
+(Vai ser posto em %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
@@ -873,7 +873,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="971"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nova pasta: (Será colocada em %1 )</translation>
+        <translation>Nova pasta: (Será posta em %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -922,12 +922,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> e todo o conteúdo? &lt;br&gt;&lt;strong&gt;Atenção: há arquivos inesperados na pasta dada, verificá-los antes de continuar.&lt;/strong&gt;</translation>
+        <translation> e todo o conteúdo? &lt;br&gt;&lt;strong&gt;Atenção: há ficheiros inesperados na pasta dada, verificá-los antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Open folder with file manager</source>
-        <translation>Abrir pasta com gerenciador de arquivos</translation>
+        <translation>Abrir pasta com gestor de ficheiros</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -937,13 +937,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Rename password</source>
-        <translation>Renomear senha</translation>
+        <translation>Renomear palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="992"/>
         <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename file</source>
-        <translation>Renomear arquivo</translation>
+        <translation>Renomear ficheiro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="992"/>
@@ -953,7 +953,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename File To: </source>
-        <translation>Renome arquivo para: </translation>
+        <translation>Renome ficheiro para: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -961,8 +961,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass é um GUI para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, o gerenciador de senhas unix padrão.&lt;/p&gt;
-&lt;p&gt;Por favor, relate qualquer &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; você pode ter com este software.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass é um GUI para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, o gestor de palavras-passe unix padrão.&lt;/p&gt;
+&lt;p&gt;Por favor, relate qualquer &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; pode ter com este software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentação&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Código fonte&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
