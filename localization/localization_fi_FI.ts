@@ -32,7 +32,7 @@
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekuntia</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota sisältö</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota salasana</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasanan pituus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä merkkejä:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki merkit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <source>Use git</source>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestelmä:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
@@ -242,12 +242,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
@@ -271,12 +271,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished">Add</translation>
+        <translation>Lisää</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -285,7 +285,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Malli</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -294,7 +294,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä mallia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
@@ -317,7 +317,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt; QtPass&lt;/a&gt; versio </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
@@ -898,7 +898,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Haluatko varmasti poistaa %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
@@ -1042,7 +1042,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki merkit</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
@@ -1062,7 +1062,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pituus:</translation>
     </message>
 </context>
 <context>
@@ -1070,7 +1070,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main/main.cpp" line="89"/>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -1175,12 +1175,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Näytä</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Piilota</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
@@ -1200,7 +1200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lopeta</translation>
     </message>
 </context>
 <context>
