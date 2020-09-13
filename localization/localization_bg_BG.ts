@@ -16,17 +16,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Поведение на буфера:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвай основа селектиране</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично изчистване след:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
@@ -41,82 +41,82 @@
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Поведение на панела за съдържание:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Скриване на съдържанието</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Скриване на паролата</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично изчисти панела след:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериране на парола:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дължина на паролата:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвай символи:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Избери набор от символи за генериране на парола</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Всички символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Азбучно</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Букви и цифри</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Персонализиран</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЮЯабвгдежзийклмнопрстуфхцчшщъьюя0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавяне на специални символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущ път</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -125,7 +125,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Без главни букви</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -134,17 +134,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Създаване на лесни за помнене, но по-малко надеждни пароли</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Без цифри</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <source>Use git</source>
@@ -153,22 +153,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично добавяне на .gpg-id файлове</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично синхронизиране към хранилище с git push</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично синхронизиране от хранилище с git pull</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Разширения:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -177,37 +177,37 @@
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Система:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвай TrayIcon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартирай минимизирано</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрий при затваряне</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Винаги отгоре</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Програми</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Избери програма за съхранение на пароли:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -256,27 +256,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Профили</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Име</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Път</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished">Add</translation>
+        <translation>Добавяне</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Изтриване</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -285,7 +285,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -294,7 +294,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвай шаблон</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
@@ -317,37 +317,37 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; версия </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Без буфер</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="102"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Задължително копиране в буфера</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Предложение за копиране в буфера</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Не е избран профил</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Не е избран профил за триене</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="584"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Не е намерена програма GnuPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
@@ -357,32 +357,32 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="625"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Създаване на хранилище за пароли?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="626"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Искате ли да създадете хранилище за пароли на %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>Не е инициализирано хранилище за пароли</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>Изглежда, че папката% 1 не е хранилище за пароли или все още не е инициализирана.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично откриване</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="47"/>
@@ -397,7 +397,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="77"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>qrencode трябва да бъде инсталиран</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
@@ -412,22 +412,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвайте PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвайте Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвайте QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Използвайте разширението pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
@@ -437,7 +437,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
@@ -446,22 +446,22 @@ email</translation>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблоните добавят допълнителни полета в диалога за генериране на пароли и в изгледа на паролата.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
@@ -477,7 +477,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="95"/>
         <location filename="../src/imitatepass.cpp" line="302"/>
         <source>Can not edit</source>
-        <translation type="unfinished">Can not edit</translation>
+        <translation>Не може да се редактира</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
@@ -488,17 +488,17 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Не може да се актуализира</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешно отваряне на .gpg-id за запис.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверете избраните потребители!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
@@ -509,13 +509,13 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="241"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторно криптиране от папка% 1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <location filename="../src/imitatepass.cpp" line="336"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Актуализиране на хранилището на пароли</translation>
     </message>
 </context>
 <context>
@@ -523,12 +523,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериране на GnuPG ключове</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерирайте нова двойка ключове</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
@@ -538,12 +538,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Имейл</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Име</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
@@ -553,7 +553,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Експерт</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -577,27 +577,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>За експертни опции разгледайте &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; ръководството за GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="137"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Невалидно име</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Името трябва да е с дължина поне 5 знака.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Невалиден имейл</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="149"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Въведеният имейл адрес не е валиден имейл адрес.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="164"/>
@@ -610,7 +610,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <source>Add</source>
@@ -621,14 +621,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="912"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактиране</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Изтриване</translation>
     </message>
     <message>
         <source>git push</source>
@@ -660,32 +660,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерирайте OTP и копирайте във буфера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation type="unfinished"></translation>
+        <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -694,7 +694,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Актуализиране</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -710,13 +710,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление на това кой може да чете паролата в папката</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="906"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Потребители</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -732,27 +732,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation type="unfinished">Конфигурации</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Конфигуриране</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете профил</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Добре дошли в QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Търсене на парола</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -761,7 +761,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="191"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Добре дошли в QtPass% 1</translation>
     </message>
     <message>
         <source>Add Password</source>
@@ -801,7 +801,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="278"/>
         <location filename="../src/mainwindow.cpp" line="290"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Актуализиране на хранилището за пароли</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -818,18 +818,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Съдържанието е скрито</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Парола</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="419"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP код</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -842,7 +842,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="438"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Паролата и съдържанието са скрити</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -871,13 +871,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="507"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Търси се:% 1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="606"/>
         <location filename="../src/mainwindow.cpp" line="970"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Нов файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="607"/>
@@ -888,22 +888,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="635"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> и цялото съдържание?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="645"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> и цялото съдържание? &lt;br&gt; &lt;strong&gt; Внимание: в дадената папка има неочаквани файлове, проверете ги, преди да продължите. &lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Наистина ли искате да изтриете %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Изтриване на парола?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -912,7 +912,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Изтриване на папка?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -937,32 +937,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Профилът е променен на% 1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Отваряне на папка с файлов мениджър</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавяне на папка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="905"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавяне на парола</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="971"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Нова папка: 
+(Ще бъде поставен в% 1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -971,28 +972,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуване на папка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуване на парола</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="992"/>
         <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуване на файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Преименуване на папката на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Преименувайте файла на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
@@ -1008,7 +1009,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="102"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Няма избрани знаци</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="103"/>
@@ -1022,47 +1023,47 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Парола</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериране</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Покажи парола</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Набор от знаци:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Всички знаци</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Азбучно</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Буквено-цифрово</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Персонализиран</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дължина:</translation>
     </message>
 </context>
 <context>
@@ -1070,7 +1071,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main/main.cpp" line="89"/>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -1078,30 +1079,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Генериране на двойка GPG ключове</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Неуспешно свързване на WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="210"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV password</translation>
+        <translation>QtPass WebDAV парола</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="211"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Въведете парола, за да се свържете към WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="227"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>fusedav спря неочаквано
 </translation>
     </message>
     <message>
@@ -1114,47 +1115,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="243"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="249"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="252"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="255"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="385"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Clipboard cleared</translation>
+        <translation>Буферът е изчистен</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="387"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Clipboard not cleared</translation>
+        <translation>Буферът не е изчистен</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="406"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">copied to clipboard</translation>
+        <translation>Копирано в буфера</translation>
     </message>
 </context>
 <context>
@@ -1162,12 +1163,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/storemodel.cpp" line="279"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>принудително презаписване?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>да се презапише ли% 1 с% 2?</translation>
     </message>
 </context>
 <context>
@@ -1175,12 +1176,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Покажи</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Скрий</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
@@ -1195,12 +1196,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Възстанови</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Изход</translation>
     </message>
 </context>
 <context>
@@ -1216,12 +1217,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете кои потребители трябва да могат да дешифрират пароли, съхранени в тази папка.
+Забележка: Съществуващите файлове няма да бъдат модифицирани и ще запазят старите разрешения, докато не ги редактирате.
+Сините записи имат таен ключ, изберете един от тях, за да можете да дешифрирате.
+Червените записи не са валидни, няма да можете да криптирате в тях.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Търсене на потребители</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1240,7 +1244,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Показване на неизползваемите ключове</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1253,27 +1257,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Липсва списъкът с ключове</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Не може да се извлече списък с наличните GPG ключове</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Ключът не е намерен в ключодържателя</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>създаден</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>изтича</translation>
     </message>
 </context>
 </TS>
