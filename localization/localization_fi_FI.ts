@@ -543,7 +543,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nimi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
@@ -628,7 +628,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Poista</translation>
     </message>
     <message>
         <source>git push</source>

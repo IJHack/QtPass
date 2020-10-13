@@ -1107,13 +1107,15 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/qtpass.cpp" line="227"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">fusedav exited unexpectedly
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="230"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="243"/>
@@ -1128,7 +1130,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="249"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="252"/>
@@ -1143,7 +1145,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="385"/>
@@ -1267,7 +1269,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Key not found in keyring</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>

@@ -36,6 +36,7 @@
 
 **Merged pull requests:**
 
+- Translations update from Weblate [\#541](https://github.com/IJHack/QtPass/pull/541) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#535](https://github.com/IJHack/QtPass/pull/535) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#531](https://github.com/IJHack/QtPass/pull/531) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#530](https://github.com/IJHack/QtPass/pull/530) ([weblate](https://github.com/weblate))
@@ -181,7 +182,6 @@
 
 - Add support for OTP code generation on Linux as requested in \#327 [\#394](https://github.com/IJHack/QtPass/pull/394) ([Noettore](https://github.com/Noettore))
 - Revert scroll bar changes [\#393](https://github.com/IJHack/QtPass/pull/393) ([destanyol](https://github.com/destanyol))
-- Fix High Dpi Support. Works now under Windows and KDE/Plasma. [\#392](https://github.com/IJHack/QtPass/pull/392) ([hgraeber](https://github.com/hgraeber))
 
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
@@ -215,10 +215,10 @@
 - Can't install on OS X Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
 - No icon on MacOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - Font and spacing used for URL links on right in main window absurdly large [\#329](https://github.com/IJHack/QtPass/issues/329)
-- QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 
 **Merged pull requests:**
 
+- Fix High Dpi Support. Works now under Windows and KDE/Plasma. [\#392](https://github.com/IJHack/QtPass/pull/392) ([hgraeber](https://github.com/hgraeber))
 - 2 simple fixes [\#386](https://github.com/IJHack/QtPass/pull/386) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Should fix \#383 [\#384](https://github.com/IJHack/QtPass/pull/384) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Move connect action to main.cpp.  Default search text as parameter of… [\#382](https://github.com/IJHack/QtPass/pull/382) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
@@ -288,6 +288,7 @@
 - Config dialog: Propose "Password behaviour" label change [\#294](https://github.com/IJHack/QtPass/issues/294)
 - make install currently broken. [\#289](https://github.com/IJHack/QtPass/issues/289)
 - Unable to locate package \(Raspbian\)  [\#287](https://github.com/IJHack/QtPass/issues/287)
+- QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 - There is no `git cp` [\#272](https://github.com/IJHack/QtPass/issues/272)
 - pass is apparently switching out pwgen [\#264](https://github.com/IJHack/QtPass/issues/264)
 - Bugs since refactoring [\#262](https://github.com/IJHack/QtPass/issues/262)
@@ -329,7 +330,6 @@
 - Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
-- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
@@ -399,13 +399,13 @@
 
 **Implemented enhancements:**
 
+- QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
 - Re-assign permissions when adding users [\#161](https://github.com/IJHack/QtPass/issues/161)
 - Main window immediately closes upon app launch [\#139](https://github.com/IJHack/QtPass/issues/139)
 
 **Fixed bugs:**
 
 - German umlauts fails [\#192](https://github.com/IJHack/QtPass/issues/192)
-- Error after change configuration [\#190](https://github.com/IJHack/QtPass/issues/190)
 - Re-assign permissions when adding users [\#161](https://github.com/IJHack/QtPass/issues/161)
 - Bug: Special characters in Template [\#131](https://github.com/IJHack/QtPass/issues/131)
 - Character encoding issue with GPG key [\#101](https://github.com/IJHack/QtPass/issues/101)
@@ -429,6 +429,7 @@
 
 **Fixed bugs:**
 
+- Error after change configuration [\#190](https://github.com/IJHack/QtPass/issues/190)
 - edit of password broken with active "Automatically push" [\#177](https://github.com/IJHack/QtPass/issues/177)
 - Clipboard not cleared when quitting or killing application [\#171](https://github.com/IJHack/QtPass/issues/171)
 - Hide content doesn't work when using templates [\#160](https://github.com/IJHack/QtPass/issues/160)
