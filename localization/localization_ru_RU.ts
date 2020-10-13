@@ -255,7 +255,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translatorcomment>Отображать все строки, начинающиеся со слова с двоеточием, как доп. поля, а не только перечисленные здесь</translatorcomment>
-        <translation>Преобразовывать в доп. поля строки,  начинающиеся с _любого_ слова с двоеточием, а не только начинающиеся с явно перечисленных здесь слов</translation>
+        <translation>Преобразовывать в доп. поля строки, начинающиеся с _любого_ слова с двоеточием, а не только начинающиеся с явно перечисленных здесь слов</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
@@ -345,7 +345,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
         <source>All Characters</source>
-        <translation>Все персонажи</translation>
+        <translation>Все символы</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
