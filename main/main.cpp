@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QTranslator>
+#include <QtWidgets>
 
 /*! \mainpage QtPass
  *
@@ -100,6 +101,14 @@ int main(int argc, char *argv[]) {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
   QGuiApplication::setDesktopFileName("qtpass.desktop");
 #endif
+
+
+  //Center the MainWindow on the screen the mouse pointer is currently on
+  static int cursorScreen = app.desktop()->screenNumber(app.desktop()->cursor().pos());
+  QPoint cursorScreenCenter = app.desktop()->screenGeometry(cursorScreen).center();
+  QRect windowFrameGeo = w.frameGeometry();
+  windowFrameGeo.moveCenter(cursorScreenCenter);
+  w.move(windowFrameGeo.topLeft());
 
   w.show();
 
