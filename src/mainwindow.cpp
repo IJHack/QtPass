@@ -1016,15 +1016,14 @@ void MainWindow::editPassword(const QString &file) {
 void MainWindow::renamePassword() {
   bool ok;
   QString file = getFile(ui->treeView->currentIndex(), false);
+  QString filePath = QFileInfo(file).path();
   QString fileName = QFileInfo(file).baseName();
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
                             QLineEdit::Normal, fileName, &ok);
   if (!ok || newName.isEmpty())
     return;
-  QString newFile = file;
-  newFile.replace(file.lastIndexOf(fileName), fileName.length(), newName);
-  newFile.replace(QRegExp("\\.gpg$"), "");
+  QString newFile = QDir(filePath).filePath(newName);
   QtPassSettings::getPass()->Move(file, newFile);
 }
 
