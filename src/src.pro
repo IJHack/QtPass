@@ -30,6 +30,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_pl_PL.ts \
                     ../localization/localization_pt_PT.ts \
                     ../localization/localization_ru_RU.ts \
+                    ../localization/localization_sk_SK.ts \
                     ../localization/localization_sq_AL.ts \
                     ../localization/localization_sv_SE.ts \
                     ../localization/localization_tr_TR.ts \
