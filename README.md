@@ -2,7 +2,7 @@ QtPass
 ======
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
-[![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
+[![Build Status](https://travis-ci.com/IJHack/QtPass.svg?branch=master)](https://travis-ci.com/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
@@ -66,7 +66,7 @@ Windows
 
 **Dependencies**
 
-* QtPass requires Qt 5.10 or later
+* QtPass requires Qt 5.10 or later (Qt 6 works too)
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 
