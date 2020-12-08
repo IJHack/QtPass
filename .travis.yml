@@ -11,7 +11,7 @@ env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt-5.14.2-bionic; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt-5.15.2-bionic; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
 addons:
   coverity_scan:
@@ -33,7 +33,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm use 12; fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt514base qt514tools qt514svg libgl1-mesa-dev; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt515base qt515tools qt515svg libgl1-mesa-dev; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo apt-get -qq install g++-6 gcc-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6; fi
 - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90; fi
@@ -41,7 +41,7 @@ install:
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt514/bin/qt514-env.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt515/bin/qt515-env.sh; fi
 - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
 - qmake -v
 script:
