@@ -1,9 +1,10 @@
 <map id="src/imitatepass.cpp" name="src/imitatepass.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="945,5,1081,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1010,5,1146,32"/>
 <area shape="rect" id="node2" href="$imitatepass_8h.html" title=" " alt="" coords="561,155,661,181"/>
 <area shape="rect" id="node17" href="$qtpasssettings_8h.html" title=" " alt="" coords="889,80,1008,107"/>
 <area shape="rect" id="node27" title=" " alt="" coords="1033,80,1123,107"/>
-<area shape="rect" id="node28" title=" " alt="" coords="1147,80,1201,107"/>
+<area shape="rect" id="node28" title=" " alt="" coords="1148,80,1291,107"/>
+<area shape="rect" id="node29" title=" " alt="" coords="1315,80,1369,107"/>
 <area shape="rect" id="node3" href="$pass_8h.html" title=" " alt="" coords="449,229,510,256"/>
 <area shape="rect" id="node15" href="$simpletransaction_8h.html" title=" " alt="" coords="633,229,768,256"/>
 <area shape="rect" id="node4" href="$enums_8h.html" title=" " alt="" coords="770,304,842,331"/>

@@ -1,9 +1,10 @@
 <map id="main/main.cpp" name="main/main.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="733,5,839,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="782,5,889,32"/>
 <area shape="rect" id="node2" href="$mainwindow_8h.html" title=" " alt="" coords="563,80,665,107"/>
 <area shape="rect" id="node13" title=" " alt="" coords="690,80,786,107"/>
 <area shape="rect" id="node14" title=" " alt="" coords="811,80,860,107"/>
 <area shape="rect" id="node15" title=" " alt="" coords="885,80,975,107"/>
+<area shape="rect" id="node16" title=" " alt="" coords="1000,80,1084,107"/>
 <area shape="rect" id="node3" href="$storemodel_8h.html" title=" " alt="" coords="203,155,300,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="333,304,466,331"/>
 <area shape="rect" id="node9" title=" " alt="" coords="466,155,613,181"/>

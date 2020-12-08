@@ -1,11 +1,12 @@
 <map id="src/storemodel.cpp" name="src/storemodel.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="862,5,995,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="937,5,1070,32"/>
 <area shape="rect" id="node2" href="$storemodel_8h.html" title=" " alt="" coords="211,80,308,107"/>
 <area shape="rect" id="node8" href="$qtpasssettings_8h.html" title=" " alt="" coords="695,80,813,107"/>
 <area shape="rect" id="node32" title=" " alt="" coords="837,80,908,107"/>
-<area shape="rect" id="node33" title=" " alt="" coords="932,80,1040,107"/>
-<area shape="rect" id="node34" title=" " alt="" coords="1064,80,1156,107"/>
-<area shape="rect" id="node35" title=" " alt="" coords="1181,80,1234,107"/>
+<area shape="rect" id="node33" title=" " alt="" coords="932,80,1075,107"/>
+<area shape="rect" id="node34" title=" " alt="" coords="1099,80,1207,107"/>
+<area shape="rect" id="node35" title=" " alt="" coords="1231,80,1323,107"/>
+<area shape="rect" id="node36" title=" " alt="" coords="1347,80,1401,107"/>
 <area shape="rect" id="node3" href="$util_8h.html" title=" " alt="" coords="234,155,285,181"/>
 <area shape="rect" id="node7" title=" " alt="" coords="55,155,210,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="183,229,317,256"/>

@@ -1,10 +1,11 @@
 <map id="src/realpass.cpp" name="src/realpass.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="774,5,893,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="817,5,935,32"/>
 <area shape="rect" id="node2" href="$realpass_8h.html" title=" " alt="" coords="287,155,369,181"/>
 <area shape="rect" id="node15" href="$qtpasssettings_8h.html" title=" " alt="" coords="666,80,785,107"/>
 <area shape="rect" id="node27" title=" " alt="" coords="809,80,858,107"/>
 <area shape="rect" id="node28" title=" " alt="" coords="883,80,957,107"/>
-<area shape="rect" id="node29" title=" " alt="" coords="981,80,1035,107"/>
+<area shape="rect" id="node29" title=" " alt="" coords="982,80,1125,107"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1149,80,1203,107"/>
 <area shape="rect" id="node3" href="$pass_8h.html" title=" " alt="" coords="308,229,369,256"/>
 <area shape="rect" id="node4" href="$enums_8h.html" title=" " alt="" coords="692,304,764,331"/>
 <area shape="rect" id="node5" href="$executor_8h.html" title=" " alt="" coords="219,304,301,331"/>
