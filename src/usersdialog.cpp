@@ -4,7 +4,7 @@
 #include <QCloseEvent>
 #include <QKeyEvent>
 #include <QMessageBox>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QWidget>
 #include <utility>
 
@@ -22,8 +22,8 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
   if (users.isEmpty()) {
-    QMessageBox::critical(parent, tr("Can not get key list"),
-                          tr("Unable to get list of available gpg keys"));
+    QMessageBox::critical(parent, tr("Keylist missing"),
+                          tr("Could not fetch list of available GPG keys"));
     return;
   }
 
@@ -83,6 +83,9 @@ UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
 
+/**
+ * @brief UsersDialog::accept
+ */
 void UsersDialog::accept() {
   QtPassSettings::getPass()->Init(m_dir, m_userList);
 
@@ -133,27 +136,25 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
-  QRegExp nameFilter("*" + filter + "*");
-  nameFilter.setPatternSyntax(QRegExp::Wildcard);
-  nameFilter.setCaseSensitivity(Qt::CaseInsensitive);
+  QRegularExpression nameFilter(QRegularExpression::wildcardToRegularExpression("*" + filter + "*"), QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
   if (!m_userList.isEmpty()) {
     for (auto &user : m_userList) {
-      if (filter.isEmpty() || nameFilter.exactMatch(user.name)) {
+      if (filter.isEmpty() || nameFilter.match(user.name).hasMatch()) {
         if (!user.isValid() && !ui->checkBox->isChecked())
           continue;
-        if (user.expiry.toTime_t() > 0 &&
+        if (user.expiry.toSecsSinceEpoch() > 0 &&
             user.expiry.daysTo(QDateTime::currentDateTime()) > 0 &&
             !ui->checkBox->isChecked())
           continue;
         QString userText = user.name + "\n" + user.key_id;
-        if (user.created.toTime_t() > 0) {
+        if (user.created.toSecsSinceEpoch() > 0) {
           userText += " " + tr("created") + " " +
-                      user.created.toString(Qt::SystemLocaleShortDate);
+                      user.created.toString(QLocale::system().toString(QDate::currentDate(), QLocale::ShortFormat));
         }
-        if (user.expiry.toTime_t() > 0)
+        if (user.expiry.toSecsSinceEpoch() > 0)
           userText += " " + tr("expires") + " " +
-                      user.expiry.toString(Qt::SystemLocaleShortDate);
+                      user.expiry.toString(QLocale::system().toString(QDate::currentDate(), QLocale::ShortFormat));
         auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));
@@ -167,7 +168,7 @@ void UsersDialog::populateList(const QString &filter) {
         } else if (!user.isValid()) {
           item->setBackground(QColor(164, 0, 0));
           item->setForeground(Qt::white);
-        } else if (user.expiry.toTime_t() > 0 &&
+        } else if (user.expiry.toSecsSinceEpoch() > 0 &&
                    user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
           item->setForeground(QColor(164, 0, 0));
         } else if (!user.fullyValid()) {

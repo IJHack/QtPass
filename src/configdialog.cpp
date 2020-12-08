@@ -60,7 +60,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
   ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
 
-#if defined(Q_OS_WIN) || defined(__APPLE__)
+#if defined(Q_OS_WIN)
   ui->checkBoxUseOtp->hide();
   ui->checkBoxUseQrencode->hide();
   ui->label_10->hide();
@@ -527,7 +527,7 @@ void ConfigDialog::on_deleteButton_clicked() {
   foreach (item, itemList)
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
-  QList<int> rows = selectedRows.toList();
+  QList<int> rows = selectedRows.values();
   std::sort(rows.begin(), rows.end());
   // now actually do the removing:
   foreach (int row, rows)
@@ -551,12 +551,12 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
 bool ConfigDialog::isQrencodeAvailable() {
 #ifdef Q_OS_WIN
   return false;
-#elif defined(__APPLE__)
-  return false;
 #else
   QProcess which;
   which.start("which", QStringList() << "qrencode");
   which.waitForFinished();
+  QtPassSettings::setQrencodeExecutable(
+      which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;
 #endif
 }
@@ -564,12 +564,8 @@ bool ConfigDialog::isQrencodeAvailable() {
 bool ConfigDialog::isPassOtpAvailable() {
 #ifdef Q_OS_WIN
   return false;
-#elif defined(__APPLE__)
-  return false;
 #else
-  QFileInfo file("/usr/lib/password-store/extensions/otp.bash");
-
-  return file.exists();
+  return true;
 #endif
 }
 
@@ -578,11 +574,11 @@ bool ConfigDialog::isPassOtpAvailable() {
  * @todo make this thing more reliable.
  */
 void ConfigDialog::wizard() {
-  // mainWindow->checkConfig();
+  Util::checkConfig();
+  on_autodetectButton_clicked();
   bool clean = false;
 
   QString gpg = ui->gpgPath->text();
-  // QString gpg = mainWindow->getGpgExecutable();
   if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
         tr("GnuPG not found"),
@@ -667,6 +663,8 @@ void ConfigDialog::wizard() {
       mainWindow->userDialog(passStore);
     }
   }
+
+  ui->checkBoxHidePassword->setCheckState(Qt::Checked);
 }
 
 /**

@@ -147,6 +147,10 @@ public:
   static bool isUseQrencode(const bool &defaultValue = QVariant().toBool());
   static void setUseQrencode(const bool &useQrencode);
 
+  static QString
+  getQrencodeExecutable(const QString &defaultValue = QVariant().toString());
+  static void setQrencodeExecutable(const QString &qrencodeExecutable);
+
   static bool isUsePwgen(const bool &defaultValue = QVariant().toBool());
   static void setUsePwgen(const bool &usePwgen);
 

@@ -23,15 +23,26 @@ void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
 #ifdef __APPLE__
-    // TODO(annejan) checks here
     QString path = _env.value("PATH");
-
     if (!path.contains("/usr/local/MacGPG2/bin") &&
         QFile("/usr/local/MacGPG2/bin").exists())
       path += ":/usr/local/MacGPG2/bin";
     if (!path.contains("/usr/local/bin"))
       path += ":/usr/local/bin";
     _env.insert("PATH", path);
+#endif
+#ifdef Q_OS_WIN
+    QString path = _env.value("PATH");
+    if (!path.contains("C:\\Program Files\\WinGPG\\x86") &&
+        QFile("C:\\Program Files\\WinGPG\\x86").exists())
+      path += ";C:\\Program Files\\WinGPG\\x86";
+    if (!path.contains("C:\\Program Files\\GnuPG\\bin") &&
+        QFile("C:\\Program Files\\GnuPG\\bin").exists())
+      path += ";C:\\Program Files\\GnuPG\bin";
+    _env.insert("PATH", path);
+#endif
+#ifdef QT_DEBUG
+    dbg() << _env.value("PATH");
 #endif
     _envInitialised = true;
   }
@@ -163,6 +174,11 @@ QString Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
+/**
+ * @brief Util::copyDir
+ * @param src
+ * @param dest
+ */
 void Util::copyDir(const QString &src, const QString &dest) {
   QDir srcDir(src);
   if (!srcDir.exists()) {

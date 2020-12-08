@@ -9,6 +9,7 @@
 #include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonasqrcode.h"
+#include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
@@ -47,7 +48,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
-  new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
                 SLOT(copyPasswordFromTreeview()));
@@ -113,7 +114,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  qsrand(static_cast<uint>(QTime::currentTime().msec()));
+  QRandomGenerator(static_cast<uint>(QTime::currentTime().msec()));
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
@@ -305,7 +306,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
-    filePath.replace(QRegExp("\\.gpg$"), "");
+    filePath.replace(QRegularExpression("\\.gpg$"), "");
   }
   return filePath;
 }
@@ -355,8 +356,6 @@ void MainWindow::deselect() {
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
-  ui->actionDelete->setEnabled(false);
-  ui->actionEdit->setEnabled(false);
   clearPanel(false);
 }
 
@@ -505,7 +504,10 @@ void MainWindow::onConfig() { config(); }
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
   ui->treeView->expandAll();
-
+  clearPanel(false);
+  ui->passwordName->setText("");
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
   searchTimer.start();
 }
 
@@ -516,12 +518,14 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
 void MainWindow::onTimeoutSearch() {
   QString query = ui->lineEdit->text();
 
-  if (query.isEmpty())
+  if (query.isEmpty()) {
     ui->treeView->collapseAll();
+    deselect();
+  }
 
-  query.replace(QRegExp(" "), ".*");
-  QRegExp regExp(query, Qt::CaseInsensitive);
-  proxyModel.setFilterRegExp(regExp);
+  query.replace(QRegularExpression(" "), ".*");
+  QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
+  proxyModel.setFilterRegularExpression(regExp);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
 
@@ -649,7 +653,7 @@ void MainWindow::onDelete() {
 
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1%2")
+          tr("Are you sure you want to delete %1%2?")
               .arg(QDir::separator() + file)
               .arg(isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
@@ -764,6 +768,9 @@ void MainWindow::updateProfileBox() {
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
+
+  ui->lineEdit->clear();
+
   QtPassSettings::setProfile(name);
 
   QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
@@ -1010,15 +1017,14 @@ void MainWindow::editPassword(const QString &file) {
 void MainWindow::renamePassword() {
   bool ok;
   QString file = getFile(ui->treeView->currentIndex(), false);
+  QString filePath = QFileInfo(file).path();
   QString fileName = QFileInfo(file).baseName();
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
                             QLineEdit::Normal, fileName, &ok);
   if (!ok || newName.isEmpty())
     return;
-  QString newFile = file;
-  newFile.replace(file.lastIndexOf(fileName), fileName.length(), newName);
-  newFile.replace(QRegExp("\\.gpg$"), "");
+  QString newFile = QDir(filePath).filePath(newName);
   QtPassSettings::getPass()->Move(file, newFile);
 }
 
@@ -1067,14 +1073,15 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QFrame *frame = new QFrame();
   QLayout *ly = new QHBoxLayout();
   ly->setContentsMargins(5, 2, 2, 2);
+  ly->setSpacing(0);
   frame->setLayout(ly);
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
 
-    fieldLabel->setStyleSheet("border-style: none ; background: transparent;");
-    // fieldLabel->setContentsMargins(0,5,5,0);
+    fieldLabel->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(fieldLabel);
   }
 
@@ -1082,13 +1089,14 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
-    qrbutton->setStyleSheet("border-style: none ; background: transparent;");
-
+    qrbutton->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
     frame->layout()->addWidget(qrbutton);
   }
 
   // set the echo mode to password, if the field is "password"
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
+
     auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
@@ -1096,6 +1104,12 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setStyleSheet("border-style: none ; background: transparent;");
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
+    QPushButtonShowPassword *showButton =
+        new QPushButtonShowPassword(line, this);
+    showButton->setStyleSheet(
+        "border-style: none ; background: transparent; padding: 0; margin: 0;");
+    showButton->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(showButton);
     frame->layout()->addWidget(line);
   } else {
     auto *line = new QTextBrowser();
@@ -1107,7 +1121,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
     trimmedValue.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
         R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);

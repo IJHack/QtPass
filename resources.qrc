@@ -4,25 +4,6 @@
         <file>artwork/icon.ico</file>
         <file>artwork/icon.png</file>
         <file>artwork/icon.svg</file>
-        <file>localization/localization_ar_MA.qm</file>
-        <file>localization/localization_ca.qm</file>
-        <file>localization/localization_de_DE.qm</file>
-        <file>localization/localization_es_ES.qm</file>
-        <file>localization/localization_gl_ES.qm</file>
-        <file>localization/localization_hu_HU.qm</file>
-        <file>localization/localization_nl_BE.qm</file>
-        <file>localization/localization_nl_NL.qm</file>
-        <file>localization/localization_sv_SE.qm</file>
-        <file>localization/localization_pl_PL.qm</file>
-        <file>localization/localization_ru_RU.qm</file>
-        <file>localization/localization_zh_CN.qm</file>
-        <file>localization/localization_he_IL.qm</file>
-        <file>localization/localization_cs_CZ.qm</file>
-        <file>localization/localization_fr_FR.qm</file>
-        <file>localization/localization_en_GB.qm</file>
-        <file>localization/localization_en_US.qm</file>
-        <file>localization/localization_pt_PT.qm</file>
-        <file>localization/localization_it_IT.qm</file>
     </qresource>
     <qresource prefix="/icons">
         <file alias="document-new.svg">icons/document-new.svg</file>
@@ -36,5 +17,7 @@
         <file alias="edit-clear.svg">icons/edit-clear.svg</file>
         <file alias="qrcode.svg">icons/qrcode.svg</file>
         <file alias="folder-new.svg">icons/folder-new.svg</file>
+        <file alias="view.svg">icons/view.svg</file>
+        <file alias="hide.svg">icons/hide.svg</file>
     </qresource>
 </RCC>

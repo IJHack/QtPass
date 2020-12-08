@@ -405,6 +405,16 @@ void QtPassSettings::setUseQrencode(const bool &useQrencode) {
   getInstance()->setValue(SettingsConstants::useQrencode, useQrencode);
 }
 
+QString QtPassSettings::getQrencodeExecutable(const QString &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::qrencodeExecutable, defaultValue)
+      .toString();
+}
+void QtPassSettings::setQrencodeExecutable(const QString &qrencodeExecutable) {
+  getInstance()->setValue(SettingsConstants::qrencodeExecutable,
+                          qrencodeExecutable);
+}
+
 bool QtPassSettings::isUsePwgen(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::usePwgen, defaultValue)

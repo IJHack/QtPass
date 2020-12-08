@@ -3,8 +3,10 @@
 #include "qtpasssettings.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QDialog>
 #include <QLabel>
 #include <QPixmap>
+#include <QVBoxLayout>
 
 #ifndef Q_OS_WIN
 #include <QInputDialog>
@@ -193,9 +195,13 @@ void QtPass::mountWebDav() {
                             true);
   }
 #else
-  fusedav.start("fusedav -o nonempty -u \"" + QtPassSettings::getWebDavUser() +
-                "\" " + QtPassSettings::getWebDavUrl() + " \"" +
-                QtPassSettings::getPassStore() + '"');
+  fusedav.start("fusedav", QStringList()
+                               << "-o"
+                               << "nonempty"
+                               << "-u"
+                               << "\"" + QtPassSettings::getWebDavUser() + "\""
+                               << QtPassSettings::getWebDavUrl()
+                               << "\"" + QtPassSettings::getPassStore() + "\"");
   fusedav.waitForStarted();
   if (fusedav.state() == QProcess::Running) {
     QString pwd = QtPassSettings::getWebDavPassword();
@@ -261,9 +267,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
   if (!p_error.isEmpty()) {
     QString output;
     QString error = p_error;
-    error.replace(QRegExp("<"), "&lt;");
-    error.replace(QRegExp(">"), "&gt;");
-    error.replace(QRegExp(" "), "&nbsp;");
+    error.replace(QRegularExpression("<"), "&lt;");
+    error.replace(QRegularExpression(">"), "&gt;");
+    error.replace(QRegularExpression(" "), "&nbsp;");
     if (exitCode == 0) {
       //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
@@ -272,9 +278,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
     }
 
     output.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
         R"(<a href="\1">\1</a>)");
-    output.replace(QRegExp("\n"), "<br />");
+    output.replace(QRegularExpression("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
   }
@@ -329,14 +335,14 @@ void QtPass::passShowHandlerFinished(QString output) {
 
 void QtPass::showInTextBrowser(QString output, QString prefix,
                                QString postfix) {
-  output.replace(QRegExp("<"), "&lt;");
-  output.replace(QRegExp(">"), "&gt;");
-  output.replace(QRegExp(" "), "&nbsp;");
+  output.replace(QRegularExpression("<"), "&lt;");
+  output.replace(QRegularExpression(">"), "&gt;");
+  output.replace(QRegularExpression(" "), "&nbsp;");
 
   output.replace(
-      QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+      QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
       R"(<a href="\1">\1</a>)");
-  output.replace(QRegExp("\n"), "<br />");
+  output.replace(QRegularExpression("\n"), "<br />");
   output = prefix + output + postfix;
 
   m_mainWindow->flashText(output, false, true);
@@ -409,8 +415,9 @@ void QtPass::copyTextToClipboard(const QString &text) {
  */
 void QtPass::showTextAsQRCode(const QString &text) {
   QProcess qrencode;
-  qrencode.start("/usr/bin/qrencode", QStringList() << "-o-"
-                                                    << "-tPNG");
+  qrencode.start(QtPassSettings::getQrencodeExecutable("/usr/bin/qrencode"),
+                 QStringList() << "-o-"
+                               << "-tPNG");
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();
@@ -423,9 +430,15 @@ void QtPass::showTextAsQRCode(const QString &text) {
     QPixmap image;
     image.loadFromData(output, "PNG");
 
-    QLabel *label = new QLabel();
-    label->setPixmap(image);
-    label->setScaledContents(true);
-    label->show();
+    QDialog *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
+    QVBoxLayout *layout = new QVBoxLayout;
+    QLabel *popupLabel = new QLabel();
+    layout->addWidget(popupLabel);
+    popupLabel->setPixmap(image);
+    popupLabel->setScaledContents(true);
+    popupLabel->show();
+    popup->setLayout(layout);
+    popup->move(QCursor::pos());
+    popup->exec();
   }
 }

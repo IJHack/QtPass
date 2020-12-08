@@ -3,6 +3,7 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <QRegularExpression>
 #include <utility>
 
 using namespace Enums;
@@ -116,10 +117,10 @@ void RealPass::Move(const QString src, const QString dest, const bool force) {
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(QRegExp("\\.gpg$"), "");
+    passSrc.replace(QRegularExpression("\\.gpg$"), "");
   }
   if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(QRegExp("\\.gpg$"), "");
+    passDest.replace(QRegularExpression("\\.gpg$"), "");
   }
 
   QStringList args;
@@ -156,10 +157,10 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(QRegExp("\\.gpg$"), "");
+    passSrc.replace(QRegularExpression("\\.gpg$"), "");
   }
   if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(QRegExp("\\.gpg$"), "");
+    passDest.replace(QRegularExpression("\\.gpg$"), "");
   }
   QStringList args;
   args << "cp";

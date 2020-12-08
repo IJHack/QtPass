@@ -1,5 +1,68 @@
 # Change Log
 
+## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.2...HEAD)
+
+**Implemented enhancements:**
+
+- Set correct WM\_CLASS for the qr-code popup [\#506](https://github.com/IJHack/QtPass/issues/506)
+
+**Fixed bugs:**
+
+- Renaming passwords and directories fail [\#487](https://github.com/IJHack/QtPass/issues/487)
+- Will not run on Windows 10 1903 b18362.418 [\#486](https://github.com/IJHack/QtPass/issues/486)
+
+**Closed issues:**
+
+- Icons are blurry when fractional scaling is enabled [\#525](https://github.com/IJHack/QtPass/issues/525)
+- \[Request\] clear search password when change profile [\#524](https://github.com/IJHack/QtPass/issues/524)
+- Copying not possible on Ubuntu 20.04 [\#521](https://github.com/IJHack/QtPass/issues/521)
+- Display passwords in mono space font [\#514](https://github.com/IJHack/QtPass/issues/514)
+- QtPass 1.3.2 for Ubuntu 19.10 \(eoan\) [\#512](https://github.com/IJHack/QtPass/issues/512)
+- Default password visibility [\#511](https://github.com/IJHack/QtPass/issues/511)
+- Consider mentioning export abilities in migration docs, if any are present [\#505](https://github.com/IJHack/QtPass/issues/505)
+- Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
+- password visiblity can't be fully hidden  [\#496](https://github.com/IJHack/QtPass/issues/496)
+- Translations need updating and checking [\#488](https://github.com/IJHack/QtPass/issues/488)
+- Front-End doesn't work well with HiDPI screen [\#464](https://github.com/IJHack/QtPass/issues/464)
+- How to let QtPass use the real "pass" on windows [\#458](https://github.com/IJHack/QtPass/issues/458)
+- Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
+- Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
+- Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
+- QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
+- UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
+- No prompt for passphrase for git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
+- Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
+
+**Merged pull requests:**
+
+- Translations update from Weblate [\#554](https://github.com/IJHack/QtPass/pull/554) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#553](https://github.com/IJHack/QtPass/pull/553) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#552](https://github.com/IJHack/QtPass/pull/552) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#548](https://github.com/IJHack/QtPass/pull/548) ([weblate](https://github.com/weblate))
+- Move MainWindow to the screen the cursor is on [\#547](https://github.com/IJHack/QtPass/pull/547) ([JFK422](https://github.com/JFK422))
+- Translations update from Weblate [\#541](https://github.com/IJHack/QtPass/pull/541) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#535](https://github.com/IJHack/QtPass/pull/535) ([weblate](https://github.com/weblate))
+- Fix issues with renaming passwords and moving folders [\#532](https://github.com/IJHack/QtPass/pull/532) ([ChaoticEnigma](https://github.com/ChaoticEnigma))
+- Translations update from Weblate [\#531](https://github.com/IJHack/QtPass/pull/531) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#530](https://github.com/IJHack/QtPass/pull/530) ([weblate](https://github.com/weblate))
+- Clear search on profile change [\#529](https://github.com/IJHack/QtPass/pull/529) ([cmol](https://github.com/cmol))
+- \#514 Show password with a monospace font [\#528](https://github.com/IJHack/QtPass/pull/528) ([cmol](https://github.com/cmol))
+- Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
+- Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
+- Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
+- Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
+- Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
+- Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
+- Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
+- Spelling: Search for users, , [\#495](https://github.com/IJHack/QtPass/pull/495) ([comradekingu](https://github.com/comradekingu))
+- Spelling: Keylist missing, Could not fetch, GPG [\#493](https://github.com/IJHack/QtPass/pull/493) ([comradekingu](https://github.com/comradekingu))
+- Spelling: Git, GPG, PWGen, etc. [\#492](https://github.com/IJHack/QtPass/pull/492) ([comradekingu](https://github.com/comradekingu))
+- Don't use a deprecated method [\#491](https://github.com/IJHack/QtPass/pull/491) ([amarsman](https://github.com/amarsman))
+- Issue \#402: 'deselect\(\)' on clearing filter  [\#490](https://github.com/IJHack/QtPass/pull/490) ([petr-nehez](https://github.com/petr-nehez))
+- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
+
 ## [v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2) (2019-10-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
 
@@ -36,7 +99,6 @@
 
 - build: dependency issue [\#467](https://github.com/IJHack/QtPass/issues/467)
 - is running but no gui [\#451](https://github.com/IJHack/QtPass/issues/451)
-- Invalid font color with Breeze Dark theme [\#340](https://github.com/IJHack/QtPass/issues/340)
 
 **Closed issues:**
 
@@ -49,7 +111,6 @@
 - Build system related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
 - Main window entry details improvements [\#477](https://github.com/IJHack/QtPass/pull/477) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
-- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
 - Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
@@ -133,6 +194,10 @@
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
 
+**Implemented enhancements:**
+
+- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
+
 **Fixed bugs:**
 
 - Insecure Password Generation [\#338](https://github.com/IJHack/QtPass/issues/338)
@@ -205,7 +270,6 @@
 - Icon tray from system icon theme [\#318](https://github.com/IJHack/QtPass/issues/318)
 - Copy button for each custom field [\#291](https://github.com/IJHack/QtPass/issues/291)
 - Feature Request: Use primary selection instead of clipboard [\#280](https://github.com/IJHack/QtPass/issues/280)
-- Cleaning \#includes [\#364](https://github.com/IJHack/QtPass/pull/364) ([FiloSpaTeam](https://github.com/FiloSpaTeam))
 - Add primary selection as clipboard option [\#281](https://github.com/IJHack/QtPass/pull/281) ([annejan](https://github.com/annejan))
 - Feature: CTRL/CMD + Q closes the mainwindow \#258 [\#259](https://github.com/IJHack/QtPass/pull/259) ([YoshiMan](https://github.com/YoshiMan))
 - Feature/testing moved sources to src added tests [\#257](https://github.com/IJHack/QtPass/pull/257) ([annejan](https://github.com/annejan))
@@ -359,6 +423,7 @@
 
 - Signed releases [\#186](https://github.com/IJHack/QtPass/issues/186)
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/QtPass/issues/164)
+- gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/QtPass/issues/138)
 
 **Merged pull requests:**
@@ -417,7 +482,6 @@
 
 **Fixed bugs:**
 
-- Program does not run in WIndows 10 [\#123](https://github.com/IJHack/QtPass/issues/123)
 - Spelling bug: German translation of push and pull [\#110](https://github.com/IJHack/QtPass/issues/110)
 - gpg: decryption failed: No secret key [\#92](https://github.com/IJHack/QtPass/issues/92)
 
@@ -426,7 +490,6 @@
 - Remove outdated Debian packaging [\#165](https://github.com/IJHack/QtPass/issues/165)
 - Same name for file and folder [\#159](https://github.com/IJHack/QtPass/issues/159)
 - Icons don't work on nixos [\#157](https://github.com/IJHack/QtPass/issues/157)
-- gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 
 **Merged pull requests:**
 

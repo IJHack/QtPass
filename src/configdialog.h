@@ -34,7 +34,7 @@ public:
   QHash<QString, QString> getProfiles();
   void wizard();
   void genKey(QString, QDialog *);
-  void useTrayIcon(bool useTrayIdon);
+  void useTrayIcon(bool useSystray);
   void useGit(bool useGit);
   void useOtp(bool useOtp);
   void useQrencode(bool useQrencode);

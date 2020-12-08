@@ -391,7 +391,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Use pwgen</string>
+              <string>Use PWGen</string>
              </property>
             </widget>
            </item>
@@ -408,7 +408,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Include special symbols </string>
+              <string>Include special symbols</string>
              </property>
             </widget>
            </item>
@@ -453,7 +453,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Use git</string>
+              <string>Use Git</string>
              </property>
             </widget>
            </item>
@@ -522,7 +522,7 @@
            <item>
             <widget class="QCheckBox" name="checkBoxUseQrencode">
              <property name="text">
-              <string>Use qrencode</string>
+              <string>Use QRencode</string>
              </property>
             </widget>
            </item>
@@ -536,7 +536,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Use pass otp extension</string>
+              <string>Use pass-otp extension</string>
              </property>
             </widget>
            </item>
@@ -643,7 +643,7 @@
          <item>
           <widget class="QRadioButton" name="radioButtonNative">
            <property name="text">
-            <string>Nati&amp;ve git/gpg</string>
+            <string>Nati&amp;ve Git/GPG</string>
            </property>
           </widget>
          </item>
@@ -680,7 +680,7 @@
              <item row="1" column="0">
               <widget class="QLabel" name="labelGitPath">
                <property name="text">
-                <string>git</string>
+                <string>Git</string>
                </property>
               </widget>
              </item>
@@ -690,21 +690,21 @@
              <item row="0" column="2">
               <widget class="QToolButton" name="toolButtonGpg">
                <property name="text">
-                <string>...</string>
+                <string>…</string>
                </property>
               </widget>
              </item>
              <item row="1" column="2">
               <widget class="QToolButton" name="toolButtonGit">
                <property name="text">
-                <string>...</string>
+                <string>…</string>
                </property>
               </widget>
              </item>
              <item row="0" column="0">
               <widget class="QLabel" name="labelGpgPath">
                <property name="text">
-                <string>gpg</string>
+                <string>GPG</string>
                </property>
               </widget>
              </item>
@@ -717,14 +717,14 @@
              <item row="2" column="0">
               <widget class="QLabel" name="labelPwgenPath">
                <property name="text">
-                <string>pwgen</string>
+                <string>PWGen</string>
                </property>
               </widget>
              </item>
              <item row="2" column="2">
               <widget class="QToolButton" name="toolButtonPwgen">
                <property name="text">
-                <string>...</string>
+                <string>…</string>
                </property>
               </widget>
              </item>
@@ -755,7 +755,7 @@
                <item>
                 <widget class="QToolButton" name="toolButtonPass">
                  <property name="text">
-                  <string>...</string>
+                  <string>…</string>
                  </property>
                 </widget>
                </item>
@@ -912,14 +912,14 @@
          <item row="0" column="2">
           <widget class="QLabel" name="labelStorePath">
            <property name="text">
-            <string>Current password-store</string>
+            <string>Current path</string>
            </property>
           </widget>
          </item>
          <item row="0" column="4">
           <widget class="QToolButton" name="toolButtonStore">
            <property name="text">
-            <string>...</string>
+            <string>…</string>
            </property>
           </widget>
          </item>
@@ -953,7 +953,7 @@
           <locale language="German" country="Germany"/>
          </property>
          <property name="text">
-          <string>Templates add extra fields in the password generation dialogue and in the password view.</string>
+          <string>Templates add extra fields in the password generation dialogue, and in the password view.</string>
          </property>
         </widget>
        </item>
@@ -985,8 +985,8 @@
          </property>
          <property name="plainText">
           <string>login
-url
-email</string>
+URL
+e-mail</string>
          </property>
         </widget>
        </item>

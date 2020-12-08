@@ -1,0 +1,27 @@
+name: QMake
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+         os: [ubuntu-latest, macos-latest, windows-latest]
+         include:
+          - os: ubuntu-latest
+            make: make
+          - os: macos-latest
+            make: make
+          - os: windows-latest
+            make: nmake
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ilammy/msvc-dev-cmd@v1
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+    - name: qmake
+      run: qmake
+    - name: make
+      run: ${{matrix.make}}
+    - name: make check
+      run: ${{matrix.make}} check TESTARGS="--platform offscreen"

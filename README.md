@@ -2,7 +2,7 @@ QtPass
 ======
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
-[![Build Status](https://travis-ci.org/IJHack/QtPass.svg?branch=master)](https://travis-ci.org/IJHack/QtPass)
+[![Build Status](https://travis-ci.com/IJHack/QtPass.svg?branch=master)](https://travis-ci.com/IJHack/QtPass)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
@@ -12,6 +12,8 @@ QtPass
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/context:cpp)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IJHack/QtPass.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IJHack/QtPass/alerts/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_shield)
+[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
+[![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
@@ -59,12 +61,12 @@ Windows
 `choco install qtpass`
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
-
+[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 ### From Source
 
 **Dependencies**
 
-* QtPass requires Qt 5.2 or later
+* QtPass requires Qt 5.10 or later (Qt 6 works too)
 * The Linguist package is required to compile the translations.
 * For use of the fallback icons the SVG library is required.
 
@@ -157,5 +159,3 @@ View official GNU site <http://www.gnu.org/licenses/gpl.html>.
 [![OSI](http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png)](https://opensource.org/licenses/GPL-3.0)
 
 [View the Open Source Initiative site.](https://opensource.org/licenses/GPL-3.0)
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_large)
