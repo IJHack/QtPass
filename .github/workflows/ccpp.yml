@@ -7,7 +7,7 @@ jobs:
       fail-fast: false
       matrix:
          os: [ubuntu-latest, macos-latest, windows-latest]
-         include: 
+         include:
           - os: ubuntu-latest
             make: make
           - os: macos-latest
