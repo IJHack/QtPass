@@ -420,47 +420,47 @@ e-post</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="305"/>
+        <location filename="../src/imitatepass.cpp" line="96"/>
+        <location filename="../src/imitatepass.cpp" line="306"/>
         <source>Can not edit</source>
         <translation>Kan ikke redigere</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="306"/>
+        <location filename="../src/imitatepass.cpp" line="97"/>
+        <location filename="../src/imitatepass.cpp" line="307"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kan ikke lese krypteringsnøkkelen som skal brukes, .gpg-id filen mangler eller er ugyldig.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="178"/>
+        <location filename="../src/imitatepass.cpp" line="179"/>
         <source>Cannot update</source>
         <translation>Kan ikke oppdatere</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="179"/>
+        <location filename="../src/imitatepass.cpp" line="180"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Kunne ikke åpne .gpg-id for skriving.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
         <source>Check selected users!</source>
         <translation>Sjekk valgte brukere!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ingen av de valgte nøklene har en hemmelig nøkkel tilgjengelig.
 Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="244"/>
+        <location filename="../src/imitatepass.cpp" line="245"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-krypterer fra mappen %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
-        <location filename="../src/imitatepass.cpp" line="339"/>
+        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
         <source>Updating password-store</source>
         <translation>Oppdater passordslager</translation>
     </message>
@@ -541,27 +541,27 @@ Utløpsdato: 0
         <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-manualen&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="137"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Invalid name</source>
         <translation>Ugyldig navn</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="138"/>
+        <location filename="../src/keygendialog.cpp" line="139"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Navn må være mer enn 5 tegn.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="148"/>
+        <location filename="../src/keygendialog.cpp" line="147"/>
         <source>Invalid email</source>
         <translation>Ugyldig e-post</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="149"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre en annen handling (skriv på tastaturet, flytt musen, bruk diskene) under primtallsgenerering; dette gir generatoren for tilfeldige tall en bedre sjanse til å erverve seg nok entropi.</translation>
     </message>
@@ -964,12 +964,12 @@ Utløpsdato: 0
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="279"/>
+        <location filename="../src/storemodel.cpp" line="280"/>
         <source>force overwrite?</source>
         <translation>tving overskriving?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="280"/>
+        <location filename="../src/storemodel.cpp" line="281"/>
         <source>overwrite %1 with %2?</source>
         <translation>overskriv %1 med %2?</translation>
     </message>
@@ -1055,12 +1055,12 @@ Røde oppføringer er ikke gyldige, du vil ikke kunne kryptere til disse.</trans
         <translation>Nøkkel ikke funnet i nøkkelring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="154"/>
+        <location filename="../src/usersdialog.cpp" line="152"/>
         <source>created</source>
         <translation>opprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="158"/>
+        <location filename="../src/usersdialog.cpp" line="156"/>
         <source>expires</source>
         <translation>utløper</translation>
     </message>

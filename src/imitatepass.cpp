@@ -1,6 +1,7 @@
 #include "imitatepass.h"
 #include "qtpasssettings.h"
 #include <QDirIterator>
+#include <QRegularExpression>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -111,7 +112,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     if (!overwrite)
       executeGit(GIT_ADD, {"add", pgit(file)});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
-    path.replace(QRegExp("\\.gpg$"), "");
+    path.replace(QRegularExpression("\\.gpg$"), "");
     QString msg =
         QString(overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.";
     GitCommit(file, msg);
@@ -200,7 +201,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     if (addFile)
       executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
     QString commitPath = gpgIdFile;
-    commitPath.replace(QRegExp("\\.gpg$"), "");
+    commitPath.replace(QRegularExpression("\\.gpg$"), "");
     GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
   }
   reencryptPath(path);
@@ -267,9 +268,9 @@ void ImitatePass::reencryptPath(const QString &dir) {
     QStringList actualKeys;
     keys += err;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-    QStringList key = keys.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+    QStringList key = keys.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-    QStringList key = keys.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+    QStringList key = keys.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
     QListIterator<QString> itr(key);
     while (itr.hasNext()) {
@@ -322,7 +323,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
                                {"add", pgit(fileName)});
           QString path =
               QDir(QtPassSettings::getPassStore()).relativeFilePath(fileName);
-          path.replace(QRegExp("\\.gpg$"), "");
+          path.replace(QRegularExpression("\\.gpg$"), "");
           exec.executeBlocking(QtPassSettings::getGitExecutable(),
                                {"commit", pgit(fileName), "-m",
                                 "Edit for " + path + " using QtPass."});
@@ -402,9 +403,9 @@ void ImitatePass::Move(const QString src, const QString dest,
     executeGit(GIT_MOVE, args);
 
     QString relSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(src);
-    relSrc.replace(QRegExp("\\.gpg$"), "");
+    relSrc.replace(QRegularExpression("\\.gpg$"), "");
     QString relDest = QDir(QtPassSettings::getPassStore()).relativeFilePath(destFile);
-    relDest.replace(QRegExp("\\.gpg$"), "");
+    relDest.replace(QRegularExpression("\\.gpg$"), "");
     QString message = QString("Moved for %1 to %2 using QtPass.");
     message = message.arg(relSrc).arg(relDest);
     GitCommit("", message);

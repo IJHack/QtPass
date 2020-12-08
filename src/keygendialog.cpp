@@ -3,6 +3,7 @@
 #include "qprogressindicator.h"
 #include "ui_keygendialog.h"
 #include <QMessageBox>
+#include <QRegularExpression>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -84,12 +85,12 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines = expert.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList lines = expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+  QStringList lines = expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   foreach (QString line, lines) {
-    line.replace(QRegExp(key + ":.*"), key + ": " + value);
+    line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
     if (key == "Passphrase")
       line.replace("%no-protection", "Passphrase: " + value);
     clear.append(line);
@@ -106,9 +107,9 @@ void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines = expert.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList lines = expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList lines = expert.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+  QStringList lines = expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   foreach (QString line, lines) {
     bool remove = false;
@@ -140,10 +141,8 @@ void KeygenDialog::done(int r) {
     }
 
     // check email
-    QRegExp mailre(R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)");
-    mailre.setCaseSensitivity(Qt::CaseInsensitive);
-    mailre.setPatternSyntax(QRegExp::RegExp);
-    if (!mailre.exactMatch(ui->email->text())) {
+    QRegularExpression mailre(QRegularExpression::anchoredPattern(R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)"), QRegularExpression::CaseInsensitiveOption);
+    if (!mailre.match(ui->email->text()).hasMatch()) {
       QMessageBox::critical(
           this, tr("Invalid email"),
           tr("The email address you typed is not a valid email address."));

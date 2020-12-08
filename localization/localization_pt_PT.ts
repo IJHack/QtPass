@@ -456,47 +456,47 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="305"/>
+        <location filename="../src/imitatepass.cpp" line="96"/>
+        <location filename="../src/imitatepass.cpp" line="306"/>
         <source>Can not edit</source>
         <translation>Não pode ser editado</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="306"/>
+        <location filename="../src/imitatepass.cpp" line="97"/>
+        <location filename="../src/imitatepass.cpp" line="307"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Não foi possível ler a chave de encriptação a ser utilizada, o ficheiro gpg-id não existe ou é inválido.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="178"/>
+        <location filename="../src/imitatepass.cpp" line="179"/>
         <source>Cannot update</source>
         <translation>Não foi possível atualizar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="179"/>
+        <location filename="../src/imitatepass.cpp" line="180"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>A abertura de .gpg-id para escrita, falhou.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
         <source>Check selected users!</source>
         <translation>Verifique os utilizadores selecionados!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nenhuma das chaves selecionadas tem uma chave secreta disponível.
 Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="244"/>
+        <location filename="../src/imitatepass.cpp" line="245"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-encriptar a partir da pasta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
-        <location filename="../src/imitatepass.cpp" line="339"/>
+        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
         <source>Updating password-store</source>
         <translation>A atualizar a password-store</translation>
     </message>
@@ -544,27 +544,27 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <translation>Para opções avançadas, consulte o &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual do GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="137"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Invalid name</source>
         <translation>Nome inválido</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="138"/>
+        <location filename="../src/keygendialog.cpp" line="139"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>O nome deve ter pelo menos 5 carateres.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="148"/>
+        <location filename="../src/keygendialog.cpp" line="147"/>
         <source>Invalid email</source>
         <translation>E-mail inválido</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="149"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>O endereço de e-mail que digitou não é um endereço de e-mail válido.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Esta operação pode demorar alguns minutos.&lt;br /&gt;É necessário gerar muitos bytes aleatórios. É aconselhado efetuar outras açőes (escrever no teclado, utilizar o rato, escrever ou ler dos discos) durante a criaçao da semente utilizada na encriptação; esta operação permite que o gerador de números aleatórios, gere entropia suficiente.</translation>
     </message>
@@ -1124,12 +1124,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="279"/>
+        <location filename="../src/storemodel.cpp" line="280"/>
         <source>force overwrite?</source>
         <translation>Forçar substituição?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="280"/>
+        <location filename="../src/storemodel.cpp" line="281"/>
         <source>overwrite %1 with %2?</source>
         <translation>Substituir %1 por %2?</translation>
     </message>
@@ -1233,12 +1233,12 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <translation>Chave não disponível no keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="154"/>
+        <location filename="../src/usersdialog.cpp" line="152"/>
         <source>created</source>
         <translation>criado</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="158"/>
+        <location filename="../src/usersdialog.cpp" line="156"/>
         <source>expires</source>
         <translation>expira</translation>
     </message>

@@ -85,7 +85,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
     if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
                              &passwd) == 0)
-      passwd.remove(QRegExp("[\\n\\r]"));
+      passwd.remove(QRegularExpression("[\\n\\r]"));
     else {
       passwd.clear();
 #ifdef QT_DEBUG
@@ -140,9 +140,9 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
       0)
     return users;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList keys = p_out.split(QRegExp("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList keys = p_out.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList keys = p_out.split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+  QStringList keys = p_out.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
   foreach (QString key, keys) {
@@ -156,8 +156,8 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
       current_user.key_id = props[4];
       current_user.name = props[9].toUtf8();
       current_user.validity = props[1][0].toLatin1();
-      current_user.created.setTime_t(props[5].toUInt());
-      current_user.expiry.setTime_t(props[6].toUInt());
+      current_user.created.setSecsSinceEpoch(props[5].toUInt());
+      current_user.expiry.setSecsSinceEpoch(props[6].toUInt());
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
       current_user.name = props[9];
     } else if ((props[0] == "fpr") && props[9].endsWith(current_user.key_id)) {

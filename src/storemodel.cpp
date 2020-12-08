@@ -2,6 +2,7 @@
 #include "qtpasssettings.h"
 
 #include <QDebug>
+#include <QRegularExpression>
 #include <QMessageBox>
 #include <QMimeData>
 #include <utility>
@@ -67,8 +68,8 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
     QString path = fs->filePath(useIndex);
     path = QDir(store).relativeFilePath(path);
-    path.replace(QRegExp("\\.gpg$"), "");
-    retVal = path.contains(filterRegExp());
+    path.replace(QRegularExpression("\\.gpg$"), "");
+    retVal = path.contains(filterRegularExpression());
   }
   return retVal;
 }
@@ -100,7 +101,7 @@ QVariant StoreModel::data(const QModelIndex &index, int role) const {
 
   if (role == Qt::DisplayRole) {
     QString name = initial_value.toString();
-    name.replace(QRegExp("\\.gpg$"), "");
+    name.replace(QRegularExpression("\\.gpg$"), "");
     initial_value.setValue(name);
   }
 

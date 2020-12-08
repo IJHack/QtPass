@@ -267,9 +267,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
   if (!p_error.isEmpty()) {
     QString output;
     QString error = p_error;
-    error.replace(QRegExp("<"), "&lt;");
-    error.replace(QRegExp(">"), "&gt;");
-    error.replace(QRegExp(" "), "&nbsp;");
+    error.replace(QRegularExpression("<"), "&lt;");
+    error.replace(QRegularExpression(">"), "&gt;");
+    error.replace(QRegularExpression(" "), "&nbsp;");
     if (exitCode == 0) {
       //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
@@ -278,9 +278,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
     }
 
     output.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
         R"(<a href="\1">\1</a>)");
-    output.replace(QRegExp("\n"), "<br />");
+    output.replace(QRegularExpression("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
   }
@@ -335,14 +335,14 @@ void QtPass::passShowHandlerFinished(QString output) {
 
 void QtPass::showInTextBrowser(QString output, QString prefix,
                                QString postfix) {
-  output.replace(QRegExp("<"), "&lt;");
-  output.replace(QRegExp(">"), "&gt;");
-  output.replace(QRegExp(" "), "&nbsp;");
+  output.replace(QRegularExpression("<"), "&lt;");
+  output.replace(QRegularExpression(">"), "&gt;");
+  output.replace(QRegularExpression(" "), "&nbsp;");
 
   output.replace(
-      QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+      QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
       R"(<a href="\1">\1</a>)");
-  output.replace(QRegExp("\n"), "<br />");
+  output.replace(QRegularExpression("\n"), "<br />");
   output = prefix + output + postfix;
 
   m_mainWindow->flashText(output, false, true);

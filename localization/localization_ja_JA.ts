@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
@@ -474,46 +474,46 @@ e-mail</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="95"/>
-        <location filename="../src/imitatepass.cpp" line="305"/>
-        <source>Can not edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="306"/>
+        <source>Can not edit</source>
+        <translation type="unfinished">Can not edit</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="97"/>
+        <location filename="../src/imitatepass.cpp" line="307"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="178"/>
+        <location filename="../src/imitatepass.cpp" line="179"/>
         <source>Cannot update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="179"/>
+        <location filename="../src/imitatepass.cpp" line="180"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
         <source>Check selected users!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="244"/>
+        <location filename="../src/imitatepass.cpp" line="245"/>
         <source>Re-encrypting from folder %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
-        <location filename="../src/imitatepass.cpp" line="339"/>
+        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
         <source>Updating password-store</source>
         <translation type="unfinished"></translation>
     </message>
@@ -580,27 +580,27 @@ Expire-Date: 0
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="137"/>
+        <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Invalid name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="138"/>
+        <location filename="../src/keygendialog.cpp" line="139"/>
         <source>Name must be at least 5 characters long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="148"/>
+        <location filename="../src/keygendialog.cpp" line="147"/>
         <source>Invalid email</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="149"/>
+        <location filename="../src/keygendialog.cpp" line="148"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -898,7 +898,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="654"/>
@@ -1078,91 +1078,94 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Generating GPG key pair</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to connect WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="210"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass WebDAV password</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="211"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="227"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">fusedav exited unexpectedly
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="230"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="243"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="249"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="252"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="255"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="385"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Clipboard cleared</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="387"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Clipboard not cleared</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="406"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">copied to clipboard</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="279"/>
+        <location filename="../src/storemodel.cpp" line="280"/>
         <source>force overwrite?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="280"/>
+        <location filename="../src/storemodel.cpp" line="281"/>
         <source>overwrite %1 with %2?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1260,15 +1263,15 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Key not found in keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="154"/>
+        <location filename="../src/usersdialog.cpp" line="152"/>
         <source>created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="158"/>
+        <location filename="../src/usersdialog.cpp" line="156"/>
         <source>expires</source>
         <translation type="unfinished"></translation>
     </message>

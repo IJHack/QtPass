@@ -48,7 +48,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
-  new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
                 SLOT(copyPasswordFromTreeview()));
@@ -306,7 +306,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
-    filePath.replace(QRegExp("\\.gpg$"), "");
+    filePath.replace(QRegularExpression("\\.gpg$"), "");
   }
   return filePath;
 }
@@ -522,9 +522,9 @@ void MainWindow::onTimeoutSearch() {
     deselect();
   }
 
-  query.replace(QRegExp(" "), ".*");
-  QRegExp regExp(query, Qt::CaseInsensitive);
-  proxyModel.setFilterRegExp(regExp);
+  query.replace(QRegularExpression(" "), ".*");
+  QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
+  proxyModel.setFilterRegularExpression(regExp);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
 
@@ -1120,7 +1120,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
     trimmedValue.replace(
-        QRegExp("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
         R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);

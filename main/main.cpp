@@ -41,7 +41,7 @@
  * @return
  */
 int main(int argc, char *argv[]) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
@@ -84,10 +84,12 @@ int main(int argc, char *argv[]) {
   // locale = "nl_NL";
   // locale = "he_IL";
   // locale = "ar_MA";
-  translator.load(QString(":localization/localization_%1.qm").arg(locale));
-  SingleApplication::installTranslator(&translator);
-  SingleApplication::setLayoutDirection(
-      QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
+  if (translator.load(QString(":localization/localization_%1.qm").arg(locale))) {
+    SingleApplication::installTranslator(&translator);
+    SingleApplication::setLayoutDirection(
+        QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
+  }
+
   MainWindow w(text);
 
   SingleApplication::setActiveWindow(&w);
@@ -102,10 +104,14 @@ int main(int argc, char *argv[]) {
   QGuiApplication::setDesktopFileName("qtpass.desktop");
 #endif
 
-
   //Center the MainWindow on the screen the mouse pointer is currently on
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   static int cursorScreen = app.desktop()->screenNumber(app.desktop()->cursor().pos());
   QPoint cursorScreenCenter = app.desktop()->screenGeometry(cursorScreen).center();
+#else
+  QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
+  QPoint cursorScreenCenter = screen->geometry().center();
+#endif
   QRect windowFrameGeo = w.frameGeometry();
   windowFrameGeo.moveCenter(cursorScreenCenter);
   w.move(windowFrameGeo.topLeft());
