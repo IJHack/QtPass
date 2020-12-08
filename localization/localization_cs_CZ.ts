@@ -5,33 +5,27 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="829"/>
         <source>Configuration</source>
         <translation>Konfigurace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
-        <location filename="../src/ui_configdialog.h" line="870"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
-        <location filename="../src/ui_configdialog.h" line="830"/>
         <source>Clipboard behaviour:</source>
         <translation>Chování schránky:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
-        <location filename="../src/ui_configdialog.h" line="832"/>
         <source>Autoclear after:</source>
         <translation>Vymazat po:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
-        <location filename="../src/ui_configdialog.h" line="833"/>
-        <location filename="../src/ui_configdialog.h" line="838"/>
         <source>Seconds</source>
         <translation>sekundách</translation>
     </message>
@@ -41,49 +35,41 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
-        <location filename="../src/ui_configdialog.h" line="835"/>
         <source>Hide content</source>
         <translation>Skrýt obsah</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
-        <location filename="../src/ui_configdialog.h" line="836"/>
         <source>Hide password</source>
         <translation>Skrýt heslo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
-        <location filename="../src/ui_configdialog.h" line="837"/>
         <source>Autoclear panel after:</source>
         <translation>Vymazat panel po:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
-        <location filename="../src/ui_configdialog.h" line="839"/>
         <source>Password Generation:</source>
         <translation>Generování hesel:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
-        <location filename="../src/ui_configdialog.h" line="840"/>
         <source>Password Length:</source>
         <translation>Délka hesla:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
-        <location filename="../src/ui_configdialog.h" line="841"/>
         <source>Characters</source>
         <translation>znaků</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
-        <location filename="../src/ui_configdialog.h" line="842"/>
         <source>Use characters:</source>
         <translation>Použít znaky:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
-        <location filename="../src/ui_configdialog.h" line="851"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
@@ -93,7 +79,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
-        <location filename="../src/ui_configdialog.h" line="853"/>
         <source>Exclude capital letters</source>
         <translation>Nepoužívat VELKÁ písmena</translation>
     </message>
@@ -103,19 +88,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
-        <location filename="../src/ui_configdialog.h" line="855"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generovat zapamatovatelná méně bezpečná hesla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
-        <location filename="../src/ui_configdialog.h" line="856"/>
         <source>Exclude numbers</source>
         <translation>Nepoužívat čísla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="444"/>
-        <location filename="../src/ui_configdialog.h" line="857"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -125,67 +107,56 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
-        <location filename="../src/ui_configdialog.h" line="859"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Automaticky přidat .gpg-id soubory</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
-        <location filename="../src/ui_configdialog.h" line="860"/>
         <source>Automatically push</source>
         <translation>Automaticky odesílat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
-        <location filename="../src/ui_configdialog.h" line="861"/>
         <source>Automatically pull</source>
         <translation>Automaticky stahovat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
-        <location filename="../src/ui_configdialog.h" line="865"/>
         <source>System:</source>
         <translation>Systém:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
-        <location filename="../src/ui_configdialog.h" line="866"/>
         <source>Use TrayIcon</source>
         <translation>Zobrazit ikonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
-        <location filename="../src/ui_configdialog.h" line="867"/>
         <source>Start minimized</source>
         <translation>Spustit skryté</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
-        <location filename="../src/ui_configdialog.h" line="868"/>
         <source>Hide on close</source>
         <translation>Zavřením skrýt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
-        <location filename="../src/ui_configdialog.h" line="869"/>
         <source>Always on top</source>
         <translation>Vždy navrchu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="619"/>
-        <location filename="../src/ui_configdialog.h" line="886"/>
         <source>Programs</source>
         <translation>Programy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
-        <location filename="../src/ui_configdialog.h" line="871"/>
         <source>Select password storage program:</source>
         <translation>Vybrat program správce hesel:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
-        <location filename="../src/ui_configdialog.h" line="893"/>
         <source>Current path</source>
         <translation>Aktuální cesta</translation>
     </message>
@@ -195,13 +166,11 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="653"/>
-        <location filename="../src/ui_configdialog.h" line="873"/>
         <source>&amp;Use pass</source>
         <translation>Po&amp;užít pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
-        <location filename="../src/ui_configdialog.h" line="874"/>
         <source>Native</source>
         <translation>Výchozí</translation>
     </message>
@@ -223,13 +192,11 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
-        <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="748"/>
-        <location filename="../src/ui_configdialog.h" line="882"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -239,31 +206,26 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
-        <location filename="../src/ui_configdialog.h" line="895"/>
         <source>Profiles</source>
         <translation>Profily</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
-        <location filename="../src/ui_configdialog.h" line="888"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="875"/>
-        <location filename="../src/ui_configdialog.h" line="890"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
-        <location filename="../src/ui_configdialog.h" line="891"/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
-        <location filename="../src/ui_configdialog.h" line="892"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
@@ -273,7 +235,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
-        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Template</source>
         <translation>Šablona</translation>
     </message>
@@ -283,19 +244,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
-        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Use template</source>
         <translation>Použít šablonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
-        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Zobrazit všechny řádky začínající slovem následovaným středníkem jako pole v polích hesla, nejen vypsaná</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
-        <location filename="../src/ui_configdialog.h" line="901"/>
         <source>Show all fields templated</source>
         <translation>Zobrazit všechna pole v šabloně</translation>
     </message>
@@ -309,7 +267,6 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
-        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verze </translation>
     </message>
@@ -370,61 +327,51 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
-        <location filename="../src/ui_configdialog.h" line="831"/>
         <source>Use primary selection</source>
         <translation>Použijte primární výběr</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
-        <location filename="../src/ui_configdialog.h" line="834"/>
         <source>Content panel behaviour:</source>
         <translation>Chování panelu obsahu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
-        <location filename="../src/ui_configdialog.h" line="849"/>
         <source>Select character set for password generation</source>
         <translation>Vyberte znakovou sadu pro generování hesla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
-        <location filename="../src/ui_configdialog.h" line="843"/>
         <source>All Characters</source>
         <translation>Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
-        <location filename="../src/ui_configdialog.h" line="844"/>
         <source>Alphabetical</source>
         <translation>Abecední</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
-        <location filename="../src/ui_configdialog.h" line="845"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerické</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
-        <location filename="../src/ui_configdialog.h" line="846"/>
         <source>Custom</source>
         <translation>Vlastní</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="516"/>
-        <location filename="../src/ui_configdialog.h" line="862"/>
         <source>Extensions:</source>
         <translation>Rozšíření:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
-        <location filename="../src/ui_configdialog.h" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
-        <location filename="../src/ui_configdialog.h" line="885"/>
         <source>Autodetect</source>
         <translation>Automaticky</translation>
     </message>
@@ -455,43 +402,36 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
-        <location filename="../src/ui_configdialog.h" line="852"/>
         <source>Use PWGen</source>
         <translation>Použijte PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
-        <location filename="../src/ui_configdialog.h" line="854"/>
         <source>Include special symbols</source>
         <translation>Používat speciální znaky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
-        <location filename="../src/ui_configdialog.h" line="858"/>
         <source>Use Git</source>
         <translation>Použijte Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
-        <location filename="../src/ui_configdialog.h" line="863"/>
         <source>Use QRencode</source>
         <translation>Použijte QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
-        <location filename="../src/ui_configdialog.h" line="864"/>
         <source>Use pass-otp extension</source>
         <translation>Použijte rozšíření pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
-        <location filename="../src/ui_configdialog.h" line="872"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Nati&amp;vní Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="683"/>
-        <location filename="../src/ui_configdialog.h" line="875"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -501,35 +441,26 @@ email</translation>
         <location filename="../src/configdialog.ui" line="727"/>
         <location filename="../src/configdialog.ui" line="758"/>
         <location filename="../src/configdialog.ui" line="922"/>
-        <location filename="../src/ui_configdialog.h" line="876"/>
-        <location filename="../src/ui_configdialog.h" line="877"/>
-        <location filename="../src/ui_configdialog.h" line="880"/>
-        <location filename="../src/ui_configdialog.h" line="883"/>
-        <location filename="../src/ui_configdialog.h" line="894"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="707"/>
-        <location filename="../src/ui_configdialog.h" line="878"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="720"/>
-        <location filename="../src/ui_configdialog.h" line="879"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="956"/>
-        <location filename="../src/ui_configdialog.h" line="896"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Šablony přidávají další pole v dialogu pro generování hesla a v zobrazení hesla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
-        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>login
 URL
 e-mail</source>
@@ -590,49 +521,41 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="215"/>
         <source>Generate GnuPG keypair</source>
         <translation>Generovat GnuPG klíče</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
-        <location filename="../src/ui_keygendialog.h" line="216"/>
         <source>Generate a new key pair</source>
         <translation>Generovat nový pár klíčů</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
-        <location filename="../src/ui_keygendialog.h" line="219"/>
         <source>Passphrase</source>
         <translation>Bezpečnostní heslo</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
-        <location filename="../src/ui_keygendialog.h" line="217"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
-        <location filename="../src/ui_keygendialog.h" line="218"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
-        <location filename="../src/ui_keygendialog.h" line="220"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Délka bezpečnostního hesla není nijak omezena a mělo by být zvoleno s rozvahou. Z bezpečnostního pohledu je heslo odemykající privátní klíč jedním z nejslabších bodů v GnuPG (a jiných šifrovacích systémů na stejném principu) jelikož je toto jedinou ochranou v případě, že se další osoba zmocní privátního klíče. &lt;br/&gt;Ideálně by bezpečnostní heslo nemělo obsahovat slovníková hesla a naopak mělo používat mix velkých a malých znaků abecedy i další speciální znaky.&lt;br/&gt;Dobré heslo je zásadní pro bezpečné používání GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
-        <location filename="../src/ui_keygendialog.h" line="221"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
-        <location filename="../src/ui_keygendialog.h" line="222"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -666,7 +589,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Možnosti expertního nastavení můžete nalézt v &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuálu&lt;/a&gt;</translation>
     </message>
@@ -700,7 +622,6 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="266"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -711,18 +632,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
-        <location filename="../src/mainwindow.cpp" line="912"/>
-        <location filename="../src/ui_mainwindow.h" line="278"/>
-        <location filename="../src/ui_mainwindow.h" line="280"/>
+        <location filename="../src/mainwindow.cpp" line="913"/>
         <source>Edit</source>
         <translation>Upravit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
-        <location filename="../src/mainwindow.cpp" line="933"/>
-        <location filename="../src/ui_mainwindow.h" line="282"/>
-        <location filename="../src/ui_mainwindow.h" line="284"/>
+        <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
@@ -732,7 +649,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="352"/>
-        <location filename="../src/ui_mainwindow.h" line="293"/>
         <source>Push</source>
         <translation>Odeslat</translation>
     </message>
@@ -742,50 +658,42 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
-        <location filename="../src/ui_mainwindow.h" line="297"/>
         <source>Update</source>
         <translation>Stáhnout</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
-        <location filename="../src/ui_mainwindow.h" line="303"/>
         <source>Manage who can read password in folder</source>
         <translation>Správa oprávnění číst data v adresáři</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
-        <location filename="../src/mainwindow.cpp" line="906"/>
-        <location filename="../src/ui_mainwindow.h" line="301"/>
+        <location filename="../src/mainwindow.cpp" line="907"/>
         <source>Users</source>
         <translation>Uživatelé</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
-        <location filename="../src/ui_mainwindow.h" line="295"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
-        <location filename="../src/ui_mainwindow.h" line="299"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/ui_mainwindow.h" line="307"/>
         <source>Configuration</source>
         <translation>Konfigurace</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
-        <location filename="../src/ui_mainwindow.h" line="305"/>
         <source>Config</source>
         <translation>Nastavení</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
-        <location filename="../src/ui_mainwindow.h" line="311"/>
         <source>Search Password</source>
         <translation>Hledat heslo</translation>
     </message>
@@ -851,13 +759,13 @@ Expire-Date: 0
         <translation type="vanished">Skryté heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="389"/>
+        <location filename="../src/mainwindow.cpp" line="387"/>
         <source>Content hidden</source>
         <translation>Skrytý obsah</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1097"/>
+        <location filename="../src/mainwindow.cpp" line="391"/>
+        <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>Password</source>
         <translation>Heslo</translation>
     </message>
@@ -870,7 +778,7 @@ Expire-Date: 0
         <translation type="vanished">Schránka nevymazána</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="438"/>
+        <location filename="../src/mainwindow.cpp" line="436"/>
         <source>Password and Content hidden</source>
         <translation>Skryté heslo i obsah</translation>
     </message>
@@ -899,30 +807,30 @@ Expire-Date: 0
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="507"/>
+        <location filename="../src/mainwindow.cpp" line="505"/>
         <source>Looking for: %1</source>
         <translation>Vyhledávání: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="606"/>
-        <location filename="../src/mainwindow.cpp" line="970"/>
+        <location filename="../src/mainwindow.cpp" line="607"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>New file</source>
         <translation>Nový soubor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="607"/>
+        <location filename="../src/mainwindow.cpp" line="608"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nový soubor s heslem: 
 (Bude uložen do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="655"/>
+        <location filename="../src/mainwindow.cpp" line="656"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Opravdu chcete smazat %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="654"/>
+        <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Delete password?</source>
         <translation>Smazat heslo?</translation>
     </message>
@@ -931,7 +839,7 @@ Expire-Date: 0
         <translation type="vanished">Opravdu chcete smazat %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="654"/>
+        <location filename="../src/mainwindow.cpp" line="655"/>
         <source>Delete folder?</source>
         <translation>Smazat adresář?</translation>
     </message>
@@ -952,30 +860,26 @@ Expire-Date: 0
         <translation type="vanished">Generování páru GPG klíčů</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="777"/>
         <source>Profile changed to %1</source>
         <translation>Profil změněn na %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
-        <location filename="../src/mainwindow.cpp" line="904"/>
-        <location filename="../src/ui_mainwindow.h" line="274"/>
-        <location filename="../src/ui_mainwindow.h" line="276"/>
+        <location filename="../src/mainwindow.cpp" line="905"/>
         <source>Add folder</source>
         <translation>Přidat adresář</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
-        <location filename="../src/mainwindow.cpp" line="905"/>
-        <location filename="../src/ui_mainwindow.h" line="267"/>
-        <location filename="../src/ui_mainwindow.h" line="269"/>
+        <location filename="../src/mainwindow.cpp" line="906"/>
         <source>Add password</source>
         <translation>Přidat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="971"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nový adresář: 
@@ -987,89 +891,82 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
-        <location filename="../src/ui_mainwindow.h" line="309"/>
         <source>Select profile</source>
         <translation>Vybrat profil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
-        <location filename="../src/ui_mainwindow.h" line="312"/>
         <source>Welcome to QtPass</source>
         <translation>Vítejte v QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
-        <location filename="../src/ui_mainwindow.h" line="272"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/ui_mainwindow.h" line="286"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
-        <location filename="../src/ui_mainwindow.h" line="288"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Generovat OTP a kopírovat do schránky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
-        <location filename="../src/ui_mainwindow.h" line="291"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="419"/>
+        <location filename="../src/mainwindow.cpp" line="417"/>
         <source>OTP Code</source>
         <translation>Kód OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="635"/>
+        <location filename="../src/mainwindow.cpp" line="636"/>
         <source> and the whole content?</source>
         <translation> a celý obsah?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="645"/>
+        <location filename="../src/mainwindow.cpp" line="646"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> a celý obsah? &lt;br&gt; &lt;strong&gt; Pozor: v dané složce jsou neočekávané soubory. Než budete pokračovat, zkontrolujte je. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="903"/>
+        <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Open folder with file manager</source>
         <translation>Otevřít složku pomocí Správce souborů</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="925"/>
+        <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Rename folder</source>
         <translation>Přejmenovat složku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="929"/>
+        <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Rename password</source>
         <translation>Přejmenovat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="1023"/>
         <source>Rename file</source>
         <translation>Přejmenovat soubor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="993"/>
         <source>Rename Folder To: </source>
         <translation>Přejmenovat složku na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="1023"/>
         <source>Rename File To: </source>
         <translation>Přejmenovat soubor na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="249"/>
-        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1098,56 +995,46 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="61"/>
-        <location filename="../src/ui_passworddialog.h" line="170"/>
-        <location filename="../src/ui_passworddialog.h" line="172"/>
         <source>Password</source>
         <translation>Heslo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="71"/>
-        <location filename="../src/ui_passworddialog.h" line="173"/>
         <source>Generate</source>
         <translation>Generovat</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
-        <location filename="../src/ui_passworddialog.h" line="174"/>
         <source>Show password</source>
         <translation>Zobrazit heslo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
-        <location filename="../src/ui_passworddialog.h" line="175"/>
         <source>Character Set:</source>
         <translation>Nastavení znaků:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
-        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>All Characters</source>
         <translation>Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
-        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Alphabetical</source>
         <translation>Abecední</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerické</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
-        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Custom</source>
         <translation>Vlastní</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
-        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Length:</source>
         <translation>Délka:</translation>
     </message>
@@ -1294,13 +1181,11 @@ Expire-Date: 0
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="98"/>
         <source>Read access users</source>
         <translation>Uživatelé s právy číst</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="41"/>
-        <location filename="../src/ui_usersdialog.h" line="99"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1312,7 +1197,6 @@ Modré záznamy mají k dispozici tajný klíč. Vyberte jeden z nich, který ch
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
-        <location filename="../src/ui_usersdialog.h" line="103"/>
         <source>Search for users</source>
         <translation>Hledejte uživatele</translation>
     </message>
@@ -1332,7 +1216,6 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
-        <location filename="../src/ui_usersdialog.h" line="104"/>
         <source>Show unusable keys</source>
         <translation>Zobrazit nepoužitelné klíče</translation>
     </message>
