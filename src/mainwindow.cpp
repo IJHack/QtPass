@@ -356,8 +356,6 @@ void MainWindow::deselect() {
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
-  ui->actionDelete->setEnabled(false);
-  ui->actionEdit->setEnabled(false);
   clearPanel(false);
 }
 
@@ -506,7 +504,10 @@ void MainWindow::onConfig() { config(); }
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
   ui->treeView->expandAll();
-
+  clearPanel(false);
+  ui->passwordName->setText("");
+  ui->actionEdit->setEnabled(false);
+  ui->actionDelete->setEnabled(false);
   searchTimer.start();
 }
 
