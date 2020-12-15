@@ -10,11 +10,15 @@
 
 **Fixed bugs:**
 
+- \<tt\> ... \</tt\> included in password text [\#542](https://github.com/IJHack/QtPass/issues/542)
+- Markup tags are left in password and clipboard [\#533](https://github.com/IJHack/QtPass/issues/533)
 - Renaming passwords and directories fail [\#487](https://github.com/IJHack/QtPass/issues/487)
 - Will not run on Windows 10 1903 b18362.418 [\#486](https://github.com/IJHack/QtPass/issues/486)
 
 **Closed issues:**
 
+- Hide results on search [\#551](https://github.com/IJHack/QtPass/issues/551)
+- QtPass 1.3.2 freezes on macOS 10.15.6 when trying to display password [\#544](https://github.com/IJHack/QtPass/issues/544)
 - Icons are blurry when fractional scaling is enabled [\#525](https://github.com/IJHack/QtPass/issues/525)
 - \[Request\] clear search password when change profile [\#524](https://github.com/IJHack/QtPass/issues/524)
 - Copying not possible on Ubuntu 20.04 [\#521](https://github.com/IJHack/QtPass/issues/521)
@@ -61,7 +65,6 @@
 - Spelling: Git, GPG, PWGen, etc. [\#492](https://github.com/IJHack/QtPass/pull/492) ([comradekingu](https://github.com/comradekingu))
 - Don't use a deprecated method [\#491](https://github.com/IJHack/QtPass/pull/491) ([amarsman](https://github.com/amarsman))
 - Issue \#402: 'deselect\(\)' on clearing filter  [\#490](https://github.com/IJHack/QtPass/pull/490) ([petr-nehez](https://github.com/petr-nehez))
-- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
 
 ## [v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2) (2019-10-09)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
@@ -111,6 +114,7 @@
 - Build system related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
 - Main window entry details improvements [\#477](https://github.com/IJHack/QtPass/pull/477) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
+- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
 - Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
@@ -338,6 +342,7 @@
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
+- I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Copy after timeout [\#189](https://github.com/IJHack/QtPass/issues/189)
 - Feature Request: Copy template fields with button [\#133](https://github.com/IJHack/QtPass/issues/133)
 - Cannot create top level folder [\#127](https://github.com/IJHack/QtPass/issues/127)
@@ -376,7 +381,6 @@
 
 **Implemented enhancements:**
 
-- I translated for Simplified Chinese.  [\#208](https://github.com/IJHack/QtPass/issues/208)
 - Short fullname hangs QtPass keypair generation process for infinite time [\#202](https://github.com/IJHack/QtPass/issues/202)
 - More options for password generation [\#98](https://github.com/IJHack/QtPass/issues/98)
 - Git hangs on windows [\#71](https://github.com/IJHack/QtPass/issues/71)
@@ -423,7 +427,6 @@
 
 - Signed releases [\#186](https://github.com/IJHack/QtPass/issues/186)
 - Why it's not listed in wikipedia.org/wiki/List\_of\_password\_managers ? [\#164](https://github.com/IJHack/QtPass/issues/164)
-- gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 - Bitdefender blocks installation and quarantines the .exe and .ink [\#138](https://github.com/IJHack/QtPass/issues/138)
 
 **Merged pull requests:**
@@ -490,6 +493,7 @@
 - Remove outdated Debian packaging [\#165](https://github.com/IJHack/QtPass/issues/165)
 - Same name for file and folder [\#159](https://github.com/IJHack/QtPass/issues/159)
 - Icons don't work on nixos [\#157](https://github.com/IJHack/QtPass/issues/157)
+- gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 
 **Merged pull requests:**
 
@@ -573,7 +577,6 @@
 
 **Implemented enhancements:**
 
-- Get PREFIX variable from environment [\#106](https://github.com/IJHack/QtPass/issues/106)
 - Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
 
 **Fixed bugs:**
@@ -587,6 +590,10 @@
 
 ## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
+
+**Implemented enhancements:**
+
+- Get PREFIX variable from environment [\#106](https://github.com/IJHack/QtPass/issues/106)
 
 **Closed issues:**
 
@@ -612,7 +619,6 @@
 - qtpass doesn't commit deletes to git [\#81](https://github.com/IJHack/QtPass/issues/81)
 - Always crashes while using the quick-search input [\#79](https://github.com/IJHack/QtPass/issues/79)
 - Git initialisation [\#72](https://github.com/IJHack/QtPass/issues/72)
-- Initialising new repo's doesn't work correctly [\#55](https://github.com/IJHack/QtPass/issues/55)
 - gpg: Sorry, no terminal at all requested - can't get input [\#18](https://github.com/IJHack/QtPass/issues/18)
 
 **Merged pull requests:**
@@ -624,21 +630,20 @@
 ## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)
 
-**Closed issues:**
-
-- Yubikey Neo Pin entry not working properly on Ubuntu 15.04 [\#73](https://github.com/IJHack/QtPass/issues/73)
-
 **Merged pull requests:**
 
 - Updating hungarian localisation [\#76](https://github.com/IJHack/QtPass/pull/76) ([damnlie](https://github.com/damnlie))
 - added DE translations [\#74](https://github.com/IJHack/QtPass/pull/74) ([Friedy](https://github.com/Friedy))
+- Develop [\#52](https://github.com/IJHack/QtPass/pull/52) ([annejan](https://github.com/annejan))
 
 ## [v0.9.2](https://github.com/IJHack/QtPass/tree/v0.9.2) (2015-07-30)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2)
 
 **Closed issues:**
 
+- Yubikey Neo Pin entry not working properly on Ubuntu 15.04 [\#73](https://github.com/IJHack/QtPass/issues/73)
 - Show expiration date in key setup [\#70](https://github.com/IJHack/QtPass/issues/70)
+- Initialising new repo's doesn't work correctly [\#55](https://github.com/IJHack/QtPass/issues/55)
 
 ## [v0.9.1](https://github.com/IJHack/QtPass/tree/v0.9.1) (2015-07-29)
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.0...v0.9.1)
@@ -699,7 +704,6 @@
 
 **Merged pull requests:**
 
-- Develop [\#52](https://github.com/IJHack/QtPass/pull/52) ([annejan](https://github.com/annejan))
 - Minor thingies [\#51](https://github.com/IJHack/QtPass/pull/51) ([beefcurtains](https://github.com/beefcurtains))
 
 ## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
@@ -720,7 +724,6 @@
 **Merged pull requests:**
 
 - Provide more information in user list. [\#47](https://github.com/IJHack/QtPass/pull/47) ([rdoeffinger](https://github.com/rdoeffinger))
-- Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1) (2015-05-06)
 **Fixed bugs:**
@@ -744,6 +747,7 @@
 
 **Merged pull requests:**
 
+- Enable C++11 and use it to simplify loops. [\#46](https://github.com/IJHack/QtPass/pull/46) ([rdoeffinger](https://github.com/rdoeffinger))
 - SingleApplication per user and leading newline removed from output [\#44](https://github.com/IJHack/QtPass/pull/44) ([annejan](https://github.com/annejan))
 - User filtering and many fixes [\#42](https://github.com/IJHack/QtPass/pull/42) ([annejan](https://github.com/annejan))
 - Re-enable Windows WebDAV support. [\#37](https://github.com/IJHack/QtPass/pull/37) ([rdoeffinger](https://github.com/rdoeffinger))
