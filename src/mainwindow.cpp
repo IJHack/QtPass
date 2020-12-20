@@ -1018,7 +1018,10 @@ void MainWindow::renamePassword() {
   bool ok;
   QString file = getFile(ui->treeView->currentIndex(), false);
   QString filePath = QFileInfo(file).path();
-  QString fileName = QFileInfo(file).baseName();
+  QString fileName = QFileInfo(file).fileName();
+  if (fileName.endsWith(".gpg", Qt::CaseInsensitive))
+      fileName.chop(4);
+
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
                             QLineEdit::Normal, fileName, &ok);
