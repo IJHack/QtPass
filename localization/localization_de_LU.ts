@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="737"/>
         <source>Pass</source>
-        <translation>pass</translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <source>...</source>
