@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
         <source>Characters</source>
-        <translation>Merkit</translation>
+        <translation>merkkiä</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
