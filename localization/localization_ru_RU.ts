@@ -98,7 +98,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Легко запоминающиеся менее случайные пароли</translation>
+        <translation>Легко запоминающиеся, но менее безопасные пароли</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="425"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
         <source>Select password storage program:</source>
-        <translation>Выберите способ управления паролями:</translation>
+        <translation>Выберите способ хранения паролей:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -240,7 +240,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="935"/>
         <source>Template</source>
-        <translation>Шаблоны</translation>
+        <translation>Шаблон</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -405,22 +405,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
         <source>Use PWGen</source>
-        <translation>Используйте PWGen</translation>
+        <translation>Использовать PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Use Git</source>
-        <translation>Используйте Git</translation>
+        <translation>Использовать Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="525"/>
         <source>Use QRencode</source>
-        <translation>Используйте QRencode</translation>
+        <translation>Использовать QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="539"/>
         <source>Use pass-otp extension</source>
-        <translation>Используйте расширение pass-otp</translation>
+        <translation>Использовать расширение pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="646"/>
@@ -488,7 +488,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="180"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Не получилось записать .gpg-id файла.</translation>
+        <translation>Не удалось открыть .gpg-id для записи.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -505,13 +505,13 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Перешифровании из папки %1</translation>
+        <translation>Повторное шифрование из папки %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="249"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
         <source>Updating password-store</source>
-        <translation>Обновление password-store</translation>
+        <translation>Обновление хранилища паролей</translation>
     </message>
 </context>
 <context>
@@ -539,7 +539,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
         <source>Name</source>
-        <translation>Полное ммя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
@@ -692,7 +692,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
         <source>Welcome to QtPass</source>
-        <translation>QtPass приветствует Вас</translation>
+        <translation>Добро пожаловать в QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
@@ -706,7 +706,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="191"/>
         <source>Welcome to QtPass %1</source>
-        <translation>QtPass %1 приветствует Вас</translation>
+        <translation>Добро пожаловать в QtPass %1</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -736,7 +736,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="278"/>
         <location filename="../src/mainwindow.cpp" line="290"/>
         <source>Updating password-store</source>
-        <translation>Обновление password-store</translation>
+        <translation>Обновление хранилища паролей</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="972"/>
@@ -808,7 +808,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="505"/>
         <source>Looking for: %1</source>
-        <translation>Ищем: %1</translation>
+        <translation>Поиск: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="655"/>
@@ -1011,7 +1011,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
         <source>All Characters</source>
-        <translation>Все персонажи</translation>
+        <translation>Все символы</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
@@ -1123,7 +1123,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="406"/>
         <source>Copied to clipboard</source>
-        <translation>скопировать в буфер обмена</translation>
+        <translation>Скопировано в буфер обмена</translation>
     </message>
 </context>
 <context>
@@ -1225,7 +1225,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation>Отсутствует кейлист</translation>
+        <translation>Список ключей отсутствует</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
