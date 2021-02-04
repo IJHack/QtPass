@@ -480,7 +480,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
         <source>Email</source>
-        <translation>Ηλεκτρονικού ταχυδρομείου</translation>
+        <translation>Ηλεκτρονικό ταχυδρομείο</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="128"/>
