@@ -709,12 +709,12 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="391"/>
         <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>Password</source>
-        <translation>Κωδικός Πρόσβασης</translation>
+        <translation>Κωδικός πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="417"/>
         <source>OTP Code</source>
-        <translation>OTP Κώδικα</translation>
+        <translation>Κωδικός OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="436"/>
