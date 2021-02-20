@@ -10,6 +10,7 @@ CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_ca_ES.ts \
                     ../localization/localization_cs_CZ.ts \
+                    ../localization/localization_da_DK.ts \
                     ../localization/localization_de_DE.ts \
                     ../localization/localization_de_LU.ts \
                     ../localization/localization_el_GR.ts \
@@ -41,6 +42,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_ja_JA.ts \
                     ../localization/localization_bg_BG.ts \
                     ../localization/localization_fi_FI.ts \
+                    ../localization/localization_uk_UA.ts \
 		    ../localization/localization_zh_Hant.ts
 
 CONFIG += lrelease embed_translations
