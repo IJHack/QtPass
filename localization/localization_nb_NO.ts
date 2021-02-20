@@ -706,7 +706,7 @@ Utløpsdato: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="391"/>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Password</source>
         <translation>Passord</translation>
     </message>
@@ -792,7 +792,7 @@ Utløpsdato: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="993"/>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1026"/>
         <source>Rename file</source>
         <translation>Gi fil nytt navn</translation>
     </message>
@@ -802,7 +802,7 @@ Utløpsdato: 0
         <translation>Endre navn på mappe til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1026"/>
         <source>Rename File To: </source>
         <translation>Endre filnavn til: </translation>
     </message>

@@ -764,7 +764,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="391"/>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
@@ -946,7 +946,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="993"/>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1026"/>
         <source>Rename file</source>
         <translation>Переименовать файл</translation>
     </message>
@@ -956,7 +956,7 @@ Expire-Date: 0
         <translation>Переименовать папку в: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1026"/>
         <source>Rename File To: </source>
         <translation>Переименовать файл в: </translation>
     </message>
