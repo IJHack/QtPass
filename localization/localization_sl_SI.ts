@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>සැකසුම්</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රාථමික තේරීම භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
