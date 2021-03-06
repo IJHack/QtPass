@@ -890,7 +890,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="406"/>
         <source>Copied to clipboard</source>
-        <translation>copied to clipboard</translation>
+        <translation>Αντιγράφηκε στο πρόχειρο</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
