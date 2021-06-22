@@ -150,11 +150,11 @@ void UsersDialog::populateList(const QString &filter) {
         QString userText = user.name + "\n" + user.key_id;
         if (user.created.toSecsSinceEpoch() > 0) {
           userText += " " + tr("created") + " " +
-                      user.created.toString(QLocale::system().toString(QDate::currentDate(), QLocale::ShortFormat));
+                      QLocale::system().toString(user.created, QLocale::ShortFormat);
         }
         if (user.expiry.toSecsSinceEpoch() > 0)
           userText += " " + tr("expires") + " " +
-                      user.expiry.toString(QLocale::system().toString(QDate::currentDate(), QLocale::ShortFormat));
+                      QLocale::system().toString(user.expiry, QLocale::ShortFormat);
         auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));
