@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation>Nessun profilo selezionato</translation>
+        <translation>Usa selezione primaria</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
@@ -57,17 +57,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
         <source>Autoclear panel after:</source>
-        <translation>Pulisci dopo:</translation>
+        <translation>Pulisci pannello dopo:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="228"/>
         <source>Password Generation:</source>
-        <translation>Creazione Password:</translation>
+        <translation>Generazione password:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation>Lunghezza Password:</translation>
+        <translation>Lunghezza password:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="320"/>
         <source>Select character set for password generation</source>
-        <translation>Seleziona il set di caratteri per la generazione delle password</translation>
+        <translation>Seleziona l&apos;insieme di caratteri per la generazione delle password</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="324"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
         <source>Alphabetical</source>
-        <translation>Alfabeto</translation>
+        <translation>Alfabetico</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="334"/>
@@ -183,7 +183,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="573"/>
         <source>Use TrayIcon</source>
-        <translation>Usa la icona sulla barra delle applicazioni</translation>
+        <translation>Usa l&apos;icona sulla barra delle applicazioni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Mostra tutte le linee che iniziano con una parola seguita da i due punti come campo nel campo password, non solo quelli listati</translation>
+        <translation>Mostra tutte le righe che iniziano con una parola seguita da due punti come campo nel campo password, non solo quelli elencati</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
@@ -383,7 +383,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata corretamente.</translation>
+        <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata correttamente.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
@@ -403,12 +403,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="587"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Si prega di installare GnuPG sul vostro sistema. &lt;br&gt;Installa &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store per ottenerlo. &lt;br&gt;Se l&apos;hai già fatto, assicurati di averlo avviato una volta e&lt;br&gt; fai clic su &quot;Rileva automaticamente&quot; nella finestra di dialogo successiva.</translation>
+        <translation>Installare GnuPG nel sistema. &lt;br&gt;Installa &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store per ottenerlo. &lt;br&gt;Se l&apos;hai già fatto, assicurati di averlo avviato una volta e&lt;br&gt; fai clic su &quot;Rileva automaticamente&quot; nella finestra di dialogo successiva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="592"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installare GnuPG sul proprio sistema.&lt;br&gt;Installare &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;scaricare&lt;/a&gt; da GnuPG.org</translation>
+        <translation>Installare GnuPG nel sistema.&lt;br&gt;Installare &lt;strong&gt;Ubuntu&lt;/strong&gt; da Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;scaricarlo&lt;/a&gt; da GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="394"/>
@@ -486,7 +486,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="97"/>
         <location filename="../src/imitatepass.cpp" line="307"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Impossibile leggere la chiave di criptazione da utilizzare, il file .gpg-id è mancante o non valido.</translation>
+        <translation>Impossibile leggere la chiave di cifratura da utilizzare, il file .gpg-id è mancante o non valido.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="179"/>
@@ -501,14 +501,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
         <source>Check selected users!</source>
-        <translation>Controlla gli utenti selezionati!</translation>
+        <translation>Controlla gli utenti selezionati.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nessuna delle chiavi selezionate ha una chiave privata disponibile.
-Non sarai in grado di decifrare nessuna delle nuove password create!</translation>
+Non sarai in grado di decifrare nessuna delle nuove password create.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
@@ -519,7 +519,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
         <location filename="../src/imitatepass.cpp" line="249"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
         <source>Updating password-store</source>
-        <translation>Aggiornando password-store</translation>
+        <translation>Aggiornamento di password-store</translation>
     </message>
 </context>
 <context>
@@ -537,7 +537,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="157"/>
         <source>Passphrase</source>
-        <translation>Password</translation>
+        <translation>Frase segreta</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="99"/>
@@ -552,7 +552,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Non esiste un limite nella lunghezza della password, e deve essere cautamente scelta. Dal punto di vista della sicurezza, la password per sbloccare le chiavi private è uno dei punti più deboli di GnuPG (come in altri sistemi a cifratura con chiave pubblica), dato che è la sola protezione che hai nel caso ti venga rubata la chiave privata. &lt;br/&gt;Idealmente, la password non dovrebbe utilizzare parole reperibili in un dizionari e dovrebbe includere lettere maiuscole e minuscole insieme a caratteri non alfabetici.&lt;br/&gt;Avere una buona password è cruciale nella sicurezza di GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Non esiste un limite nella lunghezza della frase segreta, e deve essere cautamente scelta. Dal punto di vista della sicurezza, la frase segreta per sbloccare le chiavi private è uno dei punti più deboli di GnuPG (come in altri sistemi a cifratura con chiave pubblica), dato che è la sola protezione che hai nel caso ti venga rubata la chiave privata. &lt;br/&gt;Idealmente, essa non dovrebbe utilizzare parole reperibili in un dizionari e dovrebbe includere lettere maiuscole e minuscole insieme a caratteri non alfabetici.&lt;br/&gt;Avere una buona frase segreta è cruciale nella sicurezza di GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -595,7 +595,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="265"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Per le opzioni avanzate, visita il &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuale di GnuPG&lt;/a&gt;</translation>
+        <translation>Per le opzioni avanzate, consulta il &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuale di GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="138"/>
@@ -738,7 +738,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation>Seleziona il profilo</translation>
+        <translation>Seleziona profilo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
@@ -784,7 +784,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="111"/>
         <source>Search Password</source>
-        <translation>Cerca Password</translation>
+        <translation>Cerca password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="191"/>
@@ -829,7 +829,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="278"/>
         <location filename="../src/mainwindow.cpp" line="290"/>
         <source>Updating password-store</source>
-        <translation>Aggiornando password-store</translation>
+        <translation>Aggiornamento di password-store</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -870,7 +870,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="436"/>
         <source>Password and Content hidden</source>
-        <translation>Password e Contenuto nascosti</translation>
+        <translation>Password e contenuto nascosti</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -899,7 +899,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="505"/>
         <source>Looking for: %1</source>
-        <translation>Cercando: %1</translation>
+        <translation>Ricerca in corso di: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="607"/>
@@ -912,7 +912,7 @@ p, li { white-space: pre-wrap; }
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuovo file password:
-(Verrà posizionato in %1 )</translation>
+(verrà posizionato in %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="636"/>
@@ -992,7 +992,7 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nuova cartella:
-(Verrà posizionata in %1 )</translation>
+(verrà posizionata in %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1030,7 +1030,7 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; QtPass è una GUI per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;, il gestore password unix standard. &lt;/p&gt;
+        <translation>&lt;p&gt; QtPass è un&apos;interfaccia grafica per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;, il gestore standard di password UNIX. &lt;/p&gt;
 &lt;p&gt; Segnala eventuali &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problemi &lt;/a&gt; che potresti avere con questo software. &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Documentazione &lt;/a&gt; &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Codice sorgente &lt;/a&gt; &lt;/p&gt;</translation>
@@ -1046,7 +1046,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="103"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Impossibile generare una password, non ci sono caratteri dai quali scegliere. Cotrolla nella finestra di configurazione!</translation>
+        <translation>Impossibile generare una password, non ci sono caratteri dai quali scegliere. Controlla nella finestra di configurazione.</translation>
     </message>
 </context>
 <context>
@@ -1070,7 +1070,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation>Set di caratteri:</translation>
+        <translation>Insieme di caratteri:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
@@ -1111,7 +1111,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation>Generando una coppia di chiavi GPG</translation>
+        <translation>Generazione di una coppia di chiavi GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
@@ -1123,12 +1123,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="210"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV password</translation>
+        <translation>Password WebDAV di QtPass</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="211"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Inserisci la password per conneterti a WebDAV:</translation>
+        <translation>Inserisci la password per connetterti a WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="227"/>
@@ -1141,7 +1141,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/qtpass.cpp" line="230"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Impossibile connettere fusedav a WebDAV:
+        <translation>Impossibile avviare fusedav per connettersi a WebDAV:
 </translation>
     </message>
     <message>
@@ -1218,7 +1218,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation>&amp;Minimizza</translation>
+        <translation>Mi&amp;nimizza</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
@@ -1249,10 +1249,10 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Seleziona gli utenti che dovrebbero essere in grado di decrittografare le password archiviate in questa cartella.
+        <translation>Seleziona gli utenti che dovrebbero essere in grado di decifrare le password archiviate in questa cartella.
 Nota: i file esistenti non verranno modificati e manterranno le vecchie autorizzazioni fino a quando non le modifichi.
-Le voci blu hanno una chiave segreta disponibile, selezionane una per poter decrittografare.
-Le voci rosse non sono valide, non potrai crittografarle.</translation>
+Le voci blu hanno una chiave segreta disponibile, selezionane una per poter decifrare.
+Le voci rosse non sono valide, non potrai usarle per cifrare.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
