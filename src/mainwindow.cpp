@@ -947,6 +947,7 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
+  delete contextMenu;
 }
 
 /**
