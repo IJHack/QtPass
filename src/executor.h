@@ -56,7 +56,7 @@ class Executor : public QObject {
   void executeNext();
 
 public:
-  explicit Executor(QObject *parent = 0);
+  explicit Executor(QObject *parent = nullptr);
 
   void execute(int id, const QString &app, const QStringList &args,
                bool readStdout, bool readStderr = true);
