@@ -60,7 +60,8 @@ private slots:
   void on_rejected();
 
 private:
-  Ui::PasswordDialog *ui;
+  Q_DISABLE_COPY(PasswordDialog)
+  QScopedPointer<Ui::PasswordDialog> ui;
   PasswordConfiguration m_passConfig;
   QStringList m_fields;
   QString m_file;

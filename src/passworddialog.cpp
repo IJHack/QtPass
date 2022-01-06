@@ -69,7 +69,7 @@ PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
 /**
  * @brief Pass{}{}wordDialog::~PasswordDialog basic destructor.
  */
-PasswordDialog::~PasswordDialog() { delete ui; }
+PasswordDialog::~PasswordDialog() { }
 
 /**
  * @brief PasswordDialog::on_checkBoxShow_stateChanged hide or show passwords.
