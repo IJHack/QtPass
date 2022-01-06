@@ -155,7 +155,7 @@ void PasswordDialog::setPassword(QString password) {
  */
 QString PasswordDialog::getPassword() {
   QString passFile = ui->lineEditPassword->text() + "\n";
-  QList<QLineEdit *> allLines(templateLines);
+  QList<QPointer<QLineEdit>> allLines(templateLines);
   allLines.append(otherLines);
   for (QLineEdit *line : allLines) {
     QString text = line->text();
@@ -177,7 +177,7 @@ void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
   templateLines.clear();
 
   if (m_templating) {
-    QWidget *previous = ui->checkBoxShow;
+    QPointer<QWidget> previous = ui->checkBoxShow;
     foreach (QString field, m_fields) {
       if (field.isEmpty())
         continue;

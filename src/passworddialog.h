@@ -68,8 +68,9 @@ private:
   bool m_templating;
   bool m_allFields;
   bool m_isNew;
-  QList<QLineEdit *> templateLines;
-  QList<QLineEdit *> otherLines;
+  // those are owned by the PasswordDialog
+  QList<QPointer<QLineEdit>> templateLines;
+  QList<QPointer<QLineEdit>> otherLines;
 };
 
 #endif // PASSWORDDIALOG_H_
