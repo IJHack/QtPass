@@ -99,7 +99,7 @@ private slots:
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-  void on_profileBox_currentIndexChanged(QString);
+  void on_profileBox_currentIndexChanged(const QString&);
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();

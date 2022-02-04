@@ -765,7 +765,7 @@ void MainWindow::updateProfileBox() {
  * correct "profile"
  * @param name
  */
-void MainWindow::on_profileBox_currentIndexChanged(QString name) {
+void MainWindow::on_profileBox_currentIndexChanged(const QString& name) {
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
 
