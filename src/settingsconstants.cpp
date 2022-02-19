@@ -27,6 +27,7 @@ const QString SettingsConstants::autoclearPanelSeconds =
     "autoclearPanelSeconds";
 const QString SettingsConstants::hidePassword = "hidePassword";
 const QString SettingsConstants::hideContent = "hideContent";
+const QString SettingsConstants::useMonospace = "useMonospace";
 const QString SettingsConstants::addGPGId = "addGPGId";
 const QString SettingsConstants::passStore = "passStore";
 const QString SettingsConstants::passExecutable = "passExecutable";

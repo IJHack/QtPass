@@ -92,6 +92,9 @@ public:
   static bool isHideContent(const bool &defaultValue = QVariant().toBool());
   static void setHideContent(const bool &hideContent);
 
+  static bool isUseMonospace(const bool &defaultValue = QVariant().toBool());
+  static void setUseMonospace(const bool &hideContent);
+
   static bool isAddGPGId(const bool &defaultValue = QVariant().toBool());
   static void setAddGPGId(const bool &addGPGId);
 
