@@ -395,7 +395,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   // show what is needed:
   if (QtPassSettings::isHideContent()) {
     output = "***" + tr("Content hidden") + "***";
-  } else {
+  } else if (! QtPassSettings::isDisplayAsIs()) {
     if (!password.isEmpty()) {
       // set the password, it is hidden if needed in addToGridLayout
       addToGridLayout(0, tr("Password"), password);

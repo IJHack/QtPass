@@ -38,6 +38,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->checkBoxHidePassword->setChecked(QtPassSettings::isHidePassword());
   ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
   ui->checkBoxUseMonospace->setChecked(QtPassSettings::isUseMonospace());
+  ui->checkBoxDisplayAsIs->setChecked(QtPassSettings::isDisplayAsIs());
   ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
 
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -205,6 +206,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setHidePassword(ui->checkBoxHidePassword->isChecked());
   QtPassSettings::setHideContent(ui->checkBoxHideContent->isChecked());
   QtPassSettings::setUseMonospace(ui->checkBoxUseMonospace->isChecked());
+  QtPassSettings::setDisplayAsIs(ui->checkBoxDisplayAsIs->isChecked());
   QtPassSettings::setAddGPGId(ui->checkBoxAddGPGId->isChecked());
   QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isEnabled() &&
                                  ui->checkBoxUseTrayIcon->isChecked());

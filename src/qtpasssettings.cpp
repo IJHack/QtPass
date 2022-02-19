@@ -251,6 +251,15 @@ void QtPassSettings::setUseMonospace(const bool &useMonospace) {
   getInstance()->setValue(SettingsConstants::useMonospace, useMonospace);
 }
 
+bool QtPassSettings::isDisplayAsIs(const bool &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::displayAsIs, defaultValue)
+      .toBool();
+}
+void QtPassSettings::setDisplayAsIs(const bool &displayAsIs) {
+  getInstance()->setValue(SettingsConstants::displayAsIs, displayAsIs);
+}
+
 bool QtPassSettings::isAddGPGId(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::addGPGId, defaultValue)

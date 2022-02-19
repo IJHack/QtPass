@@ -222,6 +222,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QCheckBox" name="checkBoxDisplayAsIs">
+             <property name="text">
+              <string>Display the files content as-is</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="horizontalSpacer_9">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
