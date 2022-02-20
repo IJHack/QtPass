@@ -90,6 +90,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   if (QtPassSettings::isUseMonospace()) {
     ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
   }
+  if (QtPassSettings::isNoLineWrapping()) {
+    ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+  }
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
@@ -247,6 +250,12 @@ void MainWindow::config() {
         ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
       } else {
         ui->textBrowser->setFont(QFont());
+      }
+      // Update the textBrowser line wrap mode
+      if (QtPassSettings::isNoLineWrapping()) {
+        ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+      } else {
+        ui->textBrowser->setLineWrapMode(QTextBrowser::WidgetWidth);
       }
 
       if (QtPassSettings::isAlwaysOnTop()) {

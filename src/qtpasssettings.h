@@ -98,6 +98,9 @@ public:
   static bool isDisplayAsIs(const bool &defaultValue = QVariant().toBool());
   static void setDisplayAsIs(const bool &displayAsIs);
 
+  static bool isNoLineWrapping(const bool &defaultValue = QVariant().toBool());
+  static void setNoLineWrapping(const bool &noLineWrapping);
+
   static bool isAddGPGId(const bool &defaultValue = QVariant().toBool());
   static void setAddGPGId(const bool &addGPGId);
 

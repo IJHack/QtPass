@@ -260,6 +260,15 @@ void QtPassSettings::setDisplayAsIs(const bool &displayAsIs) {
   getInstance()->setValue(SettingsConstants::displayAsIs, displayAsIs);
 }
 
+bool QtPassSettings::isNoLineWrapping(const bool &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::noLineWrapping, defaultValue)
+      .toBool();
+}
+void QtPassSettings::setNoLineWrapping(const bool &noLineWrapping) {
+  getInstance()->setValue(SettingsConstants::noLineWrapping, noLineWrapping);
+}
+
 bool QtPassSettings::isAddGPGId(const bool &defaultValue) {
   return getInstance()
       ->value(SettingsConstants::addGPGId, defaultValue)
