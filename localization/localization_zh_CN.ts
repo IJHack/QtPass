@@ -510,7 +510,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>警告：所选用户都没有私钥，任何新添加的密码将无法解密！</translation>
+        <translation>警告：所选密钥都没有私钥可用。
+任何新添加的密码将无法解密！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
