@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Настройки</translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <source>gpg</source>
@@ -78,12 +78,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="240"/>
         <source>Password Length:</source>
-        <translation>Длина новых паролей:</translation>
+        <translation>Длина нового пароля:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="302"/>
         <source>Use characters:</source>
-        <translation>Использовать следующие символы:</translation>
+        <translation>Использовать символы:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="401"/>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="411"/>
         <source>Include special symbols</source>
-        <translation>Включить специальные символы</translation>
+        <translation>Включать специальные символы</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="418"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="561"/>
         <source>System:</source>
-        <translation>Общие:</translation>
+        <translation>Система:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="637"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="915"/>
         <source>Current path</source>
-        <translation>Текущий путь</translation>
+        <translation>Текущее хранилище паролей</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1002"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="594"/>
         <source>Always on top</source>
-        <translation>Поверх других окон</translation>
+        <translation>Поверх остальных окон</translation>
     </message>
     <message>
         <source>login
@@ -164,7 +164,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="274"/>
@@ -183,7 +183,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="587"/>
         <source>Hide on close</source>
-        <translation>Скрывать по закрытию</translation>
+        <translation>Скрывать при закрытии</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
@@ -211,7 +211,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="580"/>
         <source>Start minimized</source>
-        <translation>Запускаться свёрнутым</translation>
+        <translation>Запускать в свёрнутом виде</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="821"/>
@@ -255,7 +255,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="972"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translatorcomment>Отображать все строки, начинающиеся со слова с двоеточием, как доп. поля, а не только перечисленные здесь</translatorcomment>
-        <translation>Преобразовывать в доп. поля строки, начинающиеся с _любого_ слова с двоеточием, а не только начинающиеся с явно перечисленных здесь слов</translation>
+        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="975"/>
@@ -275,12 +275,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="584"/>
         <source>GnuPG not found</source>
-        <translation>GnuPG не найден</translation>
+        <translation>Не найден GnuPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Пожалуйста, установите GnuPG. &lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; используя Ваш любимый менеджер пакетов&lt;br&gt; или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;скачайте&lt;/a&gt; с сайта GnuPG.org</translation>
+        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; с помощью менеджера пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="625"/>
@@ -290,7 +290,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="626"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Хотите создать хранилище паролей в %1?</translation>
+        <translation>Создать хранилище паролей в %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -300,7 +300,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Папка %1 не похожа на хранилище паролей либо ещё не инициализирована.</translation>
+        <translation>Возможно, папка %1 не является хранилищем паролей, либо ещё не инициализирована.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="522"/>
@@ -325,7 +325,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="523"/>
         <source>No profile selected to delete</source>
-        <translation>Не выбран ни один профиль для удаления</translation>
+        <translation>Профили для удаления не выбраны</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>

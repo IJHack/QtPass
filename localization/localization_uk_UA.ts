@@ -372,7 +372,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="646"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Папка %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
+        <translation>Тека %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="767"/>
@@ -512,7 +512,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Повторне шифрування з папки %1</translation>
+        <translation>Повторне шифрування з теки %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="249"/>
