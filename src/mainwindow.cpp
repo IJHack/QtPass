@@ -621,6 +621,14 @@ void MainWindow::addPassword() {
  * sure.
  */
 void MainWindow::onDelete() {
+  QModelIndex currentIndex = ui->treeView->currentIndex();
+  if (!currentIndex.isValid()) {
+    // This fixes https://github.com/IJHack/QtPass/issues/556
+    // Otherwise the entire password directory would be deleted if
+    // nothing is selected in the tree view.
+    return;
+  }
+
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
   QString file = "";
