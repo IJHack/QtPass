@@ -87,6 +87,12 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
           &MainWindow::deselect);
 
+  if (QtPassSettings::isUseMonospace()) {
+    ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
+  }
+  if (QtPassSettings::isNoLineWrapping()) {
+    ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+  }
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
@@ -239,6 +245,19 @@ void MainWindow::config() {
     d->wizard(); // does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
+      // Update the textBrowser font
+      if (QtPassSettings::isUseMonospace()) {
+        ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
+      } else {
+        ui->textBrowser->setFont(QFont());
+      }
+      // Update the textBrowser line wrap mode
+      if (QtPassSettings::isNoLineWrapping()) {
+        ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+      } else {
+        ui->textBrowser->setLineWrapMode(QTextBrowser::WidgetWidth);
+      }
+
       if (QtPassSettings::isAlwaysOnTop()) {
         Qt::WindowFlags flags = windowFlags();
         this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
@@ -385,7 +404,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   // show what is needed:
   if (QtPassSettings::isHideContent()) {
     output = "***" + tr("Content hidden") + "***";
-  } else {
+  } else if (! QtPassSettings::isDisplayAsIs()) {
     if (!password.isEmpty()) {
       // set the password, it is hidden if needed in addToGridLayout
       addToGridLayout(0, tr("Password"), password);
@@ -1099,13 +1118,17 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   }
 
   // set the echo mode to password, if the field is "password"
+  const QString lineStyle = QtPassSettings::isUseMonospace()
+    ? "border-style: none; background: transparent; font-family: monospace;"
+    : "border-style: none; background: transparent;";
+
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
 
     auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);
     line->setReadOnly(true);
-    line->setStyleSheet("border-style: none ; background: transparent;");
+    line->setStyleSheet(lineStyle);
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
     QPushButtonShowPassword *showButton =
@@ -1129,7 +1152,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
         R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);
-    line->setStyleSheet("border-style: none ; background: transparent;");
+    line->setStyleSheet(lineStyle);
     line->setContentsMargins(0, 0, 0, 0);
     frame->layout()->addWidget(line);
   }

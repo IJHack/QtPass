@@ -92,6 +92,15 @@ public:
   static bool isHideContent(const bool &defaultValue = QVariant().toBool());
   static void setHideContent(const bool &hideContent);
 
+  static bool isUseMonospace(const bool &defaultValue = QVariant().toBool());
+  static void setUseMonospace(const bool &useMonospace);
+
+  static bool isDisplayAsIs(const bool &defaultValue = QVariant().toBool());
+  static void setDisplayAsIs(const bool &displayAsIs);
+
+  static bool isNoLineWrapping(const bool &defaultValue = QVariant().toBool());
+  static void setNoLineWrapping(const bool &noLineWrapping);
+
   static bool isAddGPGId(const bool &defaultValue = QVariant().toBool());
   static void setAddGPGId(const bool &addGPGId);
 
