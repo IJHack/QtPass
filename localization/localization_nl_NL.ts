@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype met vaste breedte gebruiken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbewerkte bestandsinhoud tonen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Regels niet afbreken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
