@@ -26,6 +26,9 @@ public:
   const static QString autoclearPanelSeconds;
   const static QString hidePassword;
   const static QString hideContent;
+  const static QString useMonospace;
+  const static QString displayAsIs;
+  const static QString noLineWrapping;
   const static QString addGPGId;
   const static QString passStore;
   const static QString passExecutable;

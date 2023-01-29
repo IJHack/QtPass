@@ -55,7 +55,7 @@ FreeBSD
 `pkg install qtpass`
 
 macOS
-`brew cask install qtpass`
+`brew install --cask qtpass`
 
 Windows
 `choco install qtpass`

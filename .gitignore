@@ -40,3 +40,5 @@ rtf/**
 latex/**
 qmake_qmake_qm_files.qrc
 src/.qm/
+weblate
+artwork/qtpass-icon.png

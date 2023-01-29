@@ -350,6 +350,7 @@ void ImitatePass::Move(const QString src, const QString dest,
   QFileInfo srcFileInfo(src);
   QFileInfo destFileInfo(dest);
   QString destFile;
+  QString srcFileBaseName = srcFileInfo.fileName();
 
   if (srcFileInfo.isFile()) {
     if (destFileInfo.isFile()) {
@@ -360,17 +361,17 @@ void ImitatePass::Move(const QString src, const QString dest,
         return;
       }
     } else if (destFileInfo.isDir()) {
-      destFile = QDir(dest).filePath(srcFileInfo.baseName());
+      destFile = QDir(dest).filePath(srcFileBaseName);
     } else {
       destFile = dest;
     }
 
-    if (!destFile.endsWith(".gpg"))
-      destFile.append(".gpg");
-
+    if (destFile.endsWith(".gpg", Qt::CaseInsensitive))
+      destFile.chop(4); // make sure suffix is lowercase
+    destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {
-      destFile = QDir(dest).filePath(srcFileInfo.baseName());
+      destFile = QDir(dest).filePath(srcFileBaseName);
     } else if (destFileInfo.isFile()) {
 #ifdef QT_DEBUG
       dbg() << "Destination is a file";
@@ -379,7 +380,6 @@ void ImitatePass::Move(const QString src, const QString dest,
     } else {
       destFile = dest;
     }
-
   } else {
 #ifdef QT_DEBUG
     dbg() << "Source file does not exist";
