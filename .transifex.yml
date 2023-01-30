@@ -1,0 +1,8 @@
+git:
+  filters:
+  - filter_type: dir
+    file_format: QT 
+    source_file_extension: ts
+    source_language: en_GB
+    source_file_dir: localization
+    translation_files_expression: 'localization/localization_<lang>'
