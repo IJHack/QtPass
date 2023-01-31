@@ -13,7 +13,7 @@
 * Disable GNOME keyring
 * Create a `~/.gnupg/gpg-agent.conf` containing:
 
-```
+```yaml
 enable-ssh-support
 write-env-file
 use-standard-socket
@@ -24,7 +24,7 @@ max-cache-ttl 7200
 Also, the following is useful to add to
 your .bashrc if you are using Yubikey NEO on Ubuntu:
 
-```
+```sh
 # OpenPGP applet support for YubiKey NEO
 if [ ! -f /tmp/gpg-agent.env ]; then
     killall gpg-agent;
@@ -49,7 +49,7 @@ fi
 
 * Possibly you have you key only in gpg and not in gpg2
 
-```
+```bsh
 gpg --export [ID] > public.key
 gpg --export-secret-key [ID] > private.key
 gpg2 --import public.key
@@ -104,7 +104,7 @@ Please install using your favorite package manager.
 
 * On some WindowManagers, Qt doesn't know what icon set to use. A trick:
 
-```
+```sh
 export DESKTOP_SESSION=gnome
 ```
 
@@ -112,7 +112,7 @@ export DESKTOP_SESSION=gnome
 Then you'll have to install the current version via your package manager or if this is not up-to-date,
 download it from <https://www.qt.io/download/> install it and run:
 
-```
+```sh
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
 make
 (sudo) make install

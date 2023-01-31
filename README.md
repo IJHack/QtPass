@@ -1,5 +1,4 @@
-QtPass
-======
+# QtPass
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Build Status](https://travis-ci.com/IJHack/QtPass.svg?branch=master)](https://travis-ci.com/IJHack/QtPass)
@@ -18,8 +17,7 @@ QtPass
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
 
-Features
---------
+## Features
 
 * Using `pass` or `git` and `gpg2` directly
 * Configurable shoulder surfing protection options
@@ -30,8 +28,7 @@ Features
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
-Installation
-------------
+## Installation
 
 ### From package
 
@@ -65,7 +62,7 @@ Windows
 
 ### From Source
 
-**Dependencies**
+#### Dependencies
 
 * QtPass requires Qt 5.10 or later (Qt 6 works too)
 * The Linguist package is required to compile the translations.
@@ -78,12 +75,11 @@ On Mac macOS this currently seems to only work best with `pinentry-mac` from hom
 
 On most unix systems all you need is:
 
-```
+```sh
 qmake && make && make install
 ```
 
-Testing
--------
+## Testing
 
 This is done with `make check`
 
@@ -91,8 +87,7 @@ Codecoverage can be done with `make lcov`, `make gcov`, `make coveralls` and/or 
 
 Be sure to first run: `make distclean && qmake CONFIG+=coverage qtpass.pro`
 
-Security considerations
------------------------
+## Security considerations
 
 Using this program will not magically keep your passwords secure against
 compromised computers even if you use it in combination with a smartcard.
@@ -120,15 +115,13 @@ attack I can think of at least two options:
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
   (so you would have to run your own server).
 
-Known issues
-------------
+## Known issues
 
 * Filtering (searching) breaks the tree/model sometimes
 * Starting without a correctly set password-store folder
   gives weird results in the tree view
 
-Planned features
-----------------
+## Planned features
 
 * Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
@@ -139,8 +132,7 @@ Planned features
 * Some other form of remote storage that allows for
   accountability / auditing (web API to retrieve the .gpg files?)
 
-Further reading
----------------
+## Further reading
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
