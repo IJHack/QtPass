@@ -127,9 +127,9 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
  */
 void ImitatePass::GitCommit(const QString &file, const QString &msg) {
   if (file.isEmpty())
-      executeGit(GIT_COMMIT, {"commit", "-m", msg});
+    executeGit(GIT_COMMIT, {"commit", "-m", msg});
   else
-      executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
+    executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
 }
 
 /**
@@ -268,9 +268,11 @@ void ImitatePass::reencryptPath(const QString &dir) {
     QStringList actualKeys;
     keys += err;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-    QStringList key = keys.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+    QStringList key =
+        keys.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-    QStringList key = keys.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+    QStringList key =
+        keys.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
     QListIterator<QString> itr(key);
     while (itr.hasNext()) {
@@ -404,7 +406,8 @@ void ImitatePass::Move(const QString src, const QString dest,
 
     QString relSrc = QDir(QtPassSettings::getPassStore()).relativeFilePath(src);
     relSrc.replace(QRegularExpression("\\.gpg$"), "");
-    QString relDest = QDir(QtPassSettings::getPassStore()).relativeFilePath(destFile);
+    QString relDest =
+        QDir(QtPassSettings::getPassStore()).relativeFilePath(destFile);
     relDest.replace(QRegularExpression("\\.gpg$"), "");
     QString message = QString("Moved for %1 to %2 using QtPass.");
     message = message.arg(relSrc).arg(relDest);

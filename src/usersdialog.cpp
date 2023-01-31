@@ -136,7 +136,9 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
-  QRegularExpression nameFilter(QRegularExpression::wildcardToRegularExpression("*" + filter + "*"), QRegularExpression::CaseInsensitiveOption);
+  QRegularExpression nameFilter(
+      QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
+      QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
   if (!m_userList.isEmpty()) {
     for (auto &user : m_userList) {
@@ -149,12 +151,14 @@ void UsersDialog::populateList(const QString &filter) {
           continue;
         QString userText = user.name + "\n" + user.key_id;
         if (user.created.toSecsSinceEpoch() > 0) {
-          userText += " " + tr("created") + " " +
-                      QLocale::system().toString(user.created, QLocale::ShortFormat);
+          userText +=
+              " " + tr("created") + " " +
+              QLocale::system().toString(user.created, QLocale::ShortFormat);
         }
         if (user.expiry.toSecsSinceEpoch() > 0)
-          userText += " " + tr("expires") + " " +
-                      QLocale::system().toString(user.expiry, QLocale::ShortFormat);
+          userText +=
+              " " + tr("expires") + " " +
+              QLocale::system().toString(user.expiry, QLocale::ShortFormat);
         auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));

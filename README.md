@@ -1,5 +1,4 @@
-QtPass
-======
+# QtPass
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Build Status](https://travis-ci.com/IJHack/QtPass.svg?branch=master)](https://travis-ci.com/IJHack/QtPass)
@@ -18,20 +17,18 @@ QtPass
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
 the standard unix password manager.
 
-Features
---------
+## Features
 
 * Using `pass` or `git` and `gpg2` directly
 * Configurable shoulder surfing protection options
-* Cross platform: Linux, BSD, OS X and Windows
+* Cross platform: Linux, BSD, macOS and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
 * Easy onboarding
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
-Installation
-------------
+## Installation
 
 ### From package
 
@@ -62,9 +59,10 @@ Windows
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
+
 ### From Source
 
-**Dependencies**
+#### Dependencies
 
 * QtPass requires Qt 5.10 or later (Qt 6 works too)
 * The Linguist package is required to compile the translations.
@@ -73,15 +71,15 @@ Windows
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
-On Mac OS X this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
+On Mac macOS this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
 
 On most unix systems all you need is:
-```
+
+```sh
 qmake && make && make install
 ```
 
-Testing
--------
+## Testing
 
 This is done with `make check`
 
@@ -89,8 +87,7 @@ Codecoverage can be done with `make lcov`, `make gcov`, `make coveralls` and/or 
 
 Be sure to first run: `make distclean && qmake CONFIG+=coverage qtpass.pro`
 
-Security considerations
------------------------
+## Security considerations
 
 Using this program will not magically keep your passwords secure against
 compromised computers even if you use it in combination with a smartcard.
@@ -118,38 +115,35 @@ attack I can think of at least two options:
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
   (so you would have to run your own server).
 
-Known issues
-------------
+## Known issues
 
 * Filtering (searching) breaks the tree/model sometimes
 * Starting without a correctly set password-store folder
   gives weird results in the tree view
 
-Planned features
-----------------
+## Planned features
 
 * Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * Optional table view of decrypted folder contents
-* Opening of (basic auth) urls in default browser?
+* Opening of (basic auth) URLs in default browser?
   Possibly with helper plugin for filling out forms?
 * WebDAV (configuration) support
 * Some other form of remote storage that allows for
   accountability / auditing (web API to retrieve the .gpg files?)
 
-Further reading
----------------
+## Further reading
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
 
-[Website](https://qtpass.org/)
+[Site](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)
 [Chat](https://gitter.im/IJHack/qtpass)
 
-
 ## License
+
 ### GNU GPL v3.0
 
 [![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)

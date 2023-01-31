@@ -404,7 +404,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   // show what is needed:
   if (QtPassSettings::isHideContent()) {
     output = "***" + tr("Content hidden") + "***";
-  } else if (! QtPassSettings::isDisplayAsIs()) {
+  } else if (!QtPassSettings::isDisplayAsIs()) {
     if (!password.isEmpty()) {
       // set the password, it is hidden if needed in addToGridLayout
       addToGridLayout(0, tr("Password"), password);
@@ -1048,7 +1048,7 @@ void MainWindow::renamePassword() {
   QString filePath = QFileInfo(file).path();
   QString fileName = QFileInfo(file).fileName();
   if (fileName.endsWith(".gpg", Qt::CaseInsensitive))
-      fileName.chop(4);
+    fileName.chop(4);
 
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
@@ -1126,9 +1126,11 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   }
 
   // set the echo mode to password, if the field is "password"
-  const QString lineStyle = QtPassSettings::isUseMonospace()
-    ? "border-style: none; background: transparent; font-family: monospace;"
-    : "border-style: none; background: transparent;";
+  const QString lineStyle =
+      QtPassSettings::isUseMonospace()
+          ? "border-style: none; background: transparent; font-family: "
+            "monospace;"
+          : "border-style: none; background: transparent;";
 
   if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
 
@@ -1156,7 +1158,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
     trimmedValue.replace(
-        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+        QRegularExpression(
+            "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
         R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);

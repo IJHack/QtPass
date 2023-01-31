@@ -2,9 +2,9 @@
 #include "qtpasssettings.h"
 
 #include <QDebug>
-#include <QRegularExpression>
 #include <QMessageBox>
 #include <QMimeData>
+#include <QRegularExpression>
 #include <utility>
 
 QDataStream &
