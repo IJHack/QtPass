@@ -45,7 +45,6 @@ fi
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
 * On MacOs `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from homebrew.  
 
-
 ### I have an other issue with gpg
 
 * Possibly you have you key only in gpg and not in gpg2
@@ -57,7 +56,9 @@ gpg2 --import public.key
 gpg2 --import private.key
 rm public.key private.key
 ```
+
 Where [ID] is your gpg key-id.
+
 * It might be the case where it is the other way around, exchange gpg and gpg2 accordingly . .
 
 ### Git doesn't work on Windows
@@ -67,7 +68,7 @@ git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpas
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
-https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant
+<https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
 
 ### Where is the configuration stored?
 
@@ -82,7 +83,7 @@ So called "portable config".
 
 There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).
 
-More information: http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes
+More information: <http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
 
 ### Where can I ask for help?
 
@@ -102,18 +103,21 @@ Please install using your favorite package manager.
 ### I get icons that do not fit my (X11) default
 
 * On some WindowManagers, Qt doesn't know what icon set to use. A trick:
+
 ```
 export DESKTOP_SESSION=gnome
 ```
 
 * Another possible reason is, that the currently installed Qt Version gives problems (e.g. on Linux Mint 17.3)
 Then you'll have to install the current version via your package manager or if this is not up-to-date,
-download it from https://www.qt.io/download/ install it and run:
+download it from <https://www.qt.io/download/> install it and run:
+
 ```
 /PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
 make
 (sudo) make install
 ```
+
 where `PATHTOYOURINSTALLATION` is the path you selected in the qt installer (default `/home/YOURUSER/Qt/` )
 and 5.5 has to be adapted for the Qt version you downloaded.
 
@@ -130,11 +134,12 @@ and 5.5 has to be adapted for the Qt version you downloaded.
 ### How do I set the language manually?
 
 QtPass uses the system language. Changing it depends on your system:
+
 * on Linux: ```LANGUAGE=fr qtpass``` will run QtPass in French.
 
 ## How can I help improve QtPass?
 
-### I would like to donate!
+### I would like to donate
 
 * Time:
   * Read [contributing](CONTRIBUTING.md) documentation.

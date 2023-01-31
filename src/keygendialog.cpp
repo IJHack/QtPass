@@ -85,9 +85,11 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines = expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList lines =
+      expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList lines = expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  QStringList lines =
+      expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   foreach (QString line, lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
@@ -107,9 +109,11 @@ void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines = expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList lines =
+      expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList lines = expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  QStringList lines =
+      expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   foreach (QString line, lines) {
     bool remove = false;
@@ -141,7 +145,10 @@ void KeygenDialog::done(int r) {
     }
 
     // check email
-    QRegularExpression mailre(QRegularExpression::anchoredPattern(R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)"), QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression mailre(
+        QRegularExpression::anchoredPattern(
+            R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)"),
+        QRegularExpression::CaseInsensitiveOption);
     if (!mailre.match(ui->email->text()).hasMatch()) {
       QMessageBox::critical(
           this, tr("Invalid email"),

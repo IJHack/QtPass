@@ -62,6 +62,7 @@ Windows
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
+
 ### From Source
 
 **Dependencies**
@@ -76,6 +77,7 @@ Your GPG has to be set-up with a graphical pinentry when applicable, same goes f
 On Mac OS X this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
 
 On most unix systems all you need is:
+
 ```
 qmake && make && make install
 ```
@@ -148,8 +150,8 @@ Further reading
 [Issue queue](https://github.com/IJHack/qtpass/issues)
 [Chat](https://gitter.im/IJHack/qtpass)
 
-
 ## License
+
 ### GNU GPL v3.0
 
 [![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)

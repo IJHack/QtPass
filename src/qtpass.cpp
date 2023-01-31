@@ -277,9 +277,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
     }
 
-    output.replace(
-        QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        R"(<a href="\1">\1</a>)");
+    output.replace(QRegularExpression(
+                       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+                   R"(<a href="\1">\1</a>)");
     output.replace(QRegularExpression("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
@@ -339,9 +339,9 @@ void QtPass::showInTextBrowser(QString output, QString prefix,
   output.replace(QRegularExpression(">"), "&gt;");
   output.replace(QRegularExpression(" "), "&nbsp;");
 
-  output.replace(
-      QRegularExpression("((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-      R"(<a href="\1">\1</a>)");
+  output.replace(QRegularExpression(
+                     "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
+                 R"(<a href="\1">\1</a>)");
   output.replace(QRegularExpression("\n"), "<br />");
   output = prefix + output + postfix;
 

@@ -15,7 +15,7 @@ This document is still in a very early stage and needs a lot more work.
 3. Make sure you update all of the CI configs if need be. These are ran on every Pull Request.
 3. Increase the version numbers in relevant files when applicable.
    The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of one other developer, or if you 
+4. You may merge the Pull Request in once you have the sign-off of one other developer, or if you
    do not have permission to do that, you may request a reviewer to merge it for you.
 
 ## Translations
@@ -38,7 +38,7 @@ For questions or brainstorming about features please join #ijhack on freenode.
 
 Or if you prefer to use [gitter](https://gitter.im/IJHack/qtpass)
 
-## License 
+## License
 
 QtPass is released under the GNU GPL v3.0 license.
-http://www.gnu.org/licenses/gpl-3.0.html
+<http://www.gnu.org/licenses/gpl-3.0.html>

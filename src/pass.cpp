@@ -140,9 +140,11 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
       0)
     return users;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList keys = p_out.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  QStringList keys =
+      p_out.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
 #else
-  QStringList keys = p_out.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  QStringList keys =
+      p_out.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
   foreach (QString key, keys) {
