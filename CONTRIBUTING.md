@@ -11,7 +11,7 @@ This document is still in a very early stage and needs a lot more work.
 ## Pull Request Process
 
 1. Ensure install or build dependencies and artefacts are not commmitted.
-2. When adding big new features or changes to the build system, update the [README.md](README.md) to reflect those.
+2. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
 3. Make sure you update all of the CI configs if need be. These are ran on every Pull Request.
 3. Increase the version numbers in relevant files when applicable.
    The versioning scheme we use is [SemVer](http://semver.org/).

@@ -43,7 +43,7 @@ fi
 * On some esotheric systems it might be necessary to create a symbolic
   link `/usr/bin/pinentry` to your pinentry application of choice
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
-* On MacOs `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from homebrew.  
+* On macOS `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from homebrew.  
 
 ### I have an other issue with gpg
 
@@ -87,7 +87,7 @@ More information: <http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
 
 ### Where can I ask for help?
 
-* Create an [issue](https://github.com/IJHack/qtpass/) issues on github.
+* Create an [issue](https://github.com/IJHack/qtpass/) issues on GitHub.
 * Send an email to [help@qtpass.org](mailto:help@qtpass.org)
 
 ### Can I import from KeePass, LastPass or X?
@@ -123,7 +123,7 @@ and 5.5 has to be adapted for the Qt version you downloaded.
 
 ### I don't like the design, what gives?
 
-* It's all on github, clone, change and send a pull request.
+* It's all on GitHub, clone, change and send a pull request.
 * Open an issue and point out defects or better yet propose changes.
 
 ### QtPass is not in my native language

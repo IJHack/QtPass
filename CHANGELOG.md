@@ -32,13 +32,13 @@
 - Enable out-of-source \(shadow\) builds. [\#501](https://github.com/IJHack/QtPass/issues/501)
 - password visiblity can't be fully hidden  [\#496](https://github.com/IJHack/QtPass/issues/496)
 - Translations need updating and checking [\#488](https://github.com/IJHack/QtPass/issues/488)
-- Front-End doesn't work well with HiDPI screen [\#464](https://github.com/IJHack/QtPass/issues/464)
+- Frontend doesn't work well with HiDPI screen [\#464](https://github.com/IJHack/QtPass/issues/464)
 - How to let QtPass use the real "pass" on windows [\#458](https://github.com/IJHack/QtPass/issues/458)
 - Fresh install of Antergos with Deepin - High DPI scaling is not working [\#417](https://github.com/IJHack/QtPass/issues/417)
 - Strange behavior when clearing filter [\#402](https://github.com/IJHack/QtPass/issues/402)
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
-- UI is blurry on HiDPI screens on MacOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
+- UI is blurry on HiDPI screens on macOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
 - No prompt for passphrase for git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
 
@@ -68,7 +68,7 @@
 - Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
 - Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
 - Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
-- Enable ubuntu, windows and macos based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
+- Enable ubuntu, windows and macOS based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
 - Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
@@ -96,7 +96,7 @@
 - `Start minimized' no longer works [\#471](https://github.com/IJHack/QtPass/issues/471)
 - Editor doesn't wait for PGP key to decrypt [\#470](https://github.com/IJHack/QtPass/issues/470)
 - v1.3.0 Data Not Showing [\#465](https://github.com/IJHack/QtPass/issues/465)
-- Hangs on MacOS after Security Update 2019-003 10.12.6 [\#461](https://github.com/IJHack/QtPass/issues/461)
+- Hangs on macOS after Security Update 2019-003 10.12.6 [\#461](https://github.com/IJHack/QtPass/issues/461)
 - No public key [\#308](https://github.com/IJHack/QtPass/issues/308)
 
 **Merged pull requests:**
@@ -125,10 +125,10 @@
 **Merged pull requests:**
 
 - Add license scan report and status [\#480](https://github.com/IJHack/QtPass/pull/480) ([fossabot](https://github.com/fossabot))
-- Build system related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
+- Build tool related fixes [\#479](https://github.com/IJHack/QtPass/pull/479) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing overrides [\#478](https://github.com/IJHack/QtPass/pull/478) ([amarsman](https://github.com/amarsman))
 - Main window entry details improvements [\#477](https://github.com/IJHack/QtPass/pull/477) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
-- Fix html links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
+- Fix HTML links color and NL translation building error [\#476](https://github.com/IJHack/QtPass/pull/476) ([a-andreyev](https://github.com/a-andreyev))
 - Restore directories-first order of passwords tree view on non-Mac platforms [\#475](https://github.com/IJHack/QtPass/pull/475) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Add missing finishedShow\(\) signal connection in PasswordDialog constructor \(fixes the "Edit password" function\) [\#473](https://github.com/IJHack/QtPass/pull/473) ([maciejsszmigiero](https://github.com/maciejsszmigiero))
 - Sorted profiles dropdown as in \#404 [\#472](https://github.com/IJHack/QtPass/pull/472) ([Noettore](https://github.com/Noettore))
@@ -148,7 +148,7 @@
 **Fixed bugs:**
 
 - Windows sigsev issues [\#326](https://github.com/IJHack/QtPass/issues/326)
-- Access to the / \(root\) directory form within the application window on MacOS [\#302](https://github.com/IJHack/QtPass/issues/302)
+- Access to the / \(root\) directory form within the application window on macOS [\#302](https://github.com/IJHack/QtPass/issues/302)
 - PRNG seeding is done totally wrong [\#238](https://github.com/IJHack/QtPass/issues/238)
 - Context menu on transparent fields is transparent too . .  [\#227](https://github.com/IJHack/QtPass/issues/227)
 
@@ -165,7 +165,7 @@
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
 - We should select a C++ std too [\#372](https://github.com/IJHack/QtPass/issues/372)
 - We should select a minimum Qt version [\#371](https://github.com/IJHack/QtPass/issues/371)
-- Problem with GNUpg not found on MacOS [\#362](https://github.com/IJHack/QtPass/issues/362)
+- Problem with GNUpg not found on macOS [\#362](https://github.com/IJHack/QtPass/issues/362)
 - Compiling for Linux Mint 18 Ubuntu 16 [\#357](https://github.com/IJHack/QtPass/issues/357)
 - make qtpass portable in windows [\#356](https://github.com/IJHack/QtPass/issues/356)
 - Unable to see main application window \(applicationn runs minimized to tray only\) [\#286](https://github.com/IJHack/QtPass/issues/286)
@@ -180,13 +180,13 @@
 - Scripts and logic specific to Windows Store releases [\#439](https://github.com/IJHack/QtPass/pull/439) ([rdoeffinger](https://github.com/rdoeffinger))
 - For config check, check that the selected binary is available. [\#438](https://github.com/IJHack/QtPass/pull/438) ([rdoeffinger](https://github.com/rdoeffinger))
 - Fix character encoding issues for non-UTF-8 locales. [\#435](https://github.com/IJHack/QtPass/pull/435) ([rdoeffinger](https://github.com/rdoeffinger))
-- Fixes and improvments for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
+- Fixes and improvements for config dialog [\#432](https://github.com/IJHack/QtPass/pull/432) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for using WSL binaries on Windows [\#431](https://github.com/IJHack/QtPass/pull/431) ([rdoeffinger](https://github.com/rdoeffinger))
 - Bugfixes and Windows compatibility improvements [\#430](https://github.com/IJHack/QtPass/pull/430) ([mrsch](https://github.com/mrsch))
 - Semi-automatic code cleanup [\#425](https://github.com/IJHack/QtPass/pull/425) ([annejan](https://github.com/annejan))
 - Update to prevent the installer requesting admin [\#424](https://github.com/IJHack/QtPass/pull/424) ([hughwilliams94](https://github.com/hughwilliams94))
 - Display passwords as QR codes [\#421](https://github.com/IJHack/QtPass/pull/421) ([frawi](https://github.com/frawi))
-- Tested working on Mac Os HS with pinentry-mac [\#419](https://github.com/IJHack/QtPass/pull/419) ([riccardocossu](https://github.com/riccardocossu))
+- Tested working on macOS HS with pinentry-mac [\#419](https://github.com/IJHack/QtPass/pull/419) ([riccardocossu](https://github.com/riccardocossu))
 - Dutch \(nl\) translation improvements [\#418](https://github.com/IJHack/QtPass/pull/418) ([equaeghe](https://github.com/equaeghe))
 - Bugfixes [\#413](https://github.com/IJHack/QtPass/pull/413) ([rdoeffinger](https://github.com/rdoeffinger))
 - pwgen: fix inverted "Generate ... less secure passwords" checkbox [\#409](https://github.com/IJHack/QtPass/pull/409) ([ahippo](https://github.com/ahippo))
@@ -241,8 +241,8 @@
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
 - "copy" icon has disappeared in v1.2.1 [\#344](https://github.com/IJHack/QtPass/issues/344)
 - No password entry prompt [\#343](https://github.com/IJHack/QtPass/issues/343)
-- Can't install on OS X Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
-- No icon on MacOS [\#333](https://github.com/IJHack/QtPass/issues/333)
+- Can't install on macOS Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
+- No icon on macOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - Font and spacing used for URL links on right in main window absurdly large [\#329](https://github.com/IJHack/QtPass/issues/329)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
 
@@ -351,7 +351,7 @@
 - \#239 reencrypting after a drag and drop action [\#261](https://github.com/IJHack/QtPass/pull/261) ([YoshiMan](https://github.com/YoshiMan))
 - this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
-- Minor fix for file names and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
+- Minor fix for filenames and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue  [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
@@ -367,7 +367,7 @@
 **Implemented enhancements:**
 
 - Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
-- Clickable url's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
+- Clickable URLs + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
@@ -378,11 +378,11 @@
 
 **Fixed bugs:**
 
-- Regression with new view mode when using templates and urls [\#223](https://github.com/IJHack/QtPass/issues/223)
+- Regression with new view mode when using templates and URLs [\#223](https://github.com/IJHack/QtPass/issues/223)
 - Problems with high dpi screen [\#217](https://github.com/IJHack/QtPass/issues/217)
 - Hangs forever on Generate GnuPG keypair [\#215](https://github.com/IJHack/QtPass/issues/215)
 - recent change to passworddialog.cpp [\#188](https://github.com/IJHack/QtPass/issues/188)
-- Re-opening entry in QtPass on Windows does not put login or url values back in the right place [\#183](https://github.com/IJHack/QtPass/issues/183)
+- Re-opening entry in QtPass on Windows does not put login or URL values back in the right place [\#183](https://github.com/IJHack/QtPass/issues/183)
 
 **Closed issues:**
 
@@ -535,7 +535,7 @@
 
 **Closed issues:**
 
-- \[resolved\] Error in compiling Mac OS El capitan [\#148](https://github.com/IJHack/QtPass/issues/148)
+- \[resolved\] Error in compiling macOS El capitan [\#148](https://github.com/IJHack/QtPass/issues/148)
 
 **Merged pull requests:**
 
@@ -672,7 +672,7 @@
 
 - Minimize on startup. [\#69](https://github.com/IJHack/QtPass/issues/69)
 - tray icon in xfce [\#58](https://github.com/IJHack/QtPass/issues/58)
-- Git intergration [\#57](https://github.com/IJHack/QtPass/issues/57)
+- Git integration [\#57](https://github.com/IJHack/QtPass/issues/57)
 - Weird characters in filenames breaks loading gpg files [\#10](https://github.com/IJHack/QtPass/issues/10)
 
 ## [v0.9.0](https://github.com/IJhack/QtPass/tree/v0.9.0) (2015-07-17)
@@ -695,7 +695,7 @@
 
 **Merged pull requests:**
 
-- To make building successfull wi Desktop Qt 5.4.0 MSVC2012 OpenGL 32bit [\#67](https://github.com/IJHack/QtPass/pull/67) ([annejan](https://github.com/annejan))
+- To make building successful wi Desktop Qt 5.4.0 MSVC2012 OpenGL 32bit [\#67](https://github.com/IJHack/QtPass/pull/67) ([annejan](https://github.com/annejan))
 
 ## [v0.8.5.1](https://github.com/IJhack/QtPass/tree/v0.8.5.1) (2015-07-08)
 
@@ -713,7 +713,7 @@
 
 **Merged pull requests:**
 
-- Many deadlocks and other nasty bug fixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
+- Many deadlocks and other nasty bugfixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
 - Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
 
@@ -766,7 +766,7 @@
 
 - compiling qtpass on ubuntu 15.04 - fails due to newer qmake version [\#43](https://github.com/IJHack/QtPass/issues/43)
 - QProcess::start: Process is already running [\#40](https://github.com/IJHack/QtPass/issues/40)
-- Extra line breaks seem to be added to the \(html\) output [\#39](https://github.com/IJHack/QtPass/issues/39)
+- Extra line breaks seem to be added to the \(HTML\) output [\#39](https://github.com/IJHack/QtPass/issues/39)
 - Missing develop branch and release testing [\#38](https://github.com/IJHack/QtPass/issues/38)
 - Windows WebDAV broken by 24f8dec3c203921f765e923e6ae6a4069b8cf50a [\#36](https://github.com/IJHack/QtPass/issues/36)
 - .gpg-id file not added to git [\#35](https://github.com/IJHack/QtPass/issues/35)

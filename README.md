@@ -23,7 +23,7 @@ Features
 
 * Using `pass` or `git` and `gpg2` directly
 * Configurable shoulder surfing protection options
-* Cross platform: Linux, BSD, OS X and Windows
+* Cross platform: Linux, BSD, macOS and Windows
 * Per-folder user selection for multi recipient encryption
 * Multiple profiles
 * Easy onboarding
@@ -74,7 +74,7 @@ Windows
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
 Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
-On Mac OS X this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
+On Mac macOS this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
 
 On most unix systems all you need is:
 
@@ -133,7 +133,7 @@ Planned features
 * Plugins based on field name, plugins follow same format as password files
 * Colour coding folders (possibly disabling folders you can't decrypt)
 * Optional table view of decrypted folder contents
-* Opening of (basic auth) urls in default browser?
+* Opening of (basic auth) URLs in default browser?
   Possibly with helper plugin for filling out forms?
 * WebDAV (configuration) support
 * Some other form of remote storage that allows for
@@ -145,7 +145,7 @@ Further reading
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
 
-[Website](https://qtpass.org/)
+[Site](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)
 [Chat](https://gitter.im/IJHack/qtpass)
