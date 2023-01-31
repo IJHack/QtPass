@@ -1,3 +1,4 @@
+---
 name: QMake
 on: [push, pull_request]
 jobs:
@@ -6,15 +7,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-         os: [ubuntu-latest, macos-latest, windows-latest]
-         include:
-          - os: ubuntu-latest
-            make: make
-          - os: macos-latest
-            make: make
-          - os: windows-latest
-            make: nmake
-    steps:
+      os: [ubuntu-latest, macos-latest, windows-latest]
+      include:
+        - os: ubuntu-latest
+          make: make
+        - os: macos-latest
+          make: make
+        - os: windows-latest
+          make: nmake
+  steps:
     - uses: actions/checkout@v1
     - uses: ilammy/msvc-dev-cmd@v1
     - name: Install Qt

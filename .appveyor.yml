@@ -1,3 +1,4 @@
+---
 install:
   - set QTDIR=C:\Qt\5.13\mingw73_32
   - choco install -y InnoSetup
@@ -5,8 +6,8 @@ install:
 build_script:
   - qmake qtpass.pro CONFIG+=static
   - mingw32-make
-#  - mingw32-make check
-#after_build:
+  # - mingw32-make check
+  # after_build:
   - cmd: copy README.md src\release\README.txt
   - cmd: copy LICENSE src\release\LICENSE.txt
   - iscc qtpass.iss

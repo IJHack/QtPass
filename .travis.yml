@@ -1,19 +1,20 @@
+---
 language: cpp
 dist: bionic
 osx_image: xcode12.2
 sudo: true
 os:
-- linux
-- osx
+  - linux
+  - osx
 compiler:
-- gcc
-- clang
+  - gcc
+  - clang
 env:
   global:
     secure: WaZq3f6KIAc0dnR4WOXYWDvUYiqlrzsZC/PQse47FnvC0oQC65J5w3kJOj/P26DgsUEqKQF3ukXogkM2mp5pS4+CMgivEmQmAbgQTtwcKpC5HPZxgI+8FgkCjcalJKWGWYoxlScNVNiKMs+89ApcSQE9kH9PZeUS9dukN2Php1U=
 before_install:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt-5.15.2-bionic; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:beineri/opt-qt-5.15.2-bionic; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
 addons:
   coverity_scan:
     project:
@@ -24,52 +25,51 @@ addons:
     build_command: make
     branch_pattern: coverity_scan
 install:
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew upgrade coreutils; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm install 12; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm use 12; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt515base qt515tools qt515svg libgl1-mesa-dev; fi
-- if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo apt-get -qq install g++-6 gcc-6; fi
-- if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6; fi
-- if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then npm install -g codecov; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew ls | grep -wq qt5 || brew install qt5; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew upgrade coreutils; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH=$PATH:/usr/local/opt/qt5/bin; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install pandoc; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm install 12; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then nvm use 12; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm install -g appdmg; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq update; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install qt515base qt515tools qt515svg libgl1-mesa-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo apt-get -qq install g++-6 gcc-6; fi
+  - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6; fi
+  - if [[ "$TRAVIS_OS_NAME" = "linux" && "$CC" = "gcc" ]]; then sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then npm install -g codecov; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install coveralls-lcov; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get -qq install lcov; fi
 before_script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt515/bin/qt515-env.sh; fi
-- "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
-- qmake -v
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /opt/qt515/bin/qt515-env.sh; fi
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
+  - qmake -v
 script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) codecov TESTARGS="--platform offscreen"; fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
-- qmake -Wall qtpass.pro
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then lrelease localization/localization_*; fi
-- make -j$(nproc)
-- make check TESTARGS="--platform offscreen"
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt main/QtPass.app; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/\[\!.*//' < README.contrib > README.clean; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pri | cut -d " " -f 6).dmg; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pri | cut -d " " -f 6); fi
-- fossa init
-- fossa init
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) coveralls TESTARGS="--platform offscreen"; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then qmake CONFIG+=coverage -Wall qtpass.pro; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc); fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j$(nproc) codecov TESTARGS="--platform offscreen"; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make distclean; fi
+  - qmake -Wall qtpass.pro
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then lrelease localization/localization_*; fi
+  - make -j$(nproc)
+  - make check TESTARGS="--platform offscreen"
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then macdeployqt main/QtPass.app; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md_FAQ.html/' < README.md > README.faq; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md_CONTRIBUTING.html/' < README.faq > README.contrib; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sed 's/\[\!.*//' < README.contrib > README.clean; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then appdmg appdmg.json qtpass-$(grep ^VERSION  qtpass.pri | cut -d " " -f 6).dmg; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export VERSION=$(grep ^VERSION  qtpass.pri | cut -d " " -f 6); fi
+  - fossa init
 notifications:
   irc:
     channels:
-    - chat.freenode.net#IJhack
+      - chat.freenode.net#IJhack
     on_success: change
     on_failure: always
 deploy:
@@ -82,4 +82,3 @@ deploy:
     tags: true
     condition: $TRAVIS_OS_NAME = osx && $CC = clang
   skip_cleanup: true
-
