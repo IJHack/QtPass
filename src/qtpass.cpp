@@ -374,7 +374,8 @@ void QtPass::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
   bool cleared = false;
   if (this->clippedText == clipboard->text(QClipboard::Selection)) {
-    clipboard->clear(QClipboard::Clipboard);
+    clipboard->clear(QClipboard::Selection);
+    clipboard->setText(QString(""), QClipboard::Selection);
     cleared = true;
   }
   if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
