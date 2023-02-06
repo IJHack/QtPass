@@ -48,14 +48,6 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
-          VALIDATE_ALL_CODEBASE: true
           # Change to 'master' if your main branch differs
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # The QT localization files are .ts
-          VALIDATE_TYPESCRIPT_ES: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
-          # Copy/Paste Detector disabled for now, should re-enable after refactoring
-          VALIDATE_JSCPD: false
-          # cpplint is disabled for now since Google style is far off from ours
-          VALIDATE_CPP: false
