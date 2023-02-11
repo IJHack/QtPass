@@ -76,6 +76,40 @@ On most unix systems all you need is:
 qmake && make && make install
 ```
 
+## Using profiles
+
+Profiles allow to group passwords. Each profile might use a different git repository and/or different gpg key.
+A typical use case is to separate personal and work passwords.
+
+> **Hint**<br>
+> Instead of using different git repositories for the various profiles passwords could be synchronized with different
+> branches from the same repository. Just clone the repository into the profile folders and checkout the related
+> branch.
+
+### Example
+
+The following commands set up two profile folders:
+
+```sh
+$ cd ~/.password-store/
+$ git clone https://github.com/vendor/personal-passwords personal && echo "personal/" >> .gitignore
+$ git clone https://github.com/company/group-passwords work && echo "work/" >> .gitignore
+$ pass init -p personal [personal GnuPG-ID] && git -C personal push
+$ pass init -p work [work GnuPG-ID] && git -C work push
+```
+
+**Note:**
+* Replace `[personal GnuPG-ID]` and `[work GnuPG-ID]` with the id from the related GnuPG key.
+* The parts `echo ... >> .gitignore` are just needed in case there is a git repository present in the base directory.
+
+Once the repositories and GnuPG-ID's have been defined the profiles can be set up in QtPass.
+
+### Links of interest
+* [Git Tools - Credential Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)
+* [Dealing with secrets](https://gist.github.com/maelvls/79d49740ce9208c26d6a1b10b0d95b5e)
+* [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)
+* [password-store](https://git.zx2c4.com/password-store/about/)
+
 ## Testing
 
 This is done with `make check`
