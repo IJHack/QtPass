@@ -229,17 +229,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd ett monospace teckensnitt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa filernas innehåll som det är</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen linjeomslutning</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
