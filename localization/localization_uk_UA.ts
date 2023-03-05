@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати моноширинний шрифт</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображати вміст файлів як є</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Без переносу рядків</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
@@ -192,7 +192,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Система:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="611"/>
@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1010"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати всі рядки, що починаються зі слова, після якого йде двокрапка, як поля в полях пароля, а не лише перелічені</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1013"/>
@@ -367,7 +367,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="604"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Будь ласка, встановіть GnuPG на вашу систему. &lt;br&gt;Встановіть &lt;strong&gt;gpg&lt;/strong&gt; використовуючи ваш улюблений пакетний менеджер&lt;br&gt;або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="631"/>
@@ -571,7 +571,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Експерт</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="238"/>
@@ -889,24 +889,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="524"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Шукаю: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="626"/>
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="627"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий файл для пароля: 
+(Буде розміщено в %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="663"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> та весь вміст?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="673"/>
