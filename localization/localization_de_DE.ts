@@ -73,28 +73,28 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Nichtproportionale Schriftart verwenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Den Inhalt der Dateien so anzeigen, wie er ist</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Zeilenumbruch</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Kennwortgenerierung:</translation>
+        <translation>Passwortgenerierung:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="278"/>
         <source>Password Length:</source>
-        <translation>Kennwortlänge:</translation>
+        <translation>Passwortlänge:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="340"/>
