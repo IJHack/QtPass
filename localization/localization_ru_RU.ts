@@ -612,12 +612,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="139"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Длина имени должна составлять не менее 5 символов.</translation>
+        <translation>Название должно содержать не менее 5 символов.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="147"/>
         <source>Invalid email</source>
-        <translation>Недоступный адрес эл. почты</translation>
+        <translation>Недействительный адрес электронной почты</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
