@@ -981,10 +981,9 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass — это графический интерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролей unix.&lt;/p&gt;\n
-&lt;p&gt;Если при работе с приложением возникли &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;
-&gt;проблемы&lt;/a&gt;, сообщите о них разработчикам.&lt;/p&gt;\n
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документация&lt;/a&gt;&lt;/p&gt;\n
+        <translation>&lt;p&gt;QtPass — это графический интерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролей unix.&lt;/p&gt;
+&lt;p&gt;Если при работе с приложением возникли &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблемы&lt;/a&gt;, сообщите о них разработчикам.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документация&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Исходный код&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
