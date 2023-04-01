@@ -270,7 +270,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="1010"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translatorcomment>Отображать все строки, начинающиеся со слова с двоеточием, как доп. поля, а не только перечисленные здесь</translatorcomment>
-        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь.</translation>
+        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1013"/>
@@ -405,7 +405,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="80"/>
         <source>qrencode needs to be installed</source>
-        <translation>Необходимо установить qrencode</translation>
+        <translation>необходимо установить qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="593"/>
@@ -476,9 +476,9 @@ email</translation>
         <source>login
 URL
 e-mail</source>
-        <translation>логин
-адрес
-е-почта</translation>
+        <translation>имя пользователя
+URL
+эл.почта</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1180,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation>М&amp;аксимизировать</translation>
+        <translation>&amp;Развернуть</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
