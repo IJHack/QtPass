@@ -345,7 +345,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation>Использовать первичный выбор</translation>
+        <translation>Использовать первоначальный выбор</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="143"/>
@@ -405,7 +405,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="80"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode должен быть установлен</translation>
+        <translation>Необходимо установить qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="593"/>
