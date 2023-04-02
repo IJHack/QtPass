@@ -559,7 +559,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Длина пароля не ограничена, а к его созданию следует подходить осмотрительно. С точки зрения безопасности, пароль для разблокировки ключа является одним из самых уязвимых элементов всей системы GnuPG (а также других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет секретным ключом.&lt;br/&gt;Не рекомендуется использовать обычные слова в качестве пароля, а также желательно использовать заглавные, строчные буквы и специальные символы.&lt;br/&gt;Хороший защищённый пароль  необходим для обеспечения безопасности использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Длина пароля не ограничена, а к его созданию следует подходить осмотрительно. С точки зрения безопасности, пароль для разблокировки ключа является одним из самых уязвимых элементов всей системы GnuPG (а также других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет секретным ключом.&lt;br/&gt;Не рекомендуется использовать обычные слова в качестве пароля, а также желательно использовать заглавные, строчные буквы и специальные символы.&lt;br/&gt;Хороший защищённый пароль необходим для обеспечения безопасности использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -612,12 +612,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="139"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Длина имени должна составлять не менее 5 символов.</translation>
+        <translation>Название должно содержать не менее 5 символов.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="147"/>
         <source>Invalid email</source>
-        <translation>Недоступный адрес эл. почты</translation>
+        <translation>Недействительный адрес электронной почты</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
