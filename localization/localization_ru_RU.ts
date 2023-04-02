@@ -270,7 +270,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="1010"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translatorcomment>Отображать все строки, начинающиеся со слова с двоеточием, как доп. поля, а не только перечисленные здесь</translatorcomment>
-        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь.</translation>
+        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1013"/>
@@ -395,7 +395,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="50"/>
         <source>System tray is not available</source>
-        <translation>Лоток системы недоступен</translation>
+        <translation>Системный лоток недоступен</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="75"/>
@@ -405,17 +405,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="80"/>
         <source>qrencode needs to be installed</source>
-        <translation>Необходимо установить qrencode</translation>
+        <translation>необходимо установить qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="593"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Пожалуйста, установите GnuPG в вашей системе. &lt;br&gt;Установить &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store, чтобы получить его. &lt;br&gt;Если вы уже сделали это, убедитесь, что вы начали его один раз и&lt;br&gt;нажмите &quot;Автоопределение&quot; в следующем диалоге.</translation>
+        <translation>Требуется приложение GnuPG. &lt;br&gt;Чтобы установить его, загрузите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store. &lt;br&gt;Если это уже было сделано, запустите его хотя бы один раз и &lt;br&gt;нажмите кнопку «Автоопределение» в следующем диалоге.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Пожалуйста, установите GnuPG на вашу систему.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store&lt;br&gt; или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;Скачать&lt;/a&gt; его с GnuPG.org</translation>
+        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; с помощью менеджера пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="432"/>
@@ -469,16 +469,16 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="994"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Шаблоны добавляют дополнительные поля в диалоге генерации пароля и в представлении пароля.</translation>
+        <translation>Шаблоны позволяют добавить дополнительные поля в диалоге создания паролей и области их просмотра.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1025"/>
         <source>login
 URL
 e-mail</source>
-        <translation>логин
-адрес
-е-почта</translation>
+        <translation>имя пользователя
+URL
+эл.почта</translation>
     </message>
 </context>
 <context>
@@ -508,14 +508,14 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
         <source>Check selected users!</source>
-        <translation>Отметьте выбранных пользователей!</translation>
+        <translation>Выберите пользователей!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ни один из выбранных ключей не имеет секретного ключа.
-Вы не сможете расшифровать ни один вновь добавленный пароль!</translation>
+Расшифровать новые пароли не удастся!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="245"/>
@@ -559,7 +559,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ограничений на длину пароля нет, и он должен быть выбран осмотрительно. С точки зрения безопасности, пароль для разблокировки секретного ключа -- это один из самых уязвимых элементов всей системы GnuPG (и других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет Вашим секретным ключом.&lt;br/&gt;В идеале, пароль не должен использовать словарных слов и должен включать заглавные и строчные буквы и специальные символы.&lt;br/&gt;Хороший пароль критически важен для безопасного использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Длина пароля не ограничена, а к его созданию следует подходить осмотрительно. С точки зрения безопасности, пароль для разблокировки ключа является одним из самых уязвимых элементов всей системы GnuPG (а также других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет секретным ключом.&lt;br/&gt;Не рекомендуется использовать обычные слова в качестве пароля, а также желательно использовать заглавные, строчные буквы и специальные символы.&lt;br/&gt;Хороший защищённый пароль  необходим для обеспечения безопасности использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="219"/>
@@ -607,7 +607,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="138"/>
         <source>Invalid name</source>
-        <translation>Неправильное имя</translation>
+        <translation>Недопустимое имя</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="139"/>
@@ -622,12 +622,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="148"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Адрес электронной почты, который вы ввели, не является действительным адресом электронной почты.</translation>
+        <translation>Введённый адрес электронной почты является недействительным.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="163"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Эта операция может занять несколько минут.&lt;br /&gt;Это хорошая идея, чтобы выполнить некоторые другие действия (тип на клавиатуре, переместить мышь, использовать диски) во время премьер поколения; это дает генератору случайных чисел больше шансов получить достаточно энтропии.</translation>
+        <translation>Эта операция может занять несколько минут.&lt;br /&gt; Рекомендуется выполнить какие-нибудь другие действия (набрать текст на клавиатуре, переместить мышь, использовать диски) во время генерации основного кода, это позволит генератору случайных чисел получить наибольшее количество разнообразных данных.</translation>
     </message>
 </context>
 <context>
@@ -681,7 +681,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>Manage who can read password in folder</source>
-        <translation>Выбрать, кто может просматривать пароли в хранилище</translation>
+        <translation>Управление доступом к хранилищу паролей</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
@@ -697,7 +697,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation>Настройки</translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
@@ -937,17 +937,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="663"/>
         <source> and the whole content?</source>
-        <translation> и все содержание?</translation>
+        <translation> и всё содержимое?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="673"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> и все содержание? &lt;br&gt;&lt;strong&gt;Внимание: в данной папке есть неожиданные файлы, проверьте их до продолжения.&lt;/strong&gt;</translation>
+        <translation> и всё содержимое? &lt;br&gt;&lt;strong&gt;Внимание: в этой папке найдены неожиданные файлы, проверьте их перед тем, как продолжить.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Open folder with file manager</source>
-        <translation>Открытая папка с диспетчером файлов</translation>
+        <translation>Открыть папку в диспетчере файлов</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="953"/>
@@ -981,8 +981,8 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass - это графический интерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролей unix.&lt;/p&gt;.
-&lt;p&gt; Пожалуйста, сообщите о любом &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблемах&lt;/a&gt;, которые могут возникнуть у вас с этой программой.&lt;/p&gt;.
+        <translation>&lt;p&gt;QtPass — это графический интерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролей unix.&lt;/p&gt;
+&lt;p&gt;Если при работе с приложением возникли &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблемы&lt;/a&gt;, сообщите о них разработчикам.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документация&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Исходный код&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -997,7 +997,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/pass.cpp" line="103"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Не могу сгенерировать пароль: набор допустимых символов задан пустым в Настройках!</translation>
+        <translation>Невозможно сгенерировать пароль: в параметрах не задан набор допустимых символов!</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1098,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="243"/>
         <source>QProcess::FailedToStart</source>
-        <translation>QProsess::Не удалось запустить</translation>
+        <translation>QProcess::Не удалось запустить</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
@@ -1108,22 +1108,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="249"/>
         <source>QProcess::Timedout</source>
-        <translation>QProsess::Превышено время ожидания</translation>
+        <translation>QProcess::Превышено время ожидания</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="252"/>
         <source>QProcess::ReadError</source>
-        <translation>QProsess::Ошибка чтения</translation>
+        <translation>QProcess::Ошибка чтения</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="255"/>
         <source>QProcess::WriteError</source>
-        <translation>QProsess::Ошибка записи</translation>
+        <translation>QProcess::Ошибка записи</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>QProcess::UnknownError</source>
-        <translation>QProsess::Неизвестная ошибка</translation>
+        <translation>QProcess::Неизвестная ошибка</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="385"/>
@@ -1164,7 +1164,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation>Ш&amp;оу</translation>
+        <translation>&amp;Показать</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
@@ -1174,12 +1174,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation>&amp;Минимизировать</translation>
+        <translation>&amp;Свернуть</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation>М&amp;аксимизировать</translation>
+        <translation>&amp;Развернуть</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
@@ -1200,10 +1200,10 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Выберите, какие пользователи должны иметь возможность расшифровывать пароли, хранящиеся в этой папке.
-Примечание. Существующие файлы не будут изменены и сохранят старые разрешения до тех пор, пока вы их не отредактируете.
-Синие записи имеют секретный ключ, выберите один из них, чтобы иметь возможность расшифровать.
-Красные записи недействительны, вы не сможете зашифровать их.</translation>
+        <translation>Выберите пользователей, которые будут иметь возможность расшифровывать пароли, хранящиеся в этой папке.
+Примечание: Существующие файлы не будут изменены и сохранят старые права доступа до тех пор, пока вы их не отредактируете.
+Записи синего цвета имеют секретный ключ; выберите одну из них, чтобы расшифровывать пароли.
+Записи красного цвета недействительны, их нельзя зашифровать.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="65"/>
@@ -1250,7 +1250,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation>Ключ не найден в хранилище ключей GPG</translation>
+        <translation>Ключ не найден в наборе ключей</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="152"/>
