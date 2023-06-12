@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Use a monospace font</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Display the files content as-is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>No line wrapping</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
