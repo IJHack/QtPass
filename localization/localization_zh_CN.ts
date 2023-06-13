@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="859"/>
         <source>Profiles</source>
-        <translation>用户</translation>
+        <translation>配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
@@ -843,7 +843,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="626"/>
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>New file</source>
-        <translation>新密码</translation>
+        <translation>新文件</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="627"/>
@@ -904,7 +904,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="309"/>
         <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Add password</source>
-        <translation>新密码</translation>
+        <translation>添加密码</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1000"/>
@@ -1034,7 +1034,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>Character Set:</source>
-        <translation>所用字符：</translation>
+        <translation>字符集：</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="110"/>
