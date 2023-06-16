@@ -79,6 +79,7 @@ qmake && make && make install
 ## Using profiles
 
 Profiles allow to group passwords. Each profile might use a different git repository and/or different gpg key.
+Each profile also can be associated with a pass store singing key to verify the detached .gpg-id signature (pass only).
 A typical use case is to separate personal and work passwords.
 
 > **Hint**<br>

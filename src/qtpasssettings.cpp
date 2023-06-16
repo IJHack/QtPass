@@ -58,13 +58,18 @@ void QtPassSettings::setPasswordConfiguration(
                           config.Characters[PasswordConfiguration::CUSTOM]);
 }
 
-QHash<QString, QString> QtPassSettings::getProfiles() {
+QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
   getInstance()->beginGroup(SettingsConstants::profile);
 
-  QStringList childrenKeys = getInstance()->childKeys();
-  QHash<QString, QString> profiles;
-  foreach (QString key, childrenKeys) {
-    profiles.insert(key, getInstance()->value(key).toString());
+  QStringList childGroups = getInstance()->childGroups();
+  QHash<QString, QHash<QString, QString>> profiles;
+  foreach (QString group, childGroups) {
+    QHash<QString, QString> profile;
+    profile.insert("path", getInstance()->value(group + "/path").toString());
+    profile.insert("signingKey",
+                   getInstance()->value(group + "/signingKey").toString());
+    // profiles.insert(group, getInstance()->value(group).toString());
+    profiles.insert(group, profile);
   }
 
   getInstance()->endGroup();
@@ -72,13 +77,14 @@ QHash<QString, QString> QtPassSettings::getProfiles() {
   return profiles;
 }
 
-void QtPassSettings::setProfiles(const QHash<QString, QString> &profiles) {
+void QtPassSettings::setProfiles(const QHash<QString, QHash<QString, QString>> &profiles) {
   getInstance()->remove(SettingsConstants::profile);
   getInstance()->beginGroup(SettingsConstants::profile);
 
-  QHash<QString, QString>::const_iterator i = profiles.begin();
+  QHash<QString, QHash<QString, QString>>::const_iterator i = profiles.begin();
   for (; i != profiles.end(); ++i) {
-    getInstance()->setValue(i.key(), i.value());
+    getInstance()->setValue(i.key() + "/path", i.value().value("path"));
+    getInstance()->setValue(i.key() + "/signingKey", i.value().value("signingKey"));
   }
 
   getInstance()->endGroup();
@@ -301,6 +307,15 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
 }
 void QtPassSettings::setPassStore(const QString &passStore) {
   getInstance()->setValue(SettingsConstants::passStore, passStore);
+}
+
+QString QtPassSettings::getPassSigningKey(const QString &defaultValue) {
+  return getInstance()
+      ->value(SettingsConstants::passSigningKey, defaultValue)
+      .toString();
+}
+void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
+  getInstance()->setValue(SettingsConstants::passSigningKey, passSigningKey);
 }
 
 void QtPassSettings::initExecutables() {

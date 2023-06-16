@@ -108,6 +108,10 @@ public:
   getPassStore(const QString &defaultValue = QVariant().toString());
   static void setPassStore(const QString &passStore);
 
+  static QString
+  getPassSigningKey(const QString &defaultValue = QVariant().toString());
+  static void setPassSigningKey(const QString &passSigningKey);
+
   static void initExecutables();
   static QString
   getPassExecutable(const QString &defaultValue = QVariant().toString());
@@ -210,8 +214,8 @@ public:
   isTemplateAllFields(const bool &defaultValue = QVariant().toBool());
   static void setTemplateAllFields(const bool &templateAllFields);
 
-  static QHash<QString, QString> getProfiles();
-  static void setProfiles(const QHash<QString, QString> &profiles);
+  static QHash<QString, QHash<QString, QString>> getProfiles();
+  static void setProfiles(const QHash<QString, QHash<QString, QString>> &profiles);
 
   static Pass *getPass();
   static RealPass *getRealPass();

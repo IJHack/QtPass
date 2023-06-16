@@ -242,8 +242,29 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR=");
+  // put PASSWORD_STORE_SIGNING_KEY in env
+  QStringList envSigningKey = env.filter("PASSWORD_STORE_SIGNING_KEY=");
+  QString currentSigningKey = QtPassSettings::getPassSigningKey();
+  if (envSigningKey.isEmpty()) {
+    if (!currentSigningKey.isEmpty()) {
+      // dbg()<< "Added
+      // PASSWORD_STORE_SIGNING_KEY with" + currentSigningKey;
+      env.append("PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  } else {
+    if (currentSigningKey.isEmpty()) {
+      // dbg() << "Removed
+      // PASSWORD_STORE_SIGNING_KEY";
+      env.removeAll(envSigningKey.first());
+    } else {
+      // dbg()<< "Update
+      // PASSWORD_STORE_SIGNING_KEY with " + currentSigningKey;
+      env.replaceInStrings(envSigningKey.first(),
+        "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  }
   // put PASSWORD_STORE_DIR in env
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   if (store.isEmpty()) {
     // dbg()<< "Added
     // PASSWORD_STORE_DIR";
