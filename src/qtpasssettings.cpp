@@ -60,9 +60,21 @@ void QtPassSettings::setPasswordConfiguration(
 
 QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
   getInstance()->beginGroup(SettingsConstants::profile);
+  QHash<QString, QHash<QString, QString>> profiles;
+
+  // migration from version <= v1.3.2: profiles datastructure
+  QStringList childKeys = getInstance()->childKeys();
+  if (!childKeys.empty()) {
+    foreach (QString key, childKeys) {
+      QHash<QString, QString> profile;
+      profile.insert("path", getInstance()->value(key).toString());
+      profile.insert("signingKey", "");
+      profiles.insert(key, profile);
+    }
+  }
+  // /migration from version <= v1.3.2
 
   QStringList childGroups = getInstance()->childGroups();
-  QHash<QString, QHash<QString, QString>> profiles;
   foreach (QString group, childGroups) {
     QHash<QString, QString> profile;
     profile.insert("path", getInstance()->value(group + "/path").toString());
