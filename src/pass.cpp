@@ -260,7 +260,7 @@ void Pass::updateEnv() {
       // dbg()<< "Update
       // PASSWORD_STORE_SIGNING_KEY with " + currentSigningKey;
       env.replaceInStrings(envSigningKey.first(),
-        "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+                           "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
     }
   }
   // put PASSWORD_STORE_DIR in env

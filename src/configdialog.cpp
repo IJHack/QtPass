@@ -97,7 +97,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useTemplate(QtPassSettings::isUseTemplate());
 
   ui->profileTable->verticalHeader()->hide();
-  ui->profileTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+  ui->profileTable->horizontalHeader()->setSectionResizeMode(
+      1, QHeaderView::Stretch);
   ui->label->setText(ui->label->text() + VERSION);
   ui->comboBoxClipboard->clear();
 
@@ -474,12 +475,11 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
   while (i.hasNext()) {
     i.next();
     if (!i.value().isEmpty() && !i.key().isEmpty()) {
+      ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
+      ui->profileTable->setItem(n, 1,
+                                new QTableWidgetItem(i.value().value("path")));
       ui->profileTable->setItem(
-        n, 0, new QTableWidgetItem(i.key()));
-      ui->profileTable->setItem(
-        n, 1, new QTableWidgetItem(i.value().value("path")));
-      ui->profileTable->setItem(
-        n, 2, new QTableWidgetItem(i.value().value("signingKey")));
+          n, 2, new QTableWidgetItem(i.value().value("signingKey")));
       // dbg()<< "naam:" + i.key();
       if (i.key() == currentProfile)
         ui->profileTable->selectRow(n);

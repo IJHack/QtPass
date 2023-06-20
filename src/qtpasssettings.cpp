@@ -89,14 +89,16 @@ QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
   return profiles;
 }
 
-void QtPassSettings::setProfiles(const QHash<QString, QHash<QString, QString>> &profiles) {
+void QtPassSettings::setProfiles(
+    const QHash<QString, QHash<QString, QString>> &profiles) {
   getInstance()->remove(SettingsConstants::profile);
   getInstance()->beginGroup(SettingsConstants::profile);
 
   QHash<QString, QHash<QString, QString>>::const_iterator i = profiles.begin();
   for (; i != profiles.end(); ++i) {
     getInstance()->setValue(i.key() + "/path", i.value().value("path"));
-    getInstance()->setValue(i.key() + "/signingKey", i.value().value("signingKey"));
+    getInstance()->setValue(i.key() + "/signingKey",
+                            i.value().value("signingKey"));
   }
 
   getInstance()->endGroup();

@@ -215,7 +215,8 @@ public:
   static void setTemplateAllFields(const bool &templateAllFields);
 
   static QHash<QString, QHash<QString, QString>> getProfiles();
-  static void setProfiles(const QHash<QString, QHash<QString, QString>> &profiles);
+  static void
+  setProfiles(const QHash<QString, QHash<QString, QString>> &profiles);
 
   static Pass *getPass();
   static RealPass *getRealPass();

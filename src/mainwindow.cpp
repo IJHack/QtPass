@@ -766,7 +766,8 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  QHash<QString, QHash<QString, QString>> profiles = QtPassSettings::getProfiles();
+  QHash<QString, QHash<QString, QString>> profiles =
+      QtPassSettings::getProfiles();
 
   if (profiles.isEmpty()) {
     ui->profileWidget->hide();
