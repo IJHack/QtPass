@@ -24,6 +24,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_he_IL.ts \
                     ../localization/localization_hu_HU.ts \
                     ../localization/localization_it_IT.ts \
+                    ../localization/localization_ko_KO.ts \
                     ../localization/localization_lb_LU.ts \
                     ../localization/localization_nb_NO.ts \
                     ../localization/localization_nl_BE.ts \
