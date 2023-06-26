@@ -172,8 +172,13 @@ void ImitatePass::Remove(QString file, bool isDir) {
  * path
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
+#else
+  QStringList signingKeys =
+      QtPassSettings::getPassSigningKey().split(" ", QString::SkipEmptyParts);
+#endif
   QString gpgIdSigFile = path + ".gpg-id.sig";
   bool addSigFile = false;
   if (!signingKeys.isEmpty()) {
@@ -267,8 +272,13 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @return was verification succesful?
  */
 bool ImitatePass::verifyGpgIdFile(const QString &file) {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
+#else
+  QStringList signingKeys =
+      QtPassSettings::getPassSigningKey().split(" ", QString::SkipEmptyParts);
+#endif
   if (signingKeys.isEmpty())
     return true;
   QString out;
