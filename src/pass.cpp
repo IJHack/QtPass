@@ -279,27 +279,38 @@ void Pass::updateEnv() {
 }
 
 /**
+ * @brief Pass::getGpgIdPath return gpgid file path for some file (folder).
+ * @param for_file which file (folder) would you like the gpgid file path for.
+ * @return path to the gpgid file.
+ */
+QString Pass::getGpgIdPath(QString for_file) {
+  QDir gpgIdDir(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())
+                              ? for_file
+                              : QtPassSettings::getPassStore() + for_file)
+                    .absoluteDir());
+  bool found = false;
+  while (gpgIdDir.exists() &&
+         gpgIdDir.absolutePath().startsWith(QtPassSettings::getPassStore())) {
+    if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
+      found = true;
+      break;
+    }
+    if (!gpgIdDir.cdUp())
+      break;
+  }
+  QString gpgIdPath(found ? gpgIdDir.absoluteFilePath(".gpg-id")
+                          : QtPassSettings::getPassStore() + ".gpg-id");
+
+  return gpgIdPath;
+}
+
+/**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
 QStringList Pass::getRecipientList(QString for_file) {
-  QDir gpgIdPath(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())
-                               ? for_file
-                               : QtPassSettings::getPassStore() + for_file)
-                     .absoluteDir());
-  bool found = false;
-  while (gpgIdPath.exists() &&
-         gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {
-    if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
-      found = true;
-      break;
-    }
-    if (!gpgIdPath.cdUp())
-      break;
-  }
-  QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id")
-                    : QtPassSettings::getPassStore() + ".gpg-id");
+  QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return QStringList();
   QStringList recipients;

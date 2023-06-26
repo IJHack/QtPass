@@ -89,6 +89,12 @@ void ImitatePass::OtpGenerate(QString file) {
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
+  QString gpgIdPath = Pass::getGpgIdPath(file);
+  if (!verifyGpgIdFile(gpgIdPath)) {
+    emit critical(tr("Check .gpgid file signature!"),
+                  tr("Signature for %1 is invalid.").arg(gpgIdPath));
+    return;
+  }
   transactionHelper trans(this, PASS_INSERT);
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
@@ -166,6 +172,33 @@ void ImitatePass::Remove(QString file, bool isDir) {
  * path
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
+  QStringList signingKeys =
+      QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
+  QString gpgIdSigFile = path + ".gpg-id.sig";
+  bool addSigFile = false;
+  if (!signingKeys.isEmpty()) {
+    QString out;
+    QStringList args =
+        QStringList{"--status-fd=1", "--list-secret-keys"} + signingKeys;
+    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+    bool found = false;
+    for (auto &key : signingKeys) {
+      if (out.contains("[GNUPG:] KEY_CONSIDERED " + key)) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      emit critical(tr("No signing key!"),
+                    tr("None of the secret signing keys is available.\n"
+                       "You will not be able to change the user list!"));
+      return;
+    }
+    QFileInfo checkFile(gpgIdSigFile);
+    if (!checkFile.exists() || !checkFile.isFile())
+      addSigFile = true;
+  }
+
   QString gpgIdFile = path + ".gpg-id";
   QFile gpgId(gpgIdFile);
   bool addFile = false;
@@ -196,6 +229,20 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     return;
   }
 
+  if (!signingKeys.isEmpty()) {
+    QStringList args;
+    for (auto &key : signingKeys) {
+      args.append(QStringList{"--default-key", key});
+    }
+    args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
+    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args);
+    if (!verifyGpgIdFile(gpgIdFile)) {
+      emit critical(tr("Check .gpgid file signature!"),
+                    tr("Signature for %1 is invalid.").arg(gpgIdFile));
+      return;
+    }
+  }
+
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
       !QtPassSettings::getGitExecutable().isEmpty()) {
     if (addFile)
@@ -203,8 +250,44 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     QString commitPath = gpgIdFile;
     commitPath.replace(QRegularExpression("\\.gpg$"), "");
     GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
+    if (!signingKeys.isEmpty()) {
+      if (addSigFile)
+        executeGit(GIT_ADD, {"add", pgit(gpgIdSigFile)});
+      commitPath = gpgIdSigFile;
+      commitPath.replace(QRegularExpression("\\.gpg$"), "");
+      GitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
+    }
   }
   reencryptPath(path);
+}
+
+/**
+ * @brief ImitatePass::verifyGpgIdFile verify detached gpgid file signature.
+ * @param file which gpgid file.
+ * @return was verification succesful?
+ */
+bool ImitatePass::verifyGpgIdFile(const QString &file) {
+  QStringList signingKeys =
+      QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
+  if (signingKeys.isEmpty())
+    return true;
+  QString out;
+  QStringList args =
+      QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
+  exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  QRegularExpression re(
+      "^\\[GNUPG:\\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})$",
+      QRegularExpression::MultilineOption);
+  QRegularExpressionMatch m = re.match(out);
+  if (!m.hasMatch())
+    return false;
+  QStringList fingerprints = m.capturedTexts();
+  fingerprints.removeFirst();
+  for (auto &key : signingKeys) {
+    if (fingerprints.contains(key))
+      return true;
+  }
+  return false;
 }
 
 /**
@@ -252,10 +335,21 @@ void ImitatePass::reencryptPath(const QString &dir) {
   QDir currentDir;
   QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
                         QDirIterator::Subdirectories);
+  QStringList gpgIdFilesVerified;
   QStringList gpgId;
   while (gpgFiles.hasNext()) {
     QString fileName = gpgFiles.next();
     if (gpgFiles.fileInfo().path() != currentDir.path()) {
+      QString gpgIdPath = Pass::getGpgIdPath(fileName);
+      if (!gpgIdFilesVerified.contains(gpgIdPath)) {
+        if (!verifyGpgIdFile(gpgIdPath)) {
+          emit critical(tr("Check .gpgid file signature!"),
+                        tr("Signature for %1 is invalid.").arg(gpgIdPath));
+          emit endReencryptPath();
+          return;
+        }
+        gpgIdFilesVerified.append(gpgIdPath);
+      }
       gpgId = getRecipientList(fileName);
       gpgId.sort();
     }
