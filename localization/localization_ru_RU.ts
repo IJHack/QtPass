@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Настройка</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <source>gpg</source>
@@ -179,7 +179,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation>Настройка</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="312"/>
@@ -697,7 +697,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation>Настройка</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
