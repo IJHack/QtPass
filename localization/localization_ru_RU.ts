@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Настройка</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <source>gpg</source>
@@ -179,7 +179,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation>Настройка</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="312"/>
@@ -365,17 +365,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="367"/>
         <source>Alphabetical</source>
-        <translation>Алфавитном</translation>
+        <translation>Буквы</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="372"/>
         <source>Alphanumerical</source>
-        <translation>Альфанумерический</translation>
+        <translation>Буквы и цифры</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>Custom</source>
-        <translation>Вручную</translation>
+        <translation>Свой вариант</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="554"/>
@@ -487,7 +487,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="306"/>
         <source>Can not edit</source>
-        <translation>Невозможно изменить содержимое</translation>
+        <translation>Не удалось изменить содержимое</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="97"/>
@@ -697,12 +697,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <source>Configuration</source>
-        <translation>Настройка</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <source>Config</source>
-        <translation>Настройки</translation>
+        <translation>Конфигурация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
@@ -922,7 +922,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Создание OTP и копирование в буфер обмена</translation>
+        <translation>Создать OTP и скопировать его в буфер обмена</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
@@ -1031,17 +1031,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="115"/>
         <source>Alphabetical</source>
-        <translation>Алфавитном</translation>
+        <translation>Буквы</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="120"/>
         <source>Alphanumerical</source>
-        <translation>Альфанумерический</translation>
+        <translation>Буквы и цифры</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="125"/>
         <source>Custom</source>
-        <translation>Пользовательский</translation>
+        <translation>Свой вариант</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="139"/>
@@ -1227,7 +1227,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="72"/>
         <source>Show unusable keys</source>
-        <translation>Показать непригодные ключи</translation>
+        <translation>Показать неиспользуемые ключи</translation>
     </message>
     <message>
         <source>Can not get key list</source>
