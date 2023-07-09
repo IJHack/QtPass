@@ -284,13 +284,15 @@ void Pass::updateEnv() {
  * @return path to the gpgid file.
  */
 QString Pass::getGpgIdPath(QString for_file) {
-  QDir gpgIdDir(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())
-                              ? for_file
-                              : QtPassSettings::getPassStore() + for_file)
-                    .absoluteDir());
+  QString passStore =
+      QDir::fromNativeSeparators(QtPassSettings::getPassStore());
+  QDir gpgIdDir(
+      QFileInfo(QDir::fromNativeSeparators(for_file).startsWith(passStore)
+                    ? for_file
+                    : QtPassSettings::getPassStore() + for_file)
+          .absoluteDir());
   bool found = false;
-  while (gpgIdDir.exists() &&
-         gpgIdDir.absolutePath().startsWith(QtPassSettings::getPassStore())) {
+  while (gpgIdDir.exists() && gpgIdDir.absolutePath().startsWith(passStore)) {
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
       found = true;
       break;

@@ -286,7 +286,7 @@ bool ImitatePass::verifyGpgIdFile(const QString &file) {
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
   exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
   QRegularExpression re(
-      "^\\[GNUPG:\\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})$",
+      "^\\[GNUPG:\\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\\r?$",
       QRegularExpression::MultilineOption);
   QRegularExpressionMatch m = re.match(out);
   if (!m.hasMatch())
