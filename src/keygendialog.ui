@@ -240,8 +240,8 @@
 #      first test version please comment
 #
 %echo Generating a default key
-Key-Type: default
-Subkey-Type: default
+Key-Type: RSA
+Subkey-Type: RSA
 Name-Real:
 Name-Comment: QtPass
 Name-Email:
