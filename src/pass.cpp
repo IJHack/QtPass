@@ -229,6 +229,9 @@ void Pass::finished(int id, int exitCode, const QString &out,
   case PASS_COPY:
     emit finishedCopy(out, err);
     break;
+  case GPG_GENKEYS:
+    emit finishedGenerateGPGKeys(out, err);
+    break;
   default:
 #ifdef QT_DEBUG
     dbg() << "Unhandled process type" << pid;
