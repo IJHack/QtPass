@@ -1,6 +1,8 @@
 #include "pass.h"
 #include "qtpasssettings.h"
-#include "util.h"
+#include <QDir>
+#include <QRegularExpression>
+#include <QRandomGenerator>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -81,12 +83,12 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     if (QtPassSettings::isUseSymbols())
       args.append("--symbols");
     args.append(QString::number(length));
-    QString p_out;
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
     if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
-                             &passwd) == 0)
-      passwd.remove(QRegularExpression("[\\n\\r]"));
-    else {
+                             &passwd) == 0) {
+      static const QRegularExpression literalNewLines{"[\\n\\r]"};
+      passwd.remove(literalNewLines);
+    } else {
       passwd.clear();
 #ifdef QT_DEBUG
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
@@ -130,7 +132,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
-  foreach (QString keystring, keystrings) {
+  for (const QString &keystring : qAsConst(keystrings)) {
     if (!keystring.isEmpty()) {
       args.append(keystring);
     }
@@ -139,15 +141,14 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
       0)
     return users;
+  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList keys =
-      p_out.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  const QStringList keys = p_out.split(newLines, Qt::SkipEmptyParts);
 #else
-  QStringList keys =
-      p_out.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  const QStringList keys = p_out.split(newLines, QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
-  foreach (QString key, keys) {
+  for (const QString &key : keys) {
     QStringList props = key.split(':');
     if (props.size() < 10)
       continue;
@@ -319,19 +320,8 @@ quint32 Pass::boundedRandom(quint32 bound) {
   quint32 randval;
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
-  static int fd = -1;
-  if (fd == -1) {
-    assert((fd = open("/dev/urandom", O_RDONLY)) >= 0);
-  }
-#endif
-
   do {
-#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
-    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));
-#else
     randval = QRandomGenerator::system()->generate();
-#endif
   } while (randval < max_mod_bound);
 
   return randval % bound;

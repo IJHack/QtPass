@@ -11,8 +11,6 @@
 class ImitatePass : public Pass, private simpleTransaction {
   Q_OBJECT
 
-  bool removeDir(const QString &dirName);
-
   void GitCommit(const QString &file, const QString &msg);
 
   void executeGit(PROCESS id, const QStringList &args,

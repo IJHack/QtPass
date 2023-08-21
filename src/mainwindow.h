@@ -16,10 +16,8 @@ class SingleApplication;
 #endif
 
 #ifdef __APPLE__
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 // http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
 void qt_set_sequence_auto_mnemonic(bool b);
-#endif
 #endif
 
 namespace Ui {

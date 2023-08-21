@@ -194,3 +194,14 @@ void Util::copyDir(const QString &src, const QString &dest) {
                 dest + QDir::separator() + file);
   }
 }
+
+const QRegularExpression &Util::endsWithGpg() {
+  static const QRegularExpression expr{"\\.gpg$"};
+  return expr;
+}
+
+const QRegularExpression &Util::protocolRegex() {
+  static const QRegularExpression regex{
+      "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"};
+  return regex;
+}

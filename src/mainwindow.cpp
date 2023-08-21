@@ -6,14 +6,12 @@
 
 #include "configdialog.h"
 #include "filecontent.h"
-#include "keygendialog.h"
 #include "passworddialog.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
-#include "settingsconstants.h"
 #include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
@@ -114,13 +112,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initToolBarButtons();
   initStatusBar();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
   ui->lineEdit->setClearButtonEnabled(true);
-#endif
 
   setUiElementsEnabled(true);
 
-  QRandomGenerator(static_cast<uint>(QTime::currentTime().msec()));
   QTimer::singleShot(10, this, SLOT(focusInput()));
 
   ui->lineEdit->setText(searchText);
@@ -325,7 +320,7 @@ QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
-    filePath.replace(QRegularExpression("\\.gpg$"), "");
+    filePath.replace(Util::endsWithGpg(), "");
   }
   return filePath;
 }
@@ -542,7 +537,7 @@ void MainWindow::onTimeoutSearch() {
     deselect();
   }
 
-  query.replace(QRegularExpression(" "), ".*");
+  query.replace(QStringLiteral(" "), ".*");
   QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
   proxyModel.setFilterRegularExpression(regExp);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
@@ -681,8 +676,7 @@ void MainWindow::onDelete() {
   if (QMessageBox::question(
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
           tr("Are you sure you want to delete %1%2?")
-              .arg(QDir::separator() + file)
-              .arg(isDir ? dirMessage : "?"),
+              .arg(QDir::separator() + file, isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
     return;
 
@@ -800,7 +794,7 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 
   QtPassSettings::setProfile(name);
 
-  QtPassSettings::setPassStore(QtPassSettings::getProfiles()[name]);
+  QtPassSettings::setPassStore(QtPassSettings::getProfiles().value(name));
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
   QtPassSettings::getPass()->updateEnv();
@@ -1157,10 +1151,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
-    trimmedValue.replace(
-        QRegularExpression(
-            "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-        R"(<a href="\1">\1</a>)");
+    trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
     line->setText(trimmedValue);
     line->setReadOnly(true);
     line->setStyleSheet(lineStyle);

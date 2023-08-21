@@ -1,7 +1,9 @@
 #include "storemodel.h"
 #include "qtpasssettings.h"
 
+#include "util.h"
 #include <QDebug>
+#include <QFileSystemModel>
 #include <QMessageBox>
 #include <QMimeData>
 #include <QRegularExpression>
@@ -68,7 +70,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
     QString path = fs->filePath(useIndex);
     path = QDir(store).relativeFilePath(path);
-    path.replace(QRegularExpression("\\.gpg$"), "");
+    path.replace(Util::endsWithGpg(), "");
     retVal = path.contains(filterRegularExpression());
   }
   return retVal;
@@ -101,7 +103,7 @@ QVariant StoreModel::data(const QModelIndex &index, int role) const {
 
   if (role == Qt::DisplayRole) {
     QString name = initial_value.toString();
-    name.replace(QRegularExpression("\\.gpg$"), "");
+    name.replace(Util::endsWithGpg(), "");
     initial_value.setValue(name);
   }
 
@@ -251,11 +253,9 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
       this->index(parent.row(), parent.column(), parent.parent());
   QFileInfo destFileinfo = fs->fileInfo(mapToSource(destIndex));
   QFileInfo srcFileInfo = QFileInfo(info.path);
-  QDir qdir;
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
   if (info.isDir) {
-    QDir srcDir = QDir(info.path);
     // dropped dir onto dir
     if (destFileinfo.isDir()) {
       QDir destDir = QDir(cleanedDest).filePath(srcFileInfo.fileName());
@@ -278,7 +278,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
       // dropped file onto a file
       int answer = QMessageBox::question(
           nullptr, tr("force overwrite?"),
-          tr("overwrite %1 with %2?").arg(cleanedDest).arg(cleanedSrc),
+          tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
           QMessageBox::Yes | QMessageBox::No);
       bool force = answer == QMessageBox::Yes;
       if (action == Qt::MoveAction) {

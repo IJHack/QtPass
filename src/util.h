@@ -4,6 +4,7 @@
 #include "storemodel.h"
 #include <QFileSystemModel>
 #include <QProcessEnvironment>
+#include <QRegularExpression>
 #include <QString>
 
 class StoreModel;
@@ -22,6 +23,8 @@ public:
                         const QFileSystemModel &model,
                         const StoreModel &storeModel);
   static void copyDir(const QString &src, const QString &dest);
+  static const QRegularExpression &endsWithGpg();
+  static const QRegularExpression &protocolRegex();
 
 private:
   static void initialiseEnvironment();

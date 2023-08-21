@@ -11,13 +11,6 @@
 #include <cassert>
 #include <map>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-#include <QRandomGenerator>
-#else
-#include <fcntl.h>
-#include <unistd.h>
-#endif
-
 /*!
     \class Pass
     \brief Acts as an abstraction for pass or pass imitation
