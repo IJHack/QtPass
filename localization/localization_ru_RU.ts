@@ -640,7 +640,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation>Git push</translation>
+        <translation>Отправить изменения в Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -692,7 +692,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation>Git pull</translation>
+        <translation>Получить данные из Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1062,7 +1062,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation>Генерирую ключевую пару GPG</translation>
+        <translation>Создание пары ключей GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
@@ -1085,7 +1085,7 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="227"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav непредвиденно завершился
+        <translation>fusedav неожиданно завершился
 </translation>
     </message>
     <message>
