@@ -88,8 +88,7 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList lines = expert.split(newLines, Qt::SkipEmptyParts);
 #else
-  const QStringList lines =
-      expert.split(newLines, QString::SkipEmptyParts);
+  const QStringList lines = expert.split(newLines, QString::SkipEmptyParts);
 #endif
   for (QString line : lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);

@@ -795,7 +795,8 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 
   QtPassSettings::setProfile(name);
 
-  QtPassSettings::setPassStore(QtPassSettings::getProfiles().value(name).value("path"));
+  QtPassSettings::setPassStore(
+      QtPassSettings::getProfiles().value(name).value("path"));
   QtPassSettings::setPassSigningKey(
       QtPassSettings::getProfiles().value(name).value("signingKey"));
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
