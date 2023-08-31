@@ -1,8 +1,8 @@
 #include "pass.h"
 #include "qtpasssettings.h"
 #include <QDir>
-#include <QRegularExpression>
 #include <QRandomGenerator>
+#include <QRegularExpression>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
