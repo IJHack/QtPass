@@ -11,7 +11,7 @@ FileContent FileContent::parse(const QString &fileContent,
   QString password = lines.takeFirst();
   QStringList remainingData, remainingDataDisplay;
   NamedValues namedValues;
-  for (const QString &line : lines) {
+  for (const QString &line : qAsConst(lines)) {
     if (line.contains(":")) {
       int colon = line.indexOf(':');
       QString name = line.left(colon);

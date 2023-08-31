@@ -129,13 +129,13 @@ void PasswordDialog::setPassword(QString password) {
   QWidget *previous = ui->checkBoxShow;
   // first set templated values
   NamedValues namedValues = fileContent.getNamedValues();
-  for (QLineEdit *line : templateLines) {
+  for (QLineEdit *line : qAsConst(templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
     previous = line;
   }
   // show remaining values (if there are)
   otherLines.clear();
-  for (const NamedValue &nv : namedValues) {
+  for (const NamedValue &nv : qAsConst(namedValues)) {
     auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);

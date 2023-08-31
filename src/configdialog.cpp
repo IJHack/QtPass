@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
+#include "util.h"
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
@@ -304,7 +305,7 @@ QString ConfigDialog::selectExecutable() {
   dialog.setFileMode(QFileDialog::ExistingFile);
   dialog.setOption(QFileDialog::ReadOnly);
   if (dialog.exec())
-    return dialog.selectedFiles().first();
+    return dialog.selectedFiles().constFirst();
 
   return QString();
 }
@@ -319,7 +320,7 @@ QString ConfigDialog::selectFolder() {
   dialog.setFilter(QDir::NoFilter);
   dialog.setOption(QFileDialog::ShowDirsOnly);
   if (dialog.exec())
-    return dialog.selectedFiles().first();
+    return dialog.selectedFiles().constFirst();
 
   return QString();
 }

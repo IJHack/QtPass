@@ -41,8 +41,7 @@
  * @return
  */
 int main(int argc, char *argv[]) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0) &&                                 \
-    QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
@@ -102,12 +101,10 @@ int main(int argc, char *argv[]) {
                    &MainWindow::messageAvailable);
 #endif
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
   QGuiApplication::setDesktopFileName("qtpass.desktop");
-#endif
 
   // Center the MainWindow on the screen the mouse pointer is currently on
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
   static int cursorScreen =
       app.desktop()->screenNumber(app.desktop()->cursor().pos());
   QPoint cursorScreenCenter =

@@ -1,7 +1,6 @@
 #ifndef STOREMODEL_H_
 #define STOREMODEL_H_
 
-#include "util.h"
 #include <QSortFilterProxyModel>
 
 /*!

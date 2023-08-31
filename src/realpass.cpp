@@ -1,5 +1,6 @@
 #include "realpass.h"
 #include "qtpasssettings.h"
+#include "util.h"
 
 #include <QDir>
 #include <QFileInfo>
@@ -117,10 +118,10 @@ void RealPass::Move(const QString src, const QString dest, const bool force) {
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(QRegularExpression("\\.gpg$"), "");
+    passSrc.replace(Util::endsWithGpg(), "");
   }
   if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(QRegularExpression("\\.gpg$"), "");
+    passDest.replace(Util::endsWithGpg(), "");
   }
 
   QStringList args;
@@ -157,10 +158,10 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(QRegularExpression("\\.gpg$"), "");
+    passSrc.replace(Util::endsWithGpg(), "");
   }
   if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(QRegularExpression("\\.gpg$"), "");
+    passDest.replace(Util::endsWithGpg(), "");
   }
   QStringList args;
   args << "cp";

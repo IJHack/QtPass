@@ -1,6 +1,7 @@
 #include "qtpass.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
+#include "util.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
@@ -135,11 +136,12 @@ void QtPass::setMainWindow(void) {
     QtPassSettings::getPass()->GitInit();
   });
 
-  connect(
-      m_mainWindow, &MainWindow::generateGPGKeyPair, [=](const QString &batch) {
-        QtPassSettings::getPass()->GenerateGPGKeys(batch);
-        m_mainWindow->showStatusMessage(tr("Generating GPG key pair"), 60000);
-      });
+  connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
+          [=](const QString &batch) {
+            QtPassSettings::getPass()->GenerateGPGKeys(batch);
+            m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
+                                            60000);
+          });
 }
 
 void QtPass::connectPassSignalHandlers(Pass *pass) {
@@ -266,10 +268,7 @@ void QtPass::processError(QProcess::ProcessError error) {
 void QtPass::processErrorExit(int exitCode, const QString &p_error) {
   if (!p_error.isEmpty()) {
     QString output;
-    QString error = p_error;
-    error.replace(QRegularExpression("<"), "&lt;");
-    error.replace(QRegularExpression(">"), "&gt;");
-    error.replace(QRegularExpression(" "), "&nbsp;");
+    QString error = p_error.toHtmlEscaped();
     if (exitCode == 0) {
       //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
@@ -277,10 +276,8 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
     }
 
-    output.replace(QRegularExpression(
-                       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-                   R"(<a href="\1">\1</a>)");
-    output.replace(QRegularExpression("\n"), "<br />");
+    output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
+    output.replace(QStringLiteral("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
   }
@@ -335,14 +332,10 @@ void QtPass::passShowHandlerFinished(QString output) {
 
 void QtPass::showInTextBrowser(QString output, QString prefix,
                                QString postfix) {
-  output.replace(QRegularExpression("<"), "&lt;");
-  output.replace(QRegularExpression(">"), "&gt;");
-  output.replace(QRegularExpression(" "), "&nbsp;");
+  output = output.toHtmlEscaped();
 
-  output.replace(QRegularExpression(
-                     "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"),
-                 R"(<a href="\1">\1</a>)");
-  output.replace(QRegularExpression("\n"), "<br />");
+  output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
+  output.replace(QStringLiteral("\n"), "<br />");
   output = prefix + output + postfix;
 
   m_mainWindow->flashText(output, false, true);
