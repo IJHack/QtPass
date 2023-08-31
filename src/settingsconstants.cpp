@@ -32,6 +32,7 @@ const QString SettingsConstants::displayAsIs = "displayAsIs";
 const QString SettingsConstants::noLineWrapping = "noLineWrapping";
 const QString SettingsConstants::addGPGId = "addGPGId";
 const QString SettingsConstants::passStore = "passStore";
+const QString SettingsConstants::passSigningKey = "passSigningKey";
 const QString SettingsConstants::passExecutable = "passExecutable";
 const QString SettingsConstants::gitExecutable = "gitExecutable";
 const QString SettingsConstants::gpgExecutable = "gpgExecutable";

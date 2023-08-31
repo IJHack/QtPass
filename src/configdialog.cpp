@@ -97,7 +97,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useTemplate(QtPassSettings::isUseTemplate());
 
   ui->profileTable->verticalHeader()->hide();
-  ui->profileTable->horizontalHeader()->setStretchLastSection(true);
+  ui->profileTable->horizontalHeader()->setSectionResizeMode(
+      1, QHeaderView::Stretch);
   ui->label->setText(ui->label->text() + VERSION);
   ui->comboBoxClipboard->clear();
 
@@ -170,7 +171,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
       for (int j = 0; j < ui->profileTable->columnCount(); j++) {
         QTableWidgetItem *_item = ui->profileTable->item(i, j);
 
-        if (_item->text().isEmpty()) {
+        if (_item->text().isEmpty() && j != 2) {
           _item->setBackground(Qt::red);
           status = false;
           break;
@@ -181,7 +182,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
         break;
     }
   } else {
-    if (item->text().isEmpty()) {
+    if (item->text().isEmpty() && item->column() != 2) {
       item->setBackground(Qt::red);
       status = false;
     }
@@ -460,8 +461,8 @@ void ConfigDialog::genKey(QString batch, QDialog *dialog) {
  * @param profiles
  * @param profile
  */
-void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
-                               QString profile) {
+void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
+                               QString currentProfile) {
   // dbg()<< profiles;
   if (profiles.contains("")) {
     profiles.remove("");
@@ -469,15 +470,18 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
   }
 
   ui->profileTable->setRowCount(profiles.count());
-  QHashIterator<QString, QString> i(profiles);
+  QHashIterator<QString, QHash<QString, QString>> i(profiles);
   int n = 0;
   while (i.hasNext()) {
     i.next();
     if (!i.value().isEmpty() && !i.key().isEmpty()) {
       ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
-      ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value()));
+      ui->profileTable->setItem(n, 1,
+                                new QTableWidgetItem(i.value().value("path")));
+      ui->profileTable->setItem(
+          n, 2, new QTableWidgetItem(i.value().value("signingKey")));
       // dbg()<< "naam:" + i.key();
-      if (i.key() == profile)
+      if (i.key() == currentProfile)
         ui->profileTable->selectRow(n);
     }
     ++n;
@@ -488,17 +492,23 @@ void ConfigDialog::setProfiles(QHash<QString, QString> profiles,
  * @brief ConfigDialog::getProfiles return profile list.
  * @return
  */
-QHash<QString, QString> ConfigDialog::getProfiles() {
-  QHash<QString, QString> profiles;
+QHash<QString, QHash<QString, QString>> ConfigDialog::getProfiles() {
+  QHash<QString, QHash<QString, QString>> profiles;
   // Check?
   for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
+    QHash<QString, QString> profile;
     QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
     if (nullptr != pathItem) {
       QTableWidgetItem *item = ui->profileTable->item(i, 0);
       if (item == nullptr) {
         continue;
       }
-      profiles.insert(item->text(), pathItem->text());
+      profile["path"] = pathItem->text();
+      QTableWidgetItem *signingKeyItem = ui->profileTable->item(i, 2);
+      if (nullptr != signingKeyItem) {
+        profile["signingKey"] = signingKeyItem->text();
+      }
+      profiles.insert(item->text(), profile);
     }
   }
   return profiles;
@@ -512,6 +522,7 @@ void ConfigDialog::on_addButton_clicked() {
   ui->profileTable->insertRow(n);
   ui->profileTable->setItem(n, 0, new QTableWidgetItem());
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
+  ui->profileTable->setItem(n, 2, new QTableWidgetItem());
   ui->profileTable->selectRow(n);
   ui->deleteButton->setEnabled(true);
 

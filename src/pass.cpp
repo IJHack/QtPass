@@ -245,8 +245,29 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR=");
+  // put PASSWORD_STORE_SIGNING_KEY in env
+  QStringList envSigningKey = env.filter("PASSWORD_STORE_SIGNING_KEY=");
+  QString currentSigningKey = QtPassSettings::getPassSigningKey();
+  if (envSigningKey.isEmpty()) {
+    if (!currentSigningKey.isEmpty()) {
+      // dbg()<< "Added
+      // PASSWORD_STORE_SIGNING_KEY with" + currentSigningKey;
+      env.append("PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  } else {
+    if (currentSigningKey.isEmpty()) {
+      // dbg() << "Removed
+      // PASSWORD_STORE_SIGNING_KEY";
+      env.removeAll(envSigningKey.first());
+    } else {
+      // dbg()<< "Update
+      // PASSWORD_STORE_SIGNING_KEY with " + currentSigningKey;
+      env.replaceInStrings(envSigningKey.first(),
+                           "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  }
   // put PASSWORD_STORE_DIR in env
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   if (store.isEmpty()) {
     // dbg()<< "Added
     // PASSWORD_STORE_DIR";
@@ -261,27 +282,40 @@ void Pass::updateEnv() {
 }
 
 /**
+ * @brief Pass::getGpgIdPath return gpgid file path for some file (folder).
+ * @param for_file which file (folder) would you like the gpgid file path for.
+ * @return path to the gpgid file.
+ */
+QString Pass::getGpgIdPath(QString for_file) {
+  QString passStore =
+      QDir::fromNativeSeparators(QtPassSettings::getPassStore());
+  QDir gpgIdDir(
+      QFileInfo(QDir::fromNativeSeparators(for_file).startsWith(passStore)
+                    ? for_file
+                    : QtPassSettings::getPassStore() + for_file)
+          .absoluteDir());
+  bool found = false;
+  while (gpgIdDir.exists() && gpgIdDir.absolutePath().startsWith(passStore)) {
+    if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
+      found = true;
+      break;
+    }
+    if (!gpgIdDir.cdUp())
+      break;
+  }
+  QString gpgIdPath(found ? gpgIdDir.absoluteFilePath(".gpg-id")
+                          : QtPassSettings::getPassStore() + ".gpg-id");
+
+  return gpgIdPath;
+}
+
+/**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
 QStringList Pass::getRecipientList(QString for_file) {
-  QDir gpgIdPath(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())
-                               ? for_file
-                               : QtPassSettings::getPassStore() + for_file)
-                     .absoluteDir());
-  bool found = false;
-  while (gpgIdPath.exists() &&
-         gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {
-    if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
-      found = true;
-      break;
-    }
-    if (!gpgIdPath.cdUp())
-      break;
-  }
-  QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id")
-                    : QtPassSettings::getPassStore() + ".gpg-id");
+  QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return QStringList();
   QStringList recipients;

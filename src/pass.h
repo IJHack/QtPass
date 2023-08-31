@@ -57,6 +57,7 @@ public:
   QList<UserInfo> listKeys(QStringList keystrings, bool secret = false);
   QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
   void updateEnv();
+  static QString getGpgIdPath(QString for_file);
   static QStringList getRecipientList(QString for_file);
   //  TODO(bezet): getRecipientString is useless, refactor
   static QStringList getRecipientString(QString for_file,

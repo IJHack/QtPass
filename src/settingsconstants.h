@@ -31,6 +31,7 @@ public:
   const static QString noLineWrapping;
   const static QString addGPGId;
   const static QString passStore;
+  const static QString passSigningKey;
   const static QString passExecutable;
   const static QString gitExecutable;
   const static QString gpgExecutable;
