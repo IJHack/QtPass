@@ -415,7 +415,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="598"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; с помощью менеджера пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
+        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="432"/>
@@ -640,7 +640,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
         <source>Git push</source>
-        <translation>Git push</translation>
+        <translation>Отправить изменения в Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="360"/>
@@ -692,7 +692,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="363"/>
         <source>Git pull</source>
-        <translation>Git pull</translation>
+        <translation>Получить данные из Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1062,7 +1062,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="141"/>
         <source>Generating GPG key pair</source>
-        <translation>Генерирую ключевую пару GPG</translation>
+        <translation>Создание пары ключей GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="193"/>
@@ -1085,7 +1085,7 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="227"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav непредвиденно завершился
+        <translation>fusedav неожиданно завершился
 </translation>
     </message>
     <message>
