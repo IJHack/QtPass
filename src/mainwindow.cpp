@@ -760,7 +760,8 @@ void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  QHash<QString, QString> profiles = QtPassSettings::getProfiles();
+  QHash<QString, QHash<QString, QString>> profiles =
+      QtPassSettings::getProfiles();
 
   if (profiles.isEmpty()) {
     ui->profileWidget->hide();
@@ -768,7 +769,7 @@ void MainWindow::updateProfileBox() {
     ui->profileWidget->show();
     ui->profileBox->setEnabled(profiles.size() > 1);
     ui->profileBox->clear();
-    QHashIterator<QString, QString> i(profiles);
+    QHashIterator<QString, QHash<QString, QString>> i(profiles);
     while (i.hasNext()) {
       i.next();
       if (!i.key().isEmpty())
@@ -795,6 +796,8 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
   QtPassSettings::setProfile(name);
 
   QtPassSettings::setPassStore(QtPassSettings::getProfiles().value(name));
+  QtPassSettings::setPassSigningKey(
+      QtPassSettings::getProfiles().value(name).value("signingKey"));
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
   QtPassSettings::getPass()->updateEnv();

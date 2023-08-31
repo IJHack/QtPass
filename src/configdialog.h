@@ -31,7 +31,7 @@ public:
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
   void useAutoclearPanel(bool useAutoclearPanel);
-  QHash<QString, QString> getProfiles();
+  QHash<QString, QHash<QString, QString>> getProfiles();
   void wizard();
   void genKey(QString, QDialog *);
   void useTrayIcon(bool useSystray);
@@ -76,7 +76,7 @@ private:
   QStringList getSecretKeys();
 
   void setGitPath(QString);
-  void setProfiles(QHash<QString, QString>, QString);
+  void setProfiles(QHash<QString, QHash<QString, QString>>, QString);
   void usePass(bool usePass);
 
   void setGroupBoxState();
