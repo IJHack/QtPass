@@ -129,7 +129,12 @@
         <translation>特殊文字を含める</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="953"/>
+        <location filename="../src/configdialog.ui" line="918"/>
+        <source>Signing Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="958"/>
         <source>Current path</source>
         <translation>現在のパス</translation>
     </message>
@@ -284,12 +289,12 @@
         <translation>Path</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="923"/>
+        <location filename="../src/configdialog.ui" line="928"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="938"/>
+        <location filename="../src/configdialog.ui" line="943"/>
         <source>Delete</source>
         <translation>削除</translation>
     </message>
@@ -298,7 +303,7 @@
         <translation type="vanished">現在の password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="973"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Template</source>
         <translation>テンプレート</translation>
     </message>
@@ -307,17 +312,17 @@
         <translation type="vanished">テンプレートは、パスワード生成ダイアログとパスワードビューにフィールドを追加します。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1003"/>
+        <location filename="../src/configdialog.ui" line="1008"/>
         <source>Use template</source>
         <translation>テンプレートを使用する</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1010"/>
+        <location filename="../src/configdialog.ui" line="1015"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>リストされているものだけでなく、単語で始まりコロンが続くすべての行をパスワードフィールドのフィールドとして表示します</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1013"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Show all fields templated</source>
         <translation>すべてのフィールドテンプレートを表示</translation>
     </message>
@@ -330,63 +335,63 @@ url
 メールアドレス</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1040"/>
+        <location filename="../src/configdialog.ui" line="1045"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; バージョン </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="104"/>
+        <location filename="../src/configdialog.cpp" line="106"/>
         <source>No Clipboard</source>
         <translation>クリップボードなし</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="105"/>
+        <location filename="../src/configdialog.cpp" line="107"/>
         <source>Always copy to clipboard</source>
         <translation>常にクリップボードにコピーする</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="106"/>
+        <location filename="../src/configdialog.cpp" line="108"/>
         <source>On-demand copy to clipboard</source>
         <translation>クリップボードへのオンデマンドコピー</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="528"/>
+        <location filename="../src/configdialog.cpp" line="540"/>
         <source>No profile selected</source>
         <translation>プロファイルは選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="529"/>
+        <location filename="../src/configdialog.cpp" line="541"/>
         <source>No profile selected to delete</source>
         <translation>削除するプロファイルが選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="590"/>
+        <location filename="../src/configdialog.cpp" line="602"/>
         <source>GnuPG not found</source>
         <translation>GnuPG が見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="604"/>
+        <location filename="../src/configdialog.cpp" line="616"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;お気に入りのパッケージマネージャを使用して、&lt;strong&gt;gpg&lt;/strong&gt; をインストール&lt;br&gt;または、GnuPG.org から&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ダウンロード&lt;/a&gt;してください。
 </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="631"/>
+        <location filename="../src/configdialog.cpp" line="643"/>
         <source>Create password-store?</source>
         <translation>password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="632"/>
+        <location filename="../src/configdialog.cpp" line="644"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1 に password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="663"/>
         <source>Password store not initialised</source>
         <translation>パスワードストアが初期化されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="652"/>
+        <location filename="../src/configdialog.cpp" line="664"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>フォルダ %1 は、password-store ではないようです。または、まだ初期化されていません。</translation>
     </message>
@@ -401,27 +406,27 @@ url
         <translation>自動検出</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="50"/>
+        <location filename="../src/configdialog.cpp" line="51"/>
         <source>System tray is not available</source>
         <translation>システムトレイは使用できません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="75"/>
+        <location filename="../src/configdialog.cpp" line="76"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Pass 拡張機能をインストールする必要があります</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="80"/>
+        <location filename="../src/configdialog.cpp" line="81"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode をインストールする必要があります</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="593"/>
+        <location filename="../src/configdialog.cpp" line="605"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;Microsoft Storeから &lt;strong&gt;Ubuntu&lt;/strong&gt; をインストールして入手してください。&lt;br&gt;すでにインストールしている場合は、一度起動し、&lt;br&gt;次のダイアログで &quot;自動検出&quot; をクリックしてください。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="598"/>
+        <location filename="../src/configdialog.cpp" line="610"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;Microsoft Store から &lt;strong&gt;Ubuntu&lt;/strong&gt; をインストール&lt;br&gt;または、GnuPG.org から&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ダウンロード&lt;/a&gt;してください。</translation>
     </message>
@@ -460,7 +465,7 @@ url
         <location filename="../src/configdialog.ui" line="738"/>
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="796"/>
-        <location filename="../src/configdialog.ui" line="960"/>
+        <location filename="../src/configdialog.ui" line="965"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -475,12 +480,12 @@ url
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="994"/>
+        <location filename="../src/configdialog.ui" line="999"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>テンプレートは、パスワード生成ダイアログとパスワードビューにフィールドを追加します。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1025"/>
+        <location filename="../src/configdialog.ui" line="1030"/>
         <source>login
 URL
 e-mail</source>
@@ -492,47 +497,72 @@ URL
 <context>
     <name>ImitatePass</name>
     <message>
+        <location filename="../src/imitatepass.cpp" line="95"/>
+        <location filename="../src/imitatepass.cpp" line="242"/>
+        <location filename="../src/imitatepass.cpp" line="353"/>
+        <source>Check .gpgid file signature!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
-        <location filename="../src/imitatepass.cpp" line="306"/>
+        <location filename="../src/imitatepass.cpp" line="243"/>
+        <location filename="../src/imitatepass.cpp" line="354"/>
+        <source>Signature for %1 is invalid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="103"/>
+        <location filename="../src/imitatepass.cpp" line="408"/>
         <source>Can not edit</source>
         <translation>編集できません</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="97"/>
-        <location filename="../src/imitatepass.cpp" line="307"/>
+        <location filename="../src/imitatepass.cpp" line="104"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>使用する暗号化キーを読み取れませんでした。.gpg-idファイルが見つからないか無効です。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="179"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
+        <source>No signing key!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="195"/>
+        <source>None of the secret signing keys is available.
+You will not be able to change the user list!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="214"/>
         <source>Cannot update</source>
         <translation>更新できません</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="180"/>
+        <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>書き込み用に.gpg-idを開くことができませんでした。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="228"/>
         <source>Check selected users!</source>
         <translation>選択したユーザーをチェック！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="194"/>
+        <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>選択したどのキーにも、使用可能な秘密キーがありません。
 新しく追加されたパスワードを復号化することはできません。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="245"/>
+        <location filename="../src/imitatepass.cpp" line="335"/>
         <source>Re-encrypting from folder %1</source>
         <translation>フォルダ %1 からの再暗号化</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="249"/>
-        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="339"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Updating password-store</source>
         <translation>password-store の更新中</translation>
     </message>
@@ -550,32 +580,55 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>新しいキーペアを生成します</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="157"/>
+        <location filename="../src/keygendialog.ui" line="151"/>
         <source>Passphrase</source>
         <translation>パスフレーズ</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="99"/>
+        <location filename="../src/keygendialog.ui" line="87"/>
         <source>Email</source>
         <translation>メールアドレス</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="128"/>
+        <location filename="../src/keygendialog.ui" line="119"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="199"/>
+        <location filename="../src/keygendialog.ui" line="196"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスフレーズの長さに制限はありません。慎重に選択する必要があります。セキュリティの観点から、秘密鍵のロックを解除するパスフレーズは、GnuPG（および他の公開鍵暗号化システム）の最も弱い点の1つです。これは、他の個人が秘密鍵を取得した場合の唯一の保護であるためです。&lt;br/&gt;理想的には、パスフレーズは辞書の単語を使用してはならず、アルファベット文字の大文字と小文字を混在させ、非アルファベット文字を使用する必要があります。&lt;br/&gt;GnuPGを安全に使用するには、適切なパスフレーズが不可欠です。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="219"/>
+        <location filename="../src/keygendialog.ui" line="206"/>
+        <source>Repeat pass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.ui" line="223"/>
         <source>Expert</source>
         <translation>エキスパート</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="238"/>
+        <location filename="../src/keygendialog.ui" line="242"/>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -591,7 +644,7 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation>#           QtPass GPG key generator
+        <translation type="vanished">#           QtPass GPG key generator
 #
 #      first test version please comment
 #
@@ -608,32 +661,32 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="265"/>
+        <location filename="../src/keygendialog.ui" line="269"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>エキスパートオプションについては、&lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPGマニュアル&lt;/a&gt;を確認</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="138"/>
+        <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid name</source>
         <translation>無効な名前</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="139"/>
+        <location filename="../src/keygendialog.cpp" line="141"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>名前は5文字以上である必要があります。</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="147"/>
+        <location filename="../src/keygendialog.cpp" line="152"/>
         <source>Invalid email</source>
         <translation>無効なメールアドレス</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="148"/>
+        <location filename="../src/keygendialog.cpp" line="153"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>入力したメールアドレスは有効なメールアドレスではありません。</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="163"/>
+        <location filename="../src/keygendialog.cpp" line="168"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>この操作には数分かかる場合があります。&lt;br /&gt;ランダムなバイトを大量に生成する必要があります。プライム生成中に他のアクション（キーボードでの入力、マウスの移動、ディスクの使用）を実行することをお勧めします。これにより、乱数ジェネレーターが十分なエントロピーを取得する可能性が高くなります。</translation>
     </message>
@@ -652,14 +705,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="325"/>
         <location filename="../src/mainwindow.ui" line="328"/>
-        <location filename="../src/mainwindow.cpp" line="940"/>
+        <location filename="../src/mainwindow.cpp" line="938"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
-        <location filename="../src/mainwindow.cpp" line="961"/>
+        <location filename="../src/mainwindow.cpp" line="959"/>
         <source>Delete</source>
         <translation>削除</translation>
     </message>
@@ -747,7 +800,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
-        <location filename="../src/mainwindow.cpp" line="934"/>
+        <location filename="../src/mainwindow.cpp" line="932"/>
         <source>Users</source>
         <translation>ユーザー</translation>
     </message>
@@ -792,7 +845,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="197"/>
+        <location filename="../src/mainwindow.cpp" line="192"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass にようこそ %1</translation>
     </message>
@@ -830,8 +883,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="297"/>
-        <location filename="../src/mainwindow.cpp" line="309"/>
+        <location filename="../src/mainwindow.cpp" line="292"/>
+        <location filename="../src/mainwindow.cpp" line="304"/>
         <source>Updating password-store</source>
         <translation>password-store の更新中</translation>
     </message>
@@ -848,18 +901,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">パスワードを隠す</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="406"/>
+        <location filename="../src/mainwindow.cpp" line="401"/>
         <source>Content hidden</source>
         <translation>コンテンツを隠す</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="410"/>
+        <location filename="../src/mainwindow.cpp" line="405"/>
         <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Password</source>
         <translation>パスワード</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="436"/>
+        <location filename="../src/mainwindow.cpp" line="431"/>
         <source>OTP Code</source>
         <translation>OTP コード</translation>
     </message>
@@ -872,7 +925,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリップボードをクリアできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="455"/>
+        <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Password and Content hidden</source>
         <translation>パスワードとコンテンツを隠す</translation>
     </message>
@@ -901,40 +954,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::不明なエラー</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="524"/>
+        <location filename="../src/mainwindow.cpp" line="519"/>
         <source>Looking for: %1</source>
         <translation>%1 を探しています</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="626"/>
-        <location filename="../src/mainwindow.cpp" line="999"/>
+        <location filename="../src/mainwindow.cpp" line="621"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>New file</source>
         <translation>新しいファイル</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="627"/>
+        <location filename="../src/mainwindow.cpp" line="622"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>新しいパスワードファイル:
 (%1 に置き換えられます)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="663"/>
+        <location filename="../src/mainwindow.cpp" line="658"/>
         <source> and the whole content?</source>
         <translation> と全てのコンテンツ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="673"/>
+        <location filename="../src/mainwindow.cpp" line="668"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation>とコンテンツ全体？&lt;br&gt;&lt;strong&gt;注意：指定されたフォルダーに予期しないファイルがあります。続行する前にそれらを確認してください。&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="683"/>
+        <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>本当に %1%2 を削除しますか？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="682"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete password?</source>
         <translation>パスワードを削除しますか？</translation>
     </message>
@@ -943,7 +996,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">本当に %1 を削除しますか？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="682"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete folder?</source>
         <translation>フォルダーを削除しますか？</translation>
     </message>
@@ -968,31 +1021,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">GnuPGキーペアを生成中</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="804"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>Profile changed to %1</source>
         <translation>プロファイルを %1 に変更しました</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="931"/>
+        <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Open folder with file manager</source>
         <translation>ファイルマネージャーでフォルダーを開く</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="317"/>
         <location filename="../src/mainwindow.ui" line="320"/>
-        <location filename="../src/mainwindow.cpp" line="932"/>
+        <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Add folder</source>
         <translation>フォルダーを追加</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="306"/>
         <location filename="../src/mainwindow.ui" line="309"/>
-        <location filename="../src/mainwindow.cpp" line="933"/>
+        <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Add password</source>
         <translation>パスワードを追加</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1000"/>
+        <location filename="../src/mainwindow.cpp" line="998"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>新しいフォルダ:
@@ -1003,28 +1056,28 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリップボードにコピーしました</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="953"/>
+        <location filename="../src/mainwindow.cpp" line="951"/>
         <source>Rename folder</source>
         <translation>フォルダの名前を変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="957"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Rename password</source>
         <translation>パスワードを変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename file</source>
         <translation>ファイル名を変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>Rename Folder To: </source>
         <translation>フォルダ名を変更:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename File To: </source>
         <translation>ファイル名を変更:</translation>
     </message>
@@ -1043,12 +1096,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="102"/>
+        <location filename="../src/pass.cpp" line="104"/>
         <source>No characters chosen</source>
         <translation>文字が選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="103"/>
+        <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>パスワードを生成できません。設定にセットされている文字から選択する文字がありません。</translation>
     </message>
@@ -1105,7 +1158,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="90"/>
+        <location filename="../main/main.cpp" line="91"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1113,82 +1166,82 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="141"/>
+        <location filename="../src/qtpass.cpp" line="142"/>
         <source>Generating GPG key pair</source>
         <translation>GnuPGキーペアを生成中</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="193"/>
+        <location filename="../src/qtpass.cpp" line="195"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>WebDAVの接続に失敗しました:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="210"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV パスワード</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="211"/>
+        <location filename="../src/qtpass.cpp" line="213"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>WebDAVに接続するためのパスワードを入力してください:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="229"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedavが予期せず終了しました
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="230"/>
+        <location filename="../src/qtpass.cpp" line="232"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>WebDAV に接続するための fusedav の開始に失敗しました:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="243"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::起動に失敗しました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::クラッシュしました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="251"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::タイムアウト</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="252"/>
+        <location filename="../src/qtpass.cpp" line="254"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::読み込みエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="257"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess:書き込みエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="260"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::不明なエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="385"/>
+        <location filename="../src/qtpass.cpp" line="379"/>
         <source>Clipboard cleared</source>
         <translation>クリップボードをクリアしました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="387"/>
+        <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard not cleared</source>
         <translation>クリップボードをクリアできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="406"/>
+        <location filename="../src/qtpass.cpp" line="400"/>
         <source>Copied to clipboard</source>
         <translation>クリップボードにコピーしました</translation>
     </message>
@@ -1306,12 +1359,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>キーリングにキーが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="152"/>
+        <location filename="../src/usersdialog.cpp" line="153"/>
         <source>created</source>
         <translation>作成しました</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="156"/>
+        <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
         <translation>有効期限が切れます</translation>
     </message>
