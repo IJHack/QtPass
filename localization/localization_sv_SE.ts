@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Signeringsnyckel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -472,14 +472,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollera .gpgid-filsignatur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Signatur för %1 är ogiltig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -496,13 +496,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen signeringsnyckel!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen av de hemliga signeringsnycklarna är tillgänglig.
+Du kommer inte att kunna ändra användarlista!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -574,7 +575,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprepa pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
