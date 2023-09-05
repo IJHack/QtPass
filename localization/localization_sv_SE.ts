@@ -599,7 +599,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG nyckel generator
+#
+#      första testversionen vänligen kommentera
+#
+%echo Generar en standard nyckel
+Nyckel-Typ: RSA
+Undernyckel-Typ: RSA
+Namn-Riktigt:
+Namn-Kommentar: QtPass
+Namn-E-mail:
+Utgångsdatum: 0
+%inget-skydd
+# Gör en commit här, så att vi senare kan skriva ut &quot;klar&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
