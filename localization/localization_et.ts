@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Peida salasõna</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="278"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parooli Pikkus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="312"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tähemärke</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="340"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="415"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="449"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Välista suurtähed</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -159,12 +159,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="463"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Välista numbrid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="482"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <source>Use git</source>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="859"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiilid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="913"/>
@@ -291,12 +291,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="943"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -357,7 +357,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="540"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiil on valimata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="541"/>
@@ -437,7 +437,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="494"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta Git&apos;i</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="563"/>
@@ -457,7 +457,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="721"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="731"/>
@@ -466,17 +466,17 @@ email</translation>
         <location filename="../src/configdialog.ui" line="796"/>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="745"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="999"/>
@@ -543,7 +543,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="228"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolli valitud kasutajaid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="229"/>
@@ -583,12 +583,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="87"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="119"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="196"/>
@@ -669,7 +669,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi peab olema vähemalt 5 tähemärki pikk.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="152"/>
@@ -703,14 +703,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="328"/>
         <location filename="../src/mainwindow.cpp" line="938"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="333"/>
         <location filename="../src/mainwindow.ui" line="336"/>
         <location filename="../src/mainwindow.cpp" line="959"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta</translation>
     </message>
     <message>
         <source>git push</source>
@@ -742,7 +742,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="312"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -757,7 +757,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="347"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="355"/>
@@ -798,7 +798,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="368"/>
         <location filename="../src/mainwindow.cpp" line="932"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasutajad</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -824,7 +824,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali profiil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="193"/>
@@ -959,7 +959,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="621"/>
         <location filename="../src/mainwindow.cpp" line="997"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus fail</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="622"/>
