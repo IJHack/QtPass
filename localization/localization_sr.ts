@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Конфигурација</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Подешавања</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="68"/>
@@ -21,18 +21,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="87"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Користи примарни избор</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="94"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутоматски почисти након:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="111"/>
         <location filename="../src/configdialog.ui" line="194"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Секунде</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="155"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Сакриј садржај</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Сакриј лозинку</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="171"/>
@@ -61,62 +61,62 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Корисити фонт исте ширине</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи садржај датотека као такав</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Без прелома редова</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерисање лозинке:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="278"/>
         <source>Password Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дужина лозинке:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="312"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Карактери</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="340"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Користи знакове:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="358"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Одаберите скуп знакова за генерисање лозинке</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви знакови</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="367"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Абецедно</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="372"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Алфанумерички</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="377"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Сопствени избор</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="415"/>
@@ -126,17 +126,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="449"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Укључи специјанле симболе</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Кључ за потписивање</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Тренутна путања</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished"></translation>
+        <translation>Искључи велика слова</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -154,17 +154,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="456"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериши мање безбедне, али лаке за памћење лозинке</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="463"/>
         <source>Exclude numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Искључи бројеве</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="482"/>
         <source>Git:</source>
-        <translation type="unfinished"></translation>
+        <translation>Git:</translation>
     </message>
     <message>
         <source>Use git</source>
@@ -173,22 +173,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутоматски додај .gpg-id датотеке</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="515"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутоматски погурај</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="522"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутоматски повуци</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="554"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Екстензије:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -197,37 +197,37 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Систем:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="611"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Користи иконицу у траци</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="618"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Почни минимизован</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="625"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Сакриј при затварању</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="632"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Увек на површини</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Програми</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="675"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Одаберите програм за складиштење лозинки:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="691"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Користи pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="715"/>
@@ -476,19 +476,21 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="999"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблони додају више поља у дијалогу за генерисање лозинки, као и у прегледу лозинки.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1030"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>корисничко име
+URL
+е-пошта</translation>
     </message>
 </context>
 <context>
@@ -498,69 +500,71 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Провери потпис .gpgid датотеке!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Постпис за %1 није исправан.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
         <location filename="../src/imitatepass.cpp" line="408"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Није могуће мењати</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="104"/>
         <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Није могуће прочитати кључ за крипцију, .gpg-id датотека не постоји или није исправна.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Нема кључа за потписивање!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ниједан од тајних кључева за потписивање није доступан.
+Нећете моћи да мењате листу корисника!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Није могуће надоградити</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешно отварање .gpg-id датотеке за писање.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="228"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверите одабране кориснике!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ниједан од одабраних кључева има доступан тајни кључ.
+Нећете моћи да декриптујете нове додате лозинке!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="335"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Поново се криптује из фасцикле %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="339"/>
         <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Надограђује се складиште лозинки</translation>
     </message>
 </context>
 <context>
@@ -568,27 +572,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериши GnuPG пар кључева</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="38"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Генериши нови пар кључева</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="151"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Лозинка</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="87"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Е-пошта</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="119"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Име</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="196"/>
