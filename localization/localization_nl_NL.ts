@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Instellen</translation>
+        <translation>Configuratie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
@@ -528,13 +528,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation>Geen ondertekening!</translation>
+        <translation>Geen ondertekeningssleutel!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen van de geheime ondertekeningssleutels is beschikbaar.
+Je kan de gebruikerslijst niet aanpassen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -605,7 +606,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaal pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -629,7 +630,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG key generator
+#
+#      eerste test versie commentaar gewenst
+#
+%echo Een standaard sleutel genereren
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Sla op, daarna melden we &quot;klaar&quot; :-)
+%commit
+%echo klaar</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
