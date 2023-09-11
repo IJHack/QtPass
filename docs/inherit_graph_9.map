@@ -1,5 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,79,57"/>
-<area shape="rect" id="node2" href="$class_q_progress_indicator.html" title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ..." alt="" coords="127,5,261,32"/>
-<area shape="rect" id="node3" href="$class_tray_icon.html" title="Handles the systemtray icon and menu." alt="" coords="157,56,231,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,76,129"/>
+<area shape="rect" id="node2" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="151,5,224,31"/>
+<area shape="rect" id="node3" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="161,55,213,80"/>
+<area shape="rect" id="node6" href="$class_qt_pass.html" title=" " alt="" coords="154,104,221,129"/>
+<area shape="rect" id="node7" href="$classtst__ui.html" title="The tst_ui class is our first unit test." alt="" coords="160,153,215,179"/>
+<area shape="rect" id="node8" href="$classtst__util.html" title="The tst_util class is our first unit test." alt="" coords="157,203,218,228"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available." alt="" coords="299,177,391,203"/>
+<area shape="rect" id="node5" href="$class_real_pass.html" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="305,55,384,80"/>
+<area shape="rect" id="node9" href="$classsimple_transaction.html" title=" " alt="" coords="124,252,251,277"/>
 </map>

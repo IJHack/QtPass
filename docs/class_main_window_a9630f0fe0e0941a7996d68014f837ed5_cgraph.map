@@ -1,12 +1,12 @@
 <map id="MainWindow::restoreWindow" name="MainWindow::restoreWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,187,197,213"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" title=" " alt="" coords="256,5,453,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" title=" " alt="" coords="273,56,436,83"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" title=" " alt="" coords="255,107,454,133"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" title=" " alt="" coords="271,157,438,184"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title=" " alt="" coords="267,209,442,250"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" title=" " alt="" coords="257,275,452,301"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title=" " alt="" coords="245,325,464,352"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title=" " alt="" coords="251,376,458,403"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="512,187,703,213"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,196,208"/>
+<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a48bfb524bd35b7f2e9889bfeaa7fc154" title=" " alt="" coords="255,5,453,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#ad25cfd6e7c3d7fdbf40f942ce5e02de6" title=" " alt="" coords="273,55,435,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a590dc30bf9f982ba0299b2c76e9459e2" title=" " alt="" coords="255,104,453,129"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#ad33dc9f1eed3cb5e7e80aae2760042b0" title=" " alt="" coords="271,153,437,179"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a32e5883afc95b3c0e8fffbcb7f2c5cd3" title=" " alt="" coords="267,203,441,243"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#ae8c530669db51f064709c64adf4f12b7" title=" " alt="" coords="257,268,451,293"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a88c4f55fe2bc1ca313f3ca4670d369d3" title=" " alt="" coords="244,317,464,343"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#a5b746d0ca47ae638a2fdb2e27b281ec0" title=" " alt="" coords="251,367,457,392"/>
+<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="512,183,703,208"/>
 </map>

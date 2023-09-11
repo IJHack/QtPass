@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_password_configuration.html" title="Holds the Password configuration settings." alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,..." alt="" coords="160,5,257,31"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="Pass::processErrorExit" name="Pass::processErrorExit">
-<area shape="rect" id="node1" title=" " alt="" coords="429,60,587,87"/>
-<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="237,31,343,57"/>
-<area shape="rect" id="node5" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="199,82,381,123"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,151,32"/>
-<area shape="rect" id="node4" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,56,123,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="429,59,587,84"/>
+<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="237,29,343,55"/>
+<area shape="rect" id="node5" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="199,79,381,119"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="node4" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,55,123,80"/>
 </map>

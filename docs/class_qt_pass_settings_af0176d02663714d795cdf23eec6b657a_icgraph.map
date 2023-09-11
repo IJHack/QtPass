@@ -1,11 +1,11 @@
 <map id="QtPassSettings::getPassExecutable" name="QtPassSettings::getPassExecutable">
-<area shape="rect" id="node1" title=" " alt="" coords="859,107,1093,133"/>
-<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="644,56,767,83"/>
-<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="392,5,532,32"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="372,157,552,184"/>
-<area shape="rect" id="node8" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes." alt="" coords="635,157,775,184"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="600,208,811,235"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="233,56,324,83"/>
-<area shape="rect" id="node7" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="391,107,533,133"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,56,185,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="857,131,1092,156"/>
+<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="643,80,765,105"/>
+<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="391,29,530,55"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="371,180,551,205"/>
+<area shape="rect" id="node8" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes." alt="" coords="635,181,773,207"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="599,231,809,256"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="232,80,323,105"/>
+<area shape="rect" id="node7" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="389,131,532,156"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,80,184,105"/>
 </map>

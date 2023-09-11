@@ -1,6 +1,6 @@
 <map id="QtPassSettings::isUsePwgen" name="QtPassSettings::isUsePwgen">
-<area shape="rect" id="node1" title=" " alt="" coords="236,56,432,83"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="7,5,187,32"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="33,56,160,83"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,107,188,149"/>
+<area shape="rect" id="node1" title=" " alt="" coords="236,55,432,80"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="7,5,187,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="33,55,160,80"/>
+<area shape="rect" id="node4" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,105,188,145"/>
 </map>

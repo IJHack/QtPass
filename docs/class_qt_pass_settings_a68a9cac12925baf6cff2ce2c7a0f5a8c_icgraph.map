@@ -1,7 +1,10 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
-<area shape="rect" id="node1" title=" " alt="" coords="408,56,615,83"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,5,342,32"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="237,56,356,83"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="233,107,360,133"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="463,107,669,132"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="278,5,369,31"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="35,81,154,107"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="256,107,391,132"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="232,156,415,181"/>
+<area shape="rect" id="node8" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="260,205,387,231"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,184,31"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="29,156,160,181"/>
 </map>

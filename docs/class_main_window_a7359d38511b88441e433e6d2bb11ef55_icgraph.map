@@ -1,5 +1,5 @@
 <map id="MainWindow::generateGPGKeyPair" name="MainWindow::generateGPGKeyPair">
-<area shape="rect" id="node1" title=" " alt="" coords="452,5,683,32"/>
-<area shape="rect" id="node2" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . ." alt="" coords="203,5,404,32"/>
-<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="448,5,676,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#adcd6afb4bbea0fc89cf5b5b51e387935" title="MainWindow::generateKeyPair internal gpg keypair generator . ." alt="" coords="201,5,400,31"/>
+<area shape="rect" id="node3" href="$class_config_dialog.html#a428d1f1b69aaaf09343e3d8db42ed138" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair." alt="" coords="5,5,153,31"/>
 </map>

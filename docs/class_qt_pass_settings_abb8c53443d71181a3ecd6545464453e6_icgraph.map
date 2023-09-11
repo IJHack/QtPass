@@ -1,24 +1,30 @@
 <map id="QtPassSettings::getPassStore" name="QtPassSettings::getPassStore">
-<area shape="rect" id="node1" title=" " alt="" coords="907,378,1108,405"/>
-<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="720,125,843,151"/>
-<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="496,23,636,50"/>
-<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="285,74,376,101"/>
-<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,74,185,101"/>
-<area shape="rect" id="node6" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="476,175,656,202"/>
-<area shape="rect" id="node8" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder)" alt="" coords="722,327,841,354"/>
-<area shape="rect" id="node9" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title=" " alt="" coords="704,378,859,405"/>
-<area shape="rect" id="node10" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path." alt="" coords="739,429,824,455"/>
-<area shape="rect" id="node13" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="704,479,859,506"/>
-<area shape="rect" id="node17" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository." alt="" coords="729,530,834,557"/>
-<area shape="rect" id="node18" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder)" alt="" coords="722,581,841,607"/>
-<area shape="rect" id="node19" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="707,631,856,658"/>
-<area shape="rect" id="node20" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file." alt="" coords="715,682,848,709"/>
-<area shape="rect" id="node21" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="720,23,843,50"/>
-<area shape="rect" id="node22" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="718,733,845,759"/>
-<area shape="rect" id="node7" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="495,125,637,151"/>
-<area shape="rect" id="node11" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="477,388,655,429"/>
-<area shape="rect" id="node12" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="233,395,428,422"/>
-<area shape="rect" id="node14" href="$class_pass.html#a4566c370e65b22d5cdc132f72b393808" title="Pass::getRecipientString formated string for use with GPG." alt="" coords="483,555,649,582"/>
-<area shape="rect" id="node15" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="243,505,418,531"/>
-<area shape="rect" id="node16" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="499,505,633,531"/>
+<area shape="rect" id="node1" title=" " alt="" coords="900,505,1101,530"/>
+<area shape="rect" id="node2" href="$class_util.html#a00c91095ca10b233e45eb643ff6097a4" title="Util::checkConfig do we have prequisite settings?" alt="" coords="714,154,837,180"/>
+<area shape="rect" id="node3" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="491,278,630,304"/>
+<area shape="rect" id="node4" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="282,154,373,180"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,154,184,180"/>
+<area shape="rect" id="node6" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="471,205,651,230"/>
+<area shape="rect" id="node8" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder)" alt="" coords="717,356,834,381"/>
+<area shape="rect" id="node9" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title=" " alt="" coords="699,405,852,430"/>
+<area shape="rect" id="node10" href="$class_util.html#a5c6a579524d37c6830feb672595f2a1d" title="Util::getDir get selectd folder path." alt="" coords="733,454,818,480"/>
+<area shape="rect" id="node13" href="$class_pass.html#a99f0deecf9ddaa09fd62841e6fa60b68" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="705,556,845,581"/>
+<area shape="rect" id="node17" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="260,505,395,530"/>
+<area shape="rect" id="node18" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="236,656,419,681"/>
+<area shape="rect" id="node21" href="$class_imitate_pass.html#a79e055bed565c020a449fffc0d1079f4" title="ImitatePass::GitInit git init wrapper." alt="" coords="708,657,843,682"/>
+<area shape="rect" id="node22" href="$class_real_pass.html#a47936070f0eea9415a926ac24563d9ab" title="RealPass::Init initialize pass repository." alt="" coords="723,706,827,732"/>
+<area shape="rect" id="node23" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title=" " alt="" coords="710,756,841,781"/>
+<area shape="rect" id="node24" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder)" alt="" coords="717,805,834,830"/>
+<area shape="rect" id="node25" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="702,854,849,880"/>
+<area shape="rect" id="node26" href="$class_imitate_pass.html#a365ec3f3d9c27efcc4f79d5f8cc1ca49" title="ImitatePass::Show shows content of file." alt="" coords="709,904,842,929"/>
+<area shape="rect" id="node27" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="714,306,837,332"/>
+<area shape="rect" id="node28" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="712,953,839,978"/>
+<area shape="rect" id="node7" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="489,104,632,129"/>
+<area shape="rect" id="node11" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="473,415,649,455"/>
+<area shape="rect" id="node12" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="232,422,423,448"/>
+<area shape="rect" id="node14" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="484,581,637,606"/>
+<area shape="rect" id="node15" href="$class_pass.html#a4566c370e65b22d5cdc132f72b393808" title="Pass::getRecipientString formated string for use with GPG." alt="" coords="244,554,411,580"/>
+<area shape="rect" id="node16" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="7,568,182,593"/>
+<area shape="rect" id="node19" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="29,630,160,656"/>
+<area shape="rect" id="node20" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="35,680,154,705"/>
 </map>

@@ -1,0 +1,15 @@
+<map id="Util::endsWithGpg" name="Util::endsWithGpg">
+<area shape="rect" id="node1" title=" " alt="" coords="719,181,848,207"/>
+<area shape="rect" id="node2" href="$class_real_pass.html#a99acdfdd6d4969d68c541b6953d8dcd2" title="RealPass::Copy copy a file (or folder)" alt="" coords="521,5,638,31"/>
+<area shape="rect" id="node3" href="$class_store_model.html#ae1cc4a6bda22ddf67e59f01642dd2ed3" title="StoreModel::data don&#39;t show the .gpg at the end of a file." alt="" coords="519,55,640,80"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="278,180,397,205"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="512,156,647,181"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title=" " alt="" coords="514,205,645,231"/>
+<area shape="rect" id="node9" href="$class_real_pass.html#acf73b18b7978ac27bf09c894bcaa613a" title="RealPass::Move move a file (or folder)" alt="" coords="521,255,638,280"/>
+<area shape="rect" id="node10" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="488,304,671,329"/>
+<area shape="rect" id="node12" href="$class_store_model.html#a907e6b71fd0fdcbd074e28938990a8e3" title="StoreModel::ShowThis should a row be shown, based on our search criteria." alt="" coords="502,377,657,403"/>
+<area shape="rect" id="node4" href="$class_store_model.html#ab3a68c8664ef7d2257ce070de8937a85" title="StoreModel::canDropMimeData." alt="" coords="235,29,440,55"/>
+<area shape="rect" id="node5" href="$class_store_model.html#a17f8db58298e985732d92a2e0e76b821" title="StoreModel::dropMimeData." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node11" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="272,304,403,329"/>
+<area shape="rect" id="node13" href="$class_store_model.html#a1fa0be857ce6b2a5d02c9365156d8678" title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method." alt="" coords="239,377,435,403"/>
+</map>

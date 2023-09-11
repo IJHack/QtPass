@@ -1,4 +1,6 @@
 <map id="ImitatePass::finished" name="ImitatePass::finished">
-<area shape="rect" id="node1" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,151,32"/>
-<area shape="rect" id="node2" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="199,5,304,32"/>
+<area shape="rect" id="node1" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,55,151,80"/>
+<area shape="rect" id="node2" href="$class_executor.html#a7e64afb1172167fa430d5175d3176487" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running." alt="" coords="199,5,345,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="219,55,325,80"/>
+<area shape="rect" id="node4" href="$classsimple_transaction.html#aba2a723cf95814a1c673af1a17bccf79" title="transactionIsOver checks wheather currently finished process is last in current transaction" alt="" coords="205,105,339,145"/>
 </map>

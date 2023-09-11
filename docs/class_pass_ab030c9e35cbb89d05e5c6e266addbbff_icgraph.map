@@ -1,5 +1,5 @@
 <map id="Pass::boundedRandom" name="Pass::boundedRandom">
-<area shape="rect" id="node1" title=" " alt="" coords="445,5,604,32"/>
-<area shape="rect" id="node2" href="$class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf" title=" " alt="" coords="180,5,397,32"/>
-<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="444,5,601,31"/>
+<area shape="rect" id="node2" href="$class_pass.html#a00ff6d5e256bc88d79a18a1efb09ddaf" title=" " alt="" coords="180,5,396,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="5,5,132,31"/>
 </map>

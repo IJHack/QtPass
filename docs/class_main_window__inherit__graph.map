@@ -1,4 +1,4 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node1" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,..." alt="" coords="10,80,107,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node1" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,..." alt="" coords="10,79,107,104"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,112,31"/>
 </map>

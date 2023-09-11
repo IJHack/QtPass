@@ -1,5 +1,5 @@
 <map id="Pass::listKeys" name="Pass::listKeys">
-<area shape="rect" id="node1" title="Pass::listKeys list users." alt="" coords="228,31,335,57"/>
-<area shape="rect" id="node2" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="39,5,146,32"/>
-<area shape="rect" id="node3" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,56,180,83"/>
+<area shape="rect" id="node1" title="Pass::listKeys list users." alt="" coords="228,31,335,56"/>
+<area shape="rect" id="node2" href="$class_pass.html#a451b0f52aa0332801252ae28665e29b3" title="Pass::listKeys list users." alt="" coords="39,5,146,31"/>
+<area shape="rect" id="node3" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,55,180,80"/>
 </map>

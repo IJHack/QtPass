@@ -1,5 +1,5 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
-<area shape="rect" id="node1" title=" " alt="" coords="248,31,403,57"/>
-<area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="5,5,200,32"/>
-<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="17,56,189,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="247,31,400,56"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="5,5,199,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="17,55,187,80"/>
 </map>

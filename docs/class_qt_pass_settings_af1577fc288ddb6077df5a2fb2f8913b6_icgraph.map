@@ -1,9 +1,11 @@
 <map id="QtPassSettings::getGitExecutable" name="QtPassSettings::getGitExecutable">
-<area shape="rect" id="node1" title=" " alt="" coords="631,81,853,108"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="387,5,567,32"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="401,56,554,83"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="418,107,537,133"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="372,157,583,184"/>
-<area shape="rect" id="node6" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="233,157,324,184"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,157,185,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="721,105,943,131"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="478,5,658,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="491,55,645,80"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="232,105,415,131"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="35,156,154,181"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="463,207,673,232"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="29,105,160,131"/>
+<area shape="rect" id="node8" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="278,207,369,232"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,207,184,232"/>
 </map>

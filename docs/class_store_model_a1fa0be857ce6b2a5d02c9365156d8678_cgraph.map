@@ -1,4 +1,5 @@
 <map id="StoreModel::filterAcceptsRow" name="StoreModel::filterAcceptsRow">
-<area shape="rect" id="node1" title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method." alt="" coords="5,5,201,32"/>
-<area shape="rect" id="node2" href="$class_store_model.html#a907e6b71fd0fdcbd074e28938990a8e3" title="StoreModel::ShowThis should a row be shown, based on our search criteria." alt="" coords="249,5,404,32"/>
+<area shape="rect" id="node1" title="StoreModel::filterAcceptsRow should row be shown, wrapper for StoreModel::ShowThis method." alt="" coords="5,29,201,55"/>
+<area shape="rect" id="node2" href="$class_store_model.html#a907e6b71fd0fdcbd074e28938990a8e3" title="StoreModel::ShowThis should a row be shown, based on our search criteria." alt="" coords="249,29,404,55"/>
+<area shape="rect" id="node3" href="$class_util.html#a892e27681ac865836bbc1639728fae64" title=" " alt="" coords="452,29,581,55"/>
 </map>

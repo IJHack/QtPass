@@ -1,5 +1,5 @@
 <map id="Pass" name="Pass">
-<area shape="rect" id="node1" title="Acts as an abstraction for pass or pass imitation." alt="" coords="20,171,72,197"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" id="node3" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="62,81,137,108"/>
+<area shape="rect" id="node1" title="Acts as an abstraction for pass or pass imitation." alt="" coords="20,168,72,193"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,76,31"/>
+<area shape="rect" id="node3" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="63,80,136,105"/>
 </map>

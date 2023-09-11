@@ -1,6 +1,6 @@
 <map id="Pass::Show" name="Pass::Show">
-<area shape="rect" id="node1" title=" " alt="" coords="479,46,572,73"/>
-<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="251,5,428,47"/>
-<area shape="rect" id="node4" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="248,71,431,112"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,13,200,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="475,45,568,70"/>
+<area shape="rect" id="node2" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="247,5,423,45"/>
+<area shape="rect" id="node4" href="$class_password_dialog.html#a1fd0289581d2b742470a3efae7db6154" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="244,69,427,109"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,13,196,38"/>
 </map>

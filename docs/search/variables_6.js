@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['key_5fid_870',['key_id',['../struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6',1,'UserInfo']]]
+  ['isdir_0',['isDir',['../structdrag_and_drop_info_password_store.html#ac3b9e270657587c266b4eca1500a4c0d',1,'dragAndDropInfoPasswordStore']]],
+  ['isfile_1',['isFile',['../structdrag_and_drop_info_password_store.html#a879e07495ff6c05f797adedcc09e4b3d',1,'dragAndDropInfoPasswordStore']]]
 ];

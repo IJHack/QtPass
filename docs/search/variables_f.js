@@ -1,6 +1,17 @@
 var searchData=
 [
-  ['validity_906',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
-  ['value_907',['value',['../struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d',1,'NamedValue']]],
-  ['version_908',['version',['../class_settings_constants.html#a3de52d12e7e80ae5b7873fddff1b9f8e',1,'SettingsConstants']]]
+  ['useautoclear_0',['useAutoclear',['../class_settings_constants.html#a4444d3b784dfd5156d5fdd0d16fb4cd7',1,'SettingsConstants']]],
+  ['useautoclearpanel_1',['useAutoclearPanel',['../class_settings_constants.html#a634d47e31c1ce7eabea4435d16637c46',1,'SettingsConstants']]],
+  ['useclipboard_2',['useClipboard',['../class_settings_constants.html#a0c3a88eed6013961790144cc002e20cc',1,'SettingsConstants']]],
+  ['usegit_3',['useGit',['../class_settings_constants.html#a80c25fbbfd8513ea7548c31dc72bcf85',1,'SettingsConstants']]],
+  ['usemonospace_4',['useMonospace',['../class_settings_constants.html#ac9a883bbdfb102492ff6b142881b9858',1,'SettingsConstants']]],
+  ['useotp_5',['useOtp',['../class_settings_constants.html#aaa144f0572561c7c4000154457963dc4',1,'SettingsConstants']]],
+  ['usepass_6',['usePass',['../class_settings_constants.html#a77796de4c6b0edfd2aaaf10b84d04322',1,'SettingsConstants']]],
+  ['usepwgen_7',['usePwgen',['../class_settings_constants.html#ac926a25c56d48a11da3cff5a23fd8b16',1,'SettingsConstants']]],
+  ['useqrencode_8',['useQrencode',['../class_settings_constants.html#aed8ee30c56dcffd9c5b7405ea5a3a265',1,'SettingsConstants']]],
+  ['useselection_9',['useSelection',['../class_settings_constants.html#a0d0ae02026d7f4d75430d36987a3da3f',1,'SettingsConstants']]],
+  ['usesymbols_10',['useSymbols',['../class_settings_constants.html#ae23ec21e4f84063d29277dcaf71f6f53',1,'SettingsConstants']]],
+  ['usetemplate_11',['useTemplate',['../class_settings_constants.html#af2aeddac9d26672fdd039fe65a5ef91f',1,'SettingsConstants']]],
+  ['usetrayicon_12',['useTrayIcon',['../class_settings_constants.html#aa0488c30e7780f2341e24d319fed477d',1,'SettingsConstants']]],
+  ['usewebdav_13',['useWebDav',['../class_settings_constants.html#a75445b52ece8f937838fee79d9f7ef33',1,'SettingsConstants']]]
 ];

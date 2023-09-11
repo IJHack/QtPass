@@ -1,4 +1,4 @@
 <map id="ConfigDialog::useOtp" name="ConfigDialog::useOtp">
-<area shape="rect" id="node1" title="ConfigDialog::useOtp set preference for using otp plugin." alt="" coords="233,5,380,32"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node1" title="ConfigDialog::useOtp set preference for using otp plugin." alt="" coords="233,29,380,55"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,185,55"/>
 </map>

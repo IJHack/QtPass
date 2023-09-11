@@ -1,12 +1,12 @@
 <map id="MainWindow::closeEvent" name="MainWindow::closeEvent">
-<area shape="rect" id="node1" title="MainWindow::closeEvent hide or quit." alt="" coords="5,173,176,200"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="247,5,404,32"/>
-<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title=" " alt="" coords="237,57,413,98"/>
-<area shape="rect" id="node6" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title=" " alt="" coords="227,123,424,149"/>
-<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c" title=" " alt="" coords="224,173,427,200"/>
-<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0" title=" " alt="" coords="244,224,407,251"/>
-<area shape="rect" id="node9" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title=" " alt="" coords="226,275,425,301"/>
-<area shape="rect" id="node10" href="$class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6" title=" " alt="" coords="242,325,409,352"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="475,5,701,32"/>
-<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="493,199,683,225"/>
+<area shape="rect" id="node1" title="MainWindow::closeEvent hide or quit." alt="" coords="5,169,173,195"/>
+<area shape="rect" id="node2" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="244,5,401,31"/>
+<area shape="rect" id="node4" href="$class_qt_pass_settings.html#a489a5cb534d2d9df3f4ff8179a7e908e" title=" " alt="" coords="235,55,411,95"/>
+<area shape="rect" id="node6" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title=" " alt="" coords="223,120,422,145"/>
+<area shape="rect" id="node7" href="$class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c" title=" " alt="" coords="221,169,424,195"/>
+<area shape="rect" id="node8" href="$class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0" title=" " alt="" coords="241,219,404,244"/>
+<area shape="rect" id="node9" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title=" " alt="" coords="223,268,422,293"/>
+<area shape="rect" id="node10" href="$class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6" title=" " alt="" coords="239,317,406,343"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="472,5,699,31"/>
+<area shape="rect" id="node5" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="490,193,681,219"/>
 </map>

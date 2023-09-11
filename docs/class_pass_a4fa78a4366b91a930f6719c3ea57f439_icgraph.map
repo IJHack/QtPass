@@ -1,4 +1,8 @@
 <map id="Pass::critical" name="Pass::critical">
-<area shape="rect" id="node1" title=" " alt="" coords="180,5,279,32"/>
-<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="415,81,513,107"/>
+<area shape="rect" id="node2" href="$class_pass.html#a9837e79dfc147d8710563a4a8a04bf3e" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="212,5,339,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="11,81,130,107"/>
+<area shape="rect" id="node4" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="208,107,343,132"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="184,156,367,181"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="5,156,136,181"/>
 </map>

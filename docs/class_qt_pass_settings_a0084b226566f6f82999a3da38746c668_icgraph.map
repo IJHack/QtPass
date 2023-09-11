@@ -1,0 +1,8 @@
+<map id="QtPassSettings::getPassSigningKey" name="QtPassSettings::getPassSigningKey">
+<area shape="rect" id="node1" title=" " alt="" coords="728,31,963,56"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="559,5,678,31"/>
+<area shape="rect" id="node3" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="557,55,680,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="371,29,509,55"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,184,80"/>
+<area shape="rect" id="node5" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="232,29,323,55"/>
+</map>

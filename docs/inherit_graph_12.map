@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_settings_constants.html" title="Table for the naming of configuration items." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,160,31"/>
+<area shape="rect" id="node2" href="$class_store_model.html" title="The QSortFilterProxyModel for handling filesystem searches." alt="" coords="208,5,296,31"/>
 </map>

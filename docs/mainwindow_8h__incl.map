@@ -1,13 +1,10 @@
 <map id="src/mainwindow.h" name="src/mainwindow.h">
-<area shape="rect" id="node1" title=" " alt="" coords="551,5,677,32"/>
-<area shape="rect" id="node2" href="$storemodel_8h.html" title=" " alt="" coords="203,80,300,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="333,229,466,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="466,80,613,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="637,80,743,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="767,80,847,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="872,80,937,107"/>
-<area shape="rect" id="node3" href="$util_8h.html" title=" " alt="" coords="162,155,213,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="237,155,391,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,229,159,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="183,229,250,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="398,5,525,31"/>
+<area shape="rect" id="node2" href="$storemodel_8h.html" title=" " alt="" coords="34,79,131,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="156,79,289,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="313,79,460,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="484,79,591,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="615,79,695,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="719,79,785,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,160,177"/>
 </map>

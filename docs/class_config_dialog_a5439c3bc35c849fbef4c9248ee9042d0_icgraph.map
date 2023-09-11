@@ -1,4 +1,4 @@
 <map id="ConfigDialog::useAutoclearPanel" name="ConfigDialog::useAutoclearPanel">
-<area shape="rect" id="node1" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow." alt="" coords="233,5,415,47"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,13,185,39"/>
+<area shape="rect" id="node1" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow." alt="" coords="233,29,415,69"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,37,185,62"/>
 </map>

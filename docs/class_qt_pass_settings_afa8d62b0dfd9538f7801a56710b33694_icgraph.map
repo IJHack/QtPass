@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isAddGPGId" name="QtPassSettings::isAddGPGId">
-<area shape="rect" id="node1" title=" " alt="" coords="233,31,428,57"/>
-<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,185,32"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="36,56,155,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="233,31,428,56"/>
+<area shape="rect" id="node2" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,185,31"/>
+<area shape="rect" id="node3" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="36,55,155,80"/>
 </map>

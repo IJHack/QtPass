@@ -1,0 +1,4 @@
+<map id="simpleTransaction::transactionAdd" name="simpleTransaction::transactionAdd">
+<area shape="rect" id="node1" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="247,5,381,45"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#a733fddd3f8051d35dd2e601826192fea" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="5,13,199,38"/>
+</map>

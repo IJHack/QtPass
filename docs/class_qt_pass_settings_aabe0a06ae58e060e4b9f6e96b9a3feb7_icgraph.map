@@ -1,0 +1,7 @@
+<map id="QtPassSettings::isUseMonospace" name="QtPassSettings::isUseMonospace">
+<area shape="rect" id="node1" title=" " alt="" coords="599,80,821,105"/>
+<area shape="rect" id="node2" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="391,29,530,55"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,184,80"/>
+<area shape="rect" id="node5" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="371,131,551,156"/>
+<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="232,29,323,55"/>
+</map>

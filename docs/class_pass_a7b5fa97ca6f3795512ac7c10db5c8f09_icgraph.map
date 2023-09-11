@@ -1,4 +1,4 @@
 <map id="Pass::GitPush" name="Pass::GitPush">
-<area shape="rect" id="node1" title=" " alt="" coords="203,5,309,32"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="201,5,308,31"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="5,5,153,31"/>
 </map>

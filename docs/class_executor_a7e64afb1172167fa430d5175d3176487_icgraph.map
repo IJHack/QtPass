@@ -1,0 +1,4 @@
+<map id="Executor::cancelNext" name="Executor::cancelNext">
+<area shape="rect" id="node1" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running." alt="" coords="199,5,345,31"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,151,31"/>
+</map>
