@@ -493,14 +493,14 @@ URL
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить подпись файла .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Подпись для %1 недействительна.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -517,13 +517,14 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет ключа для подписи!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ни один из закрытых ключей подписи не доступен.
+Вы не сможете изменить список пользователей!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -544,7 +545,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Ни один из выбранных ключей не имеет секретного ключа.
+        <translation>Ни один из выбранных ключей не имеет закрытого ключа.
 Расшифровать новые пароли не удастся!</translation>
     </message>
     <message>
@@ -594,7 +595,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторить пароль</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -618,7 +619,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass - генератор ключей GPG
+#
+#      первая пробная версия, пожалуйста, оставьте комментарий
+#
+%echo Генерация ключа с установками по умолчанию
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Оставьте комментарий здесь, чтобы мы могли вывести результат как «готово» :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1255,7 +1270,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Выберите пользователей, которые будут иметь возможность расшифровывать пароли, хранящиеся в этой папке.
 Примечание: Существующие файлы не будут изменены и сохранят старые права доступа до тех пор, пока вы их не отредактируете.
-Записи синего цвета имеют секретный ключ; выберите одну из них, чтобы расшифровывать пароли.
+Записи синего цвета имеют закрытый ключ; выберите одну из них, чтобы расшифровывать пароли.
 Записи красного цвета недействительны, их нельзя зашифровать.</translation>
     </message>
     <message>

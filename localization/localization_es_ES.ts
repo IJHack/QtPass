@@ -68,7 +68,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="42"/>
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation>Ajustes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="312"/>
@@ -518,14 +518,14 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="228"/>
         <source>Check selected users!</source>
-        <translation>Compruebe los usuarios seleccionados.</translation>
+        <translation>¡Comprueba los usuarios seleccionados!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ninguna de las claves seleccionadas tiene una clave secreta disponible.
-No será capaz de descifrar ninguna contraseña que acabe de añadir.</translation>
+¡No podrás descifrar ninguna contraseña recién añadida!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="339"/>
@@ -598,7 +598,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation># Generador de claves GPG QtPass
+#
+# primera versión de prueba por favor comente
+#
+%echo Generando una clave por defecto
+Tipo de la clave: RSA
+Subtipo de la clave: RSA
+Nombre:
+Comentarios: QtPass
+Correo electrónico:
+Fecha: 0
+%no-protection
+# Haz un comentario aquí, para que luego podamos imprimirlo &quot;realizado&quot; :-)
+%commit
+%echo hecho</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
@@ -717,7 +731,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <source>Config</source>
-        <translation>Configuración</translation>
+        <translation>configuración</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1021,7 +1035,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>No se puede generar la contraseña; no hay caracteres que seleccionar de un juego en la configuración.</translation>
+        <translation>No se puede generar la contraseña, ¡no hay caracteres para elegir establecidos en la configuración!</translation>
     </message>
 </context>
 <context>
