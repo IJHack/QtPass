@@ -1,6 +1,8 @@
 #include "pass.h"
 #include "qtpasssettings.h"
-#include "util.h"
+#include <QDir>
+#include <QRandomGenerator>
+#include <QRegularExpression>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -81,12 +83,12 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     if (QtPassSettings::isUseSymbols())
       args.append("--symbols");
     args.append(QString::number(length));
-    QString p_out;
     //  TODO(bezet): try-catch here(2 statuses to merge o_O)
     if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
-                             &passwd) == 0)
-      passwd.remove(QRegularExpression("[\\n\\r]"));
-    else {
+                             &passwd) == 0) {
+      static const QRegularExpression literalNewLines{"[\\n\\r]"};
+      passwd.remove(literalNewLines);
+    } else {
       passwd.clear();
 #ifdef QT_DEBUG
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
@@ -130,7 +132,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
-  foreach (QString keystring, keystrings) {
+  for (const QString &keystring : qAsConst(keystrings)) {
     if (!keystring.isEmpty()) {
       args.append(keystring);
     }
@@ -139,15 +141,14 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
       0)
     return users;
+  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList keys =
-      p_out.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  const QStringList keys = p_out.split(newLines, Qt::SkipEmptyParts);
 #else
-  QStringList keys =
-      p_out.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  const QStringList keys = p_out.split(newLines, QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
-  foreach (QString key, keys) {
+  for (const QString &key : keys) {
     QStringList props = key.split(':');
     if (props.size() < 10)
       continue;
@@ -229,6 +230,9 @@ void Pass::finished(int id, int exitCode, const QString &out,
   case PASS_COPY:
     emit finishedCopy(out, err);
     break;
+  case GPG_GENKEYS:
+    emit finishedGenerateGPGKeys(out, err);
+    break;
   default:
 #ifdef QT_DEBUG
     dbg() << "Unhandled process type" << pid;
@@ -242,8 +246,29 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * switching profiles)
  */
 void Pass::updateEnv() {
-  QStringList store = env.filter("PASSWORD_STORE_DIR=");
+  // put PASSWORD_STORE_SIGNING_KEY in env
+  QStringList envSigningKey = env.filter("PASSWORD_STORE_SIGNING_KEY=");
+  QString currentSigningKey = QtPassSettings::getPassSigningKey();
+  if (envSigningKey.isEmpty()) {
+    if (!currentSigningKey.isEmpty()) {
+      // dbg()<< "Added
+      // PASSWORD_STORE_SIGNING_KEY with" + currentSigningKey;
+      env.append("PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  } else {
+    if (currentSigningKey.isEmpty()) {
+      // dbg() << "Removed
+      // PASSWORD_STORE_SIGNING_KEY";
+      env.removeAll(envSigningKey.first());
+    } else {
+      // dbg()<< "Update
+      // PASSWORD_STORE_SIGNING_KEY with " + currentSigningKey;
+      env.replaceInStrings(envSigningKey.first(),
+                           "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
+    }
+  }
   // put PASSWORD_STORE_DIR in env
+  QStringList store = env.filter("PASSWORD_STORE_DIR=");
   if (store.isEmpty()) {
     // dbg()<< "Added
     // PASSWORD_STORE_DIR";
@@ -258,27 +283,40 @@ void Pass::updateEnv() {
 }
 
 /**
+ * @brief Pass::getGpgIdPath return gpgid file path for some file (folder).
+ * @param for_file which file (folder) would you like the gpgid file path for.
+ * @return path to the gpgid file.
+ */
+QString Pass::getGpgIdPath(QString for_file) {
+  QString passStore =
+      QDir::fromNativeSeparators(QtPassSettings::getPassStore());
+  QDir gpgIdDir(
+      QFileInfo(QDir::fromNativeSeparators(for_file).startsWith(passStore)
+                    ? for_file
+                    : QtPassSettings::getPassStore() + for_file)
+          .absoluteDir());
+  bool found = false;
+  while (gpgIdDir.exists() && gpgIdDir.absolutePath().startsWith(passStore)) {
+    if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
+      found = true;
+      break;
+    }
+    if (!gpgIdDir.cdUp())
+      break;
+  }
+  QString gpgIdPath(found ? gpgIdDir.absoluteFilePath(".gpg-id")
+                          : QtPassSettings::getPassStore() + ".gpg-id");
+
+  return gpgIdPath;
+}
+
+/**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
 QStringList Pass::getRecipientList(QString for_file) {
-  QDir gpgIdPath(QFileInfo(for_file.startsWith(QtPassSettings::getPassStore())
-                               ? for_file
-                               : QtPassSettings::getPassStore() + for_file)
-                     .absoluteDir());
-  bool found = false;
-  while (gpgIdPath.exists() &&
-         gpgIdPath.absolutePath().startsWith(QtPassSettings::getPassStore())) {
-    if (QFile(gpgIdPath.absoluteFilePath(".gpg-id")).exists()) {
-      found = true;
-      break;
-    }
-    if (!gpgIdPath.cdUp())
-      break;
-  }
-  QFile gpgId(found ? gpgIdPath.absoluteFilePath(".gpg-id")
-                    : QtPassSettings::getPassStore() + ".gpg-id");
+  QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return QStringList();
   QStringList recipients;
@@ -316,19 +354,8 @@ quint32 Pass::boundedRandom(quint32 bound) {
   quint32 randval;
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
-  static int fd = -1;
-  if (fd == -1) {
-    assert((fd = open("/dev/urandom", O_RDONLY)) >= 0);
-  }
-#endif
-
   do {
-#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
-    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));
-#else
     randval = QRandomGenerator::system()->generate();
-#endif
   } while (randval < max_mod_bound);
 
   return randval % bound;

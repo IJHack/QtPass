@@ -71,9 +71,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
 
-#if QT_VERSION >= 0x050200
   ui->lineEdit->setClearButtonEnabled(true);
-#endif
 }
 
 /**

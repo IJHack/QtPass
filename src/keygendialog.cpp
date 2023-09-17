@@ -84,14 +84,13 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
+  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines =
-      expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  const QStringList lines = expert.split(newLines, Qt::SkipEmptyParts);
 #else
-  QStringList lines =
-      expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  const QStringList lines = expert.split(newLines, QString::SkipEmptyParts);
 #endif
-  foreach (QString line, lines) {
+  for (QString line : lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
     if (key == "Passphrase")
       line.replace("%no-protection", "Passphrase: " + value);
@@ -108,14 +107,13 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
+  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  QStringList lines =
-      expert.split(QRegularExpression("[\r\n]"), Qt::SkipEmptyParts);
+  const QStringList lines = expert.split(newLines, Qt::SkipEmptyParts);
 #else
-  QStringList lines =
-      expert.split(QRegularExpression("[\r\n]"), QString::SkipEmptyParts);
+  const QStringList lines = expert.split(newLines, QString::SkipEmptyParts);
 #endif
-  foreach (QString line, lines) {
+  for (QString line : lines) {
     bool remove = false;
     if (!enable) {
       if (line.indexOf("%no-protection") == 0)
@@ -145,7 +143,7 @@ void KeygenDialog::done(int r) {
     }
 
     // check email
-    QRegularExpression mailre(
+    static const QRegularExpression mailre(
         QRegularExpression::anchoredPattern(
             R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)"),
         QRegularExpression::CaseInsensitiveOption);
