@@ -307,7 +307,7 @@
 - Parallel make issue in qtpass-1.2.1: ld: cannot find -lqtpass [\#350](https://github.com/IJHack/QtPass/issues/350)
 - "copy" icon has disappeared in v1.2.1 [\#344](https://github.com/IJHack/QtPass/issues/344)
 - No password entry prompt [\#343](https://github.com/IJHack/QtPass/issues/343)
-- Can't install on OS X Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
+- Can't install on macOS Sierra [\#337](https://github.com/IJHack/QtPass/issues/337)
 - No icon on macOS [\#333](https://github.com/IJHack/QtPass/issues/333)
 - Font and spacing used for URL links on right in main window absurdly large [\#329](https://github.com/IJHack/QtPass/issues/329)
 - QtPass don't display all lines with templates [\#273](https://github.com/IJHack/QtPass/issues/273)
@@ -433,7 +433,7 @@
 **Implemented enhancements:**
 
 - Feedback on copy button use [\#229](https://github.com/IJHack/QtPass/issues/229)
-- Clickable URL's + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
+- Clickable URLs + open in default browser [\#226](https://github.com/IJHack/QtPass/issues/226)
 - Deselecting password re-opens the file  [\#221](https://github.com/IJHack/QtPass/issues/221)
 - Copy password button should include tooltip to say why, when disabled [\#214](https://github.com/IJHack/QtPass/issues/214)
 - QtPass starts by searching for -psn\_0\_12345 on macOS [\#213](https://github.com/IJHack/QtPass/issues/213)
