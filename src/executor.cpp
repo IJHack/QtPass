@@ -4,6 +4,9 @@
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QTextCodec>
 #endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QStringDecoder>
+#endif
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
