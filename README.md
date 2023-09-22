@@ -182,8 +182,8 @@ attack I can think of at least two options:
 
 [![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)
 
-View official GNU site <http://www.gnu.org/licenses/gpl.html>.
+[View official GNU site](http://www.gnu.org/licenses/gpl.html)
 
-[![OSI](https://opensource.org/wp-content/uploads/2022/10/osi-badge-dark.svg)](https://opensource.org/licenses/GPL-3.0)
+[<img src="https://opensource.org/wp-content/uploads/2022/10/osi-badge-dark.svg" alt="OSI-approved license" width="127">](https://opensource.org/licenses/GPL-3.0)
 
-[View the Open Source Initiative site.](https://opensource.org/licenses/GPL-3.0)
+[View the Open Source Initiative site](https://opensource.org/licenses/GPL-3.0)
