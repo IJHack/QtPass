@@ -274,7 +274,7 @@ qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
             <li>Disable GNOME keyring</li>
             <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
         </ul>
-        
+
         <pre><code>enable-ssh-support
 write-env-file
 use-standard-socket
@@ -282,7 +282,7 @@ default-cache-ttl 600
 max-cache-ttl 7200</code></pre>
 
         <p>Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:</p>
-        
+
         <pre><code># OpenPGP applet support for YubiKey NEO
 if [ ! -f /tmp/gpg-agent.env ]; then
   killall gpg-agent;
@@ -308,7 +308,7 @@ fi
         </ul>
 
         <h3><a id="where-can-i-ask-for-help" class="anchor" href="#where-can-i-ask-for-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where can I ask for help?</h3>
-        
+
         <ul>
             <li>Create an <a title="QtPass issue queue" href="https://github.com/IJHack/QtPass/issues">issue</a> issues on github.</li>
             <li>Send an email to <a title="Mail us for help" href="mailto:help@qtpass.org">help@qtpass.org</a></li>
@@ -353,7 +353,7 @@ fi
   "url": "https://qtpass.org"
 }
 </script>
-<script src="javascripts/scale.fix.js"></script>
-<script src="javascripts/main.js"></script>
+<script src="javascripts/scale.fix.js" defer></script>
+<script src="javascripts/main.js" defer></script>
 </body>
 </html>
