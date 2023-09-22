@@ -2,10 +2,41 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc2...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...HEAD)
+
+**Fixed bugs:**
+
+- qtpass do not strip comments of gpg\_id file [\#625](https://github.com/IJHack/QtPass/issues/625)
+- Build Windows [\#598](https://github.com/IJHack/QtPass/issues/598)
+- Please sign release 1.4.0-rc1 [\#594](https://github.com/IJHack/QtPass/issues/594)
+- Create a new release 1.4.0 [\#567](https://github.com/IJHack/QtPass/issues/567)
+- Crashes during free text search [\#147](https://github.com/IJHack/QtPass/issues/147)
+- Program does not run in Windows 10 [\#123](https://github.com/IJHack/QtPass/issues/123)
+
+**Closed issues:**
+
+- Confusion about pass ecosystem [\#657](https://github.com/IJHack/QtPass/issues/657)
+- No context menu [\#522](https://github.com/IJHack/QtPass/issues/522)
 
 **Merged pull requests:**
 
+- Fix build with Qt6. [\#656](https://github.com/IJHack/QtPass/pull/656) ([Vascom](https://github.com/Vascom))
+
+## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc2...v1.4.0)
+
+**Fixed bugs:**
+
+- Update website to reflect new brew command syntax [\#601](https://github.com/IJHack/QtPass/issues/601)
+- Qtpass - not asking for password [\#585](https://github.com/IJHack/QtPass/issues/585)
+- Missing menu [\#574](https://github.com/IJHack/QtPass/issues/574)
+
+**Merged pull requests:**
+
+- Initial Korean from Weblate [\#655](https://github.com/IJHack/QtPass/pull/655) ([annejan](https://github.com/annejan))
+- Natural language fixes [\#654](https://github.com/IJHack/QtPass/pull/654) ([annejan](https://github.com/annejan))
+- Translations update from Hosted Weblate [\#650](https://github.com/IJHack/QtPass/pull/650) ([weblate](https://github.com/weblate))
 - Added Serbian and Estonian to project file [\#649](https://github.com/IJHack/QtPass/pull/649) ([annejan](https://github.com/annejan))
 - Translations update from Hosted Weblate [\#648](https://github.com/IJHack/QtPass/pull/648) ([weblate](https://github.com/weblate))
 - Translations update from Hosted Weblate [\#647](https://github.com/IJHack/QtPass/pull/647) ([weblate](https://github.com/weblate))
