@@ -99,83 +99,76 @@
     <section>
         <h2><a id=v1.4.0" class="anchor" href="#v1.4.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.4.0 Balkan holiday edition</h2>
 
-	
+	<p dir="auto"><strong>Fixed bugs:</strong></p>
+	<ul dir="auto">
+		<li>Update website to reflect new brew command syntax <a href="https://github.com/IJHack/QtPass/issues/601" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/601/hovercard">#601</a></li>
+		<li>Qtpass - not asking for password <a href="https://github.com/IJHack/QtPass/issues/585" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/585/hovercard">#585</a></li>
+		<li>Missing menu <a href="https://github.com/IJHack/QtPass/issues/574" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/574/hovercard">#574</a></li>
+	</ul>
+	<p dir="auto"><strong>Merged pull requests:</strong></p>
+	<ul dir="auto">
+		<li>Initial Korean from Weblate <a href="https://github.com/IJHack/QtPass/pull/655" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/655/hovercard">#655</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Natural language fixes <a href="https://github.com/IJHack/QtPass/pull/654" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/654/hovercard">#654</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/650" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/650/hovercard">#650</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Added Serbian and Estonian to project file <a href="https://github.com/IJHack/QtPass/pull/649" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/649/hovercard">#649</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/648" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/648/hovercard">#648</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/647" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/647/hovercard">#647</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Version bump and cleanup <a href="https://github.com/IJHack/QtPass/pull/646" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/646/hovercard">#646</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+	</ul>
 
 	<h2><a id=v1.4.0-rc2" class="anchor" href="#v1.4.0-rc2" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.4.0-rc2 Let's get drafting again</h2>
 
-	<p><strong>Implemented enhancements:</strong></p>
-	<ul>
-		<li>Set correct WM_CLASS for the qr-code popup <a href="https://github.com/IJHack/QtPass/issues/506" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/506/hovercard">#506</a></li>
-	</ul>
-	<p><strong>Fixed bugs:</strong></p>
-	<ul>
-		<li>QtPass does not detect current $GNUPGHOME and causes it to fail decryption <a href="https://github.com/IJHack/QtPass/issues/569" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/569/hovercard">#569</a></li>
+	<p dir="auto"><strong>Fixed bugs:</strong></p>
+	<ul dir="auto">
+		<li>OTP function stopped working <a href="https://github.com/IJHack/QtPass/issues/630" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/630/hovercard">#630</a></li>
+		<li>Cannot decrypt own passwords; No secret key <a href="https://github.com/IJHack/QtPass/issues/580" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/580/hovercard">#580</a></li>
+		<li>gpg not found on macOS <a href="https://github.com/IJHack/QtPass/issues/575" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/575/hovercard">#575</a></li>
 		<li>Installation is failed using latest Homebrew in macOS <a href="https://github.com/IJHack/QtPass/issues/564" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/564/hovercard">#564</a></li>
-		<li>&lt;tt&gt; ... &lt;/tt&gt; included in password text <a href="https://github.com/IJHack/QtPass/issues/542" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/542/hovercard">#542</a></li>
-		<li>Markup tags are left in password and clipboard <a href="https://github.com/IJHack/QtPass/issues/533" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/533/hovercard">#533</a></li>
-		<li>Renaming passwords and directories fail <a href="https://github.com/IJHack/QtPass/issues/487" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/487/hovercard">#487</a></li>
-		<li>Will not run on Windows 10 1903 b18362.418 <a href="https://github.com/IJHack/QtPass/issues/486" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/486/hovercard">#486</a></li>
+		<li>Deleting a directory sometimes deletes the entire password store including git repositories <a href="https://github.com/IJHack/QtPass/issues/556" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/556/hovercard">#556</a></li>
 	</ul>
-	<p><strong>Closed issues:</strong></p>
-	<ul>
-		<li>Hide results on search <a href="https://github.com/IJHack/QtPass/issues/551" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/551/hovercard">#551</a></li>
-		<li>QtPass 1.3.2 freezes on macOS 10.15.6 when trying to display password <a href="https://github.com/IJHack/QtPass/issues/544" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/544/hovercard">#544</a></li>
-		<li>Icons are blurry when fractional scaling is enabled <a href="https://github.com/IJHack/QtPass/issues/525" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/525/hovercard">#525</a></li>
-		<li>[Request] clear search password when change profile <a href="https://github.com/IJHack/QtPass/issues/524" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/524/hovercard">#524</a></li>
-		<li>Copying not possible on Ubuntu 20.04 <a href="https://github.com/IJHack/QtPass/issues/521" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/521/hovercard">#521</a></li>
-		<li>UI can't handle passwords with periods in their name <a href="https://github.com/IJHack/QtPass/issues/520" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/520/hovercard">#520</a></li>
-		<li>Display passwords in mono space font <a href="https://github.com/IJHack/QtPass/issues/514" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/514/hovercard">#514</a></li>
-		<li>QtPass 1.3.2 for Ubuntu 19.10 (eoan) <a href="https://github.com/IJHack/QtPass/issues/512" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/512/hovercard">#512</a></li>
-		<li>Default password visibility <a href="https://github.com/IJHack/QtPass/issues/511" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/511/hovercard">#511</a></li>
-		<li>Consider mentioning export abilities in migration docs, if any are present <a href="https://github.com/IJHack/QtPass/issues/505" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/505/hovercard">#505</a></li>
-		<li>Enable out-of-source (shadow) builds. <a href="https://github.com/IJHack/QtPass/issues/501" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/501/hovercard">#501</a></li>
-		<li>password visiblity can't be fully hidden  <a href="https://github.com/IJHack/QtPass/issues/496" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/496/hovercard">#496</a></li>
-		<li>Translations need updating and checking <a href="https://github.com/IJHack/QtPass/issues/488" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/488/hovercard">#488</a></li>
-		<li>Front-End doesn't work well with HiDPI screen <a href="https://github.com/IJHack/QtPass/issues/464" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/464/hovercard">#464</a></li>
-		<li>How to let QtPass use the real "pass" on windows <a href="https://github.com/IJHack/QtPass/issues/458" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/458/hovercard">#458</a></li>
-		<li>Fresh install of Antergos with Deepin - High DPI scaling is not working <a href="https://github.com/IJHack/QtPass/issues/417" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/417/hovercard">#417</a></li>
-		<li>Strange behavior when clearing filter <a href="https://github.com/IJHack/QtPass/issues/402" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/402/hovercard">#402</a></li>
-		<li>Tray icon remains after quitting program <a href="https://github.com/IJHack/QtPass/issues/401" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/401/hovercard">#401</a></li>
-		<li>QtPass doesn't work will pass in WSL <a href="https://github.com/IJHack/QtPass/issues/375" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/375/hovercard">#375</a></li>
-		<li>UI is blurry on HiDPI screens on MacOS (retina) since 1.2.x <a href="https://github.com/IJHack/QtPass/issues/355" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/355/hovercard">#355</a></li>
-		<li>No prompt for passphrase for git key on windows. <a href="https://github.com/IJHack/QtPass/issues/317" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/317/hovercard">#317</a></li>
-		<li>Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 <a href="https://github.com/IJHack/QtPass/issues/278" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/278/hovercard">#278</a></li>
+	<p dir="auto"><strong>Closed issues:</strong></p>
+	<ul dir="auto">
+		<li>[Windows]  Git repository not working  <a href="https://github.com/IJHack/QtPass/issues/638" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/638/hovercard">#638</a></li>
+		<li>support <code>PASSWORD_STORE_SIGNING_KEY</code> with profiles <a href="https://github.com/IJHack/QtPass/issues/624" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/624/hovercard">#624</a></li>
+		<li>Support multiple branches via "Profiles" feature <a href="https://github.com/IJHack/QtPass/issues/545" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/545/hovercard">#545</a></li>
 	</ul>
-	<p><strong>Merged pull requests:</strong></p>
-	<ul>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/573" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/573/hovercard">#573</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Fix keys created/expires dates in the users dialog window (fix: 571) <a href="https://github.com/IJHack/QtPass/pull/572" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/572/hovercard">#572</a> (<a href="https://github.com/nfetisov">nfetisov</a>)</li>
-		<li>Correct a typo in pass.cpp <a href="https://github.com/IJHack/QtPass/pull/570" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/570/hovercard">#570</a> (<a href="https://github.com/felixonmars">felixonmars</a>)</li>
-		<li>Fix installation instructions in README.md <a href="https://github.com/IJHack/QtPass/pull/565" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/565/hovercard">#565</a> (<a href="https://github.com/kawarimidoll">kawarimidoll</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/563" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/563/hovercard">#563</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/562" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/562/hovercard">#562</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/560" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/560/hovercard">#560</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Keep suffices when moving (to) a directory while imitiating pass <a href="https://github.com/IJHack/QtPass/pull/559" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/559/hovercard">#559</a> (<a href="https://github.com/ichthyosaurus">ichthyosaurus</a>)</li>
-		<li>Explicitly only remove ".gpg" when renaming files <a href="https://github.com/IJHack/QtPass/pull/558" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/558/hovercard">#558</a> (<a href="https://github.com/ichthyosaurus">ichthyosaurus</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/554" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/554/hovercard">#554</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/553" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/553/hovercard">#553</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/552" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/552/hovercard">#552</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/548" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/548/hovercard">#548</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Move MainWindow to the screen the cursor is on <a href="https://github.com/IJHack/QtPass/pull/547" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/547/hovercard">#547</a> (<a href="https://github.com/JFK422">JFK422</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/541" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/541/hovercard">#541</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/535" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/535/hovercard">#535</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Fix issues with renaming passwords and moving folders <a href="https://github.com/IJHack/QtPass/pull/532" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/532/hovercard">#532</a> (<a href="https://github.com/ChaoticEnigma">ChaoticEnigma</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/531" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/531/hovercard">#531</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Translations update from Weblate <a href="https://github.com/IJHack/QtPass/pull/530" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/530/hovercard">#530</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-		<li>Clear search on profile change <a href="https://github.com/IJHack/QtPass/pull/529" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/529/hovercard">#529</a> (<a href="https://github.com/cmol">cmol</a>)</li>
-		<li><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="577083686" data-permission-text="Title is private" data-url="https://github.com/IJHack/QtPass/issues/514" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/514/hovercard" href="https://github.com/IJHack/QtPass/issues/514">#514</a> Show password with a monospace font <a href="https://github.com/IJHack/QtPass/pull/528" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/528/hovercard">#528</a> (<a href="https://github.com/cmol">cmol</a>)</li>
-		<li>Update minimum Qt version <a href="https://github.com/IJHack/QtPass/pull/527" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/527/hovercard">#527</a> (<a href="https://github.com/cmol">cmol</a>)</li>
-		<li>Fix blurry icons when fractional scaling is enabled <a href="https://github.com/IJHack/QtPass/pull/526" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/526/hovercard">#526</a> (<a href="https://github.com/mthw0">mthw0</a>)</li>
-		<li>Spelling: Git pull, Git push <a href="https://github.com/IJHack/QtPass/pull/516" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/516/hovercard">#516</a> (<a href="https://github.com/comradekingu">comradekingu</a>)</li>
-		<li>Enable ubuntu, windows and macos based builds for CI <a href="https://github.com/IJHack/QtPass/pull/508" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/508/hovercard">#508</a> (<a href="https://github.com/boppybibbles">boppybibbles</a>)</li>
-		<li>Enable out-of-source build <a href="https://github.com/IJHack/QtPass/pull/503" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/503/hovercard">#503</a> (<a href="https://github.com/boppybibbles">boppybibbles</a>)</li>
-		<li>Use new stable version of <code>install-qt-action</code>. <a href="https://github.com/IJHack/QtPass/pull/502" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/502/hovercard">#502</a> (<a href="https://github.com/boppybibbles">boppybibbles</a>)</li>
-		<li>Don't base pass-otp availability decision on hardcoded /usr/lib <a href="https://github.com/IJHack/QtPass/pull/499" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/499/hovercard">#499</a> (<a href="https://github.com/nh2">nh2</a>)</li>
-		<li>Spelling: Search for users, , <a href="https://github.com/IJHack/QtPass/pull/495" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/495/hovercard">#495</a> (<a href="https://github.com/comradekingu">comradekingu</a>)</li>
-		<li>Spelling: Keylist missing, Could not fetch, GPG <a href="https://github.com/IJHack/QtPass/pull/493" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/493/hovercard">#493</a> (<a href="https://github.com/comradekingu">comradekingu</a>)</li>
-		<li>Spelling: Git, GPG, PWGen, etc. <a href="https://github.com/IJHack/QtPass/pull/492" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/492/hovercard">#492</a> (<a href="https://github.com/comradekingu">comradekingu</a>)</li>
-		<li>Don't use a deprecated method <a href="https://github.com/IJHack/QtPass/pull/491" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/491/hovercard">#491</a> (<a href="https://github.com/amarsman">amarsman</a>)</li>
-		<li>Issue <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="340102381" data-permission-text="Title is private" data-url="https://github.com/IJHack/QtPass/issues/402" data-hovercard-type="issue" data-hovercard-url="/IJHack/QtPass/issues/402/hovercard" href="https://github.com/IJHack/QtPass/issues/402">#402</a>: 'deselect()' on clearing filter  <a href="https://github.com/IJHack/QtPass/pull/490" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/490/hovercard">#490</a> (<a href="https://github.com/petr-nehez">petr-nehez</a>)</li>
+	<p dir="auto"><strong>Merged pull requests:</strong></p>
+	<ul dir="auto">
+		<li>clang-format -i src/*.cpp src/*.h <a href="https://github.com/IJHack/QtPass/pull/645" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/645/hovercard">#645</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/644" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/644/hovercard">#644</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Fix taborder and add buddies in keygen dialog <a href="https://github.com/IJHack/QtPass/pull/643" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/643/hovercard">#643</a> (<a href="https://github.com/svuorela">svuorela</a>)</li>
+		<li>Restore licensing info for QProgressIndicator <a href="https://github.com/IJHack/QtPass/pull/642" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/642/hovercard">#642</a> (<a href="https://github.com/svuorela">svuorela</a>)</li>
+		<li>Clazy cleanup and other minor fixes <a href="https://github.com/IJHack/QtPass/pull/641" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/641/hovercard">#641</a> (<a href="https://github.com/svuorela">svuorela</a>)</li>
+		<li>fix the unintended "running" of the entropy window in the keygen dial… <a href="https://github.com/IJHack/QtPass/pull/640" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/640/hovercard">#640</a> (<a href="https://github.com/lherschi">lherschi</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/636" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/636/hovercard">#636</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Add pass store signing key feature <a href="https://github.com/IJHack/QtPass/pull/634" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/634/hovercard">#634</a> (<a href="https://github.com/timegrid">timegrid</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/633" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/633/hovercard">#633</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/632" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/632/hovercard">#632</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/629" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/629/hovercard">#629</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/628" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/628/hovercard">#628</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/627" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/627/hovercard">#627</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/626" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/626/hovercard">#626</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/622" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/622/hovercard">#622</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>markdownlint --fix &amp;&amp; textlint --fix <a href="https://github.com/IJHack/QtPass/pull/621" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/621/hovercard">#621</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Document "Using profiles" <a href="https://github.com/IJHack/QtPass/pull/619" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/619/hovercard">#619</a> (<a href="https://github.com/buepro">buepro</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/618" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/618/hovercard">#618</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/617" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/617/hovercard">#617</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>super-linter ENV variables in shared location for local and automated <a href="https://github.com/IJHack/QtPass/pull/616" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/616/hovercard">#616</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>fix bug =&gt; clipboard was not cleared when using primary selection <a href="https://github.com/IJHack/QtPass/pull/615" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/615/hovercard">#615</a> (<a href="https://github.com/pythcoiner">pythcoiner</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/614" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/614/hovercard">#614</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/613" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/613/hovercard">#613</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Removed travis (no longer free) and lgtm (migrated to Github) <a href="https://github.com/IJHack/QtPass/pull/612" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/612/hovercard">#612</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/611" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/611/hovercard">#611</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Super Linter added and fixing findings <a href="https://github.com/IJHack/QtPass/pull/610" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/610/hovercard">#610</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>New Transifex integration yml <a href="https://github.com/IJHack/QtPass/pull/609" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/609/hovercard">#609</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Install QT in codeql workflow <a href="https://github.com/IJHack/QtPass/pull/608" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/608/hovercard">#608</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/607" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/607/hovercard">#607</a> (<a href="https://github.com/weblate">weblate</a>)</li>
+		<li>Translation cleanup <a href="https://github.com/IJHack/QtPass/pull/606" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/606/hovercard">#606</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>translations updated <a href="https://github.com/IJHack/QtPass/pull/605" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/605/hovercard">#605</a> (<a href="https://github.com/annejan">annejan</a>)</li>
+		<li>Fix accidental deletion of entire passwordstore <a href="https://github.com/IJHack/QtPass/pull/604" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/604/hovercard">#604</a> (<a href="https://github.com/FSMaxB">FSMaxB</a>)</li>
+		<li>Add more options for the password displaying <a href="https://github.com/IJHack/QtPass/pull/587" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/587/hovercard">#587</a> (<a href="https://github.com/l3u">l3u</a>)</li>
+		<li>Delete context menu after exec <a href="https://github.com/IJHack/QtPass/pull/578" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/578/hovercard">#578</a> (<a href="https://github.com/fasked">fasked</a>)</li>
+		<li>Translations update from Hosted Weblate <a href="https://github.com/IJHack/QtPass/pull/576" data-hovercard-type="pull_request" data-hovercard-url="/IJHack/QtPass/pull/576/hovercard">#576</a> (<a href="https://github.com/weblate">weblate</a>)</li>
 	</ul>
 
 	<h2><a id=v1.4.0-rc1" class="anchor" href="#v1.4.0-rc1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.4.0-rc1 Let's see if we can draft a new release</h2>
