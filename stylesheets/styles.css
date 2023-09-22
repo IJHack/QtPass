@@ -1,3 +1,6 @@
+:root {
+  color-scheme: light dark;
+}
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,900italic,300,700,900);body{padding:50px;font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222;font-weight:300;}
 h1, h2, h3, h4, h5, h6{color:#222;margin:0 0 20px;}
 p, ul, ol, table, pre, dl{margin:0 0 20px;}
@@ -63,3 +66,9 @@ header ul{display:none;}
 .app{width:48px;height:48px;display:block;background-size:contain;font-size:0;}
 .windows{background-image:url(../images/windows.png);}
 .macos{background-image:url(../images/logo.png);}
+@media (prefers-color-scheme: dark) {
+   body,strong{color:#ddd}
+   h1,h2,code{color:#ccc;}
+   h3,h4,h5,h6{color:#bbb;}
+   pre code{color:#222}
+}
