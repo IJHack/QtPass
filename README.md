@@ -184,6 +184,6 @@ attack I can think of at least two options:
 
 View official GNU site <http://www.gnu.org/licenses/gpl.html>.
 
-[![OSI](http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png)](https://opensource.org/licenses/GPL-3.0)
+[![OSI](https://opensource.org/wp-content/uploads/2022/10/osi-badge-dark.svg)](https://opensource.org/licenses/GPL-3.0)
 
 [View the Open Source Initiative site.](https://opensource.org/licenses/GPL-3.0)
