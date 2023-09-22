@@ -1,4 +1,4 @@
-const cacheName = 'qtpass::v1.3.2::static';
+const cacheName = 'qtpass::v1.4.0::static';
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -8,6 +8,7 @@ self.addEventListener('install', e => {
         '/404.html',
         '/changelog.1.1.html',
         '/changelog.1.2.html',
+        '/changelog.1.3.html',
         '/changelog.beta.html',
         '/changelog.html',
         '/changelog.old.html',
