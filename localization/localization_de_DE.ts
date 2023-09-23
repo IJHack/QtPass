@@ -477,7 +477,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Signierschlüssel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="999"/>
@@ -501,14 +501,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Überprüfen Sie die .gpgid Dateisignatur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterschrift für %1 ist ungültig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -525,13 +525,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein Signaturschlüssel!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Keiner der geheimen Signierschlüssel ist verfügbar.
+Sie können die Benutzerliste nicht ändern!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -602,7 +603,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Repetier pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
