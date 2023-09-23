@@ -20,6 +20,7 @@ th, td{text-align:left;padding:5px 10px;border-bottom:1px solid #e5e5e5;}
 dt{color:#444;font-weight:700;}
 th{color:#444;}
 img{max-width:100%;}
+a img{position:relative;top:3px;}
 header{width:270px;float:left;position:fixed;}
 header ul{list-style:none;height:40px;padding:0;background:#eee;background:-moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));background:-webkit-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);background:-o-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);background:-ms-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);background:linear-gradient(top, #f8f8f8 0%,#dddddd 100%);border-radius:5px;border:1px solid #d2d2d2;box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;width:270px;}
 header li{width:89px;float:left;border-right:1px solid #d2d2d2;height:40px;}

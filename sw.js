@@ -55,7 +55,9 @@ self.addEventListener('install', e => {
         '/images/apple-icon-72x72.png',
         '/images/favicon-16x16.png',
         '/images/macos.png',
-        '/images/sprite_download.png'
+        '/images/sprite_download.png',
+        '/sitemap.xml',
+        '/.well-known/security.txt'
       ]).then(() => self.skipWaiting());
     })
   );
