@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype met vaste breedte gebruiken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon content as-is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Regels niet afbreken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondertekeningssleutel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -504,14 +504,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer de bestandsondertekening van het .gpgid-bestand!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>De ondertekening van %1 is ongeldig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -528,13 +528,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen ondertekeningssleutel!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen van de geheime ondertekeningssleutels is beschikbaar.
+Je kan de gebruikerslijst niet aanpassen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -605,7 +606,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaal pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -629,7 +630,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG key generator
+#
+#      eerste test versie commentaar gewenst
+#
+%echo Een standaard sleutel genereren
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Sla op, daarna melden we &quot;klaar&quot; :-)
+%commit
+%echo klaar</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
