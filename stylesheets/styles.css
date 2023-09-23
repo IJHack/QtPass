@@ -2,7 +2,7 @@
 :root {
   color-scheme: light dark;
 }
-body{padding:50px;font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222;font-weight:300;}
+body{padding:50px;font:21px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222;font-weight:300;}
 h1, h2, h3, h4, h5, h6{color:#222;margin:0 0 20px;}
 p, ul, ol, table, pre, dl{margin:0 0 20px;}
 h1, h2, h3{line-height:1.1;}
@@ -10,11 +10,11 @@ h1{font-size:28px;font-weight:900;}
 h2{color:#393939;}
 h3, h4, h5, h6{color:#494949;}
 a{color:#39c;font-weight:400;text-decoration:none;}
-a small{font-size:11px;color:#777;margin-top:-0.6em;display:block;}
+a small{color:#777;margin-top:-0.6em;display:block;}
 .wrapper{width:860px;margin:0 auto;}
 blockquote{border-left:1px solid #e5e5e5;margin:0;padding:0 0 0 20px;font-style:italic;}
-code, pre{font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;color:#333;font-size:12px;}
-pre{padding:8px 15px;background:#f8f8f8;border-radius:5px;border:1px solid #e5e5e5;overflow-x:auto;}
+code, pre{font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;color:#333;}
+pre{padding:8px 16px;background:#f8f8f8;border-radius:5px;border:1px solid #e5e5e5;overflow-x:auto;font-size:17px;}
 table{width:100%;border-collapse:collapse;}
 th, td{text-align:left;padding:5px 10px;border-bottom:1px solid #e5e5e5;}
 dt{color:#444;font-weight:700;}
@@ -29,7 +29,7 @@ header ul li + li{width:88px;border-left:1px solid #fff;}
 header ul li + li + li{border-right:none;width:89px;}
 header ul a strong{font-size:14px;display:block;color:#222;}
 section{width:500px;float:right;padding-bottom:180px;}
-small{font-size:11px;}
+small{font-size:13px;}
 hr{border:0;background:#e5e5e5;height:1px;margin:0 0 20px;}
 footer{float:left;position:fixed;bottom:50px;}
 .compatible{width:auto;height:120px;margin-right:10px;}
