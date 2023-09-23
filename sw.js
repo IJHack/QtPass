@@ -1,4 +1,4 @@
-const cacheName = 'qtpass::v1.4.0-13::static';
+const cacheName = 'qtpass::v1.4.0-42::static';
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -24,7 +24,7 @@ self.addEventListener('install', e => {
         '/images/apple-icon-76x76.png',
         '/images/favicon-32x32.png',
         '/images/ms-icon-144x144.png',
-        '/images/win10.png',
+        '/images/win11.png',
         '/images/android-icon-192x192.png',
         '/images/apple-icon-144x144.png',
         '/images/apple-icon-precomposed.png',
