@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Signing Key</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -500,14 +500,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Check .gpgid file signature!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Signature for %1 is invalid.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -524,13 +524,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>No signing key!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>None of the secret signing keys is available.
+You will not be able to change the user list!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -601,7 +602,7 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Repeat pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -625,7 +626,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
