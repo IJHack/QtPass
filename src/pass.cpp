@@ -322,7 +322,7 @@ QStringList Pass::getRecipientList(QString for_file) {
   QStringList recipients;
   while (!gpgId.atEnd()) {
     QString recipient(gpgId.readLine());
-    recipient = recipient.trimmed();
+    recipient = recipient.split("#")[0].trimmed();
     if (!recipient.isEmpty())
       recipients += recipient;
   }
