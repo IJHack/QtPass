@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ključ za potpisivanje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -500,14 +500,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Provjeri potpis .gpgid datoteke!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Potpis za %1 je neispravan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -524,13 +524,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nema ključa za potpisivanje!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nijedan od tajnih ključeva za potpisivanje nije dostupan.
+Nećeš moći promijeniti popis korisnika!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -601,7 +602,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovi pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -625,7 +626,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG generator ključeva
+#
+#      prva testna verzija, napiši komentar
+#
+%echo Generiranje standardnog ključa
+Vrsta ključa: RSA
+Vrsta podključa: RSA
+Pravo ime:
+Ime-komentar: QtPass
+Ime-E-mail:
+Datum isteka: 0
+%no-protection
+# Ovdje prijavi commit, tako da kasnije možemo ispisati „gotovo” :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
