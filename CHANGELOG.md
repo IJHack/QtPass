@@ -28,7 +28,7 @@
 
 **Fixed bugs:**
 
-- Update website to reflect new brew command syntax [\#601](https://github.com/IJHack/QtPass/issues/601)
+- Update site to reflect new brew command syntax [\#601](https://github.com/IJHack/QtPass/issues/601)
 - Qtpass - not asking for password [\#585](https://github.com/IJHack/QtPass/issues/585)
 - Missing menu [\#574](https://github.com/IJHack/QtPass/issues/574)
 
