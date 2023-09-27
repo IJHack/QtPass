@@ -632,7 +632,7 @@ Expire-Date: 0
 #
 %echo Generiranje standardnog ključa
 Key-Type: RSA
-Vrsta podključa: RSA
+Subkey-Type: RSA
 Name-Real:
 Name-Comment: QtPass
 Ime-E-mail:
