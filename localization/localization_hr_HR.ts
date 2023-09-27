@@ -634,7 +634,7 @@ Expire-Date: 0
 Key-Type: RSA
 Vrsta podključa: RSA
 Name-Real:
-Ime-komentar: QtPass
+Name-Comment: QtPass
 Ime-E-mail:
 Datum isteka: 0
 %no-protection
