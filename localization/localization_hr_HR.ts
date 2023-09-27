@@ -631,7 +631,7 @@ Expire-Date: 0
 #      prva testna verzija, napiši komentar
 #
 %echo Generiranje standardnog ključa
-Vrsta ključa: RSA
+Key-Type: RSA
 Vrsta podključa: RSA
 Pravo ime:
 Ime-komentar: QtPass
