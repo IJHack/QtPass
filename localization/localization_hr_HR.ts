@@ -635,7 +635,7 @@ Key-Type: RSA
 Subkey-Type: RSA
 Name-Real:
 Name-Comment: QtPass
-Ime-E-mail:
+Name-Email:
 Datum isteka: 0
 %no-protection
 # Ovdje prijavi commit, tako da kasnije možemo ispisati „gotovo” :-)
