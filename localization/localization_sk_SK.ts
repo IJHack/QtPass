@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="220"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Použite monopriestorový font</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="227"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazenie obsahu súborov ako-is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezalamovať riadky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="266"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpisový kľúč</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -500,14 +500,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Skontrolujte .gpgid podpis súborov!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpis pre %1 je neplatný.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -524,13 +524,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiadny podpisový kľúč!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie je k dispozícii žiadne z tajných podpisovacích kľúčov.
+Nebudete môcť zmeniť zoznam užívateľov!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -601,7 +602,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakujte priechod</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -625,7 +626,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation># QtPass GPG kľúčový generátor
+#
+# prvá verzia testu prosím komentár
+#
+%echo Vytvorenie predvoleného kľúča
+Key-Type: RSA
+Subkey-Type: RSA
+Meno-Real:
+Meno-Koment: QtPass
+Meno-E-mail:
+Uplynie-Date: 0
+%no-ochrana
+# Urobte tu, aby sme mohli neskôr tlačiť &quot;done&quot; :-)
+%com
+%echo</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
