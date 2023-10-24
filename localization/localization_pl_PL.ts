@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Klucz podpisujący</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
