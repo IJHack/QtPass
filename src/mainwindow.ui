@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>QtPass</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/artwork/icon.png</normaloff>:/artwork/icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0" rowspan="2" colspan="2">
@@ -396,7 +400,9 @@
   <tabstop>treeView</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
  <slots>
   <slot>deselect()</slot>

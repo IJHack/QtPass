@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Read access users</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/artwork/icon.png</normaloff>:/artwork/icon.png</iconset>
+  </property>
   <property name="modal">
    <bool>true</bool>
   </property>
@@ -104,6 +108,8 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
   <tabstop>lineEdit</tabstop>
   <tabstop>listWidget</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
