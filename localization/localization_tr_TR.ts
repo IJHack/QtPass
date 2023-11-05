@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="918"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>İmzalama Anahtarı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
@@ -444,14 +444,14 @@ e-posta</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>.gpgid dosyasının imzasını gözden geçirin!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 için imza geçersiz.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -468,13 +468,14 @@ e-posta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>İmzalama anahtarı yok!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli imzalama anahtarlarının hiçbiri kullanılabilir değil.
+Kullanıcı listesini değiştiremeyeceksiniz!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -489,7 +490,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="228"/>
         <source>Check selected users!</source>
-        <translation>Seçilen kullanıcıları kontrol et!</translation>
+        <translation>Seçilen kullanıcıları denetle!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="229"/>
@@ -545,7 +546,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="206"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Parolayı tekrarla</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="223"/>
@@ -569,7 +570,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG anahtarı oluşturucu
+#
+#      ilk test sürümü, lütfen yorum yapın
+#
+%echo Öntanımlı bir anahtar oluşturuluyor
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Burada bir kaydet, böylece daha sonra &quot;bitti&quot; yazdırabiliriz :-)
+%commit
+%echo Bitti</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -822,7 +837,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> ve tüm içerik? &lt;br&gt;&lt;strong&gt;Dikkat: belirtilen klasörde beklenmeyen dosyalar var, devam etmeden önce kontrol edin.&lt;/strong&gt;</translation>
+        <translation> ve tüm içerik? &lt;br&gt;&lt;strong&gt;Dikkat: belirtilen klasörde beklenmeyen dosyalar var, devam etmeden önce bunları gözden geçirin.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
