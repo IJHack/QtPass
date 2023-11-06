@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Configuration</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/artwork/icon.png</normaloff>:/artwork/icon.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="leftMargin">
     <number>6</number>
@@ -1094,7 +1098,9 @@ e-mail</string>
   <tabstop>storePath</tabstop>
   <tabstop>toolButtonStore</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
