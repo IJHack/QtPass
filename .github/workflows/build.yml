@@ -7,13 +7,14 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: ilammy/msvc-dev-cmd@v1
     - name: Setup Qt environment
       uses: jurplel/install-qt-action@v2
       with:
         version: '5.15.2'
     - name: Build QtPass
       run: |
-        qmake
+        qmake qtpass.pro CONFIG+=static
         make
         copy README.md src\release\README.txt
         copy LICENSE src\release\LICENSE.txt
@@ -45,9 +46,10 @@ jobs:
       run: |
         qmake
         make
+        macdeployqt main/QtPass.app
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: PyQtPass-macOS
-        path: release/
+        path: macdeployqt main/QtPass.app
 
