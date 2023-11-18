@@ -15,7 +15,7 @@ jobs:
     - name: Build QtPass
       run: |
         qmake qtpass.pro CONFIG+=static
-        make
+        nmake
         copy README.md src\release\README.txt
         copy LICENSE src\release\LICENSE.txt
     - name: Install Inno Setup
