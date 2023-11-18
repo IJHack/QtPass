@@ -1,0 +1,56 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Qt environment
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+    - name: Build QtPass
+      run: |
+        qmake
+        make
+        copy README.md src\release\README.txt
+        copy LICENSE src\release\LICENSE.txt
+    - name: Install Inno Setup
+      run: choco install innosetup
+    - name: Create Installer with Inno Setup
+      run: ISCC.exe qtpass.iss
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: PyQtPass-Windows
+        path: release
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Output\qtpass-*.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Qt environment
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+    - name: Build QtPass
+      run: |
+        qmake
+        make
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: PyQtPass-macOS
+        path: release/
+
