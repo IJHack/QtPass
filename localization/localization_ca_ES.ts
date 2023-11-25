@@ -9,28 +9,28 @@
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="42"/>
+        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
         <translation>Paràmetres</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="68"/>
+        <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
         <translation>Comportament del porta-retalls:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="87"/>
+        <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
         <translation>Utilitza la selecció primària</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="94"/>
+        <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
         <translation>Neteja automàticament després de:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
-        <location filename="../src/configdialog.ui" line="194"/>
+        <location filename="../src/configdialog.ui" line="115"/>
+        <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
         <translation>segons</translation>
     </message>
@@ -39,102 +39,102 @@
         <translation type="vanished">Comportament de la contrasenya:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
+        <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
         <translation>Comportament del plafó del contingut:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="155"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
         <translation>Oculta el contingut</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="162"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
         <translation>Oculta la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
         <translation>Neteja automàticament el plafó després de:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="220"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="227"/>
+        <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="234"/>
+        <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="266"/>
+        <location filename="../src/configdialog.ui" line="270"/>
         <source>Password Generation:</source>
         <translation>Generació de contrasenyes:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="282"/>
         <source>Password Length:</source>
         <translation>Longitud de la contrasenya:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="312"/>
+        <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
         <translation>caràcters</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="340"/>
+        <location filename="../src/configdialog.ui" line="344"/>
         <source>Use characters:</source>
         <translation>Utilitza els caràcters:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="358"/>
+        <location filename="../src/configdialog.ui" line="362"/>
         <source>Select character set for password generation</source>
         <translation>Seleccioneu el conjunt de caràcters per a la generació de la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="362"/>
+        <location filename="../src/configdialog.ui" line="366"/>
         <source>All Characters</source>
         <translation>Tots els caràcters</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="367"/>
+        <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
         <translation>Alfabètic</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="372"/>
+        <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèric</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="377"/>
+        <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="415"/>
+        <location filename="../src/configdialog.ui" line="419"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcçdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="449"/>
+        <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
         <translation>Inclou símbols especials</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="918"/>
+        <location filename="../src/configdialog.ui" line="922"/>
         <source>Signing Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="958"/>
+        <location filename="../src/configdialog.ui" line="962"/>
         <source>Current path</source>
         <translation>Camí actual</translation>
     </message>
@@ -143,7 +143,7 @@
         <translation type="vanished">Utilitza pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="439"/>
+        <location filename="../src/configdialog.ui" line="443"/>
         <source>Exclude capital letters</source>
         <translation>Exclou les lletres en majúscula</translation>
     </message>
@@ -152,17 +152,17 @@
         <translation type="vanished">Inclou els símbols especials </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="456"/>
+        <location filename="../src/configdialog.ui" line="460"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Genera contrasenyes fàcils de recordar però menys segures</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="463"/>
+        <location filename="../src/configdialog.ui" line="467"/>
         <source>Exclude numbers</source>
         <translation>Exclou els nombres</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="482"/>
+        <location filename="../src/configdialog.ui" line="486"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -171,22 +171,22 @@
         <translation type="vanished">Utilitza git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="508"/>
+        <location filename="../src/configdialog.ui" line="512"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Afegeix automàticament els fitxers .gpg-id</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="515"/>
+        <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically push</source>
         <translation>Pujada automàtica</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="522"/>
+        <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
         <translation>Baixada automàtica</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="554"/>
+        <location filename="../src/configdialog.ui" line="558"/>
         <source>Extensions:</source>
         <translation>Extensions:</translation>
     </message>
@@ -195,37 +195,37 @@
         <translation type="vanished">Utilitza l&apos;extensió pass otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/configdialog.ui" line="603"/>
         <source>System:</source>
         <translation>Sistema:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="611"/>
+        <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
         <translation>Utilitza la safata del sistema</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="618"/>
+        <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
         <translation>Comença minimitzat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="625"/>
+        <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
         <translation>Oculta amb el tancament</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="632"/>
+        <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
         <translation>Sempre al capdamunt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/configdialog.ui" line="661"/>
         <source>Programs</source>
         <translation>Programes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="675"/>
+        <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
         <translation>Seleccioneu el programa d&apos;emmagatzematge de contrasenyes:</translation>
     </message>
@@ -234,12 +234,12 @@
         <translation type="vanished">Nati&amp;u git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="691"/>
+        <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilitza pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
         <translation>Natiu</translation>
     </message>
@@ -260,12 +260,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="775"/>
+        <location filename="../src/configdialog.ui" line="779"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/configdialog.ui" line="790"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -274,27 +274,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="859"/>
+        <location filename="../src/configdialog.ui" line="863"/>
         <source>Profiles</source>
         <translation>Perfils</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="908"/>
+        <location filename="../src/configdialog.ui" line="912"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="913"/>
+        <location filename="../src/configdialog.ui" line="917"/>
         <source>Path</source>
         <translation>Camí</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="928"/>
+        <location filename="../src/configdialog.ui" line="932"/>
         <source>Add</source>
         <translation>Afegeix</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="947"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -303,7 +303,7 @@
         <translation type="vanished">Magatzem de contrasenyes actual</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="982"/>
         <source>Template</source>
         <translation>Plantilla</translation>
     </message>
@@ -312,17 +312,17 @@
         <translation type="vanished">Les plantilles afegeixen camps extres al diàleg de generació de contrasenyes i a la visualització de la contrasenya.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
+        <location filename="../src/configdialog.ui" line="1012"/>
         <source>Use template</source>
         <translation>Utilitza la plantilla</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1015"/>
+        <location filename="../src/configdialog.ui" line="1019"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Mostra totes les línies que comencen amb una paraula seguida de dos punts com a camps als camps de la contrasenya, no només les que figuren a la llista</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1018"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Show all fields templated</source>
         <translation>Mostra tota la plantilla de camps</translation>
     </message>
@@ -335,7 +335,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1045"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
@@ -395,12 +395,12 @@ email</translation>
         <translation>La carpeta %1 no sembla ser un magatzem de claus o encara no ha estat inicialitzat.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="805"/>
+        <location filename="../src/configdialog.ui" line="809"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="840"/>
         <source>Autodetect</source>
         <translation>Detecció automàtica</translation>
     </message>
@@ -430,61 +430,61 @@ email</translation>
         <translation>Instal·leu GnuPG al vostre sistema. Instal·leu &lt;strong&gt; Ubuntu &lt;/strong&gt; des de la botiga Microsoft a &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; Baixeu-lo &lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="432"/>
+        <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
         <translation>Utilitzeu PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="494"/>
+        <location filename="../src/configdialog.ui" line="498"/>
         <source>Use Git</source>
         <translation>Utilitzeu Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="563"/>
+        <location filename="../src/configdialog.ui" line="567"/>
         <source>Use QRencode</source>
         <translation>Utilitzeu QRencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="577"/>
+        <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
         <translation>Utilitzeu l’extensió pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="684"/>
+        <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG &amp;natius</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="721"/>
+        <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="731"/>
-        <location filename="../src/configdialog.ui" line="738"/>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="796"/>
-        <location filename="../src/configdialog.ui" line="965"/>
+        <location filename="../src/configdialog.ui" line="735"/>
+        <location filename="../src/configdialog.ui" line="742"/>
+        <location filename="../src/configdialog.ui" line="769"/>
+        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="969"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="745"/>
+        <location filename="../src/configdialog.ui" line="749"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="758"/>
+        <location filename="../src/configdialog.ui" line="762"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="999"/>
+        <location filename="../src/configdialog.ui" line="1003"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Les plantilles afegeixen camps addicionals al diàleg de generació de contrasenya i a la vista de contrasenya.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1030"/>
+        <location filename="../src/configdialog.ui" line="1034"/>
         <source>login
 URL
 e-mail</source>
@@ -574,42 +574,42 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <translation>Generació del parell de claus GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="38"/>
+        <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
         <translation>Genera un nou parell de claus</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="151"/>
+        <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="87"/>
+        <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
         <translation>Correu electrònic</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="119"/>
+        <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="196"/>
+        <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hi ha cap límit sobre la llargada d&apos;una contrasenya, i s&apos;ha de seleccionar acuradament. Des de la perspectiva de la seguretat, la contrasenya per desbloquejar la clau privada és un dels punts més febles de GnuPG (i altres sistemes de xifratge de clau pública), ja que és l&apos;única protecció que teniu si una altra persona obté la vostra clau privada. &lt;br/&gt;El més ideal seria que per a la contrasenya no s&apos;utilitzessin les paraules d&apos;un diccionari i s&apos;utilitzés una mescla de caràcters alfabètics i no alfabètics.&lt;br/&gt;Una bona contrasenya és crucial per a l&apos;ús segur de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="206"/>
+        <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="223"/>
+        <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="242"/>
+        <location filename="../src/keygendialog.ui" line="246"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -660,7 +660,7 @@ Expire-Date: 0
 %echo fet</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="269"/>
+        <location filename="../src/keygendialog.ui" line="273"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Per obtenir opcions d&apos;experts consulteu el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
@@ -702,15 +702,15 @@ Expire-Date: 0
         <translation type="vanished">Afegeix</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="325"/>
-        <location filename="../src/mainwindow.ui" line="328"/>
+        <location filename="../src/mainwindow.ui" line="329"/>
+        <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.cpp" line="938"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="333"/>
-        <location filename="../src/mainwindow.ui" line="336"/>
+        <location filename="../src/mainwindow.ui" line="337"/>
+        <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.cpp" line="959"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
@@ -720,7 +720,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="352"/>
+        <location filename="../src/mainwindow.ui" line="356"/>
         <source>Push</source>
         <translation>Puja</translation>
     </message>
@@ -743,32 +743,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Codi font&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="312"/>
+        <location filename="../src/mainwindow.ui" line="316"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="341"/>
+        <location filename="../src/mainwindow.ui" line="345"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="344"/>
+        <location filename="../src/mainwindow.ui" line="348"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Genera l&apos;OTP i copia&apos;l al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="347"/>
+        <location filename="../src/mainwindow.ui" line="351"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
+        <location filename="../src/mainwindow.ui" line="359"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
+        <location filename="../src/mainwindow.ui" line="367"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -777,7 +777,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="360"/>
+        <location filename="../src/mainwindow.ui" line="364"/>
         <source>Update</source>
         <translation>Actualitza</translation>
     </message>
@@ -793,12 +793,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; és una IGU per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor estàndard de contrasenyes d&apos;unix.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Informeu de qualsevol &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;incidència&lt;/a&gt; que us trobeu amb aquest programari.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentació&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codi font&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="371"/>
+        <location filename="../src/mainwindow.ui" line="375"/>
         <source>Manage who can read password in folder</source>
         <translation>Gestioneu qui pot llegir la contrasenya a la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="368"/>
+        <location filename="../src/mainwindow.ui" line="372"/>
         <location filename="../src/mainwindow.cpp" line="932"/>
         <source>Users</source>
         <translation>Usuaris</translation>
@@ -815,27 +815,27 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; és una IGU per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor estàndard de contrasenyes d&apos;unix.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Informeu de qualsevol &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;incidència&lt;/a&gt; que us trobeu amb aquest programari.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentació&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codi font&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="379"/>
+        <location filename="../src/mainwindow.ui" line="383"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="376"/>
+        <location filename="../src/mainwindow.ui" line="380"/>
         <source>Config</source>
         <translation>Configura</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="64"/>
+        <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
         <translation>Selecciona un perfil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="193"/>
+        <location filename="../src/mainwindow.ui" line="197"/>
         <source>Welcome to QtPass</source>
         <translation>Benvingut a QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="111"/>
+        <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
         <translation>Cerca la contrasenya</translation>
     </message>
@@ -1031,15 +1031,15 @@ p, li { white-space: pre-wrap; }
         <translation>Obre la carpeta amb el gestor de fitxers</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="317"/>
-        <location filename="../src/mainwindow.ui" line="320"/>
+        <location filename="../src/mainwindow.ui" line="321"/>
+        <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="306"/>
-        <location filename="../src/mainwindow.ui" line="309"/>
+        <location filename="../src/mainwindow.ui" line="310"/>
+        <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
@@ -1082,7 +1082,7 @@ p, li { white-space: pre-wrap; }
         <translation>Canvieu el nom del fitxer a: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="249"/>
+        <location filename="../src/mainwindow.ui" line="253"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1110,47 +1110,47 @@ p, li { white-space: pre-wrap; }
     <name>PasswordDialog</name>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
-        <location filename="../src/passworddialog.ui" line="61"/>
+        <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="71"/>
+        <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
         <translation>Genera</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="82"/>
+        <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
         <translation>Mostra la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="102"/>
+        <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
         <translation>Conjunt de caràcters:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="110"/>
+        <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
         <translation>Tots els caràcters</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="115"/>
+        <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
         <translation>Alfabètics</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="120"/>
+        <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèrics</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="125"/>
+        <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="139"/>
+        <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
         <translation>Longitud:</translation>
     </message>
@@ -1158,9 +1158,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="91"/>
         <source>LTR</source>
-        <translation>LTR</translation>
+        <translation type="vanished">LTR</translation>
     </message>
 </context>
 <context>
@@ -1301,7 +1300,7 @@ p, li { white-space: pre-wrap; }
         <translation>Usuaris d&apos;accés de lectura</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="41"/>
+        <location filename="../src/usersdialog.ui" line="45"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1312,7 +1311,7 @@ Les entrades blaves tenen una clau secreta disponible, seleccioneu-ne una per po
 Les entrades en vermell no són vàlides, no podreu xifrar-les.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
+        <location filename="../src/usersdialog.ui" line="69"/>
         <source>Search for users</source>
         <translation>Cerca d’usuaris</translation>
     </message>
@@ -1331,7 +1330,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation type="vanished">Cerca usuaris</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="72"/>
+        <location filename="../src/usersdialog.ui" line="76"/>
         <source>Show unusable keys</source>
         <translation>Mostra les claus inutilitzables</translation>
     </message>

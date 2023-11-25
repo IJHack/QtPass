@@ -9,128 +9,128 @@
         <translation>Konfigurim</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="42"/>
+        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
         <translation>Cilësimet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="68"/>
+        <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
         <translation>Sjellja e Clipboard:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="87"/>
+        <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
         <translation>Përdorni përzgjedhjen parësore</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="94"/>
+        <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
         <translation>Pastrim Automatik pas:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
-        <location filename="../src/configdialog.ui" line="194"/>
+        <location filename="../src/configdialog.ui" line="115"/>
+        <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
         <translation>Sekonda</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="143"/>
+        <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
         <translation>Sjellja e panelit të përmbajtjes:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="155"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
         <translation>Fshih përmbajtjen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="162"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
         <translation>Fshih fjalëkalimin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
         <translation>Pastrim automatik i panelit pas:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="220"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="227"/>
+        <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="234"/>
+        <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="266"/>
+        <location filename="../src/configdialog.ui" line="270"/>
         <source>Password Generation:</source>
         <translation>Gjenerimi i fjalëkalimit:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="282"/>
         <source>Password Length:</source>
         <translation>Gjatësia e fjalëkalimit:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="312"/>
+        <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
         <translation>Karaktere</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="340"/>
+        <location filename="../src/configdialog.ui" line="344"/>
         <source>Use characters:</source>
         <translation>Përdorni karaktere:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="358"/>
+        <location filename="../src/configdialog.ui" line="362"/>
         <source>Select character set for password generation</source>
         <translation>Zgjidhni setin e karaktereve për gjenerimin e fjalëkalimit</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="362"/>
+        <location filename="../src/configdialog.ui" line="366"/>
         <source>All Characters</source>
         <translation>Të gjitha karakteret</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="367"/>
+        <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
         <translation>Alfabetike</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="372"/>
+        <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerike</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="377"/>
+        <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
         <translation>Personalizuar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="415"/>
+        <location filename="../src/configdialog.ui" line="419"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="449"/>
+        <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
         <translation>Përfshini simbole të veçanta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="958"/>
+        <location filename="../src/configdialog.ui" line="962"/>
         <source>Current path</source>
         <translation>Pathi aktual</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="439"/>
+        <location filename="../src/configdialog.ui" line="443"/>
         <source>Exclude capital letters</source>
         <translation>Përjashtoni shkronjat e mëdha</translation>
     </message>
@@ -139,157 +139,157 @@
         <translation type="vanished">Përfshini simbole të veçanta </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="456"/>
+        <location filename="../src/configdialog.ui" line="460"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Gjeneroni fjalëkalime të thjeshta për tu memorizuar, por më pak të sigurta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="463"/>
+        <location filename="../src/configdialog.ui" line="467"/>
         <source>Exclude numbers</source>
         <translation>Përjashtoni numrat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="482"/>
+        <location filename="../src/configdialog.ui" line="486"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="508"/>
+        <location filename="../src/configdialog.ui" line="512"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Shtoni automatikisht skedarë .gpg-id</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="515"/>
+        <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically push</source>
         <translation>Automatically push</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="522"/>
+        <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
         <translation>Automatically pull</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="554"/>
+        <location filename="../src/configdialog.ui" line="558"/>
         <source>Extensions:</source>
         <translation>Zgjatime:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/configdialog.ui" line="603"/>
         <source>System:</source>
         <translation>Sistem:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="611"/>
+        <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
         <translation>Përdorni ikonë e trayit</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="618"/>
+        <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
         <translation>Filloni të minimizuar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="625"/>
+        <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
         <translation>Fsheheni kur ta mbyllni</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="632"/>
+        <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
         <translation>Gjithmonë në krye</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/configdialog.ui" line="661"/>
         <source>Programs</source>
         <translation>Programe</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="675"/>
+        <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
         <translation>Zgjidhni programin e ruajtjes së fjalëkalimit:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="691"/>
+        <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
         <translation>&amp; Përdorni kalimin(pass)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
         <translation>Native</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="775"/>
+        <location filename="../src/configdialog.ui" line="779"/>
         <source>Pass</source>
         <translation>Kaloj</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/configdialog.ui" line="790"/>
         <source>pass</source>
         <translation>kaloj</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="805"/>
+        <location filename="../src/configdialog.ui" line="809"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="840"/>
         <source>Autodetect</source>
         <translation>Detektim automatik</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="859"/>
+        <location filename="../src/configdialog.ui" line="863"/>
         <source>Profiles</source>
         <translation>Profilet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="908"/>
+        <location filename="../src/configdialog.ui" line="912"/>
         <source>Name</source>
         <translation>Emri</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="913"/>
+        <location filename="../src/configdialog.ui" line="917"/>
         <source>Path</source>
         <translation>Path</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="918"/>
+        <location filename="../src/configdialog.ui" line="922"/>
         <source>Signing Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="928"/>
+        <location filename="../src/configdialog.ui" line="932"/>
         <source>Add</source>
         <translation>Shto</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="947"/>
         <source>Delete</source>
         <translation>Fshij</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="982"/>
         <source>Template</source>
         <translation>Shabllon</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
+        <location filename="../src/configdialog.ui" line="1012"/>
         <source>Use template</source>
         <translation>Përdorni shabllonin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1015"/>
+        <location filename="../src/configdialog.ui" line="1019"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Trego të gjitha rreshtat që fillojnë me një fjalë të ndjekur nga dy pika si fusha në fushat e fjalëkalimit, jo vetëm ato të listuarat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1018"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Show all fields templated</source>
         <translation>Trego modelin e të gjitha fushave</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1045"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
@@ -374,61 +374,61 @@
         <translation>Dosja %1 nuk duket të jetë një dyqan me fjalëkalime ose ende nuk është inicializuar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="432"/>
+        <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
         <translation>Përdorni PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="494"/>
+        <location filename="../src/configdialog.ui" line="498"/>
         <source>Use Git</source>
         <translation>Përdorni Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="563"/>
+        <location filename="../src/configdialog.ui" line="567"/>
         <source>Use QRencode</source>
         <translation>Përdorni QRencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="577"/>
+        <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
         <translation>Përdorni extension pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="684"/>
+        <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Native Git/GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="721"/>
+        <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="731"/>
-        <location filename="../src/configdialog.ui" line="738"/>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="796"/>
-        <location filename="../src/configdialog.ui" line="965"/>
+        <location filename="../src/configdialog.ui" line="735"/>
+        <location filename="../src/configdialog.ui" line="742"/>
+        <location filename="../src/configdialog.ui" line="769"/>
+        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="969"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="745"/>
+        <location filename="../src/configdialog.ui" line="749"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="758"/>
+        <location filename="../src/configdialog.ui" line="762"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="999"/>
+        <location filename="../src/configdialog.ui" line="1003"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Modelet shtojnë fusha shtesë në dialogun e gjenerimit të fjalëkalimit dhe në pamjen e fjalëkalimit.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1030"/>
+        <location filename="../src/configdialog.ui" line="1034"/>
         <source>login
 URL
 e-mail</source>
@@ -518,27 +518,27 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <translation>Gjeneroni GnuPG kyçet çift</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="38"/>
+        <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
         <translation>Gjeneroni një palë të re kyçe</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="87"/>
+        <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="119"/>
+        <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
         <translation>Emri</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="151"/>
+        <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
         <translation>Frazë kalimi</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="196"/>
+        <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;
 &lt;head&gt;&lt;head/&gt;
@@ -552,17 +552,17 @@ Në mënyrë ideale, fraza e fjalës nuk duhet të përdorë fjalë nga një fja
 &lt;/ html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="206"/>
+        <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="223"/>
+        <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
         <translation>Ekspert</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="242"/>
+        <location filename="../src/keygendialog.ui" line="246"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -613,7 +613,7 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="269"/>
+        <location filename="../src/keygendialog.ui" line="273"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Për opsionet e ekspertëve shikoni &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Manuali GnuPG &lt;/a&gt;</translation>
     </message>
@@ -651,80 +651,80 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="64"/>
+        <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
         <translation>Zgjidhni profilin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="111"/>
+        <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
         <translation>Fjalëkalimi i kërkimit</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="193"/>
+        <location filename="../src/mainwindow.ui" line="197"/>
         <source>Welcome to QtPass</source>
         <translation>Mirësevini në QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="306"/>
-        <location filename="../src/mainwindow.ui" line="309"/>
+        <location filename="../src/mainwindow.ui" line="310"/>
+        <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Add password</source>
         <translation>Shtoni fjalëkalimin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="312"/>
+        <location filename="../src/mainwindow.ui" line="316"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="317"/>
-        <location filename="../src/mainwindow.ui" line="320"/>
+        <location filename="../src/mainwindow.ui" line="321"/>
+        <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Add folder</source>
         <translation>Shto folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="325"/>
-        <location filename="../src/mainwindow.ui" line="328"/>
+        <location filename="../src/mainwindow.ui" line="329"/>
+        <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.cpp" line="938"/>
         <source>Edit</source>
         <translation>Modifiko</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="333"/>
-        <location filename="../src/mainwindow.ui" line="336"/>
+        <location filename="../src/mainwindow.ui" line="337"/>
+        <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.cpp" line="959"/>
         <source>Delete</source>
         <translation>Fshij</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="341"/>
+        <location filename="../src/mainwindow.ui" line="345"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="344"/>
+        <location filename="../src/mainwindow.ui" line="348"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Gjenero  OTP dhe kopjo në klipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="347"/>
+        <location filename="../src/mainwindow.ui" line="351"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="352"/>
+        <location filename="../src/mainwindow.ui" line="356"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="355"/>
+        <location filename="../src/mainwindow.ui" line="359"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="363"/>
+        <location filename="../src/mainwindow.ui" line="367"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -733,7 +733,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="360"/>
+        <location filename="../src/mainwindow.ui" line="364"/>
         <source>Update</source>
         <translation>Modifiko</translation>
     </message>
@@ -742,23 +742,23 @@ Expire-Date: 0
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="368"/>
+        <location filename="../src/mainwindow.ui" line="372"/>
         <location filename="../src/mainwindow.cpp" line="932"/>
         <source>Users</source>
         <translation>Përdoruesit</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="371"/>
+        <location filename="../src/mainwindow.ui" line="375"/>
         <source>Manage who can read password in folder</source>
         <translation>Menaxhoni kush mund të lexojë fjalëkalimin në folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="376"/>
+        <location filename="../src/mainwindow.ui" line="380"/>
         <source>Config</source>
         <translation>Konfig</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="379"/>
+        <location filename="../src/mainwindow.ui" line="383"/>
         <source>Configuration</source>
         <translation>Konfigurime</translation>
     </message>
@@ -882,7 +882,7 @@ Expire-Date: 0
         <translation>Riemërtoni Skedarin ne : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="249"/>
+        <location filename="../src/mainwindow.ui" line="253"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -910,47 +910,47 @@ Expire-Date: 0
     <name>PasswordDialog</name>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
-        <location filename="../src/passworddialog.ui" line="61"/>
+        <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
         <translation>Fjalëkalim</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="71"/>
+        <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
         <translation>Gjenero</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="82"/>
+        <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
         <translation>Shfaq fjalëkalimin</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="102"/>
+        <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
         <translation>Seti i Karaktereve:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="110"/>
+        <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
         <translation>Të gjitha karakteret</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="115"/>
+        <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
         <translation>Alfabetike</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="120"/>
+        <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerike</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="125"/>
+        <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
         <translation>E përshtatur</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="139"/>
+        <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
         <translation>Gjatësia:</translation>
     </message>
@@ -958,10 +958,9 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="91"/>
         <source>LTR</source>
         <translatorcomment>Kjo është për të mbajtur ndërfaqen nga e majta në të djathtë.</translatorcomment>
-        <translation>LTR</translation>
+        <translation type="vanished">LTR</translation>
     </message>
 </context>
 <context>
@@ -1102,7 +1101,7 @@ Expire-Date: 0
         <translation>Lexoni përdoruesit me akses</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="41"/>
+        <location filename="../src/usersdialog.ui" line="45"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1113,7 +1112,7 @@ Hyrjet blu kanë në dispozicion një çelës sekret, zgjidhni njërën nga kët
 Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apos;i kodoni këto.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="65"/>
+        <location filename="../src/usersdialog.ui" line="69"/>
         <source>Search for users</source>
         <translation>Kërkoni për përdoruesit</translation>
     </message>
@@ -1132,7 +1131,7 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation type="vanished">Kërkoni përdoruesit</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="72"/>
+        <location filename="../src/usersdialog.ui" line="76"/>
         <source>Show unusable keys</source>
         <translation>Trego çelësa të papërdorshëm</translation>
     </message>
