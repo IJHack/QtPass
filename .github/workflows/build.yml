@@ -1,15 +1,21 @@
 name: Build and Release
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: ilammy/msvc-dev-cmd@v1
     - name: Setup Qt environment
-      uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@v3
       with:
         version: '5.15.2'
     - name: Build QtPass
@@ -23,23 +29,17 @@ jobs:
     - name: Create Installer with Inno Setup
       run: ISCC.exe qtpass.iss
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PyQtPass-Windows
         path: release
-    - name: Upload Release Asset
-      uses: softprops/action-gh-release@v1
-      with:
-        files: Output\qtpass-*.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-mac:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Setup Qt environment
-      uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@v3
       with:
         version: '5.15.2'
     - name: Build QtPass
@@ -48,7 +48,7 @@ jobs:
         make
         macdeployqt main/QtPass.app
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PyQtPass-macOS
         path: macdeployqt main/QtPass.app

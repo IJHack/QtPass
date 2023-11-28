@@ -41,6 +41,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_cy_GB.ts \
                     ../localization/localization_hr_HR.ts \
                     ../localization/localization_af_ZA.ts \
+                    ../localization/localization_ro_RO.ts \
                     ../localization/localization_sl_SI.ts \
                     ../localization/localization_sr_RS.ts \
                     ../localization/localization_ja_JA.ts \
