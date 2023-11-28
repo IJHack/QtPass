@@ -26,13 +26,8 @@ jobs:
         copy LICENSE src\release\LICENSE.txt
     - name: Install Inno Setup
       run: choco install innosetup
-    - name: Use Qt
-      run: |
-        echo "Qt is installed in ${{ steps.install-qt.outputs.Qt5_DIR }}"
     - name: Create Installer with Inno Setup
       run: ISCC.exe qtpass.iss
-      env:
-        QtDir: ${{ steps.install-qt.outputs.Qt5_DIR }}
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
