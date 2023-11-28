@@ -26,9 +26,12 @@ jobs:
         copy LICENSE src\release\LICENSE.txt
     - name: Install Inno Setup
       run: choco install innosetup
+    - name: Use Qt
+      run: |
+        echo "Qt is installed in ${{ steps.install-qt.outputs.Qt5_DIR }}"
     - name: Create Installer with Inno Setup
       run: ISCC.exe qtpass.iss
-      with:
+      env:
         QtDir: ${{ steps.install-qt.outputs.Qt5_DIR }}
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
@@ -44,14 +47,19 @@ jobs:
       uses: jurplel/install-qt-action@v3
       with:
         version: '5.15.2'
+    - name: Install create-dmg
+      run: |
+        brew install create-dmg
     - name: Build QtPass
       run: |
         qmake
         make
         macdeployqt main/QtPass.app
+    - name: Create DMG
+      run: create-dmg main/QtPass.dmg main/QtPass.app
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: PyQtPass-macOS
-        path: macdeployqt main/QtPass.app
+        path: main/QtPass.dmg
 
