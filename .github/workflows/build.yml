@@ -28,6 +28,8 @@ jobs:
       run: choco install innosetup
     - name: Create Installer with Inno Setup
       run: ISCC.exe qtpass.iss
+      with:
+        QtDir: ${{ steps.install-qt.outputs.Qt5_DIR }}
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
