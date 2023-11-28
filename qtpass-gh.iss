@@ -7,7 +7,7 @@
 #define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
 
-#define QtDir GetEnv('QTDIR')
+#define QtDir GetEnv('QT_ROOT_DIR')
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
