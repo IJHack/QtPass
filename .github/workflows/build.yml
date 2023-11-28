@@ -24,12 +24,10 @@ jobs:
         nmake
         copy README.md src\release\README.txt
         copy LICENSE src\release\LICENSE.txt
-    - name: Let's see
-      run: find $Qt5_DIR
     - name: Install Inno Setup
       run: choco install innosetup
     - name: Create Installer with Inno Setup
-      run: ISCC.exe qtpass.iss
+      run: ISCC.exe qtpass-gh.iss
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
