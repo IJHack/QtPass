@@ -469,7 +469,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключ для подписи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1003"/>
@@ -670,7 +670,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="273"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Подробности опций для экспертов в &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;руководстве GnuPG&lt;/a&gt;</translation>
+        <translation>Дополнительные варианты можно найти в &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;руководстве GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
