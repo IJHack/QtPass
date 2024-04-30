@@ -145,7 +145,7 @@ void KeygenDialog::done(int r) {
     // check email
     static const QRegularExpression mailre(
         QRegularExpression::anchoredPattern(
-            R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)"),
+            R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)"),
         QRegularExpression::CaseInsensitiveOption);
     if (!mailre.match(ui->email->text()).hasMatch()) {
       QMessageBox::critical(
