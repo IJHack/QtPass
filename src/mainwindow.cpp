@@ -787,7 +787,11 @@ void MainWindow::updateProfileBox() {
  * correct "profile"
  * @param name
  */
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
+#else
+void MainWindow::on_profileBox_currentTextChanged(QString name) {
+#endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
 
