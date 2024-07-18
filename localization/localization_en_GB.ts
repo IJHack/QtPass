@@ -1164,7 +1164,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Password Length:</translation>
+        <translation>Length:</translation>
     </message>
 </context>
 <context>
