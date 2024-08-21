@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
-        <translation>Elexir o programa de almacenaxe de contrasinais:</translation>
+        <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
@@ -838,7 +838,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Elexir perfil</translation>
+        <translation>Elixir perfil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
@@ -1043,7 +1043,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elexir na configuración!</translation>
+        <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elixir na configuración!</translation>
     </message>
 </context>
 <context>
