@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
-        <translation>Elexir o programa de almacenaxe de contrasinais:</translation>
+        <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="605"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtela.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Autodetectar&quot; na seguinte ventá.</translation>
+        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtela.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Autodetectar&quot; na seguinte xanela.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="610"/>
@@ -838,7 +838,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Elexir perfil</translation>
+        <translation>Elixir perfil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
@@ -1043,7 +1043,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elexir na configuración!</translation>
+        <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elixir na configuración!</translation>
     </message>
 </context>
 <context>
