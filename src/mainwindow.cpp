@@ -19,6 +19,7 @@
 #include <QCloseEvent>
 #include <QDesktopServices>
 #include <QDialog>
+#include <QDirIterator>
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
