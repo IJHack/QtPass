@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
         <source>All Characters</source>
-        <translation>Wszystkie Znaki</translation>
+        <translation>Wszystkie znaki</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
@@ -157,12 +157,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically push</source>
-        <translation>Automatically push</translation>
+        <translation>Automatyczne „push”</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
-        <translation>Automatically pull</translation>
+        <translation>Automatyczne „pull”</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="106"/>
         <source>No Clipboard</source>
-        <translation>Bez Schowka</translation>
+        <translation>Bez schowka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="107"/>
@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1003"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Szablony dodawają extra pola w dialogu generatora haseł i w podglągdzie haseł.</translation>
+        <translation>Szablony dodają dodatkowe pola w oknie dialogowym generowania hasła oraz w widoku hasła.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1034"/>
@@ -440,14 +440,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprawdź podpis pliku .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpis %1 jest nieprawidłowy.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -464,13 +464,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak klucza podpisu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Żaden z tajnych kluczy podpisu nie jest dostępny.
+Nie będzie można zmienić listy użytkowników!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -491,7 +492,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Żaden z zaznaczonych kluczy nie ma dostępnego sekretnego klucza.
+        <translation>Żaden z zaznaczonych kluczy nie ma dostępnego tajnego klucza.
 Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     </message>
     <message>
@@ -521,7 +522,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
@@ -541,12 +542,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Powtórz hasło</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Expert</translation>
+        <translation>Zaawansowane</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
@@ -565,7 +566,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation># Generator kluczy GPG QtPass
+#
+# pierwsza wersja testowa, proszę o komentarz
+#
+%echo Generowanie domyślnego klucza
+Klucz-typ: RSA
+Podklucz-typ: RSA
+Nazwa-rzeczywista:
+Nazwa-komentarz: QtPass
+Nazwa-e-mail:
+Data wygaśnięcia: 0
+%no-protection
+# Zatwierdź tutaj, abyśmy mogli później wyświetlić „done” :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -617,12 +632,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="152"/>
         <source>Invalid email</source>
-        <translation>Niepoprawny email</translation>
+        <translation>Niepoprawny e-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="153"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Adres email który wprowadziłeś(aś) jest niepoprawny.</translation>
+        <translation>Adres e-mail, który wpisano, jest niepoprawny.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -649,7 +664,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
-        <translation>Wyszukaj Hasło</translation>
+        <translation>Wyszukaj hasło</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
@@ -775,7 +790,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Password and Content hidden</source>
-        <translation>Hasło i Treść schowane</translation>
+        <translation>Hasło i zawartość ukryta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="519"/>
@@ -844,7 +859,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="998"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nowy Folder: 
+        <translation>Nowy folder: 
 (Zostanie dodany do %1 )</translation>
     </message>
     <message>
@@ -1087,10 +1102,10 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Wybierz którzy urzytkownicy powinni móc rozszyfrować hasła w tym folderze.
-Zauważ że: Istniejące pliki nie zostaną zmodyfikowane i zachowają stare uprawnienia dopóki ich nie edytujesz.
-Niebieskie wpisy posiadają dostępny sekretny klucz, wybierz jedno z nich aby je rozszyfrować.
-Czerwone wpisy są nieprawidłowe, nie będziesz w stanie ich rozszyfrować.</translation>
+        <translation>Wybierz użytkowników, którzy powinni móc odszyfrowywać hasła przechowywane w tym folderze.
+Uwaga: istniejące pliki nie zostaną zmodyfikowane i zachowają stare uprawnienia, dopóki ich nie edytujesz.
+Wpisy niebieskie mają dostępny klucz tajny, wybierz jeden z nich, aby móc odszyfrować.
+Wpisy czerwone są nieprawidłowe, nie będziesz w stanie ich zaszyfrować.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="69"/>
@@ -1105,17 +1120,17 @@ Czerwone wpisy są nieprawidłowe, nie będziesz w stanie ich rozszyfrować.</tr
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation>Keylist missing</translation>
+        <translation>Brak listy kluczy</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Could not fetch list of available GPG keys</translation>
+        <translation>Nie można pobrać listy dostępnych kluczy GPG</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation>Key not found in keyring</translation>
+        <translation>Klucz nie został znaleziony w breloku</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>

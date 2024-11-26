@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
         <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasõna loomine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
         <source>Password Length:</source>
-        <translation>Parooli Pikkus:</translation>
+        <translation>Salasõna pikkus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
@@ -511,7 +511,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="103"/>
         <location filename="../src/imitatepass.cpp" line="408"/>
         <source>Can not edit</source>
-        <translation type="unfinished">Can not edit</translation>
+        <translation>Ei ole muudetav</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="104"/>
@@ -533,7 +533,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuendamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="215"/>
@@ -834,7 +834,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsi salasõna</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -906,7 +906,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="405"/>
         <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasõna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="431"/>
@@ -980,12 +980,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Kas sa oled kindel, et soovid %1%2 kustutada?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas kustutame salasõna?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1038,7 +1038,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa salasõna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="998"/>
@@ -1058,7 +1058,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda salasõna nime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1019"/>
@@ -1104,17 +1104,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasõna</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita salasõna</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
@@ -1144,7 +1144,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkus:</translation>
     </message>
 </context>
 <context>
@@ -1152,30 +1152,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="142"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Loome uut GPG võtmepaari</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="195"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Ühendamine WebDAVi serveriga ei õnnestunud:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="212"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV password</translation>
+        <translation>QtPass WebDAVi salasõna</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="213"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Sisesta WebDAVi ühenduse jaoks salasõna:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="229"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>fusedav lõpetas ootamatult töö
 </translation>
     </message>
     <message>
@@ -1218,12 +1218,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Clipboard cleared</translation>
+        <translation>Lõikelaua sisu on kustutatud</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Clipboard not cleared</translation>
+        <translation>Lõikelaua sisu pole kustutatud</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="400"/>
@@ -1337,7 +1337,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Võtit ei leidu võtmerõngas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
