@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -16,23 +16,23 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõikelaua käitumine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta esmast valikut</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta automaatselt peale:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekundit</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisuriba käitumine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>Peaida sisu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
@@ -56,22 +56,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta riba sisu automaatselt peale:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta fikseeritud laiusega kirjatüüpi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita sisu sellisena, nagu ta on</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilma reamurdmiseta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -91,32 +91,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
         <source>Use characters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta tähemärke:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali märgid, mida soovid salasõnade loomisel kasutada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik tähemärgid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaid tähed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Tähed ja numbrid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinu valitud</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -126,17 +126,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaasa kirjavahe- ja erimärgid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Allkirjastamise võti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="962"/>
         <source>Current path</source>
-        <translation type="unfinished"></translation>
+        <translation>Praegune asukoht</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo kergesti meeldejäetavaid, kuid vähemturvalisi salasõnu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
@@ -173,22 +173,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa .gpg-id failid automaatselt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically push</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadi automaatselt üles (push)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadi automaatselt alla (pull)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisamoodulid:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -197,37 +197,37 @@
     <message>
         <location filename="../src/configdialog.ui" line="603"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Süsteem:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta süsteemisalve ikooni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>Käivita kokkupanduna</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulgemisel peida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Aken on alati kõige ülemine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="661"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali salasõnade salvestamise programm:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -236,12 +236,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas&amp;uta tarvikut pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisseehitatud</translation>
     </message>
     <message>
         <source>git</source>
@@ -262,12 +262,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="917"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Asukoht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="932"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="982"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Mall</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -314,17 +314,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1012"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta malli</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1019"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui rida algab sõnaga, millele järgneb koolon, siis lisaks loetletud väljadele näita ka neid, kui salasõnavälju</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita kõiki välju malli alusel</translation>
     </message>
     <message>
         <source>login
@@ -337,22 +337,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt;, versioon </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="106"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Ära kasuta lõikelauda</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="107"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Alati kopeeri lõikelauale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="108"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopeeri lõikelauale vaid eraldi soovi alusel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="540"/>
@@ -362,77 +362,77 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="541"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei leidu profiili, mida saaks kustutada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="602"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>GnuPGd ei leidu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="616"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun paigalda oma arvutisse GnuPG.&lt;br&gt;&lt;strong&gt;Gpg&lt;/strong&gt; paigaldamiseks kasuta oma eelistatud paketihaldurit &lt;br&gt;või &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;laadi ta alla&lt;/a&gt; GnuPG.org saidist</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="643"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas lisame salasõnahoidla?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="644"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas sa soovid luua salasõnahoidla asukohas %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="663"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasõnahoidla on ettevalmistamata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="664"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kaust kas pole salasõnahoidla või on ta veel ettevalmistamata.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="809"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="840"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvasta automaatselt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="51"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Süsteemisalv pole saadaval</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="76"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun paigalda Pass OTP lisamoodul</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="81"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun paigalda qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="605"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun paigalda oma arvutisse GnuPG.&lt;br&gt;Selleks lisa Microsoft Store&apos;ist &lt;strong&gt;Ubuntu&lt;/strong&gt;. Kui oled seda juba teinud, siis kontrolli, et oled ta vaid üks kord käivitanud ja&lt;br&gt;klõpsi järgmises vaates „Tuvasta automaatselt“.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="610"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun paigalda oma arvutisse GnuPG.&lt;br&gt;Selleks lisa Microsoft Store&apos;ist &lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;br&gt;või laadi &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ta alla GnuPG.org saidist&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta tarvikut pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
@@ -442,17 +442,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta QRencode&apos;i</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta pass-otp lisamoodulit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta oma Git/GPG-lahendust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -481,14 +481,16 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1003"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mallid lisavad salasõna loomise ja tema näitamise vaatesse täiendavaid välju.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1034"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>kasutajatunnus
+võrguaadress
+e-posti aadress</translation>
     </message>
 </context>
 <context>
@@ -498,14 +500,14 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolli .gpgid faili allkirja!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 allkiri on vigane.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -517,18 +519,19 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="104"/>
         <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasutatava krüptovõtme lugemine ei õnnestunud, „.gpg-id“ fail on kas puudu või vigane.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Allkirjavõtit pole!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühtegi allkirjastamiseks mõeldud võtit pole saadaval.
+Sa ei saa kasutajate loendit muuta!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -538,7 +541,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>.gpg-id avamine salvestamiseks ei õnnestunud.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="228"/>
@@ -549,18 +552,19 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="229"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühelgi valitud võtmel pole privaatvõtit.
+Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="335"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Taaskrüptime kaustast %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="339"/>
         <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuendame salasõnahoidlat</translation>
     </message>
 </context>
 <context>
@@ -568,22 +572,22 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo GnuPG võtmepaar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo uus võtmepaar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>Salafraas</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>E-posti aadress</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
@@ -593,17 +597,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salafraasi pikkuse ülem- ja alampiiri pole ja palun vali ta väga hoolikalt. Turvalisuse vaatenurgast on privaatvõtme avamiseks mõeldud salafraas GnuPG (ja muudel avaliku võtme taristu põhistel süsteemidel) kõige nõrgem lüli - ta on ju ainus kaitse olukorras, kus kolmas osapool saab kätte sinu privaatvõtme. &lt;br/&gt;Ideaalis salafraas ei peaks kasutama sõnastikus leiduvaid sõnu ning läbisegi peaks leiduma tähti, numbreid ja erimärke.&lt;br/&gt; GnuPG turvalise kasutamise kontekstis on korralik salafraas ülioluline.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Korda salafraasi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Asajatundja lisavalikud</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
@@ -622,7 +626,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG võtmete looja
+#
+#      esimene testversioon, palun jaga tagasisidet
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -659,12 +677,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="273"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Teavet lisaseadistuste võimaluste kohta &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;leiad GnuPG ingliskeelsest juhendist&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="140"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>Vigane nimi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
@@ -674,17 +692,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="152"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>Vigane e-posti aadress</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="153"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinu sisestatud e-posti aadress pole korrektne e-posti aadress.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selleks toiminguks võib kuluda mitu minutit.&lt;br /&gt;Me peame sel ajal tekitama suures kohuses juhislikke naite. On väga hea mõte, kui samal ajal (algarvude loomise ajal) teed arvutis erinevaid toiminguid (klõpsid klahvistikul, liigutad hiirt, käivitad andmekandjaid) - see annab juhuslike numbrite generaatorile parema võimaluse kasutada suuremat entroopiat.</translation>
     </message>
 </context>
 <context>
@@ -692,7 +710,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <source>Add</source>
@@ -719,7 +737,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="356"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>Tõuka</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -747,12 +765,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="345"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühekordne salasõna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo ühekordselt kasutatav salasõna ja kopeeri lõikelauale</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
@@ -762,12 +780,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
         <source>Git push</source>
-        <translation type="unfinished"></translation>
+        <translation>Giti tõuketeenus (git push)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Andmete laadimine gitist (git pull)</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -776,7 +794,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="364"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuenda</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -792,7 +810,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Halda neid, kes võivad lugeda kaustas asuvat salasõna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="372"/>
@@ -814,12 +832,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="380"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
@@ -829,7 +847,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>Tere tulemast QtPassi kasutajaks</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
@@ -843,7 +861,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="192"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tere tulemast QtPassi kasutajaks %1</translation>
     </message>
     <message>
         <source>Add Password</source>
@@ -883,7 +901,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="292"/>
         <location filename="../src/mainwindow.cpp" line="304"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>Uuendame salasõnahoidlat</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -900,7 +918,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="401"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisu on peidetud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="405"/>
@@ -911,7 +929,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="431"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühekordse salasõna kood</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -924,7 +942,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasõna ja sisu on peidetud</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -953,7 +971,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="519"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsime: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="621"/>
@@ -965,17 +983,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="622"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus salasõnafail: 
+(asukohas %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="658"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> ja kogu sisu?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> ja kogu sisu?&lt;br&gt;&lt;strong&gt;NB! antud kaustas on faile, mis seal ei peaks olema ja enne jätkamist palun kontrolli neid.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="678"/>
@@ -994,7 +1013,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas kustutame kausta?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -1019,19 +1038,19 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="802"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiil on muudetud: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Ava kaust failihalduris</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="321"/>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa kaust</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="310"/>
@@ -1044,7 +1063,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="998"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus kaust: 
+(asukohas %1)</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1053,7 +1073,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="951"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda kausta nime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -1064,17 +1084,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1019"/>
         <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda faili nime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Uus kausta nimi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Uus faili nimi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="253"/>
@@ -1082,7 +1102,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass on standardse Unixi salasõnahalduri &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;i graafiline kasutajaliides.&lt;/p&gt;
+&lt;p&gt;Kui selles tarkvaras leiad vigu, siis &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;palun anna neist meile teada&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Juhendid&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Lähtekood&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1090,12 +1113,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="104"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Märke pole valitud</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuna seadistustest on tähemärkide kombinatsioon valimata, siis salasõna loomine pole võimalik!</translation>
     </message>
 </context>
 <context>
@@ -1119,27 +1142,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Märgistik:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik märgid</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaid tähed</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>Numbrid ja tähed</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinu valitud kombinatsioon</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
@@ -1182,38 +1205,38 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/qtpass.cpp" line="232"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>WebDAVi ühenduse jaoks vajaliku fusedavi käivitamine ei õnnestunud:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="248"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="251"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="254"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="260"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
@@ -1228,7 +1251,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="400"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">copied to clipboard</translation>
+        <translation>Kopeeritud lõikelauale</translation>
     </message>
 </context>
 <context>
@@ -1236,12 +1259,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>kas kirjutame sundkorras üle?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="281"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>kas kirjutame üle %2 -&gt; %1?</translation>
     </message>
 </context>
 <context>
@@ -1249,32 +1272,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Näita</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Peida</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Vä&amp;henda</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>Suu&amp;renda</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Taasta</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Välju</translation>
     </message>
 </context>
 <context>
@@ -1282,7 +1305,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished"></translation>
+        <translation>Lugemisõigusega kasutajad</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1290,12 +1313,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali kasutajad, kes võivad siin kaustas salasõnu dekrüptida.
+Märkus: senised failid jäävad muutmata ja säilitavad senised õigused kuni sa neid ise muudad.
+Sinistel kirjetel on korrektsed võtmed olemas ja neid saad dekrüptimiseks kasutada.
+Punased kirjed ei kehti ning neid kasutada ei ole võimalik.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="69"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsi kasutajaid</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1314,7 +1340,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="76"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita mittekasutatavaid võtmeid</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1327,12 +1353,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Võtmete loend puudub</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Saadavalolevate GPG-võtmete loendi laadimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
@@ -1342,12 +1368,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>loodud</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>aegub</translation>
     </message>
 </context>
 </TS>
