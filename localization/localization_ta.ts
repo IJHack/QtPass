@@ -397,7 +397,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="809"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href = &quot;https://www.passwordstore.org/&quot;&gt; &lt;span சூல் தண்டு = &quot;text-degoration: andalline;&quot;&gt; www.passwordstore.org ச்பான்&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="840"/>
@@ -452,7 +452,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>நாட்டி &amp; வெ கிட்/சி.பி.சி.</translation>
+        <translation>சொந்த அறிவிலி/சிபிசி</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -582,7 +582,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>கடவுச்சொல்</translation>
+        <translation>கடவுச்சொற்றொடர்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -597,7 +597,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ஒரு கடவுச்சொல்லின் நீளத்திற்கு வரம்பு இல்லை, அதை கவனமாக தேர்ந்தெடுக்க வேண்டும். பாதுகாப்பின் கண்ணோட்டத்தில், தனியார் விசையைத் திறப்பதற்கான பாச்ஃபிரேச் GNUPG இன் பலவீனமான புள்ளிகளில் ஒன்றாகும் (மற்றும் பிற பொது விசை குறியாக்க அமைப்புகளும்) மற்றொரு நபர் உங்கள் தனிப்பட்ட விசையைப் பெற்றால் உங்களிடம் உள்ள ஒரே பாதுகாப்பு இது. &lt;br/&gt; வெறுமனே, பாச்ஃபிரேச் ஒரு அகராதியிலிருந்து சொற்களைப் பயன்படுத்தக்கூடாது, மேலும் அகரவரிசை எழுத்துக்களின் விசயத்தை கலந்து, ஆல்பாபெடிக் அல்லாத எழுத்துக்களைப் பயன்படுத்த வேண்டும். பி&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ஒரு கடவுச்சொல்லின் நீளத்திற்கு வரம்பு இல்லை, அதைக் கவனமாகத் தேர்ந்தெடுக்க வேண்டும். &lt;br/&gt;பாதுகாப்பின் கண்ணோட்டத்தில், தனியார் விசையைத் திறப்பதற்கான பாச்ஃபிரேச் GNUPG இன் பலவீனமான புள்ளிகளில் ஒன்றாகும் (மற்றும் பிற பொது விசை குறியாக்க அமைப்புகளும்) மற்றொரு நபர் உங்கள் தனிப்பட்ட விசையைப் பெற்றால் உங்களிடம் உள்ள ஒரே பாதுகாப்பு இது. &lt;br/&gt; வெறுமனே, பாச்ஃபிரேச் ஒரு அகராதியிலிருந்து சொற்களைப் பயன்படுத்தக் கூடாது, மேலும் அகரவரிசை எழுத்துக்களின் விசயத்தைக் கலந்து, ஆல்பாபெடிக் அல்லாத எழுத்துக்களைப் பயன்படுத்த வேண்டும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -702,7 +702,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>இந்த செயல்பாடு சில நிமிடங்கள் ஆகலாம். &lt;Br /&gt; நாம் சீரற்ற பைட்டுகளை நிறைய உருவாக்க வேண்டும். முதன்மையான தலைமுறையின் போது வேறு சில செயல்களைச் செய்வது (விசைப்பலகையில் தட்டச்சு செய்க, சுட்டியை நகர்த்தவும், வட்டுகளைப் பயன்படுத்தவும்) ஒரு நல்ல யோசனை; இது சீரற்ற எண் செனரேட்டருக்கு போதுமான என்ட்ரோபியைப் பெற சிறந்த வாய்ப்பை வழங்குகிறது.</translation>
+        <translation>இந்தச் செயல்பாடு சில நிமிடங்கள் ஆகலாம். &lt;br /&gt;நாம் சீரற்ற பைட்டுகளை நிறைய உருவாக்க வேண்டும். முதன்மையான தலைமுறையின்போது வேறுசில செயல்களைச் செய்வது (விசைப்பலகையில் தட்டச்சு செய்க, சுட்டியை நகர்த்தவும், வட்டுகளைப் பயன்படுத்தவும்) ஒரு நல்ல யோசனை; இது சீரற்ற எண் செனரேட்டருக்கு போதுமான என்ட்ரோபியைப் பெற சிறந்த வாய்ப்பை வழங்குகிறது.</translation>
     </message>
 </context>
 <context>
