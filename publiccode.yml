@@ -1,0 +1,83 @@
+publiccodeYmlVersion: '0.4.0'
+
+name: QtPass
+applicationSuite: pass
+url: 'https://github.com/IJHack/QtPass'
+landingURL: 'https://qtpass.org'
+logo: 'https://qtpass.org/images/logo.png'
+
+softwareType: standalone/desktop
+platforms:
+  - linux
+  - windows
+  - macos
+
+categories:
+  - it-security
+  - identity-management
+  - office
+
+developmentStatus: stable
+
+softwareVersion: '1.4.0'
+releaseDate: '2023-07-02'
+
+description:
+  en:
+    localisedName: QtPass
+    shortDescription: A multi-platform GUI for pass, the standard Unix password manager.
+    longDescription: >
+      QtPass is a multi-platform GUI for pass, the standard Unix password manager.
+      It allows users to manage their password store via a user-friendly graphical interface
+      across Linux, Windows, and macOS. It integrates with GnuPG and can be used in team setups.
+    documentation: 'https://qtpass.org/docs'
+    features:
+       - Using pass or git and gpg2 directly
+       - 'Cross platform: Linux, BSD, OS X and Windows'
+       - Using native widgets and iconography where possible
+       - Reading pass password stores
+       - Decrypting and displaying the password and related info
+       - Editing and adding of passwords and information
+       - Updating to and from a git repository
+       - Per-folder user selection for multi recipient encryption
+       - Configuration options for backends and executable/folder locations
+       - Copying password to clipboard
+       - Configurable shoulder surfing protection options
+       - Easy onboarding for new users
+
+usedBy:
+  - Tails
+  - Debian
+  - Arch Linux
+
+legal:
+  license: GPL-3.0-or-later
+  mainCopyrightOwner: IJhack
+  repoOwner: ijhack
+
+maintenance:
+  type: community
+  contacts:
+    - name: Anne Jan Brouwer
+      email: qtpass@annejan.com
+
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
+    - fr
+    - de
+    - es
+    - nl
+    - uk
+
+dependsOn:
+  open:
+    - name: pass
+      versionMin: '1.7'
+    - name: gnupg
+      version: '2.2'
+    - name: Qt
+      versionMin: '5.12'
+
+
