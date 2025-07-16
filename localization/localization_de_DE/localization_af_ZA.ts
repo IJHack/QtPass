@@ -624,7 +624,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation>#</translation>
+        <translation>#           QtPass GPG Schlüssel Generator 
+# 
+#      Erste Test Version Bitte kommentiere 
+# 
+5echo Generiert einen default Schlüssel 
+Schlüssel-Type: RSA 
+Subkey-Type: RSA 
+Name-Real: 
+Name-Comment: QtPass 
+Name-Email: 
+Verfall-Datum: 0 
+%no-protection 
+# Hier einen commit einfügen, sodass wir später &quot;done&quot; printen können :-) 
+%commit 
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
