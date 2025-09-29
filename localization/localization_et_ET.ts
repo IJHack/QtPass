@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation>Peaida sisu</translation>
+        <translation>Peida sisu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
