@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Панелі поведінка вмісту:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вручну</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="922"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключ підписання</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="962"/>
@@ -500,7 +500,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="242"/>
         <location filename="../src/imitatepass.cpp" line="353"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевірте файлу підпису .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="96"/>
