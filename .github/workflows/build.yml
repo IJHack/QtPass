@@ -1,0 +1,60 @@
+name: Build and Release
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ilammy/msvc-dev-cmd@v1
+    - name: Setup Qt environment
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '5.15.2'
+    - name: Build QtPass
+      run: |
+        qmake qtpass.pro CONFIG+=static
+        nmake
+        copy README.md src\release\README.txt
+        copy LICENSE src\release\LICENSE.txt
+    - name: Install Inno Setup
+      run: choco install innosetup
+    - name: Create Installer with Inno Setup
+      run: ISCC.exe qtpass-gh.iss
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: QtPass-Windows
+        path: release
+
+  build-mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Qt environment
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '5.15.2'
+    - name: Install create-dmg
+      run: |
+        brew install create-dmg
+    - name: Build QtPass
+      run: |
+        qmake
+        make
+        macdeployqt main/QtPass.app
+    - name: Create DMG
+      run: create-dmg main/QtPass.dmg main/QtPass.app
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: QtPass-macOS
+        path: main/QtPass.dmg
+
