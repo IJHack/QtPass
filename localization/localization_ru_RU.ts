@@ -270,7 +270,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="1019"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translatorcomment>Отображать все строки, начинающиеся со слова с двоеточием, как доп. поля, а не только перечисленные здесь</translatorcomment>
-        <translation>Отображать все строки, начинающиеся со слова с двоеточием, а не только указанные здесь</translation>
+        <translation>Отображать как поля все строки, начинающиеся со слова с двоеточием, а не только указанные здесь</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -295,7 +295,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="616"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; с помощью менеджера пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
+        <translation>Пожалуйста, установите GnuPG.&lt;br&gt;Для установки &lt;strong&gt;gpg&lt;/strong&gt; можно использовать любой менеджер пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузить&lt;/a&gt; файл с сайта GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="643"/>
@@ -315,7 +315,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="664"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Возможно, папка %1 не является хранилищем паролей, либо ещё не инициализирована.</translation>
+        <translation>Похоже, папка %1 не является хранилищем паролей или ещё не инициализирована.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="540"/>
@@ -395,7 +395,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="51"/>
         <source>System tray is not available</source>
-        <translation>Системный лоток недоступен</translation>
+        <translation>Область уведомлений недоступна</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="76"/>
@@ -410,12 +410,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="605"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Требуется приложение GnuPG. &lt;br&gt;Чтобы установить его, загрузите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store. &lt;br&gt;Если это уже было сделано, запустите его хотя бы один раз и &lt;br&gt;нажмите кнопку «Автоопределение» в следующем диалоге.</translation>
+        <translation>Пожалуйста, установите GnuPG. &lt;br&gt;Для этого установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store. &lt;br&gt;Если это уже сделано, запустите его хотя бы раз и &lt;br&gt;нажмите «Автоопределение» в следующем диалоге.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="610"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Требуется приложение GnuPG.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; его с сайта GnuPG.org</translation>
+        <translation>Пожалуйста, установите GnuPG.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; с сайта GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -440,7 +440,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Pодное Git/GPG</translation>
+        <translation>&amp;Напрямую Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -546,7 +546,7 @@ You will not be able to change the user list!</source>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ни один из выбранных ключей не имеет закрытого ключа.
-Расшифровать новые пароли не удастся!</translation>
+Вы не сможете расшифровать новые пароли!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="335"/>
@@ -590,12 +590,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Длина пароля не ограничена, а к его созданию следует подходить осмотрительно. С точки зрения безопасности, пароль для разблокировки ключа является одним из самых уязвимых элементов всей системы GnuPG (а также других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет секретным ключом.&lt;br/&gt;Не рекомендуется использовать обычные слова в качестве пароля, а также желательно использовать заглавные, строчные буквы и специальные символы.&lt;br/&gt;Хороший защищённый пароль необходим для обеспечения безопасности использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Длина пароля не ограничена, а к его созданию следует подходить осмотрительно. С точки зрения безопасности, пароль для разблокировки ключа является одним из самых уязвимых элементов системы GnuPG (и других систем шифрования с открытым ключом), так как это единственная мера защиты на случай, если кто-то завладеет секретным ключом.&lt;br/&gt;Желательно избегать использования слов из словаря в качестве пароля, смешивать заглавные и строчные буквы, добавлять цифры и символы.&lt;br/&gt;Хороший пароль имеет решающее значение для безопасного использования GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Повторить пароль</translation>
+        <translation>Повторите пароль</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -680,7 +680,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="141"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Название должно содержать не менее 5 символов.</translation>
+        <translation>Имя должно содержать не менее 5 символов.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="152"/>
@@ -690,12 +690,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="153"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Введённый адрес электронной почты является недействительным.</translation>
+        <translation>Введённый адрес электронной почты недействителен.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Эта операция может занять несколько минут.&lt;br /&gt; Рекомендуется выполнить какие-нибудь другие действия (набрать текст на клавиатуре, переместить мышь, использовать диски) во время генерации основного кода, это позволит генератору случайных чисел получить наибольшее количество разнообразных данных.</translation>
+        <translation>Эта операция может занять несколько минут.&lt;br /&gt; Нужно сгенерировать много случайных байтов. Желательно выполнять какие-нибудь действия (печатать на клавиатуре, двигать мышь, использовать диски) во время первичной генерации. Это поможет генератору случайных чисел добиться достаточной энтропии.</translation>
     </message>
 </context>
 <context>
@@ -718,7 +718,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="356"/>
         <source>Push</source>
-        <translation>Поместить в репозиторий</translation>
+        <translation>Отправить изменения</translation>
     </message>
     <message>
         <source>Add</source>
@@ -760,7 +760,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Git pull</source>
-        <translation>Получить данные из Git</translation>
+        <translation>Получить изменения</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
@@ -862,7 +862,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Password and Content hidden</source>
-        <translation>Пароль и содержимое скрыто</translation>
+        <translation>Пароль и содержимое скрыты</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -901,7 +901,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Вы в самом деле хотите удалить %1%2?</translation>
+        <translation>Вы уверены, что хотите удалить %1%2?</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
@@ -1267,10 +1267,10 @@ Expire-Date: 0
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Выберите пользователей, которые будут иметь возможность расшифровывать пароли, хранящиеся в этой папке.
+        <translation>Выберите пользователей, которые смогут расшифровывать пароли, хранящиеся в этой папке.
 Примечание: Существующие файлы не будут изменены и сохранят старые права доступа до тех пор, пока вы их не отредактируете.
-Записи синего цвета имеют закрытый ключ; выберите одну из них, чтобы расшифровывать пароли.
-Записи красного цвета недействительны, их нельзя зашифровать.</translation>
+Синие записи имеют закрытый ключ; выберите одну из них, чтобы расшифровывать пароли.
+Красные записи недействительны, их нельзя использовать для шифрования.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="69"/>
@@ -1317,7 +1317,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation>Ключ не найден в наборе ключей</translation>
+        <translation>Ключ не найден в связке ключей</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
