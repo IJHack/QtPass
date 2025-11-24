@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation>Der pass-otp Erweiterung verwenden</translation>
+        <translation>pass-otp Erweiterung verwenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
