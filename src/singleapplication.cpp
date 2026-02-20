@@ -80,7 +80,11 @@ bool SingleApplication::sendMessage(const QString &message) {
 #endif
     return false;
   }
-  localSocket.write(message.toUtf8());
+  QByteArray payload = message.toUtf8();
+  if (payload.isEmpty()) {
+    payload = QByteArray(1, '\0');
+  }
+  localSocket.write(payload);
   if (!localSocket.waitForBytesWritten(timeout)) {
 #ifdef QT_DEBUG
     dbg() << localSocket.errorString().toLatin1();

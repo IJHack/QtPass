@@ -62,8 +62,7 @@ int main(int argc, char *argv[]) {
     name = qgetenv("USERNAME");
   SingleApplication app(argc, argv, name + "QtPass");
   if (app.isRunning()) {
-    if (text.length() > 0)
-      app.sendMessage(text);
+    app.sendMessage(text);
     return 0;
   }
 #else
