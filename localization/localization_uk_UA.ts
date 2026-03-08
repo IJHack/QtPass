@@ -21,12 +21,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation type="unfinished">Використовувати початковий вибір</translation>
+        <translation>Використовувати первинний вибір</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished">Авточистка після:</translation>
+        <translation>Автоматичне очищення після:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">Панелі поведінка вмісту:</translation>
+        <translation>Поведінка панелі контенту:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">Авточистка панелі після:</translation>
+        <translation>Автоматичне очищення панелі після:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
-        <translation type="unfinished">Символи</translation>
+        <translation>Символів</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
@@ -106,17 +106,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">Алфавітний</translation>
+        <translation>Алфавітні</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">Буквено-цифрові</translation>
+        <translation>Буквено-цифрові</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation type="unfinished">Вручну</translation>
+        <translation>Власні</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
-        <translation type="unfinished">Включати спеціальні символи</translation>
+        <translation>Включати спеціальні символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="922"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished">Створює легкі до запам’ятовування, але менш безпечні паролі</translation>
+        <translation>Генерувати прості для запам&apos;ятовування, але менш надійні паролі</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
@@ -178,17 +178,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically push</source>
-        <translation type="unfinished">Автоматично надсилати</translation>
+        <translation>Автоматично надсилати</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
-        <translation type="unfinished">Автоматично стягувати</translation>
+        <translation>Автоматично отримувати</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
         <source>Extensions:</source>
-        <translation type="unfinished">Розширення:</translation>
+        <translation>Розширення:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">Використовувати в області повідомлень</translation>
+        <translation>Використовувати в області повідомлень</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
-        <translation type="unfinished">Завжди поверх всіх</translation>
+        <translation>Завжди понад іншими</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="661"/>
@@ -236,12 +236,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished">&amp;Використовувати pass</translation>
+        <translation>&amp;Використовувати pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>Вбудований</translation>
     </message>
     <message>
         <source>git</source>
@@ -372,7 +372,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="616"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Будь ласка, встановіть GnuPG на вашу систему. &lt;br&gt;Встановіть &lt;strong&gt;gpg&lt;/strong&gt; використовуючи ваш улюблений пакетний менеджер&lt;br&gt;або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
+        <translation>Будь ласка, встановіть GnuPG на вашу систему. &lt;br&gt;Встановіть &lt;strong&gt;gpg&lt;/strong&gt; використовуючи ваш улюблений пакетний менеджер&lt;br&gt;або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="643"/>
@@ -437,7 +437,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Use Git</source>
-        <translation>Використовувати GIT</translation>
+        <translation>Використовувати Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
@@ -452,7 +452,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Вбудований Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -507,7 +507,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="243"/>
         <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Підпис для %1 недійсний.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="103"/>
@@ -524,13 +524,14 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає ключа підпису!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="195"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Жоден із секретних ключів підпису недоступний.
+Ви не зможете змінити список користувачів!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="214"/>
@@ -601,12 +602,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторіть pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation type="unfinished">Експерт</translation>
+        <translation>Експерт</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
@@ -690,7 +691,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="356"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>Надіслати</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -947,17 +948,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> і весь вміст? &lt;br&gt;&lt;strong&gt;Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Ви впевнені, що хочете видалити %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити пароль?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -966,7 +967,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити папку?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -991,32 +992,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="802"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Профіль змінено на %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити папку за допомогою файлового менеджера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="321"/>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.cpp" line="930"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати папку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="310"/>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.cpp" line="931"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати пароль</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="998"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Нова папка: 
+(Буде розміщено в %1)</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1025,28 +1027,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="951"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати папку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати пароль</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1019"/>
         <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати папку на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1052"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати файл на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="253"/>
@@ -1054,7 +1056,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass це графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;
+&lt;p&gt;Будь ласка, повідомте про будь-які &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеми&lt;/a&gt; які можуть у вас виникнути з цим програмним забезпеченням.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документація&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Вихідний код&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1062,12 +1067,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/pass.cpp" line="104"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вибрано жодного символа</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="105"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдається згенерувати пароль, у конфігурації немає символів для вибору!</translation>
     </message>
 </context>
 <context>
@@ -1076,47 +1081,47 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished">Пароль</translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Згенерувати</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати пароль</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>Набір символів:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation type="unfinished">Усі символи</translation>
+        <translation>Усі символи</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">Алфавітний</translation>
+        <translation>Алфавітний</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">Буквено-цифрові</translation>
+        <translation>Буквено-цифрові</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Власний варіант</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Довжина:</translation>
     </message>
 </context>
 <context>
@@ -1124,43 +1129,43 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="142"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Генерація пари ключів GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="195"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Не вдалося підключитися до WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="212"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV password</translation>
+        <translation>Пароль QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="213"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Введіть пароль для підключення до WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="229"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>fusedav несподівано завершив роботу
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="232"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>Не вдалося запустити fusedav для підключення до WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="248"/>
@@ -1190,17 +1195,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Clipboard cleared</translation>
+        <translation>Буфер обміну очищено</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="381"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Clipboard not cleared</translation>
+        <translation>Буфер обміну не очищено</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="400"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">copied to clipboard</translation>
+        <translation>Скопійовано в буфер обміну</translation>
     </message>
 </context>
 <context>
@@ -1208,12 +1213,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/storemodel.cpp" line="280"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>примусово перезаписати?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="281"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>перезаписати %1 на %2?</translation>
     </message>
 </context>
 <context>
@@ -1221,32 +1226,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Показати</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="65"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Приховати</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="68"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Згорнути</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="71"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Розгорнути</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="74"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Відновити</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="77"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Вийти</translation>
     </message>
 </context>
 <context>
@@ -1254,7 +1259,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished"></translation>
+        <translation>Користувачі з правами на читання</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1262,12 +1267,15 @@ p, li { white-space: pre-wrap; }
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, які користувачі повинні мати можливість розшифровувати паролі, що зберігаються в цій папці.
+Примітка: Існуючі файли не будуть змінені та збережуть старі дозволи, доки ви їх не відредагуєте.
+Сині записи мають доступний секретний ключ, виберіть один із них, щоб мати змогу розшифрувати.
+Червоні записи недійсні, ви не зможете зашифрувати їх.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="69"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук користувачів</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1286,7 +1294,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="76"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати невикористовувані ключі</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1299,27 +1307,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="25"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Відсутній список ключів</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="26"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося отримати список доступних ключів GPG</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="59"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Ключ не знайдено в брелоку</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>створений</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="158"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>термін дії</translation>
     </message>
 </context>
 </TS>
