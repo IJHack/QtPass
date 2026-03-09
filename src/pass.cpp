@@ -1,4 +1,5 @@
 #include "pass.h"
+#include "helpers.h"
 #include "qtpasssettings.h"
 #include <QDir>
 #include <QRandomGenerator>
@@ -132,7 +133,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
-  for (const QString &keystring : std::as_const(keystrings)) {
+  for (const QString &keystring : AS_CONST(keystrings)) {
     if (!keystring.isEmpty()) {
       args.append(keystring);
     }

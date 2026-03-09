@@ -4,6 +4,7 @@
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
+#include "helpers.h"
 
 #include <QLabel>
 #include <QLineEdit>
@@ -11,6 +12,7 @@
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
+
 
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
@@ -129,13 +131,13 @@ void PasswordDialog::setPassword(QString password) {
   QWidget *previous = ui->checkBoxShow;
   // first set templated values
   NamedValues namedValues = fileContent.getNamedValues();
-  for (QLineEdit *line : std::as_const(templateLines)) {
+  for (QLineEdit *line : AS_CONST(templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
     previous = line;
   }
   // show remaining values (if there are)
   otherLines.clear();
-  for (const NamedValue &nv : std::as_const(namedValues)) {
+  for (const NamedValue &nv : AS_CONST(namedValues)) {
     auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);
