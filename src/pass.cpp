@@ -132,7 +132,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
-  for (const QString &keystring : qAsConst(keystrings)) {
+  for (const QString &keystring : std::as_const(keystrings)) {
     if (!keystring.isEmpty()) {
       args.append(keystring);
     }
