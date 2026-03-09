@@ -1175,7 +1175,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main/main.cpp" line="90"/>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
