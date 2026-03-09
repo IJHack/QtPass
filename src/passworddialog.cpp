@@ -1,10 +1,10 @@
 #include "passworddialog.h"
 #include "filecontent.h"
+#include "helpers.h"
 #include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
-#include "helpers.h"
 
 #include <QLabel>
 #include <QLineEdit>
@@ -12,7 +12,6 @@
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
-
 
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
