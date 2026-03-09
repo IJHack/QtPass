@@ -1,0 +1,20 @@
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "IJHack"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+[[annotations]]
+path = "artwork/*"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "AnonMoos"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "icons/*"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "jsimplicio"
+SPDX-License-Identifier = "CC0-1.0"
+

@@ -654,7 +654,7 @@ Expire-Date: 0
         <translation>Croeso i QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="253"/>
+        <location filename="../src/mainwindow.ui" line="256"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -665,209 +665,209 @@ Expire-Date: 0
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="310"/>
         <location filename="../src/mainwindow.ui" line="313"/>
-        <location filename="../src/mainwindow.cpp" line="931"/>
+        <location filename="../src/mainwindow.ui" line="316"/>
+        <location filename="../src/mainwindow.cpp" line="936"/>
         <source>Add password</source>
         <translation>Ychwanegu cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="316"/>
+        <location filename="../src/mainwindow.ui" line="319"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="321"/>
         <location filename="../src/mainwindow.ui" line="324"/>
-        <location filename="../src/mainwindow.cpp" line="930"/>
+        <location filename="../src/mainwindow.ui" line="327"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>Add folder</source>
         <translation>Ychwanegu plygell</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="329"/>
         <location filename="../src/mainwindow.ui" line="332"/>
-        <location filename="../src/mainwindow.cpp" line="938"/>
+        <location filename="../src/mainwindow.ui" line="335"/>
+        <location filename="../src/mainwindow.cpp" line="943"/>
         <source>Edit</source>
         <translation>Golygu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="337"/>
         <location filename="../src/mainwindow.ui" line="340"/>
-        <location filename="../src/mainwindow.cpp" line="959"/>
+        <location filename="../src/mainwindow.ui" line="343"/>
+        <location filename="../src/mainwindow.cpp" line="964"/>
         <source>Delete</source>
         <translation>Dileu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="345"/>
+        <location filename="../src/mainwindow.ui" line="348"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="348"/>
+        <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Cynhyrchu OTP a chopïo i&apos;r Clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/mainwindow.ui" line="354"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="356"/>
+        <location filename="../src/mainwindow.ui" line="359"/>
         <source>Push</source>
         <translation>Gwthio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="359"/>
+        <location filename="../src/mainwindow.ui" line="362"/>
         <source>Git push</source>
         <translation>Git gwthio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="364"/>
+        <location filename="../src/mainwindow.ui" line="367"/>
         <source>Update</source>
         <translation>Diweddaru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="367"/>
+        <location filename="../src/mainwindow.ui" line="370"/>
         <source>Git pull</source>
         <translation>Git tynnu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="372"/>
-        <location filename="../src/mainwindow.cpp" line="932"/>
+        <location filename="../src/mainwindow.ui" line="375"/>
+        <location filename="../src/mainwindow.cpp" line="937"/>
         <source>Users</source>
         <translation>Defnyddwyr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="375"/>
+        <location filename="../src/mainwindow.ui" line="378"/>
         <source>Manage who can read password in folder</source>
         <translation>Rheoli pwy all ddarllen cyfrinair mewn ffolder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="380"/>
+        <location filename="../src/mainwindow.ui" line="383"/>
         <source>Config</source>
         <translation>Ffurfweddu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="383"/>
+        <location filename="../src/mainwindow.ui" line="386"/>
         <source>Configuration</source>
         <translation>Ffurfweddiad</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="192"/>
+        <location filename="../src/mainwindow.cpp" line="193"/>
         <source>Welcome to QtPass %1</source>
         <translation>Croeso i QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="292"/>
-        <location filename="../src/mainwindow.cpp" line="304"/>
+        <location filename="../src/mainwindow.cpp" line="293"/>
+        <location filename="../src/mainwindow.cpp" line="305"/>
         <source>Updating password-store</source>
         <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="401"/>
+        <location filename="../src/mainwindow.cpp" line="402"/>
         <source>Content hidden</source>
         <translation>Cynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="405"/>
-        <location filename="../src/mainwindow.cpp" line="1133"/>
+        <location filename="../src/mainwindow.cpp" line="406"/>
+        <location filename="../src/mainwindow.cpp" line="1138"/>
         <source>Password</source>
         <translation>Cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="431"/>
+        <location filename="../src/mainwindow.cpp" line="432"/>
         <source>OTP Code</source>
         <translation>Cod OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="450"/>
+        <location filename="../src/mainwindow.cpp" line="451"/>
         <source>Password and Content hidden</source>
         <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="519"/>
+        <location filename="../src/mainwindow.cpp" line="520"/>
         <source>Looking for: %1</source>
         <translation>Wrthi&apos;n chwilio am: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="621"/>
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="622"/>
+        <location filename="../src/mainwindow.cpp" line="1002"/>
         <source>New file</source>
         <translation>Ffeil newydd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="622"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Ffeil cyfrinair newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="658"/>
+        <location filename="../src/mainwindow.cpp" line="659"/>
         <source> and the whole content?</source>
         <translation> a&apos;r holl gynnwys?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="668"/>
+        <location filename="../src/mainwindow.cpp" line="669"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="677"/>
+        <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Delete folder?</source>
         <translation>Dileu plygell?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="677"/>
+        <location filename="../src/mainwindow.cpp" line="678"/>
         <source>Delete password?</source>
         <translation>Dileu cyfrinair?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="678"/>
+        <location filename="../src/mainwindow.cpp" line="679"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="807"/>
         <source>Profile changed to %1</source>
         <translation>Wedi newid y proffil i %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="929"/>
+        <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Open folder with file manager</source>
         <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="951"/>
+        <location filename="../src/mainwindow.cpp" line="956"/>
         <source>Rename folder</source>
         <translation>Ailenwi plygell</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Rename password</source>
         <translation>Ailenwi&apos;r cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="998"/>
+        <location filename="../src/mainwindow.cpp" line="1003"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Plygell newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
-        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="1057"/>
         <source>Rename file</source>
         <translation>Ailenwi ffeil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1024"/>
         <source>Rename Folder To: </source>
         <translation>Ailenwi plygell yn: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1057"/>
         <source>Rename File To: </source>
         <translation>Ailenwi ffeil i: </translation>
     </message>
@@ -875,12 +875,12 @@ Expire-Date: 0
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="104"/>
+        <location filename="../src/pass.cpp" line="105"/>
         <source>No characters chosen</source>
         <translation>Dim nodau wedi&apos;u dewis</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="105"/>
+        <location filename="../src/pass.cpp" line="106"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
     </message>
@@ -937,8 +937,9 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../main/main.cpp" line="90"/>
         <source>LTR</source>
-        <translation type="vanished">LTR</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

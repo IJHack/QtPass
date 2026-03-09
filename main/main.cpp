@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 
   MainWindow w(text);
 
-  SingleApplication::setActiveWindow(&w);
+  w.activateWindow();
 
 #ifndef Q_OS_OSX
   SingleApplication::setWindowIcon(QIcon(":artwork/icon.png"));
