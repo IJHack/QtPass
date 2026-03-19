@@ -15,7 +15,8 @@ QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
       iconEdit(QIcon::fromTheme("show", QIcon(":/icons/view.svg"))),
       iconEditPushed(QIcon::fromTheme("hide-new", QIcon(":/icons/hide.svg"))) {
   setIcon(iconEdit);
-  connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
+  connect(this, &QPushButton::clicked, this,
+          &QPushButtonShowPassword::buttonClicked);
   this->line = line;
 }
 

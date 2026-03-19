@@ -100,10 +100,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   updateProfileBox();
 
   QtPassSettings::getPass()->updateEnv();
-  clearPanelTimer.setInterval(1000 *
+  clearPanelTimer.setInterval(MS_PER_SECOND *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, SIGNAL(timeout()), this, SLOT(clearPanel()));
+  connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
 
   searchTimer.setInterval(350);
   searchTimer.setSingleShot(true);
@@ -269,7 +269,7 @@ void MainWindow::config() {
       if (m_qtPass->isFreshStart() && Util::checkConfig())
         config();
       QtPassSettings::getPass()->updateEnv();
-      clearPanelTimer.setInterval(1000 *
+      clearPanelTimer.setInterval(MS_PER_SECOND *
                                   QtPassSettings::getAutoclearPanelSeconds());
       m_qtPass->setClipboardTimer();
 
@@ -1009,7 +1009,10 @@ void MainWindow::addFolder() {
     return;
   newdir.prepend(dir);
   // dbg()<< newdir;
-  QDir().mkdir(newdir);
+  if (!QDir().mkdir(newdir)) {
+    QMessageBox::warning(this, tr("Error"),
+                         tr("Failed to create folder: %1").arg(newdir));
+  }
 }
 
 /**

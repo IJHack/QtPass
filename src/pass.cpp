@@ -1,6 +1,7 @@
 #include "pass.h"
 #include "helpers.h"
 #include "qtpasssettings.h"
+#include "util.h"
 #include <QDir>
 #include <QRandomGenerator>
 #include <QRegularExpression>
@@ -142,11 +143,12 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
   if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
       0)
     return users;
-  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList keys = p_out.split(newLines, Qt::SkipEmptyParts);
+  const QStringList keys =
+      p_out.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
 #else
-  const QStringList keys = p_out.split(newLines, QString::SkipEmptyParts);
+  const QStringList keys =
+      p_out.split(Util::newLinesRegex(), QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
   for (const QString &key : keys) {

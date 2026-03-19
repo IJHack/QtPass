@@ -16,7 +16,8 @@ QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
       iconEditPushed(
           QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))) {
   setIcon(iconEdit);
-  connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
+  connect(this, &QPushButton::clicked, this,
+          &QPushButtonWithClipboard::buttonClicked);
 }
 
 /**
