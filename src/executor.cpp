@@ -192,9 +192,9 @@ int Executor::executeBlocking(QString app, const QStringList &args,
   if (internal.exitStatus() == QProcess::NormalExit) {
     QString pout = decodeAssumingUtf8(internal.readAllStandardOutput());
     QString perr = decodeAssumingUtf8(internal.readAllStandardError());
-    if (process_out != Q_NULLPTR)
+    if (process_out != nullptr)
       *process_out = pout;
-    if (process_err != Q_NULLPTR)
+    if (process_err != nullptr)
       *process_err = perr;
     return internal.exitCode();
   }

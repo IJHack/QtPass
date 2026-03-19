@@ -2,6 +2,7 @@
 #include "configdialog.h"
 #include "qprogressindicator.h"
 #include "ui_keygendialog.h"
+#include "util.h"
 #include <QMessageBox>
 #include <QRegularExpression>
 
@@ -84,11 +85,12 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
-  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList lines = expert.split(newLines, Qt::SkipEmptyParts);
+  const QStringList lines =
+      expert.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
 #else
-  const QStringList lines = expert.split(newLines, QString::SkipEmptyParts);
+  const QStringList lines =
+      expert.split(Util::newLinesRegex(), QString::SkipEmptyParts);
 #endif
   for (QString line : lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
@@ -107,11 +109,12 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 void KeygenDialog::no_protection(bool enable) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
-  static const QRegularExpression newLines{"[\r\n]"};
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList lines = expert.split(newLines, Qt::SkipEmptyParts);
+  const QStringList lines =
+      expert.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
 #else
-  const QStringList lines = expert.split(newLines, QString::SkipEmptyParts);
+  const QStringList lines =
+      expert.split(Util::newLinesRegex(), QString::SkipEmptyParts);
 #endif
   for (QString line : lines) {
     bool remove = false;

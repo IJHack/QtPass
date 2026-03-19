@@ -14,7 +14,8 @@ QPushButtonAsQRCode::QPushButtonAsQRCode(const QString &textToCopy,
     : QPushButton(parent), textToCopy(textToCopy),
       iconEdit(QIcon::fromTheme("qrcode", QIcon(":/icons/qrcode.svg"))) {
   setIcon(iconEdit);
-  connect(this, SIGNAL(clicked(bool)), this, SLOT(buttonClicked(bool)));
+  connect(this, &QPushButton::clicked, this,
+          &QPushButtonAsQRCode::buttonClicked);
 }
 
 /**

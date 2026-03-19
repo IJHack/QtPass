@@ -644,7 +644,12 @@ void ConfigDialog::wizard() {
             tr("Would you like to create a password-store at %1?")
                 .arg(passStore),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
-      QDir().mkdir(passStore);
+      if (!QDir().mkdir(passStore)) {
+        QMessageBox::warning(
+            this, tr("Error"),
+            tr("Failed to create password-store at: %1").arg(passStore));
+        return;
+      }
 #ifdef Q_OS_WIN
       SetFileAttributes(passStore.toStdWString().c_str(),
                         FILE_ATTRIBUTE_HIDDEN);
