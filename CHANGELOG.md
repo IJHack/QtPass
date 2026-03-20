@@ -2,25 +2,28 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
+
+## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-20)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0)
 
 **Fixed bugs:**
 
-- qtpass do not strip comments of gpg_id file [\#625](https://github.com/IJHack/QtPass/issues/625)
-- Build Windows [\#598](https://github.com/IJHack/QtPass/issues/598)
-- Please sign release 1.4.0-rc1 [\#594](https://github.com/IJHack/QtPass/issues/594)
-- Create a new release 1.4.0 [\#567](https://github.com/IJHack/QtPass/issues/567)
-- Crashes during free text search [\#147](https://github.com/IJHack/QtPass/issues/147)
-- Program does not run in Windows 10 [\#123](https://github.com/IJHack/QtPass/issues/123)
+- Build and packaging updates for AppVeyor/Windows installer reliability.
+- Release metadata bump to 1.5.0 across build and packaging files.
+- General cleanup and modernization for CI workflows and tooling.
+- Translations refreshed from Weblate.
 
 **Closed issues:**
 
-- Confusion about pass ecosystem [\#657](https://github.com/IJHack/QtPass/issues/657)
-- No context menu [\#522](https://github.com/IJHack/QtPass/issues/522)
+- Reduced installer locale handling to avoid missing Inno Setup language file failures.
 
 **Merged pull requests:**
 
-- Fix build with Qt6. [\#656](https://github.com/IJHack/QtPass/pull/656) ([Vascom](https://github.com/Vascom))
+- PublicCode, AppVeyor and InnoSetup modernization [\#722](https://github.com/IJHack/QtPass/pull/722) ([annejan](https://github.com/annejan))
+- More clang-tidy modernizations [\#721](https://github.com/IJHack/QtPass/pull/721)
+- Apply clang-tidy modernizations [\#720](https://github.com/IJHack/QtPass/pull/720)
 
 ## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
 
