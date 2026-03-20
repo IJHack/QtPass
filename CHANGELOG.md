@@ -29,6 +29,20 @@
 
 - Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723).
 
+**New Contributors**
+
+- @Vascom made their first contribution in https://github.com/IJHack/QtPass/pull/656
+- @shemeshg made their first contribution in https://github.com/IJHack/QtPass/pull/658
+- @ruimaciel made their first contribution in https://github.com/IJHack/QtPass/pull/672
+- @vdchuyen made their first contribution in https://github.com/IJHack/QtPass/pull/680
+- @souk4711 made their first contribution in https://github.com/IJHack/QtPass/pull/681
+- @principis made their first contribution in https://github.com/IJHack/QtPass/pull/690
+- @stkw0 made their first contribution in https://github.com/IJHack/QtPass/pull/695
+- @publiccode-pr-bot made their first contribution in https://github.com/IJHack/QtPass/pull/701
+- @transifex-integration[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/698
+- @basil made their first contribution in https://github.com/IJHack/QtPass/pull/704
+- @dependabot[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/709
+
 **Full Changelog**: https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0
 
 ## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
