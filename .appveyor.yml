@@ -20,14 +20,14 @@ install:
   - py -3 -m pip install aqtinstall
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
+  - py -3 -m aqt install-tool -O %QT_ROOT% windows desktop tools_mingw90
   - dir %QT_ROOT%
   - dir %QT_ROOT%\Tools
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
-  - set MINGW_ROOT=%QT_ROOT%\mingw_64
+  - set MINGW_ROOT=%QT_ROOT%\Tools\mingw1120_64
   - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
   - echo QTDIR=%QTDIR%
   - echo MINGW_ROOT=%MINGW_ROOT%
-  - qmake -v
   - where qmake
   - where mingw32-make
   - where gcc
@@ -39,8 +39,7 @@ build_script:
   - mingw32-make
   - if exist dist rmdir /s /q dist
   - mkdir dist\qtpass
-  - if exist src\release\qtpass.exe copy src\release\qtpass.exe dist\qtpass\qtpass.exe
-  - if exist main\release\qtpass.exe copy main\release\qtpass.exe dist\qtpass\qtpass.exe
+  - copy src\release\qtpass.exe dist\qtpass\qtpass.exe
   - if not exist dist\qtpass\qtpass.exe exit /b 1
   - windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
   - copy README.md dist\qtpass\README.txt
