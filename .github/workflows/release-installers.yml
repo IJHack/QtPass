@@ -1,0 +1,101 @@
+name: Build Installers
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: jurplel/install-qt-action@v4
+
+      - name: Install Inno Setup
+        run: choco install --yes innosetup
+
+      - name: Build Windows installer
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          qmake qtpass.pro CONFIG+=release
+          nmake
+
+          New-Item -ItemType Directory -Force -Path dist\qtpass | Out-Null
+
+          if (Test-Path "main\release\qtpass.exe") {
+            Copy-Item "main\release\qtpass.exe" "dist\qtpass\qtpass.exe"
+          } elseif (Test-Path "src\release\qtpass.exe") {
+            Copy-Item "src\release\qtpass.exe" "dist\qtpass\qtpass.exe"
+          } else {
+            throw "Could not locate built qtpass.exe"
+          }
+
+          Copy-Item "README.md" "dist\qtpass\README.txt"
+          Copy-Item "LICENSE" "dist\qtpass\LICENSE.txt"
+
+          windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
+
+          $installerVersion = "1.5.0"
+          if ($env:GITHUB_REF -like 'refs/tags/v*') {
+            $installerVersion = $env:GITHUB_REF_NAME -replace '^v', ''
+          }
+
+          iscc "/DMyAppVersion=$installerVersion" qtpass.iss
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtpass-windows-installer
+          path: Output/qtpass-*.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: jurplel/install-qt-action@v4
+
+      - name: Install dmg helper
+        run: brew install create-dmg
+
+      - name: Build macOS app and dmg
+        run: |
+          set -euo pipefail
+
+          qmake qtpass.pro CONFIG+=release
+          make
+
+          APP_PATH="main/QtPass.app"
+          if [ ! -d "$APP_PATH" ]; then
+            if [ -d "src/QtPass.app" ]; then
+              APP_PATH="src/QtPass.app"
+            else
+              echo "QtPass.app not found" >&2
+              exit 1
+            fi
+          fi
+
+          macdeployqt "$APP_PATH"
+
+          VERSION="1.5.0"
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+
+          DMG_NAME="QtPass-${VERSION}.dmg"
+          create-dmg "$DMG_NAME" "$APP_PATH"
+
+      - name: Upload dmg artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtpass-macos-dmg
+          path: QtPass-*.dmg
