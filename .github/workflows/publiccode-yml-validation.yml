@@ -2,11 +2,16 @@ name: publiccode.yml validation
 
 on: [pull_request, push]
 
+permissions: {}
+
 jobs:
   publiccode_yml_validation:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
     steps:
       - uses: actions/checkout@v6
       - uses: italia/publiccode-parser-action@v1
         with:
-          publiccode: 'publiccode.yml'
+          publiccode: "publiccode.yml"
