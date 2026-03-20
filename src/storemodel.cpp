@@ -56,7 +56,7 @@ bool StoreModel::ShowThis(const QModelIndex index) const {
   bool retVal = false;
   if (fs == nullptr)
     return retVal;
-  // Gives you the info for number of childs with a parent
+   // Gives you the info for number of childs with a parent
   if (sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
@@ -159,7 +159,7 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
   dragAndDropInfoPasswordStore info;
 
   QByteArray encodedData;
-  // only use the first, otherwise we should enable multiselection
+   // only use the first, otherwise we should enable multiselection
   QModelIndex index = indexes.at(0);
   if (index.isValid()) {
     QModelIndex useIndex = mapToSource(index);
@@ -210,15 +210,15 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
     return false;
   }
 
-  // you can drop a folder on a folder
+   // you can drop a folder on a folder
   if (fs->fileInfo(mapToSource(useIndex)).isDir() && info.isDir) {
     return true;
   }
-  // you can drop a file on a folder
+   // you can drop a file on a folder
   if (fs->fileInfo(mapToSource(useIndex)).isDir() && info.isFile) {
     return true;
   }
-  // you can drop a file on a file
+   // you can drop a file on a file
   if (fs->fileInfo(mapToSource(useIndex)).isFile() && info.isFile) {
     return true;
   }
@@ -256,7 +256,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
   if (info.isDir) {
-    // dropped dir onto dir
+     // dropped dir onto dir
     if (destFileinfo.isDir()) {
       QDir destDir = QDir(cleanedDest).filePath(srcFileInfo.fileName());
       QString cleanedDestDir = QDir::cleanPath(destDir.absolutePath());
@@ -267,7 +267,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
       }
     }
   } else if (info.isFile) {
-    // dropped file onto a directory
+     // dropped file onto a directory
     if (destFileinfo.isDir()) {
       if (action == Qt::MoveAction) {
         QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest);
@@ -275,7 +275,7 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
         QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest);
       }
     } else if (destFileinfo.isFile()) {
-      // dropped file onto a file
+       // dropped file onto a file
       int answer = QMessageBox::question(
           nullptr, tr("force overwrite?"),
           tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),

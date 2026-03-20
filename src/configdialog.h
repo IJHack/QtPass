@@ -10,7 +10,7 @@ namespace Ui {
 struct UserInfo;
 
 class ConfigDialog;
-} // namespace Ui
+}  // namespace Ui
 
 /*!
     \class ConfigDialog
@@ -82,8 +82,8 @@ private:
   void setGroupBoxState();
   QString selectExecutable();
   QString selectFolder();
-  // QMessageBox::critical with hack to avoid crashes with
-  // Qt 5.4.1 when QApplication::exec was not yet called
+   // QMessageBox::critical with hack to avoid crashes with
+   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
 
   bool isPassOtpAvailable();
@@ -98,4 +98,4 @@ private:
   MainWindow *mainWindow;
 };
 
-#endif // CONFIGDIALOG_H_
+#endif  // CONFIGDIALOG_H_

@@ -1,6 +1,10 @@
 name: publiccode.yml validation
 
-on: [pull_request, push]
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 permissions: {}
 
@@ -8,7 +12,6 @@ jobs:
   publiccode_yml_validation:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
       contents: read
     steps:
       - uses: actions/checkout@v6

@@ -26,7 +26,7 @@ public:
   virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
   virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
 
-  // Pass interface
+   // Pass interface
 public:
   void Move(const QString src, const QString dest,
             const bool force = false) Q_DECL_OVERRIDE;
@@ -34,4 +34,4 @@ public:
             const bool force = false) Q_DECL_OVERRIDE;
 };
 
-#endif // REALPASS_H
+#endif  // REALPASS_H

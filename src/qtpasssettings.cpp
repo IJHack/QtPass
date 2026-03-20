@@ -63,7 +63,7 @@ QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
   getInstance()->beginGroup(SettingsConstants::profile);
   QHash<QString, QHash<QString, QString>> profiles;
 
-  // migration from version <= v1.3.2: profiles datastructure
+   // migration from version <= v1.3.2: profiles datastructure
   QStringList childKeys = getInstance()->childKeys();
   if (!childKeys.empty()) {
     foreach (QString key, childKeys) {
@@ -73,7 +73,7 @@ QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
       profiles.insert(key, profile);
     }
   }
-  // /migration from version <= v1.3.2
+   // /migration from version <= v1.3.2
 
   QStringList childGroups = getInstance()->childGroups();
   foreach (QString group, childGroups) {
@@ -81,7 +81,7 @@ QHash<QString, QHash<QString, QString>> QtPassSettings::getProfiles() {
     profile.insert("path", getInstance()->value(group + "/path").toString());
     profile.insert("signingKey",
                    getInstance()->value(group + "/signingKey").toString());
-    // profiles.insert(group, getInstance()->value(group).toString());
+     // profiles.insert(group, getInstance()->value(group).toString());
     profiles.insert(group, profile);
   }
 
@@ -304,18 +304,18 @@ QString QtPassSettings::getPassStore(const QString &defaultValue) {
                             ->value(SettingsConstants::passStore, defaultValue)
                             .toString();
 
-  // Normalize the path string
+   // Normalize the path string
   returnValue = QDir(returnValue).absolutePath();
 
-  // ensure directory exists if never used pass or misconfigured.
-  // otherwise process->setWorkingDirectory(passStore); will fail on execution.
+   // ensure directory exists if never used pass or misconfigured.
+   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
   if (!QDir(returnValue).exists()) {
     if (!QDir().mkdir(returnValue)) {
       qWarning() << "Failed to create password store directory:" << returnValue;
     }
   }
 
-  // ensure path ends in /
+   // ensure path ends in /
   if (!returnValue.endsWith("/") && !returnValue.endsWith(QDir::separator())) {
     returnValue += QDir::separator();
   }

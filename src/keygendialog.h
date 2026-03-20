@@ -38,4 +38,4 @@ private:
   ConfigDialog *dialog;
 };
 
-#endif // KEYGENDIALOG_H_
+#endif  // KEYGENDIALOG_H_

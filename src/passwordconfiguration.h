@@ -16,7 +16,7 @@ struct PasswordConfiguration {
     ALPHABETICAL,
     ALPHANUMERIC,
     CUSTOM,
-    CHARSETS_COUNT //  have to be last, for easier initialization of arrays
+    CHARSETS_COUNT  //   have to be last, for easier initialization of arrays
   } selected;
   /**
    * \brief Length of the password.
@@ -34,8 +34,8 @@ struct PasswordConfiguration {
                                "vwxyz"; /*Only Alphabetical*/
     Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
                                "vwxyz1234567890"; /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = Characters[ALLCHARS]; //  this may be redefined by user
+    Characters[CUSTOM] = Characters[ALLCHARS];    // may be redefined by user
   }
 };
 
-#endif // PASSWORDCONFIGURATION_H
+#endif  //  PASSWORDCONFIGURATION_H

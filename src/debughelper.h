@@ -6,4 +6,4 @@
 //  this is soooooo ugly...
 #define dbg() qDebug() << __FILE__ ":" << __LINE__
 
-#endif // DEBUG_H
+#endif  // DEBUG_H

@@ -44,4 +44,4 @@ private:
   bool isAllocated;
 };
 
-#endif // TRAYICON_H_
+#endif  // TRAYICON_H_

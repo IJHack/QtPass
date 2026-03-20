@@ -19,15 +19,15 @@ SingleApplication::SingleApplication(int &argc, char *argv[], QString uniqueKey)
     _isRunning = true;
   } else {
     _isRunning = false;
-    // create shared memory.
+     // create shared memory.
     if (!sharedMemory.create(1)) {
 #ifdef QT_DEBUG
       dbg() << "Unable to create single instance.";
 #endif
       return;
     }
-    // create local server and listen to incomming messages from other
-    // instances.
+     // create local server and listen to incomming messages from other
+     // instances.
     localServer.reset(new QLocalServer(this));
     connect(localServer.data(), &QLocalServer::newConnection, this,
             &SingleApplication::receiveMessage);

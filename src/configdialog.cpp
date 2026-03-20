@@ -365,7 +365,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty()) //  TODO(annejan): call check
+  if (!store.isEmpty()) // TODO(annejan): call check
     ui->storePath->setText(store);
 }
 
@@ -737,7 +737,7 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
  * @param event
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
-  //  TODO(annejan): save window size or something?
+  // TODO(annejan): save window size or something?
   event->accept();
 }
 

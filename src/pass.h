@@ -52,7 +52,7 @@ public:
   void updateEnv();
   static QString getGpgIdPath(QString for_file);
   static QStringList getRecipientList(QString for_file);
-  //  TODO(bezet): getRecipientString is useless, refactor
+   // TODO(bezet): getRecipientString is useless, refactor
   static QStringList getRecipientString(QString for_file,
                                         QString separator = " ",
                                         int *count = NULL);
@@ -94,4 +94,4 @@ signals:
   void finishedGenerateGPGKeys(const QString &, const QString &);
 };
 
-#endif // PASS_H
+#endif  // PASS_H

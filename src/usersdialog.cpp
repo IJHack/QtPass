@@ -48,7 +48,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   }
 
   if (count > selected_users.size()) {
-    // Some keys seem missing from keyring, add them separately
+     // Some keys seem missing from keyring, add them separately
     QStringList recipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
     foreach (const QString recipient, recipients) {
@@ -96,7 +96,7 @@ void UsersDialog::accept() {
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
-  //  TODO(annejan): save window size or something
+   // TODO(annejan): save window size or something
   event->accept();
 }
 
@@ -161,7 +161,7 @@ void UsersDialog::populateList(const QString &filter) {
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));
         if (user.have_secret) {
-          // item->setForeground(QColor(32, 74, 135));
+           // item->setForeground(QColor(32, 74, 135));
           item->setForeground(Qt::blue);
           QFont font;
           font.setFamily(font.defaultFamily());

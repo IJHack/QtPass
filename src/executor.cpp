@@ -113,9 +113,9 @@ void Executor::execute(int id, const QString &app, const QStringList &args,
 void Executor::execute(int id, const QString &workDir, const QString &app,
                        const QStringList &args, QString input, bool readStdout,
                        bool readStderr) {
-  // Happens a lot if e.g. git binary is not set.
-  // This will result in bogus "QProcess::FailedToStart" messages,
-  // also hiding legitimate errors from the gpg commands.
+   // Happens a lot if e.g. git binary is not set.
+   // This will result in bogus "QProcess::FailedToStart" messages,
+   // also hiding legitimate errors from the gpg commands.
   if (app.isEmpty()) {
 #ifdef QT_DEBUG
     dbg() << "Trying to execute nothing...";
@@ -198,8 +198,8 @@ int Executor::executeBlocking(QString app, const QStringList &args,
       *process_err = perr;
     return internal.exitCode();
   }
-  //  TODO(bezet): emit error() ?
-  return -1; //    QProcess error code + qDebug error?
+   // TODO(bezet): emit error() ?
+  return -1;  //    QProcess error code + qDebug error?
 }
 
 /**
@@ -232,7 +232,7 @@ void Executor::setEnvironment(const QStringList &env) {
  */
 int Executor::cancelNext() {
   if (running || m_execQueue.isEmpty())
-    return -1; //  TODO(bezet): definitely throw here
+    return -1;  // TODO(bezet): definitely throw here
   return m_execQueue.dequeue().id;
 }
 
@@ -258,6 +258,6 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
     }
     emit finished(i.id, exitCode, output, err);
   }
-  //  else: emit crashed with ID, which may give a chance to recover ?
+   //  else: emit crashed with ID, which may give a chance to recover ?
   executeNext();
 }

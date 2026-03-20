@@ -63,7 +63,7 @@ signals:
   void startReencryptPath();
   void endReencryptPath();
 
-  // Pass interface
+   // Pass interface
 public:
   void Move(const QString src, const QString dest,
             const bool force = false) Q_DECL_OVERRIDE;
@@ -71,4 +71,4 @@ public:
             const bool force = false) Q_DECL_OVERRIDE;
 };
 
-#endif // IMITATEPASS_H
+#endif  // IMITATEPASS_H

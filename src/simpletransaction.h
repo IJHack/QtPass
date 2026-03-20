@@ -44,4 +44,4 @@ public:
   Enums::PROCESS transactionIsOver(Enums::PROCESS);
 };
 
-#endif // SIMPLETRANSACTION_H
+#endif  // SIMPLETRANSACTION_H

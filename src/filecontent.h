@@ -77,4 +77,4 @@ private:
   QString remainingData, remainingDataDisplay;
 };
 
-#endif // FILECONTENT_H
+#endif  // FILECONTENT_H
