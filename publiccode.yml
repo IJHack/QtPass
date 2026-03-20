@@ -11,11 +11,18 @@ platforms:
   - linux
   - windows
   - macos
+  - bsd
 
 categories:
   - it-security
   - identity-management
   - office
+
+intendedAudience:
+  scope:
+    - security
+    - science-and-technology
+    - government
 
 developmentStatus: stable
 
@@ -35,6 +42,7 @@ description:
       
       Not locked into one client: your password store works with any pass-compatible tool.
     documentation: "https://qtpass.org/docs"
+    apiDocumentation: "https://qtpass.org/docs"
     features:
       - Using pass or git and gpg2 directly
       - "Cross platform: Linux, BSD, OS X and Windows"
@@ -50,6 +58,10 @@ description:
       - Easy onboarding for new users
       - Multiple profiles support
       - Experimental WebDAV support
+      - OTP (One-Time Password) support
+      - Password generation with configurable complexity
+      - Git integration for version control
+      - Smartcard and USB token support
 
 usedBy:
   - Tails
@@ -60,6 +72,10 @@ usedBy:
   - OpenSuSE
   - Gentoo
   - FreeBSD
+  - Sabayon
+  - Kali Linux
+  - Linux Mint
+  - Raspbian
 
 legal:
   license: GPL-3.0-or-later
@@ -74,13 +90,44 @@ maintenance:
 localisation:
   localisationReady: true
   availableLanguages:
-    - en
-    - fr
+    - af
+    - ar
+    - bg
+    - ca
+    - cs
+    - cy
+    - da
     - de
+    - el
+    - en
     - es
+    - et
+    - fi
+    - fr
+    - gl
+    - he
+    - hr
+    - hu
+    - it
+    - ja
+    - ko
+    - lb
+    - nb
     - nl
+    - pl
+    - pt
+    - ro
+    - ru
+    - sk
+    - sl
+    - sq
+    - sr
+    - sv
+    - ta
+    - tr
     - uk
     - zh-CN
+    - zh-TW
 
 dependsOn:
   open:
