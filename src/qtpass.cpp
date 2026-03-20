@@ -113,7 +113,7 @@ auto QtPass::init() -> bool {
   return true;
 }
 
-void QtPass::setMainWindow(void) {
+void QtPass::setMainWindow() {
   m_mainWindow->restoreWindow();
 
   fusedav.setParent(m_mainWindow);
