@@ -6,6 +6,12 @@ image: Visual Studio 2022
 platform:
   - x64
 
+branches:
+  only:
+    - main
+
+skip_tags: false
+
 configuration:
   - release
 
@@ -16,7 +22,7 @@ environment:
 
 install:
   - set PATH=C:\msys64\usr\bin;%PATH%
-  - mkdir C:\Qt
+  - if not exist C:\Qt mkdir C:\Qt
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% win64_mingw -O C:\Qt
