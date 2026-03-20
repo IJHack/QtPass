@@ -451,7 +451,7 @@
 - Minor fix for filenames and Git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
-- Solve Doubleclick issue [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
+- Solve double-click issue [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
 - refactoring, new QtPassSettings class, all settings should be read and written here [\#224](https://github.com/IJHack/QtPass/pull/224) ([YoshiMan](https://github.com/YoshiMan))
 - Moved @YoshiMan 's copy buttons inside the line Edit [\#222](https://github.com/IJHack/QtPass/pull/222) ([jounathaen](https://github.com/jounathaen))
 - UI Improvements [\#220](https://github.com/IJHack/QtPass/pull/220) ([jounathaen](https://github.com/jounathaen))
@@ -484,7 +484,7 @@
 **Closed issues:**
 
 - Click does not stick [\#233](https://github.com/IJHack/QtPass/issues/233)
-- Doubleclick on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
+- double-click on Treeview does not open the edit dialouge [\#228](https://github.com/IJHack/QtPass/issues/228)
 - Windows - Enable GPG SSH Authentication [\#225](https://github.com/IJHack/QtPass/issues/225)
 - We need autotype . . [\#65](https://github.com/IJHack/QtPass/issues/65)
 
@@ -628,7 +628,7 @@
 **Implemented enhancements:**
 
 - Clear text input: use system icon instead of x [\#84](https://github.com/IJHack/QtPass/issues/84)
-- System Icons on Buttons and Doubleclick on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
+- System Icons on Buttons and double-click on treeView [\#124](https://github.com/IJHack/QtPass/pull/124) ([jounathaen](https://github.com/jounathaen))
 
 **Closed issues:**
 

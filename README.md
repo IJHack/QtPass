@@ -12,7 +12,7 @@
 [![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
 
 QtPass is a GUI for [pass](https://www.passwordstore.org/),
-the standard unix password manager.
+the standard Unix password manager.
 
 ## Features
 
@@ -67,10 +67,10 @@ Windows
 
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
-Your GPG has to be set-up with a graphical pinentry when applicable, same goes for git authentication.
-On Mac macOS this currently seems to only work best with `pinentry-mac` from homebrew, although gpgtools works too.
+Your GPG has to be set-up with a graphical pinentry when applicable, same goes for Git authentication.
+On Mac macOS this currently seems to only work best with `pinentry-mac` from Homebrew, although gpgtools works too.
 
-On most unix systems all you need is:
+On most Unix systems all you need is:
 
 ```sh
 qmake && make && make install
@@ -78,7 +78,7 @@ qmake && make && make install
 
 ## Using profiles
 
-Profiles allow to group passwords. Each profile might use a different git repository and/or different gpg key.
+Profiles allow to group passwords. Each profile might use a different Git repository and/or different gpg key.
 Each profile also can be associated with a pass store singing key to verify the detached .gpg-id signature.
 A typical use case is to separate personal and work passwords.
 
@@ -102,7 +102,7 @@ pass init -p work [work GnuPG-ID] && git -C work push
 **Note:**
 
 - Replace `[personal GnuPG-ID]` and `[work GnuPG-ID]` with the ID from the related GnuPG key.
-- The parts `echo ... >> .gitignore` are just needed in case there is a git repository present in the base directory.
+- The parts `echo ... >> .gitignore` are just needed in case there is a Git repository present in the base directory.
 
 Once the repositories and GnuPG-ID's have been defined the profiles can be set up in QtPass.
 

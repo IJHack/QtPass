@@ -6,7 +6,7 @@
 
 - Is folder initialised? Easiest way is to use the [Users] button
   and make sure you can encrypt for someone (eg. yourself)
-- Are you using git? If not, make sure it is switched off.
+- Are you using Git? If not, make sure it is switched off.
 
 ### I have an issue with GNOME keyring
 
@@ -33,7 +33,7 @@ fi
 . /tmp/gpg-agent.env
 ```
 
-- More info: [issue 60](https://github.com/IJHack/qtpass/issues/60) and [issue 73](https://github.com/IJHack/qtpass/issues/73)
+- More info: [issue 60](https://Github.com/IJHack/qtpass/issues/60) and [issue 73](https://github.com/IJHack/qtpass/issues/73)
 
 ### I don't get a passphrase / PIN dialog
 
@@ -43,7 +43,7 @@ fi
 - On some esotheric systems it might be necessary to create a symbolic
   link `/usr/bin/pinentry` to your pinentry application of choice
   eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
-- On macOS `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from homebrew.
+- On macOS `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from Homebrew.
 
 ### I have an other issue with gpg
 
@@ -63,12 +63,12 @@ Where [ID] is your gpg key-id.
 
 ### Git doesn't work on Windows
 
-git for Windows comes with an `ssh-askpass` compatible command, git `gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
+Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
 
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
-<https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
+<https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
 
 ### Where is the configuration stored?
 
@@ -87,7 +87,7 @@ More information: <http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
 
 ### Where can I ask for help?
 
-- Create an [issue](https://github.com/IJHack/qtpass/) issues on GitHub.
+- Create an [issue](https://Github.com/IJHack/qtpass/) issues on GitHub.
 - Send an email to [help@qtpass.org](mailto:help@qtpass.org)
 
 ### Can I import from KeePass, LastPass or X?
@@ -144,7 +144,7 @@ QtPass uses the system language. Changing it depends on your system:
 - Time:
   - Read [contributing](CONTRIBUTING.md) documentation.
   - Fork, clone hack and send a pull request.
-  - Find an [issue](https://github.com/IJHack/qtpass/issues) to work on..
+  - Find an [issue](https://Github.com/IJHack/qtpass/issues) to work on..
   - Participate in our bug bounty, you submit an issue and help us
     fix it, I send you a bounty.
 - Money:
