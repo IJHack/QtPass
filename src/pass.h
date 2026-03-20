@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef PASS_H
-#define PASS_H
+#ifndef SRC_PASS_H_
+#define SRC_PASS_H_
 
 #include "enums.h"
 #include "executor.h"
@@ -96,4 +96,4 @@ signals:
   void finishedGenerateGPGKeys(const QString &, const QString &);
 };
 
-#endif // PASS_H
+#endif // SRC_PASS_H_

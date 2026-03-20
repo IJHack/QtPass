@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef SIMPLETRANSACTION_H
-#define SIMPLETRANSACTION_H
+#ifndef SRC_SIMPLETRANSACTION_H_
+#define SRC_SIMPLETRANSACTION_H_
 
 #include "enums.h"
 #include <queue>
@@ -46,4 +46,4 @@ public:
   Enums::PROCESS transactionIsOver(Enums::PROCESS);
 };
 
-#endif // SIMPLETRANSACTION_H
+#endif // SRC_SIMPLETRANSACTION_H_

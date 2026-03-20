@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef FILECONTENT_H
-#define FILECONTENT_H
+#ifndef SRC_FILECONTENT_H_
+#define SRC_FILECONTENT_H_
 
 #include <QList>
 #include <QString>
@@ -78,4 +78,4 @@ private:
   QString remainingData, remainingDataDisplay;
 };
 
-#endif // FILECONTENT_H
+#endif // SRC_FILECONTENT_H_

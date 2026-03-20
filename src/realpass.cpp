@@ -9,7 +9,16 @@
 #include <QRegularExpression>
 #include <utility>
 
-using namespace Enums;
+using Enums::GIT_INIT;
+using Enums::GIT_PULL;
+using Enums::GIT_PUSH;
+using Enums::PASS_COPY;
+using Enums::PASS_INIT;
+using Enums::PASS_INSERT;
+using Enums::PASS_MOVE;
+using Enums::PASS_OTP_GENERATE;
+using Enums::PASS_REMOVE;
+using Enums::PASS_SHOW;
 
 RealPass::RealPass() = default;
 

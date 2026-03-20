@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef UTIL_H_
-#define UTIL_H_
+#ifndef SRC_UTIL_H_
+#define SRC_UTIL_H_
 
 #include "storemodel.h"
 #include <QFileSystemModel>
@@ -37,4 +37,4 @@ private:
   static bool _envInitialised;
 };
 
-#endif // UTIL_H_
+#endif // SRC_UTIL_H_

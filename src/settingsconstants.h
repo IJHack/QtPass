@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef SRC_SETTINGSCONSTANTS_H_
+#define SRC_SETTINGSCONSTANTS_H_
 
 #include <QString>
 
@@ -11,33 +11,33 @@
 */
 class SettingsConstants {
 public:
-  const static QString version;
-  const static QString groupMainwindow;
-  const static QString geometry;
-  const static QString savestate;
-  const static QString pos;
-  const static QString size;
-  const static QString splitterLeft;
-  const static QString splitterRight;
-  const static QString maximized;
-  const static QString usePass;
-  const static QString useAutoclear;
-  const static QString useSelection;
-  const static QString autoclearSeconds;
-  const static QString useAutoclearPanel;
-  const static QString autoclearPanelSeconds;
-  const static QString hidePassword;
-  const static QString hideContent;
-  const static QString useMonospace;
-  const static QString displayAsIs;
-  const static QString noLineWrapping;
-  const static QString addGPGId;
-  const static QString passStore;
-  const static QString passSigningKey;
-  const static QString passExecutable;
-  const static QString gitExecutable;
-  const static QString gpgExecutable;
-  const static QString pwgenExecutable;
+  static const QString version;
+  static const QString groupMainwindow;
+  static const QString geometry;
+  static const QString savestate;
+  static const QString pos;
+  static const QString size;
+  static const QString splitterLeft;
+  static const QString splitterRight;
+  static const QString maximized;
+  static const QString usePass;
+  static const QString useAutoclear;
+  static const QString useSelection;
+  static const QString autoclearSeconds;
+  static const QString useAutoclearPanel;
+  static const QString autoclearPanelSeconds;
+  static const QString hidePassword;
+  static const QString hideContent;
+  static const QString useMonospace;
+  static const QString displayAsIs;
+  static const QString noLineWrapping;
+  static const QString addGPGId;
+  static const QString passStore;
+  static const QString passSigningKey;
+  static const QString passExecutable;
+  static const QString gitExecutable;
+  static const QString gpgExecutable;
+  static const QString pwgenExecutable;
   const static QString gpgHome;
   const static QString useWebDav;
   const static QString webDavUrl;
@@ -73,4 +73,4 @@ private:
   explicit SettingsConstants();
 };
 
-#endif // CONSTANTS_H
+#endif // SRC_SETTINGSCONSTANTS_H_

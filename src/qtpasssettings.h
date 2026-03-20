@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef QTPASSSETTINGS_H
-#define QTPASSSETTINGS_H
+#ifndef SRC_QTPASSSETTINGS_H_
+#define SRC_QTPASSSETTINGS_H_
 
 #include "enums.h"
 #include "imitatepass.h"
@@ -225,4 +225,4 @@ public:
   static ImitatePass *getImitatePass();
 };
 
-#endif // QTPASSSETTINGS_H
+#endif // SRC_QTPASSSETTINGS_H_

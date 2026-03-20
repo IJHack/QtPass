@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef QPUSHBUTTONSHOWPASSWORD_H_
-#define QPUSHBUTTONSHOWPASSWORD_H_
+#ifndef SRC_QPUSHBUTTONSHOWPASSWORD_H_
+#define SRC_QPUSHBUTTONSHOWPASSWORD_H_
 
 #include <QLineEdit>
 #include <QPushButton>
@@ -29,4 +29,4 @@ private:
   QLineEdit *line;
 };
 
-#endif // QPUSHBUTTONSHOWPASSWORD_H_
+#endif // SRC_QPUSHBUTTONSHOWPASSWORD_H_

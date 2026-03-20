@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-#ifndef CONFIGDIALOG_H_
-#define CONFIGDIALOG_H_
+#ifndef SRC_CONFIGDIALOG_H_
+#define SRC_CONFIGDIALOG_H_
 
 #include "enums.h"
 #include "passwordconfiguration.h"
@@ -100,4 +100,4 @@ private:
   MainWindow *mainWindow;
 };
 
-#endif // CONFIGDIALOG_H_
+#endif // SRC_CONFIGDIALOG_H_
