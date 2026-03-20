@@ -18,7 +18,7 @@
 QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
 the standard Unix password manager.
 
-*Available in 39 languages*
+_Available in 39 languages_
 
 ## Features
 
@@ -78,9 +78,10 @@ Windows
 - For fallback icons, the SVG library is required
 
 Runtime dependencies:
+
 - `gpg2` (GnuPG 2.2+) - required
 - `git` - optional, for repository sync
-- `pass` (1.7+) - optional, can use native gpg/git
+- `pass` (1.7+) - optional, can use native GPG/Git
 
 Your GPG must be configured with a graphical pinentry when applicable. Same goes for Git authentication.
 On macOS, `pinentry-mac` from Homebrew works best (gpgtools also works).
