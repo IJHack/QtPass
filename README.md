@@ -109,8 +109,13 @@ The following commands set up two profile folders:
 
 ```sh
 cd ~/.password-store/
-PERSONAL_REPO_URL="<URL_FOR_YOUR_PERSONAL_PASSWORD_REPOSITORY>"
-WORK_REPO_URL="<URL_FOR_YOUR_WORK_PASSWORD_REPOSITORY>"
+# Replace these with your own repositories (HTTPS or SSH).
+PERSONAL_REPO_URL="<your-personal-password-repository-url>"
+WORK_REPO_URL="<your-work-password-repository-url>"
+
+# Examples:
+# git clone https://git.example.com/you/qtpass-personal.git personal
+# git clone git@git.example.com:you/qtpass-work.git work
 
 git clone "${PERSONAL_REPO_URL}" personal && echo "personal/" >> .gitignore
 git clone "${WORK_REPO_URL}" work && echo "work/" >> .gitignore
