@@ -65,8 +65,8 @@ private:
   PasswordConfiguration m_passConfig;
   QStringList m_fields;
   QString m_file;
-  bool m_templating;
-  bool m_allFields;
+  bool m_templating{};
+  bool m_allFields{};
   bool m_isNew;
   QList<QLineEdit *> templateLines;
   QList<QLineEdit *> otherLines;
