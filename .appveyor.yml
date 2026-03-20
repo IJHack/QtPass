@@ -23,18 +23,17 @@ install:
 
   - dir %QT_ROOT%
   - dir %QT_ROOT%\Tools
-  - dir %QT_ROOT%\mingw_64
-  - dir %QT_ROOT%\mingw_64\bin
+  - dir %QT_ROOT%\%QT_VERSION%\mingw_64\bin
 
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
-  - set MINGW_ROOT=%QT_ROOT%\mingw_64
-  - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
+  - set PATH=%QTDIR%\bin;%INNO_DIR%;%PATH%
 
   - echo QTDIR=%QTDIR%
-  - echo MINGW_ROOT=%MINGW_ROOT%
   - where qmake
   - where mingw32-make
   - where gcc
+  - where g++
+  - where windres
   - where windeployqt
   - where iscc
 
