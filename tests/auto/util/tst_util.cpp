@@ -184,12 +184,12 @@ void tst_util::copyDirBasic() {
   (void)QDir(srcDir.path()).mkdir("source");
 
   QFile f1(srcDir.path() + "/file1.txt");
-  f1.open(QFile::WriteOnly);
+  (void)f1.open(QFile::WriteOnly);
   f1.write("content1");
   f1.close();
 
   QFile f2(srcDir.path() + "/source/file2.txt");
-  f2.open(QFile::WriteOnly);
+  (void)f2.open(QFile::WriteOnly);
   f2.write("content2");
   f2.close();
 
@@ -212,23 +212,23 @@ void tst_util::copyDirWithSubdirs() {
   (void)QDir(srcDir.path()).mkpath("x/y");
 
   QFile f1(srcDir.path() + "/root.txt");
-  f1.open(QFile::WriteOnly);
+  (void)f1.open(QFile::WriteOnly);
   f1.close();
 
   QFile f2(srcDir.path() + "/a/file_a.txt");
-  f2.open(QFile::WriteOnly);
+  (void)f2.open(QFile::WriteOnly);
   f2.close();
 
   QFile f3(srcDir.path() + "/a/b/file_ab.txt");
-  f3.open(QFile::WriteOnly);
+  (void)f3.open(QFile::WriteOnly);
   f3.close();
 
   QFile f4(srcDir.path() + "/a/b/c/file_abc.txt");
-  f4.open(QFile::WriteOnly);
+  (void)f4.open(QFile::WriteOnly);
   f4.close();
 
   QFile f5(srcDir.path() + "/x/file_x.txt");
-  f5.open(QFile::WriteOnly);
+  (void)f5.open(QFile::WriteOnly);
   f5.close();
 
   QTemporaryDir destDir;
@@ -243,16 +243,16 @@ void tst_util::copyDirWithSubdirs() {
 
 void tst_util::normalizeFolderPathEdgeCases() {
   QString result = Util::normalizeFolderPath("");
-  QVERIFY(result.endsWith("/") || result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith(QDir::separator()));
 
-  result = Util::normalizeFolderPath("/");
-  QVERIFY(result.endsWith("/"));
+  result = Util::normalizeFolderPath(QDir::separator());
+  QVERIFY(result.endsWith(QDir::separator()));
 
   result = Util::normalizeFolderPath("path/to/dir/");
-  QVERIFY(result.endsWith("/"));
+  QVERIFY(result.endsWith(QDir::separator()));
 
-  QString unixResult = Util::normalizeFolderPath("path/to/dir");
-  QVERIFY(unixResult.endsWith("/"));
+  QString nativeResult = Util::normalizeFolderPath("path/to/dir");
+  QVERIFY(nativeResult.endsWith(QDir::separator()));
 }
 
 void tst_util::fileContentEdgeCases() {
@@ -357,7 +357,8 @@ void tst_util::userInfoValidityEdgeCases() {
   info.validity = 'q';
   QVERIFY(!info.isValid());
 
-  info.validity = '\0';
+  char nullChar = '\0';
+  info.validity = nullChar;
   QVERIFY(!info.isValid());
 
   QVERIFY(!info.have_secret);
