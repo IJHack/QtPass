@@ -469,7 +469,7 @@ void ImitatePass::Move(const QString src, const QString dest,
     }
 
     if (destFile.endsWith(".gpg", Qt::CaseInsensitive))
-      destFile.chop(4); // make sure suffix is lowercase
+      destFile.chop(4);  //  make sure suffix is lowercase
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {

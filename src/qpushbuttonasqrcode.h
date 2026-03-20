@@ -30,4 +30,4 @@ private:
   QIcon iconEdit;
 };
 
-#endif // QPUSHBUTTONASQRCODE_H_
+#endif  // QPUSHBUTTONASQRCODE_H_

@@ -47,4 +47,4 @@ private:
   void populateList(const QString &filter = QString());
 };
 
-#endif // USERSDIALOG_H_
+#endif  // USERSDIALOG_H_

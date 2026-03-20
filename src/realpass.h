@@ -34,4 +34,4 @@ public:
             const bool force = false) Q_DECL_OVERRIDE;
 };
 
-#endif // REALPASS_H
+#endif  // REALPASS_H

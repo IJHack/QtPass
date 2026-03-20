@@ -37,4 +37,4 @@ private:
   static const int timeout = 1000;
 };
 
-#endif // SINGLEAPPLICATION_H_
+#endif  // SINGLEAPPLICATION_H_

@@ -48,4 +48,4 @@ struct dragAndDropInfoPasswordStore {
   QString path;
 };
 
-#endif // STOREMODEL_H_
+#endif  // STOREMODEL_H_

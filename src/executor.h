@@ -115,4 +115,4 @@ signals:
              const QString &errout);
 };
 
-#endif // EXECUTOR_H
+#endif  // EXECUTOR_H

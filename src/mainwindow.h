@@ -146,4 +146,4 @@ private:
   void enableGitButtons(const bool &);
 };
 
-#endif // MAINWINDOW_H_
+#endif  // MAINWINDOW_H_

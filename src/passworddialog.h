@@ -71,4 +71,4 @@ private:
   QList<QLineEdit *> otherLines;
 };
 
-#endif // PASSWORDDIALOG_H_
+#endif  // PASSWORDDIALOG_H_

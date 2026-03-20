@@ -223,4 +223,4 @@ public:
   static ImitatePass *getImitatePass();
 };
 
-#endif // QTPASSSETTINGS_H
+#endif  // QTPASSSETTINGS_H

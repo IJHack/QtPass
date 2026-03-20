@@ -71,4 +71,4 @@ public:
             const bool force = false) Q_DECL_OVERRIDE;
 };
 
-#endif // IMITATEPASS_H
+#endif  // IMITATEPASS_H
