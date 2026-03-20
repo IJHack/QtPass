@@ -1,16 +1,18 @@
-#include "../../../src/passworddialog.h"
-#include "passwordconfiguration.h"
 #include <QCoreApplication>
 #include <QtTest>
 
-/**
- * @brief The tst_ui class is our first unit test
- */
+#include "../../../src/passworddialog.h"
+#include "passwordconfiguration.h"
+
 class tst_ui : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void initTestCase();
   void contentRemainsSame();
+  void emptyPassword();
+  void multilineRemainingData();
+  void cleanupTestCase();
 };
 
 /**
@@ -58,6 +60,35 @@ void tst_ui::contentRemainsSame() {
   d->templateAll(true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
+}
+
+void tst_ui::initTestCase() {}
+
+void tst_ui::cleanupTestCase() {}
+
+void tst_ui::emptyPassword() {
+  QScopedPointer<PasswordDialog> d(
+      new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("", false);
+  d->setPass("");
+  QString result = d->getPassword();
+  QVERIFY(result.isEmpty() || result == "\n");
+}
+
+void tst_ui::multilineRemainingData() {
+  QScopedPointer<PasswordDialog> d(
+      new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("", false);
+  QString input = "secret\nline1\nline2\nline3\n";
+  d->setPass(input);
+  QString result = d->getPassword();
+  QStringList lines = result.split("\n");
+  QVERIFY(lines.length() >= 4);
+  lines.removeFirst();
+  QString remaining = lines.join("\n") + (result.endsWith("\n") ? "\n" : "");
+  QVERIFY(remaining.contains("line1"));
+  QVERIFY(remaining.contains("line2"));
+  QVERIFY(remaining.contains("line3"));
 }
 
 QTEST_MAIN(tst_ui)

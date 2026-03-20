@@ -99,7 +99,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   transactionHelper trans(this, PASS_INSERT);
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
-    //  TODO(bezet): probably throw here
+    // TODO(bezet): probably throw here
     emit critical(tr("Can not edit"),
                   tr("Could not read encryption key to use, .gpg-id "
                      "file missing or invalid."));
@@ -115,7 +115,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-    //    TODO(bezet) why not?
+    // TODO(bezet): why not?
     if (!overwrite)
       executeGit(GIT_ADD, {"add", pgit(file)});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
@@ -149,7 +149,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
     file += ".gpg";
   if (QtPassSettings::isUseGit()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
-    //  TODO(bezet): commit message used to have pass-like file name inside(ie.
+    // TODO(bezet): commit message used to have pass-like file name inside(ie.
     //  getFile(file, true)
     GitCommit(file, "Remove for " + file + " using QtPass.");
   } else {
@@ -335,7 +335,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
   if (QtPassSettings::isAutoPull()) {
-    //  TODO(bezet): move statuses inside actions?
+    // TODO(bezet): move statuses inside actions?
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPull_b();
   }
@@ -360,7 +360,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
       gpgId = getRecipientList(fileName);
       gpgId.sort();
     }
-    //  TODO(bezet): enable --with-colons for better future-proofness?
+    // TODO(bezet): enable --with-colons for better future-proofness?
     QStringList args = {
         "-v",          "--no-secmem-warning", "--no-permission-warning",
         "--list-only", "--keyid-format=long", pgpg(fileName)};
@@ -440,7 +440,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
   }
   if (QtPassSettings::isAutoPush()) {
     emit statusMsg(tr("Updating password-store"), 2000);
-    //  TODO(bezet): this is non-blocking and shall be done outside
+    // TODO(bezet): this is non-blocking and shall be done outside
     GitPush();
   }
   emit endReencryptPath();
@@ -469,7 +469,7 @@ void ImitatePass::Move(const QString src, const QString dest,
     }
 
     if (destFile.endsWith(".gpg", Qt::CaseInsensitive))
-      destFile.chop(4); // make sure suffix is lowercase
+      destFile.chop(4); //  make sure suffix is lowercase
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {

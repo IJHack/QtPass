@@ -104,9 +104,8 @@ void RealPass::Move(const QString src, const QString dest, const bool force) {
   QFileInfo destFileInfo = QFileInfo(dest);
 
   // force mode?
-  // pass uses always the force mode, when call from eg. QT. so we have to check
-  // if this are to files
-  // and the user didnt want to move force
+  // pass uses always the force mode, when call from eg. QT. so we have to
+  // check if this are to files and the user didnt want to move force
   if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
     return;
   }
@@ -144,9 +143,8 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
   // force mode?
-  // pass uses always the force mode, when call from eg. QT. so we have to check
-  // if this are to files
-  // and the user didnt want to move force
+  // pass uses always the force mode, when call from eg. QT. so we have to
+  // check if this are to files and the user didnt want to move force
   if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
     return;
   }

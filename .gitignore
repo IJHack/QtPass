@@ -44,3 +44,4 @@ weblate
 artwork/qtpass-icon.png
 .aider*
 compile_commands.json
+.cache

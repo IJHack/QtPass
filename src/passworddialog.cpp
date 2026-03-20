@@ -229,5 +229,5 @@ void PasswordDialog::usePwgen(bool usePwgen) {
 
 void PasswordDialog::setPass(const QString &output) {
   setPassword(output);
-  //    TODO(bezet): enable ui
+  // TODO(bezet): enable ui
 }

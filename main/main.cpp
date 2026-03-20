@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 #endif
 
   Q_INIT_RESOURCE(resources);
-  Q_INIT_RESOURCE(qmake_qmake_qm_files); // qmake names the file
+  Q_INIT_RESOURCE(qmake_qmake_qm_files); //  qmake names the file
 
   QCoreApplication::setOrganizationName("IJHack");
   QCoreApplication::setOrganizationDomain("ijhack.org");

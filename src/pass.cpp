@@ -85,7 +85,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
     if (QtPassSettings::isUseSymbols())
       args.append("--symbols");
     args.append(QString::number(length));
-    //  TODO(bezet): try-catch here(2 statuses to merge o_O)
+    // TODO(bezet): try-catch here(2 statuses to merge o_O)
     if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
                              &passwd) == 0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
@@ -96,7 +96,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
                << "pwgen fail";
 #endif
-      //    TODO(bezet): emit critical ?
+      // TODO(bezet): emit critical ?
     }
   } else {
     if (charset.length() > 0) {
@@ -118,7 +118,8 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
 void Pass::GenerateGPGKeys(QString batch) {
   executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
                  {"--gen-key", "--no-tty", "--batch"}, batch);
-  // TODO check status / error messages - probably not here, it's just started
+  // TODO(annejan): check status / error messages - probably not here, it's just
+  // started
   // here, see finished for details
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }

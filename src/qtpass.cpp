@@ -116,7 +116,7 @@ void QtPass::setMainWindow(void) {
 
   fusedav.setParent(m_mainWindow);
 
-  //  TODO(bezet): this should be reconnected dynamically when pass changes
+  // TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
@@ -320,7 +320,7 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 #endif
 
     m_mainWindow->cleanKeygenDialog();
-    // TODO(annejan) some sanity checking ?
+    // TODO(annejan): some sanity checking ?
   }
 
   processFinished(p_output, p_errout);
