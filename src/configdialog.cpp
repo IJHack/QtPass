@@ -307,7 +307,7 @@ QString ConfigDialog::selectExecutable() {
   if (dialog.exec())
     return dialog.selectedFiles().constFirst();
 
-  return QString();
+  return {};
 }
 
 /**
@@ -322,7 +322,7 @@ QString ConfigDialog::selectFolder() {
   if (dialog.exec())
     return dialog.selectedFiles().constFirst();
 
-  return QString();
+  return {};
 }
 
 /**

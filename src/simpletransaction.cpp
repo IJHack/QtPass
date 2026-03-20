@@ -29,7 +29,7 @@ void simpleTransaction::transactionAdd(PROCESS id) {
   if (transactionDepth > 0) {
     lastInTransaction = id;
   } else {
-    transactionQueue.push(pair<PROCESS, PROCESS>(id, id));
+    transactionQueue.emplace(id, id);
   }
 }
 
@@ -44,7 +44,7 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
   if (transactionDepth > 0) {
     transactionDepth--;
     if (transactionDepth == 0 && lastInTransaction != INVALID) {
-      transactionQueue.push(pair<PROCESS, PROCESS>(lastInTransaction, pid));
+      transactionQueue.emplace(lastInTransaction, pid);
       lastInTransaction = INVALID;
     }
   }

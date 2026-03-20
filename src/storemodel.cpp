@@ -96,7 +96,7 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
  */
 QVariant StoreModel::data(const QModelIndex &index, int role) const {
   if (!index.isValid())
-    return QVariant();
+    return {};
 
   QVariant initial_value;
   initial_value = QSortFilterProxyModel::data(index, role);

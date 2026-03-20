@@ -64,5 +64,5 @@ QString NamedValues::takeValue(const QString &name) {
       return takeAt(i).value;
     }
   }
-  return QString();
+  return {};
 }

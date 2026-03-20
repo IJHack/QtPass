@@ -322,7 +322,7 @@ QString Pass::getGpgIdPath(QString for_file) {
 QStringList Pass::getRecipientList(QString for_file) {
   QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
-    return QStringList();
+    return {};
   QStringList recipients;
   while (!gpgId.atEnd()) {
     QString recipient(gpgId.readLine());

@@ -199,7 +199,7 @@ void MainWindow::initStatusBar() {
   statusBar()->addPermanentWidget(logoApp);
 }
 
-const QModelIndex MainWindow::getCurrentTreeViewIndex() {
+QModelIndex MainWindow::getCurrentTreeViewIndex() {
   return ui->treeView->currentIndex();
 }
 
@@ -317,7 +317,7 @@ void MainWindow::onPush() {
 QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
   if (!index.isValid() ||
       !model.fileInfo(proxyModel.mapToSource(index)).isFile())
-    return QString();
+    return {};
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
@@ -408,7 +408,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
 
     NamedValues namedValues = fileContent.getNamedValues();
     for (int j = 0; j < namedValues.length(); ++j) {
-      NamedValue nv = namedValues.at(j);
+      const NamedValue &nv = namedValues.at(j);
       addToGridLayout(j + 1, nv.name, nv.value);
     }
     if (ui->gridLayout->count() == 0)

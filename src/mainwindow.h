@@ -51,7 +51,7 @@ public:
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
 
-  const QModelIndex getCurrentTreeViewIndex();
+  QModelIndex getCurrentTreeViewIndex();
 
   QDialog *getKeygenDialog() { return this->keygen; }
   void cleanKeygenDialog();
