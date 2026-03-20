@@ -13,8 +13,8 @@
 class ImitatePass : public Pass, private simpleTransaction {
   Q_OBJECT
 
-  bool verifyGpgIdFile(const QString &file);
-  bool removeDir(const QString &dirName);
+  auto verifyGpgIdFile(const QString &file) -> bool;
+  auto removeDir(const QString &dirName) -> bool;
 
   void GitCommit(const QString &file, const QString &msg);
 

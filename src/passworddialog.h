@@ -38,7 +38,7 @@ public:
       \return password as a QString
       \sa setPassword
    */
-  QString getPassword();
+  auto getPassword() -> QString;
 
   /*! Sets content in the template for the interface.
       \param rawFields is the template as a QString
@@ -65,8 +65,8 @@ private:
   PasswordConfiguration m_passConfig;
   QStringList m_fields;
   QString m_file;
-  bool m_templating;
-  bool m_allFields;
+  bool m_templating{};
+  bool m_allFields{};
   bool m_isNew;
   QList<QLineEdit *> templateLines;
   QList<QLineEdit *> otherLines;

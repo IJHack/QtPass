@@ -455,8 +455,8 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
  * @param batch
  * @param dialog
  */
-void ConfigDialog::genKey(QString batch, QDialog *dialog) {
-  mainWindow->generateKeyPair(std::move(batch), dialog);
+void ConfigDialog::genKey(const QString &batch, QDialog *dialog) {
+  mainWindow->generateKeyPair(batch, dialog);
 }
 
 /**

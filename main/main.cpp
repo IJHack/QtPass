@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #include "mainwindow.h"
 #if SINGLE_APP
 #include "singleapplication.h"
@@ -40,7 +43,7 @@
  * @param argv
  * @return
  */
-int main(int argc, char *argv[]) {
+auto main(int argc, char *argv[]) -> int {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);

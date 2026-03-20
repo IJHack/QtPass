@@ -20,7 +20,7 @@ public:
   explicit TrayIcon(QMainWindow *parent);
   void showMessage(const QString &title, const QString &msg, int time);
   void setVisible(bool visible);
-  bool getIsAllocated();
+  auto getIsAllocated() -> bool;
 
 signals:
 

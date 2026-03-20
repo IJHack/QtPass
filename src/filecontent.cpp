@@ -35,8 +35,8 @@ auto FileContent::parse(const QString &fileContent,
     if (!isLineHidden(line))
       remainingDataDisplay.append(line);
   }
-  return FileContent(password, namedValues, remainingData.join("\n"),
-                     remainingDataDisplay.join("\n"));
+  return {password, namedValues, remainingData.join("\n"),
+          remainingDataDisplay.join("\n")};
 }
 
 auto FileContent::getPassword() const -> QString { return this->password; }
@@ -59,7 +59,7 @@ FileContent::FileContent(QString password, NamedValues namedValues,
       remainingData(std::move(remainingData)),
       remainingDataDisplay(std::move(remainingDataDisplay)) {}
 
-NamedValues::NamedValues() {}
+NamedValues::NamedValues() = default;
 
 NamedValues::NamedValues(std::initializer_list<NamedValue> values)
     : QList(values) {}

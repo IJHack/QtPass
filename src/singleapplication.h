@@ -17,8 +17,8 @@ class SingleApplication : public QApplication {
   Q_OBJECT
 public:
   SingleApplication(int &argc, char *argv[], QString uniqueKey);
-  bool isRunning();
-  bool sendMessage(const QString &message);
+  auto isRunning() -> bool;
+  auto sendMessage(const QString &message) -> bool;
 
 public slots:
   void receiveMessage();

@@ -352,11 +352,11 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
  * @param count
  * @return recepient string
  */
-auto Pass::getRecipientString(QString for_file, const QString &separator,
+auto Pass::getRecipientString(const QString &for_file, const QString &separator,
                               int *count) -> QStringList {
   Q_UNUSED(separator)
   Q_UNUSED(count)
-  return Pass::getRecipientList(std::move(for_file));
+  return Pass::getRecipientList(for_file);
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.

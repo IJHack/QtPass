@@ -53,16 +53,16 @@ public:
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
 
-  QModelIndex getCurrentTreeViewIndex();
+  auto getCurrentTreeViewIndex() -> QModelIndex;
 
-  QDialog *getKeygenDialog() { return this->keygen; }
+  auto getKeygenDialog() -> QDialog * { return this->keygen; }
   void cleanKeygenDialog();
 
 protected:
   void closeEvent(QCloseEvent *event);
   void keyPressEvent(QKeyEvent *event);
   void changeEvent(QEvent *event);
-  bool eventFilter(QObject *obj, QEvent *event);
+  auto eventFilter(QObject *obj, QEvent *event) -> bool;
 
 signals:
   void passShowHandlerFinished(const QString &output);
@@ -131,8 +131,8 @@ private:
 
   void updateText();
   void selectFirstFile();
-  QModelIndex firstFile(QModelIndex parentIndex);
-  QString getFile(const QModelIndex &, bool);
+  auto firstFile(QModelIndex parentIndex) -> QModelIndex;
+  auto getFile(const QModelIndex &, bool) -> QString;
   void setPassword(const QString &, bool isNew = true);
 
   void updateProfileBox();

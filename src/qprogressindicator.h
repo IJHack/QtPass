@@ -52,14 +52,14 @@ public:
      the animation delay is set to 40 milliseconds.
       \sa setAnimationDelay
    */
-  int animationDelay() const { return m_delay; }
+  [[nodiscard]] auto animationDelay() const -> int { return m_delay; }
 
   /*! Returns a Boolean value indicating whether the component is currently
      animated.
       \return Animation state.
       \sa startAnimation stopAnimation
    */
-  bool isAnimated() const;
+  [[nodiscard]] auto isAnimated() const -> bool;
 
   /*! Returns a Boolean value indicating whether the receiver shows itself even
      when it is not animating.
@@ -67,15 +67,15 @@ public:
      not animating. By default, it returns false.
       \sa setDisplayedWhenStopped
    */
-  bool isDisplayedWhenStopped() const;
+  [[nodiscard]] auto isDisplayedWhenStopped() const -> bool;
 
   /*! Returns the color of the component.
       \sa setColor
    */
-  const QColor &color() const { return m_color; }
+  [[nodiscard]] auto color() const -> const QColor & { return m_color; }
 
-  virtual QSize sizeHint() const;
-  int heightForWidth(int w) const;
+  [[nodiscard]] virtual auto sizeHint() const -> QSize;
+  [[nodiscard]] auto heightForWidth(int w) const -> int;
 
 public slots:
   /*! Starts the spin animation.
