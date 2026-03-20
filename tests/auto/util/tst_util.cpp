@@ -92,7 +92,7 @@ void tst_util::fileContent() {
 
   fc = FileContent::parse("password\nkey: val\nkey2: val2", {"key2"}, false);
   QCOMPARE(fc.getPassword(), password);
-  QCOMPARE(fc.getNamedValues(), {key2});
+  QCOMPARE(fc.getNamedValues(), NamedValues({key2}));
   QCOMPARE(fc.getRemainingData(), QString("key: val"));
 
   fc = FileContent::parse("password\nkey: val\nkey2: val2", {"key2"}, true);

@@ -397,42 +397,52 @@ e-posta</translation>
         <translation>Silmek için profil seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="602"/>
+        <location filename="../src/configdialog.cpp" line="613"/>
         <source>GnuPG not found</source>
         <translation>GnuPG bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="605"/>
+        <location filename="../src/configdialog.cpp" line="616"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;Edinmek için Microsoft Mağazası&apos;ndan &lt;strong&gt;Ubuntu&lt;/strong&gt;&apos;yu yükleyin.&lt;br&gt;Bunu zaten yaptıysanız, bir kez başlattığınızdan emin olun ve&lt;br&gt;bir sonraki iletişim kutusunda &quot;Otomatik Algıla&quot;ya tıklayın.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="610"/>
+        <location filename="../src/configdialog.cpp" line="621"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;Microsoft Mağazası&apos;ndan &lt;strong&gt;Ubuntu&lt;/strong&gt;&apos;yu yükleyin&lt;br&gt;veya GnuPG.org adresinden &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;indirin&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="616"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;En sevdiğiniz paket yöneticisini kullanarak &lt;strong&gt;gpg&lt;/strong&gt;&apos;yi yükleyin&lt;br&gt;veya GnuPG.org adresinden &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;indirin&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="643"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Create password-store?</source>
         <translation>Parola deposu oluştur?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="644"/>
+        <location filename="../src/configdialog.cpp" line="660"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1&apos;de parola deposu oluşturmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="663"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="666"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="687"/>
         <source>Password store not initialised</source>
         <translation>Parola deposu başlatılmadı</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="664"/>
+        <location filename="../src/configdialog.cpp" line="688"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 klasörü bir parola deposu gibi görünmüyor veya henüz başlatılmadı.</translation>
     </message>
@@ -624,27 +634,27 @@ Expire-Date: 0
         <translation>Uzman seçenekleri için &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kılavuzu&lt;/a&gt;na göz atın</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="140"/>
+        <location filename="../src/keygendialog.cpp" line="143"/>
         <source>Invalid name</source>
         <translation>Geçersiz isim</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="141"/>
+        <location filename="../src/keygendialog.cpp" line="144"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>İsim en az 5 karakter uzunluğunda olmalıdır.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="152"/>
+        <location filename="../src/keygendialog.cpp" line="155"/>
         <source>Invalid email</source>
         <translation>Geçersiz e-posta</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="153"/>
+        <location filename="../src/keygendialog.cpp" line="156"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Yazdığınız e-posta adresi geçerli bir e-posta adresi değil.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="168"/>
+        <location filename="../src/keygendialog.cpp" line="171"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Bu işlem birkaç dakika sürebilir.&lt;br /&gt;Çok fazla sayıda rasgele bayt oluşturmamız gerekiyor. Asal sayı üretimi sırasında başka bir eylem (klavyede yazmak, fareyi hareket ettirmek, disk kullanımı) gerçekleştirmek iyi bir fikirdir; bu rasgele sayı üretecine yeterli entropi kazanmak için daha iyi bir şans verir.</translation>
     </message>
@@ -797,7 +807,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="406"/>
-        <location filename="../src/mainwindow.cpp" line="1138"/>
+        <location filename="../src/mainwindow.cpp" line="1141"/>
         <source>Password</source>
         <translation>Parola</translation>
     </message>
@@ -882,18 +892,28 @@ Expire-Date: 0
 (%1 içine konulacak)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
-        <location filename="../src/mainwindow.cpp" line="1057"/>
+        <location filename="../src/mainwindow.cpp" line="1013"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1014"/>
+        <source>Failed to create folder: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1027"/>
+        <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Rename file</source>
         <translation>Dosyayı yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Rename Folder To: </source>
         <translation>Klasörü Yeniden Adlandır: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1057"/>
+        <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Rename File To: </source>
         <translation>Dosyayı Yeniden Adlandır: </translation>
     </message>
@@ -901,12 +921,12 @@ Expire-Date: 0
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="105"/>
+        <location filename="../src/pass.cpp" line="106"/>
         <source>No characters chosen</source>
         <translation>Hiçbir karakter seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="106"/>
+        <location filename="../src/pass.cpp" line="107"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Parola oluşturulamıyor, yapılandırmadaki küme içinden seçim yapabileceğiniz karakter yok!</translation>
     </message>
@@ -1037,17 +1057,17 @@ Expire-Date: 0
         <translation>QProcess::BilinmeyenHata</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="379"/>
+        <location filename="../src/qtpass.cpp" line="380"/>
         <source>Clipboard cleared</source>
         <translation>Pano temizlendi</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="381"/>
+        <location filename="../src/qtpass.cpp" line="382"/>
         <source>Clipboard not cleared</source>
         <translation>Pano temizlenmedi</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="400"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Copied to clipboard</source>
         <translation>Panoya kopyalandı</translation>
     </message>
