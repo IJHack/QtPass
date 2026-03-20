@@ -18,6 +18,8 @@ on:
   pull_request:
     branches: main
 
+permissions: {}
+
 ###############
 # Set the Job #
 ###############
@@ -27,7 +29,9 @@ jobs:
     name: Lint Code Base
     # Set the agent to run on
     runs-on: ubuntu-latest
-
+    permissions:
+      actions: read
+      contents: read
     ##################
     # Load all steps #
     ##################
