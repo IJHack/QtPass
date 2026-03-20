@@ -21,19 +21,17 @@ install:
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
   - dir %QT_ROOT%
-  - set QT_ROOT=C:\Qt
-  - set QT_VERSION=6.9.3
-  - set INNO_DIR=C:\Program Files (x86)\Inno Setup 6
+  - dir %QT_ROOT%\Tools
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
-  - set MINGW_ROOT=%QT_ROOT%\Tools\mingw1310_64
+  - set MINGW_ROOT=%QT_ROOT%\mingw_64
   - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
   - echo QTDIR=%QTDIR%
   - echo MINGW_ROOT=%MINGW_ROOT%
   - qmake -v
+  - where qmake
   - where mingw32-make
-  - dir C:\Qt\Tools
-  - dir C:\Qt\Tools\mingw1310_64\bin
   - where gcc
+  - where windeployqt
   - where iscc
 
 build_script:
@@ -47,8 +45,10 @@ build_script:
   - windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
   - copy README.md dist\qtpass\README.txt
   - copy LICENSE dist\qtpass\LICENSE.txt
+  - if not exist dist\qtpass\README.txt exit /b 1
+  - if not exist dist\qtpass\LICENSE.txt exit /b 1
   - dir dist\qtpass
-  - iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss
+  - if "%APPVEYOR_REPO_TAG%"=="true" (iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss) else (iscc qtpass.iss)
 
 artifacts:
   - path: Output\qtpass-*.exe
