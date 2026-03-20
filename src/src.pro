@@ -4,7 +4,7 @@ TEMPLATE   = lib
 QT        += core gui
 TARGET 	   = qtpass
 
-CONFIG += c++11 staticlib
+CONFIG += c++17 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
