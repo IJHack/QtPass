@@ -1,25 +1,92 @@
----
+version: "{build}"
+
+image: Visual Studio 2022
+
+branches:
+  only:
+    - main
+
+skip_tags: false
+
+environment:
+  QT_VERSION: 6.9.3
+  QT_ARCH: win64_mingw
+  QT_ROOT: C:\Qt
+  INNO_DIR: C:\Program Files (x86)\Inno Setup 6
+
 install:
-  - set QTDIR=C:\Qt\5.13\mingw73_32
-  - choco install -y InnoSetup
-  - set PATH=%QTDIR%\bin;C:\Qt\Tools\mingw530_32\bin;%PATH%;"C:\Program Files (x86)\Inno Setup 5"
+  - choco install -y innosetup
+  - py -3 -m pip install --upgrade pip
+  - py -3 -m pip install aqtinstall
+  - if not exist %QT_ROOT% mkdir %QT_ROOT%
+  - set PATH=C:\Python314-x64\Scripts;%PATH%
+  - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
+  - py -3 -m aqt install-tool -O %QT_ROOT% windows desktop tools_mingw1310
+
+  - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
+  - set MINGW_ROOT=%QT_ROOT%\Tools\mingw1310_64
+  - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
+
+  - echo ==== PATH ====
+  - echo %PATH%
+
+  - echo ==== QT TREE ====
+  - dir %QT_ROOT%
+  - dir %QT_ROOT%\%QT_VERSION%
+  - dir %QTDIR%
+  - dir %QTDIR%\bin
+  - dir %QT_ROOT%\Tools
+  - dir %MINGW_ROOT%
+  - dir %MINGW_ROOT%\bin
+
+  - echo ==== TOOL RESOLUTION ====
+  - where qmake
+  - where mingw32-make
+  - where gcc
+  - where g++
+  - where ld
+  - where windres
+  - where windeployqt
+  - where iscc
+
+  - echo ==== TOOL VERSIONS ====
+  - qmake -v
+  - gcc --version
+  - g++ --version
+  - ld --version
+
+  - echo ==== SANITY C BUILD ====
+  - echo int main(void){return 0;} > sanity.c
+  - gcc sanity.c -o sanity.exe
+  - if not exist sanity.exe exit /b 1
+
 build_script:
-  - qmake qtpass.pro CONFIG+=static
-  - mingw32-make
-  # - mingw32-make check
-  # after_build:
-  - cmd: copy README.md src\release\README.txt
-  - cmd: copy LICENSE src\release\LICENSE.txt
-  - iscc qtpass.iss
+  - qmake qtpass.pro CONFIG+=release
+  - mingw32-make V=1
+  - if exist dist rmdir /s /q dist
+  - mkdir dist\qtpass
+  - if exist main\release\qtpass.exe (copy main\release\qtpass.exe dist\qtpass\qtpass.exe) else (copy src\release\qtpass.exe dist\qtpass\qtpass.exe)
+  - if not exist dist\qtpass\qtpass.exe exit /b 1
+  - windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
+  - copy README.md dist\qtpass\README.txt
+  - copy LICENSE dist\qtpass\LICENSE.txt
+  - if not exist dist\qtpass\README.txt exit /b 1
+  - if not exist dist\qtpass\LICENSE.txt exit /b 1
+  - dir dist\qtpass
+  - if "%APPVEYOR_REPO_TAG%"=="true" (iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss) else (iscc qtpass.iss)
+
 artifacts:
   - path: Output\qtpass-*.exe
-  - path: main\release\qtpass.exe
+    name: installer
+  - path: dist\qtpass\qtpass.exe
+    name: binary
+
 deploy:
-  provider: GitHub
-  auth_token:
-    secure: YfscG1DR0+kApThPXxQSr+ZEjUOUlIG0Tqc5+90IFsUInyICRRMdbJsbxR2qhq/p
-  artifact: /qtpass-[0-9]+\.[0-9]+\.[0-9]+\.exe/
-  draft: true
-  prerelease: false
-  on:
-    appveyor_repo_tag: true
+  - provider: GitHub
+    auth_token:
+      secure: YfscG1DR0+kApThPXxQSr+ZEjUOUlIG0Tqc5+90IFsUInyICRRMdbJsbxR2qhq/p
+    artifact: installer
+    draft: true
+    prerelease: false
+    on:
+      APPVEYOR_REPO_TAG: true
