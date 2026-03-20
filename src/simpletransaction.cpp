@@ -7,8 +7,8 @@
 #include "debughelper.h"
 #endif
 
-using std::pair;
-using namespace Enums;
+using Enums::INVALID;
+using Enums::PROCESS;
 
 /**
  * @brief simpleTransaction::transactionStart
