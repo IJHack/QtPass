@@ -19,7 +19,7 @@ FileContent FileContent::parse(const QString &fileContent,
       QString value = line.right(line.length() - colon - 1);
       if ((allFields &&
            !value.startsWith(
-               "//"))  // if value startswith  // colon is probably from a url
+               "//")) // if value startswith  // colon is probably from a url
           || templateFields.contains(name)) {
         namedValues.append({name.trimmed(), value.trimmed()});
         continue;

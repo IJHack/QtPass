@@ -238,7 +238,7 @@ void MainWindow::config() {
   }
 
   if (m_qtPass->isFreshStart())
-    d->wizard();  //  does shit
+    d->wizard(); //  does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
       // Update the textBrowser font
@@ -779,7 +779,7 @@ void MainWindow::updateProfileBox() {
     ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
-  if (index != -1)  //  -1 for not found
+  if (index != -1) //  -1 for not found
     ui->profileBox->setCurrentIndex(index);
 }
 

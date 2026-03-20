@@ -7,4 +7,4 @@
 #define AS_CONST(x) qAsConst(x)
 #endif
 
-#endif  // HELPERS_H
+#endif // HELPERS_H

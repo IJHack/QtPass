@@ -94,4 +94,4 @@ signals:
   void finishedGenerateGPGKeys(const QString &, const QString &);
 };
 
-#endif  // PASS_H
+#endif // PASS_H

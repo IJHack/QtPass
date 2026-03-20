@@ -365,7 +365,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty())  // TODO(annejan): call check
+  if (!store.isEmpty()) // TODO(annejan): call check
     ui->storePath->setText(store);
 }
 
@@ -534,7 +534,7 @@ void ConfigDialog::on_addButton_clicked() {
  * @brief ConfigDialog::on_deleteButton_clicked remove a profile row.
  */
 void ConfigDialog::on_deleteButton_clicked() {
-  QSet<int> selectedRows;  //  we use a set to prevent doubles
+  QSet<int> selectedRows; //  we use a set to prevent doubles
   QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
   if (itemList.count() == 0) {
     QMessageBox::warning(this, tr("No profile selected"),

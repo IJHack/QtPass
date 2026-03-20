@@ -118,4 +118,4 @@ private:
   QColor m_color;
 };
 
-#endif  // QPROGRESSINDICATOR_H_
+#endif // QPROGRESSINDICATOR_H_

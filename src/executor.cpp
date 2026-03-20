@@ -199,7 +199,7 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     return internal.exitCode();
   }
   // TODO(bezet): emit error() ?
-  return -1;  //    QProcess error code + qDebug error?
+  return -1; //    QProcess error code + qDebug error?
 }
 
 /**
@@ -232,7 +232,7 @@ void Executor::setEnvironment(const QStringList &env) {
  */
 int Executor::cancelNext() {
   if (running || m_execQueue.isEmpty())
-    return -1;  // TODO(bezet): definitely throw here
+    return -1; // TODO(bezet): definitely throw here
   return m_execQueue.dequeue().id;
 }
 
