@@ -1,4 +1,4 @@
-VERSION    = 1.4.0
+VERSION    = 1.5.0
 
 CONFIG(coverage) {
 	QMAKE_LFLAGS += --coverage
@@ -80,4 +80,3 @@ win32 {
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
-
