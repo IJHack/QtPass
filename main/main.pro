@@ -15,10 +15,6 @@ macx {
     TARGET = qtpass
 }
 
-win32-g++ {
-    LIBS += -lssp
-}
-
 SOURCES   += main.cpp
 
 isEmpty(PREFIX) {

@@ -19,7 +19,7 @@ install:
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
-
+  - set PATH=C:\Python314-x64\Scripts;%PATH%
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
   - py -3 -m aqt install-tool -O %QT_ROOT% windows desktop tools_mingw1310
 
