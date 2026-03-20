@@ -1,10 +1,6 @@
----
 version: "{build}"
 
 image: Visual Studio 2022
-
-platform:
-  - x64
 
 branches:
   only:
@@ -12,54 +8,52 @@ branches:
 
 skip_tags: false
 
-configuration:
-  - release
-
 environment:
-  matrix:
-    - QT_VERSION: 6.9.3
-      QT_ARCH: win64_mingw
+  QT_VERSION: 6.9.3
+  QT_ARCH: win64_mingw
+  QT_ROOT: C:\Qt
+  INNO_DIR: C:\Program Files (x86)\Inno Setup 6
 
 install:
-  - set PATH=C:\msys64\usr\bin;%PATH%
-  - if not exist C:\Qt mkdir C:\Qt
+  - choco install -y innosetup
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
-  - py -3 -m aqt install-qt windows desktop %QT_VERSION% win64_mingw -O C:\Qt
-  - set QTDIR=C:\Qt\%QT_VERSION%\mingw_64
-  - set PATH=%QTDIR%\bin;C:\Qt\Tools\mingw1310_64\bin;%PATH%
+  - if not exist %QT_ROOT% mkdir %QT_ROOT%
+  - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
+  - dir %QT_ROOT%
+  - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
+  - set PATH=%QTDIR%\bin;%PATH%;%INNO_DIR%
+  - echo QTDIR=%QTDIR%
   - qmake -v
-  - mingw32-make -v
-  - iscc /?
+  - where mingw32-make
+  - where gcc
 
 build_script:
-  - qmake qtpass.pro CONFIG+=release CONFIG+=static
+  - qmake qtpass.pro CONFIG+=release
   - mingw32-make
-
   - if exist dist rmdir /s /q dist
   - mkdir dist\qtpass
-
-  - copy src\release\qtpass.exe dist\qtpass\qtpass.exe
+  - if exist src\release\qtpass.exe copy src\release\qtpass.exe dist\qtpass\qtpass.exe
+  - if exist main\release\qtpass.exe copy main\release\qtpass.exe dist\qtpass\qtpass.exe
   - if not exist dist\qtpass\qtpass.exe exit /b 1
-
   - windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
-
   - copy README.md dist\qtpass\README.txt
   - copy LICENSE dist\qtpass\LICENSE.txt
-  - if not exist dist\qtpass\README.txt exit /b 1
-  - if not exist dist\qtpass\LICENSE.txt exit /b 1
-
   - dir dist\qtpass
-
-  - if "%APPVEYOR_REPO_TAG%"=="true" (
-    iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss
-    ) else (
-    iscc qtpass.iss
-    )
+  - iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss
 
 artifacts:
   - path: Output\qtpass-*.exe
     name: installer
-
   - path: dist\qtpass\qtpass.exe
     name: binary
+
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: YfscG1DR0+kApThPXxQSr+ZEjUOUlIG0Tqc5+90IFsUInyICRRMdbJsbxR2qhq/p
+    artifact: installer
+    draft: true
+    prerelease: false
+    on:
+      APPVEYOR_REPO_TAG: true
