@@ -59,7 +59,7 @@ FileContent::FileContent(QString password, NamedValues namedValues,
       remainingData(std::move(remainingData)),
       remainingDataDisplay(std::move(remainingDataDisplay)) {}
 
-NamedValues::NamedValues() {}
+NamedValues::NamedValues() = default;
 
 NamedValues::NamedValues(std::initializer_list<NamedValue> values)
     : QList(values) {}
