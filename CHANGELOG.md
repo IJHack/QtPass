@@ -52,7 +52,7 @@
 - Cannot decrypt own passwords; No secret key [\#580](https://github.com/IJHack/QtPass/issues/580)
 - gpg not found on macOS [\#575](https://github.com/IJHack/QtPass/issues/575)
 - Installation is failed using latest Homebrew in macOS [\#564](https://github.com/IJHack/QtPass/issues/564)
-- Deleting a directory sometimes deletes the entire password store including git repositories [\#556](https://github.com/IJHack/QtPass/issues/556)
+- Deleting a directory sometimes deletes the entire password store including Git repositories [\#556](https://github.com/IJHack/QtPass/issues/556)
 
 **Closed issues:**
 
@@ -136,7 +136,7 @@
 - Tray icon remains after quitting program [\#401](https://github.com/IJHack/QtPass/issues/401)
 - QtPass doesn't work will pass in WSL [\#375](https://github.com/IJHack/QtPass/issues/375)
 - UI is blurry on HiDPI screens on macOS \(retina\) since 1.2.x [\#355](https://github.com/IJHack/QtPass/issues/355)
-- No prompt for passphrase for git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
+- No prompt for passphrase for Git key on windows. [\#317](https://github.com/IJHack/QtPass/issues/317)
 - Config dialog's Password Generation field got crowded between 1.1.3 and 1.1.6 [\#278](https://github.com/IJHack/QtPass/issues/278)
 
 **Merged pull requests:**
@@ -401,7 +401,7 @@
 **Fixed bugs:**
 
 - Do not hide passwords and no generator [\#267](https://github.com/IJHack/QtPass/issues/267)
-- Weird behavior when turning on git support \(auto push/pull\) with non-clean git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
+- Weird behavior when turning on Git support \(auto push/pull\) with non-clean Git dir [\#128](https://github.com/IJHack/QtPass/issues/128)
 - SingleApplication implementation buggy [\#26](https://github.com/IJHack/QtPass/issues/26)
 
 **Closed issues:**
@@ -448,7 +448,7 @@
 - \#239 reencrypting after a drag and drop action [\#261](https://github.com/IJHack/QtPass/pull/261) ([YoshiMan](https://github.com/YoshiMan))
 - this if evaluetes ervery time to true [\#255](https://github.com/IJHack/QtPass/pull/255) ([YoshiMan](https://github.com/YoshiMan))
 - executeing pass show before editpassword dialog shows up [\#254](https://github.com/IJHack/QtPass/pull/254) ([YoshiMan](https://github.com/YoshiMan))
-- Minor fix for filenames and git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
+- Minor fix for filenames and Git push [\#251](https://github.com/IJHack/QtPass/pull/251) ([tezeb](https://github.com/tezeb))
 - Process management refactoring part 2 [\#249](https://github.com/IJHack/QtPass/pull/249) ([tezeb](https://github.com/tezeb))
 - refactoring - pass ifce, process mgmt [\#234](https://github.com/IJHack/QtPass/pull/234) ([tezeb](https://github.com/tezeb))
 - Solve Doubleclick issue [\#230](https://github.com/IJHack/QtPass/pull/230) ([jounathaen](https://github.com/jounathaen))
@@ -506,7 +506,7 @@
 **Closed issues:**
 
 - PREFIX is now really a prefix [\#185](https://github.com/IJHack/QtPass/issues/185)
-- QtPass, git and windows [\#173](https://github.com/IJHack/QtPass/issues/173)
+- QtPass, Git and windows [\#173](https://github.com/IJHack/QtPass/issues/173)
 
 **Merged pull requests:**
 
@@ -674,7 +674,7 @@
 **Fixed bugs:**
 
 - using pwgen adds carriage-return [\#115](https://github.com/IJHack/QtPass/issues/115)
-- Enhancement: color code git results [\#111](https://github.com/IJHack/QtPass/issues/111)
+- Enhancement: color code Git results [\#111](https://github.com/IJHack/QtPass/issues/111)
 
 **Merged pull requests:**
 
@@ -728,7 +728,7 @@
 - When QtPass starts, focus search input box [\#89](https://github.com/IJHack/QtPass/issues/89)
 - Clear the password display after some time [\#86](https://github.com/IJHack/QtPass/issues/86)
 - Auto push/pull [\#83](https://github.com/IJHack/QtPass/issues/83)
-- qtpass doesn't commit deletes to git [\#81](https://github.com/IJHack/QtPass/issues/81)
+- qtpass doesn't commit deletes to Git [\#81](https://github.com/IJHack/QtPass/issues/81)
 - Always crashes while using the quick-search input [\#79](https://github.com/IJHack/QtPass/issues/79)
 - Git initialisation [\#72](https://github.com/IJHack/QtPass/issues/72)
 - Initialising new repo's doesn't work correctly [\#55](https://github.com/IJHack/QtPass/issues/55)
@@ -738,7 +738,7 @@
 
 - Issue 86 clear panel [\#87](https://github.com/IJHack/QtPass/pull/87) ([karlgrz](https://github.com/karlgrz))
 - Update FAQ for Yubikey NEO helper in .bashrc for Ubuntu [\#80](https://github.com/IJHack/QtPass/pull/80) ([karlgrz](https://github.com/karlgrz))
-- \[WIP\] Call 'pass git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
+- \[WIP\] Call 'pass Git init' on creation of password-store when useGit [\#78](https://github.com/IJHack/QtPass/pull/78) ([dennisdegreef](https://github.com/dennisdegreef))
 
 ## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
 
@@ -866,10 +866,10 @@
 - Extra line breaks seem to be added to the \(HTML\) output [\#39](https://github.com/IJHack/QtPass/issues/39)
 - Missing develop branch and release testing [\#38](https://github.com/IJHack/QtPass/issues/38)
 - Windows WebDAV broken by 24f8dec3c203921f765e923e6ae6a4069b8cf50a [\#36](https://github.com/IJHack/QtPass/issues/36)
-- .gpg-id file not added to git [\#35](https://github.com/IJHack/QtPass/issues/35)
+- .gpg-id file not added to Git [\#35](https://github.com/IJHack/QtPass/issues/35)
 - Icon filenames [\#31](https://github.com/IJHack/QtPass/issues/31)
 - `GNUPGHOME` environment variable [\#30](https://github.com/IJHack/QtPass/issues/30)
-- Feature: webdav alternative to git [\#28](https://github.com/IJHack/QtPass/issues/28)
+- Feature: webdav alternative to Git [\#28](https://github.com/IJHack/QtPass/issues/28)
 - Windows: not working due to pointless use of "sh" [\#16](https://github.com/IJHack/QtPass/issues/16)
 - Windows: support static build and enable ASLR and NX [\#15](https://github.com/IJHack/QtPass/issues/15)
 - Some paths to executables are printed when starting up [\#11](https://github.com/IJHack/QtPass/issues/11)
