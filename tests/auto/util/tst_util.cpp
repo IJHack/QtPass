@@ -1,11 +1,12 @@
-#include "../../../src/filecontent.h"
-#include "../../../src/util.h"
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
 #include <QList>
 #include <QTemporaryDir>
 #include <QtTest>
+
+#include "../../../src/filecontent.h"
+#include "../../../src/util.h"
 
 /**
  * @brief The tst_util class is our first unit test

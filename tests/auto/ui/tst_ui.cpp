@@ -1,7 +1,8 @@
-#include "../../../src/passworddialog.h"
-#include "passwordconfiguration.h"
 #include <QCoreApplication>
 #include <QtTest>
+
+#include "../../../src/passworddialog.h"
+#include "passwordconfiguration.h"
 
 class tst_ui : public QObject {
   Q_OBJECT
