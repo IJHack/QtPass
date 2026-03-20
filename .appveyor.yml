@@ -19,27 +19,46 @@ install:
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
-  - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
 
-  - dir %QT_ROOT%
-  - dir %QT_ROOT%\Tools
-  - dir %QT_ROOT%\%QT_VERSION%\mingw_64\bin
+  - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
 
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
   - set PATH=%QTDIR%\bin;%INNO_DIR%;%PATH%
 
-  - echo QTDIR=%QTDIR%
+  - echo ==== PATH ====
+  - echo %PATH%
+
+  - echo ==== QT TREE ====
+  - dir %QT_ROOT%
+  - dir %QT_ROOT%\%QT_VERSION%
+  - dir %QTDIR%
+  - dir %QTDIR%\bin
+  - dir %QT_ROOT%\Tools
+
+  - echo ==== TOOL RESOLUTION ====
   - where qmake
   - where mingw32-make
   - where gcc
   - where g++
+  - where ld
   - where windres
   - where windeployqt
   - where iscc
 
+  - echo ==== TOOL VERSIONS ====
+  - qmake -v
+  - gcc --version
+  - g++ --version
+  - ld --version
+
+  - echo ==== SANITY C BUILD ====
+  - echo int main(void){return 0;} > sanity.c
+  - gcc sanity.c -o sanity.exe
+  - if not exist sanity.exe exit /b 1
+
 build_script:
   - qmake qtpass.pro CONFIG+=release
-  - mingw32-make
+  - mingw32-make V=1
   - if exist dist rmdir /s /q dist
   - mkdir dist\qtpass
   - copy src\release\qtpass.exe dist\qtpass\qtpass.exe
