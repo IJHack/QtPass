@@ -19,7 +19,7 @@ install:
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
   - if not exist C:\Qt mkdir C:\Qt
-  - aqt install-qt --outputdir %QT_ROOT% windows desktop %QT_VERSION% %QT_ARCH%
+  - py -3 -m aqt install-qt --outputdir %QT_ROOT% windows desktop %QT_VERSION% %QT_ARCH%
   - dir C:\Qt
   - set QT_DIR=%QT_ROOT%\%QT_VERSION%\%QT_ARCH%
   - set PATH=%QT_DIR%\bin;%PATH%;%INNO_DIR%
