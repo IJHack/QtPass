@@ -1,4 +1,4 @@
-publiccodeYmlVersion: "0.4.0"
+publiccodeYmlVersion: "0.5.0"
 
 name: QtPass
 applicationSuite: pass
@@ -64,7 +64,6 @@ usedBy:
 legal:
   license: GPL-3.0-or-later
   mainCopyrightOwner: IJhack
-  repoOwner: ijhack
 
 maintenance:
   type: community
@@ -81,11 +80,7 @@ localisation:
     - es
     - nl
     - uk
-    - zh_Hans
-
-screenshots:
-  - https://qtpass.org/images/qtpass.png
-  - https://qtpass.org/images/config.png
+    - zh-CN
 
 dependsOn:
   open:
