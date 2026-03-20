@@ -35,11 +35,11 @@ description:
     shortDescription: A multi-platform GUI for pass, the standard Unix password manager.
     longDescription: >
       QtPass is a multi-platform GUI for pass, the standard Unix password manager.
-      
+
       Each password lives inside a GPG encrypted file, organized into meaningful folder hierarchies.
       Multi-key, multi-recipient encryption works out of the box - perfect for teams.
       Works with OpenPGP smartcards, USB tokens, and integrates with your existing GnuPG setup.
-      
+
       Not locked into one client: your password store works with any pass-compatible tool.
     documentation: "https://qtpass.org/docs"
     apiDocumentation: "https://qtpass.org/docs"
