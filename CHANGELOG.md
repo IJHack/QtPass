@@ -2,7 +2,7 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
 
 ## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
 
@@ -23,31 +23,31 @@
 
 - Added/updated PublicCode and CI workflows, including release-time validation and action upgrades [#701](https://github.com/IJHack/QtPass/pull/701), [#709](https://github.com/IJHack/QtPass/pull/709), [#710](https://github.com/IJHack/QtPass/pull/710), [#711](https://github.com/IJHack/QtPass/pull/711), [#712](https://github.com/IJHack/QtPass/pull/712).
 - Completed the AppVeyor/Inno Setup modernization and packaging updates [#722](https://github.com/IJHack/QtPass/pull/722).
-- Updated README status badges and branch links to current workflow targets [#724](https://github.com/IJHack/QtPass/pull/724).
+- Updated readme status badges and branch links to current workflow targets [#724](https://github.com/IJHack/QtPass/pull/724).
 
 ### Localization
 
-- Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723).
+- Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723). <!-- markdownlint-disable-line MD013 -->
 
 **New Contributors**
 
-- @Vascom made their first contribution in https://github.com/IJHack/QtPass/pull/656
-- @shemeshg made their first contribution in https://github.com/IJHack/QtPass/pull/658
-- @ruimaciel made their first contribution in https://github.com/IJHack/QtPass/pull/672
-- @vdchuyen made their first contribution in https://github.com/IJHack/QtPass/pull/680
-- @souk4711 made their first contribution in https://github.com/IJHack/QtPass/pull/681
-- @principis made their first contribution in https://github.com/IJHack/QtPass/pull/690
-- @stkw0 made their first contribution in https://github.com/IJHack/QtPass/pull/695
-- @publiccode-pr-bot made their first contribution in https://github.com/IJHack/QtPass/pull/701
-- @transifex-integration[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/698
-- @basil made their first contribution in https://github.com/IJHack/QtPass/pull/704
-- @dependabot[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/709
+- @Vascom made their first contribution in <https://github.com/IJHack/QtPass/pull/656
+- @shemeshg made their first contribution in <https://github.com/IJHack/QtPass/pull/658
+- @ruimaciel made their first contribution in <https://github.com/IJHack/QtPass/pull/672
+- @vdchuyen made their first contribution in <https://github.com/IJHack/QtPass/pull/680
+- @souk4711 made their first contribution in <https://github.com/IJHack/QtPass/pull/681
+- @principis made their first contribution in <https://github.com/IJHack/QtPass/pull/690
+- @stkw0 made their first contribution in <https://github.com/IJHack/QtPass/pull/695
+- @publiccode-pr-bot made their first contribution in <https://github.com/IJHack/QtPass/pull/701
+- @transifex-integration[bot] made their first contribution in <https://github.com/IJHack/QtPass/pull/698
+- @basil made their first contribution in <https://github.com/IJHack/QtPass/pull/704
+- @dependabot[bot] made their first contribution in <https://github.com/IJHack/QtPass/pull/709
 
-**Full Changelog**: https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0
+**Full Changelog**: <https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0
 
 ## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc2...v1.4.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/1.4.0-rc2...v1.4.0)
 
 **Fixed bugs:**
 
@@ -67,7 +67,7 @@
 
 ## [1.4.0-rc2](https://github.com/IJHack/QtPass/tree/1.4.0-rc2) (2023-08-31)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc1...1.4.0-rc2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/1.4.0-rc1...1.4.0-rc2)
 
 **Fixed bugs:**
 
@@ -123,7 +123,7 @@
 
 ## [1.4.0-rc1](https://github.com/IJHack/QtPass/tree/1.4.0-rc1) (2021-09-22)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.2...1.4.0-rc1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.3.2...1.4.0-rc1)
 
 **Implemented enhancements:**
 
@@ -200,7 +200,7 @@
 
 ## [v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2) (2019-10-09)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)
 
 **Fixed bugs:**
 
@@ -225,7 +225,7 @@
 
 ## [v1.3.1](https://github.com/IJHack/QtPass/tree/v1.3.1) (2019-10-01)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.3.0...v1.3.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.3.0...v1.3.1)
 
 **Implemented enhancements:**
 
@@ -257,7 +257,7 @@
 
 ## [v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0) (2019-08-20)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)
 
 **Implemented enhancements:**
 
@@ -315,7 +315,7 @@
 
 ## [v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3) (2018-06-04)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)
 
 **Closed issues:**
 
@@ -333,7 +333,7 @@
 
 ## [v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2) (2018-05-07)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)
 
 **Implemented enhancements:**
 
@@ -389,7 +389,7 @@
 
 ## [v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1) (2018-01-04)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)
 
 **Closed issues:**
 
@@ -406,7 +406,7 @@
 
 ## [v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0) (2017-11-08)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)
 
 **Implemented enhancements:**
 
@@ -482,7 +482,7 @@
 
 ## [v1.1.6](https://github.com/IJHack/QtPass/tree/v1.1.6) (2016-12-02)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)
 
 **Implemented enhancements:**
 
@@ -513,7 +513,7 @@
 
 ## [v1.1.5](https://github.com/IJHack/QtPass/tree/v1.1.5) (2016-10-19)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)
 
 **Implemented enhancements:**
 
@@ -544,7 +544,7 @@
 
 ## [v1.1.4](https://github.com/IJHack/QtPass/tree/v1.1.4) (2016-09-26)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.3...v1.1.4)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.3...v1.1.4)
 
 **Implemented enhancements:**
 
@@ -573,7 +573,7 @@
 
 ## [v1.1.3](https://github.com/IJHack/QtPass/tree/v1.1.3) (2016-06-10)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.2...v1.1.3)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.2...v1.1.3)
 
 **Fixed bugs:**
 
@@ -587,7 +587,7 @@
 
 ## [v1.1.2](https://github.com/IJHack/QtPass/tree/v1.1.2) (2016-06-10)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.1...v1.1.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.1...v1.1.2)
 
 **Implemented enhancements:**
 
@@ -610,7 +610,7 @@
 
 ## [v1.1.1](https://github.com/IJHack/QtPass/tree/v1.1.1) (2016-04-04)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.1.0...v1.1.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.1.0...v1.1.1)
 
 **Implemented enhancements:**
 
@@ -646,7 +646,7 @@
 
 ## [v1.1.0](https://github.com/IJHack/QtPass/tree/v1.1.0) (2016-01-25)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)
 
 **Implemented enhancements:**
 
@@ -665,7 +665,7 @@
 
 ## [v1.0.6](https://github.com/IJHack/QtPass/tree/v1.0.6) (2016-01-03)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.5...v1.0.6)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.5...v1.0.6)
 
 **Implemented enhancements:**
 
@@ -692,7 +692,7 @@
 
 ## [v1.0.5](https://github.com/IJHack/QtPass/tree/v1.0.5) (2015-11-18)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)
 
 **Fixed bugs:**
 
@@ -705,7 +705,7 @@
 
 ## [v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4) (2015-11-03)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)
 
 **Implemented enhancements:**
 
@@ -713,7 +713,7 @@
 
 ## [v1.0.3](https://github.com/IJHack/QtPass/tree/v1.0.3) (2015-10-25)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.2...v1.0.3)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.2...v1.0.3)
 
 **Implemented enhancements:**
 
@@ -727,7 +727,7 @@
 
 ## [v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2) (2015-09-24)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)
 
 **Closed issues:**
 
@@ -740,7 +740,7 @@
 
 ## [v1.0.1](https://github.com/IJHack/QtPass/tree/v1.0.1) (2015-08-09)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.0.0...v1.0.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v1.0.0...v1.0.1)
 
 **Implemented enhancements:**
 
@@ -765,7 +765,7 @@
 
 ## [v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0) (2015-08-01)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)
 
 **Closed issues:**
 
@@ -778,7 +778,7 @@
 
 ## [v0.9.2](https://github.com/IJHack/QtPass/tree/v0.9.2) (2015-07-30)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2)
 
 **Closed issues:**
 
@@ -786,7 +786,7 @@
 
 ## [v0.9.1](https://github.com/IJHack/QtPass/tree/v0.9.1) (2015-07-29)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.9.0...v0.9.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.9.0...v0.9.1)
 
 **Closed issues:**
 
@@ -797,7 +797,7 @@
 
 ## [v0.9.0](https://github.com/IJHack/QtPass/tree/v0.9.0) (2015-07-17)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.6...v0.9.0)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.6...v0.9.0)
 
 **Closed issues:**
 
@@ -805,7 +805,7 @@
 
 ## [v0.8.6](https://github.com/IJHack/QtPass/tree/v0.8.6) (2015-07-17)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5.1...v0.8.6)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.5.1...v0.8.6)
 
 **Closed issues:**
 
@@ -819,11 +819,11 @@
 
 ## [v0.8.5.1](https://github.com/IJHack/QtPass/tree/v0.8.5.1) (2015-07-08)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5...v0.8.5.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.5...v0.8.5.1)
 
 ## [v0.8.5](https://github.com/IJHack/QtPass/tree/v0.8.5) (2015-07-08)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.4...v0.8.5)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.4...v0.8.5)
 
 **Closed issues:**
 
@@ -839,7 +839,7 @@
 
 ## [v0.8.4](https://github.com/IJHack/QtPass/tree/v0.8.4) (2015-06-11)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4)
 
 **Closed issues:**
 
@@ -854,7 +854,7 @@
 
 ## [v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3) (2015-06-09)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)
 
 **Merged pull requests:**
 
@@ -862,7 +862,7 @@
 
 ## [v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2) (2015-05-27)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)
 
 **Closed issues:**
 
@@ -876,7 +876,7 @@
 
 ## [v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1) (2015-05-06)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/c2eb3dff58e4de577f6c250ad225d42f762b6c26...v0.8.1)
+[Full Changelog](<https://github.com/IJHack/QtPass/compare/c2eb3dff58e4de577f6c250ad225d42f762b6c26...v0.8.1)
 
 **Fixed bugs:**
 
