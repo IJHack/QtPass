@@ -368,12 +368,12 @@ email</source>
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>出错</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>未能在下列位置创建密码库：%1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -1053,12 +1053,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>出错</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>未能创建文件夹：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>

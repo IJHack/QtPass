@@ -362,12 +362,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -496,7 +496,7 @@ Nie będzie można zmienić listy użytkowników!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="259"/>
         <source>Check selected users!</source>
-        <translation>Zaznacz użytkowników!</translation>
+        <translation>Sprawdź wybranych użytkowników!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -758,7 +758,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
         <source>Manage who can read password in folder</source>
-        <translation>Zarządzaj kto może czytać hasła</translation>
+        <translation>Zarządzaj, kto może odczytać hasło w folderze</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
@@ -833,17 +833,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Delete folder?</source>
-        <translation>Usuń folder?</translation>
+        <translation>Usunąć folder?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Delete password?</source>
-        <translation>Usuń hasło?</translation>
+        <translation>Usunąć hasło?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="694"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Czy jesteś pewny(a) że chcesz usunąć %1%2?</translation>
+        <translation>Czy na pewno chcesz usunąć %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="828"/>
@@ -875,12 +875,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się utworzyć folderu: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -1020,7 +1020,7 @@ Expire-Date: 0
         <location filename="../src/qtpass.cpp" line="242"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Nie udało sie włączyć fusedav aby połączyć WebDAV:
+        <translation>Nie udało się uruchomić fusedav w celu połączenia z WebDAV:
 </translation>
     </message>
     <message>

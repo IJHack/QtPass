@@ -399,12 +399,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades med att skapa lösenordsarkiv på: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="709"/>
@@ -565,7 +565,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Lösenord</translation>
+        <translation>Lösenfras</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -685,7 +685,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Denna operation kan ta några minuter. &lt;br /&gt; Vi måste generera många slumpmässiga byte. Det är en bra idé att utföra någon annan handling (skriv på tangentbordet, flytta musen, använd skivorna) under prime generationen; detta ger slumptalsgeneratorn en bättre chans att få tillräckligt med entropi.</translation>
+        <translation>Denna operation kan ta några minuter. &lt;br /&gt;Vi måste generera många slumpmässiga byte. Det är en bra idé att utföra någon annan handling (skriv på tangentbordet, flytta musen, använd skivorna) under prime generationen; detta ger slumptalsgeneratorn en bättre chans att få tillräckligt med entropi.</translation>
     </message>
 </context>
 <context>
@@ -987,12 +987,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades att skapa mapp: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -1016,10 +1016,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; QtPass är ett GUI för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;, standardhanteraren för unix-lösenord. &lt;/p&gt;
-&lt;p&gt; Rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problem &lt;/a&gt; du kan ha med den här programvaran. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentation &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; SourceCode &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass är ett GUI för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass&lt;/a&gt;, standardhanteraren för unix-lösenord.&lt;/p&gt;
+&lt;p&gt;Rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problem&lt;/a&gt; du kan ha med den här programvaran.&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Källkod&lt;/a&gt; &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
