@@ -321,7 +321,7 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
  * @return recepients gpg-id contents
  */
 auto Pass::getRecipientList(QString for_file) -> QStringList {
-  QFile gpgId(getGpgIdPath(std::move(for_file)));
+  QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return {};
   QStringList recipients;

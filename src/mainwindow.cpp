@@ -755,7 +755,7 @@ void MainWindow::messageAvailable(const QString &message) {
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
-  emit generateGPGKeyPair(std::move(batch));
+  emit generateGPGKeyPair(batch);
 }
 
 /**
