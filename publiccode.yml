@@ -28,8 +28,12 @@ description:
     shortDescription: A multi-platform GUI for pass, the standard Unix password manager.
     longDescription: >
       QtPass is a multi-platform GUI for pass, the standard Unix password manager.
-      It allows users to manage their password store via a user-friendly graphical interface
-      across Linux, Windows, and macOS. It integrates with GnuPG and can be used in team setups.
+      
+      Each password lives inside a GPG encrypted file, organized into meaningful folder hierarchies.
+      Multi-key, multi-recipient encryption works out of the box - perfect for teams.
+      Works with OpenPGP smartcards, USB tokens, and integrates with your existing GnuPG setup.
+      
+      Not locked into one client: your password store works with any pass-compatible tool.
     documentation: "https://qtpass.org/docs"
     features:
       - Using pass or git and gpg2 directly
@@ -44,11 +48,18 @@ description:
       - Copying password to clipboard
       - Configurable shoulder surfing protection options
       - Easy onboarding for new users
+      - Multiple profiles support
+      - Experimental WebDAV support
 
 usedBy:
   - Tails
   - Debian
+  - Ubuntu
   - Arch Linux
+  - Fedora
+  - OpenSuSE
+  - Gentoo
+  - FreeBSD
 
 legal:
   license: GPL-3.0-or-later
@@ -70,6 +81,11 @@ localisation:
     - es
     - nl
     - uk
+    - zh_Hans
+
+screenshots:
+  - https://qtpass.org/images/qtpass.png
+  - https://qtpass.org/images/config.png
 
 dependsOn:
   open:
