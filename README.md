@@ -4,13 +4,13 @@
 [![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 
-[![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
-[![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
+[![QMake Github Action](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)
+[![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/main?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
-[![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
+[![codecov](https://codecov.io/gh/IJHack/QtPass/branch/main/graph/badge.svg)](https://codecov.io/gh/IJHack/QtPass)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIJHack%2FQtPass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
@@ -18,7 +18,7 @@
 QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
 the standard Unix password manager.
 
-*Available in 39 languages*
+_Available in 39 languages_
 
 ## Features
 
@@ -78,9 +78,10 @@ Windows
 - For fallback icons, the SVG library is required
 
 Runtime dependencies:
+
 - `gpg2` (GnuPG 2.2+) - required
 - `git` - optional, for repository sync
-- `pass` (1.7+) - optional, can use native gpg/git
+- `pass` (1.7+) - optional, can use native GPG/Git
 
 Your GPG must be configured with a graphical pinentry when applicable. Same goes for Git authentication.
 On macOS, `pinentry-mac` from Homebrew works best (gpgtools also works).
