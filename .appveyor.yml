@@ -18,7 +18,7 @@ install:
   - choco install -y innosetup
   - py -3 -m pip install --upgrade pip
   - py -3 -m pip install aqtinstall
-  - mkdir C:\Qt
+  - if not exist C:\Qt mkdir C:\Qt
   - aqt install-qt --outputdir %QT_ROOT% windows desktop %QT_VERSION% %QT_ARCH%
   - dir C:\Qt
   - set QT_DIR=%QT_ROOT%\%QT_VERSION%\%QT_ARCH%
