@@ -29,8 +29,8 @@ QtPass::QtPass(MainWindow *mainWindow)
     : m_mainWindow(mainWindow), clippedText(QString()), freshStart(true) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, SIGNAL(timeout()), this,
-          SLOT(clearClipboard()));
+  connect(&clearClipboardTimer, &QTimer::timeout, this,
+          &QtPass::clearClipboard);
 
   QObject::connect(qApp, &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
@@ -357,7 +357,8 @@ void QtPass::setClippedText(const QString &password, const QString &p_output) {
 void QtPass::clearClippedText() { clippedText = ""; }
 
 void QtPass::setClipboardTimer() {
-  clearClipboardTimer.setInterval(1000 * QtPassSettings::getAutoclearSeconds());
+  clearClipboardTimer.setInterval(MS_PER_SECOND *
+                                  QtPassSettings::getAutoclearSeconds());
 }
 
 /**

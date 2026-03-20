@@ -205,3 +205,8 @@ const QRegularExpression &Util::protocolRegex() {
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"};
   return regex;
 }
+
+const QRegularExpression &Util::newLinesRegex() {
+  static const QRegularExpression regex{"[\r\n]"};
+  return regex;
+}

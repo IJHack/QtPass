@@ -7,6 +7,8 @@
 #include <QRegularExpression>
 #include <QString>
 
+constexpr int MS_PER_SECOND = 1000;
+
 class StoreModel;
 
 /*!
@@ -25,6 +27,7 @@ public:
   static void copyDir(const QString &src, const QString &dest);
   static const QRegularExpression &endsWithGpg();
   static const QRegularExpression &protocolRegex();
+  static const QRegularExpression &newLinesRegex();
 
 private:
   static void initialiseEnvironment();

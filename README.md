@@ -176,6 +176,9 @@ attack I can think of at least two options:
 [Issue queue](https://github.com/IJHack/qtpass/issues)
 [Chat](https://gitter.im/IJHack/qtpass)
 
+> **AI Assistance**<br>
+> Parts of this project were developed with assistance from AI tools (such as [OpenCode](https://opencode.ai/)). AI-generated code is reviewed and tested before inclusion.
+
 ## License
 
 ### GNU GPL v3.0
