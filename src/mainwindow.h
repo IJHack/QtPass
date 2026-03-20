@@ -1,5 +1,7 @@
-#ifndef MAINWINDOW_H_
-#define MAINWINDOW_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_MAINWINDOW_H_
+#define SRC_MAINWINDOW_H_
 
 #include "storemodel.h"
 
@@ -146,4 +148,4 @@ private:
   void enableGitButtons(const bool &);
 };
 
-#endif // MAINWINDOW_H_
+#endif // SRC_MAINWINDOW_H_

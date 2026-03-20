@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 /*
  * This code is based on https://github.com/mojocorp/QProgressIndicator
  * and published under
@@ -25,8 +27,8 @@
  * SOFTWARE.
  */
 
-#ifndef QPROGRESSINDICATOR_H_
-#define QPROGRESSINDICATOR_H_
+#ifndef SRC_QPROGRESSINDICATOR_H_
+#define SRC_QPROGRESSINDICATOR_H_
 
 #include <QColor>
 #include <QWidget>
@@ -118,4 +120,4 @@ private:
   QColor m_color;
 };
 
-#endif // QPROGRESSINDICATOR_H_
+#endif // SRC_QPROGRESSINDICATOR_H_

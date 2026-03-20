@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
 #include "helpers.h"
 #include "qtpasssettings.h"
@@ -11,8 +13,17 @@
 #include "debughelper.h"
 #endif
 
-using namespace std;
-using namespace Enums;
+using Enums::GIT_INIT;
+using Enums::GIT_PULL;
+using Enums::GIT_PUSH;
+using Enums::GPG_GENKEYS;
+using Enums::PASS_COPY;
+using Enums::PASS_INIT;
+using Enums::PASS_INSERT;
+using Enums::PASS_MOVE;
+using Enums::PASS_OTP_GENERATE;
+using Enums::PASS_REMOVE;
+using Enums::PASS_SHOW;
 
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation

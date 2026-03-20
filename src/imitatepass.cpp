@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "imitatepass.h"
 #include "qtpasssettings.h"
 #include "util.h"
@@ -9,7 +11,27 @@
 #include "debughelper.h"
 #endif
 
-using namespace Enums;
+using Enums::CLIPBOARD_ALWAYS;
+using Enums::CLIPBOARD_NEVER;
+using Enums::CLIPBOARD_ON_DEMAND;
+using Enums::GIT_ADD;
+using Enums::GIT_COMMIT;
+using Enums::GIT_COPY;
+using Enums::GIT_INIT;
+using Enums::GIT_MOVE;
+using Enums::GIT_PULL;
+using Enums::GIT_PUSH;
+using Enums::GIT_RM;
+using Enums::GPG_GENKEYS;
+using Enums::INVALID;
+using Enums::PASS_COPY;
+using Enums::PASS_INIT;
+using Enums::PASS_INSERT;
+using Enums::PASS_MOVE;
+using Enums::PASS_OTP_GENERATE;
+using Enums::PASS_REMOVE;
+using Enums::PASS_SHOW;
+using Enums::PROCESS_COUNT;
 
 /**
  * @brief ImitatePass::ImitatePass for situaions when pass is not available

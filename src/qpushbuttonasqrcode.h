@@ -1,5 +1,7 @@
-#ifndef QPUSHBUTTONASQRCODE_H_
-#define QPUSHBUTTONASQRCODE_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_QPUSHBUTTONASQRCODE_H_
+#define SRC_QPUSHBUTTONASQRCODE_H_
 
 #include <QPushButton>
 
@@ -30,4 +32,4 @@ private:
   QIcon iconEdit;
 };
 
-#endif // QPUSHBUTTONASQRCODE_H_
+#endif // SRC_QPUSHBUTTONASQRCODE_H_

@@ -1,5 +1,7 @@
-#ifndef SINGLEAPPLICATION_H_
-#define SINGLEAPPLICATION_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_SINGLEAPPLICATION_H_
+#define SRC_SINGLEAPPLICATION_H_
 
 #include <QApplication>
 #include <QLocalServer>
@@ -37,4 +39,4 @@ private:
   static const int timeout = 1000;
 };
 
-#endif // SINGLEAPPLICATION_H_
+#endif // SRC_SINGLEAPPLICATION_H_

@@ -1,5 +1,7 @@
-#ifndef QTPASS_H
-#define QTPASS_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_QTPASS_H_
+#define SRC_QTPASS_H_
 
 #include <QObject>
 #include <QProcess>
@@ -58,4 +60,4 @@ private slots:
                          const QString &postfix = QString());
 };
 
-#endif // QTPASS_H
+#endif // SRC_QTPASS_H_

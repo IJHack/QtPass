@@ -1,5 +1,7 @@
-#ifndef STOREMODEL_H_
-#define STOREMODEL_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_STOREMODEL_H_
+#define SRC_STOREMODEL_H_
 
 #include <QSortFilterProxyModel>
 
@@ -48,4 +50,4 @@ struct dragAndDropInfoPasswordStore {
   QString path;
 };
 
-#endif // STOREMODEL_H_
+#endif // SRC_STOREMODEL_H_

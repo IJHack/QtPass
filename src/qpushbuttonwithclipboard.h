@@ -1,5 +1,7 @@
-#ifndef QPUSHBUTTONWITHCLIPBOARD_H_
-#define QPUSHBUTTONWITHCLIPBOARD_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_QPUSHBUTTONWITHCLIPBOARD_H_
+#define SRC_QPUSHBUTTONWITHCLIPBOARD_H_
 
 #include <QPushButton>
 
@@ -31,4 +33,4 @@ private:
   QIcon iconEditPushed;
 };
 
-#endif // QPUSHBUTTONWITHCLIPBOARD_H_
+#endif // SRC_QPUSHBUTTONWITHCLIPBOARD_H_

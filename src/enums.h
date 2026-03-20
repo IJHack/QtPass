@@ -1,5 +1,7 @@
-#ifndef ENUMS_H
-#define ENUMS_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_ENUMS_H_
+#define SRC_ENUMS_H_
 
 /*!
     \namespace Enums
@@ -36,4 +38,4 @@ enum PROCESS {
 
 } // namespace Enums
 
-#endif // ENUMS_H
+#endif // SRC_ENUMS_H_

@@ -1,5 +1,7 @@
-#ifndef EXECUTOR_H
-#define EXECUTOR_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_EXECUTOR_H_
+#define SRC_EXECUTOR_H_
 
 #include <QObject>
 #include <QProcess>
@@ -115,4 +117,4 @@ signals:
              const QString &errout);
 };
 
-#endif // EXECUTOR_H
+#endif // SRC_EXECUTOR_H_

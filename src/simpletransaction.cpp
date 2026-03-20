@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "simpletransaction.h"
 #include <utility>
 
@@ -5,8 +7,8 @@
 #include "debughelper.h"
 #endif
 
-using std::pair;
-using namespace Enums;
+using Enums::INVALID;
+using Enums::PROCESS;
 
 /**
  * @brief simpleTransaction::transactionStart

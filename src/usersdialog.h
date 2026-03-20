@@ -1,5 +1,7 @@
-#ifndef USERSDIALOG_H_
-#define USERSDIALOG_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_USERSDIALOG_H_
+#define SRC_USERSDIALOG_H_
 
 #include "userinfo.h"
 
@@ -47,4 +49,4 @@ private:
   void populateList(const QString &filter = QString());
 };
 
-#endif // USERSDIALOG_H_
+#endif // SRC_USERSDIALOG_H_

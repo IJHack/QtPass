@@ -1,5 +1,7 @@
-#ifndef TRAYICON_H_
-#define TRAYICON_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_TRAYICON_H_
+#define SRC_TRAYICON_H_
 
 #include <QSystemTrayIcon>
 #include <QWidget>
@@ -44,4 +46,4 @@ private:
   bool isAllocated;
 };
 
-#endif // TRAYICON_H_
+#endif // SRC_TRAYICON_H_

@@ -1,5 +1,7 @@
-#ifndef KEYGENDIALOG_H_
-#define KEYGENDIALOG_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_KEYGENDIALOG_H_
+#define SRC_KEYGENDIALOG_H_
 
 #include <QDialog>
 
@@ -38,4 +40,4 @@ private:
   ConfigDialog *dialog;
 };
 
-#endif // KEYGENDIALOG_H_
+#endif // SRC_KEYGENDIALOG_H_

@@ -1,5 +1,7 @@
-#ifndef PASSWORDCONFIGURATION_H
-#define PASSWORDCONFIGURATION_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_PASSWORDCONFIGURATION_H_
+#define SRC_PASSWORDCONFIGURATION_H_
 
 #include <QString>
 
@@ -38,4 +40,4 @@ struct PasswordConfiguration {
   }
 };
 
-#endif //  PASSWORDCONFIGURATION_H
+#endif // SRC_PASSWORDCONFIGURATION_H_

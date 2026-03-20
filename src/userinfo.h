@@ -1,5 +1,7 @@
-#ifndef DATAHELPERS_H
-#define DATAHELPERS_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_USERINFO_H_
+#define SRC_USERINFO_H_
 
 #include <QDateTime>
 #include <QString>
@@ -58,4 +60,4 @@ struct UserInfo {
   QDateTime created;
 };
 
-#endif // DATAHELPERS_H
+#endif // SRC_USERINFO_H_

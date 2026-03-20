@@ -1,5 +1,7 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_SETTINGSCONSTANTS_H_
+#define SRC_SETTINGSCONSTANTS_H_
 
 #include <QString>
 
@@ -9,66 +11,66 @@
 */
 class SettingsConstants {
 public:
-  const static QString version;
-  const static QString groupMainwindow;
-  const static QString geometry;
-  const static QString savestate;
-  const static QString pos;
-  const static QString size;
-  const static QString splitterLeft;
-  const static QString splitterRight;
-  const static QString maximized;
-  const static QString usePass;
-  const static QString useAutoclear;
-  const static QString useSelection;
-  const static QString autoclearSeconds;
-  const static QString useAutoclearPanel;
-  const static QString autoclearPanelSeconds;
-  const static QString hidePassword;
-  const static QString hideContent;
-  const static QString useMonospace;
-  const static QString displayAsIs;
-  const static QString noLineWrapping;
-  const static QString addGPGId;
-  const static QString passStore;
-  const static QString passSigningKey;
-  const static QString passExecutable;
-  const static QString gitExecutable;
-  const static QString gpgExecutable;
-  const static QString pwgenExecutable;
-  const static QString gpgHome;
-  const static QString useWebDav;
-  const static QString webDavUrl;
-  const static QString webDavUser;
-  const static QString webDavPassword;
-  const static QString profile;
-  const static QString groupProfiles;
-  const static QString useGit;
-  const static QString useOtp;
-  const static QString useQrencode;
-  const static QString qrencodeExecutable;
-  const static QString useClipboard;
-  const static QString usePwgen;
-  const static QString avoidCapitals;
-  const static QString avoidNumbers;
-  const static QString lessRandom;
-  const static QString useSymbols;
-  const static QString passwordLength;
-  const static QString passwordCharsselection;
-  const static QString passwordChars;
-  const static QString useTrayIcon;
-  const static QString hideOnClose;
-  const static QString startMinimized;
-  const static QString alwaysOnTop;
-  const static QString autoPull;
-  const static QString autoPush;
-  const static QString passTemplate;
-  const static QString useTemplate;
-  const static QString templateAllFields;
-  const static QString clipBoardType;
+  static const QString version;
+  static const QString groupMainwindow;
+  static const QString geometry;
+  static const QString savestate;
+  static const QString pos;
+  static const QString size;
+  static const QString splitterLeft;
+  static const QString splitterRight;
+  static const QString maximized;
+  static const QString usePass;
+  static const QString useAutoclear;
+  static const QString useSelection;
+  static const QString autoclearSeconds;
+  static const QString useAutoclearPanel;
+  static const QString autoclearPanelSeconds;
+  static const QString hidePassword;
+  static const QString hideContent;
+  static const QString useMonospace;
+  static const QString displayAsIs;
+  static const QString noLineWrapping;
+  static const QString addGPGId;
+  static const QString passStore;
+  static const QString passSigningKey;
+  static const QString passExecutable;
+  static const QString gitExecutable;
+  static const QString gpgExecutable;
+  static const QString pwgenExecutable;
+  static const QString gpgHome;
+  static const QString useWebDav;
+  static const QString webDavUrl;
+  static const QString webDavUser;
+  static const QString webDavPassword;
+  static const QString profile;
+  static const QString groupProfiles;
+  static const QString useGit;
+  static const QString useOtp;
+  static const QString useQrencode;
+  static const QString qrencodeExecutable;
+  static const QString useClipboard;
+  static const QString usePwgen;
+  static const QString avoidCapitals;
+  static const QString avoidNumbers;
+  static const QString lessRandom;
+  static const QString useSymbols;
+  static const QString passwordLength;
+  static const QString passwordCharsselection;
+  static const QString passwordChars;
+  static const QString useTrayIcon;
+  static const QString hideOnClose;
+  static const QString startMinimized;
+  static const QString alwaysOnTop;
+  static const QString autoPull;
+  static const QString autoPush;
+  static const QString passTemplate;
+  static const QString useTemplate;
+  static const QString templateAllFields;
+  static const QString clipBoardType;
 
 private:
   explicit SettingsConstants();
 };
 
-#endif // CONSTANTS_H
+#endif // SRC_SETTINGSCONSTANTS_H_

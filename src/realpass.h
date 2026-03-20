@@ -1,5 +1,7 @@
-#ifndef REALPASS_H
-#define REALPASS_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_REALPASS_H_
+#define SRC_REALPASS_H_
 
 #include "pass.h"
 
@@ -34,4 +36,4 @@ public:
             const bool force = false) Q_DECL_OVERRIDE;
 };
 
-#endif // REALPASS_H
+#endif // SRC_REALPASS_H_

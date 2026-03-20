@@ -1,5 +1,7 @@
-#ifndef PASSWORDDIALOG_H_
-#define PASSWORDDIALOG_H_
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_PASSWORDDIALOG_H_
+#define SRC_PASSWORDDIALOG_H_
 
 #include "passwordconfiguration.h"
 #include <QDialog>
@@ -70,4 +72,4 @@ private:
   QList<QLineEdit *> otherLines;
 };
 
-#endif // PASSWORDDIALOG_H_
+#endif // SRC_PASSWORDDIALOG_H_

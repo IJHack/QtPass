@@ -1,5 +1,7 @@
-#ifndef DESELECTABLETREEVIEW_H
-#define DESELECTABLETREEVIEW_H
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef SRC_DESELECTABLETREEVIEW_H_
+#define SRC_DESELECTABLETREEVIEW_H_
 
 #include <QCoreApplication>
 #include <QMouseEvent>
@@ -82,4 +84,4 @@ private:
   }
 };
 
-#endif // DESELECTABLETREEVIEW_H
+#endif // SRC_DESELECTABLETREEVIEW_H_
