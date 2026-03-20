@@ -12,7 +12,7 @@ class QPushButtonWithClipboard : public QPushButton {
   Q_OBJECT
 
 public:
-  explicit QPushButtonWithClipboard(const QString &textToCopy = "",
+  explicit QPushButtonWithClipboard(QString textToCopy = "",
                                     QWidget *parent = nullptr);
 
   QString getTextToCopy() const;

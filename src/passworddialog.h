@@ -21,10 +21,9 @@ class PasswordDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit PasswordDialog(const PasswordConfiguration &passConfig,
+  explicit PasswordDialog(PasswordConfiguration passConfig,
                           QWidget *parent = nullptr);
-  PasswordDialog(const QString &file, const bool &isNew,
-                 QWidget *parent = nullptr);
+  PasswordDialog(QString file, const bool &isNew, QWidget *parent = nullptr);
   ~PasswordDialog();
 
   /*! Sets content in the password field in the interface.

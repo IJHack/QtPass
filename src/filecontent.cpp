@@ -1,5 +1,7 @@
 #include "filecontent.h"
+
 #include "helpers.h"
+#include <utility>
 
 static auto isLineHidden(const QString &line) -> bool {
   return line.startsWith("otpauth://", Qt::CaseInsensitive);
@@ -49,13 +51,11 @@ auto FileContent::getRemainingDataForDisplay() const -> QString {
   return this->remainingDataDisplay;
 }
 
-FileContent::FileContent(const QString &password,
-                         const NamedValues &namedValues,
-                         const QString &remainingData,
-                         const QString &remainingDataDisplay)
-    : password(password), namedValues(namedValues),
-      remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {
-}
+FileContent::FileContent(QString password, NamedValues namedValues,
+                         QString remainingData, QString remainingDataDisplay)
+    : password(std::move(password)), namedValues(std::move(namedValues)),
+      remainingData(std::move(remainingData)),
+      remainingDataDisplay(std::move(remainingDataDisplay)) {}
 
 NamedValues::NamedValues() {}
 

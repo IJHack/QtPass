@@ -8,6 +8,7 @@
 
 #include <QLabel>
 #include <QLineEdit>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -18,9 +19,10 @@
  * @param passConfig configuration constant
  * @param parent
  */
-PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
+PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
                                QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_passConfig(passConfig) {
+    : QDialog(parent), ui(new Ui::PasswordDialog),
+      m_passConfig(std::move(passConfig)) {
   m_templating = false;
   m_allFields = false;
   m_isNew = false;
@@ -39,9 +41,8 @@ PasswordDialog::PasswordDialog(const PasswordConfiguration &passConfig,
  * @param isNew
  * @param parent pointer
  */
-PasswordDialog::PasswordDialog(const QString &file, const bool &isNew,
-                               QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_file(file),
+PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_file(std::move(file)),
       m_isNew(isNew) {
 
   if (!isNew)
