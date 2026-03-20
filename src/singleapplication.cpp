@@ -61,7 +61,7 @@ void SingleApplication::receiveMessage() {
  * running, to check wether to be server or client.
  * @return
  */
-bool SingleApplication::isRunning() { return _isRunning; }
+auto SingleApplication::isRunning() -> bool { return _isRunning; }
 
 /**
  * @brief SingleApplication::sendMessage send a message (from commandline) to an
@@ -69,7 +69,7 @@ bool SingleApplication::isRunning() { return _isRunning; }
  * @param message
  * @return
  */
-bool SingleApplication::sendMessage(const QString &message) {
+auto SingleApplication::sendMessage(const QString &message) -> bool {
   if (!_isRunning)
     return false;
   QLocalSocket localSocket(this);

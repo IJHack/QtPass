@@ -17,14 +17,14 @@ using namespace Enums;
  */
 ImitatePass::ImitatePass() = default;
 
-static QString pgit(const QString &path) {
+static auto pgit(const QString &path) -> QString {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl "))
     return path;
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
 
-static QString pgpg(const QString &path) {
+static auto pgpg(const QString &path) -> QString {
   if (!QtPassSettings::getGpgExecutable().startsWith("wsl "))
     return path;
   QString res = "$(wslpath " + path + ")";
@@ -109,7 +109,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   for (auto &r : recipients) {
     args.append("-r");
     args.append(r);
-  };
+  }
   if (overwrite)
     args.append("--yes");
   args.append("-");
@@ -156,8 +156,9 @@ void ImitatePass::Remove(QString file, bool isDir) {
     if (isDir) {
       QDir dir(file);
       dir.removeRecursively();
-    } else
+    } else {
       QFile(file).remove();
+    }
   }
 }
 
@@ -268,7 +269,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @param file which gpgid file.
  * @return was verification succesful?
  */
-bool ImitatePass::verifyGpgIdFile(const QString &file) {
+auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
@@ -283,7 +284,7 @@ bool ImitatePass::verifyGpgIdFile(const QString &file) {
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
   exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
   QRegularExpression re(
-      "^\\[GNUPG:\\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\\r?$",
+      R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
       QRegularExpression::MultilineOption);
   QRegularExpressionMatch m = re.match(out);
   if (!m.hasMatch())
@@ -302,7 +303,7 @@ bool ImitatePass::verifyGpgIdFile(const QString &file) {
  * @param dirName which folder.
  * @return was removal succesful?
  */
-bool ImitatePass::removeDir(const QString &dirName) {
+auto ImitatePass::removeDir(const QString &dirName) -> bool {
   bool result = true;
   QDir dir(dirName);
 
@@ -364,7 +365,8 @@ void ImitatePass::reencryptPath(const QString &dir) {
     QStringList args = {
         "-v",          "--no-secmem-warning", "--no-permission-warning",
         "--list-only", "--keyid-format=long", pgpg(fileName)};
-    QString keys, err;
+    QString keys;
+    QString err;
     exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys, &err);
     QStringList actualKeys;
     keys += err;

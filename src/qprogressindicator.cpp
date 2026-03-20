@@ -38,7 +38,7 @@ QProgressIndicator::QProgressIndicator(QWidget *parent)
   setFocusPolicy(Qt::NoFocus);
 }
 
-bool QProgressIndicator::isAnimated() const { return m_timerId != -1; }
+auto QProgressIndicator::isAnimated() const -> bool { return m_timerId != -1; }
 
 void QProgressIndicator::setDisplayedWhenStopped(bool state) {
   m_displayedWhenStopped = state;
@@ -46,7 +46,7 @@ void QProgressIndicator::setDisplayedWhenStopped(bool state) {
   update();
 }
 
-bool QProgressIndicator::isDisplayedWhenStopped() const {
+auto QProgressIndicator::isDisplayedWhenStopped() const -> bool {
   return m_displayedWhenStopped;
 }
 
@@ -86,14 +86,14 @@ void QProgressIndicator::setColor(const QColor &color) {
  * @brief QProgressIndicator::sizeHint default minimum size.
  * @return QSize(20, 20)
  */
-QSize QProgressIndicator::sizeHint() const { return {20, 20}; }
+auto QProgressIndicator::sizeHint() const -> QSize { return {20, 20}; }
 
 /**
  * @brief QProgressIndicator::heightForWidth square ratio.
  * @param w requested width
  * @return w returned height
  */
-int QProgressIndicator::heightForWidth(int w) const { return w; }
+auto QProgressIndicator::heightForWidth(int w) const -> int { return w; }
 
 /**
  * @brief QProgressIndicator::timerEvent do the actual animation.

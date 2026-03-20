@@ -12,14 +12,14 @@ class QPushButtonAsQRCode : public QPushButton {
   Q_OBJECT
 
 public:
-  explicit QPushButtonAsQRCode(const QString &textToCopy = "",
+  explicit QPushButtonAsQRCode(QString textToCopy = "",
                                QWidget *parent = nullptr);
 
   QString getTextToCopy() const;
   void setTextToCopy(const QString &value);
 
 signals:
-  void clicked(QString);
+  void clicked(const QString &);
 
 private slots:
   void changeIconDefault();

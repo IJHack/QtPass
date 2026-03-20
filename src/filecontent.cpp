@@ -1,16 +1,19 @@
 #include "filecontent.h"
-#include "helpers.h"
 
-static bool isLineHidden(const QString &line) {
+#include "helpers.h"
+#include <utility>
+
+static auto isLineHidden(const QString &line) -> bool {
   return line.startsWith("otpauth://", Qt::CaseInsensitive);
 }
 
-FileContent FileContent::parse(const QString &fileContent,
-                               const QStringList &templateFields,
-                               bool allFields) {
+auto FileContent::parse(const QString &fileContent,
+                        const QStringList &templateFields, bool allFields)
+    -> FileContent {
   QStringList lines = fileContent.split("\n");
   QString password = lines.takeFirst();
-  QStringList remainingData, remainingDataDisplay;
+  QStringList remainingData;
+  QStringList remainingDataDisplay;
   NamedValues namedValues;
   for (const QString &line : AS_CONST(lines)) {
     if (line.contains(":")) {
@@ -34,34 +37,36 @@ FileContent FileContent::parse(const QString &fileContent,
                      remainingDataDisplay.join("\n"));
 }
 
-QString FileContent::getPassword() const { return this->password; }
+auto FileContent::getPassword() const -> QString { return this->password; }
 
-NamedValues FileContent::getNamedValues() const { return this->namedValues; }
+auto FileContent::getNamedValues() const -> NamedValues {
+  return this->namedValues;
+}
 
-QString FileContent::getRemainingData() const { return this->remainingData; }
+auto FileContent::getRemainingData() const -> QString {
+  return this->remainingData;
+}
 
-QString FileContent::getRemainingDataForDisplay() const {
+auto FileContent::getRemainingDataForDisplay() const -> QString {
   return this->remainingDataDisplay;
 }
 
-FileContent::FileContent(const QString &password,
-                         const NamedValues &namedValues,
-                         const QString &remainingData,
-                         const QString &remainingDataDisplay)
-    : password(password), namedValues(namedValues),
-      remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {
-}
+FileContent::FileContent(QString password, NamedValues namedValues,
+                         QString remainingData, QString remainingDataDisplay)
+    : password(std::move(password)), namedValues(std::move(namedValues)),
+      remainingData(std::move(remainingData)),
+      remainingDataDisplay(std::move(remainingDataDisplay)) {}
 
-NamedValues::NamedValues() : QList() {}
+NamedValues::NamedValues() {}
 
 NamedValues::NamedValues(std::initializer_list<NamedValue> values)
     : QList(values) {}
 
-QString NamedValues::takeValue(const QString &name) {
+auto NamedValues::takeValue(const QString &name) -> QString {
   for (int i = 0; i < length(); ++i) {
     if (at(i).name == name) {
       return takeAt(i).value;
     }
   }
-  return QString();
+  return {};
 }

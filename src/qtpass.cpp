@@ -26,7 +26,7 @@
 #endif
 
 QtPass::QtPass(MainWindow *mainWindow)
-    : m_mainWindow(mainWindow), clippedText(QString()), freshStart(true) {
+    : m_mainWindow(mainWindow), freshStart(true) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, &QTimer::timeout, this,
@@ -58,7 +58,7 @@ QtPass::~QtPass() {
  * @brief QtPass::init make sure we are ready to go as soon as
  * possible
  */
-bool QtPass::init() {
+auto QtPass::init() -> bool {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
@@ -129,7 +129,7 @@ void QtPass::setMainWindow(void) {
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
 
-  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() {
+  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() -> void {
 #ifdef QT_DEBUG
     dbg() << "Pass git init called";
 #endif
@@ -137,7 +137,7 @@ void QtPass::setMainWindow(void) {
   });
 
   connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
-          [=](const QString &batch) {
+          [=](const QString &batch) -> void {
             QtPassSettings::getPass()->GenerateGPGKeys(batch);
             m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
                                             60000);
@@ -330,8 +330,8 @@ void QtPass::passShowHandlerFinished(QString output) {
   showInTextBrowser(std::move(output));
 }
 
-void QtPass::showInTextBrowser(QString output, QString prefix,
-                               QString postfix) {
+void QtPass::showInTextBrowser(QString output, const QString &prefix,
+                               const QString &postfix) {
   output = output.toHtmlEscaped();
 
   output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
@@ -425,9 +425,9 @@ void QtPass::showTextAsQRCode(const QString &text) {
     QPixmap image;
     image.loadFromData(output, "PNG");
 
-    QDialog *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
-    QVBoxLayout *layout = new QVBoxLayout;
-    QLabel *popupLabel = new QLabel();
+    auto *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
+    auto *layout = new QVBoxLayout;
+    auto *popupLabel = new QLabel();
     layout->addWidget(popupLabel);
     popupLabel->setPixmap(image);
     popupLabel->setScaledContents(true);

@@ -34,6 +34,7 @@ TrayIcon::TrayIcon(QMainWindow *parent)
     isAllocated = true;
   }
 #ifdef QT_DEBUG
+  // NOLINTNEXTLINE(readability/braces)
   else {
     dbg() << "No tray icon for this OS possibly also not show options?";
   }
@@ -54,7 +55,7 @@ void TrayIcon::setVisible(bool visible) {
 /**
  * @brief TrayIcon::getIsAllocated return if TrayIcon is allocated
  */
-bool TrayIcon::getIsAllocated() { return isAllocated; }
+auto TrayIcon::getIsAllocated() -> bool { return isAllocated; }
 
 /**
  * @brief TrayIcon::createActions setup the signals.

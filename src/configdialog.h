@@ -38,7 +38,7 @@ public:
   void useGit(bool useGit);
   void useOtp(bool useOtp);
   void useQrencode(bool useQrencode);
-  void setPwgenPath(QString);
+  void setPwgenPath(const QString &);
   void usePwgen(bool usePwgen);
   void setPasswordConfiguration(const PasswordConfiguration &config);
   PasswordConfiguration getPasswordConfiguration();
@@ -75,8 +75,8 @@ private:
 
   QStringList getSecretKeys();
 
-  void setGitPath(QString);
-  void setProfiles(QHash<QString, QHash<QString, QString>>, QString);
+  void setGitPath(const QString &);
+  void setProfiles(QHash<QString, QHash<QString, QString>>, const QString &);
   void usePass(bool usePass);
 
   void setGroupBoxState();

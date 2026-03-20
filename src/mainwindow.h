@@ -43,15 +43,15 @@ public:
   ~MainWindow();
 
   void restoreWindow();
-  void generateKeyPair(QString, QDialog *);
-  void userDialog(QString = "");
+  void generateKeyPair(const QString &, QDialog *);
+  void userDialog(const QString & = "");
   void config();
 
   void setUiElementsEnabled(bool state);
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
 
-  const QModelIndex getCurrentTreeViewIndex();
+  QModelIndex getCurrentTreeViewIndex();
 
   QDialog *getKeygenDialog() { return this->keygen; }
   void cleanKeygenDialog();
@@ -63,18 +63,18 @@ protected:
   bool eventFilter(QObject *obj, QEvent *event);
 
 signals:
-  void passShowHandlerFinished(QString output);
+  void passShowHandlerFinished(const QString &output);
   void passGitInitNeeded();
-  void generateGPGKeyPair(QString batch);
+  void generateGPGKeyPair(const QString &batch);
 
 public slots:
   void deselect();
 
-  void messageAvailable(QString message);
-  void critical(QString, QString);
+  void messageAvailable(const QString &message);
+  void critical(const QString &, const QString &);
 
   void executeWrapperStarted();
-  void showStatusMessage(QString msg, int timeout = 2000);
+  void showStatusMessage(const QString &msg, int timeout = 2000);
   void passShowHandler(const QString &);
   void passOtpHandler(const QString &);
 
@@ -100,7 +100,7 @@ private slots:
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   void on_profileBox_currentIndexChanged(QString);
 #else
-  void on_profileBox_currentTextChanged(QString);
+  void on_profileBox_currentTextChanged(const QString &);
 #endif
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
@@ -131,7 +131,7 @@ private:
   void selectFirstFile();
   QModelIndex firstFile(QModelIndex parentIndex);
   QString getFile(const QModelIndex &, bool);
-  void setPassword(QString, bool isNew = true);
+  void setPassword(const QString &, bool isNew = true);
 
   void updateProfileBox();
   void initTrayIcon();

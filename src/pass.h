@@ -48,13 +48,13 @@ public:
 
   void GenerateGPGKeys(QString batch);
   QList<UserInfo> listKeys(QStringList keystrings, bool secret = false);
-  QList<UserInfo> listKeys(QString keystring = "", bool secret = false);
+  QList<UserInfo> listKeys(const QString &keystring = "", bool secret = false);
   void updateEnv();
-  static QString getGpgIdPath(QString for_file);
-  static QStringList getRecipientList(QString for_file);
+  static QString getGpgIdPath(const QString &for_file);
+  static QStringList getRecipientList(const QString &for_file);
   // TODO(bezet): getRecipientString is useless, refactor
   static QStringList getRecipientString(QString for_file,
-                                        QString separator = " ",
+                                        const QString &separator = " ",
                                         int *count = NULL);
 
 protected:
@@ -74,8 +74,8 @@ protected slots:
 signals:
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
-  void statusMsg(QString, int);
-  void critical(QString, QString);
+  void statusMsg(const QString &, int);
+  void critical(const QString &, const QString &);
 
   void processErrorExit(int exitCode, const QString &err);
 

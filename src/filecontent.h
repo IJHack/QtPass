@@ -68,9 +68,8 @@ public:
   QString getRemainingDataForDisplay() const;
 
 private:
-  FileContent(const QString &password, const NamedValues &namedValues,
-              const QString &remainingData,
-              const QString &remainingDataDisplay);
+  FileContent(QString password, NamedValues namedValues, QString remainingData,
+              QString remainingDataDisplay);
 
   QString password;
   NamedValues namedValues;

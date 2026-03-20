@@ -1,5 +1,6 @@
 #include "qpushbuttonwithclipboard.h"
 #include <QTimer>
+#include <utility>
 
 /**
  * @brief QPushButtonWithClipboard::QPushButtonWithClipboard
@@ -9,9 +10,9 @@
  * @param parent
  *  the parent window
  */
-QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
+QPushButtonWithClipboard::QPushButtonWithClipboard(QString textToCopy,
                                                    QWidget *parent)
-    : QPushButton(parent), textToCopy(textToCopy),
+    : QPushButton(parent), textToCopy(std::move(textToCopy)),
       iconEdit(QIcon::fromTheme("edit-copy", QIcon(":/icons/edit-copy.svg"))),
       iconEditPushed(
           QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))) {
@@ -25,7 +26,9 @@ QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
  * associated text field
  * @return QString textToCopy
  */
-QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
+auto QPushButtonWithClipboard::getTextToCopy() const -> QString {
+  return textToCopy;
+}
 
 /**
  * @brief QPushButtonWithClipboard::setTextToCopy sets text from associated
@@ -40,7 +43,7 @@ void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
  * @brief QPushButtonWithClipboard::buttonClicked handles clicked event by
  * emitting clicked(QString) with string provided to constructor
  */
-void QPushButtonWithClipboard::buttonClicked(bool) {
+void QPushButtonWithClipboard::buttonClicked(bool /*unused*/) {
   setIcon(iconEditPushed);
   QTimer::singleShot(500, this, SLOT(changeIconDefault()));
   emit clicked(textToCopy);

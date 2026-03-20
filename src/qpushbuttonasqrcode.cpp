@@ -1,5 +1,6 @@
 #include "qpushbuttonasqrcode.h"
 #include <QTimer>
+#include <utility>
 
 /**
  * @brief QPushButtonAsQRCode::QPushButtonAsQRCode
@@ -9,9 +10,8 @@
  * @param parent
  *  the parent window
  */
-QPushButtonAsQRCode::QPushButtonAsQRCode(const QString &textToCopy,
-                                         QWidget *parent)
-    : QPushButton(parent), textToCopy(textToCopy),
+QPushButtonAsQRCode::QPushButtonAsQRCode(QString textToCopy, QWidget *parent)
+    : QPushButton(parent), textToCopy(std::move(textToCopy)),
       iconEdit(QIcon::fromTheme("qrcode", QIcon(":/icons/qrcode.svg"))) {
   setIcon(iconEdit);
   connect(this, &QPushButton::clicked, this,
@@ -23,7 +23,9 @@ QPushButtonAsQRCode::QPushButtonAsQRCode(const QString &textToCopy,
  * associated text field
  * @return QString textToCopy
  */
-QString QPushButtonAsQRCode::getTextToCopy() const { return textToCopy; }
+auto QPushButtonAsQRCode::getTextToCopy() const -> QString {
+  return textToCopy;
+}
 
 /**
  * @brief QPushButtonAsQRCode::setTextToCopy sets text from associated
@@ -38,7 +40,9 @@ void QPushButtonAsQRCode::setTextToCopy(const QString &value) {
  * @brief QPushButtonAsQRCode::buttonClicked handles clicked event by
  * emitting clicked(QString) with string provided to constructor
  */
-void QPushButtonAsQRCode::buttonClicked(bool) { emit clicked(textToCopy); }
+void QPushButtonAsQRCode::buttonClicked(bool /*unused*/) {
+  emit clicked(textToCopy);
+}
 
 /**
  * @brief QPushButtonAsQRCode::changeIconDefault change the icon back to
