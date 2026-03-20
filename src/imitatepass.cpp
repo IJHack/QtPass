@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "imitatepass.h"
 #include "qtpasssettings.h"
 #include "util.h"

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef TRAYICON_H_
 #define TRAYICON_H_
 

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef KEYGENDIALOG_H_
 #define KEYGENDIALOG_H_
 

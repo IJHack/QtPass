@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "keygendialog.h"
 #include "configdialog.h"
 #include "qprogressindicator.h"

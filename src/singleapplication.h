@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef SINGLEAPPLICATION_H_
 #define SINGLEAPPLICATION_H_
 
