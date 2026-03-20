@@ -212,7 +212,7 @@
 **Fixed bugs:**
 
 - build: dependency issue [\#467](https://github.com/IJHack/QtPass/issues/467)
-- is running but no gui [\#451](https://github.com/IJHack/QtPass/issues/451)
+- is running but no GUI [\#451](https://github.com/IJHack/QtPass/issues/451)
 
 **Closed issues:**
 
@@ -510,7 +510,7 @@
 
 **Merged pull requests:**
 
-- Allow ssh links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
+- Allow SSH links [\#211](https://github.com/IJHack/QtPass/pull/211) ([cgonzalez](https://github.com/cgonzalez))
 - Increase maximum password length to 255 [\#209](https://github.com/IJHack/QtPass/pull/209) ([vladimiroff](https://github.com/vladimiroff))
 - Password templates [\#207](https://github.com/IJHack/QtPass/pull/207) ([jounathaen](https://github.com/jounathaen))
 - Updated German Translation [\#206](https://github.com/IJHack/QtPass/pull/206) ([jounathaen](https://github.com/jounathaen))
@@ -695,7 +695,7 @@
 **Implemented enhancements:**
 
 - Get PREFIX variable from environment [\#106](https://github.com/IJHack/QtPass/issues/106)
-- Password file named 'git' returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
+- Password file named `git` returns error [\#105](https://github.com/IJHack/QtPass/issues/105)
 
 **Merged pull requests:**
 
@@ -811,7 +811,7 @@
 **Merged pull requests:**
 
 - Many deadlocks and other nasty bugfixes [\#64](https://github.com/IJHack/QtPass/pull/64) ([annejan](https://github.com/annejan))
-- Mention qt5-default package in README [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
+- Mention qt5-default package in readme [\#62](https://github.com/IJHack/QtPass/pull/62) ([lorrin](https://github.com/lorrin))
 - Some hacks I needed for portable gpg4win release [\#54](https://github.com/IJHack/QtPass/pull/54) ([rdoeffinger](https://github.com/rdoeffinger))
 
 ## [v0.8.4](https://github.com/IJHack/QtPass/tree/v0.8.4) (2015-06-11)
@@ -882,7 +882,7 @@
 - User robustness [\#33](https://github.com/IJHack/QtPass/pull/33) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add WebDAV support. [\#29](https://github.com/IJHack/QtPass/pull/29) ([rdoeffinger](https://github.com/rdoeffinger))
 - Add nosingleapp config. [\#27](https://github.com/IJHack/QtPass/pull/27) ([rdoeffinger](https://github.com/rdoeffinger))
-- Add Makefile with commands to make a binary release zip file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
+- Add Makefile with commands to make a binary release ZIP file. [\#25](https://github.com/IJHack/QtPass/pull/25) ([rdoeffinger](https://github.com/rdoeffinger))
 - Start process only after we finished disabling UI elements etc. [\#24](https://github.com/IJHack/QtPass/pull/24) ([rdoeffinger](https://github.com/rdoeffinger))
 - Support for editing .gpg-id via GUI with public keyring list. [\#23](https://github.com/IJHack/QtPass/pull/23) ([rdoeffinger](https://github.com/rdoeffinger))
 - More proper support for subdirectories. [\#22](https://github.com/IJHack/QtPass/pull/22) ([rdoeffinger](https://github.com/rdoeffinger))
