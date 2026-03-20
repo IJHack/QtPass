@@ -25,7 +25,7 @@ public:
   bool lessThan(const QModelIndex &source_left,
                 const QModelIndex &source_right) const override;
 
-   // QAbstractItemModel interface
+  // QAbstractItemModel interface
 public:
   Qt::DropActions supportedDropActions() const override;
   Qt::DropActions supportedDragActions() const override;

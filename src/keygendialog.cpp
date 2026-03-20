@@ -138,14 +138,14 @@ void KeygenDialog::no_protection(bool enable) {
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) {  //  ok was pressed
-     // check name
+                                 // check name
     if (ui->name->text().length() < 5) {
       QMessageBox::critical(this, tr("Invalid name"),
                             tr("Name must be at least 5 characters long."));
       return;
     }
 
-     // check email
+    // check email
     static const QRegularExpression mailre(
         QRegularExpression::anchoredPattern(
             R"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)"),
@@ -189,6 +189,6 @@ void KeygenDialog::done(int r) {
  * @param event
  */
 void KeygenDialog::closeEvent(QCloseEvent *event) {
-   // TODO(annejan): save window size or somethign
+  // TODO(annejan): save window size or somethign
   event->accept();
 }

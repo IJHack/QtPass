@@ -65,9 +65,9 @@ bool QtPass::init() {
   QtPassSettings::initExecutables();
 
   QString version = QtPassSettings::getVersion();
-   // dbg()<< version;
+  // dbg()<< version;
 
-   // Config updates
+  // Config updates
   if (version.isEmpty()) {
 #ifdef QT_DEBUG
     dbg() << "assuming fresh install";
@@ -83,11 +83,11 @@ bool QtPass::init() {
       QtPassSettings::setUsePwgen(false);
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
-     // QStringList ver = version.split(".");
-     // dbg()<< ver;
-     // if (ver[0] == "0" && ver[1] == "8") {
+    // QStringList ver = version.split(".");
+    // dbg()<< ver;
+    // if (ver[0] == "0" && ver[1] == "8") {
     //// upgrade to 0.9
-     // }
+    // }
     if (QtPassSettings::getPassTemplate().isEmpty())
       QtPassSettings::setPassTemplate("login\nurl");
   }
@@ -100,14 +100,14 @@ bool QtPass::init() {
       return false;
   }
 
-   // TODO(annejan): this needs to be before we try to access the store,
-   // but it would be better to do it after the Window is shown,
-   // as the long delay it can cause is irritating otherwise.
+  // TODO(annejan): this needs to be before we try to access the store,
+  // but it would be better to do it after the Window is shown,
+  // as the long delay it can cause is irritating otherwise.
   if (QtPassSettings::isUseWebDav())
     mountWebDav();
 
   freshStart = false;
-   // startupPhase = false;
+  // startupPhase = false;
   return true;
 }
 
@@ -116,14 +116,14 @@ void QtPass::setMainWindow(void) {
 
   fusedav.setParent(m_mainWindow);
 
-   // TODO(bezet): this should be reconnected dynamically when pass changes
+  // TODO(bezet): this should be reconnected dynamically when pass changes
   connectPassSignalHandlers(QtPassSettings::getRealPass());
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 
   connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
           &QtPass::passShowHandlerFinished);
 
-   // only for ipass
+  // only for ipass
   connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
           m_mainWindow, &MainWindow::startReencryptPath);
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
@@ -270,7 +270,7 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
     QString output;
     QString error = p_error.toHtmlEscaped();
     if (exitCode == 0) {
-       //  https://github.com/IJHack/qtpass/issues/111
+      //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
     } else {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
@@ -294,8 +294,8 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
  */
 void QtPass::processFinished(const QString &p_output, const QString &p_errout) {
   showInTextBrowser(p_output);
-   //    Sometimes there is error output even with 0 exit code, which is
-   //    assumed in this function
+  //    Sometimes there is error output even with 0 exit code, which is
+  //    assumed in this function
   processErrorExit(0, p_errout);
 
   m_mainWindow->setUiElementsEnabled(true);
@@ -320,7 +320,7 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 #endif
 
     m_mainWindow->cleanKeygenDialog();
-     // TODO(annejan): some sanity checking ?
+    // TODO(annejan): some sanity checking ?
   }
 
   processFinished(p_output, p_errout);
