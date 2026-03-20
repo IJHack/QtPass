@@ -74,7 +74,7 @@ public:
                bool readStdout = false, bool readStderr = true);
 
   static int executeBlocking(QString app, const QStringList &args,
-                             QString input = QString(),
+                             const QString &input = QString(),
                              QString *process_out = nullptr,
                              QString *process_err = nullptr);
 

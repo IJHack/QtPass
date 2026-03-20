@@ -23,7 +23,9 @@ QPushButtonAsQRCode::QPushButtonAsQRCode(const QString &textToCopy,
  * associated text field
  * @return QString textToCopy
  */
-QString QPushButtonAsQRCode::getTextToCopy() const { return textToCopy; }
+auto QPushButtonAsQRCode::getTextToCopy() const -> QString {
+  return textToCopy;
+}
 
 /**
  * @brief QPushButtonAsQRCode::setTextToCopy sets text from associated

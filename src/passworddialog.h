@@ -31,7 +31,7 @@ public:
       \param password the password as a QString
       \sa getPassword
    */
-  void setPassword(QString password);
+  void setPassword(const QString &password);
 
   /*! Returns the password as set in the password field in the interface.
       \return password as a QString
@@ -43,7 +43,7 @@ public:
       \param rawFields is the template as a QString
       \param useTemplate whether the template is used
    */
-  void setTemplate(QString rawFields, bool useTemplate);
+  void setTemplate(const QString &rawFields, bool useTemplate);
 
   void templateAll(bool templateAll);
   void setLength(int l);

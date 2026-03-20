@@ -11,6 +11,7 @@
 #include <QPushButton>
 #include <QSystemTrayIcon>
 #include <QTableWidgetItem>
+#include <utility>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
@@ -145,7 +146,7 @@ ConfigDialog::~ConfigDialog() {
  * Make sure the checkBoxUseGit is updated.
  * @param path
  */
-void ConfigDialog::setGitPath(QString path) {
+void ConfigDialog::setGitPath(const QString &path) {
   ui->gitPath->setText(path);
   ui->checkBoxUseGit->setEnabled(!path.isEmpty());
   if (path.isEmpty()) {
@@ -274,7 +275,7 @@ void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
  * @brief ConfigDialog::getSecretKeys get list of secret/private keys
  * @return QStringList keys
  */
-QStringList ConfigDialog::getSecretKeys() {
+auto ConfigDialog::getSecretKeys() -> QStringList {
   QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
   QStringList names;
 
@@ -300,7 +301,7 @@ void ConfigDialog::setGroupBoxState() {
  * @brief ConfigDialog::selectExecutable pop-up to choose an executable.
  * @return
  */
-QString ConfigDialog::selectExecutable() {
+auto ConfigDialog::selectExecutable() -> QString {
   QFileDialog dialog(this);
   dialog.setFileMode(QFileDialog::ExistingFile);
   dialog.setOption(QFileDialog::ReadOnly);
@@ -314,7 +315,7 @@ QString ConfigDialog::selectExecutable() {
  * @brief ConfigDialog::selectFolder pop-up to choose a folder.
  * @return
  */
-QString ConfigDialog::selectFolder() {
+auto ConfigDialog::selectFolder() -> QString {
   QFileDialog dialog(this);
   dialog.setFileMode(QFileDialog::Directory);
   dialog.setFilter(QDir::NoFilter);
@@ -453,7 +454,7 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
  * @param dialog
  */
 void ConfigDialog::genKey(QString batch, QDialog *dialog) {
-  mainWindow->generateKeyPair(batch, dialog);
+  mainWindow->generateKeyPair(std::move(batch), dialog);
 }
 
 /**
@@ -463,7 +464,7 @@ void ConfigDialog::genKey(QString batch, QDialog *dialog) {
  * @param profile
  */
 void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
-                               QString currentProfile) {
+                               const QString &currentProfile) {
   // dbg()<< profiles;
   if (profiles.contains("")) {
     profiles.remove("");
@@ -493,7 +494,7 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
  * @brief ConfigDialog::getProfiles return profile list.
  * @return
  */
-QHash<QString, QHash<QString, QString>> ConfigDialog::getProfiles() {
+auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
   QHash<QString, QHash<QString, QString>> profiles;
   // Check?
   for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
@@ -566,7 +567,7 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
-bool ConfigDialog::isQrencodeAvailable() {
+auto ConfigDialog::isQrencodeAvailable() -> bool {
 #ifdef Q_OS_WIN
   return false;
 #else
@@ -579,7 +580,7 @@ bool ConfigDialog::isQrencodeAvailable() {
 #endif
 }
 
-bool ConfigDialog::isPassOtpAvailable() {
+auto ConfigDialog::isPassOtpAvailable() -> bool {
 #ifdef Q_OS_WIN
   return false;
 #else
@@ -606,7 +607,7 @@ void ConfigDialog::wizard() {
   ui->checkBoxHidePassword->setCheckState(Qt::Checked);
 }
 
-bool ConfigDialog::checkGpgExistence() {
+auto ConfigDialog::checkGpgExistence() -> bool {
   QString gpg = ui->gpgPath->text();
   if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
@@ -636,7 +637,7 @@ bool ConfigDialog::checkGpgExistence() {
   return true;
 }
 
-bool ConfigDialog::checkSecretKeys() {
+auto ConfigDialog::checkSecretKeys() -> bool {
   QString gpg = ui->gpgPath->text();
   QStringList names = getSecretKeys();
 
@@ -651,7 +652,7 @@ bool ConfigDialog::checkSecretKeys() {
   return true;
 }
 
-bool ConfigDialog::checkPasswordStore() {
+auto ConfigDialog::checkPasswordStore() -> bool {
   QString passStore = ui->storePath->text();
 
   if (!QFile(passStore).exists()) {
@@ -796,7 +797,7 @@ void ConfigDialog::on_toolButtonPwgen_clicked() {
  * Enable or disable related options in the interface.
  * @param pwgen
  */
-void ConfigDialog::setPwgenPath(QString pwgen) {
+void ConfigDialog::setPwgenPath(const QString &pwgen) {
   ui->pwgenPath->setText(pwgen);
   if (pwgen.isEmpty()) {
     ui->checkBoxUsePwgen->setChecked(false);
@@ -843,7 +844,7 @@ void ConfigDialog::setPasswordConfiguration(
   ui->lineEditPasswordChars->setText(config.Characters[config.selected]);
 }
 
-PasswordConfiguration ConfigDialog::getPasswordConfiguration() {
+auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   PasswordConfiguration config;
   config.length = ui->spinBoxPasswordLength->value();
   config.selected = static_cast<PasswordConfiguration::characterSet>(

@@ -17,14 +17,14 @@ using namespace Enums;
  */
 ImitatePass::ImitatePass() = default;
 
-static QString pgit(const QString &path) {
+static auto pgit(const QString &path) -> QString {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl "))
     return path;
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
 
-static QString pgpg(const QString &path) {
+static auto pgpg(const QString &path) -> QString {
   if (!QtPassSettings::getGpgExecutable().startsWith("wsl "))
     return path;
   QString res = "$(wslpath " + path + ")";
@@ -269,7 +269,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @param file which gpgid file.
  * @return was verification succesful?
  */
-bool ImitatePass::verifyGpgIdFile(const QString &file) {
+auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       QtPassSettings::getPassSigningKey().split(" ", Qt::SkipEmptyParts);
@@ -303,7 +303,7 @@ bool ImitatePass::verifyGpgIdFile(const QString &file) {
  * @param dirName which folder.
  * @return was removal succesful?
  */
-bool ImitatePass::removeDir(const QString &dirName) {
+auto ImitatePass::removeDir(const QString &dirName) -> bool {
   bool result = true;
   QDir dir(dirName);
 

@@ -53,7 +53,7 @@ void Util::initialiseEnvironment() {
  * location.
  * @return
  */
-QString Util::findPasswordStore() {
+auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
   if (_env.contains("PASSWORD_STORE_DIR")) {
@@ -76,7 +76,7 @@ QString Util::findPasswordStore() {
  * @param path
  * @return
  */
-QString Util::normalizeFolderPath(QString path) {
+auto Util::normalizeFolderPath(QString path) -> QString {
   if (!path.endsWith("/") && !path.endsWith(QDir::separator()))
     path += QDir::separator();
   return QDir::toNativeSeparators(path);
@@ -87,7 +87,7 @@ QString Util::normalizeFolderPath(QString path) {
  * @param binary
  * @return
  */
-QString Util::findBinaryInPath(QString binary) {
+auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
 
   QString ret = "";
@@ -139,7 +139,7 @@ QString Util::findBinaryInPath(QString binary) {
  * @brief Util::checkConfig do we have prequisite settings?
  * @return
  */
-bool Util::checkConfig() {
+auto Util::checkConfig() -> bool {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
          (QtPassSettings::isUsePass()
@@ -157,9 +157,9 @@ bool Util::checkConfig() {
  * @param storeModel our storemodel to operate on
  * @return path
  */
-QString Util::getDir(const QModelIndex &index, bool forPass,
-                     const QFileSystemModel &model,
-                     const StoreModel &storeModel) {
+auto Util::getDir(const QModelIndex &index, bool forPass,
+                  const QFileSystemModel &model, const StoreModel &storeModel)
+    -> QString {
   QString abspath =
       QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
   if (!index.isValid())
@@ -195,18 +195,18 @@ void Util::copyDir(const QString &src, const QString &dest) {
   }
 }
 
-const QRegularExpression &Util::endsWithGpg() {
+auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;
 }
 
-const QRegularExpression &Util::protocolRegex() {
+auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://\\S+)"};
   return regex;
 }
 
-const QRegularExpression &Util::newLinesRegex() {
+auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;
 }

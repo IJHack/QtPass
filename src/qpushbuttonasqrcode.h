@@ -19,7 +19,7 @@ public:
   void setTextToCopy(const QString &value);
 
 signals:
-  void clicked(QString);
+  void clicked(const QString &);
 
 private slots:
   void changeIconDefault();

@@ -26,7 +26,7 @@ signals:
    * @brief messageAvailable notification from commandline
    * @param message args sent to qtpass executable
    */
-  void messageAvailable(QString message);
+  void messageAvailable(const QString &message);
 
 private:
   bool _isRunning;

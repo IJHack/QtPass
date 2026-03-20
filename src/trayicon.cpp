@@ -55,7 +55,7 @@ void TrayIcon::setVisible(bool visible) {
 /**
  * @brief TrayIcon::getIsAllocated return if TrayIcon is allocated
  */
-bool TrayIcon::getIsAllocated() { return isAllocated; }
+auto TrayIcon::getIsAllocated() -> bool { return isAllocated; }
 
 /**
  * @brief TrayIcon::createActions setup the signals.

@@ -25,7 +25,9 @@ QPushButtonWithClipboard::QPushButtonWithClipboard(const QString &textToCopy,
  * associated text field
  * @return QString textToCopy
  */
-QString QPushButtonWithClipboard::getTextToCopy() const { return textToCopy; }
+auto QPushButtonWithClipboard::getTextToCopy() const -> QString {
+  return textToCopy;
+}
 
 /**
  * @brief QPushButtonWithClipboard::setTextToCopy sets text from associated

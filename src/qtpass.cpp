@@ -58,7 +58,7 @@ QtPass::~QtPass() {
  * @brief QtPass::init make sure we are ready to go as soon as
  * possible
  */
-bool QtPass::init() {
+auto QtPass::init() -> bool {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
@@ -129,7 +129,7 @@ void QtPass::setMainWindow(void) {
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
 
-  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() {
+  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() -> void {
 #ifdef QT_DEBUG
     dbg() << "Pass git init called";
 #endif
@@ -137,7 +137,7 @@ void QtPass::setMainWindow(void) {
   });
 
   connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
-          [=](const QString &batch) {
+          [=](const QString &batch) -> void {
             QtPassSettings::getPass()->GenerateGPGKeys(batch);
             m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
                                             60000);
@@ -330,8 +330,8 @@ void QtPass::passShowHandlerFinished(QString output) {
   showInTextBrowser(std::move(output));
 }
 
-void QtPass::showInTextBrowser(QString output, QString prefix,
-                               QString postfix) {
+void QtPass::showInTextBrowser(QString output, const QString &prefix,
+                               const QString &postfix) {
   output = output.toHtmlEscaped();
 
   output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");

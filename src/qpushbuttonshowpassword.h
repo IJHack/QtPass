@@ -16,7 +16,7 @@ public:
   explicit QPushButtonShowPassword(QLineEdit *line, QWidget *parent = nullptr);
 
 signals:
-  void clicked(QString);
+  void clicked(const QString &);
 
 private slots:
   void buttonClicked(bool);

@@ -54,8 +54,8 @@ private slots:
   void onKeyGenerationComplete(const QString &p_output,
                                const QString &p_errout);
 
-  void showInTextBrowser(QString output, QString prefix = QString(),
-                         QString postfix = QString());
+  void showInTextBrowser(QString output, const QString &prefix = QString(),
+                         const QString &postfix = QString());
 };
 
 #endif // QTPASS_H

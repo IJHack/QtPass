@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -42,8 +43,8 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
 #ifdef QT_DEBUG
   dbg() << app << args;
 #endif
-  exec.execute(id, QtPassSettings::getPassStore(), app, args, input, readStdout,
-               readStderr);
+  exec.execute(id, QtPassSettings::getPassStore(), app, args, std::move(input),
+               readStdout, readStderr);
 }
 
 void Pass::init() {
@@ -70,7 +71,7 @@ void Pass::init() {
  * @param charset to use for generation
  * @return the password
  */
-QString Pass::Generate_b(unsigned int length, const QString &charset) {
+auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     // --secure goes first as it overrides --no-* otherwise
@@ -117,7 +118,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
  */
 void Pass::GenerateGPGKeys(QString batch) {
   executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
-                 {"--gen-key", "--no-tty", "--batch"}, batch);
+                 {"--gen-key", "--no-tty", "--batch"}, std::move(batch));
   // TODO(annejan): check status / error messages - probably not here, it's just
   // started
   // here, see finished for details
@@ -130,7 +131,7 @@ void Pass::GenerateGPGKeys(QString batch) {
  * @param secret list private keys
  * @return QList<UserInfo> users
  */
-QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
+auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   QList<UserInfo> users;
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
@@ -182,7 +183,7 @@ QList<UserInfo> Pass::listKeys(QStringList keystrings, bool secret) {
  * @param secret list private keys
  * @return QList<UserInfo> users
  */
-QList<UserInfo> Pass::listKeys(QString keystring, bool secret) {
+auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
   return listKeys(QStringList(keystring), secret);
 }
 
@@ -291,7 +292,7 @@ void Pass::updateEnv() {
  * @param for_file which file (folder) would you like the gpgid file path for.
  * @return path to the gpgid file.
  */
-QString Pass::getGpgIdPath(QString for_file) {
+auto Pass::getGpgIdPath(const QString &for_file) -> QString {
   QString passStore =
       QDir::fromNativeSeparators(QtPassSettings::getPassStore());
   QDir gpgIdDir(
@@ -319,8 +320,8 @@ QString Pass::getGpgIdPath(QString for_file) {
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
-QStringList Pass::getRecipientList(QString for_file) {
-  QFile gpgId(getGpgIdPath(for_file));
+auto Pass::getRecipientList(QString for_file) -> QStringList {
+  QFile gpgId(getGpgIdPath(std::move(for_file)));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return {};
   QStringList recipients;
@@ -340,17 +341,17 @@ QStringList Pass::getRecipientList(QString for_file) {
  * @param count
  * @return recepient string
  */
-QStringList Pass::getRecipientString(QString for_file, QString separator,
-                                     int *count) {
+auto Pass::getRecipientString(QString for_file, const QString &separator,
+                              int *count) -> QStringList {
   Q_UNUSED(separator)
   Q_UNUSED(count)
-  return Pass::getRecipientList(for_file);
+  return Pass::getRecipientList(std::move(for_file));
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
-quint32 Pass::boundedRandom(quint32 bound) {
+auto Pass::boundedRandom(quint32 bound) -> quint32 {
   if (bound < 2) {
     return 0;
   }
@@ -365,8 +366,8 @@ quint32 Pass::boundedRandom(quint32 bound) {
   return randval % bound;
 }
 
-QString Pass::generateRandomPassword(const QString &charset,
-                                     unsigned int length) {
+auto Pass::generateRandomPassword(const QString &charset, unsigned int length)
+    -> QString {
   QString out;
   for (unsigned int i = 0; i < length; ++i) {
     out.append(charset.at(static_cast<int>(

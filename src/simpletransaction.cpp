@@ -55,7 +55,7 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
  * @param id
  * @return
  */
-PROCESS simpleTransaction::transactionIsOver(PROCESS id) {
+auto simpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
 #ifdef QT_DEBUG
   dbg() << "OVER" << transactionDepth << id;
 #endif

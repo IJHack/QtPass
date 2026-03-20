@@ -9,18 +9,19 @@
 #include <QRegularExpression>
 #include <utility>
 
-QDataStream &
-operator<<(QDataStream &out,
-           const dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore) {
+auto operator<<(
+    QDataStream &out,
+    const dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
+    -> QDataStream & {
   out << dragAndDropInfoPasswordStore.isDir
       << dragAndDropInfoPasswordStore.isFile
       << dragAndDropInfoPasswordStore.path;
   return out;
 }
 
-QDataStream &
-operator>>(QDataStream &in,
-           dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore) {
+auto operator>>(QDataStream &in,
+                dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
+    -> QDataStream & {
   in >> dragAndDropInfoPasswordStore.isDir >>
       dragAndDropInfoPasswordStore.isFile >> dragAndDropInfoPasswordStore.path;
   return in;
@@ -40,8 +41,9 @@ StoreModel::StoreModel() { fs = nullptr; }
  * @param sourceParent
  * @return
  */
-bool StoreModel::filterAcceptsRow(int sourceRow,
-                                  const QModelIndex &sourceParent) const {
+auto StoreModel::filterAcceptsRow(int sourceRow,
+                                  const QModelIndex &sourceParent) const
+    -> bool {
   QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
   return ShowThis(index);
 }
@@ -52,7 +54,7 @@ bool StoreModel::filterAcceptsRow(int sourceRow,
  * @param index
  * @return
  */
-bool StoreModel::ShowThis(const QModelIndex index) const {
+auto StoreModel::ShowThis(const QModelIndex index) const -> bool {
   bool retVal = false;
   if (fs == nullptr)
     return retVal;
@@ -94,7 +96,7 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
  * @param role
  * @return
  */
-QVariant StoreModel::data(const QModelIndex &index, int role) const {
+auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   if (!index.isValid())
     return {};
 
@@ -114,7 +116,7 @@ QVariant StoreModel::data(const QModelIndex &index, int role) const {
  * @brief StoreModel::supportedDropActions enable drop.
  * @return
  */
-Qt::DropActions StoreModel::supportedDropActions() const {
+auto StoreModel::supportedDropActions() const -> Qt::DropActions {
   return Qt::CopyAction | Qt::MoveAction;
 }
 
@@ -122,7 +124,7 @@ Qt::DropActions StoreModel::supportedDropActions() const {
  * @brief StoreModel::supportedDragActions enable drag.
  * @return
  */
-Qt::DropActions StoreModel::supportedDragActions() const {
+auto StoreModel::supportedDragActions() const -> Qt::DropActions {
   return Qt::CopyAction | Qt::MoveAction;
 }
 
@@ -131,7 +133,7 @@ Qt::DropActions StoreModel::supportedDragActions() const {
  * @param index
  * @return
  */
-Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
+auto StoreModel::flags(const QModelIndex &index) const -> Qt::ItemFlags {
   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);
 
   if (index.isValid()) {
@@ -144,7 +146,7 @@ Qt::ItemFlags StoreModel::flags(const QModelIndex &index) const {
  * @brief StoreModel::mimeTypes
  * @return
  */
-QStringList StoreModel::mimeTypes() const {
+auto StoreModel::mimeTypes() const -> QStringList {
   QStringList types;
   types << "application/vnd+qtpass.dragAndDropInfoPasswordStore";
   return types;
@@ -155,7 +157,7 @@ QStringList StoreModel::mimeTypes() const {
  * @param indexes
  * @return
  */
-QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
+auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   dragAndDropInfoPasswordStore info;
 
   QByteArray encodedData;
@@ -186,9 +188,9 @@ QMimeData *StoreModel::mimeData(const QModelIndexList &indexes) const {
  * @param parent
  * @return
  */
-bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
+auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  int row, int column,
-                                 const QModelIndex &parent) const {
+                                 const QModelIndex &parent) const -> bool {
 #ifdef QT_DEBUG
   qDebug() << action << row;
 #else
@@ -235,8 +237,9 @@ bool StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
  * @param parent
  * @return
  */
-bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
-                              int row, int column, const QModelIndex &parent) {
+auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
+                              int row, int column, const QModelIndex &parent)
+    -> bool {
   if (!canDropMimeData(data, action, row, column, parent))
     return false;
 
@@ -297,8 +300,8 @@ bool StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
  * @param source_right
  * @return
  */
-bool StoreModel::lessThan(const QModelIndex &source_left,
-                          const QModelIndex &source_right) const {
+auto StoreModel::lessThan(const QModelIndex &source_left,
+                          const QModelIndex &source_right) const -> bool {
 /* matches logic in QFileSystemModelSorter::compareNodes() */
 #ifndef Q_OS_MAC
   if (fs && (source_left.column() == 0 || source_left.column() == 1)) {

@@ -122,7 +122,7 @@ void PasswordDialog::on_rejected() { setPassword(QString()); }
  * @brief PasswordDialog::setPassword populate the (templated) fields.
  * @param password
  */
-void PasswordDialog::setPassword(QString password) {
+void PasswordDialog::setPassword(const QString &password) {
   FileContent fileContent = FileContent::parse(
       password, m_templating ? m_fields : QStringList(), m_allFields);
   ui->lineEditPassword->setText(fileContent.getPassword());
@@ -154,7 +154,7 @@ void PasswordDialog::setPassword(QString password) {
  * for writing back.
  * @return collappsed password.
  */
-QString PasswordDialog::getPassword() {
+auto PasswordDialog::getPassword() -> QString {
   QString passFile = ui->lineEditPassword->text() + "\n";
   QList<QLineEdit *> allLines(templateLines);
   allLines.append(otherLines);
@@ -172,7 +172,7 @@ QString PasswordDialog::getPassword() {
  * @brief PasswordDialog::setTemplate set the template and create the fields.
  * @param rawFields
  */
-void PasswordDialog::setTemplate(QString rawFields, bool useTemplate) {
+void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_fields = rawFields.split('\n');
   m_templating = useTemplate;
   templateLines.clear();

@@ -27,6 +27,7 @@
 #include <QMessageBox>
 #include <QShortcut>
 #include <QTimer>
+#include <utility>
 
 /**
  * @brief MainWindow::MainWindow handles all of the main functionality and also
@@ -103,7 +104,8 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   clearPanelTimer.setInterval(MS_PER_SECOND *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
+  connect(&clearPanelTimer, &QTimer::timeout, this,
+          [this]() -> void { clearPanel(); });
 
   searchTimer.setInterval(350);
   searchTimer.setSingleShot(true);
@@ -199,7 +201,7 @@ void MainWindow::initStatusBar() {
   statusBar()->addPermanentWidget(logoApp);
 }
 
-QModelIndex MainWindow::getCurrentTreeViewIndex() {
+auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
   return ui->treeView->currentIndex();
 }
 
@@ -314,7 +316,7 @@ void MainWindow::onPush() {
  * @return path
  * @return
  */
-QString MainWindow::getFile(const QModelIndex &index, bool forPass) {
+auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
   if (!index.isValid() ||
       !model.fileInfo(proxyModel.mapToSource(index)).isFile())
     return {};
@@ -584,7 +586,7 @@ void MainWindow::selectFirstFile() {
  * @param parentIndex
  * @return QModelIndex
  */
-QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
+auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
   QModelIndex index = parentIndex;
   int numRows = proxyModel.rowCount(parentIndex);
   for (int row = 0; row < numRows; ++row) {
@@ -602,7 +604,7 @@ QModelIndex MainWindow::firstFile(QModelIndex parentIndex) {
  * @param file which pgp file
  * @param isNew insert (not update)
  */
-void MainWindow::setPassword(QString file, bool isNew) {
+void MainWindow::setPassword(const QString &file, bool isNew) {
   PasswordDialog d(file, isNew, this);
 
   if (!d.exec()) {
@@ -707,7 +709,7 @@ void MainWindow::onEdit() {
  * @brief MainWindow::userDialog see MainWindow::onUsers()
  * @param dir folder to edit users for.
  */
-void MainWindow::userDialog(QString dir) {
+void MainWindow::userDialog(const QString &dir) {
   if (!dir.isEmpty())
     currentDir = dir;
   onUsers();
@@ -734,7 +736,7 @@ void MainWindow::onUsers() {
  * @brief MainWindow::messageAvailable we have some text/message/search to do.
  * @param message
  */
-void MainWindow::messageAvailable(QString message) {
+void MainWindow::messageAvailable(const QString &message) {
   if (message.isEmpty()) {
     focusInput();
   } else {
@@ -753,7 +755,7 @@ void MainWindow::messageAvailable(QString message) {
  */
 void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
-  emit generateGPGKeyPair(batch);
+  emit generateGPGKeyPair(std::move(batch));
 }
 
 /**
@@ -791,7 +793,7 @@ void MainWindow::updateProfileBox() {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 #else
-void MainWindow::on_profileBox_currentTextChanged(QString name) {
+void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 #endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
     return;
@@ -873,7 +875,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
  * @param event
  * @return
  */
-bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
+auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
     if (key != nullptr && key->key() == Qt::Key_Down) {
@@ -1183,7 +1185,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
  * @param msg     text to be displayed
  * @param timeout time for which msg shall be visible
  */
-void MainWindow::showStatusMessage(QString msg, int timeout) {
+void MainWindow::showStatusMessage(const QString &msg, int timeout) {
   ui->statusBar->showMessage(msg, timeout);
 }
 
@@ -1231,6 +1233,6 @@ void MainWindow::enableGitButtons(const bool &state) {
  * @param title
  * @param msg
  */
-void MainWindow::critical(QString title, QString msg) {
+void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
 }

@@ -6,6 +6,7 @@
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringDecoder>
+#include <utility>
 #endif
 
 #ifdef QT_DEBUG
@@ -97,7 +98,7 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
  */
 void Executor::execute(int id, const QString &app, const QStringList &args,
                        QString input, bool readStdout, bool readStderr) {
-  execute(id, QString(), app, args, input, readStdout, readStderr);
+  execute(id, QString(), app, args, std::move(input), readStdout, readStderr);
 }
 
 /**
@@ -128,7 +129,7 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
     appPath =
         QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
   m_execQueue.push_back(
-      {id, appPath, args, input, readStdout, readStderr, workDir});
+      {id, appPath, args, std::move(input), readStdout, readStderr, workDir});
   executeNext();
 }
 
@@ -142,7 +143,7 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
  * @param in input data
  * @return Input bytes decoded to string
  */
-static QString decodeAssumingUtf8(QByteArray in) {
+static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
   QTextCodec *codec = QTextCodec::codecForName("UTF-8");
   QTextCodec::ConverterState state;
@@ -169,9 +170,9 @@ static QString decodeAssumingUtf8(QByteArray in) {
  *
  * TODO(bezet): it might make sense to throw here, a lot of possible errors
  */
-int Executor::executeBlocking(QString app, const QStringList &args,
-                              QString input, QString *process_out,
-                              QString *process_err) {
+auto Executor::executeBlocking(QString app, const QStringList &args,
+                               const QString &input, QString *process_out,
+                               QString *process_err) -> int {
   QProcess internal;
   if (app.startsWith("wsl ")) {
     QStringList tmp = args;
@@ -212,9 +213,11 @@ int Executor::executeBlocking(QString app, const QStringList &args,
  * @param process_err
  * @return
  */
-int Executor::executeBlocking(QString app, const QStringList &args,
-                              QString *process_out, QString *process_err) {
-  return executeBlocking(app, args, QString(), process_out, process_err);
+auto Executor::executeBlocking(QString app, const QStringList &args,
+                               QString *process_out, QString *process_err)
+    -> int {
+  return executeBlocking(std::move(app), args, QString(), process_out,
+                         process_err);
 }
 
 /**
@@ -232,7 +235,7 @@ void Executor::setEnvironment(const QStringList &env) {
  *
  * @return  id of the cancelled process or -1 on error
  */
-int Executor::cancelNext() {
+auto Executor::cancelNext() -> int {
   if (running || m_execQueue.isEmpty())
     return -1; // TODO(bezet): definitely throw here
   return m_execQueue.dequeue().id;
