@@ -365,7 +365,8 @@ void ImitatePass::reencryptPath(const QString &dir) {
     QStringList args = {
         "-v",          "--no-secmem-warning", "--no-permission-warning",
         "--list-only", "--keyid-format=long", pgpg(fileName)};
-    QString keys, err;
+    QString keys;
+    QString err;
     exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys, &err);
     QStringList actualKeys;
     keys += err;

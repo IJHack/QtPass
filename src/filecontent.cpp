@@ -10,7 +10,8 @@ FileContent FileContent::parse(const QString &fileContent,
                                bool allFields) {
   QStringList lines = fileContent.split("\n");
   QString password = lines.takeFirst();
-  QStringList remainingData, remainingDataDisplay;
+  QStringList remainingData;
+  QStringList remainingDataDisplay;
   NamedValues namedValues;
   for (const QString &line : AS_CONST(lines)) {
     if (line.contains(":")) {
@@ -52,7 +53,7 @@ FileContent::FileContent(const QString &password,
       remainingData(remainingData), remainingDataDisplay(remainingDataDisplay) {
 }
 
-NamedValues::NamedValues() : QList() {}
+NamedValues::NamedValues() {}
 
 NamedValues::NamedValues(std::initializer_list<NamedValue> values)
     : QList(values) {}

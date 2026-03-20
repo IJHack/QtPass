@@ -247,7 +247,8 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
   execQueueItem i = m_execQueue.dequeue();
   running = false;
   if (exitStatus == QProcess::NormalExit) {
-    QString output, err;
+    QString output;
+    QString err;
     if (i.readStdout)
       output = decodeAssumingUtf8(m_process.readAllStandardOutput());
     if (i.readStderr || exitCode != 0) {

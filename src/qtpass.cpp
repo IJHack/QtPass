@@ -26,7 +26,7 @@
 #endif
 
 QtPass::QtPass(MainWindow *mainWindow)
-    : m_mainWindow(mainWindow), clippedText(QString()), freshStart(true) {
+    : m_mainWindow(mainWindow), freshStart(true) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, &QTimer::timeout, this,
