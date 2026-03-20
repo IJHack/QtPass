@@ -594,8 +594,19 @@ bool ConfigDialog::isPassOtpAvailable() {
 void ConfigDialog::wizard() {
   Util::checkConfig();
   on_autodetectButton_clicked();
-  bool clean = false;
 
+  if (!checkGpgExistence())
+    return;
+  if (!checkSecretKeys())
+    return;
+  if (!checkPasswordStore())
+    return;
+  handleGpgIdFile();
+
+  ui->checkBoxHidePassword->setCheckState(Qt::Checked);
+}
+
+bool ConfigDialog::checkGpgExistence() {
   QString gpg = ui->gpgPath->text();
   if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
     criticalMessage(
@@ -620,9 +631,13 @@ void ConfigDialog::wizard() {
            "from GnuPG.org")
 #endif
     );
-    clean = true;
+    return false;
   }
+  return true;
+}
 
+bool ConfigDialog::checkSecretKeys() {
+  QString gpg = ui->gpgPath->text();
   QStringList names = getSecretKeys();
 
 #ifdef QT_DEBUG
@@ -631,14 +646,15 @@ void ConfigDialog::wizard() {
 
   if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
     KeygenDialog d(this);
-    if (!d.exec())
-      return;
+    return d.exec();
   }
+  return true;
+}
 
+bool ConfigDialog::checkPasswordStore() {
   QString passStore = ui->storePath->text();
 
   if (!QFile(passStore).exists()) {
-    // TODO(annejan) pass version?
     if (QMessageBox::question(
             this, tr("Create password-store?"),
             tr("Would you like to create a password-store at %1?")
@@ -648,7 +664,7 @@ void ConfigDialog::wizard() {
         QMessageBox::warning(
             this, tr("Error"),
             tr("Failed to create password-store at: %1").arg(passStore));
-        return;
+        return false;
       }
 #ifdef Q_OS_WIN
       SetFileAttributes(passStore.toStdWString().c_str(),
@@ -659,20 +675,22 @@ void ConfigDialog::wizard() {
       mainWindow->userDialog(passStore);
     }
   }
+  return true;
+}
 
+void ConfigDialog::handleGpgIdFile() {
+  QString passStore = ui->storePath->text();
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
 #ifdef QT_DEBUG
     dbg() << ".gpg-id file does not exist";
 #endif
-    if (!clean) {
-      criticalMessage(tr("Password store not initialised"),
-                      tr("The folder %1 doesn't seem to be a password store or "
-                         "is not yet initialised.")
-                          .arg(passStore));
-    }
+    criticalMessage(tr("Password store not initialised"),
+                    tr("The folder %1 doesn't seem to be a password store or "
+                       "is not yet initialised.")
+                        .arg(passStore));
+
     while (!QFile(passStore).exists()) {
       on_toolButtonStore_clicked();
-      // allow user to cancel
       if (passStore == ui->storePath->text())
         return;
       passStore = ui->storePath->text();
@@ -681,13 +699,9 @@ void ConfigDialog::wizard() {
 #ifdef QT_DEBUG
       dbg() << ".gpg-id file still does not exist :/";
 #endif
-      // appears not to be store
-      // init yes / no ?
       mainWindow->userDialog(passStore);
     }
   }
-
-  ui->checkBoxHidePassword->setCheckState(Qt::Checked);
 }
 
 /**
