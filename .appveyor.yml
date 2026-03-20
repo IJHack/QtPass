@@ -21,9 +21,11 @@ install:
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
 
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
+  - py -3 -m aqt install-tool -O %QT_ROOT% windows desktop tools_mingw1310
 
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
-  - set PATH=%QTDIR%\bin;%INNO_DIR%;%PATH%
+  - set MINGW_ROOT=%QT_ROOT%\Tools\mingw1310_64
+  - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
 
   - echo ==== PATH ====
   - echo %PATH%
@@ -34,6 +36,8 @@ install:
   - dir %QTDIR%
   - dir %QTDIR%\bin
   - dir %QT_ROOT%\Tools
+  - dir %MINGW_ROOT%
+  - dir %MINGW_ROOT%\bin
 
   - echo ==== TOOL RESOLUTION ====
   - where qmake
