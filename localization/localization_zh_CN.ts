@@ -601,7 +601,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密码的长度没有限制，应该仔细选择。从安全性的角度来看，解锁私钥的密码是 GnuPG（以及其他公钥加密系统）中最薄弱的一点，因为如果其他人获得您的私钥，它是您唯一的保护。&lt;br/&gt;理想情况下，密码短语不应使用字典中的单词，而应混合字母字符大小写以及使用非字母字符 &lt;br/&gt;。良好的密码对于安全使用 GnuPG.&lt;/p&gt;&lt;/body&gt;至关重要&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密码短语的长度没有限制，应该仔细选择。从安全性的角度来看，解锁私钥的密码短语是 GnuPG（以及其他公钥加密系统）中最薄弱的一点，因为如果其他人获得您的私钥，它是您唯一的保护。&lt;br/&gt;理想情况下，密码短语不应使用字典中的单词，而应混合字母字符大小写以及使用非字母字符 。&lt;br/&gt; 良好的密码短语对于安全使用 GnuPG 至关重要。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1062,7 +1062,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; QtPass是用于&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;（标准的Unix密码管理器）的GUI。&lt;/p&gt;
+        <translation>&lt;p&gt; QtPass是 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;（标准的Unix密码管理器）的GUI。&lt;/p&gt;
 &lt;p&gt;请报告此软件可能包含的所有&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;问题&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt;文档&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;源代码&lt;/a&gt; &lt;/p&gt;</translation>
