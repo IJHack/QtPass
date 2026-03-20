@@ -109,7 +109,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   for (auto &r : recipients) {
     args.append("-r");
     args.append(r);
-  };
+  }
   if (overwrite)
     args.append("--yes");
   args.append("-");
@@ -156,8 +156,9 @@ void ImitatePass::Remove(QString file, bool isDir) {
     if (isDir) {
       QDir dir(file);
       dir.removeRecursively();
-    } else
+    } else {
       QFile(file).remove();
+    }
   }
 }
 

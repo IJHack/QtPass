@@ -41,8 +41,9 @@ void Executor::executeNext() {
         QString app = i.app;
         tmp.prepend(app.remove(0, 4));
         m_process.start("wsl", tmp);
-      } else
+      } else {
         m_process.start(i.app, i.args);
+      }
       if (!i.input.isEmpty()) {
         m_process.waitForStarted(-1);
         QByteArray data = i.input.toUtf8();
@@ -176,8 +177,9 @@ int Executor::executeBlocking(QString app, const QStringList &args,
     QStringList tmp = args;
     tmp.prepend(app.remove(0, 4));
     internal.start("wsl", tmp);
-  } else
+  } else {
     internal.start(app, args);
+  }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
     internal.waitForStarted(-1);

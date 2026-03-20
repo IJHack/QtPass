@@ -194,7 +194,7 @@ void MainWindow::initStatusBar() {
 
   QPixmap logo = QPixmap::fromImage(QImage(":/artwork/icon.svg"))
                      .scaledToHeight(statusBar()->height());
-  QLabel *logoApp = new QLabel(statusBar());
+  auto *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
 }
@@ -275,9 +275,9 @@ void MainWindow::config() {
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
-      if (QtPassSettings::isUseTrayIcon() && tray == nullptr)
+      if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
         initTrayIcon();
-      else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
+      } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
         destroyTrayIcon();
       }
     }
@@ -876,7 +876,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
-    if (key != NULL && key->key() == Qt::Key_Down) {
+    if (key != nullptr && key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
   }
@@ -1107,7 +1107,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QString trimmedValue = value.trimmed();
 
   // Combine the Copy button and the line edit in one widget
-  QFrame *frame = new QFrame();
+  auto *frame = new QFrame();
   QLayout *ly = new QHBoxLayout();
   ly->setContentsMargins(5, 2, 2, 2);
   ly->setSpacing(0);
@@ -1123,7 +1123,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   }
 
   if (QtPassSettings::isUseQrencode()) {
-    QPushButtonAsQRCode *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
+    auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
     qrbutton->setStyleSheet(
@@ -1146,8 +1146,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setStyleSheet(lineStyle);
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
-    QPushButtonShowPassword *showButton =
-        new QPushButtonShowPassword(line, this);
+    auto *showButton = new QPushButtonShowPassword(line, this);
     showButton->setStyleSheet(
         "border-style: none ; background: transparent; padding: 0; margin: 0;");
     showButton->setContentsMargins(0, 0, 0, 0);

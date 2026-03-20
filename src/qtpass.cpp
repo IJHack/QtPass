@@ -425,9 +425,9 @@ void QtPass::showTextAsQRCode(const QString &text) {
     QPixmap image;
     image.loadFromData(output, "PNG");
 
-    QDialog *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
-    QVBoxLayout *layout = new QVBoxLayout;
-    QLabel *popupLabel = new QLabel();
+    auto *popup = new QDialog(0, Qt::Popup | Qt::FramelessWindowHint);
+    auto *layout = new QVBoxLayout;
+    auto *popupLabel = new QLabel();
     layout->addWidget(popupLabel);
     popupLabel->setPixmap(image);
     popupLabel->setScaledContents(true);
