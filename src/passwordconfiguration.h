@@ -34,8 +34,8 @@ struct PasswordConfiguration {
                                "vwxyz"; /*Only Alphabetical*/
     Characters[ALPHANUMERIC] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu"
                                "vwxyz1234567890"; /*Alphabetical and Numerical*/
-    Characters[CUSTOM] = Characters[ALLCHARS];  //  this may be redefined by user
+    Characters[CUSTOM] = Characters[ALLCHARS]; //  this may be redefined by user
   }
 };
 
-#endif  // PASSWORDCONFIGURATION_H
+#endif // PASSWORDCONFIGURATION_H

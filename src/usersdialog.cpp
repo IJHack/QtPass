@@ -96,7 +96,7 @@ void UsersDialog::accept() {
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan) save window size or something
+  //  TODO(annejan): save window size or something
   event->accept();
 }
 

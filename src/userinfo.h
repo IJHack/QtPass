@@ -58,4 +58,4 @@ struct UserInfo {
   QDateTime created;
 };
 
-#endif  // DATAHELPERS_H
+#endif // DATAHELPERS_H

@@ -58,4 +58,4 @@ private slots:
                          QString postfix = QString());
 };
 
-#endif  // QTPASS_H
+#endif // QTPASS_H

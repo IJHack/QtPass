@@ -100,7 +100,7 @@ bool QtPass::init() {
       return false;
   }
 
-  // TODO(annejan): this needs to be before we try to access the store,
+  //  TODO(annejan): this needs to be before we try to access the store,
   // but it would be better to do it after the Window is shown,
   // as the long delay it can cause is irritating otherwise.
   if (QtPassSettings::isUseWebDav())
@@ -320,7 +320,7 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 #endif
 
     m_mainWindow->cleanKeygenDialog();
-    // TODO(annejan) some sanity checking ?
+    //  TODO(annejan): some sanity checking ?
   }
 
   processFinished(p_output, p_errout);

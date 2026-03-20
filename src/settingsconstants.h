@@ -71,4 +71,4 @@ private:
   explicit SettingsConstants();
 };
 
-#endif  // CONSTANTS_H
+#endif // CONSTANTS_H

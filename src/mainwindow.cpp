@@ -238,7 +238,7 @@ void MainWindow::config() {
   }
 
   if (m_qtPass->isFreshStart())
-    d->wizard();  //  does shit
+    d->wizard(); //  does shit
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
       // Update the textBrowser font
@@ -334,7 +334,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
-  //    TODO(bezet): "Could not decrypt";
+  //  TODO(bezet): "Could not decrypt";
   m_qtPass->clearClippedText();
   QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));
@@ -779,7 +779,7 @@ void MainWindow::updateProfileBox() {
     ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
-  if (index != -1)  //  -1 for not found
+  if (index != -1) //  -1 for not found
     ui->profileBox->setCurrentIndex(index);
 }
 

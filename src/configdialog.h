@@ -10,7 +10,7 @@ namespace Ui {
 struct UserInfo;
 
 class ConfigDialog;
-}  // namespace Ui
+} // namespace Ui
 
 /*!
     \class ConfigDialog
@@ -98,4 +98,4 @@ private:
   MainWindow *mainWindow;
 };
 
-#endif  // CONFIGDIALOG_H_
+#endif // CONFIGDIALOG_H_

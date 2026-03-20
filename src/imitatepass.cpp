@@ -115,7 +115,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-    //    TODO(bezet) why not?
+    //  TODO(bezet): why not?
     if (!overwrite)
       executeGit(GIT_ADD, {"add", pgit(file)});
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
@@ -469,7 +469,7 @@ void ImitatePass::Move(const QString src, const QString dest,
     }
 
     if (destFile.endsWith(".gpg", Qt::CaseInsensitive))
-      destFile.chop(4);  //  make sure suffix is lowercase
+      destFile.chop(4); //  make sure suffix is lowercase
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {

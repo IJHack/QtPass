@@ -22,7 +22,7 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
                                          const QString &)>(&Executor::finished),
           this, &Pass::finished);
 
-  // TODO(bezet): stop using process
+  //  TODO(bezet): stop using process
   // connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
   //        SIGNAL(error(QProcess::ProcessError)));
 
@@ -118,7 +118,7 @@ QString Pass::Generate_b(unsigned int length, const QString &charset) {
 void Pass::GenerateGPGKeys(QString batch) {
   executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
                  {"--gen-key", "--no-tty", "--batch"}, batch);
-  // TODO check status / error messages - probably not here, it's just started
+  //  TODO check status / error messages - probably not here, it's just started
   // here, see finished for details
   // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }

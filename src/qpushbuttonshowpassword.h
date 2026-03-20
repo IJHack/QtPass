@@ -27,4 +27,4 @@ private:
   QLineEdit *line;
 };
 
-#endif  // QPUSHBUTTONSHOWPASSWORD_H_
+#endif // QPUSHBUTTONSHOWPASSWORD_H_

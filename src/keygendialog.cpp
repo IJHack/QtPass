@@ -137,7 +137,7 @@ void KeygenDialog::no_protection(bool enable) {
  * @param r
  */
 void KeygenDialog::done(int r) {
-  if (QDialog::Accepted == r) {  //  ok was pressed
+  if (QDialog::Accepted == r) { //  ok was pressed
     // check name
     if (ui->name->text().length() < 5) {
       QMessageBox::critical(this, tr("Invalid name"),
@@ -178,7 +178,7 @@ void KeygenDialog::done(int r) {
 
     this->show();
     dialog->genKey(ui->plainTextEdit->toPlainText(), this);
-  } else {  //  cancel, close or exc was pressed
+  } else { //  cancel, close or exc was pressed
     QDialog::done(r);
     return;
   }
@@ -189,6 +189,6 @@ void KeygenDialog::done(int r) {
  * @param event
  */
 void KeygenDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan) save window size or somethign
+  //  TODO(annejan): save window size or somethign
   event->accept();
 }

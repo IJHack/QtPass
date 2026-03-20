@@ -35,4 +35,4 @@ private:
   static bool _envInitialised;
 };
 
-#endif  // UTIL_H_
+#endif // UTIL_H_

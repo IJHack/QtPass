@@ -82,4 +82,4 @@ private:
   }
 };
 
-#endif  // DESELECTABLETREEVIEW_H
+#endif // DESELECTABLETREEVIEW_H

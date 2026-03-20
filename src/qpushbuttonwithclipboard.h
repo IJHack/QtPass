@@ -31,4 +31,4 @@ private:
   QIcon iconEditPushed;
 };
 
-#endif  // QPUSHBUTTONWITHCLIPBOARD_H_
+#endif // QPUSHBUTTONWITHCLIPBOARD_H_

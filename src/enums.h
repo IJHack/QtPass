@@ -34,6 +34,6 @@ enum PROCESS {
   PASS_OTP_GENERATE,
 };
 
-}  // namespace Enums
+} // namespace Enums
 
-#endif  // ENUMS_H
+#endif // ENUMS_H
