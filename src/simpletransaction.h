@@ -43,7 +43,7 @@ public:
    * @return result of transaction as set by transactionAdd or transactionEnd if
    *         the transaction is over or PROCESS::INVALID if it's not yet over
    */
-  Enums::PROCESS transactionIsOver(Enums::PROCESS);
+  auto transactionIsOver(Enums::PROCESS) -> Enums::PROCESS;
 };
 
 #endif // SRC_SIMPLETRANSACTION_H_

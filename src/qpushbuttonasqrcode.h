@@ -17,7 +17,7 @@ public:
   explicit QPushButtonAsQRCode(QString textToCopy = "",
                                QWidget *parent = nullptr);
 
-  QString getTextToCopy() const;
+  [[nodiscard]] auto getTextToCopy() const -> QString;
   void setTextToCopy(const QString &value);
 
 signals:

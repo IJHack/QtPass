@@ -16,11 +16,11 @@ public:
   QtPass(MainWindow *mainWindow);
   ~QtPass();
 
-  bool init();
+  auto init() -> bool;
   void setClippedText(const QString &, const QString &p_output = QString());
   void clearClippedText();
   void setClipboardTimer();
-  bool isFreshStart() { return this->freshStart; }
+  auto isFreshStart() -> bool { return this->freshStart; }
   void setFreshStart(const bool &fs) { this->freshStart = fs; }
 
 private:

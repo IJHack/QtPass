@@ -38,7 +38,7 @@ public:
       \return password as a QString
       \sa setPassword
    */
-  QString getPassword();
+  auto getPassword() -> QString;
 
   /*! Sets content in the template for the interface.
       \param rawFields is the template as a QString

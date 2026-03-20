@@ -46,24 +46,27 @@ public:
   virtual void Copy(const QString srcDir, const QString dest,
                     const bool force = false) = 0;
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
-  virtual QString Generate_b(unsigned int length, const QString &charset);
+  virtual auto Generate_b(unsigned int length, const QString &charset)
+      -> QString;
 
   void GenerateGPGKeys(QString batch);
-  QList<UserInfo> listKeys(QStringList keystrings, bool secret = false);
-  QList<UserInfo> listKeys(const QString &keystring = "", bool secret = false);
+  auto listKeys(QStringList keystrings, bool secret = false) -> QList<UserInfo>;
+  auto listKeys(const QString &keystring = "", bool secret = false)
+      -> QList<UserInfo>;
   void updateEnv();
-  static QString getGpgIdPath(const QString &for_file);
-  static QStringList getRecipientList(const QString &for_file);
+  static auto getGpgIdPath(const QString &for_file) -> QString;
+  static auto getRecipientList(const QString &for_file) -> QStringList;
   // TODO(bezet): getRecipientString is useless, refactor
-  static QStringList getRecipientString(const QString &for_file,
-                                        const QString &separator = " ",
-                                        int *count = NULL);
+  static auto getRecipientString(const QString &for_file,
+                                 const QString &separator = " ",
+                                 int *count = NULL) -> QStringList;
 
 protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       bool readStdout = true, bool readStderr = true);
-  QString generateRandomPassword(const QString &charset, unsigned int length);
-  quint32 boundedRandom(quint32 bound);
+  auto generateRandomPassword(const QString &charset, unsigned int length)
+      -> QString;
+  auto boundedRandom(quint32 bound) -> quint32;
 
   virtual void executeWrapper(PROCESS id, const QString &app,
                               const QStringList &args, QString input,

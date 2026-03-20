@@ -21,7 +21,7 @@ public:
   NamedValues();
   NamedValues(std::initializer_list<NamedValue> values);
 
-  QString takeValue(const QString &name);
+  auto takeValue(const QString &name) -> QString;
 };
 
 class FileContent {
@@ -44,30 +44,31 @@ public:
    *
    * @return
    */
-  static FileContent parse(const QString &fileContent,
-                           const QStringList &templateFields, bool allFields);
+  static auto parse(const QString &fileContent,
+                    const QStringList &templateFields, bool allFields)
+      -> FileContent;
 
   /**
    * @return the password from the parsed file.
    */
-  QString getPassword() const;
+  [[nodiscard]] auto getPassword() const -> QString;
 
   /**
    * @return the named values in the file in the order of appearence, with
    * template values first.
    */
-  NamedValues getNamedValues() const;
+  [[nodiscard]] auto getNamedValues() const -> NamedValues;
 
   /**
    * @return the data that is not the password and not in getNamedValues.
    */
-  QString getRemainingData() const;
+  [[nodiscard]] auto getRemainingData() const -> QString;
 
   /**
    * @like getRemainingData but without data that should not be displayed
    * (like a TOTP secret).
    */
-  QString getRemainingDataForDisplay() const;
+  [[nodiscard]] auto getRemainingDataForDisplay() const -> QString;
 
 private:
   FileContent(QString password, NamedValues namedValues, QString remainingData,

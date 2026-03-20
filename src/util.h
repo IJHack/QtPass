@@ -19,17 +19,17 @@ class StoreModel;
  */
 class Util {
 public:
-  static QString findBinaryInPath(QString binary);
-  static QString findPasswordStore();
-  static QString normalizeFolderPath(QString path);
-  static bool checkConfig();
-  static QString getDir(const QModelIndex &index, bool forPass,
-                        const QFileSystemModel &model,
-                        const StoreModel &storeModel);
+  static auto findBinaryInPath(QString binary) -> QString;
+  static auto findPasswordStore() -> QString;
+  static auto normalizeFolderPath(QString path) -> QString;
+  static auto checkConfig() -> bool;
+  static auto getDir(const QModelIndex &index, bool forPass,
+                     const QFileSystemModel &model,
+                     const StoreModel &storeModel) -> QString;
   static void copyDir(const QString &src, const QString &dest);
-  static const QRegularExpression &endsWithGpg();
-  static const QRegularExpression &protocolRegex();
-  static const QRegularExpression &newLinesRegex();
+  static auto endsWithGpg() -> const QRegularExpression &;
+  static auto protocolRegex() -> const QRegularExpression &;
+  static auto newLinesRegex() -> const QRegularExpression &;
 
 private:
   static void initialiseEnvironment();

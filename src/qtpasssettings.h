@@ -39,190 +39,226 @@ private:
   static QScopedPointer<ImitatePass> imitatePass;
 
 public:
-  static QtPassSettings *getInstance();
+  static auto getInstance() -> QtPassSettings *;
 
-  static QString
-  getVersion(const QString &defaultValue = QVariant().toString());
+  static auto getVersion(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setVersion(const QString &version);
 
-  static QByteArray
-  getGeometry(const QByteArray &defaultValue = QVariant().toByteArray());
+  static auto
+  getGeometry(const QByteArray &defaultValue = QVariant().toByteArray())
+      -> QByteArray;
   static void setGeometry(const QByteArray &geometry);
 
-  static QByteArray
-  getSavestate(const QByteArray &defaultValue = QVariant().toByteArray());
+  static auto
+  getSavestate(const QByteArray &defaultValue = QVariant().toByteArray())
+      -> QByteArray;
   static void setSavestate(const QByteArray &saveState);
 
-  static QPoint getPos(const QPoint &defaultValue = QVariant().toPoint());
+  static auto getPos(const QPoint &defaultValue = QVariant().toPoint())
+      -> QPoint;
   static void setPos(const QPoint &pos);
 
-  static QSize getSize(const QSize &defaultValue = QVariant().toSize());
+  static auto getSize(const QSize &defaultValue = QVariant().toSize()) -> QSize;
   static void setSize(const QSize &size);
 
-  static bool isMaximized(const bool &defaultValue = QVariant().toBool());
+  static auto isMaximized(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setMaximized(const bool &maximized);
 
-  static bool isUsePass(const bool &defaultValue = QVariant().toBool());
+  static auto isUsePass(const bool &defaultValue = QVariant().toBool()) -> bool;
   static void setUsePass(const bool &usePass);
 
-  static int getClipBoardTypeRaw(
-      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER);
-  static Enums::clipBoardType getClipBoardType(
-      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER);
+  static auto getClipBoardTypeRaw(
+      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER) -> int;
+  static auto getClipBoardType(
+      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER)
+      -> Enums::clipBoardType;
   static void setClipBoardType(const int &clipBoardType);
 
-  static bool isUseSelection(const bool &defaultValue = QVariant().toBool());
+  static auto isUseSelection(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseSelection(const bool &useSelection);
 
-  static bool isUseAutoclear(const bool &defaultValue = QVariant().toBool());
+  static auto isUseAutoclear(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseAutoclear(const bool &useAutoclear);
 
-  static int getAutoclearSeconds(const int &defaultValue = QVariant().toInt());
+  static auto getAutoclearSeconds(const int &defaultValue = QVariant().toInt())
+      -> int;
   static void setAutoclearSeconds(const int &autoClearSeconds);
 
-  static bool
-  isUseAutoclearPanel(const bool &defaultValue = QVariant().toBool());
+  static auto
+  isUseAutoclearPanel(const bool &defaultValue = QVariant().toBool()) -> bool;
   static void setUseAutoclearPanel(const bool &useAutoclearPanel);
 
-  static int
-  getAutoclearPanelSeconds(const int &defaultValue = QVariant().toInt());
+  static auto
+  getAutoclearPanelSeconds(const int &defaultValue = QVariant().toInt()) -> int;
   static void setAutoclearPanelSeconds(const int &autoClearPanelSeconds);
 
-  static bool isHidePassword(const bool &defaultValue = QVariant().toBool());
+  static auto isHidePassword(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setHidePassword(const bool &hidePassword);
 
-  static bool isHideContent(const bool &defaultValue = QVariant().toBool());
+  static auto isHideContent(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setHideContent(const bool &hideContent);
 
-  static bool isUseMonospace(const bool &defaultValue = QVariant().toBool());
+  static auto isUseMonospace(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseMonospace(const bool &useMonospace);
 
-  static bool isDisplayAsIs(const bool &defaultValue = QVariant().toBool());
+  static auto isDisplayAsIs(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setDisplayAsIs(const bool &displayAsIs);
 
-  static bool isNoLineWrapping(const bool &defaultValue = QVariant().toBool());
+  static auto isNoLineWrapping(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setNoLineWrapping(const bool &noLineWrapping);
 
-  static bool isAddGPGId(const bool &defaultValue = QVariant().toBool());
+  static auto isAddGPGId(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAddGPGId(const bool &addGPGId);
 
-  static QString
-  getPassStore(const QString &defaultValue = QVariant().toString());
+  static auto getPassStore(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setPassStore(const QString &passStore);
 
-  static QString
-  getPassSigningKey(const QString &defaultValue = QVariant().toString());
+  static auto
+  getPassSigningKey(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setPassSigningKey(const QString &passSigningKey);
 
   static void initExecutables();
-  static QString
-  getPassExecutable(const QString &defaultValue = QVariant().toString());
+  static auto
+  getPassExecutable(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setPassExecutable(const QString &passExecutable);
 
-  static QString
-  getGitExecutable(const QString &defaultValue = QVariant().toString());
+  static auto
+  getGitExecutable(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setGitExecutable(const QString &gitExecutable);
 
-  static QString
-  getGpgExecutable(const QString &defaultValue = QVariant().toString());
+  static auto
+  getGpgExecutable(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setGpgExecutable(const QString &gpgExecutable);
 
-  static QString
-  getPwgenExecutable(const QString &defaultValue = QVariant().toString());
+  static auto
+  getPwgenExecutable(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setPwgenExecutable(const QString &pwgenExecutable);
 
-  static QString
-  getGpgHome(const QString &defaultValue = QVariant().toString());
+  static auto getGpgHome(const QString &defaultValue = QVariant().toString())
+      -> QString;
 
-  static bool isUseWebDav(const bool &defaultValue = QVariant().toBool());
+  static auto isUseWebDav(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseWebDav(const bool &useWebDav);
 
-  static QString
-  getWebDavUrl(const QString &defaultValue = QVariant().toString());
+  static auto getWebDavUrl(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setWebDavUrl(const QString &webDavUrl);
 
-  static QString
-  getWebDavUser(const QString &defaultValue = QVariant().toString());
+  static auto getWebDavUser(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setWebDavUser(const QString &webDavUser);
 
-  static QString
-  getWebDavPassword(const QString &defaultValue = QVariant().toString());
+  static auto
+  getWebDavPassword(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setWebDavPassword(const QString &webDavPassword);
 
-  static QString
-  getProfile(const QString &defaultValue = QVariant().toString());
+  static auto getProfile(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setProfile(const QString &profile);
 
-  static bool isUseGit(const bool &defaultValue = QVariant().toBool());
+  static auto isUseGit(const bool &defaultValue = QVariant().toBool()) -> bool;
   static void setUseGit(const bool &useGit);
 
-  static bool isUseOtp(const bool &defaultValue = QVariant().toBool());
+  static auto isUseOtp(const bool &defaultValue = QVariant().toBool()) -> bool;
   static void setUseOtp(const bool &useOtp);
 
-  static bool isUseQrencode(const bool &defaultValue = QVariant().toBool());
+  static auto isUseQrencode(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseQrencode(const bool &useQrencode);
 
-  static QString
-  getQrencodeExecutable(const QString &defaultValue = QVariant().toString());
+  static auto
+  getQrencodeExecutable(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setQrencodeExecutable(const QString &qrencodeExecutable);
 
-  static bool isUsePwgen(const bool &defaultValue = QVariant().toBool());
+  static auto isUsePwgen(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUsePwgen(const bool &usePwgen);
 
-  static bool isAvoidCapitals(const bool &defaultValue = QVariant().toBool());
+  static auto isAvoidCapitals(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAvoidCapitals(const bool &avoidCapitals);
 
-  static bool isAvoidNumbers(const bool &defaultValue = QVariant().toBool());
+  static auto isAvoidNumbers(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAvoidNumbers(const bool &avoidNumbers);
 
-  static bool isLessRandom(const bool &defaultValue = QVariant().toBool());
+  static auto isLessRandom(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setLessRandom(const bool &lessRandom);
 
-  static bool isUseSymbols(const bool &defaultValue = QVariant().toBool());
+  static auto isUseSymbols(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseSymbols(const bool &useSymbols);
 
-  static PasswordConfiguration getPasswordConfiguration();
+  static auto getPasswordConfiguration() -> PasswordConfiguration;
   static void setPasswordConfiguration(const PasswordConfiguration &config);
   static void setPasswordLength(const int &passwordLength);
   static void setPasswordCharsselection(const int &passwordCharsselection);
   static void setPasswordChars(const QString &passwordChars);
 
-  static bool isUseTrayIcon(const bool &defaultValue = QVariant().toBool());
+  static auto isUseTrayIcon(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseTrayIcon(const bool &useTrayIcon);
 
-  static bool isHideOnClose(const bool &defaultValue = QVariant().toBool());
+  static auto isHideOnClose(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setHideOnClose(const bool &hideOnClose);
 
-  static bool isStartMinimized(const bool &defaultValue = QVariant().toBool());
+  static auto isStartMinimized(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setStartMinimized(const bool &startMinimized);
 
-  static bool isAlwaysOnTop(const bool &defaultValue = QVariant().toBool());
+  static auto isAlwaysOnTop(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAlwaysOnTop(const bool &alwaysOnTop);
 
-  static bool isAutoPull(const bool &defaultValue = QVariant().toBool());
+  static auto isAutoPull(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAutoPull(const bool &autoPull);
 
-  static bool isAutoPush(const bool &defaultValue = QVariant().toBool());
+  static auto isAutoPush(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setAutoPush(const bool &autoPush);
 
-  static QString
-  getPassTemplate(const QString &defaultValue = QVariant().toString());
+  static auto
+  getPassTemplate(const QString &defaultValue = QVariant().toString())
+      -> QString;
   static void setPassTemplate(const QString &passTemplate);
 
-  static bool isUseTemplate(const bool &defaultValue = QVariant().toBool());
+  static auto isUseTemplate(const bool &defaultValue = QVariant().toBool())
+      -> bool;
   static void setUseTemplate(const bool &useTemplate);
 
-  static bool
-  isTemplateAllFields(const bool &defaultValue = QVariant().toBool());
+  static auto
+  isTemplateAllFields(const bool &defaultValue = QVariant().toBool()) -> bool;
   static void setTemplateAllFields(const bool &templateAllFields);
 
-  static QHash<QString, QHash<QString, QString>> getProfiles();
+  static auto getProfiles() -> QHash<QString, QHash<QString, QString>>;
   static void
   setProfiles(const QHash<QString, QHash<QString, QString>> &profiles);
 
-  static Pass *getPass();
-  static RealPass *getRealPass();
-  static ImitatePass *getImitatePass();
+  static auto getPass() -> Pass *;
+  static auto getRealPass() -> RealPass *;
+  static auto getImitatePass() -> ImitatePass *;
 };
 
 #endif // SRC_QTPASSSETTINGS_H_

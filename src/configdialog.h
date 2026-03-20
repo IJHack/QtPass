@@ -33,7 +33,7 @@ public:
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
   void useAutoclearPanel(bool useAutoclearPanel);
-  QHash<QString, QHash<QString, QString>> getProfiles();
+  auto getProfiles() -> QHash<QString, QHash<QString, QString>>;
   void wizard();
   void genKey(const QString &, QDialog *);
   void useTrayIcon(bool useSystray);
@@ -43,7 +43,7 @@ public:
   void setPwgenPath(const QString &);
   void usePwgen(bool usePwgen);
   void setPasswordConfiguration(const PasswordConfiguration &config);
-  PasswordConfiguration getPasswordConfiguration();
+  auto getPasswordConfiguration() -> PasswordConfiguration;
   void useTemplate(bool useTemplate);
 
 protected:
@@ -75,26 +75,26 @@ private slots:
 private:
   QScopedPointer<Ui::ConfigDialog> ui;
 
-  QStringList getSecretKeys();
+  auto getSecretKeys() -> QStringList;
 
   void setGitPath(const QString &);
   void setProfiles(QHash<QString, QHash<QString, QString>>, const QString &);
   void usePass(bool usePass);
 
   void setGroupBoxState();
-  QString selectExecutable();
-  QString selectFolder();
+  auto selectExecutable() -> QString;
+  auto selectFolder() -> QString;
   // QMessageBox::critical with hack to avoid crashes with
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
 
-  bool isPassOtpAvailable();
-  bool isQrencodeAvailable();
+  auto isPassOtpAvailable() -> bool;
+  auto isQrencodeAvailable() -> bool;
   void validate(QTableWidgetItem *item = nullptr);
 
-  bool checkGpgExistence();
-  bool checkSecretKeys();
-  bool checkPasswordStore();
+  auto checkGpgExistence() -> bool;
+  auto checkSecretKeys() -> bool;
+  auto checkPasswordStore() -> bool;
   void handleGpgIdFile();
 
   MainWindow *mainWindow;

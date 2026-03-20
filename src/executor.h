@@ -75,18 +75,18 @@ public:
                const QStringList &args, QString input = QString(),
                bool readStdout = false, bool readStderr = true);
 
-  static int executeBlocking(QString app, const QStringList &args,
-                             const QString &input = QString(),
-                             QString *process_out = nullptr,
-                             QString *process_err = nullptr);
+  static auto executeBlocking(QString app, const QStringList &args,
+                              const QString &input = QString(),
+                              QString *process_out = nullptr,
+                              QString *process_err = nullptr) -> int;
 
-  static int executeBlocking(QString app, const QStringList &args,
-                             QString *process_out,
-                             QString *process_err = nullptr);
+  static auto executeBlocking(QString app, const QStringList &args,
+                              QString *process_out,
+                              QString *process_err = nullptr) -> int;
 
   void setEnvironment(const QStringList &env);
 
-  int cancelNext();
+  auto cancelNext() -> int;
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
