@@ -621,12 +621,12 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
 auto QtPassSettings::getRealPass() -> RealPass * {
   if (realPass.isNull()) {
     realPass.reset(new RealPass());
-}
+  }
   return realPass.data();
 }
 auto QtPassSettings::getImitatePass() -> ImitatePass * {
   if (imitatePass.isNull()) {
     imitatePass.reset(new ImitatePass());
-}
+  }
   return imitatePass.data();
 }

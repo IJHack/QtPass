@@ -90,14 +90,14 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
     args.append("-1");
     if (!QtPassSettings::isLessRandom()) {
       args.append("--secure");
-}
+    }
     args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
                                                   : "--capitalize");
     args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals"
                                                  : "--numerals");
     if (QtPassSettings::isUseSymbols()) {
       args.append("--symbols");
-}
+    }
     args.append(QString::number(length));
     // TODO(bezet): try-catch here(2 statuses to merge o_O)
     if (Executor::executeBlocking(QtPassSettings::getPwgenExecutable(), args,
@@ -158,7 +158,7 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
                                 &p_out) != 0) {
     return users;
-}
+  }
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList keys =
       p_out.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
@@ -171,11 +171,11 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
     QStringList props = key.split(':');
     if (props.size() < 10) {
       continue;
-}
+    }
     if (props[0] == (secret ? "sec" : "pub")) {
       if (!current_user.key_id.isEmpty()) {
         users.append(current_user);
-}
+      }
       current_user = UserInfo();
       current_user.key_id = props[4];
       current_user.name = props[9].toUtf8();
@@ -190,7 +190,7 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   }
   if (!current_user.key_id.isEmpty()) {
     users.append(current_user);
-}
+  }
   return users;
 }
 
@@ -325,7 +325,7 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
     }
     if (!gpgIdDir.cdUp()) {
       break;
-}
+    }
   }
   QString gpgIdPath(found ? gpgIdDir.absoluteFilePath(".gpg-id")
                           : QtPassSettings::getPassStore() + ".gpg-id");
@@ -342,14 +342,14 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
   QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
     return {};
-}
+  }
   QStringList recipients;
   while (!gpgId.atEnd()) {
     QString recipient(gpgId.readLine());
     recipient = recipient.split("#")[0].trimmed();
     if (!recipient.isEmpty()) {
       recipients += recipient;
-}
+    }
   }
   return recipients;
 }

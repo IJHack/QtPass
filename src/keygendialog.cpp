@@ -98,7 +98,7 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
     if (key == "Passphrase") {
       line.replace("%no-protection", "Passphrase: " + value);
-}
+    }
     clear.append(line);
   }
   ui->plainTextEdit->setPlainText(clear.join("\n"));
@@ -124,15 +124,15 @@ void KeygenDialog::no_protection(bool enable) {
     if (!enable) {
       if (line.indexOf("%no-protection") == 0) {
         remove = true;
-}
+      }
     } else {
       if (line.indexOf("Passphrase") == 0) {
         line = "%no-protection";
-}
+      }
     }
     if (!remove) {
       clear.append(line);
-}
+    }
   }
   ui->plainTextEdit->setPlainText(clear.join("\n"));
 }

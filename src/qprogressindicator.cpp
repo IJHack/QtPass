@@ -57,13 +57,13 @@ void QProgressIndicator::startAnimation() {
 
   if (m_timerId == -1) {
     m_timerId = startTimer(m_delay);
-}
+  }
 }
 
 void QProgressIndicator::stopAnimation() {
   if (m_timerId != -1) {
     killTimer(m_timerId);
-}
+  }
 
   m_timerId = -1;
 
@@ -73,13 +73,13 @@ void QProgressIndicator::stopAnimation() {
 void QProgressIndicator::setAnimationDelay(int delay) {
   if (m_timerId != -1) {
     killTimer(m_timerId);
-}
+  }
 
   m_delay = delay;
 
   if (m_timerId != -1) {
     m_timerId = startTimer(m_delay);
-}
+  }
 }
 
 void QProgressIndicator::setColor(const QColor &color) {
@@ -116,7 +116,7 @@ void QProgressIndicator::timerEvent(QTimerEvent * /*event*/) {
 void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
   if (!m_displayedWhenStopped && !isAnimated()) {
     return;
-}
+  }
 
   int width = qMin(this->width(), this->height());
 

@@ -49,7 +49,7 @@ PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
 
   if (!isNew) {
     QtPassSettings::getPass()->Show(m_file);
-}
+  }
 
   ui->setupUi(this);
 
@@ -85,7 +85,7 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
     ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
   } else {
     ui->lineEditPassword->setEchoMode(QLineEdit::Password);
-}
+  }
 }
 
 /**
@@ -101,7 +101,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
           ui->passwordTemplateSwitch->currentIndex())]);
   if (newPass.length() > 0) {
     ui->lineEditPassword->setText(newPass);
-}
+  }
   ui->widget->setEnabled(true);
 }
 
@@ -112,11 +112,11 @@ void PasswordDialog::on_accepted() {
   QString newValue = getPassword();
   if (newValue.isEmpty()) {
     return;
-}
+  }
 
   if (newValue.right(1) != "\n") {
     newValue += "\n";
-}
+  }
 
   QtPassSettings::getPass()->Insert(m_file, newValue, !m_isNew);
 }
@@ -170,7 +170,7 @@ auto PasswordDialog::getPassword() -> QString {
     QString text = line->text();
     if (text.isEmpty()) {
       continue;
-}
+    }
     passFile += line->objectName() + ": " + text + "\n";
   }
   passFile += ui->plainTextEdit->toPlainText();
@@ -191,7 +191,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
     foreach (QString field, m_fields) {
       if (field.isEmpty()) {
         continue;
-}
+      }
       auto *line = new QLineEdit();
       line->setObjectName(field);
       ui->formLayout->addRow(new QLabel(field), line);

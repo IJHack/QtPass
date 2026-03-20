@@ -74,7 +74,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
-}
+  }
   args.append(file);
   executePass(PASS_INSERT, args, newValue);
 }
@@ -102,7 +102,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   foreach (const UserInfo &user, users) {
     if (user.enabled) {
       args.append(user.key_id);
-}
+    }
   }
   executePass(PASS_INIT, args);
 }

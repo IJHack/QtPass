@@ -34,7 +34,7 @@ auto FileContent::parse(const QString &fileContent,
     remainingData.append(line);
     if (!isLineHidden(line)) {
       remainingDataDisplay.append(line);
-}
+    }
   }
   return {password, namedValues, remainingData.join("\n"),
           remainingDataDisplay.join("\n")};

@@ -128,7 +128,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   if (!m_qtPass->init()) {
     // no working config so this should just quit
     QApplication::quit();
-}
+  }
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }
@@ -217,13 +217,13 @@ void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError) {
     ui->textBrowser->setTextColor(Qt::red);
-}
+  }
 
   if (isHtml) {
     QString _text = text;
     if (!ui->textBrowser->toPlainText().isEmpty()) {
       _text = ui->textBrowser->toHtml() + _text;
-}
+    }
     ui->textBrowser->setHtml(_text);
   } else {
     ui->textBrowser->setText(text);
@@ -246,7 +246,7 @@ void MainWindow::config() {
 
   if (m_qtPass->isFreshStart()) {
     d->wizard(); //  does shit
-}
+  }
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
       // Update the textBrowser font
@@ -276,7 +276,7 @@ void MainWindow::config() {
 
       if (m_qtPass->isFreshStart() && Util::checkConfig()) {
         config();
-}
+      }
       QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(MS_PER_SECOND *
                                   QtPassSettings::getAutoclearPanelSeconds());
@@ -304,7 +304,7 @@ void MainWindow::onUpdate(bool block) {
     QtPassSettings::getPass()->GitPull_b();
   } else {
     QtPassSettings::getPass()->GitPull();
-}
+  }
 }
 
 /**
@@ -328,7 +328,7 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
   if (!index.isValid() ||
       !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
     return {};
-}
+  }
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
@@ -426,7 +426,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
       ui->verticalLayoutPassword->setSpacing(0);
     } else {
       ui->verticalLayoutPassword->setSpacing(6);
-}
+    }
 
     output = fileContent.getRemainingDataForDisplay();
   }
@@ -603,10 +603,10 @@ auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
     index = proxyModel.index(row, 0, parentIndex);
     if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
       return index;
-}
+    }
     if (proxyModel.hasChildren(index)) {
       return firstFile(index);
-}
+    }
   }
   return index;
 }
@@ -641,7 +641,7 @@ void MainWindow::addPassword() {
                             QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty()) {
     return;
-}
+  }
   file = dir + file;
   setPassword(file);
 }
@@ -695,7 +695,7 @@ void MainWindow::onDelete() {
               .arg(QDir::separator() + file, isDir ? dirMessage : "?"),
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
     return;
-}
+  }
 
   QtPassSettings::getPass()->Remove(file, isDir);
 }
@@ -708,7 +708,7 @@ void MainWindow::onOtp() {
   if (!file.isEmpty()) {
     if (QtPassSettings::isUseOtp()) {
       QtPassSettings::getPass()->OtpGenerate(file);
-}
+    }
   }
 }
 
@@ -727,7 +727,7 @@ void MainWindow::onEdit() {
 void MainWindow::userDialog(const QString &dir) {
   if (!dir.isEmpty()) {
     currentDir = dir;
-}
+  }
   onUsers();
 }
 
@@ -793,14 +793,14 @@ void MainWindow::updateProfileBox() {
       i.next();
       if (!i.key().isEmpty()) {
         ui->profileBox->addItem(i.key());
-}
+      }
     }
     ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
   if (index != -1) { //  -1 for not found
     ui->profileBox->setCurrentIndex(index);
-}
+  }
 }
 
 /**
@@ -815,7 +815,7 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 #endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
     return;
-}
+  }
 
   ui->lineEdit->clear();
 
@@ -917,7 +917,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
   case Qt::Key_Enter:
     if (proxyModel.rowCount() > 0) {
       on_treeView_clicked(ui->treeView->currentIndex());
-}
+    }
     break;
   case Qt::Key_Escape:
     ui->lineEdit->clear();
@@ -1029,7 +1029,7 @@ void MainWindow::addFolder() {
                             QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
     return;
-}
+  }
   newdir.prepend(dir);
   // dbg()<< newdir;
   if (!QDir().mkdir(newdir)) {
@@ -1051,7 +1051,7 @@ void MainWindow::renameFolder() {
                             QLineEdit::Normal, srcDirName, &ok);
   if (!ok || newName.isEmpty()) {
     return;
-}
+  }
   QString destDir = srcDir;
   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
   QtPassSettings::getPass()->Move(srcDir, destDir);
@@ -1065,7 +1065,7 @@ void MainWindow::editPassword(const QString &file) {
   if (!file.isEmpty()) {
     if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull()) {
       onUpdate(true);
-}
+    }
     setPassword(file, false);
   }
 }
@@ -1080,14 +1080,14 @@ void MainWindow::renamePassword() {
   QString fileName = QFileInfo(file).fileName();
   if (fileName.endsWith(".gpg", Qt::CaseInsensitive)) {
     fileName.chop(4);
-}
+  }
 
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
                             QLineEdit::Normal, fileName, &ok);
   if (!ok || newName.isEmpty()) {
     return;
-}
+  }
   QString newFile = QDir(filePath).filePath(newName);
   QtPassSettings::getPass()->Move(file, newFile);
 }
@@ -1245,7 +1245,7 @@ void MainWindow::updateOtpButtonVisibility() {
     ui->actionOtp->setEnabled(false);
   } else {
     ui->actionOtp->setEnabled(true);
-}
+  }
 }
 
 void MainWindow::enableGitButtons(const bool &state) {

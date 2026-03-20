@@ -52,7 +52,7 @@ void TrayIcon::setVisible(bool visible) {
     parentwin->show();
   } else {
     parentwin->hide();
-}
+  }
 }
 
 /**
@@ -107,7 +107,7 @@ void TrayIcon::showHideParent() {
     parentwin->hide();
   } else {
     parentwin->show();
-}
+  }
 }
 
 /**

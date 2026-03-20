@@ -34,8 +34,8 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     for (auto &user : users) {
       if (sec.key_id == user.key_id) {
         user.have_secret = true;
-}
-}
+      }
+    }
   }
 
   QList<UserInfo> selected_users;
@@ -45,13 +45,13 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
       m_dir.isEmpty() ? "" : m_dir, " ", &count);
   if (!recipients.isEmpty()) {
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
-}
+  }
   foreach (const UserInfo &sel, selected_users) {
     for (auto &user : users) {
       if (sel.key_id == user.key_id) {
         user.enabled = true;
-}
-}
+      }
+    }
   }
 
   if (count > selected_users.size()) {
@@ -129,11 +129,11 @@ void UsersDialog::keyPressEvent(QKeyEvent *event) {
 void UsersDialog::itemChange(QListWidgetItem *item) {
   if (!item) {
     return;
-}
+  }
   auto *info = item->data(Qt::UserRole).value<UserInfo *>();
   if (!info) {
     return;
-}
+  }
   info->enabled = item->checkState() == Qt::Checked;
 }
 
@@ -152,12 +152,12 @@ void UsersDialog::populateList(const QString &filter) {
       if (filter.isEmpty() || nameFilter.match(user.name).hasMatch()) {
         if (!user.isValid() && !ui->checkBox->isChecked()) {
           continue;
-}
+        }
         if (user.expiry.toSecsSinceEpoch() > 0 &&
             user.expiry.daysTo(QDateTime::currentDateTime()) > 0 &&
             !ui->checkBox->isChecked()) {
           continue;
-}
+        }
         QString userText = user.name + "\n" + user.key_id;
         if (user.created.toSecsSinceEpoch() > 0) {
           userText +=
@@ -168,7 +168,7 @@ void UsersDialog::populateList(const QString &filter) {
           userText +=
               " " + tr("expires") + " " +
               QLocale::system().toString(user.expiry, QLocale::ShortFormat);
-}
+        }
         auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));

@@ -60,18 +60,18 @@ auto StoreModel::ShowThis(const QModelIndex index) const -> bool {
   bool retVal = false;
   if (fs == nullptr) {
     return retVal;
-}
+  }
   // Gives you the info for number of childs with a parent
   if (sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
       if (!childIndex.isValid()) {
         break;
-}
+      }
       retVal = ShowThis(childIndex);
       if (retVal) {
         break;
-}
+      }
     }
   } else {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
@@ -104,7 +104,7 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   if (!index.isValid()) {
     return {};
-}
+  }
 
   QVariant initial_value;
   initial_value = QSortFilterProxyModel::data(index, role);
@@ -213,7 +213,7 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   stream >> info;
   if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
     return false;
-}
+  }
 
   if (column > 0) {
     return false;
@@ -249,7 +249,7 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     -> bool {
   if (!canDropMimeData(data, action, row, column, parent)) {
     return false;
-}
+  }
 
   if (action == Qt::IgnoreAction) {
     return true;
@@ -318,7 +318,7 @@ auto StoreModel::lessThan(const QModelIndex &source_left,
 
     if (leftD ^ rightD) {
       return leftD;
-}
+    }
   }
 #endif
 

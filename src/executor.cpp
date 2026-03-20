@@ -39,7 +39,7 @@ void Executor::executeNext() {
       running = true;
       if (!i.workingDir.isEmpty()) {
         m_process.setWorkingDirectory(i.workingDir);
-}
+      }
       if (i.app.startsWith("wsl ")) {
         QStringList tmp = i.args;
         QString app = i.app;
@@ -131,7 +131,7 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   if (!appPath.startsWith("wsl ")) {
     appPath =
         QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
-}
+  }
   m_execQueue.push_back(
       {id, appPath, args, std::move(input), readStdout, readStderr, workDir});
   executeNext();
@@ -201,10 +201,10 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
     QString perr = decodeAssumingUtf8(internal.readAllStandardError());
     if (process_out != nullptr) {
       *process_out = pout;
-}
+    }
     if (process_err != nullptr) {
       *process_err = perr;
-}
+    }
     return internal.exitCode();
   }
   // TODO(bezet): emit error() ?
@@ -244,7 +244,7 @@ void Executor::setEnvironment(const QStringList &env) {
 auto Executor::cancelNext() -> int {
   if (running || m_execQueue.isEmpty()) {
     return -1; // TODO(bezet): definitely throw here
-}
+  }
   return m_execQueue.dequeue().id;
 }
 
@@ -261,7 +261,7 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
     QString err;
     if (i.readStdout) {
       output = decodeAssumingUtf8(m_process.readAllStandardOutput());
-}
+    }
     if (i.readStderr || exitCode != 0) {
       err = decodeAssumingUtf8(m_process.readAllStandardError());
       if (exitCode != 0) {

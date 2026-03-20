@@ -42,7 +42,7 @@ ImitatePass::ImitatePass() = default;
 static auto pgit(const QString &path) -> QString {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl ")) {
     return path;
-}
+  }
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
@@ -50,7 +50,7 @@ static auto pgit(const QString &path) -> QString {
 static auto pgpg(const QString &path) -> QString {
   if (!QtPassSettings::getGpgExecutable().startsWith("wsl ")) {
     return path;
-}
+  }
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
@@ -136,14 +136,14 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
   if (overwrite) {
     args.append("--yes");
-}
+  }
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
     // TODO(bezet): why not?
     if (!overwrite) {
       executeGit(GIT_ADD, {"add", pgit(file)});
-}
+    }
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
     QString msg =
@@ -163,7 +163,7 @@ void ImitatePass::GitCommit(const QString &file, const QString &msg) {
     executeGit(GIT_COMMIT, {"commit", "-m", msg});
   } else {
     executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
-}
+  }
 }
 
 /**
@@ -174,7 +174,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
   transactionHelper trans(this, PASS_REMOVE);
   if (!isDir) {
     file += ".gpg";
-}
+  }
   if (QtPassSettings::isUseGit()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
     // TODO(bezet): commit message used to have pass-like file name inside(ie.
@@ -228,7 +228,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     QFileInfo checkFile(gpgIdSigFile);
     if (!checkFile.exists() || !checkFile.isFile()) {
       addSigFile = true;
-}
+    }
   }
 
   QString gpgIdFile = path + ".gpg-id";
@@ -239,7 +239,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     QFileInfo checkFile(gpgIdFile);
     if (!checkFile.exists() || !checkFile.isFile()) {
       addFile = true;
-}
+    }
   }
   if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
     emit critical(tr("Cannot update"),
@@ -280,14 +280,14 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       !QtPassSettings::getGitExecutable().isEmpty()) {
     if (addFile) {
       executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
-}
+    }
     QString commitPath = gpgIdFile;
     commitPath.replace(Util::endsWithGpg(), "");
     GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
     if (!signingKeys.isEmpty()) {
       if (addSigFile) {
         executeGit(GIT_ADD, {"add", pgit(gpgIdSigFile)});
-}
+      }
       commitPath = gpgIdSigFile;
       commitPath.replace(QRegularExpression("\\.gpg$"), "");
       GitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
@@ -311,7 +311,7 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 #endif
   if (signingKeys.isEmpty()) {
     return true;
-}
+  }
   QString out;
   QStringList args =
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
@@ -322,13 +322,13 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
   QRegularExpressionMatch m = re.match(out);
   if (!m.hasMatch()) {
     return false;
-}
+  }
   QStringList fingerprints = m.capturedTexts();
   fingerprints.removeFirst();
   for (auto &key : signingKeys) {
     if (fingerprints.contains(key)) {
       return true;
-}
+    }
   }
   return false;
 }
@@ -351,11 +351,11 @@ auto ImitatePass::removeDir(const QString &dirName) -> bool {
         result = removeDir(info.absoluteFilePath());
       } else {
         result = QFile::remove(info.absoluteFilePath());
-}
+      }
 
       if (!result) {
         return result;
-}
+      }
     }
     result = dir.rmdir(dirName);
   }
@@ -442,7 +442,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
           local_lastDecrypt != "Could not decrypt") {
         if (local_lastDecrypt.right(1) != "\n") {
           local_lastDecrypt += "\n";
-}
+        }
 
         QStringList recipients = Pass::getRecipientList(fileName);
         if (recipients.isEmpty()) {
@@ -511,7 +511,7 @@ void ImitatePass::Move(const QString src, const QString dest,
 
     if (destFile.endsWith(".gpg", Qt::CaseInsensitive)) {
       destFile.chop(4); //  make sure suffix is lowercase
-}
+    }
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {
@@ -636,7 +636,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
   if (exitCode == 0) {
     if (pid == INVALID) {
       return;
-}
+    }
   } else {
     while (pid == INVALID) {
       id = exec.cancelNext();
