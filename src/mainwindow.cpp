@@ -125,9 +125,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   ui->lineEdit->setText(searchText);
 
-  if (!m_qtPass->init())
+  if (!m_qtPass->init()) {
     // no working config so this should just quit
     QApplication::quit();
+  }
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }
@@ -214,13 +215,15 @@ void MainWindow::cleanKeygenDialog() {
 
 void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
-  if (isError)
+  if (isError) {
     ui->textBrowser->setTextColor(Qt::red);
+  }
 
   if (isHtml) {
     QString _text = text;
-    if (!ui->textBrowser->toPlainText().isEmpty())
+    if (!ui->textBrowser->toPlainText().isEmpty()) {
       _text = ui->textBrowser->toHtml() + _text;
+    }
     ui->textBrowser->setHtml(_text);
   } else {
     ui->textBrowser->setText(text);
@@ -241,8 +244,9 @@ void MainWindow::config() {
     QtPassSettings::setUsePass(true);
   }
 
-  if (m_qtPass->isFreshStart())
+  if (m_qtPass->isFreshStart()) {
     d->wizard(); //  does shit
+  }
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
       // Update the textBrowser font
@@ -270,8 +274,9 @@ void MainWindow::config() {
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
           model.setRootPath(QtPassSettings::getPassStore())));
 
-      if (m_qtPass->isFreshStart() && Util::checkConfig())
+      if (m_qtPass->isFreshStart() && Util::checkConfig()) {
         config();
+      }
       QtPassSettings::getPass()->updateEnv();
       clearPanelTimer.setInterval(MS_PER_SECOND *
                                   QtPassSettings::getAutoclearPanelSeconds());
@@ -295,10 +300,11 @@ void MainWindow::config() {
  */
 void MainWindow::onUpdate(bool block) {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
-  if (block)
+  if (block) {
     QtPassSettings::getPass()->GitPull_b();
-  else
+  } else {
     QtPassSettings::getPass()->GitPull();
+  }
 }
 
 /**
@@ -320,8 +326,9 @@ void MainWindow::onPush() {
  */
 auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
   if (!index.isValid() ||
-      !model.fileInfo(proxyModel.mapToSource(index)).isFile())
+      !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
     return {};
+  }
   QString filePath = model.filePath(proxyModel.mapToSource(index));
   if (forPass) {
     filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
@@ -415,10 +422,11 @@ void MainWindow::passShowHandler(const QString &p_output) {
       const NamedValue &nv = namedValues.at(j);
       addToGridLayout(j + 1, nv.name, nv.value);
     }
-    if (ui->gridLayout->count() == 0)
+    if (ui->gridLayout->count() == 0) {
       ui->verticalLayoutPassword->setSpacing(0);
-    else
+    } else {
       ui->verticalLayoutPassword->setSpacing(6);
+    }
 
     output = fileContent.getRemainingDataForDisplay();
   }
@@ -593,10 +601,12 @@ auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
   int numRows = proxyModel.rowCount(parentIndex);
   for (int row = 0; row < numRows; ++row) {
     index = proxyModel.index(row, 0, parentIndex);
-    if (model.fileInfo(proxyModel.mapToSource(index)).isFile())
+    if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
       return index;
-    if (proxyModel.hasChildren(index))
+    }
+    if (proxyModel.hasChildren(index)) {
       return firstFile(index);
+    }
   }
   return index;
 }
@@ -629,8 +639,9 @@ void MainWindow::addPassword() {
                                      Util::getDir(ui->treeView->currentIndex(),
                                                   true, model, proxyModel)),
                             QLineEdit::Normal, "", &ok);
-  if (!ok || file.isEmpty())
+  if (!ok || file.isEmpty()) {
     return;
+  }
   file = dir + file;
   setPassword(file);
 }
@@ -682,8 +693,9 @@ void MainWindow::onDelete() {
           this, isDir ? tr("Delete folder?") : tr("Delete password?"),
           tr("Are you sure you want to delete %1%2?")
               .arg(QDir::separator() + file, isDir ? dirMessage : "?"),
-          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
     return;
+  }
 
   QtPassSettings::getPass()->Remove(file, isDir);
 }
@@ -694,8 +706,9 @@ void MainWindow::onDelete() {
 void MainWindow::onOtp() {
   QString file = getFile(ui->treeView->currentIndex(), true);
   if (!file.isEmpty()) {
-    if (QtPassSettings::isUseOtp())
+    if (QtPassSettings::isUseOtp()) {
       QtPassSettings::getPass()->OtpGenerate(file);
+    }
   }
 }
 
@@ -712,8 +725,9 @@ void MainWindow::onEdit() {
  * @param dir folder to edit users for.
  */
 void MainWindow::userDialog(const QString &dir) {
-  if (!dir.isEmpty())
+  if (!dir.isEmpty()) {
     currentDir = dir;
+  }
   onUsers();
 }
 
@@ -777,14 +791,16 @@ void MainWindow::updateProfileBox() {
     QHashIterator<QString, QHash<QString, QString>> i(profiles);
     while (i.hasNext()) {
       i.next();
-      if (!i.key().isEmpty())
+      if (!i.key().isEmpty()) {
         ui->profileBox->addItem(i.key());
+      }
     }
     ui->profileBox->model()->sort(0);
   }
   int index = ui->profileBox->findText(QtPassSettings::getProfile());
-  if (index != -1) //  -1 for not found
+  if (index != -1) { //  -1 for not found
     ui->profileBox->setCurrentIndex(index);
+  }
 }
 
 /**
@@ -797,8 +813,9 @@ void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 #else
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 #endif
-  if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile())
+  if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
     return;
+  }
 
   ui->lineEdit->clear();
 
@@ -898,8 +915,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
-    if (proxyModel.rowCount() > 0)
+    if (proxyModel.rowCount() > 0) {
       on_treeView_clicked(ui->treeView->currentIndex());
+    }
     break;
   case Qt::Key_Escape:
     ui->lineEdit->clear();
@@ -1009,8 +1027,9 @@ void MainWindow::addFolder() {
                                      Util::getDir(ui->treeView->currentIndex(),
                                                   true, model, proxyModel)),
                             QLineEdit::Normal, "", &ok);
-  if (!ok || newdir.isEmpty())
+  if (!ok || newdir.isEmpty()) {
     return;
+  }
   newdir.prepend(dir);
   // dbg()<< newdir;
   if (!QDir().mkdir(newdir)) {
@@ -1030,8 +1049,9 @@ void MainWindow::renameFolder() {
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename Folder To: "),
                             QLineEdit::Normal, srcDirName, &ok);
-  if (!ok || newName.isEmpty())
+  if (!ok || newName.isEmpty()) {
     return;
+  }
   QString destDir = srcDir;
   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
   QtPassSettings::getPass()->Move(srcDir, destDir);
@@ -1043,8 +1063,9 @@ void MainWindow::renameFolder() {
  */
 void MainWindow::editPassword(const QString &file) {
   if (!file.isEmpty()) {
-    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull())
+    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull()) {
       onUpdate(true);
+    }
     setPassword(file, false);
   }
 }
@@ -1057,14 +1078,16 @@ void MainWindow::renamePassword() {
   QString file = getFile(ui->treeView->currentIndex(), false);
   QString filePath = QFileInfo(file).path();
   QString fileName = QFileInfo(file).fileName();
-  if (fileName.endsWith(".gpg", Qt::CaseInsensitive))
+  if (fileName.endsWith(".gpg", Qt::CaseInsensitive)) {
     fileName.chop(4);
+  }
 
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
                             QLineEdit::Normal, fileName, &ok);
-  if (!ok || newName.isEmpty())
+  if (!ok || newName.isEmpty()) {
     return;
+  }
   QString newFile = QDir(filePath).filePath(newName);
   QtPassSettings::getPass()->Move(file, newFile);
 }
@@ -1218,10 +1241,11 @@ void MainWindow::updateOtpButtonVisibility() {
 #if defined(Q_OS_WIN) || defined(__APPLE__)
   ui->actionOtp->setVisible(false);
 #endif
-  if (!QtPassSettings::isUseOtp())
+  if (!QtPassSettings::isUseOtp()) {
     ui->actionOtp->setEnabled(false);
-  else
+  } else {
     ui->actionOtp->setEnabled(true);
+  }
 }
 
 void MainWindow::enableGitButtons(const bool &state) {

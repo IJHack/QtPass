@@ -182,8 +182,9 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
         }
       }
 
-      if (!status)
+      if (!status) {
         break;
+      }
     }
   } else {
     if (item->text().isEmpty() && item->column() != 2) {
@@ -245,20 +246,25 @@ void ConfigDialog::on_accepted() {
 
 void ConfigDialog::on_autodetectButton_clicked() {
   QString pass = Util::findBinaryInPath("pass");
-  if (!pass.isEmpty())
+  if (!pass.isEmpty()) {
     ui->passPath->setText(pass);
+  }
   usePass(!pass.isEmpty());
   QString gpg = Util::findBinaryInPath("gpg2");
-  if (gpg.isEmpty())
+  if (gpg.isEmpty()) {
     gpg = Util::findBinaryInPath("gpg");
-  if (!gpg.isEmpty())
+  }
+  if (!gpg.isEmpty()) {
     ui->gpgPath->setText(gpg);
+  }
   QString git = Util::findBinaryInPath("git");
-  if (!git.isEmpty())
+  if (!git.isEmpty()) {
     ui->gitPath->setText(git);
+  }
   QString pwgen = Util::findBinaryInPath("pwgen");
-  if (!pwgen.isEmpty())
+  if (!pwgen.isEmpty()) {
     ui->pwgenPath->setText(pwgen);
+  }
 }
 
 /**
@@ -281,8 +287,9 @@ auto ConfigDialog::getSecretKeys() -> QStringList {
   QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
   QStringList names;
 
-  if (keys.empty())
+  if (keys.empty()) {
     return names;
+  }
 
   foreach (const UserInfo &sec, keys)
     names << sec.name;
@@ -307,8 +314,9 @@ auto ConfigDialog::selectExecutable() -> QString {
   QFileDialog dialog(this);
   dialog.setFileMode(QFileDialog::ExistingFile);
   dialog.setOption(QFileDialog::ReadOnly);
-  if (dialog.exec())
+  if (dialog.exec()) {
     return dialog.selectedFiles().constFirst();
+  }
 
   return {};
 }
@@ -322,8 +330,9 @@ auto ConfigDialog::selectFolder() -> QString {
   dialog.setFileMode(QFileDialog::Directory);
   dialog.setFilter(QDir::NoFilter);
   dialog.setOption(QFileDialog::ShowDirsOnly);
-  if (dialog.exec())
+  if (dialog.exec()) {
     return dialog.selectedFiles().constFirst();
+  }
 
   return {};
 }
@@ -349,8 +358,9 @@ void ConfigDialog::on_toolButtonGit_clicked() {
  */
 void ConfigDialog::on_toolButtonGpg_clicked() {
   QString gpg = selectExecutable();
-  if (!gpg.isEmpty())
+  if (!gpg.isEmpty()) {
     ui->gpgPath->setText(gpg);
+  }
 }
 
 /**
@@ -358,8 +368,9 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
  */
 void ConfigDialog::on_toolButtonPass_clicked() {
   QString pass = selectExecutable();
-  if (!pass.isEmpty())
+  if (!pass.isEmpty()) {
     ui->passPath->setText(pass);
+  }
 }
 
 /**
@@ -368,8 +379,9 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty()) // TODO(annejan): call check
+  if (!store.isEmpty()) { // TODO(annejan): call check
     ui->storePath->setText(store);
+  }
 }
 
 /**
@@ -485,8 +497,9 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
       ui->profileTable->setItem(
           n, 2, new QTableWidgetItem(i.value().value("signingKey")));
       // dbg()<< "naam:" + i.key();
-      if (i.key() == currentProfile)
+      if (i.key() == currentProfile) {
         ui->profileTable->selectRow(n);
+      }
     }
     ++n;
   }
@@ -553,8 +566,9 @@ void ConfigDialog::on_deleteButton_clicked() {
   // now actually do the removing:
   foreach (int row, rows)
     ui->profileTable->removeRow(row);
-  if (ui->profileTable->rowCount() < 1)
+  if (ui->profileTable->rowCount() < 1) {
     ui->deleteButton->setEnabled(false);
+  }
 
   validate();
 }
@@ -598,12 +612,15 @@ void ConfigDialog::wizard() {
   Util::checkConfig();
   on_autodetectButton_clicked();
 
-  if (!checkGpgExistence())
+  if (!checkGpgExistence()) {
     return;
-  if (!checkSecretKeys())
+  }
+  if (!checkSecretKeys()) {
     return;
-  if (!checkPasswordStore())
+  }
+  if (!checkPasswordStore()) {
     return;
+  }
   handleGpgIdFile();
 
   ui->checkBoxHidePassword->setCheckState(Qt::Checked);
@@ -673,8 +690,9 @@ auto ConfigDialog::checkPasswordStore() -> bool {
       SetFileAttributes(passStore.toStdWString().c_str(),
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
-      if (ui->checkBoxUseGit->isChecked())
+      if (ui->checkBoxUseGit->isChecked()) {
         emit mainWindow->passGitInitNeeded();
+      }
       mainWindow->userDialog(passStore);
     }
   }
@@ -694,8 +712,9 @@ void ConfigDialog::handleGpgIdFile() {
 
     while (!QFile(passStore).exists()) {
       on_toolButtonStore_clicked();
-      if (passStore == ui->storePath->text())
+      if (passStore == ui->storePath->text()) {
         return;
+      }
       passStore = ui->storePath->text();
     }
     if (!QFile(passStore + ".gpg-id").exists()) {
@@ -831,8 +850,9 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked() {
  * @param usePwgen
  */
 void ConfigDialog::usePwgen(bool usePwgen) {
-  if (ui->pwgenPath->text().isEmpty())
+  if (ui->pwgenPath->text().isEmpty()) {
     usePwgen = false;
+  }
   ui->checkBoxUsePwgen->setChecked(usePwgen);
   on_checkBoxUsePwgen_clicked();
 }
@@ -841,8 +861,9 @@ void ConfigDialog::setPasswordConfiguration(
     const PasswordConfiguration &config) {
   ui->spinBoxPasswordLength->setValue(config.length);
   ui->passwordCharTemplateSelector->setCurrentIndex(config.selected);
-  if (config.selected != PasswordConfiguration::CUSTOM)
+  if (config.selected != PasswordConfiguration::CUSTOM) {
     ui->lineEditPasswordChars->setEnabled(false);
+  }
   ui->lineEditPasswordChars->setText(config.Characters[config.selected]);
 }
 

@@ -31,9 +31,11 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
   foreach (const UserInfo &sec, secret_keys) {
-    for (auto &user : users)
-      if (sec.key_id == user.key_id)
+    for (auto &user : users) {
+      if (sec.key_id == user.key_id) {
         user.have_secret = true;
+      }
+    }
   }
 
   QList<UserInfo> selected_users;
@@ -41,12 +43,15 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   QStringList recipients = QtPassSettings::getPass()->getRecipientString(
       m_dir.isEmpty() ? "" : m_dir, " ", &count);
-  if (!recipients.isEmpty())
+  if (!recipients.isEmpty()) {
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
+  }
   foreach (const UserInfo &sel, selected_users) {
-    for (auto &user : users)
-      if (sel.key_id == user.key_id)
+    for (auto &user : users) {
+      if (sel.key_id == user.key_id) {
         user.enabled = true;
+      }
+    }
   }
 
   if (count > selected_users.size()) {
@@ -122,11 +127,13 @@ void UsersDialog::keyPressEvent(QKeyEvent *event) {
  * @param item
  */
 void UsersDialog::itemChange(QListWidgetItem *item) {
-  if (!item)
+  if (!item) {
     return;
+  }
   auto *info = item->data(Qt::UserRole).value<UserInfo *>();
-  if (!info)
+  if (!info) {
     return;
+  }
   info->enabled = item->checkState() == Qt::Checked;
 }
 
@@ -143,22 +150,25 @@ void UsersDialog::populateList(const QString &filter) {
   if (!m_userList.isEmpty()) {
     for (auto &user : m_userList) {
       if (filter.isEmpty() || nameFilter.match(user.name).hasMatch()) {
-        if (!user.isValid() && !ui->checkBox->isChecked())
+        if (!user.isValid() && !ui->checkBox->isChecked()) {
           continue;
+        }
         if (user.expiry.toSecsSinceEpoch() > 0 &&
             user.expiry.daysTo(QDateTime::currentDateTime()) > 0 &&
-            !ui->checkBox->isChecked())
+            !ui->checkBox->isChecked()) {
           continue;
+        }
         QString userText = user.name + "\n" + user.key_id;
         if (user.created.toSecsSinceEpoch() > 0) {
           userText +=
               " " + tr("created") + " " +
               QLocale::system().toString(user.created, QLocale::ShortFormat);
         }
-        if (user.expiry.toSecsSinceEpoch() > 0)
+        if (user.expiry.toSecsSinceEpoch() > 0) {
           userText +=
               " " + tr("expires") + " " +
               QLocale::system().toString(user.expiry, QLocale::ShortFormat);
+        }
         auto *item = new QListWidgetItem(userText, ui->listWidget);
         item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
         item->setData(Qt::UserRole, QVariant::fromValue(&user));

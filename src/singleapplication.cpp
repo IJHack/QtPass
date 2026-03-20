@@ -72,8 +72,9 @@ auto SingleApplication::isRunning() -> bool { return _isRunning; }
  * @return
  */
 auto SingleApplication::sendMessage(const QString &message) -> bool {
-  if (!_isRunning)
+  if (!_isRunning) {
     return false;
+  }
   QLocalSocket localSocket(this);
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!localSocket.waitForConnected(timeout)) {

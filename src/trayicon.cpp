@@ -48,10 +48,11 @@ TrayIcon::TrayIcon(QMainWindow *parent)
  * @param visible
  */
 void TrayIcon::setVisible(bool visible) {
-  if (visible)
+  if (visible) {
     parentwin->show();
-  else
+  } else {
     parentwin->hide();
+  }
 }
 
 /**
@@ -102,10 +103,11 @@ void TrayIcon::createTrayIcon() {
  * @brief TrayIcon::showHideParent toggle app visibility.
  */
 void TrayIcon::showHideParent() {
-  if (parentwin->isVisible())
+  if (parentwin->isVisible()) {
     parentwin->hide();
-  else
+  } else {
     parentwin->show();
+  }
 }
 
 /**
