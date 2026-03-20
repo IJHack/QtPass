@@ -20,12 +20,16 @@ install:
   - py -3 -m pip install aqtinstall
   - if not exist %QT_ROOT% mkdir %QT_ROOT%
   - py -3 -m aqt install-qt windows desktop %QT_VERSION% %QT_ARCH% -O %QT_ROOT%
-  - py -3 -m aqt install-tool -O %QT_ROOT% windows desktop tools_mingw90
+
   - dir %QT_ROOT%
   - dir %QT_ROOT%\Tools
+  - dir %QT_ROOT%\mingw_64
+  - dir %QT_ROOT%\mingw_64\bin
+
   - set QTDIR=%QT_ROOT%\%QT_VERSION%\mingw_64
-  - set MINGW_ROOT=%QT_ROOT%\Tools\mingw1120_64
+  - set MINGW_ROOT=%QT_ROOT%\mingw_64
   - set PATH=%QTDIR%\bin;%MINGW_ROOT%\bin;%INNO_DIR%;%PATH%
+
   - echo QTDIR=%QTDIR%
   - echo MINGW_ROOT=%MINGW_ROOT%
   - where qmake
