@@ -4,6 +4,7 @@
 #include "util.h"
 
 #include <QCoreApplication>
+#include <QDebug>
 
 bool QtPassSettings::initialized = false;
 
