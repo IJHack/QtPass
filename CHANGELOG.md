@@ -4,26 +4,28 @@
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
 
-## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-20)
+## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0)
 
 **Fixed bugs:**
 
-- Build and packaging updates for AppVeyor/Windows installer reliability.
-- Release metadata bump to 1.5.0 across build and packaging files.
-- General cleanup and modernization for CI workflows and tooling.
-- Translations refreshed from Weblate.
+- Build and packaging updates for reliable AppVeyor installer generation.
+- Release metadata refresh for 1.5.0 across desktop, installer, and CI configuration.
+- CI modernization and lint pipeline updates.
+- Additional translations updated from Weblate.
 
 **Closed issues:**
 
 - Reduced installer locale handling to avoid missing Inno Setup language file failures.
+- Improved packaging and language handling around AppVeyor/Windows distribution.
 
 **Merged pull requests:**
 
 - PublicCode, AppVeyor and InnoSetup modernization [\#722](https://github.com/IJHack/QtPass/pull/722) ([annejan](https://github.com/annejan))
 - More clang-tidy modernizations [\#721](https://github.com/IJHack/QtPass/pull/721)
 - Apply clang-tidy modernizations [\#720](https://github.com/IJHack/QtPass/pull/720)
+- Translations update from Hosted Weblate [\#723](https://github.com/IJHack/QtPass/pull/723) ([annejan](https://github.com/annejan))
 
 ## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
 
