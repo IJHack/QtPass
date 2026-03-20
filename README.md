@@ -1,27 +1,39 @@
 # QtPass
 
+[![GitHub release](https://img.shields.io/github/v/release/IJHack/QtPass?include_prereleases)](https://github.com/IJHack/QtPass/releases)
+[![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
+
+[![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
+
 [![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
 [![codecov](https://codecov.io/gh/IJhack/QtPass/branch/master/graph/badge.svg)](https://codecov.io/gh/IJhack/QtPass)
-[![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
-[![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIJHack%2FQtPass?ref=badge_shield)
-[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
-[![QMake Github Action](https://github.com/IJHack/QtPass/workflows/QMake/badge.svg)](https://github.com/IJHack/QtPass/actions)
 
-QtPass is a GUI for [pass](https://www.passwordstore.org/),
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIJHack%2FQtPass)
+[![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
+
+QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
 the standard Unix password manager.
+
+*Available in 39 languages*
 
 ## Features
 
 - Using `pass` or `git` and `gpg2` directly
-- Configurable shoulder surfing protection options
 - Cross platform: Linux, BSD, macOS and Windows
-- Per-folder user selection for multi recipient encryption
-- Multiple profiles
-- Easy onboarding
+- Native widgets and iconography where possible
+- Per-folder user selection for multi-recipient encryption
+- Multiple profiles support
+- OTP (One-Time Password) support
+- Password generation with configurable complexity
+- Git integration for version control
+- Smartcard and USB token support (OpenPGP, YubiKey)
+- Configurable shoulder surfing protection
+- Experimental WebDAV support
+- Easy onboarding for new users
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
@@ -61,14 +73,17 @@ Windows
 
 #### Dependencies
 
-- QtPass requires Qt 5.10 or later (Qt 6 works too)
-- The Linguist package is required to compile the translations.
-- For use of the fallback icons the SVG library is required.
+- QtPass requires Qt 5.12 or later (Qt 6 supported)
+- The Linguist package is required to compile translations
+- For fallback icons, the SVG library is required
 
-At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
+Runtime dependencies:
+- `gpg2` (GnuPG 2.2+) - required
+- `git` - optional, for repository sync
+- `pass` (1.7+) - optional, can use native gpg/git
 
-Your GPG has to be set-up with a graphical pinentry when applicable, same goes for Git authentication.
-On Mac macOS this currently seems to only work best with `pinentry-mac` from Homebrew, although gpgtools works too.
+Your GPG must be configured with a graphical pinentry when applicable. Same goes for Git authentication.
+On macOS, `pinentry-mac` from Homebrew works best (gpgtools also works).
 
 On most Unix systems all you need is:
 
