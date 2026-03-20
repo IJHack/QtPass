@@ -75,14 +75,17 @@ auto QtPass::init() -> bool {
     dbg() << "assuming fresh install";
 #endif
 
-    if (QtPassSettings::getAutoclearSeconds() < 5)
+    if (QtPassSettings::getAutoclearSeconds() < 5) {
       QtPassSettings::setAutoclearSeconds(10);
-    if (QtPassSettings::getAutoclearPanelSeconds() < 5)
+}
+    if (QtPassSettings::getAutoclearPanelSeconds() < 5) {
       QtPassSettings::setAutoclearPanelSeconds(10);
-    if (!QtPassSettings::getPwgenExecutable().isEmpty())
+}
+    if (!QtPassSettings::getPwgenExecutable().isEmpty()) {
       QtPassSettings::setUsePwgen(true);
-    else
+    } else {
       QtPassSettings::setUsePwgen(false);
+}
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
     // QStringList ver = version.split(".");
@@ -90,23 +93,26 @@ auto QtPass::init() -> bool {
     // if (ver[0] == "0" && ver[1] == "8") {
     //// upgrade to 0.9
     // }
-    if (QtPassSettings::getPassTemplate().isEmpty())
+    if (QtPassSettings::getPassTemplate().isEmpty()) {
       QtPassSettings::setPassTemplate("login\nurl");
+}
   }
 
   QtPassSettings::setVersion(VERSION);
 
   if (Util::checkConfig()) {
     m_mainWindow->config();
-    if (freshStart && Util::checkConfig())
+    if (freshStart && Util::checkConfig()) {
       return false;
+}
   }
 
   // TODO(annejan): this needs to be before we try to access the store,
   // but it would be better to do it after the Window is shown,
   // as the long delay it can cause is irritating otherwise.
-  if (QtPassSettings::isUseWebDav())
+  if (QtPassSettings::isUseWebDav()) {
     mountWebDav();
+}
 
   freshStart = false;
   // startupPhase = false;
@@ -225,10 +231,12 @@ void QtPass::mountWebDav() {
   }
   QString error = fusedav.readAllStandardError();
   int prompt = error.indexOf("Password:");
-  if (prompt >= 0)
+  if (prompt >= 0) {
     error.remove(0, prompt + 10);
-  if (fusedav.state() != QProcess::Running)
+}
+  if (fusedav.state() != QProcess::Running) {
     error = tr("fusedav exited unexpectedly\n") + error;
+}
   if (error.size() > 0) {
     m_mainWindow->flashText(
         tr("Failed to start fusedav to connect WebDAV:\n") + error, true);
@@ -344,16 +352,18 @@ void QtPass::showInTextBrowser(QString output, const QString &prefix,
 }
 
 void QtPass::doGitPush() {
-  if (QtPassSettings::isAutoPush())
+  if (QtPassSettings::isAutoPush()) {
     m_mainWindow->onPush();
+}
 }
 
 void QtPass::setClippedText(const QString &password, const QString &p_output) {
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
       !p_output.isEmpty()) {
     clippedText = password;
-    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS)
+    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS) {
       copyTextToClipboard(password);
+}
   }
 }
 void QtPass::clearClippedText() { clippedText = ""; }

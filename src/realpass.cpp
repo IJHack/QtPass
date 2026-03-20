@@ -72,8 +72,9 @@ void RealPass::OtpGenerate(QString file) {
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   QStringList args = {"insert", "-m"};
-  if (overwrite)
+  if (overwrite) {
     args.append("-f");
+}
   args.append(file);
   executePass(PASS_INSERT, args, newValue);
 }
@@ -99,8 +100,9 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       path.remove(0, QtPassSettings::getPassStore().size());
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   foreach (const UserInfo &user, users) {
-    if (user.enabled)
+    if (user.enabled) {
       args.append(user.key_id);
+}
   }
   executePass(PASS_INIT, args);
 }

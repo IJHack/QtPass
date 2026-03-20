@@ -79,8 +79,9 @@ auto Util::findPasswordStore() -> QString {
  * @return
  */
 auto Util::normalizeFolderPath(QString path) -> QString {
-  if (!path.endsWith("/") && !path.endsWith(QDir::separator()))
+  if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
     path += QDir::separator();
+}
   return QDir::toNativeSeparators(path);
 }
 
@@ -116,8 +117,9 @@ auto Util::findBinaryInPath(QString binary) -> QString {
         qfi.reset(new QFileInfo(entry.append(".exe")));
 
 #endif
-      if (!qfi->isExecutable())
+      if (!qfi->isExecutable()) {
         continue;
+}
 
       ret = qfi->absoluteFilePath();
       break;
@@ -164,8 +166,9 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
     -> QString {
   QString abspath =
       QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
-  if (!index.isValid())
+  if (!index.isValid()) {
     return forPass ? "" : abspath;
+}
   QFileInfo info = model.fileInfo(storeModel.mapToSource(index));
   QString filePath =
       (info.isFile() ? info.absolutePath() : info.absoluteFilePath());

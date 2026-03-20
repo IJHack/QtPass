@@ -40,15 +40,17 @@ using Enums::PROCESS_COUNT;
 ImitatePass::ImitatePass() = default;
 
 static auto pgit(const QString &path) -> QString {
-  if (!QtPassSettings::getGitExecutable().startsWith("wsl "))
+  if (!QtPassSettings::getGitExecutable().startsWith("wsl ")) {
     return path;
+}
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
 
 static auto pgpg(const QString &path) -> QString {
-  if (!QtPassSettings::getGpgExecutable().startsWith("wsl "))
+  if (!QtPassSettings::getGpgExecutable().startsWith("wsl ")) {
     return path;
+}
   QString res = "$(wslpath " + path + ")";
   return res.replace('\\', '/');
 }
@@ -132,14 +134,16 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     args.append("-r");
     args.append(r);
   }
-  if (overwrite)
+  if (overwrite) {
     args.append("--yes");
+}
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
     // TODO(bezet): why not?
-    if (!overwrite)
+    if (!overwrite) {
       executeGit(GIT_ADD, {"add", pgit(file)});
+}
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
     QString msg =
@@ -155,10 +159,11 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
  * @param msg
  */
 void ImitatePass::GitCommit(const QString &file, const QString &msg) {
-  if (file.isEmpty())
+  if (file.isEmpty()) {
     executeGit(GIT_COMMIT, {"commit", "-m", msg});
-  else
+  } else {
     executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
+}
 }
 
 /**
@@ -167,8 +172,9 @@ void ImitatePass::GitCommit(const QString &file, const QString &msg) {
 void ImitatePass::Remove(QString file, bool isDir) {
   file = QtPassSettings::getPassStore() + file;
   transactionHelper trans(this, PASS_REMOVE);
-  if (!isDir)
+  if (!isDir) {
     file += ".gpg";
+}
   if (QtPassSettings::isUseGit()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
     // TODO(bezet): commit message used to have pass-like file name inside(ie.
@@ -220,8 +226,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       return;
     }
     QFileInfo checkFile(gpgIdSigFile);
-    if (!checkFile.exists() || !checkFile.isFile())
+    if (!checkFile.exists() || !checkFile.isFile()) {
       addSigFile = true;
+}
   }
 
   QString gpgIdFile = path + ".gpg-id";
@@ -230,8 +237,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   transactionHelper trans(this, PASS_INIT);
   if (QtPassSettings::isAddGPGId(true)) {
     QFileInfo checkFile(gpgIdFile);
-    if (!checkFile.exists() || !checkFile.isFile())
+    if (!checkFile.exists() || !checkFile.isFile()) {
       addFile = true;
+}
   }
   if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
     emit critical(tr("Cannot update"),
@@ -270,14 +278,16 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
       !QtPassSettings::getGitExecutable().isEmpty()) {
-    if (addFile)
+    if (addFile) {
       executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
+}
     QString commitPath = gpgIdFile;
     commitPath.replace(Util::endsWithGpg(), "");
     GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
     if (!signingKeys.isEmpty()) {
-      if (addSigFile)
+      if (addSigFile) {
         executeGit(GIT_ADD, {"add", pgit(gpgIdSigFile)});
+}
       commitPath = gpgIdSigFile;
       commitPath.replace(QRegularExpression("\\.gpg$"), "");
       GitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
@@ -299,8 +309,9 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
   QStringList signingKeys =
       QtPassSettings::getPassSigningKey().split(" ", QString::SkipEmptyParts);
 #endif
-  if (signingKeys.isEmpty())
+  if (signingKeys.isEmpty()) {
     return true;
+}
   QString out;
   QStringList args =
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
@@ -309,13 +320,15 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
       R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
       QRegularExpression::MultilineOption);
   QRegularExpressionMatch m = re.match(out);
-  if (!m.hasMatch())
+  if (!m.hasMatch()) {
     return false;
+}
   QStringList fingerprints = m.capturedTexts();
   fingerprints.removeFirst();
   for (auto &key : signingKeys) {
-    if (fingerprints.contains(key))
+    if (fingerprints.contains(key)) {
       return true;
+}
   }
   return false;
 }
@@ -334,13 +347,15 @@ auto ImitatePass::removeDir(const QString &dirName) -> bool {
                dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System |
                                      QDir::Hidden | QDir::AllDirs | QDir::Files,
                                  QDir::DirsFirst)) {
-      if (info.isDir())
+      if (info.isDir()) {
         result = removeDir(info.absoluteFilePath());
-      else
+      } else {
         result = QFile::remove(info.absoluteFilePath());
+}
 
-      if (!result)
+      if (!result) {
         return result;
+}
     }
     result = dir.rmdir(dirName);
   }
@@ -425,8 +440,9 @@ void ImitatePass::reencryptPath(const QString &dir) {
 
       if (!local_lastDecrypt.isEmpty() &&
           local_lastDecrypt != "Could not decrypt") {
-        if (local_lastDecrypt.right(1) != "\n")
+        if (local_lastDecrypt.right(1) != "\n") {
           local_lastDecrypt += "\n";
+}
 
         QStringList recipients = Pass::getRecipientList(fileName);
         if (recipients.isEmpty()) {
@@ -493,8 +509,9 @@ void ImitatePass::Move(const QString src, const QString dest,
       destFile = dest;
     }
 
-    if (destFile.endsWith(".gpg", Qt::CaseInsensitive))
+    if (destFile.endsWith(".gpg", Qt::CaseInsensitive)) {
       destFile.chop(4); //  make sure suffix is lowercase
+}
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {
@@ -617,8 +634,9 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
   transactionOutput.append(out);
 
   if (exitCode == 0) {
-    if (pid == INVALID)
+    if (pid == INVALID) {
       return;
+}
   } else {
     while (pid == INVALID) {
       id = exec.cancelNext();
