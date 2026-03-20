@@ -38,7 +38,9 @@ void QPushButtonAsQRCode::setTextToCopy(const QString &value) {
  * @brief QPushButtonAsQRCode::buttonClicked handles clicked event by
  * emitting clicked(QString) with string provided to constructor
  */
-void QPushButtonAsQRCode::buttonClicked(bool) { emit clicked(textToCopy); }
+void QPushButtonAsQRCode::buttonClicked(bool /*unused*/) {
+  emit clicked(textToCopy);
+}
 
 /**
  * @brief QPushButtonAsQRCode::changeIconDefault change the icon back to

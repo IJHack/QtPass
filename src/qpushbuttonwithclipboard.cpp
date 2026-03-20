@@ -40,7 +40,7 @@ void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
  * @brief QPushButtonWithClipboard::buttonClicked handles clicked event by
  * emitting clicked(QString) with string provided to constructor
  */
-void QPushButtonWithClipboard::buttonClicked(bool) {
+void QPushButtonWithClipboard::buttonClicked(bool /*unused*/) {
   setIcon(iconEditPushed);
   QTimer::singleShot(500, this, SLOT(changeIconDefault()));
   emit clicked(textToCopy);

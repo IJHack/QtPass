@@ -24,7 +24,7 @@ QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
  * @brief QPushButtonAsQRCode::buttonClicked handles clicked event by
  * emitting clicked(QString) with string provided to constructor
  */
-void QPushButtonShowPassword::buttonClicked(bool) {
+void QPushButtonShowPassword::buttonClicked(bool /*unused*/) {
   if (this->line->echoMode() == QLineEdit::Password) {
     this->line->setEchoMode(QLineEdit::Normal);
     setIcon(iconEditPushed);
