@@ -109,8 +109,8 @@ The following commands set up two profile folders:
 
 ```sh
 cd ~/.password-store/
-git clone https://github.com/vendor/personal-passwords personal && echo "personal/" >> .gitignore
-git clone https://github.com/company/group-passwords work && echo "work/" >> .gitignore
+git clone <personal-passwords-repository-url> personal && echo "personal/" >> .gitignore
+git clone <work-passwords-repository-url> work && echo "work/" >> .gitignore
 pass init -p personal [personal GnuPG-ID] && git -C personal push
 pass init -p work [work GnuPG-ID] && git -C work push
 ```
