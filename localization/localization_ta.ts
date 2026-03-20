@@ -5,39 +5,32 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="863"/>
         <source>Configuration</source>
         <translation>உள்ளமைவு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
-        <location filename="../src/ui_configdialog.h" line="907"/>
         <source>Settings</source>
         <translation>அமைப்புகள்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
-        <location filename="../src/ui_configdialog.h" line="864"/>
         <source>Clipboard behaviour:</source>
         <translation>இடைநிலைப்பலகை நடத்தை:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
-        <location filename="../src/ui_configdialog.h" line="865"/>
         <source>Use primary selection</source>
         <translation>முதன்மை தேர்வைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
-        <location filename="../src/ui_configdialog.h" line="866"/>
         <source>Autoclear after:</source>
         <translation>தன்னியக்க கற்றல் பிறகு:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
-        <location filename="../src/ui_configdialog.h" line="867"/>
-        <location filename="../src/ui_configdialog.h" line="872"/>
         <source>Seconds</source>
         <translation>நொடிகள்</translation>
     </message>
@@ -47,121 +40,101 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
-        <location filename="../src/ui_configdialog.h" line="868"/>
         <source>Content panel behaviour:</source>
         <translation>உள்ளடக்க குழு நடத்தை:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
-        <location filename="../src/ui_configdialog.h" line="869"/>
         <source>Hide content</source>
         <translation>உள்ளடக்கத்தை மறைக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
-        <location filename="../src/ui_configdialog.h" line="870"/>
         <source>Hide password</source>
         <translation>கடவுச்சொல்லை மறைக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
-        <location filename="../src/ui_configdialog.h" line="871"/>
         <source>Autoclear panel after:</source>
         <translation>தன்னியக்க குழு: பிறகு:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
-        <location filename="../src/ui_configdialog.h" line="873"/>
         <source>Use a monospace font</source>
         <translation>ஒரு மோனோச்பேச் எழுத்துருவைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
-        <location filename="../src/ui_configdialog.h" line="874"/>
         <source>Display the files content as-is</source>
         <translation>கோப்புகளின் உள்ளடக்கத்தைக் காண்பி</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
-        <location filename="../src/ui_configdialog.h" line="875"/>
         <source>No line wrapping</source>
         <translation>வரி மடக்குதல் இல்லை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
-        <location filename="../src/ui_configdialog.h" line="876"/>
         <source>Password Generation:</source>
         <translation>கடவுச்சொல் செனரேட்டர்:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
-        <location filename="../src/ui_configdialog.h" line="877"/>
         <source>Password Length:</source>
         <translation>கடவுச்சொல் நீளம்:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
-        <location filename="../src/ui_configdialog.h" line="878"/>
         <source>Characters</source>
         <translation>எழுத்துக்கள்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
-        <location filename="../src/ui_configdialog.h" line="879"/>
         <source>Use characters:</source>
         <translation>எழுத்துக்களைப் பயன்படுத்துங்கள்:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
-        <location filename="../src/ui_configdialog.h" line="886"/>
         <source>Select character set for password generation</source>
         <translation>கடவுச்சொல் தலைமுறைக்கு எழுத்து தொகுப்பைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
-        <location filename="../src/ui_configdialog.h" line="880"/>
         <source>All Characters</source>
         <translation>அனைத்து எழுத்துக்களும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
-        <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Alphabetical</source>
         <translation>அகரவரிசை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
-        <location filename="../src/ui_configdialog.h" line="882"/>
         <source>Alphanumerical</source>
         <translation>எண்ணெழுத்து</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
-        <location filename="../src/ui_configdialog.h" line="883"/>
         <source>Custom</source>
         <translation>தனிப்பயன்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
-        <location filename="../src/ui_configdialog.h" line="888"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>Abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
-        <location filename="../src/ui_configdialog.h" line="891"/>
         <source>Include special symbols</source>
         <translation>சிறப்பு சின்னங்களைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="922"/>
-        <location filename="../src/ui_configdialog.h" line="929"/>
         <source>Signing Key</source>
         <translation>கையொப்பமிடும் விசை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="962"/>
-        <location filename="../src/ui_configdialog.h" line="932"/>
         <source>Current path</source>
         <translation>தற்போதைய பாதை</translation>
     </message>
@@ -171,7 +144,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
-        <location filename="../src/ui_configdialog.h" line="890"/>
         <source>Exclude capital letters</source>
         <translation>பெரிய எழுத்துக்களை விலக்கு</translation>
     </message>
@@ -181,19 +153,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
-        <location filename="../src/ui_configdialog.h" line="892"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>மனப்பாடம் செய்ய எளிதாக உருவாக்கவும், ஆனால் குறைந்த பாதுகாப்பான கடவுச்சொற்களை உருவாக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
-        <location filename="../src/ui_configdialog.h" line="893"/>
         <source>Exclude numbers</source>
         <translation>எண்களை விலக்கு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="486"/>
-        <location filename="../src/ui_configdialog.h" line="894"/>
         <source>Git:</source>
         <translation>கிட்:</translation>
     </message>
@@ -203,25 +172,21 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
-        <location filename="../src/ui_configdialog.h" line="896"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.Gpg-id கோப்புகளை தானாக சேர்க்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
-        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Automatically push</source>
         <translation>தானாக தள்ளவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
-        <location filename="../src/ui_configdialog.h" line="898"/>
         <source>Automatically pull</source>
         <translation>தானாக இழுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
-        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Extensions:</source>
         <translation>நீட்டிப்புகள்:</translation>
     </message>
@@ -231,43 +196,36 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="603"/>
-        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>System:</source>
         <translation>அமைப்பு:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
-        <location filename="../src/ui_configdialog.h" line="903"/>
         <source>Use TrayIcon</source>
         <translation>ட்ராயிகானைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
-        <location filename="../src/ui_configdialog.h" line="904"/>
         <source>Start minimized</source>
         <translation>குறைக்கத் தொடங்குங்கள்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
-        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Hide on close</source>
         <translation>நெருக்கமாக மறைக்க</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
-        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>Always on top</source>
         <translation>எப்போதும் மேலே</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="661"/>
-        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>Programs</source>
         <translation>திட்டங்கள்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
-        <location filename="../src/ui_configdialog.h" line="908"/>
         <source>Select password storage program:</source>
         <translation>கடவுச்சொல் சேமிப்பக நிரலைத் தேர்ந்தெடுக்கவும்:</translation>
     </message>
@@ -277,13 +235,11 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
-        <location filename="../src/ui_configdialog.h" line="910"/>
         <source>&amp;Use pass</source>
         <translation>&amp; பாச் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
-        <location filename="../src/ui_configdialog.h" line="911"/>
         <source>Native</source>
         <translation>பழமை</translation>
     </message>
@@ -305,13 +261,11 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
-        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>Pass</source>
         <translation>கணவாய்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
-        <location filename="../src/ui_configdialog.h" line="919"/>
         <source>pass</source>
         <translation>கணவாய்</translation>
     </message>
@@ -321,31 +275,26 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="863"/>
-        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Profiles</source>
         <translation>சுயவிவரங்கள்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="912"/>
-        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Name</source>
         <translation>பெயர்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="917"/>
-        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>Path</source>
         <translation>பாதை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="932"/>
-        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Add</source>
         <translation>கூட்டு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="947"/>
-        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>Delete</source>
         <translation>நீக்கு</translation>
     </message>
@@ -355,7 +304,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="982"/>
-        <location filename="../src/ui_configdialog.h" line="944"/>
         <source>Template</source>
         <translation>வார்ப்புரு</translation>
     </message>
@@ -365,19 +313,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1012"/>
-        <location filename="../src/ui_configdialog.h" line="936"/>
         <source>Use template</source>
         <translation>வார்ப்புருவைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1019"/>
-        <location filename="../src/ui_configdialog.h" line="938"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>கடவுச்சொல்லைத் தொடர்ந்து ஒரு வார்த்தையுடன் தொடங்கும் அனைத்து வரிகளையும் கடவுச்சொல் புலங்களில் புலங்களாகக் காட்டுங்கள், பட்டியலிடப்பட்டவை மட்டுமல்ல</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
-        <location filename="../src/ui_configdialog.h" line="940"/>
         <source>Show all fields templated</source>
         <translation>அனைத்து புலங்கள் வார்ப்புருவைக் காட்டு</translation>
     </message>
@@ -391,7 +336,6 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
-        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href = &quot;https://qtpass.org/&quot;&gt; qtpass &lt;/a&gt; பதிப்பு </translation>
     </message>
@@ -462,13 +406,11 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="809"/>
-        <location filename="../src/ui_configdialog.h" line="921"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="840"/>
-        <location filename="../src/ui_configdialog.h" line="922"/>
         <source>Autodetect</source>
         <translation>ஆட்டோடெடெக்ட்</translation>
     </message>
@@ -499,37 +441,31 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
-        <location filename="../src/ui_configdialog.h" line="889"/>
         <source>Use PWGen</source>
         <translation>PWGEN ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
-        <location filename="../src/ui_configdialog.h" line="895"/>
         <source>Use Git</source>
         <translation>அறிவிலி பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
-        <location filename="../src/ui_configdialog.h" line="900"/>
         <source>Use QRencode</source>
         <translation>Qrencode ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
-        <location filename="../src/ui_configdialog.h" line="901"/>
         <source>Use pass-otp extension</source>
         <translation>PASS-OTP நீட்டிப்பைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
-        <location filename="../src/ui_configdialog.h" line="909"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>சொந்த அறிவிலி/சிபிசி</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
-        <location filename="../src/ui_configdialog.h" line="912"/>
         <source>Git</source>
         <translation>அறிவிலி</translation>
     </message>
@@ -539,35 +475,26 @@ email</translation>
         <location filename="../src/configdialog.ui" line="769"/>
         <location filename="../src/configdialog.ui" line="800"/>
         <location filename="../src/configdialog.ui" line="969"/>
-        <location filename="../src/ui_configdialog.h" line="913"/>
-        <location filename="../src/ui_configdialog.h" line="914"/>
-        <location filename="../src/ui_configdialog.h" line="917"/>
-        <location filename="../src/ui_configdialog.h" line="920"/>
-        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="749"/>
-        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>GPG</source>
         <translation>சிபிசி</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="762"/>
-        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>PWGen</source>
         <translation>நிறுவவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1003"/>
-        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>கடவுச்சொல் தலைமுறை உரையாடலில் மற்றும் கடவுச்சொல் பார்வையில் வார்ப்புருக்கள் கூடுதல் புலங்களைச் சேர்க்கின்றன.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1034"/>
-        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>login
 URL
 e-mail</source>
@@ -654,55 +581,46 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>Gnenearne gnupg gnukg keypair</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
-        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>புதிய விசை சோடியை உருவாக்குங்கள்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
-        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>கடவுச்சொற்றொடர்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
-        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>மின்னஞ்சல்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
-        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>பெயர்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
-        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ஒரு கடவுச்சொல்லின் நீளத்திற்கு வரம்பு இல்லை, அதைக் கவனமாகத் தேர்ந்தெடுக்க வேண்டும். &lt;br/&gt;பாதுகாப்பின் கண்ணோட்டத்தில், தனியார் விசையைத் திறப்பதற்கான பாச்ஃபிரேச் GNUPG இன் பலவீனமான புள்ளிகளில் ஒன்றாகும் (மற்றும் பிற பொது விசை குறியாக்க அமைப்புகளும்) மற்றொரு நபர் உங்கள் தனிப்பட்ட விசையைப் பெற்றால் உங்களிடம் உள்ள ஒரே பாதுகாப்பு இது. &lt;br/&gt; வெறுமனே, பாச்ஃபிரேச் ஒரு அகராதியிலிருந்து சொற்களைப் பயன்படுத்தக் கூடாது, மேலும் அகரவரிசை எழுத்துக்களின் விசயத்தைக் கலந்து, ஆல்பாபெடிக் அல்லாத எழுத்துக்களைப் பயன்படுத்த வேண்டும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>மீண்டும் பாச்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>வல்லுநர்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
-        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -768,7 +686,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="273"/>
-        <location filename="../src/ui_keygendialog.h" line="253"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href = &quot;https://www.gnupg.org/documentation/manuals/gnupg/unattented-gpg-key-genary.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
     </message>
@@ -802,7 +719,6 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="271"/>
         <source>QtPass</source>
         <translation>Qtpass</translation>
     </message>
@@ -814,8 +730,6 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
         <location filename="../src/mainwindow.cpp" line="943"/>
-        <location filename="../src/ui_mainwindow.h" line="283"/>
-        <location filename="../src/ui_mainwindow.h" line="285"/>
         <source>Edit</source>
         <translation>தொகு</translation>
     </message>
@@ -823,8 +737,6 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
         <location filename="../src/mainwindow.cpp" line="964"/>
-        <location filename="../src/ui_mainwindow.h" line="287"/>
-        <location filename="../src/ui_mainwindow.h" line="289"/>
         <source>Delete</source>
         <translation>நீக்கு</translation>
     </message>
@@ -834,7 +746,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
-        <location filename="../src/ui_mainwindow.h" line="298"/>
         <source>Push</source>
         <translation>புச்</translation>
     </message>
@@ -858,37 +769,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
-        <location filename="../src/ui_mainwindow.h" line="277"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+n</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
-        <location filename="../src/ui_mainwindow.h" line="291"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
-        <location filename="../src/ui_mainwindow.h" line="293"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>OTP மற்றும் நகலை இடைநிலைப்பலகைக்கு உருவாக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
-        <location filename="../src/ui_mainwindow.h" line="296"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+g</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
-        <location filename="../src/ui_mainwindow.h" line="300"/>
         <source>Git push</source>
         <translation>அறிவிலி புச்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
-        <location filename="../src/ui_mainwindow.h" line="304"/>
         <source>Git pull</source>
         <translation>அறிவிலி இழுத்தல்</translation>
     </message>
@@ -898,7 +803,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
-        <location filename="../src/ui_mainwindow.h" line="302"/>
         <source>Update</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
@@ -915,14 +819,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
-        <location filename="../src/ui_mainwindow.h" line="308"/>
         <source>Manage who can read password in folder</source>
         <translation>கோப்புறையில் கடவுச்சொல்லை யார் படிக்க முடியும் என்பதை நிர்வகிக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <location filename="../src/mainwindow.cpp" line="937"/>
-        <location filename="../src/ui_mainwindow.h" line="306"/>
         <source>Users</source>
         <translation>பயனர்கள்</translation>
     </message>
@@ -939,31 +841,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="386"/>
-        <location filename="../src/ui_mainwindow.h" line="312"/>
         <source>Configuration</source>
         <translation>உள்ளமைவு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
-        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Config</source>
         <translation>கட்டமைப்பு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
-        <location filename="../src/ui_mainwindow.h" line="314"/>
         <source>Select profile</source>
         <translation>சுயவிவரத்தைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
-        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Welcome to QtPass</source>
         <translation>QTPASS க்கு வருக</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
-        <location filename="../src/ui_mainwindow.h" line="316"/>
         <source>Search Password</source>
         <translation>கடவுச்சொல்லைத் தேடுங்கள்</translation>
     </message>
@@ -1162,8 +1059,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="935"/>
-        <location filename="../src/ui_mainwindow.h" line="279"/>
-        <location filename="../src/ui_mainwindow.h" line="281"/>
         <source>Add folder</source>
         <translation>கோப்புறையைச் சேர்</translation>
     </message>
@@ -1171,8 +1066,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="936"/>
-        <location filename="../src/ui_mainwindow.h" line="272"/>
-        <location filename="../src/ui_mainwindow.h" line="274"/>
         <source>Add password</source>
         <translation>கடவுச்சொல்லைச் சேர்க்கவும்</translation>
     </message>
@@ -1225,7 +1118,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
-        <location filename="../src/ui_mainwindow.h" line="318"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1254,56 +1146,46 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
-        <location filename="../src/ui_passworddialog.h" line="174"/>
-        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>கடவுச்சொல்</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
-        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>உருவாக்கு</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
-        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>கடவுச்சொல்லைக் காட்டு</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
-        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>எழுத்து தொகுப்பு:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
-        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>அனைத்து எழுத்துக்களும்</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
-        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>அகரவரிசை</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
-        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>எண்ணெழுத்து</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
-        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>தனிப்பயன்</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
-        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>நீளம்:</translation>
     </message>
@@ -1450,13 +1332,11 @@ p, li { white-space: pre-wrap; }
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="102"/>
         <source>Read access users</source>
         <translation>அணுகல் பயனர்களைப் படியுங்கள்</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
-        <location filename="../src/ui_usersdialog.h" line="103"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1468,7 +1348,6 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="69"/>
-        <location filename="../src/ui_usersdialog.h" line="107"/>
         <source>Search for users</source>
         <translation>பயனர்களைத் தேடுங்கள்</translation>
     </message>
@@ -1488,7 +1367,6 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="76"/>
-        <location filename="../src/ui_usersdialog.h" line="108"/>
         <source>Show unusable keys</source>
         <translation>பயன்படுத்த முடியாத விசைகளைக் காட்டு</translation>
     </message>
