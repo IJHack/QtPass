@@ -45,3 +45,4 @@ artwork/qtpass-icon.png
 .aider*
 compile_commands.json
 .cache
+linter-output.log

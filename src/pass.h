@@ -55,7 +55,7 @@ public:
   static QString getGpgIdPath(const QString &for_file);
   static QStringList getRecipientList(const QString &for_file);
   // TODO(bezet): getRecipientString is useless, refactor
-  static QStringList getRecipientString(QString for_file,
+  static QStringList getRecipientString(const QString &for_file,
                                         const QString &separator = " ",
                                         int *count = NULL);
 

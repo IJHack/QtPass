@@ -35,7 +35,7 @@ public:
   void useAutoclearPanel(bool useAutoclearPanel);
   QHash<QString, QHash<QString, QString>> getProfiles();
   void wizard();
-  void genKey(QString, QDialog *);
+  void genKey(const QString &, QDialog *);
   void useTrayIcon(bool useSystray);
   void useGit(bool useGit);
   void useOtp(bool useOtp);

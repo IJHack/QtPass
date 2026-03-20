@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
@@ -48,7 +50,7 @@ private Q_SLOTS:
   void simpleTransactionNested();
 };
 
-bool operator==(const NamedValue &a, const NamedValue &b) {
+auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
   return a.name == b.name && a.value == b.value;
 }
 
