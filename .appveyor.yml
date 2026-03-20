@@ -73,8 +73,7 @@ build_script:
   - if not exist dist\qtpass\README.txt exit /b 1
   - if not exist dist\qtpass\LICENSE.txt exit /b 1
   - dir dist\qtpass
-  - powershell -NoProfile -ExecutionPolicy Bypass -File scripts\filter-innosetup-languages.ps1
-  - if "%APPVEYOR_REPO_TAG%"=="true" (iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.ci.iss) else (iscc qtpass.ci.iss)
+  - if "%APPVEYOR_REPO_TAG%"=="true" (iscc /DMyAppVersion=%APPVEYOR_REPO_TAG_NAME% qtpass.iss) else (iscc qtpass.iss)
 
 artifacts:
   - path: Output\qtpass-*.exe
