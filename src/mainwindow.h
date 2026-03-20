@@ -43,7 +43,7 @@ public:
   ~MainWindow();
 
   void restoreWindow();
-  void generateKeyPair(QString, QDialog *);
+  void generateKeyPair(const QString &, QDialog *);
   void userDialog(const QString & = "");
   void config();
 

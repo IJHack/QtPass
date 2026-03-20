@@ -320,7 +320,7 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
  * @param for_file which file (folder) would you like recepients for
  * @return recepients gpg-id contents
  */
-auto Pass::getRecipientList(QString for_file) -> QStringList {
+auto Pass::getRecipientList(const QString &for_file) -> QStringList {
   QFile gpgId(getGpgIdPath(for_file));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text))
     return {};

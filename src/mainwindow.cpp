@@ -753,7 +753,7 @@ void MainWindow::messageAvailable(const QString &message) {
  * @param batch
  * @param keygenWindow
  */
-void MainWindow::generateKeyPair(QString batch, QDialog *keygenWindow) {
+void MainWindow::generateKeyPair(const QString &batch, QDialog *keygenWindow) {
   keygen = keygenWindow;
   emit generateGPGKeyPair(batch);
 }
