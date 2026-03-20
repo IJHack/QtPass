@@ -6,63 +6,28 @@
 
 ## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
 
-## What's Changed
-* Fix build with Qt6. by @Vascom in https://github.com/IJHack/QtPass/pull/656
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/659
-* qtpass do not strip comments of gpg_id file  by @shemeshg in https://github.com/IJHack/QtPass/pull/658
-* new macOS icon by @ivan-avalos by @annejan in https://github.com/IJHack/QtPass/pull/662
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/664
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/666
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/669
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/670
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/673
-* Add window icon to all dialogs by @ruimaciel in https://github.com/IJHack/QtPass/pull/672
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/676
-* Update new TLDs for email when generating new key pair by @vdchuyen in https://github.com/IJHack/QtPass/pull/680
-* Fix multiple profiles issue for Qt6 by @souk4711 in https://github.com/IJHack/QtPass/pull/681
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/685
-* fix: add missing QDirIterator include by @principis in https://github.com/IJHack/QtPass/pull/690
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/689
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/691
-* Allow to select password password names by @stkw0 in https://github.com/IJHack/QtPass/pull/695
-* publiccode.yml added by @annejan in https://github.com/IJHack/QtPass/pull/696
-* ci: add publiccode.yml validation workflow by @publiccode-pr-bot in https://github.com/IJHack/QtPass/pull/701
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/699
-* Updates for file localization/localization_af_ZA.ts in de_DE by @transifex-integration[bot] in https://github.com/IJHack/QtPass/pull/698
-* Updates for file localization/localization_en_GB.ts in de_DE by @transifex-integration[bot] in https://github.com/IJHack/QtPass/pull/697
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/702
-* Restore existing window when invoking `qtpass` with no arguments by @basil in https://github.com/IJHack/QtPass/pull/704
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/703
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/707
-* Fix some deprecations by @annejan in https://github.com/IJHack/QtPass/pull/708
-* ci: bump github/codeql-action from 2 to 4 by @dependabot[bot] in https://github.com/IJHack/QtPass/pull/709
-* ci: bump actions/checkout from 1 to 6 by @dependabot[bot] in https://github.com/IJHack/QtPass/pull/710
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/713
-* Code quality improvements: modernize syntax and added error handling by @annejan in https://github.com/IJHack/QtPass/pull/715
-* Fix ambiguous qCompare call in tst_util by @annejan in https://github.com/IJHack/QtPass/pull/716
-* ci: bump jurplel/install-qt-action from 3 to 4 by @dependabot[bot] in https://github.com/IJHack/QtPass/pull/712
-* ci: bump github/super-linter from 4 to 7 by @dependabot[bot] in https://github.com/IJHack/QtPass/pull/711
-* Modernization and more testing by @annejan in https://github.com/IJHack/QtPass/pull/717
-* More CPP style and reliability fixes by @annejan in https://github.com/IJHack/QtPass/pull/718
-* Lots more linting fixes by @annejan in https://github.com/IJHack/QtPass/pull/719
-* Apply clang-tidy modernizations by @annejan in https://github.com/IJHack/QtPass/pull/720
-* More clang-tidy modernizations by @annejan in https://github.com/IJHack/QtPass/pull/721
-* PublicCode, AppVeyor and InnoSetup modernization by @annejan in https://github.com/IJHack/QtPass/pull/722
-* Translations update from Hosted Weblate by @weblate in https://github.com/IJHack/QtPass/pull/723
-* Refresh README badges and branch links by @annejan in https://github.com/IJHack/QtPass/pull/724
+### Highlights
 
-## New Contributors
-* @Vascom made their first contribution in https://github.com/IJHack/QtPass/pull/656
-* @shemeshg made their first contribution in https://github.com/IJHack/QtPass/pull/658
-* @ruimaciel made their first contribution in https://github.com/IJHack/QtPass/pull/672
-* @vdchuyen made their first contribution in https://github.com/IJHack/QtPass/pull/680
-* @souk4711 made their first contribution in https://github.com/IJHack/QtPass/pull/681
-* @principis made their first contribution in https://github.com/IJHack/QtPass/pull/690
-* @stkw0 made their first contribution in https://github.com/IJHack/QtPass/pull/695
-* @publiccode-pr-bot made their first contribution in https://github.com/IJHack/QtPass/pull/701
-* @transifex-integration[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/698
-* @basil made their first contribution in https://github.com/IJHack/QtPass/pull/704
-* @dependabot[bot] made their first contribution in https://github.com/IJHack/QtPass/pull/709
+- `1.5.0` release metadata and packaging preparation across the desktop app, installer, and CI configuration.
+- Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.
+- Modernized C++/Qt build pipeline with clang-tidy and wider lint/test hardening.
+
+### Fixes & Improvements
+
+- Fixed profile handling issues in Qt6 compatibility scenarios and improved profile selection behavior [#681](https://github.com/IJHack/QtPass/pull/681), [#695](https://github.com/IJHack/QtPass/pull/695).
+- Preserved existing application behavior when launching `qtpass` without parameters [#704](https://github.com/IJHack/QtPass/pull/704).
+- Removed a regression where gpg_id comments could be altered [#658](https://github.com/IJHack/QtPass/pull/658).
+- Added missing include path fixes and small reliability hardening in core code paths [#690](https://github.com/IJHack/QtPass/pull/690), [#716](https://github.com/IJHack/QtPass/pull/716).
+
+### Release, CI and Maintenance
+
+- Added/updated PublicCode and CI workflows, including release-time validation and action upgrades [#701](https://github.com/IJHack/QtPass/pull/701), [#709](https://github.com/IJHack/QtPass/pull/709), [#710](https://github.com/IJHack/QtPass/pull/710), [#711](https://github.com/IJHack/QtPass/pull/711), [#712](https://github.com/IJHack/QtPass/pull/712).
+- Completed the AppVeyor/Inno Setup modernization and packaging updates [#722](https://github.com/IJHack/QtPass/pull/722).
+- Updated README status badges and branch links to current workflow targets [#724](https://github.com/IJHack/QtPass/pull/724).
+
+### Localization
+
+- Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723).
 
 **Full Changelog**: https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0
 
