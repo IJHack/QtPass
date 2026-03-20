@@ -5,7 +5,11 @@
 #include <QTemporaryDir>
 #include <QtTest>
 
+#include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
+#include "../../../src/passwordconfiguration.h"
+#include "../../../src/simpletransaction.h"
+#include "../../../src/userinfo.h"
 #include "../../../src/util.h"
 
 /**
@@ -26,12 +30,22 @@ private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
   void normalizeFolderPath();
+  void normalizeFolderPathEdgeCases();
   void fileContent();
+  void fileContentEdgeCases();
   void namedValuesTakeValue();
+  void namedValuesEdgeCases();
   void totpHiddenFromDisplay();
   void regexPatterns();
+  void regexPatternEdgeCases();
   void copyDirBasic();
   void copyDirWithSubdirs();
+  void copyDirEmpty();
+  void userInfoValidity();
+  void userInfoValidityEdgeCases();
+  void passwordConfigurationCharacters();
+  void simpleTransactionBasic();
+  void simpleTransactionNested();
 };
 
 bool operator==(const NamedValue &a, const NamedValue &b) {
@@ -225,6 +239,173 @@ void tst_util::copyDirWithSubdirs() {
   QVERIFY(QFile::exists(destDir.path() + "/a/b/file_ab.txt"));
   QVERIFY(QFile::exists(destDir.path() + "/a/b/c/file_abc.txt"));
   QVERIFY(QFile::exists(destDir.path() + "/x/file_x.txt"));
+}
+
+void tst_util::normalizeFolderPathEdgeCases() {
+  QString result = Util::normalizeFolderPath("");
+  QVERIFY(result.endsWith("/") || result.endsWith(QDir::separator()));
+
+  result = Util::normalizeFolderPath("/");
+  QVERIFY(result.endsWith("/"));
+
+  result = Util::normalizeFolderPath("path/to/dir/");
+  QVERIFY(result.endsWith("/"));
+
+  QString unixResult = Util::normalizeFolderPath("path/to/dir");
+  QVERIFY(unixResult.endsWith("/"));
+}
+
+void tst_util::fileContentEdgeCases() {
+  FileContent fc =
+      FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY(nv.length() > 0);
+  if (nv.length() > 0) {
+    QCOMPARE(nv.at(0).name, QString("key"));
+    QVERIFY(nv.at(0).value.contains("spaces"));
+  }
+
+  fc = FileContent::parse("pass\n://something\n", {}, false);
+  QVERIFY(fc.getRemainingData().contains("://"));
+
+  fc = FileContent::parse("pass\nno colon line\n", {}, false);
+  QVERIFY(fc.getRemainingData().contains("no colon line"));
+
+  fc = FileContent::parse("pass\nkey: value\nkey2: duplicate\n", {}, true);
+  QVERIFY(fc.getNamedValues().length() >= 1);
+
+  fc = FileContent::parse("pass\n", {}, false);
+  QVERIFY(fc.getPassword() == "pass");
+  QVERIFY(fc.getNamedValues().isEmpty());
+}
+
+void tst_util::namedValuesEdgeCases() {
+  NamedValues nv;
+  QVERIFY(nv.isEmpty());
+  QVERIFY(nv.takeValue("nonexistent").isEmpty());
+
+  NamedValue n1 = {"key", "value"};
+  nv.append(n1);
+  QVERIFY(nv.length() == 1);
+  NamedValue n2 = {"key2", "value2"};
+  nv.append(n2);
+  QVERIFY(nv.length() == 2);
+
+  nv.clear();
+  QVERIFY(nv.isEmpty());
+  QVERIFY(nv.takeValue("anything").isEmpty());
+}
+
+void tst_util::regexPatternEdgeCases() {
+  const QRegularExpression &gpg = Util::endsWithGpg();
+  QVERIFY(gpg.match(".gpg").hasMatch());
+  QVERIFY(gpg.match("a.gpg").hasMatch());
+  QVERIFY(gpg.match(".gpg").hasMatch());
+  QVERIFY(!gpg.match("test.gpgx").hasMatch());
+
+  const QRegularExpression &proto = Util::protocolRegex();
+  QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
+  QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
+  QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
+  QVERIFY(!proto.match("file:///path/to/file").hasMatch());
+
+  const QRegularExpression &nl = Util::newLinesRegex();
+  QVERIFY(nl.match("\n").hasMatch());
+  QVERIFY(nl.match("\r").hasMatch());
+  QVERIFY(nl.match("\r\n").hasMatch());
+}
+
+void tst_util::copyDirEmpty() {
+  QTemporaryDir srcDir;
+  QTemporaryDir destDir;
+  Util::copyDir(srcDir.path(), destDir.path());
+  QDir dest(destDir.path());
+  QVERIFY(dest.exists());
+}
+
+void tst_util::userInfoValidity() {
+  UserInfo info;
+  info.validity = 'f';
+  QVERIFY(info.fullyValid());
+  QVERIFY(!info.marginallyValid());
+  QVERIFY(info.isValid());
+
+  info.validity = 'u';
+  QVERIFY(info.fullyValid());
+  QVERIFY(!info.marginallyValid());
+  QVERIFY(info.isValid());
+
+  info.validity = 'm';
+  QVERIFY(!info.fullyValid());
+  QVERIFY(info.marginallyValid());
+  QVERIFY(info.isValid());
+
+  info.validity = 'n';
+  QVERIFY(!info.fullyValid());
+  QVERIFY(!info.marginallyValid());
+  QVERIFY(!info.isValid());
+
+  info.validity = 'e';
+  QVERIFY(!info.isValid());
+}
+
+void tst_util::userInfoValidityEdgeCases() {
+  UserInfo info;
+  info.validity = '-';
+  QVERIFY(!info.isValid());
+
+  info.validity = 'q';
+  QVERIFY(!info.isValid());
+
+  info.validity = '\0';
+  QVERIFY(!info.isValid());
+
+  QVERIFY(!info.have_secret);
+  QVERIFY(!info.enabled);
+}
+
+void tst_util::passwordConfigurationCharacters() {
+  PasswordConfiguration config;
+  QVERIFY(config.length == 16);
+  QVERIFY(config.selected == PasswordConfiguration::ALLCHARS);
+
+  QVERIFY(!config.Characters[PasswordConfiguration::ALLCHARS].isEmpty());
+  QVERIFY(!config.Characters[PasswordConfiguration::ALPHABETICAL].isEmpty());
+  QVERIFY(!config.Characters[PasswordConfiguration::ALPHANUMERIC].isEmpty());
+  QVERIFY(!config.Characters[PasswordConfiguration::CUSTOM].isEmpty());
+
+  QVERIFY(config.Characters[PasswordConfiguration::ALLCHARS].length() >
+          config.Characters[PasswordConfiguration::ALPHABETICAL].length());
+
+  QVERIFY(config.Characters[PasswordConfiguration::ALPHANUMERIC].length() >
+          config.Characters[PasswordConfiguration::ALPHABETICAL].length());
+}
+
+void tst_util::simpleTransactionBasic() {
+  simpleTransaction trans;
+
+  trans.transactionAdd(Enums::PASS_INSERT);
+  trans.transactionStart();
+  trans.transactionAdd(Enums::GIT_ADD);
+  trans.transactionAdd(Enums::GIT_COMMIT);
+  trans.transactionEnd(Enums::GIT_COMMIT);
+
+  Enums::PROCESS result = trans.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY(result != Enums::INVALID);
+}
+
+void tst_util::simpleTransactionNested() {
+  simpleTransaction trans;
+
+  trans.transactionStart();
+  trans.transactionAdd(Enums::PASS_INSERT);
+  trans.transactionStart();
+  trans.transactionAdd(Enums::GIT_PUSH);
+  trans.transactionEnd(Enums::GIT_PUSH);
+  trans.transactionEnd(Enums::PASS_INSERT);
+
+  Enums::PROCESS result = trans.transactionIsOver(Enums::GIT_PUSH);
+  QVERIFY(result != Enums::INVALID);
 }
 
 QTEST_MAIN(tst_util)
