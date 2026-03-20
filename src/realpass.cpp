@@ -32,7 +32,8 @@ void RealPass::GitInit() { executePass(GIT_INIT, {"git", "init"}); }
  *                          finishes
  */
 void RealPass::GitPull_b() {
-  exec.executeBlocking(QtPassSettings::getPassExecutable(), {"git", "pull"});
+  Executor::executeBlocking(QtPassSettings::getPassExecutable(),
+                            {"git", "pull"});
 }
 
 /**

@@ -98,8 +98,8 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
       args.append("--symbols");
     args.append(QString::number(length));
     // TODO(bezet): try-catch here(2 statuses to merge o_O)
-    if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,
-                             &passwd) == 0) {
+    if (Executor::executeBlocking(QtPassSettings::getPwgenExecutable(), args,
+                                  &passwd) == 0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
       passwd.remove(literalNewLines);
     } else {
@@ -153,8 +153,8 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
     }
   }
   QString p_out;
-  if (exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &p_out) !=
-      0)
+  if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
+                                &p_out) != 0)
     return users;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList keys =

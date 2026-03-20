@@ -69,7 +69,7 @@ void ImitatePass::GitPull() { executeGit(GIT_PULL, {"pull"}); }
  * @brief ImitatePass::GitPull_b git pull wrapper
  */
 void ImitatePass::GitPull_b() {
-  exec.executeBlocking(QtPassSettings::getGitExecutable(), {"pull"});
+  Executor::executeBlocking(QtPassSettings::getGitExecutable(), {"pull"});
 }
 
 /**
@@ -205,7 +205,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     QString out;
     QStringList args =
         QStringList{"--status-fd=1", "--list-secret-keys"} + signingKeys;
-    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+    Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
     bool found = false;
     for (auto &key : signingKeys) {
       if (out.contains("[GNUPG:] KEY_CONSIDERED " + key)) {
@@ -260,7 +260,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       args.append(QStringList{"--default-key", key});
     }
     args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
-    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args);
+    Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args);
     if (!verifyGpgIdFile(gpgIdFile)) {
       emit critical(tr("Check .gpgid file signature!"),
                     tr("Signature for %1 is invalid.").arg(gpgIdFile));
@@ -304,7 +304,7 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
   QString out;
   QStringList args =
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
-  exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
   QRegularExpression re(
       R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
       QRegularExpression::MultilineOption);
@@ -389,7 +389,8 @@ void ImitatePass::reencryptPath(const QString &dir) {
         "--list-only", "--keyid-format=long", pgpg(fileName)};
     QString keys;
     QString err;
-    exec.executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys, &err);
+    Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys,
+                              &err);
     QStringList actualKeys;
     keys += err;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
@@ -419,8 +420,8 @@ void ImitatePass::reencryptPath(const QString &dir) {
       args = QStringList{
           "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
           "--batch", "--use-agent", pgpg(fileName)};
-      exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
-                           &local_lastDecrypt);
+      Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
+                                &local_lastDecrypt);
 
       if (!local_lastDecrypt.isEmpty() &&
           local_lastDecrypt != "Could not decrypt") {
@@ -441,18 +442,18 @@ void ImitatePass::reencryptPath(const QString &dir) {
           args.append(i);
         }
         args.append("-");
-        exec.executeBlocking(QtPassSettings::getGpgExecutable(), args,
-                             local_lastDecrypt);
+        Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
+                                  local_lastDecrypt);
 
         if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-          exec.executeBlocking(QtPassSettings::getGitExecutable(),
-                               {"add", pgit(fileName)});
+          Executor::executeBlocking(QtPassSettings::getGitExecutable(),
+                                    {"add", pgit(fileName)});
           QString path =
               QDir(QtPassSettings::getPassStore()).relativeFilePath(fileName);
           path.replace(Util::endsWithGpg(), "");
-          exec.executeBlocking(QtPassSettings::getGitExecutable(),
-                               {"commit", pgit(fileName), "-m",
-                                "Edit for " + path + " using QtPass."});
+          Executor::executeBlocking(QtPassSettings::getGitExecutable(),
+                                    {"commit", pgit(fileName), "-m",
+                                     "Edit for " + path + " using QtPass."});
         }
 
       } else {
