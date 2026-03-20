@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v6
       - uses: italia/publiccode-parser-action@v1
         with:
-          publiccode: 'publiccode.yml'
+          publiccode: "publiccode.yml"

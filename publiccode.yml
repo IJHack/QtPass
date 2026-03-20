@@ -1,10 +1,10 @@
-publiccodeYmlVersion: '0.4.0'
+publiccodeYmlVersion: "0.4.0"
 
 name: QtPass
 applicationSuite: pass
-url: 'https://github.com/IJHack/QtPass'
-landingURL: 'https://qtpass.org'
-logo: 'https://qtpass.org/images/logo.png'
+url: "https://github.com/IJHack/QtPass"
+landingURL: "https://qtpass.org"
+logo: "https://qtpass.org/images/logo.png"
 
 softwareType: standalone/desktop
 platforms:
@@ -19,8 +19,8 @@ categories:
 
 developmentStatus: stable
 
-softwareVersion: '1.4.0'
-releaseDate: '2023-07-02'
+softwareVersion: "1.4.0"
+releaseDate: "2023-07-02"
 
 description:
   en:
@@ -30,20 +30,20 @@ description:
       QtPass is a multi-platform GUI for pass, the standard Unix password manager.
       It allows users to manage their password store via a user-friendly graphical interface
       across Linux, Windows, and macOS. It integrates with GnuPG and can be used in team setups.
-    documentation: 'https://qtpass.org/docs'
+    documentation: "https://qtpass.org/docs"
     features:
-       - Using pass or git and gpg2 directly
-       - 'Cross platform: Linux, BSD, OS X and Windows'
-       - Using native widgets and iconography where possible
-       - Reading pass password stores
-       - Decrypting and displaying the password and related info
-       - Editing and adding of passwords and information
-       - Updating to and from a git repository
-       - Per-folder user selection for multi recipient encryption
-       - Configuration options for backends and executable/folder locations
-       - Copying password to clipboard
-       - Configurable shoulder surfing protection options
-       - Easy onboarding for new users
+      - Using pass or git and gpg2 directly
+      - "Cross platform: Linux, BSD, OS X and Windows"
+      - Using native widgets and iconography where possible
+      - Reading pass password stores
+      - Decrypting and displaying the password and related info
+      - Editing and adding of passwords and information
+      - Updating to and from a git repository
+      - Per-folder user selection for multi recipient encryption
+      - Configuration options for backends and executable/folder locations
+      - Copying password to clipboard
+      - Configurable shoulder surfing protection options
+      - Easy onboarding for new users
 
 usedBy:
   - Tails
@@ -74,10 +74,8 @@ localisation:
 dependsOn:
   open:
     - name: pass
-      versionMin: '1.7'
+      versionMin: "1.7"
     - name: gnupg
-      version: '2.2'
+      version: "2.2"
     - name: Qt
-      versionMin: '5.12'
-
-
+      versionMin: "5.12"

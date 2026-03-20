@@ -1,5 +1,5 @@
 ---
 coverage:
-    ignore:
-        - tests/*
-        - src/qrc_*.cpp
+  ignore:
+    - tests/*
+    - src/qrc_*.cpp

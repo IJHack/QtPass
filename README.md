@@ -16,12 +16,12 @@ the standard unix password manager.
 
 ## Features
 
-* Using `pass` or `git` and `gpg2` directly
-* Configurable shoulder surfing protection options
-* Cross platform: Linux, BSD, macOS and Windows
-* Per-folder user selection for multi recipient encryption
-* Multiple profiles
-* Easy onboarding
+- Using `pass` or `git` and `gpg2` directly
+- Configurable shoulder surfing protection options
+- Cross platform: Linux, BSD, macOS and Windows
+- Per-folder user selection for multi recipient encryption
+- Multiple profiles
+- Easy onboarding
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
@@ -61,9 +61,9 @@ Windows
 
 #### Dependencies
 
-* QtPass requires Qt 5.10 or later (Qt 6 works too)
-* The Linguist package is required to compile the translations.
-* For use of the fallback icons the SVG library is required.
+- QtPass requires Qt 5.10 or later (Qt 6 works too)
+- The Linguist package is required to compile the translations.
+- For use of the fallback icons the SVG library is required.
 
 At runtime the only real dependency is `gpg2` but to make the most of it, you'll need `git` and `pass` too.
 
@@ -101,17 +101,17 @@ pass init -p work [work GnuPG-ID] && git -C work push
 
 **Note:**
 
-* Replace `[personal GnuPG-ID]` and `[work GnuPG-ID]` with the ID from the related GnuPG key.
-* The parts `echo ... >> .gitignore` are just needed in case there is a git repository present in the base directory.
+- Replace `[personal GnuPG-ID]` and `[work GnuPG-ID]` with the ID from the related GnuPG key.
+- The parts `echo ... >> .gitignore` are just needed in case there is a git repository present in the base directory.
 
 Once the repositories and GnuPG-ID's have been defined the profiles can be set up in QtPass.
 
 ### Links of interest
 
-* [Git Tools - Credential Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)
-* [Dealing with secrets](https://gist.github.com/maelvls/79d49740ce9208c26d6a1b10b0d95b5e)
-* [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)
-* [password-store](https://git.zx2c4.com/password-store/about/)
+- [Git Tools - Credential Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)
+- [Dealing with secrets](https://gist.github.com/maelvls/79d49740ce9208c26d6a1b10b0d95b5e)
+- [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)
+- [password-store](https://git.zx2c4.com/password-store/about/)
 
 ## Testing
 
@@ -139,11 +139,11 @@ it installed (or at least one that knows how to use a smartcard).
 To get better protection out of use with a smartcard even against a targeted
 attack I can think of at least two options:
 
-* The smartcard must require explicit confirmation for each decryption operation.
+- The smartcard must require explicit confirmation for each decryption operation.
   Or if it just provides a counter for decrypted data you could at least notice
   an attack afterwards, though at quite some effort on your part.
-* Use a different smartcard for each (group of) key.
-* If using a YubiKey or U2F module or similar that requires a "button" press for
+- Use a different smartcard for each (group of) key.
+- If using a YubiKey or U2F module or similar that requires a "button" press for
   other authentication methods you can use one OTP/U2F enabled WebDAV account per
   password (or groups of passwords) as a quite inconvenient workaround.
   Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
@@ -151,19 +151,19 @@ attack I can think of at least two options:
 
 ## Known issues
 
-* Filtering (searching) breaks the tree/model sometimes
-* Starting without a correctly set password-store folder
+- Filtering (searching) breaks the tree/model sometimes
+- Starting without a correctly set password-store folder
   gives weird results in the tree view
 
 ## Planned features
 
-* Plugins based on field name, plugins follow same format as password files
-* Colour coding folders (possibly disabling folders you can't decrypt)
-* Optional table view of decrypted folder contents
-* Opening of (basic auth) URLs in default browser?
+- Plugins based on field name, plugins follow same format as password files
+- Colour coding folders (possibly disabling folders you can't decrypt)
+- Optional table view of decrypted folder contents
+- Opening of (basic auth) URLs in default browser?
   Possibly with helper plugin for filling out forms?
-* WebDAV (configuration) support
-* Some other form of remote storage that allows for
+- WebDAV (configuration) support
+- Some other form of remote storage that allows for
   accountability / auditing (web API to retrieve the .gpg files?)
 
 ## Further reading
