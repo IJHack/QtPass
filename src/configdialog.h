@@ -90,6 +90,11 @@ private:
   bool isQrencodeAvailable();
   void validate(QTableWidgetItem *item = nullptr);
 
+  bool checkGpgExistence();
+  bool checkSecretKeys();
+  bool checkPasswordStore();
+  void handleGpgIdFile();
+
   MainWindow *mainWindow;
 };
 
