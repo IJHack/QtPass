@@ -109,14 +109,23 @@ The following commands set up two profile folders:
 
 ```sh
 cd ~/.password-store/
-git clone https://github.com/vendor/personal-passwords personal && echo "personal/" >> .gitignore
-git clone https://github.com/company/group-passwords work && echo "work/" >> .gitignore
+# Replace these with your own repositories (HTTPS or SSH).
+PERSONAL_REPO_URL="<your-personal-password-repository-url>"
+WORK_REPO_URL="<your-work-password-repository-url>"
+
+# Examples:
+# git clone https://git.example.com/you/qtpass-personal.git personal
+# git clone git@git.example.com:you/qtpass-work.git work
+
+git clone "${PERSONAL_REPO_URL}" personal && echo "personal/" >> .gitignore
+git clone "${WORK_REPO_URL}" work && echo "work/" >> .gitignore
 pass init -p personal [personal GnuPG-ID] && git -C personal push
 pass init -p work [work GnuPG-ID] && git -C work push
 ```
 
 **Note:**
 
+- Replace `PERSONAL_REPO_URL` and `WORK_REPO_URL` with repositories you own and control.
 - Replace `[personal GnuPG-ID]` and `[work GnuPG-ID]` with the ID from the related GnuPG key.
 - The parts `echo ... >> .gitignore` are just needed in case there is a Git repository present in the base directory.
 

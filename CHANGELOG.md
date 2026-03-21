@@ -4,26 +4,46 @@
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
 
-## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-20)
+## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
+
+### Highlights
+
+- `1.5.0` release metadata and packaging preparation across the desktop app, installer, and CI configuration.
+- Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.
+- Modernized C++/Qt build pipeline with clang-tidy and wider lint/test hardening.
+
+### Fixes & Improvements
+
+- Fixed profile handling issues in Qt6 compatibility scenarios and improved profile selection behavior [#681](https://github.com/IJHack/QtPass/pull/681), [#695](https://github.com/IJHack/QtPass/pull/695).
+- Preserved existing application behavior when launching `qtpass` without parameters [#704](https://github.com/IJHack/QtPass/pull/704).
+- Removed a regression where gpg_id comments could be altered [#658](https://github.com/IJHack/QtPass/pull/658).
+- Added missing include path fixes and small reliability hardening in core code paths [#690](https://github.com/IJHack/QtPass/pull/690), [#716](https://github.com/IJHack/QtPass/pull/716).
+
+### Release, CI and Maintenance
+
+- Added/updated PublicCode and CI workflows, including release-time validation and action upgrades [#701](https://github.com/IJHack/QtPass/pull/701), [#709](https://github.com/IJHack/QtPass/pull/709), [#710](https://github.com/IJHack/QtPass/pull/710), [#711](https://github.com/IJHack/QtPass/pull/711), [#712](https://github.com/IJHack/QtPass/pull/712).
+- Completed the AppVeyor/Inno Setup modernization and packaging updates [#722](https://github.com/IJHack/QtPass/pull/722).
+- Updated readme status badges and branch links to current workflow targets [#724](https://github.com/IJHack/QtPass/pull/724).
+
+### Localization
+
+- Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723). <!-- markdownlint-disable-line MD013 -->
+
+**New Contributors**
+
+- @Vascom made their first contribution in [#656](https://github.com/IJHack/QtPass/pull/656).
+- @shemeshg made their first contribution in [#658](https://github.com/IJHack/QtPass/pull/658).
+- @ruimaciel made their first contribution in [#672](https://github.com/IJHack/QtPass/pull/672).
+- @vdchuyen made their first contribution in [#680](https://github.com/IJHack/QtPass/pull/680).
+- @souk4711 made their first contribution in [#681](https://github.com/IJHack/QtPass/pull/681).
+- @principis made their first contribution in [#690](https://github.com/IJHack/QtPass/pull/690).
+- @stkw0 made their first contribution in [#695](https://github.com/IJHack/QtPass/pull/695).
+- @publiccode-pr-bot made their first contribution in [#701](https://github.com/IJHack/QtPass/pull/701).
+- @transifex-integration[bot] made their first contribution in [#698](https://github.com/IJHack/QtPass/pull/698).
+- @basil made their first contribution in [#704](https://github.com/IJHack/QtPass/pull/704).
+- @dependabot[bot] made their first contribution in [#709](https://github.com/IJHack/QtPass/pull/709).
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0)
-
-**Fixed bugs:**
-
-- Build and packaging updates for AppVeyor/Windows installer reliability.
-- Release metadata bump to 1.5.0 across build and packaging files.
-- General cleanup and modernization for CI workflows and tooling.
-- Translations refreshed from Weblate.
-
-**Closed issues:**
-
-- Reduced installer locale handling to avoid missing Inno Setup language file failures.
-
-**Merged pull requests:**
-
-- PublicCode, AppVeyor and InnoSetup modernization [\#722](https://github.com/IJHack/QtPass/pull/722) ([annejan](https://github.com/annejan))
-- More clang-tidy modernizations [\#721](https://github.com/IJHack/QtPass/pull/721)
-- Apply clang-tidy modernizations [\#720](https://github.com/IJHack/QtPass/pull/720)
 
 ## [v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0) (2023-09-17)
 
