@@ -1051,17 +1051,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="446"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Код OTP скопійовано в буфер обміну</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="448"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>У цьому паролі не знайдено коду OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="717"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль для генерації OTP не вибрано</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
