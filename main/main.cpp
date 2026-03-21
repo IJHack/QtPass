@@ -126,6 +126,7 @@ auto main(int argc, char *argv[]) -> int {
 
   w.activateWindow();
 
+  QApplication::setWindowIcon(QIcon(":artwork/icon.png"));
 #ifndef Q_OS_OSX
   SingleApplication::setWindowIcon(QIcon(":artwork/icon.png"));
 #endif
