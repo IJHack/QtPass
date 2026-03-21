@@ -393,52 +393,52 @@ e-mail</translation>
         <translation>Dim proffil wedi&apos;i ddewis i&apos;w ddileu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="633"/>
+        <location filename="../src/configdialog.cpp" line="637"/>
         <source>GnuPG not found</source>
         <translation>Heb ganfod GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="636"/>
+        <location filename="../src/configdialog.cpp" line="640"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o&apos;r Microsoft Store i&apos;w gael. &lt;br&gt; Os gwnaethoch hynny eisoes, gwnewch yn siŵr eich bod wedi ei gychwyn unwaith a &lt;br&gt; cliciwch &quot;Autodetect&quot; yn yr ymgom nesaf.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="641"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o Microsoft Store &lt;br&gt; or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="647"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; GPG &lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn &lt;br&gt; neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="679"/>
+        <location filename="../src/configdialog.cpp" line="683"/>
         <source>Create password-store?</source>
         <translation>Creu siop cyfrinair?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="680"/>
+        <location filename="../src/configdialog.cpp" line="684"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Hoffech chi greu siop-gyfrinair yn %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="685"/>
+        <location filename="../src/configdialog.cpp" line="689"/>
         <source>Error</source>
         <translation>Gwall</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="686"/>
+        <location filename="../src/configdialog.cpp" line="690"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="708"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Password store not initialised</source>
         <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="709"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Nid yw&apos;r ffolder %1 yn ymddangos fel storfa cyfrinair neu nid yw wedi&apos;i ymgychwyn eto.</translation>
     </message>
@@ -691,7 +691,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="958"/>
+        <location filename="../src/mainwindow.cpp" line="964"/>
         <source>Add password</source>
         <translation>Ychwanegu cyfrinair</translation>
     </message>
@@ -703,21 +703,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="957"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>Add folder</source>
         <translation>Ychwanegu plygell</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Edit</source>
         <translation>Golygu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Delete</source>
         <translation>Dileu</translation>
     </message>
@@ -758,7 +758,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="959"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Users</source>
         <translation>Defnyddwyr</translation>
     </message>
@@ -795,7 +795,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="417"/>
-        <location filename="../src/mainwindow.cpp" line="1168"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>Password</source>
         <translation>Cyfrinair</translation>
     </message>
@@ -805,103 +805,118 @@ Expire-Date: 0
         <translation>Cod OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="446"/>
+        <source>OTP code copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="448"/>
+        <source>No OTP code found in this password entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>Password and Content hidden</source>
         <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
         <source>Looking for: %1</source>
         <translation>Wrthi&apos;n chwilio am: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="636"/>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="639"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>New file</source>
         <translation>Ffeil newydd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="637"/>
+        <location filename="../src/mainwindow.cpp" line="640"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Ffeil cyfrinair newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="674"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source> and the whole content?</source>
         <translation> a&apos;r holl gynnwys?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="684"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete folder?</source>
         <translation>Dileu plygell?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete password?</source>
         <translation>Dileu cyfrinair?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="694"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="828"/>
+        <location filename="../src/mainwindow.cpp" line="717"/>
+        <source>No password selected for OTP generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Profile changed to %1</source>
         <translation>Wedi newid y proffil i %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Open folder with file manager</source>
         <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>Rename folder</source>
         <translation>Ailenwi plygell</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="982"/>
+        <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename password</source>
         <translation>Ailenwi&apos;r cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Plygell newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>Error</source>
         <translation>Gwall</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>Failed to create folder: %1</source>
         <translation>Methwyd creu ffolder: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename file</source>
         <translation>Ailenwi ffeil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Rename Folder To: </source>
         <translation>Ailenwi plygell yn: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename File To: </source>
         <translation>Ailenwi ffeil i: </translation>
     </message>

@@ -365,42 +365,42 @@ email</translation>
         <translation>Nebol vybraný profil pre zmazanie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="633"/>
+        <location filename="../src/configdialog.cpp" line="637"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nenájdené</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="647"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainštalujte prosím GnuPG na svoj systém.&lt;br&gt;Nainštalujte &lt;strong&gt;gpg&lt;/strong&gt; použitím uprednostňovaného správcau balíkov&lt;br&gt;alebo ho &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;stiahnite&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="679"/>
+        <location filename="../src/configdialog.cpp" line="683"/>
         <source>Create password-store?</source>
         <translation>Vytvoriť úložisko hesiel?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="680"/>
+        <location filename="../src/configdialog.cpp" line="684"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Chcete vytvoriť úložisko hesiel v %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="685"/>
+        <location filename="../src/configdialog.cpp" line="689"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="686"/>
+        <location filename="../src/configdialog.cpp" line="690"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nepodarilo sa vytvoriť úložisko hesiel na adrese: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="708"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Password store not initialised</source>
         <translation>Úložisko hesiel nie je vytvorené</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="709"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Adresár %1 nevyzerá ako úložisko hesiel, alebo ešte nebol vytvorený.</translation>
     </message>
@@ -430,12 +430,12 @@ email</translation>
         <translation>je potrebné nainštalovať nástroj qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="636"/>
+        <location filename="../src/configdialog.cpp" line="640"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Nainštalujte si prosím do svojho systému GnuPG. &lt;br&gt; Nainštalujte si z obchodu Microsoft Store &lt;strong&gt; Ubuntu &lt;/strong&gt;. Pokud ste tak už urobili, uistite sa, že ste ho raz spustili a &lt;br&gt; kliknite na „Automaticky“ v ďaľšom okne.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="641"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainštalujte prosím do svojho systému GnuPG. &lt;br&gt; Nainštalujte &lt;strong&gt; Ubuntu &lt;/strong&gt; z Microsoft Store &lt;br&gt; alebo &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; si ho stiahnite z &lt;/a&gt; z GnuPG.org</translation>
     </message>
@@ -729,14 +729,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Edit</source>
         <translation>Upraviť</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Delete</source>
         <translation>Zmazať</translation>
     </message>
@@ -824,7 +824,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="959"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Users</source>
         <translation>Uživatelia</translation>
     </message>
@@ -932,7 +932,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="417"/>
-        <location filename="../src/mainwindow.cpp" line="1168"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>Password</source>
         <translation>Heslo</translation>
     </message>
@@ -950,7 +950,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>Password and Content hidden</source>
         <translation>Skryté heslo aj obsah</translation>
     </message>
@@ -979,40 +979,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
         <source>Looking for: %1</source>
         <translation>Vyhľadávanie: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="636"/>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="639"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>New file</source>
         <translation>Nový súbor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="637"/>
+        <location filename="../src/mainwindow.cpp" line="640"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nový súbor s heslom: 
 (Bude uložený do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="674"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source> and the whole content?</source>
         <translation> a celý obsah?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="684"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> a celý obsah? &lt;br&gt; &lt;strong&gt; Pozor: v danom adresári sú neočakávané súbory. Než budete pokračovať, skontrolujte ich. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="694"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Naozaj chcete zmazať %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete password?</source>
         <translation>Zmazať heslo?</translation>
     </message>
@@ -1021,7 +1021,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete folder?</source>
         <translation>Zmazať adresár?</translation>
     </message>
@@ -1046,31 +1046,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="828"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Profile changed to %1</source>
         <translation>Profil zmenený na %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Open folder with file manager</source>
         <translation>Otvoriť adresár pomocou Správcu súborov</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="957"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>Add folder</source>
         <translation>Pridať adresár</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="958"/>
+        <location filename="../src/mainwindow.cpp" line="964"/>
         <source>Add password</source>
         <translation>Pridať heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nový adresár: 
@@ -1081,38 +1081,53 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="446"/>
+        <source>OTP code copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="448"/>
+        <source>No OTP code found in this password entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="717"/>
+        <source>No password selected for OTP generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>Rename folder</source>
         <translation>Premenovať adresár</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="982"/>
+        <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename password</source>
         <translation>Premenovať heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>Failed to create folder: %1</source>
         <translation>Nepodarilo sa vytvoriť priečinok: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename file</source>
         <translation>Premenovať súbor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Rename Folder To: </source>
         <translation>Premenovať adresár na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename File To: </source>
         <translation>Premenovať súbor na: </translation>
     </message>

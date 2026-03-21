@@ -365,42 +365,42 @@ email</translation>
         <translation>삭제할 프로필을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="633"/>
+        <location filename="../src/configdialog.cpp" line="637"/>
         <source>GnuPG not found</source>
         <translation>GnuPG를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="647"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished">시스템에 GnuPG를 설치하세요. &lt;br&gt;패키지 관리자를 사용하여 &lt;strong&gt;gpg&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;하세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="679"/>
+        <location filename="../src/configdialog.cpp" line="683"/>
         <source>Create password-store?</source>
         <translation type="unfinished">비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="680"/>
+        <location filename="../src/configdialog.cpp" line="684"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation type="unfinished">%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="685"/>
+        <location filename="../src/configdialog.cpp" line="689"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="686"/>
+        <location filename="../src/configdialog.cpp" line="690"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="708"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Password store not initialised</source>
         <translation>비밀번호 저장소가 초기화되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="709"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다</translation>
     </message>
@@ -430,12 +430,12 @@ email</translation>
         <translation>qrencode 설치가 필요합니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="636"/>
+        <location filename="../src/configdialog.cpp" line="640"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;GnuPG를 얻기 위해 마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하세요&lt;br&gt;이미 설치했다면 한번 시작했는지 확인하고&lt;br&gt;다음 대화상자에서 &quot;자동 감지&quot;를 클릭하세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="641"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;받으세요.</translation>
     </message>
@@ -714,14 +714,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Edit</source>
         <translation type="unfinished">편집</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Delete</source>
         <translation type="unfinished">삭제</translation>
     </message>
@@ -809,7 +809,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="959"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Users</source>
         <translation type="unfinished">사용자</translation>
     </message>
@@ -917,7 +917,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="417"/>
-        <location filename="../src/mainwindow.cpp" line="1168"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>Password</source>
         <translation type="unfinished">비밀번호</translation>
     </message>
@@ -935,7 +935,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>Password and Content hidden</source>
         <translation>비밀번호 및 콘텐츠 숨겨짐</translation>
     </message>
@@ -964,40 +964,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
         <source>Looking for: %1</source>
         <translation type="unfinished">찾는 곳: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="636"/>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="639"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>New file</source>
         <translation type="unfinished">새로운 파일</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="637"/>
+        <location filename="../src/mainwindow.cpp" line="640"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation type="unfinished">새 암호 파일입니다: 
 (%1 에 저장됨)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="674"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source> and the whole content?</source>
         <translation type="unfinished"> 그리고 전체 콘텐츠?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="684"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation type="unfinished"> 전체 콘텐츠를 확인하시겠습니까? &lt;br&gt;&lt;strong&gt;주의: 지정된 폴더에 예기치 않은 파일이 있으니 계속하기 전에 확인하시기 바랍니다.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="694"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation type="unfinished">정말 %1%2을(를) 삭제하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete password?</source>
         <translation type="unfinished">비밀번호를 삭제하시겠습니까?</translation>
     </message>
@@ -1006,7 +1006,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete folder?</source>
         <translation type="unfinished">폴더를 삭제하시겠습니까?</translation>
     </message>
@@ -1031,31 +1031,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="828"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Profile changed to %1</source>
         <translation type="unfinished">프로필이 %1로 변경되었습니다</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Open folder with file manager</source>
         <translation type="unfinished">파일 관리자로 폴더 열기</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="957"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>Add folder</source>
         <translation type="unfinished">폴더 추가</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="958"/>
+        <location filename="../src/mainwindow.cpp" line="964"/>
         <source>Add password</source>
         <translation type="unfinished">비밀번호 추가</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>새로운 폴더: 
@@ -1066,38 +1066,53 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="446"/>
+        <source>OTP code copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="448"/>
+        <source>No OTP code found in this password entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="717"/>
+        <source>No password selected for OTP generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>Rename folder</source>
         <translation type="unfinished">폴더 이름 바꾸기</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="982"/>
+        <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename password</source>
         <translation type="unfinished">비밀번호 이름 바꾸기</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>Failed to create folder: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename file</source>
         <translation type="unfinished">파일 이름 바꾸기</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Rename Folder To: </source>
         <translation type="unfinished">폴더 이름을 다음으로 바꿉니다: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename File To: </source>
         <translation type="unfinished">파일 이름 바꾸기: </translation>
     </message>

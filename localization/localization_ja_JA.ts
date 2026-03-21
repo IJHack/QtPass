@@ -365,43 +365,43 @@ url
         <translation>削除するプロファイルが選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="633"/>
+        <location filename="../src/configdialog.cpp" line="637"/>
         <source>GnuPG not found</source>
         <translation>GnuPG が見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="647"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;お気に入りのパッケージマネージャを使用して、&lt;strong&gt;gpg&lt;/strong&gt; をインストール&lt;br&gt;または、GnuPG.org から&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ダウンロード&lt;/a&gt;してください。
 </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="679"/>
+        <location filename="../src/configdialog.cpp" line="683"/>
         <source>Create password-store?</source>
         <translation>password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="680"/>
+        <location filename="../src/configdialog.cpp" line="684"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1 に password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="685"/>
+        <location filename="../src/configdialog.cpp" line="689"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="686"/>
+        <location filename="../src/configdialog.cpp" line="690"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="708"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Password store not initialised</source>
         <translation>パスワードストアが初期化されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="709"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>フォルダ %1 は、password-store ではないようです。または、まだ初期化されていません。</translation>
     </message>
@@ -431,12 +431,12 @@ url
         <translation>qrencode をインストールする必要があります</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="636"/>
+        <location filename="../src/configdialog.cpp" line="640"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;Microsoft Storeから &lt;strong&gt;Ubuntu&lt;/strong&gt; をインストールして入手してください。&lt;br&gt;すでにインストールしている場合は、一度起動し、&lt;br&gt;次のダイアログで &quot;自動検出&quot; をクリックしてください。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="641"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;Microsoft Store から &lt;strong&gt;Ubuntu&lt;/strong&gt; をインストール&lt;br&gt;または、GnuPG.org から&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ダウンロード&lt;/a&gt;してください。</translation>
     </message>
@@ -715,14 +715,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="992"/>
         <source>Delete</source>
         <translation>削除</translation>
     </message>
@@ -810,7 +810,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="959"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Users</source>
         <translation>ユーザー</translation>
     </message>
@@ -917,7 +917,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="417"/>
-        <location filename="../src/mainwindow.cpp" line="1168"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>Password</source>
         <translation>パスワード</translation>
     </message>
@@ -935,7 +935,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリップボードをクリアできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="463"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>Password and Content hidden</source>
         <translation>パスワードとコンテンツを隠す</translation>
     </message>
@@ -964,40 +964,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::不明なエラー</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
         <source>Looking for: %1</source>
         <translation>%1 を探しています</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="636"/>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="639"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>New file</source>
         <translation>新しいファイル</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="637"/>
+        <location filename="../src/mainwindow.cpp" line="640"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>新しいパスワードファイル:
 (%1 に置き換えられます)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="674"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
         <source> and the whole content?</source>
         <translation> と全てのコンテンツ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="684"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation>とコンテンツ全体？&lt;br&gt;&lt;strong&gt;注意：指定されたフォルダーに予期しないファイルがあります。続行する前にそれらを確認してください。&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="694"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>本当に %1%2 を削除しますか？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete password?</source>
         <translation>パスワードを削除しますか？</translation>
     </message>
@@ -1006,7 +1006,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">本当に %1 を削除しますか？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="696"/>
         <source>Delete folder?</source>
         <translation>フォルダーを削除しますか？</translation>
     </message>
@@ -1031,31 +1031,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">GnuPGキーペアを生成中</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="828"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Profile changed to %1</source>
         <translation>プロファイルを %1 に変更しました</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Open folder with file manager</source>
         <translation>ファイルマネージャーでフォルダーを開く</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="957"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>Add folder</source>
         <translation>フォルダーを追加</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="958"/>
+        <location filename="../src/mainwindow.cpp" line="964"/>
         <source>Add password</source>
         <translation>パスワードを追加</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>新しいフォルダ:
@@ -1066,38 +1066,53 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリップボードにコピーしました</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="446"/>
+        <source>OTP code copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="448"/>
+        <source>No OTP code found in this password entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="717"/>
+        <source>No password selected for OTP generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>Rename folder</source>
         <translation>フォルダの名前を変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="982"/>
+        <location filename="../src/mainwindow.cpp" line="988"/>
         <source>Rename password</source>
         <translation>パスワードを変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>Failed to create folder: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename file</source>
         <translation>ファイル名を変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Rename Folder To: </source>
         <translation>フォルダ名を変更:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename File To: </source>
         <translation>ファイル名を変更:</translation>
     </message>
