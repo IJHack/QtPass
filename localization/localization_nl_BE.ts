@@ -387,12 +387,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Het aanmaken van de wachtwoordopslag is mislukt op: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -1104,12 +1104,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Map aanmaken mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>

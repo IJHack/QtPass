@@ -429,12 +429,12 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola deposu oluşturma işlemi şu konumda başarısız oldu: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -894,12 +894,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasör oluşturulamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
