@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          node-version: '24'
+          node-version: "24"
 
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
@@ -27,5 +27,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./html
           publish_branch: gh-pages
-          user_name: 'GitHub Actions'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: "GitHub Actions"
+          user_email: "github-actions[bot]@users.noreply.github.com"
