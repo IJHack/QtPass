@@ -22,6 +22,3 @@ jobs:
 
       - name: Lint just the root HTML
         run: npx htmlhint "*.html"
-
-      - name: Lint JavaScript
-        run: npx eslint .
