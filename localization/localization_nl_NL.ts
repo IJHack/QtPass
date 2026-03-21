@@ -1094,17 +1094,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="446"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>De OTP-code is naar het klembord gekopieerd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="448"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen OTP-code gevonden in dit wachtwoord bestand</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="717"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen wachtwoord geselecteerd voor het genereren van de OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>

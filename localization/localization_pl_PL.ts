@@ -72,7 +72,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
         <source>Use characters:</source>
-        <translation>Użyj znaki:</translation>
+        <translation>Użyj znaków:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Użyj hasła</translation>
+        <translation>&amp;Użyj pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
@@ -337,7 +337,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="640"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeżeli już zainstalowałeś, upewnij się że je włączyłeś i&lt;br&gt;kliknij &quot;Automatycznie wykryj&quot; w następnym dialogu.</translation>
+        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeśli już to zrobiłeś, upewnij się, że uruchomiłeś system raz i&lt;br&gt;kliknij „Automatycznie wykryj” w następnym oknie dialogowym.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -397,7 +397,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation>Użyj roższerzenia pass-otp</translation>
+        <translation>Użyj rozszerzenia pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
@@ -800,12 +800,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="446"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kod OTP skopiowano do schowka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="448"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>W tym wpisie hasła nie znaleziono kodu OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="466"/>
@@ -858,7 +858,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="717"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie wybrano hasła do wygenerowania OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>

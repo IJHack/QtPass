@@ -1083,17 +1083,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="446"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP code copied to clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="448"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>No OTP code found in this password entry</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="717"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>No password selected for OTP generation</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
