@@ -547,7 +547,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nie ma limitu długości w haśle i powinno być staranie wybrane. Z perspektywy zabezpieczeń, hasło do odblokowania klucza prywatnego jest jednym z najsłabsych punktów GnuPG (i innych systemów szyfrowania public-key) ponieważ jest jedynym zabezpieczeniem jeżeli osoba zewnętrzna otrzyma dostęp do twojego prywatnego klucza. &lt;br/&gt;Idealnie, hasło nie powinno używac słów z słownika i powinno utylizować mix znaków alfabetycznych i nie alfabetycznych.&lt;br/&gt;Dobre hasło jest kluczem do bezpiecznego używania GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Długość hasła jest nieograniczona i należy je starannie dobrać. Z punktu widzenia bezpieczeństwa hasło do odblokowania klucza prywatnego jest jednym z najsłabszych punktów GnuPG (i innych systemów szyfrowania kluczem publicznym), ponieważ stanowi jedyne zabezpieczenie w przypadku, gdy inna osoba uzyska dostęp do klucza prywatnego. &lt;br/&gt;W idealnym przypadku hasło nie powinno zawierać słów ze słownika, a jedynie litery i znaki spoza alfabetu.&lt;br/&gt;Dobre hasło jest kluczem do bezpiecznego korzystania z GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -627,7 +627,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="273"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Dla opcji zaawansowanych sprawdź &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;instrukcje obsługi GnuPG&lt;/a&gt;</translation>
+        <translation>Ustawienia zaawansowane można znaleźć w &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;podręczniku GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="149"/>
@@ -652,7 +652,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Operacja może potrwać kilka minut.&lt;br /&gt;Musimy wygenerować dużo losowych byteów. Dobrym pomysłem jest wykonanie jakichś innych akcji (typu pisanie na klawiaturze, ruszanie myszką czy utylizacja dysków) podczas generowania; daje to generatorze liczb lepszą szanse na zyskanie wystarczająco entropii.</translation>
+        <translation>Ta operacja może potrwać kilka minut.&lt;br /&gt;Musimy wygenerować dużo losowych bajtów. Dobrym pomysłem jest wykonanie innej czynności (pisanie na klawiaturze, poruszanie myszą, korzystanie z dysków) podczas generowania liczb pierwszych; daje to generatorowi liczb losowych większą szansę na uzyskanie wystarczającej entropii.</translation>
     </message>
 </context>
 <context>
@@ -911,7 +911,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1092"/>
         <source>Rename File To: </source>
-        <translation>Zmień nazwe pliku na: </translation>
+        <translation>Zmień nazwę pliku na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -919,8 +919,8 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass jest GUI dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł unix.&lt;/p&gt;
-&lt;p&gt;Prosze zgłaszać jakiekolwiek &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z aplikacją.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass to graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;
+&lt;p&gt;Prosze zgłaszać jakiekolwiek &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z programem.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacja&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kod źródłowy&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -1017,7 +1017,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="220"/>
         <source>QtPass WebDAV password</source>
-        <translation>Hasło QtPass WebDAV</translation>
+        <translation>Hasło WebDAV QtPass</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="221"/>
@@ -1089,7 +1089,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/storemodel.cpp" line="292"/>
         <source>overwrite %1 with %2?</source>
-        <translation>nadpisz %1 z %2?</translation>
+        <translation>nadpisać %1 przez %2?</translation>
     </message>
 </context>
 <context>
