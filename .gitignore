@@ -1,1 +1,15 @@
 .idea
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.v4
+.cache/
+.qmake.stash
+.qtcreator
+Makefile
+build
+compile_commands.json
+latex
+linter-output.log
+rtf
+src
+
