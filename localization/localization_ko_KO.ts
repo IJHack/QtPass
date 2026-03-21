@@ -1178,7 +1178,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="93"/>
+        <location filename="../main/main.cpp" line="122"/>
         <source>LTR</source>
         <translation type="unfinished">좌→우</translation>
     </message>
