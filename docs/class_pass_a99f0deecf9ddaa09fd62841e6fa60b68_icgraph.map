@@ -1,0 +1,10 @@
+<map id="Pass::getGpgIdPath" name="Pass::getGpgIdPath">
+<area shape="rect" id="node1" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="660,80,800,105"/>
+<area shape="rect" id="node2" href="$class_pass.html#a6c5400e104ade2f41c8d4a41fc0b4f4e" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="459,29,612,55"/>
+<area shape="rect" id="node5" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="252,80,387,105"/>
+<area shape="rect" id="node6" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="228,129,411,155"/>
+<area shape="rect" id="node3" href="$class_pass.html#a4566c370e65b22d5cdc132f72b393808" title="Pass::getRecipientString formated string for use with GPG." alt="" coords="236,31,403,56"/>
+<area shape="rect" id="node4" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="node7" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="27,129,158,155"/>
+<area shape="rect" id="node8" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="33,80,152,105"/>
+</map>

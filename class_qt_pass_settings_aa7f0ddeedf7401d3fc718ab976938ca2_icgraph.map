@@ -1,6 +1,0 @@
-<map id="QtPassSettings::setUsePass" name="QtPassSettings::setUsePass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="205,29,407,55"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="5,29,157,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,45,157,45,157,39,191,39"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="122,20,111,11,81,8,57,10,45,15,42,20,49,27,45,31,37,21,41,11,56,5,81,3,113,7,125,16"/>
-</map>

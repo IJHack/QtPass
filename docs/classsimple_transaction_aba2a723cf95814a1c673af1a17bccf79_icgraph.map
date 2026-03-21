@@ -1,0 +1,4 @@
+<map id="simpleTransaction::transactionIsOver" name="simpleTransaction::transactionIsOver">
+<area shape="rect" id="node1" title="transactionIsOver checks wheather currently finished process is last in current transaction" alt="" coords="199,5,333,45"/>
+<area shape="rect" id="node2" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,13,151,38"/>
+</map>

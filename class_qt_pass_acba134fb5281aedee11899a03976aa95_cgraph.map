@@ -1,9 +1,0 @@
-<map id="QtPass::copyTextToClipboard" name="QtPass::copyTextToClipboard">
-<area shape="rect" id="Node000001" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="5,55,213,80"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title=" " alt="" coords="272,5,497,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,52,299,31,300,36,181,57"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title=" " alt="" coords="273,55,496,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,65,260,65,260,70,213,70"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="261,104,508,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,77,300,99,299,104,180,83"/>
-</map>

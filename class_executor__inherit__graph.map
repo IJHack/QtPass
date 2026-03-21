@@ -1,5 +1,0 @@
-<map id="Executor" name="Executor">
-<area shape="rect" id="Node000001" title="Executes external commands for handleing password, git and other data." alt="" coords="5,79,84,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="7,5,82,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,44,47,79,42,79,42,44"/>
-</map>

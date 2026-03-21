@@ -1,6 +1,0 @@
-<map id="ConfigDialog::useTemplate" name="ConfigDialog::useTemplate">
-<area shape="rect" id="Node000001" title="ConfigDialog::useTemplate set preference for using templates." alt="" coords="249,29,445,55"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="391,20,388,15,380,12,347,8,321,10,307,15,305,20,312,27,308,31,299,21,304,11,320,5,347,3,382,7,391,11,395,17"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,45,201,45,201,39,236,39"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="Node000001" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="5,55,184,80"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="272,29,437,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,56,258,49,259,54,184,61"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="232,79,477,104"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="184,73,218,76,218,81,184,78"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="313,31,304,21,308,11,326,5,355,3,391,7,401,11,405,17,401,20,398,15,390,12,355,8,327,10,312,15,309,20,317,27"/>
-</map>

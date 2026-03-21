@@ -1,9 +1,0 @@
-<map id="QtPassSettings::isTemplateAllFields" name="QtPassSettings::isTemplateAllFields">
-<area shape="rect" id="Node000001" title=" " alt="" coords="283,47,481,87"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="22,5,218,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,49,188,33,189,28,270,44"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,235,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,70,235,70,235,65,269,65"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="23,105,217,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,93,213,107,211,102,276,88"/>
-</map>

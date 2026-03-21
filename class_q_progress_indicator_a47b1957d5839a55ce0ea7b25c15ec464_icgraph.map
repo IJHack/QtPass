@@ -1,5 +1,0 @@
-<map id="QProgressIndicator::isAnimated" name="QProgressIndicator::isAnimated">
-<area shape="rect" id="Node000001" title="Returns a Boolean value indicating whether the component is currently animated." alt="" coords="199,5,344,45"/>
-<area shape="rect" id="Node000002" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner." alt="" coords="5,5,151,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,28,151,28,151,23,185,23"/>
-</map>
