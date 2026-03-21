@@ -46,3 +46,4 @@ artwork/qtpass-icon.png
 compile_commands.json
 .cache
 linter-output.log
+release-artifacts

@@ -978,7 +978,7 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="93"/>
+        <location filename="../main/main.cpp" line="122"/>
         <source>LTR</source>
         <translatorcomment>Kjo është për të mbajtur ndërfaqen nga e majta në të djathtë.</translatorcomment>
         <translation>LTR</translation>

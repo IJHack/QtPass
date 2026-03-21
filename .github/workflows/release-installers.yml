@@ -28,7 +28,7 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
-          $version = "1.5.0"
+          $version = "1.5.1"
           if ($env:GITHUB_REF -like 'refs/tags/v*') {
             $version = $env:GITHUB_REF_NAME -replace '^v', ''
           } else {
@@ -86,7 +86,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          version="1.5.0"
+          version="1.5.1"
           if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
             version="${GITHUB_REF_NAME#v}"
           else

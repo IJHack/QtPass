@@ -443,6 +443,9 @@ void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
     addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
     m_qtPass->copyTextToClipboard(p_output);
+    showStatusMessage(tr("OTP code copied to clipboard"));
+  } else {
+    flashText(tr("No OTP code found in this password entry"), true);
   }
   if (QtPassSettings::isUseAutoclearPanel()) {
     clearPanelTimer.start();
@@ -707,8 +710,11 @@ void MainWindow::onOtp() {
   QString file = getFile(ui->treeView->currentIndex(), true);
   if (!file.isEmpty()) {
     if (QtPassSettings::isUseOtp()) {
+      setUiElementsEnabled(false);
       QtPassSettings::getPass()->OtpGenerate(file);
     }
+  } else {
+    flashText(tr("No password selected for OTP generation"), true);
   }
 }
 
