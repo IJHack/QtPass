@@ -48,11 +48,46 @@ auto main(int argc, char *argv[]) -> int {
   QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
-  QString text = "";
-  for (int i = 1; i < argc; ++i) {
-    if (i > 1)
+
+  QString text;
+#if SINGLE_APP
+  QString name = qgetenv("USER");
+  if (name.isEmpty())
+    name = qgetenv("USERNAME");
+  SingleApplication app(argc, argv, name + "QtPass");
+#else
+  QApplication app(argc, argv);
+#endif
+
+  const QStringList args = app.arguments();
+  bool consumeNextArg = false;
+  for (int i = 1; i < args.count(); ++i) {
+    const auto &arg = args.at(i);
+
+    if (arg == "--") {
+      consumeNextArg = false;
+      for (int j = i + 1; j < args.count(); ++j) {
+        if (!text.isEmpty())
+          text += " ";
+        text += args.at(j);
+      }
+      break;
+    }
+
+    if (consumeNextArg) {
+      consumeNextArg = false;
+      continue;
+    }
+
+    if (arg.startsWith('-')) {
+      if (!arg.contains('=') && i + 1 < args.count())
+        consumeNextArg = true;
+      continue;
+    }
+
+    if (!text.isEmpty())
       text += " ";
-    text += argv[i];
+    text += arg;
   }
 
   if ((text.indexOf("-psn_") == 0) || (text.indexOf("-session") == 0)) {
@@ -60,16 +95,10 @@ auto main(int argc, char *argv[]) -> int {
   }
 
 #if SINGLE_APP
-  QString name = qgetenv("USER");
-  if (name.isEmpty())
-    name = qgetenv("USERNAME");
-  SingleApplication app(argc, argv, name + "QtPass");
   if (app.isRunning()) {
     app.sendMessage(text);
     return 0;
   }
-#else
-  QApplication app(argc, argv);
 #endif
 
   Q_INIT_RESOURCE(resources);
@@ -116,7 +145,11 @@ auto main(int argc, char *argv[]) -> int {
       app.desktop()->screenGeometry(cursorScreen).center();
 #else
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
-  QPoint cursorScreenCenter = screen->geometry().center();
+  if (!screen)
+    screen = QGuiApplication::primaryScreen();
+  QPoint cursorScreenCenter;
+  if (screen)
+    cursorScreenCenter = screen->geometry().center();
 #endif
   QRect windowFrameGeo = w.frameGeometry();
   windowFrameGeo.moveCenter(cursorScreenCenter);
