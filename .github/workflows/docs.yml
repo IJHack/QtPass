@@ -28,7 +28,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/api
           publish_branch: gh-pages
+          publish_dir: ./docs
+          destination_dir: docs
+          keep_files: true
           user_name: "GitHub Actions"
           user_email: "github-actions[bot]@users.noreply.github.com"
