@@ -1,4 +1,4 @@
-name: Build Installers
+name: Release Build
 
 on:
   pull_request:
@@ -21,6 +21,24 @@ jobs:
 
       - name: Install Inno Setup
         run: choco install --yes innosetup
+
+      - name: Resolve installer version
+        id: version
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $version = "1.5.0"
+          if ($env:GITHUB_REF -like 'refs/tags/v*') {
+            $version = $env:GITHUB_REF_NAME -replace '^v', ''
+          } else {
+            $line = Get-Content qtpass.pri | Where-Object { $_ -match '^VERSION\s*=' } | Select-Object -First 1
+            if ($line -and ($line -match '=\s*([0-9]+\.[0-9]+\.[0-9]+)')) {
+              $version = $matches[1]
+            }
+          }
+
+          Write-Output "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Build Windows installer
         shell: pwsh
@@ -45,17 +63,12 @@ jobs:
 
           windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
 
-          $installerVersion = "1.5.0"
-          if ($env:GITHUB_REF -like 'refs/tags/v*') {
-            $installerVersion = $env:GITHUB_REF_NAME -replace '^v', ''
-          }
-
-          iscc "/DMyAppVersion=$installerVersion" qtpass.iss
+          iscc "/DMyAppVersion=${{ steps.version.outputs.version }}" qtpass.iss
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qtpass-windows-installer
+          name: qtpass-windows-installer-${{ steps.version.outputs.version }}
           path: Output/qtpass-*.exe
 
   build-macos:
@@ -66,6 +79,24 @@ jobs:
 
       - name: Install dmg helper
         run: brew install create-dmg
+
+      - name: Resolve dmg version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          version="1.5.0"
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version_from_pri="$(awk -F '=' '/^VERSION[[:space:]]*=/{ gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)"
+            if [[ -n "${version_from_pri}" ]]; then
+              version="${version_from_pri}"
+            fi
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build macOS app and dmg
         run: |
@@ -86,16 +117,11 @@ jobs:
 
           macdeployqt "$APP_PATH"
 
-          VERSION="1.5.0"
-          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
-            VERSION="${GITHUB_REF_NAME#v}"
-          fi
-
-          DMG_NAME="QtPass-${VERSION}.dmg"
+          DMG_NAME="QtPass-${{ steps.version.outputs.version }}.dmg"
           create-dmg "$DMG_NAME" "$APP_PATH"
 
       - name: Upload dmg artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qtpass-macos-dmg
+          name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
