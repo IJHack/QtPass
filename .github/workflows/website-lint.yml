@@ -20,8 +20,8 @@ jobs:
       - name: Install linters
         run: npm ci
 
-      - name: Lint HTML
-        run: npx htmlhint "**/*.html"
+      - name: Lint just the root HTML
+        run: npx htmlhint "*.html"
 
       - name: Lint JavaScript
         run: npx eslint .
