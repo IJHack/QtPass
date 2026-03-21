@@ -2,12 +2,12 @@
 # Replace the Version number with the current version number (at the time of writing 1.0.5.1) 
 # Check qtpass.pro for the current version. 
 # After that
-#  tar cvfz qtpass-1.5.0.tar.gz qtpass-1.5.0
-#  rpmbuild -tb qtpass-1.5.0.tar.gz
+#  tar cvfz qtpass-1.5.1.tar.gz qtpass-1.5.1
+#  rpmbuild -tb qtpass-1.5.1.tar.gz
 # This should probably be part of a release process.
 
 Name: qtpass		
-Version: 1.5.0
+Version: 1.5.1
 Release: 2%{?dist}
 Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.	
 License: GPLv3

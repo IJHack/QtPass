@@ -1,6 +1,6 @@
 # Note: this assumes Qt with release and debug config was used
 
-VERSION=v1.5.0
+VERSION=v1.5.1
 
 qtpass-${VERSION}-gpg4win.zip: qtpass.exe qtpass.ini LICENSE README.md password-store gpg4win key_management.bat
 	7z a -mx=9 $@ $^
