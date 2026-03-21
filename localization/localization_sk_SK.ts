@@ -387,12 +387,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa vytvoriť úložisko hesiel na adrese: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -1093,12 +1093,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa vytvoriť priečinok: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
