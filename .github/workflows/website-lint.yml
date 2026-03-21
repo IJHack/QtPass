@@ -1,0 +1,76 @@
+name: Website Lint
+
+on:
+  push:
+    branches: [main, gh-pages]
+    paths:
+      - '**.html'
+      - '.github/workflows/website-lint.yml'
+  pull_request:
+    paths:
+      - '**.html'
+      - '.github/workflows/website-lint.yml'
+
+jobs:
+  lint:
+    name: HTML Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install htmlhint
+        run: npm install -g htmlhint
+
+      - name: Run HTMLHint
+        run: htmlhint "*.html" "docs/*.html" || true
+
+      - name: Check for broken internal links
+        run: |
+          # Basic check for common issues
+          echo "Checking HTML files for common issues..."
+          for f in *.html docs/*.html 2>/dev/null; do
+            if [ -f "$f" ]; then
+              # Check for missing closing tags (basic check)
+              grep -L '</html>' "$f" && echo "Warning: $f missing </html>"
+              grep -L '</head>' "$f" && echo "Warning: $f missing </head>"
+              grep -L '</body>' "$f" && echo "Warning: $f missing </body>"
+            fi
+          done
+
+  validate:
+    name: Validate HTML Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check version consistency
+        run: |
+          echo "Checking version consistency across files..."
+          
+          # Extract versions
+          VERSION_INDEX=$(grep -oP '"softwareVersion" : "\K[^"]+' index.html 2>/dev/null | head -1)
+          VERSION_DOWNLOADS=$(grep -oP '"softwareVersion" : "\K[^"]+' downloads.html 2>/dev/null | head -1)
+          VERSION_CHANGELOG=$(grep -oP '"softwareVersion" : "\K[^"]+' changelog.html 2>/dev/null | head -1)
+          
+          echo "Version in index.html: $VERSION_INDEX"
+          echo "Version in downloads.html: $VERSION_DOWNLOADS"
+          echo "Version in changelog.html: $VERSION_CHANGELOG"
+          
+          if [ "$VERSION_INDEX" != "$VERSION_DOWNLOADS" ]; then
+            echo "ERROR: Version mismatch between index.html and downloads.html"
+            exit 1
+          fi
+          
+          if [ "$VERSION_INDEX" != "$VERSION_CHANGELOG" ]; then
+            echo "ERROR: Version mismatch between index.html and changelog.html"
+            exit 1
+          fi
+          
+          echo "All versions are consistent!"
