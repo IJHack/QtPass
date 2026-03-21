@@ -600,7 +600,11 @@ auto ConfigDialog::isPassOtpAvailable() -> bool {
 #ifdef Q_OS_WIN
   return false;
 #else
-  return true;
+  QProcess pass;
+  pass.start(QtPassSettings::getPassExecutable(), QStringList() << "otp"
+                                                                << "--help");
+  pass.waitForFinished(2000);
+  return pass.exitCode() == 0;
 #endif
 }
 
