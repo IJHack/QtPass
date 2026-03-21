@@ -425,12 +425,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="685"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Gwall</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="686"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="708"/>
@@ -576,7 +576,21 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="unfinished"></translation>
+        <translation>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -868,12 +882,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Gwall</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd creu ffolder: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
