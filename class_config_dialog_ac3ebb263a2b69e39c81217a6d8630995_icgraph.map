@@ -1,0 +1,6 @@
+<map id="ConfigDialog::usePwgen" name="ConfigDialog::usePwgen">
+<area shape="rect" id="Node000001" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled buy empty pwgenPath)...." alt="" coords="249,29,428,55"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="381,20,370,11,339,8,314,10,300,15,297,20,304,27,301,31,292,21,297,11,312,5,339,3,372,7,384,16"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,45,202,45,202,39,235,39"/>
+</map>

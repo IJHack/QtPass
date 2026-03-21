@@ -1,0 +1,10 @@
+<map id="QtPassSettings::isNoLineWrapping" name="QtPassSettings::isNoLineWrapping">
+<area shape="rect" id="Node000001" title=" " alt="" coords="251,71,433,111"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="28,29,180,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,72,165,57,166,52,238,67"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="6,79,202,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="237,94,202,94,202,89,237,89"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,128,203,153"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="238,116,166,131,165,125,236,110"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,20,135,11,104,8,79,10,65,15,62,20,69,27,65,31,57,21,61,11,77,5,104,3,137,7,150,16"/>
+</map>

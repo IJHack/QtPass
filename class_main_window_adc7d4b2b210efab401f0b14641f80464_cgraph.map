@@ -1,0 +1,11 @@
+<map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
+<area shape="rect" id="Node000001" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="5,47,200,87"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title=" " alt="" coords="248,5,431,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,45,264,31,265,36,200,50"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selectd folder path." alt="" coords="293,55,386,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,279,65,279,70,200,70"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="251,104,428,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,85,265,99,264,104,199,90"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="479,55,689,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,65,465,65,465,70,386,70"/>
+</map>

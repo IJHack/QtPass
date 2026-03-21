@@ -1,0 +1,13 @@
+<map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
+<area shape="rect" id="Node000001" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,80,161,105"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="209,80,341,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,90,196,90,196,95,162,95"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="391,5,636,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,78,340,58,388,39,419,31,420,36,390,45,343,63,302,82"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title=" " alt="" coords="389,55,637,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="341,83,380,79,381,84,342,88"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="408,104,619,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,97,395,102,394,107,341,102"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title=" " alt="" coords="417,153,609,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="304,103,390,138,426,148,424,153,388,143,302,108"/>
+</map>

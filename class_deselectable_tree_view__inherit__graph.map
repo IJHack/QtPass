@@ -1,0 +1,5 @@
+<map id="DeselectableTreeView" name="DeselectableTreeView">
+<area shape="rect" id="Node000001" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ..." alt="" coords="5,79,172,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="43,5,134,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,44,91,79,86,79,86,44"/>
+</map>

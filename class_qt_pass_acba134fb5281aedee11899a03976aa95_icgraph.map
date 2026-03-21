@@ -1,0 +1,9 @@
+<map id="QtPass::copyTextToClipboard" name="QtPass::copyTextToClipboard">
+<area shape="rect" id="Node000001" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="548,31,756,56"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="283,5,500,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="534,35,500,31,500,26,535,29"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="306,55,477,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="535,57,477,62,477,57,534,51"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,235,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,70,235,70,235,65,292,65"/>
+</map>

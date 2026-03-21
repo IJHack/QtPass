@@ -1,0 +1,16 @@
+<map id="QtPassSettings::getAutoclearSeconds" name="QtPassSettings::getAutoclearSeconds">
+<area shape="rect" id="Node000001" title=" " alt="" coords="495,47,705,87"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,447,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,47,413,33,414,28,485,42"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,55,396,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="481,70,396,70,396,65,481,65"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="251,116,446,141"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="505,93,402,119,401,113,503,88"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,43,203,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,67,203,63,203,58,288,62"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="28,116,180,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="238,131,180,131,180,126,238,126"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title=" " alt="" coords="45,165,163,191"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="272,147,164,169,163,163,271,142"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="147,107,144,102,137,98,104,95,78,97,64,102,61,107,69,114,65,118,56,108,61,98,77,92,104,89,138,93,148,98,152,104"/>
+</map>
