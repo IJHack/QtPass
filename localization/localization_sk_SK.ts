@@ -650,7 +650,7 @@ Uplynie-Date: 0
 %no-ochrana
 # Urobte tu, aby sme mohli neskôr tlačiť &quot;done&quot; :-)
 %com
-%echo</translation>
+%echo hotové</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
