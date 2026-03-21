@@ -1,0 +1,9 @@
+<map id="SingleApplication::messageAvailable" name="SingleApplication::messageAvailable">
+<area shape="rect" id="Node000001" title="messageAvailable notification from commandline" alt="" coords="387,29,529,69"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message." alt="" coords="196,29,339,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="373,52,339,52,339,47,373,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="299,17,288,11,267,8,249,10,239,15,235,21,237,28,231,30,229,20,235,11,248,5,267,3,290,6,302,13"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c..." alt="" coords="5,29,148,69"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="183,52,148,52,148,47,183,47"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="108,17,97,11,77,8,59,10,48,15,44,21,46,28,41,30,39,20,44,11,57,5,77,3,99,6,111,13"/>
+</map>

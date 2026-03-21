@@ -1,6 +1,7 @@
 <map id="QtPass::showTextAsQRCode" name="QtPass::showTextAsQRCode">
-<area shape="rect" id="node1" title="displays the text as qrcode" alt="" coords="5,42,201,67"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#ac81d76ad5efc63bc7f2d4c016b7fdb28" title=" " alt="" coords="265,5,461,45"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a3c11bd64b8c0a631a9f8cd9ec77fe68c" title="Displays message in status bar." alt="" coords="249,70,476,95"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="524,13,715,38"/>
+<area shape="rect" id="Node000001" title="displays the text as qrcode" alt="" coords="5,42,208,67"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a822fd7d3ac81333a825e26a673e986df" title=" " alt="" coords="274,5,485,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,41,260,35,261,41,208,46"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="256,70,503,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,62,242,66,242,71,208,68"/>
 </map>

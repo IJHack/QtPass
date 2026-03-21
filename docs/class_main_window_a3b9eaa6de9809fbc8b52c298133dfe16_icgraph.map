@@ -1,0 +1,5 @@
+<map id="MainWindow::generateKeyPair" name="MainWindow::generateKeyPair">
+<area shape="rect" id="Node000001" title="MainWindow::generateKeyPair internal gpg keypair generator . ." alt="" coords="215,5,433,31"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#afc3507e2de1b459ee118b51ef672f868" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair." alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,21,167,21,167,15,201,15"/>
+</map>

@@ -1,5 +1,7 @@
 <map id="QtPassSettings::setPassStore" name="QtPassSettings::setPassStore">
-<area shape="rect" id="node1" title=" " alt="" coords="371,5,572,31"/>
-<area shape="rect" id="node2" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="232,5,323,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,184,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="393,5,604,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,21,345,21,345,15,379,15"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,5,203,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,21,203,21,203,15,237,15"/>
 </map>

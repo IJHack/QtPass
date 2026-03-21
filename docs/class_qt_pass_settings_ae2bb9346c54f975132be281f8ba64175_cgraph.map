@@ -1,4 +1,5 @@
 <map id="QtPassSettings::setLessRandom" name="QtPassSettings::setLessRandom">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,221,31"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="269,5,460,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,236,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title=" " alt="" coords="284,5,487,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,15,270,15,270,21,236,21"/>
 </map>

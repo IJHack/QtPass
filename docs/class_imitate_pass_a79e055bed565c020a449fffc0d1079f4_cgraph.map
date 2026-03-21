@@ -1,5 +1,5 @@
 <map id="ImitatePass::GitInit" name="ImitatePass::GitInit">
-<area shape="rect" id="node1" title="ImitatePass::GitInit git init wrapper." alt="" coords="5,5,140,31"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#abb8c53443d71181a3ecd6545464453e6" title=" " alt="" coords="188,5,389,31"/>
-<area shape="rect" id="node3" href="$class_qt_pass_settings.html#ab83659fdbfb9069942e6982076b4b934" title=" " alt="" coords="437,5,628,31"/>
+<area shape="rect" id="Node000001" title="ImitatePass::GitInit git init wrapper." alt="" coords="5,5,152,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="200,5,411,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,15,186,15,186,21,152,21"/>
 </map>

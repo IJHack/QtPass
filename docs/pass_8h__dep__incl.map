@@ -1,17 +1,37 @@
 <map id="src/pass.h" name="src/pass.h">
-<area shape="rect" id="node1" title=" " alt="" coords="1078,5,1161,31"/>
-<area shape="rect" id="node2" href="$imitatepass_8h.html" title=" " alt="" coords="785,79,907,104"/>
-<area shape="rect" id="node7" href="$pass_8cpp.html" title=" " alt="" coords="5,225,103,251"/>
-<area shape="rect" id="node8" href="$passworddialog_8cpp.html" title=" " alt="" coords="1317,225,1476,251"/>
-<area shape="rect" id="node10" href="$qtpasssettings_8cpp.html" title=" " alt="" coords="1501,225,1655,251"/>
-<area shape="rect" id="node15" href="$realpass_8h.html" title=" " alt="" coords="1067,79,1171,104"/>
-<area shape="rect" id="node3" href="$imitatepass_8cpp.html" title=" " alt="" coords="127,225,263,251"/>
-<area shape="rect" id="node4" href="$qtpasssettings_8h.html" title=" " alt="" coords="776,152,916,177"/>
-<area shape="rect" id="node5" href="$configdialog_8cpp.html" title=" " alt="" coords="715,225,854,251"/>
-<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title=" " alt="" coords="879,225,1019,251"/>
-<area shape="rect" id="node9" href="$qtpass_8cpp.html" title=" " alt="" coords="1043,225,1151,251"/>
-<area shape="rect" id="node11" href="$realpass_8cpp.html" title=" " alt="" coords="1175,225,1293,251"/>
-<area shape="rect" id="node12" href="$storemodel_8cpp.html" title=" " alt="" coords="287,225,421,251"/>
-<area shape="rect" id="node13" href="$usersdialog_8cpp.html" title=" " alt="" coords="445,225,580,251"/>
-<area shape="rect" id="node14" href="$util_8cpp.html" title=" " alt="" coords="604,225,691,251"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1156,5,1243,31"/>
+<area shape="rect" id="Node000002" href="$imitatepass_8h.html" title=" " alt="" coords="839,79,973,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1143,36,954,81,953,76,1142,30"/>
+<area shape="rect" id="Node000007" href="$pass_8cpp.html" title=" " alt="" coords="5,225,108,251"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="1143,30,826,81,412,163,108,228,107,223,411,158,826,76,1142,25"/>
+<area shape="rect" id="Node000008" href="$passworddialog_8cpp.html" title=" " alt="" coords="1409,225,1584,251"/>
+<area shape="poly" id="edge16_Node000001_Node000008" title=" " alt="" coords="1227,37,1482,223,1479,227,1224,41"/>
+<area shape="rect" id="Node000010" href="$qtpasssettings_8cpp.html" title=" " alt="" coords="1608,225,1775,251"/>
+<area shape="poly" id="edge17_Node000001_Node000010" title=" " alt="" coords="1239,34,1666,223,1664,228,1237,39"/>
+<area shape="rect" id="Node000015" href="$realpass_8h.html" title=" " alt="" coords="1143,79,1255,104"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="1202,44,1202,79,1197,79,1197,44"/>
+<area shape="rect" id="Node000003" href="$imitatepass_8cpp.html" title=" " alt="" coords="133,225,282,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="838,109,263,228,262,223,837,104"/>
+<area shape="rect" id="Node000004" href="$qtpasssettings_8h.html" title=" " alt="" coords="830,152,982,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="909,118,909,152,903,152,903,118"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="816,176,580,198,294,228,282,229,282,224,294,223,580,193,816,171"/>
+<area shape="rect" id="Node000005" href="$configdialog_8cpp.html" title=" " alt="" coords="765,225,916,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="888,189,853,227,849,223,884,186"/>
+<area shape="rect" id="Node000006" href="$mainwindow_8cpp.html" title=" " alt="" coords="941,225,1095,251"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="937,183,1001,223,998,227,934,187"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="816,173,508,191,315,207,121,228,109,230,108,224,120,223,314,202,508,186,816,167"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="996,174,1409,224,1409,229,995,179"/>
+<area shape="rect" id="Node000009" href="$qtpass_8cpp.html" title=" " alt="" coords="1119,225,1234,251"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="963,178,1134,223,1132,228,962,183"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="996,170,1265,192,1597,223,1608,224,1607,229,1596,228,1265,197,996,175"/>
+<area shape="rect" id="Node000011" href="$realpass_8cpp.html" title=" " alt="" coords="1259,225,1385,251"/>
+<area shape="poly" id="edge11_Node000004_Node000011" title=" " alt="" coords="987,177,1259,223,1258,228,986,182"/>
+<area shape="rect" id="Node000012" href="$storemodel_8cpp.html" title=" " alt="" coords="306,225,453,251"/>
+<area shape="poly" id="edge12_Node000004_Node000012" title=" " alt="" coords="817,181,453,229,452,224,816,175"/>
+<area shape="rect" id="Node000013" href="$usersdialog_8cpp.html" title=" " alt="" coords="477,225,623,251"/>
+<area shape="poly" id="edge13_Node000004_Node000013" title=" " alt="" coords="836,183,608,228,607,223,835,177"/>
+<area shape="rect" id="Node000014" href="$util_8cpp.html" title=" " alt="" coords="647,225,741,251"/>
+<area shape="poly" id="edge14_Node000004_Node000014" title=" " alt="" coords="860,184,729,228,727,223,858,179"/>
+<area shape="poly" id="edge19_Node000015_Node000004" title=" " alt="" coords="1140,110,954,154,953,149,1139,105"/>
+<area shape="poly" id="edge20_Node000015_Node000011" title=" " alt="" coords="1220,113,1314,223,1310,227,1216,116"/>
 </map>

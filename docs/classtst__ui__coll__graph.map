@@ -1,4 +1,5 @@
 <map id="tst_ui" name="tst_ui">
-<area shape="rect" id="node1" title="The tst_ui class is our first unit test." alt="" coords="13,79,68,104"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,76,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,79,72,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,80,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,44,45,79,40,79,40,44"/>
 </map>

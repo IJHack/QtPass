@@ -1,6 +1,9 @@
 <map id="src/qtpass.h" name="src/qtpass.h">
-<area shape="rect" id="node1" title=" " alt="" coords="93,5,188,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,76,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,79,181,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="205,79,271,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="95,5,195,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,80,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,33,72,73,69,68,127,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="104,79,187,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,31,148,65,143,65,143,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="211,79,282,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,28,220,68,217,73,160,33"/>
 </map>

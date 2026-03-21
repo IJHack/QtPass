@@ -1,7 +1,12 @@
 <map id="ImitatePass" name="ImitatePass">
-<area shape="rect" id="node1" title="Imitates pass features when pass is not enabled or available." alt="" coords="56,243,148,268"/>
-<area shape="rect" id="node2" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="20,168,72,193"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,76,31"/>
-<area shape="rect" id="node4" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="63,80,136,105"/>
-<area shape="rect" id="node5" href="$classsimple_transaction.html" title=" " alt="" coords="96,168,223,193"/>
+<area shape="rect" id="Node000001" title="Imitates pass features when pass is not enabled or available." alt="" coords="59,243,157,268"/>
+<area shape="rect" id="Node000002" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="23,168,73,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,203,100,241,96,244,65,206"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,80,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="46,44,50,168,45,168,41,45"/>
+<area shape="rect" id="Node000004" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="65,80,143,105"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="64,40,96,78,92,81,59,43"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="91,118,58,169,54,166,87,115"/>
+<area shape="rect" id="Node000005" href="$classsimple_transaction.html" title=" " alt="" coords="98,168,238,193"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="151,206,120,244,116,241,147,203"/>
 </map>

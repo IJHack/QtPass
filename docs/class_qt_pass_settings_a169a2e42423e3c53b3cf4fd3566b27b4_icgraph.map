@@ -1,6 +1,9 @@
 <map id="QtPassSettings::setPwgenExecutable" name="QtPassSettings::setPwgenExecutable">
-<area shape="rect" id="node1" title=" " alt="" coords="629,5,809,45"/>
-<area shape="rect" id="node2" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="371,13,581,38"/>
-<area shape="rect" id="node3" href="$class_qt_pass.html#a49e2861160fdb8d614231933f60fac47" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="232,13,323,38"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,13,184,38"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="668,5,859,45"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="393,13,620,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="654,28,620,28,620,23,654,23"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,13,345,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,28,346,28,346,23,380,23"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,13,203,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,28,203,28,203,23,237,23"/>
 </map>
