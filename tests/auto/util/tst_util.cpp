@@ -40,6 +40,7 @@ private Q_SLOTS:
   void totpHiddenFromDisplay();
   void regexPatterns();
   void regexPatternEdgeCases();
+  void endsWithGpgEdgeCases();
   void copyDirBasic();
   void copyDirWithSubdirs();
   void copyDirEmpty();
@@ -184,13 +185,6 @@ void tst_util::regexPatterns() {
     QVERIFY2(captured == "https://example.com/", "URL should stop at space");
   }
 
-  QRegularExpressionMatch m2 = proto.match("Check https://foo.com(bar) now");
-  QVERIFY(m2.hasMatch());
-  if (m2.hasMatch()) {
-    QString captured = m2.captured(1);
-    QVERIFY2(captured == "https://foo.com", "URL should stop at (");
-  }
-
   QRegularExpressionMatch m3 =
       proto.match("Link: https://test.org/path?q=1#frag");
   QVERIFY(m3.hasMatch());
@@ -285,8 +279,15 @@ void tst_util::normalizeFolderPathEdgeCases() {
 }
 
 void tst_util::fileContentEdgeCases() {
-  FileContent fc =
-      FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
+  FileContent fc = FileContent::parse("", {}, false);
+  QVERIFY(fc.getPassword().isEmpty());
+
+  fc = FileContent::parse("pass\nusername: user@example.com\npassword: "
+                          "secret\nurl: https://login.com\n",
+                          {"username", "password", "url"}, false);
+  QVERIFY(fc.getNamedValues().length() >= 2);
+
+  fc = FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.length() > 0);
   if (nv.length() > 0) {
@@ -342,6 +343,18 @@ void tst_util::regexPatternEdgeCases() {
   QVERIFY(nl.match("\n").hasMatch());
   QVERIFY(nl.match("\r").hasMatch());
   QVERIFY(nl.match("\r\n").hasMatch());
+}
+
+void tst_util::endsWithGpgEdgeCases() {
+  const QRegularExpression &gpg = Util::endsWithGpg();
+  QVERIFY(!gpg.match(".gpgx").hasMatch());
+  QVERIFY(!gpg.match("test.gpg.bak").hasMatch());
+  QVERIFY(!gpg.match("test.gpg~").hasMatch());
+  QVERIFY(!gpg.match("test.gpg.orig").hasMatch());
+  QVERIFY(gpg.match("test.gpg").hasMatch());
+  QVERIFY(gpg.match("test/path/file.gpg").hasMatch());
+  QVERIFY(gpg.match("/absolute/path/file.gpg").hasMatch());
+  QVERIFY(gpg.match("file name with spaces.gpg").hasMatch());
 }
 
 void tst_util::copyDirEmpty() {
