@@ -90,15 +90,8 @@ $(function() {
 <div class="line">use-standard-socket</div>
 <div class="line">default-cache-ttl 600</div>
 <div class="line">max-cache-ttl 7200</div>
-</div><!-- fragment --><p>Also, the following is useful to add to your .bashrc if you are using Yubikey NEO on Ubuntu:</p>
-<div class="fragment"><div class="line"># OpenPGP applet support for YubiKey NEO</div>
-<div class="line">if [ ! -f /tmp/gpg-agent.env ]; then</div>
-<div class="line">    killall gpg-agent;</div>
-<div class="line">        eval $(gpg-agent --daemon --enable-ssh-support &gt; /tmp/gpg-agent.env);</div>
-<div class="line">fi</div>
-<div class="line">. /tmp/gpg-agent.env</div>
 </div><!-- fragment --><ul>
-<li>More info: <a href="https://Github.com/IJHack/qtpass/issues/60">issue 60</a> and <a href="https://github.com/IJHack/qtpass/issues/73">issue 73</a></li>
+<li>See the <a href="https://www.passwordstore.org/#faq">pass FAQ</a> for more troubleshooting tips.</li>
 </ul>
 <h2>I don't get a passphrase / PIN dialog</h2>
 <ul>
@@ -132,7 +125,7 @@ $(function() {
 </ul>
 <p>These settings can be over-ruled by a <code>qtpass.ini</code> file in the folder where the application resides. So called "portable config".</p>
 <p>There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).</p>
-<p>More information: <a href="http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
+<p>More information: <a href="https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
 <h2>Where can I ask for help?</h2>
 <ul>
 <li>Create an <a href="https://Github.com/IJHack/qtpass/">issue</a> issues on GitHub.</li>
@@ -150,12 +143,8 @@ $(function() {
 </ul>
 <div class="fragment"><div class="line">export DESKTOP_SESSION=gnome</div>
 </div><!-- fragment --><ul>
-<li>Another possible reason is, that the currently installed Qt Version gives problems (e.g. on Linux Mint 17.3) Then you'll have to install the current version via your package manager or if this is not up-to-date, download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> install it and run:</li>
+<li>Another possible reason is that the currently installed Qt version gives problems. Then you'll have to install the current version via your package manager or download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> and build from source.</li>
 </ul>
-<div class="fragment"><div class="line">/PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake</div>
-<div class="line">make</div>
-<div class="line">(sudo) make install</div>
-</div><!-- fragment --><p>where <code>PATHTOYOURINSTALLATION</code> is the path you selected in the qt installer (default <code>/home/YOURUSER/Qt/</code> ) and 5.5 has to be adapted for the Qt version you downloaded.</p>
 <h2>I don't like the design, what gives?</h2>
 <ul>
 <li>It's all on GitHub, clone, change and send a pull request.</li>

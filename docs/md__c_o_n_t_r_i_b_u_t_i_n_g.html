@@ -76,30 +76,30 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>Make sure you have read the <a class="el" href="md__f_a_q.html">FAQ</a></p>
 <p>Thank you for wanting to contribute to making <a class="el" href="class_qt_pass.html">QtPass</a> awesome.</p>
-<h1>This document</h1>
-<p>This document is still in a very early stage and needs a lot more work.</p>
 <h1>Pull Request Process</h1>
 <ol type="1">
-<li>Ensure install or build dependencies and artefacts are not commmitted.</li>
+<li>Ensure install or build dependencies and artifacts are not committed.</li>
 <li>When adding big new features or changes to the build tool, update the <a class="el" href="md__r_e_a_d_m_e.html">README.md</a> to reflect those.</li>
-<li>Make sure you update all of the CI configs if need be. These are ran on every Pull Request.</li>
-<li>Increase the version numbers in relevant files when applicable. The versioning scheme we use is <a href="http://semver.org/">SemVer</a>.</li>
-<li>You may merge the Pull Request in once you have the sign-off of one other developer, or if you do not have permission to do that, you may request a reviewer to merge it for you.</li>
+<li>Make sure you update all of the CI configs if needed. These run on every Pull Request.</li>
+<li>Increase the version numbers in relevant files when applicable. The versioning scheme we use is <a href="https://semver.org/">SemVer</a>.</li>
+<li>You may merge the Pull Request once you have the sign-off of one other developer, or if you do not have permission to do that, you may request a reviewer to merge it for you.</li>
 </ol>
 <h1>Translations</h1>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> uses <a href="https://hosted.weblate.org/projects/qtpass/qtpass/">Weblate</a> for translations.</p>
+<p>To add a new language:</p>
 <ul>
-<li>Add you language to the <code>src/src.pro</code> file under TRANSLATIONS.</li>
-<li>Next run the command <code>qmake</code> which will create and update the localization files.</li>
-<li>Edit your file with (let's imagine your language is sv_SE (Swedish) <code>linguist localization/localization_sv_SE.ts</code></li>
+<li>Add your language code to <code>src/qtpass.pro</code> under TRANSLATIONS</li>
+<li>Run <code>qmake</code> to generate the translation files</li>
+<li>Edit the <code>.ts</code> file with Qt Linguist: <code>linguist localization/qtpass_xx_YY.ts</code></li>
 </ul>
-<p>Qt Linguist has very nice in-context translation options <a href="https://doc.qt.io/qt-5/linguist-translators.html">for translators</a></p>
-<p>You can do online translations via <a href="https://hosted.weblate.org/projects/qtpass/qtpass/">Weblate</a></p>
-<h1>IRC</h1>
-<p>For questions or brainstorming about features please join #ijhack on freenode.</p>
-<h1>Gitter</h1>
-<p>Or if you prefer to use <a href="https://gitter.im/IJHack/qtpass">gitter</a></p>
+<p>Qt Linguist has helpful <a href="https://doc.qt.io/qt-5/linguist-translators.html">in-context translation options</a>.</p>
+<h1>Getting Help</h1>
+<ul>
+<li>Open an <a href="https://github.com/IJHack/QtPass/issues">issue</a> for bugs or feature requests</li>
+<li>Email <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'p@'+'qtp'+'as'+'s.o'+'rg'; return false;">help@qtpass.org</a> for general questions</li>
+</ul>
 <h1>License</h1>
-<p><a class="el" href="class_qt_pass.html">QtPass</a> is released under the GNU GPL v3.0 license. <a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a> </p>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> is released under the GNU GPL v3.0 license. <a href="https://www.gnu.org/licenses/gpl-3.0.html">https://www.gnu.org/licenses/gpl-3.0.html</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
