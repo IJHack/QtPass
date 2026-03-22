@@ -20,5 +20,17 @@ jobs:
       - name: Install linters
         run: npm ci
 
-      - name: Lint just the root HTML
+      - name: Lint HTML files
         run: npx htmlhint "*.html"
+
+  preview:
+    name: Preview Website
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Start preview server
+        run: python3 -m http.server 8080 &
