@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: IJHack
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: Website Lint
+
+on:
+  push:
+    paths:
+      - '**.html'
+      - 'stylesheets/**'
+      - '.github/workflows/website-lint.yml'
+  pull_request:
+    paths:
+      - '**.html'
+      - 'stylesheets/**'
+      - '.github/workflows/website-lint.yml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install htmlhint
+        run: npm install --save-dev htmlhint
+
+      - name: Run HTML Hint
+        run: npx htmlhint "*.html"
+
+      - name: Validate HTML
+        run: |
+          for file in *.html; do
+            echo "Checking $file"
+            npx htmlhint "$file"
+          done
