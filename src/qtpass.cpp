@@ -34,8 +34,15 @@ QtPass::QtPass(MainWindow *mainWindow)
   connect(&clearClipboardTimer, &QTimer::timeout, this,
           &QtPass::clearClipboard);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
   QObject::connect(qApp, &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#pragma GCC diagnostic pop
+#endif
 
   setMainWindow();
 }

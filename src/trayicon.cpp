@@ -79,7 +79,14 @@ void TrayIcon::createActions() {
   connect(restoreAction, &QAction::triggered, parentwin, &QWidget::showNormal);
 
   quitAction = new QAction(tr("&Quit"), this);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
   connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#pragma GCC diagnostic pop
+#endif
 }
 
 /**
