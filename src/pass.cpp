@@ -312,11 +312,11 @@ void Pass::updateEnv() {
 auto Pass::getGpgIdPath(const QString &for_file) -> QString {
   QString passStore =
       QDir::fromNativeSeparators(QtPassSettings::getPassStore());
-  QDir gpgIdDir(
-      QFileInfo(QDir::fromNativeSeparators(for_file).startsWith(passStore)
-                    ? for_file
-                    : QtPassSettings::getPassStore() + for_file)
-          .absoluteDir());
+  QString normalizedFile = QDir::fromNativeSeparators(for_file);
+  QString fullPath = normalizedFile.startsWith(passStore)
+                         ? normalizedFile
+                         : passStore + "/" + normalizedFile;
+  QDir gpgIdDir(QFileInfo(fullPath).absoluteDir());
   bool found = false;
   while (gpgIdDir.exists() && gpgIdDir.absolutePath().startsWith(passStore)) {
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
