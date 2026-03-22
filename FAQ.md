@@ -13,7 +13,7 @@
 - Disable GNOME keyring
 - Create a `~/.gnupg/gpg-agent.conf` containing:
 
-```yaml
+```bash
 enable-ssh-support
 write-env-file
 use-standard-socket
@@ -21,19 +21,7 @@ default-cache-ttl 600
 max-cache-ttl 7200
 ```
 
-Also, the following is useful to add to
-your .bashrc if you are using Yubikey NEO on Ubuntu:
-
-```sh
-# OpenPGP applet support for YubiKey NEO
-if [ ! -f /tmp/gpg-agent.env ]; then
-    killall gpg-agent;
-        eval $(gpg-agent --daemon --enable-ssh-support > /tmp/gpg-agent.env);
-fi
-. /tmp/gpg-agent.env
-```
-
-- More info: [issue 60](https://Github.com/IJHack/qtpass/issues/60) and [issue 73](https://github.com/IJHack/qtpass/issues/73)
+- See the [pass FAQ](https://www.passwordstore.org/#faq) for more troubleshooting tips.
 
 ### I don't get a passphrase / PIN dialog
 
@@ -49,7 +37,7 @@ fi
 
 - Possibly you have you key only in gpg and not in gpg2
 
-```bsh
+```bash
 gpg --export [ID] > public.key
 gpg --export-secret-key [ID] > private.key
 gpg2 --import public.key
@@ -108,18 +96,8 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
-- Another possible reason is, that the currently installed Qt Version gives problems (e.g. on Linux Mint 17.3)
-  Then you'll have to install the current version via your package manager or if this is not up-to-date,
-  download it from <https://www.qt.io/download/> install it and run:
-
-```sh
-/PATHTOYOURQTINSTALLATION/5.5/gcc_64/bin/qmake
-make
-(sudo) make install
-```
-
-where `PATHTOYOURINSTALLATION` is the path you selected in the qt installer (default `/home/YOURUSER/Qt/` )
-and 5.5 has to be adapted for the Qt version you downloaded.
+- Another possible reason is that the currently installed Qt version gives problems.
+  Then you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
 
 ### I don't like the design, what gives?
 
