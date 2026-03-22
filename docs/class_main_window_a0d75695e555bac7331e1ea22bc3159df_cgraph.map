@@ -1,0 +1,39 @@
+<map id="MainWindow::passShowHandler" name="MainWindow::passShowHandler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,325,235,351"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title=" " alt="" coords="294,5,509,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,324,137,270,167,193,188,151,214,110,245,72,281,40,289,35,292,39,284,44,249,76,219,113,193,154,172,195,142,272,127,325"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title=" " alt="" coords="283,55,520,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,324,141,279,173,215,220,146,249,115,281,89,291,83,294,88,284,94,252,119,224,150,178,217,146,281,128,326"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#ac88e8096551d24a41fc0625a4d903139" title=" " alt="" coords="308,104,495,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="126,324,147,287,181,236,226,184,253,160,281,140,297,132,299,137,284,144,256,164,230,188,185,240,151,289,130,326"/>
+<area shape="rect" id="Node000005" href="$class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" title=" " alt="" coords="304,154,499,194"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="132,323,192,266,235,232,281,204,297,196,299,201,284,208,238,237,196,270,135,327"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#afaa574ceedde650a5b713bdb13e1b5eb" title=" " alt="" coords="294,219,509,244"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,323,202,288,282,253,309,245,310,250,284,258,205,293,143,327"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3" title=" " alt="" coords="292,268,511,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="183,323,324,293,325,299,184,328"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a4b1ea480a08bea181210fca93e4b6d54" title=" " alt="" coords="302,318,501,358"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="235,335,289,335,289,341,235,341"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" title=" " alt="" coords="289,382,514,422"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="177,348,300,376,299,382,176,353"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0" title=" " alt="" coords="290,447,513,472"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="140,349,202,390,242,412,284,432,312,441,310,446,282,436,239,417,199,394,137,353"/>
+<area shape="rect" id="Node000011" href="$class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="331,496,471,521"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="133,349,193,413,236,450,284,481,319,494,317,499,281,486,232,454,189,417,130,353"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e" title=" " alt="" coords="287,546,516,586"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="130,349,152,385,186,434,231,486,284,530,297,538,294,542,281,535,227,490,182,438,147,388,126,352"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="316,611,487,636"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="128,350,145,397,176,465,198,501,223,536,252,568,284,596,304,607,301,611,281,600,248,572,219,539,193,504,172,467,140,399,123,352"/>
+<area shape="rect" id="Node000019" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="297,661,505,701"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="127,350,142,405,172,485,193,528,218,571,249,611,284,645,294,652,291,656,281,649,245,614,214,574,188,531,167,487,137,406,122,352"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="585,585,793,611"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="487,613,571,606,572,611,487,618"/>
+<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248" title=" " alt="" coords="568,635,809,660"/>
+<area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="487,628,555,633,554,639,487,633"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title=" " alt="" coords="868,536,1093,561"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="764,583,891,561,892,566,765,588"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title=" " alt="" coords="869,585,1092,611"/>
+<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="793,595,855,595,855,601,793,601"/>
+<area shape="rect" id="Node000017" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="857,635,1104,660"/>
+<area shape="poly" id="edge16_Node000014_Node000017" title=" " alt="" coords="765,608,892,630,891,635,764,613"/>
+</map>

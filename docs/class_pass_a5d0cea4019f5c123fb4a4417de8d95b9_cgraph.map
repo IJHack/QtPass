@@ -1,0 +1,33 @@
+<map id="Pass::Pass" name="Pass::Pass">
+<area shape="rect" id="Node000001" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="5,327,93,352"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="193,277,304,303"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,324,141,311,179,302,181,307,142,317,94,329"/>
+<area shape="rect" id="Node000015" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="181,327,317,352"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="93,337,167,337,167,342,93,342"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title=" " alt="" coords="141,376,356,401"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="94,348,142,361,180,370,179,375,141,366,93,353"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a22febea5d24676854f3dad24260df4d5" title=" " alt="" coords="447,5,590,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,276,268,231,298,166,343,98,371,66,403,40,433,25,435,30,405,44,374,70,347,101,303,169,273,233,256,278"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#aeb0213d032e070ad788398328c0a080c" title=" " alt="" coords="404,55,633,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="253,276,273,239,305,188,349,134,374,110,403,89,414,83,416,88,405,94,378,114,353,138,310,191,278,241,258,279"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a52541582298af5b2707447e3a57f85bf" title=" " alt="" coords="443,104,594,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="257,275,313,209,355,171,403,138,429,127,431,132,405,143,358,175,317,213,261,279"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#ab6d3acbdce8a5bc579bef175c85382df" title=" " alt="" coords="442,153,595,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="264,275,323,232,362,208,403,188,428,179,429,184,405,192,364,213,326,236,267,279"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#ab892bcacdbe3081f677e456a3a8ac328" title=" " alt="" coords="439,203,599,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="284,275,403,237,437,228,438,234,405,242,286,280"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a7a4c2bbb80372455e0d406fbc940e219" title=" " alt="" coords="453,252,584,277"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,282,439,269,439,275,304,288"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb" title=" " alt="" coords="445,301,592,327"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="304,292,432,304,432,309,304,298"/>
+<area shape="rect" id="Node000010" href="$class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5" title=" " alt="" coords="445,351,592,376"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="305,297,357,312,381,324,405,336,435,345,434,350,403,340,379,328,355,316,303,302"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed" title=" " alt="" coords="422,400,615,425"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="305,292,332,299,358,312,375,330,382,350,390,368,406,385,418,392,415,397,402,389,385,371,378,352,370,333,354,316,330,304,304,297"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a263cc9ceb5269427237ea43267667197" title=" " alt="" coords="437,449,601,475"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="305,290,333,297,358,312,371,327,379,343,383,375,387,406,393,421,406,435,425,447,423,452,402,439,389,423,381,408,377,376,373,345,367,330,354,316,331,302,303,295"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba" title=" " alt="" coords="446,499,591,524"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="305,289,333,296,358,312,375,334,382,356,383,400,383,443,390,464,406,484,434,501,432,506,402,488,385,466,378,444,377,400,377,357,370,336,354,316,331,301,304,294"/>
+<area shape="rect" id="Node000014" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title=" " alt="" coords="436,548,601,573"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="305,288,333,296,358,312,378,340,386,368,386,397,383,425,379,453,379,480,387,507,406,533,425,547,422,551,402,537,382,509,374,481,374,453,377,424,381,396,381,369,373,342,354,316,331,301,304,293"/>
+</map>

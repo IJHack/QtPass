@@ -1,0 +1,9 @@
+<map id="QtPassSettings::isUseAutoclearPanel" name="QtPassSettings::isUseAutoclearPanel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="283,47,508,87"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="22,5,218,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,48,191,33,192,28,270,42"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="11,55,229,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,70,229,70,229,65,269,65"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,104,235,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="270,92,192,107,191,101,269,87"/>
+</map>
