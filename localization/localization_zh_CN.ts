@@ -1028,12 +1028,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="446"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP 码已复制到剪贴板</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="448"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>此密码条目中未找到 OTP 码</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="677"/>
@@ -1048,7 +1048,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="717"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>未选中密码用于生成 OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
