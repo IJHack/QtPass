@@ -90,7 +90,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &MainWindow::deselect);
 
   if (QtPassSettings::isUseMonospace()) {
-    ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
+    QFont monospace("Monospace");
+    monospace.setStyleHint(QFont::Monospace);
+    ui->textBrowser->setFont(monospace);
   }
   if (QtPassSettings::isNoLineWrapping()) {
     ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
@@ -251,7 +253,9 @@ void MainWindow::config() {
     if (d->result() == QDialog::Accepted) {
       // Update the textBrowser font
       if (QtPassSettings::isUseMonospace()) {
-        ui->textBrowser->setFont(QFont(QStringLiteral("Monospace")));
+        QFont monospace("Monospace");
+        monospace.setStyleHint(QFont::Monospace);
+        ui->textBrowser->setFont(monospace);
       } else {
         ui->textBrowser->setFont(QFont());
       }
