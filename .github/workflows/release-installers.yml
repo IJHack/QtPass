@@ -66,7 +66,7 @@ jobs:
           iscc "/DMyAppVersion=${{ steps.version.outputs.version }}" qtpass.iss
 
       - name: Upload installer artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: qtpass-windows-installer-${{ steps.version.outputs.version }}
           path: Output/qtpass-*.exe
@@ -121,7 +121,7 @@ jobs:
           create-dmg "$DMG_NAME" "$APP_PATH"
 
       - name: Upload dmg artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
