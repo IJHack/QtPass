@@ -174,6 +174,14 @@ void tst_util::regexPatterns() {
   QVERIFY(proto.match("ftp://server/file").hasMatch());
   QVERIFY(proto.match("webdav://localhost/share").hasMatch());
   QVERIFY(!proto.match("not a url").hasMatch());
+  QRegularExpressionMatch m1 =
+      proto.match("https://example.com/ is the address");
+  QVERIFY(m1.hasMatch());
+  if (m1.hasMatch()) {
+    QString captured = m1.captured(1);
+    QVERIFY(!captured.contains(" "));
+    QVERIFY(!captured.contains("<"));
+  }
 
   QRegularExpression nl = Util::newLinesRegex();
   QVERIFY(nl.match("\n").hasMatch());
