@@ -1,10 +1,18 @@
 <map id="tests/auto/ui/tst_ui.cpp" name="tests/auto/ui/tst_ui.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="315,5,469,31"/>
-<area shape="rect" id="node2" href="$passworddialog_8h.html" title=" " alt="" coords="124,79,305,104"/>
-<area shape="rect" id="node3" href="$passwordconfiguration_8h.html" title=" " alt="" coords="5,152,168,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="330,79,454,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="479,79,540,104"/>
-<area shape="rect" id="node8" title=" " alt="" coords="564,79,647,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="192,152,261,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="53,225,120,251"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="179,5,350,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,140,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,33,118,76,116,71,233,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="164,79,227,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="255,33,218,71,214,67,251,29"/>
+<area shape="rect" id="Node000004" href="$passworddialog_8h.html" title=" " alt="" coords="302,79,497,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,28,366,70,364,74,285,33"/>
+<area shape="rect" id="Node000005" href="$passwordconfiguration_8h.html" title=" " alt="" coords="174,152,355,177"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="267,31,267,138,262,138,262,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="521,79,611,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="314,28,508,74,507,79,312,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="379,106,300,148,298,143,376,102"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="379,152,454,177"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="405,104,413,138,408,140,400,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="229,225,300,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="267,178,267,212,262,212,262,178"/>
 </map>

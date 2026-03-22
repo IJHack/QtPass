@@ -13,4 +13,5 @@ latex
 linter-output.log
 rtf
 src
-
+main
+tests

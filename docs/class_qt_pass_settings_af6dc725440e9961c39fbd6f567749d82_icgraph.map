@@ -1,0 +1,21 @@
+<map id="QtPassSettings::getGitExecutable" name="QtPassSettings::getGitExecutable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="769,105,1008,131"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="510,5,706,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="850,101,790,72,720,45,680,33,681,28,722,39,793,67,853,96"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="526,55,690,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="804,105,679,83,680,77,805,100"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="251,105,447,131"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="755,121,447,121,447,115,755,115"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="41,156,167,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="756,129,168,167,167,162,755,124"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="495,207,721,232"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="848,139,722,190,660,209,658,204,720,185,846,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,85,415,108,414,103,528,80"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="35,105,173,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="237,121,174,121,174,115,237,115"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="273,136,167,159,165,153,272,131"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,207,396,232"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="481,222,396,222,396,217,481,217"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,207,203,232"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="288,222,203,222,203,217,288,217"/>
+</map>

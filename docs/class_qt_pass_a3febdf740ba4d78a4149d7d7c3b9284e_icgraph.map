@@ -1,7 +1,11 @@
 <map id="QtPass::clearClipboard" name="QtPass::clearClipboard">
-<area shape="rect" id="node1" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="448,55,605,80"/>
-<area shape="rect" id="node2" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="232,5,400,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="239,55,393,80"/>
-<area shape="rect" id="node5" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title=" " alt="" coords="257,104,375,129"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,184,80"/>
+<area shape="rect" id="Node000001" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="483,55,651,80"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="251,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="495,54,401,33,402,28,496,49"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="259,55,427,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="469,70,427,70,427,65,469,65"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title=" " alt="" coords="283,104,402,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="496,86,402,107,401,101,495,80"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,203,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,70,203,70,203,65,245,65"/>
 </map>

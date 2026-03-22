@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['userinfo_2eh_0',['userinfo.h',['../userinfo_8h.html',1,'']]],
-  ['usersdialog_2ecpp_1',['usersdialog.cpp',['../usersdialog_8cpp.html',1,'']]],
-  ['usersdialog_2eh_2',['usersdialog.h',['../usersdialog_8h.html',1,'']]],
-  ['util_2ecpp_3',['util.cpp',['../util_8cpp.html',1,'']]],
-  ['util_2eh_4',['util.h',['../util_8h.html',1,'']]]
+  ['trayicon_2ecpp_0',['trayicon.cpp',['../trayicon_8cpp.html',1,'']]],
+  ['trayicon_2eh_1',['trayicon.h',['../trayicon_8h.html',1,'']]],
+  ['tst_5fui_2ecpp_2',['tst_ui.cpp',['../tst__ui_8cpp.html',1,'']]],
+  ['tst_5futil_2ecpp_3',['tst_util.cpp',['../tst__util_8cpp.html',1,'']]]
 ];

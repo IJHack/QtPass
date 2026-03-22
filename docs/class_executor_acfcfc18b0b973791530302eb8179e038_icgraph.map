@@ -1,5 +1,7 @@
 <map id="Executor::starting" name="Executor::starting">
-<area shape="rect" id="node1" title="starting signal that is emited when process starts" alt="" coords="185,31,311,56"/>
-<area shape="rect" id="node2" href="$class_executor.html#a19fdadaa749c44b889287879ecf5f315" title="Executor::Executor executes external applications." alt="" coords="5,5,137,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="26,55,117,80"/>
+<area shape="rect" id="Node000001" title="starting signal that is emited when process starts" alt="" coords="196,31,332,56"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a19fdadaa749c44b889287879ecf5f315" title="Executor::Executor executes external applications." alt="" coords="5,5,148,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,35,148,30,149,25,183,30"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,55,121,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,56,121,64,121,59,182,51"/>
 </map>

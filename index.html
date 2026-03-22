@@ -121,25 +121,6 @@
             <a title="Install on FreeBSD" href="/downloads#FreeBSD"><img class="compatible" src="images/freebsd.png" alt="FreeBSD Compatible"></a>
         </p>
 
-        <h2><a id="insecure-generation" class="anchor" href="#insecure-generation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Insecure Password Generation prior to 1.2.1</h2>
-
-        <p>
-            All passwords generated with QtPass' built-in password generator prior to 1.2.1 are possibly predictable and enumerable by hackers.<br>
-            The generator used libc's random(), seeded with srand(msecs), where msecs is not the
-            msecs since 1970 (not that that'd be secure anyway), but rather the
-            msecs since the last second. This means there are only 1000 different
-            sequences of generated passwords.
-        </p>
-
-        <p>
-            Read more about this <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">issue</a> on <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">Github</a>.<br>
-            Please note that this is an issue with the QtPass GUI and not in pass or the greater password-store ecosystem.
-        </p>
-
-        <p>
-            We advice to <a href="/downloads">update to 1.2.1 or later</a> as soon as possible and change any password you may have generated with the QtPass' password generator.
-    	</p>
-
         <h2><a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
         <p>
@@ -319,9 +300,29 @@ fi
             <li>Send an email to <a title="Mail us for help" href="mailto:help@qtpass.org">help@qtpass.org</a></li>
         </ul>
 
+        <h2><a id="insecure-generation" class="anchor" href="#insecure-generation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Insecure Password Generation prior to 1.2.1</h2>
+
+        <p>
+            All passwords generated with QtPass' built-in password generator prior to 1.2.1 are possibly predictable and enumerable by hackers.<br>
+            The generator used libc's random(), seeded with srand(msecs), where msecs is not the
+            msecs since 1970 (not that that'd be secure anyway), but rather the
+            msecs since the last second. This means there are only 1000 different
+            sequences of generated passwords.
+        </p>
+
+        <p>
+            Read more about this <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">issue</a> on <a title="QtPass Insecure Password Generation" href="https://github.com/IJHack/QtPass/issues/338">Github</a>.<br>
+            Please note that this is an issue with the QtPass GUI and not in pass or the greater password-store ecosystem.
+        </p>
+
+        <p>
+            We advice to <a href="/downloads">update to 1.2.1 or later</a> as soon as possible and change any password you may have generated with the QtPass' password generator.
+    	</p>
+
         <h3><a id="changelogs" class="anchor" href="#changelogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Read up on recent changes</h3>
 
         <ul>
+            <li><a title="Getting Started" href="/getting-started">Getting Started Guide</a></li>
             <li><a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html">Current Change Log</a></li>
             <li><a title="Changes in 1.5" href="/changelog">Changelog of 1.5 releases</a></li>
             <li><a title="Changes in 1.4" href="/changelog.1.4">Changelog of 1.4 releases</a></li>

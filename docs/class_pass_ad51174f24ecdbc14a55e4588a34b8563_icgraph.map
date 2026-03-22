@@ -1,5 +1,7 @@
 <map id="Pass::finished" name="Pass::finished">
-<area shape="rect" id="node1" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="199,31,304,56"/>
-<area shape="rect" id="node2" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,151,31"/>
-<area shape="rect" id="node3" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="33,55,123,80"/>
+<area shape="rect" id="Node000001" title="Pass::processFinished reemits specific signal based on what process has finished." alt="" coords="211,31,321,56"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ac20ec846eb423ae4b89c8efef0c1a235" title="ImitatePass::finished this function is overloaded to ensure identical behaviour to RealPass ie...." alt="" coords="5,5,163,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,36,163,32,164,26,198,31"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation." alt="" coords="40,55,128,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,55,128,64,128,59,197,50"/>
 </map>

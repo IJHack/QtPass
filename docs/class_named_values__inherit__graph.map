@@ -1,4 +1,5 @@
 <map id="NamedValues" name="NamedValues">
-<area shape="rect" id="node1" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa..." alt="" coords="29,79,132,104"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,156,31"/>
+<area shape="rect" id="Node000001" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa..." alt="" coords="33,79,145,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,173,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,44,92,79,87,79,87,44"/>
 </map>

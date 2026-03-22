@@ -1,0 +1,17 @@
+<map id="QtPassSettings::isUsePass" name="QtPassSettings::isUsePass">
+<area shape="rect" id="Node000001" title=" " alt="" coords="675,53,867,79"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="495,79,627,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="661,82,627,86,627,81,660,77"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,447,31"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="660,56,447,32,447,26,661,51"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="273,79,425,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,94,425,94,425,89,481,89"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="520,75,446,45,407,33,409,28,448,39,522,70"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,128,396,153"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="493,110,397,132,396,127,492,105"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="271,177,427,203"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="534,115,495,143,448,168,415,180,414,175,446,164,492,138,531,110"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="386,69,376,61,349,57,326,59,314,64,312,70,318,77,314,80,307,70,311,60,325,54,349,52,378,56,390,65"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,128,203,153"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="288,143,203,143,203,138,288,138"/>
+</map>

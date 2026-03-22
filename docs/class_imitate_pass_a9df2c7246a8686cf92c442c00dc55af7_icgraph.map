@@ -1,6 +1,9 @@
 <map id="ImitatePass::endReencryptPath" name="ImitatePass::endReencryptPath">
-<area shape="rect" id="node1" title=" " alt="" coords="415,31,623,56"/>
-<area shape="rect" id="node2" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="184,31,367,56"/>
-<area shape="rect" id="node3" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="5,5,136,31"/>
-<area shape="rect" id="node4" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="11,55,130,80"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="436,31,660,56"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="192,31,388,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,46,388,46,388,41,422,41"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,33,144,29,145,23,178,28"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="11,55,138,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="178,58,138,63,138,58,178,53"/>
 </map>

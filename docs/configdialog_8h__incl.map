@@ -1,7 +1,11 @@
 <map id="src/configdialog.h" name="src/configdialog.h">
-<area shape="rect" id="node1" title=" " alt="" coords="121,5,245,31"/>
-<area shape="rect" id="node2" href="$enums_8h.html" title=" " alt="" coords="5,79,77,104"/>
-<area shape="rect" id="node3" href="$passwordconfiguration_8h.html" title=" " alt="" coords="101,79,264,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="288,79,357,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="149,152,216,177"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="131,5,267,31"/>
+<area shape="rect" id="Node000002" href="$enums_8h.html" title=" " alt="" coords="5,79,84,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,33,83,75,81,70,173,28"/>
+<area shape="rect" id="Node000003" href="$passwordconfiguration_8h.html" title=" " alt="" coords="109,79,290,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,31,202,65,197,65,197,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="314,79,389,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="225,28,315,70,313,75,223,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="164,152,235,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,104,202,138,197,138,197,104"/>
 </map>
