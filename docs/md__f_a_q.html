@@ -95,8 +95,8 @@ $(function() {
 </ul>
 <h2>I don't get a passphrase / PIN dialog</h2>
 <ul>
-<li>You'll need to install pinentry-qt (or -qt4 or -qt5 or even -gtk) and possibly set the full path to that executable in your <code>~/.gnupg/gpg-agent.conf</code> for example: <code>pinentry-program /usr/bin/pinentry-qt4</code></li>
-<li>On some esotheric systems it might be necessary to create a symbolic link <code>/usr/bin/pinentry</code> to your pinentry application of choice eg: <code>ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry</code></li>
+<li>You'll need to install pinentry-qt (or -gtk) and possibly set the full path to that executable in your <code>~/.gnupg/gpg-agent.conf</code> for example: <code>pinentry-program /usr/bin/pinentry-qt</code></li>
+<li>On some systems it might be necessary to create a symbolic link <code>/usr/bin/pinentry</code> to your pinentry application of choice eg: <code>ln -s /usr/bin/pinentry-qt /usr/bin/pinentry</code></li>
 <li>On macOS <code>pinentry-program /usr/local/bin/pinentry-mac</code> works after installing <code>pinentry-mac</code> from Homebrew.</li>
 </ul>
 <h2>I have an other issue with gpg</h2>
