@@ -48,6 +48,8 @@ private Q_SLOTS:
   void passwordConfigurationCharacters();
   void simpleTransactionBasic();
   void simpleTransactionNested();
+  void createGpgIdFile();
+  void createGpgIdFileEmptyKeys();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -409,6 +411,55 @@ void tst_util::simpleTransactionNested() {
 
   Enums::PROCESS result = trans.transactionIsOver(Enums::GIT_PUSH);
   QVERIFY(result != Enums::INVALID);
+}
+
+void tst_util::createGpgIdFile() {
+  QTemporaryDir tempDir;
+  QString newDir = tempDir.path() + "/testfolder";
+  QVERIFY(QDir().mkdir(newDir));
+
+  QString gpgIdFile = newDir + "/.gpg-id";
+  QStringList keyIds = {"ABCDEF12", "34567890"};
+
+  QFile gpgId(gpgIdFile);
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  for (const QString &keyId : keyIds) {
+    gpgId.write((keyId + "\n").toUtf8());
+  }
+  gpgId.close();
+
+  QVERIFY(QFile::exists(gpgIdFile));
+
+  QFile readFile(gpgIdFile);
+  QVERIFY(readFile.open(QIODevice::ReadOnly));
+  QString content = QString::fromUtf8(readFile.readAll());
+  readFile.close();
+
+  QStringList lines = content.trimmed().split('\n');
+  QCOMPARE(lines.size(), 2);
+  QCOMPARE(lines[0], QString("ABCDEF12"));
+  QCOMPARE(lines[1], QString("34567890"));
+}
+
+void tst_util::createGpgIdFileEmptyKeys() {
+  QTemporaryDir tempDir;
+  QString newDir = tempDir.path() + "/testfolder";
+  QVERIFY(QDir().mkdir(newDir));
+
+  QString gpgIdFile = newDir + "/.gpg-id";
+
+  QFile gpgId(gpgIdFile);
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  gpgId.close();
+
+  QVERIFY(QFile::exists(gpgIdFile));
+
+  QFile readFile(gpgIdFile);
+  QVERIFY(readFile.open(QIODevice::ReadOnly));
+  QString content = QString::fromUtf8(readFile.readAll());
+  readFile.close();
+
+  QVERIFY(content.isEmpty());
 }
 
 QTEST_MAIN(tst_util)
