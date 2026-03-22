@@ -71,7 +71,7 @@ So called "portable config".
 
 There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).
 
-More information: <http://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
+More information: <https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
 
 ### Where can I ask for help?
 
