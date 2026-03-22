@@ -1000,201 +1000,219 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>  <span class="keywordflow">if</span> (!QDir().mkdir(newdir)) {</div>
 <div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>    QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Error&quot;</span>),</div>
 <div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>                         tr(<span class="stringliteral">&quot;Failed to create folder: %1&quot;</span>).arg(newdir));</div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  }</div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>}</div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span> </div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span><span class="keywordtype">void</span> MainWindow::renameFolder() {</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>  <span class="keywordtype">bool</span> ok;</div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>  QString srcDir = QDir::cleanPath(</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>      <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">false</span>, model, proxyModel));</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>  QString srcDirName = QDir(srcDir).dirName();</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>  QString newName =</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>      QInputDialog::getText(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Rename file&quot;</span>), tr(<span class="stringliteral">&quot;Rename Folder To: &quot;</span>),</div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>                            QLineEdit::Normal, srcDirName, &amp;ok);</div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>  <span class="keywordflow">if</span> (!ok || newName.isEmpty()) {</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>  }</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>  QString destDir = srcDir;</div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>  destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);</div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Move(srcDir, destDir);</div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>}</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span> </div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span><span class="keywordtype">void</span> MainWindow::editPassword(<span class="keyword">const</span> QString &amp;file) {</div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>  <span class="keywordflow">if</span> (!file.isEmpty()) {</div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() &amp;&amp; <a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>      onUpdate(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    }</div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>    setPassword(file, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>  }</div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>}</div>
-<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span> </div>
-<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span><span class="keywordtype">void</span> MainWindow::renamePassword() {</div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>  <span class="keywordtype">bool</span> ok;</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>  QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">false</span>);</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>  QString filePath = QFileInfo(file).path();</div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>  QString fileName = QFileInfo(file).fileName();</div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>  <span class="keywordflow">if</span> (fileName.endsWith(<span class="stringliteral">&quot;.gpg&quot;</span>, Qt::CaseInsensitive)) {</div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>    fileName.chop(4);</div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>  }</div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span> </div>
-<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>  QString newName =</div>
-<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>      QInputDialog::getText(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Rename file&quot;</span>), tr(<span class="stringliteral">&quot;Rename File To: &quot;</span>),</div>
-<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>                            QLineEdit::Normal, fileName, &amp;ok);</div>
-<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>  <span class="keywordflow">if</span> (!ok || newName.isEmpty()) {</div>
-<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>  }</div>
-<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>  QString newFile = QDir(filePath).filePath(newName);</div>
-<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Move(file, newFile);</div>
-<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>}</div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span> </div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span><span class="keywordtype">void</span> MainWindow::clearTemplateWidgets() {</div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>  <span class="keywordflow">while</span> (ui-&gt;gridLayout-&gt;count() &gt; 0) {</div>
-<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>    QLayoutItem *item = ui-&gt;gridLayout-&gt;takeAt(0);</div>
-<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>    <span class="keyword">delete</span> item-&gt;widget();</div>
-<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>    <span class="keyword">delete</span> item;</div>
-<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>  }</div>
-<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>  ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>}</div>
-<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span> </div>
-<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span><span class="keywordtype">void</span> MainWindow::copyPasswordFromTreeview() {</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>  QFileInfo fileOrFolder =</div>
-<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>      model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</div>
-<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span> </div>
-<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>  <span class="keywordflow">if</span> (fileOrFolder.isFile()) {</div>
-<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>    QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">true</span>);</div>
-<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>    connect(<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>(), &amp;<a class="code hl_signal" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a>, <span class="keyword">this</span>,</div>
-<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>            &amp;MainWindow::passwordFromFileToClipboard);</div>
-<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>    <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Show(file);</div>
-<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>  }</div>
-<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>}</div>
-<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span> </div>
-<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span><span class="keywordtype">void</span> MainWindow::passwordFromFileToClipboard(<span class="keyword">const</span> QString &amp;text) {</div>
-<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>  QStringList tokens = text.split(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>  m_qtPass-&gt;<a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">copyTextToClipboard</a>(tokens[0]);</div>
-<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>}</div>
-<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span> </div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span><span class="keywordtype">void</span> MainWindow::addToGridLayout(<span class="keywordtype">int</span> position, <span class="keyword">const</span> QString &amp;field,</div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>                                 <span class="keyword">const</span> QString &amp;value) {</div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>  QString trimmedField = field.trimmed();</div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>  QString trimmedValue = value.trimmed();</div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span> </div>
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>  <span class="comment">// Combine the Copy button and the line edit in one widget</span></div>
-<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>  <span class="keyword">auto</span> *frame = <span class="keyword">new</span> QFrame();</div>
-<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>  QLayout *ly = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>  ly-&gt;setContentsMargins(5, 2, 2, 2);</div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>  ly-&gt;setSpacing(0);</div>
-<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>  frame-&gt;setLayout(ly);</div>
-<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248">QtPassSettings::getClipBoardType</a>() != <a class="code hl_enumvalue" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) {</div>
-<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>    <span class="keyword">auto</span> *fieldLabel = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>(trimmedValue, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>    connect(fieldLabel, &amp;<a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a>, m_qtPass,</div>
-<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>            &amp;<a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a>);</div>
-<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span> </div>
-<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>    fieldLabel-&gt;setStyleSheet(</div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
-<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>    frame-&gt;layout()-&gt;addWidget(fieldLabel);</div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>  }</div>
-<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span> </div>
-<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a>()) {</div>
-<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>    <span class="keyword">auto</span> *qrbutton = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a>(trimmedValue, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>    connect(qrbutton, &amp;<a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a>, m_qtPass,</div>
-<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>            &amp;<a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a>);</div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>    qrbutton-&gt;setStyleSheet(</div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
-<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>    frame-&gt;layout()-&gt;addWidget(qrbutton);</div>
-<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>  }</div>
-<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span> </div>
-<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>  <span class="comment">// set the echo mode to password, if the field is &quot;password&quot;</span></div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>  <span class="keyword">const</span> QString lineStyle =</div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>      <a class="code hl_function" href="class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9">QtPassSettings::isUseMonospace</a>()</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>          ? <span class="stringliteral">&quot;border-style: none; background: transparent; font-family: &quot;</span></div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>            <span class="stringliteral">&quot;monospace;&quot;</span></div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>          : <span class="stringliteral">&quot;border-style: none; background: transparent;&quot;</span>;</div>
-<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span> </div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367">QtPassSettings::isHidePassword</a>() &amp;&amp; trimmedField == tr(<span class="stringliteral">&quot;Password&quot;</span>)) {</div>
-<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>    <span class="keyword">auto</span> *line = <span class="keyword">new</span> QLineEdit();</div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>    line-&gt;setObjectName(trimmedField);</div>
-<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>    line-&gt;setText(trimmedValue);</div>
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>    line-&gt;setReadOnly(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>    line-&gt;setStyleSheet(lineStyle);</div>
-<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>    line-&gt;setContentsMargins(0, 0, 0, 0);</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>    line-&gt;setEchoMode(QLineEdit::Password);</div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    <span class="keyword">auto</span> *showButton = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_show_password.html">QPushButtonShowPassword</a>(line, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>    showButton-&gt;setStyleSheet(</div>
-<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
-<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>    showButton-&gt;setContentsMargins(0, 0, 0, 0);</div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>    frame-&gt;layout()-&gt;addWidget(showButton);</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>    frame-&gt;layout()-&gt;addWidget(line);</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    <span class="keyword">auto</span> *line = <span class="keyword">new</span> QTextBrowser();</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>    line-&gt;setOpenExternalLinks(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>    line-&gt;setOpenLinks(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>    line-&gt;setMaximumHeight(26);</div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>    line-&gt;setMinimumHeight(26);</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>    line-&gt;setSizePolicy(</div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));</div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    line-&gt;setObjectName(trimmedField);</div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    trimmedValue.replace(<a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>(), R<span class="stringliteral">&quot;(&lt;a href=&quot;\1&quot;&gt;\1&lt;/a&gt;)&quot;);</span></div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span><span class="stringliteral">    line-&gt;setText(trimmedValue);</span></div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span><span class="stringliteral">    line-&gt;setReadOnly(</span><span class="keyword">true</span>);</div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>    line-&gt;setStyleSheet(lineStyle);</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>    line-&gt;setContentsMargins(0, 0, 0, 0);</div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>    frame-&gt;layout()-&gt;addWidget(line);</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>  }</div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span> </div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>  frame-&gt;setStyleSheet(</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>      <span class="stringliteral">&quot;.QFrame{border: 1px solid lightgrey; border-radius: 5px;}&quot;</span>);</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span> </div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>  <span class="comment">// set into the layout</span></div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>  ui-&gt;gridLayout-&gt;addWidget(<span class="keyword">new</span> QLabel(trimmedField), position, 0);</div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>  ui-&gt;gridLayout-&gt;addWidget(frame, position, 1);</div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>}</div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span> </div>
-<div class="foldopen" id="foldopen01223" data-start="{" data-end="}">
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"><a class="line" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf"> 1223</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a>(<span class="keyword">const</span> QString &amp;msg, <span class="keywordtype">int</span> timeout) {</div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>  ui-&gt;statusBar-&gt;showMessage(msg, timeout);</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>}</div>
-</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>  }</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a>(<span class="keyword">true</span>)) {</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>    QString gpgIdFile = newdir + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>    QFile gpgId(gpgIdFile);</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>    <span class="keywordflow">if</span> (!gpgId.open(QIODevice::WriteOnly)) {</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>      QMessageBox::warning(</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>          <span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Error&quot;</span>),</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>          tr(<span class="stringliteral">&quot;Failed to create .gpg-id file in: %1&quot;</span>).arg(newdir));</div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>    }</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>    QList&lt;UserInfo&gt; users = <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;listKeys(<span class="stringliteral">&quot;&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user : users) {</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>      <span class="keywordflow">if</span> (user.enabled) {</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>        gpgId.write((user.key_id + <span class="stringliteral">&quot;\n&quot;</span>).toUtf8());</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>      }</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    }</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>    gpgId.close();</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>  }</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>}</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span> </div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span><span class="keywordtype">void</span> MainWindow::renameFolder() {</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>  <span class="keywordtype">bool</span> ok;</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>  QString srcDir = QDir::cleanPath(</div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>      <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">false</span>, model, proxyModel));</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>  QString srcDirName = QDir(srcDir).dirName();</div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>  QString newName =</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>      QInputDialog::getText(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Rename file&quot;</span>), tr(<span class="stringliteral">&quot;Rename Folder To: &quot;</span>),</div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>                            QLineEdit::Normal, srcDirName, &amp;ok);</div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>  <span class="keywordflow">if</span> (!ok || newName.isEmpty()) {</div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>  }</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>  QString destDir = srcDir;</div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>  destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Move(srcDir, destDir);</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>}</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span> </div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span><span class="keywordtype">void</span> MainWindow::editPassword(<span class="keyword">const</span> QString &amp;file) {</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>  <span class="keywordflow">if</span> (!file.isEmpty()) {</div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() &amp;&amp; <a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>      onUpdate(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>    }</div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>    setPassword(file, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>  }</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>}</div>
+<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span> </div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span><span class="keywordtype">void</span> MainWindow::renamePassword() {</div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>  <span class="keywordtype">bool</span> ok;</div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>  QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">false</span>);</div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>  QString filePath = QFileInfo(file).path();</div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>  QString fileName = QFileInfo(file).fileName();</div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>  <span class="keywordflow">if</span> (fileName.endsWith(<span class="stringliteral">&quot;.gpg&quot;</span>, Qt::CaseInsensitive)) {</div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>    fileName.chop(4);</div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>  }</div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span> </div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>  QString newName =</div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>      QInputDialog::getText(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Rename file&quot;</span>), tr(<span class="stringliteral">&quot;Rename File To: &quot;</span>),</div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>                            QLineEdit::Normal, fileName, &amp;ok);</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>  <span class="keywordflow">if</span> (!ok || newName.isEmpty()) {</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>  }</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>  QString newFile = QDir(filePath).filePath(newName);</div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Move(file, newFile);</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>}</div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span> </div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span><span class="keywordtype">void</span> MainWindow::clearTemplateWidgets() {</div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>  <span class="keywordflow">while</span> (ui-&gt;gridLayout-&gt;count() &gt; 0) {</div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>    QLayoutItem *item = ui-&gt;gridLayout-&gt;takeAt(0);</div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>    <span class="keyword">delete</span> item-&gt;widget();</div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>    <span class="keyword">delete</span> item;</div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>  }</div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>  ui-&gt;verticalLayoutPassword-&gt;setSpacing(0);</div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>}</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span> </div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span><span class="keywordtype">void</span> MainWindow::copyPasswordFromTreeview() {</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>  QFileInfo fileOrFolder =</div>
+<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>      model.fileInfo(proxyModel.mapToSource(ui-&gt;treeView-&gt;currentIndex()));</div>
+<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span> </div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>  <span class="keywordflow">if</span> (fileOrFolder.isFile()) {</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>    QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">true</span>);</div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>    connect(<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>(), &amp;<a class="code hl_signal" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a>, <span class="keyword">this</span>,</div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>            &amp;MainWindow::passwordFromFileToClipboard);</div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>    <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Show(file);</div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>  }</div>
+<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>}</div>
+<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span> </div>
+<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span><span class="keywordtype">void</span> MainWindow::passwordFromFileToClipboard(<span class="keyword">const</span> QString &amp;text) {</div>
+<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>  QStringList tokens = text.split(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>  m_qtPass-&gt;<a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">copyTextToClipboard</a>(tokens[0]);</div>
+<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>}</div>
+<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span> </div>
+<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span><span class="keywordtype">void</span> MainWindow::addToGridLayout(<span class="keywordtype">int</span> position, <span class="keyword">const</span> QString &amp;field,</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>                                 <span class="keyword">const</span> QString &amp;value) {</div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>  QString trimmedField = field.trimmed();</div>
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>  QString trimmedValue = value.trimmed();</div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span> </div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>  <span class="comment">// Combine the Copy button and the line edit in one widget</span></div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>  <span class="keyword">auto</span> *frame = <span class="keyword">new</span> QFrame();</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>  QLayout *ly = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>  ly-&gt;setContentsMargins(5, 2, 2, 2);</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>  ly-&gt;setSpacing(0);</div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>  frame-&gt;setLayout(ly);</div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248">QtPassSettings::getClipBoardType</a>() != <a class="code hl_enumvalue" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) {</div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>    <span class="keyword">auto</span> *fieldLabel = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>(trimmedValue, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>    connect(fieldLabel, &amp;<a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a>, m_qtPass,</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>            &amp;<a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a>);</div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span> </div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    fieldLabel-&gt;setStyleSheet(</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>    frame-&gt;layout()-&gt;addWidget(fieldLabel);</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>  }</div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span> </div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a>()) {</div>
+<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>    <span class="keyword">auto</span> *qrbutton = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a>(trimmedValue, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>    connect(qrbutton, &amp;<a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a>, m_qtPass,</div>
+<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>            &amp;<a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a>);</div>
+<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>    qrbutton-&gt;setStyleSheet(</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    frame-&gt;layout()-&gt;addWidget(qrbutton);</div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>  }</div>
+<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span> </div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>  <span class="comment">// set the echo mode to password, if the field is &quot;password&quot;</span></div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>  <span class="keyword">const</span> QString lineStyle =</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>      <a class="code hl_function" href="class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9">QtPassSettings::isUseMonospace</a>()</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>          ? <span class="stringliteral">&quot;border-style: none; background: transparent; font-family: &quot;</span></div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>            <span class="stringliteral">&quot;monospace;&quot;</span></div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>          : <span class="stringliteral">&quot;border-style: none; background: transparent;&quot;</span>;</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span> </div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367">QtPassSettings::isHidePassword</a>() &amp;&amp; trimmedField == tr(<span class="stringliteral">&quot;Password&quot;</span>)) {</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>    <span class="keyword">auto</span> *line = <span class="keyword">new</span> QLineEdit();</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>    line-&gt;setObjectName(trimmedField);</div>
+<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>    line-&gt;setText(trimmedValue);</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    line-&gt;setReadOnly(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    line-&gt;setStyleSheet(lineStyle);</div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>    line-&gt;setContentsMargins(0, 0, 0, 0);</div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    line-&gt;setEchoMode(QLineEdit::Password);</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>    <span class="keyword">auto</span> *showButton = <span class="keyword">new</span> <a class="code hl_class" href="class_q_push_button_show_password.html">QPushButtonShowPassword</a>(line, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>    showButton-&gt;setStyleSheet(</div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>        <span class="stringliteral">&quot;border-style: none ; background: transparent; padding: 0; margin: 0;&quot;</span>);</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>    showButton-&gt;setContentsMargins(0, 0, 0, 0);</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    frame-&gt;layout()-&gt;addWidget(showButton);</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>    frame-&gt;layout()-&gt;addWidget(line);</div>
+<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>    <span class="keyword">auto</span> *line = <span class="keyword">new</span> QTextBrowser();</div>
+<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>    line-&gt;setOpenExternalLinks(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    line-&gt;setOpenLinks(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>    line-&gt;setMaximumHeight(26);</div>
+<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>    line-&gt;setMinimumHeight(26);</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>    line-&gt;setSizePolicy(</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>    line-&gt;setObjectName(trimmedField);</div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>    trimmedValue.replace(<a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>(), R<span class="stringliteral">&quot;(&lt;a href=&quot;\1&quot;&gt;\1&lt;/a&gt;)&quot;);</span></div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span><span class="stringliteral">    line-&gt;setText(trimmedValue);</span></div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span><span class="stringliteral">    line-&gt;setReadOnly(</span><span class="keyword">true</span>);</div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>    line-&gt;setStyleSheet(lineStyle);</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>    line-&gt;setContentsMargins(0, 0, 0, 0);</div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>    frame-&gt;layout()-&gt;addWidget(line);</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  }</div>
 <div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span> </div>
-<div class="foldopen" id="foldopen01230" data-start="{" data-end="}">
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"><a class="line" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33"> 1230</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a>() {</div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>  <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>  ui-&gt;treeView-&gt;setDisabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>  frame-&gt;setStyleSheet(</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>      <span class="stringliteral">&quot;.QFrame{border: 1px solid lightgrey; border-radius: 5px;}&quot;</span>);</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span> </div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>  <span class="comment">// set into the layout</span></div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>  ui-&gt;gridLayout-&gt;addWidget(<span class="keyword">new</span> QLabel(trimmedField), position, 0);</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>  ui-&gt;gridLayout-&gt;addWidget(frame, position, 1);</div>
 <div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>}</div>
-</div>
 <div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span> </div>
-<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"><a class="line" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba"> 1238</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a>() { <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">true</span>); }</div>
-<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span> </div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span><span class="keywordtype">void</span> MainWindow::updateGitButtonVisibility() {</div>
-<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() ||</div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>      (<a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty() &amp;&amp;</div>
-<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>       <a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>().isEmpty())) {</div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>    enableGitButtons(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>    enableGitButtons(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>  }</div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>}</div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span> </div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span><span class="keywordtype">void</span> MainWindow::updateOtpButtonVisibility() {</div>
-<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span><span class="preprocessor">#if defined(Q_OS_WIN) || defined(__APPLE__)</span></div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>  ui-&gt;actionOtp-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a>()) {</div>
-<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>    ui-&gt;actionOtp-&gt;setEnabled(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>    ui-&gt;actionOtp-&gt;setEnabled(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>  }</div>
-<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>}</div>
-<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span> </div>
-<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span><span class="keywordtype">void</span> MainWindow::enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;state) {</div>
-<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>  <span class="comment">// Following GNOME guidelines is preferable disable buttons instead of hide</span></div>
-<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>  ui-&gt;actionPush-&gt;setEnabled(state);</div>
-<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>  ui-&gt;actionUpdate-&gt;setEnabled(state);</div>
-<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>}</div>
-<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span> </div>
-<div class="foldopen" id="foldopen01272" data-start="{" data-end="}">
-<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"><a class="line" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842"> 1272</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg) {</div>
-<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>  QMessageBox::critical(<span class="keyword">this</span>, title, msg);</div>
-<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>}</div>
+<div class="foldopen" id="foldopen01241" data-start="{" data-end="}">
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"><a class="line" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf"> 1241</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a>(<span class="keyword">const</span> QString &amp;msg, <span class="keywordtype">int</span> timeout) {</div>
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>  ui-&gt;statusBar-&gt;showMessage(msg, timeout);</div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>}</div>
+</div>
+<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span> </div>
+<div class="foldopen" id="foldopen01248" data-start="{" data-end="}">
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"><a class="line" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33"> 1248</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a>() {</div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>  <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>  ui-&gt;treeView-&gt;setDisabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>}</div>
+</div>
+<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span> </div>
+<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"><a class="line" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba"> 1256</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a>() { <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">true</span>); }</div>
+<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span> </div>
+<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span><span class="keywordtype">void</span> MainWindow::updateGitButtonVisibility() {</div>
+<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() ||</div>
+<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span>      (<a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty() &amp;&amp;</div>
+<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>       <a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>().isEmpty())) {</div>
+<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>    enableGitButtons(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>    enableGitButtons(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>  }</div>
+<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span>}</div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span> </div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span><span class="keywordtype">void</span> MainWindow::updateOtpButtonVisibility() {</div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span><span class="preprocessor">#if defined(Q_OS_WIN) || defined(__APPLE__)</span></div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>  ui-&gt;actionOtp-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a>()) {</div>
+<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>    ui-&gt;actionOtp-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>    ui-&gt;actionOtp-&gt;setEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>  }</div>
+<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span>}</div>
+<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span> </div>
+<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span><span class="keywordtype">void</span> MainWindow::enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;state) {</div>
+<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span>  <span class="comment">// Following GNOME guidelines is preferable disable buttons instead of hide</span></div>
+<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>  ui-&gt;actionPush-&gt;setEnabled(state);</div>
+<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>  ui-&gt;actionUpdate-&gt;setEnabled(state);</div>
+<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>}</div>
+<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span> </div>
+<div class="foldopen" id="foldopen01290" data-start="{" data-end="}">
+<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"><a class="line" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842"> 1290</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg) {</div>
+<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>  QMessageBox::critical(<span class="keyword">this</span>, title, msg);</div>
+<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>}</div>
 </div>
 <div class="ttc" id="aclass_config_dialog_html"><div class="ttname"><a href="class_config_dialog.html">ConfigDialog</a></div><div class="ttdoc">The ConfigDialog handles the configuration interface.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8h_source.html#l00026">configdialog.h:26</a></div></div>
 <div class="ttc" id="aclass_deselectable_tree_view_html_ac28685648d7a31e19e52882e218346c4"><div class="ttname"><a href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">DeselectableTreeView::emptyClicked</a></div><div class="ttdeci">void emptyClicked()</div><div class="ttdoc">emptyClicked event</div></div>
@@ -1204,17 +1222,17 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_file_content_html_ac88e8096551d24a41fc0625a4d903139"><div class="ttname"><a href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a></div><div class="ttdeci">auto getPassword() const -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00043">filecontent.cpp:43</a></div></div>
 <div class="ttc" id="aclass_file_content_html_addf22b7136ee26d2f14bb77dc49c1510"><div class="ttname"><a href="class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510">FileContent::parse</a></div><div class="ttdeci">static auto parse(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; FileContent</div><div class="ttdoc">parse parses the given fileContent in a FileContent object. The password is accessible through getPas...</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00012">filecontent.cpp:12</a></div></div>
 <div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00039">mainwindow.h:39</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">MainWindow::startReencryptPath disable ui elements and treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01230">mainwindow.cpp:1230</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">MainWindow::startReencryptPath disable ui elements and treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01248">mainwindow.cpp:1248</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a0d75695e555bac7331e1ea22bc3159df"><div class="ttname"><a href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df">MainWindow::passShowHandler</a></div><div class="ttdeci">void passShowHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00399">mainwindow.cpp:399</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a201fc73a7db0d404e8fd49f818696eba"><div class="ttname"><a href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div><div class="ttdoc">MainWindow::endReencryptPath re-enable ui elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01238">mainwindow.cpp:1238</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a201fc73a7db0d404e8fd49f818696eba"><div class="ttname"><a href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div><div class="ttdoc">MainWindow::endReencryptPath re-enable ui elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01256">mainwindow.cpp:1256</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a3550b28be1344cf5c012af794dce8c64"><div class="ttname"><a href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">MainWindow::executeWrapperStarted</a></div><div class="ttdeci">void executeWrapperStarted()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00392">mainwindow.cpp:392</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a3b9eaa6de9809fbc8b52c298133dfe16"><div class="ttname"><a href="class_main_window.html#a3b9eaa6de9809fbc8b52c298133dfe16">MainWindow::generateKeyPair</a></div><div class="ttdeci">void generateKeyPair(const QString &amp;, QDialog *)</div><div class="ttdoc">MainWindow::generateKeyPair internal gpg keypair generator . .</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00782">mainwindow.cpp:782</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a4e20a4a065fbb0e4d3532a45a0a91425"><div class="ttname"><a href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event)</div><div class="ttdoc">MainWindow::closeEvent hide or quit.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00882">mainwindow.cpp:882</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a4f1e5c088cf47f1db5c84882a42c1842"><div class="ttname"><a href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a></div><div class="ttdeci">void critical(const QString &amp;, const QString &amp;)</div><div class="ttdoc">MainWindow::critical critical message popup wrapper.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01272">mainwindow.cpp:1272</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4f1e5c088cf47f1db5c84882a42c1842"><div class="ttname"><a href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a></div><div class="ttdeci">void critical(const QString &amp;, const QString &amp;)</div><div class="ttdoc">MainWindow::critical critical message popup wrapper.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01290">mainwindow.cpp:1290</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a4fad7c4dec11ceaebcb8a0141280ba4b"><div class="ttname"><a href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a></div><div class="ttdeci">void messageAvailable(const QString &amp;message)</div><div class="ttdoc">MainWindow::messageAvailable we have some text/message/search to do.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00765">mainwindow.cpp:765</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a52e97245b2f88492071e639395c4a15a"><div class="ttname"><a href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(const QString &amp;searchText=QString(), QWidget *parent=nullptr)</div><div class="ttdoc">MainWindow::MainWindow handles all of the main functionality and also the main window.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00040">mainwindow.cpp:40</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a6961588ebf3c0640200e0cfa920af3be"><div class="ttname"><a href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">MainWindow::onPush</a></div><div class="ttdeci">void onPush()</div><div class="ttdoc">MainWindow::onPush do a git push.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00317">mainwindow.cpp:317</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a69f4a122336a6fc3875fc94741e4d1cf"><div class="ttname"><a href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a></div><div class="ttdeci">void showStatusMessage(const QString &amp;msg, int timeout=2000)</div><div class="ttdoc">Displays message in status bar.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01223">mainwindow.cpp:1223</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a69f4a122336a6fc3875fc94741e4d1cf"><div class="ttname"><a href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a></div><div class="ttdeci">void showStatusMessage(const QString &amp;msg, int timeout=2000)</div><div class="ttdoc">Displays message in status bar.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01241">mainwindow.cpp:1241</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a7997fd865548c3baa51f1863bb8fdfa0"><div class="ttname"><a href="class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0">MainWindow::passOtpHandler</a></div><div class="ttdeci">void passOtpHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00446">mainwindow.cpp:446</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a7e1ae254673e36410d4b3a73e1e8ec8e"><div class="ttname"><a href="class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e">MainWindow::passShowHandlerFinished</a></div><div class="ttdeci">void passShowHandlerFinished(const QString &amp;output)</div></div>
 <div class="ttc" id="aclass_main_window_html_a7e72f32612c2436ff4756c5c25b6b4ec"><div class="ttname"><a href="class_main_window.html#a7e72f32612c2436ff4756c5c25b6b4ec">MainWindow::generateGPGKeyPair</a></div><div class="ttdeci">void generateGPGKeyPair(const QString &amp;batch)</div></div>
@@ -1267,6 +1285,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_qt_pass_settings_html_a538e612e04fe934535e1f7525d55743c"><div class="ttname"><a href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a></div><div class="ttdeci">static auto getPassStore(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00305">qtpasssettings.cpp:305</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a579f75b719c9c4de88585f05d70e4bb0"><div class="ttname"><a href="class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0">QtPassSettings::isUseTemplate</a></div><div class="ttdeci">static auto isUseTemplate(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00602">qtpasssettings.cpp:602</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a6248ec7cef087944b59fa9d2a361b413"><div class="ttname"><a href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413">QtPassSettings::isUseTrayIcon</a></div><div class="ttdeci">static auto isUseTrayIcon(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00539">qtpasssettings.cpp:539</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a6a8ee0f36101f65c885aa1b56c8b4c69"><div class="ttname"><a href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a></div><div class="ttdeci">static auto isAddGPGId(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00296">qtpasssettings.cpp:296</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a8b3520f10b70e098629c5b713c69f3a0"><div class="ttname"><a href="class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0">QtPassSettings::setPos</a></div><div class="ttdeci">static void setPos(const QPoint &amp;pos)</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00153">qtpasssettings.cpp:153</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a907f64f2e985de5ce864e8687fc114ef"><div class="ttname"><a href="class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef">QtPassSettings::getPassTemplate</a></div><div class="ttdeci">static auto getPassTemplate(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00593">qtpasssettings.cpp:593</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a969462178b2d4f535abadbbb646e2248"><div class="ttname"><a href="class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248">QtPassSettings::getClipBoardType</a></div><div class="ttdeci">static auto getClipBoardType(const Enums::clipBoardType &amp;defaultvalue=Enums::CLIPBOARD_NEVER) -&gt; Enums::clipBoardType</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00194">qtpasssettings.cpp:194</a></div></div>
@@ -1313,6 +1332,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="astruct_named_value_html"><div class="ttname"><a href="struct_named_value.html">NamedValue</a></div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00010">filecontent.h:10</a></div></div>
 <div class="ttc" id="astruct_named_value_html_a2c5db0fcfdabcee423cc74c6e5362867"><div class="ttname"><a href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">NamedValue::name</a></div><div class="ttdeci">QString name</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00011">filecontent.h:11</a></div></div>
 <div class="ttc" id="astruct_named_value_html_a7e9785f69be8f0cce61f22113bbf725d"><div class="ttname"><a href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">NamedValue::value</a></div><div class="ttdeci">QString value</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00012">filecontent.h:12</a></div></div>
+<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores key info lines including validity, creation date and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
 <div class="ttc" id="atrayicon_8h_html"><div class="ttname"><a href="trayicon_8h.html">trayicon.h</a></div></div>
 <div class="ttc" id="ausersdialog_8h_html"><div class="ttname"><a href="usersdialog_8h.html">usersdialog.h</a></div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
