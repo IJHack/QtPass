@@ -199,7 +199,6 @@ attack I can think of at least two options:
 [Site](https://qtpass.org/)
 [Source code](https://github.com/IJHack/qtpass)
 [Issue queue](https://github.com/IJHack/qtpass/issues)
-[Chat](https://gitter.im/IJHack/qtpass)
 
 > **AI Assistance**<br>
 > Parts of this project were developed with assistance from AI tools (such as [OpenCode](https://opencode.ai/)).
@@ -209,9 +208,9 @@ attack I can think of at least two options:
 
 ### GNU GPL v3.0
 
-[![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)
+[![GNU GPL v3.0](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl.html)
 
-[View official GNU site](http://www.gnu.org/licenses/gpl.html)
+[View official GNU site](https://www.gnu.org/licenses/gpl.html)
 
 [<img src="https://opensource.org/wp-content/uploads/2022/10/osi-badge-dark.svg" alt="OSI-approved license" width="127">](https://opensource.org/licenses/GPL-3.0)
 
