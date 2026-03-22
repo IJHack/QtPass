@@ -1201,82 +1201,82 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="150"/>
+        <location filename="../src/qtpass.cpp" line="157"/>
         <source>Generating GPG key pair</source>
         <translation>GnuPGキーペアを生成中</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="203"/>
+        <location filename="../src/qtpass.cpp" line="210"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>WebDAVの接続に失敗しました:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV パスワード</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="221"/>
+        <location filename="../src/qtpass.cpp" line="228"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>WebDAVに接続するためのパスワードを入力してください:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedavが予期せず終了しました
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
+        <location filename="../src/qtpass.cpp" line="249"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>WebDAV に接続するための fusedav の開始に失敗しました:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::起動に失敗しました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::クラッシュしました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="261"/>
+        <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::タイムアウト</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="264"/>
+        <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::読み込みエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="267"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess:書き込みエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="270"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::不明なエラー</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="392"/>
+        <location filename="../src/qtpass.cpp" line="399"/>
         <source>Clipboard cleared</source>
         <translation>クリップボードをクリアしました</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="394"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Clipboard not cleared</source>
         <translation>クリップボードをクリアできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="413"/>
+        <location filename="../src/qtpass.cpp" line="420"/>
         <source>Copied to clipboard</source>
         <translation>クリップボードにコピーしました</translation>
     </message>

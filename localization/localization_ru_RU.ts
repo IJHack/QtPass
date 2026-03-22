@@ -1163,83 +1163,83 @@ Expire-Date: 0
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="150"/>
+        <location filename="../src/qtpass.cpp" line="157"/>
         <source>Generating GPG key pair</source>
         <translation>Создание пары ключей GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="203"/>
+        <location filename="../src/qtpass.cpp" line="210"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Не удалось подключить WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>QtPass WebDAV password</source>
         <translation>Пароль QtPass для WebDAV</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="221"/>
+        <location filename="../src/qtpass.cpp" line="228"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Введите пароль для подключения к WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav неожиданно завершился
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
+        <location filename="../src/qtpass.cpp" line="249"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Не удалось запустить fusedav для подключения к WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::Не удалось запустить</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
         <translation>QProsess::Аварийное завершение</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="261"/>
+        <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Превышено время ожидания</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="264"/>
+        <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::Ошибка чтения</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="267"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::Ошибка записи</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="270"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="392"/>
+        <location filename="../src/qtpass.cpp" line="399"/>
         <source>Clipboard cleared</source>
         <translation>Буфер обмена очищен</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="394"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Clipboard not cleared</source>
         <translation>Буфер обмена не очищен</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="413"/>
+        <location filename="../src/qtpass.cpp" line="420"/>
         <source>Copied to clipboard</source>
         <translation>Скопировано в буфер обмена</translation>
     </message>

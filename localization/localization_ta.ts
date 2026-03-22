@@ -1216,83 +1216,83 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="150"/>
+        <location filename="../src/qtpass.cpp" line="157"/>
         <source>Generating GPG key pair</source>
         <translation>சிபிசி விசை சோடியை உருவாக்குகிறது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="203"/>
+        <location filename="../src/qtpass.cpp" line="210"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>WebDAV ஐ இணைக்கத் தவறிவிட்டது:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>QtPass WebDAV password</source>
         <translation>QTPASS WebDAV கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="221"/>
+        <location filename="../src/qtpass.cpp" line="228"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>WebDAV உடன் இணைக்க கடவுச்சொல்லை உள்ளிடவும்:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>ஃபுசச் ஏவ் எதிர்பாராத விதமாக வெளியேறினார்
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
+        <location filename="../src/qtpass.cpp" line="249"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>WebDAV ஐ இணைக்க ஃபியூசாவ் தொடங்குவதில் தோல்வி:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess :: failetostart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess :: செயலிழந்தது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="261"/>
+        <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess :: நேரம்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="264"/>
+        <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess :: Readerror</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="267"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess :: writeError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="270"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess :: தெரியாதவர்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="392"/>
+        <location filename="../src/qtpass.cpp" line="399"/>
         <source>Clipboard cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="394"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Clipboard not cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="413"/>
+        <location filename="../src/qtpass.cpp" line="420"/>
         <source>Copied to clipboard</source>
         <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது</translation>
     </message>

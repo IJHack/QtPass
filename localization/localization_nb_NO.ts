@@ -983,83 +983,83 @@ Utløpsdato: 0
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="150"/>
+        <location filename="../src/qtpass.cpp" line="157"/>
         <source>Generating GPG key pair</source>
         <translation>Genererer GPG-nøkkelpar</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="203"/>
+        <location filename="../src/qtpass.cpp" line="210"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Klarte ikke å koble til WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV-passord</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="221"/>
+        <location filename="../src/qtpass.cpp" line="228"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Skriv inn passord for tilkobling til WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav avsluttet uventet
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
+        <location filename="../src/qtpass.cpp" line="249"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Kan ikke starte fusedav for å koble til WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="261"/>
+        <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="264"/>
+        <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="267"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="270"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="392"/>
+        <location filename="../src/qtpass.cpp" line="399"/>
         <source>Clipboard cleared</source>
         <translation>Utklippstavle tømt</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="394"/>
+        <location filename="../src/qtpass.cpp" line="401"/>
         <source>Clipboard not cleared</source>
         <translation>Utklippstavle ikke tømt</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="413"/>
+        <location filename="../src/qtpass.cpp" line="420"/>
         <source>Copied to clipboard</source>
         <translation>Kopiert til utklippstavle</translation>
     </message>
