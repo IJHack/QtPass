@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.0...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.1...HEAD)
+
+## [1.5.1](https://github.com/IJHack/QtPass/tree/v1.5.1) (2026-03-22)
+
+### Fixes
+
+- Fixed crash on Wayland when screenAt() returns null [#706](https://github.com/IJHack/QtPass/issues/706), [#663](https://github.com/IJHack/QtPass/issues/663)
+- Fixed CLI arguments being parsed as password search [#652](https://github.com/IJHack/QtPass/issues/652)
+- Fixed OTP error handling with better messages and pass-otp availability check [#677](https://github.com/IJHack/QtPass/issues/677)
+- Fixed window icon not showing on dialog boxes [#671](https://github.com/IJHack/QtPass/issues/671)
+- Fixed Slovak translation GPG keygen script [#667](https://github.com/IJHack/QtPass/issues/667)
+- Suppressed qApp deprecation warnings on Qt6
 
 ## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
 
