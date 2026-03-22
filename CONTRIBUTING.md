@@ -4,41 +4,33 @@ Make sure you have read the [FAQ](FAQ.md)
 
 Thank you for wanting to contribute to making QtPass awesome.
 
-## This document
-
-This document is still in a very early stage and needs a lot more work.
-
 ## Pull Request Process
 
-1. Ensure install or build dependencies and artefacts are not commmitted.
+1. Ensure install or build dependencies and artifacts are not committed.
 2. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
-3. Make sure you update all of the CI configs if need be. These are ran on every Pull Request.
+3. Make sure you update all of the CI configs if needed. These run on every Pull Request.
 4. Increase the version numbers in relevant files when applicable.
-   The versioning scheme we use is [SemVer](http://semver.org/).
-5. You may merge the Pull Request in once you have the sign-off of one other developer, or if you
+   The versioning scheme we use is [SemVer](https://semver.org/).
+5. You may merge the Pull Request once you have the sign-off of one other developer, or if you
    do not have permission to do that, you may request a reviewer to merge it for you.
 
 ## Translations
 
-- Add you language to the `src/src.pro` file
-  under TRANSLATIONS.
-- Next run the command `qmake` which will create and update the localization files.
-- Edit your file with (let's imagine your language is sv_SE (Swedish)
-  `linguist localization/localization_sv_SE.ts`
+QtPass uses [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/) for translations.
 
-Qt Linguist has very nice in-context translation options [for translators](https://doc.qt.io/qt-5/linguist-translators.html)
+To add a new language:
+- Add your language code to `src/qtpass.pro` under TRANSLATIONS
+- Run `qmake` to generate the translation files
+- Edit the `.ts` file with Qt Linguist: `linguist localization/qtpass_xx_YY.ts`
 
-You can do online translations via [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/)
+Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-5/linguist-translators.html).
 
-## IRC
+## Getting Help
 
-For questions or brainstorming about features please join #ijhack on freenode.
-
-## Gitter
-
-Or if you prefer to use [gitter](https://gitter.im/IJHack/qtpass)
+- Open an [issue](https://github.com/IJHack/QtPass/issues) for bugs or feature requests
+- Email [help@qtpass.org](mailto:help@qtpass.org) for general questions
 
 ## License
 
 QtPass is released under the GNU GPL v3.0 license.
-<http://www.gnu.org/licenses/gpl-3.0.html>
+<https://www.gnu.org/licenses/gpl-3.0.html>
