@@ -61,6 +61,7 @@ This tutorial might resolve your issues.
 ### GPG says "Public key unusable" or "No secret key"
 
 Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and:
+
 - Set the trust level to "ultimate" (`trust` command)
 - Check if the key has expired (`expire` command to extend if needed)
 - For smartcards/YubiKeys, ensure the card is connected and unlocked
