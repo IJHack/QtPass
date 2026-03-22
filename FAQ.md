@@ -25,12 +25,12 @@ max-cache-ttl 7200
 
 ### I don't get a passphrase / PIN dialog
 
-- You'll need to install pinentry-qt (or -qt4 or -qt5 or even -gtk) and
+- You'll need to install pinentry-qt (or -gtk) and
   possibly set the full path to that executable in your `~/.gnupg/gpg-agent.conf`
-  for example: `pinentry-program /usr/bin/pinentry-qt4`
-- On some esotheric systems it might be necessary to create a symbolic
+  for example: `pinentry-program /usr/bin/pinentry-qt`
+- On some systems it might be necessary to create a symbolic
   link `/usr/bin/pinentry` to your pinentry application of choice
-  eg: `ln -s /usr/bin/pinentry-qt5 /usr/bin/pinentry`
+  eg: `ln -s /usr/bin/pinentry-qt /usr/bin/pinentry`
 - On macOS `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from Homebrew.
 
 ### I have an other issue with gpg
