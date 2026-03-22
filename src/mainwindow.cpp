@@ -1041,6 +1041,24 @@ void MainWindow::addFolder() {
   if (!QDir().mkdir(newdir)) {
     QMessageBox::warning(this, tr("Error"),
                          tr("Failed to create folder: %1").arg(newdir));
+    return;
+  }
+  if (QtPassSettings::isAddGPGId(true)) {
+    QString gpgIdFile = newdir + "/.gpg-id";
+    QFile gpgId(gpgIdFile);
+    if (!gpgId.open(QIODevice::WriteOnly)) {
+      QMessageBox::warning(
+          this, tr("Error"),
+          tr("Failed to create .gpg-id file in: %1").arg(newdir));
+      return;
+    }
+    QList<UserInfo> users = QtPassSettings::getPass()->listKeys("", true);
+    for (const UserInfo &user : users) {
+      if (user.enabled) {
+        gpgId.write((user.key_id + "\n").toUtf8());
+      }
+    }
+    gpgId.close();
   }
 }
 
