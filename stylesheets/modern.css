@@ -1,4 +1,21 @@
-@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap);
+/* SPDX-FileCopyrightText: IJHack
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bg: #ffffff;
