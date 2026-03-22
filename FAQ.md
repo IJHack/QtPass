@@ -58,6 +58,22 @@ Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpas
 This tutorial might resolve your issues.
 <https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
 
+### GPG says "Public key unusable" or "No secret key"
+
+Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and:
+
+- Set the trust level to "ultimate" (`trust` command)
+- Check if the key has expired (`expire` command to extend if needed)
+- For smartcards/YubiKeys, ensure the card is connected and unlocked
+
+### OTP QR codes don't work on macOS
+
+Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass.
+
+### QtPass doesn't follow my system language
+
+QtPass uses the system language at startup. On some desktop environments, you may need to launch QtPass from the terminal or configure your desktop environment to pass the correct locale environment variables.
+
 ### Where is the configuration stored?
 
 QtPass tries to use the native config choice for the OS it's running.
