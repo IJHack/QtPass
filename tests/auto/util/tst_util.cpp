@@ -179,8 +179,27 @@ void tst_util::regexPatterns() {
   QVERIFY(m1.hasMatch());
   if (m1.hasMatch()) {
     QString captured = m1.captured(1);
-    QVERIFY(!captured.contains(" "));
-    QVERIFY(!captured.contains("<"));
+    QVERIFY2(!captured.contains(" "), "URL should not include space");
+    QVERIFY2(!captured.contains("<"), "URL should not include <");
+    QVERIFY2(captured == "https://example.com/", "URL should stop at space");
+  }
+
+  QRegularExpressionMatch m2 = proto.match("Check https://foo.com(bar) now");
+  QVERIFY(m2.hasMatch());
+  if (m2.hasMatch()) {
+    QString captured = m2.captured(1);
+    QVERIFY2(captured == "https://foo.com", "URL should stop at (");
+  }
+
+  QRegularExpressionMatch m3 =
+      proto.match("Link: https://test.org/path?q=1#frag");
+  QVERIFY(m3.hasMatch());
+  if (m3.hasMatch()) {
+    QString captured = m3.captured(1);
+    QVERIFY2(captured.contains("?"), "URL should include query params");
+    QVERIFY2(captured.contains("#"), "URL should include fragment");
+    QVERIFY2(!captured.contains(" now"),
+             "URL should not include trailing text");
   }
 
   QRegularExpression nl = Util::newLinesRegex();
