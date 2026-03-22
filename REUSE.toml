@@ -24,3 +24,9 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "jsimplicio"
 SPDX-License-Identifier = "CC0-1.0"
 
+[[annotations]]
+path = "fonts/*"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Lato Authors (https://github.com/IJHack/qtpass.github.io)"
+SPDX-License-Identifier = "OFL-1.1"
+

@@ -1,0 +1,175 @@
+<!-- SPDX-FileCopyrightText: IJHack
+     SPDX-License-Identifier: GPL-3.0-or-later -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>QtPass - A modern GUI for pass, the standard UNIX password manager</title>
+    <meta name="description" content="QtPass is a cross-platform GUI for pass. Manage your passwords securely on Linux, macOS, Windows and BSD with optional smartcard or YubiKey support.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/modern.css">
+    <link rel="canonical" href="https://qtpass.org">
+    <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:title" content="QtPass - A modern GUI for pass">
+    <meta property="og:description" content="Cross-platform password manager with GPG encryption and Git sync.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <span class="hero-badge">v1.5.1 Released</span>
+            <h1>Password management<br>for everyone</h1>
+            <p>A modern, cross-platform GUI for pass. Your passwords, encrypted with GPG, synced via Git. Free and open source.</p>
+            
+            <div class="cta-group">
+                <a href="/getting-started" class="btn btn-primary">Get Started</a>
+                <a href="https://github.com/IJHack/QtPass" class="btn btn-secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+            </div>
+
+            <div class="screenshots">
+                <img src="images/qtpass.png" alt="QtPass MainWindow" loading="lazy">
+            </div>
+        </header>
+    </div>
+
+    <section class="section">
+        <div class="wrapper">
+            <div class="section-header">
+                <h2>Why QtPass?</h2>
+                <p>Built on the proven pass ecosystem with native look and feel on every platform.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>GPG Encryption</h3>
+                    <p>Your passwords are encrypted with GPG - the same encryption used by security experts worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Git Sync</h3>
+                    <p>Your password store syncs via Git. You control where it's hosted. Always have a backup.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Works seamlessly on Linux, macOS, Windows, and FreeBSD with native look and feel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Smartcard Support</h3>
+                    <p>Supports YubiKeys and smartcards. Your private keys never leave the device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>20+ Languages</h3>
+                    <p>Available in over 20 languages. Help translate on Weblate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>No Vendor Lock-in</h3>
+                    <p>Works with pass ecosystem. Use QtPass alongside other clients on mobile, CLI, or browser.</p>
+                </div>
+            </div>
+
+            <div class="platforms">
+                <span class="platform-badge">🐧 Linux</span>
+                <span class="platform-badge">🪟 Windows</span>
+                <span class="platform-badge">🍎 macOS</span>
+                <span class="platform-badge">💜 FreeBSD</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="install-section">
+        <div class="wrapper">
+            <div class="section-header">
+                <h2>Quick Install</h2>
+                <p>Get QtPass installed in minutes on your preferred platform.</p>
+            </div>
+
+            <div class="install-grid">
+                <div class="install-card">
+                    <div class="install-card-header">
+                        <span>🐧</span> Linux
+                    </div>
+                    <div class="install-card-body">
+                        <pre><code># Debian/Ubuntu
+apt-get install qtpass
+
+# Arch
+pacman -S qtpass
+
+# Fedora
+dnf install qtpass</code></pre>
+                    </div>
+                </div>
+
+                <div class="install-card">
+                    <div class="install-card-header">
+                        <span>🪟</span> Windows
+                    </div>
+                    <div class="install-card-body">
+                        <pre><code># Via Chocolatey
+choco install qtpass
+
+# Or download from GitHub
+github.com/IJHack/QtPass/releases</code></pre>
+                    </div>
+                </div>
+
+                <div class="install-card">
+                    <div class="install-card-header">
+                        <span>🍎</span> macOS
+                    </div>
+                    <div class="install-card-body">
+                        <pre><code># Via Homebrew
+brew install qtpass --cask
+
+# Or download from GitHub
+github.com/IJHack/QtPass/releases</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="wrapper">
+            <div class="security-banner">
+                <h3>🛡️ Open Source & Secure</h3>
+                <p>QtPass is fully open source. Your passwords never leave your device unencrypted. <a href="/docs/md__r_e_a_d_m_e.html">Learn more about security →</a></p>
+            </div>
+
+            <div class="section-header">
+                <h2>Get Started Today</h2>
+                <p>Join thousands of users who trust QtPass for secure password management.</p>
+            </div>
+
+            <div class="cta-group" style="margin-top: 32px;">
+                <a href="/getting-started" class="btn btn-primary">Follow the Guide</a>
+                <a href="https://github.com/IJHack/QtPass/releases" class="btn btn-secondary">Download v1.5.1</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-links">
+                <a href="/getting-started">Docs</a>
+                <a href="https://github.com/IJHack/QtPass">GitHub</a>
+                <a href="https://hosted.weblate.org/engage/qtpass/">Translate</a>
+                <a href="mailto:help@qtpass.org">Support</a>
+            </div>
+            <p>Maintained by <a href="https://github.com/IJHack">IJHack</a> · MIT License</p>
+        </div>
+    </footer>
+</body>
+</html>
