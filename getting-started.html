@@ -39,7 +39,7 @@
 <div class="background"></div>
 <div class="wrapper">
     <header>
-        <h1>Getting Started with QtPass <small>1.5.0</small></h1>
+        <h1>Getting Started with QtPass <small>1.5.1</small></h1>
         <p>A quick guide to get you up and running with QtPass.</p>
 
         <p class="view">
@@ -66,7 +66,18 @@
             <li><a href="/downloads#linux-bsd">Linux</a> - Package manager or source</li>
         </ul>
 
-        <h2><a id="step2" class="anchor" href="#step2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Initialize Your Password Store</h2>
+        <h2><a id="step2" class="anchor" href="#step2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Configure QtPass</h2>
+
+        <p>On first launch, QtPass opens the configuration dialog. Key settings:</p>
+        <ul>
+            <li><strong>Password Store</strong> - Where your passwords are stored (default: <code>~/.password-store</code>)</li>
+            <li><strong>GPG Program</strong> - Usually <code>gpg</code> or <code>gpg2</code></li>
+            <li><strong>Git Executable</strong> - Enable if you want to sync via Git</li>
+        </ul>
+
+        <p>Click <strong>OK</strong> to save, then click <strong>Initialize</strong> to create a new password store.</p>
+
+        <h2><a id="step3" class="anchor" href="#step3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Initialize Your Password Store</h2>
 
         <p>QtPass needs a password store to work with. You have two options:</p>
 
@@ -83,7 +94,7 @@
             <li>Go to <strong>Config</strong> and set the password store directory</li>
         </ol>
 
-        <h2><a id="step3" class="anchor" href="#step3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Add Your First Password</h2>
+        <h2><a id="step4" class="anchor" href="#step4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Add Your First Password</h2>
 
         <ol>
             <li>Click the <strong>+</strong> button or press <code>Ctrl+N</code></li>
@@ -92,7 +103,7 @@
             <li>Click <strong>Save</strong></li>
         </ol>
 
-        <h2><a id="step4" class="anchor" href="#step4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Copy Password to Clipboard</h2>
+        <h2><a id="step5" class="anchor" href="#step5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Copy Password to Clipboard</h2>
 
         <ol>
             <li>Select the password entry in the list</li>
@@ -100,7 +111,7 @@
             <li>The password is copied and will auto-clear after configurable seconds</li>
         </ol>
 
-        <h2><a id="step5" class="anchor" href="#step5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Sync Across Devices (Optional)</h2>
+        <h2><a id="step6" class="anchor" href="#step6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Sync Across Devices (Optional)</h2>
 
         <p>QtPass works great with Git for syncing your password store:</p>
         <ol>
@@ -112,6 +123,9 @@
         <h2><a id="next-steps" class="anchor" href="#next-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Next Steps</h2>
 
         <ul>
+            <li><strong>Profiles</strong> - Use multiple password stores (e.g., work and personal) via the profile dropdown</li>
+            <li><strong>OTP Codes</strong> - Generate time-based one-time passwords for 2FA accounts</li>
+            <li><strong>Template Fields</strong> - Customize password entries with custom fields like URLs, usernames, or notes</li>
             <li><a href="/docs/md__f_a_q.html">FAQ</a> - Common questions and answers</li>
             <li><a href="/index.html#security-considerations">Security Considerations</a> - Important security notes</li>
             <li><a href="/downloads">Downloads</a> - More installation options</li>
