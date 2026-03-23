@@ -1,146 +1,337 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Getting Started with QtPass</title>
-    <meta name="description" content="Get started with QtPass in just a few steps. Learn how to install, initialize, and manage your passwords securely.">
-    <meta name="keywords" content="qtpass, pass, gpg, git, password, store, manager, security, getting started, tutorial">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <link rel="canonical" href="https://qtpass.org/getting-started">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <meta name="color-scheme" content="light dark">
-    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Getting Started with QtPass">
-    <meta property="og:site_name" content="QtPass">
-    <meta property="og:url" content="https://qtpass.org/getting-started">
-    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
-    <meta property="og:description" content="Get started with QtPass in just a few steps.">
-    <meta property="og:type" content="website">
-</head>
-<body>
-<div class="background"></div>
-<div class="wrapper">
-    <header>
+    <meta
+      name="description"
+      content="Get started with QtPass in just a few steps. Learn how to install, initialize, and manage your passwords securely."
+    />
+    <meta
+      name="keywords"
+      content="qtpass, pass, gpg, git, password, store, manager, security, getting started, tutorial"
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+    <link rel="canonical" href="https://qtpass.org/getting-started" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Getting Started with QtPass" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/getting-started" />
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png" />
+    <meta
+      property="og:description"
+      content="Get started with QtPass in just a few steps."
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <header>
         <h1>Getting Started with QtPass <small>1.5.1</small></h1>
         <p>A quick guide to get you up and running with QtPass.</p>
 
         <p class="view">
-            <a href="/">Back to QtPass Home</a>
+          <a href="/">Back to QtPass Home</a>
         </p>
-    </header>
-    <section>
-
-        <h2><a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+      </header>
+      <section>
+        <h2>
+          <a
+            id="prerequisites"
+            class="anchor"
+            href="#prerequisites"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Prerequisites
+        </h2>
 
         <p>Before using QtPass, you need:</p>
         <ul>
-            <li><strong>GPG key pair</strong> - QtPass uses GPG for encryption. If you don't have one, <a href="https://gnupg.org/documentation/guides.html">create one</a>.</li>
-            <li><strong>pass</strong> (optional but recommended) - The command-line password manager. <a href="https://www.passwordstore.org/">Install pass</a>.</li>
+          <li>
+            <strong>GPG key pair</strong> - QtPass uses GPG for encryption. If
+            you don't have one,
+            <a href="https://gnupg.org/documentation/guides.html">create one</a
+            >.
+          </li>
+          <li>
+            <strong>pass</strong> (optional but recommended) - The command-line
+            password manager.
+            <a href="https://www.passwordstore.org/">Install pass</a>.
+          </li>
         </ul>
 
-        <h2><a id="step1" class="anchor" href="#step1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Install QtPass</h2>
+        <h2>
+          <a id="step1" class="anchor" href="#step1" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 1: Install QtPass
+        </h2>
 
         <p>Download QtPass for your platform:</p>
         <ul>
-            <li><a href="https://github.com/IJHack/QtPass/releases">GitHub Releases</a> - All platforms</li>
-            <li><a href="/downloads#Windows">Windows</a> - Installer or Chocolatey</li>
-            <li><a href="/downloads#macOS">macOS</a> - DMG or Homebrew</li>
-            <li><a href="/downloads#linux-bsd">Linux</a> - Package manager or source</li>
+          <li>
+            <a href="https://github.com/IJHack/QtPass/releases"
+              >GitHub Releases</a
+            >
+            - All platforms
+          </li>
+          <li>
+            <a href="/downloads#Windows">Windows</a> - Installer or Chocolatey
+          </li>
+          <li><a href="/downloads#macOS">macOS</a> - DMG or Homebrew</li>
+          <li>
+            <a href="/downloads#linux-bsd">Linux</a> - Package manager or source
+          </li>
         </ul>
 
-        <h2><a id="step2" class="anchor" href="#step2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Configure QtPass</h2>
+        <h2>
+          <a id="step2" class="anchor" href="#step2" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 2: Configure QtPass
+        </h2>
 
-        <p>On first launch, QtPass opens the configuration dialog. Key settings:</p>
+        <p>
+          On first launch, QtPass opens the configuration dialog. Key settings:
+        </p>
         <ul>
-            <li><strong>Password Store</strong> - Where your passwords are stored (default: <code>~/.password-store</code>)</li>
-            <li><strong>GPG Program</strong> - Usually <code>gpg</code> or <code>gpg2</code></li>
-            <li><strong>Git Executable</strong> - Enable if you want to sync via Git</li>
+          <li>
+            <strong>Password Store</strong> - Where your passwords are stored
+            (default: <code>~/.password-store</code>)
+          </li>
+          <li>
+            <strong>GPG Program</strong> - Usually <code>gpg</code> or
+            <code>gpg2</code>
+          </li>
+          <li>
+            <strong>Git Executable</strong> - Enable if you want to sync via Git
+          </li>
         </ul>
 
-        <p>Click <strong>OK</strong> to save, then click <strong>Initialize</strong> to create a new password store.</p>
+        <p>
+          Click <strong>OK</strong> to save, then click
+          <strong>Initialize</strong> to create a new password store.
+        </p>
 
-        <h2><a id="step3" class="anchor" href="#step3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Initialize Your Password Store</h2>
+        <h2>
+          <a id="step3" class="anchor" href="#step3" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 3: Initialize Your Password Store
+        </h2>
 
         <p>QtPass needs a password store to work with. You have two options:</p>
 
         <h3>Option A: Create a new store</h3>
         <ol>
-            <li>Click the <strong>Initialize</strong> button in QtPass</li>
-            <li>Select your GPG key(s) for encryption</li>
-            <li>Choose where to store your passwords (default: <code>~/.password-store</code>)</li>
+          <li>Click the <strong>Initialize</strong> button in QtPass</li>
+          <li>Select your GPG key(s) for encryption</li>
+          <li>
+            Choose where to store your passwords (default:
+            <code>~/.password-store</code>)
+          </li>
         </ol>
 
         <h3>Option B: Use existing store</h3>
         <ol>
-            <li>If you already use <code>pass</code>, just point QtPass to your existing store</li>
-            <li>Go to <strong>Config</strong> and set the password store directory</li>
+          <li>
+            If you already use <code>pass</code>, just point QtPass to your
+            existing store
+          </li>
+          <li>
+            Go to <strong>Config</strong> and set the password store directory
+          </li>
         </ol>
 
-        <h2><a id="step4" class="anchor" href="#step4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Add Your First Password</h2>
+        <h2>
+          <a id="step4" class="anchor" href="#step4" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 4: Add Your First Password
+        </h2>
 
         <ol>
-            <li>Click the <strong>+</strong> button or press <code>Ctrl+N</code></li>
-            <li>Enter a name (e.g., <code>github.com</code>)</li>
-            <li>Add your password and any other details (username, URL, notes)</li>
-            <li>Click <strong>Save</strong></li>
+          <li>
+            Click the <strong>+</strong> button or press <code>Ctrl+N</code>
+          </li>
+          <li>Enter a name (e.g., <code>github.com</code>)</li>
+          <li>
+            Add your password and any other details (username, URL, notes)
+          </li>
+          <li>Click <strong>Save</strong></li>
         </ol>
 
-        <h2><a id="step5" class="anchor" href="#step5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Copy Password to Clipboard</h2>
+        <h2>
+          <a id="step5" class="anchor" href="#step5" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 5: Copy Password to Clipboard
+        </h2>
 
         <ol>
-            <li>Select the password entry in the list</li>
-            <li>Press <strong>Ctrl+C</strong> or click the copy button</li>
-            <li>The password is copied and will auto-clear after configurable seconds</li>
+          <li>Select the password entry in the list</li>
+          <li>Press <strong>Ctrl+C</strong> or click the copy button</li>
+          <li>
+            The password is copied and will auto-clear after configurable
+            seconds
+          </li>
         </ol>
 
-        <h2><a id="step6" class="anchor" href="#step6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Sync Across Devices (Optional)</h2>
+        <h2>
+          <a id="step6" class="anchor" href="#step6" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Step 6: Sync Across Devices (Optional)
+        </h2>
 
         <p>QtPass works great with Git for syncing your password store:</p>
         <ol>
-            <li>Initialize a Git repository in your password store</li>
-            <li>Add a remote (GitHub, GitLab, self-hosted, etc.)</li>
-            <li>QtPass can automatically push/pull changes</li>
+          <li>Initialize a Git repository in your password store</li>
+          <li>Add a remote (GitHub, GitLab, self-hosted, etc.)</li>
+          <li>QtPass can automatically push/pull changes</li>
         </ol>
 
-        <h2><a id="next-steps" class="anchor" href="#next-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Next Steps</h2>
+        <h2>
+          <a
+            id="next-steps"
+            class="anchor"
+            href="#next-steps"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Next Steps
+        </h2>
 
-        <p>Learn more about QtPass features in the <a href="/advanced.html">Advanced Usage guide</a>, including:</p>
+        <p>
+          Learn more about QtPass features in the
+          <a href="/advanced.html">Advanced Usage guide</a>, including:
+        </p>
         <ul>
-            <li><strong>Profiles</strong> - Use multiple password stores (e.g., work and personal) via the profile dropdown</li>
-            <li><strong>OTP Codes</strong> - Generate time-based one-time passwords for 2FA accounts</li>
-            <li><strong>Template Fields</strong> - Customize password entries with custom fields like URLs, usernames, or notes</li>
-            <li><a href="/docs/md__f_a_q.html">FAQ</a> - Common questions and answers</li>
-            <li><a href="/index.html#security-considerations">Security Considerations</a> - Important security notes</li>
-            <li><a href="/downloads">Downloads</a> - More installation options</li>
-            <li><a href="/docs/">API Documentation</a> - Developer documentation</li>
+          <li>
+            <strong>Profiles</strong> - Use multiple password stores (e.g., work
+            and personal) via the profile dropdown
+          </li>
+          <li>
+            <strong>OTP Codes</strong> - Generate time-based one-time passwords
+            for 2FA accounts
+          </li>
+          <li>
+            <strong>Template Fields</strong> - Customize password entries with
+            custom fields like URLs, usernames, or notes
+          </li>
+          <li>
+            <a href="/docs/md__f_a_q.html">FAQ</a> - Common questions and
+            answers
+          </li>
+          <li>
+            <a href="/index.html#security-considerations"
+              >Security Considerations</a
+            >
+            - Important security notes
+          </li>
+          <li>
+            <a href="/downloads">Downloads</a> - More installation options
+          </li>
+          <li>
+            <a href="/docs/">API Documentation</a> - Developer documentation
+          </li>
         </ul>
-
-    </section>
-    <footer>
-        <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
-        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        <p><small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small></p>
-    </footer>
-</div>
-<script src="javascripts/scale.fix.js" defer></script>
-<script src="javascripts/main.js" defer></script>
-</body>
+      </section>
+      <footer>
+        <p>
+          This project is maintained by
+          <a title="IJhack on GitHub" href="https://github.com/IJHack"
+            >IJHack</a
+          >
+        </p>
+        <p>
+          <small
+            >Based on a theme by
+            <a href="https://github.com/orderedlist">orderedlist</a></small
+          >
+        </p>
+        <p>
+          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+        </p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js" defer></script>
+    <script src="javascripts/main.js" defer></script>
+  </body>
 </html>

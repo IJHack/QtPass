@@ -1,178 +1,426 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>QtPass 1.5 Changelog</title>
-    <meta name="description" content="Latest changes to QtPass">
-    <meta name="keywords" content="qtpass, pass, gpg, git, password, store, manager, security">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <link rel="canonical" href="https://qtpass.org/changelog">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <meta name="color-scheme" content="light dark">
-    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="QtPass GUI for pass, the standard UNIX password manager">
-    <meta property="og:site_name" content="QtPass">
-    <meta property="og:url" content="https://qtpass.org/">
-    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
-    <meta property="og:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
-    <meta property="og:type" content="product">
-    <meta name="twitter:card" content="product">
-    <meta name="twitter:site" content="@annejanbrouwer">
-    <meta name="twitter:title" content="QtPass GUI for pass, the standard UNIX password manager">
-    <meta name="twitter:description" content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection.">
-    <meta name="twitter:url" content="https://qtpass.org/">
-    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png">
-    <meta name="twitter:image:src" content="https://qtpass.org/images/icon.svg">
-    <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher">
-<script type="application/ld+json">
-{
-  "@context" : "https://schema.org",
-  "@type" : "SoftwareApplication",
-  "name" : "QtPass",
-  "url" : "https://qtpass.org/",
-  "author" : {
-    "@type" : "Organization",
-    "name" : "IJHack"
-  },
-  "downloadUrl" : "https://github.com/IJHack/QtPass/releases",
-  "operatingSystem" : "Linux, BSD, OS X and Windows",
-  "requirements" : "pass or git and gpg2",
-  "screenshot" : "https://qtpass.org/images/qtpass.png",
-  "softwareVersion" : "1.5.1",
-  "applicationCategory" : "Security, Utility",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "EUR"
-  },
-  "aggregateRating" : {
-    "@type": "AggregateRating",
-    "ratingValue": "4.7",
-    "reviewCount": "8"
-  }
-}
-</script>
-</head>
-<body>
-<div class="background"></div>
-<div class="wrapper">
-    <header>
+    <meta name="description" content="Latest changes to QtPass" />
+    <meta
+      name="keywords"
+      content="qtpass, pass, gpg, git, password, store, manager, security"
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+    <link rel="canonical" href="https://qtpass.org/changelog" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      property="og:title"
+      content="QtPass GUI for pass, the standard UNIX password manager"
+    />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/" />
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png" />
+    <meta
+      property="og:description"
+      content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection."
+    />
+    <meta property="og:type" content="product" />
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:site" content="@annejanbrouwer" />
+    <meta
+      name="twitter:title"
+      content="QtPass GUI for pass, the standard UNIX password manager"
+    />
+    <meta
+      name="twitter:description"
+      content="QtPass is a GUI version of pass, the standard UNIX password manager for Windows, Mac, Linux and BSD. Using optional smartcard or YubiKey protection."
+    />
+    <meta name="twitter:url" content="https://qtpass.org/" />
+    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png" />
+    <meta
+      name="twitter:image:src"
+      content="https://qtpass.org/images/icon.svg"
+    />
+    <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "QtPass",
+        "url": "https://qtpass.org/",
+        "author": {
+          "@type": "Organization",
+          "name": "IJHack"
+        },
+        "downloadUrl": "https://github.com/IJHack/QtPass/releases",
+        "operatingSystem": "Linux, BSD, OS X and Windows",
+        "requirements": "pass or git and gpg2",
+        "screenshot": "https://qtpass.org/images/qtpass.png",
+        "softwareVersion": "1.5.1",
+        "applicationCategory": "Security, Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "8"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <header>
         <h1>QtPass <small>1.5.1</small></h1>
-        <p><a title="QtPass GUI for pass, the standard UNIX password manager" href="https://qtpass.org/">QtPass</a> is a multi-platform GUI for <a title="pass, the standard unix password manager" href="https://www.passwordstore.org/">pass</a>, the standard unix password manager.</p>
+        <p>
+          <a
+            title="QtPass GUI for pass, the standard UNIX password manager"
+            href="https://qtpass.org/"
+            >QtPass</a
+          >
+          is a multi-platform GUI for
+          <a
+            title="pass, the standard unix password manager"
+            href="https://www.passwordstore.org/"
+            >pass</a
+          >, the standard unix password manager.
+        </p>
 
         <p class="view">
-            <a title="QtPass project" href="https://github.com/IJHack/QtPass">View the Project on GitHub <small>IJHack/QtPass</small></a>
+          <a title="QtPass project" href="https://github.com/IJHack/QtPass"
+            >View the Project on GitHub <small>IJHack/QtPass</small></a
+          >
         </p>
 
         <ul>
-            <li><a title="QtPass releases" href="https://github.com/IJHack/QtPass/releases">Download <strong>Releases</strong></a></li>
-            <li><a title="QtPass Windows" href="/downloads#Windows">Installer .exe <strong>Windows</strong></a></li>
-            <li><a title="QtPass macOS" href="/downloads#macOS">Get a .dmg <strong>macOS</strong></a></li>
+          <li>
+            <a
+              title="QtPass releases"
+              href="https://github.com/IJHack/QtPass/releases"
+              >Download <strong>Releases</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass Windows" href="/downloads#Windows"
+              >Installer .exe <strong>Windows</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass macOS" href="/downloads#macOS"
+              >Get a .dmg <strong>macOS</strong></a
+            >
+          </li>
         </ul>
 
         <div class="screenshots">
-            <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow">
-            <img id="config" class="hidden" src="images/config.png" alt="QtPass Configuration">
+          <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+          <img
+            id="config"
+            class="hidden"
+            src="images/config.png"
+            alt="QtPass Configuration"
+          />
         </div>
-
-    </header>
-    <section>
-
-        <h2><a id="v1.5.1" class="anchor" href="#v1.5.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.1 Big Pickle</h2>
+      </header>
+      <section>
+        <h2>
+          <a id="v1.5.1" class="anchor" href="#v1.5.1" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >v1.5.1 Big Pickle
+        </h2>
 
         <h3>Fixes</h3>
         <ul>
-            <li>Fixed crash on Wayland when screenAt() returns null <a href="https://github.com/IJHack/QtPass/issues/706">#706</a>, <a href="https://github.com/IJHack/QtPass/issues/663">#663</a></li>
-            <li>Fixed CLI arguments being parsed as password search <a href="https://github.com/IJHack/QtPass/issues/652">#652</a></li>
-            <li>Fixed OTP error handling with better messages and pass-otp availability check <a href="https://github.com/IJHack/QtPass/issues/677">#677</a></li>
-            <li>Fixed window icon not showing on dialog boxes <a href="https://github.com/IJHack/QtPass/issues/671">#671</a></li>
-            <li>Fixed Slovak translation GPG keygen script <a href="https://github.com/IJHack/QtPass/issues/667">#667</a></li>
-            <li>Suppressed qApp deprecation warnings on Qt6</li>
+          <li>
+            Fixed crash on Wayland when screenAt() returns null
+            <a href="https://github.com/IJHack/QtPass/issues/706">#706</a>,
+            <a href="https://github.com/IJHack/QtPass/issues/663">#663</a>
+          </li>
+          <li>
+            Fixed CLI arguments being parsed as password search
+            <a href="https://github.com/IJHack/QtPass/issues/652">#652</a>
+          </li>
+          <li>
+            Fixed OTP error handling with better messages and pass-otp
+            availability check
+            <a href="https://github.com/IJHack/QtPass/issues/677">#677</a>
+          </li>
+          <li>
+            Fixed window icon not showing on dialog boxes
+            <a href="https://github.com/IJHack/QtPass/issues/671">#671</a>
+          </li>
+          <li>
+            Fixed Slovak translation GPG keygen script
+            <a href="https://github.com/IJHack/QtPass/issues/667">#667</a>
+          </li>
+          <li>Suppressed qApp deprecation warnings on Qt6</li>
         </ul>
 
-        <h2><a id="v1.5.0" class="anchor" href="#v1.5.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.0 Explosieve Spring</h2>
+        <h2>
+          <a id="v1.5.0" class="anchor" href="#v1.5.0" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >v1.5.0 Explosieve Spring
+        </h2>
 
         <h3>Highlights</h3>
         <ul>
-            <li>1.5.0 release metadata and packaging preparation across the desktop app, installer, and CI configuration.</li>
-            <li>Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.</li>
-            <li>Modernized C++/Qt build pipeline with clang-tidy and wider lint/test hardening.</li>
+          <li>
+            1.5.0 release metadata and packaging preparation across the desktop
+            app, installer, and CI configuration.
+          </li>
+          <li>
+            Windows release pipeline reliability improvements for AppVeyor and
+            Inno Setup packaging.
+          </li>
+          <li>
+            Modernized C++/Qt build pipeline with clang-tidy and wider lint/test
+            hardening.
+          </li>
         </ul>
 
         <h3>Fixes &amp; Improvements</h3>
         <ul>
-            <li>Fixed profile handling issues in Qt6 compatibility scenarios and improved profile selection behavior <a href="https://github.com/IJHack/QtPass/pull/681">#681</a>, <a href="https://github.com/IJHack/QtPass/pull/695">#695</a>.</li>
-            <li>Preserved existing application behavior when launching qtpass without parameters <a href="https://github.com/IJHack/QtPass/pull/704">#704</a>.</li>
-            <li>Removed a regression where gpg_id comments could be altered <a href="https://github.com/IJHack/QtPass/pull/658">#658</a>.</li>
-            <li>Added missing include path fixes and small reliability hardening in core code paths <a href="https://github.com/IJHack/QtPass/pull/690">#690</a>, <a href="https://github.com/IJHack/QtPass/pull/716">#716</a>.</li>
+          <li>
+            Fixed profile handling issues in Qt6 compatibility scenarios and
+            improved profile selection behavior
+            <a href="https://github.com/IJHack/QtPass/pull/681">#681</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/695">#695</a>.
+          </li>
+          <li>
+            Preserved existing application behavior when launching qtpass
+            without parameters
+            <a href="https://github.com/IJHack/QtPass/pull/704">#704</a>.
+          </li>
+          <li>
+            Removed a regression where gpg_id comments could be altered
+            <a href="https://github.com/IJHack/QtPass/pull/658">#658</a>.
+          </li>
+          <li>
+            Added missing include path fixes and small reliability hardening in
+            core code paths
+            <a href="https://github.com/IJHack/QtPass/pull/690">#690</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/716">#716</a>.
+          </li>
         </ul>
 
         <h3>Release, CI and Maintenance</h3>
         <ul>
-            <li>Added/updated PublicCode and CI workflows, including release-time validation and action upgrades <a href="https://github.com/IJHack/QtPass/pull/701">#701</a>, <a href="https://github.com/IJHack/QtPass/pull/709">#709</a>, <a href="https://github.com/IJHack/QtPass/pull/710">#710</a>, <a href="https://github.com/IJHack/QtPass/pull/711">#711</a>, <a href="https://github.com/IJHack/QtPass/pull/712">#712</a>.</li>
-            <li>Completed the AppVeyor/Inno Setup modernization and packaging updates <a href="https://github.com/IJHack/QtPass/pull/722">#722</a>.</li>
-            <li>Updated readme status badges and branch links to current workflow targets <a href="https://github.com/IJHack/QtPass/pull/724">#724</a>.</li>
+          <li>
+            Added/updated PublicCode and CI workflows, including release-time
+            validation and action upgrades
+            <a href="https://github.com/IJHack/QtPass/pull/701">#701</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/709">#709</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/710">#710</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/711">#711</a>,
+            <a href="https://github.com/IJHack/QtPass/pull/712">#712</a>.
+          </li>
+          <li>
+            Completed the AppVeyor/Inno Setup modernization and packaging
+            updates
+            <a href="https://github.com/IJHack/QtPass/pull/722">#722</a>.
+          </li>
+          <li>
+            Updated readme status badges and branch links to current workflow
+            targets
+            <a href="https://github.com/IJHack/QtPass/pull/724">#724</a>.
+          </li>
         </ul>
 
         <h3>Localization</h3>
         <ul>
-            <li>Synchronised a large set of translation updates through Weblate and translation automation.</li>
+          <li>
+            Synchronised a large set of translation updates through Weblate and
+            translation automation.
+          </li>
         </ul>
 
         <h3>New Contributors</h3>
-        <p>@Vascom, @shemeshg, @ruimaciel, @vdchuyen, @souk4711, @principis, @stkw0, @basil</p>
+        <p>
+          @Vascom, @shemeshg, @ruimaciel, @vdchuyen, @souk4711, @principis,
+          @stkw0, @basil
+        </p>
 
-        <h2><a id="changelogs" class="anchor" href="#changelogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Read up on recent changes</h2>
+        <h2>
+          <a
+            id="changelogs"
+            class="anchor"
+            href="#changelogs"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Read up on recent changes
+        </h2>
 
         <ul>
-            <li><a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html">Current Change Log</a></li>
-            <li><a title="Changes in 1.5" href="/changelog">Changelog of 1.5 releases</a></li>
-            <li><a title="Changes in 1.4" href="/changelog.1.4">Changelog of 1.4 releases</a></li>
-            <li><a title="Changes in 1.3" href="/changelog.1.3">Changelog of 1.3 releases</a></li>
-            <li><a title="Changes in 1.2" href="/changelog.1.2">Changelog of 1.2 releases</a></li>
-            <li><a title="Changes in 1.1" href="/changelog.1.1">Changelog of 1.1 releases</a></li>
-            <li><a title="Changes in 1.0" href="/changelog.old">Changelog of 1.0 releases</a></li>
-            <li><a title="Changes in beta" href="/changelog.beta">Changelog of beta releases</a></li>
+          <li>
+            <a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html"
+              >Current Change Log</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.5" href="/changelog"
+              >Changelog of 1.5 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.4" href="/changelog.1.4"
+              >Changelog of 1.4 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.3" href="/changelog.1.3"
+              >Changelog of 1.3 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.2" href="/changelog.1.2"
+              >Changelog of 1.2 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.1" href="/changelog.1.1"
+              >Changelog of 1.1 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.0" href="/changelog.old"
+              >Changelog of 1.0 releases</a
+            >
+          </li>
+          <li>
+            <a title="Changes in beta" href="/changelog.beta"
+              >Changelog of beta releases</a
+            >
+          </li>
         </ul>
-    </section>
-    <footer>
-        <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
-        <p>Doxygen autogenerated <a title="Latest documentation" href="/docs/">documentation</a></p>
+      </section>
+      <footer>
+        <p>
+          This project is maintained by
+          <a title="IJhack on GitHub" href="https://github.com/IJHack"
+            >IJHack</a
+          >
+        </p>
+        <p>
+          Doxygen autogenerated
+          <a title="Latest documentation" href="/docs/">documentation</a>
+        </p>
         <a href="https://repology.org/metapackage/qtpass">
-            <img src="https://repology.org/badge/latest-versions/qtpass.svg" alt="latest packaged version(s)">
+          <img
+            src="https://repology.org/badge/latest-versions/qtpass.svg"
+            alt="latest packaged version(s)"
+          />
         </a>
-        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        <img src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg" alt="GitHub Build Status">
-        <img src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true" alt="AppVeyor Build Status">
-        <p><small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small></p>
-    </footer>
-</div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "url": "https://qtpass.org"
-}
-</script>
-<script src="javascripts/scale.fix.js" defer></script>
-<script src="javascripts/main.js" defer></script>
-</body>
+        <p>
+          <small
+            >Based on a theme by
+            <a href="https://github.com/orderedlist">orderedlist</a></small
+          >
+        </p>
+        <img
+          src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
+          alt="GitHub Build Status"
+        />
+        <img
+          src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true"
+          alt="AppVeyor Build Status"
+        />
+        <p>
+          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+        </p>
+      </footer>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://qtpass.org"
+      }
+    </script>
+    <script src="javascripts/scale.fix.js" defer></script>
+    <script src="javascripts/main.js" defer></script>
+  </body>
 </html>
