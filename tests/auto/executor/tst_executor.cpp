@@ -1,0 +1,42 @@
+// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#include <QtTest>
+
+#include "../../../src/executor.h"
+
+class tst_executor : public QObject {
+  Q_OBJECT
+
+private Q_SLOTS:
+  void initTestCase();
+  void executeBlockingEcho();
+  void executeBlockingExitCode();
+  void executeBlockingStderr();
+};
+
+void tst_executor::initTestCase() {}
+
+void tst_executor::executeBlockingEcho() {
+  QString output;
+  int result = Executor::executeBlocking("echo", {"hello"}, QString(), &output);
+  QVERIFY2(result == 0, "echo should exit successfully");
+  QVERIFY2(output.contains("hello"), "output should contain 'hello'");
+}
+
+void tst_executor::executeBlockingExitCode() {
+  QString output;
+  int result =
+      Executor::executeBlocking("false", QStringList(), QString(), &output);
+  QVERIFY2(result != 0, "false should exit with non-zero");
+}
+
+void tst_executor::executeBlockingStderr() {
+  QString output;
+  QString err;
+  Executor::executeBlocking("bash", {"-c", "echo error >&2"}, QString(),
+                            &output, &err);
+  QVERIFY2(err.contains("error"), "stderr should contain 'error'");
+}
+
+QTEST_MAIN(tst_executor)
+#include "tst_executor.moc"

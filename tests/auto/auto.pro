@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS += util ui
+SUBDIRS += util ui model settings executor
