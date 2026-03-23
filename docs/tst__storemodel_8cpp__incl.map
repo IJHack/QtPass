@@ -1,0 +1,15 @@
+<map id="tests/auto/model/tst_storemodel.cpp" name="tests/auto/model/tst_storemodel.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="203,5,357,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,56,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,48,71,95,69,90,219,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="80,93,224,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,48,184,88,181,84,248,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="249,93,311,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="283,46,283,79,277,79,277,46"/>
+<area shape="rect" id="Node000005" href="$storemodel_8h.html" title=" " alt="" coords="335,93,502,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="315,43,387,84,385,89,312,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="527,93,679,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="358,43,543,87,542,93,356,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="335,167,503,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="421,119,421,153,416,153,416,119"/>
+</map>

@@ -1,54 +1,58 @@
 <map id="src/enums.h" name="src/enums.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1306,5,1407,31"/>
-<area shape="rect" id="Node000002" href="$configdialog_8h.html" title=" " alt="" coords="287,240,423,265"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1295,36,405,242,404,237,1294,31"/>
-<area shape="rect" id="Node000006" href="$pass_8h.html" title=" " alt="" coords="1313,79,1400,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1359,44,1359,79,1354,79,1354,44"/>
-<area shape="rect" id="Node000009" href="$qtpasssettings_8h.html" title=" " alt="" coords="1094,240,1246,265"/>
-<area shape="poly" id="edge26_Node000001_Node000009" title=" " alt="" coords="1325,40,1259,86,1226,117,1198,153,1187,176,1180,199,1173,240,1168,239,1174,198,1182,174,1193,151,1222,114,1256,82,1322,36"/>
-<area shape="rect" id="Node000019" href="$simpletransaction_8h.html" title=" " alt="" coords="1487,79,1661,104"/>
-<area shape="poly" id="edge27_Node000001_Node000019" title=" " alt="" coords="1405,32,1540,76,1538,81,1404,37"/>
-<area shape="rect" id="Node000021" href="$tst__util_8cpp.html" title=" " alt="" coords="1818,152,1951,192"/>
-<area shape="poly" id="edge31_Node000001_Node000021" title=" " alt="" coords="1421,24,1540,44,1608,58,1675,76,1771,112,1850,150,1848,154,1769,117,1673,81,1607,63,1539,49,1420,30"/>
-<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title=" " alt="" coords="368,313,519,339"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,272,431,311,427,315,378,276"/>
-<area shape="rect" id="Node000004" href="$keygendialog_8cpp.html" title=" " alt="" coords="5,313,164,339"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="300,271,129,316,128,311,298,266"/>
-<area shape="rect" id="Node000005" href="$mainwindow_8cpp.html" title=" " alt="" coords="189,313,343,339"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="332,276,282,315,279,311,329,272"/>
-<area shape="rect" id="Node000007" href="$imitatepass_8h.html" title=" " alt="" coords="1445,159,1580,185"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1393,108,1491,157,1489,162,1390,112"/>
-<area shape="rect" id="Node000010" href="$pass_8cpp.html" title=" " alt="" coords="543,313,645,339"/>
-<area shape="poly" id="edge20_Node000006_Node000010" title=" " alt="" coords="1307,111,632,316,631,311,1306,105"/>
-<area shape="rect" id="Node000011" href="$passworddialog_8cpp.html" title=" " alt="" coords="1419,313,1593,339"/>
-<area shape="poly" id="edge21_Node000006_Node000011" title=" " alt="" coords="1357,118,1357,150,1361,188,1372,228,1391,264,1406,280,1424,293,1463,311,1461,316,1421,297,1402,284,1387,267,1367,230,1356,189,1352,150,1352,118"/>
-<area shape="rect" id="Node000013" href="$qtpasssettings_8cpp.html" title=" " alt="" coords="1617,313,1784,339"/>
-<area shape="poly" id="edge22_Node000006_Node000013" title=" " alt="" coords="1373,114,1400,152,1436,190,1495,231,1559,266,1667,311,1665,316,1556,270,1492,236,1432,194,1395,156,1368,117"/>
-<area shape="rect" id="Node000018" href="$realpass_8h.html" title=" " alt="" coords="1207,159,1319,185"/>
-<area shape="poly" id="edge23_Node000006_Node000018" title=" " alt="" coords="1334,115,1279,161,1275,157,1331,111"/>
-<area shape="rect" id="Node000008" href="$imitatepass_8cpp.html" title=" " alt="" coords="1809,313,1958,339"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1554,187,1856,311,1854,316,1552,192"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1450,190,1220,243,1219,237,1449,185"/>
-<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="1080,264,832,286,530,316,519,317,519,312,530,311,832,280,1080,259"/>
-<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="1080,262,760,282,356,316,344,317,343,312,355,311,760,277,1080,256"/>
-<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="1260,259,1503,281,1797,311,1809,312,1808,317,1796,316,1502,286,1260,264"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1081,265,887,286,658,316,646,318,645,313,658,311,886,281,1080,260"/>
-<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="1238,266,1452,311,1451,316,1237,271"/>
-<area shape="rect" id="Node000012" href="$qtpass_8cpp.html" title=" " alt="" coords="787,313,902,339"/>
-<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="1105,271,898,316,897,311,1104,266"/>
-<area shape="poly" id="edge15_Node000009_Node000013" title=" " alt="" coords="1260,263,1617,311,1617,316,1259,269"/>
-<area shape="rect" id="Node000014" href="$realpass_8cpp.html" title=" " alt="" coords="1268,313,1395,339"/>
-<area shape="poly" id="edge16_Node000009_Node000014" title=" " alt="" coords="1209,268,1306,311,1304,316,1207,273"/>
-<area shape="rect" id="Node000015" href="$storemodel_8cpp.html" title=" " alt="" coords="926,313,1073,339"/>
-<area shape="poly" id="edge17_Node000009_Node000015" title=" " alt="" coords="1131,273,1028,316,1026,311,1129,268"/>
-<area shape="rect" id="Node000016" href="$usersdialog_8cpp.html" title=" " alt="" coords="1097,313,1243,339"/>
-<area shape="poly" id="edge18_Node000009_Node000016" title=" " alt="" coords="1173,279,1173,313,1167,313,1167,279"/>
-<area shape="rect" id="Node000017" href="$util_8cpp.html" title=" " alt="" coords="670,313,763,339"/>
-<area shape="poly" id="edge19_Node000009_Node000017" title=" " alt="" coords="1081,269,776,316,764,318,763,313,775,311,1080,264"/>
-<area shape="poly" id="edge24_Node000018_Node000009" title=" " alt="" coords="1241,196,1186,242,1182,238,1237,192"/>
-<area shape="poly" id="edge25_Node000018_Node000014" title=" " alt="" coords="1276,196,1329,312,1324,314,1272,198"/>
-<area shape="poly" id="edge28_Node000019_Node000007" title=" " alt="" coords="1559,116,1524,161,1520,157,1555,113"/>
-<area shape="rect" id="Node000020" href="$simpletransaction_8cpp.html" title=" " alt="" coords="1605,159,1794,185"/>
-<area shape="poly" id="edge29_Node000019_Node000020" title=" " alt="" coords="1605,109,1682,157,1679,161,1603,114"/>
-<area shape="poly" id="edge30_Node000019_Node000021" title=" " alt="" coords="1633,105,1818,151,1817,156,1632,110"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1071,5,1173,31"/>
+<area shape="rect" id="Node000002" href="$configdialog_8h.html" title=" " alt="" coords="285,240,421,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1072,37,391,242,390,237,1071,32"/>
+<area shape="rect" id="Node000006" href="$pass_8h.html" title=" " alt="" coords="991,79,1077,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1099,41,1050,81,1047,76,1096,37"/>
+<area shape="rect" id="Node000009" href="$qtpasssettings_8h.html" title=" " alt="" coords="1017,240,1169,265"/>
+<area shape="poly" id="edge28_Node000001_Node000009" title=" " alt="" coords="1121,45,1097,240,1091,239,1116,44"/>
+<area shape="rect" id="Node000021" href="$simpletransaction_8h.html" title=" " alt="" coords="1256,79,1431,104"/>
+<area shape="poly" id="edge29_Node000001_Node000021" title=" " alt="" coords="1171,32,1308,76,1307,81,1170,37"/>
+<area shape="rect" id="Node000023" href="$tst__util_8cpp.html" title=" " alt="" coords="1587,152,1721,192"/>
+<area shape="poly" id="edge33_Node000001_Node000023" title=" " alt="" coords="1187,24,1307,43,1376,58,1444,76,1540,112,1619,150,1617,154,1538,117,1443,81,1375,63,1306,49,1186,29"/>
+<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title=" " alt="" coords="188,321,339,346"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,276,278,322,275,318,328,272"/>
+<area shape="rect" id="Node000004" href="$keygendialog_8cpp.html" title=" " alt="" coords="5,321,164,346"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="301,272,124,323,123,318,300,267"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8cpp.html" title=" " alt="" coords="363,321,518,346"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="377,272,429,318,426,322,374,276"/>
+<area shape="rect" id="Node000007" href="$imitatepass_8h.html" title=" " alt="" coords="1215,159,1349,185"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1084,106,1247,157,1245,162,1082,111"/>
+<area shape="rect" id="Node000010" href="$pass_8cpp.html" title=" " alt="" coords="741,321,844,346"/>
+<area shape="poly" id="edge22_Node000006_Node000010" title=" " alt="" coords="1009,115,962,154,869,249,804,322,800,319,865,246,959,150,1006,110"/>
+<area shape="rect" id="Node000011" href="$passworddialog_8cpp.html" title=" " alt="" coords="543,321,717,346"/>
+<area shape="poly" id="edge23_Node000006_Node000011" title=" " alt="" coords="999,112,919,154,761,250,649,323,646,318,758,245,917,150,997,108"/>
+<area shape="rect" id="Node000013" href="$qtpasssettings_8cpp.html" title=" " alt="" coords="2001,321,2168,346"/>
+<area shape="poly" id="edge24_Node000006_Node000013" title=" " alt="" coords="1061,110,1124,151,1163,172,1203,190,1318,227,1417,251,1505,265,1589,273,1766,284,1869,294,1989,311,2029,318,2028,323,1988,316,1868,299,1765,289,1589,278,1505,270,1416,256,1316,232,1201,194,1160,177,1121,156,1058,114"/>
+<area shape="rect" id="Node000020" href="$realpass_8h.html" title=" " alt="" coords="973,159,1085,185"/>
+<area shape="poly" id="edge25_Node000006_Node000020" title=" " alt="" coords="1035,118,1032,159,1027,159,1030,118"/>
+<area shape="rect" id="Node000008" href="$imitatepass_8cpp.html" title=" " alt="" coords="2193,321,2342,346"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1342,185,1362,189,1592,228,1771,251,1951,274,2181,311,2218,318,2217,323,2180,316,1951,279,1771,256,1591,233,1362,195,1341,190"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1243,192,1121,242,1119,238,1241,187"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="1003,260,713,278,532,294,352,316,312,323,311,318,351,311,532,288,712,272,1003,255"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="1003,263,787,283,530,316,491,323,490,318,530,311,787,278,1003,258"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="1182,251,1365,254,1614,263,1896,281,2040,294,2181,311,2222,318,2221,323,2180,316,2039,299,1895,286,1613,268,1365,260,1182,257"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1032,271,856,316,831,323,830,318,855,311,1031,266"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="1007,270,729,316,689,323,688,318,728,311,1006,265"/>
+<area shape="rect" id="Node000012" href="$qtpass_8cpp.html" title=" " alt="" coords="1862,321,1977,346"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="1183,262,1188,263,1374,275,1520,279,1665,286,1750,296,1850,311,1883,318,1882,323,1850,316,1750,301,1665,292,1520,284,1374,280,1187,268,1183,268"/>
+<area shape="poly" id="edge15_Node000009_Node000013" title=" " alt="" coords="1183,262,1188,263,1413,277,1589,282,1764,289,1989,311,2033,318,2033,323,1988,316,1764,294,1588,287,1413,283,1187,268,1183,268"/>
+<area shape="rect" id="Node000014" href="$realpass_8cpp.html" title=" " alt="" coords="868,321,995,346"/>
+<area shape="poly" id="edge16_Node000009_Node000014" title=" " alt="" coords="1058,274,956,323,954,318,1056,269"/>
+<area shape="rect" id="Node000015" href="$storemodel_8cpp.html" title=" " alt="" coords="1019,321,1166,346"/>
+<area shape="poly" id="edge17_Node000009_Node000015" title=" " alt="" coords="1095,279,1095,320,1090,320,1090,279"/>
+<area shape="rect" id="Node000016" href="$usersdialog_8cpp.html" title=" " alt="" coords="1190,321,1337,346"/>
+<area shape="poly" id="edge18_Node000009_Node000016" title=" " alt="" coords="1131,269,1240,318,1237,323,1129,273"/>
+<area shape="rect" id="Node000017" href="$util_8cpp.html" title=" " alt="" coords="1361,321,1454,346"/>
+<area shape="poly" id="edge19_Node000009_Node000017" title=" " alt="" coords="1161,266,1349,311,1373,318,1372,323,1348,316,1160,271"/>
+<area shape="rect" id="Node000018" href="$tst__passwordconfig_8cpp.html" title=" " alt="" coords="1478,313,1670,353"/>
+<area shape="poly" id="edge20_Node000009_Node000018" title=" " alt="" coords="1180,265,1466,311,1478,313,1477,318,1466,316,1179,270"/>
+<area shape="rect" id="Node000019" href="$tst__settings_8cpp.html" title=" " alt="" coords="1695,313,1837,353"/>
+<area shape="poly" id="edge21_Node000009_Node000019" title=" " alt="" coords="1183,262,1188,263,1327,275,1435,283,1544,292,1682,311,1695,313,1694,318,1682,316,1543,297,1435,288,1326,281,1187,268,1183,267"/>
+<area shape="poly" id="edge26_Node000020_Node000009" title=" " alt="" coords="1049,194,1085,238,1081,241,1045,197"/>
+<area shape="poly" id="edge27_Node000020_Node000014" title=" " alt="" coords="1017,198,941,322,936,319,1012,195"/>
+<area shape="poly" id="edge30_Node000021_Node000007" title=" " alt="" coords="1328,116,1293,161,1289,157,1324,113"/>
+<area shape="rect" id="Node000022" href="$simpletransaction_8cpp.html" title=" " alt="" coords="1374,159,1563,185"/>
+<area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="1375,109,1452,157,1449,161,1372,114"/>
+<area shape="poly" id="edge32_Node000021_Node000023" title=" " alt="" coords="1402,105,1588,151,1586,156,1401,110"/>
 </map>
