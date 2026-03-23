@@ -10,8 +10,6 @@ metadata:
 
 # QtPass Documentation
 
-## Documentation Files
-
 | File               | Purpose                                     |
 | ------------------ | ------------------------------------------- |
 | README.md          | Main documentation, installation, usage     |
