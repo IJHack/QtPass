@@ -57,6 +57,7 @@ const PRECACHE_URLS = [
   "/images/favicon-16x16.png",
   "/images/macos.png",
   "/images/sprite_download.png",
+  "/manifest.json",
 ];
 
 self.addEventListener("install", (event) => {
