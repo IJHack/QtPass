@@ -14,7 +14,7 @@ private Q_SLOTS:
   void setAndGetPasswordConfiguration();
   void getProfilesEmpty();
   void setAndGetProfiles();
-  void getVersion();
+  void setAndGetVersion();
   void setAndGetGeometry();
   void getPassStore();
   void setAndGetPassStore();
@@ -68,15 +68,17 @@ void tst_settings::setAndGetProfiles() {
   QVERIFY(readProfiles["profile1"]["path"] == "/test/path");
 }
 
-void tst_settings::getVersion() {
-  QString version = QtPassSettings::getVersion("1.0.0");
-  QVERIFY(!version.isEmpty());
+void tst_settings::setAndGetVersion() {
+  QtPassSettings::setVersion("1.5.1");
+  QString version = QtPassSettings::getVersion();
+  QVERIFY2(version == "1.5.1", "Version should be 1.5.1");
 }
 
 void tst_settings::setAndGetGeometry() {
   QByteArray geometry("test_geometry_data");
   QtPassSettings::setGeometry(geometry);
-  QVERIFY(!geometry.isEmpty());
+  QByteArray read = QtPassSettings::getGeometry(QByteArray());
+  QVERIFY2(read == geometry, "Geometry should match");
 }
 
 void tst_settings::getPassStore() {
