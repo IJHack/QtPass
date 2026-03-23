@@ -349,9 +349,9 @@ void tst_settings::setAndGetAutoclearPanelSeconds() {
 }
 
 void tst_settings::setAndGetPassSigningKey() {
-  QtPassSettings::setPassSigningKey("ABC123DEF456");
+  QtPassSettings::setPassSigningKey("testkey123");
   QString key = QtPassSettings::getPassSigningKey();
-  QVERIFY2(key == "ABC123DEF456", "PassSigningKey should be ABC123DEF456");
+  QVERIFY2(key == "testkey123", "PassSigningKey should be testkey123");
 }
 
 void tst_settings::setAndGetPassExecutable() {
