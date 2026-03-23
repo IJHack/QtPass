@@ -24,6 +24,7 @@ src/moc_predefs.h
 tests/auto/*/moc_predefs.h
 tests/auto/*/target_wrapper.sh
 tests/auto/*/*.moc
+tests/auto/*/tst_
 **/*.gc*
 README.c*
 README.faq
