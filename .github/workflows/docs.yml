@@ -37,9 +37,10 @@ jobs:
 
       - name: Run tests and generate coverage
         run: |
-          make lcov TESTARGS="--platform offscreen"
+          make lcov TESTARGS="--platform offscreen -o qtpass.junit.xml,junitxml"
 
       - name: Upload coverage to Codecov
+        if: ${{ !cancelled() }}
         uses: codecov/codecov-action@v5
         with:
           files: ./docs/coverage/.lcov.total
@@ -49,7 +50,17 @@ jobs:
           verbose: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: "tests/auto/*/qtpass.junit.xml"
+          report_type: test_results
+          fail_ci_if_error: true
+
       - name: Upload coverage to Coveralls
+        if: ${{ !cancelled() }}
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

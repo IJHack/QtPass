@@ -52,7 +52,7 @@ coveralls.depends = lcov_prepare
 
 CONFIG(coverage) {
     QMAKE_EXTRA_TARGETS += gcov codecov lcov_initial lcov_prepare lcov coveralls
-    QMAKE_CLEAN += src/$$OBJECTS_DIR/*.gc?? src/*.gcov docs/coverage/
+    QMAKE_CLEAN += src/$$OBJECTS_DIR/*.gc?? src/*.gcov docs/coverage/*
 	QMAKE_DISTCLEAN += -r docs/coverage/
 }
 
