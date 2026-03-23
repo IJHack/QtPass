@@ -96,39 +96,19 @@
     </header>
     <section>
 
-        <h2><a id="v1.5.1" class="anchor" href="#v1.5.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.1 Explosieve Spring</h2>
+        <h2><a id="v1.5.1" class="anchor" href="#v1.5.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.1 Big Pickle</h2>
 
-        <h3>Highlights</h3>
+        <h3>Fixes</h3>
         <ul>
-            <li>Modernized C++/Qt build pipeline with clang-tidy and wider lint/test hardening.</li>
-            <li>Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.</li>
-            <li>1.5.1 release metadata and packaging preparation across the desktop app, installer, and CI configuration.</li>
+            <li>Fixed crash on Wayland when screenAt() returns null <a href="https://github.com/IJHack/QtPass/issues/706">#706</a>, <a href="https://github.com/IJHack/QtPass/issues/663">#663</a></li>
+            <li>Fixed CLI arguments being parsed as password search <a href="https://github.com/IJHack/QtPass/issues/652">#652</a></li>
+            <li>Fixed OTP error handling with better messages and pass-otp availability check <a href="https://github.com/IJHack/QtPass/issues/677">#677</a></li>
+            <li>Fixed window icon not showing on dialog boxes <a href="https://github.com/IJHack/QtPass/issues/671">#671</a></li>
+            <li>Fixed Slovak translation GPG keygen script <a href="https://github.com/IJHack/QtPass/issues/667">#667</a></li>
+            <li>Suppressed qApp deprecation warnings on Qt6</li>
         </ul>
 
-        <h3>Fixes &amp; Improvements</h3>
-        <ul>
-            <li>Fixed profile handling issues in Qt6 compatibility scenarios and improved profile selection behavior <a href="https://github.com/IJHack/QtPass/pull/681">#681</a>, <a href="https://github.com/IJHack/QtPass/pull/695">#695</a>.</li>
-            <li>Preserved existing application behavior when launching qtpass without parameters <a href="https://github.com/IJHack/QtPass/pull/704">#704</a>.</li>
-            <li>Removed a regression where gpg_id comments could be altered <a href="https://github.com/IJHack/QtPass/pull/658">#658</a>.</li>
-            <li>Added missing include path fixes and small reliability hardening in core code paths <a href="https://github.com/IJHack/QtPass/pull/690">#690</a>, <a href="https://github.com/IJHack/QtPass/pull/716">#716</a>.</li>
-        </ul>
-
-        <h3>Release, CI and Maintenance</h3>
-        <ul>
-            <li>Added/updated PublicCode and CI workflows, including release-time validation and action upgrades <a href="https://github.com/IJHack/QtPass/pull/701">#701</a>, <a href="https://github.com/IJHack/QtPass/pull/709">#709</a>, <a href="https://github.com/IJHack/QtPass/pull/710">#710</a>, <a href="https://github.com/IJHack/QtPass/pull/711">#711</a>, <a href="https://github.com/IJHack/QtPass/pull/712">#712</a>.</li>
-            <li>Completed the AppVeyor/Inno Setup modernization and packaging updates <a href="https://github.com/IJHack/QtPass/pull/722">#722</a>.</li>
-            <li>Updated readme status badges and branch links to current workflow targets <a href="https://github.com/IJHack/QtPass/pull/724">#724</a>.</li>
-        </ul>
-
-        <h3>Localization</h3>
-        <ul>
-            <li>Synchronised a large set of translation updates through Weblate and translation automation.</li>
-        </ul>
-
-        <h3>New Contributors</h3>
-        <p>@Vascom, @shemeshg, @ruimaciel, @vdchuyen, @souk4711, @principis, @stkw0, @basil</p>
-
-        <h2><a id="v1.5.0" class="anchor" href="#v1.5.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.0 Big Pickle</h2>
+        <h2><a id="v1.5.0" class="anchor" href="#v1.5.0" aria-hidden="true"><span class="octicon octicon-link"></span></a>v1.5.0 Explosieve Spring</h2>
 
         <h3>Highlights</h3>
         <ul>
