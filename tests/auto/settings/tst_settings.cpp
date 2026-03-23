@@ -37,6 +37,13 @@ private Q_SLOTS:
   void setAndGetAvoidNumbers();
   void setAndGetLessRandom();
   void setAndGetUseSymbols();
+  void setAndGetDisplayAsIs();
+  void setAndGetHideOnClose();
+  void setAndGetStartMinimized();
+  void setAndGetAlwaysOnTop();
+  void setAndGetAutoPull();
+  void setAndGetAutoPush();
+  void setAndGetUseTemplate();
 };
 
 void tst_settings::initTestCase() {}
@@ -234,6 +241,55 @@ void tst_settings::setAndGetUseSymbols() {
   QVERIFY(QtPassSettings::isUseSymbols() == true);
   QtPassSettings::setUseSymbols(false);
   QVERIFY(QtPassSettings::isUseSymbols() == false);
+}
+
+void tst_settings::setAndGetDisplayAsIs() {
+  QtPassSettings::setDisplayAsIs(true);
+  QVERIFY(QtPassSettings::isDisplayAsIs() == true);
+  QtPassSettings::setDisplayAsIs(false);
+  QVERIFY(QtPassSettings::isDisplayAsIs() == false);
+}
+
+void tst_settings::setAndGetHideOnClose() {
+  QtPassSettings::setHideOnClose(true);
+  QVERIFY(QtPassSettings::isHideOnClose() == true);
+  QtPassSettings::setHideOnClose(false);
+  QVERIFY(QtPassSettings::isHideOnClose() == false);
+}
+
+void tst_settings::setAndGetStartMinimized() {
+  QtPassSettings::setStartMinimized(true);
+  QVERIFY(QtPassSettings::isStartMinimized() == true);
+  QtPassSettings::setStartMinimized(false);
+  QVERIFY(QtPassSettings::isStartMinimized() == false);
+}
+
+void tst_settings::setAndGetAlwaysOnTop() {
+  QtPassSettings::setAlwaysOnTop(true);
+  QVERIFY(QtPassSettings::isAlwaysOnTop() == true);
+  QtPassSettings::setAlwaysOnTop(false);
+  QVERIFY(QtPassSettings::isAlwaysOnTop() == false);
+}
+
+void tst_settings::setAndGetAutoPull() {
+  QtPassSettings::setAutoPull(true);
+  QVERIFY(QtPassSettings::isAutoPull() == true);
+  QtPassSettings::setAutoPull(false);
+  QVERIFY(QtPassSettings::isAutoPull() == false);
+}
+
+void tst_settings::setAndGetAutoPush() {
+  QtPassSettings::setAutoPush(true);
+  QVERIFY(QtPassSettings::isAutoPush() == true);
+  QtPassSettings::setAutoPush(false);
+  QVERIFY(QtPassSettings::isAutoPush() == false);
+}
+
+void tst_settings::setAndGetUseTemplate() {
+  QtPassSettings::setUseTemplate(true);
+  QVERIFY(QtPassSettings::isUseTemplate() == true);
+  QtPassSettings::setUseTemplate(false);
+  QVERIFY(QtPassSettings::isUseTemplate() == false);
 }
 
 QTEST_MAIN(tst_settings)
