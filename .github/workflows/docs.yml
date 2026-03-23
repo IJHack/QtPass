@@ -1,4 +1,4 @@
-name: Documentation
+name: Documentation and public code coverage
 
 on:
   push:
@@ -17,11 +17,45 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
 
       - name: Generate documentation
         run: doxygen
+
+      - name: Install lcov
+        run: sudo apt-get update && sudo apt-get install -y lcov
+
+      - name: qmake
+        run: qmake CONFIG+=coverage
+
+      - name: Build
+        run: make
+
+      - name: Run tests and generate coverage
+        run: |
+          make lcov TESTARGS="--platform offscreen"
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./docs/coverage/.lcov.total
+          flags: qtpass
+          name: qtpass-lcov
+          fail_ci_if_error: false
+          verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./docs/coverage/.lcov.total
+          format: lcov
+          fail-on-error: false
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
