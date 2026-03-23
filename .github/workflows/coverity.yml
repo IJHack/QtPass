@@ -1,0 +1,74 @@
+name: Coverity Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - coverity_scan
+  schedule:
+    - cron: "0 3 * * 1" # every Monday 03:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  coverity:
+    if: github.repository == 'IJHack/QtPass'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.9.3"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            qmake6 \
+            qt6-base-dev \
+            qt6-tools-dev-tools \
+            libqt6svg6-dev \
+            libqrencode-dev \
+            zlib1g-dev
+
+      - name: Download Coverity tool
+        env:
+          TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
+        run: |
+          wget -q https://scan.coverity.com/download/cxx/linux64 \
+            --post-data "token=${TOKEN}&project=IJHack%2FQtPass" \
+            -O coverity_tool.tgz
+          mkdir coverity_tool
+          tar xzf coverity_tool.tgz --strip 1 -C coverity_tool
+
+      - name: Configure
+        run: |
+          qmake6 qtpass.pro
+
+      - name: Build with Coverity
+        run: |
+          export PATH="$PWD/coverity_tool/bin:$PATH"
+          cov-build --dir cov-int make -j"$(nproc)"
+
+      - name: Archive Coverity intermediate files
+        run: |
+          tar caf qtpass-coverity.tar.xz cov-int
+
+      - name: Submit to Coverity Scan
+        env:
+          TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
+          EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
+        run: |
+          curl \
+            --form token="${TOKEN}" \
+            --form email="${EMAIL}" \
+            --form file=@qtpass-coverity.tar.xz \
+            --form version="${GITHUB_SHA}" \
+            --form description="GitHub Actions build for ${GITHUB_REF_NAME}" \
+            "https://scan.coverity.com/builds?project=IJHack%2FQtPass"
