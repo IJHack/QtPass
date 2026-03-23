@@ -8,6 +8,8 @@ metadata:
   workflow: documentation
 ---
 
+# QtPass Documentation
+
 ## Documentation Files
 
 | File               | Purpose                                     |

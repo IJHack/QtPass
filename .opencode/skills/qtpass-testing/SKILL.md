@@ -8,6 +8,8 @@ metadata:
   workflow: testing
 ---
 
+# QtPass needs lots of tests
+
 ## Project Overview
 
 QtPass is a Qt6/C++ password manager GUI for `pass`. Tests use Qt Test framework.
@@ -34,7 +36,7 @@ Tests for `src/util.cpp`:
 
 - `normalizeFolderPath()` - Path normalization
 - `fileContent()` / `fileContentEdgeCases()` - FileContent parsing
-- `regexPatterns()` / `regexPatternEdgeCases()` - URL detection regex
+- `regexPatterns()` / `regexPatternEdgeCases()` - URL detection regular expression
 - `totpHiddenFromDisplay()` - OTP field hiding
 - `copyDir*()` - Directory operations
 - `userInfoValidity()` - User key validation

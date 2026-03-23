@@ -8,7 +8,9 @@ metadata:
   workflow: bugfix
 ---
 
-## Bug Fix Workflow
+# Fixing QtPass the Anus way
+
+## Bugfix Workflow
 
 ### 1. Investigate
 
