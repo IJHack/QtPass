@@ -37,8 +37,7 @@ jobs:
 
       - name: Run tests and generate coverage
         run: |
-          make check TESTARGS="--platform offscreen"
-          make lcov
+          make lcov TESTARGS="--platform offscreen"
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
