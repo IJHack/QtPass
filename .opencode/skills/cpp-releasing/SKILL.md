@@ -99,11 +99,11 @@ Follow semantic versioning: MAJOR.MINOR.PATCH
 
 ## Build Outputs
 
-| Platform | Typical Output          |
-| -------- | ----------------------- |
+| Platform | Typical Output           |
+| -------- | ------------------------ |
 | Linux    | `.tar.gz` source archive |
-| macOS    | `.dmg` disk image       |
-| Windows  | `.exe` installer        |
+| macOS    | `.dmg` disk image        |
+| Windows  | `.exe` installer         |
 
 ## CI/CD
 
