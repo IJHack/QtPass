@@ -125,12 +125,35 @@
         <ul>
             <li><strong>Profiles</strong> - Use multiple password stores (e.g., work and personal) via the profile dropdown</li>
             <li><strong>OTP Codes</strong> - Generate time-based one-time passwords for 2FA accounts</li>
-            <li><strong>Template Fields</strong> - Customize password entries with custom fields like URLs, usernames, or notes</li>
+            <li><strong>Template Fields</strong> - Customize password entries with custom fields. In Config, set a template like <code>login\nurl\nnotes</code> - each line becomes a field when adding passwords.</li>
             <li><a href="/docs/md__f_a_q.html">FAQ</a> - Common questions and answers</li>
             <li><a href="/index.html#security-considerations">Security Considerations</a> - Important security notes</li>
             <li><a href="/downloads">Downloads</a> - More installation options</li>
             <li><a href="/docs/">API Documentation</a> - Developer documentation</li>
         </ul>
+
+        <h2><a id="template-fields" class="anchor" href="#template-fields" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Fields Explained</h2>
+
+        <p>Templates let you add custom fields to password entries beyond just the password itself. Set a template in <strong>Config &rarr; Template</strong> (default: <code>login\nurl</code>).</p>
+
+        <p>Each line becomes an input field when adding or editing a password:</p>
+
+        <pre><code>Template: login&#92;nurl&#92;nnotes
+
+Saved password entry:
+mypassword
+login: user@example.com
+url: https://github.com
+notes: Two-factor enabled</code></pre>
+
+        <p>Common templates:</p>
+        <ul>
+            <li><code>login</code> - just username</li>
+            <li><code>login\nurl</code> - username + website</li>
+            <li><code>login\nurl\nnotes</code> - username + website + notes</li>
+        </ul>
+
+        <p>Check <strong>Template all fields</strong> in Config to apply the template to existing passwords too.</p>
 
     </section>
     <footer>
