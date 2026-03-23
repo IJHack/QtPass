@@ -23,7 +23,6 @@ src/libqtpass.a
 src/moc_predefs.h
 tests/auto/*/moc_predefs.h
 tests/auto/*/target_wrapper.sh
-tests/auto/*/tst_*
 tests/auto/*/*.moc
 **/*.gc*
 README.c*
