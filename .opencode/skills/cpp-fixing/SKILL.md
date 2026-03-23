@@ -31,7 +31,7 @@ metadata:
 
 ### 4. Add Tests
 
-- Add unit tests for the bug fix
+- Add unit tests for the bugfix
 - Follow project testing conventions
 - Place tests in appropriate test directory
 
@@ -78,7 +78,7 @@ git push origin <branch>
 
 ### Regular Expression Issues
 
-- Test regex patterns with edge cases
+- Test regular expression patterns with edge cases
 - Use `\\S+` for non-whitespace matching
 
 ### File Creation Issues
