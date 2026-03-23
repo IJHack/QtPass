@@ -24,7 +24,13 @@ src/moc_predefs.h
 tests/auto/*/moc_predefs.h
 tests/auto/*/target_wrapper.sh
 tests/auto/*/*.moc
-tests/auto/*/tst_
+
+tests/auto/util/tst_util
+tests/auto/ui/tst_ui
+tests/auto/model/tst_model
+tests/auto/settings/tst_settings
+tests/auto/executor/tst_executor
+tests/auto/passwordconfig/tst_passwordconfig
 **/*.gc*
 README.c*
 README.faq
