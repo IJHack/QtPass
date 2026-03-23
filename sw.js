@@ -70,7 +70,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open(cacheName).then(cache => {
       return cache.match(event.request).then(res => {
-        return res || fetch(event.request)
+        return res || fetch(event.request);
       });
     })
   );
