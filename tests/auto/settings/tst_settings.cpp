@@ -44,6 +44,28 @@ private Q_SLOTS:
   void setAndGetAutoPull();
   void setAndGetAutoPush();
   void setAndGetUseTemplate();
+  void setAndGetTemplateAllFields();
+  void setAndGetUseWebDav();
+  void setAndGetUseQrencode();
+  void setAndGetUseAutoclearPanel();
+  void setAndGetAutoclearPanelSeconds();
+  void setAndGetPassSigningKey();
+  void setAndGetPassExecutable();
+  void setAndGetGitExecutable();
+  void setAndGetGpgExecutable();
+  void setAndGetPwgenExecutable();
+  void setAndGetQrencodeExecutable();
+  void setAndGetWebDavUrl();
+  void setAndGetWebDavUser();
+  void setAndGetWebDavPassword();
+  void setAndGetProfile();
+  void setAndGetSavestate();
+  void setAndGetPos();
+  void setAndGetSize();
+  void setAndGetMaximized();
+  void setAndGetPassTemplate();
+  void setAndGetPasswordCharsSelection();
+  void setAndGetPasswordChars();
 };
 
 void tst_settings::initTestCase() {}
@@ -290,6 +312,151 @@ void tst_settings::setAndGetUseTemplate() {
   QVERIFY(QtPassSettings::isUseTemplate() == true);
   QtPassSettings::setUseTemplate(false);
   QVERIFY(QtPassSettings::isUseTemplate() == false);
+}
+
+void tst_settings::setAndGetTemplateAllFields() {
+  QtPassSettings::setTemplateAllFields(true);
+  QVERIFY(QtPassSettings::isTemplateAllFields() == true);
+  QtPassSettings::setTemplateAllFields(false);
+  QVERIFY(QtPassSettings::isTemplateAllFields() == false);
+}
+
+void tst_settings::setAndGetUseWebDav() {
+  QtPassSettings::setUseWebDav(true);
+  QVERIFY(QtPassSettings::isUseWebDav() == true);
+  QtPassSettings::setUseWebDav(false);
+  QVERIFY(QtPassSettings::isUseWebDav() == false);
+}
+
+void tst_settings::setAndGetUseQrencode() {
+  QtPassSettings::setUseQrencode(true);
+  QVERIFY(QtPassSettings::isUseQrencode() == true);
+  QtPassSettings::setUseQrencode(false);
+  QVERIFY(QtPassSettings::isUseQrencode() == false);
+}
+
+void tst_settings::setAndGetUseAutoclearPanel() {
+  QtPassSettings::setUseAutoclearPanel(true);
+  QVERIFY(QtPassSettings::isUseAutoclearPanel() == true);
+  QtPassSettings::setUseAutoclearPanel(false);
+  QVERIFY(QtPassSettings::isUseAutoclearPanel() == false);
+}
+
+void tst_settings::setAndGetAutoclearPanelSeconds() {
+  QtPassSettings::setAutoclearPanelSeconds(45);
+  QVERIFY(QtPassSettings::getAutoclearPanelSeconds() == 45);
+  QtPassSettings::setAutoclearPanelSeconds(10);
+}
+
+void tst_settings::setAndGetPassSigningKey() {
+  QtPassSettings::setPassSigningKey("ABC123DEF456");
+  QString key = QtPassSettings::getPassSigningKey();
+  QVERIFY2(key == "ABC123DEF456", "PassSigningKey should be ABC123DEF456");
+}
+
+void tst_settings::setAndGetPassExecutable() {
+  QtPassSettings::setPassExecutable("/usr/bin/pass");
+  QString exe = QtPassSettings::getPassExecutable();
+  QVERIFY2(exe.contains("pass"), "PassExecutable should contain 'pass'");
+}
+
+void tst_settings::setAndGetGitExecutable() {
+  QtPassSettings::setGitExecutable("/usr/bin/git");
+  QString exe = QtPassSettings::getGitExecutable();
+  QVERIFY2(exe.contains("git"), "GitExecutable should contain 'git'");
+}
+
+void tst_settings::setAndGetGpgExecutable() {
+  QtPassSettings::setGpgExecutable("/usr/bin/gpg");
+  QString exe = QtPassSettings::getGpgExecutable();
+  QVERIFY2(exe.contains("gpg"), "GpgExecutable should contain 'gpg'");
+}
+
+void tst_settings::setAndGetPwgenExecutable() {
+  QtPassSettings::setPwgenExecutable("/usr/bin/pwgen");
+  QString exe = QtPassSettings::getPwgenExecutable();
+  QVERIFY2(exe.contains("pwgen"), "PwgenExecutable should contain 'pwgen'");
+}
+
+void tst_settings::setAndGetQrencodeExecutable() {
+  QtPassSettings::setQrencodeExecutable("/usr/bin/qrencode");
+  QString exe = QtPassSettings::getQrencodeExecutable();
+  QVERIFY2(exe.contains("qrencode"),
+           "QrencodeExecutable should contain 'qrencode'");
+}
+
+void tst_settings::setAndGetWebDavUrl() {
+  QtPassSettings::setWebDavUrl("https://dav.example.com/pass");
+  QString url = QtPassSettings::getWebDavUrl();
+  QVERIFY2(url.contains("dav.example.com"),
+           "WebDavUrl should contain 'dav.example.com'");
+}
+
+void tst_settings::setAndGetWebDavUser() {
+  QtPassSettings::setWebDavUser("testuser");
+  QString user = QtPassSettings::getWebDavUser();
+  QVERIFY2(user == "testuser", "WebDavUser should be 'testuser'");
+}
+
+void tst_settings::setAndGetWebDavPassword() {
+  QtPassSettings::setWebDavPassword("secretpassword");
+  QString pwd = QtPassSettings::getWebDavPassword();
+  QVERIFY2(pwd == "secretpassword",
+           "WebDavPassword should be 'secretpassword'");
+}
+
+void tst_settings::setAndGetProfile() {
+  QtPassSettings::setProfile("work");
+  QString profile = QtPassSettings::getProfile();
+  QVERIFY2(profile == "work", "Profile should be 'work'");
+}
+
+void tst_settings::setAndGetSavestate() {
+  QByteArray state("test_state_data");
+  QtPassSettings::setSavestate(state);
+  QByteArray read = QtPassSettings::getSavestate(QByteArray());
+  QVERIFY2(read == state, "Savestate should match");
+}
+
+void tst_settings::setAndGetPos() {
+  QPoint pos(100, 200);
+  QtPassSettings::setPos(pos);
+  QPoint read = QtPassSettings::getPos(QPoint());
+  QVERIFY2(read == pos, "Pos should match");
+}
+
+void tst_settings::setAndGetSize() {
+  QSize size(800, 600);
+  QtPassSettings::setSize(size);
+  QSize read = QtPassSettings::getSize(QSize());
+  QVERIFY2(read == size, "Size should match");
+}
+
+void tst_settings::setAndGetMaximized() {
+  QtPassSettings::setMaximized(true);
+  QVERIFY(QtPassSettings::isMaximized() == true);
+  QtPassSettings::setMaximized(false);
+  QVERIFY(QtPassSettings::isMaximized() == false);
+}
+
+void tst_settings::setAndGetPassTemplate() {
+  QtPassSettings::setPassTemplate("username: {username}\npassword: {password}");
+  QString tmpl = QtPassSettings::getPassTemplate();
+  QVERIFY2(tmpl.contains("username"), "PassTemplate should contain 'username'");
+}
+
+void tst_settings::setAndGetPasswordCharsSelection() {
+  QtPassSettings::setPasswordCharsselection(
+      PasswordConfiguration::ALPHABETICAL);
+  PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
+  QVERIFY(config.selected == PasswordConfiguration::ALPHABETICAL);
+}
+
+void tst_settings::setAndGetPasswordChars() {
+  QtPassSettings::setPasswordChars("abc123");
+  PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
+  QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM].contains("abc"),
+           "PasswordChars should contain 'abc'");
 }
 
 QTEST_MAIN(tst_settings)
