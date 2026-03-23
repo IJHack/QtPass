@@ -22,6 +22,11 @@ private Q_SLOTS:
   void setAndGetClipBoardType();
   void setAndGetAutoclearSeconds();
   void setAndGetPasswordLength();
+  void setAndGetUseGit();
+  void setAndGetUseOtp();
+  void setAndGetUseTrayIcon();
+  void setAndGetUsePwgen();
+  void setAndGetHidePassword();
 };
 
 void tst_settings::initTestCase() {}
@@ -114,6 +119,41 @@ void tst_settings::setAndGetPasswordLength() {
   QtPassSettings::setPasswordLength(24);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY(config.length == 24);
+}
+
+void tst_settings::setAndGetUseGit() {
+  QtPassSettings::setUseGit(true);
+  QVERIFY(QtPassSettings::isUseGit() == true);
+  QtPassSettings::setUseGit(false);
+  QVERIFY(QtPassSettings::isUseGit() == false);
+}
+
+void tst_settings::setAndGetUseOtp() {
+  QtPassSettings::setUseOtp(true);
+  QVERIFY(QtPassSettings::isUseOtp() == true);
+  QtPassSettings::setUseOtp(false);
+  QVERIFY(QtPassSettings::isUseOtp() == false);
+}
+
+void tst_settings::setAndGetUseTrayIcon() {
+  QtPassSettings::setUseTrayIcon(true);
+  QVERIFY(QtPassSettings::isUseTrayIcon() == true);
+  QtPassSettings::setUseTrayIcon(false);
+  QVERIFY(QtPassSettings::isUseTrayIcon() == false);
+}
+
+void tst_settings::setAndGetUsePwgen() {
+  QtPassSettings::setUsePwgen(true);
+  QVERIFY(QtPassSettings::isUsePwgen() == true);
+  QtPassSettings::setUsePwgen(false);
+  QVERIFY(QtPassSettings::isUsePwgen() == false);
+}
+
+void tst_settings::setAndGetHidePassword() {
+  QtPassSettings::setHidePassword(true);
+  QVERIFY(QtPassSettings::isHidePassword() == true);
+  QtPassSettings::setHidePassword(false);
+  QVERIFY(QtPassSettings::isHidePassword() == false);
 }
 
 QTEST_MAIN(tst_settings)

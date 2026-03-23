@@ -10,6 +10,7 @@ class tst_executor : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void executeBlockingEcho();
+  void executeBlockingWithArgs();
 #ifndef Q_OS_WIN
   void executeBlockingExitCode();
   void executeBlockingStderr();
@@ -23,6 +24,15 @@ void tst_executor::executeBlockingEcho() {
   int result = Executor::executeBlocking("echo", {"hello"}, QString(), &output);
   QVERIFY2(result == 0, "echo should exit successfully");
   QVERIFY2(output.contains("hello"), "output should contain 'hello'");
+}
+
+void tst_executor::executeBlockingWithArgs() {
+  QString output;
+  int result =
+      Executor::executeBlocking("echo", {"arg1", "arg2"}, QString(), &output);
+  QVERIFY2(result == 0, "echo should exit successfully");
+  QVERIFY2(output.contains("arg1"), "output should contain 'arg1'");
+  QVERIFY2(output.contains("arg2"), "output should contain 'arg2'");
 }
 
 #ifndef Q_OS_WIN
