@@ -1,27 +1,29 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,203,80,228"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,228,80,253"/>
 <area shape="rect" id="Node000001" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="162,5,241,31"/>
-<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="47,188,57,155,73,115,96,75,126,40,143,29,161,22,163,27,145,34,130,44,100,78,78,117,62,157,52,190"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="45,214,54,175,69,129,93,81,126,40,143,29,161,22,163,27,145,34,130,44,97,84,74,131,59,177,51,215"/>
 <area shape="rect" id="Node000002" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="176,55,227,80"/>
-<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="53,189,81,139,102,112,126,89,151,76,175,69,177,74,153,81,130,93,106,116,86,142,57,191"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="50,214,77,152,99,118,126,89,150,76,175,68,177,73,152,81,130,93,103,122,82,154,54,216"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass.html" title=" " alt="" coords="168,104,235,129"/>
-<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="63,191,92,164,127,138,167,122,169,127,129,143,95,168,66,195"/>
+<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="56,215,86,176,127,138,167,121,169,126,129,143,90,180,61,218"/>
 <area shape="rect" id="Node000007" href="$classtst__executor.html" title=" " alt="" coords="150,153,253,179"/>
-<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="92,197,159,176,160,181,94,202"/>
-<area shape="rect" id="Node000008" href="$classtst__passwordconfig.html" title=" " alt="" coords="128,203,275,228"/>
-<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="94,213,128,213,128,218,94,218"/>
-<area shape="rect" id="Node000009" href="$classtst__settings.html" title=" " alt="" coords="152,252,251,277"/>
-<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="94,228,160,249,159,254,92,233"/>
-<area shape="rect" id="Node000010" href="$classtst__storemodel.html" title=" " alt="" coords="141,301,261,327"/>
-<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="67,236,95,262,129,286,157,299,154,304,127,291,92,266,64,240"/>
-<area shape="rect" id="Node000011" href="$classtst__ui.html" title=" " alt="" coords="172,351,231,376"/>
-<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="58,239,86,288,106,314,130,336,150,348,173,355,171,360,148,353,126,340,102,317,82,291,53,242"/>
-<area shape="rect" id="Node000012" href="$classtst__util.html" title="The tst_util class is our first unit test." alt="" coords="168,400,235,425"/>
-<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="53,240,63,273,78,312,101,351,130,385,148,397,169,404,167,410,146,402,126,389,96,355,74,315,58,275,47,242"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available." alt="" coords="323,276,421,301"/>
-<area shape="poly" id="edge10_Node000002_Node000003" title=" " alt="" coords="241,71,259,78,276,89,298,111,316,136,343,189,361,239,371,275,366,277,356,241,338,191,311,139,293,115,273,93,257,83,239,76"/>
+<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="73,218,127,188,156,176,158,181,129,192,76,223"/>
+<area shape="rect" id="Node000008" href="$classtst__filecontent.html" title=" " alt="" coords="144,203,259,228"/>
+<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="93,230,143,222,144,227,94,235"/>
+<area shape="rect" id="Node000009" href="$classtst__passwordconfig.html" title=" " alt="" coords="128,252,275,277"/>
+<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="94,246,128,251,127,256,93,251"/>
+<area shape="rect" id="Node000010" href="$classtst__settings.html" title=" " alt="" coords="152,301,251,327"/>
+<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="77,258,129,286,161,299,159,304,127,291,74,263"/>
+<area shape="rect" id="Node000011" href="$classtst__storemodel.html" title=" " alt="" coords="141,351,261,376"/>
+<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="62,264,91,301,130,336,154,348,151,353,126,340,87,305,58,267"/>
+<area shape="rect" id="Node000012" href="$classtst__ui.html" title=" " alt="" coords="172,400,231,425"/>
+<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="55,265,82,326,103,358,130,385,150,398,173,405,171,410,148,402,126,389,99,361,78,328,50,268"/>
+<area shape="rect" id="Node000013" href="$classtst__util.html" title="The tst_util class is our first unit test." alt="" coords="168,449,235,475"/>
+<area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="51,267,60,304,75,349,98,395,130,435,148,447,169,454,167,459,146,452,126,439,93,398,70,351,55,305,46,268"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available." alt="" coords="323,301,421,327"/>
+<area shape="poly" id="edge10_Node000002_Node000003" title=" " alt="" coords="241,71,260,78,276,89,299,114,318,143,346,203,363,260,371,300,366,301,358,261,341,205,314,145,295,118,273,93,257,83,239,76"/>
 <area shape="rect" id="Node000005" href="$class_real_pass.html" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="332,55,412,80"/>
 <area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="240,65,332,65,332,70,240,70"/>
-<area shape="rect" id="Node000004" href="$classsimple_transaction.html" title=" " alt="" coords="131,449,271,475"/>
-<area shape="poly" id="edge19_Node000004_Node000003" title=" " alt="" coords="266,441,273,436,306,403,332,365,363,300,368,303,337,368,310,406,276,440,269,445"/>
+<area shape="rect" id="Node000004" href="$classsimple_transaction.html" title=" " alt="" coords="131,499,271,524"/>
+<area shape="poly" id="edge20_Node000004_Node000003" title=" " alt="" coords="267,490,273,485,308,446,335,401,354,358,365,326,370,328,359,360,340,404,313,449,276,489,270,494"/>
 </map>

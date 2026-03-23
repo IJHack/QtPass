@@ -1,0 +1,15 @@
+<map id="tests/auto/filecontent/tst_filecontent.cpp" name="tests/auto/filecontent/tst_filecontent.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="94,5,254,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,48,70,89,68,84,140,43"/>
+<area shape="rect" id="Node000003" href="$filecontent_8h.html" title=" " alt="" coords="93,93,255,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,46,177,79,171,79,171,46"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="279,93,426,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="218,43,315,85,313,90,216,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="60,167,115,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="162,121,114,160,110,156,158,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="139,167,209,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="177,119,177,153,171,153,171,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="234,167,327,192"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="193,116,253,157,250,161,190,121"/>
+</map>
