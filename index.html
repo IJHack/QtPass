@@ -295,16 +295,6 @@
           </li>
         </ul>
 
-        <h2>
-          <a
-            id="installation"
-            class="anchor"
-            href="#installation"
-            aria-hidden="true"
-            ><span class="octicon octicon-link"></span></a
-          >Installation
-        </h2>
-
         <p>
           New to QtPass?
           <a href="/getting-started">Follow the getting started guide</a>.
@@ -316,6 +306,16 @@
           profiles, OTP, and more.
         </p>
 
+        <h2>
+          <a
+            id="installation"
+            class="anchor"
+            href="#installation"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Installation
+        </h2>
+
         <h3>
           <a id="linux" class="anchor" href="#linux" aria-hidden="true"
             ><span aria-hidden="true" class="octicon octicon-link"></span></a
@@ -326,18 +326,17 @@
         <pre><code>pacman -S qtpass</code></pre>
 
         <h4>OpenSUSE &amp; Fedora</h4>
-        <pre><code>yum install qtpass</code></pre>
+        <pre><code>zypper install qtpass</code></pre>
         <pre><code>dnf install qtpass</code></pre>
 
         <h4>Debian, Ubuntu and derivates like Kali &amp; Raspbian</h4>
-        <pre><code>apt-get install qtpass</code></pre>
+        <pre><code>apt install qtpass</code></pre>
 
         <h4>Gentoo</h4>
         <pre><code>emerge -atv qtpass</code></pre>
 
         <h4>FreeBSD</h4>
         <pre><code>pkg install qtpass</code></pre>
-        <pre><code>cd /usr/ports/sysutils/qtpass/ &amp;&amp; make install clean</code></pre>
 
         <h4><a href="/downloads">More options</a></h4>
 
@@ -385,7 +384,7 @@
         </p>
 
         Via <a title="brew install qtpass" href="https://brew.sh">Homebrew</a>
-        <pre><code>brew install qtpass --cask</code></pre>
+        <pre><code>brew install --cask qtpass</code></pre>
 
         <h3>
           <a
@@ -398,7 +397,8 @@
         </h3>
         <ul>
           <li>QtPass requires Qt 5.15 or later (Qt 6 recommended)</li>
-          <li>Requires gpg2 and optionally git</li>
+          <li>GnuPG 2.2+</li>
+          <li>Optional: Git and pass</li>
         </ul>
 
         <p>Build on Linux/BSD:</p>
