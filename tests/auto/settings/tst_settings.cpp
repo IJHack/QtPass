@@ -69,7 +69,7 @@ void tst_settings::setAndGetProfiles() {
 }
 
 void tst_settings::getVersion() {
-  QString version = QtPassSettings::getVersion();
+  QString version = QtPassSettings::getVersion("1.0.0");
   QVERIFY(!version.isEmpty());
 }
 
