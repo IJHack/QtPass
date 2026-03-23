@@ -116,6 +116,17 @@ $(function() {
 <p>Git for Windows comes with an <code>ssh-askpass</code> compatible command, <code>git-gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
 <h2>Git has issues with GPG SSH Authentication</h2>
 <p>This tutorial might resolve your issues. <a href="https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant">https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant</a></p>
+<h2>GPG says "Public key unusable" or "No secret key"</h2>
+<p>Your GPG key may not be trusted or has expired. Run <code>gpg --edit-key &lt;KEYID&gt;</code> and:</p>
+<ul>
+<li>Set the trust level to "ultimate" (<code>trust</code> command)</li>
+<li>Check if the key has expired (<code>expire</code> command to extend if needed)</li>
+<li>For smartcards/YubiKeys, ensure the card is connected and unlocked</li>
+</ul>
+<h2>OTP QR codes don't work on macOS</h2>
+<p>Applications launched from Finder don't inherit the shell PATH. Install <a class="el" href="class_qt_pass.html">QtPass</a> via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching <a class="el" href="class_qt_pass.html">QtPass</a>.</p>
+<h2><a class="el" href="class_qt_pass.html">QtPass</a> doesn't follow my system language</h2>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> uses the system language at startup. On some desktop environments, you may need to launch <a class="el" href="class_qt_pass.html">QtPass</a> from the terminal or configure your desktop environment to pass the correct locale environment variables.</p>
 <h2>Where is the configuration stored?</h2>
 <p><a class="el" href="class_qt_pass.html">QtPass</a> tries to use the native config choice for the OS it's running.</p>
 <ul>
