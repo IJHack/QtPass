@@ -1,0 +1,1 @@
+genhtml --demangle-cpp -o docs/coverage/ docs/coverage/.lcov.total
