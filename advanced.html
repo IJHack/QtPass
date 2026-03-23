@@ -162,6 +162,58 @@ notes: Two-factor enabled</code></pre>
         <h3>Pwgen Option</h3>
         <p>For pronounceable passwords, enable <strong>Use Pwgen</strong> if you have the external pwgen tool installed.</p>
 
+        <h2><a id="clipboard" class="anchor" href="#clipboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clipboard & Auto-Clear</h2>
+
+        <p>QtPass automatically clears copied passwords from your clipboard for security.</p>
+
+        <h3>Configuration</h3>
+        <ul>
+            <li><strong>Auto-clear</strong> - Time in seconds before clipboard is cleared (default: 45 seconds)</li>
+            <li><strong>Clipboard mode</strong> - Choose when to copy: always or on-demand</li>
+        </ul>
+
+        <p>You can also press <strong>Ctrl+Shift+C</strong> to copy without auto-clear.</p>
+
+        <h2><a id="tray" class="anchor" href="#tray" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Tray</h2>
+
+        <p>QtPass can run in the system tray for quick access.</p>
+
+        <h3>Enabling Tray Icon</h3>
+        <ol>
+            <li>Go to <strong>Config</strong></li>
+            <li>Check <strong>Use Tray Icon</strong></li>
+        </ol>
+
+        <h3>Tray Options</h3>
+        <ul>
+            <li><strong>Hide on close</strong> - Keep running in tray when window is closed</li>
+            <li><strong>Start minimized</strong> - Start in tray instead of showing window</li>
+        </ul>
+
+        <h2><a id="qrcode" class="anchor" href="#qrcode" aria-hidden="true"><span class="octicon octicon-link"></span></a>QR Codes</h2>
+
+        <p>Display passwords as QR codes for easy scanning on mobile devices.</p>
+
+        <h3>Requirements</h3>
+        <ul>
+            <li>Install <code>qrencode</code> tool</li>
+            <li>Enable <strong>Use Qrencode</strong> in Config</li>
+        </ul>
+
+        <h3>Using QR Codes</h3>
+        <p>When viewing a password, click the QR code button to display it. Scan with any authenticator app to transfer the password to your phone.</p>
+
+        <h2><a id="shoulder-surfing" class="anchor" href="#shoulder-surfing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shoulder Surfing Protection</h2>
+
+        <p>QtPass can hide passwords to prevent others from seeing your screen.</p>
+
+        <h3>Hide Passwords</h3>
+        <ul>
+            <li>Check <strong>Hide password</strong> in the password entry dialog</li>
+            <li>Click the eye icon to temporarily reveal</li>
+            <li>Passwords are shown as dots by default in the main window</li>
+        </ul>
+
     </section>
     <footer>
         <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
