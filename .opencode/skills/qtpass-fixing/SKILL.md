@@ -108,15 +108,15 @@ gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
 
 ## Key Source Files
 
-| File                 | Purpose                       |
-| -------------------- | ----------------------------- |
-| src/mainwindow.cpp   | Main UI, tree view, dialogs   |
-| src/pass.cpp         | GPG operations, path handling |
-| src/util.cpp         | Utilities, regex, file ops    |
-| src/filecontent.cpp  | Password file parsing         |
-| src/imitatepass.cpp  | CLI pass imitation            |
-| src/configdialog.cpp | Settings dialog               |
-| src/executor.cpp     | Command execution             |
+| File                 | Purpose                                 |
+| -------------------- | --------------------------------------- |
+| src/mainwindow.cpp   | Main UI, tree view, dialogs             |
+| src/pass.cpp         | GPG operations, path handling           |
+| src/util.cpp         | Utilities, regular expression, file ops |
+| src/filecontent.cpp  | Password file parsing                   |
+| src/imitatepass.cpp  | CLI pass imitation                      |
+| src/configdialog.cpp | Settings dialog                         |
+| src/executor.cpp     | Command execution                       |
 
 ## Linting
 
