@@ -1,4 +1,4 @@
-const cacheName = 'qtpass::v1.4.0-13::static';
+const cacheName = 'qtpass::v1.5.1::static';
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -6,16 +6,21 @@ self.addEventListener('install', e => {
       return cache.addAll([
         '/',
         '/404.html',
+        '/getting-started.html',
+        '/advanced.html',
         '/changelog.1.1.html',
         '/changelog.1.2.html',
         '/changelog.1.3.html',
+        '/changelog.1.4.html',
         '/changelog.beta.html',
         '/changelog.html',
         '/changelog.old.html',
         '/downloads.html',
         '/index.html',
+        '/index-modern.html',
         '/stylesheets/pygment_trac.css',
         '/stylesheets/styles.css',
+        '/stylesheets/modern.css',
         '/javascripts/main.js',
         '/javascripts/scale.fix.js',
         '/docs/',
@@ -25,6 +30,7 @@ self.addEventListener('install', e => {
         '/images/favicon-32x32.png',
         '/images/ms-icon-144x144.png',
         '/images/win10.png',
+        '/images/win11.png',
         '/images/android-icon-192x192.png',
         '/images/apple-icon-144x144.png',
         '/images/apple-icon-precomposed.png',
