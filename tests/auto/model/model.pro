@@ -11,3 +11,8 @@ OBJ_PATH += ../../../src/$(OBJECTS_DIR)
 
 VPATH += ../../../src
 INCLUDEPATH += ../../../src
+
+win32 {
+	RC_FILE = ../../../windows.rc     
+	QMAKE_LINK_OBJECT_MAX=24
+}
