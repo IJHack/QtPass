@@ -17,7 +17,7 @@ gcov.depends = check
 
 # add Makefile target to generate code coverage using codecov
 codecov.target = codecov
-codecov.commands += cd src/ && codecov $$escape_expand(\\n\\t)
+codecov.commands += cd src/ && codecov do-upload $$escape_expand(\\n\\t)
 codecov.commands += $$escape_expand(\\n)
 codecov.depends = check
 
@@ -46,7 +46,7 @@ lcov.commands += $$escape_expand(\\n)
 lcov.depends = lcov_prepare
 
 coveralls.target = coveralls
-coveralls.commands += coveralls-lcov $${LCOV_OUTPUT_DIR}/.lcov.total $$escape_expand(\\n\\t)
+coveralls.commands += cat $${LCOV_OUTPUT_DIR}/.lcov.total | coveralls $$escape_expand(\\n\\t)
 coveralls.commands += $$escape_expand(\\n)
 coveralls.depends = lcov_prepare
 
