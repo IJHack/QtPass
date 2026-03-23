@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Advanced Features - QtPass</title>
+    <meta name="description" content="Learn advanced QtPass features: templates, profiles, OTP, per-folder encryption, and more.">
+    <meta name="keywords" content="qtpass, pass, gpg, git, password, manager, security, advanced, templates, profiles, otp">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="canonical" href="https://qtpass.org/advanced">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="color-scheme" content="light dark">
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Advanced Features - QtPass">
+    <meta property="og:site_name" content="QtPass">
+    <meta property="og:url" content="https://qtpass.org/advanced">
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png">
+    <meta property="og:description" content="Learn advanced QtPass features: templates, profiles, OTP, per-folder encryption, and more.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+<div class="background"></div>
+<div class="wrapper">
+    <header>
+        <h1>Advanced Features</h1>
+        <p>Take your QtPass experience to the next level.</p>
+
+        <p class="view">
+            <a href="/">Back to QtPass Home</a>
+            <a href="/getting-started">Getting Started</a>
+        </p>
+    </header>
+    <section>
+
+        <h2><a id="profiles" class="anchor" href="#profiles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple Password Stores with Profiles</h2>
+
+        <p>QtPass supports multiple profiles, letting you keep separate password stores for different purposes (e.g., work and personal).</p>
+
+        <h3>Creating a New Profile</h3>
+        <ol>
+            <li>Go to <strong>Config</strong></li>
+            <li>Click <strong>Add</strong> in the Profiles section</li>
+            <li>Give it a name and choose where to store it</li>
+            <li>Click <strong>OK</strong></li>
+        </ol>
+
+        <p>Switch between profiles using the dropdown in the main toolbar.</p>
+
+        <h2><a id="templates" class="anchor" href="#templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Fields</h2>
+
+        <p>Templates let you add custom fields to password entries beyond just the password itself.</p>
+
+        <h3>Setting Up a Template</h3>
+        <ol>
+            <li>Go to <strong>Config</strong></li>
+            <li>Open the <strong>Template</strong> tab</li>
+            <li>Type each field name on a new line</li>
+        </ol>
+
+        <pre><code>Template (in Config):
+login
+url
+notes
+
+Saved password entry:
+mypassword
+login: user@example.com
+url: https://github.com
+notes: Two-factor enabled</code></pre>
+
+        <h4>Common templates</h4>
+        <ul>
+            <li><code>login</code> - just username</li>
+            <li><code>login</code> then <code>url</code> on next line - username + website</li>
+            <li><code>login</code>, <code>url</code>, <code>notes</code> - username + website + notes</li>
+        </ul>
+
+        <h4>Template all fields</h4>
+        <p>Check <strong>Template all fields</strong> in Config to render existing colon-separated lines (like <code>login: user@example.com</code>) as editable key-value fields.</p>
+
+        <h2><a id="otp" class="anchor" href="#otp" aria-hidden="true"><span class="octicon octicon-link"></span></a>OTP (One-Time Passwords)</h2>
+
+        <p>QtPass can generate time-based one-time passwords (TOTP) for two-factor authentication.</p>
+
+        <h3>Requirements</h3>
+        <ul>
+            <li>Install <a href="https://github.com/tmccoyi/pass-otp">pass-otp</a> extension</li>
+            <li>Ensure <code>pass-otp</code> is in your PATH</li>
+        </ul>
+
+        <h3>Adding OTP to a Password</h3>
+        <ol>
+            <li>Add a password as usual</li>
+            <li>In the OTP field, enter your secret key or scan a QR code</li>
+            <li>Save the entry</li>
+        </ol>
+
+        <p>To copy an OTP code, select the entry and press <strong>Ctrl+O</strong> (or click the OTP button).</p>
+
+        <h2><a id="per-folder" class="anchor" href="#per-folder" aria-hidden="true"><span class="octicon octicon-link"></span></a>Per-Folder Encryption</h2>
+
+        <p>QtPass supports different encryption keys for different folders, useful for sharing passwords with family or team members.</p>
+
+        <h3>Setting Per-Folder Keys</h3>
+        <ol>
+            <li>Create or select a folder in your password store</li>
+            <li>Click the <strong>Users</strong> button (or right-click and select <strong>Edit Users</strong>)</li>
+            <li>Add the GPG keys that should have access to this folder</li>
+            <li>Save the <code>.gpg-id</code> file</li>
+        </ol>
+
+        <p>Each subfolder can have its own set of recipients. Files in that folder will only be decryptable by those keys.</p>
+
+        <h2><a id="git" class="anchor" href="#git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Sync</h2>
+
+        <p>QtPass can automatically sync your password store using Git.</p>
+
+        <h3>Enabling Git</h3>
+        <ol>
+            <li>Go to <strong>Config</strong></li>
+            <li>Check <strong>Use Git</strong></li>
+            <li>Configure your remote repository</li>
+        </ol>
+
+        <h3>Auto Sync Options</h3>
+        <ul>
+            <li><strong>Auto Pull</strong> - Automatically pull changes on startup</li>
+            <li><strong>Auto Push</strong> - Automatically push after making changes</li>
+        </ul>
+
+        <p>You can also manually pull/push using the toolbar buttons.</p>
+
+        <h2><a id="password-generation" class="anchor" href="#password-generation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Password Generation</h2>
+
+        <p>QtPass includes a built-in password generator.</p>
+
+        <h3>Using the Generator</h3>
+        <ol>
+            <li>When adding/editing a password, click <strong>Generate</strong></li>
+            <li>Set the desired length (20+ characters recommended)</li>
+            <li>Choose character options (avoid capitals, numbers, symbols)</li>
+            <li>Click <strong>Use</strong> to insert the generated password</li>
+        </ol>
+
+        <h3>Pwgen Option</h3>
+        <p>For pronounceable passwords, enable <strong>Use Pwgen</strong> if you have the external pwgen tool installed.</p>
+
+        <h2><a id="clipboard" class="anchor" href="#clipboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clipboard & Auto-Clear</h2>
+
+        <p>QtPass automatically clears copied passwords from your clipboard for security.</p>
+
+        <h3>Configuration</h3>
+        <ul>
+            <li><strong>Auto-clear</strong> - Time in seconds before clipboard is cleared (default: 45 seconds)</li>
+            <li><strong>Clipboard mode</strong> - Choose when to copy: always or on-demand</li>
+        </ul>
+
+        <p>You can also press <strong>Ctrl+Shift+C</strong> to copy without auto-clear.</p>
+
+        <h2><a id="tray" class="anchor" href="#tray" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Tray</h2>
+
+        <p>QtPass can run in the system tray for quick access.</p>
+
+        <h3>Enabling Tray Icon</h3>
+        <ol>
+            <li>Go to <strong>Config</strong></li>
+            <li>Check <strong>Use Tray Icon</strong></li>
+        </ol>
+
+        <h3>Tray Options</h3>
+        <ul>
+            <li><strong>Hide on close</strong> - Keep running in tray when window is closed</li>
+            <li><strong>Start minimized</strong> - Start in tray instead of showing window</li>
+        </ul>
+
+        <h2><a id="qrcode" class="anchor" href="#qrcode" aria-hidden="true"><span class="octicon octicon-link"></span></a>QR Codes</h2>
+
+        <p>Display passwords as QR codes for easy scanning on mobile devices.</p>
+
+        <h3>Requirements</h3>
+        <ul>
+            <li>Install <code>qrencode</code> tool</li>
+            <li>Enable <strong>Use Qrencode</strong> in Config</li>
+        </ul>
+
+        <h3>Using QR Codes</h3>
+        <p>When viewing a password, click the QR code button to display it. Scan with any authenticator app to transfer the password to your phone.</p>
+
+        <h2><a id="shoulder-surfing" class="anchor" href="#shoulder-surfing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shoulder Surfing Protection</h2>
+
+        <p>QtPass can hide passwords to prevent others from seeing your screen.</p>
+
+        <h3>Hide Passwords</h3>
+        <ul>
+            <li>Check <strong>Hide password</strong> in the password entry dialog</li>
+            <li>Click the eye icon to temporarily reveal</li>
+            <li>Passwords are shown as dots by default in the main window</li>
+        </ul>
+
+    </section>
+    <footer>
+        <p>This project is maintained by <a title="IJhack on GitHub" href="https://github.com/IJHack">IJHack</a></p>
+        <p><small>Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small></p>
+    </footer>
+</div>
+<script src="javascripts/scale.fix.js" defer></script>
+<script src="javascripts/main.js" defer></script>
+</body>
+</html>
