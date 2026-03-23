@@ -16,6 +16,10 @@ private Q_SLOTS:
   void flagsWithInvalidIndex();
   void mimeTypes();
   void lessThan();
+  void supportedDropActions();
+  void supportedDragActions();
+  void filterAcceptsRowHidden();
+  void filterAcceptsRowVisible();
 };
 
 void tst_storemodel::initTestCase() {}
@@ -92,6 +96,56 @@ void tst_storemodel::lessThan() {
   QModelIndex indexB = fsm.index(tempDir.path() + "/bbb.gpg");
 
   QVERIFY(sm.lessThan(indexA, indexB));
+}
+
+void tst_storemodel::supportedDropActions() {
+  StoreModel sm;
+  Qt::DropActions actions = sm.supportedDropActions();
+  QVERIFY(actions & Qt::CopyAction);
+  QVERIFY(actions & Qt::MoveAction);
+}
+
+void tst_storemodel::supportedDragActions() {
+  StoreModel sm;
+  Qt::DropActions actions = sm.supportedDragActions();
+  QVERIFY(actions & Qt::CopyAction);
+  QVERIFY(actions & Qt::MoveAction);
+}
+
+void tst_storemodel::filterAcceptsRowHidden() {
+  QTemporaryDir tempDir;
+  QFile f(tempDir.path() + "/secret.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  sm.setFilterRegularExpression("nothing-matches-this");
+  QModelIndex index = fsm.index(tempDir.path() + "/secret.gpg");
+  bool result = sm.filterAcceptsRow(0, index.parent());
+  QVERIFY(!result);
+}
+
+void tst_storemodel::filterAcceptsRowVisible() {
+  QTemporaryDir tempDir;
+  QFile f(tempDir.path() + "/mypassword.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  sm.setFilterRegularExpression("password");
+  QModelIndex index = fsm.index(tempDir.path() + "/mypassword.gpg");
+  bool result = sm.filterAcceptsRow(0, index.parent());
+  QVERIFY(result);
 }
 
 QTEST_MAIN(tst_storemodel)

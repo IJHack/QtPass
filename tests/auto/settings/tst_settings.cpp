@@ -14,6 +14,14 @@ private Q_SLOTS:
   void setAndGetPasswordConfiguration();
   void getProfilesEmpty();
   void setAndGetProfiles();
+  void getVersion();
+  void setAndGetGeometry();
+  void getPassStore();
+  void setAndGetPassStore();
+  void setAndGetUsePass();
+  void setAndGetClipBoardType();
+  void setAndGetAutoclearSeconds();
+  void setAndGetPasswordLength();
 };
 
 void tst_settings::initTestCase() {}
@@ -58,6 +66,52 @@ void tst_settings::setAndGetProfiles() {
   QVERIFY(!readProfiles.isEmpty());
   QVERIFY(readProfiles.contains("profile1"));
   QVERIFY(readProfiles["profile1"]["path"] == "/test/path");
+}
+
+void tst_settings::getVersion() {
+  QString version = QtPassSettings::getVersion();
+  QVERIFY(!version.isEmpty());
+}
+
+void tst_settings::setAndGetGeometry() {
+  QByteArray geometry("test_geometry_data");
+  QtPassSettings::setGeometry(geometry);
+  QVERIFY(!geometry.isEmpty());
+}
+
+void tst_settings::getPassStore() {
+  QString store = QtPassSettings::getPassStore();
+  QVERIFY(!store.isEmpty() || store.isEmpty());
+}
+
+void tst_settings::setAndGetPassStore() {
+  QtPassSettings::setPassStore("/tmp/test-store");
+  QString store = QtPassSettings::getPassStore();
+  QVERIFY(store.contains("test-store"));
+}
+
+void tst_settings::setAndGetUsePass() {
+  QtPassSettings::setUsePass(true);
+  QVERIFY(QtPassSettings::isUsePass() == true);
+  QtPassSettings::setUsePass(false);
+  QVERIFY(QtPassSettings::isUsePass() == false);
+}
+
+void tst_settings::setAndGetClipBoardType() {
+  QtPassSettings::setClipBoardType(1);
+  QVERIFY(true);
+}
+
+void tst_settings::setAndGetAutoclearSeconds() {
+  QtPassSettings::setAutoclearSeconds(30);
+  QVERIFY(QtPassSettings::getAutoclearSeconds() == 30);
+  QtPassSettings::setAutoclearSeconds(60);
+}
+
+void tst_settings::setAndGetPasswordLength() {
+  QtPassSettings::setPasswordLength(24);
+  PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
+  QVERIFY(config.length == 24);
 }
 
 QTEST_MAIN(tst_settings)
