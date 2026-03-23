@@ -48,4 +48,4 @@ compile_commands.json
 linter-output.log
 release-artifacts
 node_modules
-docs/coverage
+docs
