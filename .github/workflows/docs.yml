@@ -17,11 +17,28 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
 
       - name: Generate documentation
         run: doxygen
+
+      - name: Install lcov
+        run: sudo apt-get update && sudo apt-get install -y lcov
+
+      - name: qmake
+        run: qmake CONFIG+=coverage
+
+      - name: Build
+        run: make
+
+      - name: Run tests and generate coverage
+        run: |
+          make check TESTARGS="--platform offscreen"
+          make lcov
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

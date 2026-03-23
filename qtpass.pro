@@ -21,20 +21,20 @@ codecov.commands += cd src/ && codecov $$escape_expand(\\n\\t)
 codecov.commands += $$escape_expand(\\n)
 codecov.depends = check
 
-LCOV_OUTPUT_DIR = src/$$OBJECTS_DIR/lcov/
+LCOV_OUTPUT_DIR = docs/coverage
 # add Makefile target to generate code coverage using lcov
 lcov_initial.target = lcov_initial
 #lcov_initial.commands =  $$escape_expand(\\n\\t)
 lcov_initial.commands += rm -rf $$LCOV_OUTPUT_DIR $$escape_expand(\\n\\t)
-lcov_initial.commands +=  mkdir $$LCOV_OUTPUT_DIR $$escape_expand(\\n\\t)
+lcov_initial.commands +=  mkdir -p $$LCOV_OUTPUT_DIR $$escape_expand(\\n\\t)
 lcov_initial.commands += lcov --quiet --initial --capture --base-directory ./src --directory ./src/$$OBJECTS_DIR/ -o $${LCOV_OUTPUT_DIR}/.lcov.base1 $$escape_expand(\\n\\t)
 lcov_initial.commands += $$escape_expand(\\n)
 lcov_initial.depends += sub-src
 
 lcov_prepare.target = lcov_prepare
-lcov_prepare.commands += lcov -q -c -b ./src -d ./src/$$OBJECTS_DIR -o $${LCOV_OUTPUT_DIR}/.lcov.run1 $$escape_expand(\\n\\t)
-lcov_prepare.commands += lcov -q -e $${LCOV_OUTPUT_DIR}/.lcov.base1 -o $${LCOV_OUTPUT_DIR}/.lcov.base $$PWD/src/* $$escape_expand(\\n\\t)
-lcov_prepare.commands += lcov -q -e $${LCOV_OUTPUT_DIR}/.lcov.run1 -o $${LCOV_OUTPUT_DIR}/.lcov.run $$PWD/src/* $$escape_expand(\\n\\t)
+lcov_prepare.commands += lcov -q --ignore-errors unused -c -b ./src -d ./src/$$OBJECTS_DIR -o $${LCOV_OUTPUT_DIR}/.lcov.run1 $$escape_expand(\\n\\t)
+lcov_prepare.commands += lcov -q --ignore-errors unused -e $${LCOV_OUTPUT_DIR}/.lcov.base1 -o $${LCOV_OUTPUT_DIR}/.lcov.base $$PWD/src/* $$escape_expand(\\n\\t)
+lcov_prepare.commands += lcov -q --ignore-errors unused -e $${LCOV_OUTPUT_DIR}/.lcov.run1 -o $${LCOV_OUTPUT_DIR}/.lcov.run $$PWD/src/* $$escape_expand(\\n\\t)
 lcov_prepare.commands += lcov -q -a $${LCOV_OUTPUT_DIR}/.lcov.base -a $${LCOV_OUTPUT_DIR}/.lcov.run -o $${LCOV_OUTPUT_DIR}/.lcov.total $$escape_expand(\\n\\t)
 lcov_prepare.commands += $$escape_expand(\\n)
 lcov_prepare.depends = lcov_initial check
@@ -52,8 +52,8 @@ coveralls.depends = lcov_prepare
 
 CONFIG(coverage) {
     QMAKE_EXTRA_TARGETS += gcov codecov lcov_initial lcov_prepare lcov coveralls
-    QMAKE_CLEAN += src/$$OBJECTS_DIR/*.gc?? src/*.gcov
-	QMAKE_DISTCLEAN += -r src/$$OBJECTS_DIR/lcov/
+    QMAKE_CLEAN += src/$$OBJECTS_DIR/*.gc?? src/*.gcov docs/coverage/
+	QMAKE_DISTCLEAN += -r docs/coverage/
 }
 
 system($$QMAKE_LUPDATE -locations absolute ./src ./main -ts localization/*.ts)
