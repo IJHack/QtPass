@@ -1,4 +1,4 @@
-name: Documentation
+name: Documentation and public code coverage
 
 on:
   push:
