@@ -1,0 +1,10 @@
+{
+  "esversion": 6,
+  "browser": true,
+  "devel": true,
+  "globals": {
+    "self": false,
+    "caches": false,
+    "fetch": false
+  }
+}
