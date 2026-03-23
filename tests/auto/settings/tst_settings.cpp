@@ -27,6 +27,16 @@ private Q_SLOTS:
   void setAndGetUseTrayIcon();
   void setAndGetUsePwgen();
   void setAndGetHidePassword();
+  void setAndGetHideContent();
+  void setAndGetUseSelection();
+  void setAndGetUseAutoclear();
+  void setAndGetUseMonospace();
+  void setAndGetNoLineWrapping();
+  void setAndGetAddGPGId();
+  void setAndGetAvoidCapitals();
+  void setAndGetAvoidNumbers();
+  void setAndGetLessRandom();
+  void setAndGetUseSymbols();
 };
 
 void tst_settings::initTestCase() {}
@@ -154,6 +164,76 @@ void tst_settings::setAndGetHidePassword() {
   QVERIFY(QtPassSettings::isHidePassword() == true);
   QtPassSettings::setHidePassword(false);
   QVERIFY(QtPassSettings::isHidePassword() == false);
+}
+
+void tst_settings::setAndGetHideContent() {
+  QtPassSettings::setHideContent(true);
+  QVERIFY(QtPassSettings::isHideContent() == true);
+  QtPassSettings::setHideContent(false);
+  QVERIFY(QtPassSettings::isHideContent() == false);
+}
+
+void tst_settings::setAndGetUseSelection() {
+  QtPassSettings::setUseSelection(true);
+  QVERIFY(QtPassSettings::isUseSelection() == true);
+  QtPassSettings::setUseSelection(false);
+  QVERIFY(QtPassSettings::isUseSelection() == false);
+}
+
+void tst_settings::setAndGetUseAutoclear() {
+  QtPassSettings::setUseAutoclear(true);
+  QVERIFY(QtPassSettings::isUseAutoclear() == true);
+  QtPassSettings::setUseAutoclear(false);
+  QVERIFY(QtPassSettings::isUseAutoclear() == false);
+}
+
+void tst_settings::setAndGetUseMonospace() {
+  QtPassSettings::setUseMonospace(true);
+  QVERIFY(QtPassSettings::isUseMonospace() == true);
+  QtPassSettings::setUseMonospace(false);
+  QVERIFY(QtPassSettings::isUseMonospace() == false);
+}
+
+void tst_settings::setAndGetNoLineWrapping() {
+  QtPassSettings::setNoLineWrapping(true);
+  QVERIFY(QtPassSettings::isNoLineWrapping() == true);
+  QtPassSettings::setNoLineWrapping(false);
+  QVERIFY(QtPassSettings::isNoLineWrapping() == false);
+}
+
+void tst_settings::setAndGetAddGPGId() {
+  QtPassSettings::setAddGPGId(true);
+  QVERIFY(QtPassSettings::isAddGPGId() == true);
+  QtPassSettings::setAddGPGId(false);
+  QVERIFY(QtPassSettings::isAddGPGId() == false);
+}
+
+void tst_settings::setAndGetAvoidCapitals() {
+  QtPassSettings::setAvoidCapitals(true);
+  QVERIFY(QtPassSettings::isAvoidCapitals() == true);
+  QtPassSettings::setAvoidCapitals(false);
+  QVERIFY(QtPassSettings::isAvoidCapitals() == false);
+}
+
+void tst_settings::setAndGetAvoidNumbers() {
+  QtPassSettings::setAvoidNumbers(true);
+  QVERIFY(QtPassSettings::isAvoidNumbers() == true);
+  QtPassSettings::setAvoidNumbers(false);
+  QVERIFY(QtPassSettings::isAvoidNumbers() == false);
+}
+
+void tst_settings::setAndGetLessRandom() {
+  QtPassSettings::setLessRandom(true);
+  QVERIFY(QtPassSettings::isLessRandom() == true);
+  QtPassSettings::setLessRandom(false);
+  QVERIFY(QtPassSettings::isLessRandom() == false);
+}
+
+void tst_settings::setAndGetUseSymbols() {
+  QtPassSettings::setUseSymbols(true);
+  QVERIFY(QtPassSettings::isUseSymbols() == true);
+  QtPassSettings::setUseSymbols(false);
+  QVERIFY(QtPassSettings::isUseSymbols() == false);
 }
 
 QTEST_MAIN(tst_settings)
