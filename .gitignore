@@ -43,6 +43,10 @@ tests/auto/executor/tst_executor
 tests/auto/executor/tst_executor.moc
 tests/auto/executor/moc_predefs.h
 tests/auto/executor/target_wrapper.sh
+tests/auto/passwordconfig/tst_passwordconfig
+tests/auto/passwordconfig/tst_passwordconfig.moc
+tests/auto/passwordconfig/moc_predefs.h
+tests/auto/passwordconfig/target_wrapper.sh
 **/*.gc*
 README.c*
 README.faq
