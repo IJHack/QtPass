@@ -6,7 +6,7 @@ on:
     branches:
       - coverity_scan
   schedule:
-    - cron: "0 3 * * 1" # every Monday 03:00 UTC
+    - cron: "0 3 * * 1"
 
 permissions:
   contents: read
@@ -15,6 +15,10 @@ jobs:
   coverity:
     if: github.repository == 'IJHack/QtPass'
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    env:
+      COVERITY_PROJECT: IJHack/qtpass
 
     steps:
       - name: Checkout
@@ -25,7 +29,7 @@ jobs:
         with:
           version: "6.9.3"
 
-      - name: Install build dependencies
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -35,40 +39,59 @@ jobs:
             qt6-tools-dev-tools \
             libqt6svg6-dev \
             libqrencode-dev \
-            zlib1g-dev
+            zlib1g-dev \
+            curl \
+            xz-utils \
+            tar
 
-      - name: Download Coverity tool
+      - name: Download Coverity build tool
         env:
           TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
         run: |
-          wget -q https://scan.coverity.com/download/cxx/linux64 \
-            --post-data "token=${TOKEN}&project=IJHack%2FQtPass" \
-            -O coverity_tool.tgz
-          mkdir coverity_tool
+          set -euxo pipefail
+          test -n "${TOKEN}"
+
+          curl -fL \
+            --data-urlencode "token=${TOKEN}" \
+            --data-urlencode "project=${COVERITY_PROJECT}" \
+            https://scan.coverity.com/download/linux64 \
+            -o coverity_tool.tgz
+
+          rm -rf coverity_tool
+          mkdir -p coverity_tool
           tar xzf coverity_tool.tgz --strip 1 -C coverity_tool
+
+          test -x coverity_tool/bin/cov-build
 
       - name: Configure
         run: |
+          set -euxo pipefail
           qmake6 qtpass.pro
 
-      - name: Build with Coverity
+      - name: Build under Coverity
         run: |
-          export PATH="$PWD/coverity_tool/bin:$PATH"
+          set -euxo pipefail
+          export PATH="${GITHUB_WORKSPACE}/coverity_tool/bin:${PATH}"
           cov-build --dir cov-int make -j"$(nproc)"
 
-      - name: Archive Coverity intermediate files
+      - name: Archive analysis bundle
         run: |
-          tar caf qtpass-coverity.tar.xz cov-int
+          set -euxo pipefail
+          tar -caf qtpass-coverity.tar.xz cov-int
 
       - name: Submit to Coverity Scan
         env:
           TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
           EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
         run: |
-          curl \
+          set -euxo pipefail
+          test -n "${TOKEN}"
+          test -n "${EMAIL}"
+
+          curl -fL \
             --form token="${TOKEN}" \
             --form email="${EMAIL}" \
             --form file=@qtpass-coverity.tar.xz \
             --form version="${GITHUB_SHA}" \
-            --form description="GitHub Actions build for ${GITHUB_REF_NAME}" \
-            "https://scan.coverity.com/builds?project=IJHack%2FQtPass"
+            --form description="GitHub Actions build from ${GITHUB_REF_NAME}" \
+            "https://scan.coverity.com/builds?project=${COVERITY_PROJECT}"
