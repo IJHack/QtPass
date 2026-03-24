@@ -9,3 +9,7 @@ HEADERS += ../../../src/simpletransaction.h \
     ../../../src/enums.h
 
 INCLUDEPATH += ../../../src
+
+win32 {
+    RC_FILE = ../../../windows.rc
+}
