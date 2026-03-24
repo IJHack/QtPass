@@ -9,6 +9,8 @@
 
 #include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
+#include "../../../src/imitatepass.h"
+#include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
@@ -51,6 +53,10 @@ private Q_SLOTS:
   void simpleTransactionNested();
   void createGpgIdFile();
   void createGpgIdFileEmptyKeys();
+  void generateRandomPassword();
+  void boundedRandom();
+  void findBinaryInPath();
+  void findPasswordStore();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -500,6 +506,61 @@ void tst_util::createGpgIdFileEmptyKeys() {
   readFile.close();
 
   QVERIFY(content.isEmpty());
+}
+
+void tst_util::generateRandomPassword() {
+  ImitatePass pass;
+  QString charset = "abcdefghijklmnopqrstuvwxyz";
+  QString result = pass.Generate_b(10, charset);
+
+  QVERIFY(result.length() == 10);
+  QVERIFY2(result.contains(QRegularExpression("^[a-z]+$")),
+           "result should only contain lowercase letters");
+
+  result = pass.Generate_b(100, "abcd");
+  QVERIFY(result.length() == 100);
+  QVERIFY2(result.contains(QRegularExpression("^[a-d]+$")),
+           "result should only contain a-d");
+
+  result = pass.Generate_b(0, "");
+  QVERIFY(result.isEmpty());
+
+  result = pass.Generate_b(50, "ABC");
+  QVERIFY(result.length() == 50);
+}
+
+void tst_util::boundedRandom() {
+  ImitatePass pass;
+
+  QVector<quint32> counts(10, 0);
+  const int iterations = 1000;
+
+  for (int i = 0; i < iterations; ++i) {
+    QString result = pass.Generate_b(1, "0123456789");
+    quint32 val = result.at(0).digitValue();
+    if (val < 10) {
+      counts[val]++;
+    }
+  }
+
+  for (int i = 0; i < 10; ++i) {
+    QVERIFY2(counts[i] > 0, "Each digit should appear at least once");
+  }
+}
+
+void tst_util::findBinaryInPath() {
+  QString result = Util::findBinaryInPath("bash");
+  QVERIFY2(!result.isEmpty(), "Should find bash in PATH");
+  QVERIFY(result.contains("bash"));
+
+  result = Util::findBinaryInPath("nonexistentbinary12345");
+  QVERIFY(result.isEmpty());
+}
+
+void tst_util::findPasswordStore() {
+  QString result = Util::findPasswordStore();
+  QVERIFY(!result.isEmpty());
+  QVERIFY(result.endsWith(QDir::separator()));
 }
 
 QTEST_MAIN(tst_util)
