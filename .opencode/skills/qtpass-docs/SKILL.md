@@ -8,7 +8,7 @@ metadata:
   workflow: documentation
 ---
 
-# QtPass Documentation
+# Project Documentation
 
 ## Documentation Files
 
@@ -33,10 +33,9 @@ metadata:
 ## FAQ.md Sections
 
 - Installation issues
-- GPG/Key issues
-- Git integration
-- Password store issues
-- Platform-specific (macOS, Windows, Linux)
+- Configuration issues
+- Integration issues
+- Platform-specific troubleshooting
 
 ### FAQ Template
 
@@ -54,38 +53,41 @@ metadata:
 
 ### Translation Files
 
-Location: `localization/localization_<lang>.ts`
+Location: `localization/<lang>.ts` or project-specific location
 
 ### Update Translations
 
 ```bash
-# Run lupdate to scan for new strings
+# Run translation tools to scan for new strings
 lrelease localization/*.ts
+# Or use project-specific i18n command
 ```
 
 ### Key Conventions
 
-- Use Qt Linguist (`linguist`) for editing
+- Use appropriate translation editor
 - Don't translate placeholders like `%1`, `%2`
 - Preserve `\n` line breaks
+- Keep technical terms consistent
 
 ### Adding New Language
 
-1. Copy `localization/localization_en_US.ts`
-2. Rename to `localization_<code>.ts`
-3. Update in `qtpass.pro`: `TRANSLATIONS += ...`
-4. Run lupdate
+1. Copy base translation file
+2. Rename with language code
+3. Update in build config: `TRANSLATIONS += ...`
+4. Run translation update tool
 
 ## Docs Build
 
-### Doxygen
+### API Documentation
 
 ```bash
-# Generate docs
+# Generate API docs
 doxygen Doxyfile
+# Or use project-specific docs command
 
 # View
-firefox html/index.html
+open html/index.html
 ```
 
 ## Linting
@@ -93,12 +95,11 @@ firefox html/index.html
 ### Markdown (prettier)
 
 ```bash
-npx prettier --write README.md
-npx prettier --write FAQ.md
+npx prettier --write <markdown-file>
 ```
 
 ### YAML (prettier)
 
 ```bash
-npx prettier --write .github/workflows/*.yml
+npx prettier --write <yaml-file>
 ```

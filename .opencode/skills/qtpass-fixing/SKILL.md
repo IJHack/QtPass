@@ -8,129 +8,108 @@ metadata:
   workflow: bugfix
 ---
 
-# Fixing QtPass the Anus way
+# Bug Fixing Workflow
 
 ## Bugfix Workflow
 
 ### 1. Investigate
 
-- Search existing issues: `gh issue list --search "<keywords>"`
-- Check CHANGELOG.md for related fixes
-- Search code: `grep -r "pattern" src/`
+- Search existing issues and PRs
+- Check changelog for related fixes
+- Search codebase for relevant patterns
 
 ### 2. Reproduce
 
-- Understand the bug: read issue details, logs, stack traces
-- Find relevant source files
+- Read issue details, logs, and stack traces
+- Locate relevant source files
 - Identify root cause
 
 ### 3. Fix
 
-- Make changes in `src/` files
-- Fix should be minimal and targeted
+- Make minimal, targeted changes in source files
+- Keep changes focused on the root cause
 
 ### 4. Add Tests
 
-- Always add unit tests when fixing bugs
-- See `qtpass-testing` skill for test conventions
-- Tests go in `tests/auto/<module>/tst_*.cpp`
+- Add unit tests for the bugfix
+- Follow project testing conventions
+- Place tests in appropriate test directory
 
 ### 5. Verify
 
 ```bash
 # Build and run tests
-make check
+# Use project test command (e.g., make check, ctest, etc.)
 
 # Build binary
-make -j4
+# Use project build command (e.g., make, ninja, etc.)
 ```
 
 ### 6. Commit & PR
 
 ```bash
 # Create branch
-git checkout -b fix/<issue-number>-short-description
+git checkout -b fix/<short-description>
 
-# Commit with reference
-git commit -m "Fix <description> (#issue)"
+# Commit with issue reference
+git commit -m "Fix <description>"
 
 # Push and create PR
-git push origin fix/<branch>
-gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
+git push origin <branch>
+# Create PR via web or CLI
 ```
 
-## Common Fix Locations
+## Common Fix Patterns
 
-### Wayland Crash
+### Null Pointer Crashes
 
-- File: `src/qtpass.cpp` or `src/trayicon.cpp`
-- Issue: `QGuiApplication::screenAt()` returns null
-- Fix: Add null check before using screen
+- Check for null returns before using pointers
+- Add defensive null checks
 
-### CLI Args Parsing
+### Argument Parsing
 
-- File: `main/main.cpp`
-- Issue: Raw `argv[]` gets interpreted as search
-- Fix: Use `QCoreApplication::arguments()`
+- Use framework argument parsing instead of raw argv
+- Validate input arguments
 
-### OTP Errors
+### Missing Availability Checks
 
-- Files: `src/imitatepass.cpp`, `src/configdialog.cpp`
-- Issues: Missing `pass-otp` check, poor error messages
-- Fix: Add availability check, improve error handling
+- Check for optional dependencies before use
+- Provide clear error messages
 
-### URL Detection
+### Regular Expression Issues
 
-- File: `src/util.cpp`
-- Function: `protocolRegex()`
-- Issue: URLs include spaces or invalid chars
-- Fix: Use `\\S+` instead of character class
+- Test regular expression patterns with edge cases
+- Use `\\S+` for non-whitespace matching
 
-### GPG-ID Creation
+### File Creation Issues
 
-- File: `src/mainwindow.cpp`
-- Function: `addFolder()`
-- Issue: `.gpg-id` not created when adding folders
-- Fix: Add code to write .gpg-id file
+- Ensure files are created when expected
+- Write required metadata files
 
-### Path Separators
+### Path Handling
 
-- File: `src/pass.cpp`
-- Function: `getGpgIdPath()`
-- Issue: Windows path handling
-- Fix: Use QDir for path normalization
+- Use framework path utilities for cross-platform support
+- Normalize paths consistently
 
-### Monospace Font
+### Font/Display Issues
 
-- File: `src/mainwindow.cpp`
-- Issue: Font not monospace in tables
-- Fix: Use `setStyleHint(QFont::Monospace)`
-
-## Key Source Files
-
-| File                 | Purpose                                 |
-| -------------------- | --------------------------------------- |
-| src/mainwindow.cpp   | Main UI, tree view, dialogs             |
-| src/pass.cpp         | GPG operations, path handling           |
-| src/util.cpp         | Utilities, regular expression, file ops |
-| src/filecontent.cpp  | Password file parsing                   |
-| src/imitatepass.cpp  | CLI pass imitation                      |
-| src/configdialog.cpp | Settings dialog                         |
-| src/executor.cpp     | Command execution                       |
+- Use appropriate font hints for monospace display
+- Test UI rendering across platforms
 
 ## Linting
 
-### Web/Config (prettier)
+### Config Files (prettier)
 
 ```bash
-npx prettier --write <file>
+npx prettier --write <config-file>
 ```
 
 ### C++ (clang-format)
 
 ```bash
-# Check
-clang-format --style=file --dry-run src/main.cpp
-# Apply
-clang-format --style=file -i src/main.cpp
+# Check formatting
+clang-format --style=file --dry-run <source-file>
+
+# Apply formatting
+clang-format --style=file -i <source-file>
 ```

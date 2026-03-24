@@ -8,7 +8,7 @@ metadata:
   workflow: release
 ---
 
-# Releasing QtPass versions
+# Release Workflow
 
 ## Release Checklist
 
@@ -16,31 +16,29 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pro` - `VERSION = "x.y.z"`
-- `qtpass.spec` - `Version:`
-- `qtpass.appdata.xml` - `<release version="">`
-- `qtpass.iss` - `AppVerName=`
-- `appdmg.json` - `version`
-- `README.md` - Download links
+- Build config files (`.pro`, `CMakeLists.txt`, etc.) - version field
+- Package specs (`.spec`, `.appdata.xml`, `.iss`) - version field
+- Installers/config files - version field
+- Documentation - version references
 
 ```bash
 # Find version strings
-grep -rn "1\.5" qtpass.pro qtpass.spec qtpass.appdata.xml qtpass.iss appdmg.json
+grep -rn "<current-version>" <build-files>
 ```
 
 ### 2. Changelog
 
-Update `CHANGELOG.md`:
+Update changelog:
 
 - Add release date
-- List all merged PRs and fixed issues
+- List merged PRs and fixed issues
 - Group by: Added, Changed, Fixed, Removed
 
 ### 3. Tests
 
 ```bash
 # Run full test suite
-make check
+# Use project test command
 ```
 
 ### 4. Build Artifacts
@@ -49,49 +47,46 @@ make check
 
 ```bash
 # Create source tarball
-./release-linux
-
-# Or manually:
-git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
+# Use release script or:
+git archive --prefix=<project>-x.y.z/ -o <project>-x.y.z.tar.gz HEAD
 ```
 
 #### macOS
 
 ```bash
-./release-mac
+# Use release script or build .dmg
 ```
 
 #### Windows
 
 ```bash
-# Via GitHub Actions or locally with Inno Setup
-qtpass.iss
+# Via CI or locally with installer tool
 ```
 
 ### 5. Git Tags
 
 ```bash
-git tag -a v1.5.1 -m "QtPass 1.5.1 Release"
-git push origin v1.5.1
+git tag -a v<version> -m "Release <version>"
+git push origin v<version>
 ```
 
-### 6. GitHub Release
+### 6. Release
 
 ```bash
-gh release create v1.5.1 \
-  --title "QtPass 1.5.1" \
+# Create release via web or CLI
+gh release create v<version> \
+  --title "Release <version>" \
   --notes-file CHANGELOG.md \
-  qtpass-x.y.z.tar.gz
+  <artifacts>
 ```
 
-### 7. GitHub Pages (if needed)
+### 7. Documentation (if needed)
 
 ```bash
-# Update stable version
-git checkout gh-pages
+# Update stable version references
 # Update download links
-git commit -m "Release v1.5.1"
-git push origin gh-pages
+git commit -m "Release v<version>"
+git push origin <docs-branch>
 ```
 
 ## Version Numbering
@@ -102,14 +97,14 @@ Follow semantic versioning: MAJOR.MINOR.PATCH
 - MINOR: New features, backward compatible
 - PATCH: Bugfixes, backward compatible
 
-## Build Locations
+## Build Outputs
 
-| Platform | Output                   |
+| Platform | Typical Output           |
 | -------- | ------------------------ |
-| Linux    | `qtpass-x.y.z.tar.gz`    |
-| macOS    | `QtPass-x.y.z.dmg`       |
-| Windows  | `QtPass-Setup-x.y.z.exe` |
+| Linux    | `.tar.gz` source archive |
+| macOS    | `.dmg` disk image        |
+| Windows  | `.exe` installer         |
 
 ## CI/CD
 
-Release workflow via GitHub Actions: `.github/workflows/release-installers.yml`
+Use CI/CD workflows for automated releases
