@@ -1,0 +1,14 @@
+<map id="tests/auto/simpletransaction/tst_simpletransaction.cpp" name="tests/auto/simpletransaction/tst_simpletransaction.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="73,5,281,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,48,71,89,68,84,142,43"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title=" " alt="" coords="47,167,184,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,47,147,69,134,94,125,125,120,154,115,153,120,123,129,92,143,66,158,44"/>
+<area shape="rect" id="Node000004" href="$simpletransaction_8h.html" title=" " alt="" coords="143,93,354,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,44,231,81,227,85,192,47"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="378,93,573,119"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="249,43,419,87,418,92,248,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="228,121,150,162,148,158,226,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="217,167,280,192"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="251,119,251,153,246,153,246,119"/>
+</map>

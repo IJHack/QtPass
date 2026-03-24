@@ -278,47 +278,48 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  QSKIP(<span class="stringliteral">&quot;Directory sorting differs on macOS&quot;</span>);</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  QDir(tempDir.path()).mkdir(<span class="stringliteral">&quot;folder&quot;</span>);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  QFile f(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  (void)f.open(QFile::WriteOnly);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  f.close();</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  QFileSystemModel fsm;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  fsm.setRootPath(tempDir.path());</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, tempDir.path());</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  QCoreApplication::processEvents();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  QTRY_VERIFY(fsm.index(tempDir.path() + <span class="stringliteral">&quot;/folder&quot;</span>).isValid());</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  QTRY_VERIFY(fsm.index(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>).isValid());</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  QModelIndex sourceFolderIdx = fsm.index(tempDir.path() + <span class="stringliteral">&quot;/folder&quot;</span>);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  QModelIndex sourceFileIdx = fsm.index(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  QVERIFY(sm.<a class="code hl_function" href="class_store_model.html#adc8a200930127d54a13b2f15f5478445">lessThan</a>(sourceFolderIdx, sourceFileIdx));</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>}</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keywordtype">void</span> tst_storemodel::setModelAndStore() {</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  QFileSystemModel fsm;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  QString storePath = <span class="stringliteral">&quot;/test/store&quot;</span>;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, storePath);</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  QVERIFY(sm.sourceModel() == &amp;fsm);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keywordtype">void</span> tst_storemodel::showThisWithNullFs() {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  QModelIndex index;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">bool</span> result = sm.<a class="code hl_function" href="class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440">ShowThis</a>(index);</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  QVERIFY(!result);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>QTEST_MAIN(<a class="code hl_class" href="classtst__storemodel.html">tst_storemodel</a>)</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#include &quot;tst_storemodel.moc&quot;</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordtype">bool</span> mkdirResult = QDir(tempDir.path()).mkdir(<span class="stringliteral">&quot;folder&quot;</span>);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  QVERIFY(mkdirResult || QDir(tempDir.path()).exists(<span class="stringliteral">&quot;folder&quot;</span>));</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  QFile f(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  (void)f.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  f.close();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  QFileSystemModel fsm;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  fsm.setRootPath(tempDir.path());</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, tempDir.path());</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  QCoreApplication::processEvents();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  QTRY_VERIFY(fsm.index(tempDir.path() + <span class="stringliteral">&quot;/folder&quot;</span>).isValid());</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  QTRY_VERIFY(fsm.index(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>).isValid());</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  QModelIndex sourceFolderIdx = fsm.index(tempDir.path() + <span class="stringliteral">&quot;/folder&quot;</span>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  QModelIndex sourceFileIdx = fsm.index(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  QVERIFY(sm.<a class="code hl_function" href="class_store_model.html#adc8a200930127d54a13b2f15f5478445">lessThan</a>(sourceFolderIdx, sourceFileIdx));</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keywordtype">void</span> tst_storemodel::setModelAndStore() {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  QFileSystemModel fsm;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  QString storePath = <span class="stringliteral">&quot;/test/store&quot;</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, storePath);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  QVERIFY(sm.sourceModel() == &amp;fsm);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keywordtype">void</span> tst_storemodel::showThisWithNullFs() {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  QModelIndex index;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">bool</span> result = sm.<a class="code hl_function" href="class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440">ShowThis</a>(index);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  QVERIFY(!result);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>QTEST_MAIN(<a class="code hl_class" href="classtst__storemodel.html">tst_storemodel</a>)</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#include &quot;tst_storemodel.moc&quot;</span></div>
 <div class="ttc" id="aclass_store_model_html"><div class="ttname"><a href="class_store_model.html">StoreModel</a></div><div class="ttdoc">The QSortFilterProxyModel for handling filesystem searches.</div><div class="ttdef"><b>Definition</b> <a href="storemodel_8h_source.html#l00013">storemodel.h:13</a></div></div>
 <div class="ttc" id="aclass_store_model_html_a18097d60174b1d370e13d6a04ab7847f"><div class="ttname"><a href="class_store_model.html#a18097d60174b1d370e13d6a04ab7847f">StoreModel::data</a></div><div class="ttdeci">auto data(const QModelIndex &amp;index, int role) const -&gt; QVariant override</div><div class="ttdoc">StoreModel::data don't show the .gpg at the end of a file.</div><div class="ttdef"><b>Definition</b> <a href="storemodel_8cpp_source.html#l00104">storemodel.cpp:104</a></div></div>
 <div class="ttc" id="aclass_store_model_html_a40620d3b37bb04b06b999308bf2ee137"><div class="ttname"><a href="class_store_model.html#a40620d3b37bb04b06b999308bf2ee137">StoreModel::mimeTypes</a></div><div class="ttdeci">auto mimeTypes() const -&gt; QStringList override</div><div class="ttdoc">StoreModel::mimeTypes.</div><div class="ttdef"><b>Definition</b> <a href="storemodel_8cpp_source.html#l00155">storemodel.cpp:155</a></div></div>
