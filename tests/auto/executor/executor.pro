@@ -1,5 +1,7 @@
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
+win32: SUBDIRS =
+else {
 SOURCES += tst_executor.cpp \
 
 LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
@@ -11,8 +13,4 @@ OBJ_PATH += ../../../src/$(OBJECTS_DIR)
 
 VPATH += ../../../src
 INCLUDEPATH += ../../../src
-
-win32 {
-	RC_FILE = ../../../windows.rc     
-	QMAKE_LINK_OBJECT_MAX=24
 }
