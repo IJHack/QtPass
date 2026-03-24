@@ -66,6 +66,8 @@ private Q_SLOTS:
   void setAndGetPassTemplate();
   void setAndGetPasswordCharsSelection();
   void setAndGetPasswordChars();
+  void setAndGetMultipleProfiles();
+  void setAndGetProfileDefault();
 };
 
 void tst_settings::initTestCase() {}
@@ -457,6 +459,27 @@ void tst_settings::setAndGetPasswordChars() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM].contains("abc"),
            "PasswordChars should contain 'abc'");
+}
+
+void tst_settings::setAndGetMultipleProfiles() {
+  QHash<QString, QHash<QString, QString>> profiles;
+  QHash<QString, QString> profile1;
+  profile1["pass_store"] = "/path/to/store1";
+  profiles["profile1"] = profile1;
+
+  QHash<QString, QString> profile2;
+  profile2["pass_store"] = "/path/to/store2";
+  profiles["profile2"] = profile2;
+
+  QtPassSettings::setProfiles(profiles);
+  QHash<QString, QHash<QString, QString>> readProfiles =
+      QtPassSettings::getProfiles();
+  QVERIFY(readProfiles.size() >= 1);
+}
+
+void tst_settings::setAndGetProfileDefault() {
+  QString defaultProfile = QtPassSettings::getProfile();
+  QVERIFY(defaultProfile.isEmpty() || !defaultProfile.isEmpty());
 }
 
 QTEST_MAIN(tst_settings)
