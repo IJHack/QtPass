@@ -16,6 +16,9 @@ private Q_SLOTS:
   void executeBlockingExitCode();
   void executeBlockingStderr();
 #endif
+  void executeBlockingNotFound();
+  void executeBlockingEmptyArgs();
+  void executeBlockingEchoMultiple();
 };
 
 void tst_executor::initTestCase() {}
@@ -60,6 +63,29 @@ void tst_executor::executeBlockingStderr() {
   QVERIFY2(err.contains("error"), "stderr should contain 'error'");
 }
 #endif
+
+void tst_executor::executeBlockingNotFound() {
+  QString output;
+  QString err;
+  int result = Executor::executeBlocking(
+      "nonexistent-command-12345", QStringList(), QString(), &output, &err);
+  QVERIFY2(result != 0, "non-existent command should fail");
+}
+
+void tst_executor::executeBlockingEmptyArgs() {
+  QString output;
+  int result =
+      Executor::executeBlocking("echo", QStringList(), QString(), &output);
+  QVERIFY2(result == 0, "echo with empty args should succeed");
+}
+
+void tst_executor::executeBlockingEchoMultiple() {
+  QString output;
+  int result =
+      Executor::executeBlocking("echo", {"a", "b", "c"}, QString(), &output);
+  QVERIFY2(result == 0, "echo with multiple args should succeed");
+  QVERIFY2(output.contains("a b c"), "output should contain all args");
+}
 
 QTEST_MAIN(tst_executor)
 #include "tst_executor.moc"

@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS += util ui model settings executor passwordconfig filecontent
+SUBDIRS += util ui model settings executor passwordconfig filecontent simpletransaction

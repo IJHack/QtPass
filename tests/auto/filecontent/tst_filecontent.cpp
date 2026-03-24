@@ -17,6 +17,9 @@ private Q_SLOTS:
   void getRemainingDataForDisplay();
   void namedValuesTakeValue();
   void namedValuesTakeValueNotFound();
+  void parseEmptyContent();
+  void parsePasswordOnly();
+  void parseMultipleNamedFields();
 };
 
 void tst_filecontent::initTestCase() {}
@@ -99,6 +102,25 @@ void tst_filecontent::namedValuesTakeValueNotFound() {
 
   QString val = nv.takeValue("nonexistent");
   QVERIFY2(val.isEmpty(), "Should return empty for nonexistent key");
+}
+
+void tst_filecontent::parseEmptyContent() {
+  FileContent fc = FileContent::parse("", QStringList(), false);
+  QVERIFY(fc.getPassword().isEmpty());
+}
+
+void tst_filecontent::parsePasswordOnly() {
+  FileContent fc = FileContent::parse("single_line", QStringList(), false);
+  QVERIFY(fc.getPassword() == "single_line");
+}
+
+void tst_filecontent::parseMultipleNamedFields() {
+  QString content = "pass\nuser: u1\nuser: u2\nuser: u3";
+  QStringList templateFields = {"user"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  QVERIFY(fc.getPassword() == "pass");
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY(nv.size() >= 1);
 }
 
 QTEST_MAIN(tst_filecontent)

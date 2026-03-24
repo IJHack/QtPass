@@ -191,7 +191,8 @@ void tst_storemodel::lessThanDirsFirst() {
   QSKIP("Directory sorting differs on macOS");
 #else
   QTemporaryDir tempDir;
-  QDir(tempDir.path()).mkdir("folder");
+  bool mkdirResult = QDir(tempDir.path()).mkdir("folder");
+  QVERIFY(mkdirResult || QDir(tempDir.path()).exists("folder"));
   QFile f(tempDir.path() + "/file.gpg");
   (void)f.open(QFile::WriteOnly);
   f.close();
