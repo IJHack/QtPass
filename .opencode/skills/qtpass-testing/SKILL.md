@@ -8,7 +8,7 @@ metadata:
   workflow: testing
 ---
 
-# QtPass needs lots of tests
+# QtPass Testing Guide
 
 ## Project Overview
 
@@ -101,7 +101,7 @@ UI tests:
 ## Test File Template
 
 ```cpp
-// SPDX-FileCopyrightText: 2024 Your Name
+// SPDX-FileCopyrightText: 2026 Your Name
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 

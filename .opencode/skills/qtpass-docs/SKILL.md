@@ -10,7 +10,7 @@ metadata:
 
 # Project Documentation
 
-## Documentation Files
+## QtPass Documentation Files
 
 | File               | Purpose                                     |
 | ------------------ | ------------------------------------------- |
@@ -19,6 +19,7 @@ metadata:
 | CHANGELOG.md       | Release history, changes                    |
 | CONTRIBUTING.md    | Developer contribution guidelines           |
 | CODE_OF_CONDUCT.md | Community code of conduct                   |
+| Doxyfile           | API documentation configuration             |
 
 ## README.md Sections
 
@@ -34,8 +35,9 @@ metadata:
 
 - Installation issues
 - Configuration issues
-- Integration issues
-- Platform-specific troubleshooting
+- GPG/Key issues
+- Git integration
+- Platform-specific (macOS, Windows, Linux)
 
 ### FAQ Template
 
@@ -53,7 +55,7 @@ metadata:
 
 ### Translation Files
 
-Location: `localization/<lang>.ts` or project-specific location
+Location: `localization/localization_<lang>.ts` (e.g., `localization/localization_en_US.ts`)
 
 ### Update Translations
 

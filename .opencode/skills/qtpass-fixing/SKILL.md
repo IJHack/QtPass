@@ -8,15 +8,15 @@ metadata:
   workflow: bugfix
 ---
 
-# Bug Fixing Workflow
+# Bug Fix Workflow for QtPass
 
 ## Bugfix Workflow
 
 ### 1. Investigate
 
-- Search existing issues and PRs
-- Check changelog for related fixes
-- Search codebase for relevant patterns
+- Search existing issues: `gh issue list --search "<keywords>"`
+- Check CHANGELOG.md for related fixes
+- Search code: `grep -r "pattern" src/`
 
 ### 2. Reproduce
 
@@ -32,69 +32,91 @@ metadata:
 ### 4. Add Tests
 
 - Add unit tests for the bugfix
-- Follow project testing conventions
-- Place tests in appropriate test directory
+- Follow project testing conventions (see `qtpass-testing` skill)
+- Place tests in `tests/auto/<module>/`
 
 ### 5. Verify
 
 ```bash
 # Build and run tests
-# Use project test command (e.g., make check, ctest, etc.)
+make check
 
 # Build binary
-# Use project build command (e.g., make, ninja, etc.)
+make -j4
 ```
 
 ### 6. Commit & PR
 
 ```bash
 # Create branch
-git checkout -b fix/<short-description>
+git checkout -b fix/<issue-number>-short-description
 
 # Commit with issue reference
-git commit -m "Fix <description>"
+git commit -m "Fix <description> (#issue)"
 
 # Push and create PR
-git push origin <branch>
-# Create PR via web or CLI
+git push origin fix/<branch>
+gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
 ```
 
-## Common Fix Patterns
+## Common QtPass Fix Patterns
 
-### Null Pointer Crashes
+### Wayland Crash
 
-- Check for null returns before using pointers
-- Add defensive null checks
+- File: `src/qtpass.cpp` or `src/trayicon.cpp`
+- Issue: `QGuiApplication::screenAt()` returns null
+- Fix: Add null check before using screen
 
-### Argument Parsing
+### CLI Args Parsing
 
-- Use framework argument parsing instead of raw argv
-- Validate input arguments
+- File: `src/main/main.cpp`
+- Issue: Raw `argv[]` gets interpreted as search
+- Fix: Use `QCoreApplication::arguments()`
 
-### Missing Availability Checks
+### OTP Errors
 
-- Check for optional dependencies before use
-- Provide clear error messages
+- Files: `src/imitatepass.cpp`, `src/configdialog.cpp`
+- Issue: Missing `pass-otp` check, poor error messages
+- Fix: Add availability check, improve error handling
 
-### Regular Expression Issues
+### URL Detection
 
-- Test regular expression patterns with edge cases
-- Use `\\S+` for non-whitespace matching
+- File: `src/util.cpp`
+- Function: `protocolRegex()`
+- Issue: URLs include spaces or invalid chars
+- Fix: Use `\\S+` instead of character class
 
-### File Creation Issues
+### GPG-ID Creation
 
-- Ensure files are created when expected
-- Write required metadata files
+- File: `src/mainwindow.cpp`
+- Function: `addFolder()`
+- Issue: `.gpg-id` not created when adding folders
+- Fix: Add code to write .gpg-id file
 
-### Path Handling
+### Path Separators
 
-- Use framework path utilities for cross-platform support
-- Normalize paths consistently
+- File: `src/pass.cpp`
+- Function: `getGpgIdPath()`
+- Issue: Windows path handling
+- Fix: Use QDir for path normalization
 
-### Font/Display Issues
+### Monospace Font
 
-- Use appropriate font hints for monospace display
-- Test UI rendering across platforms
+- File: `src/mainwindow.cpp`
+- Issue: Font not monospace in tables
+- Fix: Use `setStyleHint(QFont::Monospace)`
+
+## Key Source Files
+
+| File                 | Purpose                       |
+| -------------------- | ----------------------------- |
+| src/mainwindow.cpp   | Main UI, tree view, dialogs   |
+| src/pass.cpp         | GPG operations, path handling |
+| src/util.cpp         | Utilities, regex, file ops    |
+| src/filecontent.cpp  | Password file parsing         |
+| src/imitatepass.cpp  | CLI pass imitation            |
+| src/configdialog.cpp | Settings dialog              |
+| src/executor.cpp     | Command execution             |
 
 ## Linting
 
@@ -102,6 +124,7 @@ git push origin <branch>
 
 ```bash
 npx prettier --write <config-file>
+npx prettier --write .github/workflows/*.yml
 ```
 
 ### C++ (clang-format)
