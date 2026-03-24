@@ -1,6 +1,6 @@
 ---
-name: docs
-description: Documentation guide for C++/Qt projects - README, FAQ, localization
+name: qtpass-docs
+description: Documentation guide for QtPass - README, FAQ, localization
 license: GPL-3.0-or-later
 compatibility: opencode
 metadata:

@@ -1,6 +1,6 @@
 ---
-name: releasing
-description: Release workflow for C++/Qt projects - versioning, builds, publishing
+name: qtpass-releasing
+description: Release workflow for QtPass - versioning, builds, publishing
 license: GPL-3.0-or-later
 compatibility: opencode
 metadata:

@@ -1,6 +1,6 @@
 ---
-name: fixing
-description: Bug fixing workflow for C++/Qt projects - find, fix, test, PR
+name: qtpass-fixing
+description: Bug fixing workflow for QtPass - find, fix, test, PR
 license: GPL-3.0-or-later
 compatibility: opencode
 metadata:
