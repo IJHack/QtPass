@@ -1083,17 +1083,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="450"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühekordse salasõna kood on kopeeritud lõikelauale</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="452"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Selle salasõna kirje juures ei leidu ühekordset 2FA koodi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="721"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühtegi salasõna kirje pole ühekordse 2FA koodi loomiseks valitud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="988"/>
@@ -1119,7 +1119,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>.gpg-id faili loomine asukohas %1 ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1078"/>
