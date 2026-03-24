@@ -83,7 +83,7 @@ void tst_executor::executeBlockingNotFound() {
   QString output;
   QString err;
   int result = Executor::executeBlocking(
-      "nonexistent-command-12345", QStringList(), QString(), &output, &err);
+      "nonexistent-command-12345.exe", QStringList(), QString(), &output, &err);
   QVERIFY2(result != 0, "non-existent command should fail");
 }
 
