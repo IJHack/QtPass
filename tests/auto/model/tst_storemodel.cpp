@@ -41,8 +41,9 @@ void tst_storemodel::dataRemovesGpgExtension() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex index = fsm.index(tempDir.path() + "/test.gpg");
-  QVariant displayData = sm.data(index, Qt::DisplayRole);
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/test.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  QVariant displayData = sm.data(proxyIndex, Qt::DisplayRole);
   QString name = displayData.toString();
   QVERIFY(!name.endsWith(".gpg"));
 }
@@ -59,8 +60,9 @@ void tst_storemodel::flagsWithValidIndex() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex index = fsm.index(tempDir.path() + "/test.gpg");
-  Qt::ItemFlags flags = sm.flags(index);
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/test.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  Qt::ItemFlags flags = sm.flags(proxyIndex);
   QVERIFY(flags & Qt::ItemIsDragEnabled);
   QVERIFY(flags & Qt::ItemIsDropEnabled);
 }
