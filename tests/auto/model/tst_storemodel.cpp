@@ -187,9 +187,6 @@ void tst_storemodel::mimeData() {
 }
 
 void tst_storemodel::lessThanDirsFirst() {
-#ifdef Q_OS_MAC
-  QSKIP("Directory sorting differs on macOS");
-#else
   QTemporaryDir tempDir;
   QDir(tempDir.path()).mkdir("folder");
   QFile f(tempDir.path() + "/file.gpg");
@@ -202,11 +199,13 @@ void tst_storemodel::lessThanDirsFirst() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/folder").isValid());
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/file.gpg").isValid());
+
   QModelIndex sourceFolderIdx = fsm.index(tempDir.path() + "/folder");
   QModelIndex sourceFileIdx = fsm.index(tempDir.path() + "/file.gpg");
 
   QVERIFY(sm.lessThan(sourceFolderIdx, sourceFileIdx));
-#endif
 }
 
 void tst_storemodel::setModelAndStore() {
