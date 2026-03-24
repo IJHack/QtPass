@@ -8,7 +8,7 @@ metadata:
   workflow: testing
 ---
 
-# QtPass needs lots of tests
+# QtPass Testing Guide
 
 ## Project Overview
 
@@ -101,7 +101,7 @@ UI tests:
 ## Test File Template
 
 ```cpp
-// SPDX-FileCopyrightText: 2024 Your Name
+// SPDX-FileCopyrightText: 2026 Your Name
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
@@ -307,6 +307,13 @@ Tests run via `make check` in CI. Coverage reported with `make lcov`.
 
 ## Linting
 
+See `qtpass-linting` skill for full CI workflow. Pattern:
+
+```bash
+# Run linter locally BEFORE pushing
+act push -W .github/workflows/linter.yml -j build
+```
+
 ### Web/Config Files (prettier)
 
 Formats: .md, .yml, .html, .css, .js, .json, etc.
@@ -314,7 +321,7 @@ Formats: .md, .yml, .html, .css, .js, .json, etc.
 ```bash
 npx prettier --write <file>
 npx prettier --write .github/workflows/*.yml
-npx prettier --write FAQ.md
+npx prettier --write .opencode/skills/*/SKILL.md
 ```
 
 ### C++ (clang-format)
