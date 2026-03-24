@@ -1087,7 +1087,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося створити файл .gpg-id у: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1078"/>
