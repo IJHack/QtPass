@@ -12,14 +12,19 @@ class tst_storemodel : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void dataRemovesGpgExtension();
+  void dataWithInvalidIndex();
   void flagsWithValidIndex();
   void flagsWithInvalidIndex();
   void mimeTypes();
+  void mimeData();
   void lessThan();
+  void lessThanDirsFirst();
   void supportedDropActions();
   void supportedDragActions();
   void filterAcceptsRowHidden();
   void filterAcceptsRowVisible();
+  void setModelAndStore();
+  void showThisWithNullFs();
 };
 
 void tst_storemodel::initTestCase() {}
@@ -36,8 +41,9 @@ void tst_storemodel::dataRemovesGpgExtension() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex index = fsm.index(tempDir.path() + "/test.gpg");
-  QVariant displayData = sm.data(index, Qt::DisplayRole);
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/test.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  QVariant displayData = sm.data(proxyIndex, Qt::DisplayRole);
   QString name = displayData.toString();
   QVERIFY(!name.endsWith(".gpg"));
 }
@@ -54,8 +60,9 @@ void tst_storemodel::flagsWithValidIndex() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex index = fsm.index(tempDir.path() + "/test.gpg");
-  Qt::ItemFlags flags = sm.flags(index);
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/test.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  Qt::ItemFlags flags = sm.flags(proxyIndex);
   QVERIFY(flags & Qt::ItemIsDragEnabled);
   QVERIFY(flags & Qt::ItemIsDropEnabled);
 }
@@ -146,6 +153,81 @@ void tst_storemodel::filterAcceptsRowVisible() {
   QModelIndex index = fsm.index(tempDir.path() + "/mypassword.gpg");
   bool result = sm.filterAcceptsRow(0, index.parent());
   QVERIFY(result);
+}
+
+void tst_storemodel::dataWithInvalidIndex() {
+  QFileSystemModel fsm;
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, "/tmp");
+
+  QModelIndex invalidIndex;
+  QVariant result = sm.data(invalidIndex, Qt::DisplayRole);
+  QVERIFY(result.isNull());
+}
+
+void tst_storemodel::mimeData() {
+  QTemporaryDir tempDir;
+  QFile f(tempDir.path() + "/testfile.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/testfile.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  QMimeData *data = sm.mimeData(QModelIndexList() << proxyIndex);
+  QVERIFY(data != nullptr);
+  QVERIFY(
+      data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore"));
+  delete data;
+}
+
+void tst_storemodel::lessThanDirsFirst() {
+#ifdef Q_OS_MAC
+  QSKIP("Directory sorting differs on macOS");
+#else
+  QTemporaryDir tempDir;
+  QDir(tempDir.path()).mkdir("folder");
+  QFile f(tempDir.path() + "/file.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QCoreApplication::processEvents();
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/folder").isValid());
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/file.gpg").isValid());
+
+  QModelIndex sourceFolderIdx = fsm.index(tempDir.path() + "/folder");
+  QModelIndex sourceFileIdx = fsm.index(tempDir.path() + "/file.gpg");
+
+  QVERIFY(sm.lessThan(sourceFolderIdx, sourceFileIdx));
+#endif
+}
+
+void tst_storemodel::setModelAndStore() {
+  QFileSystemModel fsm;
+  StoreModel sm;
+
+  QString storePath = "/test/store";
+  sm.setModelAndStore(&fsm, storePath);
+
+  QVERIFY(sm.sourceModel() == &fsm);
+}
+
+void tst_storemodel::showThisWithNullFs() {
+  StoreModel sm;
+  QModelIndex index;
+  bool result = sm.ShowThis(index);
+  QVERIFY(!result);
 }
 
 QTEST_MAIN(tst_storemodel)

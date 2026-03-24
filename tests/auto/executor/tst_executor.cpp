@@ -11,6 +11,7 @@ private Q_SLOTS:
   void initTestCase();
   void executeBlockingEcho();
   void executeBlockingWithArgs();
+  void executeBlockingWithInput();
 #ifndef Q_OS_WIN
   void executeBlockingExitCode();
   void executeBlockingStderr();
@@ -33,6 +34,14 @@ void tst_executor::executeBlockingWithArgs() {
   QVERIFY2(result == 0, "echo should exit successfully");
   QVERIFY2(output.contains("arg1"), "output should contain 'arg1'");
   QVERIFY2(output.contains("arg2"), "output should contain 'arg2'");
+}
+
+void tst_executor::executeBlockingWithInput() {
+  QString output;
+  int result =
+      Executor::executeBlocking("cat", QStringList(), "test input", &output);
+  QVERIFY2(result == 0, "cat should exit successfully");
+  QVERIFY2(output.contains("test input"), "output should contain input");
 }
 
 #ifndef Q_OS_WIN
