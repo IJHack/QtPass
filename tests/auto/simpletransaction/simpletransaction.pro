@@ -1,8 +1,4 @@
-QT += testlib
-QT -= gui
-
-CONFIG += testcase
-CONFIG -= app
+!include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
 TARGET = tst_simpletransaction
 
