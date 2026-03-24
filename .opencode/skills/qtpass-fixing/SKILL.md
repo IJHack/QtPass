@@ -59,52 +59,58 @@ git push origin fix/<branch>
 gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
 ```
 
-## Common QtPass Fix Patterns
+## Common Fix Patterns
 
-### Wayland Crash
+### Null Pointer Checks
 
-- File: `src/qtpass.cpp` or `src/trayicon.cpp`
-- Issue: `QGuiApplication::screenAt()` returns null
-- Fix: Add null check before using screen
+Qt classes like `QGuiApplication::screenAt()` can return null on some platforms.
+Always verify pointers before dereferencing:
 
-### CLI Args Parsing
+```cpp
+QScreen *screen = QGuiApplication::screenAt(pos);
+if (!screen)
+    return;
+```
 
-- File: `src/main/main.cpp`
-- Issue: Raw `argv[]` gets interpreted as search
-- Fix: Use `QCoreApplication::arguments()`
+### CLI Argument Parsing
 
-### OTP Errors
+Use `QCoreApplication::arguments()` instead of raw `argv[]` to let Qt normalize paths and handle quoting:
 
-- Files: `src/imitatepass.cpp`, `src/configdialog.cpp`
-- Issue: Missing `pass-otp` check, poor error messages
-- Fix: Add availability check, improve error handling
+```cpp
+QStringList args = QCoreApplication::arguments();
+```
 
-### URL Detection
+### External Tool Availability
 
-- File: `src/util.cpp`
-- Function: `protocolRegex()`
-- Issue: URLs include spaces or invalid chars
-- Fix: Use `\\S+` instead of character class
+Before using optional tools like `pass-otp`, check availability:
 
-### GPG-ID Creation
+```cpp
+if (!passOTPexists) {
+    showError("pass-otp is required for OTP features");
+    return;
+}
+```
 
-- File: `src/mainwindow.cpp`
-- Function: `addFolder()`
-- Issue: `.gpg-id` not created when adding folders
-- Fix: Add code to write .gpg-id file
+### Cross-Platform Path Handling
 
-### Path Separators
+Use `QDir` for path normalization to handle `/` vs `\` and `.`/`..` components:
 
-- File: `src/pass.cpp`
-- Function: `getGpgIdPath()`
-- Issue: Windows path handling
-- Fix: Use QDir for path normalization
+```cpp
+QDir dir;
+QString normalized = dir.cleanPath(gpgIdPath);
+```
 
-### Monospace Font
+### String Parsing Edge Cases
 
-- File: `src/mainwindow.cpp`
-- Issue: Font not monospace in tables
-- Fix: Use `setStyleHint(QFont::Monospace)`
+For regular expression patterns matching URLs or special characters, use `\\S+` for non-whitespace to avoid matching spaces:
+
+```cpp
+QRegularExpression urlRegex("(\\S+)://(\\S+)");
+```
+
+### UI Font Consistency
+
+For monospace fonts in tables/lists, use `setStyleHint(QFont::Monospace)` to avoid platform-specific defaults.
 
 ## Key Source Files
 
