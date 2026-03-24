@@ -175,12 +175,13 @@ void tst_storemodel::mimeData() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex index = fsm.index(tempDir.path() + "/testfile.gpg");
-  QMimeData *mimeData = sm.mimeData(QModelIndexList() << index);
-  QVERIFY(mimeData != nullptr);
-  QVERIFY(mimeData->hasFormat(
-      "application/vnd+qtpass.dragAndDropInfoPasswordStore"));
-  delete mimeData;
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/testfile.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+  QMimeData *data = sm.mimeData(QModelIndexList() << proxyIndex);
+  QVERIFY(data != nullptr);
+  QVERIFY(
+      data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore"));
+  delete data;
 }
 
 void tst_storemodel::lessThanDirsFirst() {
@@ -199,10 +200,10 @@ void tst_storemodel::lessThanDirsFirst() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
-  QModelIndex folderIdx = fsm.index(tempDir.path() + "/folder");
-  QModelIndex fileIdx = fsm.index(tempDir.path() + "/file.gpg");
+  QModelIndex sourceFolderIdx = fsm.index(tempDir.path() + "/folder");
+  QModelIndex sourceFileIdx = fsm.index(tempDir.path() + "/file.gpg");
 
-  QVERIFY(sm.lessThan(folderIdx, fileIdx));
+  QVERIFY(sm.lessThan(sourceFolderIdx, sourceFileIdx));
 #endif
 }
 
