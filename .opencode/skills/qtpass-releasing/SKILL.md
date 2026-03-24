@@ -100,7 +100,7 @@ Follow semantic versioning: MAJOR.MINOR.PATCH
 
 - MAJOR: Breaking changes
 - MINOR: New features, backward compatible
-- PATCH: Bug fixes, backward compatible
+- PATCH: Bugfixes, backward compatible
 
 ## Build Locations
 

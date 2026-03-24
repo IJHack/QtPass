@@ -29,6 +29,7 @@ act push -W .github/workflows/linter.yml -j build
 ### Linter Workflow (.github/workflows/linter.yml)
 
 Runs super-linter with many linters:
+
 - **GITLEAKS** - Secret detection
 - **CHECKOV** - Infrastructure scanning
 - **CLANG_FORMAT** - C++ formatting
@@ -81,6 +82,7 @@ gitleaks detect
 ```
 
 **Common Fixes:**
+
 - Don't use test values that look like API keys (e.g., "ABC123DEF456", "sk-xxx")
 - Use generic test strings: "testkey123", "/usr/bin/pass", "example.com"
 
@@ -130,18 +132,19 @@ make -j4
 ### Gitleaks False Positives
 
 If gitleaks flags test data:
+
 1. Use generic test values (not like "ABC123DEF456")
 2. Add to `.gitleaksignore` if truly non-sensitive
 
 ## GitHub Actions Files
 
-| File | Purpose |
-| ---- | ------- |
+| File                           | Purpose                    |
+| ------------------------------ | -------------------------- |
 | `.github/workflows/linter.yml` | Super-linter (many checks) |
-| `.github/workflows/ccpp.yml` | Build & test with Qt |
-| `.github/workflows/docs.yml` | Doxygen docs generation |
-| `.github/workflows/reuse.yml` | REUSE compliance |
-| `.github/super-linter.env` | Linter configuration |
+| `.github/workflows/ccpp.yml`   | Build & test with Qt       |
+| `.github/workflows/docs.yml`   | Doxygen docs generation    |
+| `.github/workflows/reuse.yml`  | REUSE compliance           |
+| `.github/super-linter.env`     | Linter configuration       |
 
 ## Run Before PR
 
