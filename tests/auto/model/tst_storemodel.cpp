@@ -12,14 +12,19 @@ class tst_storemodel : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void dataRemovesGpgExtension();
+  void dataWithInvalidIndex();
   void flagsWithValidIndex();
   void flagsWithInvalidIndex();
   void mimeTypes();
+  void mimeData();
   void lessThan();
+  void lessThanDirsFirst();
   void supportedDropActions();
   void supportedDragActions();
   void filterAcceptsRowHidden();
   void filterAcceptsRowVisible();
+  void setModelAndStore();
+  void showThisWithNullFs();
 };
 
 void tst_storemodel::initTestCase() {}
@@ -146,6 +151,72 @@ void tst_storemodel::filterAcceptsRowVisible() {
   QModelIndex index = fsm.index(tempDir.path() + "/mypassword.gpg");
   bool result = sm.filterAcceptsRow(0, index.parent());
   QVERIFY(result);
+}
+
+void tst_storemodel::dataWithInvalidIndex() {
+  QFileSystemModel fsm;
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, "/tmp");
+
+  QModelIndex invalidIndex;
+  QVariant result = sm.data(invalidIndex, Qt::DisplayRole);
+  QVERIFY(result.isNull());
+}
+
+void tst_storemodel::mimeData() {
+  QTemporaryDir tempDir;
+  QFile f(tempDir.path() + "/testfile.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QModelIndex index = fsm.index(tempDir.path() + "/testfile.gpg");
+  QMimeData *mimeData = sm.mimeData(QModelIndexList() << index);
+  QVERIFY(mimeData != nullptr);
+  QVERIFY(mimeData->hasFormat(
+      "application/vnd+qtpass.dragAndDropInfoPasswordStore"));
+  delete mimeData;
+}
+
+void tst_storemodel::lessThanDirsFirst() {
+  QTemporaryDir tempDir;
+  QDir(tempDir.path()).mkdir("folder");
+  QFile f(tempDir.path() + "/file.gpg");
+  (void)f.open(QFile::WriteOnly);
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QModelIndex folderIdx = fsm.index(tempDir.path() + "/folder");
+  QModelIndex fileIdx = fsm.index(tempDir.path() + "/file.gpg");
+
+  QVERIFY(sm.lessThan(folderIdx, fileIdx));
+}
+
+void tst_storemodel::setModelAndStore() {
+  QFileSystemModel fsm;
+  StoreModel sm;
+
+  QString storePath = "/test/store";
+  sm.setModelAndStore(&fsm, storePath);
+
+  QVERIFY(sm.sourceModel() == &fsm);
+}
+
+void tst_storemodel::showThisWithNullFs() {
+  StoreModel sm;
+  QModelIndex index;
+  bool result = sm.ShowThis(index);
+  QVERIFY(!result);
 }
 
 QTEST_MAIN(tst_storemodel)
