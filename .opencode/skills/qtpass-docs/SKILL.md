@@ -94,14 +94,23 @@ open html/index.html
 
 ## Linting
 
+See `qtpass-linting` skill for full CI workflow. Pattern:
+
+```bash
+# Run linter locally BEFORE pushing
+act push -W .github/workflows/linter.yml -j build
+```
+
 ### Markdown (prettier)
 
 ```bash
 npx prettier --write <markdown-file>
+npx prettier --write .opencode/skills/*/SKILL.md
 ```
 
 ### YAML (prettier)
 
 ```bash
 npx prettier --write <yaml-file>
+npx prettier --write .github/workflows/*.yml
 ```

@@ -120,11 +120,19 @@ gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
 
 ## Linting
 
+See `qtpass-linting` skill for full CI workflow. Pattern:
+
+```bash
+# Run linter locally BEFORE pushing
+act push -W .github/workflows/linter.yml -j build
+```
+
 ### Config Files (prettier)
 
 ```bash
 npx prettier --write <config-file>
 npx prettier --write .github/workflows/*.yml
+npx prettier --write .opencode/skills/*/SKILL.md
 ```
 
 ### C++ (clang-format)
