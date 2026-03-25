@@ -19,13 +19,13 @@ class KeygenDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit KeygenDialog(ConfigDialog *parent = 0);
-  ~KeygenDialog();
+  explicit KeygenDialog(ConfigDialog *parent = nullptr);
+  ~KeygenDialog() override;
 
 protected:
-  void closeEvent(QCloseEvent *event);
+  void closeEvent(QCloseEvent *event) override;
 
-private slots:
+private Q_SLOTS:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   void on_checkBox_stateChanged(int arg1);
@@ -35,7 +35,7 @@ private slots:
 private:
   Ui::KeygenDialog *ui;
   void replace(const QString &, const QString &);
-  void done(int r);
+  void done(int r) override;
   void no_protection(bool enable);
   ConfigDialog *dialog;
 };

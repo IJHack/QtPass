@@ -20,10 +20,10 @@ public:
   [[nodiscard]] auto getTextToCopy() const -> QString;
   void setTextToCopy(const QString &value);
 
-signals:
+Q_SIGNALS:
   void clicked(const QString &);
 
-private slots:
+private Q_SLOTS:
   void changeIconDefault();
   void buttonClicked(bool);
 

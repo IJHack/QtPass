@@ -38,39 +38,37 @@ class ImitatePass : public Pass, private simpleTransaction {
   };
 
 protected:
-  virtual void finished(int id, int exitCode, const QString &out,
-                        const QString &err) Q_DECL_OVERRIDE;
+  void finished(int id, int exitCode, const QString &out,
+                const QString &err) override;
 
-  virtual void executeWrapper(PROCESS id, const QString &app,
-                              const QStringList &args, QString input,
-                              bool readStdout = true,
-                              bool readStderr = true) Q_DECL_OVERRIDE;
+  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
+                      QString input, bool readStdout = true,
+                      bool readStderr = true) override;
 
 public:
   ImitatePass();
-  virtual ~ImitatePass() {}
-  virtual void GitInit() Q_DECL_OVERRIDE;
-  virtual void GitPull() Q_DECL_OVERRIDE;
-  virtual void GitPull_b() Q_DECL_OVERRIDE;
-  virtual void GitPush() Q_DECL_OVERRIDE;
-  virtual void Show(QString file) Q_DECL_OVERRIDE;
-  virtual void OtpGenerate(QString file) Q_DECL_OVERRIDE;
-  virtual void Insert(QString file, QString newValue,
-                      bool overwrite = false) Q_DECL_OVERRIDE;
-  virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
-  virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
+  ~ImitatePass() override = default;
+  void GitInit() override;
+  void GitPull() override;
+  void GitPull_b() override;
+  void GitPush() override;
+  void Show(QString file) override;
+  void OtpGenerate(QString file) override;
+  void Insert(QString file, QString newValue, bool overwrite = false) override;
+  void Remove(QString file, bool isDir = false) override;
+  void Init(QString path, const QList<UserInfo> &users) override;
 
   void reencryptPath(const QString &dir);
-signals:
+Q_SIGNALS:
   void startReencryptPath();
   void endReencryptPath();
 
   // Pass interface
 public:
   void Move(const QString src, const QString dest,
-            const bool force = false) Q_DECL_OVERRIDE;
+            const bool force = false) override;
   void Copy(const QString src, const QString dest,
-            const bool force = false) Q_DECL_OVERRIDE;
+            const bool force = false) override;
 };
 
 #endif // SRC_IMITATEPASS_H_
