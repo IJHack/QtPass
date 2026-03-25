@@ -25,9 +25,9 @@ public:
   /**
    * @brief ~DeselectableTreeView standard destructor
    */
-  virtual ~DeselectableTreeView() {}
+  ~DeselectableTreeView() override = default;
 
-signals:
+Q_SIGNALS:
   /**
    * @brief emptyClicked event
    */
@@ -41,7 +41,7 @@ private:
    * @brief mousePressEvent registers if the field was pre-selected
    * @param event
    */
-  virtual void mousePressEvent(QMouseEvent *event) {
+  void mousePressEvent(QMouseEvent *event) override {
     clickSelected = selectionModel()->isSelected(indexAt(event->pos()));
     QTreeView::mousePressEvent(event);
   }
@@ -50,7 +50,7 @@ private:
    * @brief mouseReleaseEvent now deselects on click on empty space
    * @param event
    */
-  void mouseReleaseEvent(QMouseEvent *event) {
+  void mouseReleaseEvent(QMouseEvent *event) override {
     doubleClickHappened = false;
     // The timer is to distinguish between single and double click
     QTime dieTime = QTime::currentTime().addMSecs(200);
@@ -78,7 +78,7 @@ private:
    * @brief mouseDoubleClickEvent
    * @param event
    */
-  void mouseDoubleClickEvent(QMouseEvent *event) {
+  void mouseDoubleClickEvent(QMouseEvent *event) override {
     doubleClickHappened = true;
     QTreeView::mouseDoubleClickEvent(event);
   }

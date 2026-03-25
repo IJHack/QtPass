@@ -16,24 +16,23 @@ class RealPass : public Pass {
 
 public:
   RealPass();
-  virtual ~RealPass() {}
-  virtual void GitInit() Q_DECL_OVERRIDE;
-  virtual void GitPull() Q_DECL_OVERRIDE;
-  virtual void GitPull_b() Q_DECL_OVERRIDE;
-  virtual void GitPush() Q_DECL_OVERRIDE;
-  virtual void Show(QString file) Q_DECL_OVERRIDE;
-  virtual void OtpGenerate(QString file) Q_DECL_OVERRIDE;
-  virtual void Insert(QString file, QString newValue,
-                      bool overwrite = false) Q_DECL_OVERRIDE;
-  virtual void Remove(QString file, bool isDir = false) Q_DECL_OVERRIDE;
-  virtual void Init(QString path, const QList<UserInfo> &users) Q_DECL_OVERRIDE;
+  ~RealPass() override = default;
+  void GitInit() override;
+  void GitPull() override;
+  void GitPull_b() override;
+  void GitPush() override;
+  void Show(QString file) override;
+  void OtpGenerate(QString file) override;
+  void Insert(QString file, QString newValue, bool overwrite = false) override;
+  void Remove(QString file, bool isDir = false) override;
+  void Init(QString path, const QList<UserInfo> &users) override;
 
   // Pass interface
 public:
   void Move(const QString src, const QString dest,
-            const bool force = false) Q_DECL_OVERRIDE;
+            const bool force = false) override;
   void Copy(const QString src, const QString dest,
-            const bool force = false) Q_DECL_OVERRIDE;
+            const bool force = false) override;
 };
 
 #endif // SRC_REALPASS_H_

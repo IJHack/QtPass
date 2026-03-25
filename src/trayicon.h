@@ -22,9 +22,9 @@ public:
   void setVisible(bool visible);
   auto getIsAllocated() -> bool;
 
-signals:
+Q_SIGNALS:
 
-public slots:
+public Q_SLOTS:
   void showHideParent();
   void iconActivated(QSystemTrayIcon::ActivationReason reason);
 

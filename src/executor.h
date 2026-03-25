@@ -58,7 +58,7 @@ class Executor : public QObject {
   void executeNext();
 
 public:
-  explicit Executor(QObject *parent = 0);
+  explicit Executor(QObject *parent = nullptr);
 
   void execute(int id, const QString &app, const QStringList &args,
                bool readStdout, bool readStderr = true);
@@ -87,9 +87,9 @@ public:
   void setEnvironment(const QStringList &env);
 
   auto cancelNext() -> int;
-private slots:
+private Q_SLOTS:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
-signals:
+Q_SIGNALS:
   /**
    * @brief finished    signal that is emited when process finishes
    *
