@@ -237,6 +237,32 @@ void MainWindow::flashText(const QString &text, const bool isError,
  * @brief MainWindow::config pops up the configuration screen and handles all
  * inter-window communication
  */
+void MainWindow::applyTextBrowserSettings() {
+  if (QtPassSettings::isUseMonospace()) {
+    QFont monospace("Monospace");
+    monospace.setStyleHint(QFont::Monospace);
+    ui->textBrowser->setFont(monospace);
+  } else {
+    ui->textBrowser->setFont(QFont());
+  }
+
+  if (QtPassSettings::isNoLineWrapping()) {
+    ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+  } else {
+    ui->textBrowser->setLineWrapMode(QTextBrowser::WidgetWidth);
+  }
+}
+
+void MainWindow::applyWindowFlagsSettings() {
+  if (QtPassSettings::isAlwaysOnTop()) {
+    Qt::WindowFlags flags = windowFlags();
+    this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
+  } else {
+    this->setWindowFlags(Qt::Window);
+  }
+  this->show();
+}
+
 void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
@@ -251,28 +277,8 @@ void MainWindow::config() {
   }
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
-      // Update the textBrowser font
-      if (QtPassSettings::isUseMonospace()) {
-        QFont monospace("Monospace");
-        monospace.setStyleHint(QFont::Monospace);
-        ui->textBrowser->setFont(monospace);
-      } else {
-        ui->textBrowser->setFont(QFont());
-      }
-      // Update the textBrowser line wrap mode
-      if (QtPassSettings::isNoLineWrapping()) {
-        ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
-      } else {
-        ui->textBrowser->setLineWrapMode(QTextBrowser::WidgetWidth);
-      }
-
-      if (QtPassSettings::isAlwaysOnTop()) {
-        Qt::WindowFlags flags = windowFlags();
-        this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-      } else {
-        this->setWindowFlags(Qt::Window);
-      }
-      this->show();
+      applyTextBrowserSettings();
+      applyWindowFlagsSettings();
 
       updateProfileBox();
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
