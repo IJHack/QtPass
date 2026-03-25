@@ -44,6 +44,7 @@
  */
 class QProgressIndicator : public QWidget {
   Q_OBJECT
+
 public:
   explicit QProgressIndicator(QWidget *parent = nullptr);
 
