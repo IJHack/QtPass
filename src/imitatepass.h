@@ -23,8 +23,10 @@ class ImitatePass : public Pass, private simpleTransaction {
   void verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
                          QStringList &gpgId);
   auto getKeysFromFile(const QString &fileName) -> QStringList;
-  void reencryptSingleFile(const QString &fileName, const QStringList &recipients);
-  auto resolveMoveDestination(const QString &src, const QString &dest, bool force) -> QString;
+  void reencryptSingleFile(const QString &fileName,
+                           const QStringList &recipients);
+  auto resolveMoveDestination(const QString &src, const QString &dest,
+                              bool force) -> QString;
   void executeMoveGit(const QString &src, const QString &destFile, bool force);
 
   void GitCommit(const QString &file, const QString &msg);

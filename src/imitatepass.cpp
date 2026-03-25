@@ -248,8 +248,9 @@ void ImitatePass::signGpgIdFile(const QString &gpgIdFile,
   }
 }
 
-void ImitatePass::gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
-                              bool addFile, bool addSigFile) {
+void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
+                              const QString &gpgIdSigFile, bool addFile,
+                              bool addSigFile) {
   if (addFile) {
     executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
   }
@@ -382,10 +383,10 @@ auto ImitatePass::removeDir(const QString &dirName) -> bool {
  *
  * This is stil quite experimental..
  * @param dir
-  */
+ */
 void ImitatePass::verifyGpgIdForDir(const QString &file,
-                                     QStringList &gpgIdFilesVerified,
-                                     QStringList &gpgId) {
+                                    QStringList &gpgIdFilesVerified,
+                                    QStringList &gpgId) {
   QString gpgIdPath = Pass::getGpgIdPath(file);
   if (gpgIdFilesVerified.contains(gpgIdPath)) {
     return;
@@ -432,7 +433,7 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
 }
 
 void ImitatePass::reencryptSingleFile(const QString &fileName,
-                                       const QStringList &recipients) {
+                                      const QStringList &recipients) {
 #ifdef QT_DEBUG
   dbg() << "reencrypt " << fileName << " for " << recipients;
 #endif
@@ -443,8 +444,7 @@ void ImitatePass::reencryptSingleFile(const QString &fileName,
   Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
                             &local_lastDecrypt);
 
-  if (local_lastDecrypt.isEmpty() ||
-      local_lastDecrypt == "Could not decrypt") {
+  if (local_lastDecrypt.isEmpty() || local_lastDecrypt == "Could not decrypt") {
 #ifdef QT_DEBUG
     dbg() << "Decrypt error on re-encrypt";
 #endif
@@ -516,8 +516,8 @@ void ImitatePass::reencryptPath(const QString &dir) {
 }
 
 auto ImitatePass::resolveMoveDestination(const QString &src,
-                                          const QString &dest,
-                                          bool force) -> QString {
+                                         const QString &dest, bool force)
+    -> QString {
   QFileInfo srcFileInfo(src);
   QFileInfo destFileInfo(dest);
   QString destFile;
@@ -562,7 +562,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
 }
 
 void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
-                                  bool force) {
+                                 bool force) {
   QStringList args;
   args << "mv";
   if (force) {
