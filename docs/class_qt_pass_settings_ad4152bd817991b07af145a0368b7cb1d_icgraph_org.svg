@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
+<g id="a_Node000002"><a xlink:href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
 <polygon fill="white" stroke="#666666" points="142.5,-56 4.5,-56 4.5,-37 142.5,-37 142.5,-56"/>
 <text text-anchor="middle" x="73.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::closeEvent</text>
 </a>

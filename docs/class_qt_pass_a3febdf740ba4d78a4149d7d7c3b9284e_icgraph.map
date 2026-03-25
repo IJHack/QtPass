@@ -1,6 +1,6 @@
 <map id="QtPass::clearClipboard" name="QtPass::clearClipboard">
 <area shape="rect" id="Node000001" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="483,55,651,80"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="251,5,435,31"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="251,5,435,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="495,54,401,33,402,28,496,49"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="259,55,427,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="469,70,427,70,427,65,469,65"/>

@@ -8,7 +8,7 @@
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="790,178,500,171,500,166,790,172"/>
 <area shape="rect" id="Node000011" href="$class_qt_pass.html#aef5aaf0605c7681967995ede486590ef" title="displays the text as qrcode" alt="" coords="551,240,753,265"/>
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="873,197,757,231,711,243,710,237,755,226,872,192"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="299,5,483,31"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="299,5,483,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="587,66,499,45,450,33,451,28,501,39,588,61"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="307,55,475,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="554,78,475,74,475,69,555,72"/>

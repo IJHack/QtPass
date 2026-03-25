@@ -2,21 +2,21 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="680,208,863,233"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="436,5,632,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,197,705,125,671,86,631,52,591,33,593,28,633,48,674,82,709,122,758,194"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="5,108,144,133"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="5,108,144,133"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="751,199,702,144,669,117,631,96,561,76,488,65,414,63,342,67,273,75,212,87,117,111,116,105,210,82,272,70,341,62,414,57,488,60,562,71,633,92,671,112,706,140,755,195"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper." alt="" coords="456,107,612,132"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper." alt="" coords="456,107,612,132"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="734,204,631,154,577,135,579,130,633,149,736,199"/>
 <area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="192,132,388,157"/>
 <area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="676,208,371,160,372,155,677,203"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="11,157,138,183"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="ImitatePass::Init initialize pass repository." alt="" coords="11,157,138,183"/>
 <area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="666,218,436,205,138,179,139,174,436,199,667,213"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a80ebca6c2a7e5804a56e859679a0d36a" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="463,259,605,284"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="463,259,605,284"/>
 <area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="698,239,595,261,594,256,697,234"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#abd150b37240a340cbec88d888e0a7fe6" title=" " alt="" coords="463,308,605,333"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="463,308,605,333"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="741,243,691,272,633,299,598,310,596,305,631,294,689,267,738,238"/>
 <area shape="rect" id="Node000009" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="454,357,614,383"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="753,246,703,298,669,325,633,348,606,360,603,355,631,344,666,321,699,294,749,242"/>
-<area shape="rect" id="Node000010" href="$class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="454,407,614,432"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="454,407,614,432"/>
 <area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="760,247,740,281,711,322,676,363,633,398,610,409,608,404,631,393,672,359,707,319,735,278,755,244"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="443,131,389,137,388,132,442,126"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="178,135,144,131,145,126,178,130"/>

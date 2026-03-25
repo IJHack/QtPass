@@ -1,6 +1,6 @@
 <map id="QtPassSettings::getPass" name="QtPassSettings::getPass">
 <area shape="rect" id="Node000001" title=" " alt="" coords="511,229,688,255"/>
-<area shape="rect" id="Node000002" href="$class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" title="UsersDialog::accept." alt="" coords="286,5,438,31"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="UsersDialog::accept." alt="" coords="286,5,438,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="585,218,566,181,538,136,503,91,461,52,423,33,425,28,464,48,507,87,543,133,570,179,589,216"/>
 <area shape="rect" id="Node000003" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="UsersDialog::UsersDialog basic constructor." alt="" coords="15,31,203,56"/>
 <area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="581,219,533,156,500,123,461,96,398,70,330,54,264,46,203,43,204,37,264,40,331,49,399,65,464,92,503,119,537,152,585,216"/>
@@ -20,6 +20,6 @@
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="590,269,572,308,544,356,508,406,464,448,444,460,441,456,461,444,504,402,540,353,567,306,585,266"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,30,204,37,203,31,272,24"/>
 <area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="405,122,393,113,362,109,337,111,323,116,320,122,327,129,323,132,315,122,319,112,335,106,362,104,395,108,408,117"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,287,213,312"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,287,213,312"/>
 <area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="251,302,214,302,214,297,251,297"/>
 </map>

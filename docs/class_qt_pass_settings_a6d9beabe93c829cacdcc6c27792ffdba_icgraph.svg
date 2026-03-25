@@ -120,7 +120,7 @@ var sectionId = 'dynsection-8';
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
 <polygon fill="white" stroke="#666666" points="305,-75 210,-75 210,-56 305,-56 305,-75"/>
 <text text-anchor="middle" x="257.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
@@ -300,7 +300,7 @@ var sectionId = 'dynsection-8';
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" target="_top" xlink:title=" ">
+<g id="a_Node000013"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="309.5,-19 205.5,-19 205.5,0 309.5,0 309.5,-19"/>
 <text text-anchor="middle" x="257.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </a>

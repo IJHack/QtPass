@@ -99,21 +99,21 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">   24</a></span>  <a class="code hl_function" href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">DeselectableTreeView</a>(QWidget *parent) : QTreeView(parent) {}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_deselectable_tree_view.html#a2fb0a1c4a059b6d63a312992006192f1">   28</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_deselectable_tree_view.html#a2fb0a1c4a059b6d63a312992006192f1">~DeselectableTreeView</a>() {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">   28</a></span>  <a class="code hl_function" href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">~DeselectableTreeView</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>signals:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>Q_SIGNALS:</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">   34</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">emptyClicked</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">bool</span> doubleClickHappened = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> clickSelected = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *event) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *event)<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    clickSelected = selectionModel()-&gt;isSelected(indexAt(event-&gt;pos()));</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    QTreeView::mousePressEvent(event);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> mouseReleaseEvent(QMouseEvent *event) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> mouseReleaseEvent(QMouseEvent *event)<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    doubleClickHappened = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// The timer is to distinguish between single and double click</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    QTime dieTime = QTime::currentTime().addMSecs(200);</div>
@@ -137,7 +137,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    clickSelected = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *event) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *event)<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    doubleClickHappened = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    QTreeView::mouseDoubleClickEvent(event);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
@@ -146,9 +146,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif </span><span class="comment">// SRC_DESELECTABLETREEVIEW_H_</span></div>
 <div class="ttc" id="aclass_deselectable_tree_view_html"><div class="ttname"><a href="class_deselectable_tree_view.html">DeselectableTreeView</a></div><div class="ttdoc">The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...</div><div class="ttdef"><b>Definition</b> <a href="deselectabletreeview_8h_source.html#l00016">deselectabletreeview.h:16</a></div></div>
-<div class="ttc" id="aclass_deselectable_tree_view_html_a2fb0a1c4a059b6d63a312992006192f1"><div class="ttname"><a href="class_deselectable_tree_view.html#a2fb0a1c4a059b6d63a312992006192f1">DeselectableTreeView::~DeselectableTreeView</a></div><div class="ttdeci">virtual ~DeselectableTreeView()</div><div class="ttdoc">~DeselectableTreeView standard destructor</div><div class="ttdef"><b>Definition</b> <a href="deselectabletreeview_8h_source.html#l00028">deselectabletreeview.h:28</a></div></div>
 <div class="ttc" id="aclass_deselectable_tree_view_html_a78b4bc9a59d8db8531a1e270a7793b26"><div class="ttname"><a href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">DeselectableTreeView::DeselectableTreeView</a></div><div class="ttdeci">DeselectableTreeView(QWidget *parent)</div><div class="ttdoc">DeselectableTreeView standard constructor.</div><div class="ttdef"><b>Definition</b> <a href="deselectabletreeview_8h_source.html#l00024">deselectabletreeview.h:24</a></div></div>
 <div class="ttc" id="aclass_deselectable_tree_view_html_ac28685648d7a31e19e52882e218346c4"><div class="ttname"><a href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">DeselectableTreeView::emptyClicked</a></div><div class="ttdeci">void emptyClicked()</div><div class="ttdoc">emptyClicked event</div></div>
+<div class="ttc" id="aclass_deselectable_tree_view_html_aeae99d030001a2ed590a8abfe31c462b"><div class="ttname"><a href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">DeselectableTreeView::~DeselectableTreeView</a></div><div class="ttdeci">~DeselectableTreeView() override=default</div><div class="ttdoc">~DeselectableTreeView standard destructor</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

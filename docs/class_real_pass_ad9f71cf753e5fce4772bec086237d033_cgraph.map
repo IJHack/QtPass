@@ -1,0 +1,7 @@
+<map id="RealPass::Move" name="RealPass::Move">
+<area shape="rect" id="Node000001" title="RealPass::Move move a file (or folder)" alt="" coords="5,31,129,56"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="213,5,353,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,33,199,25,199,30,130,39"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="177,55,388,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,48,164,51,163,57,129,53"/>
+</map>

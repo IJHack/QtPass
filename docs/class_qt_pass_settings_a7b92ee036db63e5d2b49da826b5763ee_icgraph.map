@@ -1,6 +1,6 @@
 <map id="QtPassSettings::getPassSigningKey" name="QtPassSettings::getPassSigningKey">
 <area shape="rect" id="Node000001" title=" " alt="" coords="181,31,431,56"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="6,5,133,31"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="ImitatePass::Init initialize pass repository." alt="" coords="6,5,133,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,32,133,27,133,22,174,27"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="5,55,133,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,60,134,64,133,58,167,55"/>

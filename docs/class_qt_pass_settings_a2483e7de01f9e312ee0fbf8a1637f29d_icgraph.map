@@ -111,11 +111,11 @@
 <area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,371,203,396"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="237,386,203,386,203,381,237,381"/>
 <area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="430,426,341,399,342,394,432,421"/>
-<area shape="rect" id="Node000015" href="$class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent hide or quit." alt="" coords="419,1063,603,1088"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="419,1063,603,1088"/>
 <area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="711,1161,676,1151,599,1121,536,1091,538,1086,601,1116,678,1146,713,1156"/>
 <area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="398,371,625,396"/>
 <area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="693,304,679,311,664,322,655,335,646,348,631,360,601,373,598,368,628,356,642,344,651,332,660,319,676,306,691,300"/>
-<area shape="rect" id="Node000018" href="$class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,..." alt="" coords="408,321,615,347"/>
+<area shape="rect" id="Node000018" href="$class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,..." alt="" coords="408,321,615,347"/>
 <area shape="poly" id="edge19_Node000016_Node000018" title=" " alt="" coords="713,302,587,324,586,319,712,297"/>
 <area shape="poly" id="edge18_Node000017_Node000005" title=" " alt="" coords="385,386,346,386,346,381,385,381"/>
 <area shape="poly" id="edge21_Node000019_Node000017" title=" " alt="" coords="713,352,587,373,586,368,712,346"/>

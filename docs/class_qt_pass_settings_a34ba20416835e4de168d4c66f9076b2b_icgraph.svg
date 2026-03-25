@@ -66,7 +66,7 @@ var sectionId = 'dynsection-12';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_users_dialog.html#a70580643923a96208b6bbae18d4aa0f3" target="_top" xlink:title="UsersDialog::accept.">
+<g id="a_Node000002"><a xlink:href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" target="_top" xlink:title="UsersDialog::accept.">
 <polygon fill="white" stroke="#666666" points="324.5,-369.5 210.5,-369.5 210.5,-350.5 324.5,-350.5 324.5,-369.5"/>
 <text text-anchor="middle" x="267.5" y="-357.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::accept</text>
 </a>
@@ -249,7 +249,7 @@ var sectionId = 'dynsection-12';
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34" target="_top" xlink:title="MainWindow::keyPressEvent did anyone press return, enter or escape?">
+<g id="a_Node000008"><a xlink:href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" target="_top" xlink:title="MainWindow::keyPressEvent did anyone press return, enter or escape?">
 <polygon fill="white" stroke="#666666" points="156,-158.5 0,-158.5 0,-139.5 156,-139.5 156,-158.5"/>
 <text text-anchor="middle" x="78" y="-146.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::keyPressEvent</text>
 </a>

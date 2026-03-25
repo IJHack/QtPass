@@ -6,7 +6,7 @@
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="843,127,785,109,721,93,563,66,425,51,425,45,564,61,722,87,786,104,845,122"/>
 <area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,80,447,105"/>
 <area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="796,130,721,121,577,108,447,100,447,95,577,103,722,115,797,125"/>
-<area shape="rect" id="Node000008" href="$class_real_pass.html#aafddf4b1033ca87f286c74eed644fae6" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes." alt="" coords="535,228,681,253"/>
+<area shape="rect" id="Node000008" href="$class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes." alt="" coords="535,228,681,253"/>
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="856,163,794,192,722,219,680,231,679,225,721,214,792,187,854,158"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="495,179,721,204"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="806,160,683,181,682,176,805,154"/>

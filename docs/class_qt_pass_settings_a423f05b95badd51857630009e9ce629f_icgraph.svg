@@ -84,7 +84,7 @@ var sectionId = 'dynsection-72';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">
+<g id="a_Node000005"><a xlink:href="class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">
 <polygon fill="white" stroke="#666666" points="453.5,-19 298.5,-19 298.5,0 453.5,0 453.5,-19"/>
 <text text-anchor="middle" x="376" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::~ConfigDialog</text>
 </a>

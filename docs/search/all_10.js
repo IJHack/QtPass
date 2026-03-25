@@ -6,6 +6,6 @@ var searchData=
   ['realpass_2eh_3',['realpass.h',['../realpass_8h.html',1,'']]],
   ['receivemessage_4',['receiveMessage',['../class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238',1,'SingleApplication']]],
   ['reencryptpath_5',['reencryptPath',['../class_imitate_pass.html#af331446d163c31f1fca714646c0f6244',1,'ImitatePass']]],
-  ['remove_6',['remove',['../class_imitate_pass.html#aac7c061521188834f4ee21cb3dc07bf7',1,'ImitatePass::Remove()'],['../class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764',1,'Pass::Remove()'],['../class_real_pass.html#a729ac9806e1020ac3130a0dc1285ba54',1,'RealPass::Remove()']]],
+  ['remove_6',['remove',['../class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5',1,'ImitatePass::Remove()'],['../class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764',1,'Pass::Remove()'],['../class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd',1,'RealPass::Remove()']]],
   ['restorewindow_7',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]]
 ];

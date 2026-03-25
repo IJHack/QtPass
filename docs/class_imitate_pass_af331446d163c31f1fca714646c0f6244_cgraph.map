@@ -18,9 +18,9 @@
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="131,429,185,408,249,391,318,381,372,377,426,381,495,391,565,411,624,436,622,441,563,416,494,397,426,386,372,382,318,386,250,397,186,413,133,434"/>
 <area shape="rect" id="Node000010" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="290,407,454,432"/>
 <area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="201,433,276,426,277,431,202,438"/>
-<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a7c125494de4869c06a6ef26697101b7e" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="290,205,454,231"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="ImitatePass::GitPull_b git pull wrapper." alt="" coords="290,205,454,231"/>
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="107,431,125,392,155,340,196,285,220,261,248,240,275,227,278,232,251,244,224,265,200,289,159,343,130,395,112,433"/>
-<area shape="rect" id="Node000012" href="$class_imitate_pass.html#a6a5f657b28ac398d3a1b32fb7c33b06b" title="ImitatePass::GitPush git init wrapper." alt="" coords="294,505,450,531"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper." alt="" coords="294,505,450,531"/>
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="140,455,250,490,290,500,289,505,249,495,139,460"/>
 <area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="571,519,753,544"/>
 <area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="119,456,173,500,210,524,250,541,294,552,340,558,433,562,519,555,592,544,592,549,520,560,433,567,340,564,293,557,248,546,208,528,170,505,116,460"/>

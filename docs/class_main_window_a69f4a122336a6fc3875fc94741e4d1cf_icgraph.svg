@@ -138,7 +138,7 @@ var sectionId = 'dynsection-24';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
+<g id="a_Node000003"><a xlink:href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
 <polygon fill="white" stroke="#666666" points="358.5,-195 220.5,-195 220.5,-176 358.5,-176 358.5,-195"/>
 <text text-anchor="middle" x="289.5" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::closeEvent</text>
 </a>

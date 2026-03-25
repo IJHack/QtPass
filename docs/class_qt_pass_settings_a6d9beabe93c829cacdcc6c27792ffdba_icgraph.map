@@ -6,7 +6,7 @@
 <area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="866,170,804,117,764,90,720,68,651,46,579,32,509,24,447,20,447,15,510,18,580,27,653,41,722,64,766,85,807,113,870,165"/>
 <area shape="rect" id="Node000008" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . ." alt="" coords="519,128,697,153"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="804,178,682,156,682,151,805,172"/>
-<area shape="rect" id="Node000009" href="$class_imitate_pass.html#ada992297c21ae7069b91c9ae48f87ee9" title="ImitatePass::Init initialize pass repository." alt="" coords="285,253,412,279"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="ImitatePass::Init initialize pass repository." alt="" coords="285,253,412,279"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="794,207,722,218,413,260,412,255,721,213,793,202"/>
 <area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="495,177,721,203"/>
 <area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="756,193,721,193,721,187,756,187"/>
@@ -26,6 +26,6 @@
 <area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="288,193,203,193,203,187,288,187"/>
 <area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="481,193,396,193,396,187,481,187"/>
 <area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="527,328,494,319,382,281,384,276,495,314,528,322"/>
-<area shape="rect" id="Node000013" href="$class_imitate_pass.html#a6db1849662fe03e61f9410fce080890d" title=" " alt="" coords="279,328,418,353"/>
+<area shape="rect" id="Node000013" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="279,328,418,353"/>
 <area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="497,343,418,343,418,338,497,338"/>
 </map>

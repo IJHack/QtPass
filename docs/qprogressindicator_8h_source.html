@@ -122,7 +122,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_q_progress_indicator.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a> : <span class="keyword">public</span> QWidget {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  Q_OBJECT</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a>(QWidget *parent = 0);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_q_progress_indicator.html#a05684f369a8e1b8b790ace81adfb33d8">   55</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_q_progress_indicator.html#a05684f369a8e1b8b790ace81adfb33d8">animationDelay</a>() const -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> m_delay; }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
@@ -135,7 +135,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  [[nodiscard]] <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_q_progress_indicator.html#abb066bcf10e146d6c2f5c3620ebce18c">sizeHint</a>() const -&gt; QSize;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  [[nodiscard]] auto <a class="code hl_function" href="class_q_progress_indicator.html#a21abb1b67291184583e3ce01407c9553">heightForWidth</a>(<span class="keywordtype">int</span> w) const -&gt; <span class="keywordtype">int</span>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>public slots:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>public Q_SLOTS:</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06">startAnimation</a>();</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95">stopAnimation</a>();</div>

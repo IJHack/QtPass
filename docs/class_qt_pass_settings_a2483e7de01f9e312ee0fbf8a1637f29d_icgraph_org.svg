@@ -1036,7 +1036,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
+<g id="a_Node000015"><a xlink:href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" target="_top" xlink:title="MainWindow::closeEvent hide or quit.">
 <polygon fill="white" stroke="#666666" points="448.5,-1330 310.5,-1330 310.5,-1311 448.5,-1311 448.5,-1330"/>
 <text text-anchor="middle" x="379.5" y="-1318" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::closeEvent</text>
 </a>
@@ -1072,7 +1072,7 @@
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">
+<g id="a_Node000018"><a xlink:href="class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a" target="_top" xlink:title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">
 <polygon fill="white" stroke="#666666" points="457,-1886 302,-1886 302,-1867 457,-1867 457,-1886"/>
 <text text-anchor="middle" x="379.5" y="-1874" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::~ConfigDialog</text>
 </a>
