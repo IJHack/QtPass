@@ -1,11 +1,14 @@
 ---
 name: QMake
+
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+
 permissions: {}
+
 jobs:
   build:
     permissions:
@@ -15,21 +18,25 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+        qt: ["6.8"]
         include:
           - os: ubuntu-latest
-            make: make
-          - os: macos-latest
-            make: make
-          - os: windows-latest
-            make: nmake
+            qt: "5.15"
+
     steps:
       - uses: actions/checkout@v6
       - uses: ilammy/msvc-dev-cmd@v1
+
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ matrix.qt }}
+
       - name: qmake
         run: qmake
+
       - name: make
-        run: ${{matrix.make}}
+        run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }}
+
       - name: make check
-        run: ${{matrix.make}} check TESTARGS="--platform offscreen"
+        run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
