@@ -65,12 +65,19 @@ act push -W .github/workflows/linter.yml -j build
 
 ### Build & Test Workflow (.github/workflows/ccpp.yml)
 
-QtPass build with Qt6, runs unit tests, generates coverage:
+QtPass build with Qt5/Qt6 matrix, runs unit tests, generates coverage:
 
 ```bash
 # Run build workflow
 act push -W .github/workflows/ccpp.yml
 ```
+
+Tests against:
+
+- Ubuntu + Qt 6.8
+- macOS + Qt 6.8
+- Windows + Qt 6.8
+- Ubuntu + Qt 5.15
 
 Note: Qt installation may fail in act due to environment limitations. Real CI handles this.
 
