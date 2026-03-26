@@ -1,0 +1,14 @@
+<map id="ImitatePass::GitCommit" name="ImitatePass::GitCommit">
+<area shape="rect" id="Node000001" title="ImitatePass::GitCommit commit a file to git with an appropriate commit message." alt="" coords="5,84,183,109"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="231,84,407,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,94,217,94,217,99,183,99"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="468,59,680,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,85,454,81,455,86,407,91"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="455,108,693,133"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="407,102,441,105,441,111,407,108"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="741,29,907,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="680,56,727,51,728,56,681,62"/>
+<area shape="rect" id="Node000005" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="750,79,898,119"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="681,81,737,87,736,92,680,86"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="784,31,775,21,780,11,796,5,824,3,859,7,869,11,873,17,868,20,865,15,858,12,824,8,797,10,783,15,780,20,788,27"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wizard_0',['wizard',['../class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15',1,'ConfigDialog']]]
+  ['verifygpgidfile_0',['verifyGpgIdFile',['../class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240',1,'ImitatePass']]],
+  ['verifygpgidfordir_1',['verifyGpgIdForDir',['../class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103',1,'ImitatePass']]]
 ];

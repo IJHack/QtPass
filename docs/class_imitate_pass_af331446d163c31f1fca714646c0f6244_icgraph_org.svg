@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory.">
+<g id="a_Node000001"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="287,-37 140,-37 140,-18 287,-18 287,-37"/>
 <text text-anchor="middle" x="213.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="99.5,-19 4.5,-19 4.5,0 99.5,0 99.5,-19"/>
 <text text-anchor="middle" x="52" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

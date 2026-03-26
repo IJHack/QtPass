@@ -1,0 +1,19 @@
+<map id="ImitatePass::gitAddGpgId" name="ImitatePass::gitAddGpgId">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,57,192,83"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="259,7,399,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,55,256,32,258,38,158,60"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="465,83,641,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,72,452,87,451,92,192,78"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="ImitatePass::GitCommit commit a file to git with an appropriate commit message." alt="" coords="240,108,417,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="158,80,258,102,256,108,157,85"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="703,57,915,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="641,84,689,79,689,85,642,89"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="689,107,928,132"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="642,101,676,104,675,109,641,106"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="976,29,1141,55"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="915,55,962,50,963,55,915,61"/>
+<area shape="rect" id="Node000006" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="985,79,1133,119"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="915,80,971,86,971,92,915,85"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="1018,31,1010,21,1014,11,1031,5,1059,3,1094,7,1104,11,1107,17,1103,20,1100,15,1092,12,1059,8,1032,10,1018,15,1015,20,1022,27"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="417,108,452,104,452,109,418,113"/>
+</map>

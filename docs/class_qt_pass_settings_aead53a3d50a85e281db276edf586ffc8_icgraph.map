@@ -8,7 +8,7 @@
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="505,93,402,119,401,113,503,88"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,43,203,68"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,67,203,63,203,58,288,62"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="28,116,180,141"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="28,116,180,141"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="238,131,180,131,180,126,238,126"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title=" " alt="" coords="45,165,163,191"/>
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="272,147,164,169,163,163,271,142"/>

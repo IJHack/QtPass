@@ -1,24 +1,26 @@
 <map id="QtPassSettings::isUseGit" name="QtPassSettings::isUseGit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="680,208,863,233"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="436,5,632,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,197,705,125,671,86,631,52,591,33,593,28,633,48,674,82,709,122,758,194"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="5,108,144,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="751,199,702,144,669,117,631,96,561,76,488,65,414,63,342,67,273,75,212,87,117,111,116,105,210,82,272,70,341,62,414,57,488,60,562,71,633,92,671,112,706,140,755,195"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper." alt="" coords="456,107,612,132"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="734,204,631,154,577,135,579,130,633,149,736,199"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="192,132,388,157"/>
-<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="676,208,371,160,372,155,677,203"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="ImitatePass::Init initialize pass repository." alt="" coords="11,157,138,183"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="666,218,436,205,138,179,139,174,436,199,667,213"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="463,259,605,284"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="698,239,595,261,594,256,697,234"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="463,308,605,333"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="741,243,691,272,633,299,598,310,596,305,631,294,689,267,738,238"/>
-<area shape="rect" id="Node000009" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="454,357,614,383"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="753,246,703,298,669,325,633,348,606,360,603,355,631,344,666,321,699,294,749,242"/>
-<area shape="rect" id="Node000010" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="454,407,614,432"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="760,247,740,281,711,322,676,363,633,398,610,409,608,404,631,393,672,359,707,319,735,278,755,244"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="443,131,389,137,388,132,442,126"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="178,135,144,131,145,126,178,130"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="179,160,138,165,138,160,178,155"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="715,205,897,231"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="453,5,649,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="789,195,740,124,705,85,665,52,623,33,625,28,668,48,709,81,744,120,793,192"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="5,83,144,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="786,196,736,143,703,116,666,96,594,75,519,62,443,56,369,56,234,68,131,85,130,80,233,62,369,51,444,51,520,56,595,70,668,92,706,112,740,139,790,193"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="ImitatePass::GitPush git init wrapper." alt="" coords="473,156,629,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="726,205,617,184,618,179,727,200"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title=" " alt="" coords="11,207,138,232"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="790,243,740,297,706,324,668,344,627,357,585,365,542,369,499,368,413,358,330,337,254,311,188,282,96,234,98,230,190,277,256,306,332,332,414,352,499,363,542,363,584,360,625,352,666,340,703,320,736,293,786,240"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="480,205,623,231"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="701,221,623,221,623,215,701,215"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="480,255,623,280"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="727,236,618,257,617,252,726,231"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="471,304,631,329"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="775,240,726,269,668,295,629,307,628,301,666,290,723,264,773,236"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title=" " alt="" coords="436,107,667,132"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="773,200,723,172,666,146,628,135,629,129,668,141,726,167,775,196"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="471,405,631,431"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="793,244,744,316,709,355,668,388,625,408,623,403,665,384,705,351,740,312,789,241"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title=" " alt="" coords="192,132,388,157"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="459,163,388,156,388,151,460,158"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="220,132,130,111,132,105,222,126"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="240,164,113,209,111,204,239,159"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="423,134,389,138,388,133,422,129"/>
 </map>

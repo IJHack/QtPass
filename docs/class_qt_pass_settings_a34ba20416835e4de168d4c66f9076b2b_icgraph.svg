@@ -102,7 +102,7 @@ var sectionId = 'dynsection-12';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication.">
+<g id="a_Node000004"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="324.5,-275.5 210.5,-275.5 210.5,-256.5 324.5,-256.5 324.5,-275.5"/>
 <text text-anchor="middle" x="267.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>

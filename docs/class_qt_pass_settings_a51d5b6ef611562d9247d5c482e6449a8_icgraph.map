@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="661,82,627,86,627,81,660,77"/>
 <area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,447,31"/>
 <area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="660,56,447,32,447,26,661,51"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="273,79,425,104"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,79,425,104"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,94,425,94,425,89,481,89"/>
 <area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="520,75,446,45,407,33,409,28,448,39,522,70"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,128,396,153"/>

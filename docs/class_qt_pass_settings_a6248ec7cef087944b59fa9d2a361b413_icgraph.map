@@ -1,6 +1,6 @@
 <map id="QtPassSettings::isUseTrayIcon" name="QtPassSettings::isUseTrayIcon">
 <area shape="rect" id="Node000001" title=" " alt="" coords="264,79,481,104"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="35,29,187,55"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="35,29,187,55"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,79,179,57,180,52,292,73"/>
 <area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,79,209,104"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="251,94,209,94,209,89,251,89"/>

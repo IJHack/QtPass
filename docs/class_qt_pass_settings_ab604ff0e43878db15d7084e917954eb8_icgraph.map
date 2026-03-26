@@ -1,6 +1,6 @@
 <map id="QtPassSettings::getAutoclearPanelSeconds" name="QtPassSettings::getAutoclearPanelSeconds">
 <area shape="rect" id="Node000001" title=" " alt="" coords="495,97,705,137"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="273,29,425,55"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,29,425,55"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,95,446,69,404,57,405,52,447,63,530,90"/>
 <area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,79,447,104"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="481,107,447,104,447,99,481,102"/>

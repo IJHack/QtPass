@@ -1,58 +1,64 @@
 <map id="QtPassSettings::getPassStore" name="QtPassSettings::getPassStore">
-<area shape="rect" id="Node000001" title=" " alt="" coords="719,481,929,507"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="522,129,654,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="815,468,799,409,770,331,751,289,727,248,700,210,669,176,638,157,641,153,672,172,704,207,732,246,755,287,775,329,804,407,820,467"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication." alt="" coords="283,29,435,55"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="819,468,812,389,804,338,790,282,771,225,745,171,711,121,669,79,643,62,615,49,554,34,492,30,436,32,436,27,492,24,555,29,617,44,646,57,672,75,716,117,750,168,776,223,795,281,809,337,817,389,825,467"/>
-<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="261,80,457,105"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="818,468,809,396,785,299,766,248,741,199,709,155,669,119,641,102,610,90,544,77,479,76,422,83,421,77,478,71,544,72,611,84,643,97,672,115,713,152,745,197,771,246,791,297,814,395,824,467"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="312,180,407,205"/>
-<area shape="poly" id="edge21_Node000001_Node000005" title=" " alt="" coords="814,469,798,416,769,349,750,314,727,281,700,252,669,227,638,210,604,198,533,185,464,183,407,188,407,182,464,178,533,179,605,193,640,205,672,222,704,248,731,278,754,311,774,346,803,414,819,467"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="11,205,208,231"/>
-<area shape="poly" id="edge24_Node000001_Node000006" title=" " alt="" coords="811,469,792,424,763,369,722,314,697,291,669,271,634,256,586,244,463,229,329,221,208,220,208,214,329,216,463,223,586,239,636,251,672,266,700,286,726,311,767,366,797,422,816,467"/>
-<area shape="rect" id="Node000008" href="$class_real_pass.html#a640ea218267605b9ca78c21ca5677690" title="RealPass::Copy copy a file (or folder)" alt="" coords="527,281,649,307"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="806,471,752,396,713,355,669,320,646,309,649,304,672,316,717,351,756,393,810,468"/>
-<area shape="rect" id="Node000009" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title=" " alt="" coords="505,331,671,356"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="800,473,744,421,708,394,669,370,643,359,645,354,672,365,711,389,747,417,803,470"/>
-<area shape="rect" id="Node000010" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selectd folder path." alt="" coords="541,380,635,405"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="783,478,670,427,622,408,624,403,672,422,785,473"/>
-<area shape="rect" id="Node000013" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="515,481,661,507"/>
-<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="705,497,661,497,661,491,705,491"/>
-<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="288,448,431,473"/>
-<area shape="poly" id="edge23_Node000001_Node000014" title=" " alt="" coords="745,482,670,471,544,464,431,462,431,457,544,458,671,466,745,476"/>
-<area shape="rect" id="Node000015" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="261,520,457,545"/>
-<area shape="poly" id="edge27_Node000001_Node000015" title=" " alt="" coords="744,512,671,522,561,530,458,534,457,529,560,525,670,517,744,506"/>
-<area shape="rect" id="Node000018" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="ImitatePass::GitInit git init wrapper." alt="" coords="515,583,661,608"/>
-<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="785,515,672,566,624,585,622,580,670,561,783,510"/>
-<area shape="rect" id="Node000019" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="RealPass::Init initialize pass repository." alt="" coords="533,632,643,657"/>
-<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="803,518,747,571,711,599,672,623,644,635,642,630,669,618,708,594,744,567,800,515"/>
-<area shape="rect" id="Node000020" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="517,681,659,707"/>
-<area shape="poly" id="edge25_Node000001_Node000020" title=" " alt="" coords="810,520,756,595,717,637,672,672,649,684,646,679,669,668,713,633,752,592,806,517"/>
-<area shape="rect" id="Node000021" href="$class_real_pass.html#ad9f71cf753e5fce4772bec086237d033" title="RealPass::Move move a file (or folder)" alt="" coords="526,731,650,756"/>
-<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="815,521,794,564,764,619,723,674,699,699,672,722,651,733,649,728,669,717,695,695,719,671,759,616,790,562,810,519"/>
-<area shape="rect" id="Node000022" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="508,780,668,805"/>
-<area shape="poly" id="edge28_Node000001_Node000022" title=" " alt="" coords="818,521,800,574,771,641,729,711,702,743,672,771,653,782,650,778,669,767,698,739,724,708,766,639,795,572,813,520"/>
-<area shape="rect" id="Node000023" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="ImitatePass::Show shows content of file." alt="" coords="517,829,659,855"/>
-<area shape="poly" id="edge29_Node000001_Node000023" title=" " alt="" coords="821,521,806,582,778,662,758,705,734,747,706,786,672,820,654,832,651,827,669,816,702,782,730,744,754,703,773,660,801,580,815,519"/>
-<area shape="rect" id="Node000024" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="524,879,652,904"/>
-<area shape="poly" id="edge30_Node000001_Node000024" title=" " alt="" coords="822,521,810,590,784,684,765,734,740,783,709,829,672,869,654,881,651,877,669,865,705,826,735,780,760,732,779,682,805,589,817,520"/>
-<area shape="rect" id="Node000025" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="523,928,653,953"/>
-<area shape="poly" id="edge31_Node000001_Node000025" title=" " alt="" coords="824,521,814,598,791,705,771,763,746,819,713,872,672,919,654,931,651,926,669,915,709,869,741,817,766,761,786,704,809,598,818,520"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,124,510,96,456,70,419,57,421,52,458,65,512,91,558,119"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="515,129,418,108,420,103,516,124"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="517,160,408,185,406,180,516,155"/>
-<area shape="rect" id="Node000007" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="281,129,437,155"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="508,145,437,145,437,139,508,139"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="400,20,389,11,359,8,335,10,322,15,320,20,326,27,322,31,314,21,319,11,334,5,359,3,391,7,403,16"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="298,201,208,211,208,205,298,196"/>
-<area shape="rect" id="Node000011" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="262,373,457,413"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="527,395,457,395,457,390,527,390"/>
-<area shape="rect" id="Node000012" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,380,213,405"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="248,395,214,395,214,390,248,390"/>
-<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="501,484,431,474,431,468,502,479"/>
-<area shape="poly" id="edge17_Node000013_Node000015" title=" " alt="" coords="502,511,435,523,434,517,501,506"/>
-<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="40,495,179,520"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="247,524,179,517,179,512,248,519"/>
-<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="ImitatePass::Init initialize pass repository." alt="" coords="46,544,173,569"/>
-<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="248,546,173,553,172,548,248,541"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="987,480,1197,505"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="767,129,899,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1083,467,1068,407,1040,329,1020,287,997,247,969,209,937,176,919,164,898,155,900,150,921,159,940,172,973,205,1001,244,1025,285,1045,327,1073,406,1088,466"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="487,29,639,55"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="1088,466,1081,387,1072,335,1059,279,1040,222,1014,168,980,118,937,76,901,54,861,38,819,28,776,23,693,23,623,32,622,27,693,18,776,17,820,23,863,33,903,49,940,72,984,114,1018,165,1045,220,1064,278,1077,334,1086,386,1093,466"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="465,80,661,105"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="1086,467,1077,394,1054,298,1034,247,1009,199,977,155,937,119,900,97,858,82,815,73,772,69,688,72,618,83,617,77,687,67,772,64,816,68,860,77,902,92,940,115,981,152,1014,196,1039,245,1059,296,1082,393,1092,466"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="516,180,611,205"/>
+<area shape="poly" id="edge24_Node000001_Node000005" title=" " alt="" coords="1082,467,1066,414,1037,348,1018,313,995,281,968,251,937,227,897,206,854,192,810,183,765,178,680,179,611,186,611,181,679,173,765,173,811,177,856,187,900,201,940,222,972,247,999,277,1023,310,1042,345,1071,413,1087,466"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="197,205,395,231"/>
+<area shape="poly" id="edge27_Node000001_Node000006" title=" " alt="" coords="1079,468,1060,423,1031,368,990,314,965,290,937,271,908,262,858,253,712,240,395,224,395,218,713,234,858,248,910,257,940,266,968,286,994,310,1035,365,1065,421,1084,466"/>
+<area shape="rect" id="Node000008" href="$class_real_pass.html#a640ea218267605b9ca78c21ca5677690" title="RealPass::Copy copy a file (or folder)" alt="" coords="772,281,893,307"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="1074,470,1052,435,1021,395,982,354,937,320,916,310,893,303,894,298,918,305,940,316,985,350,1025,391,1056,432,1079,467"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title=" " alt="" coords="727,331,939,356"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="1068,472,1012,420,976,393,938,370,908,359,910,354,940,365,979,388,1016,416,1072,468"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title=" " alt="" coords="750,380,915,405"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1056,475,1002,447,938,419,900,408,901,403,940,414,1004,442,1059,471"/>
+<area shape="rect" id="Node000012" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selectd folder path." alt="" coords="786,429,879,455"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1012,480,879,454,880,448,1013,475"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="759,531,906,556"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="1013,511,899,533,898,528,1012,505"/>
+<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="492,480,635,505"/>
+<area shape="poly" id="edge26_Node000001_Node000016" title=" " alt="" coords="972,495,635,495,635,490,972,490"/>
+<area shape="rect" id="Node000021" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="ImitatePass::GitInit git init wrapper." alt="" coords="759,632,906,657"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="1070,517,1014,566,978,592,940,615,890,634,888,629,937,610,975,588,1010,562,1066,513"/>
+<area shape="rect" id="Node000022" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="RealPass::Init initialize pass repository." alt="" coords="778,681,887,707"/>
+<area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="1079,518,1057,553,1025,595,986,637,940,672,915,684,888,691,887,686,913,679,937,668,982,633,1021,592,1052,550,1075,516"/>
+<area shape="rect" id="Node000023" href="$class_real_pass.html#ad9f71cf753e5fce4772bec086237d033" title="RealPass::Move move a file (or folder)" alt="" coords="771,731,895,756"/>
+<area shape="poly" id="edge28_Node000001_Node000023" title=" " alt="" coords="1083,519,1064,564,1033,619,992,675,967,700,940,722,919,733,896,740,894,735,917,728,937,717,964,696,988,671,1028,616,1059,561,1079,517"/>
+<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title=" " alt="" coords="448,595,679,620"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="1061,515,1005,545,939,571,873,587,805,598,679,609,679,603,805,593,872,582,938,566,1003,540,1058,510"/>
+<area shape="rect" id="Node000025" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="753,780,913,805"/>
+<area shape="poly" id="edge31_Node000001_Node000025" title=" " alt="" coords="1087,519,1070,573,1041,641,998,711,971,743,940,771,914,785,911,780,937,766,967,740,994,708,1036,639,1065,571,1082,518"/>
+<area shape="rect" id="Node000026" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="ImitatePass::Show shows content of file." alt="" coords="762,829,903,855"/>
+<area shape="poly" id="edge32_Node000001_Node000026" title=" " alt="" coords="1089,519,1075,581,1048,663,1028,706,1004,748,975,787,940,820,923,831,904,838,902,833,921,826,937,816,971,783,999,745,1023,704,1043,661,1070,580,1084,518"/>
+<area shape="rect" id="Node000027" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)" alt="" coords="769,879,897,904"/>
+<area shape="poly" id="edge33_Node000001_Node000027" title=" " alt="" coords="1091,519,1080,590,1054,684,1035,735,1010,784,979,830,940,869,920,882,898,889,896,884,918,877,937,865,974,827,1005,782,1030,733,1049,683,1074,588,1086,518"/>
+<area shape="rect" id="Node000028" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="768,928,897,953"/>
+<area shape="poly" id="edge34_Node000001_Node000028" title=" " alt="" coords="1092,519,1084,598,1075,650,1061,706,1041,764,1016,821,982,873,940,919,921,931,898,939,897,934,918,927,937,915,978,870,1011,818,1036,762,1056,705,1069,649,1079,597,1087,519"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="796,125,741,97,678,70,633,57,635,52,680,65,744,92,799,120"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="752,130,633,108,634,103,753,125"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="754,159,611,186,610,181,753,154"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="485,129,641,155"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="753,145,642,145,642,139,753,139"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="611,20,608,16,600,12,563,8,535,10,519,15,516,20,524,27,520,31,511,21,516,11,534,5,563,3,602,7,612,12,616,18"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="503,201,395,211,395,206,502,196"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="492,331,635,356"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="713,346,635,346,635,341,713,341"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="466,415,661,455"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="772,443,661,440,661,435,772,438"/>
+<area shape="rect" id="Node000014" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="192,423,400,448"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="452,438,400,438,400,433,452,433"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="751,531,631,508,632,503,752,525"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="473,530,654,570"/>
+<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="746,548,654,550,654,545,745,543"/>
+<area shape="rect" id="Node000018" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title=" " alt="" coords="198,565,394,591"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="459,564,394,570,394,565,458,558"/>
+<area shape="rect" id="Node000019" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="5,540,144,565"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="184,568,144,563,144,558,184,563"/>
+<area shape="rect" id="Node000020" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title=" " alt="" coords="11,589,138,615"/>
+<area shape="poly" id="edge22_Node000018_Node000020" title=" " alt="" coords="184,593,139,598,138,593,183,588"/>
+<area shape="poly" id="edge30_Node000024_Node000018" title=" " alt="" coords="434,596,394,591,394,586,435,591"/>
 </map>

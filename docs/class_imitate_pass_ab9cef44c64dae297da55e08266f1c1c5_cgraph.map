@@ -1,7 +1,21 @@
 <map id="ImitatePass::Remove" name="ImitatePass::Remove">
-<area shape="rect" id="Node000001" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="5,31,165,56"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="213,5,424,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,32,199,28,200,34,166,37"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="227,55,410,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,49,214,54,213,59,165,54"/>
+<area shape="rect" id="Node000001" title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;." alt="" coords="5,108,165,133"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="472,83,648,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,105,156,84,213,67,287,59,362,60,432,67,491,77,490,83,431,73,361,66,287,65,214,73,158,89,112,110"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="213,83,424,108"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="165,109,199,106,200,111,166,115"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="ImitatePass::GitCommit commit a file to git with an appropriate commit message." alt="" coords="230,132,407,157"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="166,126,217,132,216,137,165,132"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="227,181,410,207"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="117,131,214,167,243,175,241,181,213,173,115,136"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="709,57,921,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="648,84,695,79,696,85,649,89"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="696,107,935,132"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="649,101,682,104,682,109,648,106"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="983,29,1148,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="921,55,969,50,969,55,922,61"/>
+<area shape="rect" id="Node000005" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="991,79,1139,119"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="922,80,978,86,977,92,921,85"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="1025,31,1016,21,1021,11,1038,5,1065,3,1100,7,1110,11,1114,17,1110,20,1107,15,1099,12,1065,8,1039,10,1025,15,1022,20,1029,27"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="381,129,483,108,484,113,382,135"/>
 </map>

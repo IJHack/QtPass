@@ -1,9 +1,27 @@
 <map id="ImitatePass::Move" name="ImitatePass::Move">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,148,80"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="231,5,371,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,52,229,31,230,36,136,57"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="196,55,407,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,65,182,65,182,70,148,70"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="210,104,393,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,77,230,98,229,104,135,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,131,148,156"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title=" " alt="" coords="196,81,408,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,128,229,107,231,112,136,133"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="211,131,393,156"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="148,141,197,141,197,146,148,146"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" title=" " alt="" coords="207,181,397,221"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="128,153,210,175,209,180,127,159"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="491,5,631,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,79,503,32,505,37,347,84"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="715,107,891,132"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="408,86,532,85,667,91,733,101,733,107,666,97,532,90,408,92"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="456,107,667,132"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="408,102,443,105,442,110,408,107"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="ImitatePass::GitCommit commit a file to git with an appropriate commit message." alt="" coords="473,156,650,181"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="371,104,409,116,433,128,457,141,485,150,483,155,455,146,431,133,407,120,370,109"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="952,81,1164,107"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="891,108,938,103,939,109,891,113"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="939,131,1177,156"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="891,125,925,128,925,133,891,130"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="1225,53,1391,79"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1164,79,1211,74,1212,79,1165,85"/>
+<area shape="rect" id="Node000007" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="1234,103,1382,143"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="1165,104,1221,110,1220,116,1164,109"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="1268,55,1259,45,1264,35,1280,29,1308,27,1343,31,1353,35,1357,41,1352,44,1349,39,1342,36,1308,32,1281,34,1267,39,1264,44,1272,51"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="624,153,726,132,727,137,625,159"/>
 </map>

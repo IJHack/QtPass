@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication.">
+<g id="a_Node000002"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="114,-19 0,-19 0,0 114,0 114,-19"/>
 <text text-anchor="middle" x="57" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>

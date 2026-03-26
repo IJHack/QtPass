@@ -1198,7 +1198,7 @@
 <!-- Node49 -->
 <g id="Node000049" class="node">
 <title>Node49</title>
-<g id="a_Node000049"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title="MainWindow::config pops up the configuration screen and handles all inter&#45;window communication.">
+<g id="a_Node000049"><a xlink:href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="436.5,-364 322.5,-364 322.5,-345 436.5,-345 436.5,-364"/>
 <text text-anchor="middle" x="379.5" y="-352" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::config</text>
 </a>

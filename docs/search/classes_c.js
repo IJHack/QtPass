@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['trayicon_0',['TrayIcon',['../class_tray_icon.html',1,'']]],
-  ['tst_5fexecutor_1',['tst_executor',['../classtst__executor.html',1,'']]],
-  ['tst_5ffilecontent_2',['tst_filecontent',['../classtst__filecontent.html',1,'']]],
-  ['tst_5fpasswordconfig_3',['tst_passwordconfig',['../classtst__passwordconfig.html',1,'']]],
-  ['tst_5fsettings_4',['tst_settings',['../classtst__settings.html',1,'']]],
-  ['tst_5fsimpletransaction_5',['tst_simpletransaction',['../classtst__simpletransaction.html',1,'']]],
-  ['tst_5fstoremodel_6',['tst_storemodel',['../classtst__storemodel.html',1,'']]],
-  ['tst_5fui_7',['tst_ui',['../classtst__ui.html',1,'']]],
-  ['tst_5futil_8',['tst_util',['../classtst__util.html',1,'']]]
+  ['transactionhelper_0',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass']]],
+  ['trayicon_1',['TrayIcon',['../class_tray_icon.html',1,'']]],
+  ['tst_5fexecutor_2',['tst_executor',['../classtst__executor.html',1,'']]],
+  ['tst_5ffilecontent_3',['tst_filecontent',['../classtst__filecontent.html',1,'']]],
+  ['tst_5fpasswordconfig_4',['tst_passwordconfig',['../classtst__passwordconfig.html',1,'']]],
+  ['tst_5fsettings_5',['tst_settings',['../classtst__settings.html',1,'']]],
+  ['tst_5fsimpletransaction_6',['tst_simpletransaction',['../classtst__simpletransaction.html',1,'']]],
+  ['tst_5fstoremodel_7',['tst_storemodel',['../classtst__storemodel.html',1,'']]],
+  ['tst_5fui_8',['tst_ui',['../classtst__ui.html',1,'']]],
+  ['tst_5futil_9',['tst_util',['../classtst__util.html',1,'']]]
 ];
