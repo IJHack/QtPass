@@ -1079,7 +1079,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>在下列位置创建 .gpg-id 文件失败：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1078"/>

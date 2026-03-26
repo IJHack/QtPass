@@ -49,3 +49,4 @@ linter-output.log
 release-artifacts
 node_modules
 docs
+opencode.json
