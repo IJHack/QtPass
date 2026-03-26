@@ -948,12 +948,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>engångslösenord-kod kopierad till urklipp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen engångslösenord-kod hittades i den här lösenordsposten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="650"/>
@@ -975,7 +975,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inget lösenord valt för generering av engångslösenord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="972"/>
@@ -1013,7 +1013,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades att skapa .gpg-id fil på: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
