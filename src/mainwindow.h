@@ -143,6 +143,9 @@ private:
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
 
+  void applyTextBrowserSettings();
+  void applyWindowFlagsSettings();
+
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();
   void enableGitButtons(const bool &);

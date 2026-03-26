@@ -72,6 +72,11 @@ private Q_SLOTS:
   void qProgressIndicatorStartStop();
   void namedValueBasic();
   void namedValueMultiple();
+  void imitatePassResolveMoveDestination();
+  void imitatePassResolveMoveDestinationForce();
+  void imitatePassResolveMoveDestinationDir();
+  void imitatePassResolveMoveDestinationNonExistent();
+  void imitatePassRemoveDir();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -687,6 +692,68 @@ void tst_util::namedValueMultiple() {
   nv1.value = "pass1";
   nvs.append(nv1);
   QVERIFY(nvs.size() == 1);
+}
+
+void tst_util::imitatePassResolveMoveDestination() {
+  ImitatePass pass;
+  QString result =
+      pass.resolveMoveDestination("/tmp/test.gpg", "/tmp/dest.gpg", false);
+  QString expected = "/tmp/dest.gpg";
+  if (result.isEmpty()) {
+    QSKIP("Source file does not exist");
+  }
+  QVERIFY2(result == expected, "Destination should have .gpg extension");
+}
+
+void tst_util::imitatePassResolveMoveDestinationForce() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  (void)srcFile.open(QFile::WriteOnly);
+  srcFile.write("test");
+  srcFile.close();
+
+  QString destPath = tmpDir.path() + "/existing.gpg";
+  QFile destFile(destPath);
+  (void)destFile.open(QFile::WriteOnly);
+  destFile.write("old");
+  destFile.close();
+
+  QString result = pass.resolveMoveDestination(srcPath, destPath, true);
+  QVERIFY2(result == destPath, "Should return dest path when force=true");
+}
+
+void tst_util::imitatePassResolveMoveDestinationDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  (void)srcFile.open(QFile::WriteOnly);
+  srcFile.write("test");
+  srcFile.close();
+
+  QString result = pass.resolveMoveDestination(srcPath, tmpDir.path(), false);
+  QVERIFY2(result == tmpDir.path() + "/test.gpg",
+           "Should append filename when dest is dir");
+}
+
+void tst_util::imitatePassResolveMoveDestinationNonExistent() {
+  ImitatePass pass;
+  QString result = pass.resolveMoveDestination("/non/existent/path.gpg",
+                                               "/tmp/dest.gpg", false);
+  QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
+}
+
+void tst_util::imitatePassRemoveDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString subDir = tmpDir.path() + "/testdir";
+  (void)QDir().mkdir(subDir);
+  QVERIFY(QDir(subDir).exists());
+  bool result = pass.removeDir(subDir);
+  QVERIFY(result);
+  QVERIFY(!QDir(subDir).exists());
 }
 
 QTEST_MAIN(tst_util)
