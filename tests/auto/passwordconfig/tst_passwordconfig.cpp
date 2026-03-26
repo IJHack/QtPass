@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QString>
 #include <QtTest>
 
 #include "../../../src/passwordconfiguration.h"
@@ -13,6 +14,8 @@ private Q_SLOTS:
   void passwordConfigurationDefaults();
   void passwordConfigurationSetters();
   void passwordConfigurationCharacterSets();
+  void passwordConfigurationLength();
+  void passwordConfigurationCustomChars();
 };
 
 void tst_passwordconfig::initTestCase() {}
@@ -43,6 +46,21 @@ void tst_passwordconfig::passwordConfigurationCharacterSets() {
           config.Characters[PasswordConfiguration::ALPHABETICAL].length());
   QVERIFY(config.Characters[PasswordConfiguration::ALPHANUMERIC].length() >
           config.Characters[PasswordConfiguration::ALPHABETICAL].length());
+}
+
+void tst_passwordconfig::passwordConfigurationLength() {
+  PasswordConfiguration config;
+  config.length = 0;
+  QVERIFY(config.length == 0);
+  config.length = 100;
+  QVERIFY(config.length == 100);
+}
+
+void tst_passwordconfig::passwordConfigurationCustomChars() {
+  PasswordConfiguration config;
+  QString custom = "abc123";
+  config.Characters[PasswordConfiguration::CUSTOM] = custom;
+  QVERIFY(config.Characters[PasswordConfiguration::CUSTOM] == custom);
 }
 
 QTEST_MAIN(tst_passwordconfig)

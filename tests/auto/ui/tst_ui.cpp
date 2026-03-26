@@ -15,6 +15,8 @@ private Q_SLOTS:
   void emptyPassword();
   void multilineRemainingData();
   void cleanupTestCase();
+  void passwordDialogBasic();
+  void passwordDialogWithTemplate();
 };
 
 /**
@@ -91,6 +93,25 @@ void tst_ui::multilineRemainingData() {
   QVERIFY(remaining.contains("line1"));
   QVERIFY(remaining.contains("line2"));
   QVERIFY(remaining.contains("line3"));
+}
+
+void tst_ui::passwordDialogBasic() {
+  PasswordConfiguration config;
+  config.length = 20;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  d->setTemplate("", false);
+  d->setPass("testpassword");
+  QString result = d->getPassword();
+  QVERIFY(result.contains("testpassword"));
+}
+
+void tst_ui::passwordDialogWithTemplate() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  d->setTemplate("username", false);
+  d->setPass("mypassword\nusername: testuser");
+  QString result = d->getPassword();
+  QVERIFY(result.contains("mypassword"));
 }
 
 QTEST_MAIN(tst_ui)

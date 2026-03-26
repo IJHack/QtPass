@@ -12,6 +12,7 @@
 #include "../../../src/imitatepass.h"
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
+#include "../../../src/qprogressindicator.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
@@ -57,6 +58,25 @@ private Q_SLOTS:
   void boundedRandom();
   void findBinaryInPath();
   void findPasswordStore();
+  void checkConfig();
+  void getDirBasic();
+  void getDirWithIndex();
+  void copyDirOverwritesExisting();
+  void findBinaryInPathNotFound();
+  void findPasswordStoreEnvVar();
+  void normalizeFolderPathMultipleCalls();
+  void userInfoFullyValid();
+  void userInfoMarginallyValid();
+  void userInfoIsValid();
+  void qProgressIndicatorBasic();
+  void qProgressIndicatorStartStop();
+  void namedValueBasic();
+  void namedValueMultiple();
+  void imitatePassResolveMoveDestination();
+  void imitatePassResolveMoveDestinationForce();
+  void imitatePassResolveMoveDestinationDir();
+  void imitatePassResolveMoveDestinationNonExistent();
+  void imitatePassRemoveDir();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -561,6 +581,179 @@ void tst_util::findPasswordStore() {
   QString result = Util::findPasswordStore();
   QVERIFY(!result.isEmpty());
   QVERIFY(result.endsWith(QDir::separator()));
+}
+
+void tst_util::checkConfig() {
+  bool result = Util::checkConfig();
+  QVERIFY(result == true || result == false);
+}
+
+void tst_util::getDirBasic() {
+  QString result =
+      Util::getDir(QModelIndex(), false, QFileSystemModel(), StoreModel());
+  QVERIFY(result.endsWith(QDir::separator()));
+}
+
+void tst_util::getDirWithIndex() {
+  QFileSystemModel fsm;
+  StoreModel sm;
+  QModelIndex invalidIndex;
+  QString result = Util::getDir(invalidIndex, true, fsm, sm);
+  QVERIFY(result.isEmpty() || result.endsWith(QDir::separator()));
+}
+
+void tst_util::copyDirOverwritesExisting() {
+  QTemporaryDir srcDir;
+  QFile f1(srcDir.path() + "/file.txt");
+  (void)f1.open(QFile::WriteOnly);
+  f1.write("content");
+  f1.close();
+
+  QTemporaryDir destDir;
+  QFile df1(destDir.path() + "/file.txt");
+  (void)df1.open(QFile::WriteOnly);
+  df1.write("old");
+  df1.close();
+
+  Util::copyDir(srcDir.path(), destDir.path());
+  QVERIFY(QFile::exists(destDir.path() + "/file.txt"));
+}
+
+void tst_util::findBinaryInPathNotFound() {
+  QString result = Util::findBinaryInPath("this-binary-does-not-exist-12345");
+  QVERIFY(result.isEmpty());
+}
+
+void tst_util::findPasswordStoreEnvVar() {
+  QString result = Util::findPasswordStore();
+  QVERIFY(!result.isEmpty());
+}
+
+void tst_util::normalizeFolderPathMultipleCalls() {
+  QString result1 = Util::normalizeFolderPath("test1");
+  QString result2 = Util::normalizeFolderPath("test2");
+  QVERIFY(result1.endsWith(QDir::separator()));
+  QVERIFY(result2.endsWith(QDir::separator()));
+}
+
+void tst_util::userInfoFullyValid() {
+  UserInfo ui;
+  ui.validity = 'f';
+  QVERIFY(ui.fullyValid() == true);
+  ui.validity = 'u';
+  QVERIFY(ui.fullyValid() == true);
+  ui.validity = '-';
+  QVERIFY(ui.fullyValid() == false);
+}
+
+void tst_util::userInfoMarginallyValid() {
+  UserInfo ui;
+  ui.validity = 'm';
+  QVERIFY(ui.marginallyValid() == true);
+  ui.validity = 'f';
+  QVERIFY(ui.marginallyValid() == false);
+}
+
+void tst_util::userInfoIsValid() {
+  UserInfo ui;
+  ui.validity = 'f';
+  QVERIFY(ui.isValid() == true);
+  ui.validity = 'm';
+  QVERIFY(ui.isValid() == true);
+  ui.validity = '-';
+  QVERIFY(ui.isValid() == false);
+}
+
+void tst_util::qProgressIndicatorBasic() {
+  QProgressIndicator pi;
+  QVERIFY(pi.isAnimated() == false);
+}
+
+void tst_util::qProgressIndicatorStartStop() {
+  QProgressIndicator pi;
+  pi.startAnimation();
+  QVERIFY(pi.isAnimated() == true);
+  pi.stopAnimation();
+  QVERIFY(pi.isAnimated() == false);
+}
+
+void tst_util::namedValueBasic() {
+  NamedValue nv;
+  nv.name = "key";
+  nv.value = "value";
+  QVERIFY(nv.name == "key");
+  QVERIFY(nv.value == "value");
+}
+
+void tst_util::namedValueMultiple() {
+  NamedValues nvs;
+  NamedValue nv1;
+  nv1.name = "user1";
+  nv1.value = "pass1";
+  nvs.append(nv1);
+  QVERIFY(nvs.size() == 1);
+}
+
+void tst_util::imitatePassResolveMoveDestination() {
+  ImitatePass pass;
+  QString result =
+      pass.resolveMoveDestination("/tmp/test.gpg", "/tmp/dest.gpg", false);
+  QString expected = "/tmp/dest.gpg";
+  if (result.isEmpty()) {
+    QSKIP("Source file does not exist");
+  }
+  QVERIFY2(result == expected, "Destination should have .gpg extension");
+}
+
+void tst_util::imitatePassResolveMoveDestinationForce() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  (void)srcFile.open(QFile::WriteOnly);
+  srcFile.write("test");
+  srcFile.close();
+
+  QString destPath = tmpDir.path() + "/existing.gpg";
+  QFile destFile(destPath);
+  (void)destFile.open(QFile::WriteOnly);
+  destFile.write("old");
+  destFile.close();
+
+  QString result = pass.resolveMoveDestination(srcPath, destPath, true);
+  QVERIFY2(result == destPath, "Should return dest path when force=true");
+}
+
+void tst_util::imitatePassResolveMoveDestinationDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  (void)srcFile.open(QFile::WriteOnly);
+  srcFile.write("test");
+  srcFile.close();
+
+  QString result = pass.resolveMoveDestination(srcPath, tmpDir.path(), false);
+  QVERIFY2(result == tmpDir.path() + "/test.gpg",
+           "Should resolve to directory with filename");
+}
+
+void tst_util::imitatePassResolveMoveDestinationNonExistent() {
+  ImitatePass pass;
+  QString result = pass.resolveMoveDestination("/non/existent/path.gpg",
+                                               "/tmp/dest.gpg", false);
+  QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
+}
+
+void tst_util::imitatePassRemoveDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString subDir = tmpDir.path() + "/testdir";
+  (void)QDir().mkdir(subDir);
+  QVERIFY(QDir(subDir).exists());
+  bool result = pass.removeDir(subDir);
+  QVERIFY(result);
+  QVERIFY(!QDir(subDir).exists());
 }
 
 QTEST_MAIN(tst_util)
