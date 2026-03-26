@@ -73,6 +73,7 @@ act push -W .github/workflows/ccpp.yml
 ```
 
 Tests against:
+
 - Ubuntu + Qt 6.8
 - macOS + Qt 6.8
 - Windows + Qt 6.8
