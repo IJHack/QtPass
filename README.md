@@ -92,6 +92,77 @@ On most Unix systems all you need is:
 qmake && make && make install
 ```
 
+### Windows Getting Started
+
+#### Install QtPass
+
+**Using Chocolatey (recommended):**
+
+```powershell
+# Run PowerShell as Administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install dependencies and QtPass
+choco install vcredist140 -y
+choco install qtpass -y
+```
+
+**Or download from releases:**
+
+- Download the latest `.exe` installer from [GitHub Releases](https://github.com/IJHack/QtPass/releases)
+
+#### Building from Source
+
+To develop QtPass on Windows:
+
+```powershell
+# Run PowerShell as Administrator
+# Install Chocolatey (if not already)
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install development dependencies
+choco install git -y
+choco install qt6-creator -y  # Includes Qt6 development files
+
+# Or use Visual Studio with Qt addon
+# Download Qt from https://www.qt.io/download-qt-installer
+```
+
+Then build with:
+
+```powershell
+qmake
+make
+make install
+```
+
+#### First Run
+
+1. Launch QtPass
+2. Click "Autodetect" to find GPG and Git
+3. Set your password store location (default: `%APPDATA%\password-store`)
+4. Or select an existing `pass` store folder
+
+#### Configure GPG Key
+
+1. Go to **Config → User** to select your GPG key
+2. If using for the first time, generate a key with **Config → Generate GPG key**
+
+#### Initialize Password Store (if new)
+
+1. Click **File → Initialize**
+2. Select your GPG key(s) for encryption
+3. Your `.gpg-id` file will be created
+
+#### Troubleshooting
+
+| Issue                      | Solution                                                                                                              |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| "GnuPG not found"          | Install GPG from [gnupg.org](https://www.gnupg.org/download/), restart QtPass, or set path manually in Config         |
+| "Signature does not exist" | Ensure your GPG key is in the `.gpg-id` file via **Config → Users**                                                   |
+| Git not working            | Use [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) for HTTPS authentication |
+| App doesn't start          | Install `vcredist140` (Visual C++ Redistributable)                                                                    |
+
 ## Using profiles
 
 Profiles allow to group passwords. Each profile might use a different Git repository and/or different gpg key.
