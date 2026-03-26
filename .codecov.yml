@@ -3,3 +3,7 @@ coverage:
   ignore:
     - tests/*
     - src/qrc_*.cpp
+  patch:
+    default:
+      target: auto
+      threshold: 1%
