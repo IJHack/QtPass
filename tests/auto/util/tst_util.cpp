@@ -72,6 +72,7 @@ private Q_SLOTS:
   void qProgressIndicatorStartStop();
   void namedValueBasic();
   void namedValueMultiple();
+  void imitatePassRemoveDir();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -687,6 +688,17 @@ void tst_util::namedValueMultiple() {
   nv1.value = "pass1";
   nvs.append(nv1);
   QVERIFY(nvs.size() == 1);
+}
+
+void tst_util::imitatePassRemoveDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString subDir = tmpDir.path() + "/testdir";
+  (void)QDir().mkdir(subDir);
+  QVERIFY(QDir(subDir).exists());
+  bool result = pass.removeDir(subDir);
+  QVERIFY(result);
+  QVERIFY(!QDir(subDir).exists());
 }
 
 QTEST_MAIN(tst_util)
