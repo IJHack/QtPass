@@ -219,7 +219,7 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
     return;
   }
   bool secret_selected = false;
-  foreach (const UserInfo &user, users) {
+  for (const UserInfo &user : users) {
     if (user.enabled) {
       gpgId.write((user.key_id + "\n").toUtf8());
       secret_selected |= user.have_secret;
