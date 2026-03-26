@@ -13,7 +13,9 @@
 class ImitatePass : public Pass, private simpleTransaction {
   Q_OBJECT
 
-public:
+  friend class tst_util;
+
+protected:
   auto verifyGpgIdFile(const QString &file) -> bool;
   auto removeDir(const QString &dirName) -> bool;
   auto checkSigningKeys(const QStringList &signingKeys) -> bool;
@@ -29,7 +31,7 @@ public:
   auto resolveMoveDestination(const QString &src, const QString &dest,
                               bool force) -> QString;
 
-protected:
+public:
   void executeMoveGit(const QString &src, const QString &destFile, bool force);
 
   void GitCommit(const QString &file, const QString &msg);
