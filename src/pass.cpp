@@ -364,8 +364,11 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
 auto Pass::getRecipientString(const QString &for_file, const QString &separator,
                               int *count) -> QStringList {
   Q_UNUSED(separator)
-  Q_UNUSED(count)
-  return Pass::getRecipientList(for_file);
+  QStringList recipients = Pass::getRecipientList(for_file);
+  if (count) {
+    *count = recipients.size();
+  }
+  return recipients;
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
