@@ -76,6 +76,9 @@ private Q_SLOTS:
   void imitatePassResolveMoveDestinationForce();
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
+  void imitatePassRemoveDir();
+  void imitatePassGetKeysFromFile();
+  void imitatePassVerifyGpgIdForDir();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -709,13 +712,13 @@ void tst_util::imitatePassResolveMoveDestinationForce() {
   QTemporaryDir tmpDir;
   QString srcPath = tmpDir.path() + "/test.gpg";
   QFile srcFile(srcPath);
-  srcFile.open(QFile::WriteOnly);
+  (void)srcFile.open(QFile::WriteOnly);
   srcFile.write("test");
   srcFile.close();
 
   QString destPath = tmpDir.path() + "/existing.gpg";
   QFile destFile(destPath);
-  destFile.open(QFile::WriteOnly);
+  (void)destFile.open(QFile::WriteOnly);
   destFile.write("old");
   destFile.close();
 
@@ -728,7 +731,7 @@ void tst_util::imitatePassResolveMoveDestinationDir() {
   QTemporaryDir tmpDir;
   QString srcPath = tmpDir.path() + "/test.gpg";
   QFile srcFile(srcPath);
-  srcFile.open(QFile::WriteOnly);
+  (void)srcFile.open(QFile::WriteOnly);
   srcFile.write("test");
   srcFile.close();
 
@@ -742,6 +745,50 @@ void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   QString result = pass.resolveMoveDestination("/non/existent/path.gpg",
                                                "/tmp/dest.gpg", false);
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
+}
+
+void tst_util::imitatePassRemoveDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString subDir = tmpDir.path() + "/testdir";
+  (void)QDir().mkdir(subDir);
+  QVERIFY(QDir(subDir).exists());
+  bool result = pass.removeDir(subDir);
+  QVERIFY(result);
+  QVERIFY(!QDir(subDir).exists());
+}
+
+void tst_util::imitatePassGetKeysFromFile() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString gpgIdFile = tmpDir.path() + "/.gpg-id";
+  QFile file(gpgIdFile);
+  (void)file.open(QFile::WriteOnly);
+  file.write("key1\nkey2\nkey3\n");
+  file.close();
+
+  QStringList keys = pass.getKeysFromFile(gpgIdFile);
+  QCOMPARE(keys.size(), 3);
+  QVERIFY(keys.contains("key1"));
+  QVERIFY(keys.contains("key2"));
+  QVERIFY(keys.contains("key3"));
+}
+
+void tst_util::imitatePassVerifyGpgIdForDir() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString subDir = tmpDir.path() + "/test";
+  (void)QDir().mkdir(subDir);
+  QString gpgIdFile = subDir + "/.gpg-id";
+  QFile file(gpgIdFile);
+  (void)file.open(QFile::WriteOnly);
+  file.write("key1\n");
+  file.close();
+
+  QStringList gpgIdFilesVerified;
+  QStringList gpgId;
+  pass.verifyGpgIdForDir(tmpDir.path(), gpgIdFilesVerified, gpgId);
+  QVERIFY(gpgIdFilesVerified.contains(gpgIdFile));
 }
 
 QTEST_MAIN(tst_util)
