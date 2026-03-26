@@ -531,6 +531,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
 #endif
         return QString();
       }
+      destFile = dest;
     } else if (destFileInfo.isDir()) {
       destFile = QDir(dest).filePath(srcFileBaseName);
     } else {
