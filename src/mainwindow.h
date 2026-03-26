@@ -42,7 +42,7 @@ class MainWindow : public QMainWindow {
 public:
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
-  ~MainWindow();
+  ~MainWindow() override;
 
   void restoreWindow();
   void generateKeyPair(const QString &, QDialog *);
@@ -59,17 +59,17 @@ public:
   void cleanKeygenDialog();
 
 protected:
-  void closeEvent(QCloseEvent *event);
-  void keyPressEvent(QKeyEvent *event);
-  void changeEvent(QEvent *event);
-  auto eventFilter(QObject *obj, QEvent *event) -> bool;
+  void closeEvent(QCloseEvent *event) override;
+  void keyPressEvent(QKeyEvent *event) override;
+  void changeEvent(QEvent *event) override;
+  auto eventFilter(QObject *obj, QEvent *event) -> bool override;
 
-signals:
+Q_SIGNALS:
   void passShowHandlerFinished(const QString &output);
   void passGitInitNeeded();
   void generateGPGKeyPair(const QString &batch);
 
-public slots:
+public Q_SLOTS:
   void deselect();
 
   void messageAvailable(const QString &message);
@@ -86,7 +86,7 @@ public slots:
   void startReencryptPath();
   void endReencryptPath();
 
-private slots:
+private Q_SLOTS:
   void addPassword();
   void addFolder();
   void onEdit();
@@ -142,6 +142,9 @@ private:
   void reencryptPath(QString dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
+
+  void applyTextBrowserSettings();
+  void applyWindowFlagsSettings();
 
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();

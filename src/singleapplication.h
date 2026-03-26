@@ -20,10 +20,10 @@ public:
   auto isRunning() -> bool;
   auto sendMessage(const QString &message) -> bool;
 
-public slots:
+public Q_SLOTS:
   void receiveMessage();
 
-signals:
+Q_SIGNALS:
   /**
    * @brief messageAvailable notification from commandline
    * @param message args sent to qtpass executable

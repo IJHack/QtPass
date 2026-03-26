@@ -28,7 +28,7 @@ class ConfigDialog : public QDialog {
 
 public:
   explicit ConfigDialog(MainWindow *parent);
-  ~ConfigDialog();
+  ~ConfigDialog() override;
 
   void useSelection(bool useSelection);
   void useAutoclear(bool useAutoclear);
@@ -47,9 +47,9 @@ public:
   void useTemplate(bool useTemplate);
 
 protected:
-  void closeEvent(QCloseEvent *event);
+  void closeEvent(QCloseEvent *event) override;
 
-private slots:
+private Q_SLOTS:
   void on_accepted();
   void on_autodetectButton_clicked();
   void on_radioButtonNative_clicked();

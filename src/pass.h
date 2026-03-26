@@ -26,13 +26,13 @@ class Pass : public QObject {
 protected:
   Executor exec;
 
-  typedef Enums::PROCESS PROCESS;
+  using PROCESS = Enums::PROCESS;
 
 public:
   Pass();
   void init();
 
-  virtual ~Pass() {}
+  ~Pass() override = default;
   virtual void GitInit() = 0;
   virtual void GitPull() = 0;
   virtual void GitPull_b() = 0;
@@ -59,7 +59,7 @@ public:
   // TODO(bezet): getRecipientString is useless, refactor
   static auto getRecipientString(const QString &for_file,
                                  const QString &separator = " ",
-                                 int *count = NULL) -> QStringList;
+                                 int *count = nullptr) -> QStringList;
 
 protected:
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
@@ -72,11 +72,11 @@ protected:
                               const QStringList &args, QString input,
                               bool readStdout = true, bool readStderr = true);
 
-protected slots:
+protected Q_SLOTS:
   virtual void finished(int id, int exitCode, const QString &out,
                         const QString &err);
 
-signals:
+Q_SIGNALS:
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
   void statusMsg(const QString &, int);

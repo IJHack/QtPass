@@ -26,7 +26,7 @@ public:
   explicit PasswordDialog(PasswordConfiguration passConfig,
                           QWidget *parent = nullptr);
   PasswordDialog(QString file, const bool &isNew, QWidget *parent = nullptr);
-  ~PasswordDialog();
+  ~PasswordDialog() override;
 
   /*! Sets content in the password field in the interface.
       \param password the password as a QString
@@ -51,10 +51,10 @@ public:
   void setPasswordCharTemplate(int t);
   void usePwgen(bool usePwgen);
 
-public slots:
+public Q_SLOTS:
   void setPass(const QString &output);
 
-private slots:
+private Q_SLOTS:
   void on_checkBoxShow_stateChanged(int arg1);
   void on_createPasswordButton_clicked();
   void on_accepted();

@@ -44,8 +44,9 @@
  */
 class QProgressIndicator : public QWidget {
   Q_OBJECT
+
 public:
-  explicit QProgressIndicator(QWidget *parent = 0);
+  explicit QProgressIndicator(QWidget *parent = nullptr);
 
   /*! Returns the delay between animation steps.
       \return The number of milliseconds between animation steps. By default,
@@ -77,7 +78,7 @@ public:
   [[nodiscard]] virtual auto sizeHint() const -> QSize;
   [[nodiscard]] auto heightForWidth(int w) const -> int;
 
-public slots:
+public Q_SLOTS:
   /*! Starts the spin animation.
       \sa stopAnimation isAnimated
    */

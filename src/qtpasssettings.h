@@ -29,7 +29,7 @@ private:
   QtPassSettings(const QString &organization, const QString &application)
       : QSettings(organization, application) {}
 
-  virtual ~QtPassSettings() {}
+  ~QtPassSettings() override = default;
 
   static bool initialized;
   static QtPassSettings *m_instance;
