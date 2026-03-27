@@ -541,8 +541,6 @@ void tst_util::generateRandomPassword() {
   QString result = pass.Generate_b(10, charset);
 
   QVERIFY(result.length() == 10);
-  QVERIFY2(result.length() == 10 && !result.isEmpty(),
-           "result should be non-empty with correct length");
 
   result = pass.Generate_b(100, "abcd");
   QVERIFY(result.length() == 100);
@@ -699,12 +697,16 @@ void tst_util::namedValueMultiple() {
 
 void tst_util::imitatePassResolveMoveDestination() {
   ImitatePass pass;
-  QString result =
-      pass.resolveMoveDestination("/tmp/test.gpg", "/tmp/dest.gpg", false);
-  QString expected = "/tmp/dest.gpg";
-  if (result.isEmpty()) {
-    QSKIP("Source file does not exist");
-  }
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  QVERIFY(srcFile.open(QFile::WriteOnly));
+  srcFile.write("test");
+  srcFile.close();
+
+  QString destPath = tmpDir.path() + "/dest.gpg";
+  QString result = pass.resolveMoveDestination(srcPath, destPath, false);
+  QString expected = destPath;
   QVERIFY2(result == expected, "Destination should have .gpg extension");
 }
 
