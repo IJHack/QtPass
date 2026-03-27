@@ -109,7 +109,7 @@ When responding to users on issues or PRs:
 1. **Read the full context** - Check previous comments and related issues
 2. **Be clear and concise** - Answer directly
 3. **Provide next steps** - Let user know what to expect
-4. **Use markdown** - Format for readability
+4. **Use Markdown** - Format for readability
 
 Example response templates:
 
@@ -202,7 +202,7 @@ git push -u myfork <branch-name>
 gh pr create --base upstream/main --head your-fork:branch
 ```
 
-Note: When working with forks, use `myfork` for pushing and `upstream` for syncing with main repo.
+Note: When working with forks, use `myfork` for pushing and `upstream` for syncing with main repository.
 
 ## Troubleshooting
 
