@@ -217,12 +217,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generuj</translation>
+        <translation>Wygeneruj</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Wygeneruj parę kluczy GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
@@ -572,7 +572,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawartość szablonu zostanie ustawiona na podstawie wersji GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -969,7 +969,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Generuj</translation>
+        <translation>Wygeneruj</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
@@ -1091,12 +1091,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się wygenerować pary kluczy GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Udało się wygenerować parę kluczy GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
