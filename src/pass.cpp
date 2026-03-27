@@ -113,8 +113,16 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
       // TODO(bezet): emit critical ?
     }
   } else {
-    if (charset.length() > 0) {
-      passwd = generateRandomPassword(charset, length);
+    // Validate charset - if CUSTOM is selected but chars are empty,
+    // fall back to ALLCHARS to prevent weak passwords (issue #780)
+    QString effectiveCharset = charset;
+    if (effectiveCharset.isEmpty()) {
+      effectiveCharset =
+          QtPassSettings::getPasswordConfiguration()
+              .Characters[PasswordConfiguration::ALLCHARS];
+    }
+    if (effectiveCharset.length() > 0) {
+      passwd = generateRandomPassword(effectiveCharset, length);
     } else {
       emit critical(
           tr("No characters chosen"),
