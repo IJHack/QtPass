@@ -481,14 +481,17 @@
 
         <p>On most *nix systems all you need is:</p>
 
-        <pre><code>qmake &amp;&amp; make &amp;&amp; make install</code></pre>
+        <pre><code>qmake6 &amp;&amp; make &amp;&amp; make install</code></pre>
 
-        <p>On Mac OS X:</p>
+        <p>On macOS:</p>
 
-        <pre><code>brew install qt5
-brew link --overwrite --force qt5
-xcode-select --install
-qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+        <pre><code>brew install qt
+qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+
+        <p>
+          <strong>Note:</strong> QtPass uses Qt6 by default. For Qt5, use
+          <code>qmake</code> instead of <code>qmake6</code>.
+        </p>
 
         <h3>
           <a
