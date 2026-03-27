@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
-#include <QSettings>
 #include <QFile>
+#include <QSettings>
 
 #include <utility>
 
@@ -77,21 +77,35 @@ private Q_SLOTS:
 
 private:
   QString m_settingsBackupPath;
+  bool m_isPortableMode = false;
 };
 
 void tst_settings::initTestCase() {
-  // Backup settings file to prevent polluting live config
-  QtPassSettings::getInstance()->sync();
-  QString settingsFile = QtPassSettings::getInstance()->fileName();
-  m_settingsBackupPath = settingsFile + ".bak";
-  QFile::remove(m_settingsBackupPath);
-  QFile::copy(settingsFile, m_settingsBackupPath);
+  // Check for portable mode (qtpass.ini in app directory)
+  // Only backup/restore settings file in portable mode
+  // On non-portable (registry on Windows), we can't safely backup
+  QString portable_ini =
+      QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
+  m_isPortableMode = QFile::exists(portable_ini);
+
+  if (m_isPortableMode) {
+    QtPassSettings::getInstance()->sync();
+    QString settingsFile = QtPassSettings::getInstance()->fileName();
+    m_settingsBackupPath = settingsFile + ".bak";
+    QFile::remove(m_settingsBackupPath);
+    QFile::copy(settingsFile, m_settingsBackupPath);
+  } else {
+    m_settingsBackupPath.clear();
+    // On non-portable mode, warn but continue (tests may modify registry)
+    qWarning()
+        << "Non-portable mode detected. Tests may modify registry settings.";
+  }
 }
 
 void tst_settings::cleanupTestCase() {
   // Restore original settings after all tests
   // This ensures make check doesn't change user's live config
-  if (!m_settingsBackupPath.isEmpty()) {
+  if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     QFile::remove(settingsFile);
     QFile::copy(m_settingsBackupPath, settingsFile);
