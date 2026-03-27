@@ -18,7 +18,11 @@ private Q_SLOTS:
   void passwordConfigurationCustomChars();
 };
 
-void tst_passwordconfig::initTestCase() {}
+void tst_passwordconfig::initTestCase() {
+  // Reset any leftover test settings to ensure clean state
+  QtPassSettings::setPasswordChars(QString());
+  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+}
 
 void tst_passwordconfig::passwordConfigurationDefaults() {
   PasswordConfiguration config;
