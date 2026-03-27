@@ -256,3 +256,51 @@ Check if:
 - Check branch protection rules
 - Ensure all CI checks pass
 - You may need admin rights to bypass some checks
+
+## GitHub AI-Powered Bug Detection
+
+GitHub provides AI-generated code quality suggestions under **Security → AI findings**.
+
+### Common AI Findings
+
+1. **Tautology assertions** - Tests that always pass
+2. **Ignored return values** - Test setup not verified
+3. **Spelling corrections** - Typos in comments/strings
+4. **Formatting consistency** - Backticks, spacing
+5. **Contractions** - "can't" vs "cannot"
+6. **Copyright years** - Use "YYYY" placeholder
+
+### Fixing AI Findings
+
+1. Create a branch for fixes:
+
+   ```bash
+   git checkout -b fix/ai-findings
+   ```
+
+2. Apply the suggested fixes
+
+3. Test locally if possible
+
+4. Push and create PR:
+
+   ```bash
+   git push -u origin fix/ai-findings
+   gh pr create --title "fix: resolve AI findings" --body "## Summary
+
+   Found by GitHub AI-powered bug detection.
+
+   - Fixed tautology assertions in tests
+   - Added return value verification
+   - Corrected spelling typos"
+   ```
+
+### Checking AI Findings
+
+```bash
+# View repo security settings (requires admin)
+# Go to: https://github.com/<owner>/<repo>/security/ai-findings
+
+# Or check via API (if enabled)
+gh api repos/<owner>/<repo>/code-scanning/alerts
+```
