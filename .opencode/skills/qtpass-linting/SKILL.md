@@ -222,13 +222,29 @@ npx prettier --write "**/*.md" "**/*.yml"
 # 2. Verify formatting passes (REQUIRED - catches linting issues)
 npx prettier --check "**/*.md"
 
-# 3. Then push - real CI will catch any remaining issues
+# 3. Update with latest main (if branch is behind)
+git fetch upstream
+git pull upstream main --rebase
+
+# 4. Then push - real CI will catch any remaining issues
 git push
 ```
 
 ### Note on act
 
 `act` may fail on new branches with error `fatal: ambiguous argument 'HEAD~0'`. This is a known tool issue, not code. Skip it and trust the prettier check.
+
+### Before Merging
+
+**Before merging a PR, always update it with latest main:**
+
+```bash
+git checkout <branch-name>
+git pull upstream main --rebase
+git push -f
+```
+
+This prevents "branch is out-of-date with base branch" errors when merging.
 
 ## Related Skills
 
