@@ -153,9 +153,16 @@ $(function() {
 <li>On some WindowManagers, Qt doesn't know what icon set to use. A trick:</li>
 </ul>
 <div class="fragment"><div class="line">export DESKTOP_SESSION=gnome</div>
-</div><!-- fragment --><ul>
-<li>Another possible reason is that the currently installed Qt version gives problems. Then you'll have to install the current version via your package manager or download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> and build from source.</li>
+</div><!-- fragment --><h2>Can not find either qmake or qmake6</h2>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> uses Qt6 by default. Use:</p>
+<ul>
+<li><code>qmake6</code> - for Qt6 (recommended, default)</li>
+<li><code>qmake</code> - for Qt5</li>
 </ul>
+<p>If you get an error like "QApplication" not found or Qt installation issues, make sure you're using the correct qmake version for your Qt installation.</p>
+<p>On some systems, you may need to specify the full path, e.g., <code>/usr/lib/qt6/bin/qmake6</code>.</p>
+<h2>Qt installation issues</h2>
+<p>Then you'll have to install the current version via your package manager or download it from <a href="https://www.qt.io/download/">https://www.qt.io/download/</a> and build from source.</p>
 <h2>I don't like the design, what gives?</h2>
 <ul>
 <li>It's all on GitHub, clone, change and send a pull request.</li>
