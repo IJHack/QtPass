@@ -167,6 +167,43 @@ git pull upstream main
 git branch -d <branch-name>
 ```
 
+## Debugging CI Failures
+
+When CI checks fail on GitHub:
+
+```bash
+# Get run details
+gh run view <RUN_ID>
+
+# Get full log
+gh run view <RUN_ID> --log
+
+# Filter for errors
+gh run view <RUN_ID> --log | grep -iE "error|fail"
+
+# Check specific job logs
+gh run view <RUN_ID> --job <JOB_NAME> --log
+```
+
+## Fork Workflow
+
+If you don't have push access:
+
+```bash
+# Fork repository on GitHub first
+
+# Add your fork as remote
+git remote add myfork git@github.com:<your-username>/QtPass.git
+
+# Push to your fork
+git push -u myfork <branch-name>
+
+# Create PR from your fork to upstream
+gh pr create --base upstream/main --head your-fork:branch
+```
+
+Note: When working with forks, use `myfork` for pushing and `upstream` for syncing with main repo.
+
 ## Troubleshooting
 
 ### "Branch is out-of-date"

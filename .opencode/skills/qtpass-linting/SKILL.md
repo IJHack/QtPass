@@ -232,7 +232,22 @@ git push
 
 ### Note on act
 
-`act` may fail on new branches with error `fatal: ambiguous argument 'HEAD~0'`. This is a known tool issue, not code. Skip it and trust the prettier check.
+**`act` may fail on new branches with error:** `fatal: ambiguous argument 'HEAD~0'`
+
+This is a known issue with the tool, not your code. When this happens:
+
+- Skip the act step
+- The `prettier --check` step is sufficient for most cases
+- Trust that formatting is correct
+- The real GitHub CI will pass
+
+**Recommended alternative - use prettier --check directly:**
+
+```bash
+# This catches most linting issues without needing act
+npx prettier --check "**/*.md"
+npx prettier --check "**/*.yml"
+```
 
 ### Before Merging
 
