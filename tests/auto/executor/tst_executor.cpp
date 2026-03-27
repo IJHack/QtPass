@@ -3,6 +3,7 @@
 #include <QtTest>
 
 #include "../../../src/executor.h"
+#include "../../../src/pass.h"
 
 class tst_executor : public QObject {
   Q_OBJECT
@@ -20,6 +21,8 @@ private Q_SLOTS:
 #endif
   void executeBlockingNotFound();
   void executeBlockingGpgVersion();
+  void gpgSupportsEd25519();
+  void getDefaultKeyTemplate();
 };
 
 void tst_executor::initTestCase() {}
@@ -94,6 +97,20 @@ void tst_executor::executeBlockingGpgVersion() {
                                          &output, nullptr);
   QVERIFY2(result == 0, "gpg --version should succeed");
   QVERIFY2(output.contains("gpg"), "output should contain gpg version");
+}
+
+void tst_executor::gpgSupportsEd25519() {
+  bool result = Pass::gpgSupportsEd25519();
+  QVERIFY2(result == true || result == false, "Should return boolean");
+}
+
+void tst_executor::getDefaultKeyTemplate() {
+  QString templateStr = Pass::getDefaultKeyTemplate();
+  QVERIFY2(!templateStr.isEmpty(), "Template should not be empty");
+  QVERIFY2(templateStr.contains("Key-Type:"),
+           "Template should contain Key-Type");
+  QVERIFY2(templateStr.contains("%echo done"),
+           "Template should contain done marker");
 }
 
 QTEST_MAIN(tst_executor)

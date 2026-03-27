@@ -56,6 +56,7 @@ private Q_SLOTS:
   void on_radioButtonPass_clicked();
   void on_toolButtonGit_clicked();
   void on_toolButtonGpg_clicked();
+  void on_pushButtonGenerateKey_clicked();
   void on_toolButtonPwgen_clicked();
   void on_toolButtonPass_clicked();
   void on_toolButtonStore_clicked();

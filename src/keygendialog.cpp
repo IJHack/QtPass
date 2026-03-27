@@ -2,7 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "keygendialog.h"
 #include "configdialog.h"
+#include "pass.h"
 #include "qprogressindicator.h"
+#include "qtpasssettings.h"
 #include "ui_keygendialog.h"
 #include "util.h"
 #include <QMessageBox>
@@ -20,6 +22,7 @@ KeygenDialog::KeygenDialog(ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog) {
   ui->setupUi(this);
   dialog = parent;
+  ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate());
 }
 
 /**

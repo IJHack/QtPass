@@ -129,12 +129,22 @@
         <translation>Включати спеціальні символи</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="922"/>
+        <location filename="../src/configdialog.ui" line="755"/>
+        <source>Generate</source>
+        <translation type="unfinished">Згенерувати</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="758"/>
+        <source>Generate GPG key pair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
         <translation>Ключ підписання</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="962"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Current path</source>
         <translation>Поточний шлях</translation>
     </message>
@@ -260,12 +270,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="790"/>
+        <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -274,27 +284,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="863"/>
+        <location filename="../src/configdialog.ui" line="879"/>
         <source>Profiles</source>
         <translation>Профілі</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="912"/>
+        <location filename="../src/configdialog.ui" line="928"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="917"/>
+        <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
         <translation>Шлях</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="932"/>
+        <location filename="../src/configdialog.ui" line="948"/>
         <source>Add</source>
         <translation>Додати</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="947"/>
+        <location filename="../src/configdialog.ui" line="963"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -303,7 +313,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="982"/>
+        <location filename="../src/configdialog.ui" line="998"/>
         <source>Template</source>
         <translation>Шаблон</translation>
     </message>
@@ -312,17 +322,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1012"/>
+        <location filename="../src/configdialog.ui" line="1028"/>
         <source>Use template</source>
         <translation>Використовувати шаблон</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1035"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Показувати всі рядки, що починаються зі слова, після якого йде двокрапка, як поля в полях пароля, а не лише перелічені</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1022"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all fields templated</source>
         <translation>Показати всі шаблони полів</translation>
     </message>
@@ -335,7 +345,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1065"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>версія &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
@@ -355,62 +365,62 @@ email</translation>
         <translation>Копіювати на вимогу в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="556"/>
+        <location filename="../src/configdialog.cpp" line="564"/>
         <source>No profile selected</source>
         <translation>Профіль не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="557"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>No profile selected to delete</source>
         <translation>Не вибрано жодного профілю для видалення</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="637"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>GnuPG not found</source>
         <translation>GnuPG не знайдений</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Будь ласка, встановіть GnuPG на вашу систему. &lt;br&gt;Встановіть &lt;strong&gt;gpg&lt;/strong&gt; використовуючи ваш улюблений пакетний менеджер&lt;br&gt;або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="683"/>
+        <location filename="../src/configdialog.cpp" line="691"/>
         <source>Create password-store?</source>
         <translation>Створити сховище паролів?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="684"/>
+        <location filename="../src/configdialog.cpp" line="692"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Хочете створити сховище паролів в % 1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="689"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="690"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Не вдалося створити сховище паролів за адресою: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="712"/>
+        <location filename="../src/configdialog.cpp" line="720"/>
         <source>Password store not initialised</source>
         <translation>Сховище паролів не ініціалізоване</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="713"/>
+        <location filename="../src/configdialog.cpp" line="721"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Тека %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="809"/>
+        <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="840"/>
+        <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
         <translation>Автовизначення</translation>
     </message>
@@ -430,12 +440,12 @@ email</translation>
         <translation>qrencode повинен бути встановлений</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="640"/>
+        <location filename="../src/configdialog.cpp" line="648"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Будь ласка, встановіть GnuPG у вашій системі. &lt;br&gt; Встановіть &lt;strong&gt; Ubuntu &lt;/strong&gt; з магазину Microsoft, щоб отримати його. &lt;br&gt; Якщо ви вже це зробили, переконайтеся, що запустили його один раз, і натисніть «Автовизначити» у наступному діалоговому вікні.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="653"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Будь ласка, встановіть GnuPG у вашій системі. &lt;br&gt; Встановіть &lt;strong&gt; Ubuntu &lt;/strong&gt; із магазину Microsoft &lt;br&gt; або &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
@@ -472,29 +482,29 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
         <location filename="../src/configdialog.ui" line="742"/>
-        <location filename="../src/configdialog.ui" line="769"/>
-        <location filename="../src/configdialog.ui" line="800"/>
-        <location filename="../src/configdialog.ui" line="969"/>
+        <location filename="../src/configdialog.ui" line="785"/>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/configdialog.ui" line="985"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="749"/>
+        <location filename="../src/configdialog.ui" line="765"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="762"/>
+        <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1003"/>
+        <location filename="../src/configdialog.ui" line="1019"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Шаблони додають додаткові поля в діалоговому вікні створення пароля та у вікні перегляду паролів.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1034"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
         <source>login
 URL
 e-mail</source>
@@ -621,6 +631,10 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
+        <source>Template contents will be set based on GPG version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>#           QtPass GPG key generator
 #
 #      first test version please comment
@@ -636,7 +650,7 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation>#           QtPass GPG key generator
+        <translation type="vanished">#           QtPass GPG key generator
 #
 #      first test version please comment
 #
@@ -653,32 +667,32 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="273"/>
+        <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Щоб отримати експертні варіанти, перегляньте &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;посібник GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="149"/>
+        <location filename="../src/keygendialog.cpp" line="152"/>
         <source>Invalid name</source>
         <translation>Недійсна назва</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="150"/>
+        <location filename="../src/keygendialog.cpp" line="153"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Назва має містити принаймні 5 символів.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="161"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>Invalid email</source>
         <translation>Неправильна електронна скринька</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="162"/>
+        <location filename="../src/keygendialog.cpp" line="165"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Введена вами електронна скринька не є дійсною електронною скринькою.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="177"/>
+        <location filename="../src/keygendialog.cpp" line="180"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ця операція може зайняти кілька хвилин.&lt;br /&gt;Нам потрібно сформувати багато випадкових байтів. Хорошою ідеєю буде зробити якусь іншу дію (набрати на клавіатурі, перемістити мишу, використати диски) під час первинного покоління; це дає генератору випадкових чисел більше шансів отримати достатню кількість ентропії.</translation>
     </message>
@@ -1256,17 +1270,27 @@ p, li { white-space: pre-wrap; }
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="399"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
+        <source>GPG key pair generation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="348"/>
+        <source>GPG key pair generated successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="408"/>
         <source>Clipboard cleared</source>
         <translation>Буфер обміну очищено</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="401"/>
+        <location filename="../src/qtpass.cpp" line="410"/>
         <source>Clipboard not cleared</source>
         <translation>Буфер обміну не очищено</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="420"/>
+        <location filename="../src/qtpass.cpp" line="429"/>
         <source>Copied to clipboard</source>
         <translation>Скопійовано в буфер обміну</translation>
     </message>

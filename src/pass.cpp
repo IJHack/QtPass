@@ -133,16 +133,65 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
 }
 
 /**
+ * @brief Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC)
+ * GPG 2.1+ supports ed25519 which is much faster for key generation
+ * @return true if ed25519 is supported
+ */
+bool Pass::gpgSupportsEd25519() {
+  QString out, err;
+  if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(),
+                                {"--version"}, &out, &err) != 0) {
+    return false;
+  }
+  QRegularExpression versionRegex(R"(gpg \(GnuPG\) (\d+)\.(\d+))");
+  QRegularExpressionMatch match = versionRegex.match(out);
+  if (!match.hasMatch()) {
+    return false;
+  }
+  int major = match.captured(1).toInt();
+  int minor = match.captured(2).toInt();
+  return major > 2 || (major == 2 && minor >= 1);
+}
+
+/**
+ * @brief Pass::getDefaultKeyTemplate return default key generation template
+ * Uses ed25519 if supported, otherwise falls back to RSA
+ * @return GPG batch template string
+ */
+QString Pass::getDefaultKeyTemplate() {
+  if (gpgSupportsEd25519()) {
+    return QStringLiteral("%echo Generating a default key\n"
+                          "Key-Type: EdDSA\n"
+                          "Key-Curve: Ed25519\n"
+                          "Subkey-Type: ECDH\n"
+                          "Subkey-Curve: Curve25519\n"
+                          "Name-Real: \n"
+                          "Name-Comment: QtPass\n"
+                          "Name-Email: \n"
+                          "Expire-Date: 0\n"
+                          "%no-protection\n"
+                          "%commit\n"
+                          "%echo done");
+  }
+  return QStringLiteral("%echo Generating a default key\n"
+                        "Key-Type: RSA\n"
+                        "Subkey-Type: RSA\n"
+                        "Name-Real: \n"
+                        "Name-Comment: QtPass\n"
+                        "Name-Email: \n"
+                        "Expire-Date: 0\n"
+                        "%no-protection\n"
+                        "%commit\n"
+                        "%echo done");
+}
+
+/**
  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
  * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
   executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
                  {"--gen-key", "--no-tty", "--batch"}, std::move(batch));
-  // TODO(annejan): check status / error messages - probably not here, it's just
-  // started
-  // here, see finished for details
-  // https://github.com/IJHack/QtPass/issues/202#issuecomment-251081688
 }
 
 /**
