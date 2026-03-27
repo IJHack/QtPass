@@ -372,6 +372,8 @@ void tst_util::regexPatternEdgeCases() {
   QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
   QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
   QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
+  // Note: protocolRegex is intended for network protocols only and should not
+  // match local file URLs such as file:///, so this is expected to be false.
   QVERIFY(!proto.match("file:///path/to/file").hasMatch());
 
   const QRegularExpression &nl = Util::newLinesRegex();
@@ -592,6 +594,13 @@ void tst_util::getDirBasic() {
   QFileSystemModel fsm;
   StoreModel sm;
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
+  // Expect getDir to return the current working directory when given an invalid
+  // QModelIndex.
+  QString expectedDir = QDir::currentPath();
+  if (!expectedDir.endsWith(QDir::separator())) {
+    expectedDir += QDir::separator();
+  }
+  QCOMPARE(result, expectedDir);
   QVERIFY(result.endsWith(QDir::separator()));
 }
 
@@ -745,8 +754,10 @@ void tst_util::imitatePassResolveMoveDestinationDir() {
 
 void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   ImitatePass pass;
-  QString result = pass.resolveMoveDestination("/non/existent/path.gpg",
-                                               "/tmp/dest.gpg", false);
+  QTemporaryDir tmpDir;
+  QString destPath = tmpDir.path() + "/dest.gpg";
+  QString result =
+      pass.resolveMoveDestination("/non/existent/path.gpg", destPath, false);
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
 }
 
@@ -823,8 +834,14 @@ void tst_util::getRecipientStringCount() {
   QStringList recipients = Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
+  QStringList expectedRecipients;
+  expectedRecipients << "ABCDEF12" << "34567890";
   QCOMPARE(recipients, recipientsNoCount);
-  QVERIFY(count == 2);
+  QVERIFY(count == expectedRecipients.size());
+  // Verify that the parsed recipients match the expected values.
+  QCOMPARE(recipients.size(), 2);
+  QCOMPARE(recipients.at(0), QStringLiteral("ABCDEF12"));
+  QCOMPARE(recipients.at(1), QStringLiteral("34567890"));
 }
 
 void tst_util::getGpgIdPathBasic() {
