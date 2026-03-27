@@ -30,6 +30,10 @@ void tst_passwordconfig::passwordConfigurationDefaults() {
 }
 
 void tst_passwordconfig::passwordConfigurationSetters() {
+  // Reset any previous test settings to ensure clean state
+  QtPassSettings::setPasswordChars(QString());
+  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+
   QtPassSettings::setPasswordLength(24);
   QtPassSettings::setPasswordCharsselection(
       PasswordConfiguration::ALPHANUMERIC);
@@ -38,6 +42,10 @@ void tst_passwordconfig::passwordConfigurationSetters() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY(config.length == 24);
   QVERIFY(config.selected == 3);
+
+  // Reset after test
+  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordChars(QString());
 }
 
 void tst_passwordconfig::passwordConfigurationCharacterSets() {
