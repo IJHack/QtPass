@@ -839,9 +839,10 @@ void tst_util::getGpgIdPathBasic() {
   file.close();
 
   QtPassSettings::setPassStore(passStore);
-  QString path = Pass::getGpgIdPath(passStore);
-  QVERIFY2(path == gpgIdFile,
-           qPrintable(QString("Expected %1, got %2").arg(gpgIdFile, path)));
+  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
+  QString expected = QDir::cleanPath(gpgIdFile);
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
 void tst_util::getGpgIdPathSubfolder() {
@@ -867,8 +868,9 @@ void tst_util::getGpgIdPathNotFound() {
   QString passStore = tempDir.path();
 
   QtPassSettings::setPassStore(passStore);
-  QString path = Pass::getGpgIdPath(passStore + "/nonexistent");
-  QString expected = passStore + "/.gpg-id";
+  QString path =
+      QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));
+  QString expected = QDir::cleanPath(passStore + "/.gpg-id");
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
