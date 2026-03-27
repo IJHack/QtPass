@@ -100,6 +100,7 @@ EOF
 ```
 
 **Key points:**
+
 - Use `$(cat <<'EOF' ... EOF)` to capture the content
 - Quote the `EOF` delimiter (`'EOF'`) to prevent variable expansion
 - Use `\n` for newlines in inline strings (less readable)
