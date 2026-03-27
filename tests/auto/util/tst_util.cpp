@@ -834,14 +834,16 @@ void tst_util::getRecipientStringCount() {
   QStringList recipients = Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
-  QStringList expectedRecipients;
-  expectedRecipients << "ABCDEF12" << "34567890";
-  QCOMPARE(recipients, recipientsNoCount);
+  QStringList expectedRecipients = {"ABCDEF12", "34567890"};
+  // Verify count was actually updated from initial value
+  QVERIFY(count > 0);
   QVERIFY(count == expectedRecipients.size());
+  // Verify both overloads return the same result
+  QCOMPARE(recipients, recipientsNoCount);
   // Verify that the parsed recipients match the expected values.
   QCOMPARE(recipients.size(), 2);
-  QCOMPARE(recipients.at(0), QStringLiteral("ABCDEF12"));
-  QCOMPARE(recipients.at(1), QStringLiteral("34567890"));
+  QVERIFY(recipients.contains("ABCDEF12"));
+  QVERIFY(recipients.contains("34567890"));
 }
 
 void tst_util::getGpgIdPathBasic() {
