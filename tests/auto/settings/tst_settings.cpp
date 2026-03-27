@@ -12,6 +12,7 @@ class tst_settings : public QObject {
 
 private Q_SLOTS:
   void initTestCase();
+  void cleanupTestCase();
   void getPasswordConfigurationDefault();
   void setAndGetPasswordConfiguration();
   void getProfilesEmpty();
@@ -75,6 +76,14 @@ private Q_SLOTS:
 void tst_settings::initTestCase() {
   // Reset any leftover test settings to ensure clean state
   // This prevents tests from polluting the live QtPass config
+  QtPassSettings::setPasswordChars(QString());
+  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordLength(16);
+}
+
+void tst_settings::cleanupTestCase() {
+  // Restore sane defaults after tests
+  // This ensures live QtPass config is safe after make check
   QtPassSettings::setPasswordChars(QString());
   QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
   QtPassSettings::setPasswordLength(16);
