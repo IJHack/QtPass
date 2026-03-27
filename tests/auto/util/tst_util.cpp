@@ -130,6 +130,12 @@ void tst_util::normalizeFolderPath() {
            QDir::toNativeSeparators("test/"));
   QCOMPARE(Util::normalizeFolderPath("test/"),
            QDir::toNativeSeparators("test/"));
+  // Paths with backslashes (Windows-style) should also be normalized
+  if (QDir::separator() == '\\') {
+    // On Windows, test that backslashes are normalized to trailing separator
+    QString result = Util::normalizeFolderPath("test\\subdir");
+    QVERIFY(result.endsWith("\\"));
+  }
 }
 
 void tst_util::fileContent() {
@@ -177,6 +183,7 @@ void tst_util::namedValuesTakeValue() {
   val = nv.takeValue("key1");
   QCOMPARE(val, QString("value1"));
   val = nv.takeValue("key3");
+  QVERIFY(val == "value3");
   QVERIFY(nv.isEmpty());
 }
 
@@ -214,23 +221,18 @@ void tst_util::regexPatterns() {
   QRegularExpressionMatch m1 =
       proto.match("https://example.com/ is the address");
   QVERIFY(m1.hasMatch());
-  if (m1.hasMatch()) {
-    QString captured = m1.captured(1);
-    QVERIFY2(!captured.contains(" "), "URL should not include space");
-    QVERIFY2(!captured.contains("<"), "URL should not include <");
-    QVERIFY2(captured == "https://example.com/", "URL should stop at space");
-  }
+  QString captured = m1.captured(1);
+  QVERIFY2(!captured.contains(" "), "URL should not include space");
+  QVERIFY2(!captured.contains("<"), "URL should not include <");
+  QVERIFY2(captured == "https://example.com/", "URL should stop at space");
 
   QRegularExpressionMatch m3 =
       proto.match("Link: https://test.org/path?q=1#frag");
   QVERIFY(m3.hasMatch());
-  if (m3.hasMatch()) {
-    QString captured = m3.captured(1);
-    QVERIFY2(captured.contains("?"), "URL should include query params");
-    QVERIFY2(captured.contains("#"), "URL should include fragment");
-    QVERIFY2(!captured.contains(" now"),
-             "URL should not include trailing text");
-  }
+  captured = m3.captured(1);
+  QVERIFY2(captured.contains("?"), "URL should include query params");
+  QVERIFY2(captured.contains("#"), "URL should include fragment");
+  QVERIFY2(!captured.contains(" now"), "URL should not include trailing text");
 
   QRegularExpression nl = Util::newLinesRegex();
   QVERIFY(nl.match("\n").hasMatch());
@@ -326,10 +328,8 @@ void tst_util::fileContentEdgeCases() {
   fc = FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.length() > 0);
-  if (nv.length() > 0) {
-    QCOMPARE(nv.at(0).name, QString("key"));
-    QVERIFY(nv.at(0).value.contains("spaces"));
-  }
+  QCOMPARE(nv.at(0).name, QString("key"));
+  QVERIFY(nv.at(0).value.contains("spaces"));
 
   fc = FileContent::parse("pass\n://something\n", {}, false);
   QVERIFY(fc.getRemainingData().contains("://"));
@@ -366,7 +366,6 @@ void tst_util::regexPatternEdgeCases() {
   const QRegularExpression &gpg = Util::endsWithGpg();
   QVERIFY(gpg.match(".gpg").hasMatch());
   QVERIFY(gpg.match("a.gpg").hasMatch());
-  QVERIFY(gpg.match(".gpg").hasMatch());
   QVERIFY(!gpg.match("test.gpgx").hasMatch());
 
   const QRegularExpression &proto = Util::protocolRegex();
