@@ -507,72 +507,72 @@ e-mail</source>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="119"/>
-        <location filename="../src/imitatepass.cpp" line="273"/>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>Check .gpgid file signature!</source>
         <translation>சரிபார்க்கவும் .gpgid கோப்பு கையொப்பம்!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
-        <location filename="../src/imitatepass.cpp" line="274"/>
-        <location filename="../src/imitatepass.cpp" line="392"/>
+        <location filename="../src/imitatepass.cpp" line="247"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 க்கான கையொப்பம் தவறானது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="460"/>
         <source>Can not edit</source>
         <translation>திருத்த முடியாது</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>பயன்படுத்த குறியாக்க விசையைப் படிக்க முடியவில்லை, .gpg-id கோப்பு காணவில்லை அல்லது செல்லாது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>No signing key!</source>
         <translation>கையொப்பமிடும் விசை இல்லை!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="224"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>ரகசிய கையொப்பமிடும் விசைகள் எதுவும் கிடைக்கவில்லை.
  நீங்கள் பயனர் பட்டியலை மாற்ற முடியாது!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="245"/>
+        <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot update</source>
         <translation>புதுப்பிக்க முடியாது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>எழுதத் தவறிவிட்டது .சிபிசி-ஐடி எழுதுவதற்கு.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="259"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Check selected users!</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட பயனர்களை சரிபார்க்கவும்!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="260"/>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட விசைகள் எதுவும் ரகசிய விசை கிடைக்கவில்லை.
  புதிதாக சேர்க்கப்பட்ட எந்த கடவுச்சொற்களையும் நீங்கள் மறைகுறியாக்க முடியாது!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="487"/>
         <source>Re-encrypting from folder %1</source>
         <translation>கோப்புறை %1 இலிருந்து மீண்டும் மறைகுறியாக்குதல்</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="483"/>
+        <location filename="../src/imitatepass.cpp" line="490"/>
+        <location filename="../src/imitatepass.cpp" line="512"/>
         <source>Updating password-store</source>
         <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
     </message>
@@ -729,14 +729,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="975"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Edit</source>
         <translation>தொகு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1002"/>
         <source>Delete</source>
         <translation>நீக்கு</translation>
     </message>
@@ -824,7 +824,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="975"/>
         <source>Users</source>
         <translation>பயனர்கள்</translation>
     </message>
@@ -908,8 +908,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="306"/>
-        <location filename="../src/mainwindow.cpp" line="319"/>
+        <location filename="../src/mainwindow.cpp" line="312"/>
+        <location filename="../src/mainwindow.cpp" line="325"/>
         <source>Updating password-store</source>
         <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
     </message>
@@ -926,18 +926,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="417"/>
+        <location filename="../src/mainwindow.cpp" line="423"/>
         <source>Content hidden</source>
         <translation>உள்ளடக்கம் மறைக்கப்பட்டுள்ளது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="421"/>
-        <location filename="../src/mainwindow.cpp" line="1196"/>
+        <location filename="../src/mainwindow.cpp" line="427"/>
+        <location filename="../src/mainwindow.cpp" line="1202"/>
         <source>Password</source>
         <translation>கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="448"/>
+        <location filename="../src/mainwindow.cpp" line="454"/>
         <source>OTP Code</source>
         <translation>OTP குறியீடு</translation>
     </message>
@@ -950,7 +950,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow.cpp" line="476"/>
         <source>Password and Content hidden</source>
         <translation>கடவுச்சொல் மற்றும் உள்ளடக்கம் மறைக்கப்பட்டுள்ளன</translation>
     </message>
@@ -979,40 +979,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="539"/>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Looking for: %1</source>
         <translation>தேடுவது: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="643"/>
-        <location filename="../src/mainwindow.cpp" line="1034"/>
+        <location filename="../src/mainwindow.cpp" line="649"/>
+        <location filename="../src/mainwindow.cpp" line="1040"/>
         <source>New file</source>
         <translation>புதிய கோப்பு</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="644"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>புதிய கடவுச்சொல் கோப்பு:
  ( %1 இல் வைக்கப்படும்)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="681"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content?</source>
         <translation> முழு உள்ளடக்கமும்?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> முழு உள்ளடக்கமும்? &lt;br&gt; &lt;strong&gt; கவனம்: கொடுக்கப்பட்ட கோப்புறையில் எதிர்பாராத கோப்புகள் உள்ளன, தொடர்வதற்கு முன் அவற்றைச் சரிபார்க்கவும். &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="701"/>
+        <location filename="../src/mainwindow.cpp" line="707"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>%1 %2 ஐ நீக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete password?</source>
         <translation>கடவுச்சொல்லை நீக்கவா?</translation>
     </message>
@@ -1021,7 +1021,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete folder?</source>
         <translation>கோப்புறையை நீக்கவா?</translation>
     </message>
@@ -1046,31 +1046,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="838"/>
+        <location filename="../src/mainwindow.cpp" line="844"/>
         <source>Profile changed to %1</source>
         <translation>சுயவிவரம் %1 ஆக மாற்றப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="966"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Open folder with file manager</source>
         <translation>கோப்பு மேலாளருடன் கோப்புறையைத் திறக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="973"/>
         <source>Add folder</source>
         <translation>கோப்புறையைச் சேர்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="968"/>
+        <location filename="../src/mainwindow.cpp" line="974"/>
         <source>Add password</source>
         <translation>கடவுச்சொல்லைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>புதிய கோப்புறை:
@@ -1081,59 +1081,59 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="450"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="721"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="988"/>
+        <location filename="../src/mainwindow.cpp" line="994"/>
         <source>Rename folder</source>
         <translation>கோப்புறை மறுபெயரிடுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="998"/>
         <source>Rename password</source>
         <translation>கடவுச்சொல்லை மறுபெயரிடுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1046"/>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1061"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1047"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Failed to create folder: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename file</source>
         <translation>கோப்பை மறுபெயரிடுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
         <source>Rename Folder To: </source>
         <translation>கோப்புறையை மறுபெயரிடுங்கள்: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename File To: </source>
         <translation>கோப்பை மறுபெயரிடுங்கள்: </translation>
     </message>
@@ -1152,12 +1152,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="120"/>
+        <location filename="../src/pass.cpp" line="127"/>
         <source>No characters chosen</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட எழுத்துக்கள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="121"/>
+        <location filename="../src/pass.cpp" line="128"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>கடவுச்சொல்லை உருவாக்க முடியாது, உள்ளமைவில் அமைக்கப்பட்டவற்றிலிருந்து தேர்வு செய்ய எழுத்துக்கள் எதுவும் இல்லை!</translation>
     </message>

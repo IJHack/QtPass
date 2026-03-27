@@ -479,72 +479,72 @@ dirección de correo</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="119"/>
-        <location filename="../src/imitatepass.cpp" line="273"/>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>Check .gpgid file signature!</source>
         <translation>¡Comprueba la firma del archivo .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
-        <location filename="../src/imitatepass.cpp" line="274"/>
-        <location filename="../src/imitatepass.cpp" line="392"/>
+        <location filename="../src/imitatepass.cpp" line="247"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Signature for %1 is invalid.</source>
         <translation>La firma para %1 no es válida.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="460"/>
         <source>Can not edit</source>
         <translation>No se puede editar</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>No se pudo leer la clave de cifrado por utilizar; falta el archivo .gpg-id o no es válido.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>No signing key!</source>
         <translation>¡Sin firma!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="224"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Ninguna de las claves secretas de la firma están disponible.
 ¡No podrás modificar la lista de usuarios!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="245"/>
+        <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot update</source>
         <translation>No se puede actualizar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>No se pudo abrir .gpg-id para escribir.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="259"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Check selected users!</source>
         <translation>¡Comprueba los usuarios seleccionados!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="260"/>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ninguna de las claves seleccionadas tiene una clave secreta disponible.
 ¡No podrás descifrar ninguna contraseña recién añadida!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="483"/>
+        <location filename="../src/imitatepass.cpp" line="490"/>
+        <location filename="../src/imitatepass.cpp" line="512"/>
         <source>Updating password-store</source>
         <translation>Actualizando password-store</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="487"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Volviendo a cifrar a partir de la carpeta %1</translation>
     </message>
@@ -701,14 +701,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="975"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1002"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
@@ -729,7 +729,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="975"/>
         <source>Users</source>
         <translation>Usuarios</translation>
     </message>
@@ -748,8 +748,8 @@ Expire-Date: 0
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="306"/>
-        <location filename="../src/mainwindow.cpp" line="319"/>
+        <location filename="../src/mainwindow.cpp" line="312"/>
+        <location filename="../src/mainwindow.cpp" line="325"/>
         <source>Updating password-store</source>
         <translation>Actualizando almacén de contraseñas</translation>
     </message>
@@ -758,7 +758,7 @@ Expire-Date: 0
         <translation type="vanished">Portapapeles vacío</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="701"/>
+        <location filename="../src/mainwindow.cpp" line="707"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>¿Confirma que quiere eliminar %1%2?</translation>
     </message>
@@ -790,13 +790,13 @@ Expire-Date: 0
         <translation type="vanished">Contraseña oculta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="417"/>
+        <location filename="../src/mainwindow.cpp" line="423"/>
         <source>Content hidden</source>
         <translation>Contenido oculto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="421"/>
-        <location filename="../src/mainwindow.cpp" line="1196"/>
+        <location filename="../src/mainwindow.cpp" line="427"/>
+        <location filename="../src/mainwindow.cpp" line="1202"/>
         <source>Password</source>
         <translation>Contraseña</translation>
     </message>
@@ -805,7 +805,7 @@ Expire-Date: 0
         <translation type="vanished">Portapapeles no vaciado</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow.cpp" line="476"/>
         <source>Password and Content hidden</source>
         <translation>Contraseña y contenido oculto</translation>
     </message>
@@ -840,14 +840,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="973"/>
         <source>Add folder</source>
         <translation>Añadir carpeta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="968"/>
+        <location filename="../src/mainwindow.cpp" line="974"/>
         <source>Add password</source>
         <translation>Añadir contraseña</translation>
     </message>
@@ -857,7 +857,7 @@ Expire-Date: 0
         <translation>Le damos la bienvenida a QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="539"/>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Looking for: %1</source>
         <translation>Buscando %1</translation>
     </message>
@@ -866,13 +866,13 @@ Expire-Date: 0
         <translation type="vanished">No se puede editar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="643"/>
-        <location filename="../src/mainwindow.cpp" line="1034"/>
+        <location filename="../src/mainwindow.cpp" line="649"/>
+        <location filename="../src/mainwindow.cpp" line="1040"/>
         <source>New file</source>
         <translation>Archivo nuevo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete password?</source>
         <translation>¿Quiere eliminar la contraseña?</translation>
     </message>
@@ -881,7 +881,7 @@ Expire-Date: 0
         <translation type="vanished">Está seguro que quiere borrar %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete folder?</source>
         <translation>¿Quiere eliminar la carpeta?</translation>
     </message>
@@ -906,7 +906,7 @@ Expire-Date: 0
         <translation type="vanished">Generar par de claves GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="838"/>
+        <location filename="../src/mainwindow.cpp" line="844"/>
         <source>Profile changed to %1</source>
         <translation>Perfil cambiado a %1</translation>
     </message>
@@ -964,93 +964,93 @@ Expire-Date: 0
         <translation>Gestionar quiénes pueden leer las contraseñas en la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="448"/>
+        <location filename="../src/mainwindow.cpp" line="454"/>
         <source>OTP Code</source>
         <translation>Código de OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="450"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="644"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nuevo archivo de contraseñas:
 (Se colocará en %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="681"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content?</source>
         <translation> y todo el contenido?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> y todo el contenido? &lt;br&gt;&lt;strong&gt;Atención: hay archivos inesperados en la carpeta indicada. Revíselos antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="721"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="966"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Open folder with file manager</source>
         <translation>Abrir carpeta con gestor de archivos</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="988"/>
+        <location filename="../src/mainwindow.cpp" line="994"/>
         <source>Rename folder</source>
         <translation>Cambiar nombre de carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="998"/>
         <source>Rename password</source>
         <translation>Cambiar nombre de contraseña</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Carpeta nueva: 
 (Se ubicará en %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1046"/>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1061"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1047"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Failed to create folder: %1</source>
         <translation>Error al crear la carpeta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename file</source>
         <translation>Cambiar nombre de archivo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
         <source>Rename Folder To: </source>
         <translation>Cambiar nombre de carpeta a: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename File To: </source>
         <translation>Cambiar nombre de archivo a: </translation>
     </message>
@@ -1069,12 +1069,12 @@ Expire-Date: 0
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="120"/>
+        <location filename="../src/pass.cpp" line="127"/>
         <source>No characters chosen</source>
         <translation>No se eligió ningún carácter</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="121"/>
+        <location filename="../src/pass.cpp" line="128"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>No se puede generar la contraseña, ¡no hay caracteres para elegir establecidos en la configuración!</translation>
     </message>

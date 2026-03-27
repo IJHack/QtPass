@@ -507,72 +507,72 @@ URL
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="119"/>
-        <location filename="../src/imitatepass.cpp" line="273"/>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>Check .gpgid file signature!</source>
         <translation>Перевірте файлу підпису .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
-        <location filename="../src/imitatepass.cpp" line="274"/>
-        <location filename="../src/imitatepass.cpp" line="392"/>
+        <location filename="../src/imitatepass.cpp" line="247"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Підпис для %1 недійсний.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="460"/>
         <source>Can not edit</source>
         <translation>Не можна редагувати</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не вдалося прочитати ключ шифрування для використання, файл .gpg-id відсутній або недійсний.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="223"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>No signing key!</source>
         <translation>Немає ключа підпису!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="224"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Жоден із секретних ключів підпису недоступний.
 Ви не зможете змінити список користувачів!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="245"/>
+        <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot update</source>
         <translation>Не вдається оновити</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="246"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Не вдалося відкрити .gpg-id для запису.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="259"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Check selected users!</source>
         <translation>Перевірте вибраних користувачів!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="260"/>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Жодна з вибраних клавіш не має секретного ключа.
 Ви не зможете розшифрувати щойно додані паролі!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="487"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Повторне шифрування з теки %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="483"/>
+        <location filename="../src/imitatepass.cpp" line="490"/>
+        <location filename="../src/imitatepass.cpp" line="512"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
@@ -697,14 +697,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="975"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1002"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -792,7 +792,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="975"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
@@ -876,8 +876,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="306"/>
-        <location filename="../src/mainwindow.cpp" line="319"/>
+        <location filename="../src/mainwindow.cpp" line="312"/>
+        <location filename="../src/mainwindow.cpp" line="325"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
@@ -894,18 +894,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="417"/>
+        <location filename="../src/mainwindow.cpp" line="423"/>
         <source>Content hidden</source>
         <translation>Вміст приховано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="421"/>
-        <location filename="../src/mainwindow.cpp" line="1196"/>
+        <location filename="../src/mainwindow.cpp" line="427"/>
+        <location filename="../src/mainwindow.cpp" line="1202"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="448"/>
+        <location filename="../src/mainwindow.cpp" line="454"/>
         <source>OTP Code</source>
         <translation>Код OTP</translation>
     </message>
@@ -918,7 +918,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow.cpp" line="476"/>
         <source>Password and Content hidden</source>
         <translation>Пароль та вміст приховано</translation>
     </message>
@@ -947,40 +947,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="539"/>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Looking for: %1</source>
         <translation>Шукаю: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="643"/>
-        <location filename="../src/mainwindow.cpp" line="1034"/>
+        <location filename="../src/mainwindow.cpp" line="649"/>
+        <location filename="../src/mainwindow.cpp" line="1040"/>
         <source>New file</source>
         <translation>Новий файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="644"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новий файл для пароля: 
 (Буде розміщено в %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="681"/>
+        <location filename="../src/mainwindow.cpp" line="687"/>
         <source> and the whole content?</source>
         <translation> та весь вміст?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="697"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> і весь вміст? &lt;br&gt;&lt;strong&gt;Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="701"/>
+        <location filename="../src/mainwindow.cpp" line="707"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Ви впевнені, що хочете видалити %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete password?</source>
         <translation>Видалити пароль?</translation>
     </message>
@@ -989,7 +989,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Delete folder?</source>
         <translation>Видалити папку?</translation>
     </message>
@@ -1014,31 +1014,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="838"/>
+        <location filename="../src/mainwindow.cpp" line="844"/>
         <source>Profile changed to %1</source>
         <translation>Профіль змінено на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="966"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Open folder with file manager</source>
         <translation>Відкрити папку за допомогою файлового менеджера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="973"/>
         <source>Add folder</source>
         <translation>Додати папку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="968"/>
+        <location filename="../src/mainwindow.cpp" line="974"/>
         <source>Add password</source>
         <translation>Додати пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
@@ -1049,59 +1049,59 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="450"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
         <translation>Код OTP скопійовано в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
         <translation>У цьому паролі не знайдено коду OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="721"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
         <translation>Пароль для генерації OTP не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="988"/>
+        <location filename="../src/mainwindow.cpp" line="994"/>
         <source>Rename folder</source>
         <translation>Перейменувати папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="992"/>
+        <location filename="../src/mainwindow.cpp" line="998"/>
         <source>Rename password</source>
         <translation>Перейменувати пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1046"/>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1061"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1047"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Failed to create folder: %1</source>
         <translation>Не вдалося створити папку: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Не вдалося створити файл .gpg-id у: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename file</source>
         <translation>Перейменувати файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
         <source>Rename Folder To: </source>
         <translation>Перейменувати папку на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename File To: </source>
         <translation>Перейменувати файл на: </translation>
     </message>
@@ -1120,12 +1120,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="120"/>
+        <location filename="../src/pass.cpp" line="127"/>
         <source>No characters chosen</source>
         <translation>Не вибрано жодного символа</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="121"/>
+        <location filename="../src/pass.cpp" line="128"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не вдається згенерувати пароль, у конфігурації немає символів для вибору!</translation>
     </message>
