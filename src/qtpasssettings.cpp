@@ -39,7 +39,10 @@ auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
   PasswordConfiguration config;
 
   config.length =
-      getInstance()->value(SettingsConstants::passwordLength, 0).toInt();
+      getInstance()->value(SettingsConstants::passwordLength, 16).toInt();
+  if (config.length <= 0) {
+    config.length = 16;
+  }
   config.selected = static_cast<PasswordConfiguration::characterSet>(
       getInstance()
           ->value(SettingsConstants::passwordCharsselection, 0)

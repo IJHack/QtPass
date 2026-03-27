@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
+#include <QFile>
+#include <QSettings>
+
 #include <utility>
 
 #include "../../../src/passwordconfiguration.h"
@@ -12,6 +15,7 @@ class tst_settings : public QObject {
 
 private Q_SLOTS:
   void initTestCase();
+  void cleanupTestCase();
   void getPasswordConfigurationDefault();
   void setAndGetPasswordConfiguration();
   void getProfilesEmpty();
@@ -70,9 +74,44 @@ private Q_SLOTS:
   void setAndGetPasswordChars();
   void setAndGetMultipleProfiles();
   void setAndGetProfileDefault();
+
+private:
+  QString m_settingsBackupPath;
+  bool m_isPortableMode = false;
 };
 
-void tst_settings::initTestCase() {}
+void tst_settings::initTestCase() {
+  // Check for portable mode (qtpass.ini in app directory)
+  // Only backup/restore settings file in portable mode
+  // On non-portable (registry on Windows), we can't safely backup
+  QString portable_ini =
+      QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
+  m_isPortableMode = QFile::exists(portable_ini);
+
+  if (m_isPortableMode) {
+    QtPassSettings::getInstance()->sync();
+    QString settingsFile = QtPassSettings::getInstance()->fileName();
+    m_settingsBackupPath = settingsFile + ".bak";
+    QFile::remove(m_settingsBackupPath);
+    QFile::copy(settingsFile, m_settingsBackupPath);
+  } else {
+    m_settingsBackupPath.clear();
+    // On non-portable mode, warn but continue (tests may modify registry)
+    qWarning()
+        << "Non-portable mode detected. Tests may modify registry settings.";
+  }
+}
+
+void tst_settings::cleanupTestCase() {
+  // Restore original settings after all tests
+  // This ensures make check doesn't change user's live config
+  if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
+    QString settingsFile = QtPassSettings::getInstance()->fileName();
+    QFile::remove(settingsFile);
+    QFile::copy(m_settingsBackupPath, settingsFile);
+    QFile::remove(m_settingsBackupPath);
+  }
+}
 
 void tst_settings::getPasswordConfigurationDefault() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
@@ -461,6 +500,8 @@ void tst_settings::setAndGetPasswordChars() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM].contains("abc"),
            "PasswordChars should contain 'abc'");
+  // Reset to avoid affecting subsequent tests and live QtPass
+  QtPassSettings::setPasswordChars(QString());
 }
 
 void tst_settings::setAndGetMultipleProfiles() {
