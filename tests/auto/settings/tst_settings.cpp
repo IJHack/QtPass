@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
+#include <QSettings>
+#include <QFile>
+
 #include <utility>
 
 #include "../../../src/passwordconfiguration.h"
@@ -71,22 +74,29 @@ private Q_SLOTS:
   void setAndGetPasswordChars();
   void setAndGetMultipleProfiles();
   void setAndGetProfileDefault();
+
+private:
+  QString m_settingsBackupPath;
 };
 
 void tst_settings::initTestCase() {
-  // Reset any leftover test settings to ensure clean state
-  // This prevents tests from polluting the live QtPass config
-  QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
-  QtPassSettings::setPasswordLength(16);
+  // Backup settings file to prevent polluting live config
+  QtPassSettings::getInstance()->sync();
+  QString settingsFile = QtPassSettings::getInstance()->fileName();
+  m_settingsBackupPath = settingsFile + ".bak";
+  QFile::remove(m_settingsBackupPath);
+  QFile::copy(settingsFile, m_settingsBackupPath);
 }
 
 void tst_settings::cleanupTestCase() {
-  // Restore sane defaults after tests
-  // This ensures live QtPass config is safe after make check
-  QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
-  QtPassSettings::setPasswordLength(16);
+  // Restore original settings after all tests
+  // This ensures make check doesn't change user's live config
+  if (!m_settingsBackupPath.isEmpty()) {
+    QString settingsFile = QtPassSettings::getInstance()->fileName();
+    QFile::remove(settingsFile);
+    QFile::copy(m_settingsBackupPath, settingsFile);
+    QFile::remove(m_settingsBackupPath);
+  }
 }
 
 void tst_settings::getPasswordConfigurationDefault() {
