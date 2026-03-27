@@ -112,6 +112,58 @@ QRegularExpression urlRegex("(\\S+)://(\\S+)");
 
 For monospace fonts in tables/lists, use `setStyleHint(QFont::Monospace)` to avoid platform-specific defaults.
 
+### Tautology Assertions in Tests
+
+Avoid assertions that always evaluate to true:
+
+```cpp
+// Bad - always true
+QVERIFY(profiles.isEmpty() || !profiles.isEmpty());
+QVERIFY(!store.isEmpty() || store.isEmpty());
+
+// Good - meaningful check
+QVERIFY(profiles.isEmpty());
+QVERIFY2(store.isEmpty() || store.startsWith("/"), "Pass store should be empty or a plausible path");
+```
+
+### Verify Test Setup Return Values
+
+Always verify that test setup operations succeed:
+
+```cpp
+// Bad - ignores return value
+(void)QDir(srcDir.path()).mkdir("source");
+(void)f1.open(QFile::WriteOnly);
+
+// Good - verify success
+QVERIFY(QDir(srcDir.path()).mkdir("source"));
+QVERIFY(f1.open(QFile::WriteOnly));
+```
+
+### Contractions in Comments
+
+Use "cannot" instead of "can't" for formal consistency:
+
+```cpp
+// Bad
+// On Windows, we can't safely backup
+
+// Good
+// On Windows, we cannot safely backup
+```
+
+### Copyright Year in Templates
+
+Use `YYYY` as placeholder instead of current year:
+
+```cpp
+// Bad
+// SPDX-FileCopyrightText: 2026 Your Name
+
+// Good
+// SPDX-FileCopyrightText: YYYY Your Name
+```
+
 ## Key Source Files
 
 | File                 | Purpose                                 |
