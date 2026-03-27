@@ -129,12 +129,22 @@
         <translation>특수문자 포함</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="922"/>
+        <location filename="../src/configdialog.ui" line="755"/>
+        <source>Generate</source>
+        <translation type="unfinished">생성</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="758"/>
+        <source>Generate GPG key pair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="962"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Current path</source>
         <translation>현재 경로</translation>
     </message>
@@ -260,12 +270,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="790"/>
+        <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -274,27 +284,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="863"/>
+        <location filename="../src/configdialog.ui" line="879"/>
         <source>Profiles</source>
         <translation>프로필</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="912"/>
+        <location filename="../src/configdialog.ui" line="928"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="917"/>
+        <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
         <translation>경로</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="932"/>
+        <location filename="../src/configdialog.ui" line="948"/>
         <source>Add</source>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="947"/>
+        <location filename="../src/configdialog.ui" line="963"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
@@ -303,7 +313,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="982"/>
+        <location filename="../src/configdialog.ui" line="998"/>
         <source>Template</source>
         <translation>템플릿</translation>
     </message>
@@ -312,17 +322,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1012"/>
+        <location filename="../src/configdialog.ui" line="1028"/>
         <source>Use template</source>
         <translation>템플릿 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1035"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>비밀번호 필드에 있는 콜론이 따라오는 모든 단어들이 있는 행을 표시</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1022"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all fields templated</source>
         <translation type="unfinished">템플릿이 적용된 모든 필드 표시</translation>
     </message>
@@ -335,7 +345,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1065"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 버전 </translation>
     </message>
@@ -355,62 +365,62 @@ email</translation>
         <translation type="unfinished">필요할 때 클립보드로 복사</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="556"/>
+        <location filename="../src/configdialog.cpp" line="564"/>
         <source>No profile selected</source>
         <translation>프로필이 선택 되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="557"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>No profile selected to delete</source>
         <translation>삭제할 프로필을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="637"/>
+        <location filename="../src/configdialog.cpp" line="645"/>
         <source>GnuPG not found</source>
         <translation>GnuPG를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation type="unfinished">시스템에 GnuPG를 설치하세요. &lt;br&gt;패키지 관리자를 사용하여 &lt;strong&gt;gpg&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;하세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="683"/>
+        <location filename="../src/configdialog.cpp" line="691"/>
         <source>Create password-store?</source>
         <translation type="unfinished">비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="684"/>
+        <location filename="../src/configdialog.cpp" line="692"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation type="unfinished">%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="689"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="690"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="712"/>
+        <location filename="../src/configdialog.cpp" line="720"/>
         <source>Password store not initialised</source>
         <translation>비밀번호 저장소가 초기화되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="713"/>
+        <location filename="../src/configdialog.cpp" line="721"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="809"/>
+        <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="840"/>
+        <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
         <translation type="unfinished">자동감지</translation>
     </message>
@@ -430,12 +440,12 @@ email</translation>
         <translation>qrencode 설치가 필요합니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="640"/>
+        <location filename="../src/configdialog.cpp" line="648"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;GnuPG를 얻기 위해 마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하세요&lt;br&gt;이미 설치했다면 한번 시작했는지 확인하고&lt;br&gt;다음 대화상자에서 &quot;자동 감지&quot;를 클릭하세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="653"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;받으세요.</translation>
     </message>
@@ -472,29 +482,29 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
         <location filename="../src/configdialog.ui" line="742"/>
-        <location filename="../src/configdialog.ui" line="769"/>
-        <location filename="../src/configdialog.ui" line="800"/>
-        <location filename="../src/configdialog.ui" line="969"/>
+        <location filename="../src/configdialog.ui" line="785"/>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/configdialog.ui" line="985"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="749"/>
+        <location filename="../src/configdialog.ui" line="765"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="762"/>
+        <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1003"/>
+        <location filename="../src/configdialog.ui" line="1019"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>템플릿은 비밀번호 생성 대화 상자와 비밀번호 보기에 확장 필드를 추가합니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1034"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
         <source>login
 URL
 e-mail</source>
@@ -620,21 +630,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
-        <source>#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: RSA
-Subkey-Type: RSA
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</source>
+        <source>Template contents will be set based on GPG version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -670,32 +666,32 @@ Expire-Date: 0
 %echo done</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.ui" line="273"/>
+        <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>전문가 옵션은 &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG 매뉴얼&lt;/a&gt;을 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="149"/>
+        <location filename="../src/keygendialog.cpp" line="152"/>
         <source>Invalid name</source>
         <translation type="unfinished">잘못된 이름</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="150"/>
+        <location filename="../src/keygendialog.cpp" line="153"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>이름은 적어도 5자 이상이어야 합니다.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="161"/>
+        <location filename="../src/keygendialog.cpp" line="164"/>
         <source>Invalid email</source>
         <translation type="unfinished">올바르지 않은 이메일</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="162"/>
+        <location filename="../src/keygendialog.cpp" line="165"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation type="unfinished">입력한 이메일 주소가 올바른 이메일 주소가 아닙니다.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="177"/>
+        <location filename="../src/keygendialog.cpp" line="180"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>이 작업은 몇 분 정도 걸릴 수 있습니다.&lt;br /&gt;무작위 바이트를 많이 생성해야 합니다. 난수를 생성하는 동안 다른 작업(키보드 입력, 마우스 이동, 디스크 활용)을 수행하는 것이 좋습니다. 이렇게 하면 난수 생성기가 충분한 엔트로피를 얻을 수 있게 됩니다.</translation>
     </message>
@@ -1273,17 +1269,27 @@ p, li { white-space: pre-wrap; }
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="399"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
+        <source>GPG key pair generation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="348"/>
+        <source>GPG key pair generated successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="408"/>
         <source>Clipboard cleared</source>
         <translation type="unfinished">클립보드 지워짐</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="401"/>
+        <location filename="../src/qtpass.cpp" line="410"/>
         <source>Clipboard not cleared</source>
         <translation type="unfinished">클립보드가 지워지지 않음</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="420"/>
+        <location filename="../src/qtpass.cpp" line="429"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">클립보드에 복사됨</translation>
     </message>
