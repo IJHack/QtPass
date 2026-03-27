@@ -364,6 +364,14 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
 }
 
 /**
+ * @brief ConfigDialog::on_pushButtonGenerateKey_clicked open keygen dialog.
+ */
+void ConfigDialog::on_pushButtonGenerateKey_clicked() {
+  KeygenDialog d(this);
+  d.exec();
+}
+
+/**
  * @brief ConfigDialog::on_toolButtonPass_clicked get pass application.
  */
 void ConfigDialog::on_toolButtonPass_clicked() {
