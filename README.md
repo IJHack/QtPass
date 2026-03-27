@@ -92,6 +92,10 @@ On most Unix systems all you need is:
 qmake && make && make install
 ```
 
+### Windows
+
+See [Windows.md](Windows.md) for Windows-specific installation and build instructions.
+
 ## Using profiles
 
 Profiles allow to group passwords. Each profile might use a different Git repository and/or different gpg key.

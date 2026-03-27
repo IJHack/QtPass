@@ -241,6 +241,21 @@ void tst_executor::unixOnlyTest() {
 }
 ```
 
+### Path Comparison on Windows
+
+Windows uses backslashes (`\`) while Unix uses forward slashes (`/`). When comparing paths, use `QDir::cleanPath()` to normalize:
+
+```cpp
+void tst_util::testPathComparison() {
+    QString path = Pass::getGpgIdPath(passStore);
+    QString expected = passStore + "/.gpg-id";
+    // Use cleanPath to normalize for cross-platform compatibility
+    QVERIFY2(QDir::cleanPath(path) == QDir::cleanPath(expected),
+             qPrintable(QString("Expected %1, got %2")
+                        .arg(QDir::cleanPath(expected), QDir::cleanPath(path))));
+}
+```
+
 ### Gitleaks-Safe Test Values
 
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
