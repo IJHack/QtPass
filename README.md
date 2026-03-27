@@ -89,7 +89,7 @@ On macOS, `pinentry-mac` from Homebrew works best (gpgtools also works).
 On most Unix systems all you need is:
 
 ```sh
-qmake && make && make install
+qmake6 && make && make install
 ```
 
 ### Windows
