@@ -101,16 +101,35 @@ void tst_executor::executeBlockingGpgVersion() {
 
 void tst_executor::gpgSupportsEd25519() {
   bool result = Pass::gpgSupportsEd25519();
-  QVERIFY2(result == true || result == false, "Should return boolean");
+  QString output;
+  int gpgVersionExitCode = Executor::executeBlocking(
+      "gpg", {"--version"}, QString(), &output, nullptr);
+  if (gpgVersionExitCode != 0) {
+    QVERIFY2(
+        result == false,
+        "gpgSupportsEd25519() should return false when GPG is not available");
+  } else {
+    QVERIFY2(result == true || result == false,
+             "gpgSupportsEd25519() must return a boolean value");
+  }
 }
 
 void tst_executor::getDefaultKeyTemplate() {
+  bool ed25519Supported = Pass::gpgSupportsEd25519();
   QString templateStr = Pass::getDefaultKeyTemplate();
   QVERIFY2(!templateStr.isEmpty(), "Template should not be empty");
   QVERIFY2(templateStr.contains("Key-Type:"),
            "Template should contain Key-Type");
   QVERIFY2(templateStr.contains("%echo done"),
            "Template should contain done marker");
+  if (ed25519Supported) {
+    QVERIFY2(templateStr.contains("ed25519") || templateStr.contains("EdDSA"),
+             "Template should be the Ed25519 variant when gpgSupportsEd25519() "
+             "is true");
+  } else {
+    QVERIFY2(templateStr.contains("RSA"), "Template should be the RSA fallback "
+                                          "when gpgSupportsEd25519() is false");
+  }
 }
 
 QTEST_MAIN(tst_executor)

@@ -592,8 +592,9 @@ void tst_util::findPasswordStore() {
 void tst_util::checkConfig() { (void)Util::checkConfig(); }
 
 void tst_util::getDirBasic() {
-  QString result =
-      Util::getDir(QModelIndex(), false, QFileSystemModel(), StoreModel());
+  QFileSystemModel fsm;
+  StoreModel sm;
+  QString result = Util::getDir(QModelIndex(), false, fsm, sm);
   QVERIFY(result.endsWith(QDir::separator()));
 }
 
@@ -713,13 +714,13 @@ void tst_util::imitatePassResolveMoveDestinationForce() {
   QTemporaryDir tmpDir;
   QString srcPath = tmpDir.path() + "/test.gpg";
   QFile srcFile(srcPath);
-  (void)srcFile.open(QFile::WriteOnly);
+  QVERIFY(srcFile.open(QFile::WriteOnly));
   srcFile.write("test");
   srcFile.close();
 
   QString destPath = tmpDir.path() + "/existing.gpg";
   QFile destFile(destPath);
-  (void)destFile.open(QFile::WriteOnly);
+  QVERIFY(destFile.open(QFile::WriteOnly));
   destFile.write("old");
   destFile.close();
 
@@ -732,7 +733,7 @@ void tst_util::imitatePassResolveMoveDestinationDir() {
   QTemporaryDir tmpDir;
   QString srcPath = tmpDir.path() + "/test.gpg";
   QFile srcFile(srcPath);
-  (void)srcFile.open(QFile::WriteOnly);
+  QVERIFY(srcFile.open(QFile::WriteOnly));
   srcFile.write("test");
   srcFile.close();
 
@@ -752,7 +753,7 @@ void tst_util::imitatePassRemoveDir() {
   ImitatePass pass;
   QTemporaryDir tmpDir;
   QString subDir = tmpDir.path() + "/testdir";
-  (void)QDir().mkdir(subDir);
+  QVERIFY(QDir().mkpath(subDir));
   QVERIFY(QDir(subDir).exists());
   bool result = pass.removeDir(subDir);
   QVERIFY(result);
