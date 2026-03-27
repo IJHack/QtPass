@@ -77,6 +77,34 @@ gh issue comment <ISSUE_NUMBER> --body "Comment text"
 gh pr comment <PR_NUMBER> --body "## Summary\n- Details"
 ```
 
+### Using HEREDOC for Multi-line Comments
+
+For complex comments with Markdown formatting, HEREDOC avoids shell interpretation issues:
+
+```bash
+# Comment on issue/PR using HEREDOC
+gh pr comment <PR_NUMBER> --body "$(cat <<'EOF'
+## Changes in this PR
+
+### .gitignore additions
+- Added test binaries to prevent accidentally committing test executables
+- Added *.bak for test settings backup files
+
+### New skill: qtpass-github
+A comprehensive skill for GitHub interaction workflows:
+- Reading issues and PRs
+- Responding to users
+- CI debugging
+EOF
+)"
+```
+
+**Key points:**
+- Use `$(cat <<'EOF' ... EOF)` to capture the content
+- Quote the `EOF` delimiter (`'EOF'`) to prevent variable expansion
+- Use `\n` for newlines in inline strings (less readable)
+- Use HEREDOC for complex/long comments (more readable)
+
 ## Reading Issues and PRs
 
 ```bash
