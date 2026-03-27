@@ -589,10 +589,7 @@ void tst_util::findPasswordStore() {
   QVERIFY(result.endsWith(QDir::separator()));
 }
 
-void tst_util::checkConfig() {
-  bool result = Util::checkConfig();
-  QVERIFY(result == true || result == false);
-}
+void tst_util::checkConfig() { (void)Util::checkConfig(); }
 
 void tst_util::getDirBasic() {
   QString result =
@@ -824,7 +821,7 @@ void tst_util::getRecipientStringCount() {
   QStringList recipients = Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
-  QVERIFY(recipientsNoCount.isEmpty() || recipientsNoCount.size() == 2);
+  QCOMPARE(recipients, recipientsNoCount);
   QVERIFY(count == 2);
 }
 
