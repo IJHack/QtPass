@@ -136,7 +136,7 @@ void tst_settings::setAndGetPasswordConfiguration() {
 void tst_settings::getProfilesEmpty() {
   QHash<QString, QHash<QString, QString>> profiles =
       QtPassSettings::getProfiles();
-  QVERIFY(profiles.isEmpty() || !profiles.isEmpty());
+  QVERIFY(profiles.isEmpty());
 }
 
 void tst_settings::setAndGetProfiles() {
@@ -170,7 +170,8 @@ void tst_settings::setAndGetGeometry() {
 
 void tst_settings::getPassStore() {
   QString store = QtPassSettings::getPassStore();
-  QVERIFY(!store.isEmpty() || store.isEmpty());
+  QVERIFY2(store.isEmpty() || store.startsWith("/") || store.contains("/"),
+           "Pass store should be empty or a plausible path");
 }
 
 void tst_settings::setAndGetPassStore() {
@@ -188,7 +189,7 @@ void tst_settings::setAndGetUsePass() {
 
 void tst_settings::setAndGetClipBoardType() {
   QtPassSettings::setClipBoardType(1);
-  QVERIFY(true);
+  QVERIFY(QtPassSettings::getClipBoardType() == 1);
 }
 
 void tst_settings::setAndGetAutoclearSeconds() {
@@ -522,7 +523,7 @@ void tst_settings::setAndGetMultipleProfiles() {
 
 void tst_settings::setAndGetProfileDefault() {
   QString defaultProfile = QtPassSettings::getProfile();
-  QVERIFY(defaultProfile.isEmpty() || !defaultProfile.isEmpty());
+  QVERIFY(defaultProfile == QtPassSettings::getProfile());
 }
 
 QTEST_MAIN(tst_settings)
