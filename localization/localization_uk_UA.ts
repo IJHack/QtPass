@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Згенерувати</translation>
+        <translation>Згенерувати</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Згенерувати пару ключів GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -632,7 +632,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вміст шаблону буде встановлено на основі версії GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1272,12 +1272,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося створити пару ключів GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Пара ключів GPG успішно згенерована</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
