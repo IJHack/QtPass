@@ -20,6 +20,7 @@ metadata:
 | CONTRIBUTING.md    | Developer contribution guidelines           |
 | CODE_OF_CONDUCT.md | Community code of conduct                   |
 | Doxyfile           | API documentation configuration             |
+| Windows.md         | Windows-specific installation and build     |
 
 ## README.md Sections
 

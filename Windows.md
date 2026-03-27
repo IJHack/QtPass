@@ -21,6 +21,12 @@ choco install qtpass -y
 
 Download the latest `.exe` installer from [GitHub Releases](https://github.com/IJHack/QtPass/releases)
 
+## Install GPG
+
+QtPass requires GPG for encryption. Install [Gpg4win](https://www.gpg4win.org/).
+
+Key generation can take a long time (especially RSA 4096-bit keys) - this is normal.
+
 ## Building from Source
 
 ### Step 1: Install dependencies
@@ -97,7 +103,7 @@ nmake check TESTARGS="--platform offscreen"
 
 | Issue                                               | Solution                                                                                                              |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| "GnuPG not found"                                   | Install GPG from [gnupg.org](https://www.gnupg.org/download/), restart QtPass, or set path manually in Config         |
+| "GnuPG not found"                                   | Install [Gpg4win](https://www.gpg4win.org/), restart QtPass, or set path manually in Config                           |
 | "Signature does not exist"                          | Ensure your GPG key is in the `.gpg-id` file via **Config → Users**                                                   |
 | Git not working                                     | Use [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) for HTTPS authentication |
 | App doesn't start                                   | Install `vcredist140` (Visual C++ Redistributable)                                                                    |
