@@ -283,6 +283,14 @@ void QtPass::processError(QProcess::ProcessError error) {
 }
 
 void QtPass::processErrorExit(int exitCode, const QString &p_error) {
+  if (nullptr != m_mainWindow->getKeygenDialog()) {
+    m_mainWindow->cleanKeygenDialog();
+    if (exitCode != 0) {
+      m_mainWindow->showStatusMessage(tr("GPG key pair generation failed"),
+                                      10000);
+    }
+  }
+
   if (!p_error.isEmpty()) {
     QString output;
     QString error = p_error.toHtmlEscaped();
@@ -337,7 +345,8 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
 #endif
 
     m_mainWindow->cleanKeygenDialog();
-    // TODO(annejan): some sanity checking ?
+    m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),
+                                    10000);
   }
 
   processFinished(p_output, p_errout);

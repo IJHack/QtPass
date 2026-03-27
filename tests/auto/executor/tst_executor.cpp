@@ -19,6 +19,7 @@ private Q_SLOTS:
   void executeBlockingEchoMultiple();
 #endif
   void executeBlockingNotFound();
+  void executeBlockingGpgVersion();
 };
 
 void tst_executor::initTestCase() {}
@@ -85,6 +86,14 @@ void tst_executor::executeBlockingNotFound() {
   int result = Executor::executeBlocking(
       "nonexistent-command-12345.exe", QStringList(), QString(), &output, &err);
   QVERIFY2(result != 0, "non-existent command should fail");
+}
+
+void tst_executor::executeBlockingGpgVersion() {
+  QString output;
+  int result = Executor::executeBlocking("gpg", {"--version"}, QString(),
+                                         &output, nullptr);
+  QVERIFY2(result == 0, "gpg --version should succeed");
+  QVERIFY2(output.contains("gpg"), "output should contain gpg version");
 }
 
 QTEST_MAIN(tst_executor)
