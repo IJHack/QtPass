@@ -31,6 +31,8 @@ protected:
 public:
   Pass();
   void init();
+  static bool gpgSupportsEd25519();
+  static QString getDefaultKeyTemplate();
 
   ~Pass() override = default;
   virtual void GitInit() = 0;
