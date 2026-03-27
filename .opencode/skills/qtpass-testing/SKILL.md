@@ -101,7 +101,7 @@ UI tests:
 ## Test File Template
 
 ```cpp
-// SPDX-FileCopyrightText: 2026 Your Name
+// SPDX-FileCopyrightText: YYYY Your Name
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
@@ -159,7 +159,7 @@ win32 {
 }
 ```
 
-## Test .pro Pattern (qtpass.plist)
+## Test plist File Template (qtpass.plist)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -298,7 +298,7 @@ void tst_settings::cleanupTestCase() {
 **Key points:**
 
 - Only backup in portable mode (file-based settings)
-- On registry mode (Windows non-portable), warn but can't backup
+- On registry mode (Windows non-portable), warn but cannot back up
 - Always restore after tests to prevent pollution
 
 ### Gitleaks-Safe Test Values
