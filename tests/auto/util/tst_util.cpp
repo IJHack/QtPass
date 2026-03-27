@@ -240,15 +240,15 @@ void tst_util::regexPatterns() {
 
 void tst_util::copyDirBasic() {
   QTemporaryDir srcDir;
-  (void)QDir(srcDir.path()).mkdir("source");
+  QVERIFY(QDir(srcDir.path()).mkdir("source"));
 
   QFile f1(srcDir.path() + "/file1.txt");
-  (void)f1.open(QFile::WriteOnly);
+  QVERIFY(f1.open(QFile::WriteOnly));
   f1.write("content1");
   f1.close();
 
   QFile f2(srcDir.path() + "/source/file2.txt");
-  (void)f2.open(QFile::WriteOnly);
+  QVERIFY(f2.open(QFile::WriteOnly));
   f2.write("content2");
   f2.close();
 
@@ -267,27 +267,27 @@ void tst_util::copyDirBasic() {
 
 void tst_util::copyDirWithSubdirs() {
   QTemporaryDir srcDir;
-  (void)QDir(srcDir.path()).mkpath("a/b/c");
-  (void)QDir(srcDir.path()).mkpath("x/y");
+  QVERIFY(QDir(srcDir.path()).mkpath("a/b/c"));
+  QVERIFY(QDir(srcDir.path()).mkpath("x/y"));
 
   QFile f1(srcDir.path() + "/root.txt");
-  (void)f1.open(QFile::WriteOnly);
+  QVERIFY(f1.open(QFile::WriteOnly));
   f1.close();
 
   QFile f2(srcDir.path() + "/a/file_a.txt");
-  (void)f2.open(QFile::WriteOnly);
+  QVERIFY(f2.open(QFile::WriteOnly));
   f2.close();
 
   QFile f3(srcDir.path() + "/a/b/file_ab.txt");
-  (void)f3.open(QFile::WriteOnly);
+  QVERIFY(f3.open(QFile::WriteOnly));
   f3.close();
 
   QFile f4(srcDir.path() + "/a/b/c/file_abc.txt");
-  (void)f4.open(QFile::WriteOnly);
+  QVERIFY(f4.open(QFile::WriteOnly));
   f4.close();
 
   QFile f5(srcDir.path() + "/x/file_x.txt");
-  (void)f5.open(QFile::WriteOnly);
+  QVERIFY(f5.open(QFile::WriteOnly));
   f5.close();
 
   QTemporaryDir destDir;
@@ -608,13 +608,13 @@ void tst_util::getDirWithIndex() {
 void tst_util::copyDirOverwritesExisting() {
   QTemporaryDir srcDir;
   QFile f1(srcDir.path() + "/file.txt");
-  (void)f1.open(QFile::WriteOnly);
+  QVERIFY(f1.open(QFile::WriteOnly));
   f1.write("content");
   f1.close();
 
   QTemporaryDir destDir;
   QFile df1(destDir.path() + "/file.txt");
-  (void)df1.open(QFile::WriteOnly);
+  QVERIFY(df1.open(QFile::WriteOnly));
   df1.write("old");
   df1.close();
 
