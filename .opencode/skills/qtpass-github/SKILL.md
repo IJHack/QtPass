@@ -77,6 +77,66 @@ gh issue comment <ISSUE_NUMBER> --body "Comment text"
 gh pr comment <PR_NUMBER> --body "## Summary\n- Details"
 ```
 
+## Reading Issues and PRs
+
+```bash
+# View issue details
+gh issue view <ISSUE_NUMBER>
+
+# View issue with comments
+gh issue view <ISSUE_NUMBER> --comments
+
+# View issue body only
+gh issue view <ISSUE_NUMBER> --json body
+
+# View PR details
+gh pr view <PR_NUMBER>
+
+# View PR with comments
+gh pr view <PR_NUMBER> --json comments
+
+# Get all PR comments via API
+gh api repos/<owner>/<repo>/pulls/<PR_NUMBER>/comments
+
+# Get all issue comments via API
+gh api repos/<owner>/<repo>/issues/<ISSUE_NUMBER>/comments
+```
+
+## Answering User Questions
+
+When responding to users on issues or PRs:
+
+1. **Read the full context** - Check previous comments and related issues
+2. **Be clear and concise** - Answer directly
+3. **Provide next steps** - Let user know what to expect
+4. **Use markdown** - Format for readability
+
+Example response templates:
+
+```markdown
+## Investigation
+
+I've looked into this issue. The root cause is...
+
+## Fix
+
+I've implemented a fix that...
+
+## Next Steps
+
+- Review the PR when ready
+- Test on your machine
+- Let me know if you have questions
+```
+
+### Good Practices
+
+- Always acknowledge user's report/feedback
+- Explain technical details in simple terms
+- Provide actionable next steps
+- Follow up on unanswered questions
+- Thank contributors for their input
+
 ## Common Patterns
 
 ### Pre-PR Checklist
