@@ -304,15 +304,15 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keywordtype">void</span> tst_util::copyDirBasic() {</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  QTemporaryDir srcDir;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  (void)QDir(srcDir.path()).mkdir(<span class="stringliteral">&quot;source&quot;</span>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  QVERIFY(QDir(srcDir.path()).mkdir(<span class="stringliteral">&quot;source&quot;</span>));</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  QFile f1(srcDir.path() + <span class="stringliteral">&quot;/file1.txt&quot;</span>);</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  (void)f1.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  QVERIFY(f1.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  f1.write(<span class="stringliteral">&quot;content1&quot;</span>);</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  f1.close();</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  QFile f2(srcDir.path() + <span class="stringliteral">&quot;/source/file2.txt&quot;</span>);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  (void)f2.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  QVERIFY(f2.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  f2.write(<span class="stringliteral">&quot;content2&quot;</span>);</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  f2.close();</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
@@ -331,27 +331,27 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keywordtype">void</span> tst_util::copyDirWithSubdirs() {</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  QTemporaryDir srcDir;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  (void)QDir(srcDir.path()).mkpath(<span class="stringliteral">&quot;a/b/c&quot;</span>);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  (void)QDir(srcDir.path()).mkpath(<span class="stringliteral">&quot;x/y&quot;</span>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  QVERIFY(QDir(srcDir.path()).mkpath(<span class="stringliteral">&quot;a/b/c&quot;</span>));</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  QVERIFY(QDir(srcDir.path()).mkpath(<span class="stringliteral">&quot;x/y&quot;</span>));</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  QFile f1(srcDir.path() + <span class="stringliteral">&quot;/root.txt&quot;</span>);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  (void)f1.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  QVERIFY(f1.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  f1.close();</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  QFile f2(srcDir.path() + <span class="stringliteral">&quot;/a/file_a.txt&quot;</span>);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  (void)f2.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  QVERIFY(f2.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  f2.close();</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  QFile f3(srcDir.path() + <span class="stringliteral">&quot;/a/b/file_ab.txt&quot;</span>);</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  (void)f3.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  QVERIFY(f3.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  f3.close();</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  QFile f4(srcDir.path() + <span class="stringliteral">&quot;/a/b/c/file_abc.txt&quot;</span>);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  (void)f4.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  QVERIFY(f4.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  f4.close();</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  QFile f5(srcDir.path() + <span class="stringliteral">&quot;/x/file_x.txt&quot;</span>);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  (void)f5.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  QVERIFY(f5.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  f5.close();</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  QTemporaryDir destDir;</div>
@@ -672,13 +672,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="keywordtype">void</span> tst_util::copyDirOverwritesExisting() {</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  QTemporaryDir srcDir;</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>  QFile f1(srcDir.path() + <span class="stringliteral">&quot;/file.txt&quot;</span>);</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>  (void)f1.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>  QVERIFY(f1.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  f1.write(<span class="stringliteral">&quot;content&quot;</span>);</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  f1.close();</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  QTemporaryDir destDir;</div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  QFile df1(destDir.path() + <span class="stringliteral">&quot;/file.txt&quot;</span>);</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  (void)df1.open(QFile::WriteOnly);</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  QVERIFY(df1.open(QFile::WriteOnly));</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  df1.write(<span class="stringliteral">&quot;old&quot;</span>);</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  df1.close();</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
