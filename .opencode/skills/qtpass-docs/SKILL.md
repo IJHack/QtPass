@@ -54,31 +54,7 @@ metadata:
 
 ## Localization
 
-### Translation Files
-
-Location: `localization/localization_<lang>.ts` (e.g., `localization/localization_en_US.ts`)
-
-### Update Translations
-
-```bash
-# Run translation tools to scan for new strings
-lrelease localization/*.ts
-# Or use project-specific i18n command
-```
-
-### Key Conventions
-
-- Use appropriate translation editor
-- Don't translate placeholders like `%1`, `%2`
-- Preserve `\n` line breaks
-- Keep technical terms consistent
-
-### Adding New Language
-
-1. Copy base translation file
-2. Rename with language code
-3. Update in build config: `TRANSLATIONS += ...`
-4. Run translation update tool
+See [qtpass-localization](../qtpass-localization/SKILL.md) skill for comprehensive guide.
 
 ## Docs Build
 
