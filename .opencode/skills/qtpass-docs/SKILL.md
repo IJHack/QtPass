@@ -94,11 +94,17 @@ open html/index.html
 
 ## Linting
 
-See `qtpass-linting` skill for full CI workflow. Pattern:
+**THIS IS THE PATTERN - always run before pushing:**
 
 ```bash
-# Run linter locally BEFORE pushing
-act push -W .github/workflows/linter.yml -j build
+# Check formatting (this is the pattern)
+npx prettier --check "**/*.md"
+
+# Format all markdown files
+npx prettier --write "**/*.md"
+
+# Format specific file
+npx prettier --write README.md
 ```
 
 ### Markdown (prettier)
