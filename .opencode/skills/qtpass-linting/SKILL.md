@@ -213,21 +213,22 @@ act push -W .github/workflows/ccpp.yml --secret-map "CODECOV_TOKEN=fake"
 
 ## Run Before PR Checklist
 
-Always follow this pattern before creating/updating PRs:
+**THIS IS THE PATTERN - always run before pushing:**
 
 ```bash
-# 1. Format files with prettier
+# 1. Format files with prettier (always do this)
 npx prettier --write "**/*.md" "**/*.yml"
 
-# 2. Run linter locally (THE PATTERN)
-act push -W .github/workflows/linter.yml -j build
+# 2. Verify formatting passes (REQUIRED - catches linting issues)
+npx prettier --check "**/*.md"
 
-# 3. Verify it passes
-echo $?  # Should be 0
-
-# 4. Only then push
+# 3. Then push - real CI will catch any remaining issues
 git push
 ```
+
+### Note on act
+
+`act` may fail on new branches with error `fatal: ambiguous argument 'HEAD~0'`. This is a known tool issue, not code. Skip it and trust the prettier check.
 
 ## Related Skills
 
