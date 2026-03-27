@@ -104,6 +104,7 @@ tr("Delete " + filename + "?")  // Can't be translated properly
 ## Adding New Language
 
 1. Copy base translation file:
+
    ```bash
    cp localization/localization_en_US.ts localization/localization_XX_YY.ts
    ```
@@ -111,11 +112,13 @@ tr("Delete " + filename + "?")  // Can't be translated properly
 2. Update language code (ISO 639-1 + country code)
 
 3. Add to build config in `qtpass.pro`:
+
    ```pro
    TRANSLATIONS += localization/localization_XX_YY.ts
    ```
 
 4. Run qmake to register:
+
    ```bash
    qmake6
    ```
