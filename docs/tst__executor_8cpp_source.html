@@ -188,20 +188,39 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> tst_executor::gpgSupportsEd25519() {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">bool</span> result = <a class="code hl_function" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b">Pass::gpgSupportsEd25519</a>();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  QVERIFY2(result == <span class="keyword">true</span> || result == <span class="keyword">false</span>, <span class="stringliteral">&quot;Should return boolean&quot;</span>);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> tst_executor::getDefaultKeyTemplate() {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  QString templateStr = <a class="code hl_function" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">Pass::getDefaultKeyTemplate</a>();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  QVERIFY2(!templateStr.isEmpty(), <span class="stringliteral">&quot;Template should not be empty&quot;</span>);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;Key-Type:&quot;</span>),</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>           <span class="stringliteral">&quot;Template should contain Key-Type&quot;</span>);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;%echo done&quot;</span>),</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           <span class="stringliteral">&quot;Template should contain done marker&quot;</span>);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>QTEST_MAIN(<a class="code hl_class" href="classtst__executor.html">tst_executor</a>)</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#include &quot;tst_executor.moc&quot;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  QString output;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">int</span> gpgVersionExitCode = <a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="stringliteral">&quot;gpg&quot;</span>, {<span class="stringliteral">&quot;--version&quot;</span>}, QString(), &amp;output, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">if</span> (gpgVersionExitCode != 0) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    QVERIFY2(</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        result == <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="stringliteral">&quot;gpgSupportsEd25519() should return false when GPG is not available&quot;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    QVERIFY2(result == <span class="keyword">true</span> || result == <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>             <span class="stringliteral">&quot;gpgSupportsEd25519() must return a boolean value&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> tst_executor::getDefaultKeyTemplate() {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">bool</span> ed25519Supported = <a class="code hl_function" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b">Pass::gpgSupportsEd25519</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  QString templateStr = <a class="code hl_function" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">Pass::getDefaultKeyTemplate</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  QVERIFY2(!templateStr.isEmpty(), <span class="stringliteral">&quot;Template should not be empty&quot;</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;Key-Type:&quot;</span>),</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>           <span class="stringliteral">&quot;Template should contain Key-Type&quot;</span>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;%echo done&quot;</span>),</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>           <span class="stringliteral">&quot;Template should contain done marker&quot;</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">if</span> (ed25519Supported) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;ed25519&quot;</span>) || templateStr.contains(<span class="stringliteral">&quot;EdDSA&quot;</span>),</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>             <span class="stringliteral">&quot;Template should be the Ed25519 variant when gpgSupportsEd25519() &quot;</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>             <span class="stringliteral">&quot;is true&quot;</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    QVERIFY2(templateStr.contains(<span class="stringliteral">&quot;RSA&quot;</span>), <span class="stringliteral">&quot;Template should be the RSA fallback &quot;</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                                          <span class="stringliteral">&quot;when gpgSupportsEd25519() is false&quot;</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>QTEST_MAIN(<a class="code hl_class" href="classtst__executor.html">tst_executor</a>)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#include &quot;tst_executor.moc&quot;</span></div>
 <div class="ttc" id="aclass_executor_html_a2673768d875e9207a6a178dd1a489828"><div class="ttname"><a href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(QString app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00177">executor.cpp:177</a></div></div>
 <div class="ttc" id="aclass_pass_html_a4c2bca8a9a59a032adc68846055b056b"><div class="ttname"><a href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b">Pass::gpgSupportsEd25519</a></div><div class="ttdeci">static bool gpgSupportsEd25519()</div><div class="ttdoc">Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00140">pass.cpp:140</a></div></div>
 <div class="ttc" id="aclass_pass_html_ae3284a937d0ca8ae2ea2d81ec556c37b"><div class="ttname"><a href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">Pass::getDefaultKeyTemplate</a></div><div class="ttdeci">static QString getDefaultKeyTemplate()</div><div class="ttdoc">Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00161">pass.cpp:161</a></div></div>
