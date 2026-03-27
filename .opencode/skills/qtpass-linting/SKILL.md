@@ -222,13 +222,18 @@ npx prettier --write "**/*.md" "**/*.yml"
 # 2. Verify formatting passes (REQUIRED - catches linting issues)
 npx prettier --check "**/*.md"
 
-# 3. Update with latest main (if branch is behind)
+# 3. Run act linter (recommended before opening PR)
+act push -W .github/workflows/linter.yml -j build
+
+# 4. Update with latest main (if branch is behind)
 git fetch upstream
 git pull upstream main --rebase
 
-# 4. Then push - real CI will catch any remaining issues
+# 5. Then push
 git push
 ```
+
+**Note:** Prettier catches most issues. act is recommended but may fail on new branches (see below).
 
 ### Note on act
 

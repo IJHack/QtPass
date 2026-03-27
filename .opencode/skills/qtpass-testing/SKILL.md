@@ -301,8 +301,6 @@ void tst_settings::cleanupTestCase() {
 - On registry mode (Windows non-portable), warn but can't backup
 - Always restore after tests to prevent pollution
 
-````
-
 ### Gitleaks-Safe Test Values
 
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
@@ -320,7 +318,7 @@ void tst_mymodule::testWithTempFile() {
     file.close();
     // Test reads/modifies file
 }
-````
+```
 
 ## Testable Source Files
 
