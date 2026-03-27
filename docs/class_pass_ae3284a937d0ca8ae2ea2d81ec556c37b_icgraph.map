@@ -1,0 +1,5 @@
+<map id="Pass::getDefaultKeyTemplate" name="Pass::getDefaultKeyTemplate">
+<area shape="rect" id="Node000001" title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,..." alt="" coords="264,5,476,31"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,5,216,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,21,216,21,216,15,250,15"/>
+</map>
