@@ -117,9 +117,8 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
     QString effectiveCharset = charset;
     if (effectiveCharset.isEmpty()) {
-      effectiveCharset =
-          QtPassSettings::getPasswordConfiguration()
-              .Characters[PasswordConfiguration::ALLCHARS];
+      effectiveCharset = QtPassSettings::getPasswordConfiguration()
+                             .Characters[PasswordConfiguration::ALLCHARS];
     }
     if (effectiveCharset.length() > 0) {
       passwd = generateRandomPassword(effectiveCharset, length);

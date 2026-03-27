@@ -461,6 +461,8 @@ void tst_settings::setAndGetPasswordChars() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM].contains("abc"),
            "PasswordChars should contain 'abc'");
+  // Reset to avoid affecting subsequent tests and live QtPass
+  QtPassSettings::setPasswordChars(QString());
 }
 
 void tst_settings::setAndGetMultipleProfiles() {
