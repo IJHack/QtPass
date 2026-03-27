@@ -72,7 +72,13 @@ private Q_SLOTS:
   void setAndGetProfileDefault();
 };
 
-void tst_settings::initTestCase() {}
+void tst_settings::initTestCase() {
+  // Reset any leftover test settings to ensure clean state
+  // This prevents tests from polluting the live QtPass config
+  QtPassSettings::setPasswordChars(QString());
+  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordLength(16);
+}
 
 void tst_settings::getPasswordConfigurationDefault() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
