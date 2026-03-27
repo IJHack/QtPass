@@ -5,7 +5,7 @@
 ### Can't save a password
 
 - Is folder initialised? Easiest way is to use the [Users] button
-  and make sure you can encrypt for someone (eg. yourself)
+  and make sure you can encrypt for someone (e.g. yourself)
 - Are you using Git? If not, make sure it is switched off.
 
 ### I have an issue with GNOME keyring
@@ -33,7 +33,7 @@ max-cache-ttl 7200
   eg: `ln -s /usr/bin/pinentry-qt /usr/bin/pinentry`
 - On macOS `pinentry-program /usr/local/bin/pinentry-mac` works after installing `pinentry-mac` from Homebrew.
 
-### I have an other issue with gpg
+### I have another issue with gpg
 
 - Possibly you have you key only in gpg and not in gpg2
 
@@ -47,7 +47,7 @@ rm public.key private.key
 
 Where [ID] is your gpg key-id.
 
-- It might be the case where it is the other way around, exchange gpg and gpg2 accordingly . .
+- It might be the case where it is the other way around, exchange gpg and gpg2 accordingly.
 
 ### Git doesn't work on Windows
 
@@ -56,7 +56,7 @@ Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpas
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
-<https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
+<https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
 
 ### GPG says "Public key unusable" or "No secret key"
 
@@ -80,7 +80,7 @@ QtPass tries to use the native config choice for the OS it's running.
 
 - Linux and BSD: `$HOME/.config/IJHack/QtPass.conf`
 - macOS: `$HOME/Library/Preferences/com.IJHack.QtPass.plist`
-- Windows registry: `HKEY_CURRENT_USER\Software\IJhack\QtPass`
+- Windows registry: `HKEY_CURRENT_USER\Software\IJHack\QtPass`
 
 These settings can be over-ruled by a `qtpass.ini` file in the folder where the application resides.
 So called "portable config".
@@ -91,7 +91,7 @@ More information: <https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes
 
 ### Where can I ask for help?
 
-- Create an [issue](https://Github.com/IJHack/qtpass/) issues on GitHub.
+- Create an issue on [GitHub](https://github.com/IJHack/QtPass/issues).
 - Send an email to [help@qtpass.org](mailto:help@qtpass.org)
 
 ### Can I import from KeePass, LastPass or X?
@@ -149,9 +149,7 @@ QtPass uses the system language. Changing it depends on your system:
 
 - Time:
   - Read [contributing](CONTRIBUTING.md) documentation.
-  - Fork, clone hack and send a pull request.
-  - Find an [issue](https://Github.com/IJHack/qtpass/issues) to work on..
+  - Fork, clone, hack and send a pull request.
+  - Find an [issue](https://github.com/IJHack/QtPass/issues) to work on.
   - Participate in our bug bounty, you submit an issue and help us
     fix it, I send you a bounty.
-- Money:
-  - IJhack takes donations in [Bitcoin](https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb)
