@@ -12,8 +12,8 @@ bool QtPassSettings::initialized = false;
 
 Pass *QtPassSettings::pass;
 // Go via pointer to avoid dynamic initialization,
-// due to "random" initialization order realtive to other
-// globals, especially around QObject emtadata dynamic initialization
+// due to "random" initialization order relative to other
+// globals, especially around QObject metadata dynamic initialization
 // can lead to crashes depending on compiler, linker etc.
 QScopedPointer<RealPass> QtPassSettings::realPass;
 QScopedPointer<ImitatePass> QtPassSettings::imitatePass;

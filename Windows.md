@@ -119,8 +119,8 @@ nmake check TESTARGS="--platform offscreen"
 | "Signature does not exist"                          | Ensure your GPG key is in the `.gpg-id` file via **Config → Users**                                                   |
 | Git not working                                     | Use [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) for HTTPS authentication |
 | App doesn't start                                   | Install `vcredist140` (Visual C++ Redistributable)                                                                    |
-| QMAKE_MSC_VER isn't set                             | delete `.qmake.stash` and rerun qmake                                                                                 |
-| nmake fails with Unix commands (`test`, `mkdir -p`) | wrong Qt (MinGW instead of MSVC) - reinstall with MSVC Qt                                                             |
+| `QMAKE_MSC_VER` isn't set                           | delete `.qmake.stash` and rerun qmake                                                                                 |
+| nmake fails with Unix commands (`test`, `mkdir -p`) | Wrong Qt variant installed (MinGW instead of MSVC) - reinstall using MSVC Qt build                                    |
 | Should find bash in PATH                            | ensure `C:\Program Files\Git\bin` is on PATH                                                                          |
 | cl not found                                        | MSVC environment not loaded - run VsDevCmd.bat                                                                        |
 
