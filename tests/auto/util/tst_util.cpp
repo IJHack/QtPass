@@ -323,12 +323,12 @@ void tst_util::fileContentEdgeCases() {
   fc = FileContent::parse("pass\nusername: user@example.com\npassword: "
                           "secret\nurl: https://login.com\n",
                           {"username", "password", "url"}, false);
-  QVERIFY(fc.getNamedValues().length() >= 2);
+  QVERIFY(fc.getNamedValues().length() >= 3);
 
   fc = FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
   NamedValues nv = fc.getNamedValues();
-  QVERIFY(nv.length() > 0);
-  QCOMPARE(nv.at(0).name, QString("key"));
+  QVERIFY(nv.length() == 1);
+  QVERIFY(nv.at(0).name == "key");
   QVERIFY(nv.at(0).value.contains("spaces"));
 
   fc = FileContent::parse("pass\n://something\n", {}, false);
@@ -338,7 +338,7 @@ void tst_util::fileContentEdgeCases() {
   QVERIFY(fc.getRemainingData().contains("no colon line"));
 
   fc = FileContent::parse("pass\nkey: value\nkey2: duplicate\n", {}, true);
-  QVERIFY(fc.getNamedValues().length() >= 1);
+  QVERIFY(fc.getNamedValues().length() >= 2);
 
   fc = FileContent::parse("pass\n", {}, false);
   QVERIFY(fc.getPassword() == "pass");
@@ -352,10 +352,10 @@ void tst_util::namedValuesEdgeCases() {
 
   NamedValue n1 = {"key", "value"};
   nv.append(n1);
-  QVERIFY(nv.length() == 1);
+  QCOMPARE(nv.length(), 1);
   NamedValue n2 = {"key2", "value2"};
   nv.append(n2);
-  QVERIFY(nv.length() == 2);
+  QCOMPARE(nv.length(), 2);
 
   nv.clear();
   QVERIFY(nv.isEmpty());
