@@ -41,6 +41,8 @@ choco install -y git python visualstudio2022buildtools visualstudio2022-workload
 
 Install an **MSVC build of Qt** (not MinGW).
 
+Do not use `mingw_64`. It will not work with `nmake`.
+
 Run in **normal PowerShell**:
 
 ```powershell
@@ -69,8 +71,18 @@ set QTDIR=
 ```cmd
 git clone https://github.com/IJHack/QtPass.git
 cd QtPass
+```
 
-qmake
+If you previously built with another Qt version or toolchain:
+
+```cmd
+del .qmake.stash
+```
+
+Then build:
+
+```cmd
+qmake -spec win32-msvc
 nmake
 nmake check TESTARGS="--platform offscreen"
 ```
