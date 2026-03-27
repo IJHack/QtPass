@@ -13,6 +13,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qprogressindicator.h"
+#include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
@@ -77,6 +78,13 @@ private Q_SLOTS:
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
   void imitatePassRemoveDir();
+  void getRecipientListBasic();
+  void getRecipientListEmpty();
+  void getRecipientListWithComments();
+  void getRecipientStringCount();
+  void getGpgIdPathBasic();
+  void getGpgIdPathSubfolder();
+  void getGpgIdPathNotFound();
 };
 
 auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
@@ -752,6 +760,119 @@ void tst_util::imitatePassRemoveDir() {
   bool result = pass.removeDir(subDir);
   QVERIFY(result);
   QVERIFY(!QDir(subDir).exists());
+}
+
+void tst_util::getRecipientListBasic() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write("ABCDEF12\n34567890\n");
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore);
+  QCOMPARE(recipients.size(), 2);
+  QCOMPARE(recipients[0], QString("ABCDEF12"));
+  QCOMPARE(recipients[1], QString("34567890"));
+}
+
+void tst_util::getRecipientListEmpty() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore);
+  QVERIFY(recipients.isEmpty());
+}
+
+void tst_util::getRecipientListWithComments() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write("ABCDEF12\n# comment\n34567890\n");
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore);
+  QCOMPARE(recipients.size(), 2);
+  QVERIFY(!recipients.contains("# comment"));
+}
+
+void tst_util::getRecipientStringCount() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write("ABCDEF12\n34567890\n");
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  int count = 0;
+  QStringList recipients = Pass::getRecipientString(passStore, " ", &count);
+  QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
+
+  QVERIFY(recipientsNoCount.isEmpty() || recipientsNoCount.size() == 2);
+  QVERIFY(count == 2);
+}
+
+void tst_util::getGpgIdPathBasic() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write("ABCDEF12\n");
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
+  QString expected = QDir::cleanPath(gpgIdFile);
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+}
+
+void tst_util::getGpgIdPathSubfolder() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString subfolder = passStore + "/subfolder";
+  QString gpgIdFile = subfolder + "/.gpg-id";
+
+  QVERIFY(QDir().mkdir(subfolder));
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write("ABCDEF12\n");
+  file.close();
+
+  QtPassSettings::setPassStore(passStore);
+  QString path = Pass::getGpgIdPath(subfolder + "/password.gpg");
+  QVERIFY2(path == gpgIdFile,
+           qPrintable(QString("Expected %1, got %2").arg(gpgIdFile, path)));
+}
+
+void tst_util::getGpgIdPathNotFound() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+
+  QtPassSettings::setPassStore(passStore);
+  QString path =
+      QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));
+  QString expected = QDir::cleanPath(passStore + "/.gpg-id");
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
 QTEST_MAIN(tst_util)
