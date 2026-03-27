@@ -31,7 +31,10 @@ tests/auto/model/tst_model
 tests/auto/settings/tst_settings
 tests/auto/executor/tst_executor
 tests/auto/passwordconfig/tst_passwordconfig
+tests/auto/simpletransaction/tst_simpletransaction
+tests/auto/filecontent/tst_filecontent
 **/*.gc*
+*.bak
 README.c*
 README.faq
 README.rtf

@@ -222,17 +222,37 @@ npx prettier --write "**/*.md" "**/*.yml"
 # 2. Verify formatting passes (REQUIRED - catches linting issues)
 npx prettier --check "**/*.md"
 
-# 3. Update with latest main (if branch is behind)
+# 3. Run act linter (recommended before opening PR)
+act push -W .github/workflows/linter.yml -j build
+
+# 4. Update with latest main (if branch is behind)
 git fetch upstream
 git pull upstream main --rebase
 
-# 4. Then push - real CI will catch any remaining issues
+# 5. Then push
 git push
 ```
 
+**Note:** Prettier catches most issues. act is recommended but may fail on new branches (see below).
+
 ### Note on act
 
-`act` may fail on new branches with error `fatal: ambiguous argument 'HEAD~0'`. This is a known tool issue, not code. Skip it and trust the prettier check.
+**`act` may fail on new branches with error:** `fatal: ambiguous argument 'HEAD~0'`
+
+This is a known issue with the tool, not your code. When this happens:
+
+- Skip the act step
+- The `prettier --check` step is sufficient for most cases
+- Trust that formatting is correct
+- The real GitHub CI will pass
+
+**Recommended alternative - use prettier --check directly:**
+
+```bash
+# This catches most linting issues without needing act
+npx prettier --check "**/*.md"
+npx prettier --check "**/*.yml"
+```
 
 ### Before Merging
 

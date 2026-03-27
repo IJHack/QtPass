@@ -256,6 +256,51 @@ void tst_util::testPathComparison() {
 }
 ```
 
+### Test Settings Pollution
+
+Tests that modify QtPass settings can pollute the user's live config. This is especially problematic on Windows where settings use the registry.
+
+**Solution: Backup and restore settings in tests**
+
+```cpp
+// In tst_settings::initTestCase()
+void tst_settings::initTestCase() {
+    // Check for portable mode (qtpass.ini in app directory)
+    QString portable_ini = QCoreApplication::applicationDirPath() +
+                         QDir::separator() + "qtpass.ini";
+    bool isPortableMode = QFile::exists(portable_ini);
+
+    if (isPortableMode) {
+        // Backup settings file
+        QtPassSettings::getInstance()->sync();
+        QString settingsFile = QtPassSettings::getInstance()->fileName();
+        m_settingsBackupPath = settingsFile + ".bak";
+        QFile::remove(m_settingsBackupPath);
+        QFile::copy(settingsFile, m_settingsBackupPath);
+    } else {
+        // Warn on non-portable mode (registry on Windows)
+        qWarning() << "Non-portable mode detected. Tests may modify registry settings.";
+    }
+}
+
+// In tst_settings::cleanupTestCase()
+void tst_settings::cleanupTestCase() {
+    // Restore original settings after all tests
+    if (isPortableMode && !m_settingsBackupPath.isEmpty()) {
+        QString settingsFile = QtPassSettings::getInstance()->fileName();
+        QFile::remove(settingsFile);
+        QFile::copy(m_settingsBackupPath, settingsFile);
+        QFile::remove(m_settingsBackupPath);
+    }
+}
+```
+
+**Key points:**
+
+- Only backup in portable mode (file-based settings)
+- On registry mode (Windows non-portable), warn but can't backup
+- Always restore after tests to prevent pollution
+
 ### Gitleaks-Safe Test Values
 
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
