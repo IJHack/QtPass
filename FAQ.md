@@ -112,8 +112,20 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
-- Another possible reason is that the currently installed Qt version gives problems.
-  Then you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
+### Can not find either qmake or qmake6
+
+QtPass uses Qt6 by default. Use:
+
+- `qmake6` - for Qt6 (recommended, default)
+- `qmake` - for Qt5
+
+If you get an error like "QApplication" not found or Qt installation issues, make sure you're using the correct qmake version for your Qt installation.
+
+On some systems, you may need to specify the full path, e.g., `/usr/lib/qt6/bin/qmake6`.
+
+### Qt installation issues
+
+Then you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
 
 ### I don't like the design, what gives?
 
