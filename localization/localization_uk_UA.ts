@@ -1360,7 +1360,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, які користувачі повинні мати можливість розшифровувати паролі, що зберігаються в цій папці.
+Примітка: Існуючі файли не будуть змінені та збережуть старі дозволи, доки ви їх не відредагуєте.
+Сині записи мають доступний секретний ключ, виберіть один із них, щоб мати змогу розшифрувати.
+Чорні записи мають доступний ключ шифрування, і він є надійним, виберіть один із них, щоб дозволити іншим людям розшифрувати.
+Червоні записи недійсні, ви не зможете зашифрувати їх за допомогою них.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
