@@ -77,7 +77,7 @@ $(function() {
 <div class="textblock"><h1>Issues</h1>
 <h2>Can't save a password</h2>
 <ul>
-<li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (eg. yourself)</li>
+<li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</li>
 <li>Are you using Git? If not, make sure it is switched off.</li>
 </ul>
 <h2>I have an issue with GNOME keyring</h2>
@@ -99,7 +99,7 @@ $(function() {
 <li>On some systems it might be necessary to create a symbolic link <code>/usr/bin/pinentry</code> to your pinentry application of choice eg: <code>ln -s /usr/bin/pinentry-qt /usr/bin/pinentry</code></li>
 <li>On macOS <code>pinentry-program /usr/local/bin/pinentry-mac</code> works after installing <code>pinentry-mac</code> from Homebrew.</li>
 </ul>
-<h2>I have an other issue with gpg</h2>
+<h2>I have another issue with gpg</h2>
 <ul>
 <li>Possibly you have you key only in gpg and not in gpg2</li>
 </ul>
@@ -110,12 +110,12 @@ $(function() {
 <div class="line">rm public.key private.key</div>
 </div><!-- fragment --><p>Where [ID] is your gpg key-id.</p>
 <ul>
-<li>It might be the case where it is the other way around, exchange gpg and gpg2 accordingly . .</li>
+<li>It might be the case where it is the other way around, exchange gpg and gpg2 accordingly.</li>
 </ul>
 <h2>Git doesn't work on Windows</h2>
 <p>Git for Windows comes with an <code>ssh-askpass</code> compatible command, <code>git-gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
 <h2>Git has issues with GPG SSH Authentication</h2>
-<p>This tutorial might resolve your issues. <a href="https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant">https://Github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant</a></p>
+<p>This tutorial might resolve your issues. <a href="https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant">https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant</a></p>
 <h2>GPG says "Public key unusable" or "No secret key"</h2>
 <p>Your GPG key may not be trusted or has expired. Run <code>gpg --edit-key &lt;KEYID&gt;</code> and:</p>
 <ul>
@@ -132,14 +132,14 @@ $(function() {
 <ul>
 <li>Linux and BSD: <code>$HOME/.config/IJHack/QtPass.conf</code></li>
 <li>macOS: <code>$HOME/Library/Preferences/com.IJHack.QtPass.plist</code></li>
-<li>Windows registry: <code>HKEY_CURRENT_USER\Software\IJhack\<a class="el" href="class_qt_pass.html">QtPass</a></code></li>
+<li>Windows registry: <code>HKEY_CURRENT_USER\Software\IJHack\<a class="el" href="class_qt_pass.html">QtPass</a></code></li>
 </ul>
 <p>These settings can be over-ruled by a <code>qtpass.ini</code> file in the folder where the application resides. So called "portable config".</p>
 <p>There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).</p>
 <p>More information: <a href="https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
 <h2>Where can I ask for help?</h2>
 <ul>
-<li>Create an <a href="https://Github.com/IJHack/qtpass/">issue</a> issues on GitHub.</li>
+<li>Create an issue on <a href="https://github.com/IJHack/QtPass/issues">GitHub</a>.</li>
 <li>Send an email to <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'p@'+'qtp'+'as'+'s.o'+'rg'; return false;">help@qtpass.org</a></li>
 </ul>
 <h2>Can I import from KeePass, LastPass or X?</h2>
@@ -183,13 +183,9 @@ $(function() {
 <ul>
 <li>Time:<ul>
 <li>Read <a class="el" href="md__c_o_n_t_r_i_b_u_t_i_n_g.html">contributing</a> documentation.</li>
-<li>Fork, clone hack and send a pull request.</li>
-<li>Find an <a href="https://Github.com/IJHack/qtpass/issues">issue</a> to work on..</li>
-<li>Participate in our bug bounty, you submit an issue and help us fix it, I send you a bounty.</li>
-</ul>
-</li>
-<li>Money:<ul>
-<li>IJhack takes donations in <a href="https://blockchain.info/address/146dqz8zXn9iNZMv5s7JVqwZKjrmumHBfb">Bitcoin</a> </li>
+<li>Fork, clone, hack and send a pull request.</li>
+<li>Find an <a href="https://github.com/IJHack/QtPass/issues">issue</a> to work on.</li>
+<li>Participate in our bug bounty, you submit an issue and help us fix it, I send you a bounty. </li>
 </ul>
 </li>
 </ul>
