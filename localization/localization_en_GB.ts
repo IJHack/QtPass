@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generate</translation>
+        <translation>Generate</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generate GPG key pair</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -637,7 +637,7 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Template contents will be set based on GPG version.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1306,12 +1306,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG key pair generation failed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG key pair generated successfully</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
@@ -1389,7 +1389,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
