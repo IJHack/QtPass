@@ -133,7 +133,7 @@ On some systems, you may need to specify the full path, e.g., `/usr/lib/qt6/bin/
 
 ### Qt installation issues
 
-Then you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
+If you encounter Qt installation issues, you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
 
 ### I don't like the design, what gives?
 
