@@ -92,7 +92,7 @@ void tst_storemodel::lessThan() {
   (void)f1.open(QFile::WriteOnly);
   f1.close();
   QFile f2(tempDir.path() + "/bbb.gpg");
-  (void)f2.open(QFile::WriteOnly);
+  QVERIFY(f2.open(QFile::WriteOnly));
   f2.close();
 
   QFileSystemModel fsm;
