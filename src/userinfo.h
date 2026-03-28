@@ -17,16 +17,16 @@ struct UserInfo {
    * @brief UserInfo::fullyValid when validity is f or u.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
    */
-  auto fullyValid() -> bool { return validity == 'f' || validity == 'u'; }
+  auto fullyValid() const -> bool { return validity == 'f' || validity == 'u'; }
   /**
    * @brief UserInfo::marginallyValid when validity is m.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
    */
-  auto marginallyValid() -> bool { return validity == 'm'; }
+  auto marginallyValid() const -> bool { return validity == 'm'; }
   /**
    * @brief UserInfo::isValid when fullyValid or marginallyValid.
    */
-  auto isValid() -> bool { return fullyValid() || marginallyValid(); }
+  auto isValid() const -> bool { return fullyValid() || marginallyValid(); }
 
   /**
    * @brief UserInfo::name full name
