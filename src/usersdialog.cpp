@@ -27,7 +27,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   if (users.isEmpty()) {
     QMessageBox::critical(parent, tr("Keylist missing"),
                           tr("Could not fetch list of available GPG keys"));
-    return;
+    reject();
   }
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
