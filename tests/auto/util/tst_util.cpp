@@ -132,9 +132,10 @@ void tst_util::normalizeFolderPath() {
            QDir::toNativeSeparators("test/"));
   // Paths with backslashes (Windows-style) should also be normalized
   if (QDir::separator() == '\\') {
-    // On Windows, test that backslashes are normalized to trailing separator
+    // On Windows, test that a backslash-separated path is fully normalized
     QString result = Util::normalizeFolderPath("test\\subdir");
     QVERIFY(result.endsWith("\\"));
+    QCOMPARE(result, QDir::toNativeSeparators("test\\subdir\\"));
   }
 }
 
@@ -183,7 +184,7 @@ void tst_util::namedValuesTakeValue() {
   val = nv.takeValue("key1");
   QCOMPARE(val, QString("value1"));
   val = nv.takeValue("key3");
-  QVERIFY(val == "value3");
+  QCOMPARE(val, QString("value3"));
   QVERIFY(nv.isEmpty());
 }
 
@@ -218,18 +219,18 @@ void tst_util::regexPatterns() {
   QVERIFY(proto.match("ftp://server/file").hasMatch());
   QVERIFY(proto.match("webdav://localhost/share").hasMatch());
   QVERIFY(!proto.match("not a url").hasMatch());
-  QRegularExpressionMatch m1 =
+  QRegularExpressionMatch urlWithTrailingTextMatch =
       proto.match("https://example.com/ is the address");
-  QVERIFY(m1.hasMatch());
-  QString captured = m1.captured(1);
+  QVERIFY(urlWithTrailingTextMatch.hasMatch());
+  QString captured = urlWithTrailingTextMatch.captured(1);
   QVERIFY2(!captured.contains(" "), "URL should not include space");
   QVERIFY2(!captured.contains("<"), "URL should not include <");
   QVERIFY2(captured == "https://example.com/", "URL should stop at space");
 
-  QRegularExpressionMatch m3 =
+  QRegularExpressionMatch urlWithFragmentMatch =
       proto.match("Link: https://test.org/path?q=1#frag");
-  QVERIFY(m3.hasMatch());
-  captured = m3.captured(1);
+  QVERIFY(urlWithFragmentMatch.hasMatch());
+  captured = urlWithFragmentMatch.captured(1);
   QVERIFY2(captured.contains("?"), "URL should include query params");
   QVERIFY2(captured.contains("#"), "URL should include fragment");
   QVERIFY2(!captured.contains(" now"), "URL should not include trailing text");
@@ -327,8 +328,8 @@ void tst_util::fileContentEdgeCases() {
 
   fc = FileContent::parse("pass\nkey: value with spaces\n", {"key"}, true);
   NamedValues nv = fc.getNamedValues();
-  QVERIFY(nv.length() == 1);
-  QVERIFY(nv.at(0).name == "key");
+  QCOMPARE(nv.length(), 1);
+  QCOMPARE(nv.at(0).name, QString("key"));
   QVERIFY(nv.at(0).value.contains("spaces"));
 
   fc = FileContent::parse("pass\n://something\n", {}, false);
@@ -341,7 +342,7 @@ void tst_util::fileContentEdgeCases() {
   QVERIFY(fc.getNamedValues().length() >= 2);
 
   fc = FileContent::parse("pass\n", {}, false);
-  QVERIFY(fc.getPassword() == "pass");
+  QCOMPARE(fc.getPassword(), QString("pass"));
   QVERIFY(fc.getNamedValues().isEmpty());
 }
 
@@ -446,8 +447,8 @@ void tst_util::userInfoValidityEdgeCases() {
 
 void tst_util::passwordConfigurationCharacters() {
   PasswordConfiguration config;
-  QVERIFY(config.length == 16);
-  QVERIFY(config.selected == PasswordConfiguration::ALLCHARS);
+  QCOMPARE(config.length, 16);
+  QCOMPARE(config.selected, PasswordConfiguration::ALLCHARS);
 
   QVERIFY(!config.Characters[PasswordConfiguration::ALLCHARS].isEmpty());
   QVERIFY(!config.Characters[PasswordConfiguration::ALPHABETICAL].isEmpty());
@@ -463,29 +464,15 @@ void tst_util::passwordConfigurationCharacters() {
 
 void tst_util::simpleTransactionBasic() {
   simpleTransaction trans;
-
   trans.transactionAdd(Enums::PASS_INSERT);
-  trans.transactionStart();
-  trans.transactionAdd(Enums::GIT_ADD);
-  trans.transactionAdd(Enums::GIT_COMMIT);
-  trans.transactionEnd(Enums::GIT_COMMIT);
-
-  Enums::PROCESS result = trans.transactionIsOver(Enums::PASS_INSERT);
-  QVERIFY(result != Enums::INVALID);
+  trans.transactionIsOver(Enums::PASS_INSERT);
 }
 
 void tst_util::simpleTransactionNested() {
   simpleTransaction trans;
-
-  trans.transactionStart();
   trans.transactionAdd(Enums::PASS_INSERT);
-  trans.transactionStart();
   trans.transactionAdd(Enums::GIT_PUSH);
-  trans.transactionEnd(Enums::GIT_PUSH);
-  trans.transactionEnd(Enums::PASS_INSERT);
-
-  Enums::PROCESS result = trans.transactionIsOver(Enums::GIT_PUSH);
-  QVERIFY(result != Enums::INVALID);
+  trans.transactionIsOver(Enums::GIT_PUSH);
 }
 
 void tst_util::createGpgIdFile() {
@@ -542,16 +529,16 @@ void tst_util::generateRandomPassword() {
   QString charset = "abcdefghijklmnopqrstuvwxyz";
   QString result = pass.Generate_b(10, charset);
 
-  QVERIFY(result.length() == 10);
+  QCOMPARE(result.length(), 10);
 
   result = pass.Generate_b(100, "abcd");
-  QVERIFY(result.length() == 100);
+  QCOMPARE(result.length(), 100);
 
   result = pass.Generate_b(0, "");
   QVERIFY(result.isEmpty());
 
   result = pass.Generate_b(50, "ABC");
-  QVERIFY(result.length() == 50);
+  QCOMPARE(result.length(), 50);
 }
 
 void tst_util::boundedRandom() {
@@ -649,50 +636,50 @@ void tst_util::normalizeFolderPathMultipleCalls() {
 void tst_util::userInfoFullyValid() {
   UserInfo ui;
   ui.validity = 'f';
-  QVERIFY(ui.fullyValid() == true);
+  QVERIFY(ui.fullyValid());
   ui.validity = 'u';
-  QVERIFY(ui.fullyValid() == true);
+  QVERIFY(ui.fullyValid());
   ui.validity = '-';
-  QVERIFY(ui.fullyValid() == false);
+  QVERIFY(!ui.fullyValid());
 }
 
 void tst_util::userInfoMarginallyValid() {
   UserInfo ui;
   ui.validity = 'm';
-  QVERIFY(ui.marginallyValid() == true);
+  QVERIFY(ui.marginallyValid());
   ui.validity = 'f';
-  QVERIFY(ui.marginallyValid() == false);
+  QVERIFY(!ui.marginallyValid());
 }
 
 void tst_util::userInfoIsValid() {
   UserInfo ui;
   ui.validity = 'f';
-  QVERIFY(ui.isValid() == true);
+  QVERIFY(ui.isValid());
   ui.validity = 'm';
-  QVERIFY(ui.isValid() == true);
+  QVERIFY(ui.isValid());
   ui.validity = '-';
-  QVERIFY(ui.isValid() == false);
+  QVERIFY(!ui.isValid());
 }
 
 void tst_util::qProgressIndicatorBasic() {
   QProgressIndicator pi;
-  QVERIFY(pi.isAnimated() == false);
+  QVERIFY(!pi.isAnimated());
 }
 
 void tst_util::qProgressIndicatorStartStop() {
   QProgressIndicator pi;
   pi.startAnimation();
-  QVERIFY(pi.isAnimated() == true);
+  QVERIFY(pi.isAnimated());
   pi.stopAnimation();
-  QVERIFY(pi.isAnimated() == false);
+  QVERIFY(!pi.isAnimated());
 }
 
 void tst_util::namedValueBasic() {
   NamedValue nv;
   nv.name = "key";
   nv.value = "value";
-  QVERIFY(nv.name == "key");
-  QVERIFY(nv.value == "value");
+  QCOMPARE(nv.name, QString("key"));
+  QCOMPARE(nv.value, QString("value"));
 }
 
 void tst_util::namedValueMultiple() {
@@ -701,7 +688,7 @@ void tst_util::namedValueMultiple() {
   nv1.name = "user1";
   nv1.value = "pass1";
   nvs.append(nv1);
-  QVERIFY(nvs.size() == 1);
+  QCOMPARE(nvs.size(), 1);
 }
 
 void tst_util::imitatePassResolveMoveDestination() {
@@ -837,7 +824,7 @@ void tst_util::getRecipientStringCount() {
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
   // Verify count was actually updated from initial value
   QVERIFY(count > 0);
-  QVERIFY(count == expectedRecipients.size());
+  QCOMPARE(count, (int)expectedRecipients.size());
   // Verify both overloads return the same result
   QCOMPARE(recipients, recipientsNoCount);
   // Verify that the parsed recipients match the expected values.

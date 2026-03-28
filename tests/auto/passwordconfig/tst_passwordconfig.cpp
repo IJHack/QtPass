@@ -26,8 +26,8 @@ void tst_passwordconfig::initTestCase() {
 
 void tst_passwordconfig::passwordConfigurationDefaults() {
   PasswordConfiguration config;
-  QVERIFY(config.length == 16);
-  QVERIFY(config.selected == PasswordConfiguration::ALLCHARS);
+  QCOMPARE(config.length, 16);
+  QCOMPARE(config.selected, PasswordConfiguration::ALLCHARS);
   QVERIFY(!config.Characters[PasswordConfiguration::ALLCHARS].isEmpty());
   QVERIFY(!config.Characters[PasswordConfiguration::ALPHABETICAL].isEmpty());
   QVERIFY(!config.Characters[PasswordConfiguration::ALPHANUMERIC].isEmpty());
@@ -44,8 +44,8 @@ void tst_passwordconfig::passwordConfigurationSetters() {
   QtPassSettings::setPasswordCharsselection(3);
 
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
-  QVERIFY(config.length == 24);
-  QVERIFY(config.selected == 3);
+  QCOMPARE(config.length, 24);
+  QCOMPARE(config.selected, 3);
 
   // Reset after test
   QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
@@ -63,16 +63,16 @@ void tst_passwordconfig::passwordConfigurationCharacterSets() {
 void tst_passwordconfig::passwordConfigurationLength() {
   PasswordConfiguration config;
   config.length = 0;
-  QVERIFY(config.length == 0);
+  QCOMPARE(config.length, 0);
   config.length = 100;
-  QVERIFY(config.length == 100);
+  QCOMPARE(config.length, 100);
 }
 
 void tst_passwordconfig::passwordConfigurationCustomChars() {
   PasswordConfiguration config;
   QString custom = "abc123";
   config.Characters[PasswordConfiguration::CUSTOM] = custom;
-  QVERIFY(config.Characters[PasswordConfiguration::CUSTOM] == custom);
+  QCOMPARE(config.Characters[PasswordConfiguration::CUSTOM], custom);
 }
 
 QTEST_MAIN(tst_passwordconfig)

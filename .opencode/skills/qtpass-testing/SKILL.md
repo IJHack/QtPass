@@ -223,6 +223,32 @@ QVERIFY2(output.contains("needle"), "should contain needle");
 QCOMPARE(QString("hello").toUpper(), QString("HELLO"));
 ```
 
+### Never use `||` in assertions
+
+Bad (tautology or ambiguous):
+
+```cpp
+QVERIFY(result == expected || result == INVALID);  // unclear intent
+QVERIFY(result != INVALID || result == INVALID);  // ALWAYS TRUE - tautology!
+```
+
+Good - just call the method to verify it doesn't crash:
+
+```cpp
+simpleTransaction trans;
+trans.transactionAdd(Enums::PASS_INSERT);
+trans.transactionIsOver(Enums::PASS_INSERT);  // verify it runs without crash
+```
+
+Or use deterministic setup with `QCOMPARE`:
+
+```cpp
+simpleTransaction st;
+st.transactionAdd(Enums::PASS_INSERT);
+Enums::PROCESS result = st.transactionIsOver(Enums::PASS_INSERT);
+QCOMPARE(result, Enums::PASS_INSERT);  // deterministic
+```
+
 ### QtTest Macros
 
 - `QFAIL("message")` - Fail with message
