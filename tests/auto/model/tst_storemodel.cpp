@@ -88,12 +88,12 @@ void tst_storemodel::mimeTypes() {
 
 void tst_storemodel::lessThan() {
   QTemporaryDir tempDir;
-  QFile f1(tempDir.path() + "/aaa.gpg");
-  (void)f1.open(QFile::WriteOnly);
-  f1.close();
-  QFile f2(tempDir.path() + "/bbb.gpg");
-  QVERIFY(f2.open(QFile::WriteOnly));
-  f2.close();
+  QFile passwordA(tempDir.path() + "/aaa.gpg");
+  QVERIFY(passwordA.open(QFile::WriteOnly));
+  passwordA.close();
+  QFile passwordB(tempDir.path() + "/bbb.gpg");
+  QVERIFY(passwordB.open(QFile::WriteOnly));
+  passwordB.close();
 
   QFileSystemModel fsm;
   fsm.setRootPath(tempDir.path());
@@ -157,9 +157,9 @@ void tst_storemodel::filterExcludesGitDirectory() {
 
 void tst_storemodel::filterAcceptsRowVisible() {
   QTemporaryDir tempDir;
-  QFile f(tempDir.path() + "/mypassword.gpg");
-  (void)f.open(QFile::WriteOnly);
-  f.close();
+  QFile passwordFile(tempDir.path() + "/mypassword.gpg");
+  QVERIFY(passwordFile.open(QFile::WriteOnly));
+  passwordFile.close();
 
   QFileSystemModel fsm;
   fsm.setRootPath(tempDir.path());
@@ -186,9 +186,9 @@ void tst_storemodel::dataWithInvalidIndex() {
 
 void tst_storemodel::mimeData() {
   QTemporaryDir tempDir;
-  QFile f(tempDir.path() + "/testfile.gpg");
-  (void)f.open(QFile::WriteOnly);
-  f.close();
+  QFile testFile(tempDir.path() + "/testfile.gpg");
+  QVERIFY(testFile.open(QFile::WriteOnly));
+  testFile.close();
 
   QFileSystemModel fsm;
   fsm.setRootPath(tempDir.path());
@@ -212,9 +212,9 @@ void tst_storemodel::lessThanDirsFirst() {
   QTemporaryDir tempDir;
   bool mkdirResult = QDir(tempDir.path()).mkdir("folder");
   QVERIFY(mkdirResult || QDir(tempDir.path()).exists("folder"));
-  QFile f(tempDir.path() + "/file.gpg");
-  (void)f.open(QFile::WriteOnly);
-  f.close();
+  QFile file(tempDir.path() + "/file.gpg");
+  QVERIFY(file.open(QFile::WriteOnly));
+  file.close();
 
   QFileSystemModel fsm;
   fsm.setRootPath(tempDir.path());
