@@ -58,7 +58,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     // Some keys seem missing from keyring, add them separately
     QStringList recipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
-    foreach (const QString recipient, recipients) {
+    foreach (const QString &recipient, recipients) {
       if (QtPassSettings::getPass()->listKeys(recipient).empty()) {
         UserInfo i;
         i.enabled = true;
