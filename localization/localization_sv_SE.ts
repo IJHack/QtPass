@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt: Nyckel som används för att signera .gpg-id filer. Lämna tomt om du inte behöver separata signaturer för verifiering.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -1286,7 +1286,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj vilka användare som ska kunna dekryptera lösenord som lagras i den här mappen.
+Obs: Befintliga filer kommer inte att ändras och behåller de gamla behörigheterna tills du redigerar dem.
+Blå poster har en hemlig nyckel tillgänglig, välj en av dessa för att kunna dekryptera.
+Svarta poster har en krypteringsnyckel tillgänglig och den är betrodd, välj en av dessa för att tillåta andra personer att dekryptera.
+Röda poster är inte giltiga, du kommer inte att kunna kryptera till dessa.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
