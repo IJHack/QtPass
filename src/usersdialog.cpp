@@ -174,9 +174,13 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
   if (!user.isValid() && !ui->checkBox->isChecked()) {
     return false;
   }
-  bool expired = user.expiry.toSecsSinceEpoch() > 0 &&
-                 QDateTime::currentDateTime() > user.expiry;
+  const bool expired = isUserExpired(user);
   return !(expired && !ui->checkBox->isChecked());
+}
+
+bool UsersDialog::isUserExpired(const UserInfo &user) const {
+  return user.expiry.toSecsSinceEpoch() > 0 &&
+         QDateTime::currentDateTime() > user.expiry;
 }
 
 QString UsersDialog::buildUserText(const UserInfo &user) const {
@@ -202,8 +206,7 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
   } else if (!user.isValid()) {
     item->setBackground(Qt::darkRed);
     item->setForeground(Qt::white);
-  } else if (user.expiry.toSecsSinceEpoch() > 0 &&
-             user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
+  } else if (isUserExpired(user)) {
     item->setForeground(Qt::darkRed);
   } else if (!user.fullyValid()) {
     item->setBackground(Qt::darkYellow);
