@@ -92,6 +92,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
+Q_DECLARE_METATYPE(const UserInfo *)
 
 /**
  * @brief UsersDialog::accept
