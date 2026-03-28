@@ -5,7 +5,7 @@ var searchData=
   ['mainwindow_2',['mainwindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a52e97245b2f88492071e639395c4a15a',1,'MainWindow::MainWindow()']]],
   ['mainwindow_2ecpp_3',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
   ['mainwindow_2eh_4',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
-  ['marginallyvalid_5',['marginallyValid',['../struct_user_info.html#aaa384aca5c83b9eb2ac370190b9ca92e',1,'UserInfo']]],
+  ['marginallyvalid_5',['marginallyValid',['../struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd',1,'UserInfo']]],
   ['maximized_6',['maximized',['../class_settings_constants.html#a02d876a1caeda24fadb8dffce6cf3b9a',1,'SettingsConstants']]],
   ['messageavailable_7',['messageavailable',['../class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b',1,'MainWindow::messageAvailable()'],['../class_single_application.html#ab893aad585d0cc3ee82659709a6a069b',1,'SingleApplication::messageAvailable()']]],
   ['mimedata_8',['mimeData',['../class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09',1,'StoreModel']]],
