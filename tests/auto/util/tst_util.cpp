@@ -473,10 +473,10 @@ void tst_util::simpleTransactionNested() {
   simpleTransaction trans;
   trans.transactionAdd(Enums::PASS_INSERT);
   trans.transactionAdd(Enums::GIT_PUSH);
-  Enums::PROCESS gitPushResult = trans.transactionIsOver(Enums::GIT_PUSH);
-  QVERIFY(gitPushResult == Enums::GIT_PUSH);
   Enums::PROCESS passInsertResult = trans.transactionIsOver(Enums::PASS_INSERT);
   QVERIFY(passInsertResult == Enums::PASS_INSERT);
+  Enums::PROCESS gitPushResult = trans.transactionIsOver(Enums::GIT_PUSH);
+  QVERIFY(gitPushResult == Enums::GIT_PUSH);
 }
 
 void tst_util::createGpgIdFile() {
