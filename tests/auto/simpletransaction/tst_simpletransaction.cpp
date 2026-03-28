@@ -35,10 +35,9 @@ void tst_simpletransaction::transactionAdd() {
 
 void tst_simpletransaction::transactionIsOver() {
   simpleTransaction st;
-  st.transactionStart();
-  st.transactionEnd(Enums::PASS_INSERT);
+  st.transactionAdd(Enums::PASS_INSERT);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_INSERT);
-  QVERIFY(result != Enums::INVALID || result == Enums::INVALID);
+  QCOMPARE(result, Enums::PASS_INSERT);
 }
 
 void tst_simpletransaction::nestedTransaction() {

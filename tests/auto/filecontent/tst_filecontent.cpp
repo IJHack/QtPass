@@ -47,11 +47,11 @@ void tst_filecontent::parseWithTemplateFields() {
   QVERIFY2(fc.getPassword() == "mypassword", "Password should be mypassword");
 
   NamedValues nv = fc.getNamedValues();
-  QVERIFY(nv.size() == 2);
-  QVERIFY(nv[0].name == "username");
-  QVERIFY(nv[0].value == "john@example.com");
-  QVERIFY(nv[1].name == "url");
-  QVERIFY(nv[1].value == "https://example.com");
+  QCOMPARE(nv.size(), 2);
+  QCOMPARE(nv[0].name, QString("username"));
+  QCOMPARE(nv[0].value, QString("john@example.com"));
+  QCOMPARE(nv[1].name, QString("url"));
+  QCOMPARE(nv[1].value, QString("https://example.com"));
 }
 
 void tst_filecontent::parseWithAllFields() {
@@ -63,7 +63,7 @@ void tst_filecontent::parseWithAllFields() {
   QVERIFY2(fc.getPassword() == "pass123", "Password should be pass123");
 
   NamedValues nv = fc.getNamedValues();
-  QVERIFY(nv.size() == 3);
+  QCOMPARE(nv.size(), 3);
 }
 
 void tst_filecontent::getRemainingData() {
@@ -111,14 +111,14 @@ void tst_filecontent::parseEmptyContent() {
 
 void tst_filecontent::parsePasswordOnly() {
   FileContent fc = FileContent::parse("single_line", QStringList(), false);
-  QVERIFY(fc.getPassword() == "single_line");
+  QCOMPARE(fc.getPassword(), QString("single_line"));
 }
 
 void tst_filecontent::parseMultipleNamedFields() {
   QString content = "pass\nuser: u1\nuser: u2\nuser: u3";
   QStringList templateFields = {"user"};
   FileContent fc = FileContent::parse(content, templateFields, false);
-  QVERIFY(fc.getPassword() == "pass");
+  QCOMPARE(fc.getPassword(), QString("pass"));
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.size() >= 1);
 }
