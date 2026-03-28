@@ -937,6 +937,9 @@
           <property name="text">
            <string>Signing Key</string>
           </property>
+          <property name="toolTip">
+           <string>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</string>
+          </property>
          </column>
         </widget>
        </item>
