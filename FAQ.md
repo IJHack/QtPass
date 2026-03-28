@@ -55,7 +55,7 @@ Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpas
 
 ### Git has issues with GPG SSH Authentication
 
-If you're experiencing issues with GPG SSH authentication in Git, this tutorial might help resolve them.
+This tutorial might resolve your issues.
 <https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
 
 ### GPG says "Public key unusable" or "No secret key"
