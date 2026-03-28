@@ -1198,32 +1198,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
-        <translation></translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
-        <translation></translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
-        <translation></translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
-        <translation></translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
-        <translation></translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
-        <translation></translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
 </context>
 <context>
