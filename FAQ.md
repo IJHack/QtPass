@@ -66,6 +66,14 @@ Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and
 - Check if the key has expired (`expire` command to extend if needed)
 - For smartcards/YubiKeys, ensure the card is connected and unlocked (you can verify with `gpg --card-status`)
 
+### What is the "Signing Key" in profile settings?
+
+The Signing Key field in profile configuration is **optional** and usually should be **left empty**.
+
+It is only needed if you want to create **detached signatures** for your `.gpg-id` files to verify the recipients list hasn't been tampered with. Most users can ignore this field.
+
+Common mistake: Putting your GPG key ID here will cause "Signature does not exist" errors when saving passwords. Leave it empty unless you specifically need signature verification.
+
 ### OTP QR codes don't work on macOS
 
 Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass.
