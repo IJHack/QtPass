@@ -144,7 +144,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="941"/>
+        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="981"/>
         <source>Current path</source>
         <translation>Huidige pad</translation>
     </message>
@@ -299,12 +304,12 @@
         <translation>Pad</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="948"/>
+        <location filename="../src/configdialog.ui" line="951"/>
         <source>Add</source>
         <translation>Voeg by</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="963"/>
+        <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
         <translation>Verwyder</translation>
     </message>
@@ -313,7 +318,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="998"/>
+        <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
         <translation>Sjabloon</translation>
     </message>
@@ -322,17 +327,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
         <translation>Gebruik sjabloon</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Toon alle lyne wat met &apos;n woord begin, gevolg deur &apos;n dubbelpunt as velde in wagwoordvelde, nie net die lys nie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
         <translation>Toon alle velde as sjablooninhoud</translation>
     </message>
@@ -345,7 +350,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt; QtPass &lt;/a&gt; weergawe </translation>
     </message>
@@ -484,7 +489,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="742"/>
         <location filename="../src/configdialog.ui" line="785"/>
         <location filename="../src/configdialog.ui" line="816"/>
-        <location filename="../src/configdialog.ui" line="985"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -499,12 +504,12 @@ email</translation>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Sjablone voeg ekstra velde by in die dialoog met die wagwoordgenerering en in die wagwoordaansig.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>login
 URL
 e-mail</source>
@@ -1297,12 +1302,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
         <translation>dwing oorskryf?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="292"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
         <translation>oorskryf %1 met %2?</translation>
     </message>
@@ -1352,14 +1357,22 @@ p, li { white-space: pre-wrap; }
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
+Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Kies watter gebruikers wagwoorde wat in hierdie lêergids gestoor is, moet kan dekodeer.
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Kies watter gebruikers wagwoorde wat in hierdie lêergids gestoor is, moet kan dekodeer.
 Opmerking: Bestaande lêers sal nie verander word nie en behou die ou regte totdat u dit bewerk.
 Blou inskrywings het &apos;n geheime sleutel beskikbaar, kies een van hierdie om te kan dekripteer.
 Rooi inskrywings is nie geldig nie; u kan nie hierna enkripteer nie.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="69"/>
+        <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
         <translation>Soek vir gebruikers</translation>
     </message>
@@ -1378,7 +1391,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Search Users</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="76"/>
+        <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
         <translation>Wys onbruikbaar sleutels</translation>
     </message>
@@ -1391,27 +1404,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="27"/>
+        <location filename="../src/usersdialog.cpp" line="28"/>
         <source>Keylist missing</source>
         <translation>Sleutellys ontbreek</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kon nie lys van beskikbare GPG-sleutels ophaal nie</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="66"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Key not found in keyring</source>
         <translation>Sleutel word nie in sleutelring gevind nie</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="164"/>
+        <location filename="../src/usersdialog.cpp" line="190"/>
         <source>created</source>
         <translation>geskep</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="169"/>
+        <location filename="../src/usersdialog.cpp" line="194"/>
         <source>expires</source>
         <translation>verstryk</translation>
     </message>

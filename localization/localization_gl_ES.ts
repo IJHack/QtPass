@@ -124,7 +124,7 @@
         <translation>Incluír símbolos especiais</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="981"/>
         <source>Current path</source>
         <translation>Ruta actual</translation>
     </message>
@@ -269,37 +269,42 @@
         <translation>Chave de sinatura</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="948"/>
+        <location filename="../src/configdialog.ui" line="941"/>
+        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="951"/>
         <source>Add</source>
         <translation>Engadir</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="963"/>
+        <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="998"/>
+        <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
         <translation>Usar modelo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Mostra tódalas liñas que comecen cunha palabra seguida por dous puntos como campos nos campos de contrasinal, non só os listados</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
         <translation>Mostra tódolos campos dos modelos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>Versión &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
@@ -428,7 +433,7 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <location filename="../src/configdialog.ui" line="785"/>
         <location filename="../src/configdialog.ui" line="816"/>
-        <location filename="../src/configdialog.ui" line="985"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -443,12 +448,12 @@
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Os modelos engaden campos extra nos cadros de diálogo de creación de contrasinais e na vista de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>login
 URL
 e-mail</source>
@@ -1255,12 +1260,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
         <translation>forzar sobrescritura?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="292"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
         <translation>sobrescribir %1 con %2?</translation>
     </message>
@@ -1306,48 +1311,56 @@ p, li { white-space: pre-wrap; }
         <translation>Usuarios con acceso de lectura</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="45"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Elixe que usuarios poderás descifrar os contrasinais gardados neste cartafol.
+        <translation type="vanished">Elixe que usuarios poderás descifrar os contrasinais gardados neste cartafol.
 Nota: os ficheiros existentes non serán modificados, e reteñen os permisos antigos ata que os edites.
 As entradas en azul dispoñen de chave segreda dispoñible, elixe unha desta para poder descifrar.
 As entradas en vermello non son válidas, non poderás cifrar con elas.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="69"/>
+        <location filename="../src/usersdialog.ui" line="45"/>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
         <translation>Buscar usuarios</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="76"/>
+        <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
         <translation>Mostra chaves non válidas</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="27"/>
+        <location filename="../src/usersdialog.cpp" line="28"/>
         <source>Keylist missing</source>
         <translation>Non hai lista de chaves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Non se puido obter a lista de chaves GPG dispoñibles</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="66"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Key not found in keyring</source>
         <translation>Non se atopan chaves no anel de chaves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="164"/>
+        <location filename="../src/usersdialog.cpp" line="190"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="169"/>
+        <location filename="../src/usersdialog.cpp" line="194"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>

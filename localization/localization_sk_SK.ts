@@ -144,7 +144,12 @@
         <translation>Podpisový kľúč</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="941"/>
+        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="981"/>
         <source>Current path</source>
         <translation>Aktuálna cesta</translation>
     </message>
@@ -299,12 +304,12 @@
         <translation>Cesta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="948"/>
+        <location filename="../src/configdialog.ui" line="951"/>
         <source>Add</source>
         <translation>Pridať</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="963"/>
+        <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
         <translation>Zmazať</translation>
     </message>
@@ -313,7 +318,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="998"/>
+        <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
         <translation>Šablóna</translation>
     </message>
@@ -322,17 +327,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
         <translation>Použiť šablonu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Zobraziť všetky riadky začínajúce slovom nasledované bodkočiarkou ako pole v položkách hesla, nie len vypísané</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
         <translation>Zobraziť všetky polia v šablóne</translation>
     </message>
@@ -345,7 +350,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzia </translation>
     </message>
@@ -484,7 +489,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="742"/>
         <location filename="../src/configdialog.ui" line="785"/>
         <location filename="../src/configdialog.ui" line="816"/>
-        <location filename="../src/configdialog.ui" line="985"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -499,12 +504,12 @@ email</translation>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Šablóny pridávajú ďalšie pole v dialógu pre generovanie hesiel a zobrazení hesla.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>login
 URL
 e-mail</source>
@@ -1330,12 +1335,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
         <translation>Vynútiť prepísanie?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="292"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
         <translation>prepísať %1 pomocou %2?</translation>
     </message>
@@ -1385,14 +1390,22 @@ p, li { white-space: pre-wrap; }
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
+Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Vyberte, ktorí uživatelia majú byť schopní dešifrovať heslá uložené v tomto adresáre.
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Vyberte, ktorí uživatelia majú byť schopní dešifrovať heslá uložené v tomto adresáre.
 Poznámka: Existujúce súbory nebudú zmenené a staré oprávnenie ostanú zachované, pokiaľ ich neupravíte.
 Modré záznamy majú k dispozícii tajný kľúč. Vyberte jeden z nich, ktorý chcete dešifrovať.
 Červené položky nie sú platné, nebudete ich môcť zašifrovať.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="69"/>
+        <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
         <translation>Hľadať uživateľov</translation>
     </message>
@@ -1411,7 +1424,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Search Users</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="76"/>
+        <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
         <translation>Zobraziť nepoužiteľné kľúče</translation>
     </message>
@@ -1424,27 +1437,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="27"/>
+        <location filename="../src/usersdialog.cpp" line="28"/>
         <source>Keylist missing</source>
         <translation>Chýba zoznam kľúčov</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nemôžem načítať zoznam dostupných kľúčov GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="66"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Key not found in keyring</source>
         <translation>Kľúč nebol nájdený v kľúčenke</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="164"/>
+        <location filename="../src/usersdialog.cpp" line="190"/>
         <source>created</source>
         <translation>vytvorené</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="169"/>
+        <location filename="../src/usersdialog.cpp" line="194"/>
         <source>expires</source>
         <translation>vyprší</translation>
     </message>

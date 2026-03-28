@@ -125,7 +125,7 @@
         <translation>Përfshini simbole të veçanta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="981"/>
         <source>Current path</source>
         <translation>Pathi aktual</translation>
     </message>
@@ -269,37 +269,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="948"/>
+        <location filename="../src/configdialog.ui" line="941"/>
+        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="951"/>
         <source>Add</source>
         <translation>Shto</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="963"/>
+        <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
         <translation>Fshij</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="998"/>
+        <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
         <translation>Shabllon</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
         <translation>Përdorni shabllonin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Trego të gjitha rreshtat që fillojnë me një fjalë të ndjekur nga dy pika si fusha në fushat e fjalëkalimit, jo vetëm ato të listuarat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
         <translation>Trego modelin e të gjitha fushave</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
@@ -428,7 +433,7 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <location filename="../src/configdialog.ui" line="785"/>
         <location filename="../src/configdialog.ui" line="816"/>
-        <location filename="../src/configdialog.ui" line="985"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -443,12 +448,12 @@
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1019"/>
+        <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Modelet shtojnë fusha shtesë në dialogun e gjenerimit të fjalëkalimit dhe në pamjen e fjalëkalimit.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>login
 URL
 e-mail</source>
@@ -1098,12 +1103,12 @@ Expire-Date: 0
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
         <translation>rishkruaj me forcë?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="292"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
         <translation>rishkruaj %1 me %2?</translation>
     </message>
@@ -1153,14 +1158,22 @@ Expire-Date: 0
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
+Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
 Shënim: Skedarët ekzistues nuk do të modifikohen dhe mbajnë lejet e vjetra deri sa t&apos;i përpunoni ato.
 Hyrjet blu kanë në dispozicion një çelës sekret, zgjidhni njërën nga këto që të mund të deshifroni.
 Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apos;i kodoni këto.</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="69"/>
+        <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
         <translation>Kërkoni për përdoruesit</translation>
     </message>
@@ -1179,32 +1192,32 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation type="vanished">Kërkoni përdoruesit</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="76"/>
+        <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
         <translation>Trego çelësa të papërdorshëm</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="27"/>
+        <location filename="../src/usersdialog.cpp" line="28"/>
         <source>Keylist missing</source>
         <translation>Lista kryesore  mungon</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nuk mund të marr listën e çelësave të disponueshëm GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="66"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Key not found in keyring</source>
         <translation>çelësi nuk u gjet në keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="164"/>
+        <location filename="../src/usersdialog.cpp" line="190"/>
         <source>created</source>
         <translation>krijuar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="169"/>
+        <location filename="../src/usersdialog.cpp" line="194"/>
         <source>expires</source>
         <translation>skadon</translation>
     </message>
