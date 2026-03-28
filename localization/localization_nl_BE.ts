@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Genereren</translation>
+        <translation>Genereren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer een GPG-sleutelpaar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel: Sleutel die wordt gebruikt om .gpg-id-bestanden te ondertekenen. Laat dit veld leeg, tenzij u losse handtekeningen nodig hebt voor verificatie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -641,7 +641,7 @@ Je kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>De inhoud van het sjabloon wordt ingesteld op basis van de GPG-versie.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1320,12 +1320,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereren van GPG-sleutelpaar is mislukt</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-sleutelpaar succesvol gegenereerd</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
@@ -1403,7 +1403,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke gebruikers wachtwoorden in deze map mogen ontsleutelen.
+Opmerking: Bestaande bestanden worden niet gewijzigd en behouden hun oude machtigingen totdat u ze bewerkt.
+Blauwe items hebben een geheime sleutel; selecteer er een om te ontsleutelen.
+Zwarte items hebben een versleutelingssleutel die vertrouwd is; selecteer er een om anderen te laten ontsleutelen.
+Rode items zijn ongeldig; u kunt er geen gegevens in versleutelen.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
