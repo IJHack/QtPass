@@ -7,6 +7,7 @@
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QRegularExpression>
+#include <QSet>
 #include <QWidget>
 #include <utility>
 
@@ -30,11 +31,13 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   }
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
-  foreach (const UserInfo &sec, secret_keys) {
-    for (auto &user : users) {
-      if (sec.key_id == user.key_id) {
-        user.have_secret = true;
-      }
+  QSet<QString> secretKeyIds;
+  for (const UserInfo &sec : secret_keys) {
+    secretKeyIds.insert(sec.key_id);
+  }
+  for (auto &user : users) {
+    if (secretKeyIds.contains(user.key_id)) {
+      user.have_secret = true;
     }
   }
 
@@ -46,11 +49,13 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   if (!recipients.isEmpty()) {
     selected_users = QtPassSettings::getPass()->listKeys(recipients);
   }
-  foreach (const UserInfo &sel, selected_users) {
-    for (auto &user : users) {
-      if (sel.key_id == user.key_id) {
-        user.enabled = true;
-      }
+  QSet<QString> selectedKeyIds;
+  for (const UserInfo &sel : selected_users) {
+    selectedKeyIds.insert(sel.key_id);
+  }
+  for (auto &user : users) {
+    if (selectedKeyIds.contains(user.key_id)) {
+      user.enabled = true;
     }
   }
 
@@ -58,7 +63,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     // Some keys seem missing from keyring, add them separately
     QStringList recipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
-    foreach (const QString &recipient, recipients) {
+    for (const QString &recipient : recipients) {
       if (QtPassSettings::getPass()->listKeys(recipient).empty()) {
         UserInfo i;
         i.enabled = true;
