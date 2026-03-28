@@ -27,7 +27,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   if (users.isEmpty()) {
     QMessageBox::critical(parent, tr("Keylist missing"),
                           tr("Could not fetch list of available GPG keys"));
-    return;
+    reject();
   }
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
@@ -92,6 +92,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 UsersDialog::~UsersDialog() { delete ui; }
 
 Q_DECLARE_METATYPE(UserInfo *)
+Q_DECLARE_METATYPE(const UserInfo *)
 
 /**
  * @brief UsersDialog::accept
@@ -153,7 +154,7 @@ void UsersDialog::populateList(const QString &filter) {
       QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
 
-  for (auto &user : m_userList) {
+  for (const auto &user : m_userList) {
     if (!passesFilter(user, filter, nameFilter)) {
       continue;
     }
@@ -200,7 +201,7 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
   if (user.have_secret) {
     item->setForeground(Qt::blue);
-    QFont font;
+    QFont font = item->font();
     font.setBold(true);
     item->setFont(font);
   } else if (!user.isValid()) {
