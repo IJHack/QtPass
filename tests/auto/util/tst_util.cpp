@@ -465,14 +465,18 @@ void tst_util::passwordConfigurationCharacters() {
 void tst_util::simpleTransactionBasic() {
   simpleTransaction trans;
   trans.transactionAdd(Enums::PASS_INSERT);
-  trans.transactionIsOver(Enums::PASS_INSERT);
+  Enums::PROCESS result = trans.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY(result == Enums::PASS_INSERT);
 }
 
 void tst_util::simpleTransactionNested() {
   simpleTransaction trans;
   trans.transactionAdd(Enums::PASS_INSERT);
   trans.transactionAdd(Enums::GIT_PUSH);
-  trans.transactionIsOver(Enums::GIT_PUSH);
+  Enums::PROCESS gitPushResult = trans.transactionIsOver(Enums::GIT_PUSH);
+  QVERIFY(gitPushResult == Enums::GIT_PUSH);
+  Enums::PROCESS passInsertResult = trans.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY(passInsertResult == Enums::PASS_INSERT);
 }
 
 void tst_util::createGpgIdFile() {
@@ -575,7 +579,10 @@ void tst_util::findPasswordStore() {
   QVERIFY(result.endsWith(QDir::separator()));
 }
 
-void tst_util::checkConfig() { (void)Util::checkConfig(); }
+void tst_util::checkConfig() {
+  // Smoke test: ensure Util::checkConfig() can be called without crashing.
+  (void)Util::checkConfig();
+}
 
 void tst_util::getDirBasic() {
   QFileSystemModel fsm;
