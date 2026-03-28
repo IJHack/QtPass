@@ -200,7 +200,7 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
   if (user.have_secret) {
     item->setForeground(Qt::blue);
-    QFont font;
+    QFont font = item->font();
     font.setBold(true);
     item->setFont(font);
   } else if (!user.isValid()) {
