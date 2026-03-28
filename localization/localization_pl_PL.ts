@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcjonalnie: klucz GPG do podpisywania plików .gpg-id w celu weryfikacji integralności. Pozostaw puste, chyba że chcesz chronić listę użytkowników przed manipulacją.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
