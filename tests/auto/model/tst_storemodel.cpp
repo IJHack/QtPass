@@ -244,7 +244,7 @@ void tst_storemodel::setModelAndStore() {
 void tst_storemodel::showThisWithNullFs() {
   StoreModel sm;
   QModelIndex index;
-  bool result = sm.ShowThis(index);
+  bool result = sm.showThis(index);
   QVERIFY(!result);
 }
 
