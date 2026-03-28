@@ -35,7 +35,7 @@ max-cache-ttl 7200
 
 ### I have another issue with gpg
 
-- Possibly you have you key only in gpg and not in gpg2
+- Possibly you have your key only in gpg and not in gpg2
 
 ```bash
 gpg --export [ID] > public.key
@@ -85,7 +85,7 @@ QtPass tries to use the native config choice for the OS it's running.
 These settings can be over-ruled by a `qtpass.ini` file in the folder where the application resides.
 So called "portable config".
 
-There are some things to take care of when trying to sync on some systems (especially OSX, with regards to text and binary .plist files).
+There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).
 
 More information: <https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
 

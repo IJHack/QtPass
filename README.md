@@ -4,7 +4,7 @@
 [![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 
-[![QMake Github Action](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)
+[![QMake GitHub Action](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/main?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
@@ -98,8 +98,8 @@ See [Windows.md](Windows.md) for Windows-specific installation and build instruc
 
 ## Using profiles
 
-Profiles allow to group passwords. Each profile might use a different Git repository and/or different gpg key.
-Each profile also can be associated with a pass store singing key to verify the detached .gpg-id signature.
+Profiles allow grouping passwords. Each profile might use a different Git repository and/or different gpg key.
+Each profile also can be associated with a pass store signing key to verify the detached .gpg-id signature.
 A typical use case is to separate personal and work passwords.
 
 > **Hint**<br>
@@ -148,7 +148,7 @@ This is done with `make check`
 
 Codecoverage can be done with `make lcov`, `make gcov`, `make coveralls` and/or `make codecov`.
 
-Be sure to first run: `make distclean && qmake CONFIG+=coverage qtpass.pro`
+Be sure to first run: `make distclean && qmake6 CONFIG+=coverage qtpass.pro`
 
 ## Security considerations
 
@@ -165,7 +165,7 @@ even without your PIN) all your passwords available to the machine can be
 decrypted by it, if there is malicious software targeted specifically against
 it installed (or at least one that knows how to use a smartcard).
 
-To get better protection out of use with a smartcard even against a targeted
+To get better protection when using a smartcard even against a targeted
 attack I can think of at least two options:
 
 - The smartcard must require explicit confirmation for each decryption operation.
@@ -201,8 +201,8 @@ attack I can think of at least two options:
 [CHANGELOG](CHANGELOG.md)
 
 [Site](https://qtpass.org/)
-[Source code](https://github.com/IJHack/qtpass)
-[Issue queue](https://github.com/IJHack/qtpass/issues)
+[Source code](https://github.com/IJHack/QtPass)
+[Issue queue](https://github.com/IJHack/QtPass/issues)
 
 > **AI Assistance**<br>
 > Parts of this project were developed with assistance from AI tools (such as [OpenCode](https://opencode.ai/)).
