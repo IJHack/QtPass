@@ -61,9 +61,9 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   if (count > selected_users.size()) {
     // Some keys seem missing from keyring, add them separately
-    QStringList recipients = QtPassSettings::getPass()->getRecipientList(
+    QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
-    for (const QString &recipient : recipients) {
+    for (const QString &recipient : allRecipients) {
       if (QtPassSettings::getPass()->listKeys(recipient).empty()) {
         UserInfo i;
         i.enabled = true;
@@ -175,7 +175,7 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
     return false;
   }
   bool expired = user.expiry.toSecsSinceEpoch() > 0 &&
-                 user.expiry.daysTo(QDateTime::currentDateTime()) > 0;
+                 QDateTime::currentDateTime() > user.expiry;
   return !(expired && !ui->checkBox->isChecked());
 }
 
