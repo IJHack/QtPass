@@ -124,7 +124,7 @@ void tst_storemodel::supportedDragActions() {
 void tst_storemodel::filterAcceptsRowHidden() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/secret.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
