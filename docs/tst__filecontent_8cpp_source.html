@@ -134,11 +134,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  QVERIFY2(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() == <span class="stringliteral">&quot;mypassword&quot;</span>, <span class="stringliteral">&quot;Password should be mypassword&quot;</span>);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> nv = fc.<a class="code hl_function" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  QVERIFY(nv.size() == 2);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  QVERIFY(nv[0].name == <span class="stringliteral">&quot;username&quot;</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  QVERIFY(nv[0].value == <span class="stringliteral">&quot;john@example.com&quot;</span>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  QVERIFY(nv[1].name == <span class="stringliteral">&quot;url&quot;</span>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  QVERIFY(nv[1].value == <span class="stringliteral">&quot;https://example.com&quot;</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  QCOMPARE(nv.size(), 2);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  QCOMPARE(nv[0].name, QString(<span class="stringliteral">&quot;username&quot;</span>));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  QCOMPARE(nv[0].value, QString(<span class="stringliteral">&quot;john@example.com&quot;</span>));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  QCOMPARE(nv[1].name, QString(<span class="stringliteral">&quot;url&quot;</span>));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  QCOMPARE(nv[1].value, QString(<span class="stringliteral">&quot;https://example.com&quot;</span>));</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> tst_filecontent::parseWithAllFields() {</div>
@@ -150,7 +150,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  QVERIFY2(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() == <span class="stringliteral">&quot;pass123&quot;</span>, <span class="stringliteral">&quot;Password should be pass123&quot;</span>);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> nv = fc.<a class="code hl_function" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QVERIFY(nv.size() == 3);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QCOMPARE(nv.size(), 3);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">void</span> tst_filecontent::getRemainingData() {</div>
@@ -198,14 +198,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> tst_filecontent::parsePasswordOnly() {</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_class" href="class_file_content.html">FileContent</a> fc = <a class="code hl_function" href="class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510">FileContent::parse</a>(<span class="stringliteral">&quot;single_line&quot;</span>, QStringList(), <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  QVERIFY(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() == <span class="stringliteral">&quot;single_line&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  QCOMPARE(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>(), QString(<span class="stringliteral">&quot;single_line&quot;</span>));</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> tst_filecontent::parseMultipleNamedFields() {</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  QString content = <span class="stringliteral">&quot;pass\nuser: u1\nuser: u2\nuser: u3&quot;</span>;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  QStringList templateFields = {<span class="stringliteral">&quot;user&quot;</span>};</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <a class="code hl_class" href="class_file_content.html">FileContent</a> fc = <a class="code hl_function" href="class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510">FileContent::parse</a>(content, templateFields, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  QVERIFY(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() == <span class="stringliteral">&quot;pass&quot;</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  QCOMPARE(fc.<a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>(), QString(<span class="stringliteral">&quot;pass&quot;</span>));</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> nv = fc.<a class="code hl_function" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a>();</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  QVERIFY(nv.size() &gt;= 1);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
