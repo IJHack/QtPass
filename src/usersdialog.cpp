@@ -91,8 +91,10 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
  */
 UsersDialog::~UsersDialog() { delete ui; }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 Q_DECLARE_METATYPE(UserInfo *)
 Q_DECLARE_METATYPE(const UserInfo *)
+#endif
 
 /**
  * @brief UsersDialog::accept
