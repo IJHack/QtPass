@@ -47,6 +47,9 @@ gh pr create --base main --title "Fix" --body "Fixes #issue"
 **Before pushing or merging, always update with latest main:**
 
 ```bash
+# (If not already set) add upstream remote pointing to main repository
+# git remote add upstream git@github.com:<owner>/QtPass.git
+
 # Fetch and rebase on main
 git fetch upstream
 git pull upstream main --rebase
@@ -228,7 +231,7 @@ git remote add myfork git@github.com:<your-username>/QtPass.git
 git push -u myfork <branch-name>
 
 # Create PR from your fork to upstream
-gh pr create --base upstream/main --head your-fork:branch
+gh pr create --base upstream/main --head <your-username>:<branch-name>
 ```
 
 Note: When working with forks, use `myfork` for pushing and `upstream` for syncing with main repository.
@@ -286,13 +289,18 @@ GitHub provides AI-generated code quality suggestions under **Security → AI fi
 
    ```bash
    git push -u origin fix/ai-findings
-   gh pr create --title "fix: resolve AI findings" --body "## Summary
+
+   # Use HEREDOC for multi-line body
+   gh pr create --title "fix: resolve AI findings" --body "$(cat <<'EOF'
+   ## Summary
 
    Found by GitHub AI-powered bug detection.
 
    - Fixed tautology assertions in tests
    - Added return value verification
-   - Corrected spelling typos"
+   - Corrected spelling typos
+   EOF
+   )"
    ```
 
 ### Checking AI Findings
