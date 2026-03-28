@@ -81,7 +81,7 @@ var searchData=
   ['showmessage_78',['showMessage',['../class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a',1,'TrayIcon']]],
   ['showstatusmessage_79',['showStatusMessage',['../class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf',1,'MainWindow']]],
   ['showtextasqrcode_80',['showTextAsQRCode',['../class_qt_pass.html#aef5aaf0605c7681967995ede486590ef',1,'QtPass']]],
-  ['showthis_81',['ShowThis',['../class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440',1,'StoreModel']]],
+  ['showthis_81',['showThis',['../class_store_model.html#aa804a7d11d5fefbd50d89cb41e9b7089',1,'StoreModel']]],
   ['signgpgidfile_82',['signGpgIdFile',['../class_imitate_pass.html#a7dd7273385a6e3a9cdd2dc68ad7aef1f',1,'ImitatePass']]],
   ['simpletransaction_83',['simpletransaction',['../classsimple_transaction.html',1,'simpleTransaction'],['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction::simpleTransaction()']]],
   ['simpletransaction_2ecpp_84',['simpletransaction.cpp',['../simpletransaction_8cpp.html',1,'']]],

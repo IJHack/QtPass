@@ -192,9 +192,9 @@ var sectionId = 'dynsection-4';
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440" target="_top" xlink:title="StoreModel::ShowThis should a row be shown, based on our search criteria.">
-<polygon fill="white" stroke="#666666" points="472,-19 347,-19 347,0 472,0 472,-19"/>
-<text text-anchor="middle" x="409.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::ShowThis</text>
+<g id="a_Node000013"><a xlink:href="class_store_model.html#aa804a7d11d5fefbd50d89cb41e9b7089" target="_top" xlink:title="StoreModel::showThis should a row be shown, based on our search criteria.">
+<polygon fill="white" stroke="#666666" points="471.5,-19 347.5,-19 347.5,0 471.5,0 471.5,-19"/>
+<text text-anchor="middle" x="409.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::showThis</text>
 </a>
 </g>
 </g>
@@ -202,7 +202,7 @@ var sectionId = 'dynsection-4';
 <g id="edge13_Node000001_Node000013" class="edge">
 <title>Node1&#45;&gt;Node13</title>
 <g id="a_edge13_Node000001_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M574.33,-120.88C560.84,-95.53 533.15,-50.67 496,-27.5 488.79,-23.01 480.65,-19.62 472.32,-17.06"/>
+<path fill="none" stroke="#63b8ff" d="M574.33,-120.88C560.84,-95.53 533.15,-50.67 496,-27.5 488.66,-22.93 480.35,-19.5 471.87,-16.93"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="571.26,-122.55 578.95,-129.85 577.49,-119.35 571.26,-122.55"/>
 </a>
 </g>

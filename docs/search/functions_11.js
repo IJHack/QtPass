@@ -76,7 +76,7 @@ var searchData=
   ['showmessage_73',['showMessage',['../class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a',1,'TrayIcon']]],
   ['showstatusmessage_74',['showStatusMessage',['../class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf',1,'MainWindow']]],
   ['showtextasqrcode_75',['showTextAsQRCode',['../class_qt_pass.html#aef5aaf0605c7681967995ede486590ef',1,'QtPass']]],
-  ['showthis_76',['ShowThis',['../class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440',1,'StoreModel']]],
+  ['showthis_76',['showThis',['../class_store_model.html#aa804a7d11d5fefbd50d89cb41e9b7089',1,'StoreModel']]],
   ['signgpgidfile_77',['signGpgIdFile',['../class_imitate_pass.html#a7dd7273385a6e3a9cdd2dc68ad7aef1f',1,'ImitatePass']]],
   ['simpletransaction_78',['simpleTransaction',['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction']]],
   ['singleapplication_79',['SingleApplication',['../class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5',1,'SingleApplication']]],

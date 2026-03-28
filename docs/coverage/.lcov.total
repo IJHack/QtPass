@@ -5034,7 +5034,7 @@ FN:250,306,_ZN10StoreModel12dropMimeDataEPK9QMimeDataN2Qt10DropActionEiiRK11QMod
 FN:314,329,_ZNK10StoreModel8lessThanERK11QModelIndexS2_
 FN:37,37,_ZN10StoreModelC2Ev
 FN:46,51,_ZNK10StoreModel16filterAcceptsRowEiRK11QModelIndex
-FN:59,87,_ZNK10StoreModel8ShowThisE11QModelIndex
+FN:59,87,_ZNK10StoreModel8showThisE11QModelIndex
 FN:94,99,_ZN10StoreModel16setModelAndStoreEP16QFileSystemModel7QString
 FNDA:2,_ZNK10StoreModel4dataERK11QModelIndexi
 FNDA:1,_ZNK10StoreModel20supportedDropActionsEv
@@ -5049,7 +5049,7 @@ FNDA:0,_ZN10StoreModel12dropMimeDataEPK9QMimeDataN2Qt10DropActionEiiRK11QModelIn
 FNDA:2,_ZNK10StoreModel8lessThanERK11QModelIndexS2_
 FNDA:17,_ZN10StoreModelC2Ev
 FNDA:15,_ZNK10StoreModel16filterAcceptsRowEiRK11QModelIndex
-FNDA:34,_ZNK10StoreModel8ShowThisE11QModelIndex
+FNDA:34,_ZNK10StoreModel8showThisE11QModelIndex
 FNDA:11,_ZN10StoreModel16setModelAndStoreEP16QFileSystemModel7QString
 FNF:15
 FNH:12

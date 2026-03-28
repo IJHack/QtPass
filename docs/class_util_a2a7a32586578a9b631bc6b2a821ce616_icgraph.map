@@ -14,8 +14,8 @@
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="746,214,667,245,614,259,613,253,666,239,744,209"/>
 <area shape="rect" id="Node000010" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title=" " alt="" coords="436,304,667,329"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="765,218,723,258,697,278,668,295,638,306,636,301,666,290,694,274,720,254,761,214"/>
-<area shape="rect" id="Node000013" href="$class_store_model.html#afcb0a51d2ff58302bf5ff100b8b71440" title="StoreModel::ShowThis should a row be shown, based on our search criteria." alt="" coords="468,353,635,379"/>
-<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="773,219,733,282,703,316,668,344,636,358,634,353,665,340,700,312,729,279,769,216"/>
+<area shape="rect" id="Node000013" href="$class_store_model.html#aa804a7d11d5fefbd50d89cb41e9b7089" title="StoreModel::showThis should a row be shown, based on our search criteria." alt="" coords="469,353,634,379"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="773,219,733,282,703,316,668,344,636,359,633,354,665,340,700,312,729,279,769,216"/>
 <area shape="rect" id="Node000005" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title=" " alt="" coords="219,104,361,129"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="432,119,361,119,361,114,432,114"/>
 <area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title=" " alt="" coords="11,229,138,255"/>
