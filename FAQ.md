@@ -4,7 +4,7 @@
 
 ### Can't save a password
 
-- Is folder initialised? Easiest way is to use the [Users] button
+- Is folder initialized? Easiest way is to use the [Users] button
   and make sure you can encrypt for someone (e.g. yourself)
 - Are you using Git? If not, make sure it is switched off.
 
@@ -25,7 +25,7 @@ max-cache-ttl 7200
 
 ### I don't get a passphrase / PIN dialog
 
-- You'll need to install pinentry-qt (or -gtk) and
+- You'll need to install a pinentry package (often called `pinentry-qt`, `pinentry-qt5`, or a similar name like `pinentry-gtk` depending on your distribution; search in your package manager) and
   possibly set the full path to that executable in your `~/.gnupg/gpg-agent.conf`
   for example: `pinentry-program /usr/bin/pinentry-qt`
 - On some systems it might be necessary to create a symbolic
@@ -64,7 +64,7 @@ Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and
 
 - Set the trust level to "ultimate" (`trust` command)
 - Check if the key has expired (`expire` command to extend if needed)
-- For smartcards/YubiKeys, ensure the card is connected and unlocked
+- For smartcards/YubiKeys, ensure the card is connected and unlocked (you can verify with `gpg --card-status`)
 
 ### OTP QR codes don't work on macOS
 
@@ -76,14 +76,14 @@ QtPass uses the system language at startup. On some desktop environments, you ma
 
 ### Where is the configuration stored?
 
-QtPass tries to use the native config choice for the OS it's running.
+QtPass tries to use the native configuration location for the operating system it is running on.
 
 - Linux and BSD: `$HOME/.config/IJHack/QtPass.conf`
 - macOS: `$HOME/Library/Preferences/com.IJHack.QtPass.plist`
 - Windows registry: `HKEY_CURRENT_USER\Software\IJHack\QtPass`
 
-These settings can be over-ruled by a `qtpass.ini` file in the folder where the application resides.
-So called "portable config".
+These settings can be overridden by a `qtpass.ini` file in the folder where the application resides.
+So-called "portable config".
 
 There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).
 
