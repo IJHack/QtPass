@@ -143,9 +143,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">if</span> (count &gt; selected_users.size()) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Some keys seem missing from keyring, add them separately</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    QStringList recipients = <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;getRecipientList(</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    QStringList allRecipients = <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;getRecipientList(</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        m_dir.isEmpty() ? <span class="stringliteral">&quot;&quot;</span> : m_dir);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;recipient : recipients) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;recipient : allRecipients) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;listKeys(recipient).empty()) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> i;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        i.<a class="code hl_variable" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a> = <span class="keyword">true</span>;</div>
@@ -240,7 +240,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  }</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordtype">bool</span> expired = user.<a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>.toSecsSinceEpoch() &gt; 0 &amp;&amp;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                 user.<a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>.daysTo(QDateTime::currentDateTime()) &gt; 0;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                 QDateTime::currentDateTime() &gt; user.<a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>;</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keywordflow">return</span> !(expired &amp;&amp; !ui-&gt;checkBox-&gt;isChecked());</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
