@@ -22,6 +22,7 @@ private Q_SLOTS:
   void supportedDropActions();
   void supportedDragActions();
   void filterAcceptsRowHidden();
+  void filterExcludesGitDirectory();
   void filterAcceptsRowVisible();
   void setModelAndStore();
   void showThisWithNullFs();
@@ -135,6 +136,22 @@ void tst_storemodel::filterAcceptsRowHidden() {
   QModelIndex index = fsm.index(tempDir.path() + "/secret.gpg");
   bool result = sm.filterAcceptsRow(0, index.parent());
   QVERIFY(!result);
+}
+
+void tst_storemodel::filterExcludesGitDirectory() {
+  QTemporaryDir tempDir;
+  QDir dir(tempDir.path());
+  QVERIFY(dir.mkdir(".git"));
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QModelIndex gitIndex = fsm.index(tempDir.path() + "/.git");
+  bool result = sm.filterAcceptsRow(0, gitIndex.parent());
+  QVERIFY2(!result, ".git directory should be hidden");
 }
 
 void tst_storemodel::filterAcceptsRowVisible() {
