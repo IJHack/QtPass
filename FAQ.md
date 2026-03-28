@@ -56,7 +56,7 @@ Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpas
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
-<https://github.com/git-for-windows/git/wiki/OpenSSH-Integration-with-Pageant>
+<https://gitforwindows.org/OpenSSH-Integration-with-Pageant>
 
 ### GPG says "Public key unusable" or "No secret key"
 
@@ -76,7 +76,16 @@ Common mistake: Putting your GPG key ID here will cause "Signature does not exis
 
 ### OTP QR codes don't work on macOS
 
-Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass.
+Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass, for example:
+
+```bash
+#!/usr/bin/env bash
+# Adjust PATH as needed for your Homebrew / QtPass installation
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+exec /Applications/QtPass.app/Contents/MacOS/qtpass "$@"
+```
+
+Save this script (e.g. as `~/bin/qtpass-wrapper.sh`), make it executable with `chmod +x ~/bin/qtpass-wrapper.sh`, and configure your launcher (Automator app, custom .app bundle, or shortcut) to run this script instead of starting QtPass directly.
 
 ### QtPass doesn't follow my system language
 
@@ -133,7 +142,7 @@ On some systems, you may need to specify the full path, e.g., `/usr/lib/qt6/bin/
 
 ### Qt installation issues
 
-Then you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
+If you encounter Qt installation issues, you'll have to install the current version via your package manager or download it from <https://www.qt.io/download/> and build from source.
 
 ### I don't like the design, what gives?
 
