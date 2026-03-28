@@ -38,7 +38,7 @@ StoreModel::StoreModel() { fs = nullptr; }
 
 /**
  * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for
- * StoreModel::ShowThis method.
+ * StoreModel::showThis method.
  * @param sourceRow
  * @param sourceParent
  * @return
@@ -47,16 +47,16 @@ auto StoreModel::filterAcceptsRow(int sourceRow,
                                   const QModelIndex &sourceParent) const
     -> bool {
   QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-  return ShowThis(index);
+  return showThis(index);
 }
 
 /**
- * @brief StoreModel::ShowThis should a row be shown, based on our search
+ * @brief StoreModel::showThis should a row be shown, based on our search
  * criteria.
  * @param index
  * @return
  */
-auto StoreModel::ShowThis(const QModelIndex index) const -> bool {
+auto StoreModel::showThis(const QModelIndex index) const -> bool {
   bool retVal = false;
   if (fs == nullptr) {
     return retVal;
@@ -68,7 +68,7 @@ auto StoreModel::ShowThis(const QModelIndex index) const -> bool {
       if (!childIndex.isValid()) {
         break;
       }
-      retVal = ShowThis(childIndex);
+      retVal = showThis(childIndex);
       if (retVal) {
         break;
       }

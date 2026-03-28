@@ -22,7 +22,7 @@ public:
 
   [[nodiscard]] auto filterAcceptsRow(int, const QModelIndex &) const
       -> bool override;
-  [[nodiscard]] auto ShowThis(const QModelIndex) const -> bool;
+  [[nodiscard]] auto showThis(const QModelIndex) const -> bool;
   void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
   [[nodiscard]] auto data(const QModelIndex &index, int role) const
       -> QVariant override;

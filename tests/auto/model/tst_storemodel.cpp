@@ -69,9 +69,10 @@ void tst_storemodel::flagsWithValidIndex() {
 }
 
 void tst_storemodel::flagsWithInvalidIndex() {
+  QTemporaryDir tempDir;
   QFileSystemModel fsm;
   StoreModel sm;
-  sm.setModelAndStore(&fsm, "/tmp");
+  sm.setModelAndStore(&fsm, tempDir.path());
 
   QModelIndex invalidIndex;
   Qt::ItemFlags flags = sm.flags(invalidIndex);
@@ -174,8 +175,9 @@ void tst_storemodel::filterAcceptsRowVisible() {
 
 void tst_storemodel::dataWithInvalidIndex() {
   QFileSystemModel fsm;
+  QTemporaryDir tempDir;
   StoreModel sm;
-  sm.setModelAndStore(&fsm, "/tmp");
+  sm.setModelAndStore(&fsm, tempDir.path());
 
   QModelIndex invalidIndex;
   QVariant result = sm.data(invalidIndex, Qt::DisplayRole);
@@ -244,7 +246,7 @@ void tst_storemodel::setModelAndStore() {
 void tst_storemodel::showThisWithNullFs() {
   StoreModel sm;
   QModelIndex index;
-  bool result = sm.ShowThis(index);
+  bool result = sm.showThis(index);
   QVERIFY(!result);
 }
 
