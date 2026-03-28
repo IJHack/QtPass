@@ -77,7 +77,7 @@ $(function() {
 <div class="textblock"><h1>Issues</h1>
 <h2>Can't save a password</h2>
 <ul>
-<li>Is folder initialised? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</li>
+<li>Is folder initialized? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</li>
 <li>Are you using Git? If not, make sure it is switched off.</li>
 </ul>
 <h2>I have an issue with GNOME keyring</h2>
@@ -95,7 +95,7 @@ $(function() {
 </ul>
 <h2>I don't get a passphrase / PIN dialog</h2>
 <ul>
-<li>You'll need to install pinentry-qt (or -gtk) and possibly set the full path to that executable in your <code>~/.gnupg/gpg-agent.conf</code> for example: <code>pinentry-program /usr/bin/pinentry-qt</code></li>
+<li>You'll need to install a pinentry package (often called <code>pinentry-qt</code>, <code>pinentry-qt5</code>, or a similar name like <code>pinentry-gtk</code> depending on your distribution; search in your package manager) and possibly set the full path to that executable in your <code>~/.gnupg/gpg-agent.conf</code> for example: <code>pinentry-program /usr/bin/pinentry-qt</code></li>
 <li>On some systems it might be necessary to create a symbolic link <code>/usr/bin/pinentry</code> to your pinentry application of choice eg: <code>ln -s /usr/bin/pinentry-qt /usr/bin/pinentry</code></li>
 <li>On macOS <code>pinentry-program /usr/local/bin/pinentry-mac</code> works after installing <code>pinentry-mac</code> from Homebrew.</li>
 </ul>
@@ -121,20 +121,20 @@ $(function() {
 <ul>
 <li>Set the trust level to "ultimate" (<code>trust</code> command)</li>
 <li>Check if the key has expired (<code>expire</code> command to extend if needed)</li>
-<li>For smartcards/YubiKeys, ensure the card is connected and unlocked</li>
+<li>For smartcards/YubiKeys, ensure the card is connected and unlocked (you can verify with <code>gpg --card-status</code>)</li>
 </ul>
 <h2>OTP QR codes don't work on macOS</h2>
 <p>Applications launched from Finder don't inherit the shell PATH. Install <a class="el" href="class_qt_pass.html">QtPass</a> via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching <a class="el" href="class_qt_pass.html">QtPass</a>.</p>
 <h2><a class="el" href="class_qt_pass.html">QtPass</a> doesn't follow my system language</h2>
 <p><a class="el" href="class_qt_pass.html">QtPass</a> uses the system language at startup. On some desktop environments, you may need to launch <a class="el" href="class_qt_pass.html">QtPass</a> from the terminal or configure your desktop environment to pass the correct locale environment variables.</p>
 <h2>Where is the configuration stored?</h2>
-<p><a class="el" href="class_qt_pass.html">QtPass</a> tries to use the native config choice for the OS it's running.</p>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> tries to use the native configuration location for the operating system it is running on.</p>
 <ul>
 <li>Linux and BSD: <code>$HOME/.config/IJHack/QtPass.conf</code></li>
 <li>macOS: <code>$HOME/Library/Preferences/com.IJHack.QtPass.plist</code></li>
 <li>Windows registry: <code>HKEY_CURRENT_USER\Software\IJHack\<a class="el" href="class_qt_pass.html">QtPass</a></code></li>
 </ul>
-<p>These settings can be over-ruled by a <code>qtpass.ini</code> file in the folder where the application resides. So called "portable config".</p>
+<p>These settings can be overridden by a <code>qtpass.ini</code> file in the folder where the application resides. So-called "portable config".</p>
 <p>There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).</p>
 <p>More information: <a href="https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
 <h2>Where can I ask for help?</h2>
