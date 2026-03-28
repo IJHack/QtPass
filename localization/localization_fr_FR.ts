@@ -504,7 +504,7 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
-        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1379,12 +1379,12 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
         <translation>Clé introuvable dans le trousseau de clés</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>créé</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>expire</translation>
     </message>

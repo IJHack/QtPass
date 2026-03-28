@@ -99,7 +99,7 @@ See [Windows.md](Windows.md) for Windows-specific installation and build instruc
 ## Using profiles
 
 Profiles allow grouping passwords. Each profile might use a different Git repository and/or different gpg key.
-Each profile also can be associated with a pass store signing key to verify the detached .gpg-id signature.
+Each profile also can be associated with a GPG key to sign and verify the .gpg-id file for integrity.
 A typical use case is to separate personal and work passwords.
 
 > **Hint**<br>

@@ -493,7 +493,7 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
-        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1399,12 +1399,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Ключ не найден в связке ключей</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>создан</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>истекает</translation>
     </message>

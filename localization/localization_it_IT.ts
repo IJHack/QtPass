@@ -146,7 +146,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
-        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1463,12 +1463,12 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
         <translation>Chiave non trovata nel portachiavi</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>creato</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>scade</translation>
     </message>

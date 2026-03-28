@@ -145,8 +145,8 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
-        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
-        <translation>Optioneel: Sleutel die wordt gebruikt om .gpg-id-bestanden te ondertekenen. Laat dit veld leeg, tenzij u losse handtekeningen nodig heeft ter verificatie.</translation>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -1467,12 +1467,12 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <translation>Sleutel niet aangetroffen in sleutelbos</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>aangemaakt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>vervalt op</translation>
     </message>
