@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt: GPG-nyckel för att signera .gpg-id filer för integritetsverifiering. Lämna tomt om du inte behöver skydda användarlistan från manipulation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
