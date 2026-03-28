@@ -175,12 +175,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> tst_storemodel::lessThan() {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  QFile f1(tempDir.path() + <span class="stringliteral">&quot;/aaa.gpg&quot;</span>);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  (void)f1.open(QFile::WriteOnly);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  f1.close();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  QFile f2(tempDir.path() + <span class="stringliteral">&quot;/bbb.gpg&quot;</span>);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  QVERIFY(f2.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  f2.close();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  QFile passwordA(tempDir.path() + <span class="stringliteral">&quot;/aaa.gpg&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  QVERIFY(passwordA.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  passwordA.close();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  QFile passwordB(tempDir.path() + <span class="stringliteral">&quot;/bbb.gpg&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  QVERIFY(passwordB.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  passwordB.close();</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  QFileSystemModel fsm;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  fsm.setRootPath(tempDir.path());</div>
@@ -244,9 +244,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keywordtype">void</span> tst_storemodel::filterAcceptsRowVisible() {</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  QFile f(tempDir.path() + <span class="stringliteral">&quot;/mypassword.gpg&quot;</span>);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  (void)f.open(QFile::WriteOnly);</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  f.close();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  QFile passwordFile(tempDir.path() + <span class="stringliteral">&quot;/mypassword.gpg&quot;</span>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  QVERIFY(passwordFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  passwordFile.close();</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  QFileSystemModel fsm;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  fsm.setRootPath(tempDir.path());</div>
@@ -273,9 +273,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keywordtype">void</span> tst_storemodel::mimeData() {</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  QFile f(tempDir.path() + <span class="stringliteral">&quot;/testfile.gpg&quot;</span>);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  (void)f.open(QFile::WriteOnly);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  f.close();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  QFile testFile(tempDir.path() + <span class="stringliteral">&quot;/testfile.gpg&quot;</span>);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  QVERIFY(testFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  testFile.close();</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  QFileSystemModel fsm;</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  fsm.setRootPath(tempDir.path());</div>
@@ -299,9 +299,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  QTemporaryDir tempDir;</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordtype">bool</span> mkdirResult = QDir(tempDir.path()).mkdir(<span class="stringliteral">&quot;folder&quot;</span>);</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  QVERIFY(mkdirResult || QDir(tempDir.path()).exists(<span class="stringliteral">&quot;folder&quot;</span>));</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  QFile f(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  (void)f.open(QFile::WriteOnly);</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  f.close();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  QFile file(tempDir.path() + <span class="stringliteral">&quot;/file.gpg&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  QVERIFY(file.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  file.close();</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  QFileSystemModel fsm;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  fsm.setRootPath(tempDir.path());</div>
