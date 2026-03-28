@@ -153,7 +153,7 @@ void UsersDialog::populateList(const QString &filter) {
       QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
 
-  for (auto &user : m_userList) {
+  for (const auto &user : m_userList) {
     if (!passesFilter(user, filter, nameFilter)) {
       continue;
     }
