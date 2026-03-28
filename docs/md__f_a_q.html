@@ -123,6 +123,10 @@ $(function() {
 <li>Check if the key has expired (<code>expire</code> command to extend if needed)</li>
 <li>For smartcards/YubiKeys, ensure the card is connected and unlocked (you can verify with <code>gpg --card-status</code>)</li>
 </ul>
+<h2>What is the "Signing Key" in profile settings?</h2>
+<p>The Signing Key field in profile configuration is <b>optional</b> and usually should be <b>left empty</b>.</p>
+<p>It is only needed if you want to create <b>detached signatures</b> for your <code>.gpg-id</code> files to verify the recipients list hasn't been tampered with. Most users can ignore this field.</p>
+<p>Common mistake: Putting your GPG key ID here will cause "Signature does not exist" errors when saving passwords. Leave it empty unless you specifically need signature verification.</p>
 <h2>OTP QR codes don't work on macOS</h2>
 <p>Applications launched from Finder don't inherit the shell PATH. Install <a class="el" href="class_qt_pass.html">QtPass</a> via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching <a class="el" href="class_qt_pass.html">QtPass</a>.</p>
 <h2><a class="el" href="class_qt_pass.html">QtPass</a> doesn't follow my system language</h2>
