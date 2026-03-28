@@ -28,24 +28,23 @@ Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_L
 
 ### After Code Changes
 
-When source files change (functions moved, code refactored), translation line references become outdated:
+When source files change (strings added, moved, or refactored), run qmake to update translations:
 
 ```bash
-# Run qmake to update translation source references
+# Run qmake to update translations (uses lupdate internally)
 qmake6
 ```
 
-This updates `<location filename="..." line="..."/>` in all `.ts` files without changing translations.
-
-### What Gets Updated
-
+This updates all `.ts` files with:
 - Source file line numbers
 - File references (if files renamed)
+- **Source text** (if changed in source files - important!)
+- Translation status (set to "unfinished" when source changed)
 
 ### What Stays the Same
 
-- Actual translation text
-- Translation status
+- Translated text (in `<translation>` tags)
+- Completed translations remain as-is until re-translated
 
 ### Creating a PR for Updates
 
@@ -61,8 +60,8 @@ git commit -m "chore: update localization source references"
 git push -u origin chore/update-localization
 gh pr create --title "chore: update localization source references" --body "## Summary
 
-- Updated translation files with correct source file line numbers
-- Translations remain unchanged; only metadata references were updated
+- Updated translation files with current source texts and line numbers
+- Translations marked unfinished where source text changed
 "
 ```
 
