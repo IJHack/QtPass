@@ -1403,7 +1403,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke gebruikers wachtwoorden in deze map mogen decoderen.
+Opmerking: Bestaande bestanden worden niet gewijzigd en behouden de oude machtigingen totdat u ze bewerkt.
+Blauwe items hebben een geheime sleutel beschikbaar; selecteer er een om te kunnen decoderen.
+Zwarte items hebben een versleutelingssleutel beschikbaar en deze is vertrouwd; selecteer er een om anderen te laten decoderen.
+Rode items zijn ongeldig; u kunt hier geen gegevens voor versleutelen.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
