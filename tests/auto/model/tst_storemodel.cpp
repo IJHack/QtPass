@@ -69,9 +69,10 @@ void tst_storemodel::flagsWithValidIndex() {
 }
 
 void tst_storemodel::flagsWithInvalidIndex() {
+  QTemporaryDir tempDir;
   QFileSystemModel fsm;
   StoreModel sm;
-  sm.setModelAndStore(&fsm, "/tmp");
+  sm.setModelAndStore(&fsm, tempDir.path());
 
   QModelIndex invalidIndex;
   Qt::ItemFlags flags = sm.flags(invalidIndex);
