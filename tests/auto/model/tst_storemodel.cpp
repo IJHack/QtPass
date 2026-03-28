@@ -174,8 +174,9 @@ void tst_storemodel::filterAcceptsRowVisible() {
 
 void tst_storemodel::dataWithInvalidIndex() {
   QFileSystemModel fsm;
+  QTemporaryDir tempDir;
   StoreModel sm;
-  sm.setModelAndStore(&fsm, "/tmp");
+  sm.setModelAndStore(&fsm, tempDir.path());
 
   QModelIndex invalidIndex;
   QVariant result = sm.data(invalidIndex, Qt::DisplayRole);
