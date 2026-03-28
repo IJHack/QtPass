@@ -145,7 +145,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
-        <source>Optional: Key used to sign .gpg-id files. Leave empty unless you need detached signatures for verification.</source>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
