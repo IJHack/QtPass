@@ -36,6 +36,7 @@ qmake6
 ```
 
 This updates all `.ts` files with:
+
 - Source file line numbers
 - File references (if files renamed)
 - **Source text** (if changed in source files - important!)
