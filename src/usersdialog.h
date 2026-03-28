@@ -47,6 +47,10 @@ private:
   QString m_dir;
 
   void populateList(const QString &filter = QString());
+  bool passesFilter(const UserInfo &user, const QString &filter,
+                    const QRegularExpression &nameFilter) const;
+  QString buildUserText(const UserInfo &user) const;
+  void applyUserStyling(QListWidgetItem *item, const UserInfo &user) const;
 };
 
 #endif // SRC_USERSDIALOG_H_

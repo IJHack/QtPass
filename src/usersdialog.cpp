@@ -147,52 +147,62 @@ void UsersDialog::populateList(const QString &filter) {
       QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
       QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
-  if (!m_userList.isEmpty()) {
-    for (auto &user : m_userList) {
-      if (filter.isEmpty() || nameFilter.match(user.name).hasMatch()) {
-        if (!user.isValid() && !ui->checkBox->isChecked()) {
-          continue;
-        }
-        if (user.expiry.toSecsSinceEpoch() > 0 &&
-            user.expiry.daysTo(QDateTime::currentDateTime()) > 0 &&
-            !ui->checkBox->isChecked()) {
-          continue;
-        }
-        QString userText = user.name + "\n" + user.key_id;
-        if (user.created.toSecsSinceEpoch() > 0) {
-          userText +=
-              " " + tr("created") + " " +
-              QLocale::system().toString(user.created, QLocale::ShortFormat);
-        }
-        if (user.expiry.toSecsSinceEpoch() > 0) {
-          userText +=
-              " " + tr("expires") + " " +
-              QLocale::system().toString(user.expiry, QLocale::ShortFormat);
-        }
-        auto *item = new QListWidgetItem(userText, ui->listWidget);
-        item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
-        item->setData(Qt::UserRole, QVariant::fromValue(&user));
-        if (user.have_secret) {
-          // item->setForeground(QColor(32, 74, 135));
-          item->setForeground(Qt::blue);
-          QFont font;
-          font.setFamily(font.defaultFamily());
-          font.setBold(true);
-          item->setFont(font);
-        } else if (!user.isValid()) {
-          item->setBackground(QColor(164, 0, 0));
-          item->setForeground(Qt::white);
-        } else if (user.expiry.toSecsSinceEpoch() > 0 &&
-                   user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
-          item->setForeground(QColor(164, 0, 0));
-        } else if (!user.fullyValid()) {
-          item->setBackground(QColor(164, 80, 0));
-          item->setForeground(Qt::white);
-        }
 
-        ui->listWidget->addItem(item);
-      }
+  for (auto &user : m_userList) {
+    if (!passesFilter(user, filter, nameFilter)) {
+      continue;
     }
+
+    auto *item = new QListWidgetItem(buildUserText(user), ui->listWidget);
+    applyUserStyling(item, user);
+    item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
+    item->setData(Qt::UserRole, QVariant::fromValue(&user));
+    ui->listWidget->addItem(item);
+  }
+}
+
+bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
+                               const QRegularExpression &nameFilter) const {
+  if (!filter.isEmpty() && !nameFilter.match(user.name).hasMatch()) {
+    return false;
+  }
+  if (!user.isValid() && !ui->checkBox->isChecked()) {
+    return false;
+  }
+  bool expired = user.expiry.toSecsSinceEpoch() > 0 &&
+                 user.expiry.daysTo(QDateTime::currentDateTime()) > 0;
+  return !(expired && !ui->checkBox->isChecked());
+}
+
+QString UsersDialog::buildUserText(const UserInfo &user) const {
+  QString text = user.name + "\n" + user.key_id;
+  if (user.created.toSecsSinceEpoch() > 0) {
+    text += " " + tr("created") + " " +
+            QLocale::system().toString(user.created, QLocale::ShortFormat);
+  }
+  if (user.expiry.toSecsSinceEpoch() > 0) {
+    text += " " + tr("expires") + " " +
+            QLocale::system().toString(user.expiry, QLocale::ShortFormat);
+  }
+  return text;
+}
+
+void UsersDialog::applyUserStyling(QListWidgetItem *item,
+                                   const UserInfo &user) const {
+  if (user.have_secret) {
+    item->setForeground(Qt::blue);
+    QFont font;
+    font.setBold(true);
+    item->setFont(font);
+  } else if (!user.isValid()) {
+    item->setBackground(Qt::darkRed);
+    item->setForeground(Qt::white);
+  } else if (user.expiry.toSecsSinceEpoch() > 0 &&
+             user.expiry.daysTo(QDateTime::currentDateTime()) > 0) {
+    item->setForeground(Qt::darkRed);
+  } else if (!user.fullyValid()) {
+    item->setBackground(Qt::darkYellow);
+    item->setForeground(Qt::white);
   }
 }
 
