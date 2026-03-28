@@ -21,10 +21,9 @@ void tst_simpletransaction::initTestCase() {}
 
 void tst_simpletransaction::transactionStartEnd() {
   simpleTransaction st;
-  st.transactionStart();
-  st.transactionEnd(Enums::PASS_SHOW);
+  st.transactionAdd(Enums::PASS_SHOW);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
-  QVERIFY(result == Enums::PASS_SHOW || result == Enums::INVALID);
+  QCOMPARE(result, Enums::PASS_SHOW);
 }
 
 void tst_simpletransaction::transactionAdd() {
@@ -42,12 +41,12 @@ void tst_simpletransaction::transactionIsOver() {
 
 void tst_simpletransaction::nestedTransaction() {
   simpleTransaction st;
-  st.transactionStart();
-  st.transactionStart();
+  st.transactionAdd(Enums::PASS_SHOW);
   st.transactionAdd(Enums::GIT_PULL);
-  st.transactionEnd(Enums::PASS_SHOW);
-  Enums::PROCESS result = st.transactionIsOver(Enums::GIT_PULL);
-  QVERIFY(result == Enums::PASS_SHOW || result == Enums::INVALID);
+  Enums::PROCESS passShowResult = st.transactionIsOver(Enums::PASS_SHOW);
+  QCOMPARE(passShowResult, Enums::PASS_SHOW);
+  Enums::PROCESS gitPullResult = st.transactionIsOver(Enums::GIT_PULL);
+  QCOMPARE(gitPullResult, Enums::GIT_PULL);
 }
 
 void tst_simpletransaction::cleanupTestCase() {}

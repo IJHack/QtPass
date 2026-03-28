@@ -136,6 +136,9 @@ void tst_settings::setAndGetPasswordConfiguration() {
 }
 
 void tst_settings::getProfilesEmpty() {
+  QHash<QString, QHash<QString, QString>> emptyProfiles;
+  QtPassSettings::setProfiles(emptyProfiles);
+
   QHash<QString, QHash<QString, QString>> profiles =
       QtPassSettings::getProfiles();
   QVERIFY(profiles.isEmpty());
@@ -229,7 +232,7 @@ void tst_settings::autoDetectGit() {
   QtPassSettings::getInstance()->remove("useGit");
   QtPassSettings::getInstance()->sync();
   QVERIFY2(!QtPassSettings::isUseGit(false),
-           "Should respect false default when .git exists");
+           "Should respect false default and not auto-detect when .git exists");
 
   QVERIFY(gitDir.rmdir(".git"));
   QtPassSettings::getInstance()->sync();
@@ -542,22 +545,28 @@ void tst_settings::setAndGetPasswordChars() {
 void tst_settings::setAndGetMultipleProfiles() {
   QHash<QString, QHash<QString, QString>> profiles;
   QHash<QString, QString> profile1;
-  profile1["pass_store"] = "/path/to/store1";
+  profile1["path"] = "/path/to/store1";
   profiles["profile1"] = std::move(profile1);
 
   QHash<QString, QString> profile2;
-  profile2["pass_store"] = "/path/to/store2";
+  profile2["path"] = "/path/to/store2";
   profiles["profile2"] = std::move(profile2);
 
   QtPassSettings::setProfiles(profiles);
   QHash<QString, QHash<QString, QString>> readProfiles =
       QtPassSettings::getProfiles();
   QVERIFY(readProfiles.size() >= 1);
+  QVERIFY(readProfiles.contains("profile1"));
+  QVERIFY(readProfiles.contains("profile2"));
+  QVERIFY(readProfiles.contains("profile2"));
+  QVERIFY(readProfiles["profile1"].contains("path"));
+  QVERIFY(readProfiles["profile2"].contains("path"));
 }
 
 void tst_settings::setAndGetProfileDefault() {
-  QString defaultProfile = QtPassSettings::getProfile();
-  QCOMPARE(defaultProfile, QtPassSettings::getProfile());
+  const QString expectedProfile = QStringLiteral("defaultProfile");
+  QtPassSettings::setProfile(expectedProfile);
+  QCOMPARE(QtPassSettings::getProfile(), expectedProfile);
 }
 
 QTEST_MAIN(tst_settings)
