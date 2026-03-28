@@ -33,7 +33,7 @@ void tst_storemodel::initTestCase() {}
 void tst_storemodel::dataRemovesGpgExtension() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/test.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
@@ -52,7 +52,7 @@ void tst_storemodel::dataRemovesGpgExtension() {
 void tst_storemodel::flagsWithValidIndex() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/test.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
@@ -92,7 +92,7 @@ void tst_storemodel::lessThan() {
   (void)f1.open(QFile::WriteOnly);
   f1.close();
   QFile f2(tempDir.path() + "/bbb.gpg");
-  (void)f2.open(QFile::WriteOnly);
+  QVERIFY(f2.open(QFile::WriteOnly));
   f2.close();
 
   QFileSystemModel fsm;
@@ -124,7 +124,7 @@ void tst_storemodel::supportedDragActions() {
 void tst_storemodel::filterAcceptsRowHidden() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/secret.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
