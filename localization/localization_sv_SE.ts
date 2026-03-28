@@ -329,7 +329,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt: GPG-nyckel för att signera .gpg-id filer för integritetsverifiering. Lämna tomt om du inte behöver skydda användarlistan från manipulation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -1198,32 +1198,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>QProcess::FailedToStart</source>
-        <translation></translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="265"/>
         <source>QProcess::Crashed</source>
-        <translation></translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="268"/>
         <source>QProcess::Timedout</source>
-        <translation></translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="271"/>
         <source>QProcess::ReadError</source>
-        <translation></translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::WriteError</source>
-        <translation></translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::UnknownError</source>
-        <translation></translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
 </context>
 <context>

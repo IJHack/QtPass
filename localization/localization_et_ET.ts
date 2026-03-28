@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisavõimalus: GPG võti .gpg-id failide allkirjastamiseks hilisema tervikluse kontrolli jaoks. Kui sa ei soovi kaitsta kasutajate loendit lubamatu muutmise vastu, siis jäta tühjaks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -1392,7 +1392,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali, millistel kasutajatel peaks olema õigus selles kaustas salvestatud salasõnu dekrüptida.
+Märkus: Olemasolevaid faile ei muudeta ning need säilitavad vanad õigused, kuni sa neid muudad.
+Sinistel kirjetel on olemas salajane võti; vali neist üks, et saaksid neid dekrüptida.
+Mustadel kirjetel on olemas krüptimisvõti, mis on usaldusväärne; vali neist üks, et lubada teistel neid dekrüptida.
+Punased kirjed ei ole korrektsed/kehtivad; neid ei saa krüptida.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcjonalnie: klucz GPG do podpisywania plików .gpg-id w celu weryfikacji integralności. Pozostaw puste, chyba że chcesz chronić listę użytkowników przed manipulacją.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -1184,7 +1184,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz użytkowników, którzy powinni mieć możliwość odszyfrowywania haseł zapisanych w tym folderze.
+Uwaga: istniejące pliki nie zostaną zmodyfikowane i zachowają stare uprawnienia do momentu ich edycji.
+Wpisy oznaczone kolorem niebieskim mają dostępny klucz tajny. Wybierz jeden z nich, aby móc je odszyfrować.
+Wpisy oznaczone kolorem czarnym mają dostępny i zaufany klucz szyfrujący. Wybierz jeden z nich, aby umożliwić innym osobom odszyfrowanie.
+Wpisy oznaczone kolorem czerwonym są nieprawidłowe i nie będzie można ich zaszyfrować.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

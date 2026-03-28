@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -422,37 +422,37 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
-        <translation></translation>
+        <translation>Autodetect</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="54"/>
         <source>System tray is not available</source>
-        <translation></translation>
+        <translation>System tray is not available</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="79"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation></translation>
+        <translation>Pass OTP extension needs to be installed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="84"/>
         <source>qrencode needs to be installed</source>
-        <translation></translation>
+        <translation>qrencode needs to be installed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="648"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation></translation>
+        <translation>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation></translation>
+        <translation>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -1117,12 +1117,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="994"/>
         <source>Rename folder</source>
-        <translation></translation>
+        <translation>Rename folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="998"/>
         <source>Rename password</source>
-        <translation></translation>
+        <translation>Rename password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1052"/>
@@ -1144,17 +1144,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename file</source>
-        <translation></translation>
+        <translation>Rename file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source>Rename Folder To: </source>
-        <translation></translation>
+        <translation>Rename Folder To: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <source>Rename File To: </source>
-        <translation></translation>
+        <translation>Rename File To: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1162,7 +1162,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation></translation>
+        <translation>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

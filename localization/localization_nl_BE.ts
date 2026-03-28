@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel: GPG-sleutel om .gpg-id-bestanden te ondertekenen voor integriteitscontrole. Laat dit veld leeg, tenzij u de gebruikerslijst extra wilt beschermen tegen manipulatie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
