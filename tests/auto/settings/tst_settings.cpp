@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
+#include <QDir>
 #include <QFile>
 #include <QSettings>
 
@@ -29,6 +30,7 @@ private Q_SLOTS:
   void setAndGetAutoclearSeconds();
   void setAndGetPasswordLength();
   void setAndGetUseGit();
+  void autoDetectGit();
   void setAndGetUseOtp();
   void setAndGetUseTrayIcon();
   void setAndGetUsePwgen();
@@ -209,6 +211,38 @@ void tst_settings::setAndGetUseGit() {
   QVERIFY(QtPassSettings::isUseGit());
   QtPassSettings::setUseGit(false);
   QVERIFY(!QtPassSettings::isUseGit());
+}
+
+void tst_settings::autoDetectGit() {
+  QTemporaryDir tempDir;
+  QtPassSettings::setPassStore(tempDir.path());
+
+  QDir gitDir(tempDir.path());
+  QVERIFY(gitDir.mkdir(".git"));
+  QtPassSettings::getInstance()->sync();
+
+  QtPassSettings::getInstance()->remove("useGit");
+  QtPassSettings::getInstance()->sync();
+  QVERIFY2(QtPassSettings::isUseGit(true),
+           "Should auto-detect .git and return true when default is true");
+
+  QtPassSettings::getInstance()->remove("useGit");
+  QtPassSettings::getInstance()->sync();
+  QVERIFY2(!QtPassSettings::isUseGit(false),
+           "Should respect false default when .git exists");
+
+  QVERIFY(gitDir.rmdir(".git"));
+  QtPassSettings::getInstance()->sync();
+
+  QtPassSettings::getInstance()->remove("useGit");
+  QtPassSettings::getInstance()->sync();
+  QVERIFY2(QtPassSettings::isUseGit(true),
+           "Should return true default when .git not present");
+
+  QtPassSettings::getInstance()->remove("useGit");
+  QtPassSettings::getInstance()->sync();
+  QVERIFY2(!QtPassSettings::isUseGit(false),
+           "Should return false default when .git not present");
 }
 
 void tst_settings::setAndGetUseOtp() {
