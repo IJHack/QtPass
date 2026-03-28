@@ -77,6 +77,9 @@ auto StoreModel::ShowThis(const QModelIndex index) const -> bool {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
     QString path = fs->filePath(useIndex);
     path = QDir(store).relativeFilePath(path);
+    if (path.startsWith(".git")) {
+      return false;
+    }
     path.replace(Util::endsWithGpg(), "");
     retVal = path.contains(filterRegularExpression());
   }
