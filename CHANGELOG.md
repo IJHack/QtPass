@@ -63,7 +63,7 @@
 **Fixed bugs:**
 
 - Update site to reflect new brew command syntax [\#601](https://github.com/IJHack/QtPass/issues/601)
-- Qtpass - not asking for password [\#585](https://github.com/IJHack/QtPass/issues/585)
+- QtPass - not asking for password [\#585](https://github.com/IJHack/QtPass/issues/585)
 - Missing menu [\#574](https://github.com/IJHack/QtPass/issues/574)
 
 **Merged pull requests:**
@@ -119,7 +119,7 @@
 - fix bug =\> clipboard was not cleared when using primary selection [\#615](https://github.com/IJHack/QtPass/pull/615) ([pythcoiner](https://github.com/pythcoiner))
 - Translations update from Hosted Weblate [\#614](https://github.com/IJHack/QtPass/pull/614) ([weblate](https://github.com/weblate))
 - Translations update from Hosted Weblate [\#613](https://github.com/IJHack/QtPass/pull/613) ([weblate](https://github.com/weblate))
-- Removed travis \(no longer free\) and lgtm \(migrated to Github\) [\#612](https://github.com/IJHack/QtPass/pull/612) ([annejan](https://github.com/annejan))
+- Removed travis \(no longer free\) and lgtm \(migrated to GitHub\) [\#612](https://github.com/IJHack/QtPass/pull/612) ([annejan](https://github.com/annejan))
 - Translations update from Hosted Weblate [\#611](https://github.com/IJHack/QtPass/pull/611) ([weblate](https://github.com/weblate))
 - Super Linter added and fixing findings [\#610](https://github.com/IJHack/QtPass/pull/610) ([annejan](https://github.com/annejan))
 - New Transifex integration yml [\#609](https://github.com/IJHack/QtPass/pull/609) ([annejan](https://github.com/annejan))

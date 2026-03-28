@@ -48,8 +48,7 @@ gh pr create --base main --title "Fix" --body "Fixes #issue"
 
 ```bash
 # (If not already set) add upstream remote pointing to main repository
-# git remote add upstream git@github.com:<owner>/QtPass.git
-
+git remote add upstream https://github.com/IJHack/QtPass.git
 # Fetch and rebase on main
 git fetch upstream
 git pull upstream main --rebase
@@ -289,9 +288,7 @@ GitHub provides AI-generated code quality suggestions under **Security → AI fi
 
    ```bash
    git push -u origin fix/ai-findings
-
-   # Use HEREDOC for multi-line body
-   gh pr create --title "fix: resolve AI findings" --body "$(cat <<'EOF'
+   cat <<'EOF' > /tmp/ai-findings-body.md
    ## Summary
 
    Found by GitHub AI-powered bug detection.
@@ -300,7 +297,7 @@ GitHub provides AI-generated code quality suggestions under **Security → AI fi
    - Added return value verification
    - Corrected spelling typos
    EOF
-   )"
+   gh pr create --title "fix: resolve AI findings" --body-file /tmp/ai-findings-body.md
    ```
 
 ### Checking AI Findings
