@@ -452,7 +452,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation></translation>
+        <translation>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -1162,7 +1162,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation></translation>
+        <translation>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
