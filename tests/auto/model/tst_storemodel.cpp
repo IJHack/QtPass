@@ -33,7 +33,7 @@ void tst_storemodel::initTestCase() {}
 void tst_storemodel::dataRemovesGpgExtension() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/test.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
@@ -52,7 +52,7 @@ void tst_storemodel::dataRemovesGpgExtension() {
 void tst_storemodel::flagsWithValidIndex() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/test.gpg");
-  (void)f.open(QFile::WriteOnly);
+  QVERIFY(f.open(QFile::WriteOnly));
   f.close();
 
   QFileSystemModel fsm;
