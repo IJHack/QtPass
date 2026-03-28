@@ -2290,7 +2290,7 @@ FN:60,70,_ZN17simpleTransaction17transactionIsOverEN5Enums7PROCESSE
 FNDA:0,_ZN17simpleTransaction16transactionStartEv
 FNDA:3,_ZN17simpleTransaction14transactionAddEN5Enums7PROCESSE
 FNDA:0,_ZN17simpleTransaction14transactionEndEN5Enums7PROCESSE
-FNDA:2,_ZN17simpleTransaction17transactionIsOverEN5Enums7PROCESSE
+FNDA:3,_ZN17simpleTransaction17transactionIsOverEN5Enums7PROCESSE
 FNF:4
 FNH:2
 DA:16,0
@@ -2307,10 +2307,10 @@ DA:48,0
 DA:49,0
 DA:50,0
 DA:53,0
-DA:60,2
-DA:64,2
-DA:65,1
-DA:67,1
+DA:60,3
+DA:64,3
+DA:65,3
+DA:67,3
 LF:18
 LH:7
 end_of_record
