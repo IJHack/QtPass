@@ -1343,12 +1343,12 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <translation>Kunde inte hitta nyckel i nyckelring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>skapad</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>utgår</translation>
     </message>

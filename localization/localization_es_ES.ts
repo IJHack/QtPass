@@ -1365,12 +1365,12 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <translation>La clave no se encuentra en el llavero</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>creado</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>

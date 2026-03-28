@@ -1379,12 +1379,12 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation>Schlüssel nicht in Keyring gefunden</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>erstellt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>gültig bis</translation>
     </message>

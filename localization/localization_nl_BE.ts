@@ -1463,12 +1463,12 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <translation>Sleutel niet gevonden in keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>aangemaakt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>vervalt</translation>
     </message>

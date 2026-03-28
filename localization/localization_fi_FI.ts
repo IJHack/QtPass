@@ -1419,12 +1419,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Avainta ei löytynyt avainnipusta</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>luotu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>erääntyy</translation>
     </message>

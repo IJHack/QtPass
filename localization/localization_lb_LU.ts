@@ -1201,12 +1201,12 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
         <translation>Schlëssel net am Keyring fonnt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>erstallt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>leeft of</translation>
     </message>

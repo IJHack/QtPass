@@ -1361,12 +1361,12 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <translation>Chave não disponível no keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>criado</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>expira</translation>
     </message>

@@ -1183,12 +1183,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Nøkkel ikke funnet i nøkkelring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>opprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>utløper</translation>
     </message>

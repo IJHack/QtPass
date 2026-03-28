@@ -1412,12 +1412,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>所选密钥未找到</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>创建于</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>过期于</translation>
     </message>

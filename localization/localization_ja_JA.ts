@@ -1419,12 +1419,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>キーリングにキーが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>作成しました</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>有効期限が切れます</translation>
     </message>

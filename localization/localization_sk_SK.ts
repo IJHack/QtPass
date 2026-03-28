@@ -1452,12 +1452,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Kľúč nebol nájdený v kľúčenke</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>vytvorené</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>vyprší</translation>
     </message>

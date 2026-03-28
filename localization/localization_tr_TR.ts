@@ -1220,12 +1220,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Anahtar anahtarlıkta bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>oluşturuldu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>süresi doluyor</translation>
     </message>

@@ -1355,12 +1355,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Non se atopan chaves no anel de chaves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="190"/>
+        <location filename="../src/usersdialog.cpp" line="192"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="194"/>
+        <location filename="../src/usersdialog.cpp" line="196"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>
