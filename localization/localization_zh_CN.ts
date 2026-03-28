@@ -121,12 +121,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">生成</translation>
+        <translation>生成</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>生成 GPG 密钥对</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -636,7 +636,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>将根据 GPG 版本设置模板内容。</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1264,12 +1264,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG 密钥对生成失败</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>成功生成了 GPG 密钥对</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>

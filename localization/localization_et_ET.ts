@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Loo</translation>
+        <translation>Loo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Loo GPG võtmepaar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -632,7 +632,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Malli sisu saab põhinema GPG versioonil.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1304,12 +1304,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG võtmepaari loomine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG võtmepaari loomine õnnestus</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
