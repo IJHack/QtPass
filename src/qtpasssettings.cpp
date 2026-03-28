@@ -447,7 +447,16 @@ void QtPassSettings::setProfile(const QString &profile) {
 }
 
 auto QtPassSettings::isUseGit(const bool &defaultValue) -> bool {
-  return getInstance()->value(SettingsConstants::useGit, defaultValue).toBool();
+  bool storedValue =
+      getInstance()->value(SettingsConstants::useGit, defaultValue).toBool();
+  if (storedValue == defaultValue && defaultValue) {
+    QString passStore = getPassStore();
+    if (QFileInfo(passStore).isDir() &&
+        QFileInfo(passStore + QDir::separator() + ".git").isDir()) {
+      return true;
+    }
+  }
+  return storedValue;
 }
 void QtPassSettings::setUseGit(const bool &useGit) {
   getInstance()->setValue(SettingsConstants::useGit, useGit);
