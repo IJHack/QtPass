@@ -12,6 +12,10 @@ struct NamedValue {
   QString value;
 };
 
+inline bool operator==(const NamedValue &a, const NamedValue &b) {
+  return a.name == b.name && a.value == b.value;
+}
+
 /**
  * @brief The NamedValues class is mostly a list of NamedValue
  * but also has a method to take a specific NamedValue pair out of the list.

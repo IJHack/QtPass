@@ -87,10 +87,6 @@ private Q_SLOTS:
   void getGpgIdPathNotFound();
 };
 
-static bool namedValueEquals(const NamedValue &a, const NamedValue &b) {
-  return a.name == b.name && a.value == b.value;
-}
-
 /**
  * @brief tst_util::tst_util basic constructor
  */
@@ -609,11 +605,15 @@ void tst_util::checkConfig() {
 }
 
 void tst_util::getDirBasic() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(),
+           "Temporary directory should be created successfully");
+
   QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
   StoreModel sm;
+
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
-  // Expect getDir to return the current working directory when given an invalid
-  // QModelIndex.
   QString expectedDir = QDir::currentPath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -624,13 +624,16 @@ void tst_util::getDirBasic() {
 void tst_util::getDirWithIndex() {
   // Prepare a temporary directory with one file and initialize the models.
   QTemporaryDir tempDir;
-  QVERIFY2(tempDir.isValid(), "Temporary directory should be created successfully");
+  QVERIFY2(tempDir.isValid(),
+           "Temporary directory should be created successfully");
 
   const QString dirPath = tempDir.path();
-  const QString filePath = dirPath + QDir::separator() + QStringLiteral("testfile.txt");
+  const QString filePath =
+      dirPath + QDir::separator() + QStringLiteral("testfile.txt");
 
   QFile file(filePath);
-  QVERIFY2(file.open(QIODevice::WriteOnly), "Failed to create test file in temporary directory");
+  QVERIFY2(file.open(QIODevice::WriteOnly),
+           "Failed to create test file in temporary directory");
   file.write("dummy");
   file.close();
 
@@ -645,11 +648,13 @@ void tst_util::getDirWithIndex() {
 
   // Test getDir with a valid index.
   QString result = Util::getDir(fileIndex, true, fsm, sm);
-  QVERIFY2(!result.isEmpty(), "getDir should return a non-empty directory for a valid index");
+  QVERIFY2(!result.isEmpty(),
+           "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
   QVERIFY2(result.startsWith(dirPath),
-           qPrintable(QStringLiteral("Expected directory starting with '%1', got '%2'")
-                          .arg(dirPath, result)));
+           qPrintable(
+               QStringLiteral("Expected directory starting with '%1', got '%2'")
+                   .arg(dirPath, result)));
 
   // Also verify behavior with an invalid index.
   QModelIndex invalidIndex;
