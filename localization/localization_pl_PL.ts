@@ -335,62 +335,68 @@
         <translation>Kopiuj do schowka na żądanie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="564"/>
+        <location filename="../src/configdialog.cpp" line="180"/>
+        <location filename="../src/configdialog.cpp" line="195"/>
+        <source>This field is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>No profile selected</source>
         <translation>Nie wybrano profilu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>No profile selected to delete</source>
         <translation>Nie wybrano profilu do usunięcia</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>GnuPG not found</source>
         <translation>Nie znaleziono GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="648"/>
+        <location filename="../src/configdialog.cpp" line="654"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeśli już to zrobiłeś, upewnij się, że uruchomiłeś system raz i&lt;br&gt;kliknij „Automatycznie wykryj” w następnym oknie dialogowym.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="653"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera proramów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="691"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create password-store?</source>
         <translation>Stworzyć magazyn haseł?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="692"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Czy chciałbyś stworzyć magazyn haseł w %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Password store not initialised</source>
         <translation>Magazyn haseł nie został zainicjowany</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Folder %1 nie posiada magazynu haseł lub jeszcze nie jest zainicjowany.</translation>
     </message>
@@ -1201,29 +1207,44 @@ Wpisy oznaczone kolorem czerwonym są nieprawidłowe i nie będzie można ich za
         <translation>Pokaż nieużywalne klucze</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
         <translation>Brak listy kluczy</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nie można pobrać listy dostępnych kluczy GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
         <translation>Klucz nie został znaleziony w breloku</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="192"/>
+        <location filename="../src/usersdialog.cpp" line="195"/>
         <source>created</source>
         <translation>stworzono</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="196"/>
+        <location filename="../src/usersdialog.cpp" line="199"/>
         <source>expires</source>
         <translation>traci ważność</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="217"/>
+        <source>[INVALID] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="220"/>
+        <source>[EXPIRED] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="224"/>
+        <source>[PARTIAL] </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

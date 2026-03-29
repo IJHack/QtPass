@@ -402,62 +402,68 @@ e-posta</translation>
         <translation>İstendiğinde panoya kopyala</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="564"/>
+        <location filename="../src/configdialog.cpp" line="180"/>
+        <location filename="../src/configdialog.cpp" line="195"/>
+        <source>This field is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>No profile selected</source>
         <translation>Profil seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>No profile selected to delete</source>
         <translation>Silmek için profil seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>GnuPG not found</source>
         <translation>GnuPG bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="648"/>
+        <location filename="../src/configdialog.cpp" line="654"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;Edinmek için Microsoft Mağazası&apos;ndan &lt;strong&gt;Ubuntu&lt;/strong&gt;&apos;yu yükleyin.&lt;br&gt;Bunu zaten yaptıysanız, bir kez başlattığınızdan emin olun ve&lt;br&gt;bir sonraki iletişim kutusunda &quot;Otomatik Algıla&quot;ya tıklayın.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="653"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;Microsoft Mağazası&apos;ndan &lt;strong&gt;Ubuntu&lt;/strong&gt;&apos;yu yükleyin&lt;br&gt;veya GnuPG.org adresinden &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;indirin&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Lütfen GnuPG&apos;yi sisteminize yükleyin.&lt;br&gt;En sevdiğiniz paket yöneticisini kullanarak &lt;strong&gt;gpg&lt;/strong&gt;&apos;yi yükleyin&lt;br&gt;veya GnuPG.org adresinden &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;indirin&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="691"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create password-store?</source>
         <translation>Parola deposu oluştur?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="692"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1&apos;de parola deposu oluşturmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Parola deposu oluşturma işlemi şu konumda başarısız oldu: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Password store not initialised</source>
         <translation>Parola deposu başlatılmadı</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 klasörü bir parola deposu gibi görünmüyor veya henüz başlatılmadı.</translation>
     </message>
@@ -1205,29 +1211,44 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Kullanılamayan anahtarları göster</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
         <translation>Anahtar listesi eksik</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kullanılabilir GPG anahtarlarının listesi alınamadı</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
         <translation>Anahtar anahtarlıkta bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="192"/>
+        <location filename="../src/usersdialog.cpp" line="195"/>
         <source>created</source>
         <translation>oluşturuldu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="196"/>
+        <location filename="../src/usersdialog.cpp" line="199"/>
         <source>expires</source>
         <translation>süresi doluyor</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="217"/>
+        <source>[INVALID] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="220"/>
+        <source>[EXPIRED] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="224"/>
+        <source>[PARTIAL] </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

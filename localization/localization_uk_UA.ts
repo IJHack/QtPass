@@ -370,52 +370,58 @@ email</translation>
         <translation>Копіювати на вимогу в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="564"/>
+        <location filename="../src/configdialog.cpp" line="180"/>
+        <location filename="../src/configdialog.cpp" line="195"/>
+        <source>This field is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>No profile selected</source>
         <translation>Профіль не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>No profile selected to delete</source>
         <translation>Не вибрано жодного профілю для видалення</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>GnuPG not found</source>
         <translation>GnuPG не знайдений</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Будь ласка, встановіть GnuPG на вашу систему. &lt;br&gt;Встановіть &lt;strong&gt;gpg&lt;/strong&gt; використовуючи ваш улюблений пакетний менеджер&lt;br&gt;або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="691"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create password-store?</source>
         <translation>Створити сховище паролів?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="692"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Хочете створити сховище паролів в % 1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Не вдалося створити сховище паролів за адресою: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Password store not initialised</source>
         <translation>Сховище паролів не ініціалізоване</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Тека %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
     </message>
@@ -445,12 +451,12 @@ email</translation>
         <translation>qrencode повинен бути встановлений</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="648"/>
+        <location filename="../src/configdialog.cpp" line="654"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Будь ласка, встановіть GnuPG у вашій системі. &lt;br&gt; Встановіть &lt;strong&gt; Ubuntu &lt;/strong&gt; з магазину Microsoft, щоб отримати його. &lt;br&gt; Якщо ви вже це зробили, переконайтеся, що запустили його один раз, і натисніть «Автовизначити» у наступному діалоговому вікні.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="653"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Будь ласка, встановіть GnuPG у вашій системі. &lt;br&gt; Встановіть &lt;strong&gt; Ubuntu &lt;/strong&gt; із магазину Microsoft &lt;br&gt; або &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
@@ -1409,29 +1415,44 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
         <translation>Відсутній список ключів</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Не вдалося отримати список доступних ключів GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
         <translation>Ключ не знайдено в брелоку</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="192"/>
+        <location filename="../src/usersdialog.cpp" line="195"/>
         <source>created</source>
         <translation>створений</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="196"/>
+        <location filename="../src/usersdialog.cpp" line="199"/>
         <source>expires</source>
         <translation>термін дії</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="217"/>
+        <source>[INVALID] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="220"/>
+        <source>[EXPIRED] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="224"/>
+        <source>[PARTIAL] </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

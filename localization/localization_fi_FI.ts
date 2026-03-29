@@ -370,52 +370,58 @@ email</translation>
         <translation>Tallenna leikepöydälle tarvittaessa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="564"/>
+        <location filename="../src/configdialog.cpp" line="180"/>
+        <location filename="../src/configdialog.cpp" line="195"/>
+        <source>This field is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>No profile selected</source>
         <translation>Ei profiilia valittuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>No profile selected to delete</source>
         <translation>Ei valittua profiilia poistettavaksi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>GnuPG not found</source>
         <translation>GnuPG:tä ei löydy</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;gpg&lt;/strong&gt; käyttäen suosimaasi paketinhallintatyökalua&lt;br&gt;tai&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="691"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create password-store?</source>
         <translation>Luo salasanasäilö?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="692"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Haluatko luoda salasanasäilön sijaintiin %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Password store not initialised</source>
         <translation>Salasanasäilöä ei käyttöönotettu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Kansio %1 ei näytä olevan salasanasäilö tai sitä ei ole vielä alustettu.</translation>
     </message>
@@ -445,12 +451,12 @@ email</translation>
         <translation>qrencode tulee olla asennettuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="648"/>
+        <location filename="../src/configdialog.cpp" line="654"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;Ubuntu&lt;/strong&gt; Microsoft Storesta saadaksesi sen.&lt;br&gt;Jos teit jo niin, käynnistä se ainakin kerran ja&lt;br&gt;paina &quot;Automaattinen tunnistus&quot; seuraavassa valikossa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="653"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;Ubuntu&lt;/strong&gt; Microsoft Storesta&lt;br&gt;tai &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
     </message>
@@ -1404,29 +1410,44 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
         <translation>Avainlista puuttuu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Ei voitu hakea listaa saatavilla olevista GPG avaimista</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
         <translation>Avainta ei löytynyt avainnipusta</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="192"/>
+        <location filename="../src/usersdialog.cpp" line="195"/>
         <source>created</source>
         <translation>luotu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="196"/>
+        <location filename="../src/usersdialog.cpp" line="199"/>
         <source>expires</source>
         <translation>erääntyy</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="217"/>
+        <source>[INVALID] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="220"/>
+        <source>[EXPIRED] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="224"/>
+        <source>[PARTIAL] </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

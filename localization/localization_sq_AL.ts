@@ -339,62 +339,68 @@
         <translation>Kopjoni në klipboard sipas kërkesës</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="564"/>
+        <location filename="../src/configdialog.cpp" line="180"/>
+        <location filename="../src/configdialog.cpp" line="195"/>
+        <source>This field is required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>No profile selected</source>
         <translation>Asnjë profil i zgjedhur</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>No profile selected to delete</source>
         <translation>Asnjë profil i zgjedhur për të fshirë</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="651"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nuk u gjet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="648"/>
+        <location filename="../src/configdialog.cpp" line="654"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. &lt;br&gt; Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store për ta marrë. &lt;br&gt; Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="653"/>
+        <location filename="../src/configdialog.cpp" line="659"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="665"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager)  &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1- 2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="691"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create password-store?</source>
         <translation>Krijoni password-store?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="692"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Dëshiron të krijosh një password-store në% 1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Password store not initialised</source>
         <translation>Password store jo i inicializuar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Dosja %1 nuk duket të jetë një dyqan me fjalëkalime ose ende nuk është inicializuar.</translation>
     </message>
@@ -1197,29 +1203,44 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation>Trego çelësa të papërdorshëm</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="28"/>
+        <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
         <translation>Lista kryesore  mungon</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nuk mund të marr listën e çelësave të disponueshëm GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
         <translation>çelësi nuk u gjet në keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="192"/>
+        <location filename="../src/usersdialog.cpp" line="195"/>
         <source>created</source>
         <translation>krijuar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="196"/>
+        <location filename="../src/usersdialog.cpp" line="199"/>
         <source>expires</source>
         <translation>skadon</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="217"/>
+        <source>[INVALID] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="220"/>
+        <source>[EXPIRED] </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.cpp" line="224"/>
+        <source>[PARTIAL] </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
