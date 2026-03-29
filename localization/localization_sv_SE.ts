@@ -189,7 +189,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Password store not initialised</source>
-        <translation>Lösenordsutrymme ej initliaserat</translation>
+        <translation>Lösenordsutrymme ej initialiserat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="564"/>
