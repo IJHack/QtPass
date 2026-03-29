@@ -613,13 +613,16 @@ void tst_util::getDirBasic() {
   fsm.setRootPath(tempDir.path());
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
+  QtPassSettings::setPassStore(tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
-  QString expectedDir = QDir::currentPath();
+  QString expectedDir = QDir(tempDir.path()).absolutePath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
   }
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY2(
+      result == expectedDir,
+      qPrintable(QString("Expected '%1', got '%2'").arg(expectedDir, result)));
 }
 
 void tst_util::getDirWithIndex() {
@@ -905,7 +908,8 @@ void tst_util::getRecipientStringCount() {
 
   QtPassSettings::setPassStore(passStore);
   int count = -1;
-  QStringList recipientList = Pass::getRecipientString(passStore, " ", &count);
+  QStringList parsedRecipients =
+      Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
@@ -913,11 +917,11 @@ void tst_util::getRecipientStringCount() {
   QVERIFY(count > 0);
   QCOMPARE(count, (int)expectedRecipients.size());
   // Verify both overloads return the same result
-  QCOMPARE(recipientList, recipientsNoCount);
+  QCOMPARE(parsedRecipients, recipientsNoCount);
   // Verify that the parsed recipients match the expected values.
-  QCOMPARE(recipientList.size(), 2);
-  QVERIFY(recipientList.contains("ABCDEF12"));
-  QVERIFY(recipientList.contains("34567890"));
+  QCOMPARE(parsedRecipients.size(), 2);
+  QVERIFY(parsedRecipients.contains("ABCDEF12"));
+  QVERIFY(parsedRecipients.contains("34567890"));
 }
 
 void tst_util::getGpgIdPathBasic() {
