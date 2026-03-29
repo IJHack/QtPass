@@ -106,10 +106,17 @@ void tst_executor::gpgSupportsEd25519() {
         result == false,
         "gpgSupportsEd25519() should return false when GPG is not available");
   } else {
-    QVERIFY2(output.contains("gpg") || output.contains("GnuPG"),
-             "GPG version output should be present");
-    QVERIFY2(result == true || result == false,
-             "gpgSupportsEd25519() must return a valid boolean");
+    QRegularExpression versionRegex(R"(gpg \(GnuPG\) (\d+)\.(\d+))");
+    QRegularExpressionMatch match = versionRegex.match(output);
+    QVERIFY2(match.hasMatch(), "GPG version should be parseable");
+    int major = match.captured(1).toInt();
+    int minor = match.captured(2).toInt();
+    bool expectEd25519 = major > 2 || (major == 2 && minor >= 1);
+    QVERIFY2(result == expectEd25519,
+             qPrintable(QString("GPG %1.%2 should %3 Ed25519")
+                            .arg(major)
+                            .arg(minor)
+                            .arg(expectEd25519 ? "support" : "not support")));
   }
 }
 
