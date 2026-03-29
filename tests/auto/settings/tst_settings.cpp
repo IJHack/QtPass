@@ -447,7 +447,6 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles.size() >= 1);
   QVERIFY(readProfiles.contains("profile1"));
   QVERIFY(readProfiles.contains("profile2"));
-  QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));
   QVERIFY(readProfiles["profile2"].contains("path"));
 }
