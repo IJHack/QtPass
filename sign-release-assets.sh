@@ -20,6 +20,11 @@ gh release download "$tag" --repo "$repo" --archive zip
 
 new_asc=()
 
+# Ensure that an unmatched glob does not iterate over the literal string '*'
+if [ "${BASH_SOURCE-}" ] && [ -n "${BASH_VERSION-}" ]; then
+	shopt -s nullglob
+fi
+
 for file in *; do
 	[ -f "$file" ] || continue
 	case "$file" in
@@ -32,6 +37,10 @@ for file in *; do
 	fi
 	new_asc+=("$file.asc")
 done
+
+if [ "${BASH_SOURCE-}" ] && [ -n "${BASH_VERSION-}" ]; then
+	shopt -u nullglob
+fi
 
 if [ ${#new_asc[@]} -gt 0 ]; then
 	if ! gh release upload "$tag" --repo "$repo" --clobber "${new_asc[@]}"; then
