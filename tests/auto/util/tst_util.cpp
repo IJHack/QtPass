@@ -586,9 +586,14 @@ void tst_util::boundedRandom() {
 }
 
 void tst_util::findBinaryInPath() {
-  QString result = Util::findBinaryInPath("bash");
-  QVERIFY2(!result.isEmpty(), "Should find bash in PATH");
-  QVERIFY(result.contains("bash"));
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd.exe");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  QString result = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!result.isEmpty(), "Should find a standard shell in PATH");
+  QVERIFY(result.contains(binaryName));
 
   result = Util::findBinaryInPath("nonexistentbinary12345");
   QVERIFY(result.isEmpty());
@@ -615,6 +620,8 @@ void tst_util::getDirBasic() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
   QVERIFY(sm.sourceModel() != nullptr);
+  QModelIndex rootIndex = fsm.index(tempDir.path());
+  QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
   QtPassSettings::setPassStore(tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
@@ -639,7 +646,10 @@ void tst_util::getDirWithIndex() {
   QFile file(filePath);
   QVERIFY2(file.open(QIODevice::WriteOnly),
            "Failed to create test file in temporary directory");
-  file.write("dummy");
+  const char testData[] = "dummy";
+  const qint64 bytesWritten = file.write(testData, sizeof(testData) - 1);
+  QVERIFY2(bytesWritten == static_cast<qint64>(sizeof(testData) - 1),
+           "Failed to write test data to file in temporary directory");
   file.close();
 
   QtPassSettings::setPassStore(dirPath);
@@ -916,6 +926,21 @@ void tst_util::getRecipientListWithComments() {
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
   QVERIFY(!recipients.contains("# comment"));
+
+  // Now verify that a different separator is handled correctly.
+  // Overwrite the .gpg-id file with recipients separated by commas.
+  QVERIFY(file.open(QIODevice::WriteOnly | QIODevice::Truncate));
+  file.write("ABCDEF12,34567890\n");
+  file.close();
+
+  int count = -1;
+  QStringList commaSeparatedRecipients =
+      Pass::getRecipientString(passStore, ",", &count);
+  QStringList expectedCommaRecipients = {"ABCDEF12", "34567890"};
+  // Verify count was updated and matches the number of parsed recipients
+  QVERIFY(count > 0);
+  QCOMPARE(count, (int)expectedCommaRecipients.size());
+  QCOMPARE(commaSeparatedRecipients, expectedCommaRecipients);
 }
 
 void tst_util::getRecipientStringCount() {
