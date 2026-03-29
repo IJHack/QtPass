@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>可选：用 GPG 密钥签署 .gpg-id 文件用于验证完整性。除非需要保护用户列表免于篡改否则请留空。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -1358,7 +1358,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>选择哪些用户应该可以解密存储在此文件夹中的密码。
+注：现有文件不会被修改，并且在你编辑它们前保留旧权限。
+蓝色项目有 secret key 可用，要解密请从这些项目中选择一个。
+黑色项目有加密密钥可用并被信任，从这些项目中选择一个允许别人解密。
+红色项目无效，你无法加密这些项目。</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
