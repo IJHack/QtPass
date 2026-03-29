@@ -614,6 +614,7 @@ void tst_util::getDirBasic() {
   fsm.setRootPath(tempDir.path());
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
+  QVERIFY(sm.sourceModel() != nullptr);
   QtPassSettings::setPassStore(tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
