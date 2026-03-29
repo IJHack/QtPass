@@ -26,7 +26,10 @@ for file in *; do
 	*.asc) continue ;;
 	esac
 	[ -e "$file.asc" ] && continue
-	gpg --armor --detach-sign -- "$file"
+	if ! gpg --armor --detach-sign -- "$file"; then
+		echo "Error: failed to sign file '$file' with gpg" >&2
+		exit 1
+	fi
 	new_asc+=("$file.asc")
 done
 
