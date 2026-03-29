@@ -328,6 +328,8 @@ void tst_util::copyDirWithSubdirs() {
 void tst_util::normalizeFolderPathEdgeCases() {
   QString result = Util::normalizeFolderPath("");
   QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY2(result == QDir::separator() || result.endsWith(QDir::separator()),
+           "Empty path should become separator");
 
   result = Util::normalizeFolderPath(QDir::separator());
   QVERIFY(result.endsWith(QDir::separator()));
@@ -642,6 +644,14 @@ void tst_util::copyDirOverwritesExisting() {
 
   Util::copyDir(srcDir.path(), destDir.path());
   QVERIFY(QFile::exists(destDir.path() + "/file.txt"));
+  QString destFilePath = destDir.path() + "/file.txt";
+  QFile destFile(destFilePath);
+  QVERIFY(destFile.open(QFile::ReadOnly));
+  QByteArray destContent = destFile.readAll();
+  destFile.close();
+  QVERIFY2(destContent == QByteArray("content"),
+           qPrintable(QString("Expected 'content', got '%1'")
+                          .arg(QString::fromUtf8(destContent))));
 }
 
 void tst_util::findBinaryInPathNotFound() {

@@ -195,8 +195,11 @@ void Util::copyDir(const QString &src, const QString &dest) {
   }
 
   foreach (QString file, srcDir.entryList(QDir::Files)) {
-    QFile::copy(src + QDir::separator() + file,
-                dest + QDir::separator() + file);
+    QString destFile = dest + QDir::separator() + file;
+    if (QFile::exists(destFile)) {
+      QFile::remove(destFile);
+    }
+    QFile::copy(src + QDir::separator() + file, destFile);
   }
 }
 
