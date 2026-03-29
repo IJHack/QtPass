@@ -224,11 +224,11 @@ void tst_settings::boolRoundTrip() {
   for (const auto &s : boolSettings) {
     if (setting == s.name) {
       s.setter(testValue);
-      QVERIFY2(s.getter(testValue) == testValue,
+      QVERIFY2(s.getter(!testValue) == testValue,
                qPrintable(QString("%1 should be %2, got %3")
                               .arg(setting)
                               .arg(testValue ? "true" : "false")
-                              .arg(s.getter(testValue) ? "true" : "false")));
+                              .arg(s.getter(!testValue) ? "true" : "false")));
       return;
     }
   }
@@ -308,7 +308,7 @@ void tst_settings::intRoundTrip() {
   for (const auto &s : intSettings) {
     if (setting == s.name) {
       s.setter(testValue);
-      QCOMPARE(s.getter(testValue), testValue);
+      QCOMPARE(s.getter(-1), testValue);
       return;
     }
   }
@@ -355,7 +355,7 @@ void tst_settings::stringRoundTrip() {
   for (const auto &s : stringSettings) {
     if (setting == s.name) {
       s.setter(testValue);
-      QCOMPARE(s.getter(testValue), testValue);
+      QCOMPARE(s.getter(QString()), testValue);
       return;
     }
   }
@@ -446,7 +446,6 @@ void tst_settings::setAndGetMultipleProfiles() {
       QtPassSettings::getProfiles();
   QVERIFY(readProfiles.size() >= 1);
   QVERIFY(readProfiles.contains("profile1"));
-  QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));
   QVERIFY(readProfiles["profile2"].contains("path"));
