@@ -697,7 +697,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  <span class="keyword">const</span> QString dirPath = tempDir.path();</div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>  <span class="keyword">const</span> QString filePath =</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>      dirPath + QDir::separator() + QStringLiteral(<span class="stringliteral">&quot;testfile.txt&quot;</span>);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>      QDir(dirPath).filePath(QStringLiteral(<span class="stringliteral">&quot;testfile.txt&quot;</span>));</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
 <div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  QFile file(filePath);</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>  QVERIFY2(file.open(QIODevice::WriteOnly),</div>
