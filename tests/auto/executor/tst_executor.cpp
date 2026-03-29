@@ -106,8 +106,10 @@ void tst_executor::gpgSupportsEd25519() {
         result == false,
         "gpgSupportsEd25519() should return false when GPG is not available");
   } else {
+    QVERIFY2(output.contains("gpg") || output.contains("GnuPG"),
+             "GPG version output should be present");
     QVERIFY2(result == true || result == false,
-             "gpgSupportsEd25519() must return a boolean value");
+             "gpgSupportsEd25519() must return a valid boolean");
   }
 }
 
