@@ -642,8 +642,8 @@ FNDA:0,_Z13comparesEqualRK14QByteArrayViewS1_
 FNF:2
 FNH:1
 DA:75,91
-DA:77,5063
-DA:78,4419
+DA:77,5062
+DA:78,4418
 DA:126,11
 DA:129,11
 DA:130,11
@@ -4675,7 +4675,7 @@ FNDA:1,_ZN4Util11checkConfigEv
 FNDA:2,_ZN4Util6getDirERK11QModelIndexbRK16QFileSystemModelRK10StoreModel
 FNDA:10,_ZN4Util7copyDirERK7QStringS2_
 FNDA:18,_ZN4Util11endsWithGpgEv
-FNDA:2,_ZN4Util13protocolRegexEv
+FNDA:3,_ZN4Util13protocolRegexEv
 FNDA:2,_ZN4Util13newLinesRegexEv
 FNDA:5,_ZN4Util21initialiseEnvironmentEv
 FNDA:2,_ZN4Util17findPasswordStoreEv
@@ -4744,9 +4744,9 @@ DA:201,10
 DA:203,18
 DA:204,18
 DA:205,18
-DA:208,2
-DA:210,2
-DA:211,2
+DA:208,3
+DA:210,3
+DA:211,3
 DA:214,2
 DA:215,2
 DA:216,2
