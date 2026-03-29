@@ -4,6 +4,7 @@
 
 #include "../../../src/executor.h"
 #include "../../../src/pass.h"
+#include "../../../src/qtpasssettings.h"
 
 class tst_executor : public QObject {
   Q_OBJECT
