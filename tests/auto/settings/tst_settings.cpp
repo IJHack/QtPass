@@ -25,37 +25,12 @@ private Q_SLOTS:
   void setAndGetGeometry();
   void getPassStore();
   void setAndGetPassStore();
-  void setAndGetUsePass();
+  void boolRoundTrip_data();
+  void boolRoundTrip();
   void setAndGetClipBoardType();
   void setAndGetAutoclearSeconds();
   void setAndGetPasswordLength();
-  void setAndGetUseGit();
   void autoDetectGit();
-  void setAndGetUseOtp();
-  void setAndGetUseTrayIcon();
-  void setAndGetUsePwgen();
-  void setAndGetHidePassword();
-  void setAndGetHideContent();
-  void setAndGetUseSelection();
-  void setAndGetUseAutoclear();
-  void setAndGetUseMonospace();
-  void setAndGetNoLineWrapping();
-  void setAndGetAddGPGId();
-  void setAndGetAvoidCapitals();
-  void setAndGetAvoidNumbers();
-  void setAndGetLessRandom();
-  void setAndGetUseSymbols();
-  void setAndGetDisplayAsIs();
-  void setAndGetHideOnClose();
-  void setAndGetStartMinimized();
-  void setAndGetAlwaysOnTop();
-  void setAndGetAutoPull();
-  void setAndGetAutoPush();
-  void setAndGetUseTemplate();
-  void setAndGetTemplateAllFields();
-  void setAndGetUseWebDav();
-  void setAndGetUseQrencode();
-  void setAndGetUseAutoclearPanel();
   void setAndGetAutoclearPanelSeconds();
   void setAndGetPassSigningKey();
   void setAndGetPassExecutable();
@@ -70,7 +45,6 @@ private Q_SLOTS:
   void setAndGetSavestate();
   void setAndGetPos();
   void setAndGetSize();
-  void setAndGetMaximized();
   void setAndGetPassTemplate();
   void setAndGetPasswordCharsSelection();
   void setAndGetPasswordChars();
@@ -185,11 +159,160 @@ void tst_settings::setAndGetPassStore() {
   QVERIFY(store.contains("test-store"));
 }
 
-void tst_settings::setAndGetUsePass() {
-  QtPassSettings::setUsePass(true);
-  QVERIFY(QtPassSettings::isUsePass());
-  QtPassSettings::setUsePass(false);
-  QVERIFY(!QtPassSettings::isUsePass());
+void tst_settings::boolRoundTrip_data() {
+  QTest::addColumn<QString>("setting");
+  QTest::addColumn<bool>("testValue");
+
+  // Boolean settings
+  QTest::newRow("usePass_true") << "usePass" << true;
+  QTest::newRow("usePass_false") << "usePass" << false;
+  QTest::newRow("useGit_true") << "useGit" << true;
+  QTest::newRow("useGit_false") << "useGit" << false;
+  QTest::newRow("useOtp_true") << "useOtp" << true;
+  QTest::newRow("useOtp_false") << "useOtp" << false;
+  QTest::newRow("useTrayIcon_true") << "useTrayIcon" << true;
+  QTest::newRow("useTrayIcon_false") << "useTrayIcon" << false;
+  QTest::newRow("usePwgen_true") << "usePwgen" << true;
+  QTest::newRow("usePwgen_false") << "usePwgen" << false;
+  QTest::newRow("hidePassword_true") << "hidePassword" << true;
+  QTest::newRow("hidePassword_false") << "hidePassword" << false;
+  QTest::newRow("hideContent_true") << "hideContent" << true;
+  QTest::newRow("hideContent_false") << "hideContent" << false;
+  QTest::newRow("useSelection_true") << "useSelection" << true;
+  QTest::newRow("useSelection_false") << "useSelection" << false;
+  QTest::newRow("useAutoclear_true") << "useAutoclear" << true;
+  QTest::newRow("useAutoclear_false") << "useAutoclear" << false;
+  QTest::newRow("useMonospace_true") << "useMonospace" << true;
+  QTest::newRow("useMonospace_false") << "useMonospace" << false;
+  QTest::newRow("noLineWrapping_true") << "noLineWrapping" << true;
+  QTest::newRow("noLineWrapping_false") << "noLineWrapping" << false;
+  QTest::newRow("addGPGId_true") << "addGPGId" << true;
+  QTest::newRow("addGPGId_false") << "addGPGId" << false;
+  QTest::newRow("avoidCapitals_true") << "avoidCapitals" << true;
+  QTest::newRow("avoidCapitals_false") << "avoidCapitals" << false;
+  QTest::newRow("avoidNumbers_true") << "avoidNumbers" << true;
+  QTest::newRow("avoidNumbers_false") << "avoidNumbers" << false;
+  QTest::newRow("lessRandom_true") << "lessRandom" << true;
+  QTest::newRow("lessRandom_false") << "lessRandom" << false;
+  QTest::newRow("useSymbols_true") << "useSymbols" << true;
+  QTest::newRow("useSymbols_false") << "useSymbols" << false;
+  QTest::newRow("displayAsIs_true") << "displayAsIs" << true;
+  QTest::newRow("displayAsIs_false") << "displayAsIs" << false;
+  QTest::newRow("hideOnClose_true") << "hideOnClose" << true;
+  QTest::newRow("hideOnClose_false") << "hideOnClose" << false;
+  QTest::newRow("startMinimized_true") << "startMinimized" << true;
+  QTest::newRow("startMinimized_false") << "startMinimized" << false;
+  QTest::newRow("alwaysOnTop_true") << "alwaysOnTop" << true;
+  QTest::newRow("alwaysOnTop_false") << "alwaysOnTop" << false;
+  QTest::newRow("autoPull_true") << "autoPull" << true;
+  QTest::newRow("autoPull_false") << "autoPull" << false;
+  QTest::newRow("autoPush_true") << "autoPush" << true;
+  QTest::newRow("autoPush_false") << "autoPush" << false;
+  QTest::newRow("useTemplate_true") << "useTemplate" << true;
+  QTest::newRow("useTemplate_false") << "useTemplate" << false;
+  QTest::newRow("templateAllFields_true") << "templateAllFields" << true;
+  QTest::newRow("templateAllFields_false") << "templateAllFields" << false;
+  QTest::newRow("useWebDav_true") << "useWebDav" << true;
+  QTest::newRow("useWebDav_false") << "useWebDav" << false;
+  QTest::newRow("useQrencode_true") << "useQrencode" << true;
+  QTest::newRow("useQrencode_false") << "useQrencode" << false;
+  QTest::newRow("useAutoclearPanel_true") << "useAutoclearPanel" << true;
+  QTest::newRow("useAutoclearPanel_false") << "useAutoclearPanel" << false;
+  QTest::newRow("maximized_true") << "maximized" << true;
+  QTest::newRow("maximized_false") << "maximized" << false;
+}
+
+void tst_settings::boolRoundTrip() {
+  QFETCH(QString, setting);
+  QFETCH(bool, testValue);
+
+  if (setting == "usePass") {
+    QtPassSettings::setUsePass(testValue);
+    QCOMPARE(QtPassSettings::isUsePass(), testValue);
+  } else if (setting == "useGit") {
+    QtPassSettings::setUseGit(testValue);
+    QCOMPARE(QtPassSettings::isUseGit(), testValue);
+  } else if (setting == "useOtp") {
+    QtPassSettings::setUseOtp(testValue);
+    QCOMPARE(QtPassSettings::isUseOtp(), testValue);
+  } else if (setting == "useTrayIcon") {
+    QtPassSettings::setUseTrayIcon(testValue);
+    QCOMPARE(QtPassSettings::isUseTrayIcon(), testValue);
+  } else if (setting == "usePwgen") {
+    QtPassSettings::setUsePwgen(testValue);
+    QCOMPARE(QtPassSettings::isUsePwgen(), testValue);
+  } else if (setting == "hidePassword") {
+    QtPassSettings::setHidePassword(testValue);
+    QCOMPARE(QtPassSettings::isHidePassword(), testValue);
+  } else if (setting == "hideContent") {
+    QtPassSettings::setHideContent(testValue);
+    QCOMPARE(QtPassSettings::isHideContent(), testValue);
+  } else if (setting == "useSelection") {
+    QtPassSettings::setUseSelection(testValue);
+    QCOMPARE(QtPassSettings::isUseSelection(), testValue);
+  } else if (setting == "useAutoclear") {
+    QtPassSettings::setUseAutoclear(testValue);
+    QCOMPARE(QtPassSettings::isUseAutoclear(), testValue);
+  } else if (setting == "useMonospace") {
+    QtPassSettings::setUseMonospace(testValue);
+    QCOMPARE(QtPassSettings::isUseMonospace(), testValue);
+  } else if (setting == "noLineWrapping") {
+    QtPassSettings::setNoLineWrapping(testValue);
+    QCOMPARE(QtPassSettings::isNoLineWrapping(), testValue);
+  } else if (setting == "addGPGId") {
+    QtPassSettings::setAddGPGId(testValue);
+    QCOMPARE(QtPassSettings::isAddGPGId(), testValue);
+  } else if (setting == "avoidCapitals") {
+    QtPassSettings::setAvoidCapitals(testValue);
+    QCOMPARE(QtPassSettings::isAvoidCapitals(), testValue);
+  } else if (setting == "avoidNumbers") {
+    QtPassSettings::setAvoidNumbers(testValue);
+    QCOMPARE(QtPassSettings::isAvoidNumbers(), testValue);
+  } else if (setting == "lessRandom") {
+    QtPassSettings::setLessRandom(testValue);
+    QCOMPARE(QtPassSettings::isLessRandom(), testValue);
+  } else if (setting == "useSymbols") {
+    QtPassSettings::setUseSymbols(testValue);
+    QCOMPARE(QtPassSettings::isUseSymbols(), testValue);
+  } else if (setting == "displayAsIs") {
+    QtPassSettings::setDisplayAsIs(testValue);
+    QCOMPARE(QtPassSettings::isDisplayAsIs(), testValue);
+  } else if (setting == "hideOnClose") {
+    QtPassSettings::setHideOnClose(testValue);
+    QCOMPARE(QtPassSettings::isHideOnClose(), testValue);
+  } else if (setting == "startMinimized") {
+    QtPassSettings::setStartMinimized(testValue);
+    QCOMPARE(QtPassSettings::isStartMinimized(), testValue);
+  } else if (setting == "alwaysOnTop") {
+    QtPassSettings::setAlwaysOnTop(testValue);
+    QCOMPARE(QtPassSettings::isAlwaysOnTop(), testValue);
+  } else if (setting == "autoPull") {
+    QtPassSettings::setAutoPull(testValue);
+    QCOMPARE(QtPassSettings::isAutoPull(), testValue);
+  } else if (setting == "autoPush") {
+    QtPassSettings::setAutoPush(testValue);
+    QCOMPARE(QtPassSettings::isAutoPush(), testValue);
+  } else if (setting == "useTemplate") {
+    QtPassSettings::setUseTemplate(testValue);
+    QCOMPARE(QtPassSettings::isUseTemplate(), testValue);
+  } else if (setting == "templateAllFields") {
+    QtPassSettings::setTemplateAllFields(testValue);
+    QCOMPARE(QtPassSettings::isTemplateAllFields(), testValue);
+  } else if (setting == "useWebDav") {
+    QtPassSettings::setUseWebDav(testValue);
+    QCOMPARE(QtPassSettings::isUseWebDav(), testValue);
+  } else if (setting == "useQrencode") {
+    QtPassSettings::setUseQrencode(testValue);
+    QCOMPARE(QtPassSettings::isUseQrencode(), testValue);
+  } else if (setting == "useAutoclearPanel") {
+    QtPassSettings::setUseAutoclearPanel(testValue);
+    QCOMPARE(QtPassSettings::isUseAutoclearPanel(), testValue);
+  } else if (setting == "maximized") {
+    QtPassSettings::setMaximized(testValue);
+    QCOMPARE(QtPassSettings::isMaximized(), testValue);
+  } else {
+    QFAIL(qPrintable(QString("Unknown setting: %1").arg(setting)));
+  }
 }
 
 void tst_settings::setAndGetClipBoardType() {
@@ -207,13 +330,6 @@ void tst_settings::setAndGetPasswordLength() {
   QtPassSettings::setPasswordLength(24);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.length, 24);
-}
-
-void tst_settings::setAndGetUseGit() {
-  QtPassSettings::setUseGit(true);
-  QVERIFY(QtPassSettings::isUseGit());
-  QtPassSettings::setUseGit(false);
-  QVERIFY(!QtPassSettings::isUseGit());
 }
 
 void tst_settings::autoDetectGit() {
@@ -246,181 +362,6 @@ void tst_settings::autoDetectGit() {
   QtPassSettings::getInstance()->sync();
   QVERIFY2(!QtPassSettings::isUseGit(false),
            "Should return false default when .git not present");
-}
-
-void tst_settings::setAndGetUseOtp() {
-  QtPassSettings::setUseOtp(true);
-  QVERIFY(QtPassSettings::isUseOtp());
-  QtPassSettings::setUseOtp(false);
-  QVERIFY(!QtPassSettings::isUseOtp());
-}
-
-void tst_settings::setAndGetUseTrayIcon() {
-  QtPassSettings::setUseTrayIcon(true);
-  QVERIFY(QtPassSettings::isUseTrayIcon());
-  QtPassSettings::setUseTrayIcon(false);
-  QVERIFY(!QtPassSettings::isUseTrayIcon());
-}
-
-void tst_settings::setAndGetUsePwgen() {
-  QtPassSettings::setUsePwgen(true);
-  QVERIFY(QtPassSettings::isUsePwgen());
-  QtPassSettings::setUsePwgen(false);
-  QVERIFY(!QtPassSettings::isUsePwgen());
-}
-
-void tst_settings::setAndGetHidePassword() {
-  QtPassSettings::setHidePassword(true);
-  QVERIFY(QtPassSettings::isHidePassword());
-  QtPassSettings::setHidePassword(false);
-  QVERIFY(!QtPassSettings::isHidePassword());
-}
-
-void tst_settings::setAndGetHideContent() {
-  QtPassSettings::setHideContent(true);
-  QVERIFY(QtPassSettings::isHideContent());
-  QtPassSettings::setHideContent(false);
-  QVERIFY(!QtPassSettings::isHideContent());
-}
-
-void tst_settings::setAndGetUseSelection() {
-  QtPassSettings::setUseSelection(true);
-  QVERIFY(QtPassSettings::isUseSelection());
-  QtPassSettings::setUseSelection(false);
-  QVERIFY(!QtPassSettings::isUseSelection());
-}
-
-void tst_settings::setAndGetUseAutoclear() {
-  QtPassSettings::setUseAutoclear(true);
-  QVERIFY(QtPassSettings::isUseAutoclear());
-  QtPassSettings::setUseAutoclear(false);
-  QVERIFY(!QtPassSettings::isUseAutoclear());
-}
-
-void tst_settings::setAndGetUseMonospace() {
-  QtPassSettings::setUseMonospace(true);
-  QVERIFY(QtPassSettings::isUseMonospace());
-  QtPassSettings::setUseMonospace(false);
-  QVERIFY(!QtPassSettings::isUseMonospace());
-}
-
-void tst_settings::setAndGetNoLineWrapping() {
-  QtPassSettings::setNoLineWrapping(true);
-  QVERIFY(QtPassSettings::isNoLineWrapping());
-  QtPassSettings::setNoLineWrapping(false);
-  QVERIFY(!QtPassSettings::isNoLineWrapping());
-}
-
-void tst_settings::setAndGetAddGPGId() {
-  QtPassSettings::setAddGPGId(true);
-  QVERIFY(QtPassSettings::isAddGPGId());
-  QtPassSettings::setAddGPGId(false);
-  QVERIFY(!QtPassSettings::isAddGPGId());
-}
-
-void tst_settings::setAndGetAvoidCapitals() {
-  QtPassSettings::setAvoidCapitals(true);
-  QVERIFY(QtPassSettings::isAvoidCapitals());
-  QtPassSettings::setAvoidCapitals(false);
-  QVERIFY(!QtPassSettings::isAvoidCapitals());
-}
-
-void tst_settings::setAndGetAvoidNumbers() {
-  QtPassSettings::setAvoidNumbers(true);
-  QVERIFY(QtPassSettings::isAvoidNumbers());
-  QtPassSettings::setAvoidNumbers(false);
-  QVERIFY(!QtPassSettings::isAvoidNumbers());
-}
-
-void tst_settings::setAndGetLessRandom() {
-  QtPassSettings::setLessRandom(true);
-  QVERIFY(QtPassSettings::isLessRandom());
-  QtPassSettings::setLessRandom(false);
-  QVERIFY(!QtPassSettings::isLessRandom());
-}
-
-void tst_settings::setAndGetUseSymbols() {
-  QtPassSettings::setUseSymbols(true);
-  QVERIFY(QtPassSettings::isUseSymbols());
-  QtPassSettings::setUseSymbols(false);
-  QVERIFY(!QtPassSettings::isUseSymbols());
-}
-
-void tst_settings::setAndGetDisplayAsIs() {
-  QtPassSettings::setDisplayAsIs(true);
-  QVERIFY(QtPassSettings::isDisplayAsIs());
-  QtPassSettings::setDisplayAsIs(false);
-  QVERIFY(!QtPassSettings::isDisplayAsIs());
-}
-
-void tst_settings::setAndGetHideOnClose() {
-  QtPassSettings::setHideOnClose(true);
-  QVERIFY(QtPassSettings::isHideOnClose());
-  QtPassSettings::setHideOnClose(false);
-  QVERIFY(!QtPassSettings::isHideOnClose());
-}
-
-void tst_settings::setAndGetStartMinimized() {
-  QtPassSettings::setStartMinimized(true);
-  QVERIFY(QtPassSettings::isStartMinimized());
-  QtPassSettings::setStartMinimized(false);
-  QVERIFY(!QtPassSettings::isStartMinimized());
-}
-
-void tst_settings::setAndGetAlwaysOnTop() {
-  QtPassSettings::setAlwaysOnTop(true);
-  QVERIFY(QtPassSettings::isAlwaysOnTop());
-  QtPassSettings::setAlwaysOnTop(false);
-  QVERIFY(!QtPassSettings::isAlwaysOnTop());
-}
-
-void tst_settings::setAndGetAutoPull() {
-  QtPassSettings::setAutoPull(true);
-  QVERIFY(QtPassSettings::isAutoPull());
-  QtPassSettings::setAutoPull(false);
-  QVERIFY(!QtPassSettings::isAutoPull());
-}
-
-void tst_settings::setAndGetAutoPush() {
-  QtPassSettings::setAutoPush(true);
-  QVERIFY(QtPassSettings::isAutoPush());
-  QtPassSettings::setAutoPush(false);
-  QVERIFY(!QtPassSettings::isAutoPush());
-}
-
-void tst_settings::setAndGetUseTemplate() {
-  QtPassSettings::setUseTemplate(true);
-  QVERIFY(QtPassSettings::isUseTemplate());
-  QtPassSettings::setUseTemplate(false);
-  QVERIFY(!QtPassSettings::isUseTemplate());
-}
-
-void tst_settings::setAndGetTemplateAllFields() {
-  QtPassSettings::setTemplateAllFields(true);
-  QVERIFY(QtPassSettings::isTemplateAllFields());
-  QtPassSettings::setTemplateAllFields(false);
-  QVERIFY(!QtPassSettings::isTemplateAllFields());
-}
-
-void tst_settings::setAndGetUseWebDav() {
-  QtPassSettings::setUseWebDav(true);
-  QVERIFY(QtPassSettings::isUseWebDav());
-  QtPassSettings::setUseWebDav(false);
-  QVERIFY(!QtPassSettings::isUseWebDav());
-}
-
-void tst_settings::setAndGetUseQrencode() {
-  QtPassSettings::setUseQrencode(true);
-  QVERIFY(QtPassSettings::isUseQrencode());
-  QtPassSettings::setUseQrencode(false);
-  QVERIFY(!QtPassSettings::isUseQrencode());
-}
-
-void tst_settings::setAndGetUseAutoclearPanel() {
-  QtPassSettings::setUseAutoclearPanel(true);
-  QVERIFY(QtPassSettings::isUseAutoclearPanel());
-  QtPassSettings::setUseAutoclearPanel(false);
-  QVERIFY(!QtPassSettings::isUseAutoclearPanel());
 }
 
 void tst_settings::setAndGetAutoclearPanelSeconds() {
@@ -511,13 +452,6 @@ void tst_settings::setAndGetSize() {
   QtPassSettings::setSize(size);
   QSize read = QtPassSettings::getSize(QSize());
   QVERIFY2(read == size, "Size should match");
-}
-
-void tst_settings::setAndGetMaximized() {
-  QtPassSettings::setMaximized(true);
-  QVERIFY(QtPassSettings::isMaximized());
-  QtPassSettings::setMaximized(false);
-  QVERIFY(!QtPassSettings::isMaximized());
 }
 
 void tst_settings::setAndGetPassTemplate() {
