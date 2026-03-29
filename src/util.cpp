@@ -207,7 +207,7 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
 
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
-      "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\\s<>\"\\)\\]\\[]+)"};
+      "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
   return regex;
 }
 
