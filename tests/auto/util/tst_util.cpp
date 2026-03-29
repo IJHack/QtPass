@@ -75,6 +75,7 @@ private Q_SLOTS:
   void namedValueMultiple();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
+  void imitatePassResolveMoveDestinationDestExistsNoForce();
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
   void imitatePassRemoveDir();
@@ -613,6 +614,7 @@ void tst_util::getDirBasic() {
   fsm.setRootPath(tempDir.path());
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
+  QVERIFY(sm.sourceModel() != nullptr);
   QtPassSettings::setPassStore(tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
@@ -813,6 +815,26 @@ void tst_util::imitatePassResolveMoveDestinationForce() {
 
   QString result = pass.resolveMoveDestination(srcPath, destPath, true);
   QVERIFY2(result == destPath, "Should return dest path when force=true");
+}
+
+void tst_util::imitatePassResolveMoveDestinationDestExistsNoForce() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  QString srcPath = tmpDir.path() + "/test.gpg";
+  QFile srcFile(srcPath);
+  QVERIFY(srcFile.open(QFile::WriteOnly));
+  srcFile.write("test");
+  srcFile.close();
+
+  QString destPath = tmpDir.path() + "/existing.gpg";
+  QFile destFile(destPath);
+  QVERIFY(destFile.open(QFile::WriteOnly));
+  destFile.write("old");
+  destFile.close();
+
+  QString result = pass.resolveMoveDestination(srcPath, destPath, false);
+  QVERIFY2(result.isEmpty(),
+           "Should return empty when dest exists and force=false");
 }
 
 void tst_util::imitatePassResolveMoveDestinationDir() {
