@@ -10,7 +10,6 @@ class tst_storemodel : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-  void initTestCase();
   void dataRemovesGpgExtension();
   void dataWithInvalidIndex();
   void flagsWithValidIndex();
@@ -28,8 +27,6 @@ private Q_SLOTS:
   void showThisWithNullFs();
 };
 
-void tst_storemodel::initTestCase() {}
-
 void tst_storemodel::dataRemovesGpgExtension() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/test.gpg");
@@ -45,6 +42,8 @@ void tst_storemodel::dataRemovesGpgExtension() {
   QModelIndex sourceIndex = fsm.index(tempDir.path() + "/test.gpg");
   QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
   QVariant displayData = sm.data(proxyIndex, Qt::DisplayRole);
+  QVERIFY(displayData.isValid());
+  QVERIFY(displayData.canConvert<QString>());
   QString name = displayData.toString();
   QVERIFY(!name.endsWith(".gpg"));
 }
@@ -210,8 +209,8 @@ void tst_storemodel::lessThanDirsFirst() {
   QSKIP("Directory sorting differs on macOS");
 #else
   QTemporaryDir tempDir;
-  bool mkdirResult = QDir(tempDir.path()).mkdir("folder");
-  QVERIFY(mkdirResult || QDir(tempDir.path()).exists("folder"));
+  QDir(tempDir.path()).mkdir("folder");
+  QVERIFY(QDir(tempDir.path()).exists("folder"));
   QFile file(tempDir.path() + "/file.gpg");
   QVERIFY(file.open(QFile::WriteOnly));
   file.close();

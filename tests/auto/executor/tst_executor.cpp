@@ -9,7 +9,6 @@ class tst_executor : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-  void initTestCase();
 #ifndef Q_OS_WIN
   void executeBlockingEcho();
   void executeBlockingWithArgs();
@@ -24,8 +23,6 @@ private Q_SLOTS:
   void gpgSupportsEd25519();
   void getDefaultKeyTemplate();
 };
-
-void tst_executor::initTestCase() {}
 
 #ifndef Q_OS_WIN
 void tst_executor::executeBlockingEcho() {

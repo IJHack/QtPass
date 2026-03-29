@@ -9,15 +9,12 @@ class tst_simpletransaction : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-  void initTestCase();
   void transactionStartEnd();
   void transactionAdd();
   void transactionIsOver();
   void nestedTransaction();
   void cleanupTestCase();
 };
-
-void tst_simpletransaction::initTestCase() {}
 
 void tst_simpletransaction::transactionStartEnd() {
   simpleTransaction st;

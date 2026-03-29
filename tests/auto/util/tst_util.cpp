@@ -33,7 +33,6 @@ public Q_SLOTS:
   void cleanup();
 
 private Q_SLOTS:
-  void initTestCase();
   void cleanupTestCase();
   void normalizeFolderPath();
   void normalizeFolderPathEdgeCases();
@@ -111,11 +110,6 @@ void tst_util::init() {}
  * @brief tst_util::cleanup unit test cleanup method
  */
 void tst_util::cleanup() {}
-
-/**
- * @brief tst_util::initTestCase test case init method
- */
-void tst_util::initTestCase() {}
 
 /**
  * @brief tst_util::cleanupTestCase test case cleanup method
