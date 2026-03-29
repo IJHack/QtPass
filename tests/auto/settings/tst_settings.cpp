@@ -164,9 +164,8 @@ void tst_settings::boolRoundTrip_data() {
   QTest::addColumn<bool>("testValue");
 
   auto addBool = [](const char *name) {
-    QString n(name);
-    QTest::newRow(n + "_true") << n << true;
-    QTest::newRow(n + "_false") << n << false;
+    QTest::newRow(QByteArray(name) + "_true") << name << true;
+    QTest::newRow(QByteArray(name) + "_false") << name << false;
   };
 
   addBool("usePass");
