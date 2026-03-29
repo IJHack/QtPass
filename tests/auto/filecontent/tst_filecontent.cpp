@@ -8,7 +8,6 @@ class tst_filecontent : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-  void initTestCase();
   void parsePlainPassword();
   void parsePasswordWithNamedFields();
   void parseWithTemplateFields();
@@ -21,8 +20,6 @@ private Q_SLOTS:
   void parsePasswordOnly();
   void parseMultipleNamedFields();
 };
-
-void tst_filecontent::initTestCase() {}
 
 void tst_filecontent::parsePlainPassword() {
   QString content = "my_secret_password";
