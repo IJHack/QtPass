@@ -135,7 +135,7 @@ void tst_storemodel::filterAcceptsRowHidden() {
 
   sm.setFilterRegularExpression("nothing-matches-this");
   QModelIndex index = fsm.index(tempDir.path() + "/secret.gpg");
-  bool result = sm.filterAcceptsRow(0, index.parent());
+  bool result = sm.filterAcceptsRow(index.row(), index.parent());
   QVERIFY(!result);
 }
 
@@ -151,7 +151,7 @@ void tst_storemodel::filterExcludesGitDirectory() {
   sm.setModelAndStore(&fsm, tempDir.path());
 
   QModelIndex gitIndex = fsm.index(tempDir.path() + "/.git");
-  bool result = sm.filterAcceptsRow(0, gitIndex.parent());
+  bool result = sm.filterAcceptsRow(gitIndex.row(), gitIndex.parent());
   QVERIFY2(!result, ".git directory should be hidden");
 }
 
@@ -169,7 +169,7 @@ void tst_storemodel::filterAcceptsRowVisible() {
 
   sm.setFilterRegularExpression("password");
   QModelIndex index = fsm.index(tempDir.path() + "/mypassword.gpg");
-  bool result = sm.filterAcceptsRow(0, index.parent());
+  bool result = sm.filterAcceptsRow(index.row(), index.parent());
   QVERIFY(result);
 }
 

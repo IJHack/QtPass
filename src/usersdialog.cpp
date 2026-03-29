@@ -29,6 +29,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     QMessageBox::critical(parent, tr("Keylist missing"),
                           tr("Could not fetch list of available GPG keys"));
     reject();
+    return;
   }
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
@@ -64,8 +65,11 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     // Some keys seem missing from keyring, add them separately
     QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
+    QSet<QString> missingKeyRecipients;
     for (const QString &recipient : allRecipients) {
-      if (QtPassSettings::getPass()->listKeys(recipient).empty()) {
+      if (missingKeyRecipients.contains(recipient) ||
+          QtPassSettings::getPass()->listKeys(recipient).empty()) {
+        missingKeyRecipients.insert(recipient);
         UserInfo i;
         i.enabled = true;
         i.key_id = recipient;
@@ -141,7 +145,17 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
   }
   bool ok = false;
   const int index = item->data(Qt::UserRole).toInt(&ok);
-  if (!ok || index < 0 || index >= m_userList.size()) {
+  if (!ok) {
+#ifdef QT_DEBUG
+    qWarning() << "UsersDialog::itemChange: invalid user index data for item";
+#endif
+    return;
+  }
+  if (index < 0 || index >= m_userList.size()) {
+#ifdef QT_DEBUG
+    qWarning() << "UsersDialog::itemChange: user index out of range:" << index
+               << "valid range is [0," << (m_userList.size() - 1) << "]";
+#endif
     return;
   }
   m_userList[index].enabled = item->checkState() == Qt::Checked;
@@ -153,9 +167,15 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
-  QRegularExpression nameFilter(
-      QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
-      QRegularExpression::CaseInsensitiveOption);
+  static QString lastFilter;
+  static QRegularExpression cachedNameFilter;
+  if (filter != lastFilter) {
+    lastFilter = filter;
+    cachedNameFilter = QRegularExpression(
+        QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
+        QRegularExpression::CaseInsensitiveOption);
+  }
+  const QRegularExpression &nameFilter = cachedNameFilter;
   ui->listWidget->clear();
 
   for (int i = 0; i < m_userList.size(); ++i) {
