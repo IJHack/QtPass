@@ -87,7 +87,7 @@ private Q_SLOTS:
   void getGpgIdPathNotFound();
 };
 
-auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
+static bool namedValueEquals(const NamedValue &a, const NamedValue &b) {
   return a.name == b.name && a.value == b.value;
 }
 
