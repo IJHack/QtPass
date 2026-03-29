@@ -177,8 +177,11 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
 
         if (_item->text().isEmpty() && j != 2) {
           _item->setBackground(Qt::red);
+          _item->setToolTip(tr("This field is required"));
           status = false;
           break;
+        } else {
+          _item->setToolTip(QString());
         }
       }
 
@@ -189,7 +192,10 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
   } else {
     if (item->text().isEmpty() && item->column() != 2) {
       item->setBackground(Qt::red);
+      item->setToolTip(tr("This field is required"));
       status = false;
+    } else {
+      item->setToolTip(QString());
     }
   }
 
