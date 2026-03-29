@@ -42,6 +42,7 @@ private Q_SLOTS:
   void namedValuesTakeValue();
   void namedValuesEdgeCases();
   void totpHiddenFromDisplay();
+  void testAwsUrl();
   void regexPatterns();
   void regexPatternEdgeCases();
   void endsWithGpgEdgeCases();
@@ -215,6 +216,22 @@ void tst_util::totpHiddenFromDisplay() {
   fc = FileContent::parse(
       "password\nOTPAUTH://TOTP/Test?secret=JBSWY3DPEHPK3PXP\n", {}, false);
   QVERIFY(fc.getRemainingDataForDisplay().isEmpty());
+}
+
+void tst_util::testAwsUrl() {
+  QRegularExpression proto = Util::protocolRegex();
+
+  QRegularExpressionMatch match1 =
+      proto.match("https://rh-dev.signin.aws.amazon.com/console");
+  QVERIFY2(match1.hasMatch(), "Should match AWS console URL");
+  QString captured1 = match1.captured(1);
+  QVERIFY2(captured1.contains("amazon.com"), "Should include full URL");
+
+  QRegularExpressionMatch match2 = proto.match("https://test-example.com/path");
+  QVERIFY2(match2.hasMatch(), "Should match URL with dash");
+  QString captured2 = match2.captured(1);
+  QVERIFY2(captured2.contains("test-example.com"),
+           "Should include full domain");
 }
 
 void tst_util::regexPatterns() {
