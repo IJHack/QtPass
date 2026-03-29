@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit veld is verplicht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="570"/>
@@ -1485,17 +1485,17 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ONGELDIG] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[VERLOPEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[GEDEELTELIJK] </translation>
     </message>
 </context>
 </TS>
