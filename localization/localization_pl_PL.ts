@@ -338,7 +338,7 @@
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>To pole jest wymagane</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="570"/>
@@ -1234,17 +1234,17 @@ Wpisy oznaczone kolorem czerwonym są nieprawidłowe i nie będzie można ich za
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[NIEWAŻNY] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[WYGASŁY] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[CZĘŚCIOWY] </translation>
     </message>
 </context>
 </TS>
