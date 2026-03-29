@@ -44,8 +44,8 @@ for file in "${files[@]}"; do
 	*.asc) continue ;;
 	esac
 	[ -e "$file.asc" ] && continue
-	if ! gpg --armor --detach-sign -- "$file"; then
-		echo "Error: failed to sign file '$file' with gpg" >&2
+	if ! gpg_output=$(gpg --armor --detach-sign -- "$file" 2>&1 >/dev/null); then
+		echo "Error: failed to sign file '$file' with gpg: $gpg_output" >&2
 		exit 1
 	fi
 	new_asc+=("$file.asc")
