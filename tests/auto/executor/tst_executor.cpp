@@ -97,26 +97,38 @@ void tst_executor::executeBlockingGpgVersion() {
 }
 
 void tst_executor::gpgSupportsEd25519() {
-  bool result = Pass::gpgSupportsEd25519();
   QString output;
-  int gpgVersionExitCode = Executor::executeBlocking(
-      "gpg", {"--version"}, QString(), &output, nullptr);
+  QString err;
+  QString gpgPath = QtPassSettings::getGpgExecutable();
+  int gpgVersionExitCode = Executor::executeBlocking(gpgPath, {"--version"},
+                                                     QString(), &output, &err);
   if (gpgVersionExitCode != 0) {
+    bool result = Pass::gpgSupportsEd25519();
     QVERIFY2(
         result == false,
         "gpgSupportsEd25519() should return false when GPG is not available");
   } else {
     QRegularExpression versionRegex(R"(gpg \(GnuPG\) (\d+)\.(\d+))");
     QRegularExpressionMatch match = versionRegex.match(output);
-    QVERIFY2(match.hasMatch(), "GPG version should be parseable");
+    if (!match.hasMatch()) {
+      QFAIL("Could not parse GPG version output");
+    }
     int major = match.captured(1).toInt();
     int minor = match.captured(2).toInt();
     bool expectEd25519 = major > 2 || (major == 2 && minor >= 1);
-    QVERIFY2(result == expectEd25519,
-             qPrintable(QString("GPG %1.%2 should %3 Ed25519")
-                            .arg(major)
-                            .arg(minor)
-                            .arg(expectEd25519 ? "support" : "not support")));
+
+    bool result = Pass::gpgSupportsEd25519();
+    if (expectEd25519) {
+      QVERIFY2(result == true,
+               qPrintable(QString("GPG %1.%2 should support Ed25519")
+                              .arg(major)
+                              .arg(minor)));
+    } else {
+      QVERIFY2(result == false,
+               qPrintable(QString("GPG %1.%2 should not support Ed25519")
+                              .arg(major)
+                              .arg(minor)));
+    }
   }
 }
 
