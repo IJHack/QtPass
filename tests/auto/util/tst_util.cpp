@@ -636,8 +636,6 @@ void tst_util::getDirWithIndex() {
   file.write("dummy");
   file.close();
 
-  QtPassSettings::setPassStore(dirPath);
-
   QFileSystemModel fsm;
   fsm.setRootPath(dirPath);
 
@@ -651,7 +649,7 @@ void tst_util::getDirWithIndex() {
   QVERIFY2(fileIndex.isValid(),
            "Proxy index should be valid for the test file");
 
-  QString result = Util::getDir(fileIndex, true, fsm, sm);
+  QString result = Util::getDir(fileIndex, false, fsm, sm);
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -666,7 +664,7 @@ void tst_util::getDirWithIndex() {
           QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
 
   QModelIndex invalidIndex;
-  QString invalidResult = Util::getDir(invalidIndex, true, fsm, sm);
+  QString invalidResult = Util::getDir(invalidIndex, false, fsm, sm);
   QVERIFY(invalidResult.isEmpty() || invalidResult.endsWith(QDir::separator()));
 }
 
