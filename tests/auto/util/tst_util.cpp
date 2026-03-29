@@ -636,6 +636,8 @@ void tst_util::getDirWithIndex() {
   file.write("dummy");
   file.close();
 
+  QtPassSettings::setPassStore(dirPath);
+
   QFileSystemModel fsm;
   fsm.setRootPath(dirPath);
 
@@ -653,10 +655,15 @@ void tst_util::getDirWithIndex() {
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
-  QVERIFY2(result.startsWith(dirPath),
-           qPrintable(
-               QStringLiteral("Expected directory starting with '%1', got '%2'")
-                   .arg(dirPath, result)));
+
+  QString expectedPath = dirPath;
+  if (!expectedPath.endsWith(QDir::separator())) {
+    expectedPath += QDir::separator();
+  }
+  QVERIFY2(
+      result == expectedPath,
+      qPrintable(
+          QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
 
   QModelIndex invalidIndex;
   QString invalidResult = Util::getDir(invalidIndex, true, fsm, sm);
