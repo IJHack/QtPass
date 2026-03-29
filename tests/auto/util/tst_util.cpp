@@ -637,6 +637,8 @@ void tst_util::getDirWithIndex() {
   file.write("dummy");
   file.close();
 
+  QtPassSettings::setPassStore(dirPath);
+
   QFileSystemModel fsm;
   fsm.setRootPath(dirPath);
 
