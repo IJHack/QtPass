@@ -3,6 +3,7 @@
 #include "usersdialog.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
+#include <QApplication>
 #include <QCloseEvent>
 #include <QKeyEvent>
 #include <QMessageBox>
@@ -138,11 +139,12 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
   if (!item) {
     return;
   }
-  auto *info = item->data(Qt::UserRole).value<UserInfo *>();
-  if (!info) {
+  bool ok = false;
+  const int index = item->data(Qt::UserRole).toInt(&ok);
+  if (!ok || index < 0 || index >= m_userList.size()) {
     return;
   }
-  info->enabled = item->checkState() == Qt::Checked;
+  m_userList[index].enabled = item->checkState() == Qt::Checked;
 }
 
 /**
@@ -156,7 +158,8 @@ void UsersDialog::populateList(const QString &filter) {
       QRegularExpression::CaseInsensitiveOption);
   ui->listWidget->clear();
 
-  for (const auto &user : m_userList) {
+  for (int i = 0; i < m_userList.size(); ++i) {
+    const auto &user = m_userList.at(i);
     if (!passesFilter(user, filter, nameFilter)) {
       continue;
     }
@@ -164,7 +167,7 @@ void UsersDialog::populateList(const QString &filter) {
     auto *item = new QListWidgetItem(buildUserText(user), ui->listWidget);
     applyUserStyling(item, user);
     item->setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);
-    item->setData(Qt::UserRole, QVariant::fromValue(&user));
+    item->setData(Qt::UserRole, QVariant::fromValue(i));
     ui->listWidget->addItem(item);
   }
 }
@@ -201,19 +204,26 @@ QString UsersDialog::buildUserText(const UserInfo &user) const {
 
 void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
+  const QString originalText = item->text();
   if (user.have_secret) {
-    item->setForeground(Qt::blue);
+    const QPalette palette = QApplication::palette();
+    item->setForeground(palette.color(QPalette::Link));
     QFont font = item->font();
     font.setBold(true);
     item->setFont(font);
   } else if (!user.isValid()) {
     item->setBackground(Qt::darkRed);
     item->setForeground(Qt::white);
+    item->setText(tr("[INVALID] ") + originalText);
   } else if (isUserExpired(user)) {
     item->setForeground(Qt::darkRed);
+    item->setText(tr("[EXPIRED] ") + originalText);
   } else if (!user.fullyValid()) {
     item->setBackground(Qt::darkYellow);
     item->setForeground(Qt::white);
+    item->setText(tr("[PARTIAL] ") + originalText);
+  } else {
+    item->setText(originalText);
   }
 }
 
