@@ -87,10 +87,6 @@ private Q_SLOTS:
   void getGpgIdPathNotFound();
 };
 
-auto operator==(const NamedValue &a, const NamedValue &b) -> bool {
-  return a.name == b.name && a.value == b.value;
-}
-
 /**
  * @brief tst_util::tst_util basic constructor
  */
@@ -609,11 +605,15 @@ void tst_util::checkConfig() {
 }
 
 void tst_util::getDirBasic() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(),
+           "Temporary directory should be created successfully");
+
   QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
   StoreModel sm;
+
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
-  // Expect getDir to return the current working directory when given an invalid
-  // QModelIndex.
   QString expectedDir = QDir::currentPath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -622,11 +622,50 @@ void tst_util::getDirBasic() {
 }
 
 void tst_util::getDirWithIndex() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(),
+           "Temporary directory should be created successfully");
+
+  const QString dirPath = tempDir.path();
+  const QString filePath =
+      dirPath + QDir::separator() + QStringLiteral("testfile.txt");
+
+  QFile file(filePath);
+  QVERIFY2(file.open(QIODevice::WriteOnly),
+           "Failed to create test file in temporary directory");
+  file.write("dummy");
+  file.close();
+
   QFileSystemModel fsm;
+  fsm.setRootPath(dirPath);
+
   StoreModel sm;
+  sm.setModelAndStore(&fsm, dirPath);
+
+  QModelIndex sourceIndex = fsm.index(filePath);
+  QVERIFY2(sourceIndex.isValid(),
+           "Source index should be valid for the test file");
+  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);
+  QVERIFY2(fileIndex.isValid(),
+           "Proxy index should be valid for the test file");
+
+  QString result = Util::getDir(fileIndex, false, fsm, sm);
+  QVERIFY2(!result.isEmpty(),
+           "getDir should return a non-empty directory for a valid index");
+  QVERIFY(result.endsWith(QDir::separator()));
+
+  QString expectedPath = dirPath;
+  if (!expectedPath.endsWith(QDir::separator())) {
+    expectedPath += QDir::separator();
+  }
+  QVERIFY2(
+      result == expectedPath,
+      qPrintable(
+          QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
+
   QModelIndex invalidIndex;
-  QString result = Util::getDir(invalidIndex, true, fsm, sm);
-  QVERIFY(result.isEmpty() || result.endsWith(QDir::separator()));
+  QString invalidResult = Util::getDir(invalidIndex, false, fsm, sm);
+  QVERIFY(invalidResult.isEmpty() || invalidResult.endsWith(QDir::separator()));
 }
 
 void tst_util::copyDirOverwritesExisting() {
