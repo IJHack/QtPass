@@ -612,6 +612,7 @@ void tst_util::getDirBasic() {
   QFileSystemModel fsm;
   fsm.setRootPath(tempDir.path());
   StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
   QString expectedDir = QDir::currentPath();
@@ -635,6 +636,8 @@ void tst_util::getDirWithIndex() {
            "Failed to create test file in temporary directory");
   file.write("dummy");
   file.close();
+
+  QtPassSettings::setPassStore(dirPath);
 
   QFileSystemModel fsm;
   fsm.setRootPath(dirPath);
@@ -665,7 +668,14 @@ void tst_util::getDirWithIndex() {
 
   QModelIndex invalidIndex;
   QString invalidResult = Util::getDir(invalidIndex, false, fsm, sm);
-  QVERIFY(invalidResult.isEmpty() || invalidResult.endsWith(QDir::separator()));
+  QString expectedForInvalid = dirPath;
+  if (!expectedForInvalid.endsWith(QDir::separator())) {
+    expectedForInvalid += QDir::separator();
+  }
+  QVERIFY2(invalidResult == expectedForInvalid,
+           qPrintable(QStringLiteral("getDir should return pass store for "
+                                     "invalid index. Expected '%1', got '%2'")
+                          .arg(expectedForInvalid, invalidResult)));
 }
 
 void tst_util::copyDirOverwritesExisting() {
@@ -895,7 +905,7 @@ void tst_util::getRecipientStringCount() {
 
   QtPassSettings::setPassStore(passStore);
   int count = -1;
-  QStringList recipients = Pass::getRecipientString(passStore, " ", &count);
+  QStringList recipientList = Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
@@ -903,11 +913,11 @@ void tst_util::getRecipientStringCount() {
   QVERIFY(count > 0);
   QCOMPARE(count, (int)expectedRecipients.size());
   // Verify both overloads return the same result
-  QCOMPARE(recipients, recipientsNoCount);
+  QCOMPARE(recipientList, recipientsNoCount);
   // Verify that the parsed recipients match the expected values.
-  QCOMPARE(recipients.size(), 2);
-  QVERIFY(recipients.contains("ABCDEF12"));
-  QVERIFY(recipients.contains("34567890"));
+  QCOMPARE(recipientList.size(), 2);
+  QVERIFY(recipientList.contains("ABCDEF12"));
+  QVERIFY(recipientList.contains("34567890"));
 }
 
 void tst_util::getGpgIdPathBasic() {
