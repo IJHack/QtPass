@@ -632,7 +632,7 @@ void tst_util::getDirWithIndex() {
 
   const QString dirPath = tempDir.path();
   const QString filePath =
-      dirPath + QDir::separator() + QStringLiteral("testfile.txt");
+      QDir(dirPath).filePath(QStringLiteral("testfile.txt"));
 
   QFile file(filePath);
   QVERIFY2(file.open(QIODevice::WriteOnly),
