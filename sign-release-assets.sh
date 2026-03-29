@@ -1,8 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+dryrun=false
+while [ $# -gt 0 ]; do
+	case "$1" in
+	--dryrun)
+		dryrun=true
+		shift
+		;;
+	-*)
+		echo "Usage: $0 [--dryrun] <release-tag>" >&2
+		exit 1
+		;;
+	*)
+		break
+		;;
+	esac
+done
+
 if [ $# -ne 1 ]; then
-	echo "Usage: $0 <release-tag>" >&2
+	echo "Usage: $0 [--dryrun] <release-tag>" >&2
 	exit 1
 fi
 
@@ -20,12 +37,8 @@ gh release download "$tag" --repo "$repo" --archive zip
 
 new_asc=()
 
-# Ensure that an unmatched glob does not iterate over the literal string '*'
-if [ "${BASH_SOURCE-}" ] && [ -n "${BASH_VERSION-}" ]; then
-	shopt -s nullglob
-fi
-
-for file in *; do
+files=(*)
+for file in "${files[@]}"; do
 	[ -f "$file" ] || continue
 	case "$file" in
 	*.asc) continue ;;
@@ -38,13 +51,13 @@ for file in *; do
 	new_asc+=("$file.asc")
 done
 
-if [ "${BASH_SOURCE-}" ] && [ -n "${BASH_VERSION-}" ]; then
-	shopt -u nullglob
-fi
-
 if [ ${#new_asc[@]} -gt 0 ]; then
-	if ! gh release upload "$tag" --repo "$repo" --clobber "${new_asc[@]}"; then
-		echo "Error: failed to upload signature files for release '$tag' to repository '$repo': ${new_asc[*]}" >&2
-		exit 1
+	if [ "$dryrun" = true ]; then
+		echo "[dryrun] Would upload signature files: ${new_asc[*]}"
+	else
+		if ! gh release upload "$tag" --repo "$repo" --clobber "${new_asc[@]}"; then
+			echo "Error: failed to upload signature files for release '$tag' to repository '$repo': ${new_asc[*]}" >&2
+			exit 1
+		fi
 	fi
 fi
