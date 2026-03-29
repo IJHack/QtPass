@@ -55,8 +55,23 @@ if [ ${#new_asc[@]} -gt 0 ]; then
 	if [ "$dryrun" = true ]; then
 		echo "[dryrun] Would upload signature files: ${new_asc[*]}"
 	else
-		if ! gh release upload "$tag" --repo "$repo" --clobber "${new_asc[@]}"; then
+		gh_output="$(
+			set +e
+			output="$(
+				gh release upload "$tag" --repo "$repo" --clobber "${new_asc[@]}" 2>&1
+			)"
+			status=$?
+			printf '%s\n' "$status"
+			printf '%s\n' "$output"
+		)"
+		gh_status=$(printf '%s\n' "$gh_output" | sed -n '1p')
+		gh_error_output=$(printf '%s\n' "$gh_output" | sed '1d')
+		if [ "$gh_status" -ne 0 ]; then
 			echo "Error: failed to upload signature files for release '$tag' to repository '$repo': ${new_asc[*]}" >&2
+			if [ -n "$gh_error_output" ]; then
+				echo "gh error output:" >&2
+				echo "$gh_error_output" >&2
+			fi
 			exit 1
 		fi
 	fi
