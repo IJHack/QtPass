@@ -642,8 +642,12 @@ void tst_util::getDirWithIndex() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, dirPath);
 
-  QModelIndex fileIndex = sm.index(filePath);
-  QVERIFY2(fileIndex.isValid(), "File index should be valid for the test file");
+  QModelIndex sourceIndex = fsm.index(filePath);
+  QVERIFY2(sourceIndex.isValid(),
+           "Source index should be valid for the test file");
+  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);
+  QVERIFY2(fileIndex.isValid(),
+           "Proxy index should be valid for the test file");
 
   QString result = Util::getDir(fileIndex, true, fsm, sm);
   QVERIFY2(!result.isEmpty(),
