@@ -622,11 +622,39 @@ void tst_util::getDirBasic() {
 }
 
 void tst_util::getDirWithIndex() {
+  // Prepare a temporary directory with one file and initialize the models.
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "Temporary directory should be created successfully");
+
+  const QString dirPath = tempDir.path();
+  const QString filePath = dirPath + QDir::separator() + QStringLiteral("testfile.txt");
+
+  QFile file(filePath);
+  QVERIFY2(file.open(QIODevice::WriteOnly), "Failed to create test file in temporary directory");
+  file.write("dummy");
+  file.close();
+
   QFileSystemModel fsm;
+  fsm.setRootPath(dirPath);
+
   StoreModel sm;
+
+  // Obtain a valid index for the created file.
+  QModelIndex fileIndex = fsm.index(filePath);
+  QVERIFY2(fileIndex.isValid(), "File index should be valid for the test file");
+
+  // Test getDir with a valid index.
+  QString result = Util::getDir(fileIndex, true, fsm, sm);
+  QVERIFY2(!result.isEmpty(), "getDir should return a non-empty directory for a valid index");
+  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY2(result.startsWith(dirPath),
+           qPrintable(QStringLiteral("Expected directory starting with '%1', got '%2'")
+                          .arg(dirPath, result)));
+
+  // Also verify behavior with an invalid index.
   QModelIndex invalidIndex;
-  QString result = Util::getDir(invalidIndex, true, fsm, sm);
-  QVERIFY(result.isEmpty() || result.endsWith(QDir::separator()));
+  QString invalidResult = Util::getDir(invalidIndex, true, fsm, sm);
+  QVERIFY(invalidResult.isEmpty() || invalidResult.endsWith(QDir::separator()));
 }
 
 void tst_util::copyDirOverwritesExisting() {
