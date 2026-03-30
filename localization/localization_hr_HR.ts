@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generiraj</translation>
+        <translation>Generiraj</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiraj GPG par ključeva</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcionalno: GPG ključ za potpisivanje .gpg-id datoteka radi provjere integriteta. Ostavi prazno osim ako trebaš zaštititi popis korisnika od neovlaštenih promjena.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovo je obavezno polje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="570"/>
@@ -538,7 +538,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="247"/>
         <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Potpis za %1 je neispravan.</translation>
+        <translation>Potpis za %1 nije valjan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -550,7 +550,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="128"/>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nije moguće pročitati ključ šifriranja koji se treba koristiti, .gpg-id datoteka nedostaje ili nije ispravna.</translation>
+        <translation>Nije moguće pročitati ključ šifriranja koji se treba koristiti, .gpg-id datoteka nedostaje ili nije valjana.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="281"/>
@@ -643,7 +643,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sadržaj predloška bit će se postaviti na temelju GPG verzije.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -732,7 +732,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="165"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Upisana e-mail adresa nije ispravne e-mail adresa.</translation>
+        <translation>Upisana e-mail adresa nije valjana e-mail adresa.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
@@ -1108,17 +1108,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP kod je kopiran u međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>U ovom unosu lozinke nije pronađen OTP kod</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nije odabrana lozinka za generiranje OTP-a</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="994"/>
@@ -1144,7 +1144,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuspjelo stvaranje .gpg-id datoteke u: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
@@ -1315,12 +1315,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiranje GPG para ključeva nije uspjelo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG par ključeva je uspješno generiran</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="408"/>
@@ -1398,7 +1398,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi korisnike koji će moći dešifrirati lozinke koje su spremljene u ovoj mapi.
+Napomena: Postojeće datoteke se neće mijenjati i zadržat će stare dozvole dok ih ne urediš.
+Plavi unosi imaju tajni ključ, odaberi jedan od njih za dešifriranje.
+Crni unosi imaju ključ za šifriranje i on je pouzdan, odaberi jedan od njih kako bi drugi ljudi smjeli dešifrirati.
+Crveni unosi nisu ispravni, nećeš ih moći šifrirati.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1470,17 +1474,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[NEVAŽEĆE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ISTEKLO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[DJELOMIČNO] </translation>
     </message>
 </context>
 </TS>
