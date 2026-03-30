@@ -643,7 +643,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Sadržaj predloška bit će postavljen na temelju GPG verzije.</translation>
+        <translation>Sadržaj predloška postavljen je na temelju GPG verzije.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
