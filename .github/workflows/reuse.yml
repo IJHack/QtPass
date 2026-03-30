@@ -3,11 +3,15 @@
 
 name: REUSE compliance check
 
+# Note: REUSE is a repository-wide compliance check - no path filtering
+# to catch licensing issues in any newly added files (scripts, docs, etc.)
+
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  merge_group:
 
 permissions: {}
 

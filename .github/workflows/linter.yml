@@ -17,7 +17,39 @@ name: Lint Code Base
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "**.cpp"
+      - "**.h"
+      - "**.hpp"
+      - "**.pro"
+      - "**.pri"
+      - "**.yml"
+      - "**.yaml"
+      - "**.md"
+      - "**.sh"
+      - "**.json"
+      - ".github/**"
+      - "localization/**"
   pull_request:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "**.cpp"
+      - "**.h"
+      - "**.hpp"
+      - "**.pro"
+      - "**.pri"
+      - "**.yml"
+      - "**.yaml"
+      - "**.md"
+      - "**.sh"
+      - "**.json"
+      - ".github/**"
+      - "localization/**"
+  merge_group:
     branches: ["main"]
 
 permissions: {}

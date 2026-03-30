@@ -4,8 +4,35 @@ name: QMake
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "**.pro"
+      - "**.pri"
+      - "**.cpp"
+      - "**.h"
+      - "**.hpp"
+      - "**.ui"
+      - "**.qrc"
+      - "localization/**"
+      - "icons/**"
+      - "docs/**"
   pull_request:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "**.pro"
+      - "**.pri"
+      - "**.cpp"
+      - "**.h"
+      - "**.hpp"
+      - "**.ui"
+      - "**.qrc"
+      - "localization/**"
+      - "icons/**"
+      - "docs/**"
+  merge_group:
 
 permissions: {}
 

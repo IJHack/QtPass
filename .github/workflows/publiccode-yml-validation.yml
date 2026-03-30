@@ -3,8 +3,13 @@ name: publiccode.yml validation
 on:
   push:
     branches: ["main"]
+    paths:
+      - "publiccode.yml"
   pull_request:
     branches: ["main"]
+    paths:
+      - "publiccode.yml"
+  merge_group:
 
 permissions: {}
 
