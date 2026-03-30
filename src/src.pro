@@ -73,7 +73,7 @@ SOURCES   += mainwindow.cpp \
              executor.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
-   	     qtpass.cpp
+             qtpass.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
