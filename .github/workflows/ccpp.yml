@@ -48,14 +48,6 @@ jobs:
 
   build:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      needs.changes.outputs.qt == 'true' ||
-      needs.changes.outputs.localization == 'true' ||
-      needs.changes.outputs.icons == 'true' ||
-      needs.changes.outputs.docs == 'true' ||
-      github.event_name == 'merge_group'
     permissions:
       contents: read
     runs-on: ${{ matrix.os }}
@@ -69,33 +61,45 @@ jobs:
             qt: "5.15"
 
     steps:
+      - name: Check if build needed
+        id: need_build
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.localization }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.icons }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.docs }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]]; then
+            echo "run_build=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_build=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_build.outputs.run_build != 'true'
+        run: echo "No relevant changes - skipping build"
+
       - uses: actions/checkout@v6
+        if: steps.need_build.outputs.run_build == 'true'
+
       - uses: ilammy/msvc-dev-cmd@v1
+        if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install Qt
+        if: steps.need_build.outputs.run_build == 'true'
         uses: jurplel/install-qt-action@v4
         with:
           version: ${{ matrix.qt }}
 
       - name: qmake
+        if: steps.need_build.outputs.run_build == 'true'
         run: qmake
 
       - name: make
+        if: steps.need_build.outputs.run_build == 'true'
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }}
 
       - name: make check
+        if: steps.need_build.outputs.run_build == 'true'
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.src != 'true' &&
-      needs.changes.outputs.tests != 'true' &&
-      needs.changes.outputs.qt != 'true' &&
-      needs.changes.outputs.localization != 'true' &&
-      needs.changes.outputs.icons != 'true' &&
-      needs.changes.outputs.docs != 'true' &&
-      github.event_name != 'merge_group'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping build"
