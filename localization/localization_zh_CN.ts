@@ -354,7 +354,7 @@ email</source>
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>此字段必填</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="570"/>
@@ -1434,17 +1434,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[无效] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[已过期] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[不完整] </translation>
     </message>
 </context>
 </TS>
