@@ -48,7 +48,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_bg_BG.ts \
                     ../localization/localization_fi_FI.ts \
                     ../localization/localization_uk_UA.ts \
-		    ../localization/localization_zh_Hant.ts
+                    ../localization/localization_zh_Hant.ts
 
 CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
