@@ -51,7 +51,7 @@ jobs:
              [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
              [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+             [[ "${{ github.ref }}" =~ ^refs/tags/v ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
@@ -138,7 +138,7 @@ jobs:
              [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
              [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+             [[ "${{ github.ref }}" =~ ^refs/tags/v ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
