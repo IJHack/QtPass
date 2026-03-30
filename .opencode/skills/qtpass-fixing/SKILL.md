@@ -200,10 +200,11 @@ item->setData(Qt::UserRole, QVariant::fromValue(i));
 }
 
 // Later, lookup by index
-bool ok = false;
-const int index = item->data(Qt::UserRole).toInt(&ok);
-if (ok && index >= 0 && index < m_userList.size()) {
-    m_userList[index].enabled = item->checkState() == Qt::Checked;
+bool success = false;
+const int index = item->data(Qt::UserRole).toInt(&success);
+if (success && index >= 0 && index < m_userList.size()) {
+m_userList[index].enabled = item->checkState() == Qt::Checked;
+}
 }
 
 ### Theme-Aware Colors
@@ -238,9 +239,9 @@ item->setToolTip(tr("Invalid key"));
 Add debug logging for validation failures using `#ifdef QT_DEBUG`:
 
 ```cpp
-bool OK = false;
-const int index = item->data(Qt::UserRole).toInt(&OK);
-if (!OK) {
+bool success = false;
+const int index = item->data(Qt::UserRole).toInt(&success);
+if (!success) {
 #ifdef QT_DEBUG
     qWarning() << "UsersDialog::itemChange: invalid user index data for item";
 #endif
