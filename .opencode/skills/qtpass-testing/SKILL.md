@@ -38,7 +38,6 @@ Tests for `src/util.cpp`:
 - `fileContent()` / `fileContentEdgeCases()` - FileContent parsing
 - `regexPatterns()` / `regexPatternEdgeCases()` - URL detection regular expression
 - `totpHiddenFromDisplay()` - OTP field hiding
-- `copyDir*()` - Directory operations
 - `userInfoValidity()` - User key validation
 - `passwordConfigurationCharacters()` - Password character sets
 - `simpleTransaction*()` - SimpleTransaction tests

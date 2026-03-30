@@ -26,7 +26,6 @@ public:
   static auto getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
                      const StoreModel &storeModel) -> QString;
-  static void copyDir(const QString &src, const QString &dest);
   static auto endsWithGpg() -> const QRegularExpression &;
   static auto protocolRegex() -> const QRegularExpression &;
   static auto newLinesRegex() -> const QRegularExpression &;
