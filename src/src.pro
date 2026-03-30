@@ -2,7 +2,7 @@
 
 TEMPLATE   = lib
 QT        += core gui
-TARGET 	   = qtpass
+TARGET    = qtpass
 
 CONFIG += c++17 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
