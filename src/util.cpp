@@ -179,30 +179,6 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
-/**
- * @brief Util::copyDir
- * @param src
- * @param dest
- */
-void Util::copyDir(const QString &src, const QString &dest) {
-  QDir srcDir(src);
-  if (!srcDir.exists()) {
-    return;
-  }
-  srcDir.mkpath(dest);
-  foreach (QString dir, srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
-    copyDir(src + QDir::separator() + dir, dest + QDir::separator() + dir);
-  }
-
-  foreach (QString file, srcDir.entryList(QDir::Files)) {
-    QString destFile = dest + QDir::separator() + file;
-    if (QFile::exists(destFile)) {
-      QFile::remove(destFile);
-    }
-    QFile::copy(src + QDir::separator() + file, destFile);
-  }
-}
-
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;

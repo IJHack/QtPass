@@ -45,9 +45,6 @@ private Q_SLOTS:
   void regexPatterns();
   void regexPatternEdgeCases();
   void endsWithGpgEdgeCases();
-  void copyDirBasic();
-  void copyDirWithSubdirs();
-  void copyDirEmpty();
   void userInfoValidity();
   void userInfoValidityEdgeCases();
   void passwordConfigurationCharacters();
@@ -62,7 +59,6 @@ private Q_SLOTS:
   void checkConfig();
   void getDirBasic();
   void getDirWithIndex();
-  void copyDirOverwritesExisting();
   void findBinaryInPathNotFound();
   void findPasswordStoreEnvVar();
   void normalizeFolderPathMultipleCalls();
@@ -260,68 +256,6 @@ void tst_util::regexPatterns() {
   QVERIFY(nl.match("\r\n").hasMatch());
 }
 
-void tst_util::copyDirBasic() {
-  QTemporaryDir srcDir;
-  QVERIFY(QDir(srcDir.path()).mkdir("source"));
-
-  QFile f1(srcDir.path() + "/file1.txt");
-  QVERIFY(f1.open(QFile::WriteOnly));
-  f1.write("content1");
-  f1.close();
-
-  QFile f2(srcDir.path() + "/source/file2.txt");
-  QVERIFY(f2.open(QFile::WriteOnly));
-  f2.write("content2");
-  f2.close();
-
-  QTemporaryDir destDir;
-
-  Util::copyDir(srcDir.path(), destDir.path());
-
-  QVERIFY(QFile::exists(destDir.path() + "/file1.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/source/file2.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/source"));
-
-  QFile f(destDir.path() + "/file1.txt");
-  QVERIFY(f.open(QFile::ReadOnly));
-  QCOMPARE(f.readAll(), QByteArray("content1"));
-}
-
-void tst_util::copyDirWithSubdirs() {
-  QTemporaryDir srcDir;
-  QVERIFY(QDir(srcDir.path()).mkpath("a/b/c"));
-  QVERIFY(QDir(srcDir.path()).mkpath("x/y"));
-
-  QFile f1(srcDir.path() + "/root.txt");
-  QVERIFY(f1.open(QFile::WriteOnly));
-  f1.close();
-
-  QFile f2(srcDir.path() + "/a/file_a.txt");
-  QVERIFY(f2.open(QFile::WriteOnly));
-  f2.close();
-
-  QFile f3(srcDir.path() + "/a/b/file_ab.txt");
-  QVERIFY(f3.open(QFile::WriteOnly));
-  f3.close();
-
-  QFile f4(srcDir.path() + "/a/b/c/file_abc.txt");
-  QVERIFY(f4.open(QFile::WriteOnly));
-  f4.close();
-
-  QFile f5(srcDir.path() + "/x/file_x.txt");
-  QVERIFY(f5.open(QFile::WriteOnly));
-  f5.close();
-
-  QTemporaryDir destDir;
-  Util::copyDir(srcDir.path(), destDir.path());
-
-  QVERIFY(QFile::exists(destDir.path() + "/root.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/a/file_a.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/a/b/file_ab.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/a/b/c/file_abc.txt"));
-  QVERIFY(QFile::exists(destDir.path() + "/x/file_x.txt"));
-}
-
 void tst_util::normalizeFolderPathEdgeCases() {
   QString result = Util::normalizeFolderPath("");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -414,14 +348,6 @@ void tst_util::endsWithGpgEdgeCases() {
   QVERIFY(gpg.match("test/path/file.gpg").hasMatch());
   QVERIFY(gpg.match("/absolute/path/file.gpg").hasMatch());
   QVERIFY(gpg.match("file name with spaces.gpg").hasMatch());
-}
-
-void tst_util::copyDirEmpty() {
-  QTemporaryDir srcDir;
-  QTemporaryDir destDir;
-  Util::copyDir(srcDir.path(), destDir.path());
-  QDir dest(destDir.path());
-  QVERIFY(dest.exists());
 }
 
 void tst_util::userInfoValidity() {
@@ -691,31 +617,6 @@ void tst_util::getDirWithIndex() {
            qPrintable(QStringLiteral("getDir should return pass store for "
                                      "invalid index. Expected '%1', got '%2'")
                           .arg(expectedForInvalid, invalidResult)));
-}
-
-void tst_util::copyDirOverwritesExisting() {
-  QTemporaryDir srcDir;
-  QFile f1(srcDir.path() + "/file.txt");
-  QVERIFY(f1.open(QFile::WriteOnly));
-  f1.write("content");
-  f1.close();
-
-  QTemporaryDir destDir;
-  QFile df1(destDir.path() + "/file.txt");
-  QVERIFY(df1.open(QFile::WriteOnly));
-  df1.write("old");
-  df1.close();
-
-  Util::copyDir(srcDir.path(), destDir.path());
-  QVERIFY(QFile::exists(destDir.path() + "/file.txt"));
-  QString destFilePath = destDir.path() + "/file.txt";
-  QFile destFile(destFilePath);
-  QVERIFY(destFile.open(QFile::ReadOnly));
-  QByteArray destContent = destFile.readAll();
-  destFile.close();
-  QVERIFY2(destContent == QByteArray("content"),
-           qPrintable(QString("Expected 'content', got '%1'")
-                          .arg(QString::fromUtf8(destContent))));
 }
 
 void tst_util::findBinaryInPathNotFound() {
