@@ -29,6 +29,7 @@ public:
   [[nodiscard]] auto lessThan(const QModelIndex &source_left,
                               const QModelIndex &source_right) const
       -> bool override;
+  [[nodiscard]] auto getStore() const -> QString { return store; }
 
   // QAbstractItemModel interface
 public:
