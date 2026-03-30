@@ -545,7 +545,7 @@ void tst_util::getDirBasic() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
   QVERIFY(sm.sourceModel() != nullptr);
-  QVERIFY2(sm.store() == tempDir.path(),
+  QVERIFY2(sm.getStore() == tempDir.path(),
            "Store path should match the set value");
   QModelIndex rootIndex = fsm.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
@@ -586,7 +586,7 @@ void tst_util::getDirWithIndex() {
 
   StoreModel sm;
   sm.setModelAndStore(&fsm, dirPath);
-  QVERIFY2(sm.store() == dirPath, "Store path should match the set value");
+  QVERIFY2(sm.getStore() == dirPath, "Store path should match the set value");
 
   QModelIndex sourceIndex = fsm.index(filePath);
   QVERIFY2(sourceIndex.isValid(),
