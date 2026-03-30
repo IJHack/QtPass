@@ -201,8 +201,8 @@ item->setData(Qt::UserRole, QVariant::fromValue(i));
 }
 
 // Later, lookup by index
-const int index = item->data(Qt::UserRole).toInt(&ok);
-if (ok && index >= 0 && index < m_userList.size()) {
+const int index = item->data(Qt::UserRole).toInt(&OK);
+if (OK && index >= 0 && index < m_userList.size()) {
 m_userList[index].enabled = item->checkState() == Qt::Checked;
 }
 
@@ -223,7 +223,7 @@ item->setForeground(palette.color(QPalette::Link));
 
 ### Accessibility: Color + Text
 
-When indicating status through colors (invalid, expired, partial), add text prefixes or tooltips for colorblind users:
+When indicating status through colors (invalid, expired, partial), add text prefixes or tooltips for color blind users:
 
 ```cpp
 // Color only - not accessible
@@ -240,9 +240,9 @@ item->setToolTip(tr("Invalid key"));
 Add debug logging for validation failures using `#ifdef QT_DEBUG`:
 
 ```cpp
-bool ok = false;
-const int index = item->data(Qt::UserRole).toInt(&ok);
-if (!ok) {
+bool OK = false;
+const int index = item->data(Qt::UserRole).toInt(&OK);
+if (!OK) {
 #ifdef QT_DEBUG
     qWarning() << "UsersDialog::itemChange: invalid user index data for item";
 #endif
