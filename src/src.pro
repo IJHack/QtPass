@@ -2,7 +2,7 @@
 
 TEMPLATE   = lib
 QT        += core gui
-TARGET 	   = qtpass
+TARGET    = qtpass
 
 CONFIG += c++17 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
@@ -48,7 +48,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_bg_BG.ts \
                     ../localization/localization_fi_FI.ts \
                     ../localization/localization_uk_UA.ts \
-		    ../localization/localization_zh_Hant.ts
+                    ../localization/localization_zh_Hant.ts
 
 CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
@@ -73,7 +73,7 @@ SOURCES   += mainwindow.cpp \
              executor.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
-   	     qtpass.cpp
+             qtpass.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
