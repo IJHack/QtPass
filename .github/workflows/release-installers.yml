@@ -41,22 +41,41 @@ jobs:
 
   build-windows:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      needs.changes.outputs.qt == 'true' ||
-      github.event_name == 'merge_group' ||
-      startsWith(github.ref, 'refs/tags/v')
     runs-on: windows-latest
     steps:
+      - name: Check if build needed
+        id: need_build
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            echo "run_build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_build.outputs.run_build != 'true'
+        run: echo "No relevant changes - skipping Windows build"
+
       - uses: actions/checkout@v6
+        if: steps.need_build.outputs.run_build == 'true'
+
       - uses: ilammy/msvc-dev-cmd@v1
+        if: steps.need_build.outputs.run_build == 'true'
+
       - uses: jurplel/install-qt-action@v4
+        if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install Inno Setup
+        if: steps.need_build.outputs.run_build == 'true'
         run: choco install --yes innosetup
 
       - name: Resolve installer version
+        if: steps.need_build.outputs.run_build == 'true'
         id: version
         shell: pwsh
         run: |
@@ -75,6 +94,7 @@ jobs:
           Write-Output "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Build Windows installer
+        if: steps.need_build.outputs.run_build == 'true'
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
@@ -100,6 +120,7 @@ jobs:
           iscc "/DMyAppVersion=${{ steps.version.outputs.version }}" qtpass.iss
 
       - name: Upload installer artifact
+        if: steps.need_build.outputs.run_build == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: qtpass-windows-installer-${{ steps.version.outputs.version }}
@@ -107,21 +128,38 @@ jobs:
 
   build-macos:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      needs.changes.outputs.qt == 'true' ||
-      github.event_name == 'merge_group' ||
-      startsWith(github.ref, 'refs/tags/v')
     runs-on: macos-latest
     steps:
+      - name: Check if build needed
+        id: need_build
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            echo "run_build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_build.outputs.run_build != 'true'
+        run: echo "No relevant changes - skipping macOS build"
+
       - uses: actions/checkout@v6
+        if: steps.need_build.outputs.run_build == 'true'
+
       - uses: jurplel/install-qt-action@v4
+        if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install dmg helper
+        if: steps.need_build.outputs.run_build == 'true'
         run: brew install create-dmg
 
       - name: Resolve dmg version
+        if: steps.need_build.outputs.run_build == 'true'
         id: version
         shell: bash
         run: |
@@ -140,6 +178,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build macOS app and dmg
+        if: steps.need_build.outputs.run_build == 'true'
         run: |
           set -euo pipefail
 
@@ -162,19 +201,8 @@ jobs:
           create-dmg "$DMG_NAME" "$APP_PATH"
 
       - name: Upload dmg artifact
+        if: steps.need_build.outputs.run_build == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.src != 'true' &&
-      needs.changes.outputs.tests != 'true' &&
-      needs.changes.outputs.qt != 'true' &&
-      github.event_name != 'merge_group' &&
-      !startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping release builds"

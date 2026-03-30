@@ -40,41 +40,61 @@ jobs:
 
   docs:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      needs.changes.outputs.docs == 'true' ||
-      github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - name: Check if docs needed
+        id: need_docs
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.docs }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]]; then
+            echo "run_docs=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_docs=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_docs.outputs.run_docs != 'true'
+        run: echo "No relevant changes - skipping docs and coverage"
+
       - uses: actions/checkout@v6
+        if: steps.need_docs.outputs.run_docs == 'true'
 
       - name: Install Qt
+        if: steps.need_docs.outputs.run_docs == 'true'
         uses: jurplel/install-qt-action@v4
 
       - name: Install Doxygen
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
 
       - name: Generate documentation
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: doxygen
 
       - name: Install lcov
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: sudo apt-get update && sudo apt-get install -y lcov
 
       - name: qmake
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: qmake CONFIG+=coverage
 
       - name: Build
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: make
 
       - name: Run tests and generate coverage
+        if: steps.need_docs.outputs.run_docs == 'true'
         run: |
           make lcov TESTARGS="--platform offscreen -o qtpass.junit.xml,junitxml"
 
       - name: Upload coverage to Codecov
-        if: ${{ !cancelled() }}
+        if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
         uses: codecov/codecov-action@v6
         with:
           files: ./docs/coverage/.lcov.total
@@ -85,7 +105,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
+        if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -94,7 +114,7 @@ jobs:
           fail_ci_if_error: true
 
       - name: Upload coverage to Coveralls
-        if: ${{ !cancelled() }}
+        if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -103,7 +123,7 @@ jobs:
           fail-on-error: false
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: steps.need_docs.outputs.run_docs == 'true' && github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -113,14 +133,3 @@ jobs:
           keep_files: true
           user_name: "GitHub Actions"
           user_email: "github-actions[bot]@users.noreply.github.com"
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.src != 'true' &&
-      needs.changes.outputs.tests != 'true' &&
-      needs.changes.outputs.docs != 'true' &&
-      github.event_name != 'merge_group'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping docs and coverage"

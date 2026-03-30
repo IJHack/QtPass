@@ -58,50 +58,48 @@ jobs:
 
   build:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      needs.changes.outputs.code == 'true' ||
-      needs.changes.outputs.qt == 'true' ||
-      needs.changes.outputs.yaml == 'true' ||
-      needs.changes.outputs.markdown == 'true' ||
-      needs.changes.outputs.scripts == 'true' ||
-      needs.changes.outputs.json == 'true' ||
-      needs.changes.outputs.github == 'true' ||
-      needs.changes.outputs.localization == 'true' ||
-      github.event_name == 'merge_group'
     name: Lint Code Base
     runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
     steps:
+      - name: Check if lint needed
+        id: need_lint
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.code }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.yaml }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.markdown }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.scripts }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.json }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.github }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.localization }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]]; then
+            echo "run_lint=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_lint=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_lint.outputs.run_lint != 'true'
+        run: echo "No relevant changes - skipping lint"
+
       - name: Checkout Code
+        if: steps.need_lint.outputs.run_lint == 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - run: cat .github/super-linter.env >> "$GITHUB_ENV"
+      - if: steps.need_lint.outputs.run_lint == 'true'
+        run: cat .github/super-linter.env >> "$GITHUB_ENV"
+
       - name: Lint Code Base
+        if: steps.need_lint.outputs.run_lint == 'true'
         uses: github/super-linter@v7
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.src != 'true' &&
-      needs.changes.outputs.tests != 'true' &&
-      needs.changes.outputs.code != 'true' &&
-      needs.changes.outputs.qt != 'true' &&
-      needs.changes.outputs.yaml != 'true' &&
-      needs.changes.outputs.markdown != 'true' &&
-      needs.changes.outputs.scripts != 'true' &&
-      needs.changes.outputs.json != 'true' &&
-      needs.changes.outputs.github != 'true' &&
-      needs.changes.outputs.localization != 'true' &&
-      github.event_name != 'merge_group'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping lint"

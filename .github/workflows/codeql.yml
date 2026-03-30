@@ -36,11 +36,6 @@ jobs:
 
   analyze:
     needs: changes
-    if: >-
-      needs.changes.outputs.src == 'true' ||
-      needs.changes.outputs.tests == 'true' ||
-      github.event_name == 'merge_group' ||
-      github.event_name == 'schedule'
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
@@ -54,32 +49,43 @@ jobs:
         language: ["cpp"]
 
     steps:
+      - name: Check if analysis needed
+        id: need_analysis
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
+             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "run_analysis=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_analysis=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_analysis.outputs.run_analysis != 'true'
+        run: echo "No relevant changes - skipping CodeQL analysis"
+
       - name: Checkout repository
+        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: actions/checkout@v6
 
       - name: Initialize CodeQL
+        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
 
       - name: Install Qt
+        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: jurplel/install-qt-action@v4
 
       - name: Autobuild
+        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: github/codeql-action/autobuild@v4
 
       - name: Perform CodeQL Analysis
+        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: github/codeql-action/analyze@v4
         with:
           category: "/language:${{matrix.language}}"
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.src != 'true' &&
-      needs.changes.outputs.tests != 'true' &&
-      github.event_name != 'merge_group' &&
-      github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping CodeQL analysis"

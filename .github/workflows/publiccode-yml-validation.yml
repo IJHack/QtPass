@@ -26,23 +26,29 @@ jobs:
 
   publiccode_yml_validation:
     needs: changes
-    if: >-
-      needs.changes.outputs.publiccode == 'true' ||
-      github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
+      - name: Check if validation needed
+        id: need_validation
+        shell: bash
+        run: |
+          if [[ "${{ needs.changes.outputs.publiccode }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]]; then
+            echo "run_validation=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_validation=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No changes - skipping
+        if: steps.need_validation.outputs.run_validation != 'true'
+        run: echo "No relevant changes - skipping publiccode validation"
+
       - uses: actions/checkout@v6
+        if: steps.need_validation.outputs.run_validation == 'true'
+
       - uses: italia/publiccode-parser-action@v1
+        if: steps.need_validation.outputs.run_validation == 'true'
         with:
           publiccode: "publiccode.yml"
-
-  no-op:
-    needs: changes
-    if: >-
-      needs.changes.outputs.publiccode != 'true' &&
-      github.event_name != 'merge_group'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "No relevant changes - skipping publiccode validation"
