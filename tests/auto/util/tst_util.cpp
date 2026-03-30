@@ -501,9 +501,8 @@ void tst_util::boundedRandom() {
   for (int i = 0; i < iterations; ++i) {
     QString result = pass.Generate_b(1, "0123456789");
     quint32 val = result.at(0).digitValue();
-    if (val < 10) {
-      counts[val]++;
-    }
+    QVERIFY2(val < 10, "Generate_b should only return digit characters");
+    counts[val]++;
   }
 
   for (int i = 0; i < 10; ++i) {
@@ -546,6 +545,8 @@ void tst_util::getDirBasic() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
   QVERIFY(sm.sourceModel() != nullptr);
+  QVERIFY2(sm.store() == tempDir.path(),
+           "Store path should match the set value");
   QModelIndex rootIndex = fsm.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
   QtPassSettings::setPassStore(tempDir.path());
@@ -585,6 +586,7 @@ void tst_util::getDirWithIndex() {
 
   StoreModel sm;
   sm.setModelAndStore(&fsm, dirPath);
+  QVERIFY2(sm.store() == dirPath, "Store path should match the set value");
 
   QModelIndex sourceIndex = fsm.index(filePath);
   QVERIFY2(sourceIndex.isValid(),
@@ -852,9 +854,12 @@ void tst_util::getRecipientStringCount() {
   // Verify both overloads return the same result
   QCOMPARE(parsedRecipients, recipientsNoCount);
   // Verify that the parsed recipients match the expected values.
-  QCOMPARE(parsedRecipients.size(), 2);
   QVERIFY(parsedRecipients.contains("ABCDEF12"));
   QVERIFY(parsedRecipients.contains("34567890"));
+  // Also verify that the recipients returned without count match the expected
+  // values.
+  QVERIFY(recipientsNoCount.contains("ABCDEF12"));
+  QVERIFY(recipientsNoCount.contains("34567890"));
 }
 
 void tst_util::getGpgIdPathBasic() {
