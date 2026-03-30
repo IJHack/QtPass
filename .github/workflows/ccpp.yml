@@ -16,7 +16,6 @@ on:
       - "**.qrc"
       - "localization/**"
       - "icons/**"
-      - "docs/**"
   pull_request:
     branches: ["main"]
     paths:
@@ -31,7 +30,6 @@ on:
       - "**.qrc"
       - "localization/**"
       - "icons/**"
-      - "docs/**"
   merge_group:
 
 permissions: {}
