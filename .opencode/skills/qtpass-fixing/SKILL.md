@@ -206,8 +206,6 @@ if (OK && index >= 0 && index < m_userList.size()) {
 m_userList[index].enabled = item->checkState() == Qt::Checked;
 }
 
-````
-
 ### Theme-Aware Colors
 
 For list items or labels indicating status (e.g., secret keys), prefer `QPalette` colors over hardcoded values for better accessibility:
@@ -219,7 +217,7 @@ item->setForeground(Qt::blue);
 // Theme-aware alternative
 const QPalette palette = QApplication::palette();
 item->setForeground(palette.color(QPalette::Link));
-````
+```
 
 ### Accessibility: Color + Text
 
