@@ -216,6 +216,33 @@ gh run view <RUN_ID> --log | grep -iE "error|fail"
 gh run view <RUN_ID> --job <JOB_NAME> --log
 ```
 
+### Common CI Failures
+
+| Failure                   | Likely Cause           | Fix                                 |
+| ------------------------- | ---------------------- | ----------------------------------- |
+| Linting errors            | Formatting issues      | Run `npx prettier --write`          |
+| Test failures             | Bug in code or test    | Run tests locally with `make check` |
+| Build failures            | Missing deps or syntax | Build locally with `make -j4`       |
+| act fails on new branches | `HEAD~0` error         | Skip act, rely on prettier check    |
+
+## Resolving Merge Conflicts
+
+When branch is behind main and has conflicts:
+
+```bash
+# Fetch and rebase
+git fetch upstream
+git checkout <branch>
+git rebase upstream/main
+
+# Resolve conflicts in editor, then:
+git add <resolved-files>
+git rebase --continue
+
+# Force push (since we rewrote history)
+git push -f
+```
+
 ## Fork Workflow
 
 If you don't have push access:
@@ -308,4 +335,44 @@ GitHub provides AI-generated code quality suggestions under **Security → AI fi
 
 # Or check via API (if enabled)
 gh api repos/<owner>/<repo>/code-scanning/alerts
+```
+
+## Checking PR Status Before Merging
+
+Before merging, always verify:
+
+```bash
+# 1. Check if PR is mergeable
+gh pr view <PR_NUMBER> --json state,mergeable
+
+# 2. Check CI status
+gh pr checks <PR_NUMBER>
+
+# 3. Check for approvals
+gh pr view <PR_NUMBER> --json reviews
+
+# 4. Check if branch is up to date
+gh pr view <PR_NUMBER> --json baseRefName,headRefName
+```
+
+## Pre-Merge Checklist
+
+Before merging a PR:
+
+- [ ] CI checks pass (`gh pr checks`)
+- [ ] At least one approval (for non-trivial changes)
+- [ ] Branch is up to date with main
+- [ ] No unresolved conversations
+- [ ] Tests pass locally (`make check`)
+- [ ] Linter passes (`act push -W .github/workflows/linter.yml`)
+
+```bash
+# Run local CI checks before pushing
+act push -W .github/workflows/linter.yml -j build
+
+# Update with latest main before merging
+git fetch upstream
+git checkout <branch>
+git pull upstream main --rebase
+git push -f
 ```
