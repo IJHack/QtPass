@@ -25,7 +25,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_he_IL.ts \
                     ../localization/localization_hu_HU.ts \
                     ../localization/localization_it_IT.ts \
-                    ../localization/localization_ko_KO.ts \
+                    ../localization/localization_ko_KR.ts \
                     ../localization/localization_lb_LU.ts \
                     ../localization/localization_nb_NO.ts \
                     ../localization/localization_nl_BE.ts \
@@ -44,7 +44,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_ro_RO.ts \
                     ../localization/localization_sl_SI.ts \
                     ../localization/localization_sr_RS.ts \
-                    ../localization/localization_ja_JA.ts \
+                    ../localization/localization_ja_JP.ts \
                     ../localization/localization_bg_BG.ts \
                     ../localization/localization_fi_FI.ts \
                     ../localization/localization_uk_UA.ts \
