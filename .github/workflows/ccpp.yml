@@ -63,6 +63,7 @@ jobs:
     steps:
       - name: Check if build needed
         id: need_build
+        shell: bash
         run: |
           if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
              [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
@@ -71,9 +72,9 @@ jobs:
              [[ "${{ needs.changes.outputs.icons }}" == "true" ]] || \
              [[ "${{ needs.changes.outputs.docs }}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
-            echo "run_build=true" >> $GITHUB_OUTPUT
+            echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
-            echo "run_build=false" >> $GITHUB_OUTPUT
+            echo "run_build=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: No changes - skipping
