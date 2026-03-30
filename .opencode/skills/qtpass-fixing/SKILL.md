@@ -201,9 +201,10 @@ item->setData(Qt::UserRole, QVariant::fromValue(i));
 }
 
 // Later, lookup by index
-const int index = item->data(Qt::UserRole).toInt(&OK);
-if (OK && index >= 0 && index < m_userList.size()) {
-m_userList[index].enabled = item->checkState() == Qt::Checked;
+bool ok = false;
+const int index = item->data(Qt::UserRole).toInt(&ok);
+if (ok && index >= 0 && index < m_userList.size()) {
+    m_userList[index].enabled = item->checkState() == Qt::Checked;
 }
 
 ### Theme-Aware Colors
