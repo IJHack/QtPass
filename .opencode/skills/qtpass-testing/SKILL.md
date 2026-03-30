@@ -332,6 +332,18 @@ void tst_settings::cleanupTestCase() {
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
 - DO: "testkey123", "/usr/bin/pass", "example.com"
 
+### Qt5/Qt6 Compatibility
+
+When checking variant types, prefer `canConvert<T>()` over `metaType().id()` for broader compatibility:
+
+```cpp
+// Qt6-only (fails on Qt5)
+QVERIFY(displayData.metaType().id() == QMetaType::QString);
+
+// Qt5/Qt6 compatible
+QVERIFY(displayData.canConvert<QString>());
+```
+
 ### Temporary Files/Directories
 
 ```cpp
@@ -344,6 +356,45 @@ void tst_mymodule::testWithTempFile() {
     file.close();
     // Test reads/modifies file
 }
+```
+
+### Testing Getters with Default Parameters
+
+When testing settings that have getters with default parameters, pass a _different_ default value to verify persistence:
+
+```cpp
+// Bad - returns default if persistence fails
+setter(testValue);
+QCOMPARE(getter(testValue), testValue);
+
+// Good - uses different default, must return stored value
+setter(testValue);
+QCOMPARE(getter(!testValue), testValue);        // bool: use negation
+QCOMPARE(getter(-1), testValue);                 // int: use sentinel
+QCOMPARE(getter(QString()), testValue);          // string: use empty
+```
+
+### Compound Types Don't Always Fit Data-Driven
+
+Data-driven tests work well for simple bool/int/string settings. Compound types like `PasswordConfiguration` often don't fit:
+
+- Different tests test different fields (length vs selected vs characters)
+- Nested data (QMap, structs) complicates the table
+- Keep tests explicit and readable over forcing a pattern
+
+### Qt Test Macro Reminder
+
+Always use the proper Qt Test macros:
+
+```cpp
+// Good
+QCOMPARE(actual, expected);
+QVERIFY(condition);
+QVERIFY2(condition, "failure message");
+
+// Bad - won't compile or is confusing
+COMPARE(actual, expected);      // missing Q
+QQCOMPARE(actual, expected);     // extra Q
 ```
 
 ## Testable Source Files

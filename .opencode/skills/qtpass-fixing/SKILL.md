@@ -164,6 +164,96 @@ Use `YYYY` as placeholder instead of current year:
 // SPDX-FileCopyrightText: YYYY Your Name
 ```
 
+### Return After Dialog Rejection
+
+When showing an error dialog followed by `reject()` in a constructor, add `return` to prevent the constructor from continuing with invalid state:
+
+```cpp
+// After error dialog in constructor
+if (users.isEmpty()) {
+    QMessageBox::critical(parent, tr("Error"), tr("No users found"));
+    reject();
+    return;  // Prevent constructor from continuing
+}
+```
+
+### Index Instead of Pointer
+
+When storing references to list items in UI (e.g., Qt::UserRole), prefer indices over pointers to avoid dangling references:
+
+```cpp
+// Instead of storing pointer to local reference
+for (const auto &user : m_userList) {
+    item->setData(Qt::UserRole, QVariant::fromValue(&user));  // DANGLING!
+}
+
+// Store index instead
+for (int i = 0; i < m_userList.size(); ++i) {
+    item->setData(Qt::UserRole, QVariant::fromValue(i));
+}
+```
+
+}
+
+// Good - store index
+for (int i = 0; i < m_userList.size(); ++i) {
+item->setData(Qt::UserRole, QVariant::fromValue(i));
+}
+
+// Later, lookup by index
+const int index = item->data(Qt::UserRole).toInt(&OK);
+if (OK && index >= 0 && index < m_userList.size()) {
+m_userList[index].enabled = item->checkState() == Qt::Checked;
+}
+
+### Theme-Aware Colors
+
+For list items or labels indicating status (e.g., secret keys), prefer `QPalette` colors over hardcoded values for better accessibility:
+
+```cpp
+// Hardcoded may have poor contrast on some themes
+item->setForeground(Qt::blue);
+
+// Theme-aware alternative
+const QPalette palette = QApplication::palette();
+item->setForeground(palette.color(QPalette::Link));
+```
+
+### Accessibility: Color + Text
+
+When indicating status through colors (invalid, expired, partial), add text prefixes or tooltips for color blind users:
+
+```cpp
+// Color only - not accessible
+item->setBackground(Qt::darkRed);
+
+// Color + text + tooltip - accessible
+item->setBackground(Qt::darkRed);
+item->setText(tr("[INVALID] ") + originalText);
+item->setToolTip(tr("Invalid key"));
+```
+
+### Debug Logging
+
+Add debug logging for validation failures using `#ifdef QT_DEBUG`:
+
+```cpp
+bool OK = false;
+const int index = item->data(Qt::UserRole).toInt(&OK);
+if (!OK) {
+#ifdef QT_DEBUG
+    qWarning() << "UsersDialog::itemChange: invalid user index data for item";
+#endif
+    return;
+}
+if (index < 0 || index >= m_userList.size()) {
+#ifdef QT_DEBUG
+    qWarning() << "UsersDialog::itemChange: user index out of range:" << index;
+#endif
+    return;
+}
+```
+
 ## Key Source Files
 
 | File                 | Purpose                                 |

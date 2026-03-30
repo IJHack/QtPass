@@ -31,6 +31,9 @@ Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_L
 When source files change (strings added, moved, or refactored), run qmake to update translations:
 
 ```bash
+# IMPORTANT: Run distclean first to avoid stale generated files (ui_*.h) in translations
+make distclean
+
 # Run qmake to update translations (uses lupdate internally)
 qmake6
 ```
