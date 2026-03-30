@@ -193,7 +193,6 @@ for (int i = 0; i < m_userList.size(); ++i) {
 }
 ```
 
-}
 
 // Good - store index
 for (int i = 0; i < m_userList.size(); ++i) {
