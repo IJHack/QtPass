@@ -7,12 +7,46 @@ on:
   push:
     tags:
       - "v*"
+  merge_group:
 
 permissions:
   contents: read
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+      tests: ${{ steps.filter.outputs.tests }}
+      qt: ${{ steps.filter.outputs.qt }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: main
+          filters: |
+            src:
+              - "src/**"
+              - "**.cpp"
+              - "**.h"
+              - "**.hpp"
+              - "**.ui"
+              - "**.qrc"
+            tests:
+              - "tests/**"
+            qt:
+              - "**.pro"
+              - "**.pri"
+
   build-windows:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      github.event_name == 'merge_group' ||
+      startsWith(github.ref, 'refs/tags/v')
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v6
@@ -72,6 +106,13 @@ jobs:
           path: Output/qtpass-*.exe
 
   build-macos:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      github.event_name == 'merge_group' ||
+      startsWith(github.ref, 'refs/tags/v')
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
