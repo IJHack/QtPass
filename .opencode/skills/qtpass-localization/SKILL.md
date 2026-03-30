@@ -197,3 +197,48 @@ git pull origin main --rebase
 # Format with prettier if needed
 npx prettier --write localization/*.ts
 ```
+
+## Common Pitfalls
+
+### Forgetting distclean Before qmake
+
+Always run `make distclean` before `qmake6` when updating translations:
+
+```bash
+# Wrong - may include stale generated files in translations
+qmake6
+
+# Correct - starts fresh
+make distclean
+qmake6
+```
+
+### New Strings Not Showing in Qt Linguist
+
+If you added new `tr()` strings but they don't appear:
+
+1. Run `qmake6` to update the `.ts` files
+2. Close and reopen Qt Linguist
+3. Check the file was actually saved after previous edit
+
+### Translation Files Showing as "Finished"
+
+When source strings change, translations are marked "unfinished" but may still appear correct. Always check:
+
+- The source text in Qt Linguist matches your code
+- Any placeholder formatting (`%1`, `%2`) matches
+
+### Merging Translation Conflicts
+
+When merging translation PRs that conflict:
+
+```bash
+# Use theirs strategy for .ts files (they're XML, prefer incoming)
+git checkout --theirs localization/localization_*.ts
+git add localization/
+git commit -m "Resolve merge conflict - use theirs for translations"
+```
+
+### Weblate vs Local Editing
+
+QtPass uses Weblate for translations. Don't manually edit `.ts` files for translations - let Weblate handle it. Only run `qmake6` locally to update source references.

@@ -292,3 +292,57 @@ clang-format --style=file --dry-run <source-file>
 # Apply formatting
 clang-format --style=file -i <source-file>
 ```
+
+## Bug Type Playbooks
+
+### UI Bugs (mainwindow.cpp, dialogs)
+
+UI bugs often involve signal/slot connections, widget state, or clipboard operations.
+
+**Common patterns:**
+
+- Check signal connections are properly connected
+- Verify widget parent/ownership
+- Clipboard operations may fail on some platforms (GNOME, KDE)
+- Theme-aware colors vs hardcoded (see above)
+
+**Debugging:**
+
+```cpp
+// Add debug output
+qDebug() << "Button clicked, state:" << ui->someWidget->isVisible();
+```
+
+### GPG/Pass Bugs (pass.cpp, executor.cpp)
+
+GPG-related bugs often involve command execution, path handling, or key operations.
+
+**Common patterns:**
+
+- Check executor return codes
+- Verify GPG binary is in PATH
+- Watch for path normalization issues (QDir::cleanPath)
+- GPG may lock the keyring - handle retries
+
+**Debugging:**
+
+```cpp
+// Enable verbose GPG output
+// Check /tmp for temporary GPG files
+```
+
+### Path/Model Bugs (storemodel.cpp, configdialog.cpp)
+
+Path handling bugs often involve separators, encoding, or model indexing.
+
+**Common patterns:**
+
+- Use QDir for path operations (handles / vs \)
+- Store indices, not pointers (see above)
+- Check model filter/sort state
+
+**Debugging:**
+
+```cpp
+qDebug() << "Path:" << path << "Cleaned:" << QDir::cleanPath(path);
+```
