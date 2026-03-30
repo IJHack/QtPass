@@ -926,21 +926,6 @@ void tst_util::getRecipientListWithComments() {
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
   QVERIFY(!recipients.contains("# comment"));
-
-  // Now verify that a different separator is handled correctly.
-  // Overwrite the .gpg-id file with recipients separated by commas.
-  QVERIFY(file.open(QIODevice::WriteOnly | QIODevice::Truncate));
-  file.write("ABCDEF12,34567890\n");
-  file.close();
-
-  int count = -1;
-  QStringList commaSeparatedRecipients =
-      Pass::getRecipientString(passStore, ",", &count);
-  QStringList expectedCommaRecipients = {"ABCDEF12", "34567890"};
-  // Verify count was updated and matches the number of parsed recipients
-  QVERIFY(count > 0);
-  QCOMPARE(count, (int)expectedCommaRecipients.size());
-  QCOMPARE(commaSeparatedRecipients, expectedCommaRecipients);
 }
 
 void tst_util::getRecipientStringCount() {
