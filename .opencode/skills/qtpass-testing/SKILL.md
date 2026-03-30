@@ -332,6 +332,18 @@ void tst_settings::cleanupTestCase() {
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
 - DO: "testkey123", "/usr/bin/pass", "example.com"
 
+### Qt5/Qt6 Compatibility
+
+When checking variant types, prefer `canConvert<T>()` over `metaType().id()` for broader compatibility:
+
+```cpp
+// Qt6-only (fails on Qt5)
+QVERIFY(displayData.metaType().id() == QMetaType::QString);
+
+// Qt5/Qt6 compatible
+QVERIFY(displayData.canConvert<QString>());
+```
+
 ### Temporary Files/Directories
 
 ```cpp

@@ -122,3 +122,47 @@ See `qtpass-linting` skill for full CI workflow. Pattern:
 # Run linter locally BEFORE pushing
 act push -W .github/workflows/linter.yml -j build
 ```
+
+## Script Best Practices
+
+### Dry Run Option
+
+For scripts that modify remote state (uploading releases, signing files), add a `--dryrun` flag to enable testing without making changes:
+
+```bash
+# Parse arguments at the start
+dryrun=false
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --dryrun)
+            dryrun=true
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+# Use in conditional
+if [ "$dryrun" = true ]; then
+    echo "[dryrun] Would upload files: ${files[*]}"
+else
+    gh release upload ...
+fi
+```
+
+### Glob Handling
+
+When iterating over files matched by a glob pattern, use array assignment to handle the case where no files match:
+
+```bash
+# Without nullglob, loops over literal "*" when no files exist
+for file in *; do
+    [ -f "$file" ] || continue
+
+# With array assignment, iterates over empty array when no files
+files=(*)
+for file in "${files[@]}"; do
+    [ -f "$file" ] || continue
+```
