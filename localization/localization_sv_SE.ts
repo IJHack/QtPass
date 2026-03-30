@@ -405,7 +405,7 @@
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Detta fält är obligatoriskt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
@@ -1365,17 +1365,17 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[OGILTIG] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[UTGÅTT] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[DELVIS] </translation>
     </message>
     <message>
         <source>Search Users</source>
