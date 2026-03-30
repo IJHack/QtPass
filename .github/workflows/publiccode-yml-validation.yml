@@ -3,18 +3,32 @@ name: publiccode.yml validation
 on:
   push:
     branches: ["main"]
-    paths:
-      - "publiccode.yml"
   pull_request:
     branches: ["main"]
-    paths:
-      - "publiccode.yml"
   merge_group:
 
 permissions: {}
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      publiccode: ${{ steps.filter.outputs.publiccode }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: main
+          filters: |
+            publiccode:
+              - "publiccode.yml"
+
   publiccode_yml_validation:
+    needs: changes
+    if: >-
+      needs.changes.outputs.publiccode == 'true' ||
+      github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     permissions:
       contents: read

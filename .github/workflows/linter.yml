@@ -1,91 +1,89 @@
 ---
-#################################
-#################################
-## Super Linter GitHub Actions ##
-#################################
-#################################
 name: Lint Code Base
 
-#
-# Documentation:
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-#
-
-#############################
-# Start the job on all push #
-#############################
 on:
   push:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/**"
-      - "**.cpp"
-      - "**.h"
-      - "**.hpp"
-      - "**.pro"
-      - "**.pri"
-      - "**.yml"
-      - "**.yaml"
-      - "**.md"
-      - "**.sh"
-      - "**.json"
-      - ".github/**"
-      - "localization/**"
   pull_request:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/**"
-      - "**.cpp"
-      - "**.h"
-      - "**.hpp"
-      - "**.pro"
-      - "**.pri"
-      - "**.yml"
-      - "**.yaml"
-      - "**.md"
-      - "**.sh"
-      - "**.json"
-      - ".github/**"
-      - "localization/**"
   merge_group:
 
 permissions: {}
 
-###############
-# Set the Job #
-###############
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+      tests: ${{ steps.filter.outputs.tests }}
+      code: ${{ steps.filter.outputs.code }}
+      qt: ${{ steps.filter.outputs.qt }}
+      yaml: ${{ steps.filter.outputs.yaml }}
+      markdown: ${{ steps.filter.outputs.markdown }}
+      scripts: ${{ steps.filter.outputs.scripts }}
+      json: ${{ steps.filter.outputs.json }}
+      github: ${{ steps.filter.outputs.github }}
+      localization: ${{ steps.filter.outputs.localization }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: main
+          filters: |
+            src:
+              - "src/**"
+            tests:
+              - "tests/**"
+            code:
+              - "**.cpp"
+              - "**.h"
+              - "**.hpp"
+            qt:
+              - "**.pro"
+              - "**.pri"
+            yaml:
+              - "**.yml"
+              - "**.yaml"
+            markdown:
+              - "**.md"
+            scripts:
+              - "**.sh"
+            json:
+              - "**.json"
+            github:
+              - ".github/**"
+            localization:
+              - "localization/**"
+
   build:
-    # Name the Job
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.code == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      needs.changes.outputs.yaml == 'true' ||
+      needs.changes.outputs.markdown == 'true' ||
+      needs.changes.outputs.scripts == 'true' ||
+      needs.changes.outputs.json == 'true' ||
+      needs.changes.outputs.github == 'true' ||
+      needs.changes.outputs.localization == 'true' ||
+      github.event_name == 'merge_group'
     name: Lint Code Base
-    # Set the agent to run on
     runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
-    ##################
-    # Load all steps #
-    ##################
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
       - name: Checkout Code
         uses: actions/checkout@v6
         with:
-          # Full git history is needed to get a proper
-          # list of changed files within `super-linter`
           fetch-depth: 0
 
       - run: cat .github/super-linter.env >> "$GITHUB_ENV"
-      ################################
-      # Run Linter against code base #
-      ################################
       - name: Lint Code Base
         uses: github/super-linter@v7
         env:
-          # Change to 'master' if your main branch differs
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

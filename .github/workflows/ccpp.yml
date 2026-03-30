@@ -4,38 +4,58 @@ name: QMake
 on:
   push:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/**"
-      - "**.pro"
-      - "**.pri"
-      - "**.cpp"
-      - "**.h"
-      - "**.hpp"
-      - "**.ui"
-      - "**.qrc"
-      - "localization/**"
-      - "icons/**"
   pull_request:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/**"
-      - "**.pro"
-      - "**.pri"
-      - "**.cpp"
-      - "**.h"
-      - "**.hpp"
-      - "**.ui"
-      - "**.qrc"
-      - "localization/**"
-      - "icons/**"
   merge_group:
 
 permissions: {}
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+      tests: ${{ steps.filter.outputs.tests }}
+      qt: ${{ steps.filter.outputs.qt }}
+      localization: ${{ steps.filter.outputs.localization }}
+      icons: ${{ steps.filter.outputs.icons }}
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          base: main
+          filters: |
+            src:
+              - "src/**"
+              - "**.cpp"
+              - "**.h"
+              - "**.hpp"
+              - "**.ui"
+              - "**.qrc"
+            tests:
+              - "tests/**"
+            qt:
+              - "**.pro"
+              - "**.pri"
+            localization:
+              - "localization/**"
+            icons:
+              - "icons/**"
+            docs:
+              - "docs/**"
+
   build:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      needs.changes.outputs.localization == 'true' ||
+      needs.changes.outputs.icons == 'true' ||
+      needs.changes.outputs.docs == 'true' ||
+      github.event_name == 'merge_group'
     permissions:
       contents: read
     runs-on: ${{ matrix.os }}
