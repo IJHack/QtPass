@@ -37,3 +37,12 @@ jobs:
       - uses: italia/publiccode-parser-action@v1
         with:
           publiccode: "publiccode.yml"
+
+  no-op:
+    needs: changes
+    if: >-
+      needs.changes.outputs.publiccode != 'true' &&
+      github.event_name != 'merge_group'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No relevant changes - skipping publiccode validation"

@@ -85,3 +85,17 @@ jobs:
 
       - name: make check
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
+
+  no-op:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src != 'true' &&
+      needs.changes.outputs.tests != 'true' &&
+      needs.changes.outputs.qt != 'true' &&
+      needs.changes.outputs.localization != 'true' &&
+      needs.changes.outputs.icons != 'true' &&
+      needs.changes.outputs.docs != 'true' &&
+      github.event_name != 'merge_group'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No relevant changes - skipping build"

@@ -166,3 +166,15 @@ jobs:
         with:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
+
+  no-op:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src != 'true' &&
+      needs.changes.outputs.tests != 'true' &&
+      needs.changes.outputs.qt != 'true' &&
+      github.event_name != 'merge_group' &&
+      !startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No relevant changes - skipping release builds"

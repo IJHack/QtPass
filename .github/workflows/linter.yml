@@ -87,3 +87,21 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  no-op:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src != 'true' &&
+      needs.changes.outputs.tests != 'true' &&
+      needs.changes.outputs.code != 'true' &&
+      needs.changes.outputs.qt != 'true' &&
+      needs.changes.outputs.yaml != 'true' &&
+      needs.changes.outputs.markdown != 'true' &&
+      needs.changes.outputs.scripts != 'true' &&
+      needs.changes.outputs.json != 'true' &&
+      needs.changes.outputs.github != 'true' &&
+      needs.changes.outputs.localization != 'true' &&
+      github.event_name != 'merge_group'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No relevant changes - skipping lint"

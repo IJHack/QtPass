@@ -113,3 +113,14 @@ jobs:
           keep_files: true
           user_name: "GitHub Actions"
           user_email: "github-actions[bot]@users.noreply.github.com"
+
+  no-op:
+    needs: changes
+    if: >-
+      needs.changes.outputs.src != 'true' &&
+      needs.changes.outputs.tests != 'true' &&
+      needs.changes.outputs.docs != 'true' &&
+      github.event_name != 'merge_group'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No relevant changes - skipping docs and coverage"
