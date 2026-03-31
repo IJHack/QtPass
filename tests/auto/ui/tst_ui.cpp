@@ -481,6 +481,7 @@ void tst_ui::progressIndicatorStartTwiceDoesNotDuplicate() {
   indicator.startAnimation();
   QVERIFY(indicator.isAnimated());
   indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
 }
 
 // ---- DeselectableTreeView tests ----
