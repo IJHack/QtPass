@@ -930,9 +930,10 @@ void tst_util::findBinaryInPathReturnedPathIsAbsolute() {
   QString result = Util::findBinaryInPath(binaryName);
   QVERIFY2(!result.isEmpty(), "Should find a standard shell");
   QFileInfo fi(result);
-  QVERIFY2(fi.isAbsolute(),
-           qPrintable(QStringLiteral("Returned path '%1' must be absolute")
-                          .arg(result)));
+  QVERIFY2(
+      fi.isAbsolute(),
+      qPrintable(
+          QStringLiteral("Returned path '%1' must be absolute").arg(result)));
 }
 
 void tst_util::findBinaryInPathReturnedPathIsExecutable() {
@@ -946,9 +947,10 @@ void tst_util::findBinaryInPathReturnedPathIsExecutable() {
   QString result = Util::findBinaryInPath(binaryName);
   QVERIFY2(!result.isEmpty(), "Should find a standard shell");
   QFileInfo fi(result);
-  QVERIFY2(fi.isExecutable(),
-           qPrintable(QStringLiteral("Returned path '%1' must be executable")
-                          .arg(result)));
+  QVERIFY2(
+      fi.isExecutable(),
+      qPrintable(
+          QStringLiteral("Returned path '%1' must be executable").arg(result)));
 }
 
 void tst_util::findBinaryInPathMultipleKnownBinaries() {
@@ -957,18 +959,18 @@ void tst_util::findBinaryInPathMultipleKnownBinaries() {
   // property of the refactored non-mutating concatenation).
 #ifndef Q_OS_WIN
   const QStringList binaries = {QStringLiteral("sh"), QStringLiteral("ls"),
-                                 QStringLiteral("cat")};
+                                QStringLiteral("cat")};
   for (const QString &bin : binaries) {
     QString result = Util::findBinaryInPath(bin);
     QVERIFY2(!result.isEmpty(),
-             qPrintable(
-                 QStringLiteral("Should find '%1' in PATH").arg(bin)));
+             qPrintable(QStringLiteral("Should find '%1' in PATH").arg(bin)));
     QVERIFY2(result.contains(bin),
              qPrintable(QStringLiteral("Result '%1' should contain '%2'")
                             .arg(result, bin)));
-    QVERIFY2(QFileInfo(result).isExecutable(),
-             qPrintable(QStringLiteral("Result '%1' should be executable")
-                            .arg(result)));
+    QVERIFY2(
+        QFileInfo(result).isExecutable(),
+        qPrintable(
+            QStringLiteral("Result '%1' should be executable").arg(result)));
   }
 #else
   QSKIP("Non-Windows binary list not applicable on Windows");
@@ -999,11 +1001,11 @@ void tst_util::findBinaryInPathResultContainsBinaryName() {
 #endif
   QString result = Util::findBinaryInPath(binaryName);
   QVERIFY2(!result.isEmpty(), "Should find the binary");
-  QVERIFY2(result.endsWith(binaryName) ||
-               result.endsWith(binaryName + QStringLiteral(".exe")),
-           qPrintable(QStringLiteral(
-                          "Path '%1' should end with binary name '%2'")
-                          .arg(result, binaryName)));
+  QVERIFY2(
+      result.endsWith(binaryName) ||
+          result.endsWith(binaryName + QStringLiteral(".exe")),
+      qPrintable(QStringLiteral("Path '%1' should end with binary name '%2'")
+                     .arg(result, binaryName)));
 }
 
 void tst_util::findBinaryInPathTempExecutableInTempDir() {
