@@ -136,10 +136,11 @@ public:
    */
   static void setMaximized(const bool &maximized);
 
+  // Dialog-specific settings
   /**
    * @brief Get saved dialog geometry.
-   * @param key Unique identifier for the dialog (e.g., "configDialog").
-   * @param defaultValue Geometry returned if no geometry saved.
+   * @param key Dialog identifier (e.g., "usersDialog").
+   * @param defaultValue Byte array returned if not saved.
    * @return Dialog geometry as QByteArray.
    */
   static auto
@@ -148,15 +149,15 @@ public:
       -> QByteArray;
   /**
    * @brief Save dialog geometry.
-   * @param key Unique identifier for the dialog.
-   * @param geometry Geometry data to save.
+   * @param key Dialog identifier.
+   * @param geometry Dialog geometry to save.
    */
   static void setDialogGeometry(const QString &key, const QByteArray &geometry);
 
   /**
    * @brief Get saved dialog position.
-   * @param key Unique identifier for the dialog.
-   * @param defaultValue Position returned if no position saved.
+   * @param key Dialog identifier.
+   * @param defaultValue Point returned if not saved.
    * @return Dialog position as QPoint.
    */
   static auto getDialogPos(const QString &key,
@@ -164,15 +165,15 @@ public:
       -> QPoint;
   /**
    * @brief Save dialog position.
-   * @param key Unique identifier for the dialog.
-   * @param pos Position to save.
+   * @param key Dialog identifier.
+   * @param pos Dialog position to save.
    */
   static void setDialogPos(const QString &key, const QPoint &pos);
 
   /**
    * @brief Get saved dialog size.
-   * @param key Unique identifier for the dialog.
-   * @param defaultValue Size returned if no size saved.
+   * @param key Dialog identifier.
+   * @param defaultValue Size returned if not saved.
    * @return Dialog size as QSize.
    */
   static auto getDialogSize(const QString &key,
@@ -180,14 +181,14 @@ public:
       -> QSize;
   /**
    * @brief Save dialog size.
-   * @param key Unique identifier for the dialog.
-   * @param size Size to save.
+   * @param key Dialog identifier.
+   * @param size Dialog size to save.
    */
   static void setDialogSize(const QString &key, const QSize &size);
 
   /**
    * @brief Get dialog maximized state.
-   * @param key Unique identifier for the dialog.
+   * @param key Dialog identifier.
    * @param defaultValue Boolean returned if not saved.
    * @return true if dialog is maximized.
    */
@@ -196,7 +197,7 @@ public:
       -> bool;
   /**
    * @brief Save dialog maximized state.
-   * @param key Unique identifier for the dialog.
+   * @param key Dialog identifier.
    * @param maximized Maximized state to save.
    */
   static void setDialogMaximized(const QString &key, const bool &maximized);

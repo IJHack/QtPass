@@ -120,8 +120,7 @@ void UsersDialog::accept() {
 }
 
 /**
- * @brief UsersDialog::closeEvent might have to store size and location if that
- * is wanted.
+ * @brief UsersDialog::closeEvent save window state on close.
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
