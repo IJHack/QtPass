@@ -31,7 +31,7 @@
 <area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="374,447,396,404,432,341,478,272,534,207,574,174,614,149,617,154,577,179,538,211,483,275,436,344,401,406,379,449"/>
 <area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="383,446,431,401,486,342,499,322,507,304,517,287,534,271,543,265,546,269,538,275,521,291,512,307,504,324,490,345,435,405,387,450"/>
 <area shape="poly" id="edge19_Node000011_Node000010" title=" " alt="" coords="417,468,504,483,609,497,660,500,707,499,745,494,772,482,786,469,793,453,796,419,798,383,805,365,819,348,826,343,830,347,823,352,810,368,803,384,801,419,799,455,790,472,775,487,746,499,707,504,660,505,609,502,503,489,416,473"/>
-<area shape="rect" id="Node000012" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="589,549,721,575"/>
+<area shape="rect" id="Node000012" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="589,549,721,575"/>
 <area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="418,462,454,469,489,482,505,494,514,505,523,517,537,528,576,544,574,549,535,532,519,521,510,509,501,497,487,487,452,474,417,467"/>
 <area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title=" " alt="" coords="549,285,760,325"/>
 <area shape="poly" id="edge18_Node000011_Node000016" title=" " alt="" coords="382,446,445,392,488,361,535,334,552,327,554,332,537,339,491,366,448,396,386,450"/>

@@ -1,6 +1,6 @@
 <map id="ConfigDialog::wizard" name="ConfigDialog::wizard">
 <area shape="rect" id="Node000001" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="5,80,161,105"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="209,80,341,105"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="209,80,341,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,90,196,90,196,95,162,95"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="391,5,636,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,78,340,58,388,39,419,31,420,36,390,45,343,63,302,82"/>

@@ -303,7 +303,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prerequisite settings?">
+<g id="a_Node000012"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prequisite settings?">
 <polygon fill="white" stroke="#666666" points="536.5,-472 437.5,-472 437.5,-453 536.5,-453 536.5,-472"/>
 <text text-anchor="middle" x="487" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>

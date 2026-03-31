@@ -66,7 +66,7 @@ var sectionId = 'dynsection-10';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prerequisite settings?">
+<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prequisite settings?">
 <polygon fill="white" stroke="#666666" points="245.5,-820 146.5,-820 146.5,-801 245.5,-801 245.5,-820"/>
 <text text-anchor="middle" x="196" y="-808" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>

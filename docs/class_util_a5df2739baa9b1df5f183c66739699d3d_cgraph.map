@@ -1,5 +1,5 @@
 <map id="Util::getDir" name="Util::getDir">
-<area shape="rect" id="Node000001" title="Util::getDir get selected folder path." alt="" coords="5,5,99,31"/>
+<area shape="rect" id="Node000001" title="Util::getDir get selectd folder path." alt="" coords="5,5,99,31"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="147,5,357,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,15,133,15,133,21,99,21"/>
 </map>
