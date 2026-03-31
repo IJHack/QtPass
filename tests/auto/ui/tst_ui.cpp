@@ -2,10 +2,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QCoreApplication>
 #include <QDialog>
+#include <QLineEdit>
 #include <QPointer>
+#include <QSignalSpy>
 #include <QtTest>
 
+#include "../../../src/deselectabletreeview.h"
 #include "../../../src/passworddialog.h"
+#include "../../../src/qprogressindicator.h"
+#include "../../../src/qpushbuttonasqrcode.h"
+#include "../../../src/qpushbuttonshowpassword.h"
+#include "../../../src/qpushbuttonwithclipboard.h"
 #include "../../../src/qtpass.h"
 #include "passwordconfiguration.h"
 
@@ -24,6 +31,51 @@ private Q_SLOTS:
   void qrCodePopupHasDeleteOnCloseAttribute();
   void createQRCodePopupSetsDeleteOnClose();
   void dialogWithoutDeleteOnCloseDoesNotAutoDelete();
+
+  // QPushButtonWithClipboard tests
+  void clipboardButtonDefaultText();
+  void clipboardButtonConstructorText();
+  void clipboardButtonGetSetText();
+  void clipboardButtonSetEmptyText();
+  void clipboardButtonSetAndGetRoundtrip();
+  void clipboardButtonClickEmitsSignal();
+  void clipboardButtonClickSignalCarriesText();
+  void clipboardButtonClickAfterSetTextCarriesNewText();
+
+  // QPushButtonAsQRCode tests
+  void qrCodeButtonDefaultText();
+  void qrCodeButtonConstructorText();
+  void qrCodeButtonGetSetText();
+  void qrCodeButtonSetEmptyText();
+  void qrCodeButtonSetAndGetRoundtrip();
+  void qrCodeButtonClickEmitsSignal();
+  void qrCodeButtonClickSignalCarriesText();
+  void qrCodeButtonClickAfterSetTextCarriesNewText();
+
+  // QPushButtonShowPassword tests
+  void showPasswordButtonInitialEchoMode();
+  void showPasswordButtonClickTogglesEchoMode();
+  void showPasswordButtonDoubleClickRestoresEchoMode();
+
+  // QProgressIndicator tests
+  void progressIndicatorDefaultNotAnimated();
+  void progressIndicatorDefaultDelay();
+  void progressIndicatorDefaultNotDisplayedWhenStopped();
+  void progressIndicatorDefaultColor();
+  void progressIndicatorStartAnimation();
+  void progressIndicatorStopAnimation();
+  void progressIndicatorStartStopCycle();
+  void progressIndicatorSetAnimationDelay();
+  void progressIndicatorSetDisplayedWhenStopped();
+  void progressIndicatorSetColor();
+  void progressIndicatorSizeHint();
+  void progressIndicatorHeightForWidth();
+  void progressIndicatorStopWhenNotRunningIsHarmless();
+  void progressIndicatorStartTwiceDoesNotDuplicate();
+
+  // DeselectableTreeView tests
+  void deselectableTreeViewConstruction();
+  void deselectableTreeViewHasEmptyClickedSignal();
 };
 
 /**
@@ -181,6 +233,271 @@ void tst_ui::dialogWithoutDeleteOnCloseDoesNotAutoDelete() {
       !popup.isNull(),
       "QDialog without WA_DeleteOnClose must NOT be deleted after close()");
   delete popup;
+}
+
+// ---- QPushButtonWithClipboard tests ----
+
+void tst_ui::clipboardButtonDefaultText() {
+  QPushButtonWithClipboard btn;
+  QCOMPARE(btn.getTextToCopy(), QString(""));
+}
+
+void tst_ui::clipboardButtonConstructorText() {
+  QPushButtonWithClipboard btn("hello");
+  QCOMPARE(btn.getTextToCopy(), QString("hello"));
+}
+
+void tst_ui::clipboardButtonGetSetText() {
+  QPushButtonWithClipboard btn("initial");
+  btn.setTextToCopy("updated");
+  QCOMPARE(btn.getTextToCopy(), QString("updated"));
+}
+
+void tst_ui::clipboardButtonSetEmptyText() {
+  QPushButtonWithClipboard btn("nonempty");
+  btn.setTextToCopy("");
+  QCOMPARE(btn.getTextToCopy(), QString(""));
+}
+
+void tst_ui::clipboardButtonSetAndGetRoundtrip() {
+  QPushButtonWithClipboard btn;
+  QString text = "password123!@#";
+  btn.setTextToCopy(text);
+  QCOMPARE(btn.getTextToCopy(), text);
+}
+
+void tst_ui::clipboardButtonClickEmitsSignal() {
+  QPushButtonWithClipboard btn("test");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+}
+
+void tst_ui::clipboardButtonClickSignalCarriesText() {
+  QPushButtonWithClipboard btn("mytext");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+  QList<QVariant> args = spy.takeFirst();
+  QCOMPARE(args.at(0).toString(), QString("mytext"));
+}
+
+void tst_ui::clipboardButtonClickAfterSetTextCarriesNewText() {
+  QPushButtonWithClipboard btn("original");
+  btn.setTextToCopy("changed");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+  QList<QVariant> args = spy.takeFirst();
+  QCOMPARE(args.at(0).toString(), QString("changed"));
+}
+
+// ---- QPushButtonAsQRCode tests ----
+
+void tst_ui::qrCodeButtonDefaultText() {
+  QPushButtonAsQRCode btn;
+  QCOMPARE(btn.getTextToCopy(), QString(""));
+}
+
+void tst_ui::qrCodeButtonConstructorText() {
+  QPushButtonAsQRCode btn("qrdata");
+  QCOMPARE(btn.getTextToCopy(), QString("qrdata"));
+}
+
+void tst_ui::qrCodeButtonGetSetText() {
+  QPushButtonAsQRCode btn("first");
+  btn.setTextToCopy("second");
+  QCOMPARE(btn.getTextToCopy(), QString("second"));
+}
+
+void tst_ui::qrCodeButtonSetEmptyText() {
+  QPushButtonAsQRCode btn("nonempty");
+  btn.setTextToCopy("");
+  QCOMPARE(btn.getTextToCopy(), QString(""));
+}
+
+void tst_ui::qrCodeButtonSetAndGetRoundtrip() {
+  QPushButtonAsQRCode btn;
+  QString text = "otpauth://totp/Example?secret=JBSWY3DPEHPK3PXP";
+  btn.setTextToCopy(text);
+  QCOMPARE(btn.getTextToCopy(), text);
+}
+
+void tst_ui::qrCodeButtonClickEmitsSignal() {
+  QPushButtonAsQRCode btn("somedata");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+}
+
+void tst_ui::qrCodeButtonClickSignalCarriesText() {
+  QPushButtonAsQRCode btn("payload");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+  QList<QVariant> args = spy.takeFirst();
+  QCOMPARE(args.at(0).toString(), QString("payload"));
+}
+
+void tst_ui::qrCodeButtonClickAfterSetTextCarriesNewText() {
+  QPushButtonAsQRCode btn("old");
+  btn.setTextToCopy("new");
+  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  btn.click();
+  QCOMPARE(spy.count(), 1);
+  QList<QVariant> args = spy.takeFirst();
+  QCOMPARE(args.at(0).toString(), QString("new"));
+}
+
+// ---- QPushButtonShowPassword tests ----
+
+void tst_ui::showPasswordButtonInitialEchoMode() {
+  QLineEdit line;
+  line.setEchoMode(QLineEdit::Password);
+  QPushButtonShowPassword btn(&line);
+  // Initial state: echo mode should remain Password until button is clicked
+  QCOMPARE(line.echoMode(), QLineEdit::Password);
+}
+
+void tst_ui::showPasswordButtonClickTogglesEchoMode() {
+  QLineEdit line;
+  line.setEchoMode(QLineEdit::Password);
+  QPushButtonShowPassword btn(&line);
+  // Click once: Password -> Normal
+  btn.click();
+  QCOMPARE(line.echoMode(), QLineEdit::Normal);
+}
+
+void tst_ui::showPasswordButtonDoubleClickRestoresEchoMode() {
+  QLineEdit line;
+  line.setEchoMode(QLineEdit::Password);
+  QPushButtonShowPassword btn(&line);
+  // Click once: Password -> Normal
+  btn.click();
+  QCOMPARE(line.echoMode(), QLineEdit::Normal);
+  // Click again: Normal -> Password
+  btn.click();
+  QCOMPARE(line.echoMode(), QLineEdit::Password);
+}
+
+// ---- QProgressIndicator tests ----
+
+void tst_ui::progressIndicatorDefaultNotAnimated() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isAnimated());
+}
+
+void tst_ui::progressIndicatorDefaultDelay() {
+  QProgressIndicator indicator;
+  QCOMPARE(indicator.animationDelay(), 40);
+}
+
+void tst_ui::progressIndicatorDefaultNotDisplayedWhenStopped() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isDisplayedWhenStopped());
+}
+
+void tst_ui::progressIndicatorDefaultColor() {
+  QProgressIndicator indicator;
+  QCOMPARE(indicator.color(), QColor(Qt::black));
+}
+
+void tst_ui::progressIndicatorStartAnimation() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isAnimated());
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.stopAnimation();
+}
+
+void tst_ui::progressIndicatorStopAnimation() {
+  QProgressIndicator indicator;
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
+}
+
+void tst_ui::progressIndicatorStartStopCycle() {
+  QProgressIndicator indicator;
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
+}
+
+void tst_ui::progressIndicatorSetAnimationDelay() {
+  QProgressIndicator indicator;
+  indicator.setAnimationDelay(100);
+  QCOMPARE(indicator.animationDelay(), 100);
+}
+
+void tst_ui::progressIndicatorSetDisplayedWhenStopped() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isDisplayedWhenStopped());
+  indicator.setDisplayedWhenStopped(true);
+  QVERIFY(indicator.isDisplayedWhenStopped());
+  indicator.setDisplayedWhenStopped(false);
+  QVERIFY(!indicator.isDisplayedWhenStopped());
+}
+
+void tst_ui::progressIndicatorSetColor() {
+  QProgressIndicator indicator;
+  QColor red(Qt::red);
+  indicator.setColor(red);
+  QCOMPARE(indicator.color(), red);
+}
+
+void tst_ui::progressIndicatorSizeHint() {
+  QProgressIndicator indicator;
+  QSize hint = indicator.sizeHint();
+  QCOMPARE(hint, QSize(20, 20));
+}
+
+void tst_ui::progressIndicatorHeightForWidth() {
+  QProgressIndicator indicator;
+  QCOMPARE(indicator.heightForWidth(30), 30);
+  QCOMPARE(indicator.heightForWidth(50), 50);
+  QCOMPARE(indicator.heightForWidth(0), 0);
+}
+
+void tst_ui::progressIndicatorStopWhenNotRunningIsHarmless() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isAnimated());
+  // Stopping when already stopped should not crash or change state
+  indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
+}
+
+void tst_ui::progressIndicatorStartTwiceDoesNotDuplicate() {
+  QProgressIndicator indicator;
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  // Starting again when already running should remain animated without crash
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.stopAnimation();
+}
+
+// ---- DeselectableTreeView tests ----
+
+void tst_ui::deselectableTreeViewConstruction() {
+  // Verify the view can be constructed and destroyed without issues
+  QScopedPointer<DeselectableTreeView> view(new DeselectableTreeView(nullptr));
+  QVERIFY(view != nullptr);
+}
+
+void tst_ui::deselectableTreeViewHasEmptyClickedSignal() {
+  // Verify emptyClicked signal is connectable via QSignalSpy
+  QScopedPointer<DeselectableTreeView> view(new DeselectableTreeView(nullptr));
+  QSignalSpy spy(view.data(), SIGNAL(emptyClicked()));
+  QVERIFY(spy.isValid());
+  // No click occurred yet, so count should be 0
+  QCOMPARE(spy.count(), 0);
 }
 
 QTEST_MAIN(tst_ui)
