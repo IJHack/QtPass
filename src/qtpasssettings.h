@@ -16,10 +16,21 @@
 #include <QSize>
 #include <QVariant>
 
-/*!
-    \class QtPassSettings
-    \brief Singleton that stores qtpass' settings, saves and loads config
-*/
+/**
+ * @class QtPassSettings
+ * @brief Singleton that stores QtPass settings, handles persistence and
+ * defaults.
+ *
+ * QtPassSettings manages all application configuration including:
+ * - Window geometry (position, size, maximized state)
+ * - Password store configuration (path, GPG settings)
+ * - Executable paths (pass, git, gpg, pwgen)
+ * - UI preferences (clipboard, autoclear, display options)
+ * - gopass configuration
+ *
+ * Uses QSettings for persistence with a singleton pattern.
+ * All getters accept a default value returned when setting is not yet saved.
+ */
 class QtPassSettings : public QSettings {
 private:
   explicit QtPassSettings();
@@ -39,107 +50,336 @@ private:
   static QScopedPointer<ImitatePass> imitatePass;
 
 public:
+  /**
+   * @brief Get the singleton instance.
+   * @return Pointer to the QtPassSettings instance.
+   */
   static auto getInstance() -> QtPassSettings *;
 
+  // Window settings
+  /**
+   * @brief Get saved application version.
+   * @param defaultValue String returned if no version saved.
+   * @return Application version string.
+   */
   static auto getVersion(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save application version.
+   * @param version Version string to save.
+   */
   static void setVersion(const QString &version);
 
+  /**
+   * @brief Get saved window geometry.
+   * @param defaultValue Byte array returned if no geometry saved.
+   * @return Window geometry as QByteArray.
+   */
   static auto
   getGeometry(const QByteArray &defaultValue = QVariant().toByteArray())
       -> QByteArray;
+  /**
+   * @brief Save window geometry.
+   * @param geometry Window geometry to save.
+   */
   static void setGeometry(const QByteArray &geometry);
 
+  /**
+   * @brief Get saved window state.
+   * @param defaultValue Byte array returned if no state saved.
+   * @return Window state as QByteArray.
+   */
   static auto
   getSavestate(const QByteArray &defaultValue = QVariant().toByteArray())
       -> QByteArray;
+  /**
+   * @brief Save window state.
+   * @param saveState Window state to save.
+   */
   static void setSavestate(const QByteArray &saveState);
 
+  /**
+   * @brief Get saved window position.
+   * @param defaultValue Point returned if no position saved.
+   * @return Window position as QPoint.
+   */
   static auto getPos(const QPoint &defaultValue = QVariant().toPoint())
       -> QPoint;
+  /**
+   * @brief Save window position.
+   * @param pos Window position to save.
+   */
   static void setPos(const QPoint &pos);
 
+  /**
+   * @brief Get saved window size.
+   * @param defaultValue Size returned if no size saved.
+   * @return Window size as QSize.
+   */
   static auto getSize(const QSize &defaultValue = QVariant().toSize()) -> QSize;
+  /**
+   * @brief Save window size.
+   * @param size Window size to save.
+   */
   static void setSize(const QSize &size);
 
+  /**
+   * @brief Get maximized state.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if window is maximized.
+   */
   static auto isMaximized(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save maximized state.
+   * @param maximized Maximized state to save.
+   */
   static void setMaximized(const bool &maximized);
 
+  // Password store settings
+  /**
+   * @brief Get whether to use pass (true) or GPG (false).
+   * @param defaultValue Boolean returned if not saved (defaults to false).
+   * @return true if using pass, false if using GPG.
+   */
   static auto isUsePass(const bool &defaultValue = QVariant().toBool()) -> bool;
+  /**
+   * @brief Save use pass setting.
+   * @param usePass true to use pass, false for GPG.
+   */
   static void setUsePass(const bool &usePass);
 
+  /**
+   * @brief Get clipboard type preference.
+   * @param defaultvalue Default value returned if not saved.
+   * @return Clipboard type as Enums::clipBoardType.
+   */
   static auto getClipBoardTypeRaw(
       const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER) -> int;
+  /**
+   * @brief Get clipboard type as enum.
+   * @param defaultvalue Default value returned if not saved.
+   * @return Clipboard type as Enums::clipBoardType.
+   */
   static auto getClipBoardType(
       const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER)
       -> Enums::clipBoardType;
+  /**
+   * @brief Save clipboard type.
+   * @param clipBoardType Clipboard type to save.
+   */
   static void setClipBoardType(const int &clipBoardType);
 
+  // UI settings
+  /**
+   * @brief Get whether to use selection (X11) for clipboard.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if using selection.
+   */
   static auto isUseSelection(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save use selection setting.
+   * @param useSelection true to use selection.
+   */
   static void setUseSelection(const bool &useSelection);
 
+  /**
+   * @brief Get whether to use autoclear for clipboard.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if autoclear is enabled.
+   */
   static auto isUseAutoclear(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save use autoclear setting.
+   * @param useAutoclear true to enable autoclear.
+   */
   static void setUseAutoclear(const bool &useAutoclear);
 
+  /**
+   * @brief Get autoclear delay in seconds.
+   * @param defaultValue Integer returned if not saved.
+   * @return Seconds before clipboard is cleared.
+   */
   static auto getAutoclearSeconds(const int &defaultValue = QVariant().toInt())
       -> int;
+  /**
+   * @brief Save autoclear seconds.
+   * @param autoClearSeconds Seconds to wait before clearing.
+   */
   static void setAutoclearSeconds(const int &autoClearSeconds);
 
+  /**
+   * @brief Get whether to use panel autoclear.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if panel autoclear is enabled.
+   */
   static auto
   isUseAutoclearPanel(const bool &defaultValue = QVariant().toBool()) -> bool;
+  /**
+   * @brief Save use autoclear panel setting.
+   * @param useAutoclearPanel true to enable panel autoclear.
+   */
   static void setUseAutoclearPanel(const bool &useAutoclearPanel);
 
+  /**
+   * @brief Get panel autoclear delay in seconds.
+   * @param defaultValue Integer returned if not saved.
+   * @return Seconds before panel is cleared.
+   */
   static auto
   getAutoclearPanelSeconds(const int &defaultValue = QVariant().toInt()) -> int;
+  /**
+   * @brief Save panel autoclear seconds.
+   * @param autoClearPanelSeconds Seconds to wait before clearing panel.
+   */
   static void setAutoclearPanelSeconds(const int &autoClearPanelSeconds);
 
+  /**
+   * @brief Get whether to hide password in UI.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if password is hidden.
+   */
   static auto isHidePassword(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save hide password setting.
+   * @param hidePassword true to hide password.
+   */
   static void setHidePassword(const bool &hidePassword);
 
+  /**
+   * @brief Get whether to hide content (password + username).
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if content is hidden.
+   */
   static auto isHideContent(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save hide content setting.
+   * @param hideContent true to hide content.
+   */
   static void setHideContent(const bool &hideContent);
 
+  /**
+   * @brief Get whether to use monospace font.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if using monospace font.
+   */
   static auto isUseMonospace(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save use monospace setting.
+   * @param useMonospace true to use monospace font.
+   */
   static void setUseMonospace(const bool &useMonospace);
 
+  /**
+   * @brief Get whether to display password as-is (no modification).
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if displaying as-is.
+   */
   static auto isDisplayAsIs(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save display as-is setting.
+   * @param displayAsIs true to display unmodified.
+   */
   static void setDisplayAsIs(const bool &displayAsIs);
 
+  /**
+   * @brief Get whether to disable line wrapping.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if line wrapping disabled.
+   */
   static auto isNoLineWrapping(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save no line wrapping setting.
+   * @param noLineWrapping true to disable wrapping.
+   */
   static void setNoLineWrapping(const bool &noLineWrapping);
 
+  /**
+   * @brief Get whether to auto-add GPG ID when receiving files.
+   * @param defaultValue Boolean returned if not saved.
+   * @return true if auto-adding is enabled.
+   */
   static auto isAddGPGId(const bool &defaultValue = QVariant().toBool())
       -> bool;
+  /**
+   * @brief Save add GPG ID setting.
+   * @param addGPGId true to auto-add GPG IDs.
+   */
   static void setAddGPGId(const bool &addGPGId);
 
+  // Pass store path
+  /**
+   * @brief Get password store directory path.
+   * @param defaultValue String returned if not saved.
+   * @return Path to password store.
+   */
   static auto getPassStore(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save password store path.
+   * @param passStore Path to password store.
+   */
   static void setPassStore(const QString &passStore);
 
+  /**
+   * @brief Get GPG signing key for pass.
+   * @param defaultValue String returned if not saved.
+   * @return GPG key ID.
+   */
   static auto
   getPassSigningKey(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save GPG signing key.
+   * @param passSigningKey Key ID to use for signing.
+   */
   static void setPassSigningKey(const QString &passSigningKey);
 
+  // Executable paths
+  /**
+   * @brief Initialize executable paths by auto-detecting them.
+   */
   static void initExecutables();
+  /**
+   * @brief Get pass executable path.
+   * @param defaultValue String returned if not saved.
+   * @return Path to pass executable.
+   */
   static auto
   getPassExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save pass executable path.
+   * @param passExecutable Path to pass.
+   */
   static void setPassExecutable(const QString &passExecutable);
 
+  /**
+   * @brief Get git executable path.
+   * @param defaultValue String returned if not saved.
+   * @return Path to git executable.
+   */
   static auto
   getGitExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save git executable path.
+   * @param gitExecutable Path to git.
+   */
   static void setGitExecutable(const QString &gitExecutable);
 
+  /**
+   * @brief Get GPG executable path.
+   * @param defaultValue String returned if not saved.
+   * @return Path to GPG executable.
+   */
   static auto
   getGpgExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;

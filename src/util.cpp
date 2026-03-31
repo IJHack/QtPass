@@ -1,5 +1,16 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+
+/**
+ * @class Util
+ * @brief Static utility functions implementation.
+ *
+ * Implementation of utility functions for path handling, binary discovery,
+ * and configuration validation.
+ *
+ * @see util.h
+ */
+
 #include "util.h"
 #include <QDir>
 #include <QFileInfo>
